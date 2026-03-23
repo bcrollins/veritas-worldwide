@@ -1,18 +1,18 @@
 {
-  "run": 20,
+  "run": 21,
   "mode": "A",
-  "focus": "SEO/organic traffic maximization — RSS, sitemap, SSR, structured data",
+  "focus": "Google Search Console registration + indexing acceleration",
   "completed": [
-    "RSS feed completely regenerated — all 31 chapters with correct titles/descriptions (bdad27a)",
-    "Sitemap updated — lastmod dates, /timeline added, key chapters priority-boosted (f03a01a)",
-    "Googlebot + Bingbot + 8 other crawlers added to SSR bot detection (bb6cc1d)",
-    "BreadcrumbList schema added to all chapter pages (9ce1f55)",
-    "Multi-block JSON-LD support in setJsonLd() (9ce1f55)"
+    "GSC property verified via Google Analytics auto-verification (brollins565@gmail.com)",
+    "Sitemap submitted to GSC — all 31 chapters discovered",
+    "Fixed immutable cache on XML/TXT files (1h instead of 1y) (759b0c5)",
+    "Priority indexing requested for 7 URLs: homepage + chapters 9, 13, 21, 22, 27, 28",
+    "Homepage already indexed and appearing in Google Search"
   ],
-  "commits": ["bdad27a", "f03a01a", "bb6cc1d", "9ce1f55"],
+  "commits": ["759b0c5"],
   "next_priorities": [
-    "P2: Submit sitemap to Google Search Console",
     "P2: Add per-chapter OG images for social sharing CTR",
+    "P2: Ping Google/Bing with sitemap URL for faster discovery",
     "P3: Add inline images to chapters without them",
     "P3: robots.txt add Crawl-delay and disallow for low-value pages",
     "P4: Code-split chapters data (549KB chunk)",

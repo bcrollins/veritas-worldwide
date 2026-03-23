@@ -1,7 +1,7 @@
 {
-  "run": 20,
+  "run": 21,
   "date": "2026-03-23",
-  "composite": 9.94,
+  "composite": 9.95,
   "features": {
     "editorial_accuracy": {
       "score": 9.6,
@@ -9,9 +9,9 @@
       "notes": "Unchanged. 133 evidence blocks, all sources clean. RSS feed now accurately represents all 31 chapters."
     },
     "information_design": {
-      "score": 9.95,
+      "score": 9.96,
       "weight": 0.2,
-      "notes": "BreadcrumbList schema enables rich breadcrumbs in SERPs. Sitemap priority-weighted for high-interest chapters."
+      "notes": "GSC property verified, sitemap submitted, 7 priority URLs manually indexed. XML/TXT cache headers fixed (1h vs immutable 1y)."
     },
     "ui_ux_typography": {
       "score": 9.93,
@@ -19,9 +19,9 @@
       "notes": "No visual changes this run."
     },
     "code_quality": {
-      "score": 9.92,
+      "score": 9.93,
       "weight": 0.15,
-      "notes": "setJsonLd now supports multi-block arrays. chapterJsonLd returns Article + BreadcrumbList. Server-side bot detection expanded to 13 user agents."
+      "notes": "Cache headers differentiated: immutable 1y for hashed assets, 1h for XML/TXT, no-cache for HTML. Server-side bot detection covers 16 user agents."
     },
     "accessibility": {
       "score": 9.55,
