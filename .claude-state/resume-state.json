@@ -1,18 +1,21 @@
 {
-  "run": 19,
+  "run": 20,
   "mode": "A",
-  "focus": "Header rebuild + SEO/perf fixes",
+  "focus": "SEO/organic traffic maximization — RSS, sitemap, SSR, structured data",
   "completed": [
-    "Header rebuilt — minimalist V logo, condensed nav with More dropdown, icon actions (a856bcf)",
-    "Fixed 8 double-escaped apostrophes in server.js bot meta descriptions (3570c36)",
-    "Font preload hints for Inter/Playfair/SourceSerif + trimmed unused weights (19de22b)"
+    "RSS feed completely regenerated — all 31 chapters with correct titles/descriptions (bdad27a)",
+    "Sitemap updated — lastmod dates, /timeline added, key chapters priority-boosted (f03a01a)",
+    "Googlebot + Bingbot + 8 other crawlers added to SSR bot detection (bb6cc1d)",
+    "BreadcrumbList schema added to all chapter pages (9ce1f55)",
+    "Multi-block JSON-LD support in setJsonLd() (9ce1f55)"
   ],
-  "commits": ["a856bcf", "3570c36", "19de22b"],
+  "commits": ["bdad27a", "f03a01a", "bb6cc1d", "9ce1f55"],
   "next_priorities": [
+    "P2: Submit sitemap to Google Search Console",
+    "P2: Add per-chapter OG images for social sharing CTR",
     "P3: Add inline images to chapters without them",
-    "P4: Add SVG timeline/relationship diagrams to key chapters",
+    "P3: robots.txt add Crawl-delay and disallow for low-value pages",
     "P4: Code-split chapters data (549KB chunk)",
-    "P5: Periodic Wikimedia image URL health check",
-    "P5: Reading progress persistence across sessions"
+    "P5: Periodic Wikimedia image URL health check"
   ]
 }
