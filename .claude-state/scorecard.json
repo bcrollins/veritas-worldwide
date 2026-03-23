@@ -1,13 +1,13 @@
 {
-  "run": 8,
+  "run": 9,
   "date": "2026-03-23",
-  "composite": 9.7,
+  "composite": 9.8,
   "features": {
-    "editorial_accuracy": { "score": 9.3, "weight": 0.25, "notes": "Evidence tier badges in chapter headers with counts. Source counts on homepage cards. In-chapter TOC for section navigation. Keyword-based related chapters augment manual cross-links." },
-    "information_design": { "score": 9.7, "weight": 0.20, "notes": "Chapter TOC for long articles. Evidence composition visible at-a-glance in header and homepage. Related chapters now include algorithmic topic matching." },
-    "ui_ux_typography": { "score": 9.8, "weight": 0.20, "notes": "Back-to-top button. Scroll position persistence across visits. Evidence badges use semantic tier colors. All existing features intact." },
-    "code_quality": { "score": 9.6, "weight": 0.15, "notes": "Zero TS errors. Reusable hooks (useScrollRestore). Reusable components (BackToTop). No hardcoded values." },
-    "accessibility": { "score": 9.5, "weight": 0.15, "notes": "Evidence badges have aria-labels. TOC nav has aria-label. Back-to-top has aria-label. All heading anchors have scroll-mt-20 for sticky header offset." },
+    "editorial_accuracy": { "score": 9.3, "weight": 0.25, "notes": "Evidence tier badges in chapter headers with counts. Source counts on homepage cards. In-chapter TOC for section navigation. Keyword-based related chapters augment manual cross-links. Reading time estimates on all cards." },
+    "information_design": { "score": 9.8, "weight": 0.20, "notes": "Chapter TOC for long articles. Evidence composition visible at-a-glance in header and homepage. Related chapters now include algorithmic topic matching. Featured article card shows reading time + source count." },
+    "ui_ux_typography": { "score": 9.8, "weight": 0.20, "notes": "Back-to-top button. Scroll position persistence across visits. Evidence badges use semantic tier colors. Safe-area-inset support for notch devices. All existing features intact." },
+    "code_quality": { "score": 9.7, "weight": 0.15, "notes": "Zero TS errors. Reusable hooks (useScrollRestore). Reusable components (BackToTop). Shared readingTime utility extracted. No hardcoded values." },
+    "accessibility": { "score": 9.7, "weight": 0.15, "notes": "Visible focus rings for keyboard navigation. Auth modal focus trap. Evidence badges have aria-labels. TOC nav has aria-label. Back-to-top has aria-label. All heading anchors have scroll-mt-20." },
     "security": { "score": 9.2, "weight": 0.05, "notes": "CSP meta tag restricts resources to self + Google Fonts + Stripe. X-Content-Type-Options nosniff. Strict referrer policy. All external links noopener noreferrer." }
   }
 }

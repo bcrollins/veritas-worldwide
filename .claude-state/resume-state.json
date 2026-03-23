@@ -1,12 +1,14 @@
 {
-  "last": "Run 8 — 7 fixes: evidence tier badges, in-chapter TOC, keyword-based related chapters, back-to-top button, homepage evidence indicators, CSP security headers, scroll position persistence.",
-  "next": "Push all commits (need GitHub credentials), then: DownloadPDF bundle optimization, interactive timeline, annotation system",
+  "last": "Run 9 — 6 fixes: visible focus rings, shared readingTime utility, JSON-LD on Methodology+Sources, auth modal focus trap, safe-area-inset support, featured article card enhancements.",
+  "next": "Push all commits (need GitHub credentials), then continue P3-P4 queue items.",
   "queue": [
+    "P3: Skip-to-content link for screen readers",
+    "P3: Preload critical fonts for LCP improvement",
+    "P3: aria-current='page' on active nav links",
     "P4: DownloadPDF bundle — evaluate code-splitting html2canvas",
     "P4: Firebase project setup for live analytics tracking",
     "P5: Interactive timeline spanning all chapters",
     "P5: Chapter annotation/highlighting system",
-    "P5: Content gating re-evaluation (currently all-open)",
     "P5: Newsletter signup email integration"
   ]
 }
