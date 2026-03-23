@@ -127,7 +127,28 @@ export default function HomePage() {
                 <p className="font-body text-sm text-ink-muted line-clamp-2">
                   {chapter.subtitle}
                 </p>
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap items-center gap-2 mt-2">
+                  {chapter.sources.length > 0 && (
+                    <span className="font-sans text-[0.6rem] text-ink-faint">{chapter.sources.length} sources</span>
+                  )}
+                  {chapter.content.some(b => b.type === 'evidence') && (
+                    <span className="font-sans text-[0.6rem] text-ink-faint">·</span>
+                  )}
+                  {chapter.content.filter(b => b.type === 'evidence' && b.evidence?.tier === 'verified').length > 0 && (
+                    <span className="font-sans text-[0.6rem] text-verified" aria-label="Verified evidence blocks">
+                      ✓{chapter.content.filter(b => b.type === 'evidence' && b.evidence?.tier === 'verified').length}
+                    </span>
+                  )}
+                  {chapter.content.filter(b => b.type === 'evidence' && b.evidence?.tier === 'circumstantial').length > 0 && (
+                    <span className="font-sans text-[0.6rem] text-circumstantial" aria-label="Circumstantial evidence blocks">
+                      ◐{chapter.content.filter(b => b.type === 'evidence' && b.evidence?.tier === 'circumstantial').length}
+                    </span>
+                  )}
+                  {chapter.content.filter(b => b.type === 'evidence' && b.evidence?.tier === 'disputed').length > 0 && (
+                    <span className="font-sans text-[0.6rem] text-disputed" aria-label="Disputed evidence blocks">
+                      ⚠{chapter.content.filter(b => b.type === 'evidence' && b.evidence?.tier === 'disputed').length}
+                    </span>
+                  )}
                   {chapter.keywords.slice(0, 3).map(kw => (
                     <span key={kw} className="font-sans text-[0.6rem] px-2 py-0.5 bg-parchment-dark text-ink-faint rounded-sm">
                       {kw}
