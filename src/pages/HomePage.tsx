@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 import { chapters } from '../data/chapters'
 import DonationBanner from '../components/DonationBanner'
+const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 
 export default function HomePage() {
   const featured = chapters[0]
@@ -140,6 +142,10 @@ export default function HomePage() {
               >
                 Methodology
               </Link>
+            </div>
+            <div className="mt-6 pt-6 border-t border-white/10">
+              <p className="font-sans text-xs text-white/40 mb-3">Download the entire publication for offline reading</p>
+              <Suspense fallback={<span className="text-white/40 text-xs">Loading…</span>}><DownloadPDF /></Suspense>
             </div>
           </div>
         </section>
