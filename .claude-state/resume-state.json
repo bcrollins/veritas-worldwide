@@ -1,0 +1,16 @@
+{
+  "last": "Run 1 — accessibility, SEO titles, print styles, reduced-motion",
+  "next": "SEO deep pass (sitemap.xml, robots.txt, OG images, structured data), search UX improvements, dark mode toggle, reading progress indicator",
+  "queue": [
+    "P2: Generate sitemap.xml and robots.txt",
+    "P2: Add OG image meta tags per chapter",
+    "P3: Add structured data (Article schema) to chapter pages",
+    "P3: Add loading/skeleton states for SPA route transitions",
+    "P4: Dark mode toggle",
+    "P4: Reading progress indicator per chapter",
+    "P4: Chapter PDF export",
+    "P5: Social sharing buttons per chapter",
+    "P5: Newsletter signup form",
+    "P5: RSS feed"
+  ]
+}

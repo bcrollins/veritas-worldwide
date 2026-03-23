@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { type ReactNode, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
@@ -57,9 +57,20 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
         circumstantial: 'text-circumstantial',
         disputed: 'text-disputed',
       }
+      const tierIcons: Record<string, string> = {
+        verified: '✓',
+        circumstantial: '◐',
+        disputed: '⚠',
+      }
+      const tierAriaLabels: Record<string, string> = {
+        verified: 'Verified — Primary Source Documentation',
+        circumstantial: 'Circumstantial — Documented Facts, Interpretive Conclusion',
+        disputed: 'Disputed — Reported But Not Independently Confirmed',
+      }
       return (
-        <div className={tierClass}>
+        <div className={tierClass} role="note" aria-label={tierAriaLabels[block.evidence.tier]}>
           <p className={`evidence-label ${tierColors[block.evidence.tier] || ''}`}>
+            <span aria-hidden="true" className="mr-1.5">{tierIcons[block.evidence.tier]}</span>
             {block.evidence.label}
           </p>
           <p className="font-body text-sm leading-relaxed text-ink-light">
@@ -258,6 +269,15 @@ export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const chapter = chapters.find(ch => ch.id === id)
   const { setShowAuthModal } = useAuth()
+
+  useEffect(() => {
+    if (chapter) {
+      document.title = `${chapter.title} | The Record — Veritas Worldwide Press`
+    } else {
+      document.title = 'Chapter Not Found | The Record — Veritas Worldwide Press'
+    }
+    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+  }, [chapter])
 
   if (!chapter) {
     return (

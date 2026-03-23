@@ -57,6 +57,11 @@ export default function SearchPage() {
   const [query, setQuery] = useState(initialQuery)
 
   useEffect(() => {
+    document.title = 'Search | The Record — Veritas Worldwide Press'
+    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+  }, [])
+
+  useEffect(() => {
     const q = searchParams.get('q')
     if (q && q !== query) setQuery(q)
   }, [searchParams])

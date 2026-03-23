@@ -1,7 +1,12 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 
 export default function SourcesPage() {
+  useEffect(() => {
+    document.title = 'Sources & Bibliography | The Record — Veritas Worldwide Press'
+    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+  }, [])
   // Aggregate all sources from all chapters
   const allSources = chapters.flatMap(chapter =>
     chapter.sources.map(source => ({

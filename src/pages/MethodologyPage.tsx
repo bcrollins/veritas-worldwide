@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function MethodologyPage() {
+  useEffect(() => {
+    document.title = 'Methodology & Evidence Standards | The Record — Veritas Worldwide Press'
+    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+  }, [])
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {/* Header */}

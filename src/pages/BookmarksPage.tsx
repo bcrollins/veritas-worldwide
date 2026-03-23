@@ -1,8 +1,13 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
 import { chapters } from '../data/chapters'
 
 export default function BookmarksPage() {
+  useEffect(() => {
+    document.title = 'Saved Articles | The Record — Veritas Worldwide Press'
+    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+  }, [])
   const { isLoggedIn, bookmarks, setShowAuthModal } = useAuth()
 
   if (!isLoggedIn) {
