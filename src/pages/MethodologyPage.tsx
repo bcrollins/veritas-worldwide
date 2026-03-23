@@ -148,6 +148,30 @@ export default function MethodologyPage() {
           View All Sources
         </Link>
       </div>
+
+      {/* Support CTA */}
+      <section className="border-t border-border mt-12 pt-8 text-center">
+        <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
+          Free &amp; Open Access
+        </p>
+        <p className="font-body text-sm text-ink-muted leading-relaxed max-w-md mx-auto mb-5">
+          Maintaining rigorous editorial standards takes time and resources. If these standards matter to you, a small contribution helps us continue this work.
+        </p>
+        <a
+          href="https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          Support This Work
+        </a>
+        <p className="font-sans text-[0.6rem] text-ink-faint mt-3">
+          Processed securely via Stripe &middot; No account required
+        </p>
+      </section>
     </div>
   )
 }
