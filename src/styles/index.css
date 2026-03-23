@@ -41,6 +41,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Dark mode overrides */
+html.dark {
+  --color-parchment: #1A1A1A;
+  --color-parchment-dark: #141414;
+  --color-ink: #E8E4DF;
+  --color-ink-light: #D4CFC8;
+  --color-ink-muted: #A09A92;
+  --color-ink-faint: #706B64;
+  --color-crimson: #C43030;
+  --color-crimson-dark: #A52A2A;
+  --color-crimson-light: #D44040;
+  --color-verified: #4ADE80;
+  --color-verified-bg: #0A1F12;
+  --color-verified-border: #166534;
+  --color-circumstantial: #FBBF24;
+  --color-circumstantial-bg: #1A1400;
+  --color-circumstantial-border: #92400E;
+  --color-disputed: #F87171;
+  --color-disputed-bg: #1F0A0A;
+  --color-disputed-border: #991B1B;
+  --color-surface: #242424;
+  --color-surface-raised: #2A2A2A;
+  --color-border: #333333;
+  --color-border-dark: #444444;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -175,7 +201,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #999;
+  color: var(--color-ink-faint);
   margin-top: 0.5rem;
 }
 
@@ -271,6 +297,29 @@ h1, h2, h3, h4 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-ink-faint);
+}
+
+/* Dark mode scrollbar */
+html.dark ::-webkit-scrollbar-track {
+  background: var(--color-parchment);
+}
+
+/* Dark mode data tables */
+html.dark .data-table thead {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+/* Dark mode stat cards */
+html.dark .stat-card {
+  background: var(--color-surface);
+}
+
+/* Dark mode search input */
+html.dark .search-input {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  border-color: var(--color-border);
 }
 
 /* Animations */

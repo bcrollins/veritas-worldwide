@@ -5,6 +5,7 @@ import AuthModal from './components/AuthModal'
 import Toast from './components/Toast'
 import ScrollToTop from './components/ScrollToTop'
 import { usePageView } from './hooks/usePageView'
+import { useTheme } from './lib/ThemeContext'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -15,6 +16,28 @@ const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
 const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
 
 const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
+
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme()
+  return (
+    <button
+      onClick={toggleTheme}
+      className="p-2 text-ink-muted hover:text-ink transition-colors"
+      aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+    >
+      {theme === 'dark' ? (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      )}
+    </button>
+  )
+}
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -66,6 +89,7 @@ function Header() {
               </svg>
               Support
             </a>
+            <ThemeToggle />
             {isLoggedIn ? (
               <div className="flex items-center gap-4">
                 <span className="font-sans text-xs text-ink-faint">
@@ -125,6 +149,10 @@ function Header() {
               </svg>
               Support This Work
             </a>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <span className="font-sans text-sm text-ink-muted">Toggle theme</span>
+            </div>
             {isLoggedIn ? (
               <button
                 onClick={() => { logout(); setMenuOpen(false) }}
