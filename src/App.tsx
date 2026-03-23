@@ -47,188 +47,265 @@ function ThemeToggle() {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
   const location = useLocation()
   const { isLoggedIn, user, logout, setShowAuthModal } = useAuth()
 
-  // Auto-close mobile menu on route change
+  // Auto-close menus on route change
   useEffect(() => {
     setMenuOpen(false)
+    setMoreOpen(false)
   }, [location.pathname])
 
-  // Close mobile menu on Escape key
+  // Close menus on Escape key
   useEffect(() => {
-    if (!menuOpen) return
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMenuOpen(false)
+      if (e.key === 'Escape') {
+        setMenuOpen(false)
+        setMoreOpen(false)
+      }
     }
     document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
-  }, [menuOpen])
+  }, [])
 
-  const navLinks = [
-    { to: '/', label: 'The Record' },
+  // Close "More" dropdown on outside click
+  useEffect(() => {
+    if (!moreOpen) return
+    const handleClick = () => setMoreOpen(false)
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [moreOpen])
+
+  const primaryLinks = [
+    { to: '/', label: 'Read' },
     { to: '/search', label: 'Search' },
     { to: '/timeline', label: 'Timeline' },
+  ]
+
+  const secondaryLinks = [
     { to: '/methodology', label: 'Methodology' },
     { to: '/sources', label: 'Sources' },
     { to: '/bookmarks', label: 'Saved' },
     { to: '/analytics', label: 'Analytics' },
   ]
 
+  const allLinks = [...primaryLinks, ...secondaryLinks]
+
+  const isSecondaryActive = secondaryLinks.some(l => location.pathname === l.to)
+
   return (
     <header className="sticky top-0 z-50 bg-parchment/95 backdrop-blur-md no-print">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="flex items-center justify-between py-3">
-          <Link to="/" className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-ink hover:text-crimson transition-colors">
-            Veritas Worldwide Press
+        <div className="flex items-center justify-between h-14">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Veritas Worldwide Press — Home">
+            <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="4" className="fill-ink group-hover:fill-crimson transition-colors" />
+              <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="20" fontWeight="bold" fill="#FAF8F5">V</text>
+              <line x1="6" y1="27" x2="26" y2="27" stroke="#FAF8F5" strokeWidth="1.5" strokeOpacity="0.4" />
+            </svg>
+            <span className="hidden sm:block font-sans text-[0.65rem] font-bold tracking-[0.2em] uppercase text-ink group-hover:text-crimson transition-colors">
+              Veritas
+            </span>
           </Link>
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6" aria-label="Main navigation">
-            {navLinks.map(link => (
+
+          {/* Desktop Nav — center */}
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+            {primaryLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`font-sans text-xs tracking-[0.1em] uppercase transition-colors ${
-                  location.pathname === link.to ? 'text-crimson font-bold' : 'text-ink-muted hover:text-ink'
+                className={`font-sans text-[0.7rem] tracking-[0.1em] uppercase px-3 py-1.5 rounded-sm transition-colors ${
+                  location.pathname === link.to
+                    ? 'text-crimson font-semibold bg-crimson/5'
+                    : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50'
                 }`}
                 {...(location.pathname === link.to ? { 'aria-current': 'page' as const } : {})}
               >
                 {link.label}
               </Link>
             ))}
+
+            {/* More dropdown */}
+            <div className="relative">
+              <button
+                onClick={(e) => { e.stopPropagation(); setMoreOpen(!moreOpen) }}
+                className={`font-sans text-[0.7rem] tracking-[0.1em] uppercase px-3 py-1.5 rounded-sm transition-colors inline-flex items-center gap-1 ${
+                  isSecondaryActive
+                    ? 'text-crimson font-semibold bg-crimson/5'
+                    : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50'
+                }`}
+                aria-expanded={moreOpen}
+                aria-haspopup="true"
+              >
+                More
+                <svg className={`w-3 h-3 transition-transform ${moreOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {moreOpen && (
+                <div className="absolute top-full right-0 mt-1 w-44 bg-parchment border border-border rounded-sm shadow-lg py-1 z-50">
+                  {secondaryLinks.map(link => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className={`block px-4 py-2.5 font-sans text-xs tracking-[0.05em] uppercase transition-colors ${
+                        location.pathname === link.to
+                          ? 'text-crimson font-semibold bg-crimson/5'
+                          : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50'
+                      }`}
+                      {...(location.pathname === link.to ? { 'aria-current': 'page' as const } : {})}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          </nav>
+
+          {/* Right actions */}
+          <div className="flex items-center gap-0.5">
             <ReadingStreak />
             <a
               href={DONATE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-crimson/10 text-crimson font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200"
-              aria-label="Support Veritas Worldwide Press"
+              className="hidden sm:inline-flex items-center justify-center p-2 min-w-[44px] min-h-[44px] text-crimson hover:bg-crimson/10 rounded-sm transition-colors"
+              aria-label="Support this work"
+              title="Support"
               onClick={() => trackSupportClick('header')}
-            >
-              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-              Support
-            </a>
-            <ThemeToggle />
-            {isLoggedIn ? (
-              <div className="flex items-center gap-4">
-                <span className="font-sans text-xs text-ink-faint">
-                  {user?.displayName?.split(' ')[0]}
-                </span>
-                <button
-                  onClick={logout}
-                  className="font-sans text-xs tracking-[0.1em] uppercase text-ink-muted hover:text-crimson transition-colors"
-                >
-                  Sign Out
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={() => setShowAuthModal(true)}
-                className="font-sans text-xs font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors"
-              >
-                Sign In
-              </button>
-            )}
-          </nav>
-          <button
-            className="lg:hidden p-3 -mr-3 text-ink"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-nav"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-        {/* Mobile Menu Overlay */}
-        {menuOpen && (
-          <div
-            className="fixed inset-0 bg-ink/40 backdrop-blur-sm z-[60] lg:hidden"
-            onClick={() => setMenuOpen(false)}
-            aria-hidden="true"
-          />
-        )}
-        {/* Mobile Slide-in Nav */}
-        <nav
-          id="mobile-nav"
-          className={`fixed top-0 right-0 h-full w-72 bg-parchment z-[70] lg:hidden transform transition-transform duration-300 ease-out shadow-2xl ${
-            menuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-          aria-label="Mobile navigation"
-          aria-hidden={!menuOpen}
-        >
-          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-            <span className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Menu</span>
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="p-2 -mr-2 text-ink-muted hover:text-ink"
-              aria-label="Close menu"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div className="flex flex-col px-6 py-4 gap-0 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 60px)' }}>
-            {navLinks.map(link => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`font-sans text-sm tracking-[0.05em] uppercase py-3 border-b border-border/50 transition-colors ${
-                  location.pathname === link.to ? 'text-crimson font-bold' : 'text-ink-muted hover:text-ink'
-                }`}
-                onClick={() => setMenuOpen(false)}
-                {...(location.pathname === link.to ? { 'aria-current': 'page' as const } : {})}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href={DONATE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-crimson/10 text-crimson font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200 mt-4"
-              onClick={() => { trackSupportClick('mobile-menu'); setMenuOpen(false) }}
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
               </svg>
-              Support This Work
             </a>
-            <div className="flex items-center gap-2 mt-4">
+            <ThemeToggle />
+            {isLoggedIn ? (
+              <button
+                onClick={logout}
+                className="hidden sm:inline-flex items-center justify-center p-2 min-w-[44px] min-h-[44px] font-sans text-[0.65rem] tracking-[0.1em] uppercase text-ink-muted hover:text-crimson transition-colors"
+                title={`Sign out (${user?.displayName?.split(' ')[0]})`}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+              </button>
+            ) : (
+              <button
+                onClick={() => setShowAuthModal(true)}
+                className="hidden sm:inline-flex items-center justify-center p-2 min-w-[44px] min-h-[44px] text-ink-muted hover:text-crimson transition-colors"
+                aria-label="Sign in"
+                title="Sign in"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </button>
+            )}
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-ink"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Accent line */}
+      <div className="h-[2px] bg-crimson" />
+
+      {/* Mobile Menu Overlay */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-ink/30 backdrop-blur-sm z-[60] md:hidden"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Mobile Slide-in Nav */}
+      <nav
+        id="mobile-nav"
+        className={`fixed top-0 right-0 h-full w-72 bg-parchment z-[70] md:hidden transform transition-transform duration-300 ease-out shadow-2xl ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
+      >
+        <div className="flex items-center justify-between px-6 h-14 border-b border-border">
+          <span className="font-sans text-[0.65rem] font-bold tracking-[0.2em] uppercase text-ink">Menu</span>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="p-2 -mr-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-ink-muted hover:text-ink"
+            aria-label="Close menu"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div className="flex flex-col px-6 py-4 gap-0 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 56px)' }}>
+          {allLinks.map(link => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`font-sans text-sm tracking-[0.05em] uppercase py-3 border-b border-border/30 transition-colors ${
+                location.pathname === link.to ? 'text-crimson font-semibold' : 'text-ink-muted hover:text-ink'
+              }`}
+              onClick={() => setMenuOpen(false)}
+              {...(location.pathname === link.to ? { 'aria-current': 'page' as const } : {})}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors mt-6"
+            onClick={() => { trackSupportClick('mobile-menu'); setMenuOpen(false) }}
+          >
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            Support This Work
+          </a>
+          <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/30">
+            <div className="flex items-center gap-2">
               <ThemeToggle />
-              <span className="font-sans text-sm text-ink-muted">Toggle theme</span>
+              <span className="font-sans text-xs text-ink-faint">Theme</span>
             </div>
             {isLoggedIn ? (
               <button
                 onClick={() => { logout(); setMenuOpen(false) }}
-                className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-crimson text-left py-3"
+                className="font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson"
               >
-                Sign Out ({user?.displayName?.split(' ')[0]})
+                Sign Out
               </button>
             ) : (
               <button
                 onClick={() => { setShowAuthModal(true); setMenuOpen(false) }}
-                className="font-sans text-sm tracking-[0.05em] uppercase text-crimson font-semibold text-left py-3"
+                className="font-sans text-xs tracking-[0.05em] uppercase text-crimson font-semibold"
               >
                 Sign In
               </button>
             )}
-            <p className="font-sans text-[0.6rem] text-ink-faint mt-6">
-              Press <kbd className="px-1.5 py-0.5 bg-parchment-dark rounded text-[0.55rem] font-mono">/</kbd> to search &middot;
-              <kbd className="px-1.5 py-0.5 bg-parchment-dark rounded text-[0.55rem] font-mono ml-1">j</kbd>/<kbd className="px-1.5 py-0.5 bg-parchment-dark rounded text-[0.55rem] font-mono">k</kbd> to navigate chapters
-            </p>
           </div>
-        </nav>
-      </div>
-      <div className="h-[3px] bg-crimson" />
+        </div>
+      </nav>
     </header>
   )
 }
