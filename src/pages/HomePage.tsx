@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import { chapters } from '../data/chapters'
 import DonationBanner from '../components/DonationBanner'
+import NewsletterSignup from '../components/NewsletterSignup'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 
@@ -139,6 +140,8 @@ export default function HomePage() {
         </section>
 
         <DonationBanner />
+
+        <NewsletterSignup />
 
         {/* Reading Guide CTA */}
         <section className="py-12 border-t border-border">
