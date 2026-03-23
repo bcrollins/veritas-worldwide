@@ -1,12 +1,25 @@
 {
-  "last": "Run 8 — Bot meta injection for all 31 chapters, share dropdown keyboard a11y, sources page search/filter, analytics no-cache (Run 7 carryover).",
-  "next": "Firebase analytics credentials, interactive timeline, chapter annotation system",
+  "last": "All chapters: cleaned PDF artifacts, converted evidence blocks, removed boilerplate",
+  "next": "Split 54 text blocks with embedded mid-text evidence markers into separate blocks",
   "queue": [
-    "P4: Firebase project setup for live analytics tracking (needs credentials)",
-    "P5: Interactive timeline spanning all 31 chapters",
-    "P5: Chapter annotation/highlighting system (logged-in users)",
-    "P5: Related chapters sidebar (sticky on desktop)",
-    "P5: Service worker for offline reading",
-    "P5: Dark mode color refinement pass"
+    "Split 54 embedded evidence markers in text blocks (complex splitting required)",
+    "Firebase analytics integration (needs credentials)",
+    "Interactive timeline spanning all chapters",
+    "Chapter annotation/highlighting system",
+    "Service worker for offline reading",
+    "Dark mode refinement",
+    "SEO: sitemap.xml, robots.txt, structured data improvements"
+  ],
+  "run": 10,
+  "date": "2026-03-23",
+  "commits": [
+    "fix(epilogue): replace 7 malformed sources with 14 proper bibliographic citations",
+    "fix(ch25): restructure evidence blocks, clean artifacts, fix sources",
+    "fix(data): convert 16 inline evidence markers to structured evidence blocks",
+    "fix(data): convert 12 'P A R T' text blocks to proper heading blocks",
+    "fix(data): clean PDF-paste artifacts across all chapters",
+    "fix(data): clean all remaining spaced PDF artifacts from chapter content",
+    "fix(data): remove 24 'SHARE THIS CHAPTER' PDF boilerplate blocks",
+    "fix(data): convert last standalone evidence marker text block + cleanup"
   ]
 }
