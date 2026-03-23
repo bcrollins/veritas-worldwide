@@ -1,24 +1,29 @@
-import { useState, lazy, Suspense } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
-
-const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 import AuthModal from './components/AuthModal'
 import Toast from './components/Toast'
 import ScrollToTop from './components/ScrollToTop'
+import { usePageView } from './hooks/usePageView'
 
-// Route-level code splitting — each page loads independently
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
 const SearchPage = lazy(() => import('./pages/SearchPage'))
 const MethodologyPage = lazy(() => import('./pages/MethodologyPage'))
 const SourcesPage = lazy(() => import('./pages/SourcesPage'))
 const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
+const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
+
+const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
   const { isLoggedIn, user, logout, setShowAuthModal } = useAuth()
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
 
   const navLinks = [
     { to: '/', label: 'The Record' },
@@ -164,6 +169,7 @@ function Footer() {
               <Link to="/methodology" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Methodology</Link>
               <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
+              <Link to="/analytics" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Analytics</Link>
             </div>
           </div>
           <div>
@@ -174,17 +180,6 @@ function Footer() {
             <p className="font-sans text-xs text-white/30 mt-6">
               Every source cited in this publication is publicly accessible. The reader is encouraged to verify any claim independently.
             </p>
-            <a
-              href="https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 mt-4 font-sans text-xs font-semibold text-crimson-light hover:text-white transition-colors"
-            >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-              Support This Work
-            </a>
           </div>
         </div>
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
@@ -197,6 +192,11 @@ function Footer() {
   )
 }
 
+function PageViewTracker() {
+  usePageView()
+  return null
+}
+
 export default function App() {
   return (
     <div className="min-h-screen bg-parchment text-ink">
@@ -207,30 +207,32 @@ export default function App() {
         Skip to content
       </a>
       <ScrollToTop />
+      <PageViewTracker />
       <Header />
       <main id="main-content">
         <Suspense fallback={
           <div className="max-w-3xl mx-auto px-6 py-20 text-center">
-            <div className="inline-block w-6 h-6 border-2 border-crimson/30 border-t-crimson rounded-full animate-spin" />
+            <div className="inline-block w-5 h-5 border-2 border-crimson/30 border-t-crimson rounded-full animate-spin" />
           </div>
         }>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/chapter/:id" element={<ChapterPage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/methodology" element={<MethodologyPage />} />
-            <Route path="/sources" element={<SourcesPage />} />
-            <Route path="/bookmarks" element={<BookmarksPage />} />
-            <Route path="*" element={
-              <div className="max-w-3xl mx-auto px-6 py-20 text-center">
-                <h1 className="font-display text-5xl font-bold text-ink mb-4">404</h1>
-                <p className="font-body text-lg text-ink-muted mb-8">This page doesn&apos;t exist.</p>
-                <Link to="/" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
-                  &larr; Return to The Record
-                </Link>
-              </div>
-            } />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/chapter/:id" element={<ChapterPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/methodology" element={<MethodologyPage />} />
+          <Route path="/sources" element={<SourcesPage />} />
+          <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
+          <Route path="*" element={
+            <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+              <h1 className="font-display text-5xl font-bold text-ink mb-4">404</h1>
+              <p className="font-body text-lg text-ink-muted mb-8">This page doesn't exist.</p>
+              <Link to="/" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
+                &larr; Return to The Record
+              </Link>
+            </div>
+          } />
+        </Routes>
         </Suspense>
       </main>
       <Footer />
