@@ -147,6 +147,19 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   }
 }
 
+function getRelatedByKeywords(current: Chapter, maxResults = 4): Chapter[] {
+  const crossLinkIds = new Set(current.crossLinks.map(cl => cl.chapterId))
+  const scored = chapters
+    .filter(c => c.id !== current.id && !crossLinkIds.has(c.id))
+    .map(c => {
+      const shared = current.keywords.filter(kw => c.keywords.includes(kw)).length
+      return { chapter: c, score: shared }
+    })
+    .filter(s => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+  return scored.slice(0, maxResults).map(s => s.chapter)
+}
+
 function ChapterTOC({ chapter }: { chapter: Chapter }) {
   const headings = chapter.content.filter(b => b.type === 'heading' || b.type === 'subheading')
   if (headings.length < 3) return null // Only show TOC for chapters with 3+ headings
@@ -592,26 +605,50 @@ export default function ChapterPage() {
         </section>
       )}
 
-      {/* Cross-Links */}
-      {chapter.crossLinks.length > 0 && (
-        <section className="border-t border-border pt-8 mb-8">
-          <h3 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
-            Related Chapters
-          </h3>
-          <div className="grid gap-3">
-            {chapter.crossLinks.map(link => (
-              <Link
-                key={link.chapterId}
-                to={`/chapter/${link.chapterId}`}
-                className="group flex items-center gap-3 p-3 border border-border rounded-sm hover:border-crimson transition-colors"
-              >
-                <span className="font-sans text-crimson font-bold text-sm">&rarr;</span>
-                <span className="font-sans text-sm text-ink group-hover:text-crimson transition-colors">{link.label}</span>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+      {/* Cross-Links + Keyword-Based Related Chapters */}
+      {(chapter.crossLinks.length > 0 || chapter.keywords.length > 0) && (() => {
+        const keywordRelated = getRelatedByKeywords(chapter)
+        const hasCrossLinks = chapter.crossLinks.length > 0
+        const hasKeywordRelated = keywordRelated.length > 0
+        if (!hasCrossLinks && !hasKeywordRelated) return null
+        return (
+          <section className="border-t border-border pt-8 mb-8">
+            <h3 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
+              Related Chapters
+            </h3>
+            <div className="grid gap-3">
+              {chapter.crossLinks.map(link => (
+                <Link
+                  key={link.chapterId}
+                  to={`/chapter/${link.chapterId}`}
+                  className="group flex items-center gap-3 p-3 border border-border rounded-sm hover:border-crimson transition-colors"
+                >
+                  <span className="font-sans text-crimson font-bold text-sm">&rarr;</span>
+                  <span className="font-sans text-sm text-ink group-hover:text-crimson transition-colors">{link.label}</span>
+                </Link>
+              ))}
+              {hasKeywordRelated && hasCrossLinks && (
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint mt-2 mb-1">
+                  Also Related by Topic
+                </p>
+              )}
+              {keywordRelated.map(related => (
+                <Link
+                  key={related.id}
+                  to={`/chapter/${related.id}`}
+                  className="group flex items-start gap-3 p-3 border border-border rounded-sm hover:border-crimson transition-colors"
+                >
+                  <span className="font-sans text-ink-faint font-bold text-sm shrink-0">&rarr;</span>
+                  <div>
+                    <span className="font-sans text-sm text-ink group-hover:text-crimson transition-colors">{related.title}</span>
+                    <span className="block font-sans text-[0.65rem] text-ink-faint mt-0.5">{related.number}{related.dateRange ? ` · ${related.dateRange}` : ''}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )
+      })()}
 
       {/* Support CTA — post-chapter, high engagement point */}
       <section className="border-t border-border pt-8 mb-8 text-center">
