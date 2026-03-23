@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useMemo, useState } from 'react'
+import { type ReactNode, useEffect, useMemo, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
@@ -183,29 +183,87 @@ function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: strin
 }
 
 function ShareButton({ chapter }: { chapter: Chapter }) {
-  const handleShare = async () => {
-    const url = `${window.location.origin}/chapter/${chapter.id}`
-    const text = `${chapter.title} — The Record by Veritas Worldwide Press`
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: text, url })
-      } catch {}
-    } else {
-      await navigator.clipboard.writeText(url)
-      alert('Link copied to clipboard')
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [open])
+
+  const url = `${window.location.origin}/chapter/${chapter.id}`
+  const text = `${chapter.title} — The Record by Veritas Worldwide Press`
+  const encodedUrl = encodeURIComponent(url)
+  const encodedText = encodeURIComponent(text)
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(url)
+    setOpen(false)
+    // Toast is managed by AuthContext — trigger via a small workaround
+    const toastEl = document.getElementById('share-toast')
+    if (toastEl) {
+      toastEl.textContent = 'Link copied to clipboard'
+      toastEl.classList.remove('opacity-0', 'translate-y-2')
+      toastEl.classList.add('opacity-100', 'translate-y-0')
+      setTimeout(() => {
+        toastEl.classList.remove('opacity-100', 'translate-y-0')
+        toastEl.classList.add('opacity-0', 'translate-y-2')
+      }, 2500)
     }
   }
 
+  const handleNativeShare = async () => {
+    try {
+      await navigator.share({ title: text, url })
+    } catch {}
+    setOpen(false)
+  }
+
+  const shareLinks = [
+    { label: 'Copy Link', onClick: handleCopy, icon: '🔗' },
+    ...(typeof navigator.share === 'function' ? [{ label: 'Share…', onClick: handleNativeShare, icon: '📤' }] : []),
+    { label: 'X / Twitter', onClick: () => { window.open(`https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`, '_blank'); setOpen(false) }, icon: '𝕏' },
+    { label: 'LinkedIn', onClick: () => { window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, '_blank'); setOpen(false) }, icon: 'in' },
+    { label: 'Email', onClick: () => { window.open(`mailto:?subject=${encodedText}&body=${encodedUrl}`, '_self'); setOpen(false) }, icon: '✉' },
+  ]
+
   return (
-    <PremiumAction
-      onClick={handleShare}
-      label="Share"
-      icon={
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-        </svg>
-      }
-    />
+    <div className="relative" ref={ref}>
+      <PremiumAction
+        onClick={() => setOpen(!open)}
+        label="Share"
+        icon={
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          </svg>
+        }
+      />
+      {open && (
+        <div className="absolute right-0 top-full mt-2 w-48 bg-surface border border-border rounded-sm shadow-lg z-50 py-1 animate-fade-in">
+          {shareLinks.map(link => (
+            <button
+              key={link.label}
+              onClick={link.onClick}
+              className="w-full text-left px-4 py-2.5 font-sans text-sm text-ink hover:bg-parchment-dark transition-colors flex items-center gap-3"
+            >
+              <span className="w-5 text-center text-xs">{link.icon}</span>
+              {link.label}
+            </button>
+          ))}
+        </div>
+      )}
+      {/* Lightweight share toast — independent of auth toast */}
+      <div
+        id="share-toast"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-2.5 bg-ink text-white font-sans text-sm rounded-sm shadow-lg opacity-0 translate-y-2 transition-all duration-200 pointer-events-none z-[100]"
+        aria-live="polite"
+      />
+    </div>
   )
 }
 
