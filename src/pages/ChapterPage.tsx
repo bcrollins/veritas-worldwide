@@ -392,10 +392,22 @@ function estimateReadingTime(chapter: Chapter): number {
   return Math.max(1, Math.ceil(wordCount / 238))
 }
 
+function getEvidenceCounts(chapter: Chapter) {
+  const counts = { verified: 0, circumstantial: 0, disputed: 0 }
+  for (const block of chapter.content) {
+    if (block.type === 'evidence' && block.evidence) {
+      counts[block.evidence.tier]++
+    }
+  }
+  return counts
+}
+
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const chapter = chapters.find(ch => ch.id === id)
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
+  const evidenceCounts = useMemo(() => chapter ? getEvidenceCounts(chapter) : { verified: 0, circumstantial: 0, disputed: 0 }, [chapter])
+  const hasEvidence = evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed > 0
 
   useEffect(() => {
     if (chapter) {
@@ -458,6 +470,28 @@ export default function ChapterPage() {
             </span>
           )}
         </div>
+        {/* Evidence Tier Summary */}
+        {hasEvidence && (
+          <div className="flex flex-wrap items-center gap-3 mt-5" aria-label="Evidence classification summary">
+            <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Evidence:</span>
+            {evidenceCounts.verified > 0 && (
+              <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-verified bg-verified-bg border border-verified-border px-2.5 py-1 rounded-sm">
+                <span aria-hidden="true">✓</span> {evidenceCounts.verified} Verified
+              </span>
+            )}
+            {evidenceCounts.circumstantial > 0 && (
+              <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-circumstantial bg-circumstantial-bg border border-circumstantial-border px-2.5 py-1 rounded-sm">
+                <span aria-hidden="true">◐</span> {evidenceCounts.circumstantial} Circumstantial
+              </span>
+            )}
+            {evidenceCounts.disputed > 0 && (
+              <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-disputed bg-disputed-bg border border-disputed-border px-2.5 py-1 rounded-sm">
+                <span aria-hidden="true">⚠</span> {evidenceCounts.disputed} Disputed
+              </span>
+            )}
+            <span className="font-sans text-[0.6rem] text-ink-faint">{chapter.sources.length} sources</span>
+          </div>
+        )}
       </header>
 
       {/* Full Content — Free for all readers */}
