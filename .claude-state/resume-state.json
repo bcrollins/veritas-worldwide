@@ -1,14 +1,11 @@
 {
-  "last": "Run 9 — 6 fixes: visible focus rings, shared readingTime utility, JSON-LD on Methodology+Sources, auth modal focus trap, safe-area-inset support, featured article card enhancements.",
-  "next": "Push all commits (need GitHub credentials), then continue P3-P4 queue items.",
+  "last": "Run 10 — 5 fixes: aria-current on nav links, DownloadPDF deferred import (400KB savings), mobile nav Escape+aria-controls, nav landmark labels + footer semantic nav, semantic table captions.",
+  "next": "Push all commits (need GitHub credentials).",
   "queue": [
-    "P3: Skip-to-content link for screen readers",
-    "P3: Preload critical fonts for LCP improvement",
-    "P3: aria-current='page' on active nav links",
-    "P4: DownloadPDF bundle — evaluate code-splitting html2canvas",
     "P4: Firebase project setup for live analytics tracking",
     "P5: Interactive timeline spanning all chapters",
     "P5: Chapter annotation/highlighting system",
-    "P5: Newsletter signup email integration"
+    "P5: Newsletter signup email integration",
+    "P5: Self-host fonts for full LCP control"
   ]
 }
