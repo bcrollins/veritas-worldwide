@@ -236,6 +236,25 @@ app.use((req, res, next) => {
   const htmlPath = path.join(__dirname, 'dist', 'index.html')
   let html = fs.readFileSync(htmlPath, 'utf-8')
 
+  // Static page meta for bots
+  const staticPages = {
+    '/about': { title: 'About | Veritas Worldwide Press', desc: 'About Veritas Worldwide Press — our mission, editorial standards, funding model, and the author behind The Record.' },
+    '/methodology': { title: 'Methodology | Veritas Worldwide Press', desc: 'Our four-tier source hierarchy and three-tier evidence classification system explained.' },
+    '/sources': { title: 'Sources | Veritas Worldwide Press', desc: 'Master bibliography and source library for The Record — 500+ primary source documents.' },
+    '/search': { title: 'Search | Veritas Worldwide Press', desc: 'Search all 31 chapters of The Record by keyword, topic, or evidence classification.' },
+    '/timeline': { title: 'Timeline | Veritas Worldwide Press', desc: 'An interactive chronological timeline of events documented in The Record, from 1694 to present.' },
+    '/analytics': { title: 'Reader Analytics | Veritas Worldwide Press', desc: 'Public readership analytics for The Record.' },
+  }
+
+  const staticMeta = staticPages[req.path]
+  if (staticMeta) {
+    html = html
+      .replace(/<title>.*?<\/title>/, `<title>${staticMeta.title}</title>`)
+      .replace(/content="The Record \| Veritas Worldwide Press"/, `content="${staticMeta.title}"`)
+      .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/, `content="${staticMeta.desc}"`)
+      .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/, `content="${staticMeta.desc}"`)
+  }
+
   // Check if this is a chapter route
   const chapterMatch = req.path.match(/^\/chapter\/(.+)$/)
   if (chapterMatch) {
