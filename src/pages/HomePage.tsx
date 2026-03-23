@@ -1,10 +1,33 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import { chapters } from '../data/chapters'
 import DonationBanner from '../components/DonationBanner'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 
 export default function HomePage() {
+  useEffect(() => {
+    setMetaTags({
+      title: `The Record | ${SITE_NAME}`,
+      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 31 chapters, 500+ primary sources, 100% free and open access.',
+      url: SITE_URL,
+    })
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': `The Record — ${SITE_NAME}`,
+      'url': SITE_URL,
+      'description': 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World.',
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
+      'potentialAction': {
+        '@type': 'SearchAction',
+        'target': { '@type': 'EntryPoint', 'urlTemplate': `${SITE_URL}/search?q={search_term_string}` },
+        'query-input': 'required name=search_term_string',
+      },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
+  }, [])
   const featured = chapters[0]
   const rest = chapters.slice(1)
 

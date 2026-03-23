@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
 
 export default function MethodologyPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Methodology & Evidence Standards | The Record — Veritas Worldwide Press',
-      description: 'How The Record was researched, sourced, and structured. Four-tier source hierarchy and three-tier evidence classification system.',
-      url: 'https://veritasworldwide.com/methodology',
+      description: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
+      url: `${SITE_URL}/methodology`,
     })
     return () => { clearMetaTags() }
   }, [])

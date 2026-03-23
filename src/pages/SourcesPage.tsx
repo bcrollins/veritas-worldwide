@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
-import { setMetaTags, clearMetaTags } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
 
 export default function SourcesPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Sources & Bibliography | The Record — Veritas Worldwide Press',
-      description: 'Complete bibliography and source citations for all chapters. Every source is publicly accessible for independent verification.',
-      url: 'https://veritasworldwide.com/sources',
+      description: 'Master bibliography of 500+ primary sources cited across 31 chapters. Congressional records, court filings, declassified documents, and academic research.',
+      url: `${SITE_URL}/sources`,
     })
     return () => { clearMetaTags() }
   }, [])
@@ -146,27 +146,8 @@ export default function SourcesPage() {
         )}
       </section>
 
-      {/* Support prompt */}
-      <section className="border-t border-border mt-12 pt-8 mb-8 text-center">
-        <p className="font-body text-sm text-ink-muted leading-relaxed max-w-md mx-auto mb-4">
-          You're reading the sources — that means you care about getting it right. So do we.
-          If this level of transparency is worth preserving, consider supporting the project.
-        </p>
-        <a
-          href="https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
-        >
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-          Support The Record
-        </a>
-      </section>
-
       {/* CTA */}
-      <div className="border-t border-border pt-8 flex flex-col sm:flex-row gap-4">
+      <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row gap-4">
         <Link
           to="/methodology"
           className="font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors text-center"

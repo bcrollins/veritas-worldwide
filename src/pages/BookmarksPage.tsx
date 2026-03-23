@@ -2,11 +2,16 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
 import { chapters } from '../data/chapters'
+import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
 
 export default function BookmarksPage() {
   useEffect(() => {
-    document.title = 'Saved Articles | The Record — Veritas Worldwide Press'
-    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+    setMetaTags({
+      title: 'Saved Articles | The Record — Veritas Worldwide Press',
+      description: 'Your saved chapters from The Record — a documentary history of power, money, and institutions.',
+      url: `${SITE_URL}/bookmarks`,
+    })
+    return () => { clearMetaTags() }
   }, [])
   const { isLoggedIn, bookmarks, setShowAuthModal } = useAuth()
 
