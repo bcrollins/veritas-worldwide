@@ -57,6 +57,15 @@ export function setMetaTags(config: SEOConfig): void {
     }
   }
 
+  // Set canonical link
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+  if (!canonical) {
+    canonical = document.createElement('link')
+    canonical.setAttribute('rel', 'canonical')
+    document.head.appendChild(canonical)
+  }
+  canonical.setAttribute('href', url)
+
   for (const [key, value] of Object.entries(metas)) {
     // article:tag:N → use property, skip numeric suffix for actual attribute
     const isOg = key.startsWith('og:') || key.startsWith('article:')
@@ -121,6 +130,10 @@ export function clearMetaTags(): void {
   // Reset description
   const descEl = document.querySelector('meta[name="description"]') as HTMLMetaElement | null
   if (descEl) descEl.setAttribute('content', DEFAULT_DESCRIPTION)
+
+  // Reset canonical
+  const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+  if (canonical) canonical.setAttribute('href', SITE_URL)
 }
 
 /**
