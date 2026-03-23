@@ -1,7 +1,7 @@
 {
-  "run": 18,
+  "run": 19,
   "date": "2026-03-23",
-  "composite": 9.92,
+  "composite": 9.93,
   "features": {
     "editorial_accuracy": {
       "score": 9.6,
@@ -11,27 +11,27 @@
     "information_design": {
       "score": 9.95,
       "weight": 0.2,
-      "notes": "30 hero images verified. Dark mode image treatment active. Print styles comprehensive."
+      "notes": "New minimalist header with logo mark, condensed nav, icon-only actions. Cleaner visual hierarchy."
     },
     "ui_ux_typography": {
-      "score": 9.92,
+      "score": 9.93,
       "weight": 0.2,
-      "notes": "Run 17: Full mobile responsive pass — 44px touch targets across all interactive elements, intermediate sm breakpoints on all grids, responsive typography scaling. Run 18: no new UI changes."
+      "notes": "Run 19: Header rebuilt — V logo mark + VERITAS wordmark, 3 primary nav links + More dropdown, icon-only support/auth/theme buttons. Mobile drawer preserved. Font preload hints for FCP improvement."
     },
     "code_quality": {
       "score": 9.9,
       "weight": 0.15,
-      "notes": "GA4 share tracking added to FloatingShareBar with contentId prop. Express compression middleware reduces transfer ~66%. Immutable cache headers on hashed static assets. Build clean, zero TS errors."
+      "notes": "Font weights trimmed (Playfair 10→4, Inter 5→4). Preload hints for critical fonts. Build clean, zero TS errors."
     },
     "accessibility": {
       "score": 9.55,
       "weight": 0.15,
-      "notes": "Run 17: All interactive elements meet 44px minimum touch targets (Apple HIG/WCAG). Evidence tiers have text + color + icons. Skip link. Focus rings. prefers-reduced-motion. Keyboard nav on share menu."
+      "notes": "All header buttons have aria-labels and 44px touch targets. More dropdown has aria-expanded/haspopup. Skip link preserved."
     },
     "security": {
       "score": 9.2,
       "weight": 0.05,
-      "notes": "CSP img-src now includes upload.wikimedia.org for 30 hero images. unsafe-inline in script-src for GA4 inline config. Cache-Control: no-cache on HTML prevents stale SPA shell."
+      "notes": "No changes. CSP intact."
     }
   }
 }

@@ -1,23 +1,18 @@
 {
-  "run": 18,
+  "run": 19,
   "mode": "A",
-  "focus": "Full publication audit — performance, security, analytics gaps",
+  "focus": "Header rebuild + SEO/perf fixes",
   "completed": [
-    "FloatingShareBar GA4 share tracking with contentId prop (e7738a0)",
-    "CSP img-src: added upload.wikimedia.org for hero images (434a107)",
-    "Express compression middleware — 549KB→188KB gzip (754ef95)",
-    "Immutable cache headers on hashed static assets (754ef95)",
-    "Cache-Control no-cache on HTML for SPA shell freshness (754ef95)",
-    "Diagnosed NODE_ENV=production in shell causing npm to omit devDependencies",
-    "Resolved TypeScript build blocker via NODE_ENV=development override"
+    "Header rebuilt — minimalist V logo, condensed nav with More dropdown, icon actions (a856bcf)",
+    "Fixed 8 double-escaped apostrophes in server.js bot meta descriptions (3570c36)",
+    "Font preload hints for Inter/Playfair/SourceSerif + trimmed unused weights (19de22b)"
   ],
-  "commits": ["e7738a0", "434a107", "754ef95"],
+  "commits": ["a856bcf", "3570c36", "19de22b"],
   "next_priorities": [
-    "P3: Add font preload hints for critical rendering path",
-    "P3: Improve server.js chapter meta descriptions (truncated in bot SSR)",
     "P3: Add inline images to chapters without them",
     "P4: Add SVG timeline/relationship diagrams to key chapters",
     "P4: Code-split chapters data (549KB chunk)",
-    "P5: Periodic Wikimedia image URL health check"
+    "P5: Periodic Wikimedia image URL health check",
+    "P5: Reading progress persistence across sessions"
   ]
 }
