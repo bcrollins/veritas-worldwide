@@ -186,14 +186,21 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  // Close on outside click
+  // Close on outside click or Escape key
   useEffect(() => {
     if (!open) return
-    const handler = (e: MouseEvent) => {
+    const handleClick = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
     }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    document.addEventListener('keydown', handleKey)
+    return () => {
+      document.removeEventListener('mousedown', handleClick)
+      document.removeEventListener('keydown', handleKey)
+    }
   }, [open])
 
   const url = `${window.location.origin}/chapter/${chapter.id}`
@@ -234,24 +241,28 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
 
   return (
     <div className="relative" ref={ref}>
-      <PremiumAction
+      <button
         onClick={() => setOpen(!open)}
-        label="Share"
-        icon={
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-          </svg>
-        }
-      />
+        className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label="Share this chapter"
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+        </svg>
+        Share
+      </button>
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-48 bg-surface border border-border rounded-sm shadow-lg z-50 py-1 animate-fade-in">
+        <div role="menu" className="absolute right-0 top-full mt-2 w-48 bg-surface border border-border rounded-sm shadow-lg z-50 py-1 animate-fade-in">
           {shareLinks.map(link => (
             <button
               key={link.label}
+              role="menuitem"
               onClick={link.onClick}
               className="w-full text-left px-4 py-2.5 font-sans text-sm text-ink hover:bg-parchment-dark transition-colors flex items-center gap-3"
             >
-              <span className="w-5 text-center text-xs">{link.icon}</span>
+              <span className="w-5 text-center text-xs" aria-hidden="true">{link.icon}</span>
               {link.label}
             </button>
           ))}
