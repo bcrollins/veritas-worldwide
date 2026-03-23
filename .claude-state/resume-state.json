@@ -1,19 +1,21 @@
 {
-  "last": "GA4 analytics (G-FB4BL9NSF6), interactive timeline page (/timeline), service worker for offline reading",
-  "next": "Chapter annotation/highlighting system, dark mode refinement",
+  "last": "Multimedia system: 30 hero images, 12 inline images, 3 SVG diagrams, NYT-style homepage feature grid",
+  "next": "Verify all Wikimedia Commons image URLs load correctly, add more inline images to remaining chapters",
   "queue": [
+    "Verify all image URLs load (some Wikimedia URLs may have changed)",
+    "Add inline images to remaining chapters without them (Ch4, Ch7, Ch11, Ch15, Ch17, Ch18, Ch19, Ch20, Ch23, Ch26)",
+    "Add more SVG diagrams (AIPAC funding flow, petrodollar cycle, surveillance architecture)",
     "Chapter annotation/highlighting system",
-    "Dark mode refinement",
-    "Newsletter signup improvements",
-    "Chapter PDF export enhancements",
-    "Cross-chapter search improvements",
-    "Social sharing metadata per chapter"
+    "Dark mode image treatment (brightness/contrast adjustments)",
+    "Image lazy loading intersection observer optimization",
+    "Social sharing metadata with chapter-specific OG images"
   ],
-  "run": 12,
+  "run": 13,
   "date": "2026-03-23",
   "commits": [
-    "feat(analytics): Add Google Analytics 4 tracking (G-FB4BL9NSF6)",
-    "feat(timeline): add interactive chronological timeline page",
-    "feat(pwa): add service worker for offline reading"
+    "feat(multimedia): Add image system with hero images and inline figures across all chapters",
+    "feat(diagrams): Add professional SVG diagrams for media ownership, Federal Reserve structure, and asset manager cross-sector analysis",
+    "content(images): Add 10 inline historical images to key chapters",
+    "feat(homepage): Add NYT-style visual feature grid with image cards for key investigations"
   ]
 }
