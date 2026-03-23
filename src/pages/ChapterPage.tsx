@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
+import { useAuth } from '../lib/AuthContext'
+import BookmarkButton from '../components/BookmarkButton'
 
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
@@ -156,6 +158,10 @@ function ChapterNav({ current }: { current: Chapter }) {
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const chapter = chapters.find(ch => ch.id === id)
+  const { isLoggedIn, setShowAuthModal } = useAuth()
+
+  // Gate content: show first 3 blocks free, require login for rest
+  const PREVIEW_BLOCKS = 3
 
   if (!chapter) {
     return (
@@ -169,11 +175,18 @@ export default function ChapterPage() {
     )
   }
 
+  const previewContent = chapter.content.slice(0, PREVIEW_BLOCKS)
+  const gatedContent = chapter.content.slice(PREVIEW_BLOCKS)
+  const showGate = !isLoggedIn && gatedContent.length > 0
+
   return (
     <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {/* Chapter Header */}
       <header className="mb-12 border-b border-border pb-10">
-        <p className="chapter-label mb-4">{chapter.number}</p>
+        <div className="flex items-start justify-between gap-4">
+          <p className="chapter-label mb-4">{chapter.number}</p>
+          <BookmarkButton chapterId={chapter.id} />
+        </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight mb-4">
           {chapter.title}
         </h1>
@@ -191,11 +204,57 @@ export default function ChapterPage() {
         </div>
       </header>
 
-      {/* Content */}
+      {/* Content — Preview */}
       <div className="mb-12">
-        {chapter.content.map((block, idx) => (
+        {previewContent.map((block, idx) => (
           <ContentBlockRenderer key={idx} block={block} />
         ))}
+
+        {/* Content Gate */}
+        {showGate ? (
+          <div className="relative">
+            {/* Faded preview of next block */}
+            <div className="overflow-hidden max-h-32 relative">
+              {gatedContent.slice(0, 1).map((block, idx) => (
+                <ContentBlockRenderer key={`gate-${idx}`} block={block} />
+              ))}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-parchment/60 to-parchment" />
+            </div>
+
+            {/* Sign-in CTA */}
+            <div className="text-center py-12 border-t border-border mt-4">
+              <div className="max-w-md mx-auto">
+                <svg className="w-8 h-8 mx-auto text-crimson mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <h3 className="font-display text-xl font-bold text-ink mb-3">
+                  Create a Free Account to Continue Reading
+                </h3>
+                <p className="font-body text-sm text-ink-muted leading-relaxed mb-6">
+                  We want this information to be free for all — and it is. Creating an account simply
+                  helps us understand our readership and lets you save articles for later. No payment required, ever.
+                </p>
+                <button
+                  onClick={() => setShowAuthModal(true)}
+                  className="font-sans text-sm font-semibold px-8 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors"
+                >
+                  Create Free Account
+                </button>
+                <p className="font-sans text-xs text-ink-faint mt-3">
+                  Already have an account?{' '}
+                  <button onClick={() => setShowAuthModal(true)} className="text-crimson hover:text-crimson-dark">
+                    Sign in
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Full content for logged-in users */
+          gatedContent.map((block, idx) => (
+            <ContentBlockRenderer key={`full-${idx}`} block={block} />
+          ))
+        )}
       </div>
 
       {/* Sources */}

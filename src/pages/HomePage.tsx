@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
+import DonationBanner from '../components/DonationBanner'
 
 export default function HomePage() {
   const featured = chapters[0]
@@ -111,6 +112,8 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        <DonationBanner />
 
         {/* Reading Guide CTA */}
         <section className="py-12 border-t border-border">

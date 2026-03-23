@@ -1,15 +1,27 @@
 import { useState } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { useAuth } from './lib/AuthContext'
+import AuthModal from './components/AuthModal'
+import Toast from './components/Toast'
 import HomePage from './pages/HomePage'
 import ChapterPage from './pages/ChapterPage'
 import SearchPage from './pages/SearchPage'
 import MethodologyPage from './pages/MethodologyPage'
 import SourcesPage from './pages/SourcesPage'
+import BookmarksPage from './pages/BookmarksPage'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-  const isHome = location.pathname === '/'
+  const { isLoggedIn, user, logout, setShowAuthModal } = useAuth()
+
+  const navLinks = [
+    { to: '/', label: 'The Record' },
+    { to: '/search', label: 'Search' },
+    { to: '/methodology', label: 'Methodology' },
+    { to: '/sources', label: 'Sources' },
+    ...(isLoggedIn ? [{ to: '/bookmarks', label: 'Saved' }] : []),
+  ]
 
   return (
     <header className="sticky top-0 z-50 bg-parchment/95 backdrop-blur-md no-print">
@@ -19,12 +31,7 @@ function Header() {
             Veritas Worldwide Press
           </Link>
           <nav className="hidden md:flex items-center gap-8">
-            {[
-              { to: '/', label: 'The Record' },
-              { to: '/search', label: 'Search' },
-              { to: '/methodology', label: 'Methodology' },
-              { to: '/sources', label: 'Sources' },
-            ].map(link => (
+            {navLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -35,6 +42,26 @@ function Header() {
                 {link.label}
               </Link>
             ))}
+            {isLoggedIn ? (
+              <div className="flex items-center gap-4">
+                <span className="font-sans text-xs text-ink-faint">
+                  {user?.displayName?.split(' ')[0]}
+                </span>
+                <button
+                  onClick={logout}
+                  className="font-sans text-xs tracking-[0.1em] uppercase text-ink-muted hover:text-crimson transition-colors"
+                >
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => setShowAuthModal(true)}
+                className="font-sans text-xs font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors"
+              >
+                Sign In
+              </button>
+            )}
           </nav>
           <button
             className="md:hidden p-2 text-ink"
@@ -52,12 +79,7 @@ function Header() {
         </div>
         {menuOpen && (
           <nav className="md:hidden pb-4 border-t border-border pt-3 flex flex-col gap-3">
-            {[
-              { to: '/', label: 'The Record' },
-              { to: '/search', label: 'Search' },
-              { to: '/methodology', label: 'Methodology' },
-              { to: '/sources', label: 'Sources' },
-            ].map(link => (
+            {navLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -67,6 +89,21 @@ function Header() {
                 {link.label}
               </Link>
             ))}
+            {isLoggedIn ? (
+              <button
+                onClick={() => { logout(); setMenuOpen(false) }}
+                className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-crimson text-left"
+              >
+                Sign Out ({user?.displayName?.split(' ')[0]})
+              </button>
+            ) : (
+              <button
+                onClick={() => { setShowAuthModal(true); setMenuOpen(false) }}
+                className="font-sans text-sm tracking-[0.05em] uppercase text-crimson font-semibold text-left"
+              >
+                Sign In
+              </button>
+            )}
           </nav>
         )}
       </div>
@@ -97,6 +134,7 @@ function Footer() {
               <Link to="/search" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Search</Link>
               <Link to="/methodology" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Methodology</Link>
               <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
+              <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
             </div>
           </div>
           <div>
@@ -130,9 +168,12 @@ export default function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/sources" element={<SourcesPage />} />
+          <Route path="/bookmarks" element={<BookmarksPage />} />
         </Routes>
       </main>
       <Footer />
+      <AuthModal />
+      <Toast />
     </div>
   )
 }
