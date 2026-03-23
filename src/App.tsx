@@ -4,6 +4,7 @@ import { useAuth } from './lib/AuthContext'
 import AuthModal from './components/AuthModal'
 import Toast from './components/Toast'
 import ScrollToTop from './components/ScrollToTop'
+import { usePageView } from './hooks/usePageView'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -11,6 +12,7 @@ const SearchPage = lazy(() => import('./pages/SearchPage'))
 const MethodologyPage = lazy(() => import('./pages/MethodologyPage'))
 const SourcesPage = lazy(() => import('./pages/SourcesPage'))
 const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
+const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
 
 const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
@@ -30,6 +32,7 @@ function Header() {
     { to: '/methodology', label: 'Methodology' },
     { to: '/sources', label: 'Sources' },
     { to: '/bookmarks', label: 'Saved' },
+    { to: '/analytics', label: 'Analytics' },
   ]
 
   return (
@@ -168,6 +171,7 @@ function Footer() {
               <Link to="/methodology" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Methodology</Link>
               <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
+              <Link to="/analytics" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Analytics</Link>
             </div>
           </div>
           <div>
@@ -190,6 +194,11 @@ function Footer() {
   )
 }
 
+function PageViewTracker() {
+  usePageView()
+  return null
+}
+
 export default function App() {
   return (
     <div className="min-h-screen bg-parchment text-ink">
@@ -200,6 +209,7 @@ export default function App() {
         Skip to content
       </a>
       <ScrollToTop />
+      <PageViewTracker />
       <Header />
       <main id="main-content">
         <Suspense fallback={
@@ -214,6 +224,7 @@ export default function App() {
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/sources" element={<SourcesPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
               <h1 className="font-display text-5xl font-bold text-ink mb-4">404</h1>
