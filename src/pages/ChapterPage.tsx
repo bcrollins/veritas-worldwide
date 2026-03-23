@@ -8,6 +8,10 @@ import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SIT
 
 const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
     case 'dropcap':
@@ -26,14 +30,14 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
 
     case 'heading':
       return (
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink mt-12 mb-4">
+        <h2 id={slugify(block.text || '')} className="font-display text-2xl md:text-3xl font-bold text-ink mt-12 mb-4 scroll-mt-20">
           {block.text}
         </h2>
       )
 
     case 'subheading':
       return (
-        <h3 className="font-display text-xl md:text-2xl font-bold text-ink mt-8 mb-3">
+        <h3 id={slugify(block.text || '')} className="font-display text-xl md:text-2xl font-bold text-ink mt-8 mb-3 scroll-mt-20">
           {block.text}
         </h3>
       )
@@ -141,6 +145,35 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     default:
       return null
   }
+}
+
+function ChapterTOC({ chapter }: { chapter: Chapter }) {
+  const headings = chapter.content.filter(b => b.type === 'heading' || b.type === 'subheading')
+  if (headings.length < 3) return null // Only show TOC for chapters with 3+ headings
+
+  return (
+    <nav className="mb-10 p-5 bg-surface border border-border rounded-sm no-print" aria-label="Table of contents">
+      <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">
+        In This Chapter
+      </p>
+      <ol className="space-y-1.5">
+        {headings.map((block, i) => (
+          <li key={i}>
+            <a
+              href={`#${slugify(block.text || '')}`}
+              className={`font-sans text-sm hover:text-crimson transition-colors ${
+                block.type === 'subheading'
+                  ? 'pl-4 text-ink-faint text-xs'
+                  : 'text-ink-muted font-medium'
+              }`}
+            >
+              {block.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
 }
 
 function ChapterNav({ current }: { current: Chapter }) {
@@ -493,6 +526,9 @@ export default function ChapterPage() {
           </div>
         )}
       </header>
+
+      {/* In-Chapter TOC */}
+      <ChapterTOC chapter={chapter} />
 
       {/* Full Content — Free for all readers */}
       <div className="mb-12">
