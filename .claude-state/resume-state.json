@@ -1,7 +1,8 @@
 {
-  "last": "Multimedia system: 30 hero images, 12 inline images, 3 SVG diagrams, NYT-style homepage feature grid",
-  "next": "Verify all Wikimedia Commons image URLs load correctly, add more inline images to remaining chapters",
+  "last": "GA4 analytics: SPA page view tracking + conversion event tracking (sign_up, login, bookmark, donation, search)",
+  "next": "Verify all Wikimedia Commons image URLs load correctly, add donation tracking to header/footer Support links",
   "queue": [
+    "Add GA4 tracking to header/footer Support links and newsletter signup",
     "Verify all image URLs load (some Wikimedia URLs may have changed)",
     "Add inline images to remaining chapters without them (Ch4, Ch7, Ch11, Ch15, Ch17, Ch18, Ch19, Ch20, Ch23, Ch26)",
     "Add more SVG diagrams (AIPAC funding flow, petrodollar cycle, surveillance architecture)",
@@ -10,12 +11,10 @@
     "Image lazy loading intersection observer optimization",
     "Social sharing metadata with chapter-specific OG images"
   ],
-  "run": 13,
+  "run": 14,
   "date": "2026-03-23",
   "commits": [
-    "feat(multimedia): Add image system with hero images and inline figures across all chapters",
-    "feat(diagrams): Add professional SVG diagrams for media ownership, Federal Reserve structure, and asset manager cross-sector analysis",
-    "content(images): Add 10 inline historical images to key chapters",
-    "feat(homepage): Add NYT-style visual feature grid with image cards for key investigations"
+    "fix(analytics): Add GA4 SPA page view tracking for React Router route changes",
+    "feat(analytics): Add GA4 event tracking for sign-up, login, bookmark, donation, and search"
   ]
 }
