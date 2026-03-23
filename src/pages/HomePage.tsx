@@ -4,6 +4,9 @@ import { lazy, Suspense } from 'react'
 import { chapters } from '../data/chapters'
 import DonationBanner from '../components/DonationBanner'
 import NewsletterSignup from '../components/NewsletterSignup'
+import FadeInSection from '../components/FadeInSection'
+import AnimatedCounter from '../components/AnimatedCounter'
+import ContinueReading from '../components/ContinueReading'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
@@ -57,25 +60,34 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Stats Bar */}
+      {/* Stats Bar — Animated Counters */}
       <div className="bg-ink">
         <div className="max-w-5xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { value: '31', label: 'Chapters' },
-            { value: '240+', label: 'Years Covered' },
-            { value: '500+', label: 'Sources Cited' },
-            { value: '100%', label: 'Free & Open' },
-          ].map(stat => (
-            <div key={stat.label} className="text-center">
-              <p className="font-display text-2xl font-bold text-crimson-light">{stat.value}</p>
-              <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-white/50 mt-1">{stat.label}</p>
-            </div>
-          ))}
+          <div className="text-center">
+            <p className="font-display text-2xl font-bold text-crimson-light"><AnimatedCounter end={31} /></p>
+            <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-white/50 mt-1">Chapters</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-2xl font-bold text-crimson-light"><AnimatedCounter end={240} suffix="+" /></p>
+            <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-white/50 mt-1">Years Covered</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-2xl font-bold text-crimson-light"><AnimatedCounter end={500} suffix="+" /></p>
+            <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-white/50 mt-1">Sources Cited</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-2xl font-bold text-crimson-light">100%</p>
+            <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-white/50 mt-1">Free &amp; Open</p>
+          </div>
         </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-6">
+        {/* Continue Reading — for returning visitors */}
+        <ContinueReading />
+
         {/* Featured Lead */}
+        <FadeInSection>
         <section className="py-12 border-b border-border">
           <p className="chapter-label mb-3">{featured.number}</p>
           <Link to={`/chapter/${featured.id}`} className="group">
@@ -112,8 +124,10 @@ export default function HomePage() {
             </div>
           </Link>
         </section>
+        </FadeInSection>
 
         {/* Visual Feature Grid — NYT-style image cards for key chapters */}
+        <FadeInSection>
         <section className="py-12 border-b border-border">
           <div className="flex items-center gap-4 mb-8">
             <h2 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
@@ -123,7 +137,7 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[chapters[2], chapters[4], chapters[10], chapters[14], chapters[22], chapters[28]].filter(Boolean).map((ch) => (
-              <Link key={ch.id} to={`/chapter/${ch.id}`} className="group block">
+              <Link key={ch.id} to={`/chapter/${ch.id}`} className="group block card-lift rounded-sm">
                 {ch.heroImage && (
                   <div className="overflow-hidden rounded-sm mb-3 aspect-[16/10] bg-parchment-dark">
                     <img
@@ -142,6 +156,7 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+        </FadeInSection>
 
         {/* Chapter Grid */}
         <section className="py-12">

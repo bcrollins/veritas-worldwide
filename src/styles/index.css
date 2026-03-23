@@ -94,11 +94,11 @@ h1, h2, h3, h4 {
   letter-spacing: -0.01em;
 }
 
-/* Article body text */
+/* Article body text — font size controlled by toggle */
 .article-body {
   font-family: var(--font-body);
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: var(--article-font-size, 1.125rem);
+  line-height: var(--article-line-height, 1.8);
   color: var(--color-ink-light);
 }
 
@@ -123,7 +123,7 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
-/* Blockquote */
+/* Blockquote — NYT-style with decorative quotation marks */
 .pullquote {
   font-family: var(--font-display);
   font-style: italic;
@@ -131,8 +131,22 @@ h1, h2, h3, h4 {
   line-height: 1.5;
   color: var(--color-ink);
   border-left: 4px solid var(--color-crimson);
-  padding: 1.5rem 0 1.5rem 2rem;
-  margin: 2.5rem 0;
+  padding: 2rem 0 2rem 2rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.pullquote::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-crimson);
+  opacity: 0.15;
+  position: absolute;
+  top: -0.25rem;
+  left: 0.75rem;
+  pointer-events: none;
 }
 
 .pullquote-attribution {
@@ -145,6 +159,32 @@ h1, h2, h3, h4 {
   color: var(--color-crimson);
   margin-top: 1rem;
   line-height: 1.6;
+}
+
+/* Section divider — ornamental rule */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  color: var(--color-ink-faint);
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.section-divider-diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--color-crimson);
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 /* Evidence tier badges */
@@ -286,6 +326,65 @@ figure img:hover {
   opacity: 0.95;
 }
 
+/* Dark mode image brightness adjustment */
+html.dark figure img,
+html.dark .hero-image img {
+  filter: brightness(0.88) contrast(1.05);
+}
+
+html.dark figure img:hover,
+html.dark .hero-image img:hover {
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Table scroll indicator */
+.table-scroll-wrapper {
+  position: relative;
+}
+
+.table-scroll-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2rem;
+  background: linear-gradient(to right, transparent, var(--color-parchment));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.table-scroll-wrapper.has-overflow::after {
+  opacity: 1;
+}
+
+html.dark .table-scroll-wrapper::after {
+  background: linear-gradient(to right, transparent, var(--color-parchment));
+}
+
+/* Text selection styling */
+::selection {
+  background: rgba(139, 26, 26, 0.15);
+  color: var(--color-ink);
+}
+
+html.dark ::selection {
+  background: rgba(196, 48, 48, 0.25);
+}
+
 @media print {
   figure {
     page-break-inside: avoid;
@@ -359,6 +458,51 @@ html.dark .stat-card {
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll-triggered entrance animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children animation */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+html.dark .card-lift:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Line clamp utilities */

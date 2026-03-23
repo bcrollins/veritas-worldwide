@@ -5,8 +5,14 @@ import type { ContentBlock, Chapter, ImageData } from '../data/chapters'
 import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
 import BackToTop from '../components/BackToTop'
+import Breadcrumb from '../components/Breadcrumb'
+import FontSizeToggle from '../components/FontSizeToggle'
+import TimeRemaining from '../components/TimeRemaining'
+import TextSelectionShare from '../components/TextSelectionShare'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SITE_URL } from '../lib/seo'
 import { useScrollRestore } from '../hooks/useScrollRestore'
+import { useReadingHistory } from '../hooks/useReadingHistory'
+import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import { DONATE_URL } from '../lib/constants'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
@@ -71,14 +77,37 @@ function FigureBlock({ image }: { image: ImageData }) {
 }
 
 function HeroImage({ image }: { image: ImageData }) {
+  const imgRef = useRef<HTMLImageElement>(null)
+
+  useEffect(() => {
+    const img = imgRef.current
+    if (!img) return
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY
+          // Subtle parallax: image moves at 30% scroll speed
+          img.style.transform = `translateY(${scrollY * 0.3}px) scale(1.1)`
+          ticking = false
+        })
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <figure className="mb-10 -mx-6 md:-mx-12 lg:-mx-20">
+    <figure className="mb-10 -mx-6 md:-mx-12 lg:-mx-20 hero-image">
       <div className="overflow-hidden rounded-sm">
         <img
+          ref={imgRef}
           src={image.src}
           alt={image.alt}
           loading="eager"
-          className="w-full h-64 md:h-80 lg:h-96 object-cover"
+          className="w-full h-64 md:h-80 lg:h-96 object-cover will-change-transform"
+          style={{ transform: 'translateY(0) scale(1.1)' }}
           onError={(e) => {
             const target = e.target as HTMLImageElement
             target.closest('figure')?.classList.add('hidden')
@@ -125,9 +154,14 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
 
     case 'heading':
       return (
-        <h2 id={slugify(block.text || '')} className="font-display text-2xl md:text-3xl font-bold text-ink mt-12 mb-4 scroll-mt-20">
-          {block.text}
-        </h2>
+        <>
+          <div className="section-divider mt-12 mb-8" aria-hidden="true">
+            <div className="section-divider-diamond" />
+          </div>
+          <h2 id={slugify(block.text || '')} className="font-display text-2xl md:text-3xl font-bold text-ink mb-4 scroll-mt-20">
+            {block.text}
+          </h2>
+        </>
       )
 
     case 'subheading':
@@ -197,7 +231,12 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     case 'table':
       if (!block.table) return null
       return (
-        <div className="overflow-x-auto my-8">
+        <div className="overflow-x-auto my-8 table-scroll-wrapper" onScroll={(e) => {
+          const el = e.currentTarget
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth && el.scrollLeft < el.scrollWidth - el.clientWidth - 10)
+        }} ref={(el) => {
+          if (el) el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth)
+        }}>
           <table className="data-table">
             {block.table.caption && (
               <caption className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-ink-muted mb-3 text-left">
@@ -578,6 +617,8 @@ export default function ChapterPage() {
   const hasEvidence = evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed > 0
 
   useScrollRestore(id)
+  useReadingHistory(id)
+  useKeyboardNav()
 
   useEffect(() => {
     if (chapter) {
@@ -614,7 +655,12 @@ export default function ChapterPage() {
     <>
     <ReadingProgress />
     <BackToTop />
+    <TimeRemaining totalMinutes={readingTime} />
+    <TextSelectionShare />
     <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      {/* Breadcrumb */}
+      <Breadcrumb chapter={chapter} />
+
       {/* Hero Image */}
       {chapter.heroImage && <HeroImage image={chapter.heroImage} />}
 
@@ -622,9 +668,19 @@ export default function ChapterPage() {
       <header className="mb-12 border-b border-border pb-10">
         <div className="flex items-start justify-between gap-4">
           <p className="chapter-label mb-4">{chapter.number}</p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <FontSizeToggle />
             <ShareButton chapter={chapter} />
             <DownloadButton chapter={chapter} />
+            <PremiumAction
+              onClick={() => window.print()}
+              label="Print"
+              icon={
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+              }
+            />
             <BookmarkButton chapterId={chapter.id} />
           </div>
         </div>

@@ -140,13 +140,43 @@ function Header() {
             </svg>
           </button>
         </div>
+        {/* Mobile Menu Overlay */}
         {menuOpen && (
-          <nav id="mobile-nav" className="md:hidden pb-4 border-t border-border pt-3 flex flex-col gap-0" aria-label="Mobile navigation">
+          <div
+            className="fixed inset-0 bg-ink/40 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+        {/* Mobile Slide-in Nav */}
+        <nav
+          id="mobile-nav"
+          className={`fixed top-0 right-0 h-full w-72 bg-parchment z-50 md:hidden transform transition-transform duration-300 ease-out shadow-2xl ${
+            menuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          aria-label="Mobile navigation"
+          aria-hidden={!menuOpen}
+        >
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+            <span className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Menu</span>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="p-2 -mr-2 text-ink-muted hover:text-ink"
+              aria-label="Close menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="flex flex-col px-6 py-4 gap-0 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 60px)' }}>
             {navLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-ink py-3"
+                className={`font-sans text-sm tracking-[0.05em] uppercase py-3 border-b border-border/50 transition-colors ${
+                  location.pathname === link.to ? 'text-crimson font-bold' : 'text-ink-muted hover:text-ink'
+                }`}
                 onClick={() => setMenuOpen(false)}
                 {...(location.pathname === link.to ? { 'aria-current': 'page' as const } : {})}
               >
@@ -157,7 +187,7 @@ function Header() {
               href={DONATE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-crimson/10 text-crimson font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200 mt-1"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-crimson/10 text-crimson font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200 mt-4"
               onClick={() => setMenuOpen(false)}
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -165,7 +195,7 @@ function Header() {
               </svg>
               Support This Work
             </a>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mt-4">
               <ThemeToggle />
               <span className="font-sans text-sm text-ink-muted">Toggle theme</span>
             </div>
@@ -184,8 +214,12 @@ function Header() {
                 Sign In
               </button>
             )}
-          </nav>
-        )}
+            <p className="font-sans text-[0.6rem] text-ink-faint mt-6">
+              Press <kbd className="px-1.5 py-0.5 bg-parchment-dark rounded text-[0.55rem] font-mono">/</kbd> to search &middot;
+              <kbd className="px-1.5 py-0.5 bg-parchment-dark rounded text-[0.55rem] font-mono ml-1">j</kbd>/<kbd className="px-1.5 py-0.5 bg-parchment-dark rounded text-[0.55rem] font-mono">k</kbd> to navigate chapters
+            </p>
+          </div>
+        </nav>
       </div>
       <div className="h-[3px] bg-crimson" />
     </header>
@@ -212,10 +246,10 @@ function Footer() {
             <div className="flex flex-col gap-2">
               <Link to="/" className="font-sans text-sm text-white/50 hover:text-white transition-colors">The Record</Link>
               <Link to="/search" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Search</Link>
+              <Link to="/timeline" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Timeline</Link>
               <Link to="/methodology" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Methodology</Link>
               <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
-              <Link to="/analytics" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Analytics</Link>
             </div>
           </nav>
           <div>
@@ -237,6 +271,15 @@ function Footer() {
               </svg>
               Support This Work
             </a>
+            {/* Social Links */}
+            <div className="flex items-center gap-3 mt-5">
+              <a href="https://x.com/VeritasWorldwide" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors" aria-label="Follow on X">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="mailto:contact@veritasworldwide.com" className="text-white/30 hover:text-white transition-colors" aria-label="Contact via email">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </a>
+            </div>
           </div>
         </div>
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
