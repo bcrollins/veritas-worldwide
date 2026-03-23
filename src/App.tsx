@@ -82,7 +82,7 @@ function Header() {
           <Link to="/" className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-ink hover:text-crimson transition-colors">
             Veritas Worldwide Press
           </Link>
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6" aria-label="Main navigation">
             {navLinks.map(link => (
               <Link
                 key={link.to}
@@ -132,7 +132,7 @@ function Header() {
             )}
           </nav>
           <button
-            className="md:hidden p-3 -mr-3 text-ink"
+            className="lg:hidden p-3 -mr-3 text-ink"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
@@ -150,7 +150,7 @@ function Header() {
         {/* Mobile Menu Overlay */}
         {menuOpen && (
           <div
-            className="fixed inset-0 bg-ink/40 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-ink/40 backdrop-blur-sm z-[60] lg:hidden"
             onClick={() => setMenuOpen(false)}
             aria-hidden="true"
           />
@@ -158,7 +158,7 @@ function Header() {
         {/* Mobile Slide-in Nav */}
         <nav
           id="mobile-nav"
-          className={`fixed top-0 right-0 h-full w-72 bg-parchment z-50 md:hidden transform transition-transform duration-300 ease-out shadow-2xl ${
+          className={`fixed top-0 right-0 h-full w-72 bg-parchment z-[70] lg:hidden transform transition-transform duration-300 ease-out shadow-2xl ${
             menuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-label="Mobile navigation"
