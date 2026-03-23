@@ -1,7 +1,7 @@
 import { type ReactNode, useEffect, useMemo, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
-import type { ContentBlock, Chapter } from '../data/chapters'
+import type { ContentBlock, Chapter, ImageData } from '../data/chapters'
 import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
 import BackToTop from '../components/BackToTop'
@@ -12,6 +12,92 @@ import { DONATE_URL } from '../lib/constants'
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
+function FigureBlock({ image }: { image: ImageData }) {
+  const widthClass = image.width === 'full'
+    ? 'max-w-none -mx-6 md:-mx-12'
+    : image.width === 'narrow'
+    ? 'max-w-md mx-auto'
+    : 'max-w-2xl mx-auto'
+
+  return (
+    <figure className={`my-10 ${widthClass}`}>
+      <div className="overflow-hidden rounded-sm border border-border bg-parchment-dark">
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+          className="w-full h-auto object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.style.display = 'none'
+            const parent = target.parentElement
+            if (parent) {
+              parent.classList.add('hidden')
+              const caption = parent.parentElement?.querySelector('figcaption')
+              if (caption) (caption as HTMLElement).style.display = 'none'
+            }
+          }}
+        />
+      </div>
+      {(image.caption || image.credit) && (
+        <figcaption className="mt-3 px-1">
+          {image.caption && (
+            <p className="font-sans text-sm text-ink-muted leading-relaxed">{image.caption}</p>
+          )}
+          {image.credit && (
+            <p className="font-sans text-xs text-ink-faint mt-1">
+              {image.creditUrl ? (
+                <a href={image.creditUrl} target="_blank" rel="noopener noreferrer" className="hover:text-crimson transition-colors">
+                  {image.credit}
+                </a>
+              ) : (
+                image.credit
+              )}
+            </p>
+          )}
+        </figcaption>
+      )}
+    </figure>
+  )
+}
+
+function HeroImage({ image }: { image: ImageData }) {
+  return (
+    <figure className="mb-10 -mx-6 md:-mx-12 lg:-mx-20">
+      <div className="overflow-hidden rounded-sm">
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="eager"
+          className="w-full h-64 md:h-80 lg:h-96 object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.closest('figure')?.classList.add('hidden')
+          }}
+        />
+      </div>
+      {(image.caption || image.credit) && (
+        <figcaption className="mt-2 px-6 md:px-12 lg:px-20">
+          {image.caption && (
+            <p className="font-sans text-xs text-ink-muted">{image.caption}</p>
+          )}
+          {image.credit && (
+            <p className="font-sans text-[0.65rem] text-ink-faint mt-0.5">
+              {image.creditUrl ? (
+                <a href={image.creditUrl} target="_blank" rel="noopener noreferrer" className="hover:text-crimson transition-colors">
+                  {image.credit}
+                </a>
+              ) : (
+                image.credit
+              )}
+            </p>
+          )}
+        </figcaption>
+      )}
+    </figure>
+  )
 }
 
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
@@ -143,6 +229,10 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
           ))}
         </div>
       )
+
+    case 'image':
+      if (!block.image) return null
+      return <FigureBlock image={block.image} />
 
     default:
       return null
@@ -511,6 +601,9 @@ export default function ChapterPage() {
     <ReadingProgress />
     <BackToTop />
     <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      {/* Hero Image */}
+      {chapter.heroImage && <HeroImage image={chapter.heroImage} />}
+
       {/* Chapter Header */}
       <header className="mb-12 border-b border-border pb-10">
         <div className="flex items-start justify-between gap-4">

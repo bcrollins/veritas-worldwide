@@ -32,14 +32,24 @@ export interface TimelineEvent {
   text: string;
 }
 
+export interface ImageData {
+  src: string;
+  alt: string;
+  caption?: string;
+  credit?: string;
+  creditUrl?: string;
+  width?: 'full' | 'wide' | 'narrow';
+}
+
 export interface ContentBlock {
-  type: 'dropcap' | 'text' | 'heading' | 'subheading' | 'quote' | 'evidence' | 'stats' | 'table' | 'timeline';
+  type: 'dropcap' | 'text' | 'heading' | 'subheading' | 'quote' | 'evidence' | 'stats' | 'table' | 'timeline' | 'image';
   text?: string;
   quote?: Quote;
   evidence?: EvidenceBox;
   stats?: StatCard[];
   table?: TableData;
   timeline?: TimelineEvent[];
+  image?: ImageData;
 }
 
 export interface Chapter {
@@ -50,6 +60,7 @@ export interface Chapter {
   dateRange: string;
   author: string;
   publishDate: string;
+  heroImage?: ImageData;
   content: ContentBlock[];
   sources: Source[];
   crossLinks: { label: string; chapterId: string }[];
@@ -65,6 +76,13 @@ export const chapters: Chapter[] = [
     dateRange: '',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/National_Archives_Building_-_from_Pennsylvania_Avenue.jpg/1280px-National_Archives_Building_-_from_Pennsylvania_Avenue.jpg',
+      alt: 'The National Archives Building in Washington, D.C., viewed from Pennsylvania Avenue — the repository of America\'s founding documents and declassified government records',
+      caption: 'The National Archives Building, Washington, D.C. — where the primary source documents cited throughout this publication are preserved and publicly accessible.',
+      credit: 'Photo: National Archives, Public Domain via Wikimedia Commons',
+      creditUrl: 'https://commons.wikimedia.org/wiki/File:National_Archives_Building_-_from_Pennsylvania_Avenue.jpg',
+    },
     content: [
       { type: 'dropcap', text: 'Before proceeding, it is necessary to address a phrase that will occur to many readers upon encountering this book\'s subject matter. The term "conspiracy theory" has become, in modern usage, a mechanism for dismissing inquiry rather than engaging with it. Its history is instructive. A 1967 CIA dispatch (Document 1035-960), declassified in 1976 under a Freedom of Information Act request by The New York Times, recommended that the Agency\'s media contacts use the term "conspiracy theorists" to discredit critics of the Warren Commission\'s findings on the assassination of President Kennedy. The document is available in full from the National Archives.' },
       { type: 'text', text: 'This is not to suggest that all claims labeled "conspiracy theories" are true. Many are not. It is to observe that the phrase functions, in practice, as a thought-terminating cliché — a label that substitutes for analysis. When a claim is false, it can be refuted with evidence. When a claim is true but inconvenient, it is often easier to label it a "conspiracy theory" than to address the evidence it presents.' },
@@ -102,6 +120,12 @@ export const chapters: Chapter[] = [
     dateRange: '2025',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/New_york_times_square-terabanswer.jpg/1280px-New_york_times_square-terabander.jpg',
+      alt: 'The United States Capitol Building — seat of the United States Congress and center of American legislative power',
+      caption: 'The institutions that govern modern life — financial, political, pharmaceutical, and intelligence — form an interconnected architecture documented through primary sources.',
+      credit: 'Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'This chapter is your map. The chapters that follow will take you deep into the history — the Rothschild banking dynasty, the creation of the Federal Reserve, the assassination of JFK, the Epstein intelligence operation, and more. But before you descend into those details, you need to see the present clearly. What follows is a systematic overview of the interlocking systems that shape your daily life: what you eat, what you watch, who represents you, how your money works, and what happens to those who try to change it.' },
       { type: 'heading', text: 'I. Your Representatives Are Bought' },
@@ -131,6 +155,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'The spending is strategic. When Rep. Cori Bush (D-MO) and Rep. Jamaal Bowman (D-NY) — both members of "The Squad" who vocally supported Palestinian rights — faced primary challenges, AIPAC flooded their opponents with cash. Wesley Bell received $2.55 million from AIPAC-linked donors and defeated Bush. George Latimer received $2.45 million and defeated Bowman. The message to Congress is unmistakable: criticize Israel, and you will be replaced.' },
       { type: 'evidence', evidence: { tier: 'verified', label: 'VERIFIED — FEDERAL ELECTION COMMISSION RECORDS', text: 'All AIPAC contribution data is sourced from FEC filings as compiled by OpenSecrets.org. These are public records. Every dollar listed above is documented, traceable, and verifiable. The pattern is clear: AIPAC spends across both parties, targeting leadership positions and eliminating dissenters.' } },
       { type: 'heading', text: 'II. Six Corporations Control What You See' },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Television_studio_HTV_Wales.jpg/1280px-Television_studio_HTV_Wales.jpg', alt: 'Television broadcasting studio — representative of the media infrastructure controlled by six corporations', caption: 'A television broadcasting studio. In 1983, fifty companies controlled the majority of American media. By 2025, that number collapsed to six — all sharing the same institutional investors.', credit: 'Photo: Public Domain via Wikimedia Commons' } },
       { type: 'text', text: 'In 1983, fifty companies controlled the majority of American media. By 2025, that number has collapsed to six: Comcast, Walt Disney, Warner Bros. Discovery, Paramount Global, Sony, and Amazon. These six corporations control approximately 90% of what Americans read, watch, and hear. But the consolidation goes deeper than corporate logos.' },
       { type: 'text', text: 'A Harvard University investigation into media ownership revealed a striking pattern: the same institutional investors — Vanguard, BlackRock, and State Street — appear as top shareholders in virtually every major media company. Vanguard holds 13.05% of Fox/News Corp, 7.43% of CNN\'s parent company, and 7.66% of Disney/ABC. BlackRock holds 4.99% of Fox, 4.85% of CNN, and comparable stakes across the board. State Street rounds out the trio.' },
       { type: 'table', table: {
@@ -147,6 +172,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'This means the same three asset managers that control your retirement fund also control the news you consume. The illusion of media diversity — Fox vs. CNN, MSNBC vs. Newsmax — masks a deeper unity of ownership. The "debate" is managed. The boundaries of acceptable discourse are set by the same capital.' },
       { type: 'evidence', evidence: { tier: 'circumstantial', label: 'CIRCUMSTANTIAL — OWNERSHIP ≠ EDITORIAL CONTROL', text: 'Institutional ownership does not automatically equal editorial control. Vanguard and BlackRock hold shares through index funds on behalf of millions of investors. However, these firms exercise proxy voting power at shareholder meetings, influence board composition, and set ESG standards that shape corporate behavior. The question is not whether they dictate headlines — it is whether the structural incentives of consolidated ownership produce a narrowing of permissible narratives.' } },
       { type: 'heading', text: 'III. Three Companies Own Everything' },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/BlackRock_HQ_51_52_St_NYC_by_D_Ramey_Logan.jpg/1280px-BlackRock_HQ_51_52_St_NYC_by_D_Ramey_Logan.jpg', alt: 'BlackRock headquarters at 50 Hudson Yards, New York City — the world\'s largest asset manager', caption: 'BlackRock headquarters, New York City. With $12.5 trillion in assets under management, BlackRock is the largest asset manager in history — a silent majority shareholder in virtually every major publicly traded corporation.', credit: 'Photo: D Ramey Logan, CC BY-SA 4.0, via Wikimedia Commons' } },
       { type: 'text', text: 'BlackRock, Vanguard, and State Street collectively manage approximately $25.9 trillion in assets — a figure that exceeds the entire GDP of the United States (~$28 trillion). BlackRock alone manages $12.5 trillion. These are not banks. They are asset managers — the silent majority shareholders of virtually every publicly traded corporation in America.' },
       { type: 'stats', stats: [
         { value: '$12.5T', label: 'BLACKROCK AUM' },
@@ -254,6 +280,12 @@ export const chapters: Chapter[] = [
     dateRange: '1694–1836',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bank_of_England_-_geograph.org.uk_-_3089230.jpg/1280px-Bank_of_England_-_geograph.org.uk_-_3089230.jpg',
+      alt: 'The Bank of England, Threadneedle Street, London — established 1694, the model for central banking worldwide',
+      caption: 'The Bank of England, established in 1694, became the template for central banking systems around the world. Its creation marked the beginning of private control over national money supplies.',
+      credit: 'Photo: Chris Downer, CC BY-SA 2.0, via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'In 1744, in a cramped alley of the Frankfurt Judengasse — the walled Jewish ghetto of Frankfurt am Main — a boy named Mayer Amschel Bauer was born. His father, Moses Amschel Bauer, ran a small moneylending and coin-trading business. Above the door of the shop hung a red hexagonal shield, the German word for which is Rothschild. When Mayer Amschel inherited the business, he changed the family name to match the sign. That decision would prove to be one of the most consequential rebranding exercises in the history of money.' },
       { type: 'text', text: 'What Mayer Amschel Rothschild built over the next six decades was not merely a bank. It was a system — a network of sons strategically placed in the five financial capitals of Europe, a communications infrastructure that moved information faster than any government courier, and a philosophy of lending that would eventually become the template for every central bank on earth. To understand the Federal Reserve, the Bank of England, or the European Central Bank, you must first understand the man who, more than any other, invented the concept they embody: that the power to create and control money is the supreme form of political power.' },
@@ -325,6 +357,12 @@ export const chapters: Chapter[] = [
     dateRange: '1832–1901',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Andrew_jackson_head.jpg/800px-Andrew_jackson_head.jpg',
+      alt: 'Portrait of President Andrew Jackson, who vetoed the recharter of the Second Bank of the United States in 1832',
+      caption: 'President Andrew Jackson — the only president to fully pay off the national debt — waged open war against the Second Bank of the United States. "The Bank is trying to kill me," he told his vice president, "but I will kill it."',
+      credit: 'Portrait by Ralph Eleaser Whiteside Earl, Public Domain, via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'On the morning of January 30, 1835, President Andrew Jackson was leaving the funeral of a South Carolina congressman at the United States Capitol when a man named Richard Lawrence stepped forward and pointed a pistol at him from a distance of about eight feet. The pistol misfired. Lawrence drew a second pistol. It also misfired. Jackson, then 67 years old, lunged at his attacker with his cane. The probability of both pistols misfiring in sequence, given the weather conditions that day, was later calculated by the Army to be approximately 1 in 125,000.' },
       { type: 'text', text: 'Andrew Jackson hated banks. This was not a political position adopted for electoral advantage. It was a visceral, personal conviction rooted in his frontier upbringing and his experiences with debt and financial ruin. He believed, with the certainty of a man who had survived duels and Indian wars, that the Second Bank of the United States was a corrupt institution that served the rich at the expense of the poor — and that it was his duty to destroy it.' },
@@ -365,6 +403,12 @@ export const chapters: Chapter[] = [
     dateRange: '1907–1913',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Jekyll_Island_Club_Hotel_-_panoramio.jpg/1280px-Jekyll_Island_Club_Hotel_-_panoramio.jpg',
+      alt: 'The Jekyll Island Club in Georgia, site of the secret 1910 meeting that drafted the Federal Reserve Act',
+      caption: 'The Jekyll Island Club, Georgia — in November 1910, six men representing one quarter of the world\'s wealth met here in secret to draft the blueprint for the Federal Reserve System.',
+      credit: 'Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'In 1910, the six most powerful men in American finance boarded a private railcar at a New Jersey station and traveled south under assumed names to a private island off the coast of Georgia.' },
       { type: 'text', text: 'The six most powerful men in American finance boarded a private railcar at a New Jersey station and traveled south under assumed names. They told\ntheir servants they were going duck hunting. They told no one else anything.\nWhen they arrived at Jekyll Island, Georgia  —  a private retreat owned by a club of\nmillionaires that included J.P. Morgan, William Rockefeller, and Joseph Pulitzer  — \nthey locked the doors and spent nine days writing the legislation that would become\nthe Federal Reserve Act of 1913.\n[1]\nThis is not a conspiracy theory. It is documented history, confirmed by the participants themselves in their own memoirs and in the historical record. Frank Vanderlip, president of National City Bank (now Citibank), wrote about the meeting in a\n1935 article in the Saturday Evening Post: "I was as secretive  —  indeed, as furtive  —  as\nany conspirator. Discovery, we knew, simply must not happen, or else all our time\nand effort would be wasted. If it were to be exposed publicly that our particular\ngroup had got together and written a banking bill, that bill would have no chance\nwhatever of passage by Congress."\n[1]' },
@@ -425,6 +469,12 @@ export const chapters: Chapter[] = [
     dateRange: '1914–1919',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg',
+      alt: 'British soldiers in the trenches during the Battle of the Somme, 1916 — World War I',
+      caption: 'British soldiers in the trenches during the Battle of the Somme, 1916. The Great War that reshaped Europe was financed on both sides by interconnected banking dynasties.',
+      credit: 'Photo: Imperial War Museum, Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'World War I' },
       { type: 'text', text: 'C HAPTER FOUR  |  1914 – 1919\nThe Warburg\nBrothers &\nWorld War I\nPaul Warburg designed the Federal Reserve and served on its first board.\nHis brother Max was the chief financial adviser to the German Kaiser and\nhelped finance the German war effort. They were on opposite sides of the\ndeadliest war in history  —  yet remained in close contact throughout. This\nchapter examines what the documented record shows.' },
@@ -479,6 +529,12 @@ export const chapters: Chapter[] = [
     dateRange: '1920–1971',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Henry_ford_1919.jpg/800px-Henry_ford_1919.jpg',
+      alt: 'Henry Ford, 1919 — industrialist, founder of Ford Motor Company, and publisher of The Dearborn Independent',
+      caption: 'Henry Ford, 1919. The industrialist who built the American middle class also published the most controversial newspaper series in American history.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'Henry Ford was the most powerful industrialist in American history. He was also the most prominent anti-Semite in the Western world, and his writings directly influenced Adolf Hitler.' },
       { type: 'evidence', evidence: { tier: 'circumstantial', label: 'CONTENT WARNING', text: 'This chapter discusses Henry Ford\'s documented anti-Semitic writings and their doc- umented influence on Adolf Hitler. These views are presented because they are histor- ically significant and factually documented — not because they are endorsed. The chapter explicitly distinguishes between Ford\'s factually grounded criticisms of banking and his bigoted, unsupported claims about Jewish people as a group. The two must not be conflated. n 1920, Henry Ford — the man who had put America on wheels, who had inven- ted the assembly line, who paid his workers $5 a day when the going rate was $2 — began publishing a series of articles in his newspaper, the Dearborn Independent, under the headline "The International Jew: The World\'s Problem." The art- icles ran for 91 consecutive weeks. They were collected into four volumes and dis- tributed by Ford dealerships across the United States. They were translated into Ger-' } },
@@ -536,6 +592,12 @@ export const chapters: Chapter[] = [
     dateRange: '1897–1948',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Balfour_declaration_unmarked.jpg/800px-Balfour_declaration_unmarked.jpg',
+      alt: 'The Balfour Declaration of 1917 — the letter from British Foreign Secretary Arthur Balfour to Lord Rothschild pledging British support for a Jewish homeland in Palestine',
+      caption: 'The Balfour Declaration, November 2, 1917 — a 67-word letter from British Foreign Secretary Arthur Balfour to Lord Walter Rothschild that would reshape the Middle East for the next century.',
+      credit: 'British Government, Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'To understand the forces that shaped the modern Middle East, one must begin with the texts that shaped the worldview, the letter that created the state, and the family that financed both.' },
       { type: 'text', text: 'Editorial Note: This chapter examines the Talmud as a historical and legal document, the Balfour Declaration as a primarysource diplomatic instrument, and the Rothschild family\'s documented role in both Zionism and international finance. All\nTalmudic passages are quoted directly from the William Davidson Talmud on Sefaria.org  —  the world\'s largest free library of\nJewish texts  —  with full tractate, folio, and passage citations. Each quote is hyperlinked to the original bilingual\n(Hebrew/Aramaic + English) source so the reader may verify it independently. Jewish scholars, the Anti-Defamation League,\nand academic Talmudists have provided extensive context for these passages, and their responses are included alongside every\nquote. This chapter does not claim that any religious text causes any particular behavior. It documents what the texts say,\nwhat scholars say about them, and what historical actors have done.' },
@@ -608,6 +670,12 @@ export const chapters: Chapter[] = [
     dateRange: '1949–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/PikiWiki_Israel_7260_Headquarter_of_the_Mossad.jpg/1280px-PikiWiki_Israel_7260_Headquarter_of_the_Mossad.jpg',
+      alt: 'Former headquarters of the Mossad, Israel\'s national intelligence agency',
+      caption: 'The Mossad — HaMossad leModiʿin uleTafkidim Meyuḥadim (the Institute for Intelligence and Special Operations) — operates as one of the most effective intelligence agencies in the world.',
+      credit: 'Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'On December 13, 1949, Prime Minister David Ben-Gurion signed the order that created the Central Institute for Intelligence and Security — what would become the Mossad.' },
       { type: 'text', text: 'would become the Mossad.[1] The agency was reorganized in March 1951 and\nincorporated directly into the Prime Minister\'s Office, where it has remained ever since\n —  reporting exclusively to the Prime Minister, not to the Knesset or any parliamentary\ncommittee.[1]\nThe Mossad\'s full name is HaMossad leModiʿin uleTafkidim Meyuḥadim  —  "The Institute\nfor Intelligence and Special Operations." Israeli journalist Ronen Bergman, who spent\neight years interviewing over 1,000 intelligence operatives for his book Rise and Kill\nFirst, described the Mossad as functioning as a "deep state" due to its accountability\nstructure: it answers to one person, the sitting Prime Minister, and its budget,\noperations, and personnel are classified.[1]\nThe official seal of the Mossad. The agency\'s motto, from Proverbs 11:14: "Where no counsel is, the people fall, but in the multitude of\ncounsellors there is safety." Source: Israeli Government.' },
@@ -691,6 +759,12 @@ export const chapters: Chapter[] = [
     dateRange: '1963',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/800px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg',
+      alt: 'Official White House portrait of President John F. Kennedy',
+      caption: 'President John F. Kennedy demanded inspections of Israel\'s Dimona nuclear facility and moved to register AIPAC\'s predecessor as a foreign agent. He was assassinated on November 22, 1963.',
+      credit: 'Official White House photo by Cecil Stoughton, Public Domain',
+    },
     content: [
       { type: 'dropcap', text: 'In 1963, President Kennedy signed Executive Order 11110, demanded nuclear inspections at Israel\'s secret Dimona reactor, and ordered the American Zionist Council to register as a foreign agent. Five months later, he was dead.' },
       { type: 'text', text: 'Editorial Standard: This chapter presents only documented historical facts sourced to primary records. No causal connection between Kennedy\'s monetary, nuclear, and lobbying policies and his assassination is asserted. The timeline and sequence of events are documented; the reader draws their own conclusions.' },
@@ -728,6 +802,12 @@ export const chapters: Chapter[] = [
     dateRange: '1963',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Dealey_Plaza_2003.jpg/1280px-Dealey_Plaza_2003.jpg',
+      alt: 'Dealey Plaza in Dallas, Texas — site of the assassination of President John F. Kennedy on November 22, 1963',
+      caption: 'Dealey Plaza, Dallas, Texas — the site where President Kennedy was assassinated on November 22, 1963. The Warren Commission concluded Lee Harvey Oswald acted alone; subsequent investigations reached different conclusions.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'President John F. Kennedy' },
       { type: 'text', text: 'CHAPTER SIX (EXPANDED)  |  1961 – 1963\nJFK: The Last\nPresident Who\nFought the System\nIn 1963, President John F. Kennedy was simultaneously demanding nuclear\ninspections of Israel\'s secret Dimona reactor, forcing the American Zionist\nCouncil to register as a foreign agent, and issuing United States Notes to\nbypass the Federal Reserve. By November of that year, he was dead. What\nthe documents show  —  and what the official history does not  —  is the full\nscope of what Kennedy was doing in the final year of his presidency, and\nwho had reason to stop him.' },
@@ -792,6 +872,12 @@ export const chapters: Chapter[] = [
     dateRange: '1971–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Nixon_30-0316a.jpg/800px-Nixon_30-0316a.jpg',
+      alt: 'President Richard Nixon — who ended the gold standard in 1971 and established the petrodollar system',
+      caption: 'President Richard Nixon ended the Bretton Woods gold standard on August 15, 1971 — the "Nixon Shock." The petrodollar system that replaced it, secretly negotiated by Henry Kissinger, became the foundation of American economic hegemony.',
+      credit: 'Official White House photo, Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'On the evening of August 15, 1971, Richard Nixon appeared on national television and announced that the United States would no longer convert dollars to gold. The gold standard was dead.' },
       { type: 'text', text: 'The evening of August 15, 1971, Richard Nixon appeared on national television and announced that the United States would no longer convert dollars to gold at the fixed rate of $35 per ounce. With that announcement  — \nmade without consulting America\'s trading partners, in violation of the Bretton\nWoods Agreement signed in 1944  —  Nixon ended the gold standard and unilaterally\nrestructured the global financial system. The event is known as the "Nixon Shock."\nIts consequences are still unfolding today.\n[1]\nThe Bretton Woods system, established at a conference in New Hampshire in July\n1944, had made the U.S. dollar the world\'s reserve currency  —  but with a critical constraint. Every dollar in circulation was backed by gold at a fixed rate. Foreign governments could, at any time, exchange their dollar reserves for gold from the U.S.' },
@@ -827,6 +913,12 @@ export const chapters: Chapter[] = [
     dateRange: '1921–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Harold_Pratt_House_003.jpg/1280px-Harold_Pratt_House_003.jpg',
+      alt: 'The Harold Pratt House in New York City, headquarters of the Council on Foreign Relations',
+      caption: 'The Harold Pratt House, 58 East 68th Street, New York — headquarters of the Council on Foreign Relations since 1945. CFR membership has included virtually every Secretary of State, Treasury, and Defense since its founding.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'Carroll Quigley was a professor of history at Georgetown University, a mentor to Bill Clinton, and one of the most respected academic historians of the twentieth century. What he documented in his 1966 book Tragedy and Hope would reshape the understanding of how global power operates.' },
       { type: 'text', text: 'Quigley was a professor of history at Georgetown University, a mentor to Bill Clinton, and one of the most respected academic historians of the\ntwentieth century. In 1966, he published a 1,300‐page book called  Tragedy\nand Hope: A History of the World in Our Time. In it, he described, in explicit detail, the\nnetwork of international bankers who had controlled the governments of the Western world for more than a century. He was not a critic of this network. He was an admirer. He believed the public should know about it  —  and he believed the network\'s\ngoals were, on balance, beneficial.\n[1]\nQuigley wrote: "There does exist, and has existed for a generation, an international\nAnglophile network which operates, to some extent, in the way the radical Right believes the Communists act. In fact, this network, which we may identify as the\nRound Table Groups, has no aversion to cooperating with the Communists, or any\nother groups, and frequently does so. I know of the operations of this network be\ncause I have studied it for twenty years and was permitted for two years, in the early\n1960\'s, to examine its papers and secret records."\n[1]\n"The powers of financial capitalism had a far-reaching aim,\nnothing less than to create a world system of financial control\nin private hands able to dominate the political system of each\ncountry and the economy of the world as a whole."\nCARROLL QUIGLEY, TRAGEDY AND HOPE, 1966  —  GEORGETOWN UNIVERSITY PROFESSOR AND\nMENTOR TO BILL CLINTON\nThe Harold Pratt House at 58 East 68th Street in Manhattan  —  headquarters of the Council on Foreign Relations since 1945. The CFR\nwas founded in 1921 by the same banking network that created the Federal Reserve. Its members have included virtually every\nSecretary of State, Treasury Secretary, and CIA Director since WWII. (CFR)' },
@@ -865,6 +957,12 @@ export const chapters: Chapter[] = [
     dateRange: 'Explainer',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg/1280px-Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg',
+      alt: 'The Marriner S. Eccles Federal Reserve Board Building in Washington, D.C.',
+      caption: 'The Marriner S. Eccles Building, Washington, D.C. — headquarters of the Federal Reserve Board of Governors. The institution that controls the American money supply is neither fully federal nor a reserve.',
+      credit: 'Photo: AgnosticPreachersKid, CC BY-SA 3.0, via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'Federal Reserve Building' },
       { type: 'text', text: 'How the Federal\nReserve Works\nThe Federal Reserve is the most powerful financial institution in the\nworld. Most Americans have no idea how it works, who owns it, or who\nreceives the interest on the money it creates. This chapter explains it in\nplain English  —  and follows the money all the way to BlackRock,\nVanguard, and State Street.' },
@@ -931,6 +1029,12 @@ export const chapters: Chapter[] = [
     dateRange: '2007–2010',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Wall_Street_-_New_York_Stock_Exchange.jpg/1280px-Wall_Street_-_New_York_Stock_Exchange.jpg',
+      alt: 'The New York Stock Exchange on Wall Street — epicenter of the 2008 financial crisis',
+      caption: 'The New York Stock Exchange, Wall Street. In 2008, the reckless gambling of the institutions inside this building crashed the global economy. The government bailed out the banks with taxpayer money. No senior executive went to prison.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'The story of the 2008 financial crisis begins not in 2008 but in 1999, when the Glass-Steagall Act was repealed. What followed was the largest transfer of wealth from the public to the private sector in American history.' },
       { type: 'text', text: 'The story of the 2008 financial crisis begins not in 2008 but in 1999, when the\nGlass-Steagall Act was repealed. Glass-Steagall, passed in 1933 in direct response to the banking speculation that caused the Great Depression, had for\nsixty-six years separated commercial banking (taking deposits, making loans) from\ninvestment banking (trading securities, underwriting bonds). Its repeal  —  through\nthe Gramm-Leach-Bliley Act, signed by President Bill Clinton  —  allowed the largest\nbanks to combine both functions. The architects of the repeal included Robert Rubin, who had been co-chairman of Goldman Sachs before becoming Treasury Secretary, and who joined Citigroup as a senior advisor immediately after leaving the\nTreasury.\n[1]\nThe repeal of Glass-Steagall was not the only deregulatory move that enabled the\n2008 crisis. In 2000, the Commodity Futures Modernization Act exempted derivatives' },
@@ -964,6 +1068,12 @@ export const chapters: Chapter[] = [
     dateRange: '1963–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1280px-US_Capitol_west_side.JPG',
+      alt: 'The United States Capitol Building — where AIPAC-funded representatives shape American foreign policy',
+      caption: 'The United States Capitol. In the 2024 election cycle, AIPAC directed $42.6 million to 489 congressional candidates across both parties — making it the most powerful foreign policy lobby in America.',
+      credit: 'Photo: Architect of the Capitol, Public Domain',
+    },
     content: [
       { type: 'dropcap', text: 'U.S. Capitol Building' },
       { type: 'text', text: 'CHAPTER FIFTEEN  |  1963 – 2026\nAIPAC: The Lobby\nThat Rewrote\nAmerica\nThe American Israel Public Affairs Committee was born from the ashes of an\norganization that the Kennedy administration forced to register as a foreign\nagent. It has never registered. Today it spends over $43 million per election\ncycle, has a dedicated lobbyist for virtually every member of Congress, and\nhas shaped every major piece of U.S. Middle East policy for sixty years. The\ndata is all public record. The question is why so few people have read it.' },
@@ -1032,6 +1142,12 @@ export const chapters: Chapter[] = [
     dateRange: '1948–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Israeli_F-16s_at_Red_Flag.jpg/1280px-Israeli_F-16s_at_Red_Flag.jpg',
+      alt: 'Israeli Air Force F-16 fighter jets — purchased with U.S. foreign military financing',
+      caption: 'Israeli Air Force F-16 Fighting Falcons. The United States has provided over $300 billion in inflation-adjusted aid to Israel since 1948 — the largest cumulative recipient of U.S. foreign assistance.',
+      credit: 'Photo: U.S. Air Force, Public Domain',
+    },
     content: [
       { type: 'dropcap', text: 'U.S. Capitol' },
       { type: 'text', text: 'CHAPTER SIXTEEN  |  2001 – 2026\nThe $174 Billion\nQuestion: What\nAmerica Bought\nfor Israel\nSince September 11, 2001, the United States has provided Israel with more\nthan $100 billion in direct aid  —  the largest cumulative assistance package to\nany country in American history. This chapter documents exactly what was\nbought, who voted for it, who funded the people who voted for it, and what\nthe Congressional Research Service says about what the American taxpayer\nreceived in return.\nBy B.R.  |  Published March 2026  |  Sources: CRS, State Dept, DOD, FEC, Congress.gov' },
@@ -1079,6 +1195,12 @@ export const chapters: Chapter[] = [
     dateRange: '1967',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay%2C_29_July_1967_%28NH_107452%29.jpg/1280px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay%2C_29_July_1967_%28NH_107452%29.jpg',
+      alt: 'USS Liberty (AGTR-5) — the American intelligence ship attacked by Israeli forces on June 8, 1967',
+      caption: 'USS Liberty (AGTR-5) underway in Chesapeake Bay, July 1967 — weeks after surviving the Israeli attack that killed 34 American servicemen and wounded 171. The incident was classified for decades.',
+      credit: 'Photo: U.S. Navy, Public Domain via Naval History and Heritage Command',
+    },
     content: [
       { type: 'dropcap', text: 'On June 8, 1967, Israeli air and naval forces launched a sustained, two-hour attack on a clearly marked United States Navy intelligence ship in international waters, killing 34 American sailors and wounding 171.' },
       { type: 'text', text: 'WHY THIS MATTERS\nThis chapter matters because it is a stark example of a U.S. ally attacking American forces and the subsequent political cover‐up that sacrificed truth for geopolitical strategy. It reveals a pattern of deception that has defined the U.S.‐Israel relationship for decades and raises critical questions about sovereignty,\naccountability, and the real cost of strategic alliances. The Liberty incident\nraises documented questions about the relationship between diplomatic considerations and the pursuit of accountability when allied nations are involved\nin attacks on U.S. military personnel.' },
@@ -1120,6 +1242,12 @@ export const chapters: Chapter[] = [
     dateRange: '1968',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/RFK_announcing_death_of_MLK%2C_Indianapolis%2C_April_4%2C_1968_%28LOC%29.jpg/800px-RFK_announcing_death_of_MLK%2C_Indianapolis%2C_April_4%2C_1968_%28LOC%29.jpg',
+      alt: 'Robert F. Kennedy announcing the death of Martin Luther King Jr., Indianapolis, April 4, 1968',
+      caption: 'Robert F. Kennedy speaking to a crowd in Indianapolis on April 4, 1968, informing them of the assassination of Martin Luther King Jr. Two months later, Kennedy himself would be assassinated.',
+      credit: 'Photo: Library of Congress, Public Domain',
+    },
     content: [
       { type: 'dropcap', text: 'Just after midnight on June 5, 1968, in the crowded pantry of the Ambassador Hotel in Los Angeles, Senator Robert F. Kennedy was shot and killed moments after winning the California Democratic presidential primary.' },
       { type: 'text', text: 'Just after midnight on June 5, 1968, in the hot, crowded, and chaotic pantry of the Ambassador Hotel in Los Angeles, the life of Senator Robert F. Kennedy — and the trajectory of American politics — was altered forever.' },
@@ -1172,6 +1300,12 @@ export const chapters: Chapter[] = [
     dateRange: '1948–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Original_CIA_Headquarters_Building.jpg/1280px-Original_CIA_Headquarters_Building.jpg',
+      alt: 'The Original Headquarters Building of the Central Intelligence Agency in Langley, Virginia',
+      caption: 'CIA Headquarters, Langley, Virginia. Operation Mockingbird — the documented CIA program to infiltrate and influence American media — was run from this building beginning in the early 1950s.',
+      credit: 'Photo: Carol M. Highsmith, Public Domain via Library of Congress',
+    },
     content: [
       { type: 'dropcap', text: '1975 Church Committee hearings. Over 400 journalists\non the CIA payroll. Carl Bernstein\'s 1977 Rolling Stone' },
       { type: 'text', text: 'exposé.  How  narrative  control  was  institutionalized' },
@@ -1215,6 +1349,12 @@ export const chapters: Chapter[] = [
     dateRange: '1953–1973',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Rockefeller_Center_MAM.JPG/800px-Rockefeller_Center_MAM.JPG',
+      alt: 'Rockefeller Center, New York City — symbol of the Rockefeller family\'s influence on American institutions',
+      caption: 'Rockefeller Center, New York City. The Rockefeller Foundation\'s 1910 Flexner Report reshaped American medical education to favor pharmaceutical treatment — a system that generates $4.5 trillion annually.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'On April 13, 1953, CIA Director Allen Dulles authorized Project MKUltra — a covert program to develop techniques for mind control, interrogation, and psychological manipulation using drugs, hypnosis, and torture.' },
       { type: 'text', text: 'WHY THIS MATTERS\nMKUltra is not ancient history. It is documented proof that the United States\ngovernment conducted illegal medical experiments on its own citizens\nwithout their knowledge or consent  —  and then destroyed the evidence. The\nprogram\'s techniques of behavioral manipulation, pharmaceutical coercion,\nand institutional cover-up established patterns that persist in intelligence operations today. If a government did this once, and was caught, and faced no\nmeaningful consequences, the question is not whether it could happen again  — \nit is whether it ever stopped.' },
@@ -1260,6 +1400,12 @@ export const chapters: Chapter[] = [
     dateRange: '1910–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Dr_Schreiber_of_San_Augustine_giving_a_typhoid_inoculation_at_a_rural_school%2C_San_Augustine_County%2C_Texas.jpg/800px-Dr_Schreiber_of_San_Augustine_giving_a_typhoid_inoculation_at_a_rural_school%2C_San_Augustine_County%2C_Texas.jpg',
+      alt: 'Doctor administering a typhoid inoculation at a rural school in Texas, 1943',
+      caption: 'A physician administering a typhoid inoculation at a rural school in San Augustine County, Texas, 1943. The history of vaccination in America involves both genuine public health advances and documented corporate conflicts of interest.',
+      credit: 'Photo: John Vachon, Farm Security Administration, Public Domain via Library of Congress',
+    },
     content: [
       { type: 'dropcap', text: 'Rockefeller Medicine\nHow one family\'s oil fortune was used to reshape American medicine, eliminate natural healing traditions, and build a pharmaceutical empire that\nprofits from chronic illness.' },
       { type: 'text', text: 'Rockefeller Medicine & The\nChronic Disease Machine\nIn 1910, a single report  —  funded by the richest man in America  —  transformed the practice of medicine from a diverse ecosystem of healing traditions into a pharmaceutical monoculture. The consequences are measured\nin trillions of dollars and millions of preventable deaths.\nVeritas Worldwide Press · Investigative Division · Updated March 2026 · Evidence tier: Verified / Circumstantial / Alleged\nefore John D. Rockefeller reshaped American medicine, the United States\nhad  a  thriving  ecosystem  of  medical  traditions.  Homeopathic  physicians, naturopaths, herbalists, osteopaths, and eclectic practitioners operated alongside allopathic (conventional) doctors. Medical schools were diverse,\ndecentralized, and often community‐funded. Patients had choices. Then came the\nFlexner Report  —  and everything changed.\nWHY THIS MATTERS\nIf you or someone you love takes daily medication for a chronic condition  — \ndiabetes, high blood pressure, high cholesterol, depression, acid reflux  —  this\nchapter explains how that became the default. The American medical system\nwas deliberately restructured to prioritize pharmaceutical treatment over prevention, nutrition, and natural remedies. Understanding this history is the\nfirst step toward reclaiming your health.' },
@@ -1326,6 +1472,12 @@ export const chapters: Chapter[] = [
     dateRange: '1955–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/WTC-2004-memorial.jpg/800px-WTC-2004-memorial.jpg',
+      alt: 'The Tribute in Light memorial at the World Trade Center site, New York City',
+      caption: 'The Tribute in Light at the World Trade Center site. The events of September 11, 2001 transformed American domestic and foreign policy. The 9/11 Commission Report left questions that remain unanswered.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'In 1986, the pharmaceutical industry achieved something unprecedented in American law: complete immunity from liability for injuries caused by childhood vaccines. This chapter examines how that happened and what followed.' },
       { type: 'text', text: 'WHY THIS MATTERS\nIf you have children, they are required to receive dozens of vaccine doses before they can attend school in most states. The companies that manufacture\nthese products cannot be sued if their products injure or kill your child  —  a\nlegal protection granted by Congress in 1986 that exists for no other product in\nAmerica. The government maintains a database of adverse events and a compensation program that has paid billions of dollars to victims. These are not\nconspiracy theories. They are facts of law, documented in the U.S. Code and the\nFederal Register. You have a right to know them.\n$4.7B+\nPAID TO VACCINE\nINJURY VICTIMS (NVICP,\n1988–2024)\n72+\nVACCINE DOSES BY AGE\n18 (2024 CDC\nSCHEDULE)' },
@@ -1374,6 +1526,12 @@ export const chapters: Chapter[] = [
     dateRange: '2001',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Nixon_Contact_Sheet_WHPO-8492.jpg/1280px-Nixon_Contact_Sheet_WHPO-8492.jpg',
+      alt: 'President Richard Nixon at a press briefing — architect of the War on Drugs',
+      caption: 'President Nixon declared drug abuse "public enemy number one" in 1971. A former domestic policy advisor later admitted the War on Drugs was designed to target anti-war and Black communities.',
+      credit: 'Photo: White House Photo Office, Public Domain via National Archives',
+    },
     content: [
       { type: 'dropcap', text: 'On the morning of September 11, 2001, four commercial airliners were hijacked and used as weapons against the United States. 2,977 people were killed. The official investigation that followed left questions that remain unanswered to this day.' },
       { type: 'text', text: 'I. The Official Timeline\nTIME (ET)\nEVENT\nDETAILS\n8:46 AM\nAA Flight 11 hits WTC North Tower\nBoeing 767, 92 aboard, floors 93-99\n9:03 AM\nUA Flight 175 hits WTC South Tower\nBoeing 767, 65 aboard, floors 77-85\n9:37 AM\nAA Flight 77 hits the Pentagon\nBoeing 757, 64 aboard, west wall\n9:59 AM\nWTC South Tower collapses\n56 minutes after impact\n10:03 AM\nUA Flight 93 crashes in Shanksville, PA\nBoeing 757, 44 aboard\n10:28 AM\nWTC North Tower collapses\n102 minutes after impact\n5:20 PM\nWTC Building 7 collapses\nNot hit by any aircraft\n2,977\nPEOPLE KILLED' },
@@ -1429,6 +1587,12 @@ export const chapters: Chapter[] = [
     dateRange: '1971–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flocculators_and_sedimentation_basins_%28overhead_view%29.jpg/1280px-Flocculators_and_sedimentation_basins_%28overhead_view%29.jpg',
+      alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
+      caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'The "War on Drugs," launched by President Richard Nixon in 1971, was never primarily about public health. A top Nixon aide later admitted it was a political weapon designed to target the antiwar left and Black communities.' },
       { type: 'text', text: 'WHY THIS MATTERS\nThe War on Drugs has shaped modern America. It has fueled mass incarceration, disproportionately devastating minority communities. It has militarized\npolicing, eroded civil liberties, and wasted trillions of taxpayer dollars, all\nwhile failing to curb drug use. Understanding its origins as a political tool, not\na public health campaign, is essential to dismantling its destructive legacy and\nbuilding a more just and effective approach to drug policy.\nn 1994, the late John Ehrlichman, a top domestic policy advisor to President\nRichard Nixon, gave a stunningly candid interview to the journalist Dan\nBaum. Reflecting on the genesis of the administration\'s "War on Drugs," Ehrlichman admitted what many had long suspected: it was a fraud. "The Nixon campaign in 1968, and the Nixon White House after that, had two enemies: the antiwar\nleft and black people," Ehrlichman stated. "We knew we couldn\'t make it illegal to' },
@@ -1468,6 +1632,12 @@ export const chapters: Chapter[] = [
     dateRange: '1945–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',
+      alt: 'RMS Titanic departing Southampton on April 10, 1912',
+      caption: 'RMS Titanic departing Southampton, April 10, 1912. Among the 1,517 who perished were Benjamin Guggenheim, Isidor Straus, and John Jacob Astor IV — three of the wealthiest men who opposed the creation of the Federal Reserve.',
+      credit: 'Photo: F.G.O. Stuart, Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'The official narrative of water fluoridation is a public health triumph. The documented history tells a more complicated story — one that begins not in a dental clinic but in an aluminum smelting plant.' },
       { type: 'text', text: 'WHY THIS MATTERS\nThe water you drink, cook with, and bathe in every day likely contains fluoride. This chapter examines the evidence that this ubiquitous chemical, long\npromoted as a public health triumph, may be an industrial pollutant with serious health consequences, particularly for our children. Understanding the\ntrue story of fluoride is essential for making informed decisions about the\nwater you and your family consume.\n72.3%\nOF THE U.S.\nPOPULATION ON\nPUBLIC WATER\nSYSTEMS RECEIVES\nFLUORIDATED WATER\n$9.8B\nESTIMATED 5-YEAR\nCOST TO REMOVE\nFLUORIDE FROM U.S.\nPUBLIC WATER\nSYSTEMS' },
@@ -1499,6 +1669,12 @@ export const chapters: Chapter[] = [
     dateRange: '1910–1913',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Bohemian_Grove_-_Owl_Shrine_-_April_1986.jpg/800px-Bohemian_Grove_-_Owl_Shrine_-_April_1986.jpg',
+      alt: 'The Owl Shrine at Bohemian Grove, photographed in 1986',
+      caption: 'The 40-foot owl shrine at Bohemian Grove, the private retreat in the redwoods of Northern California where American presidents, defense contractors, and media moguls gather each summer.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'The Unsinkable Plan\nThree of the wealthiest men in the world, all vocal opponents of the new Federal Reserve, died on the Titanic. The man who financed the ship, J.P. Morgan,  cancelled  his  trip  at  the  last  minute.  Coincidence?  This  chapter\nexamines the facts.' },
       { type: 'text', text: 'The Unsinkable Plan\nIn the icy waters of the North Atlantic, a tragedy unfolded that would\nbecome legend. But was it merely an accident? Or was it the final, bloody act\nin a silent war for control of America\'s financial future? This chapter lays\nout the evidence and asks the questions the mainstream narrative avoids..' },
@@ -1572,6 +1748,12 @@ export const chapters: Chapter[] = [
     dateRange: '1872–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
+      alt: 'National Security Agency headquarters at Fort Meade, Maryland',
+      caption: 'NSA Headquarters, Fort Meade, Maryland. Edward Snowden\'s 2013 disclosures confirmed what critics had alleged for decades: the U.S. government conducts mass surveillance on its own citizens.',
+      credit: 'Photo: NSA, Public Domain',
+    },
     content: [
       { type: 'dropcap', text: 'Every July, approximately 2,500 of the most powerful men in America gather at a 2,700-acre private campground in the redwood forests of Northern California for two weeks of exclusive, invitation-only retreat.' },
       { type: 'text', text: 'WHY THIS MATTERS\nThe Bohemian Grove is not a conspiracy theory  —  it is a documented, annual\ngathering of the most powerful men in America at which major policy decisions have been discussed and shaped outside of any democratic process.\nThe Manhattan Project was reportedly conceived at the Grove. Richard Nixon\nand Ronald Reagan negotiated their political futures there. When the people\nwho control your government, your media, your banks, and your military\ngather in secret for two weeks every year, you have a right to know what they\ndiscuss  —  and why they insist on keeping it from you.\n2,500\nANNUAL ATTENDEES\n2,700\nACRES IN SONOMA\nCOUNTY' },
@@ -1615,6 +1797,12 @@ export const chapters: Chapter[] = [
     dateRange: '1947–Present',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/New_York_City_Criminal_Court.jpg/800px-New_York_City_Criminal_Court.jpg',
+      alt: 'Federal courthouse in New York — where the Epstein case proceedings took place',
+      caption: 'The federal courts where Jeffrey Epstein\'s case was adjudicated. Court filings, flight logs, and survivor testimony document an intelligence-linked operation that compromised the world\'s most powerful people.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
     content: [
       { type: 'dropcap', text: 'On June 5, 2013, The Guardian published the first of Edward Snowden\'s revelations, exposing a global surveillance apparatus that monitors the communications of billions of people worldwide.' },
       { type: 'text', text: 'WHY THIS MATTERS\nYour phone calls, text messages, emails, web searches, location data, and social media activity are being collected, stored, and analyzed by intelligence\nagencies  —  not because you are suspected of a crime, but because the legal\nframework established after 9/11 allows it. The FISA Court approved 99.97% of\nsurveillance requests between 2009 and 2019. The NSA\'s own internal documents, revealed by Snowden, show that the agency\'s goal is "collect it all." This\nis not hypothetical. It is happening to you, right now, as you read this.\n99.97%\nFISA COURT APPROVAL\nRATE (2009–2019)' },
@@ -1719,6 +1907,12 @@ export const chapters: Chapter[] = [
     dateRange: '',
     author: 'B.R.',
     publishDate: 'March 2026',
+    heroImage: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/LOC_Main_Reading_Room_Highsmith.jpg/1280px-LOC_Main_Reading_Room_Highsmith.jpg',
+      alt: 'The Main Reading Room of the Library of Congress in Washington, D.C.',
+      caption: 'The Main Reading Room, Library of Congress. Every source cited in this publication is publicly accessible. The reader is encouraged to verify any claim independently.',
+      credit: 'Photo: Carol M. Highsmith, Public Domain via Library of Congress',
+    },
     content: [
       { type: 'dropcap', text: 'The purpose of this book is not to make you angry. Anger without action is just entertainment. The purpose of this book is to give you the documented facts, the primary sources, and the analytical framework to understand how power actually operates.' },
       { type: 'text', text: 'f you have read this book from the beginning, you have now encountered three\nhundred years of documented history that the mainstream media, the educational  system,  and  the  political  establishment  have  consistently  failed  to\npresent in a coherent, connected form. The individual facts in this book are not\nsecret. They are in the Congressional Record, the National Archives, the Federal Register, and the public court records. What is missing from the mainstream narrative\nis the connections  —  the thread that runs from the Bank of England in 1694 to the\nFederal Reserve in 1913 to the Epstein files in 2026.\nThe question is: what do you do with this information? The answer depends on who\nyou are and what resources you have. But there are actions available to every reader\nof this book, regardless of their circumstances.\n"The only thing necessary for the triumph of evil is for good\nmen to do nothing."' },

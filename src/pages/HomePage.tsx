@@ -79,6 +79,20 @@ export default function HomePage() {
         <section className="py-12 border-b border-border">
           <p className="chapter-label mb-3">{featured.number}</p>
           <Link to={`/chapter/${featured.id}`} className="group">
+            {/* Featured Article Hero Image */}
+            {featured.heroImage && (
+              <div className="overflow-hidden rounded-sm mb-6">
+                <img
+                  src={featured.heroImage.src}
+                  alt={featured.heroImage.alt}
+                  loading="eager"
+                  className="w-full h-48 md:h-64 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).parentElement!.style.display = 'none'
+                  }}
+                />
+              </div>
+            )}
             <h2 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight group-hover:text-crimson transition-colors mb-3">
               {featured.title}
             </h2>
@@ -116,6 +130,22 @@ export default function HomePage() {
                 to={`/chapter/${chapter.id}`}
                 className="group py-5 border-b border-border block"
               >
+                <div className="flex gap-4">
+                  {/* Chapter Thumbnail */}
+                  {chapter.heroImage && (
+                    <div className="hidden sm:block shrink-0 w-20 h-20 overflow-hidden rounded-sm bg-parchment-dark">
+                      <img
+                        src={chapter.heroImage.src}
+                        alt=""
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).parentElement!.style.display = 'none'
+                        }}
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-3 mb-1">
                   <span className="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson shrink-0">
                     {chapter.number}
@@ -164,6 +194,8 @@ export default function HomePage() {
                     </span>
                   ))}
                 </div>
+                  </div>{/* end flex-1 */}
+                </div>{/* end flex gap-4 */}
               </Link>
             ))}
           </div>

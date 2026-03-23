@@ -277,6 +277,28 @@ h1, h2, h3, h4 {
   font-size: 0.875rem;
 }
 
+/* Figures & Images */
+figure img {
+  transition: opacity 0.3s ease;
+}
+
+figure img:hover {
+  opacity: 0.95;
+}
+
+@media print {
+  figure {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  figure img {
+    max-height: 4in;
+    object-fit: contain;
+  }
+}
+
 /* Search */
 .search-input {
   font-family: var(--font-sans);
