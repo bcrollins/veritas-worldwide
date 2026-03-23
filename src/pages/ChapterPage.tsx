@@ -4,6 +4,7 @@ import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
 import { useAuth } from '../lib/AuthContext'
 import BookmarkButton from '../components/BookmarkButton'
+import ReadingProgress from '../components/ReadingProgress'
 
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
@@ -292,6 +293,8 @@ export default function ChapterPage() {
   }
 
   return (
+    <>
+    <ReadingProgress />
     <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {/* Chapter Header */}
       <header className="mb-12 border-b border-border pb-10">
@@ -403,5 +406,6 @@ export default function ChapterPage() {
       {/* Chapter Navigation */}
       <ChapterNav current={chapter} />
     </article>
+    </>
   )
 }
