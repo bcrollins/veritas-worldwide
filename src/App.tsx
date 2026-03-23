@@ -73,6 +73,7 @@ function Header() {
                 className={`font-sans text-xs tracking-[0.1em] uppercase transition-colors ${
                   location.pathname === link.to ? 'text-crimson font-bold' : 'text-ink-muted hover:text-ink'
                 }`}
+                {...(location.pathname === link.to ? { 'aria-current': 'page' as const } : {})}
               >
                 {link.label}
               </Link>
@@ -134,6 +135,7 @@ function Header() {
                 to={link.to}
                 className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-ink py-3"
                 onClick={() => setMenuOpen(false)}
+                {...(location.pathname === link.to ? { 'aria-current': 'page' as const } : {})}
               >
                 {link.label}
               </Link>
