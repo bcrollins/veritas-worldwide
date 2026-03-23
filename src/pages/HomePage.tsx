@@ -113,6 +113,36 @@ export default function HomePage() {
           </Link>
         </section>
 
+        {/* Visual Feature Grid — NYT-style image cards for key chapters */}
+        <section className="py-12 border-b border-border">
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+              Key Investigations
+            </h2>
+            <div className="flex-1 h-[1px] bg-border" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[chapters[2], chapters[4], chapters[10], chapters[14], chapters[22], chapters[28]].filter(Boolean).map((ch) => (
+              <Link key={ch.id} to={`/chapter/${ch.id}`} className="group block">
+                {ch.heroImage && (
+                  <div className="overflow-hidden rounded-sm mb-3 aspect-[16/10] bg-parchment-dark">
+                    <img
+                      src={ch.heroImage.src}
+                      alt=""
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
+                    />
+                  </div>
+                )}
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson mb-1">{ch.number}</p>
+                <h3 className="font-display text-base font-bold text-ink leading-snug group-hover:text-crimson transition-colors mb-1">{ch.title}</h3>
+                <p className="font-body text-xs text-ink-muted line-clamp-2">{ch.subtitle}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Chapter Grid */}
         <section className="py-12">
           <div className="flex items-center gap-4 mb-8">
