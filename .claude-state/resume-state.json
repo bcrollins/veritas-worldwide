@@ -1,25 +1,22 @@
 {
-  "last": "All chapters: cleaned PDF artifacts, converted evidence blocks, removed boilerplate",
-  "next": "Split 54 text blocks with embedded mid-text evidence markers into separate blocks",
+  "last": "Fixed 47 malformed sources, 19 PDF-paste dropcaps, 8 duplicate title blocks, 10 orphan dropcap letters, 15 spaced PDF headers",
+  "next": "Firebase analytics (needs credentials), interactive timeline, chapter annotation system",
   "queue": [
-    "Split 54 embedded evidence markers in text blocks (complex splitting required)",
     "Firebase analytics integration (needs credentials)",
     "Interactive timeline spanning all chapters",
     "Chapter annotation/highlighting system",
     "Service worker for offline reading",
     "Dark mode refinement",
-    "SEO: sitemap.xml, robots.txt, structured data improvements"
+    "Reading progress indicator",
+    "Newsletter signup",
+    "Chapter PDF export"
   ],
-  "run": 10,
+  "run": 11,
   "date": "2026-03-23",
   "commits": [
-    "fix(epilogue): replace 7 malformed sources with 14 proper bibliographic citations",
-    "fix(ch25): restructure evidence blocks, clean artifacts, fix sources",
-    "fix(data): convert 16 inline evidence markers to structured evidence blocks",
-    "fix(data): convert 12 'P A R T' text blocks to proper heading blocks",
-    "fix(data): clean PDF-paste artifacts across all chapters",
-    "fix(data): clean all remaining spaced PDF artifacts from chapter content",
-    "fix(data): remove 24 'SHARE THIS CHAPTER' PDF boilerplate blocks",
-    "fix(data): convert last standalone evidence marker text block + cleanup"
+    "content(sources): fix 47 malformed sources across 8 chapters",
+    "fix(data): clean 3 PDF-paste dropcaps + remove 3 duplicate title blocks",
+    "fix(data): clean 16 PDF-paste dropcaps, remove 5 duplicate title blocks, fix 4 missing first letters",
+    "fix(data): clean 10 orphan dropcap letters + 15 spaced PDF headers"
   ]
 }
