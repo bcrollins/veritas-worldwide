@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
+import { trackShare } from '../../lib/ga4'
 
 interface Props {
   title: string
   description?: string
+  contentId?: string
 }
 
-export default function FloatingShareBar({ title, description = '' }: Props) {
+export default function FloatingShareBar({ title, description = '', contentId = '' }: Props) {
   const [visible, setVisible] = useState(false)
   const [copied, setCopied] = useState(false)
   const lastScrollY = useRef(0)
@@ -23,7 +25,7 @@ export default function FloatingShareBar({ title, description = '' }: Props) {
   const url = typeof window !== 'undefined' ? window.location.href : ''
 
   const handleCopy = async () => {
-    try { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2000) } catch {}
+    try { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2000); trackShare('copy_link', contentId) } catch {}
   }
 
   const platforms = [
@@ -44,7 +46,8 @@ export default function FloatingShareBar({ title, description = '' }: Props) {
         {platforms.map(p => (
           <a key={p.name} href={p.href} target={p.name === 'Email' ? '_self' : '_blank'} rel="noopener noreferrer"
             className="w-11 h-11 flex items-center justify-center rounded-full shadow-md bg-surface text-ink hover:scale-110 hover:shadow-lg transition-all duration-200"
-            aria-label={`Share on ${p.name}`}>{p.icon}</a>
+            aria-label={`Share on ${p.name}`}
+            onClick={() => trackShare(p.name.toLowerCase(), contentId)}>{p.icon}</a>
         ))}
         <button onClick={handleCopy}
           className={`w-11 h-11 flex items-center justify-center rounded-full shadow-md transition-all duration-200 hover:scale-110 ${copied ? 'bg-crimson text-white' : 'bg-surface text-ink'}`}
@@ -65,7 +68,8 @@ export default function FloatingShareBar({ title, description = '' }: Props) {
           {platforms.slice(0, 4).map(p => (
             <a key={p.name} href={p.href} target="_blank" rel="noopener noreferrer"
               className="flex flex-col items-center gap-1 p-2 min-w-[44px] min-h-[44px] text-ink"
-              aria-label={`Share on ${p.name}`}>
+              aria-label={`Share on ${p.name}`}
+              onClick={() => trackShare(p.name.toLowerCase(), contentId)}>
               {p.icon}
               <span className="font-sans text-[10px]">{p.name}</span>
             </a>

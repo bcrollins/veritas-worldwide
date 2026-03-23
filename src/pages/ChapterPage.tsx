@@ -657,7 +657,7 @@ export default function ChapterPage() {
   return (
     <>
     <ReadingProgress />
-      <FloatingShareBar title={chapter.title} description={chapter.subtitle} />
+      <FloatingShareBar title={chapter.title} description={chapter.subtitle} contentId={chapter.id} />
     <BackToTop />
     <TimeRemaining totalMinutes={readingTime} />
     <TextSelectionShare />
