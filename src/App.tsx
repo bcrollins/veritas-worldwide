@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
 
@@ -6,12 +6,14 @@ const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 import AuthModal from './components/AuthModal'
 import Toast from './components/Toast'
 import ScrollToTop from './components/ScrollToTop'
-import HomePage from './pages/HomePage'
-import ChapterPage from './pages/ChapterPage'
-import SearchPage from './pages/SearchPage'
-import MethodologyPage from './pages/MethodologyPage'
-import SourcesPage from './pages/SourcesPage'
-import BookmarksPage from './pages/BookmarksPage'
+
+// Route-level code splitting — each page loads independently
+const HomePage = lazy(() => import('./pages/HomePage'))
+const ChapterPage = lazy(() => import('./pages/ChapterPage'))
+const SearchPage = lazy(() => import('./pages/SearchPage'))
+const MethodologyPage = lazy(() => import('./pages/MethodologyPage'))
+const SourcesPage = lazy(() => import('./pages/SourcesPage'))
+const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -207,23 +209,29 @@ export default function App() {
       <ScrollToTop />
       <Header />
       <main id="main-content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/chapter/:id" element={<ChapterPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/methodology" element={<MethodologyPage />} />
-          <Route path="/sources" element={<SourcesPage />} />
-          <Route path="/bookmarks" element={<BookmarksPage />} />
-          <Route path="*" element={
-            <div className="max-w-3xl mx-auto px-6 py-20 text-center">
-              <h1 className="font-display text-5xl font-bold text-ink mb-4">404</h1>
-              <p className="font-body text-lg text-ink-muted mb-8">This page doesn't exist.</p>
-              <Link to="/" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
-                &larr; Return to The Record
-              </Link>
-            </div>
-          } />
-        </Routes>
+        <Suspense fallback={
+          <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+            <div className="inline-block w-6 h-6 border-2 border-crimson/30 border-t-crimson rounded-full animate-spin" />
+          </div>
+        }>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/chapter/:id" element={<ChapterPage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/methodology" element={<MethodologyPage />} />
+            <Route path="/sources" element={<SourcesPage />} />
+            <Route path="/bookmarks" element={<BookmarksPage />} />
+            <Route path="*" element={
+              <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+                <h1 className="font-display text-5xl font-bold text-ink mb-4">404</h1>
+                <p className="font-body text-lg text-ink-muted mb-8">This page doesn&apos;t exist.</p>
+                <Link to="/" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
+                  &larr; Return to The Record
+                </Link>
+              </div>
+            } />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
       <AuthModal />

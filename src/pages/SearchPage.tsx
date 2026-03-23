@@ -1,7 +1,8 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { chapters, searchChapters } from '../data/chapters'
 import type { Chapter } from '../data/chapters'
+import { setMetaTags, clearMetaTags } from '../lib/seo'
 
 interface SearchResult {
   chapter: Chapter
@@ -9,9 +10,26 @@ interface SearchResult {
   snippet: string
 }
 
+/** Highlight matched terms in text with <mark> tags */
+function HighlightedText({ text, query }: { text: string; query: string }) {
+  if (!query.trim()) return <>{text}</>
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'))
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase() ? (
+          <mark key={i} className="bg-crimson/15 text-ink px-0.5 rounded-sm">{part}</mark>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  )
+}
+
 function getSnippet(chapter: Chapter, query: string): string {
   const q = query.toLowerCase()
-  // Search through content blocks for a matching snippet
   for (const block of chapter.content) {
     if (block.text && block.text.toLowerCase().includes(q)) {
       const idx = block.text.toLowerCase().indexOf(q)
@@ -54,16 +72,25 @@ function getMatchedFields(chapter: Chapter, query: string): string[] {
 export default function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const initialQuery = searchParams.get('q') || ''
+  const [inputValue, setInputValue] = useState(initialQuery)
   const [query, setQuery] = useState(initialQuery)
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(null)
 
   useEffect(() => {
-    document.title = 'Search | The Record — Veritas Worldwide Press'
-    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+    setMetaTags({
+      title: 'Search | The Record — Veritas Worldwide Press',
+      description: `Full-text search across all ${chapters.length} chapters, sources, evidence, and data tables.`,
+      url: 'https://veritasworldwide.com/search',
+    })
+    return () => { clearMetaTags() }
   }, [])
 
   useEffect(() => {
     const q = searchParams.get('q')
-    if (q && q !== query) setQuery(q)
+    if (q && q !== inputValue) {
+      setInputValue(q)
+      setQuery(q)
+    }
   }, [searchParams])
 
   const results: SearchResult[] = useMemo(() => {
@@ -76,14 +103,18 @@ export default function SearchPage() {
     }))
   }, [query])
 
-  const handleSearch = (value: string) => {
-    setQuery(value)
-    if (value.trim()) {
-      setSearchParams({ q: value })
-    } else {
-      setSearchParams({})
-    }
-  }
+  const handleSearch = useCallback((value: string) => {
+    setInputValue(value)
+    if (debounceRef.current) clearTimeout(debounceRef.current)
+    debounceRef.current = setTimeout(() => {
+      setQuery(value)
+      if (value.trim()) {
+        setSearchParams({ q: value })
+      } else {
+        setSearchParams({})
+      }
+    }, 250)
+  }, [setSearchParams])
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
@@ -110,7 +141,7 @@ export default function SearchPage() {
         <input
           type="text"
           placeholder="Search by name, topic, institution, date..."
-          value={query}
+          value={inputValue}
           onChange={(e) => handleSearch(e.target.value)}
           className="search-input"
           autoFocus
@@ -166,10 +197,10 @@ export default function SearchPage() {
                   )}
                 </div>
                 <h3 className="font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors mb-2">
-                  {result.chapter.title}
+                  <HighlightedText text={result.chapter.title} query={query} />
                 </h3>
                 <p className="font-body text-sm text-ink-muted leading-relaxed mb-3 line-clamp-3">
-                  {result.snippet}
+                  <HighlightedText text={result.snippet} query={query} />
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {result.matchedIn.map(field => (

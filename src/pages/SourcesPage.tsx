@@ -1,11 +1,16 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
+import { setMetaTags, clearMetaTags } from '../lib/seo'
 
 export default function SourcesPage() {
   useEffect(() => {
-    document.title = 'Sources & Bibliography | The Record — Veritas Worldwide Press'
-    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+    setMetaTags({
+      title: 'Sources & Bibliography | The Record — Veritas Worldwide Press',
+      description: 'Complete bibliography and source citations for all chapters. Every source is publicly accessible for independent verification.',
+      url: 'https://veritasworldwide.com/sources',
+    })
+    return () => { clearMetaTags() }
   }, [])
   // Aggregate all sources from all chapters
   const allSources = chapters.flatMap(chapter =>
