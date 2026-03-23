@@ -238,7 +238,7 @@ app.use((req, res, next) => {
 
   // Static page meta for bots
   const staticPages = {
-    '/about': { title: 'About | Veritas Worldwide Press', desc: 'About Veritas Worldwide Press — our mission, editorial standards, funding model, and the author behind The Record.' },
+    '/about': { title: 'About | Veritas Worldwide Press', desc: 'About Veritas Worldwide Press — our mission, editorial standards, and funding model.' },
     '/methodology': { title: 'Methodology | Veritas Worldwide Press', desc: 'Our four-tier source hierarchy and three-tier evidence classification system explained.' },
     '/sources': { title: 'Sources | Veritas Worldwide Press', desc: 'Master bibliography and source library for The Record — 500+ primary source documents.' },
     '/search': { title: 'Search | Veritas Worldwide Press', desc: 'Search all 31 chapters of The Record by keyword, topic, or evidence classification.' },

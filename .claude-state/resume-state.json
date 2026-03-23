@@ -3,7 +3,7 @@
   "mode": "A",
   "focus": "Google Search Console registration + indexing acceleration",
   "completed": [
-    "GSC property verified via Google Analytics auto-verification (brollins565@gmail.com)",
+    "GSC property verified via Google Analytics auto-verification",
     "Sitemap submitted to GSC — all 31 chapters discovered",
     "Fixed immutable cache on XML/TXT files (1h instead of 1y) (759b0c5)",
     "Priority indexing requested for 7 URLs: homepage + chapters 9, 13, 21, 22, 27, 28",

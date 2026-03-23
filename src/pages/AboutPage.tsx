@@ -8,7 +8,7 @@ export default function AboutPage() {
   useEffect(() => {
     setMetaTags({
       title: 'About | Veritas Worldwide Press',
-      description: 'About Veritas Worldwide Press — our mission, editorial standards, funding model, and the author behind The Record.',
+      description: 'About Veritas Worldwide Press — our mission, editorial standards, and funding model.',
       url: `${SITE_URL}/about`,
     })
     return () => { clearMetaTags() }
@@ -40,26 +40,18 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* Author */}
+      {/* Editorial Team */}
       <section className="mb-12">
-        <h2 className="font-display text-2xl font-bold text-ink mb-4">Author</h2>
-        <div className="flex flex-col sm:flex-row gap-6 items-start">
-          <div className="flex-1">
-            <p className="font-display text-xl font-bold text-ink mb-2">Brandon Rollins</p>
-            <p className="font-sans text-xs font-semibold tracking-[0.08em] uppercase text-crimson mb-3">
-              Founder &amp; Editor &middot; Veritas Worldwide Press
-            </p>
-            <p className="article-body mb-4">
-              Brandon Rollins is a First Officer at Frontier Airlines, flying the Airbus A320/A321 fleet. He holds an Airline Transport Pilot certificate and graduated from Embry-Riddle Aeronautical University with a degree in Aeronautical Science.
-            </p>
-            <p className="article-body mb-4">
-              The Record began as a personal research project — an attempt to organize and verify the primary source documents that underlie some of the most consequential events in modern history. After years of compilation and cross-referencing, the project evolved into a full publication.
-            </p>
-            <p className="article-body">
-              Brandon also builds automation workflows and full-stack applications. The Veritas Worldwide platform is built with React, TypeScript, and Tailwind CSS, and is open source.
-            </p>
-          </div>
-        </div>
+        <h2 className="font-display text-2xl font-bold text-ink mb-4">Editorial Team</h2>
+        <p className="article-body mb-4">
+          The Record is compiled and edited by an independent editorial team operating under the initials B.R. The editors maintain anonymity to ensure the focus remains on the documented evidence rather than any individual.
+        </p>
+        <p className="article-body mb-4">
+          The Record began as an independent research project — an attempt to organize and verify the primary source documents that underlie some of the most consequential events in modern history. After years of compilation and cross-referencing, the project evolved into a full publication.
+        </p>
+        <p className="article-body">
+          The Veritas Worldwide platform is purpose-built for documentary journalism — designed with React, TypeScript, and Tailwind CSS to ensure fast, accessible, and verifiable reading experiences.
+        </p>
       </section>
 
       {/* Editorial Standards */}
@@ -119,8 +111,8 @@ export default function AboutPage() {
         <p className="article-body mb-4">
           For corrections, source verification requests, or press inquiries:
         </p>
-        <a href="mailto:contact@veritasworldwide.com" className="font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
-          contact@veritasworldwide.com
+        <a href="mailto:rights@veritasworldwide.com" className="font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
+          rights@veritasworldwide.com
         </a>
       </section>
 

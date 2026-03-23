@@ -380,7 +380,7 @@ function Footer() {
               <a href="/feed.xml" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-white/30 hover:text-white transition-colors rounded-sm" aria-label="RSS Feed">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/></svg>
               </a>
-              <a href="mailto:contact@veritasworldwide.com" className="p-2.5 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-white/30 hover:text-white transition-colors rounded-sm" aria-label="Contact via email">
+              <a href="mailto:rights@veritasworldwide.com" className="p-2.5 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-white/30 hover:text-white transition-colors rounded-sm" aria-label="Contact via email">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </a>
             </div>

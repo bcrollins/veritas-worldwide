@@ -107,8 +107,8 @@ export default function PrivacyPage() {
           <h2 className="font-display text-xl font-bold text-ink mb-3">Contact</h2>
           <p className="font-body text-sm text-ink-muted leading-relaxed">
             For privacy-related inquiries:{' '}
-            <a href="mailto:contact@veritasworldwide.com" className="text-crimson hover:text-crimson-dark transition-colors">
-              contact@veritasworldwide.com
+            <a href="mailto:rights@veritasworldwide.com" className="text-crimson hover:text-crimson-dark transition-colors">
+              rights@veritasworldwide.com
             </a>
           </p>
         </section>

@@ -14,7 +14,7 @@ Masthead with Volume/Edition banner. "The Record" display title. Subtitle. Tagli
 Chapter label (number + date range). Full title (Playfair Display). Author + date. Bookmark button (logged-in). Content blocks rendered in sequence: drop caps, body text, headings, subheadings, pull quotes with attribution, evidence boxes (three tiers with distinct styling), stat cards (dark bg, crimson values), data tables (dark header, striped rows), timelines (year + description grid). Source footnotes at bottom. Cross-links to related chapters. Previous/Next chapter navigation.
 
 ## Content Access Policy
-All content is free and open to all readers. No content gating. Premium features (download, share, bookmark) require a free account. Per Brandon's directive: "allow users to read everything without account creation."
+All content is free and open to all readers. No content gating. Premium features (download, share, bookmark) require a free account. Editorial directive: "allow users to read everything without account creation."
 
 ## Search
 Full-text search across all chapters. Keyword matching on titles, subtitles, content, keywords. Results show chapter number, title, subtitle, matching context. Links to chapter pages.
@@ -32,7 +32,7 @@ Logged-in: Grid of saved chapters as cards. Not logged-in: Sign-in prompt.
 localStorage-backed (MVP). SHA-256 password hashing via Web Crypto API. Sign Up/Sign In modal. React Context for reactive state. Toast notifications.
 
 ## Donation System
-Stripe Payment Link via RollinsX Technologies account. "Customer chooses what to pay" with $10 default. Humble messaging on home page. Preset buttons ($5/$10/$25/$50/$100) + Custom amount.
+Stripe Payment Link via publisher account. "Customer chooses what to pay" with $10 default. Humble messaging on home page. Preset buttons ($5/$10/$25/$50/$100) + Custom amount.
 
 ## Evidence Tiers (sacred — never alter)
 - VERIFIED (Green #166534): Primary source documents

@@ -4,8 +4,8 @@ import type { Chapter } from '../data/chapters'
 type Format = 'apa' | 'mla' | 'chicago' | 'bibtex'
 
 function generateCitation(chapter: Chapter, format: Format): string {
-  const author = 'Rollins, B.'
-  const authorFull = 'Brandon Rollins'
+  const author = 'Veritas Worldwide Press'
+  const authorFull = 'Veritas Worldwide Press'
   const year = '2026'
   const title = chapter.title
   const pubTitle = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World'
@@ -18,9 +18,9 @@ function generateCitation(chapter: Chapter, format: Format): string {
     case 'apa':
       return `${author} (${year}). ${title}. In ${pubTitle} (${chapterNum}). ${publisher}. ${url}`
     case 'mla':
-      return `Rollins, Brandon. "${title}." ${pubTitle}, ${publisher}, ${year}, ${url}. Accessed ${accessed}.`
+      return `Veritas Worldwide Press. "${title}." ${pubTitle}, ${publisher}, ${year}, ${url}. Accessed ${accessed}.`
     case 'chicago':
-      return `Rollins, Brandon. "${title}." In ${pubTitle}. ${publisher}, ${year}. ${url}.`
+      return `Veritas Worldwide Press. "${title}." In ${pubTitle}. ${publisher}, ${year}. ${url}.`
     case 'bibtex':
       return `@incollection{rollins${year}${chapter.id.replace(/[^a-z0-9]/g, '')},
   author    = {${authorFull}},

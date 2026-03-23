@@ -81,8 +81,8 @@ export default function AccessibilityPage() {
         <p className="article-body mb-4">
           If you encounter any accessibility barriers while using this publication, please contact us. We take accessibility feedback seriously and will work to address any issues promptly.
         </p>
-        <a href="mailto:contact@veritasworldwide.com" className="font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
-          contact@veritasworldwide.com
+        <a href="mailto:rights@veritasworldwide.com" className="font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
+          rights@veritasworldwide.com
         </a>
       </section>
 

@@ -179,8 +179,8 @@ export function chapterJsonLd(chapter: {
       'headline': chapter.title,
       'description': chapter.subtitle,
       'author': {
-        '@type': 'Person',
-        'name': chapter.author,
+        '@type': 'Organization',
+        'name': 'Veritas Worldwide Press',
       },
       'publisher': {
         '@type': 'Organization',
