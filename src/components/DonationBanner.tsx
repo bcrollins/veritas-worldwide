@@ -1,4 +1,20 @@
+import { useState } from 'react'
+
+const DONATION_TIERS = [
+  { amount: 5, label: '$5', url: 'https://buy.stripe.com/14A7sK3F03lbbsHaJX2go02' },
+  { amount: 10, label: '$10', url: 'https://buy.stripe.com/6oU9AS6Rc9JzfIX8BP2go00' },
+  { amount: 25, label: '$25', url: 'https://buy.stripe.com/8x29AS4J408Z40f5pD2go03' },
+  { amount: 50, label: '$50', url: 'https://buy.stripe.com/28EdR82AWg7XaoDdW92go04' },
+  { amount: 100, label: '$100', url: 'https://buy.stripe.com/14AfZg2AW2h71S73hv2go05' },
+]
+
+const DEFAULT_AMOUNT = 10
+
 export default function DonationBanner() {
+  const [selected, setSelected] = useState(DEFAULT_AMOUNT)
+
+  const selectedTier = DONATION_TIERS.find(t => t.amount === selected)
+
   return (
     <section className="bg-ink text-white py-12 my-16 no-print">
       <div className="max-w-3xl mx-auto px-6 text-center">
@@ -14,9 +30,28 @@ export default function DonationBanner() {
           and publishing takes commitment. If this work has value to you, any contribution — however small —
           helps our team continue mapping and publishing the documentary record.
         </p>
+
+        {/* Amount Selector */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+          {DONATION_TIERS.map(tier => (
+            <button
+              key={tier.amount}
+              onClick={() => setSelected(tier.amount)}
+              className={`px-5 py-2.5 rounded-sm font-sans text-sm font-semibold tracking-[0.05em] transition-colors ${
+                selected === tier.amount
+                  ? 'bg-crimson text-white'
+                  : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
+              }`}
+            >
+              {tier.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Donate Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://buy.stripe.com/6oU9AS6Rc9JzfIX8BP2go00"
+            href={selectedTier?.url || DONATION_TIERS[1].url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
@@ -24,7 +59,7 @@ export default function DonationBanner() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
-            Make a Donation
+            Donate {selectedTier?.label || '$10'}
           </a>
         </div>
         <p className="font-sans text-[0.65rem] text-white/30 mt-6">
