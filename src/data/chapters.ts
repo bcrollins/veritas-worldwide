@@ -78,7 +78,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/National_Archives_Building_-_from_Pennsylvania_Avenue.jpg/1280px-National_Archives_Building_-_from_Pennsylvania_Avenue.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg',
       alt: 'The National Archives Building in Washington, D.C., viewed from Pennsylvania Avenue — the repository of America\'s founding documents and declassified government records',
       caption: 'The National Archives Building, Washington, D.C. — where the primary source documents cited throughout this publication are preserved and publicly accessible.',
       credit: 'Photo: National Archives, Public Domain via Wikimedia Commons',
@@ -122,7 +122,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/New_york_times_square-terabanswer.jpg/1280px-New_york_times_square-terabander.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Times_Square_Ball_from_above.jpg/1280px-Times_Square_Ball_from_above.jpg',
       alt: 'The United States Capitol Building — seat of the United States Congress and center of American legislative power',
       caption: 'The institutions that govern modern life — financial, political, pharmaceutical, and intelligence — form an interconnected architecture documented through primary sources.',
       credit: 'Public Domain via Wikimedia Commons',
@@ -156,7 +156,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'The spending is strategic. When Rep. Cori Bush (D-MO) and Rep. Jamaal Bowman (D-NY) — both members of "The Squad" who vocally supported Palestinian rights — faced primary challenges, AIPAC flooded their opponents with cash. Wesley Bell received $2.55 million from AIPAC-linked donors and defeated Bush. George Latimer received $2.45 million and defeated Bowman. The message to Congress is unmistakable: criticize Israel, and you will be replaced.' },
       { type: 'evidence', evidence: { tier: 'verified', label: 'VERIFIED — FEDERAL ELECTION COMMISSION RECORDS', text: 'All AIPAC contribution data is sourced from FEC filings as compiled by OpenSecrets.org. These are public records. Every dollar listed above is documented, traceable, and verifiable. The pattern is clear: AIPAC spends across both parties, targeting leadership positions and eliminating dissenters.' } },
       { type: 'heading', text: 'II. Six Corporations Control What You See' },
-      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Television_studio_HTV_Wales.jpg/1280px-Television_studio_HTV_Wales.jpg', alt: 'Television broadcasting studio — representative of the media infrastructure controlled by six corporations', caption: 'A television broadcasting studio. In 1983, fifty companies controlled the majority of American media. By 2025, that number collapsed to six — all sharing the same institutional investors.', credit: 'Photo: Public Domain via Wikimedia Commons' } },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/UEFA_Euro_2020_-_Television_studio_01.jpg/1280px-UEFA_Euro_2020_-_Television_studio_01.jpg', alt: 'Television broadcasting studio — representative of the media infrastructure controlled by six corporations', caption: 'A television broadcasting studio. In 1983, fifty companies controlled the majority of American media. By 2025, that number collapsed to six — all sharing the same institutional investors.', credit: 'Photo: Public Domain via Wikimedia Commons' } },
       { type: 'text', text: 'In 1983, fifty companies controlled the majority of American media. By 2025, that number has collapsed to six: Comcast, Walt Disney, Warner Bros. Discovery, Paramount Global, Sony, and Amazon. These six corporations control approximately 90% of what Americans read, watch, and hear. But the consolidation goes deeper than corporate logos.' },
       { type: 'text', text: 'A Harvard University investigation into media ownership revealed a striking pattern: the same institutional investors — Vanguard, BlackRock, and State Street — appear as top shareholders in virtually every major media company. Vanguard holds 13.05% of Fox/News Corp, 7.43% of CNN\'s parent company, and 7.66% of Disney/ABC. BlackRock holds 4.99% of Fox, 4.85% of CNN, and comparable stakes across the board. State Street rounds out the trio.' },
       { type: 'table', table: {
@@ -174,7 +174,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'This means the same three asset managers that control your retirement fund also control the news you consume. The illusion of media diversity — Fox vs. CNN, MSNBC vs. Newsmax — masks a deeper unity of ownership. The "debate" is managed. The boundaries of acceptable discourse are set by the same capital.' },
       { type: 'evidence', evidence: { tier: 'circumstantial', label: 'CIRCUMSTANTIAL — OWNERSHIP ≠ EDITORIAL CONTROL', text: 'Institutional ownership does not automatically equal editorial control. Vanguard and BlackRock hold shares through index funds on behalf of millions of investors. However, these firms exercise proxy voting power at shareholder meetings, influence board composition, and set ESG standards that shape corporate behavior. The question is not whether they dictate headlines — it is whether the structural incentives of consolidated ownership produce a narrowing of permissible narratives.' } },
       { type: 'heading', text: 'III. Three Companies Own Everything' },
-      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/BlackRock_HQ_51_52_St_NYC_by_D_Ramey_Logan.jpg/1280px-BlackRock_HQ_51_52_St_NYC_by_D_Ramey_Logan.jpg', alt: 'BlackRock headquarters at 50 Hudson Yards, New York City — the world\'s largest asset manager', caption: 'BlackRock headquarters, New York City. With $12.5 trillion in assets under management, BlackRock is the largest asset manager in history — a silent majority shareholder in virtually every major publicly traded corporation.', credit: 'Photo: D Ramey Logan, CC BY-SA 4.0, via Wikimedia Commons' } },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Black-rock-hq.jpg', alt: 'BlackRock headquarters at 50 Hudson Yards, New York City — the world\'s largest asset manager', caption: 'BlackRock headquarters, New York City. With $12.5 trillion in assets under management, BlackRock is the largest asset manager in history — a silent majority shareholder in virtually every major publicly traded corporation.', credit: 'Photo: D Ramey Logan, CC BY-SA 4.0, via Wikimedia Commons' } },
       { type: 'text', text: 'BlackRock, Vanguard, and State Street collectively manage approximately $25.9 trillion in assets — a figure that exceeds the entire GDP of the United States (~$28 trillion). BlackRock alone manages $12.5 trillion. These are not banks. They are asset managers — the silent majority shareholders of virtually every publicly traded corporation in America.' },
       { type: 'stats', stats: [
         { value: '$12.5T', label: 'BLACKROCK AUM' },
@@ -284,7 +284,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bank_of_England_-_geograph.org.uk_-_3089230.jpg/1280px-Bank_of_England_-_geograph.org.uk_-_3089230.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG/1280px-Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG',
       alt: 'The Bank of England, Threadneedle Street, London — established 1694, the model for central banking worldwide',
       caption: 'The Bank of England, established in 1694, became the template for central banking systems around the world. Its creation marked the beginning of private control over national money supplies.',
       credit: 'Photo: Chris Downer, CC BY-SA 2.0, via Wikimedia Commons',
@@ -298,7 +298,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'When Napoleon\'s armies swept through Europe in the early 1800s, Wilhelm was forced to flee, entrusting Rothschild with a substantial portion of his fortune — estimated at approximately £600,000 (roughly £60 million in today\'s terms). Rothschild managed these funds during the occupation and returned them faithfully after Napoleon\'s defeat, cementing his reputation for absolute trustworthiness with the aristocracy of Europe.' },
       { type: 'quote', quote: { text: 'Give me control of a nation\'s money supply, and I care not who makes its laws.', attribution: 'Widely attributed to Mayer Amschel Rothschild', note: 'NOTE: This exact wording does not appear in verified historical documents. It is widely circulated but its precise origin is disputed. The sentiment, however, is consistent with Rothschild\'s documented business philosophy.' } },
       { type: 'evidence', evidence: { tier: 'circumstantial', label: 'CIRCUMSTANTIAL NOTE — THE FAMOUS QUOTE', text: 'The quote above is one of the most cited in the history of banking conspiracy literature. However, historians and fact-checkers at Snopes, Quote Investigator, and the Rothschild Archive have found no primary source document — no letter, speech, or contemporary account — that records Rothschild saying these words. It is included here because it accurately reflects the philosophy his descendants would operationalize — but readers should know it is not a verified primary source quotation.' } },
-      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Mayer_Amschel_Rothschild.jpg/800px-Mayer_Amschel_Rothschild.jpg', alt: 'Portrait of Mayer Amschel Rothschild (1744-1812), founder of the Rothschild banking dynasty', caption: 'Mayer Amschel Rothschild (1744–1812), founder of the Rothschild banking dynasty. From the Frankfurt ghetto, his five sons established banking houses in London, Paris, Vienna, Naples, and Frankfurt that would finance nations and reshape global finance.', credit: 'Artist unknown, Public Domain via Wikimedia Commons' } },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Mayer_Amschel_Rothschild.jpg', alt: 'Portrait of Mayer Amschel Rothschild (1744-1812), founder of the Rothschild banking dynasty', caption: 'Mayer Amschel Rothschild (1744–1812), founder of the Rothschild banking dynasty. From the Frankfurt ghetto, his five sons established banking houses in London, Paris, Vienna, Naples, and Frankfurt that would finance nations and reshape global finance.', credit: 'Artist unknown, Public Domain via Wikimedia Commons' } },
       { type: 'heading', text: 'The Five Sons and the Network' },
       { type: 'text', text: 'Mayer Amschel\'s true genius was not in any single financial transaction but in his system design. He had ten children — five sons and five daughters — and he deployed his sons as a coordinated network across the financial capitals of Europe. Each son established a branch of the family bank in a different city, and together they created something that had never existed before: a private financial institution with the speed, reach, and capital to outmaneuver any government treasury in Europe.' },
       { type: 'table', table: {
@@ -410,7 +410,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Jekyll_Island_Club_Hotel_-_panoramio.jpg/1280px-Jekyll_Island_Club_Hotel_-_panoramio.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/GA_Jekyll_Island_Club_HD_Clubhouse01.jpg/1280px-GA_Jekyll_Island_Club_HD_Clubhouse01.jpg',
       alt: 'The Jekyll Island Club in Georgia, site of the secret 1910 meeting that drafted the Federal Reserve Act',
       caption: 'The Jekyll Island Club, Georgia — in November 1910, six men representing one quarter of the world\'s wealth met here in secret to draft the blueprint for the Federal Reserve System.',
       credit: 'Public Domain via Wikimedia Commons',
@@ -476,7 +476,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg',
       alt: 'British soldiers in the trenches during the Battle of the Somme, 1916 — World War I',
       caption: 'British soldiers in the trenches during the Battle of the Somme, 1916. The Great War that reshaped Europe was financed on both sides by interconnected banking dynasties.',
       credit: 'Photo: Imperial War Museum, Public Domain via Wikimedia Commons',
@@ -600,7 +600,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Balfour_declaration_unmarked.jpg/800px-Balfour_declaration_unmarked.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Balfour_declaration_unmarked.jpg/960px-Balfour_declaration_unmarked.jpg',
       alt: 'The Balfour Declaration of 1917 — the letter from British Foreign Secretary Arthur Balfour to Lord Rothschild pledging British support for a Jewish homeland in Palestine',
       caption: 'The Balfour Declaration, November 2, 1917 — a 67-word letter from British Foreign Secretary Arthur Balfour to Lord Walter Rothschild that would reshape the Middle East for the next century.',
       credit: 'British Government, Public Domain via Wikimedia Commons',
@@ -678,7 +678,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/PikiWiki_Israel_7260_Headquarter_of_the_Mossad.jpg/1280px-PikiWiki_Israel_7260_Headquarter_of_the_Mossad.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg/1280px-Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg',
       alt: 'Former headquarters of the Mossad, Israel\'s national intelligence agency',
       caption: 'The Mossad — HaMossad leModiʿin uleTafkidim Meyuḥadim (the Institute for Intelligence and Special Operations) — operates as one of the most effective intelligence agencies in the world.',
       credit: 'Public Domain via Wikimedia Commons',
@@ -810,7 +810,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Dealey_Plaza_2003.jpg/1280px-Dealey_Plaza_2003.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Dealey_Plaza_2003.jpg/1280px-Dealey_Plaza_2003.jpg',
       alt: 'Dealey Plaza in Dallas, Texas — site of the assassination of President John F. Kennedy on November 22, 1963',
       caption: 'Dealey Plaza, Dallas, Texas — the site where President Kennedy was assassinated on November 22, 1963. The Warren Commission concluded Lee Harvey Oswald acted alone; subsequent investigations reached different conclusions.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -881,7 +881,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Nixon_30-0316a.jpg/800px-Nixon_30-0316a.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Nixon_30-0316a.jpg/960px-Nixon_30-0316a.jpg',
       alt: 'President Richard Nixon — who ended the gold standard in 1971 and established the petrodollar system',
       caption: 'President Richard Nixon ended the Bretton Woods gold standard on August 15, 1971 — the "Nixon Shock." The petrodollar system that replaced it, secretly negotiated by Henry Kissinger, became the foundation of American economic hegemony.',
       credit: 'Official White House photo, Public Domain via Wikimedia Commons',
@@ -922,7 +922,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Harold_Pratt_House_003.jpg/1280px-Harold_Pratt_House_003.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harold_Pratt_House_north_staircase_jeh.jpg/1280px-Harold_Pratt_House_north_staircase_jeh.jpg',
       alt: 'The Harold Pratt House in New York City, headquarters of the Council on Foreign Relations',
       caption: 'The Harold Pratt House, 58 East 68th Street, New York — headquarters of the Council on Foreign Relations since 1945. CFR membership has included virtually every Secretary of State, Treasury, and Defense since its founding.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -1038,7 +1038,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Wall_Street_-_New_York_Stock_Exchange.jpg/1280px-Wall_Street_-_New_York_Stock_Exchange.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wall_Street_-_New_York_Stock_Exchange.jpg/1280px-Wall_Street_-_New_York_Stock_Exchange.jpg',
       alt: 'The New York Stock Exchange on Wall Street — epicenter of the 2008 financial crisis',
       caption: 'The New York Stock Exchange, Wall Street. In 2008, the reckless gambling of the institutions inside this building crashed the global economy. The government bailed out the banks with taxpayer money. No senior executive went to prison.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -1152,7 +1152,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Israeli_F-16s_at_Red_Flag.jpg/1280px-Israeli_F-16s_at_Red_Flag.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Israeli_F-16s_at_Red_Flag.jpg/1280px-Israeli_F-16s_at_Red_Flag.jpg',
       alt: 'Israeli Air Force F-16 fighter jets — purchased with U.S. foreign military financing',
       caption: 'Israeli Air Force F-16 Fighting Falcons. The United States has provided over $300 billion in inflation-adjusted aid to Israel since 1948 — the largest cumulative recipient of U.S. foreign assistance.',
       credit: 'Photo: U.S. Air Force, Public Domain',
@@ -1205,7 +1205,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay%2C_29_July_1967_%28NH_107452%29.jpg/1280px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay%2C_29_July_1967_%28NH_107452%29.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg/1280px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg',
       alt: 'USS Liberty (AGTR-5) — the American intelligence ship attacked by Israeli forces on June 8, 1967',
       caption: 'USS Liberty (AGTR-5) underway in Chesapeake Bay, July 1967 — weeks after surviving the Israeli attack that killed 34 American servicemen and wounded 171. The incident was classified for decades.',
       credit: 'Photo: U.S. Navy, Public Domain via Naval History and Heritage Command',
@@ -1213,7 +1213,7 @@ export const chapters: Chapter[] = [
     content: [
       { type: 'dropcap', text: 'On June 8, 1967, Israeli air and naval forces launched a sustained, two-hour attack on a clearly marked United States Navy intelligence ship in international waters, killing 34 American sailors and wounding 171.' },
       { type: 'text', text: 'WHY THIS MATTERS\nThis chapter matters because it is a stark example of a U.S. ally attacking American forces and the subsequent political cover‐up that sacrificed truth for geopolitical strategy. It reveals a pattern of deception that has defined the U.S.‐Israel relationship for decades and raises critical questions about sovereignty,\naccountability, and the real cost of strategic alliances. The Liberty incident\nraises documented questions about the relationship between diplomatic considerations and the pursuit of accountability when allied nations are involved\nin attacks on U.S. military personnel.' },
-      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay%2C_29_July_1967_%28NH_107452%29.jpg/1280px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay%2C_29_July_1967_%28NH_107452%29.jpg', alt: 'USS Liberty (AGTR-5) underway in Chesapeake Bay, July 1967', caption: 'USS Liberty (AGTR-5) after the attack. 34 American servicemen were killed and 171 wounded when Israeli aircraft and torpedo boats attacked the clearly marked U.S. intelligence ship in international waters on June 8, 1967.', credit: 'Photo: U.S. Navy, Public Domain via Naval History and Heritage Command' } },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg/1280px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg', alt: 'USS Liberty (AGTR-5) underway in Chesapeake Bay, July 1967', caption: 'USS Liberty (AGTR-5) after the attack. 34 American servicemen were killed and 171 wounded when Israeli aircraft and torpedo boats attacked the clearly marked U.S. intelligence ship in international waters on June 8, 1967.', credit: 'Photo: U.S. Navy, Public Domain via Naval History and Heritage Command' } },
       { type: 'heading', text: 'Americans Killed' },
       { type: 'text', text: 'AMERICANS WOUNDED\n8+\nHOURS OF RECON' },
       { type: 'text', text: 'ACCOUNTABILITY\nhe USS Liberty (AGTR‐5) was not a warship; she was a Victory‐class cargo\nship converted into one of the most sophisticated intelligence platforms\nof her time, a floating outpost for the National Security Agency (NSA).\nHer hull was packed with state‐of‐the‐art receivers, processors, and recorders, designed to hoover up signals intelligence (SIGINT) from across the electromagnetic\nspectrum. Her mission on June 8, 1967, was critical: to sail along the coast of the\nSinai Peninsula and monitor the communications of all belligerents in the escalating Six‐Day War between Israel and its Arab neighbors. The ship was conspicuously American. She flew a large, five‐by‐eight‐foot American flag. Her hull numbers, GTR‐5, were painted in giant letters on her bow. The weather was a crystalclear Mediterranean summer day. For more than eight hours prior to the attack,\nIsraeli Air Force reconnaissance aircraft, including the French‐made Nord Noratlas, flew repeated, low‐level passes over the Liberty, sometimes flying so close\nthat the American sailors on deck could exchange waves with the Israeli pilots.\nThe crew had no reason to believe they were in danger. They were, after all, allies.\nThe brutal, two‐hour assault that followed was not a mistake; it was a calculated\nact of extreme violence intended to erase the ship and its crew from the sea.\nI. "A Deliberate, Cold-Blooded Murder"\nThe assault began without warning at approximately 2:00 PM local time. A flight\nof unmarked, delta‐winged Dassault Mirage III fighter jets, the pride of the Israeli\nAir Force, screamed in from the afternoon sun. Their first targets were not random. The 30mm cannon fire and rockets were precisely aimed at the Liberty\'s array of communications antennas, the forest of steel whips and dishes that were' },
@@ -1253,7 +1253,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/RFK_announcing_death_of_MLK%2C_Indianapolis%2C_April_4%2C_1968_%28LOC%29.jpg/800px-RFK_announcing_death_of_MLK%2C_Indianapolis%2C_April_4%2C_1968_%28LOC%29.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Robert_Kennedy_CORE_rally_speech2.jpg/960px-Robert_Kennedy_CORE_rally_speech2.jpg',
       alt: 'Robert F. Kennedy announcing the death of Martin Luther King Jr., Indianapolis, April 4, 1968',
       caption: 'Robert F. Kennedy speaking to a crowd in Indianapolis on April 4, 1968, informing them of the assassination of Martin Luther King Jr. Two months later, Kennedy himself would be assassinated.',
       credit: 'Photo: Library of Congress, Public Domain',
@@ -1311,7 +1311,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Original_CIA_Headquarters_Building.jpg/1280px-Original_CIA_Headquarters_Building.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Aerial_view_of_CIA_headquarters%2C_Langley%2C_Virginia_14762v.jpg',
       alt: 'The Original Headquarters Building of the Central Intelligence Agency in Langley, Virginia',
       caption: 'CIA Headquarters, Langley, Virginia. Operation Mockingbird — the documented CIA program to infiltrate and influence American media — was run from this building beginning in the early 1950s.',
       credit: 'Photo: Carol M. Highsmith, Public Domain via Library of Congress',
@@ -1360,7 +1360,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Rockefeller_Center_MAM.JPG/800px-Rockefeller_Center_MAM.JPG',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG',
       alt: 'Rockefeller Center, New York City — symbol of the Rockefeller family\'s influence on American institutions',
       caption: 'Rockefeller Center, New York City. The Rockefeller Foundation\'s 1910 Flexner Report reshaped American medical education to favor pharmaceutical treatment — a system that generates $4.5 trillion annually.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -1411,7 +1411,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Dr_Schreiber_of_San_Augustine_giving_a_typhoid_inoculation_at_a_rural_school%2C_San_Augustine_County%2C_Texas.jpg/800px-Dr_Schreiber_of_San_Augustine_giving_a_typhoid_inoculation_at_a_rural_school%2C_San_Augustine_County%2C_Texas.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',
       alt: 'Doctor administering a typhoid inoculation at a rural school in Texas, 1943',
       caption: 'A physician administering a typhoid inoculation at a rural school in San Augustine County, Texas, 1943. The history of vaccination in America involves both genuine public health advances and documented corporate conflicts of interest.',
       credit: 'Photo: John Vachon, Farm Security Administration, Public Domain via Library of Congress',
@@ -1483,7 +1483,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/WTC-2004-memorial.jpg/800px-WTC-2004-memorial.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/800px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',
       alt: 'The Tribute in Light memorial at the World Trade Center site, New York City',
       caption: 'The Tribute in Light at the World Trade Center site. The events of September 11, 2001 transformed American domestic and foreign policy. The 9/11 Commission Report left questions that remain unanswered.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -1537,7 +1537,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Nixon_Contact_Sheet_WHPO-8492.jpg/1280px-Nixon_Contact_Sheet_WHPO-8492.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',
       alt: 'President Richard Nixon at a press briefing — architect of the War on Drugs',
       caption: 'President Nixon declared drug abuse "public enemy number one" in 1971. A former domestic policy advisor later admitted the War on Drugs was designed to target anti-war and Black communities.',
       credit: 'Photo: White House Photo Office, Public Domain via National Archives',
@@ -1545,7 +1545,7 @@ export const chapters: Chapter[] = [
     content: [
       { type: 'dropcap', text: 'On the morning of September 11, 2001, four commercial airliners were hijacked and used as weapons against the United States. 2,977 people were killed. The official investigation that followed left questions that remain unanswered to this day.' },
       { type: 'text', text: 'I. The Official Timeline\nTIME (ET)\nEVENT\nDETAILS\n8:46 AM\nAA Flight 11 hits WTC North Tower\nBoeing 767, 92 aboard, floors 93-99\n9:03 AM\nUA Flight 175 hits WTC South Tower\nBoeing 767, 65 aboard, floors 77-85\n9:37 AM\nAA Flight 77 hits the Pentagon\nBoeing 757, 64 aboard, west wall\n9:59 AM\nWTC South Tower collapses\n56 minutes after impact\n10:03 AM\nUA Flight 93 crashes in Shanksville, PA\nBoeing 757, 44 aboard\n10:28 AM\nWTC North Tower collapses\n102 minutes after impact\n5:20 PM\nWTC Building 7 collapses\nNot hit by any aircraft\n2,977\nPEOPLE KILLED' },
-      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/WTC-2004-memorial.jpg/1280px-WTC-2004-memorial.jpg', alt: 'The Tribute in Light memorial at the World Trade Center site', caption: 'The Tribute in Light at the World Trade Center site. The attacks of September 11, 2001 killed 2,977 people and led to two decades of war, the creation of the Department of Homeland Security, and the most expansive surveillance apparatus in American history.', credit: 'Photo: Public Domain via Wikimedia Commons' } },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/1280px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg', alt: 'The Tribute in Light memorial at the World Trade Center site', caption: 'The Tribute in Light at the World Trade Center site. The attacks of September 11, 2001 killed 2,977 people and led to two decades of war, the creation of the Department of Homeland Security, and the most expansive surveillance apparatus in American history.', credit: 'Photo: Public Domain via Wikimedia Commons' } },
       { type: 'heading', text: 'Hijacked Aircraft' },
       { type: 'text', text: 'NAMED HIJACKERS\n$8T+\nPOST-9/11 WAR\nSPENDING\nThe 9/11 Commission Report, released on July 22, 2004, concluded that the attacks\nwere planned and executed by al‐Qaeda under the direction of Osama bin Laden,\nwith 19 hijackers  —  15 of whom were Saudi nationals.[1] The Commission\'s mandate was to provide "a full and complete accounting" of the attacks. Whether it\nfulfilled that mandate is the subject of this chapter.\nII. The 28 Classified Pages\nFor fourteen years, 28 pages of the Joint Congressional Inquiry into 9/11 were classified at the highest level. These pages  —  known simply as "the 28 pages"  —  dealt\nwith the role of Saudi Arabia in financing and supporting the hijackers. Despite' },
       { type: 'text', text: 'bipartisan calls for their release, Presidents Bush and Obama both refused to declassify them. In July 2016, a heavily redacted version was finally released.[2]\nThe declassified pages revealed that Saudi government officials  —  including diplomats and intelligence officers stationed in the United States  —  had direct contact\nwith at least two of the hijackers (Nawaf al‐Hazmi and Khalid al‐Mihdhar) after\ntheir arrival in San Diego in January 2000. The pages documented financial support flowing from Saudi government accounts to intermediaries who assisted the\nhijackers with housing, transportation, and flight school enrollment.[2]' },
@@ -1599,7 +1599,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flocculators_and_sedimentation_basins_%28overhead_view%29.jpg/1280px-Flocculators_and_sedimentation_basins_%28overhead_view%29.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
       alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
       caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -1681,7 +1681,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Bohemian_Grove_-_Owl_Shrine_-_April_1986.jpg/800px-Bohemian_Grove_-_Owl_Shrine_-_April_1986.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg',
       alt: 'The Owl Shrine at Bohemian Grove, photographed in 1986',
       caption: 'The 40-foot owl shrine at Bohemian Grove, the private retreat in the redwoods of Northern California where American presidents, defense contractors, and media moguls gather each summer.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -1761,7 +1761,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
       alt: 'National Security Agency headquarters at Fort Meade, Maryland',
       caption: 'NSA Headquarters, Fort Meade, Maryland. Edward Snowden\'s 2013 disclosures confirmed what critics had alleged for decades: the U.S. government conducts mass surveillance on its own citizens.',
       credit: 'Photo: NSA, Public Domain',
@@ -1810,7 +1810,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/New_York_City_Criminal_Court.jpg/800px-New_York_City_Criminal_Court.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Criminal_Courts_Building%2C_100_Center_St.%2C_New_York_City._LOC_gsc.5a08406.jpg',
       alt: 'Federal courthouse in New York — where the Epstein case proceedings took place',
       caption: 'The federal courts where Jeffrey Epstein\'s case was adjudicated. Court filings, flight logs, and survivor testimony document an intelligence-linked operation that compromised the world\'s most powerful people.',
       credit: 'Photo: Public Domain via Wikimedia Commons',
@@ -1860,7 +1860,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: '~150\nDOCUMENTED\nVICTIMS (EVCP\n2021)' },
       { type: 'text', text: 'CRIMINAL ARRESTS\n(EPSTEIN,\nMAXWELL, BRUNEL,\nANDREW,\nMANDELSON)\n$705M+\nTOTAL\nSETTLEMENTS\n(JPMORGAN,\nDEUTSCHE BANK,\nESTATE)\n3.5M\nPAGES RELEASED BY\nDOJ, JANUARY 2026\neffrey Edward Epstein was born on January 20, 1953, in Brooklyn, New York, to\nworking-class Jewish parents. He dropped out of Cooper Union after one year,\ntaught mathematics at the Dalton School in Manhattan, and was hired by Bear\nStearns in 1976 without a college degree. By 1981, he had been asked to leave Bear\nStearns  —  the circumstances have never been fully explained. By 1982, he had founded his own financial management firm, J. Epstein & Co., which claimed to manage\nmoney exclusively for clients with a minimum of $1 billion in assets.\n[1]\nThe question of how Jeffrey Epstein  —  a college dropout with a murky financial history  —  came to manage the fortunes of the world\'s wealthiest people has never been\nsatisfactorily answered. What is documented is that his primary patron was Leslie' },
       { type: 'text', text: 'Wexner, the founder of L Brands (Victoria\'s Secret, Bath & Body Works), who gave Epstein an extraordinary power of attorney in 1991 that allowed him to act on Wexner\'s\nbehalf in virtually all financial matters. Wexner transferred to Epstein approximately $1 billion in assets over the course of their relationship.\n[1]' },
-      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Ghislaine_Maxwell_and_Jeffrey_Epstein_%28cropped%29.jpg/800px-Ghislaine_Maxwell_and_Jeffrey_Epstein_%28cropped%29.jpg', alt: 'Court exhibit photograph related to the Epstein case', caption: 'The Epstein operation connected intelligence agencies, political leaders, financial elites, and academic institutions in a network documented through court filings, flight logs, and the testimony of survivors.', credit: 'Court exhibit, Public Domain via U.S. District Court' } },
+      { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Ghislaine_Maxwell_%28cropped%29.jpg', alt: 'Court exhibit photograph related to the Epstein case', caption: 'The Epstein operation connected intelligence agencies, political leaders, financial elites, and academic institutions in a network documented through court filings, flight logs, and the testimony of survivors.', credit: 'Court exhibit, Public Domain via U.S. District Court' } },
       { type: 'heading', text: 'Part I: The Network: Who Epstein Knew and What He Did for Them' },
       { type: 'text', text: 'Jeffrey Epstein and Ghislaine Maxwell, photographed together at a social event. Maxwell was Epstein\'s primary accomplice in the\nrecruitment and trafficking of underage girls. She was convicted in December 2021 and sentenced to 20 years in federal prison.\n(Court exhibit)\nEpstein\'s network was not primarily a sexual trafficking operation  —  it was a financial and intelligence operation that used sexual blackmail as a tool of leverage. The\ndocumented evidence suggests that Epstein\'s primary business was not managing\nmoney but managing people: collecting compromising information on the world\'s\nmost powerful individuals and using that information to maintain his position in\ntheir circles.\n[2]' },
       { type: 'text', text: 'Ghislaine Maxwell\nCONVICTED  —  20 YEARS\nEpstein\'s primary accomplice. Recruited\nvictims, participated\nin abuse, managed the\nhousehold. Convicted\nDecember 2021 on 5\ncounts including sex\ntrafficking of a minor.\nSentenced June 2022.\nCurrently serving sentence at FCI Tallahassee.\nLes Wexner\nNAMED  —  NOT CHARGED\nEpstein\'s primary patron. Gave Epstein\npower of attorney in\n1991. Transferred approximately $1 billion\nin assets. Transferred 9\nEast 71st Street townhouse to Epstein for $0.\nClaims he was "victimized" by Epstein.\nBill Gates\nNAMED  —  NOT CHARGED\nMicrosoft co-founder.\n~$108B net worth. Met\nEpstein multiple times\n2010–2014, all post-conviction. MIT directed\n$2M gift at Epstein\'s request. Melinda cited\nEpstein meetings as\nfactor in divorce. Gates\nhas acknowledged\nmeetings but denied\nwrongdoing.' },
@@ -1921,7 +1921,7 @@ export const chapters: Chapter[] = [
     author: 'B.R.',
     publishDate: 'March 2026',
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/LOC_Main_Reading_Room_Highsmith.jpg/1280px-LOC_Main_Reading_Room_Highsmith.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/LOC_Main_Reading_Room_Highsmith.jpg/1280px-LOC_Main_Reading_Room_Highsmith.jpg',
       alt: 'The Main Reading Room of the Library of Congress in Washington, D.C.',
       caption: 'The Main Reading Room, Library of Congress. Every source cited in this publication is publicly accessible. The reader is encouraged to verify any claim independently.',
       credit: 'Photo: Carol M. Highsmith, Public Domain via Library of Congress',
