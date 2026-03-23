@@ -355,8 +355,12 @@ html.dark .stat-card {
 @media print {
   .no-print { display: none !important; }
   body { background: white; color: black; }
-  .article-body { font-size: 11pt; }
+  .article-body { font-size: 11pt; line-height: 1.6; }
   a { color: inherit; text-decoration: none; }
+  /* Hide interactive elements */
+  [role="menu"], #share-toast, [aria-label="Share this chapter"],
+  button[aria-label*="bookmark"], button[aria-label*="Download"] { display: none !important; }
+  /* Evidence tiers — distinguishable in grayscale */
   .evidence-verified,
   .evidence-circumstantial,
   .evidence-disputed {
@@ -374,4 +378,10 @@ html.dark .stat-card {
   .stat-value { color: #333 !important; }
   .stat-label { color: #666 !important; }
   .data-table thead { background: #eee !important; color: black !important; }
+  /* Prevent page breaks in key elements */
+  .timeline-item { page-break-inside: avoid; }
+  .data-table { page-break-inside: auto; }
+  .data-table tr { page-break-inside: avoid; }
+  /* Source references should stay together */
+  li { page-break-inside: avoid; }
 }
