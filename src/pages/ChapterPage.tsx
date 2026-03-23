@@ -4,6 +4,7 @@ import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
 import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
+import BackToTop from '../components/BackToTop'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SITE_URL } from '../lib/seo'
 
 const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
@@ -489,6 +490,7 @@ export default function ChapterPage() {
   return (
     <>
     <ReadingProgress />
+    <BackToTop />
     <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {/* Chapter Header */}
       <header className="mb-12 border-b border-border pb-10">
