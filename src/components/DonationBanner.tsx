@@ -16,7 +16,7 @@ export default function DonationBanner() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://buy.stripe.com/test_placeholder"
+            href="https://buy.stripe.com/6oU9AS6Rc9JzfIX8BP2go00"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
