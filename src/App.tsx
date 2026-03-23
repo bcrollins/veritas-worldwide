@@ -49,6 +49,16 @@ function Header() {
     setMenuOpen(false)
   }, [location.pathname])
 
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    if (!menuOpen) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [menuOpen])
+
   const navLinks = [
     { to: '/', label: 'The Record' },
     { to: '/search', label: 'Search' },
@@ -117,6 +127,7 @@ function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
@@ -128,7 +139,7 @@ function Header() {
           </button>
         </div>
         {menuOpen && (
-          <nav className="md:hidden pb-4 border-t border-border pt-3 flex flex-col gap-0">
+          <nav id="mobile-nav" className="md:hidden pb-4 border-t border-border pt-3 flex flex-col gap-0" aria-label="Mobile navigation">
             {navLinks.map(link => (
               <Link
                 key={link.to}
