@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
@@ -155,13 +156,108 @@ function ChapterNav({ current }: { current: Chapter }) {
   )
 }
 
+function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: string; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
+    >
+      {icon}
+      {label}
+    </button>
+  )
+}
+
+function ShareButton({ chapter, onAuthRequired }: { chapter: Chapter; onAuthRequired: () => void }) {
+  const { isLoggedIn } = useAuth()
+
+  const handleShare = async () => {
+    if (!isLoggedIn) {
+      onAuthRequired()
+      return
+    }
+    const url = `${window.location.origin}/chapter/${chapter.id}`
+    const text = `${chapter.title} — The Record by Veritas Worldwide Press`
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: text, url })
+      } catch {}
+    } else {
+      await navigator.clipboard.writeText(url)
+      alert('Link copied to clipboard')
+    }
+  }
+
+  return (
+    <PremiumAction
+      onClick={handleShare}
+      label="Share"
+      icon={
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+        </svg>
+      }
+    />
+  )
+}
+
+function DownloadButton({ chapter, onAuthRequired }: { chapter: Chapter; onAuthRequired: () => void }) {
+  const { isLoggedIn } = useAuth()
+
+  const handleDownload = () => {
+    if (!isLoggedIn) {
+      onAuthRequired()
+      return
+    }
+    // Generate a text version of the chapter for download
+    const lines: string[] = [
+      chapter.title,
+      chapter.subtitle,
+      `By ${chapter.author} — ${chapter.publishDate}`,
+      chapter.dateRange ? `Period: ${chapter.dateRange}` : '',
+      '',
+      '---',
+      '',
+    ]
+    chapter.content.forEach(block => {
+      if (block.type === 'dropcap' || block.type === 'text') lines.push(block.text || '', '')
+      if (block.type === 'heading') lines.push(`## ${block.text}`, '')
+      if (block.type === 'subheading') lines.push(`### ${block.text}`, '')
+      if (block.type === 'quote' && block.quote) lines.push(`> "${block.quote.text}"`, `> — ${block.quote.attribution}`, '')
+      if (block.type === 'evidence' && block.evidence) lines.push(`[${block.evidence.label}]`, block.evidence.text, '')
+    })
+    lines.push('---', '', 'Sources & References', '')
+    chapter.sources.forEach(s => {
+      lines.push(`[${s.id}] ${s.text}${s.url ? ` — ${s.url}` : ''}`)
+    })
+    lines.push('', '© 2026 Veritas Worldwide Press — veritasworldwide.com — Free & Open Access')
+
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `veritas-${chapter.id}.txt`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  return (
+    <PremiumAction
+      onClick={handleDownload}
+      label="Download"
+      icon={
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+      }
+    />
+  )
+}
+
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const chapter = chapters.find(ch => ch.id === id)
-  const { isLoggedIn, setShowAuthModal } = useAuth()
-
-  // Gate content: show first 3 blocks free, require login for rest
-  const PREVIEW_BLOCKS = 3
+  const { setShowAuthModal } = useAuth()
 
   if (!chapter) {
     return (
@@ -175,17 +271,17 @@ export default function ChapterPage() {
     )
   }
 
-  const previewContent = chapter.content.slice(0, PREVIEW_BLOCKS)
-  const gatedContent = chapter.content.slice(PREVIEW_BLOCKS)
-  const showGate = !isLoggedIn && gatedContent.length > 0
-
   return (
     <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {/* Chapter Header */}
       <header className="mb-12 border-b border-border pb-10">
         <div className="flex items-start justify-between gap-4">
           <p className="chapter-label mb-4">{chapter.number}</p>
-          <BookmarkButton chapterId={chapter.id} />
+          <div className="flex items-center gap-4">
+            <ShareButton chapter={chapter} onAuthRequired={() => setShowAuthModal(true)} />
+            <DownloadButton chapter={chapter} onAuthRequired={() => setShowAuthModal(true)} />
+            <BookmarkButton chapterId={chapter.id} />
+          </div>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight mb-4">
           {chapter.title}
@@ -204,57 +300,11 @@ export default function ChapterPage() {
         </div>
       </header>
 
-      {/* Content — Preview */}
+      {/* Full Content — Free for all readers */}
       <div className="mb-12">
-        {previewContent.map((block, idx) => (
+        {chapter.content.map((block, idx) => (
           <ContentBlockRenderer key={idx} block={block} />
         ))}
-
-        {/* Content Gate */}
-        {showGate ? (
-          <div className="relative">
-            {/* Faded preview of next block */}
-            <div className="overflow-hidden max-h-32 relative">
-              {gatedContent.slice(0, 1).map((block, idx) => (
-                <ContentBlockRenderer key={`gate-${idx}`} block={block} />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-parchment/60 to-parchment" />
-            </div>
-
-            {/* Sign-in CTA */}
-            <div className="text-center py-12 border-t border-border mt-4">
-              <div className="max-w-md mx-auto">
-                <svg className="w-8 h-8 mx-auto text-crimson mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                <h3 className="font-display text-xl font-bold text-ink mb-3">
-                  Create a Free Account to Continue Reading
-                </h3>
-                <p className="font-body text-sm text-ink-muted leading-relaxed mb-6">
-                  We want this information to be free for all — and it is. Creating an account simply
-                  helps us understand our readership and lets you save articles for later. No payment required, ever.
-                </p>
-                <button
-                  onClick={() => setShowAuthModal(true)}
-                  className="font-sans text-sm font-semibold px-8 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors"
-                >
-                  Create Free Account
-                </button>
-                <p className="font-sans text-xs text-ink-faint mt-3">
-                  Already have an account?{' '}
-                  <button onClick={() => setShowAuthModal(true)} className="text-crimson hover:text-crimson-dark">
-                    Sign in
-                  </button>
-                </p>
-              </div>
-            </div>
-          </div>
-        ) : (
-          /* Full content for logged-in users */
-          gatedContent.map((block, idx) => (
-            <ContentBlockRenderer key={`full-${idx}`} block={block} />
-          ))
-        )}
       </div>
 
       {/* Sources */}

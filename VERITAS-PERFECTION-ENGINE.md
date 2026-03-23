@@ -64,7 +64,8 @@ NEVER ask for confirmation. NEVER present options. NEVER pause. NEVER ask what s
 - NEVER alter source citations or attribution — accuracy is the entire value proposition
 - NEVER change the three-tier evidence colors: Verified=#166534, Circumstantial=#92400E, Disputed=#991B1B
 - NEVER display content without its evidence classification when one exists
-- NEVER remove or weaken content gating — free preview (3 blocks), full access requires account
+- NEVER gate reading content — all chapters are free and open to all visitors without an account
+- Premium features (bookmarks, download, share) require a free account — prompt auth modal when non-logged-in users attempt these actions
 - NEVER hardcode colors — semantic CSS variables only (parchment, ink, crimson, etc.)
 - NEVER lose chapter data or user bookmarks
 - NEVER commit security-violating code
@@ -293,9 +294,9 @@ Masthead with Volume/Edition banner. "The Record" display title. Subtitle. Tagli
 **CHAPTER PAGE:**
 Chapter label (number + date range). Full title (Playfair Display). Author + date. Bookmark button (logged-in). Content blocks rendered in sequence: drop caps, body text, headings, subheadings, pull quotes with attribution, evidence boxes (three tiers with distinct styling), stat cards (dark bg, crimson values), data tables (dark header, striped rows), timelines (year + description grid). Source footnotes at bottom. Cross-links to related chapters. Previous/Next chapter navigation.
 
-**CONTENT GATING:**
-Non-logged-in: First 3 content blocks visible. Gradient fade overlay. CTA: "Create a free account to continue reading." Messaging: "Creating an account is completely free. We believe this information should be accessible to everyone."
-Logged-in: Full content visible. Bookmark button active.
+**CONTENT ACCESS:**
+All content is free and open — every chapter is fully readable without an account. No content gating.
+Premium features require a free account: bookmarks/save, download (text export), share (Web Share API / clipboard). When a non-logged-in user clicks a premium action, the auth modal opens with messaging: "Create a free account to unlock premium features like saving, downloading, and sharing articles."
 
 **SEARCH:**
 Full-text search across all chapters. Keyword matching on titles, subtitles, content, keywords. Results show chapter number, title, subtitle, matching context. Links to chapter pages.
