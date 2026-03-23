@@ -1,4 +1,5 @@
 import express from 'express'
+import compression from 'compression'
 import path from 'path'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
@@ -101,6 +102,9 @@ function getClientIP(req) {
   return req.socket?.remoteAddress || ''
 }
 
+// Gzip/Brotli compression — reduces 549KB chapters chunk to ~188KB
+app.use(compression())
+
 app.use(express.json())
 
 app.use((req, res, next) => {
@@ -164,7 +168,17 @@ app.get('/api/analytics/snapshot', (req, res) => {
   res.json({ lifetime: store.lifetime, today: store.daily[todayKey] || 0, thisWeek: store.weekly[weekKey] || 0, thisMonth: store.monthly[monthKey] || 0, thisYear: store.yearly[yearKey] || 0, countries, dailyTrend, topPages })
 })
 
-app.use(express.static(path.join(__dirname, 'dist')))
+// Static files with aggressive caching for hashed assets
+app.use(express.static(path.join(__dirname, 'dist'), {
+  maxAge: '1y',
+  immutable: true,
+  setHeaders(res, filePath) {
+    // HTML should never be cached (SPA shell)
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+    }
+  },
+}))
 
 // ── Social crawler bot meta injection ─────────────────────────────
 // Bots that don't execute JS get per-chapter OG tags injected server-side
