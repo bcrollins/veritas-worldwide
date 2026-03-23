@@ -234,14 +234,37 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  // Close on outside click or Escape key
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  // Close on outside click, Escape; arrow key navigation for a11y
   useEffect(() => {
     if (!open) return
+    // Focus first menu item when opened
+    requestAnimationFrame(() => {
+      const firstItem = menuRef.current?.querySelector('[role="menuitem"]') as HTMLElement
+      firstItem?.focus()
+    })
     const handleClick = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
     }
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false)
+      if (e.key === 'Escape') {
+        setOpen(false)
+        // Return focus to trigger button
+        const trigger = ref.current?.querySelector('button[aria-haspopup]') as HTMLElement
+        trigger?.focus()
+      }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault()
+        const items = menuRef.current?.querySelectorAll('[role="menuitem"]') as NodeListOf<HTMLElement>
+        if (!items?.length) return
+        const current = document.activeElement as HTMLElement
+        const idx = Array.from(items).indexOf(current)
+        const next = e.key === 'ArrowDown'
+          ? items[(idx + 1) % items.length]
+          : items[(idx - 1 + items.length) % items.length]
+        next?.focus()
+      }
     }
     document.addEventListener('mousedown', handleClick)
     document.addEventListener('keydown', handleKey)
@@ -302,7 +325,7 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
         Share
       </button>
       {open && (
-        <div role="menu" className="absolute right-0 top-full mt-2 w-48 bg-surface border border-border rounded-sm shadow-lg z-50 py-1 animate-fade-in">
+        <div ref={menuRef} role="menu" className="absolute right-0 top-full mt-2 w-48 bg-surface border border-border rounded-sm shadow-lg z-50 py-1 animate-fade-in">
           {shareLinks.map(link => (
             <button
               key={link.label}
