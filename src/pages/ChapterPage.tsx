@@ -8,8 +8,7 @@ import BackToTop from '../components/BackToTop'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SITE_URL } from '../lib/seo'
 import { useScrollRestore } from '../hooks/useScrollRestore'
 import { estimateReadingTime } from '../lib/readingTime'
-
-const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
+import { DONATE_URL } from '../lib/constants'
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')

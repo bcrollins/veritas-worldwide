@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import { DONATE_URL } from '../lib/constants'
 
 export default function MethodologyPage() {
   useEffect(() => {
@@ -167,7 +168,7 @@ export default function MethodologyPage() {
           Maintaining rigorous editorial standards takes time and resources. If these standards matter to you, a small contribution helps us continue this work.
         </p>
         <a
-          href="https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05"
+          href={DONATE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"

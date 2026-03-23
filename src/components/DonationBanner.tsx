@@ -1,8 +1,6 @@
 import { useState } from 'react'
+import { DONATE_URL } from '../lib/constants'
 
-// RollinsX Technologies "Customer chooses what to pay" payment link
-// Stripe Dashboard → Payment Links → Veritas Worldwide Press donation
-const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
 const DONATION_TIERS = [
   { amount: 5, label: '$5' },

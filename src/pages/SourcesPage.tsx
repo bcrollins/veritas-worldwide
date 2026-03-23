@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import { DONATE_URL } from '../lib/constants'
 
 export default function SourcesPage() {
   useEffect(() => {
@@ -180,7 +181,7 @@ export default function SourcesPage() {
           Every source in this bibliography is publicly accessible. If transparent, primary-source research matters to you, a small contribution helps us continue.
         </p>
         <a
-          href="https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05"
+          href={DONATE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"

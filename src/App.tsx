@@ -6,6 +6,7 @@ import Toast from './components/Toast'
 import ScrollToTop from './components/ScrollToTop'
 import { usePageView } from './hooks/usePageView'
 import { useTheme } from './lib/ThemeContext'
+import { DONATE_URL } from './lib/constants'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -15,7 +16,6 @@ const SourcesPage = lazy(() => import('./pages/SourcesPage'))
 const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
 const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
 
-const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
