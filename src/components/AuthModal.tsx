@@ -10,6 +10,7 @@ export default function AuthModal() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const emailRef = useRef<HTMLInputElement>(null)
+  const modalRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (showAuthModal) {
@@ -21,12 +22,25 @@ export default function AuthModal() {
     }
   }, [showAuthModal, mode])
 
-  // Lock body scroll + Escape key when modal open
+  // Lock body scroll + Escape key + focus trap when modal open
   useEffect(() => {
     if (showAuthModal) {
       document.body.style.overflow = 'hidden'
       const handleKey = (e: KeyboardEvent) => {
         if (e.key === 'Escape') setShowAuthModal(false)
+        if (e.key === 'Tab' && modalRef.current) {
+          const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+          if (focusable.length === 0) return
+          const first = focusable[0]
+          const last = focusable[focusable.length - 1]
+          if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus() }
+          } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus() }
+          }
+        }
       }
       document.addEventListener('keydown', handleKey)
       return () => {
@@ -90,7 +104,7 @@ export default function AuthModal() {
       <div className="absolute inset-0 bg-ink/60 backdrop-blur-sm" />
 
       {/* Modal */}
-      <div className="relative w-full max-w-md bg-parchment rounded-sm shadow-2xl border border-border">
+      <div ref={modalRef} className="relative w-full max-w-md bg-parchment rounded-sm shadow-2xl border border-border">
         {/* Close */}
         <button
           onClick={() => setShowAuthModal(false)}
