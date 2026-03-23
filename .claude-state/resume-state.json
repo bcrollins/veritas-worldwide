@@ -1,8 +1,7 @@
 {
-  "last": "Fixed 47 malformed sources, 19 PDF-paste dropcaps, 8 duplicate title blocks, 10 orphan dropcap letters, 15 spaced PDF headers",
-  "next": "Firebase analytics (needs credentials), interactive timeline, chapter annotation system",
+  "last": "GA4 analytics integration (G-FB4BL9NSF6) — account created, web data stream configured, gtag.js added to index.html, CSP updated",
+  "next": "Run 12 MODE A — interactive timeline, chapter annotation system, service worker",
   "queue": [
-    "Firebase analytics integration (needs credentials)",
     "Interactive timeline spanning all chapters",
     "Chapter annotation/highlighting system",
     "Service worker for offline reading",
@@ -11,12 +10,9 @@
     "Newsletter signup",
     "Chapter PDF export"
   ],
-  "run": 11,
+  "run": 12,
   "date": "2026-03-23",
   "commits": [
-    "content(sources): fix 47 malformed sources across 8 chapters",
-    "fix(data): clean 3 PDF-paste dropcaps + remove 3 duplicate title blocks",
-    "fix(data): clean 16 PDF-paste dropcaps, remove 5 duplicate title blocks, fix 4 missing first letters",
-    "fix(data): clean 10 orphan dropcap letters + 15 spaced PDF headers"
+    "feat(analytics): Add Google Analytics 4 tracking (G-FB4BL9NSF6)"
   ]
 }
