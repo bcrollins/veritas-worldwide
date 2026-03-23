@@ -106,12 +106,12 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
       if (!block.table) return null
       return (
         <div className="overflow-x-auto my-8">
-          {block.table.caption && (
-            <p className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-ink-muted mb-3">
-              {block.table.caption}
-            </p>
-          )}
           <table className="data-table">
+            {block.table.caption && (
+              <caption className="font-sans text-xs font-bold tracking-[0.08em] uppercase text-ink-muted mb-3 text-left">
+                {block.table.caption}
+              </caption>
+            )}
             <thead>
               <tr>
                 {block.table.headers.map((h, i) => (
