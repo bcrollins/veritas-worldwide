@@ -15,6 +15,7 @@ import { useReadingHistory } from '../hooks/useReadingHistory'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import { DONATE_URL } from '../lib/constants'
+import { trackShare, trackDownload } from '../lib/ga4'
 import FloatingShareBar from '../components/engagement/FloatingShareBar'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 
@@ -447,11 +448,11 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
   }
 
   const shareLinks = [
-    { label: 'Copy Link', onClick: handleCopy, icon: '🔗' },
-    ...(typeof navigator.share === 'function' ? [{ label: 'Share…', onClick: handleNativeShare, icon: '📤' }] : []),
-    { label: 'X / Twitter', onClick: () => { window.open(`https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`, '_blank'); setOpen(false) }, icon: '𝕏' },
-    { label: 'LinkedIn', onClick: () => { window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, '_blank'); setOpen(false) }, icon: 'in' },
-    { label: 'Email', onClick: () => { window.open(`mailto:?subject=${encodedText}&body=${encodedUrl}`, '_self'); setOpen(false) }, icon: '✉' },
+    { label: 'Copy Link', onClick: () => { handleCopy(); trackShare('copy_link', chapter.id) }, icon: '🔗' },
+    ...(typeof navigator.share === 'function' ? [{ label: 'Share…', onClick: () => { handleNativeShare(); trackShare('native', chapter.id) }, icon: '📤' }] : []),
+    { label: 'X / Twitter', onClick: () => { window.open(`https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`, '_blank'); trackShare('twitter', chapter.id); setOpen(false) }, icon: '𝕏' },
+    { label: 'LinkedIn', onClick: () => { window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, '_blank'); trackShare('linkedin', chapter.id); setOpen(false) }, icon: 'in' },
+    { label: 'Email', onClick: () => { window.open(`mailto:?subject=${encodedText}&body=${encodedUrl}`, '_self'); trackShare('email', chapter.id); setOpen(false) }, icon: '✉' },
   ]
 
   return (
@@ -525,6 +526,7 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
     a.download = `veritas-${chapter.id}.txt`
     a.click()
     URL.revokeObjectURL(url)
+    trackDownload(chapter.id)
   }
 
   return (
