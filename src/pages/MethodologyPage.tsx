@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 
 export default function MethodologyPage() {
   useEffect(() => {
@@ -9,7 +9,16 @@ export default function MethodologyPage() {
       description: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
       url: `${SITE_URL}/methodology`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': 'Methodology & Evidence Standards',
+      'description': 'How The Record classifies evidence: Verified, Circumstantial, and Disputed.',
+      'url': `${SITE_URL}/methodology`,
+      'isPartOf': { '@type': 'WebSite', 'name': `The Record — ${SITE_NAME}`, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">

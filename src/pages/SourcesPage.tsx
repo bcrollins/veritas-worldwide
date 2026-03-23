@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 
 export default function SourcesPage() {
   useEffect(() => {
@@ -10,7 +10,16 @@ export default function SourcesPage() {
       description: 'Master bibliography of 500+ primary sources cited across 31 chapters. Congressional records, court filings, declassified documents, and academic research.',
       url: `${SITE_URL}/sources`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      'name': 'Sources & Bibliography',
+      'description': 'Master bibliography of 500+ primary sources cited across 31 chapters.',
+      'url': `${SITE_URL}/sources`,
+      'isPartOf': { '@type': 'WebSite', 'name': `The Record — ${SITE_NAME}`, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
   // Aggregate all sources from all chapters
   const allSources = chapters.flatMap(chapter =>
