@@ -140,21 +140,24 @@ export function clearMetaTags(): void {
  * Injects JSON-LD structured data into the document head.
  * Removes any existing JSON-LD script first.
  */
-export function setJsonLd(data: Record<string, unknown>): void {
+export function setJsonLd(data: Record<string, unknown> | Record<string, unknown>[]): void {
   removeJsonLd()
-  const script = document.createElement('script')
-  script.type = 'application/ld+json'
-  script.id = 'veritas-jsonld'
-  script.textContent = JSON.stringify(data)
-  document.head.appendChild(script)
+  const items = Array.isArray(data) ? data : [data]
+  items.forEach((item, i) => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.className = 'veritas-jsonld'
+    script.id = `veritas-jsonld-${i}`
+    script.textContent = JSON.stringify(item)
+    document.head.appendChild(script)
+  })
 }
 
 /**
  * Removes JSON-LD script from document head.
  */
 export function removeJsonLd(): void {
-  const existing = document.getElementById('veritas-jsonld')
-  if (existing) existing.remove()
+  document.querySelectorAll('.veritas-jsonld').forEach(el => el.remove())
 }
 
 /**
@@ -168,43 +171,63 @@ export function chapterJsonLd(chapter: {
   publishDate: string
   dateRange?: string
   keywords: string[]
-}): Record<string, unknown> {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    'headline': chapter.title,
-    'description': chapter.subtitle,
-    'author': {
-      '@type': 'Person',
-      'name': chapter.author,
-    },
-    'publisher': {
-      '@type': 'Organization',
-      'name': SITE_NAME,
-      'url': SITE_URL,
-      'logo': {
-        '@type': 'ImageObject',
-        'url': OG_IMAGE,
+}): Record<string, unknown>[] {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      'headline': chapter.title,
+      'description': chapter.subtitle,
+      'author': {
+        '@type': 'Person',
+        'name': chapter.author,
       },
-    },
-    'image': OG_IMAGE,
-    'datePublished': '2026-03-01',
-    'dateModified': '2026-03-01',
-    'mainEntityOfPage': {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}/chapter/${chapter.id}`,
-    },
-    'keywords': chapter.keywords.join(', '),
-    'isAccessibleForFree': true,
-    'isPartOf': {
-      '@type': 'PublicationVolume',
-      'name': 'The Record — Volume I',
       'publisher': {
         '@type': 'Organization',
         'name': SITE_NAME,
+        'url': SITE_URL,
+        'logo': {
+          '@type': 'ImageObject',
+          'url': OG_IMAGE,
+        },
+      },
+      'image': OG_IMAGE,
+      'datePublished': '2026-03-01',
+      'dateModified': '2026-03-23',
+      'mainEntityOfPage': {
+        '@type': 'WebPage',
+        '@id': `${SITE_URL}/chapter/${chapter.id}`,
+      },
+      'keywords': chapter.keywords.join(', '),
+      'isAccessibleForFree': true,
+      'isPartOf': {
+        '@type': 'PublicationVolume',
+        'name': 'The Record — Volume I',
+        'publisher': {
+          '@type': 'Organization',
+          'name': SITE_NAME,
+        },
       },
     },
-  }
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        {
+          '@type': 'ListItem',
+          'position': 1,
+          'name': 'The Record',
+          'item': SITE_URL,
+        },
+        {
+          '@type': 'ListItem',
+          'position': 2,
+          'name': chapter.title,
+          'item': `${SITE_URL}/chapter/${chapter.id}`,
+        },
+      ],
+    },
+  ]
 }
 
 export { SITE_NAME, SITE_URL, DEFAULT_DESCRIPTION }
