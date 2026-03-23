@@ -1,13 +1,13 @@
 {
-  "run": 6,
+  "run": 7,
   "date": "2026-03-23",
-  "composite": 9.3,
+  "composite": 9.4,
   "features": {
-    "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters with evidence tiers, cross-links, reading time. RSS feed for content syndication." },
-    "information_design": { "score": 9.5, "weight": 0.20, "notes": "JSON-LD + OG + Twitter + canonical on all pages. Sitemap with all routes incl analytics. RSS autodiscovery. Analytics page." },
-    "ui_ux_typography": { "score": 9.5, "weight": 0.20, "notes": "Dark mode toggle with system preference detection. Newsletter signup. Branded 404 page. Footer Support CTA restored." },
-    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Firebase analytics with clean abstraction. ThemeContext. All pages code-split. Zero TS errors." },
-    "accessibility": { "score": 9.0, "weight": 0.15, "notes": "Print evidence tiers distinguishable via border styles (solid/dashed/dotted). Dark mode respects prefers-color-scheme. line-clamp-3 added." },
-    "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. Newsletter stores to localStorage only. Firebase config via env vars." }
+    "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters with evidence tiers, cross-links, reading time. No content changes this run." },
+    "information_design": { "score": 9.6, "weight": 0.20, "notes": "Canonical link tags now managed per-page. JSON-LD + OG + Twitter + canonical on all pages. Donation CTAs on methodology and sources pages." },
+    "ui_ux_typography": { "score": 9.6, "weight": 0.20, "notes": "Social sharing dropdown (X, LinkedIn, Email, Copy Link, native share). Toast replaces alert(). Search input uses semantic variables." },
+    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Zero TS errors. No hardcoded colors remain. Removed redundant dark mode CSS override." },
+    "accessibility": { "score": 9.0, "weight": 0.15, "notes": "Share toast has aria-live=polite. No regressions." },
+    "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. All external links use noopener noreferrer." }
   }
 }

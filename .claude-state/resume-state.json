@@ -1,12 +1,12 @@
 {
-  "last": "Run 6 — Dark mode toggle, newsletter signup, RSS feed, 404 redesign, print evidence distinction, footer Support CTA restored, sitemap updated, analytics page deployed.",
-  "next": "Social sharing buttons per chapter, methodology page donation CTA, Firebase credentials for live analytics",
+  "last": "Run 7 — Social sharing dropdown, methodology/sources donation CTAs, search input dark mode fix, canonical link SEO, removed redundant CSS.",
+  "next": "Push commits (need GitHub credentials), then: related chapters sidebar, DownloadPDF bundle optimization, interactive timeline",
   "queue": [
-    "P3: Social sharing buttons per chapter (share card previews)",
-    "P4: Methodology page donation CTA at bottom",
+    "P2: DownloadPDF bundle is 404KB — evaluate lighter alternatives or lazy-load strategy",
+    "P4: Related chapters sidebar on chapter pages",
     "P4: Firebase project setup for live analytics tracking",
-    "P5: Related chapters sidebar on chapter pages",
     "P5: Interactive timeline spanning all chapters",
-    "P5: Chapter annotation/highlighting system"
+    "P5: Chapter annotation/highlighting system",
+    "P5: Reading progress indicator per chapter (save scroll position)"
   ]
 }
