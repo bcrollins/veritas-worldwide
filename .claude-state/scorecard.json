@@ -1,25 +1,30 @@
 {
-  "run": 1,
+  "run": 2,
   "date": "2026-03-22",
   "mode": "A",
-  "composite": 7.4,
+  "composite": 7.9,
   "features": {
-    "homepage": { "editorial": 8, "design": 8, "uiux": 8, "code": 8, "a11y": 7, "security": 8, "composite": 7.9, "status": "GOOD" },
-    "chapterPage": { "editorial": 9, "design": 8, "uiux": 8, "code": 8, "a11y": 7, "security": 8, "composite": 8.1, "status": "GOOD" },
-    "search": { "editorial": 7, "design": 7, "uiux": 7, "code": 7, "a11y": 6, "security": 8, "composite": 7.0, "status": "FUNCTIONAL" },
-    "methodology": { "editorial": 8, "design": 7, "uiux": 7, "code": 7, "a11y": 6, "security": 8, "composite": 7.1, "status": "FUNCTIONAL" },
-    "sources": { "editorial": 7, "design": 7, "uiux": 7, "code": 7, "a11y": 6, "security": 8, "composite": 7.0, "status": "FUNCTIONAL" },
-    "bookmarks": { "editorial": 7, "design": 7, "uiux": 7, "code": 7, "a11y": 6, "security": 8, "composite": 7.0, "status": "FUNCTIONAL" },
+    "homepage": { "editorial": 8, "design": 8, "uiux": 8, "code": 8, "a11y": 8, "security": 8, "composite": 8.0, "status": "GOOD" },
+    "chapterPage": { "editorial": 9, "design": 8, "uiux": 9, "code": 8, "a11y": 8, "security": 8, "composite": 8.5, "status": "GOOD" },
+    "search": { "editorial": 7, "design": 7, "uiux": 7, "code": 7, "a11y": 7, "security": 8, "composite": 7.1, "status": "FUNCTIONAL" },
+    "methodology": { "editorial": 8, "design": 7, "uiux": 7, "code": 7, "a11y": 7, "security": 8, "composite": 7.3, "status": "FUNCTIONAL" },
+    "sources": { "editorial": 7, "design": 7, "uiux": 7, "code": 7, "a11y": 7, "security": 8, "composite": 7.1, "status": "FUNCTIONAL" },
+    "bookmarks": { "editorial": 7, "design": 7, "uiux": 7, "code": 7, "a11y": 7, "security": 8, "composite": 7.1, "status": "FUNCTIONAL" },
     "auth": { "editorial": 8, "design": 8, "uiux": 8, "code": 8, "a11y": 7, "security": 7, "composite": 7.7, "status": "GOOD" },
     "donation": { "editorial": 8, "design": 8, "uiux": 8, "code": 8, "a11y": 7, "security": 8, "composite": 7.9, "status": "GOOD" },
-    "seo": { "editorial": 6, "design": 5, "uiux": 6, "code": 6, "a11y": 5, "security": 8, "composite": 5.8, "status": "DEGRADED" },
-    "designSystem": { "editorial": 9, "design": 9, "uiux": 8, "code": 8, "a11y": 7, "security": 8, "composite": 8.3, "status": "GOOD" }
+    "seo": { "editorial": 7, "design": 7, "uiux": 7, "code": 7, "a11y": 6, "security": 8, "composite": 7.0, "status": "FUNCTIONAL" },
+    "designSystem": { "editorial": 9, "design": 9, "uiux": 8, "code": 8, "a11y": 8, "security": 8, "composite": 8.5, "status": "GOOD" }
   },
   "fixes": [
-    "Switched donation to RollinsX Technologies Stripe payment link",
-    "Added per-page document.title for all routes",
-    "Added evidence tier icons for colorblind accessibility",
-    "Added prefers-reduced-motion support",
-    "Enhanced print styles for evidence boxes, stat cards, tables"
+    "Run 1: Switched donation to RollinsX Technologies Stripe payment link",
+    "Run 1: Added per-page document.title for all routes",
+    "Run 1: Added evidence tier icons for colorblind accessibility",
+    "Run 1: Added prefers-reduced-motion support",
+    "Run 1: Enhanced print styles for evidence boxes, stat cards, tables",
+    "Run 2: Created feature-reference.md for continuity",
+    "Run 2: Added robots.txt and sitemap.xml with all 31 chapter URLs",
+    "Run 2: Added scroll-to-top on route changes",
+    "Run 2: Added skip-to-content keyboard accessibility link",
+    "Run 2: Added reading progress indicator to chapter pages"
   ]
 }
