@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { DONATE_URL } from '../lib/constants'
+import { trackDonationClick } from '../lib/ga4'
 
 
 const DONATION_TIERS = [
@@ -100,6 +101,10 @@ export default function DonationBanner() {
             href={`${DONATE_URL}?prefilled_amount=${selected === 'custom' ? (parseFloat(customAmount) > 0 ? Math.round(parseFloat(customAmount) * 100) : '') : selected * 100}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              const amt = selected === 'custom' ? (parseFloat(customAmount) || 0) : selected
+              trackDonationClick(amt)
+            }}
             className="inline-flex items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

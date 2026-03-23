@@ -8,6 +8,7 @@ import {
   getBookmarks,
   type User,
 } from './authStore'
+import { trackSignUp, trackLogin, trackBookmark } from './ga4'
 
 interface AuthContextType {
   user: User | null
@@ -42,6 +43,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (result.success && result.user) {
       setUser(result.user)
       setBookmarks(getBookmarks())
+      trackLogin('email')
       showToast('Welcome back.')
     }
     return { success: result.success, error: result.error }
@@ -52,6 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (result.success && result.user) {
       setUser(result.user)
       setBookmarks(getBookmarks())
+      trackSignUp('email')
       showToast('Account created. Welcome.')
     }
     return { success: result.success, error: result.error }
@@ -67,8 +70,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const newBookmarks = authToggleBookmark(chapterId)
     setBookmarks(newBookmarks)
     if (newBookmarks.includes(chapterId)) {
+      trackBookmark(chapterId, 'add')
       showToast('Saved to bookmarks.')
     } else {
+      trackBookmark(chapterId, 'remove')
       showToast('Removed from bookmarks.')
     }
   }, [showToast])

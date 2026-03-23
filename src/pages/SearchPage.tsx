@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { chapters, searchChapters } from '../data/chapters'
 import type { Chapter } from '../data/chapters'
 import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { trackSearch } from '../lib/ga4'
 
 interface SearchResult {
   chapter: Chapter
@@ -100,6 +101,7 @@ export default function SearchPage() {
       setDebouncedQuery(value)
       if (value.trim()) {
         setSearchParams({ q: value })
+        trackSearch(value.trim())
       } else {
         setSearchParams({})
       }
