@@ -1,12 +1,12 @@
 {
-  "last": "Run 7 — Social sharing dropdown, methodology/sources donation CTAs, search input dark mode fix, canonical link SEO, removed redundant CSS.",
-  "next": "Push commits (need GitHub credentials), then: related chapters sidebar, DownloadPDF bundle optimization, interactive timeline",
+  "last": "Run 7 — 11 fixes: social sharing dropdown, methodology/sources CTAs, dark mode CSS, canonical links, keyboard a11y (share+auth), 44pt mobile touch targets, print stylesheet, bookmarks empty state.",
+  "next": "Push all commits (need GitHub credentials), then: related chapters sidebar, DownloadPDF bundle optimization, interactive timeline",
   "queue": [
-    "P2: DownloadPDF bundle is 404KB — evaluate lighter alternatives or lazy-load strategy",
-    "P4: Related chapters sidebar on chapter pages",
+    "P3: Related chapters sidebar on chapter pages",
+    "P4: DownloadPDF bundle — exclude html2canvas transitive dep",
     "P4: Firebase project setup for live analytics tracking",
     "P5: Interactive timeline spanning all chapters",
     "P5: Chapter annotation/highlighting system",
-    "P5: Reading progress indicator per chapter (save scroll position)"
+    "P5: Reading progress persistence (save scroll position per chapter)"
   ]
 }

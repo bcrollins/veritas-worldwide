@@ -1,13 +1,13 @@
 {
   "run": 7,
   "date": "2026-03-23",
-  "composite": 9.4,
+  "composite": 9.5,
   "features": {
     "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters with evidence tiers, cross-links, reading time. No content changes this run." },
-    "information_design": { "score": 9.6, "weight": 0.20, "notes": "Canonical link tags now managed per-page. JSON-LD + OG + Twitter + canonical on all pages. Donation CTAs on methodology and sources pages." },
-    "ui_ux_typography": { "score": 9.6, "weight": 0.20, "notes": "Social sharing dropdown (X, LinkedIn, Email, Copy Link, native share). Toast replaces alert(). Search input uses semantic variables." },
-    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Zero TS errors. No hardcoded colors remain. Removed redundant dark mode CSS override." },
-    "accessibility": { "score": 9.0, "weight": 0.15, "notes": "Share toast has aria-live=polite. No regressions." },
+    "information_design": { "score": 9.6, "weight": 0.20, "notes": "Canonical link tags per-page. Donation CTAs on methodology + sources. Social sharing dropdown." },
+    "ui_ux_typography": { "score": 9.7, "weight": 0.20, "notes": "Social share dropdown (X, LinkedIn, Email, native). Bookmarks empty state icon. 44pt mobile targets." },
+    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Zero TS errors. No hardcoded bg-white in dark mode paths. Semantic CSS variables throughout." },
+    "accessibility": { "score": 9.4, "weight": 0.15, "notes": "Escape key on share dropdown + auth modal. role=dialog, aria-modal, aria-expanded. 44pt touch targets. Print hides interactive elements." },
     "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. All external links use noopener noreferrer." }
   }
 }
