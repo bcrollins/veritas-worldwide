@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { jsPDF } from 'jspdf';
-import { chapters } from '../data/chapters';
 
 export default function DownloadPDF() {
   const [generating, setGenerating] = useState(false);
@@ -8,6 +6,10 @@ export default function DownloadPDF() {
   async function handleDownload() {
     setGenerating(true);
     try {
+      const [{ jsPDF }, { chapters }] = await Promise.all([
+        import('jspdf'),
+        import('../data/chapters'),
+      ]);
       const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
       const pageWidth = 210;
       const margin = 25;
