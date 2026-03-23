@@ -1,14 +1,12 @@
 {
-  "last": "Run 2 — SEO (robots.txt, sitemap.xml), UX (scroll-to-top, reading progress), a11y (skip-to-content)",
-  "next": "SEO structured data (JSON-LD Article schema), OG meta tags per chapter, search UX improvements, dark mode toggle",
+  "last": "Run 3 — Populated all 27 stub chapters with full documentary content (chapters 3-28 + epilogue). Added PDF download feature with jsPDF (lazy-loaded). Fixed .gitignore formatting.",
+  "next": "SEO structured data (JSON-LD Article schema per chapter), OG meta tags, search improvements, dark mode toggle",
   "queue": [
     "P2: Add JSON-LD structured data (Article schema) to chapter pages",
     "P2: Add per-chapter OG meta tags (og:title, og:description, og:url)",
-    "P3: Enhance search with debounced input and highlight matches",
-    "P3: Add empty state illustrations to bookmarks and search",
-    "P4: Dark mode toggle (reader preference, CSS custom properties)",
-    "P4: Chapter estimated reading time",
-    "P4: Chapter PDF export",
+    "P3: Enhance search with debounce and match highlighting",
+    "P3: Chapter estimated reading time",
+    "P4: Dark mode toggle (reader preference)",
     "P5: Social sharing buttons per chapter",
     "P5: Newsletter signup form",
     "P5: RSS feed generation"
