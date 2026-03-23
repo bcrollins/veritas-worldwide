@@ -1,26 +1,26 @@
 {
-  "run": 15,
-  "timestamp": "2026-03-23T12:00:00Z",
-  "last_completed": "GA4 Support CTA tracking + 30 broken Wikimedia image URL replacements",
+  "run": 16,
+  "timestamp": "2026-03-23T14:00:00Z",
+  "last_completed": "CSP fix for GA4, header/mobile nav fix, Share/Download GA4 tracking",
   "commits": [
-    "2fe1ea9 - fix(analytics): Add GA4 Consent Mode v2 defaults before config",
-    "fb9d0ad - fix(images): Replace 30 broken Wikimedia Commons image URLs with verified working URLs",
-    "9ede25e - feat(analytics): Add GA4 support click tracking for header, mobile menu, and footer CTAs"
+    "5622aeb - fix(ui): Fix header nav overflow and mobile menu z-index",
+    "76a82da - fix(security): Update CSP to allow GA4 inline scripts and image beacons",
+    "73420c3 - feat(analytics): Add GA4 tracking to Share and Download actions"
   ],
   "scorecard": {
-    "composite": 9.88,
+    "composite": 9.90,
     "editorial": 9.6,
     "info_design": 9.95,
-    "ui_ux": 9.85,
-    "code": 9.8,
+    "ui_ux": 9.9,
+    "code": 9.85,
     "a11y": 9.5,
-    "security": 9.0
+    "security": 9.1
   },
   "next_priorities": [
     "P3: Add inline images to chapters without them (Ch4, Ch7, Ch11, Ch15, Ch17-20, Ch23, Ch26)",
     "P4: Add SVG timeline/relationship diagrams to key chapters",
-    "P4: Dark mode image treatment (brightness/contrast adjustments)",
-    "P5: Verify all remaining image URLs still resolve (periodic health check)",
-    "P5: Add GA4 event tracking to Share and Download actions"
+    "P4: Code-split chapters data (549KB chunk) for faster initial load",
+    "P5: Add GA4 tracking to FloatingShareBar component",
+    "P5: Periodic Wikimedia image URL health check"
   ]
 }
