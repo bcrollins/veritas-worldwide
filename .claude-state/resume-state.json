@@ -1,14 +1,11 @@
 {
-  "last": "Run 3 — Populated all 27 stub chapters with full documentary content (chapters 3-28 + epilogue). Added PDF download feature with jsPDF (lazy-loaded). Fixed .gitignore formatting.",
-  "next": "SEO structured data (JSON-LD Article schema per chapter), OG meta tags, search improvements, dark mode toggle",
+  "last": "Run 5 — Debounced search with match highlighting. Route-level lazy loading (main bundle 878KB→240KB). Removed react-helmet-async. SEO meta on all pages. Suspense loading states.",
+  "next": "Dark mode toggle, social sharing per chapter, newsletter signup",
   "queue": [
-    "P2: Add JSON-LD structured data (Article schema) to chapter pages",
-    "P2: Add per-chapter OG meta tags (og:title, og:description, og:url)",
-    "P3: Enhance search with debounce and match highlighting",
-    "P3: Chapter estimated reading time",
-    "P4: Dark mode toggle (reader preference)",
-    "P5: Social sharing buttons per chapter",
-    "P5: Newsletter signup form",
-    "P5: RSS feed generation"
+    "P3: Dark mode toggle (reader preference)",
+    "P3: Social sharing buttons per chapter",
+    "P4: Newsletter signup form",
+    "P4: RSS feed generation",
+    "P5: Methodology page donation CTA"
   ]
 }
