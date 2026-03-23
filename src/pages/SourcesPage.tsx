@@ -42,6 +42,20 @@ export default function SourcesPage() {
       sources: ch.sources,
     }))
 
+  const [sourceFilter, setSourceFilter] = useState('')
+  const filteredChapterSources = sourceFilter.trim()
+    ? chapterSources
+        .map(ch => ({
+          ...ch,
+          sources: ch.sources.filter(s =>
+            s.text.toLowerCase().includes(sourceFilter.toLowerCase()) ||
+            (s.url && s.url.toLowerCase().includes(sourceFilter.toLowerCase()))
+          ),
+        }))
+        .filter(ch => ch.sources.length > 0)
+    : chapterSources
+  const filteredCount = filteredChapterSources.reduce((sum, ch) => sum + ch.sources.length, 0)
+
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {/* Header */}
@@ -102,6 +116,41 @@ export default function SourcesPage() {
         </div>
       </section>
 
+      {/* Source Search */}
+      <div className="mb-8 no-print">
+        <div className="relative">
+          <svg
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search sources by name, institution, or URL..."
+            value={sourceFilter}
+            onChange={(e) => setSourceFilter(e.target.value)}
+            className="w-full pl-10 pr-4 py-2.5 font-sans text-sm bg-surface border border-border rounded-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+            aria-label="Filter sources"
+          />
+          {sourceFilter.trim() && (
+            <div className="flex items-center gap-3 mt-2">
+              <span className="font-sans text-xs text-ink-faint">
+                <span className="font-bold text-crimson">{filteredCount}</span> source{filteredCount !== 1 ? 's' : ''} matching &ldquo;{sourceFilter}&rdquo;
+              </span>
+              <button
+                onClick={() => setSourceFilter('')}
+                className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
+              >
+                Clear
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Chapter Quick Nav */}
       <nav className="mb-12 no-print" aria-label="Jump to chapter sources">
         <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
@@ -127,13 +176,16 @@ export default function SourcesPage() {
           Sources by Chapter
         </h2>
 
-        {chapterSources.length === 0 ? (
+        {filteredChapterSources.length === 0 ? (
           <p className="font-body text-base text-ink-muted text-center py-12">
-            Sources are being compiled and will be published with each chapter.
+            {sourceFilter.trim()
+              ? <>No sources matching &ldquo;{sourceFilter}&rdquo;. <button onClick={() => setSourceFilter('')} className="text-crimson hover:underline">Clear search</button></>
+              : 'Sources are being compiled and will be published with each chapter.'
+            }
           </p>
         ) : (
           <div className="space-y-10">
-            {chapterSources.map(ch => (
+            {filteredChapterSources.map(ch => (
               <div key={ch.id} id={`sources-${ch.id}`} className="border-b border-border pb-8 scroll-mt-20">
                 <div className="flex items-baseline gap-3 mb-4">
                   <span className="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson">
