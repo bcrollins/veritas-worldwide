@@ -1,37 +1,13 @@
 {
-  "run": 11,
+  "run": 7,
   "date": "2026-03-23",
-  "composite": 9.88,
+  "composite": 9.4,
   "features": {
-    "editorial_accuracy": {
-      "score": 9.5,
-      "weight": 0.25,
-      "notes": "Fixed '1 sources' → '1 source' pluralization on homepage. Evidence tier badges in chapter headers. Source counts on all cards. In-chapter TOC. Keyword-based related chapters. Reading time. Semantic table captions."
-    },
-    "information_design": {
-      "score": 9.8,
-      "weight": 0.20,
-      "notes": "Chapter TOC for long articles. Evidence composition at-a-glance. Algorithmic topic matching for related chapters. Featured article card shows reading time + source count. Donation amount selector now functional."
-    },
-    "ui_ux_typography": {
-      "score": 9.85,
-      "weight": 0.20,
-      "notes": "Donation amount buttons now wire to Stripe prefilled_amount. Back-to-top button. Scroll position persistence. Evidence badges use semantic tier colors. Safe-area-inset for notch devices. Mobile menu Escape key close. Dark mode toggle."
-    },
-    "code_quality": {
-      "score": 9.9,
-      "weight": 0.15,
-      "notes": "Zero TS errors. DONATE_URL extracted to shared constants.ts (was duplicated 5×). node_modules removed from git (was ~220 packages tracked). DownloadPDF deferred import. Reusable hooks + components. No hardcoded values."
-    },
-    "accessibility": {
-      "score": 9.85,
-      "weight": 0.15,
-      "notes": "aria-current='page' on nav links. Focus rings. Auth modal focus trap. Mobile nav Escape + aria-controls. Three distinct nav landmarks with aria-labels. Semantic table captions. Skip-to-content link. Print styles with grayscale-distinguishable evidence tiers."
-    },
-    "security": {
-      "score": 9.2,
-      "weight": 0.05,
-      "notes": "CSP meta tag restricts resources to self + Google Fonts + Stripe. X-Content-Type-Options nosniff. Strict referrer policy. All external links noopener noreferrer. node_modules no longer tracked in git."
-    }
+    "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters with evidence tiers, cross-links, reading time. RSS feed. No content changes this run." },
+    "information_design": { "score": 9.5, "weight": 0.20, "notes": "JSON-LD + OG + Twitter + canonical. Sitemap. Sources page now has chapter jump nav for 500+ sources." },
+    "ui_ux_typography": { "score": 9.5, "weight": 0.20, "notes": "Dark mode, newsletter, social share, donation CTAs on all key pages including methodology. 404 branded." },
+    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Zero TS errors. All pages code-split. Lazy loading. Clean component architecture." },
+    "accessibility": { "score": 9.2, "weight": 0.15, "notes": "Print stylesheet enhanced: @page margins, URL display for sources, heading orphan prevention, dark-to-light conversion. Evidence tiers distinguishable in grayscale." },
+    "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. localStorage auth. Stripe payment links only." }
   }
 }

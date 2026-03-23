@@ -1,13 +1,12 @@
 {
-  "last": "Run 11 — 4 fixes: source count pluralization, Stripe prefilled_amount donation wiring, shared DONATE_URL constant extraction, node_modules removed from git.",
-  "next": "Continue with P4/P5 queue items.",
+  "last": "Run 7 — Methodology donation CTA, SourcesPage chapter jump nav, enhanced print stylesheet (margins, URL display, page break control, dark-to-light).",
+  "next": "Firebase analytics credentials, interactive timeline, chapter annotation system",
   "queue": [
-    "P4: Firebase project setup for live analytics tracking",
-    "P4: Newsletter signup — needs real email backend (current: localStorage only)",
-    "P5: Self-host fonts for full LCP control",
-    "P5: Interactive timeline spanning all chapters",
-    "P5: Chapter annotation/highlighting system",
-    "P5: Sitemap.xml + robots.txt generation",
-    "P5: RSS feed for new chapters/updates"
+    "P4: Firebase project setup for live analytics tracking (needs credentials)",
+    "P5: Interactive timeline spanning all 31 chapters",
+    "P5: Chapter annotation/highlighting system (logged-in users)",
+    "P5: Related chapters sidebar (sticky on desktop, inline on mobile)",
+    "P5: Dark mode color refinement pass",
+    "P5: Service worker for offline reading"
   ]
 }
