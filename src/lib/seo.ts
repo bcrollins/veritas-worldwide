@@ -6,6 +6,8 @@
 const SITE_NAME = 'Veritas Worldwide Press'
 const SITE_URL = 'https://veritasworldwide.com'
 const DEFAULT_DESCRIPTION = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Published by Veritas Worldwide Press.'
+const OG_IMAGE = `${SITE_URL}/og-image.png`
+const TWITTER_HANDLE = '@VeritasWorldwide'
 
 interface SEOConfig {
   title: string
@@ -34,9 +36,14 @@ export function setMetaTags(config: SEOConfig): void {
     'og:url': url,
     'og:type': type,
     'og:site_name': SITE_NAME,
-    'twitter:card': 'summary',
+    'og:image': OG_IMAGE,
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'twitter:card': 'summary_large_image',
+    'twitter:site': TWITTER_HANDLE,
     'twitter:title': title,
     'twitter:description': description,
+    'twitter:image': OG_IMAGE,
   }
 
   if (type === 'article') {
@@ -92,13 +99,15 @@ export function clearMetaTags(): void {
     document.querySelectorAll(sel).forEach(el => {
       // Preserve the base OG tags from index.html
       const prop = el.getAttribute('property') || el.getAttribute('name') || ''
-      if (prop === 'og:title' || prop === 'og:description' || prop === 'og:type' || prop === 'og:url') {
+      if (prop === 'og:title' || prop === 'og:description' || prop === 'og:type' || prop === 'og:url' || prop === 'og:image' || prop === 'og:site_name') {
         // Reset to defaults
         const defaults: Record<string, string> = {
           'og:title': `The Record | ${SITE_NAME}`,
           'og:description': DEFAULT_DESCRIPTION,
           'og:type': 'website',
           'og:url': SITE_URL,
+          'og:image': OG_IMAGE,
+          'og:site_name': SITE_NAME,
         }
         if (defaults[prop]) {
           el.setAttribute('content', defaults[prop])
@@ -160,7 +169,12 @@ export function chapterJsonLd(chapter: {
       '@type': 'Organization',
       'name': SITE_NAME,
       'url': SITE_URL,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': OG_IMAGE,
+      },
     },
+    'image': OG_IMAGE,
     'datePublished': '2026-03-01',
     'dateModified': '2026-03-01',
     'mainEntityOfPage': {

@@ -160,6 +160,56 @@ app.get('/api/analytics/snapshot', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'dist')))
 
+// ── Social crawler bot meta injection ─────────────────────────────
+// Bots that don't execute JS get per-chapter OG tags injected server-side
+const BOT_UA = /facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|redditbot/i
+const SITE_URL = 'https://veritasworldwide.com'
+const OG_IMAGE = `${SITE_URL}/og-image.png`
+
+// Lightweight chapter metadata for bot responses (avoids importing TS data)
+function getChapterMeta(slug) {
+  // Map common slugs to titles for social preview
+  const chapters = {
+    'foreword': { title: 'A Note on Methodology, Evidence Standards & How to Read This Book', desc: 'This is a reference work compiling primary source documents into a chronological narrative.' },
+    'overview': { title: 'Overview — The Architecture of Control', desc: 'A documentary investigation spanning 330 years of interconnected financial, political, and intelligence systems.' },
+    'chapter-1': { title: 'The Talmud, Zionism & the Balfour Declaration', desc: 'From theological foundations to the 67-word letter that reshaped the Middle East.' },
+    'chapter-2': { title: 'The Birth of Central Banking', desc: 'How private banks created the model for controlling national money supplies.' },
+    'chapter-3': { title: 'The Bank War & Assassinated Presidents', desc: 'Three presidents opposed central banking. All three were assassinated.' },
+    'chapter-4': { title: 'Jekyll Island & the Creation of the Federal Reserve', desc: 'Six men, one island, 25% of the world\'s wealth, and the law that changed money forever.' },
+    'chapter-5': { title: 'The Federal Reserve — Structure, Power & Secrecy', desc: 'Who owns the Fed, how money is created, and why it matters.' },
+    'chapter-17': { title: 'The Epstein Files', desc: 'The network connecting finance, politics, intelligence, and academia.' },
+  }
+  return chapters[slug] || null
+}
+
+app.use((req, res, next) => {
+  const ua = req.headers['user-agent'] || ''
+  if (!BOT_UA.test(ua)) return next()
+
+  // Read the HTML shell
+  const htmlPath = path.join(__dirname, 'dist', 'index.html')
+  let html = fs.readFileSync(htmlPath, 'utf-8')
+
+  // Check if this is a chapter route
+  const chapterMatch = req.path.match(/^\/chapter\/(.+)$/)
+  if (chapterMatch) {
+    const meta = getChapterMeta(chapterMatch[1])
+    if (meta) {
+      const chapterUrl = `${SITE_URL}/chapter/${chapterMatch[1]}`
+      // Replace default meta tags with chapter-specific ones
+      html = html
+        .replace(/<title>.*?<\/title>/, `<title>${meta.title} | The Record — Veritas Worldwide Press</title>`)
+        .replace(/content="The Record \| Veritas Worldwide Press"/, `content="${meta.title} | The Record — Veritas Worldwide Press"`)
+        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/, `content="${meta.desc}"`)
+        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/, `content="${meta.desc}"`)
+        .replace(/content="https:\/\/veritasworldwide\.com"/, `content="${chapterUrl}"`)
+        .replace(/content="website"/, `content="article"`)
+    }
+  }
+
+  res.send(html)
+})
+
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
