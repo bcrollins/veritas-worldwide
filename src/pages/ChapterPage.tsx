@@ -7,6 +7,7 @@ import ReadingProgress from '../components/ReadingProgress'
 import BackToTop from '../components/BackToTop'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SITE_URL } from '../lib/seo'
 import { useScrollRestore } from '../hooks/useScrollRestore'
+import { estimateReadingTime } from '../lib/readingTime'
 
 const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
@@ -431,14 +432,7 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
   )
 }
 
-function estimateReadingTime(chapter: Chapter): number {
-  let wordCount = 0
-  for (const block of chapter.content) {
-    const text = block.text || block.quote?.text || block.evidence?.text || ''
-    wordCount += text.split(/\s+/).filter(Boolean).length
-  }
-  return Math.max(1, Math.ceil(wordCount / 238))
-}
+// estimateReadingTime imported from ../lib/readingTime
 
 function getEvidenceCounts(chapter: Chapter) {
   const counts = { verified: 0, circumstantial: 0, disputed: 0 }

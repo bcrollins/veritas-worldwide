@@ -5,6 +5,7 @@ import { chapters } from '../data/chapters'
 import DonationBanner from '../components/DonationBanner'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import { estimateReadingTime } from '../lib/readingTime'
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 
 export default function HomePage() {
@@ -128,8 +129,12 @@ export default function HomePage() {
                   {chapter.subtitle}
                 </p>
                 <div className="flex flex-wrap items-center gap-2 mt-2">
+                  <span className="font-sans text-[0.6rem] text-ink-faint">{estimateReadingTime(chapter)} min</span>
                   {chapter.sources.length > 0 && (
-                    <span className="font-sans text-[0.6rem] text-ink-faint">{chapter.sources.length} sources</span>
+                    <>
+                      <span className="font-sans text-[0.6rem] text-ink-faint">·</span>
+                      <span className="font-sans text-[0.6rem] text-ink-faint">{chapter.sources.length} sources</span>
+                    </>
                   )}
                   {chapter.content.some(b => b.type === 'evidence') && (
                     <span className="font-sans text-[0.6rem] text-ink-faint">·</span>
