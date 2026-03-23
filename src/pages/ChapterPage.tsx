@@ -2,7 +2,6 @@ import { type ReactNode, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
-import { useAuth } from '../lib/AuthContext'
 import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
 
@@ -180,14 +179,8 @@ function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: strin
   )
 }
 
-function ShareButton({ chapter, onAuthRequired }: { chapter: Chapter; onAuthRequired: () => void }) {
-  const { isLoggedIn } = useAuth()
-
+function ShareButton({ chapter }: { chapter: Chapter }) {
   const handleShare = async () => {
-    if (!isLoggedIn) {
-      onAuthRequired()
-      return
-    }
     const url = `${window.location.origin}/chapter/${chapter.id}`
     const text = `${chapter.title} — The Record by Veritas Worldwide Press`
     if (navigator.share) {
@@ -213,14 +206,8 @@ function ShareButton({ chapter, onAuthRequired }: { chapter: Chapter; onAuthRequ
   )
 }
 
-function DownloadButton({ chapter, onAuthRequired }: { chapter: Chapter; onAuthRequired: () => void }) {
-  const { isLoggedIn } = useAuth()
-
+function DownloadButton({ chapter }: { chapter: Chapter }) {
   const handleDownload = () => {
-    if (!isLoggedIn) {
-      onAuthRequired()
-      return
-    }
     // Generate a text version of the chapter for download
     const lines: string[] = [
       chapter.title,
@@ -269,8 +256,6 @@ function DownloadButton({ chapter, onAuthRequired }: { chapter: Chapter; onAuthR
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const chapter = chapters.find(ch => ch.id === id)
-  const { setShowAuthModal } = useAuth()
-
   useEffect(() => {
     if (chapter) {
       document.title = `${chapter.title} | The Record — Veritas Worldwide Press`
@@ -301,8 +286,8 @@ export default function ChapterPage() {
         <div className="flex items-start justify-between gap-4">
           <p className="chapter-label mb-4">{chapter.number}</p>
           <div className="flex items-center gap-4">
-            <ShareButton chapter={chapter} onAuthRequired={() => setShowAuthModal(true)} />
-            <DownloadButton chapter={chapter} onAuthRequired={() => setShowAuthModal(true)} />
+            <ShareButton chapter={chapter} />
+            <DownloadButton chapter={chapter} />
             <BookmarkButton chapterId={chapter.id} />
           </div>
         </div>
