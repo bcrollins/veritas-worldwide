@@ -21,15 +21,23 @@ export default function AuthModal() {
     }
   }, [showAuthModal, mode])
 
-  // Lock body scroll when modal open
+  // Lock body scroll + Escape key when modal open
   useEffect(() => {
     if (showAuthModal) {
       document.body.style.overflow = 'hidden'
+      const handleKey = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setShowAuthModal(false)
+      }
+      document.addEventListener('keydown', handleKey)
+      return () => {
+        document.body.style.overflow = ''
+        document.removeEventListener('keydown', handleKey)
+      }
     } else {
       document.body.style.overflow = ''
     }
     return () => { document.body.style.overflow = '' }
-  }, [showAuthModal])
+  }, [showAuthModal, setShowAuthModal])
 
   if (!showAuthModal) return null
 
@@ -74,6 +82,9 @@ export default function AuthModal() {
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       onClick={(e) => { if (e.target === e.currentTarget) setShowAuthModal(false) }}
+      role="dialog"
+      aria-modal="true"
+      aria-label={mode === 'signup' ? 'Create account' : 'Sign in'}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-ink/60 backdrop-blur-sm" />
@@ -119,7 +130,7 @@ export default function AuthModal() {
                   value={displayName}
                   onChange={e => setDisplayName(e.target.value)}
                   placeholder="Your name"
-                  className="w-full px-4 py-2.5 bg-white border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                  className="w-full px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
                 />
               </div>
             )}
@@ -133,7 +144,7 @@ export default function AuthModal() {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full px-4 py-2.5 bg-white border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                className="w-full px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
               />
             </div>
             <div>
@@ -145,7 +156,7 @@ export default function AuthModal() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="At least 6 characters"
-                className="w-full px-4 py-2.5 bg-white border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                className="w-full px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
               />
             </div>
 
