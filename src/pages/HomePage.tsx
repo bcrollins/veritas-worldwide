@@ -90,7 +90,7 @@ export default function HomePage() {
               <span className="font-sans text-xs text-ink-faint">{featured.publishDate}</span>
               <span className="font-sans text-xs text-ink-faint">{estimateReadingTime(featured)} min read</span>
               {featured.sources.length > 0 && (
-                <span className="font-sans text-xs text-ink-faint">{featured.sources.length} sources</span>
+                <span className="font-sans text-xs text-ink-faint">{featured.sources.length} {featured.sources.length === 1 ? 'source' : 'sources'}</span>
               )}
               {featured.dateRange && (
                 <span className="font-sans text-xs font-semibold text-crimson">{featured.dateRange}</span>
@@ -137,7 +137,7 @@ export default function HomePage() {
                   {chapter.sources.length > 0 && (
                     <>
                       <span className="font-sans text-[0.6rem] text-ink-faint">·</span>
-                      <span className="font-sans text-[0.6rem] text-ink-faint">{chapter.sources.length} sources</span>
+                      <span className="font-sans text-[0.6rem] text-ink-faint">{chapter.sources.length} {chapter.sources.length === 1 ? 'source' : 'sources'}</span>
                     </>
                   )}
                   {chapter.content.some(b => b.type === 'evidence') && (
