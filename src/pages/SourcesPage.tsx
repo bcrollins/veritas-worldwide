@@ -67,17 +67,17 @@ export default function SourcesPage() {
         <p className="font-body text-lg italic text-ink-muted leading-relaxed">
           Every source cited in this publication is publicly accessible. The reader is encouraged to verify any claim independently.
         </p>
-        <div className="flex items-center gap-6 mt-6">
+        <div className="grid grid-cols-3 gap-4 mt-6">
           <div className="text-center">
-            <p className="font-display text-2xl font-bold text-crimson">{allSources.length}</p>
+            <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{allSources.length}</p>
             <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">Total Sources</p>
           </div>
           <div className="text-center">
-            <p className="font-display text-2xl font-bold text-crimson">{chapterSources.length}</p>
+            <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{chapterSources.length}</p>
             <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">Chapters Sourced</p>
           </div>
           <div className="text-center">
-            <p className="font-display text-2xl font-bold text-crimson">{allSources.filter(s => s.url).length}</p>
+            <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{allSources.filter(s => s.url).length}</p>
             <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">With Direct Links</p>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function SourcesPage() {
             <a
               key={ch.id}
               href={`#sources-${ch.id}`}
-              className="font-sans text-[0.6rem] font-semibold tracking-[0.05em] uppercase px-2.5 py-1.5 border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+              className="font-sans text-[0.65rem] font-semibold tracking-[0.05em] uppercase px-3 py-2 min-h-[44px] min-w-[44px] inline-flex items-center justify-center border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
               title={ch.title}
             >
               {ch.number}

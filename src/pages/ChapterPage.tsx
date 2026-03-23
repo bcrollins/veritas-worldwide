@@ -670,9 +670,9 @@ export default function ChapterPage() {
 
       {/* Chapter Header */}
       <header className="mb-12 border-b border-border pb-10">
-        <div className="flex items-start justify-between gap-4">
-          <p className="chapter-label mb-4">{chapter.number}</p>
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+          <p className="chapter-label mb-2 sm:mb-4">{chapter.number}</p>
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
             <FontSizeToggle />
             <ShareButton chapter={chapter} />
             <DownloadButton chapter={chapter} />

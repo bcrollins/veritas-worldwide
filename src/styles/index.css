@@ -115,38 +115,60 @@ h1, h2, h3, h4 {
 .drop-cap::first-letter {
   float: left;
   font-family: var(--font-display);
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   line-height: 0.8;
-  padding-right: 0.5rem;
+  padding-right: 0.4rem;
   padding-top: 0.15rem;
   color: var(--color-crimson);
   font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .drop-cap::first-letter {
+    font-size: 4.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 /* Blockquote — NYT-style with decorative quotation marks */
 .pullquote {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   line-height: 1.5;
   color: var(--color-ink);
   border-left: 4px solid var(--color-crimson);
-  padding: 2rem 0 2rem 2rem;
-  margin: 3rem 0;
+  padding: 1.5rem 0 1.5rem 1.25rem;
+  margin: 2rem 0;
   position: relative;
+}
+
+@media (min-width: 640px) {
+  .pullquote {
+    font-size: 1.5rem;
+    padding: 2rem 0 2rem 2rem;
+    margin: 3rem 0;
+  }
 }
 
 .pullquote::before {
   content: '\201C';
   font-family: var(--font-display);
-  font-size: 5rem;
+  font-size: 3.5rem;
   line-height: 1;
   color: var(--color-crimson);
   opacity: 0.15;
   position: absolute;
   top: -0.25rem;
-  left: 0.75rem;
+  left: 0.5rem;
   pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .pullquote::before {
+    font-size: 5rem;
+    left: 0.75rem;
+  }
 }
 
 .pullquote-attribution {
@@ -191,25 +213,34 @@ h1, h2, h3, h4 {
 .evidence-verified {
   border-left: 4px solid var(--color-verified);
   background: var(--color-verified-bg);
-  padding: 1.25rem 1.5rem;
-  margin: 2rem 0;
+  padding: 1rem 1rem;
+  margin: 1.5rem 0;
   border-radius: 0 4px 4px 0;
 }
 
 .evidence-circumstantial {
   border-left: 4px solid var(--color-circumstantial);
   background: var(--color-circumstantial-bg);
-  padding: 1.25rem 1.5rem;
-  margin: 2rem 0;
+  padding: 1rem 1rem;
+  margin: 1.5rem 0;
   border-radius: 0 4px 4px 0;
 }
 
 .evidence-disputed {
   border-left: 4px solid var(--color-disputed);
   background: var(--color-disputed-bg);
-  padding: 1.25rem 1.5rem;
-  margin: 2rem 0;
+  padding: 1rem 1rem;
+  margin: 1.5rem 0;
   border-radius: 0 4px 4px 0;
+}
+
+@media (min-width: 640px) {
+  .evidence-verified,
+  .evidence-circumstantial,
+  .evidence-disputed {
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
 }
 
 .evidence-label {
@@ -235,17 +266,29 @@ h1, h2, h3, h4 {
 .stat-card {
   background: var(--color-ink);
   color: white;
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   border-radius: 2px;
 }
 
+@media (min-width: 640px) {
+  .stat-card {
+    padding: 1.5rem;
+  }
+}
+
 .stat-value {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--color-crimson-light);
   line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .stat-value {
+    font-size: 2.5rem;
+  }
 }
 
 .stat-label {
@@ -258,13 +301,25 @@ h1, h2, h3, h4 {
   margin-top: 0.5rem;
 }
 
-/* Data tables */
+/* Data tables — wrapped in overflow container for mobile */
+.data-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2rem 0;
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-sans);
-  font-size: 0.875rem;
-  margin: 2rem 0;
+  font-size: 0.8rem;
+  min-width: 480px;
+}
+
+@media (min-width: 640px) {
+  .data-table {
+    font-size: 0.875rem;
+  }
 }
 
 .data-table thead {

@@ -45,7 +45,7 @@ export default function HomePage() {
           <p className="font-sans text-[0.65rem] font-bold tracking-[0.2em] uppercase text-ink-muted mb-2">
             Volume I &middot; Published March 2026
           </p>
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-ink leading-[1.05] mb-3">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-ink leading-[1.05] mb-3">
             The Record
           </h1>
           <p className="font-body text-lg md:text-xl italic text-ink-muted max-w-2xl mx-auto">
@@ -138,7 +138,7 @@ export default function HomePage() {
             </h2>
             <div className="flex-1 h-[1px] bg-border" />
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[chapters[2], chapters[4], chapters[10], chapters[14], chapters[22], chapters[28]].filter(Boolean).map((ch) => (
               <Link key={ch.id} to={`/chapter/${ch.id}`} className="group block card-lift rounded-sm">
                 {ch.heroImage && (

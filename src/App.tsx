@@ -237,7 +237,7 @@ function Footer() {
   return (
     <footer className="bg-ink text-white/70 py-16 mt-20 no-print">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           <div>
             <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white mb-4">
               Veritas Worldwide Press
@@ -280,12 +280,12 @@ function Footer() {
               Support This Work
             </a>
             {/* Social Links */}
-            <div className="flex items-center gap-3 mt-5">
-              <a href="https://x.com/VeritasWorldwide" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors" aria-label="Follow on X">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <div className="flex items-center gap-1 mt-5">
+              <a href="https://x.com/VeritasWorldwide" target="_blank" rel="noopener noreferrer" className="p-2.5 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-white/30 hover:text-white transition-colors rounded-sm" aria-label="Follow on X">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
-              <a href="mailto:contact@veritasworldwide.com" className="text-white/30 hover:text-white transition-colors" aria-label="Contact via email">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <a href="mailto:contact@veritasworldwide.com" className="p-2.5 min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-white/30 hover:text-white transition-colors rounded-sm" aria-label="Contact via email">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </a>
             </div>
           </div>

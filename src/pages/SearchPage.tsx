@@ -165,7 +165,7 @@ export default function SearchPage() {
               <button
                 key={term}
                 onClick={() => handleSearch(term)}
-                className="font-sans text-xs px-3 py-1.5 border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+                className="font-sans text-xs px-4 py-2.5 min-h-[44px] border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
               >
                 {term}
               </button>

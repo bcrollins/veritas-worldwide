@@ -112,7 +112,7 @@ export default function TimelinePage() {
       <div className="flex flex-wrap justify-center gap-2 mb-10">
         <button
           onClick={() => setFilterEra(null)}
-          className={`px-4 py-2 rounded-full text-sm font-sans font-medium transition-all ${
+          className={`px-4 py-2.5 min-h-[44px] rounded-full text-sm font-sans font-medium transition-all ${
             !filterEra
               ? 'bg-ink text-parchment'
               : 'bg-parchment-dark/30 text-ink-muted hover:bg-parchment-dark/50'
@@ -124,7 +124,7 @@ export default function TimelinePage() {
           <button
             key={era.name}
             onClick={() => setFilterEra(filterEra === era.name ? null : era.name)}
-            className={`px-4 py-2 rounded-full text-sm font-sans font-medium transition-all ${
+            className={`px-4 py-2.5 min-h-[44px] rounded-full text-sm font-sans font-medium transition-all ${
               filterEra === era.name
                 ? 'text-parchment'
                 : 'bg-parchment-dark/30 text-ink-muted hover:bg-parchment-dark/50'

@@ -58,7 +58,7 @@ export default function DonationBanner() {
             <button
               key={tier.amount}
               onClick={() => setSelected(tier.amount)}
-              className={`px-5 py-2.5 rounded-sm font-sans text-sm font-semibold tracking-[0.05em] transition-colors ${
+              className={`px-5 py-3 min-h-[44px] rounded-sm font-sans text-sm font-semibold tracking-[0.05em] transition-colors ${
                 selected === tier.amount
                   ? 'bg-crimson text-white'
                   : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
@@ -69,7 +69,7 @@ export default function DonationBanner() {
           ))}
           <button
             onClick={() => setSelected('custom')}
-            className={`px-5 py-2.5 rounded-sm font-sans text-sm font-semibold tracking-[0.05em] transition-colors ${
+            className={`px-5 py-3 min-h-[44px] rounded-sm font-sans text-sm font-semibold tracking-[0.05em] transition-colors ${
               selected === 'custom'
                 ? 'bg-crimson text-white'
                 : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'

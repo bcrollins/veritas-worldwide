@@ -21,11 +21,11 @@ type SortDir = 'asc' | 'desc'
 // ── Stat Card ──────────────────────────────────────────────────────
 function StatCard({ label, value, accent }: { label: string; value: number | string; accent?: boolean }) {
   return (
-    <div className={`p-5 rounded-sm border ${accent ? 'border-crimson bg-crimson/5' : 'border-border bg-surface'}`}>
+    <div className={`p-4 sm:p-5 rounded-sm border ${accent ? 'border-crimson bg-crimson/5' : 'border-border bg-surface'}`}>
       <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-2">
         {label}
       </p>
-      <p className={`font-display text-3xl md:text-4xl font-bold ${accent ? 'text-crimson' : 'text-ink'}`}>
+      <p className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold ${accent ? 'text-crimson' : 'text-ink'}`}>
         {typeof value === 'number' ? value.toLocaleString() : value}
       </p>
     </div>
@@ -306,7 +306,7 @@ export default function AnalyticsPage() {
       {data && (
         <div className="space-y-8">
           {/* Stat Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             <StatCard label="Lifetime Views" value={data.lifetime} accent />
             <StatCard label="Today" value={data.today} />
             <StatCard label="This Week" value={data.thisWeek} />
