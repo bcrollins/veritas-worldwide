@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
 import AuthModal from './components/AuthModal'
 import Toast from './components/Toast'
+import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import ChapterPage from './pages/ChapterPage'
 import SearchPage from './pages/SearchPage'
@@ -160,8 +161,9 @@ function Footer() {
 export default function App() {
   return (
     <div className="min-h-screen bg-parchment text-ink">
+      <ScrollToTop />
       <Header />
-      <main>
+      <main id="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/chapter/:id" element={<ChapterPage />} />
