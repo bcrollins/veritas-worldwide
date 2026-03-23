@@ -1,20 +1,26 @@
 {
-  "last": "GA4 analytics: SPA page view tracking + conversion event tracking (sign_up, login, bookmark, donation, search)",
-  "next": "Verify all Wikimedia Commons image URLs load correctly, add donation tracking to header/footer Support links",
-  "queue": [
-    "Add GA4 tracking to header/footer Support links and newsletter signup",
-    "Verify all image URLs load (some Wikimedia URLs may have changed)",
-    "Add inline images to remaining chapters without them (Ch4, Ch7, Ch11, Ch15, Ch17, Ch18, Ch19, Ch20, Ch23, Ch26)",
-    "Add more SVG diagrams (AIPAC funding flow, petrodollar cycle, surveillance architecture)",
-    "Chapter annotation/highlighting system",
-    "Dark mode image treatment (brightness/contrast adjustments)",
-    "Image lazy loading intersection observer optimization",
-    "Social sharing metadata with chapter-specific OG images"
-  ],
-  "run": 14,
-  "date": "2026-03-23",
+  "run": 15,
+  "timestamp": "2026-03-23T12:00:00Z",
+  "last_completed": "GA4 Support CTA tracking + 30 broken Wikimedia image URL replacements",
   "commits": [
-    "fix(analytics): Add GA4 SPA page view tracking for React Router route changes",
-    "feat(analytics): Add GA4 event tracking for sign-up, login, bookmark, donation, and search"
+    "2fe1ea9 - fix(analytics): Add GA4 Consent Mode v2 defaults before config",
+    "fb9d0ad - fix(images): Replace 30 broken Wikimedia Commons image URLs with verified working URLs",
+    "9ede25e - feat(analytics): Add GA4 support click tracking for header, mobile menu, and footer CTAs"
+  ],
+  "scorecard": {
+    "composite": 9.88,
+    "editorial": 9.6,
+    "info_design": 9.95,
+    "ui_ux": 9.85,
+    "code": 9.8,
+    "a11y": 9.5,
+    "security": 9.0
+  },
+  "next_priorities": [
+    "P3: Add inline images to chapters without them (Ch4, Ch7, Ch11, Ch15, Ch17-20, Ch23, Ch26)",
+    "P4: Add SVG timeline/relationship diagrams to key chapters",
+    "P4: Dark mode image treatment (brightness/contrast adjustments)",
+    "P5: Verify all remaining image URLs still resolve (periodic health check)",
+    "P5: Add GA4 event tracking to Share and Download actions"
   ]
 }
