@@ -76,7 +76,13 @@ export default function BookmarksPage() {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12">
+        <div className="text-center py-16">
+          <svg className="w-12 h-12 text-ink-faint mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+          </svg>
+          <p className="font-body text-base text-ink-muted mb-6">
+            Tap the bookmark icon on any chapter to save it here for quick access.
+          </p>
           <Link
             to="/"
             className="font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors"
