@@ -1,13 +1,13 @@
 {
-  "run": 7,
+  "run": 8,
   "date": "2026-03-23",
-  "composite": 9.4,
+  "composite": 9.5,
   "features": {
     "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters with evidence tiers, cross-links, reading time. RSS feed. No content changes this run." },
-    "information_design": { "score": 9.5, "weight": 0.20, "notes": "JSON-LD + OG + Twitter + canonical. Sitemap. Sources page now has chapter jump nav for 500+ sources." },
-    "ui_ux_typography": { "score": 9.5, "weight": 0.20, "notes": "Dark mode, newsletter, social share, donation CTAs on all key pages including methodology. 404 branded." },
+    "information_design": { "score": 9.7, "weight": 0.20, "notes": "Bot meta injection now covers all 31 chapters for social sharing. Sources page has search + chapter jump nav. JSON-LD, OG, Twitter Cards on all pages." },
+    "ui_ux_typography": { "score": 9.5, "weight": 0.20, "notes": "Dark mode, newsletter, social share, donation CTAs on all key pages. Source search with live filtering." },
     "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Zero TS errors. All pages code-split. Lazy loading. Clean component architecture." },
-    "accessibility": { "score": 9.2, "weight": 0.15, "notes": "Print stylesheet enhanced: @page margins, URL display for sources, heading orphan prevention, dark-to-light conversion. Evidence tiers distinguishable in grayscale." },
-    "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. localStorage auth. Stripe payment links only." }
+    "accessibility": { "score": 9.4, "weight": 0.15, "notes": "Share dropdown now has arrow key navigation, focus auto-set, Escape returns to trigger. Print stylesheet with URL display, heading orphan prevention." },
+    "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. Analytics no-cache headers. localStorage auth. Stripe payment links only." }
   }
 }
