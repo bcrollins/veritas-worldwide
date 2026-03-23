@@ -1,31 +1,13 @@
-import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { chapters, searchChapters } from '../data/chapters'
 import type { Chapter } from '../data/chapters'
-import { setMetaTags, clearMetaTags } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
 
 interface SearchResult {
   chapter: Chapter
   matchedIn: string[]
   snippet: string
-}
-
-/** Highlight matched terms in text with <mark> tags */
-function HighlightedText({ text, query }: { text: string; query: string }) {
-  if (!query.trim()) return <>{text}</>
-  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const parts = text.split(new RegExp(`(${escaped})`, 'gi'))
-  return (
-    <>
-      {parts.map((part, i) =>
-        part.toLowerCase() === query.toLowerCase() ? (
-          <mark key={i} className="bg-crimson/15 text-ink px-0.5 rounded-sm">{part}</mark>
-        ) : (
-          <span key={i}>{part}</span>
-        )
-      )}
-    </>
-  )
 }
 
 function getSnippet(chapter: Chapter, query: string): string {
@@ -69,45 +51,53 @@ function getMatchedFields(chapter: Chapter, query: string): string[] {
   return fields
 }
 
+/** Highlights query matches within text by wrapping them in <mark> tags */
+function HighlightText({ text, query }: { text: string; query: string }) {
+  if (!query.trim()) return <>{text}</>
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'))
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase() ? (
+          <mark key={i} className="bg-crimson/15 text-ink rounded-sm px-0.5">{part}</mark>
+        ) : (
+          part
+        )
+      )}
+    </>
+  )
+}
+
 export default function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const initialQuery = searchParams.get('q') || ''
-  const [inputValue, setInputValue] = useState(initialQuery)
   const [query, setQuery] = useState(initialQuery)
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>(null)
+  const [debouncedQuery, setDebouncedQuery] = useState(initialQuery)
+  const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     setMetaTags({
       title: 'Search | The Record — Veritas Worldwide Press',
       description: `Full-text search across all ${chapters.length} chapters, sources, evidence, and data tables.`,
-      url: 'https://veritasworldwide.com/search',
+      url: `${SITE_URL}/search`,
     })
     return () => { clearMetaTags() }
   }, [])
 
   useEffect(() => {
     const q = searchParams.get('q')
-    if (q && q !== inputValue) {
-      setInputValue(q)
+    if (q && q !== query) {
       setQuery(q)
+      setDebouncedQuery(q)
     }
   }, [searchParams])
 
-  const results: SearchResult[] = useMemo(() => {
-    if (!query.trim()) return []
-    const matched = searchChapters(query)
-    return matched.map(chapter => ({
-      chapter,
-      matchedIn: getMatchedFields(chapter, query),
-      snippet: getSnippet(chapter, query),
-    }))
-  }, [query])
-
   const handleSearch = useCallback((value: string) => {
-    setInputValue(value)
-    if (debounceRef.current) clearTimeout(debounceRef.current)
-    debounceRef.current = setTimeout(() => {
-      setQuery(value)
+    setQuery(value)
+    if (debounceTimer.current) clearTimeout(debounceTimer.current)
+    debounceTimer.current = setTimeout(() => {
+      setDebouncedQuery(value)
       if (value.trim()) {
         setSearchParams({ q: value })
       } else {
@@ -115,6 +105,16 @@ export default function SearchPage() {
       }
     }, 250)
   }, [setSearchParams])
+
+  const results: SearchResult[] = useMemo(() => {
+    if (!debouncedQuery.trim()) return []
+    const matched = searchChapters(debouncedQuery)
+    return matched.map(chapter => ({
+      chapter,
+      matchedIn: getMatchedFields(chapter, debouncedQuery),
+      snippet: getSnippet(chapter, debouncedQuery),
+    }))
+  }, [debouncedQuery])
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
@@ -141,15 +141,21 @@ export default function SearchPage() {
         <input
           type="text"
           placeholder="Search by name, topic, institution, date..."
-          value={inputValue}
+          value={query}
           onChange={(e) => handleSearch(e.target.value)}
           className="search-input"
           autoFocus
+          aria-label="Search The Record"
         />
+        {query.trim() && query !== debouncedQuery && (
+          <div className="absolute right-4 top-1/2 -translate-y-1/2">
+            <div className="w-4 h-4 border-2 border-crimson/30 border-t-crimson rounded-full animate-spin" />
+          </div>
+        )}
       </div>
 
       {/* Results */}
-      {query.trim() === '' ? (
+      {debouncedQuery.trim() === '' ? (
         <div className="text-center py-16">
           <p className="font-body text-lg text-ink-muted mb-3">Enter a search term to explore.</p>
           <div className="flex flex-wrap justify-center gap-2 mt-6">
@@ -167,7 +173,7 @@ export default function SearchPage() {
       ) : results.length === 0 ? (
         <div className="text-center py-16">
           <p className="font-body text-lg text-ink-muted mb-2">
-            No results found for &ldquo;{query}&rdquo;
+            No results found for &ldquo;{debouncedQuery}&rdquo;
           </p>
           <p className="font-sans text-sm text-ink-faint">
             Try different keywords or browse the <Link to="/" className="text-crimson hover:underline">table of contents</Link>.
@@ -176,7 +182,7 @@ export default function SearchPage() {
       ) : (
         <div>
           <p className="font-sans text-xs text-ink-faint mb-6">
-            <span className="font-bold text-crimson">{results.length}</span> {results.length === 1 ? 'result' : 'results'} for &ldquo;{query}&rdquo;
+            <span className="font-bold text-crimson">{results.length}</span> {results.length === 1 ? 'result' : 'results'} for &ldquo;{debouncedQuery}&rdquo;
           </p>
 
           <div className="space-y-0">
@@ -197,10 +203,10 @@ export default function SearchPage() {
                   )}
                 </div>
                 <h3 className="font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors mb-2">
-                  <HighlightedText text={result.chapter.title} query={query} />
+                  <HighlightText text={result.chapter.title} query={debouncedQuery} />
                 </h3>
                 <p className="font-body text-sm text-ink-muted leading-relaxed mb-3 line-clamp-3">
-                  <HighlightedText text={result.snippet} query={query} />
+                  <HighlightText text={result.snippet} query={debouncedQuery} />
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {result.matchedIn.map(field => (
