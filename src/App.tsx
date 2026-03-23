@@ -112,9 +112,10 @@ function Header() {
             )}
           </nav>
           <button
-            className="md:hidden p-2 text-ink"
+            className="md:hidden p-3 -mr-3 text-ink"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
@@ -126,12 +127,12 @@ function Header() {
           </button>
         </div>
         {menuOpen && (
-          <nav className="md:hidden pb-4 border-t border-border pt-3 flex flex-col gap-3">
+          <nav className="md:hidden pb-4 border-t border-border pt-3 flex flex-col gap-0">
             {navLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-ink"
+                className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-ink py-3"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -156,14 +157,14 @@ function Header() {
             {isLoggedIn ? (
               <button
                 onClick={() => { logout(); setMenuOpen(false) }}
-                className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-crimson text-left"
+                className="font-sans text-sm tracking-[0.05em] uppercase text-ink-muted hover:text-crimson text-left py-3"
               >
                 Sign Out ({user?.displayName?.split(' ')[0]})
               </button>
             ) : (
               <button
                 onClick={() => { setShowAuthModal(true); setMenuOpen(false) }}
-                className="font-sans text-sm tracking-[0.05em] uppercase text-crimson font-semibold text-left"
+                className="font-sans text-sm tracking-[0.05em] uppercase text-crimson font-semibold text-left py-3"
               >
                 Sign In
               </button>
