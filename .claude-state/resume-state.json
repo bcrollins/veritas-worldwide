@@ -1,11 +1,13 @@
 {
-  "last": "Run 10 — 5 fixes: aria-current on nav links, DownloadPDF deferred import (400KB savings), mobile nav Escape+aria-controls, nav landmark labels + footer semantic nav, semantic table captions.",
-  "next": "Push all commits (need GitHub credentials).",
+  "last": "Run 11 — 4 fixes: source count pluralization, Stripe prefilled_amount donation wiring, shared DONATE_URL constant extraction, node_modules removed from git.",
+  "next": "Continue with P4/P5 queue items.",
   "queue": [
     "P4: Firebase project setup for live analytics tracking",
+    "P4: Newsletter signup — needs real email backend (current: localStorage only)",
+    "P5: Self-host fonts for full LCP control",
     "P5: Interactive timeline spanning all chapters",
     "P5: Chapter annotation/highlighting system",
-    "P5: Newsletter signup email integration",
-    "P5: Self-host fonts for full LCP control"
+    "P5: Sitemap.xml + robots.txt generation",
+    "P5: RSS feed for new chapters/updates"
   ]
 }
