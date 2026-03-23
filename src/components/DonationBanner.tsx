@@ -99,7 +99,7 @@ export default function DonationBanner() {
         {/* Donate Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={DONATE_URL}
+            href={`${DONATE_URL}?prefilled_amount=${selected === 'custom' ? (parseFloat(customAmount) > 0 ? Math.round(parseFloat(customAmount) * 100) : '') : selected * 100}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
