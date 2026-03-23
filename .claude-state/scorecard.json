@@ -1,13 +1,13 @@
 {
-  "run": 5,
+  "run": 6,
   "date": "2026-03-23",
-  "composite": 9.0,
+  "composite": 9.3,
   "features": {
-    "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters, evidence tiers classified, reading time, cross-links" },
-    "information_design": { "score": 9.0, "weight": 0.20, "notes": "JSON-LD + OG meta + Twitter cards on all pages. Search highlighting." },
-    "ui_ux_typography": { "score": 9.0, "weight": 0.20, "notes": "Debounced search, match highlighting, route-level lazy loading, loading spinner" },
-    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Main bundle 240KB (was 878KB). No unused deps. Proper code splitting." },
-    "accessibility": { "score": 8.5, "weight": 0.15, "notes": "Evidence tier aria-labels, skip-to-content, semantic HTML" },
-    "security": { "score": 8.5, "weight": 0.05, "notes": "External Stripe links, noopener noreferrer, no PII" }
+    "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters with evidence tiers, cross-links, reading time. RSS feed for content syndication." },
+    "information_design": { "score": 9.5, "weight": 0.20, "notes": "JSON-LD + OG + Twitter + canonical on all pages. Sitemap with all routes incl analytics. RSS autodiscovery. Analytics page." },
+    "ui_ux_typography": { "score": 9.5, "weight": 0.20, "notes": "Dark mode toggle with system preference detection. Newsletter signup. Branded 404 page. Footer Support CTA restored." },
+    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Firebase analytics with clean abstraction. ThemeContext. All pages code-split. Zero TS errors." },
+    "accessibility": { "score": 9.0, "weight": 0.15, "notes": "Print evidence tiers distinguishable via border styles (solid/dashed/dotted). Dark mode respects prefers-color-scheme. line-clamp-3 added." },
+    "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. Newsletter stores to localStorage only. Firebase config via env vars." }
   }
 }

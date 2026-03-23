@@ -1,11 +1,12 @@
 {
-  "last": "Run 5 — Debounced search with match highlighting. Route-level lazy loading (main bundle 878KB→240KB). Removed react-helmet-async. SEO meta on all pages. Suspense loading states.",
-  "next": "Dark mode toggle, social sharing per chapter, newsletter signup",
+  "last": "Run 6 — Dark mode toggle, newsletter signup, RSS feed, 404 redesign, print evidence distinction, footer Support CTA restored, sitemap updated, analytics page deployed.",
+  "next": "Social sharing buttons per chapter, methodology page donation CTA, Firebase credentials for live analytics",
   "queue": [
-    "P3: Dark mode toggle (reader preference)",
-    "P3: Social sharing buttons per chapter",
-    "P4: Newsletter signup form",
-    "P4: RSS feed generation",
-    "P5: Methodology page donation CTA"
+    "P3: Social sharing buttons per chapter (share card previews)",
+    "P4: Methodology page donation CTA at bottom",
+    "P4: Firebase project setup for live analytics tracking",
+    "P5: Related chapters sidebar on chapter pages",
+    "P5: Interactive timeline spanning all chapters",
+    "P5: Chapter annotation/highlighting system"
   ]
 }
