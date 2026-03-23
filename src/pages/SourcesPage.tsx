@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
@@ -102,6 +102,25 @@ export default function SourcesPage() {
         </div>
       </section>
 
+      {/* Chapter Quick Nav */}
+      <nav className="mb-12 no-print" aria-label="Jump to chapter sources">
+        <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
+          Jump to Chapter
+        </h2>
+        <div className="flex flex-wrap gap-1.5">
+          {chapterSources.map(ch => (
+            <a
+              key={ch.id}
+              href={`#sources-${ch.id}`}
+              className="font-sans text-[0.6rem] font-semibold tracking-[0.05em] uppercase px-2.5 py-1.5 border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+              title={ch.title}
+            >
+              {ch.number}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       {/* Sources by Chapter */}
       <section>
         <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-6">
@@ -115,7 +134,7 @@ export default function SourcesPage() {
         ) : (
           <div className="space-y-10">
             {chapterSources.map(ch => (
-              <div key={ch.id} className="border-b border-border pb-8">
+              <div key={ch.id} id={`sources-${ch.id}`} className="border-b border-border pb-8 scroll-mt-20">
                 <div className="flex items-baseline gap-3 mb-4">
                   <span className="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson">
                     {ch.number}
