@@ -85,9 +85,13 @@ export default function HomePage() {
             <p className="font-body text-lg text-ink-muted italic mb-4 max-w-3xl">
               {featured.subtitle}
             </p>
-            <div className="flex items-center gap-4 text-sm">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
               <span className="font-sans text-xs text-ink-faint">{featured.author}</span>
               <span className="font-sans text-xs text-ink-faint">{featured.publishDate}</span>
+              <span className="font-sans text-xs text-ink-faint">{estimateReadingTime(featured)} min read</span>
+              {featured.sources.length > 0 && (
+                <span className="font-sans text-xs text-ink-faint">{featured.sources.length} sources</span>
+              )}
               {featured.dateRange && (
                 <span className="font-sans text-xs font-semibold text-crimson">{featured.dateRange}</span>
               )}
