@@ -3,224 +3,229 @@
   <channel>
     <title>The Record — Veritas Worldwide Press</title>
     <link>https://veritasworldwide.com</link>
-    <description>A Documentary History of Power, Money, and the Institutions That Shaped the Modern World.</description>
+    <description>A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Primary Sources. Public Record. Your Conclusions.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 06:31:51 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 17:30:00 GMT</lastBuildDate>
     <atom:link href="https://veritasworldwide.com/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://veritasworldwide.com/og-image.png</url>
+      <title>The Record — Veritas Worldwide Press</title>
+      <link>https://veritasworldwide.com</link>
+    </image>
     <item>
       <title>A Note on Methodology, Evidence Standards &amp; How to Read This Book</title>
       <link>https://veritasworldwide.com/chapter/foreword</link>
-      <guid>https://veritasworldwide.com/chapter/foreword</guid>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/foreword</guid>
       <description>This is a reference work. It compiles primary source documents — court records, congressional testimony, declassified government files, academic studies, and verified financial disclosures — into a single chronological narrative.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>This is a reference work. It compiles primary source documents — court records, congressional testimony, declassified government files, academic studies, and verified financial disclosures — into a single chronological narrative.</title>
+      <title>The World Today</title>
       <link>https://veritasworldwide.com/chapter/overview</link>
-      <guid>https://veritasworldwide.com/chapter/overview</guid>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/overview</guid>
       <description>How a convergence of financial, political, pharmaceutical, and intelligence systems created the architecture of modern control — and why most people never notice.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>The World Today</title>
-      <link>https://veritasworldwide.com/chapter/chapter-1</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-1</guid>
-      <description>From the Frankfurt ghetto to the Bank of England, from Napoleon\</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>How a convergence of financial, political, pharmaceutical, and intelligence systems created the architecture of modern control — and why most people never notice.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-2</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-2</guid>
-      <description>Four American presidents took on the banking establishment. Three were assassinated. One survived an assassination attempt that should have killed him.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
       <title>The Birth of Central Banking</title>
-      <link>https://veritasworldwide.com/chapter/chapter-3</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-3</guid>
-      <description>In November 1910, six men representing a quarter of the world\\\</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>From the Frankfurt ghetto to the Bank of England, from Napoleon\</title>
-      <link>https://veritasworldwide.com/chapter/chapter-4</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-4</guid>
-      <description>Two brothers from one of Europe\\\</description>
+      <link>https://veritasworldwide.com/chapter/chapter-1</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-1</guid>
+      <description>From the Frankfurt ghetto to the Bank of England, from Napoleon's wars to the halls of the United States Congress, the story of how private banking dynasties captured the power to create money, and what happened to those who tried to take it back.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Bank War &amp; The Presidents Who Fought Back</title>
-      <link>https://veritasworldwide.com/chapter/chapter-5</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-5</guid>
-      <description>The industrialist who built the American middle class also published the most controversial newspaper series in American history — and his warnings about the gold standard proved prophetic.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>Four American presidents took on the banking establishment. Three were assassinated. One survived an assassination attempt that should have killed him.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-6</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-6</guid>
-      <description>The documented history of the political movement that would reshape the Middle East and redefine the relationship between religion, nationalism, and geopolitics.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-2</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-2</guid>
+      <description>Four American presidents took on the banking establishment. Three were assassinated. One survived an assassination attempt that should have killed him.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Jekyll Island &amp; the Creation of the Federal Reserve</title>
-      <link>https://veritasworldwide.com/chapter/chapter-7</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-7</guid>
-      <description>The intelligence agency that operates by its own rules — from covert assassinations to nuclear espionage, documented through declassified files and sworn testimony.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>In November 1910, six men representing a quarter of the world\\\</title>
-      <link>https://veritasworldwide.com/chapter/chapter-8</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-8</guid>
-      <description>President Kennedy\\\</description>
+      <link>https://veritasworldwide.com/chapter/chapter-3</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-3</guid>
+      <description>In November 1910, six men representing a quarter of the world's wealth boarded a private rail car in New Jersey. Their destination: a private island off the coast of Georgia. Their mission: to draft the blueprint for a new central bank.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Warburg Brothers &amp; World War I</title>
-      <link>https://veritasworldwide.com/chapter/chapter-9</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-9</guid>
-      <description>A comprehensive examination of the evidence surrounding the assassination of President John F. Kennedy, including declassified documents released through 2025.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>Two brothers from one of Europe\\\</title>
-      <link>https://veritasworldwide.com/chapter/chapter-10</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-10</guid>
-      <description>How a secret agreement between Henry Kissinger and the Saudi royal family created the foundation of American economic hegemony — and why it is now unraveling.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-4</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-4</guid>
+      <description>Two brothers from one of Europe's most powerful banking families found themselves on opposite sides of the Great War — one advising the Kaiser, the other shaping American financial policy.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Henry Ford, The International Jew &amp; the Gold Standard</title>
-      <link>https://veritasworldwide.com/chapter/chapter-11</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-11</guid>
-      <description>The private organizations where the world\\\</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>The industrialist who built the American middle class also published the most controversial newspaper series in American history — and his warnings about the gold standard proved prophetic.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-12</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-12</guid>
-      <description>A plain-English explainer on the institution that controls the American money supply, who owns it, and how it operates — stripped of jargon and presented with primary source documentation.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-5</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-5</guid>
+      <description>The industrialist who built the American middle class also published the most controversial newspaper series in American history — and his warnings about the gold standard proved prophetic.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Talmud, the Balfour Declaration &amp; the Origins of Zionism</title>
-      <link>https://veritasworldwide.com/chapter/chapter-13</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-13</guid>
-      <description>How Wall Street\\\</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>The documented history of the political movement that would reshape the Middle East and redefine the relationship between religion, nationalism, and geopolitics.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-14</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-14</guid>
-      <description>The most powerful foreign policy lobby in America — how it operates, who it funds, and what happens to those who oppose it.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-6</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-6</guid>
+      <description>The documented history of the political movement that would reshape the Middle East and redefine the relationship between religion, nationalism, and geopolitics.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Mossad: The Institute</title>
-      <link>https://veritasworldwide.com/chapter/chapter-15</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-15</guid>
-      <description>A comprehensive accounting of American taxpayer money sent to Israel — totaling over $300 billion in inflation-adjusted terms — and the legal framework that enables it.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>The intelligence agency that operates by its own rules — from covert assassinations to nuclear espionage, documented through declassified files and sworn testimony.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-16</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-16</guid>
-      <description>On June 8, 1967, Israeli forces attacked an American intelligence ship in international waters, killing 34 U.S. servicemen. The official investigation was classified for decades.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-7</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-7</guid>
+      <description>The intelligence agency that operates by its own rules — from covert assassinations to nuclear espionage, documented through declassified files and sworn testimony.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>JFK, Dimona &amp; AIPAC</title>
-      <link>https://veritasworldwide.com/chapter/chapter-17</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-17</guid>
-      <description>The evidence surrounding the murder of a presidential candidate who promised to reopen his brother\\\</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>President Kennedy\\\</title>
-      <link>https://veritasworldwide.com/chapter/chapter-18</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-18</guid>
-      <description>The documented CIA program to infiltrate and influence American media — from the Cold War to the present day.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-8</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-8</guid>
+      <description>President Kennedy's documented confrontation with Israel's secret nuclear program and the lobby that would reshape American foreign policy.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>JFK — Expanded Analysis</title>
-      <link>https://veritasworldwide.com/chapter/chapter-19</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-19</guid>
-      <description>The CIA\\\</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>A comprehensive examination of the evidence surrounding the assassination of President John F. Kennedy, including declassified documents released through 2025.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-20</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-20</guid>
-      <description>How the Rockefeller Foundation reshaped American medicine to favor pharmaceutical treatment over prevention — and the financial incentives that keep the system in place.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-9</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-9</guid>
+      <description>A comprehensive examination of the evidence surrounding the assassination of President John F. Kennedy, including declassified documents released through 2025.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Petrodollar System</title>
-      <link>https://veritasworldwide.com/chapter/chapter-21</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-21</guid>
-      <description>A documented history of vaccine development, the regulatory framework that governs it, and the financial incentives that shape public health policy.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>How a secret agreement between Henry Kissinger and the Saudi royal family created the foundation of American economic hegemony — and why it is now unraveling.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-22</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-22</guid>
-      <description>The event that changed the world — examined through the official record, the 9/11 Commission Report, and the questions that remain unanswered.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-10</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-10</guid>
+      <description>How a secret agreement between Henry Kissinger and the Saudi royal family created the foundation of American economic hegemony — and why it is now unraveling.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Shadow Institutions — Bilderberg, CFR, Trilateral Commission &amp; the BIS</title>
-      <link>https://veritasworldwide.com/chapter/chapter-23</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-23</guid>
-      <description>How a policy designed to criminalize dissent became the longest and most expensive domestic war in American history.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>The private organizations where the world\\\</title>
-      <link>https://veritasworldwide.com/chapter/chapter-24</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-24</guid>
-      <description>The documented history of water fluoridation — from its industrial origins to its adoption as public health policy.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-11</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-11</guid>
+      <description>The private organizations where the world's most powerful people meet behind closed doors — documented through leaked attendee lists, founding charters, and their own publications.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>How the Federal Reserve Works</title>
-      <link>https://veritasworldwide.com/chapter/chapter-25</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-25</guid>
-      <description>Three of the wealthiest men who opposed the creation of the Federal Reserve boarded the same ship in April 1912. None of them survived.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>A plain-English explainer on the institution that controls the American money supply, who owns it, and how it operates — stripped of jargon and presented with primary source documentation.</title>
-      <link>https://veritasworldwide.com/chapter/chapter-26</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-26</guid>
-      <description>Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.</description>
+      <link>https://veritasworldwide.com/chapter/chapter-12</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-12</guid>
+      <description>A plain-English explainer on the institution that controls the American money supply, who owns it, and how it operates — stripped of jargon and presented with primary source documentation.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The 2008 Financial Crisis</title>
-      <link>https://veritasworldwide.com/chapter/chapter-27</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-27</guid>
-      <description>The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>How Wall Street\\\</title>
-      <link>https://veritasworldwide.com/chapter/chapter-28</link>
-      <guid>https://veritasworldwide.com/chapter/chapter-28</guid>
-      <description>The intelligence-linked operation that compromised the world\\\</description>
+      <link>https://veritasworldwide.com/chapter/chapter-13</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-13</guid>
+      <description>How Wall Street's reckless gambling crashed the global economy, how the government bailed out the banks with taxpayer money, and how no one went to prison.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>AIPAC &amp; Congressional Lobbying</title>
+      <link>https://veritasworldwide.com/chapter/chapter-14</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-14</guid>
+      <description>The most powerful foreign policy lobby in America — how it operates, who it funds, and what happens to those who oppose it.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>U.S. Foreign Aid to Israel</title>
+      <link>https://veritasworldwide.com/chapter/chapter-15</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-15</guid>
+      <description>A comprehensive accounting of American taxpayer money sent to Israel — totaling over $300 billion in inflation-adjusted terms — and the legal framework that enables it.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The USS Liberty Incident</title>
+      <link>https://veritasworldwide.com/chapter/chapter-16</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-16</guid>
+      <description>On June 8, 1967, Israeli forces attacked an American intelligence ship in international waters, killing 34 U.S. servicemen. The official investigation was classified for decades.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Assassination of Robert F. Kennedy</title>
+      <link>https://veritasworldwide.com/chapter/chapter-17</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-17</guid>
+      <description>The evidence surrounding the murder of a presidential candidate who promised to reopen his brother's assassination investigation.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Operation Mockingbird &amp; CIA Media Influence</title>
+      <link>https://veritasworldwide.com/chapter/chapter-18</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-18</guid>
+      <description>The documented CIA program to infiltrate and influence American media — from the Cold War to the present day.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>MKUltra &amp; Government Mind Control Programs</title>
+      <link>https://veritasworldwide.com/chapter/chapter-19</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-19</guid>
+      <description>The CIA's documented program of human experimentation — using drugs, torture, and psychological manipulation on unwitting American citizens.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Rockefeller Medicine &amp; the Chronic Disease Machine</title>
+      <link>https://veritasworldwide.com/chapter/chapter-20</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-20</guid>
+      <description>How the Rockefeller Foundation reshaped American medicine to favor pharmaceutical treatment over prevention — and the financial incentives that keep the system in place.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Vaccine History — From Polio to COVID-19</title>
+      <link>https://veritasworldwide.com/chapter/chapter-21</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-21</guid>
+      <description>A documented history of vaccine development, the regulatory framework that governs it, and the financial incentives that shape public health policy.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>September 11, 2001</title>
+      <link>https://veritasworldwide.com/chapter/chapter-22</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-22</guid>
+      <description>The event that changed the world — examined through the official record, the 9/11 Commission Report, and the questions that remain unanswered.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The War on Drugs</title>
+      <link>https://veritasworldwide.com/chapter/chapter-23</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-23</guid>
+      <description>How a policy designed to criminalize dissent became the longest and most expensive domestic war in American history.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Fluoride &amp; Public Water</title>
+      <link>https://veritasworldwide.com/chapter/chapter-24</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-24</guid>
+      <description>The documented history of water fluoridation — from its industrial origins to its adoption as public health policy.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Titanic, the Federal Reserve &amp; the Men Who Opposed It</title>
+      <link>https://veritasworldwide.com/chapter/chapter-25</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-25</guid>
+      <description>Three of the wealthiest men who opposed the creation of the Federal Reserve boarded the same ship in April 1912. None of them survived.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bohemian Grove &amp; Elite Gatherings</title>
+      <link>https://veritasworldwide.com/chapter/chapter-26</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-26</guid>
+      <description>Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Surveillance State — From ECHELON to Pegasus</title>
+      <link>https://veritasworldwide.com/chapter/chapter-27</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-27</guid>
+      <description>The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Epstein Files</title>
+      <link>https://veritasworldwide.com/chapter/chapter-28</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-28</guid>
+      <description>The intelligence-linked operation that compromised the world's most powerful people — documented through court filings, flight logs, and the testimony of survivors.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>A Note on Continued Research &amp; Primary Source Access</title>
       <link>https://veritasworldwide.com/chapter/epilogue</link>
-      <guid>https://veritasworldwide.com/chapter/epilogue</guid>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/epilogue</guid>
       <description>Where to find the original documents, how to verify the claims in this book, and how to continue the investigation.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
     </item>
