@@ -177,6 +177,10 @@ app.use(express.static(path.join(__dirname, 'dist'), {
     if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
     }
+    // Sitemaps, RSS feeds, and robots.txt must not be immutably cached
+    if (/\.(xml|txt)$/.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=3600')
+    }
   },
 }))
 
