@@ -272,7 +272,8 @@ h1, h2, h3, h4 {
   border: 2px solid var(--color-border);
   border-radius: 4px;
   font-size: 1rem;
-  background: white;
+  background: var(--color-surface);
+  color: var(--color-ink);
   transition: border-color 0.2s;
 }
 
@@ -313,13 +314,6 @@ html.dark .data-table thead {
 /* Dark mode stat cards */
 html.dark .stat-card {
   background: var(--color-surface);
-}
-
-/* Dark mode search input */
-html.dark .search-input {
-  background: var(--color-surface);
-  color: var(--color-ink);
-  border-color: var(--color-border);
 }
 
 /* Animations */
