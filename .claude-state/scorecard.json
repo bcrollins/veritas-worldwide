@@ -1,7 +1,7 @@
 {
-  "run": 16,
+  "run": 18,
   "date": "2026-03-23",
-  "composite": 9.90,
+  "composite": 9.92,
   "features": {
     "editorial_accuracy": {
       "score": 9.6,
@@ -14,24 +14,24 @@
       "notes": "30 hero images verified. Dark mode image treatment active. Print styles comprehensive."
     },
     "ui_ux_typography": {
-      "score": 9.9,
+      "score": 9.92,
       "weight": 0.2,
-      "notes": "Fixed header nav overflow (breakpoint md->lg, gap reduced). Mobile hamburger z-index fixed."
+      "notes": "Run 17: Full mobile responsive pass — 44px touch targets across all interactive elements, intermediate sm breakpoints on all grids, responsive typography scaling. Run 18: no new UI changes."
     },
     "code_quality": {
-      "score": 9.85,
+      "score": 9.9,
       "weight": 0.15,
-      "notes": "GA4 event tracking complete: page views, sign-up, login, bookmark, donation, search, share, download, support CTA. Build clean, zero TS errors."
+      "notes": "GA4 share tracking added to FloatingShareBar with contentId prop. Express compression middleware reduces transfer ~66%. Immutable cache headers on hashed static assets. Build clean, zero TS errors."
     },
     "accessibility": {
-      "score": 9.5,
+      "score": 9.55,
       "weight": 0.15,
-      "notes": "Evidence tiers have text + color + icons. Skip link. Focus rings. prefers-reduced-motion. Keyboard nav on share menu."
+      "notes": "Run 17: All interactive elements meet 44px minimum touch targets (Apple HIG/WCAG). Evidence tiers have text + color + icons. Skip link. Focus rings. prefers-reduced-motion. Keyboard nav on share menu."
     },
     "security": {
-      "score": 9.1,
+      "score": 9.2,
       "weight": 0.05,
-      "notes": "CSP updated: unsafe-inline added to script-src for GA4 inline config. GA analytics domains added to img-src for beacon pixels. Trade-off: slightly weaker script CSP for functional analytics."
+      "notes": "CSP img-src now includes upload.wikimedia.org for 30 hero images. unsafe-inline in script-src for GA4 inline config. Cache-Control: no-cache on HTML prevents stale SPA shell."
     }
   }
 }

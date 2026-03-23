@@ -1,26 +1,23 @@
 {
-  "run": 16,
-  "timestamp": "2026-03-23T14:00:00Z",
-  "last_completed": "CSP fix for GA4, header/mobile nav fix, Share/Download GA4 tracking",
-  "commits": [
-    "5622aeb - fix(ui): Fix header nav overflow and mobile menu z-index",
-    "76a82da - fix(security): Update CSP to allow GA4 inline scripts and image beacons",
-    "73420c3 - feat(analytics): Add GA4 tracking to Share and Download actions"
+  "run": 18,
+  "mode": "A",
+  "focus": "Full publication audit — performance, security, analytics gaps",
+  "completed": [
+    "FloatingShareBar GA4 share tracking with contentId prop (e7738a0)",
+    "CSP img-src: added upload.wikimedia.org for hero images (434a107)",
+    "Express compression middleware — 549KB→188KB gzip (754ef95)",
+    "Immutable cache headers on hashed static assets (754ef95)",
+    "Cache-Control no-cache on HTML for SPA shell freshness (754ef95)",
+    "Diagnosed NODE_ENV=production in shell causing npm to omit devDependencies",
+    "Resolved TypeScript build blocker via NODE_ENV=development override"
   ],
-  "scorecard": {
-    "composite": 9.90,
-    "editorial": 9.6,
-    "info_design": 9.95,
-    "ui_ux": 9.9,
-    "code": 9.85,
-    "a11y": 9.5,
-    "security": 9.1
-  },
+  "commits": ["e7738a0", "434a107", "754ef95"],
   "next_priorities": [
-    "P3: Add inline images to chapters without them (Ch4, Ch7, Ch11, Ch15, Ch17-20, Ch23, Ch26)",
+    "P3: Add font preload hints for critical rendering path",
+    "P3: Improve server.js chapter meta descriptions (truncated in bot SSR)",
+    "P3: Add inline images to chapters without them",
     "P4: Add SVG timeline/relationship diagrams to key chapters",
-    "P4: Code-split chapters data (549KB chunk) for faster initial load",
-    "P5: Add GA4 tracking to FloatingShareBar component",
+    "P4: Code-split chapters data (549KB chunk)",
     "P5: Periodic Wikimedia image URL health check"
   ]
 }
