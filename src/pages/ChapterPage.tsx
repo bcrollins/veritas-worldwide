@@ -9,6 +9,13 @@ import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SIT
 import { useScrollRestore } from '../hooks/useScrollRestore'
 import { estimateReadingTime } from '../lib/readingTime'
 import { DONATE_URL } from '../lib/constants'
+import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
+
+const diagramComponents: Record<string, React.ComponentType> = {
+  'media-ownership': MediaOwnershipDiagram,
+  'federal-reserve-structure': FederalReserveStructureDiagram,
+  'asset-manager-cross-sector': AssetManagerDiagram,
+}
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -233,6 +240,13 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     case 'image':
       if (!block.image) return null
       return <FigureBlock image={block.image} />
+
+    case 'diagram': {
+      if (!block.diagramId) return null
+      const DiagramComponent = diagramComponents[block.diagramId]
+      if (!DiagramComponent) return null
+      return <DiagramComponent />
+    }
 
     default:
       return null

@@ -42,7 +42,7 @@ export interface ImageData {
 }
 
 export interface ContentBlock {
-  type: 'dropcap' | 'text' | 'heading' | 'subheading' | 'quote' | 'evidence' | 'stats' | 'table' | 'timeline' | 'image';
+  type: 'dropcap' | 'text' | 'heading' | 'subheading' | 'quote' | 'evidence' | 'stats' | 'table' | 'timeline' | 'image' | 'diagram';
   text?: string;
   quote?: Quote;
   evidence?: EvidenceBox;
@@ -50,6 +50,7 @@ export interface ContentBlock {
   table?: TableData;
   timeline?: TimelineEvent[];
   image?: ImageData;
+  diagramId?: string;
 }
 
 export interface Chapter {
@@ -169,6 +170,7 @@ export const chapters: Chapter[] = [
         ],
         caption: 'Source: Harvard Future of Media Project, SEC filings, 2021.',
       } },
+      { type: 'diagram', diagramId: 'media-ownership' },
       { type: 'text', text: 'This means the same three asset managers that control your retirement fund also control the news you consume. The illusion of media diversity — Fox vs. CNN, MSNBC vs. Newsmax — masks a deeper unity of ownership. The "debate" is managed. The boundaries of acceptable discourse are set by the same capital.' },
       { type: 'evidence', evidence: { tier: 'circumstantial', label: 'CIRCUMSTANTIAL — OWNERSHIP ≠ EDITORIAL CONTROL', text: 'Institutional ownership does not automatically equal editorial control. Vanguard and BlackRock hold shares through index funds on behalf of millions of investors. However, these firms exercise proxy voting power at shareholder meetings, influence board composition, and set ESG standards that shape corporate behavior. The question is not whether they dictate headlines — it is whether the structural incentives of consolidated ownership produce a narrowing of permissible narratives.' } },
       { type: 'heading', text: 'III. Three Companies Own Everything' },
@@ -182,6 +184,7 @@ export const chapters: Chapter[] = [
       ] },
       { type: 'text', text: 'BlackRock was founded in 1988 by Larry Fink and seven partners, initially as a risk-management division of Blackstone Group. By 2009, the U.S. Treasury had retained BlackRock Solutions to analyze and unwind the toxic assets from the 2008 financial crisis — effectively making a private firm the arbiter of the nation\'s financial recovery. The Federal Reserve allowed BlackRock to superintend the $130 billion debt settlement of Bear Stearns and AIG.' },
       { type: 'text', text: 'BlackRock\'s Aladdin platform — an acronym for Asset, Liability, and Debt and Derivative Investment Network — monitors and manages investment portfolios worth an estimated $21.6 trillion across all its clients, including sovereign wealth funds, pension systems, and central banks. One algorithm, one company, one system.' },
+      { type: 'diagram', diagramId: 'asset-manager-cross-sector' },
       { type: 'text', text: 'Between 2021 and 2023, institutional investors — led by firms in which BlackRock is the largest shareholder — purchased an unprecedented share of single-family homes across the United States. Invitation Homes, in which BlackRock holds the largest institutional stake, owns over 80,000 single-family rental properties. American Homes 4 Rent controls another 60,000+. In some Sun Belt markets, institutional buyers accounted for up to 25% of all home purchases, driving prices beyond the reach of first-time buyers and converting the American Dream of homeownership into a subscription service.' },
       { type: 'evidence', evidence: { tier: 'verified', label: 'VERIFIED — SEC FILINGS & PUBLIC FINANCIAL DISCLOSURES', text: 'BlackRock\'s AUM figures are reported in quarterly SEC filings. Invitation Homes\' ownership structure is public record. The Federal Reserve\'s engagement of BlackRock during the 2008 crisis is documented in congressional testimony.' } },
       { type: 'heading', text: 'IV. What You Eat Is Making You Sick' },
