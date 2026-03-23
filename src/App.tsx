@@ -75,7 +75,7 @@ function Header() {
           <Link to="/" className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-ink hover:text-crimson transition-colors">
             Veritas Worldwide Press
           </Link>
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map(link => (
               <Link
                 key={link.to}
@@ -205,7 +205,7 @@ function Footer() {
               Volume I
             </p>
           </div>
-          <div>
+          <nav aria-label="Footer navigation">
             <p className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-white/80 mb-4">Navigate</p>
             <div className="flex flex-col gap-2">
               <Link to="/" className="font-sans text-sm text-white/50 hover:text-white transition-colors">The Record</Link>
@@ -215,7 +215,7 @@ function Footer() {
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
               <Link to="/analytics" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Analytics</Link>
             </div>
-          </div>
+          </nav>
           <div>
             <p className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-white/80 mb-4">Principles</p>
             <p className="font-body text-sm italic text-white/50 leading-relaxed">
