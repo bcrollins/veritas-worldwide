@@ -46,7 +46,11 @@ export async function recordPageView(path: string, title: string): Promise<void>
 // ── Fetch analytics snapshot ───────────────────────────────────────
 export async function fetchAnalytics(): Promise<AnalyticsSnapshot | null> {
   try {
-    const res = await fetch('/api/analytics/snapshot')
+    // Cache-bust to ensure fresh cumulative data on every load
+    const res = await fetch(`/api/analytics/snapshot?t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' },
+    })
     if (!res.ok) return null
     const data: AnalyticsSnapshot = await res.json()
     return data

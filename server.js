@@ -137,10 +137,16 @@ app.post('/api/analytics/pageview', async (req, res) => {
   if (!store.pages[pageId]) { store.pages[pageId] = { path: pagePath, title: title || pagePath, views: 0 } }
   store.pages[pageId].views += 1
   if (title) { store.pages[pageId].title = title }
+  res.setHeader('Cache-Control', 'no-store')
   res.json({ ok: true })
 })
 
 app.get('/api/analytics/snapshot', (req, res) => {
+  // Never cache analytics — always show live cumulative data
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+  res.setHeader('Pragma', 'no-cache')
+  res.setHeader('Expires', '0')
+  res.setHeader('Surrogate-Control', 'no-store')
   const now = new Date()
   const todayKey = toDateKey(now)
   const weekKey = getWeekStart(now)
@@ -216,5 +222,10 @@ app.use((req, res) => {
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`[veritas] Serving on port ${PORT}`)
+  console.log(`[veritas] Data dir: ${DATA_DIR}`)
   console.log(`[veritas] Analytics: ${store.lifetime} lifetime views loaded`)
+  if (!process.env.DATA_DIR) {
+    console.warn('[veritas] WARNING: DATA_DIR not set — using ./data (data may be lost on redeploy)')
+    console.warn('[veritas] Set DATA_DIR to a Railway volume mount path for persistent analytics')
+  }
 })
