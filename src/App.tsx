@@ -266,11 +266,28 @@ export default function App() {
           <Route path="/analytics" element={<AnalyticsPage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
-              <h1 className="font-display text-5xl font-bold text-ink mb-4">404</h1>
-              <p className="font-body text-lg text-ink-muted mb-8">This page doesn't exist.</p>
-              <Link to="/" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
-                &larr; Return to The Record
-              </Link>
+              <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">
+                Document Not Found
+              </p>
+              <h1 className="font-display text-6xl md:text-8xl font-bold text-ink mb-4">404</h1>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-[1px] w-12 bg-crimson" />
+                <p className="font-body text-lg italic text-ink-muted">
+                  This page is not part of the record.
+                </p>
+                <div className="h-[1px] w-12 bg-crimson" />
+              </div>
+              <p className="font-body text-sm text-ink-faint mb-10 max-w-md mx-auto">
+                The page you requested does not exist, may have been moved, or is not yet published.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link to="/" className="font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors">
+                  Return to The Record
+                </Link>
+                <Link to="/search" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors">
+                  Search All Chapters
+                </Link>
+              </div>
             </div>
           } />
         </Routes>
