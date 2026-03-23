@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
-const DONATION_TIERS = [
-  { amount: 5, label: '$5', url: 'https://buy.stripe.com/14A7sK3F03lbbsHaJX2go02' },
-  { amount: 10, label: '$10', url: 'https://buy.stripe.com/6oU9AS6Rc9JzfIX8BP2go00' },
-  { amount: 25, label: '$25', url: 'https://buy.stripe.com/8x29AS4J408Z40f5pD2go03' },
-  { amount: 50, label: '$50', url: 'https://buy.stripe.com/28EdR82AWg7XaoDdW92go04' },
-  { amount: 100, label: '$100', url: 'https://buy.stripe.com/14AfZg2AW2h71S73hv2go05' },
-]
+// RollinsX Technologies "Customer chooses what to pay" payment link
+// Stripe Dashboard → Payment Links → Veritas Worldwide Press donation
+const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
-// "Customer chooses what to pay" payment link — create in Stripe Dashboard:
-// Payment Links → New → "Customers choose what to pay" → set suggested $10, min $1
-const CUSTOM_AMOUNT_URL = 'https://buy.stripe.com/6oU9AS6Rc9JzfIX8BP2go00'
+const DONATION_TIERS = [
+  { amount: 5, label: '$5' },
+  { amount: 10, label: '$10' },
+  { amount: 25, label: '$25' },
+  { amount: 50, label: '$50' },
+  { amount: 100, label: '$100' },
+]
 
 const DEFAULT_AMOUNT = 10
 
@@ -22,19 +22,6 @@ export default function DonationBanner() {
     // Allow only digits and a single decimal point
     const cleaned = value.replace(/[^\d.]/g, '').replace(/(\..*)\./g, '$1')
     setCustomAmount(cleaned)
-  }
-
-  const getDonateUrl = () => {
-    if (selected === 'custom') {
-      // Find closest tier or use custom amount link
-      const amt = parseFloat(customAmount)
-      if (!amt || amt <= 0) return CUSTOM_AMOUNT_URL
-      const match = DONATION_TIERS.find(t => t.amount === amt)
-      if (match) return match.url
-      return CUSTOM_AMOUNT_URL
-    }
-    const tier = DONATION_TIERS.find(t => t.amount === selected)
-    return tier?.url || DONATION_TIERS[1].url
   }
 
   const getDonateLabel = () => {
@@ -109,7 +96,7 @@ export default function DonationBanner() {
         {/* Donate Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={getDonateUrl()}
+            href={DONATE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
