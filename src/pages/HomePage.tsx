@@ -9,6 +9,7 @@ import AnimatedCounter from '../components/AnimatedCounter'
 import ContinueReading from '../components/ContinueReading'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
+import SocialProofBanner from '../components/engagement/SocialProofBanner'
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 
 export default function HomePage() {
@@ -83,6 +84,8 @@ export default function HomePage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6">
+        {/* Social Proof */}
+        <SocialProofBanner />
         {/* Continue Reading — for returning visitors */}
         <ContinueReading />
 

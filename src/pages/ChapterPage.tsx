@@ -15,6 +15,7 @@ import { useReadingHistory } from '../hooks/useReadingHistory'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import { DONATE_URL } from '../lib/constants'
+import FloatingShareBar from '../components/engagement/FloatingShareBar'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 
 const diagramComponents: Record<string, React.ComponentType> = {
@@ -654,6 +655,7 @@ export default function ChapterPage() {
   return (
     <>
     <ReadingProgress />
+      <FloatingShareBar title={chapter.title} description={chapter.subtitle} />
     <BackToTop />
     <TimeRemaining totalMinutes={readingTime} />
     <TextSelectionShare />

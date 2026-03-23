@@ -7,6 +7,10 @@ import ScrollToTop from './components/ScrollToTop'
 import { usePageView } from './hooks/usePageView'
 import { useTheme } from './lib/ThemeContext'
 import { DONATE_URL } from './lib/constants'
+import NewsletterPopup from './components/engagement/NewsletterPopup'
+import PerformanceMonitor from './components/engagement/PerformanceMonitor'
+import ReadingStreak from './components/engagement/ReadingStreak'
+import { useScrollDepth } from './hooks/useScrollDepth'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -90,6 +94,7 @@ function Header() {
                 {link.label}
               </Link>
             ))}
+            <ReadingStreak />
             <a
               href={DONATE_URL}
               target="_blank"
@@ -294,6 +299,7 @@ function Footer() {
 
 function PageViewTracker() {
   usePageView()
+  useScrollDepth()
   return null
 }
 
@@ -356,6 +362,8 @@ export default function App() {
       <Footer />
       <AuthModal />
       <Toast />
+      <NewsletterPopup />
+      <PerformanceMonitor />
     </div>
   )
 }
