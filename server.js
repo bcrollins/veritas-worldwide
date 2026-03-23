@@ -244,6 +244,9 @@ app.use((req, res, next) => {
     '/search': { title: 'Search | Veritas Worldwide Press', desc: 'Search all 31 chapters of The Record by keyword, topic, or evidence classification.' },
     '/timeline': { title: 'Timeline | Veritas Worldwide Press', desc: 'An interactive chronological timeline of events documented in The Record, from 1694 to present.' },
     '/analytics': { title: 'Reader Analytics | Veritas Worldwide Press', desc: 'Public readership analytics for The Record.' },
+    '/accessibility': { title: 'Accessibility | Veritas Worldwide Press', desc: 'Accessibility statement and WCAG 2.1 AA compliance information for Veritas Worldwide Press.' },
+    '/privacy': { title: 'Privacy Policy | Veritas Worldwide Press', desc: 'How Veritas Worldwide Press handles reader data, analytics, and privacy. Minimal data collection, no advertising trackers.' },
+    '/terms': { title: 'Terms of Use | Veritas Worldwide Press', desc: 'Terms of use for Veritas Worldwide Press. Free and open access under Creative Commons BY-NC-SA 4.0.' },
   }
 
   const staticMeta = staticPages[req.path]

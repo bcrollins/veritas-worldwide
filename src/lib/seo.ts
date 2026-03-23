@@ -175,7 +175,7 @@ export function chapterJsonLd(chapter: {
   return [
     {
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'NewsArticle',
       'headline': chapter.title,
       'description': chapter.subtitle,
       'author': {
@@ -228,6 +228,33 @@ export function chapterJsonLd(chapter: {
       ],
     },
   ]
+}
+
+/**
+ * Generates WebSite schema JSON-LD with SearchAction for sitelinks.
+ */
+export function websiteJsonLd(): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': SITE_NAME,
+    'alternateName': 'The Record',
+    'url': SITE_URL,
+    'description': DEFAULT_DESCRIPTION,
+    'publisher': {
+      '@type': 'Organization',
+      'name': SITE_NAME,
+      'url': SITE_URL,
+    },
+    'potentialAction': {
+      '@type': 'SearchAction',
+      'target': {
+        '@type': 'EntryPoint',
+        'urlTemplate': `${SITE_URL}/search?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
 }
 
 export { SITE_NAME, SITE_URL, DEFAULT_DESCRIPTION }

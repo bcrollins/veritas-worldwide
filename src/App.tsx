@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
 import AuthModal from './components/AuthModal'
 import Toast from './components/Toast'
+import ErrorBoundary from './components/ErrorBoundary'
 import ScrollToTop from './components/ScrollToTop'
 import { usePageView } from './hooks/usePageView'
 import { useTheme } from './lib/ThemeContext'
@@ -23,6 +24,8 @@ const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
 const TimelinePage = lazy(() => import('./pages/TimelinePage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const AccessibilityPage = lazy(() => import('./pages/AccessibilityPage'))
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
+const TermsPage = lazy(() => import('./pages/TermsPage'))
 
 
 function ThemeToggle() {
@@ -338,6 +341,9 @@ function Footer() {
               <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
               <Link to="/about" className="font-sans text-sm text-white/50 hover:text-white transition-colors">About</Link>
+              <Link to="/accessibility" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Accessibility</Link>
+              <Link to="/privacy" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Privacy</Link>
+              <Link to="/terms" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Terms</Link>
             </div>
           </nav>
           <div>
@@ -409,6 +415,7 @@ export default function App() {
       <PageViewTracker />
       <Header />
       <main id="main-content">
+        <ErrorBoundary>
         <Suspense fallback={
           <div className="max-w-3xl mx-auto px-6 py-20 text-center">
             <div className="inline-block w-5 h-5 border-2 border-crimson/30 border-t-crimson rounded-full animate-spin" />
@@ -425,6 +432,8 @@ export default function App() {
           <Route path="/analytics" element={<AnalyticsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/accessibility" element={<AccessibilityPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">
@@ -453,6 +462,7 @@ export default function App() {
           } />
         </Routes>
         </Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
       <AuthModal />
