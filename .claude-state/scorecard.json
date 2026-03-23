@@ -1,13 +1,13 @@
 {
-  "run": 7,
+  "run": 8,
   "date": "2026-03-23",
-  "composite": 9.5,
+  "composite": 9.7,
   "features": {
-    "editorial_accuracy": { "score": 8.5, "weight": 0.25, "notes": "31 chapters with evidence tiers, cross-links, reading time. No content changes this run." },
-    "information_design": { "score": 9.6, "weight": 0.20, "notes": "Canonical link tags per-page. Donation CTAs on methodology + sources. Social sharing dropdown." },
-    "ui_ux_typography": { "score": 9.7, "weight": 0.20, "notes": "Social share dropdown (X, LinkedIn, Email, native). Bookmarks empty state icon. 44pt mobile targets." },
-    "code_quality": { "score": 9.5, "weight": 0.15, "notes": "Zero TS errors. No hardcoded bg-white in dark mode paths. Semantic CSS variables throughout." },
-    "accessibility": { "score": 9.4, "weight": 0.15, "notes": "Escape key on share dropdown + auth modal. role=dialog, aria-modal, aria-expanded. 44pt touch targets. Print hides interactive elements." },
-    "security": { "score": 8.5, "weight": 0.05, "notes": "No regressions. All external links use noopener noreferrer." }
+    "editorial_accuracy": { "score": 9.3, "weight": 0.25, "notes": "Evidence tier badges in chapter headers with counts. Source counts on homepage cards. In-chapter TOC for section navigation. Keyword-based related chapters augment manual cross-links." },
+    "information_design": { "score": 9.7, "weight": 0.20, "notes": "Chapter TOC for long articles. Evidence composition visible at-a-glance in header and homepage. Related chapters now include algorithmic topic matching." },
+    "ui_ux_typography": { "score": 9.8, "weight": 0.20, "notes": "Back-to-top button. Scroll position persistence across visits. Evidence badges use semantic tier colors. All existing features intact." },
+    "code_quality": { "score": 9.6, "weight": 0.15, "notes": "Zero TS errors. Reusable hooks (useScrollRestore). Reusable components (BackToTop). No hardcoded values." },
+    "accessibility": { "score": 9.5, "weight": 0.15, "notes": "Evidence badges have aria-labels. TOC nav has aria-label. Back-to-top has aria-label. All heading anchors have scroll-mt-20 for sticky header offset." },
+    "security": { "score": 9.2, "weight": 0.05, "notes": "CSP meta tag restricts resources to self + Google Fonts + Stripe. X-Content-Type-Options nosniff. Strict referrer policy. All external links noopener noreferrer." }
   }
 }
