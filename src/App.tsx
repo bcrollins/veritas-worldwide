@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
+
+const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 import AuthModal from './components/AuthModal'
 import Toast from './components/Toast'
 import ScrollToTop from './components/ScrollToTop'
@@ -43,6 +45,18 @@ function Header() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-crimson/10 text-crimson font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200"
+              aria-label="Support Veritas Worldwide Press"
+            >
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+              Support
+            </a>
             {isLoggedIn ? (
               <div className="flex items-center gap-4">
                 <span className="font-sans text-xs text-ink-faint">
@@ -90,6 +104,18 @@ function Header() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-crimson/10 text-crimson font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200 mt-1"
+              onClick={() => setMenuOpen(false)}
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+              Support This Work
+            </a>
             {isLoggedIn ? (
               <button
                 onClick={() => { logout(); setMenuOpen(false) }}

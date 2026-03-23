@@ -38,16 +38,19 @@ export default function DonationBanner() {
     <section className="bg-ink text-white py-12 my-16 no-print">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/50 mb-4">
-          Support Independent Research
+          From the Publisher
         </p>
         <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-4">
-          Help Us Keep The Record Free
+          This Work Exists Because of Readers Like You
         </h2>
+        <p className="font-body text-base text-white/60 leading-relaxed max-w-xl mx-auto mb-3">
+          The Record has no advertisers, no sponsors, and no paywalls. Every chapter, every primary source,
+          every document is free — and always will be.
+        </p>
         <p className="font-body text-base text-white/60 leading-relaxed max-w-xl mx-auto mb-8">
-          We believe this information belongs to everyone. Every source, every document, every chapter
-          of The Record is free and always will be. But research takes time, verification takes resources,
-          and publishing takes commitment. If this work has value to you, any contribution — however small —
-          helps our team continue mapping and publishing the documentary record.
+          But independent research takes hundreds of hours. Verifying sources, obtaining documents, and maintaining
+          this publication is a labor of commitment. If even one chapter made you think differently about the
+          historical record, please consider a small contribution. It directly funds the next volume.
         </p>
 
         {/* Amount Selector */}
