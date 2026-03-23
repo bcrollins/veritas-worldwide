@@ -45,12 +45,12 @@ export default function DonationBanner() {
         </h2>
         <p className="font-body text-base text-white/60 leading-relaxed max-w-xl mx-auto mb-3">
           The Record has no advertisers, no sponsors, and no paywalls. Every chapter, every primary source,
-          every document is free — and always will be.
+          every document is free &mdash; and always will be.
         </p>
-        <p className="font-body text-base text-white/60 leading-relaxed max-w-xl mx-auto mb-8">
-          But independent research takes hundreds of hours. Verifying sources, obtaining documents, and maintaining
-          this publication is a labor of commitment. If even one chapter made you think differently about the
-          historical record, please consider a small contribution. It directly funds the next volume.
+        <p className="font-body text-sm text-white/45 leading-relaxed max-w-xl mx-auto mb-8">
+          Independent research takes hundreds of hours. Verifying sources, obtaining documents, and maintaining
+          this publication is a labor of commitment. If even one chapter has been valuable to you,
+          a small contribution directly funds the next volume. We're grateful for every reader who supports this work.
         </p>
 
         {/* Amount Selector */}

@@ -6,6 +6,8 @@ import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SITE_URL } from '../lib/seo'
 
+const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
+
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
     case 'dropcap':
@@ -322,12 +324,12 @@ export default function ChapterPage() {
         <div className="flex flex-wrap items-center gap-4">
           <span className="font-sans text-xs text-ink-faint">By {chapter.author}</span>
           <span className="font-sans text-xs text-ink-faint">{chapter.publishDate}</span>
+          <span className="font-sans text-xs text-ink-faint">{readingTime} min read</span>
           {chapter.dateRange && (
             <span className="font-sans text-xs font-semibold text-crimson px-2 py-1 bg-crimson/5 rounded-sm">
               {chapter.dateRange}
             </span>
           )}
-          <span className="font-sans text-xs text-ink-faint">{readingTime} min read</span>
         </div>
       </header>
 
@@ -410,6 +412,30 @@ export default function ChapterPage() {
           </div>
         </section>
       )}
+
+      {/* Support CTA — post-chapter, high engagement point */}
+      <section className="border-t border-border pt-8 mb-8 text-center">
+        <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
+          Free &amp; Open Access
+        </p>
+        <p className="font-body text-sm text-ink-muted leading-relaxed max-w-md mx-auto mb-5">
+          This chapter — and every chapter of The Record — is free because we believe the public record belongs to everyone. If this research has been useful to you, a small contribution helps us continue.
+        </p>
+        <a
+          href={DONATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          Support This Work
+        </a>
+        <p className="font-sans text-[0.6rem] text-ink-faint mt-3">
+          Processed securely via Stripe &middot; No account required
+        </p>
+      </section>
 
       {/* Chapter Navigation */}
       <ChapterNav current={chapter} />
