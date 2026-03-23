@@ -6,6 +6,7 @@ import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
 import BackToTop from '../components/BackToTop'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SITE_URL } from '../lib/seo'
+import { useScrollRestore } from '../hooks/useScrollRestore'
 
 const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
 
@@ -455,6 +456,8 @@ export default function ChapterPage() {
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
   const evidenceCounts = useMemo(() => chapter ? getEvidenceCounts(chapter) : { verified: 0, circumstantial: 0, disputed: 0 }, [chapter])
   const hasEvidence = evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed > 0
+
+  useScrollRestore(id)
 
   useEffect(() => {
     if (chapter) {
