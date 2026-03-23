@@ -182,7 +182,7 @@ app.use(express.static(path.join(__dirname, 'dist'), {
 
 // ── Social crawler bot meta injection ─────────────────────────────
 // Bots that don't execute JS get per-chapter OG tags injected server-side
-const BOT_UA = /facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|redditbot/i
+const BOT_UA = /googlebot|bingbot|yandexbot|baiduspider|duckduckbot|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|redditbot|applebot|semrushbot|ahrefsbot|mj12bot/i
 const SITE_URL = 'https://veritasworldwide.com'
 const OG_IMAGE = `${SITE_URL}/og-image.png`
 
