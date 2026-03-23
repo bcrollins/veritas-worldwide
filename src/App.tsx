@@ -21,7 +21,7 @@ function Header() {
     { to: '/search', label: 'Search' },
     { to: '/methodology', label: 'Methodology' },
     { to: '/sources', label: 'Sources' },
-    ...(isLoggedIn ? [{ to: '/bookmarks', label: 'Saved' }] : []),
+    { to: '/bookmarks', label: 'Saved' },
   ]
 
   return (
@@ -177,6 +177,15 @@ export default function App() {
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/sources" element={<SourcesPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="*" element={
+            <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+              <h1 className="font-display text-5xl font-bold text-ink mb-4">404</h1>
+              <p className="font-body text-lg text-ink-muted mb-8">This page doesn't exist.</p>
+              <Link to="/" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
+                &larr; Return to The Record
+              </Link>
+            </div>
+          } />
         </Routes>
       </main>
       <Footer />

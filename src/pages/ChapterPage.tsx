@@ -1,9 +1,10 @@
-import { type ReactNode, useEffect } from 'react'
+import { type ReactNode, useEffect, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
 import type { ContentBlock, Chapter } from '../data/chapters'
 import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, chapterJsonLd, SITE_URL } from '../lib/seo'
 
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
@@ -253,16 +254,37 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
   )
 }
 
+function estimateReadingTime(chapter: Chapter): number {
+  let wordCount = 0
+  for (const block of chapter.content) {
+    const text = block.text || block.quote?.text || block.evidence?.text || ''
+    wordCount += text.split(/\s+/).filter(Boolean).length
+  }
+  return Math.max(1, Math.ceil(wordCount / 238))
+}
+
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const chapter = chapters.find(ch => ch.id === id)
+  const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
+
   useEffect(() => {
     if (chapter) {
-      document.title = `${chapter.title} | The Record — Veritas Worldwide Press`
+      setMetaTags({
+        title: `${chapter.title} | The Record — Veritas Worldwide Press`,
+        description: chapter.subtitle,
+        url: `${SITE_URL}/chapter/${chapter.id}`,
+        type: 'article',
+        publishedTime: '2026-03-01',
+        author: chapter.author,
+        section: 'Documentary History',
+        tags: chapter.keywords,
+      })
+      setJsonLd(chapterJsonLd(chapter))
     } else {
       document.title = 'Chapter Not Found | The Record — Veritas Worldwide Press'
     }
-    return () => { document.title = 'The Record | Veritas Worldwide Press' }
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [chapter])
 
   if (!chapter) {
@@ -305,6 +327,7 @@ export default function ChapterPage() {
               {chapter.dateRange}
             </span>
           )}
+          <span className="font-sans text-xs text-ink-faint">{readingTime} min read</span>
         </div>
       </header>
 
