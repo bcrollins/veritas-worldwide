@@ -1,19 +1,4 @@
-/// <reference types="vite/client" />
-import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
-
-const firebaseConfig = {
-  apiKey: (import.meta as any).env?.VITE_FIREBASE_API_KEY || '',
-  authDomain: (import.meta as any).env?.VITE_FIREBASE_AUTH_DOMAIN || '',
-  projectId: (import.meta as any).env?.VITE_FIREBASE_PROJECT_ID || '',
-  storageBucket: (import.meta as any).env?.VITE_FIREBASE_STORAGE_BUCKET || '',
-  messagingSenderId: (import.meta as any).env?.VITE_FIREBASE_MESSAGING_SENDER_ID || '',
-  appId: (import.meta as any).env?.VITE_FIREBASE_APP_ID || '',
-}
-
-const isConfigured = Boolean(firebaseConfig.projectId)
-
-const app = isConfigured ? initializeApp(firebaseConfig) : null
-const db = app ? getFirestore(app) : null
-
-export { db, isConfigured }
+// Firebase has been replaced by server-side analytics (server.js)
+// This file is kept as a placeholder to avoid import errors in any stale references.
+export const db = null
+export const isConfigured = false
