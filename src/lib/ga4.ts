@@ -32,12 +32,20 @@ export function trackLogin(method: string = 'email'): void {
   getGtag()?.('event', 'login', { method })
 }
 
-/** User clicks the donation/support link */
+/** User clicks the donation/support link (with dollar amount from DonationBanner) */
 export function trackDonationClick(amount: number | string): void {
   getGtag()?.('event', 'begin_checkout', {
     currency: 'USD',
     value: typeof amount === 'number' ? amount : parseFloat(amount) || 0,
     items: [{ item_name: 'Donation', item_category: 'Support' }],
+  })
+}
+
+/** User clicks a Support link (header, mobile menu, or footer) */
+export function trackSupportClick(location: string): void {
+  getGtag()?.('event', 'select_promotion', {
+    promotion_name: 'Support CTA',
+    creative_slot: location,
   })
 }
 

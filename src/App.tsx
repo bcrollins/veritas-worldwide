@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop'
 import { usePageView } from './hooks/usePageView'
 import { useTheme } from './lib/ThemeContext'
 import { DONATE_URL } from './lib/constants'
+import { trackSupportClick } from './lib/ga4'
 import NewsletterPopup from './components/engagement/NewsletterPopup'
 import PerformanceMonitor from './components/engagement/PerformanceMonitor'
 import ReadingStreak from './components/engagement/ReadingStreak'
@@ -101,6 +102,7 @@ function Header() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-crimson/10 text-crimson font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200"
               aria-label="Support Veritas Worldwide Press"
+              onClick={() => trackSupportClick('header')}
             >
               <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -193,7 +195,7 @@ function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-crimson/10 text-crimson font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson hover:text-white transition-all duration-200 mt-4"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => { trackSupportClick('mobile-menu'); setMenuOpen(false) }}
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -270,6 +272,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 mt-4 font-sans text-xs font-semibold text-crimson-light hover:text-white transition-colors"
+              onClick={() => trackSupportClick('footer')}
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
