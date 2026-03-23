@@ -15,6 +15,7 @@ const MethodologyPage = lazy(() => import('./pages/MethodologyPage'))
 const SourcesPage = lazy(() => import('./pages/SourcesPage'))
 const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
 const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
+const TimelinePage = lazy(() => import('./pages/TimelinePage'))
 
 
 function ThemeToggle() {
@@ -62,6 +63,7 @@ function Header() {
   const navLinks = [
     { to: '/', label: 'The Record' },
     { to: '/search', label: 'Search' },
+    { to: '/timeline', label: 'Timeline' },
     { to: '/methodology', label: 'Methodology' },
     { to: '/sources', label: 'Sources' },
     { to: '/bookmarks', label: 'Saved' },
@@ -277,6 +279,7 @@ export default function App() {
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/sources" element={<SourcesPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
