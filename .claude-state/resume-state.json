@@ -1,23 +1,28 @@
 {
   "run": 9,
   "date": "2026-03-24",
-  "last": "deepstate-evidence-colors+contentgate-zindex+deepstate-subscriber-capture",
-  "next": "deep-state-page-10x-expansion+adsense-activation+performance-lighthouse",
+  "last": "dark-mode-fixes+reading-progress+performance+a11y-audit",
+  "next": "deep-state-page-10x-expansion+adsense-activation+chapter-pdf-export",
   "queue": [
     "deep-state-page-10x-expansion",
     "adsense-activation-revenue",
-    "performance-lighthouse-audit",
     "abandoned-cart-recovery-emails",
     "hubspot-automated-welcome-sequences",
     "a-b-testing-framework",
-    "reading-progress-indicator-enhancement",
-    "dark-mode-improvements",
     "chapter-pdf-export-per-chapter"
   ],
   "fixes_this_run": [
     "Fixed DeepStatePage TIER_CONFIG: monochrome colors -> semantic CSS variables (verified=#166534, circumstantial=#92400E, disputed=#991B1B)",
     "Added icon field to TIER_CONFIG for future badge enhancement (✓, ◐, ⚠)",
     "Fixed ContentGate z-index from z-50 to z-40 (header stacking conflict)",
-    "Wired NewsletterSignup + ContentGate into DeepStatePage (completes subscriber pipeline across all major pages)"
+    "Wired NewsletterSignup + ContentGate into DeepStatePage (completes subscriber pipeline across all major pages)",
+    "Added dns-prefetch hints for GTM, HubSpot, Stripe, Google Translate",
+    "Added theme-color meta tags for light (#FDFBF7) and dark (#0A0A0A)",
+    "Dark mode: replaced hardcoded bg-white with semantic bg-parchment in ExitIntentCapture, ContentGate, CommunityForum, DeepStatePage, MembershipPage",
+    "Dark mode: fixed DeepStatePage person card border fallback rgba(0,0,0,0.1) -> var(--color-border)",
+    "Dark mode: Diagrams.tsx SVG — replaced 22 hardcoded hex fills (#333/#666/#999/#1A1A1A) with CSS variable equivalents",
+    "Enhanced ReadingProgress: moved from top-0/z-60 to top-52px/z-40 (below header), added background track",
+    "Extended ReadingProgress to IsraelDossierPage and DeepStatePage (was only on ChapterPage)",
+    "A11y audit: confirmed skip-nav, focus-visible, aria-labels, 44px touch targets, alt text — no issues found"
   ]
 }
