@@ -2,13 +2,15 @@
   "lastRun": 18,
   "lastDate": "2026-03-24",
   "completedThisRun": [
-    "forum-emoji-removal-svg-icons",
-    "forum-fake-posts-removal",
-    "content-pack-tab-to-footer",
-    "profiles-sitemap-entry",
-    "bot-ssr-profiles-forum-news-content-pack",
-    "bot-ssr-individual-profile-pages",
-    "rogue-agent-cleanup-chapter-split-files"
+    "nyt-style-header-3-tier-masthead",
+    "nyt-style-footer-5-column-grid",
+    "nyt-style-homepage-3-column-hero",
+    "nyt-style-homepage-sidebar-most-read",
+    "lazy-chapter-splitting-31-files",
+    "chapter-metadata-lightweight-index",
+    "chapter-types-shared-interfaces",
+    "hybrid-chapter-loader-dynamic-import",
+    "consumer-migration-chapterpage-readthebook-homepage"
   ],
   "completedPriorRuns": [
     "tabbed-record-page",
@@ -39,16 +41,15 @@
     "bot-ssr-og-image-injection",
     "reddit-clone-forum-complete-rewrite",
     "forum-data-layer-9-communities-10-seed-posts",
+    "forum-communities-voting-threading-awards-polls-search-flairs-moderation",
+    "full-width-layout-all-pages-1920px",
     "power-profiles-system-235-figures",
     "profile-page-sourced-claims-donations-quotes-policy-connections",
     "profiles-index-page-search-filter-sort",
-    "profile-routing-and-navigation",
-    "wip-profile-cleanup",
-    "forum-data-duplicate-fix"
+    "profile-routing-and-navigation"
   ],
   "queue": [
     "prerendering-ssg-for-seo",
-    "lazy-chapter-data-splitting",
     "adsense-activation",
     "abandoned-cart-recovery-emails",
     "push-notifications",
@@ -57,8 +58,10 @@
     "stripe-branding-dashboard-update",
     "lead-scoring-hubspot-server-sync",
     "profile-data-expansion-to-500",
-    "forum-backend-api-persistence"
+    "forum-backend-api-persistence",
+    "nyt-style-chapter-page-redesign",
+    "nyt-style-article-page-redesign"
   ],
-  "featureCount": 49,
-  "compositeAverage": 8.9
+  "featureCount": 52,
+  "compositeAverage": 9.0
 }
