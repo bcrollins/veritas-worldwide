@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { identifyContact, isSubscribed } from '../lib/hubspot'
+import { scoreEmailSignup } from '../lib/leadScoring'
 
 interface Props {
   /** Scroll depth percentage (0-100) at which to trigger */
@@ -49,6 +50,7 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
       contentInterest: contentInterest || 'general',
       referrer: window.location.pathname,
     })
+    scoreEmailSignup('content_gate')
 
     setTimeout(() => {
       setStatus('success')

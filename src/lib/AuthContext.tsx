@@ -14,6 +14,7 @@ import {
   type ReadingProgress,
 } from './authStore'
 import { trackSignUp, trackLogin, trackBookmark } from './ga4'
+import { scoreAccountCreated } from './leadScoring'
 
 interface AuthContextType {
   user: User | null
@@ -91,6 +92,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(result.user)
       setBookmarks(getBookmarks())
       trackSignUp('email')
+      scoreAccountCreated()
       showToast('Account created. Welcome.')
     }
     return { success: result.success, error: result.error }

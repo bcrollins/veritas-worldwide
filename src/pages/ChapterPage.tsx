@@ -16,6 +16,7 @@ import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import { DONATE_URL } from '../lib/constants'
 import { trackShare, trackDownload } from '../lib/ga4'
+import { scoreChapterViewed, scorePdfDownloaded } from '../lib/leadScoring'
 import ChapterPDF from '../components/ChapterPDF'
 import FloatingShareBar from '../components/engagement/FloatingShareBar'
 import CitationGenerator from '../components/CitationGenerator'
@@ -563,6 +564,7 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
     a.click()
     URL.revokeObjectURL(url)
     trackDownload(chapter.id)
+    scorePdfDownloaded(chapter.id)
   }
 
   return (
@@ -672,6 +674,7 @@ export default function ChapterPage() {
         tags: chapter.keywords,
       })
       setJsonLd(chapterJsonLd(chapter))
+      scoreChapterViewed(chapter.id, chapter.title)
     } else {
       document.title = 'Chapter Not Found | The Record — Veritas Worldwide Press'
     }

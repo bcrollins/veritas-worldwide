@@ -1,4 +1,5 @@
 import { useAuth } from '../lib/AuthContext'
+import { scoreBookmarkAdded } from '../lib/leadScoring'
 
 export default function BookmarkButton({ chapterId }: { chapterId: string }) {
   const { isLoggedIn, isBookmarked, toggleBookmark, setShowAuthModal } = useAuth()
@@ -10,6 +11,7 @@ export default function BookmarkButton({ chapterId }: { chapterId: string }) {
       return
     }
     toggleBookmark(chapterId)
+    if (!saved) scoreBookmarkAdded(chapterId)
   }
 
   return (

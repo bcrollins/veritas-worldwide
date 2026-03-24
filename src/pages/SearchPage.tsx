@@ -4,6 +4,7 @@ import { chapters, searchChapters } from '../data/chapters'
 import type { Chapter } from '../data/chapters'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
+import { scoreSearchPerformed } from '../lib/leadScoring'
 
 interface SearchResult {
   chapter: Chapter
@@ -109,6 +110,7 @@ export default function SearchPage() {
       if (value.trim()) {
         setSearchParams({ q: value })
         trackSearch(value.trim())
+        scoreSearchPerformed(value.trim())
       } else {
         setSearchParams({})
       }

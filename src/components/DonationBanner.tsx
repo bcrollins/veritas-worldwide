@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { DONATE_URL } from '../lib/constants'
 import { trackDonationClick } from '../lib/ga4'
+import { scoreDonationClicked } from '../lib/leadScoring'
 import { trackDonationIntent } from '../lib/conversionTracking'
 
 
@@ -116,6 +117,7 @@ export default function DonationBanner() {
               const amt = selected === 'custom' ? (parseFloat(customAmount) || 0) : selected
               trackDonationClick(amt)
               trackDonationIntent(amt)
+              scoreDonationClicked(String(amt))
             }}
             className="inline-flex items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
             data-testid="donate-button"

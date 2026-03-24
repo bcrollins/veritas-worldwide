@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { identifyContact, isSubscribed, type SubscriptionSource } from '../lib/hubspot'
+import { scoreEmailSignup } from '../lib/leadScoring'
 
 interface Props {
   /** Visual variant */
@@ -49,6 +50,7 @@ export default function NewsletterSignup({
         contentInterest: contentInterest || 'general',
         referrer: window.location.pathname,
       })
+      scoreEmailSignup(source)
       setStatus('success')
     } catch {
       setStatus('error')
