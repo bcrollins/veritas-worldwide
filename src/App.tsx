@@ -42,6 +42,7 @@ const DeepStatePage = lazy(() => import('./pages/DeepStatePage'))
 const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
 const NewsPage = lazy(() => import('./pages/NewsPage'))
 const ContentPackPage = lazy(() => import('./pages/ContentPackPage'))
+const ForumPage = lazy(() => import('./pages/ForumPage'))
 
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
@@ -115,7 +116,7 @@ function Header() {
     { to: '/', label: t('nav.home') },
     { to: '/news', label: 'News' },
     { to: '/search', label: t('nav.search') },
-    { to: '/timeline', label: t('nav.timeline') },
+    { to: '/forum', label: 'Forum' },
   ]
 
   const secondaryLinks = [
@@ -504,6 +505,7 @@ export default function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/content-pack" element={<ContentPackPage />} />
           <Route path="/share" element={<ContentPackPage />} />
+          <Route path="/forum" element={<ForumPage />} />
           <Route path="/news/:slug" element={<ArticlePage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminLayout />}>
