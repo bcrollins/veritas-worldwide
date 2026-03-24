@@ -21,6 +21,7 @@ interface StatCard {
   note?: string
   lastVerified: string          // ISO date
   details?: StatDetail[]        // expandable drill-down
+  imageUrl?: string             // contextual photo for the stat
 }
 
 interface StatDetail {
@@ -39,6 +40,7 @@ interface DocumentedIncident {
   multimedia: { type: 'video' | 'investigation' | 'photo-essay' | 'document'; label: string; url: string }[]
   tier: 'verified' | 'circumstantial'
   casualties?: { killed: number; injured?: number }
+  imageUrl?: string             // contextual photo for the incident
 }
 
 interface MoneyTrailNode {
@@ -57,10 +59,10 @@ interface MoneyTrailNode {
    ═══════════════════════════════════════════════════════════ */
 
 const CATEGORY_META = {
-  financial: { label: 'U.S. Aid & Military Spending', icon: 'money', color: '#92400E', bg: 'bg-amber-50 dark:bg-amber-950/20', border: 'border-amber-200 dark:border-amber-800', hoverBorder: 'hover:border-amber-400 dark:hover:border-amber-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/F-35A_flight_%28cropped%29.jpg/1280px-F-35A_flight_%28cropped%29.jpg', headerCaption: 'F-35A Lightning II — The U.S. has committed over $310 billion in military and economic aid to Israel since 1948' },
-  humanitarian: { label: 'Humanitarian Impact', icon: 'warning', color: '#991B1B', bg: 'bg-red-50 dark:bg-red-950/20', border: 'border-red-200 dark:border-red-800', hoverBorder: 'hover:border-red-400 dark:hover:border-red-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/UNRWA_school_in_Gaza.jpg/1280px-UNRWA_school_in_Gaza.jpg', headerCaption: 'UNRWA school shelter in Gaza — Humanitarian organizations document the ongoing crisis' },
-  legal: { label: 'International Law & UN Record', icon: 'scale', color: '#1E3A5F', bg: 'bg-blue-50 dark:bg-blue-950/20', border: 'border-blue-200 dark:border-blue-800', hoverBorder: 'hover:border-blue-400 dark:hover:border-blue-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/1280px-United_Nations_General_Assembly_Hall_%283%29.jpg', headerCaption: 'UN General Assembly Hall — The U.S. has cast 53+ vetoes shielding Israel from Security Council resolutions' },
-  social: { label: 'Domestic Policy & Public Opinion', icon: 'pillar', color: '#166534', bg: 'bg-green-50 dark:bg-green-950/20', border: 'border-green-200 dark:border-green-800', hoverBorder: 'hover:border-green-400 dark:hover:border-green-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/United_States_Capitol_-_west_front.jpg/1280px-United_States_Capitol_-_west_front.jpg', headerCaption: 'U.S. Capitol — Domestic lobbying and anti-BDS legislation shape U.S. policy toward Israel' },
+  financial: { label: 'U.S. Aid & Military Spending', icon: 'money', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/F-35A_flight_%28cropped%29.jpg/1280px-F-35A_flight_%28cropped%29.jpg', headerCaption: 'F-35A Lightning II — The U.S. has committed over $310 billion in military and economic aid to Israel since 1948' },
+  humanitarian: { label: 'Humanitarian Impact', icon: 'warning', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/UNRWA_school_in_Gaza.jpg/1280px-UNRWA_school_in_Gaza.jpg', headerCaption: 'UNRWA school shelter in Gaza — Humanitarian organizations document the ongoing crisis' },
+  legal: { label: 'International Law & UN Record', icon: 'scale', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/1280px-United_Nations_General_Assembly_Hall_%283%29.jpg', headerCaption: 'UN General Assembly Hall — The U.S. has cast 53+ vetoes shielding Israel from Security Council resolutions' },
+  social: { label: 'Domestic Policy & Public Opinion', icon: 'pillar', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/United_States_Capitol_-_west_front.jpg/1280px-United_States_Capitol_-_west_front.jpg', headerCaption: 'U.S. Capitol — Domestic lobbying and anti-BDS legislation shape U.S. policy toward Israel' },
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -72,6 +74,7 @@ const STATS: StatCard[] = [
   {
     value: '$310B+',
     label: 'Total U.S. aid to Israel (inflation-adjusted, 1948–2024)',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/US_one_hundred_dollar_bill%2C_series_2006.jpg/640px-US_one_hundred_dollar_bill%2C_series_2006.jpg',
     source: 'Congressional Research Service, Report RL33222',
     sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
     category: 'financial',
@@ -136,6 +139,7 @@ const STATS: StatCard[] = [
   {
     value: '14,000+',
     label: 'MK-84 2,000-pound bombs supplied by U.S. to Israel (2023–2024)',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/F-35A_flight_%28cropped%29.jpg/640px-F-35A_flight_%28cropped%29.jpg',
     source: 'Wall Street Journal / NYT investigation',
     sourceUrl: 'https://responsiblestatecraft.org/us-weapons-gaza/',
     category: 'financial',
@@ -176,6 +180,7 @@ const STATS: StatCard[] = [
   {
     value: '75,000+',
     label: 'Palestinians killed in Gaza since October 7, 2023',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/640px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg',
     source: 'Gaza Ministry of Health / Lancet field survey (Jan 2025)',
     sourceUrl: 'https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext',
     category: 'humanitarian',
@@ -190,6 +195,7 @@ const STATS: StatCard[] = [
   {
     value: '17,000+',
     label: 'Children killed in Gaza (as of March 2026)',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg/640px-Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg',
     source: 'UNICEF — "Unimaginable Horrors" report',
     sourceUrl: 'https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip',
     category: 'humanitarian',
@@ -216,6 +222,7 @@ const STATS: StatCard[] = [
   {
     value: '254+',
     label: 'Journalists and media workers killed since October 2023',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Press_photographers_with_cameras.jpg/640px-Press_photographers_with_cameras.jpg',
     source: 'Committee to Protect Journalists (CPJ), March 2026',
     sourceUrl: 'https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-conflict/',
     category: 'humanitarian',
@@ -281,6 +288,7 @@ const STATS: StatCard[] = [
   {
     value: 'Unlawful',
     label: "ICJ ruled Israel's occupation of Palestinian territory is illegal (July 19, 2024)",
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/International_Court_of_Justice.jpg/640px-International_Court_of_Justice.jpg',
     source: 'International Court of Justice, Advisory Opinion',
     sourceUrl: 'https://www.icj-cij.org/node/204176',
     category: 'legal',
@@ -295,6 +303,7 @@ const STATS: StatCard[] = [
   {
     value: '51+',
     label: 'U.S. vetoes of UN Security Council resolutions critical of Israel',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/640px-United_Nations_General_Assembly_Hall_%283%29.jpg',
     source: 'UN Security Council records / Jewish Virtual Library',
     sourceUrl: 'https://jewishvirtuallibrary.org/u-s-vetoes-of-un-security-council-resolutions-critical-to-israel',
     category: 'legal',
@@ -639,11 +648,11 @@ function InteractiveStatCard({ stat, meta }: { stat: StatCard; meta: typeof CATE
     >
       {/* Value + expand indicator */}
       <div className="flex items-start justify-between gap-2">
-        <p className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: meta.color }}>
+        <p className="font-display text-3xl md:text-4xl font-bold leading-tight text-crimson">
           {stat.value}
         </p>
         {hasDetails && (
-          <span className={`mt-1 text-lg transition-transform duration-200 ${open ? 'rotate-180' : ''}`} style={{ color: meta.color }}>
+          <span className={`mt-1 text-lg transition-transform duration-200 text-ink-faint ${open ? 'rotate-180' : ''}`}>
             ▾
           </span>
         )}
@@ -661,8 +670,7 @@ function InteractiveStatCard({ stat, meta }: { stat: StatCard; meta: typeof CATE
           href={stat.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 font-sans text-[0.6rem] font-semibold tracking-wide uppercase hover:underline transition-colors"
-          style={{ color: meta.color }}
+          className="inline-flex items-center gap-1 font-sans text-[0.6rem] font-semibold tracking-wide uppercase hover:underline transition-colors text-crimson hover:text-crimson-dark"
           onClick={e => e.stopPropagation()}
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -678,10 +686,10 @@ function InteractiveStatCard({ stat, meta }: { stat: StatCard; meta: typeof CATE
         <div className="mt-4 pt-4 border-t border-current/10 space-y-3" onClick={e => e.stopPropagation()}>
           {stat.details!.map((d, i) => (
             <div key={i}>
-              <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase mb-1" style={{ color: meta.color }}>{d.title}</p>
+              <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase mb-1 text-ink">{d.title}</p>
               <p className="font-body text-xs text-ink leading-relaxed">{d.text}</p>
               {d.sourceUrl && (
-                <a href={d.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-1 font-sans text-[0.55rem] hover:underline" style={{ color: meta.color }}>
+                <a href={d.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-1 font-sans text-[0.55rem] hover:underline text-crimson hover:text-crimson-dark">
                   <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   View source
                 </a>
@@ -698,10 +706,10 @@ function InteractiveStatCard({ stat, meta }: { stat: StatCard; meta: typeof CATE
    MONEY TRAIL NODE COMPONENT
    ═══════════════════════════════════════════════════════════ */
 const NODE_COLORS = {
-  legislation: { bg: 'bg-blue-50 dark:bg-blue-950/30', border: 'border-blue-300 dark:border-blue-700', color: '#1E3A5F', icon: 'file' },
-  weapon: { bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-300 dark:border-amber-700', color: '#92400E', icon: 'shield' },
-  delivery: { bg: 'bg-purple-50 dark:bg-purple-950/30', border: 'border-purple-300 dark:border-purple-700', color: '#6B21A8', icon: 'plane' },
-  impact: { bg: 'bg-red-50 dark:bg-red-950/30', border: 'border-red-300 dark:border-red-700', color: '#991B1B', icon: 'warning' },
+  legislation: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'file' },
+  weapon: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'shield' },
+  delivery: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'plane' },
+  impact: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'warning' },
 }
 
 function MoneyTrailCard({ node }: { node: MoneyTrailNode }) {
@@ -718,24 +726,24 @@ function MoneyTrailCard({ node }: { node: MoneyTrailNode }) {
         tabIndex={childNodes ? 0 : undefined}
         onKeyDown={e => childNodes && e.key === 'Enter' && setOpen(!open)}
       >
-        <span className="flex-shrink-0 mt-0.5" style={{ color: style.color }}><TierIcon name={style.icon} className="w-5 h-5" /></span>
+        <span className="flex-shrink-0 mt-0.5 text-crimson"><TierIcon name={style.icon} className="w-5 h-5" /></span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-display text-xl font-bold" style={{ color: style.color }}>{node.amount}</span>
-            <span className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: style.color }}>
+            <span className="font-display text-xl font-bold text-crimson">{node.amount}</span>
+            <span className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full text-white bg-ink">
               {node.type}
             </span>
           </div>
           <p className="font-sans text-sm font-semibold text-ink mt-1">{node.label}</p>
           <p className="font-sans text-[0.6rem] text-ink-faint mt-0.5">{node.date}</p>
           <p className="font-body text-xs text-ink-muted leading-relaxed mt-2">{node.detail}</p>
-          <a href={node.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 font-sans text-[0.6rem] font-semibold hover:underline" style={{ color: style.color }} onClick={e => e.stopPropagation()}>
+          <a href={node.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 font-sans text-[0.6rem] font-semibold hover:underline text-crimson hover:text-crimson-dark" onClick={e => e.stopPropagation()}>
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             Source
           </a>
         </div>
         {childNodes && (
-          <span className={`text-lg transition-transform duration-200 flex-shrink-0 ${open ? 'rotate-180' : ''}`} style={{ color: style.color }}>▾</span>
+          <span className={`text-lg transition-transform duration-200 flex-shrink-0 text-ink-faint ${open ? 'rotate-180' : ''}`}>▾</span>
         )}
       </div>
       {/* Expanded children */}
@@ -772,7 +780,7 @@ function IncidentCard({ incident }: { incident: DocumentedIncident }) {
           <div>
             <div className="flex items-center gap-2 mb-2 flex-wrap">
               <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase text-white ${
-                incident.tier === 'verified' ? 'bg-[#166534]' : 'bg-[#92400E]'
+                incident.tier === 'verified' ? 'bg-ink' : 'bg-ink/70'
               }`}>
                 {incident.tier === 'verified' ? '✓ Verified' : '◐ Circumstantial'}
               </span>
@@ -1041,7 +1049,7 @@ export default function IsraelDossierPage() {
          ═══════════════════════════════════════════════════════════ */}
       <section id="money-trail" className="mb-16 scroll-mt-20">
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-[#6B21A8]" />
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-ink" />
           <h2 className="font-display text-2xl font-bold text-ink">Follow the Money</h2>
         </div>
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
@@ -1074,7 +1082,7 @@ export default function IsraelDossierPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                     <div className="flex items-center gap-2 mb-1">
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: meta.color }} />
+                      <div className="w-2.5 h-2.5 rounded-full bg-white" />
                       <h2 className="font-display text-xl sm:text-2xl font-bold text-white">{meta.label}</h2>
                     </div>
                     {meta.headerCaption && <p className="font-sans text-[0.6rem] text-white/60 mt-1">{meta.headerCaption}</p>}
@@ -1084,7 +1092,7 @@ export default function IsraelDossierPage() {
             )}
             {!meta.headerImage && (
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: meta.color }} />
+                <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
                 <h2 className="font-display text-2xl font-bold text-ink">{meta.label}</h2>
               </div>
             )}

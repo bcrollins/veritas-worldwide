@@ -8,9 +8,9 @@ import AdBanner from '../components/AdBanner'
 type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
 
 const TIER_CONFIG: Record<EvidenceTier, { label: string; color: string; bg: string; border: string; desc: string }> = {
-  verified: { label: 'Court-Verified', color: '#166534', bg: 'rgba(22,101,52,0.08)', border: 'rgba(22,101,52,0.25)', desc: 'Confirmed via court filings, sworn testimony, or official records' },
-  circumstantial: { label: 'Circumstantial', color: '#92400E', bg: 'rgba(146,64,14,0.08)', border: 'rgba(146,64,14,0.25)', desc: 'Documented but not adjudicated — flight logs, photos, correspondence' },
-  disputed: { label: 'Disputed', color: '#991B1B', bg: 'rgba(153,27,27,0.08)', border: 'rgba(153,27,27,0.25)', desc: 'Allegations under investigation or denied by the named party' },
+  verified: { label: 'Court-Verified', color: '#1a1a1a', bg: 'rgba(26,26,26,0.04)', border: 'rgba(26,26,26,0.15)', desc: 'Confirmed via court filings, sworn testimony, or official records' },
+  circumstantial: { label: 'Circumstantial', color: '#555555', bg: 'rgba(85,85,85,0.04)', border: 'rgba(85,85,85,0.15)', desc: 'Documented but not adjudicated — flight logs, photos, correspondence' },
+  disputed: { label: 'Disputed', color: '#8B0000', bg: 'rgba(139,0,0,0.04)', border: 'rgba(139,0,0,0.12)', desc: 'Allegations under investigation or denied by the named party' },
 }
 
 /* ── SVG Icons ────────────────────────────────────────────────── */
@@ -46,11 +46,11 @@ function IconSearch({ className = 'w-4 h-4' }: { className?: string }) {
 type ConnectionCategory = 'inner-circle' | 'frequent-associate' | 'legal-team' | 'financial' | 'intelligence' | 'political' | 'royal-elite'
 
 const CATEGORY_CONFIG: Record<ConnectionCategory, { label: string; color: string }> = {
-  'inner-circle': { label: 'Inner Circle', color: '#991B1B' },
+  'inner-circle': { label: 'Inner Circle', color: '#8B0000' },
   'frequent-associate': { label: 'Frequent Associate', color: '#B45309' },
-  'legal-team': { label: 'Legal Defense', color: '#1E3A5F' },
-  'financial': { label: 'Financial Network', color: '#166534' },
-  'intelligence': { label: 'Intelligence Links', color: '#6B21A8' },
+  'legal-team': { label: 'Legal Defense', color: '#1a1a1a' },
+  'financial': { label: 'Financial Network', color: '#1a1a1a' },
+  'intelligence': { label: 'Intelligence Links', color: '#555555' },
   'political': { label: 'Political Connections', color: '#0E7490' },
   'royal-elite': { label: 'Royal & Elite', color: '#78350F' },
 }
