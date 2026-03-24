@@ -1,37 +1,35 @@
 {
-  "run": 12,
-  "date": "2026-03-24",
-  "last": "tabbed-record-page+brand-kit+forum+pwa-manifest+seo-fix+i18n-forum+growth-state",
-  "next": "hubspot-welcome-sequences+og-image-per-chapter+prerendering",
-  "queue": [
-    "hubspot-automated-welcome-sequences",
-    "og-image-per-chapter-generation",
+  "lastRun": 13,
+  "lastDate": "2026-03-24",
+  "completedThisRun": [
+    "lead-scoring-engine",
+    "lead-scoring-wiring-7-components",
+    "social-content-calendar-7-day",
+    "per-chapter-og-image-generation",
+    "og-image-seo-wiring",
+    "stripe-branding-instructions"
+  ],
+  "completedPriorRuns": [
+    "tabbed-record-page",
+    "brand-kit-10-svg-assets",
+    "community-forum-page",
+    "forum-sitemap-entry",
+    "pwa-manifest",
+    "forum-i18n-30-languages",
+    "seo-tab-meta-fix",
+    "growth-state-tracking"
+  ],  "queue": [
     "prerendering-ssg-for-seo",
-    "adsense-activation-revenue",
+    "adsense-activation",
     "abandoned-cart-recovery-emails",
     "lazy-chapter-data-splitting",
-    "internal-linking-optimization",
     "push-notifications",
     "search-console-verification-guide",
-    "discord-server-setup-guide"
+    "discord-server-setup-guide",
+    "stripe-branding-dashboard-update",
+    "lead-scoring-hubspot-server-sync",
+    "og-image-png-fallback-for-social"
   ],
-  "fixes_this_run": [
-    "Run 11: Completed RecordTabs.tsx — left sidebar (desktop) / bottom tabs (mobile) with 5 sections",
-    "Run 11: Rewrote HomePage.tsx — tabbed layout with lazy-loaded Israel Dossier, Deep State, Timeline, Content Packs panels",
-    "Run 11: Created ForumPage.tsx — Reddit-style community forum with 6 topic categories wrapping CommunityForum component",
-    "Run 11: Replaced Timeline with Forum in header primaryLinks (App.tsx)",
-    "Run 11: Added /forum route to App.tsx",
-    "Run 11: Created brand kit — 10 SVG assets in public/brand-kit/ (logos, banners, palette, social profile)",
-    "Run 11: Added brand kit download section with typography/color reference to Content Packs tab",
-    "Run 12: Added /forum to sitemap.xml with daily changefreq",
-    "Run 12: Updated homepage lastmod date to 2026-03-24",
-    "Run 12: Created PWA manifest.json with brand assets and app metadata",
-    "Run 12: Added manifest link to index.html",
-    "Run 12: Registered service worker in index.html",
-    "Run 12: Added nav.forum translation key to all 30+ languages via Python script",
-    "Run 12: Updated App.tsx to use t('nav.forum') instead of hardcoded 'Forum'",
-    "Run 12: Fixed SEO meta conflict — homepage meta re-asserts when tab switches back via activeTab dependency",
-    "Run 12: Added URL hash deep links for tabs (/#israel, /#deepstate, /#timeline, /#content)",
-    "Run 12: Created .claude-state/growth-state.json with full growth engine state tracking"
-  ]
+  "featureCount": 36,
+  "compositeAverage": 8.5
 }

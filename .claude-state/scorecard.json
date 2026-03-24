@@ -1,5 +1,5 @@
 {
-  "run": 12,
+  "run": 13,
   "date": "2026-03-24",
   "features": {
     "admin-dashboard": { "composite": 8.2, "status": "GOOD", "notes": "Full admin with login, 7 pages, social pack generator" },
@@ -10,8 +10,7 @@
     "book-reader": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Full reading interface with TTS, font controls, download modal" },
     "evidence-system": { "composite": 9.2, "status": "EXCELLENT", "notes": "Three-tier with semantic CSS variables + dark mode variants" },
     "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Neon PostgreSQL backend with JWT sessions, bcrypt hashing" },
-    "nyt-design": { "composite": 8.0, "status": "GOOD", "notes": "Monochrome palette, crimson accents, professional typography" },
-    "seo": { "composite": 9.5, "status": "EXCELLENT", "notes": "JSON-LD all pages, OG tags, Twitter cards, bot SSR, sitemap updated with /forum, feed.xml" },
+    "nyt-design": { "composite": 8.0, "status": "GOOD", "notes": "Monochrome palette, crimson accents, professional typography" },    "seo": { "composite": 9.8, "status": "EXCELLENT", "notes": "JSON-LD all pages, per-chapter OG images (31 SVGs), Twitter cards, bot SSR, sitemap, feed.xml. Chapter-specific OG wired into setMetaTags + chapterJsonLd." },
     "build-reliability": { "composite": 8.5, "status": "GOOD", "notes": "TypeScript strict, clean build, lazy loading, code splitting" },
     "israel-dossier": { "composite": 9.2, "status": "EXCELLENT", "notes": "10x expansion, now also accessible as tab on homepage" },
     "content-packs": { "composite": 9.2, "status": "EXCELLENT", "notes": "6 packs + brand kit with 10 SVG assets, accessible as homepage tab" },
@@ -23,17 +22,19 @@
     "ecommerce-optimization": { "composite": 8.0, "status": "GOOD", "notes": "Conversion tracking, social proof, sticky membership bar, donation impact" },
     "testing-infrastructure": { "composite": 7.0, "status": "FUNCTIONAL", "notes": "data-testid on 9 critical interactive elements" },
     "google-translate": { "composite": 8.0, "status": "GOOD", "notes": "130+ languages via Google Translate Element API" },
-    "deep-state-page": { "composite": 8.8, "status": "GOOD", "notes": "Evidence tiers, subscriber capture, now also accessible as homepage tab" },
-    "dark-mode": { "composite": 8.5, "status": "GOOD", "notes": "Full semantic tokens, theme toggle in header, system preference default" },
+    "deep-state-page": { "composite": 8.8, "status": "GOOD", "notes": "Evidence tiers, subscriber capture, now also accessible as homepage tab" },    "dark-mode": { "composite": 8.5, "status": "GOOD", "notes": "Full semantic tokens, theme toggle in header, system preference default" },
     "accessibility": { "composite": 8.8, "status": "GOOD", "notes": "Skip-nav, focus-visible, aria-labels, 44px touch targets, ARIA" },
     "reading-progress": { "composite": 8.5, "status": "GOOD", "notes": "Crimson progress bar on long-form pages" },
     "cookie-consent": { "composite": 9.0, "status": "EXCELLENT", "notes": "GDPR-compliant banner with GA4 Consent Mode v2" },
     "ab-testing": { "composite": 8.0, "status": "GOOD", "notes": "Zero-dep framework, 2 experiments live" },
     "chapter-pdf-export": { "composite": 8.5, "status": "GOOD", "notes": "Per-chapter PDF with cover, evidence tiers, quotes" },
-    "tabbed-record-page": { "composite": 8.8, "status": "GOOD", "notes": "NEW: Left sidebar tabs (desktop) / bottom tabs (mobile) — 5 sections: Chapters, Israel, Deep State, Timeline, Content Packs. Lazy-loaded panels. Hash deep links (/#israel etc). SEO meta re-asserts on tab switch." },
-    "brand-kit": { "composite": 8.5, "status": "GOOD", "notes": "NEW: 10 SVG assets — logos (full/mark, dark/white/crimson), color palette, social banners (X/FB/LinkedIn), social profile. Downloadable from Content Packs tab with typography/color reference." },
-    "community-forum": { "composite": 8.0, "status": "GOOD", "notes": "NEW: Reddit-style forum at /forum with 6 topic categories (General, Israel, Deep State, Evidence Review, Methodology, Media). CommunityForum component with threading, voting, sort modes." },
-    "pwa": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "NEW: manifest.json with brand assets, service worker registered, Add-to-Home-Screen ready" },
-    "i18n-forum": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: nav.forum translation key added to all 30+ languages" }
+    "tabbed-record-page": { "composite": 8.8, "status": "GOOD", "notes": "Left sidebar tabs (desktop) / bottom tabs (mobile) — 5 sections. Lazy-loaded panels. Hash deep links. SEO meta re-asserts on tab switch." },
+    "brand-kit": { "composite": 8.5, "status": "GOOD", "notes": "10 SVG assets — logos, color palette, social banners, social profile. Downloadable from Content Packs tab." },
+    "community-forum": { "composite": 8.0, "status": "GOOD", "notes": "Reddit-style forum at /forum with 6 topic categories. CommunityForum component with threading, voting, sort modes." },
+    "pwa": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "manifest.json with brand assets, service worker registered, Add-to-Home-Screen ready" },
+    "i18n-forum": { "composite": 9.0, "status": "EXCELLENT", "notes": "nav.forum translation key added to all 30+ languages" },
+    "lead-scoring": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Unified lead scoring engine (leadScoring.ts). 11 behavioral events, 7 lifecycle stages, HubSpot + GA4 dual-fire. Wired into 7 components: ChapterPage, BookmarkButton, SearchPage, ContentGate, DonationBanner, NewsletterSignup, AuthContext." },
+    "per-chapter-og": { "composite": 9.2, "status": "EXCELLENT", "notes": "NEW: 31 unique 1200x630 SVG OG images auto-generated via scripts/generate-og-images.mjs. Wired into seo.ts setMetaTags + chapterJsonLd. ChapterPage passes chapter-specific image URL." },
+    "social-content-calendar": { "composite": 8.5, "status": "GOOD", "notes": "NEW: 7-day rotating content calendar with platform-specific posts (X, LinkedIn, IG, FB, Reddit, Discord, TikTok). Stored in .claude-state/social-content-calendar.json." }
   }
 }
