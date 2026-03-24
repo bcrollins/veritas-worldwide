@@ -24,13 +24,16 @@ declare global {
   }
 }
 
+// AdSense publisher ID — set to your real ID to enable ads
+const AD_CLIENT = '' // e.g. 'ca-pub-1234567890'
+
 export default function AdBanner({ slot, format = 'auto', className = '' }: AdBannerProps) {
   const adRef = useRef<HTMLModElement>(null)
   const pushed = useRef(false)
 
   useEffect(() => {
-    // Don't show ads to subscribers
-    if (isSubscriber()) return
+    // Don't show ads to subscribers or if AdSense not configured
+    if (isSubscriber() || !AD_CLIENT) return
     // Don't push the same ad twice
     if (pushed.current) return
 
@@ -44,8 +47,8 @@ export default function AdBanner({ slot, format = 'auto', className = '' }: AdBa
     }
   }, [])
 
-  // Hide for subscribers
-  if (isSubscriber()) return null
+  // Hide for subscribers or when AdSense is not configured
+  if (isSubscriber() || !AD_CLIENT) return null
 
   return (
     <div className={`ad-container my-8 ${className}`}>
@@ -54,7 +57,7 @@ export default function AdBanner({ slot, format = 'auto', className = '' }: AdBa
         ref={adRef}
         className="adsbygoogle"
         style={{ display: 'block', textAlign: 'center' }}
-        data-ad-client="ca-pub-XXXXXXXXXX"
+        data-ad-client={AD_CLIENT}
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive="true"
