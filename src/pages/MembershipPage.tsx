@@ -152,13 +152,14 @@ export default function MembershipPage() {
 
       {/* ─── PRICING TIERS ─── */}
       <section className="max-w-6xl mx-auto px-6 -mt-12 relative z-10 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-start">
           {TIERS.map(tier => {
             const isFree = tier.key === 'free'
             const isPopular = 'popular' in tier && tier.popular
+            const isFounding = tier.key === 'founding'
             const price = isFree ? 0 : annual ? tier.annualPrice : tier.monthlyPrice
             const period = isFree ? '' : annual ? '/year' : '/month'
-            const dailyCost = isFree ? '' : `$${(price / (annual ? 365 : 30)).toFixed(2)}/day` // Strategy 13
+            const dailyCost = isFree ? '' : `$${(price / (annual ? 365 : 30)).toFixed(2)}/day`
             const href = isFree
               ? '/'
               : annual
@@ -166,64 +167,105 @@ export default function MembershipPage() {
                 : ('monthlyUrl' in tier ? tier.monthlyUrl : '/')
             const isInternal = isFree
 
+            // Solid background colors per tier — no transparency
+            const cardBg = isFree
+              ? 'bg-white dark:bg-[#1a1a1a]'
+              : isPopular
+                ? 'bg-white dark:bg-[#1a1a1a]'
+                : isFounding
+                  ? 'bg-[#0d0d0d] dark:bg-[#0d0d0d]'
+                  : 'bg-white dark:bg-[#1a1a1a]'
+
+            const textColor = isFounding ? 'text-white' : 'text-ink'
+            const mutedColor = isFounding ? 'text-white/60' : 'text-ink-muted'
+            const faintColor = isFounding ? 'text-white/40' : 'text-ink-faint'
+            const borderColor = isPopular
+              ? 'border-crimson ring-2 ring-crimson/30'
+              : isFounding
+                ? 'border-white/10'
+                : 'border-[#e5e2dd] dark:border-white/10'
+            const checkColor = isFounding ? 'text-emerald-400' : 'text-emerald-600 dark:text-emerald-400'
+
             return (
               <div
                 key={tier.key}
-                className={`relative rounded-sm border bg-parchment dark:bg-ink/50 flex flex-col transition-all duration-200 hover:shadow-xl ${
-                  isPopular ? 'border-crimson shadow-lg ring-2 ring-crimson/20 scale-[1.02]' : 'border-border hover:border-crimson/30'
+                className={`relative rounded-lg border ${cardBg} ${borderColor} flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+                  isPopular ? 'shadow-xl shadow-crimson/10 lg:scale-[1.04] z-10' : 'shadow-lg hover:shadow-xl'
                 }`}
               >
-                {/* Strategy 2: Popular badge */}
+                {/* Popular badge */}
                 {isPopular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-crimson text-white font-sans text-[0.55rem] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full shadow-md">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase px-5 py-2 rounded-full shadow-lg shadow-crimson/30 whitespace-nowrap">
                       Most Popular
                     </span>
                   </div>
                 )}
 
-                <div className="p-6 flex-1 flex flex-col">
-                  {/* Header */}
-                  <div className="text-center mb-5">
-                    <span className="flex justify-center mb-2" style={{ color: tier.color }}><TierIcon name={tier.icon} className="w-6 h-6" /></span>
-                    <h3 className="font-display text-lg font-bold text-ink mb-1">{tier.name}</h3>
-                    <div className="flex items-baseline justify-center gap-1">
+                {/* Founding badge */}
+                {isFounding && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-amber-600 to-amber-500 text-white font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase px-5 py-2 rounded-full shadow-lg shadow-amber-600/30 whitespace-nowrap">
+                      Limited Availability
+                    </span>
+                  </div>
+                )}
+
+                <div className={`p-7 flex-1 flex flex-col ${isPopular || isFounding ? 'pt-9' : ''}`}>
+                  {/* Tier Header */}
+                  <div className="text-center mb-6">
+                    <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: isFounding ? 'rgba(139,26,26,0.3)' : `${tier.color}15` }}>
+                      <span style={{ color: isFounding ? '#f59e0b' : tier.color }}><TierIcon name={tier.icon} className="w-5 h-5" /></span>
+                    </div>
+                    <h3 className={`font-display text-lg font-bold ${textColor} mb-1`}>{tier.name}</h3>
+
+                    {/* Price */}
+                    <div className="flex items-baseline justify-center gap-1 mt-2">
                       {isFree ? (
-                        <span className="font-display text-4xl font-bold text-ink">Free</span>
+                        <span className={`font-display text-5xl font-bold ${textColor}`}>Free</span>
                       ) : (
                         <>
-                          <span className="font-display text-4xl font-bold" style={{ color: tier.color }}>${price}</span>
-                          <span className="font-sans text-xs text-ink-faint">{period}</span>
+                          <span className="font-display text-5xl font-bold" style={{ color: isFounding ? '#f59e0b' : tier.color }}>${price}</span>
+                          <span className={`font-sans text-sm ${faintColor}`}>{period}</span>
                         </>
                       )}
                     </div>
-                    {/* Strategy 13: Daily cost reframe */}
+
+                    {/* Daily cost reframe */}
                     {!isFree && (
-                      <p className="font-sans text-[0.6rem] text-ink-faint mt-1">
+                      <p className={`font-sans text-xs ${faintColor} mt-1.5`}>
                         That&apos;s {dailyCost} — less than a coffee
+                      </p>
+                    )}
+
+                    {/* Annual savings callout */}
+                    {!isFree && annual && 'annualSavings' in tier && (
+                      <p className="font-sans text-[0.6rem] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                        Save {tier.annualSavings}% with annual billing
                       </p>
                     )}
                   </div>
 
+                  {/* Divider */}
+                  <div className={`h-px mb-5 ${isFounding ? 'bg-white/10' : 'bg-border'}`} />
+
                   {/* Features */}
-                  <ul className="space-y-2.5 mb-6 flex-1">
+                  <ul className="space-y-3 mb-8 flex-1">
                     {tier.features.map((f, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <li key={i} className="flex items-start gap-2.5">
+                        <svg className={`w-4 h-4 mt-0.5 flex-shrink-0 ${checkColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="font-body text-sm text-ink leading-snug">{f}</span>
+                        <span className={`font-body text-sm leading-snug ${mutedColor}`}>{f}</span>
                       </li>
                     ))}
                   </ul>
 
-                  {/* CTA */}
+                  {/* CTA Button */}
                   {isInternal ? (
                     <Link
                       to={href}
-                      className={`block w-full text-center font-sans text-sm font-semibold tracking-wide py-3.5 rounded-sm transition-all ${
-                        'border border-border text-ink hover:border-crimson hover:text-crimson'
-                      }`}
+                      className="block w-full text-center font-sans text-sm font-bold tracking-wide py-4 rounded-md border-2 border-[#e5e2dd] dark:border-white/20 text-ink dark:text-white hover:border-crimson hover:text-crimson dark:hover:border-crimson dark:hover:text-crimson transition-all"
                     >
                       {tier.cta}
                     </Link>
@@ -232,14 +274,14 @@ export default function MembershipPage() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`block w-full text-center font-sans text-sm font-semibold tracking-wide py-3.5 rounded-sm transition-all ${
+                      className={`block w-full text-center font-sans text-sm font-bold tracking-wide py-4 rounded-md transition-all ${
                         isPopular
-                          ? 'bg-crimson text-white hover:bg-crimson-dark shadow-md'
-                          : tier.key === 'founding'
-                            ? 'bg-ink text-white hover:bg-ink/80'
-                            : 'border-2 text-white hover:opacity-90'
+                          ? 'bg-crimson text-white hover:bg-crimson-dark shadow-lg shadow-crimson/25 hover:shadow-xl hover:shadow-crimson/30'
+                          : isFounding
+                            ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-white hover:from-amber-500 hover:to-amber-400 shadow-lg shadow-amber-600/25'
+                            : 'text-white hover:opacity-90 shadow-md'
                       }`}
-                      style={!isPopular && tier.key !== 'founding' ? { backgroundColor: tier.color, borderColor: tier.color } : {}}
+                      style={!isPopular && !isFounding ? { backgroundColor: tier.color } : {}}
                       onClick={() => trackSupportClick(`membership-${tier.key}-${annual ? 'annual' : 'monthly'}`)}
                     >
                       {tier.cta}
@@ -247,10 +289,11 @@ export default function MembershipPage() {
                   )}
                 </div>
 
-                {/* Strategy 14: Trust badges */}
+                {/* Trust badges */}
                 {!isFree && (
-                  <div className="border-t border-border/50 px-6 py-3 text-center">
-                    <p className="font-sans text-[0.55rem] text-ink-faint">
+                  <div className={`px-7 py-3.5 text-center rounded-b-lg ${isFounding ? 'border-t border-white/10 bg-white/5' : 'border-t border-border/50 bg-[#faf8f5] dark:bg-white/5'}`}>
+                    <p className={`font-sans text-[0.6rem] ${faintColor} flex items-center justify-center gap-2`}>
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                       Stripe-secured · Cancel anytime · No lock-in
                     </p>
                   </div>
