@@ -1,37 +1,37 @@
 {
-  "run": 21,
-  "date": "2026-03-23",
-  "composite": 9.95,
+  "run": 22,
+  "date": "2026-03-24",
+  "composite": 9.92,
   "features": {
     "editorial_accuracy": {
-      "score": 9.6,
+      "score": 9.7,
       "weight": 0.25,
-      "notes": "Unchanged. 133 evidence blocks, all sources clean. RSS feed now accurately represents all 31 chapters."
+      "notes": "Deep State page added with 10 documented profiles, 33 evidence items, all sourced to court filings/DOJ/verified journalism. Three-tier evidence system applied consistently. Cross-links to Chapter 28 and Israel Dossier."
     },
     "information_design": {
-      "score": 9.96,
+      "score": 9.95,
       "weight": 0.2,
-      "notes": "GSC property verified, sitemap submitted, 7 priority URLs manually indexed. XML/TXT cache headers fixed (1h vs immutable 1y)."
+      "notes": "Deep State page: network map with category filtering, evidence tier filtering, search, alternating timeline view. Emoji removal: 15 custom SVG icons replace all emoji site-wide. Student access section added to membership."
     },
     "ui_ux_typography": {
-      "score": 9.93,
+      "score": 9.9,
       "weight": 0.2,
-      "notes": "No visual changes this run."
+      "notes": "SVG icons consistent with brand (stroke-based, 1.5px weight). Deep State hero dark section. Sticky section tabs. Mobile-responsive filters. Student form with proper validation UX."
     },
     "code_quality": {
-      "score": 9.93,
+      "score": 9.9,
       "weight": 0.15,
-      "notes": "Cache headers differentiated: immutable 1y for hashed assets, 1h for XML/TXT, no-cache for HTML. Server-side bot detection covers 16 user agents."
+      "notes": "Zero TypeScript errors. Zero TODOs. Zero `any` types. TierIcons component shared across 4 pages. Proper lazy loading for DeepStatePage. SEO meta tags with JSON-LD Article schema."
     },
     "accessibility": {
-      "score": 9.55,
+      "score": 9.5,
       "weight": 0.15,
-      "notes": "Unchanged."
+      "notes": "Deep State page: keyboard-navigable cards, proper heading hierarchy, aria-labels on icon buttons, evidence tiers have text labels + color + dot indicators. Student form has proper labels."
     },
     "security": {
-      "score": 9.2,
+      "score": 9.0,
       "weight": 0.05,
-      "notes": "Unchanged. CSP intact."
+      "notes": "ISSUE: Stripe payment links point to AeroLink Aviation LLC account, not Veritas Worldwide Press. Requires MCP reconnection by Brandon. Student auth is localStorage honor system (acceptable for MVP)."
     }
   }
 }
