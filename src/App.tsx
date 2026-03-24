@@ -7,7 +7,7 @@ import ErrorBoundary from './components/ErrorBoundary'
 import ScrollToTop from './components/ScrollToTop'
 import { usePageView } from './hooks/usePageView'
 import { useTheme } from './lib/ThemeContext'
-import { DONATE_URL } from './lib/constants'
+import { DONATE_URL, TAGLINE, MEMBERSHIP } from './lib/constants'
 import { trackSupportClick } from './lib/ga4'
 import NewsletterPopup from './components/engagement/NewsletterPopup'
 import PerformanceMonitor from './components/engagement/PerformanceMonitor'
@@ -27,6 +27,7 @@ const AccessibilityPage = lazy(() => import('./pages/AccessibilityPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
 const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
+const MembershipPage = lazy(() => import('./pages/MembershipPage'))
 
 
 function ThemeToggle() {
@@ -96,6 +97,7 @@ function Header() {
     { to: '/analytics', label: 'Analytics' },
     { to: '/about', label: 'About' },
     { to: '/israel-dossier', label: 'Israel Dossier' },
+    { to: '/membership', label: 'Membership' },
   ]
 
   const allLinks = [...primaryLinks, ...secondaryLinks]
@@ -176,19 +178,13 @@ function Header() {
           {/* Right actions */}
           <div className="flex items-center gap-0.5">
             <ReadingStreak />
-            <a
-              href={DONATE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center justify-center p-2 min-w-[44px] min-h-[44px] text-crimson hover:bg-crimson/10 rounded-sm transition-colors"
-              aria-label="Support this work"
-              title="Support"
+            <Link
+              to="/membership"
+              className="hidden sm:inline-flex items-center justify-center px-3 py-1.5 min-h-[36px] bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
               onClick={() => trackSupportClick('header')}
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-            </a>
+              Join
+            </Link>
             <ThemeToggle />
             {isLoggedIn ? (
               <button
@@ -235,6 +231,17 @@ function Header() {
       {/* Accent line */}
       <div className="h-[2px] bg-crimson" />
 
+      {/* Tagline bar */}
+      <div className="bg-ink text-center py-1.5 px-4">
+        <p className="font-sans text-[0.6rem] tracking-[0.12em] uppercase text-white/50">
+          <span className="text-white/80 font-semibold">{TAGLINE}</span>
+          <span className="mx-2 text-white/20">·</span>
+          <Link to="/membership" className="text-crimson-light hover:text-white transition-colors font-semibold">
+            Join Us →
+          </Link>
+        </p>
+      </div>
+
       {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div
@@ -279,18 +286,13 @@ function Header() {
               {link.label}
             </Link>
           ))}
-          <a
-            href={DONATE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/membership"
             className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors mt-6"
             onClick={() => { trackSupportClick('mobile-menu'); setMenuOpen(false) }}
           >
-            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-            </svg>
-            Support This Work
-          </a>
+            Become a Member
+          </Link>
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/30">
             <div className="flex items-center gap-2">
               <ThemeToggle />
@@ -343,6 +345,7 @@ function Footer() {
               <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
               <Link to="/about" className="font-sans text-sm text-white/50 hover:text-white transition-colors">About</Link>
+              <Link to="/membership" className="font-sans text-sm text-crimson-light hover:text-white transition-colors font-semibold">Membership</Link>
               <Link to="/accessibility" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Accessibility</Link>
               <Link to="/privacy" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Privacy</Link>
               <Link to="/terms" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Terms</Link>
@@ -437,6 +440,7 @@ export default function App() {
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/israel-dossier" element={<IsraelDossierPage />} />
+          <Route path="/membership" element={<MembershipPage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">
