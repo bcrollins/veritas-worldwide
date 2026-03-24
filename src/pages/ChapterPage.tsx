@@ -16,6 +16,7 @@ import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import { DONATE_URL } from '../lib/constants'
 import { trackShare, trackDownload } from '../lib/ga4'
+import ChapterPDF from '../components/ChapterPDF'
 import FloatingShareBar from '../components/engagement/FloatingShareBar'
 import CitationGenerator from '../components/CitationGenerator'
 import CommunityForum from '../components/CommunityForum'
@@ -711,6 +712,7 @@ export default function ChapterPage() {
             <FontSizeToggle />
             <ShareButton chapter={chapter} />
             <DownloadButton chapter={chapter} />
+            <ChapterPDF chapter={chapter} />
             <CitationGenerator chapter={chapter} />
             <PremiumAction
               onClick={() => window.print()}
