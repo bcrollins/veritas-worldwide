@@ -19,6 +19,7 @@ const IsraelDossierPage = lazy(() => import('./IsraelDossierPage'))
 const DeepStatePage = lazy(() => import('./DeepStatePage'))
 const TimelinePage = lazy(() => import('./TimelinePage'))
 const ContentPackPage = lazy(() => import('./ContentPackPage'))
+const AipacPage = lazy(() => import('./AipacPage'))
 
 function TabSpinner() {
   return (
@@ -32,7 +33,7 @@ export default function HomePage() {
   // Support direct linking via hash: /#israel, /#deepstate, /#timeline, /#content
   const initialTab = (): RecordTab => {
     const hash = window.location.hash.replace('#', '')
-    const valid: RecordTab[] = ['chapters', 'israel', 'deepstate', 'timeline', 'content']
+    const valid: RecordTab[] = ['chapters', 'israel', 'deepstate', 'timeline', 'content', 'aipac']
     return valid.includes(hash as RecordTab) ? (hash as RecordTab) : 'chapters'
   }
   const [activeTab, setActiveTab] = useState<RecordTab>(initialTab)
@@ -405,6 +406,13 @@ export default function HomePage() {
                 {/* Existing Content Packs below brand kit */}
                 <ContentPackPage />
               </div>
+            </Suspense>
+          )}
+
+          {/* ── TAB: AIPAC Influence Map ──────────────── */}
+          {activeTab === 'aipac' && (
+            <Suspense fallback={<TabSpinner />}>
+              <AipacPage />
             </Suspense>
           )}
 
