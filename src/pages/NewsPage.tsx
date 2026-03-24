@@ -140,10 +140,21 @@ export default function NewsPage() {
   const remaining = filtered.slice(3)
 
   return (
-    <div className="min-h-screen">
+    <div className="w-full max-w-[1920px] mx-auto min-h-screen">
+      {/* Section Bar */}
+      <div className="border-b border-border bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 py-3 text-sm">
+            <Link to="/" className="text-ink-muted hover:text-crimson transition-colors">Home</Link>
+            <span className="text-ink-muted/50">›</span>
+            <span className="text-ink font-medium">Current Events</span>
+          </div>
+        </div>
+      </div>
+
       {/* Edition Header */}
       <div className="border-b-2 border-ink">
-        <div className="max-w-6xl mx-auto px-6 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex items-end justify-between">
             <div>
               <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-1">
@@ -167,7 +178,7 @@ export default function NewsPage() {
 
       {/* Category Filter Bar */}
       <div className="border-b border-border bg-parchment/80 sticky top-[88px] z-30 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-1 overflow-x-auto py-2 -mx-2 px-2 scrollbar-hide">
             <button
               onClick={() => setActiveCategory('all')}
@@ -196,7 +207,7 @@ export default function NewsPage() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         {filtered.length === 0 ? (
           <div className="text-center py-20">
             <p className="font-body text-lg text-ink-muted">No articles in this category yet.</p>
