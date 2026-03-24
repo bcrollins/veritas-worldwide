@@ -1,0 +1,68 @@
+{
+  "run": 12,
+  "date": "2026-03-24",
+  "channels": {
+    "website": {"status": "live", "url": "https://veritasworldwide.com"},
+    "instagram": {"status": "active", "handle": "", "followers": 0},
+    "x": {"status": "not_created", "handle": "@VeritasWorldwide"},
+    "threads": {"status": "not_created", "handle": ""},
+    "linkedin": {"status": "not_created", "type": "company_page"},
+    "facebook_page": {"status": "not_created"},
+    "facebook_group": {"status": "not_created"},
+    "youtube": {"status": "not_created"},
+    "tiktok": {"status": "not_created"},
+    "pinterest": {"status": "not_created"},
+    "reddit": {"status": "not_created"},
+    "discord": {"status": "not_created"},
+    "substack": {"status": "not_created"},
+    "podcast": {"status": "not_created"}
+  },
+  "integrations": {
+    "hubspot_pixel": true,
+    "hubspot_forms": true,
+    "hubspot_workflows": true,
+    "hubspot_lead_scoring": false,
+    "ga4": true,
+    "search_console": false,
+    "stripe_tiers": true,
+    "stripe_recurring": true
+  },
+  "seo": {
+    "prerendering": false,
+    "meta_tags": true,
+    "og_tags": true,
+    "structured_data": true,
+    "sitemap": true,
+    "robots_txt": true,
+    "internal_linking": false
+  },
+  "email": {
+    "capture_form": true,
+    "welcome_sequence": false,
+    "weekly_digest": false,
+    "reengagement": false,
+    "donor_thankyou": false
+  },
+  "site_features": {
+    "social_sharing": true,
+    "dark_mode": true,
+    "reading_progress": true,
+    "pwa": true,
+    "pdf_export": true,
+    "push_notifications": false,
+    "exit_intent": true,
+    "ab_testing": true,
+    "cookie_consent": true,
+    "community_forum": true,
+    "tabbed_record_page": true,
+    "brand_kit": true
+  },
+  "content": {
+    "social_templates_created": 6,
+    "posts_queued": 0,
+    "content_calendar_days": 0,
+    "brand_kit_assets": 10,
+    "content_packs": 6,
+    "pinned_posts": 3
+  }
+}

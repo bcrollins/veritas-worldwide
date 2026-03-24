@@ -29,8 +29,19 @@ function TabSpinner() {
 }
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState<RecordTab>('chapters')
+  // Support direct linking via hash: /#israel, /#deepstate, /#timeline, /#content
+  const initialTab = (): RecordTab => {
+    const hash = window.location.hash.replace('#', '')
+    const valid: RecordTab[] = ['chapters', 'israel', 'deepstate', 'timeline', 'content']
+    return valid.includes(hash as RecordTab) ? (hash as RecordTab) : 'chapters'
+  }
+  const [activeTab, setActiveTab] = useState<RecordTab>(initialTab)
   const [showDownloadModal, setShowDownloadModal] = useState(false)
+
+  // Sync hash with tab changes
+  useEffect(() => {
+    window.location.hash = activeTab === 'chapters' ? '' : activeTab
+  }, [activeTab])
 
   useEffect(() => {
     setMetaTags({
@@ -52,7 +63,7 @@ export default function HomePage() {
       },
     })
     return () => { clearMetaTags(); removeJsonLd() }
-  }, [])
+  }, [activeTab])
 
   const featured = chapters[0]
   const rest = chapters.slice(1)
