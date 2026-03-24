@@ -4,14 +4,16 @@ import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
+import NewsletterSignup from '../components/NewsletterSignup'
+import ContentGate from '../components/ContentGate'
 
 /* ── Evidence Tier System ─────────────────────────────────────── */
 type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
 
-const TIER_CONFIG: Record<EvidenceTier, { label: string; color: string; bg: string; border: string; desc: string }> = {
-  verified: { label: 'Court-Verified', color: '#1a1a1a', bg: 'rgba(26,26,26,0.04)', border: 'rgba(26,26,26,0.15)', desc: 'Confirmed via court filings, sworn testimony, or official records' },
-  circumstantial: { label: 'Circumstantial', color: '#555555', bg: 'rgba(85,85,85,0.04)', border: 'rgba(85,85,85,0.15)', desc: 'Documented but not adjudicated — flight logs, photos, correspondence' },
-  disputed: { label: 'Disputed', color: '#8B0000', bg: 'rgba(139,0,0,0.04)', border: 'rgba(139,0,0,0.12)', desc: 'Allegations under investigation or denied by the named party' },
+const TIER_CONFIG: Record<EvidenceTier, { label: string; color: string; bg: string; border: string; desc: string; icon: string }> = {
+  verified: { label: 'Court-Verified', color: 'var(--color-verified)', bg: 'var(--color-verified-bg)', border: 'var(--color-verified-border)', desc: 'Confirmed via court filings, sworn testimony, or official records', icon: '✓' },
+  circumstantial: { label: 'Circumstantial', color: 'var(--color-circumstantial)', bg: 'var(--color-circumstantial-bg)', border: 'var(--color-circumstantial-border)', desc: 'Documented but not adjudicated — flight logs, photos, correspondence', icon: '◐' },
+  disputed: { label: 'Disputed', color: 'var(--color-disputed)', bg: 'var(--color-disputed-bg)', border: 'var(--color-disputed-border)', desc: 'Allegations under investigation or denied by the named party', icon: '⚠' },
 }
 
 /* ── SVG Icons ────────────────────────────────────────────────── */
@@ -857,6 +859,12 @@ export default function DeepStatePage() {
         />
         <DisputeStory pageId="deep-state" pageTitle="The Deep State — Epstein Network" />
         <CommunityForum pageId="deep-state" pageTitle="The Deep State — Epstein Network" />
+      </div>
+
+      {/* ── Subscriber Capture ─────────────────────────────────── */}
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <NewsletterSignup source="article_cta" contentInterest="deep-state-epstein-network" />
+        <ContentGate contentInterest="deep-state-epstein-network" />
       </div>
 
       {/* ── Methodology Footer ────────────────────────────────── */}
