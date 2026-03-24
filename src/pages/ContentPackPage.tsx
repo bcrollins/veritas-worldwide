@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { allArticles as articles } from '../data/articles'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
 
 interface ShareCard {
   id: string
@@ -174,7 +174,15 @@ export default function ContentPackPage() {
       description: 'Download shareable social media graphics, pre-written posts, and article cards. Help spread primary-source journalism.',
       url: `${SITE_URL}/content-pack`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      'name': 'Content Packs | Veritas Worldwide Press',
+      'url': `${SITE_URL}/content-pack`,
+      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   const handleDownloadCard = useCallback((card: ShareCard) => {

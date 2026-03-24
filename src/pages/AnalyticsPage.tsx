@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchAnalytics } from '../lib/analytics'
 import type { AnalyticsSnapshot, CountryViews } from '../lib/analytics'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
 
 // ── Country flag emoji from ISO code ───────────────────────────────
 function flagEmoji(code: string): string {
@@ -239,7 +239,15 @@ export default function AnalyticsPage() {
       description: 'Public readership analytics for The Record. View lifetime readers, daily traffic, and geographic distribution.',
       url: `${SITE_URL}/analytics`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': 'Reader Analytics',
+      'url': `${SITE_URL}/analytics`,
+      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   async function loadData() {

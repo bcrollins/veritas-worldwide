@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
 
 export default function AccessibilityPage() {
   useEffect(() => {
@@ -9,7 +9,15 @@ export default function AccessibilityPage() {
       description: 'Accessibility statement for Veritas Worldwide Press. Our commitment to WCAG 2.1 AA compliance and inclusive design.',
       url: `${SITE_URL}/accessibility`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': 'Accessibility Statement',
+      'url': `${SITE_URL}/accessibility`,
+      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   return (

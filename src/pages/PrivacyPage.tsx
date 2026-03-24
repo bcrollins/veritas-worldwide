@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
 
 export default function PrivacyPage() {
   useEffect(() => {
@@ -9,7 +9,15 @@ export default function PrivacyPage() {
       description: 'How Veritas Worldwide Press handles reader data, analytics, and privacy. We collect minimal data and never sell personal information.',
       url: `${SITE_URL}/privacy`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': 'Privacy Policy',
+      'url': `${SITE_URL}/privacy`,
+      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   return (

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
 
 export default function TermsPage() {
   useEffect(() => {
@@ -9,7 +9,15 @@ export default function TermsPage() {
       description: 'Terms of use for Veritas Worldwide Press and The Record. Free and open access publication with Creative Commons licensing.',
       url: `${SITE_URL}/terms`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': 'Terms of Use',
+      'url': `${SITE_URL}/terms`,
+      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   return (
