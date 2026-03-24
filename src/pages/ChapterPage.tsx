@@ -663,7 +663,7 @@ export default function ChapterPage() {
 
   useEffect(() => {
     if (chapter) {
-      const chapterOgImage = `${SITE_URL}/og/${chapter.id}.svg`
+      const chapterOgImage = `${SITE_URL}/og/${chapter.id}.png`
       setMetaTags({
         title: `${chapter.title} | The Record — Veritas Worldwide Press`,
         description: chapter.subtitle,

@@ -1002,7 +1002,7 @@ export default function IsraelDossierPage() {
   const totalIncidentDeaths = INCIDENTS.reduce((sum, i) => sum + (i.casualties?.killed ?? 0), 0)
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 md:py-16">
+    <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <ReadingProgress />
       {/* ─── MASTHEAD ─── */}
       <header id="overview" className="text-center mb-6 border-b border-border pb-10">

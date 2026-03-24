@@ -474,7 +474,7 @@ export default function ContentPacksPage() {
     <div className="min-h-screen">
       {/* Hero */}
       <div className="bg-ink text-white">
-        <div className="max-w-5xl mx-auto px-6 py-16 text-center">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/40 mb-3">
             Veritas Worldwide Press
           </p>

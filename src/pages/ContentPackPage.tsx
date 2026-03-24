@@ -224,7 +224,7 @@ export default function ContentPackPage() {
 
       {/* Header */}
       <div className="border-b-2 border-ink">
-        <div className="max-w-5xl mx-auto px-6 py-8">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <p className="font-sans text-[0.55rem] font-semibold tracking-[0.25em] uppercase text-ink-faint mb-2">
             Veritas Worldwide Press
           </p>
@@ -239,7 +239,7 @@ export default function ContentPackPage() {
       </div>
 
       {/* Download All CTA */}
-      <div className="max-w-5xl mx-auto px-6 py-6 flex flex-wrap items-center gap-4 border-b border-border">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap items-center gap-4 border-b border-border">
         <button
           onClick={handleDownloadAll}
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-ink text-white font-sans text-[13px] font-semibold hover:bg-ink/80 transition-colors"
@@ -253,7 +253,7 @@ export default function ContentPackPage() {
       </div>
 
       {/* Shareable Graphics */}
-      <section className="max-w-5xl mx-auto px-6 py-10">
+      <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h2 className="font-sans text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-6 pb-2 border-b border-border">
           Shareable Graphics
         </h2>
@@ -307,7 +307,7 @@ export default function ContentPackPage() {
       </section>
 
       {/* Pre-Written Social Posts */}
-      <section className="max-w-5xl mx-auto px-6 py-10">
+      <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h2 className="font-sans text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-6 pb-2 border-b border-border">
           Pre-Written Social Posts
         </h2>
@@ -355,7 +355,7 @@ export default function ContentPackPage() {
       </section>
 
       {/* Article Quick Links */}
-      <section className="max-w-5xl mx-auto px-6 py-10 mb-20">
+      <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-20">
         <h2 className="font-sans text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-6 pb-2 border-b border-border">
           Article Links
         </h2>

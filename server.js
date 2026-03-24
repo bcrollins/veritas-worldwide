@@ -626,14 +626,27 @@ app.use((req, res, next) => {
     const meta = getChapterMeta(chapterMatch[1])
     if (meta) {
       const chapterUrl = `${SITE_URL}/chapter/${chapterMatch[1]}`
+      const chapterSlug = chapterMatch[1]
+      // Use PNG OG image if available, fall back to SVG, then default
+      const pngPath = path.join(__dirname, 'dist', 'og', `${chapterSlug}.png`)
+      const svgPath = path.join(__dirname, 'dist', 'og', `${chapterSlug}.svg`)
+      let chapterOgImage = OG_IMAGE
+      if (fs.existsSync(pngPath)) {
+        chapterOgImage = `${SITE_URL}/og/${chapterSlug}.png`
+      } else if (fs.existsSync(svgPath)) {
+        chapterOgImage = `${SITE_URL}/og/${chapterSlug}.svg`
+      }
+      const imgType = chapterOgImage.endsWith('.png') ? 'image/png' : chapterOgImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png'
       // Replace default meta tags with chapter-specific ones
       html = html
         .replace(/<title>.*?<\/title>/, `<title>${meta.title} | The Record — Veritas Worldwide Press</title>`)
-        .replace(/content="The Record \| Veritas Worldwide Press"/, `content="${meta.title} | The Record — Veritas Worldwide Press"`)
-        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/, `content="${meta.desc}"`)
-        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/, `content="${meta.desc}"`)
-        .replace(/content="https:\/\/veritasworldwide\.com"/, `content="${chapterUrl}"`)
+        .replace(/content="The Record \| Veritas Worldwide Press"/g, `content="${meta.title} | The Record — Veritas Worldwide Press"`)
+        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${meta.desc}"`)
+        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${meta.desc}"`)
+        .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${chapterUrl}"`)
         .replace(/content="website"/, `content="article"`)
+        .replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${chapterOgImage}"`)
+        .replace(/content="image\/png"/, `content="${imgType}"`)
     }
   }
 

@@ -166,7 +166,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ─── PRICING TIERS ─── */}
-      <section className="max-w-5xl mx-auto px-6 -mt-10 relative z-10 mb-24">
+      <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10 mb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60 border border-border rounded-none overflow-hidden">
           {TIERS.map(tier => {
             const isFree = tier.key === 'free'

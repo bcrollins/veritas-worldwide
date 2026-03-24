@@ -43,6 +43,9 @@ const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
 const NewsPage = lazy(() => import('./pages/NewsPage'))
 const ContentPackPage = lazy(() => import('./pages/ContentPackPage'))
 const ForumPage = lazy(() => import('./pages/ForumPage'))
+// WIP — Profile pages moved to wip/ until data types are complete
+// const ProfilePage = lazy(() => import('./pages/ProfilePage'))
+// const ProfilesIndexPage = lazy(() => import('./pages/ProfilesIndexPage'))
 
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
@@ -115,8 +118,9 @@ function Header() {
   const primaryLinks = [
     { to: '/', label: t('nav.home') },
     { to: '/news', label: 'News' },
-    { to: '/search', label: t('nav.search') },
+    { to: '/profiles', label: 'Profiles' },
     { to: '/forum', label: t('nav.forum') },
+    { to: '/search', label: t('nav.search') },
   ]
 
   const secondaryLinks = [
@@ -137,7 +141,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-parchment/95 backdrop-blur-md no-print" data-testid="site-header">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group" aria-label="Veritas Worldwide Press — Home">
@@ -358,7 +362,7 @@ function Footer() {
   const { t } = useI18n()
   return (
     <footer className="bg-ink text-white/70 py-16 mt-20 no-print">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           <div>
             <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white mb-4">
@@ -506,6 +510,9 @@ export default function App() {
           <Route path="/content-pack" element={<ContentPackPage />} />
           <Route path="/share" element={<ContentPackPage />} />
           <Route path="/forum" element={<ForumPage />} />
+          {/* WIP — Profile routes disabled until data types are complete */}
+          {/* <Route path="/profiles" element={<ProfilesIndexPage />} /> */}
+          {/* <Route path="/profile/:slug" element={<ProfilePage />} /> */}
           <Route path="/news/:slug" element={<ArticlePage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminLayout />}>

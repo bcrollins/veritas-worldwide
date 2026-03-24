@@ -609,7 +609,7 @@ export default function DeepStatePage() {
 
       {/* ── Key Numbers Bar ───────────────────────────────────── */}
       <section className="bg-parchment-dark border-y border-border">
-        <div className="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
           {[
             { value: '10', label: 'Documented Figures' },
             { value: '950+', label: 'Pages Unsealed (2024)' },
@@ -627,7 +627,7 @@ export default function DeepStatePage() {
 
       {/* ── Section Tabs ──────────────────────────────────────── */}
       <div className="sticky top-14 z-40 bg-parchment/95 backdrop-blur-md border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 flex items-center gap-1">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1">
           <button
             onClick={() => setActiveSection('network')}
             className={`font-sans text-[0.7rem] tracking-[0.1em] uppercase px-4 py-3 border-b-2 transition-colors ${activeSection === 'network' ? 'border-crimson text-crimson font-semibold' : 'border-transparent text-ink-muted hover:text-ink'}`}
@@ -643,7 +643,7 @@ export default function DeepStatePage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-10">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* ── Network Map View ────────────────────────────────── */}
         {activeSection === 'network' && (
           <>

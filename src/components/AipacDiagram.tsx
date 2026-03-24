@@ -459,8 +459,8 @@ export default function AipacDiagram() {
   const houseMembers = useMemo(() => filtered.filter(m => m.chamber === 'house'), [filtered])
 
   return (
-    /* Full-width layout — uses max-w-7xl instead of default 5xl for data-dense content */
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+    /* Full-width layout — uses full viewport width for data-dense content */
+    <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Popup modal */}
       {selected && <MemberPopup member={selected} onClose={handleClose} />}
 

@@ -73,7 +73,7 @@ export default function HomePage() {
     <div>
       {/* ── Masthead / Edition Banner ─────────────────────── */}
       <div className="border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 py-6 text-center">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
           <p className="font-sans text-[0.65rem] font-bold tracking-[0.2em] uppercase text-ink-muted mb-2">
             Volume I &middot; Published March 2026
           </p>
@@ -95,7 +95,7 @@ export default function HomePage() {
 
       {/* ── Stats Bar ─────────────────────────────────────── */}
       <div className="bg-ink">
-        <div className="max-w-5xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center">
             <p className="font-display text-2xl font-bold text-crimson-light"><AnimatedCounter end={31} /></p>
             <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-white/50 mt-1">Chapters</p>
@@ -118,7 +118,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════════
           TABBED LAYOUT: Sidebar + Content Panel
          ══════════════════════════════════════════════════════ */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 flex gap-6 relative">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 flex gap-6 relative">
         {/* Left sidebar tabs */}
         <RecordTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
