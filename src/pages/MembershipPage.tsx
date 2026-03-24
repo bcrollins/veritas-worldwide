@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { MEMBERSHIP, TAGLINE } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
+import { trackCheckoutIntent } from '../lib/conversionTracking'
 import { TierIcon } from '../components/TierIcons'
 
 /*
@@ -88,6 +89,20 @@ export default function MembershipPage() {
       name: 'Membership — Veritas Worldwide Press',
       description: 'Support independent, non-partisan investigative journalism.',
       publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      mainEntity: {
+        '@type': 'Product',
+        name: 'Veritas Worldwide Press Membership',
+        description: 'Fund independent investigative journalism. Access exclusive dossiers, weekly briefings, and annotated source libraries.',
+        brand: { '@type': 'Organization', name: SITE_NAME },
+        offers: [
+          { '@type': 'Offer', name: 'Correspondent (Monthly)', price: '5.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
+          { '@type': 'Offer', name: 'Correspondent (Annual)', price: '48.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
+          { '@type': 'Offer', name: 'Investigator (Monthly)', price: '12.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
+          { '@type': 'Offer', name: 'Investigator (Annual)', price: '120.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
+          { '@type': 'Offer', name: 'Founding Circle (Monthly)', price: '25.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/LimitedAvailability' },
+          { '@type': 'Offer', name: 'Founding Circle (Annual)', price: '240.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/LimitedAvailability' },
+        ],
+      },
     })
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
@@ -191,6 +206,19 @@ export default function MembershipPage() {
                     </p>
                   )}
 
+                  {/* Founding Circle scarcity */}
+                  {isFounding && (
+                    <div className="flex items-center gap-1.5 mb-3">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-crimson opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-crimson" />
+                      </span>
+                      <p className="font-sans text-[0.55rem] font-semibold tracking-[0.1em] uppercase text-crimson">
+                        Limited — 14 spots remaining
+                      </p>
+                    </div>
+                  )}
+
                   {/* Tier name */}
                   <h3 className="font-display text-xl font-bold text-ink dark:text-white mb-1">
                     {tier.name}
@@ -264,7 +292,10 @@ export default function MembershipPage() {
                             ? 'bg-crimson text-white hover:bg-crimson-dark'
                             : 'border border-ink/20 dark:border-white/20 text-ink dark:text-white hover:bg-ink hover:text-white dark:hover:bg-white dark:hover:text-ink'
                       }`}
-                      onClick={() => trackSupportClick(`membership-${tier.key}-${annual ? 'annual' : 'monthly'}`)}
+                      onClick={() => {
+                        trackSupportClick(`membership-${tier.key}-${annual ? 'annual' : 'monthly'}`)
+                        trackCheckoutIntent(tier.key, annual ? 'annual' : 'monthly', price)
+                      }}
                     >
                       {tier.cta}
                     </a>

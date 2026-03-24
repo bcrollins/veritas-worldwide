@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { DONATE_URL } from '../lib/constants'
 import { trackDonationClick } from '../lib/ga4'
+import { trackDonationIntent } from '../lib/conversionTracking'
 
 
 const DONATION_TIERS = [
-  { amount: 5, label: '$5' },
-  { amount: 10, label: '$10' },
-  { amount: 25, label: '$25' },
-  { amount: 50, label: '$50' },
-  { amount: 100, label: '$100' },
+  { amount: 5, label: '$5', impact: '1 FOIA request filing fee' },
+  { amount: 10, label: '$10', impact: '1 week of secure hosting' },
+  { amount: 25, label: '$25', impact: '1 document verification' },
+  { amount: 50, label: '$50', impact: '1 month of infrastructure' },
+  { amount: 100, label: '$100', impact: '1 full investigation cycle' },
 ]
 
 const DEFAULT_AMOUNT = 10
@@ -79,6 +80,16 @@ export default function DonationBanner() {
           </button>
         </div>
 
+        {/* Value impact — shows what the donation funds */}
+        {selected !== 'custom' && (
+          <p className="font-body text-sm text-white/50 italic mb-4">
+            Your {DONATION_TIERS.find(t => t.amount === selected)?.label} funds{' '}
+            <span className="text-crimson-light font-semibold not-italic">
+              {DONATION_TIERS.find(t => t.amount === selected)?.impact}
+            </span>
+          </p>
+        )}
+
         {/* Custom Amount Input */}
         {selected === 'custom' && (
           <div className="flex items-center justify-center gap-2 mb-6">
@@ -104,6 +115,7 @@ export default function DonationBanner() {
             onClick={() => {
               const amt = selected === 'custom' ? (parseFloat(customAmount) || 0) : selected
               trackDonationClick(amt)
+              trackDonationIntent(amt)
             }}
             className="inline-flex items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
           >

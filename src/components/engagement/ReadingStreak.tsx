@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ReadingStreak() {
   const [streak, setStreak] = useState(0)
@@ -17,7 +18,7 @@ export default function ReadingStreak() {
       const n = data.count + 1
       localStorage.setItem('veritas_reading_streak', JSON.stringify({ lastDate: today, count: n }))
       setStreak(n)
-      if (n >= 3) { setShowToast(true); setTimeout(() => setShowToast(false), 4000) }
+      if (n >= 3) { setShowToast(true); setTimeout(() => setShowToast(false), 6000) }
     } else {
       localStorage.setItem('veritas_reading_streak', JSON.stringify({ lastDate: today, count: 1 }))
       setStreak(1)
@@ -25,6 +26,9 @@ export default function ReadingStreak() {
   }, [])
 
   if (streak <= 1) return null
+
+  // At 5+ day streak, nudge toward membership
+  const showMembershipNudge = streak >= 5
 
   return (
     <>
@@ -34,9 +38,17 @@ export default function ReadingStreak() {
         {streak}
       </span>
       {showToast && (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-sm shadow-lg font-sans text-sm font-medium bg-ink text-white animate-fadeIn"
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-sm shadow-lg font-sans text-sm font-medium bg-ink text-white animate-fadeIn max-w-sm text-center"
           role="status" aria-live="polite">
-          {streak}-day reading streak!
+          <p className="font-bold">{streak}-day reading streak!</p>
+          {showMembershipNudge && (
+            <p className="text-xs text-white/60 mt-1">
+              Dedicated reader?{' '}
+              <Link to="/membership" className="text-crimson-light hover:text-white underline">
+                Get early access to new chapters →
+              </Link>
+            </p>
+          )}
         </div>
       )}
     </>

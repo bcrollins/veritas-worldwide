@@ -18,6 +18,8 @@ import LanguageSelector from './components/LanguageSelector'
 import ExitIntentCapture from './components/ExitIntentCapture'
 import NewsletterSignup from './components/NewsletterSignup'
 import { trackPageView } from './lib/hubspot'
+import { handleStripeReturn } from './lib/conversionTracking'
+import StickyMembershipBar from './components/StickyMembershipBar'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -441,6 +443,10 @@ function PageViewTracker() {
   useEffect(() => {
     trackPageView(location.pathname)
   }, [location.pathname])
+  // Detect Stripe checkout returns and fire conversion events
+  useEffect(() => {
+    handleStripeReturn()
+  }, [])
   return null
 }
 
@@ -535,6 +541,7 @@ export default function App() {
       <Toast />
       <NewsletterPopup />
       <ExitIntentCapture />
+      <StickyMembershipBar />
       <PerformanceMonitor />
     </div>
     </I18nProvider>
