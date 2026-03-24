@@ -384,6 +384,7 @@ function Footer() {
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.bookmarks')}</Link>
               <Link to="/about" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.about')}</Link>
               <Link to="/deep-state" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.deepState')}</Link>
+              <Link to="/content-pack" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Content Packs &amp; Brand Kit</Link>
               <Link to="/membership" className="font-sans text-sm text-crimson-light hover:text-white transition-colors font-semibold">{t('nav.membership')}</Link>
               <Link to="/accessibility" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.accessibility')}</Link>
               <Link to="/privacy" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.privacy')}</Link>

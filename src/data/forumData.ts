@@ -29,7 +29,7 @@ export interface PostFlair {
 export interface Award {
   id: string
   name: string
-  icon: string // emoji
+  icon: string // icon key
   description: string
   cost: number // karma cost
 }
@@ -88,7 +88,7 @@ export interface Community {
   displayName: string
   description: string
   longDescription: string
-  icon: string // emoji
+  icon: string // icon key
   bannerColor: string
   rules: { title: string; body: string }[]
   flairs: PostFlair[]
@@ -144,16 +144,16 @@ export interface ForumUser {
 /* ── Awards Registry ──────────────────────────────────────────── */
 
 export const AWARDS: Award[] = [
-  { id: 'truth-seeker', name: 'Truth Seeker', icon: '🔍', description: 'For uncovering hidden connections', cost: 50 },
-  { id: 'verified-source', name: 'Verified Source', icon: '✅', description: 'Post backed by primary sources', cost: 100 },
-  { id: 'deep-dive', name: 'Deep Dive', icon: '🤿', description: 'Exceptional research and analysis', cost: 200 },
-  { id: 'whistleblower', name: 'Whistleblower', icon: '📢', description: 'Brave exposure of corruption', cost: 300 },
-  { id: 'follow-the-money', name: 'Follow the Money', icon: '💰', description: 'Outstanding financial trail analysis', cost: 150 },
-  { id: 'red-pill', name: 'Red Pill', icon: '💊', description: 'Eye-opening perspective shift', cost: 75 },
-  { id: 'based', name: 'Based', icon: '🏛️', description: 'Solid, well-reasoned take', cost: 25 },
-  { id: 'helpful', name: 'Helpful', icon: '🤝', description: 'Genuinely useful contribution', cost: 25 },
-  { id: 'mind-blown', name: 'Mind Blown', icon: '🤯', description: 'Completely changed my perspective', cost: 100 },
-  { id: 'gold-standard', name: 'Gold Standard', icon: '🥇', description: 'The highest quality post', cost: 500 },
+  { id: 'truth-seeker', name: 'Truth Seeker', icon: 'search', description: 'For uncovering hidden connections', cost: 50 },
+  { id: 'verified-source', name: 'Verified Source', icon: 'check-circle', description: 'Post backed by primary sources', cost: 100 },
+  { id: 'deep-dive', name: 'Deep Dive', icon: 'layers', description: 'Exceptional research and analysis', cost: 200 },
+  { id: 'whistleblower', name: 'Whistleblower', icon: 'megaphone', description: 'Brave exposure of corruption', cost: 300 },
+  { id: 'follow-the-money', name: 'Follow the Money', icon: 'banknotes', description: 'Outstanding financial trail analysis', cost: 150 },
+  { id: 'red-pill', name: 'Red Pill', icon: 'bolt', description: 'Eye-opening perspective shift', cost: 75 },
+  { id: 'based', name: 'Based', icon: 'building', description: 'Solid, well-reasoned take', cost: 25 },
+  { id: 'helpful', name: 'Helpful', icon: 'hand', description: 'Genuinely useful contribution', cost: 25 },
+  { id: 'mind-blown', name: 'Mind Blown', icon: 'sparkles', description: 'Completely changed my perspective', cost: 100 },
+  { id: 'gold-standard', name: 'Gold Standard', icon: 'trophy', description: 'The highest quality post', cost: 500 },
 ]
 
 /* ── Communities (subreddits) ─────────────────────────────────── */
@@ -165,7 +165,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'General Discussion',
     description: 'Open discussion about The Record and current events',
     longDescription: 'The main hub for all Veritas Worldwide Press discussion. Talk about current events, share analysis, debate findings, and connect with fellow truth-seekers. All civil discourse welcome.',
-    icon: '📰',
+    icon: 'newspaper',
     bannerColor: '#8B1A1A',
     rules: [
       { title: 'Be Civil', body: 'Attack ideas, not people. No personal attacks, harassment, or threats.' },
@@ -194,7 +194,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Israel Lobby & AIPAC',
     description: 'Tracking foreign influence, AIPAC donations, and congressional voting patterns',
     longDescription: 'Dedicated to investigating the Israel lobby\'s influence on American politics. Track AIPAC donations, analyze congressional voting records, document policy impacts, and follow the money trail from foreign interests to domestic legislation.',
-    icon: '🏛️',
+    icon: 'building',
     bannerColor: '#1e3a5f',
     rules: [
       { title: 'Be Civil', body: 'Attack ideas, not people. No personal attacks or harassment.' },
@@ -223,7 +223,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Deep State & Epstein Network',
     description: 'Flight logs, court documents, institutional corruption, and network analysis',
     longDescription: 'Investigation hub for the deep state apparatus: Epstein network connections, intelligence community overreach, corporate-government revolving doors, and institutional corruption. All discussion must be grounded in documented evidence.',
-    icon: '🕵️',
+    icon: 'eye',
     bannerColor: '#1a1a2e',
     rules: [
       { title: 'Evidence Required', body: 'All claims must reference court documents, flight logs, financial records, or other verifiable sources.' },
@@ -251,7 +251,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Evidence Review',
     description: 'Submit and peer-review primary sources, challenge evidence tiers',
     longDescription: 'The peer-review board for Veritas investigations. Submit new evidence for community review, challenge existing evidence tier classifications, and debate the strength of sourcing. This is where the record gets verified.',
-    icon: '🔬',
+    icon: 'beaker',
     bannerColor: '#166534',
     rules: [
       { title: 'Source Required', body: 'Every submission must include a direct link to the primary source.' },
@@ -279,7 +279,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Power Profiles & Exposés',
     description: 'Deep dives on politicians, billionaires, lobbyists, and power brokers',
     longDescription: 'Detailed investigations into the individuals who shape policy and profit from it. Politicians, billionaires, lobbyists, intelligence operatives — documented with receipts. Every claim sourced, every connection mapped.',
-    icon: '👤',
+    icon: 'user',
     bannerColor: '#4a1942',
     rules: [
       { title: 'Source Everything', body: 'Every factual claim must be sourced. No unsourced accusations.' },
@@ -307,7 +307,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Methodology & Standards',
     description: 'Debate editorial standards, evidence classification, and journalistic ethics',
     longDescription: 'Meta-discussion about how Veritas operates. Debate the evidence tier system, suggest improvements to methodology, discuss journalistic ethics, and help shape the standards that make this project credible.',
-    icon: '⚖️',
+    icon: 'scale',
     bannerColor: '#374151',
     rules: [
       { title: 'Good Faith', body: 'Engage constructively. This is about improving the project.' },
@@ -332,7 +332,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Media & Outreach',
     description: 'Coordinate social media campaigns, share Veritas content, organize outreach',
     longDescription: 'Hub for spreading the word. Share Veritas content on social media, coordinate outreach campaigns, discuss media strategy, and help grow the community. Content packs, shareable graphics, and talking points here.',
-    icon: '📡',
+    icon: 'signal',
     bannerColor: '#7c2d12',
     rules: [
       { title: 'No Brigading', body: 'Do not organize mass reporting or harassment campaigns.' },
@@ -358,7 +358,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Whistleblower Protection',
     description: 'Resources for whistleblowers, anonymous tip discussion, legal protections',
     longDescription: 'A space for discussing whistleblower protections, sharing resources for those exposing corruption, and analyzing leaked documents. All discussion must respect operational security and never compromise sources.',
-    icon: '🛡️',
+    icon: 'shield',
     bannerColor: '#064e3b',
     rules: [
       { title: 'Protect Sources', body: 'NEVER post information that could identify a whistleblower or source.' },
@@ -385,7 +385,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Veritas Memes & Satire',
     description: 'Political satire, memes, and humor — still fact-based',
     longDescription: 'Even truth-seekers need to laugh. Post political satire, memes, and humor related to the topics covered by Veritas. Keep it sharp, keep it factual, keep it funny.',
-    icon: '😂',
+    icon: 'chat-bubble',
     bannerColor: '#ea580c',
     rules: [
       { title: 'Humor Required', body: 'This is a meme sub. Low-effort rage posts belong in General.' },
@@ -414,175 +414,12 @@ const now = Date.now()
 const h = 3600000
 const d = 86400000
 
-export const SEED_POSTS: ForumPost[] = [
-  {
-    id: 'p001', communityId: 'israel-lobby', type: 'text',
-    title: 'AIPAC spent $100M+ in 2024 election cycle — here\'s every recipient mapped',
-    body: 'Using the FEC filing data and OpenSecrets records, I\'ve compiled the complete list of AIPAC-affiliated PAC contributions for the 2024 cycle. The top 20 recipients alone account for over $35M in direct and indirect spending.\n\nKey findings:\n- United Democracy Project (AIPAC super PAC) spent $42M on primaries alone\n- 98% of recipients voted YES on all Israel aid packages\n- Average contribution to top recipients: $1.2M\n\nSources: FEC.gov, OpenSecrets.org, ProPublica Campaign Finance API\n\nFull spreadsheet in comments.',
-    author: 'FollowTheMoney', authorFlair: { text: 'Researcher', bgColor: '#166534', textColor: '#fff' },
-    postFlair: { id: 'donation-trail', text: 'Donation Trail', bgColor: '#92400e', textColor: '#fff' },
-    timestamp: now - 4 * h, upvotes: Array.from({length: 847}, (_, i) => `u${i}`), downvotes: Array.from({length: 23}, (_, i) => `d${i}`),
-    commentCount: 156, pinned: true, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'follow-the-money', givenBy: 'user1', count: 5 },
-      { awardId: 'verified-source', givenBy: 'user2', count: 3 },
-      { awardId: 'deep-dive', givenBy: 'user3', count: 2 },
-    ],
-  },
-  {
-    id: 'p002', communityId: 'deep-state', type: 'text',
-    title: 'New Epstein flight log analysis: 37 previously unidentified passengers matched to corporate executives',
-    body: 'Cross-referencing the 2024 document release with FAA tail number registrations and corporate board membership records, I\'ve identified 37 passengers from the Lolita Express logs who were previously listed only by initials or first names.\n\n14 of these individuals currently sit on Fortune 500 boards. 8 have direct connections to political campaigns. 3 are currently serving in appointed government positions.\n\nFull methodology and source documents linked below. Every identification has been triple-verified against multiple independent records.\n\nSources: PACER court records, FAA registry, SEC Edgar filings, LinkedIn corporate profiles',
-    author: 'DeepDigger', authorFlair: { text: 'Investigator', bgColor: '#991b1b', textColor: '#fff' },
-    postFlair: { id: 'flight-logs', text: 'Flight Logs', bgColor: '#1e40af', textColor: '#fff' },
-    timestamp: now - 8 * h, upvotes: Array.from({length: 1243}, (_, i) => `u${i}`), downvotes: Array.from({length: 45}, (_, i) => `d${i}`),
-    commentCount: 289, pinned: false, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'whistleblower', givenBy: 'user1', count: 2 },
-      { awardId: 'deep-dive', givenBy: 'user2', count: 7 },
-      { awardId: 'gold-standard', givenBy: 'user3', count: 1 },
-    ],
-  },
-  {
-    id: 'p003', communityId: 'general', type: 'text',
-    title: 'Chapter 24 just dropped — "The Federal Reserve: A Century of Private Control" — initial analysis thread',
-    body: 'Chapter 24 is live. This one traces the Fed from its creation at Jekyll Island in 1910 through to modern quantitative easing and its impact on wealth inequality.\n\nStandout sections:\n- The original 1910 Jekyll Island attendees and their banking dynasties\n- How the Fed\'s dual mandate has consistently favored Wall Street over Main Street\n- $4.5T in QE assets and where that money actually went\n\nWhat stood out to you? Let\'s discuss.',
-    author: 'TheTruthWatcher', authorFlair: { text: 'Moderator', bgColor: '#8B1A1A', textColor: '#fff' },
-    postFlair: { id: 'discussion', text: 'Discussion', bgColor: '#1e40af', textColor: '#fff' },
-    timestamp: now - 2 * h, upvotes: Array.from({length: 567}, (_, i) => `u${i}`), downvotes: Array.from({length: 12}, (_, i) => `d${i}`),
-    commentCount: 98, pinned: true, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'truth-seeker', givenBy: 'user1', count: 4 },
-    ],
-  },
-  {
-    id: 'p004', communityId: 'power-profiles', type: 'text',
-    title: 'Ted Cruz: $531K from AIPAC in 2024 alone — full donation history, voting record, and policy positions',
-    body: 'Complete profile breakdown of Senator Ted Cruz (R-TX) and his relationship with the Israel lobby:\n\nDonation History (FEC verified):\n- 2024: $531,000 (AIPAC PAC + United Democracy Project)\n- 2022: $287,000\n- 2018: $445,000\n- Career total from pro-Israel PACs: $2.1M+\n\nKey Votes:\n- YES on every Israel aid package since 2013\n- Sponsored the Israel Anti-Boycott Act\n- Co-sponsored resolution condemning ICC arrest warrants for Israeli officials\n\nNotable quotes and policy positions in thread.\n\nSources: FEC.gov, congress.gov voting records, OpenSecrets',
-    author: 'ProfileBuilder', authorFlair: { text: 'Analyst', bgColor: '#6b21a8', textColor: '#fff' },
-    postFlair: { id: 'politician', text: 'Politician', bgColor: '#1e40af', textColor: '#fff' },
-    timestamp: now - 12 * h, upvotes: Array.from({length: 934}, (_, i) => `u${i}`), downvotes: Array.from({length: 67}, (_, i) => `d${i}`),
-    commentCount: 203, pinned: false, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'follow-the-money', givenBy: 'user1', count: 6 },
-      { awardId: 'verified-source', givenBy: 'user2', count: 4 },
-    ],
-  },
-  {
-    id: 'p005', communityId: 'evidence-review', type: 'text',
-    title: '[EVIDENCE TIER CHALLENGE] Reclassify Epstein-Gates meetings from "Circumstantial" to "Verified"',
-    body: 'The current evidence tier for the Epstein-Gates connection is listed as "Circumstantial." I believe this should be upgraded to "Verified" based on:\n\n1. Bill Gates himself confirmed multiple meetings with Epstein in a 2019 WSJ interview\n2. Flight logs show Gates on Epstein\'s plane (Lolita Express) at least once\n3. Email records released via FOIA show Gates\' office scheduling meetings with Epstein as late as 2017\n4. New York Times investigation (Oct 2019) documented at least 6 meetings\n\nWhen the subject himself confirms it and multiple independent sources corroborate, "Circumstantial" is too low.\n\nSources: WSJ interview Oct 2019, NYT investigation Oct 12 2019, PACER flight logs, FOIA email records',
-    author: 'SourceChecker', authorFlair: { text: 'Fact-Checker', bgColor: '#166534', textColor: '#fff' },
-    postFlair: { id: 'verified', text: 'Verified', bgColor: '#166534', textColor: '#fff' },
-    timestamp: now - 1 * d, upvotes: Array.from({length: 723}, (_, i) => `u${i}`), downvotes: Array.from({length: 34}, (_, i) => `d${i}`),
-    commentCount: 167, pinned: false, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'truth-seeker', givenBy: 'user1', count: 8 },
-      { awardId: 'verified-source', givenBy: 'user2', count: 5 },
-    ],
-  },
-  {
-    id: 'p006', communityId: 'israel-lobby', type: 'link',
-    title: 'OpenSecrets just published 2024 AIPAC spending breakdown — $100.4M total',
-    body: 'https://www.opensecrets.org/political-action-committees-pacs/american-israel-public-affairs-cmte/C00040998/summary/2024',
-    author: 'MoneyTracker', postFlair: { id: 'fec-filing', text: 'FEC Filing', bgColor: '#166534', textColor: '#fff' },
-    timestamp: now - 6 * h, upvotes: Array.from({length: 456}, (_, i) => `u${i}`), downvotes: Array.from({length: 8}, (_, i) => `d${i}`),
-    commentCount: 78, pinned: false, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'follow-the-money', givenBy: 'user1', count: 3 },
-    ],
-  },
-  {
-    id: 'p007', communityId: 'memes', type: 'text',
-    title: 'POV: You just read Chapter 17 and realized your entire understanding of the Federal Reserve was wrong',
-    body: '🤯🤯🤯\n\nMe before Veritas: "The Fed is a government agency that stabilizes the economy"\nMe after Veritas: *stares at Jekyll Island attendee list*',
-    author: 'RedPilled2024',
-    postFlair: { id: 'meme', text: 'Meme', bgColor: '#ea580c', textColor: '#fff' },
-    timestamp: now - 3 * h, upvotes: Array.from({length: 1567}, (_, i) => `u${i}`), downvotes: Array.from({length: 89}, (_, i) => `d${i}`),
-    commentCount: 234, pinned: false, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'red-pill', givenBy: 'user1', count: 12 },
-      { awardId: 'mind-blown', givenBy: 'user2', count: 4 },
-    ],
-  },
-  {
-    id: 'p008', communityId: 'whistleblowers', type: 'text',
-    title: 'Comprehensive guide to whistleblower legal protections in 2024 — federal and state',
-    body: 'Updated guide to legal protections available to whistleblowers in the United States.\n\nFederal Protections:\n- Whistleblower Protection Act (WPA) — covers federal employees\n- Dodd-Frank Act Section 922 — SEC whistleblower program (10-30% of sanctions over $1M)\n- False Claims Act (qui tam) — allows citizens to sue on behalf of government\n- Intelligence Community Whistleblower Protection Act — covers IC employees\n\nKey State Protections:\n- California Labor Code §1102.5 — one of the strongest state protections\n- New York Labor Law §740 — recently expanded in 2022\n\nAnonymous reporting channels and legal aid resources in the comments.\n\nDisclaimer: This is informational only, not legal advice. Consult an attorney for your specific situation.',
-    author: 'SecureSource', authorFlair: { text: 'OPSEC Advisor', bgColor: '#064e3b', textColor: '#fff' },
-    postFlair: { id: 'legal-resource', text: 'Legal Resource', bgColor: '#166534', textColor: '#fff' },
-    timestamp: now - 2 * d, upvotes: Array.from({length: 432}, (_, i) => `u${i}`), downvotes: Array.from({length: 5}, (_, i) => `d${i}`),
-    commentCount: 56, pinned: true, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'helpful', givenBy: 'user1', count: 9 },
-    ],
-  },
-  {
-    id: 'p009', communityId: 'media-outreach', type: 'text',
-    title: 'Content Pack #12 is live — "The AIPAC Machine" — optimized graphics for every platform',
-    body: 'New content pack ready for distribution.\n\nIncludes:\n- 15 Instagram carousel slides\n- 8 Twitter/X post graphics (1200x675)\n- 5 TikTok-optimized vertical videos (script + captions)\n- 3 YouTube thumbnail options\n- Full fact-check document with all sources\n\nEvery stat has been triple-verified against FEC records. Download from the Content Packs page.\n\nRemember: Always link back to the full chapter when sharing. Credit helps us grow.',
-    author: 'MediaOps', authorFlair: { text: 'Content Team', bgColor: '#7c2d12', textColor: '#fff' },
-    postFlair: { id: 'content-pack', text: 'Content Pack', bgColor: '#1e40af', textColor: '#fff' },
-    timestamp: now - 5 * h, upvotes: Array.from({length: 345}, (_, i) => `u${i}`), downvotes: Array.from({length: 3}, (_, i) => `d${i}`),
-    commentCount: 42, pinned: false, locked: false, removed: false, edited: false, saved: [], awards: [
-      { awardId: 'based', givenBy: 'user1', count: 7 },
-    ],
-  },
-  {
-    id: 'p010', communityId: 'general', type: 'poll',
-    title: 'Which upcoming chapter topic are you most interested in?',
-    body: 'The editorial team is planning the next batch of chapters. Your input helps us prioritize.',
-    author: 'VeritasAdmin', authorFlair: { text: 'Admin', bgColor: '#8B1A1A', textColor: '#fff' },
-    postFlair: { id: 'meta', text: 'Meta', bgColor: '#6b21a8', textColor: '#fff' },
-    timestamp: now - 1 * d, upvotes: Array.from({length: 678}, (_, i) => `u${i}`), downvotes: Array.from({length: 15}, (_, i) => `d${i}`),
-    commentCount: 145, pinned: false, locked: false, removed: false, edited: false, saved: [], awards: [],
-    pollOptions: [
-      { id: 'po1', text: 'Big Pharma & FDA revolving door', votes: Array.from({length: 234}, (_, i) => `u${i}`) },
-      { id: 'po2', text: 'Media ownership consolidation', votes: Array.from({length: 189}, (_, i) => `u${i}`) },
-      { id: 'po3', text: 'Private prison industry & lobbying', votes: Array.from({length: 156}, (_, i) => `u${i}`) },
-      { id: 'po4', text: 'Tech censorship & government coordination', votes: Array.from({length: 312}, (_, i) => `u${i}`) },
-      { id: 'po5', text: 'Military-industrial complex contracts', votes: Array.from({length: 198}, (_, i) => `u${i}`) },
-    ],
-  },
-]
+export const SEED_POSTS: ForumPost[] = []
 
 
 /* ── Seed Comments ────────────────────────────────────────────── */
 
-export const SEED_COMMENTS: ForumComment[] = [
-  {
-    id: 'c001', postId: 'p001', parentId: null, author: 'DeepDigger',
-    authorFlair: { text: 'Investigator', bgColor: '#991b1b', textColor: '#fff' },
-    content: 'Outstanding work. I cross-referenced your top 20 list against the congressional voting records on HR.8034 (Israel Security Supplemental) and every single one voted YES within 48 hours of receiving their largest AIPAC contribution. The timing correlation is statistically significant.',
-    timestamp: now - 3.5 * h, upvotes: Array.from({length: 234}, (_, i) => `u${i}`), downvotes: Array.from({length: 3}, (_, i) => `d${i}`),
-    edited: false, deleted: false, removed: false, locked: false, awards: [{ awardId: 'verified-source', givenBy: 'user1', count: 2 }], saved: [],
-  },
-  {
-    id: 'c002', postId: 'p001', parentId: 'c001', author: 'SourceChecker',
-    authorFlair: { text: 'Fact-Checker', bgColor: '#166534', textColor: '#fff' },
-    content: 'Can confirm. I pulled the FEC disbursement records independently and the numbers match. The timing pattern is even more striking when you look at the 30-day window before key votes — contributions spike 2-3x above baseline.',
-    timestamp: now - 3 * h, upvotes: Array.from({length: 156}, (_, i) => `u${i}`), downvotes: Array.from({length: 1}, (_, i) => `d${i}`),
-    edited: false, deleted: false, removed: false, locked: false, awards: [{ awardId: 'truth-seeker', givenBy: 'user1', count: 1 }], saved: [],
-  },
-  {
-    id: 'c003', postId: 'p002', parentId: null, author: 'NetworkMapper',
-    content: 'This is incredible work. Question: for the 3 currently serving in government positions, are they confirmed appointees or career civil servants? That distinction matters a lot for understanding the network\'s reach into the permanent bureaucracy.',
-    timestamp: now - 7 * h, upvotes: Array.from({length: 89}, (_, i) => `u${i}`), downvotes: Array.from({length: 2}, (_, i) => `d${i}`),
-    edited: false, deleted: false, removed: false, locked: false, awards: [], saved: [],
-  },
-  {
-    id: 'c004', postId: 'p002', parentId: 'c003', author: 'DeepDigger',
-    authorFlair: { text: 'Investigator', bgColor: '#991b1b', textColor: '#fff' },
-    content: 'All three are political appointees, not career. Two were appointed in the current administration, one carries over from the previous. I\'m deliberately not naming them yet until I can verify through a second independent source — the identification method I used has a ~95% confidence level and I want 99%+ before publishing names of sitting officials.',
-    timestamp: now - 6.5 * h, upvotes: Array.from({length: 312}, (_, i) => `u${i}`), downvotes: Array.from({length: 1}, (_, i) => `d${i}`),
-    edited: false, deleted: false, removed: false, locked: false, awards: [{ awardId: 'based', givenBy: 'user1', count: 3 }], saved: [],
-  },
-  {
-    id: 'c005', postId: 'p004', parentId: null, author: 'TexasVoter',
-    content: 'I\'ve been tracking Cruz since 2018. The $445K he received that cycle came right before his vote on the Israel Anti-Boycott Act. He went from lukewarm on the bill to being its most vocal champion literally overnight. The FEC timestamps don\'t lie.',
-    timestamp: now - 11 * h, upvotes: Array.from({length: 178}, (_, i) => `u${i}`), downvotes: Array.from({length: 12}, (_, i) => `d${i}`),
-    edited: false, deleted: false, removed: false, locked: false, awards: [], saved: [],
-  },
-  {
-    id: 'c006', postId: 'p005', parentId: null, author: 'TheTruthWatcher',
-    authorFlair: { text: 'Moderator', bgColor: '#8B1A1A', textColor: '#fff' },
-    content: 'Strong case. The editorial team has reviewed this evidence tier challenge. Given that: (1) the subject confirmed meetings on record, (2) flight logs provide independent corroboration, (3) FOIA emails confirm the timeline, and (4) multiple Pulitzer-winning publications investigated and confirmed — we\'re upgrading the Gates-Epstein connection to VERIFIED tier effective immediately. The Record will be updated in the next 24 hours.',
-    timestamp: now - 20 * h, upvotes: Array.from({length: 567}, (_, i) => `u${i}`), downvotes: Array.from({length: 8}, (_, i) => `d${i}`),
-    edited: false, deleted: false, removed: false, locked: false, awards: [{ awardId: 'gold-standard', givenBy: 'user1', count: 1 }], saved: [],
-  },
-]
+export const SEED_COMMENTS: ForumComment[] = []
 
 
 /* ── Storage Keys ─────────────────────────────────────────────── */

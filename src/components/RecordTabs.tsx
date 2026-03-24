@@ -5,7 +5,7 @@
  */
 import { useState, type ReactNode } from 'react'
 
-export type RecordTab = 'chapters' | 'israel' | 'deepstate' | 'timeline' | 'content' | 'aipac'
+export type RecordTab = 'chapters' | 'israel' | 'deepstate' | 'timeline' | 'aipac'
 
 interface TabDef {
   id: RecordTab
@@ -44,12 +44,6 @@ const TABS: TabDef[] = [
     label: 'AIPAC Influence Map',
     shortLabel: 'AIPAC',
     icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.777.516-3.434 1.404-4.832" /></svg>,
-  },
-  {
-    id: 'content',
-    label: 'Content Packs & Brand Kit',
-    shortLabel: 'Media Kit',
-    icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>,
   },
 ]
 
@@ -115,7 +109,7 @@ export default function RecordTabs({ activeTab, onTabChange }: Props) {
         {!collapsed && (
           <div className="mt-4 pt-4 border-t border-border">
             <p className="font-sans text-[0.55rem] text-ink-faint tracking-[0.1em] uppercase px-3">
-              6 Sections &middot; The Record
+              5 Sections &middot; The Record
             </p>
           </div>
         )}

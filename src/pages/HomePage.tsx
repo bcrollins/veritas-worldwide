@@ -18,7 +18,7 @@ const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 const IsraelDossierPage = lazy(() => import('./IsraelDossierPage'))
 const DeepStatePage = lazy(() => import('./DeepStatePage'))
 const TimelinePage = lazy(() => import('./TimelinePage'))
-const ContentPackPage = lazy(() => import('./ContentPackPage'))
+// ContentPackPage moved to standalone route — accessible via footer link
 const AipacPage = lazy(() => import('./AipacPage'))
 
 function TabSpinner() {
@@ -33,7 +33,7 @@ export default function HomePage() {
   // Support direct linking via hash: /#israel, /#deepstate, /#timeline, /#content
   const initialTab = (): RecordTab => {
     const hash = window.location.hash.replace('#', '')
-    const valid: RecordTab[] = ['chapters', 'israel', 'deepstate', 'timeline', 'content', 'aipac']
+    const valid: RecordTab[] = ['chapters', 'israel', 'deepstate', 'timeline', 'aipac']
     return valid.includes(hash as RecordTab) ? (hash as RecordTab) : 'chapters'
   }
   const [activeTab, setActiveTab] = useState<RecordTab>(initialTab)
@@ -316,96 +316,6 @@ export default function HomePage() {
           {activeTab === 'timeline' && (
             <Suspense fallback={<TabSpinner />}>
               <TimelinePage />
-            </Suspense>
-          )}
-
-          {/* ── TAB: Content Packs & Brand Kit ────────────── */}
-          {activeTab === 'content' && (
-            <Suspense fallback={<TabSpinner />}>
-              <div>
-                {/* Brand Kit Download Section */}
-                <section className="py-10 border-b border-border">
-                  <div className="flex items-center gap-4 mb-6">
-                    <h2 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Brand Kit</h2>
-                    <div className="flex-1 h-[1px] bg-border" />
-                    <a
-                      href="/brand-kit/logo-full.svg"
-                      download
-                      className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors"
-                    >
-                      Download All ↓
-                    </a>
-                  </div>
-                  <p className="font-body text-sm text-ink-muted mb-6">
-                    Official Veritas Worldwide Press brand assets. Free for press, social media, and advocacy. Use responsibly.
-                  </p>
-                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {[
-                      { file: 'logo-full.svg', label: 'Full Logo', desc: 'Dark on light' },
-                      { file: 'logo-mark.svg', label: 'Logo Mark', desc: 'Square icon' },
-                      { file: 'logo-full-white.svg', label: 'Full Logo (White)', desc: 'For dark backgrounds' },
-                      { file: 'logo-mark-white.svg', label: 'Logo Mark (White)', desc: 'For dark backgrounds' },
-                      { file: 'logo-mark-crimson.svg', label: 'Logo Mark (Crimson)', desc: 'Brand accent' },
-                      { file: 'color-palette.svg', label: 'Color Palette', desc: 'Brand colors reference' },
-                      { file: 'social-banner-x.svg', label: 'X/Twitter Banner', desc: '1500×500' },
-                      { file: 'social-banner-facebook.svg', label: 'Facebook Banner', desc: '1640×856' },
-                      { file: 'social-banner-linkedin.svg', label: 'LinkedIn Banner', desc: '1584×396' },
-                      { file: 'social-profile.svg', label: 'Social Profile', desc: '400×400' },
-                    ].map(asset => (
-                      <a
-                        key={asset.file}
-                        href={`/brand-kit/${asset.file}`}
-                        download
-                        className="group block p-4 border border-border rounded-sm hover:border-crimson/40 hover:shadow-sm transition-all"
-                      >
-                        <div className="aspect-[16/10] bg-parchment-dark rounded-sm mb-3 flex items-center justify-center overflow-hidden">
-                          <img src={`/brand-kit/${asset.file}`} alt={asset.label} className="max-w-full max-h-full object-contain p-2" loading="lazy" />
-                        </div>
-                        <p className="font-sans text-xs font-semibold text-ink group-hover:text-crimson transition-colors">{asset.label}</p>
-                        <p className="font-sans text-[0.6rem] text-ink-faint">{asset.desc}</p>
-                      </a>
-                    ))}
-                  </div>
-
-                  {/* Typography & Color Reference */}
-                  <div className="mt-8 p-6 bg-ink rounded-sm">
-                    <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-white/60 mb-4">Typography & Colors</h3>
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <p className="font-display text-xl text-white mb-1">Playfair Display</p>
-                        <p className="font-sans text-xs text-white/40 mb-3">Display / Headlines</p>
-                        <p className="font-body text-base text-white/80 mb-1">Source Serif 4</p>
-                        <p className="font-sans text-xs text-white/40 mb-3">Body Text</p>
-                        <p className="font-sans text-sm text-white/80 mb-1">Inter</p>
-                        <p className="font-sans text-xs text-white/40 mb-3">UI / Labels</p>
-                        <p className="font-mono text-sm text-white/80 mb-1">JetBrains Mono</p>
-                        <p className="font-sans text-xs text-white/40">Data / Code</p>
-                      </div>
-                      <div className="space-y-2">
-                        {[
-                          { name: 'Parchment', hex: '#FAF8F5', text: 'text-ink' },
-                          { name: 'Crimson', hex: '#8B1A1A', text: 'text-white' },
-                          { name: 'Dark Ink', hex: '#1A1A1A', text: 'text-white' },
-                          { name: 'Verified', hex: '#166534', text: 'text-white' },
-                          { name: 'Circumstantial', hex: '#92400E', text: 'text-white' },
-                          { name: 'Disputed', hex: '#991B1B', text: 'text-white' },
-                        ].map(c => (
-                          <div key={c.hex} className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-sm border border-white/10 shrink-0" style={{ backgroundColor: c.hex }} />
-                            <div>
-                              <p className="font-sans text-xs text-white/80">{c.name}</p>
-                              <p className="font-mono text-[0.6rem] text-white/40">{c.hex}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Existing Content Packs below brand kit */}
-                <ContentPackPage />
-              </div>
             </Suspense>
           )}
 

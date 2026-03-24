@@ -58,6 +58,40 @@ function LockIcon() {
   return <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/></svg>
 }
 
+/* ── Forum Icon Component ─────────────────────────────────────── */
+const ICON_PATHS: Record<string, string> = {
+  fire: 'M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 9.2 8 9.2s8-4.22 8-9.2c0-3.32-2.67-7.25-8-11.8z',
+  star: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
+  new: 'M13 10H3v2h10v-2zm0-4H3v2h10V6zm0 8H3v2h10v-2zM3 16h10v-2H3v2z',
+  trending: 'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18 10 11.41l4 4 6.3-6.29L22 12v-6z',
+  thunder: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
+  rocket: 'M12 2c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm0 10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm7-7.5V2c0-.55-.45-1-1-1h-1V1c0-1.66-1.34-3-3-3s-3 1.34-3 3v1H6c-.55 0-1 .45-1 1v2.5C3.59 6.71 2.5 8.44 2.5 10.5c0 3.59 2.91 6.5 6.5 6.5s6.5-2.91 6.5-6.5c0-2.06-1.09-3.79-2.75-4.75z',
+  newspaper: 'M5 3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5zm0 2h14v10H5V5zm0 12h14v2H5v-2zm2-6h10v2H7v-2zm0 4h10v2H7v-2z',
+  building: 'M12 7V3H2v18h20V7h-10zm7 12h-5v-5h5v5z',
+  eye: 'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z',
+  beaker: 'M9 2H7.17C6.6 2 6 2.6 6 3.17V4h12V3.17C18 2.6 17.4 2 16.83 2H15v2h-2V2h-2v2H9V2z',
+  user: 'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z',
+  scale: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V5h2v12zm4 0h-2v-4h2v4z',
+  signal: 'M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z',
+  shield: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z',
+  chatbubble: 'M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+  search: 'M15.5 1h-8C6.12 1 5 2.12 5 3.5v5C5 9.88 6.12 11 7.5 11h8c1.38 0 2.5-1.12 2.5-2.5v-5C18 2.12 16.88 1 15.5 1zm-4 6.5s-2.49-1.45-4.5-4.5c.71 3.71 4.7 5.85 4.5 4.5z',
+  check: 'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z',
+  layers: 'M12 16.5L5.5 13V7.5L12 10.5l6.5-3V13l-6.5 3.5M12 12L5.5 9l6.5-4 6.5 4-6.5 3M12 2L5.5 5l6.5 4 6.5-4L12 2z',
+  megaphone: 'M3 11h3v2H3v-2zm3-4H3v2h3V7zm0 8H3v2h3v-2zm4-14v14h3V3H10zm7 0c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2s2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 2h3v10h-3V3z',
+  banknotes: 'M20 8H4V6h16m0 12H4v2h16m0-6H4v2h16z',
+  bolt: 'M13 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V9h-3V2zm-2 16h-2v-3H7l5-6v9zm2-11h3V2h-3v5z',
+  trophy: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5h3V9h4v3h3l-5 5z',
+}
+
+function ForumIcon({ name, className }: { name: string; className?: string }) {
+  const pathData = ICON_PATHS[name] || ICON_PATHS.search
+  return (
+    <svg className={className || 'w-4 h-4'} fill="currentColor" viewBox="0 0 24 24">
+      <path d={pathData} />
+    </svg>
+  )
+}
 
 /* ── View Types ───────────────────────────────────────────────── */
 type ForumView = 'feed' | 'community' | 'post' | 'create' | 'search' | 'saved'
@@ -89,7 +123,7 @@ function PostCard({ post, onOpen, onVote, onSave, userId, compact }: {
         <div className="flex-1 min-w-0 py-2 pr-3 cursor-pointer" onClick={() => onOpen(post.id)}>
           {/* Meta line */}
           <div className="flex items-center gap-2 flex-wrap text-xs mb-1">
-            {community && <span className="font-sans font-bold text-ink hover:underline">{community.icon} {community.name}</span>}
+            {community && <span className="font-sans font-bold text-ink hover:underline"><ForumIcon name={community.icon} className="w-4 h-4 inline mr-1" /> {community.name}</span>}
             <span className="text-ink-faint">•</span>
             <span className="text-ink-muted">Posted by <span className="hover:underline">{post.author}</span></span>
             {post.authorFlair && (
@@ -297,7 +331,7 @@ function PostDetail({ post, onBack, userId }: {
           <article className="bg-parchment border border-border rounded p-4 sm:p-6">
             {/* Post meta */}
             <div className="flex items-center gap-2 text-xs mb-3 flex-wrap">
-              {community && <span className="font-bold text-ink">{community.icon} {community.name}</span>}
+              {community && <span className="font-bold text-ink"><ForumIcon name={community.icon} className="w-4 h-4 inline mr-1" /> {community.name}</span>}
               <span className="text-ink-faint">•</span>
               <span className="text-ink-muted">Posted by {post.author}</span>
               {post.authorFlair && <span className="px-1.5 py-0.5 rounded text-[0.55rem] font-bold" style={{ background: post.authorFlair.bgColor, color: post.authorFlair.textColor }}>{post.authorFlair.text}</span>}
@@ -433,7 +467,7 @@ function CommunityCard({ community }: { community: Community }) {
       <div className="h-8" style={{ background: community.bannerColor }} />
       <div className="p-4">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-2xl">{community.icon}</span>
+          <ForumIcon name={community.icon} className="w-8 h-8" />
           <div>
             <h3 className="font-sans text-sm font-bold text-ink">{community.name}</h3>
             <p className="font-sans text-xs text-ink-faint">{community.displayName}</p>
@@ -525,7 +559,7 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
           {/* Community selector */}
           <select value={communityId} onChange={e => { setCommunityId(e.target.value); setSelectedFlair(undefined) }}
             className="w-full p-2 border border-border rounded bg-white font-sans text-sm">
-            {communities.map(c => <option key={c.id} value={c.id}>{c.icon} {c.name} — {c.displayName}</option>)}
+            {communities.map(c => <option key={c.id} value={c.id}>{c.name} — {c.displayName}</option>)}
           </select>
 
           {/* Post type tabs */}
@@ -533,7 +567,7 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
             {(['text', 'link', 'poll'] as PostType[]).map(t => (
               <button key={t} onClick={() => setPostType(t)}
                 className={`flex-1 py-2 font-sans text-xs font-bold uppercase tracking-wider transition-colors ${postType === t ? 'bg-crimson text-white' : 'bg-parchment text-ink-muted hover:bg-parchment-dark'}`}
-              >{t === 'text' ? '📝 Post' : t === 'link' ? '🔗 Link' : '📊 Poll'}</button>
+              >{t === 'text' ? <><ForumIcon name="newspaper" className="w-3 h-3 inline mr-1" /> Post</> : t === 'link' ? <><ForumIcon name="layers" className="w-3 h-3 inline mr-1" /> Link</> : <><ForumIcon name="trending" className="w-3 h-3 inline mr-1" /> Poll</>}</button>
             ))}
           </div>
 
@@ -626,7 +660,7 @@ function TrendingSidebar({ posts }: { posts: ForumPost[] }) {
 
   return (
     <div className="bg-parchment border border-border rounded p-4">
-      <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">🔥 Trending Today</h3>
+      <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-ink-muted mb-3"><ForumIcon name="fire" className="w-4 h-4 inline mr-1" /> Trending Today</h3>
       <div className="space-y-3">
         {trending.map((p, i) => {
           const community = getCommunity(p.communityId)
@@ -868,7 +902,7 @@ export default function ForumPage() {
                 {(['hot', 'best', 'new', 'top', 'controversial', 'rising'] as SortMode[]).map(mode => (
                   <button key={mode} onClick={() => setSortMode(mode)}
                     className={`font-sans text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${sortMode === mode ? 'bg-crimson text-white' : 'text-ink-muted hover:bg-parchment-dark'}`}>
-                    {mode === 'hot' ? '🔥' : mode === 'best' ? '⭐' : mode === 'new' ? '🆕' : mode === 'top' ? '📈' : mode === 'controversial' ? '⚡' : '🚀'} {mode.charAt(0).toUpperCase() + mode.slice(1)}
+                    <ForumIcon name={mode === 'hot' ? 'fire' : mode === 'best' ? 'star' : mode === 'new' ? 'new' : mode === 'top' ? 'trending' : mode === 'controversial' ? 'thunder' : 'rocket'} className="w-3 h-3 inline mr-1" /> {mode.charAt(0).toUpperCase() + mode.slice(1)}
                   </button>
                 ))}
                 {sortMode === 'top' && (
