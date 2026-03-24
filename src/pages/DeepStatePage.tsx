@@ -761,6 +761,89 @@ export default function DeepStatePage() {
         )}
       </div>
 
+      {/* ── Evidence Gallery — Video & Photo Evidence ─────────── */}
+      <section className="max-w-4xl mx-auto px-6 mb-16">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-3 h-3 rounded-full bg-crimson flex-shrink-0" />
+          <h2 className="font-display text-2xl font-bold text-ink">Evidence Gallery</h2>
+        </div>
+        <p className="font-sans text-xs text-ink-muted mb-8">Primary source video and photographic evidence from court filings, DOJ releases, and verified investigative reporting.</p>
+
+        {/* Video Embeds */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div>
+            <div className="aspect-video bg-black rounded-sm overflow-hidden">
+              <iframe src="https://www.youtube.com/embed/Gm2p1S31VjM" title="Epstein Island Drone Footage — Before FBI Raid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" loading="lazy" />
+            </div>
+            <p className="font-sans text-xs text-ink-muted mt-2">Drone footage of Little St. James Island — Epstein's private island in the U.S. Virgin Islands, captured before the 2019 FBI raid.</p>
+            <p className="font-sans text-[0.55rem] text-ink-faint mt-0.5">Source: Public domain drone footage</p>
+          </div>
+          <div>
+            <div className="aspect-video bg-black rounded-sm overflow-hidden">
+              <iframe src="https://www.youtube.com/embed/VQOOxOl9l80" title="60 Minutes — Epstein Investigation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" loading="lazy" />
+            </div>
+            <p className="font-sans text-xs text-ink-muted mt-2">CBS 60 Minutes investigation into the Epstein case — interviews with victims and examination of the 2008 plea deal.</p>
+            <p className="font-sans text-[0.55rem] text-ink-faint mt-0.5">Source: CBS News / 60 Minutes</p>
+          </div>
+          <div>
+            <div className="aspect-video bg-black rounded-sm overflow-hidden">
+              <iframe src="https://www.youtube.com/embed/9BKR6P0tMiM" title="Ghislaine Maxwell Trial — Key Testimony" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" loading="lazy" />
+            </div>
+            <p className="font-sans text-xs text-ink-muted mt-2">Coverage of the Ghislaine Maxwell federal trial — S.D.N.Y., December 2021. Convicted on 5 of 6 counts of sex trafficking.</p>
+            <p className="font-sans text-[0.55rem] text-ink-faint mt-0.5">Source: Court reporting</p>
+          </div>
+          <div>
+            <div className="aspect-video bg-black rounded-sm overflow-hidden">
+              <iframe src="https://www.youtube.com/embed/AhGq0BBYQ5I" title="DOJ Bondi Release — 3 Million Epstein Documents" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" loading="lazy" />
+            </div>
+            <p className="font-sans text-xs text-ink-muted mt-2">AG Pam Bondi announces the release of 3 million documents, 180,000 images, and 2,000 videos from the Epstein investigation (January 2025).</p>
+            <p className="font-sans text-[0.55rem] text-ink-faint mt-0.5">Source: U.S. Department of Justice</p>
+          </div>
+        </div>
+
+        {/* Key Evidence Photos */}
+        <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted mb-4">Key Photographic Evidence</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <a href="https://upload.wikimedia.org/wikipedia/commons/2/20/Virginia_Giuffre_and_Prince_Andrew_at_Ghislaine_Maxwell%27s_townhouse_in_London%2C_2001.jpg" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="aspect-[4/3] rounded-sm overflow-hidden border border-border bg-parchment-dark">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Virginia_Giuffre_and_Prince_Andrew_at_Ghislaine_Maxwell%27s_townhouse_in_London%2C_2001.jpg/400px-Virginia_Giuffre_and_Prince_Andrew_at_Ghislaine_Maxwell%27s_townhouse_in_London%2C_2001.jpg" alt="Virginia Giuffre with Prince Andrew, Ghislaine Maxwell in background — London 2001" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <p className="font-sans text-[0.6rem] text-ink-muted mt-1.5">Virginia Giuffre (age 17) with Prince Andrew, Maxwell in background — London, 2001. Court Exhibit.</p>
+          </a>
+          <a href="https://upload.wikimedia.org/wikipedia/commons/e/e0/Epstein%27s_NYC_Mugshot.jpg" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="aspect-[4/3] rounded-sm overflow-hidden border border-border bg-parchment-dark">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Epstein%27s_NYC_Mugshot.jpg/400px-Epstein%27s_NYC_Mugshot.jpg" alt="Jeffrey Epstein NYPD booking photo, July 2019" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <p className="font-sans text-[0.6rem] text-ink-muted mt-1.5">Jeffrey Epstein — NYPD booking photo, July 2019. Arrested on federal sex trafficking charges.</p>
+          </a>
+          <a href="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ghislaine_Maxwell_cropped.jpg" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="aspect-[4/3] rounded-sm overflow-hidden border border-border bg-parchment-dark">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ghislaine_Maxwell_cropped.jpg/400px-Ghislaine_Maxwell_cropped.jpg" alt="Ghislaine Maxwell" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <p className="font-sans text-[0.6rem] text-ink-muted mt-1.5">Ghislaine Maxwell — Convicted on 5 of 6 counts, sentenced to 20 years (S.D.N.Y., June 2022).</p>
+          </a>
+        </div>
+
+        {/* Primary Source Documents CTA */}
+        <div className="p-5 border border-border rounded-sm bg-parchment-dark/50">
+          <h4 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink mb-2">Primary Source Documents</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="https://www.documentcloud.org/documents/1507315-epstein-flight-manifests.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 border border-border rounded-sm hover:border-crimson hover:text-crimson transition-colors font-sans text-xs text-ink-muted">
+              <IconDocument className="w-4 h-4 flex-shrink-0" /> Flight Logs — "Lolita Express" Manifests
+            </a>
+            <a href="https://www.justice.gov/d9/2025-01/epstein-documents.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 border border-border rounded-sm hover:border-crimson hover:text-crimson transition-colors font-sans text-xs text-ink-muted">
+              <IconDocument className="w-4 h-4 flex-shrink-0" /> DOJ Bondi Release — 3M+ Documents
+            </a>
+            <a href="https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 border border-border rounded-sm hover:border-crimson hover:text-crimson transition-colors font-sans text-xs text-ink-muted">
+              <IconDocument className="w-4 h-4 flex-shrink-0" /> Giuffre v. Maxwell — Full Docket (CourtListener)
+            </a>
+            <a href="https://oig.justice.gov/reports/evaluation-issues-surrounding-inmate-death-metropolitan-correctional-center-new-york" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 border border-border rounded-sm hover:border-crimson hover:text-crimson transition-colors font-sans text-xs text-ink-muted">
+              <IconDocument className="w-4 h-4 flex-shrink-0" /> DOJ OIG — MCC Death Investigation
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Community Forum */}
       <div className="max-w-4xl mx-auto px-6">
         <CommunityForum pageId="deep-state" pageTitle="The Deep State — Epstein Network" />
