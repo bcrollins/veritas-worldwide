@@ -1116,6 +1116,35 @@ export default function ChapterPage() {
               {/* Evidence Summary */}
               <SidebarEvidence counts={evidenceCounts} sourceCount={chapter.sources.length} />
 
+              {/* Reading Stats */}
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">Reading Stats</p>
+                <div className="bg-surface border border-border rounded-lg p-4 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl font-display font-bold text-crimson">{readingTime}</span>
+                    <span className="text-xs text-ink-muted leading-tight">min<br />read</span>
+                  </div>
+                  <div className="border-t border-border pt-3 grid grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <p className="text-ink-faint uppercase tracking-wider text-[0.55rem] mb-0.5">Sources</p>
+                      <p className="font-bold text-ink">{chapter.sources.length}</p>
+                    </div>
+                    <div>
+                      <p className="text-ink-faint uppercase tracking-wider text-[0.55rem] mb-0.5">Evidence</p>
+                      <p className="font-bold text-ink">{evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed}</p>
+                    </div>
+                    <div>
+                      <p className="text-ink-faint uppercase tracking-wider text-[0.55rem] mb-0.5">Published</p>
+                      <p className="font-bold text-ink text-[0.7rem]">{chapter.publishDate}</p>
+                    </div>
+                    <div>
+                      <p className="text-ink-faint uppercase tracking-wider text-[0.55rem] mb-0.5">Period</p>
+                      <p className="font-bold text-ink text-[0.7rem]">{chapter.dateRange || '—'}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Table of Contents */}
               <SidebarTOC chapter={chapter} />
 
