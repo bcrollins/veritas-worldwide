@@ -284,6 +284,35 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
       if (!block.image) return null
       return <FigureBlock image={block.image} />
 
+    case 'video':
+      if (!block.video) return null
+      return (
+        <figure className="my-10 max-w-2xl mx-auto">
+          <div className="overflow-hidden rounded-sm border border-border bg-parchment-dark">
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${block.video.youtubeId}`}
+                title={block.video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+          {(block.video.title || block.video.caption) && (
+            <figcaption className="mt-3 px-1">
+              {block.video.title && (
+                <p className="font-sans text-sm font-semibold text-ink leading-relaxed">{block.video.title}</p>
+              )}
+              {block.video.caption && (
+                <p className="font-sans text-xs text-ink-muted mt-1">{block.video.caption}</p>
+              )}
+            </figcaption>
+          )}
+        </figure>
+      )
+
     case 'diagram': {
       if (!block.diagramId) return null
       const DiagramComponent = diagramComponents[block.diagramId]

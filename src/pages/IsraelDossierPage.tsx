@@ -1137,6 +1137,82 @@ export default function IsraelDossierPage() {
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════════════════
+         EVIDENCE MEDIA GALLERY — Embedded video & photographic evidence
+         ═══════════════════════════════════════════════════════════ */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
+          <h2 className="font-display text-2xl font-bold text-ink">Evidence Media Gallery</h2>
+        </div>
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-8 max-w-3xl">
+          Primary source video evidence, investigative journalism, and forensic analysis. Watch the documented record — every video below comes from established news organizations, UN agencies, or verified open-source investigators.
+        </p>
+
+        {/* Embedded Videos */}
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {[
+            { id: 'sYzmBJfFra8', title: 'Al Jazeera Investigation: Gaza\'s Killing Zone', caption: 'Forensic analysis of Israeli military targeting patterns in designated "safe zones" using satellite imagery and survivor testimony.' },
+            { id: 'XJ-5mMOsBqA', title: 'Forensic Architecture: Destruction of Medical Infrastructure', caption: 'Spatial analysis documenting the systematic targeting of hospitals, clinics, and ambulances across Gaza.' },
+            { id: 'kVECk17Hwzs', title: 'PBS Frontline: The U.S. & Israel\'s War in Gaza', caption: 'In-depth PBS investigation into U.S. weapons transfers and their documented use in civilian areas.' },
+            { id: 'oGalFi-NMBI', title: 'UN Human Rights Council: Report on Gaza', caption: 'Official UN presentation of documented human rights violations, including evidence of disproportionate force against civilians.' },
+          ].map(v => (
+            <div key={v.id} className="rounded-sm overflow-hidden border border-border bg-surface">
+              <div className="aspect-video">
+                <iframe
+                  src={`https://www.youtube.com/embed/${v.id}`}
+                  title={v.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-sans text-sm font-bold text-ink mb-1">{v.title}</h3>
+                <p className="font-body text-xs text-ink-muted leading-relaxed">{v.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Key Photographic Evidence */}
+        <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted mb-4">Key Photographic Evidence</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {[
+            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/640px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg', alt: 'Destroyed residential tower in Gaza City', caption: 'Gaza City, 2024 — Residential tower destroyed by airstrike' },
+            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg/640px-Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg', alt: 'Dome of the Rock, Jerusalem', caption: 'Dome of the Rock — Epicenter of the territorial conflict' },
+            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_the_Red_Cross.svg/640px-Flag_of_the_Red_Cross.svg.png', alt: 'Red Cross emblem', caption: 'ICRC — Denied access to detainees and restricted in Gaza' },
+            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Israeli_West-Bank_Barrier.jpg/640px-Israeli_West-Bank_Barrier.jpg', alt: 'Israeli West Bank separation barrier', caption: 'Separation barrier — Ruled illegal by ICJ in 2004' },
+          ].map((img, i) => (
+            <a key={i} href={img.src.replace('/thumb/', '/').replace(/\/\d+px-[^/]+$/, '')} target="_blank" rel="noopener noreferrer" className="group block rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-colors">
+              <div className="aspect-[4/3] overflow-hidden bg-parchment-dark">
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onError={(e) => { (e.target as HTMLImageElement).closest('a')?.classList.add('hidden') }} />
+              </div>
+              <p className="p-2 font-sans text-[0.6rem] text-ink-muted leading-snug">{img.caption}</p>
+            </a>
+          ))}
+        </div>
+
+        {/* Primary Source Documents */}
+        <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted mb-4">Primary Source Documents</h3>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+          {[
+            { label: 'ICJ Advisory Opinion — Legality of Occupation (2024)', url: 'https://www.icj-cij.org/node/204176', icon: 'scale' },
+            { label: 'ICC Arrest Warrants — Netanyahu & Gallant', url: 'https://www.icc-cpi.int/situations/palestine', icon: 'file' },
+            { label: 'CRS Report RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222', icon: 'money' },
+            { label: 'Lancet: Mortality Study (Jan 2025)', url: 'https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext', icon: 'search' },
+            { label: 'OHCHR Gaza Update Report (Nov 2024)', url: 'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf', icon: 'file' },
+            { label: 'Airwars — Gaza Patterns of Harm Database', url: 'https://gaza-patterns-harm.airwars.org/', icon: 'search' },
+          ].map((doc, i) => (
+            <a key={i} href={doc.url} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-sm border border-border bg-surface hover:border-crimson/30 hover:bg-parchment-dark/10 transition-all group">
+              <span className="flex-shrink-0 mt-0.5 text-crimson"><TierIcon name={doc.icon} className="w-4 h-4" /></span>
+              <span className="font-sans text-xs text-ink group-hover:text-crimson transition-colors leading-snug">{doc.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* ─── RELATED CHAPTERS ─── */}
       <section className="mb-14">
         <h2 className="font-display text-2xl font-bold text-ink mb-6">Related Chapters in The Record</h2>

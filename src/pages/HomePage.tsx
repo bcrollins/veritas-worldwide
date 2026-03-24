@@ -161,6 +161,70 @@ export default function HomePage() {
         </section>
         </FadeInSection>
 
+        {/* ─── SPECIAL INVESTIGATIONS — Cinematic Cards ─── */}
+        <FadeInSection>
+        <section className="py-12 border-b border-border">
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+              Special Investigations
+            </h2>
+            <div className="flex-1 h-[1px] bg-border" />
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Israel Dossier */}
+            <Link to="/israel-dossier" className="group block rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-lg">
+              <div className="relative h-48 md:h-56 overflow-hidden bg-parchment-dark">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/F-35A_flight_%28cropped%29.jpg/1280px-F-35A_flight_%28cropped%29.jpg"
+                  alt="F-35A Lightning II"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-crimson-light mb-1">Special Investigation</p>
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-white leading-snug mb-1">The Israel Dossier</h3>
+                  <p className="font-body text-xs text-white/70 line-clamp-2">$310B+ in aid, 75,000+ killed, 14,000+ bombs — every figure sourced to government records.</p>
+                </div>
+              </div>
+              <div className="p-4 bg-surface">
+                <div className="flex flex-wrap gap-2">
+                  {['CRS', 'UN OCHA', 'ICJ', 'The Lancet', 'CPJ'].map(src => (
+                    <span key={src} className="font-sans text-[0.55rem] px-2 py-0.5 bg-parchment-dark text-ink-faint rounded-full">{src}</span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+            {/* Deep State / Epstein Network */}
+            <Link to="/deep-state" className="group block rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-lg">
+              <div className="relative h-48 md:h-56 overflow-hidden bg-parchment-dark">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Jeffrey_Epstein_mugshot.jpg/440px-Jeffrey_Epstein_mugshot.jpg"
+                  alt="Jeffrey Epstein"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-crimson-light mb-1">Interactive Investigation</p>
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-white leading-snug mb-1">The Deep State &mdash; Epstein Network</h3>
+                  <p className="font-body text-xs text-white/70 line-clamp-2">Flight logs, court documents, sealed depositions — the network mapped and sourced.</p>
+                </div>
+              </div>
+              <div className="p-4 bg-surface">
+                <div className="flex flex-wrap gap-2">
+                  {['DOJ', 'Court Records', 'Flight Logs', 'OIG Report', 'Depositions'].map(src => (
+                    <span key={src} className="font-sans text-[0.55rem] px-2 py-0.5 bg-parchment-dark text-ink-faint rounded-full">{src}</span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
+        </FadeInSection>
+
         {/* Chapter Grid */}
         <section className="py-12">
           <div className="flex items-center gap-4 mb-8">
