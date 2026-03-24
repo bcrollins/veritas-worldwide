@@ -609,6 +609,10 @@ app.use((req, res, next) => {
     '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide Press', desc: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.' },
     '/membership': { title: 'Membership | Veritas Worldwide Press', desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.' },
     '/deep-state': { title: 'The Deep State — The Epstein Network | Veritas Worldwide Press', desc: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.' },
+    '/forum': { title: 'Veritas Forum | Veritas Worldwide Press', desc: 'Community discussion forum for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.' },
+    '/profiles': { title: 'Power Profiles | Veritas Worldwide Press', desc: 'Sourced profiles of 235+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.' },
+    '/content-pack': { title: 'Content Packs & Brand Kit | Veritas Worldwide Press', desc: 'Official brand assets and social media content packs for Veritas Worldwide Press. Free for press, social media, and advocacy.' },
+    '/news': { title: 'News | Veritas Worldwide Press', desc: 'Latest news and updates from Veritas Worldwide Press.' },
   }
 
   const staticMeta = staticPages[req.path]
@@ -648,6 +652,22 @@ app.use((req, res, next) => {
         .replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${chapterOgImage}"`)
         .replace(/content="image\/png"/, `content="${imgType}"`)
     }
+  }
+
+  // Check if this is a profile route
+  const profileMatch = req.path.match(/^\/profile\/(.+)$/)
+  if (profileMatch) {
+    const slug = profileMatch[1]
+    // Convert slug to readable name: "ted-cruz" → "Ted Cruz"
+    const name = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+    const profileUrl = `${SITE_URL}/profile/${slug}`
+    html = html
+      .replace(/<title>.*?<\/title>/, `<title>${name} — Power Profile | Veritas Worldwide Press</title>`)
+      .replace(/content="The Record \| Veritas Worldwide Press"/g, `content="${name} — Power Profile | Veritas Worldwide Press"`)
+      .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes. Every claim cited to FEC filings, congressional records, and verified journalism."`)
+      .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes."`)
+      .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${profileUrl}"`)
+      .replace(/content="website"/, `content="article"`)
   }
 
   res.send(html)
