@@ -1,19 +1,22 @@
 {
-  "run": 6,
+  "run": 7,
   "date": "2026-03-24",
-  "last": "adsense-fix+package-lock-cleanup+build-script+sitemap",
-  "next": "add-images-to-israel-dossier-deep-state+analytics-ga4-embed+performance-audit",
+  "last": "10x-israel-dossier+instagram-carousels+pdf-export+pinned-posts+content-pack-carousels",
+  "next": "deep-state-page-expansion+performance-audit+analytics-ga4-embed",
   "queue": [
-    "add-images-to-israel-dossier-deep-state",
+    "deep-state-page-10x-expansion",
     "analytics-ga4-embed",
-    "performance-audit",
-    "code-split-large-chunks",
-    "auth-system-upgrade-neon-complete"
+    "performance-audit-code-splitting",
+    "reading-progress-indicator",
+    "newsletter-signup-integration",
+    "dark-mode-improvements"
   ],
   "fixes_this_run": [
-    "Disabled AdSense placeholder (empty AD_CLIENT = ads off, no JS errors)",
-    "Removed package-lock 2.json iCloud sync artifact",
-    "Fixed build script: tsc → npx tsc for CI reliability",
-    "Added 12 missing public page URLs to sitemap.xml"
+    "Added israelDossierExpanded.ts with 750+ lines: 17-event historical timeline (1917-2024), 10 new documented incidents (Jabalia, Al-Ahli, university destruction, Al-Shifa, starvation, Shireen Abu Akleh, tent camps, UNRWA, Lavender AI, white phosphorus), AIPAC lobbying data, 4 international legal cases, infrastructure/comparative stats",
+    "Added DossierCarousel.tsx: Canvas-based Instagram carousel generator with 10-slide support, individual + batch download, pinned post generator for 3 profile images",
+    "Added DossierPDF.tsx: Complete A4 PDF export with cover page, TOC, all stats, timeline, incidents, methodology, running headers, page numbers",
+    "Added contentPackCarousels.ts: 10-slide carousel data for all 6 content packs",
+    "Updated IsraelDossierPage: Historical timeline section, AIPAC/lobbying section with legal cases, infrastructure destruction stats, 10 expanded incidents (6→16), download/share section with carousel + pinned posts + PDF",
+    "Updated ContentPacksPage: Each content pack now includes downloadable 10-slide Instagram carousel"
   ]
 }

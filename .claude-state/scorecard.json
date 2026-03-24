@@ -1,19 +1,23 @@
 {
-  "run": 6,
+  "run": 7,
   "date": "2026-03-24",
   "features": {
     "admin-dashboard": { "composite": 8.2, "status": "GOOD", "notes": "Full admin with login, 7 pages, social pack generator" },
     "sharing": { "composite": 8.5, "status": "GOOD", "notes": "SharePanel on all content pages, 7 platforms + native share + copy link" },
     "chapter-images": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "18 chapters with Wikimedia Commons images, grayscale-to-color hover" },
     "analytics": { "composite": 7.0, "status": "FUNCTIONAL", "notes": "Server-side analytics with country detection, daily trends, top pages" },
-    "social-packs": { "composite": 8.0, "status": "GOOD", "notes": "8 pre-written posts, canvas carousel generator, copy-to-clipboard" },
+    "social-packs": { "composite": 9.0, "status": "EXCELLENT", "notes": "6 content packs with 10-slide Instagram carousels each, canvas generator, copy-to-clipboard, carousel downloader" },
     "book-reader": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Full reading interface with TTS, font controls, download modal" },
     "evidence-system": { "composite": 8.5, "status": "GOOD", "notes": "Three-tier system with proper styling, tooltips, source counts" },
     "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Neon PostgreSQL backend with JWT sessions, bcrypt hashing" },
     "nyt-design": { "composite": 8.0, "status": "GOOD", "notes": "Monochrome palette, crimson accents, professional typography" },
     "seo": { "composite": 8.8, "status": "GOOD", "notes": "SSR meta injection, OG tags, Twitter cards, structured data, complete sitemap (47 URLs)" },
     "build-reliability": { "composite": 8.0, "status": "GOOD", "notes": "npx tsc for CI, no iCloud artifacts, clean build" },
-    "ads": { "composite": 7.0, "status": "DISABLED", "notes": "AdBanner configurable via AD_CLIENT constant; empty = ads off, no JS errors" },
+    "israel-dossier": { "composite": 9.2, "status": "EXCELLENT", "notes": "10x expansion: 17-event timeline (1917-2024), 16 documented incidents, AIPAC lobbying, 4 ICJ/ICC legal cases, infrastructure stats, money trail, media gallery, PDF export, 10-slide Instagram carousel, 3 pinned profile posts, live counter, jump nav" },
+    "content-packs": { "composite": 9.0, "status": "EXCELLENT", "notes": "6 packs with 10-slide carousels, canvas-generated share graphics, platform-specific copy, article links" },
+    "dossier-pdf": { "composite": 8.5, "status": "GOOD", "notes": "Full A4 PDF with cover page, TOC, all stats, timeline, incidents, methodology, running headers, page numbers" },
+    "instagram-carousels": { "composite": 9.0, "status": "EXCELLENT", "notes": "10-slide branded carousels for dossier + all 6 content packs, individual slide download, batch download" },
+    "pinned-posts": { "composite": 8.5, "status": "GOOD", "notes": "3 branded 1080x1080 images: dark-crimson dossier, parchment record, full-crimson mission" },
     "print-styles": { "composite": 8.5, "status": "GOOD", "notes": "Comprehensive: @page margins, evidence tiers in grayscale, URL expansion, dark→light inversion, page-break rules" }
   }
 }
