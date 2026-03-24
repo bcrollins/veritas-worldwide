@@ -13,6 +13,8 @@ import NewsletterPopup from './components/engagement/NewsletterPopup'
 import PerformanceMonitor from './components/engagement/PerformanceMonitor'
 import ReadingStreak from './components/engagement/ReadingStreak'
 import { useScrollDepth } from './hooks/useScrollDepth'
+import { I18nProvider, useI18n } from './lib/i18n'
+import LanguageSelector from './components/LanguageSelector'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -58,6 +60,7 @@ function Header() {
   const [moreOpen, setMoreOpen] = useState(false)
   const location = useLocation()
   const { isLoggedIn, user, logout, setShowAuthModal } = useAuth()
+  const { t } = useI18n()
 
   // Auto-close menus on route change
   useEffect(() => {
@@ -86,20 +89,20 @@ function Header() {
   }, [moreOpen])
 
   const primaryLinks = [
-    { to: '/', label: 'Read' },
-    { to: '/search', label: 'Search' },
-    { to: '/timeline', label: 'Timeline' },
+    { to: '/', label: t('nav.home') },
+    { to: '/search', label: t('nav.search') },
+    { to: '/timeline', label: t('nav.timeline') },
   ]
 
   const secondaryLinks = [
-    { to: '/methodology', label: 'Methodology' },
-    { to: '/sources', label: 'Sources' },
-    { to: '/bookmarks', label: 'Saved' },
-    { to: '/analytics', label: 'Analytics' },
-    { to: '/about', label: 'About' },
-    { to: '/israel-dossier', label: 'Israel Dossier' },
-    { to: '/deep-state', label: 'Deep State' },
-    { to: '/membership', label: 'Membership' },
+    { to: '/methodology', label: t('nav.methodology') },
+    { to: '/sources', label: t('nav.sources') },
+    { to: '/bookmarks', label: t('nav.bookmarks') },
+    { to: '/analytics', label: t('nav.analytics') },
+    { to: '/about', label: t('nav.about') },
+    { to: '/israel-dossier', label: t('nav.israel') },
+    { to: '/deep-state', label: t('nav.deepState') },
+    { to: '/membership', label: t('nav.membership') },
   ]
 
   const allLinks = [...primaryLinks, ...secondaryLinks]
@@ -185,8 +188,9 @@ function Header() {
               className="hidden sm:inline-flex items-center justify-center px-3 py-1.5 min-h-[36px] bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
               onClick={() => trackSupportClick('header')}
             >
-              Join
+              {t('nav.join')}
             </Link>
+            <LanguageSelector />
             <ThemeToggle />
             {isLoggedIn ? (
               <button
@@ -323,6 +327,7 @@ function Header() {
 }
 
 function Footer() {
+  const { t } = useI18n()
   return (
     <footer className="bg-ink text-white/70 py-16 mt-20 no-print">
       <div className="max-w-5xl mx-auto px-6">
@@ -340,18 +345,18 @@ function Footer() {
           <nav aria-label="Footer navigation">
             <p className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-white/80 mb-4">Navigate</p>
             <div className="flex flex-col gap-2">
-              <Link to="/" className="font-sans text-sm text-white/50 hover:text-white transition-colors">The Record</Link>
-              <Link to="/search" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Search</Link>
-              <Link to="/timeline" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Timeline</Link>
-              <Link to="/methodology" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Methodology</Link>
-              <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
-              <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
-              <Link to="/about" className="font-sans text-sm text-white/50 hover:text-white transition-colors">About</Link>
-              <Link to="/deep-state" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Deep State</Link>
-              <Link to="/membership" className="font-sans text-sm text-crimson-light hover:text-white transition-colors font-semibold">Membership</Link>
-              <Link to="/accessibility" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Accessibility</Link>
-              <Link to="/privacy" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Privacy</Link>
-              <Link to="/terms" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Terms</Link>
+              <Link to="/" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.home')}</Link>
+              <Link to="/search" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.search')}</Link>
+              <Link to="/timeline" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.timeline')}</Link>
+              <Link to="/methodology" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.methodology')}</Link>
+              <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.sources')}</Link>
+              <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.bookmarks')}</Link>
+              <Link to="/about" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.about')}</Link>
+              <Link to="/deep-state" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.deepState')}</Link>
+              <Link to="/membership" className="font-sans text-sm text-crimson-light hover:text-white transition-colors font-semibold">{t('nav.membership')}</Link>
+              <Link to="/accessibility" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.accessibility')}</Link>
+              <Link to="/privacy" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.privacy')}</Link>
+              <Link to="/terms" className="font-sans text-sm text-white/50 hover:text-white transition-colors">{t('nav.terms')}</Link>
             </div>
           </nav>
           <div>
@@ -372,7 +377,7 @@ function Footer() {
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
-              Support This Work
+              {t('action.support')}
             </a>
             {/* Social Links */}
             <div className="flex items-center gap-1 mt-5 flex-wrap">
@@ -412,6 +417,7 @@ function PageViewTracker() {
 
 export default function App() {
   return (
+    <I18nProvider>
     <div className="min-h-screen bg-parchment text-ink">
       <a
         href="#main-content"
@@ -481,5 +487,6 @@ export default function App() {
       <NewsletterPopup />
       <PerformanceMonitor />
     </div>
+    </I18nProvider>
   )
 }
