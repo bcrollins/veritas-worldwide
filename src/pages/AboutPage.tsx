@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
 
@@ -11,7 +11,22 @@ export default function AboutPage() {
       description: 'Five independent journalists. No corporate backing. No party affiliation. Meet the team behind The Record — and why every subscription keeps this work alive.',
       url: `${SITE_URL}/about`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      'name': `About | ${SITE_NAME}`,
+      'description': 'Five independent journalists. No corporate backing. No party affiliation. Meet the team behind The Record.',
+      'url': `${SITE_URL}/about`,
+      'mainEntity': {
+        '@type': 'Organization',
+        'name': SITE_NAME,
+        'url': SITE_URL,
+        'description': 'An independent publication presenting primary source documents to the public.',
+        'foundingDate': '2026',
+        'logo': `${SITE_URL}/og-image.png`,
+      },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   return (

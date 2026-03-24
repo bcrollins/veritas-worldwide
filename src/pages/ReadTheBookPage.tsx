@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 import DownloadModal from '../components/DownloadModal'
 
@@ -53,7 +53,19 @@ export default function ReadTheBookPage() {
       description: 'Read the complete book online — 31 chapters, 500+ primary sources. Free, ad-supported for non-subscribers.',
       url: `${SITE_URL}/read`,
     })
-    return () => clearMetaTags()
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'Book',
+      'name': 'The Record — Volume I',
+      'author': { '@type': 'Organization', 'name': SITE_NAME },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
+      'url': `${SITE_URL}/read`,
+      'numberOfPages': 31,
+      'bookFormat': 'https://schema.org/EBook',
+      'isAccessibleForFree': true,
+      'inLanguage': 'en',
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   // Stop TTS when changing chapters

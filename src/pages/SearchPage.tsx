@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect, useCallback, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { chapters, searchChapters } from '../data/chapters'
 import type { Chapter } from '../data/chapters'
-import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
 
 interface SearchResult {
@@ -83,7 +83,14 @@ export default function SearchPage() {
       description: `Full-text search across all ${chapters.length} chapters, sources, evidence, and data tables.`,
       url: `${SITE_URL}/search`,
     })
-    return () => { clearMetaTags() }
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'SearchResultsPage',
+      'name': `Search | ${SITE_NAME}`,
+      'url': `${SITE_URL}/search`,
+      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
   useEffect(() => {

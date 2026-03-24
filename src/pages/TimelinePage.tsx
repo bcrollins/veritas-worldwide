@@ -1,6 +1,7 @@
 import { useMemo, useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapters } from '../data/chapters'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 
 interface TimelineEntry {
   chapterId: string
@@ -46,6 +47,25 @@ export default function TimelinePage() {
   const [hoveredChapter, setHoveredChapter] = useState<string | null>(null)
   const [filterEra, setFilterEra] = useState<string | null>(null)
   const timelineRef = useRef<HTMLDivElement>(null)
+
+  // SEO meta tags + JSON-LD
+  useEffect(() => {
+    setMetaTags({
+      title: `Interactive Timeline | ${SITE_NAME}`,
+      description: 'An interactive chronological timeline of events documented in The Record, spanning from 1694 to present. Explore 31 chapters of primary source history.',
+      url: `${SITE_URL}/timeline`,
+    })
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      'name': `Interactive Timeline | ${SITE_NAME}`,
+      'description': 'A chronological timeline of 31 chapters spanning 330+ years of documented history from primary sources.',
+      'url': `${SITE_URL}/timeline`,
+      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
+  }, [])
 
   const entries = useMemo(() => {
     const parsed: TimelineEntry[] = []
