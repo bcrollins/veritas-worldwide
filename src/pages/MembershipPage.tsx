@@ -238,6 +238,14 @@ export default function MembershipPage() {
                       </p>
                     )}
 
+                    {/* 7-day free trial callout */}
+                    {!isFree && (
+                      <div className="mt-2 inline-flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 px-3 py-1 rounded-full">
+                        <svg className="w-3 h-3 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                        <span className="font-sans text-[0.6rem] font-bold text-emerald-700 dark:text-emerald-400">7-day free trial</span>
+                      </div>
+                    )}
+
                     {/* Annual savings callout */}
                     {!isFree && annual && 'annualSavings' in tier && (
                       <p className="font-sans text-[0.6rem] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
@@ -294,7 +302,7 @@ export default function MembershipPage() {
                   <div className={`px-7 py-3.5 text-center rounded-b-lg ${isFounding ? 'border-t border-white/10 bg-white/5' : 'border-t border-border/50 bg-[#faf8f5] dark:bg-white/5'}`}>
                     <p className={`font-sans text-[0.6rem] ${faintColor} flex items-center justify-center gap-2`}>
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                      Stripe-secured · Cancel anytime · No lock-in
+                      7-day free trial · Cancel anytime · No card required
                     </p>
                   </div>
                 )}

@@ -15,8 +15,8 @@ export const MEMBERSHIP = {
     monthlyPrice: 5,
     annualPrice: 48,
     annualSavings: 20,
-    monthlyUrl: 'https://buy.stripe.com/eVq5kDfhN1A4gspcKzasg07',
-    annualUrl: 'https://buy.stripe.com/eVq9AT1qXemQ3FDdODasg08',
+    monthlyUrl: 'https://buy.stripe.com/bJedR9c5B6Uo4JH9ynasg0e',
+    annualUrl: 'https://buy.stripe.com/6oUeVdb1x92w7VT9ynasg0f',
     features: [
       'Early access to new chapters (48 hours before public)',
       'Weekly editorial briefing email',
@@ -32,8 +32,8 @@ export const MEMBERSHIP = {
     monthlyPrice: 12,
     annualPrice: 120,
     annualSavings: 17,
-    monthlyUrl: 'https://buy.stripe.com/7sYaEXfhN1A4gspcKzasg09',
-    annualUrl: 'https://buy.stripe.com/3cI9AT3z5fqU6RP6mbasg0a',
+    monthlyUrl: 'https://buy.stripe.com/eVq9AT1qX1A4ekh9ynasg0g',
+    annualUrl: 'https://buy.stripe.com/5kQ4gz9Xt1A4a41fWLasg0h',
     features: [
       'Everything in Correspondent',
       'Monthly exclusive deep-dive dossier',
@@ -51,8 +51,8 @@ export const MEMBERSHIP = {
     monthlyPrice: 25,
     annualPrice: 240,
     annualSavings: 20,
-    monthlyUrl: 'https://buy.stripe.com/8x2dR95Hd0w0fol25Vasg0b',
-    annualUrl: 'https://buy.stripe.com/14A00jedJ5Qkfol6mbasg0c',
+    monthlyUrl: 'https://buy.stripe.com/28E00jd9F92w0tr8ujasg0i',
+    annualUrl: 'https://buy.stripe.com/00waEXc5B6Uogsp4e3asg0j',
     features: [
       'Everything in Investigator',
       'Your name or initials on the Founding Circle page',
