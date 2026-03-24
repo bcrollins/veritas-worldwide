@@ -1,1 +1,19 @@
-{"last":"sharing+images","next":"more-images-special-pages+analytics-polish","queue":["add-images-to-israel-dossier-deep-state","analytics-ga4-embed","performance-audit"]}
+{
+  "run": 6,
+  "date": "2026-03-24",
+  "last": "adsense-fix+package-lock-cleanup+build-script+sitemap",
+  "next": "add-images-to-israel-dossier-deep-state+analytics-ga4-embed+performance-audit",
+  "queue": [
+    "add-images-to-israel-dossier-deep-state",
+    "analytics-ga4-embed",
+    "performance-audit",
+    "code-split-large-chunks",
+    "auth-system-upgrade-neon-complete"
+  ],
+  "fixes_this_run": [
+    "Disabled AdSense placeholder (empty AD_CLIENT = ads off, no JS errors)",
+    "Removed package-lock 2.json iCloud sync artifact",
+    "Fixed build script: tsc → npx tsc for CI reliability",
+    "Added 12 missing public page URLs to sitemap.xml"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "run": 5,
+  "run": 6,
   "date": "2026-03-24",
   "features": {
     "admin-dashboard": { "composite": 8.2, "status": "GOOD", "notes": "Full admin with login, 7 pages, social pack generator" },
@@ -9,8 +9,11 @@
     "social-packs": { "composite": 8.0, "status": "GOOD", "notes": "8 pre-written posts, canvas carousel generator, copy-to-clipboard" },
     "book-reader": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Full reading interface with TTS, font controls, download modal" },
     "evidence-system": { "composite": 8.5, "status": "GOOD", "notes": "Three-tier system with proper styling, tooltips, source counts" },
-    "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "localStorage MVP with SHA-256 hashing" },
+    "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Neon PostgreSQL backend with JWT sessions, bcrypt hashing" },
     "nyt-design": { "composite": 8.0, "status": "GOOD", "notes": "Monochrome palette, crimson accents, professional typography" },
-    "seo": { "composite": 8.5, "status": "GOOD", "notes": "SSR meta injection for bots, OG tags, Twitter cards, structured data" }
+    "seo": { "composite": 8.8, "status": "GOOD", "notes": "SSR meta injection, OG tags, Twitter cards, structured data, complete sitemap (47 URLs)" },
+    "build-reliability": { "composite": 8.0, "status": "GOOD", "notes": "npx tsc for CI, no iCloud artifacts, clean build" },
+    "ads": { "composite": 7.0, "status": "DISABLED", "notes": "AdBanner configurable via AD_CLIENT constant; empty = ads off, no JS errors" },
+    "print-styles": { "composite": 8.5, "status": "GOOD", "notes": "Comprehensive: @page margins, evidence tiers in grayscale, URL expansion, dark→light inversion, page-break rules" }
   }
 }
