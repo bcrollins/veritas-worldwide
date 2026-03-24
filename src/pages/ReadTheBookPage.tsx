@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { chapters } from '../data/chapters'
+import { chapterMeta } from '../data/chapterMeta'
+import type { Chapter } from '../data/chapterTypes'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 import DownloadModal from '../components/DownloadModal'
+import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
 
 const PDF_URL = '/the-record.pdf'
 const BOOK_TITLE = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World'
@@ -41,6 +43,8 @@ function useTextToSpeech() {
 
 export default function ReadTheBookPage() {
   const [activeChapter, setActiveChapter] = useState(0)
+  const [loadedChapters, setLoadedChapters] = useState<Map<number, Chapter>>(new Map())
+  const [loadingChapterIndex, setLoadingChapterIndex] = useState<number | null>(null)
   const [showDownloadModal, setShowDownloadModal] = useState(false)
   const [showTOC, setShowTOC] = useState(false)
   const [fontSize, setFontSize] = useState(16)
@@ -71,11 +75,46 @@ export default function ReadTheBookPage() {
   // Stop TTS when changing chapters
   useEffect(() => { tts.stop() }, [activeChapter])
 
-  const chapter = chapters[activeChapter]
-  const chapterText = chapter.content
-    .filter(b => b.type === 'text' || b.type === 'dropcap' || b.type === 'heading' || b.type === 'subheading')
-    .map(b => b.text || '')
-    .join('\n\n')
+  // Load chapter content on demand and preload adjacent chapters
+  useEffect(() => {
+    const staticChapter = chapterMeta[activeChapter]
+    if (!staticChapter) return
+
+    // Load current chapter
+    setLoadingChapterIndex(activeChapter)
+    loadChapterContent(staticChapter.id).then(loadedChapter => {
+      if (loadedChapter) {
+        setLoadedChapters(prev => new Map(prev).set(activeChapter, loadedChapter))
+      }
+      setLoadingChapterIndex(null)
+    }).catch(error => {
+      console.error(`Failed to load chapter ${activeChapter}:`, error)
+      setLoadingChapterIndex(null)
+      // Fallback: leave empty, show loading error state
+    })
+
+    // Preload next and previous chapters in background
+    const nextChapterIds = []
+    
+    if (activeChapter < chapterMeta.length - 1) {
+      nextChapterIds.push(chapterMeta[activeChapter + 1].id)
+    }
+    if (activeChapter < chapterMeta.length - 2) {
+      nextChapterIds.push(chapterMeta[activeChapter + 2].id)
+    }
+    
+    if (nextChapterIds.length > 0) {
+      preloadChapters(nextChapterIds)
+    }
+  }, [activeChapter])
+
+  // Get the current chapter metadata and loaded content
+  const chapterMetadata = chapterMeta[activeChapter]
+  const chapter = loadedChapters.get(activeChapter)
+  const chapterText = chapter?.content
+    .filter((b: any) => b.type === 'text' || b.type === 'dropcap' || b.type === 'heading' || b.type === 'subheading')
+    .map((b: any) => b.text || '')
+    .join('\n\n') || ''
 
   const goTo = (idx: number) => {
     setActiveChapter(idx)
@@ -97,8 +136,12 @@ export default function ReadTheBookPage() {
 
           {/* Chapter indicator */}
           <div className="flex-1 min-w-0">
-            <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson truncate">{chapter.number}</p>
-            <p className="font-sans text-xs text-ink truncate">{chapter.title}</p>
+            {chapter && (
+              <>
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson truncate">{chapter.number}</p>
+                <p className="font-sans text-xs text-ink truncate">{chapter.title}</p>
+              </>
+            )}
           </div>
 
           {/* Font size controls */}
@@ -134,7 +177,7 @@ export default function ReadTheBookPage() {
           <aside className="w-72 shrink-0 border-r border-border bg-surface overflow-y-auto p-4">
             <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">Table of Contents</p>
             <div className="space-y-1">
-              {chapters.map((ch, i) => (
+              {chapterMeta.map((ch, i) => (
                 <button key={ch.id} onClick={() => goTo(i)} className={`w-full text-left px-3 py-2 rounded-sm transition-colors ${i === activeChapter ? 'bg-crimson/10 text-crimson' : 'text-ink-muted hover:text-ink hover:bg-parchment-dark dark:hover:bg-white/5'}`}>
                   <p className="font-sans text-[0.55rem] font-bold tracking-wider uppercase">{ch.number}</p>
                   <p className="font-sans text-xs leading-snug">{ch.title}</p>
@@ -147,19 +190,35 @@ export default function ReadTheBookPage() {
         {/* Main reading area */}
         <main ref={contentRef} className="flex-1 overflow-y-auto">
           <div className="max-w-2xl mx-auto px-6 py-12">
+            {/* Loading Indicator */}
+            {loadingChapterIndex === activeChapter && (
+              <div className="mb-8 p-4 bg-crimson/5 border border-crimson/20 rounded-sm">
+                <div className="flex items-center gap-3">
+                  <div className="animate-spin">
+                    <svg className="w-5 h-5 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
+                    </svg>
+                  </div>
+                  <p className="font-sans text-sm text-crimson">Loading chapter content...</p>
+                </div>
+              </div>
+            )}
+
             {/* Chapter Header */}
-            <header className="mb-10 border-b border-border pb-8">
-              <p className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-2">{chapter.number}</p>
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-ink leading-tight mb-3">{chapter.title}</h1>
-              <p className="font-body text-lg italic text-ink-muted leading-relaxed">{chapter.subtitle}</p>
-              {chapter.dateRange && (
-                <p className="font-sans text-xs font-semibold text-crimson mt-3">{chapter.dateRange}</p>
-              )}
-            </header>
+            {chapter && (
+              <header className="mb-10 border-b border-border pb-8">
+                <p className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-2">{chapter.number}</p>
+                <h1 className="font-display text-3xl md:text-4xl font-bold text-ink leading-tight mb-3">{chapter.title}</h1>
+                <p className="font-body text-lg italic text-ink-muted leading-relaxed">{chapter.subtitle}</p>
+                {chapter.dateRange && (
+                  <p className="font-sans text-xs font-semibold text-crimson mt-3">{chapter.dateRange}</p>
+                )}
+              </header>
+            )}
 
             {/* Chapter Content */}
             <div style={{ fontSize: `${fontSize}px` }}>
-              {chapter.content.map((block, idx) => {
+              {chapter && chapter.content.map((block, idx) => {
                 switch (block.type) {
                   case 'dropcap':
                     return <p key={idx} className="font-body leading-relaxed mb-6 first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-crimson first-letter:float-left first-letter:mr-2 first-letter:mt-1" style={{ fontSize: 'inherit' }}>{block.text}</p>
@@ -193,7 +252,7 @@ export default function ReadTheBookPage() {
             </div>
 
             {/* Sources for this chapter */}
-            {chapter.sources.length > 0 && (
+            {chapter && chapter.sources.length > 0 && (
               <section className="mt-10 pt-8 border-t border-border">
                 <h3 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink-muted mb-4">Sources</h3>
                 <ol className="space-y-2">
@@ -212,13 +271,13 @@ export default function ReadTheBookPage() {
               {activeChapter > 0 && (
                 <button onClick={() => goTo(activeChapter - 1)} className="text-left p-4 border border-border rounded-sm hover:border-crimson transition-colors">
                   <p className="font-sans text-[0.6rem] font-bold tracking-wider uppercase text-ink-faint">&larr; Previous</p>
-                  <p className="font-sans text-sm font-bold text-ink mt-1">{chapters[activeChapter - 1].title}</p>
+                  <p className="font-sans text-sm font-bold text-ink mt-1">{chapterMeta[activeChapter - 1].title}</p>
                 </button>
               )}
-              {activeChapter < chapters.length - 1 && (
+              {activeChapter < chapterMeta.length - 1 && (
                 <button onClick={() => goTo(activeChapter + 1)} className="text-right p-4 border border-border rounded-sm hover:border-crimson transition-colors col-start-2">
                   <p className="font-sans text-[0.6rem] font-bold tracking-wider uppercase text-ink-faint">Next &rarr;</p>
-                  <p className="font-sans text-sm font-bold text-ink mt-1">{chapters[activeChapter + 1].title}</p>
+                  <p className="font-sans text-sm font-bold text-ink mt-1">{chapterMeta[activeChapter + 1].title}</p>
                 </button>
               )}
             </div>
@@ -234,10 +293,10 @@ export default function ReadTheBookPage() {
         <div className="max-w-5xl mx-auto flex items-center gap-4">
           <div className="flex-1">
             <div className="h-1 bg-parchment-dark dark:bg-white/10 rounded-full overflow-hidden">
-              <div className="h-full bg-crimson rounded-full transition-all duration-300" style={{ width: `${((activeChapter + 1) / chapters.length) * 100}%` }} />
+              <div className="h-full bg-crimson rounded-full transition-all duration-300" style={{ width: `${((activeChapter + 1) / chapterMeta.length) * 100}%` }} />
             </div>
           </div>
-          <span className="font-sans text-[0.6rem] text-ink-faint">{activeChapter + 1} of {chapters.length}</span>
+          <span className="font-sans text-[0.6rem] text-ink-faint">{activeChapter + 1} of {chapterMeta.length}</span>
           <Link to="/membership" className="font-sans text-[0.6rem] font-semibold text-crimson hover:text-crimson-dark transition-colors">Go Ad-Free →</Link>
         </div>
       </div>

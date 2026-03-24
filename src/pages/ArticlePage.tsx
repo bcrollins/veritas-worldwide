@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getArticleBySlug, CATEGORY_META, type ArticleBlock, type ArticleSource } from '../data/articles'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
-import { chapters } from '../data/chapters'
+import { chapterMeta } from '../data/chapterMeta'
 import SharePanel from '../components/SharePanel'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 
@@ -147,7 +147,7 @@ export default function ArticlePage() {
   }
 
   const relatedChapterData = article.relatedChapters
-    .map(id => chapters.find(c => c.id === id))
+    .map(id => chapterMeta.find(c => c.id === id))
     .filter(Boolean)
 
   return (

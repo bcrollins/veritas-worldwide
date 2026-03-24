@@ -1,6 +1,6 @@
 import { useMemo, useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { chapters } from '../data/chapters'
+import { chapterMeta } from '../data/chapterMeta'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 
 interface TimelineEntry {
@@ -69,7 +69,7 @@ export default function TimelinePage() {
 
   const entries = useMemo(() => {
     const parsed: TimelineEntry[] = []
-    for (const ch of chapters) {
+    for (const ch of chapterMeta) {
       if (ch.id === 'front-matter') continue
       const range = parseYearRange(ch.dateRange)
       if (!range) continue

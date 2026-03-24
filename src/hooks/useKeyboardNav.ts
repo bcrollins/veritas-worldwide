@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { chapters } from '../data/chapters'
+import { chapterMeta } from '../data/chapterMeta'
 
 export function useKeyboardNav() {
   const navigate = useNavigate()
@@ -24,16 +24,16 @@ export function useKeyboardNav() {
       const match = location.pathname.match(/^\/chapter\/(.+)$/)
       if (!match) return
       const currentId = match[1]
-      const idx = chapters.findIndex(c => c.id === currentId)
+      const idx = chapterMeta.findIndex(c => c.id === currentId)
       if (idx === -1) return
 
-      if (e.key === 'j' && idx < chapters.length - 1) {
+      if (e.key === 'j' && idx < chapterMeta.length - 1) {
         e.preventDefault()
-        navigate(`/chapter/${chapters[idx + 1].id}`)
+        navigate(`/chapter/${chapterMeta[idx + 1].id}`)
       }
       if (e.key === 'k' && idx > 0) {
         e.preventDefault()
-        navigate(`/chapter/${chapters[idx - 1].id}`)
+        navigate(`/chapter/${chapterMeta[idx - 1].id}`)
       }
     }
 

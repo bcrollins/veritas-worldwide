@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import type { Chapter } from '../data/chapters'
+import type { Chapter } from '../data/chapterTypes'
 
 export default function Breadcrumb({ chapter }: { chapter: Chapter }) {
   return (

@@ -1,7 +1,8 @@
 import { type ReactNode, useEffect, useMemo, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { chapters } from '../data/chapters'
-import type { ContentBlock, Chapter, ImageData } from '../data/chapters'
+import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
+import type { ContentBlock, Chapter, ImageData } from '../data/chapterTypes'
+import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
 import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
 import BackToTop from '../components/BackToTop'
@@ -331,17 +332,16 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   }
 }
 
-function getRelatedByKeywords(current: Chapter, maxResults = 4): Chapter[] {
-  const crossLinkIds = new Set(current.crossLinks.map(cl => cl.chapterId))
-  const scored = chapters
-    .filter(c => c.id !== current.id && !crossLinkIds.has(c.id))
+function getRelatedByKeywords(current: Chapter, maxResults = 4): ChapterMetadata[] {
+  const scored = chapterMeta
+    .filter(c => c.id !== current.id)
     .map(c => {
-      const shared = current.keywords.filter(kw => c.keywords.includes(kw)).length
+      const shared = current.keywords.filter((kw: string) => c.keywords.includes(kw)).length
       return { chapter: c, score: shared }
     })
-    .filter(s => s.score > 0)
-    .sort((a, b) => b.score - a.score)
-  return scored.slice(0, maxResults).map(s => s.chapter)
+    .filter((s: any) => s.score > 0)
+    .sort((a: any, b: any) => b.score - a.score)
+  return scored.slice(0, maxResults).map((s: any) => s.chapter)
 }
 
 function ChapterTOC({ chapter }: { chapter: Chapter }) {
@@ -374,9 +374,9 @@ function ChapterTOC({ chapter }: { chapter: Chapter }) {
 }
 
 function ChapterNav({ current }: { current: Chapter }) {
-  const idx = chapters.findIndex(c => c.id === current.id)
-  const prev = idx > 0 ? chapters[idx - 1] : null
-  const next = idx < chapters.length - 1 ? chapters[idx + 1] : null
+  const idx = chapterMeta.findIndex(c => c.id === current.id)
+  const prev = idx > 0 ? chapterMeta[idx - 1] : null
+  const next = idx < chapterMeta.length - 1 ? chapterMeta[idx + 1] : null
 
   return (
     <div className="border-t border-border mt-16 pt-8">
@@ -652,7 +652,10 @@ function getEvidenceCounts(chapter: Chapter) {
 
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
-  const chapter = chapters.find(ch => ch.id === id)
+  const staticMetadata = chapterMeta.find(ch => ch.id === id)
+  const [chapter, setChapter] = useState<Chapter | null>(null)
+  const [isLoading, setIsLoading] = useState(!staticMetadata)
+  
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
   const evidenceCounts = useMemo(() => chapter ? getEvidenceCounts(chapter) : { verified: 0, circumstantial: 0, disputed: 0 }, [chapter])
   const hasEvidence = evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed > 0
@@ -660,6 +663,36 @@ export default function ChapterPage() {
   useScrollRestore(id)
   useReadingHistory(id)
   useKeyboardNav()
+
+  // Load chapter content on demand
+  useEffect(() => {
+    if (!id || !staticMetadata) return
+    
+    setIsLoading(true)
+    loadChapterContent(id).then(loadedChapter => {
+      setChapter(loadedChapter)
+      setIsLoading(false)
+    }).catch(error => {
+      console.error('Failed to load chapter content:', error)
+      setIsLoading(false)
+      // Fallback: leave chapter as null and show error state
+    })
+
+    // Preload sequential chapters in background
+    const currentIndex = chapterMeta.findIndex(ch => ch.id === id)
+    if (currentIndex !== -1) {
+      const nextChapterIds = []
+      if (currentIndex < chapterMeta.length - 1) {
+        nextChapterIds.push(chapterMeta[currentIndex + 1].id)
+      }
+      if (currentIndex < chapterMeta.length - 2) {
+        nextChapterIds.push(chapterMeta[currentIndex + 2].id)
+      }
+      if (nextChapterIds.length > 0) {
+        preloadChapters(nextChapterIds)
+      }
+    }
+  }, [id, staticMetadata])
 
   useEffect(() => {
     if (chapter) {
@@ -677,11 +710,27 @@ export default function ChapterPage() {
       })
       setJsonLd(chapterJsonLd({ ...chapter, image: chapterOgImage }))
       scoreChapterViewed(chapter.id, chapter.title)
-    } else {
+    } else if (!isLoading) {
       document.title = 'Chapter Not Found | The Record — Veritas Worldwide Press'
     }
     return () => { clearMetaTags(); removeJsonLd() }
-  }, [chapter])
+  }, [chapter, isLoading])
+
+  if (isLoading && !chapter) {
+    return (
+      <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+        <div className="flex justify-center mb-6">
+          <div className="animate-spin">
+            <svg className="w-12 h-12 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
+            </svg>
+          </div>
+        </div>
+        <h2 className="font-display text-2xl font-bold text-ink mb-2">Loading chapter...</h2>
+        <p className="font-body text-ink-muted">Please wait while we fetch the content.</p>
+      </div>
+    )
+  }
 
   if (!chapter) {
     return (

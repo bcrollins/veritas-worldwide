@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
-import { chapters } from '../data/chapters'
+import { chapterMeta } from '../data/chapterMeta'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
 
 export default function BookmarksPage() {
@@ -43,7 +43,7 @@ export default function BookmarksPage() {
     )
   }
 
-  const savedChapters = chapters.filter(ch => bookmarks.includes(ch.id))
+  const savedChapters = chapterMeta.filter(ch => bookmarks.includes(ch.id))
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">

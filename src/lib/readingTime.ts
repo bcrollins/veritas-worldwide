@@ -1,4 +1,4 @@
-import type { Chapter } from '../data/chapters'
+import type { Chapter } from '../data/chapterTypes'
 
 export function estimateReadingTime(chapter: Chapter): number {
   let wordCount = 0

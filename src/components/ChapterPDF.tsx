@@ -3,7 +3,7 @@
  * Lazily loads jsPDF only when clicked — zero cost to initial bundle.
  */
 import { useState } from 'react'
-import type { Chapter, ContentBlock } from '../data/chapters'
+import type { Chapter, ContentBlock } from '../data/chapterTypes'
 import { trackDownload } from '../lib/ga4'
 
 interface Props {

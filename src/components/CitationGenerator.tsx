@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import type { Chapter } from '../data/chapters'
+import type { Chapter } from '../data/chapterTypes'
 
 type Format = 'apa' | 'mla' | 'chicago' | 'bibtex'
 

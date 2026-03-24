@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { chapters } from '../data/chapters'
+import { chapterMeta } from '../data/chapterMeta'
 import { estimateReadingTime } from '../lib/readingTime'
 
 interface ReadingRecord {
@@ -39,7 +39,7 @@ export default function ContinueReading() {
       </div>
       <div className="grid gap-3">
         {recent.map(record => {
-          const ch = chapters.find(c => c.id === record.chapterId)
+          const ch = chapterMeta.find(c => c.id === record.chapterId)
           if (!ch) return null
           return (
             <Link
@@ -49,7 +49,7 @@ export default function ContinueReading() {
             >
               {ch.heroImage && (
                 <div className="hidden sm:block shrink-0 w-16 h-16 overflow-hidden rounded-sm bg-parchment-dark">
-                  <img src={ch.heroImage.src} alt="" loading="lazy" className="w-full h-full object-cover"
+                  <img src={ch.heroImage} alt="" loading="lazy" className="w-full h-full object-cover"
                     onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }} />
                 </div>
               )}
@@ -60,7 +60,7 @@ export default function ContinueReading() {
                   <div className="flex-1 h-1 bg-border rounded-full max-w-[120px]">
                     <div className="h-full bg-crimson rounded-full" style={{ width: `${record.scrollPercent}%` }} />
                   </div>
-                  <span className="font-sans text-[0.6rem] text-ink-faint">{Math.round(record.scrollPercent)}% · {estimateReadingTime(ch)} min</span>
+                  <span className="font-sans text-[0.6rem] text-ink-faint">{Math.round(record.scrollPercent)}%</span>
                 </div>
               </div>
             </Link>
