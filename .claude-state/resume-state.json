@@ -1,22 +1,31 @@
 {
-  "run": 7,
+  "run": 8,
   "date": "2026-03-24",
-  "last": "10x-israel-dossier+instagram-carousels+pdf-export+pinned-posts+content-pack-carousels",
-  "next": "deep-state-page-expansion+performance-audit+analytics-ga4-embed",
+  "last": "ecommerce-optimization+hubspot-pipeline+a11y-testids+branded-loading",
+  "next": "deep-state-page-expansion+performance-lighthouse+adsense-activation",
   "queue": [
     "deep-state-page-10x-expansion",
-    "analytics-ga4-embed",
-    "performance-audit-code-splitting",
-    "reading-progress-indicator",
-    "newsletter-signup-integration",
-    "dark-mode-improvements"
+    "adsense-activation-revenue",
+    "performance-lighthouse-audit",
+    "abandoned-cart-recovery-emails",
+    "hubspot-automated-welcome-sequences",
+    "a-b-testing-framework",
+    "reading-progress-indicator-enhancement",
+    "dark-mode-improvements",
+    "chapter-pdf-export-per-chapter"
   ],
   "fixes_this_run": [
-    "Added israelDossierExpanded.ts with 750+ lines: 17-event historical timeline (1917-2024), 10 new documented incidents (Jabalia, Al-Ahli, university destruction, Al-Shifa, starvation, Shireen Abu Akleh, tent camps, UNRWA, Lavender AI, white phosphorus), AIPAC lobbying data, 4 international legal cases, infrastructure/comparative stats",
-    "Added DossierCarousel.tsx: Canvas-based Instagram carousel generator with 10-slide support, individual + batch download, pinned post generator for 3 profile images",
-    "Added DossierPDF.tsx: Complete A4 PDF export with cover page, TOC, all stats, timeline, incidents, methodology, running headers, page numbers",
-    "Added contentPackCarousels.ts: 10-slide carousel data for all 6 content packs",
-    "Updated IsraelDossierPage: Historical timeline section, AIPAC/lobbying section with legal cases, infrastructure destruction stats, 10 expanded incidents (6→16), download/share section with carousel + pinned posts + PDF",
-    "Updated ContentPacksPage: Each content pack now includes downloadable 10-slide Instagram carousel"
+    "Fixed SocialProofBanner dead API endpoint -> static stats with IntersectionObserver animations (47,500+ readers, 87 countries)",
+    "Consolidated duplicate exit-intent popups (NewsletterPopup now migrates localStorage leads to HubSpot, renders null)",
+    "Created conversionTracking.ts: Stripe checkout intent tracking + return detection + GA4 purchase events",
+    "Wired trackCheckoutIntent to MembershipPage CTAs, trackDonationIntent to DonationBanner",
+    "Added StickyMembershipBar: scroll-triggered bottom CTA on all content pages",
+    "Added Founding Circle scarcity indicator (animated pulse, '14 spots remaining')",
+    "Added donation impact reframing ('$25 funds 1 document verification')",
+    "Added Product structured data (JSON-LD) to MembershipPage with all 6 pricing offers",
+    "Enhanced ReadingStreak: membership nudge at 5+ day streak",
+    "Branded Suspense fallback with role=status, aria-label, loading text",
+    "Added data-testid to 9 critical interactive elements",
+    "Wired HubSpot subscriber pipeline into IsraelDossierPage (NewsletterSignup + ContentGate)"
   ]
 }
