@@ -15,6 +15,9 @@ import ReadingStreak from './components/engagement/ReadingStreak'
 import { useScrollDepth } from './hooks/useScrollDepth'
 import { I18nProvider, useI18n } from './lib/i18n'
 import LanguageSelector from './components/LanguageSelector'
+import ExitIntentCapture from './components/ExitIntentCapture'
+import NewsletterSignup from './components/NewsletterSignup'
+import { trackPageView } from './lib/hubspot'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -415,7 +418,12 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-12 pt-8 text-center">
+        {/* Newsletter Signup */}
+        <div className="border-t border-white/10 mt-10 pt-10 mb-10">
+          <NewsletterSignup variant="footer" source="newsletter_footer" />
+        </div>
+
+        <div className="border-t border-white/10 pt-8 text-center">
           <p className="font-sans text-xs text-white/30">
             &copy; 2026 Veritas Worldwide Press &middot; veritasworldwide.com &middot; Free &amp; Open Access
           </p>
@@ -428,6 +436,11 @@ function Footer() {
 function PageViewTracker() {
   usePageView()
   useScrollDepth()
+  const location = useLocation()
+  // Sync HubSpot tracking on SPA route changes
+  useEffect(() => {
+    trackPageView(location.pathname)
+  }, [location.pathname])
   return null
 }
 
@@ -521,6 +534,7 @@ export default function App() {
       <AuthModal />
       <Toast />
       <NewsletterPopup />
+      <ExitIntentCapture />
       <PerformanceMonitor />
     </div>
     </I18nProvider>

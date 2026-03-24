@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getArticleBySlug, CATEGORY_META, type ArticleBlock, type ArticleSource } from '../data/articles'
+import NewsletterSignup from '../components/NewsletterSignup'
+import ContentGate from '../components/ContentGate'
 import { chapters } from '../data/chapters'
 import SharePanel from '../components/SharePanel'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
@@ -319,6 +321,17 @@ export default function ArticlePage() {
         </div>
       </div>
 
+      {/* Newsletter CTA */}
+      <div className="max-w-4xl mx-auto px-6 py-8">
+        <NewsletterSignup
+          variant="dark"
+          source="article_cta"
+          contentInterest={article.category}
+          heading="Get investigations like this delivered free."
+          subtext="Join readers who follow the public record — not opinion, not spin. Every claim sourced to primary documents."
+        />
+      </div>
+
       {/* Back to News */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         <Link
@@ -331,6 +344,9 @@ export default function ArticlePage() {
           Back to Current Events
         </Link>
       </div>
+
+      {/* Scroll-depth content gate */}
+      <ContentGate triggerDepth={45} contentInterest={article.category} />
     </article>
   )
 }

@@ -11,6 +11,8 @@ import { TierIcon } from '../components/TierIcons'
 import { HISTORICAL_TIMELINE, EXPANDED_INCIDENTS, EXPANDED_STATS, LOBBYING_DATA, LEGAL_CASES, ISRAEL_DOSSIER_CAROUSEL, PINNED_POSTS } from '../data/israelDossierExpanded'
 import { CarouselDownloader, PinnedPostDownloader } from '../components/DossierCarousel'
 import DossierPDF from '../components/DossierPDF'
+import NewsletterSignup from '../components/NewsletterSignup'
+import ContentGate from '../components/ContentGate'
 
 /* ═══════════════════════════════════════════════════════════
    TYPE DEFINITIONS
@@ -1528,6 +1530,12 @@ export default function IsraelDossierPage() {
 
       {/* Community Forum */}
       <CommunityForum pageId="israel-dossier" pageTitle="The Israel Dossier" />
+
+      {/* ─── Newsletter CTA ─── */}
+      <NewsletterSignup variant="dark" />
+
+      {/* Scroll-depth content gate */}
+      <ContentGate triggerDepth={40} contentInterest="israel-dossier" />
 
       {/* ─── BOTTOM NAV ─── */}
       <div className="border-t border-border pt-8 flex flex-col sm:flex-row gap-4">
