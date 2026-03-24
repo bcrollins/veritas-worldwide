@@ -1,5 +1,5 @@
 {
-  "run": 15,
+  "run": 16,
   "date": "2026-03-24",
   "features": {
     "admin-dashboard": { "composite": 8.2, "status": "GOOD", "notes": "Full admin with login, 7 pages, social pack generator" },
@@ -10,7 +10,7 @@
     "book-reader": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Full reading interface with TTS, font controls, download modal" },
     "evidence-system": { "composite": 9.2, "status": "EXCELLENT", "notes": "Three-tier with semantic CSS variables + dark mode variants" },
     "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Neon PostgreSQL backend with JWT sessions, bcrypt hashing" },
-    "nyt-design": { "composite": 8.0, "status": "GOOD", "notes": "Monochrome palette, crimson accents, professional typography" },    "seo": { "composite": 9.8, "status": "EXCELLENT", "notes": "JSON-LD all pages, per-chapter OG images (31 SVGs), Twitter cards, bot SSR, sitemap, feed.xml. Chapter-specific OG wired into setMetaTags + chapterJsonLd." },
+    "nyt-design": { "composite": 8.0, "status": "GOOD", "notes": "Monochrome palette, crimson accents, professional typography" },    "seo": { "composite": 9.9, "status": "EXCELLENT", "notes": "JSON-LD all pages, per-chapter OG images (31 PNGs + SVGs), Twitter cards, bot SSR with per-chapter OG injection, sitemap, feed.xml. PNG fallback for Facebook/LinkedIn/Slack/Discord compatibility." },
     "build-reliability": { "composite": 8.5, "status": "GOOD", "notes": "TypeScript strict, clean build, lazy loading, code splitting" },
     "israel-dossier": { "composite": 9.2, "status": "EXCELLENT", "notes": "10x expansion, now also accessible as tab on homepage" },
     "content-packs": { "composite": 9.2, "status": "EXCELLENT", "notes": "6 packs + brand kit with 10 SVG assets, accessible as homepage tab" },
@@ -34,7 +34,7 @@
     "pwa": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "manifest.json with brand assets, service worker registered, Add-to-Home-Screen ready" },
     "i18n-forum": { "composite": 9.0, "status": "EXCELLENT", "notes": "nav.forum translation key added to all 30+ languages" },
     "lead-scoring": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Unified lead scoring engine (leadScoring.ts). 11 behavioral events, 7 lifecycle stages, HubSpot + GA4 dual-fire. Wired into 7 components: ChapterPage, BookmarkButton, SearchPage, ContentGate, DonationBanner, NewsletterSignup, AuthContext." },
-    "per-chapter-og": { "composite": 9.2, "status": "EXCELLENT", "notes": "NEW: 31 unique 1200x630 SVG OG images auto-generated via scripts/generate-og-images.mjs. Wired into seo.ts setMetaTags + chapterJsonLd. ChapterPage passes chapter-specific image URL." },
+    "per-chapter-og": { "composite": 9.5, "status": "EXCELLENT", "notes": "UPGRADED: 31 unique 1200x630 OG images in both SVG and PNG formats. PNG conversion via @resvg/resvg-js (scripts/convert-og-to-png.mjs). Bot SSR injects per-chapter PNG og:image for Facebook/LinkedIn/Slack/Discord. ChapterPage references .png." },
     "social-content-calendar": { "composite": 8.5, "status": "GOOD", "notes": "7-day rotating content calendar with platform-specific posts (X, LinkedIn, IG, FB, Reddit, Discord, TikTok). Stored in .claude-state/social-content-calendar.json." },
     "aipac-data-layer": { "composite": 9.3, "status": "EXCELLENT", "notes": "UPGRADED: FEC-sourced dataset — 100 senators, ~80 House reps, 5 exec branch. DonationRecord + MemberContact interfaces. Enrichment map for top 15 recipients with bioguide IDs, itemized donations, lobbyist assignments, DC contact info. 6 key votes, 11 lobbyists, aggregate stats." },
     "aipac-interactive-diagram": { "composite": 9.5, "status": "EXCELLENT", "notes": "UPGRADED: True SVG hemicycle seating — Dems left, GOP right, matching chamber layout. Each seat labeled with member last name. Click popup: Congress.gov portrait, itemized donation history (date+amount+type), correlated Israel votes, assigned lobbyist, DC office/phone/website. Full-width max-w-7xl layout. Two-column hemicycle on xl. Top 20 table, key votes, lobbyist directory, sortable member table." },

@@ -1,5 +1,5 @@
 {
-  "run": 12,
+  "run": 16,
   "date": "2026-03-24",
   "channels": {
     "website": {"status": "live", "url": "https://veritasworldwide.com"},
@@ -21,7 +21,7 @@
     "hubspot_pixel": true,
     "hubspot_forms": true,
     "hubspot_workflows": true,
-    "hubspot_lead_scoring": false,
+    "hubspot_lead_scoring": true,
     "ga4": true,
     "search_console": false,
     "stripe_tiers": true,
@@ -31,10 +31,12 @@
     "prerendering": false,
     "meta_tags": true,
     "og_tags": true,
+    "og_png_images": true,
+    "bot_ssr_og_injection": true,
     "structured_data": true,
     "sitemap": true,
     "robots_txt": true,
-    "internal_linking": false
+    "internal_linking": true
   },
   "email": {
     "capture_form": true,
@@ -55,14 +57,17 @@
     "cookie_consent": true,
     "community_forum": true,
     "tabbed_record_page": true,
-    "brand_kit": true
+    "brand_kit": true,
+    "lead_scoring": true,
+    "social_content_calendar": true
   },
   "content": {
     "social_templates_created": 6,
     "posts_queued": 0,
-    "content_calendar_days": 0,
+    "content_calendar_days": 7,
     "brand_kit_assets": 10,
     "content_packs": 6,
-    "pinned_posts": 3
+    "pinned_posts": 3,
+    "og_png_images": 31
   }
 }
