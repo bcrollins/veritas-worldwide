@@ -3,7 +3,7 @@
  */
 
 /** Stripe Payment Link — "Customer chooses what to pay" donation link */
-export const DONATE_URL = 'https://buy.stripe.com/7sY00jd9F5Qkb857qfasg05'
+export const DONATE_URL = 'https://buy.stripe.com/eVqeVd0mTbaE3FDaCrasg0d'
 
 /** Site tagline — displayed in header */
 export const TAGLINE = 'No party. No agenda. Just the record.'
@@ -15,8 +15,8 @@ export const MEMBERSHIP = {
     monthlyPrice: 5,
     annualPrice: 48,
     annualSavings: 20,
-    monthlyUrl: 'https://buy.stripe.com/eVq00iejE3lbfIX3hv2go0c',
-    annualUrl: 'https://buy.stripe.com/14A7sKcbw8FvfIX9FT2go0d',
+    monthlyUrl: 'https://buy.stripe.com/eVq5kDfhN1A4gspcKzasg07',
+    annualUrl: 'https://buy.stripe.com/eVq9AT1qXemQ3FDdODasg08',
     features: [
       'Early access to new chapters (48 hours before public)',
       'Weekly editorial briefing email',
@@ -32,8 +32,8 @@ export const MEMBERSHIP = {
     monthlyPrice: 12,
     annualPrice: 120,
     annualSavings: 17,
-    monthlyUrl: 'https://buy.stripe.com/3cIdR8ejE6xnbsHcS52go0e',
-    annualUrl: 'https://buy.stripe.com/aFaeVc2AW5tjdAP6tH2go0f',
+    monthlyUrl: 'https://buy.stripe.com/7sYaEXfhN1A4gspcKzasg09',
+    annualUrl: 'https://buy.stripe.com/3cI9AT3z5fqU6RP6mbasg0a',
     features: [
       'Everything in Correspondent',
       'Monthly exclusive deep-dive dossier',
@@ -51,8 +51,8 @@ export const MEMBERSHIP = {
     monthlyPrice: 25,
     annualPrice: 240,
     annualSavings: 20,
-    monthlyUrl: 'https://buy.stripe.com/9B6eVc4J41d38gvg4h2go0g',
-    annualUrl: 'https://buy.stripe.com/28E00i4J44pf40f2dr2go0h',
+    monthlyUrl: 'https://buy.stripe.com/8x2dR95Hd0w0fol25Vasg0b',
+    annualUrl: 'https://buy.stripe.com/14A00jedJ5Qkfol6mbasg0c',
     features: [
       'Everything in Investigator',
       'Your name or initials on the Founding Circle page',
