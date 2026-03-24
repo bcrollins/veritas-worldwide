@@ -663,17 +663,19 @@ export default function ChapterPage() {
 
   useEffect(() => {
     if (chapter) {
+      const chapterOgImage = `${SITE_URL}/og/${chapter.id}.svg`
       setMetaTags({
         title: `${chapter.title} | The Record — Veritas Worldwide Press`,
         description: chapter.subtitle,
         url: `${SITE_URL}/chapter/${chapter.id}`,
         type: 'article',
+        image: chapterOgImage,
         publishedTime: '2026-03-01',
         author: chapter.author,
         section: 'Documentary History',
         tags: chapter.keywords,
       })
-      setJsonLd(chapterJsonLd(chapter))
+      setJsonLd(chapterJsonLd({ ...chapter, image: chapterOgImage }))
       scoreChapterViewed(chapter.id, chapter.title)
     } else {
       document.title = 'Chapter Not Found | The Record — Veritas Worldwide Press'

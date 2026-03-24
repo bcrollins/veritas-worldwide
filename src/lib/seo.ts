@@ -14,6 +14,7 @@ interface SEOConfig {
   description: string
   url: string
   type?: 'website' | 'article'
+  image?: string
   publishedTime?: string
   author?: string
   section?: string
@@ -25,7 +26,8 @@ interface SEOConfig {
  * Creates tags if they don't exist, updates them if they do.
  */
 export function setMetaTags(config: SEOConfig): void {
-  const { title, description, url, type = 'website', publishedTime, author, section, tags } = config
+  const { title, description, url, type = 'website', image, publishedTime, author, section, tags } = config
+  const ogImage = image || OG_IMAGE
 
   document.title = title
 
@@ -36,14 +38,14 @@ export function setMetaTags(config: SEOConfig): void {
     'og:url': url,
     'og:type': type,
     'og:site_name': SITE_NAME,
-    'og:image': OG_IMAGE,
+    'og:image': ogImage,
     'og:image:width': '1200',
     'og:image:height': '630',
     'twitter:card': 'summary_large_image',
     'twitter:site': TWITTER_HANDLE,
     'twitter:title': title,
     'twitter:description': description,
-    'twitter:image': OG_IMAGE,
+    'twitter:image': ogImage,
   }
 
   if (type === 'article') {
@@ -171,7 +173,9 @@ export function chapterJsonLd(chapter: {
   publishDate: string
   dateRange?: string
   keywords: string[]
+  image?: string
 }): Record<string, unknown>[] {
+  const chapterImage = chapter.image || OG_IMAGE
   return [
     {
       '@context': 'https://schema.org',
@@ -191,7 +195,7 @@ export function chapterJsonLd(chapter: {
           'url': OG_IMAGE,
         },
       },
-      'image': OG_IMAGE,
+      'image': chapterImage,
       'datePublished': '2026-03-01',
       'dateModified': '2026-03-23',
       'mainEntityOfPage': {

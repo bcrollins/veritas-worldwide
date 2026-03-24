@@ -1,0 +1,155 @@
+{
+  "version": "1.0",
+  "created": "2026-03-24",
+  "updatedRun": 13,
+  "cadence": "7-day rotating cycle",
+  "notes": "Platform-specific adaptations. All copy is measured, authoritative, source-first. Never sensational.",
+  "week1": [
+    {
+      "day": "Monday",
+      "theme": "Chapter Spotlight: Jekyll Island & the Federal Reserve",
+      "posts": [
+        {
+          "platform": "x",
+          "type": "thread",
+          "content": [
+            "In November 1910, six men representing 1/4 of the world's wealth boarded a private rail car in New Jersey.\n\nTheir destination: Jekyll Island, Georgia.\nTheir mission: draft the blueprint for a new central bank.\n\nEvery detail is sourced. Here's the documented record. 🧵",
+            "Senator Nelson Aldrich organized the trip under a false cover story — they claimed to be duck hunting.\n\nAttendees included representatives from J.P. Morgan, Rockefeller, and the Rothschild banking interests.\n\nSource: The Aldrich Papers, Library of Congress.",
+            "The bill they drafted became the Federal Reserve Act of 1913.\n\nIt was passed two days before Christmas, when most Congress members had gone home.\n\nSource: Congressional Record, 63rd Congress, December 23, 1913.",
+            "The Federal Reserve is not federal. It has no reserves. It is a private banking cartel with a government charter.\n\nRead the full documented chapter — with every claim sourced to primary documents:\nhttps://veritasworldwide.com/chapter/chapter-3",
+            "Every claim in The Record is classified:\n\n✓ Verified — court records, congressional testimony\n◐ Circumstantial — documented but interpretive\n⚠ Disputed — sworn testimony, not confirmed\n\nJudge the evidence yourself.\nhttps://veritasworldwide.com/methodology"
+          ]
+        },
+        {
+          "platform": "linkedin",
+          "type": "article_intro",
+          "content": "The Jekyll Island meeting of 1910 is one of the most consequential secret gatherings in American financial history — and one of the most thoroughly documented.\n\nSix men, representing approximately one-quarter of the world's wealth, met on a private island to draft what would become the Federal Reserve Act.\n\nAt Veritas Worldwide Press, we've compiled the primary source documentation into a single, free, open-access chapter. Every claim is classified by evidence tier and sourced to congressional records, personal papers, and financial archives.\n\nRead the full chapter: https://veritasworldwide.com/chapter/chapter-3"
+        },
+        {
+          "platform": "instagram",
+          "type": "carousel",
+          "content": "Use existing content pack: Jekyll Island carousel (10 slides). Caption: 'In 1910, six men secretly drafted the blueprint for the Federal Reserve on a private island. Every fact sourced to primary documents. Link in bio for the full chapter. #PrimarySources #DocumentaryHistory #FederalReserve'",
+          "asset": "social-assets/content-packs/federal-reserve"
+        },
+        {
+          "platform": "facebook",
+          "type": "discussion",
+          "content": "Discussion question: The Federal Reserve Act was passed two days before Christmas 1913, when most Congress members had gone home. The meeting that drafted it took place in secret.\n\nShould the creation of a nation's central bank require this level of secrecy? What does the historical record tell us?\n\nRead the sourced chapter: https://veritasworldwide.com/chapter/chapter-3"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "theme": "Source Document Deep-Dive: CIA Dispatch 1035-960",
+      "posts": [
+        {
+          "platform": "x",
+          "type": "single",
+          "content": "In 1967, the CIA issued Dispatch 1035-960: a classified memo instructing field assets on how to counter criticism of the Warren Commission Report.\n\nIt was declassified in 1976.\n\nThis is not theory. This is a government document.\nhttps://veritasworldwide.com/chapter/foreword"
+        },
+        {
+          "platform": "threads",
+          "type": "single",
+          "content": "Did you know the term 'conspiracy theory' was weaponized by a specific CIA memo?\n\nDispatch 1035-960, issued April 1, 1967. Declassified 1976. It instructed media contacts on how to discredit critics of the Warren Commission.\n\nThe document is real. Read it sourced: veritasworldwide.com/chapter/foreword"
+        },
+        {
+          "platform": "reddit",
+          "type": "self_post",
+          "subreddit": "r/history or r/conspiracy (adapt tone)",
+          "content": "Title: CIA Dispatch 1035-960 (1967, declassified 1976) — the documented origin of 'conspiracy theory' as a dismissal tactic\n\nBody: I've been compiling a documentary history sourced entirely to primary documents — court records, congressional testimony, declassified files. The foreword covers this CIA dispatch, which instructed field assets on countering criticism of the Warren Commission.\n\nThe full sourced text with evidence tier classification: https://veritasworldwide.com/chapter/foreword\n\nHappy to answer questions about the sourcing methodology."
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "theme": "On This Day — Historical Tie-In (rotate weekly)",
+      "posts": [
+        {
+          "platform": "x",
+          "type": "single",
+          "content": "On this day in history: [Research specific date events from chapters]\n\nFormat: Date + documented event + primary source citation + chapter link.\n\nTemplate: 'On [date], [event]. Source: [primary document]. Read the full documented record: [chapter URL]'"
+        },
+        {
+          "platform": "instagram",
+          "type": "story",
+          "content": "Story slide: 'ON THIS DAY' header + key fact + source citation + swipe-up to chapter. Use brand template with parchment bg + crimson accents."
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "theme": "Methodology & Evidence Tier Explainer",
+      "posts": [
+        {
+          "platform": "x",
+          "type": "single",
+          "content": "How do you know what's verified vs. what's alleged?\n\nEvery claim in The Record is classified:\n\n✓ VERIFIED — Court filings, congressional records, declassified documents\n◐ CIRCUMSTANTIAL — Documented facts, interpretive connection\n⚠ DISPUTED — Sworn testimony, not independently confirmed\n\nTransparency > trust.\nhttps://veritasworldwide.com/methodology"
+        },
+        {
+          "platform": "linkedin",
+          "type": "post",
+          "content": "In an era of misinformation, the methodology matters more than the conclusion.\n\nAt Veritas Worldwide Press, every claim is classified into one of three evidence tiers — Verified, Circumstantial, or Disputed — with full source citations.\n\nReaders can evaluate each piece of evidence independently. That's the standard investigative journalism should aspire to.\n\nhttps://veritasworldwide.com/methodology"
+        },
+        {
+          "platform": "tiktok",
+          "type": "script",
+          "content": "Hook: 'How do you know if something is actually true?'\n\nBody: Show the three evidence tiers with visual examples. Green = court records. Amber = documented but interpretive. Red = alleged but unconfirmed.\n\nCTA: 'Every chapter at veritasworldwide.com uses this system. Judge the evidence yourself.'\n\nDuration: 30-45 seconds."
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "theme": "Pull Quote + Discussion Question",
+      "posts": [
+        {
+          "platform": "x",
+          "type": "single",
+          "content": "\"Give me control of a nation's money supply, and I care not who makes its laws.\"\n— Attributed to Mayer Amschel Rothschild (disputed — no primary source confirms this exact quote)\n\nEvidence tier: ⚠ Disputed\n\nWe label what's verified and what isn't. That's the difference.\nhttps://veritasworldwide.com/chapter/chapter-1"
+        },
+        {
+          "platform": "instagram",
+          "type": "quote_graphic",
+          "content": "Pull quote graphic (1080x1080): Parchment background, crimson accent bar, Playfair Display quote, evidence tier badge, source citation, chapter link. Use brand kit assets.",
+          "asset": "brand-kit/social-profile.svg"
+        },
+        {
+          "platform": "facebook",
+          "type": "discussion",
+          "content": "Question for the community: If you could read the primary source documents behind any historical event covered in The Record, which chapter would you start with?\n\nAll 31 chapters are free and open access: https://veritasworldwide.com\n\n#PrimarySources #OpenAccess #DocumentaryHistory"
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "theme": "Community Engagement",
+      "posts": [
+        {
+          "platform": "x",
+          "type": "single",
+          "content": "Weekend reading recommendation: If you're new to The Record, start with the Foreword — it explains our methodology and evidence standards before you encounter a single claim.\n\nThen Chapter 9 (JFK) or Chapter 3 (Jekyll Island) are reader favorites.\n\nAll free: https://veritasworldwide.com"
+        },
+        {
+          "platform": "discord",
+          "type": "event",
+          "content": "Host weekly 'Source Review Saturday' — community members submit primary sources they've found. Discuss verification methods and evidence tier classification. Build collaborative research culture."
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "theme": "Week in the Record Recap",
+      "posts": [
+        {
+          "platform": "x",
+          "type": "single",
+          "content": "This week in The Record:\n\n📖 Chapter spotlight: Jekyll Island & the Fed\n📄 Source deep-dive: CIA Dispatch 1035-960\n🔍 Methodology explainer: Evidence tiers\n💬 Community question: Where would you start?\n\nNext week: The Israel Dossier — $310B+ in documented aid.\n\nhttps://veritasworldwide.com"
+        },
+        {
+          "platform": "instagram",
+          "type": "story",
+          "content": "Sunday recap story: 5 slides summarizing the week's content + preview of next week's chapter spotlight. End with 'What should we cover next? Poll' using IG story poll feature."
+        }
+      ]
+    }
+  ]
+}
