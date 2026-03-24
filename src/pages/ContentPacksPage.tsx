@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { articles } from '../data/articles'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import { PACK_CAROUSELS } from '../data/contentPackCarousels'
+import { CarouselDownloader } from '../components/DossierCarousel'
+import type { CarouselSlide } from '../data/israelDossierExpanded'
 
 const SITE = 'https://veritasworldwide.com'
 
@@ -404,6 +407,29 @@ function PackCard({ pack }: { pack: ContentPack }) {
             </button>
           </div>
         </div>
+
+        {/* 10-Slide Instagram Carousel */}
+        {(() => {
+          const carousel = PACK_CAROUSELS.find(c => c.packId === pack.id)
+          if (!carousel) return null
+          const carouselSlides: CarouselSlide[] = carousel.slides.map(s => ({
+            headline: s.headline,
+            stat: s.stat,
+            body: s.body,
+            source: s.source,
+            sourceUrl: pack.platforms.twitter.includes('veritasworldwide.com') ? `https://veritasworldwide.com/news/${pack.articleSlug || ''}` : 'https://veritasworldwide.com',
+            bgStyle: s.bgStyle,
+          }))
+          return (
+            <div className="mt-4">
+              <CarouselDownloader
+                slides={carouselSlides}
+                title={`${carousel.title} — 10 Slides`}
+                filenamePrefix={`veritas-${pack.id}`}
+              />
+            </div>
+          )
+        })()}
       </div>
     </div>
   )

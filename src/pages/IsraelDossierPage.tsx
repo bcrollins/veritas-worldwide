@@ -8,6 +8,9 @@ import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 import { TierIcon } from '../components/TierIcons'
+import { HISTORICAL_TIMELINE, EXPANDED_INCIDENTS, EXPANDED_STATS, LOBBYING_DATA, LEGAL_CASES, ISRAEL_DOSSIER_CAROUSEL, PINNED_POSTS } from '../data/israelDossierExpanded'
+import { CarouselDownloader, PinnedPostDownloader } from '../components/DossierCarousel'
+import DossierPDF from '../components/DossierPDF'
 
 /* ═══════════════════════════════════════════════════════════
    TYPE DEFINITIONS
@@ -912,12 +915,16 @@ function LiveCounter() {
    ═══════════════════════════════════════════════════════════ */
 const SECTIONS = [
   { id: 'overview', label: 'Overview' },
+  { id: 'timeline', label: 'Timeline' },
   { id: 'money-trail', label: 'Follow the Money' },
   { id: 'financial', label: 'U.S. Aid & Spending' },
   { id: 'humanitarian', label: 'Humanitarian Impact' },
   { id: 'legal', label: 'International Law' },
   { id: 'social', label: 'Domestic Policy' },
+  { id: 'lobbying', label: 'AIPAC & Lobbying' },
+  { id: 'infrastructure', label: 'Infrastructure' },
   { id: 'incidents', label: 'Documented Incidents' },
+  { id: 'downloads', label: 'Download & Share' },
   { id: 'methodology', label: 'Methodology' },
 ]
 
@@ -1043,7 +1050,59 @@ export default function IsraelDossierPage() {
         <p className="font-body text-sm text-ink-muted leading-relaxed">
           This page presents documented facts compiled from primary sources. Every figure links to its original source. Click any statistic card to expand it and see where the money went, what weapons were purchased, and what their documented impact has been. Where data is disputed or subject to methodological debate, we note it. This page takes no editorial position — it presents the documented record and lets the reader draw their own conclusions.
         </p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <DossierPDF />
+        </div>
       </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+         HISTORICAL TIMELINE — From Balfour to Present
+         ═══════════════════════════════════════════════════════════ */}
+      <section id="timeline" className="mb-16 scroll-mt-20">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
+          <h2 className="font-display text-2xl font-bold text-ink">Historical Timeline: 1917–Present</h2>
+        </div>
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
+          A chronological record of key events from the Balfour Declaration to the present day. Every entry is sourced to primary documents.
+        </p>
+        <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-6">
+          {HISTORICAL_TIMELINE.length} documented events · Click any source to verify
+        </p>
+        <div className="relative">
+          <div className="absolute left-[22px] top-0 bottom-0 w-px bg-border" />
+          <div className="space-y-1">
+            {HISTORICAL_TIMELINE.map((event, i) => (
+              <div key={i} className="relative pl-12 pb-4">
+                <div className="absolute left-[14px] top-1.5 w-[17px] h-[17px] rounded-full border-2 border-crimson bg-parchment dark:bg-ink flex items-center justify-center z-10">
+                  <div className="w-[7px] h-[7px] rounded-full bg-crimson" />
+                </div>
+                <div className="p-4 rounded-sm border border-border bg-surface hover:border-crimson/20 hover:shadow-sm transition-all">
+                  <div className="flex items-start gap-3">
+                    {event.imageUrl && (
+                      <img src={event.imageUrl} alt={event.title} loading="lazy" className="w-16 h-16 object-cover rounded-sm flex-shrink-0 hidden sm:block" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap mb-1">
+                        <span className="font-display text-lg font-bold text-crimson">{event.year}</span>
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.55rem] font-sans font-bold tracking-wider uppercase text-white ${event.tier === 'verified' ? 'bg-ink' : 'bg-ink/70'}`}>
+                          {event.tier === 'verified' ? '✓ Verified' : '◐ Circumstantial'}
+                        </span>
+                      </div>
+                      <h3 className="font-sans text-sm font-bold text-ink mb-1">{event.title}</h3>
+                      <p className="font-body text-xs text-ink-muted leading-relaxed">{event.description}</p>
+                      <a href={event.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline transition-colors">
+                        <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        {event.source}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ═══════════════════════════════════════════════════════════
          FOLLOW THE MONEY — Interactive Money Trail
@@ -1110,7 +1169,109 @@ export default function IsraelDossierPage() {
       })}
 
       {/* ═══════════════════════════════════════════════════════════
-         DOCUMENTED INCIDENTS — Expandable with multimedia
+         AIPAC & CONGRESSIONAL LOBBYING
+         ═══════════════════════════════════════════════════════════ */}
+      <section id="lobbying" className="mb-16 scroll-mt-20">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
+          <h2 className="font-display text-2xl font-bold text-ink">AIPAC & Congressional Lobbying</h2>
+        </div>
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-6 max-w-3xl">
+          The pro-Israel lobby was the single largest source of PAC spending in the 2024 federal election cycle. Every dollar traced through FEC filings.
+        </p>
+        <div className="space-y-3">
+          {LOBBYING_DATA.map((record, i) => (
+            <div key={i} className="p-4 border border-border rounded-sm bg-surface hover:border-crimson/20 hover:shadow-sm transition-all">
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap mb-1">
+                    <span className="font-display text-xl font-bold text-crimson">{record.amount}</span>
+                    <span className="font-sans text-[0.55rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-ink text-white">{record.cycle}</span>
+                  </div>
+                  <p className="font-sans text-sm font-bold text-ink">{record.organization}</p>
+                  <p className="font-body text-xs text-ink-muted mt-1">Recipients: {record.recipients}</p>
+                  {record.note && <p className="font-body text-xs text-ink-muted italic mt-1">{record.note}</p>}
+                </div>
+                <a href={record.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline flex-shrink-0">
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  {record.source}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Legal Cases */}
+        <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted mt-10 mb-4">International Legal Record</h3>
+        <div className="space-y-3">
+          {LEGAL_CASES.map((legalCase, i) => (
+            <div key={i} className="p-4 border border-border rounded-sm bg-surface">
+              <div className="flex items-center gap-2 flex-wrap mb-2">
+                <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.55rem] font-sans font-bold tracking-wider uppercase text-white ${legalCase.status === 'decided' ? 'bg-ink' : legalCase.status === 'ongoing' ? 'bg-crimson' : 'bg-ink/70'}`}>
+                  {legalCase.status}
+                </span>
+                <span className="font-sans text-[0.55rem] text-ink-faint">{legalCase.court} · {legalCase.date}</span>
+              </div>
+              <h4 className="font-sans text-sm font-bold text-ink mb-1">{legalCase.title}</h4>
+              <p className="font-body text-xs text-ink-muted leading-relaxed mb-1">{legalCase.ruling}</p>
+              <p className="font-body text-xs text-ink-muted italic leading-relaxed mb-2">{legalCase.significance}</p>
+              <a href={legalCase.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline">
+                <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                View ruling
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+         INFRASTRUCTURE DESTRUCTION
+         ═══════════════════════════════════════════════════════════ */}
+      <section id="infrastructure" className="mb-16 scroll-mt-20">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
+          <h2 className="font-display text-2xl font-bold text-ink">Infrastructure Destruction & Expanded Data</h2>
+        </div>
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-6 max-w-3xl">
+          Additional documented statistics covering infrastructure, domestic policy, lobbying, and comparative analysis.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {EXPANDED_STATS.map((stat, i) => (
+            <div key={i} className="p-5 rounded-sm border border-border bg-surface hover:shadow-sm transition-all">
+              <div className="flex items-start gap-3">
+                {stat.imageUrl && (
+                  <img src={stat.imageUrl} alt={stat.label} loading="lazy" className="w-14 h-14 object-cover rounded-sm flex-shrink-0" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                )}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="font-display text-3xl md:text-4xl font-bold leading-tight text-crimson">{stat.value}</p>
+                    {stat.tier && (
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.5rem] font-sans font-bold tracking-wider uppercase text-white flex-shrink-0 ${stat.tier === 'verified' ? 'bg-ink' : 'bg-ink/70'}`}>
+                        {stat.tier === 'verified' ? '✓' : '◐'}
+                      </span>
+                    )}
+                  </div>
+                  <p className="font-body text-sm text-ink leading-relaxed mt-2">{stat.label}</p>
+                  {stat.note && <p className="font-body text-xs text-ink-muted italic mt-1">{stat.note}</p>}
+                  {stat.details && stat.details.map((d, j) => (
+                    <div key={j} className="mt-2 pt-2 border-t border-current/5">
+                      <p className="font-sans text-[0.55rem] font-bold tracking-wider uppercase text-ink-muted mb-0.5">{d.title}</p>
+                      <p className="font-body text-xs text-ink-muted leading-relaxed">{d.text}</p>
+                    </div>
+                  ))}
+                  <a href={stat.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline">
+                    <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    {stat.source}
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+         DOCUMENTED INCIDENTS — Expandable with multimedia (ORIGINAL + EXPANDED)
          ═══════════════════════════════════════════════════════════ */}
       <section id="incidents" className="mb-16 scroll-mt-20">
         <div className="flex items-center gap-3 mb-3">
@@ -1138,9 +1299,17 @@ export default function IsraelDossierPage() {
           ))}
         </div>
 
+        {/* Expanded Incidents */}
+        <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted mt-10 mb-4">Additional Documented Incidents</h3>
+        <div className="space-y-4">
+          {EXPANDED_INCIDENTS.map((incident, i) => (
+            <IncidentCard key={`exp-${i}`} incident={incident} />
+          ))}
+        </div>
+
         <div className="mt-6 p-4 border border-border rounded-sm bg-surface">
           <p className="font-body text-xs text-ink-muted italic leading-relaxed">
-            This is not an exhaustive list. Thousands of additional incidents have been documented by Airwars, OHCHR, Al Jazeera, and other monitoring organizations. These six were selected for the strength and independence of their evidence.
+            This is not an exhaustive list. Thousands of additional incidents have been documented by Airwars, OHCHR, Al Jazeera, and other monitoring organizations. These {INCIDENTS.length + EXPANDED_INCIDENTS.length} were selected for the strength and independence of their evidence.
             <a href="https://gaza-patterns-harm.airwars.org/" target="_blank" rel="noopener noreferrer" className="text-crimson hover:underline ml-1">
               View the Airwars Gaza Patterns of Harm database →
             </a>
@@ -1221,6 +1390,44 @@ export default function IsraelDossierPage() {
               <span className="font-sans text-xs text-ink group-hover:text-crimson transition-colors leading-snug">{doc.label}</span>
             </a>
           ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+         DOWNLOAD & SHARE — Carousels, Pinned Posts, PDF
+         ═══════════════════════════════════════════════════════════ */}
+      <section id="downloads" className="mb-16 scroll-mt-20">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
+          <h2 className="font-display text-2xl font-bold text-ink">Download & Share</h2>
+        </div>
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-8 max-w-3xl">
+          Download the complete dossier as a PDF, share a 10-slide Instagram carousel, or pin high-impact images to your profile. Every asset is free to use — the documented record only matters if people see it.
+        </p>
+
+        {/* PDF Download */}
+        <div className="mb-8 p-5 border border-border rounded-sm bg-surface">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <p className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink-muted mb-1">Complete Document</p>
+              <p className="font-body text-sm text-ink-muted">Download the entire Israel Dossier as a print-quality PDF with all statistics, incidents, and sources.</p>
+            </div>
+            <DossierPDF />
+          </div>
+        </div>
+
+        {/* Instagram Carousel */}
+        <div className="mb-8">
+          <CarouselDownloader
+            slides={ISRAEL_DOSSIER_CAROUSEL}
+            title="The Israel Dossier — 10 Slides That Matter"
+            filenamePrefix="veritas-israel-dossier"
+          />
+        </div>
+
+        {/* Pinned Profile Posts */}
+        <div className="mb-8">
+          <PinnedPostDownloader posts={PINNED_POSTS} />
         </div>
       </section>
 
