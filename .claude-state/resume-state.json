@@ -1,8 +1,8 @@
 {
-  "run": 8,
+  "run": 9,
   "date": "2026-03-24",
-  "last": "ecommerce-optimization+hubspot-pipeline+a11y-testids+branded-loading",
-  "next": "deep-state-page-expansion+performance-lighthouse+adsense-activation",
+  "last": "deepstate-evidence-colors+contentgate-zindex+deepstate-subscriber-capture",
+  "next": "deep-state-page-10x-expansion+adsense-activation+performance-lighthouse",
   "queue": [
     "deep-state-page-10x-expansion",
     "adsense-activation-revenue",
@@ -15,17 +15,9 @@
     "chapter-pdf-export-per-chapter"
   ],
   "fixes_this_run": [
-    "Fixed SocialProofBanner dead API endpoint -> static stats with IntersectionObserver animations (47,500+ readers, 87 countries)",
-    "Consolidated duplicate exit-intent popups (NewsletterPopup now migrates localStorage leads to HubSpot, renders null)",
-    "Created conversionTracking.ts: Stripe checkout intent tracking + return detection + GA4 purchase events",
-    "Wired trackCheckoutIntent to MembershipPage CTAs, trackDonationIntent to DonationBanner",
-    "Added StickyMembershipBar: scroll-triggered bottom CTA on all content pages",
-    "Added Founding Circle scarcity indicator (animated pulse, '14 spots remaining')",
-    "Added donation impact reframing ('$25 funds 1 document verification')",
-    "Added Product structured data (JSON-LD) to MembershipPage with all 6 pricing offers",
-    "Enhanced ReadingStreak: membership nudge at 5+ day streak",
-    "Branded Suspense fallback with role=status, aria-label, loading text",
-    "Added data-testid to 9 critical interactive elements",
-    "Wired HubSpot subscriber pipeline into IsraelDossierPage (NewsletterSignup + ContentGate)"
+    "Fixed DeepStatePage TIER_CONFIG: monochrome colors -> semantic CSS variables (verified=#166534, circumstantial=#92400E, disputed=#991B1B)",
+    "Added icon field to TIER_CONFIG for future badge enhancement (✓, ◐, ⚠)",
+    "Fixed ContentGate z-index from z-50 to z-40 (header stacking conflict)",
+    "Wired NewsletterSignup + ContentGate into DeepStatePage (completes subscriber pipeline across all major pages)"
   ]
 }
