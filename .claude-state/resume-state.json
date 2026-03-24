@@ -1,13 +1,12 @@
 {
-  "lastRun": 13,
+  "lastRun": 14,
   "lastDate": "2026-03-24",
   "completedThisRun": [
-    "lead-scoring-engine",
-    "lead-scoring-wiring-7-components",
-    "social-content-calendar-7-day",
-    "per-chapter-og-image-generation",
-    "og-image-seo-wiring",
-    "stripe-branding-instructions"
+    "aipac-data-layer-fec-sourced",
+    "aipac-interactive-diagram-component",
+    "aipac-page-seo-wrapper",
+    "aipac-tab-wiring-record-tabs",
+    "aipac-homepage-lazy-load-hash-link"
   ],
   "completedPriorRuns": [
     "tabbed-record-page",
@@ -17,8 +16,15 @@
     "pwa-manifest",
     "forum-i18n-30-languages",
     "seo-tab-meta-fix",
-    "growth-state-tracking"
-  ],  "queue": [
+    "growth-state-tracking",
+    "lead-scoring-engine",
+    "lead-scoring-wiring-7-components",
+    "social-content-calendar-7-day",
+    "per-chapter-og-image-generation",
+    "og-image-seo-wiring",
+    "stripe-branding-instructions"
+  ],
+  "queue": [
     "prerendering-ssg-for-seo",
     "adsense-activation",
     "abandoned-cart-recovery-emails",
@@ -30,6 +36,6 @@
     "lead-scoring-hubspot-server-sync",
     "og-image-png-fallback-for-social"
   ],
-  "featureCount": 36,
-  "compositeAverage": 8.5
+  "featureCount": 41,
+  "compositeAverage": 8.6
 }

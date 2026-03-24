@@ -1,5 +1,5 @@
 {
-  "run": 13,
+  "run": 14,
   "date": "2026-03-24",
   "features": {
     "admin-dashboard": { "composite": 8.2, "status": "GOOD", "notes": "Full admin with login, 7 pages, social pack generator" },
@@ -28,13 +28,18 @@
     "cookie-consent": { "composite": 9.0, "status": "EXCELLENT", "notes": "GDPR-compliant banner with GA4 Consent Mode v2" },
     "ab-testing": { "composite": 8.0, "status": "GOOD", "notes": "Zero-dep framework, 2 experiments live" },
     "chapter-pdf-export": { "composite": 8.5, "status": "GOOD", "notes": "Per-chapter PDF with cover, evidence tiers, quotes" },
-    "tabbed-record-page": { "composite": 8.8, "status": "GOOD", "notes": "Left sidebar tabs (desktop) / bottom tabs (mobile) — 5 sections. Lazy-loaded panels. Hash deep links. SEO meta re-asserts on tab switch." },
+    "tabbed-record-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "Left sidebar tabs (desktop) / bottom tabs (mobile) — 6 sections incl AIPAC. Lazy-loaded panels. Hash deep links (/#aipac). SEO meta re-asserts on tab switch." },
     "brand-kit": { "composite": 8.5, "status": "GOOD", "notes": "10 SVG assets — logos, color palette, social banners, social profile. Downloadable from Content Packs tab." },
     "community-forum": { "composite": 8.0, "status": "GOOD", "notes": "Reddit-style forum at /forum with 6 topic categories. CommunityForum component with threading, voting, sort modes." },
     "pwa": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "manifest.json with brand assets, service worker registered, Add-to-Home-Screen ready" },
     "i18n-forum": { "composite": 9.0, "status": "EXCELLENT", "notes": "nav.forum translation key added to all 30+ languages" },
     "lead-scoring": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Unified lead scoring engine (leadScoring.ts). 11 behavioral events, 7 lifecycle stages, HubSpot + GA4 dual-fire. Wired into 7 components: ChapterPage, BookmarkButton, SearchPage, ContentGate, DonationBanner, NewsletterSignup, AuthContext." },
     "per-chapter-og": { "composite": 9.2, "status": "EXCELLENT", "notes": "NEW: 31 unique 1200x630 SVG OG images auto-generated via scripts/generate-og-images.mjs. Wired into seo.ts setMetaTags + chapterJsonLd. ChapterPage passes chapter-specific image URL." },
-    "social-content-calendar": { "composite": 8.5, "status": "GOOD", "notes": "NEW: 7-day rotating content calendar with platform-specific posts (X, LinkedIn, IG, FB, Reddit, Discord, TikTok). Stored in .claude-state/social-content-calendar.json." }
+    "social-content-calendar": { "composite": 8.5, "status": "GOOD", "notes": "7-day rotating content calendar with platform-specific posts (X, LinkedIn, IG, FB, Reddit, Discord, TikTok). Stored in .claude-state/social-content-calendar.json." },
+    "aipac-data-layer": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: FEC-sourced dataset — 100 senators, ~80 House reps, 5 executive branch officials. Career totals (PAC direct, IE, bundled donors). 6 key votes with roll-call breakdowns. 11 registered AIPAC lobbyists. Aggregate stats (126.9M 2024 cycle, 96% win rate)." },
+    "aipac-interactive-diagram": { "composite": 9.2, "status": "EXCELLENT", "notes": "NEW: Hemicycle seating charts (Senate + House) with contribution-tier dot sizing. Search/filter by chamber/party/amount. MemberCard detail popup with PAC/IE/donor bar. Top 20 table. Collapsible key votes with yea/nay bars. Lobbyist profiles. Sortable full-member table. Sources/methodology footer." },
+    "aipac-page-seo": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: AipacPage wrapper with Dataset structured data (schema.org). SEO meta for /#aipac hash. Lazy-loaded via Suspense in HomePage." },
+    "aipac-tab-integration": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: 'aipac' added to RecordTab union. Globe icon in sidebar. Hash deep-link /#aipac. Section count updated to 6." },
+    "aipac-executive-branch": { "composite": 8.5, "status": "GOOD", "notes": "NEW: 5 executive branch officials (Trump, Vance, Rubio, Hegseth, Stefanik) with pro-Israel policy stances displayed in card grid." }
   }
 }
