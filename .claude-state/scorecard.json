@@ -1,5 +1,5 @@
 {
-  "run": 21,
+  "run": 22,
   "date": "2026-03-24",
   "features": {
     "nyt-style-header": { "composite": 9.5, "status": "EXCELLENT", "notes": "3-tier NYT-style masthead — utility bar, centered nameplate, sticky section nav." },
@@ -7,9 +7,13 @@
     "nyt-style-homepage": { "composite": 9.3, "status": "EXCELLENT", "notes": "3-column hero, 4-col investigations grid, sidebar (Most Read, Newsletter, About)." },
     "nyt-style-chapter-page": { "composite": 9.2, "status": "EXCELLENT", "notes": "Two-column layout (article + sticky sidebar). Chapter position bar. Evidence summary sidebar with visual bar." },
     "nyt-style-article-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "Full-width container. Section bar. Two-column with sticky sidebar. Semantic evidence tier colors." },
-    "nyt-style-methodology-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Two-column with sidebar (on-page nav, evidence legend, related pages, support CTA). Section bar breadcrumb." },
-    "nyt-style-sources-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Two-column with sidebar (8 verification databases, related pages, support CTA). Section bar breadcrumb." },
-    "nyt-style-search-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Two-column with sidebar (popular topics, chapter browser, related pages). Section bar breadcrumb." },
+    "nyt-style-methodology-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "Two-column with sidebar (on-page nav, evidence legend, related pages, support CTA). Section bar breadcrumb." },
+    "nyt-style-sources-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "Two-column with sidebar (8 verification databases, related pages, support CTA). Section bar breadcrumb." },
+    "nyt-style-search-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "Two-column with sidebar (popular topics, chapter browser, related pages). Section bar breadcrumb." },
+    "nyt-style-bookmarks-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Two-column with reading progress sidebar, quick nav, support CTA. Section bar breadcrumb." },
+    "nyt-style-about-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Two-column with at-a-glance stats, evidence tiers, related pages sidebar. Editorial team cards. Section bar breadcrumb." },
+    "nyt-style-privacy-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Two-column with on-page nav sidebar, related pages. Section bar breadcrumb." },
+    "nyt-style-terms-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Two-column with on-page nav sidebar, CC license badge, related pages. Section bar breadcrumb." },
     "lazy-chapter-splitting": { "composite": 9.0, "status": "EXCELLENT", "notes": "31 individual chapter files, hybrid loader with cache." },
     "admin-dashboard": { "composite": 8.2, "status": "GOOD", "notes": "Full admin with login, 7 pages, social pack generator." },
     "sharing": { "composite": 8.5, "status": "GOOD", "notes": "SharePanel on all content pages, 7 platforms + native share." },
@@ -19,7 +23,7 @@
     "book-reader": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Full reading interface with TTS, font controls, download modal." },
     "evidence-system": { "composite": 9.2, "status": "EXCELLENT", "notes": "Three-tier with semantic CSS variables + dark mode variants." },
     "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Neon PostgreSQL backend with JWT sessions, bcrypt hashing." },
-    "nyt-design": { "composite": 9.5, "status": "EXCELLENT", "notes": "UPGRADED: Full NYT consistency across ALL main pages — header, footer, homepage, chapter, article, methodology, sources, search." },
+    "nyt-design": { "composite": 9.7, "status": "EXCELLENT", "notes": "UPGRADED: Full NYT consistency across ALL pages — header, footer, homepage, chapter, article, methodology, sources, search, bookmarks, about, privacy, terms." },
     "seo": { "composite": 9.9, "status": "EXCELLENT", "notes": "JSON-LD all pages, per-chapter OG images (31 PNGs + SVGs), Twitter cards, bot SSR, sitemap, feed.xml." },
     "build-reliability": { "composite": 8.5, "status": "GOOD", "notes": "TypeScript strict, clean build, lazy loading, code splitting." },
     "israel-dossier": { "composite": 9.2, "status": "EXCELLENT", "notes": "10x expansion, homepage tab." },
@@ -54,6 +58,6 @@
     "community-forum": { "composite": 9.5, "status": "EXCELLENT", "notes": "Full Reddit clone — 9 communities, threaded comments, voting, awards, polls." },
     "full-width-layout": { "composite": 9.0, "status": "EXCELLENT", "notes": "All pages widened to max-w-[1920px]. Responsive padding." },
     "power-profiles-system": { "composite": 9.2, "status": "EXCELLENT", "notes": "235+ profiles with sourced claims, donations, policy actions, connections." },
-    "power-profiles-data": { "composite": 9.5, "status": "EXCELLENT", "notes": "UPGRADED: All 91 profiles fully expanded — 0 stubs remaining. Sourced claims, quotes, donations, policy actions, connections on every profile." }
+    "power-profiles-data": { "composite": 9.5, "status": "EXCELLENT", "notes": "All 91 profiles fully expanded — 0 stubs remaining. Sourced claims, quotes, donations, policy actions, connections on every profile." }
   }
 }

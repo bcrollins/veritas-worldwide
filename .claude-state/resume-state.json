@@ -1,11 +1,10 @@
 {
-  "lastRun": 21,
+  "lastRun": 22,
   "lastDate": "2026-03-24",
   "completedThisRun": [
-    "profile-data-expansion-76-stubs-to-full",
-    "nyt-style-methodology-page-two-column-sidebar",
-    "nyt-style-sources-page-two-column-sidebar",
-    "nyt-style-search-page-two-column-sidebar"
+    "nyt-style-bookmarks-page-redesign",
+    "nyt-style-about-page-redesign",
+    "nyt-style-privacy-terms-pages-redesign"
   ],
   "completedPriorRuns": [
     "nyt-style-header-3-tier-masthead",
@@ -57,7 +56,11 @@
     "chapter-sidebar-toc-related-support",
     "nyt-style-article-page-section-bar",
     "article-page-two-column-consistent-layout",
-    "article-page-semantic-evidence-tier-colors"
+    "article-page-semantic-evidence-tier-colors",
+    "profile-data-expansion-76-stubs-to-full",
+    "nyt-style-methodology-page-two-column-sidebar",
+    "nyt-style-sources-page-two-column-sidebar",
+    "nyt-style-search-page-two-column-sidebar"
   ],
   "queue": [
     "prerendering-ssg-for-seo",
@@ -70,12 +73,9 @@
     "lead-scoring-hubspot-server-sync",
     "profile-data-expansion-to-500",
     "forum-backend-api-persistence",
-    "nyt-style-bookmarks-page-redesign",
-    "nyt-style-about-page-redesign",
-    "nyt-style-privacy-terms-pages-redesign",
     "dark-mode-sidebar-tokens",
     "reading-time-sidebar-widget"
   ],
-  "featureCount": 55,
+  "featureCount": 59,
   "compositeAverage": 9.0
 }
