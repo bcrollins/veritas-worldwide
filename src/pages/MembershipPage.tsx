@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { MEMBERSHIP, TAGLINE } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
+import { TierIcon } from '../components/TierIcons'
 
 /*
   25 CONVERSION STRATEGIES EMBEDDED IN THIS PAGE:
@@ -184,7 +185,7 @@ export default function MembershipPage() {
                 <div className="p-6 flex-1 flex flex-col">
                   {/* Header */}
                   <div className="text-center mb-5">
-                    <span className="text-2xl mb-2 block">{tier.icon}</span>
+                    <span className="flex justify-center mb-2" style={{ color: tier.color }}><TierIcon name={tier.icon} className="w-6 h-6" /></span>
                     <h3 className="font-display text-lg font-bold text-ink mb-1">{tier.name}</h3>
                     <div className="flex items-baseline justify-center gap-1">
                       {isFree ? (
@@ -260,6 +261,9 @@ export default function MembershipPage() {
         </div>
       </section>
 
+      {/* ─── STUDENT ACCESS — Free .edu membership ─── */}
+      <StudentAccessSection />
+
       {/* ─── WHAT YOUR MEMBERSHIP FUNDS ─── */}
       <section className="max-w-4xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-3">What Your Membership Funds</h2>
@@ -268,13 +272,13 @@ export default function MembershipPage() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
-            { icon: '🔍', title: 'Source Verification', desc: 'Cross-referencing government records, FOIA requests, and international body archives to verify every claim.' },
-            { icon: '📊', title: 'Data Journalism', desc: 'Building interactive investigations like the Israel Dossier — tracking money, weapons, and impact with live data.' },
-            { icon: '🛡️', title: 'Legal & Security', desc: 'Protecting editorial independence with secure infrastructure, anonymization tools, and legal review of sensitive publications.' },
-            { icon: '🌐', title: 'Infrastructure', desc: 'Hosting, development, and maintaining a fast, accessible, ad-free reading experience for everyone — free.' },
+            { icon: 'search', title: 'Source Verification', desc: 'Cross-referencing government records, FOIA requests, and international body archives to verify every claim.' },
+            { icon: 'chart', title: 'Data Journalism', desc: 'Building interactive investigations like the Israel Dossier — tracking money, weapons, and impact with live data.' },
+            { icon: 'shield', title: 'Legal & Security', desc: 'Protecting editorial independence with secure infrastructure, anonymization tools, and legal review of sensitive publications.' },
+            { icon: 'globe', title: 'Infrastructure', desc: 'Hosting, development, and maintaining a fast, accessible, ad-free reading experience for everyone — free.' },
           ].map(item => (
             <div key={item.title} className="p-5 border border-border rounded-sm bg-surface text-center">
-              <span className="text-2xl block mb-3">{item.icon}</span>
+              <span className="flex justify-center mb-3 text-crimson"><TierIcon name={item.icon} className="w-6 h-6" /></span>
               <h3 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink mb-2">{item.title}</h3>
               <p className="font-body text-xs text-ink-muted leading-relaxed">{item.desc}</p>
             </div>
@@ -291,9 +295,9 @@ export default function MembershipPage() {
               <tr className="border-b-2 border-border">
                 <th className="text-left font-sans text-xs font-bold tracking-wide uppercase text-ink-muted py-3 pr-4">Feature</th>
                 <th className="text-center font-sans text-xs font-bold tracking-wide uppercase text-ink-muted py-3 px-2 w-20">Free</th>
-                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20" style={{ color: '#92400E' }}>📡</th>
-                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20 bg-crimson/5 rounded-t-sm" style={{ color: '#1E3A5F' }}>🔍</th>
-                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20" style={{ color: '#8B1A1A' }}>🏛️</th>
+                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20" style={{ color: '#92400E' }}><span className="inline-flex justify-center"><TierIcon name="signal" className="w-4 h-4" /></span></th>
+                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20 bg-crimson/5 rounded-t-sm" style={{ color: '#1E3A5F' }}><span className="inline-flex justify-center"><TierIcon name="search" className="w-4 h-4" /></span></th>
+                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20" style={{ color: '#8B1A1A' }}><span className="inline-flex justify-center"><TierIcon name="pillar" className="w-4 h-4" /></span></th>
               </tr>
             </thead>
             <tbody className="font-body text-sm text-ink">
@@ -435,6 +439,80 @@ export default function MembershipPage() {
 
 
 /* ─── FAQ Accordion Item ─── */
+function StudentAccessSection() {
+  const [email, setEmail] = useState('')
+  const [isStudent, setIsStudent] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
+  const isEdu = email.toLowerCase().trim().endsWith('.edu')
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+    if (!email.trim()) { setError('Please enter your college email address.'); return }
+    if (!isEdu) { setError('Please use a valid .edu email address.'); return }
+    if (!isStudent) { setError('Please confirm you are a current college student.'); return }
+    // Store student access in localStorage
+    const studentData = { email: email.toLowerCase().trim(), confirmed: true, date: new Date().toISOString() }
+    localStorage.setItem('veritas_student_access', JSON.stringify(studentData))
+    setSubmitted(true)
+  }
+
+  if (submitted) {
+    return (
+      <section className="max-w-2xl mx-auto px-6 mb-20">
+        <div className="bg-verified/5 border border-verified/20 rounded-sm p-8 text-center">
+          <span className="flex justify-center mb-3 text-verified"><TierIcon name="check" className="w-8 h-8" /></span>
+          <h3 className="font-display text-xl font-bold text-ink mb-2">Welcome, Student Member</h3>
+          <p className="font-body text-sm text-ink-muted">Your free student access has been activated for <strong>{email}</strong>. You now have full Investigator-tier access — including early chapter releases, the source document library, and deep-dive dossiers.</p>
+          <p className="font-sans text-xs text-ink-faint mt-4">This is a good-faith offer to educate those seeking the true history of the world.</p>
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section className="max-w-2xl mx-auto px-6 mb-20">
+      <div className="border border-border rounded-sm p-8 bg-surface">
+        <div className="text-center mb-6">
+          <span className="flex justify-center mb-3 text-crimson"><TierIcon name="pillar" className="w-6 h-6" /></span>
+          <h2 className="font-display text-xl font-bold text-ink mb-2">Free Access for College Students</h2>
+          <p className="font-body text-sm text-ink-muted max-w-md mx-auto">
+            We believe the next generation deserves access to the unfiltered historical record. Sign up with your .edu email — full Investigator-tier access, completely free.
+          </p>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4 max-w-sm mx-auto">
+          <div>
+            <label htmlFor="student-email" className="block font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink-muted mb-1">College Email</label>
+            <input
+              id="student-email"
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="you@university.edu"
+              className="w-full px-4 py-2.5 border border-border rounded-sm bg-white font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
+            />
+            {email && !isEdu && <p className="font-sans text-xs text-disputed mt-1">Must be a .edu email address</p>}
+          </div>
+          <label className="flex items-start gap-2.5 cursor-pointer">
+            <input type="checkbox" checked={isStudent} onChange={e => setIsStudent(e.target.checked)} className="mt-0.5 accent-crimson" />
+            <span className="font-body text-xs text-ink leading-relaxed">I confirm that I am a currently enrolled college student.</span>
+          </label>
+          {error && <p className="font-sans text-xs text-disputed font-semibold">{error}</p>}
+          <button
+            type="submit"
+            className="w-full py-3 bg-ink text-white font-sans text-xs font-bold tracking-[0.15em] uppercase rounded-sm hover:bg-crimson transition-colors"
+          >
+            Activate Free Student Access
+          </button>
+          <p className="font-sans text-[0.6rem] text-ink-faint text-center">No credit card required. Honor system — we trust you.</p>
+        </form>
+      </div>
+    </section>
+  )
+}
+
 function FaqItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false)
   return (

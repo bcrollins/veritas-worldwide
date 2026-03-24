@@ -6,7 +6,7 @@ import { setMetaTags, clearMetaTags, SITE_URL } from '../lib/seo'
 
 // ── Country flag emoji from ISO code ───────────────────────────────
 function flagEmoji(code: string): string {
-  if (!code || code === 'XX') return '🌍'
+  if (!code || code === 'XX') return '--'
   return code
     .toUpperCase()
     .split('')

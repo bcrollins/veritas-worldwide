@@ -30,12 +30,13 @@ export default function ReadingStreak() {
     <>
       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-sans text-[0.6rem] font-semibold bg-gold/10 text-gold"
         title={`${streak}-day reading streak`} aria-label={`${streak} day reading streak`}>
-        🔥 {streak}
+        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 23c-3.866 0-7-3.134-7-7 0-3.5 2.5-6 4-7.5 1.5 1 2 2.5 2 2.5s1.5-2.5 1-5c3 1.5 5 4.5 5 7.5a4.978 4.978 0 01-2 4"/></svg>
+        {streak}
       </span>
       {showToast && (
         <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-sm shadow-lg font-sans text-sm font-medium bg-ink text-white animate-fadeIn"
           role="status" aria-live="polite">
-          🔥 {streak}-day reading streak!
+          {streak}-day reading streak!
         </div>
       )}
     </>

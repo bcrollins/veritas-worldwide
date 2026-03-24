@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
+import { TierIcon } from '../components/TierIcons'
 
 /* ═══════════════════════════════════════════════════════════
    TYPE DEFINITIONS
@@ -53,10 +54,10 @@ interface MoneyTrailNode {
    ═══════════════════════════════════════════════════════════ */
 
 const CATEGORY_META = {
-  financial: { label: 'U.S. Aid & Military Spending', icon: '💰', color: '#92400E', bg: 'bg-amber-50 dark:bg-amber-950/20', border: 'border-amber-200 dark:border-amber-800', hoverBorder: 'hover:border-amber-400 dark:hover:border-amber-600' },
-  humanitarian: { label: 'Humanitarian Impact', icon: '🩸', color: '#991B1B', bg: 'bg-red-50 dark:bg-red-950/20', border: 'border-red-200 dark:border-red-800', hoverBorder: 'hover:border-red-400 dark:hover:border-red-600' },
-  legal: { label: 'International Law & UN Record', icon: '⚖️', color: '#1E3A5F', bg: 'bg-blue-50 dark:bg-blue-950/20', border: 'border-blue-200 dark:border-blue-800', hoverBorder: 'hover:border-blue-400 dark:hover:border-blue-600' },
-  social: { label: 'Domestic Policy & Public Opinion', icon: '🏛️', color: '#166534', bg: 'bg-green-50 dark:bg-green-950/20', border: 'border-green-200 dark:border-green-800', hoverBorder: 'hover:border-green-400 dark:hover:border-green-600' },
+  financial: { label: 'U.S. Aid & Military Spending', icon: 'money', color: '#92400E', bg: 'bg-amber-50 dark:bg-amber-950/20', border: 'border-amber-200 dark:border-amber-800', hoverBorder: 'hover:border-amber-400 dark:hover:border-amber-600' },
+  humanitarian: { label: 'Humanitarian Impact', icon: 'warning', color: '#991B1B', bg: 'bg-red-50 dark:bg-red-950/20', border: 'border-red-200 dark:border-red-800', hoverBorder: 'hover:border-red-400 dark:hover:border-red-600' },
+  legal: { label: 'International Law & UN Record', icon: 'scale', color: '#1E3A5F', bg: 'bg-blue-50 dark:bg-blue-950/20', border: 'border-blue-200 dark:border-blue-800', hoverBorder: 'hover:border-blue-400 dark:hover:border-blue-600' },
+  social: { label: 'Domestic Policy & Public Opinion', icon: 'pillar', color: '#166534', bg: 'bg-green-50 dark:bg-green-950/20', border: 'border-green-200 dark:border-green-800', hoverBorder: 'hover:border-green-400 dark:hover:border-green-600' },
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -694,10 +695,10 @@ function InteractiveStatCard({ stat, meta }: { stat: StatCard; meta: typeof CATE
    MONEY TRAIL NODE COMPONENT
    ═══════════════════════════════════════════════════════════ */
 const NODE_COLORS = {
-  legislation: { bg: 'bg-blue-50 dark:bg-blue-950/30', border: 'border-blue-300 dark:border-blue-700', color: '#1E3A5F', icon: '📜' },
-  weapon: { bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-300 dark:border-amber-700', color: '#92400E', icon: '🔧' },
-  delivery: { bg: 'bg-purple-50 dark:bg-purple-950/30', border: 'border-purple-300 dark:border-purple-700', color: '#6B21A8', icon: '✈️' },
-  impact: { bg: 'bg-red-50 dark:bg-red-950/30', border: 'border-red-300 dark:border-red-700', color: '#991B1B', icon: '💥' },
+  legislation: { bg: 'bg-blue-50 dark:bg-blue-950/30', border: 'border-blue-300 dark:border-blue-700', color: '#1E3A5F', icon: 'file' },
+  weapon: { bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-300 dark:border-amber-700', color: '#92400E', icon: 'shield' },
+  delivery: { bg: 'bg-purple-50 dark:bg-purple-950/30', border: 'border-purple-300 dark:border-purple-700', color: '#6B21A8', icon: 'plane' },
+  impact: { bg: 'bg-red-50 dark:bg-red-950/30', border: 'border-red-300 dark:border-red-700', color: '#991B1B', icon: 'warning' },
 }
 
 function MoneyTrailCard({ node }: { node: MoneyTrailNode }) {
@@ -714,7 +715,7 @@ function MoneyTrailCard({ node }: { node: MoneyTrailNode }) {
         tabIndex={childNodes ? 0 : undefined}
         onKeyDown={e => childNodes && e.key === 'Enter' && setOpen(!open)}
       >
-        <span className="text-xl flex-shrink-0 mt-0.5">{style.icon}</span>
+        <span className="flex-shrink-0 mt-0.5" style={{ color: style.color }}><TierIcon name={style.icon} className="w-5 h-5" /></span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="font-display text-xl font-bold" style={{ color: style.color }}>{node.amount}</span>
@@ -752,7 +753,7 @@ function MoneyTrailCard({ node }: { node: MoneyTrailNode }) {
    ═══════════════════════════════════════════════════════════ */
 function IncidentCard({ incident }: { incident: DocumentedIncident }) {
   const [expanded, setExpanded] = useState(false)
-  const MEDIA_ICONS = { video: '🎬', investigation: '🔍', 'photo-essay': '📸', document: '📄' }
+  const MEDIA_ICONS: Record<string, string> = { video: 'video', investigation: 'search', 'photo-essay': 'camera', document: 'file' }
 
   return (
     <article className="border border-border rounded-sm overflow-hidden hover:shadow-lg transition-shadow duration-200">
@@ -818,7 +819,7 @@ function IncidentCard({ incident }: { incident: DocumentedIncident }) {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 p-3 rounded-sm border border-border bg-surface hover:border-crimson/30 hover:bg-parchment-dark/10 transition-all group"
                   >
-                    <span className="text-lg flex-shrink-0">{MEDIA_ICONS[m.type]}</span>
+                    <span className="flex-shrink-0 text-crimson"><TierIcon name={MEDIA_ICONS[m.type] || 'file'} className="w-4 h-4" /></span>
                     <div>
                       <span className="font-sans text-[0.55rem] font-bold tracking-wider uppercase text-crimson">{m.type.replace('-', ' ')}</span>
                       <p className="font-sans text-xs text-ink group-hover:text-crimson transition-colors">{m.label}</p>

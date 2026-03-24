@@ -28,6 +28,7 @@ const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
 const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
 const MembershipPage = lazy(() => import('./pages/MembershipPage'))
+const DeepStatePage = lazy(() => import('./pages/DeepStatePage'))
 
 
 function ThemeToggle() {
@@ -97,6 +98,7 @@ function Header() {
     { to: '/analytics', label: 'Analytics' },
     { to: '/about', label: 'About' },
     { to: '/israel-dossier', label: 'Israel Dossier' },
+    { to: '/deep-state', label: 'Deep State' },
     { to: '/membership', label: 'Membership' },
   ]
 
@@ -345,6 +347,7 @@ function Footer() {
               <Link to="/sources" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Sources</Link>
               <Link to="/bookmarks" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Saved Articles</Link>
               <Link to="/about" className="font-sans text-sm text-white/50 hover:text-white transition-colors">About</Link>
+              <Link to="/deep-state" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Deep State</Link>
               <Link to="/membership" className="font-sans text-sm text-crimson-light hover:text-white transition-colors font-semibold">Membership</Link>
               <Link to="/accessibility" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Accessibility</Link>
               <Link to="/privacy" className="font-sans text-sm text-white/50 hover:text-white transition-colors">Privacy</Link>
@@ -441,6 +444,7 @@ export default function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/israel-dossier" element={<IsraelDossierPage />} />
           <Route path="/membership" element={<MembershipPage />} />
+          <Route path="/deep-state" element={<DeepStatePage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">

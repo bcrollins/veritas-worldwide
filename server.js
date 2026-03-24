@@ -249,6 +249,7 @@ app.use((req, res, next) => {
     '/terms': { title: 'Terms of Use | Veritas Worldwide Press', desc: 'Terms of use for Veritas Worldwide Press. Free and open access under Creative Commons BY-NC-SA 4.0.' },
     '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide Press', desc: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.' },
     '/membership': { title: 'Membership | Veritas Worldwide Press', desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.' },
+    '/deep-state': { title: 'The Deep State — The Epstein Network | Veritas Worldwide Press', desc: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.' },
   }
 
   const staticMeta = staticPages[req.path]

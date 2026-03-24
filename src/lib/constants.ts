@@ -25,7 +25,7 @@ export const MEMBERSHIP = {
       'Ad-free reading experience',
     ],
     color: '#92400E',
-    icon: '📡',
+    icon: 'signal',
   },
   investigator: {
     name: 'Investigator',
@@ -43,7 +43,7 @@ export const MEMBERSHIP = {
       'Custom citation export tools',
     ],
     color: '#1E3A5F',
-    icon: '🔍',
+    icon: 'search',
     popular: true,
   },
   founding: {
@@ -62,6 +62,6 @@ export const MEMBERSHIP = {
       'Founding member rate — locked for life',
     ],
     color: '#8B1A1A',
-    icon: '🏛️',
+    icon: 'pillar',
   },
 } as const
