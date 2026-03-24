@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { articles } from '../data/articles'
+import { allArticles as articles } from '../data/articles'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
 
 interface ShareCard {

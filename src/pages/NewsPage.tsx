@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { articles, CATEGORY_META, type Article, type ArticleCategory } from '../data/articles'
+import { allArticles as articles, CATEGORY_META, type Article, type ArticleCategory } from '../data/articles'
 import SharePanel from '../components/SharePanel'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 

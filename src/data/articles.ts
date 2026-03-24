@@ -1,5 +1,7 @@
 // Current events publication engine — primary source journalism
 // Updated daily with the top stories in power, money, and institutions
+import { expandedArticlesA } from './articlesExpanded'
+import { expandedArticlesB } from './articlesExpandedB'
 
 export interface Article {
   id: string
@@ -859,14 +861,21 @@ export const articles: Article[] =
 ]
 
 
+// Merge all article batches into single collection
+export const allArticles: Article[] = [
+  ...articles,
+  ...expandedArticlesA,
+  ...expandedArticlesB,
+]
+
 export function getArticleBySlug(slug: string): Article | undefined {
-  return articles.find(a => a.slug === slug)
+  return allArticles.find(a => a.slug === slug)
 }
 
 export function getArticlesByCategory(category: ArticleCategory): Article[] {
-  return articles.filter(a => a.category === category)
+  return allArticles.filter(a => a.category === category)
 }
 
 export function getLatestArticles(count: number = 5): Article[] {
-  return articles.slice(0, count)
+  return allArticles.slice(0, count)
 }

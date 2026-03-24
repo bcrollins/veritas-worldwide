@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
-import { articles } from '../data/articles'
+import { allArticles as articles } from '../data/articles'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { PACK_CAROUSELS } from '../data/contentPackCarousels'
 import { CarouselDownloader } from '../components/DossierCarousel'
