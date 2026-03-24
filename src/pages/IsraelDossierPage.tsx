@@ -4,6 +4,8 @@ import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAM
 import { DONATE_URL } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
 import CommunityForum from '../components/CommunityForum'
+import DisputeStory from '../components/DisputeStory'
+import AdBanner from '../components/AdBanner'
 import { TierIcon } from '../components/TierIcons'
 
 /* ═══════════════════════════════════════════════════════════
@@ -1294,6 +1296,12 @@ export default function IsraelDossierPage() {
           Processed securely via Stripe &middot; No account required
         </p>
       </section>
+
+      {/* Ad — one per page, hidden for subscribers */}
+      <AdBanner slot="dossier-bottom" format="horizontal" />
+
+      {/* Dispute This Content */}
+      <DisputeStory pageId="israel-dossier" pageTitle="The Israel Dossier" />
 
       {/* Community Forum */}
       <CommunityForum pageId="israel-dossier" pageTitle="The Israel Dossier" />

@@ -31,6 +31,7 @@ const TermsPage = lazy(() => import('./pages/TermsPage'))
 const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
 const MembershipPage = lazy(() => import('./pages/MembershipPage'))
 const DeepStatePage = lazy(() => import('./pages/DeepStatePage'))
+const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
 
 
 function ThemeToggle() {
@@ -451,6 +452,7 @@ export default function App() {
           <Route path="/israel-dossier" element={<IsraelDossierPage />} />
           <Route path="/membership" element={<MembershipPage />} />
           <Route path="/deep-state" element={<DeepStatePage />} />
+          <Route path="/read" element={<ReadTheBookPage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">

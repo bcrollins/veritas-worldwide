@@ -19,6 +19,8 @@ import { trackShare, trackDownload } from '../lib/ga4'
 import FloatingShareBar from '../components/engagement/FloatingShareBar'
 import CitationGenerator from '../components/CitationGenerator'
 import CommunityForum from '../components/CommunityForum'
+import DisputeStory from '../components/DisputeStory'
+import AdBanner from '../components/AdBanner'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 
 const diagramComponents: Record<string, React.ComponentType> = {
@@ -902,6 +904,12 @@ export default function ChapterPage() {
           Processed securely via Stripe &middot; No account required
         </p>
       </section>
+
+      {/* Ad — tasteful, one per page, hidden for subscribers */}
+      <AdBanner slot="chapter-bottom" format="horizontal" />
+
+      {/* Dispute This Content */}
+      <DisputeStory pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
 
       {/* Community Forum */}
       <CommunityForum pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
