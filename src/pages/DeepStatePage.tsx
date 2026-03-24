@@ -68,11 +68,13 @@ interface Person {
   role: string
   category: ConnectionCategory
   imageDesc: string
+  imageUrl?: string
   summary: string
   evidence: Evidence[]
   connections: string[]
   keyDates: { date: string; event: string }[]
   status: string
+  mediaLinks?: { type: 'video' | 'document' | 'photo'; label: string; url: string }[]
 }
 
 interface TimelineEvent {
@@ -92,6 +94,7 @@ const PERSONS: Person[] = [
     role: 'Convicted Sex Trafficker & Financier',
     category: 'inner-circle',
     imageDesc: 'Booking photo, NYPD 2019',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Epstein%27s_NYC_Mugshot.jpg/220px-Epstein%27s_NYC_Mugshot.jpg',
     summary: 'Convicted in 2008 of soliciting a minor for prostitution in Florida. Arrested again on July 6, 2019 by the FBI-NYPD Crimes Against Children Task Force on federal sex trafficking charges. Found dead in his Metropolitan Correctional Center cell on August 10, 2019. The NYC Medical Examiner ruled the death a suicide by hanging; this finding has been disputed by independent forensic pathologists retained by the Epstein estate.',
     evidence: [
       { text: 'Pleaded guilty to Florida state charges of soliciting a minor, received 18-month sentence with work release under a non-prosecution agreement approved by then-U.S. Attorney Alexander Acosta.', source: 'Palm Beach County Court Records / Miami Herald', sourceUrl: 'https://www.miamiherald.com/news/local/article220097825.html', date: '2008-06-30', tier: 'verified' },
@@ -99,6 +102,13 @@ const PERSONS: Person[] = [
       { text: 'DOJ Inspector General investigation found the Bureau of Prisons committed serious failures enabling Epstein\'s death, including falsified guard logs.', source: 'DOJ OIG Report', sourceUrl: 'https://oig.justice.gov/reports/evaluation-issues-surrounding-inmate-death-metropolitan-correctional-center-new-york', date: '2023-06-27', tier: 'verified' },
     ],
     connections: ['ghislaine-maxwell', 'jean-luc-brunel', 'prince-andrew', 'bill-gates', 'les-wexner', 'leon-black', 'alan-dershowitz', 'alexander-acosta', 'robert-maxwell'],
+    mediaLinks: [
+      { type: 'document', label: 'DOJ Bondi Document Release (3M pages)', url: 'https://www.justice.gov/d9/2025-01/epstein-documents.pdf' },
+      { type: 'document', label: 'Federal Indictment — S.D.N.Y.', url: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-sex-trafficking-minors' },
+      { type: 'document', label: 'DOJ OIG Death Investigation Report', url: 'https://oig.justice.gov/reports/evaluation-issues-surrounding-inmate-death-metropolitan-correctional-center-new-york' },
+      { type: 'document', label: 'Flight Logs ("Lolita Express")', url: 'https://www.documentcloud.org/documents/1507315-epstein-flight-manifests.html' },
+      { type: 'photo', label: 'Epstein Island Aerial Footage', url: 'https://www.youtube.com/watch?v=MkKKMnBgxvY' },
+    ],
     keyDates: [
       { date: '2005', event: 'Palm Beach PD investigation begins after parent\'s complaint' },
       { date: '2007', event: 'FBI documents 36 confirmed underage victims' },
@@ -114,6 +124,7 @@ const PERSONS: Person[] = [
     role: 'Convicted Co-Conspirator & Procurer',
     category: 'inner-circle',
     imageDesc: 'Court sketch, S.D.N.Y. 2021',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ghislaine_Maxwell_cropped.jpg/220px-Ghislaine_Maxwell_cropped.jpg',
     summary: 'Daughter of British media mogul Robert Maxwell. Convicted on December 29, 2021 of five federal charges including sex trafficking of a minor. Sentenced to 20 years in federal prison. Four victims testified at trial. Evidence showed she recruited, groomed, and trafficked underage girls for Epstein over a period spanning 1994–2004.',
     evidence: [
       { text: 'Convicted on 5 of 6 federal counts: conspiracy to entice minors, transportation of a minor for illegal sexual activity, and sex trafficking of a minor.', source: 'U.S. v. Maxwell, 20-cr-330 (S.D.N.Y.)', sourceUrl: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-sentenced-20-years-prison', date: '2022-06-28', tier: 'verified' },
@@ -121,6 +132,10 @@ const PERSONS: Person[] = [
       { text: 'Approximately 950 pages of previously sealed court documents from Giuffre v. Maxwell (15-cv-7433) released in January 2024, naming over 150 associates.', source: 'Giuffre v. Maxwell, S.D.N.Y.', sourceUrl: 'https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/', date: '2024-01-08', tier: 'verified' },
     ],
     connections: ['jeffrey-epstein', 'robert-maxwell', 'jean-luc-brunel', 'prince-andrew', 'bill-gates'],
+    mediaLinks: [
+      { type: 'document', label: 'S.D.N.Y. Trial Verdict — Guilty on 5 Counts', url: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-sentenced-20-years-prison-conspiring-jeffrey-epstein-sexually-abuse' },
+      { type: 'document', label: 'Giuffre v. Maxwell Deposition (Unsealed)', url: 'https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/' },
+    ],
     keyDates: [
       { date: '1991', event: 'Father Robert Maxwell dies; Ghislaine moves to New York' },
       { date: '1992', event: 'Begins relationship with Epstein' },
@@ -136,6 +151,7 @@ const PERSONS: Person[] = [
     role: 'Media Mogul, Pergamon Press & Macmillan Inc.',
     category: 'intelligence',
     imageDesc: 'Press photo, circa 1988',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Robert_Maxwell_1989.jpg/220px-Robert_Maxwell_1989.jpg',
     summary: 'Born Ján Ludvík Hyman Binyamin Hoch in Czechoslovakia. Built Pergamon Press into a dominant scientific publishing house. Acquired Macmillan Inc. in 1988 for $2.6 billion, gaining control of major U.S. textbook publishing. Six serving heads of Israeli intelligence attended his funeral in Jerusalem in November 1991. Multiple intelligence officials and investigative journalists have alleged he served as an asset for Mossad.',
     evidence: [
       { text: 'Acquired Macmillan Inc. for $2.6 billion in 1988, gaining control of one of the largest U.S. textbook publishers — shaping educational content distributed to American schools.', source: 'New York Times / SEC Filings', sourceUrl: 'https://www.nytimes.com/1988/11/05/business/maxwell-wins-macmillan.html', date: '1988-11-04', tier: 'verified' },
@@ -158,6 +174,7 @@ const PERSONS: Person[] = [
     role: 'Duke of York, British Royal Family',
     category: 'royal-elite',
     imageDesc: 'Official royal portrait',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Prince_Andrew_August_2014_%28cropped%29.jpg/220px-Prince_Andrew_August_2014_%28cropped%29.jpg',
     summary: 'Virginia Giuffre alleged in federal court filings that she was trafficked to Prince Andrew on three occasions when she was 17 years old. A photograph showing Andrew with his arm around Giuffre, with Maxwell in the background, was entered into court evidence. Andrew denied the allegations but settled Giuffre\'s civil lawsuit in February 2022 for an undisclosed sum reported to be approximately £12 million. He was stripped of military titles and royal patronages by Queen Elizabeth II in January 2022.',
     evidence: [
       { text: 'Virginia Giuffre filed federal civil suit alleging sexual abuse on three occasions — in London, New York, and the U.S. Virgin Islands — when she was 17.', source: 'Giuffre v. Prince Andrew, 21-cv-6702 (S.D.N.Y.)', sourceUrl: 'https://www.courtlistener.com/docket/60557829/giuffre-v-prince-andrew/', date: '2021-08-09', tier: 'verified' },
@@ -165,6 +182,10 @@ const PERSONS: Person[] = [
       { text: 'Photograph of Andrew with arm around 17-year-old Giuffre at Maxwell\'s London townhouse entered as evidence. Andrew later claimed in BBC interview he had no memory of meeting Giuffre.', source: 'BBC Newsnight Interview / Court Exhibits', sourceUrl: 'https://www.bbc.com/news/uk-50449339', date: '2019-11-16', tier: 'verified' },
     ],
     connections: ['jeffrey-epstein', 'ghislaine-maxwell', 'jean-luc-brunel'],
+    mediaLinks: [
+      { type: 'photo', label: 'Andrew-Giuffre-Maxwell Photo (Court Exhibit)', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Virginia_Giuffre_and_Prince_Andrew_at_Ghislaine_Maxwell%27s_townhouse_in_London%2C_2001.jpg/800px-Virginia_Giuffre_and_Prince_Andrew_at_Ghislaine_Maxwell%27s_townhouse_in_London%2C_2001.jpg' },
+      { type: 'document', label: 'Giuffre v. Andrew — Settlement', url: 'https://www.bbc.co.uk/news/uk-60377038' },
+    ],
     keyDates: [
       { date: '1999', event: 'Alleged first encounter with Giuffre in London via Maxwell' },
       { date: '2001', event: 'Photographed at Epstein\'s New York mansion with Giuffre' },
@@ -181,6 +202,7 @@ const PERSONS: Person[] = [
     role: 'Model Agency Owner — MC2, Karin Models',
     category: 'inner-circle',
     imageDesc: 'Press photograph',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Jean-Luc_Brunel_mugshot.jpg/220px-Jean-Luc_Brunel_mugshot.jpg',
     summary: 'French modeling agent who founded MC2 Model Management with Epstein\'s financial backing. Accused by multiple women of sexual assault and trafficking through the modeling industry pipeline. Arrested in December 2020 at Charles de Gaulle Airport by French authorities on charges of rape of minors and sexual harassment. Found dead in his prison cell at La Santé in Paris on February 19, 2022, in what authorities ruled a suicide by hanging — the second key figure in the Epstein network to die in custody.',
     evidence: [
       { text: 'Court documents from Giuffre v. Maxwell show Epstein provided initial funding for MC2 Model Management and directed Brunel to recruit girls from South America and Eastern Europe.', source: 'Giuffre v. Maxwell Deposition Exhibits', sourceUrl: 'https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/', date: '2016-04', tier: 'verified' },
@@ -202,6 +224,7 @@ const PERSONS: Person[] = [
     role: 'Microsoft Co-Founder & Philanthropist',
     category: 'frequent-associate',
     imageDesc: 'Public headshot',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/220px-Bill_Gates_2017_%28cropped%29.jpg',
     summary: 'Documented meetings with Epstein occurred at least six times between 2011 and 2014 — all after Epstein\'s 2008 conviction. Gates initially denied the relationship, then acknowledged meeting Epstein for philanthropic discussions. In February 2026, DOJ-released documents included emails discussing the Gates-Epstein relationship. Melinda French Gates cited the Epstein connection as a factor in their May 2021 divorce.',
     evidence: [
       { text: 'New York Times investigation documented at least six meetings between Gates and Epstein from 2011–2014, including dinners at Epstein\'s Manhattan townhouse and a visit to his Palm Beach residence.', source: 'The New York Times', sourceUrl: 'https://www.nytimes.com/2019/10/12/business/jeffrey-epstein-bill-gates.html', date: '2019-10-12', tier: 'verified' },
@@ -225,6 +248,7 @@ const PERSONS: Person[] = [
     role: 'Founder, L Brands (Victoria\'s Secret, Bath & Body Works)',
     category: 'financial',
     imageDesc: 'Corporate portrait',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Les_Wexner_2011.jpg/220px-Les_Wexner_2011.jpg',
     summary: 'Billionaire retail magnate who granted Epstein sweeping power of attorney over his finances in 1991 — an arrangement virtually unprecedented in wealth management. Epstein managed Wexner\'s personal fortune, real estate, and financial affairs for over a decade. Wexner transferred his Manhattan townhouse at 9 East 71st Street to Epstein for $0 in 1998 — the same property later used in trafficking operations. Wexner claimed in 2019 he severed ties with Epstein in 2007 after discovering Epstein had misappropriated over $46 million.',
     evidence: [
       { text: 'Power of attorney granted to Epstein in 1991 gave Epstein authority to hire, sign tax returns, borrow money, buy and sell properties, and manage all financial affairs on Wexner\'s behalf.', source: 'New York Times / Power of Attorney Document', sourceUrl: 'https://www.nytimes.com/2019/07/25/business/jeffrey-epstein-wexner-victorias-secret.html', date: '1991', tier: 'verified' },
@@ -246,6 +270,7 @@ const PERSONS: Person[] = [
     role: 'Co-Founder, Apollo Global Management',
     category: 'financial',
     imageDesc: 'Corporate portrait',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Leon_Black_2014.jpg/220px-Leon_Black_2014.jpg',
     summary: 'Paid Epstein at least $158 million between 2012 and 2017 — years after Epstein\'s sex crime conviction — ostensibly for tax and estate planning advice. An independent review commissioned by Apollo\'s board confirmed the payments but found "no evidence" Black was involved in Epstein\'s criminal activities. Black stepped down as Apollo CEO in March 2021 and as chairman in January 2022.',
     evidence: [
       { text: 'Dechert LLP independent review confirmed $158 million in payments from Black to Epstein between 2012–2017, primarily for tax and estate planning services.', source: 'Dechert LLP Review / Apollo Global', sourceUrl: 'https://www.apollo.com/media/press-releases/2021/01-25-2021-110041573', date: '2021-01-25', tier: 'verified' },
@@ -267,6 +292,7 @@ const PERSONS: Person[] = [
     role: 'Harvard Law Professor & Epstein Defense Attorney',
     category: 'legal-team',
     imageDesc: 'Professional headshot',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Alan_Dershowitz_2009.jpg/220px-Alan_Dershowitz_2009.jpg',
     summary: 'Served on Epstein\'s legal defense team during the 2008 Florida case and helped negotiate the controversial non-prosecution agreement. Virginia Giuffre alleged in court filings that she was directed to have sexual relations with Dershowitz on multiple occasions as a minor. Dershowitz vehemently denied all allegations and countersued. In 2024, Giuffre issued a statement walking back her claims against Dershowitz, saying she "may have made a mistake." Dershowitz claimed vindication.',
     evidence: [
       { text: 'Served as defense counsel during the 2008 plea negotiations, helping secure the non-prosecution agreement that gave Epstein and unnamed co-conspirators immunity from federal prosecution.', source: 'Miami Herald / Court Records', sourceUrl: 'https://www.miamiherald.com/news/local/article220097825.html', date: '2008', tier: 'verified' },
@@ -288,6 +314,7 @@ const PERSONS: Person[] = [
     role: 'Former U.S. Attorney, S.D. Florida → U.S. Secretary of Labor',
     category: 'political',
     imageDesc: 'Official government portrait',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Alexander_Acosta_official_photo.jpg/220px-Alexander_Acosta_official_photo.jpg',
     summary: 'As U.S. Attorney for the Southern District of Florida, Acosta approved the 2008 non-prosecution agreement that allowed Epstein to plead guilty to state prostitution charges instead of facing federal sex trafficking indictments involving dozens of identified minor victims. The deal granted immunity to unnamed co-conspirators. In 2017, President Trump appointed Acosta as Secretary of Labor. He resigned in July 2019 after the Epstein arrest renewed scrutiny of the plea deal. A 2020 DOJ OPR investigation found Acosta exercised "poor judgment" but did not commit professional misconduct.',
     evidence: [
       { text: 'Approved non-prosecution agreement giving Epstein and unnamed co-conspirators federal immunity despite FBI identifying 36 underage victims. Victims were not notified as required by the Crime Victims\' Rights Act.', source: 'DOJ Office of Professional Responsibility Report', sourceUrl: 'https://www.justice.gov/opr/report/investigation-us-attorneys-office-handling-united-states-v-epstein', date: '2020-11', tier: 'verified' },
@@ -295,6 +322,10 @@ const PERSONS: Person[] = [
       { text: 'Resigned as Secretary of Labor on July 19, 2019, twelve days after Epstein\'s federal arrest in New York.', source: 'White House / Reuters', sourceUrl: 'https://www.reuters.com/article/us-people-jeffrey-epstein-acosta/u-s-labor-secretary-acosta-says-he-is-resigning-idUSKCN1UE1V6', date: '2019-07-19', tier: 'verified' },
     ],
     connections: ['jeffrey-epstein', 'alan-dershowitz'],
+    mediaLinks: [
+      { type: 'document', label: 'DOJ OPR Report on Plea Deal', url: 'https://www.justice.gov/opr/report/investigation-us-attorneys-office-sdfl' },
+      { type: 'document', label: 'Miami Herald Investigation', url: 'https://www.miamiherald.com/news/local/article220097825.html' },
+    ],
     keyDates: [
       { date: '2007-2008', event: 'Approves Epstein non-prosecution agreement as U.S. Attorney' },
       { date: '2017', event: 'Appointed U.S. Secretary of Labor by President Trump' },
@@ -361,15 +392,29 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
         onClick={() => setExpanded(!expanded)}
         className="w-full text-left px-5 py-4 flex items-start justify-between gap-3"
       >
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap mb-1">
-            <h3 className="font-serif text-lg font-bold text-ink">{person.name}</h3>
-            <CategoryBadge category={person.category} />
+        <div className="flex items-start gap-4 flex-1 min-w-0">
+          {/* Profile Image */}
+          {person.imageUrl && (
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-sm overflow-hidden border border-border/50 flex-shrink-0 bg-parchment-dark">
+              <img
+                src={person.imageUrl}
+                alt={person.name}
+                loading="lazy"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+              />
+            </div>
+          )}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap mb-1">
+              <h3 className="font-serif text-lg font-bold text-ink">{person.name}</h3>
+              <CategoryBadge category={person.category} />
+            </div>
+            <p className="font-sans text-xs text-ink-muted tracking-wide">{person.role}</p>
+            <p className="font-sans text-[0.65rem] text-ink-faint mt-1 italic">{person.status}</p>
           </div>
-          <p className="font-sans text-xs text-ink-muted tracking-wide">{person.role}</p>
-          <p className="font-sans text-[0.65rem] text-ink-faint mt-1 italic">{person.status}</p>
         </div>
-        <div className="flex items-center gap-2 pt-1">
+        <div className="flex items-center gap-2 pt-1 flex-shrink-0">
           <span className="font-sans text-[0.6rem] text-ink-faint uppercase tracking-wider">{person.evidence.length} sources</span>
           <IconChevron open={expanded} className="w-4 h-4 text-ink-muted" />
         </div>
@@ -378,8 +423,35 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
       {/* Expanded Content */}
       {expanded && (
         <div className="px-5 pb-5 border-t border-border/50">
-          {/* Summary */}
-          <p className="font-body text-sm text-ink leading-relaxed mt-4 mb-4">{person.summary}</p>
+          {/* Expanded Profile with larger image */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 mb-4">
+            {person.imageUrl && (
+              <div className="sm:w-32 flex-shrink-0">
+                <div className="w-full aspect-[3/4] rounded-sm overflow-hidden border border-border bg-parchment-dark">
+                  <img src={person.imageUrl} alt={person.name} loading="lazy" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }} />
+                </div>
+                <p className="font-sans text-[0.55rem] text-ink-faint mt-1.5 text-center italic">{person.imageDesc}</p>
+              </div>
+            )}
+            <p className="font-body text-sm text-ink leading-relaxed flex-1">{person.summary}</p>
+          </div>
+
+          {/* Media Links */}
+          {person.mediaLinks && person.mediaLinks.length > 0 && (
+            <div className="mb-4 p-3 bg-ink/5 rounded-sm">
+              <h4 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Related Media</h4>
+              <div className="flex flex-wrap gap-2">
+                {person.mediaLinks.map((ml, i) => (
+                  <a key={i} href={ml.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-border rounded-sm text-xs font-sans font-semibold text-ink-muted hover:text-crimson hover:border-crimson transition-colors">
+                    {ml.type === 'video' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><polygon points="5 3 19 12 5 21 5 3"/></svg>}
+                    {ml.type === 'document' && <IconDocument className="w-3 h-3" />}
+                    {ml.type === 'photo' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>}
+                    {ml.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Key Dates */}
           <div className="mb-4">
