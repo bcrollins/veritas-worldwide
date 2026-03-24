@@ -128,7 +128,7 @@ function CommentComposer({ pageId, parentId, onPost, onCancel, placeholder }: {
           value={text}
           onChange={e => setText(e.target.value)}
           placeholder={placeholder || 'Share your thoughts...'}
-          className="w-full min-h-[80px] p-3 border border-border rounded-sm bg-white font-body text-sm text-ink placeholder:text-ink-faint resize-y focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
+          className="w-full min-h-[80px] p-3 border border-border rounded-sm bg-parchment font-body text-sm text-ink placeholder:text-ink-faint resize-y focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
           maxLength={5000}
         />
         <div className="flex items-center justify-between mt-2">
@@ -280,7 +280,7 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
             <button
               key={mode}
               onClick={() => setSortMode(mode)}
-              className={`font-sans text-[0.6rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-sm transition-colors ${sortMode === mode ? 'bg-white text-crimson shadow-sm' : 'text-ink-muted hover:text-ink'}`}
+              className={`font-sans text-[0.6rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-sm transition-colors ${sortMode === mode ? 'bg-parchment text-crimson shadow-sm' : 'text-ink-muted hover:text-ink'}`}
             >
               {mode}
             </button>

@@ -66,7 +66,7 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 animate-slide-up">
       <div className="max-w-2xl mx-auto px-4 pb-4">
-        <div className="bg-white border border-border rounded-sm shadow-xl overflow-hidden">
+        <div className="bg-parchment border border-border rounded-sm shadow-xl overflow-hidden">
           {/* Close */}
           <button
             onClick={handleDismiss}

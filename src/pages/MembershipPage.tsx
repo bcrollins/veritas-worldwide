@@ -576,7 +576,7 @@ function StudentAccessSection() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="you@university.edu"
-              className="w-full px-4 py-2.5 border border-border rounded-sm bg-white font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
+              className="w-full px-4 py-2.5 border border-border rounded-sm bg-parchment font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
             />
             {email && !isEdu && <p className="font-sans text-xs text-disputed mt-1">Must be a .edu email address</p>}
           </div>

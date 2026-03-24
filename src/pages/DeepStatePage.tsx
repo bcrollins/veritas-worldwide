@@ -390,7 +390,7 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
     <div
       id={`person-${person.id}`}
       className={`border rounded-sm transition-all duration-200 ${isSelected ? 'ring-2 ring-crimson shadow-lg' : 'hover:shadow-md'}`}
-      style={{ borderColor: isSelected ? CATEGORY_CONFIG[person.category].color : 'rgba(0,0,0,0.1)', backgroundColor: isSelected ? `${CATEGORY_CONFIG[person.category].color}06` : 'white' }}
+      style={{ borderColor: isSelected ? CATEGORY_CONFIG[person.category].color : 'var(--color-border)', backgroundColor: isSelected ? `${CATEGORY_CONFIG[person.category].color}06` : 'var(--color-parchment)' }}
     >
       {/* Card Header */}
       <button
@@ -655,7 +655,7 @@ export default function DeepStatePage() {
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   placeholder="Search names, roles, evidence..."
-                  className="w-full pl-9 pr-4 py-2.5 border border-border rounded-sm bg-white font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
+                  className="w-full pl-9 pr-4 py-2.5 border border-border rounded-sm bg-parchment font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
                 />
               </div>
 
@@ -665,7 +665,7 @@ export default function DeepStatePage() {
                 <select
                   value={categoryFilter}
                   onChange={e => setCategoryFilter(e.target.value as ConnectionCategory | 'all')}
-                  className="pl-8 pr-8 py-2.5 border border-border rounded-sm bg-white font-sans text-xs text-ink appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-crimson/30"
+                  className="pl-8 pr-8 py-2.5 border border-border rounded-sm bg-parchment font-sans text-xs text-ink appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-crimson/30"
                 >
                   <option value="all">All Categories</option>
                   {(Object.entries(CATEGORY_CONFIG) as [ConnectionCategory, typeof CATEGORY_CONFIG[ConnectionCategory]][]).map(([key, cfg]) => (
@@ -680,7 +680,7 @@ export default function DeepStatePage() {
                 <select
                   value={tierFilter}
                   onChange={e => setTierFilter(e.target.value as EvidenceTier | 'all')}
-                  className="pl-8 pr-8 py-2.5 border border-border rounded-sm bg-white font-sans text-xs text-ink appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-crimson/30"
+                  className="pl-8 pr-8 py-2.5 border border-border rounded-sm bg-parchment font-sans text-xs text-ink appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-crimson/30"
                 >
                   <option value="all">All Evidence Tiers</option>
                   {(Object.entries(TIER_CONFIG) as [EvidenceTier, typeof TIER_CONFIG[EvidenceTier]][]).map(([key, cfg]) => (

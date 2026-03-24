@@ -73,7 +73,7 @@ export default function ExitIntentCapture() {
       <div className="absolute inset-0 bg-ink/70 backdrop-blur-sm" onClick={handleDismiss} />
 
       {/* Modal */}
-      <div className="relative bg-white rounded-sm shadow-2xl max-w-md w-full overflow-hidden">
+      <div className="relative bg-parchment rounded-sm shadow-2xl max-w-md w-full overflow-hidden">
         {/* Close */}
         <button
           onClick={handleDismiss}
