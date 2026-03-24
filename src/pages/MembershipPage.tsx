@@ -115,13 +115,23 @@ export default function MembershipPage() {
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <div className="w-full max-w-[1920px] mx-auto min-h-screen">
+      {/* Section Bar */}
+      <div className="border-b border-border bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 py-3 text-sm">
+            <Link to="/" className="text-ink-muted hover:text-crimson transition-colors">Home</Link>
+            <span className="text-ink-muted/50">›</span>
+            <span className="text-ink font-medium">Membership</span>
+          </div>
+        </div>
+      </div>
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-ink text-white py-20 md:py-28 px-6">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px)' }} />
         </div>
-        <div className="max-w-4xl mx-auto text-center relative">
+        <div className="max-w-5xl mx-auto text-center relative">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.3em] uppercase text-crimson-light mb-6">
             Membership
           </p>
@@ -313,7 +323,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ─── MEMBER EXCLUSIVE PREVIEW ─── */}
-      <section className="max-w-4xl mx-auto px-6 mb-20">
+      <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-3">What Members Receive</h2>
         <p className="font-body text-sm text-ink-muted text-center mb-10 max-w-lg mx-auto">
           A preview of exclusive content delivered to members each month.
@@ -350,7 +360,7 @@ export default function MembershipPage() {
       <StudentAccessSection />
 
       {/* ─── WHAT YOUR MEMBERSHIP FUNDS ─── */}
-      <section className="max-w-4xl mx-auto px-6 mb-20">
+      <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-3">What Your Membership Funds</h2>
         <p className="font-body text-sm text-ink-muted text-center mb-10 max-w-xl mx-auto">
           Every dollar goes directly to the investigation. No corporate sponsors. No advertisers. No editorial interference. Here&apos;s exactly where your money goes:
@@ -372,7 +382,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ─── Strategy 10: FEATURE COMPARISON TABLE ─── */}
-      <section className="max-w-4xl mx-auto px-6 mb-20">
+      <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-8">Compare Plans</h2>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
@@ -425,7 +435,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ─── Strategy 8: FAQ — Objection Handling ─── */}
-      <section className="max-w-3xl mx-auto px-6 mb-20">
+      <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-8">Questions</h2>
         <div className="space-y-0 border border-border rounded-sm overflow-hidden">
           {[
@@ -464,7 +474,7 @@ export default function MembershipPage() {
       </section>
 
       {/* ─── Strategy 12 + 18: Bottom CTA with urgency ─── */}
-      <section className="max-w-3xl mx-auto px-6 mb-20">
+      <section className="max-w-5xl mx-auto px-6 mb-20">
         <div className="p-8 md:p-12 bg-ink text-white rounded-sm text-center">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.3em] uppercase text-crimson-light mb-4">
             Join the investigation
