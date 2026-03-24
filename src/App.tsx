@@ -26,6 +26,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage'))
 const AccessibilityPage = lazy(() => import('./pages/AccessibilityPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
+const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
 
 
 function ThemeToggle() {
@@ -94,6 +95,7 @@ function Header() {
     { to: '/bookmarks', label: 'Saved' },
     { to: '/analytics', label: 'Analytics' },
     { to: '/about', label: 'About' },
+    { to: '/israel-dossier', label: 'Israel Dossier' },
   ]
 
   const allLinks = [...primaryLinks, ...secondaryLinks]
@@ -434,6 +436,7 @@ export default function App() {
           <Route path="/accessibility" element={<AccessibilityPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/israel-dossier" element={<IsraelDossierPage />} />
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">

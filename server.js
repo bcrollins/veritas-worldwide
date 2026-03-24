@@ -247,6 +247,7 @@ app.use((req, res, next) => {
     '/accessibility': { title: 'Accessibility | Veritas Worldwide Press', desc: 'Accessibility statement and WCAG 2.1 AA compliance information for Veritas Worldwide Press.' },
     '/privacy': { title: 'Privacy Policy | Veritas Worldwide Press', desc: 'How Veritas Worldwide Press handles reader data, analytics, and privacy. Minimal data collection, no advertising trackers.' },
     '/terms': { title: 'Terms of Use | Veritas Worldwide Press', desc: 'Terms of use for Veritas Worldwide Press. Free and open access under Creative Commons BY-NC-SA 4.0.' },
+    '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide Press', desc: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.' },
   }
 
   const staticMeta = staticPages[req.path]
