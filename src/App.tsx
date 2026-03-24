@@ -21,6 +21,8 @@ import { trackPageView } from './lib/hubspot'
 import { handleStripeReturn } from './lib/conversionTracking'
 import StickyMembershipBar from './components/StickyMembershipBar'
 import CookieConsent from './components/CookieConsent'
+import { useExperiment } from './hooks/useExperiment'
+import { trackConversion } from './lib/abTest'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -81,6 +83,7 @@ function Header() {
   const location = useLocation()
   const { isLoggedIn, user, logout, setShowAuthModal } = useAuth()
   const { t } = useI18n()
+  const ctaVariant = useExperiment('membership-cta-copy')
 
   // Auto-close menus on route change
   useEffect(() => {
@@ -208,10 +211,10 @@ function Header() {
             <Link
               to="/membership"
               className="hidden sm:inline-flex items-center justify-center px-3 py-1.5 min-h-[36px] bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
-              onClick={() => trackSupportClick('header')}
+              onClick={() => { trackSupportClick('header'); trackConversion('membership-cta-copy', 'header_click') }}
               data-testid="header-join-cta"
             >
-              {t('nav.join')}
+              {ctaVariant}
             </Link>
             <LanguageSelector />
             <ThemeToggle />
