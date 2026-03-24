@@ -5,6 +5,7 @@ import { DONATE_URL } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
 import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
+import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 import { TierIcon } from '../components/TierIcons'
 
@@ -1307,6 +1308,13 @@ export default function IsraelDossierPage() {
 
       {/* Ad — one per page, hidden for subscribers */}
       <AdBanner slot="dossier-bottom" format="horizontal" />
+
+      {/* Share */}
+      <SharePanel
+        title="The Israel Dossier — Veritas Worldwide Press"
+        description="A documented record of U.S.-Israel policy, military spending, and humanitarian impact. Every figure sourced to government records and UN agencies."
+        contentId="israel-dossier"
+      />
 
       {/* Dispute This Content */}
       <DisputeStory pageId="israel-dossier" pageTitle="The Israel Dossier" />

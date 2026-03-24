@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL } from '../lib/seo'
 import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
+import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 
 /* ── Evidence Tier System ─────────────────────────────────────── */
@@ -849,6 +850,11 @@ export default function DeepStatePage() {
       {/* Community Forum */}
       <div className="max-w-4xl mx-auto px-6">
         <AdBanner slot="deepstate-bottom" format="horizontal" />
+        <SharePanel
+          title="The Deep State — The Epstein Network"
+          description="An investigative dossier documenting the Epstein network through court filings, sworn testimony, and government reports."
+          contentId="deep-state"
+        />
         <DisputeStory pageId="deep-state" pageTitle="The Deep State — Epstein Network" />
         <CommunityForum pageId="deep-state" pageTitle="The Deep State — Epstein Network" />
       </div>

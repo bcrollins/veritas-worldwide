@@ -20,7 +20,9 @@ import FloatingShareBar from '../components/engagement/FloatingShareBar'
 import CitationGenerator from '../components/CitationGenerator'
 import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
+import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
+import { getChapterImages } from '../data/chapterImages'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 
 const diagramComponents: Record<string, React.ComponentType> = {
@@ -771,6 +773,30 @@ export default function ChapterPage() {
         )}
       </header>
 
+      {/* Chapter Images — Historical Photographs */}
+      {(() => {
+        const images = getChapterImages(chapter.id)
+        if (images.length === 0) return null
+        return (
+          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {images.map((img, i) => (
+              <figure key={i} className="border border-border rounded-sm overflow-hidden bg-surface">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="w-full h-48 sm:h-56 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
+                <figcaption className="px-4 py-3">
+                  <p className="font-body text-xs text-ink-muted leading-relaxed">{img.caption}</p>
+                  <p className="font-sans text-[9px] text-ink-faint mt-1">{img.credit}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )
+      })()}
+
       {/* In-Chapter TOC */}
       <ChapterTOC chapter={chapter} />
 
@@ -907,6 +933,13 @@ export default function ChapterPage() {
 
       {/* Ad — tasteful, one per page, hidden for subscribers */}
       <AdBanner slot="chapter-bottom" format="horizontal" />
+
+      {/* Share the Record */}
+      <SharePanel
+        title={chapter.title}
+        description={`${chapter.title} — from The Record by Veritas Worldwide Press. Primary sources. Public record.`}
+        contentId={chapter.id}
+      />
 
       {/* Dispute This Content */}
       <DisputeStory pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />

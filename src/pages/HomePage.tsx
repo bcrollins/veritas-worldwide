@@ -11,6 +11,7 @@ import ContinueReading from '../components/ContinueReading'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
 import SocialProofBanner from '../components/engagement/SocialProofBanner'
+import SharePanel from '../components/SharePanel'
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 
 export default function HomePage() {
@@ -314,6 +315,12 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        <SharePanel
+          title="The Record — Veritas Worldwide Press"
+          description="A 31-chapter documentary history compiled from primary sources — court records, congressional testimony, declassified files. Free and open access."
+          contentId="home"
+        />
 
         <DonationBanner />
 
