@@ -1211,6 +1211,9 @@ export default function IsraelDossierPage() {
         <Link to="/sources" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
           Source Library
         </Link>
+        <Link to="/deep-state" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
+          The Deep State — Epstein Network
+        </Link>
       </div>
     </div>
   )

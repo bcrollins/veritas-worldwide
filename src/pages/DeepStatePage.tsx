@@ -698,6 +698,21 @@ export default function DeepStatePage() {
             <p>This page will be updated as additional court documents are unsealed, DOJ releases continue, and new verified information becomes available. Corrections are made promptly when evidence status changes.</p>
             <p className="text-white/40 text-xs mt-6">Last updated: March 2026 — Compiled by the editorial staff of Veritas Worldwide Press</p>
           </div>
+
+          {/* Cross-links to related investigations */}
+          <div className="mt-10 pt-8 border-t border-white/10">
+            <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/40 mb-3">Related Investigations</p>
+            <div className="flex flex-wrap gap-3">
+              <a href="/israel-dossier" className="inline-flex items-center gap-2 px-4 py-2.5 border border-white/15 rounded-sm text-white/60 hover:text-white hover:border-white/30 transition-colors font-sans text-xs tracking-wide">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                The Israel Dossier
+              </a>
+              <a href="/chapter/chapter-28" className="inline-flex items-center gap-2 px-4 py-2.5 border border-white/15 rounded-sm text-white/60 hover:text-white hover:border-white/30 transition-colors font-sans text-xs tracking-wide">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                Chapter 28: The Epstein Files
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </article>
