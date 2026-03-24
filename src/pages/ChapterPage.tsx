@@ -38,6 +38,8 @@ function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 }
 
+/* ── Image Components ──────────────────────────────────── */
+
 function FigureBlock({ image }: { image: ImageData }) {
   const widthClass = image.width === 'full'
     ? 'max-w-none -mx-6 md:-mx-12'
@@ -99,7 +101,6 @@ function HeroImage({ image }: { image: ImageData }) {
         ticking = true
         requestAnimationFrame(() => {
           const scrollY = window.scrollY
-          // Subtle parallax: image moves at 30% scroll speed
           img.style.transform = `translateY(${scrollY * 0.3}px) scale(1.1)`
           ticking = false
         })
@@ -110,14 +111,14 @@ function HeroImage({ image }: { image: ImageData }) {
   }, [])
 
   return (
-    <figure className="mb-10 -mx-6 md:-mx-12 lg:-mx-20 hero-image">
-      <div className="overflow-hidden rounded-sm">
+    <figure className="mb-10 -mx-4 sm:-mx-6 lg:mx-0 hero-image">
+      <div className="overflow-hidden">
         <img
           ref={imgRef}
           src={image.src}
           alt={image.alt}
           loading="eager"
-          className="w-full h-64 md:h-80 lg:h-96 object-cover will-change-transform"
+          className="w-full h-64 md:h-80 lg:h-[420px] object-cover will-change-transform"
           style={{ transform: 'translateY(0) scale(1.1)' }}
           onError={(e) => {
             const target = e.target as HTMLImageElement
@@ -126,7 +127,7 @@ function HeroImage({ image }: { image: ImageData }) {
         />
       </div>
       {(image.caption || image.credit) && (
-        <figcaption className="mt-2 px-6 md:px-12 lg:px-20">
+        <figcaption className="mt-2 px-4 sm:px-6 lg:px-0">
           {image.caption && (
             <p className="font-sans text-xs text-ink-muted">{image.caption}</p>
           )}
@@ -146,6 +147,8 @@ function HeroImage({ image }: { image: ImageData }) {
     </figure>
   )
 }
+
+/* ── Content Block Renderer ────────────────────────────── */
 
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
@@ -169,7 +172,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
           <div className="section-divider mt-12 mb-8" aria-hidden="true">
             <div className="section-divider-diamond" />
           </div>
-          <h2 id={slugify(block.text || '')} className="font-display text-2xl md:text-3xl font-bold text-ink mb-4 scroll-mt-20">
+          <h2 id={slugify(block.text || '')} className="font-display text-2xl md:text-3xl font-bold text-ink mb-4 scroll-mt-24">
             {block.text}
           </h2>
         </>
@@ -177,7 +180,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
 
     case 'subheading':
       return (
-        <h3 id={slugify(block.text || '')} className="font-display text-xl md:text-2xl font-bold text-ink mt-8 mb-3 scroll-mt-20">
+        <h3 id={slugify(block.text || '')} className="font-display text-xl md:text-2xl font-bold text-ink mt-8 mb-3 scroll-mt-24">
           {block.text}
         </h3>
       )
@@ -332,6 +335,8 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   }
 }
 
+/* ── Helper Functions ──────────────────────────────────── */
+
 function getRelatedByKeywords(current: Chapter, maxResults = 4): ChapterMetadata[] {
   const scored = chapterMeta
     .filter(c => c.id !== current.id)
@@ -344,23 +349,35 @@ function getRelatedByKeywords(current: Chapter, maxResults = 4): ChapterMetadata
   return scored.slice(0, maxResults).map((s: any) => s.chapter)
 }
 
-function ChapterTOC({ chapter }: { chapter: Chapter }) {
+function getEvidenceCounts(chapter: Chapter) {
+  const counts = { verified: 0, circumstantial: 0, disputed: 0 }
+  for (const block of chapter.content) {
+    if (block.type === 'evidence' && block.evidence) {
+      counts[block.evidence.tier]++
+    }
+  }
+  return counts
+}
+
+/* ── Sidebar: Table of Contents ────────────────────────── */
+
+function SidebarTOC({ chapter }: { chapter: Chapter }) {
   const headings = chapter.content.filter(b => b.type === 'heading' || b.type === 'subheading')
-  if (headings.length < 3) return null // Only show TOC for chapters with 3+ headings
+  if (headings.length < 3) return null
 
   return (
-    <nav className="mb-10 p-5 bg-surface border border-border rounded-sm no-print" aria-label="Table of contents">
-      <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">
+    <nav aria-label="Table of contents">
+      <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">
         In This Chapter
       </p>
-      <ol className="space-y-1.5">
+      <ol className="space-y-2 border-l border-border pl-4">
         {headings.map((block, i) => (
           <li key={i}>
             <a
               href={`#${slugify(block.text || '')}`}
-              className={`font-sans text-sm hover:text-crimson transition-colors ${
+              className={`block font-sans text-[0.75rem] leading-snug hover:text-crimson transition-colors ${
                 block.type === 'subheading'
-                  ? 'pl-4 text-ink-faint text-xs'
+                  ? 'pl-3 text-ink-faint'
                   : 'text-ink-muted font-medium'
               }`}
             >
@@ -373,6 +390,106 @@ function ChapterTOC({ chapter }: { chapter: Chapter }) {
   )
 }
 
+/* ── Sidebar: Evidence Summary ─────────────────────────── */
+
+function SidebarEvidence({ counts, sourceCount }: { counts: { verified: number; circumstantial: number; disputed: number }; sourceCount: number }) {
+  const total = counts.verified + counts.circumstantial + counts.disputed
+  if (total === 0) return null
+
+  return (
+    <div>
+      <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">
+        Evidence Classification
+      </p>
+      <div className="space-y-3">
+        {counts.verified > 0 && (
+          <div className="flex items-center justify-between">
+            <span className="inline-flex items-center gap-1.5 font-sans text-xs text-verified">
+              <span aria-hidden="true">✓</span> Verified
+            </span>
+            <span className="font-sans text-xs font-bold text-verified">{counts.verified}</span>
+          </div>
+        )}
+        {counts.circumstantial > 0 && (
+          <div className="flex items-center justify-between">
+            <span className="inline-flex items-center gap-1.5 font-sans text-xs text-circumstantial">
+              <span aria-hidden="true">◐</span> Circumstantial
+            </span>
+            <span className="font-sans text-xs font-bold text-circumstantial">{counts.circumstantial}</span>
+          </div>
+        )}
+        {counts.disputed > 0 && (
+          <div className="flex items-center justify-between">
+            <span className="inline-flex items-center gap-1.5 font-sans text-xs text-disputed">
+              <span aria-hidden="true">⚠</span> Disputed
+            </span>
+            <span className="font-sans text-xs font-bold text-disputed">{counts.disputed}</span>
+          </div>
+        )}
+        <div className="pt-3 border-t border-border">
+          <div className="flex items-center justify-between">
+            <span className="font-sans text-xs text-ink-faint">Total Sources</span>
+            <span className="font-sans text-xs font-bold text-ink-muted">{sourceCount}</span>
+          </div>
+        </div>
+        {/* Visual bar */}
+        <div className="h-1.5 rounded-full bg-border overflow-hidden flex" aria-hidden="true">
+          {counts.verified > 0 && (
+            <div className="bg-verified h-full" style={{ width: `${(counts.verified / total) * 100}%` }} />
+          )}
+          {counts.circumstantial > 0 && (
+            <div className="bg-circumstantial h-full" style={{ width: `${(counts.circumstantial / total) * 100}%` }} />
+          )}
+          {counts.disputed > 0 && (
+            <div className="bg-disputed h-full" style={{ width: `${(counts.disputed / total) * 100}%` }} />
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ── Chapter Navigation Bar ────────────────────────────── */
+
+function ChapterPositionBar({ current }: { current: Chapter }) {
+  const idx = chapterMeta.findIndex(c => c.id === current.id)
+  const prev = idx > 0 ? chapterMeta[idx - 1] : null
+  const next = idx < chapterMeta.length - 1 ? chapterMeta[idx + 1] : null
+
+  return (
+    <div className="border-b border-border no-print">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-10">
+          {prev ? (
+            <Link to={`/chapter/${prev.id}`} className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+              <span className="hidden sm:inline">{prev.number}</span>
+              <span className="sm:hidden">Prev</span>
+            </Link>
+          ) : <span />}
+          <div className="flex items-center gap-3">
+            <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink">
+              {current.number}
+            </span>
+            <span className="font-sans text-[0.55rem] text-ink-faint">
+              {idx + 1} of {chapterMeta.length}
+            </span>
+          </div>
+          {next ? (
+            <Link to={`/chapter/${next.id}`} className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
+              <span className="hidden sm:inline">{next.number}</span>
+              <span className="sm:hidden">Next</span>
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            </Link>
+          ) : <span />}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ── Bottom Chapter Navigation ─────────────────────────── */
+
 function ChapterNav({ current }: { current: Chapter }) {
   const idx = chapterMeta.findIndex(c => c.id === current.id)
   const prev = idx > 0 ? chapterMeta[idx - 1] : null
@@ -382,23 +499,25 @@ function ChapterNav({ current }: { current: Chapter }) {
     <div className="border-t border-border mt-16 pt-8">
       <div className="grid md:grid-cols-2 gap-6">
         {prev && (
-          <Link to={`/chapter/${prev.id}`} className="group p-4 border border-border rounded-sm hover:border-crimson transition-colors">
-            <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint mb-1">&larr; Previous</p>
+          <Link to={`/chapter/${prev.id}`} className="group p-5 border border-border hover:border-crimson transition-colors">
+            <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint mb-2">&larr; Previous</p>
             <p className="font-display text-base font-bold text-ink group-hover:text-crimson transition-colors">{prev.title}</p>
-            <p className="font-sans text-xs text-ink-muted mt-1">{prev.number}</p>
+            <p className="font-sans text-xs text-ink-muted mt-1">{prev.number}{prev.dateRange ? ` · ${prev.dateRange}` : ''}</p>
           </Link>
         )}
         {next && (
-          <Link to={`/chapter/${next.id}`} className="group p-4 border border-border rounded-sm hover:border-crimson transition-colors md:text-right md:ml-auto">
-            <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint mb-1">Next &rarr;</p>
+          <Link to={`/chapter/${next.id}`} className="group p-5 border border-border hover:border-crimson transition-colors md:text-right md:ml-auto">
+            <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint mb-2">Next &rarr;</p>
             <p className="font-display text-base font-bold text-ink group-hover:text-crimson transition-colors">{next.title}</p>
-            <p className="font-sans text-xs text-ink-muted mt-1">{next.number}</p>
+            <p className="font-sans text-xs text-ink-muted mt-1">{next.number}{next.dateRange ? ` · ${next.dateRange}` : ''}</p>
           </Link>
         )}
       </div>
     </div>
   )
 }
+
+/* ── Action Buttons ────────────────────────────────────── */
 
 function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: string; onClick: () => void }) {
   return (
@@ -415,13 +534,10 @@ function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: strin
 function ShareButton({ chapter }: { chapter: Chapter }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
-
   const menuRef = useRef<HTMLDivElement>(null)
 
-  // Close on outside click, Escape; arrow key navigation for a11y
   useEffect(() => {
     if (!open) return
-    // Focus first menu item when opened
     requestAnimationFrame(() => {
       const firstItem = menuRef.current?.querySelector('[role="menuitem"]') as HTMLElement
       firstItem?.focus()
@@ -432,7 +548,6 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setOpen(false)
-        // Return focus to trigger button
         const trigger = ref.current?.querySelector('button[aria-haspopup]') as HTMLElement
         trigger?.focus()
       }
@@ -464,7 +579,6 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
   const handleCopy = async () => {
     await navigator.clipboard.writeText(url)
     setOpen(false)
-    // Toast is managed by AuthContext — trigger via a small workaround
     const toastEl = document.getElementById('share-toast')
     if (toastEl) {
       toastEl.textContent = 'Link copied to clipboard'
@@ -521,7 +635,6 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
           ))}
         </div>
       )}
-      {/* Lightweight share toast — independent of auth toast */}
       <div
         id="share-toast"
         className="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-2.5 bg-ink text-white font-sans text-sm rounded-sm shadow-lg opacity-0 translate-y-2 transition-all duration-200 pointer-events-none z-[100]"
@@ -533,7 +646,6 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
 
 function DownloadButton({ chapter }: { chapter: Chapter }) {
   const handleDownload = () => {
-    // Generate a text version of the chapter for download
     const lines: string[] = [
       chapter.title,
       chapter.subtitle,
@@ -580,6 +692,8 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
   )
 }
 
+/* ── Social Share Bar ──────────────────────────────────── */
+
 function SocialShareBar({ chapter }: { chapter: Chapter }) {
   const [copied, setCopied] = useState(false)
   const url = `${SITE_URL}/chapter/${chapter.id}`
@@ -593,44 +707,24 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const btnClass = "inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-semibold text-ink-muted border border-border rounded-sm hover:border-ink hover:text-ink transition-colors"
+
   return (
     <div className="flex flex-wrap items-center gap-3 py-6 border-t border-b border-border my-8 no-print">
       <span className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mr-1">Share</span>
-      <a
-        href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}&via=VeritasWorldwide`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-semibold text-ink-muted border border-border rounded-sm hover:border-ink hover:text-ink transition-colors"
-        aria-label="Share on X / Twitter"
-      >
+      <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}&via=VeritasWorldwide`} target="_blank" rel="noopener noreferrer" className={btnClass} aria-label="Share on X / Twitter">
         <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         X
       </a>
-      <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-semibold text-ink-muted border border-border rounded-sm hover:border-ink hover:text-ink transition-colors"
-        aria-label="Share on Facebook"
-      >
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer" className={btnClass} aria-label="Share on Facebook">
         <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Facebook
       </a>
-      <a
-        href={`https://reddit.com/submit?url=${encodedUrl}&title=${encodedText}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-semibold text-ink-muted border border-border rounded-sm hover:border-ink hover:text-ink transition-colors"
-        aria-label="Share on Reddit"
-      >
+      <a href={`https://reddit.com/submit?url=${encodedUrl}&title=${encodedText}`} target="_blank" rel="noopener noreferrer" className={btnClass} aria-label="Share on Reddit">
         <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 0-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
         Reddit
       </a>
-      <button
-        onClick={handleCopy}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-semibold text-ink-muted border border-border rounded-sm hover:border-ink hover:text-ink transition-colors"
-        aria-label="Copy link"
-      >
+      <button onClick={handleCopy} className={btnClass} aria-label="Copy link">
         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
         {copied ? 'Copied!' : 'Copy Link'}
       </button>
@@ -638,17 +732,9 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
   )
 }
 
-// estimateReadingTime imported from ../lib/readingTime
-
-function getEvidenceCounts(chapter: Chapter) {
-  const counts = { verified: 0, circumstantial: 0, disputed: 0 }
-  for (const block of chapter.content) {
-    if (block.type === 'evidence' && block.evidence) {
-      counts[block.evidence.tier]++
-    }
-  }
-  return counts
-}
+/* ══════════════════════════════════════════════════════════
+   MAIN COMPONENT — NYT-STYLE TWO-COLUMN LAYOUT
+   ══════════════════════════════════════════════════════════ */
 
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
@@ -664,7 +750,6 @@ export default function ChapterPage() {
   useReadingHistory(id)
   useKeyboardNav()
 
-  // Load chapter content on demand
   useEffect(() => {
     if (!id || !staticMetadata) return
     
@@ -675,10 +760,8 @@ export default function ChapterPage() {
     }).catch(error => {
       console.error('Failed to load chapter content:', error)
       setIsLoading(false)
-      // Fallback: leave chapter as null and show error state
     })
 
-    // Preload sequential chapters in background
     const currentIndex = chapterMeta.findIndex(ch => ch.id === id)
     if (currentIndex !== -1) {
       const nextChapterIds = []
@@ -716,21 +799,21 @@ export default function ChapterPage() {
     return () => { clearMetaTags(); removeJsonLd() }
   }, [chapter, isLoading])
 
+  /* ── Loading State ─────────────────────────────────── */
+
   if (isLoading && !chapter) {
     return (
       <div className="max-w-3xl mx-auto px-6 py-20 text-center">
         <div className="flex justify-center mb-6">
-          <div className="animate-spin">
-            <svg className="w-12 h-12 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
-            </svg>
-          </div>
+          <div className="inline-block w-8 h-8 border-2 border-crimson/20 border-t-crimson rounded-full animate-spin" />
         </div>
         <h2 className="font-display text-2xl font-bold text-ink mb-2">Loading chapter...</h2>
         <p className="font-body text-ink-muted">Please wait while we fetch the content.</p>
       </div>
     )
   }
+
+  /* ── Not Found State ───────────────────────────────── */
 
   if (!chapter) {
     return (
@@ -744,25 +827,61 @@ export default function ChapterPage() {
     )
   }
 
+  const images = getChapterImages(chapter.id)
+  const relatedChapters = getRelatedByKeywords(chapter)
+
+  /* ── Main Render ───────────────────────────────────── */
+
   return (
     <>
-    <ReadingProgress />
+      <ReadingProgress />
       <FloatingShareBar title={chapter.title} description={chapter.subtitle} contentId={chapter.id} />
-    <BackToTop />
-    <TimeRemaining totalMinutes={readingTime} />
-    <TextSelectionShare />
-    <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-      {/* Breadcrumb */}
-      <Breadcrumb chapter={chapter} />
+      <BackToTop />
+      <TimeRemaining totalMinutes={readingTime} />
+      <TextSelectionShare />
 
-      {/* Hero Image */}
-      {chapter.heroImage && <HeroImage image={chapter.heroImage} />}
+      {/* ── Chapter Position Navigation Bar ─────────── */}
+      <ChapterPositionBar current={chapter} />
 
-      {/* Chapter Header */}
-      <header className="mb-12 border-b border-border pb-10">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-          <p className="chapter-label mb-2 sm:mb-4">{chapter.number}</p>
-          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+      {/* ── Full-Width Article Container ────────────── */}
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* ── Article Header — Full Width ──────────── */}
+        <header className="max-w-4xl mx-auto pt-8 pb-8 border-b border-border">
+          {/* Breadcrumb */}
+          <Breadcrumb chapter={chapter} />
+
+          {/* Category/Section label */}
+          <div className="mt-6 mb-4">
+            <span className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson">
+              {chapter.number}
+              {chapter.dateRange && <span className="text-ink-faint ml-3">{chapter.dateRange}</span>}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink leading-[1.05] mb-5">
+            {chapter.title}
+          </h1>
+
+          {/* Subtitle */}
+          <p className="font-body text-xl md:text-2xl text-ink-muted italic leading-relaxed mb-6 max-w-3xl">
+            {chapter.subtitle}
+          </p>
+
+          {/* Byline + Meta */}
+          <div className="flex flex-wrap items-center gap-3 font-sans text-[0.6rem] tracking-[0.1em] uppercase text-ink-faint">
+            <span className="font-semibold text-ink-muted">By {chapter.author}</span>
+            <span className="text-border">|</span>
+            <span>{chapter.publishDate}</span>
+            <span className="text-border">|</span>
+            <span>{readingTime} min read</span>
+            <span className="text-border">|</span>
+            <span>{chapter.sources.length} sources</span>
+          </div>
+
+          {/* Action bar */}
+          <div className="flex items-center gap-3 sm:gap-4 mt-5 pt-5 border-t border-border flex-wrap">
             <FontSizeToggle />
             <ShareButton chapter={chapter} />
             <DownloadButton chapter={chapter} />
@@ -779,233 +898,273 @@ export default function ChapterPage() {
             />
             <BookmarkButton chapterId={chapter.id} />
           </div>
-        </div>
-        <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight mb-4">
-          {chapter.title}
-        </h1>
-        <p className="font-body text-lg italic text-ink-muted leading-relaxed mb-6">
-          {chapter.subtitle}
-        </p>
-        <div className="flex flex-wrap items-center gap-4">
-          <span className="font-sans text-xs text-ink-faint">By {chapter.author}</span>
-          <span className="font-sans text-xs text-ink-faint">{chapter.publishDate}</span>
-          <span className="font-sans text-xs text-ink-faint">{readingTime} min read</span>
-          {chapter.dateRange && (
-            <span className="font-sans text-xs font-semibold text-crimson px-2 py-1 bg-crimson/5 rounded-sm">
-              {chapter.dateRange}
-            </span>
+
+          {/* Evidence Tier Summary — compact inline badges */}
+          {hasEvidence && (
+            <div className="flex flex-wrap items-center gap-3 mt-5" aria-label="Evidence classification summary">
+              <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Evidence:</span>
+              {evidenceCounts.verified > 0 && (
+                <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-verified bg-verified-bg border border-verified-border px-2.5 py-1 rounded-sm relative group cursor-help">
+                  <span aria-hidden="true">✓</span> {evidenceCounts.verified} Verified
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
+                    Supported by primary source documents — court filings, congressional records, executive orders, peer-reviewed studies.
+                  </span>
+                </span>
+              )}
+              {evidenceCounts.circumstantial > 0 && (
+                <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-circumstantial bg-circumstantial-bg border border-circumstantial-border px-2.5 py-1 rounded-sm relative group cursor-help">
+                  <span aria-hidden="true">◐</span> {evidenceCounts.circumstantial} Circumstantial
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
+                    Individual facts are documented. The connection drawn between them is an interpretation. Alternative explanations noted.
+                  </span>
+                </span>
+              )}
+              {evidenceCounts.disputed > 0 && (
+                <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-disputed bg-disputed-bg border border-disputed-border px-2.5 py-1 rounded-sm relative group cursor-help">
+                  <span aria-hidden="true">⚠</span> {evidenceCounts.disputed} Disputed
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
+                    Claimed by a named source or in sworn testimony but not independently confirmed. Clearly labeled.
+                  </span>
+                </span>
+              )}
+            </div>
           )}
-        </div>
-        {/* Evidence Tier Summary */}
-        {hasEvidence && (
-          <div className="flex flex-wrap items-center gap-3 mt-5" aria-label="Evidence classification summary">
-            <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Evidence:</span>
-            {evidenceCounts.verified > 0 && (
-              <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-verified bg-verified-bg border border-verified-border px-2.5 py-1 rounded-sm relative group cursor-help">
-                <span aria-hidden="true">✓</span> {evidenceCounts.verified} Verified
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
-                  Supported by primary source documents — court filings, congressional records, executive orders, peer-reviewed studies.
-                </span>
-              </span>
-            )}
-            {evidenceCounts.circumstantial > 0 && (
-              <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-circumstantial bg-circumstantial-bg border border-circumstantial-border px-2.5 py-1 rounded-sm relative group cursor-help">
-                <span aria-hidden="true">◐</span> {evidenceCounts.circumstantial} Circumstantial
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
-                  Individual facts are documented. The connection drawn between them is an interpretation. Alternative explanations noted.
-                </span>
-              </span>
-            )}
-            {evidenceCounts.disputed > 0 && (
-              <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-disputed bg-disputed-bg border border-disputed-border px-2.5 py-1 rounded-sm relative group cursor-help">
-                <span aria-hidden="true">⚠</span> {evidenceCounts.disputed} Disputed
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
-                  Claimed by a named source or in sworn testimony but not independently confirmed. Clearly labeled.
-                </span>
-              </span>
-            )}
-            <span className="font-sans text-[0.6rem] text-ink-faint">{chapter.sources.length} sources</span>
+        </header>
+
+        {/* ── Hero Image — Full Width ─────────────── */}
+        {chapter.heroImage && (
+          <div className="max-w-5xl mx-auto mt-8">
+            <HeroImage image={chapter.heroImage} />
           </div>
         )}
-      </header>
 
-      {/* Chapter Images — Historical Photographs */}
-      {(() => {
-        const images = getChapterImages(chapter.id)
-        if (images.length === 0) return null
-        return (
-          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {images.map((img, i) => (
-              <figure key={i} className="border border-border rounded-sm overflow-hidden bg-surface">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="w-full h-48 sm:h-56 object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                />
-                <figcaption className="px-4 py-3">
-                  <p className="font-body text-xs text-ink-muted leading-relaxed">{img.caption}</p>
-                  <p className="font-sans text-[9px] text-ink-faint mt-1">{img.credit}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        )
-      })()}
+        {/* ══════════════════════════════════════════════
+            TWO-COLUMN LAYOUT: Article + Sidebar
+           ══════════════════════════════════════════════ */}
+        <div className="grid lg:grid-cols-[1fr_300px] gap-12 max-w-[1200px] mx-auto">
 
-      {/* In-Chapter TOC */}
-      <ChapterTOC chapter={chapter} />
+          {/* ── LEFT: Article Body ──────────────────── */}
+          <article className="min-w-0 py-10">
+            {/* Chapter Images — Historical Photographs */}
+            {images.length > 0 && (
+              <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {images.map((img, i) => (
+                  <figure key={i} className="border border-border rounded-sm overflow-hidden bg-surface">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      className="w-full h-48 sm:h-56 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    />
+                    <figcaption className="px-4 py-3">
+                      <p className="font-body text-xs text-ink-muted leading-relaxed">{img.caption}</p>
+                      <p className="font-sans text-[9px] text-ink-faint mt-1">{img.credit}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
 
-      {/* Full Content — Free for all readers */}
-      <div className="mb-12">
-        {chapter.content.map((block, idx) => (
-          <ContentBlockRenderer key={idx} block={block} />
-        ))}
-      </div>
-
-      {/* Social Share Bar */}
-      <SocialShareBar chapter={chapter} />
-
-      {/* Sources */}
-      {chapter.sources.length > 0 && (
-        <section className="border-t border-border pt-8 mb-12">
-          <h3 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-6">
-            Sources &amp; References
-          </h3>
-          <ol className="space-y-3">
-            {chapter.sources.map(source => (
-              <li key={source.id} className="font-sans text-sm text-ink-muted leading-relaxed flex gap-3">
-                <span className="font-bold text-crimson shrink-0">[{source.id}]</span>
-                <span>
-                  {source.text}
-                  {source.url && (
-                    <>
-                      {' '}
-                      <a
-                        href={source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-crimson hover:text-crimson-dark underline underline-offset-2"
-                      >
-                        View Source &rarr;
-                      </a>
-                    </>
-                  )}
-                </span>
-              </li>
-            ))}
-          </ol>
-        </section>
-      )}
-
-      {/* Keywords */}
-      {chapter.keywords.length > 0 && (
-        <section className="border-t border-border pt-8 mb-12">
-          <h3 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
-            Topics &amp; Keywords
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {chapter.keywords.map(kw => (
-              <Link
-                key={kw}
-                to={`/search?q=${encodeURIComponent(kw)}`}
-                className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm hover:text-crimson hover:bg-crimson/5 transition-colors"
-              >
-                {kw}
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Cross-Links + Keyword-Based Related Chapters */}
-      {(chapter.crossLinks.length > 0 || chapter.keywords.length > 0) && (() => {
-        const keywordRelated = getRelatedByKeywords(chapter)
-        const hasCrossLinks = chapter.crossLinks.length > 0
-        const hasKeywordRelated = keywordRelated.length > 0
-        if (!hasCrossLinks && !hasKeywordRelated) return null
-        return (
-          <section className="border-t border-border pt-8 mb-8">
-            <h3 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
-              Related Chapters
-            </h3>
-            <div className="grid gap-3">
-              {chapter.crossLinks.map(link => (
-                <Link
-                  key={link.chapterId}
-                  to={`/chapter/${link.chapterId}`}
-                  className="group flex items-center gap-3 p-3 border border-border rounded-sm hover:border-crimson transition-colors"
-                >
-                  <span className="font-sans text-crimson font-bold text-sm">&rarr;</span>
-                  <span className="font-sans text-sm text-ink group-hover:text-crimson transition-colors">{link.label}</span>
-                </Link>
-              ))}
-              {hasKeywordRelated && hasCrossLinks && (
-                <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint mt-2 mb-1">
-                  Also Related by Topic
-                </p>
-              )}
-              {keywordRelated.map(related => (
-                <Link
-                  key={related.id}
-                  to={`/chapter/${related.id}`}
-                  className="group flex items-start gap-3 p-3 border border-border rounded-sm hover:border-crimson transition-colors"
-                >
-                  <span className="font-sans text-ink-faint font-bold text-sm shrink-0">&rarr;</span>
-                  <div>
-                    <span className="font-sans text-sm text-ink group-hover:text-crimson transition-colors">{related.title}</span>
-                    <span className="block font-sans text-[0.65rem] text-ink-faint mt-0.5">{related.number}{related.dateRange ? ` · ${related.dateRange}` : ''}</span>
-                  </div>
-                </Link>
+            {/* Full Content */}
+            <div className="mb-12">
+              {chapter.content.map((block, idx) => (
+                <ContentBlockRenderer key={idx} block={block} />
               ))}
             </div>
-          </section>
-        )
-      })()}
 
-      {/* Support CTA — post-chapter, high engagement point */}
-      <section className="border-t border-border pt-8 mb-8 text-center">
-        <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
-          Free &amp; Open Access
-        </p>
-        <p className="font-body text-sm text-ink-muted leading-relaxed max-w-md mx-auto mb-5">
-          This chapter — and every chapter of The Record — is free because we believe the public record belongs to everyone. If this research has been useful to you, a small contribution helps us continue.
-        </p>
-        <a
-          href={DONATE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
-        >
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-          Support This Work
-        </a>
-        <p className="font-sans text-[0.6rem] text-ink-faint mt-3">
-          Processed securely via Stripe &middot; No account required
-        </p>
-      </section>
+            {/* Social Share Bar */}
+            <SocialShareBar chapter={chapter} />
 
-      {/* Ad — tasteful, one per page, hidden for subscribers */}
-      <AdBanner slot="chapter-bottom" format="horizontal" />
+            {/* Sources */}
+            {chapter.sources.length > 0 && (
+              <section className="border-t border-border pt-8 mb-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+                    Sources &amp; References
+                  </h3>
+                  <div className="flex-1 h-[1px] bg-border" />
+                  <span className="font-sans text-xs text-ink-faint">{chapter.sources.length}</span>
+                </div>
+                <ol className="space-y-3">
+                  {chapter.sources.map(source => (
+                    <li key={source.id} className="font-sans text-sm text-ink-muted leading-relaxed flex gap-3">
+                      <span className="font-bold text-crimson shrink-0">[{source.id}]</span>
+                      <span>
+                        {source.text}
+                        {source.url && (
+                          <>
+                            {' '}
+                            <a
+                              href={source.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-crimson hover:text-crimson-dark underline underline-offset-2"
+                            >
+                              View Source &rarr;
+                            </a>
+                          </>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
 
-      {/* Share the Record */}
-      <SharePanel
-        title={chapter.title}
-        description={`${chapter.title} — from The Record by Veritas Worldwide Press. Primary sources. Public record.`}
-        contentId={chapter.id}
-      />
+            {/* Keywords */}
+            {chapter.keywords.length > 0 && (
+              <section className="border-t border-border pt-8 mb-12">
+                <div className="flex items-center gap-4 mb-4">
+                  <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+                    Topics &amp; Keywords
+                  </h3>
+                  <div className="flex-1 h-[1px] bg-border" />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {chapter.keywords.map(kw => (
+                    <Link
+                      key={kw}
+                      to={`/search?q=${encodeURIComponent(kw)}`}
+                      className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm hover:text-crimson hover:bg-crimson/5 transition-colors"
+                    >
+                      {kw}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
 
-      {/* Dispute This Content */}
-      <DisputeStory pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
+            {/* Related Chapters */}
+            {(chapter.crossLinks.length > 0 || relatedChapters.length > 0) && (
+              <section className="border-t border-border pt-8 mb-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+                    Related Chapters
+                  </h3>
+                  <div className="flex-1 h-[1px] bg-border" />
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {chapter.crossLinks.map(link => (
+                    <Link
+                      key={link.chapterId}
+                      to={`/chapter/${link.chapterId}`}
+                      className="group flex items-start gap-3 p-4 border border-border hover:border-crimson transition-colors"
+                    >
+                      <span className="font-sans text-crimson font-bold text-sm shrink-0">&rarr;</span>
+                      <span className="font-sans text-sm text-ink group-hover:text-crimson transition-colors">{link.label}</span>
+                    </Link>
+                  ))}
+                  {relatedChapters.map(related => (
+                    <Link
+                      key={related.id}
+                      to={`/chapter/${related.id}`}
+                      className="group flex items-start gap-3 p-4 border border-border hover:border-crimson transition-colors"
+                    >
+                      <span className="font-sans text-ink-faint font-bold text-sm shrink-0">&rarr;</span>
+                      <div>
+                        <span className="font-sans text-sm text-ink group-hover:text-crimson transition-colors">{related.title}</span>
+                        <span className="block font-sans text-[0.65rem] text-ink-faint mt-0.5">{related.number}{related.dateRange ? ` · ${related.dateRange}` : ''}</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
 
-      {/* Community Forum */}
-      <CommunityForum pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
+            {/* Support CTA */}
+            <section className="border-t border-border pt-10 mb-8 text-center">
+              <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
+                Free &amp; Open Access
+              </p>
+              <p className="font-body text-sm text-ink-muted leading-relaxed max-w-md mx-auto mb-5">
+                This chapter — and every chapter of The Record — is free because we believe the public record belongs to everyone. If this research has been useful to you, a small contribution helps us continue.
+              </p>
+              <a
+                href={DONATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                Support This Work
+              </a>
+              <p className="font-sans text-[0.6rem] text-ink-faint mt-3">
+                Processed securely via Stripe &middot; No account required
+              </p>
+            </section>
 
-      {/* Chapter Navigation */}
-      <ChapterNav current={chapter} />
-    </article>
+            <AdBanner slot="chapter-bottom" format="horizontal" />
+
+            <SharePanel
+              title={chapter.title}
+              description={`${chapter.title} — from The Record by Veritas Worldwide Press. Primary sources. Public record.`}
+              contentId={chapter.id}
+            />
+
+            <DisputeStory pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
+
+            <CommunityForum pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
+
+            <ChapterNav current={chapter} />
+          </article>
+
+          {/* ── RIGHT: Sticky Sidebar ───────────────── */}
+          <aside className="hidden lg:block py-10">
+            <div className="sticky top-16 space-y-10">
+              {/* Evidence Summary */}
+              <SidebarEvidence counts={evidenceCounts} sourceCount={chapter.sources.length} />
+
+              {/* Table of Contents */}
+              <SidebarTOC chapter={chapter} />
+
+              {/* Quick Jump to Sources */}
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">Quick Links</p>
+                <div className="flex flex-col gap-2">
+                  <a href="#sources--references" className="font-sans text-xs text-ink-muted hover:text-crimson transition-colors">→ Sources &amp; References</a>
+                  <Link to="/methodology" className="font-sans text-xs text-ink-muted hover:text-crimson transition-colors">→ Methodology</Link>
+                  <Link to="/sources" className="font-sans text-xs text-ink-muted hover:text-crimson transition-colors">→ Full Bibliography</Link>
+                </div>
+              </div>
+
+              {/* Related — compact */}
+              {relatedChapters.length > 0 && (
+                <div className="border-t border-border pt-8">
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">Also Read</p>
+                  <div className="space-y-3">
+                    {relatedChapters.slice(0, 3).map((related, idx) => (
+                      <Link key={related.id} to={`/chapter/${related.id}`} className="group block">
+                        <p className="font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink-faint mb-0.5">{idx + 1}.</p>
+                        <p className="font-display text-sm font-bold text-ink leading-snug group-hover:text-crimson transition-colors">
+                          {related.title}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Support — sidebar */}
+              <div className="border-t border-border pt-8">
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">Support</p>
+                <p className="font-body text-xs text-ink-muted leading-relaxed mb-4">
+                  Independent, source-verified research. Free forever.
+                </p>
+                <a
+                  href={DONATE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase hover:bg-crimson-dark transition-colors"
+                >
+                  Support This Work
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
     </>
   )
 }

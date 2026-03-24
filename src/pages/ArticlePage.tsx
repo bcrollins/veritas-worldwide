@@ -23,37 +23,35 @@ function SourceBadge({ type }: { type: ArticleSource['type'] }) {
 
 function TierBadge({ tier }: { tier: string }) {
   const styles: Record<string, { bg: string; label: string }> = {
-    verified: { bg: 'bg-emerald-50 border-emerald-300 text-emerald-900', label: 'VERIFIED — PRIMARY SOURCE' },
-    circumstantial: { bg: 'bg-amber-50 border-amber-300 text-amber-900', label: 'CIRCUMSTANTIAL EVIDENCE' },
-    disputed: { bg: 'bg-red-50 border-red-300 text-red-900', label: 'DISPUTED — SEE SOURCES' },
+    verified: { bg: 'bg-verified-bg border-verified-border text-verified', label: 'VERIFIED — PRIMARY SOURCE' },
+    circumstantial: { bg: 'bg-circumstantial-bg border-circumstantial-border text-circumstantial', label: 'CIRCUMSTANTIAL EVIDENCE' },
+    disputed: { bg: 'bg-disputed-bg border-disputed-border text-disputed', label: 'DISPUTED — SEE SOURCES' },
   }
   const s = styles[tier] || styles.verified
   return (
     <div className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-sm border text-[9px] font-sans font-bold tracking-[0.12em] uppercase ${s.bg}`}>
-      <span className={`w-1.5 h-1.5 rounded-full ${tier === 'verified' ? 'bg-emerald-500' : tier === 'circumstantial' ? 'bg-amber-500' : 'bg-red-500'}`} />
+      <span aria-hidden="true">{tier === 'verified' ? '✓' : tier === 'circumstantial' ? '◐' : '⚠'}</span>
       {s.label}
     </div>
   )
 }
 
-function ContentBlock({ block, sourceCount }: { block: ArticleBlock; sourceCount: number }) {
+function ContentBlock({ block }: { block: ArticleBlock }) {
   switch (block.type) {
     case 'heading':
-      return <h2 className="font-display text-2xl font-bold text-ink mt-10 mb-4">{block.text}</h2>
+      return <h2 className="font-display text-2xl md:text-3xl font-bold text-ink mt-10 mb-4">{block.text}</h2>
     case 'subheading':
       return <h3 className="font-display text-xl font-bold text-ink mt-8 mb-3">{block.text}</h3>
     case 'text':
       return <p className="font-body text-base md:text-[1.05rem] text-ink leading-[1.8] mb-5">{block.text}</p>
     case 'quote':
       return (
-        <blockquote className="border-l-3 border-crimson pl-5 py-2 my-6 bg-crimson/3 rounded-r-sm">
-          <p className="font-body text-base md:text-lg italic text-ink leading-relaxed">
-            &ldquo;{block.text}&rdquo;
-          </p>
+        <blockquote className="pullquote">
+          &ldquo;{block.text}&rdquo;
           {block.attribution && (
-            <cite className="block font-sans text-xs text-ink-muted mt-2 not-italic">
+            <div className="pullquote-attribution">
               &mdash; {block.attribution}
-            </cite>
+            </div>
           )}
         </blockquote>
       )
@@ -152,78 +150,105 @@ export default function ArticlePage() {
 
   return (
     <article className="min-h-screen">
-      {/* Breadcrumb */}
-      <div className="max-w-4xl mx-auto px-6 pt-6">
-        <nav className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.1em] uppercase text-ink-faint" aria-label="Breadcrumb">
-          <Link to="/" className="hover:text-ink transition-colors">Home</Link>
-          <span>/</span>
-          <Link to="/news" className="hover:text-ink transition-colors">Current Events</Link>
-          <span>/</span>
-          <span className="text-ink-muted truncate max-w-[200px]">{article.title.split(' ').slice(0, 6).join(' ')}...</span>
-        </nav>
+      {/* ── Section Bar ──────────────────────────────── */}
+      <div className="border-b border-border no-print">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-10">
+            <Link to="/news" className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+              Current Events
+            </Link>
+            <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson">
+              {CATEGORY_META[article.category].label}
+            </span>
+            <span className="font-sans text-[0.55rem] text-ink-faint">{article.readingTime} min read</span>
+          </div>
+        </div>
       </div>
 
-      {/* Article Header */}
-      <header className="max-w-4xl mx-auto px-6 pt-6 pb-8">
-        <div className="mb-3">
-          <span className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson">
-            {CATEGORY_META[article.category].label}
-          </span>
-        </div>
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-[1.1] mb-4">
-          {article.title}
-        </h1>
-        <p className="font-body text-lg md:text-xl text-ink-muted leading-relaxed mb-6">
-          {article.subtitle}
-        </p>
-        <div className="flex flex-wrap items-center gap-3 font-sans text-[0.6rem] tracking-[0.1em] uppercase text-ink-faint pb-6 border-b border-border">
-          <span className="font-semibold text-ink-muted">{article.author}</span>
-          <span className="text-border">|</span>
-          <span>Published {article.publishDate}</span>
-          {article.updatedDate && (
-            <>
-              <span className="text-border">|</span>
-              <span>Updated {article.updatedDate}</span>
-            </>
-          )}
-          <span className="text-border">|</span>
-          <span>{article.readingTime} min read</span>
-          <span className="text-border">|</span>
-          <span>{article.sources.length} sources cited</span>
-        </div>
-      </header>
+      {/* ── Article Header — Full Width Container ──── */}
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="max-w-4xl mx-auto pt-8 pb-8 border-b border-border">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.1em] uppercase text-ink-faint mb-6" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-ink transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/news" className="hover:text-ink transition-colors">Current Events</Link>
+            <span>/</span>
+            <span className="text-ink-muted truncate max-w-[200px]">{article.title.split(' ').slice(0, 6).join(' ')}...</span>
+          </nav>
 
-      {/* Hero Image */}
-      <div className="max-w-5xl mx-auto px-6 mb-10">
-        <figure>
-          <img
-            src={article.heroImage.src}
-            alt={article.heroImage.alt}
-            className="w-full h-64 sm:h-80 md:h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700 rounded-sm"
-            loading="eager"
-          />
-          <figcaption className="flex items-center justify-between mt-2">
-            <p className="font-body text-xs text-ink-muted">{article.heroImage.alt}</p>
-            <p className="font-sans text-[9px] text-ink-faint">{article.heroImage.credit}</p>
-          </figcaption>
-        </figure>
-      </div>
+          {/* Category label */}
+          <div className="mb-4">
+            <span className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson">
+              {CATEGORY_META[article.category].label}
+            </span>
+          </div>
 
-      {/* Content + Sidebar */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-[1fr_280px] gap-12">
-          {/* Main Content */}
-          <div className="min-w-0">
+          {/* Title */}
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink leading-[1.05] mb-5">
+            {article.title}
+          </h1>
+
+          {/* Subtitle */}
+          <p className="font-body text-xl md:text-2xl text-ink-muted italic leading-relaxed mb-6 max-w-3xl">
+            {article.subtitle}
+          </p>
+
+          {/* Byline + Meta */}
+          <div className="flex flex-wrap items-center gap-3 font-sans text-[0.6rem] tracking-[0.1em] uppercase text-ink-faint">
+            <span className="font-semibold text-ink-muted">{article.author}</span>
+            <span className="text-border">|</span>
+            <span>Published {article.publishDate}</span>
+            {article.updatedDate && (
+              <>
+                <span className="text-border">|</span>
+                <span>Updated {article.updatedDate}</span>
+              </>
+            )}
+            <span className="text-border">|</span>
+            <span>{article.readingTime} min read</span>
+            <span className="text-border">|</span>
+            <span>{article.sources.length} sources cited</span>
+          </div>
+        </header>
+
+        {/* ── Hero Image ───────────────────────────── */}
+        <div className="max-w-5xl mx-auto mt-8 mb-10">
+          <figure>
+            <img
+              src={article.heroImage.src}
+              alt={article.heroImage.alt}
+              className="w-full h-64 sm:h-80 md:h-[420px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              loading="eager"
+            />
+            <figcaption className="flex items-center justify-between mt-2">
+              <p className="font-sans text-xs text-ink-muted">{article.heroImage.alt}</p>
+              <p className="font-sans text-[0.6rem] text-ink-faint">{article.heroImage.credit}</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        {/* ══════════════════════════════════════════════
+            TWO-COLUMN LAYOUT: Content + Sidebar
+           ══════════════════════════════════════════════ */}
+        <div className="grid lg:grid-cols-[1fr_280px] gap-12 max-w-[1200px] mx-auto">
+
+          {/* ── LEFT: Article Content ───────────────── */}
+          <div className="min-w-0 py-4">
             {article.content.map((block, i) => (
-              <ContentBlock key={i} block={block} sourceCount={article.sources.length} />
+              <ContentBlock key={i} block={block} />
             ))}
 
             {/* Tags */}
             <div className="mt-10 pt-6 border-t border-border">
-              <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">Topics</p>
+              <div className="flex items-center gap-4 mb-4">
+                <p className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Topics</p>
+                <div className="flex-1 h-[1px] bg-border" />
+              </div>
               <div className="flex flex-wrap gap-2">
                 {article.tags.map(tag => (
-                  <span key={tag} className="font-sans text-[0.55rem] tracking-[0.08em] uppercase px-2.5 py-1 bg-surface border border-border rounded-sm text-ink-muted">
+                  <span key={tag} className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm">
                     {tag}
                   </span>
                 ))}
@@ -233,22 +258,48 @@ export default function ArticlePage() {
             {/* Share */}
             <div className="mt-8">
               <SharePanel
-                variant="full"
                 title={article.title}
-                url={`${SITE_URL}/news/${article.slug}`}
                 description={article.seo.metaDescription}
+                contentId={`news-${article.slug}`}
               />
+            </div>
+
+            {/* Newsletter CTA */}
+            <div className="mt-10">
+              <NewsletterSignup
+                variant="dark"
+                source="article_cta"
+                contentInterest={article.category}
+                heading="Get investigations like this delivered free."
+                subtext="Join readers who follow the public record — not opinion, not spin. Every claim sourced to primary documents."
+              />
+            </div>
+
+            {/* Back to News */}
+            <div className="py-12">
+              <Link
+                to="/news"
+                className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-crimson hover:text-crimson-dark transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Current Events
+              </Link>
             </div>
           </div>
 
-          {/* Sidebar */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-28 space-y-6">
+          {/* ── RIGHT: Sticky Sidebar ───────────────── */}
+          <aside className="hidden lg:block py-4">
+            <div className="sticky top-16 space-y-8">
               {/* Sources */}
-              <div className="bg-surface border border-border rounded-sm p-5">
-                <h2 className="font-sans text-[0.65rem] font-bold tracking-[0.18em] uppercase text-ink-faint mb-4 pb-2 border-b border-border">
-                  Sources Cited ({article.sources.length})
-                </h2>
+              <div>
+                <div className="flex items-center gap-4 mb-4">
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint">
+                    Sources ({article.sources.length})
+                  </p>
+                  <div className="flex-1 h-[1px] bg-border" />
+                </div>
                 <ol className="space-y-3">
                   {article.sources.map(source => (
                     <li key={source.id} className="text-sm">
@@ -278,23 +329,18 @@ export default function ArticlePage() {
 
               {/* Related Chapters */}
               {relatedChapterData.length > 0 && (
-                <div className="bg-surface border border-border rounded-sm p-5">
-                  <h2 className="font-sans text-[0.65rem] font-bold tracking-[0.18em] uppercase text-ink-faint mb-4 pb-2 border-b border-border">
+                <div className="border-t border-border pt-8">
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">
                     Related Chapters
-                  </h2>
+                  </p>
                   <div className="space-y-3">
-                    {relatedChapterData.map(ch => ch && (
-                      <Link
-                        key={ch.id}
-                        to={`/chapter/${ch.id}`}
-                        className="block group"
-                      >
-                        <p className="font-sans text-[9px] font-bold tracking-[0.1em] uppercase text-crimson">
-                          Chapter {ch.number}
-                        </p>
-                        <p className="font-body text-sm text-ink group-hover:text-crimson transition-colors leading-snug">
+                    {relatedChapterData.map((ch, idx) => ch && (
+                      <Link key={ch.id} to={`/chapter/${ch.id}`} className="group block">
+                        <p className="font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink-faint mb-0.5">{idx + 1}.</p>
+                        <p className="font-display text-sm font-bold text-ink leading-snug group-hover:text-crimson transition-colors">
                           {ch.title}
                         </p>
+                        <p className="font-sans text-[0.6rem] text-ink-faint mt-0.5">{ch.number}</p>
                       </Link>
                     ))}
                   </div>
@@ -302,47 +348,21 @@ export default function ArticlePage() {
               )}
 
               {/* Support CTA */}
-              <div className="bg-ink text-white rounded-sm p-5">
-                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-white/50 mb-2">
-                  Independent Journalism
-                </p>
-                <p className="font-body text-sm text-white/70 leading-relaxed mb-3">
-                  This reporting is funded by readers, not advertisers or political donors.
+              <div className="border-t border-border pt-8">
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">Support</p>
+                <p className="font-body text-xs text-ink-muted leading-relaxed mb-4">
+                  Independent, source-verified journalism. Free forever.
                 </p>
                 <Link
                   to="/membership"
-                  className="inline-flex items-center justify-center px-4 py-2 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors w-full"
+                  className="block text-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase hover:bg-crimson-dark transition-colors"
                 >
-                  Support This Work
+                  Become a Member
                 </Link>
               </div>
             </div>
           </aside>
         </div>
-      </div>
-
-      {/* Newsletter CTA */}
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        <NewsletterSignup
-          variant="dark"
-          source="article_cta"
-          contentInterest={article.category}
-          heading="Get investigations like this delivered free."
-          subtext="Join readers who follow the public record — not opinion, not spin. Every claim sourced to primary documents."
-        />
-      </div>
-
-      {/* Back to News */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <Link
-          to="/news"
-          className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-crimson hover:text-crimson-dark transition-colors"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Current Events
-        </Link>
       </div>
 
       {/* Scroll-depth content gate */}
