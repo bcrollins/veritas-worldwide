@@ -55,10 +55,10 @@ interface MoneyTrailNode {
    ═══════════════════════════════════════════════════════════ */
 
 const CATEGORY_META = {
-  financial: { label: 'U.S. Aid & Military Spending', icon: 'money', color: '#92400E', bg: 'bg-amber-50 dark:bg-amber-950/20', border: 'border-amber-200 dark:border-amber-800', hoverBorder: 'hover:border-amber-400 dark:hover:border-amber-600' },
-  humanitarian: { label: 'Humanitarian Impact', icon: 'warning', color: '#991B1B', bg: 'bg-red-50 dark:bg-red-950/20', border: 'border-red-200 dark:border-red-800', hoverBorder: 'hover:border-red-400 dark:hover:border-red-600' },
-  legal: { label: 'International Law & UN Record', icon: 'scale', color: '#1E3A5F', bg: 'bg-blue-50 dark:bg-blue-950/20', border: 'border-blue-200 dark:border-blue-800', hoverBorder: 'hover:border-blue-400 dark:hover:border-blue-600' },
-  social: { label: 'Domestic Policy & Public Opinion', icon: 'pillar', color: '#166534', bg: 'bg-green-50 dark:bg-green-950/20', border: 'border-green-200 dark:border-green-800', hoverBorder: 'hover:border-green-400 dark:hover:border-green-600' },
+  financial: { label: 'U.S. Aid & Military Spending', icon: 'money', color: '#92400E', bg: 'bg-amber-50 dark:bg-amber-950/20', border: 'border-amber-200 dark:border-amber-800', hoverBorder: 'hover:border-amber-400 dark:hover:border-amber-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/F-35A_flight_%28cropped%29.jpg/1280px-F-35A_flight_%28cropped%29.jpg', headerCaption: 'F-35A Lightning II — The U.S. has committed over $310 billion in military and economic aid to Israel since 1948' },
+  humanitarian: { label: 'Humanitarian Impact', icon: 'warning', color: '#991B1B', bg: 'bg-red-50 dark:bg-red-950/20', border: 'border-red-200 dark:border-red-800', hoverBorder: 'hover:border-red-400 dark:hover:border-red-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/UNRWA_school_in_Gaza.jpg/1280px-UNRWA_school_in_Gaza.jpg', headerCaption: 'UNRWA school shelter in Gaza — Humanitarian organizations document the ongoing crisis' },
+  legal: { label: 'International Law & UN Record', icon: 'scale', color: '#1E3A5F', bg: 'bg-blue-50 dark:bg-blue-950/20', border: 'border-blue-200 dark:border-blue-800', hoverBorder: 'hover:border-blue-400 dark:hover:border-blue-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/1280px-United_Nations_General_Assembly_Hall_%283%29.jpg', headerCaption: 'UN General Assembly Hall — The U.S. has cast 53+ vetoes shielding Israel from Security Council resolutions' },
+  social: { label: 'Domestic Policy & Public Opinion', icon: 'pillar', color: '#166534', bg: 'bg-green-50 dark:bg-green-950/20', border: 'border-green-200 dark:border-green-800', hoverBorder: 'hover:border-green-400 dark:hover:border-green-600', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/United_States_Capitol_-_west_front.jpg/1280px-United_States_Capitol_-_west_front.jpg', headerCaption: 'U.S. Capitol — Domestic lobbying and anti-BDS legislation shape U.S. policy toward Israel' },
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1064,10 +1064,28 @@ export default function IsraelDossierPage() {
         const items = STATS.filter(s => s.category === cat)
         return (
           <section key={cat} id={cat} className="mb-14 scroll-mt-20">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: meta.color }} />
-              <h2 className="font-display text-2xl font-bold text-ink">{meta.label}</h2>
-            </div>
+            {/* Section Header Image */}
+            {meta.headerImage && (
+              <div className="mb-5 -mx-4 sm:-mx-6 overflow-hidden rounded-sm">
+                <div className="relative h-36 sm:h-48 overflow-hidden">
+                  <img src={meta.headerImage} alt={meta.label} loading="lazy" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).closest('.relative')?.classList.add('hidden') }} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: meta.color }} />
+                      <h2 className="font-display text-xl sm:text-2xl font-bold text-white">{meta.label}</h2>
+                    </div>
+                    {meta.headerCaption && <p className="font-sans text-[0.6rem] text-white/60 mt-1">{meta.headerCaption}</p>}
+                  </div>
+                </div>
+              </div>
+            )}
+            {!meta.headerImage && (
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: meta.color }} />
+                <h2 className="font-display text-2xl font-bold text-ink">{meta.label}</h2>
+              </div>
+            )}
             <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-6">
               {items.filter(s => s.details?.length).length} of {items.length} cards have expandable details — click to explore
             </p>
