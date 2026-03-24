@@ -22,14 +22,16 @@ export default function ReadingProgress() {
   if (progress <= 0) return null
 
   return (
-    <div
-      className="fixed top-0 left-0 z-[60] h-[3px] bg-crimson transition-[width] duration-100 ease-out no-print"
-      style={{ width: `${progress}%` }}
-      role="progressbar"
-      aria-valuenow={Math.round(progress)}
-      aria-valuemin={0}
-      aria-valuemax={100}
-      aria-label="Reading progress"
-    />
+    <div className="fixed top-[52px] left-0 right-0 z-40 h-[2px] bg-border/30 no-print">
+      <div
+        className="h-full bg-crimson transition-[width] duration-150 ease-out"
+        style={{ width: `${progress}%` }}
+        role="progressbar"
+        aria-valuenow={Math.round(progress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Reading progress"
+      />
+    </div>
   )
 }

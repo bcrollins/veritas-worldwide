@@ -4,6 +4,7 @@ import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
+import ReadingProgress from '../components/ReadingProgress'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
 
@@ -579,6 +580,7 @@ export default function DeepStatePage() {
 
   return (
     <article className="min-h-screen">
+      <ReadingProgress />
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="bg-ink text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">

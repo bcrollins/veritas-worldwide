@@ -13,6 +13,7 @@ import { CarouselDownloader, PinnedPostDownloader } from '../components/DossierC
 import DossierPDF from '../components/DossierPDF'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
+import ReadingProgress from '../components/ReadingProgress'
 
 /* ═══════════════════════════════════════════════════════════
    TYPE DEFINITIONS
@@ -1002,6 +1003,7 @@ export default function IsraelDossierPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-12 md:py-16">
+      <ReadingProgress />
       {/* ─── MASTHEAD ─── */}
       <header id="overview" className="text-center mb-6 border-b border-border pb-10">
         <p className="chapter-label mb-4">Special Investigation</p>
