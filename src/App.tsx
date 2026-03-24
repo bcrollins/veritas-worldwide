@@ -43,9 +43,8 @@ const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
 const NewsPage = lazy(() => import('./pages/NewsPage'))
 const ContentPackPage = lazy(() => import('./pages/ContentPackPage'))
 const ForumPage = lazy(() => import('./pages/ForumPage'))
-// WIP — Profile pages moved to wip/ until data types are complete
-// const ProfilePage = lazy(() => import('./pages/ProfilePage'))
-// const ProfilesIndexPage = lazy(() => import('./pages/ProfilesIndexPage'))
+const ProfilePage = lazy(() => import('./pages/ProfilePage'))
+const ProfilesIndexPage = lazy(() => import('./pages/ProfilesIndexPage'))
 
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
@@ -510,9 +509,8 @@ export default function App() {
           <Route path="/content-pack" element={<ContentPackPage />} />
           <Route path="/share" element={<ContentPackPage />} />
           <Route path="/forum" element={<ForumPage />} />
-          {/* WIP — Profile routes disabled until data types are complete */}
-          {/* <Route path="/profiles" element={<ProfilesIndexPage />} /> */}
-          {/* <Route path="/profile/:slug" element={<ProfilePage />} /> */}
+          <Route path="/profiles" element={<ProfilesIndexPage />} />
+          <Route path="/profile/:slug" element={<ProfilePage />} />
           <Route path="/news/:slug" element={<ArticlePage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminLayout />}>
