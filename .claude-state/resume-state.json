@@ -1,7 +1,16 @@
 {
-  "lastRun": 18,
+  "lastRun": 19,
   "lastDate": "2026-03-24",
   "completedThisRun": [
+    "nyt-style-chapter-page-two-column-sidebar",
+    "chapter-position-navigation-bar",
+    "chapter-evidence-sidebar-visual-bar",
+    "chapter-sidebar-toc-related-support",
+    "nyt-style-article-page-section-bar",
+    "article-page-two-column-consistent-layout",
+    "article-page-semantic-evidence-tier-colors"
+  ],
+  "completedPriorRuns": [
     "nyt-style-header-3-tier-masthead",
     "nyt-style-footer-5-column-grid",
     "nyt-style-homepage-3-column-hero",
@@ -10,9 +19,7 @@
     "chapter-metadata-lightweight-index",
     "chapter-types-shared-interfaces",
     "hybrid-chapter-loader-dynamic-import",
-    "consumer-migration-chapterpage-readthebook-homepage"
-  ],
-  "completedPriorRuns": [
+    "consumer-migration-chapterpage-readthebook-homepage",
     "tabbed-record-page",
     "brand-kit-10-svg-assets",
     "community-forum-page",
@@ -59,8 +66,9 @@
     "lead-scoring-hubspot-server-sync",
     "profile-data-expansion-to-500",
     "forum-backend-api-persistence",
-    "nyt-style-chapter-page-redesign",
-    "nyt-style-article-page-redesign"
+    "nyt-style-methodology-page-redesign",
+    "nyt-style-sources-page-redesign",
+    "nyt-style-search-page-redesign"
   ],
   "featureCount": 52,
   "compositeAverage": 9.0
