@@ -33,7 +33,8 @@ const MembershipPage = lazy(() => import('./pages/MembershipPage'))
 const DeepStatePage = lazy(() => import('./pages/DeepStatePage'))
 const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
 const NewsPage = lazy(() => import('./pages/NewsPage'))
-const ContentPacksPage = lazy(() => import('./pages/ContentPacksPage'))
+const ContentPackPage = lazy(() => import('./pages/ContentPackPage'))
+
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'))
@@ -117,7 +118,7 @@ function Header() {
     { to: '/israel-dossier', label: t('nav.israel') },
     { to: '/deep-state', label: t('nav.deepState') },
     { to: '/membership', label: t('nav.membership') },
-    { to: '/share', label: 'Share' },
+    { to: '/content-pack', label: 'Content Pack' },
   ]
 
   const allLinks = [...primaryLinks, ...secondaryLinks]
@@ -473,7 +474,8 @@ export default function App() {
           <Route path="/deep-state" element={<DeepStatePage />} />
           <Route path="/read" element={<ReadTheBookPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/share" element={<ContentPacksPage />} />
+          <Route path="/content-pack" element={<ContentPackPage />} />
+          <Route path="/share" element={<ContentPackPage />} />
           <Route path="/news/:slug" element={<ArticlePage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminLayout />}>
