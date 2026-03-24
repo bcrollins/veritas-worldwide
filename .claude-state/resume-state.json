@@ -1,28 +1,33 @@
 {
-  "run": 9,
+  "run": 10,
   "date": "2026-03-24",
-  "last": "dark-mode-fixes+reading-progress+performance+a11y-audit",
-  "next": "deep-state-page-10x-expansion+adsense-activation+chapter-pdf-export",
+  "last": "json-ld-all-pages+cookie-consent+ab-testing+chapter-pdf-export",
+  "next": "deep-state-page-10x-expansion+adsense-activation+hubspot-welcome-sequences",
   "queue": [
     "deep-state-page-10x-expansion",
     "adsense-activation-revenue",
-    "abandoned-cart-recovery-emails",
     "hubspot-automated-welcome-sequences",
-    "a-b-testing-framework",
-    "chapter-pdf-export-per-chapter"
+    "abandoned-cart-recovery-emails",
+    "pwa-manifest-offline-support",
+    "og-image-per-chapter-generation",
+    "internal-linking-optimization",
+    "lazy-chapter-data-splitting"
   ],
   "fixes_this_run": [
-    "Fixed DeepStatePage TIER_CONFIG: monochrome colors -> semantic CSS variables (verified=#166534, circumstantial=#92400E, disputed=#991B1B)",
-    "Added icon field to TIER_CONFIG for future badge enhancement (✓, ◐, ⚠)",
-    "Fixed ContentGate z-index from z-50 to z-40 (header stacking conflict)",
-    "Wired NewsletterSignup + ContentGate into DeepStatePage (completes subscriber pipeline across all major pages)",
-    "Added dns-prefetch hints for GTM, HubSpot, Stripe, Google Translate",
-    "Added theme-color meta tags for light (#FDFBF7) and dark (#0A0A0A)",
-    "Dark mode: replaced hardcoded bg-white with semantic bg-parchment in ExitIntentCapture, ContentGate, CommunityForum, DeepStatePage, MembershipPage",
-    "Dark mode: fixed DeepStatePage person card border fallback rgba(0,0,0,0.1) -> var(--color-border)",
-    "Dark mode: Diagrams.tsx SVG — replaced 22 hardcoded hex fills (#333/#666/#999/#1A1A1A) with CSS variable equivalents",
-    "Enhanced ReadingProgress: moved from top-0/z-60 to top-52px/z-40 (below header), added background track",
-    "Extended ReadingProgress to IsraelDossierPage and DeepStatePage (was only on ChapterPage)",
-    "A11y audit: confirmed skip-nav, focus-visible, aria-labels, 44px touch targets, alt text — no issues found"
+    "Added JSON-LD structured data to TimelinePage (was missing ALL SEO meta + JSON-LD)",
+    "Added JSON-LD AboutPage with Organization schema (E-E-A-T signal for Google)",
+    "Added JSON-LD SearchPage with SearchResultsPage schema",
+    "Added JSON-LD ReadTheBookPage with Book schema (EBook format, isAccessibleForFree)",
+    "Added JSON-LD to 6 remaining utility pages (ContentPack, Bookmarks, Analytics, Privacy, Terms, Accessibility)",
+    "Created GDPR cookie consent banner with GA4 Consent Mode v2",
+    "Changed GA4 default consent from granted to denied (GDPR compliance)",
+    "Cookie consent: Accept/Decline buttons, localStorage persistence, privacy policy link",
+    "Created A/B testing framework (src/lib/abTest.ts) — zero-dep, localStorage sticky assignment, GA4 event tracking",
+    "Created useExperiment React hook with auto-impression tracking",
+    "Registered 2 experiments: membership-cta-copy (3 variants), donation-banner-style (3 variants)",
+    "Wired membership-cta-copy experiment into header Join CTA button",
+    "Created per-chapter PDF export component (ChapterPDF.tsx) — jsPDF lazy-loaded",
+    "Chapter PDF: cover page with crimson rule, evidence tier boxes with correct colors, quote bars, stat cards, running headers, page numbers",
+    "Wired ChapterPDF into ChapterPage action bar next to existing download button"
   ]
 }

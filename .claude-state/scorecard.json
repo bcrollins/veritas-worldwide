@@ -1,5 +1,5 @@
 {
-  "run": 9,
+  "run": 10,
   "date": "2026-03-24",
   "features": {
     "admin-dashboard": { "composite": 8.2, "status": "GOOD", "notes": "Full admin with login, 7 pages, social pack generator" },
@@ -11,7 +11,7 @@
     "evidence-system": { "composite": 9.2, "status": "EXCELLENT", "notes": "Three-tier with semantic CSS variables + dark mode variants, icon field ready, print grayscale borders" },
     "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Neon PostgreSQL backend with JWT sessions, bcrypt hashing" },
     "nyt-design": { "composite": 8.0, "status": "GOOD", "notes": "Monochrome palette, crimson accents, professional typography" },
-    "seo": { "composite": 8.8, "status": "GOOD", "notes": "SSR meta, OG tags, Twitter cards, structured data, sitemap, dns-prefetch, theme-color" },
+    "seo": { "composite": 9.5, "status": "EXCELLENT", "notes": "JSON-LD on ALL pages (16 total), OG tags, Twitter cards, bot SSR, sitemap, BreadcrumbList, Book schema, SearchResultsPage, AboutPage Organization" },
     "build-reliability": { "composite": 8.5, "status": "GOOD", "notes": "TypeScript strict, clean build, lazy loading, code splitting" },
     "israel-dossier": { "composite": 9.2, "status": "EXCELLENT", "notes": "10x expansion with timeline, incidents, legal cases, PDF export, reading progress bar" },
     "content-packs": { "composite": 9.0, "status": "EXCELLENT", "notes": "6 packs with 10-slide carousels" },
@@ -26,6 +26,9 @@
     "deep-state-page": { "composite": 8.8, "status": "GOOD", "notes": "Evidence tier colors fixed, subscriber capture, dark mode fixed, reading progress bar, z-index resolved" },
     "dark-mode": { "composite": 8.5, "status": "GOOD", "notes": "All bg-white replaced with semantic tokens, Diagrams SVG 22 fills converted to CSS vars, theme-color meta" },
     "accessibility": { "composite": 8.8, "status": "GOOD", "notes": "Skip-nav, focus-visible, aria-labels, 44px touch targets, alt text, ARIA progressbar, role=status on loading" },
-    "reading-progress": { "composite": 8.5, "status": "GOOD", "notes": "Crimson progress bar on all 3 long-form pages (Chapter, Israel, DeepState), positioned below header with track" }
+    "reading-progress": { "composite": 8.5, "status": "GOOD", "notes": "Crimson progress bar on all 3 long-form pages (Chapter, Israel, DeepState), positioned below header with track" },
+    "cookie-consent": { "composite": 9.0, "status": "EXCELLENT", "notes": "GDPR-compliant banner with GA4 Consent Mode v2, defaults to denied, Accept/Decline with localStorage persistence" },
+    "ab-testing": { "composite": 8.0, "status": "GOOD", "notes": "Zero-dep framework with GA4 integration, sticky assignment, 2 experiments live (CTA copy, donation style)" },
+    "chapter-pdf-export": { "composite": 8.5, "status": "GOOD", "notes": "Per-chapter PDF with cover, evidence tiers, quotes, stats, running headers, page numbers. jsPDF lazy-loaded." }
   }
 }
