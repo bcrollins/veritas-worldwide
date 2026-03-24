@@ -32,6 +32,15 @@ const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
 const MembershipPage = lazy(() => import('./pages/MembershipPage'))
 const DeepStatePage = lazy(() => import('./pages/DeepStatePage'))
 const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
+const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
+const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'))
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
+const AdminUsers = lazy(() => import('./pages/admin/AdminUsers'))
+const AdminSubscriptions = lazy(() => import('./pages/admin/AdminSubscriptions'))
+const AdminMedia = lazy(() => import('./pages/admin/AdminMedia'))
+const AdminContent = lazy(() => import('./pages/admin/AdminContent'))
+const AdminSocialPacks = lazy(() => import('./pages/admin/AdminSocialPacks'))
+const AdminDisputes = lazy(() => import('./pages/admin/AdminDisputes'))
 
 
 function ThemeToggle() {
@@ -417,18 +426,23 @@ function PageViewTracker() {
 }
 
 export default function App() {
+  const location = useLocation()
+  const isAdmin = location.pathname.startsWith('/admin')
+
   return (
     <I18nProvider>
     <div className="min-h-screen bg-parchment text-ink">
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-crimson focus:text-white focus:rounded-sm focus:font-sans focus:text-sm focus:font-semibold"
-      >
-        Skip to content
-      </a>
+      {!isAdmin && (
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-crimson focus:text-white focus:rounded-sm focus:font-sans focus:text-sm focus:font-semibold"
+        >
+          Skip to content
+        </a>
+      )}
       <ScrollToTop />
       <PageViewTracker />
-      <Header />
+      {!isAdmin && <Header />}
       <main id="main-content">
         <ErrorBoundary>
         <Suspense fallback={
@@ -453,6 +467,16 @@ export default function App() {
           <Route path="/membership" element={<MembershipPage />} />
           <Route path="/deep-state" element={<DeepStatePage />} />
           <Route path="/read" element={<ReadTheBookPage />} />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="subscriptions" element={<AdminSubscriptions />} />
+            <Route path="media" element={<AdminMedia />} />
+            <Route path="content" element={<AdminContent />} />
+            <Route path="social" element={<AdminSocialPacks />} />
+            <Route path="disputes" element={<AdminDisputes />} />
+          </Route>
           <Route path="*" element={
             <div className="max-w-3xl mx-auto px-6 py-20 text-center">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">
@@ -483,7 +507,7 @@ export default function App() {
         </Suspense>
         </ErrorBoundary>
       </main>
-      <Footer />
+      {!isAdmin && <Footer />}
       <AuthModal />
       <Toast />
       <NewsletterPopup />
