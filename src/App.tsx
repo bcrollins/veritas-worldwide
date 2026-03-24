@@ -116,7 +116,7 @@ function Header() {
     { to: '/', label: t('nav.home') },
     { to: '/news', label: 'News' },
     { to: '/search', label: t('nav.search') },
-    { to: '/forum', label: 'Forum' },
+    { to: '/forum', label: t('nav.forum') },
   ]
 
   const secondaryLinks = [
