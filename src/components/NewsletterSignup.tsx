@@ -98,13 +98,14 @@ export default function NewsletterSignup({
         {subtext || defaultSubtext}
       </p>
 
-      <form onSubmit={handleSubmit} className="flex gap-2">
+      <form onSubmit={handleSubmit} className="flex gap-2" data-testid="newsletter-form">
         <input
           type="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder="your@email.com"
           required
+          data-testid="newsletter-email-input"
           className={`flex-1 px-3 py-2.5 font-sans text-sm rounded-sm border focus:outline-none focus:ring-1 focus:ring-crimson/40 ${
             isDark
               ? 'bg-white/10 border-white/20 text-white placeholder:text-white/30'
@@ -114,6 +115,7 @@ export default function NewsletterSignup({
         <button
           type="submit"
           disabled={status === 'submitting'}
+          data-testid="newsletter-submit"
           className="px-5 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap"
         >
           {status === 'submitting' ? 'Joining...' : 'Subscribe'}

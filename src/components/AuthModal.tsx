@@ -104,7 +104,7 @@ export default function AuthModal() {
       <div className="absolute inset-0 bg-ink/60 backdrop-blur-sm" />
 
       {/* Modal */}
-      <div ref={modalRef} className="relative w-full max-w-md bg-parchment rounded-sm shadow-2xl border border-border">
+      <div ref={modalRef} className="relative w-full max-w-md bg-parchment rounded-sm shadow-2xl border border-border" data-testid="auth-modal">
         {/* Close */}
         <button
           onClick={() => setShowAuthModal(false)}

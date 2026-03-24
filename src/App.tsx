@@ -131,7 +131,7 @@ function Header() {
   const isSecondaryActive = secondaryLinks.some(l => location.pathname === l.to)
 
   return (
-    <header className="sticky top-0 z-50 bg-parchment/95 backdrop-blur-md no-print">
+    <header className="sticky top-0 z-50 bg-parchment/95 backdrop-blur-md no-print" data-testid="site-header">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
@@ -208,6 +208,7 @@ function Header() {
               to="/membership"
               className="hidden sm:inline-flex items-center justify-center px-3 py-1.5 min-h-[36px] bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
               onClick={() => trackSupportClick('header')}
+              data-testid="header-join-cta"
             >
               {t('nav.join')}
             </Link>
@@ -242,6 +243,7 @@ function Header() {
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
+              data-testid="mobile-menu-toggle"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {menuOpen ? (
@@ -471,8 +473,11 @@ export default function App() {
       <main id="main-content">
         <ErrorBoundary>
         <Suspense fallback={
-          <div className="max-w-3xl mx-auto px-6 py-20 text-center">
-            <div className="inline-block w-5 h-5 border-2 border-crimson/30 border-t-crimson rounded-full animate-spin" />
+          <div className="max-w-3xl mx-auto px-6 py-24 text-center" role="status" aria-label="Loading page">
+            <div className="inline-block w-6 h-6 border-2 border-crimson/20 border-t-crimson rounded-full animate-spin mb-4" />
+            <p className="font-sans text-[0.6rem] font-semibold tracking-[0.2em] uppercase text-ink-faint">
+              Loading
+            </p>
           </div>
         }>
         <Routes>
