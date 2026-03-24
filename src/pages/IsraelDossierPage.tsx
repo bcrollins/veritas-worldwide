@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
+import CommunityForum from '../components/CommunityForum'
 import { TierIcon } from '../components/TierIcons'
 
 /* ═══════════════════════════════════════════════════════════
@@ -1199,6 +1200,9 @@ export default function IsraelDossierPage() {
           Processed securely via Stripe &middot; No account required
         </p>
       </section>
+
+      {/* Community Forum */}
+      <CommunityForum pageId="israel-dossier" pageTitle="The Israel Dossier" />
 
       {/* ─── BOTTOM NAV ─── */}
       <div className="border-t border-border pt-8 flex flex-col sm:flex-row gap-4">

@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL } from '../lib/seo'
+import CommunityForum from '../components/CommunityForum'
 
 /* ── Evidence Tier System ─────────────────────────────────────── */
 type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
@@ -686,6 +687,11 @@ export default function DeepStatePage() {
             </div>
           </>
         )}
+      </div>
+
+      {/* Community Forum */}
+      <div className="max-w-4xl mx-auto px-6">
+        <CommunityForum pageId="deep-state" pageTitle="The Deep State — Epstein Network" />
       </div>
 
       {/* ── Methodology Footer ────────────────────────────────── */}
