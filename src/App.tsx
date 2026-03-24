@@ -32,6 +32,8 @@ const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
 const MembershipPage = lazy(() => import('./pages/MembershipPage'))
 const DeepStatePage = lazy(() => import('./pages/DeepStatePage'))
 const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
+const NewsPage = lazy(() => import('./pages/NewsPage'))
+const ArticlePage = lazy(() => import('./pages/ArticlePage'))
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'))
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
@@ -100,6 +102,7 @@ function Header() {
 
   const primaryLinks = [
     { to: '/', label: t('nav.home') },
+    { to: '/news', label: 'News' },
     { to: '/search', label: t('nav.search') },
     { to: '/timeline', label: t('nav.timeline') },
   ]
@@ -467,6 +470,8 @@ export default function App() {
           <Route path="/membership" element={<MembershipPage />} />
           <Route path="/deep-state" element={<DeepStatePage />} />
           <Route path="/read" element={<ReadTheBookPage />} />
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/:slug" element={<ArticlePage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
