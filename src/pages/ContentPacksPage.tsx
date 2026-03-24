@@ -471,7 +471,17 @@ export default function ContentPacksPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="w-full max-w-[1920px] mx-auto min-h-screen">
+      {/* Section Bar */}
+      <div className="border-b border-border bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 py-3 text-sm">
+            <Link to="/" className="text-ink-muted hover:text-crimson transition-colors">Home</Link>
+            <span className="text-ink-muted/50">›</span>
+            <span className="text-ink font-medium">Content Packs</span>
+          </div>
+        </div>
+      </div>
       {/* Hero */}
       <div className="bg-ink text-white">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
