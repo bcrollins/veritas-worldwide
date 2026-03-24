@@ -1,12 +1,12 @@
 {
-  "lastRun": 14,
+  "lastRun": 15,
   "lastDate": "2026-03-24",
   "completedThisRun": [
-    "aipac-data-layer-fec-sourced",
-    "aipac-interactive-diagram-component",
-    "aipac-page-seo-wrapper",
-    "aipac-tab-wiring-record-tabs",
-    "aipac-homepage-lazy-load-hash-link"
+    "aipac-svg-hemicycle-rewrite",
+    "aipac-member-popup-with-donations-votes-lobbyist-contact-photo",
+    "aipac-data-enrichment-15-members",
+    "aipac-full-width-layout",
+    "content-pack-tab-reorder"
   ],
   "completedPriorRuns": [
     "tabbed-record-page",
@@ -22,10 +22,17 @@
     "social-content-calendar-7-day",
     "per-chapter-og-image-generation",
     "og-image-seo-wiring",
-    "stripe-branding-instructions"
+    "stripe-branding-instructions",
+    "aipac-data-layer-fec-sourced",
+    "aipac-interactive-diagram-component",
+    "aipac-page-seo-wrapper",
+    "aipac-tab-wiring-record-tabs",
+    "aipac-homepage-lazy-load-hash-link"
   ],
   "queue": [
+    "og-image-png-fallback-for-social",
     "prerendering-ssg-for-seo",
+    "internal-linking-related-chapters",
     "adsense-activation",
     "abandoned-cart-recovery-emails",
     "lazy-chapter-data-splitting",
@@ -33,9 +40,8 @@
     "search-console-verification-guide",
     "discord-server-setup-guide",
     "stripe-branding-dashboard-update",
-    "lead-scoring-hubspot-server-sync",
-    "og-image-png-fallback-for-social"
+    "lead-scoring-hubspot-server-sync"
   ],
   "featureCount": 41,
-  "compositeAverage": 8.6
+  "compositeAverage": 8.7
 }
