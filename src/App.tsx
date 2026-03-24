@@ -20,6 +20,7 @@ import NewsletterSignup from './components/NewsletterSignup'
 import { trackPageView } from './lib/hubspot'
 import { handleStripeReturn } from './lib/conversionTracking'
 import StickyMembershipBar from './components/StickyMembershipBar'
+import CookieConsent from './components/CookieConsent'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -548,6 +549,7 @@ export default function App() {
       <ExitIntentCapture />
       <StickyMembershipBar />
       <PerformanceMonitor />
+      <CookieConsent />
     </div>
     </I18nProvider>
   )
