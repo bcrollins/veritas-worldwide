@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
+import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL } from '../lib/seo'
 
 /* ── Evidence Tier System ─────────────────────────────────────── */
 type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
@@ -451,6 +452,29 @@ export default function DeepStatePage() {
   const [categoryFilter, setCategoryFilter] = useState<ConnectionCategory | 'all'>('all')
   const [tierFilter, setTierFilter] = useState<EvidenceTier | 'all'>('all')
   const [activeSection, setActiveSection] = useState<'network' | 'timeline'>('network')
+
+  useEffect(() => {
+    setMetaTags({
+      title: 'The Deep State — The Epstein Network | Veritas Worldwide Press',
+      description: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',
+      url: `${SITE_URL}/deep-state`,
+      type: 'article',
+      author: 'Veritas Worldwide Press',
+      section: 'Investigation',
+      tags: ['Epstein', 'Deep State', 'Investigation', 'Court Documents', 'Network Analysis'],
+    })
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'The Deep State — The Epstein Network',
+      description: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, and government reports.',
+      url: `${SITE_URL}/deep-state`,
+      publisher: { '@type': 'Organization', name: 'Veritas Worldwide Press', url: SITE_URL },
+      datePublished: '2026-03-24',
+      dateModified: '2026-03-24',
+    })
+    return () => { clearMetaTags(); removeJsonLd() }
+  }, [])
 
   const handleSelectPerson = (id: string) => {
     setSelectedPerson(id)
