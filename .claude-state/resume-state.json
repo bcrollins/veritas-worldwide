@@ -1,15 +1,14 @@
 {
-  "lastRun": 17,
+  "lastRun": 18,
   "lastDate": "2026-03-24",
   "completedThisRun": [
-    "reddit-clone-forum-complete-rewrite",
-    "forum-data-layer-9-communities-10-seed-posts",
-    "forum-communities-voting-threading-awards-polls-search-flairs-moderation",
-    "full-width-layout-all-pages-1920px",
-    "power-profiles-system-235-figures",
-    "profile-page-sourced-claims-donations-quotes-policy-connections",
-    "profiles-index-page-search-filter-sort",
-    "profile-routing-and-navigation"
+    "forum-emoji-removal-svg-icons",
+    "forum-fake-posts-removal",
+    "content-pack-tab-to-footer",
+    "profiles-sitemap-entry",
+    "bot-ssr-profiles-forum-news-content-pack",
+    "bot-ssr-individual-profile-pages",
+    "rogue-agent-cleanup-chapter-split-files"
   ],
   "completedPriorRuns": [
     "tabbed-record-page",
@@ -37,7 +36,15 @@
     "aipac-full-width-layout",
     "content-pack-tab-reorder",
     "og-image-png-fallback-for-social",
-    "bot-ssr-og-image-injection"
+    "bot-ssr-og-image-injection",
+    "reddit-clone-forum-complete-rewrite",
+    "forum-data-layer-9-communities-10-seed-posts",
+    "power-profiles-system-235-figures",
+    "profile-page-sourced-claims-donations-quotes-policy-connections",
+    "profiles-index-page-search-filter-sort",
+    "profile-routing-and-navigation",
+    "wip-profile-cleanup",
+    "forum-data-duplicate-fix"
   ],
   "queue": [
     "prerendering-ssg-for-seo",
