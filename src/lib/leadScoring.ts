@@ -25,6 +25,7 @@ const WEIGHTS = {
   content_gate_hit: 1,
   forum_post: 8,
   pdf_downloaded: 5,
+  profile_viewed: 5,
 } as const
 
 type ScoringAction = keyof typeof WEIGHTS
@@ -145,6 +146,10 @@ export function scoreForumPost(topicId: string): LeadState {
 
 export function scorePdfDownloaded(chapterId: string): LeadState {
   return score('pdf_downloaded', { chapter_id: chapterId })
+}
+
+export function scoreProfileViewed(profileId: string): LeadState {
+  return score('profile_viewed', { profile_id: profileId })
 }
 
 /** Get current lead state without modifying it */

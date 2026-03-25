@@ -5846,6 +5846,20 @@ export const PROFILES: PowerProfile[] = [
         date: '2024',
         source: 'Congressional Record',
         url: 'https://www.congress.gov'
+      },
+      {
+        text: 'The American Dream is not about government handouts. It\'s about the freedom to build, to create, and to succeed on your own merits.',
+        context: 'Speech at Conservative Political Action Conference (CPAC)',
+        date: 'February 2023',
+        source: 'CPAC transcript',
+        url: 'https://www.cpac.org'
+      },
+      {
+        text: 'School choice is the civil rights issue of our time. Every parent deserves the right to choose the best education for their child.',
+        context: 'House floor remarks on education policy',
+        date: '2023',
+        source: 'Congressional Record',
+        url: 'https://www.congress.gov'
       }
     ],
     donations: [
@@ -5864,6 +5878,27 @@ export const PROFILES: PowerProfile[] = [
         url: 'https://www.opensecrets.org/members-of-congress/byron-donalds/summary?cid=N00034016&cycle=CAREER&type=I'
       },
       {
+        from: 'Securities & Investment industry',
+        amount: 156000,
+        year: '2021-2024',
+        source: 'OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/byron-donalds/industries?cid=N00034016&cycle=CAREER'
+      },
+      {
+        from: 'Real Estate industry',
+        amount: 134000,
+        year: '2021-2024',
+        source: 'OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/byron-donalds/industries?cid=N00034016&cycle=CAREER'
+      },
+      {
+        from: 'Insurance industry',
+        amount: 98000,
+        year: '2021-2024',
+        source: 'OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/byron-donalds/industries?cid=N00034016&cycle=CAREER'
+      },
+      {
         from: 'JP Morgan Chase',
         amount: 5800,
         year: '2023-2024',
@@ -5876,6 +5911,13 @@ export const PROFILES: PowerProfile[] = [
         year: '2023-2024',
         source: 'Campaign Legal Center ethics complaint',
         url: 'https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal'
+      },
+      {
+        from: 'Leadership PAC (Byron Donalds Victory Fund)',
+        amount: 412000,
+        year: '2021-2024',
+        source: 'FEC filings',
+        url: 'https://www.fec.gov/data/committee/C00797373/'
       }
     ],
     policyActions: [
@@ -6052,19 +6094,25 @@ export const PROFILES: PowerProfile[] = [
       }
     ],
     career: [
-      '1997 — Arrested for marijuana possession (charges dropped via diversion)',
-      '2000 — Pleaded no contest to felony bank fraud (record expunged)',
-      '2002 — B.S. Finance, Florida A&M University',
+      '1978 — Born in Brooklyn, New York to Jamaican immigrant parents',
+      '1997 — Arrested for marijuana possession (charges dropped via pre-trial diversion)',
+      '2000 — Pleaded no contest to felony bank fraud charge (record later sealed and expunged)',
+      '2002 — B.S. Finance, Florida A&M University (HBCU)',
       '2003 — Credit officer, TIB Bank, Fort Myers, FL',
       '2007 — Director of Premium Management, CMG Financial Services, Naples, FL',
-      '2012-2020 — Florida House of Representatives, District 80',
+      '2012 — Elected to Florida House of Representatives, District 80',
       '2015 — Financial advisor, Wells Fargo Advisors, Naples, FL',
       '2016 — Associate VP for Investments, Moran Wealth Management, Naples, FL',
-      '2020 — Elected to U.S. House, FL-19 (61.3% of vote)',
-      '2022 — Re-elected to U.S. House, FL-19 (unopposed in general)',
-      'January 2023 — Nominated for Speaker of the House (received 20 votes)',
-      'June 2024 — Short-listed for Trump VP pick (top 8)',
-      'September 2024 — Campaign Legal Center files STOCK Act ethics complaint (108 undisclosed trades, up to $1.6M)',
+      '2020 — Elected to U.S. House, FL-19 (defeated 8 candidates in primary; 61.3% in general)',
+      '2021 — Assigned to House Financial Services Committee and Oversight Committee',
+      '2021 — Joined House Freedom Caucus',
+      '2022 — Re-elected to U.S. House, FL-19 (unopposed in general election)',
+      '2022-2023 — Made 108 stock trades without filing required STOCK Act disclosures',
+      'January 2023 — Nominated for Speaker of the House (received 20 votes over multiple ballots)',
+      'June 2024 — Short-listed for Trump Vice Presidential pick (top 8 candidates)',
+      'June 2024 — Jim Crow family comments controversy; CBC demands apology',
+      'September 2024 — Campaign Legal Center files STOCK Act ethics complaint (108 trades, up to $1.6M)',
+      '2025 — Announced candidacy for Florida Governor (2026 race)',
     ],
     websites: [
       { label: 'Official Congressional Site', url: 'https://donalds.house.gov' },
