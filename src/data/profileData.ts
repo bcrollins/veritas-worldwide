@@ -71,9 +71,50 @@ export const TIER_COLORS = {
   disputed: '#ef4444'
 }
 
+// Verified Wikimedia Commons portrait URLs for each profile
+// Uses official government portraits (public domain) where available
+const PROFILE_PHOTOS: Record<string, string> = {
+  'ted-cruz': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Ted_Cruz_official_116th_portrait.jpg/440px-Ted_Cruz_official_116th_portrait.jpg',
+  'donald-trump': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/440px-Donald_Trump_official_portrait.jpg',
+  'bill-gates': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/440px-Bill_Gates_2017_%28cropped%29.jpg',
+  'george-soros': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/George_Soros_-_Festival_Economia_2012.JPG/440px-George_Soros_-_Festival_Economia_2012.JPG',
+  'jared-kushner': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Jared_Kushner_official_portrait_%28cropped%29.jpg/440px-Jared_Kushner_official_portrait_%28cropped%29.jpg',
+  'chuck-schumer': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Chuck_Schumer_official_photo.jpg/440px-Chuck_Schumer_official_photo.jpg',
+  'nancy-pelosi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Nancy_Pelosi_2019.jpg/440px-Nancy_Pelosi_2019.jpg',
+  'mitch-mcconnell': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Mitch_McConnell_2016_official_photo.jpg/440px-Mitch_McConnell_2016_official_photo.jpg',
+  'miriam-adelson': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Miriam_Adelson_2023_%28cropped%29.jpg/440px-Miriam_Adelson_2023_%28cropped%29.jpg',
+  'sheldon-adelson': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sheldon_Adelson_crop.jpg/440px-Sheldon_Adelson_crop.jpg',
+  'ghislaine-maxwell': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ghislaine_Maxwell_cropped.jpg/440px-Ghislaine_Maxwell_cropped.jpg',
+  'jeffrey-epstein': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Epstein%27s_NYC_Mugshot.jpg/440px-Epstein%27s_NYC_Mugshot.jpg',
+  'alan-dershowitz': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Alan_Dershowitz_2009.jpg/440px-Alan_Dershowitz_2009.jpg',
+  'les-wexner': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Les_Wexner_at_World_Economic_Forum_%28cropped%29.jpg/440px-Les_Wexner_at_World_Economic_Forum_%28cropped%29.jpg',
+  'prince-andrew': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Prince_Andrew_August_2014_%28cropped%29.jpg/440px-Prince_Andrew_August_2014_%28cropped%29.jpg',
+  'adam-schiff': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Adam_Schiff_official_portrait.jpg/440px-Adam_Schiff_official_portrait.jpg',
+  'hakeem-jeffries': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Hakeem_Jeffries_117th_Congress_portrait.jpg/440px-Hakeem_Jeffries_117th_Congress_portrait.jpg',
+  'lindsey-graham': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Lindsey_Graham%2C_official_photo%2C_113th_Congress.jpg/440px-Lindsey_Graham%2C_official_photo%2C_113th_Congress.jpg',
+  'marco-rubio': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Marco_Rubio%2C_Official_Portrait%2C_112th_Congress.jpg/440px-Marco_Rubio%2C_Official_Portrait%2C_112th_Congress.jpg',
+  'tom-cotton': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Tom_Cotton_official_Senate_photo.jpg/440px-Tom_Cotton_official_Senate_photo.jpg',
+  'cory-booker': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Cory_Booker%2C_official_portrait%2C_114th_Congress.jpg/440px-Cory_Booker%2C_official_portrait%2C_114th_Congress.jpg',
+  'jacky-rosen': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Jacky_Rosen%2C_official_portrait%2C_116th_congress.jpg/440px-Jacky_Rosen%2C_official_portrait%2C_116th_congress.jpg',
+  'josh-gottheimer': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Josh_Gottheimer_official_photo.jpg/440px-Josh_Gottheimer_official_photo.jpg',
+  'brad-sherman': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Brad_Sherman_official_photo.jpg/440px-Brad_Sherman_official_photo.jpg',
+  'ritchie-torres': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ritchie_Torres_117th_Congress_portrait.jpg/440px-Ritchie_Torres_117th_Congress_portrait.jpg',
+  'joe-biden': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/440px-Joe_Biden_presidential_portrait.jpg',
+  'kamala-harris': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Kamala_Harris_Vice_Presidential_Portrait.jpg/440px-Kamala_Harris_Vice_Presidential_Portrait.jpg',
+  'barack-obama': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/440px-President_Barack_Obama.jpg',
+  'hillary-clinton': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Hillary_Clinton_official_Secretary_of_State_portrait_crop.jpg/440px-Hillary_Clinton_official_Secretary_of_State_portrait_crop.jpg',
+  'bill-clinton': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/440px-Bill_Clinton.jpg',
+  'mike-pence': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Mike_Pence_official_Vice_Presidential_portrait.jpg/440px-Mike_Pence_official_Vice_Presidential_portrait.jpg',
+  'dick-cheney': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/46_Dick_Cheney_3x4.jpg/440px-46_Dick_Cheney_3x4.jpg',
+  'henry-kissinger': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Henry_Kissinger.jpg/440px-Henry_Kissinger.jpg',
+  'john-bolton': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/John_R._Bolton_official_photo.jpg/440px-John_R._Bolton_official_photo.jpg',
+  'mike-pompeo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Mike_Pompeo_official_photo.jpg/440px-Mike_Pompeo_official_photo.jpg',
+  'antony-blinken': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Antony_Blinken_official_State_Department_photo.jpg/440px-Antony_Blinken_official_State_Department_photo.jpg',
+  'byron-donalds': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Byron_Donalds_117th_Congress.jpg/440px-Byron_Donalds_117th_Congress.jpg',
+}
+
 export function getProfilePhoto(profileId: string): string {
-  const baseUrl = '/images/profiles'
-  return `${baseUrl}/${profileId}.jpg`
+  return PROFILE_PHOTOS[profileId] || `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%238B1A1A'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='35' font-weight='bold'%3E${profileId.charAt(0).toUpperCase()}%3C/text%3E%3C/svg%3E`
 }
 
 export function getProfileBySlug(slug: string): PowerProfile | undefined {

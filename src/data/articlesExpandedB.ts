@@ -11,7 +11,7 @@ export const expandedArticlesB: Article[] = [
     "category": "Surveillance & Civil Liberties",
     "tags": ["artificial-intelligence", "election-security", "deepfakes", "disinformation", "democracy"],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Deepfake_demonstration.png/1280px-Deepfake_demonstration.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Artificial_intelligence_prompt.jpg/1280px-Artificial_intelligence_prompt.jpg",
       "alt": "AI deepfake technology visualization",
       "credit": "Wikimedia Commons"
     },
@@ -87,7 +87,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Neural_network_diagram.png/1280px-Neural_network_diagram.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Artificial_neural_network.svg/1280px-Artificial_neural_network.svg.png",
           "alt": "Neural network architecture used in deepfake creation",
           "caption": "Deep learning networks enable synthetic media generation at scale",
           "credit": "Wikimedia Commons"
@@ -129,7 +129,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Facial_recognition_technology.png/1280px-Facial_recognition_technology.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Face_detection.jpg/1280px-Face_detection.jpg",
           "alt": "Facial recognition and biometric analysis tools",
           "caption": "Advanced biometric analysis helps detect synthetic facial manipulation",
           "credit": "Wikimedia Commons"
@@ -163,7 +163,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/International_cooperation_networks.png/1280px-International_cooperation_networks.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/1280px-United_Nations_General_Assembly_Hall_%283%29.jpg",
           "alt": "Global network of international cooperation",
           "caption": "Cross-border coordination mechanisms for deepfake monitoring",
           "credit": "Wikimedia Commons"
@@ -185,7 +185,7 @@ export const expandedArticlesB: Article[] = [
     "category": "Lobbying & Political Influence",
     "tags": ["pharmaceutical-industry", "lobbying", "healthcare-policy", "drug-prices", "political-influence"],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Pharmaceutical_industry_research.png/1280px-Pharmaceutical_industry_research.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Pharmaceutical_Drugs.jpg/1280px-Pharmaceutical_Drugs.jpg",
       "alt": "Pharmaceutical industry research and development facilities",
       "credit": "Wikimedia Commons"
     },
@@ -261,7 +261,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pharmaceutical_market_data.png/1280px-Pharmaceutical_market_data.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pill_box_with_pills.jpg/1280px-Pill_box_with_pills.jpg",
           "alt": "Pharmaceutical industry market data and spending trends",
           "caption": "Pharmaceutical lobbying expenditures have tripled in the past decade",
           "credit": "Wikimedia Commons"
@@ -303,7 +303,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Congressional_campaign_contributions.png/1280px-Congressional_campaign_contributions.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1280px-US_Capitol_west_side.JPG",
           "alt": "Chart showing campaign contributions to Congress members",
           "caption": "Pharmaceutical contributions to key congressional committee members",
           "credit": "Wikimedia Commons"
@@ -337,7 +337,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Global_drug_pricing_comparison.png/1280px-Global_drug_pricing_comparison.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pharmacy_in_Virginia.jpg/1280px-Pharmacy_in_Virginia.jpg",
           "alt": "International comparison of drug prices and regulatory approaches",
           "caption": "U.S. drug prices remain significantly higher than comparable nations",
           "credit": "Wikimedia Commons"
@@ -359,7 +359,7 @@ export const expandedArticlesB: Article[] = [
     "category": "Defense & Foreign Policy",
     "tags": ["ukraine", "russia", "peace-negotiations", "minerals", "geopolitics"],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Eastern_Europe_conflict_zone.png/1280px-Eastern_Europe_conflict_zone.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1280px-Flag_of_Ukraine.svg.png",
       "alt": "Map of Eastern European conflict zone and negotiations",
       "credit": "Wikimedia Commons"
     },
@@ -435,7 +435,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Ukraine_mineral_deposits_map.png/1280px-Ukraine_mineral_deposits_map.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Ukraine_relief_location_map.jpg/1280px-Ukraine_relief_location_map.jpg",
           "alt": "Map showing Ukraine's critical mineral deposits",
           "caption": "Major lithium, rare earth, and cobalt deposits across Ukraine",
           "credit": "Wikimedia Commons"
@@ -477,7 +477,7 @@ export const expandedArticlesB: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Mining_infrastructure_development.png/1280px-Mining_infrastructure_development.png",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Surface_coal_mining.jpg/1280px-Surface_coal_mining.jpg",
           "alt": "Modern mining infrastructure and operations",
           "caption": "Mining infrastructure requirements for large-scale extraction",
           "credit": "Wikimedia Commons"
