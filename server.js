@@ -540,7 +540,7 @@ if (dbPool) {
 
 // ── V Assistant — xAI Grok API Proxy ──────────────────────────────
 const XAI_API_KEY = process.env.XAI_API_KEY
-const V_SYSTEM_PROMPT = `You are V — the research assistant for Veritas Worldwide Press (veritasworldwide.com).
+const V_SYSTEM_PROMPT = `You are V — the research assistant for Veritas Press (veritasworldwide.com).
 
 IDENTITY:
 - Your name is V. You are calm, measured, and authoritative.
@@ -549,7 +549,7 @@ IDENTITY:
 - You reference the site's evidence tier system: Verified (primary source documents), Circumstantial (documented facts where interpretation is noted), and Disputed (claimed but not independently confirmed).
 
 CAPABILITIES:
-- Answer questions about any content published on Veritas Worldwide Press — The Record (31 chapters covering central banking, intelligence agencies, lobbying, media consolidation, public health, surveillance, and more).
+- Answer questions about any content published on Veritas Press — The Record (31 chapters covering central banking, intelligence agencies, lobbying, media consolidation, public health, surveillance, and more).
 - Help users find specific chapters, sources, evidence, and connections across the documentary record.
 - Provide additional context, suggest further reading, and point users to primary source documents.
 - Clarify evidence classifications and explain why certain claims are categorized as Verified, Circumstantial, or Disputed.
@@ -711,28 +711,28 @@ app.use((req, res, next) => {
 
   // Static page meta for bots
   const staticPages = {
-    '/methodology': { title: 'Methodology | Veritas Worldwide Press', desc: 'Our four-tier source hierarchy and three-tier evidence classification system explained.' },
-    '/sources': { title: 'Sources | Veritas Worldwide Press', desc: 'Master bibliography and source library for The Record — 500+ primary source documents.' },
-    '/search': { title: 'Search | Veritas Worldwide Press', desc: 'Search all 31 chapters of The Record by keyword, topic, or evidence classification.' },
-    '/timeline': { title: 'Timeline | Veritas Worldwide Press', desc: 'An interactive chronological timeline of events documented in The Record, from 1694 to present.' },
-    '/analytics': { title: 'Reader Analytics | Veritas Worldwide Press', desc: 'Public readership analytics for The Record.' },
-    '/accessibility': { title: 'Accessibility | Veritas Worldwide Press', desc: 'Accessibility statement and WCAG 2.1 AA compliance information for Veritas Worldwide Press.' },
-    '/privacy': { title: 'Privacy Policy | Veritas Worldwide Press', desc: 'How Veritas Worldwide Press handles reader data, analytics, and privacy. Minimal data collection, no advertising trackers.' },
-    '/terms': { title: 'Terms of Use | Veritas Worldwide Press', desc: 'Terms of use for Veritas Worldwide Press. Free and open access under Creative Commons BY-NC-SA 4.0.' },
-    '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide Press', desc: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.' },
-    '/membership': { title: 'Membership | Veritas Worldwide Press', desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.' },
-    '/deep-state': { title: 'The Deep State — The Epstein Network | Veritas Worldwide Press', desc: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.' },
-    '/forum': { title: 'Veritas Forum | Veritas Worldwide Press', desc: 'Community discussion forum for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.' },
-    '/profiles': { title: 'Power Profiles | Veritas Worldwide Press', desc: 'Sourced profiles of 235+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.' },
-    '/content-pack': { title: 'Content Packs & Brand Kit | Veritas Worldwide Press', desc: 'Official brand assets and social media content packs for Veritas Worldwide Press. Free for press, social media, and advocacy.' },
-    '/news': { title: 'News | Veritas Worldwide Press', desc: 'Latest news and updates from Veritas Worldwide Press.' },
+    '/methodology': { title: 'Methodology | Veritas Press', desc: 'Our four-tier source hierarchy and three-tier evidence classification system explained.' },
+    '/sources': { title: 'Sources | Veritas Press', desc: 'Master bibliography and source library for The Record — 500+ primary source documents.' },
+    '/search': { title: 'Search | Veritas Press', desc: 'Search all 31 chapters of The Record by keyword, topic, or evidence classification.' },
+    '/timeline': { title: 'Timeline | Veritas Press', desc: 'An interactive chronological timeline of events documented in The Record, from 1694 to present.' },
+    '/analytics': { title: 'Reader Analytics | Veritas Press', desc: 'Public readership analytics for The Record.' },
+    '/accessibility': { title: 'Accessibility | Veritas Press', desc: 'Accessibility statement and WCAG 2.1 AA compliance information for Veritas Press.' },
+    '/privacy': { title: 'Privacy Policy | Veritas Press', desc: 'How Veritas Press handles reader data, analytics, and privacy. Minimal data collection, no advertising trackers.' },
+    '/terms': { title: 'Terms of Use | Veritas Press', desc: 'Terms of use for Veritas Press. Free and open access under Creative Commons BY-NC-SA 4.0.' },
+    '/israel-dossier': { title: 'The Israel Dossier | Veritas Press', desc: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.' },
+    '/membership': { title: 'Membership | Veritas Press', desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.' },
+    '/deep-state': { title: 'The Deep State — The Epstein Network | Veritas Press', desc: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.' },
+    '/forum': { title: 'Veritas Forum | Veritas Press', desc: 'Community discussion forum for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.' },
+    '/profiles': { title: 'Power Profiles | Veritas Press', desc: 'Sourced profiles of 235+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.' },
+    '/content-pack': { title: 'Content Packs & Brand Kit | Veritas Press', desc: 'Official brand assets and social media content packs for Veritas Press. Free for press, social media, and advocacy.' },
+    '/news': { title: 'News | Veritas Press', desc: 'Latest news and updates from Veritas Press.' },
   }
 
   const staticMeta = staticPages[req.path]
   if (staticMeta) {
     html = html
       .replace(/<title>.*?<\/title>/, `<title>${staticMeta.title}</title>`)
-      .replace(/content="The Record \| Veritas Worldwide Press"/, `content="${staticMeta.title}"`)
+      .replace(/content="The Record \| Veritas Press"/, `content="${staticMeta.title}"`)
       .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/, `content="${staticMeta.desc}"`)
       .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/, `content="${staticMeta.desc}"`)
   }
@@ -756,8 +756,8 @@ app.use((req, res, next) => {
       const imgType = chapterOgImage.endsWith('.png') ? 'image/png' : chapterOgImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png'
       // Replace default meta tags with chapter-specific ones
       html = html
-        .replace(/<title>.*?<\/title>/, `<title>${meta.title} | The Record — Veritas Worldwide Press</title>`)
-        .replace(/content="The Record \| Veritas Worldwide Press"/g, `content="${meta.title} | The Record — Veritas Worldwide Press"`)
+        .replace(/<title>.*?<\/title>/, `<title>${meta.title} | The Record — Veritas Press</title>`)
+        .replace(/content="The Record \| Veritas Press"/g, `content="${meta.title} | The Record — Veritas Press"`)
         .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${meta.desc}"`)
         .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${meta.desc}"`)
         .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${chapterUrl}"`)
@@ -775,8 +775,8 @@ app.use((req, res, next) => {
     const name = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
     const profileUrl = `${SITE_URL}/profile/${slug}`
     html = html
-      .replace(/<title>.*?<\/title>/, `<title>${name} — Power Profile | Veritas Worldwide Press</title>`)
-      .replace(/content="The Record \| Veritas Worldwide Press"/g, `content="${name} — Power Profile | Veritas Worldwide Press"`)
+      .replace(/<title>.*?<\/title>/, `<title>${name} — Power Profile | Veritas Press</title>`)
+      .replace(/content="The Record \| Veritas Press"/g, `content="${name} — Power Profile | Veritas Press"`)
       .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes. Every claim cited to FEC filings, congressional records, and verified journalism."`)
       .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes."`)
       .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${profileUrl}"`)

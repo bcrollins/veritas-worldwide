@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
-import AuthModal from './components/AuthModal'
 import { isAdminLoggedIn } from './lib/adminAuth'
 import Toast from './components/Toast'
 import ErrorBoundary from './components/ErrorBoundary'
@@ -10,22 +9,25 @@ import { usePageView } from './hooks/usePageView'
 import { useTheme } from './lib/ThemeContext'
 import { DONATE_URL, TAGLINE, MEMBERSHIP } from './lib/constants'
 import { trackSupportClick } from './lib/ga4'
-import NewsletterPopup from './components/engagement/NewsletterPopup'
-import PerformanceMonitor from './components/engagement/PerformanceMonitor'
 import ReadingStreak from './components/engagement/ReadingStreak'
 import { useScrollDepth } from './hooks/useScrollDepth'
 import { I18nProvider, useI18n } from './lib/i18n'
 import LanguageSelector from './components/LanguageSelector'
-import ExitIntentCapture from './components/ExitIntentCapture'
 import NewsletterSignup from './components/NewsletterSignup'
 import { trackPageView } from './lib/hubspot'
 import { handleStripeReturn } from './lib/conversionTracking'
-import StickyMembershipBar from './components/StickyMembershipBar'
-import CookieConsent from './components/CookieConsent'
-import VAssistant from './components/VAssistant'
 import VeritasLogo from './components/VeritasLogo'
 import { useExperiment } from './hooks/useExperiment'
 import { trackConversion } from './lib/abTest'
+
+// Lazy-load overlay/engagement components — not needed for initial paint
+const AuthModal = lazy(() => import('./components/AuthModal'))
+const NewsletterPopup = lazy(() => import('./components/engagement/NewsletterPopup'))
+const PerformanceMonitor = lazy(() => import('./components/engagement/PerformanceMonitor'))
+const ExitIntentCapture = lazy(() => import('./components/ExitIntentCapture'))
+const StickyMembershipBar = lazy(() => import('./components/StickyMembershipBar'))
+const CookieConsent = lazy(() => import('./components/CookieConsent'))
+const VAssistant = lazy(() => import('./components/VAssistant'))
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -603,14 +605,18 @@ export default function App() {
         </ErrorBoundary>
       </main>
       {!isAdmin && <Footer />}
-      <AuthModal />
+      <Suspense fallback={null}>
+        <AuthModal />
+      </Suspense>
       <Toast />
-      <NewsletterPopup />
-      <ExitIntentCapture />
-      <StickyMembershipBar />
-      <PerformanceMonitor />
-      <CookieConsent />
-      {!isAdmin && <VAssistant />}
+      <Suspense fallback={null}>
+        <NewsletterPopup />
+        <ExitIntentCapture />
+        <StickyMembershipBar />
+        <PerformanceMonitor />
+        <CookieConsent />
+        {!isAdmin && <VAssistant />}
+      </Suspense>
     </div>
     </I18nProvider>
   )
