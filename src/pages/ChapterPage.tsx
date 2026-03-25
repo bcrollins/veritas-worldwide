@@ -1095,6 +1095,26 @@ export default function ChapterPage() {
 
             <CommunityForum pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
 
+            {/* ── Contextual Donation CTA ──────────────── */}
+            <div className="border-t border-b border-border mt-12 py-8 text-center">
+              <p className="font-serif text-base text-ink-muted leading-relaxed max-w-lg mx-auto mb-4">
+                This research is free because the documentary record belongs to everyone.
+                If you value independent, source-verified journalism, any contribution helps us continue.
+              </p>
+              <a
+                href={DONATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase hover:bg-crimson-dark transition-colors"
+                data-testid="chapter-donate-cta"
+              >
+                Support This Research
+              </a>
+              <p className="font-sans text-xs text-ink-faint mt-3">
+                $5 keeps the archive online for a month. $25 funds document acquisition.
+              </p>
+            </div>
+
             <ChapterNav current={chapter} />
           </article>
 
