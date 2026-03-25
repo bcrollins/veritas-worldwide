@@ -94,13 +94,28 @@ export default function ProfilePage(): React.ReactNode {
       url: `${SITE_URL}/profile/${foundProfile.id}`,
     });
 
-    // Set JSON-LD schema
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: foundProfile.name,
-      url: `${SITE_URL}/profiles/${slug}`,
-    });
+    // Set JSON-LD schema — enriched Person markup for 91 profile pages
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: foundProfile.name,
+        url: `${SITE_URL}/profile/${foundProfile.id}`,
+        description: foundProfile.summary,
+        ...(foundProfile.title && { jobTitle: foundProfile.title }),
+        ...(foundProfile.category && { knowsAbout: foundProfile.category }),
+        image: getProfilePhoto(foundProfile.id),
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Power Profiles', item: `${SITE_URL}/profiles` },
+          { '@type': 'ListItem', position: 3, name: foundProfile.name, item: `${SITE_URL}/profile/${foundProfile.id}` },
+        ],
+      },
+    ]);
 
     setLoading(false);
 
