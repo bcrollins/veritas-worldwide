@@ -1,5 +1,5 @@
 {
-  "run": 21,
+  "run": 22,
   "date": "2026-03-24",
   "channels": {
     "website": {"status": "live", "url": "https://veritasworldwide.com"},
@@ -23,7 +23,7 @@
     "hubspot_workflows": true,
     "hubspot_lead_scoring": true,
     "ga4": true,
-    "search_console": false,
+    "search_console": true,
     "hubspot_social_tracking": true,
     "stripe_tiers": true,
     "stripe_recurring": true
@@ -64,7 +64,8 @@
     "lead_scoring": true,
     "social_content_calendar": true,
     "lazy_chapter_loading": true,
-    "notion_content_calendar": true
+    "notion_content_calendar": true,
+    "security_headers": true
   },
   "content": {
     "social_templates_created": 6,
