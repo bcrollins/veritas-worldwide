@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
-import { chapters } from '../data/chapters'
+import { chapterMeta } from '../data/chapterMeta'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 
 export default function BookmarksPage() {
   const { user, bookmarks } = useAuth()
 
-  const bookmarkedChapters = chapters.filter(ch =>
+  const bookmarkedChapters = chapterMeta.filter(ch =>
     bookmarks?.includes(ch.id)
   )
 
@@ -113,7 +113,7 @@ export default function BookmarksPage() {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-ink-muted">Total Chapters</span>
-                    <span className="font-medium text-ink">{chapters.length}</span>
+                    <span className="font-medium text-ink">{chapterMeta.length}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-ink-muted">Bookmarked</span>
@@ -122,7 +122,7 @@ export default function BookmarksPage() {
                   <div className="w-full bg-border rounded-full h-2 mt-2">
                     <div
                       className="bg-crimson rounded-full h-2 transition-all"
-                      style={{ width: `${chapters.length > 0 ? (bookmarkedChapters.length / chapters.length) * 100 : 0}%` }}
+                      style={{ width: `${chapterMeta.length > 0 ? (bookmarkedChapters.length / chapterMeta.length) * 100 : 0}%` }}
                     />
                   </div>
                 </div>

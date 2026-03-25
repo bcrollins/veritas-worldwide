@@ -79,3 +79,26 @@ export function clearContentCache(chapterId?: string) {
 export function getCacheStats() {
   return { cached: cache.size, keys: Array.from(cache.keys()) }
 }
+
+/**
+ * Load ALL chapters in parallel. Returns array in order.
+ * Used by pages that need full content (SourcesPage, SearchPage, Admin).
+ */
+export async function loadAllChapters(): Promise<Chapter[]> {
+  const keys = Object.keys(chapterModules).sort()
+  const results = await Promise.all(
+    keys.map(async (key) => {
+      const id = key.replace('./chapters/', '').replace('.ts', '')
+      if (cache.has(id)) return cache.get(id)!
+      try {
+        const mod = await chapterModules[key]()
+        const chapter = mod.default
+        cache.set(id, chapter)
+        return chapter
+      } catch {
+        return null
+      }
+    })
+  )
+  return results.filter((ch): ch is Chapter => ch !== null)
+}

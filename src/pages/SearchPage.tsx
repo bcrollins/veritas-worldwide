@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { chapters, searchChapters } from '../data/chapters'
-import type { Chapter } from '../data/chapters'
+import { useAllChapters } from '../hooks/useAllChapters'
+import type { Chapter } from '../data/chapterTypes'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
@@ -70,7 +70,26 @@ function HighlightText({ text, query }: { text: string; query: string }) {
   )
 }
 
+function searchChaptersLocal(allChapters: Chapter[], query: string): Chapter[] {
+  if (!query.trim()) return []
+  const terms = query.toLowerCase().split(/\s+/)
+  return allChapters.filter(ch => {
+    const searchable = [
+      ch.title, ch.subtitle, ch.dateRange,
+      ...ch.keywords,
+      ...ch.content.map(b => b.text || b.quote?.text || b.evidence?.text || ''),
+      ...ch.sources.map(s => s.text),
+    ].join(' ').toLowerCase()
+    return terms.every(term => searchable.includes(term))
+  }).sort((a, b) => {
+    const aMatches = terms.filter(t => a.keywords.join(' ').toLowerCase().includes(t)).length
+    const bMatches = terms.filter(t => b.keywords.join(' ').toLowerCase().includes(t)).length
+    return bMatches - aMatches
+  })
+}
+
 export default function SearchPage() {
+  const { chapters, loading: chaptersLoading } = useAllChapters()
   const [searchParams, setSearchParams] = useSearchParams()
   const initialQuery = searchParams.get('q') || ''
   const [query, setQuery] = useState(initialQuery)
@@ -118,13 +137,13 @@ export default function SearchPage() {
 
   const results: SearchResult[] = useMemo(() => {
     if (!debouncedQuery.trim()) return []
-    const matched = searchChapters(debouncedQuery)
+    const matched = searchChaptersLocal(chapters, debouncedQuery)
     return matched.map(chapter => ({
       chapter,
       matchedIn: getMatchedFields(chapter, debouncedQuery),
       snippet: getSnippet(chapter, debouncedQuery),
     }))
-  }, [debouncedQuery])
+  }, [debouncedQuery, chapters])
 
   return (
     <div className="w-full max-w-[1920px] mx-auto">

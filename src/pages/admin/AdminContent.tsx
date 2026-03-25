@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { chapters } from '../../data/chapters'
+import { useAllChapters } from '../../hooks/useAllChapters'
 
 export default function AdminContent() {
+  const { chapters, loading } = useAllChapters()
   const [search, setSearch] = useState('')
 
   const filtered = chapters.filter(ch =>
@@ -12,6 +13,8 @@ export default function AdminContent() {
 
   const totalBlocks = chapters.reduce((sum, ch) => sum + ch.content.length, 0)
   const totalVideos = chapters.reduce((sum, ch) => sum + ch.content.filter(b => b.type === 'video').length, 0)
+
+  if (loading) return <div className="text-white/30 font-sans text-sm py-8 text-center">Loading chapters...</div>
 
   return (
     <div className="space-y-6">

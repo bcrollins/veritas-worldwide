@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { chapters } from '../data/chapters'
+import { useAllChapters } from '../hooks/useAllChapters'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 
 export default function SourcesPage() {
+  const { chapters, loading: chaptersLoading } = useAllChapters()
   useEffect(() => {
     setMetaTags({
       title: 'Sources & Bibliography | The Record — Veritas Worldwide Press',

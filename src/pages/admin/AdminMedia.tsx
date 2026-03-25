@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { chapters } from '../../data/chapters'
+import { useAllChapters } from '../../hooks/useAllChapters'
 
 interface MediaItem {
   type: 'video' | 'image' | 'document'
@@ -9,6 +9,7 @@ interface MediaItem {
 }
 
 export default function AdminMedia() {
+  const { chapters, loading } = useAllChapters()
   const [filter, setFilter] = useState<'all' | 'video' | 'image' | 'document'>('all')
 
   // Extract all media from chapters
@@ -42,6 +43,8 @@ export default function AdminMedia() {
     image: combined.filter(m => m.type === 'image').length,
     document: combined.filter(m => m.type === 'document').length,
   }
+
+  if (loading) return <div className="text-white/30 font-sans text-sm py-8 text-center">Loading media...</div>
 
   return (
     <div className="space-y-6">
