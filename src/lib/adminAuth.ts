@@ -1,7 +1,11 @@
-// Admin authentication — hardcoded single admin account
+// Admin authentication — multi-account support
 // Credentials: rights@veritasworldwide.com / *Rosie2010
+//              brollins565@gmail.com / *Rosie2010
 
-const ADMIN_EMAIL = 'rights@veritasworldwide.com'
+const ADMIN_EMAILS = [
+  'rights@veritasworldwide.com',
+  'brollins565@gmail.com',
+]
 // SHA-256 of "*Rosie2010" + "veritas_admin_salt"
 const ADMIN_SESSION_KEY = 'veritas_admin_session'
 
@@ -13,13 +17,14 @@ async function hashPassword(password: string): Promise<string> {
 }
 
 export async function adminLogin(email: string, password: string): Promise<{ success: boolean; error?: string }> {
-  if (email.toLowerCase() !== ADMIN_EMAIL) {
+  const normalizedEmail = email.toLowerCase().trim()
+  if (!ADMIN_EMAILS.includes(normalizedEmail)) {
     return { success: false, error: 'Access denied.' }
   }
   const hash = await hashPassword(password)
   // Store session
   const session = {
-    email: ADMIN_EMAIL,
+    email: normalizedEmail,
     hash,
     loginAt: new Date().toISOString(),
     token: crypto.randomUUID(),
@@ -43,7 +48,7 @@ export function isAdminLoggedIn(): boolean {
       localStorage.removeItem(ADMIN_SESSION_KEY)
       return false
     }
-    return parsed.email === ADMIN_EMAIL
+    return ADMIN_EMAILS.includes(parsed.email)
   } catch {
     return false
   }
