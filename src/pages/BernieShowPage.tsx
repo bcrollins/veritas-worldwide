@@ -75,6 +75,123 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   )
 }
 
+// ── Inline SVG Components ──────────────────────────────────
+function FirePitArt() {
+  return (
+    <svg viewBox="0 0 400 500" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fire1" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stopColor="#f59e0b" />
+          <stop offset="50%" stopColor="#f97316" />
+          <stop offset="100%" stopColor="#ef4444" stopOpacity="0.6" />
+        </linearGradient>
+        <linearGradient id="fire2" x1="0" y1="1" x2="0.3" y2="0">
+          <stop offset="0%" stopColor="#fbbf24" />
+          <stop offset="100%" stopColor="#f97316" stopOpacity="0.3" />
+        </linearGradient>
+        <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#525252" />
+          <stop offset="100%" stopColor="#262626" />
+        </linearGradient>
+        <linearGradient id="ember" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stopColor="#7c2d12" />
+          <stop offset="100%" stopColor="#ea580c" />
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="8" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      {/* Stone patio base */}
+      <ellipse cx="200" cy="420" rx="180" ry="40" fill="#1a1a1a" />
+      <ellipse cx="200" cy="415" rx="170" ry="35" fill="#262626" />
+      {/* Fire pit bowl */}
+      <path d="M100,350 L110,400 L290,400 L300,350 Z" fill="url(#steel)" stroke="#404040" strokeWidth="2" />
+      <rect x="95" y="340" width="210" height="15" rx="3" fill="#404040" stroke="#525252" strokeWidth="1" />
+      {/* The text band on the pit */}
+      <rect x="110" y="360" width="180" height="24" rx="2" fill="#1a1a1a" />
+      <text x="200" y="378" textAnchor="middle" fill="#d97706" fontSize="9" fontWeight="bold" letterSpacing="2" fontFamily="system-ui, sans-serif">FREEDOM LIES IN BEING BOLD</text>
+      {/* Embers / coals */}
+      <ellipse cx="200" cy="345" rx="80" ry="12" fill="url(#ember)" opacity="0.8" />
+      {/* Flames - center */}
+      <path d="M200,340 Q190,280 200,220 Q210,260 215,300 Q210,320 200,340" fill="url(#fire1)" opacity="0.9" filter="url(#glow)">
+        <animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M200,340 Q190,280 200,220 Q210,260 215,300 Q210,320 200,340;M200,340 Q185,275 195,215 Q215,265 218,305 Q212,325 200,340;M200,340 Q190,280 200,220 Q210,260 215,300 Q210,320 200,340" />
+      </path>
+      {/* Flames - left */}
+      <path d="M170,340 Q160,290 175,250 Q185,280 185,310 Q180,330 170,340" fill="url(#fire2)" opacity="0.7">
+        <animate attributeName="d" dur="1.8s" repeatCount="indefinite" values="M170,340 Q160,290 175,250 Q185,280 185,310 Q180,330 170,340;M170,340 Q155,285 168,242 Q188,282 187,315 Q182,332 170,340;M170,340 Q160,290 175,250 Q185,280 185,310 Q180,330 170,340" />
+      </path>
+      {/* Flames - right */}
+      <path d="M230,340 Q240,285 225,245 Q215,280 218,310 Q222,330 230,340" fill="url(#fire2)" opacity="0.7">
+        <animate attributeName="d" dur="2s" repeatCount="indefinite" values="M230,340 Q240,285 225,245 Q215,280 218,310 Q222,330 230,340;M230,340 Q245,280 228,240 Q212,278 216,308 Q220,328 230,340;M230,340 Q240,285 225,245 Q215,280 218,310 Q222,330 230,340" />
+      </path>
+      {/* Sparks */}
+      <circle cx="195" cy="210" r="2" fill="#fbbf24" opacity="0.8">
+        <animate attributeName="cy" dur="2s" repeatCount="indefinite" values="210;180;150" />
+        <animate attributeName="opacity" dur="2s" repeatCount="indefinite" values="0.8;0.4;0" />
+      </circle>
+      <circle cx="210" cy="200" r="1.5" fill="#fbbf24" opacity="0.6">
+        <animate attributeName="cy" dur="2.5s" repeatCount="indefinite" values="200;165;130" />
+        <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite" values="0.6;0.3;0" />
+      </circle>
+      <circle cx="185" cy="215" r="1" fill="#fb923c" opacity="0.7">
+        <animate attributeName="cy" dur="1.8s" repeatCount="indefinite" values="215;185;155" />
+        <animate attributeName="opacity" dur="1.8s" repeatCount="indefinite" values="0.7;0.35;0" />
+      </circle>
+      {/* Ambient glow on ground */}
+      <ellipse cx="200" cy="420" rx="120" ry="25" fill="#f59e0b" opacity="0.06" />
+    </svg>
+  )
+}
+
+function GiantsTicketArt() {
+  return (
+    <svg viewBox="0 0 320 180" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ticketBg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#f5f0e0" />
+          <stop offset="100%" stopColor="#e8dfc8" />
+        </linearGradient>
+        <filter id="aged">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+      </defs>
+      {/* Ticket body */}
+      <rect x="10" y="10" width="300" height="160" rx="4" fill="url(#ticketBg)" stroke="#c9b896" strokeWidth="1.5" filter="url(#aged)" />
+      {/* Perforation line */}
+      <line x1="230" y1="10" x2="230" y2="170" stroke="#c9b896" strokeWidth="1" strokeDasharray="4,4" />
+      {/* NY GIANTS header */}
+      <text x="120" y="40" textAnchor="middle" fill="#003c7e" fontSize="16" fontWeight="900" fontFamily="system-ui" letterSpacing="1">NEW YORK GIANTS</text>
+      <text x="120" y="55" textAnchor="middle" fill="#003c7e" fontSize="8" fontFamily="system-ui" letterSpacing="3">FOOTBALL</text>
+      {/* Red accent line */}
+      <line x1="30" y1="62" x2="210" y2="62" stroke="#cc0000" strokeWidth="2" />
+      {/* Game info */}
+      <text x="30" y="82" fill="#333" fontSize="9" fontFamily="system-ui" fontWeight="600">GIANTS STADIUM</text>
+      <text x="30" y="96" fill="#555" fontSize="8" fontFamily="system-ui">East Rutherford, New Jersey</text>
+      {/* Date and game */}
+      <text x="30" y="116" fill="#003c7e" fontSize="11" fontWeight="700" fontFamily="system-ui">SUN NOV 10, 1985</text>
+      <text x="30" y="130" fill="#333" fontSize="8" fontFamily="system-ui">GAME 6 &middot; 1:00 PM</text>
+      {/* Seat info */}
+      <text x="30" y="150" fill="#555" fontSize="7" fontFamily="system-ui">SEC</text>
+      <text x="50" y="150" fill="#003c7e" fontSize="10" fontWeight="800" fontFamily="system-ui">213</text>
+      <text x="80" y="150" fill="#555" fontSize="7" fontFamily="system-ui">ROW</text>
+      <text x="100" y="150" fill="#003c7e" fontSize="10" fontWeight="800" fontFamily="system-ui">10</text>
+      <text x="125" y="150" fill="#555" fontSize="7" fontFamily="system-ui">SEAT</text>
+      <text x="150" y="150" fill="#003c7e" fontSize="10" fontWeight="800" fontFamily="system-ui">17</text>
+      {/* Price */}
+      <text x="30" y="165" fill="#333" fontSize="8" fontWeight="600" fontFamily="system-ui">$17.00</text>
+      {/* Stub section */}
+      <text x="275" y="50" textAnchor="middle" fill="#003c7e" fontSize="8" fontWeight="700" fontFamily="system-ui">RETAIN</text>
+      <text x="275" y="62" textAnchor="middle" fill="#003c7e" fontSize="7" fontFamily="system-ui">THIS STUB</text>
+      <text x="275" y="100" textAnchor="middle" fill="#003c7e" fontSize="9" fontWeight="800" fontFamily="system-ui">213</text>
+      <text x="275" y="115" textAnchor="middle" fill="#555" fontSize="7" fontFamily="system-ui">ROW 10</text>
+      <text x="275" y="127" textAnchor="middle" fill="#555" fontSize="7" fontFamily="system-ui">SEAT 17</text>
+      <text x="275" y="155" textAnchor="middle" fill="#333" fontSize="8" fontWeight="600" fontFamily="system-ui">$17.00</text>
+    </svg>
+  )
+}
+
 // ── Episode Data ───────────────────────────────────────────
 const EPISODES: Episode[] = [
   {
@@ -84,51 +201,31 @@ const EPISODES: Episode[] = [
     duration: '55–65 min',
     hook: 'Bernie introduces himself to the world — steel company owner turned truth-seeker, Jersey kid who built something real, father who taught his sons to think for themselves. The origin story: why now, why him, and why this show needs to exist.',
     segments: [
-      {
-        name: 'Cold Open — "Let Me Tell You Something"',
-        minutes: '5 min',
-        bullets: [
-          'Open with the phrase that defines the show: "Freedom lies in being bold." What it means — not a bumper sticker, but a way of living.',
-          'Who Bernie Rollins is: a retired steel guy from Jersey who moved south, raised kids, built a company, and never once kept his mouth shut when it mattered.',
-          'Ground rules: no sponsors to protect, no party to serve, no filter. He says what he thinks and backs it up.',
-        ],
-      },
-      {
-        name: 'Segment 1 — "How I Got Here"',
-        minutes: '15 min',
-        bullets: [
-          'The Jersey years: growing up in a blue-collar family where opinions were loud and loyalty was everything.',
-          'Building a steel company from nothing — what the business world actually teaches you about how America works.',
-          'Retirement and the realization that sitting still isn\'t an option when the country is going sideways.',
-        ],
-      },
-      {
-        name: 'Segment 2 — "What I Believe"',
-        minutes: '15 min',
-        bullets: [
-          'The core pillars: free speech, individual liberty, government accountability, and the idea that regular people deserve the truth.',
-          'Why both parties have failed working Americans — and why Bernie doesn\'t play the left-right game.',
-          'The moment that radicalized him: a specific story about watching the system protect itself at the expense of ordinary people.',
-        ],
-      },
-      {
-        name: 'Segment 3 — "The Boldness Test"',
-        minutes: '10 min',
-        bullets: [
-          'Introducing the recurring segment: one topic that everyone is afraid to say out loud, handled in 10 minutes flat.',
-          'Episode 1 topic: "Why your neighbor who disagrees with you isn\'t your enemy — the machine that profits from your division is."',
-          'Closing philosophy: boldness isn\'t being loud, it\'s refusing to be silenced.',
-        ],
-      },
-      {
-        name: 'Sign-Off — "That\'s My Take"',
-        minutes: '5 min',
-        bullets: [
-          'Signature closing: Bernie\'s personal challenge to the listener — one thing to think about, look up, or do before next episode.',
-          'Preview of Episode 2: "Your Money Is a Lie" — a deep dive into the Federal Reserve.',
-          'Call to action: share the show, leave a review, and "tell someone something bold today."',
-        ],
-      },
+      { name: 'Cold Open — "Let Me Tell You Something"', minutes: '5 min', bullets: [
+        'Open with the phrase that defines the show: "Freedom lies in being bold." What it means — not a bumper sticker, but a way of living.',
+        'Who Bernie Rollins is: a retired steel guy from Jersey who moved south, raised kids, built a company, and never once kept his mouth shut when it mattered.',
+        'Ground rules: no sponsors to protect, no party to serve, no filter. He says what he thinks and backs it up.',
+      ]},
+      { name: 'Segment 1 — "How I Got Here"', minutes: '15 min', bullets: [
+        'The Jersey years: growing up in a blue-collar family where opinions were loud and loyalty was everything.',
+        'Building a steel company from nothing — what the business world actually teaches you about how America works.',
+        'Retirement and the realization that sitting still isn\'t an option when the country is going sideways.',
+      ]},
+      { name: 'Segment 2 — "What I Believe"', minutes: '15 min', bullets: [
+        'The core pillars: free speech, individual liberty, government accountability, and the idea that regular people deserve the truth.',
+        'Why both parties have failed working Americans — and why Bernie doesn\'t play the left-right game.',
+        'The moment that radicalized him: a specific story about watching the system protect itself at the expense of ordinary people.',
+      ]},
+      { name: 'Segment 3 — "The Boldness Test"', minutes: '10 min', bullets: [
+        'Introducing the recurring segment: one topic that everyone is afraid to say out loud, handled in 10 minutes flat.',
+        'Episode 1 topic: "Why your neighbor who disagrees with you isn\'t your enemy — the machine that profits from your division is."',
+        'Closing philosophy: boldness isn\'t being loud, it\'s refusing to be silenced.',
+      ]},
+      { name: 'Sign-Off — "That\'s My Take"', minutes: '5 min', bullets: [
+        'Signature closing: Bernie\'s personal challenge to the listener — one thing to think about, look up, or do before next episode.',
+        'Preview of Episode 2: "Your Money Is a Lie" — a deep dive into the Federal Reserve.',
+        'Call to action: share the show, leave a review, and "tell someone something bold today."',
+      ]},
     ],
   },
   {
@@ -138,51 +235,31 @@ const EPISODES: Episode[] = [
     duration: '60–70 min',
     hook: 'Most Americans have no idea how money actually works in this country. Bernie breaks down the Federal Reserve — who runs it, who profits, and why your purchasing power has been stolen in broad daylight for over a century.',
     segments: [
-      {
-        name: 'Cold Open — "Follow the Money"',
-        minutes: '5 min',
-        bullets: [
-          'Start with a receipt: what $100 bought in 1970 vs. today. Let the numbers do the talking.',
-          'Ask the audience: "Who do you think decides what your dollar is worth? Because it\'s not Congress, and it\'s not the President."',
-          'Set up the episode as a journey: "By the end of this hour, you\'ll understand the biggest legal scam in American history."',
-        ],
-      },
-      {
-        name: 'Segment 1 — "1913: The Year They Took Your Money"',
-        minutes: '20 min',
-        bullets: [
-          'The creation of the Federal Reserve: Jekyll Island, the bankers\' secret meeting, and the legislation that changed everything.',
-          'How the Fed works in plain English — money creation, interest rates, and the debt spiral that funds the machine.',
-          'Who owns the Fed: the member banks, the revolving door between Wall Street and the Board of Governors, and why "federal" is the most misleading word in the name.',
-        ],
-      },
-      {
-        name: 'Segment 2 — "Inflation Is a Tax They Don\'t Vote On"',
-        minutes: '15 min',
-        bullets: [
-          'How inflation works as a hidden tax — and why it hits retirees, savers, and working families hardest.',
-          'The 2008 bailout: $700 billion to the banks, nothing to the people who lost their homes.',
-          'COVID money printing: $4 trillion created in 18 months and where it actually went (hint: not your stimulus check).',
-        ],
-      },
-      {
-        name: 'Segment 3 — "The Boldness Test"',
-        minutes: '10 min',
-        bullets: [
-          'This week\'s bold topic: "The national debt will never be repaid — and they know it. The question is who holds the bag when the music stops."',
-          'Break down the $34 trillion debt in terms a regular person can understand.',
-          'What it means for your grandchildren — the generational theft nobody wants to talk about.',
-        ],
-      },
-      {
-        name: 'Sign-Off — "That\'s My Take"',
-        minutes: '5 min',
-        bullets: [
-          'Challenge: look up how much interest the U.S. pays on its debt per day (spoiler: over $2 billion).',
-          'Preview of Episode 3: "They Want You Divided" — how media, big tech, and politicians manufacture outrage.',
-          '"The system isn\'t broken — it\'s working exactly as designed. For them, not for you."',
-        ],
-      },
+      { name: 'Cold Open — "Follow the Money"', minutes: '5 min', bullets: [
+        'Start with a receipt: what $100 bought in 1970 vs. today. Let the numbers do the talking.',
+        'Ask the audience: "Who do you think decides what your dollar is worth? Because it\'s not Congress, and it\'s not the President."',
+        'Set up the episode as a journey: "By the end of this hour, you\'ll understand the biggest legal scam in American history."',
+      ]},
+      { name: 'Segment 1 — "1913: The Year They Took Your Money"', minutes: '20 min', bullets: [
+        'The creation of the Federal Reserve: Jekyll Island, the bankers\' secret meeting, and the legislation that changed everything.',
+        'How the Fed works in plain English — money creation, interest rates, and the debt spiral that funds the machine.',
+        'Who owns the Fed: the member banks, the revolving door between Wall Street and the Board of Governors.',
+      ]},
+      { name: 'Segment 2 — "Inflation Is a Tax They Don\'t Vote On"', minutes: '15 min', bullets: [
+        'How inflation works as a hidden tax — and why it hits retirees, savers, and working families hardest.',
+        'The 2008 bailout: $700 billion to the banks, nothing to the people who lost their homes.',
+        'COVID money printing: $4 trillion created in 18 months and where it actually went.',
+      ]},
+      { name: 'Segment 3 — "The Boldness Test"', minutes: '10 min', bullets: [
+        'This week\'s bold topic: "The national debt will never be repaid — and they know it."',
+        'Break down the $34 trillion debt in terms a regular person can understand.',
+        'What it means for your grandchildren — the generational theft nobody wants to talk about.',
+      ]},
+      { name: 'Sign-Off — "That\'s My Take"', minutes: '5 min', bullets: [
+        'Challenge: look up how much interest the U.S. pays on its debt per day (spoiler: over $2 billion).',
+        'Preview of Episode 3: "They Want You Divided" — how media, big tech, and politicians manufacture outrage.',
+        '"The system isn\'t broken — it\'s working exactly as designed. For them, not for you."',
+      ]},
     ],
   },
   {
@@ -190,53 +267,33 @@ const EPISODES: Episode[] = [
     title: 'They Want You Divided',
     format: 'solo',
     duration: '60–70 min',
-    hook: 'Left vs. right. Black vs. white. Vaxxed vs. unvaxxed. Every fight you\'ve been told to have is a distraction from the one fight that matters: the people vs. the machine. Bernie dismantles the division industry.',
+    hook: 'Left vs. right. Black vs. white. Every fight you\'ve been told to have is a distraction from the one fight that matters: the people vs. the machine. Bernie dismantles the division industry.',
     segments: [
-      {
-        name: 'Cold Open — "The Algorithm Knows"',
-        minutes: '5 min',
-        bullets: [
-          'Open with a personal story: a Facebook argument that made Bernie realize the platform was designed to make him angry.',
-          'The business model of outrage: attention = money, and anger gets more clicks than truth.',
-          'The setup: "Tonight I\'m going to show you who profits every time you hate your neighbor."',
-        ],
-      },
-      {
-        name: 'Segment 1 — "Manufacturing Consent 2.0"',
-        minutes: '20 min',
-        bullets: [
-          'How legacy media went from reporting news to programming narratives — and the six corporations that own 90% of what Americans see and hear.',
-          'Big Tech\'s role: algorithmic radicalization, shadow banning, and the illusion of organic conversation.',
-          'Case study: how the same event gets reported by CNN, Fox, and independent media — three completely different realities from the same facts.',
-        ],
-      },
-      {
-        name: 'Segment 2 — "The Uniparty"',
-        minutes: '15 min',
-        bullets: [
-          'Why the two-party system is one party with two marketing departments.',
-          'Follow the donor money: the same defense contractors, pharmaceutical companies, and banks fund both sides.',
-          'The revolving door: Congress to lobbying to corporate boards — the career path of people who are supposed to serve you.',
-        ],
-      },
-      {
-        name: 'Segment 3 — "The Boldness Test"',
-        minutes: '10 min',
-        bullets: [
-          'Bold topic: "Your political identity is a brand loyalty program — and you\'re not the customer, you\'re the product."',
-          'Challenge listeners to name three things they agree with the "other side" on.',
-          'The antidote to division: local community, face-to-face conversation, and refusing to let a screen tell you who your enemy is.',
-        ],
-      },
-      {
-        name: 'Sign-Off — "That\'s My Take"',
-        minutes: '5 min',
-        bullets: [
-          'Challenge: turn off all news for 48 hours. See how you feel. See what you actually miss.',
-          'Preview of Episode 4: "The Sons of Steel" — guest episode with both of Bernie\'s sons.',
-          '"They can\'t divide people who refuse to be sorted."',
-        ],
-      },
+      { name: 'Cold Open — "The Algorithm Knows"', minutes: '5 min', bullets: [
+        'Open with a personal story: a Facebook argument that made Bernie realize the platform was designed to make him angry.',
+        'The business model of outrage: attention = money, and anger gets more clicks than truth.',
+        'The setup: "Tonight I\'m going to show you who profits every time you hate your neighbor."',
+      ]},
+      { name: 'Segment 1 — "Manufacturing Consent 2.0"', minutes: '20 min', bullets: [
+        'How legacy media went from reporting news to programming narratives — and the six corporations that own 90% of what Americans see and hear.',
+        'Big Tech\'s role: algorithmic radicalization, shadow banning, and the illusion of organic conversation.',
+        'Case study: how the same event gets reported by CNN, Fox, and independent media — three completely different realities.',
+      ]},
+      { name: 'Segment 2 — "The Uniparty"', minutes: '15 min', bullets: [
+        'Why the two-party system is one party with two marketing departments.',
+        'Follow the donor money: the same defense contractors, pharmaceutical companies, and banks fund both sides.',
+        'The revolving door: Congress to lobbying to corporate boards.',
+      ]},
+      { name: 'Segment 3 — "The Boldness Test"', minutes: '10 min', bullets: [
+        'Bold topic: "Your political identity is a brand loyalty program — and you\'re not the customer, you\'re the product."',
+        'Challenge listeners to name three things they agree with the "other side" on.',
+        'The antidote to division: local community, face-to-face conversation, and refusing to let a screen tell you who your enemy is.',
+      ]},
+      { name: 'Sign-Off — "That\'s My Take"', minutes: '5 min', bullets: [
+        'Challenge: turn off all news for 48 hours. See how you feel.',
+        'Preview of Episode 4: "The Sons of Steel" — guest episode with both of Bernie\'s sons.',
+        '"They can\'t divide people who refuse to be sorted."',
+      ]},
     ],
   },
   {
@@ -246,51 +303,31 @@ const EPISODES: Episode[] = [
     duration: '75–90 min',
     hook: 'Bernie sits down with both of his sons for an unscripted, no-holds-barred conversation about family, legacy, and what it means to raise men who think for themselves in an age of conformity.',
     segments: [
-      {
-        name: 'Cold Open — "My Greatest Achievement"',
-        minutes: '5 min',
-        bullets: [
-          'Bernie opens solo: "I built a steel company. I\'ve shaken hands with powerful people. But the only thing I ever made that mattered is sitting across from me right now."',
-          'Set the tone: this isn\'t a soft family segment. This is three men who disagree, push back, and respect each other enough to do it on mic.',
-          'Frame the episode: what does it look like when a father raises sons to think — not to obey?',
-        ],
-      },
-      {
-        name: 'Segment 1 — "Lessons From the Old Man"',
-        minutes: '25 min',
-        bullets: [
-          'The sons share the lessons that stuck — and the ones they had to learn the hard way on their own.',
-          'Stories from the steel business: what it taught them about work, integrity, and dealing with people who have more power than you.',
-          'The moment each son realized their dad wasn\'t just opinionated — he was usually right. And the times he wasn\'t.',
-        ],
-      },
-      {
-        name: 'Segment 2 — "Where We Disagree"',
-        minutes: '20 min',
-        bullets: [
-          'The generational divide: where the sons see things differently than their father — and why that\'s the point.',
-          'Technology, social media, and the future: the sons push back on Bernie\'s skepticism, and he pushes back harder.',
-          'The one issue where all three of them align completely — and why it gives them hope.',
-        ],
-      },
-      {
-        name: 'Segment 3 — "What We\'re Building"',
-        minutes: '15 min',
-        bullets: [
-          'Each Rollins shares what they\'re working on — professional, personal, and philosophical.',
-          'The family legacy question: what does the Rollins name mean in 2025, and what should it mean in 2050?',
-          'A challenge to listeners: have this conversation with your own family. Record it. Send it in.',
-        ],
-      },
-      {
-        name: 'Sign-Off — "That\'s Our Take"',
-        minutes: '5 min',
-        bullets: [
-          'A rare moment: each Rollins tells the other two something they\'ve never said on mic before.',
-          'Preview of Episode 5: "Call-In Night" — the audience gets the mic for the first time.',
-          '"Steel doesn\'t bend easy. Neither do we."',
-        ],
-      },
+      { name: 'Cold Open — "My Greatest Achievement"', minutes: '5 min', bullets: [
+        'Bernie opens solo: "I built a steel company. I\'ve shaken hands with powerful people. But the only thing I ever made that mattered is sitting across from me right now."',
+        'Set the tone: this isn\'t a soft family segment. This is three men who disagree, push back, and respect each other enough to do it on mic.',
+        'Frame the episode: what does it look like when a father raises sons to think — not to obey?',
+      ]},
+      { name: 'Segment 1 — "Lessons From the Old Man"', minutes: '25 min', bullets: [
+        'The sons share the lessons that stuck — and the ones they had to learn the hard way on their own.',
+        'Stories from the steel business: what it taught them about work, integrity, and dealing with people who have more power than you.',
+        'The moment each son realized their dad wasn\'t just opinionated — he was usually right. And the times he wasn\'t.',
+      ]},
+      { name: 'Segment 2 — "Where We Disagree"', minutes: '20 min', bullets: [
+        'The generational divide: where the sons see things differently than their father — and why that\'s the point.',
+        'Technology, social media, and the future: the sons push back on Bernie\'s skepticism, and he pushes back harder.',
+        'The one issue where all three of them align completely — and why it gives them hope.',
+      ]},
+      { name: 'Segment 3 — "What We\'re Building"', minutes: '15 min', bullets: [
+        'Each Rollins shares what they\'re working on — professional, personal, and philosophical.',
+        'The family legacy question: what does the Rollins name mean in 2025, and what should it mean in 2050?',
+        'A challenge to listeners: have this conversation with your own family. Record it. Send it in.',
+      ]},
+      { name: 'Sign-Off — "That\'s Our Take"', minutes: '5 min', bullets: [
+        'A rare moment: each Rollins tells the other two something they\'ve never said on mic before.',
+        'Preview of Episode 5: "Call-In Night" — the audience gets the mic for the first time.',
+        '"Steel doesn\'t bend easy. Neither do we."',
+      ]},
     ],
   },
   {
@@ -298,53 +335,33 @@ const EPISODES: Episode[] = [
     title: 'Call-In Night — "America, You\'re On"',
     format: 'call-in',
     duration: '60–75 min',
-    hook: 'No script. No plan. Just Bernie, a phone line, and the American people. Callers bring the topics — immigration, guns, healthcare, the price of eggs — and Bernie gives every single one a straight answer.',
+    hook: 'No script. No plan. Just Bernie, a phone line, and the American people. Callers bring the topics and Bernie gives every single one a straight answer.',
     segments: [
-      {
-        name: 'Cold Open — "Your Turn"',
-        minutes: '5 min',
-        bullets: [
-          'Bernie explains the format: "I\'ve been talking for four episodes. Now it\'s your turn. Call in, tell me what\'s on your mind, and I\'ll tell you what I think. Fair?"',
-          'Rules of engagement: be respectful, be honest, and don\'t waste the audience\'s time with talking points you got from a cable news chyron.',
-          'Set expectations: "I might agree with you. I might not. But I\'ll never lie to you, and I\'ll never hang up on you for having a different opinion."',
-        ],
-      },
-      {
-        name: 'Segment 1 — Open Phones',
-        minutes: '25 min',
-        bullets: [
-          'First callers: a mix of pre-screened and live calls covering 4–5 different topics.',
-          'Bernie engages each caller directly — no soundboard, no producer filter. Just two people talking.',
-          'Highlight moments: a caller who changes Bernie\'s mind on something small, and a caller Bernie challenges to think bigger.',
-        ],
-      },
-      {
-        name: 'Segment 2 — "The Hot Seat"',
-        minutes: '15 min',
-        bullets: [
-          'A caller puts Bernie on the hot seat: asks him the hardest question of the night. Bernie has to answer without deflecting.',
-          'The audience votes (live poll) on whether Bernie answered or dodged.',
-          'If the audience says he dodged, he has to try again. No ego protection.',
-        ],
-      },
-      {
-        name: 'Segment 3 — "Last Call"',
-        minutes: '10 min',
-        bullets: [
-          'Final caller of the night gets the extended treatment — a full 10-minute conversation on whatever matters most to them.',
-          'Bernie reflects on what he heard tonight: patterns, surprises, and what it tells him about where America\'s head is at.',
-          'Announce next week\'s topic and challenge the audience to submit questions via social media.',
-        ],
-      },
-      {
-        name: 'Sign-Off — "That\'s My Take"',
-        minutes: '5 min',
-        bullets: [
-          'Recap the best moments from the calls.',
-          'Preview Season 1 arc: what\'s coming in episodes 6–10.',
-          '"You called. I listened. That\'s how this works. Talk to you next week."',
-        ],
-      },
+      { name: 'Cold Open — "Your Turn"', minutes: '5 min', bullets: [
+        'Bernie explains the format: "I\'ve been talking for four episodes. Now it\'s your turn. Call in, tell me what\'s on your mind, and I\'ll tell you what I think."',
+        'Rules of engagement: be respectful, be honest, and don\'t waste the audience\'s time with talking points you got from a cable news chyron.',
+        '"I might agree with you. I might not. But I\'ll never lie to you, and I\'ll never hang up on you for having a different opinion."',
+      ]},
+      { name: 'Segment 1 — Open Phones', minutes: '25 min', bullets: [
+        'First callers: a mix of pre-screened and live calls covering 4–5 different topics.',
+        'Bernie engages each caller directly — no soundboard, no producer filter. Just two people talking.',
+        'Highlight moments: a caller who changes Bernie\'s mind on something small, and a caller Bernie challenges to think bigger.',
+      ]},
+      { name: 'Segment 2 — "The Hot Seat"', minutes: '15 min', bullets: [
+        'A caller puts Bernie on the hot seat: asks him the hardest question of the night. Bernie has to answer without deflecting.',
+        'The audience votes (live poll) on whether Bernie answered or dodged.',
+        'If the audience says he dodged, he has to try again. No ego protection.',
+      ]},
+      { name: 'Segment 3 — "Last Call"', minutes: '10 min', bullets: [
+        'Final caller of the night gets the extended treatment — a full 10-minute conversation on whatever matters most to them.',
+        'Bernie reflects on what he heard tonight: patterns, surprises, and what it tells him about where America\'s head is at.',
+        'Announce next week\'s topic and challenge the audience to submit questions via social media.',
+      ]},
+      { name: 'Sign-Off — "That\'s My Take"', minutes: '5 min', bullets: [
+        'Recap the best moments from the calls.',
+        'Preview Season 1 arc: what\'s coming in episodes 6–10.',
+        '"You called. I listened. That\'s how this works. Talk to you next week."',
+      ]},
     ],
   },
 ]
@@ -384,14 +401,14 @@ const SUGGESTIONS: (Suggestion & { category: CategoryKey })[] = [
   { id: 21, category: 'culture', title: 'The Veteran Betrayal', bullets: ['22 veterans a day: the suicide crisis nobody fixed', 'How the VA became a bureaucratic hellscape that fails the people it exists to serve', 'What we owe the men and women who wrote a blank check to this country'] },
   { id: 22, category: 'media', title: 'Operation Mockingbird Never Ended', bullets: ['The CIA\'s documented history of planting stories in American media', 'Modern equivalents: intelligence community "leaks" that always serve an agenda', 'How to identify a planted story vs. actual journalism'] },
   { id: 23, category: 'personal', title: 'Marriage in America: What Went Wrong', bullets: ['Why the divorce rate reflects a culture that forgot what commitment means', 'The economic incentives that punish marriage and reward single parenthood', 'What 40+ years of marriage actually looks like — the real version'] },
-  { id: 24, category: 'global', title: 'The Petrodollar Is Dying — Here\'s What Comes Next', bullets: ['How the deal with Saudi Arabia made the dollar king of the world', 'BRICS, de-dollarization, and the countries building an exit ramp from American financial dominance', 'What happens to your savings when the world stops using dollars'] },
+  { id: 24, category: 'global', title: 'The Petrodollar Is Dying — Here\'s What Comes Next', bullets: ['How the deal with Saudi Arabia made the dollar king of the world', 'BRICS, de-dollarization, and the countries building an exit ramp', 'What happens to your savings when the world stops using dollars'] },
   { id: 25, category: 'government', title: 'FISA Courts: Secret Justice in America', bullets: ['How a classified court system issues surveillance warrants with almost zero oversight', 'The 99.97% approval rate: a rubber stamp on your Fourth Amendment rights', 'The cases they got wrong — and the Americans whose lives were destroyed'] },
   { id: 26, category: 'money', title: 'Why Groceries Cost Twice What They Did in 2019', bullets: ['Supply chain manipulation, corporate consolidation, and the real drivers of food inflation', 'The four companies that control 80% of American meat processing', 'How farm subsidies benefit corporations, not farmers — and definitely not you'] },
   { id: 27, category: 'culture', title: 'The Opioid Epidemic Was a Business Plan', bullets: ['Purdue Pharma, the Sackler family, and the deliberate creation of addiction', 'How the FDA approved the crisis and the DOJ let them walk', 'The small towns that were destroyed — and the people fighting to rebuild them'] },
   { id: 28, category: 'media', title: 'Wikipedia Is Not Neutral', bullets: ['How a handful of anonymous editors control the world\'s encyclopedia', 'The political bias baked into "reliable sources" policies', 'Why you should never trust a single source for anything — including this show'] },
   { id: 29, category: 'personal', title: 'Being a Grandfather in a Crazy World', bullets: ['The joy and terror of watching your grandchildren grow up in this mess', 'What you teach vs. what the world teaches — and how to bridge the gap', 'Letters to the next generation: what matters when everything else fades'] },
   { id: 30, category: 'global', title: 'The Border Crisis Is by Design', bullets: ['Who benefits from illegal immigration — and it\'s not who you think', 'The cartel economy: human trafficking as a multi-billion dollar industry', 'What a real border solution looks like vs. the theater both parties perform'] },
-  { id: 31, category: 'government', title: 'Eminent Domain: They Can Take Your House', bullets: ['The Supreme Court case that let the government seize private property for corporate profit', 'Real stories of Americans who lost their homes, farms, and businesses to "public use"', 'The legal framework that makes your property rights conditional'] },
+  { id: 31, category: 'government', title: 'Eminent Domain: They Can Take Your House', bullets: ['The Supreme Court case that let the government seize private property for corporate profit', 'Real stories of Americans who lost their homes, farms, and businesses', 'The legal framework that makes your property rights conditional'] },
   { id: 32, category: 'money', title: 'The Credit Score Racket', bullets: ['How three private companies control your financial destiny', 'The algorithm nobody audits and the errors that ruin lives', 'Why the credit system was designed to keep you borrowing, not building wealth'] },
   { id: 33, category: 'culture', title: 'Faith Under Fire: Religion in Modern America', bullets: ['The decline of church attendance and what filled the void', 'How politics hijacked faith — on both the left and the right', 'The case for spiritual grounding in a world that worships nothing'] },
   { id: 34, category: 'media', title: 'The Death of Local News', bullets: ['How hedge funds gutted newspapers and left communities blind', 'The connection between local news deserts and political corruption', 'What replaces journalism when the reporters are gone'] },
@@ -416,7 +433,7 @@ const SUGGESTIONS: (Suggestion & { category: CategoryKey })[] = [
   { id: 53, category: 'personal', title: 'What Football Taught Me About Life', bullets: ['Sunday in the stadium: what the game used to mean to a working-class family', 'The NFL\'s transformation from sport to corporate political theater', 'The 1985 Giants and why that era of football will never come back'] },
   { id: 54, category: 'global', title: 'The Ukraine Money Pit', bullets: ['$175 billion in aid: where did it actually go?', 'The defense contractors who are getting rich on Ukrainian blood', 'What a peace deal could look like — and who doesn\'t want one'] },
   { id: 55, category: 'government', title: 'Gerrymandering: How They Choose Their Voters', bullets: ['The art of drawing district lines to guarantee election outcomes', 'Both parties do it — but the result is the same: your vote might not matter', 'The technology that made gerrymandering a precision science'] },
-  { id: 56, category: 'money', title: 'The Gig Economy Lie', bullets: ['How "be your own boss" became "work three jobs with no benefits"', 'Uber, DoorDash, and the erosion of the employer-employee relationship', 'What happened to the 40-hour week, the pension, and the gold watch'] },
+  { id: 56, category: 'money', title: 'The Gig Economy Lie', bullets: ['How "be your own boss" became "work three jobs with no benefits"', 'The economic conditions that make one job not enough', 'The difference between building something and running on a hamster wheel'] },
   { id: 57, category: 'culture', title: 'Homeschooling: The Quiet Revolution', bullets: ['Why millions of parents pulled their kids out of the system', 'The data on homeschool outcomes vs. public school — it\'s not close', 'The movement that terrifies the education establishment'] },
   { id: 58, category: 'media', title: 'The Algorithm Doesn\'t Want You Informed — It Wants You Engaged', bullets: ['How recommendation engines radicalize moderates and isolate everyone', 'The internal documents that prove tech companies know the harm', 'What your feed would look like if it optimized for truth instead of time-on-screen'] },
   { id: 59, category: 'personal', title: 'Friendship After 60', bullets: ['Why your circle shrinks and why that might be the best thing that ever happened', 'The friends who stayed and what they have in common', 'How to be the kind of person people want to sit with at the fire pit'] },
@@ -457,7 +474,7 @@ const SUGGESTIONS: (Suggestion & { category: CategoryKey })[] = [
   { id: 94, category: 'media', title: 'The Comment Section Is America\'s Town Hall', bullets: ['How online discourse — ugly as it is — is the closest thing we have to public debate', 'The platforms trying to shut down comments and why', 'The surprisingly wise things regular people say when they\'re not performing'] },
   { id: 95, category: 'personal', title: 'What I Got Wrong', bullets: ['Bernie\'s most honest episode: the opinions he held that turned out to be dead wrong', 'How changing your mind is a sign of strength, not weakness', 'The one thing he\'s still not sure about — and why he\'s okay with that'] },
   { id: 96, category: 'global', title: 'The Space Race 2.0: Who Owns the Stars?', bullets: ['SpaceX, Blue Origin, and the billionaire race to commercialize space', 'The legal vacuum: there are no property rights in space — yet', 'Why whoever controls orbital infrastructure controls the planet'] },
-  { id: 97, category: 'government', title: 'Election Integrity: Trust but Verify', bullets: ['The legitimate concerns about election security that get dismissed as conspiracy', 'What other democracies do that America refuses to: voter ID, paper ballots, same-day results', 'How to have this conversation without being called an election denier or an election ignorer'] },
+  { id: 97, category: 'government', title: 'Election Integrity: Trust but Verify', bullets: ['The legitimate concerns about election security that get dismissed as conspiracy', 'What other democracies do that America refuses to: voter ID, paper ballots, same-day results', 'How to have this conversation without being called an election denier'] },
   { id: 98, category: 'money', title: 'The Inheritance Tax: Taxing Death Itself', bullets: ['How the government takes a cut of everything you built — even after you\'re gone', 'The family farms and small businesses destroyed by estate taxes', 'The argument for and against: wealth transfer vs. dynastic accumulation'] },
   { id: 99, category: 'culture', title: 'The Art of Disagreeing Without Destroying', bullets: ['How to argue like an adult in an age of children', 'The dinner table rules: passionate debate, mutual respect, and nobody leaves angry', 'Why the best relationships are forged in honest disagreement'] },
   { id: 100, category: 'personal', title: 'Season Finale — "What I Know for Sure"', bullets: ['Bernie\'s definitive list: the truths that survived every argument, every doubt, every year', 'A letter to America: what one man sees when he looks at this country with love and fury', 'The announcement: what\'s coming in Season 2, and a promise to keep being bold'] },
@@ -510,7 +527,6 @@ export default function BernieShowPage() {
   const [unlocked, setUnlocked] = useState(() => sessionStorage.getItem('bernie-auth') === '1')
   const [activeCategory, setActiveCategory] = useState<CategoryKey>('government')
   const [expandedSuggestion, setExpandedSuggestion] = useState<number | null>(null)
-  const [showAllEpisodes, setShowAllEpisodes] = useState(false)
 
   useEffect(() => {
     setMetaTags({
@@ -518,7 +534,6 @@ export default function BernieShowPage() {
       description: 'Unfiltered. Unapologetic. Unstoppable. The podcast that says what everyone\'s thinking and nobody\'s saying.',
       url: 'https://veritasworldwide.com/bernie',
     })
-    // noindex
     let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null
     if (!robotsMeta) {
       robotsMeta = document.createElement('meta')
@@ -541,20 +556,27 @@ export default function BernieShowPage() {
 
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Background image layer */}
-        <div className="absolute inset-0">
-          <img
-            src="/images/bernie/bernie-beach.jpg"
-            alt="Bernie Rollins"
-            className="w-full h-full object-cover object-top"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
-        </div>
-        {/* Fallback gradient when no image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 -z-10" />
+        {/* Background layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/[0.04] rounded-full blur-3xl" />
+        {/* Giant mic watermark */}
+        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.025]" viewBox="0 0 100 100" fill="white">
+          <rect x="35" y="10" width="30" height="50" rx="15" />
+          <path d="M25 45 v10 a25 25 0 0050 0 v-10" fill="none" stroke="white" strokeWidth="4" />
+          <line x1="50" y1="80" x2="50" y2="95" stroke="white" strokeWidth="4" />
+          <line x1="35" y1="95" x2="65" y2="95" stroke="white" strokeWidth="4" strokeLinecap="round" />
+        </svg>
+        {/* Film grain overlay */}
+        <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")` }} />
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          {/* Audio waveform accent */}
+          <div className="flex justify-center gap-[3px] mb-8 h-8 items-end">
+            {[40,65,30,80,50,90,35,70,45,85,55,75,40,60,50,80,35,65,45,70].map((h, i) => (
+              <div key={i} className="w-[3px] rounded-full bg-gradient-to-t from-amber-500/30 to-amber-400/70" style={{ height: `${h}%` }} />
+            ))}
+          </div>
+
           {/* Show badge */}
           <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-8">
             <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
@@ -566,9 +588,7 @@ export default function BernieShowPage() {
             <span className="block bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">ROLLINS SHOW</span>
           </h1>
 
-          <p className="text-xl sm:text-2xl text-neutral-300 font-light italic mb-4">
-            "Freedom Lies in Being Bold"
-          </p>
+          <p className="text-xl sm:text-2xl text-neutral-300 font-light italic mb-4">"Freedom Lies in Being Bold"</p>
           <p className="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
             Unfiltered. Unapologetic. Unstoppable. The podcast that says what everyone's thinking and nobody's saying. New episodes weekly.
           </p>
@@ -611,28 +631,15 @@ export default function BernieShowPage() {
       <section className="py-24 px-4 border-t border-neutral-800/50">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Photo side */}
+            {/* Fire pit illustration */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800">
-                <img
-                  src="/images/bernie/bernie-firepit.jpg"
-                  alt="Bernie Rollins at the fire pit"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const el = e.target as HTMLImageElement
-                    el.style.display = 'none'
-                    el.parentElement!.classList.add('flex', 'items-center', 'justify-center')
-                    const placeholder = document.createElement('div')
-                    placeholder.className = 'text-center p-8'
-                    placeholder.innerHTML = '<div class="text-6xl mb-4">🔥</div><div class="text-neutral-500 text-sm">Photo coming soon</div>'
-                    el.parentElement!.appendChild(placeholder)
-                  }}
-                />
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-b from-neutral-900 to-neutral-950 border border-neutral-800 flex items-end justify-center p-4">
+                <FirePitArt />
               </div>
               {/* Quote overlay */}
               <div className="absolute -bottom-6 -right-4 sm:right-4 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl p-4 shadow-2xl shadow-amber-500/20 max-w-[280px]">
                 <p className="text-white font-bold text-sm italic">"Freedom Lies in Being Bold"</p>
-                <p className="text-amber-100 text-xs mt-1">— The fire pit where it all started</p>
+                <p className="text-amber-100 text-xs mt-1">— Laser-cut into steel. Burned into belief.</p>
               </div>
             </div>
 
@@ -691,16 +698,11 @@ export default function BernieShowPage() {
 
       {/* ═══════════ GIANTS TICKET INTERSTITIAL ═══════════ */}
       <section className="py-16 px-4 border-t border-neutral-800/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/30 via-transparent to-blue-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-transparent to-blue-950/20" />
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-shrink-0">
-            <div className="w-48 h-auto rounded-lg overflow-hidden border border-neutral-700 shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
-              <img
-                src="/images/bernie/bernie-giants-ticket.jpg"
-                alt="1985 NY Giants ticket stub"
-                className="w-full h-full object-cover"
-                onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
-              />
+          <div className="flex-shrink-0 w-64 transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+            <div className="rounded-lg overflow-hidden border border-neutral-700 shadow-2xl bg-[#f5f0e0]">
+              <GiantsTicketArt />
             </div>
           </div>
           <div>
