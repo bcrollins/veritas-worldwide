@@ -21,6 +21,7 @@ import { trackPageView } from './lib/hubspot'
 import { handleStripeReturn } from './lib/conversionTracking'
 import StickyMembershipBar from './components/StickyMembershipBar'
 import CookieConsent from './components/CookieConsent'
+import VAssistant from './components/VAssistant'
 import { useExperiment } from './hooks/useExperiment'
 import { trackConversion } from './lib/abTest'
 
@@ -554,6 +555,7 @@ export default function App() {
       <StickyMembershipBar />
       <PerformanceMonitor />
       <CookieConsent />
+      {!isAdmin && <VAssistant />}
     </div>
     </I18nProvider>
   )

@@ -527,6 +527,109 @@ if (dbPool) {
 }
 
 
+// ── V Assistant — xAI Grok API Proxy ──────────────────────────────
+const XAI_API_KEY = process.env.XAI_API_KEY
+const V_SYSTEM_PROMPT = `You are V — the research assistant for Veritas Worldwide Press (veritasworldwide.com).
+
+IDENTITY:
+- Your name is V. You are calm, measured, and authoritative.
+- You speak with precision. You never sensationalize. You never speculate beyond what sources support.
+- You are non-partisan and non-biased. You present documented facts and let users draw their own conclusions.
+- You reference the site's evidence tier system: Verified (primary source documents), Circumstantial (documented facts where interpretation is noted), and Disputed (claimed but not independently confirmed).
+
+CAPABILITIES:
+- Answer questions about any content published on Veritas Worldwide Press — The Record (31 chapters covering central banking, intelligence agencies, lobbying, media consolidation, public health, surveillance, and more).
+- Help users find specific chapters, sources, evidence, and connections across the documentary record.
+- Provide additional context, suggest further reading, and point users to primary source documents.
+- Clarify evidence classifications and explain why certain claims are categorized as Verified, Circumstantial, or Disputed.
+
+RULES:
+- ALWAYS ground your answers in documented, sourced information. If you don't know or the site doesn't cover it, say so.
+- NEVER make claims without noting the evidence tier or source basis.
+- NEVER take a political side. Present the documented record neutrally.
+- When users ask about topics covered in The Record, reference the specific chapter(s) and evidence.
+- Encourage users to read the primary sources themselves and form their own conclusions.
+- Keep responses concise but thorough. Use the same measured, authoritative tone as the publication itself.
+
+SIGN-OFF:
+- At the end of EVERY response, sign off with a variation of the phrase from V for Vendetta. Rotate through these:
+  "Remember, remember the 5th of November."
+  "People shouldn't be afraid of their governments. Governments should be afraid of their people."
+  "Beneath this mask there is more than flesh. There is an idea — and ideas are bulletproof."
+  "The truth, once spoken, cannot be unspoken. Remember, remember."
+  "Knowledge, like air, is vital to life. Like air, no one should be denied it."
+- Pick whichever fits the conversation naturally. Always italicize the sign-off.
+
+CHAPTERS AVAILABLE (for reference when directing users):
+Foreword, Overview: The World Today, Ch.1: Birth of Central Banking, Ch.2: Bank War & Presidents Who Fought Back, Ch.3: Jekyll Island & Federal Reserve, Ch.4: Warburg Brothers & WWI, Ch.5: Henry Ford & Gold Standard, Ch.6: Talmud, Balfour Declaration & Zionism, Ch.7: Mossad, Ch.8: JFK, Dimona & AIPAC, Ch.9: JFK Expanded, Ch.10: Petrodollar System, Ch.11: Shadow Institutions, Ch.12: How the Fed Works, Ch.13: 2008 Financial Crisis, Ch.14: AIPAC & Congressional Lobbying, Ch.15: U.S. Foreign Aid to Israel, Ch.16: USS Liberty, Ch.17: RFK Assassination, Ch.18: Operation Mockingbird, Ch.19: MKUltra, Ch.20: Rockefeller Medicine, Ch.21: Vaccine History, Ch.22: September 11, Ch.23: War on Drugs, Ch.24: Fluoride & Public Water, Ch.25: Titanic & Federal Reserve, Ch.26: Bohemian Grove, Ch.27: Surveillance State, Ch.28: Epstein Files, Epilogue.`
+
+if (XAI_API_KEY) {
+  console.log('[v-assistant] xAI Grok API key configured — V is online')
+} else {
+  console.warn('[v-assistant] XAI_API_KEY not set — V assistant will return 503')
+}
+
+app.post('/api/v/chat', async (req, res) => {
+  if (!XAI_API_KEY) {
+    return res.status(503).json({ error: 'V is currently offline. API key not configured.' })
+  }
+
+  const { messages } = req.body
+  if (!messages || !Array.isArray(messages) || messages.length === 0) {
+    return res.status(400).json({ error: 'messages array required' })
+  }
+
+  // Sanitize — only allow role: user/assistant, limit to last 20 messages
+  const sanitized = messages
+    .filter(m => m.role === 'user' || m.role === 'assistant')
+    .slice(-20)
+    .map(m => ({ role: m.role, content: String(m.content).slice(0, 4000) }))
+
+  try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 30000)
+
+    const response = await fetch('https://api.x.ai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': \`Bearer \${XAI_API_KEY}\`,
+      },
+      body: JSON.stringify({
+        model: 'grok-3-mini',
+        messages: [
+          { role: 'system', content: V_SYSTEM_PROMPT },
+          ...sanitized,
+        ],
+        max_tokens: 1500,
+        temperature: 0.4,
+        stream: false,
+      }),
+      signal: controller.signal,
+    })
+
+    clearTimeout(timeout)
+
+    if (!response.ok) {
+      const errText = await response.text().catch(() => 'Unknown error')
+      console.error('[v-assistant] xAI API error:', response.status, errText)
+      return res.status(502).json({ error: 'V encountered an issue. Please try again.' })
+    }
+
+    const data = await response.json()
+    const reply = data.choices?.[0]?.message?.content || 'I was unable to formulate a response. Please try again.'
+
+    res.json({ reply })
+  } catch (err) {
+    if (err.name === 'AbortError') {
+      return res.status(504).json({ error: 'V took too long to respond. Please try again.' })
+    }
+    console.error('[v-assistant] Error:', err.message)
+    res.status(500).json({ error: 'V encountered an unexpected error.' })
+  }
+})
+
+
 // Static files with aggressive caching for hashed assets
 app.use(express.static(path.join(__dirname, 'dist'), {
   maxAge: '1y',
