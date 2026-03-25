@@ -118,11 +118,55 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 
+// ── Rate limiter (in-memory, zero dependencies) ──────────────────────
+const rateLimitStore = new Map()
+function rateLimit({ windowMs = 60_000, max = 10, keyFn } = {}) {
+  return (req, res, next) => {
+    const key = keyFn ? keyFn(req) : getClientIP(req)
+    const now = Date.now()
+    let entry = rateLimitStore.get(key)
+    if (!entry || now - entry.start > windowMs) {
+      entry = { start: now, count: 0 }
+      rateLimitStore.set(key, entry)
+    }
+    entry.count++
+    if (entry.count > max) {
+      res.setHeader('Retry-After', Math.ceil((entry.start + windowMs - now) / 1000))
+      return res.status(429).json({ error: 'Too many requests. Please try again later.' })
+    }
+    next()
+  }
+}
+// Clean stale entries every 5 minutes
+setInterval(() => {
+  const cutoff = Date.now() - 300_000
+  for (const [key, entry] of rateLimitStore) {
+    if (entry.start < cutoff) rateLimitStore.delete(key)
+  }
+}, 300_000)
+
+// Apply strict rate limit to auth endpoints (5 attempts per minute per IP)
+app.use('/api/auth/login', rateLimit({ windowMs: 60_000, max: 5 }))
+app.use('/api/auth/register', rateLimit({ windowMs: 60_000, max: 3 }))
+
+// CORS — restrict to known origins
+const ALLOWED_ORIGINS = new Set([
+  'https://veritasworldwide.com',
+  'https://www.veritasworldwide.com',
+  'https://veritas-worldwide-production.up.railway.app',
+])
 app.use((req, res, next) => {
   if (req.path.startsWith('/api/')) {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+    const origin = req.headers.origin || ''
+    if (ALLOWED_ORIGINS.has(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin)
+    } else if (!origin) {
+      // Same-origin requests don't send Origin header — allow
+      res.setHeader('Access-Control-Allow-Origin', 'https://veritasworldwide.com')
+    }
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+    res.setHeader('Access-Control-Allow-Credentials', 'true')
     if (req.method === 'OPTIONS') return res.sendStatus(204)
   }
   next()
@@ -726,6 +770,8 @@ app.use((req, res, next) => {
     '/profiles': { title: 'Power Profiles | Veritas Press', desc: 'Sourced profiles of 235+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.' },
     '/content-pack': { title: 'Content Packs & Brand Kit | Veritas Press', desc: 'Official brand assets and social media content packs for Veritas Press. Free for press, social media, and advocacy.' },
     '/news': { title: 'News | Veritas Press', desc: 'Latest news and updates from Veritas Press.' },
+    '/donate': { title: 'Support Our Research | Veritas Press', desc: 'Fund independent, source-verified investigative journalism. No party. No agenda. Just the record. Every contribution keeps the archive online and free.' },
+    '/read': { title: 'Read The Record | Veritas Press', desc: 'Read all 31 chapters of The Record — a documentary history spanning 1694 to present. Primary sources. Public record. Your conclusions.' },
   }
 
   const staticMeta = staticPages[req.path]
