@@ -19,7 +19,7 @@ import {
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo';
-import { trackShare } from '../lib/ga4';
+import { trackShare, trackProfileView } from '../lib/ga4';
 import SharePanel from '../components/SharePanel';
 import { DONATE_URL } from '../lib/constants';
 import { scoreProfileViewed } from '../lib/leadScoring';
@@ -526,8 +526,9 @@ export default function ProfilePage(): React.ReactNode {
       },
     ]);
 
-    // Lead scoring
+    // Lead scoring + GA4
     try { scoreProfileViewed(foundProfile.id); } catch {}
+    trackProfileView(foundProfile.id, foundProfile.category);
 
     setLoading(false);
     window.scrollTo(0, 0);

@@ -80,3 +80,82 @@ export function trackDownload(chapterId: string): void {
     file_extension: 'pdf',
   })
 }
+
+/** User completes reading a chapter (scrolled ≥90%) */
+export function trackChapterComplete(chapterId: string, readingTimeSeconds: number): void {
+  getGtag()?.('event', 'chapter_read_complete', {
+    chapter_id: chapterId,
+    reading_time_seconds: readingTimeSeconds,
+    engagement_type: 'deep_read',
+  })
+}
+
+/** User views a profile page */
+export function trackProfileView(profileId: string, category: string): void {
+  getGtag()?.('event', 'profile_viewed', {
+    profile_id: profileId,
+    profile_category: category,
+    content_type: 'profile',
+  })
+}
+
+/** User clicks a membership tier CTA */
+export function trackMembershipClick(tier: string, price: number, interval: 'monthly' | 'annual'): void {
+  getGtag()?.('event', 'membership_click', {
+    membership_tier: tier,
+    value: price,
+    currency: 'USD',
+    billing_interval: interval,
+  })
+}
+
+/** Content gate triggered — user hit the paywall */
+export function trackContentGate(chapterId: string, scrollDepth: number): void {
+  getGtag()?.('event', 'content_gate_triggered', {
+    chapter_id: chapterId,
+    scroll_depth_percent: scrollDepth,
+  })
+}
+
+/** Content gate conversion — user signed up after hitting gate */
+export function trackContentGateConversion(chapterId: string): void {
+  getGtag()?.('event', 'content_gate_conversion', {
+    chapter_id: chapterId,
+  })
+}
+
+/** Reading milestone — user reaches 25%, 50%, 75%, 100% of a chapter */
+export function trackReadingMilestone(chapterId: string, milestone: 25 | 50 | 75 | 100): void {
+  getGtag()?.('event', 'reading_milestone', {
+    chapter_id: chapterId,
+    milestone_percent: milestone,
+  })
+}
+
+/** Newsletter signup tracked in GA4 (parallel to HubSpot) */
+export function trackNewsletterSignup(source: string): void {
+  getGtag()?.('event', 'generate_lead', {
+    lead_source: source,
+    currency: 'USD',
+    value: 0,
+  })
+}
+
+/** User clicks external source link (evidence verification) */
+export function trackSourceClick(sourceUrl: string, sourceName: string, chapterId?: string): void {
+  getGtag()?.('event', 'source_link_click', {
+    source_url: sourceUrl,
+    source_name: sourceName,
+    chapter_id: chapterId || '',
+  })
+}
+
+/** Set user properties for custom dimensions */
+export function setUserProperties(props: {
+  user_type?: 'anonymous' | 'subscriber' | 'member' | 'donor'
+  chapters_read?: number
+  lead_score?: number
+  lifecycle_stage?: string
+}): void {
+  getGtag()?.('set', 'user_properties', props)
+}
