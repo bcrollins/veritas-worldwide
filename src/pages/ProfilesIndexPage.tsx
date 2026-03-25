@@ -39,7 +39,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
 
   return (
     <Link
-      to={`/profiles/${profile.id}`}
+      to={`/profile/${profile.id}`}
       className="bg-parchment border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
     >
       {/* Category stripe */}
@@ -194,12 +194,25 @@ export default function ProfilesIndexPage(): React.ReactNode {
       url: `${SITE_URL}/profiles`,
     });
 
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Power Profiles',
-      url: `${SITE_URL}/profiles`,
-    });
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Power Profiles',
+        description: `Sourced profiles of ${PROFILES.length}+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.`,
+        url: `${SITE_URL}/profiles`,
+        numberOfItems: PROFILES.length,
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Power Profiles', item: `${SITE_URL}/profiles` },
+        ],
+      },
+    ]);
 
     return () => {
       clearMetaTags();

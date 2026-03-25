@@ -419,7 +419,7 @@ export default function ProfilePage(): React.ReactNode {
                 {relatedProfiles.map((related) => (
                   <Link
                     key={related.id}
-                    to={`/profiles/${related.id}`}
+                    to={`/profile/${related.id}`}
                     className="block p-2 rounded hover:bg-parchment-dark transition-colors"
                   >
                     <p className="text-sm font-body text-crimson hover:underline">
