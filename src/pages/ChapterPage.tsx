@@ -572,7 +572,7 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
   }, [open])
 
   const url = `${window.location.origin}/chapter/${chapter.id}`
-  const text = `${chapter.title} — The Record by Veritas Worldwide Press`
+  const text = `${chapter.title} — The Record by Veritas Press`
   const encodedUrl = encodeURIComponent(url)
   const encodedText = encodeURIComponent(text)
 
@@ -666,7 +666,7 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
     chapter.sources.forEach(s => {
       lines.push(`[${s.id}] ${s.text}${s.url ? ` — ${s.url}` : ''}`)
     })
-    lines.push('', '© 2026 Veritas Worldwide Press — veritasworldwide.com — Free & Open Access')
+    lines.push('', '© 2026 Veritas Press — veritasworldwide.com — Free & Open Access')
 
     const blob = new Blob([lines.join('\n')], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
@@ -697,7 +697,7 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
 function SocialShareBar({ chapter }: { chapter: Chapter }) {
   const [copied, setCopied] = useState(false)
   const url = `${SITE_URL}/chapter/${chapter.id}`
-  const text = `${chapter.title} — The Record by Veritas Worldwide Press`
+  const text = `${chapter.title} — The Record by Veritas Press`
   const encodedUrl = encodeURIComponent(url)
   const encodedText = encodeURIComponent(text)
 
@@ -781,7 +781,7 @@ export default function ChapterPage() {
     if (chapter) {
       const chapterOgImage = `${SITE_URL}/og/${chapter.id}.png`
       setMetaTags({
-        title: `${chapter.title} | The Record — Veritas Worldwide Press`,
+        title: `${chapter.title} | The Record — Veritas Press`,
         description: chapter.subtitle,
         url: `${SITE_URL}/chapter/${chapter.id}`,
         type: 'article',
@@ -794,7 +794,7 @@ export default function ChapterPage() {
       setJsonLd(chapterJsonLd({ ...chapter, image: chapterOgImage }))
       scoreChapterViewed(chapter.id, chapter.title)
     } else if (!isLoading) {
-      document.title = 'Chapter Not Found | The Record — Veritas Worldwide Press'
+      document.title = 'Chapter Not Found | The Record — Veritas Press'
     }
     return () => { clearMetaTags(); removeJsonLd() }
   }, [chapter, isLoading])
@@ -1099,7 +1099,7 @@ export default function ChapterPage() {
 
             <SharePanel
               title={chapter.title}
-              description={`${chapter.title} — from The Record by Veritas Worldwide Press. Primary sources. Public record.`}
+              description={`${chapter.title} — from The Record by Veritas Press. Primary sources. Public record.`}
               contentId={chapter.id}
             />
 

@@ -98,7 +98,7 @@ export default function SearchPage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'Search | The Record — Veritas Worldwide Press',
+      title: 'Search | The Record — Veritas Press',
       description: `Full-text search across all ${chapters.length} chapters, sources, evidence, and data tables.`,
       url: `${SITE_URL}/search`,
     })

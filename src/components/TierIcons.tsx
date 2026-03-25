@@ -1,6 +1,6 @@
 /**
  * Professional SVG icons replacing all emoji usage site-wide.
- * Matches the Veritas Worldwide Press brand: parchment, crimson, ink.
+ * Matches the Veritas Press brand: parchment, crimson, ink.
  */
 
 export function SignalIcon({ className = 'w-5 h-5' }: { className?: string }) {

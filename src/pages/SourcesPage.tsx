@@ -8,7 +8,7 @@ export default function SourcesPage() {
   const { chapters, loading: chaptersLoading } = useAllChapters()
   useEffect(() => {
     setMetaTags({
-      title: 'Sources & Bibliography | The Record — Veritas Worldwide Press',
+      title: 'Sources & Bibliography | The Record — Veritas Press',
       description: 'Master bibliography of 500+ primary sources cited across 31 chapters. Congressional records, court filings, declassified documents, and academic research.',
       url: `${SITE_URL}/sources`,
     })

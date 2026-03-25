@@ -1,5 +1,5 @@
 /**
- * Lightweight A/B Testing Framework for Veritas Worldwide Press
+ * Lightweight A/B Testing Framework for Veritas Press
  *
  * Zero dependencies. Uses localStorage for sticky assignment.
  * Fires GA4 custom events for variant tracking.

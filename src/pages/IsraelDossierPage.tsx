@@ -979,7 +979,7 @@ function JumpNav() {
 export default function IsraelDossierPage() {
   useEffect(() => {
     setMetaTags({
-      title: 'The Israel Dossier | Veritas Worldwide Press',
+      title: 'The Israel Dossier | Veritas Press',
       description: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.',
       url: `${SITE_URL}/israel-dossier`,
       type: 'article',
@@ -1522,7 +1522,7 @@ export default function IsraelDossierPage() {
 
       {/* Share */}
       <SharePanel
-        title="The Israel Dossier — Veritas Worldwide Press"
+        title="The Israel Dossier — Veritas Press"
         description="A documented record of U.S.-Israel policy, military spending, and humanitarian impact. Every figure sourced to government records and UN agencies."
         contentId="israel-dossier"
       />

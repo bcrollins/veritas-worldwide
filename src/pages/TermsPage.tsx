@@ -15,7 +15,7 @@ export default function TermsPage() {
   useEffect(() => {
     setMetaTags({
       title: `Terms of Use | The Record — ${SITE_NAME}`,
-      description: 'Terms of use for Veritas Worldwide. Content licensed under CC BY-NC-SA 4.0.',
+      description: 'Terms of use for Veritas Press. Content licensed under CC BY-NC-SA 4.0.',
       url: `${SITE_URL}/terms`,
     })
     return () => clearMetaTags()
@@ -43,13 +43,13 @@ export default function TermsPage() {
               Terms of Use
             </h1>
             <p className="text-sm text-ink-muted mb-10 border-b border-border pb-6">
-              Last updated: March 2026. By accessing Veritas Worldwide, you agree to these terms.
+              Last updated: March 2026. By accessing Veritas Press, you agree to these terms.
             </p>
 
             <section id="license" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Content License</h2>
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
-                <p>All editorial content on Veritas Worldwide is published under the <strong className="text-ink">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</strong> license unless otherwise noted.</p>
+                <p>All editorial content on Veritas Press is published under the <strong className="text-ink">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</strong> license unless otherwise noted.</p>
                 <p>You are free to share and adapt our content for non-commercial purposes, provided you give appropriate credit, link back to the original, and distribute your contributions under the same license. Commercial use requires explicit written permission.</p>
               </div>
             </section>
@@ -81,7 +81,7 @@ export default function TermsPage() {
             <section id="liability" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Limitation of Liability</h2>
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
-                <p>Veritas Worldwide provides investigative journalism content for informational purposes. While we strive for accuracy using our evidence tier system, we make no warranties about the completeness or reliability of any information on this site.</p>
+                <p>Veritas Press provides investigative journalism content for informational purposes. While we strive for accuracy using our evidence tier system, we make no warranties about the completeness or reliability of any information on this site.</p>
                 <p>We are not liable for any damages arising from your use of this site or reliance on its content. This site does not constitute legal, financial, or professional advice.</p>
               </div>
             </section>

@@ -78,7 +78,7 @@ export default function MembershipPage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'Membership | Veritas Worldwide Press',
+      title: 'Membership | Veritas Press',
       description: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.',
       url: `${SITE_URL}/membership`,
       type: 'website',
@@ -86,12 +86,12 @@ export default function MembershipPage() {
     setJsonLd({
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Membership — Veritas Worldwide Press',
+      name: 'Membership — Veritas Press',
       description: 'Support independent, non-partisan investigative journalism.',
       publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
       mainEntity: {
         '@type': 'Product',
-        name: 'Veritas Worldwide Press Membership',
+        name: 'Veritas Press Membership',
         description: 'Fund independent investigative journalism. Access exclusive dossiers, weekly briefings, and annotated source libraries.',
         brand: { '@type': 'Organization', name: SITE_NAME },
         offers: [
@@ -140,7 +140,7 @@ export default function MembershipPage() {
             <span className="text-crimson-light">Fund it anyway.</span>
           </h1>
           <p className="font-body text-lg md:text-xl text-white/60 italic leading-relaxed max-w-2xl mx-auto mb-8">
-            {TAGLINE} Veritas Worldwide Press is built on one principle: documented evidence over opinion, always. Your membership funds the investigation — not a narrative.
+            {TAGLINE} Veritas Press is built on one principle: documented evidence over opinion, always. Your membership funds the investigation — not a narrative.
           </p>
 
           {/* Strategy 6: Social proof counter */}
@@ -444,7 +444,7 @@ export default function MembershipPage() {
               a: 'Yes — always. Every chapter, investigation, and source document is and will remain free and open access. Membership adds premium features like early access, exclusive dossiers, and editorial tools, but the core record will never be paywalled. The truth should be free.',
             },
             {
-              q: 'Who is behind Veritas Worldwide Press?',
+              q: 'Who is behind Veritas Press?',
               a: 'An independent editorial team operating under the initials B.R. We maintain anonymity to keep the focus on the documented evidence — not any individual. Our methodology, sources, and evidence tiers are fully transparent.',
             },
             {

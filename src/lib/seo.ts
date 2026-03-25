@@ -3,9 +3,9 @@
  * Handles per-page Open Graph tags, Twitter Cards, and Article schema markup.
  */
 
-const SITE_NAME = 'Veritas Worldwide Press'
+const SITE_NAME = 'Veritas Press'
 const SITE_URL = 'https://veritasworldwide.com'
-const DEFAULT_DESCRIPTION = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Published by Veritas Worldwide Press.'
+const DEFAULT_DESCRIPTION = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Published by Veritas Press.'
 const OG_IMAGE = `${SITE_URL}/og-image.png`
 const TWITTER_HANDLE = '@VeritasWorldwide'
 
@@ -184,7 +184,7 @@ export function chapterJsonLd(chapter: {
       'description': chapter.subtitle,
       'author': {
         '@type': 'Organization',
-        'name': 'Veritas Worldwide Press',
+        'name': 'Veritas Press',
       },
       'publisher': {
         '@type': 'Organization',

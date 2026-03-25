@@ -1,5 +1,5 @@
 /**
- * HubSpot Integration Module for Veritas Worldwide Press
+ * HubSpot Integration Module for Veritas Press
  * 
  * Uses HubSpot's tracking code (loaded in index.html) for:
  * - Contact identification via _hsq.push(["identify", ...])

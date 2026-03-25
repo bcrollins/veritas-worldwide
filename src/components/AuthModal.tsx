@@ -120,7 +120,7 @@ export default function AuthModal() {
           {/* Header */}
           <div className="text-center mb-8">
             <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-2">
-              Veritas Worldwide Press
+              Veritas Press
             </p>
             <h2 className="font-display text-2xl font-bold text-ink mb-2">
               {mode === 'signup' ? 'Create Your Free Account' : 'Welcome Back'}

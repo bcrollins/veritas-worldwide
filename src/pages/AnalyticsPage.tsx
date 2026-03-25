@@ -235,7 +235,7 @@ export default function AnalyticsPage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'Reader Analytics | The Record — Veritas Worldwide Press',
+      title: 'Reader Analytics | The Record — Veritas Press',
       description: 'Public readership analytics for The Record. View lifetime readers, daily traffic, and geographic distribution.',
       url: `${SITE_URL}/analytics`,
     })

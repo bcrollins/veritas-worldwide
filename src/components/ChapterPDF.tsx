@@ -256,7 +256,7 @@ export default function ChapterPDF({ chapter }: Props) {
       doc.setFontSize(8)
       doc.setFont('helvetica', 'normal')
       doc.setTextColor(100, 100, 100)
-      doc.text('© 2026 Veritas Worldwide Press · veritasworldwide.com · Free & Open Access', ML, y)
+      doc.text('© 2026 Veritas Press · veritasworldwide.com · Free & Open Access', ML, y)
 
       // Add page numbers to all pages
       const totalPages = doc.getNumberOfPages()

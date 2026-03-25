@@ -307,7 +307,7 @@ export default function HomePage() {
       {activeTab === 'chapters' && (
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <SharePanel
-            title="The Record — Veritas Worldwide Press"
+            title="The Record — Veritas Press"
             description="A 31-chapter documentary history compiled from primary sources — court records, congressional testimony, declassified files. Free and open access."
             contentId="home"
           />

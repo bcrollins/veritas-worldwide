@@ -188,7 +188,7 @@ export default function DownloadPDF() {
       doc.setFontSize(9);
       doc.setFont('helvetica', 'italic');
       doc.setTextColor(100, 100, 100);
-      doc.text('\u2014 The Editors, Veritas Worldwide Press', pageWidth / 2, y, { align: 'center' });
+      doc.text('\u2014 The Editors, Veritas Press', pageWidth / 2, y, { align: 'center' });
       addPageNumber();
 
       // ═══════════════════════════════════════════
@@ -542,7 +542,7 @@ export default function DownloadPDF() {
         'veritasworldwide.com',
         '',
         'This work may be freely shared for non-commercial, educational purposes',
-        'with proper attribution to Veritas Worldwide Press.',
+        'with proper attribution to Veritas Press.',
         '',
         'No party. No agenda. Just the record.',
       ];

@@ -6,7 +6,7 @@ import { DONATE_URL } from '../lib/constants'
 export default function MethodologyPage() {
   useEffect(() => {
     setMetaTags({
-      title: 'Methodology & Evidence Standards | The Record — Veritas Worldwide Press',
+      title: 'Methodology & Evidence Standards | The Record — Veritas Press',
       description: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
       url: `${SITE_URL}/methodology`,
     })

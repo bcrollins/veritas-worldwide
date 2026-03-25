@@ -32,7 +32,7 @@ export default function TextSelectionShare() {
   if (!show) return null
 
   const url = window.location.href
-  const encodedText = encodeURIComponent(`"${text}" — The Record by Veritas Worldwide Press`)
+  const encodedText = encodeURIComponent(`"${text}" — The Record by Veritas Press`)
   const encodedUrl = encodeURIComponent(url)
 
   return (

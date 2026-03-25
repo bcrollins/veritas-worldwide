@@ -194,13 +194,13 @@ function Header() {
           <p className="font-sans text-[0.5rem] sm:text-[0.55rem] tracking-[0.2em] uppercase text-ink-faint/60 mb-3 sm:mb-4 print:block">
             Est. 2025 &middot; Volume I &middot; Primary Source Journalism
           </p>
-          <Link to="/" className="inline-block group" aria-label="Veritas Worldwide Press — Home">
+          <Link to="/" className="inline-block group" aria-label="Veritas Press — Home">
             {/* Desktop: Icon + Full Name */}
             <div className="hidden sm:flex items-center justify-center gap-4 md:gap-5">
               <VeritasLogo variant="icon" size="md" className="flex-shrink-0 transition-transform group-hover:scale-[1.02]" />
               <div className="flex flex-col items-start">
                 <h1 className="font-display text-3xl md:text-[2.5rem] lg:text-[2.75rem] font-bold text-ink tracking-tight leading-[1.05] group-hover:text-crimson transition-colors">
-                  Veritas Worldwide Press
+                  Veritas Press
                 </h1>
                 <span className="font-serif text-[0.7rem] md:text-[0.75rem] italic text-ink-muted mt-0.5 tracking-[0.02em]">
                   The Documentary Record
@@ -211,7 +211,7 @@ function Header() {
             <div className="flex sm:hidden flex-col items-center gap-2">
               <VeritasLogo variant="icon" size="sm" className="transition-transform group-hover:scale-[1.02]" />
               <h1 className="font-display text-xl font-bold text-ink tracking-tight leading-none group-hover:text-crimson transition-colors">
-                Veritas Worldwide
+                Veritas Press
               </h1>
             </div>
           </Link>
@@ -376,7 +376,7 @@ function Footer() {
             <Link to="/" className="flex items-center gap-4 group">
               <VeritasLogo variant="icon" size="md" className="flex-shrink-0 opacity-80 group-hover:opacity-100 transition-all group-hover:scale-[1.02]" />
               <div className="flex flex-col">
-                <span className="font-display text-xl font-bold text-white group-hover:text-crimson-light transition-colors leading-tight">Veritas Worldwide Press</span>
+                <span className="font-display text-xl font-bold text-white group-hover:text-crimson-light transition-colors leading-tight">Veritas Press</span>
                 <span className="font-serif text-[0.65rem] italic text-white/40 mt-0.5">The Documentary Record</span>
               </div>
             </Link>
@@ -467,7 +467,7 @@ function Footer() {
         <div className="border-t border-white/10 pt-6 pb-2 text-center">
           <VeritasLogo variant="icon" size="xs" className="mx-auto mb-3 opacity-15" />
           <p className="font-sans text-[0.6rem] text-white/25 tracking-[0.05em]">
-            &copy; 2026 Veritas Worldwide Press &middot; veritasworldwide.com &middot; Free &amp; Open Access
+            &copy; 2026 Veritas Press &middot; veritasworldwide.com &middot; Free &amp; Open Access
           </p>
         </div>
       </div>
@@ -511,7 +511,7 @@ export default function App() {
       {/* Print-only masthead — visible only when printing */}
       <div className="hidden print:block print:text-center print:mb-6 print:pb-4 print:border-b print:border-black/20">
         <VeritasLogo variant="icon" size="sm" className="mx-auto mb-2 print:block" />
-        <p className="font-display text-lg font-bold text-black tracking-tight">Veritas Worldwide Press</p>
+        <p className="font-display text-lg font-bold text-black tracking-tight">Veritas Press</p>
         <p className="font-serif text-[0.6rem] italic text-gray-500">The Documentary Record &middot; veritasworldwide.com</p>
       </div>
       <main id="main-content">

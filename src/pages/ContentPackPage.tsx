@@ -177,7 +177,7 @@ export default function ContentPackPage() {
     setJsonLd({
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      'name': 'Content Packs | Veritas Worldwide Press',
+      'name': 'Content Packs | Veritas Press',
       'url': `${SITE_URL}/content-pack`,
       'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
       'publisher': { '@type': 'Organization', 'name': SITE_NAME },
@@ -226,7 +226,7 @@ export default function ContentPackPage() {
       <div className="border-b-2 border-ink">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <p className="font-sans text-[0.55rem] font-semibold tracking-[0.25em] uppercase text-ink-faint mb-2">
-            Veritas Worldwide Press
+            Veritas Press
           </p>
           <h1 className="font-display text-3xl md:text-4xl font-bold text-ink mb-3">
             Content Pack
@@ -390,7 +390,7 @@ export default function ContentPackPage() {
           Every time you share a primary source, you make it harder to rewrite history.
         </p>
         <p className="font-sans text-[0.55rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mt-4">
-          Veritas Worldwide Press
+          Veritas Press
         </p>
       </div>
     </div>

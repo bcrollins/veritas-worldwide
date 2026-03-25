@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
             <span className="font-serif text-2xl font-bold text-white">V</span>
           </div>
           <h1 className="font-serif text-2xl font-bold text-white tracking-tight">Admin Access</h1>
-          <p className="font-sans text-xs tracking-widest uppercase text-white/40 mt-2">Veritas Worldwide Press</p>
+          <p className="font-sans text-xs tracking-widest uppercase text-white/40 mt-2">Veritas Press</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-white/5 border border-white/10 rounded p-6 space-y-4">
           {error && (

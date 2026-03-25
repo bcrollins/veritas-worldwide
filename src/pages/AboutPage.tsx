@@ -40,7 +40,7 @@ export default function AboutPage() {
   useEffect(() => {
     setMetaTags({
       title: `About | The Record — ${SITE_NAME}`,
-      description: 'Independent investigative journalism holding power accountable through documented evidence. Meet the editorial team behind Veritas Worldwide.',
+      description: 'Independent investigative journalism holding power accountable through documented evidence. Meet the editorial team behind Veritas Press.',
       url: `${SITE_URL}/about`,
     })
     return () => clearMetaTags()
@@ -65,7 +65,7 @@ export default function AboutPage() {
           {/* Left Column */}
           <article className="max-w-none">
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-ink mb-3">
-              About Veritas Worldwide
+              About Veritas Press
             </h1>
             <p className="text-lg text-ink-muted mb-10 leading-relaxed border-b border-border pb-8">
               Independent investigative journalism holding power accountable through documented evidence.
@@ -76,7 +76,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-serif font-semibold text-ink mb-4">Our Mission</h2>
               <div className="space-y-4 text-ink-muted leading-relaxed">
                 <p>
-                  Veritas Worldwide began as a single question: <em>What happens when you follow the money?</em> What started as independent research into political financing evolved into a 31-chapter investigation documenting the networks of power, influence, and accountability that shape American democracy.
+                  Veritas Press began as a single question: <em>What happens when you follow the money?</em> What started as independent research into political financing evolved into a 31-chapter investigation documenting the networks of power, influence, and accountability that shape American democracy.
                 </p>
                 <p>
                   Every claim in this publication is sourced. Every connection is documented. We believe the public deserves access to the same information that insiders use to make decisions that affect millions of lives. Our evidence tier system — Verified, Circumstantial, and Disputed — ensures readers always know the strength of the evidence behind every assertion.
@@ -153,7 +153,7 @@ export default function AboutPage() {
             <section className="bg-ink text-parchment rounded-xl p-8 md:p-10">
               <h2 className="text-2xl font-serif font-bold mb-3">Support Independent Journalism</h2>
               <p className="text-parchment/70 mb-6 max-w-lg">
-                Veritas Worldwide is funded entirely by readers. Subscribe to get full access to all 31 chapters, power profiles, and exclusive investigative updates.
+                Veritas Press is funded entirely by readers. Subscribe to get full access to all 31 chapters, power profiles, and exclusive investigative updates.
               </p>
               <a
                 href={DONATE_URL}

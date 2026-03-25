@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   useEffect(() => {
     setMetaTags({
       title: `Privacy Policy | The Record — ${SITE_NAME}`,
-      description: 'How Veritas Worldwide collects, uses, and protects your information. No ads, no data sales.',
+      description: 'How Veritas Press collects, uses, and protects your information. No ads, no data sales.',
       url: `${SITE_URL}/privacy`,
     })
     return () => clearMetaTags()
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="text-sm text-ink-muted mb-10 border-b border-border pb-6">
-              Last updated: March 2026. This policy explains how Veritas Worldwide collects, uses, and protects your information.
+              Last updated: March 2026. This policy explains how Veritas Press collects, uses, and protects your information.
             </p>
 
             <section id="collection" className="mb-10">

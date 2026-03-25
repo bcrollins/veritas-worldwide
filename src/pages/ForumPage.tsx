@@ -1,5 +1,5 @@
 /**
- * ForumPage.tsx — Full Reddit-style community forum for Veritas Worldwide Press.
+ * ForumPage.tsx — Full Reddit-style community forum for Veritas Press.
  * Features: communities (subreddits), post feed, threaded comments, voting, sorting,
  * search, flairs, awards, polls, crossposting, saving, reporting, moderation panel,
  * user karma display, community sidebars, create post modal, and full-width layout.
@@ -947,7 +947,7 @@ export default function ForumPage() {
           {/* Footer links */}
           <div className="bg-parchment border border-border rounded p-4 text-center">
             <p className="font-sans text-[0.6rem] text-ink-faint leading-relaxed">
-              Veritas Worldwide Press Forum — Community-driven investigation.
+              Veritas Press Forum — Community-driven investigation.
               <br />All claims must be sourced. No party. No agenda. Just the record.
             </p>
           </div>

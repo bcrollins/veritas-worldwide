@@ -1,5 +1,5 @@
 /**
- * Professional SVG diagrams for Veritas Worldwide Press
+ * Professional SVG diagrams for Veritas Press
  * Clean, publication-quality data visualizations
  */
 
