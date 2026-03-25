@@ -56,6 +56,7 @@ const AdminSubscriptions = lazy(() => import('./pages/admin/AdminSubscriptions')
 const AdminMedia = lazy(() => import('./pages/admin/AdminMedia'))
 const AdminContent = lazy(() => import('./pages/admin/AdminContent'))
 const AdminSocialPacks = lazy(() => import('./pages/admin/AdminSocialPacks'))
+const AdminSocialHub = lazy(() => import('./pages/admin/AdminSocialHub'))
 const AdminDisputes = lazy(() => import('./pages/admin/AdminDisputes'))
 
 
@@ -515,6 +516,7 @@ export default function App() {
             <Route path="media" element={<AdminMedia />} />
             <Route path="content" element={<AdminContent />} />
             <Route path="social" element={<AdminSocialPacks />} />
+            <Route path="social-hub" element={<AdminSocialHub />} />
             <Route path="disputes" element={<AdminDisputes />} />
           </Route>
           <Route path="*" element={
