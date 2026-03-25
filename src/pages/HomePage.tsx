@@ -22,19 +22,41 @@ export default function HomePage() {
       description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 31 chapters, 500+ primary sources, 100% free and open access.',
       url: SITE_URL,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      'name': `The Record — ${SITE_NAME}`,
-      'url': SITE_URL,
-      'description': 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World.',
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
-      'potentialAction': {
-        '@type': 'SearchAction',
-        'target': { '@type': 'EntryPoint', 'urlTemplate': `${SITE_URL}/search?q={search_term_string}` },
-        'query-input': 'required name=search_term_string',
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'name': `The Record — ${SITE_NAME}`,
+        'url': SITE_URL,
+        'description': 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World.',
+        'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
+        'potentialAction': {
+          '@type': 'SearchAction',
+          'target': { '@type': 'EntryPoint', 'urlTemplate': `${SITE_URL}/search?q={search_term_string}` },
+          'query-input': 'required name=search_term_string',
+        },
       },
-    })
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        'name': SITE_NAME,
+        'alternateName': 'The Record',
+        'url': SITE_URL,
+        'logo': `${SITE_URL}/og-image.png`,
+        'description': 'Independent investigative journalism built on primary sources. 31 chapters documenting 240+ years of institutional power.',
+        'foundingDate': '2025',
+        'sameAs': [
+          'https://x.com/VeritasWorldwide',
+          'https://github.com/bcrollins/veritas-worldwide',
+          'https://www.reddit.com/r/VeritasWorldwide',
+        ],
+        'contactPoint': {
+          '@type': 'ContactPoint',
+          'email': 'rights@veritasworldwide.com',
+          'contactType': 'editorial',
+        },
+      },
+    ])
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
