@@ -104,8 +104,8 @@ function Header() {
     { to: '/news', label: 'News' },
     { to: '/profiles', label: 'Profiles' },
     { to: '/israel-dossier', label: 'Israel Dossier' },
-    { to: '/deep-state', label: 'Deep State' },
     { to: '/forum', label: 'Forum' },
+    { to: '/content-pack', label: 'Content Pack' },
     { to: '/methodology', label: 'Methodology' },
     { to: '/sources', label: 'Sources' },
     { to: '/timeline', label: 'Timeline' },
@@ -117,7 +117,6 @@ function Header() {
     ...sectionLinks,
     { to: '/bookmarks', label: t('nav.bookmarks') },
     { to: '/analytics', label: t('nav.analytics') },
-    { to: '/content-pack', label: 'Content Pack' },
     { to: '/search', label: t('nav.search') },
   ]
 
@@ -396,8 +395,8 @@ function Footer() {
               <Link to="/news" className="font-sans text-sm text-white/40 hover:text-white transition-colors">News</Link>
               <Link to="/profiles" className="font-sans text-sm text-white/40 hover:text-white transition-colors">Profiles</Link>
               <Link to="/israel-dossier" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.israel')}</Link>
-              <Link to="/deep-state" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.deepState')}</Link>
               <Link to="/forum" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.forum')}</Link>
+              <Link to="/content-pack" className="font-sans text-sm text-white/40 hover:text-white transition-colors">Content Packs</Link>
             </div>
           </nav>
           <nav aria-label="Research">
@@ -415,7 +414,6 @@ function Footer() {
             <div className="flex flex-col gap-2.5">
               <Link to="/about" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.about')}</Link>
               <Link to="/membership" className="font-sans text-sm text-crimson-light hover:text-white transition-colors font-semibold">{t('nav.membership')}</Link>
-              <Link to="/content-pack" className="font-sans text-sm text-white/40 hover:text-white transition-colors">Content Packs</Link>
               <a href="mailto:rights@veritasworldwide.com" className="font-sans text-sm text-white/40 hover:text-white transition-colors">Contact</a>
             </div>
           </nav>

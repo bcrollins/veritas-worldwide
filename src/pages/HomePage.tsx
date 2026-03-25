@@ -11,35 +11,10 @@ import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAM
 import { estimateReadingTime } from '../lib/readingTime'
 import SocialProofBanner from '../components/engagement/SocialProofBanner'
 import SharePanel from '../components/SharePanel'
-import RecordTabs, { type RecordTab } from '../components/RecordTabs'
-
-/* Lazy-load heavy tab panels */
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
-const IsraelDossierPage = lazy(() => import('./IsraelDossierPage'))
-const DeepStatePage = lazy(() => import('./DeepStatePage'))
-const TimelinePage = lazy(() => import('./TimelinePage'))
-const AipacPage = lazy(() => import('./AipacPage'))
-
-function TabSpinner() {
-  return (
-    <div className="flex items-center justify-center py-24" role="status" aria-label="Loading section">
-      <div className="inline-block w-6 h-6 border-2 border-crimson/20 border-t-crimson rounded-full animate-spin" />
-    </div>
-  )
-}
 
 export default function HomePage() {
-  const initialTab = (): RecordTab => {
-    const hash = window.location.hash.replace('#', '')
-    const valid: RecordTab[] = ['chapters', 'israel', 'deepstate', 'timeline', 'aipac']
-    return valid.includes(hash as RecordTab) ? (hash as RecordTab) : 'chapters'
-  }
-  const [activeTab, setActiveTab] = useState<RecordTab>(initialTab)
   const [showDownloadModal, setShowDownloadModal] = useState(false)
-
-  useEffect(() => {
-    window.location.hash = activeTab === 'chapters' ? '' : activeTab
-  }, [activeTab])
 
   useEffect(() => {
     setMetaTags({
@@ -61,7 +36,7 @@ export default function HomePage() {
       },
     })
     return () => { clearMetaTags(); removeJsonLd() }
-  }, [activeTab])
+  }, [])
 
   const featured = chapterMeta[0]
   const rest = chapterMeta.slice(1)
@@ -91,7 +66,6 @@ export default function HomePage() {
           SECTION 1: HERO / LEAD STORY AREA
           Three-column layout (60/20/20 split) with featured story
          ══════════════════════════════════════════════════════ */}
-      {activeTab === 'chapters' && (
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection>
             <section className="py-12 border-b border-border">
@@ -200,13 +174,11 @@ export default function HomePage() {
           {/* Continue Reading — for returning visitors */}
           <ContinueReading />
         </div>
-      )}
 
       {/* ══════════════════════════════════════════════════════
           SECTION 3: MAIN CONTENT + SIDEBAR
           70/30 split with table of contents and sidebar
          ══════════════════════════════════════════════════════ */}
-      {activeTab === 'chapters' && (
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <section className="py-12 grid lg:grid-cols-3 gap-12">
             {/* Main content: Complete Table of Contents (70%) */}
@@ -298,13 +270,11 @@ export default function HomePage() {
             </div>
           </section>
         </div>
-      )}
 
       {/* ══════════════════════════════════════════════════════
           SECTION 4: BOTTOM SECTION
           Continue Reading, Reading Guide, Share Panel
          ══════════════════════════════════════════════════════ */}
-      {activeTab === 'chapters' && (
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <SharePanel
             title="The Record — Veritas Press"
@@ -342,41 +312,6 @@ export default function HomePage() {
 
           <DonationBanner />
         </div>
-      )}
-
-      {/* ══════════════════════════════════════════════════════
-          TAB PANELS: Israel, Deep State, Timeline, AIPAC
-         ══════════════════════════════════════════════════════ */}
-      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 flex gap-6 relative">
-        {/* Left sidebar tabs - sticky */}
-        <div className="sticky top-0 h-screen overflow-y-auto py-8">
-          <RecordTabs activeTab={activeTab} onTabChange={setActiveTab} />
-        </div>
-
-        {/* Main content panel for tab pages */}
-        <div className="flex-1 min-w-0 pb-20 md:pb-0">
-          {activeTab === 'israel' && (
-            <Suspense fallback={<TabSpinner />}>
-              <IsraelDossierPage />
-            </Suspense>
-          )}
-          {activeTab === 'deepstate' && (
-            <Suspense fallback={<TabSpinner />}>
-              <DeepStatePage />
-            </Suspense>
-          )}
-          {activeTab === 'timeline' && (
-            <Suspense fallback={<TabSpinner />}>
-              <TimelinePage />
-            </Suspense>
-          )}
-          {activeTab === 'aipac' && (
-            <Suspense fallback={<TabSpinner />}>
-              <AipacPage />
-            </Suspense>
-          )}
-        </div>
-      </div>
 
       {/* Download Modal */}
       {showDownloadModal && (
