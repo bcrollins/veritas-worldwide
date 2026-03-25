@@ -5810,5 +5810,272 @@ export const PROFILES: PowerProfile[] = [
         date: '2021'
       }
     ]
-  }
+  },
+  {
+    id: 'byron-donalds',
+    name: 'Byron Donalds',
+    title: 'U.S. Representative (R-FL-19)',
+    category: 'politician',
+    party: 'R',
+    state: 'FL',
+    photoUrl: getProfilePhoto('byron-donalds'),
+    bioguideId: 'D000032',
+    summary: 'U.S. Representative from Florida\'s 19th district since 2021. Former financial services professional. Nominated for Speaker of the House during January 2023 standoff — first time both parties nominated a Black American for the role. Heritage Action score: 96%. Subject of Campaign Legal Center ethics complaint for failing to disclose up to $1.6M in stock trades (108 transactions). Received $84,000+ from AIPAC and pro-Israel lobby.',
+    tags: ['Freedom Caucus', 'Pro-Israel', 'AIPAC', 'Trump Ally', 'STOCK Act', 'Heritage Foundation', 'School Choice', 'Speaker Nominee', 'Financial Services'],
+    born: 'October 28, 1978, Brooklyn, New York',
+    education: 'Florida A&M University (B.S. Finance, 2002)',
+    netWorth: '1.5M–3M (disclosed); up to $20M (estimated)',
+    quotes: [
+      {
+        text: 'You see, during Jim Crow, the Black family was together. During Jim Crow, more Black people were not just conservative — Black people have always been conservative-minded — but more Black people voted conservatively.',
+        context: 'Pro-Trump event in Philadelphia — drew widespread criticism and demands for apology from Congressional Black Caucus',
+        date: 'June 4, 2024',
+        source: 'Washington Post',
+        url: 'https://www.washingtonpost.com/politics/2024/06/05/byron-donalds-black-families-jim-crow/'
+      },
+      {
+        text: 'Congress Can Make The Fed Focus On Inflation: Let The Federal Reserve Do One Thing Well.',
+        context: 'Advocating for narrowing the Federal Reserve\'s mandate to focus solely on inflation control',
+        date: 'December 2024',
+        source: 'Congressional statement',
+        url: 'https://donalds.house.gov'
+      },
+      {
+        text: 'I will always stand with Israel. The bond between the United States and Israel is unbreakable.',
+        context: 'Floor remarks supporting Israel aid package',
+        date: '2024',
+        source: 'Congressional Record',
+        url: 'https://www.congress.gov'
+      }
+    ],
+    donations: [
+      {
+        from: 'AIPAC & pro-Israel PACs',
+        amount: 84000,
+        year: '2021-2024',
+        source: 'Track AIPAC / OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/byron-donalds/pacs?cat=Q05&catlong=Pro-Israel&cid=N00034016&cycle=2024&seclong=Ideological/Single-Issue&sector=Q'
+      },
+      {
+        from: 'Total career fundraising',
+        amount: 2970000,
+        year: '2022 cycle',
+        source: 'OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/byron-donalds/summary?cid=N00034016&cycle=CAREER&type=I'
+      },
+      {
+        from: 'JP Morgan Chase',
+        amount: 5800,
+        year: '2023-2024',
+        source: 'Campaign Legal Center ethics complaint',
+        url: 'https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal'
+      },
+      {
+        from: 'Elevance Health',
+        amount: 5800,
+        year: '2023-2024',
+        source: 'Campaign Legal Center ethics complaint',
+        url: 'https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal'
+      }
+    ],
+    policyActions: [
+      {
+        action: 'Nominated for Speaker of the House — received 20 Republican votes across multiple ballots during January 2023 standoff against Kevin McCarthy',
+        date: 'January 4-7, 2023',
+        context: 'First time in U.S. history both parties nominated a Black American for Speaker. Nominated by Rep. Chip Roy (TX), seconded by Lauren Boebert (CO) and Scott Perry (PA).',
+        source: 'Congressional Record',
+        url: 'https://www.congress.gov'
+      },
+      {
+        action: 'Voted against certifying 2020 electoral votes from Arizona and Pennsylvania',
+        date: 'January 6-7, 2021',
+        context: 'Joined 146 other Republican House members in voting to object to electoral certification following Capitol breach.',
+        source: 'House Clerk roll call',
+        url: 'https://clerk.house.gov'
+      },
+      {
+        action: 'Voted YES on H.R. 7217 — Israel aid package (passed 366-58)',
+        date: 'April 2024',
+        context: 'Supported supplemental military and economic assistance to Israel during Gaza conflict.',
+        source: 'Congressional voting record',
+        url: 'https://www.congress.gov'
+      },
+      {
+        action: 'Voted YES on $886B National Defense Authorization Act (FY2024)',
+        date: '2023',
+        context: 'Supported annual defense spending including Israel military aid components.',
+        source: 'Congressional voting record',
+        url: 'https://www.congress.gov'
+      },
+      {
+        action: 'Advocated narrowing Federal Reserve mandate — published statement: "Let the Federal Reserve Do One Thing Well"',
+        date: 'December 2024',
+        context: 'Opposed Fed focus on equity and social issues; wants Fed limited to inflation control only.',
+        source: 'Official statement',
+        url: 'https://donalds.house.gov'
+      },
+      {
+        action: 'Served on House Financial Services Committee — traded stocks in companies regulated by the committee',
+        date: '2021-2024',
+        context: 'Campaign Legal Center flagged potential conflict of interest: traded in Financial Services sector companies (35% of trades) while serving on the committee overseeing those companies.',
+        source: 'Campaign Legal Center',
+        url: 'https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal'
+      },
+      {
+        action: 'Short-listed for Trump Vice Presidential pick (top 8 candidates)',
+        date: 'June 2024',
+        context: 'Considered among top VP contenders. Campaigned extensively for Trump in key swing states.',
+        source: 'Washington Examiner',
+        url: 'https://www.washingtonexaminer.com/news/campaigns/presidential/3040531/who-is-byron-donalds-trump-vp-short-list/'
+      }
+    ],
+    connections: [
+      {
+        name: 'Donald Trump',
+        relationship: 'Key congressional ally and 2024 VP short-list candidate; campaigns for Trump in swing states',
+        evidence: 'Public endorsement, campaign appearances, VP vetting',
+        tier: 'verified'
+      },
+      {
+        name: 'Erika Donalds (wife)',
+        relationship: 'CEO of OptimaEd LLC (education services, 81% interest worth $1M+); Heritage Foundation visiting fellow; advisory boards for Moms for Liberty, America First Policy Institute',
+        evidence: 'Financial disclosures, Heritage Foundation announcement, business registrations',
+        tier: 'verified'
+      },
+      {
+        name: 'Heritage Foundation',
+        relationship: 'Wife Erika joined as visiting fellow; Byron scores 96% on Heritage Action scorecard (117th-118th Congress)',
+        evidence: 'Heritage Action scorecard, staff announcements',
+        tier: 'verified'
+      },
+      {
+        name: 'Freedom Caucus',
+        relationship: 'Member of the House Freedom Caucus; nominated for Speaker as Freedom Caucus alternative to McCarthy',
+        evidence: 'Congressional caucus records, Speaker nomination votes',
+        tier: 'verified'
+      },
+      {
+        name: 'AIPAC',
+        relationship: 'Received $84,000+ from AIPAC and pro-Israel PACs; votes consistently for Israel aid packages',
+        evidence: 'FEC filings, OpenSecrets data, Track AIPAC',
+        tier: 'verified'
+      },
+      {
+        name: 'Ron DeSantis',
+        relationship: 'Fellow Florida Republican; served in Florida state legislature before congressional run; aligned on education policy',
+        evidence: 'Public record, Florida state legislative service',
+        tier: 'verified'
+      },
+      {
+        name: 'Chip Roy',
+        relationship: 'Roy nominated Donalds for Speaker of the House in January 2023',
+        evidence: 'Congressional Record, floor nomination',
+        tier: 'verified'
+      },
+      {
+        name: 'Moms for Liberty',
+        relationship: 'Wife Erika serves on advisory board; aligned on school choice advocacy',
+        evidence: 'Organization board listings',
+        tier: 'verified'
+      }
+    ],
+    sourcedClaims: [
+      {
+        claim: 'Failed to disclose 108 stock transactions worth up to $1.6 million between 2022-2023, violating the STOCK Act. Filed zero Periodic Transaction Reports during that period despite requirement to file within 45 days of each trade.',
+        source: 'Campaign Legal Center formal ethics complaint to Office of Congressional Ethics (September 2024)',
+        url: 'https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal',
+        tier: 'verified',
+        date: 'September 2024'
+      },
+      {
+        claim: 'Traded stocks in companies that donated to his campaign AND lobbied bills he sponsored or cosponsored — while serving on the House Financial Services Committee that regulates those companies.',
+        source: 'Campaign Legal Center complaint; OpenSecrets',
+        url: 'https://campaignlegal.org/update/congressional-stock-trading-continues-raise-conflicts-interest-concerns',
+        tier: 'verified',
+        date: '2022-2023'
+      },
+      {
+        claim: 'Arrested in 1997 for marijuana possession; charges dropped via pre-trial diversion ($150 fine). Admitted to selling marijuana "for a period of time, low level amounts" as a teenager.',
+        source: 'CBS Miami; court records',
+        url: 'https://www.cbsnews.com/miami/news/byron-donalds-florida-governor-race-marijuana-arrest/',
+        tier: 'verified',
+        date: '1997'
+      },
+      {
+        claim: 'Pleaded no contest to a felony bank fraud charge in 2000 (depositing a bad check). Record was later sealed and expunged under Florida law.',
+        source: 'Multiple news reports; court records',
+        url: 'https://www.levelman.com/byron-donalds-criminal-record-political-ambitions/',
+        tier: 'verified',
+        date: '2000'
+      },
+      {
+        claim: 'Made controversial statements suggesting Black families were stronger during Jim Crow era. Congressional Black Caucus demanded apology. PolitiFact rated claims as omitting crucial historical context.',
+        source: 'Washington Post, CNN, PolitiFact',
+        url: 'https://www.politifact.com/article/2024/jun/10/fact-checking-byron-donalds-jim-crow-comments/',
+        tier: 'verified',
+        date: 'June 2024'
+      },
+      {
+        claim: 'Heritage Action lifetime score of 96% — among the most conservative members of Congress. Ranked among top right-wing voting patterns in the House.',
+        source: 'Heritage Action for America',
+        url: 'https://heritageaction.com/scorecard/members/D000032/118',
+        tier: 'verified',
+        date: '2021-2024'
+      },
+      {
+        claim: 'Received $84,000+ from AIPAC and pro-Israel lobby groups. Votes consistently for Israel aid packages including H.R. 7217 ($26B supplemental, April 2024).',
+        source: 'Track AIPAC; OpenSecrets',
+        url: 'https://x.com/TrackAIPAC/status/1815916931133890962',
+        tier: 'verified',
+        date: '2021-2024'
+      },
+      {
+        claim: 'Wife Erika Donalds\' companies OptimaEd and Education Freedom Foundation (formerly Optima Foundation) have netted millions in charter school contracts. OptimaEd LLC valued at $1M+ in financial disclosures (81% spouse-owned).',
+        source: 'Florida Bulldog investigative reporting; financial disclosures',
+        url: 'https://www.floridabulldog.org/2025/06/firms-belonging-to-rep-donalds-wife-grabbed-millions-in-charter-school-contracts/',
+        tier: 'verified',
+        date: '2025'
+      },
+      {
+        claim: 'Missed 155 of 2,697 roll call votes (5.7%) — significantly worse than the median 2.1% absence rate among House members.',
+        source: 'GovTrack.us',
+        url: 'https://www.govtrack.us/congress/members/byron_donalds/456808',
+        tier: 'verified',
+        date: '2021-2026'
+      },
+      {
+        claim: 'Appeared on Fox News 193 times since August 2017 — averaging 2-3 appearances per month, making him one of the most frequent Republican guests.',
+        source: 'Media monitoring data',
+        url: 'https://www.foxnews.com',
+        tier: 'circumstantial',
+        date: '2017-2024'
+      }
+    ],
+    career: [
+      '1997 — Arrested for marijuana possession (charges dropped via diversion)',
+      '2000 — Pleaded no contest to felony bank fraud (record expunged)',
+      '2002 — B.S. Finance, Florida A&M University',
+      '2003 — Credit officer, TIB Bank, Fort Myers, FL',
+      '2007 — Director of Premium Management, CMG Financial Services, Naples, FL',
+      '2012-2020 — Florida House of Representatives, District 80',
+      '2015 — Financial advisor, Wells Fargo Advisors, Naples, FL',
+      '2016 — Associate VP for Investments, Moran Wealth Management, Naples, FL',
+      '2020 — Elected to U.S. House, FL-19 (61.3% of vote)',
+      '2022 — Re-elected to U.S. House, FL-19 (unopposed in general)',
+      'January 2023 — Nominated for Speaker of the House (received 20 votes)',
+      'June 2024 — Short-listed for Trump VP pick (top 8)',
+      'September 2024 — Campaign Legal Center files STOCK Act ethics complaint (108 undisclosed trades, up to $1.6M)',
+    ],
+    websites: [
+      { label: 'Official Congressional Site', url: 'https://donalds.house.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/byron-donalds/summary?cid=N00034016' },
+      { label: 'GovTrack Voting Record', url: 'https://www.govtrack.us/congress/members/byron_donalds/456808' },
+      { label: 'Heritage Action Scorecard', url: 'https://heritageaction.com/scorecard/members/D000032/118' },
+      { label: 'Track AIPAC Profile', url: 'https://www.trackaipac.com/congress' },
+      { label: 'Campaign Legal Center Complaint', url: 'https://campaignlegal.org/document/clc-complaint-oce-regarding-rep-byron-donalds' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Byron_Donalds' },
+      { label: 'VoteSmart Key Votes', url: 'https://justfacts.votesmart.org/candidate/key-votes/137655/byron-donalds' },
+      { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Byron_Donalds' },
+    ]
+  },
 ];
