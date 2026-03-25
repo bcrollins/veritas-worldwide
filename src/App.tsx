@@ -383,7 +383,7 @@ function Header() {
 function Footer() {
   const { t } = useI18n()
   return (
-    <footer className="bg-ink text-white/70 no-print">
+    <footer className="bg-ink text-white/70 no-print" data-testid="site-footer">
       {/* NYT-style footer masthead — elevated */}
       <div className="border-b border-white/10">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -52,6 +52,7 @@ export default function CookieConsent() {
       className="fixed bottom-0 left-0 right-0 z-[100] bg-ink/95 backdrop-blur-md text-white px-6 py-4 no-print"
       role="dialog"
       aria-label="Cookie consent"
+      data-testid="cookie-consent-banner"
     >
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="font-sans text-sm text-white/80 leading-relaxed flex-1">

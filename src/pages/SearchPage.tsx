@@ -190,6 +190,7 @@ export default function SearchPage() {
                 className="search-input"
                 autoFocus
                 aria-label="Search The Record"
+                data-testid="search-input"
               />
               {query.trim() && query !== debouncedQuery && (
                 <div className="absolute right-4 top-1/2 -translate-y-1/2">
