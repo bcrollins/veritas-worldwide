@@ -183,27 +183,55 @@ function Header() {
         </div>
       </div>
 
-      {/* ── TIER 2: Masthead ─────────────────────────────── */}
-      <div className="border-b border-ink/10">
-        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-center">
+      {/* ── TIER 2: Masthead ── NYT-grade presentation ──── */}
+      <div className="border-t border-ink/5">
+        {/* Top rule — thin crimson accent */}
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-[2px] bg-gradient-to-r from-transparent via-crimson/60 to-transparent" />
+        </div>
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-7 text-center">
+          {/* Edition line — like NYT's "Vol. CLXXV No. 60,742" */}
+          <p className="font-sans text-[0.5rem] sm:text-[0.55rem] tracking-[0.2em] uppercase text-ink-faint/60 mb-3 sm:mb-4 print:block">
+            Est. 2025 &middot; Volume I &middot; Primary Source Journalism
+          </p>
           <Link to="/" className="inline-block group" aria-label="Veritas Worldwide Press — Home">
-            <div className="flex items-center justify-center gap-3 sm:gap-4">
-              <VeritasLogo variant="icon" size="sm" className="flex-shrink-0 sm:hidden" />
-              <VeritasLogo variant="icon" size="md" className="flex-shrink-0 hidden sm:block" />
-              <div>
-                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-ink tracking-tight leading-none group-hover:text-crimson transition-colors">
+            {/* Desktop: Icon + Full Name */}
+            <div className="hidden sm:flex items-center justify-center gap-4 md:gap-5">
+              <VeritasLogo variant="icon" size="md" className="flex-shrink-0 transition-transform group-hover:scale-[1.02]" />
+              <div className="flex flex-col items-start">
+                <h1 className="font-display text-3xl md:text-[2.5rem] lg:text-[2.75rem] font-bold text-ink tracking-tight leading-[1.05] group-hover:text-crimson transition-colors">
                   Veritas Worldwide Press
                 </h1>
+                <span className="font-serif text-[0.7rem] md:text-[0.75rem] italic text-ink-muted mt-0.5 tracking-[0.02em]">
+                  The Documentary Record
+                </span>
               </div>
             </div>
+            {/* Mobile: Stacked layout — icon above name */}
+            <div className="flex sm:hidden flex-col items-center gap-2">
+              <VeritasLogo variant="icon" size="sm" className="transition-transform group-hover:scale-[1.02]" />
+              <h1 className="font-display text-xl font-bold text-ink tracking-tight leading-none group-hover:text-crimson transition-colors">
+                Veritas Worldwide
+              </h1>
+            </div>
           </Link>
-          <div className="flex items-center justify-center gap-3 mt-2">
-            <div className="h-[1px] w-8 sm:w-12 bg-crimson/40" />
-            <p className="font-sans text-[0.55rem] sm:text-[0.6rem] font-semibold tracking-[0.15em] uppercase text-ink-faint">
+          {/* Tagline rule — double-line newspaper treatment */}
+          <div className="mt-3 sm:mt-4">
+            <div className="flex items-center justify-center gap-0 max-w-md mx-auto">
+              <div className="flex-1 h-[1px] bg-ink/10" />
+              <div className="flex-1 h-[1px] bg-ink/10 mt-[3px] -ml-[100%]" style={{position: 'relative', top: '3px'}} />
+            </div>
+            <p className="font-sans text-[0.5rem] sm:text-[0.55rem] font-medium tracking-[0.2em] uppercase text-ink-faint mt-2">
               Primary Sources &middot; Public Record &middot; Your Conclusions
             </p>
-            <div className="h-[1px] w-8 sm:w-12 bg-crimson/40" />
+            <div className="flex items-center justify-center max-w-md mx-auto mt-2">
+              <div className="flex-1 h-[1px] bg-ink/10" />
+            </div>
           </div>
+        </div>
+        {/* Bottom rule — matching accent */}
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
         </div>
       </div>
 
@@ -211,6 +239,10 @@ function Header() {
       <div className="sticky top-0 z-50 bg-parchment/95 backdrop-blur-md border-b border-border shadow-sm" ref={navRef}>
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="hidden md:flex items-center justify-center gap-0 h-10 overflow-x-auto" aria-label="Section navigation">
+            {/* Micro-logo in sticky nav — like NYT's "T" */}
+            <Link to="/" className="flex items-center gap-1.5 mr-2 pr-2 border-r border-border" aria-label="Home">
+              <VeritasLogo variant="icon" size="xs" className="opacity-70 hover:opacity-100 transition-opacity" />
+            </Link>
             {sectionLinks.map(link => (
               <Link
                 key={link.to}
@@ -240,7 +272,10 @@ function Header() {
           </nav>
           {/* Mobile: compact nav with search */}
           <div className="md:hidden flex items-center justify-between h-10">
-            <Link to="/" className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink">Veritas</Link>
+            <Link to="/" className="flex items-center gap-1.5" aria-label="Home">
+              <VeritasLogo variant="icon" size="xs" />
+              <span className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink">Veritas</span>
+            </Link>
             <div className="flex items-center gap-1">
               <Link to="/search" className="p-2 text-ink-muted hover:text-ink" aria-label="Search">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -334,15 +369,18 @@ function Footer() {
   const { t } = useI18n()
   return (
     <footer className="bg-ink text-white/70 no-print">
-      {/* NYT-style footer masthead */}
+      {/* NYT-style footer masthead — elevated */}
       <div className="border-b border-white/10">
-        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3 group">
-              <VeritasLogo variant="icon" size="sm" className="flex-shrink-0 opacity-90 group-hover:opacity-100 transition-opacity" />
-              <span className="font-display text-lg font-bold text-white group-hover:text-crimson-light transition-colors">Veritas Worldwide Press</span>
+            <Link to="/" className="flex items-center gap-4 group">
+              <VeritasLogo variant="icon" size="md" className="flex-shrink-0 opacity-80 group-hover:opacity-100 transition-all group-hover:scale-[1.02]" />
+              <div className="flex flex-col">
+                <span className="font-display text-xl font-bold text-white group-hover:text-crimson-light transition-colors leading-tight">Veritas Worldwide Press</span>
+                <span className="font-serif text-[0.65rem] italic text-white/40 mt-0.5">The Documentary Record</span>
+              </div>
             </Link>
-            <Link to="/" className="font-sans text-[0.6rem] tracking-[0.08em] uppercase text-white/40 hover:text-white transition-colors">Go to Home Page &raquo;</Link>
+            <Link to="/" className="hidden sm:block font-sans text-[0.6rem] tracking-[0.08em] uppercase text-white/40 hover:text-white transition-colors">Go to Home Page &raquo;</Link>
           </div>
         </div>
       </div>
@@ -425,8 +463,9 @@ function Footer() {
           <NewsletterSignup variant="footer" source="newsletter_footer" />
         </div>
 
-        {/* Copyright */}
+        {/* Copyright — with subtle logo watermark */}
         <div className="border-t border-white/10 pt-6 pb-2 text-center">
+          <VeritasLogo variant="icon" size="xs" className="mx-auto mb-3 opacity-15" />
           <p className="font-sans text-[0.6rem] text-white/25 tracking-[0.05em]">
             &copy; 2026 Veritas Worldwide Press &middot; veritasworldwide.com &middot; Free &amp; Open Access
           </p>
@@ -469,12 +508,20 @@ export default function App() {
       <ScrollToTop />
       <PageViewTracker />
       {!isAdmin && <Header />}
+      {/* Print-only masthead — visible only when printing */}
+      <div className="hidden print:block print:text-center print:mb-6 print:pb-4 print:border-b print:border-black/20">
+        <VeritasLogo variant="icon" size="sm" className="mx-auto mb-2 print:block" />
+        <p className="font-display text-lg font-bold text-black tracking-tight">Veritas Worldwide Press</p>
+        <p className="font-serif text-[0.6rem] italic text-gray-500">The Documentary Record &middot; veritasworldwide.com</p>
+      </div>
       <main id="main-content">
         <ErrorBoundary>
         <Suspense fallback={
           <div className="max-w-3xl mx-auto px-6 py-24 text-center" role="status" aria-label="Loading page">
-            <div className="inline-block w-6 h-6 border-2 border-crimson/20 border-t-crimson rounded-full animate-spin mb-4" />
-            <p className="font-sans text-[0.6rem] font-semibold tracking-[0.2em] uppercase text-ink-faint">
+            <div className="animate-pulse mb-4">
+              <VeritasLogo variant="icon" size="md" className="mx-auto opacity-40" />
+            </div>
+            <p className="font-sans text-[0.5rem] font-medium tracking-[0.25em] uppercase text-ink-faint">
               Loading
             </p>
           </div>
