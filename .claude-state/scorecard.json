@@ -1,5 +1,5 @@
 {
-  "run": 25,
+  "run": 26,
   "date": "2026-03-25",
   "features": {
     "nyt-style-header": { "composite": 9.5, "status": "EXCELLENT", "notes": "3-tier NYT-style masthead — utility bar, centered nameplate, sticky section nav." },
@@ -25,9 +25,9 @@
     "social-packs": { "composite": 9.0, "status": "EXCELLENT", "notes": "6 content packs with 10-slide Instagram carousels each." },
     "book-reader": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Full reading interface with TTS, font controls, download modal." },
     "evidence-system": { "composite": 9.2, "status": "EXCELLENT", "notes": "Three-tier with semantic CSS variables + dark mode variants." },
-    "auth-system": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "Neon PostgreSQL backend with JWT sessions, bcrypt hashing." },
+    "auth-system": { "composite": 8.0, "status": "GOOD", "notes": "UPGRADED: Neon PostgreSQL + JWT + bcrypt + rate limiting (5 login/3 register per min) + origin-restricted CORS." },
     "nyt-design": { "composite": 9.8, "status": "EXCELLENT", "notes": "UPGRADED: Full NYT consistency across ALL pages including timeline, accessibility, news." },
-    "seo": { "composite": 9.9, "status": "EXCELLENT", "notes": "JSON-LD all pages, per-chapter OG images (31 PNGs + SVGs), Twitter cards, bot SSR, sitemap (148 URLs), feed.xml, 91 profile pages indexed." },
+    "seo": { "composite": 9.9, "status": "EXCELLENT", "notes": "UPGRADED: JSON-LD all pages + Organization schema + enriched Person schema on 91 profiles + CollectionPage + BreadcrumbList. Bot SSR for 17 static pages. 148 URLs in sitemap." },
     "build-reliability": { "composite": 9.0, "status": "EXCELLENT", "notes": "TypeScript strict, clean build, lazy loading, code splitting, vendor chunk splitting, overlay lazy-loading." },
     "reading-stats-widget": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Chapter sidebar widget with reading time, source count, evidence count, publish date, period." },
     "israel-dossier": { "composite": 9.2, "status": "EXCELLENT", "notes": "10x expansion, homepage tab." },
@@ -49,7 +49,7 @@
     "chapter-pdf-export": { "composite": 8.5, "status": "GOOD", "notes": "Per-chapter PDF with cover, evidence tiers, quotes." },
     "tabbed-record-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "6-tab layout with lazy loading, hash deep links." },
     "brand-kit": { "composite": 8.5, "status": "GOOD", "notes": "10 SVG assets downloadable from Content Packs tab." },
-    "pwa": { "composite": 7.5, "status": "FUNCTIONAL", "notes": "manifest.json, service worker, Add-to-Home-Screen." },
+    "pwa": { "composite": 8.5, "status": "GOOD", "notes": "UPGRADED: SW v2 with stale-while-revalidate, immutable hashed asset cache, HubSpot/Stripe exclusion, offline fallback. Manifest with id field." },
     "i18n-forum": { "composite": 9.0, "status": "EXCELLENT", "notes": "nav.forum key in 30+ languages." },
     "lead-scoring": { "composite": 9.0, "status": "EXCELLENT", "notes": "11 behavioral events, 7 lifecycle stages, HubSpot + GA4 dual-fire." },
     "per-chapter-og": { "composite": 9.5, "status": "EXCELLENT", "notes": "31 unique 1200x630 OG images, PNG via resvg, bot SSR injection." },
@@ -61,7 +61,7 @@
     "aipac-executive-branch": { "composite": 8.5, "status": "GOOD", "notes": "5 exec officials with pro-Israel stances." },
     "community-forum": { "composite": 9.5, "status": "EXCELLENT", "notes": "Full Reddit clone — 9 communities, threaded comments, voting, awards, polls." },
     "full-width-layout": { "composite": 9.0, "status": "EXCELLENT", "notes": "All pages widened to max-w-[1920px]. Responsive padding." },
-    "power-profiles-system": { "composite": 9.2, "status": "EXCELLENT", "notes": "235+ profiles with sourced claims, donations, policy actions, connections." },
+    "power-profiles-system": { "composite": 9.5, "status": "EXCELLENT", "notes": "UPGRADED: 235+ profiles, enriched Person JSON-LD, BreadcrumbList, fixed /profiles/ → /profile/ routing bug." },
     "power-profiles-data": { "composite": 9.5, "status": "EXCELLENT", "notes": "All 91 profiles fully expanded — 0 stubs remaining." },
     "nyt-style-membership-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Section bar breadcrumb, max-w-[1920px] container, upgraded inner widths to max-w-5xl." },
     "nyt-style-content-packs-page": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Section bar breadcrumb, max-w-[1920px] container." },
@@ -70,6 +70,10 @@
     "overlay-lazy-loading": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: 7 overlay components lazy-loaded (AuthModal, NewsletterPopup, ExitIntent, StickyMembershipBar, PerformanceMonitor, CookieConsent, VAssistant)." },
     "pdf-hybrid-loader": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: DownloadPDF migrated from monolithic 551KB chapters import to hybrid dynamic loader." },
     "sitemap-profile-expansion": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: 91 power profile URLs added to sitemap — 148 total indexable pages." },
-    "brand-consistency": { "composite": 9.5, "status": "EXCELLENT", "notes": "NEW: 'Veritas Press' branding unified across bot SSR (15+ meta tags), PDF headers, RSS feed." }
+    "brand-consistency": { "composite": 9.5, "status": "EXCELLENT", "notes": "'Veritas Press' branding unified across bot SSR (15+ meta tags), PDF headers, RSS feed." },
+    "auth-rate-limiting": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: In-memory rate limiter — 5 login/min, 3 register/min per IP. Auto-cleanup every 5 min. 429 with Retry-After header." },
+    "cors-hardening": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: CORS restricted from wildcard to origin whitelist (veritasworldwide.com, Railway). Credentials supported." },
+    "organization-schema": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Organization JSON-LD on homepage — name, logo, foundingDate, sameAs (X, GitHub, Reddit), contactPoint." },
+    "profile-navigation-fix": { "composite": 9.0, "status": "EXCELLENT", "notes": "NEW: Fixed /profiles/:id → /profile/:id routing on ProfilesIndex cards and ProfilePage related profiles." }
   }
 }

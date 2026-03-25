@@ -1,13 +1,16 @@
 {
-  "lastRun": 25,
+  "lastRun": 26,
   "lastDate": "2026-03-25",
   "completedThisRun": [
-    "overlay-lazy-loading-7-components",
-    "vendor-chunk-splitting-main-bundle-65pct-reduction",
-    "pdf-hybrid-loader-eliminates-551kb-chunk",
-    "sitemap-profile-expansion-91-pages-148-total",
-    "brand-consistency-bot-ssr-pdf-rss-unified",
-    "duplicate-service-worker-registration-removed"
+    "profile-jsonld-url-fix-and-enrichment",
+    "auth-rate-limiting-login-register",
+    "cors-origin-whitelist-hardening",
+    "bot-ssr-donate-read-pages",
+    "service-worker-v2-upgrade",
+    "manifest-id-field-enrichment",
+    "organization-schema-homepage",
+    "profile-navigation-routing-fix",
+    "collectionpage-schema-enrichment"
   ],
   "completedPriorRuns": [
     "nyt-style-header-3-tier-masthead",
@@ -74,7 +77,13 @@
     "nyt-style-news-page-upgrade",
     "membership-page-nyt-redesign",
     "content-packs-page-nyt-redesign",
-    "stripe-recurring-payment-links-6-tiers"
+    "stripe-recurring-payment-links-6-tiers",
+    "overlay-lazy-loading-7-components",
+    "vendor-chunk-splitting-main-bundle-65pct-reduction",
+    "pdf-hybrid-loader-eliminates-551kb-chunk",
+    "sitemap-profile-expansion-91-pages-148-total",
+    "brand-consistency-bot-ssr-pdf-rss-unified",
+    "duplicate-service-worker-registration-removed"
   ],
   "queue": [
     "prerendering-ssg-for-seo",
@@ -88,6 +97,6 @@
     "profile-data-expansion-to-500",
     "forum-backend-api-persistence"
   ],
-  "featureCount": 69,
+  "featureCount": 73,
   "compositeAverage": 9.0
 }
