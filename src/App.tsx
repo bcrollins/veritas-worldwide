@@ -48,6 +48,7 @@ const ForumPage = lazy(() => import('./pages/ForumPage'))
 const ProfilePage = lazy(() => import('./pages/ProfilePage'))
 const ProfilesIndexPage = lazy(() => import('./pages/ProfilesIndexPage'))
 
+const BernieShowPage = lazy(() => import('./pages/BernieShowPage'))
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'))
@@ -550,6 +551,7 @@ export default function App() {
           <Route path="/profiles" element={<ProfilesIndexPage />} />
           <Route path="/profile/:slug" element={<ProfilePage />} />
           <Route path="/news/:slug" element={<ArticlePage />} />
+          <Route path="/bernie" element={<BernieShowPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
