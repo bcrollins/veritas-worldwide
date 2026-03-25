@@ -6,10 +6,11 @@ export default function DownloadPDF() {
   async function handleDownload() {
     setGenerating(true);
     try {
-      const [{ jsPDF }, { chapters }] = await Promise.all([
+      const [{ jsPDF }, { loadAllChapters }] = await Promise.all([
         import('jspdf'),
-        import('../data/chapters'),
+        import('../data/chapterLoaderHybrid'),
       ]);
+      const chapters = await loadAllChapters();
       const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
       const pageWidth = 210;
       const pageHeight = 297;
@@ -42,7 +43,7 @@ export default function DownloadPDF() {
         doc.setFontSize(7);
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(120, 120, 120);
-        doc.text('VERITAS WORLDWIDE PRESS', marginLeft, marginTop - 13);
+        doc.text('VERITAS PRESS', marginLeft, marginTop - 13);
 
         // Right: chapter title
         if (currentChapterTitle) {
@@ -123,7 +124,7 @@ export default function DownloadPDF() {
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(26, 26, 26);
-      doc.text('VERITAS WORLDWIDE PRESS', pageWidth / 2, y, { align: 'center' });
+      doc.text('VERITAS PRESS', pageWidth / 2, y, { align: 'center' });
 
       y += 8;
       doc.setFontSize(9);
@@ -531,7 +532,7 @@ export default function DownloadPDF() {
       doc.setFontSize(11);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(26, 26, 26);
-      doc.text('VERITAS WORLDWIDE PRESS', pageWidth / 2, y, { align: 'center' });
+      doc.text('VERITAS PRESS', pageWidth / 2, y, { align: 'center' });
       y += 8;
 
       doc.setFontSize(8.5);
