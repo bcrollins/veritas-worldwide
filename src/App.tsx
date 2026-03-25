@@ -22,6 +22,7 @@ import { handleStripeReturn } from './lib/conversionTracking'
 import StickyMembershipBar from './components/StickyMembershipBar'
 import CookieConsent from './components/CookieConsent'
 import VAssistant from './components/VAssistant'
+import VeritasLogo from './components/VeritasLogo'
 import { useExperiment } from './hooks/useExperiment'
 import { trackConversion } from './lib/abTest'
 
@@ -187,11 +188,8 @@ function Header() {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-center">
           <Link to="/" className="inline-block group" aria-label="Veritas Worldwide Press — Home">
             <div className="flex items-center justify-center gap-3 sm:gap-4">
-              <svg className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" viewBox="0 0 32 32" aria-hidden="true">
-                <rect width="32" height="32" rx="2" className="fill-ink group-hover:fill-crimson transition-colors" />
-                <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="20" fontWeight="bold" fill="#FAF8F5">V</text>
-                <line x1="6" y1="27" x2="26" y2="27" stroke="#FAF8F5" strokeWidth="1.5" strokeOpacity="0.4" />
-              </svg>
+              <VeritasLogo variant="icon" size="sm" className="flex-shrink-0 sm:hidden" />
+              <VeritasLogo variant="icon" size="md" className="flex-shrink-0 hidden sm:block" />
               <div>
                 <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-ink tracking-tight leading-none group-hover:text-crimson transition-colors">
                   Veritas Worldwide Press
@@ -341,10 +339,7 @@ function Footer() {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3 group">
-              <svg className="w-8 h-8 flex-shrink-0" viewBox="0 0 32 32" aria-hidden="true">
-                <rect width="32" height="32" rx="2" className="fill-white/20 group-hover:fill-crimson-light transition-colors" />
-                <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="20" fontWeight="bold" fill="#FAF8F5">V</text>
-              </svg>
+              <VeritasLogo variant="icon" size="sm" className="flex-shrink-0 opacity-90 group-hover:opacity-100 transition-opacity" />
               <span className="font-display text-lg font-bold text-white group-hover:text-crimson-light transition-colors">Veritas Worldwide Press</span>
             </Link>
             <Link to="/" className="font-sans text-[0.6rem] tracking-[0.08em] uppercase text-white/40 hover:text-white transition-colors">Go to Home Page &raquo;</Link>
