@@ -8,7 +8,9 @@
   "theme_color": "#8B1A1A",
   "orientation": "any",
   "scope": "/",
+  "id": "/",
   "lang": "en",
+  "dir": "ltr",
   "categories": ["news", "education", "books"],
   "icons": [
     {
