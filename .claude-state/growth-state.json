@@ -1,5 +1,5 @@
 {
-  "run": 18,
+  "run": 19,
   "date": "2026-03-24",
   "channels": {
     "website": {"status": "live", "url": "https://veritasworldwide.com"},
@@ -54,6 +54,7 @@
     "push_notifications": false,
     "exit_intent": true,
     "ab_testing": true,
+    "v_assistant": true,
     "cookie_consent": true,
     "community_forum": true,
     "tabbed_record_page": true,
