@@ -1,6 +1,6 @@
 {
-  "run": 23,
-  "date": "2026-03-24",
+  "run": 25,
+  "date": "2026-03-25",
   "channels": {
     "website": {"status": "live", "url": "https://veritasworldwide.com"},
     "instagram": {"status": "active", "handle": "", "followers": 0},
@@ -36,6 +36,7 @@
     "bot_ssr_og_injection": true,
     "structured_data": true,
     "sitemap": true,
+    "sitemap_urls": 148,
     "robots_txt": true,
     "internal_linking": true
   },

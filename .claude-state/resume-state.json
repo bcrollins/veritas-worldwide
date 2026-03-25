@@ -1,10 +1,13 @@
 {
-  "lastRun": 24,
-  "lastDate": "2026-03-24",
+  "lastRun": 25,
+  "lastDate": "2026-03-25",
   "completedThisRun": [
-    "membership-page-nyt-redesign",
-    "content-packs-page-nyt-redesign",
-    "stripe-recurring-payment-links-6-tiers"
+    "overlay-lazy-loading-7-components",
+    "vendor-chunk-splitting-main-bundle-65pct-reduction",
+    "pdf-hybrid-loader-eliminates-551kb-chunk",
+    "sitemap-profile-expansion-91-pages-148-total",
+    "brand-consistency-bot-ssr-pdf-rss-unified",
+    "duplicate-service-worker-registration-removed"
   ],
   "completedPriorRuns": [
     "nyt-style-header-3-tier-masthead",
@@ -13,7 +16,8 @@
     "nyt-style-homepage-sidebar-most-read",
     "lazy-chapter-splitting-31-files",
     "chapter-metadata-lightweight-index",
-    "chapter-types-shared-interfaces",    "hybrid-chapter-loader-dynamic-import",
+    "chapter-types-shared-interfaces",
+    "hybrid-chapter-loader-dynamic-import",
     "consumer-migration-chapterpage-readthebook-homepage",
     "tabbed-record-page",
     "brand-kit-10-svg-assets",
@@ -40,7 +44,8 @@
     "aipac-full-width-layout",
     "content-pack-tab-reorder",
     "og-image-png-fallback-for-social",
-    "bot-ssr-og-image-injection",    "reddit-clone-forum-complete-rewrite",
+    "bot-ssr-og-image-injection",
+    "reddit-clone-forum-complete-rewrite",
     "forum-data-layer-9-communities-10-seed-posts",
     "forum-communities-voting-threading-awards-polls-search-flairs-moderation",
     "full-width-layout-all-pages-1920px",
@@ -66,8 +71,12 @@
     "reading-stats-sidebar-widget-chapter-pages",
     "nyt-style-timeline-page-redesign",
     "nyt-style-accessibility-page-redesign",
-    "nyt-style-news-page-upgrade"
-  ],  "queue": [
+    "nyt-style-news-page-upgrade",
+    "membership-page-nyt-redesign",
+    "content-packs-page-nyt-redesign",
+    "stripe-recurring-payment-links-6-tiers"
+  ],
+  "queue": [
     "prerendering-ssg-for-seo",
     "adsense-activation",
     "abandoned-cart-recovery-emails",
@@ -79,6 +88,6 @@
     "profile-data-expansion-to-500",
     "forum-backend-api-persistence"
   ],
-  "featureCount": 64,
+  "featureCount": 69,
   "compositeAverage": 9.0
 }
