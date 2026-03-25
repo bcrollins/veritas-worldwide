@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'AIPAC & Congressional Lobbying',
   subtitle: 'The most powerful foreign policy lobby in America — how it operates, who it funds, and what happens to those who oppose it.',
   dateRange: '1963–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1280px-US_Capitol_west_side.JPG',

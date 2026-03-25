@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'A Note on Methodology, Evidence Standards & How to Read This Book',
   subtitle: 'This is a reference work. It compiles primary source documents — court records, congressional testimony, declassified government files, academic studies, and verified financial disclosures — into a single chronological narrative.',
   dateRange: '',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg',

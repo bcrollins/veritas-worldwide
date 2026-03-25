@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Bank War & The Presidents Who Fought Back',
   subtitle: 'Four American presidents took on the banking establishment. Three were assassinated. One survived an assassination attempt that should have killed him.',
   dateRange: '1832–1901',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Andrew_jackson_head.jpg/800px-Andrew_jackson_head.jpg',

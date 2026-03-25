@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Bohemian Grove & Elite Gatherings',
   subtitle: 'Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.',
   dateRange: '1872–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',

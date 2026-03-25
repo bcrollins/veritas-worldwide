@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'MKUltra & Government Mind Control Programs',
   subtitle: 'The CIA\\\'s documented program of human experimentation — using drugs, torture, and psychological manipulation on unwitting American citizens.',
   dateRange: '1953–1973',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG',

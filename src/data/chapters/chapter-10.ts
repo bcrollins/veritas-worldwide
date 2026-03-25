@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Petrodollar System',
   subtitle: 'How a secret agreement between Henry Kissinger and the Saudi royal family created the foundation of American economic hegemony — and why it is now unraveling.',
   dateRange: '1971–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Nixon_30-0316a.jpg/960px-Nixon_30-0316a.jpg',

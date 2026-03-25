@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'September 11, 2001',
   subtitle: 'The event that changed the world — examined through the official record, the 9/11 Commission Report, and the questions that remain unanswered.',
   dateRange: '2001',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',

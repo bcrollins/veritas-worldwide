@@ -106,7 +106,7 @@ export default function ChapterPDF({ chapter }: Props) {
       doc.setFontSize(8)
       doc.setFont('helvetica', 'normal')
       doc.setTextColor(100, 100, 100)
-      doc.text(`${chapter.author || 'B.R.'} · Published March 2026 · veritasworldwide.com`, ML, y)
+      doc.text(`${chapter.author || 'Veritas Press'} · Published March 2026 · veritasworldwide.com`, ML, y)
       y += 12
 
       // ── Content blocks ──

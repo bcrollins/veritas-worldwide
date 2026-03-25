@@ -76,7 +76,7 @@ export const chapters: Chapter[] = [
     title: 'A Note on Methodology, Evidence Standards & How to Read This Book',
     subtitle: 'This is a reference work. It compiles primary source documents — court records, congressional testimony, declassified government files, academic studies, and verified financial disclosures — into a single chronological narrative.',
     dateRange: '',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg',
@@ -120,7 +120,7 @@ export const chapters: Chapter[] = [
     title: 'The World Today',
     subtitle: 'How a convergence of financial, political, pharmaceutical, and intelligence systems created the architecture of modern control — and why most people never notice.',
     dateRange: '2025',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Times_Square_Ball_from_above.jpg/1280px-Times_Square_Ball_from_above.jpg',
@@ -282,7 +282,7 @@ export const chapters: Chapter[] = [
     title: 'The Birth of Central Banking',
     subtitle: 'From the Frankfurt ghetto to the Bank of England, from Napoleon\'s wars to the halls of the United States Congress, the story of how private banking dynasties captured the power to create money, and what happened to those who tried to take it back.',
     dateRange: '1694–1836',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG/1280px-Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG',
@@ -361,7 +361,7 @@ export const chapters: Chapter[] = [
     title: 'The Bank War & The Presidents Who Fought Back',
     subtitle: 'Four American presidents took on the banking establishment. Three were assassinated. One survived an assassination attempt that should have killed him.',
     dateRange: '1832–1901',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Andrew_jackson_head.jpg/800px-Andrew_jackson_head.jpg',
@@ -408,7 +408,7 @@ export const chapters: Chapter[] = [
     title: 'Jekyll Island & the Creation of the Federal Reserve',
     subtitle: 'In November 1910, six men representing a quarter of the world\\\'s wealth boarded a private rail car in New Jersey. Their destination: a private island off the coast of Georgia. Their mission: to draft the blueprint for a new central bank.',
     dateRange: '1907–1913',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/GA_Jekyll_Island_Club_HD_Clubhouse01.jpg/1280px-GA_Jekyll_Island_Club_HD_Clubhouse01.jpg',
@@ -476,7 +476,7 @@ export const chapters: Chapter[] = [
     title: 'The Warburg Brothers & World War I',
     subtitle: 'Two brothers from one of Europe\\\'s most powerful banking families found themselves on opposite sides of the Great War — one advising the Kaiser, the other shaping American financial policy.',
     dateRange: '1914–1919',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg',
@@ -536,7 +536,7 @@ export const chapters: Chapter[] = [
     title: 'Henry Ford, The International Jew & the Gold Standard',
     subtitle: 'The industrialist who built the American middle class also published the most controversial newspaper series in American history — and his warnings about the gold standard proved prophetic.',
     dateRange: '1920–1971',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Henry_ford_1919.jpg/800px-Henry_ford_1919.jpg',
@@ -600,7 +600,7 @@ export const chapters: Chapter[] = [
     title: 'The Talmud, the Balfour Declaration & the Origins of Zionism',
     subtitle: 'The documented history of the political movement that would reshape the Middle East and redefine the relationship between religion, nationalism, and geopolitics.',
     dateRange: '1897–1948',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Balfour_declaration_unmarked.jpg/960px-Balfour_declaration_unmarked.jpg',
@@ -678,7 +678,7 @@ export const chapters: Chapter[] = [
     title: 'Mossad: The Institute',
     subtitle: 'The intelligence agency that operates by its own rules — from covert assassinations to nuclear espionage, documented through declassified files and sworn testimony.',
     dateRange: '1949–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg/1280px-Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg',
@@ -767,7 +767,7 @@ export const chapters: Chapter[] = [
     title: 'JFK, Dimona & AIPAC',
     subtitle: 'President Kennedy\\\'s documented confrontation with Israel\\\'s secret nuclear program and the lobby that would reshape American foreign policy.',
     dateRange: '1963',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/800px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg',
@@ -810,7 +810,7 @@ export const chapters: Chapter[] = [
     title: 'JFK — Expanded Analysis',
     subtitle: 'A comprehensive examination of the evidence surrounding the assassination of President John F. Kennedy, including declassified documents released through 2025.',
     dateRange: '1963',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Dealey_Plaza_2003.jpg/1280px-Dealey_Plaza_2003.jpg',
@@ -883,7 +883,7 @@ export const chapters: Chapter[] = [
     title: 'The Petrodollar System',
     subtitle: 'How a secret agreement between Henry Kissinger and the Saudi royal family created the foundation of American economic hegemony — and why it is now unraveling.',
     dateRange: '1971–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Nixon_30-0316a.jpg/960px-Nixon_30-0316a.jpg',
@@ -924,7 +924,7 @@ export const chapters: Chapter[] = [
     title: 'Shadow Institutions — Bilderberg, CFR, Trilateral Commission & the BIS',
     subtitle: 'The private organizations where the world\\\'s most powerful people meet behind closed doors — documented through leaked attendee lists, founding charters, and their own publications.',
     dateRange: '1921–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harold_Pratt_House_north_staircase_jeh.jpg/1280px-Harold_Pratt_House_north_staircase_jeh.jpg',
@@ -968,7 +968,7 @@ export const chapters: Chapter[] = [
     title: 'How the Federal Reserve Works',
     subtitle: 'A plain-English explainer on the institution that controls the American money supply, who owns it, and how it operates — stripped of jargon and presented with primary source documentation.',
     dateRange: 'Explainer',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg/1280px-Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg',
@@ -1040,7 +1040,7 @@ export const chapters: Chapter[] = [
     title: 'The 2008 Financial Crisis',
     subtitle: 'How Wall Street\\\'s reckless gambling crashed the global economy, how the government bailed out the banks with taxpayer money, and how no one went to prison.',
     dateRange: '2007–2010',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wall_Street_-_New_York_Stock_Exchange.jpg/1280px-Wall_Street_-_New_York_Stock_Exchange.jpg',
@@ -1081,7 +1081,7 @@ export const chapters: Chapter[] = [
     title: 'AIPAC & Congressional Lobbying',
     subtitle: 'The most powerful foreign policy lobby in America — how it operates, who it funds, and what happens to those who oppose it.',
     dateRange: '1963–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1280px-US_Capitol_west_side.JPG',
@@ -1156,7 +1156,7 @@ export const chapters: Chapter[] = [
     title: 'U.S. Foreign Aid to Israel',
     subtitle: 'A comprehensive accounting of American taxpayer money sent to Israel — totaling over $300 billion in inflation-adjusted terms — and the legal framework that enables it.',
     dateRange: '1948–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Israeli_F-16s_at_Red_Flag.jpg/1280px-Israeli_F-16s_at_Red_Flag.jpg',
@@ -1166,8 +1166,8 @@ export const chapters: Chapter[] = [
     },
     content: [
       { type: 'dropcap', text: 'U.S. Capitol' },
-      { type: 'text', text: 'CHAPTER SIXTEEN  |  2001 – 2026\nThe $174 Billion\nQuestion: What\nAmerica Bought\nfor Israel\nSince September 11, 2001, the United States has provided Israel with more\nthan $100 billion in direct aid  —  the largest cumulative assistance package to\nany country in American history. This chapter documents exactly what was\nbought, who voted for it, who funded the people who voted for it, and what\nthe Congressional Research Service says about what the American taxpayer\nreceived in return.\nBy B.R.  |  Published March 2026  |  Sources: CRS, State Dept, DOD, FEC, Congress.gov' },
-      { type: 'text', text: 'The $174 Billion Question: A\nComplete Accounting of U.S. Aid\nto Israel Since 9/11  —  What Was\nBought, Who Voted, and Who\nFunded the Voters\nEvery dollar figure in this chapter is sourced to the Congressional Research\nService, the State Department, the Department of Defense, or the Office of\nManagement and Budget. Every vote is sourced to Congress.gov. Every\ncontribution figure is sourced to OpenSecrets and the FEC. This is a chapter of\ndocumented facts.\nBy B.R.  |  March 2026  |  Primary sources: CRS RL33222  ·  State Dept  ·  FEC  ·  OpenSecrets\n$174B+\nTOTAL U.S. AID\nTO ISRAEL (ALL TIME)\n$100B+\nAID SINCE\nSEPTEMBER 11, 2001\n$3.8B\nANNUAL MILITARY\nAID (2016 MOU)\n$14.1B\nEMERGENCY\nSUPPLEMENTAL\nAPPROVED APRIL' },
+      { type: 'text', text: 'CHAPTER SIXTEEN  |  2001 – 2026\nThe $174 Billion\nQuestion: What\nAmerica Bought\nfor Israel\nSince September 11, 2001, the United States has provided Israel with more\nthan $100 billion in direct aid  —  the largest cumulative assistance package to\nany country in American history. This chapter documents exactly what was\nbought, who voted for it, who funded the people who voted for it, and what\nthe Congressional Research Service says about what the American taxpayer\nreceived in return.\nBy Veritas Press  |  Published March 2026  |  Sources: CRS, State Dept, DOD, FEC, Congress.gov' },
+      { type: 'text', text: 'The $174 Billion Question: A\nComplete Accounting of U.S. Aid\nto Israel Since 9/11  —  What Was\nBought, Who Voted, and Who\nFunded the Voters\nEvery dollar figure in this chapter is sourced to the Congressional Research\nService, the State Department, the Department of Defense, or the Office of\nManagement and Budget. Every vote is sourced to Congress.gov. Every\ncontribution figure is sourced to OpenSecrets and the FEC. This is a chapter of\ndocumented facts.\nBy Veritas Press  |  March 2026  |  Primary sources: CRS RL33222  ·  State Dept  ·  FEC  ·  OpenSecrets\n$174B+\nTOTAL U.S. AID\nTO ISRAEL (ALL TIME)\n$100B+\nAID SINCE\nSEPTEMBER 11, 2001\n$3.8B\nANNUAL MILITARY\nAID (2016 MOU)\n$14.1B\nEMERGENCY\nSUPPLEMENTAL\nAPPROVED APRIL' },
       { type: 'text', text: 'he United States has provided more cumulative foreign assistance to Israel\nthan to any other country since World War II. According to the Congressional Research Service  —  the nonpartisan research arm of Congress  —  total\nU.S. aid to Israel from 1946 through fiscal year 2023 exceeded $174 billion, including\napproximately  $124  billion  in  military  assistance,  $34  billion  in  economic' },
       { type: 'text', text: 'assistance, and $16 billion in missile defense funding.[1] Since September 11, 2001,\nthe United States has provided Israel with more than $100 billion in direct assistance\n —  an average of more than $4 billion per year for twenty‐two consecutive years.\nThis chapter presents the complete accounting: what was purchased, under what legislative authority, with what votes, and by members of Congress who had received\nwhat level of campaign contributions from pro‐Israel political action committees.\nAll data is public record. All sources are hyperlinked. The reader is encouraged to\nverify every figure independently.' },
       { type: 'heading', text: 'Part I: The Baseline: What the Congressional Research Service Documents' },
@@ -1209,7 +1209,7 @@ export const chapters: Chapter[] = [
     title: 'The USS Liberty Incident',
     subtitle: 'On June 8, 1967, Israeli forces attacked an American intelligence ship in international waters, killing 34 U.S. servicemen. The official investigation was classified for decades.',
     dateRange: '1967',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg/1280px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg',
@@ -1257,7 +1257,7 @@ export const chapters: Chapter[] = [
     title: 'The Assassination of Robert F. Kennedy',
     subtitle: 'The evidence surrounding the murder of a presidential candidate who promised to reopen his brother\\\'s assassination investigation.',
     dateRange: '1968',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Robert_Kennedy_CORE_rally_speech2.jpg/960px-Robert_Kennedy_CORE_rally_speech2.jpg',
@@ -1315,7 +1315,7 @@ export const chapters: Chapter[] = [
     title: 'Operation Mockingbird & CIA Media Influence',
     subtitle: 'The documented CIA program to infiltrate and influence American media — from the Cold War to the present day.',
     dateRange: '1948–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Aerial_view_of_CIA_headquarters%2C_Langley%2C_Virginia_14762v.jpg',
@@ -1327,7 +1327,7 @@ export const chapters: Chapter[] = [
       { type: 'dropcap', text: '1975 Church Committee hearings. Over 400 journalists\non the CIA payroll. Carl Bernstein\'s 1977 Rolling Stone' },
       { type: 'text', text: 'exposé.  How  narrative  control  was  institutionalized' },
       { type: 'text', text: 'and its connection to modern media consolidation.' },
-      { type: 'text', text: 'B.R. | Research Correspondent · March 2026 · Evidence Classification: Multi-Tier' },
+      { type: 'text', text: 'Veritas Press | Research Correspondent · March 2026 · Evidence Classification: Multi-Tier' },
       { type: 'text', text: 'CHAPTER 20   —   THE DEEP STATE \' S  ORCHESTRA\nOperation Mockingbird & The\nCIA-Media Pipeline\nThe Cold War was a battle of ideologies, a shadowy conflict fought not just\nwith spies and soldiers, but with information. In this war of words and\nideas, the Central Intelligence Agency (CIA) sought to control the narrative,\nto shape public opinion both at home and abroad. To do this, they turned to\nthe most powerful weapon in their arsenal: the American press. Operation\nMockingbird, a clandestine campaign to recruit journalists and infiltrate\nmedia organizations, was the result. This was not a conspiracy theory, but a\ndocumented program that was exposed by the Church Committee in 1975\nand further detailed in Carl Bernstein\'s explosive 1977 Rolling Stone article.\nThe legacy of Mockingbird is a legacy of distrust, a legacy that continues to\nhaunt the relationship between the American people and the media to this\nday.' },
       { type: 'text', text: 'This chapter matters because it reveals a documented history of the CIA\'s deliberate and systematic manipulation of the American media, academic institutions, and cultural organizations throughout the Cold War and beyond.' },
       { type: 'text', text: '400+\nJOURNALISTS WHO\nSECRETLY WORKED FOR\nTHE CIA\n$1B+\nCIA\'S ANNUAL\nPROPAGANDA BUDGET\nIN THE 1970S' },
@@ -1365,7 +1365,7 @@ export const chapters: Chapter[] = [
     title: 'MKUltra & Government Mind Control Programs',
     subtitle: 'The CIA\\\'s documented program of human experimentation — using drugs, torture, and psychological manipulation on unwitting American citizens.',
     dateRange: '1953–1973',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG',
@@ -1418,7 +1418,7 @@ export const chapters: Chapter[] = [
     title: 'Rockefeller Medicine & the Chronic Disease Machine',
     subtitle: 'How the Rockefeller Foundation reshaped American medicine to favor pharmaceutical treatment over prevention — and the financial incentives that keep the system in place.',
     dateRange: '1910–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',
@@ -1490,7 +1490,7 @@ export const chapters: Chapter[] = [
     title: 'Vaccine History — From Polio to COVID-19',
     subtitle: 'A documented history of vaccine development, the regulatory framework that governs it, and the financial incentives that shape public health policy.',
     dateRange: '1955–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/800px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',
@@ -1544,7 +1544,7 @@ export const chapters: Chapter[] = [
     title: 'September 11, 2001',
     subtitle: 'The event that changed the world — examined through the official record, the 9/11 Commission Report, and the questions that remain unanswered.',
     dateRange: '2001',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',
@@ -1607,7 +1607,7 @@ export const chapters: Chapter[] = [
     title: 'The War on Drugs',
     subtitle: 'How a policy designed to criminalize dissent became the longest and most expensive domestic war in American history.',
     dateRange: '1971–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
@@ -1652,7 +1652,7 @@ export const chapters: Chapter[] = [
     title: 'Fluoride & Public Water',
     subtitle: 'The documented history of water fluoridation — from its industrial origins to its adoption as public health policy.',
     dateRange: '1945–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',
@@ -1689,7 +1689,7 @@ export const chapters: Chapter[] = [
     title: 'The Titanic, the Federal Reserve & the Men Who Opposed It',
     subtitle: 'Three of the wealthiest men who opposed the creation of the Federal Reserve boarded the same ship in April 1912. None of them survived.',
     dateRange: '1910–1913',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg',
@@ -1769,7 +1769,7 @@ export const chapters: Chapter[] = [
     title: 'Bohemian Grove & Elite Gatherings',
     subtitle: 'Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.',
     dateRange: '1872–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
@@ -1818,7 +1818,7 @@ export const chapters: Chapter[] = [
     title: 'The Surveillance State — From ECHELON to Pegasus',
     subtitle: 'The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.',
     dateRange: '1947–Present',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Criminal_Courts_Building%2C_100_Center_St.%2C_New_York_City._LOC_gsc.5a08406.jpg',
@@ -1864,7 +1864,7 @@ export const chapters: Chapter[] = [
     title: 'The Epstein Files',
     subtitle: 'The intelligence-linked operation that compromised the world\\\'s most powerful people — documented through court filings, flight logs, and the testimony of survivors.',
     dateRange: '1991–2026',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     content: [
       { type: 'dropcap', text: 'Jeffrey Epstein moved in the same circles as the men who built the Federal Reserve, funded political campaigns, and shaped intelligence operations documented throughout this book. His story is where many of those threads converge.' },
@@ -1889,7 +1889,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'unnamed "potential co-conspirators." The identity of those co-conspirators has never\nbeen publicly disclosed.\n5. The Death: Epstein died in federal custody on August 10, 2019, while awaiting trial\non federal sex trafficking charges. The official cause of death was suicide by hanging.\nThe medical examiner who performed the autopsy, Dr. Michael Baden, concluded\nthat the injuries were "more consistent with homicidal strangulation than suicidal\nhanging." The two guards on duty were asleep. The surveillance cameras outside his\ncell malfunctioned. He had been taken off suicide watch 12 days before his death  — \nthe same day, according to court documents, that he had begun discussions with\nprosecutors about cooperating.\nNo smoking gun: There is no documented evidence that Epstein was an intelligence\nasset. The circumstantial case is real and substantial. The documented facts  —  the lenient plea deal, the surveillance equipment, the Maxwell family intelligence connections, the death under suspicious circumstances  —  are consistent with an intelligence\noperation. They are also consistent with other explanations. A definitive conclusion\nhas not been reached on the basis of publicly available evidence.' },
       { type: 'text', text: 'Part IV\nThe Convergence: Where the Epstein\nFiles Meet This Book\nThe Epstein files are not an isolated scandal. They are the visible surface of a network that connects every thread in this book. The men who appear in the Epstein\nfiles are the same men  —  or the heirs and successors of the same men  —  who appear\nthroughout  the  history  of  central  banking,  financial  power,  and  political\nassassination documented in the preceding chapters.\n[5]\nCONNECTION' },
       { type: 'text', text: 'Ronald Lauder →\nEpstein\nChapter 7\nEpstein set up LLC for Lauder and Leon Black to hold $25M in\nartwork. (Bloomberg, Feb. 2026)\nRonald Lauder → Fed\nChair\nChapter 7\nLauder\'s son-in-law Kevin Warsh nominated as Fed Chair by\nTrump, January 2026.\nKevin Warsh →\nWarburg Dynasty\nChapters 3, 4, 7\nWarsh is a descendant of the Warburg banking dynasty that\ndesigned the Federal Reserve.\nLes Wexner → Epstein\nChapter 9\nWexner transferred ~$1B in assets to Epstein. Power of attorney\n1991. Townhouse transferred for $0.\nLeon Black → Epstein\n→ Lauder\nChapters 7, 9\nBlack paid Epstein $170M. Black and Lauder co-owned Epsteinstructured LLC. Black resigned as Apollo CEO.\nJPMorgan → Epstein\n→ Fed\nChapters 8, 9\nJPMorgan is the second-largest owner of the NY Fed. JPMorgan\nprocessed Epstein payments for over a decade. Settled for $290M.\nBill Gates → Epstein →\nMIT\nChapter 9\nGates met Epstein 2010–2014. MIT received $2M gift directed by\nEpstein. Gates Foundation\'s global health agenda.' },
-      { type: 'quote', quote: { text: 'The documentary record indicates that not a conspiracy\ntheory. It is a pattern of documented facts that, taken together, describe a world in which the same small number\nof people have controlled the money, the governments, and\nthe secrets of the most powerful nations on earth for more\nthan a century.', attribution: 'B.R.  —  CLOSING OBSERVATION, , MARCH 2026' } },
+      { type: 'quote', quote: { text: 'The documentary record indicates that not a conspiracy\ntheory. It is a pattern of documented facts that, taken together, describe a world in which the same small number\nof people have controlled the money, the governments, and\nthe secrets of the most powerful nations on earth for more\nthan a century.', attribution: 'Veritas Press — CLOSING OBSERVATION, , MARCH 2026' } },
       { type: 'heading', text: 'Part V: The January 2026 Document Release: What We Now Know' },
       { type: 'text', text: 'On January 30, 2026, the Department of Justice published approximately 3.5 million\npages of documents in compliance with the Epstein Victims\' Privacy and Transparency Act. Attorney General Pamela Bondi announced the release as a first phase of\ndeclassification. The documents included FBI investigative files, grand jury materials, financial records, and communications that had been sealed for years.\n[6]' },
       { type: 'evidence', evidence: { tier: 'verified', label: 'KEY REVELATIONS FROM THE JANUARY 2026 RELEASE', text: 'The FBI co-conspirators list: The released documents include an FBI investigative document listing individuals identified as potential co-conspirators in Epstein\'s trafficking operation. The list includes names that have not been publicly charged. Prince Andrew\'s arrest: In February 2026, Prince Andrew was arrested in the United Kingdom in connection with charges related to the Epstein investigation. He was released on bail. His trial date has not been set. Peter Mandelson\'s arrest: Former British Cabinet minister and EU Trade Commissioner Peter Mandelson was arrested in February 2026 in connection with the Epstein investigation. He was released on bail. The Lauder-Black LLC: Bloomberg reported on February 6, 2026, based on documents in the release, that Epstein set up an LLC for Ronald Lauder and Leon Black to hold approximately $25 million in artwork. The Gates documents: CNN reported on February 5, 2026, that documents in the release include communications between Epstein and associates discussing Bill Gates and his relationship with Epstein, including references to a potential investment in a Gates-related project.' } },
@@ -1904,7 +1904,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'June 28: Maxwell sentenced to 20 years. Prince Andrew settles Virginia\nGiuffre\'s civil lawsuit for undisclosed sum (est. $12–16M).' },
       { type: 'text', text: 'JPMorgan settles for $290M. Deutsche Bank settles for $75M. Total settlements\nexceed $705M.' },
       { type: 'text', text: 'April 25: Virginia Giuffre, Epstein\'s most prominent accuser, dies by suicide at\nage 41.' },
-      { type: 'text', text: 'January 30: DOJ releases 3.5 million pages of Epstein documents. February:\nPrince Andrew and Peter Mandelson arrested. Bloomberg reports Lauder-\nBlack-Epstein LLC. Trump nominates Kevin Warsh (Lauder\'s son-in-law,\nWarburg descendant) as Fed Chair.\nThe greatest story never told is not a conspiracy theory. It is a documented history of how financial power, political influence, and criminal leverage have been concentrated in the same small network of\nfamilies and institutions for more than a century.\nThe Rothschilds built the Bank of England. The Warburgs designed\nthe Federal Reserve. The Lauders funded the Israeli prime minister.\nThe Warburg heir married the Lauder daughter and was nominated\nto chair the Fed. The banks that own the Fed processed payments for\na sex trafficking operation for over a decade. The man who ran that\noperation died in federal custody under circumstances that have\nnever been satisfactorily explained.\nThese are not theories. They are documented facts. The question is\nnot whether they are true. The question is what we choose to do with\nthe truth.\n —  B.R., March 2026' },
+      { type: 'text', text: 'January 30: DOJ releases 3.5 million pages of Epstein documents. February:\nPrince Andrew and Peter Mandelson arrested. Bloomberg reports Lauder-\nBlack-Epstein LLC. Trump nominates Kevin Warsh (Lauder\'s son-in-law,\nWarburg descendant) as Fed Chair.\nThe greatest story never told is not a conspiracy theory. It is a documented history of how financial power, political influence, and criminal leverage have been concentrated in the same small network of\nfamilies and institutions for more than a century.\nThe Rothschilds built the Bank of England. The Warburgs designed\nthe Federal Reserve. The Lauders funded the Israeli prime minister.\nThe Warburg heir married the Lauder daughter and was nominated\nto chair the Fed. The banks that own the Fed processed payments for\na sex trafficking operation for over a decade. The man who ran that\noperation died in federal custody under circumstances that have\nnever been satisfactorily explained.\nThese are not theories. They are documented facts. The question is\nnot whether they are true. The question is what we choose to do with\nthe truth.\n — Veritas Press, March 2026' },
       { type: 'text', text: 'MAINSTREAM POSITION & COUNTER-ARGUMENTS\nThe official cause of Jeffrey Epstein\'s death was suicide by hanging, as determined by\nthe New York City Medical Examiner. While the circumstances  —  including camera\nmalfunctions and guard lapses  —  have fueled speculation, the medical examiner\'s office has maintained its finding. Epstein\'s defense attorneys hired forensic pathologist\nDr. Michael Baden, who disputed the finding, but the official ruling stands. The reader\nshould evaluate the forensic evidence, the documented institutional failures, and the\ncompeting expert opinions independently.Verify Everything: Every factual claim in this chapter is sourced from publicly available documents,\ngovernment records, court filings, congressional testimony, or peer-reviewed research. We encourage\nreaders to verify every claim independently. Click any hyperlinked source below to access the original\ndocument. If a source link is broken, search the document title directly  —  primary sources are\narchived across multiple platforms.' },
       { type: 'video', video: { youtubeId: 'BpWzDHm90X0', title: 'Epstein Island Drone Footage — Before & After FBI Raid', caption: 'Aerial footage of Little St. James island showing the temple, buildings, and surrounding infrastructure before and after the FBI raid.' } },
     ],
@@ -1930,7 +1930,7 @@ export const chapters: Chapter[] = [
     title: 'A Note on Continued Research & Primary Source Access',
     subtitle: 'Where to find the original documents, how to verify the claims in this book, and how to continue the investigation.',
     dateRange: '',
-    author: 'B.R.',
+    author: 'Veritas Press',
     publishDate: 'March 2026',
     heroImage: {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/LOC_Main_Reading_Room_Highsmith.jpg/1280px-LOC_Main_Reading_Room_Highsmith.jpg',
@@ -1946,7 +1946,7 @@ export const chapters: Chapter[] = [
       { type: 'text', text: 'ACTION 07\nSupport the Epstein Victims\nVirginia Giuffre, who died by suicide on April 25, 2025, spent the last decade of her\nlife fighting for accountability for herself and for the other survivors of Jeffrey Epstein\'s abuse. The Epstein Victims\' Compensation Program has paid approximately\n$121 million to approximately 150 claimants. The full list of Epstein\'s co‐conspirators\n —  named in the FBI\'s 2006 investigation  —  has not been fully prosecuted. The survivors deserve justice. The public record is available. The pressure for accountability\nmust continue.\nACTION 08\nTeach History as It Actually Happened\nThe history documented in this book  —  the Bank War, the Jekyll Island meeting, the\nWarburg brothers, Executive Order 11110, the petrodollar system  —  is not taught in\nmost American schools. It is not secret. It is simply inconvenient. If you are a teacher,\na parent, or anyone who has influence over what young people learn, consider\nintroducing them to the primary sources. Carroll Quigley\'s Tragedy and Hope is available free at archive.org. G. Edward Griffin\'s The Creature from Jekyll Island is available at\nmost libraries. The documents are there. The question is whether we choose to read\nthem.\nACTION 09\nFollow the Kevin Warsh Nomination\nAs of March 2026, Kevin Warsh  —  son‐in‐law of Ronald Lauder, who funded Benjamin\nNetanyahu\'s 1996 election campaign and has been a documented associate of Jeffrey\nEpstein  —  has been nominated by President Trump to chair the Federal Reserve. His\nconfirmation hearing will be a test of whether the Senate will ask the questions that\nthis book documents. Follow the confirmation process. Contact your senators. Ask\nthem to ask the questions.' },
       { type: 'text', text: 'ACTION 10\nIf You Know Something, Say Something\nThis book is a beginning, not an end. The investigation is ongoing. If you have documents, testimony, or evidence that is relevant to the stories told here  —  particularly\nregarding the Epstein network, the Federal Reserve\'s ownership structure, or the\npolitical financing documented in Chapter 11  —  there are secure channels for sharing\nthat information. The Freedom of the Press Foundation (freedom.press) operates SecureDrop, a secure whistleblower submission system used by major news organizations. The information you have may be the piece that completes the picture.\nThe Reader\'s Investigation Kit: Primary Sources by\nChapter\nCHAPTERS 1–3: CENTRAL BANKING HISTORY\nThe Federal Reserve Act (1913)\nAvailable at: loc.gov (Library of Congress). The original text of the legislation that created the Federal Reserve.\nG. Edward Griffin, The Creature from Jekyll Island (1994)\nThe most comprehensive documented account of the Jekyll Island meeting and the creation of the Federal Reserve.\nAvailable at most libraries and archive.org.\nCongressional Record, 1913 Federal Reserve Debates\nAvailable at: congress.gov. Includes the floor speeches of Representative Charles Lindbergh Sr. opposing the Federal\nReserve Act.\nCHAPTERS 4–5: WARBURG BROTHERS, WWI, HENRY FORD\nHenry Ford, The International Jew (1920–1922)\nAvailable at archive.org. Read in historical context. The documented facts about Ford\'s relationship with the banking\nestablishment are separate from his antisemitic conclusions.\nAnthony Sutton, Wall Street and the Bolshevik Revolution (1974)\nDocumented academic research on the financing of the Russian Revolution by American banking interests. Available at\narchive.org.' },
       { type: 'text', text: 'CHAPTER 6: JFK AND EXECUTIVE ORDER 11110\nExecutive Order 11110 ( June 4, 1963)\nAvailable at: federalregister.gov. The full text of the order. Read it and form your own conclusions about its scope and\nsignificance.\nWarren Commission Report (1964)\nAvailable at: archives.gov. The official investigation into JFK\'s assassination. Also available: the House Select Committee\non Assassinations report (1979), which concluded there was "probably" a conspiracy.\nCHAPTERS 9–10: FEDERAL RESERVE AND 2008 CRISIS\nGAO Audit of the Federal Reserve (2011)\nGAO-11-696. Available at: gao.gov. The first audit of the Federal Reserve in its history. Documents $16.1 trillion in\nemergency loans.\nSenate Permanent Subcommittee on Investigations Report (2011)\nAvailable at: hsgac.senate.gov. 635 pages documenting the causes of the 2008 financial crisis, including Goldman Sachs\'s\nrole.\nFinancial Crisis Inquiry Commission Report (2011)\nAvailable at: fcic.law.stanford.edu. The official government investigation into the 2008 crisis.\nCHAPTERS 11–12: LAUDER DYNASTY AND EPSTEIN FILES\nSDNY Epstein Indictment (2019)\nAvailable at: justice.gov/usao-sdny. The federal indictment of Jeffrey Epstein for sex trafficking.\nDOJ Epstein Files Release ( January 30, 2026)\nAvailable at: justice.gov. 3.5 million pages of documents released under the Epstein Files Transparency Act.\nMaxwell Trial Transcripts (2021)\nAvailable at: courtlistener.com (PACER). The complete trial transcripts from United States v. Ghislaine Maxwell.\nThe truth does not require your belief. It requires only your attention. The\ndocuments are there. The connections are there. The history is there. What\nhas been missing is the willingness to look at it all together, in sequence, and\nto follow the thread wherever it leads.\nThis book has followed that thread. What you do with it is up to you.' },
-      { type: 'text', text: '—  B.R.  ·  March 2026' }
+      { type: 'text', text: '— Veritas Press  ·  March 2026' }
     ],
     sources: [
       { id: 1, text: 'The Federal Reserve Act, Pub. L. 63-43, 38 Stat. 251 (1913). Full text available at the Library of Congress.', url: 'https://www.loc.gov/item/rbpe.24404500/' },

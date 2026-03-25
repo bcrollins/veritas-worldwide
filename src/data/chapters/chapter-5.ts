@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Henry Ford, The International Jew & the Gold Standard',
   subtitle: 'The industrialist who built the American middle class also published the most controversial newspaper series in American history — and his warnings about the gold standard proved prophetic.',
   dateRange: '1920–1971',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Henry_ford_1919.jpg/800px-Henry_ford_1919.jpg',

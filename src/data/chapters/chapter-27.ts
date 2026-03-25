@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Surveillance State — From ECHELON to Pegasus',
   subtitle: 'The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.',
   dateRange: '1947–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Criminal_Courts_Building%2C_100_Center_St.%2C_New_York_City._LOC_gsc.5a08406.jpg',

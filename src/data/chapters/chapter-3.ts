@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Jekyll Island & the Creation of the Federal Reserve',
   subtitle: 'In November 1910, six men representing a quarter of the world\\\'s wealth boarded a private rail car in New Jersey. Their destination: a private island off the coast of Georgia. Their mission: to draft the blueprint for a new central bank.',
   dateRange: '1907–1913',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/GA_Jekyll_Island_Club_HD_Clubhouse01.jpg/1280px-GA_Jekyll_Island_Club_HD_Clubhouse01.jpg',

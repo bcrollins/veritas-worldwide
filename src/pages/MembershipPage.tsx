@@ -445,7 +445,7 @@ export default function MembershipPage() {
             },
             {
               q: 'Who is behind Veritas Press?',
-              a: 'An independent editorial team operating under the initials B.R. We maintain anonymity to keep the focus on the documented evidence — not any individual. Our methodology, sources, and evidence tiers are fully transparent.',
+              a: 'An independent editorial team. We maintain anonymity to keep the focus on the documented evidence — not any individual. Our methodology, sources, and evidence tiers are fully transparent.',
             },
             {
               q: 'What makes this different from other news outlets?',

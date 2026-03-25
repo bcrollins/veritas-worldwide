@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Rockefeller Medicine & the Chronic Disease Machine',
   subtitle: 'How the Rockefeller Foundation reshaped American medicine to favor pharmaceutical treatment over prevention — and the financial incentives that keep the system in place.',
   dateRange: '1910–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',

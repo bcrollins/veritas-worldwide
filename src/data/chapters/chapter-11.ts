@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Shadow Institutions — Bilderberg, CFR, Trilateral Commission & the BIS',
   subtitle: 'The private organizations where the world\\\'s most powerful people meet behind closed doors — documented through leaked attendee lists, founding charters, and their own publications.',
   dateRange: '1921–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harold_Pratt_House_north_staircase_jeh.jpg/1280px-Harold_Pratt_House_north_staircase_jeh.jpg',

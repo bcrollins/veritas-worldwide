@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The 2008 Financial Crisis',
   subtitle: 'How Wall Street\\\'s reckless gambling crashed the global economy, how the government bailed out the banks with taxpayer money, and how no one went to prison.',
   dateRange: '2007–2010',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wall_Street_-_New_York_Stock_Exchange.jpg/1280px-Wall_Street_-_New_York_Stock_Exchange.jpg',

@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Operation Mockingbird & CIA Media Influence',
   subtitle: 'The documented CIA program to infiltrate and influence American media — from the Cold War to the present day.',
   dateRange: '1948–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Aerial_view_of_CIA_headquarters%2C_Langley%2C_Virginia_14762v.jpg',
@@ -18,7 +18,7 @@ const chapter: Chapter = {
     { type: 'dropcap', text: '1975 Church Committee hearings. Over 400 journalists\non the CIA payroll. Carl Bernstein\'s 1977 Rolling Stone' },
     { type: 'text', text: 'exposé.  How  narrative  control  was  institutionalized' },
     { type: 'text', text: 'and its connection to modern media consolidation.' },
-    { type: 'text', text: 'B.R. | Research Correspondent · March 2026 · Evidence Classification: Multi-Tier' },
+    { type: 'text', text: 'Veritas Press | Research Correspondent · March 2026 · Evidence Classification: Multi-Tier' },
     { type: 'text', text: 'CHAPTER 20   —   THE DEEP STATE \' S  ORCHESTRA\nOperation Mockingbird & The\nCIA-Media Pipeline\nThe Cold War was a battle of ideologies, a shadowy conflict fought not just\nwith spies and soldiers, but with information. In this war of words and\nideas, the Central Intelligence Agency (CIA) sought to control the narrative,\nto shape public opinion both at home and abroad. To do this, they turned to\nthe most powerful weapon in their arsenal: the American press. Operation\nMockingbird, a clandestine campaign to recruit journalists and infiltrate\nmedia organizations, was the result. This was not a conspiracy theory, but a\ndocumented program that was exposed by the Church Committee in 1975\nand further detailed in Carl Bernstein\'s explosive 1977 Rolling Stone article.\nThe legacy of Mockingbird is a legacy of distrust, a legacy that continues to\nhaunt the relationship between the American people and the media to this\nday.' },
     { type: 'text', text: 'This chapter matters because it reveals a documented history of the CIA\'s deliberate and systematic manipulation of the American media, academic institutions, and cultural organizations throughout the Cold War and beyond.' },
     { type: 'text', text: '400+\nJOURNALISTS WHO\nSECRETLY WORKED FOR\nTHE CIA\n$1B+\nCIA\'S ANNUAL\nPROPAGANDA BUDGET\nIN THE 1970S' },

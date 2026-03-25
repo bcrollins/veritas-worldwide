@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The World Today',
   subtitle: 'How a convergence of financial, political, pharmaceutical, and intelligence systems created the architecture of modern control — and why most people never notice.',
   dateRange: '2025',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Times_Square_Ball_from_above.jpg/1280px-Times_Square_Ball_from_above.jpg',

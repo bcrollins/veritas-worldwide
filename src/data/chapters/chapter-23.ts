@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The War on Drugs',
   subtitle: 'How a policy designed to criminalize dissent became the longest and most expensive domestic war in American history.',
   dateRange: '1971–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',

@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Talmud, the Balfour Declaration & the Origins of Zionism',
   subtitle: 'The documented history of the political movement that would reshape the Middle East and redefine the relationship between religion, nationalism, and geopolitics.',
   dateRange: '1897–1948',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Balfour_declaration_unmarked.jpg/960px-Balfour_declaration_unmarked.jpg',

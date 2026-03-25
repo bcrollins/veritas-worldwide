@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Fluoride & Public Water',
   subtitle: 'The documented history of water fluoridation — from its industrial origins to its adoption as public health policy.',
   dateRange: '1945–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',

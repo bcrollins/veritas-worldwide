@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Vaccine History — From Polio to COVID-19',
   subtitle: 'A documented history of vaccine development, the regulatory framework that governs it, and the financial incentives that shape public health policy.',
   dateRange: '1955–Present',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/800px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',

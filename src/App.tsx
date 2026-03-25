@@ -34,7 +34,6 @@ const SourcesPage = lazy(() => import('./pages/SourcesPage'))
 const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
 const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
 const TimelinePage = lazy(() => import('./pages/TimelinePage'))
-const AboutPage = lazy(() => import('./pages/AboutPage'))
 const AccessibilityPage = lazy(() => import('./pages/AccessibilityPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
@@ -110,7 +109,6 @@ function Header() {
     { to: '/sources', label: 'Sources' },
     { to: '/timeline', label: 'Timeline' },
     { to: '/membership', label: 'Membership' },
-    { to: '/about', label: 'About' },
   ]
 
   const allLinks = [
@@ -409,10 +407,9 @@ function Footer() {
               <Link to="/bookmarks" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.bookmarks')}</Link>
             </div>
           </nav>
-          <nav aria-label="About">
-            <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase text-white/60 mb-4">About</p>
+          <nav aria-label="Connect">
+            <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase text-white/60 mb-4">Connect</p>
             <div className="flex flex-col gap-2.5">
-              <Link to="/about" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.about')}</Link>
               <Link to="/membership" className="font-sans text-sm text-crimson-light hover:text-white transition-colors font-semibold">{t('nav.membership')}</Link>
               <a href="mailto:rights@veritasworldwide.com" className="font-sans text-sm text-white/40 hover:text-white transition-colors">Contact</a>
             </div>
@@ -534,7 +531,6 @@ export default function App() {
           <Route path="/bookmarks" element={<BookmarksPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="/accessibility" element={<AccessibilityPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />

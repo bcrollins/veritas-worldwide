@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Birth of Central Banking',
   subtitle: 'From the Frankfurt ghetto to the Bank of England, from Napoleon\'s wars to the halls of the United States Congress, the story of how private banking dynasties captured the power to create money, and what happened to those who tried to take it back.',
   dateRange: '1694–1836',
-  author: 'B.R.',
+  author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG/1280px-Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG',

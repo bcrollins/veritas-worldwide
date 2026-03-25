@@ -5,8 +5,8 @@ import { DONATE_URL } from '../lib/constants'
 
 const editorialTeam = [
   {
-    initials: 'B.R.',
-    name: 'B. Rollins',
+    initials: 'VP',
+    name: 'Veritas Press',
     role: 'Lead Investigator & Editor-in-Chief',
     bio: 'Former intelligence analyst with over a decade of experience in open-source intelligence gathering. Specializes in financial networks and political influence operations.',
   },
