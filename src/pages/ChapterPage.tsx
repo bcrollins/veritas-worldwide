@@ -26,6 +26,7 @@ import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 import { getChapterImages } from '../data/chapterImages'
+import { ImageWithFallback } from '../components/ImageWithFallback'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 
 const diagramComponents: Record<string, React.ComponentType> = {
@@ -50,21 +51,12 @@ function FigureBlock({ image }: { image: ImageData }) {
   return (
     <figure className={`my-10 ${widthClass}`}>
       <div className="overflow-hidden rounded-sm border border-border bg-parchment-dark">
-        <img
+        <ImageWithFallback
           src={image.src}
           alt={image.alt}
           loading="lazy"
           className="w-full h-auto object-cover"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement
-            target.style.display = 'none'
-            const parent = target.parentElement
-            if (parent) {
-              parent.classList.add('hidden')
-              const caption = parent.parentElement?.querySelector('figcaption')
-              if (caption) (caption as HTMLElement).style.display = 'none'
-            }
-          }}
+          retryCount={3}
         />
       </div>
       {(image.caption || image.credit) && (
@@ -113,17 +105,13 @@ function HeroImage({ image }: { image: ImageData }) {
   return (
     <figure className="mb-10 -mx-4 sm:-mx-6 lg:mx-0 hero-image">
       <div className="overflow-hidden">
-        <img
-          ref={imgRef}
+        <ImageWithFallback
           src={image.src}
           alt={image.alt}
           loading="eager"
           className="w-full h-64 md:h-80 lg:h-[420px] object-cover will-change-transform"
           style={{ transform: 'translateY(0) scale(1.1)' }}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement
-            target.closest('figure')?.classList.add('hidden')
-          }}
+          retryCount={3}
         />
       </div>
       {(image.caption || image.credit) && (

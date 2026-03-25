@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
 import AuthModal from './components/AuthModal'
+import { isAdminLoggedIn } from './lib/adminAuth'
 import Toast from './components/Toast'
 import ErrorBoundary from './components/ErrorBoundary'
 import ScrollToTop from './components/ScrollToTop'
@@ -89,6 +90,8 @@ function Header() {
   const { isLoggedIn, user, logout, setShowAuthModal } = useAuth()
   const { t } = useI18n()
   const ctaVariant = useExperiment('membership-cta-copy')
+  const [isAdmin, setIsAdmin] = useState(false)
+  useEffect(() => { setIsAdmin(isAdminLoggedIn()) }, [location.pathname, isLoggedIn])
   const navRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => { setMenuOpen(false) }, [location.pathname])
@@ -134,6 +137,18 @@ function Header() {
               <ReadingStreak />
               <LanguageSelector />
               <ThemeToggle />
+              {isAdmin && (
+                <Link
+                  to="/admin"
+                  className="hidden sm:inline-flex items-center justify-center gap-1 px-2 py-1 min-h-[28px] bg-crimson/10 font-sans text-[0.6rem] font-bold tracking-[0.08em] uppercase text-crimson hover:bg-crimson/20 transition-colors rounded-sm"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Admin
+                </Link>
+              )}
               {isLoggedIn ? (
                 <button
                   onClick={logout}

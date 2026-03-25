@@ -1,3 +1,4 @@
+import { ImageWithFallback } from './ImageWithFallback'
 /**
  * AipacDiagram — Interactive AIPAC Congressional Influence Map
  *
