@@ -11,12 +11,12 @@ interface SocialAccount {
 
 const DEFAULT_ACCOUNTS: SocialAccount[] = [
   { platform: 'X (Twitter)', handle: '@VeritasWorldwide', url: 'https://x.com/VeritasWorldwide', status: 'not_created', followers: 0, notes: '' },
-  { platform: 'Instagram', handle: '@veritasworldwide', url: 'https://instagram.com/veritasworldwide', status: 'not_created', followers: 0, notes: '' },
-  { platform: 'Threads', handle: '@veritasworldwide', url: 'https://threads.net/@veritasworldwide', status: 'not_created', followers: 0, notes: '' },
+  { platform: 'Instagram', handle: '@veritasworldwidepress', url: 'https://instagram.com/veritasworldwidepress', status: 'not_created', followers: 0, notes: '⚠️ @veritasworldwide TAKEN by unrelated account. Use @veritasworldwidepress' },
+  { platform: 'Threads', handle: '@veritasworldwidepress', url: 'https://threads.net/@veritasworldwidepress', status: 'not_created', followers: 0, notes: 'Tied to Instagram handle — use @veritasworldwidepress' },
   { platform: 'LinkedIn', handle: 'Veritas Worldwide Press', url: 'https://linkedin.com/company/veritas-worldwide-press', status: 'not_created', followers: 0, notes: 'Company Page' },
   { platform: 'Facebook Page', handle: 'Veritas Worldwide Press', url: 'https://facebook.com/VeritasWorldwidePress', status: 'not_created', followers: 0, notes: '' },
   { platform: 'YouTube', handle: '@VeritasWorldwide', url: 'https://youtube.com/@VeritasWorldwide', status: 'not_created', followers: 0, notes: '' },
-  { platform: 'TikTok', handle: '@veritasworldwide', url: 'https://tiktok.com/@veritasworldwide', status: 'not_created', followers: 0, notes: '' },
+  { platform: 'TikTok', handle: '@veritasworldwidepress', url: 'https://tiktok.com/@veritasworldwidepress', status: 'not_created', followers: 0, notes: '⚠️ @veritasworldwide TAKEN by unrelated account (6 followers). Use @veritasworldwidepress' },
   { platform: 'Pinterest', handle: 'veritasworldwide', url: 'https://pinterest.com/veritasworldwide', status: 'not_created', followers: 0, notes: '' },
   { platform: 'Reddit', handle: 'r/VeritasWorldwide', url: 'https://reddit.com/r/VeritasWorldwide', status: 'not_created', followers: 0, notes: 'Subreddit' },
   { platform: 'Discord', handle: 'Veritas Worldwide', url: '', status: 'not_created', followers: 0, notes: 'Community Server' },
@@ -33,12 +33,12 @@ const STANDARD_BIO = {
 
 const PLATFORM_SETUP: Record<string, string[]> = {
   'X (Twitter)': ['Create account at x.com/signup', 'Set handle to @VeritasWorldwide', 'Upload profile image (V logo)', 'Upload banner (1500x500)', 'Set bio (medium)', 'Add website link', 'Pin introductory tweet', 'Queue 10+ tweets via TweetDeck'],
-  'Instagram': ['Create/convert to Professional Account', 'Set handle to @veritasworldwide', 'Upload profile image (V logo 320x320)', 'Set bio (short) + link', 'Create 3 Highlight covers', 'Post 9-grid launch content', 'Set up Linktree or link-in-bio'],
+  'Instagram': ['Create/convert to Professional Account', 'Set handle to @veritasworldwidepress (⚠️ @veritasworldwide taken)', 'Upload profile image (V logo 320x320)', 'Set bio (short) + link', 'Create 3 Highlight covers', 'Post 9-grid launch content', 'Set up Linktree or link-in-bio'],
   'Threads': ['Download Threads app', 'Login with Instagram account', 'Set bio (short)', 'Post 5+ introduction threads', 'Follow relevant accounts'],
   'LinkedIn': ['Create Company Page', 'Set name: Veritas Worldwide Press', 'Upload logo + banner', 'Set description (long bio)', 'Add website URL', 'Publish 3+ articles', 'Invite connections'],
   'Facebook Page': ['Create Page (News/Media category)', 'Set name: Veritas Worldwide Press', 'Upload profile + cover photo', 'Set About section (long bio)', 'Add website + social links', 'Create pinned post', 'Invite friends to follow'],
   'YouTube': ['Create channel at studio.youtube.com', 'Set handle to @VeritasWorldwide', 'Upload profile + banner art', 'Set channel description (long bio)', 'Upload intro/trailer video', 'Create playlists by topic'],
-  'TikTok': ['Create account at tiktok.com/signup', 'Set handle to @veritasworldwide', 'Upload profile image', 'Set bio (short) + link', 'Post 3+ intro videos', 'Research trending sounds'],
+  'TikTok': ['Create account at tiktok.com/signup', 'Set handle to @veritasworldwidepress (⚠️ @veritasworldwide taken)', 'Upload profile image', 'Set bio (short) + link', 'Post 3+ intro videos', 'Research trending sounds'],
   'Pinterest': ['Create Business account', 'Set username to veritasworldwide', 'Upload profile image', 'Set bio (medium)', 'Create 10+ boards by chapter topic', 'Pin 5+ infographics per board'],
   'Reddit': ['Create subreddit r/VeritasWorldwide', 'Set community description (long bio)', 'Add rules (civil discourse, sources required)', 'Create wiki with reading guide', 'Post 5+ discussion threads', 'Enable post flair by chapter'],
   'Discord': ['Create server: Veritas Worldwide', 'Set up channels: #welcome, #general, #chapter-discussion, #source-submissions, #evidence-review', 'Create roles: Reader, Contributor, Moderator', 'Set up welcome message + rules', 'Create invite link', 'Post in 5+ channels'],
