@@ -1,22 +1,38 @@
 {
-  "run": 2,
+  "run": 3,
   "date": "2026-03-28",
   "site": [
     {
       "feature": "Chapter Reading",
-      "composite": 8.5,
-      "previous": 7.9,
-      "delta": 0.6,
+      "composite": 8.7,
+      "previous": 8.5,
+      "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Remove public source-library payloads from preview responses and add authenticated end-to-end coverage for the gated reader flow."
+      "plus_half_requires": "Add authenticated end-to-end coverage for preview-to-full transitions, exports, and search-driven chapter entry points."
     },
     {
       "feature": "Reader Access Control",
-      "composite": 8.4,
-      "previous": 7.4,
+      "composite": 8.7,
+      "previous": 8.4,
+      "delta": 0.3,
+      "status": "improved",
+      "plus_half_requires": "Tie future premium tiers, citations, and admin-only tools to explicit server-side entitlements instead of UI-level assumptions."
+    },
+    {
+      "feature": "Source Browser",
+      "composite": 8.2,
+      "previous": 7.1,
+      "delta": 1.1,
+      "status": "improved",
+      "plus_half_requires": "Add signed-in filtering by source hierarchy, institution, and chapter evidence mix without exposing locked citations anonymously."
+    },
+    {
+      "feature": "Search",
+      "composite": 8.0,
+      "previous": 7.0,
       "delta": 1.0,
       "status": "improved",
-      "plus_half_requires": "Back free-account entitlements with durable server-side access rules for citations, source-library responses, and future premium tiers."
+      "plus_half_requires": "Add evidence-tier, source-only, and chapter-type filters with signed-in highlighting for source matches."
     },
     {
       "feature": "Publication Shell",
@@ -62,15 +78,18 @@
     },
     {
       "area": "Conversion Optimization",
-      "score": 7.2,
-      "previous": 6.9,
-      "delta": 0.3,
+      "score": 7.6,
+      "previous": 7.2,
+      "delta": 0.4,
       "status": "improved",
-      "plus_half_requires": "Finish entitlement-copy alignment across every landing page and send new signups directly into the gated reading flow."
+      "plus_half_requires": "Send locked search/source visitors into a dedicated post-signup redirect and test that funnel against the current gate copy."
     }
   ],
   "security": {
-    "p0_resolved": [],
+    "p0_resolved": [
+      "Public source-library payloads were removed from preview chapter responses.",
+      "Anonymous search no longer returns source-only matches that require authenticated source access."
+    ],
     "p0_open": [],
     "new_p0": []
   }

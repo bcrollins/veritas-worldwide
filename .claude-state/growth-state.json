@@ -1,5 +1,5 @@
 {
-  "run": 2,
+  "run": 3,
   "date": "2026-03-28",
   "channels": {
     "website": { "status": "live", "handle": "https://veritasworldwide.com" },
@@ -57,8 +57,8 @@
     "content_calendar_days": 0
   },
   "last_completed": [
-    "Moved chapter delivery out of the browser bundle and into generated server-only JSON served by authenticated Express endpoints.",
-    "Protected /the-record.pdf and /api/downloads/the-record.pdf behind JWT auth and verified anonymous 401 versus authenticated 200 responses in production.",
-    "Aligned homepage, membership, reader export, and social-template copy with the free-reader-account entitlement model."
+    "Removed source lists from public preview payloads while preserving chapter-level source counts for public summaries.",
+    "Locked the full Sources page behind free-reader-account access and replaced anonymous bibliography access with chapter-by-chapter source-count previews.",
+    "Moved search onto /api/search with anonymous preview scope and authenticated full/source search, verified in production."
   ]
 }

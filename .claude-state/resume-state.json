@@ -1,16 +1,15 @@
 {
-  "run": 2,
+  "run": 3,
   "date": "2026-03-28",
   "completed": [
-    "Chapter delivery now comes from generated server-only JSON over /api/chapters instead of import.meta.glob browser bundles.",
-    "Anonymous visitors receive preview chapter payloads while authenticated readers receive full chapter content and protected PDF downloads.",
-    "Homepage, membership, export, and social-template copy now describe free reader accounts rather than anonymous open access.",
-    "Verification completed with npx tsc --noEmit, npm run build, local and live API smoke checks, and a live synthetic account registration."
+    "Preview chapter payloads now expose source counts without exposing the underlying citation library.",
+    "SourcesPage now shows anonymous readers a gated chapter-by-chapter source summary and signed-in readers the full bibliography.",
+    "SearchPage now uses a server-backed /api/search endpoint that returns preview-safe results anonymously and full source-text matches after sign-in.",
+    "Verification completed with npx tsc --noEmit, npm run build, local API checks, and live anonymous/authenticated search validation."
   ],
-  "next_task": "Gate source-library and citation payloads behind the same authenticated policy and move search to a server-backed preview/full index split.",
+  "next_task": "Add signed-in evidence/source filters to search and the source browser, then finish portal-side growth infrastructure in HubSpot, GA4, and Search Console.",
   "next_priorities": [
-    "Remove full source-library and citation payloads from preview responses so anonymous readers cannot reconstruct gated chapters from supporting data.",
-    "Move search onto a server-backed index that serves preview text to anonymous readers and full-record search to signed-in accounts.",
+    "Add evidence-tier, source-only, and source-hierarchy filters to signed-in search and source browsing without weakening anonymous preview rules.",
     "Connect HubSpot workflows, double opt-in, and lifecycle scoring in the portal.",
     "Connect Google Search Console and verify production funnel events in GA4 plus HubSpot."
   ]
