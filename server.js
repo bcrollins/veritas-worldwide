@@ -9,8 +9,8 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 // ── Persistent storage ────────────────────────────────────────────
-// Uses DATA_DIR env var (Railway volume) or falls back to ./data
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'data')
+// Uses explicit DATA_DIR, then Railway's mounted volume path, then falls back to ./data
+const DATA_DIR = process.env.DATA_DIR || process.env.RAILWAY_VOLUME_MOUNT_PATH || path.join(__dirname, 'data')
 const DATA_FILE = path.join(DATA_DIR, 'analytics.json')
 
 // ── In-memory analytics store ─────────────────────────────────────
@@ -1000,8 +1000,10 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`[veritas] Serving on port ${PORT}`)
   console.log(`[veritas] Data dir: ${DATA_DIR}`)
   console.log(`[veritas] Analytics: ${store.lifetime} lifetime views loaded`)
-  if (!process.env.DATA_DIR) {
-    console.warn('[veritas] WARNING: DATA_DIR not set — using ./data (data may be lost on redeploy)')
-    console.warn('[veritas] Set DATA_DIR to a Railway volume mount path for persistent analytics')
+  if (process.env.RAILWAY_VOLUME_MOUNT_PATH && !process.env.DATA_DIR) {
+    console.log(`[veritas] Using Railway volume mount path: ${process.env.RAILWAY_VOLUME_MOUNT_PATH}`)
+  } else if (!process.env.DATA_DIR) {
+    console.warn('[veritas] WARNING: DATA_DIR and RAILWAY_VOLUME_MOUNT_PATH not set — using ./data (data may be lost on redeploy)')
+    console.warn('[veritas] Attach a Railway volume or set DATA_DIR to a persistent mount path for analytics retention')
   }
 })
