@@ -1,5 +1,5 @@
 {
-  "run": 4,
+  "run": 5,
   "date": "2026-03-28",
   "site": [
     {
@@ -12,9 +12,9 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 8.9,
-      "previous": 8.7,
-      "delta": 0.2,
+      "composite": 9.0,
+      "previous": 8.9,
+      "delta": 0.1,
       "status": "improved",
       "plus_half_requires": "Tie future premium tiers, citations, and admin-only tools to explicit server-side entitlements instead of UI-level assumptions."
     },
@@ -28,11 +28,11 @@
     },
     {
       "feature": "Search",
-      "composite": 8.5,
-      "previous": 8.0,
-      "delta": 0.5,
+      "composite": 8.7,
+      "previous": 8.5,
+      "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Preserve signed-in search filters across post-auth redirects and add richer source/title relevance ranking with saved recent queries."
+      "plus_half_requires": "Add richer source/title relevance ranking, saved recent queries, and shareable deep links for filtered signed-in research views."
     },
     {
       "feature": "Publication Shell",
@@ -78,18 +78,19 @@
     },
     {
       "area": "Conversion Optimization",
-      "score": 8.0,
-      "previous": 7.6,
+      "score": 8.4,
+      "previous": 8.0,
       "delta": 0.4,
       "status": "improved",
-      "plus_half_requires": "Send locked search/source visitors into a dedicated post-signup redirect and test that funnel against the current gate copy."
+      "plus_half_requires": "Persist signed-in source-browser filters in shareable URLs and test the archive gate copy against a direct post-auth deep-link flow."
     }
   ],
   "security": {
     "p0_resolved": [
       "Public source-library payloads were removed from preview chapter responses.",
       "Anonymous search no longer returns source-only matches that require authenticated source access.",
-      "Preview chapter payloads no longer expose filter metadata intended for the authenticated source browser and full-search experience."
+      "Preview chapter payloads no longer expose filter metadata intended for the authenticated source browser and full-search experience.",
+      "Auth entry points now preserve intended archive destinations without defaulting every flow to signup mode."
     ],
     "p0_open": [],
     "new_p0": []
