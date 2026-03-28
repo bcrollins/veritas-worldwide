@@ -1,5 +1,5 @@
 {
-  "run": 1,
+  "run": 2,
   "date": "2026-03-28",
   "channels": {
     "website": { "status": "live", "handle": "https://veritasworldwide.com" },
@@ -57,8 +57,8 @@
     "content_calendar_days": 0
   },
   "last_completed": [
-    "Restored the three-block free preview gate on chapter pages and hid sources plus export actions for anonymous readers.",
-    "Added explicit email-marketing consent and privacy-policy acknowledgement to newsletter, exit-intent, and slide-up capture forms.",
-    "Verified the gated chapter experience with Playwright on the built local site."
+    "Moved chapter delivery out of the browser bundle and into generated server-only JSON served by authenticated Express endpoints.",
+    "Protected /the-record.pdf and /api/downloads/the-record.pdf behind JWT auth and verified anonymous 401 versus authenticated 200 responses in production.",
+    "Aligned homepage, membership, reader export, and social-template copy with the free-reader-account entitlement model."
   ]
 }

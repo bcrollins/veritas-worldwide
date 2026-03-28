@@ -1,22 +1,22 @@
 {
-  "run": 1,
+  "run": 2,
   "date": "2026-03-28",
   "site": [
     {
       "feature": "Chapter Reading",
-      "composite": 7.9,
-      "previous": 6.6,
-      "delta": 1.3,
+      "composite": 8.5,
+      "previous": 7.9,
+      "delta": 0.6,
       "status": "improved",
-      "plus_half_requires": "Move full-chapter entitlements to authenticated fetches so locked content is not bundled client-side for anonymous readers."
+      "plus_half_requires": "Remove public source-library payloads from preview responses and add authenticated end-to-end coverage for the gated reader flow."
     },
     {
       "feature": "Reader Access Control",
-      "composite": 7.4,
-      "previous": 5.8,
-      "delta": 1.6,
+      "composite": 8.4,
+      "previous": 7.4,
+      "delta": 1.0,
       "status": "improved",
-      "plus_half_requires": "Add server-backed membership and account enforcement for chapter exports, citations, and source-library access."
+      "plus_half_requires": "Back free-account entitlements with durable server-side access rules for citations, source-library responses, and future premium tiers."
     },
     {
       "feature": "Publication Shell",
@@ -31,9 +31,9 @@
     {
       "area": "Email Capture & Compliance",
       "score": 7.6,
-      "previous": 6.9,
-      "delta": 0.7,
-      "status": "improved",
+      "previous": 7.6,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Replace queue-only capture with portal-backed HubSpot forms, double opt-in, and workflow-level segmentation."
     },
     {
@@ -59,6 +59,14 @@
       "delta": 0.0,
       "status": "stable",
       "plus_half_requires": "Add thank-you landing pages and campaign-level attribution on donation and recurring-support returns."
+    },
+    {
+      "area": "Conversion Optimization",
+      "score": 7.2,
+      "previous": 6.9,
+      "delta": 0.3,
+      "status": "improved",
+      "plus_half_requires": "Finish entitlement-copy alignment across every landing page and send new signups directly into the gated reading flow."
     }
   ],
   "security": {
