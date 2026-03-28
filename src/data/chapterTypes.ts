@@ -68,3 +68,11 @@ export interface Chapter {
   crossLinks: { label: string; chapterId: string }[];
   keywords: string[];
 }
+
+export type ChapterAccessLevel = 'preview' | 'full';
+
+export interface LoadedChapter extends Chapter {
+  accessLevel: ChapterAccessLevel;
+  previewBlockLimit: number;
+  totalBlocks: number;
+}

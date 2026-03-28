@@ -10,7 +10,7 @@ export default function DownloadPDF() {
         import('jspdf'),
         import('../data/chapterLoaderHybrid'),
       ]);
-      const chapters = await loadAllChapters();
+      const chapters = await loadAllChapters({ scope: 'full' });
       const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
       const pageWidth = 210;
       const pageHeight = 297;

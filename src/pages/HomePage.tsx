@@ -19,7 +19,7 @@ export default function HomePage() {
   useEffect(() => {
     setMetaTags({
       title: `The Record | ${SITE_NAME}`,
-      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 31 chapters, 500+ primary sources, 100% free and open access.',
+      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 31 chapters, 500+ primary sources, and free reader accounts for full archive access.',
       url: SITE_URL,
     })
     setJsonLd([
@@ -300,7 +300,7 @@ export default function HomePage() {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <SharePanel
             title="The Record — Veritas Press"
-            description="A 31-chapter documentary history compiled from primary sources — court records, congressional testimony, declassified files. Free and open access."
+            description="A 31-chapter documentary history compiled from primary sources — court records, congressional testimony, declassified files. Free reader accounts unlock the full archive."
             contentId="home"
           />
 
@@ -337,7 +337,7 @@ export default function HomePage() {
 
       {/* Download Modal */}
       {showDownloadModal && (
-        <DownloadModal isOpen={showDownloadModal} onClose={() => setShowDownloadModal(false)} fileName="The Record" fileUrl="/the-record.pdf" />
+        <DownloadModal isOpen={showDownloadModal} onClose={() => setShowDownloadModal(false)} fileName="The Record" fileUrl="/api/downloads/the-record.pdf" />
       )}
     </div>
   )

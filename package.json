@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npx tsc && vite build",
-    "postbuild": "node scripts/prerender.mjs",
+    "postbuild": "node scripts/export-chapter-data.mjs && node scripts/prerender.mjs",
     "start": "node server.js",
     "preview": "vite preview"
   },

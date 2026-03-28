@@ -1,7 +1,7 @@
 import { type ReactNode, useEffect, useMemo, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
-import type { ContentBlock, Chapter, ImageData } from '../data/chapterTypes'
+import type { ContentBlock, Chapter, ImageData, LoadedChapter } from '../data/chapterTypes'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
 import { useAuth } from '../lib/AuthContext'
 import BookmarkButton from '../components/BookmarkButton'
@@ -741,7 +741,7 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
     chapter.sources.forEach(s => {
       lines.push(`[${s.id}] ${s.text}${s.url ? ` — ${s.url}` : ''}`)
     })
-    lines.push('', '© 2026 Veritas Press — veritasworldwide.com — Free & Open Access')
+    lines.push('', '© 2026 Veritas Press — veritasworldwide.com — Free reader account access')
 
     const blob = new Blob([lines.join('\n')], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
@@ -815,7 +815,7 @@ export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const { isLoggedIn, setShowAuthModal } = useAuth()
   const staticMetadata = chapterMeta.find(ch => ch.id === id)
-  const [chapter, setChapter] = useState<Chapter | null>(null)
+  const [chapter, setChapter] = useState<LoadedChapter | null>(null)
   const [isLoading, setIsLoading] = useState(!staticMetadata)
   
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
@@ -876,12 +876,12 @@ export default function ChapterPage() {
   }, [chapter, isLoading])
 
   useEffect(() => {
-    if (!chapter || isLoggedIn || chapter.content.length <= PREVIEW_BLOCK_LIMIT) return
+    if (!chapter || chapter.accessLevel !== 'preview') return
     const gateKey = `veritas_gate_hit:${chapter.id}`
     if (sessionStorage.getItem(gateKey)) return
     scoreContentGateHit(chapter.id)
     sessionStorage.setItem(gateKey, '1')
-  }, [chapter, isLoggedIn])
+  }, [chapter])
 
   /* ── Loading State ─────────────────────────────────── */
 
@@ -913,10 +913,9 @@ export default function ChapterPage() {
 
   const images = getChapterImages(chapter.id)
   const relatedChapters = getRelatedByKeywords(chapter)
-  const previewBlocks = chapter.content.slice(0, PREVIEW_BLOCK_LIMIT)
-  const hasLockedContent = !isLoggedIn && chapter.content.length > PREVIEW_BLOCK_LIMIT
-  const visibleBlocks = hasLockedContent ? previewBlocks : chapter.content
-  const remainingBlocks = Math.max(chapter.content.length - PREVIEW_BLOCK_LIMIT, 0)
+  const hasLockedContent = chapter.accessLevel === 'preview'
+  const visibleBlocks = chapter.content
+  const remainingBlocks = Math.max(chapter.totalBlocks - chapter.content.length, 0)
   const sidebarChapter = hasLockedContent ? { ...chapter, content: visibleBlocks } : chapter
 
   /* ── Main Render ───────────────────────────────────── */
@@ -973,7 +972,7 @@ export default function ChapterPage() {
           <div className="flex items-center gap-3 sm:gap-4 mt-5 pt-5 border-t border-border flex-wrap">
             <FontSizeToggle />
             <ShareButton chapter={chapter} />
-            {isLoggedIn ? (
+            {chapter.accessLevel === 'full' ? (
               <>
                 <DownloadButton chapter={chapter} />
                 <ChapterPDF chapter={chapter} />
@@ -1069,7 +1068,7 @@ export default function ChapterPage() {
           {/* ── LEFT: Article Body ──────────────────── */}
           <article className="min-w-0 py-10">
             {/* Chapter Images — Historical Photographs */}
-            {isLoggedIn && images.length > 0 && (
+            {!hasLockedContent && images.length > 0 && (
               <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {images.map((img, i) => (
                   <figure key={i} className="border border-border rounded-sm overflow-hidden bg-surface">

@@ -353,7 +353,7 @@ const staticPages = [
     description: 'A documentary history of power, money, and the institutions that shaped the modern world.',
     body: [
       'Veritas Press publishes longform investigative work built on primary sources, congressional records, court filings, declassified files, and public financial disclosures.',
-      'Volume I spans 31 chapters and more than 500 source documents. Every chapter is free to read, cite, print, and verify against the original record.',
+      'Volume I spans 31 chapters and more than 500 source documents. Every chapter is available through a free reader account, with public previews and traceable citations.',
     ],
     featuredChapterIds: chapters.slice(0, 6).map((chapter) => chapter.id),
     sourceFile: 'src/pages/HomePage.tsx',
@@ -385,9 +385,9 @@ const staticPages = [
     route: '/search',
     title: 'Search | The Record - Veritas Press',
     heading: 'Search The Record',
-    description: 'Full-text search across chapters, evidence boxes, sources, and documentary references.',
+    description: 'Search chapter titles, public preview text, sources, and documentary references.',
     body: [
-      'Search is built for readers who need to move from a name, institution, or event directly into the underlying chapter material and citations.',
+      'Search is built for readers who need to move from a name, institution, or event directly into the available chapter material and citations.',
     ],
     featuredChapterIds: ['overview', 'chapter-14', 'chapter-28'],
     sourceFile: 'src/pages/SearchPage.tsx',

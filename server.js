@@ -7,6 +7,52 @@ import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const PORT = process.env.PORT || 3000
+const GENERATED_CHAPTER_DATA_DIR = path.join(__dirname, 'generated', 'chapter-data')
+const CHAPTER_PUBLIC_DIR = path.join(GENERATED_CHAPTER_DATA_DIR, 'public')
+const CHAPTER_FULL_DIR = path.join(GENERATED_CHAPTER_DATA_DIR, 'full')
+const CHAPTER_PUBLIC_INDEX_FILE = path.join(GENERATED_CHAPTER_DATA_DIR, 'public-index.json')
+const CHAPTER_MANIFEST_FILE = path.join(GENERATED_CHAPTER_DATA_DIR, 'manifest.json')
+const RECORD_PDF_PATH = path.join(__dirname, 'dist', 'the-record.pdf')
+
+let publicChapterIndex = []
+let chapterDataManifest = { previewBlockLimit: 3, chapterIds: [], generatedAt: '' }
+
+function loadChapterData() {
+  try {
+    if (fs.existsSync(CHAPTER_PUBLIC_INDEX_FILE)) {
+      publicChapterIndex = JSON.parse(fs.readFileSync(CHAPTER_PUBLIC_INDEX_FILE, 'utf-8'))
+    }
+    if (fs.existsSync(CHAPTER_MANIFEST_FILE)) {
+      chapterDataManifest = JSON.parse(fs.readFileSync(CHAPTER_MANIFEST_FILE, 'utf-8'))
+    }
+    if (publicChapterIndex.length > 0) {
+      console.log(`[chapter-data] Loaded ${publicChapterIndex.length} public chapter records`)
+    }
+  } catch (err) {
+    console.warn('[chapter-data] Failed to load generated chapter data:', err.message)
+    publicChapterIndex = []
+  }
+}
+
+function sanitizeChapterId(value) {
+  if (typeof value !== 'string') return ''
+  const trimmed = value.trim()
+  return /^[a-z0-9-]+$/i.test(trimmed) ? trimmed : ''
+}
+
+function getChapterJson(scope, chapterId) {
+  const safeId = sanitizeChapterId(chapterId)
+  if (!safeId) return null
+  const filePath = path.join(scope === 'full' ? CHAPTER_FULL_DIR : CHAPTER_PUBLIC_DIR, `${safeId}.json`)
+  if (!fs.existsSync(filePath)) return null
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+  } catch {
+    return null
+  }
+}
+
+loadChapterData()
 
 // ── Persistent storage ────────────────────────────────────────────
 // Uses explicit DATA_DIR, then Railway's mounted volume path, then falls back to ./data
@@ -401,6 +447,78 @@ function requireDB(res) {
   }
   return true
 }
+
+app.get('/api/chapters', async (req, res) => {
+  const wantsFull = req.query.scope === 'full'
+
+  if (!wantsFull) {
+    res.setHeader('Cache-Control', 'no-store')
+    return res.json({
+      previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
+      chapters: publicChapterIndex,
+    })
+  }
+
+  const user = await authenticateToken(req)
+  if (!user) {
+    return res.status(401).json({ error: 'Not authenticated' })
+  }
+
+  const chapters = (chapterDataManifest.chapterIds || [])
+    .map((chapterId) => getChapterJson('full', chapterId))
+    .filter(Boolean)
+
+  res.setHeader('Cache-Control', 'private, no-store')
+  return res.json({
+    previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
+    chapters,
+  })
+})
+
+app.get('/api/chapters/:id', async (req, res) => {
+  const chapterId = sanitizeChapterId(req.params.id)
+  if (!chapterId) {
+    return res.status(400).json({ error: 'Invalid chapter id' })
+  }
+
+  const user = await authenticateToken(req)
+  const scope = user ? 'full' : 'public'
+  const chapter = getChapterJson(scope, chapterId)
+
+  if (!chapter) {
+    return res.status(404).json({ error: 'Chapter not found' })
+  }
+
+  res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
+  return res.json(chapter)
+})
+
+app.get('/api/downloads/the-record.pdf', async (req, res) => {
+  const user = await authenticateToken(req)
+  if (!user) {
+    return res.status(401).json({ error: 'Sign in required to download this file.' })
+  }
+  if (!fs.existsSync(RECORD_PDF_PATH)) {
+    return res.status(404).json({ error: 'File not found' })
+  }
+
+  res.setHeader('Cache-Control', 'private, no-store')
+  return res.sendFile(RECORD_PDF_PATH)
+})
+
+app.get('/the-record.pdf', async (req, res) => {
+  const user = await authenticateToken(req)
+  if (!user) {
+    res.setHeader('Cache-Control', 'no-store')
+    return res.status(401).type('text/plain').send('Sign in required to download this file.')
+  }
+  if (!fs.existsSync(RECORD_PDF_PATH)) {
+    return res.status(404).type('text/plain').send('File not found.')
+  }
+
+  res.setHeader('Cache-Control', 'private, no-store')
+  return res.sendFile(RECORD_PDF_PATH)
+})
 
 // ── Auth API Routes ───────────────────────────────────────────────
 

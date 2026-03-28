@@ -99,7 +99,7 @@ export default function SearchPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Search | The Record — Veritas Press',
-      description: `Full-text search across all ${chapters.length} chapters, sources, evidence, and data tables.`,
+      description: `Search chapter titles, source libraries, and public preview text across all ${chapters.length} chapters of The Record.`,
       url: `${SITE_URL}/search`,
     })
     setJsonLd({
@@ -173,7 +173,7 @@ export default function SearchPage() {
                 Search The Record
               </h1>
               <p className="font-body text-base text-ink-muted">
-                Full-text search across all {chapters.length} chapters, sources, evidence, and data tables.
+                Search chapter titles, sources, keywords, and public preview text across all {chapters.length} chapters.
               </p>
             </header>
 

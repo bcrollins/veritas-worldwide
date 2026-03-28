@@ -169,7 +169,7 @@ export default function AdminSocialPacks() {
 
       ctx.fillStyle = 'rgba(255,255,255,0.5)'
       ctx.font = '28px Inter, sans-serif'
-      wrapText(ctx, 'Every claim sourced. Every document linked. Free and open access.', 80, 460, 920, 40)
+      wrapText(ctx, 'Every claim sourced. Every document linked. Free reader accounts unlock the full archive.', 80, 460, 920, 40)
 
       // CTA button
       ctx.fillStyle = '#8B0000'

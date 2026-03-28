@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import type { Chapter } from '../data/chapterTypes'
+import type { LoadedChapter } from '../data/chapterTypes'
 import { loadAllChapters } from '../data/chapterLoaderHybrid'
 
 /**
@@ -8,7 +8,7 @@ import { loadAllChapters } from '../data/chapterLoaderHybrid'
  * Used by pages that need full content (SourcesPage, SearchPage, Admin).
  */
 export function useAllChapters() {
-  const [chapters, setChapters] = useState<Chapter[]>([])
+  const [chapters, setChapters] = useState<LoadedChapter[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

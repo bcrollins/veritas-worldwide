@@ -1,104 +1,101 @@
-/**
- * Hybrid Chapter Loader — dynamic import with Vite code-splitting
- * 
- * Each chapter is a separate chunk loaded on demand.
- * TOC uses lightweight chapterMeta; full content loaded lazily.
- */
+import type { LoadedChapter } from './chapterTypes'
 
-import type { Chapter } from './chapterTypes'
+type ChapterScope = 'public' | 'full'
 
-// Vite glob import — each chapter becomes its own async chunk
-const chapterModules = import.meta.glob<{ default: Chapter }>(
-  './chapters/*.ts',
-  { eager: false }
-) as Record<string, () => Promise<{ default: Chapter }>>
+const cache = new Map<string, LoadedChapter>()
+const pending = new Map<string, Promise<LoadedChapter | null>>()
 
-// Cache resolved chapters
-const cache = new Map<string, Chapter>()
-const pending = new Map<string, Promise<Chapter>>()
+function getAuthHeaders(): Record<string, string> {
+  if (typeof window === 'undefined') return {}
+  const token = window.localStorage.getItem('veritas_token')
+  return token ? { Authorization: `Bearer ${token}` } : {}
+}
 
-/**
- * Load a single chapter by ID. Returns cached if available.
- */
-export async function loadChapterContent(chapterId: string): Promise<Chapter | null> {
-  // Return from cache
-  if (cache.has(chapterId)) return cache.get(chapterId)!
+function cacheKey(chapterId: string, scope: ChapterScope) {
+  return `${scope}:${chapterId}`
+}
 
-  // Deduplicate concurrent requests
-  if (pending.has(chapterId)) return pending.get(chapterId)!
-
-  const key = `./chapters/${chapterId}.ts`
-  const loader = chapterModules[key]
-  if (!loader) {
-    console.warn(`No chapter module for "${chapterId}"`)
-    return null
-  }
-
-  const promise = loader().then((mod: { default: Chapter }) => {
-    const chapter = mod.default
-    cache.set(chapterId, chapter)
-    pending.delete(chapterId)
-    return chapter
-  }).catch((err: Error) => {
-    console.error(`Failed to load chapter "${chapterId}":`, err)
-    pending.delete(chapterId)
-    return null as unknown as Chapter
+async function fetchJson<T>(url: string, scope: ChapterScope): Promise<T> {
+  const response = await fetch(url, {
+    headers: scope === 'full' ? getAuthHeaders() : {},
   })
 
-  pending.set(chapterId, promise)
+  if (!response.ok) {
+    throw new Error(`Request failed (${response.status}) for ${url}`)
+  }
+
+  return response.json() as Promise<T>
+}
+
+export async function loadChapterContent(
+  chapterId: string,
+  options: { scope?: ChapterScope } = {}
+): Promise<LoadedChapter | null> {
+  const scope = options.scope ?? 'full'
+  const key = cacheKey(chapterId, scope)
+
+  if (cache.has(key)) return cache.get(key) || null
+  if (pending.has(key)) return pending.get(key) || null
+
+  const promise = fetchJson<LoadedChapter>(`/api/chapters/${chapterId}`, scope)
+    .then((chapter) => {
+      pending.delete(key)
+
+      if (scope === 'full' && chapter.accessLevel === 'preview') {
+        cache.set(cacheKey(chapterId, 'public'), chapter)
+        return chapter
+      }
+
+      cache.set(key, chapter)
+      return chapter
+    })
+    .catch((error: Error) => {
+      console.error(`Failed to load chapter "${chapterId}":`, error)
+      pending.delete(key)
+      return null
+    })
+
+  pending.set(key, promise)
   return promise
 }
 
-/**
- * Load chapter by array index (for ReadTheBookPage navigation)
- */
-export async function loadChapterByIndex(index: number, ids: string[]): Promise<Chapter | null> {
+export async function loadChapterByIndex(index: number, ids: string[], options: { scope?: ChapterScope } = {}) {
   if (index < 0 || index >= ids.length) return null
-  return loadChapterContent(ids[index])
+  return loadChapterContent(ids[index], options)
 }
 
-/**
- * Preload chapters in background (e.g. next/prev for smooth nav)
- */
-export function preloadChapters(chapterIds: string[]) {
+export function preloadChapters(chapterIds: string[], options: { scope?: ChapterScope } = {}) {
   for (const id of chapterIds) {
-    if (!cache.has(id) && !pending.has(id)) {
-      loadChapterContent(id).catch(() => {})
-    }
+    void loadChapterContent(id, options)
   }
 }
 
-/**
- * Clear cache (memory management)
- */
 export function clearContentCache(chapterId?: string) {
-  if (chapterId) { cache.delete(chapterId) }
-  else { cache.clear() }
+  if (chapterId) {
+    cache.delete(cacheKey(chapterId, 'full'))
+    cache.delete(cacheKey(chapterId, 'public'))
+  } else {
+    cache.clear()
+  }
 }
 
 export function getCacheStats() {
   return { cached: cache.size, keys: Array.from(cache.keys()) }
 }
 
-/**
- * Load ALL chapters in parallel. Returns array in order.
- * Used by pages that need full content (SourcesPage, SearchPage, Admin).
- */
-export async function loadAllChapters(): Promise<Chapter[]> {
-  const keys = Object.keys(chapterModules).sort()
-  const results = await Promise.all(
-    keys.map(async (key) => {
-      const id = key.replace('./chapters/', '').replace('.ts', '')
-      if (cache.has(id)) return cache.get(id)!
-      try {
-        const mod = await chapterModules[key]()
-        const chapter = mod.default
-        cache.set(id, chapter)
-        return chapter
-      } catch {
-        return null
-      }
+export async function loadAllChapters(options: { scope?: ChapterScope } = {}): Promise<LoadedChapter[]> {
+  const scope = options.scope ?? 'public'
+  const query = scope === 'full' ? '?scope=full' : ''
+
+  try {
+    const data = await fetchJson<{ chapters: LoadedChapter[] }>(`/api/chapters${query}`, scope)
+    data.chapters.forEach((chapter) => {
+      const cacheScope = chapter.accessLevel === 'full' ? 'full' : 'public'
+      cache.set(cacheKey(chapter.id, cacheScope), chapter)
     })
-  )
-  return results.filter((ch): ch is Chapter => ch !== null)
+    return data.chapters
+  } catch (error) {
+    console.error('Failed to load chapters:', error)
+    return []
+  }
 }

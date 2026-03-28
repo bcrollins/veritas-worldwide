@@ -45,7 +45,7 @@ const TIERS = [
     annualPrice: 0,
     color: '#6B7280',
     features: [
-      'Full access to all 28 chapters of The Record',
+      'Full access to all 28 published chapters with a free reader account',
       'Israel Dossier & all special investigations',
       'Source library with primary documents',
       'Dark mode, bookmarks, search',
@@ -149,7 +149,7 @@ export default function MembershipPage() {
             <span className="text-white/20">·</span>
             <span>500+ primary sources cited</span>
             <span className="text-white/20">·</span>
-            <span>100% free & open access</span>
+            <span>Free reader accounts unlock the full archive</span>
           </div>
 
           {/* Strategy 3: Billing toggle */}
@@ -441,7 +441,7 @@ export default function MembershipPage() {
           {[
             {
               q: 'Will the content stay free?',
-              a: 'Yes — always. Every chapter, investigation, and source document is and will remain free and open access. Membership adds premium features like early access, exclusive dossiers, and editorial tools, but the core record will never be paywalled. The truth should be free.',
+              a: 'Yes — always. Every chapter, investigation, and source document remains available through a free reader account. Membership adds premium features like early access, exclusive dossiers, and editorial tools, but the documentary record itself will not disappear behind a paid tier.',
             },
             {
               q: 'Who is behind Veritas Press?',

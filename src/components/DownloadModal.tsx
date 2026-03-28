@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DONATE_URL } from '../lib/constants'
+import { useAuth } from '../lib/AuthContext'
 
 interface DownloadModalProps {
   isOpen: boolean
@@ -9,23 +10,68 @@ interface DownloadModalProps {
 }
 
 export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: DownloadModalProps) {
-  const [step, setStep] = useState<'cta' | 'downloading'>('cta')
+  const { isLoggedIn, setShowAuthModal } = useAuth()
+  const [step, setStep] = useState<'cta' | 'downloading' | 'error'>('cta')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  useEffect(() => {
+    if (isOpen) {
+      setStep('cta')
+      setErrorMessage('')
+    }
+  }, [isOpen])
 
   if (!isOpen) return null
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
+    if (!isLoggedIn) {
+      onClose()
+      setShowAuthModal(true)
+      return
+    }
+
+    const token = localStorage.getItem('veritas_token')
+    if (!token) {
+      onClose()
+      setShowAuthModal(true)
+      return
+    }
+
     setStep('downloading')
-    const a = document.createElement('a')
-    a.href = fileUrl
-    a.download = fileName
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    setTimeout(() => { setStep('cta'); onClose() }, 3000)
+    setErrorMessage('')
+
+    try {
+      const response = await fetch(fileUrl, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          onClose()
+          setShowAuthModal(true)
+          return
+        }
+        throw new Error('Download request failed')
+      }
+
+      const blob = await response.blob()
+      const blobUrl = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = blobUrl
+      a.download = fileName
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(blobUrl)
+      setTimeout(() => { setStep('cta'); onClose() }, 3000)
+    } catch {
+      setStep('error')
+      setErrorMessage('We could not prepare the download. Please try again after signing in again.')
+    }
   }
 
   const shareUrl = window.location.origin
-  const shareText = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Free & open access.'
+  const shareText = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Free reader accounts unlock the full archive.'
 
   const handleShare = (platform: string) => {
     const urls: Record<string, string> = {
@@ -96,7 +142,7 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               Just Download — I Can't Support Right Now
             </button>
-            <p className="font-sans text-[0.55rem] text-ink-faint text-center mt-2">No judgment. The truth is free.</p>
+            <p className="font-sans text-[0.55rem] text-ink-faint text-center mt-2">No judgment. The truth is free. Full downloads require a free reader account.</p>
           </>
         )}
 
@@ -107,6 +153,24 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
             </div>
             <h3 className="font-display text-xl font-bold text-ink mb-2">Downloading...</h3>
             <p className="font-body text-sm text-ink-muted">Thank you for reading The Record.</p>
+          </div>
+        )}
+
+        {step === 'error' && (
+          <div className="text-center py-8">
+            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+              <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v4m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.67 1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46 0L3.34 16c-.77 1.33.19 3 1.73 3z" />
+              </svg>
+            </div>
+            <h3 className="font-display text-xl font-bold text-ink mb-2">Download unavailable</h3>
+            <p className="font-body text-sm text-ink-muted">{errorMessage}</p>
+            <button
+              onClick={() => setStep('cta')}
+              className="mt-4 inline-flex items-center justify-center px-4 py-2.5 border border-border text-ink font-sans text-xs font-semibold tracking-wide rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+            >
+              Back
+            </button>
           </div>
         )}
       </div>
