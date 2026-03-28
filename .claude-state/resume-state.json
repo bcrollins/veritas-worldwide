@@ -1,34 +1,17 @@
 {
-  "last": "late-book-hero-imagery-realignment",
-  "run": 31,
+  "run": 1,
   "date": "2026-03-28",
   "completed": [
-    "contextual-donation-cta-chapter-page",
-    "data-testid-testing-infrastructure",
-    "profile-page-gold-standard-rewrite",
-    "byron-donalds-data-expansion",
-    "lead-scoring-profile-viewed",
-    "100-enhancement-specification",
-    "prerendering-ssg-for-seo",
-    "chapter-json-ld-dynamic-dateModified",
-    "fixed-truncated-chapter-meta",
-    "share-scoring-parity",
-    "analytics-dashboard-upgrade",
-    "remove-v-assistant",
-    "chapter-images-remaining-13",
-    "late-book-hero-imagery-realignment"
+    "ChapterPage now enforces a three-block preview for anonymous readers and opens account creation before the rest of the article.",
+    "Anonymous users can no longer access chapter download, PDF, or print actions from the live UI.",
+    "NewsletterSignup, ExitIntentCapture, and ContentGate now require explicit consent and link to the privacy policy.",
+    "Verification completed with npx tsc --noEmit, npm run build, local server smoke checks, and a Playwright screenshot of /chapter/foreword."
   ],
-  "next": "profile-page-enhancements-round-2",
-  "queue": [
-    "profile-page-enhancements-round-2",
-    "adsense-activation",
-    "abandoned-cart-recovery-emails",
-    "push-notifications",
-    "search-console-verification-guide",
-    "discord-server-setup-guide",
-    "stripe-branding-dashboard-update",
-    "lead-scoring-hubspot-server-sync",
-    "profile-data-expansion-to-500",
-    "forum-backend-api-persistence"
+  "next_task": "Replace client-bundled full chapter access with authenticated content delivery and align prerendered/free-access copy with the free-account gate.",
+  "next_priorities": [
+    "Implement server-backed chapter entitlements so anonymous visitors cannot obtain full chapter payloads from client bundles.",
+    "Audit homepage and prerendered chapter messaging to distinguish free access from free-account-required access.",
+    "Connect HubSpot workflows, double opt-in, and lifecycle scoring in the portal.",
+    "Connect Google Search Console and verify production funnel events in GA4 plus HubSpot."
   ]
 }

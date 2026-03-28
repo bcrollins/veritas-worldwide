@@ -1,41 +1,69 @@
 {
-  "run": 31,
+  "run": 1,
   "date": "2026-03-28",
-  "features": {
-    "chapter-reading": { "score": 9.5, "prev": 9.5 },
-    "evidence-system": { "score": 9.5, "prev": 9.5 },
-    "source-browser": { "score": 9.0, "prev": 9.0 },
-    "search": { "score": 9.0, "prev": 9.0 },
-    "typography-layout": { "score": 9.5, "prev": 9.5 },
-    "print-output": { "score": 9.0, "prev": 9.0 },
-    "auth-accounts": { "score": 9.0, "prev": 9.0 },
-    "donation-flow": { "score": 9.5, "prev": 9.0 },
-    "mobile-reading": { "score": 9.0, "prev": 9.0 },
-    "dark-mode": { "score": 9.0, "prev": 9.0 },
-    "pwa-offline": { "score": 9.0, "prev": 9.0 },
-    "reading-progress": { "score": 9.0, "prev": 9.0 },
-    "bookmarks": { "score": 9.0, "prev": 9.0 },
-    "content-gating": { "score": 9.0, "prev": 9.0 },
-    "social-sharing": { "score": 9.0, "prev": 9.0 },
-    "seo-meta": { "score": 9.5, "prev": 9.5 },
-    "structured-data": { "score": 9.5, "prev": 9.5 },
-    "sitemap-robots": { "score": 9.5, "prev": 9.5 },
-    "email-capture": { "score": 9.0, "prev": 9.0 },
-    "hubspot-integration": { "score": 9.5, "prev": 9.0 },
-    "ga4-analytics": { "score": 9.0, "prev": 8.0 },
-    "stripe-monetization": { "score": 9.5, "prev": 9.5 },
-    "community-forum": { "score": 8.5, "prev": 8.5 },
-    "profiles": { "score": 9.5, "prev": 7.5 },
-    "chapter-images": { "score": 9.5, "prev": 9.0 },
-    "book-reader": { "score": 8.5, "prev": 8.0 },
-    "testing-infrastructure": { "score": 7.5, "prev": 7.0 },
-    "security": { "score": 9.0, "prev": 9.0 },
-    "accessibility": { "score": 9.0, "prev": 9.0 },
-    "performance": { "score": 9.0, "prev": 9.0 },
-    "lead-scoring": { "score": 9.5, "prev": 9.0 },
-    "ab-testing": { "score": 8.5, "prev": 8.5 },
-    "exit-intent": { "score": 9.0, "prev": 9.0 }
-  },
-  "composite": 9.3,
-  "notes": "Run 31: Corrected late-book hero image drift across chapters 19-27 in both chapter runtime content and lightweight metadata, restoring chapter-accurate visual attribution for reader presentation, chapter cards, and SEO/social surfaces. Local TypeScript and production build checks passed, and the corrected asset bundles were verified live after deploy."
+  "site": [
+    {
+      "feature": "Chapter Reading",
+      "composite": 7.9,
+      "previous": 6.6,
+      "delta": 1.3,
+      "status": "improved",
+      "plus_half_requires": "Move full-chapter entitlements to authenticated fetches so locked content is not bundled client-side for anonymous readers."
+    },
+    {
+      "feature": "Reader Access Control",
+      "composite": 7.4,
+      "previous": 5.8,
+      "delta": 1.6,
+      "status": "improved",
+      "plus_half_requires": "Add server-backed membership and account enforcement for chapter exports, citations, and source-library access."
+    },
+    {
+      "feature": "Publication Shell",
+      "composite": 8.1,
+      "previous": 8.1,
+      "delta": 0.0,
+      "status": "stable",
+      "plus_half_requires": "Reduce the main vendor bundle and tighten 390px navigation density without diluting the editorial hierarchy."
+    }
+  ],
+  "growth": [
+    {
+      "area": "Email Capture & Compliance",
+      "score": 7.6,
+      "previous": 6.9,
+      "delta": 0.7,
+      "status": "improved",
+      "plus_half_requires": "Replace queue-only capture with portal-backed HubSpot forms, double opt-in, and workflow-level segmentation."
+    },
+    {
+      "area": "SEO Foundation",
+      "score": 8.1,
+      "previous": 8.1,
+      "delta": 0.0,
+      "status": "stable",
+      "plus_half_requires": "Connect Search Console and add structured data coverage for remaining non-chapter editorial pages."
+    },
+    {
+      "area": "Analytics & Measurement",
+      "score": 7.4,
+      "previous": 7.4,
+      "delta": 0.0,
+      "status": "stable",
+      "plus_half_requires": "Verify GA4 custom dimensions in production and map HubSpot lifecycle stages to a live conversion dashboard."
+    },
+    {
+      "area": "Monetization Infrastructure",
+      "score": 8.0,
+      "previous": 8.0,
+      "delta": 0.0,
+      "status": "stable",
+      "plus_half_requires": "Add thank-you landing pages and campaign-level attribution on donation and recurring-support returns."
+    }
+  ],
+  "security": {
+    "p0_resolved": [],
+    "p0_open": [],
+    "new_p0": []
+  }
 }

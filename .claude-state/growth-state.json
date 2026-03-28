@@ -1,30 +1,28 @@
 {
-  "run": 31,
+  "run": 1,
   "date": "2026-03-28",
   "channels": {
-    "website": {"status": "live", "url": "https://veritasworldwide.com"},
-    "instagram": {"status": "active", "handle": "", "followers": 0},
-    "x": {"status": "not_created", "handle": "@VeritasWorldwide"},
-    "threads": {"status": "not_created", "handle": ""},
-    "linkedin": {"status": "not_created", "type": "company_page"},
-    "facebook_page": {"status": "not_created"},
-    "facebook_group": {"status": "not_created"},
-    "youtube": {"status": "not_created"},
-    "tiktok": {"status": "not_created"},
-    "pinterest": {"status": "not_created"},
-    "reddit": {"status": "not_created"},
-    "discord": {"status": "not_created"},
-    "substack": {"status": "not_created"},
-    "podcast": {"status": "not_created"}
+    "website": { "status": "live", "handle": "https://veritasworldwide.com" },
+    "instagram": { "status": "planned", "handle": "" },
+    "x": { "status": "planned", "handle": "@VeritasWorldwide" },
+    "threads": { "status": "planned", "handle": "" },
+    "linkedin": { "status": "planned", "handle": "" },
+    "facebook": { "status": "planned", "handle": "" },
+    "youtube": { "status": "planned", "handle": "" },
+    "tiktok": { "status": "planned", "handle": "" },
+    "pinterest": { "status": "planned", "handle": "" },
+    "reddit": { "status": "planned", "handle": "" },
+    "discord": { "status": "planned", "handle": "" },
+    "substack": { "status": "planned", "handle": "" },
+    "podcast": { "status": "planned", "handle": "" }
   },
   "integrations": {
     "hubspot_pixel": true,
     "hubspot_forms": true,
-    "hubspot_workflows": true,
-    "hubspot_lead_scoring": true,
+    "hubspot_workflows": false,
+    "hubspot_lead_scoring": false,
     "ga4": true,
-    "search_console": true,
-    "hubspot_social_tracking": true,
+    "search_console": false,
     "stripe_tiers": true,
     "stripe_recurring": true
   },
@@ -32,11 +30,8 @@
     "prerendering": true,
     "meta_tags": true,
     "og_tags": true,
-    "og_png_images": true,
-    "bot_ssr_og_injection": true,
     "structured_data": true,
     "sitemap": true,
-    "sitemap_urls": 148,
     "robots_txt": true,
     "internal_linking": true
   },
@@ -53,29 +48,17 @@
     "reading_progress": true,
     "pwa": true,
     "pdf_export": true,
-    "push_notifications": false,
     "exit_intent": true,
-    "ab_testing": true,
-    "v_assistant": false,
-    "cookie_consent": true,
-    "community_forum": true,
-    "admin_social_hub": true,
-    "tabbed_record_page": true,
-    "brand_kit": true,
-    "lead_scoring": true,
-    "social_content_calendar": true,
-    "lazy_chapter_loading": true,
-    "notion_content_calendar": true,
-    "security_headers": true
+    "ab_testing": true
   },
-  "content": {
-    "social_templates_created": 6,
-    "posts_queued": 18,
-    "content_calendar_days": 42,
-    "brand_kit_assets": 10,
-    "canva_designs": 13,
-    "content_packs": 6,
-    "pinned_posts": 3,
-    "og_png_images": 31
-  }
+  "content_metrics": {
+    "social_templates_created": 0,
+    "posts_queued": 0,
+    "content_calendar_days": 0
+  },
+  "last_completed": [
+    "Restored the three-block free preview gate on chapter pages and hid sources plus export actions for anonymous readers.",
+    "Added explicit email-marketing consent and privacy-policy acknowledgement to newsletter, exit-intent, and slide-up capture forms.",
+    "Verified the gated chapter experience with Playwright on the built local site."
+  ]
 }
