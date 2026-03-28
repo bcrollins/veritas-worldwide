@@ -6,6 +6,8 @@
  * Silent no-op if gtag is not available (e.g., ad blockers).
  */
 
+import { scoreShareClicked } from './leadScoring'
+
 type GtagFn = (...args: unknown[]) => void
 
 function getGtag(): GtagFn | null {
@@ -63,6 +65,7 @@ export function trackSearch(query: string): void {
 
 /** User shares content */
 export function trackShare(method: string, contentId: string): void {
+  scoreShareClicked(method, contentId)
   getGtag()?.('event', 'share', {
     method,
     content_type: 'chapter',

@@ -685,6 +685,40 @@ app.post('/api/v/chat', async (req, res) => {
 })
 
 
+// Build-time prerender manifest for exact-route static HTML
+const PRERENDER_MANIFEST_PATH = path.join(__dirname, 'dist', 'prerender-manifest.json')
+let prerenderManifest = {}
+
+try {
+  if (fs.existsSync(PRERENDER_MANIFEST_PATH)) {
+    prerenderManifest = JSON.parse(fs.readFileSync(PRERENDER_MANIFEST_PATH, 'utf-8'))
+    console.log(`[prerender] Loaded ${Object.keys(prerenderManifest).length} prerendered routes`)
+  }
+} catch (err) {
+  console.warn('[prerender] Failed to load manifest:', err.message)
+  prerenderManifest = {}
+}
+
+function normalizePrerenderRoute(routePath) {
+  if (!routePath || routePath === '/') return '/'
+  return routePath.endsWith('/') ? routePath.slice(0, -1) : routePath
+}
+
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next()
+  if (req.path.startsWith('/api/') || path.extname(req.path)) return next()
+
+  const route = normalizePrerenderRoute(req.path)
+  const manifestEntry = prerenderManifest[route]
+  if (!manifestEntry) return next()
+
+  const filePath = path.join(__dirname, 'dist', manifestEntry)
+  if (!fs.existsSync(filePath)) return next()
+
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+  res.sendFile(filePath)
+})
+
 // Static files with aggressive caching for hashed assets
 app.use(express.static(path.join(__dirname, 'dist'), {
   maxAge: '1y',

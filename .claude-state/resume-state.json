@@ -1,20 +1,22 @@
 {
-  "last": "gold-standard-profile-page-rewrite",
-  "run": 27,
-  "date": "2026-03-25",
+  "last": "prerendered-core-routes-and-fixed-chapter-meta",
+  "run": 28,
+  "date": "2026-03-27",
   "completed": [
     "contextual-donation-cta-chapter-page",
     "data-testid-testing-infrastructure",
     "profile-page-gold-standard-rewrite",
     "byron-donalds-data-expansion",
     "lead-scoring-profile-viewed",
-    "100-enhancement-specification"
-  ],
-  "next": "remaining-profile-data-expansion",
-  "queue": [
+    "100-enhancement-specification",
     "prerendering-ssg-for-seo",
-    "analytics-dashboard-upgrade",
     "chapter-json-ld-dynamic-dateModified",
+    "fixed-truncated-chapter-meta",
+    "share-scoring-parity"
+  ],
+  "next": "analytics-dashboard-upgrade",
+  "queue": [
+    "analytics-dashboard-upgrade",
     "chapter-images-remaining-13",
     "profile-page-enhancements-round-2",
     "adsense-activation",

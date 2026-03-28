@@ -21,6 +21,31 @@ interface SEOConfig {
   tags?: string[]
 }
 
+function normalizePublicationDate(value: string): string {
+  const trimmed = value.trim()
+  if (!trimmed) return new Date().toISOString().slice(0, 10)
+
+  const direct = new Date(trimmed)
+  if (!Number.isNaN(direct.getTime())) {
+    return direct.toISOString().slice(0, 10)
+  }
+
+  const monthYear = trimmed.match(/^([A-Za-z]+)\s+(\d{4})$/)
+  if (monthYear) {
+    const parsed = new Date(`${monthYear[1]} 1, ${monthYear[2]} UTC`)
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toISOString().slice(0, 10)
+    }
+  }
+
+  const yearOnly = trimmed.match(/^(\d{4})$/)
+  if (yearOnly) {
+    return `${yearOnly[1]}-01-01`
+  }
+
+  return new Date().toISOString().slice(0, 10)
+}
+
 /**
  * Sets Open Graph and Twitter Card meta tags in the document head.
  * Creates tags if they don't exist, updates them if they do.
@@ -171,11 +196,14 @@ export function chapterJsonLd(chapter: {
   subtitle: string
   author: string
   publishDate: string
+  dateModified?: string
   dateRange?: string
   keywords: string[]
   image?: string
 }): Record<string, unknown>[] {
   const chapterImage = chapter.image || OG_IMAGE
+  const publishedDate = normalizePublicationDate(chapter.publishDate)
+  const modifiedDate = normalizePublicationDate(chapter.dateModified || chapter.publishDate)
   return [
     {
       '@context': 'https://schema.org',
@@ -196,8 +224,8 @@ export function chapterJsonLd(chapter: {
         },
       },
       'image': chapterImage,
-      'datePublished': '2026-03-01',
-      'dateModified': '2026-03-23',
+      'datePublished': publishedDate,
+      'dateModified': modifiedDate,
       'mainEntityOfPage': {
         '@type': 'WebPage',
         '@id': `${SITE_URL}/chapter/${chapter.id}`,
