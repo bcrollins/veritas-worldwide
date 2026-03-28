@@ -758,6 +758,10 @@ app.use(express.static(path.join(__dirname, 'dist'), {
   },
 }))
 
+app.use('/api', (req, res) => {
+  res.status(404).json({ error: 'API route not found' })
+})
+
 // ── Social crawler bot meta injection ─────────────────────────────
 // Bots that don't execute JS get per-chapter OG tags injected server-side
 const BOT_UA = /googlebot|bingbot|yandexbot|baiduspider|duckduckbot|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|redditbot|applebot|semrushbot|ahrefsbot|mj12bot/i
