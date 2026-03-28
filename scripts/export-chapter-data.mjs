@@ -6,6 +6,8 @@ import ts from 'typescript'
 import { pathToFileURL } from 'url'
 
 const PREVIEW_BLOCK_LIMIT = 3
+const EVIDENCE_TIER_ORDER = ['verified', 'circumstantial', 'disputed']
+const SOURCE_HIERARCHY_KEYS = ['primary', 'peerReviewed', 'verifiedJournalism', 'secondary']
 const repoRoot = process.cwd()
 const generatedRoot = path.join(repoRoot, 'generated', 'chapter-data')
 const tempRoot = path.join(repoRoot, 'generated', '.chapter-temp')
@@ -24,11 +26,71 @@ function getVideoCount(chapter) {
   return chapter.content.filter((block) => block.type === 'video').length
 }
 
+function classifyChapterType(chapter) {
+  if (['foreword', 'overview', 'epilogue'].includes(chapter.id)) {
+    return 'reference'
+  }
+
+  const typeText = `${chapter.number} ${chapter.title} ${chapter.subtitle} ${chapter.dateRange}`.toLowerCase()
+  if (chapter.dateRange === 'Explainer' || /explainer|how .* works|methodology/.test(typeText)) {
+    return 'explainer'
+  }
+
+  return 'investigation'
+}
+
+function getAvailableEvidenceTiers(chapter) {
+  const tiers = new Set()
+  for (const block of chapter.content) {
+    if (block.type === 'evidence' && block.evidence?.tier) {
+      tiers.add(block.evidence.tier)
+    }
+  }
+  return EVIDENCE_TIER_ORDER.filter((tier) => tiers.has(tier))
+}
+
+function classifySourceHierarchy(source) {
+  const haystack = `${source.text} ${source.url || ''}`.toLowerCase()
+
+  if (/(congress|senate|house of representatives|congressional|court|supreme court|district court|executive order|federal register|national archives|archives\.gov|sec filing|sec\.gov|edgar|gao|government accountability office|cia|reading room|readingroom|fbi vault|presidential library|declassified|committee hearing|hearing|treasury|department of justice|state department|white house|federal reserve)/.test(haystack)) {
+    return 'primary'
+  }
+
+  if (/(peer-reviewed|peer reviewed|journal|doctoral|dissertation|thesis|university press|oxford university press|cambridge university press|cornell university press|harvard university press|stanford university press|university of chicago press|academic)/.test(haystack)) {
+    return 'peerReviewed'
+  }
+
+  if (/(new york times|nyt|washington post|wall street journal|wsj|reuters|associated press|ap news|bloomberg|propublica|the guardian|guardian|investigative reporting|open secrets|opensecrets|documented by journalists|journalism)/.test(haystack)) {
+    return 'verifiedJournalism'
+  }
+
+  return 'secondary'
+}
+
+function getSourceHierarchyCounts(sources) {
+  const counts = { primary: 0, peerReviewed: 0, verifiedJournalism: 0, secondary: 0 }
+
+  for (const source of sources) {
+    counts[source.hierarchy] += 1
+  }
+
+  return counts
+}
+
 function withDerivedMetadata(chapter) {
+  const sources = chapter.sources.map((source) => ({
+    ...source,
+    hierarchy: classifySourceHierarchy(source),
+  }))
+
   return {
     ...chapter,
-    sourceCount: chapter.sources.length,
+    sources,
+    sourceCount: sources.length,
     videoCount: getVideoCount(chapter),
+    sourceHierarchyCounts: getSourceHierarchyCounts(sources),
+    availableEvidenceTiers: getAvailableEvidenceTiers(chapter),
+    chapterType: classifyChapterType(chapter),
   }
 }
 
@@ -49,8 +111,15 @@ async function importTsModule(filePath, tempName) {
 
 function toPublicChapter(chapter) {
   const chapterWithMetadata = withDerivedMetadata(chapter)
+  const {
+    sourceHierarchyCounts: _sourceHierarchyCounts,
+    availableEvidenceTiers: _availableEvidenceTiers,
+    chapterType: _chapterType,
+    ...publicSafeChapter
+  } = chapterWithMetadata
+
   return {
-    ...chapterWithMetadata,
+    ...publicSafeChapter,
     content: chapter.content.slice(0, PREVIEW_BLOCK_LIMIT),
     sources: [],
     accessLevel: 'preview',

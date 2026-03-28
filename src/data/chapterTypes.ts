@@ -2,10 +2,15 @@ export interface Source {
   id: number;
   text: string;
   url?: string;
+  hierarchy?: SourceHierarchy;
 }
 
+export type EvidenceTier = 'verified' | 'circumstantial' | 'disputed';
+export type SourceHierarchy = 'primary' | 'peerReviewed' | 'verifiedJournalism' | 'secondary';
+export type ChapterType = 'reference' | 'explainer' | 'investigation';
+
 export interface EvidenceBox {
-  tier: 'verified' | 'circumstantial' | 'disputed';
+  tier: EvidenceTier;
   label: string;
   text: string;
 }
@@ -67,6 +72,9 @@ export interface Chapter {
   sources: Source[];
   sourceCount?: number;
   videoCount?: number;
+  sourceHierarchyCounts?: Record<SourceHierarchy, number>;
+  availableEvidenceTiers?: EvidenceTier[];
+  chapterType?: ChapterType;
   crossLinks: { label: string; chapterId: string }[];
   keywords: string[];
 }

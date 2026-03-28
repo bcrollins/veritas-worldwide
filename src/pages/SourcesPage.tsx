@@ -1,13 +1,95 @@
-import { useEffect, useState } from 'react'
+import { useDeferredValue, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import type { EvidenceTier, LoadedChapter, SourceHierarchy } from '../data/chapterTypes'
 import { useAllChapters } from '../hooks/useAllChapters'
 import { useAuth } from '../lib/AuthContext'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 
+type SourceHierarchyFilter = SourceHierarchy | 'all'
+
+const SOURCE_HIERARCHY_OPTIONS: Array<{ value: SourceHierarchyFilter; label: string }> = [
+  { value: 'all', label: 'All Sources' },
+  { value: 'primary', label: 'Primary' },
+  { value: 'peerReviewed', label: 'Peer Reviewed' },
+  { value: 'verifiedJournalism', label: 'Verified Journalism' },
+  { value: 'secondary', label: 'Secondary' },
+]
+
+const EVIDENCE_TIER_OPTIONS: Array<{ value: EvidenceTier | 'all'; label: string }> = [
+  { value: 'all', label: 'All Tiers' },
+  { value: 'verified', label: 'Verified' },
+  { value: 'circumstantial', label: 'Circumstantial' },
+  { value: 'disputed', label: 'Disputed' },
+]
+
+function getEmptyHierarchyCounts(): Record<SourceHierarchy, number> {
+  return {
+    primary: 0,
+    peerReviewed: 0,
+    verifiedJournalism: 0,
+    secondary: 0,
+  }
+}
+
+function getSourceCount(chapter: LoadedChapter) {
+  return chapter.sourceCount ?? chapter.sources.length
+}
+
+function getSourceHierarchyLabel(hierarchy: SourceHierarchy) {
+  switch (hierarchy) {
+    case 'peerReviewed':
+      return 'Peer Reviewed'
+    case 'verifiedJournalism':
+      return 'Verified Journalism'
+    case 'secondary':
+      return 'Secondary'
+    default:
+      return 'Primary'
+  }
+}
+
+function getSourceHierarchyCounts(sources: LoadedChapter['sources']) {
+  const counts = getEmptyHierarchyCounts()
+  for (const source of sources) {
+    counts[source.hierarchy ?? 'secondary'] += 1
+  }
+  return counts
+}
+
+function getFilterButtonClasses(active: boolean) {
+  return active
+    ? 'border-crimson bg-crimson/5 text-crimson'
+    : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+}
+
+function getEvidenceTierClasses(tier: EvidenceTier | 'all', active: boolean) {
+  if (!active) {
+    return 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+  }
+
+  if (tier === 'verified') {
+    return 'border-verified-border bg-verified-bg text-verified'
+  }
+
+  if (tier === 'circumstantial') {
+    return 'border-circumstantial-border bg-circumstantial-bg text-circumstantial'
+  }
+
+  if (tier === 'disputed') {
+    return 'border-disputed-border bg-disputed-bg text-disputed'
+  }
+
+  return 'border-border bg-parchment-dark text-ink'
+}
+
 export default function SourcesPage() {
   const { isLoggedIn, setShowAuthModal } = useAuth()
   const { chapters, loading: chaptersLoading } = useAllChapters({ scope: isLoggedIn ? 'full' : 'public' })
+  const [sourceFilter, setSourceFilter] = useState('')
+  const [sourceHierarchyFilter, setSourceHierarchyFilter] = useState<SourceHierarchyFilter>('all')
+  const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTier | 'all'>('all')
+  const deferredSourceFilter = useDeferredValue(sourceFilter.trim().toLowerCase())
 
   useEffect(() => {
     setMetaTags({
@@ -18,16 +100,14 @@ export default function SourcesPage() {
     setJsonLd({
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      'name': 'Sources & Bibliography',
-      'description': 'Master bibliography and verification library for The Record.',
-      'url': `${SITE_URL}/sources`,
-      'isPartOf': { '@type': 'WebSite', 'name': `The Record — ${SITE_NAME}`, 'url': SITE_URL },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
+      name: 'Sources & Bibliography',
+      description: 'Master bibliography and verification library for The Record.',
+      url: `${SITE_URL}/sources`,
+      isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
+      publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
     })
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
-
-  const getSourceCount = (chapter: typeof chapters[number]) => chapter.sourceCount ?? chapter.sources.length
 
   const allSources = chapters.flatMap(chapter =>
     chapter.sources.map(source => ({
@@ -40,31 +120,55 @@ export default function SourcesPage() {
   const totalSources = chapters.reduce((sum, chapter) => sum + getSourceCount(chapter), 0)
 
   const chapterSources = chapters
-    .filter(ch => getSourceCount(ch) > 0)
-    .map(ch => ({
-      id: ch.id,
-      number: ch.number,
-      title: ch.title,
-      sources: ch.sources,
-      sourceCount: getSourceCount(ch),
+    .filter(chapter => getSourceCount(chapter) > 0)
+    .map(chapter => ({
+      id: chapter.id,
+      number: chapter.number,
+      title: chapter.title,
+      sources: chapter.sources,
+      sourceCount: getSourceCount(chapter),
+      sourceHierarchyCounts: {
+        ...getEmptyHierarchyCounts(),
+        ...(chapter.sourceHierarchyCounts ?? {}),
+      },
+      visibleHierarchyCounts: {
+        ...getEmptyHierarchyCounts(),
+        ...(chapter.sourceHierarchyCounts ?? {}),
+      },
+      availableEvidenceTiers: chapter.availableEvidenceTiers ?? [],
     }))
 
-  const [sourceFilter, setSourceFilter] = useState('')
-  const filteredChapterSources = sourceFilter.trim()
+  const filteredChapterSources = isLoggedIn
     ? chapterSources
-        .map(ch => ({
-          ...ch,
-          sources: ch.sources.filter(s =>
-            s.text.toLowerCase().includes(sourceFilter.toLowerCase()) ||
-            (s.url && s.url.toLowerCase().includes(sourceFilter.toLowerCase()))
-          ),
-        }))
-        .filter(ch => ch.sources.length > 0)
+        .filter(chapter =>
+          evidenceTierFilter === 'all' || chapter.availableEvidenceTiers.includes(evidenceTierFilter)
+        )
+        .map(chapter => {
+          const visibleSources = chapter.sources.filter(source => {
+            const sourceText = `${source.text} ${source.url ?? ''}`.toLowerCase()
+            const matchesQuery = !deferredSourceFilter || sourceText.includes(deferredSourceFilter)
+            const matchesHierarchy =
+              sourceHierarchyFilter === 'all' || source.hierarchy === sourceHierarchyFilter
+            return matchesQuery && matchesHierarchy
+          })
+
+          return {
+            ...chapter,
+            sources: visibleSources,
+            visibleHierarchyCounts: getSourceHierarchyCounts(visibleSources),
+          }
+        })
+        .filter(chapter => chapter.sources.length > 0)
     : chapterSources
-  const filteredCount = filteredChapterSources.reduce((sum, ch) => sum + ch.sources.length, 0)
+
+  const filteredCount = filteredChapterSources.reduce((sum, chapter) => sum + chapter.sources.length, 0)
+  const hasActiveSourceFilters =
+    Boolean(sourceFilter.trim()) ||
+    sourceHierarchyFilter !== 'all' ||
+    evidenceTierFilter !== 'all'
+
   return (
     <div className="w-full max-w-[1920px] mx-auto">
-      {/* Section Bar */}
       <div className="border-b border-border bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 py-2">
@@ -79,12 +183,9 @@ export default function SourcesPage() {
         </div>
       </div>
 
-      {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12">
-          {/* Left Column — Main Content */}
           <article className="max-w-none">
-            {/* Header */}
             <header className="mb-12 border-b border-border pb-10">
               <p className="chapter-label mb-4">Reference</p>
               <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight mb-4">
@@ -106,7 +207,7 @@ export default function SourcesPage() {
                 </div>
                 <div className="text-center">
                   <p className="font-display text-xl sm:text-2xl font-bold text-crimson">
-                    {isLoggedIn ? allSources.filter(s => s.url).length : 'Free'}
+                    {isLoggedIn ? allSources.filter(source => source.url).length : 'Free'}
                   </p>
                   <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">
                     {isLoggedIn ? 'With Direct Links' : 'Reader Access'}
@@ -122,86 +223,191 @@ export default function SourcesPage() {
               </div>
             ) : isLoggedIn ? (
               <>
-                {/* Source Search */}
-                <div className="mb-8 no-print">
-                  <div className="relative">
-                    <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <input
-                      type="text"
-                      placeholder="Search sources by name, institution, or URL..."
-                      value={sourceFilter}
-                      onChange={(e) => setSourceFilter(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 font-sans text-sm bg-surface border border-border rounded-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
-                      aria-label="Filter sources"
-                    />
-                    {sourceFilter.trim() && (
-                      <div className="flex items-center gap-3 mt-2">
-                        <span className="font-sans text-xs text-ink-faint">
-                          <span className="font-bold text-crimson">{filteredCount}</span> source{filteredCount !== 1 ? 's' : ''} matching &ldquo;{sourceFilter}&rdquo;
-                        </span>
-                        <button onClick={() => setSourceFilter('')} className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2">
-                          Clear
-                        </button>
-                      </div>
-                    )}
+                <section className="mb-8 no-print border border-border bg-surface-raised p-4 sm:p-5">
+                  <div className="mb-4">
+                    <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
+                      Signed-In Filters
+                    </p>
+                    <p className="font-body text-sm text-ink-muted leading-relaxed">
+                      Filter the full bibliography by source hierarchy and by the evidence mix present in each chapter.
+                    </p>
                   </div>
-                </div>
 
-                {/* Chapter Quick Nav */}
+                  <div className="space-y-4">
+                    <div className="relative">
+                      <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                      <input
+                        type="text"
+                        placeholder="Search sources by name, institution, or URL..."
+                        value={sourceFilter}
+                        onChange={(e) => setSourceFilter(e.target.value)}
+                        className="w-full min-h-[44px] pl-10 pr-4 py-2.5 font-sans text-sm bg-surface border border-border rounded-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                        aria-label="Filter sources"
+                      />
+                    </div>
+
+                    <div>
+                      <p className="font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-2">
+                        Source Hierarchy
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {SOURCE_HIERARCHY_OPTIONS.map((option) => {
+                          const isActive = sourceHierarchyFilter === option.value
+                          return (
+                            <button
+                              key={option.value}
+                              type="button"
+                              onClick={() => setSourceHierarchyFilter(option.value)}
+                              className={`min-h-[44px] rounded-sm border px-3 py-2 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase transition-colors ${getFilterButtonClasses(isActive)}`}
+                              aria-pressed={isActive}
+                            >
+                              {option.label}
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-2">
+                        Chapter Evidence Mix
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {EVIDENCE_TIER_OPTIONS.map((option) => {
+                          const isActive = evidenceTierFilter === option.value
+                          return (
+                            <button
+                              key={option.value}
+                              type="button"
+                              onClick={() => setEvidenceTierFilter(option.value)}
+                              className={`min-h-[44px] rounded-sm border px-3 py-2 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase transition-colors ${getEvidenceTierClasses(option.value, isActive)}`}
+                              aria-pressed={isActive}
+                            >
+                              {option.label}
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2 pt-1 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="font-sans text-xs text-ink-faint">
+                        <span className="font-bold text-crimson">{filteredCount}</span> source{filteredCount !== 1 ? 's' : ''} across{' '}
+                        <span className="font-bold text-crimson">{filteredChapterSources.length}</span> chapter{filteredChapterSources.length !== 1 ? 's' : ''}
+                        {sourceFilter.trim() ? ` matching "${sourceFilter.trim()}"` : ''}
+                      </p>
+                      {hasActiveSourceFilters && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSourceFilter('')
+                            setSourceHierarchyFilter('all')
+                            setEvidenceTierFilter('all')
+                          }}
+                          className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
+                        >
+                          Clear filters
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </section>
+
                 <nav className="mb-12 no-print" aria-label="Jump to chapter sources">
                   <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
                     Jump to Chapter
                   </h2>
                   <div className="flex flex-wrap gap-1.5">
-                    {chapterSources.map(ch => (
+                    {filteredChapterSources.map(chapter => (
                       <a
-                        key={ch.id}
-                        href={`#sources-${ch.id}`}
+                        key={chapter.id}
+                        href={`#sources-${chapter.id}`}
                         className="font-sans text-[0.65rem] font-semibold tracking-[0.05em] uppercase px-3 py-2 min-h-[44px] min-w-[44px] inline-flex items-center justify-center border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
-                        title={ch.title}
+                        title={chapter.title}
                       >
-                        {ch.number}
+                        {chapter.number}
                       </a>
                     ))}
                   </div>
                 </nav>
 
-                {/* Sources by Chapter */}
                 <section>
                   <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-6">
                     Sources by Chapter
                   </h2>
 
                   {filteredChapterSources.length === 0 ? (
-                    <p className="font-body text-base text-ink-muted text-center py-12">
-                      {sourceFilter.trim()
-                        ? <>No sources matching &ldquo;{sourceFilter}&rdquo;. <button onClick={() => setSourceFilter('')} className="text-crimson hover:underline">Clear search</button></>
-                        : 'Sources are being compiled and will be published with each chapter.'
-                      }
-                    </p>
+                    <div className="py-12 text-center">
+                      <p className="font-body text-base text-ink-muted mb-3">
+                        No sources match the current signed-in filters.
+                      </p>
+                      {hasActiveSourceFilters && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSourceFilter('')
+                            setSourceHierarchyFilter('all')
+                            setEvidenceTierFilter('all')
+                          }}
+                          className="font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
+                        >
+                          Clear the filters
+                        </button>
+                      )}
+                    </div>
                   ) : (
                     <div className="space-y-10">
-                      {filteredChapterSources.map(ch => (
-                        <div key={ch.id} id={`sources-${ch.id}`} className="border-b border-border pb-8 scroll-mt-20">
-                          <div className="flex items-baseline gap-3 mb-4">
+                      {filteredChapterSources.map(chapter => (
+                        <div key={chapter.id} id={`sources-${chapter.id}`} className="border-b border-border pb-8 scroll-mt-20">
+                          <div className="flex items-baseline gap-3 mb-3">
                             <span className="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson">
-                              {ch.number}
+                              {chapter.number}
                             </span>
                             <Link
-                              to={`/chapter/${ch.id}`}
+                              to={`/chapter/${chapter.id}`}
                               className="font-display text-lg font-bold text-ink hover:text-crimson transition-colors"
                             >
-                              {ch.title}
+                              {chapter.title}
                             </Link>
                           </div>
+
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {chapter.availableEvidenceTiers.map((tier) => (
+                              <span
+                                key={`${chapter.id}-${tier}`}
+                                className={`inline-flex items-center rounded-sm border px-2 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.08em] ${getEvidenceTierClasses(tier, true)}`}
+                              >
+                                {tier}
+                              </span>
+                            ))}
+
+                            {SOURCE_HIERARCHY_OPTIONS.filter(option => option.value !== 'all').map((option) => {
+                              const hierarchy = option.value as SourceHierarchy
+                              const visibleCount = chapter.visibleHierarchyCounts[hierarchy]
+                              if (visibleCount === 0) return null
+
+                              return (
+                                <span
+                                  key={`${chapter.id}-${hierarchy}`}
+                                  className="inline-flex items-center rounded-sm border border-border bg-parchment-dark px-2 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.08em] text-ink-muted"
+                                >
+                                  {visibleCount} {getSourceHierarchyLabel(hierarchy)}
+                                </span>
+                              )
+                            })}
+                          </div>
+
                           <ol className="space-y-2 ml-1">
-                            {ch.sources.map(source => (
+                            {chapter.sources.map(source => (
                               <li key={source.id} className="font-sans text-sm text-ink-muted leading-relaxed flex gap-3">
                                 <span className="font-bold text-crimson shrink-0 text-xs mt-0.5">[{source.id}]</span>
                                 <span>
                                   {source.text}
+                                  <span className="ml-2 inline-flex items-center rounded-sm border border-border bg-parchment-dark px-1.5 py-0.5 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.08em] text-ink-faint">
+                                    {getSourceHierarchyLabel(source.hierarchy ?? 'secondary')}
+                                  </span>
                                   {source.url && (
                                     <>
                                       {' '}
@@ -252,16 +458,16 @@ export default function SourcesPage() {
                   </Link>
                 </div>
                 <div className="space-y-3">
-                  {chapterSources.map(ch => (
-                    <div key={ch.id} className="flex items-center justify-between gap-4 border-b border-border pb-3">
+                  {chapterSources.map(chapter => (
+                    <div key={chapter.id} className="flex items-center justify-between gap-4 border-b border-border pb-3">
                       <div className="min-w-0">
-                        <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson">{ch.number}</p>
-                        <Link to={`/chapter/${ch.id}`} className="font-display text-lg font-bold text-ink hover:text-crimson transition-colors">
-                          {ch.title}
+                        <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson">{chapter.number}</p>
+                        <Link to={`/chapter/${chapter.id}`} className="font-display text-lg font-bold text-ink hover:text-crimson transition-colors">
+                          {chapter.title}
                         </Link>
                       </div>
                       <div className="shrink-0 text-right">
-                        <p className="font-display text-xl font-bold text-ink">{ch.sourceCount}</p>
+                        <p className="font-display text-xl font-bold text-ink">{chapter.sourceCount}</p>
                         <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">sources</p>
                       </div>
                     </div>
@@ -270,7 +476,6 @@ export default function SourcesPage() {
               </section>
             )}
 
-            {/* CTA */}
             <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row gap-4">
               <Link to="/methodology" className="font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors text-center">
                 Read the Methodology
@@ -281,10 +486,8 @@ export default function SourcesPage() {
             </div>
           </article>
 
-          {/* Right Column — Sticky Sidebar */}
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-8">
-              {/* Verification Databases */}
               <div>
                 <h3 className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-4 pb-2 border-b border-border">
                   Public Verification Databases
@@ -317,7 +520,6 @@ export default function SourcesPage() {
                 </div>
               </div>
 
-              {/* Related Pages */}
               <div>
                 <h3 className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-4 pb-2 border-b border-border">
                   Related Pages
@@ -335,7 +537,6 @@ export default function SourcesPage() {
                 </div>
               </div>
 
-              {/* Support CTA */}
               <div className="border-t border-border pt-6">
                 <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
                   Support The Archive

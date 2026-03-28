@@ -1,10 +1,14 @@
 import { useState, useEffect, useCallback, useRef, startTransition } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import type { ChapterType, EvidenceTier } from '../data/chapterTypes'
 import { useAuth } from '../lib/AuthContext'
 import { chapterMeta } from '../data/chapterMeta'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
+
+type SearchMatchedField = 'title' | 'subtitle' | 'keywords' | 'content' | 'sources'
+type SearchMatchFilter = 'all' | 'sources'
 
 interface SearchResult {
   chapterId: string
@@ -12,21 +16,133 @@ interface SearchResult {
   chapterTitle: string
   chapterSubtitle: string
   dateRange: string
-  matchedIn: string[]
+  matchedIn: SearchMatchedField[]
   snippet: string
   accessLevel: 'preview' | 'full'
+  chapterType: ChapterType | null
+  availableEvidenceTiers: EvidenceTier[]
 }
 
 interface SearchResponse {
   results: SearchResult[]
   scope: 'public' | 'full'
   totalChapters: number
+  filters?: {
+    evidenceTier: EvidenceTier | 'all'
+    match: SearchMatchFilter
+    chapterType: ChapterType | 'all'
+  }
 }
+
+const EVIDENCE_TIER_OPTIONS: Array<{ value: EvidenceTier | 'all'; label: string }> = [
+  { value: 'all', label: 'All Tiers' },
+  { value: 'verified', label: 'Verified' },
+  { value: 'circumstantial', label: 'Circumstantial' },
+  { value: 'disputed', label: 'Disputed' },
+]
+
+const CHAPTER_TYPE_OPTIONS: Array<{ value: ChapterType | 'all'; label: string }> = [
+  { value: 'all', label: 'All Formats' },
+  { value: 'investigation', label: 'Investigations' },
+  { value: 'explainer', label: 'Explainers' },
+  { value: 'reference', label: 'Reference' },
+]
+
+const MATCH_FILTER_OPTIONS: Array<{ value: SearchMatchFilter; label: string }> = [
+  { value: 'all', label: 'All Matches' },
+  { value: 'sources', label: 'Source Only' },
+]
 
 function getAuthHeaders(): Record<string, string> {
   if (typeof window === 'undefined') return {}
   const token = window.localStorage.getItem('veritas_token')
   return token ? { Authorization: `Bearer ${token}` } : {}
+}
+
+function sanitizeEvidenceTier(value: string | null): EvidenceTier | 'all' {
+  if (value === 'verified' || value === 'circumstantial' || value === 'disputed') {
+    return value
+  }
+  return 'all'
+}
+
+function sanitizeChapterType(value: string | null): ChapterType | 'all' {
+  if (value === 'reference' || value === 'explainer' || value === 'investigation') {
+    return value
+  }
+  return 'all'
+}
+
+function sanitizeMatchFilter(value: string | null): SearchMatchFilter {
+  return value === 'sources' ? 'sources' : 'all'
+}
+
+function buildSearchParams(
+  query: string,
+  evidenceTier: EvidenceTier | 'all',
+  matchFilter: SearchMatchFilter,
+  chapterType: ChapterType | 'all'
+) {
+  const params = new URLSearchParams()
+  if (query) params.set('q', query)
+  if (evidenceTier !== 'all') params.set('evidence', evidenceTier)
+  if (matchFilter !== 'all') params.set('match', matchFilter)
+  if (chapterType !== 'all') params.set('chapterType', chapterType)
+  return params
+}
+
+function getFilterButtonClasses(active: boolean) {
+  return active
+    ? 'border-crimson bg-crimson/5 text-crimson'
+    : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+}
+
+function getEvidenceTierClasses(tier: EvidenceTier | 'all', active: boolean) {
+  if (!active) {
+    return 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+  }
+
+  if (tier === 'verified') {
+    return 'border-verified-border bg-verified-bg text-verified'
+  }
+
+  if (tier === 'circumstantial') {
+    return 'border-circumstantial-border bg-circumstantial-bg text-circumstantial'
+  }
+
+  if (tier === 'disputed') {
+    return 'border-disputed-border bg-disputed-bg text-disputed'
+  }
+
+  return 'border-border bg-parchment-dark text-ink'
+}
+
+function formatMatchedField(field: SearchMatchedField) {
+  switch (field) {
+    case 'content':
+      return 'Text'
+    case 'keywords':
+      return 'Keywords'
+    case 'sources':
+      return 'Sources'
+    case 'subtitle':
+      return 'Subtitle'
+    case 'title':
+      return 'Title'
+    default:
+      return field
+  }
+}
+
+function formatChapterType(type: ChapterType) {
+  switch (type) {
+    case 'explainer':
+      return 'Explainer'
+    case 'reference':
+      return 'Reference'
+    default:
+      return 'Investigation'
+  }
 }
 
 function HighlightText({ text, query }: { text: string; query: string }) {
@@ -54,10 +170,27 @@ export default function SearchPage() {
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery)
   const [results, setResults] = useState<SearchResult[]>([])
   const [searchScope, setSearchScope] = useState<'public' | 'full'>(isLoggedIn ? 'full' : 'public')
+  const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTier | 'all'>(
+    sanitizeEvidenceTier(searchParams.get('evidence'))
+  )
+  const [matchFilter, setMatchFilter] = useState<SearchMatchFilter>(
+    sanitizeMatchFilter(searchParams.get('match'))
+  )
+  const [chapterTypeFilter, setChapterTypeFilter] = useState<ChapterType | 'all'>(
+    sanitizeChapterType(searchParams.get('chapterType'))
+  )
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const totalChapters = chapterMeta.length
+  const searchParamString = searchParams.toString()
+  const effectiveEvidenceTierFilter = isLoggedIn ? evidenceTierFilter : 'all'
+  const effectiveMatchFilter = isLoggedIn ? matchFilter : 'all'
+  const effectiveChapterTypeFilter = isLoggedIn ? chapterTypeFilter : 'all'
+  const hasActiveFilters =
+    effectiveEvidenceTierFilter !== 'all' ||
+    effectiveMatchFilter !== 'all' ||
+    effectiveChapterTypeFilter !== 'all'
 
   useEffect(() => {
     const scopeDescription = searchScope === 'full'
@@ -81,26 +214,69 @@ export default function SearchPage() {
 
   useEffect(() => {
     const nextQuery = searchParams.get('q') || ''
+    const nextEvidenceTier = sanitizeEvidenceTier(searchParams.get('evidence'))
+    const nextMatchFilter = sanitizeMatchFilter(searchParams.get('match'))
+    const nextChapterType = sanitizeChapterType(searchParams.get('chapterType'))
+
     if (nextQuery !== query) {
       setQuery(nextQuery)
+    }
+
+    if (nextQuery !== debouncedQuery) {
       setDebouncedQuery(nextQuery)
     }
-  }, [query, searchParams])
+
+    if (nextEvidenceTier !== evidenceTierFilter) {
+      setEvidenceTierFilter(nextEvidenceTier)
+    }
+
+    if (nextMatchFilter !== matchFilter) {
+      setMatchFilter(nextMatchFilter)
+    }
+
+    if (nextChapterType !== chapterTypeFilter) {
+      setChapterTypeFilter(nextChapterType)
+    }
+  }, [chapterTypeFilter, debouncedQuery, evidenceTierFilter, matchFilter, query, searchParams])
+
+  useEffect(() => {
+    const nextParams = buildSearchParams(
+      debouncedQuery.trim(),
+      effectiveEvidenceTierFilter,
+      effectiveMatchFilter,
+      effectiveChapterTypeFilter
+    )
+
+    if (nextParams.toString() !== searchParamString) {
+      setSearchParams(nextParams, { replace: true })
+    }
+  }, [
+    debouncedQuery,
+    effectiveChapterTypeFilter,
+    effectiveEvidenceTierFilter,
+    effectiveMatchFilter,
+    searchParamString,
+    setSearchParams,
+  ])
+
+  useEffect(() => {
+    return () => {
+      if (debounceTimer.current) clearTimeout(debounceTimer.current)
+    }
+  }, [])
 
   const handleSearch = useCallback((value: string) => {
     setQuery(value)
     if (debounceTimer.current) clearTimeout(debounceTimer.current)
     debounceTimer.current = setTimeout(() => {
+      const trimmedValue = value.trim()
       setDebouncedQuery(value)
-      if (value.trim()) {
-        setSearchParams({ q: value })
-        trackSearch(value.trim())
-        scoreSearchPerformed(value.trim())
-      } else {
-        setSearchParams({})
+      if (trimmedValue) {
+        trackSearch(trimmedValue)
+        scoreSearchPerformed(trimmedValue)
       }
     }, 250)
-  }, [setSearchParams])
+  }, [])
 
   useEffect(() => {
     if (!debouncedQuery.trim()) {
@@ -114,6 +290,18 @@ export default function SearchPage() {
     let cancelled = false
     const controller = new AbortController()
     const params = new URLSearchParams({ q: debouncedQuery.trim() })
+
+    if (effectiveEvidenceTierFilter !== 'all') {
+      params.set('evidence', effectiveEvidenceTierFilter)
+    }
+
+    if (effectiveMatchFilter !== 'all') {
+      params.set('match', effectiveMatchFilter)
+    }
+
+    if (effectiveChapterTypeFilter !== 'all') {
+      params.set('chapterType', effectiveChapterTypeFilter)
+    }
 
     setLoading(true)
     setError(null)
@@ -147,7 +335,13 @@ export default function SearchPage() {
       cancelled = true
       controller.abort()
     }
-  }, [debouncedQuery, isLoggedIn])
+  }, [
+    debouncedQuery,
+    effectiveChapterTypeFilter,
+    effectiveEvidenceTierFilter,
+    effectiveMatchFilter,
+    isLoggedIn,
+  ])
 
   const isPreviewSearch = searchScope === 'public'
 
@@ -196,7 +390,7 @@ export default function SearchPage() {
               </div>
             )}
 
-            <div className="relative mb-10">
+            <div className="relative mb-8">
               <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
@@ -216,6 +410,106 @@ export default function SearchPage() {
                 </div>
               )}
             </div>
+
+            {isLoggedIn && (
+              <section className="mb-10 border border-border bg-surface-raised p-4 sm:p-5">
+                <div className="mb-4">
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
+                    Signed-In Filters
+                  </p>
+                  <p className="font-body text-sm text-ink-muted leading-relaxed">
+                    Narrow the full archive by evidence tier, source-only matches, and chapter format without widening anonymous preview access.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-2">
+                      Match Location
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {MATCH_FILTER_OPTIONS.map((option) => {
+                        const isActive = matchFilter === option.value
+                        return (
+                          <button
+                            key={option.value}
+                            type="button"
+                            onClick={() => setMatchFilter(option.value)}
+                            className={`min-h-[44px] rounded-sm border px-3 py-2 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase transition-colors ${getFilterButtonClasses(isActive)}`}
+                            aria-pressed={isActive}
+                          >
+                            {option.label}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-2">
+                      Evidence Tier
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {EVIDENCE_TIER_OPTIONS.map((option) => {
+                        const isActive = evidenceTierFilter === option.value
+                        return (
+                          <button
+                            key={option.value}
+                            type="button"
+                            onClick={() => setEvidenceTierFilter(option.value)}
+                            className={`min-h-[44px] rounded-sm border px-3 py-2 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase transition-colors ${getEvidenceTierClasses(option.value, isActive)}`}
+                            aria-pressed={isActive}
+                          >
+                            {option.label}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-2">
+                      Chapter Format
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {CHAPTER_TYPE_OPTIONS.map((option) => {
+                        const isActive = chapterTypeFilter === option.value
+                        return (
+                          <button
+                            key={option.value}
+                            type="button"
+                            onClick={() => setChapterTypeFilter(option.value)}
+                            className={`min-h-[44px] rounded-sm border px-3 py-2 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase transition-colors ${getFilterButtonClasses(isActive)}`}
+                            aria-pressed={isActive}
+                          >
+                            {option.label}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+
+                  {hasActiveFilters && (
+                    <div className="flex flex-col gap-2 pt-1 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="font-sans text-xs text-ink-faint">
+                        Filters are limiting the signed-in archive search to the selected evidence mix, match location, and chapter format.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEvidenceTierFilter('all')
+                          setMatchFilter('all')
+                          setChapterTypeFilter('all')
+                        }}
+                        className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
+                      >
+                        Clear filters
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
 
             {debouncedQuery.trim() === '' ? (
               <div className="text-center py-16">
@@ -252,15 +546,44 @@ export default function SearchPage() {
                 <p className="font-body text-lg text-ink-muted mb-2">
                   No results found for &ldquo;{debouncedQuery}&rdquo;
                 </p>
-                <p className="font-sans text-sm text-ink-faint">
+                <p className="font-sans text-sm text-ink-faint mb-4">
                   Try different keywords or browse the <Link to="/" className="text-crimson hover:underline">table of contents</Link>.
                 </p>
+                {hasActiveFilters && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEvidenceTierFilter('all')
+                      setMatchFilter('all')
+                      setChapterTypeFilter('all')
+                    }}
+                    className="font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
+                  >
+                    Clear the signed-in filters
+                  </button>
+                )}
               </div>
             ) : (
               <div>
-                <p className="font-sans text-xs text-ink-faint mb-6">
-                  <span className="font-bold text-crimson">{results.length}</span> {results.length === 1 ? 'result' : 'results'} for &ldquo;{debouncedQuery}&rdquo;
-                </p>
+                <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="font-sans text-xs text-ink-faint">
+                    <span className="font-bold text-crimson">{results.length}</span> {results.length === 1 ? 'result' : 'results'} for &ldquo;{debouncedQuery}&rdquo;
+                  </p>
+                  {hasActiveFilters && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEvidenceTierFilter('all')
+                        setMatchFilter('all')
+                        setChapterTypeFilter('all')
+                      }}
+                      className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
+                    >
+                      Clear filters
+                    </button>
+                  )}
+                </div>
+
                 <div className="space-y-0">
                   {results.map(result => (
                     <Link
@@ -284,10 +607,36 @@ export default function SearchPage() {
                       <p className="font-body text-sm text-ink-muted leading-relaxed mb-3 line-clamp-3">
                         <HighlightText text={result.snippet || result.chapterSubtitle} query={debouncedQuery} />
                       </p>
+
+                      {(result.chapterType || result.availableEvidenceTiers.length > 0) && (
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          {result.chapterType && (
+                            <span className="inline-flex items-center rounded-sm border border-border bg-parchment-dark px-2 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.08em] text-ink-muted">
+                              {formatChapterType(result.chapterType)}
+                            </span>
+                          )}
+                          {result.availableEvidenceTiers.map((tier) => (
+                            <span
+                              key={`${result.chapterId}-${tier}`}
+                              className={`inline-flex items-center rounded-sm border px-2 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.08em] ${getEvidenceTierClasses(tier, true)}`}
+                            >
+                              {tier}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
                       <div className="flex flex-wrap gap-2">
-                        {result.matchedIn.map(field => (
-                          <span key={field} className="font-sans text-[0.6rem] font-semibold px-2 py-0.5 bg-parchment-dark text-ink-faint rounded-sm uppercase tracking-wider">
-                            {field}
+                        {result.matchedIn.map((field) => (
+                          <span
+                            key={field}
+                            className={`font-sans text-[0.6rem] font-semibold px-2 py-0.5 rounded-sm uppercase tracking-wider ${
+                              field === 'sources'
+                                ? 'border border-crimson/20 bg-crimson/5 text-crimson'
+                                : 'bg-parchment-dark text-ink-faint'
+                            }`}
+                          >
+                            {formatMatchedField(field)}
                           </span>
                         ))}
                       </div>

@@ -16,6 +16,9 @@ const RECORD_PDF_PATH = path.join(__dirname, 'dist', 'the-record.pdf')
 
 let publicChapterIndex = []
 let chapterDataManifest = { previewBlockLimit: 3, chapterIds: [], generatedAt: '' }
+const EVIDENCE_TIER_FILTERS = new Set(['verified', 'circumstantial', 'disputed'])
+const CHAPTER_TYPE_FILTERS = new Set(['reference', 'explainer', 'investigation'])
+const SEARCH_MATCH_FILTERS = new Set(['all', 'sources'])
 
 function loadChapterData() {
   try {
@@ -67,6 +70,12 @@ function normalizeSearchQuery(value) {
   return value.trim().slice(0, 120)
 }
 
+function normalizeFilter(value, allowedValues) {
+  if (typeof value !== 'string') return 'all'
+  const normalized = value.trim()
+  return allowedValues.has(normalized) ? normalized : 'all'
+}
+
 function getSearchableChapterText(chapter) {
   return [
     chapter.title,
@@ -74,7 +83,7 @@ function getSearchableChapterText(chapter) {
     chapter.dateRange,
     ...(chapter.keywords || []),
     ...(chapter.content || []).map((block) => block.text || block.quote?.text || block.evidence?.text || ''),
-    ...(chapter.sources || []).map((source) => source.text || ''),
+    ...(chapter.sources || []).map((source) => `${source.text || ''} ${source.url || ''}`),
   ].join(' ').toLowerCase()
 }
 
@@ -96,7 +105,10 @@ function getSearchSnippet(chapter, query) {
     return `${prefix}${text.slice(start, end)}${suffix}`
   }
 
-  const matchedSource = (chapter.sources || []).find((source) => source.text.toLowerCase().includes(needle))
+  const matchedSource = (chapter.sources || []).find((source) => {
+    const sourceText = `${source.text || ''} ${source.url || ''}`.toLowerCase()
+    return sourceText.includes(needle)
+  })
   if (matchedSource) {
     return matchedSource.text.slice(0, 180) + (matchedSource.text.length > 180 ? '...' : '')
   }
@@ -122,13 +134,16 @@ function getMatchedSearchFields(chapter, query) {
   })
   if (contentMatched) matchedFields.push('content')
 
-  const sourceMatched = (chapter.sources || []).some((source) => source.text.toLowerCase().includes(needle))
+  const sourceMatched = (chapter.sources || []).some((source) => {
+    const sourceText = `${source.text || ''} ${source.url || ''}`.toLowerCase()
+    return sourceText.includes(needle)
+  })
   if (sourceMatched) matchedFields.push('sources')
 
   return matchedFields
 }
 
-function searchChapters(scope, query) {
+function searchChapters(scope, query, filters = {}) {
   const normalized = normalizeSearchQuery(query)
   if (!normalized) return []
 
@@ -136,20 +151,45 @@ function searchChapters(scope, query) {
   if (terms.length === 0) return []
 
   return getChapterCollection(scope)
-    .filter((chapter) => {
+    .map((chapter) => {
       const searchableText = getSearchableChapterText(chapter)
-      return terms.every((term) => searchableText.includes(term))
+      if (!terms.every((term) => searchableText.includes(term))) {
+        return null
+      }
+
+      const matchedIn = getMatchedSearchFields(chapter, normalized)
+      if (filters.match === 'sources' && !matchedIn.includes('sources')) {
+        return null
+      }
+
+      if (
+        filters.evidenceTier !== 'all' &&
+        !(chapter.availableEvidenceTiers || []).includes(filters.evidenceTier)
+      ) {
+        return null
+      }
+
+      if (
+        filters.chapterType !== 'all' &&
+        chapter.chapterType !== filters.chapterType
+      ) {
+        return null
+      }
+
+      return {
+        chapterId: chapter.id,
+        chapterNumber: chapter.number,
+        chapterTitle: chapter.title,
+        chapterSubtitle: chapter.subtitle,
+        dateRange: chapter.dateRange,
+        accessLevel: chapter.accessLevel,
+        chapterType: chapter.chapterType || null,
+        availableEvidenceTiers: chapter.availableEvidenceTiers || [],
+        matchedIn,
+        snippet: getSearchSnippet(chapter, normalized),
+      }
     })
-    .map((chapter) => ({
-      chapterId: chapter.id,
-      chapterNumber: chapter.number,
-      chapterTitle: chapter.title,
-      chapterSubtitle: chapter.subtitle,
-      dateRange: chapter.dateRange,
-      accessLevel: chapter.accessLevel,
-      matchedIn: getMatchedSearchFields(chapter, normalized),
-      snippet: getSearchSnippet(chapter, normalized),
-    }))
+    .filter(Boolean)
     .sort((a, b) => {
       if (b.matchedIn.length !== a.matchedIn.length) {
         return b.matchedIn.length - a.matchedIn.length
@@ -604,6 +644,17 @@ app.get('/api/search', async (req, res) => {
   const query = normalizeSearchQuery(req.query.q)
   const user = await authenticateToken(req)
   const scope = user ? 'full' : 'public'
+  const filters = user
+    ? {
+        evidenceTier: normalizeFilter(req.query.evidence, EVIDENCE_TIER_FILTERS),
+        match: normalizeFilter(req.query.match, SEARCH_MATCH_FILTERS),
+        chapterType: normalizeFilter(req.query.chapterType, CHAPTER_TYPE_FILTERS),
+      }
+    : {
+        evidenceTier: 'all',
+        match: 'all',
+        chapterType: 'all',
+      }
 
   res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
 
@@ -611,6 +662,7 @@ app.get('/api/search', async (req, res) => {
     return res.json({
       query: '',
       scope,
+      filters,
       totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
       results: [],
     })
@@ -619,8 +671,9 @@ app.get('/api/search', async (req, res) => {
   return res.json({
     query,
     scope,
+    filters,
     totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
-    results: searchChapters(scope, query),
+    results: searchChapters(scope, query, filters),
   })
 })
 
