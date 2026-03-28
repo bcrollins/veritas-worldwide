@@ -52,6 +52,113 @@ function getChapterJson(scope, chapterId) {
   }
 }
 
+function getChapterCollection(scope) {
+  if (scope === 'public') {
+    return publicChapterIndex
+  }
+
+  return (chapterDataManifest.chapterIds || [])
+    .map((chapterId) => getChapterJson('full', chapterId))
+    .filter(Boolean)
+}
+
+function normalizeSearchQuery(value) {
+  if (typeof value !== 'string') return ''
+  return value.trim().slice(0, 120)
+}
+
+function getSearchableChapterText(chapter) {
+  return [
+    chapter.title,
+    chapter.subtitle,
+    chapter.dateRange,
+    ...(chapter.keywords || []),
+    ...(chapter.content || []).map((block) => block.text || block.quote?.text || block.evidence?.text || ''),
+    ...(chapter.sources || []).map((source) => source.text || ''),
+  ].join(' ').toLowerCase()
+}
+
+function getSearchSnippet(chapter, query) {
+  const needle = query.toLowerCase()
+
+  for (const block of chapter.content || []) {
+    const text = block.text || block.quote?.text || block.evidence?.text
+    if (!text) continue
+
+    const lowerText = text.toLowerCase()
+    if (!lowerText.includes(needle)) continue
+
+    const index = lowerText.indexOf(needle)
+    const start = Math.max(0, index - 80)
+    const end = Math.min(text.length, index + query.length + 80)
+    const prefix = start > 0 ? '...' : ''
+    const suffix = end < text.length ? '...' : ''
+    return `${prefix}${text.slice(start, end)}${suffix}`
+  }
+
+  const matchedSource = (chapter.sources || []).find((source) => source.text.toLowerCase().includes(needle))
+  if (matchedSource) {
+    return matchedSource.text.slice(0, 180) + (matchedSource.text.length > 180 ? '...' : '')
+  }
+
+  return chapter.subtitle
+}
+
+function getMatchedSearchFields(chapter, query) {
+  const needle = query.toLowerCase()
+  const matchedFields = []
+
+  if (chapter.title.toLowerCase().includes(needle)) matchedFields.push('title')
+  if (chapter.subtitle.toLowerCase().includes(needle)) matchedFields.push('subtitle')
+  if ((chapter.keywords || []).some((keyword) => keyword.toLowerCase().includes(needle))) matchedFields.push('keywords')
+
+  const contentMatched = (chapter.content || []).some((block) => {
+    if (block.text?.toLowerCase().includes(needle)) return true
+    if (block.quote?.text.toLowerCase().includes(needle)) return true
+    if (block.evidence?.text.toLowerCase().includes(needle)) return true
+    if (block.table?.headers?.some((header) => header.toLowerCase().includes(needle))) return true
+    if (block.table?.rows?.some((row) => row.some((cell) => cell.toLowerCase().includes(needle)))) return true
+    return false
+  })
+  if (contentMatched) matchedFields.push('content')
+
+  const sourceMatched = (chapter.sources || []).some((source) => source.text.toLowerCase().includes(needle))
+  if (sourceMatched) matchedFields.push('sources')
+
+  return matchedFields
+}
+
+function searchChapters(scope, query) {
+  const normalized = normalizeSearchQuery(query)
+  if (!normalized) return []
+
+  const terms = normalized.toLowerCase().split(/\s+/).filter(Boolean)
+  if (terms.length === 0) return []
+
+  return getChapterCollection(scope)
+    .filter((chapter) => {
+      const searchableText = getSearchableChapterText(chapter)
+      return terms.every((term) => searchableText.includes(term))
+    })
+    .map((chapter) => ({
+      chapterId: chapter.id,
+      chapterNumber: chapter.number,
+      chapterTitle: chapter.title,
+      chapterSubtitle: chapter.subtitle,
+      dateRange: chapter.dateRange,
+      accessLevel: chapter.accessLevel,
+      matchedIn: getMatchedSearchFields(chapter, normalized),
+      snippet: getSearchSnippet(chapter, normalized),
+    }))
+    .sort((a, b) => {
+      if (b.matchedIn.length !== a.matchedIn.length) {
+        return b.matchedIn.length - a.matchedIn.length
+      }
+
+      return a.chapterId.localeCompare(b.chapterId, undefined, { numeric: true })
+    })
+}
+
 loadChapterData()
 
 // ── Persistent storage ────────────────────────────────────────────
@@ -491,6 +598,30 @@ app.get('/api/chapters/:id', async (req, res) => {
 
   res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
   return res.json(chapter)
+})
+
+app.get('/api/search', async (req, res) => {
+  const query = normalizeSearchQuery(req.query.q)
+  const user = await authenticateToken(req)
+  const scope = user ? 'full' : 'public'
+
+  res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
+
+  if (!query) {
+    return res.json({
+      query: '',
+      scope,
+      totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
+      results: [],
+    })
+  }
+
+  return res.json({
+    query,
+    scope,
+    totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
+    results: searchChapters(scope, query),
+  })
 })
 
 app.get('/api/downloads/the-record.pdf', async (req, res) => {

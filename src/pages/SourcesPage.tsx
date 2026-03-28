@@ -1,28 +1,33 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAllChapters } from '../hooks/useAllChapters'
+import { useAuth } from '../lib/AuthContext'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 
 export default function SourcesPage() {
-  const { chapters, loading: chaptersLoading } = useAllChapters()
+  const { isLoggedIn, setShowAuthModal } = useAuth()
+  const { chapters, loading: chaptersLoading } = useAllChapters({ scope: isLoggedIn ? 'full' : 'public' })
+
   useEffect(() => {
     setMetaTags({
       title: 'Sources & Bibliography | The Record — Veritas Press',
-      description: 'Master bibliography of 500+ primary sources cited across 31 chapters. Congressional records, court filings, declassified documents, and academic research.',
+      description: 'Master bibliography and verification library for The Record. Free reader accounts unlock the full source archive.',
       url: `${SITE_URL}/sources`,
     })
     setJsonLd({
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       'name': 'Sources & Bibliography',
-      'description': 'Master bibliography of 500+ primary sources cited across 31 chapters.',
+      'description': 'Master bibliography and verification library for The Record.',
       'url': `${SITE_URL}/sources`,
       'isPartOf': { '@type': 'WebSite', 'name': `The Record — ${SITE_NAME}`, 'url': SITE_URL },
       'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
     })
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
+
+  const getSourceCount = (chapter: typeof chapters[number]) => chapter.sourceCount ?? chapter.sources.length
 
   const allSources = chapters.flatMap(chapter =>
     chapter.sources.map(source => ({
@@ -32,14 +37,16 @@ export default function SourcesPage() {
       chapterTitle: chapter.title,
     }))
   )
+  const totalSources = chapters.reduce((sum, chapter) => sum + getSourceCount(chapter), 0)
 
   const chapterSources = chapters
-    .filter(ch => ch.sources.length > 0)
+    .filter(ch => getSourceCount(ch) > 0)
     .map(ch => ({
       id: ch.id,
       number: ch.number,
       title: ch.title,
       sources: ch.sources,
+      sourceCount: getSourceCount(ch),
     }))
 
   const [sourceFilter, setSourceFilter] = useState('')
@@ -55,7 +62,6 @@ export default function SourcesPage() {
         .filter(ch => ch.sources.length > 0)
     : chapterSources
   const filteredCount = filteredChapterSources.reduce((sum, ch) => sum + ch.sources.length, 0)
-
   return (
     <div className="w-full max-w-[1920px] mx-auto">
       {/* Section Bar */}
@@ -85,11 +91,13 @@ export default function SourcesPage() {
                 Sources &amp; References
               </h1>
               <p className="font-body text-lg italic text-ink-muted leading-relaxed max-w-2xl">
-                Every source cited in this publication is publicly accessible. The reader is encouraged to verify any claim independently.
+                {isLoggedIn
+                  ? 'Every source cited in this publication is organized here for direct verification. The reader is encouraged to inspect the record independently.'
+                  : 'Free reader accounts unlock the full source archive. Public readers can review chapter-by-chapter source counts and verification databases before signing in.'}
               </p>
               <div className="grid grid-cols-3 gap-4 mt-6">
                 <div className="text-center">
-                  <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{allSources.length}</p>
+                  <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{totalSources}</p>
                   <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">Total Sources</p>
                 </div>
                 <div className="text-center">
@@ -97,109 +105,170 @@ export default function SourcesPage() {
                   <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">Chapters Sourced</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{allSources.filter(s => s.url).length}</p>
-                  <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">With Direct Links</p>
+                  <p className="font-display text-xl sm:text-2xl font-bold text-crimson">
+                    {isLoggedIn ? allSources.filter(s => s.url).length : 'Free'}
+                  </p>
+                  <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">
+                    {isLoggedIn ? 'With Direct Links' : 'Reader Access'}
+                  </p>
                 </div>
               </div>
             </header>
 
-            {/* Source Search */}
-            <div className="mb-8 no-print">
-              <div className="relative">
-                <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input
-                  type="text"
-                  placeholder="Search sources by name, institution, or URL..."
-                  value={sourceFilter}
-                  onChange={(e) => setSourceFilter(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 font-sans text-sm bg-surface border border-border rounded-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
-                  aria-label="Filter sources"
-                />
-                {sourceFilter.trim() && (
-                  <div className="flex items-center gap-3 mt-2">
-                    <span className="font-sans text-xs text-ink-faint">
-                      <span className="font-bold text-crimson">{filteredCount}</span> source{filteredCount !== 1 ? 's' : ''} matching &ldquo;{sourceFilter}&rdquo;
-                    </span>
-                    <button onClick={() => setSourceFilter('')} className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2">
-                      Clear
-                    </button>
-                  </div>
-                )}
+            {chaptersLoading ? (
+              <div className="py-16 text-center">
+                <div className="inline-block w-8 h-8 border-2 border-crimson/20 border-t-crimson rounded-full animate-spin mb-4" />
+                <p className="font-body text-base text-ink-muted">Loading the source archive…</p>
               </div>
-            </div>
-
-            {/* Chapter Quick Nav */}
-            <nav className="mb-12 no-print" aria-label="Jump to chapter sources">
-              <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
-                Jump to Chapter
-              </h2>
-              <div className="flex flex-wrap gap-1.5">
-                {chapterSources.map(ch => (
-                  <a
-                    key={ch.id}
-                    href={`#sources-${ch.id}`}
-                    className="font-sans text-[0.65rem] font-semibold tracking-[0.05em] uppercase px-3 py-2 min-h-[44px] min-w-[44px] inline-flex items-center justify-center border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
-                    title={ch.title}
-                  >
-                    {ch.number}
-                  </a>
-                ))}
-              </div>
-            </nav>
-
-            {/* Sources by Chapter */}
-            <section>
-              <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-6">
-                Sources by Chapter
-              </h2>
-
-              {filteredChapterSources.length === 0 ? (
-                <p className="font-body text-base text-ink-muted text-center py-12">
-                  {sourceFilter.trim()
-                    ? <>No sources matching &ldquo;{sourceFilter}&rdquo;. <button onClick={() => setSourceFilter('')} className="text-crimson hover:underline">Clear search</button></>
-                    : 'Sources are being compiled and will be published with each chapter.'
-                  }
-                </p>
-              ) : (
-                <div className="space-y-10">
-                  {filteredChapterSources.map(ch => (
-                    <div key={ch.id} id={`sources-${ch.id}`} className="border-b border-border pb-8 scroll-mt-20">
-                      <div className="flex items-baseline gap-3 mb-4">
-                        <span className="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson">
-                          {ch.number}
+            ) : isLoggedIn ? (
+              <>
+                {/* Source Search */}
+                <div className="mb-8 no-print">
+                  <div className="relative">
+                    <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Search sources by name, institution, or URL..."
+                      value={sourceFilter}
+                      onChange={(e) => setSourceFilter(e.target.value)}
+                      className="w-full pl-10 pr-4 py-2.5 font-sans text-sm bg-surface border border-border rounded-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                      aria-label="Filter sources"
+                    />
+                    {sourceFilter.trim() && (
+                      <div className="flex items-center gap-3 mt-2">
+                        <span className="font-sans text-xs text-ink-faint">
+                          <span className="font-bold text-crimson">{filteredCount}</span> source{filteredCount !== 1 ? 's' : ''} matching &ldquo;{sourceFilter}&rdquo;
                         </span>
-                        <Link
-                          to={`/chapter/${ch.id}`}
-                          className="font-display text-lg font-bold text-ink hover:text-crimson transition-colors"
-                        >
+                        <button onClick={() => setSourceFilter('')} className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2">
+                          Clear
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Chapter Quick Nav */}
+                <nav className="mb-12 no-print" aria-label="Jump to chapter sources">
+                  <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-4">
+                    Jump to Chapter
+                  </h2>
+                  <div className="flex flex-wrap gap-1.5">
+                    {chapterSources.map(ch => (
+                      <a
+                        key={ch.id}
+                        href={`#sources-${ch.id}`}
+                        className="font-sans text-[0.65rem] font-semibold tracking-[0.05em] uppercase px-3 py-2 min-h-[44px] min-w-[44px] inline-flex items-center justify-center border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+                        title={ch.title}
+                      >
+                        {ch.number}
+                      </a>
+                    ))}
+                  </div>
+                </nav>
+
+                {/* Sources by Chapter */}
+                <section>
+                  <h2 className="font-sans text-xs font-bold tracking-[0.12em] uppercase text-ink mb-6">
+                    Sources by Chapter
+                  </h2>
+
+                  {filteredChapterSources.length === 0 ? (
+                    <p className="font-body text-base text-ink-muted text-center py-12">
+                      {sourceFilter.trim()
+                        ? <>No sources matching &ldquo;{sourceFilter}&rdquo;. <button onClick={() => setSourceFilter('')} className="text-crimson hover:underline">Clear search</button></>
+                        : 'Sources are being compiled and will be published with each chapter.'
+                      }
+                    </p>
+                  ) : (
+                    <div className="space-y-10">
+                      {filteredChapterSources.map(ch => (
+                        <div key={ch.id} id={`sources-${ch.id}`} className="border-b border-border pb-8 scroll-mt-20">
+                          <div className="flex items-baseline gap-3 mb-4">
+                            <span className="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson">
+                              {ch.number}
+                            </span>
+                            <Link
+                              to={`/chapter/${ch.id}`}
+                              className="font-display text-lg font-bold text-ink hover:text-crimson transition-colors"
+                            >
+                              {ch.title}
+                            </Link>
+                          </div>
+                          <ol className="space-y-2 ml-1">
+                            {ch.sources.map(source => (
+                              <li key={source.id} className="font-sans text-sm text-ink-muted leading-relaxed flex gap-3">
+                                <span className="font-bold text-crimson shrink-0 text-xs mt-0.5">[{source.id}]</span>
+                                <span>
+                                  {source.text}
+                                  {source.url && (
+                                    <>
+                                      {' '}
+                                      <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-crimson hover:text-crimson-dark underline underline-offset-2">
+                                        View &rarr;
+                                      </a>
+                                    </>
+                                  )}
+                                </span>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </section>
+              </>
+            ) : (
+              <section className="border border-border bg-surface p-6 sm:p-8">
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-3">
+                  Reader Access
+                </p>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-4">
+                  Create a free account to browse the full bibliography.
+                </h2>
+                <p className="font-body text-base text-ink-muted leading-relaxed max-w-2xl mb-6">
+                  The public preview shows how heavily each chapter is sourced. Signing in unlocks the full citation library, direct links, and filter tools for document-by-document verification.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                  <button
+                    onClick={() => setShowAuthModal(true)}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+                  >
+                    Create Free Account
+                  </button>
+                  <button
+                    onClick={() => setShowAuthModal(true)}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+                  >
+                    Log In
+                  </button>
+                  <Link
+                    to="/membership"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink-muted font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-ink hover:text-ink transition-colors"
+                  >
+                    Support The Archive
+                  </Link>
+                </div>
+                <div className="space-y-3">
+                  {chapterSources.map(ch => (
+                    <div key={ch.id} className="flex items-center justify-between gap-4 border-b border-border pb-3">
+                      <div className="min-w-0">
+                        <p className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson">{ch.number}</p>
+                        <Link to={`/chapter/${ch.id}`} className="font-display text-lg font-bold text-ink hover:text-crimson transition-colors">
                           {ch.title}
                         </Link>
                       </div>
-                      <ol className="space-y-2 ml-1">
-                        {ch.sources.map(source => (
-                          <li key={source.id} className="font-sans text-sm text-ink-muted leading-relaxed flex gap-3">
-                            <span className="font-bold text-crimson shrink-0 text-xs mt-0.5">[{source.id}]</span>
-                            <span>
-                              {source.text}
-                              {source.url && (
-                                <>
-                                  {' '}
-                                  <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-crimson hover:text-crimson-dark underline underline-offset-2">
-                                    View &rarr;
-                                  </a>
-                                </>
-                              )}
-                            </span>
-                          </li>
-                        ))}
-                      </ol>
+                      <div className="shrink-0 text-right">
+                        <p className="font-display text-xl font-bold text-ink">{ch.sourceCount}</p>
+                        <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">sources</p>
+                      </div>
                     </div>
                   ))}
                 </div>
-              )}
-            </section>
+              </section>
+            )}
 
             {/* CTA */}
             <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row gap-4">
@@ -269,10 +338,10 @@ export default function SourcesPage() {
               {/* Support CTA */}
               <div className="border-t border-border pt-6">
                 <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
-                  Free &amp; Open Access
+                  Support The Archive
                 </p>
                 <p className="font-body text-xs text-ink-muted leading-relaxed mb-4">
-                  Every source is publicly accessible. If transparent research matters to you, a contribution helps us continue.
+                  Free reader accounts unlock the full source archive. If this kind of traceable research matters to you, a contribution keeps the record online.
                 </p>
                 <a
                   href={DONATE_URL}

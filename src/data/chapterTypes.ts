@@ -65,6 +65,8 @@ export interface Chapter {
   heroImage?: ImageData;
   content: ContentBlock[];
   sources: Source[];
+  sourceCount?: number;
+  videoCount?: number;
   crossLinks: { label: string; chapterId: string }[];
   keywords: string[];
 }

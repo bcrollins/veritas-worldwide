@@ -1,6 +1,6 @@
 import type { LoadedChapter } from './chapterTypes'
 
-type ChapterScope = 'public' | 'full'
+export type ChapterScope = 'public' | 'full'
 
 const cache = new Map<string, LoadedChapter>()
 const pending = new Map<string, Promise<LoadedChapter | null>>()

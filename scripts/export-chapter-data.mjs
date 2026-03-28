@@ -20,6 +20,18 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
 }
 
+function getVideoCount(chapter) {
+  return chapter.content.filter((block) => block.type === 'video').length
+}
+
+function withDerivedMetadata(chapter) {
+  return {
+    ...chapter,
+    sourceCount: chapter.sources.length,
+    videoCount: getVideoCount(chapter),
+  }
+}
+
 async function importTsModule(filePath, tempName) {
   const source = fs.readFileSync(filePath, 'utf8')
   const transpiled = ts.transpileModule(source, {
@@ -36,9 +48,11 @@ async function importTsModule(filePath, tempName) {
 }
 
 function toPublicChapter(chapter) {
+  const chapterWithMetadata = withDerivedMetadata(chapter)
   return {
-    ...chapter,
+    ...chapterWithMetadata,
     content: chapter.content.slice(0, PREVIEW_BLOCK_LIMIT),
+    sources: [],
     accessLevel: 'preview',
     previewBlockLimit: PREVIEW_BLOCK_LIMIT,
     totalBlocks: chapter.content.length,
@@ -46,8 +60,9 @@ function toPublicChapter(chapter) {
 }
 
 function toFullChapter(chapter) {
+  const chapterWithMetadata = withDerivedMetadata(chapter)
   return {
-    ...chapter,
+    ...chapterWithMetadata,
     accessLevel: 'full',
     previewBlockLimit: PREVIEW_BLOCK_LIMIT,
     totalBlocks: chapter.content.length,

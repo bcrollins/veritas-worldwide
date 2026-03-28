@@ -533,6 +533,8 @@ function ChapterAccessGate({
   remainingBlocks: number
   onUnlock: () => void
 }) {
+  const sourceCount = chapter.sourceCount ?? chapter.sources.length
+
   return (
     <section className="relative overflow-hidden border border-border bg-surface mb-12" aria-label="Create a free account to continue reading">
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-crimson/80 to-transparent" />
@@ -560,7 +562,7 @@ function ChapterAccessGate({
           </div>
           <div className="border border-border rounded-sm bg-parchment px-4 py-3">
             <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Sources</p>
-            <p className="font-display text-2xl font-bold text-ink">{chapter.sources.length}</p>
+            <p className="font-display text-2xl font-bold text-ink">{sourceCount}</p>
             <p className="font-sans text-xs text-ink-muted">references available after sign-in</p>
           </div>
         </div>
@@ -916,6 +918,7 @@ export default function ChapterPage() {
   const hasLockedContent = chapter.accessLevel === 'preview'
   const visibleBlocks = chapter.content
   const remainingBlocks = Math.max(chapter.totalBlocks - chapter.content.length, 0)
+  const sourceCount = chapter.sourceCount ?? chapter.sources.length
   const sidebarChapter = hasLockedContent ? { ...chapter, content: visibleBlocks } : chapter
 
   /* ── Main Render ───────────────────────────────────── */
@@ -965,7 +968,7 @@ export default function ChapterPage() {
             <span className="text-border">|</span>
             <span>{readingTime} min read</span>
             <span className="text-border">|</span>
-            <span>{chapter.sources.length} sources</span>
+            <span>{sourceCount} sources</span>
           </div>
 
           {/* Action bar */}
@@ -1112,14 +1115,14 @@ export default function ChapterPage() {
             {!hasLockedContent && <SocialShareBar chapter={chapter} />}
 
             {/* Sources */}
-            {!hasLockedContent && chapter.sources.length > 0 && (
+            {!hasLockedContent && sourceCount > 0 && (
               <section id="sources--references" className="border-t border-border pt-8 mb-12">
                 <div className="flex items-center gap-4 mb-6">
                   <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
                     Sources &amp; References
                   </h3>
                   <div className="flex-1 h-[1px] bg-border" />
-                  <span className="font-sans text-xs text-ink-faint">{chapter.sources.length}</span>
+                  <span className="font-sans text-xs text-ink-faint">{sourceCount}</span>
                 </div>
                 <ol className="space-y-3">
                   {chapter.sources.map(source => (
@@ -1276,7 +1279,7 @@ export default function ChapterPage() {
           <aside className="hidden lg:block py-10">
             <div className="sticky top-16 space-y-10">
               {/* Evidence Summary */}
-              <SidebarEvidence counts={evidenceCounts} sourceCount={chapter.sources.length} />
+              <SidebarEvidence counts={evidenceCounts} sourceCount={sourceCount} />
 
               {/* Reading Stats */}
               <div>
@@ -1289,7 +1292,7 @@ export default function ChapterPage() {
                   <div className="border-t border-border pt-3 grid grid-cols-2 gap-3 text-xs">
                     <div>
                       <p className="text-ink-faint uppercase tracking-wider text-[0.55rem] mb-0.5">Sources</p>
-                      <p className="font-bold text-ink">{chapter.sources.length}</p>
+                      <p className="font-bold text-ink">{sourceCount}</p>
                     </div>
                     <div>
                       <p className="text-ink-faint uppercase tracking-wider text-[0.55rem] mb-0.5">Evidence</p>
