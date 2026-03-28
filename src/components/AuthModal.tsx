@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
 
 export default function AuthModal() {
-  const { showAuthModal, setShowAuthModal, login, signup } = useAuth()
-  const [mode, setMode] = useState<'login' | 'signup'>('signup')
+  const { showAuthModal, setShowAuthModal, authModalMode, setAuthModalMode, consumeAuthIntent, login, signup } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [displayName, setDisplayName] = useState('')
@@ -11,6 +11,7 @@ export default function AuthModal() {
   const [loading, setLoading] = useState(false)
   const emailRef = useRef<HTMLInputElement>(null)
   const modalRef = useRef<HTMLDivElement>(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (showAuthModal) {
@@ -20,7 +21,7 @@ export default function AuthModal() {
       setDisplayName('')
       setTimeout(() => emailRef.current?.focus(), 100)
     }
-  }, [showAuthModal, mode])
+  }, [authModalMode, showAuthModal])
 
   // Lock body scroll + Escape key + focus trap when modal open
   useEffect(() => {
@@ -71,19 +72,23 @@ export default function AuthModal() {
       setError('Password must be at least 6 characters.')
       return
     }
-    if (mode === 'signup' && !displayName.trim()) {
+    if (authModalMode === 'signup' && !displayName.trim()) {
       setError('Please enter your name.')
       return
     }
 
     setLoading(true)
     try {
-      const result = mode === 'signup'
+      const result = authModalMode === 'signup'
         ? await signup(email, password, displayName.trim())
         : await login(email, password)
 
       if (result.success) {
+        const intent = consumeAuthIntent()
         setShowAuthModal(false)
+        if (intent?.returnTo) {
+          navigate(intent.returnTo, { replace: true })
+        }
       } else {
         setError(result.error || 'Something went wrong.')
       }
@@ -98,7 +103,7 @@ export default function AuthModal() {
       onClick={(e) => { if (e.target === e.currentTarget) setShowAuthModal(false) }}
       role="dialog"
       aria-modal="true"
-      aria-label={mode === 'signup' ? 'Create account' : 'Sign in'}
+      aria-label={authModalMode === 'signup' ? 'Create account' : 'Sign in'}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-ink/60 backdrop-blur-sm" />
@@ -123,10 +128,10 @@ export default function AuthModal() {
               Veritas Press
             </p>
             <h2 className="font-display text-2xl font-bold text-ink mb-2">
-              {mode === 'signup' ? 'Create Your Free Account' : 'Welcome Back'}
+              {authModalMode === 'signup' ? 'Create Your Free Account' : 'Welcome Back'}
             </h2>
             <p className="font-body text-sm text-ink-muted leading-relaxed">
-              {mode === 'signup'
+              {authModalMode === 'signup'
                 ? 'Join our readers to access full articles, save pages, and support independent research.'
                 : 'Sign in to access your saved articles and full content.'}
             </p>
@@ -134,7 +139,7 @@ export default function AuthModal() {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
-            {mode === 'signup' && (
+            {authModalMode === 'signup' && (
               <div>
                 <label className="font-sans text-xs font-semibold tracking-[0.05em] uppercase text-ink-muted block mb-1.5">
                   Name
@@ -183,19 +188,22 @@ export default function AuthModal() {
               disabled={loading}
               className="w-full py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
             >
-              {loading ? 'Please wait...' : mode === 'signup' ? 'Create Free Account' : 'Sign In'}
+              {loading ? 'Please wait...' : authModalMode === 'signup' ? 'Create Free Account' : 'Sign In'}
             </button>
           </form>
 
           {/* Toggle mode */}
           <div className="mt-6 text-center">
             <p className="font-sans text-xs text-ink-muted">
-              {mode === 'signup' ? 'Already have an account?' : "Don't have an account?"}{' '}
+              {authModalMode === 'signup' ? 'Already have an account?' : "Don't have an account?"}{' '}
               <button
-                onClick={() => { setMode(mode === 'signup' ? 'login' : 'signup'); setError('') }}
+                onClick={() => {
+                  setAuthModalMode(authModalMode === 'signup' ? 'login' : 'signup')
+                  setError('')
+                }}
                 className="text-crimson font-semibold hover:text-crimson-dark transition-colors"
               >
-                {mode === 'signup' ? 'Sign in' : 'Create one free'}
+                {authModalMode === 'signup' ? 'Sign in' : 'Create one free'}
               </button>
             </p>
           </div>

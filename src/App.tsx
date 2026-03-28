@@ -88,7 +88,7 @@ function ThemeToggle() {
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-  const { isLoggedIn, user, logout, setShowAuthModal } = useAuth()
+  const { isLoggedIn, user, logout, openAuthModal } = useAuth()
   const { t } = useI18n()
   const ctaVariant = useExperiment('membership-cta-copy')
   const [isAdmin, setIsAdmin] = useState(false)
@@ -160,7 +160,7 @@ function Header() {
                 </button>
               ) : (
                 <button
-                  onClick={() => setShowAuthModal(true)}
+                  onClick={() => openAuthModal({ mode: 'login' })}
                   className="hidden sm:inline-flex items-center justify-center px-2 py-1 min-h-[28px] font-sans text-[0.6rem] font-semibold tracking-[0.05em] uppercase text-ink-muted hover:text-ink transition-colors"
                   aria-label="Sign in"
                 >
@@ -366,7 +366,10 @@ function Header() {
               </button>
             ) : (
               <button
-                onClick={() => { setShowAuthModal(true); setMenuOpen(false) }}
+                onClick={() => {
+                  openAuthModal({ mode: 'login' })
+                  setMenuOpen(false)
+                }}
                 className="font-sans text-xs tracking-[0.05em] uppercase text-crimson font-semibold"
               >
                 Sign In

@@ -1,5 +1,5 @@
 import { useDeferredValue, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import type { EvidenceTier, LoadedChapter, SourceHierarchy } from '../data/chapterTypes'
 import { useAllChapters } from '../hooks/useAllChapters'
 import { useAuth } from '../lib/AuthContext'
@@ -84,7 +84,8 @@ function getEvidenceTierClasses(tier: EvidenceTier | 'all', active: boolean) {
 }
 
 export default function SourcesPage() {
-  const { isLoggedIn, setShowAuthModal } = useAuth()
+  const { isLoggedIn, openAuthModal } = useAuth()
+  const location = useLocation()
   const { chapters, loading: chaptersLoading } = useAllChapters({ scope: isLoggedIn ? 'full' : 'public' })
   const [sourceFilter, setSourceFilter] = useState('')
   const [sourceHierarchyFilter, setSourceHierarchyFilter] = useState<SourceHierarchyFilter>('all')
@@ -166,6 +167,7 @@ export default function SourcesPage() {
     Boolean(sourceFilter.trim()) ||
     sourceHierarchyFilter !== 'all' ||
     evidenceTierFilter !== 'all'
+  const authReturnTo = `${location.pathname}${location.search}${location.hash}`
 
   return (
     <div className="w-full max-w-[1920px] mx-auto">
@@ -439,13 +441,25 @@ export default function SourcesPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 mb-8">
                   <button
-                    onClick={() => setShowAuthModal(true)}
+                    onClick={() => openAuthModal({
+                      mode: 'signup',
+                      intent: {
+                        returnTo: authReturnTo,
+                        source: 'sources',
+                      },
+                    })}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                   >
                     Create Free Account
                   </button>
                   <button
-                    onClick={() => setShowAuthModal(true)}
+                    onClick={() => openAuthModal({
+                      mode: 'login',
+                      intent: {
+                        returnTo: authReturnTo,
+                        source: 'sources',
+                      },
+                    })}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-crimson hover:text-crimson transition-colors"
                   >
                     Log In

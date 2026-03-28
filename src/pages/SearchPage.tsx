@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef, startTransition } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import type { ChapterType, EvidenceTier } from '../data/chapterTypes'
 import { useAuth } from '../lib/AuthContext'
 import { chapterMeta } from '../data/chapterMeta'
@@ -163,7 +163,8 @@ function HighlightText({ text, query }: { text: string; query: string }) {
 }
 
 export default function SearchPage() {
-  const { isLoggedIn, setShowAuthModal } = useAuth()
+  const { isLoggedIn, openAuthModal } = useAuth()
+  const location = useLocation()
   const [searchParams, setSearchParams] = useSearchParams()
   const initialQuery = searchParams.get('q') || ''
   const [query, setQuery] = useState(initialQuery)
@@ -187,6 +188,7 @@ export default function SearchPage() {
   const effectiveEvidenceTierFilter = isLoggedIn ? evidenceTierFilter : 'all'
   const effectiveMatchFilter = isLoggedIn ? matchFilter : 'all'
   const effectiveChapterTypeFilter = isLoggedIn ? chapterTypeFilter : 'all'
+  const authReturnTo = `${location.pathname}${location.search}${location.hash}`
   const hasActiveFilters =
     effectiveEvidenceTierFilter !== 'all' ||
     effectiveMatchFilter !== 'all' ||
@@ -382,7 +384,13 @@ export default function SearchPage() {
                   Anonymous readers can search titles, keywords, and the three-block public preview. Sign in with a free reader account to search the full archive and source text.
                 </p>
                 <button
-                  onClick={() => setShowAuthModal(true)}
+                  onClick={() => openAuthModal({
+                    mode: 'signup',
+                    intent: {
+                      returnTo: authReturnTo,
+                      source: 'search',
+                    },
+                  })}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                 >
                   Unlock Full Search

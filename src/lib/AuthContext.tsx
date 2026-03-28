@@ -16,13 +16,31 @@ import {
 import { trackSignUp, trackLogin, trackBookmark } from './ga4'
 import { scoreAccountCreated } from './leadScoring'
 
+const AUTH_INTENT_KEY = 'veritas_auth_intent'
+
+export type AuthModalMode = 'login' | 'signup'
+
+export interface AuthIntent {
+  returnTo: string
+  source: string
+}
+
+interface OpenAuthModalOptions {
+  mode?: AuthModalMode
+  intent?: AuthIntent | null
+}
+
 interface AuthContextType {
   user: User | null
   isLoggedIn: boolean
   bookmarks: string[]
   readingProgress: ReadingProgress
   showAuthModal: boolean
+  authModalMode: AuthModalMode
   setShowAuthModal: (show: boolean) => void
+  setAuthModalMode: (mode: AuthModalMode) => void
+  openAuthModal: (options?: OpenAuthModalOptions) => void
+  consumeAuthIntent: () => AuthIntent | null
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>
   signup: (email: string, password: string, displayName: string) => Promise<{ success: boolean; error?: string }>
   logout: () => void
@@ -36,12 +54,48 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null)
 
+function loadAuthIntent(): AuthIntent | null {
+  if (typeof window === 'undefined') return null
+
+  try {
+    const raw = window.sessionStorage.getItem(AUTH_INTENT_KEY)
+    if (!raw) return null
+
+    const parsed = JSON.parse(raw) as Partial<AuthIntent>
+    if (typeof parsed.returnTo !== 'string' || typeof parsed.source !== 'string') {
+      window.sessionStorage.removeItem(AUTH_INTENT_KEY)
+      return null
+    }
+
+    return {
+      returnTo: parsed.returnTo,
+      source: parsed.source,
+    }
+  } catch {
+    window.sessionStorage.removeItem(AUTH_INTENT_KEY)
+    return null
+  }
+}
+
+function persistAuthIntent(intent: AuthIntent | null) {
+  if (typeof window === 'undefined') return
+
+  if (!intent) {
+    window.sessionStorage.removeItem(AUTH_INTENT_KEY)
+    return
+  }
+
+  window.sessionStorage.setItem(AUTH_INTENT_KEY, JSON.stringify(intent))
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const initial = getAuthState()
   const [user, setUser] = useState<User | null>(initial.user)
   const [bookmarks, setBookmarks] = useState<string[]>(initial.bookmarks)
   const [readingProgress, setReadingProgress] = useState<ReadingProgress>(initial.readingProgress || {})
-  const [showAuthModal, setShowAuthModal] = useState(false)
+  const [showAuthModalState, setShowAuthModalState] = useState(false)
+  const [authModalMode, setAuthModalMode] = useState<AuthModalMode>('signup')
+  const [authIntent, setAuthIntent] = useState<AuthIntent | null>(() => loadAuthIntent())
   const [toast, setToast] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(!!initial.token)
 
@@ -49,6 +103,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setToast(msg)
     setTimeout(() => setToast(null), 3000)
   }, [])
+
+  const clearAuthIntent = useCallback(() => {
+    setAuthIntent(null)
+    persistAuthIntent(null)
+  }, [])
+
+  const setShowAuthModal = useCallback((show: boolean) => {
+    setShowAuthModalState(show)
+    if (!show) {
+      clearAuthIntent()
+      setAuthModalMode('signup')
+    }
+  }, [clearAuthIntent])
+
+  const openAuthModal = useCallback((options: OpenAuthModalOptions = {}) => {
+    setAuthModalMode(options.mode ?? 'signup')
+    if (options.intent) {
+      setAuthIntent(options.intent)
+      persistAuthIntent(options.intent)
+    } else {
+      clearAuthIntent()
+    }
+    setShowAuthModalState(true)
+  }, [clearAuthIntent])
+
+  const consumeAuthIntent = useCallback(() => {
+    const intent = authIntent ?? loadAuthIntent()
+    clearAuthIntent()
+    return intent
+  }, [authIntent, clearAuthIntent])
 
   // Validate session on mount — sync with server
   useEffect(() => {
@@ -141,8 +225,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       isLoggedIn: !!user,
       bookmarks,
       readingProgress,
-      showAuthModal,
+      showAuthModal: showAuthModalState,
+      authModalMode,
       setShowAuthModal,
+      setAuthModalMode,
+      openAuthModal,
+      consumeAuthIntent,
       login,
       signup,
       logout,
