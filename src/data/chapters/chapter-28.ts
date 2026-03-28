@@ -8,6 +8,12 @@ const chapter: Chapter = {
   dateRange: '1991–2026',
   author: 'Veritas Press',
   publishDate: 'March 2026',
+  heroImage: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Ghislaine_Maxwell_%28cropped%29.jpg',
+    alt: 'Court exhibit photograph related to the Epstein case',
+    caption: 'The Epstein operation connected intelligence agencies, political leaders, financial elites, and academic institutions in a network documented through court filings, flight logs, and the testimony of survivors.',
+    credit: 'Court exhibit, Public Domain via U.S. District Court',
+  },
   content: [
     { type: 'dropcap', text: 'Jeffrey Epstein moved in the same circles as the men who built the Federal Reserve, funded political campaigns, and shaped intelligence operations documented throughout this book. His story is where many of those threads converge.' },
     { type: 'text', text: '~150\nDOCUMENTED\nVICTIMS (EVCP\n2021)' },

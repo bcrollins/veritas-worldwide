@@ -9,6 +9,22 @@ export interface ChapterImage {
 }
 
 export const chapterImages: Record<string, ChapterImage[]> = {
+  foreword: [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg',
+      alt: "The National Archives Building in Washington, D.C., viewed from Pennsylvania Avenue — the repository of America's founding documents and declassified government records",
+      caption: 'The National Archives Building, Washington, D.C. — where the primary source documents cited throughout this publication are preserved and publicly accessible.',
+      credit: 'Photo: National Archives, Public Domain via Wikimedia Commons',
+    },
+  ],
+  overview: [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Times_Square_Ball_from_above.jpg/1280px-Times_Square_Ball_from_above.jpg',
+      alt: 'The United States Capitol Building — seat of the United States Congress and center of American legislative power',
+      caption: 'The institutions that govern modern life — financial, political, pharmaceutical, and intelligence — form an interconnected architecture documented through primary sources.',
+      credit: 'Public Domain via Wikimedia Commons',
+    },
+  ],
   'chapter-1': [
     {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Bank_of_England_-_The_Bank_-_geograph.org.uk_-_3756.jpg/800px-Bank_of_England_-_The_Bank_-_geograph.org.uk_-_3756.jpg',
@@ -61,6 +77,22 @@ export const chapterImages: Record<string, ChapterImage[]> = {
       credit: 'Public Domain',
     },
   ],
+  'chapter-6': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Balfour_declaration_unmarked.jpg/960px-Balfour_declaration_unmarked.jpg',
+      alt: 'The Balfour Declaration of 1917 — the letter from British Foreign Secretary Arthur Balfour to Lord Rothschild pledging British support for a Jewish homeland in Palestine',
+      caption: 'The Balfour Declaration, November 2, 1917 — a 67-word letter from British Foreign Secretary Arthur Balfour to Lord Walter Rothschild that would reshape the Middle East for the next century.',
+      credit: 'British Government, Public Domain via Wikimedia Commons',
+    },
+  ],
+  'chapter-7': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg/1280px-Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg',
+      alt: "Former headquarters of the Mossad, Israel's national intelligence agency",
+      caption: 'The Mossad — HaMossad leModiʿin uleTafkidim Meyuḥadim (the Institute for Intelligence and Special Operations) — operates as one of the most effective intelligence agencies in the world.',
+      credit: 'Public Domain via Wikimedia Commons',
+    },
+  ],
   'chapter-8': [
     {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/440px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg',
@@ -85,6 +117,14 @@ export const chapterImages: Record<string, ChapterImage[]> = {
       credit: 'Public Domain — U.S. Government',
     },
   ],
+  'chapter-11': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harold_Pratt_House_north_staircase_jeh.jpg/1280px-Harold_Pratt_House_north_staircase_jeh.jpg',
+      alt: 'The Harold Pratt House in New York City, headquarters of the Council on Foreign Relations',
+      caption: 'The Harold Pratt House, 58 East 68th Street, New York — headquarters of the Council on Foreign Relations since 1945. CFR membership has included virtually every Secretary of State, Treasury, and Defense since its founding.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
+  ],
   'chapter-12': [
     {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg/800px-Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg',
@@ -99,6 +139,22 @@ export const chapterImages: Record<string, ChapterImage[]> = {
       alt: 'New York Stock Exchange on Wall Street',
       caption: 'The New York Stock Exchange — epicenter of the 2008 financial crisis.',
       credit: 'Wikimedia Commons / CC BY 2.0',
+    },
+  ],
+  'chapter-14': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1280px-US_Capitol_west_side.JPG',
+      alt: 'The United States Capitol Building — where AIPAC-funded representatives shape American foreign policy',
+      caption: 'The United States Capitol. In the 2024 election cycle, AIPAC directed $42.6 million to 489 congressional candidates across both parties — making it the most powerful foreign policy lobby in America.',
+      credit: 'Photo: Architect of the Capitol, Public Domain',
+    },
+  ],
+  'chapter-15': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Israeli_F-16s_at_Red_Flag.jpg/1280px-Israeli_F-16s_at_Red_Flag.jpg',
+      alt: 'Israeli Air Force F-16 fighter jets — purchased with U.S. foreign military financing',
+      caption: 'Israeli Air Force F-16 Fighting Falcons. The United States has provided over $300 billion in inflation-adjusted aid to Israel since 1948 — the largest cumulative recipient of U.S. foreign assistance.',
+      credit: 'Photo: U.S. Air Force, Public Domain',
     },
   ],
   'chapter-16': [
@@ -133,6 +189,22 @@ export const chapterImages: Record<string, ChapterImage[]> = {
       credit: 'Public Domain — CIA',
     },
   ],
+  'chapter-20': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',
+      alt: 'Doctor administering a typhoid inoculation at a rural school in Texas, 1943',
+      caption: 'A physician administering a typhoid inoculation at a rural school in San Augustine County, Texas, 1943. The history of vaccination in America involves both genuine public health advances and documented corporate conflicts of interest.',
+      credit: 'Photo: John Vachon, Farm Security Administration, Public Domain via Library of Congress',
+    },
+  ],
+  'chapter-21': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/800px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',
+      alt: 'The Tribute in Light memorial at the World Trade Center site, New York City',
+      caption: 'The Tribute in Light at the World Trade Center site. The events of September 11, 2001 transformed American domestic and foreign policy. The 9/11 Commission Report left questions that remain unanswered.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
+  ],
   'chapter-22': [
     {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/WTC_smoking_on_9-11.jpeg/576px-WTC_smoking_on_9-11.jpeg',
@@ -141,12 +213,36 @@ export const chapterImages: Record<string, ChapterImage[]> = {
       credit: 'Public Domain — Michael Foran / CC BY 2.0',
     },
   ],
+  'chapter-23': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
+      alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
+      caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
+    },
+  ],
+  'chapter-24': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',
+      alt: 'RMS Titanic departing Southampton on April 10, 1912',
+      caption: 'RMS Titanic departing Southampton, April 10, 1912. Among the 1,517 who perished were Benjamin Guggenheim, Isidor Straus, and John Jacob Astor IV — three of the wealthiest men who opposed the creation of the Federal Reserve.',
+      credit: 'Photo: F.G.O. Stuart, Public Domain via Wikimedia Commons',
+    },
+  ],
   'chapter-25': [
     {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/800px-RMS_Titanic_3.jpg',
       alt: 'RMS Titanic',
       caption: 'RMS Titanic departing Southampton, April 10, 1912. Three prominent opponents of the Federal Reserve were aboard.',
       credit: 'Public Domain',
+    },
+  ],
+  'chapter-26': [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
+      alt: 'National Security Agency headquarters at Fort Meade, Maryland',
+      caption: "NSA Headquarters, Fort Meade, Maryland. Edward Snowden's 2013 disclosures confirmed what critics had alleged for decades: the U.S. government conducts mass surveillance on its own citizens.",
+      credit: 'Photo: NSA, Public Domain',
     },
   ],
   'chapter-27': [
@@ -163,6 +259,14 @@ export const chapterImages: Record<string, ChapterImage[]> = {
       alt: 'Southern District of New York courthouse',
       caption: 'The U.S. District Court for the Southern District of New York, where Epstein cases were filed.',
       credit: 'Wikimedia Commons / CC BY-SA 4.0',
+    },
+  ],
+  epilogue: [
+    {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/LOC_Main_Reading_Room_Highsmith.jpg/1280px-LOC_Main_Reading_Room_Highsmith.jpg',
+      alt: 'The Main Reading Room of the Library of Congress in Washington, D.C.',
+      caption: 'The Main Reading Room, Library of Congress. Every source cited in this publication is publicly accessible. The reader is encouraged to verify any claim independently.',
+      credit: 'Photo: Carol M. Highsmith, Public Domain via Library of Congress',
     },
   ],
 }

@@ -340,7 +340,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1991–2026",
     author: "Veritas Press",
     publishDate: "March 2026",
-    
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/9/95/Ghislaine_Maxwell_%28cropped%29.jpg",
     keywords: ["Epstein", "Maxwell", "trafficking", "intelligence", "blackmail", "court filings"],
   },
   {
