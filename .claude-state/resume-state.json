@@ -1,7 +1,7 @@
 {
-  "last": "analytics-dashboard-upgrade",
-  "run": 29,
-  "date": "2026-03-27",
+  "last": "chapter-images-remaining-13",
+  "run": 30,
+  "date": "2026-03-28",
   "completed": [
     "contextual-donation-cta-chapter-page",
     "data-testid-testing-infrastructure",
@@ -14,11 +14,11 @@
     "fixed-truncated-chapter-meta",
     "share-scoring-parity",
     "analytics-dashboard-upgrade",
-    "remove-v-assistant"
+    "remove-v-assistant",
+    "chapter-images-remaining-13"
   ],
-  "next": "chapter-images-remaining-13",
+  "next": "profile-page-enhancements-round-2",
   "queue": [
-    "chapter-images-remaining-13",
     "profile-page-enhancements-round-2",
     "adsense-activation",
     "abandoned-cart-recovery-emails",

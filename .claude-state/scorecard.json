@@ -1,6 +1,6 @@
 {
-  "run": 29,
-  "date": "2026-03-27",
+  "run": 30,
+  "date": "2026-03-28",
   "features": {
     "chapter-reading": { "score": 9.5, "prev": 9.5 },
     "evidence-system": { "score": 9.5, "prev": 9.5 },
@@ -26,8 +26,8 @@
     "stripe-monetization": { "score": 9.5, "prev": 9.5 },
     "community-forum": { "score": 8.5, "prev": 8.5 },
     "profiles": { "score": 9.5, "prev": 7.5 },
-    "chapter-images": { "score": 7.5, "prev": 7.5 },
-    "book-reader": { "score": 7.5, "prev": 7.5 },
+    "chapter-images": { "score": 9.0, "prev": 7.5 },
+    "book-reader": { "score": 8.0, "prev": 7.5 },
     "testing-infrastructure": { "score": 7.5, "prev": 7.0 },
     "security": { "score": 9.0, "prev": 9.0 },
     "accessibility": { "score": 9.0, "prev": 9.0 },
@@ -36,6 +36,6 @@
     "ab-testing": { "score": 8.5, "prev": 8.5 },
     "exit-intent": { "score": 9.0, "prev": 9.0 }
   },
-  "composite": 9.1,
-  "notes": "Run 29: Added server-side behavioral event ingestion and funnel aggregation, wired lead-scoring, content gate, and Stripe conversion flows into the analytics pipeline, upgraded the public analytics page with funnel and behavioral event visibility, normalized chapter article published dates, taught production to prefer Railway's mounted volume path for analytics persistence, and removed the dormant xAI V assistant so the product stays a static publication with no AI surface. Local TypeScript, production build, and runtime analytics endpoint checks all passed."
+  "composite": 9.2,
+  "notes": "Run 30: Completed shared chapter image coverage for all 31 publication sections, added the missing chapter-28 hero image to both the chapter module and lightweight metadata, and closed the remaining media inventory gap affecting chapter cards, admin media visibility, and reader presentation. Local TypeScript and production build checks passed."
 }
