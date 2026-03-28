@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
 import type { ContentBlock, Chapter, ImageData } from '../data/chapterTypes'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
+import { useAuth } from '../lib/AuthContext'
 import BookmarkButton from '../components/BookmarkButton'
 import ReadingProgress from '../components/ReadingProgress'
 import BackToTop from '../components/BackToTop'
@@ -25,15 +26,19 @@ import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
+import NewsletterSignup from '../components/NewsletterSignup'
 import { getChapterImages } from '../data/chapterImages'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
+import { scoreContentGateHit } from '../lib/leadScoring'
 
 const diagramComponents: Record<string, React.ComponentType> = {
   'media-ownership': MediaOwnershipDiagram,
   'federal-reserve-structure': FederalReserveStructureDiagram,
   'asset-manager-cross-sector': AssetManagerDiagram,
 }
+
+const PREVIEW_BLOCK_LIMIT = 3
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -519,6 +524,88 @@ function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: strin
   )
 }
 
+function ChapterAccessGate({
+  chapter,
+  remainingBlocks,
+  onUnlock,
+}: {
+  chapter: Chapter
+  remainingBlocks: number
+  onUnlock: () => void
+}) {
+  return (
+    <section className="relative overflow-hidden border border-border bg-surface mb-12" aria-label="Create a free account to continue reading">
+      <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-crimson/80 to-transparent" />
+      <div className="p-6 sm:p-8">
+        <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-3">
+          Reader Access
+        </p>
+        <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-4">
+          Continue reading with a free account.
+        </h2>
+        <p className="font-body text-base text-ink-muted leading-relaxed max-w-2xl">
+          Veritas keeps the documentary record free to the public. Create a free reader account to unlock the remaining {remainingBlocks} blocks of this chapter, keep your place, save bookmarks, and receive weekly source-first updates.
+        </p>
+
+        <div className="grid sm:grid-cols-3 gap-3 mt-6 mb-6">
+          <div className="border border-border rounded-sm bg-parchment px-4 py-3">
+            <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Preview</p>
+            <p className="font-display text-2xl font-bold text-ink">{PREVIEW_BLOCK_LIMIT}</p>
+            <p className="font-sans text-xs text-ink-muted">blocks unlocked</p>
+          </div>
+          <div className="border border-border rounded-sm bg-parchment px-4 py-3">
+            <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Remaining</p>
+            <p className="font-display text-2xl font-bold text-crimson">{remainingBlocks}</p>
+            <p className="font-sans text-xs text-ink-muted">blocks in this chapter</p>
+          </div>
+          <div className="border border-border rounded-sm bg-parchment px-4 py-3">
+            <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Sources</p>
+            <p className="font-display text-2xl font-bold text-ink">{chapter.sources.length}</p>
+            <p className="font-sans text-xs text-ink-muted">references available after sign-in</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={onUnlock}
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M12 4v16m8-8H4" />
+            </svg>
+            Create Free Account
+          </button>
+          <button
+            onClick={onUnlock}
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M15 11V7a3 3 0 10-6 0v4m-1 0h8a2 2 0 012 2v5a2 2 0 01-2 2H8a2 2 0 01-2-2v-5a2 2 0 012-2z" />
+            </svg>
+            Log In To Continue
+          </button>
+          <Link
+            to="/membership"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink-muted font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-ink hover:text-ink transition-colors"
+          >
+            Support The Archive
+          </Link>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-border">
+          <NewsletterSignup
+            variant="minimal"
+            source="content_gate"
+            contentInterest={chapter.id}
+            heading="Get free access + weekly updates."
+            subtext="Create your free account above to unlock the rest of this chapter. If you just want source-first updates in your inbox, subscribe here."
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ShareButton({ chapter }: { chapter: Chapter }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -726,6 +813,7 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
 
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
+  const { isLoggedIn, setShowAuthModal } = useAuth()
   const staticMetadata = chapterMeta.find(ch => ch.id === id)
   const [chapter, setChapter] = useState<Chapter | null>(null)
   const [isLoading, setIsLoading] = useState(!staticMetadata)
@@ -787,6 +875,14 @@ export default function ChapterPage() {
     return () => { clearMetaTags(); removeJsonLd() }
   }, [chapter, isLoading])
 
+  useEffect(() => {
+    if (!chapter || isLoggedIn || chapter.content.length <= PREVIEW_BLOCK_LIMIT) return
+    const gateKey = `veritas_gate_hit:${chapter.id}`
+    if (sessionStorage.getItem(gateKey)) return
+    scoreContentGateHit(chapter.id)
+    sessionStorage.setItem(gateKey, '1')
+  }, [chapter, isLoggedIn])
+
   /* ── Loading State ─────────────────────────────────── */
 
   if (isLoading && !chapter) {
@@ -817,6 +913,11 @@ export default function ChapterPage() {
 
   const images = getChapterImages(chapter.id)
   const relatedChapters = getRelatedByKeywords(chapter)
+  const previewBlocks = chapter.content.slice(0, PREVIEW_BLOCK_LIMIT)
+  const hasLockedContent = !isLoggedIn && chapter.content.length > PREVIEW_BLOCK_LIMIT
+  const visibleBlocks = hasLockedContent ? previewBlocks : chapter.content
+  const remainingBlocks = Math.max(chapter.content.length - PREVIEW_BLOCK_LIMIT, 0)
+  const sidebarChapter = hasLockedContent ? { ...chapter, content: visibleBlocks } : chapter
 
   /* ── Main Render ───────────────────────────────────── */
 
@@ -872,18 +973,52 @@ export default function ChapterPage() {
           <div className="flex items-center gap-3 sm:gap-4 mt-5 pt-5 border-t border-border flex-wrap">
             <FontSizeToggle />
             <ShareButton chapter={chapter} />
-            <DownloadButton chapter={chapter} />
-            <ChapterPDF chapter={chapter} />
-            <CitationGenerator chapter={chapter} />
-            <PremiumAction
-              onClick={() => window.print()}
-              label="Print"
-              icon={
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                </svg>
-              }
-            />
+            {isLoggedIn ? (
+              <>
+                <DownloadButton chapter={chapter} />
+                <ChapterPDF chapter={chapter} />
+                <CitationGenerator chapter={chapter} />
+                <PremiumAction
+                  onClick={() => window.print()}
+                  label="Print"
+                  icon={
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                  }
+                />
+              </>
+            ) : (
+              <>
+                <PremiumAction
+                  onClick={() => setShowAuthModal(true)}
+                  label="Download"
+                  icon={
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 10-8 0v4m-1 0h10a2 2 0 012 2v5a2 2 0 01-2 2H7a2 2 0 01-2-2v-5a2 2 0 012-2zm5 4l-3 3-3-3m3 3V9" />
+                    </svg>
+                  }
+                />
+                <PremiumAction
+                  onClick={() => setShowAuthModal(true)}
+                  label="PDF"
+                  icon={
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 3h7l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2zm8 1v4h4" />
+                    </svg>
+                  }
+                />
+                <PremiumAction
+                  onClick={() => setShowAuthModal(true)}
+                  label="Print"
+                  icon={
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 10-8 0v4m-1 0h10a2 2 0 012 2v5a2 2 0 01-2 2H7a2 2 0 01-2-2v-5a2 2 0 012-2z" />
+                    </svg>
+                  }
+                />
+              </>
+            )}
             <BookmarkButton chapterId={chapter.id} />
           </div>
 
@@ -934,7 +1069,7 @@ export default function ChapterPage() {
           {/* ── LEFT: Article Body ──────────────────── */}
           <article className="min-w-0 py-10">
             {/* Chapter Images — Historical Photographs */}
-            {images.length > 0 && (
+            {isLoggedIn && images.length > 0 && (
               <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {images.map((img, i) => (
                   <figure key={i} className="border border-border rounded-sm overflow-hidden bg-surface">
@@ -953,19 +1088,33 @@ export default function ChapterPage() {
               </div>
             )}
 
-            {/* Full Content */}
-            <div className="mb-12">
-              {chapter.content.map((block, idx) => (
+            {/* Article Content */}
+            <div className={`mb-12 ${hasLockedContent ? 'relative' : ''}`}>
+              {visibleBlocks.map((block, idx) => (
                 <ContentBlockRenderer key={idx} block={block} />
               ))}
+              {hasLockedContent && (
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent via-parchment/92 to-parchment"
+                  aria-hidden="true"
+                />
+              )}
             </div>
 
+            {hasLockedContent && (
+              <ChapterAccessGate
+                chapter={chapter}
+                remainingBlocks={remainingBlocks}
+                onUnlock={() => setShowAuthModal(true)}
+              />
+            )}
+
             {/* Social Share Bar */}
-            <SocialShareBar chapter={chapter} />
+            {!hasLockedContent && <SocialShareBar chapter={chapter} />}
 
             {/* Sources */}
-            {chapter.sources.length > 0 && (
-              <section className="border-t border-border pt-8 mb-12">
+            {!hasLockedContent && chapter.sources.length > 0 && (
+              <section id="sources--references" className="border-t border-border pt-8 mb-12">
                 <div className="flex items-center gap-4 mb-6">
                   <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
                     Sources &amp; References
@@ -1000,7 +1149,7 @@ export default function ChapterPage() {
             )}
 
             {/* Keywords */}
-            {chapter.keywords.length > 0 && (
+            {!hasLockedContent && chapter.keywords.length > 0 && (
               <section className="border-t border-border pt-8 mb-12">
                 <div className="flex items-center gap-4 mb-4">
                   <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
@@ -1060,7 +1209,8 @@ export default function ChapterPage() {
             )}
 
             {/* Support CTA */}
-            <section className="border-t border-border pt-10 mb-8 text-center">
+            {!hasLockedContent && (
+              <section className="border-t border-border pt-10 mb-8 text-center">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
                 Free &amp; Open Access
               </p>
@@ -1081,39 +1231,44 @@ export default function ChapterPage() {
               <p className="font-sans text-[0.6rem] text-ink-faint mt-3">
                 Processed securely via Stripe &middot; No account required
               </p>
-            </section>
+              </section>
+            )}
 
-            <AdBanner slot="chapter-bottom" format="horizontal" />
+            {!hasLockedContent && <AdBanner slot="chapter-bottom" format="horizontal" />}
 
-            <SharePanel
-              title={chapter.title}
-              description={`${chapter.title} — from The Record by Veritas Press. Primary sources. Public record.`}
-              contentId={chapter.id}
-            />
+            {!hasLockedContent && (
+              <SharePanel
+                title={chapter.title}
+                description={`${chapter.title} — from The Record by Veritas Press. Primary sources. Public record.`}
+                contentId={chapter.id}
+              />
+            )}
 
-            <DisputeStory pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
+            {!hasLockedContent && <DisputeStory pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />}
 
-            <CommunityForum pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />
+            {!hasLockedContent && <CommunityForum pageId={`chapter-${chapter.id}`} pageTitle={chapter.title} />}
 
             {/* ── Contextual Donation CTA ──────────────── */}
-            <div className="border-t border-b border-border mt-12 py-8 text-center">
-              <p className="font-serif text-base text-ink-muted leading-relaxed max-w-lg mx-auto mb-4">
-                This research is free because the documentary record belongs to everyone.
-                If you value independent, source-verified journalism, any contribution helps us continue.
-              </p>
-              <a
-                href={DONATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase hover:bg-crimson-dark transition-colors"
-                data-testid="chapter-donate-cta"
-              >
-                Support This Research
-              </a>
-              <p className="font-sans text-xs text-ink-faint mt-3">
-                $5 keeps the archive online for a month. $25 funds document acquisition.
-              </p>
-            </div>
+            {!hasLockedContent && (
+              <div className="border-t border-b border-border mt-12 py-8 text-center">
+                <p className="font-serif text-base text-ink-muted leading-relaxed max-w-lg mx-auto mb-4">
+                  This research is free because the documentary record belongs to everyone.
+                  If you value independent, source-verified journalism, any contribution helps us continue.
+                </p>
+                <a
+                  href={DONATE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase hover:bg-crimson-dark transition-colors"
+                  data-testid="chapter-donate-cta"
+                >
+                  Support This Research
+                </a>
+                <p className="font-sans text-xs text-ink-faint mt-3">
+                  $5 keeps the archive online for a month. $25 funds document acquisition.
+                </p>
+              </div>
+            )}
 
             <ChapterNav current={chapter} />
           </article>
@@ -1154,13 +1309,15 @@ export default function ChapterPage() {
               </div>
 
               {/* Table of Contents */}
-              <SidebarTOC chapter={chapter} />
+              <SidebarTOC chapter={sidebarChapter} />
 
               {/* Quick Jump to Sources */}
               <div>
                 <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">Quick Links</p>
                 <div className="flex flex-col gap-2">
-                  <a href="#sources--references" className="font-sans text-xs text-ink-muted hover:text-crimson transition-colors">→ Sources &amp; References</a>
+                  {!hasLockedContent && (
+                    <a href="#sources--references" className="font-sans text-xs text-ink-muted hover:text-crimson transition-colors">→ Sources &amp; References</a>
+                  )}
                   <Link to="/methodology" className="font-sans text-xs text-ink-muted hover:text-crimson transition-colors">→ Methodology</Link>
                   <Link to="/sources" className="font-sans text-xs text-ink-muted hover:text-crimson transition-colors">→ Full Bibliography</Link>
                 </div>

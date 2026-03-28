@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { identifyContact, isSubscribed } from '../lib/hubspot'
+import MarketingConsentField from './MarketingConsentField'
 
 /**
  * Exit-intent modal — triggers when the user moves their cursor toward
@@ -9,8 +10,10 @@ import { identifyContact, isSubscribed } from '../lib/hubspot'
 export default function ExitIntentCapture() {
   const [show, setShow] = useState(false)
   const [email, setEmail] = useState('')
+  const [consented, setConsented] = useState(false)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
   const [dismissed, setDismissed] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     // Don't show if already subscribed or dismissed this session
@@ -45,8 +48,13 @@ export default function ExitIntentCapture() {
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
+    if (!consented) {
+      setErrorMessage('Please confirm you want email updates before subscribing.')
+      return
+    }
 
     setStatus('submitting')
+    setErrorMessage('')
     identifyContact({
       email,
       source: 'exit_intent',
@@ -58,7 +66,7 @@ export default function ExitIntentCapture() {
       setStatus('success')
       setTimeout(() => setShow(false), 2000)
     }, 500)
-  }, [email])
+  }, [consented, email])
 
   const handleDismiss = useCallback(() => {
     setShow(false)
@@ -115,12 +123,19 @@ export default function ExitIntentCapture() {
                 <input
                   type="email"
                   value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={e => {
+                    setEmail(e.target.value)
+                    setErrorMessage('')
+                  }}
                   placeholder="your@email.com"
                   required
                   autoFocus
                   className="w-full px-3 py-2.5 font-sans text-sm border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40"
                 />
+                <MarketingConsentField checked={consented} onChange={setConsented} />
+                {errorMessage && (
+                  <p className="font-sans text-xs text-disputed">{errorMessage}</p>
+                )}
                 <button
                   type="submit"
                   disabled={status === 'submitting'}

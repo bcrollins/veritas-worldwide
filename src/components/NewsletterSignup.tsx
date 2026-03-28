@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { identifyContact, isSubscribed, type SubscriptionSource } from '../lib/hubspot'
 import { scoreEmailSignup } from '../lib/leadScoring'
+import MarketingConsentField from './MarketingConsentField'
 
 interface Props {
   /** Visual variant */
@@ -23,7 +24,9 @@ export default function NewsletterSignup({
   subtext,
 }: Props) {
   const [email, setEmail] = useState('')
+  const [consented, setConsented] = useState(false)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   // Don't render if already subscribed (unless footer — always show footer)
   const alreadySubscribed = isSubscribed()
@@ -37,11 +40,18 @@ export default function NewsletterSignup({
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
+      setErrorMessage('Please enter a valid email address.')
+      setStatus('error')
+      return
+    }
+    if (!consented) {
+      setErrorMessage('Please confirm you want email updates before subscribing.')
       setStatus('error')
       return
     }
 
     setStatus('submitting')
+    setErrorMessage('')
 
     try {
       identifyContact({
@@ -53,9 +63,10 @@ export default function NewsletterSignup({
       scoreEmailSignup(source)
       setStatus('success')
     } catch {
+      setErrorMessage('We could not subscribe you right now. Please try again.')
       setStatus('error')
     }
-  }, [email, status, source, contentInterest])
+  }, [consented, email, status, source, contentInterest])
 
   if (status === 'success') {
     return (
@@ -104,7 +115,13 @@ export default function NewsletterSignup({
         <input
           type="email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={e => {
+            setEmail(e.target.value)
+            if (status === 'error') {
+              setStatus('idle')
+              setErrorMessage('')
+            }
+          }}
           placeholder="your@email.com"
           required
           data-testid="newsletter-email-input"
@@ -124,8 +141,10 @@ export default function NewsletterSignup({
         </button>
       </form>
 
-      {status === 'error' && (
-        <p className="font-sans text-xs text-red-500 mt-2">Please enter a valid email address.</p>
+      <MarketingConsentField checked={consented} onChange={setConsented} tone={isDark ? 'dark' : 'light'} />
+
+      {status === 'error' && errorMessage && (
+        <p className="font-sans text-xs text-red-500 mt-2">{errorMessage}</p>
       )}
 
       <p className={`font-sans text-[0.5rem] mt-3 ${isDark ? 'text-white/30' : 'text-ink-faint'}`}>

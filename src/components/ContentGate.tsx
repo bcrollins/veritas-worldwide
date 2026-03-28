@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { identifyContact, isSubscribed } from '../lib/hubspot'
 import { scoreContentGateHit, scoreEmailSignup } from '../lib/leadScoring'
+import MarketingConsentField from './MarketingConsentField'
 
 interface Props {
   /** Scroll depth percentage (0-100) at which to trigger */
@@ -17,8 +18,10 @@ interface Props {
 export default function ContentGate({ triggerDepth = 40, contentInterest }: Props) {
   const [show, setShow] = useState(false)
   const [email, setEmail] = useState('')
+  const [consented, setConsented] = useState(false)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
   const [dismissed, setDismissed] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     if (isSubscribed() || dismissed) return
@@ -45,8 +48,13 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
+    if (!consented) {
+      setErrorMessage('Please confirm you want email updates before subscribing.')
+      return
+    }
 
     setStatus('submitting')
+    setErrorMessage('')
     identifyContact({
       email,
       source: 'content_gate',
@@ -59,7 +67,7 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
       setStatus('success')
       setTimeout(() => setShow(false), 2500)
     }, 500)
-  }, [email, contentInterest])
+  }, [consented, email, contentInterest])
 
   const handleDismiss = useCallback(() => {
     setShow(false)
@@ -110,7 +118,10 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
                   <input
                     type="email"
                     value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={e => {
+                      setEmail(e.target.value)
+                      setErrorMessage('')
+                    }}
                     placeholder="your@email.com"
                     required
                     className="flex-1 min-w-0 px-2.5 py-1.5 font-sans text-xs border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40"
@@ -123,6 +134,10 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
                     {status === 'submitting' ? '...' : 'Subscribe'}
                   </button>
                 </form>
+                <MarketingConsentField checked={consented} onChange={setConsented} />
+                {errorMessage && (
+                  <p className="font-sans text-[0.65rem] text-disputed mt-2">{errorMessage}</p>
+                )}
               </div>
             )}
           </div>
