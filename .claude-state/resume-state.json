@@ -1,6 +1,6 @@
 {
-  "last": "chapter-images-remaining-13",
-  "run": 30,
+  "last": "late-book-hero-imagery-realignment",
+  "run": 31,
   "date": "2026-03-28",
   "completed": [
     "contextual-donation-cta-chapter-page",
@@ -15,7 +15,8 @@
     "share-scoring-parity",
     "analytics-dashboard-upgrade",
     "remove-v-assistant",
-    "chapter-images-remaining-13"
+    "chapter-images-remaining-13",
+    "late-book-hero-imagery-realignment"
   ],
   "next": "profile-page-enhancements-round-2",
   "queue": [

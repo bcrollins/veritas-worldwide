@@ -1,5 +1,5 @@
 {
-  "run": 30,
+  "run": 31,
   "date": "2026-03-28",
   "features": {
     "chapter-reading": { "score": 9.5, "prev": 9.5 },
@@ -26,8 +26,8 @@
     "stripe-monetization": { "score": 9.5, "prev": 9.5 },
     "community-forum": { "score": 8.5, "prev": 8.5 },
     "profiles": { "score": 9.5, "prev": 7.5 },
-    "chapter-images": { "score": 9.0, "prev": 7.5 },
-    "book-reader": { "score": 8.0, "prev": 7.5 },
+    "chapter-images": { "score": 9.5, "prev": 9.0 },
+    "book-reader": { "score": 8.5, "prev": 8.0 },
     "testing-infrastructure": { "score": 7.5, "prev": 7.0 },
     "security": { "score": 9.0, "prev": 9.0 },
     "accessibility": { "score": 9.0, "prev": 9.0 },
@@ -36,6 +36,6 @@
     "ab-testing": { "score": 8.5, "prev": 8.5 },
     "exit-intent": { "score": 9.0, "prev": 9.0 }
   },
-  "composite": 9.2,
-  "notes": "Run 30: Completed shared chapter image coverage for all 31 publication sections, added the missing chapter-28 hero image to both the chapter module and lightweight metadata, and closed the remaining media inventory gap affecting chapter cards, admin media visibility, and reader presentation. Local TypeScript and production build checks passed."
+  "composite": 9.3,
+  "notes": "Run 31: Corrected late-book hero image drift across chapters 19-27 in both chapter runtime content and lightweight metadata, restoring chapter-accurate visual attribution for reader presentation, chapter cards, and SEO/social surfaces. Local TypeScript and production build checks passed, and the corrected asset bundles were verified live after deploy."
 }
