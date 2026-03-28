@@ -191,18 +191,18 @@ export const chapterImages: Record<string, ChapterImage[]> = {
   ],
   'chapter-20': [
     {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',
-      alt: 'Doctor administering a typhoid inoculation at a rural school in Texas, 1943',
-      caption: 'A physician administering a typhoid inoculation at a rural school in San Augustine County, Texas, 1943. The history of vaccination in America involves both genuine public health advances and documented corporate conflicts of interest.',
-      credit: 'Photo: John Vachon, Farm Security Administration, Public Domain via Library of Congress',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG',
+      alt: 'Rockefeller Center, New York City — symbol of the Rockefeller family\'s influence on American institutions',
+      caption: 'Rockefeller Center, New York City. The Rockefeller Foundation\'s 1910 Flexner Report reshaped American medical education to favor pharmaceutical treatment — a system that generates $4.5 trillion annually.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
     },
   ],
   'chapter-21': [
     {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/800px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',
-      alt: 'The Tribute in Light memorial at the World Trade Center site, New York City',
-      caption: 'The Tribute in Light at the World Trade Center site. The events of September 11, 2001 transformed American domestic and foreign policy. The 9/11 Commission Report left questions that remain unanswered.',
-      credit: 'Photo: Public Domain via Wikimedia Commons',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',
+      alt: 'Doctor administering a typhoid inoculation at a rural school in Texas, 1943',
+      caption: 'A physician administering a typhoid inoculation at a rural school in San Augustine County, Texas, 1943. The history of vaccination in America involves both genuine public health advances and documented corporate conflicts of interest.',
+      credit: 'Photo: John Vachon, Farm Security Administration, Public Domain via Library of Congress',
     },
   ],
   'chapter-22': [
@@ -215,18 +215,18 @@ export const chapterImages: Record<string, ChapterImage[]> = {
   ],
   'chapter-23': [
     {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
-      alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
-      caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
-      credit: 'Photo: Public Domain via Wikimedia Commons',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',
+      alt: 'President Richard Nixon at a press briefing — architect of the War on Drugs',
+      caption: 'President Nixon declared drug abuse "public enemy number one" in 1971. A former domestic policy advisor later admitted the War on Drugs was designed to target anti-war and Black communities.',
+      credit: 'Photo: White House Photo Office, Public Domain via National Archives',
     },
   ],
   'chapter-24': [
     {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',
-      alt: 'RMS Titanic departing Southampton on April 10, 1912',
-      caption: 'RMS Titanic departing Southampton, April 10, 1912. Among the 1,517 who perished were Benjamin Guggenheim, Isidor Straus, and John Jacob Astor IV — three of the wealthiest men who opposed the creation of the Federal Reserve.',
-      credit: 'Photo: F.G.O. Stuart, Public Domain via Wikimedia Commons',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
+      alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
+      caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
     },
   ],
   'chapter-25': [
@@ -239,10 +239,10 @@ export const chapterImages: Record<string, ChapterImage[]> = {
   ],
   'chapter-26': [
     {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
-      alt: 'National Security Agency headquarters at Fort Meade, Maryland',
-      caption: "NSA Headquarters, Fort Meade, Maryland. Edward Snowden's 2013 disclosures confirmed what critics had alleged for decades: the U.S. government conducts mass surveillance on its own citizens.",
-      credit: 'Photo: NSA, Public Domain',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg',
+      alt: 'The Owl Shrine at Bohemian Grove, photographed in 1986',
+      caption: 'The 40-foot owl shrine at Bohemian Grove, the private retreat in the redwoods of Northern California where American presidents, defense contractors, and media moguls gather each summer.',
+      credit: 'Photo: Public Domain via Wikimedia Commons',
     },
   ],
   'chapter-27': [

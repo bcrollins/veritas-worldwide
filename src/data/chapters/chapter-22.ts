@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',
-    alt: 'President Richard Nixon at a press briefing — architect of the War on Drugs',
-    caption: 'President Nixon declared drug abuse "public enemy number one" in 1971. A former domestic policy advisor later admitted the War on Drugs was designed to target anti-war and Black communities.',
-    credit: 'Photo: White House Photo Office, Public Domain via National Archives',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/1280px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',
+    alt: 'The Tribute in Light memorial at the World Trade Center site',
+    caption: 'The Tribute in Light at the World Trade Center site. The attacks of September 11, 2001 killed 2,977 people and led to two decades of war, the creation of the Department of Homeland Security, and the most expansive surveillance apparatus in American history.',
+    credit: 'Photo: Public Domain via Wikimedia Commons',
   },
   content: [
     { type: 'dropcap', text: 'On the morning of September 11, 2001, four commercial airliners were hijacked and used as weapons against the United States. 2,977 people were killed. The official investigation that followed left questions that remain unanswered to this day.' },

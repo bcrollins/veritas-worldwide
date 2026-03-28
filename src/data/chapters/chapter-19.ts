@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG',
-    alt: 'Rockefeller Center, New York City — symbol of the Rockefeller family\'s influence on American institutions',
-    caption: 'Rockefeller Center, New York City. The Rockefeller Foundation\'s 1910 Flexner Report reshaped American medical education to favor pharmaceutical treatment — a system that generates $4.5 trillion annually.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Allen_Dulles%2C_CIA_photo_portrait.jpg/440px-Allen_Dulles%2C_CIA_photo_portrait.jpg',
+    alt: 'Allen Dulles, CIA Director',
+    caption: 'Allen Dulles served as CIA Director from 1953–1961 and oversaw the MKUltra program.',
+    credit: 'Public Domain — CIA',
   },
   content: [
     { type: 'dropcap', text: 'On April 13, 1953, CIA Director Allen Dulles authorized Project MKUltra — a covert program to develop techniques for mind control, interrogation, and psychological manipulation using drugs, hypnosis, and torture.' },

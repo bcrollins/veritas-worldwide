@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',
-    alt: 'RMS Titanic departing Southampton on April 10, 1912',
-    caption: 'RMS Titanic departing Southampton, April 10, 1912. Among the 1,517 who perished were Benjamin Guggenheim, Isidor Straus, and John Jacob Astor IV — three of the wealthiest men who opposed the creation of the Federal Reserve.',
-    credit: 'Photo: F.G.O. Stuart, Public Domain via Wikimedia Commons',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
+    alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
+    caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
+    credit: 'Photo: Public Domain via Wikimedia Commons',
   },
   content: [
     { type: 'dropcap', text: 'The official narrative of water fluoridation is a public health triumph. The documented history tells a more complicated story — one that begins not in a dental clinic but in an aluminum smelting plant.' },

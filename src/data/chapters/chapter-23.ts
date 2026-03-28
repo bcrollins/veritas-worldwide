@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
-    alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
-    caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',
+    alt: 'President Richard Nixon at a press briefing — architect of the War on Drugs',
+    caption: 'President Nixon declared drug abuse "public enemy number one" in 1971. A former domestic policy advisor later admitted the War on Drugs was designed to target anti-war and Black communities.',
+    credit: 'Photo: White House Photo Office, Public Domain via National Archives',
   },
   content: [
     { type: 'dropcap', text: 'The "War on Drugs," launched by President Richard Nixon in 1971, was never primarily about public health. A top Nixon aide later admitted it was a political weapon designed to target the antiwar left and Black communities.' },

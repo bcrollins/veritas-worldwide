@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',
-    alt: 'Doctor administering a typhoid inoculation at a rural school in Texas, 1943',
-    caption: 'A physician administering a typhoid inoculation at a rural school in San Augustine County, Texas, 1943. The history of vaccination in America involves both genuine public health advances and documented corporate conflicts of interest.',
-    credit: 'Photo: John Vachon, Farm Security Administration, Public Domain via Library of Congress',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG',
+    alt: 'Rockefeller Center, New York City — symbol of the Rockefeller family\'s influence on American institutions',
+    caption: 'Rockefeller Center, New York City. The Rockefeller Foundation\'s 1910 Flexner Report reshaped American medical education to favor pharmaceutical treatment — a system that generates $4.5 trillion annually.',
+    credit: 'Photo: Public Domain via Wikimedia Commons',
   },
   content: [
     { type: 'dropcap', text: 'Rockefeller Medicine\nHow one family\'s oil fortune was used to reshape American medicine, eliminate natural healing traditions, and build a pharmaceutical empire that\nprofits from chronic illness.' },

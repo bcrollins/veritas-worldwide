@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
-    alt: 'National Security Agency headquarters at Fort Meade, Maryland',
-    caption: 'NSA Headquarters, Fort Meade, Maryland. Edward Snowden\'s 2013 disclosures confirmed what critics had alleged for decades: the U.S. government conducts mass surveillance on its own citizens.',
-    credit: 'Photo: NSA, Public Domain',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg',
+    alt: 'The Owl Shrine at Bohemian Grove, photographed in 1986',
+    caption: 'The 40-foot owl shrine at Bohemian Grove, the private retreat in the redwoods of Northern California where American presidents, defense contractors, and media moguls gather each summer.',
+    credit: 'Photo: Public Domain via Wikimedia Commons',
   },
   content: [
     { type: 'dropcap', text: 'Every July, approximately 2,500 of the most powerful men in America gather at a 2,700-acre private campground in the redwood forests of Northern California for two weeks of exclusive, invitation-only retreat.' },

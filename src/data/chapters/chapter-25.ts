@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg',
-    alt: 'The Owl Shrine at Bohemian Grove, photographed in 1986',
-    caption: 'The 40-foot owl shrine at Bohemian Grove, the private retreat in the redwoods of Northern California where American presidents, defense contractors, and media moguls gather each summer.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',
+    alt: 'RMS Titanic departing Southampton on April 10, 1912',
+    caption: 'RMS Titanic departing Southampton, April 10, 1912. The ship was owned by the White Star Line, which was controlled by J.P. Morgan\'s International Mercantile Marine Company. Morgan had a ticket but cancelled his passage at the last minute.',
+    credit: 'Photo: F.G.O. Stuart, Public Domain via Wikimedia Commons',
   },
   content: [
     { type: 'dropcap', text: 'The Unsinkable Plan\nThree of the wealthiest men in the world, all vocal opponents of the new Federal Reserve, died on the Titanic. The man who financed the ship, J.P. Morgan,  cancelled  his  trip  at  the  last  minute.  Coincidence?  This  chapter\nexamines the facts.' },

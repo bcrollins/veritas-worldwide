@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/800px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',
-    alt: 'The Tribute in Light memorial at the World Trade Center site, New York City',
-    caption: 'The Tribute in Light at the World Trade Center site. The events of September 11, 2001 transformed American domestic and foreign policy. The 9/11 Commission Report left questions that remain unanswered.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',
+    alt: 'Doctor administering a typhoid inoculation at a rural school in Texas, 1943',
+    caption: 'A physician administering a typhoid inoculation at a rural school in San Augustine County, Texas, 1943. The history of vaccination in America involves both genuine public health advances and documented corporate conflicts of interest.',
+    credit: 'Photo: John Vachon, Farm Security Administration, Public Domain via Library of Congress',
   },
   content: [
     { type: 'dropcap', text: 'In 1986, the pharmaceutical industry achieved something unprecedented in American law: complete immunity from liability for injuries caused by childhood vaccines. This chapter examines how that happened and what followed.' },

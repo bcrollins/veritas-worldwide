@@ -241,7 +241,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1953–1973",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Allen_Dulles%2C_CIA_photo_portrait.jpg/440px-Allen_Dulles%2C_CIA_photo_portrait.jpg",
     keywords: ["MKUltra", "CIA", "mind control", "LSD", "experimentation", "Church Committee"],
   },
   {
@@ -252,7 +252,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1910–Present",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG",
     keywords: ["Rockefeller", "medicine", "pharmaceutical", "Flexner Report", "chronic disease", "healthcare"],
   },
   {
@@ -263,7 +263,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1955–Present",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/800px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg",
     keywords: ["vaccines", "polio", "COVID-19", "pharmaceutical", "FDA", "public health"],
   },
   {
@@ -274,7 +274,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "2001",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/1280px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg",
     keywords: ["9/11", "September 11", "terrorism", "War on Terror", "PATRIOT Act", "Commission"],
   },
   {
@@ -285,7 +285,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1971–Present",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg",
     keywords: ["War on Drugs", "Nixon", "DEA", "incarceration", "drug policy", "CIA"],
   },
   {
@@ -296,7 +296,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1945–Present",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg",
     keywords: ["fluoride", "water", "public health", "industrial waste", "EPA"],
   },
   {
@@ -307,7 +307,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1910–1913",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg",
     keywords: ["Titanic", "Federal Reserve", "Astor", "Guggenheim", "Straus", "conspiracy"],
   },
   {
@@ -318,7 +318,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1872–Present",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg",
     keywords: ["Bohemian Grove", "elite", "secret society", "California", "power"],
   },
   {
@@ -329,7 +329,7 @@ export const chapterMeta: ChapterMetadata[] = [
     dateRange: "1947–Present",
     author: "Veritas Press",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/8/85/Criminal_Courts_Building%2C_100_Center_St.%2C_New_York_City._LOC_gsc.5a08406.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg",
     keywords: ["surveillance", "ECHELON", "NSA", "Pegasus", "Snowden", "PRISM", "privacy"],
   },
   {

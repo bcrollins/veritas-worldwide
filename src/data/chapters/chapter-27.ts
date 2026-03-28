@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Press',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Criminal_Courts_Building%2C_100_Center_St.%2C_New_York_City._LOC_gsc.5a08406.jpg',
-    alt: 'Federal courthouse in New York — where the Epstein case proceedings took place',
-    caption: 'The federal courts where Jeffrey Epstein\'s case was adjudicated. Court filings, flight logs, and survivor testimony document an intelligence-linked operation that compromised the world\'s most powerful people.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
+    alt: 'National Security Agency headquarters at Fort Meade, Maryland',
+    caption: 'NSA Headquarters, Fort Meade, Maryland. Edward Snowden\'s 2013 disclosures confirmed what critics had alleged for decades: the U.S. government conducts mass surveillance on its own citizens.',
+    credit: 'Photo: NSA, Public Domain',
   },
   content: [
     { type: 'dropcap', text: 'On June 5, 2013, The Guardian published the first of Edward Snowden\'s revelations, exposing a global surveillance apparatus that monitors the communications of billions of people worldwide.' },
