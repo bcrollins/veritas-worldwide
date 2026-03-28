@@ -56,7 +56,7 @@
     "push_notifications": false,
     "exit_intent": true,
     "ab_testing": true,
-    "v_assistant": true,
+    "v_assistant": false,
     "cookie_consent": true,
     "community_forum": true,
     "admin_social_hub": true,

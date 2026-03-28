@@ -27,7 +27,6 @@ const PerformanceMonitor = lazy(() => import('./components/engagement/Performanc
 const ExitIntentCapture = lazy(() => import('./components/ExitIntentCapture'))
 const StickyMembershipBar = lazy(() => import('./components/StickyMembershipBar'))
 const CookieConsent = lazy(() => import('./components/CookieConsent'))
-const VAssistant = lazy(() => import('./components/VAssistant'))
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ChapterPage = lazy(() => import('./pages/ChapterPage'))
@@ -615,7 +614,6 @@ export default function App() {
         <StickyMembershipBar />
         <PerformanceMonitor />
         <CookieConsent />
-        {!isAdmin && <VAssistant />}
       </Suspense>
     </div>
     </I18nProvider>

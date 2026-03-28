@@ -13,7 +13,8 @@
     "chapter-json-ld-dynamic-dateModified",
     "fixed-truncated-chapter-meta",
     "share-scoring-parity",
-    "analytics-dashboard-upgrade"
+    "analytics-dashboard-upgrade",
+    "remove-v-assistant"
   ],
   "next": "chapter-images-remaining-13",
   "queue": [
