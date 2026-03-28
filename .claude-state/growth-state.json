@@ -1,5 +1,5 @@
 {
-  "run": 3,
+  "run": 4,
   "date": "2026-03-28",
   "channels": {
     "website": { "status": "live", "handle": "https://veritasworldwide.com" },
@@ -59,6 +59,7 @@
   "last_completed": [
     "Removed source lists from public preview payloads while preserving chapter-level source counts for public summaries.",
     "Locked the full Sources page behind free-reader-account access and replaced anonymous bibliography access with chapter-by-chapter source-count previews.",
-    "Moved search onto /api/search with anonymous preview scope and authenticated full/source search, verified in production."
+    "Moved search onto /api/search with anonymous preview scope and authenticated full/source search, verified in production.",
+    "Added signed-in search filters for evidence tier, source-only matches, and chapter format plus signed-in source-browser filters for source hierarchy and chapter evidence mix."
   ]
 }

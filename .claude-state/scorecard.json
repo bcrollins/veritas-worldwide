@@ -1,38 +1,38 @@
 {
-  "run": 3,
+  "run": 4,
   "date": "2026-03-28",
   "site": [
     {
       "feature": "Chapter Reading",
-      "composite": 8.7,
-      "previous": 8.5,
-      "delta": 0.2,
+      "composite": 8.8,
+      "previous": 8.7,
+      "delta": 0.1,
       "status": "improved",
       "plus_half_requires": "Add authenticated end-to-end coverage for preview-to-full transitions, exports, and search-driven chapter entry points."
     },
     {
       "feature": "Reader Access Control",
-      "composite": 8.7,
-      "previous": 8.4,
-      "delta": 0.3,
+      "composite": 8.9,
+      "previous": 8.7,
+      "delta": 0.2,
       "status": "improved",
       "plus_half_requires": "Tie future premium tiers, citations, and admin-only tools to explicit server-side entitlements instead of UI-level assumptions."
     },
     {
       "feature": "Source Browser",
-      "composite": 8.2,
-      "previous": 7.1,
-      "delta": 1.1,
+      "composite": 8.5,
+      "previous": 8.2,
+      "delta": 0.3,
       "status": "improved",
-      "plus_half_requires": "Add signed-in filtering by source hierarchy, institution, and chapter evidence mix without exposing locked citations anonymously."
+      "plus_half_requires": "Add institution and source-type filters plus authenticated export/share views for filtered bibliographies."
     },
     {
       "feature": "Search",
-      "composite": 8.0,
-      "previous": 7.0,
-      "delta": 1.0,
+      "composite": 8.5,
+      "previous": 8.0,
+      "delta": 0.5,
       "status": "improved",
-      "plus_half_requires": "Add evidence-tier, source-only, and chapter-type filters with signed-in highlighting for source matches."
+      "plus_half_requires": "Preserve signed-in search filters across post-auth redirects and add richer source/title relevance ranking with saved recent queries."
     },
     {
       "feature": "Publication Shell",
@@ -78,8 +78,8 @@
     },
     {
       "area": "Conversion Optimization",
-      "score": 7.6,
-      "previous": 7.2,
+      "score": 8.0,
+      "previous": 7.6,
       "delta": 0.4,
       "status": "improved",
       "plus_half_requires": "Send locked search/source visitors into a dedicated post-signup redirect and test that funnel against the current gate copy."
@@ -88,7 +88,8 @@
   "security": {
     "p0_resolved": [
       "Public source-library payloads were removed from preview chapter responses.",
-      "Anonymous search no longer returns source-only matches that require authenticated source access."
+      "Anonymous search no longer returns source-only matches that require authenticated source access.",
+      "Preview chapter payloads no longer expose filter metadata intended for the authenticated source browser and full-search experience."
     ],
     "p0_open": [],
     "new_p0": []

@@ -1,16 +1,18 @@
 {
-  "run": 3,
+  "run": 4,
   "date": "2026-03-28",
   "completed": [
     "Preview chapter payloads now expose source counts without exposing the underlying citation library.",
     "SourcesPage now shows anonymous readers a gated chapter-by-chapter source summary and signed-in readers the full bibliography.",
     "SearchPage now uses a server-backed /api/search endpoint that returns preview-safe results anonymously and full source-text matches after sign-in.",
+    "Signed-in readers can now filter search results by source-only matches, evidence tier, and chapter format, while the Sources page supports hierarchy and evidence-mix filtering without widening anonymous payloads.",
     "Verification completed with npx tsc --noEmit, npm run build, local API checks, and live anonymous/authenticated search validation."
   ],
-  "next_task": "Add signed-in evidence/source filters to search and the source browser, then finish portal-side growth infrastructure in HubSpot, GA4, and Search Console.",
+  "next_task": "Preserve locked search/source intent across account creation, then finish portal-side growth infrastructure in HubSpot, GA4, and Google Search Console while reducing the oversized bundles.",
   "next_priorities": [
-    "Add evidence-tier, source-only, and source-hierarchy filters to signed-in search and source browsing without weakening anonymous preview rules.",
+    "Send locked search and source-browser visitors back into their requested filtered view immediately after signup or login.",
     "Connect HubSpot workflows, double opt-in, and lifecycle scoring in the portal.",
-    "Connect Google Search Console and verify production funnel events in GA4 plus HubSpot."
+    "Connect Google Search Console and verify production funnel events in GA4 plus HubSpot.",
+    "Reduce jspdf and vendor-react bundle weight."
   ]
 }
