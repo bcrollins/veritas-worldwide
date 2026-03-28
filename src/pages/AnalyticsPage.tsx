@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchAnalytics } from '../lib/analytics'
-import type { AnalyticsSnapshot, CountryViews } from '../lib/analytics'
+import type { AnalyticsEventSummary, AnalyticsSnapshot, CountryViews, EventTrendPoint, FunnelSnapshot } from '../lib/analytics'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
 
 // ── Country flag emoji from ISO code ───────────────────────────────
@@ -30,6 +30,26 @@ function StatCard({ label, value, accent }: { label: string; value: number | str
       </p>
     </div>
   )
+}
+
+function formatEventLabel(name: string): string {
+  return name
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, char => char.toUpperCase())
+}
+
+function formatLastSeen(value: string): string {
+  if (!value) return 'No activity yet'
+
+  const parsed = new Date(value)
+  if (Number.isNaN(parsed.getTime())) return value
+
+  return parsed.toLocaleString([], {
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  })
 }
 
 // ── Mini bar chart (pure CSS) ──────────────────────────────────────
@@ -64,6 +84,132 @@ function DailyChart({ data }: { data: { date: string; views: number }[] }) {
         <span className="font-sans text-[10px] text-ink-faint">
           {data.length > 0 ? data[data.length - 1].date : ''}
         </span>
+      </div>
+    </div>
+  )
+}
+
+function FunnelSection({ funnel }: { funnel: FunnelSnapshot }) {
+  const stages = [
+    { label: 'Chapter Views', value: funnel.chapterViews, description: 'Readers who reached a chapter page.' },
+    { label: 'Content Gate Hits', value: funnel.gateHits, description: 'Anonymous readers who reached gated depth.' },
+    { label: 'Email Signups', value: funnel.signups, description: 'Newsletter conversions from all placements.' },
+    { label: 'Checkout Starts', value: funnel.checkoutStarts, description: 'Donation or membership checkout intent.' },
+    { label: 'Completed Support', value: funnel.payments, description: 'Confirmed donation or membership return.' },
+  ]
+
+  return (
+    <section className="border border-border rounded-sm bg-surface p-5 sm:p-6">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-5">
+        <div>
+          <h3 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink">
+            Reader Funnel
+          </h3>
+          <p className="font-body text-sm text-ink-muted mt-1">
+            Public visibility from reading through support. Conversion rates are measured against the previous stage.
+          </p>
+        </div>
+        <p className="font-sans text-[10px] uppercase tracking-[0.08em] text-ink-faint">
+          Signals captured client-side and stored server-side
+        </p>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-5">
+        {stages.map((stage, index) => {
+          const previous = index > 0 ? stages[index - 1].value : 0
+          const conversion = index === 0 || previous === 0 ? 'Baseline' : `${((stage.value / previous) * 100).toFixed(1)}%`
+
+          return (
+            <div key={stage.label} className="rounded-sm border border-border bg-parchment px-4 py-4">
+              <p className="font-sans text-[0.58rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
+                Stage {index + 1}
+              </p>
+              <p className="font-display text-2xl font-bold text-ink mt-2">{stage.value.toLocaleString()}</p>
+              <p className="font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-crimson mt-2">
+                {stage.label}
+              </p>
+              <p className="font-body text-xs text-ink-muted leading-relaxed mt-2">
+                {stage.description}
+              </p>
+              <p className="font-sans text-[10px] text-ink-faint mt-3">
+                {conversion}
+              </p>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
+function EventTrendChart({ data }: { data: EventTrendPoint[] }) {
+  const maxValue = Math.max(
+    ...data.flatMap(point => [point.chapterViews, point.signups, point.checkoutStarts, point.payments]),
+    1,
+  )
+
+  const series = [
+    { key: 'chapterViews', label: 'Chapter Views', color: 'bg-crimson/80' },
+    { key: 'signups', label: 'Signups', color: 'bg-gold/80' },
+    { key: 'checkoutStarts', label: 'Checkout Starts', color: 'bg-verified/80' },
+    { key: 'payments', label: 'Completed Support', color: 'bg-ink/70' },
+  ] as const
+
+  return (
+    <div className="border border-border rounded-sm p-5 bg-surface">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-4">
+        <div>
+          <h3 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink">
+            Behavioral Trend — Last 14 Days
+          </h3>
+          <p className="font-body text-sm text-ink-muted mt-1">
+            Daily movement across reading, signup, checkout, and completed support activity.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          {series.map(item => (
+            <span key={item.key} className="inline-flex items-center gap-1.5 font-sans text-[10px] uppercase tracking-[0.08em] text-ink-faint">
+              <span className={`inline-block h-2.5 w-2.5 rounded-full ${item.color}`} />
+              {item.label}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="grid gap-2 items-end h-40 sm:h-48"
+        style={{ gridTemplateColumns: `repeat(${data.length}, minmax(0, 1fr))` }}
+      >
+        {data.map(point => (
+          <div key={point.date} className="flex h-full flex-col justify-end gap-1">
+            {series.map(item => {
+              const value = point[item.key]
+              const pct = (value / maxValue) * 100
+              return (
+                <div
+                  key={item.key}
+                  className={`${item.color} rounded-t-sm transition-all`}
+                  style={{ height: `${Math.max(value === 0 ? 0 : pct, value === 0 ? 0 : 6)}%` }}
+                  title={`${point.date} — ${item.label}: ${value.toLocaleString()}`}
+                />
+              )
+            })}
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="grid gap-2 mt-3"
+        style={{ gridTemplateColumns: `repeat(${data.length}, minmax(0, 1fr))` }}
+      >
+        {data.map((point, index) => (
+          <span
+            key={point.date}
+            className="font-sans text-[9px] text-ink-faint text-center"
+          >
+            {index === 0 || index === data.length - 1 || index % 3 === 0 ? point.date.slice(5) : ''}
+          </span>
+        ))}
       </div>
     </div>
   )
@@ -179,6 +325,58 @@ function CountryTable({ countries }: { countries: CountryViews[] }) {
   )
 }
 
+function TopEventsTable({ events }: { events: AnalyticsEventSummary[] }) {
+  return (
+    <div className="border border-border rounded-sm bg-surface overflow-hidden">
+      <div className="px-5 py-4 border-b border-border">
+        <h3 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink">
+          Top Behavioral Events
+        </h3>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-left">
+          <thead>
+            <tr className="border-b border-border bg-parchment-dark">
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint w-8">#</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Event</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint text-right">Count</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Last Path</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Last Seen</th>
+            </tr>
+          </thead>
+          <tbody>
+            {events.map((event, index) => (
+              <tr key={event.name} className="border-b border-border/50 hover:bg-parchment-dark/50 transition-colors">
+                <td className="px-5 py-3 font-sans text-xs text-ink-faint">{index + 1}</td>
+                <td className="px-5 py-3">
+                  <p className="font-sans text-sm text-ink font-semibold">{formatEventLabel(event.name)}</p>
+                  <p className="font-sans text-[10px] uppercase tracking-[0.08em] text-ink-faint mt-0.5">{event.name}</p>
+                </td>
+                <td className="px-5 py-3 font-sans text-sm text-ink font-semibold text-right tabular-nums">
+                  {event.count.toLocaleString()}
+                </td>
+                <td className="px-5 py-3 font-mono text-xs text-ink-muted">
+                  {event.lastPath || '—'}
+                </td>
+                <td className="px-5 py-3 font-sans text-xs text-ink-muted">
+                  {formatLastSeen(event.lastSeenAt)}
+                </td>
+              </tr>
+            ))}
+            {events.length === 0 && (
+              <tr>
+                <td colSpan={5} className="px-5 py-8 text-center font-body text-sm text-ink-muted italic">
+                  No behavioral events recorded yet. This table populates after readers search, subscribe, share, or support the publication.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
 // ── Top Pages Table ────────────────────────────────────────────────
 function TopPagesTable({ pages }: { pages: { path: string; title: string; views: number }[] }) {
   return (
@@ -271,7 +469,7 @@ export default function AnalyticsPage() {
   useEffect(() => { loadData() }, [])
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12 md:py-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       {/* Header */}
       <header className="mb-10 border-b border-border pb-8">
         <p className="chapter-label mb-4">Transparency</p>
@@ -322,9 +520,23 @@ export default function AnalyticsPage() {
             <StatCard label="This Year" value={data.thisYear} />
           </div>
 
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            <StatCard label="Chapter Views" value={data.funnel.chapterViews} />
+            <StatCard label="Signups" value={data.funnel.signups} />
+            <StatCard label="Checkout Starts" value={data.funnel.checkoutStarts} />
+            <StatCard label="Completed Support" value={data.funnel.payments} />
+            <StatCard label="Shares" value={data.funnel.shares} />
+          </div>
+
+          <FunnelSection funnel={data.funnel} />
+
           {/* Daily Trend Chart */}
           {data.dailyTrend.length > 0 && (
             <DailyChart data={data.dailyTrend} />
+          )}
+
+          {data.eventTrend.length > 0 && (
+            <EventTrendChart data={data.eventTrend} />
           )}
 
           {/* Country Breakdown */}
@@ -333,10 +545,13 @@ export default function AnalyticsPage() {
           {/* Top Pages */}
           <TopPagesTable pages={data.topPages} />
 
+          {/* Behavioral events */}
+          <TopEventsTable events={data.topEvents} />
+
           {/* Footer note */}
           <div className="border-t border-border pt-6 mt-4">
             <p className="font-sans text-xs text-ink-faint leading-relaxed">
-              Analytics are collected anonymously. No personal data is stored. Country detection is based on IP geolocation. View counts include all page loads.
+              Analytics are collected anonymously. No personal data is stored in the public dashboard. Country detection is based on IP geolocation, and behavioral events reflect chapter reading, signup, share, and support actions recorded on the site.
             </p>
           </div>
         </div>

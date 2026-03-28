@@ -7,6 +7,8 @@
  * HubSpot conversion events.
  */
 import { trackEvent } from './hubspot'
+import { recordAnalyticsEvent } from './analytics'
+import { scoreDonationCompleted } from './leadScoring'
 
 type GtagFn = (...args: unknown[]) => void
 
@@ -56,6 +58,11 @@ export function trackCheckoutIntent(tier: string, billing: 'monthly' | 'annual',
     amount: String(amount),
     page: window.location.pathname,
   })
+  recordAnalyticsEvent('checkout_started', {
+    tier,
+    billing,
+    amount: String(amount),
+  })
 }
 
 /** Track donation intent before redirecting to Stripe */
@@ -80,6 +87,9 @@ export function trackDonationIntent(amount: number): void {
   trackEvent('donation_started', {
     amount: String(amount),
     page: window.location.pathname,
+  })
+  recordAnalyticsEvent('donation_started', {
+    amount: String(amount),
   })
 }
 
@@ -108,12 +118,18 @@ export function handleStripeReturn(): void {
     }],
   })
 
-  // HubSpot: track conversion
-  trackEvent('payment_completed', {
+  const completionProps = {
     tier: tier || 'unknown',
     billing: billing || 'unknown',
     amount: String(amount),
-  })
+  }
+
+  if (tier === 'donation') {
+    scoreDonationCompleted(String(amount))
+  } else {
+    trackEvent('payment_completed', completionProps)
+    recordAnalyticsEvent('payment_completed', completionProps)
+  }
 
   // Clean up checkout state
   localStorage.removeItem('veritas_checkout_tier')

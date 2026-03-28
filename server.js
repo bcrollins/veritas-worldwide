@@ -22,6 +22,8 @@ const store = {
   yearly: {},
   countries: {},
   pages: {},
+  events: {},
+  eventDaily: {},
 }
 
 function loadStore() {
@@ -102,6 +104,28 @@ function getClientIP(req) {
   return req.socket?.remoteAddress || ''
 }
 
+function sanitizeAnalyticsPath(value) {
+  if (typeof value !== 'string') return ''
+  const trimmed = value.trim()
+  if (!trimmed.startsWith('/')) return ''
+  return trimmed.slice(0, 200)
+}
+
+function sanitizeAnalyticsProperties(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {}
+  const clean = {}
+  let count = 0
+  for (const [rawKey, rawValue] of Object.entries(value)) {
+    if (count >= 12) break
+    if (!['string', 'number', 'boolean'].includes(typeof rawValue)) continue
+    const key = String(rawKey).trim().slice(0, 40)
+    if (!key) continue
+    clean[key] = String(rawValue).slice(0, 160)
+    count += 1
+  }
+  return clean
+}
+
 // Gzip/Brotli compression — reduces 549KB chapters chunk to ~188KB
 app.use(compression())
 
@@ -148,6 +172,7 @@ setInterval(() => {
 // Apply strict rate limit to auth endpoints (5 attempts per minute per IP)
 app.use('/api/auth/login', rateLimit({ windowMs: 60_000, max: 5 }))
 app.use('/api/auth/register', rateLimit({ windowMs: 60_000, max: 3 }))
+app.use('/api/analytics/event', rateLimit({ windowMs: 60_000, max: 120 }))
 
 // CORS — restrict to known origins
 const ALLOWED_ORIGINS = new Set([
@@ -200,6 +225,56 @@ app.post('/api/analytics/pageview', async (req, res) => {
   res.json({ ok: true })
 })
 
+const ANALYTICS_EVENTS = new Set([
+  'email_signup',
+  'account_created',
+  'chapter_viewed',
+  'bookmark_added',
+  'donation_clicked',
+  'donation_completed',
+  'share_clicked',
+  'search_performed',
+  'content_gate_hit',
+  'forum_post',
+  'pdf_downloaded',
+  'profile_viewed',
+  'checkout_started',
+  'donation_started',
+  'payment_completed',
+])
+
+app.post('/api/analytics/event', (req, res) => {
+  const { name, path: rawPath, properties } = req.body || {}
+  if (typeof name !== 'string' || !ANALYTICS_EVENTS.has(name)) {
+    return res.status(400).json({ error: 'valid event name required' })
+  }
+
+  const now = new Date()
+  const dateKey = toDateKey(now)
+  const eventPath = sanitizeAnalyticsPath(rawPath)
+  const cleanProperties = sanitizeAnalyticsProperties(properties)
+
+  if (!store.events[name]) {
+    store.events[name] = { count: 0, lastSeenAt: '', lastPath: '', lastProperties: {} }
+  }
+  store.events[name].count += 1
+  store.events[name].lastSeenAt = now.toISOString()
+  if (eventPath) {
+    store.events[name].lastPath = eventPath
+  }
+  if (Object.keys(cleanProperties).length > 0) {
+    store.events[name].lastProperties = cleanProperties
+  }
+
+  if (!store.eventDaily[dateKey]) {
+    store.eventDaily[dateKey] = {}
+  }
+  store.eventDaily[dateKey][name] = (store.eventDaily[dateKey][name] || 0) + 1
+
+  res.setHeader('Cache-Control', 'no-store')
+  res.json({ ok: true })
+})
+
 app.get('/api/analytics/snapshot', (req, res) => {
   // Never cache analytics — always show live cumulative data
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
@@ -220,7 +295,58 @@ app.get('/api/analytics/snapshot', (req, res) => {
   }
   const countries = Object.values(store.countries).sort((a, b) => b.views - a.views)
   const topPages = Object.values(store.pages).sort((a, b) => b.views - a.views).slice(0, 30)
-  res.json({ lifetime: store.lifetime, today: store.daily[todayKey] || 0, thisWeek: store.weekly[weekKey] || 0, thisMonth: store.monthly[monthKey] || 0, thisYear: store.yearly[yearKey] || 0, countries, dailyTrend, topPages })
+  const eventCounts = Object.fromEntries(
+    Object.entries(store.events).map(([name, meta]) => [name, meta.count || 0])
+  )
+  const topEvents = Object.entries(store.events)
+    .sort((a, b) => (b[1].count || 0) - (a[1].count || 0))
+    .slice(0, 12)
+    .map(([name, meta]) => ({
+      name,
+      count: meta.count || 0,
+      lastSeenAt: meta.lastSeenAt || '',
+      lastPath: meta.lastPath || '',
+    }))
+  const eventTrend = []
+  for (let i = 13; i >= 0; i--) {
+    const d = new Date(now)
+    d.setDate(d.getDate() - i)
+    const key = toDateKey(d)
+    const dayEvents = store.eventDaily[key] || {}
+    eventTrend.push({
+      date: key,
+      chapterViews: dayEvents.chapter_viewed || 0,
+      signups: dayEvents.email_signup || 0,
+      checkoutStarts: (dayEvents.checkout_started || 0) + (dayEvents.donation_started || 0),
+      payments: (dayEvents.payment_completed || 0) + (dayEvents.donation_completed || 0),
+    })
+  }
+  const funnel = {
+    chapterViews: eventCounts.chapter_viewed || 0,
+    gateHits: eventCounts.content_gate_hit || 0,
+    signups: eventCounts.email_signup || 0,
+    checkoutStarts: (eventCounts.checkout_started || 0) + (eventCounts.donation_started || 0),
+    payments: (eventCounts.payment_completed || 0) + (eventCounts.donation_completed || 0),
+    shares: eventCounts.share_clicked || 0,
+    bookmarks: eventCounts.bookmark_added || 0,
+    searches: eventCounts.search_performed || 0,
+    pdfDownloads: eventCounts.pdf_downloaded || 0,
+    profiles: eventCounts.profile_viewed || 0,
+  }
+  res.json({
+    lifetime: store.lifetime,
+    today: store.daily[todayKey] || 0,
+    thisWeek: store.weekly[weekKey] || 0,
+    thisMonth: store.monthly[monthKey] || 0,
+    thisYear: store.yearly[yearKey] || 0,
+    countries,
+    dailyTrend,
+    topPages,
+    eventCounts,
+    topEvents,
+    eventTrend,
+    funnel,
+  })
 })
 
 

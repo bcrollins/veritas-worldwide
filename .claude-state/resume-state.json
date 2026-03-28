@@ -1,6 +1,6 @@
 {
-  "last": "prerendered-core-routes-and-fixed-chapter-meta",
-  "run": 28,
+  "last": "analytics-dashboard-upgrade",
+  "run": 29,
   "date": "2026-03-27",
   "completed": [
     "contextual-donation-cta-chapter-page",
@@ -12,11 +12,11 @@
     "prerendering-ssg-for-seo",
     "chapter-json-ld-dynamic-dateModified",
     "fixed-truncated-chapter-meta",
-    "share-scoring-parity"
+    "share-scoring-parity",
+    "analytics-dashboard-upgrade"
   ],
-  "next": "analytics-dashboard-upgrade",
+  "next": "chapter-images-remaining-13",
   "queue": [
-    "analytics-dashboard-upgrade",
     "chapter-images-remaining-13",
     "profile-page-enhancements-round-2",
     "adsense-activation",

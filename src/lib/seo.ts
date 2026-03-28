@@ -74,7 +74,7 @@ export function setMetaTags(config: SEOConfig): void {
   }
 
   if (type === 'article') {
-    if (publishedTime) metas['article:published_time'] = publishedTime
+    if (publishedTime) metas['article:published_time'] = normalizePublicationDate(publishedTime)
     if (author) metas['article:author'] = author
     if (section) metas['article:section'] = section
     if (tags) {

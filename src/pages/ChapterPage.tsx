@@ -774,7 +774,7 @@ export default function ChapterPage() {
         url: `${SITE_URL}/chapter/${chapter.id}`,
         type: 'article',
         image: chapterOgImage,
-        publishedTime: '2026-03-01',
+        publishedTime: chapter.publishDate,
         author: chapter.author,
         section: 'Documentary History',
         tags: chapter.keywords,

@@ -8,6 +8,7 @@
  * Scoring: Subscriber(10) → Lead(25) → MQL(50+) → Opportunity(70+) → Customer(120+)
  */
 import { trackEvent } from './hubspot'
+import { recordAnalyticsEvent } from './analytics'
 
 const SCORE_KEY = 'veritas_lead_score'
 const ACTIONS_KEY = 'veritas_lead_actions'
@@ -99,6 +100,7 @@ function score(action: ScoringAction, props?: Record<string, string>): LeadState
     lifecycle_stage: state.stage,
     chapters_read: String(state.chaptersViewed.length),
   })
+  recordAnalyticsEvent(action, props)
 
   return state
 }

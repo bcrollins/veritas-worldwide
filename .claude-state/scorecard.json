@@ -1,5 +1,5 @@
 {
-  "run": 28,
+  "run": 29,
   "date": "2026-03-27",
   "features": {
     "chapter-reading": { "score": 9.5, "prev": 9.5 },
@@ -21,8 +21,8 @@
     "structured-data": { "score": 9.5, "prev": 9.5 },
     "sitemap-robots": { "score": 9.5, "prev": 9.5 },
     "email-capture": { "score": 9.0, "prev": 9.0 },
-    "hubspot-integration": { "score": 9.0, "prev": 9.0 },
-    "ga4-analytics": { "score": 8.0, "prev": 7.0 },
+    "hubspot-integration": { "score": 9.5, "prev": 9.0 },
+    "ga4-analytics": { "score": 9.0, "prev": 8.0 },
     "stripe-monetization": { "score": 9.5, "prev": 9.5 },
     "community-forum": { "score": 8.5, "prev": 8.5 },
     "profiles": { "score": 9.5, "prev": 7.5 },
@@ -36,6 +36,6 @@
     "ab-testing": { "score": 8.5, "prev": 8.5 },
     "exit-intent": { "score": 9.0, "prev": 9.0 }
   },
-  "composite": 9.0,
-  "notes": "Run 28: Added build-time prerendering for 49 public routes with exact-route Express serving, route-specific JSON-LD and social metadata, corrected truncated chapter subtitles that fed the home/read/search surfaces, and unified share tracking with HubSpot lead scoring. Local TypeScript, production build, and prerender runtime checks all passed."
+  "composite": 9.1,
+  "notes": "Run 29: Added server-side behavioral event ingestion and funnel aggregation, wired lead-scoring, content gate, and Stripe conversion flows into the analytics pipeline, upgraded the public analytics page with funnel and behavioral event visibility, and normalized chapter article published dates. Local TypeScript, production build, and runtime analytics endpoint checks all passed."
 }
