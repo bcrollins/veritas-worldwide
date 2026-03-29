@@ -17,7 +17,7 @@ import { useReadingHistory } from '../hooks/useReadingHistory'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import { DONATE_URL } from '../lib/constants'
-import { trackShare, trackDownload } from '../lib/ga4'
+import { trackShare, trackDownload, trackReadingMilestone, trackChapterComplete } from '../lib/ga4'
 import { scoreChapterViewed, scorePdfDownloaded } from '../lib/leadScoring'
 import ChapterPDF from '../components/ChapterPDF'
 import FloatingShareBar from '../components/engagement/FloatingShareBar'
@@ -884,6 +884,33 @@ export default function ChapterPage() {
     if (sessionStorage.getItem(gateKey)) return
     scoreContentGateHit(chapter.id)
     sessionStorage.setItem(gateKey, '1')
+  }, [chapter])
+
+  /* ── Reading Milestone Tracking (GA4) ──────────────── */
+  useEffect(() => {
+    if (!chapter) return
+    const milestonesFired = new Set<number>()
+    const startTime = Date.now()
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (docHeight <= 0) return
+      const pct = Math.round((scrollTop / docHeight) * 100)
+
+      for (const m of [25, 50, 75, 100] as const) {
+        if (pct >= m && !milestonesFired.has(m)) {
+          milestonesFired.add(m)
+          trackReadingMilestone(chapter.id, m)
+          if (m === 100) {
+            trackChapterComplete(chapter.id, Math.round((Date.now() - startTime) / 1000))
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [chapter])
 
   /* ── Loading State ─────────────────────────────────── */

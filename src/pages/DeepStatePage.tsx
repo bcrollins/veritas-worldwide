@@ -550,7 +550,7 @@ export default function DeepStatePage() {
       url: `${SITE_URL}/deep-state`,
       publisher: { '@type': 'Organization', name: 'Veritas Press', url: SITE_URL },
       datePublished: '2026-03-24',
-      dateModified: '2026-03-24',
+      dateModified: new Date().toISOString().split('T')[0],
     })
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])

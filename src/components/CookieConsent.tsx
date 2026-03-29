@@ -19,7 +19,14 @@ function updateGtagConsent(granted: boolean): void {
     gtag('consent', 'update', {
       analytics_storage: granted ? 'granted' : 'denied',
       ad_storage: granted ? 'granted' : 'denied',
+      ad_user_data: granted ? 'granted' : 'denied',
+      ad_personalization: granted ? 'granted' : 'denied',
     })
+  }
+  // Also update HubSpot tracking consent
+  const hsq = (w._hsq as unknown[]) || []
+  if (Array.isArray(hsq)) {
+    hsq.push(['doNotTrack', { track: granted }])
   }
 }
 
