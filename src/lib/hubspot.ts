@@ -31,6 +31,7 @@ export type SubscriptionSource =
   | 'dossier_download'
   | 'membership_page'
   | 'article_cta'
+  | 'topic_hub'
   | 'newsletter_legacy_migration'
 
 /* ── HubSpot Tracking Queue ───────────────────────────────────── */

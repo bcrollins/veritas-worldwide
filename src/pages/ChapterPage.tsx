@@ -28,6 +28,7 @@ import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { getChapterImages } from '../data/chapterImages'
+import { getTopicHrefForTerm } from '../data/topicHubs'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 import { scoreContentGateHit } from '../lib/leadScoring'
@@ -1163,7 +1164,7 @@ export default function ChapterPage() {
                   {chapter.keywords.map(kw => (
                     <Link
                       key={kw}
-                      to={`/search?q=${encodeURIComponent(kw)}`}
+                      to={getTopicHrefForTerm(kw)}
                       className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm hover:text-crimson hover:bg-crimson/5 transition-colors"
                     >
                       {kw}

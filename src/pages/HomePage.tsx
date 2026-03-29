@@ -7,6 +7,7 @@ import NewsletterSignup from '../components/NewsletterSignup'
 import FadeInSection from '../components/FadeInSection'
 import AnimatedCounter from '../components/AnimatedCounter'
 import ContinueReading from '../components/ContinueReading'
+import { getTopicHrefForTerm, topicHubs } from '../data/topicHubs'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
 import SocialProofBanner from '../components/engagement/SocialProofBanner'
@@ -190,6 +191,39 @@ export default function HomePage() {
             </section>
           </FadeInSection>
 
+          <FadeInSection>
+            <section className="py-12 border-b border-border">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Research Topics</h2>
+                <div className="flex-1 h-[1px] bg-border" />
+              </div>
+              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                {topicHubs.slice(0, 6).map((topic) => (
+                  <Link
+                    key={topic.slug}
+                    to={`/topics/${topic.slug}`}
+                    className="group border border-border bg-surface p-5 hover:border-crimson/40 hover:bg-parchment-dark/40 transition-colors"
+                  >
+                    <p className="font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
+                      {topic.eyebrow}
+                    </p>
+                    <h3 className="font-display text-xl font-bold text-ink leading-tight group-hover:text-crimson transition-colors">
+                      {topic.name}
+                    </h3>
+                    <p className="font-body text-sm text-ink-muted leading-relaxed mt-3 line-clamp-3">
+                      {topic.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-6">
+                <Link to="/topics" className="font-sans text-xs font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors">
+                  Browse all research topics &rarr;
+                </Link>
+              </div>
+            </section>
+          </FadeInSection>
+
           {/* Social Proof */}
           <SocialProofBanner />
           
@@ -237,7 +271,13 @@ export default function HomePage() {
                         {chapter.keywords && chapter.keywords.slice(0, 3).length > 0 && (
                           <div className="flex flex-wrap items-center gap-2 mt-2">
                             {chapter.keywords.slice(0, 3).map(kw => (
-                              <span key={kw} className="font-sans text-[0.6rem] px-2 py-0.5 bg-border text-ink-faint">{kw}</span>
+                              <Link
+                                key={kw}
+                                to={getTopicHrefForTerm(kw)}
+                                className="font-sans text-[0.6rem] px-2 py-0.5 bg-border text-ink-faint hover:text-crimson hover:bg-crimson/5 transition-colors"
+                              >
+                                {kw}
+                              </Link>
                             ))}
                           </div>
                         )}

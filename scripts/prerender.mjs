@@ -2,6 +2,7 @@
 
 import fs from 'fs'
 import path from 'path'
+import vm from 'node:vm'
 import { spawnSync } from 'child_process'
 
 const SITE_NAME = 'Veritas Press'
@@ -13,8 +14,18 @@ const distDir = path.join(repoRoot, 'dist')
 const templatePath = path.join(distDir, 'index.html')
 const manifestPath = path.join(distDir, 'prerender-manifest.json')
 const prerenderDir = path.join(distDir, 'prerender')
+const distSitemapPath = path.join(distDir, 'sitemap.xml')
+const sourceSitemapPath = path.join(repoRoot, 'public', 'sitemap.xml')
 const chapterMetaPath = path.join(repoRoot, 'src', 'data', 'chapterMeta.ts')
 const chapterSourceDir = path.join(repoRoot, 'src', 'data', 'chapters')
+const topicHubPath = path.join(repoRoot, 'src', 'data', 'topicHubs.json')
+const profileDataPath = path.join(repoRoot, 'src', 'data', 'profileData.ts')
+
+const articleCollections = [
+  { file: 'src/data/articles.ts', exportName: 'articles' },
+  { file: 'src/data/articlesExpanded.ts', exportName: 'expandedArticlesA' },
+  { file: 'src/data/articlesExpandedB.ts', exportName: 'expandedArticlesB' },
+]
 
 if (!fs.existsSync(templatePath)) {
   console.error('[prerender] dist/index.html not found. Run vite build first.')
@@ -101,23 +112,23 @@ function routeToFile(route) {
 }
 
 function setTitle(html, title) {
-  return html.replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(title)}</title>`)
+  return html.replace(/<title>.*?<\/title>/s, () => `<title>${escapeHtml(title)}</title>`)
 }
 
 function setMetaTag(html, attr, key, content) {
   const pattern = new RegExp(`(<meta[^>]+${attr}="${escapeRegExp(key)}"[^>]+content=")([^"]*)("[^>]*>)`, 'i')
   if (pattern.test(html)) {
-    return html.replace(pattern, `$1${escapeAttr(content)}$3`)
+    return html.replace(pattern, (_match, prefix, _current, suffix) => `${prefix}${escapeAttr(content)}${suffix}`)
   }
-  return html.replace('</head>', `    <meta ${attr}="${key}" content="${escapeAttr(content)}" />\n  </head>`)
+  return html.replace('</head>', () => `    <meta ${attr}="${key}" content="${escapeAttr(content)}" />\n  </head>`)
 }
 
 function setLinkTag(html, rel, href) {
   const pattern = new RegExp(`(<link[^>]+rel="${escapeRegExp(rel)}"[^>]+href=")([^"]*)("[^>]*>)`, 'i')
   if (pattern.test(html)) {
-    return html.replace(pattern, `$1${escapeAttr(href)}$3`)
+    return html.replace(pattern, (_match, prefix, _current, suffix) => `${prefix}${escapeAttr(href)}${suffix}`)
   }
-  return html.replace('</head>', `    <link rel="${rel}" href="${escapeAttr(href)}" />\n  </head>`)
+  return html.replace('</head>', () => `    <link rel="${rel}" href="${escapeAttr(href)}" />\n  </head>`)
 }
 
 function injectJsonLd(html, jsonLd) {
@@ -221,6 +232,113 @@ function getOgImage(chapterId) {
   return DEFAULT_OG_IMAGE
 }
 
+function extractArrayLiteral(source, exportName) {
+  const exportIndex = source.indexOf(`export const ${exportName}`)
+  if (exportIndex === -1) {
+    throw new Error(`Could not find export ${exportName}`)
+  }
+
+  const equalsIndex = source.indexOf('=', exportIndex)
+  if (equalsIndex === -1) {
+    throw new Error(`Could not find assignment for ${exportName}`)
+  }
+
+  const arrayStart = source.indexOf('[', equalsIndex)
+  if (arrayStart === -1) {
+    throw new Error(`Could not find array start for ${exportName}`)
+  }
+
+  let depth = 0
+  let inString = false
+  let quote = ''
+  let escaped = false
+
+  for (let index = arrayStart; index < source.length; index += 1) {
+    const char = source[index]
+
+    if (inString) {
+      if (escaped) {
+        escaped = false
+      } else if (char === '\\') {
+        escaped = true
+      } else if (char === quote) {
+        inString = false
+        quote = ''
+      }
+      continue
+    }
+
+    if (char === '"' || char === "'" || char === '`') {
+      inString = true
+      quote = char
+      continue
+    }
+
+    if (char === '[') depth += 1
+    if (char === ']') {
+      depth -= 1
+      if (depth === 0) {
+        return source.slice(arrayStart, index + 1)
+      }
+    }
+  }
+
+  throw new Error(`Unterminated array literal for ${exportName}`)
+}
+
+function evaluateArrayLiteral(literal) {
+  return vm.runInNewContext(literal, {})
+}
+
+function loadArticleData() {
+  return articleCollections.flatMap(({ file, exportName }) => {
+    const filePath = path.join(repoRoot, file)
+    const source = fs.readFileSync(filePath, 'utf8')
+    const literal = extractArrayLiteral(source, exportName)
+    const articles = evaluateArrayLiteral(literal)
+    if (!Array.isArray(articles)) return []
+    return articles.map((article) => ({ ...article, __sourceFile: file }))
+  })
+}
+
+function loadTopicHubs() {
+  return JSON.parse(fs.readFileSync(topicHubPath, 'utf8'))
+}
+
+function loadProfileSlugs() {
+  const source = fs.readFileSync(profileDataPath, 'utf8')
+  return [...new Set([...source.matchAll(/id:\s*'([^']+)'/g)].map((match) => match[1]))]
+}
+
+function normalizeTopicTerm(value) {
+  return String(value).trim().toLowerCase().replace(/\s+/g, ' ')
+}
+
+function buildTopicAliasMap(topics) {
+  const map = new Map()
+  for (const topic of topics) {
+    const terms = new Set([topic.name, ...(topic.aliases || []), ...(topic.keywords || [])])
+    for (const term of terms) {
+      map.set(normalizeTopicTerm(term), topic.slug)
+    }
+  }
+  return map
+}
+
+function getTopicRouteForTerm(term, topicAliasMap) {
+  const normalized = normalizeTopicTerm(term)
+  const exact = topicAliasMap.get(normalized)
+  if (exact) return `/topics/${exact}`
+
+  for (const [alias, slug] of topicAliasMap.entries()) {
+    if (normalized.includes(alias) || alias.includes(normalized)) {
+      return `/topics/${slug}`
+    }
+  }
+
+  return `/search?q=${encodeURIComponent(term)}`
+}
+
 function renderFeaturedList(chapters) {
   return chapters
     .map((chapter) => `
@@ -259,11 +377,40 @@ function renderStaticPage(page, chapters) {
     </main>`
 }
 
-function renderChapterPage(chapter, excerpts) {
-  const keywordMarkup = chapter.keywords.slice(0, 8)
-    .map((keyword) => `<li class="px-3 py-1 rounded-full border border-border font-sans text-[0.65rem] uppercase tracking-[0.08em] text-ink-muted">${escapeHtml(keyword)}</li>`)
-    .join('\n')
+function renderTopicsIndexPage(topics) {
+  return `
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Research Topics</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">Topic hubs built for search, citation, and sustained reading.</h1>
+        <p class="font-body text-lg text-ink-muted leading-8 max-w-4xl">
+          These pages connect the longform chapters of The Record with current reporting so search visitors can move from a topic query into a documented body of work, then subscribe for future investigations.
+        </p>
+        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3 mt-10">
+          ${topics.map((topic) => `
+            <a href="/topics/${escapeAttr(topic.slug)}" class="border border-border bg-surface p-5 block">
+              <p class="font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">${escapeHtml(topic.eyebrow)}</p>
+              <h2 class="font-display text-2xl font-bold text-ink leading-tight">${escapeHtml(topic.name)}</h2>
+              <p class="font-body text-sm text-ink-muted leading-7 mt-3">${escapeHtml(topic.description)}</p>
+            </a>
+          `).join('\n')}
+        </div>
+      </div>
+    </main>`
+}
 
+function renderKeywordLinks(keywords, topicAliasMap) {
+  return keywords
+    .map((keyword) => `
+      <li class="list-none">
+        <a href="${escapeAttr(getTopicRouteForTerm(keyword, topicAliasMap))}" class="px-3 py-1 rounded-full border border-border font-sans text-[0.65rem] uppercase tracking-[0.08em] text-ink-muted inline-flex">
+          ${escapeHtml(keyword)}
+        </a>
+      </li>`)
+    .join('\n')
+}
+
+function renderChapterPage(chapter, excerpts, topicAliasMap) {
   const excerptMarkup = excerpts.length
     ? excerpts
         .map((excerpt) => `<p class="font-body text-lg leading-8 text-ink-light mt-6">${escapeHtml(excerpt)}</p>`)
@@ -282,7 +429,7 @@ function renderChapterPage(chapter, excerpts) {
         ${excerptMarkup}
         <div class="mt-8 pt-8 border-t border-border">
           <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Topics</p>
-          <ul class="list-none flex flex-wrap gap-2 p-0 m-0">${keywordMarkup}</ul>
+          <ul class="flex flex-wrap gap-2 p-0 m-0">${renderKeywordLinks(chapter.keywords.slice(0, 8), topicAliasMap)}</ul>
         </div>
       </article>
     </main>`
@@ -343,7 +490,359 @@ function buildChapterJsonLd(chapter, image, publishedTime, modifiedTime) {
   ]
 }
 
+function renderArticleBlock(block) {
+  switch (block.type) {
+    case 'heading':
+      return `<h2 class="font-display text-2xl md:text-3xl font-bold text-ink mt-10 mb-4">${escapeHtml(block.text || '')}</h2>`
+    case 'subheading':
+      return `<h3 class="font-display text-xl font-bold text-ink mt-8 mb-3">${escapeHtml(block.text || '')}</h3>`
+    case 'text':
+      return `<p class="font-body text-base md:text-[1.05rem] text-ink leading-[1.8] mb-5">${escapeHtml(block.text || '')}</p>`
+    case 'quote':
+      return `<blockquote class="border-l-2 border-crimson pl-5 italic font-body text-lg text-ink-light my-8">
+        &ldquo;${escapeHtml(block.text || '')}&rdquo;
+        ${block.attribution ? `<div class="font-sans text-[0.65rem] uppercase tracking-[0.12em] text-ink-faint mt-3">&mdash; ${escapeHtml(block.attribution)}</div>` : ''}
+      </blockquote>`
+    case 'evidence':
+      return `<div class="my-6 p-4 border border-border rounded-sm bg-surface">
+        ${block.tier ? `<p class="font-sans text-[0.55rem] font-bold tracking-[0.14em] uppercase text-crimson">${escapeHtml(block.tier)}</p>` : ''}
+        <p class="font-body text-sm text-ink-muted leading-relaxed mt-2">${escapeHtml(block.text || '')}</p>
+      </div>`
+    case 'callout':
+      return `<div class="my-6 p-5 bg-ink text-white rounded-sm"><p class="font-body text-sm leading-relaxed">${escapeHtml(block.text || '')}</p></div>`
+    case 'stat':
+      return `<div class="my-8 text-center py-6 border-y border-border">
+        <p class="font-display text-4xl md:text-5xl font-bold text-crimson">${escapeHtml(block.stat?.value || '')}</p>
+        <p class="font-sans text-xs tracking-[0.1em] uppercase text-ink-muted mt-2">${escapeHtml(block.stat?.label || '')}</p>
+      </div>`
+    case 'image':
+      return block.image?.src
+        ? `<figure class="my-8">
+            <img src="${escapeAttr(block.image.src)}" alt="${escapeAttr(block.image.alt || '')}" class="w-full object-cover" loading="lazy" />
+            ${block.image.caption ? `<figcaption class="font-body text-xs text-ink-muted mt-2">${escapeHtml(block.image.caption)}${block.image.credit ? ` <span class="text-ink-faint">(${escapeHtml(block.image.credit)})</span>` : ''}</figcaption>` : ''}
+          </figure>`
+        : ''
+    default:
+      return ''
+  }
+}
+
+function renderArticlePage(article, chapterLookup, topicAliasMap) {
+  const tagMarkup = (article.tags || []).map((tag) => `
+    <a href="${escapeAttr(getTopicRouteForTerm(tag, topicAliasMap))}" class="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm inline-flex">
+      ${escapeHtml(tag)}
+    </a>`).join('\n')
+
+  const relatedMarkup = (article.relatedChapters || [])
+    .map((chapterId) => chapterLookup.get(chapterId))
+    .filter(Boolean)
+    .map((chapter) => `
+      <li class="border-b border-border last:border-b-0 py-4">
+        <a href="/chapter/${escapeAttr(chapter.id)}" class="block">
+          <p class="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson mb-1">${escapeHtml(chapter.number)}</p>
+          <h3 class="font-display text-lg font-bold text-ink leading-tight">${escapeHtml(chapter.title)}</h3>
+        </a>
+      </li>`)
+    .join('\n')
+
+  const sourceMarkup = (article.sources || [])
+    .map((source, index) => `
+      <li class="font-body text-sm text-ink-muted leading-7">
+        <span class="font-sans font-bold text-crimson mr-2">[${escapeHtml(source.id || index + 1)}]</span>
+        ${escapeHtml(source.title)}${source.url ? ` <a href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer" class="text-crimson underline">View Source</a>` : ''}
+      </li>`)
+    .join('\n')
+
+  return `
+    <main class="min-h-screen bg-parchment text-ink">
+      <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-3">${escapeHtml(article.category)}</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(article.title)}</h1>
+        <p class="font-body text-xl italic text-ink-muted leading-relaxed max-w-4xl">${escapeHtml(article.subtitle)}</p>
+        <p class="font-sans text-[0.7rem] uppercase tracking-[0.12em] text-ink-faint mt-5">
+          ${escapeHtml([article.author, article.publishDate, `${article.readingTime} min read`, `${article.sources.length} sources cited`].join(' \u00b7 '))}
+        </p>
+        ${article.heroImage?.src ? `
+          <figure class="my-10">
+            <img src="${escapeAttr(article.heroImage.src)}" alt="${escapeAttr(article.heroImage.alt || '')}" class="w-full object-cover" loading="eager" />
+            <figcaption class="font-sans text-xs text-ink-faint mt-2">${escapeHtml(article.heroImage.credit || '')}</figcaption>
+          </figure>` : ''}
+        ${(article.content || []).map(renderArticleBlock).join('\n')}
+        <section class="mt-10 pt-6 border-t border-border">
+          <div class="flex items-center gap-4 mb-4">
+            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Topics</p>
+            <div class="flex-1 h-[1px] bg-border"></div>
+          </div>
+          <div class="flex flex-wrap gap-2">${tagMarkup}</div>
+        </section>
+        ${relatedMarkup ? `
+          <section class="mt-10 pt-6 border-t border-border">
+            <div class="flex items-center gap-4 mb-4">
+              <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Related Chapters</p>
+              <div class="flex-1 h-[1px] bg-border"></div>
+            </div>
+            <ul class="list-none m-0 p-0">${relatedMarkup}</ul>
+          </section>` : ''}
+        <section class="mt-10 pt-6 border-t border-border">
+          <div class="flex items-center gap-4 mb-4">
+            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Sources</p>
+            <div class="flex-1 h-[1px] bg-border"></div>
+          </div>
+          <ol class="space-y-3 m-0 pl-0 list-none">${sourceMarkup}</ol>
+        </section>
+      </article>
+    </main>`
+}
+
+function buildArticleJsonLd(article, publishedTime, modifiedTime) {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: article.title,
+      description: article.seo?.metaDescription || article.subtitle,
+      image: article.heroImage?.src || DEFAULT_OG_IMAGE,
+      datePublished: publishedTime,
+      dateModified: modifiedTime,
+      author: {
+        '@type': 'Organization',
+        name: article.author || SITE_NAME,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: {
+          '@type': 'ImageObject',
+          url: DEFAULT_OG_IMAGE,
+        },
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${SITE_URL}/news/${article.slug}`,
+      },
+      keywords: (article.seo?.keywords || article.tags || []).join(', '),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: SITE_URL,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Current Events',
+          item: `${SITE_URL}/news`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: article.title,
+          item: `${SITE_URL}/news/${article.slug}`,
+        },
+      ],
+    },
+  ]
+}
+
+function renderTopicPage(topic, chapters, articles) {
+  const keywordMarkup = topic.keywords
+    .map((keyword) => `
+      <a href="/search?q=${encodeURIComponent(keyword)}" class="inline-flex items-center rounded-sm border border-border bg-surface px-3 py-2 font-sans text-xs text-ink-muted">
+        ${escapeHtml(keyword)}
+      </a>`)
+    .join('\n')
+
+  const chapterMarkup = chapters
+    .map((chapter) => `
+      <li class="border-b border-border last:border-b-0 py-4">
+        <a href="/chapter/${escapeAttr(chapter.id)}" class="block">
+          <p class="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson mb-1">${escapeHtml(chapter.number)}</p>
+          <h2 class="font-display text-xl font-bold text-ink leading-tight mb-2">${escapeHtml(chapter.title)}</h2>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">${escapeHtml(chapter.subtitle)}</p>
+        </a>
+      </li>`)
+    .join('\n')
+
+  const articleMarkup = articles.length
+    ? articles.map((article) => `
+        <li class="border-b border-border last:border-b-0 py-4">
+          <a href="/news/${escapeAttr(article.slug)}" class="block">
+            <p class="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson mb-1">${escapeHtml(article.category)}</p>
+            <h2 class="font-display text-xl font-bold text-ink leading-tight mb-2">${escapeHtml(article.title)}</h2>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">${escapeHtml(article.subtitle)}</p>
+          </a>
+        </li>`).join('\n')
+    : `<li class="py-4 font-body text-sm text-ink-muted leading-relaxed">This topic hub currently points readers into the longform archive while the news desk expands this beat.</li>`
+
+  const faqMarkup = topic.faq
+    .map((entry) => `
+      <div class="border border-border bg-surface p-5">
+        <h3 class="font-display text-xl font-bold text-ink leading-tight">${escapeHtml(entry.question)}</h3>
+        <p class="font-body text-sm text-ink-muted leading-7 mt-3">${escapeHtml(entry.answer)}</p>
+      </div>`)
+    .join('\n')
+
+  return `
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-3">${escapeHtml(topic.eyebrow)}</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(topic.name)}</h1>
+        <p class="font-body text-xl italic text-ink-muted leading-relaxed max-w-4xl">${escapeHtml(topic.headline)}</p>
+        <p class="font-body text-base md:text-lg text-ink-light leading-8 max-w-4xl mt-6">${escapeHtml(topic.description)}</p>
+        <div class="flex flex-wrap gap-4 mt-8 font-sans text-[0.65rem] uppercase tracking-[0.12em] text-ink-faint">
+          <span>${escapeHtml(chapters.length)} core chapters</span>
+          <span>&middot;</span>
+          <span>${escapeHtml(articles.length)} linked news briefings</span>
+          <span>&middot;</span>
+          <span>${escapeHtml(topic.keywords.length)} search terms</span>
+        </div>
+        <section class="mt-10 pt-8 border-t border-border">
+          <div class="flex items-center gap-4 mb-4">
+            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Core Chapters</p>
+            <div class="flex-1 h-[1px] bg-border"></div>
+          </div>
+          <ul class="list-none m-0 p-0">${chapterMarkup}</ul>
+        </section>
+        <section class="mt-10 pt-8 border-t border-border">
+          <div class="flex items-center gap-4 mb-4">
+            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Current Reporting</p>
+            <div class="flex-1 h-[1px] bg-border"></div>
+          </div>
+          <ul class="list-none m-0 p-0">${articleMarkup}</ul>
+        </section>
+        <section class="mt-10 pt-8 border-t border-border">
+          <div class="flex items-center gap-4 mb-4">
+            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Related Searches</p>
+            <div class="flex-1 h-[1px] bg-border"></div>
+          </div>
+          <div class="flex flex-wrap gap-2">${keywordMarkup}</div>
+        </section>
+        <section class="mt-10 pt-8 border-t border-border">
+          <div class="flex items-center gap-4 mb-4">
+            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Reader Questions</p>
+            <div class="flex-1 h-[1px] bg-border"></div>
+          </div>
+          <div class="space-y-4">${faqMarkup}</div>
+        </section>
+      </div>
+    </main>`
+}
+
+function buildTopicJsonLd(topic, chapters, articles) {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: `${topic.name} | ${SITE_NAME}`,
+      url: `${SITE_URL}/topics/${topic.slug}`,
+      description: topic.metaDescription,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: SITE_URL,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Research Topics',
+          item: `${SITE_URL}/topics`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: topic.name,
+          item: `${SITE_URL}/topics/${topic.slug}`,
+        },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: [
+        ...chapters.map((chapter, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: chapter.title,
+          url: `${SITE_URL}/chapter/${chapter.id}`,
+        })),
+        ...articles.map((article, index) => ({
+          '@type': 'ListItem',
+          position: chapters.length + index + 1,
+          name: article.title,
+          url: `${SITE_URL}/news/${article.slug}`,
+        })),
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: topic.faq.map((entry) => ({
+        '@type': 'Question',
+        name: entry.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: entry.answer,
+        },
+      })),
+    },
+  ]
+}
+
+function renderUrlEntry(loc, lastmod, changefreq, priority) {
+  return `  <url><loc>${escapeHtml(loc)}</loc><lastmod>${escapeHtml(lastmod)}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`
+}
+
+function writeSitemap(entries) {
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...entries,
+    '</urlset>',
+    '',
+  ].join('\n')
+
+  fs.writeFileSync(distSitemapPath, xml)
+  fs.writeFileSync(sourceSitemapPath, xml)
+}
+
+function getStaticPageSitemapMeta(route) {
+  switch (route) {
+    case '/':
+      return { changefreq: 'weekly', priority: '1.0' }
+    case '/news':
+      return { changefreq: 'daily', priority: '0.8' }
+    case '/topics':
+      return { changefreq: 'weekly', priority: '0.8' }
+    case '/profiles':
+      return { changefreq: 'weekly', priority: '0.8' }
+    case '/forum':
+      return { changefreq: 'daily', priority: '0.8' }
+    case '/read':
+    case '/methodology':
+      return { changefreq: 'monthly', priority: '0.8' }
+    default:
+      return { changefreq: 'monthly', priority: '0.6' }
+  }
+}
+
 const chapters = parseChapterMeta()
+const chapterLookup = new Map(chapters.map((chapter) => [chapter.id, chapter]))
+const articles = loadArticleData()
+const topicHubs = loadTopicHubs()
+const topicAliasMap = buildTopicAliasMap(topicHubs)
+const profileSlugs = loadProfileSlugs()
 
 const staticPages = [
   {
@@ -357,6 +856,16 @@ const staticPages = [
     ],
     featuredChapterIds: chapters.slice(0, 6).map((chapter) => chapter.id),
     sourceFile: 'src/pages/HomePage.tsx',
+  },
+  {
+    route: '/topics',
+    title: 'Research Topics | Veritas Press',
+    heading: 'Research Topics',
+    description: 'Curated research hubs connecting Veritas chapters, current reporting, and newsletter signup paths by topic.',
+    body: [
+      'Topic hubs connect high-intent search queries to the relevant chapters, news articles, and newsletter subscription path so readers can continue following a beat instead of bouncing after one page.',
+    ],
+    sourceFile: 'src/pages/TopicsIndexPage.tsx',
   },
   {
     route: '/methodology',
@@ -539,6 +1048,7 @@ const staticPages = [
 ]
 
 const manifest = {}
+const sitemapEntries = new Map()
 
 for (const page of staticPages) {
   const route = normalizeRoute(page.route)
@@ -569,9 +1079,12 @@ for (const page of staticPages) {
     ],
   }
 
-  const body = renderStaticPage(page, chapters)
+  const body = route === '/topics' ? renderTopicsIndexPage(topicHubs) : renderStaticPage(page, chapters)
   fs.writeFileSync(filePath, buildDocument(template, meta, body))
   manifest[route] = `prerender/${fileName}`
+
+  const sitemapMeta = getStaticPageSitemapMeta(route)
+  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route === '/' ? '' : route}`, modifiedTime, sitemapMeta.changefreq, sitemapMeta.priority))
 }
 
 for (const chapter of chapters) {
@@ -582,7 +1095,7 @@ for (const chapter of chapters) {
   const publishedTime = normalizeHumanDate(chapter.publishDate)
   const modifiedTime = getGitModified(chapterFile).slice(0, 10)
   const image = getOgImage(chapter.id)
-  const body = renderChapterPage(chapter, getChapterExcerpt(chapter.id))
+  const body = renderChapterPage(chapter, getChapterExcerpt(chapter.id), topicAliasMap)
   const meta = {
     title: `${chapter.title} | The Record - ${SITE_NAME}`,
     description: chapter.subtitle,
@@ -597,8 +1110,69 @@ for (const chapter of chapters) {
 
   fs.writeFileSync(filePath, buildDocument(template, meta, body))
   manifest[route] = `prerender/${fileName}`
+  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, modifiedTime, 'monthly', chapter.id === 'foreword' || chapter.id === 'overview' ? '0.9' : '0.8'))
+}
+
+for (const topic of topicHubs) {
+  const route = `/topics/${topic.slug}`
+  const fileName = routeToFile(route)
+  const filePath = path.join(prerenderDir, fileName)
+  const topicPageModified = getGitModified(path.join(repoRoot, 'src', 'pages', 'TopicPage.tsx')).slice(0, 10)
+  const topicDataModified = getGitModified(topicHubPath).slice(0, 10)
+  const modifiedTime = topicDataModified > topicPageModified ? topicDataModified : topicPageModified
+  const topicChapters = (topic.featuredChapterIds || [])
+    .map((chapterId) => chapterLookup.get(chapterId))
+    .filter(Boolean)
+  const topicArticles = articles.filter((article) => (topic.featuredArticleSlugs || []).includes(article.slug))
+
+  const meta = {
+    title: `${topic.name} | ${SITE_NAME}`,
+    description: topic.metaDescription,
+    url: `${SITE_URL}${route}`,
+    type: 'website',
+    image: DEFAULT_OG_IMAGE,
+    keywords: topic.keywords,
+    modifiedTime,
+    jsonLd: buildTopicJsonLd(topic, topicChapters, topicArticles),
+  }
+
+  fs.writeFileSync(filePath, buildDocument(template, meta, renderTopicPage(topic, topicChapters, topicArticles)))
+  manifest[route] = `prerender/${fileName}`
+  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, modifiedTime, 'weekly', '0.8'))
+}
+
+for (const article of articles) {
+  const route = `/news/${article.slug}`
+  const fileName = routeToFile(route)
+  const filePath = path.join(prerenderDir, fileName)
+  const articleSourceFile = path.join(repoRoot, article.__sourceFile)
+  const publishedTime = normalizeHumanDate(article.publishDate)
+  const modifiedTime = getGitModified(articleSourceFile).slice(0, 10)
+  const meta = {
+    title: article.seo?.metaTitle || `${article.title} | ${SITE_NAME}`,
+    description: article.seo?.metaDescription || article.subtitle,
+    url: `${SITE_URL}${route}`,
+    type: 'article',
+    image: article.heroImage?.src || DEFAULT_OG_IMAGE,
+    keywords: article.seo?.keywords || article.tags || [],
+    publishedTime,
+    modifiedTime,
+    jsonLd: buildArticleJsonLd(article, publishedTime, modifiedTime),
+  }
+
+  fs.writeFileSync(filePath, buildDocument(template, meta, renderArticlePage(article, chapterLookup, topicAliasMap)))
+  manifest[route] = `prerender/${fileName}`
+  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, modifiedTime, 'weekly', '0.7'))
+}
+
+const profileModified = getGitModified(profileDataPath).slice(0, 10)
+for (const profileSlug of profileSlugs) {
+  const route = `/profile/${profileSlug}`
+  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, profileModified, 'monthly', '0.7'))
 }
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
+writeSitemap([...sitemapEntries.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([, entry]) => entry))
 
 console.log(`[prerender] Generated ${Object.keys(manifest).length} prerendered routes`)
+console.log(`[prerender] Wrote sitemap with ${sitemapEntries.size} URLs`)

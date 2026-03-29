@@ -4,6 +4,7 @@ import { getArticleBySlug, CATEGORY_META, type ArticleBlock, type ArticleSource 
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
 import { chapterMeta } from '../data/chapterMeta'
+import { getTopicHrefForTerm } from '../data/topicHubs'
 import SharePanel from '../components/SharePanel'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 
@@ -248,9 +249,13 @@ export default function ArticlePage() {
               </div>
               <div className="flex flex-wrap gap-2">
                 {article.tags.map(tag => (
-                  <span key={tag} className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm">
+                  <Link
+                    key={tag}
+                    to={getTopicHrefForTerm(tag)}
+                    className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm hover:text-crimson hover:bg-crimson/5 transition-colors"
+                  >
                     {tag}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </div>

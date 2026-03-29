@@ -3,6 +3,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import type { ChapterType, EvidenceTier } from '../data/chapterTypes'
 import { useAuth } from '../lib/AuthContext'
 import { chapterMeta } from '../data/chapterMeta'
+import { topicHubs } from '../data/topicHubs'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
@@ -659,17 +660,17 @@ export default function SearchPage() {
             <div className="sticky top-24 space-y-8">
               <div>
                 <h3 className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-4 pb-2 border-b border-border">
-                  Popular Topics
+                  Topic Hubs
                 </h3>
                 <div className="space-y-1.5">
-                  {['Federal Reserve', 'AIPAC', 'CIA', 'BlackRock', 'Rothschild', 'Eisenhower', 'Central Banking', 'Israel Lobby', 'Wall Street', 'Epstein'].map(term => (
-                    <button
-                      key={term}
-                      onClick={() => handleSearch(term)}
+                  {topicHubs.map((topic) => (
+                    <Link
+                      key={topic.slug}
+                      to={`/topics/${topic.slug}`}
                       className="block w-full text-left font-sans text-xs text-ink-muted hover:text-crimson transition-colors py-1"
                     >
-                      {term}
-                    </button>
+                      {topic.name}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -703,6 +704,9 @@ export default function SearchPage() {
                 <div className="space-y-2">
                   <Link to="/sources" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Sources &amp; Bibliography
+                  </Link>
+                  <Link to="/topics" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                    Research Topics
                   </Link>
                   <Link to="/methodology" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Methodology &amp; Standards

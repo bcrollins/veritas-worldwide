@@ -1,0 +1,214 @@
+[
+  {
+    "slug": "federal-reserve",
+    "name": "Federal Reserve",
+    "eyebrow": "Money & Monetary Power",
+    "headline": "Federal Reserve decisions, central banking history, debt, and the structure of monetary power.",
+    "description": "This topic hub connects the origins of central banking, the mechanics of the Federal Reserve, and the current policy decisions shaping inflation, debt service, and financial instability.",
+    "metaDescription": "Federal Reserve reporting and primary-source research from Veritas Press. Explore central banking history, FOMC decisions, debt, inflation, and the institutions behind monetary power.",
+    "aliases": ["Federal Reserve", "central banking", "central bank", "FOMC", "interest rates", "monetary policy"],
+    "keywords": ["Federal Reserve", "central banking", "FOMC", "interest rates", "monetary policy", "inflation", "debt"],
+    "featuredChapterIds": ["chapter-1", "chapter-3", "chapter-12", "chapter-13"],
+    "featuredArticleSlugs": [
+      "federal-reserve-holds-rates-march-2026-iran-oil-crisis",
+      "trump-tariffs-china-145-percent-trade-war-2026",
+      "national-debt-36-trillion-interest-payments-2026"
+    ],
+    "faq": [
+      {
+        "question": "What does Veritas cover in its Federal Reserve reporting?",
+        "answer": "The coverage spans the creation of central banking, the Federal Reserve's institutional design, the mechanics of money creation, and current policy decisions such as rate holds, debt-service pressure, and inflation shocks."
+      },
+      {
+        "question": "How are Federal Reserve claims sourced here?",
+        "answer": "Priority goes to official Federal Reserve statements, congressional records, Treasury and CRS documents, court filings, and clearly labeled supporting journalism when context is needed."
+      },
+      {
+        "question": "How can I follow new Federal Reserve investigations?",
+        "answer": "Subscribe to the free Veritas newsletter from this page and we will send new source-first reporting on central banking, debt, and monetary policy directly to your inbox."
+      }
+    ],
+    "subscribeHeading": "Get every Federal Reserve investigation free.",
+    "subscribeSubtext": "Join readers tracking central banking, debt, inflation, and monetary power through primary-source reporting."
+  },
+  {
+    "slug": "aipac",
+    "name": "AIPAC & The Israel Lobby",
+    "eyebrow": "Lobbying & Political Influence",
+    "headline": "AIPAC spending, lobbying tactics, congressional influence, and the public record behind the Israel lobby.",
+    "description": "This topic hub organizes Veritas reporting on AIPAC, campaign money, congressional pressure campaigns, and the institutional pathways through which foreign policy influence is exercised in Washington.",
+    "metaDescription": "AIPAC reporting and source-first analysis from Veritas Press. Explore lobbying, campaign finance, congressional influence, and the public record behind the Israel lobby.",
+    "aliases": ["AIPAC", "Israel lobby", "pro-Israel PAC", "Israel Lobby", "lobbying"],
+    "keywords": ["AIPAC", "Israel lobby", "campaign finance", "Congress", "lobbying", "foreign policy"],
+    "featuredChapterIds": ["overview", "chapter-8", "chapter-14", "chapter-15"],
+    "featuredArticleSlugs": [
+      "aipac-record-spending-reshaping-congress-2026",
+      "gaza-famine-humanitarian-crisis-un-icc-2026"
+    ],
+    "faq": [
+      {
+        "question": "What is included in this AIPAC topic hub?",
+        "answer": "It brings together chapters and current reporting on AIPAC's historical development, campaign spending, congressional lobbying, and the downstream policy effects of that influence."
+      },
+      {
+        "question": "Does Veritas distinguish between documented spending and interpretation?",
+        "answer": "Yes. Donations, FEC records, congressional actions, and public statements are separated from broader interpretive claims and labeled within the publication's evidence standards."
+      },
+      {
+        "question": "How do I get new AIPAC and lobbying investigations?",
+        "answer": "Use the free newsletter form on this page to subscribe to future reporting on lobbying, foreign policy influence, and related source releases."
+      }
+    ],
+    "subscribeHeading": "Follow new AIPAC and lobbying investigations.",
+    "subscribeSubtext": "Get source-first reporting on campaign finance, congressional influence, and foreign policy pressure networks."
+  },
+  {
+    "slug": "israel-policy",
+    "name": "Israel Policy & U.S. Aid",
+    "eyebrow": "Foreign Policy",
+    "headline": "U.S.-Israel policy, military aid, Gaza, and the documentary record behind modern foreign policy debates.",
+    "description": "This hub connects the historical chapters on Zionism, intelligence, aid, and war with current reporting on Gaza, defense spending, and American policy commitments.",
+    "metaDescription": "U.S.-Israel policy and aid reporting from Veritas Press. Explore military aid, Gaza, intelligence, and the public record behind American policy decisions.",
+    "aliases": ["Israel", "U.S. aid to Israel", "Gaza", "Israel policy", "foreign aid"],
+    "keywords": ["Israel", "Gaza", "foreign aid", "military aid", "U.S. policy", "Middle East"],
+    "featuredChapterIds": ["chapter-6", "chapter-7", "chapter-15", "chapter-16"],
+    "featuredArticleSlugs": [
+      "gaza-famine-humanitarian-crisis-un-icc-2026",
+      "us-defense-budget-1-5-trillion-2027-proposal",
+      "aipac-record-spending-reshaping-congress-2026"
+    ],
+    "faq": [
+      {
+        "question": "What does this Israel policy hub cover?",
+        "answer": "It covers the historical origins of the conflict, U.S. military aid, intelligence relationships, humanitarian consequences, and the current policy disputes playing out in Congress and international institutions."
+      },
+      {
+        "question": "Are humanitarian claims sourced?",
+        "answer": "Yes. Veritas uses public records, UN agencies, court filings, congressional documents, and clearly identified journalism to distinguish verified facts from contested interpretations."
+      },
+      {
+        "question": "How can I follow future U.S.-Israel policy reporting?",
+        "answer": "Subscribe from this page to receive new reporting on aid packages, lobbying, defense appropriations, and humanitarian-source updates."
+      }
+    ],
+    "subscribeHeading": "Get source-first U.S.-Israel policy reporting free.",
+    "subscribeSubtext": "Follow new reporting on aid, Gaza, defense spending, and the official record behind American policy."
+  },
+  {
+    "slug": "surveillance-state",
+    "name": "The Surveillance State",
+    "eyebrow": "Civil Liberties",
+    "headline": "Mass surveillance, Section 702, Pegasus, PRISM, and the institutions that turned private life into a data exhaust stream.",
+    "description": "This topic hub tracks the surveillance architecture documented across The Record and connects it to live reporting on FISA reform, data-broker loopholes, and emerging digital threats.",
+    "metaDescription": "Surveillance-state reporting from Veritas Press. Explore FISA Section 702, NSA surveillance, Pegasus, privacy, and source-first coverage of civil-liberties threats.",
+    "aliases": ["surveillance", "Surveillance State", "NSA", "FISA", "Section 702", "privacy"],
+    "keywords": ["surveillance", "NSA", "Section 702", "FISA", "Pegasus", "privacy", "civil liberties"],
+    "featuredChapterIds": ["chapter-18", "chapter-19", "chapter-27"],
+    "featuredArticleSlugs": [
+      "government-surveillance-reform-act-fisa-section-702-2026",
+      "ai-deepfakes-election-disinformation-regulation-2026"
+    ],
+    "faq": [
+      {
+        "question": "What surveillance topics are covered here?",
+        "answer": "The hub spans historical intelligence-media programs, mind-control and experimentation records, modern mass-surveillance systems, and live coverage of FISA and digital-civil-liberties legislation."
+      },
+      {
+        "question": "Why combine historical chapters with current surveillance news?",
+        "answer": "Because today's data-collection powers are easier to understand when readers can move from the historical record into current statutory and technological changes without losing the citation trail."
+      },
+      {
+        "question": "How do I get new surveillance stories?",
+        "answer": "Subscribe from this page and we will send new surveillance, privacy, and civil-liberties reporting as it is published."
+      }
+    ],
+    "subscribeHeading": "Get surveillance and civil-liberties reporting free.",
+    "subscribeSubtext": "Follow new reporting on FISA, privacy, digital power, and the architecture of modern surveillance."
+  },
+  {
+    "slug": "cia-and-covert-power",
+    "name": "CIA & Covert Power",
+    "eyebrow": "Intelligence",
+    "headline": "CIA covert programs, media influence, experimentation, and the documented machinery of clandestine power.",
+    "description": "This hub groups Veritas chapters on media influence, intelligence operations, covert programs, and adjacent assassination evidence into one research path for readers tracking clandestine institutions.",
+    "metaDescription": "CIA and covert-power reporting from Veritas Press. Explore Operation Mockingbird, MKUltra, assassination evidence, and source-first intelligence research.",
+    "aliases": ["CIA", "Operation Mockingbird", "MKUltra", "covert operations", "intelligence"],
+    "keywords": ["CIA", "Operation Mockingbird", "MKUltra", "intelligence", "covert power", "assassination evidence"],
+    "featuredChapterIds": ["chapter-9", "chapter-18", "chapter-19", "chapter-28"],
+    "featuredArticleSlugs": [],
+    "faq": [
+      {
+        "question": "What is included in the CIA and covert-power hub?",
+        "answer": "It connects chapters on Operation Mockingbird, MKUltra, intelligence-linked blackmail networks, and related assassination evidence where the documentary record intersects with covert institutions."
+      },
+      {
+        "question": "How does Veritas handle disputed intelligence claims?",
+        "answer": "Claims tied to sworn testimony or named sources but not independently confirmed are labeled disputed, while verified archival and court materials are separated and clearly marked."
+      },
+      {
+        "question": "How can I track future intelligence reporting?",
+        "answer": "Subscribe here to get new Veritas reporting on covert power, intelligence institutions, and declassified-source developments."
+      }
+    ],
+    "subscribeHeading": "Get new intelligence and covert-power reporting.",
+    "subscribeSubtext": "Receive source-first reporting on CIA programs, covert institutions, and declassified evidence without algorithmic noise."
+  },
+  {
+    "slug": "epstein-network",
+    "name": "The Epstein Network",
+    "eyebrow": "Accountability",
+    "headline": "Jeffrey Epstein, Ghislaine Maxwell, intelligence allegations, and the records surrounding the broader network.",
+    "description": "This hub consolidates the publication's dossier material and current reporting on the Epstein files, victim privacy failures, intelligence allegations, and the institutional responses around the case.",
+    "metaDescription": "Epstein-network reporting from Veritas Press. Explore the Epstein files, court records, Maxwell, victim privacy failures, and source-first accountability reporting.",
+    "aliases": ["Epstein", "Jeffrey Epstein", "Ghislaine Maxwell", "Epstein files", "Epstein network"],
+    "keywords": ["Epstein", "Jeffrey Epstein", "Maxwell", "court filings", "blackmail", "intelligence"],
+    "featuredChapterIds": ["chapter-28"],
+    "featuredArticleSlugs": [
+      "doj-releases-3-5-million-pages-epstein-files-2026"
+    ],
+    "faq": [
+      {
+        "question": "What does this Epstein hub include?",
+        "answer": "It includes the main chapter dossier, current reporting on the DOJ release, and links into related accountability material so readers can follow the documentary record in one place."
+      },
+      {
+        "question": "How does Veritas handle privacy-sensitive source material?",
+        "answer": "The publication emphasizes attributable public records and documented institutional failures while avoiding sensational treatment and preserving the distinction between verified record and unresolved claims."
+      },
+      {
+        "question": "How can I get future Epstein-file updates?",
+        "answer": "Use the free newsletter form on this page to receive future reporting when new records, court actions, or source releases appear."
+      }
+    ],
+    "subscribeHeading": "Get new Epstein-file reporting free.",
+    "subscribeSubtext": "Follow document releases, court developments, and accountability reporting on the Epstein network without waiting for the algorithm."
+  },
+  {
+    "slug": "jfk-assassination",
+    "name": "JFK Assassination",
+    "eyebrow": "Historical Investigations",
+    "headline": "JFK, RFK, Dimona, Dallas, and the archival record surrounding the most contested assassination evidence in modern American history.",
+    "description": "This hub connects Veritas chapters on John F. Kennedy, Robert F. Kennedy, and adjacent policy conflicts so readers can move through the assassination evidence as a documented record rather than a slogan.",
+    "metaDescription": "JFK-assassination research from Veritas Press. Explore Dallas, the Warren Commission, RFK, Dimona, and source-first reporting on the documentary record.",
+    "aliases": ["JFK", "Kennedy assassination", "JFK assassination", "RFK", "Warren Commission", "Dallas"],
+    "keywords": ["JFK", "Kennedy assassination", "RFK", "Warren Commission", "Dallas", "Dimona"],
+    "featuredChapterIds": ["chapter-8", "chapter-9", "chapter-17"],
+    "featuredArticleSlugs": [],
+    "faq": [
+      {
+        "question": "What is covered in the JFK topic hub?",
+        "answer": "It includes the Dimona and AIPAC chapter, the expanded JFK analysis, and the Robert F. Kennedy chapter so readers can examine the broader political and documentary context around the assassinations."
+      },
+      {
+        "question": "Does Veritas claim one definitive JFK theory?",
+        "answer": "No. The publication prioritizes documented evidence, official records, and clearly labeled disputed material so readers can evaluate competing claims without the site pretending ambiguity does not exist."
+      },
+      {
+        "question": "How can I follow future JFK-record coverage?",
+        "answer": "Subscribe from this page to get new reporting whenever additional records, archival releases, or related investigations are published."
+      }
+    ],
+    "subscribeHeading": "Get new JFK-record reporting free.",
+    "subscribeSubtext": "Receive source-first reporting on JFK, RFK, Dallas, and newly surfaced archival material."
+  }
+]

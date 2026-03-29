@@ -48,6 +48,8 @@ const ContentPackPage = lazy(() => import('./pages/ContentPackPage'))
 const ForumPage = lazy(() => import('./pages/ForumPage'))
 const ProfilePage = lazy(() => import('./pages/ProfilePage'))
 const ProfilesIndexPage = lazy(() => import('./pages/ProfilesIndexPage'))
+const TopicsIndexPage = lazy(() => import('./pages/TopicsIndexPage'))
+const TopicPage = lazy(() => import('./pages/TopicPage'))
 
 const BernieShowPage = lazy(() => import('./pages/BernieShowPage'))
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
@@ -423,6 +425,7 @@ function Footer() {
               <Link to="/sources" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.sources')}</Link>
               <Link to="/timeline" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.timeline')}</Link>
               <Link to="/search" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.search')}</Link>
+              <Link to="/topics" className="font-sans text-sm text-white/40 hover:text-white transition-colors">Topics</Link>
               <Link to="/bookmarks" className="font-sans text-sm text-white/40 hover:text-white transition-colors">{t('nav.bookmarks')}</Link>
             </div>
           </nav>
@@ -545,6 +548,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/chapter/:id" element={<ChapterPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/topics" element={<TopicsIndexPage />} />
+          <Route path="/topics/:slug" element={<TopicPage />} />
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/sources" element={<SourcesPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
