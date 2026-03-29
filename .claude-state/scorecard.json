@@ -1,5 +1,5 @@
 {
-  "run": 5,
+  "run": 6,
   "date": "2026-03-28",
   "site": [
     {
@@ -28,11 +28,19 @@
     },
     {
       "feature": "Search",
-      "composite": 8.7,
-      "previous": 8.5,
+      "composite": 8.9,
+      "previous": 8.7,
       "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Add richer source/title relevance ranking, saved recent queries, and shareable deep links for filtered signed-in research views."
+      "plus_half_requires": "Add richer source/title relevance ranking, saved recent queries, and topic-aware deep links that preserve beat context after signup."
+    },
+    {
+      "feature": "News & Topic Entry",
+      "composite": 8.5,
+      "previous": 7.1,
+      "delta": 1.4,
+      "status": "improved",
+      "plus_half_requires": "Expand topic coverage beyond the initial seven hubs and add more current-reporting articles so each hub becomes a real search destination."
     },
     {
       "feature": "Publication Shell",
@@ -46,19 +54,19 @@
   "growth": [
     {
       "area": "Email Capture & Compliance",
-      "score": 7.6,
+      "score": 7.8,
       "previous": 7.6,
-      "delta": 0.0,
-      "status": "stable",
+      "delta": 0.2,
+      "status": "improved",
       "plus_half_requires": "Replace queue-only capture with portal-backed HubSpot forms, double opt-in, and workflow-level segmentation."
     },
     {
       "area": "SEO Foundation",
-      "score": 8.1,
+      "score": 8.8,
       "previous": 8.1,
-      "delta": 0.0,
-      "status": "stable",
-      "plus_half_requires": "Connect Search Console and add structured data coverage for remaining non-chapter editorial pages."
+      "delta": 0.7,
+      "status": "improved",
+      "plus_half_requires": "Connect Search Console, publish more topic hubs around recurring query clusters, and keep current-reporting pages shipping on a predictable cadence."
     },
     {
       "area": "Analytics & Measurement",
@@ -78,11 +86,11 @@
     },
     {
       "area": "Conversion Optimization",
-      "score": 8.4,
-      "previous": 8.0,
-      "delta": 0.4,
+      "score": 8.6,
+      "previous": 8.4,
+      "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Persist signed-in source-browser filters in shareable URLs and test the archive gate copy against a direct post-auth deep-link flow."
+      "plus_half_requires": "Route each topic-hub signup into a beat-specific thank-you and onboarding path, then test those against the generic archive gate."
     }
   ],
   "security": {

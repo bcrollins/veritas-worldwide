@@ -1,19 +1,19 @@
 {
-  "run": 5,
+  "run": 6,
   "date": "2026-03-28",
   "completed": [
-    "Preview chapter payloads now expose source counts without exposing the underlying citation library.",
-    "SourcesPage now shows anonymous readers a gated chapter-by-chapter source summary and signed-in readers the full bibliography.",
-    "SearchPage now uses a server-backed /api/search endpoint that returns preview-safe results anonymously and full source-text matches after sign-in.",
-    "Signed-in readers can now filter search results by source-only matches, evidence tier, and chapter format, while the Sources page supports hierarchy and evidence-mix filtering without widening anonymous payloads.",
-    "Auth modal flows now preserve locked search and source-browser intent across signup or login, and explicit log-in actions now open in login mode instead of the default signup state.",
-    "Verification completed with npx tsc --noEmit, npm run build, local API checks, and live anonymous/authenticated search validation."
+    "Added crawlable topic hubs for high-intent beats including the Federal Reserve, AIPAC, Israel policy, surveillance, CIA covert power, the Epstein network, and the JFK assassination.",
+    "Connected homepage keyword chips, chapter keywords, article topic tags, and search discovery modules to topic hubs to improve internal linking and beat-level entry paths.",
+    "Expanded the prerender pipeline to emit static HTML for topic hubs, news articles, chapters, and key evergreen routes, then regenerated the sitemap from content.",
+    "Verified that prerendered article metadata, canonical tags, JSON-LD, and sitemap entries remain valid even when descriptions include dollar-denominated figures.",
+    "Verification completed with npx tsc --noEmit, npm run build, live topic/article head checks on veritasworldwide.com and Railway, and live sitemap checks."
   ],
-  "next_task": "Reduce jspdf and vendor-react bundle weight, then continue the authenticated archive experience with richer source-browser filters while Brandon handles portal-side growth setup.",
+  "next_task": "Turn the new topic-hub traffic into more subscribers with beat-specific thank-you flows, HubSpot attribution, and Search Console verification, then return to bundle reduction.",
   "next_priorities": [
-    "Reduce jspdf and vendor-react bundle weight.",
-    "Add institution and source-type filters plus filtered bibliography export/share views.",
+    "Connect Google Search Console and submit the regenerated sitemap.",
+    "Build beat-specific post-signup and thank-you flows for topic-hub subscribers.",
     "Connect HubSpot workflows, double opt-in, and lifecycle scoring in the portal.",
-    "Connect Google Search Console and verify production funnel events in GA4 plus HubSpot."
+    "Expand topic hubs and current-reporting volume around recurring search clusters.",
+    "Reduce jspdf and vendor-react bundle weight."
   ]
 }

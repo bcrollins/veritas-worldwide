@@ -1,5 +1,5 @@
 {
-  "run": 5,
+  "run": 6,
   "date": "2026-03-28",
   "channels": {
     "website": { "status": "live", "handle": "https://veritasworldwide.com" },
@@ -57,10 +57,10 @@
     "content_calendar_days": 0
   },
   "last_completed": [
-    "Removed source lists from public preview payloads while preserving chapter-level source counts for public summaries.",
-    "Locked the full Sources page behind free-reader-account access and replaced anonymous bibliography access with chapter-by-chapter source-count previews.",
-    "Moved search onto /api/search with anonymous preview scope and authenticated full/source search, verified in production.",
-    "Added signed-in search filters for evidence tier, source-only matches, and chapter format plus signed-in source-browser filters for source hierarchy and chapter evidence mix.",
-    "Preserved locked search and source-browser intent across signup/login and corrected explicit log-in entry points to open in login mode."
+    "Added seven crawlable topic hubs that connect search terms to chapters, current reporting, FAQs, and newsletter capture.",
+    "Rewired homepage, chapter, article, and search keyword surfaces to point into topic hubs whenever a beat-specific destination exists.",
+    "Replaced the old prerender flow with route-aware prerendering for news articles, topic hubs, chapters, and key evergreen pages.",
+    "Regenerated the sitemap from live content so article and topic URLs now ship automatically with fresh metadata.",
+    "Fixed prerender head rewriting so descriptions with dollar amounts remain valid in meta tags and social cards, then verified those heads live on both production domains."
   ]
 }
