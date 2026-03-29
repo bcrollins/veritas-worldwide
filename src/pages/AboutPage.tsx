@@ -136,6 +136,41 @@ export default function AboutPage() {
               </div>
             </section>
 
+            {/* Biblical Foundation */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-serif font-semibold text-ink mb-4">The Foundation of Veritas</h2>
+              <div className="space-y-6">
+                <p className="text-ink-muted leading-relaxed italic border-l-4 border-crimson pl-5 text-base">
+                  "The truth will set you free." — John 8:32
+                </p>
+                <div className="space-y-4 text-ink-muted leading-relaxed">
+                  <p>
+                    Veritas is Latin for truth. The name was not chosen casually. This publication is founded on the conviction that truth is not relative, contextual, or subject to revision by those with the power to suppress it. Truth is absolute — and its exposure, however uncomfortable, is an act of service to those it protects.
+                  </p>
+                  <p>
+                    Scripture has long held that the pursuit of truth is a moral obligation.{' '}
+                    <em>"Buy the truth and do not sell it"</em> (Proverbs 23:23). Investigative journalism, at its best, embodies this principle: facts are acquired at great cost — in time, resources, and risk — and refused to be surrendered to convenience, pressure, or profit.
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { verse: 'Proverbs 12:17', text: 'An honest witness tells the truth, but a false witness tells lies.' },
+                    { verse: 'John 18:37', text: '"Everyone on the side of truth listens to me." — Jesus, before Pilate' },
+                    { verse: 'Ephesians 5:11', text: 'Have nothing to do with the fruitless deeds of darkness, but rather expose them.' },
+                    { verse: 'Zechariah 8:16', text: 'Speak the truth to each other, and render true and sound judgment.' },
+                  ].map(({ verse, text }) => (
+                    <div key={verse} className="bg-surface border border-border rounded-lg p-4">
+                      <p className="text-xs font-semibold text-crimson mb-2 uppercase tracking-wider">{verse}</p>
+                      <p className="text-sm text-ink-muted leading-relaxed italic">{text}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-ink-muted leading-relaxed">
+                  The pattern of power suppressing truth is as ancient as recorded history. What Scripture calls bearing false witness, modern power calls narrative management. What the prophets called speaking truth to kings, we call investigative reporting. The names change. The obligation does not.
+                </p>
+              </div>
+            </section>
+
             {/* Contact */}
             <section className="mb-12">
               <h2 className="text-2xl font-serif font-semibold text-ink mb-4">Contact</h2>
