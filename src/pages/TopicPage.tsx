@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { getTopicArticles, getTopicChapters, getTopicHubBySlug } from '../data/topicHubs'
+import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 export default function TopicPage() {
@@ -88,6 +89,12 @@ export default function TopicPage() {
 
   const chapters = getTopicChapters(topic)
   const articles = getTopicArticles(topic)
+  const successPath = buildSubscriptionSuccessPath({
+    source: 'topic_hub',
+    topic: topic.slug,
+    interest: topic.name,
+    returnTo: `/topics/${topic.slug}`,
+  })
 
   return (
     <div className="w-full max-w-[1920px] mx-auto min-h-screen">
@@ -282,6 +289,7 @@ export default function TopicPage() {
             contentInterest={topic.name}
             heading={topic.subscribeHeading}
             subtext={topic.subscribeSubtext}
+            successPath={successPath}
           />
         </aside>
       </div>

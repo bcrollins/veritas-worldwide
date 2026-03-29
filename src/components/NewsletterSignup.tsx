@@ -1,5 +1,7 @@
-import { useState, useCallback } from 'react'
+import { startTransition, useCallback, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { identifyContact, isSubscribed, type SubscriptionSource } from '../lib/hubspot'
+import { trackNewsletterSignup } from '../lib/ga4'
 import { scoreEmailSignup } from '../lib/leadScoring'
 import MarketingConsentField from './MarketingConsentField'
 
@@ -14,6 +16,8 @@ interface Props {
   heading?: string
   /** Custom subtext */
   subtext?: string
+  /** Optional redirect after success */
+  successPath?: string
 }
 
 export default function NewsletterSignup({
@@ -22,7 +26,9 @@ export default function NewsletterSignup({
   contentInterest,
   heading,
   subtext,
+  successPath,
 }: Props) {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [consented, setConsented] = useState(false)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -61,12 +67,21 @@ export default function NewsletterSignup({
         referrer: window.location.pathname,
       })
       scoreEmailSignup(source)
+      trackNewsletterSignup(source)
+
+      if (successPath) {
+        startTransition(() => {
+          navigate(successPath)
+        })
+        return
+      }
+
       setStatus('success')
     } catch {
       setErrorMessage('We could not subscribe you right now. Please try again.')
       setStatus('error')
     }
-  }, [consented, email, status, source, contentInterest])
+  }, [consented, contentInterest, email, navigate, source, status, successPath])
 
   if (status === 'success') {
     return (

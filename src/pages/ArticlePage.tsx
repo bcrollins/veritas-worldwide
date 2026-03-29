@@ -4,8 +4,9 @@ import { getArticleBySlug, CATEGORY_META, type ArticleBlock, type ArticleSource 
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
 import { chapterMeta } from '../data/chapterMeta'
-import { getTopicHrefForTerm } from '../data/topicHubs'
+import { getTopicHrefForTerm, getTopicHubByKeyword } from '../data/topicHubs'
 import SharePanel from '../components/SharePanel'
+import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 
 function SourceBadge({ type }: { type: ArticleSource['type'] }) {
@@ -145,6 +146,17 @@ export default function ArticlePage() {
     )
   }
 
+  const primaryTopic =
+    getTopicHubByKeyword(article.category) ||
+    article.tags.map((tag) => getTopicHubByKeyword(tag)).find(Boolean)
+  const successPath = buildSubscriptionSuccessPath({
+    source: 'article_cta',
+    topic: primaryTopic?.slug,
+    article: article.slug,
+    interest: article.category,
+    returnTo: `/news/${article.slug}`,
+  })
+
   const relatedChapterData = article.relatedChapters
     .map(id => chapterMeta.find(c => c.id === id))
     .filter(Boolean)
@@ -277,6 +289,7 @@ export default function ArticlePage() {
                 contentInterest={article.category}
                 heading="Get investigations like this delivered free."
                 subtext="Join readers who follow the public record — not opinion, not spin. Every claim sourced to primary documents."
+                successPath={successPath}
               />
             </div>
 

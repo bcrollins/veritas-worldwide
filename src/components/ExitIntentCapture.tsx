@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { identifyContact, isSubscribed } from '../lib/hubspot'
+import { trackNewsletterSignup } from '../lib/ga4'
+import { scoreEmailSignup } from '../lib/leadScoring'
 import MarketingConsentField from './MarketingConsentField'
 
 /**
@@ -61,6 +63,8 @@ export default function ExitIntentCapture() {
       contentInterest: 'general',
       referrer: window.location.pathname,
     })
+    scoreEmailSignup('exit_intent')
+    trackNewsletterSignup('exit_intent')
 
     setTimeout(() => {
       setStatus('success')

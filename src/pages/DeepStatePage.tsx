@@ -7,6 +7,7 @@ import AdBanner from '../components/AdBanner'
 import ReadingProgress from '../components/ReadingProgress'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
+import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 
 /* ── Evidence Tier System ─────────────────────────────────────── */
 type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
@@ -526,6 +527,12 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
 
 /* ── Main Page Component ──────────────────────────────────────── */
 export default function DeepStatePage() {
+  const successPath = buildSubscriptionSuccessPath({
+    source: 'article_cta',
+    topic: 'epstein-network',
+    interest: 'deep-state-epstein-network',
+    returnTo: '/deep-state',
+  })
   const [selectedPerson, setSelectedPerson] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<ConnectionCategory | 'all'>('all')
@@ -865,7 +872,11 @@ export default function DeepStatePage() {
 
       {/* ── Subscriber Capture ─────────────────────────────────── */}
       <div className="max-w-4xl mx-auto px-6 py-12">
-        <NewsletterSignup source="article_cta" contentInterest="deep-state-epstein-network" />
+        <NewsletterSignup
+          source="article_cta"
+          contentInterest="deep-state-epstein-network"
+          successPath={successPath}
+        />
         <ContentGate contentInterest="deep-state-epstein-network" />
       </div>
 

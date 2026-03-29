@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { identifyContact, isSubscribed } from '../lib/hubspot'
+import { trackNewsletterSignup } from '../lib/ga4'
 import { scoreContentGateHit, scoreEmailSignup } from '../lib/leadScoring'
 import MarketingConsentField from './MarketingConsentField'
 
@@ -62,6 +63,7 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
       referrer: window.location.pathname,
     })
     scoreEmailSignup('content_gate')
+    trackNewsletterSignup('content_gate')
 
     setTimeout(() => {
       setStatus('success')

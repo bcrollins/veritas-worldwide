@@ -14,6 +14,7 @@ import DossierPDF from '../components/DossierPDF'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
 import ReadingProgress from '../components/ReadingProgress'
+import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 
 /* ═══════════════════════════════════════════════════════════
    TYPE DEFINITIONS
@@ -977,6 +978,13 @@ function JumpNav() {
    MAIN PAGE COMPONENT
    ═══════════════════════════════════════════════════════════ */
 export default function IsraelDossierPage() {
+  const successPath = buildSubscriptionSuccessPath({
+    source: 'article_cta',
+    topic: 'israel-policy',
+    interest: 'israel-dossier',
+    returnTo: '/israel-dossier',
+  })
+
   useEffect(() => {
     setMetaTags({
       title: 'The Israel Dossier | Veritas Press',
@@ -1534,7 +1542,12 @@ export default function IsraelDossierPage() {
       <CommunityForum pageId="israel-dossier" pageTitle="The Israel Dossier" />
 
       {/* ─── Newsletter CTA ─── */}
-      <NewsletterSignup variant="dark" />
+      <NewsletterSignup
+        variant="dark"
+        source="article_cta"
+        contentInterest="israel-dossier"
+        successPath={successPath}
+      />
 
       {/* Scroll-depth content gate */}
       <ContentGate triggerDepth={40} contentInterest="israel-dossier" />

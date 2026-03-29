@@ -50,6 +50,7 @@ const ProfilePage = lazy(() => import('./pages/ProfilePage'))
 const ProfilesIndexPage = lazy(() => import('./pages/ProfilesIndexPage'))
 const TopicsIndexPage = lazy(() => import('./pages/TopicsIndexPage'))
 const TopicPage = lazy(() => import('./pages/TopicPage'))
+const SubscribeSuccessPage = lazy(() => import('./pages/SubscribeSuccessPage'))
 
 const BernieShowPage = lazy(() => import('./pages/BernieShowPage'))
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
@@ -550,6 +551,7 @@ export default function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/topics" element={<TopicsIndexPage />} />
           <Route path="/topics/:slug" element={<TopicPage />} />
+          <Route path="/subscribe/success" element={<SubscribeSuccessPage />} />
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/sources" element={<SourcesPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />

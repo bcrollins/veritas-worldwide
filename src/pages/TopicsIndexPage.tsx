@@ -2,9 +2,16 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { topicHubs, getTopicArticles, getTopicChapters } from '../data/topicHubs'
+import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 export default function TopicsIndexPage() {
+  const successPath = buildSubscriptionSuccessPath({
+    source: 'topic_hub',
+    interest: 'research topics',
+    returnTo: '/topics',
+  })
+
   useEffect(() => {
     setMetaTags({
       title: `Research Topics | ${SITE_NAME}`,
@@ -111,6 +118,7 @@ export default function TopicsIndexPage() {
           contentInterest="research_topics"
           heading="Subscribe once. Follow every beat that matters."
           subtext="Veritas Press sends new investigations, source releases, and current reporting directly to subscribers. No algorithm required."
+          successPath={successPath}
         />
       </section>
     </div>
