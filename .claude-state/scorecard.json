@@ -1,46 +1,46 @@
 {
-  "run": 6,
-  "date": "2026-03-28",
+  "run": 7,
+  "date": "2026-03-29",
   "site": [
     {
       "feature": "Chapter Reading",
       "composite": 8.8,
-      "previous": 8.7,
-      "delta": 0.1,
-      "status": "improved",
+      "previous": 8.8,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Add authenticated end-to-end coverage for preview-to-full transitions, exports, and search-driven chapter entry points."
     },
     {
       "feature": "Reader Access Control",
       "composite": 9.0,
-      "previous": 8.9,
-      "delta": 0.1,
-      "status": "improved",
+      "previous": 9.0,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Tie future premium tiers, citations, and admin-only tools to explicit server-side entitlements instead of UI-level assumptions."
     },
     {
       "feature": "Source Browser",
       "composite": 8.5,
-      "previous": 8.2,
-      "delta": 0.3,
-      "status": "improved",
+      "previous": 8.5,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Add institution and source-type filters plus authenticated export/share views for filtered bibliographies."
     },
     {
       "feature": "Search",
       "composite": 8.9,
-      "previous": 8.7,
-      "delta": 0.2,
-      "status": "improved",
+      "previous": 8.9,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Add richer source/title relevance ranking, saved recent queries, and topic-aware deep links that preserve beat context after signup."
     },
     {
       "feature": "News & Topic Entry",
-      "composite": 8.5,
-      "previous": 7.1,
-      "delta": 1.4,
+      "composite": 8.8,
+      "previous": 8.5,
+      "delta": 0.3,
       "status": "improved",
-      "plus_half_requires": "Expand topic coverage beyond the initial seven hubs and add more current-reporting articles so each hub becomes a real search destination."
+      "plus_half_requires": "Expand topic coverage beyond the initial seven hubs and add more current-reporting articles so each hub becomes a real search destination with beat-specific onboarding."
     },
     {
       "feature": "Publication Shell",
@@ -54,8 +54,8 @@
   "growth": [
     {
       "area": "Email Capture & Compliance",
-      "score": 7.8,
-      "previous": 7.6,
+      "score": 8.0,
+      "previous": 7.8,
       "delta": 0.2,
       "status": "improved",
       "plus_half_requires": "Replace queue-only capture with portal-backed HubSpot forms, double opt-in, and workflow-level segmentation."
@@ -70,11 +70,11 @@
     },
     {
       "area": "Analytics & Measurement",
-      "score": 7.4,
+      "score": 7.9,
       "previous": 7.4,
-      "delta": 0.0,
-      "status": "stable",
-      "plus_half_requires": "Verify GA4 custom dimensions in production and map HubSpot lifecycle stages to a live conversion dashboard."
+      "delta": 0.5,
+      "status": "improved",
+      "plus_half_requires": "Verify GA4 custom dimensions in production and map HubSpot lifecycle stages to a live conversion dashboard with source-level newsletter attribution."
     },
     {
       "area": "Monetization Infrastructure",
@@ -86,11 +86,11 @@
     },
     {
       "area": "Conversion Optimization",
-      "score": 8.6,
-      "previous": 8.4,
-      "delta": 0.2,
+      "score": 9.0,
+      "previous": 8.6,
+      "delta": 0.4,
       "status": "improved",
-      "plus_half_requires": "Route each topic-hub signup into a beat-specific thank-you and onboarding path, then test those against the generic archive gate."
+      "plus_half_requires": "Connect the new beat-specific signup handoff to HubSpot workflows and test topic-specific onboarding against the generic archive gate."
     }
   ],
   "security": {

@@ -1,6 +1,6 @@
 {
-  "run": 6,
-  "date": "2026-03-28",
+  "run": 7,
+  "date": "2026-03-29",
   "channels": {
     "website": { "status": "live", "handle": "https://veritasworldwide.com" },
     "instagram": { "status": "planned", "handle": "" },
@@ -57,10 +57,10 @@
     "content_calendar_days": 0
   },
   "last_completed": [
-    "Added seven crawlable topic hubs that connect search terms to chapters, current reporting, FAQs, and newsletter capture.",
-    "Rewired homepage, chapter, article, and search keyword surfaces to point into topic hubs whenever a beat-specific destination exists.",
-    "Replaced the old prerender flow with route-aware prerendering for news articles, topic hubs, chapters, and key evergreen pages.",
-    "Regenerated the sitemap from live content so article and topic URLs now ship automatically with fresh metadata.",
-    "Fixed prerender head rewriting so descriptions with dollar amounts remain valid in meta tags and social cards, then verified those heads live on both production domains."
+    "Added a dedicated /subscribe/success handoff page with topic-aware recommendations, continue-reading CTAs, and a free-account conversion step.",
+    "Routed topic hubs, current-reporting pages, the Deep State page, and the Israel Dossier page into beat-aware success paths instead of a generic post-signup success state.",
+    "Wired the shared newsletter component to GA4 newsletter conversion tracking and success-path navigation for higher-intent subscriber capture surfaces.",
+    "Closed measurement gaps by firing newsletter conversion tracking from the content gate and exit-intent capture components.",
+    "Verified the new production client bundle and live /subscribe/success route on both veritasworldwide.com and Railway."
   ]
 }
