@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import { DONATE_URL, MEMBERSHIP } from '../../lib/constants'
+
 interface SubscriptionInfo {
   email: string
   plan: string
@@ -7,12 +9,37 @@ interface SubscriptionInfo {
   startDate: string
 }
 
+function getStripeLinkReference(url: string) {
+  try {
+    const { pathname } = new URL(url)
+    return pathname.replace(/^\//, '')
+  } catch {
+    return url
+  }
+}
+
 const STRIPE_PRODUCTS = [
-  { id: 'prod_UCp3RXB5YpqcV2', name: 'Correspondent', price: '$5/mo' },
-  { id: 'prod_UCp3hB3kHjRSCY', name: 'Investigator', price: '$15/mo' },
-  { id: 'prod_UCp3ZjRcMMKWMz', name: 'Founding Circle', price: '$50/mo' },
-  { id: 'prod_UCp4JGDyh3hvUK', name: 'Support (Donation)', price: 'Variable' },
-]
+  {
+    id: getStripeLinkReference(MEMBERSHIP.correspondent.monthlyUrl),
+    name: MEMBERSHIP.correspondent.name,
+    price: `$${MEMBERSHIP.correspondent.monthlyPrice}/mo · $${MEMBERSHIP.correspondent.annualPrice}/yr`,
+  },
+  {
+    id: getStripeLinkReference(MEMBERSHIP.investigator.monthlyUrl),
+    name: MEMBERSHIP.investigator.name,
+    price: `$${MEMBERSHIP.investigator.monthlyPrice}/mo · $${MEMBERSHIP.investigator.annualPrice}/yr`,
+  },
+  {
+    id: getStripeLinkReference(MEMBERSHIP.founding.monthlyUrl),
+    name: MEMBERSHIP.founding.name,
+    price: `$${MEMBERSHIP.founding.monthlyPrice}/mo · $${MEMBERSHIP.founding.annualPrice}/yr`,
+  },
+  {
+    id: getStripeLinkReference(DONATE_URL),
+    name: 'Support (Donation)',
+    price: 'Variable',
+  },
+] as const
 
 export default function AdminSubscriptions() {
   const [subscriptions, setSubscriptions] = useState<SubscriptionInfo[]>([])
