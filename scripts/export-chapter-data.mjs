@@ -111,15 +111,9 @@ async function importTsModule(filePath, tempName) {
 
 function toPublicChapter(chapter) {
   const chapterWithMetadata = withDerivedMetadata(chapter)
-  const {
-    sourceHierarchyCounts: _sourceHierarchyCounts,
-    availableEvidenceTiers: _availableEvidenceTiers,
-    chapterType: _chapterType,
-    ...publicSafeChapter
-  } = chapterWithMetadata
 
   return {
-    ...publicSafeChapter,
+    ...chapterWithMetadata,
     content: chapter.content.slice(0, PREVIEW_BLOCK_LIMIT),
     sources: [],
     accessLevel: 'preview',

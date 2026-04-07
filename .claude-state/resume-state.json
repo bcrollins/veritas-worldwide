@@ -1,5 +1,5 @@
 {
-  "run": 18,
+  "run": 19,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -33,13 +33,17 @@
     "Replaced inaccurate Institute `Course` rich-result markup with `LearningResource` on course pages, added `Article` plus `HowTo` framing on guide pages, and aligned the prerendered institute route family to the richer information architecture.",
     "Extended the Institute Book of Knowledge export so the browser-side PDF now includes module summaries, module deliverables, 30-day sprint blocks, and verified checkpoints.",
     "Extended `scripts/prerender.mjs` to generate richer crawler-facing institute HTML plus new machine-readable assets at `public/llms.txt` and `public/veritas-institute.md` for LLM retrieval and operator context.",
-    "Revalidated the rebuilt Institute stack locally on April 7, 2026 with `npx tsc --noEmit` and `npm run build`; the build succeeded and the prerender step generated 273 routes, an updated sitemap, `llms.txt`, and the Institute markdown index."
+    "Revalidated the rebuilt Institute stack locally on April 7, 2026 with `npx tsc --noEmit` and `npm run build`; the build succeeded and the prerender step generated 273 routes, an updated sitemap, `llms.txt`, and the Institute markdown index.",
+    "Restored non-sensitive derived metadata to public chapter exports in `scripts/export-chapter-data.mjs`, so signed-out chapter/search consumers can receive `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` without exposing protected source rows or URLs.",
+    "Revalidated the public chapter export fix on April 7, 2026 with `npx tsc --noEmit` and `npm run build`, then inspected `generated/chapter-data/public/*.json` and `public-index.json` to confirm preview payloads now include the restored metadata while `sources` remain empty."
   ],
-  "next_task": "Recover deploy visibility, confirm production serves the rebuilt Institute and the earlier source-fix commits, then verify the new Institute route family and machine-readable assets live on mobile widths.",
+  "next_task": "Recover deploy visibility, confirm production serves the rebuilt Institute and the public chapter-export metadata fix, then verify signed-out search/source surfaces and the new Institute route family live on mobile widths.",
   "next_priorities": [
     "Regain Railway deployment visibility or credentials, inspect the deployment state for commit `1012c25`, and do not treat the source-integrity fix as shipped until production serves the updated chapter JSON.",
+    "Confirm production serves the public chapter-export metadata fix by probing `/api/search?q=federal+reserve` and `/api/chapters/chapter-1` for `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` in preview payloads.",
     "Confirm the rebuilt Institute surfaces are live in production: `/institute`, `/institute/book`, `/institute/methodology`, representative `/institute/courses/:slug`, representative `/institute/guides/:slug`, `/llms.txt`, and `/veritas-institute.md`.",
     "Verify the rebuilt Institute surfaces at 390px and 430px in a real browser session, focusing on scanability, sticky shell behavior, CTA clarity, and the new answer-first hierarchy.",
+    "Verify the signed-out search and sources surfaces at 390px and 430px in a real browser session, focusing on whether restored public metadata improves chapter context without leaking protected bibliography rows.",
     "Verify the deployed homepage institute module and publication shell on /, /read, /news, and /membership at 390px and 430px in a real browser session, focusing on scanability, grouped mobile navigation, and CTA clarity.",
     "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session, including signed-out previews, login upgrade, logout downgrade, and protected PDF/download affordances.",
     "Decide whether to wire npm run verify:auth and npm run verify:sources into CI or a scheduled operational check against Railway now that the source verifier is clean and stable.",

@@ -1,5 +1,5 @@
 {
-  "run": 18,
+  "run": 19,
   "date": "2026-04-07",
   "site": [
     {
@@ -36,11 +36,11 @@
     },
     {
       "feature": "Search",
-      "composite": 8.9,
+      "composite": 9,
       "previous": 8.9,
-      "delta": 0,
-      "status": "stable",
-      "plus_half_requires": "Add richer source/title relevance ranking, saved recent queries, and topic-aware deep links that preserve beat context after signup."
+      "delta": 0.1,
+      "status": "improved",
+      "plus_half_requires": "Confirm the public search cards render the restored chapter-type and evidence metadata live at 390px and 430px, then improve result ranking with stronger title/source weighting and topic-aware deep links."
     },
     {
       "feature": "News & Topic Entry",
