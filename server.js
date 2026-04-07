@@ -18,6 +18,7 @@ const PACKAGE_JSON_PATH = path.join(__dirname, 'package.json')
 
 let publicChapterIndex = []
 let chapterDataManifest = { previewBlockLimit: 3, chapterIds: [], generatedAt: '' }
+const EVIDENCE_TIER_ORDER = ['verified', 'circumstantial', 'disputed']
 const EVIDENCE_TIER_FILTERS = new Set(['verified', 'circumstantial', 'disputed'])
 const CHAPTER_TYPE_FILTERS = new Set(['reference', 'explainer', 'investigation'])
 const SEARCH_MATCH_FILTERS = new Set(['all', 'sources'])
@@ -78,10 +79,99 @@ function getDistEntryAssets() {
 
 const APP_VERSION = readPackageVersion()
 
+function sanitizeChapterId(value) {
+  if (typeof value !== 'string') return ''
+  const trimmed = value.trim()
+  return /^[a-z0-9-]+$/i.test(trimmed) ? trimmed : ''
+}
+
+function readChapterJsonFile(scope, chapterId) {
+  const safeId = sanitizeChapterId(chapterId)
+  if (!safeId) return null
+  const filePath = path.join(scope === 'full' ? CHAPTER_FULL_DIR : CHAPTER_PUBLIC_DIR, `${safeId}.json`)
+  if (!fs.existsSync(filePath)) return null
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+  } catch {
+    return null
+  }
+}
+
+function normalizeAvailableEvidenceTiers(tiers) {
+  if (!Array.isArray(tiers)) return []
+  return EVIDENCE_TIER_ORDER.filter((tier) => tiers.includes(tier))
+}
+
+function inferChapterType(chapter) {
+  if (!chapter || typeof chapter !== 'object') return null
+
+  if (['foreword', 'overview', 'epilogue'].includes(chapter.id)) {
+    return 'reference'
+  }
+
+  const typeText = [
+    chapter.number,
+    chapter.title,
+    chapter.subtitle,
+    chapter.dateRange,
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase()
+
+  if (chapter.dateRange === 'Explainer' || /explainer|how .* works|methodology/.test(typeText)) {
+    return 'explainer'
+  }
+
+  return 'investigation'
+}
+
+function inferAvailableEvidenceTiers(chapter) {
+  const tiers = new Set()
+
+  for (const block of chapter?.content || []) {
+    if (block?.type === 'evidence' && typeof block.evidence?.tier === 'string' && EVIDENCE_TIER_FILTERS.has(block.evidence.tier)) {
+      tiers.add(block.evidence.tier)
+    }
+  }
+
+  return EVIDENCE_TIER_ORDER.filter((tier) => tiers.has(tier))
+}
+
+function normalizeChapterRecord(chapter, fallbackChapter = null) {
+  if (!chapter || typeof chapter !== 'object') return null
+
+  const preferredChapterType = typeof chapter.chapterType === 'string' && CHAPTER_TYPE_FILTERS.has(chapter.chapterType)
+    ? chapter.chapterType
+    : null
+  const fallbackChapterType = typeof fallbackChapter?.chapterType === 'string' && CHAPTER_TYPE_FILTERS.has(fallbackChapter.chapterType)
+    ? fallbackChapter.chapterType
+    : null
+  const preferredEvidenceTiers = normalizeAvailableEvidenceTiers(chapter.availableEvidenceTiers)
+  const fallbackEvidenceTiers = normalizeAvailableEvidenceTiers(fallbackChapter?.availableEvidenceTiers)
+  const metadataSource = fallbackChapter || chapter
+
+  return {
+    ...chapter,
+    chapterType: preferredChapterType || fallbackChapterType || inferChapterType(metadataSource),
+    availableEvidenceTiers:
+      preferredEvidenceTiers.length > 0
+        ? preferredEvidenceTiers
+        : fallbackEvidenceTiers.length > 0
+          ? fallbackEvidenceTiers
+          : inferAvailableEvidenceTiers(metadataSource),
+  }
+}
+
 function loadChapterData() {
   try {
     if (fs.existsSync(CHAPTER_PUBLIC_INDEX_FILE)) {
-      publicChapterIndex = JSON.parse(fs.readFileSync(CHAPTER_PUBLIC_INDEX_FILE, 'utf-8'))
+      const rawPublicIndex = JSON.parse(fs.readFileSync(CHAPTER_PUBLIC_INDEX_FILE, 'utf-8'))
+      publicChapterIndex = Array.isArray(rawPublicIndex)
+        ? rawPublicIndex
+          .map((chapter) => normalizeChapterRecord(chapter, readChapterJsonFile('full', chapter?.id)))
+          .filter(Boolean)
+        : []
     }
     if (fs.existsSync(CHAPTER_MANIFEST_FILE)) {
       chapterDataManifest = JSON.parse(fs.readFileSync(CHAPTER_MANIFEST_FILE, 'utf-8'))
@@ -95,22 +185,15 @@ function loadChapterData() {
   }
 }
 
-function sanitizeChapterId(value) {
-  if (typeof value !== 'string') return ''
-  const trimmed = value.trim()
-  return /^[a-z0-9-]+$/i.test(trimmed) ? trimmed : ''
-}
-
 function getChapterJson(scope, chapterId) {
-  const safeId = sanitizeChapterId(chapterId)
-  if (!safeId) return null
-  const filePath = path.join(scope === 'full' ? CHAPTER_FULL_DIR : CHAPTER_PUBLIC_DIR, `${safeId}.json`)
-  if (!fs.existsSync(filePath)) return null
-  try {
-    return JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-  } catch {
-    return null
+  const chapter = readChapterJsonFile(scope, chapterId)
+  if (!chapter) return null
+
+  if (scope === 'public') {
+    return normalizeChapterRecord(chapter, readChapterJsonFile('full', chapterId))
   }
+
+  return normalizeChapterRecord(chapter)
 }
 
 function getChapterCollection(scope) {
@@ -145,19 +228,26 @@ function getSearchableChapterText(chapter) {
   ].join(' ').toLowerCase()
 }
 
-function getSearchSnippet(chapter, query) {
-  const needle = query.toLowerCase()
+function getSearchSnippet(chapter, terms) {
+  const queryTerms = terms.filter(Boolean)
 
   for (const block of chapter.content || []) {
     const text = block.text || block.quote?.text || block.evidence?.text
     if (!text) continue
 
     const lowerText = text.toLowerCase()
-    if (!lowerText.includes(needle)) continue
+    const matches = queryTerms
+      .map((term) => ({ term, index: lowerText.indexOf(term) }))
+      .filter((match) => match.index !== -1)
 
-    const index = lowerText.indexOf(needle)
+    if (matches.length === 0) continue
+
+    const earliestMatch = matches.reduce((best, match) => (
+      match.index < best.index ? match : best
+    ))
+    const index = earliestMatch.index
     const start = Math.max(0, index - 80)
-    const end = Math.min(text.length, index + query.length + 80)
+    const end = Math.min(text.length, index + earliestMatch.term.length + 80)
     const prefix = start > 0 ? '...' : ''
     const suffix = end < text.length ? '...' : ''
     return `${prefix}${text.slice(start, end)}${suffix}`
@@ -165,7 +255,7 @@ function getSearchSnippet(chapter, query) {
 
   const matchedSource = (chapter.sources || []).find((source) => {
     const sourceText = `${source.text || ''} ${source.url || ''}`.toLowerCase()
-    return sourceText.includes(needle)
+    return queryTerms.some((term) => sourceText.includes(term))
   })
   if (matchedSource) {
     return matchedSource.text.slice(0, 180) + (matchedSource.text.length > 180 ? '...' : '')
@@ -174,27 +264,28 @@ function getSearchSnippet(chapter, query) {
   return chapter.subtitle
 }
 
-function getMatchedSearchFields(chapter, query) {
-  const needle = query.toLowerCase()
+function getMatchedSearchFields(chapter, terms) {
+  const queryTerms = terms.filter(Boolean)
   const matchedFields = []
+  const containsAnyTerm = (text) => queryTerms.some((term) => text.includes(term))
 
-  if (chapter.title.toLowerCase().includes(needle)) matchedFields.push('title')
-  if (chapter.subtitle.toLowerCase().includes(needle)) matchedFields.push('subtitle')
-  if ((chapter.keywords || []).some((keyword) => keyword.toLowerCase().includes(needle))) matchedFields.push('keywords')
+  if (containsAnyTerm(chapter.title.toLowerCase())) matchedFields.push('title')
+  if (containsAnyTerm(chapter.subtitle.toLowerCase())) matchedFields.push('subtitle')
+  if ((chapter.keywords || []).some((keyword) => containsAnyTerm(keyword.toLowerCase()))) matchedFields.push('keywords')
 
   const contentMatched = (chapter.content || []).some((block) => {
-    if (block.text?.toLowerCase().includes(needle)) return true
-    if (block.quote?.text.toLowerCase().includes(needle)) return true
-    if (block.evidence?.text.toLowerCase().includes(needle)) return true
-    if (block.table?.headers?.some((header) => header.toLowerCase().includes(needle))) return true
-    if (block.table?.rows?.some((row) => row.some((cell) => cell.toLowerCase().includes(needle)))) return true
+    if (block.text && containsAnyTerm(block.text.toLowerCase())) return true
+    if (block.quote?.text && containsAnyTerm(block.quote.text.toLowerCase())) return true
+    if (block.evidence?.text && containsAnyTerm(block.evidence.text.toLowerCase())) return true
+    if (block.table?.headers?.some((header) => containsAnyTerm(header.toLowerCase()))) return true
+    if (block.table?.rows?.some((row) => row.some((cell) => containsAnyTerm(cell.toLowerCase())))) return true
     return false
   })
   if (contentMatched) matchedFields.push('content')
 
   const sourceMatched = (chapter.sources || []).some((source) => {
     const sourceText = `${source.text || ''} ${source.url || ''}`.toLowerCase()
-    return sourceText.includes(needle)
+    return containsAnyTerm(sourceText)
   })
   if (sourceMatched) matchedFields.push('sources')
 
@@ -215,7 +306,7 @@ function searchChapters(scope, query, filters = {}) {
         return null
       }
 
-      const matchedIn = getMatchedSearchFields(chapter, normalized)
+      const matchedIn = getMatchedSearchFields(chapter, terms)
       if (filters.match === 'sources' && !matchedIn.includes('sources')) {
         return null
       }
@@ -244,7 +335,7 @@ function searchChapters(scope, query, filters = {}) {
         chapterType: chapter.chapterType || null,
         availableEvidenceTiers: chapter.availableEvidenceTiers || [],
         matchedIn,
-        snippet: getSearchSnippet(chapter, normalized),
+        snippet: getSearchSnippet(chapter, terms),
       }
     })
     .filter(Boolean)
