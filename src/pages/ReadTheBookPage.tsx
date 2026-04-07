@@ -42,7 +42,7 @@ function useTextToSpeech() {
 }
 
 export default function ReadTheBookPage() {
-  const { setShowAuthModal } = useAuth()
+  const { isLoggedIn, setShowAuthModal } = useAuth()
   const [activeChapter, setActiveChapter] = useState(0)
   const [loadedChapters, setLoadedChapters] = useState<Map<number, LoadedChapter>>(new Map())
   const [loadingChapterIndex, setLoadingChapterIndex] = useState<number | null>(null)
@@ -51,6 +51,7 @@ export default function ReadTheBookPage() {
   const [fontSize, setFontSize] = useState(16)
   const contentRef = useRef<HTMLDivElement>(null)
   const tts = useTextToSpeech()
+  const chapterScope = isLoggedIn ? 'full' : 'public'
 
   useEffect(() => {
     setMetaTags({
@@ -76,6 +77,10 @@ export default function ReadTheBookPage() {
   // Stop TTS when changing chapters
   useEffect(() => { tts.stop() }, [activeChapter])
 
+  useEffect(() => {
+    setLoadedChapters(new Map())
+  }, [chapterScope])
+
   // Load chapter content on demand and preload adjacent chapters
   useEffect(() => {
     const staticChapter = chapterMeta[activeChapter]
@@ -83,7 +88,7 @@ export default function ReadTheBookPage() {
 
     // Load current chapter
     setLoadingChapterIndex(activeChapter)
-    loadChapterContent(staticChapter.id).then(loadedChapter => {
+    loadChapterContent(staticChapter.id, { scope: chapterScope }).then(loadedChapter => {
       if (loadedChapter) {
         setLoadedChapters(prev => new Map(prev).set(activeChapter, loadedChapter))
       }
@@ -105,9 +110,9 @@ export default function ReadTheBookPage() {
     }
     
     if (nextChapterIds.length > 0) {
-      preloadChapters(nextChapterIds)
+      preloadChapters(nextChapterIds, { scope: chapterScope })
     }
-  }, [activeChapter])
+  }, [activeChapter, chapterScope])
 
   // Get the current chapter metadata and loaded content
   const chapterMetadata = chapterMeta[activeChapter]

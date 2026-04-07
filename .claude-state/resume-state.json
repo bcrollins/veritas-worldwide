@@ -1,19 +1,18 @@
 {
-  "run": 7,
-  "date": "2026-03-29",
+  "run": 8,
+  "date": "2026-04-07",
   "completed": [
-    "Added a dedicated /subscribe/success route that turns newsletter conversions into beat-aware next steps with continue-reading recommendations and a free-account creation CTA.",
-    "Routed topic hubs, current-reporting article CTAs, the Deep State page, and the Israel Dossier page into contextual post-signup success flows instead of a generic success state.",
-    "Wired GA4 newsletter conversion tracking into the shared newsletter component and closed measurement gaps on the content gate and exit-intent capture paths.",
-    "Confirmed the new production client bundle index-D4BU4MBB.js is live and that /subscribe/success returns 200 on veritasworldwide.com and Railway.",
-    "Verification completed with npx tsc --noEmit, npm run build, and live production checks on topic pages, news pages, and subscribe-success routes."
+    "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
+    "Confirmed a live auth boundary defect: logout deleted session rows, but authenticateToken only trusted JWT verification plus the users table, so revoked tokens could still unlock protected content until expiry.",
+    "Patched server-side auth to require an unexpired matching session row for every bearer token, closing logout/session revocation gaps across chapter unlocks, downloads, and user APIs.",
+    "Patched ChapterPage and ReadTheBookPage to re-request scope-appropriate chapter payloads on auth transitions and clear stale full-content state when the reader auth scope changes.",
+    "Verified the fix locally in the active workspace and in a clean detached worktree with npx tsc --noEmit and npm run build."
   ],
-  "next_task": "Connect Search Console and HubSpot workflows to the new topic/article subscriber sources, then expand topic coverage and reduce bundle weight.",
+  "next_task": "Push the auth-boundary fix to main and re-run the live logout/token revocation check after Railway deploys, then add automated auth regression coverage for register/login/logout/download flows.",
   "next_priorities": [
-    "Connect Google Search Console and submit the regenerated sitemap.",
-    "Connect HubSpot workflows, double opt-in, and lifecycle scoring for topic_hub and article_cta subscriber sources.",
-    "Expand topic hubs and current-reporting volume around recurring search clusters.",
-    "Reduce jspdf and vendor-react bundle weight.",
-    "Build beat-specific thank-you and onboarding variations inside HubSpot to match the new success-route intent."
+    "Re-verify live logout revocation by calling /api/auth/logout and /api/auth/me with the same bearer token after deployment.",
+    "Add automated auth regression coverage for chapter preview/full transitions, logout revocation, and protected PDF downloads.",
+    "Add Sentry or equivalent production monitoring to capture auth/API failures before readers report them.",
+    "Build a source-link health and archive-checker workflow so citation durability is monitored instead of assumed."
   ]
 }

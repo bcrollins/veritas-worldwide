@@ -1,22 +1,22 @@
 {
-  "run": 7,
-  "date": "2026-03-29",
+  "run": 8,
+  "date": "2026-04-07",
   "site": [
     {
       "feature": "Chapter Reading",
-      "composite": 8.8,
+      "composite": 9.0,
       "previous": 8.8,
-      "delta": 0.0,
-      "status": "stable",
-      "plus_half_requires": "Add authenticated end-to-end coverage for preview-to-full transitions, exports, and search-driven chapter entry points."
+      "delta": 0.2,
+      "status": "improved",
+      "plus_half_requires": "Add automated auth E2E coverage for preview-to-full upgrades, logout downgrades, and protected PDF access on the live deployment."
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.0,
+      "composite": 9.2,
       "previous": 9.0,
-      "delta": 0.0,
-      "status": "stable",
-      "plus_half_requires": "Tie future premium tiers, citations, and admin-only tools to explicit server-side entitlements instead of UI-level assumptions."
+      "delta": 0.2,
+      "status": "improved",
+      "plus_half_requires": "Shorten access-token lifetime or add refresh rotation, then prove revocation and session expiry with automated integration coverage."
     },
     {
       "feature": "Source Browser",
@@ -37,9 +37,9 @@
     {
       "feature": "News & Topic Entry",
       "composite": 8.8,
-      "previous": 8.5,
-      "delta": 0.3,
-      "status": "improved",
+      "previous": 8.8,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Expand topic coverage beyond the initial seven hubs and add more current-reporting articles so each hub becomes a real search destination with beat-specific onboarding."
     },
     {
@@ -55,25 +55,25 @@
     {
       "area": "Email Capture & Compliance",
       "score": 8.0,
-      "previous": 7.8,
-      "delta": 0.2,
-      "status": "improved",
+      "previous": 8.0,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Replace queue-only capture with portal-backed HubSpot forms, double opt-in, and workflow-level segmentation."
     },
     {
       "area": "SEO Foundation",
       "score": 8.8,
-      "previous": 8.1,
-      "delta": 0.7,
-      "status": "improved",
+      "previous": 8.8,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Connect Search Console, publish more topic hubs around recurring query clusters, and keep current-reporting pages shipping on a predictable cadence."
     },
     {
       "area": "Analytics & Measurement",
       "score": 7.9,
-      "previous": 7.4,
-      "delta": 0.5,
-      "status": "improved",
+      "previous": 7.9,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Verify GA4 custom dimensions in production and map HubSpot lifecycle stages to a live conversion dashboard with source-level newsletter attribution."
     },
     {
@@ -87,9 +87,9 @@
     {
       "area": "Conversion Optimization",
       "score": 9.0,
-      "previous": 8.6,
-      "delta": 0.4,
-      "status": "improved",
+      "previous": 9.0,
+      "delta": 0.0,
+      "status": "stable",
       "plus_half_requires": "Connect the new beat-specific signup handoff to HubSpot workflows and test topic-specific onboarding against the generic archive gate."
     }
   ],
@@ -98,7 +98,9 @@
       "Public source-library payloads were removed from preview chapter responses.",
       "Anonymous search no longer returns source-only matches that require authenticated source access.",
       "Preview chapter payloads no longer expose filter metadata intended for the authenticated source browser and full-search experience.",
-      "Auth entry points now preserve intended archive destinations without defaulting every flow to signup mode."
+      "Auth entry points now preserve intended archive destinations without defaulting every flow to signup mode.",
+      "Bearer token auth now requires a live, unexpired session row, so logout and other session invalidations revoke protected access instead of leaving tokens valid until JWT expiry.",
+      "Reader surfaces now reload scope-appropriate chapter payloads when auth state changes, preventing stale full-content payloads from lingering after logout or requiring a manual refresh after signup."
     ],
     "p0_open": [],
     "new_p0": []

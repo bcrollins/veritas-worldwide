@@ -820,6 +820,7 @@ export default function ChapterPage() {
   const staticMetadata = chapterMeta.find(ch => ch.id === id)
   const [chapter, setChapter] = useState<LoadedChapter | null>(null)
   const [isLoading, setIsLoading] = useState(!staticMetadata)
+  const chapterScope = isLoggedIn ? 'full' : 'public'
   
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
   const evidenceCounts = useMemo(() => chapter ? getEvidenceCounts(chapter) : { verified: 0, circumstantial: 0, disputed: 0 }, [chapter])
@@ -831,12 +832,17 @@ export default function ChapterPage() {
 
   useEffect(() => {
     if (!id || !staticMetadata) return
-    
+
+    let cancelled = false
     setIsLoading(true)
-    loadChapterContent(id).then(loadedChapter => {
+    setChapter(null)
+
+    loadChapterContent(id, { scope: chapterScope }).then(loadedChapter => {
+      if (cancelled) return
       setChapter(loadedChapter)
       setIsLoading(false)
     }).catch(error => {
+      if (cancelled) return
       console.error('Failed to load chapter content:', error)
       setIsLoading(false)
     })
@@ -851,10 +857,14 @@ export default function ChapterPage() {
         nextChapterIds.push(chapterMeta[currentIndex + 2].id)
       }
       if (nextChapterIds.length > 0) {
-        preloadChapters(nextChapterIds)
+        preloadChapters(nextChapterIds, { scope: chapterScope })
       }
     }
-  }, [id, staticMetadata])
+
+    return () => {
+      cancelled = true
+    }
+  }, [chapterScope, id, staticMetadata])
 
   useEffect(() => {
     if (chapter) {

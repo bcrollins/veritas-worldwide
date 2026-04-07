@@ -574,11 +574,16 @@ async function authenticateToken(req) {
   const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null
   if (!token) return null
   try {
-    const decoded = jwt.verify(token, JWT_SECRET)
+    jwt.verify(token, JWT_SECRET)
     if (!dbPool) return null
     const { rows } = await dbPool.query(
-      'SELECT id, email, display_name, tier, created_at, is_student FROM users WHERE id = $1',
-      [decoded.userId]
+      `SELECT u.id, u.email, u.display_name, u.tier, u.created_at, u.is_student
+       FROM sessions s
+       INNER JOIN users u ON u.id = s.user_id
+       WHERE s.token = $1
+         AND s.expires_at > NOW()
+       LIMIT 1`,
+      [token]
     )
     return rows[0] || null
   } catch {
