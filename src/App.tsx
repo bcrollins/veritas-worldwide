@@ -49,6 +49,12 @@ const ProfilePage = lazy(() => import('./pages/ProfilePage'))
 const ProfilesIndexPage = lazy(() => import('./pages/ProfilesIndexPage'))
 const TopicsIndexPage = lazy(() => import('./pages/TopicsIndexPage'))
 const TopicPage = lazy(() => import('./pages/TopicPage'))
+const InstituteLayout = lazy(() => import('./components/institute/InstituteLayout'))
+const InstitutePage = lazy(() => import('./pages/InstitutePage'))
+const InstituteCoursePage = lazy(() => import('./pages/InstituteCoursePage'))
+const InstituteGuidePage = lazy(() => import('./pages/InstituteGuidePage'))
+const InstituteBookPage = lazy(() => import('./pages/InstituteBookPage'))
+const InstituteMethodologyPage = lazy(() => import('./pages/InstituteMethodologyPage'))
 const SubscribeSuccessPage = lazy(() => import('./pages/SubscribeSuccessPage'))
 const BibleHistoryPage = lazy(() => import('./pages/BibleHistoryPage'))
 const BernieShowPage = lazy(() => import('./pages/BernieShowPage'))
@@ -163,6 +169,7 @@ function Header() {
   ]
 
   const utilityLinks: ShellLink[] = [
+    { to: '/institute', label: 'Institute', match: pathname => matchesPrefix(pathname, '/institute') },
     { to: '/topics', label: 'Topics', match: pathname => matchesPrefix(pathname, '/topics') },
     { to: '/search', label: t('nav.search') },
   ]
@@ -170,6 +177,7 @@ function Header() {
   const drawerResearchLinks: ShellLink[] = [
     { to: '/methodology', label: t('nav.methodology') },
     { to: '/sources', label: t('nav.sources') },
+    { to: '/institute', label: 'Institute', match: pathname => matchesPrefix(pathname, '/institute') },
     { to: '/topics', label: 'Topics', match: pathname => matchesPrefix(pathname, '/topics') },
     { to: '/timeline', label: t('nav.timeline') },
     { to: '/content-pack', label: 'Content Packs', match: pathname => normalizePath(pathname) === '/content-pack' || normalizePath(pathname) === '/share' },
@@ -597,6 +605,7 @@ function Footer() {
   const researchLinks: ShellLink[] = [
     { to: '/methodology', label: t('nav.methodology') },
     { to: '/sources', label: t('nav.sources') },
+    { to: '/institute', label: 'Institute' },
     { to: '/topics', label: 'Topics' },
     { to: '/timeline', label: t('nav.timeline') },
     { to: '/content-pack', label: 'Content Packs' },
@@ -759,11 +768,12 @@ function PageViewTracker() {
 export default function App() {
   const location = useLocation()
   const isAdmin = location.pathname.startsWith('/admin')
+  const isInstitute = location.pathname.startsWith('/institute')
 
   return (
     <I18nProvider>
-      <div className="min-h-screen bg-parchment text-ink">
-        {!isAdmin && (
+      <div className={isInstitute ? 'min-h-screen institute-shell-root' : 'min-h-screen bg-parchment text-ink'}>
+        {!isAdmin && !isInstitute && (
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:rounded-sm focus:bg-crimson focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-semibold focus:text-white"
@@ -773,12 +783,14 @@ export default function App() {
         )}
         <ScrollToTop />
         <PageViewTracker />
-        {!isAdmin && <Header />}
-        <div className="hidden print:block print:mb-6 print:border-b print:border-black/20 print:pb-4 print:text-center">
-          <VeritasLogo variant="icon" size="sm" className="mx-auto mb-2 print:block" />
-          <p className="font-display text-lg font-bold tracking-tight text-black">Veritas Press</p>
-          <p className="font-serif text-[0.6rem] italic text-gray-500">The Documentary Record · veritasworldwide.com</p>
-        </div>
+        {!isAdmin && !isInstitute && <Header />}
+        {!isAdmin && !isInstitute && (
+          <div className="hidden print:block print:mb-6 print:border-b print:border-black/20 print:pb-4 print:text-center">
+            <VeritasLogo variant="icon" size="sm" className="mx-auto mb-2 print:block" />
+            <p className="font-display text-lg font-bold tracking-tight text-black">Veritas Press</p>
+            <p className="font-serif text-[0.6rem] italic text-gray-500">The Documentary Record · veritasworldwide.com</p>
+          </div>
+        )}
         <main id="main-content">
           <ErrorBoundary>
             <Suspense
@@ -819,6 +831,13 @@ export default function App() {
                 <Route path="/profiles" element={<ProfilesIndexPage />} />
                 <Route path="/profile/:slug" element={<ProfilePage />} />
                 <Route path="/news/:slug" element={<ArticlePage />} />
+                <Route path="/institute" element={<InstituteLayout />}>
+                  <Route index element={<InstitutePage />} />
+                  <Route path="courses/:slug" element={<InstituteCoursePage />} />
+                  <Route path="guides/:slug" element={<InstituteGuidePage />} />
+                  <Route path="book" element={<InstituteBookPage />} />
+                  <Route path="methodology" element={<InstituteMethodologyPage />} />
+                </Route>
                 <Route path="/bible" element={<BibleHistoryPage />} />
                 <Route path="/bernie" element={<BernieShowPage />} />
                 <Route path="/admin/login" element={<AdminLoginPage />} />
@@ -865,15 +884,19 @@ export default function App() {
             </Suspense>
           </ErrorBoundary>
         </main>
-        {!isAdmin && <Footer />}
+        {!isAdmin && !isInstitute && <Footer />}
         <Suspense fallback={null}>
           <AuthModal />
         </Suspense>
         <Toast />
         <Suspense fallback={null}>
-          <NewsletterPopup />
-          <ExitIntentCapture />
-          <StickyMembershipBar />
+          {!isInstitute && (
+            <>
+              <NewsletterPopup />
+              <ExitIntentCapture />
+              <StickyMembershipBar />
+            </>
+          )}
           <PerformanceMonitor />
           <CookieConsent />
         </Suspense>

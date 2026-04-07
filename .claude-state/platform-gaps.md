@@ -9,3 +9,13 @@
 - **Source-link health automation now exists locally, but it is not yet operationalized or fully remediated.**
   Impact: `npm run verify:sources` now detects citation decay, but the remaining dossier/profile failures can still erode trust and there is no scheduled or CI-backed enforcement yet.
   Recommendation: remediate the remaining broken links, then wire `npm run verify:sources` into CI or a scheduled Railway/GitHub workflow.
+
+## Emerging
+
+- **The Veritas Institute manual export is browser-side only.**
+  Impact: very large Book of Knowledge generations depend on client memory and device stability, which is fragile for a long-form field manual.
+  Recommendation: if live browser testing shows instability, move the institute PDF build to a server-side or build-time artifact so the manual becomes a durable downloadable asset rather than a best-effort client render.
+
+- **The Veritas Institute catalog is code-authored, not editor-authored.**
+  Impact: the new learning vertical can scale fast in the repo, but long-term editorial expansion will bottleneck on code changes instead of structured publishing workflows.
+  Recommendation: once the information architecture is validated, introduce a structured authoring system or content model for courses, guides, and manual sections.

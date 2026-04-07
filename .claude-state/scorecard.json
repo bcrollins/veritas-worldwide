@@ -1,5 +1,5 @@
 {
-  "run": 12,
+  "run": 13,
   "date": "2026-04-07",
   "site": [
     {
@@ -57,6 +57,14 @@
       "delta": 0.3,
       "status": "improved",
       "plus_half_requires": "Verify the deployed shell at 390px and 430px on the homepage, /read, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
+    },
+    {
+      "feature": "Veritas Institute",
+      "composite": 7.8,
+      "previous": 0,
+      "delta": 7.8,
+      "status": "launched",
+      "plus_half_requires": "Verify /institute, /institute/book, and representative course/guide routes live at 390px and 430px, then deepen the longform lesson bodies and harden the PDF/manual export for very large document generation."
     }
   ],
   "growth": [
@@ -70,11 +78,11 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 8.8,
+      "score": 8.9,
       "previous": 8.8,
-      "delta": 0,
-      "status": "stable",
-      "plus_half_requires": "Connect Search Console, publish more topic hubs around recurring query clusters, and keep current-reporting pages shipping on a predictable cadence."
+      "delta": 0.1,
+      "status": "improved",
+      "plus_half_requires": "Validate Search Console coverage for the new /institute route family, then expand search-intent coverage with deeper course bodies and sustained current-reporting cadence."
     },
     {
       "area": "Analytics & Measurement",

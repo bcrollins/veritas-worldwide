@@ -643,3 +643,250 @@ html.dark .card-lift:hover {
   .bg-ink .text-white\/60, .bg-ink .text-white\/70 { color: #333 !important; }
   .bg-ink .text-crimson-light { color: #333 !important; font-weight: bold; }
 }
+
+/* Veritas Institute — distinct product shell */
+.institute-shell-root,
+.institute-shell {
+  --institute-page: #07101f;
+  --institute-page-alt: #0c1730;
+  --institute-surface: rgba(11, 18, 34, 0.82);
+  --institute-surface-strong: rgba(16, 24, 46, 0.94);
+  --institute-card: rgba(18, 28, 53, 0.9);
+  --institute-border: rgba(131, 151, 204, 0.16);
+  --institute-border-strong: rgba(128, 149, 255, 0.35);
+  --institute-grid-line: rgba(141, 161, 208, 0.09);
+  --institute-ink: #f4f7ff;
+  --institute-ink-strong: #ffffff;
+  --institute-muted: #b4c0dd;
+  --institute-muted-strong: #8ea2d2;
+  --institute-accent: #90a7ff;
+  --institute-accent-strong: #d7e1ff;
+}
+
+.institute-shell-root {
+  background: linear-gradient(180deg, var(--institute-page) 0%, var(--institute-page-alt) 100%);
+  color: var(--institute-ink);
+}
+
+.institute-shell {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(91, 110, 255, 0.2), transparent 28%),
+    radial-gradient(circle at top right, rgba(54, 173, 197, 0.18), transparent 24%),
+    linear-gradient(180deg, var(--institute-page) 0%, var(--institute-page-alt) 100%);
+  color: var(--institute-ink);
+}
+
+.institute-grid {
+  background-image:
+    linear-gradient(to right, var(--institute-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--institute-grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 88%);
+}
+
+.institute-panel,
+.institute-panel-strong,
+.institute-track-card,
+.institute-topic-card,
+.institute-mini-card,
+.institute-stat,
+.institute-list-row {
+  border: 1px solid var(--institute-border);
+  border-radius: 28px;
+  background: var(--institute-surface);
+  box-shadow: 0 24px 60px rgba(3, 7, 18, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.institute-panel-strong {
+  background:
+    linear-gradient(145deg, rgba(20, 30, 58, 0.95), rgba(10, 18, 38, 0.92)),
+    var(--institute-surface-strong);
+  border-color: var(--institute-border-strong);
+}
+
+.institute-track-card,
+.institute-topic-card,
+.institute-mini-card,
+.institute-list-row,
+.institute-stat {
+  padding: 1.1rem;
+}
+
+.institute-nav-link,
+.institute-filter-pill,
+.institute-pill,
+.institute-button-primary,
+.institute-button-secondary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.institute-nav-link,
+.institute-filter-pill,
+.institute-pill,
+.institute-button-secondary {
+  border: 1px solid var(--institute-border);
+  color: var(--institute-muted);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.institute-nav-link,
+.institute-filter-pill {
+  padding: 0 1rem;
+}
+
+.institute-pill {
+  padding: 0 0.85rem;
+  min-height: 34px;
+  font-size: 0.64rem;
+}
+
+.institute-button-primary,
+.institute-button-secondary {
+  padding: 0 1.1rem;
+}
+
+.institute-button-primary {
+  border: 1px solid var(--institute-border-strong);
+  color: #091122;
+  background: linear-gradient(135deg, var(--institute-accent-strong), var(--institute-accent));
+  box-shadow: 0 14px 30px rgba(87, 111, 255, 0.2);
+}
+
+.institute-button-primary:hover,
+.institute-button-secondary:hover,
+.institute-nav-link:hover,
+.institute-filter-pill:hover {
+  transform: translateY(-1px);
+}
+
+.institute-button-secondary:hover,
+.institute-nav-link:hover,
+.institute-filter-pill:hover,
+.institute-pill:hover {
+  border-color: var(--institute-border-strong);
+  color: var(--institute-ink);
+}
+
+.institute-nav-link.is-active,
+.institute-filter-pill.is-active {
+  border-color: var(--institute-border-strong);
+  background: rgba(145, 167, 255, 0.12);
+  color: var(--institute-ink);
+}
+
+.institute-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--institute-accent);
+}
+
+.institute-input {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 20px;
+  border: 1px solid var(--institute-border);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.9rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--institute-ink);
+}
+
+.institute-input::placeholder {
+  color: var(--institute-muted-strong);
+}
+
+.institute-input:focus {
+  border-color: var(--institute-border-strong);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.institute-stat {
+  display: flex;
+  min-height: 120px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.institute-stat-value {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--institute-ink);
+}
+
+.institute-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--institute-muted);
+}
+
+.institute-list-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .institute-track-card,
+  .institute-topic-card {
+    padding: 1.35rem;
+  }
+}
+
+@media print {
+  .institute-shell-root,
+  .institute-shell {
+    background: white !important;
+    color: #111827 !important;
+  }
+
+  .institute-grid {
+    display: none !important;
+  }
+
+  .institute-panel,
+  .institute-panel-strong,
+  .institute-track-card,
+  .institute-topic-card,
+  .institute-mini-card,
+  .institute-stat,
+  .institute-list-row {
+    background: white !important;
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .institute-button-primary,
+  .institute-button-secondary,
+  .institute-nav-link,
+  .institute-filter-pill,
+  .institute-pill {
+    background: white !important;
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+    box-shadow: none !important;
+  }
+}
