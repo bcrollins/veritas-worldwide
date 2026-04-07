@@ -1,5 +1,5 @@
 {
-  "run": 16,
+  "run": 17,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -26,10 +26,12 @@
     "Replaced a verified batch of dead or retired citation URLs with working current or archive-backed links across the Israel dossier, profile corpus, and chapter sources, reducing actionable source-link issues from 39 to 28.",
     "Revalidated the updated repo with `npm run verify:sources`, `npx tsc --noEmit`, and `npm run build`; the source report now shows 299 OK URLs, 56 restricted/bot-blocked URLs, and 28 actionable failures.",
     "Replaced the remaining actionable dossier/profile/chapter citation failures with live current URLs, official replacements, or archive-backed URLs across src/data/israelDossierExpanded.ts, src/data/profileData.ts, and the chapter-1, chapter-7, chapter-9, chapter-16, and chapter-23 source lists.",
-    "Revalidated the trust surface on April 7, 2026 with `npm run verify:sources`, `npx tsc --noEmit`, and `npm run build`; the source verifier now passes with 379 unique URLs checked, 320 OK URLs, 58 restricted/bot-blocked URLs, and 0 actionable failures."
+    "Revalidated the trust surface on April 7, 2026 with `npm run verify:sources`, `npx tsc --noEmit`, and `npm run build`; the source verifier now passes with 379 unique URLs checked, 320 OK URLs, 58 restricted/bot-blocked URLs, and 0 actionable failures.",
+    "Confirmed on April 7, 2026 that `origin/main` contains commit `1012c25`, but production is still serving older shell assets and older authenticated chapter JSON; live probes against `https://veritasworldwide.com/api/chapters/chapter-1` and `chapter-23` still return the pre-fix source URLs, so the release pipeline is stale rather than the audit being fooled by shell caching alone."
   ],
-  "next_task": "Verify the deployed publication shell and chapter/auth flows in a real browser session at 390px and 430px widths, starting with /, /read, /membership, and /chapter/foreword, now that the source-integrity backlog is cleared.",
+  "next_task": "Recover deploy visibility and confirm production serves commit `1012c25`; the live site is still on stale shell assets and stale authenticated chapter JSON, so release validation now outranks the queued mobile audit.",
   "next_priorities": [
+    "Regain Railway deployment visibility or credentials, inspect the deployment state for commit `1012c25`, and do not treat the source-integrity fix as shipped until production serves the updated chapter JSON.",
     "Verify the deployed homepage institute module and publication shell on /, /read, /news, and /membership at 390px and 430px in a real browser session, focusing on scanability, grouped mobile navigation, and CTA clarity.",
     "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session, including signed-out previews, login upgrade, logout downgrade, and protected PDF/download affordances.",
     "Decide whether to wire npm run verify:auth and npm run verify:sources into CI or a scheduled operational check against Railway now that the source verifier is clean and stable.",

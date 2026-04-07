@@ -1,5 +1,6 @@
 # Veritas Audit Queue — 2026-04-07
 
+- [P0] Recover deploy visibility for the stale production release: `origin/main` is at `1012c25`, but `https://veritasworldwide.com` is still serving older shell assets and older authenticated chapter JSON. Confirm the Railway deployment state for `1012c25` before treating the source-integrity work as shipped.
 - [x] P0 — Re-ran the live logout revocation check after deploy: the same bearer token now gets `401` from `/api/auth/me` and `/api/downloads/the-record.pdf` after logout.
 - [x] P1 — Added repo-native auth regression coverage via `npm run verify:auth` for anonymous preview, register, login, full chapter unlock, source-only search, protected PDF download, logout, revoked-token denial, and post-logout chapter downgrade.
 - [x] P2 — Restored canonical evidence taxonomy on public trust surfaces: `/deep-state` now uses `Verified`, chapter 20 preview/generated copy no longer says `Alleged`, and `/methodology` now has working in-page anchor navigation plus canonical disputed-language copy.

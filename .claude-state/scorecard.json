@@ -1,5 +1,5 @@
 {
-  "run": 16,
+  "run": 17,
   "date": "2026-04-07",
   "site": [
     {
@@ -28,11 +28,11 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.2,
+      "composite": 9,
       "previous": 9,
-      "delta": 0.2,
-      "status": "improved",
-      "plus_half_requires": "Operationalize npm run verify:sources in CI or a scheduled Railway/GitHub check and reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set."
+      "delta": 0,
+      "status": "watch",
+      "plus_half_requires": "Get commit `1012c25` live in production, then operationalize npm run verify:sources in CI or a scheduled Railway/GitHub check and reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set."
     },
     {
       "feature": "Search",

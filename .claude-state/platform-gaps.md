@@ -2,6 +2,10 @@
 
 ## Critical
 
+- **Deployment traceability is weak or inaccessible from the active workspace.**
+  Impact: `origin/main` can advance to a known commit while production still serves stale assets and stale authenticated chapter JSON, but there is no linked Railway project or local auth token available here to inspect logs, deployment state, or trigger a corrective redeploy.
+  Recommendation: restore workspace access to the Railway project, persist a non-interactive operator path for deployment inspection, and add release-status visibility so a stale deploy becomes an observable incident instead of a manual inference.
+
 - **Production monitoring is absent.**
   Impact: auth, search, analytics, and prerender regressions can ship without structured alerting or stack traces.
   Recommendation: add Sentry or an equivalent production error monitoring service and wire both server and client exceptions into it.
