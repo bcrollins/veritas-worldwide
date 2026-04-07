@@ -1,6 +1,9 @@
 # Veritas Audit Queue — 2026-04-07
 
+- [x] P0 — Added live release observability to `server.js`: the app now exposes `/api/build-info`, sends `X-Veritas-Version` / `X-Veritas-Commit` / `X-Veritas-Deployment` headers when available, and returns real `404` responses for missing hashed assets or missing text artifacts instead of silently falling through to `index.html`.
 - [P0] Recover deploy visibility for the stale production release: `origin/main` now includes `df7f385`, but a 90-second live poll after push still showed `https://veritasworldwide.com/api/search?q=federal+reserve` returning `chapterType: null` and empty public evidence tiers. Confirm the Railway deployment state for `df7f385` before treating the public metadata fix as shipped.
+- [P0] Confirm production has advanced beyond the stale frontend shell: as of April 7, 2026, 6:48 PM ET, live `/` still serves `assets/index-Dy121ABf.js` and `assets/index-BG23crK4.css` while the current local build is `assets/index-C-bDKgX0.js` and `assets/index-B4N4KVUX.css`.
+- [P0] Once production updates, verify `/api/build-info` and `X-Veritas-*` headers live, then re-run the stale deploy checks against `/api/search?q=federal+reserve`, `/api/chapters/chapter-1`, `/llms.txt`, and `/veritas-institute.md`.
 - [x] P0 — Re-ran the live logout revocation check after deploy: the same bearer token now gets `401` from `/api/auth/me` and `/api/downloads/the-record.pdf` after logout.
 - [x] P1 — Added repo-native auth regression coverage via `npm run verify:auth` for anonymous preview, register, login, full chapter unlock, source-only search, protected PDF download, logout, revoked-token denial, and post-logout chapter downgrade.
 - [x] P2 — Restored `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` to public chapter exports so signed-out search and other public reference surfaces can render real structural metadata without exposing protected source rows.

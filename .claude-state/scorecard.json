@@ -1,5 +1,5 @@
 {
-  "run": 19,
+  "run": 20,
   "date": "2026-04-07",
   "site": [
     {
@@ -65,6 +65,14 @@
       "delta": 0.6,
       "status": "improved",
       "plus_half_requires": "Verify the rebuilt /institute, /institute/book, and representative course/guide routes live at 390px and 430px, confirm /llms.txt and /veritas-institute.md are reachable in production, and pressure-test the PDF/manual export on real browsers."
+    },
+    {
+      "feature": "Deployment Observability",
+      "composite": 6.8,
+      "previous": 5.6,
+      "delta": 1.2,
+      "status": "improved",
+      "plus_half_requires": "Confirm `/api/build-info` and `X-Veritas-*` headers are live in production, then hook Railway release identity into an operator workflow or dashboard so stale deploys are visible without manual bundle inspection."
     }
   ],
   "growth": [

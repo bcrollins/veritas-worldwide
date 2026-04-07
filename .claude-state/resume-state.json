@@ -1,5 +1,5 @@
 {
-  "run": 19,
+  "run": 20,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -37,11 +37,15 @@
     "Restored non-sensitive derived metadata to public chapter exports in `scripts/export-chapter-data.mjs`, so signed-out chapter/search consumers can receive `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` without exposing protected source rows or URLs.",
     "Revalidated the public chapter export fix on April 7, 2026 with `npx tsc --noEmit` and `npm run build`, then inspected `generated/chapter-data/public/*.json` and `public-index.json` to confirm preview payloads now include the restored metadata while `sources` remain empty.",
     "Committed the export/state update as `df7f385` on `main` and pushed it to GitHub on April 7, 2026.",
-    "Polled `https://veritasworldwide.com/api/search?q=federal+reserve` for 90 seconds after pushing `df7f385`; production continued returning `chapterType: null` and empty public evidence tiers, so deploy lag or stale-serving behavior remains unresolved."
+    "Polled `https://veritasworldwide.com/api/search?q=federal+reserve` for 90 seconds after pushing `df7f385`; production continued returning `chapterType: null` and empty public evidence tiers, so deploy lag or stale-serving behavior remains unresolved.",
+    "Confirmed on April 7, 2026, 6:48 PM ET that production still serves stale shell assets (`assets/index-Dy121ABf.js` and `assets/index-BG23crK4.css`) while the current local build outputs `assets/index-C-bDKgX0.js` and `assets/index-B4N4KVUX.css`.",
+    "Patched `server.js` so the app now exposes `/api/build-info`, sends `X-Veritas-Version` / `X-Veritas-Commit` / `X-Veritas-Deployment` headers when available, and returns real `404` responses for missing static assets instead of falling through to `index.html`.",
+    "Validated the deploy-observability patch locally on April 7, 2026 with `node --check server.js`, `npx tsc --noEmit`, `npm run build`, a live local `/api/build-info` probe, and local checks confirming `/llms.txt` and `/veritas-institute.md` resolve correctly while a missing hashed asset returns `404`."
   ],
-  "next_task": "Recover deploy visibility for commit `df7f385`, confirm production serves the public chapter-export metadata fix and rebuilt Institute assets, then verify the signed-out search/source surfaces and Institute routes live on mobile widths.",
+  "next_task": "Wait for production to serve the new `/api/build-info` endpoint and X-Veritas release headers, then use that release signal to confirm whether the stale search metadata fix, Institute assets, and homepage CTA are live before doing mobile browser verification.",
   "next_priorities": [
-    "Regain Railway deployment visibility or credentials, inspect the deployment state for commit `df7f385`, and do not treat the public metadata fix as shipped until production serves the updated preview/search payloads.",
+    "Probe `https://veritasworldwide.com/api/build-info` and the `X-Veritas-*` response headers until production exposes the new release identity surface, then compare the live commit and entry assets against `main` instead of inferring deploy state from HTML fallbacks.",
+    "Regain Railway deployment visibility or credentials, inspect the deployment state for commit `df7f385` / the later ops fixes, and do not treat the public metadata fix as shipped until production serves the updated preview/search payloads.",
     "Confirm production serves the public chapter-export metadata fix by probing `/api/search?q=federal+reserve` and `/api/chapters/chapter-1` for `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` in preview payloads.",
     "Confirm the rebuilt Institute surfaces are live in production: `/institute`, `/institute/book`, `/institute/methodology`, representative `/institute/courses/:slug`, representative `/institute/guides/:slug`, `/llms.txt`, and `/veritas-institute.md`.",
     "Verify the rebuilt Institute surfaces at 390px and 430px in a real browser session, focusing on scanability, sticky shell behavior, CTA clarity, and the new answer-first hierarchy.",

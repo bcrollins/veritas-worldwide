@@ -2,9 +2,9 @@
 
 ## Critical
 
-- **Deployment traceability is weak or inaccessible from the active workspace.**
-  Impact: `origin/main` can advance to a known commit while production still serves stale assets and stale authenticated chapter JSON, but there is no linked Railway project or local auth token available here to inspect logs, deployment state, or trigger a corrective redeploy.
-  Recommendation: restore workspace access to the Railway project, persist a non-interactive operator path for deployment inspection, and add release-status visibility so a stale deploy becomes an observable incident instead of a manual inference.
+- **Production deployment state is still stale and Railway remains inaccessible from the active workspace.**
+  Impact: a release-observability patch is now shipped on `main`, but as of April 7, 2026, 6:48 PM ET production still serves older shell assets and older public chapter/search payloads; without Railway access from this workspace, the deployment cannot be inspected or forced forward directly.
+  Recommendation: restore workspace access to the Railway project and use the new `/api/build-info` plus `X-Veritas-*` headers once they are live to compare production against `main` immediately.
 
 - **Production monitoring is absent.**
   Impact: auth, search, analytics, and prerender regressions can ship without structured alerting or stack traces.

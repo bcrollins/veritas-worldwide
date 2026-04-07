@@ -13,12 +13,70 @@ const CHAPTER_FULL_DIR = path.join(GENERATED_CHAPTER_DATA_DIR, 'full')
 const CHAPTER_PUBLIC_INDEX_FILE = path.join(GENERATED_CHAPTER_DATA_DIR, 'public-index.json')
 const CHAPTER_MANIFEST_FILE = path.join(GENERATED_CHAPTER_DATA_DIR, 'manifest.json')
 const RECORD_PDF_PATH = path.join(__dirname, 'dist', 'the-record.pdf')
+const DIST_INDEX_HTML_PATH = path.join(__dirname, 'dist', 'index.html')
+const PACKAGE_JSON_PATH = path.join(__dirname, 'package.json')
 
 let publicChapterIndex = []
 let chapterDataManifest = { previewBlockLimit: 3, chapterIds: [], generatedAt: '' }
 const EVIDENCE_TIER_FILTERS = new Set(['verified', 'circumstantial', 'disputed'])
 const CHAPTER_TYPE_FILTERS = new Set(['reference', 'explainer', 'investigation'])
 const SEARCH_MATCH_FILTERS = new Set(['all', 'sources'])
+
+function readPackageVersion() {
+  try {
+    const packageJson = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, 'utf-8'))
+    return typeof packageJson.version === 'string' ? packageJson.version : ''
+  } catch {
+    return ''
+  }
+}
+
+function readGitCommitFallback() {
+  try {
+    const gitDir = path.join(__dirname, '.git')
+    const headPath = path.join(gitDir, 'HEAD')
+    if (!fs.existsSync(headPath)) return ''
+
+    const head = fs.readFileSync(headPath, 'utf-8').trim()
+    if (!head) return ''
+
+    if (!head.startsWith('ref:')) {
+      return head
+    }
+
+    const refPath = path.join(gitDir, head.replace(/^ref:\s*/, ''))
+    if (!fs.existsSync(refPath)) return ''
+
+    return fs.readFileSync(refPath, 'utf-8').trim()
+  } catch {
+    return ''
+  }
+}
+
+function getReleaseCommit() {
+  return process.env.RAILWAY_GIT_COMMIT_SHA || process.env.GITHUB_SHA || readGitCommitFallback()
+}
+
+function getDistEntryAssets() {
+  if (!fs.existsSync(DIST_INDEX_HTML_PATH)) {
+    return { js: [], css: [] }
+  }
+
+  try {
+    const html = fs.readFileSync(DIST_INDEX_HTML_PATH, 'utf-8')
+    const js = [...html.matchAll(/assets\/[A-Za-z0-9._-]+\.js/g)].map((match) => match[0])
+    const css = [...html.matchAll(/assets\/[A-Za-z0-9._-]+\.css/g)].map((match) => match[0])
+
+    return {
+      js: [...new Set(js)],
+      css: [...new Set(css)],
+    }
+  } catch {
+    return { js: [], css: [] }
+  }
+}
+
+const APP_VERSION = readPackageVersion()
 
 function loadChapterData() {
   try {
@@ -330,6 +388,16 @@ app.use((req, res, next) => {
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
+  if (APP_VERSION) {
+    res.setHeader('X-Veritas-Version', APP_VERSION)
+  }
+  const releaseCommit = getReleaseCommit()
+  if (releaseCommit) {
+    res.setHeader('X-Veritas-Commit', releaseCommit.slice(0, 12))
+  }
+  if (process.env.RAILWAY_DEPLOYMENT_ID) {
+    res.setHeader('X-Veritas-Deployment', process.env.RAILWAY_DEPLOYMENT_ID)
+  }
   next()
 })
 
@@ -1029,6 +1097,32 @@ try {
   prerenderManifest = {}
 }
 
+app.get('/api/build-info', (req, res) => {
+  const releaseCommit = getReleaseCommit()
+  const distIndexLastModified = fs.existsSync(DIST_INDEX_HTML_PATH)
+    ? fs.statSync(DIST_INDEX_HTML_PATH).mtime.toISOString()
+    : ''
+
+  res.setHeader('Cache-Control', 'no-store')
+  res.json({
+    version: APP_VERSION,
+    commit: releaseCommit,
+    commitShort: releaseCommit ? releaseCommit.slice(0, 12) : '',
+    branch: process.env.RAILWAY_GIT_BRANCH || '',
+    deploymentId: process.env.RAILWAY_DEPLOYMENT_ID || '',
+    environment: process.env.RAILWAY_ENVIRONMENT_NAME || process.env.NODE_ENV || '',
+    service: process.env.RAILWAY_SERVICE_NAME || '',
+    replica: process.env.RAILWAY_REPLICA_ID || '',
+    replicaRegion: process.env.RAILWAY_REPLICA_REGION || '',
+    distIndexLastModified,
+    chapterDataGeneratedAt: chapterDataManifest.generatedAt || '',
+    previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
+    publicChapterCount: publicChapterIndex.length,
+    prerenderedRouteCount: Object.keys(prerenderManifest).length,
+    entryAssets: getDistEntryAssets(),
+  })
+})
+
 function normalizePrerenderRoute(routePath) {
   if (!routePath || routePath === '/') return '/'
   return routePath.endsWith('/') ? routePath.slice(0, -1) : routePath
@@ -1064,6 +1158,16 @@ app.use(express.static(path.join(__dirname, 'dist'), {
     }
   },
 }))
+
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next()
+  if (req.path.startsWith('/api/')) return next()
+  if (!path.extname(req.path)) return next()
+
+  res.status(404)
+  res.type('text/plain')
+  return res.send('Not found')
+})
 
 app.use('/api', (req, res) => {
   res.status(404).json({ error: 'API route not found' })
