@@ -9,12 +9,12 @@ type InstituteNavLink = {
 const navLinks: InstituteNavLink[] = [
   {
     to: '/institute',
-    label: 'Catalog',
+    label: 'Trade Courses',
     match: (pathname) => pathname === '/institute' || pathname.startsWith('/institute/courses') || pathname.startsWith('/institute/guides'),
   },
   {
     to: '/institute/book',
-    label: 'Book of Knowledge',
+    label: 'Field Manual',
     match: (pathname) => pathname.startsWith('/institute/book'),
   },
   {
@@ -40,14 +40,14 @@ export default function InstituteLayout() {
           <div className="min-w-0">
             <Link to="/institute" className="group inline-flex flex-col gap-1">
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.24em] text-[color:var(--institute-accent)]">
-                Veritas Worldwide Learning Division
+                Veritas Worldwide Press
               </span>
               <span className="text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)] transition-colors group-hover:text-[color:var(--institute-ink-strong)]">
                 Veritas Institute
               </span>
             </Link>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--institute-muted)]">
-              Practical career paths, resilient household systems, and source-backed skill guides for a fragile decade.
+              Field-manual answers for ordinary emergencies, plus source-backed courses in trades, repair, household systems, and practical self-reliance.
             </p>
           </div>
 
@@ -70,8 +70,8 @@ export default function InstituteLayout() {
             </nav>
 
             <div className="flex flex-wrap gap-2">
-              <Link to="/" className="institute-button-secondary">
-                Veritas Worldwide
+              <Link to="/institute" className="institute-button-secondary">
+                Browse Trade Courses
               </Link>
               <Link to="/institute/book" className="institute-button-primary">
                 Open the Field Manual
@@ -89,13 +89,13 @@ export default function InstituteLayout() {
         <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.5fr_repeat(3,minmax(0,1fr))] lg:px-8">
           <div>
             <p className="font-mono text-[0.65rem] uppercase tracking-[0.24em] text-[color:var(--institute-accent)]">
-              Same methodology, different mission
+              Same evidence standards, practical mission
             </p>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-              Veritas Institute keeps the Veritas discipline and drops the publication chrome.
+              Veritas Institute keeps the Veritas discipline and applies it to useful work.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-[color:var(--institute-muted)]">
-              Official pathways, real constraints, public guidance, and calm operating logic outrank hype. The institute is designed to answer practical questions in a form search engines, LLMs, and stressed humans can all use.
+              The institute is built for the question in front of you: what keeps a household functioning, what gets a person into real trade work, and what official guidance still matters when the moment is messy.
             </p>
           </div>
 
@@ -104,8 +104,8 @@ export default function InstituteLayout() {
               Institute
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <Link to="/institute" className="hover:text-[color:var(--institute-ink)] transition-colors">Top 100 catalog</Link>
-              <Link to="/institute/book" className="hover:text-[color:var(--institute-ink)] transition-colors">Book of Knowledge</Link>
+              <Link to="/institute" className="hover:text-[color:var(--institute-ink)] transition-colors">Trade course catalog</Link>
+              <Link to="/institute/book" className="hover:text-[color:var(--institute-ink)] transition-colors">Field manual</Link>
               <Link to="/institute/methodology" className="hover:text-[color:var(--institute-ink)] transition-colors">Demand methodology</Link>
             </div>
           </nav>
@@ -115,10 +115,10 @@ export default function InstituteLayout() {
               Core tracks
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <a href="/institute#track-ai-automation" className="hover:text-[color:var(--institute-ink)] transition-colors">AI & Automation</a>
               <a href="/institute#track-trades" className="hover:text-[color:var(--institute-ink)] transition-colors">Trades</a>
-              <a href="/institute#track-tech" className="hover:text-[color:var(--institute-ink)] transition-colors">Tech & Data</a>
+              <a href="/institute#track-home-repair" className="hover:text-[color:var(--institute-ink)] transition-colors">Repair</a>
               <a href="/institute#track-preparedness" className="hover:text-[color:var(--institute-ink)] transition-colors">Preparedness</a>
+              <a href="/institute#track-food-self-reliance" className="hover:text-[color:var(--institute-ink)] transition-colors">Food & Garden</a>
             </div>
           </nav>
 

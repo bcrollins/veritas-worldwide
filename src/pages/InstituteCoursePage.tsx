@@ -87,7 +87,7 @@ export default function InstituteCoursePage() {
     <article className="space-y-8">
       <section className="institute-panel-strong px-6 py-8 sm:px-8 lg:px-10">
         <Link to="/institute" className="text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
-          ← Back to the top 100 catalog
+          ← Back to the practical course catalog
         </Link>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -130,7 +130,7 @@ export default function InstituteCoursePage() {
             Read companion guide
           </Link>
           <Link to="/institute/book" className="institute-button-secondary">
-            See it in the Book of Knowledge
+            See it in the Field Manual
           </Link>
         </div>
       </section>

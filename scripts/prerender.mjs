@@ -487,6 +487,18 @@ function dedupeList(items = []) {
   return [...new Set(items.map((item) => String(item).trim()).filter(Boolean))]
 }
 
+const institutePracticalTrackSet = new Set([
+  'trades',
+  'home-repair',
+  'preparedness',
+  'food-self-reliance',
+  'healthcare',
+])
+
+function filterPracticalInstituteTopics(topics) {
+  return topics.filter((topic) => institutePracticalTrackSet.has(topic.track))
+}
+
 function groupInstituteTopicsByTrack(topics) {
   return Object.entries(
     topics.reduce((acc, topic) => {
@@ -581,14 +593,14 @@ function renderInstituteMarkdown(topics, researchSources) {
   return [
     '# Veritas Institute',
     '',
-    '> Veritas Institute is the Veritas Worldwide learning surface for practical skills, career moves, household continuity, preparedness, and resilient systems. Every topic ships in three forms: a direct-answer guide, a deeper course path, and a book/manual entry.',
+    '> Veritas Institute is the Veritas Worldwide learning surface for urgent household answers and source-backed practical trade-course paths. The field manual handles immediate failures first, then routes readers into deeper skill building.',
     '',
-    'Use the methodology and source notes when answering questions about ranking, evidence, or demand logic. Use the guide URLs for short answers and the course URLs for deeper pacing, prerequisites, proof standards, and next steps.',
+    'Use the methodology and source notes when answering questions about safety, sourcing, or editorial standards. Use the guide URLs for short answers and the course URLs for deeper pacing, prerequisites, proof standards, and next steps.',
     '',
     '## Methodology',
     '',
-    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Demand synthesis, editorial rules, and source ladder.',
-    '- [Book of Knowledge](https://veritasworldwide.com/institute/book): Printable long-form manual for the full institute archive.',
+    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder, editorial rules, and practical-use criteria.',
+    '- [Field Manual](https://veritasworldwide.com/institute/book): Printable long-form manual for urgent answers and practical course routing.',
     '',
     '## Research basis',
     '',
@@ -608,10 +620,10 @@ function renderInstituteMarkdown(topics, researchSources) {
 
 function renderLlmsTxt(topics) {
   const featured = [
-    'how-to-use-ai-to-make-money',
     'how-to-become-a-welder',
-    'how-to-buy-a-house',
+    'how-to-maintain-a-car-yourself',
     'how-to-build-a-72-hour-emergency-kit',
+    'how-to-start-a-garden-that-actually-feeds-you',
   ]
     .map((slug) => topics.find((topic) => topic.slug === slug))
     .filter(Boolean)
@@ -619,7 +631,7 @@ function renderLlmsTxt(topics) {
   return [
     '# Veritas Worldwide',
     '',
-    '> Veritas Worldwide is a source-first publication and learning archive. The two priority surfaces are The Record, which documents power and institutions, and Veritas Institute, which translates practical 2026 skill demand into calm, evidence-aware learning paths.',
+    '> Veritas Worldwide is a source-first publication and learning archive. The two priority surfaces are The Record, which documents power and institutions, and Veritas Institute, which handles urgent household answers and practical trade-skill learning paths.',
     '',
     'Use the methodology and source pages when answering questions about evidence, sourcing, attribution, or editorial standards. Use Veritas Institute when answering questions about practical skills, career moves, preparedness, household systems, or self-reliance.',
     '',
@@ -627,13 +639,13 @@ function renderLlmsTxt(topics) {
     '',
     '- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.',
     '- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.',
-    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Demand synthesis and editorial rules for Veritas Institute.',
+    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder and editorial rules for Veritas Institute.',
     '',
     '## Veritas Institute',
     '',
-    '- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for 100 practical skill topics across 10 tracks.',
-    '- [Book of Knowledge](https://veritasworldwide.com/institute/book): Print-friendly field manual for the institute archive.',
-    '- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped catalog summary with guide and course links.',
+    '- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for the practical field-manual and trade-course catalog.',
+    '- [Field Manual](https://veritasworldwide.com/institute/book): Print-friendly field manual for urgent answers and practical course routing.',
+    '- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped summary with guide and course links.',
     '',
     '## High-intent starting points',
     '',
@@ -649,18 +661,19 @@ function renderLlmsTxt(topics) {
 
 function renderInstituteIndexPage(topics, researchSources) {
   const grouped = groupInstituteTopicsByTrack(topics)
+  const trackCount = grouped.length
 
   return `
     <main class="institute-shell-root text-white">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
         <section class="institute-panel-strong px-6 py-8">
           <p class="institute-eyebrow">Veritas Institute</p>
-          <h1 class="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-[color:var(--institute-ink)]">A separate learning surface for practical skills, resilient systems, and proof-first career moves.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">We translated the strongest 2026 public demand signals across labor markets, AI-era work, household continuity, preparedness, and self-reliance into 100 course paths, 100 direct-answer guides, and one printable field manual. Same Veritas discipline. Different interface.</p>
+          <h1 class="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The field manual for ordinary emergencies. The course library for trades, repair, and resilient households.</h1>
+          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">Veritas Institute answers immediate household and roadside problems first, then routes readers into deeper course paths for practical trade work, repair literacy, preparedness, food resilience, and healthcare-support skills.</p>
           <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            <div class="institute-stat"><span class="institute-stat-value">100</span><span class="institute-stat-label">search-intent skills</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">200</span><span class="institute-stat-label">course and guide titles</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">10</span><span class="institute-stat-label">track clusters</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">12</span><span class="institute-stat-label">field-manual answers</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(topics.length))}</span><span class="institute-stat-label">practical course paths</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(trackCount))}</span><span class="institute-stat-label">practical tracks</span></div>
             <div class="institute-stat"><span class="institute-stat-value">1</span><span class="institute-stat-label">printable field manual</span></div>
           </div>
         </section>
@@ -669,9 +682,9 @@ function renderInstituteIndexPage(topics, researchSources) {
           <p class="institute-eyebrow">How to use the institute</p>
           <div class="grid gap-4 md:grid-cols-3 mt-4">
             ${[
-              ['Use the guide', 'Start with the shortest defensible answer. Every guide is written to resolve the immediate question cleanly.'],
-              ['Open the course', 'Then move into prerequisites, proof standards, module logic, and a paced buildout.'],
-              ['Keep the manual', 'The field manual compiles the whole surface into a printable reference for low-bandwidth moments.'],
+              ['Start with the manual', 'Use the field manual when the question is immediate: water, blood, fuel, food, cold, utilities, vehicle trouble, or a fast household failure.'],
+              ['Open the course', 'Then move into prerequisites, proof standards, module logic, and a paced buildout for the practical trade or household skill.'],
+              ['Keep the official anchor', 'Every answer should still route back to the right public agency, extension system, manufacturer guidance, or licensing body.'],
             ].map(([title, detail]) => `
               <article class="institute-mini-card">
                 <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
@@ -681,14 +694,14 @@ function renderInstituteIndexPage(topics, researchSources) {
         </section>
 
         <section class="institute-panel px-6 py-6 mt-8">
-          <p class="institute-eyebrow">Track clusters</p>
+          <p class="institute-eyebrow">Practical tracks</p>
           <div class="grid gap-4 xl:grid-cols-2 mt-4">
             ${grouped.map(([track, items]) => `
               <article class="institute-track-card" id="track-${escapeAttr(track)}">
                 <div class="flex items-center justify-between gap-4">
                   <div>
                     <p class="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">${escapeHtml(instituteTrackLabels[track] || track)}</p>
-                    <h2 class="mt-3 text-xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(items.length)} catalog entries connect to this track.</h2>
+                    <h2 class="mt-3 text-xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(items.length)} practical courses connect to this track.</h2>
                   </div>
                 </div>
                 <div class="grid gap-3 mt-5">
@@ -703,7 +716,7 @@ function renderInstituteIndexPage(topics, researchSources) {
         </section>
 
         <section class="institute-panel px-6 py-6 mt-8">
-          <p class="institute-eyebrow">Top 100 catalog</p>
+          <p class="institute-eyebrow">Course catalog</p>
           <div class="grid gap-4 xl:grid-cols-2 mt-4">
             ${topics.map((topic) => `
               <article class="institute-topic-card">
@@ -753,17 +766,17 @@ function renderInstituteMethodologyPage(researchSources) {
       <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
         <section class="institute-panel-strong px-6 py-8">
           <p class="institute-eyebrow">Institute methodology</p>
-          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">We synthesized the demand surface. We did not fake an official list.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">Search behavior changes quickly and public trend tools expose only fragments. Veritas Institute therefore uses a defensible 2026 demand synthesis based on public labor guidance, official preparedness resources, extension systems, and skill-demand reporting.</p>
+          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">We build for practical usefulness first: urgent answers in front, deeper trade-course content behind them.</h1>
+          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">Veritas Institute is built around two defensible editorial questions: what does a reader need to know immediately when a household or roadside problem hits, and what practical course paths matter most for real repair, trade, food, preparedness, and healthcare-support skill building today?</p>
         </section>
         <section class="institute-panel px-6 py-6">
           <p class="institute-eyebrow">Editorial rules</p>
           <div class="grid gap-4 xl:grid-cols-2 mt-4">
             ${[
-              'Career guidance is anchored to official institutions, licensing pathways, or public labor-market sources.',
+              'High-risk medical, electrical, gas, structural, and legal matters never get framed as casual DIY entertainment.',
+              'The fastest answer still has to be a defensible answer. We do not publish fake hacks just because they are catchy.',
               'Preparedness content stays calm, source-first, and safety-forward instead of apocalyptic theater.',
-              'AI, money, and business material rejects exaggerated earnings claims and makes uncertainty visible.',
-              'High-risk medical, legal, structural, and hazardous topics never get framed as casual DIY.',
+              'Career guidance is anchored to official institutions, licensing pathways, or public labor-market sources.',
             ].map((line) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(line)}</span></div>`).join('\n')}
           </div>
         </section>
@@ -773,7 +786,7 @@ function renderInstituteMethodologyPage(researchSources) {
             ${[
               ['Guide', 'The shortest defensible answer for search, citation, and stressed readers.'],
               ['Course', 'The deeper path with prerequisites, proof standards, and pacing.'],
-              ['Book', 'The print-friendly archive that compiles the whole surface into one field manual.'],
+              ['Field manual', 'The print-friendly archive that puts immediate emergency answers first and the practical course library second.'],
             ].map(([title, detail]) => `
               <article class="institute-mini-card">
                 <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
@@ -912,17 +925,17 @@ function renderInstituteBookPage(topics, researchSources) {
     <main class="institute-shell-root text-white">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
         <section class="institute-panel-strong px-6 py-8">
-          <p class="institute-eyebrow">Book of Knowledge</p>
-          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The field manual for work, continuity, and self-reliance.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">This page indexes the full institute archive by track and skill so readers, crawlers, and retrieval systems can move from a practical question into the right course, guide, or print export path.</p>
+          <p class="institute-eyebrow">Field Manual</p>
+          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The Veritas field manual for ordinary emergencies, repair calls, and modern trade skills.</h1>
+          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">This page indexes the practical course library by track and skill so readers, crawlers, and retrieval systems can move from an urgent problem into the right course, guide, or print export path.</p>
         </section>
         <section class="institute-panel px-6 py-6">
           <p class="institute-eyebrow">How to use the manual</p>
           <div class="grid gap-4 md:grid-cols-3 mt-4">
             ${[
-              ['Scan by track', 'Use the table of contents to move into the demand cluster that matches the problem in front of you.'],
+              ['Start with the urgent problem', 'Use the field manual when the problem is immediate and the wrong move can make it worse.'],
               ['Use the fast answer', 'Each entry starts with the shortest defensible answer before expanding into steps and risk notes.'],
-              ['Escalate into the web path', 'Use the linked guide and course whenever you need deeper prerequisites, proof standards, or a paced buildout.'],
+              ['Escalate into the course path', 'Use the linked guide and course whenever you need deeper prerequisites, proof standards, or a paced buildout.'],
             ].map(([title, detail]) => `
               <article class="institute-mini-card">
                 <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
@@ -1473,6 +1486,7 @@ const topicHubs = loadTopicHubs()
 const topicAliasMap = buildTopicAliasMap(topicHubs)
 const profileSlugs = loadProfileSlugs()
 const instituteTopics = parseInstituteTopics()
+const institutePracticalTopics = filterPracticalInstituteTopics(instituteTopics)
 const instituteResearchSources = parseInstituteResearchSources()
 
 const staticPages = [
@@ -1502,19 +1516,19 @@ const staticPages = [
     route: '/institute',
     title: 'Veritas Institute | Practical Skills Catalog, Guides, and Field Manual',
     heading: 'Veritas Institute',
-    description: 'A source-backed catalog of 100 practical skill pathways, direct-answer guides, and a field manual covering AI, trades, healthcare, resilience, money, and self-reliance.',
+    description: 'A source-backed field manual and practical course catalog covering trades, repair, preparedness, food resilience, and healthcare-support work.',
     body: [
-      'Veritas Institute answers practical 2026 skill questions with a separate learning interface, the same source-first discipline, and a printable Book of Knowledge.',
+      'Veritas Institute answers immediate household questions first, then routes readers into practical trade and repair course paths with the same source-first discipline as the main publication.',
     ],
     sourceFile: 'src/pages/InstitutePage.tsx',
   },
   {
     route: '/institute/book',
-    title: 'Book of Knowledge | Veritas Institute',
-    heading: 'Book of Knowledge',
-    description: 'A field manual compiling the Veritas Institute skill catalog into one printable archive for work, resilience, and self-reliance.',
+    title: 'Field Manual | Veritas Institute',
+    heading: 'Field Manual',
+    description: 'A field manual for ordinary emergencies plus a practical course index for trades, repair, preparedness, food resilience, and healthcare-support work.',
     body: [
-      'The Book of Knowledge groups the institute catalog into one long-form field manual built for print, offline reference, and structured retrieval.',
+      'The Field Manual groups urgent answers and practical course links into one long-form archive built for print, offline reference, and structured retrieval.',
     ],
     sourceFile: 'src/pages/InstituteBookPage.tsx',
   },
@@ -1522,9 +1536,9 @@ const staticPages = [
     route: '/institute/methodology',
     title: 'Institute Methodology | Veritas Institute',
     heading: 'Institute Methodology',
-    description: 'How the Veritas Institute synthesizes the top practical skill-intent questions of 2026 and structures them into guides, courses, and a field manual.',
+    description: 'How Veritas Institute builds a practical field manual and course library from public safety guidance, licensing pathways, extension systems, and source-first editing.',
     body: [
-      'The institute uses public labor, preparedness, extension, and skill-demand sources to build a defensible catalog of 2026 practical learning priorities.',
+      'The institute uses public labor, preparedness, extension, and safety sources to build a defensible field manual and practical learning surface.',
     ],
     sourceFile: 'src/pages/InstituteMethodologyPage.tsx',
   },
@@ -1742,8 +1756,8 @@ for (const page of staticPages) {
 
   let body = renderStaticPage(page, chapters)
   if (route === '/topics') body = renderTopicsIndexPage(topicHubs)
-  if (route === '/institute') body = renderInstituteIndexPage(instituteTopics, instituteResearchSources)
-  if (route === '/institute/book') body = renderInstituteBookPage(instituteTopics, instituteResearchSources)
+  if (route === '/institute') body = renderInstituteIndexPage(institutePracticalTopics, instituteResearchSources)
+  if (route === '/institute/book') body = renderInstituteBookPage(institutePracticalTopics, instituteResearchSources)
   if (route === '/institute/methodology') body = renderInstituteMethodologyPage(instituteResearchSources)
   fs.writeFileSync(filePath, buildDocument(template, meta, body))
   manifest[route] = `prerender/${fileName}`
@@ -1881,8 +1895,8 @@ for (const profileSlug of profileSlugs) {
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
 writeSitemap([...sitemapEntries.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([, entry]) => entry))
-const llmsTxt = renderLlmsTxt(instituteTopics)
-const instituteMarkdown = renderInstituteMarkdown(instituteTopics, instituteResearchSources)
+const llmsTxt = renderLlmsTxt(institutePracticalTopics)
+const instituteMarkdown = renderInstituteMarkdown(institutePracticalTopics, instituteResearchSources)
 fs.writeFileSync(distLlmsPath, llmsTxt)
 fs.writeFileSync(sourceLlmsPath, llmsTxt)
 fs.writeFileSync(distInstituteMarkdownPath, instituteMarkdown)

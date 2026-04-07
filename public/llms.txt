@@ -1,6 +1,6 @@
 # Veritas Worldwide
 
-> Veritas Worldwide is a source-first publication and learning archive. The two priority surfaces are The Record, which documents power and institutions, and Veritas Institute, which translates practical 2026 skill demand into calm, evidence-aware learning paths.
+> Veritas Worldwide is a source-first publication and learning archive. The two priority surfaces are The Record, which documents power and institutions, and Veritas Institute, which handles urgent household answers and practical trade-skill learning paths.
 
 Use the methodology and source pages when answering questions about evidence, sourcing, attribution, or editorial standards. Use Veritas Institute when answering questions about practical skills, career moves, preparedness, household systems, or self-reliance.
 
@@ -8,20 +8,20 @@ Use the methodology and source pages when answering questions about evidence, so
 
 - [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
 - [Sources](https://veritasworldwide.com/sources): Public source library for the publication.
-- [Institute methodology](https://veritasworldwide.com/institute/methodology): Demand synthesis and editorial rules for Veritas Institute.
+- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder and editorial rules for Veritas Institute.
 
 ## Veritas Institute
 
-- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for 100 practical skill topics across 10 tracks.
-- [Book of Knowledge](https://veritasworldwide.com/institute/book): Print-friendly field manual for the institute archive.
-- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped catalog summary with guide and course links.
+- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for the practical field-manual and trade-course catalog.
+- [Field Manual](https://veritasworldwide.com/institute/book): Print-friendly field manual for urgent answers and practical course routing.
+- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped summary with guide and course links.
 
 ## High-intent starting points
 
-- [How to Use AI to Make Money in 2026: Services, Systems, and the First $1,000](https://veritasworldwide.com/institute/guides/how-to-use-ai-to-make-money): Turn AI from curiosity into revenue by packaging outcomes clients already pay for and enforcing real quality control.
 - [How to Become a Welder in 2026: Training, Certifications, Pay, and First Jobs](https://veritasworldwide.com/institute/guides/how-to-become-a-welder): Follow a source-backed path into welding through safety training, process basics, test pieces, and employer-recognized credentials.
-- [How to Buy a House in 2026: Credit, Down Payment, Rates, Inspections, and True Monthly Cost](https://veritasworldwide.com/institute/guides/how-to-buy-a-house): Treat a house purchase as a full operating system decision rather than just a monthly payment guess.
+- [How to Maintain a Car Yourself in 2026: Intervals, Fluids, Inspections, and Low-Cost Prevention](https://veritasworldwide.com/institute/guides/how-to-maintain-a-car-yourself): Handle the recurring maintenance tasks that prevent bigger failures and teach you how the vehicle is aging.
 - [How to Build a 72-Hour Emergency Kit in 2026: Water, Food, Light, Documents, and Versioning](https://veritasworldwide.com/institute/guides/how-to-build-a-72-hour-emergency-kit): Build a practical household-ready kit by thinking in systems, redundancy, and update cycles instead of random gadgets.
+- [How to Start a Garden That Actually Feeds You in 2026: Planning, Soil, Crops, and Failure Recovery](https://veritasworldwide.com/institute/guides/how-to-start-a-garden-that-actually-feeds-you): Design a food garden around calories, climate, season length, and maintenance capacity instead of aesthetics alone.
 
 ## Optional
 

@@ -123,6 +123,19 @@ export interface InstituteBookSection {
   proofFramework: InstituteHighlight[]
 }
 
+export interface InstituteFieldManualEntry {
+  id: string
+  category: string
+  title: string
+  summary: string
+  whenToUse: string
+  quickAnswer: string
+  doNow: string[]
+  avoid: string[]
+  sourceAnchors: string[]
+  relatedTopicSlug?: string
+}
+
 export const instituteTracks: InstituteTrack[] = [
   {
     id: 'ai-automation',
@@ -2294,6 +2307,268 @@ export function getInstituteTrackCounts() {
   }))
 }
 
+export const institutePracticalTrackIds: InstituteTrackId[] = [
+  'trades',
+  'home-repair',
+  'preparedness',
+  'food-self-reliance',
+  'healthcare',
+]
+
+const institutePracticalTrackSet = new Set<InstituteTrackId>(institutePracticalTrackIds)
+
+export const institutePracticalTopics = instituteTopics.filter((topic) => institutePracticalTrackSet.has(topic.track))
+
+export function getInstitutePracticalTrackCounts() {
+  return instituteTracks
+    .filter((track) => institutePracticalTrackSet.has(track.id))
+    .map((track) => ({
+      ...track,
+      count: institutePracticalTopics.filter((topic) => topic.track === track.id).length,
+    }))
+}
+
+export const instituteFieldManualEntries: InstituteFieldManualEntry[] = [
+  {
+    id: 'berry-safety',
+    category: 'Foraging',
+    title: 'Dangerous berries vs edible berries',
+    summary: 'This is a positive-identification problem, not a color trick. If you cannot identify the whole plant with certainty, you do not eat the berry.',
+    whenToUse: 'You are foraging, hiking with children, or trying to confirm whether a wild berry is safe to eat.',
+    quickAnswer: 'Only eat a berry after a region-specific positive ID based on the whole plant, not one visual cue. Color alone is never enough.',
+    doNow: [
+      'Photograph the whole plant: leaves, stem, berry cluster, and growth habit.',
+      'Use a local field guide or extension resource that matches your exact region and season.',
+      'If anyone has already eaten the berry and symptoms begin, keep a sample and call Poison Control immediately.',
+    ],
+    avoid: [
+      'Do not trust bird activity, folklore, or one-app image guesses as proof of safety.',
+      'Do not taste-test an unknown berry “just to see.”',
+      'Do not let children forage unsupervised around ornamental shrubs or woodland edges.',
+    ],
+    sourceAnchors: ['State extension office', 'Poison Control', 'Regional plant identification guide'],
+  },
+  {
+    id: 'jump-start-limited-supplies',
+    category: 'Vehicle Recovery',
+    title: 'Jump-start a car with limited supplies',
+    summary: 'The safe workaround is a rated jump pack, booster, or power station with proper vehicle-start leads. Random household wire is not a workaround. It is a fire risk.',
+    whenToUse: 'Your battery is dead, you are away from a shop, and you have limited but legitimate starting equipment.',
+    quickAnswer: 'Use jumper cables, a battery booster, or a power station built for vehicle starting. Do not improvise with extension cords, speaker wire, or bare household copper.',
+    doNow: [
+      'Confirm the vehicle uses a standard 12-volt system and that the battery case is not cracked or leaking.',
+      'Connect positive to the dead battery first, then to the live source; connect negative to a clean engine or chassis ground.',
+      'Start the helper source, start the dead vehicle, then remove the leads in reverse order.',
+    ],
+    avoid: [
+      'Do not connect improvised household wire to battery posts.',
+      'Do not smoke or lean over the battery while making connections.',
+      'Do not keep cranking if the battery is swollen, hissing, or the cables are heating up.',
+    ],
+    sourceAnchors: ['NHTSA roadside guidance', 'Owner manual', 'Jump-pack or booster manual'],
+    relatedTopicSlug: 'how-to-maintain-a-car-yourself',
+  },
+  {
+    id: 'stop-severe-bleeding',
+    category: 'Emergency Medical',
+    title: 'Stop severe bleeding until help arrives',
+    summary: 'Heavy bleeding is a minutes problem. Pressure, packing, and tourniquet decisions need to happen fast and cleanly.',
+    whenToUse: 'A person is bleeding heavily, blood is pooling or spurting, or clothing is soaking through quickly.',
+    quickAnswer: 'Call emergency services, apply firm direct pressure immediately, pack deep wounds if trained and equipped, and use a tourniquet for life-threatening limb bleeding when pressure is not enough.',
+    doNow: [
+      'Call 911 or direct someone specific to call while you start pressure.',
+      'Use gloved hands or the cleanest cloth available and press hard without lifting every few seconds to check.',
+      'If a limb wound will not stop, apply a tourniquet high and tight and note the time.',
+    ],
+    avoid: [
+      'Do not remove a well-placed dressing just to look unless you must repack the wound.',
+      'Do not use a makeshift neck tourniquet or wrap around the chest or abdomen.',
+      'Do not treat this guide as a replacement for Stop the Bleed or certified first-aid training.',
+    ],
+    sourceAnchors: ['Stop the Bleed', 'American Red Cross', 'EMS dispatcher instructions'],
+    relatedTopicSlug: 'how-to-stop-bleeding-and-handle-trauma-until-help-arrives',
+  },
+  {
+    id: 'shut-off-water-main',
+    category: 'Household Utilities',
+    title: 'Shut off a leaking house water line fast',
+    summary: 'Small leaks become structural damage fast. The first skill is knowing where the main shutoff is and how it turns before you need it under pressure.',
+    whenToUse: 'A pipe bursts, a fixture line fails, a toilet supply starts spraying, or water is spreading across floors or walls.',
+    quickAnswer: 'Shut off the nearest fixture valve first if it works. If it does not, shut off the house main immediately and open a low faucet to relieve pressure.',
+    doNow: [
+      'Find the fixture shutoff and try that first; if it fails, go straight to the main.',
+      'Turn the valve fully in the correct direction and verify the water flow drops at a nearby faucet.',
+      'Photograph the failure, mop or extract standing water, and begin drying immediately.',
+    ],
+    avoid: [
+      'Do not waste time searching for tools after the floor is already flooding.',
+      'Do not assume the main valve works if you have never tested it before.',
+      'Do not reopen the line until the failed fitting, hose, or pipe has been replaced or isolated.',
+    ],
+    sourceAnchors: ['Local water utility', 'Homeowner utility map', 'Licensed plumber emergency checklist'],
+    relatedTopicSlug: 'how-to-replace-a-faucet',
+  },
+  {
+    id: 'purify-water',
+    category: 'Water',
+    title: 'Make emergency water safer to drink',
+    summary: 'Filtration, boiling, and chemical treatment solve different problems. The first job is understanding which contamination risk you are dealing with.',
+    whenToUse: 'Storm outages, broken municipal service, boil notices, travel, or any case where your normal drinking water is not trustworthy.',
+    quickAnswer: 'Start with the cleanest source you have, pre-filter sediment, then use the right treatment method for the actual risk. No single tool handles every contamination scenario.',
+    doNow: [
+      'Use stored tap water first if you have it; otherwise collect the clearest source available.',
+      'Filter visible sediment through clean cloth first so the treatment method can work better.',
+      'Boil for biological risk, use approved treatment chemicals as directed, and know when chemical contamination requires a different source entirely.',
+    ],
+    avoid: [
+      'Do not assume a simple camp filter removes fuel, industrial chemicals, or every dissolved contaminant.',
+      'Do not treat cloudy water once and call it safe without pre-filtering.',
+      'Do not store treated water in dirty containers.',
+    ],
+    sourceAnchors: ['CDC water guidance', 'EPA drinking water resources', 'Ready.gov'],
+    relatedTopicSlug: 'how-to-purify-water-in-an-emergency',
+  },
+  {
+    id: 'gas-leak-response',
+    category: 'Household Utilities',
+    title: 'Respond to a gas smell inside the house',
+    summary: 'Natural gas and propane are evacuate-first problems. The right first move is distance and reporting, not indoor troubleshooting.',
+    whenToUse: 'You smell gas, hear a hiss near a gas line, or suspect an appliance leak.',
+    quickAnswer: 'Do not switch lights, do not use devices, and do not hunt for the leak indoors. Get everyone out, move away from the structure, and call the gas utility or 911 from outside.',
+    doNow: [
+      'Evacuate immediately and warn everyone else on the way out.',
+      'Leave doors open only if you can do it without delaying evacuation.',
+      'Call the utility emergency line or fire department once you are at a safe distance.',
+    ],
+    avoid: [
+      'Do not turn switches on or off.',
+      'Do not start a car in an attached garage or near the leak zone.',
+      'Do not re-enter until the utility or fire department says it is safe.',
+    ],
+    sourceAnchors: ['Gas utility emergency line', 'Local fire department', 'Appliance safety manual'],
+  },
+  {
+    id: 'food-safety-outage',
+    category: 'Food Safety',
+    title: 'Know what food survives a power outage',
+    summary: 'The mistake people make is trusting cold food after the clock has already run too long. Temperature and time matter more than optimism.',
+    whenToUse: 'A refrigerator or freezer has lost power, you are cleaning out coolers, or you are deciding what to keep after an outage.',
+    quickAnswer: 'Keep refrigerator food only if it stayed below 40°F and freezer food only if it still has ice crystals or stayed solid. When in doubt, throw it out.',
+    doNow: [
+      'Keep doors closed as much as possible to preserve cold air.',
+      'Use a food thermometer if you have one and write down which items crossed the safe temperature line.',
+      'Prioritize shelf-stable food and preserved water until cold storage is trustworthy again.',
+    ],
+    avoid: [
+      'Do not taste food to decide whether it is safe.',
+      'Do not refreeze thawed food that has clearly warmed into the danger zone.',
+      'Do not overpack a weak cooler without enough ice or cold packs.',
+    ],
+    sourceAnchors: ['USDA FSIS', 'FDA food safety guidance', 'Ready.gov'],
+    relatedTopicSlug: 'how-to-build-long-term-food-storage',
+  },
+  {
+    id: 'heat-cook-grid-down',
+    category: 'Outage Readiness',
+    title: 'Heat and cook safely when the power is out',
+    summary: 'The dangerous shortcut is treating any flame source as an indoor solution. Fuel, ventilation, and carbon monoxide discipline come first.',
+    whenToUse: 'Extended outage, winter storm, or any event where your normal heating and cooking systems are down.',
+    quickAnswer: 'Use only the heating or cooking devices rated for the space you are using. Outdoor stoves stay outdoors, and every indoor combustion source requires ventilation and carbon monoxide awareness.',
+    doNow: [
+      'Check what you already own and sort it into indoor-safe, outdoor-only, and not-safe-for-this-use.',
+      'Set a carbon monoxide alarm or fresh battery before you rely on any combustion heat source.',
+      'Plan one simple meal method and one warm-room strategy instead of trying to heat the whole house at once.',
+    ],
+    avoid: [
+      'Do not run grills, camp stoves, or generators inside a house, garage, or enclosed porch.',
+      'Do not sleep with unsafe heating sources running.',
+      'Do not improvise fuel storage next to flame or heater surfaces.',
+    ],
+    sourceAnchors: ['CDC carbon monoxide guidance', 'Ready.gov', 'Manufacturer safety manuals'],
+    relatedTopicSlug: 'how-to-heat-and-cook-when-the-grid-is-down',
+  },
+  {
+    id: 'roof-leak-tarp',
+    category: 'Storm Damage',
+    title: 'Control a roof leak before the repair crew arrives',
+    summary: 'A temporary tarp and water control plan buy you time. The real win is limiting interior damage until weather and labor allow a proper repair.',
+    whenToUse: 'Rain is entering through the roof, shingles are missing, or you need a temporary exterior control measure after storm damage.',
+    quickAnswer: 'Map the interior leak first, protect belongings, then tarp from a safe ladder position only if weather and height conditions are controlled. If not, stay inside and limit damage.',
+    doNow: [
+      'Catch water, move furniture, and relieve any ceiling bulge safely if it is filling with water.',
+      'Photograph the damage for insurance and repair documentation.',
+      'Tarp only if you have dry enough conditions, the right ladder setup, and a second person spotting.',
+    ],
+    avoid: [
+      'Do not climb onto a wet, steep, or storm-active roof.',
+      'Do not assume the visible drip is directly below the exterior failure point.',
+      'Do not skip drying the interior while waiting for the exterior repair.',
+    ],
+    sourceAnchors: ['Roofing manufacturer guidance', 'Local building department', 'Weather service advisory'],
+    relatedTopicSlug: 'how-to-repair-a-roof-leak',
+  },
+  {
+    id: 'outage-sanitation',
+    category: 'Household Health',
+    title: 'Keep sanitation under control during an outage',
+    summary: 'Outages become health problems when water, toilet, and handwashing systems fail at the same time. Sanitation needs a plan before people get tired and start improvising badly.',
+    whenToUse: 'Running water is down, sewer function is uncertain, or the household is sheltering in place for more than a few hours.',
+    quickAnswer: 'Plan toilet use, handwashing, and waste containment together. If the water system is compromised, separate clean water, gray water, and waste immediately.',
+    doNow: [
+      'Assign one toilet or backup sanitation method and make the household use it consistently.',
+      'Set up a handwashing station with clean water, soap, and towels or sanitizer.',
+      'Bag, label, and isolate waste materials so they do not migrate through the living area.',
+    ],
+    avoid: [
+      'Do not let contaminated cleanup cloths mix with drinking-water containers or food surfaces.',
+      'Do not wait until the first overflow or backup to decide the plan.',
+      'Do not assume bleach solves every sanitation problem without correct dilution and clean-water separation.',
+    ],
+    sourceAnchors: ['CDC sanitation guidance', 'Local health department', 'Ready.gov'],
+    relatedTopicSlug: 'how-to-handle-sanitation-during-an-outage',
+  },
+  {
+    id: 'low-power-comms',
+    category: 'Communications',
+    title: 'Keep a phone alive and communications organized in an outage',
+    summary: 'The simplest communications plan is usually the best one: low-power settings, agreed check-in windows, and one backup charging layer.',
+    whenToUse: 'Power is unstable, the cell network is congested, or you need to stretch battery life through an outage or evacuation.',
+    quickAnswer: 'Put the phone in low-power mode early, reduce screen use, preserve battery for messages and navigation, and centralize charging around one reliable backup source.',
+    doNow: [
+      'Lower brightness, disable nonessential radios, and close power-hungry apps immediately.',
+      'Text instead of calling when the network is overloaded.',
+      'Set a household contact plan so everyone is not draining batteries with constant check-ins.',
+    ],
+    avoid: [
+      'Do not burn battery on entertainment, video, or constant app refreshing.',
+      'Do not wait until 5 percent battery to find a charging plan.',
+      'Do not assume cell data will stay stable even if signal bars look normal.',
+    ],
+    sourceAnchors: ['Ready.gov communications guidance', 'FEMA family plan resources', 'Backup battery manual'],
+    relatedTopicSlug: 'how-to-use-ham-radio-in-an-emergency',
+  },
+  {
+    id: 'winter-car-stuck',
+    category: 'Vehicle Readiness',
+    title: 'Get through a winter roadside stop without making it worse',
+    summary: 'In cold weather, the first goal is staying visible, warm, and conservatively powered until you can move or help arrives.',
+    whenToUse: 'You are stranded, spun out, or forced to stop in freezing conditions.',
+    quickAnswer: 'Stay with the vehicle unless remaining there is clearly more dangerous, preserve engine fuel carefully, keep the exhaust path clear, and use layers and signaling before panic-driven movement.',
+    doNow: [
+      'Clear snow from the tailpipe before running the engine for heat.',
+      'Use hazard lights, reflective gear, or flares if conditions allow.',
+      'Run the engine in short cycles, keep a window cracked, and preserve fuel for the long wait.',
+    ],
+    avoid: [
+      'Do not walk away in whiteout or low-visibility conditions unless you know exactly where warm shelter is.',
+      'Do not let the exhaust pipe stay buried under drifting snow.',
+      'Do not spin tires endlessly and burn traction or battery without a plan.',
+    ],
+    sourceAnchors: ['NHTSA winter driving guidance', 'State DOT winter advisory', 'Owner manual'],
+    relatedTopicSlug: 'how-to-build-a-72-hour-emergency-kit',
+  },
+]
+
 function buildCourseModules(topic: InstituteTopic): InstituteModule[] {
   const skill = topic.skill.toLowerCase()
 
@@ -2978,33 +3253,33 @@ export function buildInstituteBookSection(topic: InstituteTopic): InstituteBookS
 
 export const instituteResearchSources = [
   {
-    label: 'OECD AI skill-demand report',
-    url: 'https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/10/emerging-trends-in-ai-skill-demand-across-14-oecd-countries_faabbb45/7c691b9a-en.pdf',
-    note: 'Used to weight AI, automation, data, cloud, and communication skill clusters.',
-  },
-  {
-    label: 'World Economic Forum Future of Jobs Report 2025',
-    url: 'https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf',
-    note: 'Used to reinforce cross-functional skill demand and career transition relevance.',
-  },
-  {
     label: 'U.S. Bureau of Labor Statistics',
     url: 'https://www.bls.gov/ooh/',
-    note: 'Used to anchor trade, healthcare, and technical career pathways in public labor-market guidance.',
+    note: 'Used to anchor practical trade, maintenance, logistics, and healthcare-support career paths in public labor data.',
   },
   {
     label: 'Ready.gov preparedness guidance',
     url: 'https://www.ready.gov/',
-    note: 'Used for baseline household preparedness structure and emergency kit topics.',
+    note: 'Used to structure household readiness, kits, outage planning, and emergency communications.',
   },
   {
     label: 'CDC emergency preparedness guidance',
     url: 'https://www.cdc.gov/disasters/',
-    note: 'Used for water, hygiene, and household readiness guardrails.',
+    note: 'Used for water, hygiene, carbon monoxide, and first-response safety guardrails.',
   },
   {
     label: 'USDA and extension guidance',
     url: 'https://nifa.usda.gov/',
-    note: 'Used for food preservation, gardening, and self-reliance topics.',
+    note: 'Used for food safety, preservation, gardening, and basic foraging discipline.',
+  },
+  {
+    label: 'NHTSA vehicle safety guidance',
+    url: 'https://www.nhtsa.gov/road-safety',
+    note: 'Used for roadside safety, winter travel, battery recovery, and car-maintenance guardrails.',
+  },
+  {
+    label: 'Energy.gov home energy guidance',
+    url: 'https://www.energy.gov/energysaver/energy-saver',
+    note: 'Used for weatherization, backup-power planning, and household resilience systems.',
   },
 ]

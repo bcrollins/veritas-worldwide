@@ -8,7 +8,13 @@ import FadeInSection from '../components/FadeInSection'
 import AnimatedCounter from '../components/AnimatedCounter'
 import ContinueReading from '../components/ContinueReading'
 import { getTopicHrefForTerm, topicHubs } from '../data/topicHubs'
-import { getInstituteTopicBySlug, getInstituteTrackCounts, instituteTopics, type InstituteTopic } from '../data/instituteCatalog'
+import {
+  getInstitutePracticalTrackCounts,
+  getInstituteTopicBySlug,
+  instituteFieldManualEntries,
+  institutePracticalTopics,
+  type InstituteTopic,
+} from '../data/instituteCatalog'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
 import SocialProofBanner from '../components/engagement/SocialProofBanner'
@@ -16,16 +22,16 @@ import SharePanel from '../components/SharePanel'
 const DownloadPDF = lazy(() => import('../components/DownloadPDF'))
 
 const instituteFeaturedTopics = [
-  'how-to-use-ai-to-make-money',
   'how-to-become-a-welder',
-  'how-to-buy-a-house',
+  'how-to-maintain-a-car-yourself',
   'how-to-build-a-72-hour-emergency-kit',
+  'how-to-start-a-garden-that-actually-feeds-you',
 ]
   .map((slug) => getInstituteTopicBySlug(slug))
   .filter((topic): topic is InstituteTopic => Boolean(topic))
 
-const instituteTrackCount = getInstituteTrackCounts().length
-const instituteGuideAndCourseCount = instituteTopics.length * 2
+const instituteTrackCount = getInstitutePracticalTrackCounts().length
+const instituteGuideAndCourseCount = institutePracticalTopics.length * 2
 
 export default function HomePage() {
   const [showDownloadModal, setShowDownloadModal] = useState(false)
@@ -263,13 +269,13 @@ export default function HomePage() {
                   <div className="max-w-3xl">
                     <p className="institute-eyebrow">New Learning Surface</p>
                     <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-[color:var(--institute-ink)] md:text-5xl">
-                      Veritas Institute turns high-intent &ldquo;how to&rdquo; demand into calm, source-backed instruction.
+                      Veritas Institute turns urgent household questions and practical trade skills into calm, source-backed instruction.
                     </h2>
                     <p className="mt-5 max-w-2xl font-body text-lg leading-relaxed text-[color:var(--institute-muted)]">
-                      A separate interface for practical skills, resilient systems, and proof-first career paths. It answers what people are actually searching in 2026 without sliding into guru theater, survival cosplay, or thin SEO sludge.
+                      The same Veritas brand system, applied to a different problem: immediate field-manual answers for real-world failures, plus course paths in trades, repair, preparedness, food systems, and healthcare-support work.
                     </p>
                     <p className="mt-5 max-w-2xl font-sans text-[0.72rem] font-medium uppercase tracking-[0.14em] text-[color:var(--institute-muted-strong)]">
-                      Built from OECD, WEF, BLS, Ready.gov, extension guidance, and public credential pathways.
+                      Built from BLS, Ready.gov, CDC, USDA extension guidance, NHTSA, Energy.gov, and public credential pathways.
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-3">
@@ -277,7 +283,7 @@ export default function HomePage() {
                         Enter the Institute
                       </Link>
                       <Link to="/institute/book" className="institute-button-secondary">
-                        Open the Book of Knowledge
+                        Open the Field Manual
                       </Link>
                       <Link
                         to="/institute/methodology"
@@ -290,10 +296,10 @@ export default function HomePage() {
                     <div className="mt-8 grid gap-5 border-t border-[color:var(--institute-border)] pt-6 sm:grid-cols-3">
                       <div>
                         <p className="font-sans text-3xl font-bold tracking-[-0.04em] text-[color:var(--institute-ink)]">
-                          {instituteTopics.length}
+                          {instituteFieldManualEntries.length}
                         </p>
                         <p className="mt-2 font-sans text-[0.68rem] uppercase tracking-[0.2em] text-[color:var(--institute-muted)]">
-                          search-intent skills
+                          field answers
                         </p>
                       </div>
                       <div>
@@ -309,7 +315,7 @@ export default function HomePage() {
                           {instituteTrackCount}
                         </p>
                         <p className="mt-2 font-sans text-[0.68rem] uppercase tracking-[0.2em] text-[color:var(--institute-muted)]">
-                          navigation tracks
+                          practical tracks
                         </p>
                       </div>
                     </div>
@@ -322,14 +328,14 @@ export default function HomePage() {
                           Start Here
                         </p>
                         <h3 className="mt-2 font-sans text-xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-                          Four live-demand paths
+                          Four practical paths
                         </h3>
                       </div>
                       <Link
                         to="/institute"
                         className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]"
                       >
-                        See all 100 →
+                        See the catalog →
                       </Link>
                     </div>
 

@@ -1,26 +1,22 @@
 import { useDeferredValue, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  getInstituteTrackCounts,
+  getInstitutePracticalTrackCounts,
   getInstituteTopicsByTrack,
+  instituteFieldManualEntries,
+  institutePracticalTopics,
   instituteResearchSources,
-  instituteTopics,
   type InstituteTrackId,
 } from '../data/instituteCatalog'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 const filters: { id: InstituteTrackId | 'all'; label: string }[] = [
   { id: 'all', label: 'All tracks' },
-  { id: 'ai-automation', label: 'AI & Automation' },
   { id: 'trades', label: 'Trades' },
   { id: 'healthcare', label: 'Healthcare' },
-  { id: 'tech', label: 'Tech & Data' },
-  { id: 'business', label: 'Business' },
-  { id: 'money', label: 'Money systems' },
   { id: 'home-repair', label: 'Repair' },
   { id: 'food-self-reliance', label: 'Food & Garden' },
   { id: 'preparedness', label: 'Preparedness' },
-  { id: 'communication', label: 'Core skills' },
 ]
 
 export default function InstitutePage() {
@@ -30,9 +26,9 @@ export default function InstitutePage() {
 
   useEffect(() => {
     setMetaTags({
-      title: `Veritas Institute | Practical Skills Catalog, Guides, and Field Manual | ${SITE_NAME}`,
+      title: `Veritas Institute | Field Manual and Practical Trade Courses | ${SITE_NAME}`,
       description:
-        'Veritas Institute turns the strongest 2026 practical-skill demand clusters into source-backed courses, direct-answer guides, and a print-ready field manual for work, resilience, and self-reliance.',
+        'Veritas Institute pairs a printable field manual for ordinary emergencies with source-backed trade, repair, preparedness, food, and healthcare-support courses.',
       url: `${SITE_URL}/institute`,
     })
     setJsonLd([
@@ -42,12 +38,12 @@ export default function InstitutePage() {
         name: 'Veritas Institute',
         url: `${SITE_URL}/institute`,
         description:
-          'A source-backed catalog of practical skill pathways, direct-answer guides, and field-manual entries covering AI, trades, healthcare, business, household systems, and preparedness.',
+          'A source-backed learning surface built around a practical field manual plus trade, repair, preparedness, food, and healthcare-support course paths.',
       },
       {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        itemListElement: instituteTopics.map((topic, index) => ({
+        itemListElement: institutePracticalTopics.map((topic, index) => ({
           '@type': 'ListItem',
           position: index + 1,
           name: topic.skill,
@@ -64,7 +60,7 @@ export default function InstitutePage() {
   }, [])
 
   const normalizedQuery = deferredQuery.trim().toLowerCase()
-  const filteredTopics = instituteTopics.filter((topic) => {
+  const filteredTopics = institutePracticalTopics.filter((topic) => {
     if (activeFilter !== 'all' && topic.track !== activeFilter) return false
     if (!normalizedQuery) return true
 
@@ -83,11 +79,12 @@ export default function InstitutePage() {
     return haystack.includes(normalizedQuery)
   })
 
-  const trackCounts = getInstituteTrackCounts()
+  const trackCounts = getInstitutePracticalTrackCounts()
   const trackClusters = trackCounts.map((track) => ({
     ...track,
     featuredTopics: getInstituteTopicsByTrack(track.id).slice(0, 4),
   }))
+  const practicalCourseCount = institutePracticalTopics.length
 
   return (
     <div className="space-y-8">
@@ -96,38 +93,38 @@ export default function InstitutePage() {
           <div>
             <p className="institute-eyebrow">Veritas Institute</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-[color:var(--institute-ink)] sm:text-5xl lg:text-6xl">
-              A separate learning surface for practical skills, resilient systems, and proof-first career moves.
+              The field manual for ordinary emergencies. The course library for trades, repair, and resilient households.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--institute-muted)]">
-              We translated the strongest 2026 public demand signals across labor markets, AI-era work, household continuity, preparedness, and self-reliance into 100 course paths, 100 direct-answer guides, and one printable field manual. Same Veritas discipline. Different interface.
+              Veritas Institute is built around two jobs. First: answer the immediate question in front of you, fast and safely. Second: route readers into practical course paths for real trade work, household systems, food resilience, and healthcare-support skills.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/institute/book" className="institute-button-primary">
-                Open the Book of Knowledge
+                Open the Field Manual
               </Link>
               <Link to="/institute/methodology" className="institute-button-secondary">
-                See the demand method
+                See the sourcing method
               </Link>
             </div>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="institute-stat">
-              <span className="institute-stat-value">100</span>
-              <span className="institute-stat-label">search-intent skills</span>
+              <span className="institute-stat-value">{instituteFieldManualEntries.length}</span>
+              <span className="institute-stat-label">field-manual answers</span>
             </div>
             <div className="institute-stat">
-              <span className="institute-stat-value">200</span>
-              <span className="institute-stat-label">course and guide titles</span>
+              <span className="institute-stat-value">{practicalCourseCount}</span>
+              <span className="institute-stat-label">practical course paths</span>
             </div>
             <div className="institute-stat">
-              <span className="institute-stat-value">10</span>
-              <span className="institute-stat-label">track clusters</span>
+              <span className="institute-stat-value">{trackClusters.length}</span>
+              <span className="institute-stat-label">core practical tracks</span>
             </div>
             <div className="institute-stat">
               <span className="institute-stat-value">1</span>
-              <span className="institute-stat-label">printable field manual</span>
+              <span className="institute-stat-label">printable field manual PDF</span>
             </div>
           </div>
         </div>
@@ -137,10 +134,10 @@ export default function InstitutePage() {
         <div className="institute-panel px-6 py-6">
           <p className="institute-eyebrow">Methodology</p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-            Same Veritas discipline. No guru theater.
+            Same Veritas discipline. No “life-hack” theater.
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-            Official guidance, accredited pathways, extension resources, and durable labor-market signals outrank influencer mythology. We do not fake an official “top 100 search” list. We publish the synthesis, the source ladder, and the operating logic.
+            Public safety guidance, extension resources, accredited pathways, code boundaries, and durable labor-market signals outrank influencer mythology. We publish the source ladder, the risk note, and the official checkpoint instead of pretending every hard problem has a shortcut.
           </p>
           <div className="mt-6 grid gap-3">
             {instituteResearchSources.map((source) => (
@@ -162,21 +159,21 @@ export default function InstitutePage() {
           <p className="institute-eyebrow">How to use the institute</p>
           <div className="mt-4 grid gap-4 md:grid-cols-3">
             <article className="institute-mini-card">
-              <h3 className="text-lg font-semibold text-[color:var(--institute-ink)]">1. Use the guide</h3>
+              <h3 className="text-lg font-semibold text-[color:var(--institute-ink)]">1. Start with the manual</h3>
               <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-                Start with the shortest defensible answer. Every guide is written to answer the immediate question cleanly.
+                Use the field manual when the question is immediate: water, blood, fuel, food, cold, utilities, vehicle trouble, or a fast household failure.
               </p>
             </article>
             <article className="institute-mini-card">
               <h3 className="text-lg font-semibold text-[color:var(--institute-ink)]">2. Open the course</h3>
               <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-                Then move into the deeper system: prerequisites, proof standards, module deliverables, and a 30-day buildout.
+                Move into the course path when the answer becomes a skill: electrician, welder, HVAC, plumbing, vehicle maintenance, food systems, or healthcare support.
               </p>
             </article>
             <article className="institute-mini-card">
-              <h3 className="text-lg font-semibold text-[color:var(--institute-ink)]">3. Keep the manual</h3>
+              <h3 className="text-lg font-semibold text-[color:var(--institute-ink)]">3. Keep the official anchor</h3>
               <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-                The field manual compiles the whole surface into a printable reference for low-bandwidth, high-friction moments.
+                Every answer should still route back to the right public agency, manufacturer guidance, licensing body, or extension resource.
               </p>
             </article>
           </div>
@@ -186,12 +183,12 @@ export default function InstitutePage() {
       <section className="institute-panel px-6 py-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="institute-eyebrow">Track clusters</p>
+            <p className="institute-eyebrow">Trade course library</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-              Ten demand clusters built from the questions people actually ask.
+              Five practical tracks built around work people can actually do and systems households actually need.
             </h2>
             <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[color:var(--institute-muted)]">
-              Each track exists to capture a durable intent cluster, not just a topic label. The goal is to route a reader from a high-intent question into the right guide, the right course, and the right next move.
+              These tracks are intentionally concrete: skilled trades, repair, preparedness, food resilience, and healthcare-support pathways. The goal is not breadth for its own sake. The goal is practical usefulness.
             </p>
           </div>
           <Link to="/institute/methodology" className="text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
@@ -255,24 +252,24 @@ export default function InstitutePage() {
       <section id="catalog" className="institute-panel px-6 py-6 sm:px-8">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="institute-eyebrow">Top 100 catalog</p>
+            <p className="institute-eyebrow">Course catalog</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-              Search the 2026 catalog by skill, outcome, or track.
+              Search the practical course catalog by skill, outcome, or track.
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[color:var(--institute-muted)]">
-              Every topic has a course path, a direct-answer guide built for retrieval and citation, and a place inside the Book of Knowledge.
+              Every topic has a course path, a direct-answer guide built for retrieval and citation, and a place inside the printable field manual.
             </p>
           </div>
           <div className="min-w-0 lg:w-[24rem]">
             <label className="sr-only" htmlFor="institute-search">
-              Search the institute catalog
+              Search the practical course catalog
             </label>
             <input
               id="institute-search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               className="institute-input"
-              placeholder="Search welding, AI income, emergency water, bookkeeping…"
+              placeholder="Search welding, roof leak, emergency water, garden setup…"
             />
           </div>
         </div>
@@ -292,7 +289,7 @@ export default function InstitutePage() {
 
         <div className="mt-6 flex items-center justify-between gap-4 border-t border-[color:var(--institute-border)] pt-5">
           <p className="text-sm text-[color:var(--institute-muted)]">
-            Showing <span className="font-semibold text-[color:var(--institute-ink)]">{filteredTopics.length}</span> of 100 skills
+            Showing <span className="font-semibold text-[color:var(--institute-ink)]">{filteredTopics.length}</span> of {practicalCourseCount} practical course paths
           </p>
           <Link to="/institute/book" className="text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
             Jump to the full manual →
@@ -376,7 +373,7 @@ export default function InstitutePage() {
             <div className="institute-mini-card">
               <h3 className="text-lg font-semibold text-[color:var(--institute-ink)]">Field manual</h3>
               <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-                A print-ready Book of Knowledge that compiles the whole catalog into a downloadable resilience and career archive.
+                A print-ready field manual that answers immediate household and roadside problems, then routes into the deeper course library.
               </p>
             </div>
           </div>
@@ -385,10 +382,10 @@ export default function InstitutePage() {
         <div className="institute-panel px-6 py-6">
           <p className="institute-eyebrow">Connection to Veritas</p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-            Still part of Veritas Worldwide. Not dressed like the publication.
+            The same Veritas brand kit. A more tactical information format.
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-            The institute keeps the documentary discipline of Veritas Press but uses a more technical learning interface: tighter navigation, stronger scanability, clearer steps, and cleaner direct-answer structure for search and LLM use.
+            The institute now inherits the same parchment, ink, crimson, and gold visual system as the publication itself. What changes here is the information density: faster retrieval, clearer operational steps, and a direct bridge from emergency answer to practical trade course.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link to="/methodology" className="institute-button-secondary">
