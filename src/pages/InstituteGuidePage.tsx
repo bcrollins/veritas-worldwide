@@ -10,24 +10,42 @@ import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_UR
 export default function InstituteGuidePage() {
   const { slug } = useParams<{ slug: string }>()
   const topic = slug ? getInstituteTopicBySlug(slug) : undefined
+  const guide = topic ? buildInstituteGuide(topic) : undefined
 
   useEffect(() => {
-    if (!topic) return
-
-    const guide = buildInstituteGuide(topic)
+    if (!topic || !guide) return
 
     setMetaTags({
       title: `${guide.title} | Veritas Institute | ${SITE_NAME}`,
-      description: topic.summary,
+      description: guide.llmSummary,
       url: `${SITE_URL}/institute/guides/${topic.slug}`,
       type: 'article',
     })
     setJsonLd([
       {
         '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: guide.title,
+        description: guide.llmSummary,
+        url: `${SITE_URL}/institute/guides/${topic.slug}`,
+        about: [topic.skill, topic.trackMeta.label],
+        keywords: topic.keywords.join(', '),
+        isAccessibleForFree: true,
+        author: {
+          '@type': 'Organization',
+          name: 'Veritas Institute',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
+      {
+        '@context': 'https://schema.org',
         '@type': 'HowTo',
         name: guide.title,
-        description: topic.summary,
+        description: guide.quickAnswer,
         url: `${SITE_URL}/institute/guides/${topic.slug}`,
         step: guide.steps.map((step, index) => ({
           '@type': 'HowToStep',
@@ -55,9 +73,9 @@ export default function InstituteGuidePage() {
       clearMetaTags()
       removeJsonLd()
     }
-  }, [topic])
+  }, [guide, topic])
 
-  if (!topic) {
+  if (!topic || !guide) {
     return (
       <div className="institute-panel px-6 py-12 text-center">
         <p className="institute-eyebrow">Guide not found</p>
@@ -71,7 +89,6 @@ export default function InstituteGuidePage() {
     )
   }
 
-  const guide = buildInstituteGuide(topic)
   const relatedTopics = getInstituteRelatedTopics(topic)
 
   return (
@@ -102,6 +119,21 @@ export default function InstituteGuidePage() {
             {guide.quickAnswer}
           </p>
         </div>
+
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          <div className="institute-mini-card">
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
+              Guide thesis
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{guide.llmSummary}</p>
+          </div>
+          <div className="institute-mini-card">
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
+              Why readers land here
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{guide.searchIntent}</p>
+          </div>
+        </div>
       </section>
 
       <section className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
@@ -122,7 +154,7 @@ export default function InstituteGuidePage() {
                   {step.detail}
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-                  In the Veritas Institute model, this step matters because {topic.skill.toLowerCase()} fails most often when people chase speed before they have a clear operating sequence. The guide keeps the sequence visible so the next action is harder to misread.
+                  In the Veritas Institute model, this step matters because {topic.skill.toLowerCase()} usually fails when the sequence is unclear and the proof standard is invisible. The guide keeps both in view.
                 </p>
               </section>
             ))}
@@ -131,7 +163,29 @@ export default function InstituteGuidePage() {
 
         <div className="space-y-6">
           <section className="institute-panel px-6 py-6">
-            <p className="institute-eyebrow">Why demand exists</p>
+            <p className="institute-eyebrow">Who this answer is for</p>
+            <div className="mt-4 grid gap-3">
+              {guide.idealFor.map((item) => (
+                <div key={item} className="institute-list-row">
+                  <span className="text-sm leading-relaxed text-[color:var(--institute-ink)]">{item}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="institute-panel px-6 py-6">
+            <p className="institute-eyebrow">Before you start</p>
+            <div className="mt-4 grid gap-3">
+              {guide.prerequisites.map((item) => (
+                <div key={item} className="institute-list-row">
+                  <span className="text-sm leading-relaxed text-[color:var(--institute-ink)]">{item}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="institute-panel px-6 py-6">
+            <p className="institute-eyebrow">Demand and constraints</p>
             <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{topic.whyNow}</p>
             <div className="mt-5 grid gap-4">
               <div className="institute-mini-card">
@@ -154,6 +208,22 @@ export default function InstituteGuidePage() {
               </div>
             </div>
           </section>
+        </div>
+      </section>
+
+      <section className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+        <div className="space-y-6">
+          <section className="institute-panel px-6 py-6">
+            <p className="institute-eyebrow">Official checkpoints</p>
+            <div className="mt-4 space-y-4">
+              {guide.officialCheckpoints.map((item) => (
+                <article key={item.title} className="institute-mini-card">
+                  <h3 className="text-base font-semibold text-[color:var(--institute-ink)]">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{item.detail}</p>
+                </article>
+              ))}
+            </div>
+          </section>
 
           <section className="institute-panel px-6 py-6">
             <p className="institute-eyebrow">Avoid these traps</p>
@@ -165,74 +235,71 @@ export default function InstituteGuidePage() {
               ))}
             </div>
           </section>
+        </div>
+
+        <div className="space-y-6">
+          <section className="institute-panel px-6 py-6">
+            <p className="institute-eyebrow">Questions people ask next</p>
+            <div className="mt-4 grid gap-2">
+              {guide.relatedQueries.map((query) => (
+                <div key={query} className="institute-list-row">
+                  <span className="text-sm leading-relaxed text-[color:var(--institute-ink)]">{query}</span>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <section className="institute-panel px-6 py-6">
-            <p className="institute-eyebrow">Tools and institutions</p>
-            <div className="mt-4 space-y-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-muted-strong)]">Tools</p>
-                <p className="mt-2 text-sm leading-relaxed text-[color:var(--institute-ink)]">{topic.tools.join(', ')}</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-muted-strong)]">Official anchors</p>
-                <p className="mt-2 text-sm leading-relaxed text-[color:var(--institute-ink)]">{topic.institutions.join(', ')}</p>
-              </div>
+            <p className="institute-eyebrow">Continue the path</p>
+            <div className="mt-4 rounded-[28px] border border-[color:var(--institute-border)] bg-[color:var(--institute-surface-strong)] px-5 py-5">
+              <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
+                Companion course
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
+                {topic.courseTitle}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+                The guide gives the shortest defensible answer. The course turns that answer into a paced system with proof standards, module deliverables, and a 30-day buildout.
+              </p>
+              <Link to={`/institute/courses/${topic.slug}`} className="institute-button-primary mt-5 inline-flex">
+                Open course
+              </Link>
+            </div>
+
+            <div className="grid gap-4">
+              {relatedTopics.map((relatedTopic) => (
+                <article key={relatedTopic.id} className="institute-topic-card">
+                  <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
+                    {relatedTopic.trackMeta.shortLabel}
+                  </p>
+                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
+                    {relatedTopic.skill}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{relatedTopic.summary}</p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <Link to={`/institute/guides/${relatedTopic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
+                      Guide →
+                    </Link>
+                    <Link to={`/institute/courses/${relatedTopic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
+                      Course →
+                    </Link>
+                  </div>
+                </article>
+              ))}
             </div>
           </section>
         </div>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
-        <div className="institute-panel px-6 py-6">
-          <p className="institute-eyebrow">Frequently asked</p>
-          <div className="mt-4 space-y-4">
-            {guide.faq.map((faq) => (
-              <article key={faq.question} className="institute-mini-card">
-                <h3 className="text-base font-semibold text-[color:var(--institute-ink)]">{faq.question}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{faq.answer}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div className="institute-panel px-6 py-6">
-          <p className="institute-eyebrow">Continue the path</p>
-          <div className="mt-4 rounded-[28px] border border-[color:var(--institute-border)] bg-[color:var(--institute-surface-strong)] px-5 py-5">
-            <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
-              Companion course
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-              {topic.courseTitle}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-              The guide gives the direct answer. The course turns that answer into a paced system with modules, action plans, and error control.
-            </p>
-            <Link to={`/institute/courses/${topic.slug}`} className="institute-button-primary mt-5 inline-flex">
-              Open course
-            </Link>
-          </div>
-
-          <div className="mt-6 grid gap-4">
-            {relatedTopics.map((relatedTopic) => (
-              <article key={relatedTopic.id} className="institute-topic-card">
-                <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
-                  {relatedTopic.trackMeta.shortLabel}
-                </p>
-                <h3 className="mt-3 text-xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-                  {relatedTopic.skill}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{relatedTopic.summary}</p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <Link to={`/institute/guides/${relatedTopic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
-                    Guide →
-                  </Link>
-                  <Link to={`/institute/courses/${relatedTopic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
-                    Course →
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+      <section className="institute-panel px-6 py-6">
+        <p className="institute-eyebrow">Frequently asked</p>
+        <div className="mt-4 grid gap-4 xl:grid-cols-2">
+          {guide.faq.map((faq) => (
+            <article key={faq.question} className="institute-mini-card">
+              <h3 className="text-base font-semibold text-[color:var(--institute-ink)]">{faq.question}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </section>
     </article>

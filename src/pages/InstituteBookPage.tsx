@@ -93,6 +93,30 @@ export default function InstituteBookPage() {
       </section>
 
       <section className="institute-panel px-6 py-6">
+        <p className="institute-eyebrow">How to use the manual</p>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">Scan by track</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              Use the table of contents to move into the demand cluster that matches the problem in front of you.
+            </p>
+          </article>
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">Use the fast answer</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              Each entry starts with the shortest defensible answer before expanding into steps and risk notes.
+            </p>
+          </article>
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">Escalate into the web path</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              Use the linked guide and course whenever you need deeper prerequisites, proof standards, or a paced buildout.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="institute-panel px-6 py-6">
         <p className="institute-eyebrow">Table of contents</p>
         <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {tracks.map((track) => (

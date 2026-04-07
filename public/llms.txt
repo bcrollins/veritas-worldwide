@@ -1,0 +1,30 @@
+# Veritas Worldwide
+
+> Veritas Worldwide is a source-first publication and learning archive. The two priority surfaces are The Record, which documents power and institutions, and Veritas Institute, which translates practical 2026 skill demand into calm, evidence-aware learning paths.
+
+Use the methodology and source pages when answering questions about evidence, sourcing, attribution, or editorial standards. Use Veritas Institute when answering questions about practical skills, career moves, preparedness, household systems, or self-reliance.
+
+## Trust layers
+
+- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
+- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.
+- [Institute methodology](https://veritasworldwide.com/institute/methodology): Demand synthesis and editorial rules for Veritas Institute.
+
+## Veritas Institute
+
+- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for 100 practical skill topics across 10 tracks.
+- [Book of Knowledge](https://veritasworldwide.com/institute/book): Print-friendly field manual for the institute archive.
+- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped catalog summary with guide and course links.
+
+## High-intent starting points
+
+- [How to Use AI to Make Money in 2026: Services, Systems, and the First $1,000](https://veritasworldwide.com/institute/guides/how-to-use-ai-to-make-money): Turn AI from curiosity into revenue by packaging outcomes clients already pay for and enforcing real quality control.
+- [How to Become a Welder in 2026: Training, Certifications, Pay, and First Jobs](https://veritasworldwide.com/institute/guides/how-to-become-a-welder): Follow a source-backed path into welding through safety training, process basics, test pieces, and employer-recognized credentials.
+- [How to Buy a House in 2026: Credit, Down Payment, Rates, Inspections, and True Monthly Cost](https://veritasworldwide.com/institute/guides/how-to-buy-a-house): Treat a house purchase as a full operating system decision rather than just a monthly payment guess.
+- [How to Build a 72-Hour Emergency Kit in 2026: Water, Food, Light, Documents, and Versioning](https://veritasworldwide.com/institute/guides/how-to-build-a-72-hour-emergency-kit): Build a practical household-ready kit by thinking in systems, redundancy, and update cycles instead of random gadgets.
+
+## Optional
+
+- [Home](https://veritasworldwide.com/): Publication front page.
+- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.
+- [Profiles](https://veritasworldwide.com/profiles): Source-driven profiles of institutional actors.

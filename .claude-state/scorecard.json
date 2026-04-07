@@ -1,5 +1,5 @@
 {
-  "run": 17,
+  "run": 18,
   "date": "2026-04-07",
   "site": [
     {
@@ -60,11 +60,11 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 7.9,
+      "composite": 8.4,
       "previous": 7.8,
-      "delta": 0.1,
+      "delta": 0.6,
       "status": "improved",
-      "plus_half_requires": "Verify the homepage institute module plus /institute, /institute/book, and representative course/guide routes live at 390px and 430px, then deepen the longform lesson bodies and harden the PDF/manual export for very large document generation."
+      "plus_half_requires": "Verify the rebuilt /institute, /institute/book, and representative course/guide routes live at 390px and 430px, confirm /llms.txt and /veritas-institute.md are reachable in production, and pressure-test the PDF/manual export on real browsers."
     }
   ],
   "growth": [
@@ -78,11 +78,11 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 9,
+      "score": 9.2,
       "previous": 8.8,
-      "delta": 0.2,
+      "delta": 0.4,
       "status": "improved",
-      "plus_half_requires": "Validate Search Console coverage for the homepage-linked institute route family, then expand search-intent coverage with deeper course bodies and sustained current-reporting cadence."
+      "plus_half_requires": "Validate Search Console coverage for the rebuilt institute route family plus the new /llms.txt and /veritas-institute.md assets, then confirm live crawl/index behavior after the stale deploy incident is resolved."
     },
     {
       "area": "Analytics & Measurement",

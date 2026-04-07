@@ -216,7 +216,11 @@ export default function InstituteBookPDF() {
           doc.setFontSize(9.5)
           doc.text(`${moduleIndex + 1}. ${module.title}`, marginLeft, y)
           y += 5
+          writeWrapped(module.summary, 8.5, 4.6, 'normal', 2)
+          y += 2
           writeBullets(module.lessons, 8.5, 4.6)
+          y += 2
+          writeWrapped(`Deliverable: ${module.deliverable}`, 8.3, 4.6, 'italic', 2)
           y += 2
         })
 
@@ -228,6 +232,17 @@ export default function InstituteBookPDF() {
           doc.text(`${stepIndex + 1}. ${step.title}`, marginLeft, y)
           y += 5
           writeWrapped(step.detail, 8.7, 4.8, 'normal', 2)
+          y += 2
+        })
+
+        writeLabel('30-day sprint')
+        course.sprint.forEach((week) => {
+          ensureSpace(10)
+          doc.setFont('helvetica', 'bold')
+          doc.setFontSize(9)
+          doc.text(`${week.title}: ${week.objective}`, marginLeft, y)
+          y += 5
+          writeBullets(week.tasks, 8.4, 4.5)
           y += 2
         })
 
@@ -248,6 +263,12 @@ export default function InstituteBookPDF() {
         writeLabel('Risk note')
         writeWrapped(topic.warning, 8.7, 4.9)
         y += 2
+
+        writeLabel('Verified checkpoints')
+        course.officialCheckpoints.forEach((item) => {
+          writeWrapped(`${item.title}: ${item.detail}`, 8.4, 4.6)
+          y += 2
+        })
 
         writeLabel('Frequently asked')
         course.faq.forEach((faq) => {

@@ -55,6 +55,8 @@ export interface InstituteTopic extends InstituteTopicSeed {
 
 export interface InstituteModule {
   title: string
+  summary: string
+  deliverable: string
   lessons: string[]
 }
 
@@ -66,6 +68,59 @@ export interface InstituteStep {
 export interface InstituteFaq {
   question: string
   answer: string
+}
+
+export interface InstituteHighlight {
+  title: string
+  detail: string
+}
+
+export interface InstituteSprintWeek {
+  title: string
+  objective: string
+  tasks: string[]
+}
+
+export interface InstituteCourseBundle {
+  title: string
+  llmSummary: string
+  searchIntent: string
+  idealFor: string[]
+  prerequisites: string[]
+  outcomes: string[]
+  demandSignals: InstituteHighlight[]
+  proofFramework: InstituteHighlight[]
+  officialCheckpoints: InstituteHighlight[]
+  modules: InstituteModule[]
+  actionPlan: InstituteStep[]
+  sprint: InstituteSprintWeek[]
+  commonMistakes: string[]
+  faq: InstituteFaq[]
+  relatedQueries: string[]
+}
+
+export interface InstituteGuideBundle {
+  title: string
+  llmSummary: string
+  quickAnswer: string
+  searchIntent: string
+  idealFor: string[]
+  prerequisites: string[]
+  officialCheckpoints: InstituteHighlight[]
+  steps: InstituteStep[]
+  commonMistakes: string[]
+  faq: InstituteFaq[]
+  relatedQueries: string[]
+}
+
+export interface InstituteBookSection {
+  title: string
+  summary: string
+  quickAnswer: string
+  steps: InstituteStep[]
+  warning: string
+  institutions: string[]
+  proofFramework: InstituteHighlight[]
 }
 
 export const instituteTracks: InstituteTrack[] = [
@@ -2240,71 +2295,528 @@ export function getInstituteTrackCounts() {
 }
 
 function buildCourseModules(topic: InstituteTopic): InstituteModule[] {
+  const skill = topic.skill.toLowerCase()
+
   switch (topic.archetype) {
     case 'career':
       return [
-        { title: 'Map the Role', lessons: ['Understand the actual workday', 'Audit local employers and pay bands', 'Choose the right entry path'] },
-        { title: 'Training and Safety', lessons: ['Learn the non-negotiable fundamentals', 'Map credentials and supervision', 'Build a study and practice cadence'] },
-        { title: 'Proof of Work', lessons: ['Document practice or lab work', 'Build a portfolio or readiness log', 'Translate training into evidence'] },
-        { title: 'Get Hired', lessons: ['Target the right employers', 'Write a role-specific resume', 'Prepare for interviews and skill screens'] },
-        { title: 'First 90 Days', lessons: ['Handle feedback without ego', 'Learn the workflow and pace', 'Build repeatable field habits'] },
-        { title: 'Advance the Ladder', lessons: ['Choose the next credential wisely', 'Track specialized pathways', 'Protect your long-term earning power'] },
+        {
+          title: 'Map the Role',
+          summary: `Translate ${skill} from vague interest into a real labor market, actual employer types, and the first reachable rung.`,
+          deliverable: 'A role map with local employers, pay bands, and entry options.',
+          lessons: ['Understand the actual workday', 'Audit local employers and pay bands', 'Choose the right entry path'],
+        },
+        {
+          title: 'Training and Safety',
+          summary: 'Build the knowledge floor that keeps the first year from turning into avoidable setbacks or unsafe improvisation.',
+          deliverable: 'A training plan with the required safety, credential, and supervision checkpoints.',
+          lessons: ['Learn the non-negotiable fundamentals', 'Map credentials and supervision', 'Build a study and practice cadence'],
+        },
+        {
+          title: 'Proof of Work',
+          summary: 'Turn practice into visible evidence so readiness is legible to employers instead of trapped in your own notes.',
+          deliverable: 'A proof-of-readiness packet with labs, logs, shadowing notes, or supervised work evidence.',
+          lessons: ['Document practice or lab work', 'Build a portfolio or readiness log', 'Translate training into evidence'],
+        },
+        {
+          title: 'Get Hired',
+          summary: 'Aim for the employer that trains well, compounds skill, and creates leverage rather than the first listing that answers back.',
+          deliverable: 'A targeted hiring kit with resume, employer short list, and interview stories.',
+          lessons: ['Target the right employers', 'Write a role-specific resume', 'Prepare for interviews and skill screens'],
+        },
+        {
+          title: 'First 90 Days',
+          summary: 'Use the first quarter to become reliable, teachable, and harder to replace without pretending you already know everything.',
+          deliverable: 'A first-90-day operating plan built around habits, feedback, and visible reliability.',
+          lessons: ['Handle feedback without ego', 'Learn the workflow and pace', 'Build repeatable field habits'],
+        },
+        {
+          title: 'Advance the Ladder',
+          summary: 'Protect the upside by choosing the next credential or specialty based on market value, not insecurity.',
+          deliverable: 'A 12-month advancement map tied to earnings power and specialization.',
+          lessons: ['Choose the next credential wisely', 'Track specialized pathways', 'Protect your long-term earning power'],
+        },
       ]
     case 'ai-income':
       return [
-        { title: 'Choose the Market', lessons: ['Define one paying problem', 'Pick one buyer profile', 'Set a grounded promise'] },
-        { title: 'Build the Workflow', lessons: ['Choose tools deliberately', 'Create the QA layer', 'Document the process'] },
-        { title: 'Package the Offer', lessons: ['Price the outcome, not the novelty', 'Write a one-page proposal', 'Clarify exclusions and review'] },
-        { title: 'Win the First Client', lessons: ['Prospect where pain is visible', 'Use case studies and examples', 'Run a structured discovery call'] },
-        { title: 'Deliver Reliably', lessons: ['Set communication rules', 'Show before-and-after value', 'Capture reusable SOPs'] },
-        { title: 'Scale Without Hype', lessons: ['Keep human oversight visible', 'Choose retention over churn', 'Expand only after proof'] },
+        {
+          title: 'Choose the Market',
+          summary: `Frame ${skill} around a problem buyers already spend money to solve instead of around model novelty.`,
+          deliverable: 'A narrow market thesis with one buyer, one pain point, and one measurable promise.',
+          lessons: ['Define one paying problem', 'Pick one buyer profile', 'Set a grounded promise'],
+        },
+        {
+          title: 'Build the Workflow',
+          summary: 'Create a small, testable system with visible human QA so the offer survives contact with real work.',
+          deliverable: 'A documented workflow with tools, QA gates, and revision rules.',
+          lessons: ['Choose tools deliberately', 'Create the QA layer', 'Document the process'],
+        },
+        {
+          title: 'Package the Offer',
+          summary: 'Turn the workflow into a service or product buyers can understand quickly, scope safely, and compare against alternatives.',
+          deliverable: 'A one-page offer with pricing logic, exclusions, timeline, and review boundaries.',
+          lessons: ['Price the outcome, not the novelty', 'Write a one-page proposal', 'Clarify exclusions and review'],
+        },
+        {
+          title: 'Win the First Client',
+          summary: 'Use visible pain, specific proof, and disciplined discovery instead of broad “AI expert” positioning.',
+          deliverable: 'A first-client system with outreach, discovery questions, and a pilot structure.',
+          lessons: ['Prospect where pain is visible', 'Use case studies and examples', 'Run a structured discovery call'],
+        },
+        {
+          title: 'Deliver Reliably',
+          summary: 'Delivery is where most AI offers collapse. This module keeps communication, QA, and before-after evidence visible.',
+          deliverable: 'A client delivery cadence with status updates, revision policy, and SOP capture.',
+          lessons: ['Set communication rules', 'Show before-and-after value', 'Capture reusable SOPs'],
+        },
+        {
+          title: 'Scale Without Hype',
+          summary: 'Keep trust intact by expanding only after the system produces repeatable proof and documented oversight.',
+          deliverable: 'A retention and scale plan tied to proof, not trend-chasing.',
+          lessons: ['Keep human oversight visible', 'Choose retention over churn', 'Expand only after proof'],
+        },
       ]
     case 'service-business':
       return [
-        { title: 'Validate Demand', lessons: ['Choose the exact service lane', 'Map competitors and gaps', 'Find the easiest first buyer'] },
-        { title: 'Set Up the Business', lessons: ['Handle the business basics', 'Price for labor and risk', 'Protect the downside'] },
-        { title: 'Build the Operating Kit', lessons: ['Buy only the core tools', 'Define the service checklist', 'Document timing and scope'] },
-        { title: 'Acquire the First Customers', lessons: ['Use local proof and referrals', 'Write clearer quotes', 'Turn one job into five'] },
-        { title: 'Run the Work Well', lessons: ['Improve scheduling and route density', 'Track margins honestly', 'Reduce callbacks and chaos'] },
-        { title: 'Stabilize and Expand', lessons: ['Add retainers or repeat work', 'Systematize the handoff', 'Raise price with evidence'] },
+        {
+          title: 'Validate Demand',
+          summary: 'Choose the exact service lane that is easiest to explain, easiest to buy, and hardest for local demand to ignore.',
+          deliverable: 'A demand map with target jobs, local competitors, and the easiest first buyer.',
+          lessons: ['Choose the exact service lane', 'Map competitors and gaps', 'Find the easiest first buyer'],
+        },
+        {
+          title: 'Set Up the Business',
+          summary: 'Handle the basics early so quoting, taxes, insurance, and legal exposure do not ambush the first good month.',
+          deliverable: 'A simple operating baseline covering registration, pricing floor, and downside protection.',
+          lessons: ['Handle the business basics', 'Price for labor and risk', 'Protect the downside'],
+        },
+        {
+          title: 'Build the Operating Kit',
+          summary: 'Use only the tools and checklists that improve delivery quality. Avoid gear hoarding disguised as preparation.',
+          deliverable: 'A core operating kit with tools, service checklist, and scope definition.',
+          lessons: ['Buy only the core tools', 'Define the service checklist', 'Document timing and scope'],
+        },
+        {
+          title: 'Acquire the First Customers',
+          summary: 'Win the first work through proof, clarity, and referrals instead of vague promises or underpriced desperation.',
+          deliverable: 'A customer acquisition loop with quote language, referral asks, and before-after proof.',
+          lessons: ['Use local proof and referrals', 'Write clearer quotes', 'Turn one job into five'],
+        },
+        {
+          title: 'Run the Work Well',
+          summary: 'Margin and reputation come from route density, clean handoffs, and fewer callbacks, not from heroic effort.',
+          deliverable: 'A delivery rhythm for scheduling, margin tracking, and callback reduction.',
+          lessons: ['Improve scheduling and route density', 'Track margins honestly', 'Reduce callbacks and chaos'],
+        },
+        {
+          title: 'Stabilize and Expand',
+          summary: 'Add recurring work, better systems, and stronger positioning before adding more chaos under the word “growth.”',
+          deliverable: 'A stability plan for repeat work, price increases, and systemized expansion.',
+          lessons: ['Add retainers or repeat work', 'Systematize the handoff', 'Raise price with evidence'],
+        },
       ]
     case 'money-system':
       return [
-        { title: 'See the Real Situation', lessons: ['Inventory the numbers', 'Name the fragility', 'Choose the actual goal'] },
-        { title: 'Design the Rules', lessons: ['Pick the core system', 'Automate the important parts', 'Reduce decision fatigue'] },
-        { title: 'Handle Tradeoffs', lessons: ['Sequence priorities correctly', 'Plan for volatility', 'Avoid false shortcuts'] },
-        { title: 'Measure Weekly', lessons: ['Use a small dashboard', 'Track the leading indicators', 'Review behavior, not vibes'] },
-        { title: 'Protect the System', lessons: ['Build buffers and reminders', 'Plan for setbacks', 'Use scripts when needed'] },
-        { title: 'Turn Stability Into Leverage', lessons: ['Add negotiating power', 'Improve optionality', 'Know the next move'] },
+        {
+          title: 'See the Real Situation',
+          summary: 'Name the actual problem with numbers, timing, and fragility instead of with abstract stress or productivity guilt.',
+          deliverable: 'A full snapshot of balances, due dates, cash flow, and the real point of failure.',
+          lessons: ['Inventory the numbers', 'Name the fragility', 'Choose the actual goal'],
+        },
+        {
+          title: 'Design the Rules',
+          summary: 'Choose the smallest set of rules that actually fits the constraints instead of stacking conflicting systems.',
+          deliverable: 'A working money system with one core rule set and automated protections.',
+          lessons: ['Pick the core system', 'Automate the important parts', 'Reduce decision fatigue'],
+        },
+        {
+          title: 'Handle Tradeoffs',
+          summary: 'A durable system survives volatility because the tradeoffs are explicit before the pressure hits.',
+          deliverable: 'A priority order for debt, savings, cash flow shocks, and competing goals.',
+          lessons: ['Sequence priorities correctly', 'Plan for volatility', 'Avoid false shortcuts'],
+        },
+        {
+          title: 'Measure Weekly',
+          summary: 'Review the few indicators that reveal whether the system is holding instead of chasing motivation.',
+          deliverable: 'A weekly review dashboard with leading indicators and review prompts.',
+          lessons: ['Use a small dashboard', 'Track the leading indicators', 'Review behavior, not vibes'],
+        },
+        {
+          title: 'Protect the System',
+          summary: 'Buffers, scripts, and reminders matter because systems fail in ordinary weeks, not just emergencies.',
+          deliverable: 'A protection layer with reminders, fallback rules, and setback planning.',
+          lessons: ['Build buffers and reminders', 'Plan for setbacks', 'Use scripts when needed'],
+        },
+        {
+          title: 'Turn Stability Into Leverage',
+          summary: 'Once the floor is stable, the system should increase optionality, negotiation power, and future decision quality.',
+          deliverable: 'A leverage plan tied to raises, debt reduction, investing, or career repositioning.',
+          lessons: ['Add negotiating power', 'Improve optionality', 'Know the next move'],
+        },
       ]
     case 'diy':
       return [
-        { title: 'Diagnose Before Acting', lessons: ['Identify the actual failure', 'Map the hazard points', 'Define the limits of DIY'] },
-        { title: 'Plan the Job', lessons: ['Stage the materials', 'Prepare the workspace', 'Sequence the work'] },
-        { title: 'Do the Repair', lessons: ['Use the safest order of operations', 'Check the underlying cause', 'Work slowly enough to verify'] },
-        { title: 'Inspect and Test', lessons: ['Use a visible checklist', 'Test the function', 'Watch for failure signs'] },
-        { title: 'Know When to Escalate', lessons: ['Spot code and safety issues', 'Document for a pro if needed', 'Protect the property and people'] },
-        { title: 'Prevent Repeat Failure', lessons: ['Set a maintenance habit', 'Document the fix', 'Improve the system around it'] },
+        {
+          title: 'Diagnose Before Acting',
+          summary: 'The repair starts by identifying the actual failure and the hazard points, not by attacking the loudest symptom.',
+          deliverable: 'A diagnosis sheet with failure cause, hazard boundaries, and DIY limits.',
+          lessons: ['Identify the actual failure', 'Map the hazard points', 'Define the limits of DIY'],
+        },
+        {
+          title: 'Plan the Job',
+          summary: 'Slow setup is part of the repair. Staging the workspace well reduces mistakes, waste, and panic.',
+          deliverable: 'A full job plan with tools, materials, isolation steps, and work sequence.',
+          lessons: ['Stage the materials', 'Prepare the workspace', 'Sequence the work'],
+        },
+        {
+          title: 'Do the Repair',
+          summary: 'Use a safe order of operations and verify each move so the fix addresses the cause rather than merely covering it.',
+          deliverable: 'A completed repair sequence with root-cause notes and verification steps.',
+          lessons: ['Use the safest order of operations', 'Check the underlying cause', 'Work slowly enough to verify'],
+        },
+        {
+          title: 'Inspect and Test',
+          summary: 'Inspection is not optional. A visible test checklist prevents false confidence and repeat failures.',
+          deliverable: 'A test log showing function, inspection points, and remaining uncertainty.',
+          lessons: ['Use a visible checklist', 'Test the function', 'Watch for failure signs'],
+        },
+        {
+          title: 'Know When to Escalate',
+          summary: 'Good DIY means knowing when the risk profile has changed and a licensed pro becomes the responsible move.',
+          deliverable: 'An escalation boundary for code, structure, gas, electrical, or other high-risk conditions.',
+          lessons: ['Spot code and safety issues', 'Document for a pro if needed', 'Protect the property and people'],
+        },
+        {
+          title: 'Prevent Repeat Failure',
+          summary: 'Every repair should leave the system better documented, better maintained, and harder to break again.',
+          deliverable: 'A maintenance note and prevention plan tied to the repaired system.',
+          lessons: ['Set a maintenance habit', 'Document the fix', 'Improve the system around it'],
+        },
       ]
     case 'resilience':
       return [
-        { title: 'Start With the Principle', lessons: ['Understand the system', 'Define the threat or need', 'Avoid gear-first thinking'] },
-        { title: 'Build the Base Setup', lessons: ['Use the smallest workable version', 'Map dependencies', 'Create redundancy'] },
-        { title: 'Practice the Routine', lessons: ['Run low-risk drills', 'Document what breaks', 'Refine the timing'] },
-        { title: 'Protect Health and Safety', lessons: ['Use official safety guidance', 'Respect contamination and injury risk', 'Set escalation thresholds'] },
-        { title: 'Store, Rotate, and Maintain', lessons: ['Track supplies and failures', 'Rotate what expires', 'Keep tools where they matter'] },
-        { title: 'Scale the System', lessons: ['Add depth only after basics work', 'Train the household', 'Build the next layer deliberately'] },
+        {
+          title: 'Start With the Principle',
+          summary: 'Preparedness works when the system is clear: define the scenario, the dependency, and the exact failure you are trying to survive.',
+          deliverable: 'A scenario map showing risks, dependencies, and the smallest workable response.',
+          lessons: ['Understand the system', 'Define the threat or need', 'Avoid gear-first thinking'],
+        },
+        {
+          title: 'Build the Base Setup',
+          summary: 'Start with the smallest version that actually works. Fancy kits are useless if the basics are not coherent.',
+          deliverable: 'A baseline setup with water, power, food, communication, or continuity redundancy.',
+          lessons: ['Use the smallest workable version', 'Map dependencies', 'Create redundancy'],
+        },
+        {
+          title: 'Practice the Routine',
+          summary: 'Rehearsal reveals failure faster than shopping. Practice turns a plan into a habit you can trust under stress.',
+          deliverable: 'A drill routine with notes on timing, friction, and weak links.',
+          lessons: ['Run low-risk drills', 'Document what breaks', 'Refine the timing'],
+        },
+        {
+          title: 'Protect Health and Safety',
+          summary: 'Preparedness becomes dangerous when contamination, injury, or medical limits are hand-waved. This module keeps guardrails explicit.',
+          deliverable: 'A safety checklist tied to contamination, injury, and escalation thresholds.',
+          lessons: ['Use official safety guidance', 'Respect contamination and injury risk', 'Set escalation thresholds'],
+        },
+        {
+          title: 'Store, Rotate, and Maintain',
+          summary: 'Systems fail quietly when no one rotates, tracks, or maintains the parts that matter.',
+          deliverable: 'A storage and rotation system for supplies, tools, and expiration-sensitive items.',
+          lessons: ['Track supplies and failures', 'Rotate what expires', 'Keep tools where they matter'],
+        },
+        {
+          title: 'Scale the System',
+          summary: 'Depth comes after the basics work. Scale should add resilience, not complexity that no one can maintain.',
+          deliverable: 'A next-layer plan for expanding the system across more time, people, or scenarios.',
+          lessons: ['Add depth only after basics work', 'Train the household', 'Build the next layer deliberately'],
+        },
       ]
     case 'communication':
       return [
-        { title: 'Clarify the Target', lessons: ['Define the actual use case', 'Know the audience', 'Set the performance standard'] },
-        { title: 'Build a Repeatable Practice', lessons: ['Use short daily reps', 'Log errors and patterns', 'Keep the loop visible'] },
-        { title: 'Produce Visible Work', lessons: ['Ship examples publicly or internally', 'Measure usefulness', 'Ask for better feedback'] },
-        { title: 'Improve the System', lessons: ['Tighten structure and language', 'Remove clutter and ambiguity', 'Increase decision speed'] },
-        { title: 'Handle Pressure Better', lessons: ['Use preparation to calm nerves', 'Build recovery habits', 'Improve under real conditions'] },
-        { title: 'Turn the Skill Into Leverage', lessons: ['Use it in leadership and career moves', 'Tie it to higher-value work', 'Teach it forward'] },
+        {
+          title: 'Clarify the Target',
+          summary: 'Communication improves fastest when you define the exact use case, audience, and performance standard you are aiming for.',
+          deliverable: 'A target map with audience, use case, and the standard the work needs to meet.',
+          lessons: ['Define the actual use case', 'Know the audience', 'Set the performance standard'],
+        },
+        {
+          title: 'Build a Repeatable Practice',
+          summary: 'Short daily reps with visible feedback loops outperform occasional heroic effort and vague confidence rituals.',
+          deliverable: 'A repeatable practice cadence with feedback notes and measurable reps.',
+          lessons: ['Use short daily reps', 'Log errors and patterns', 'Keep the loop visible'],
+        },
+        {
+          title: 'Produce Visible Work',
+          summary: 'Skill compounds when the output is visible enough to be judged, improved, and reused under real conditions.',
+          deliverable: 'A bank of visible work samples that prove clarity and usefulness.',
+          lessons: ['Ship examples publicly or internally', 'Measure usefulness', 'Ask for better feedback'],
+        },
+        {
+          title: 'Improve the System',
+          summary: 'Tight structure and clear language remove wasted motion. Better communication is often better editing and better sequencing.',
+          deliverable: 'A communication system with templates, edits, and repeatable structure.',
+          lessons: ['Tighten structure and language', 'Remove clutter and ambiguity', 'Increase decision speed'],
+        },
+        {
+          title: 'Handle Pressure Better',
+          summary: 'Pressure exposes preparation quality. This module trains for meetings, conflict, and public performance without theatrics.',
+          deliverable: 'A pressure-performance plan with prep routines and recovery habits.',
+          lessons: ['Use preparation to calm nerves', 'Build recovery habits', 'Improve under real conditions'],
+        },
+        {
+          title: 'Turn the Skill Into Leverage',
+          summary: 'The point is not self-expression alone. The point is leverage: clearer decisions, better leadership, stronger opportunities.',
+          deliverable: 'A leverage map showing where the improved skill increases authority, opportunity, or earnings.',
+          lessons: ['Use it in leadership and career moves', 'Tie it to higher-value work', 'Teach it forward'],
+        },
       ]
   }
+}
+
+function lowerFirst(value: string) {
+  return value.charAt(0).toLowerCase() + value.slice(1)
+}
+
+function dedupeStrings(items: string[]) {
+  return [...new Set(items.map((item) => item.trim()).filter(Boolean))]
+}
+
+function buildIdealFor(topic: InstituteTopic) {
+  switch (topic.archetype) {
+    case 'career':
+      return [
+        'People who want a practical career path with a clear first rung instead of a four-year reset.',
+        'Learners willing to follow licensing, safety, and supervision rules rather than improvising their way into risk.',
+        'Readers who want visible proof of readiness they can show to an employer quickly.',
+      ]
+    case 'ai-income':
+      return [
+        'Operators who already understand one workflow, niche, or business problem well enough to improve it.',
+        'Freelancers, solo operators, and small teams who need a narrow offer instead of broad “AI expert” positioning.',
+        'Readers willing to keep a human QA layer visible and sell responsibility, not magic.',
+      ]
+    case 'service-business':
+      return [
+        'People who want a low-overhead local business they can explain, quote, and deliver clearly.',
+        'Operators who care about repeat work, route density, and referrals more than startup theater.',
+        'Readers willing to price for labor, risk, and callbacks instead of undercutting to win chaos.',
+      ]
+    case 'money-system':
+      return [
+        'Households under cash-flow pressure that need rules and buffers, not another motivation cycle.',
+        'Workers with irregular income, debt pressure, or unstable expenses who need a durable floor.',
+        'Readers who want a system they can review weekly in minutes.',
+      ]
+    case 'diy':
+      return [
+        'Homeowners and renters trying to reduce maintenance drift and repair costs without becoming reckless.',
+        'Readers willing to diagnose the real failure before buying parts or tearing into the system.',
+        'People who respect code, safety, and the point where a licensed pro becomes the right move.',
+      ]
+    case 'resilience':
+      return [
+        'Households building continuity for outages, cost pressure, weather, or fragile local systems.',
+        'Readers who want calm redundancy and repeatable drills instead of survival cosplay.',
+        'People who understand that maintenance and rotation matter more than dramatic gear piles.',
+      ]
+    case 'communication':
+      return [
+        'Professionals who need clearer writing, explanation, teaching, negotiation, or speaking under pressure.',
+        'Readers willing to practice in visible reps rather than waiting to feel naturally confident.',
+        'People building a portable skill that compounds across leadership, sales, research, and management.',
+      ]
+  }
+}
+
+function buildPrerequisites(topic: InstituteTopic) {
+  switch (topic.archetype) {
+    case 'career':
+      return [
+        'Know which local employers or training lanes actually hire into this path.',
+        'Block time for supervised practice or credential work each week.',
+        'Budget for the minimum safety gear, tuition, or exam costs the role requires.',
+      ]
+    case 'ai-income':
+      return [
+        'Choose one workflow you understand well enough to judge output quality.',
+        'Set up a QA checklist before offering the work to anyone else.',
+        'Be ready to show one before-and-after sample instead of promising abstract transformation.',
+      ]
+    case 'service-business':
+      return [
+        'Define the exact service boundary before naming the business.',
+        'Know your minimum viable tool kit and the jobs it can safely handle.',
+        'Understand the local registration, insurance, and quoting basics before chasing volume.',
+      ]
+    case 'money-system':
+      return [
+        'Gather balances, due dates, account access, and recurring expenses in one place.',
+        'Pick one weekly review time you can actually keep.',
+        'Stop layering competing systems until one baseline rule set is working.',
+      ]
+    case 'diy':
+      return [
+        'Know the shutoff, isolation, or safety boundary for the system you are touching.',
+        'Confirm the exact tool and material list before starting the job.',
+        'Decide in advance which conditions force an escalation to a licensed professional.',
+      ]
+    case 'resilience':
+      return [
+        'Define the actual scenario you are preparing for before buying anything.',
+        'Use official safety guidance for water, food, medicine, sanitation, or power issues.',
+        'Start with a small system you can maintain without constant friction.',
+      ]
+    case 'communication':
+      return [
+        'Pick one real audience or use case where the skill matters next.',
+        'Set a short practice block you can repeat without negotiation.',
+        'Choose a feedback source that will give concrete notes, not just encouragement.',
+      ]
+  }
+}
+
+function buildOutcomes(topic: InstituteTopic) {
+  const common = [
+    topic.outcome,
+    `A clearer operating sequence for ${lowerFirst(topic.skill)} instead of a pile of disconnected advice.`,
+  ]
+
+  switch (topic.archetype) {
+    case 'career':
+      return [...common, 'Visible proof of readiness you can use with employers, apprenticeships, or credential programs.']
+    case 'ai-income':
+      return [...common, 'A narrow offer with a QA layer, a pricing logic, and a pilot-ready proof package.']
+    case 'service-business':
+      return [...common, 'A service operating kit that improves quoting, delivery quality, and repeat work.']
+    case 'money-system':
+      return [...common, 'A weekly review loop that protects the system when life gets noisy.']
+    case 'diy':
+      return [...common, 'A diagnosis, repair, and inspection routine that reduces repeat failure.']
+    case 'resilience':
+      return [...common, 'A rehearsed baseline system that still works when attention and infrastructure are thin.']
+    case 'communication':
+      return [...common, 'Visible work samples and a repeatable practice system that compound into leverage.']
+  }
+}
+
+function buildDemandSignals(topic: InstituteTopic): InstituteHighlight[] {
+  return [
+    {
+      title: 'Why this demand is durable',
+      detail: topic.whyNow,
+    },
+    {
+      title: 'Institutional signal',
+      detail: topic.trackMeta.demandSignal,
+    },
+    {
+      title: 'Time to first useful proof',
+      detail: `The first credible signal usually arrives in ${topic.timeToFirstResult} when the path is narrowed and executed with visible proof instead of passive consumption.`,
+    },
+  ]
+}
+
+function buildProofFramework(topic: InstituteTopic): InstituteHighlight[] {
+  switch (topic.archetype) {
+    case 'career':
+      return [
+        { title: 'Proof of readiness', detail: 'Show labs, supervised practice, certifications in progress, or shadowing evidence an employer can scan quickly.' },
+        { title: 'Verified floor', detail: `Use ${topic.institutions.slice(0, 2).join(' and ')} to verify entry requirements, safety rules, and role expectations.` },
+        { title: 'Leverage signal', detail: 'Progress means getting closer to paid supervised work, not collecting disconnected credentials.' },
+      ]
+    case 'ai-income':
+      return [
+        { title: 'Proof of value', detail: 'A before-and-after sample, revision log, or pilot outcome matters more than polished AI jargon.' },
+        { title: 'Verified floor', detail: `Ground the workflow against ${topic.institutions.slice(0, 2).join(' and ')} plus the buyer’s own operating constraints.` },
+        { title: 'Leverage signal', detail: 'Progress means a client-safe workflow with visible QA, not more tool subscriptions.' },
+      ]
+    case 'service-business':
+      return [
+        { title: 'Proof of reliability', detail: 'Quotes, photos, checklists, and referrals that demonstrate the work can be delivered cleanly.' },
+        { title: 'Verified floor', detail: `Use ${topic.institutions.slice(0, 2).join(' and ')} to confirm registration, tax, insurance, or code realities.` },
+        { title: 'Leverage signal', detail: 'Progress means better margins and repeat work, not simply busier days.' },
+      ]
+    case 'money-system':
+      return [
+        { title: 'Proof of progress', detail: 'A stable weekly dashboard, fewer emergencies, and consistent rule-following are the real milestones.' },
+        { title: 'Verified floor', detail: `Use ${topic.institutions.slice(0, 2).join(' and ')} to confirm the rules, fees, and official constraints that matter.` },
+        { title: 'Leverage signal', detail: 'Progress means more optionality and less fragility, not aesthetic spreadsheet perfection.' },
+      ]
+    case 'diy':
+      return [
+        { title: 'Proof of repair', detail: 'Diagnosis notes, the correct material list, and a visible test procedure prove the repair is real.' },
+        { title: 'Verified floor', detail: `Use ${topic.institutions.slice(0, 2).join(' and ')} to confirm safety and code boundaries before acting.` },
+        { title: 'Leverage signal', detail: 'Progress means fewer repeat failures and clearer escalation decisions.' },
+      ]
+    case 'resilience':
+      return [
+        { title: 'Proof of readiness', detail: 'A written plan, a functioning baseline kit, and drill notes prove the system is usable.' },
+        { title: 'Verified floor', detail: `Use ${topic.institutions.slice(0, 2).join(' and ')} to confirm health, storage, and emergency guidance.` },
+        { title: 'Leverage signal', detail: 'Progress means the system works under stress without adding drama or maintenance debt.' },
+      ]
+    case 'communication':
+      return [
+        { title: 'Proof of skill', detail: 'Visible writing, speaking, teaching, or negotiation artifacts matter more than self-description.' },
+        { title: 'Verified floor', detail: `Use ${topic.institutions.slice(0, 2).join(' and ')} as the anchor for what the audience or employer actually values.` },
+        { title: 'Leverage signal', detail: 'Progress means clearer decisions, better feedback, and stronger opportunities attached to the skill.' },
+      ]
+  }
+}
+
+function buildOfficialCheckpoints(topic: InstituteTopic): InstituteHighlight[] {
+  return [
+    {
+      title: 'Source floor',
+      detail: `Before spending money, taking risk, or making promises, verify the baseline rules against ${topic.institutions.slice(0, 3).join(', ')}.`,
+    },
+    {
+      title: 'Risk boundary',
+      detail: topic.warning,
+    },
+    {
+      title: 'Working definition of progress',
+      detail: `Treat ${lowerFirst(topic.outcome)} as the signal that the system is working. Interest without proof does not count.`,
+    },
+  ]
+}
+
+function buildRelatedQueries(topic: InstituteTopic) {
+  const relatedTitles = topic.related
+    .map((slug) => getInstituteTopicBySlug(slug))
+    .filter((value): value is InstituteTopic => Boolean(value))
+    .map((relatedTopic) => relatedTopic.articleTitle)
+
+  return dedupeStrings([...topic.keywords, ...relatedTitles]).slice(0, 6)
+}
+
+function buildSprint(topic: InstituteTopic, modules: InstituteModule[], actionPlan: InstituteStep[]): InstituteSprintWeek[] {
+  return actionPlan.slice(0, 4).map((step, index) => {
+    const module = modules[index]
+
+    return {
+      title: `Week ${index + 1}`,
+      objective: step.title,
+      tasks: dedupeStrings([
+        index === 0 ? topic.firstAction : module?.deliverable ?? '',
+        ...(module?.lessons.slice(0, 2) ?? []),
+      ]).slice(0, 3),
+    }
+  })
+}
+
+function buildLlmSummary(topic: InstituteTopic) {
+  const framing = {
+    career: 'a supervised skill path with visible proof of readiness',
+    'ai-income': 'a narrow workflow offer with a human QA layer',
+    'service-business': 'a local operating system built around clear scope and repeat work',
+    'money-system': 'a rule-based stability system that reduces fragility',
+    diy: 'a diagnosis-first repair workflow with clear safety boundaries',
+    resilience: 'a calm redundancy system built for rehearsal and maintenance',
+    communication: 'a repeatable practice system that turns clarity into leverage',
+  }[topic.archetype]
+
+  return `${topic.skill} works best when you start by ${lowerFirst(topic.firstAction)}. Treat it as ${framing}, verify the floor against ${topic.institutions[0] ?? 'official guidance'}, and aim for ${lowerFirst(topic.outcome)} within ${topic.timeToFirstResult}.`
 }
 
 function buildActionPlan(topic: InstituteTopic): InstituteStep[] {
@@ -2394,8 +2906,12 @@ function buildFaq(topic: InstituteTopic): InstituteFaq[] {
       answer: `${topic.firstAction} The institute treats fast starts as structured starts: the first win is clarity and setup, not pretending the hard part disappeared.`,
     },
     {
+      question: `What actually proves progress in ${topic.skill.toLowerCase()}?`,
+      answer: `${lowerFirst(topic.outcome)} is the real milestone. The institute wants visible proof: a sample, a checklist, a log, a supervised result, or another artifact that shows the system works outside your head.`,
+    },
+    {
       question: `How does Veritas Institute handle evidence for ${topic.skill.toLowerCase()}?`,
-      answer: `Official rules, public guidance, and credentialing pathways are treated as verified foundations. Market outcomes, earnings, and time-to-income claims are presented more cautiously unless the proof is strong.`,
+      answer: `Official rules, public guidance, and credentialing pathways are treated as verified foundations. Market outcomes, earnings, and time-to-income claims are framed more cautiously unless the proof is strong and attributable.`,
     },
     {
       question: `What should I avoid while learning ${topic.skill.toLowerCase()}?`,
@@ -2404,28 +2920,50 @@ function buildFaq(topic: InstituteTopic): InstituteFaq[] {
   ]
 }
 
-export function buildInstituteCourse(topic: InstituteTopic) {
+export function buildInstituteCourse(topic: InstituteTopic): InstituteCourseBundle {
+  const modules = buildCourseModules(topic)
+  const actionPlan = buildActionPlan(topic)
+
   return {
     title: topic.courseTitle,
-    modules: buildCourseModules(topic),
-    actionPlan: buildActionPlan(topic),
+    llmSummary: buildLlmSummary(topic),
+    searchIntent: `People search for ${lowerFirst(topic.skill)} because they want a direct route to ${lowerFirst(topic.outcome)} without losing months to hype, vague advice, or bad sequencing.`,
+    idealFor: buildIdealFor(topic),
+    prerequisites: buildPrerequisites(topic),
+    outcomes: buildOutcomes(topic),
+    demandSignals: buildDemandSignals(topic),
+    proofFramework: buildProofFramework(topic),
+    officialCheckpoints: buildOfficialCheckpoints(topic),
+    modules,
+    actionPlan,
+    sprint: buildSprint(topic, modules, actionPlan),
     commonMistakes: buildCommonMistakes(topic),
     faq: buildFaq(topic),
+    relatedQueries: buildRelatedQueries(topic),
   }
 }
 
-export function buildInstituteGuide(topic: InstituteTopic) {
+export function buildInstituteGuide(topic: InstituteTopic): InstituteGuideBundle {
+  const llmSummary = buildLlmSummary(topic)
+
   return {
     title: topic.articleTitle,
-    quickAnswer: `To ${topic.skill.charAt(0).toLowerCase()}${topic.skill.slice(1)}, start by ${topic.firstAction.charAt(0).toLowerCase()}${topic.firstAction.slice(1)} This works best when you treat the path as a system with proof, safety, and documented next steps rather than a viral shortcut.`,
+    llmSummary,
+    quickAnswer: `To ${lowerFirst(topic.skill)}, start by ${lowerFirst(topic.firstAction)} This works best when you treat the path as a system with proof, safety, and documented next steps rather than a viral shortcut.`,
+    searchIntent: `Most readers land here because they need the shortest reliable route into ${lowerFirst(topic.outcome)}. The guide answers the immediate question, then shows the safer next move.`,
+    idealFor: buildIdealFor(topic),
+    prerequisites: buildPrerequisites(topic),
+    officialCheckpoints: buildOfficialCheckpoints(topic),
     steps: buildActionPlan(topic),
     commonMistakes: buildCommonMistakes(topic),
     faq: buildFaq(topic),
+    relatedQueries: buildRelatedQueries(topic),
   }
 }
 
-export function buildInstituteBookSection(topic: InstituteTopic) {
+export function buildInstituteBookSection(topic: InstituteTopic): InstituteBookSection {
   const guide = buildInstituteGuide(topic)
+  const course = buildInstituteCourse(topic)
 
   return {
     title: topic.skill,
@@ -2434,6 +2972,7 @@ export function buildInstituteBookSection(topic: InstituteTopic) {
     steps: guide.steps,
     warning: topic.warning,
     institutions: topic.institutions,
+    proofFramework: course.proofFramework,
   }
 }
 

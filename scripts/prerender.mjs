@@ -16,6 +16,10 @@ const manifestPath = path.join(distDir, 'prerender-manifest.json')
 const prerenderDir = path.join(distDir, 'prerender')
 const distSitemapPath = path.join(distDir, 'sitemap.xml')
 const sourceSitemapPath = path.join(repoRoot, 'public', 'sitemap.xml')
+const distLlmsPath = path.join(distDir, 'llms.txt')
+const sourceLlmsPath = path.join(repoRoot, 'public', 'llms.txt')
+const distInstituteMarkdownPath = path.join(distDir, 'veritas-institute.md')
+const sourceInstituteMarkdownPath = path.join(repoRoot, 'public', 'veritas-institute.md')
 const chapterMetaPath = path.join(repoRoot, 'src', 'data', 'chapterMeta.ts')
 const chapterSourceDir = path.join(repoRoot, 'src', 'data', 'chapters')
 const topicHubPath = path.join(repoRoot, 'src', 'data', 'topicHubs.json')
@@ -324,11 +328,13 @@ function parseInstituteTopics() {
     const keywordsMatch = block.match(/keywords:\s*\[([\s\S]*?)\],\s*institutions:/)
     const institutionsMatch = block.match(/institutions:\s*\[([\s\S]*?)\],\s*timeToFirstResult:/)
     const relatedMatch = block.match(/related:\s*\[([\s\S]*?)\],\s*tools:/)
+    const toolsMatch = block.match(/tools:\s*\[([\s\S]*?)\],?/)
 
     const topic = {
       id: extractSingleQuotedField(block, 'id'),
       slug: extractSingleQuotedField(block, 'slug'),
       track: extractSingleQuotedField(block, 'track'),
+      archetype: extractSingleQuotedField(block, 'archetype'),
       skill: extractSingleQuotedField(block, 'skill'),
       courseTitle: extractSingleQuotedField(block, 'courseTitle'),
       articleTitle: extractSingleQuotedField(block, 'articleTitle'),
@@ -342,6 +348,7 @@ function parseInstituteTopics() {
       keywords: parseSingleQuotedList(keywordsMatch?.[1] || ''),
       institutions: parseSingleQuotedList(institutionsMatch?.[1] || ''),
       related: parseSingleQuotedList(relatedMatch?.[1] || ''),
+      tools: parseSingleQuotedList(toolsMatch?.[1] || ''),
     }
 
     if (topic.id && topic.slug) {
@@ -472,37 +479,226 @@ const instituteTrackLabels = {
   'communication': 'Core Skills',
 }
 
-function renderInstituteIndexPage(topics, researchSources) {
-  const counts = Object.entries(
+function lowerFirst(value = '') {
+  return value ? value.charAt(0).toLowerCase() + value.slice(1) : ''
+}
+
+function dedupeList(items = []) {
+  return [...new Set(items.map((item) => String(item).trim()).filter(Boolean))]
+}
+
+function groupInstituteTopicsByTrack(topics) {
+  return Object.entries(
     topics.reduce((acc, topic) => {
-      acc[topic.track] = (acc[topic.track] || 0) + 1
+      acc[topic.track] = acc[topic.track] || []
+      acc[topic.track].push(topic)
       return acc
     }, {})
   )
+}
+
+function buildInstituteBrief(topic) {
+  const framing = {
+    career: 'a supervised skill path with visible proof of readiness',
+    'ai-income': 'a narrow workflow offer with a human QA layer',
+    'service-business': 'a local operating system built around clear scope and repeat work',
+    'money-system': 'a rule-based stability system that reduces fragility',
+    diy: 'a diagnosis-first repair workflow with explicit safety boundaries',
+    resilience: 'a calm redundancy system built for rehearsal and maintenance',
+    communication: 'a repeatable practice system that turns clarity into leverage',
+  }[topic.archetype] || 'a disciplined, proof-first path'
+
+  const prerequisites = {
+    career: [
+      'Know which local employers or training lanes actually hire into this path.',
+      'Block weekly time for supervised practice or credential work.',
+      'Budget for the minimum safety gear, tuition, or exam costs involved.',
+    ],
+    'ai-income': [
+      'Choose one workflow or niche you understand well enough to judge quality.',
+      'Set up a human QA checklist before offering the work to anyone else.',
+      'Be ready to show one before-and-after sample instead of broad claims.',
+    ],
+    'service-business': [
+      'Define the exact service boundary before naming the business.',
+      'Know the minimum tool kit and jobs it can safely handle.',
+      'Understand local registration, insurance, and quoting basics.',
+    ],
+    'money-system': [
+      'Gather balances, due dates, and recurring expenses in one place.',
+      'Pick one weekly review time you can actually keep.',
+      'Stop layering competing systems until one baseline rule set works.',
+    ],
+    diy: [
+      'Know the shutoff, isolation, or safety boundary for the system.',
+      'Confirm the exact tool and material list before starting.',
+      'Decide in advance which conditions force an escalation to a licensed pro.',
+    ],
+    resilience: [
+      'Define the scenario you are preparing for before buying anything.',
+      'Use official safety guidance for water, food, medicine, sanitation, or power.',
+      'Start with a small system you can maintain without constant friction.',
+    ],
+    communication: [
+      'Pick one real audience or use case where the skill matters next.',
+      'Set a short practice block you can repeat without negotiation.',
+      'Choose a feedback source that gives concrete notes.',
+    ],
+  }[topic.archetype] || []
+
+  const proofPoints = {
+    career: 'Progress means visible readiness: labs, supervised work, shadowing, or credential steps an employer can scan quickly.',
+    'ai-income': 'Progress means a before-and-after sample, a revision log, or a pilot outcome with a visible QA layer.',
+    'service-business': 'Progress means quotes, checklists, photos, referrals, and repeat work that prove reliability.',
+    'money-system': 'Progress means fewer emergencies, a stable weekly dashboard, and rules that still hold under pressure.',
+    diy: 'Progress means a correct diagnosis, the right materials, and a visible inspection or test routine.',
+    resilience: 'Progress means a written plan, functioning baseline kit, and rehearsal notes that show the system works.',
+    communication: 'Progress means visible writing, speaking, or teaching samples that demonstrate clarity under real conditions.',
+  }[topic.archetype] || 'Progress means visible proof, not just more reading.'
+
+  const relatedTitles = (topic.related || [])
+    .map((slug) => instituteTopics.find((candidate) => candidate.slug === slug))
+    .filter(Boolean)
+    .map((relatedTopic) => relatedTopic.articleTitle)
+
+  return {
+    llmSummary: `${topic.skill} works best when you start by ${lowerFirst(topic.firstAction)}. Treat it as ${framing}, verify the floor against ${topic.institutions?.[0] || 'official guidance'}, and aim for ${lowerFirst(topic.outcome)} within ${topic.timeToFirstResult}.`,
+    searchIntent: `People search for ${lowerFirst(topic.skill)} because they want a direct route to ${lowerFirst(topic.outcome)} without losing months to hype, vague advice, or bad sequencing.`,
+    prerequisites,
+    proofPoints,
+    relatedQueries: dedupeList([...(topic.keywords || []), ...relatedTitles]).slice(0, 6),
+    officialCheckpoints: [
+      `Verify the baseline against ${(topic.institutions || []).slice(0, 3).join(', ')} before spending money, taking risk, or making promises.`,
+      topic.warning,
+      `Treat ${lowerFirst(topic.outcome)} as the real proof threshold. Interest without evidence does not count.`,
+    ],
+  }
+}
+
+function renderInstituteMarkdown(topics, researchSources) {
+  const grouped = groupInstituteTopicsByTrack(topics)
+
+  return [
+    '# Veritas Institute',
+    '',
+    '> Veritas Institute is the Veritas Worldwide learning surface for practical skills, career moves, household continuity, preparedness, and resilient systems. Every topic ships in three forms: a direct-answer guide, a deeper course path, and a book/manual entry.',
+    '',
+    'Use the methodology and source notes when answering questions about ranking, evidence, or demand logic. Use the guide URLs for short answers and the course URLs for deeper pacing, prerequisites, proof standards, and next steps.',
+    '',
+    '## Methodology',
+    '',
+    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Demand synthesis, editorial rules, and source ladder.',
+    '- [Book of Knowledge](https://veritasworldwide.com/institute/book): Printable long-form manual for the full institute archive.',
+    '',
+    '## Research basis',
+    '',
+    ...researchSources.map((source) => `- [${source.label}](${source.url}): ${source.note}`),
+    '',
+    ...grouped.flatMap(([track, items]) => {
+      const heading = instituteTrackLabels[track] || track
+      return [
+        `## ${heading}`,
+        '',
+        ...items.map((topic) => `- [${topic.skill} guide](https://veritasworldwide.com/institute/guides/${topic.slug}) | [course](https://veritasworldwide.com/institute/courses/${topic.slug}): ${topic.summary}`),
+        '',
+      ]
+    }),
+  ].join('\n')
+}
+
+function renderLlmsTxt(topics) {
+  const featured = [
+    'how-to-use-ai-to-make-money',
+    'how-to-become-a-welder',
+    'how-to-buy-a-house',
+    'how-to-build-a-72-hour-emergency-kit',
+  ]
+    .map((slug) => topics.find((topic) => topic.slug === slug))
+    .filter(Boolean)
+
+  return [
+    '# Veritas Worldwide',
+    '',
+    '> Veritas Worldwide is a source-first publication and learning archive. The two priority surfaces are The Record, which documents power and institutions, and Veritas Institute, which translates practical 2026 skill demand into calm, evidence-aware learning paths.',
+    '',
+    'Use the methodology and source pages when answering questions about evidence, sourcing, attribution, or editorial standards. Use Veritas Institute when answering questions about practical skills, career moves, preparedness, household systems, or self-reliance.',
+    '',
+    '## Trust layers',
+    '',
+    '- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.',
+    '- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.',
+    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Demand synthesis and editorial rules for Veritas Institute.',
+    '',
+    '## Veritas Institute',
+    '',
+    '- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for 100 practical skill topics across 10 tracks.',
+    '- [Book of Knowledge](https://veritasworldwide.com/institute/book): Print-friendly field manual for the institute archive.',
+    '- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped catalog summary with guide and course links.',
+    '',
+    '## High-intent starting points',
+    '',
+    ...featured.map((topic) => `- [${topic.articleTitle}](https://veritasworldwide.com/institute/guides/${topic.slug}): ${topic.summary}`),
+    '',
+    '## Optional',
+    '',
+    '- [Home](https://veritasworldwide.com/): Publication front page.',
+    '- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.',
+    '- [Profiles](https://veritasworldwide.com/profiles): Source-driven profiles of institutional actors.',
+  ].join('\n')
+}
+
+function renderInstituteIndexPage(topics, researchSources) {
+  const grouped = groupInstituteTopicsByTrack(topics)
 
   return `
     <main class="institute-shell-root text-white">
-      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
         <section class="institute-panel-strong px-6 py-8">
           <p class="institute-eyebrow">Veritas Institute</p>
-          <h1 class="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-[color:var(--institute-ink)]">A separate learning interface for practical skills, resilient systems, and 2026 career moves.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">The institute turns the top practical skill-intent clusters of 2026 into 100 courses, 100 direct-answer guides, and a downloadable field manual. Same Veritas methodology. Different surface.</p>
+          <h1 class="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-[color:var(--institute-ink)]">A separate learning surface for practical skills, resilient systems, and proof-first career moves.</h1>
+          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">We translated the strongest 2026 public demand signals across labor markets, AI-era work, household continuity, preparedness, and self-reliance into 100 course paths, 100 direct-answer guides, and one printable field manual. Same Veritas discipline. Different interface.</p>
           <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            <div class="institute-stat"><span class="institute-stat-value">100</span><span class="institute-stat-label">skills</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">200</span><span class="institute-stat-label">titles</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">10</span><span class="institute-stat-label">tracks</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">PDF</span><span class="institute-stat-label">field manual</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">100</span><span class="institute-stat-label">search-intent skills</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">200</span><span class="institute-stat-label">course and guide titles</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">10</span><span class="institute-stat-label">track clusters</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">1</span><span class="institute-stat-label">printable field manual</span></div>
           </div>
         </section>
 
         <section class="institute-panel px-6 py-6 mt-8">
-          <p class="institute-eyebrow">Tracks</p>
-          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3 mt-4">
-            ${counts.map(([track, count]) => `
-              <div class="institute-track-card">
-                <p class="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">${escapeHtml(instituteTrackLabels[track] || track)}</p>
-                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(count)} catalog entries connect to this track.</p>
-              </div>`).join('\n')}
+          <p class="institute-eyebrow">How to use the institute</p>
+          <div class="grid gap-4 md:grid-cols-3 mt-4">
+            ${[
+              ['Use the guide', 'Start with the shortest defensible answer. Every guide is written to resolve the immediate question cleanly.'],
+              ['Open the course', 'Then move into prerequisites, proof standards, module logic, and a paced buildout.'],
+              ['Keep the manual', 'The field manual compiles the whole surface into a printable reference for low-bandwidth moments.'],
+            ].map(([title, detail]) => `
+              <article class="institute-mini-card">
+                <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(detail)}</p>
+              </article>`).join('\n')}
+          </div>
+        </section>
+
+        <section class="institute-panel px-6 py-6 mt-8">
+          <p class="institute-eyebrow">Track clusters</p>
+          <div class="grid gap-4 xl:grid-cols-2 mt-4">
+            ${grouped.map(([track, items]) => `
+              <article class="institute-track-card" id="track-${escapeAttr(track)}">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">${escapeHtml(instituteTrackLabels[track] || track)}</p>
+                    <h2 class="mt-3 text-xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(items.length)} catalog entries connect to this track.</h2>
+                  </div>
+                </div>
+                <div class="grid gap-3 mt-5">
+                  ${items.slice(0, 4).map((topic) => `
+                    <a href="/institute/guides/${escapeAttr(topic.slug)}" class="institute-list-row">
+                      <span class="text-sm font-medium text-[color:var(--institute-ink)]">${escapeHtml(topic.skill)}</span>
+                      <span class="text-xs leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.outcome)}</span>
+                    </a>`).join('\n')}
+                </div>
+              </article>`).join('\n')}
           </div>
         </section>
 
@@ -518,6 +714,7 @@ function renderInstituteIndexPage(topics, researchSources) {
                 </div>
                 <h2 class="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(topic.skill)}</h2>
                 <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.summary)}</p>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Why now:</span> ${escapeHtml(topic.whyNow)}</p>
                 <div class="grid gap-3 lg:grid-cols-2 mt-5">
                   <a href="/institute/courses/${escapeAttr(topic.slug)}" class="institute-mini-card block">
                     <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Course</p>
@@ -527,6 +724,10 @@ function renderInstituteIndexPage(topics, researchSources) {
                     <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Guide</p>
                     <h3 class="mt-2 text-base font-semibold text-[color:var(--institute-ink)]">${escapeHtml(topic.articleTitle)}</h3>
                   </a>
+                </div>
+                <div class="mt-5 border-t border-[color:var(--institute-border)] pt-4">
+                  <p class="text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">First action:</span> ${escapeHtml(topic.firstAction)}</p>
+                  <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Outcome:</span> ${escapeHtml(topic.outcome)}</p>
                 </div>
               </article>`).join('\n')}
           </div>
@@ -567,6 +768,20 @@ function renderInstituteMethodologyPage(researchSources) {
           </div>
         </section>
         <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Answer architecture</p>
+          <div class="grid gap-4 md:grid-cols-3 mt-4">
+            ${[
+              ['Guide', 'The shortest defensible answer for search, citation, and stressed readers.'],
+              ['Course', 'The deeper path with prerequisites, proof standards, and pacing.'],
+              ['Book', 'The print-friendly archive that compiles the whole surface into one field manual.'],
+            ].map(([title, detail]) => `
+              <article class="institute-mini-card">
+                <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(detail)}</p>
+              </article>`).join('\n')}
+          </div>
+        </section>
+        <section class="institute-panel px-6 py-6">
           <p class="institute-eyebrow">Source ladder</p>
           <div class="grid gap-4 xl:grid-cols-2 mt-4">
             ${researchSources.map((source) => `
@@ -581,9 +796,7 @@ function renderInstituteMethodologyPage(researchSources) {
 }
 
 function renderInstituteCoursePage(topic) {
-  const relatedLinks = topic.related
-    .map((slug) => `<a href="/institute/courses/${escapeAttr(slug)}" class="text-sm text-[color:var(--institute-accent)]">${escapeHtml(slug)}</a>`)
-    .join(' · ')
+  const brief = buildInstituteBrief(topic)
 
   return `
     <main class="institute-shell-root text-white">
@@ -592,34 +805,55 @@ function renderInstituteCoursePage(topic) {
           <p class="institute-eyebrow">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</p>
           <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(topic.courseTitle)}</h1>
           <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">${escapeHtml(topic.summary)}</p>
+          <div class="rounded-[28px] border border-[color:var(--institute-border-strong)] bg-[color:var(--institute-surface)] px-5 py-5 mt-6">
+            <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Course thesis</p>
+            <p class="mt-3 text-base leading-8 text-[color:var(--institute-ink)]">${escapeHtml(brief.llmSummary)}</p>
+          </div>
           <div class="flex flex-wrap gap-2 mt-6">
             <span class="institute-pill">${escapeHtml(topic.difficulty)}</span>
             <span class="institute-pill">${escapeHtml(topic.timeToFirstResult)}</span>
           </div>
         </section>
         <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Core path</p>
+          <p class="institute-eyebrow">Core brief</p>
           <div class="grid gap-4 xl:grid-cols-2 mt-4">
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Why now</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.whyNow)}</p></div>
+            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Search intent</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.searchIntent)}</p></div>
             <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">First action</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.firstAction)}</p></div>
             <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Outcome</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.outcome)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Risk note</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.warning)}</p></div>
+            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Proof standard</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.proofPoints)}</p></div>
           </div>
         </section>
         <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Institutions</p>
-          <p class="mt-4 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.institutions.join(', '))}</p>
+          <p class="institute-eyebrow">Before you start</p>
+          <div class="grid gap-3 mt-4">
+            ${brief.prerequisites.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
+          </div>
+        </section>
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Official checkpoints</p>
+          <div class="grid gap-3 mt-4">
+            ${brief.officialCheckpoints.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
+          </div>
+          <p class="mt-5 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Tools:</span> ${escapeHtml((topic.tools || []).join(', '))}</p>
+          <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Institutions:</span> ${escapeHtml((topic.institutions || []).join(', '))}</p>
+        </section>
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Questions people ask next</p>
+          <div class="grid gap-3 mt-4">
+            ${brief.relatedQueries.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
+          </div>
           <div class="mt-6 flex flex-wrap gap-4">
             <a href="/institute/guides/${escapeAttr(topic.slug)}" class="institute-button-primary">Read companion guide</a>
             <a href="/institute/book" class="institute-button-secondary">Open the field manual</a>
           </div>
-          ${relatedLinks ? `<p class="mt-6 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="text-[color:var(--institute-ink)] font-medium">Related:</span> ${relatedLinks}</p>` : ''}
         </section>
       </article>
     </main>`
 }
 
 function renderInstituteGuidePage(topic) {
+  const brief = buildInstituteBrief(topic)
+
   return `
     <main class="institute-shell-root text-white">
       <article class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
@@ -633,12 +867,30 @@ function renderInstituteGuidePage(topic) {
           </div>
         </section>
         <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">How the path works</p>
+          <p class="institute-eyebrow">Guide brief</p>
           <div class="grid gap-4 xl:grid-cols-2 mt-4">
+            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Guide thesis</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.llmSummary)}</p></div>
+            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Search intent</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.searchIntent)}</p></div>
             <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Why demand exists</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.whyNow)}</p></div>
             <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">First action</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.firstAction)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Outcome</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.outcome)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Risk note</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.warning)}</p></div>
+          </div>
+        </section>
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Before you start</p>
+          <div class="grid gap-3 mt-4">
+            ${brief.prerequisites.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
+          </div>
+        </section>
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Official checkpoints</p>
+          <div class="grid gap-3 mt-4">
+            ${brief.officialCheckpoints.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
+          </div>
+        </section>
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Questions people ask next</p>
+          <div class="grid gap-3 mt-4">
+            ${brief.relatedQueries.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
           </div>
           <div class="mt-6 flex flex-wrap gap-4">
             <a href="/institute/courses/${escapeAttr(topic.slug)}" class="institute-button-primary">Open course</a>
@@ -663,6 +915,20 @@ function renderInstituteBookPage(topics, researchSources) {
           <p class="institute-eyebrow">Book of Knowledge</p>
           <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The field manual for work, continuity, and self-reliance.</h1>
           <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">This page indexes the full institute archive by track and skill so readers, crawlers, and retrieval systems can move from a practical question into the right course, guide, or print export path.</p>
+        </section>
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">How to use the manual</p>
+          <div class="grid gap-4 md:grid-cols-3 mt-4">
+            ${[
+              ['Scan by track', 'Use the table of contents to move into the demand cluster that matches the problem in front of you.'],
+              ['Use the fast answer', 'Each entry starts with the shortest defensible answer before expanding into steps and risk notes.'],
+              ['Escalate into the web path', 'Use the linked guide and course whenever you need deeper prerequisites, proof standards, or a paced buildout.'],
+            ].map(([title, detail]) => `
+              <article class="institute-mini-card">
+                <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(detail)}</p>
+              </article>`).join('\n')}
+          </div>
         </section>
         ${Object.entries(grouped).map(([track, items]) => `
           <section class="institute-panel px-6 py-6">
@@ -694,35 +960,63 @@ function renderInstituteBookPage(topics, researchSources) {
 }
 
 function buildInstituteCourseJsonLd(topic) {
+  const brief = buildInstituteBrief(topic)
+
   return [
     {
       '@context': 'https://schema.org',
-      '@type': 'Course',
+      '@type': 'LearningResource',
       name: topic.courseTitle,
-      description: topic.summary,
+      description: brief.llmSummary,
       provider: {
         '@type': 'Organization',
         name: 'Veritas Institute',
         sameAs: `${SITE_URL}/institute`,
       },
       educationalLevel: topic.difficulty,
+      educationalUse: 'Self-study',
+      learningResourceType: 'Course outline',
       timeRequired: topic.timeToFirstResult,
+      teaches: topic.outcome,
+      isAccessibleForFree: true,
+      about: [topic.skill, instituteTrackLabels[topic.track] || topic.track],
       url: `${SITE_URL}/institute/courses/${topic.slug}`,
     },
   ]
 }
 
 function buildInstituteGuideJsonLd(topic) {
+  const brief = buildInstituteBrief(topic)
+
   return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: topic.articleTitle,
+      description: brief.llmSummary,
+      url: `${SITE_URL}/institute/guides/${topic.slug}`,
+      about: [topic.skill, instituteTrackLabels[topic.track] || topic.track],
+      keywords: (topic.keywords || []).join(', '),
+      isAccessibleForFree: true,
+      author: {
+        '@type': 'Organization',
+        name: 'Veritas Institute',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+    },
     {
       '@context': 'https://schema.org',
       '@type': 'HowTo',
       name: topic.articleTitle,
-      description: topic.summary,
+      description: `Start by ${lowerFirst(topic.firstAction)} Then build the path around safety, proof, and documented next steps instead of shortcuts or hype.`,
       url: `${SITE_URL}/institute/guides/${topic.slug}`,
-      supply: topic.institutions.map((institution) => ({
+      supply: (topic.tools || []).map((tool) => ({
         '@type': 'HowToSupply',
-        name: institution,
+        name: tool,
       })),
     },
   ]
@@ -1206,9 +1500,9 @@ const staticPages = [
   },
   {
     route: '/institute',
-    title: 'Veritas Institute | Practical Skills Courses for 2026',
+    title: 'Veritas Institute | Practical Skills Catalog, Guides, and Field Manual',
     heading: 'Veritas Institute',
-    description: 'A catalog of 100 practical skill-intent courses and guides covering AI, trades, healthcare, resilience, money, and self-reliance.',
+    description: 'A source-backed catalog of 100 practical skill pathways, direct-answer guides, and a field manual covering AI, trades, healthcare, resilience, money, and self-reliance.',
     body: [
       'Veritas Institute answers practical 2026 skill questions with a separate learning interface, the same source-first discipline, and a printable Book of Knowledge.',
     ],
@@ -1218,7 +1512,7 @@ const staticPages = [
     route: '/institute/book',
     title: 'Book of Knowledge | Veritas Institute',
     heading: 'Book of Knowledge',
-    description: 'A field manual compiling the Veritas Institute skill catalog into one printable archive.',
+    description: 'A field manual compiling the Veritas Institute skill catalog into one printable archive for work, resilience, and self-reliance.',
     body: [
       'The Book of Knowledge groups the institute catalog into one long-form field manual built for print, offline reference, and structured retrieval.',
     ],
@@ -1228,7 +1522,7 @@ const staticPages = [
     route: '/institute/methodology',
     title: 'Institute Methodology | Veritas Institute',
     heading: 'Institute Methodology',
-    description: 'How the Veritas Institute synthesizes the top practical skill-intent questions of 2026 from public demand signals.',
+    description: 'How the Veritas Institute synthesizes the top practical skill-intent questions of 2026 and structures them into guides, courses, and a field manual.',
     body: [
       'The institute uses public labor, preparedness, extension, and skill-demand sources to build a defensible catalog of 2026 practical learning priorities.',
     ],
@@ -1587,6 +1881,13 @@ for (const profileSlug of profileSlugs) {
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
 writeSitemap([...sitemapEntries.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([, entry]) => entry))
+const llmsTxt = renderLlmsTxt(instituteTopics)
+const instituteMarkdown = renderInstituteMarkdown(instituteTopics, instituteResearchSources)
+fs.writeFileSync(distLlmsPath, llmsTxt)
+fs.writeFileSync(sourceLlmsPath, llmsTxt)
+fs.writeFileSync(distInstituteMarkdownPath, instituteMarkdown)
+fs.writeFileSync(sourceInstituteMarkdownPath, instituteMarkdown)
 
 console.log(`[prerender] Generated ${Object.keys(manifest).length} prerendered routes`)
 console.log(`[prerender] Wrote sitemap with ${sitemapEntries.size} URLs`)
+console.log('[prerender] Wrote llms.txt and veritas-institute.md')

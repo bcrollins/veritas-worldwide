@@ -72,6 +72,30 @@ export default function InstituteMethodologyPage() {
       </section>
 
       <section className="institute-panel px-6 py-6">
+        <p className="institute-eyebrow">Answer architecture</p>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">Guide</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              The shortest defensible answer for search, citation, and readers who need the next move now.
+            </p>
+          </article>
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">Course</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              The deeper operating path with prerequisites, proof standards, module deliverables, and pacing.
+            </p>
+          </article>
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">Book</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              The print-friendly archive that compiles the whole surface into one field manual.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="institute-panel px-6 py-6">
         <p className="institute-eyebrow">Track logic</p>
         <div className="mt-4 grid gap-4 xl:grid-cols-2">
           {instituteTracks.map((track) => (
