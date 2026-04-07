@@ -6,13 +6,15 @@
     "Confirmed a live auth boundary defect: logout deleted session rows, but authenticateToken only trusted JWT verification plus the users table, so revoked tokens could still unlock protected content until expiry.",
     "Patched server-side auth to require an unexpired matching session row for every bearer token, closing logout/session revocation gaps across chapter unlocks, downloads, and user APIs.",
     "Patched ChapterPage and ReadTheBookPage to re-request scope-appropriate chapter payloads on auth transitions and clear stale full-content state when the reader auth scope changes.",
-    "Verified the fix locally in the active workspace and in a clean detached worktree with npx tsc --noEmit and npm run build."
+    "Verified the fix locally in the active workspace and in a clean detached worktree with npx tsc --noEmit and npm run build.",
+    "Confirmed the deployed Railway build revoked logged-out bearer tokens on April 7, 2026: the same token now gets 401 from /api/auth/me and /api/downloads/the-record.pdf after logout while public routes still return 200.",
+    "Added a repo-native auth smoke runner at scripts/verify-auth-flows.mjs plus npm run verify:auth, then executed it successfully against https://veritasworldwide.com."
   ],
-  "next_task": "Push the auth-boundary fix to main and re-run the live logout/token revocation check after Railway deploys, then add automated auth regression coverage for register/login/logout/download flows.",
+  "next_task": "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a browser session, then add source-link integrity automation.",
   "next_priorities": [
-    "Re-verify live logout revocation by calling /api/auth/logout and /api/auth/me with the same bearer token after deployment.",
-    "Add automated auth regression coverage for chapter preview/full transitions, logout revocation, and protected PDF downloads.",
+    "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session.",
     "Add Sentry or equivalent production monitoring to capture auth/API failures before readers report them.",
-    "Build a source-link health and archive-checker workflow so citation durability is monitored instead of assumed."
+    "Build a source-link health and archive-checker workflow so citation durability is monitored instead of assumed.",
+    "Decide whether to wire npm run verify:auth into CI or a scheduled operational check against Railway."
   ]
 }

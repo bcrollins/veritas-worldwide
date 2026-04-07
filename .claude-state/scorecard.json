@@ -4,17 +4,17 @@
   "site": [
     {
       "feature": "Chapter Reading",
-      "composite": 9.0,
-      "previous": 8.8,
-      "delta": 0.2,
+      "composite": 9.1,
+      "previous": 9.0,
+      "delta": 0.1,
       "status": "improved",
-      "plus_half_requires": "Add automated auth E2E coverage for preview-to-full upgrades, logout downgrades, and protected PDF access on the live deployment."
+      "plus_half_requires": "Verify the auth upgrade/downgrade experience at 390px and 430px in a browser session and add regression coverage for the /read reader shell as well as individual chapter routes."
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.2,
-      "previous": 9.0,
-      "delta": 0.2,
+      "composite": 9.3,
+      "previous": 9.2,
+      "delta": 0.1,
       "status": "improved",
       "plus_half_requires": "Shorten access-token lifetime or add refresh rotation, then prove revocation and session expiry with automated integration coverage."
     },
@@ -100,7 +100,8 @@
       "Preview chapter payloads no longer expose filter metadata intended for the authenticated source browser and full-search experience.",
       "Auth entry points now preserve intended archive destinations without defaulting every flow to signup mode.",
       "Bearer token auth now requires a live, unexpired session row, so logout and other session invalidations revoke protected access instead of leaving tokens valid until JWT expiry.",
-      "Reader surfaces now reload scope-appropriate chapter payloads when auth state changes, preventing stale full-content payloads from lingering after logout or requiring a manual refresh after signup."
+      "Reader surfaces now reload scope-appropriate chapter payloads when auth state changes, preventing stale full-content payloads from lingering after logout or requiring a manual refresh after signup.",
+      "A repo-native auth smoke runner now exercises anonymous preview, register, login, full chapter unlock, source-only search, protected PDF download, logout revocation, and post-logout downgrade against the target environment."
     ],
     "p0_open": [],
     "new_p0": []

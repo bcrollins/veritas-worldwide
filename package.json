@@ -8,7 +8,8 @@
     "build": "npx tsc && vite build",
     "postbuild": "node scripts/export-chapter-data.mjs && node scripts/prerender.mjs",
     "start": "node server.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify:auth": "node scripts/verify-auth-flows.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
