@@ -234,11 +234,11 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     sources: [
       { label: 'CNN — Satellite imagery confirms scale of Jabalia strikes', url: 'https://www.cnn.com/2023/10/31/middleeast/israel-jabalya-refugee-camp-strike-intl-hnk' },
       { label: 'Euro-Med Monitor — Documentation of Jabalia strikes', url: 'https://euromedmonitor.org/en/article/5908' },
-      { label: 'Al Jazeera — Timeline of Jabalia camp attacks', url: 'https://www.aljazeera.com/news/2023/11/1/jabalia-refugee-camp-what-we-know-about-the-latest-israeli-attack' },
+      { label: 'Al Jazeera — What we know so far about the Jabalia attack', url: 'https://www.aljazeera.com/news/2023/11/1/israels-deadly-attack-on-the-jabalia-refugee-camp-what-we-know-so-far' },
     ],
     multimedia: [
       { type: 'investigation', label: 'CNN — Satellite analysis of bomb craters', url: 'https://www.cnn.com/2023/10/31/middleeast/israel-jabalya-refugee-camp-strike-intl-hnk' },
-      { type: 'video', label: 'Al Jazeera — Ground footage of aftermath', url: 'https://www.aljazeera.com/gallery/2023/11/1/photos-aftermath-of-israeli-strikes-on-jabalia-refugee-camp-in-gaza' },
+      { type: 'video', label: 'Al Jazeera — Photo report on Gaza strike aftermath', url: 'https://www.aljazeera.com/gallery/2023/11/4/israel-ramps-up-attacks-in-gaza-striking-schools-hospitals-and-mosques' },
     ],
     tier: 'verified',
     casualties: { killed: 120, injured: 280 },
@@ -271,7 +271,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     evidence: 'Euro-Med Human Rights Monitor documented the destruction of all 12 institutions using satellite imagery comparisons. Forensic Architecture published spatial analysis showing several university buildings were demolished by controlled explosions rather than airstrikes, indicating deliberate destruction rather than collateral damage. UNESCO condemned the "scholasticide" — the systematic destruction of educational infrastructure.',
     sources: [
       { label: 'Euro-Med Monitor — Complete destruction of Gaza universities', url: 'https://euromedmonitor.org/en/article/6129' },
-      { label: 'UNESCO — Statement on destruction of educational infrastructure', url: 'https://www.unesco.org/en/articles/gaza-higher-education-destroyed' },
+      { label: 'UNESCO — Gaza education emergency updates', url: 'https://www.unesco.org/en/gaza/education' },
       { label: 'The Guardian — "Scholasticide": destruction of every university in Gaza', url: 'https://www.theguardian.com/world/2024/jan/24/scholasticide-gaza-university-education-system-destroyed' },
     ],
     multimedia: [
@@ -289,7 +289,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     evidence: 'Israel released video showing a tunnel shaft and corridor beneath Al-Shifa during the first raid, along with a small cache of weapons. Independent analysts, including the Washington Post, found the evidence fell short of the claimed "command and control center." The second raid resulted in near-total destruction of the facility. WHO reported the hospital was rendered "a death zone" and "an empty shell."',
     sources: [
       { label: 'Washington Post — Analysis of Israel\'s Al-Shifa evidence', url: 'https://www.washingtonpost.com/world/2023/11/17/israel-hamas-al-shifa-hospital-evidence/' },
-      { label: 'WHO — Al-Shifa hospital "a death zone"', url: 'https://www.who.int/news/item/01-04-2024-who-appalled-by-latest-reports-from-al-shifa-hospital' },
+      { label: 'WHO — High-risk mission to Al-Shifa hospital', url: 'https://www.emro.who.int/opt/news/who-leads-very-high-risk-joint-humanitarian-mission-to-al-shifa-hospital-in-gaza.html' },
       { label: 'BBC — Second Al-Shifa raid kills 400+', url: 'https://www.bbc.com/news/world-middle-east-68820038' },
     ],
     multimedia: [
@@ -329,12 +329,12 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     sources: [
       { label: 'CNN — Investigation: Israeli forces shot Shireen Abu Akleh', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-investigation-cmd-intl' },
       { label: 'Washington Post — Ballistic analysis points to Israeli soldier', url: 'https://www.washingtonpost.com/investigations/interactive/2022/shireen-abu-akleh-death/' },
-      { label: 'Al Jazeera — Full investigation', url: 'https://www.aljazeera.com/news/2022/9/5/killing-of-shireen-abu-akleh-al-jazeera-submits-case-to-icc' },
+      { label: 'Al Jazeera — ICC dossier on Abu Akleh killing', url: 'https://www.aljazeera.com/news/2022/12/6/what-is-in-al-jazeera-dossier-for-the-icc-on-abu-aklehs-killing' },
       { label: 'UN OHCHR — "Shots that killed Abu Akleh came from Israeli forces"', url: 'https://www.ohchr.org/en/press-releases/2022/06/un-human-rights-office-concludes-shots-killed-journalist-came-israeli' },
     ],
     multimedia: [
       { type: 'investigation', label: 'CNN — Visual and acoustic investigation', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-investigation-cmd-intl' },
-      { type: 'video', label: 'Al Jazeera — Documentary on Abu Akleh killing', url: 'https://www.aljazeera.com/program/witness/2023/5/10/killing-shireen' },
+      { type: 'video', label: 'Al Jazeera — Video segment on Abu Akleh killing', url: 'https://www.aljazeera.com/video/the-stream/2022/5/11/al-jazeera-journalist-shireen-abu-akleh-killed-by-israeli-forces' },
     ],
     tier: 'verified',
     casualties: { killed: 1 },
@@ -386,7 +386,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     evidence: 'Six Israeli intelligence officers provided testimony to +972 Magazine and Local Call, speaking on condition of anonymity. They described the AI systems, the minimal human oversight, and the policy of striking targets at home with their families. The investigation was corroborated by analysis of strike patterns showing a disproportionate number of residential building attacks during nighttime hours. The IDF did not deny the existence of the systems but disputed the characterization of their use.',
     sources: [
       { label: '+972 Magazine — "Lavender": The AI machine directing Israel\'s bombing', url: 'https://www.972mag.com/lavender-ai-israeli-army-gaza/' },
-      { label: 'The Guardian — Israeli army used AI to target thousands in Gaza', url: 'https://www.theguardian.com/world/2024/apr/03/israel-gaza-ai-database-hamas-lavender' },
+      { label: 'The Guardian — Israel-Gaza AI database airstrikes investigation', url: 'https://www.theguardian.com/world/2024/apr/03/israel-gaza-ai-database-hamas-airstrikes' },
       { label: '+972 Magazine — "Where\'s Daddy?" tracking system', url: 'https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/' },
     ],
     multimedia: [
@@ -687,7 +687,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
     headline: 'Every University Destroyed',
     body: 'All 12 universities in Gaza demolished. 80% of housing destroyed. 176 mosques, 3 churches, and 36 hospitals damaged. Famine declared. 1.9 million displaced.\n\nThis is what $310 billion bought.',
     source: 'UNESCO / UNOSAT / IPC',
-    sourceUrl: 'https://www.unesco.org/en/articles/gaza-higher-education-destroyed',
+    sourceUrl: 'https://www.unesco.org/en/gaza/education',
     bgStyle: 'light',
   },
   {

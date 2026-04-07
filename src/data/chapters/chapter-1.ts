@@ -63,7 +63,7 @@ const chapter: Chapter = {
   ],
   sources: [
     { id: 1, text: 'Niall Ferguson, The House of Rothschild: Money\'s Prophets, 1798-1848 (Viking, 1998) — The definitive academic biography based on access to the Rothschild Archive.' },
-    { id: 2, text: 'Rothschild Archive, London — "Nathan Mayer Rothschild and the Waterloo Commission."', url: 'https://www.rothschildarchive.org' },
+    { id: 2, text: 'Rothschild Archive, London — "Nathan Mayer Rothschild and the Waterloo Commission."', url: 'https://www.rothschildarchive.org/business/n_m_rothschild_and_sons_london/nathan_mayer_rothschild_and_the_waterloo_commission' },
     { id: 3, text: 'Niall Ferguson, The World\'s Banker: The History of the House of Rothschild (Weidenfeld & Nicolson, 1998)' },
     { id: 4, text: 'Bank of England, "A History of the Bank of England."', url: 'https://www.bankofengland.co.uk/about/history' },
     { id: 5, text: 'Robert E. Wright, One Nation Under Debt: Hamilton, Jefferson, and the History of What We Owe (McGraw-Hill, 2008)' },

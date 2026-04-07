@@ -37,7 +37,7 @@ const chapter: Chapter = {
     { id: 6, text: 'National Archives  —  Warren Commission Report, 1964  —  https://www.archives.gov/research/jfk/warren-commission-report', url: 'https://www.archives.gov/research/jfk/warren-commission-report' },
     { id: 7, text: 'U.S. House Select Committee on Assassinations, "Final Report," 1979. Available at: National Archives.', url: 'https://www.archives.gov/research/jfk/select-committee-report' },
     { id: 8, text: 'Executive Order 11110, Federal Register, Vol. 28, No. 109, June 7, 1963. Signed June 4, 1963.', url: 'https://www.archives.gov/federal-register/executive-orders/1963-kennedy.html#11110' },
-    { id: 9, text: 'Avner Cohen, Israel and the Bomb (Columbia University Press, 1998). The definitive academic account of Israel\'s nuclear program.', url: 'https://www.wilsoncenter.org/publication/israel-and-the-bomb' }
+    { id: 9, text: 'Avner Cohen, Israel and the Bomb (National Security Archive book page). The definitive academic account of Israel\'s nuclear program.', url: 'https://nsarchive.gwu.edu/index.php/book/israel-bomb' }
   ],
   crossLinks: [{ label: 'Chapter 9: JFK Expanded Analysis', chapterId: 'chapter-9' }, { label: 'Chapter 14: AIPAC & Congressional Lobbying', chapterId: 'chapter-14' }],
   keywords: ['JFK', 'Kennedy', 'Dimona', 'AIPAC', 'nuclear', 'Israel'],

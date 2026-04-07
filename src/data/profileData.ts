@@ -1682,7 +1682,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 3500000,
         year: '2008-2012',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/pres08/contrib.php?cid=N00009638'
+        url: 'https://web.archive.org/web/20250919130757/https://www.opensecrets.org/PRES08/contrib.php?cid=N00009638'
       }
     ],
     policyActions: [
@@ -3105,7 +3105,7 @@ export const PROFILES: PowerProfile[] = [
     tags: ['Senator', 'California', 'Democrat', 'Intelligence Committee', 'Deceased 2023'],
     career: ['U.S. Senator (D-CA) 1992-2023', 'Mayor of San Francisco', 'State legislator'],
     websites: [
-      { label: 'Senate Website', url: 'https://www.feinstein.senate.gov' }
+      { label: 'Senate Website', url: 'https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/' }
     ],
     quotes: [
       {
@@ -3113,7 +3113,7 @@ export const PROFILES: PowerProfile[] = [
         context: 'Senate floor speech',
         date: '2018',
         source: 'Senate.gov',
-        url: 'https://www.feinstein.senate.gov'
+        url: 'https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/'
       }
     ],
     donations: [
@@ -4746,7 +4746,7 @@ export const PROFILES: PowerProfile[] = [
       {
         claim: 'Podesta Group shut down during Mueller investigation into foreign lobbying',
         source: 'Mueller Report',
-        url: 'https://www.justice.gov/archives/sco',
+        url: 'https://www.justice.gov/archives/sco-mueller',
         tier: 'verified',
         date: '2017'
       },
@@ -4808,7 +4808,7 @@ export const PROFILES: PowerProfile[] = [
       {
         claim: 'Emails hacked by Russian intelligence and released by WikiLeaks in 2016',
         source: 'Mueller Report',
-        url: 'https://www.justice.gov/archives/sco',
+        url: 'https://www.justice.gov/archives/sco-mueller',
         tier: 'verified',
         date: '2016'
       },
@@ -5445,7 +5445,7 @@ export const PROFILES: PowerProfile[] = [
       {
         claim: 'Met with Russian banker in Seychelles, investigated by Mueller',
         source: 'Mueller Report',
-        url: 'https://www.justice.gov/archives/sco',
+        url: 'https://www.justice.gov/archives/sco-mueller',
         tier: 'verified',
         date: '2019'
       },
@@ -5549,7 +5549,7 @@ export const PROFILES: PowerProfile[] = [
         date: '2017-2019',
         context: '34 indictments, 7 guilty pleas/convictions',
         source: 'DOJ',
-        url: 'https://www.justice.gov/archives/sco'
+        url: 'https://www.justice.gov/archives/sco-mueller'
       }
     ],
     connections: [
@@ -5564,14 +5564,14 @@ export const PROFILES: PowerProfile[] = [
       {
         claim: 'Mueller investigation resulted in 34 indictments and 7 guilty pleas or convictions',
         source: 'DOJ Special Counsel Office',
-        url: 'https://www.justice.gov/archives/sco',
+        url: 'https://www.justice.gov/archives/sco-mueller',
         tier: 'verified',
         date: '2019'
       },
       {
         claim: 'Report stated president was not exonerated on obstruction of justice',
         source: 'Mueller Report',
-        url: 'https://www.justice.gov/archives/sco',
+        url: 'https://www.justice.gov/archives/sco-mueller',
         tier: 'verified',
         date: '2019'
       }

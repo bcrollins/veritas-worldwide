@@ -9,7 +9,7 @@ const stateDir = path.join(repoRoot, '.claude-state')
 const reportJsonPath = path.join(stateDir, 'source-link-report.json')
 const reportMdPath = path.join(stateDir, 'source-link-report.md')
 
-const timeoutMs = Number.parseInt(process.env.SOURCE_LINK_TIMEOUT_MS || '8000', 10)
+const timeoutMs = Number.parseInt(process.env.SOURCE_LINK_TIMEOUT_MS || '12000', 10)
 const concurrency = Number.parseInt(process.env.SOURCE_LINK_CONCURRENCY || '12', 10)
 const strictMode = process.env.SOURCE_LINK_STRICT === '1'
 const userAgent = process.env.SOURCE_LINK_USER_AGENT || 'Mozilla/5.0 (compatible; VeritasSourceLinkChecker/1.0; +https://veritasworldwide.com)'
@@ -316,7 +316,11 @@ async function probeUrl(url) {
       const response = await fetchWithTimeout(url, { method: attempt.method })
       const classification = classifyHttpStatus(response.status)
 
-      if (attempt.method === 'HEAD' && [400, 405, 501].includes(response.status)) {
+      if (
+        attempt.method === 'HEAD' &&
+        (lastError || [400, 404, 405, 500, 501, 502, 503, 504].includes(response.status))
+      ) {
+        await response.body?.cancel().catch(() => {})
         continue
       }
 
@@ -332,6 +336,7 @@ async function probeUrl(url) {
         result.status = 'ok'
       }
 
+      await response.body?.cancel().catch(() => {})
       return result
     } catch (error) {
       lastError = error

@@ -1,4 +1,5 @@
-const baseUrl = process.env.AUTH_TEST_BASE_URL || 'http://127.0.0.1:3000'
+const cliBaseUrl = process.argv[2]
+const baseUrl = cliBaseUrl || process.env.AUTH_TEST_BASE_URL || 'http://127.0.0.1:3000'
 const chapterId = process.env.AUTH_TEST_CHAPTER_ID || 'foreword'
 const searchQuery = process.env.AUTH_TEST_QUERY || 'federal reserve'
 const password = process.env.AUTH_TEST_PASSWORD || 'AuditPass2026!'

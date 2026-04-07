@@ -1,5 +1,5 @@
 {
-  "run": 14,
+  "run": 15,
   "date": "2026-04-07",
   "site": [
     {
@@ -28,11 +28,11 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 8.8,
-      "previous": 8.5,
-      "delta": 0.3,
+      "composite": 9,
+      "previous": 8.8,
+      "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Repair the remaining dossier/profile source failures and add archive-backed replacement policy for dead newsroom links so the bibliography stays durable under external link rot."
+      "plus_half_requires": "Repair the remaining dossier/profile source failures, especially the Israel dossier newsroom URLs and OpenSecrets profile links, then operationalize archive-backed fallbacks or CI enforcement so the bibliography stays durable under link rot."
     },
     {
       "feature": "Search",
