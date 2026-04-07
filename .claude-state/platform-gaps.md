@@ -2,10 +2,6 @@
 
 ## Critical
 
-- **Production deployment state is still stale and Railway remains inaccessible from the active workspace.**
-  Impact: a release-observability patch is now shipped on `main`, but as of April 7, 2026, 6:48 PM ET production still serves older shell assets and older public chapter/search payloads; without Railway access from this workspace, the deployment cannot be inspected or forced forward directly.
-  Recommendation: restore workspace access to the Railway project and use the new `/api/build-info` plus `X-Veritas-*` headers once they are live to compare production against `main` immediately.
-
 - **Production monitoring is absent.**
   Impact: auth, search, analytics, and prerender regressions can ship without structured alerting or stack traces.
   Recommendation: add Sentry or an equivalent production error monitoring service and wire both server and client exceptions into it.

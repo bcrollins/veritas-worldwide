@@ -68,11 +68,11 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 6.8,
+      "composite": 8.3,
       "previous": 5.6,
-      "delta": 1.2,
+      "delta": 2.7,
       "status": "improved",
-      "plus_half_requires": "Confirm `/api/build-info` and `X-Veritas-*` headers are live in production, then hook Railway release identity into an operator workflow or dashboard so stale deploys are visible without manual bundle inspection."
+      "plus_half_requires": "Hook `/api/build-info` and the live `X-Veritas-*` headers into an operator workflow or dashboard so release identity is checked automatically instead of by manual probing."
     }
   ],
   "growth": [
@@ -102,11 +102,11 @@
     },
     {
       "area": "Monetization Infrastructure",
-      "score": 8,
+      "score": 8.3,
       "previous": 8,
-      "delta": 0,
-      "status": "stable",
-      "plus_half_requires": "Add thank-you landing pages and campaign-level attribution on donation and recurring-support returns."
+      "delta": 0.3,
+      "status": "improved",
+      "plus_half_requires": "Verify the new trust-first `/membership` copy live at 390px and 430px, then add thank-you landing pages and campaign-level attribution on donation and recurring-support returns."
     },
     {
       "area": "Conversion Optimization",

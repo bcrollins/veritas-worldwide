@@ -6,35 +6,7 @@ import { trackSupportClick } from '../lib/ga4'
 import { trackCheckoutIntent } from '../lib/conversionTracking'
 import { TierIcon } from '../components/TierIcons'
 
-/*
-  25 CONVERSION STRATEGIES EMBEDDED IN THIS PAGE:
-  ─────────────────────────────────────────────────
-  1.  Anchoring — Founding Circle at $25 makes Investigator at $12 feel like a deal
-  2.  "Most Popular" badge — Social proof nudge on Investigator tier
-  3.  Annual toggle with explicit savings — Loss aversion ("Save 20%")
-  4.  Free tier shown — Reduces pressure, increases trust → higher conversion
-  5.  Limited-time "Founding Member" framing — Scarcity + exclusivity
-  6.  Testimonial/social proof section — "Join X readers" counter
-  7.  Mission-first CTA copy — "Fund the truth" not "Subscribe"
-  8.  FAQ section — Objection handling at point of decision
-  9.  Money-back guarantee — Risk reversal
-  10. Feature comparison table — Clarity reduces friction
-  11. Progressive disclosure — Tiers reveal detail on hover/click
-  12. Urgency micro-copy — "Founding rates won't last forever"
-  13. Value reframing — "$0.16/day" instead of "$5/month"
-  14. Trust badges — "Stripe-secured" + "Cancel anytime"
-  15. Content preview — Show what members get (exclusive dossier preview)
-  16. Sticky CTA on scroll — Floating join bar after hero
-  17. Social share incentive — "Share & get 1 month free" (future)
-  18. Multiple CTAs — Top, middle, bottom of page
-  19. Contrast color on primary CTA — Crimson on parchment
-  20. Newsletter-to-paid funnel — Free email → paid conversion path
-  21. Reading streak integration — "You've read X chapters — join us"
-  22. Chapter gate preview — "Continue reading with membership"
-  23. Mobile-first responsive design — 60%+ traffic is mobile
-  24. Accessibility — Full keyboard nav, screen reader labels, WCAG 2.1 AA
-  25. Exit intent recovery — Newsletter popup catches bouncing visitors
-*/
+// Membership is framed as public-interest support, not scarcity-driven commerce.
 
 const TIERS = [
   {
@@ -43,9 +15,8 @@ const TIERS = [
     icon: '📖',
     monthlyPrice: 0,
     annualPrice: 0,
-    color: '#6B7280',
     features: [
-      'Full access to all 28 published chapters with a free reader account',
+      'Full access to the published archive with a free reader account',
       'Israel Dossier & all special investigations',
       'Source library with primary documents',
       'Dark mode, bookmarks, search',
@@ -73,7 +44,7 @@ const TIERS = [
 ]
 
 export default function MembershipPage() {
-  const [annual, setAnnual] = useState(true) // Strategy 3: Default to annual (higher LTV)
+  const [annual, setAnnual] = useState(true)
   const [showSticky, setShowSticky] = useState(false)
 
   useEffect(() => {
@@ -107,7 +78,6 @@ export default function MembershipPage() {
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
-  // Strategy 16: Sticky CTA after scrolling past hero
   useEffect(() => {
     const onScroll = () => setShowSticky(window.scrollY > 600)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -136,14 +106,13 @@ export default function MembershipPage() {
             Membership
           </p>
           <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            The truth doesn&apos;t have a party.<br />
-            <span className="text-crimson-light">Fund it anyway.</span>
+            Support the record.<br />
+            <span className="text-crimson-light">Keep the archive open.</span>
           </h1>
           <p className="font-body text-lg md:text-xl text-white/60 italic leading-relaxed max-w-2xl mx-auto mb-8">
-            {TAGLINE} Veritas Press is built on one principle: documented evidence over opinion, always. Your membership funds the investigation — not a narrative.
+            {TAGLINE} Membership funds document acquisition, reporting, and the infrastructure that keeps the core publication free to read.
           </p>
 
-          {/* Strategy 6: Social proof counter */}
           <div className="flex flex-wrap justify-center gap-6 text-sm font-sans text-white/40 mb-10">
             <span>28 chapters published</span>
             <span className="text-white/20">·</span>
@@ -152,7 +121,6 @@ export default function MembershipPage() {
             <span>Free reader accounts unlock the full archive</span>
           </div>
 
-          {/* Strategy 3: Billing toggle */}
           <div className="inline-flex items-center gap-3 bg-white/10 rounded-full p-1">
             <button
               onClick={() => setAnnual(false)}
@@ -196,45 +164,32 @@ export default function MembershipPage() {
               <div
                 key={tier.key}
                 className={`relative flex flex-col ${
-                  isPopular
-                    ? 'bg-white dark:bg-[#151515]'
-                    : isFounding
-                      ? 'bg-[#faf8f5] dark:bg-[#111]'
-                      : 'bg-white dark:bg-[#151515]'
+                  isFounding ? 'bg-parchment-dark' : 'bg-surface'
                 }`}
               >
-                {/* Recommended accent — just a thin top border, nothing more */}
                 {isPopular && (
                   <div className="absolute top-0 left-0 right-0 h-[3px] bg-ink dark:bg-white" />
                 )}
 
                 <div className={`p-8 flex-1 flex flex-col ${isPopular ? 'pt-10' : ''}`}>
-                  {/* Tier label */}
                   {isPopular && (
                     <p className="font-sans text-[0.55rem] font-semibold tracking-[0.2em] uppercase text-ink dark:text-white mb-4">
                       Recommended
                     </p>
                   )}
 
-                  {/* Founding Circle scarcity */}
                   {isFounding && (
-                    <div className="flex items-center gap-1.5 mb-3">
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-crimson opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-crimson" />
-                      </span>
+                    <div className="mb-3">
                       <p className="font-sans text-[0.55rem] font-semibold tracking-[0.1em] uppercase text-crimson">
-                        Limited — 14 spots remaining
+                        Founding tier
                       </p>
                     </div>
                   )}
 
-                  {/* Tier name */}
                   <h3 className="font-display text-xl font-bold text-ink dark:text-white mb-1">
                     {tier.name}
                   </h3>
 
-                  {/* Price block */}
                   <div className="mt-3 mb-1">
                     {isFree ? (
                       <div className="flex items-baseline gap-1">
@@ -248,7 +203,6 @@ export default function MembershipPage() {
                     )}
                   </div>
 
-                  {/* Subtext */}
                   {!isFree && (
                     <p className="font-sans text-xs text-ink-faint mb-5">
                       ${dailyCost} per day · Cancel anytime
@@ -260,17 +214,14 @@ export default function MembershipPage() {
                     </p>
                   )}
 
-                  {/* Annual savings — restrained */}
                   {!isFree && annual && 'annualSavings' in tier && (
                     <p className="font-sans text-[0.6rem] font-semibold text-ink-muted dark:text-white/60 mb-5 -mt-2">
                       Save {tier.annualSavings}% annually
                     </p>
                   )}
 
-                  {/* Divider */}
                   <div className="h-px bg-border dark:bg-white/10 mb-5" />
 
-                  {/* Features */}
                   <ul className="space-y-3 mb-8 flex-1">
                     {tier.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2.5">
@@ -282,7 +233,6 @@ export default function MembershipPage() {
                     ))}
                   </ul>
 
-                  {/* CTA — publication style: solid or outlined, no gradients */}
                   {isInternal ? (
                     <Link
                       to={href}
@@ -316,20 +266,18 @@ export default function MembershipPage() {
           })}
         </div>
 
-        {/* Trust line — minimal, beneath the cards */}
         <p className="font-sans text-[0.6rem] text-ink-faint text-center mt-5 tracking-wide">
-          All payments processed securely through Stripe · Cancel anytime · No questions asked
+          Secure Stripe checkout · Cancel anytime · Core archive remains free
         </p>
       </section>
 
-      {/* ─── MEMBER EXCLUSIVE PREVIEW ─── */}
       <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-3">What Members Receive</h2>
         <p className="font-body text-sm text-ink-muted text-center mb-10 max-w-lg mx-auto">
           A preview of exclusive content delivered to members each month.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="border border-border p-6 bg-white dark:bg-[#151515]">
+          <div className="border border-border p-6 bg-surface">
             <p className="font-sans text-[0.55rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-3">Weekly Briefing</p>
             <h3 className="font-display text-base font-bold text-ink mb-2">Editorial Intelligence Report</h3>
             <p className="font-body text-xs text-ink-muted leading-relaxed mb-4">
@@ -337,7 +285,7 @@ export default function MembershipPage() {
             </p>
             <p className="font-sans text-[10px] text-ink-faint">Delivered every Monday · Correspondent tier and above</p>
           </div>
-          <div className="border border-border p-6 bg-white dark:bg-[#151515]">
+          <div className="border border-border p-6 bg-surface">
             <p className="font-sans text-[0.55rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-3">Monthly Dossier</p>
             <h3 className="font-display text-base font-bold text-ink mb-2">Deep-Dive Investigation</h3>
             <p className="font-body text-xs text-ink-muted leading-relaxed mb-4">
@@ -345,7 +293,7 @@ export default function MembershipPage() {
             </p>
             <p className="font-sans text-[10px] text-ink-faint">Delivered first of each month · Investigator tier and above</p>
           </div>
-          <div className="border border-border p-6 bg-white dark:bg-[#151515]">
+          <div className="border border-border p-6 bg-surface">
             <p className="font-sans text-[0.55rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-3">Source Library</p>
             <h3 className="font-display text-base font-bold text-ink mb-2">Annotated Document Archive</h3>
             <p className="font-body text-xs text-ink-muted leading-relaxed mb-4">
@@ -356,10 +304,8 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* ─── STUDENT ACCESS — Free .edu membership ─── */}
       <StudentAccessSection />
 
-      {/* ─── WHAT YOUR MEMBERSHIP FUNDS ─── */}
       <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-3">What Your Membership Funds</h2>
         <p className="font-body text-sm text-ink-muted text-center mb-10 max-w-xl mx-auto">
@@ -381,7 +327,6 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* ─── Strategy 10: FEATURE COMPARISON TABLE ─── */}
       <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-8">Compare Plans</h2>
         <div className="overflow-x-auto">
@@ -390,9 +335,9 @@ export default function MembershipPage() {
               <tr className="border-b-2 border-border">
                 <th className="text-left font-sans text-xs font-bold tracking-wide uppercase text-ink-muted py-3 pr-4">Feature</th>
                 <th className="text-center font-sans text-xs font-bold tracking-wide uppercase text-ink-muted py-3 px-2 w-20">Free</th>
-                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20" style={{ color: '#92400E' }}><span className="inline-flex justify-center"><TierIcon name="signal" className="w-4 h-4" /></span></th>
-                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20 bg-crimson/5 rounded-t-sm" style={{ color: '#1E3A5F' }}><span className="inline-flex justify-center"><TierIcon name="search" className="w-4 h-4" /></span></th>
-                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20" style={{ color: '#8B1A1A' }}><span className="inline-flex justify-center"><TierIcon name="pillar" className="w-4 h-4" /></span></th>
+                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20 text-circumstantial"><span className="inline-flex justify-center"><TierIcon name="signal" className="w-4 h-4" /></span></th>
+                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20 bg-crimson/5 rounded-t-sm text-ink"><span className="inline-flex justify-center"><TierIcon name="search" className="w-4 h-4" /></span></th>
+                <th className="text-center font-sans text-xs font-bold tracking-wide uppercase py-3 px-2 w-20 text-crimson"><span className="inline-flex justify-center"><TierIcon name="pillar" className="w-4 h-4" /></span></th>
               </tr>
             </thead>
             <tbody className="font-body text-sm text-ink">
@@ -434,7 +379,6 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* ─── Strategy 8: FAQ — Objection Handling ─── */}
       <section className="max-w-5xl mx-auto px-6 mb-20">
         <h2 className="font-display text-2xl font-bold text-ink text-center mb-8">Questions</h2>
         <div className="space-y-0 border border-border rounded-sm overflow-hidden">
@@ -461,7 +405,7 @@ export default function MembershipPage() {
             },
             {
               q: 'What is the Founding Circle?',
-              a: 'Our top tier for readers who want to directly shape the publication. Founding members vote on investigation topics, get direct editorial feedback, and lock in their rate permanently — it will never increase. This tier is limited and will eventually close to new members.',
+              a: 'Our top tier for readers who want a deeper hand in the publication. Founding members can vote on investigation priorities, send editorial feedback, and keep their founding rate for as long as they remain active.',
             },
             {
               q: 'Can I gift a membership?',
@@ -473,18 +417,17 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* ─── Strategy 12 + 18: Bottom CTA with urgency ─── */}
       <section className="max-w-5xl mx-auto px-6 mb-20">
         <div className="p-8 md:p-12 bg-ink text-white rounded-sm text-center">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.3em] uppercase text-crimson-light mb-4">
             Join the investigation
           </p>
           <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
-            The record exists whether you read it or not.<br />
-            <span className="text-crimson-light">But it only grows if you fund it.</span>
+            Support the investigation without paywalling the archive.<br />
+            <span className="text-crimson-light">Choose the tier that fits your relationship to the work.</span>
           </h2>
           <p className="font-body text-sm text-white/50 italic mb-6 max-w-lg mx-auto">
-            Founding Circle rates are introductory and will increase. Lock in your rate now and shape the next investigation.
+            Reader accounts stay free. Membership funds deeper reporting, source acquisition, and the infrastructure behind the public record.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -494,7 +437,7 @@ export default function MembershipPage() {
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-crimson text-white font-sans text-sm font-semibold tracking-wide rounded-sm hover:bg-crimson-dark transition-colors"
               onClick={() => trackSupportClick('membership-bottom-cta')}
             >
-              Become an Investigator — ${annual ? MEMBERSHIP.investigator.annualPrice : MEMBERSHIP.investigator.monthlyPrice}{annual ? '/yr' : '/mo'}
+              Support as Investigator — ${annual ? MEMBERSHIP.investigator.annualPrice : MEMBERSHIP.investigator.monthlyPrice}{annual ? '/yr' : '/mo'}
             </a>
             <Link
               to="/"
@@ -509,7 +452,6 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* ─── Strategy 16: Sticky CTA ─── */}
       <div className={`fixed bottom-0 left-0 right-0 z-50 bg-ink/95 backdrop-blur-md border-t border-white/10 py-3 px-6 transition-all duration-300 ${showSticky ? 'translate-y-0' : 'translate-y-full'}`}>
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
           <p className="hidden sm:block font-sans text-xs text-white/50">
@@ -523,7 +465,7 @@ export default function MembershipPage() {
               className="inline-flex items-center gap-2 px-5 py-2 bg-crimson text-white font-sans text-xs font-semibold tracking-wide rounded-sm hover:bg-crimson-dark transition-colors whitespace-nowrap"
               onClick={() => trackSupportClick('membership-sticky')}
             >
-              Join Now
+              Choose a Plan
             </a>
           </div>
         </div>
