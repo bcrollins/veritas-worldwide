@@ -63,7 +63,7 @@ const chapter: Chapter = {
   sources: [
     { id: 1, text: '"Mossad," Wikipedia. https://en.wikipedia.org/wiki/Mossad', url: 'https://en.wikipedia.org/wiki/Mossad' },
     { id: 2, text: '"FARA  —  Foreign Agents Registration Act," U.S. Department of Justice. https://www.justice.gov/nsd-fara', url: 'https://www.justice.gov/nsd-fara' },
-    { id: 3, text: '"The Lavon Affair: How a False-Flag Operation Led to War and the Israeli Bomb," Stanford CISAC. https://cisac.fsi.stanford.edu/pub lications/the_lavon_affair...', url: 'https://cisac.fsi.stanford.edu/pub' },
+    { id: 3, text: '"The Lavon Affair: How a False-Flag Operation Led to War and the Israeli Bomb," Stanford CISAC. https://cisac.fsi.stanford.edu/publications', url: 'https://cisac.fsi.stanford.edu/publications' },
     { id: 4, text: '"Lavon Affair," Wikipedia. https://en.wikipedia.org/wiki/Lavon_Affair', url: 'https://en.wikipedia.org/wiki/Lavon_Affair' },
     { id: 5, text: '"Mossad  —  Israeli Intelligence Agency," Encyclopaedia Britannica. https://www.britannica.com/topic/Mossad', url: 'https://www.britannica.com/topic/Mossad' },
     { id: 6, text: '"Adolf Eichmann," Wikipedia. https://en.wikipedia.org/wiki/Adolf_Eichmann', url: 'https://en.wikipedia.org/wiki/Adolf_Eichmann' },
@@ -75,7 +75,7 @@ const chapter: Chapter = {
     { id: 12, text: '"Operation Entebbe," Wikipedia. https://en.wikipedia.org/wiki/Operation_Entebbe', url: 'https://en.wikipedia.org/wiki/Operation_Entebbe' },
     { id: 13, text: '"Jonathan Pollard," Wikipedia. https://en.wikipedia.org/wiki/Jonathan_Pollard', url: 'https://en.wikipedia.org/wiki/Jonathan_Pollard' },
     { id: 14, text: '"Obama Order Sped Up Wave of Cyberattacks Against Iran," The New York Times, June 1, 2012. https://www.nytimes.com/2012/0 6/01/...', url: 'https://www.nytimes.com/2012/0' },
-    { id: 15, text: '"Assassination of Iranian Nuclear Scientists," Wikipedia. https://en.wikipedia.org/wiki/Assassination_of_Iranian_nuclear_scienti sts', url: 'https://en.wikipedia.org/wiki/Assassination_of_Iranian_nuclear_scienti' },
+    { id: 15, text: '"Assassination of Iranian Nuclear Scientists," Wikipedia. https://en.wikipedia.org/wiki/Assassination_of_Iranian_nuclear_scientists', url: 'https://en.wikipedia.org/wiki/Assassination_of_Iranian_nuclear_scientists' },
     { id: 16, text: '"Iran\'s Top Nuclear Scientist Killed in Ambush," The New York Times, November 27, 2020. https://www.nytimes.com/2020/11/2 7/...', url: 'https://www.nytimes.com/2020/11/2' },
     { id: 17, text: '"Assassination of Mahmoud Al-Mabhouh," Wikipedia. https://en.wikipedia.org/wiki/Assassination_of_Mahmoud_Al-Mabhouh', url: 'https://en.wikipedia.org/wiki/Assassination_of_Mahmoud_Al-Mabhouh' },
     { id: 18, text: '"AIPAC Espionage Scandal," Wikipedia. https://en.wikipedia.org/wiki/AIPAC_espionage_scandal', url: 'https://en.wikipedia.org/wiki/AIPAC_espionage_scandal' },

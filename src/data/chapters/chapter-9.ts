@@ -45,10 +45,10 @@ const chapter: Chapter = {
   sources: [
     { id: 1, text: 'Executive Order 10289, September 19, 1951, as amended. Federal Register. Delegated Treasury authorities later modified by EO 11110.' },
     { id: 2, text: 'U.S. Treasury Department, "United States Notes: A Historical Overview." Explains the distinction between United States Notes and Federal Reserve Notes.', url: 'https://www.treasury.gov' },
-    { id: 3, text: 'Executive Order 11110, Federal Register, Vol. 28, No. 109, June 7, 1963, p. 5605. Full text available at National Archives.', url: 'https://www.archives.gov/federal-register/executive-orders/1963.html' },
+    { id: 3, text: 'Executive Order 11110, Federal Register, Vol. 28, No. 109, June 7, 1963, p. 5605. Full text available at National Archives.', url: 'https://www.archives.gov/federal-register/executive-orders/1963-kennedy.html#11110' },
     { id: 4, text: 'U.S. Treasury Department records on United States Note circulation, 1963-1971. Silver certificates and United States Notes were gradually withdrawn from circulation after 1963.' },
     { id: 5, text: 'Avner Cohen, Israel and the Bomb (Columbia University Press, 1998). Documents the discovery of Dimona by U.S. intelligence in 1960.' },
-    { id: 6, text: 'National Security Archive, "The Battle of the Letters, 1963." Kennedy-Ben-Gurion-Eshkol correspondence on Dimona inspections.', url: 'https://nsarchive.gwu.edu/briefing-book/nuclear-vault/2016-04-21/battle-letters-1963' },
+    { id: 6, text: 'National Security Archive, "The Battle of the Letters, 1963." Kennedy-Ben-Gurion-Eshkol correspondence on Dimona inspections.', url: 'https://nsarchive.gwu.edu/index.php/briefing-book/nuclear-vault/2019-05-02/battle-letters-1963-john-f-kennedy-david-ben-gurion-levi-eshkol-us-inspections-dimona' },
     { id: 7, text: 'John F. Kennedy, Letter to David Ben-Gurion, May 18, 1963. Declassified. Available at National Security Archive.', url: 'https://nsarchive.gwu.edu' },
     { id: 8, text: 'John F. Kennedy, Letter to Levi Eshkol, July 4, 1963. Declassified. Available at National Security Archive.', url: 'https://nsarchive.gwu.edu' },
     { id: 9, text: 'Cohen, Avner. "Israel\'s Nuclear History: The Untold Kennedy-Eshkol Dimona Correspondence." Journal of Israeli History, 2006.' },

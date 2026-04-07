@@ -66,7 +66,7 @@ const chapter: Chapter = {
     { id: 2, text: '"Disputation of Paris," Wikipedia. https://en.wikipedia.org/wiki/Disputation_of_Paris', url: 'https://en.wikipedia.org/wiki/Disputation_of_Paris' },
     { id: 3, text: '"Criticism of the Talmud," Wikipedia (citing ADL 2003 report). https://en.wikipedia.org/wiki/Criticism_of_the_Talmud', url: 'https://en.wikipedia.org/wiki/Criticism_of_the_Talmud' },
     { id: 4, text: '"Israel Shahak," Wikipedia. https://en.wikipedia.org/wiki/Israel_Shahak', url: 'https://en.wikipedia.org/wiki/Israel_Shahak' },
-    { id: 5, text: '"The Balfour Declaration, November 2, 1917," Yale Law School Avalon Project. https://avalon.law.yale.edu/20th_century/balfour.a sp', url: 'https://avalon.law.yale.edu/20th_century/balfour.a' },
+    { id: 5, text: '"The Balfour Declaration, November 2, 1917," Yale Law School Avalon Project. https://avalon.law.yale.edu/20th_century/balfour.asp', url: 'https://avalon.law.yale.edu/20th_century/balfour.asp' },
     { id: 6, text: '"Edmond de Rothschild," Wikipedia. https://en.wikipedia.org/wiki/Edmond_de_Rothschild', url: 'https://en.wikipedia.org/wiki/Edmond_de_Rothschild' },
     { id: 7, text: '"Walter Rothschild, 2nd Baron Rothschild," Wikipedia. https://en.wikipedia.org/wiki/Walter_Rothschild,_2nd_Baron_Rothschild', url: 'https://en.wikipedia.org/wiki/Walter_Rothschild,_2nd_Baron_Rothschild' },
     { id: 8, text: '"Balfour Declaration," Wikipedia. https://en.wikipedia.org/wiki/Balfour_Declaration', url: 'https://en.wikipedia.org/wiki/Balfour_Declaration' },

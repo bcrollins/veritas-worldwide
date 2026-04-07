@@ -4,6 +4,7 @@
 - [x] P1 — Added repo-native auth regression coverage via `npm run verify:auth` for anonymous preview, register, login, full chapter unlock, source-only search, protected PDF download, logout, revoked-token denial, and post-logout chapter downgrade.
 - [x] P2 — Restored canonical evidence taxonomy on public trust surfaces: `/deep-state` now uses `Verified`, chapter 20 preview/generated copy no longer says `Alleged`, and `/methodology` now has working in-page anchor navigation plus canonical disputed-language copy.
 - [P2] Verify the `/chapter/:id` and `/read` auth upgrade/downgrade flows in a real browser session at 390px and 430px widths.
+- [x] P3 — Added `npm run verify:sources`, wrote the source-link health report into `.claude-state/`, removed the unsupported `expandedArticlesB` news pack from the live corpus, and repaired deterministic chapter citation truncations. Actionable source issues dropped from 64 to 39.
+- [P3] Remediate the remaining broken source links concentrated in `src/data/israelDossierExpanded.ts` and `src/data/profileData.ts`, replacing dead newsroom links with working official sources or stable archive-backed citations.
 - [P3] Remove remaining evidence-taxonomy drift risk from duplicated chapter source modules so future content edits cannot diverge between legacy and runtime chapter sources.
-- [P3] Build a source-link integrity checker with archive fallbacks so citation durability is actively monitored.
 - [P4] Add production error monitoring (Sentry or equivalent) for auth, search, analytics, and prerender failures.

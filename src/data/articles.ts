@@ -1,7 +1,6 @@
 // Current events publication engine — primary source journalism
 // Updated daily with the top stories in power, money, and institutions
 import { expandedArticlesA } from './articlesExpanded'
-import { expandedArticlesB } from './articlesExpandedB'
 
 export interface Article {
   id: string
@@ -114,11 +113,11 @@ export const articles: Article[] =
       },
       {
         "id": 3,
-        "title": "Federal Reserve Forecasts 1 Rate Cut in 2026",
-        "publisher": "Yahoo Finance",
-        "url": "https://finance.yahoo.com/news/live/fed-meeting-live-updates",
+        "title": "Summary of Economic Projections, March 18, 2026",
+        "publisher": "Federal Reserve Board",
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260318.htm",
         "date": "March 18, 2026",
-        "type": "journalism"
+        "type": "government"
       },
       {
         "id": 4,
@@ -865,7 +864,6 @@ export const articles: Article[] =
 export const allArticles: Article[] = [
   ...articles,
   ...expandedArticlesA,
-  ...expandedArticlesB,
 ]
 
 export function getArticleBySlug(slug: string): Article | undefined {

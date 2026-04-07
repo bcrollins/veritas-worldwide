@@ -1,5 +1,5 @@
 {
-  "run": 9,
+  "run": 10,
   "date": "2026-04-07",
   "site": [
     {
@@ -13,7 +13,7 @@
     {
       "feature": "Chapter Reading",
       "composite": 9.1,
-      "previous": 9.0,
+      "previous": 9,
       "delta": 0.1,
       "status": "improved",
       "plus_half_requires": "Verify the auth upgrade/downgrade experience at 390px and 430px in a browser session and add regression coverage for the /read reader shell as well as individual chapter routes."
@@ -28,33 +28,33 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 8.5,
+      "composite": 8.8,
       "previous": 8.5,
-      "delta": 0.0,
-      "status": "stable",
-      "plus_half_requires": "Add institution and source-type filters plus authenticated export/share views for filtered bibliographies."
+      "delta": 0.3,
+      "status": "improved",
+      "plus_half_requires": "Repair the remaining dossier/profile source failures and add archive-backed replacement policy for dead newsroom links so the bibliography stays durable under external link rot."
     },
     {
       "feature": "Search",
       "composite": 8.9,
       "previous": 8.9,
-      "delta": 0.0,
+      "delta": 0,
       "status": "stable",
       "plus_half_requires": "Add richer source/title relevance ranking, saved recent queries, and topic-aware deep links that preserve beat context after signup."
     },
     {
       "feature": "News & Topic Entry",
-      "composite": 8.8,
+      "composite": 8.9,
       "previous": 8.8,
-      "delta": 0.0,
-      "status": "stable",
-      "plus_half_requires": "Expand topic coverage beyond the initial seven hubs and add more current-reporting articles so each hub becomes a real search destination with beat-specific onboarding."
+      "delta": 0.1,
+      "status": "improved",
+      "plus_half_requires": "Replace the withdrawn unsupported article pack with fully sourced current-reporting pieces so topic breadth grows without sacrificing citation integrity."
     },
     {
       "feature": "Publication Shell",
       "composite": 8.1,
       "previous": 8.1,
-      "delta": 0.0,
+      "delta": 0,
       "status": "stable",
       "plus_half_requires": "Reduce the main vendor bundle and tighten 390px navigation density without diluting the editorial hierarchy."
     }
@@ -62,9 +62,9 @@
   "growth": [
     {
       "area": "Email Capture & Compliance",
-      "score": 8.0,
-      "previous": 8.0,
-      "delta": 0.0,
+      "score": 8,
+      "previous": 8,
+      "delta": 0,
       "status": "stable",
       "plus_half_requires": "Replace queue-only capture with portal-backed HubSpot forms, double opt-in, and workflow-level segmentation."
     },
@@ -72,7 +72,7 @@
       "area": "SEO Foundation",
       "score": 8.8,
       "previous": 8.8,
-      "delta": 0.0,
+      "delta": 0,
       "status": "stable",
       "plus_half_requires": "Connect Search Console, publish more topic hubs around recurring query clusters, and keep current-reporting pages shipping on a predictable cadence."
     },
@@ -80,23 +80,23 @@
       "area": "Analytics & Measurement",
       "score": 7.9,
       "previous": 7.9,
-      "delta": 0.0,
+      "delta": 0,
       "status": "stable",
       "plus_half_requires": "Verify GA4 custom dimensions in production and map HubSpot lifecycle stages to a live conversion dashboard with source-level newsletter attribution."
     },
     {
       "area": "Monetization Infrastructure",
-      "score": 8.0,
-      "previous": 8.0,
-      "delta": 0.0,
+      "score": 8,
+      "previous": 8,
+      "delta": 0,
       "status": "stable",
       "plus_half_requires": "Add thank-you landing pages and campaign-level attribution on donation and recurring-support returns."
     },
     {
       "area": "Conversion Optimization",
-      "score": 9.0,
-      "previous": 9.0,
-      "delta": 0.0,
+      "score": 9,
+      "previous": 9,
+      "delta": 0,
       "status": "stable",
       "plus_half_requires": "Connect the new beat-specific signup handoff to HubSpot workflows and test topic-specific onboarding against the generic archive gate."
     }
