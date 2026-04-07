@@ -1,5 +1,5 @@
 {
-  "run": 13,
+  "run": 14,
   "date": "2026-04-07",
   "site": [
     {
@@ -60,11 +60,11 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 7.8,
-      "previous": 0,
-      "delta": 7.8,
-      "status": "launched",
-      "plus_half_requires": "Verify /institute, /institute/book, and representative course/guide routes live at 390px and 430px, then deepen the longform lesson bodies and harden the PDF/manual export for very large document generation."
+      "composite": 7.9,
+      "previous": 7.8,
+      "delta": 0.1,
+      "status": "improved",
+      "plus_half_requires": "Verify the homepage institute module plus /institute, /institute/book, and representative course/guide routes live at 390px and 430px, then deepen the longform lesson bodies and harden the PDF/manual export for very large document generation."
     }
   ],
   "growth": [
@@ -78,11 +78,11 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 8.9,
+      "score": 9,
       "previous": 8.8,
-      "delta": 0.1,
+      "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Validate Search Console coverage for the new /institute route family, then expand search-intent coverage with deeper course bodies and sustained current-reporting cadence."
+      "plus_half_requires": "Validate Search Console coverage for the homepage-linked institute route family, then expand search-intent coverage with deeper course bodies and sustained current-reporting cadence."
     },
     {
       "area": "Analytics & Measurement",

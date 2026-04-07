@@ -1,5 +1,5 @@
 {
-  "run": 13,
+  "run": 14,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -19,13 +19,14 @@
     "Refined the publication shell in src/App.tsx by collapsing the header into primary versus trust utilities, grouping the mobile drawer, simplifying shell buttons, and reducing footer link sprawl while preserving the live route surface, then revalidated with npx tsc --noEmit and npm run build.",
     "Built a new Veritas Institute vertical with a separate shell, distinct visual system, 100-topic search-intent catalog, course pages, guide pages, methodology page, and Book of Knowledge route backed by src/data/instituteCatalog.ts.",
     "Added a browser-side Book of Knowledge PDF generator for the institute using jspdf so the catalog can export into a printable field manual instead of staying web-only.",
-    "Extended scripts/prerender.mjs and the sitemap pipeline so /institute, /institute/book, /institute/methodology, and every institute course/guide route are prerendered or listed for crawlability, then revalidated with npx tsc --noEmit and npm run build."
+    "Extended scripts/prerender.mjs and the sitemap pipeline so /institute, /institute/book, /institute/methodology, and every institute course/guide route are prerendered or listed for crawlability, then revalidated with npx tsc --noEmit and npm run build.",
+    "Added a dedicated Veritas Institute editorial module to the homepage so the new learning vertical now has a real front-page entry point with direct links into the catalog, the Book of Knowledge, and representative high-intent skill paths."
   ],
-  "next_task": "Wait for Railway to serve the institute build, then verify /institute, /institute/book, and representative /institute/courses/:slug plus /institute/guides/:slug routes at 390px and 430px before deciding whether to deepen the catalog bodies or harden the PDF export further.",
+  "next_task": "Wait for Railway to serve the homepage plus institute build, then verify the new institute module on / and the institute routes at 390px and 430px before deciding whether to deepen the catalog bodies or harden the PDF export further.",
   "next_priorities": [
+    "Verify the deployed homepage institute module on / at 390px and 430px, including CTA clarity, scanability, and separation from the publication reading flow.",
     "Verify the deployed institute shell on /institute, /institute/book, and representative course/guide routes at 390px and 430px in a real browser session, including navigation, scanability, and PDF CTA clarity.",
     "Pressure-test the institute PDF export on a realistic browser/device mix and decide whether to move the Book of Knowledge export to a build-time or server-side artifact for very large manuals.",
-    "Decide whether the institute deserves a stronger editorial entry point on the homepage or in a dedicated front-page module beyond the new shell/footer discoverability.",
     "Verify the deployed publication shell on /, /read, /news, and /membership at 390px and 430px in a real browser session, including the grouped mobile drawer and sticky primary navigation.",
     "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session.",
     "Replace or retire the remaining broken source links concentrated in src/data/israelDossierExpanded.ts and src/data/profileData.ts, preferring official records or archive-backed citations.",
