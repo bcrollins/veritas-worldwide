@@ -1,14 +1,14 @@
 {
-  "run": 10,
+  "run": 11,
   "date": "2026-04-07",
   "site": [
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 8.4,
-      "previous": 7.9,
-      "delta": 0.5,
+      "composite": 8.5,
+      "previous": 8.4,
+      "delta": 0.1,
       "status": "improved",
-      "plus_half_requires": "Normalize the remaining duplicated chapter-source copy paths and verify trust-page navigation plus evidence labels at 390px and 430px in a real browser session."
+      "plus_half_requires": "Verify trust-page navigation plus evidence labels at 390px and 430px in a real browser session, then finish a locale-by-locale audit of the evidence taxonomy strings."
     },
     {
       "feature": "Chapter Reading",

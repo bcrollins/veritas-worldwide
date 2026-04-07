@@ -6,5 +6,5 @@
 - [P2] Verify the `/chapter/:id` and `/read` auth upgrade/downgrade flows in a real browser session at 390px and 430px widths.
 - [x] P3 — Added `npm run verify:sources`, wrote the source-link health report into `.claude-state/`, removed the unsupported `expandedArticlesB` news pack from the live corpus, and repaired deterministic chapter citation truncations. Actionable source issues dropped from 64 to 39.
 - [P3] Remediate the remaining broken source links concentrated in `src/data/israelDossierExpanded.ts` and `src/data/profileData.ts`, replacing dead newsroom links with working official sources or stable archive-backed citations.
-- [P3] Remove remaining evidence-taxonomy drift risk from duplicated chapter source modules so future content edits cannot diverge between legacy and runtime chapter sources.
+- [x] P3 — Removed the remaining evidence-taxonomy drift risk from duplicated chapter source modules by turning `src/data/chapters.ts` into a module-backed bootstrap/search entrypoint and correcting the last legacy Chinese `Verified` label.
 - [P4] Add production error monitoring (Sentry or equivalent) for auth, search, analytics, and prerender failures.

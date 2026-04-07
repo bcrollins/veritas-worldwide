@@ -1,5 +1,5 @@
 {
-  "run": 10,
+  "run": 11,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -13,13 +13,14 @@
     "Repaired MethodologyPage in-page navigation by adding real hash targets for the sidebar sections, then rebuilt generated chapter data and prerender output with npx tsc --noEmit and npm run build.",
     "Added a repo-native source-link checker at scripts/verify-source-links.mjs plus npm run verify:sources, with report output written to .claude-state/source-link-report.md and .claude-state/source-link-report.json.",
     "Removed the unsupported expandedArticlesB news batch from the live article corpus because its source URLs were not publication-grade and should not have remained publicly searchable.",
-    "Repaired deterministic citation truncations across the chapter/news corpus and reran the verifier, reducing actionable source-link issues from 64 to 39 while preserving the public trust routes."
+    "Repaired deterministic citation truncations across the chapter/news corpus and reran the verifier, reducing actionable source-link issues from 64 to 39 while preserving the public trust routes.",
+    "Replaced the monolithic legacy src/data/chapters.ts manuscript copy with a module-backed bootstrap/search entrypoint sourced from src/data/chapters/*.ts, removing a second chapter-content code path that could drift away from the runtime and generated corpus.",
+    "Corrected the remaining Chinese evidence label from the old court-certified wording to the canonical Verified meaning, then revalidated the repo with npx tsc --noEmit and npm run build."
   ],
   "next_task": "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a browser session, then remediate the remaining source-link failures concentrated in src/data/israelDossierExpanded.ts and src/data/profileData.ts.",
   "next_priorities": [
     "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session.",
     "Replace or retire the remaining broken source links concentrated in src/data/israelDossierExpanded.ts and src/data/profileData.ts, preferring official records or archive-backed citations.",
-    "Collapse or retire duplicated chapter source modules that can let legacy text drift away from the runtime/generated chapter corpus.",
     "Add Sentry or equivalent production monitoring to capture auth/API failures before readers report them.",
     "Decide whether to wire npm run verify:auth and npm run verify:sources into CI or a scheduled operational check against Railway."
   ]
