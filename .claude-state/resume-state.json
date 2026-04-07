@@ -35,11 +35,13 @@
     "Extended `scripts/prerender.mjs` to generate richer crawler-facing institute HTML plus new machine-readable assets at `public/llms.txt` and `public/veritas-institute.md` for LLM retrieval and operator context.",
     "Revalidated the rebuilt Institute stack locally on April 7, 2026 with `npx tsc --noEmit` and `npm run build`; the build succeeded and the prerender step generated 273 routes, an updated sitemap, `llms.txt`, and the Institute markdown index.",
     "Restored non-sensitive derived metadata to public chapter exports in `scripts/export-chapter-data.mjs`, so signed-out chapter/search consumers can receive `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` without exposing protected source rows or URLs.",
-    "Revalidated the public chapter export fix on April 7, 2026 with `npx tsc --noEmit` and `npm run build`, then inspected `generated/chapter-data/public/*.json` and `public-index.json` to confirm preview payloads now include the restored metadata while `sources` remain empty."
+    "Revalidated the public chapter export fix on April 7, 2026 with `npx tsc --noEmit` and `npm run build`, then inspected `generated/chapter-data/public/*.json` and `public-index.json` to confirm preview payloads now include the restored metadata while `sources` remain empty.",
+    "Committed the export/state update as `df7f385` on `main` and pushed it to GitHub on April 7, 2026.",
+    "Polled `https://veritasworldwide.com/api/search?q=federal+reserve` for 90 seconds after pushing `df7f385`; production continued returning `chapterType: null` and empty public evidence tiers, so deploy lag or stale-serving behavior remains unresolved."
   ],
-  "next_task": "Recover deploy visibility, confirm production serves the rebuilt Institute and the public chapter-export metadata fix, then verify signed-out search/source surfaces and the new Institute route family live on mobile widths.",
+  "next_task": "Recover deploy visibility for commit `df7f385`, confirm production serves the public chapter-export metadata fix and rebuilt Institute assets, then verify the signed-out search/source surfaces and Institute routes live on mobile widths.",
   "next_priorities": [
-    "Regain Railway deployment visibility or credentials, inspect the deployment state for commit `1012c25`, and do not treat the source-integrity fix as shipped until production serves the updated chapter JSON.",
+    "Regain Railway deployment visibility or credentials, inspect the deployment state for commit `df7f385`, and do not treat the public metadata fix as shipped until production serves the updated preview/search payloads.",
     "Confirm production serves the public chapter-export metadata fix by probing `/api/search?q=federal+reserve` and `/api/chapters/chapter-1` for `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` in preview payloads.",
     "Confirm the rebuilt Institute surfaces are live in production: `/institute`, `/institute/book`, `/institute/methodology`, representative `/institute/courses/:slug`, representative `/institute/guides/:slug`, `/llms.txt`, and `/veritas-institute.md`.",
     "Verify the rebuilt Institute surfaces at 390px and 430px in a real browser session, focusing on scanability, sticky shell behavior, CTA clarity, and the new answer-first hierarchy.",

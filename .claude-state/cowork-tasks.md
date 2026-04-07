@@ -1,6 +1,6 @@
 # Veritas Audit Queue — 2026-04-07
 
-- [P0] Recover deploy visibility for the stale production release: `origin/main` is at `1012c25`, but `https://veritasworldwide.com` is still serving older shell assets and older authenticated chapter JSON. Confirm the Railway deployment state for `1012c25` before treating the source-integrity work as shipped.
+- [P0] Recover deploy visibility for the stale production release: `origin/main` now includes `df7f385`, but a 90-second live poll after push still showed `https://veritasworldwide.com/api/search?q=federal+reserve` returning `chapterType: null` and empty public evidence tiers. Confirm the Railway deployment state for `df7f385` before treating the public metadata fix as shipped.
 - [x] P0 — Re-ran the live logout revocation check after deploy: the same bearer token now gets `401` from `/api/auth/me` and `/api/downloads/the-record.pdf` after logout.
 - [x] P1 — Added repo-native auth regression coverage via `npm run verify:auth` for anonymous preview, register, login, full chapter unlock, source-only search, protected PDF download, logout, revoked-token denial, and post-logout chapter downgrade.
 - [x] P2 — Restored `chapterType`, `availableEvidenceTiers`, and `sourceHierarchyCounts` to public chapter exports so signed-out search and other public reference surfaces can render real structural metadata without exposing protected source rows.
