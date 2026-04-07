@@ -109,33 +109,50 @@ export default function HomePage() {
                 {/* Featured story: 60% width (3/5 of grid) */}
                 <div className="md:col-span-3">
                   {featured && (
-                    <Link to={`/chapter/${featured.id}`} className="group block">
-                      {featured.heroImage && (
-                        <div className="overflow-hidden mb-6">
-                          <img
-                            src={featured.heroImage}
-                            alt=""
-                            loading="eager"
-                            className="w-full h-64 md:h-80 object-cover group-hover:opacity-85 transition-opacity duration-300"
-                            onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
-                          />
-                        </div>
-                      )}
-                      <p className="chapter-label mb-3">{featured.number}</p>
-                      <h2 className="font-display text-4xl md:text-5xl font-bold text-ink leading-tight group-hover:text-crimson transition-colors mb-4">
-                        {featured.title}
-                      </h2>
-                      <p className="font-body text-lg text-ink-muted italic mb-5 max-w-3xl">
-                        {featured.subtitle}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-4 text-sm border-t border-border pt-4">
-                        <span className="font-sans text-xs text-ink-faint">{featured.author}</span>
-                        <span className="font-sans text-xs text-ink-faint">{featured.publishDate}</span>
-                        {featured.dateRange && (
-                          <span className="font-sans text-xs font-semibold text-crimson">{featured.dateRange}</span>
+                    <div>
+                      <Link to={`/chapter/${featured.id}`} className="group block">
+                        {featured.heroImage && (
+                          <div className="overflow-hidden mb-6">
+                            <img
+                              src={featured.heroImage}
+                              alt=""
+                              loading="eager"
+                              className="w-full h-64 md:h-80 object-cover group-hover:opacity-85 transition-opacity duration-300"
+                              onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
+                            />
+                          </div>
                         )}
+                        <p className="chapter-label mb-3">{featured.number}</p>
+                        <h2 className="font-display text-4xl md:text-5xl font-bold text-ink leading-tight group-hover:text-crimson transition-colors mb-4">
+                          {featured.title}
+                        </h2>
+                        <p className="font-body text-lg text-ink-muted italic mb-5 max-w-3xl">
+                          {featured.subtitle}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-4 text-sm border-t border-border pt-4">
+                          <span className="font-sans text-xs text-ink-faint">{featured.author}</span>
+                          <span className="font-sans text-xs text-ink-faint">{featured.publishDate}</span>
+                          {featured.dateRange && (
+                            <span className="font-sans text-xs font-semibold text-crimson">{featured.dateRange}</span>
+                          )}
+                        </div>
+                      </Link>
+
+                      <div className="mt-6 flex flex-wrap gap-3">
+                        <Link
+                          to="/institute"
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-border px-6 py-3 text-ink font-sans text-sm font-semibold hover:border-crimson hover:text-crimson transition-colors"
+                        >
+                          Veritas Institute
+                        </Link>
+                        <Link
+                          to="/read"
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm bg-crimson px-6 py-3 text-white font-sans text-sm font-semibold hover:bg-crimson-dark transition-colors"
+                        >
+                          Read The Record
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
                   )}
                 </div>
 
