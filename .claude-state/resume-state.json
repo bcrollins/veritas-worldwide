@@ -1,5 +1,5 @@
 {
-  "run": 8,
+  "run": 9,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -8,11 +8,14 @@
     "Patched ChapterPage and ReadTheBookPage to re-request scope-appropriate chapter payloads on auth transitions and clear stale full-content state when the reader auth scope changes.",
     "Verified the fix locally in the active workspace and in a clean detached worktree with npx tsc --noEmit and npm run build.",
     "Confirmed the deployed Railway build revoked logged-out bearer tokens on April 7, 2026: the same token now gets 401 from /api/auth/me and /api/downloads/the-record.pdf after logout while public routes still return 200.",
-    "Added a repo-native auth smoke runner at scripts/verify-auth-flows.mjs plus npm run verify:auth, then executed it successfully against https://veritasworldwide.com."
+    "Added a repo-native auth smoke runner at scripts/verify-auth-flows.mjs plus npm run verify:auth, then executed it successfully against https://veritasworldwide.com.",
+    "Normalized public evidence taxonomy copy so the live trust layer uses Verified / Circumstantial / Disputed consistently across /deep-state, /methodology, and the chapter-20 reader data path.",
+    "Repaired MethodologyPage in-page navigation by adding real hash targets for the sidebar sections, then rebuilt generated chapter data and prerender output with npx tsc --noEmit and npm run build."
   ],
-  "next_task": "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a browser session, then add source-link integrity automation.",
+  "next_task": "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a browser session, then remove the duplicated chapter-source drift risk before adding source-link integrity automation.",
   "next_priorities": [
     "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session.",
+    "Collapse or retire duplicated chapter source modules that can let legacy text drift away from the runtime/generated chapter corpus.",
     "Add Sentry or equivalent production monitoring to capture auth/API failures before readers report them.",
     "Build a source-link health and archive-checker workflow so citation durability is monitored instead of assumed.",
     "Decide whether to wire npm run verify:auth into CI or a scheduled operational check against Railway."

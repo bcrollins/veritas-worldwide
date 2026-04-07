@@ -1,7 +1,15 @@
 {
-  "run": 8,
+  "run": 9,
   "date": "2026-04-07",
   "site": [
+    {
+      "feature": "Methodology & Trust Layer",
+      "composite": 8.4,
+      "previous": 7.9,
+      "delta": 0.5,
+      "status": "improved",
+      "plus_half_requires": "Normalize the remaining duplicated chapter-source copy paths and verify trust-page navigation plus evidence labels at 390px and 430px in a real browser session."
+    },
     {
       "feature": "Chapter Reading",
       "composite": 9.1,

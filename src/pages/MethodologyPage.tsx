@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
 
+const methodologySections = [
+  { id: 'four-tier-source-hierarchy', label: 'Four-Tier Source Hierarchy' },
+  { id: 'three-tier-evidence-classification', label: 'Three-Tier Evidence Classification' },
+  { id: 'research-standards', label: 'Research Standards' },
+]
+
 export default function MethodologyPage() {
   useEffect(() => {
     setMetaTags({
@@ -56,7 +62,7 @@ export default function MethodologyPage() {
             </header>
 
             {/* Source Hierarchy */}
-            <section className="mb-16">
+            <section id="four-tier-source-hierarchy" className="mb-16 scroll-mt-28">
               <h2 className="font-display text-2xl font-bold text-ink mb-6">Four-Tier Source Hierarchy</h2>
               <p className="article-body mb-8">
                 Every factual claim in The Record is sourced. Sources are prioritized in a four-tier hierarchy designed to maximize verifiability and minimize reliance on secondary interpretation.
@@ -94,7 +100,7 @@ export default function MethodologyPage() {
             </section>
 
             {/* Evidence Classification */}
-            <section className="mb-16">
+            <section id="three-tier-evidence-classification" className="mb-16 scroll-mt-28">
               <h2 className="font-display text-2xl font-bold text-ink mb-6">Three-Tier Evidence Classification</h2>
               <p className="article-body mb-8">
                 Every substantive claim is classified using this system, allowing you to evaluate each claim independently rather than accepting or rejecting the work as a whole.
@@ -115,7 +121,7 @@ export default function MethodologyPage() {
               </div>
 
               <div className="evidence-disputed">
-                <p className="evidence-label text-disputed">DISPUTED / UNPROVEN — Reported But Not Independently Confirmed</p>
+                <p className="evidence-label text-disputed">DISPUTED — Reported But Not Independently Confirmed</p>
                 <p className="font-body text-sm leading-relaxed text-ink-light">
                   This claim has been made by a named source, in a published report, or in sworn testimony — but has not been independently confirmed by multiple credible sources, proven in a court of law, or supported by primary documentation. It is included as part of the historical record and clearly labeled.
                 </p>
@@ -123,7 +129,7 @@ export default function MethodologyPage() {
             </section>
 
             {/* Research Standards */}
-            <section className="mb-16">
+            <section id="research-standards" className="mb-16 scroll-mt-28">
               <h2 className="font-display text-2xl font-bold text-ink mb-6">Research Standards</h2>
 
               <div className="space-y-6">
@@ -168,13 +174,13 @@ export default function MethodologyPage() {
                   On This Page
                 </h3>
                 <nav className="space-y-2">
-                  {['Four-Tier Source Hierarchy', 'Three-Tier Evidence Classification', 'Research Standards'].map(section => (
+                  {methodologySections.map((section) => (
                     <a
-                      key={section}
-                      href={`#${section.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                      key={section.id}
+                      href={`#${section.id}`}
                       className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors leading-relaxed"
                     >
-                      {section}
+                      {section.label}
                     </a>
                   ))}
                 </nav>
@@ -196,7 +202,7 @@ export default function MethodologyPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-disputed shrink-0" />
-                    <span className="font-sans text-xs text-ink-muted">Disputed — Unconfirmed</span>
+                    <span className="font-sans text-xs text-ink-muted">Disputed — Not independently confirmed</span>
                   </div>
                 </div>
               </div>

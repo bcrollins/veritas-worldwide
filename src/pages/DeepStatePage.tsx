@@ -13,7 +13,7 @@ import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
 
 const TIER_CONFIG: Record<EvidenceTier, { label: string; color: string; bg: string; border: string; desc: string; icon: string }> = {
-  verified: { label: 'Court-Verified', color: 'var(--color-verified)', bg: 'var(--color-verified-bg)', border: 'var(--color-verified-border)', desc: 'Confirmed via court filings, sworn testimony, or official records', icon: '✓' },
+  verified: { label: 'Verified', color: 'var(--color-verified)', bg: 'var(--color-verified-bg)', border: 'var(--color-verified-border)', desc: 'Supported by primary documents, sworn testimony, or official records', icon: '✓' },
   circumstantial: { label: 'Circumstantial', color: 'var(--color-circumstantial)', bg: 'var(--color-circumstantial-bg)', border: 'var(--color-circumstantial-border)', desc: 'Documented but not adjudicated — flight logs, photos, correspondence', icon: '◐' },
   disputed: { label: 'Disputed', color: 'var(--color-disputed)', bg: 'var(--color-disputed-bg)', border: 'var(--color-disputed-border)', desc: 'Allegations under investigation or denied by the named party', icon: '⚠' },
 }
@@ -886,7 +886,7 @@ export default function DeepStatePage() {
           <h2 className="font-serif text-xl font-bold text-white mb-4">Methodology & Editorial Standards</h2>
           <div className="space-y-3 font-body text-sm leading-relaxed">
             <p>Every individual profiled on this page appears in publicly available court records, government reports, or verified investigative journalism from established outlets. No person is named based solely on allegation, rumor, or unverified claims.</p>
-            <p>Evidence is classified using a three-tier system. <strong className="text-white">Court-Verified</strong> evidence comes from sworn testimony, court filings, or official government reports. <strong className="text-white">Circumstantial</strong> evidence is documented but not adjudicated — flight logs, photographs, financial records, and correspondence. <strong className="text-white">Disputed</strong> evidence represents allegations that are under investigation, denied by the named party, or subsequently recanted.</p>
+            <p>Evidence is classified using a three-tier system. <strong className="text-white">Verified</strong> evidence comes from primary documents, sworn testimony, court filings, or official government reports. <strong className="text-white">Circumstantial</strong> evidence is documented but not adjudicated — flight logs, photographs, financial records, and correspondence. <strong className="text-white">Disputed</strong> evidence represents allegations that are under investigation, denied by the named party, or subsequently recanted.</p>
             <p>This page will be updated as additional court documents are unsealed, DOJ releases continue, and new verified information becomes available. Corrections are made promptly when evidence status changes.</p>
             <p className="text-white/40 text-xs mt-6">Last updated: March 2026 — Compiled by the editorial staff of Veritas Press</p>
           </div>
