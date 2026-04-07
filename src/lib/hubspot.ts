@@ -33,6 +33,7 @@ export type SubscriptionSource =
   | 'article_cta'
   | 'topic_hub'
   | 'newsletter_legacy_migration'
+  | 'bible_history_page'
 
 /* ── HubSpot Tracking Queue ───────────────────────────────────── */
 declare global {
