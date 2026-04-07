@@ -1,5 +1,5 @@
 {
-  "run": 11,
+  "run": 12,
   "date": "2026-04-07",
   "site": [
     {
@@ -52,11 +52,11 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 8.1,
+      "composite": 8.4,
       "previous": 8.1,
-      "delta": 0,
-      "status": "stable",
-      "plus_half_requires": "Reduce the main vendor bundle and tighten 390px navigation density without diluting the editorial hierarchy."
+      "delta": 0.3,
+      "status": "improved",
+      "plus_half_requires": "Verify the deployed shell at 390px and 430px on the homepage, /read, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     }
   ],
   "growth": [

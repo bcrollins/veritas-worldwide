@@ -1,5 +1,5 @@
 {
-  "run": 11,
+  "run": 12,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -15,10 +15,12 @@
     "Removed the unsupported expandedArticlesB news batch from the live article corpus because its source URLs were not publication-grade and should not have remained publicly searchable.",
     "Repaired deterministic citation truncations across the chapter/news corpus and reran the verifier, reducing actionable source-link issues from 64 to 39 while preserving the public trust routes.",
     "Replaced the monolithic legacy src/data/chapters.ts manuscript copy with a module-backed bootstrap/search entrypoint sourced from src/data/chapters/*.ts, removing a second chapter-content code path that could drift away from the runtime and generated corpus.",
-    "Corrected the remaining Chinese evidence label from the old court-certified wording to the canonical Verified meaning, then revalidated the repo with npx tsc --noEmit and npm run build."
+    "Corrected the remaining Chinese evidence label from the old court-certified wording to the canonical Verified meaning, then revalidated the repo with npx tsc --noEmit and npm run build.",
+    "Refined the publication shell in src/App.tsx by collapsing the header into primary versus trust utilities, grouping the mobile drawer, simplifying shell buttons, and reducing footer link sprawl while preserving the live route surface, then revalidated with npx tsc --noEmit and npm run build."
   ],
-  "next_task": "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a browser session, then remediate the remaining source-link failures concentrated in src/data/israelDossierExpanded.ts and src/data/profileData.ts.",
+  "next_task": "Verify the deployed publication shell and the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a browser session, then remediate the remaining source-link failures concentrated in src/data/israelDossierExpanded.ts and src/data/profileData.ts.",
   "next_priorities": [
+    "Verify the deployed publication shell on /, /read, /news, and /membership at 390px and 430px in a real browser session, including the grouped mobile drawer and sticky primary navigation.",
     "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session.",
     "Replace or retire the remaining broken source links concentrated in src/data/israelDossierExpanded.ts and src/data/profileData.ts, preferring official records or archive-backed citations.",
     "Add Sentry or equivalent production monitoring to capture auth/API failures before readers report them.",
