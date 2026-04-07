@@ -56,7 +56,7 @@ const chapter: Chapter = {
     { id: 11, text: 'National Security Archive, Dimona inspection correspondence, 1963-1964. Documents Eshkol\'s agreement to inspections.' },
     { id: 12, text: 'Cohen, Avner. Israel and the Bomb. Documents the stage-managed nature of post-Kennedy Dimona inspections.' },
     { id: 13, text: 'Teveth, Shabtai. Ben-Gurion: The Burning Ground, 1886-1948 (Houghton Mifflin, 1987). Background on Ben-Gurion\'s political career and resignation.' },
-    { id: 14, text: 'Grant F. Smith, "The Israel Lobby Archive: AZC/AIPAC Documents." Institute for Research: Middle Eastern Policy. Documents Jewish Agency funding of AZC.', url: 'https://www.irmep.org/ila/' },
+    { id: 14, text: 'Grant F. Smith, "The Israel Lobby Archive: AZC/AIPAC Documents." Institute for Research: Middle Eastern Policy. Documents Jewish Agency funding of AZC.', url: 'https://web.archive.org/web/20150801101850/http://www.irmep.org/ila/' },
     { id: 15, text: 'U.S. Senate Foreign Relations Committee, Hearings on Activities of Nondiplomatic Representatives of Foreign Principals in the United States, 1963.' },
     { id: 16, text: 'U.S. Senate Foreign Relations Committee, "Hearings on Foreign Agents Registration," 1963. Chaired by Senator J. William Fulbright. National Archives.' },
     { id: 17, text: 'U.S. Department of Justice, FARA records. The AZC was never registered despite the Fulbright committee\'s findings. AIPAC reorganized as a domestic lobby in 1963.' },

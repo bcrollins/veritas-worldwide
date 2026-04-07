@@ -83,7 +83,7 @@ const chapter: Chapter = {
     { id: 20, text: '"2024 Lebanon Pager Explosions," Wikipedia. https://en.wikipedia.org/wiki/2024_Lebanon_pager_explosions', url: 'https://en.wikipedia.org/wiki/2024_Lebanon_pager_explosions' },
     { id: 21, text: 'Shabtai Teveth, Ben-Gurion\'s Spy: The Story of the Political Scandal That Shaped Modern Israel (Columbia University Press, 1996). Primary account of the Lavon Affair.' },
     { id: 22, text: 'James Scott, The Attack on the Liberty: The Untold Story of Israel\'s Deadly 1967 Assault on a U.S. Spy Ship (Simon & Schuster, 2009).' },
-    { id: 23, text: 'U.S. National Security Agency, "USS Liberty Incident: Declassified Documents." NSA FOIA release, 2003.', url: 'https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/release-1/uss-liberty.pdf' }
+    { id: 23, text: 'U.S. National Security Agency, "USS Liberty Incident: Declassified Documents." NSA FOIA release, 2003.', url: 'https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/misc-reports/uss_liberty_incident.pdf' }
   ],
   crossLinks: [{ label: 'Chapter 6: Talmud & Balfour Declaration', chapterId: 'chapter-6' }, { label: 'Chapter 8: JFK, Dimona & AIPAC', chapterId: 'chapter-8' }],
   keywords: ['Mossad', 'intelligence', 'Israel', 'espionage', 'covert operations'],

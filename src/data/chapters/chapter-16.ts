@@ -34,7 +34,7 @@ const chapter: Chapter = {
   ],
   sources: [
     { id: 1, text: 'Ennes, James M. Assault on the Liberty: The True Story of the Israeli Attack on an American Intelligence Ship. Random House, 1979.' },
-    { id: 2, text: 'NSA, "Attack on a Sigint Collector, the USS Liberty," Declassified Documents, https://www.nsa.gov/portals/75/documents/ news-features/declassified-documents/uss-liberty/chronology-events/attack-sigint.pdf', url: 'https://www.nsa.gov/portals/75/documents/' },
+    { id: 2, text: 'NSA, "Attack on a Sigint Collector, the USS Liberty," Declassified Documents, https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/chronology-events/attack-sigint.pdf', url: 'https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/chronology-events/attack-sigint.pdf' },
     { id: 3, text: 'Scott, James. The Attack on the Liberty: The Untold Story of Israel\'s Deadly 1967 Assault on a U.S. Spy Ship. Simon & Schuster, 2009.' },
     { id: 4, text: 'Rusk, Dean. As I Saw It. W. W. Norton & Company, 1990.' },
     { id: 5, text: 'Moorer, Thomas H. "Admiral Moorer\'s Statement on the USS Liberty." The Link, June-August 1997.' },

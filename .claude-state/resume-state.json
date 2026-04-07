@@ -1,5 +1,5 @@
 {
-  "run": 15,
+  "run": 16,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -24,18 +24,18 @@
     "Fixed the repo-native auth smoke runner so `npm run verify:auth -- <base-url>` now honors a positional target URL instead of silently falling back to http://127.0.0.1:3000.",
     "Corrected the source-link verifier's probe logic to retry GET after bad HEAD responses and raised the default timeout, removing false positives from sites that mishandle HEAD requests.",
     "Replaced a verified batch of dead or retired citation URLs with working current or archive-backed links across the Israel dossier, profile corpus, and chapter sources, reducing actionable source-link issues from 39 to 28.",
-    "Revalidated the updated repo with `npm run verify:sources`, `npx tsc --noEmit`, and `npm run build`; the source report now shows 299 OK URLs, 56 restricted/bot-blocked URLs, and 28 actionable failures."
+    "Revalidated the updated repo with `npm run verify:sources`, `npx tsc --noEmit`, and `npm run build`; the source report now shows 299 OK URLs, 56 restricted/bot-blocked URLs, and 28 actionable failures.",
+    "Replaced the remaining actionable dossier/profile/chapter citation failures with live current URLs, official replacements, or archive-backed URLs across src/data/israelDossierExpanded.ts, src/data/profileData.ts, and the chapter-1, chapter-7, chapter-9, chapter-16, and chapter-23 source lists.",
+    "Revalidated the trust surface on April 7, 2026 with `npm run verify:sources`, `npx tsc --noEmit`, and `npm run build`; the source verifier now passes with 379 unique URLs checked, 320 OK URLs, 58 restricted/bot-blocked URLs, and 0 actionable failures."
   ],
-  "next_task": "Continue remediating the 28 remaining source-link failures, starting with the 16 in src/data/israelDossierExpanded.ts and 7 in src/data/profileData.ts, then re-run `npm run verify:sources` until the remaining set is limited to truly bot-blocked or archive-only domains.",
+  "next_task": "Verify the deployed publication shell and chapter/auth flows in a real browser session at 390px and 430px widths, starting with /, /read, /membership, and /chapter/foreword, now that the source-integrity backlog is cleared.",
   "next_priorities": [
-    "Replace or retire the remaining broken source links concentrated in src/data/israelDossierExpanded.ts (16) and src/data/profileData.ts (7), preferring official records, current newsroom slugs, or stable archive-backed citations.",
-    "Clean up the residual one-off chapter source failures in src/data/chapters/chapter-1.ts, chapter-7.ts, chapter-9.ts, chapter-16.ts, and chapter-23.ts.",
-    "Decide whether to wire npm run verify:auth and npm run verify:sources into CI or a scheduled operational check against Railway now that the verifier noise is materially lower.",
+    "Verify the deployed homepage institute module and publication shell on /, /read, /news, and /membership at 390px and 430px in a real browser session, focusing on scanability, grouped mobile navigation, and CTA clarity.",
+    "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session, including signed-out previews, login upgrade, logout downgrade, and protected PDF/download affordances.",
+    "Decide whether to wire npm run verify:auth and npm run verify:sources into CI or a scheduled operational check against Railway now that the source verifier is clean and stable.",
     "Verify the deployed homepage institute module on / at 390px and 430px, including CTA clarity, scanability, and separation from the publication reading flow.",
     "Verify the deployed institute shell on /institute, /institute/book, and representative course/guide routes at 390px and 430px in a real browser session, including navigation, scanability, and PDF CTA clarity.",
     "Pressure-test the institute PDF export on a realistic browser/device mix and decide whether to move the Book of Knowledge export to a build-time or server-side artifact for very large manuals.",
-    "Verify the deployed publication shell on /, /read, /news, and /membership at 390px and 430px in a real browser session, including the grouped mobile drawer and sticky primary navigation.",
-    "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session.",
     "Add Sentry or equivalent production monitoring to capture auth/API failures before readers report them."
   ]
 }

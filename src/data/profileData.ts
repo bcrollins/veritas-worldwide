@@ -162,7 +162,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 2100000,
         year: '2013-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/C001098'
+        url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098'
       }
     ],
     policyActions: [
@@ -194,7 +194,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['U.S. Senator (R-TX) 2013-present', 'Solicitor General of Texas', 'Federal Trade Commission attorney'],
     websites: [
       { label: 'Senate Website', url: 'https://www.cruz.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/C001098' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098' }
     ]
   },
   {
@@ -439,7 +439,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 3400000,
         year: '1999-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/S000148'
+        url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148'
       }
     ],
     policyActions: [
@@ -471,7 +471,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['Senate Majority Leader 2021-present', 'U.S. Senator (D-NY) 1999-present', 'U.S. Representative (D-NY)', 'New York Assembly member'],
     websites: [
       { label: 'Senate Website', url: 'https://www.schumer.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/S000148' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148' }
     ]
   },
   {
@@ -492,7 +492,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 1800000,
         year: '2007-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/P000197'
+        url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197'
       }
     ],
     policyActions: [
@@ -517,7 +517,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['Speaker of the House 2019-2023, 2007-2011', 'U.S. Representative (D-CA) 1987-2023', 'House Minority Leader'],
     websites: [
       { label: 'Official Website', url: 'https://pelosi.house.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/P000197' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197' }
     ]
   },
   {
@@ -538,7 +538,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 2900000,
         year: '1985-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/M000355'
+        url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355'
       }
     ],
     policyActions: [
@@ -563,7 +563,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['Senate Republican Leader 2007-present', 'U.S. Senator (R-KY) 1985-present', 'U.S. Representative (R-KY)'],
     websites: [
       { label: 'Senate Website', url: 'https://www.mcconnell.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/M000355' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355' }
     ]
   },
   {
@@ -1761,14 +1761,14 @@ export const PROFILES: PowerProfile[] = [
         amount: 25000000,
         year: '2000-2016',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/2016-presidential-race/hillary-clinton/contributors?id=N00000019'
+        url: 'https://www.opensecrets.org/pres16/contributors?id=N00000019'
       },
       {
         from: 'Pro-Israel PACs and donors',
         amount: 8200000,
         year: '2016',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/2016-presidential-race'
+        url: 'https://www.opensecrets.org/pres16'
       }
     ],
     policyActions: [
@@ -4692,7 +4692,7 @@ export const PROFILES: PowerProfile[] = [
       {
         claim: 'Led AIPAC as it became one of largest spenders in US elections via Super PAC',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/political-action-committees-pacs/aipac/C00104638/summary',
+        url: 'https://www.opensecrets.org/political-action-committees-pacs/aipac/C00104638/summary/2024',
         tier: 'verified',
         date: '2024'
       },

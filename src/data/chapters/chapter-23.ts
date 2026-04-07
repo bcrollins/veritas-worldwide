@@ -29,7 +29,7 @@ const chapter: Chapter = {
   sources: [
     { id: 1, text: 'Baum, Dan. "Legalize It All." *Harper\'s Magazine*, April 2016. https://harpers.org/archive/2016/04/legalize-it-all/', url: 'https://harpers.org/archive/2016/04/legalize-it-all/' },
     { id: 2, text: 'CNBC. "The U.S. has spent over a trillion dollars fighting war on drugs." June 17, 2021. https://www.cnbc.com/2021/06/17/the-us-has-spent-over-a-trillion-dollars-fighting-war-on-drugs.html', url: 'https://www.cnbc.com/2021/06/17/the-us-has-spent-over-a-trillion-dollars-fighting-war-on-drugs.html' },
-    { id: 3, text: 'Vera Institute of Justice. "Drug Arrests and Incarceration."  https://www.vera.org/publications/price-of-prisons-2021-state- spending-trends/drug-arrests-and-incarceration', url: 'https://www.vera.org/publications/price-of-prisons-2021-state-' },
+    { id: 3, text: 'Vera Institute of Justice. "The Price of Prisons: 2015 State Spending Trends." https://www.vera.org/publications/price-of-prisons-2015-state-spending-trends', url: 'https://www.vera.org/publications/price-of-prisons-2015-state-spending-trends' },
     { id: 4, text: 'American Civil Liberties Union. "A Tale of Two Countries: Racially Targeted Arrests in the Era of Marijuana Reform." 2020. ht- tps://www.aclu.org/report/tale-two-countries-racially-targeted-arrests-era-marijuana-reform' },
     { id: 5, text: 'The  Sentencing  Project.  "Mass  Incarceration:  The  Whole  Pie  2023."  https://www.sentencingproject.org/research/mass- incarceration-the-whole-pie-2023/', url: 'https://www.sentencingproject.org/research/mass-' },
     { id: 6, text: 'McCoy, Alfred W. *The Politics of Heroin: CIA Complicity in the Global Drug Trade.* Lawrence Hill Books, 2003.' },

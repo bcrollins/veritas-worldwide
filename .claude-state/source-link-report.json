@@ -1,597 +1,21 @@
 {
-  "generatedAt": "2026-04-07T20:24:29.103Z",
+  "generatedAt": "2026-04-07T20:45:42.327Z",
   "timeoutMs": 12000,
   "concurrency": 12,
   "strictMode": false,
   "summary": {
-    "referenceCount": 667,
-    "uniqueUrlCount": 383,
-    "ok": 299,
+    "referenceCount": 664,
+    "uniqueUrlCount": 379,
+    "ok": 322,
     "redirect": 0,
-    "restricted": 56,
-    "missing": 20,
-    "failed": 8,
+    "restricted": 57,
+    "missing": 0,
+    "failed": 0,
     "invalid": 0,
-    "archived": 1
+    "archived": 0
   },
-  "topFailingDomains": [
-    {
-      "domain": "www.opensecrets.org",
-      "count": 7
-    },
-    {
-      "domain": "www.cnn.com",
-      "count": 3
-    },
-    {
-      "domain": "www.nsa.gov",
-      "count": 2
-    },
-    {
-      "domain": "www.bbc.com",
-      "count": 2
-    },
-    {
-      "domain": "www.amnesty.org",
-      "count": 2
-    },
-    {
-      "domain": "www.aljazeera.com",
-      "count": 2
-    },
-    {
-      "domain": "www.rothschildarchive.org",
-      "count": 1
-    },
-    {
-      "domain": "www.vera.org",
-      "count": 1
-    },
-    {
-      "domain": "www.irmep.org",
-      "count": 1
-    },
-    {
-      "domain": "www.nationalarchives.gov.uk",
-      "count": 1
-    },
-    {
-      "domain": "www.history.navy.mil",
-      "count": 1
-    },
-    {
-      "domain": "www.icrc.org",
-      "count": 1
-    },
-    {
-      "domain": "www.nytimes.com",
-      "count": 1
-    },
-    {
-      "domain": "www.channel4.com",
-      "count": 1
-    },
-    {
-      "domain": "www.theguardian.com",
-      "count": 1
-    }
-  ],
+  "topFailingDomains": [],
   "results": [
-    {
-      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=IL-PS",
-      "domain": "data.worldbank.org",
-      "status": "error",
-      "httpStatus": 500,
-      "finalUrl": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=IL-PS",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Israeli life expectancy vs. 74 in Palestine (9-year gap)"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-investigation-cmd-intl",
-      "domain": "www.cnn.com",
-      "status": "error",
-      "httpStatus": 500,
-      "finalUrl": "https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-investigation-cmd-intl",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "CNN — Investigation: Israeli forces shot Shireen Abu Akleh",
-        "CNN — Visual and acoustic investigation"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.cnn.com/2023/10/31/middleeast/israel-jabalya-refugee-camp-strike-intl-hnk",
-      "domain": "www.cnn.com",
-      "status": "error",
-      "httpStatus": 500,
-      "finalUrl": "https://www.cnn.com/2023/10/31/middleeast/israel-jabalya-refugee-camp-strike-intl-hnk",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "CNN — Satellite imagery confirms scale of Jabalia strikes",
-        "CNN — Satellite analysis of bomb craters"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/u/uss-liberty-incident.html",
-      "domain": "www.history.navy.mil",
-      "status": "error",
-      "httpStatus": null,
-      "finalUrl": "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/u/uss-liberty-incident.html",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": "fetch failed",
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "USS Liberty Attack — 34 Americans Killed"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.irmep.org/ila/",
-      "domain": "www.irmep.org",
-      "status": "error",
-      "httpStatus": null,
-      "finalUrl": "https://www.irmep.org/ila/",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": "fetch failed",
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Grant F. Smith, \"The Israel Lobby Archive: AZC/AIPAC Documents.\" Institute for Research: Middle Eastern Policy. Documents Jewish Agency f..."
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-9.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/2016-presidential-race",
-      "domain": "www.opensecrets.org",
-      "status": "error",
-      "httpStatus": 502,
-      "finalUrl": "https://www.opensecrets.org/2016-presidential-race",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/2016-presidential-race/hillary-clinton/contributors?id=N00000019",
-      "domain": "www.opensecrets.org",
-      "status": "error",
-      "httpStatus": null,
-      "finalUrl": "https://www.opensecrets.org/2016-presidential-race/hillary-clinton/contributors?id=N00000019",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": "This operation was aborted",
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.rothschildarchive.org/business/n_m_rothschild_and_sons_london/nathan_mayer_rothschild_and_the_waterloo_commission",
-      "domain": "www.rothschildarchive.org",
-      "status": "error",
-      "httpStatus": null,
-      "finalUrl": "https://www.rothschildarchive.org/business/n_m_rothschild_and_sons_london/nathan_mayer_rothschild_and_the_waterloo_commission",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": "fetch failed",
-      "archive": {
-        "available": true,
-        "url": "http://web.archive.org/web/20250720032423/https://www.rothschildarchive.org/business/n_m_rothschild_and_sons_london/nathan_mayer_rothschild_and_the_waterloo_commission",
-        "timestamp": "20250720032423",
-        "status": "200"
-      },
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Rothschild Archive, London — \"Nathan Mayer Rothschild and the Waterloo Commission.\""
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-1.ts"
-      ]
-    },
-    {
-      "url": "https://www.aljazeera.com/news/2024/10/28/israel-bans-unrwa-what-does-this-mean-for-palestinian-refugees",
-      "domain": "www.aljazeera.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.aljazeera.com/news/2024/10/28/israel-bans-unrwa-what-does-this-mean-for-palestinian-refugees",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Al Jazeera — Israel bans UNRWA"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.aljazeera.com/news/2024/9/10/at-least-40-killed-in-israeli-attack-on-gaza-safe-zone",
-      "domain": "www.aljazeera.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.aljazeera.com/news/2024/9/10/at-least-40-killed-in-israeli-attack-on-gaza-safe-zone",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Al Jazeera — Al-Mawasi safe zone strike"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.amnesty.org/en/latest/news/2023/10/israel-opt-evidence-of-war-crimes-in-gaza/",
-      "domain": "www.amnesty.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.amnesty.org/en/latest/news/2023/10/israel-opt-evidence-of-war-crimes-in-gaza/",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Amnesty International — Evidence of white phosphorus use"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.amnesty.org/en/latest/news/2024/06/israel-opt-us-made-munitions-identified-in-deadly-strike-rafah-displacement-camp/",
-      "domain": "www.amnesty.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.amnesty.org/en/latest/news/2024/06/israel-opt-us-made-munitions-identified-in-deadly-strike-rafah-displacement-camp/",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "Amnesty International — U.S.-made bombs identified in Rafah tent camp strike",
-        "Amnesty — Munition analysis"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.bbc.com/news/articles/cd11qj7rq79o",
-      "domain": "www.bbc.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.bbc.com/news/articles/cd11qj7rq79o",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "BBC — Rafah tent camp strike kills 45",
-        "BBC — Footage of burning tent camp"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.bbc.com/news/world-middle-east-68820038",
-      "domain": "www.bbc.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.bbc.com/news/world-middle-east-68820038",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "BBC — Second Al-Shifa raid kills 400+",
-        "BBC — Inside Al-Shifa after the siege"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.channel4.com/news/forensic-analysis-of-images-and-video-of-al-ahli-arab-hospital-blast",
-      "domain": "www.channel4.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.channel4.com/news/forensic-analysis-of-images-and-video-of-al-ahli-arab-hospital-blast",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Channel 4 News — Independent forensic analysis"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.cnn.com/2024/03/04/middleeast/gaza-children-starvation-famine-intl/index.html",
-      "domain": "www.cnn.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.cnn.com/2024/03/04/middleeast/gaza-children-starvation-famine-intl/index.html",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "CNN — Footage of starving children in Gaza hospitals"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.icrc.org/en/document/gaza-closure-not-another-year",
-      "domain": "www.icrc.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.icrc.org/en/document/gaza-closure-not-another-year",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Gaza Blockade Begins"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1916-18/source-9b/",
-      "domain": "www.nationalarchives.gov.uk",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1916-18/source-9b/",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "The Balfour Declaration"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.nsa.gov/portals/75/documents/",
-      "domain": "www.nsa.gov",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.nsa.gov/portals/75/documents/",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "NSA, \"Attack on a Sigint Collector, the USS Liberty,\" Declassified Documents, https://www.nsa.gov/portals/75/documents/ news-features/dec..."
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-16.ts"
-      ]
-    },
-    {
-      "url": "https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/release-1/uss-liberty.pdf",
-      "domain": "www.nsa.gov",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/release-1/uss-liberty.pdf",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "U.S. National Security Agency, \"USS Liberty Incident: Declassified Documents.\" NSA FOIA release, 2003."
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-7.ts"
-      ]
-    },
-    {
-      "url": "https://www.nytimes.com/video/world/middleeast/100000009129042/gaza-hospital-explosion-investigation.html",
-      "domain": "www.nytimes.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.nytimes.com/video/world/middleeast/100000009129042/gaza-hospital-explosion-investigation.html",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "New York Times — Visual investigation",
-        "NYT Visual Investigation — Blast analysis"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/chuck-schumer/S000148",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.opensecrets.org/members-of-congress/chuck-schumer/S000148",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/M000355",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/M000355",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/nancy-pelosi/P000197",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.opensecrets.org/members-of-congress/nancy-pelosi/P000197",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/ted-cruz/C001098",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.opensecrets.org/members-of-congress/ted-cruz/C001098",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/political-action-committees-pacs/aipac/C00104638/summary",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.opensecrets.org/political-action-committees-pacs/aipac/C00104638/summary",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Led AIPAC as it became one of largest spenders in US elections via Super PAC"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.theguardian.com/world/2024/jan/24/scholasticide-gaza-university-education-system-destroyed",
-      "domain": "www.theguardian.com",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.theguardian.com/world/2024/jan/24/scholasticide-gaza-university-education-system-destroyed",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "The Guardian — \"Scholasticide\": destruction of every university in Gaza"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.vera.org/publications/price-of-prisons-2021-state-",
-      "domain": "www.vera.org",
-      "status": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.vera.org/publications/price-of-prisons-2021-state-",
-      "redirected": false,
-      "checkedWith": "GET",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Vera Institute of Justice. \"Drug Arrests and Incarceration.\" https://www.vera.org/publications/price-of-prisons-2021-state- spending-tren..."
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-23.ts"
-      ]
-    },
     {
       "url": "https://2009-2017.state.gov/r/pa/prs/ps/2016/09/261987.htm",
       "domain": "2009-2017.state.gov",
@@ -635,7 +59,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.meta.com/about/?utm_source=about.facebook.com&utm_medium=redirect",
       "redirected": true,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -668,6 +92,43 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://apnews.com/article/israel-palestinians-hamas-war-hospital-rocket-gaza-e0fa550faa4678f024797b72132452e3",
+      "domain": "apnews.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://apnews.com/article/israel-palestinians-hamas-war-hospital-rocket-gaza-e0fa550faa4678f024797b72132452e3",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "AP — Visual analysis of the Al-Ahli hospital blast"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://apnews.com/article/israel-palestinians-hamas-war-news-05-28-2024-21ea44e3b514d3f3f2bd26a33f157e48",
+      "domain": "apnews.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://apnews.com/article/israel-palestinians-hamas-war-news-05-28-2024-21ea44e3b514d3f3f2bd26a33f157e48",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "AP — Israeli strike on Rafah displacement camp",
+        "AP — Reporting from the Rafah tent camp aftermath"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -752,12 +213,14 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
-        "\"The Balfour Declaration, November 2, 1917,\" Yale Law School Avalon Project. https://avalon.law.yale.edu/20th_century/balfour.asp"
+        "\"The Balfour Declaration, November 2, 1917,\" Yale Law School Avalon Project. https://avalon.law.yale.edu/20th_century/balfour.asp",
+        "The Balfour Declaration"
       ],
       "referenceFiles": [
-        "src/data/chapters/chapter-6.ts"
+        "src/data/chapters/chapter-6.ts",
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -836,6 +299,24 @@
       ]
     },
     {
+      "url": "https://casebook.icrc.org/print/pdf/node/21121",
+      "domain": "casebook.icrc.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://casebook.icrc.org/print/pdf/node/21121",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Gaza Blockade Begins"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://chanzuckerberg.com/",
       "domain": "chanzuckerberg.com",
       "status": "ok",
@@ -906,6 +387,42 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://content.forensic-architecture.org/wp-content/uploads/2024/10/Summary-of-Findings_Spatial-Analysis-of-the-Israeli-militarys-conduct-in-Gaza-since-October-2023.pdf",
+      "domain": "content.forensic-architecture.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://content.forensic-architecture.org/wp-content/uploads/2024/10/Summary-of-Findings_Spatial-Analysis-of-the-Israeli-militarys-conduct-in-Gaza-since-October-2023.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Forensic Architecture — Spatial analysis of Israeli military conduct in Gaza"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=PS-IL",
+      "domain": "data.worldbank.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=PS-IL",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Israeli life expectancy vs. 74 in Palestine (9-year gap)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -1368,7 +885,7 @@
       "httpStatus": 200,
       "finalUrl": "https://en.wikipedia.org/wiki/USS_Liberty_incident",
       "redirected": false,
-      "checkedWith": "HEAD",
+      "checkedWith": "GET",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -1629,12 +1146,14 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
-        "\"The Israeli Attack on the USS Liberty,\" U.S. State Department, Foreign Relations of the United States, 1964–68, Vol. XIX, Document 284. ..."
+        "\"The Israeli Attack on the USS Liberty,\" U.S. State Department, Foreign Relations of the United States, 1964–68, Vol. XIX, Document 284. ...",
+        "USS Liberty Attack — 34 Americans Killed"
       ],
       "referenceFiles": [
-        "src/data/chapters/chapter-7.ts"
+        "src/data/chapters/chapter-7.ts",
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -2035,6 +1554,24 @@
       ]
     },
     {
+      "url": "https://web.archive.org/web/20150801101850/http://www.irmep.org/ila/",
+      "domain": "web.archive.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://web.archive.org/web/20150801101850/http://www.irmep.org/ila/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Grant F. Smith, \"The Israel Lobby Archive: AZC/AIPAC Documents.\" Institute for Research: Middle Eastern Policy. Documents Jewish Agency f..."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-9.ts"
+      ]
+    },
+    {
       "url": "https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/",
       "domain": "web.archive.org",
       "status": "ok",
@@ -2050,6 +1587,24 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20250720032423/https://www.rothschildarchive.org/business/n_m_rothschild_and_sons_london/nathan_mayer_rothschild_and_the_waterloo_commission",
+      "domain": "web.archive.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://web.archive.org/web/20250720032423/https://www.rothschildarchive.org/business/n_m_rothschild_and_sons_london/nathan_mayer_rothschild_and_the_waterloo_commission",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Rothschild Archive, London — \"Nathan Mayer Rothschild and the Waterloo Commission.\""
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-1.ts"
       ]
     },
     {
@@ -2089,6 +1644,24 @@
       ]
     },
     {
+      "url": "https://www.aljazeera.com/gallery/2024/9/10/israeli-strike-on-gazas-al-mawasi-safe-zone-kills-dozens",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/gallery/2024/9/10/israeli-strike-on-gazas-al-mawasi-safe-zone-kills-dozens",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera — Israeli strike on Gaza's al-Mawasi safe zone kills dozens"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.aljazeera.com/news/2022/12/6/what-is-in-al-jazeera-dossier-for-the-icc-on-abu-aklehs-killing",
       "domain": "www.aljazeera.com",
       "status": "ok",
@@ -2119,6 +1692,42 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Al Jazeera — What we know so far about the Jabalia attack"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/news/2025/1/29/what-israels-unrwa-ban-means-for-millions-of-palestinians-by-the-numbers",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/news/2025/1/29/what-israels-unrwa-ban-means-for-millions-of-palestinians-by-the-numbers",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera — What Israel's UNRWA ban means for millions of Palestinians"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/video/newsfeed/2024/9/11/how-safe-is-gazas-al-mawasi-safe",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/video/newsfeed/2024/9/11/how-safe-is-gazas-al-mawasi-safe",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera Newsfeed — How safe is Gaza's Al-Mawasi safe zone?"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -2646,6 +2255,43 @@
       ]
     },
     {
+      "url": "https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl",
+      "domain": "www.cnn.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "CNN — Investigation: Israeli forces shot Shireen Abu Akleh",
+        "CNN — Visual and acoustic investigation"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2024/03/06/middleeast/israel-gaza-starvation-siege-mothers-babies-intl",
+      "domain": "www.cnn.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cnn.com/2024/03/06/middleeast/israel-gaza-starvation-siege-mothers-babies-intl",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "CNN — Mothers and babies trapped in Gaza's starvation siege"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.cnn.com/2026/03/18/economy/fed-march-rates-decision",
       "domain": "www.cnn.com",
       "status": "ok",
@@ -2682,58 +2328,39 @@
       ]
     },
     {
-      "url": "https://www.congress.gov/bill/118th-congress/house-bill/815",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
       "domain": "www.congress.gov",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815",
+      "finalUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "H.R.815 / DSCA / Responsible Statecraft"
+        "Epstein Files Transparency Act — Full Text"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/articles.ts"
       ]
     },
     {
-      "url": "https://www.congress.gov/crs-product/RL33222",
+      "url": "https://www.congress.gov/crs-product/R48860",
       "domain": "www.congress.gov",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://www.congress.gov/crs-product/RL33222",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "U.S. aid to Israel vs. $0 in universal healthcare for Americans",
-        "Congressional Research Service, Report RL33222"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.congress.gov/member/adam-schiff/S001150",
-      "domain": "www.congress.gov",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.congress.gov/member/adam-schiff/S001150",
+      "finalUrl": "https://www.congress.gov/crs-product/R48860",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "The United States has no greater ally in the Middle East than Israel."
+        "FY2026 Defense Budget: Funding for Selected Weapon Systems"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/articles.ts"
       ]
     },
     {
@@ -2836,7 +2463,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.dailywire.com/",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 2,
@@ -3350,6 +2977,25 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.forensicarchitecture.org/investigation/israeli-disinformation-al-ahli-hospital",
+      "domain": "www.forensicarchitecture.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.forensicarchitecture.org/investigation/israeli-disinformation-al-ahli-hospital",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Forensic Architecture — Israeli disinformation and Al-Ahli hospital",
+        "Forensic Architecture — Blast sequence analysis"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -4383,6 +4029,42 @@
       ]
     },
     {
+      "url": "https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/chronology-events/attack-sigint.pdf",
+      "domain": "www.nsa.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/chronology-events/attack-sigint.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "NSA, \"Attack on a Sigint Collector, the USS Liberty,\" Declassified Documents, https://www.nsa.gov/portals/75/documents/news-features/decl..."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-16.ts"
+      ]
+    },
+    {
+      "url": "https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/misc-reports/uss_liberty_incident.pdf",
+      "domain": "www.nsa.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/uss-liberty/misc-reports/uss_liberty_incident.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "U.S. National Security Agency, \"USS Liberty Incident: Declassified Documents.\" NSA FOIA release, 2003."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-7.ts"
+      ]
+    },
+    {
       "url": "https://www.ntsb.gov/",
       "domain": "www.ntsb.gov",
       "status": "ok",
@@ -4431,24 +4113,6 @@
         "src/data/chapters/overview.ts",
         "src/data/articlesExpanded.ts",
         "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Flawed Disclosures Undermine Accountability"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
       ]
     },
     {
@@ -4787,7 +4451,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.opensecrets.org/donor-lookup/results?name=peter+thiel",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -4895,7 +4559,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.opensecrets.org/donor-lookup/results?name=warren+buffett",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -5027,6 +4691,24 @@
       "status": "ok",
       "httpStatus": 200,
       "finalUrl": "https://www.opensecrets.org/members-of-congress/byron-donalds/summary?cid=N00034016&cycle=CAREER&type=I",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OpenSecrets"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148",
+      "domain": "www.opensecrets.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
@@ -5320,6 +5002,42 @@
       ]
     },
     {
+      "url": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355",
+      "domain": "www.opensecrets.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OpenSecrets"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197",
+      "domain": "www.opensecrets.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OpenSecrets"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.opensecrets.org/members-of-congress/rand-paul/summary?cid=N00030836",
       "domain": "www.opensecrets.org",
       "status": "ok",
@@ -5369,6 +5087,24 @@
       "referenceLabels": [
         "OpenSecrets",
         "Received $478K from pro-Israel PACs in first two terms"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098",
+      "domain": "www.opensecrets.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OpenSecrets"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -5477,12 +5213,14 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
-        "OpenSecrets"
+        "OpenSecrets",
+        "Led AIPAC as it became one of largest spenders in US elections via Super PAC"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierExpanded.ts",
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -5519,6 +5257,42 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.opensecrets.org/pres16",
+      "domain": "www.opensecrets.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.opensecrets.org/pres16",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OpenSecrets"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.opensecrets.org/pres16/contributors?id=N00000019",
+      "domain": "www.opensecrets.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.opensecrets.org/pres16/contributors?id=N00000019",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OpenSecrets"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -5575,6 +5349,26 @@
       "referenceLabels": [
         "I am not for foreign aid in general, to any country.",
         "Blocked unanimous consent on Israel aid bills multiple times"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.politico.com/",
+      "domain": "www.politico.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.politico.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 3,
+      "referenceLabels": [
+        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
+        "One of few Republican senators to oppose unconditional Israel military aid",
+        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -5778,7 +5572,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.speaker.gov/",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -5794,7 +5588,7 @@
       "domain": "www.springer.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=c2192532-bafc-410b-8d87-c0e95315dc19",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=d775820a-412f-43f8-92f2-24ad88024bd9",
       "redirected": true,
       "checkedWith": "HEAD",
       "error": null,
@@ -5929,6 +5723,24 @@
       ]
     },
     {
+      "url": "https://www.theguardian.com/world/article/2024/may/27/global-shock-after-israeli-airstrike-kills-dozens-in-rafah-tent-camp",
+      "domain": "www.theguardian.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.theguardian.com/world/article/2024/may/27/global-shock-after-israeli-airstrike-kills-dozens-in-rafah-tent-camp",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "The Guardian — Global shock after Israeli airstrike kills dozens in Rafah tent camp"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.treasury.gov/",
       "domain": "www.treasury.gov",
       "status": "ok",
@@ -6057,6 +5869,24 @@
       ]
     },
     {
+      "url": "https://www.vera.org/publications/price-of-prisons-2015-state-spending-trends",
+      "domain": "www.vera.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.vera.org/publications/price-of-prisons-2015-state-spending-trends",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Vera Institute of Justice. \"The Price of Prisons: 2015 State Spending Trends.\" https://www.vera.org/publications/price-of-prisons-2015-st..."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-23.ts"
+      ]
+    },
+    {
       "url": "https://www.washingtonexaminer.com/news/campaigns/presidential/3040531/who-is-byron-donalds-trump-vp-short-list/",
       "domain": "www.washingtonexaminer.com",
       "status": "ok",
@@ -6140,6 +5970,25 @@
       ]
     },
     {
+      "url": "https://www.who.int/news/item/06-04-2024-six-months-of-war-leave-al-shifa-hospital-in-ruins--who-mission-reports",
+      "domain": "www.who.int",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.who.int/news/item/06-04-2024-six-months-of-war-leave-al-shifa-hospital-in-ruins--who-mission-reports",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "WHO — Six months of war leave Al-Shifa hospital in ruins",
+        "WHO — Post-raid mission report from Al-Shifa"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.wikipedia.org/",
       "domain": "www.wikipedia.org",
       "status": "ok",
@@ -6217,8 +6066,8 @@
       "domain": "crsreports.congress.gov",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://crsreports.congress.gov/",
-      "redirected": false,
+      "finalUrl": "https://www.congress.gov/crs-products/",
+      "redirected": true,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
@@ -6236,9 +6085,9 @@
       "domain": "crsreports.congress.gov",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://crsreports.congress.gov/product/pdf/R",
-      "redirected": false,
-      "checkedWith": "HEAD",
+      "finalUrl": "https://www.congress.gov/crs-products/product/pdf/R",
+      "redirected": true,
+      "checkedWith": "GET",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -6462,7 +6311,7 @@
       "httpStatus": 403,
       "finalUrl": "https://www.axios.com/",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -6628,21 +6477,21 @@
       ]
     },
     {
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/815",
       "domain": "www.congress.gov",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
+      "finalUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Epstein Files Transparency Act — Full Text"
+        "H.R.815 / DSCA / Responsible Statecraft"
       ],
       "referenceFiles": [
-        "src/data/articles.ts"
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -6664,21 +6513,40 @@
       ]
     },
     {
-      "url": "https://www.congress.gov/crs-product/R48860",
+      "url": "https://www.congress.gov/crs-product/RL33222",
       "domain": "www.congress.gov",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.congress.gov/crs-product/R48860",
+      "finalUrl": "https://www.congress.gov/crs-product/RL33222",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "U.S. aid to Israel vs. $0 in universal healthcare for Americans",
+        "Congressional Research Service, Report RL33222"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.congress.gov/member/adam-schiff/S001150",
+      "domain": "www.congress.gov",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.congress.gov/member/adam-schiff/S001150",
+      "redirected": false,
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "FY2026 Defense Budget: Funding for Selected Weapon Systems"
+        "The United States has no greater ally in the Middle East than Israel."
       ],
       "referenceFiles": [
-        "src/data/articles.ts"
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -6779,7 +6647,7 @@
       "httpStatus": 403,
       "finalUrl": "https://www.msf.org/gaza-children-are-dying-malnutrition-while-aid-blocked",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -6869,7 +6737,7 @@
       "httpStatus": 403,
       "finalUrl": "https://www.ohchr.org/en/press-releases/2022/06/un-human-rights-office-concludes-shots-killed-journalist-came-israeli",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -6878,6 +6746,24 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Flawed Disclosures Undermine Accountability"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
       ]
     },
     {
@@ -6893,26 +6779,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.politico.com/",
-      "domain": "www.politico.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.politico.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 3,
-      "referenceLabels": [
-        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
-        "One of few Republican senators to oppose unconditional Israel military aid",
-        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"

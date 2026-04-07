@@ -1,5 +1,5 @@
 {
-  "run": 15,
+  "run": 16,
   "date": "2026-04-07",
   "site": [
     {
@@ -28,11 +28,11 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9,
-      "previous": 8.8,
+      "composite": 9.2,
+      "previous": 9,
       "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Repair the remaining dossier/profile source failures, especially the Israel dossier newsroom URLs and OpenSecrets profile links, then operationalize archive-backed fallbacks or CI enforcement so the bibliography stays durable under link rot."
+      "plus_half_requires": "Operationalize npm run verify:sources in CI or a scheduled Railway/GitHub check and reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set."
     },
     {
       "feature": "Search",
