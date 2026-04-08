@@ -1092,6 +1092,14 @@ function requireDB(res) {
   return true
 }
 
+app.get('/api/auth/status', (_req, res) => {
+  res.setHeader('Cache-Control', 'no-store')
+  res.json({
+    available: !!dbPool,
+    mode: dbPool ? 'database' : 'degraded',
+  })
+})
+
 app.get('/api/chapters', async (req, res) => {
   const wantsFull = req.query.scope === 'full'
 

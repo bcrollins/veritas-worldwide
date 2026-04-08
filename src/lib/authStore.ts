@@ -51,20 +51,84 @@ function authHeaders(): Record<string, string> {
   return token ? { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` } : { 'Content-Type': 'application/json' }
 }
 
-// ── API availability check ──
-let apiAvailable: boolean | null = null
+type AuthBackendAvailability = 'available' | 'unavailable' | 'unknown'
 
-async function checkAPI(): Promise<boolean> {
-  if (apiAvailable !== null) return apiAvailable
-  try {
-    const res = await fetch('/api/analytics/snapshot', { method: 'GET', signal: AbortSignal.timeout(3000) })
-    apiAvailable = res.ok
-  } catch {
-    apiAvailable = false
+// ── Auth backend availability check ──
+let authBackendAvailable: AuthBackendAvailability | null = null
+let authBackendRefreshTimer: ReturnType<typeof setTimeout> | null = null
+
+function cacheAuthBackendAvailability(value: AuthBackendAvailability) {
+  authBackendAvailable = value
+
+  if (authBackendRefreshTimer) {
+    clearTimeout(authBackendRefreshTimer)
   }
-  // Re-check every 60 seconds
-  setTimeout(() => { apiAvailable = null }, 60000)
-  return apiAvailable!
+
+  authBackendRefreshTimer = setTimeout(() => {
+    authBackendAvailable = null
+    authBackendRefreshTimer = null
+  }, 60000)
+}
+
+function getCachedFallbackState() {
+  const state = loadState()
+  if (!state.user) return null
+
+  return {
+    user: state.user,
+    bookmarks: state.bookmarks,
+    readingProgress: state.readingProgress,
+  }
+}
+
+function shouldTryAuthBackend(status: AuthBackendAvailability) {
+  return status !== 'unavailable'
+}
+
+function updateAuthBackendAvailabilityFromResponse(status: number) {
+  if (status === 503 || status === 404 || status === 405) {
+    cacheAuthBackendAvailability('unavailable')
+    return 'unavailable' as const
+  }
+
+  cacheAuthBackendAvailability('available')
+  return 'available' as const
+}
+
+async function readJsonResponse<T>(response: Response): Promise<T | null> {
+  const text = await response.text()
+  if (!text) return null
+
+  try {
+    return JSON.parse(text) as T
+  } catch {
+    return null
+  }
+}
+
+async function checkAuthBackend(): Promise<AuthBackendAvailability> {
+  if (authBackendAvailable !== null) return authBackendAvailable
+
+  try {
+    const res = await fetch('/api/auth/status', { method: 'GET', signal: AbortSignal.timeout(3000) })
+
+    if (res.status === 503) {
+      cacheAuthBackendAvailability('unavailable')
+      return 'unavailable'
+    }
+
+    if (!res.ok) {
+      cacheAuthBackendAvailability('unknown')
+      return 'unknown'
+    }
+
+    const data = await readJsonResponse<{ available?: boolean }>(res)
+    cacheAuthBackendAvailability(data?.available === true ? 'available' : 'unavailable')
+  } catch {
+    cacheAuthBackendAvailability('unavailable')
+  }
+
+  return authBackendAvailable!
 }
 
 // ── localStorage fallback (original MVP auth) ──
@@ -124,23 +188,27 @@ function saveProgressLocal(progress: ReadingProgress) {
 // ── Public API ──
 
 export async function signup(email: string, password: string, displayName: string): Promise<{ success: boolean; error?: string; user?: User }> {
-  const isAPI = await checkAPI()
+  const authBackendStatus = await checkAuthBackend()
 
-  if (isAPI) {
+  if (shouldTryAuthBackend(authBackendStatus)) {
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, displayName }),
       })
-      const data = await res.json()
-      if (!res.ok) return { success: false, error: data.error || 'Registration failed' }
-      setToken(data.token)
-      const user: User = data.user
+      const backendResponse = updateAuthBackendAvailabilityFromResponse(res.status)
+      if (backendResponse === 'unavailable') throw new Error('Auth backend unavailable')
+      const data = await readJsonResponse<{ error?: string; token?: string; user?: User }>(res)
+      if (!res.ok) return { success: false, error: data?.error || 'Registration failed' }
+      setToken(data?.token || null)
+      const user = data?.user
+      if (!user) return { success: false, error: 'Registration failed' }
       saveUserLocal(user)
       return { success: true, user }
     } catch {
-      // Fall through to localStorage
+      cacheAuthBackendAvailability('unavailable')
+      // Fall through to localStorage when auth is degraded.
     }
   }
 
@@ -159,23 +227,27 @@ export async function signup(email: string, password: string, displayName: strin
 }
 
 export async function login(email: string, password: string): Promise<{ success: boolean; error?: string; user?: User }> {
-  const isAPI = await checkAPI()
+  const authBackendStatus = await checkAuthBackend()
 
-  if (isAPI) {
+  if (shouldTryAuthBackend(authBackendStatus)) {
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       })
-      const data = await res.json()
-      if (!res.ok) return { success: false, error: data.error || 'Login failed' }
-      setToken(data.token)
-      const user: User = data.user
+      const backendResponse = updateAuthBackendAvailabilityFromResponse(res.status)
+      if (backendResponse === 'unavailable') throw new Error('Auth backend unavailable')
+      const data = await readJsonResponse<{ error?: string; token?: string; user?: User }>(res)
+      if (!res.ok) return { success: false, error: data?.error || 'Login failed' }
+      setToken(data?.token || null)
+      const user = data?.user
+      if (!user) return { success: false, error: 'Login failed' }
       saveUserLocal(user)
       return { success: true, user }
     } catch {
-      // Fall through to localStorage
+      cacheAuthBackendAvailability('unavailable')
+      // Fall through to localStorage when auth is degraded.
     }
   }
 
@@ -193,23 +265,35 @@ export async function login(email: string, password: string): Promise<{ success:
 export async function validateSession(): Promise<{ user: User; bookmarks: string[]; readingProgress: ReadingProgress } | null> {
   const token = getToken()
   if (!token) return null
+
+  const authBackendStatus = await checkAuthBackend()
+  if (!shouldTryAuthBackend(authBackendStatus)) {
+    return getCachedFallbackState()
+  }
+
   try {
     const res = await fetch('/api/auth/me', { headers: authHeaders() })
+    const backendResponse = updateAuthBackendAvailabilityFromResponse(res.status)
     if (!res.ok) {
+      if (backendResponse === 'unavailable') {
+        return getCachedFallbackState()
+      }
       if (res.status === 401) { setToken(null); saveUserLocal(null) }
       return null
     }
-    const data = await res.json()
+    const data = await readJsonResponse<{ user: User; bookmarks?: string[]; readingProgress?: ReadingProgress }>(res)
+    if (!data?.user) {
+      return null
+    }
     const user: User = data.user
     saveUserLocal(user)
     saveBookmarksLocal(data.bookmarks || [])
     saveProgressLocal(data.readingProgress || {})
     return { user, bookmarks: data.bookmarks || [], readingProgress: data.readingProgress || {} }
   } catch {
+    cacheAuthBackendAvailability('unavailable')
     // Offline — use cached state
-    const state = loadState()
-    if (state.user) return { user: state.user, bookmarks: state.bookmarks, readingProgress: state.readingProgress }
-    return null
+    return getCachedFallbackState()
   }
 }
 
