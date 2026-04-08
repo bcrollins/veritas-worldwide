@@ -93,7 +93,7 @@ function FunnelSection({ funnel }: { funnel: FunnelSnapshot }) {
   const stages = [
     { label: 'Chapter Views', value: funnel.chapterViews, description: 'Readers who reached a chapter page.' },
     { label: 'Content Gate Hits', value: funnel.gateHits, description: 'Anonymous readers who reached gated depth.' },
-    { label: 'Email Signups', value: funnel.signups, description: 'Newsletter conversions from all placements.' },
+    { label: 'Reader Signups', value: funnel.signups, description: 'Free account creation and newsletter subscriptions.' },
     { label: 'Checkout Starts', value: funnel.checkoutStarts, description: 'Donation or membership checkout intent.' },
     { label: 'Completed Support', value: funnel.payments, description: 'Confirmed donation or membership return.' },
   ]
@@ -150,7 +150,7 @@ function EventTrendChart({ data }: { data: EventTrendPoint[] }) {
 
   const series = [
     { key: 'chapterViews', label: 'Chapter Views', color: 'bg-crimson/80' },
-    { key: 'signups', label: 'Signups', color: 'bg-gold/80' },
+    { key: 'signups', label: 'Reader Signups', color: 'bg-gold/80' },
     { key: 'checkoutStarts', label: 'Checkout Starts', color: 'bg-verified/80' },
     { key: 'payments', label: 'Completed Support', color: 'bg-ink/70' },
   ] as const
@@ -522,7 +522,7 @@ export default function AnalyticsPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             <StatCard label="Chapter Views" value={data.funnel.chapterViews} />
-            <StatCard label="Signups" value={data.funnel.signups} />
+            <StatCard label="Reader Signups" value={data.funnel.signups} />
             <StatCard label="Checkout Starts" value={data.funnel.checkoutStarts} />
             <StatCard label="Completed Support" value={data.funnel.payments} />
             <StatCard label="Shares" value={data.funnel.shares} />
@@ -551,7 +551,7 @@ export default function AnalyticsPage() {
           {/* Footer note */}
           <div className="border-t border-border pt-6 mt-4">
             <p className="font-sans text-xs text-ink-faint leading-relaxed">
-              Analytics are collected anonymously. No personal data is stored in the public dashboard. Country detection is based on IP geolocation, and behavioral events reflect chapter reading, signup, share, and support actions recorded on the site.
+              Analytics are collected anonymously. No personal data is stored in the public dashboard. Country detection is based on IP geolocation, and behavioral events reflect chapter reading, reader signups, share activity, and support actions recorded on the site.
             </p>
           </div>
         </div>

@@ -921,6 +921,12 @@ const ANALYTICS_EVENTS = new Set([
   'payment_completed',
 ])
 
+function getSignupEventCount(eventCounts) {
+  if (!eventCounts || typeof eventCounts !== 'object') return 0
+
+  return (eventCounts.email_signup || 0) + (eventCounts.account_created || 0)
+}
+
 app.post('/api/analytics/event', (req, res) => {
   const { name, path: rawPath, properties } = req.body || {}
   if (typeof name !== 'string' || !ANALYTICS_EVENTS.has(name)) {
@@ -1001,7 +1007,7 @@ app.get('/api/analytics/snapshot', (req, res) => {
     eventTrend.push({
       date: key,
       chapterViews: dayEvents.chapter_viewed || 0,
-      signups: dayEvents.email_signup || 0,
+      signups: getSignupEventCount(dayEvents),
       checkoutStarts: (dayEvents.checkout_started || 0) + (dayEvents.donation_started || 0),
       payments: (dayEvents.payment_completed || 0) + (dayEvents.donation_completed || 0),
     })
@@ -1009,7 +1015,7 @@ app.get('/api/analytics/snapshot', (req, res) => {
   const funnel = {
     chapterViews: eventCounts.chapter_viewed || 0,
     gateHits: eventCounts.content_gate_hit || 0,
-    signups: eventCounts.email_signup || 0,
+    signups: getSignupEventCount(eventCounts),
     checkoutStarts: (eventCounts.checkout_started || 0) + (eventCounts.donation_started || 0),
     payments: (eventCounts.payment_completed || 0) + (eventCounts.donation_completed || 0),
     shares: eventCounts.share_clicked || 0,
