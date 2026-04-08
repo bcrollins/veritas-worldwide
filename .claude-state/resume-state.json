@@ -1,5 +1,5 @@
 {
-  "run": 21,
+  "run": 22,
   "date": "2026-04-07",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -49,17 +49,24 @@
     "Re-verified the live public health surface on April 7, 2026: `/`, `/search`, `/methodology`, `/sources`, `/membership`, `/analytics`, `/api/analytics/snapshot`, and anonymous `/api/search?q=federal+reserve` all returned successfully, but the public analytics snapshot had reset to all zeroes again.",
     "Patched `server.js` so public analytics state now flushes on pageview/event mutations, persists to a new `analytics_state` Postgres table when `DATABASE_URL` is available, falls back to disk safely, and loads the analytics snapshot before `app.listen` so redeploys do not zero the public dashboard by default.",
     "Revalidated the analytics durability fix locally on April 7, 2026 with `node --check server.js`, `npx tsc --noEmit`, and `npm run build`, then proved the runtime path in an isolated local server by posting analytics events, confirming `analytics.json` flushes to disk, and confirming the snapshot reloads correctly after process restart.",
-    "Patched analytics title resolution on April 7, 2026 so `server.js` now converts generic shell titles into route-specific titles for static routes plus chapter, profile, topic, news, and institute paths, while `src/hooks/usePageView.ts` now waits for route-level SEO effects before sending SPA pageviews to GA4, HubSpot, and `/api/analytics/pageview`."
+    "Patched analytics title resolution on April 7, 2026 so `server.js` now converts generic shell titles into route-specific titles for static routes plus chapter, profile, topic, news, and institute paths, while `src/hooks/usePageView.ts` now waits for route-level SEO effects before sending SPA pageviews to GA4, HubSpot, and `/api/analytics/pageview`.",
+    "Verified on April 7, 2026 that the live public trust routes `/`, `/search`, `/methodology`, `/sources`, `/membership`, `/analytics`, `/api/analytics/snapshot`, and anonymous `/api/search?q=federal+reserve` were still returning successfully from production before further mobile audit work began.",
+    "Ran a real-browser mobile audit at 390px and 430px against the live homepage, methodology, sources, and membership routes using Playwright screenshots to inspect actual rendered spacing, CTA visibility, and trust-layer readability.",
+    "Root-caused a homepage mobile trust defect: `FadeInSection` and staggered entrance styles defaulted critical modules to `opacity: 0`, so below-the-fold homepage sections rendered as dead air on narrow viewports until client-side intersection observers fired.",
+    "Patched `src/styles/index.css` so fade-in and staggered entrance sections render immediately on viewports 767px wide and below, and for reduced-motion users, while preserving the existing desktop motion treatment.",
+    "Revalidated the homepage mobile visibility fix locally on April 7, 2026 with `npx tsc --noEmit`, `npm run build`, and rebuilt 390px/430px Playwright screenshots from a local preview build showing the dead zone removed."
   ],
-  "next_task": "Verify the deployed analytics title normalization on `main` for `/news`, `/profiles`, `/topics/aipac`, `/chapter/foreword`, and `/institute*`, then continue the 390px and 430px mobile audit on the highest-trust public routes.",
+  "next_task": "Verify the deployed homepage mobile visibility fix on `main`, then continue the live 390px and 430px audit on `/read`, `/news`, and representative `/institute*` routes while tightening the mobile cookie banner so first-screen editorial trust copy stays visible on fresh visits.",
   "next_priorities": [
-    "Verify the deployed analytics title fix on `main`: confirm `/api/analytics/snapshot` no longer reports `The Record | Veritas Worldwide` for `/news`, `/profiles`, `/topics/:slug`, `/chapter/foreword`, and institute routes.",
-    "Confirm the deployed analytics durability fix is still intact while checking the title normalization: the snapshot should survive the deploy and increment after a fresh pageview/event without resetting to zero.",
-    "Verify the updated membership copy and CTA hierarchy on `/membership` at 390px and 430px in a real browser session, focusing on tone, pricing clarity, and sticky CTA behavior.",
+    "Verify the deployed homepage mobile visibility fix on `main`: confirm the front page no longer shows a dead zone between the featured modules and the table of contents at 390px and 430px.",
+    "Tighten the mobile cookie consent layer on `/`, `/methodology`, `/sources`, and `/membership` so the first-screen trust copy and CTAs remain legible on fresh visits without weakening consent clarity.",
+    "Verify the `/read` and `/chapter/:id` auth upgrade/downgrade flows in a real browser session at 390px and 430px widths.",
+    "Verify the live `/news` listing plus representative article routes at 390px and 430px widths, focusing on scanability, related-investigation linking, and subscribe-path clarity.",
     "Confirm the rebuilt Institute surfaces are live in production: `/institute`, `/institute/book`, `/institute/methodology`, representative `/institute/courses/:slug`, representative `/institute/guides/:slug`, `/llms.txt`, and `/veritas-institute.md`.",
     "Verify the rebuilt Institute surfaces at 390px and 430px in a real browser session, focusing on scanability, sticky shell behavior, CTA clarity, and the new answer-first hierarchy.",
-    "Verify the signed-out search and sources surfaces at 390px and 430px in a real browser session, focusing on whether restored public metadata improves chapter context without leaking protected bibliography rows.",
-    "Verify the deployed homepage institute module and publication shell on /, /read, /news, and /membership at 390px and 430px in a real browser session, focusing on scanability, grouped mobile navigation, and CTA clarity.",
+    "Verify the updated membership copy and CTA hierarchy on `/membership` at 390px and 430px in a real browser session, focusing on tone, pricing clarity, sticky CTA behavior, and cookie-banner interference.",
+    "Verify the deployed analytics title fix on `main`: confirm `/api/analytics/snapshot` no longer reports `The Record | Veritas Worldwide` for `/news`, `/profiles`, `/topics/:slug`, `/chapter/foreword`, and institute routes.",
+    "Confirm the deployed analytics durability fix is still intact while checking the title normalization: the snapshot should survive the deploy and increment after a fresh pageview/event without resetting to zero.",
     "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session, including signed-out previews, login upgrade, logout downgrade, and protected PDF/download affordances.",
     "Decide whether to wire npm run verify:auth and npm run verify:sources into CI or a scheduled operational check against Railway now that the source verifier is clean and stable.",
     "Pressure-test the institute PDF export on a realistic browser/device mix and decide whether to move the Book of Knowledge export to a build-time or server-side artifact for very large manuals.",

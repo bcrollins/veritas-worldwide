@@ -1,7 +1,15 @@
 {
-  "run": 21,
+  "run": 22,
   "date": "2026-04-07",
   "site": [
+    {
+      "feature": "Home / Front Page",
+      "composite": 8.3,
+      "previous": 7.5,
+      "delta": 0.8,
+      "status": "improved",
+      "plus_half_requires": "Compact the mobile cookie banner so fresh visits keep the first-screen editorial context and primary CTAs visible at 390px and 430px."
+    },
     {
       "feature": "Methodology & Trust Layer",
       "composite": 8.5,
@@ -52,11 +60,11 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 8.4,
+      "composite": 8.6,
       "previous": 8.1,
-      "delta": 0.3,
+      "delta": 0.5,
       "status": "improved",
-      "plus_half_requires": "Verify the deployed shell at 390px and 430px on the homepage, /read, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
+      "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
       "feature": "Veritas Institute",

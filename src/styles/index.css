@@ -546,6 +546,17 @@ html.dark .stat-card {
 .stagger-children.is-visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
 .stagger-children.is-visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
 
+@media (max-width: 767px) {
+  .fade-in-section,
+  .fade-in-section.is-visible,
+  .stagger-children > *,
+  .stagger-children.is-visible > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Card hover lift */
 .card-lift {
   transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
@@ -582,6 +593,14 @@ html.dark .card-lift:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .fade-in-section,
+  .fade-in-section.is-visible,
+  .stagger-children > *,
+  .stagger-children.is-visible > * {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
