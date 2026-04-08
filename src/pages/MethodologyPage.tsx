@@ -9,6 +9,24 @@ const methodologySections = [
   { id: 'research-standards', label: 'Research Standards' },
 ]
 
+const methodologyEvidenceSummary = [
+  {
+    label: 'Verified',
+    description: 'Primary source documentation',
+    tone: 'border-verified-border bg-verified-bg text-verified',
+  },
+  {
+    label: 'Circumstantial',
+    description: 'Documented facts, interpretive conclusion',
+    tone: 'border-circumstantial-border bg-circumstantial-bg text-circumstantial',
+  },
+  {
+    label: 'Disputed',
+    description: 'Reported, but not independently confirmed',
+    tone: 'border-disputed-border bg-disputed-bg text-disputed',
+  },
+]
+
 export default function MethodologyPage() {
   useEffect(() => {
     setMetaTags({
@@ -60,6 +78,49 @@ export default function MethodologyPage() {
                 How this publication was researched, sourced, and structured — and how you should read it.
               </p>
             </header>
+
+            <div className="mb-10 space-y-4 lg:hidden no-print">
+              <section className="border border-border bg-surface-raised p-5" aria-labelledby="methodology-mobile-nav">
+                <h2
+                  id="methodology-mobile-nav"
+                  className="mb-3 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-ink-faint"
+                >
+                  On This Page
+                </h2>
+                <nav aria-label="Methodology sections" className="flex flex-wrap gap-2">
+                  {methodologySections.map((section) => (
+                    <a
+                      key={section.id}
+                      href={`#${section.id}`}
+                      className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                    >
+                      {section.label}
+                    </a>
+                  ))}
+                </nav>
+              </section>
+
+              <section className="border border-border bg-surface-raised p-5" aria-labelledby="methodology-mobile-evidence">
+                <h2
+                  id="methodology-mobile-evidence"
+                  className="mb-3 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-ink-faint"
+                >
+                  Evidence At A Glance
+                </h2>
+                <div className="space-y-3">
+                  {methodologyEvidenceSummary.map((item) => (
+                    <div key={item.label} className={`rounded-sm border p-3 ${item.tone}`}>
+                      <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em]">
+                        {item.label}
+                      </p>
+                      <p className="mt-1 font-body text-sm leading-relaxed text-ink-light">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </div>
 
             {/* Source Hierarchy */}
             <section id="five-tier-source-hierarchy" className="mb-16 scroll-mt-28">
