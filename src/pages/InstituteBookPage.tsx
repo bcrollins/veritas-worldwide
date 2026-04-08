@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import InstituteBookPDF from '../components/institute/InstituteBookPDF'
+import InstituteCollectionSignupPanel from '../components/institute/InstituteCollectionSignupPanel'
 import {
   buildInstituteBookSection,
   getInstitutePracticalTrackCounts,
@@ -315,6 +316,13 @@ export default function InstituteBookPage() {
           </section>
         )
       })}
+
+      <InstituteCollectionSignupPanel
+        surface="book"
+        fieldManualCount={instituteFieldManualEntries.length}
+        practicalCourseCount={institutePracticalTopics.length}
+        trackCount={practicalTracks.length}
+      />
 
       <section className="institute-panel px-6 py-6">
         <p className="institute-eyebrow">Research basis</p>

@@ -85,6 +85,8 @@ const SOURCE_LABELS: Record<string, string> = {
   article_cta: 'Current Reporting Subscriber',
   institute_course: 'Institute Course Subscriber',
   institute_guide: 'Institute Guide Subscriber',
+  institute_catalog: 'Institute Catalog Subscriber',
+  institute_book: 'Field Manual Subscriber',
   newsletter_inline: 'New Subscriber',
   newsletter_footer: 'New Subscriber',
   exit_intent: 'New Subscriber',
@@ -92,6 +94,8 @@ const SOURCE_LABELS: Record<string, string> = {
   dossier_download: 'Dossier Subscriber',
   membership_page: 'Membership Subscriber',
 }
+
+const INSTITUTE_SOURCES = ['institute_course', 'institute_guide', 'institute_catalog', 'institute_book'] as const
 
 export default function SubscribeSuccessPage() {
   const [searchParams] = useSearchParams()
@@ -106,15 +110,21 @@ export default function SubscribeSuccessPage() {
   const instituteTopic = getInstituteTopicBySlug(topicSlug)
   const topic = getTopicHubBySlug(topicSlug) || (interest ? getTopicHubByKeyword(interest) : undefined)
   const article = articleSlug ? getArticleBySlug(articleSlug) : undefined
-  const isInstituteSource = source === 'institute_course' || source === 'institute_guide'
+  const isInstituteSource = INSTITUTE_SOURCES.includes(source as (typeof INSTITUTE_SOURCES)[number])
+  const isInstituteTopicSource = Boolean(instituteTopic && (source === 'institute_course' || source === 'institute_guide'))
+  const isInstituteBookSource = source === 'institute_book'
 
   const featuredChapters = (topic ? getTopicChapters(topic) : chapterMeta.slice(0, 3)).slice(0, 3)
   const featuredArticles = (topic ? getTopicArticles(topic) : article ? [article] : []).slice(0, 2)
   const instituteContinueHref = source === 'institute_course'
     ? `/institute/courses/${topicSlug}`
-    : `/institute/guides/${topicSlug}`
+    : source === 'institute_guide'
+      ? `/institute/guides/${topicSlug}`
+      : source === 'institute_book'
+        ? '/institute/book'
+        : '/institute'
   const continueHref = returnTo || (
-    instituteTopic && isInstituteSource
+    isInstituteSource
       ? instituteContinueHref
       : article
         ? `/news/${article.slug}`
@@ -122,24 +132,28 @@ export default function SubscribeSuccessPage() {
           ? `/topics/${topic.slug}`
           : '/read'
   )
-  const accountReturnTo = instituteTopic && isInstituteSource
+  const accountReturnTo = isInstituteSource
     ? continueHref
     : topic
       ? `/topics/${topic.slug}`
       : continueHref
 
-  const headline = instituteTopic && isInstituteSource
+  const headline = isInstituteSource
     ? 'Your institute subscription is active.'
     : topic
       ? `You're in for ${topic.name}.`
       : 'You are subscribed to the record.'
-  const description = instituteTopic && isInstituteSource
+  const description = isInstituteTopicSource && instituteTopic
     ? `Your inbox is set for ${instituteTopic.trackMeta.shortLabel.toLowerCase()} updates. Use the links below to move from signup into the guide, companion course, and field manual without losing the thread.`
+    : isInstituteBookSource
+      ? 'Your inbox is set for field-manual updates and new practical paths. Use the links below to reopen the manual, move into the institute catalog, and keep the sourcing method visible.'
+      : isInstituteSource
+        ? 'Your inbox is set for new practical paths and field-manual updates. Use the links below to reopen the institute, move into the field manual, and keep the sourcing method visible.'
     : topic
       ? `Your inbox is set for ${topic.name} reporting. Use the links below to move from subscription into the documented archive.`
       : 'Your inbox is set. Use the links below to move from subscription into the documented archive.'
 
-  const instituteStartCards = instituteTopic && isInstituteSource
+  const instituteStartCards = isInstituteTopicSource && instituteTopic
     ? [
         source === 'institute_course'
           ? {
@@ -174,6 +188,48 @@ export default function SubscribeSuccessPage() {
           to: '/institute/book',
         },
       ]
+    : isInstituteBookSource
+      ? [
+          {
+            eyebrow: 'Field Manual',
+            title: 'Veritas Institute Field Manual',
+            description: 'Return to the print-friendly manual for immediate household, roadside, and repair answers.',
+            to: '/institute/book',
+          },
+          {
+            eyebrow: 'Institute',
+            title: 'Veritas Institute Catalog',
+            description: 'Move from urgent retrieval into the full catalog of practical trade, repair, preparedness, food, and healthcare-support paths.',
+            to: '/institute',
+          },
+          {
+            eyebrow: 'Methodology',
+            title: 'Institute Methodology',
+            description: 'Review the public source ladder, official anchors, and proof standard behind the manual.',
+            to: '/institute/methodology',
+          },
+        ]
+      : isInstituteSource
+        ? [
+            {
+              eyebrow: 'Institute',
+              title: 'Veritas Institute Catalog',
+              description: 'Return to the catalog of practical trade, repair, preparedness, food, and healthcare-support paths.',
+              to: '/institute',
+            },
+            {
+              eyebrow: 'Field Manual',
+              title: 'Veritas Institute Field Manual',
+              description: 'Open the print-friendly manual for immediate household, roadside, and repair answers.',
+              to: '/institute/book',
+            },
+            {
+              eyebrow: 'Methodology',
+              title: 'Institute Methodology',
+              description: 'Review the public source ladder, official anchors, and proof standard behind the institute.',
+              to: '/institute/methodology',
+            },
+          ]
     : []
 
   useEffect(() => {
@@ -214,18 +270,22 @@ export default function SubscribeSuccessPage() {
                   to={continueHref}
                   className="inline-flex items-center justify-center rounded-sm bg-crimson px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white hover:bg-crimson-dark transition-colors"
                 >
-                  {instituteTopic && isInstituteSource
-                    ? 'Continue the path'
+                  {isInstituteSource
+                    ? isInstituteTopicSource
+                      ? 'Continue the path'
+                      : isInstituteBookSource
+                        ? 'Continue with the manual'
+                        : 'Continue with the institute'
                     : topic
                       ? `Continue with ${topic.name}`
                       : 'Continue reading'}
                 </Link>
                 {isLoggedIn ? (
                   <Link
-                    to={instituteTopic && isInstituteSource ? '/institute' : '/read'}
+                    to={isInstituteSource ? '/institute' : '/read'}
                     className="inline-flex items-center justify-center rounded-sm border border-border px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
                   >
-                    {instituteTopic && isInstituteSource ? 'Open the institute' : 'Open the full archive'}
+                    {isInstituteSource ? 'Open the institute' : 'Open the full archive'}
                   </Link>
                 ) : (
                   <button
@@ -256,7 +316,7 @@ export default function SubscribeSuccessPage() {
             <div className="flex-1 h-[1px] bg-border" />
           </div>
           <div className="grid gap-4">
-            {instituteTopic && isInstituteSource
+            {isInstituteSource
               ? instituteStartCards.map((card) => (
                   <InstitutePathCard
                     key={`${card.eyebrow}-${card.to}`}
@@ -278,11 +338,17 @@ export default function SubscribeSuccessPage() {
               What Happens Next
             </p>
             <ul className="space-y-3 font-body text-sm text-ink-muted leading-relaxed">
-              {instituteTopic && isInstituteSource ? (
+              {isInstituteTopicSource ? (
                 <>
                   <li>You&apos;ll receive new practical paths and field-manual updates in this lane.</li>
                   <li>Use a free reader account to move from email into saved institute routes and the wider Veritas archive.</li>
                   <li>The guide handles the short answer. The companion course handles the paced buildout. The field manual handles urgent retrieval.</li>
+                </>
+              ) : isInstituteSource ? (
+                <>
+                  <li>You&apos;ll receive new field-manual updates and practical paths from the institute.</li>
+                  <li>Use a free reader account to move from email into saved institute routes and the wider Veritas archive.</li>
+                  <li>The field manual handles urgent retrieval. The catalog handles the deeper trade, repair, preparedness, food, and healthcare-support path.</li>
                 </>
               ) : (
                 <>

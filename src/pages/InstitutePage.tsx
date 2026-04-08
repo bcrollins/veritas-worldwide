@@ -8,6 +8,7 @@ import {
   instituteResearchSources,
   type InstituteTrackId,
 } from '../data/instituteCatalog'
+import InstituteCollectionSignupPanel from '../components/institute/InstituteCollectionSignupPanel'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 const filters: { id: InstituteTrackId | 'all'; label: string }[] = [
@@ -397,6 +398,13 @@ export default function InstitutePage() {
           </div>
         </div>
       </section>
+
+      <InstituteCollectionSignupPanel
+        surface="catalog"
+        fieldManualCount={instituteFieldManualEntries.length}
+        practicalCourseCount={practicalCourseCount}
+        trackCount={trackClusters.length}
+      />
     </div>
   )
 }
