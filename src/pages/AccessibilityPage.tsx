@@ -23,8 +23,8 @@ const sections = [
 export default function AccessibilityPage() {
   useEffect(() => {
     setMetaTags({
-      title: 'Accessibility | Veritas Press',
-      description: 'Accessibility statement for Veritas Press. Our commitment to WCAG 2.1 AA compliance and inclusive design.',
+      title: 'Accessibility | Veritas Worldwide',
+      description: 'Accessibility statement for Veritas Worldwide. Our commitment to WCAG 2.1 AA compliance and inclusive design.',
       url: `${SITE_URL}/accessibility`,
     })
     setJsonLd({
@@ -66,7 +66,7 @@ export default function AccessibilityPage() {
             <section id="standards" className="mb-10">
               <h2 className="text-xl font-display font-semibold text-ink mb-3">Standards</h2>
               <p className="text-sm text-ink-muted leading-relaxed">
-                Veritas Press is designed to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. We continuously test and improve our implementation.
+                Veritas Worldwide is designed to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. We continuously test and improve our implementation.
               </p>
             </section>
 

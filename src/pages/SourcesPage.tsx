@@ -94,7 +94,7 @@ export default function SourcesPage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'Sources & Bibliography | The Record — Veritas Press',
+      title: 'Sources & Bibliography | The Record — Veritas Worldwide',
       description: 'Master bibliography and verification library for The Record. Free reader accounts unlock the full source archive.',
       url: `${SITE_URL}/sources`,
     })

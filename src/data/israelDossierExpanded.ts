@@ -622,7 +622,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'The Israel Dossier',
     body: 'Every dollar traced. Every statistic sourced. Every incident documented.\n\nSwipe to see what your government doesn\'t want you to know.',
-    source: 'Veritas Press',
+    source: 'Veritas Worldwide',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'dark',
   },
@@ -690,7 +690,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'Read the Full Dossier',
     body: 'Every statistic sourced to government records, UN agencies, and verified reporting.\n\nNo opinion. No spin. Just the documented record.\n\nveritasworldwide.com/israel-dossier',
-    source: 'Veritas Press',
+    source: 'Veritas Worldwide',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'crimson',
   },

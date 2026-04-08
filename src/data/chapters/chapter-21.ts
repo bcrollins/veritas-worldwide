@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Vaccine History — From Polio to COVID-19',
   subtitle: 'A documented history of vaccine development, the regulatory framework that governs it, and the financial incentives that shape public health policy.',
   dateRange: '1955–Present',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg',

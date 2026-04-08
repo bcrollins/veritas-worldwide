@@ -1,5 +1,5 @@
 /**
- * forumData.ts — Complete Reddit-style forum data layer for Veritas Press.
+ * forumData.ts — Complete Reddit-style forum data layer for Veritas Worldwide.
  * All state is localStorage-backed for the static SPA. Defines communities (subreddits),
  * posts, comments, user karma, flairs, awards, moderation actions, and reporting.
  */
@@ -164,7 +164,7 @@ export const COMMUNITIES: Community[] = [
     name: 'v/General',
     displayName: 'General Discussion',
     description: 'Open discussion about The Record and current events',
-    longDescription: 'The main hub for all Veritas Press discussion. Talk about current events, share analysis, debate findings, and connect with fellow truth-seekers. All civil discourse welcome.',
+    longDescription: 'The main hub for all Veritas Worldwide discussion. Talk about current events, share analysis, debate findings, and connect with fellow truth-seekers. All civil discourse welcome.',
     icon: 'newspaper',
     bannerColor: '#8B1A1A',
     rules: [

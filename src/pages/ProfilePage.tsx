@@ -237,7 +237,7 @@ function ClaimCard({ claim, index }: { claim: { claim: string; source: string; u
     const text = `${claim.claim} — Source: ${claim.source}`;
     const url = typeof window !== 'undefined' ? `${window.location.href}#claims` : '';
     if (navigator.share) {
-      navigator.share({ title: 'Veritas Press — Sourced Claim', text, url }).catch(() => {});
+      navigator.share({ title: 'Veritas Worldwide — Sourced Claim', text, url }).catch(() => {});
     } else {
       window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&via=VeritasWorldwide`, '_blank');
     }

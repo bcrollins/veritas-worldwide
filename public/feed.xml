@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The Record — Veritas Press</title>
+    <title>The Record — Veritas Worldwide</title>
     <link>https://veritasworldwide.com</link>
     <description>A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Primary Sources. Public Record. Your Conclusions.</description>
     <language>en-us</language>
@@ -9,7 +9,7 @@
     <atom:link href="https://veritasworldwide.com/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://veritasworldwide.com/og-image.png</url>
-      <title>The Record — Veritas Press</title>
+      <title>The Record — Veritas Worldwide</title>
       <link>https://veritasworldwide.com</link>
     </image>
     <item>

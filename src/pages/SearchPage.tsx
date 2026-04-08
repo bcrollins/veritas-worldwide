@@ -201,7 +201,7 @@ export default function SearchPage() {
       : 'chapter titles, keywords, and public preview text'
 
     setMetaTags({
-      title: 'Search | The Record — Veritas Press',
+      title: 'Search | The Record — Veritas Worldwide',
       description: `Search ${scopeDescription} across all ${totalChapters} chapters of The Record.`,
       url: `${SITE_URL}/search`,
     })

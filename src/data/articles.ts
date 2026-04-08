@@ -60,7 +60,7 @@ export const articles: Article[] =
     "slug": "federal-reserve-holds-rates-march-2026-iran-oil-crisis",
     "title": "The Federal Reserve Holds Rates Steady as Iran Conflict Roils Global Oil Markets",
     "subtitle": "With the federal funds rate anchored at 3.5–3.75% and crude oil prices surging past $110 per barrel, the central bank faces its most consequential policy crossroads since 2008.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Federal Reserve & Banking",
     "tags": [
@@ -224,7 +224,7 @@ export const articles: Article[] =
     "slug": "doj-releases-3-5-million-pages-epstein-files-2026",
     "title": "The DOJ Has Released 3.5 Million Pages of Epstein Files. Here Is What They Contain.",
     "subtitle": "The largest disclosure of criminal case materials in American history includes 2,000 videos, 180,000 images, and records from five federal investigations — and has exposed catastrophic failures in victim privacy protections.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Accountability & Transparency",
     "tags": [
@@ -391,7 +391,7 @@ export const articles: Article[] =
     "slug": "government-surveillance-reform-act-fisa-section-702-2026",
     "title": "Congress Races to Reform FISA Section 702 Before April Sunset. Here Is What the Bill Would Change.",
     "subtitle": "The bipartisan Government Surveillance Reform Act would require warrants for FBI searches, close the data broker loophole, and restore oversight of the secret FISA court — the most significant surveillance reform since the Snowden disclosures.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Surveillance & Civil Liberties",
     "tags": [
@@ -540,7 +540,7 @@ export const articles: Article[] =
     "slug": "us-defense-budget-1-5-trillion-2027-proposal",
     "title": "$1.5 Trillion: The Pentagon’s Proposed 2027 Budget Would Be the Largest in American History",
     "subtitle": "Coming on the heels of an $839 billion FY2026 appropriation and a $152 billion reconciliation boost, the White House is requesting a defense budget that exceeds the GDP of all but 12 nations on Earth.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Defense & Foreign Policy",
     "tags": [
@@ -690,7 +690,7 @@ export const articles: Article[] =
     "slug": "aipac-record-spending-reshaping-congress-2026",
     "title": "AIPAC Has Spent $28 Million Reshaping Congress in 2026. Here Is Where the Money Went.",
     "subtitle": "The most powerful foreign policy lobby in America is funneling record sums through shell super PACs to defeat candidates who support conditioning U.S. aid to Israel. The Illinois primaries reveal the full playbook.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Lobbying & Political Influence",
     "tags": [

@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'MKUltra & Government Mind Control Programs',
   subtitle: 'The CIA\\\'s documented program of human experimentation — using drugs, torture, and psychological manipulation on unwitting American citizens.',
   dateRange: '1953–1973',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Allen_Dulles%2C_CIA_photo_portrait.jpg/440px-Allen_Dulles%2C_CIA_photo_portrait.jpg',

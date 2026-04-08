@@ -1,5 +1,5 @@
 /**
- * Google Translate Integration for Veritas Press
+ * Google Translate Integration for Veritas Worldwide
  * 
  * Provides programmatic control over Google Translate's client-side
  * translation engine. Supports 130+ languages without API keys.

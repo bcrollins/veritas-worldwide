@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Fluoride & Public Water',
   subtitle: 'The documented history of water fluoridation — from its industrial origins to its adoption as public health policy.',
   dateRange: '1945–Present',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',

@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Assassination of Robert F. Kennedy',
   subtitle: 'The evidence surrounding the murder of a presidential candidate who promised to reopen his brother\\\'s assassination investigation.',
   dateRange: '1968',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Robert_Kennedy_CORE_rally_speech2.jpg/960px-Robert_Kennedy_CORE_rally_speech2.jpg',

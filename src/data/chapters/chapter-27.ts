@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Surveillance State — From ECHELON to Pegasus',
   subtitle: 'The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.',
   dateRange: '1947–Present',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',

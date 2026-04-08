@@ -158,7 +158,7 @@ export default function NewsPage() {
           <div className="flex items-end justify-between">
             <div>
               <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-1">
-                Veritas Press
+                Veritas Worldwide
               </p>
               <h1 className="font-display text-3xl sm:text-4xl font-bold text-ink">
                 Current Events
@@ -247,7 +247,7 @@ export default function NewsPage() {
                       </h2>
                       <div className="bg-surface border border-border rounded-sm p-5">
                         <p className="font-body text-sm text-ink-muted leading-relaxed mb-4">
-                          Every article published by Veritas Press cites exclusively
+                          Every article published by Veritas Worldwide cites exclusively
                           primary sources: government documents, court filings, congressional
                           records, and official transcripts.
                         </p>
@@ -272,7 +272,7 @@ export default function NewsPage() {
                           Support Independent Journalism
                         </p>
                         <p className="font-body text-sm text-white/70 leading-relaxed mb-4">
-                          Veritas Press accepts no advertising revenue. Our reporting
+                          Veritas Worldwide accepts no advertising revenue. Our reporting
                           is funded entirely by readers who believe the public record matters.
                         </p>
                         <Link

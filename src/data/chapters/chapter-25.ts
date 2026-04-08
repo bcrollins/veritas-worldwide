@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Titanic, the Federal Reserve & the Men Who Opposed It',
   subtitle: 'Three of the wealthiest men who opposed the creation of the Federal Reserve boarded the same ship in April 1912. None of them survived.',
   dateRange: '1910–1913',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',

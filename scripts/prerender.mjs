@@ -5,7 +5,7 @@ import path from 'path'
 import vm from 'node:vm'
 import { spawnSync } from 'child_process'
 
-const SITE_NAME = 'Veritas Press'
+const SITE_NAME = 'Veritas Worldwide'
 const SITE_URL = 'https://veritasworldwide.com'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`
 
@@ -435,7 +435,7 @@ function renderStaticPage(page, chapters) {
   return `
     <main class="min-h-screen bg-parchment text-ink">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Veritas Press</p>
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Veritas Worldwide</p>
         <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(page.heading)}</h1>
         <p class="font-body text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl">${escapeHtml(page.description)}</p>
         ${page.body.map((paragraph) => `<p class="font-body text-base md:text-lg text-ink-light leading-8 mt-6 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('\n')}
@@ -1492,11 +1492,11 @@ const instituteResearchSources = parseInstituteResearchSources()
 const staticPages = [
   {
     route: '/',
-    title: 'The Record | Veritas Press',
+    title: 'The Record | Veritas Worldwide',
     heading: 'The Record',
     description: 'A documentary history of power, money, and the institutions that shaped the modern world.',
     body: [
-      'Veritas Press publishes longform investigative work built on primary sources, congressional records, court filings, declassified files, and public financial disclosures.',
+      'Veritas Worldwide publishes longform investigative work built on primary sources, congressional records, court filings, declassified files, and public financial disclosures.',
       'Volume I spans 31 chapters and more than 500 source documents. Every chapter is available through a free reader account, with public previews and traceable citations.',
     ],
     featuredChapterIds: chapters.slice(0, 6).map((chapter) => chapter.id),
@@ -1504,7 +1504,7 @@ const staticPages = [
   },
   {
     route: '/topics',
-    title: 'Research Topics | Veritas Press',
+    title: 'Research Topics | Veritas Worldwide',
     heading: 'Research Topics',
     description: 'Curated research hubs connecting Veritas chapters, current reporting, and newsletter signup paths by topic.',
     body: [
@@ -1544,11 +1544,11 @@ const staticPages = [
   },
   {
     route: '/methodology',
-    title: 'Methodology | Veritas Press',
+    title: 'Methodology | Veritas Worldwide',
     heading: 'Methodology',
     description: 'The source hierarchy, evidence standards, and editorial method behind The Record.',
     body: [
-      'Veritas Press distinguishes between verified, circumstantial, and disputed material so readers can assess each claim on its own documentary footing.',
+      'Veritas Worldwide distinguishes between verified, circumstantial, and disputed material so readers can assess each claim on its own documentary footing.',
       'Primary sources and traceable citations are the foundation. Interpretation is labeled clearly and separated from established record.',
     ],
     featuredChapterIds: ['foreword'],
@@ -1556,7 +1556,7 @@ const staticPages = [
   },
   {
     route: '/sources',
-    title: 'Sources | Veritas Press',
+    title: 'Sources | Veritas Worldwide',
     heading: 'Sources',
     description: 'A browsable source library for The Record, organized around public documentation and traceable citations.',
     body: [
@@ -1567,7 +1567,7 @@ const staticPages = [
   },
   {
     route: '/search',
-    title: 'Search | The Record - Veritas Press',
+    title: 'Search | The Record - Veritas Worldwide',
     heading: 'Search The Record',
     description: 'Search chapter titles, public preview text, sources, and documentary references.',
     body: [
@@ -1578,7 +1578,7 @@ const staticPages = [
   },
   {
     route: '/timeline',
-    title: 'Timeline | Veritas Press',
+    title: 'Timeline | Veritas Worldwide',
     heading: 'Timeline',
     description: 'A chronological index of the events, institutions, and turning points documented in The Record.',
     body: [
@@ -1589,7 +1589,7 @@ const staticPages = [
   },
   {
     route: '/analytics',
-    title: 'Reader Analytics | Veritas Press',
+    title: 'Reader Analytics | Veritas Worldwide',
     heading: 'Reader Analytics',
     description: 'Public readership metrics for The Record and the broader Veritas publication footprint.',
     body: [
@@ -1599,17 +1599,17 @@ const staticPages = [
   },
   {
     route: '/accessibility',
-    title: 'Accessibility | Veritas Press',
+    title: 'Accessibility | Veritas Worldwide',
     heading: 'Accessibility',
     description: 'Accessibility commitments, WCAG-aligned design standards, and reporting paths for readers.',
     body: [
-      'Veritas Press treats accessibility as part of publication integrity: strong contrast, keyboard navigation, semantic structure, and screen-reader clarity are baseline requirements.',
+      'Veritas Worldwide treats accessibility as part of publication integrity: strong contrast, keyboard navigation, semantic structure, and screen-reader clarity are baseline requirements.',
     ],
     sourceFile: 'src/pages/AccessibilityPage.tsx',
   },
   {
     route: '/privacy',
-    title: 'Privacy Policy | Veritas Press',
+    title: 'Privacy Policy | Veritas Worldwide',
     heading: 'Privacy Policy',
     description: 'How reader data, analytics, support flows, and subscriptions are handled across Veritas properties.',
     body: [
@@ -1619,7 +1619,7 @@ const staticPages = [
   },
   {
     route: '/terms',
-    title: 'Terms of Use | Veritas Press',
+    title: 'Terms of Use | Veritas Worldwide',
     heading: 'Terms of Use',
     description: 'Usage terms for The Record, supporting materials, and Veritas publication assets.',
     body: [
@@ -1629,7 +1629,7 @@ const staticPages = [
   },
   {
     route: '/israel-dossier',
-    title: 'The Israel Dossier | Veritas Press',
+    title: 'The Israel Dossier | Veritas Worldwide',
     heading: 'The Israel Dossier',
     description: 'A sourced dossier covering U.S.-Israel policy, humanitarian impact, military spending, and the public record surrounding the conflict.',
     body: [
@@ -1640,7 +1640,7 @@ const staticPages = [
   },
   {
     route: '/membership',
-    title: 'Membership | Veritas Press',
+    title: 'Membership | Veritas Worldwide',
     heading: 'Support The Record',
     description: 'Membership and recurring support options that keep the documentary record free, open, and independent.',
     body: [
@@ -1650,7 +1650,7 @@ const staticPages = [
   },
   {
     route: '/deep-state',
-    title: 'The Deep State - The Epstein Network | Veritas Press',
+    title: 'The Deep State - The Epstein Network | Veritas Worldwide',
     heading: 'The Deep State - The Epstein Network',
     description: 'An investigative dossier documenting the Epstein network through court records, testimony, and verified reporting.',
     body: [
@@ -1661,7 +1661,7 @@ const staticPages = [
   },
   {
     route: '/read',
-    title: 'Read The Record | Veritas Press',
+    title: 'Read The Record | Veritas Worldwide',
     heading: 'Read The Record',
     description: 'A chapter-by-chapter reader for Volume I of The Record.',
     body: [
@@ -1672,7 +1672,7 @@ const staticPages = [
   },
   {
     route: '/news',
-    title: 'News | Veritas Press',
+    title: 'News | Veritas Worldwide',
     heading: 'Current Events',
     description: 'Source-first reporting on power, money, accountability, and the institutions shaping current events.',
     body: [
@@ -1682,9 +1682,9 @@ const staticPages = [
   },
   {
     route: '/content-pack',
-    title: 'Content Packs & Brand Kit | Veritas Press',
+    title: 'Content Packs & Brand Kit | Veritas Worldwide',
     heading: 'Content Packs & Brand Kit',
-    description: 'Official Veritas Press assets for press, advocacy, and social distribution.',
+    description: 'Official Veritas Worldwide assets for press, advocacy, and social distribution.',
     body: [
       'Content packs are designed to preserve source integrity while making sharing easier across social, newsletter, and press contexts.',
     ],
@@ -1692,9 +1692,9 @@ const staticPages = [
   },
   {
     route: '/share',
-    title: 'Content Packs & Brand Kit | Veritas Press',
+    title: 'Content Packs & Brand Kit | Veritas Worldwide',
     heading: 'Content Packs & Brand Kit',
-    description: 'Official Veritas Press assets for press, advocacy, and social distribution.',
+    description: 'Official Veritas Worldwide assets for press, advocacy, and social distribution.',
     body: [
       'Content packs are designed to preserve source integrity while making sharing easier across social, newsletter, and press contexts.',
     ],
@@ -1702,7 +1702,7 @@ const staticPages = [
   },
   {
     route: '/forum',
-    title: 'Veritas Forum | Veritas Press',
+    title: 'Veritas Forum | Veritas Worldwide',
     heading: 'Veritas Forum',
     description: 'Reader discussion around evidence, chapters, current reporting, and the documentary record.',
     body: [
@@ -1712,7 +1712,7 @@ const staticPages = [
   },
   {
     route: '/profiles',
-    title: 'Power Profiles | Veritas Press',
+    title: 'Power Profiles | Veritas Worldwide',
     heading: 'Power Profiles',
     description: 'Sourced profiles of politicians, donors, billionaires, lobbyists, and institutional actors.',
     body: [

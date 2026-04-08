@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'JFK, Dimona & AIPAC',
   subtitle: 'President Kennedy\\\'s documented confrontation with Israel\\\'s secret nuclear program and the lobby that would reshape American foreign policy.',
   dateRange: '1963',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/800px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg',

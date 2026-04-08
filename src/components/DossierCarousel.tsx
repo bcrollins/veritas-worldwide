@@ -522,7 +522,7 @@ export function PinnedPostDownloader({ posts }: { posts: PinnedPostData[] }) {
               >
                 <div className="absolute inset-0 p-6 flex flex-col justify-between">
                   <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase" style={{ color: textMap[post.bgStyle] + '40' }}>
-                    Veritas Press
+                    Veritas Worldwide
                   </p>
                   <div>
                     <p className="font-display text-3xl font-bold mb-1" style={{ color: post.bgStyle === 'parchment' ? BRAND.crimson : BRAND.crimson }}>

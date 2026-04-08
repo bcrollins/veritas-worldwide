@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'Bohemian Grove & Elite Gatherings',
   subtitle: 'Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.',
   dateRange: '1872–Present',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg',

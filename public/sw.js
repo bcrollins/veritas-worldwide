@@ -1,4 +1,4 @@
-// Veritas Press — Service Worker v2.0
+// Veritas Worldwide — Service Worker v2.0
 // Cache-first for hashed static assets, network-first for navigation + API
 const CACHE_VERSION = 'veritas-v2'
 const STATIC_CACHE = 'veritas-static-v2'

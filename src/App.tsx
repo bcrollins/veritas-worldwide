@@ -350,11 +350,11 @@ function Header() {
             Est. 2025 · Volume I · Primary Source Journalism
           </p>
 
-          <Link to="/" className="inline-flex flex-col items-center gap-3 group sm:flex-row sm:gap-5" aria-label="Veritas Press — Home">
+          <Link to="/" className="inline-flex flex-col items-center gap-3 group sm:flex-row sm:gap-5" aria-label="Veritas Worldwide — Home">
             <VeritasLogo variant="icon" size="md" className="flex-shrink-0 transition-transform group-hover:scale-[1.02]" />
             <div className="flex flex-col items-center sm:items-start">
               <h1 className="font-display text-2xl font-bold leading-none tracking-tight text-ink transition-colors group-hover:text-crimson sm:text-4xl lg:text-[2.75rem]">
-                Veritas Press
+                Veritas Worldwide
               </h1>
               <span className="mt-1 font-serif text-sm italic text-ink-muted">
                 No party. No agenda. Just the record.
@@ -630,7 +630,7 @@ function Footer() {
               <VeritasLogo variant="icon" size="md" className="flex-shrink-0 opacity-85 transition-all group-hover:opacity-100 group-hover:scale-[1.02]" />
               <div className="flex flex-col">
                 <span className="font-display text-xl font-bold leading-tight text-white transition-colors group-hover:text-crimson-light">
-                  Veritas Press
+                  Veritas Worldwide
                 </span>
                 <span className="mt-0.5 font-serif text-sm italic text-white/45">
                   The documentary record stays public because readers fund the work.
@@ -740,7 +740,7 @@ function Footer() {
           <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-4 lg:justify-end">
             <VeritasLogo variant="icon" size="xs" className="opacity-15" />
             <p className="font-sans text-[0.65rem] tracking-[0.05em] text-white/30">
-              © 2026 Veritas Press · veritasworldwide.com · Free & Open Access
+              © 2026 Veritas Worldwide · veritasworldwide.com · Free & Open Access
             </p>
           </div>
         </div>
@@ -787,7 +787,7 @@ export default function App() {
         {!isAdmin && !isInstitute && (
           <div className="hidden print:block print:mb-6 print:border-b print:border-black/20 print:pb-4 print:text-center">
             <VeritasLogo variant="icon" size="sm" className="mx-auto mb-2 print:block" />
-            <p className="font-display text-lg font-bold tracking-tight text-black">Veritas Press</p>
+            <p className="font-display text-lg font-bold tracking-tight text-black">Veritas Worldwide</p>
             <p className="font-serif text-[0.6rem] italic text-gray-500">The Documentary Record · veritasworldwide.com</p>
           </div>
         )}

@@ -1,5 +1,5 @@
 /**
- * Shared constants for Veritas Press
+ * Shared constants for Veritas Worldwide
  */
 
 /** Stripe Payment Link — "Customer chooses what to pay" donation link */

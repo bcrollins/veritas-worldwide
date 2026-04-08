@@ -344,7 +344,7 @@ export default function BibleHistoryPage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'The Bible: History & Factual Record | Veritas Press',
+      title: 'The Bible: History & Factual Record | Veritas Worldwide',
       description: 'A primary-source examination of the Bible\'s historical claims — archaeological confirmations, manuscript evidence, and scholarly consensus. Every claim classified by evidence tier.',
       url: `${SITE_URL}/bible`,
       type: 'article',
@@ -500,7 +500,7 @@ export default function BibleHistoryPage() {
                 Editorial Note
               </h2>
               <p className="font-body text-sm text-ink-light leading-relaxed mb-3">
-                This page presents the documentary and archaeological record as it stands. Veritas Press does not advocate for or against any faith tradition. The evidence tier system classifies claims by the strength of independent, external corroboration — not by theological significance.
+                This page presents the documentary and archaeological record as it stands. Veritas Worldwide does not advocate for or against any faith tradition. The evidence tier system classifies claims by the strength of independent, external corroboration — not by theological significance.
               </p>
               <p className="font-body text-sm text-ink-light leading-relaxed">
                 Readers are encouraged to consult the cited primary sources directly and to form their own conclusions. Where scholarly consensus is divided, both majority and minority positions are represented. This page will be updated as new evidence emerges.

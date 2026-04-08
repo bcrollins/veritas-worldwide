@@ -494,7 +494,7 @@ export default function HomePage() {
          ══════════════════════════════════════════════════════ */}
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <SharePanel
-            title="The Record — Veritas Press"
+            title="The Record — Veritas Worldwide"
             description="A 31-chapter documentary history compiled from primary sources — court records, congressional testimony, declassified files. Free reader accounts unlock the full archive."
             contentId="home"
           />

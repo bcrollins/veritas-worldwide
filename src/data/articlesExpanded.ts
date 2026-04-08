@@ -6,7 +6,7 @@ export const expandedArticlesA: Article[] = [
     "slug": "trump-tariffs-china-145-percent-trade-war-2026",
     "title": "The 145% Tariff Wall: Trump's Trade War With China Redefines Supply Chains and Consumer Prices",
     "subtitle": "As the Trump administration imposes unprecedented tariffs on Chinese goods, American consumers face surging inflation while supply chains built over three decades come under stress.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Federal Reserve & Banking",
     "tags": [
@@ -236,7 +236,7 @@ export const expandedArticlesA: Article[] = [
     "slug": "gaza-famine-humanitarian-crisis-un-icc-2026",
     "title": "Gaza Faces UN-Declared Famine Amid Aid Blockade: The Humanitarian Catastrophe Beyond the Headlines",
     "subtitle": "The United Nations formally declared Gaza in famine conditions on March 15, 2026, marking the first UN famine declaration since 2011 as international institutions struggle to force open humanitarian corridors.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Defense & Foreign Policy",
     "tags": [
@@ -484,7 +484,7 @@ export const expandedArticlesA: Article[] = [
     "slug": "boeing-whistleblower-deaths-safety-crisis-faa-2026",
     "title": "Boeing's Culture of Silence: Inside the Whistleblower Deaths and the FAA's Failure to Protect Safety",
     "subtitle": "The unexplained death of quality control engineer John Barnett, following threats from Boeing management, exposes systemic failures in aircraft safety oversight and regulatory capture of the Federal Aviation Administration.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Accountability & Transparency",
     "tags": [
@@ -733,7 +733,7 @@ export const expandedArticlesA: Article[] = [
     "slug": "national-debt-36-trillion-interest-payments-2026",
     "title": "The $36 Trillion Debt: How Interest Payments Became America's Largest Budget Item",
     "subtitle": "As the national debt surpasses $36 trillion, the federal government spends more on interest payments than on defense, education, or healthcare—a milestone that redefines fiscal policy constraints.",
-    "author": "Veritas Press",
+    "author": "Veritas Worldwide",
     "publishDate": "March 24, 2026",
     "category": "Federal Reserve & Banking",
     "tags": [

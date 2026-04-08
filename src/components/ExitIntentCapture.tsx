@@ -119,7 +119,7 @@ export default function ExitIntentCapture() {
           ) : (
             <>
               <p className="font-body text-sm text-ink-muted leading-relaxed mb-4">
-                Veritas Press publishes investigations sourced entirely from primary
+                Veritas Worldwide publishes investigations sourced entirely from primary
                 documents — court filings, government records, and the public record. No
                 anonymous sources. No opinion. No spin.
               </p>

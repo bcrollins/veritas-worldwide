@@ -321,7 +321,7 @@ export default function ReadTheBookPage() {
       </div>
 
       {/* Download Modal */}
-      <DownloadModal isOpen={showDownloadModal} onClose={() => setShowDownloadModal(false)} fileName="The Record - Veritas Press.pdf" fileUrl={PDF_URL} />
+      <DownloadModal isOpen={showDownloadModal} onClose={() => setShowDownloadModal(false)} fileName="The Record - Veritas Worldwide.pdf" fileUrl={PDF_URL} />
 
       {/* Bottom bar — progress + quick actions */}
       <div className="border-t border-border bg-surface px-4 py-2">

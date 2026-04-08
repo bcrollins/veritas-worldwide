@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'September 11, 2001',
   subtitle: 'The event that changed the world — examined through the official record, the 9/11 Commission Report, and the questions that remain unanswered.',
   dateRange: '2001',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/1280px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg',

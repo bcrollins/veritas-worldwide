@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The Warburg Brothers & World War I',
   subtitle: 'Two brothers from one of Europe\\\'s most powerful banking families found themselves on opposite sides of the Great War — one advising the Kaiser, the other shaping American financial policy.',
   dateRange: '1914–1919',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg',

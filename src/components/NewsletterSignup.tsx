@@ -117,7 +117,7 @@ export default function NewsletterSignup({
       <p className={`font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase mb-2 ${
         isDark ? 'text-crimson' : 'text-crimson'
       }`}>
-        Veritas Press
+        Veritas Worldwide
       </p>
       <h3 className={`font-display text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-ink'}`}>
         {heading || defaultHeading}

@@ -16,7 +16,7 @@ const SIZES = {
 } as const
 
 /**
- * Veritas Press Logo
+ * Veritas Worldwide Logo
  * V for Vendetta–inspired emblem with subtle allusions:
  * - Circled V (publisher's seal)
  * - Shadow figure at ~5.5% opacity
@@ -40,7 +40,7 @@ export default function VeritasLogo({
         height={w}
         className={className}
         role="img"
-        aria-label="Veritas Press emblem"
+        aria-label="Veritas Worldwide emblem"
       >
         <defs>
           <filter id="vl-sb" x="-20%" y="-20%" width="140%" height="140%">
@@ -99,7 +99,7 @@ export default function VeritasLogo({
       width={w}
       className={className}
       role="img"
-      aria-label="Veritas Press"
+      aria-label="Veritas Worldwide"
     >
       <defs>
         <filter id="vlf-sb" x="-20%" y="-20%" width="140%" height="140%">

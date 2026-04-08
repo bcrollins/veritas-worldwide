@@ -22,7 +22,7 @@ export default function MarketingConsentField({ checked, onChange, tone = 'light
         className={`mt-0.5 h-4 w-4 shrink-0 rounded-sm border ${checkboxClass} text-crimson focus:ring-2 focus:ring-crimson/30`}
       />
       <span className={`font-sans text-[0.65rem] leading-relaxed ${textClass}`}>
-        I agree to receive email updates from Veritas Press and understand I can unsubscribe at any time. See the{' '}
+        I agree to receive email updates from Veritas Worldwide and understand I can unsubscribe at any time. See the{' '}
         <Link to="/privacy" className={`underline underline-offset-2 transition-colors ${linkClass}`}>
           Privacy Policy
         </Link>

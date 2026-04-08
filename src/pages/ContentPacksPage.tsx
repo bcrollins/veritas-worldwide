@@ -45,7 +45,7 @@ const PACKS: ContentPack[] = [
     chapterPath: '/chapter/chapter-3',
     platforms: {
       twitter: 'The FOMC voted 11-1 to hold rates at 3.5-3.75% while crude oil surges past $110/barrel. The documented history of the Federal Reserve\u2019s crisis responses tells a pattern.\n\nPrimary sources. No spin. Read the evidence:',
-      facebook: 'The Federal Reserve held rates steady on March 18, 2026 \u2014 an 11-1 vote \u2014 while oil prices surge past $110 per barrel due to the Iran conflict.\n\nVeritas Press has the full FOMC analysis with every primary source linked. No opinion. No anonymous sources. Just the documented record.\n\nRead the evidence:',
+      facebook: 'The Federal Reserve held rates steady on March 18, 2026 \u2014 an 11-1 vote \u2014 while oil prices surge past $110 per barrel due to the Iran conflict.\n\nVeritas Worldwide has the full FOMC analysis with every primary source linked. No opinion. No anonymous sources. Just the documented record.\n\nRead the evidence:',
       instagram: 'The Fed is holding rates at 3.5-3.75% while crude oil tops $110/barrel.\n\n11-1 FOMC vote. Iran conflict driving energy prices. Dot plot projections show uncertainty.\n\nFull primary-source analysis on our site \u2014 link in bio.\n\nNo spin. No anonymous sources. Just the record.',
     },
   },
@@ -58,7 +58,7 @@ const PACKS: ContentPack[] = [
     articleSlug: 'doj-releases-3-5-million-pages-epstein-files-2026',
     platforms: {
       twitter: '3.5 million pages. 2,000 videos. 180,000 images.\n\nThe DOJ just released the largest document disclosure in its history under the Epstein Transparency Act.\n\nWe\u2019ve documented every primary source:',
-      facebook: 'The Department of Justice has released 3.5 million pages of Jeffrey Epstein files \u2014 the largest document disclosure in DOJ history.\n\nVeritas Press breaks down every primary source: the Congressional authorization, the DOJ compliance filing, the UN OHCHR statement on victim privacy, and what these documents actually contain.\n\nRead the full analysis:',
+      facebook: 'The Department of Justice has released 3.5 million pages of Jeffrey Epstein files \u2014 the largest document disclosure in DOJ history.\n\nVeritas Worldwide breaks down every primary source: the Congressional authorization, the DOJ compliance filing, the UN OHCHR statement on victim privacy, and what these documents actually contain.\n\nRead the full analysis:',
       instagram: '3.5 MILLION PAGES.\n2,000 videos.\n180,000 images.\n\nThe largest document disclosure in DOJ history just happened. The Epstein Transparency Act is now being enforced.\n\nFull primary-source breakdown on our site \u2014 link in bio.',
     },
   },
@@ -86,7 +86,7 @@ const PACKS: ContentPack[] = [
     chapterPath: '/chapter/chapter-10',
     platforms: {
       twitter: '$1.5 TRILLION.\n\nThat\u2019s the proposed FY2027 defense budget including the $152B reconciliation supplement.\n\n$4,500 per American. F-47 stealth fighter. $500M for Israel missile defense.\n\nEvery line item sourced to Senate Appropriations and CRS:',
-      facebook: 'The proposed FY2027 defense budget totals $1.5 trillion when you include the $152 billion reconciliation supplement.\n\nThat\u2019s $4,500 for every man, woman, and child in America.\n\nVeritas Press has broken down the full budget with primary sources: Senate Appropriations Committee data, Congressional Research Service analysis, and Defense Department filings.\n\nRead the breakdown:',
+      facebook: 'The proposed FY2027 defense budget totals $1.5 trillion when you include the $152 billion reconciliation supplement.\n\nThat\u2019s $4,500 for every man, woman, and child in America.\n\nVeritas Worldwide has broken down the full budget with primary sources: Senate Appropriations Committee data, Congressional Research Service analysis, and Defense Department filings.\n\nRead the breakdown:',
       instagram: '$1.5 TRILLION.\n\nThat\u2019s how much the U.S. plans to spend on defense in FY2027.\n\n$839B base + $152B supplemental.\nF-47 stealth fighter funded.\n$500M for Israel missile defense.\n\nFull primary-source breakdown on our site \u2014 link in bio.',
     },
   },
@@ -100,19 +100,19 @@ const PACKS: ContentPack[] = [
     chapterPath: '/chapter/chapter-8',
     platforms: {
       twitter: '$28 million from one lobby.\n$22 million in Illinois primaries alone.\nFunneled through anonymous shell PACs.\n\nEvery dollar traced through FEC filings. No opinion. Just the documented money trail:',
-      facebook: 'AIPAC and its affiliated PACs have spent $28 million in the 2026 election cycle \u2014 including $22 million in Illinois primary races alone, funneled through shell PACs that obscure the original donors.\n\nVeritas Press has traced every dollar through FEC filings, OpenSecrets data, and investigative reporting.\n\nNo opinion. No anonymous sources. Just the documented money trail.\n\nRead the evidence:',
+      facebook: 'AIPAC and its affiliated PACs have spent $28 million in the 2026 election cycle \u2014 including $22 million in Illinois primary races alone, funneled through shell PACs that obscure the original donors.\n\nVeritas Worldwide has traced every dollar through FEC filings, OpenSecrets data, and investigative reporting.\n\nNo opinion. No anonymous sources. Just the documented money trail.\n\nRead the evidence:',
       instagram: '$28 MILLION from one lobby.\n$22M in Illinois alone.\nFunneled through anonymous shell PACs.\n\nEvery dollar traced through FEC filings and OpenSecrets data.\n\nFull investigation on our site \u2014 link in bio.',
     },
   },
   {
     id: 'brand-mission',
     headline: 'We Don\u2019t Tell You What to Think',
-    body: 'Veritas Press cites exclusively primary sources: government documents, court filings, congressional records. No anonymous sources. No opinion. No spin. We document the public record and leave conclusions to you.',
+    body: 'Veritas Worldwide cites exclusively primary sources: government documents, court filings, congressional records. No anonymous sources. No opinion. No spin. We document the public record and leave conclusions to you.',
     stat: { value: '500+', label: 'Primary sources cited across the publication' },
     hashtags: ['VeritasWorldwide', 'PrimarySources', 'TheRecord', 'Truth', 'Journalism'],
     platforms: {
-      twitter: 'We don\u2019t tell you what to think.\n\nVeritas Press cites exclusively primary sources: government documents, court filings, congressional records.\n\nNo anonymous sources. No opinion. No spin.\n\n500+ sources. 31 chapters. Free reader accounts unlock the full archive.',
-      facebook: 'We don\u2019t tell you what to think.\n\nVeritas Press is a documentary publication that cites exclusively primary sources: government documents, court filings, congressional records, and declassified intelligence reports.\n\nNo anonymous sources. No editorial opinion. No narrative framing.\n\n31 chapters. 500+ primary sources. Three-tier evidence classification. Free reader accounts unlock the full archive.\n\nRead the record for yourself:',
+      twitter: 'We don\u2019t tell you what to think.\n\nVeritas Worldwide cites exclusively primary sources: government documents, court filings, congressional records.\n\nNo anonymous sources. No opinion. No spin.\n\n500+ sources. 31 chapters. Free reader accounts unlock the full archive.',
+      facebook: 'We don\u2019t tell you what to think.\n\nVeritas Worldwide is a documentary publication that cites exclusively primary sources: government documents, court filings, congressional records, and declassified intelligence reports.\n\nNo anonymous sources. No editorial opinion. No narrative framing.\n\n31 chapters. 500+ primary sources. Three-tier evidence classification. Free reader accounts unlock the full archive.\n\nRead the record for yourself:',
       instagram: 'We don\u2019t tell you what to think.\n\nPrimary sources only:\n\u2022 Government documents\n\u2022 Court filings\n\u2022 Congressional records\n\u2022 Declassified reports\n\nNo anonymous sources.\nNo opinion.\nNo spin.\n\n500+ sources. 31 chapters. Free.\n\nLink in bio.',
     },
   },
@@ -486,7 +486,7 @@ export default function ContentPacksPage() {
       <div className="bg-ink text-white">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/40 mb-3">
-            Veritas Press
+            Veritas Worldwide
           </p>
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
             Share the Truth
@@ -597,11 +597,11 @@ export default function ContentPacksPage() {
           <div className="grid sm:grid-cols-2 gap-6 font-body text-sm text-ink-muted leading-relaxed">
             <div>
               <h3 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-2">You May</h3>
-              <p>Share any content pack on any platform. Download and use any graphic. Modify post text to fit your audience. Link to any article or chapter. Use our logo in press coverage or social posts that reference Veritas Press.</p>
+              <p>Share any content pack on any platform. Download and use any graphic. Modify post text to fit your audience. Link to any article or chapter. Use our logo in press coverage or social posts that reference Veritas Worldwide.</p>
             </div>
             <div>
               <h3 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-2">Please Do Not</h3>
-              <p>Alter the meaning of quoted statistics or claims. Remove attribution to Veritas Press. Use our brand to imply endorsement of products, candidates, or organizations. Misrepresent our editorial stance — we present evidence, not opinion.</p>
+              <p>Alter the meaning of quoted statistics or claims. Remove attribution to Veritas Worldwide. Use our brand to imply endorsement of products, candidates, or organizations. Misrepresent our editorial stance — we present evidence, not opinion.</p>
             </div>
           </div>
         </section>

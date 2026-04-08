@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'JFK — Expanded Analysis',
   subtitle: 'A comprehensive examination of the evidence surrounding the assassination of President John F. Kennedy, including declassified documents released through 2025.',
   dateRange: '1963',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Dealey_Plaza_2003.jpg/1280px-Dealey_Plaza_2003.jpg',

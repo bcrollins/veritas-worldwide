@@ -15,7 +15,7 @@ export default function TopicsIndexPage() {
   useEffect(() => {
     setMetaTags({
       title: `Research Topics | ${SITE_NAME}`,
-      description: 'Explore Veritas Press topic hubs covering the Federal Reserve, AIPAC, surveillance, JFK, the Epstein network, Israel policy, and more.',
+      description: 'Explore Veritas Worldwide topic hubs covering the Federal Reserve, AIPAC, surveillance, JFK, the Epstein network, Israel policy, and more.',
       url: `${SITE_URL}/topics`,
     })
     setJsonLd([
@@ -117,7 +117,7 @@ export default function TopicsIndexPage() {
           source="topic_hub"
           contentInterest="research_topics"
           heading="Subscribe once. Follow every beat that matters."
-          subtext="Veritas Press sends new investigations, source releases, and current reporting directly to subscribers. No algorithm required."
+          subtext="Veritas Worldwide sends new investigations, source releases, and current reporting directly to subscribers. No algorithm required."
           successPath={successPath}
         />
       </section>

@@ -12,7 +12,7 @@ const methodologySections = [
 export default function MethodologyPage() {
   useEffect(() => {
     setMetaTags({
-      title: 'Methodology & Evidence Standards | The Record — Veritas Press',
+      title: 'Methodology & Evidence Standards | The Record — Veritas Worldwide',
       description: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
       url: `${SITE_URL}/methodology`,
     })

@@ -49,7 +49,7 @@ export default function MembershipPage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'Membership | Veritas Press',
+      title: 'Membership | Veritas Worldwide',
       description: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.',
       url: `${SITE_URL}/membership`,
       type: 'website',
@@ -57,12 +57,12 @@ export default function MembershipPage() {
     setJsonLd({
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Membership — Veritas Press',
+      name: 'Membership — Veritas Worldwide',
       description: 'Support independent, non-partisan investigative journalism.',
       publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
       mainEntity: {
         '@type': 'Product',
-        name: 'Veritas Press Membership',
+        name: 'Veritas Worldwide Membership',
         description: 'Fund independent investigative journalism. Access exclusive dossiers, weekly briefings, and annotated source libraries.',
         brand: { '@type': 'Organization', name: SITE_NAME },
         offers: [
@@ -388,7 +388,7 @@ export default function MembershipPage() {
               a: 'Yes — always. Every chapter, investigation, and source document remains available through a free reader account. Membership adds premium features like early access, exclusive dossiers, and editorial tools, but the documentary record itself will not disappear behind a paid tier.',
             },
             {
-              q: 'Who is behind Veritas Press?',
+              q: 'Who is behind Veritas Worldwide?',
               a: 'An independent editorial team. We maintain anonymity to keep the focus on the documented evidence — not any individual. Our methodology, sources, and evidence tiers are fully transparent.',
             },
             {

@@ -6,7 +6,7 @@ const chapter: Chapter = {
   title: 'The War on Drugs',
   subtitle: 'How a policy designed to criminalize dissent became the longest and most expensive domestic war in American history.',
   dateRange: '1971–Present',
-  author: 'Veritas Press',
+  author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',

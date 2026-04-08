@@ -541,11 +541,11 @@ export default function DeepStatePage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'The Deep State — The Epstein Network | Veritas Press',
+      title: 'The Deep State — The Epstein Network | Veritas Worldwide',
       description: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',
       url: `${SITE_URL}/deep-state`,
       type: 'article',
-      author: 'Veritas Press',
+      author: 'Veritas Worldwide',
       section: 'Investigation',
       tags: ['Epstein', 'Deep State', 'Investigation', 'Court Documents', 'Network Analysis'],
     })
@@ -555,7 +555,7 @@ export default function DeepStatePage() {
       headline: 'The Deep State — The Epstein Network',
       description: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, and government reports.',
       url: `${SITE_URL}/deep-state`,
-      publisher: { '@type': 'Organization', name: 'Veritas Press', url: SITE_URL },
+      publisher: { '@type': 'Organization', name: 'Veritas Worldwide', url: SITE_URL },
       datePublished: '2026-03-24',
       dateModified: new Date().toISOString().split('T')[0],
     })
@@ -591,7 +591,7 @@ export default function DeepStatePage() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="bg-ink text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-sans text-[0.6rem] tracking-[0.3em] uppercase text-white/40 mb-4">Veritas Press — Investigative Dossier</p>
+          <p className="font-sans text-[0.6rem] tracking-[0.3em] uppercase text-white/40 mb-4">Veritas Worldwide — Investigative Dossier</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 tracking-tight">The Deep State</h1>
           <div className="w-16 h-px bg-crimson mx-auto mb-4" />
           <p className="font-serif text-lg md:text-xl text-white/70 italic max-w-2xl mx-auto mb-6">
@@ -888,7 +888,7 @@ export default function DeepStatePage() {
             <p>Every individual profiled on this page appears in publicly available court records, government reports, or verified investigative journalism from established outlets. No person is named based solely on allegation, rumor, or unverified claims.</p>
             <p>Evidence is classified using a three-tier system. <strong className="text-white">Verified</strong> evidence comes from primary documents, sworn testimony, court filings, or official government reports. <strong className="text-white">Circumstantial</strong> evidence is documented but not adjudicated — flight logs, photographs, financial records, and correspondence. <strong className="text-white">Disputed</strong> evidence represents allegations that are under investigation, denied by the named party, or subsequently recanted.</p>
             <p>This page will be updated as additional court documents are unsealed, DOJ releases continue, and new verified information becomes available. Corrections are made promptly when evidence status changes.</p>
-            <p className="text-white/40 text-xs mt-6">Last updated: March 2026 — Compiled by the editorial staff of Veritas Press</p>
+            <p className="text-white/40 text-xs mt-6">Last updated: March 2026 — Compiled by the editorial staff of Veritas Worldwide</p>
           </div>
 
           {/* Cross-links to related investigations */}
