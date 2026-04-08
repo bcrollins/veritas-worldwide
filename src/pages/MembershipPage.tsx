@@ -97,7 +97,7 @@ export default function MembershipPage() {
         </div>
       </div>
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-ink text-white py-20 md:py-28 px-6">
+      <section className="relative overflow-hidden bg-obsidian text-white py-20 md:py-28 px-6">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px)' }} />
         </div>
@@ -247,10 +247,10 @@ export default function MembershipPage() {
                       rel="noopener noreferrer"
                       className={`block w-full text-center font-sans text-[13px] font-semibold tracking-wide py-3.5 transition-all ${
                         isPopular
-                          ? 'bg-ink dark:bg-white text-white dark:text-ink hover:bg-ink/80 dark:hover:bg-white/90'
+                          ? 'bg-obsidian text-white hover:bg-obsidian/90'
                           : isFounding
                             ? 'bg-crimson text-white hover:bg-crimson-dark'
-                            : 'border border-ink/20 dark:border-white/20 text-ink dark:text-white hover:bg-ink hover:text-white dark:hover:bg-white dark:hover:text-ink'
+                            : 'border border-ink/20 dark:border-white/20 text-ink dark:text-white hover:bg-obsidian hover:text-white'
                       }`}
                       onClick={() => {
                         trackSupportClick(`membership-${tier.key}-${annual ? 'annual' : 'monthly'}`)
@@ -418,7 +418,7 @@ export default function MembershipPage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 mb-20">
-        <div className="p-8 md:p-12 bg-ink text-white rounded-sm text-center">
+        <div className="p-8 md:p-12 bg-obsidian text-white rounded-sm text-center">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.3em] uppercase text-crimson-light mb-4">
             Join the investigation
           </p>
@@ -452,7 +452,7 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      <div className={`fixed bottom-0 left-0 right-0 z-50 bg-ink/95 backdrop-blur-md border-t border-white/10 py-3 px-6 transition-all duration-300 ${showSticky ? 'translate-y-0' : 'translate-y-full'}`}>
+      <div className={`fixed bottom-0 left-0 right-0 z-50 bg-obsidian/95 backdrop-blur-md border-t border-white/10 py-3 px-6 transition-all duration-300 ${showSticky ? 'translate-y-0' : 'translate-y-full'}`}>
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
           <p className="hidden sm:block font-sans text-xs text-white/50">
             <span className="font-semibold text-white/70">{TAGLINE}</span> — Fund independent journalism from ${annual ? MEMBERSHIP.correspondent.annualPrice : MEMBERSHIP.correspondent.monthlyPrice}{annual ? '/yr' : '/mo'}
@@ -539,7 +539,7 @@ function StudentAccessSection() {
           {error && <p className="font-sans text-xs text-disputed font-semibold">{error}</p>}
           <button
             type="submit"
-            className="w-full py-3 bg-ink text-white font-sans text-xs font-bold tracking-[0.15em] uppercase rounded-sm hover:bg-crimson transition-colors"
+            className="w-full py-3 bg-obsidian text-white font-sans text-xs font-bold tracking-[0.15em] uppercase rounded-sm hover:bg-crimson transition-colors"
           >
             Activate Free Student Access
           </button>

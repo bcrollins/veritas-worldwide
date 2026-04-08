@@ -85,7 +85,7 @@ export default function NewsletterSignup({
 
   if (status === 'success') {
     return (
-      <div className={`${variant === 'dark' ? 'bg-ink text-white' : 'bg-crimson/5 border border-crimson/20'} rounded-sm p-6 text-center`}>
+      <div className={`${variant === 'dark' ? 'bg-obsidian text-white' : 'bg-crimson/5 border border-crimson/20'} rounded-sm p-6 text-center`}>
         <svg className="w-8 h-8 mx-auto mb-3 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
@@ -110,7 +110,7 @@ export default function NewsletterSignup({
 
   return (
     <div className={`rounded-sm p-6 ${
-      isDark ? 'bg-ink text-white' :
+      isDark ? 'bg-obsidian text-white' :
       variant === 'minimal' ? '' :
       'bg-parchment-dark/50 border border-border'
     }`}>

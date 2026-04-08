@@ -621,7 +621,7 @@ function Footer() {
   ]
 
   return (
-    <footer className="bg-ink text-white/70 no-print" data-testid="site-footer">
+    <footer className="bg-obsidian text-white/70 no-print" data-testid="site-footer">
       <div className="border-b border-white/10">
         <div className="mx-auto flex w-full max-w-[1920px] flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8 lg:py-10">
           <div>
@@ -642,7 +642,7 @@ function Footer() {
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/membership"
-                className="inline-flex min-h-[44px] items-center rounded-full bg-white px-5 font-sans text-[0.68rem] font-bold tracking-[0.08em] uppercase text-ink transition-colors hover:bg-parchment-dark"
+                className="inline-flex min-h-[44px] items-center rounded-full bg-white px-5 font-sans text-[0.68rem] font-bold tracking-[0.08em] uppercase text-obsidian transition-colors hover:bg-white/85"
               >
                 {t('nav.membership')}
               </Link>

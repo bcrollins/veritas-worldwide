@@ -36,7 +36,7 @@ export default function StickyMembershipBar() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 no-print animate-slide-up">
-      <div className="bg-ink/95 backdrop-blur-md border-t border-white/10">
+      <div className="bg-obsidian/95 backdrop-blur-md border-t border-white/10">
         <div className="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
           <p className="font-body text-xs text-white/70 hidden sm:block">
             <span className="text-white font-semibold">Fund the investigation.</span>{' '}
