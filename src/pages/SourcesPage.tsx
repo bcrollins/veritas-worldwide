@@ -1,6 +1,13 @@
 import { useDeferredValue, useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import type { EvidenceTier, LoadedChapter, SourceHierarchy } from '../data/chapterTypes'
+import {
+  createEmptySourceHierarchyCounts,
+  getSourceHierarchyCounts,
+  getSourceHierarchyLabel,
+  normalizeSourceHierarchy,
+  SOURCE_HIERARCHY_ORDER,
+} from '../data/sourceHierarchy'
 import { useAllChapters } from '../hooks/useAllChapters'
 import { useAuth } from '../lib/AuthContext'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
@@ -10,10 +17,7 @@ type SourceHierarchyFilter = SourceHierarchy | 'all'
 
 const SOURCE_HIERARCHY_OPTIONS: Array<{ value: SourceHierarchyFilter; label: string }> = [
   { value: 'all', label: 'All Sources' },
-  { value: 'primary', label: 'Primary' },
-  { value: 'peerReviewed', label: 'Peer Reviewed' },
-  { value: 'verifiedJournalism', label: 'Verified Journalism' },
-  { value: 'secondary', label: 'Secondary' },
+  ...SOURCE_HIERARCHY_ORDER.map((value) => ({ value, label: getSourceHierarchyLabel(value) })),
 ]
 
 const EVIDENCE_TIER_OPTIONS: Array<{ value: EvidenceTier | 'all'; label: string }> = [
@@ -23,38 +27,8 @@ const EVIDENCE_TIER_OPTIONS: Array<{ value: EvidenceTier | 'all'; label: string 
   { value: 'disputed', label: 'Disputed' },
 ]
 
-function getEmptyHierarchyCounts(): Record<SourceHierarchy, number> {
-  return {
-    primary: 0,
-    peerReviewed: 0,
-    verifiedJournalism: 0,
-    secondary: 0,
-  }
-}
-
 function getSourceCount(chapter: LoadedChapter) {
   return chapter.sourceCount ?? chapter.sources.length
-}
-
-function getSourceHierarchyLabel(hierarchy: SourceHierarchy) {
-  switch (hierarchy) {
-    case 'peerReviewed':
-      return 'Peer Reviewed'
-    case 'verifiedJournalism':
-      return 'Verified Journalism'
-    case 'secondary':
-      return 'Secondary'
-    default:
-      return 'Primary'
-  }
-}
-
-function getSourceHierarchyCounts(sources: LoadedChapter['sources']) {
-  const counts = getEmptyHierarchyCounts()
-  for (const source of sources) {
-    counts[source.hierarchy ?? 'secondary'] += 1
-  }
-  return counts
 }
 
 function getFilterButtonClasses(active: boolean) {
@@ -122,22 +96,26 @@ export default function SourcesPage() {
 
   const chapterSources = chapters
     .filter(chapter => getSourceCount(chapter) > 0)
-    .map(chapter => ({
-      id: chapter.id,
-      number: chapter.number,
-      title: chapter.title,
-      sources: chapter.sources,
-      sourceCount: getSourceCount(chapter),
-      sourceHierarchyCounts: {
-        ...getEmptyHierarchyCounts(),
-        ...(chapter.sourceHierarchyCounts ?? {}),
-      },
-      visibleHierarchyCounts: {
-        ...getEmptyHierarchyCounts(),
-        ...(chapter.sourceHierarchyCounts ?? {}),
-      },
-      availableEvidenceTiers: chapter.availableEvidenceTiers ?? [],
-    }))
+    .map(chapter => {
+      const normalizedSources = chapter.sources.map((source) => ({
+        ...source,
+        hierarchy: normalizeSourceHierarchy(source),
+      }))
+
+      return {
+        id: chapter.id,
+        number: chapter.number,
+        title: chapter.title,
+        sources: normalizedSources,
+        sourceCount: getSourceCount(chapter),
+        sourceHierarchyCounts: {
+          ...createEmptySourceHierarchyCounts(),
+          ...(chapter.sourceHierarchyCounts ?? {}),
+        },
+        visibleHierarchyCounts: getSourceHierarchyCounts(normalizedSources),
+        availableEvidenceTiers: chapter.availableEvidenceTiers ?? [],
+      }
+    })
 
   const filteredChapterSources = isLoggedIn
     ? chapterSources
@@ -149,7 +127,7 @@ export default function SourcesPage() {
             const sourceText = `${source.text} ${source.url ?? ''}`.toLowerCase()
             const matchesQuery = !deferredSourceFilter || sourceText.includes(deferredSourceFilter)
             const matchesHierarchy =
-              sourceHierarchyFilter === 'all' || source.hierarchy === sourceHierarchyFilter
+              sourceHierarchyFilter === 'all' || normalizeSourceHierarchy(source) === sourceHierarchyFilter
             return matchesQuery && matchesHierarchy
           })
 
@@ -231,7 +209,7 @@ export default function SourcesPage() {
                       Signed-In Filters
                     </p>
                     <p className="font-body text-sm text-ink-muted leading-relaxed">
-                      Filter the full bibliography by source hierarchy and by the evidence mix present in each chapter.
+                      Filter the full bibliography by source provenance and by the evidence mix present in each chapter.
                     </p>
                   </div>
 

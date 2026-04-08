@@ -7,12 +7,14 @@ import { pathToFileURL } from 'url'
 
 const PREVIEW_BLOCK_LIMIT = 3
 const EVIDENCE_TIER_ORDER = ['verified', 'circumstantial', 'disputed']
-const SOURCE_HIERARCHY_KEYS = ['primary', 'peerReviewed', 'verifiedJournalism', 'secondary']
 const repoRoot = process.cwd()
 const generatedRoot = path.join(repoRoot, 'generated', 'chapter-data')
 const tempRoot = path.join(repoRoot, 'generated', '.chapter-temp')
 const chapterDir = path.join(repoRoot, 'src', 'data', 'chapters')
 const chapterMetaFile = path.join(repoRoot, 'src', 'data', 'chapterMeta.ts')
+const sourceHierarchyFile = path.join(repoRoot, 'src', 'data', 'sourceHierarchy.ts')
+
+let sourceHierarchyUtils = null
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true })
@@ -49,26 +51,17 @@ function getAvailableEvidenceTiers(chapter) {
   return EVIDENCE_TIER_ORDER.filter((tier) => tiers.has(tier))
 }
 
-function classifySourceHierarchy(source) {
-  const haystack = `${source.text} ${source.url || ''}`.toLowerCase()
-
-  if (/(congress|senate|house of representatives|congressional|court|supreme court|district court|executive order|federal register|national archives|archives\.gov|sec filing|sec\.gov|edgar|gao|government accountability office|cia|reading room|readingroom|fbi vault|presidential library|declassified|committee hearing|hearing|treasury|department of justice|state department|white house|federal reserve)/.test(haystack)) {
-    return 'primary'
+function getSourceHierarchyUtils() {
+  if (!sourceHierarchyUtils) {
+    throw new Error('[chapter-data] Source hierarchy utilities were not loaded')
   }
 
-  if (/(peer-reviewed|peer reviewed|journal|doctoral|dissertation|thesis|university press|oxford university press|cambridge university press|cornell university press|harvard university press|stanford university press|university of chicago press|academic)/.test(haystack)) {
-    return 'peerReviewed'
-  }
-
-  if (/(new york times|nyt|washington post|wall street journal|wsj|reuters|associated press|ap news|bloomberg|propublica|the guardian|guardian|investigative reporting|open secrets|opensecrets|documented by journalists|journalism)/.test(haystack)) {
-    return 'verifiedJournalism'
-  }
-
-  return 'secondary'
+  return sourceHierarchyUtils
 }
 
 function getSourceHierarchyCounts(sources) {
-  const counts = { primary: 0, peerReviewed: 0, verifiedJournalism: 0, secondary: 0 }
+  const { createEmptySourceHierarchyCounts } = getSourceHierarchyUtils()
+  const counts = createEmptySourceHierarchyCounts()
 
   for (const source of sources) {
     counts[source.hierarchy] += 1
@@ -78,9 +71,10 @@ function getSourceHierarchyCounts(sources) {
 }
 
 function withDerivedMetadata(chapter) {
+  const { normalizeSourceHierarchy } = getSourceHierarchyUtils()
   const sources = chapter.sources.map((source) => ({
     ...source,
-    hierarchy: classifySourceHierarchy(source),
+    hierarchy: normalizeSourceHierarchy(source),
   }))
 
   return {
@@ -138,6 +132,7 @@ async function main() {
   ensureDir(path.join(generatedRoot, 'public'))
   ensureDir(path.join(generatedRoot, 'full'))
 
+  sourceHierarchyUtils = await importTsModule(sourceHierarchyFile, 'sourceHierarchy.mjs')
   const chapterMetaModule = await importTsModule(chapterMetaFile, 'chapterMeta.mjs')
   const chapterOrder = chapterMetaModule.chapterMeta.map((chapter) => chapter.id)
 

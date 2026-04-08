@@ -4,7 +4,7 @@ import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAM
 import { DONATE_URL } from '../lib/constants'
 
 const methodologySections = [
-  { id: 'four-tier-source-hierarchy', label: 'Four-Tier Source Hierarchy' },
+  { id: 'five-tier-source-hierarchy', label: 'Five-Tier Source Hierarchy' },
   { id: 'three-tier-evidence-classification', label: 'Three-Tier Evidence Classification' },
   { id: 'research-standards', label: 'Research Standards' },
 ]
@@ -62,32 +62,37 @@ export default function MethodologyPage() {
             </header>
 
             {/* Source Hierarchy */}
-            <section id="four-tier-source-hierarchy" className="mb-16 scroll-mt-28">
-              <h2 className="font-display text-2xl font-bold text-ink mb-6">Four-Tier Source Hierarchy</h2>
+            <section id="five-tier-source-hierarchy" className="mb-16 scroll-mt-28">
+              <h2 className="font-display text-2xl font-bold text-ink mb-6">Five-Tier Source Hierarchy</h2>
               <p className="article-body mb-8">
-                Every factual claim in The Record is sourced. Sources are prioritized in a four-tier hierarchy designed to maximize verifiability and minimize reliance on secondary interpretation.
+                Every factual claim in The Record is sourced. Sources are prioritized in a five-tier hierarchy designed to preserve provenance, distinguish official records from institutional publications, and minimize reliance on secondary interpretation.
               </p>
 
               <div className="space-y-4">
                 {[
                   {
-                    tier: 'Tier 1 — Primary',
-                    desc: 'Congressional records, court filings, executive orders, declassified intelligence documents, SEC filings, Federal Register entries, and National Archives materials.',
+                    tier: 'Tier 1 — Government & Legal Records',
+                    desc: 'Congressional records, court filings, executive orders, treaty documents, declassified intelligence files, statutory text, and National Archives materials. These are treated as primary evidence whenever available.',
                     color: 'border-l-verified bg-verified-bg',
                   },
                   {
-                    tier: 'Tier 2 — Peer-Reviewed',
-                    desc: 'Academic journal articles, university press monographs, and doctoral dissertations.',
+                    tier: 'Tier 2 — Institutional Records',
+                    desc: 'Official publications and filings from the institutions named in the reporting, including central bank releases, international body reports, nonprofit disclosures, and company annual reports.',
                     color: 'border-l-verified bg-verified-bg',
                   },
                   {
-                    tier: 'Tier 3 — Verified Journalism',
-                    desc: 'Investigative reporting from established outlets with named sources, FOIA-obtained documents, and court-verified testimony.',
+                    tier: 'Tier 3 — Investigative Journalism',
+                    desc: 'Long-form reporting from outlets with documented editorial standards, especially when it surfaces named testimony, leaked documents, or corroborated records not yet available in a primary repository.',
                     color: 'border-l-circumstantial bg-circumstantial-bg',
                   },
                   {
-                    tier: 'Tier 4 — Secondary',
-                    desc: 'Biographies, historical surveys, and memoirs — used for context but not as sole evidence for factual claims.',
+                    tier: 'Tier 4 — Academic & Scholarly Works',
+                    desc: 'Peer-reviewed journal articles, law review analysis, university press monographs, and doctoral dissertations used to contextualize historical claims or clarify contested interpretation.',
+                    color: 'border-l-circumstantial bg-circumstantial-bg',
+                  },
+                  {
+                    tier: 'Tier 5 — Secondary Reporting & Analysis',
+                    desc: 'Biographies, memoirs, broad historical surveys, and interpretive analysis. These are used for context and framing, but not as the sole basis for substantive factual claims.',
                     color: 'border-l-disputed bg-disputed-bg',
                   },
                 ].map(item => (

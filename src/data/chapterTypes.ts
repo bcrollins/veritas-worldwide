@@ -1,3 +1,5 @@
+import type { SourceHierarchy } from './sourceHierarchy'
+
 export interface Source {
   id: number;
   text: string;
@@ -6,8 +8,8 @@ export interface Source {
 }
 
 export type EvidenceTier = 'verified' | 'circumstantial' | 'disputed';
-export type SourceHierarchy = 'primary' | 'peerReviewed' | 'verifiedJournalism' | 'secondary';
 export type ChapterType = 'reference' | 'explainer' | 'investigation';
+export type { SourceHierarchy } from './sourceHierarchy'
 
 export interface EvidenceBox {
   tier: EvidenceTier;
