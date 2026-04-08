@@ -1,5 +1,5 @@
 {
-  "run": 20,
+  "run": 21,
   "date": "2026-04-07",
   "site": [
     {
@@ -73,6 +73,14 @@
       "delta": 2.7,
       "status": "improved",
       "plus_half_requires": "Hook `/api/build-info` and the live `X-Veritas-*` headers into an operator workflow or dashboard so release identity is checked automatically instead of by manual probing."
+    },
+    {
+      "feature": "Public Analytics",
+      "composite": 8,
+      "previous": 7.2,
+      "delta": 0.8,
+      "status": "improved",
+      "plus_half_requires": "Verify the deployed Postgres-backed snapshot survives a Railway redeploy, then add a lightweight operator check that alerts when the public dashboard unexpectedly resets or stalls."
     }
   ],
   "growth": [
@@ -94,11 +102,11 @@
     },
     {
       "area": "Analytics & Measurement",
-      "score": 7.9,
+      "score": 8.2,
       "previous": 7.9,
-      "delta": 0,
-      "status": "stable",
-      "plus_half_requires": "Verify GA4 custom dimensions in production and map HubSpot lifecycle stages to a live conversion dashboard with source-level newsletter attribution."
+      "delta": 0.3,
+      "status": "improved",
+      "plus_half_requires": "Verify the new server-side durability path live after deploy, then map GA4 plus HubSpot lifecycle stages into a public or operator-visible conversion dashboard with source-level newsletter attribution."
     },
     {
       "area": "Monetization Infrastructure",

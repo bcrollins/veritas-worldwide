@@ -355,33 +355,74 @@ loadChapterData()
 const DATA_DIR = process.env.DATA_DIR || process.env.RAILWAY_VOLUME_MOUNT_PATH || path.join(__dirname, 'data')
 const DATA_FILE = path.join(DATA_DIR, 'analytics.json')
 
-// ── In-memory analytics store ─────────────────────────────────────
-const store = {
-  lifetime: 0,
-  daily: {},
-  weekly: {},
-  monthly: {},
-  yearly: {},
-  countries: {},
-  pages: {},
-  events: {},
-  eventDaily: {},
-}
+const ANALYTICS_STATE_KEY = 'public-analytics'
 
-function loadStore() {
-  try {
-    if (fs.existsSync(DATA_FILE)) {
-      const raw = fs.readFileSync(DATA_FILE, 'utf-8')
-      const saved = JSON.parse(raw)
-      Object.assign(store, saved)
-      console.log(`[analytics] Loaded ${store.lifetime} lifetime views from disk`)
-    }
-  } catch (err) {
-    console.warn('[analytics] Failed to load from disk:', err.message)
+function createAnalyticsStore() {
+  return {
+    lifetime: 0,
+    daily: {},
+    weekly: {},
+    monthly: {},
+    yearly: {},
+    countries: {},
+    pages: {},
+    events: {},
+    eventDaily: {},
   }
 }
 
-function saveStore() {
+function normalizeAnalyticsStore(value) {
+  const base = createAnalyticsStore()
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return base
+  }
+
+  const source = value
+
+  return {
+    lifetime: Number.isFinite(source.lifetime) ? source.lifetime : 0,
+    daily: source.daily && typeof source.daily === 'object' && !Array.isArray(source.daily) ? source.daily : {},
+    weekly: source.weekly && typeof source.weekly === 'object' && !Array.isArray(source.weekly) ? source.weekly : {},
+    monthly: source.monthly && typeof source.monthly === 'object' && !Array.isArray(source.monthly) ? source.monthly : {},
+    yearly: source.yearly && typeof source.yearly === 'object' && !Array.isArray(source.yearly) ? source.yearly : {},
+    countries: source.countries && typeof source.countries === 'object' && !Array.isArray(source.countries) ? source.countries : {},
+    pages: source.pages && typeof source.pages === 'object' && !Array.isArray(source.pages) ? source.pages : {},
+    events: source.events && typeof source.events === 'object' && !Array.isArray(source.events) ? source.events : {},
+    eventDaily: source.eventDaily && typeof source.eventDaily === 'object' && !Array.isArray(source.eventDaily) ? source.eventDaily : {},
+  }
+}
+
+function applyAnalyticsStore(value) {
+  Object.assign(store, normalizeAnalyticsStore(value))
+}
+
+function hasAnalyticsData(value = store) {
+  return value.lifetime > 0
+    || Object.keys(value.daily).length > 0
+    || Object.keys(value.pages).length > 0
+    || Object.keys(value.events).length > 0
+}
+
+// ── In-memory analytics store ─────────────────────────────────────
+const store = createAnalyticsStore()
+let analyticsDirty = false
+let analyticsFlushTimer = null
+let analyticsFlushInFlight = null
+
+function loadStoreFromDisk() {
+  try {
+    if (!fs.existsSync(DATA_FILE)) return false
+    const raw = fs.readFileSync(DATA_FILE, 'utf-8')
+    applyAnalyticsStore(JSON.parse(raw))
+    console.log(`[analytics] Loaded ${store.lifetime} lifetime views from disk`)
+    return true
+  } catch (err) {
+    console.warn('[analytics] Failed to load from disk:', err.message)
+    return false
+  }
+}
+
+function saveStoreToDisk() {
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true })
@@ -392,10 +433,88 @@ function saveStore() {
   }
 }
 
-loadStore()
-setInterval(saveStore, 30_000)
-process.on('SIGTERM', () => { saveStore(); process.exit(0) })
-process.on('SIGINT', () => { saveStore(); process.exit(0) })
+async function loadStoreFromDatabase() {
+  if (!dbPool) return false
+
+  try {
+    const { rows } = await dbPool.query(
+      'SELECT payload FROM analytics_state WHERE state_key = $1 LIMIT 1',
+      [ANALYTICS_STATE_KEY]
+    )
+    if (rows.length === 0 || !rows[0].payload) return false
+    const nextStore = normalizeAnalyticsStore(rows[0].payload)
+    if (!hasAnalyticsData(nextStore)) return false
+    applyAnalyticsStore(nextStore)
+    console.log(`[analytics] Loaded ${store.lifetime} lifetime views from database`)
+    return true
+  } catch (err) {
+    console.warn('[analytics] Failed to load from database:', err.message)
+    return false
+  }
+}
+
+async function saveStoreToDatabase() {
+  if (!dbPool) return
+
+  try {
+    await dbPool.query(
+      `INSERT INTO analytics_state (state_key, payload, updated_at)
+       VALUES ($1, $2::jsonb, NOW())
+       ON CONFLICT (state_key)
+       DO UPDATE SET payload = EXCLUDED.payload, updated_at = NOW()`,
+      [ANALYTICS_STATE_KEY, JSON.stringify(store)]
+    )
+  } catch (err) {
+    console.warn('[analytics] Failed to save to database:', err.message)
+    throw err
+  }
+}
+
+async function flushAnalyticsStore() {
+  if (analyticsFlushInFlight) return analyticsFlushInFlight
+  if (!analyticsDirty) return
+
+  analyticsDirty = false
+  analyticsFlushInFlight = (async () => {
+    try {
+      saveStoreToDisk()
+      await saveStoreToDatabase()
+    } catch {
+      analyticsDirty = true
+    } finally {
+      analyticsFlushInFlight = null
+      if (analyticsDirty) {
+        queueAnalyticsFlush(5000)
+      }
+    }
+  })()
+
+  return analyticsFlushInFlight
+}
+
+function queueAnalyticsFlush(delayMs = 1500) {
+  if (analyticsFlushTimer) return
+  analyticsFlushTimer = setTimeout(() => {
+    analyticsFlushTimer = null
+    void flushAnalyticsStore()
+  }, delayMs)
+}
+
+function markAnalyticsDirty() {
+  analyticsDirty = true
+  queueAnalyticsFlush()
+}
+
+loadStoreFromDisk()
+setInterval(() => { void flushAnalyticsStore() }, 30_000)
+process.on('SIGTERM', () => {
+  if (analyticsFlushTimer) clearTimeout(analyticsFlushTimer)
+  void flushAnalyticsStore().finally(() => process.exit(0))
+})
+process.on('SIGINT', () => {
+  if (analyticsFlushTimer) clearTimeout(analyticsFlushTimer)
+  void flushAnalyticsStore().finally(() => process.exit(0))
+})
 
 function toDateKey(d) {
   return d.toISOString().slice(0, 10)
@@ -568,11 +687,13 @@ app.post('/api/analytics/pageview', async (req, res) => {
   detectCountryFromIP(ip).then(({ country, code }) => {
     if (!store.countries[code]) { store.countries[code] = { country, code, views: 0 } }
     store.countries[code].views += 1
+    markAnalyticsDirty()
   })
   const pageId = pagePath.replace(/\//g, '_') || '_home'
   if (!store.pages[pageId]) { store.pages[pageId] = { path: pagePath, title: title || pagePath, views: 0 } }
   store.pages[pageId].views += 1
   if (title) { store.pages[pageId].title = title }
+  markAnalyticsDirty()
   res.setHeader('Cache-Control', 'no-store')
   res.json({ ok: true })
 })
@@ -623,6 +744,7 @@ app.post('/api/analytics/event', (req, res) => {
   }
   store.eventDaily[dateKey][name] = (store.eventDaily[dateKey][name] || 0) + 1
 
+  markAnalyticsDirty()
   res.setHeader('Cache-Control', 'no-store')
   res.json({ ok: true })
 })
@@ -1140,37 +1262,59 @@ app.post('/api/user/change-password', async (req, res) => {
   }
 })
 
-// Auto-run migrations on startup if DB is connected
-if (dbPool) {
-  (async () => {
-    try {
-      const client = await dbPool.connect()
-      // Create migrations table
-      await client.query(`CREATE TABLE IF NOT EXISTS migrations (id SERIAL PRIMARY KEY, name VARCHAR(255) UNIQUE NOT NULL, applied_at TIMESTAMPTZ DEFAULT NOW())`)
-      // Run inline migrations
-      const migrations = [
-        { name: '001_create_users', sql: `CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email VARCHAR(255) UNIQUE NOT NULL, display_name VARCHAR(255) NOT NULL, password_hash VARCHAR(255) NOT NULL, tier VARCHAR(50) DEFAULT 'free', created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW(), last_login_at TIMESTAMPTZ, is_student BOOLEAN DEFAULT FALSE, student_email VARCHAR(255)); CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);` },
-        { name: '002_create_sessions', sql: `CREATE TABLE IF NOT EXISTS sessions (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, token VARCHAR(512) UNIQUE NOT NULL, expires_at TIMESTAMPTZ NOT NULL, created_at TIMESTAMPTZ DEFAULT NOW(), ip_address VARCHAR(45), user_agent TEXT); CREATE INDEX IF NOT EXISTS idx_sessions_token ON sessions(token); CREATE INDEX IF NOT EXISTS idx_sessions_user_id ON sessions(user_id);` },
-        { name: '003_create_bookmarks', sql: `CREATE TABLE IF NOT EXISTS bookmarks (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, chapter_id VARCHAR(100) NOT NULL, created_at TIMESTAMPTZ DEFAULT NOW(), UNIQUE(user_id, chapter_id)); CREATE INDEX IF NOT EXISTS idx_bookmarks_user ON bookmarks(user_id);` },
-        { name: '004_create_reading_progress', sql: `CREATE TABLE IF NOT EXISTS reading_progress (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, chapter_id VARCHAR(100) NOT NULL, scroll_position FLOAT DEFAULT 0, completed BOOLEAN DEFAULT FALSE, last_read_at TIMESTAMPTZ DEFAULT NOW(), UNIQUE(user_id, chapter_id)); CREATE INDEX IF NOT EXISTS idx_progress_user ON reading_progress(user_id);` },
-        { name: '005_create_preferences', sql: `CREATE TABLE IF NOT EXISTS user_preferences (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE UNIQUE, theme VARCHAR(20) DEFAULT 'light', font_size VARCHAR(20) DEFAULT 'medium', newsletter_subscribed BOOLEAN DEFAULT FALSE, updated_at TIMESTAMPTZ DEFAULT NOW());` },
-      ]
-      const { rows: applied } = await client.query('SELECT name FROM migrations')
-      const appliedSet = new Set(applied.map(r => r.name))
-      for (const m of migrations) {
-        if (appliedSet.has(m.name)) continue
+async function initializeDatabaseAndAnalytics() {
+  if (!dbPool) return
+
+  let client = null
+
+  try {
+    client = await dbPool.connect()
+    await client.query(`CREATE TABLE IF NOT EXISTS migrations (id SERIAL PRIMARY KEY, name VARCHAR(255) UNIQUE NOT NULL, applied_at TIMESTAMPTZ DEFAULT NOW())`)
+
+    const migrations = [
+      { name: '001_create_users', sql: `CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email VARCHAR(255) UNIQUE NOT NULL, display_name VARCHAR(255) NOT NULL, password_hash VARCHAR(255) NOT NULL, tier VARCHAR(50) DEFAULT 'free', created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW(), last_login_at TIMESTAMPTZ, is_student BOOLEAN DEFAULT FALSE, student_email VARCHAR(255)); CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);` },
+      { name: '002_create_sessions', sql: `CREATE TABLE IF NOT EXISTS sessions (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, token VARCHAR(512) UNIQUE NOT NULL, expires_at TIMESTAMPTZ NOT NULL, created_at TIMESTAMPTZ DEFAULT NOW(), ip_address VARCHAR(45), user_agent TEXT); CREATE INDEX IF NOT EXISTS idx_sessions_token ON sessions(token); CREATE INDEX IF NOT EXISTS idx_sessions_user_id ON sessions(user_id);` },
+      { name: '003_create_bookmarks', sql: `CREATE TABLE IF NOT EXISTS bookmarks (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, chapter_id VARCHAR(100) NOT NULL, created_at TIMESTAMPTZ DEFAULT NOW(), UNIQUE(user_id, chapter_id)); CREATE INDEX IF NOT EXISTS idx_bookmarks_user ON bookmarks(user_id);` },
+      { name: '004_create_reading_progress', sql: `CREATE TABLE IF NOT EXISTS reading_progress (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, chapter_id VARCHAR(100) NOT NULL, scroll_position FLOAT DEFAULT 0, completed BOOLEAN DEFAULT FALSE, last_read_at TIMESTAMPTZ DEFAULT NOW(), UNIQUE(user_id, chapter_id)); CREATE INDEX IF NOT EXISTS idx_progress_user ON reading_progress(user_id);` },
+      { name: '005_create_preferences', sql: `CREATE TABLE IF NOT EXISTS user_preferences (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE UNIQUE, theme VARCHAR(20) DEFAULT 'light', font_size VARCHAR(20) DEFAULT 'medium', newsletter_subscribed BOOLEAN DEFAULT FALSE, updated_at TIMESTAMPTZ DEFAULT NOW());` },
+      { name: '006_create_analytics_state', sql: `CREATE TABLE IF NOT EXISTS analytics_state (state_key VARCHAR(100) PRIMARY KEY, payload JSONB NOT NULL, updated_at TIMESTAMPTZ DEFAULT NOW());` },
+    ]
+
+    const { rows: applied } = await client.query('SELECT name FROM migrations')
+    const appliedSet = new Set(applied.map((row) => row.name))
+
+    for (const migration of migrations) {
+      if (appliedSet.has(migration.name)) continue
+
+      try {
         await client.query('BEGIN')
-        await client.query(m.sql)
-        await client.query('INSERT INTO migrations (name) VALUES ($1)', [m.name])
+        await client.query(migration.sql)
+        await client.query('INSERT INTO migrations (name) VALUES ($1)', [migration.name])
         await client.query('COMMIT')
-        console.log(`[db] Migration applied: ${m.name}`)
+        console.log(`[db] Migration applied: ${migration.name}`)
+      } catch (err) {
+        await client.query('ROLLBACK').catch(() => {})
+        throw err
       }
-      client.release()
-      console.log('[db] All migrations up to date')
-    } catch (err) {
-      console.error('[db] Migration error:', err.message)
     }
-  })()
+
+    console.log('[db] All migrations up to date')
+  } catch (err) {
+    console.error('[db] Migration error:', err.message)
+    return
+  } finally {
+    client?.release()
+  }
+
+  const loadedFromDatabase = await loadStoreFromDatabase()
+  if (!loadedFromDatabase && hasAnalyticsData()) {
+    try {
+      await saveStoreToDatabase()
+      console.log('[analytics] Seeded database state from disk analytics store')
+    } catch (err) {
+      console.warn('[analytics] Failed to seed database from disk:', err.message)
+    }
+  }
 }
 
 
@@ -1399,14 +1543,20 @@ app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`[veritas] Serving on port ${PORT}`)
-  console.log(`[veritas] Data dir: ${DATA_DIR}`)
-  console.log(`[veritas] Analytics: ${store.lifetime} lifetime views loaded`)
-  if (process.env.RAILWAY_VOLUME_MOUNT_PATH && !process.env.DATA_DIR) {
-    console.log(`[veritas] Using Railway volume mount path: ${process.env.RAILWAY_VOLUME_MOUNT_PATH}`)
-  } else if (!process.env.DATA_DIR) {
-    console.warn('[veritas] WARNING: DATA_DIR and RAILWAY_VOLUME_MOUNT_PATH not set — using ./data (data may be lost on redeploy)')
-    console.warn('[veritas] Attach a Railway volume or set DATA_DIR to a persistent mount path for analytics retention')
-  }
-})
+async function startServer() {
+  await initializeDatabaseAndAnalytics()
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`[veritas] Serving on port ${PORT}`)
+    console.log(`[veritas] Data dir: ${DATA_DIR}`)
+    console.log(`[veritas] Analytics: ${store.lifetime} lifetime views loaded`)
+    if (process.env.RAILWAY_VOLUME_MOUNT_PATH && !process.env.DATA_DIR) {
+      console.log(`[veritas] Using Railway volume mount path: ${process.env.RAILWAY_VOLUME_MOUNT_PATH}`)
+    } else if (!process.env.DATA_DIR) {
+      console.warn('[veritas] WARNING: DATA_DIR and RAILWAY_VOLUME_MOUNT_PATH not set — using ./data (data may be lost on redeploy)')
+      console.warn('[veritas] Attach a Railway volume or set DATA_DIR to a persistent mount path for analytics retention')
+    }
+  })
+}
+
+void startServer()
