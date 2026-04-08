@@ -76,11 +76,11 @@
     },
     {
       "feature": "Public Analytics",
-      "composite": 8,
-      "previous": 7.2,
-      "delta": 0.8,
+      "composite": 8.4,
+      "previous": 8,
+      "delta": 0.4,
       "status": "improved",
-      "plus_half_requires": "Verify the deployed Postgres-backed snapshot survives a Railway redeploy, then add a lightweight operator check that alerts when the public dashboard unexpectedly resets or stalls."
+      "plus_half_requires": "Verify the deployed route-specific title normalization across `/news`, `/profiles`, `/topics/:slug`, `/chapter/:slug`, and institute routes, then source exact article titles for dynamic news paths instead of relying on slug humanization when the client title is missing."
     }
   ],
   "growth": [
@@ -102,11 +102,11 @@
     },
     {
       "area": "Analytics & Measurement",
-      "score": 8.2,
-      "previous": 7.9,
-      "delta": 0.3,
+      "score": 8.4,
+      "previous": 8.2,
+      "delta": 0.2,
       "status": "improved",
-      "plus_half_requires": "Verify the new server-side durability path live after deploy, then map GA4 plus HubSpot lifecycle stages into a public or operator-visible conversion dashboard with source-level newsletter attribution."
+      "plus_half_requires": "Verify the live title normalization and durability path after deploy, then map GA4 plus HubSpot lifecycle stages into a public or operator-visible conversion dashboard with route-specific attribution that does not collapse distinct pages into shell titles."
     },
     {
       "area": "Monetization Infrastructure",

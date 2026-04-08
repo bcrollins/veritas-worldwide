@@ -14,7 +14,6 @@ import { useScrollDepth } from './hooks/useScrollDepth'
 import { I18nProvider, useI18n } from './lib/i18n'
 import LanguageSelector from './components/LanguageSelector'
 import NewsletterSignup from './components/NewsletterSignup'
-import { trackPageView } from './lib/hubspot'
 import { handleStripeReturn } from './lib/conversionTracking'
 import VeritasLogo from './components/VeritasLogo'
 import { useExperiment } from './hooks/useExperiment'
@@ -752,11 +751,6 @@ function Footer() {
 function PageViewTracker() {
   usePageView()
   useScrollDepth()
-  const location = useLocation()
-
-  useEffect(() => {
-    trackPageView(location.pathname)
-  }, [location.pathname])
 
   useEffect(() => {
     handleStripeReturn()

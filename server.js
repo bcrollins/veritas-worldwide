@@ -392,9 +392,175 @@ function normalizeAnalyticsStore(value) {
   }
 }
 
+const ANALYTICS_SITE_NAME = 'Veritas Worldwide'
+const GENERIC_ANALYTICS_TITLES = new Set([
+  `The Record | ${ANALYTICS_SITE_NAME}`,
+  ANALYTICS_SITE_NAME,
+  'Reader Analytics',
+  `News | ${ANALYTICS_SITE_NAME}`,
+  `Sources | ${ANALYTICS_SITE_NAME}`,
+  `Methodology | ${ANALYTICS_SITE_NAME}`,
+  `Search | ${ANALYTICS_SITE_NAME}`,
+  `Power Profiles | ${ANALYTICS_SITE_NAME}`,
+  `Research Topics | ${ANALYTICS_SITE_NAME}`,
+  `Community Forum | ${ANALYTICS_SITE_NAME}`,
+])
+
+const STATIC_ANALYTICS_TITLES = {
+  '/': `The Record | ${ANALYTICS_SITE_NAME}`,
+  '/search': `Search | The Record — ${ANALYTICS_SITE_NAME}`,
+  '/methodology': `Methodology & Evidence Standards | The Record — ${ANALYTICS_SITE_NAME}`,
+  '/sources': `Sources & Bibliography | The Record — ${ANALYTICS_SITE_NAME}`,
+  '/membership': `Membership | ${ANALYTICS_SITE_NAME}`,
+  '/analytics': `Reader Analytics | The Record — ${ANALYTICS_SITE_NAME}`,
+  '/read': `Read The Record | ${ANALYTICS_SITE_NAME}`,
+  '/news': `Current Events — Primary Source Journalism | ${ANALYTICS_SITE_NAME}`,
+  '/profiles': `Power Profiles | ${ANALYTICS_SITE_NAME}`,
+  '/topics': `Research Topics | ${ANALYTICS_SITE_NAME}`,
+  '/forum': `Community Forum | ${ANALYTICS_SITE_NAME}`,
+  '/institute': `Veritas Institute | Field Manual and Practical Trade Courses | ${ANALYTICS_SITE_NAME}`,
+  '/institute/book': `Field Manual | Veritas Institute | ${ANALYTICS_SITE_NAME}`,
+  '/institute/methodology': `Veritas Institute Methodology | ${ANALYTICS_SITE_NAME}`,
+  '/israel-dossier': `The Israel Dossier | ${ANALYTICS_SITE_NAME}`,
+  '/deep-state': `The Deep State — The Epstein Network | ${ANALYTICS_SITE_NAME}`,
+  '/content-pack': `Content Pack — Shareable Assets | ${ANALYTICS_SITE_NAME}`,
+  '/timeline': `Interactive Timeline | ${ANALYTICS_SITE_NAME}`,
+  '/accessibility': `Accessibility | ${ANALYTICS_SITE_NAME}`,
+  '/privacy': `Privacy Policy | ${ANALYTICS_SITE_NAME}`,
+  '/terms': `Terms of Use | ${ANALYTICS_SITE_NAME}`,
+  '/bible': `The Bible: History & Factual Record | ${ANALYTICS_SITE_NAME}`,
+}
+
+const ANALYTICS_ACRONYM_WORDS = {
+  ai: 'AI',
+  aipac: 'AIPAC',
+  cia: 'CIA',
+  cdc: 'CDC',
+  covid: 'COVID',
+  diy: 'DIY',
+  doj: 'DOJ',
+  epa: 'EPA',
+  fbi: 'FBI',
+  fda: 'FDA',
+  fisa: 'FISA',
+  jfk: 'JFK',
+  nato: 'NATO',
+  rfk: 'RFK',
+  uk: 'UK',
+  un: 'UN',
+  us: 'U.S.',
+  uss: 'USS',
+  wef: 'WEF',
+}
+
 function normalizeAnalyticsTitle(value) {
   if (typeof value !== 'string') return ''
-  return value.replace(/Veritas Press/g, 'Veritas Worldwide').trim()
+  return value
+    .replace(/Veritas Press/g, ANALYTICS_SITE_NAME)
+    .replace(/\|\s+The Record\s+-\s+Veritas Worldwide/g, `| The Record — ${ANALYTICS_SITE_NAME}`)
+    .replace(/\s+-\s+Power Profile\s+\|\s+Veritas Worldwide/g, ` — Power Profile | ${ANALYTICS_SITE_NAME}`)
+    .trim()
+}
+
+function titleCaseAnalyticsWord(word, index) {
+  const normalized = word.toLowerCase()
+  if (ANALYTICS_ACRONYM_WORDS[normalized]) {
+    return ANALYTICS_ACRONYM_WORDS[normalized]
+  }
+
+  if (index > 0 && ['a', 'an', 'and', 'at', 'for', 'in', 'of', 'on', 'the', 'to', 'vs', 'with'].includes(normalized)) {
+    return normalized
+  }
+
+  return normalized.charAt(0).toUpperCase() + normalized.slice(1)
+}
+
+function humanizeAnalyticsSlug(slug) {
+  if (typeof slug !== 'string') return ''
+
+  try {
+    return decodeURIComponent(slug)
+      .trim()
+      .split('-')
+      .filter(Boolean)
+      .map((word, index) => titleCaseAnalyticsWord(word, index))
+      .join(' ')
+  } catch {
+    return ''
+  }
+}
+
+function getAnalyticsTitleFromPath(pagePath) {
+  if (!pagePath) return ''
+
+  if (STATIC_ANALYTICS_TITLES[pagePath]) {
+    return STATIC_ANALYTICS_TITLES[pagePath]
+  }
+
+  const chapterMatch = pagePath.match(/^\/chapter\/([^/]+)$/)
+  if (chapterMatch) {
+    const meta = getChapterMeta(chapterMatch[1])
+    if (meta) {
+      return `${meta.title} | The Record — ${ANALYTICS_SITE_NAME}`
+    }
+  }
+
+  const profileMatch = pagePath.match(/^\/profile\/([^/]+)$/)
+  if (profileMatch) {
+    const label = humanizeAnalyticsSlug(profileMatch[1])
+    return label ? `${label} — Power Profile | ${ANALYTICS_SITE_NAME}` : ''
+  }
+
+  const topicMatch = pagePath.match(/^\/topics\/([^/]+)$/)
+  if (topicMatch) {
+    const label = humanizeAnalyticsSlug(topicMatch[1])
+    return label ? `${label} | ${ANALYTICS_SITE_NAME}` : ''
+  }
+
+  const newsMatch = pagePath.match(/^\/news\/([^/]+)$/)
+  if (newsMatch) {
+    const label = humanizeAnalyticsSlug(newsMatch[1])
+    return label ? `${label} | ${ANALYTICS_SITE_NAME}` : ''
+  }
+
+  const instituteGuideMatch = pagePath.match(/^\/institute\/guides\/([^/]+)$/)
+  if (instituteGuideMatch) {
+    const label = humanizeAnalyticsSlug(instituteGuideMatch[1])
+    return label ? `${label} | Veritas Institute | ${ANALYTICS_SITE_NAME}` : ''
+  }
+
+  const instituteCourseMatch = pagePath.match(/^\/institute\/courses\/([^/]+)$/)
+  if (instituteCourseMatch) {
+    const label = humanizeAnalyticsSlug(instituteCourseMatch[1])
+    return label ? `${label} | Veritas Institute | ${ANALYTICS_SITE_NAME}` : ''
+  }
+
+  const instituteBookMatch = pagePath.match(/^\/institute\/book\/([^/]+)$/)
+  if (instituteBookMatch) {
+    const label = humanizeAnalyticsSlug(instituteBookMatch[1])
+    return label ? `${label} | Veritas Institute | ${ANALYTICS_SITE_NAME}` : ''
+  }
+
+  return ''
+}
+
+function resolveAnalyticsTitle(pagePath, rawTitle) {
+  const fallbackTitle = getAnalyticsTitleFromPath(pagePath)
+  const normalizedTitle = normalizeAnalyticsTitle(rawTitle)
+
+  if (STATIC_ANALYTICS_TITLES[pagePath]) {
+    return fallbackTitle
+  }
+
+  if (!normalizedTitle) {
+    return fallbackTitle
+  }
+
+  if (GENERIC_ANALYTICS_TITLES.has(normalizedTitle)) {
+    return fallbackTitle || normalizedTitle
+  }
+
+  return normalizedTitle
 }
 
 function migrateAnalyticsTitles(targetStore) {
@@ -405,9 +571,15 @@ function migrateAnalyticsTitles(targetStore) {
   for (const page of Object.values(targetStore.pages)) {
     if (!page || typeof page !== 'object') continue
 
-    const normalizedTitle = normalizeAnalyticsTitle(page.title)
-    if (normalizedTitle && normalizedTitle !== page.title) {
-      page.title = normalizedTitle
+    const normalizedPath = sanitizeAnalyticsPath(page.path)
+    if (normalizedPath && normalizedPath !== page.path) {
+      page.path = normalizedPath
+      changed = true
+    }
+
+    const resolvedTitle = resolveAnalyticsTitle(page.path, page.title)
+    if (resolvedTitle && resolvedTitle !== page.title) {
+      page.title = resolvedTitle
       changed = true
     }
   }
@@ -598,7 +770,8 @@ function sanitizeAnalyticsPath(value) {
   if (typeof value !== 'string') return ''
   const trimmed = value.trim()
   if (!trimmed.startsWith('/')) return ''
-  return trimmed.slice(0, 200)
+  const normalized = trimmed !== '/' && trimmed.endsWith('/') ? trimmed.slice(0, -1) : trimmed
+  return normalized.slice(0, 200)
 }
 
 function sanitizeAnalyticsProperties(value) {
@@ -698,8 +871,9 @@ app.use((req, res, next) => {
 })
 
 app.post('/api/analytics/pageview', async (req, res) => {
-  const { path: pagePath, title } = req.body
-  if (!pagePath || typeof pagePath !== 'string') {
+  const { path: rawPagePath, title } = req.body
+  const pagePath = sanitizeAnalyticsPath(rawPagePath)
+  if (!pagePath) {
     return res.status(400).json({ error: 'path required' })
   }
   const now = new Date()
@@ -719,10 +893,11 @@ app.post('/api/analytics/pageview', async (req, res) => {
     markAnalyticsDirty()
   })
   const pageId = pagePath.replace(/\//g, '_') || '_home'
-  const normalizedTitle = normalizeAnalyticsTitle(title)
-  if (!store.pages[pageId]) { store.pages[pageId] = { path: pagePath, title: normalizedTitle || pagePath, views: 0 } }
+  const resolvedTitle = resolveAnalyticsTitle(pagePath, title)
+  if (!store.pages[pageId]) { store.pages[pageId] = { path: pagePath, title: resolvedTitle || pagePath, views: 0 } }
   store.pages[pageId].views += 1
-  if (normalizedTitle) { store.pages[pageId].title = normalizedTitle }
+  store.pages[pageId].path = pagePath
+  if (resolvedTitle) { store.pages[pageId].title = resolvedTitle }
   markAnalyticsDirty()
   res.setHeader('Cache-Control', 'no-store')
   res.json({ ok: true })
@@ -801,7 +976,7 @@ app.get('/api/analytics/snapshot', (req, res) => {
   const topPages = Object.values(store.pages)
     .map((page) => ({
       ...page,
-      title: normalizeAnalyticsTitle(page.title) || page.path,
+      title: resolveAnalyticsTitle(sanitizeAnalyticsPath(page.path), page.title) || page.path,
     }))
     .sort((a, b) => b.views - a.views)
     .slice(0, 30)
