@@ -1649,6 +1649,16 @@ const staticPages = [
     sourceFile: 'src/pages/MembershipPage.tsx',
   },
   {
+    route: '/about',
+    title: 'About | Veritas Worldwide',
+    heading: 'About Veritas Worldwide',
+    description: 'How Veritas Worldwide publishes, verifies claims, and keeps its trust layer public.',
+    body: [
+      'The about page explains the publication model directly: what The Record is, how evidence labels work, and how reader funding supports the archive without turning the methodology into a black box.',
+    ],
+    sourceFile: 'src/pages/AboutPage.tsx',
+  },
+  {
     route: '/deep-state',
     title: 'The Deep State - The Epstein Network | Veritas Worldwide',
     heading: 'The Deep State - The Epstein Network',

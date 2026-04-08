@@ -1,6 +1,6 @@
 {
-  "run": 22,
-  "date": "2026-04-07",
+  "run": 27,
+  "date": "2026-04-08",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
     "Confirmed a live auth boundary defect: logout deleted session rows, but authenticateToken only trusted JWT verification plus the users table, so revoked tokens could still unlock protected content until expiry.",
@@ -56,22 +56,17 @@
     "Patched a clean `origin/main` worktree so `/methodology`, `src/data/chapters/foreword.ts`, the source-browser taxonomy helpers, `scripts/export-chapter-data.mjs`, and chapter source type definitions all use the canonical five-tier hierarchy, then rebuilt the generated chapter data and prerender output successfully with `node ./node_modules/typescript/bin/tsc --noEmit` and `npm run build`.",
     "Root-caused a homepage mobile trust defect: `FadeInSection` and staggered entrance styles defaulted critical modules to `opacity: 0`, so below-the-fold homepage sections rendered as dead air on narrow viewports until client-side intersection observers fired.",
     "Patched `src/styles/index.css` so fade-in and staggered entrance sections render immediately on viewports 767px wide and below, and for reduced-motion users, while preserving the existing desktop motion treatment.",
-    "Revalidated the homepage mobile visibility fix locally on April 7, 2026 with `npx tsc --noEmit`, `npm run build`, and rebuilt 390px/430px Playwright screenshots from a local preview build showing the dead zone removed."
+    "Revalidated the homepage mobile visibility fix locally on April 7, 2026 with `npx tsc --noEmit`, `npm run build`, and rebuilt 390px/430px Playwright screenshots from a local preview build showing the dead zone removed.",
+    "Replaced the active operating directive on April 8, 2026 with the superseding Veritas master directive supplied in-session. The prompt now restores explicit publication-versus-rights canon separation, trust-first growth rules, and the no-AI-features product boundary without carrying forward the earlier prompt-level Institute AI exception.",
+    "Closed the route-canon drift on April 8, 2026 by replacing the fabricated `AboutPage.tsx` newsroom copy with a truthful publication overview, wiring `/about` into `src/App.tsx`, adding `/about` to prerender coverage, and adding `/content-packs` as a compatibility alias to the canonical `/content-pack` route so trust links and verification memory no longer point at dead surfaces."
   ],
-  "next_task": "Verify the deployed homepage mobile visibility fix on `main`, then continue the live 390px and 430px audit on `/read`, `/news`, and representative `/institute*` routes while tightening the mobile cookie banner so first-screen editorial trust copy stays visible on fresh visits.",
+  "next_task": "Live-verify the restored `/about` trust surface and `/content-packs` compatibility alias after the next deploy advances, then verify the deployed publication shell on `/`, `/read`, `/news`, `/membership`, and `/about` at 390px and 430px.",
   "next_priorities": [
-    "Verify the deployed homepage mobile visibility fix on `main`: confirm the front page no longer shows a dead zone between the featured modules and the table of contents at 390px and 430px.",
-    "Tighten the mobile cookie consent layer on `/`, `/methodology`, `/sources`, and `/membership` so the first-screen trust copy and CTAs remain legible on fresh visits without weakening consent clarity.",
-    "Verify the `/read` and `/chapter/:id` auth upgrade/downgrade flows in a real browser session at 390px and 430px widths.",
-    "Verify the live `/news` listing plus representative article routes at 390px and 430px widths, focusing on scanability, related-investigation linking, and subscribe-path clarity.",
-    "Confirm the rebuilt Institute surfaces are live in production: `/institute`, `/institute/book`, `/institute/methodology`, representative `/institute/courses/:slug`, representative `/institute/guides/:slug`, `/llms.txt`, and `/veritas-institute.md`.",
-    "Verify the rebuilt Institute surfaces at 390px and 430px in a real browser session, focusing on scanability, sticky shell behavior, CTA clarity, and the new answer-first hierarchy.",
-    "Verify the updated membership copy and CTA hierarchy on `/membership` at 390px and 430px in a real browser session, focusing on tone, pricing clarity, sticky CTA behavior, and cookie-banner interference.",
-    "Verify the deployed analytics title fix on `main`: confirm `/api/analytics/snapshot` no longer reports `The Record | Veritas Worldwide` for `/news`, `/profiles`, `/topics/:slug`, `/chapter/foreword`, and institute routes.",
-    "Confirm the deployed analytics durability fix is still intact while checking the title normalization: the snapshot should survive the deploy and increment after a fresh pageview/event without resetting to zero.",
-    "Verify the /chapter/:id and /read auth upgrade/downgrade experience at 390px and 430px in a real browser session, including signed-out previews, login upgrade, logout downgrade, and protected PDF/download affordances.",
-    "Decide whether to wire npm run verify:auth and npm run verify:sources into CI or a scheduled operational check against Railway now that the source verifier is clean and stable.",
-    "Pressure-test the institute PDF export on a realistic browser/device mix and decide whether to move the Book of Knowledge export to a build-time or server-side artifact for very large manuals.",
-    "Add Sentry or equivalent production monitoring to capture auth/API failures before readers report them."
+    "Live-verify `/about` and the `/content-packs` compatibility alias after the next deployment advances so the local route-canon fix is confirmed on production.",
+    "Verify the deployed publication shell on `/`, `/read`, `/news`, `/membership`, and `/about` at 390px and 430px widths, focusing on drawer grouping, sticky primary navigation, and CTA clarity.",
+    "Add a real browser automation pass for degraded-mode account switching so the per-user bookmark/progress isolation is verified in the rendered client, not only in the repo-native harness.",
+    "Audit `/institute`, representative course/guide routes, and institute monetization copy against the restored publication canon so the learning surface reads as practical, source-backed instruction rather than a strategy orphan.",
+    "Operationalize the trust audit by wiring `npm run verify:sources` into CI or a scheduled Railway/GitHub job so future link rot is caught automatically instead of during manual audits.",
+    "Add production error monitoring (Sentry or equivalent) for auth, search, analytics, and prerender failures."
   ]
 }

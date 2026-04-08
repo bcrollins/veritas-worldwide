@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
 import { isAdminLoggedIn } from './lib/adminAuth'
 import Toast from './components/Toast'
@@ -35,6 +35,7 @@ const BookmarksPage = lazy(() => import('./pages/BookmarksPage'))
 const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
 const TimelinePage = lazy(() => import('./pages/TimelinePage'))
 const AccessibilityPage = lazy(() => import('./pages/AccessibilityPage'))
+const AboutPage = lazy(() => import('./pages/AboutPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
 const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
@@ -615,6 +616,7 @@ function Footer() {
     { to: '/search', label: t('nav.search') },
     { to: '/bookmarks', label: t('nav.bookmarks') },
     { to: '/analytics', label: t('nav.analytics') },
+    { to: '/about', label: t('nav.about') },
     { to: '/accessibility', label: t('nav.accessibility') },
     { to: '/privacy', label: t('nav.privacy') },
     { to: '/terms', label: t('nav.terms') },
@@ -812,6 +814,7 @@ export default function App() {
                 <Route path="/timeline" element={<TimelinePage />} />
                 <Route path="/analytics" element={<AnalyticsPage />} />
                 <Route path="/accessibility" element={<AccessibilityPage />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/israel-dossier" element={<IsraelDossierPage />} />
@@ -820,6 +823,7 @@ export default function App() {
                 <Route path="/read" element={<ReadTheBookPage />} />
                 <Route path="/news" element={<NewsPage />} />
                 <Route path="/content-pack" element={<ContentPackPage />} />
+                <Route path="/content-packs" element={<Navigate replace to="/content-pack" />} />
                 <Route path="/share" element={<ContentPackPage />} />
                 <Route path="/forum" element={<ForumPage />} />
                 <Route path="/profiles" element={<ProfilesIndexPage />} />

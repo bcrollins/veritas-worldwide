@@ -1,268 +1,292 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
-import { DONATE_URL } from '../lib/constants'
+import { DONATE_URL, TAGLINE } from '../lib/constants'
+import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
-const editorialTeam = [
+const operatingPrinciples = [
   {
-    initials: 'VP',
-    name: 'Veritas Worldwide',
-    role: 'Lead Investigator & Editor-in-Chief',
-    bio: 'Former intelligence analyst with over a decade of experience in open-source intelligence gathering. Specializes in financial networks and political influence operations.',
+    title: 'Document first',
+    body: 'Veritas starts with public records, filings, transcripts, archival reporting, and other attributable sources. Interpretation is separated from documentation on purpose.',
   },
   {
-    initials: 'M.K.',
-    name: 'M. Kavanaugh',
-    role: 'Senior Political Correspondent',
-    bio: 'Veteran political journalist covering Washington power structures for 15 years. Expert in legislative process and lobbying networks.',
+    title: 'Label evidence clearly',
+    body: 'Claims are framed through the live evidence taxonomy: Verified, Circumstantial, and Disputed. Readers should never have to guess how strong the support is.',
   },
   {
-    initials: 'D.W.',
-    name: 'D. Walsh',
-    role: 'Financial Investigations Editor',
-    bio: 'Certified fraud examiner and forensic accountant. Tracks dark money flows and corporate shell structures across international jurisdictions.',
+    title: 'Keep the trust layer public',
+    body: 'Methodology, sources, and the public record around the work stay readable without a paid wall so readers can audit the reporting for themselves.',
   },
   {
-    initials: 'R.A.',
-    name: 'R. Alvarez',
-    role: 'National Security Reporter',
-    bio: 'Covers intelligence community operations and military-industrial complex relationships. Previously embedded with NATO operations in Eastern Europe.',
+    title: 'Fund without distorting',
+    body: 'Membership and donations fund the work, but they do not change the sourcing rules, evidence language, or what remains publicly inspectable.',
+  },
+]
+
+const contactChannels = [
+  {
+    label: 'Editorial tips and corrections',
+    value: 'tips@veritasworldwide.com',
+    href: 'mailto:tips@veritasworldwide.com',
+    note: 'Use this for source material, corrections, clarification requests, and publication questions.',
   },
   {
-    initials: 'S.L.',
-    name: 'S. Lindström',
-    role: 'International Affairs Analyst',
-    bio: 'Former diplomatic correspondent with expertise in geopolitical influence campaigns. Fluent in four languages with sources across European and Asian capitals.',
+    label: 'Rights and partnerships',
+    value: 'rights@veritasworldwide.com',
+    href: 'mailto:rights@veritasworldwide.com',
+    note: 'Use this for licensing, documentary, educational, and distribution conversations tied to the rights package.',
   },
 ]
 
 export default function AboutPage() {
   useEffect(() => {
     setMetaTags({
-      title: `About | The Record — ${SITE_NAME}`,
-      description: 'Independent investigative journalism holding power accountable through documented evidence. Meet the editorial team behind Veritas Worldwide.',
+      title: `About | ${SITE_NAME}`,
+      description:
+        'What Veritas Worldwide publishes, how it verifies claims, what stays public, and how reader funding supports the work.',
       url: `${SITE_URL}/about`,
     })
-    return () => clearMetaTags()
+    setJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: `About ${SITE_NAME}`,
+      url: `${SITE_URL}/about`,
+      description:
+        'An overview of the Veritas Worldwide publication model, evidence standards, reader access model, and contact channels.',
+      isPartOf: {
+        '@type': 'WebSite',
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+    })
+
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   return (
-    <div className="w-full max-w-[1920px] mx-auto">
-      {/* Section Bar */}
+    <div className="mx-auto w-full max-w-[1920px]">
       <div className="border-b border-border bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 py-3 text-sm">
-            <Link to="/" className="text-ink-muted hover:text-crimson transition-colors">Home</Link>
+            <Link to="/" className="text-ink-muted transition-colors hover:text-crimson">
+              Home
+            </Link>
             <span className="text-ink-muted/50">›</span>
-            <span className="text-ink font-medium">About</span>
+            <span className="font-medium text-ink">About</span>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12">
-          {/* Left Column */}
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-14 lg:px-8">
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-12">
           <article className="max-w-none">
-            <h1 className="text-3xl md:text-4xl font-serif font-bold text-ink mb-3">
+            <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-crimson">
+              Publication Overview
+            </p>
+            <h1 className="mt-3 font-display text-3xl font-bold text-ink md:text-5xl">
               About Veritas Worldwide
             </h1>
-            <p className="text-lg text-ink-muted mb-10 leading-relaxed border-b border-border pb-8">
-              Independent investigative journalism holding power accountable through documented evidence.
+            <p className="mt-4 max-w-3xl border-b border-border pb-8 font-body text-lg leading-relaxed text-ink-muted">
+              {TAGLINE} Veritas is built as a documentary publication: longform chapters, current reporting,
+              dossiers, profiles, topic explainers, and public methodology designed so a skeptical reader can
+              inspect the record instead of trusting a vibe.
             </p>
 
-            {/* Origin Story */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-serif font-semibold text-ink mb-4">Our Mission</h2>
-              <div className="space-y-4 text-ink-muted leading-relaxed">
+            <section id="what-we-publish" className="mt-10">
+              <h2 className="font-display text-2xl font-semibold text-ink">What Veritas Publishes</h2>
+              <div className="mt-4 space-y-4 font-body leading-relaxed text-ink-muted">
                 <p>
-                  Veritas Worldwide began as a single question: <em>What happens when you follow the money?</em> What started as independent research into political financing evolved into a 31-chapter investigation documenting the networks of power, influence, and accountability that shape American democracy.
+                  The core product is <em>The Record</em>: a structured archive built from a foreword, an overview,
+                  28 numbered chapters, and an epilogue. Around that archive, Veritas publishes source-first news,
+                  dossiers, profiles, topic pages, and a public source and methodology layer that lets readers check
+                  the work directly.
                 </p>
                 <p>
-                  Every claim in this publication is sourced. Every connection is documented. We believe the public deserves access to the same information that insiders use to make decisions that affect millions of lives. Our evidence tier system — Verified, Circumstantial, and Disputed — ensures readers always know the strength of the evidence behind every assertion.
+                  The product is intentionally split between public trust surfaces and reader account surfaces. The
+                  public side explains method, preserves source visibility, and gives preview access. Reader accounts
+                  deepen the archive relationship. Paid support funds the operation without turning the methodology
+                  into a black box.
+                </p>
+              </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-border bg-surface p-5">
+                  <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-faint">
+                    Public trust layer
+                  </p>
+                  <ul className="mt-4 space-y-2 font-body text-sm leading-relaxed text-ink-muted">
+                    <li>Methodology and sources stay readable without paid access.</li>
+                    <li>Preview routes explain what the work is before asking for a relationship.</li>
+                    <li>Evidence labels and source hierarchy remain visible and explicit.</li>
+                  </ul>
+                </div>
+                <div className="rounded-2xl border border-border bg-surface p-5">
+                  <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-faint">
+                    Reader relationship
+                  </p>
+                  <ul className="mt-4 space-y-2 font-body text-sm leading-relaxed text-ink-muted">
+                    <li>Free reader accounts unlock the archive relationship.</li>
+                    <li>Membership funds reporting, document work, and publication durability.</li>
+                    <li>Protected downloads and full-source utilities stay behind real auth boundaries.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="standards" className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">How the Publication Works</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {operatingPrinciples.map((principle) => (
+                  <div key={principle.title} className="rounded-2xl border border-border bg-surface p-5">
+                    <h3 className="font-serif text-lg font-semibold text-ink">{principle.title}</h3>
+                    <p className="mt-3 font-body text-sm leading-relaxed text-ink-muted">{principle.body}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-2xl border border-border bg-parchment px-5 py-6">
+                <h3 className="font-serif text-lg font-semibold text-ink">Evidence and sourcing standards</h3>
+                <div className="mt-4 space-y-4 font-body text-sm leading-relaxed text-ink-muted">
+                  <p>
+                    Veritas uses two separate trust systems on purpose. Evidence strength is labeled as Verified,
+                    Circumstantial, or Disputed. Source provenance is described through a five-tier hierarchy covering
+                    government and legal records, institutional records, investigative journalism, academic and
+                    scholarly works, and secondary analysis.
+                  </p>
+                  <p>
+                    Those systems are not interchangeable. A disputed claim can still be documented as disputed. A
+                    verified claim should not rest only on weak sourcing. Claims about living people require higher
+                    care, tighter attribution, and precise wording.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section id="funding" className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">Independence and Funding</h2>
+              <div className="mt-4 space-y-4 font-body leading-relaxed text-ink-muted">
+                <p>
+                  Veritas is funded through reader support. The business model is meant to preserve the publication&apos;s
+                  independence, not cheapen it. Membership, donations, and rights work exist to keep the archive,
+                  methodology, and source-first reporting durable over time.
                 </p>
                 <p>
-                  We are not affiliated with any political party, PAC, lobbying firm, or government agency. Our funding comes from readers, not special interests.
+                  That means no manipulative scarcity language, no paywall theater around the trust layer, and no
+                  casual drift between what the membership page promises and what the product actually delivers.
                 </p>
               </div>
             </section>
 
-            {/* Editorial Team */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-serif font-semibold text-ink mb-6">Editorial Team</h2>
-              <div className="grid gap-5 sm:grid-cols-2">
-                {editorialTeam.map((member) => (
-                  <div key={member.initials} className="bg-surface border border-border rounded-lg p-5">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-crimson/10 text-crimson flex items-center justify-center text-sm font-bold">
-                        {member.initials}
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-ink">{member.name}</h3>
-                        <p className="text-xs text-crimson">{member.role}</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-ink-muted leading-relaxed">{member.bio}</p>
+            <section id="contact" className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">Contact</h2>
+              <div className="mt-5 grid gap-4">
+                {contactChannels.map((channel) => (
+                  <div key={channel.value} className="rounded-2xl border border-border bg-surface p-5">
+                    <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-faint">
+                      {channel.label}
+                    </p>
+                    <a
+                      href={channel.href}
+                      className="mt-2 inline-flex text-lg font-semibold text-crimson transition-colors hover:text-crimson-dark"
+                    >
+                      {channel.value}
+                    </a>
+                    <p className="mt-2 font-body text-sm leading-relaxed text-ink-muted">{channel.note}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Editorial Standards */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-serif font-semibold text-ink mb-4">Editorial Standards</h2>
-              <div className="bg-surface border border-border rounded-lg p-6 space-y-4 text-sm text-ink-muted">
-                <div className="flex gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#166534] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-ink mb-1">Source Verification</h4>
-                    <p>Every factual claim requires at least one primary source. Court documents, financial filings, and government records form the backbone of our evidence base.</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#92400E] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-ink mb-1">Evidence Tiering</h4>
-                    <p>All evidence is classified as Verified (confirmed by primary sources), Circumstantial (supported by indirect evidence), or Disputed (contested by credible parties).</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#991B1B] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-ink mb-1">Corrections Policy</h4>
-                    <p>Errors are corrected promptly and transparently. All corrections are noted inline with the original text and logged in our corrections archive.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Biblical Foundation */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-serif font-semibold text-ink mb-4">The Foundation of Veritas</h2>
-              <div className="space-y-6">
-                <p className="text-ink-muted leading-relaxed italic border-l-4 border-crimson pl-5 text-base">
-                  "The truth will set you free." — John 8:32
-                </p>
-                <div className="space-y-4 text-ink-muted leading-relaxed">
-                  <p>
-                    Veritas is Latin for truth. The name was not chosen casually. This publication is founded on the conviction that truth is not relative, contextual, or subject to revision by those with the power to suppress it. Truth is absolute — and its exposure, however uncomfortable, is an act of service to those it protects.
-                  </p>
-                  <p>
-                    Scripture has long held that the pursuit of truth is a moral obligation.{' '}
-                    <em>"Buy the truth and do not sell it"</em> (Proverbs 23:23). Investigative journalism, at its best, embodies this principle: facts are acquired at great cost — in time, resources, and risk — and refused to be surrendered to convenience, pressure, or profit.
-                  </p>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    { verse: 'Proverbs 12:17', text: 'An honest witness tells the truth, but a false witness tells lies.' },
-                    { verse: 'John 18:37', text: '"Everyone on the side of truth listens to me." — Jesus, before Pilate' },
-                    { verse: 'Ephesians 5:11', text: 'Have nothing to do with the fruitless deeds of darkness, but rather expose them.' },
-                    { verse: 'Zechariah 8:16', text: 'Speak the truth to each other, and render true and sound judgment.' },
-                  ].map(({ verse, text }) => (
-                    <div key={verse} className="bg-surface border border-border rounded-lg p-4">
-                      <p className="text-xs font-semibold text-crimson mb-2 uppercase tracking-wider">{verse}</p>
-                      <p className="text-sm text-ink-muted leading-relaxed italic">{text}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-ink-muted leading-relaxed">
-                  The pattern of power suppressing truth is as ancient as recorded history. What Scripture calls bearing false witness, modern power calls narrative management. What the prophets called speaking truth to kings, we call investigative reporting. The names change. The obligation does not.
-                </p>
-              </div>
-            </section>
-
-            {/* Contact */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-serif font-semibold text-ink mb-4">Contact</h2>
-              <div className="bg-surface border border-border rounded-lg p-6">
-                <a href="mailto:tips@veritasworldwide.com" className="text-crimson hover:underline font-medium">
-                  tips@veritasworldwide.com
-                </a>
-                <p className="text-sm text-ink-muted mt-2">
-                  For tips, corrections, or press inquiries. We use end-to-end encrypted communication for source protection. PGP key available on request.
-                </p>
-              </div>
-            </section>
-
-            {/* Subscribe CTA */}
-            <section className="bg-obsidian text-white rounded-xl p-8 md:p-10">
-              <h2 className="text-2xl font-serif font-bold mb-3">Support Independent Journalism</h2>
-              <p className="text-white/70 mb-6 max-w-lg">
-                Veritas Worldwide is funded entirely by readers. Subscribe to get full access to all 31 chapters, power profiles, and exclusive investigative updates.
+            <section className="mt-12 rounded-[28px] bg-obsidian px-6 py-8 text-white md:px-8 md:py-10">
+              <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/60">
+                Support the work
               </p>
-              <a
-                href={DONATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-crimson text-white px-6 py-3 rounded-lg font-medium hover:bg-crimson-dark transition-colors"
-              >
-                Subscribe Now →
-              </a>
+              <h2 className="mt-3 font-display text-2xl font-bold md:text-3xl">
+                Fund the record without paywalling the trust layer.
+              </h2>
+              <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/72">
+                Reader funding keeps the archive open, supports document acquisition and verification work, and gives
+                Veritas room to keep publishing without diluting the standard.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  to="/membership"
+                  className="inline-flex min-h-[44px] items-center rounded-full bg-white px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-obsidian transition-colors hover:bg-white/85"
+                >
+                  View Membership
+                </Link>
+                <a
+                  href={DONATE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-white/15 px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:border-white/35"
+                >
+                  Make a Contribution
+                </a>
+              </div>
             </section>
           </article>
 
-          {/* Right Column — Sidebar */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-24 space-y-8">
-              {/* At a Glance */}
-              <div className="bg-surface border border-border rounded-lg p-5">
-                <h3 className="text-sm font-semibold text-ink uppercase tracking-wider mb-4">At a Glance</h3>
-                <dl className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <dt className="text-ink-muted">Chapters</dt>
-                    <dd className="font-medium text-ink">31</dd>
+          <aside className="mt-12 lg:mt-0">
+            <div className="space-y-6 lg:sticky lg:top-24">
+              <div className="rounded-2xl border border-border bg-surface p-5">
+                <h3 className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-ink-faint">
+                  At a glance
+                </h3>
+                <dl className="mt-4 space-y-3 text-sm">
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-ink-muted">The Record</dt>
+                    <dd className="font-semibold text-ink">31 parts</dd>
                   </div>
-                  <div className="flex justify-between">
-                    <dt className="text-ink-muted">Power Profiles</dt>
-                    <dd className="font-medium text-ink">91+</dd>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-ink-muted">Evidence taxonomy</dt>
+                    <dd className="font-semibold text-ink">3 labels</dd>
                   </div>
-                  <div className="flex justify-between">
-                    <dt className="text-ink-muted">Primary Sources</dt>
-                    <dd className="font-medium text-ink">500+</dd>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-ink-muted">Source hierarchy</dt>
+                    <dd className="font-semibold text-ink">5 tiers</dd>
                   </div>
-                  <div className="flex justify-between">
-                    <dt className="text-ink-muted">Founded</dt>
-                    <dd className="font-medium text-ink">2024</dd>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-ink-muted">Public trust layer</dt>
+                    <dd className="font-semibold text-ink">Methodology + Sources</dd>
                   </div>
                 </dl>
               </div>
 
-              {/* Evidence Tiers */}
-              <div className="bg-surface border border-border rounded-lg p-5">
-                <h3 className="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Evidence Tiers</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-[#166534]" />
-                    <span className="text-sm text-ink">Verified</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-[#92400E]" />
-                    <span className="text-sm text-ink">Circumstantial</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-[#991B1B]" />
-                    <span className="text-sm text-ink">Disputed</span>
-                  </div>
-                </div>
+              <div className="rounded-2xl border border-border bg-surface p-5">
+                <h3 className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-ink-faint">
+                  Key routes
+                </h3>
+                <nav className="mt-4 space-y-3">
+                  {[
+                    { to: '/read', label: 'Read The Record' },
+                    { to: '/methodology', label: 'Methodology' },
+                    { to: '/sources', label: 'Sources' },
+                    { to: '/membership', label: 'Membership' },
+                    { to: '/content-pack', label: 'Content Pack' },
+                  ].map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className="block text-sm text-ink-muted transition-colors hover:text-crimson"
+                    >
+                      → {link.label}
+                    </Link>
+                  ))}
+                </nav>
               </div>
 
-              {/* Related Pages */}
-              <div className="bg-surface border border-border rounded-lg p-5">
-                <h3 className="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Related Pages</h3>
-                <nav className="space-y-2">
-                  <Link to="/methodology" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
-                    → Methodology
-                  </Link>
-                  <Link to="/sources" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
-                    → Sources
-                  </Link>
-                  <Link to="/privacy" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
-                    → Privacy Policy
-                  </Link>
-                  <Link to="/terms" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
-                    → Terms of Use
-                  </Link>
-                </nav>
+              <div className="rounded-2xl border border-crimson/15 bg-crimson/5 p-5">
+                <h3 className="font-serif text-lg font-semibold text-ink">Why this page matters</h3>
+                <p className="mt-3 font-body text-sm leading-relaxed text-ink-muted">
+                  About pages are trust surfaces. They should explain the publication model honestly, not pretend a
+                  bigger newsroom exists than the one actually doing the work.
+                </p>
               </div>
             </div>
           </aside>

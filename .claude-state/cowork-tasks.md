@@ -1,4 +1,8 @@
-# Veritas Audit Queue — 2026-04-07
+# Veritas Audit Queue — 2026-04-08
+
+- [x] P1 — Replaced the active operating canon in `VERITAS-PERFECTION-ENGINE.md` with the superseding v15.0 master directive supplied on April 8, 2026. Publication canon versus rights-package canon is explicit again, trust-first growth is the governing standard, and the prior prompt-level Institute AI exception is no longer active canon.
+- [x] P1 — Closed the route-canon drift around `/about` and `/content-packs`: replaced the fabricated `AboutPage.tsx` newsroom copy with a truthful publication overview, wired `/about` into `src/App.tsx`, added `/about` to prerender coverage, and added `/content-packs` as a compatibility alias to the canonical `/content-pack` route so trust links and verification memory no longer point at dead surfaces.
+- [P2] Live-verify the restored `/about` trust surface and `/content-packs` compatibility alias after production advances, then verify the deployed publication shell on `/`, `/read`, `/news`, `/membership`, and `/about` at 390px and 430px.
 
 - [x] P1 — Root-caused deployed source-taxonomy drift on `main`: production was still serving the retired four-tier source hierarchy on `/methodology`, the foreword methodology copy, the signed-in source browser labels, and generated chapter provenance counts. Synced those surfaces back to the canonical five-tier model in a clean worktree, rebuilt chapter exports/prerender output, and prepared the trust-layer patch for live deployment.
 - [x] P1 — Root-caused the mobile homepage dead zone on `/`: critical front-page modules were wrapped in scroll-triggered entrance styles that defaulted them to `opacity: 0`, so narrow viewports rendered a large blank region between the lead package and the table of contents until client-side intersection observers fired. The animation layer now renders immediately at 767px and below, and for reduced-motion users.
