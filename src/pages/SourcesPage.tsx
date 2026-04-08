@@ -58,9 +58,9 @@ function getEvidenceTierClasses(tier: EvidenceTier | 'all', active: boolean) {
 }
 
 export default function SourcesPage() {
-  const { isLoggedIn, openAuthModal } = useAuth()
+  const { authMode, canAccessProtectedContent, isLoggedIn, openAuthModal } = useAuth()
   const location = useLocation()
-  const { chapters, loading: chaptersLoading } = useAllChapters({ scope: isLoggedIn ? 'full' : 'public' })
+  const { chapters, loading: chaptersLoading } = useAllChapters({ scope: canAccessProtectedContent ? 'full' : 'public' })
   const [sourceFilter, setSourceFilter] = useState('')
   const [sourceHierarchyFilter, setSourceHierarchyFilter] = useState<SourceHierarchyFilter>('all')
   const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTier | 'all'>('all')
@@ -117,7 +117,7 @@ export default function SourcesPage() {
       }
     })
 
-  const filteredChapterSources = isLoggedIn
+  const filteredChapterSources = canAccessProtectedContent
     ? chapterSources
         .filter(chapter =>
           evidenceTierFilter === 'all' || chapter.availableEvidenceTiers.includes(evidenceTierFilter)
@@ -140,6 +140,7 @@ export default function SourcesPage() {
         .filter(chapter => chapter.sources.length > 0)
     : chapterSources
 
+  const isDegradedProfile = isLoggedIn && !canAccessProtectedContent && authMode === 'degraded'
   const filteredCount = filteredChapterSources.reduce((sum, chapter) => sum + chapter.sources.length, 0)
   const hasActiveSourceFilters =
     Boolean(sourceFilter.trim()) ||
@@ -172,7 +173,9 @@ export default function SourcesPage() {
                 Sources &amp; References
               </h1>
               <p className="font-body text-lg italic text-ink-muted leading-relaxed max-w-2xl">
-                {isLoggedIn
+                {isDegradedProfile
+                  ? 'Your reader profile is saved locally, but the database-backed source browser is temporarily unavailable while account sync is degraded. Public source counts remain visible below.'
+                  : canAccessProtectedContent
                   ? 'Every source cited in this publication is organized here for direct verification. The reader is encouraged to inspect the record independently.'
                   : 'Free reader accounts unlock the full source archive. Public readers can review chapter-by-chapter source counts and verification databases before signing in.'}
               </p>
@@ -187,10 +190,10 @@ export default function SourcesPage() {
                 </div>
                 <div className="text-center">
                   <p className="font-display text-xl sm:text-2xl font-bold text-crimson">
-                    {isLoggedIn ? allSources.filter(source => source.url).length : 'Free'}
+                    {canAccessProtectedContent ? allSources.filter(source => source.url).length : 'Free'}
                   </p>
                   <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">
-                    {isLoggedIn ? 'With Direct Links' : 'Reader Access'}
+                    {canAccessProtectedContent ? 'With Direct Links' : 'Reader Access'}
                   </p>
                 </div>
               </div>
@@ -201,7 +204,7 @@ export default function SourcesPage() {
                 <div className="inline-block w-8 h-8 border-2 border-crimson/20 border-t-crimson rounded-full animate-spin mb-4" />
                 <p className="font-body text-base text-ink-muted">Loading the source archive…</p>
               </div>
-            ) : isLoggedIn ? (
+            ) : canAccessProtectedContent ? (
               <>
                 <section className="mb-8 no-print border border-border bg-surface-raised p-4 sm:p-5">
                   <div className="mb-4">
@@ -409,18 +412,20 @@ export default function SourcesPage() {
             ) : (
               <section className="border border-border bg-surface p-6 sm:p-8">
                 <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-3">
-                  Reader Access
+                  {isDegradedProfile ? 'Account Sync' : 'Reader Access'}
                 </p>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-4">
-                  Create a free account to browse the full bibliography.
+                  {isDegradedProfile ? 'Full bibliography access is temporarily unavailable.' : 'Create a free account to browse the full bibliography.'}
                 </h2>
                 <p className="font-body text-base text-ink-muted leading-relaxed max-w-2xl mb-6">
-                  The public preview shows how heavily each chapter is sourced. Signing in unlocks the full citation library, direct links, and filter tools for document-by-document verification.
+                  {isDegradedProfile
+                    ? 'Your reader profile is saved locally, but full citation links and source filters require the database-backed account service. Public source counts remain available until account sync returns.'
+                    : 'The public preview shows how heavily each chapter is sourced. Signing in unlocks the full citation library, direct links, and filter tools for document-by-document verification.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 mb-8">
                   <button
                     onClick={() => openAuthModal({
-                      mode: 'signup',
+                      mode: isDegradedProfile ? 'login' : 'signup',
                       intent: {
                         returnTo: authReturnTo,
                         source: 'sources',
@@ -428,20 +433,22 @@ export default function SourcesPage() {
                     })}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                   >
-                    Create Free Account
+                    {isDegradedProfile ? 'Retry Sign-In' : 'Create Free Account'}
                   </button>
-                  <button
-                    onClick={() => openAuthModal({
-                      mode: 'login',
-                      intent: {
-                        returnTo: authReturnTo,
-                        source: 'sources',
-                      },
-                    })}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-crimson hover:text-crimson transition-colors"
-                  >
-                    Log In
-                  </button>
+                  {!isDegradedProfile && (
+                    <button
+                      onClick={() => openAuthModal({
+                        mode: 'login',
+                        intent: {
+                          returnTo: authReturnTo,
+                          source: 'sources',
+                        },
+                      })}
+                      className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+                    >
+                      Log In
+                    </button>
+                  )}
                   <Link
                     to="/membership"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink-muted font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-ink hover:text-ink transition-colors"

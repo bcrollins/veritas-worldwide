@@ -10,7 +10,7 @@ interface DownloadModalProps {
 }
 
 export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: DownloadModalProps) {
-  const { isLoggedIn, setShowAuthModal } = useAuth()
+  const { authMode, canAccessProtectedContent, isLoggedIn, setShowAuthModal } = useAuth()
   const [step, setStep] = useState<'cta' | 'downloading' | 'error'>('cta')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -30,8 +30,26 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
       return
     }
 
+    if (!canAccessProtectedContent) {
+      if (authMode === 'degraded') {
+        setStep('error')
+        setErrorMessage('Your reader profile is saved locally, but protected downloads are temporarily unavailable while account sync is degraded.')
+        return
+      }
+
+      onClose()
+      setShowAuthModal(true)
+      return
+    }
+
     const token = localStorage.getItem('veritas_token')
     if (!token) {
+      if (authMode === 'degraded') {
+        setStep('error')
+        setErrorMessage('Protected downloads require the live account service. Please try again once account sync is restored.')
+        return
+      }
+
       onClose()
       setShowAuthModal(true)
       return

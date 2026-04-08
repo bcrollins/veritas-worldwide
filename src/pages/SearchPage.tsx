@@ -164,14 +164,14 @@ function HighlightText({ text, query }: { text: string; query: string }) {
 }
 
 export default function SearchPage() {
-  const { isLoggedIn, openAuthModal } = useAuth()
+  const { authMode, canAccessProtectedContent, isLoggedIn, openAuthModal } = useAuth()
   const location = useLocation()
   const [searchParams, setSearchParams] = useSearchParams()
   const initialQuery = searchParams.get('q') || ''
   const [query, setQuery] = useState(initialQuery)
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery)
   const [results, setResults] = useState<SearchResult[]>([])
-  const [searchScope, setSearchScope] = useState<'public' | 'full'>(isLoggedIn ? 'full' : 'public')
+  const [searchScope, setSearchScope] = useState<'public' | 'full'>(canAccessProtectedContent ? 'full' : 'public')
   const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTier | 'all'>(
     sanitizeEvidenceTier(searchParams.get('evidence'))
   )
@@ -186,9 +186,10 @@ export default function SearchPage() {
   const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const totalChapters = chapterMeta.length
   const searchParamString = searchParams.toString()
-  const effectiveEvidenceTierFilter = isLoggedIn ? evidenceTierFilter : 'all'
-  const effectiveMatchFilter = isLoggedIn ? matchFilter : 'all'
-  const effectiveChapterTypeFilter = isLoggedIn ? chapterTypeFilter : 'all'
+  const effectiveEvidenceTierFilter = canAccessProtectedContent ? evidenceTierFilter : 'all'
+  const effectiveMatchFilter = canAccessProtectedContent ? matchFilter : 'all'
+  const effectiveChapterTypeFilter = canAccessProtectedContent ? chapterTypeFilter : 'all'
+  const isDegradedProfile = isLoggedIn && !canAccessProtectedContent && authMode === 'degraded'
   const authReturnTo = `${location.pathname}${location.search}${location.hash}`
   const hasActiveFilters =
     effectiveEvidenceTierFilter !== 'all' ||
@@ -286,7 +287,7 @@ export default function SearchPage() {
       setResults([])
       setError(null)
       setLoading(false)
-      setSearchScope(isLoggedIn ? 'full' : 'public')
+      setSearchScope(canAccessProtectedContent ? 'full' : 'public')
       return
     }
 
@@ -310,7 +311,7 @@ export default function SearchPage() {
     setError(null)
 
     fetch(`/api/search?${params.toString()}`, {
-      headers: isLoggedIn ? getAuthHeaders() : {},
+      headers: canAccessProtectedContent ? getAuthHeaders() : {},
       signal: controller.signal,
     })
       .then(async (response) => {
@@ -343,7 +344,7 @@ export default function SearchPage() {
     effectiveChapterTypeFilter,
     effectiveEvidenceTierFilter,
     effectiveMatchFilter,
-    isLoggedIn,
+    canAccessProtectedContent,
   ])
 
   const isPreviewSearch = searchScope === 'public'
@@ -379,14 +380,16 @@ export default function SearchPage() {
             {isPreviewSearch && (
               <div className="mb-8 border border-border bg-surface p-4 sm:p-5">
                 <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
-                  Preview Search
+                  {isDegradedProfile ? 'Account Sync' : 'Preview Search'}
                 </p>
                 <p className="font-body text-sm text-ink-muted leading-relaxed mb-3">
-                  Anonymous readers can search titles, keywords, and the three-block public preview. Sign in with a free reader account to search the full archive and source text.
+                  {isDegradedProfile
+                    ? 'Your reader profile is saved locally, but full-archive and source-text search are temporarily unavailable while account sync is degraded. Preview search remains available until the live auth service returns.'
+                    : 'Anonymous readers can search titles, keywords, and the three-block public preview. Sign in with a free reader account to search the full archive and source text.'}
                 </p>
                 <button
                   onClick={() => openAuthModal({
-                    mode: 'signup',
+                    mode: isDegradedProfile ? 'login' : 'signup',
                     intent: {
                       returnTo: authReturnTo,
                       source: 'search',
@@ -394,7 +397,7 @@ export default function SearchPage() {
                   })}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                 >
-                  Unlock Full Search
+                  {isDegradedProfile ? 'Retry Sign-In' : 'Unlock Full Search'}
                 </button>
               </div>
             )}
@@ -420,7 +423,7 @@ export default function SearchPage() {
               )}
             </div>
 
-            {isLoggedIn && (
+            {canAccessProtectedContent && (
               <section className="mb-10 border border-border bg-surface-raised p-4 sm:p-5">
                 <div className="mb-4">
                   <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">

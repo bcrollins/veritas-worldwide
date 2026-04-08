@@ -1,7 +1,9 @@
 import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react'
 import {
+  getAuthBackendMode,
   getAuthState,
   login as authLogin,
+  resolveAuthBackendMode,
   signup as authSignup,
   logout as authLogout,
   toggleBookmark as authToggleBookmark,
@@ -10,6 +12,7 @@ import {
   saveReadingProgress as authSaveProgress,
   getReadingProgress,
   updatePreferences as authUpdatePrefs,
+  type AuthBackendMode,
   type User,
   type ReadingProgress,
 } from './authStore'
@@ -33,6 +36,8 @@ interface OpenAuthModalOptions {
 interface AuthContextType {
   user: User | null
   isLoggedIn: boolean
+  authMode: AuthBackendMode
+  canAccessProtectedContent: boolean
   bookmarks: string[]
   readingProgress: ReadingProgress
   showAuthModal: boolean
@@ -91,6 +96,10 @@ function persistAuthIntent(intent: AuthIntent | null) {
 export function AuthProvider({ children }: { children: ReactNode }) {
   const initial = getAuthState()
   const [user, setUser] = useState<User | null>(initial.user)
+  const [authMode, setAuthMode] = useState<AuthBackendMode>(() => getAuthBackendMode())
+  const [canAccessProtectedContent, setCanAccessProtectedContent] = useState(
+    () => Boolean(initial.token) && getAuthBackendMode() !== 'degraded'
+  )
   const [bookmarks, setBookmarks] = useState<string[]>(initial.bookmarks)
   const [readingProgress, setReadingProgress] = useState<ReadingProgress>(initial.readingProgress || {})
   const [showAuthModalState, setShowAuthModalState] = useState(false)
@@ -134,6 +143,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return intent
   }, [authIntent, clearAuthIntent])
 
+  const syncAccessState = useCallback((mode: AuthBackendMode) => {
+    const nextHasProtectedAccess = Boolean(getAuthState().token) && mode !== 'degraded'
+    setAuthMode(mode)
+    setCanAccessProtectedContent(nextHasProtectedAccess)
+    return nextHasProtectedAccess
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+
+    resolveAuthBackendMode()
+      .then((mode) => {
+        if (cancelled) return
+        syncAccessState(mode)
+      })
+      .catch(() => {
+        if (cancelled) return
+        syncAccessState(getAuthBackendMode())
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [syncAccessState])
+
   // Validate session on mount — sync with server
   useEffect(() => {
     if (!initial.token) { setIsLoading(false); return }
@@ -147,9 +181,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(null)
         setBookmarks([])
       }
+      syncAccessState(getAuthBackendMode())
       setIsLoading(false)
-    }).catch(() => setIsLoading(false))
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    }).catch(() => {
+      syncAccessState(getAuthBackendMode())
+      setIsLoading(false)
+    })
+  }, [initial.token, syncAccessState]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const login = useCallback(async (email: string, password: string) => {
     const result = await authLogin(email, password)
@@ -157,34 +195,47 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(result.user)
       setBookmarks(getBookmarks())
       setReadingProgress(getReadingProgress())
+      const hasProtectedAccess = syncAccessState(getAuthBackendMode())
       trackLogin('email')
-      showToast('Welcome back.')
+      showToast(
+        hasProtectedAccess
+          ? 'Welcome back.'
+          : 'Signed in locally. Full archive access is temporarily unavailable while account sync is degraded.'
+      )
       // Sync full state from server
       validateSession().then(data => {
         if (data) {
           setBookmarks(data.bookmarks)
           setReadingProgress(data.readingProgress)
         }
+        syncAccessState(getAuthBackendMode())
       }).catch(() => {})
     }
     return { success: result.success, error: result.error }
-  }, [showToast])
+  }, [showToast, syncAccessState])
 
   const signup = useCallback(async (email: string, password: string, displayName: string) => {
     const result = await authSignup(email, password, displayName)
     if (result.success && result.user) {
       setUser(result.user)
       setBookmarks(getBookmarks())
+      const hasProtectedAccess = syncAccessState(getAuthBackendMode())
       trackSignUp('email')
       scoreAccountCreated()
-      showToast('Account created. Welcome.')
+      showToast(
+        hasProtectedAccess
+          ? 'Account created. Welcome.'
+          : 'Reader profile saved locally. Full archive access is temporarily unavailable while account sync is degraded.'
+      )
     }
     return { success: result.success, error: result.error }
-  }, [showToast])
+  }, [showToast, syncAccessState])
 
   const logout = useCallback(() => {
     authLogout()
     setUser(null)
+    setAuthMode(getAuthBackendMode())
+    setCanAccessProtectedContent(false)
     setBookmarks([])
     setReadingProgress({})
     showToast('Signed out.')
@@ -223,6 +274,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     <AuthContext.Provider value={{
       user,
       isLoggedIn: !!user,
+      authMode,
+      canAccessProtectedContent,
       bookmarks,
       readingProgress,
       showAuthModal: showAuthModalState,

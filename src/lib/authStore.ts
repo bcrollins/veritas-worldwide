@@ -52,13 +52,27 @@ function authHeaders(): Record<string, string> {
 }
 
 type AuthBackendAvailability = 'available' | 'unavailable' | 'unknown'
+export type AuthBackendMode = 'database' | 'degraded' | 'unknown'
 
 // ── Auth backend availability check ──
 let authBackendAvailable: AuthBackendAvailability | null = null
+let authBackendMode: AuthBackendMode = 'unknown'
 let authBackendRefreshTimer: ReturnType<typeof setTimeout> | null = null
 
-function cacheAuthBackendAvailability(value: AuthBackendAvailability) {
-  authBackendAvailable = value
+function normalizeAuthBackendMode(value: unknown, fallback: AuthBackendMode = 'unknown'): AuthBackendMode {
+  if (value === 'database' || value === 'degraded') {
+    return value
+  }
+
+  return fallback
+}
+
+function cacheAuthBackendStatus(
+  availability: AuthBackendAvailability,
+  mode: AuthBackendMode = 'unknown'
+) {
+  authBackendAvailable = availability
+  authBackendMode = mode
 
   if (authBackendRefreshTimer) {
     clearTimeout(authBackendRefreshTimer)
@@ -66,8 +80,18 @@ function cacheAuthBackendAvailability(value: AuthBackendAvailability) {
 
   authBackendRefreshTimer = setTimeout(() => {
     authBackendAvailable = null
+    authBackendMode = 'unknown'
     authBackendRefreshTimer = null
   }, 60000)
+}
+
+export function getAuthBackendMode(): AuthBackendMode {
+  return authBackendMode
+}
+
+export async function resolveAuthBackendMode(): Promise<AuthBackendMode> {
+  await checkAuthBackend()
+  return authBackendMode
 }
 
 function getCachedFallbackState() {
@@ -85,13 +109,16 @@ function shouldTryAuthBackend(status: AuthBackendAvailability) {
   return status !== 'unavailable'
 }
 
-function updateAuthBackendAvailabilityFromResponse(status: number) {
+function updateAuthBackendAvailabilityFromResponse(
+  status: number,
+  mode: AuthBackendMode = 'database'
+) {
   if (status === 503 || status === 404 || status === 405) {
-    cacheAuthBackendAvailability('unavailable')
+    cacheAuthBackendStatus('unavailable', mode)
     return 'unavailable' as const
   }
 
-  cacheAuthBackendAvailability('available')
+  cacheAuthBackendStatus('available', mode)
   return 'available' as const
 }
 
@@ -111,21 +138,28 @@ async function checkAuthBackend(): Promise<AuthBackendAvailability> {
 
   try {
     const res = await fetch('/api/auth/status', { method: 'GET', signal: AbortSignal.timeout(3000) })
-
-    if (res.status === 503) {
-      cacheAuthBackendAvailability('unavailable')
-      return 'unavailable'
-    }
+    const data = await readJsonResponse<{ available?: boolean; mode?: string }>(res)
+    const resolvedMode = normalizeAuthBackendMode(
+      data?.mode,
+      res.ok ? 'database' : 'unknown'
+    )
 
     if (!res.ok) {
-      cacheAuthBackendAvailability('unknown')
+      if (res.status === 503 || res.status === 404 || res.status === 405) {
+        cacheAuthBackendStatus('unavailable', resolvedMode)
+        return 'unavailable'
+      }
+
+      cacheAuthBackendStatus('unknown', resolvedMode)
       return 'unknown'
     }
 
-    const data = await readJsonResponse<{ available?: boolean }>(res)
-    cacheAuthBackendAvailability(data?.available === true ? 'available' : 'unavailable')
+    cacheAuthBackendStatus(
+      data?.available === true ? 'available' : 'unavailable',
+      resolvedMode
+    )
   } catch {
-    cacheAuthBackendAvailability('unavailable')
+    cacheAuthBackendStatus('unavailable', 'unknown')
   }
 
   return authBackendAvailable!
@@ -207,7 +241,7 @@ export async function signup(email: string, password: string, displayName: strin
       saveUserLocal(user)
       return { success: true, user }
     } catch {
-      cacheAuthBackendAvailability('unavailable')
+      cacheAuthBackendStatus('unavailable', getAuthBackendMode())
       // Fall through to localStorage when auth is degraded.
     }
   }
@@ -246,7 +280,7 @@ export async function login(email: string, password: string): Promise<{ success:
       saveUserLocal(user)
       return { success: true, user }
     } catch {
-      cacheAuthBackendAvailability('unavailable')
+      cacheAuthBackendStatus('unavailable', getAuthBackendMode())
       // Fall through to localStorage when auth is degraded.
     }
   }
@@ -291,7 +325,7 @@ export async function validateSession(): Promise<{ user: User; bookmarks: string
     saveProgressLocal(data.readingProgress || {})
     return { user, bookmarks: data.bookmarks || [], readingProgress: data.readingProgress || {} }
   } catch {
-    cacheAuthBackendAvailability('unavailable')
+    cacheAuthBackendStatus('unavailable', getAuthBackendMode())
     // Offline — use cached state
     return getCachedFallbackState()
   }
