@@ -10,7 +10,8 @@
     "start": "node server.js",
     "preview": "vite preview",
     "verify:auth": "node scripts/verify-auth-flows.mjs",
-    "verify:sources": "node scripts/verify-source-links.mjs"
+    "verify:sources": "node scripts/verify-source-links.mjs",
+    "verify:analytics": "node scripts/verify-analytics-snapshot.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
