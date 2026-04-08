@@ -32,6 +32,8 @@ export type SubscriptionSource =
   | 'membership_page'
   | 'article_cta'
   | 'topic_hub'
+  | 'institute_course'
+  | 'institute_guide'
   | 'newsletter_legacy_migration'
   | 'bible_history_page'
 

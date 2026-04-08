@@ -5,6 +5,7 @@ import {
   getInstituteRelatedTopics,
   getInstituteTopicBySlug,
 } from '../data/instituteCatalog'
+import InstituteSignupPanel from '../components/institute/InstituteSignupPanel'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 export default function InstituteCoursePage() {
@@ -58,6 +59,18 @@ export default function InstituteCoursePage() {
           { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SITE_URL}/institute` },
           { '@type': 'ListItem', position: 3, name: topic.courseTitle, item: `${SITE_URL}/institute/courses/${topic.slug}` },
         ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: course.faq.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
       },
     ])
 
@@ -348,6 +361,8 @@ export default function InstituteCoursePage() {
           </section>
         </div>
       </section>
+
+      <InstituteSignupPanel topic={topic} surface="course" />
     </article>
   )
 }

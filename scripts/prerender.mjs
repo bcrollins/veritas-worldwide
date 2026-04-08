@@ -974,6 +974,24 @@ function renderInstituteBookPage(topics, researchSources) {
 
 function buildInstituteCourseJsonLd(topic) {
   const brief = buildInstituteBrief(topic)
+  const faqEntries = [
+    {
+      question: 'What is the fastest realistic way to get started?',
+      answer: `${topic.firstAction} The institute treats fast starts as structured starts: the first win is clarity and setup, not pretending the hard part disappeared.`,
+    },
+    {
+      question: 'What actually proves progress?',
+      answer: `${lowerFirst(topic.outcome)} is the real milestone. The institute wants visible proof: a sample, a checklist, a log, a supervised result, or another artifact that shows the system works outside your head.`,
+    },
+    {
+      question: 'How does Veritas Institute handle evidence on this path?',
+      answer: 'Official rules, public guidance, and credentialing pathways are treated as verified foundations. Market outcomes, earnings, and time-to-income claims are framed more cautiously unless the proof is strong and attributable.',
+    },
+    {
+      question: 'What should I avoid while learning this?',
+      answer: topic.warning,
+    },
+  ]
 
   return [
     {
@@ -995,11 +1013,50 @@ function buildInstituteCourseJsonLd(topic) {
       about: [topic.skill, instituteTrackLabels[topic.track] || topic.track],
       url: `${SITE_URL}/institute/courses/${topic.slug}`,
     },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
+        { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SITE_URL}/institute` },
+        { '@type': 'ListItem', position: 3, name: topic.courseTitle, item: `${SITE_URL}/institute/courses/${topic.slug}` },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqEntries.map((entry) => ({
+        '@type': 'Question',
+        name: entry.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: entry.answer,
+        },
+      })),
+    },
   ]
 }
 
 function buildInstituteGuideJsonLd(topic) {
   const brief = buildInstituteBrief(topic)
+  const faqEntries = [
+    {
+      question: 'What is the fastest realistic way to get started?',
+      answer: `${topic.firstAction} The institute treats fast starts as structured starts: the first win is clarity and setup, not pretending the hard part disappeared.`,
+    },
+    {
+      question: 'What actually proves progress?',
+      answer: `${lowerFirst(topic.outcome)} is the real milestone. The institute wants visible proof: a sample, a checklist, a log, a supervised result, or another artifact that shows the system works outside your head.`,
+    },
+    {
+      question: 'How does Veritas Institute handle evidence on this path?',
+      answer: 'Official rules, public guidance, and credentialing pathways are treated as verified foundations. Market outcomes, earnings, and time-to-income claims are framed more cautiously unless the proof is strong and attributable.',
+    },
+    {
+      question: 'What should I avoid while learning this?',
+      answer: topic.warning,
+    },
+  ]
 
   return [
     {
@@ -1030,6 +1087,27 @@ function buildInstituteGuideJsonLd(topic) {
       supply: (topic.tools || []).map((tool) => ({
         '@type': 'HowToSupply',
         name: tool,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/institute` },
+        { '@type': 'ListItem', position: 3, name: topic.articleTitle, item: `${SITE_URL}/institute/guides/${topic.slug}` },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqEntries.map((entry) => ({
+        '@type': 'Question',
+        name: entry.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: entry.answer,
+        },
       })),
     },
   ]

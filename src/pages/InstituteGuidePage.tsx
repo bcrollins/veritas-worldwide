@@ -5,6 +5,7 @@ import {
   getInstituteRelatedTopics,
   getInstituteTopicBySlug,
 } from '../data/instituteCatalog'
+import InstituteSignupPanel from '../components/institute/InstituteSignupPanel'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 export default function InstituteGuidePage() {
@@ -66,6 +67,18 @@ export default function InstituteGuidePage() {
           { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/institute` },
           { '@type': 'ListItem', position: 3, name: guide.title, item: `${SITE_URL}/institute/guides/${topic.slug}` },
         ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: guide.faq.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
       },
     ])
 
@@ -302,6 +315,8 @@ export default function InstituteGuidePage() {
           ))}
         </div>
       </section>
+
+      <InstituteSignupPanel topic={topic} surface="guide" />
     </article>
   )
 }

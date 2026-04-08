@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { getArticleBySlug } from '../data/articles'
 import { chapterMeta } from '../data/chapterMeta'
+import { getInstituteTopicBySlug } from '../data/instituteCatalog'
 import { getTopicArticles, getTopicChapters, getTopicHubByKeyword, getTopicHubBySlug } from '../data/topicHubs'
 import { useAuth } from '../lib/AuthContext'
 import { clearMetaTags, removeJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
@@ -50,9 +51,40 @@ function ArticleCard({ slug }: { slug: string }) {
   )
 }
 
+function InstitutePathCard({
+  eyebrow,
+  title,
+  description,
+  to,
+}: {
+  eyebrow: string
+  title: string
+  description: string
+  to: string
+}) {
+  return (
+    <Link
+      to={to}
+      className="group block border border-border bg-surface p-5 hover:border-crimson/40 hover:bg-parchment-dark/40 transition-colors"
+    >
+      <p className="font-sans text-[0.55rem] font-bold tracking-[0.16em] uppercase text-crimson mb-2">
+        {eyebrow}
+      </p>
+      <h3 className="font-display text-xl font-bold text-ink leading-tight group-hover:text-crimson transition-colors">
+        {title}
+      </h3>
+      <p className="font-body text-sm text-ink-muted leading-relaxed mt-3">
+        {description}
+      </p>
+    </Link>
+  )
+}
+
 const SOURCE_LABELS: Record<string, string> = {
   topic_hub: 'Topic Hub Subscriber',
   article_cta: 'Current Reporting Subscriber',
+  institute_course: 'Institute Course Subscriber',
+  institute_guide: 'Institute Guide Subscriber',
   newsletter_inline: 'New Subscriber',
   newsletter_footer: 'New Subscriber',
   exit_intent: 'New Subscriber',
@@ -71,19 +103,78 @@ export default function SubscribeSuccessPage() {
   const interest = searchParams.get('interest') || ''
   const returnTo = searchParams.get('returnTo') || ''
 
+  const instituteTopic = getInstituteTopicBySlug(topicSlug)
   const topic = getTopicHubBySlug(topicSlug) || (interest ? getTopicHubByKeyword(interest) : undefined)
   const article = articleSlug ? getArticleBySlug(articleSlug) : undefined
+  const isInstituteSource = source === 'institute_course' || source === 'institute_guide'
 
   const featuredChapters = (topic ? getTopicChapters(topic) : chapterMeta.slice(0, 3)).slice(0, 3)
   const featuredArticles = (topic ? getTopicArticles(topic) : article ? [article] : []).slice(0, 2)
+  const instituteContinueHref = source === 'institute_course'
+    ? `/institute/courses/${topicSlug}`
+    : `/institute/guides/${topicSlug}`
+  const continueHref = returnTo || (
+    instituteTopic && isInstituteSource
+      ? instituteContinueHref
+      : article
+        ? `/news/${article.slug}`
+        : topic
+          ? `/topics/${topic.slug}`
+          : '/read'
+  )
+  const accountReturnTo = instituteTopic && isInstituteSource
+    ? continueHref
+    : topic
+      ? `/topics/${topic.slug}`
+      : continueHref
 
-  const continueHref = returnTo || (article ? `/news/${article.slug}` : topic ? `/topics/${topic.slug}` : '/read')
-  const accountReturnTo = topic ? `/topics/${topic.slug}` : continueHref
+  const headline = instituteTopic && isInstituteSource
+    ? 'Your institute subscription is active.'
+    : topic
+      ? `You're in for ${topic.name}.`
+      : 'You are subscribed to the record.'
+  const description = instituteTopic && isInstituteSource
+    ? `Your inbox is set for ${instituteTopic.trackMeta.shortLabel.toLowerCase()} updates. Use the links below to move from signup into the guide, companion course, and field manual without losing the thread.`
+    : topic
+      ? `Your inbox is set for ${topic.name} reporting. Use the links below to move from subscription into the documented archive.`
+      : 'Your inbox is set. Use the links below to move from subscription into the documented archive.'
 
-  const headline = topic ? `You're in for ${topic.name}.` : 'You are subscribed to the record.'
-  const description = topic
-    ? `Your inbox is set for ${topic.name} reporting. Use the links below to move from subscription into the documented archive.`
-    : 'Your inbox is set. Use the links below to move from subscription into the documented archive.'
+  const instituteStartCards = instituteTopic && isInstituteSource
+    ? [
+        source === 'institute_course'
+          ? {
+              eyebrow: 'Course',
+              title: instituteTopic.courseTitle,
+              description: `Return to the paced path for ${instituteTopic.outcome.toLowerCase()}.`,
+              to: `/institute/courses/${instituteTopic.slug}`,
+            }
+          : {
+              eyebrow: 'Guide',
+              title: instituteTopic.articleTitle,
+              description: `Reopen the shortest defensible answer for ${instituteTopic.skill.toLowerCase()}.`,
+              to: `/institute/guides/${instituteTopic.slug}`,
+            },
+        source === 'institute_course'
+          ? {
+              eyebrow: 'Companion Guide',
+              title: instituteTopic.articleTitle,
+              description: 'Move from the paced course into the shorter retrieval-first version.',
+              to: `/institute/guides/${instituteTopic.slug}`,
+            }
+          : {
+              eyebrow: 'Companion Course',
+              title: instituteTopic.courseTitle,
+              description: 'Turn the short answer into a paced system with proof standards and checkpoints.',
+              to: `/institute/courses/${instituteTopic.slug}`,
+            },
+        {
+          eyebrow: 'Field Manual',
+          title: 'Veritas Institute Field Manual',
+          description: 'Use the print-friendly manual when the question becomes immediate, household, or time-sensitive.',
+          to: '/institute/book',
+        },
+      ]
+    : []
 
   useEffect(() => {
     setMetaTags({
@@ -123,14 +214,18 @@ export default function SubscribeSuccessPage() {
                   to={continueHref}
                   className="inline-flex items-center justify-center rounded-sm bg-crimson px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white hover:bg-crimson-dark transition-colors"
                 >
-                  {topic ? `Continue with ${topic.name}` : 'Continue reading'}
+                  {instituteTopic && isInstituteSource
+                    ? 'Continue the path'
+                    : topic
+                      ? `Continue with ${topic.name}`
+                      : 'Continue reading'}
                 </Link>
                 {isLoggedIn ? (
                   <Link
-                    to="/read"
+                    to={instituteTopic && isInstituteSource ? '/institute' : '/read'}
                     className="inline-flex items-center justify-center rounded-sm border border-border px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
                   >
-                    Open the full archive
+                    {instituteTopic && isInstituteSource ? 'Open the institute' : 'Open the full archive'}
                   </Link>
                 ) : (
                   <button
@@ -161,9 +256,19 @@ export default function SubscribeSuccessPage() {
             <div className="flex-1 h-[1px] bg-border" />
           </div>
           <div className="grid gap-4">
-            {featuredChapters.map((chapter) => (
-              <ChapterCard key={chapter.id} chapterId={chapter.id} />
-            ))}
+            {instituteTopic && isInstituteSource
+              ? instituteStartCards.map((card) => (
+                  <InstitutePathCard
+                    key={`${card.eyebrow}-${card.to}`}
+                    eyebrow={card.eyebrow}
+                    title={card.title}
+                    description={card.description}
+                    to={card.to}
+                  />
+                ))
+              : featuredChapters.map((chapter) => (
+                  <ChapterCard key={chapter.id} chapterId={chapter.id} />
+                ))}
           </div>
         </div>
 
@@ -173,13 +278,23 @@ export default function SubscribeSuccessPage() {
               What Happens Next
             </p>
             <ul className="space-y-3 font-body text-sm text-ink-muted leading-relaxed">
-              <li>You&apos;ll receive new reporting and source releases in your inbox.</li>
-              <li>Use a free reader account to move from email into the full archive, bookmarks, and gated chapters.</li>
-              <li>Every beat on Veritas links back to the underlying public record.</li>
+              {instituteTopic && isInstituteSource ? (
+                <>
+                  <li>You&apos;ll receive new practical paths and field-manual updates in this lane.</li>
+                  <li>Use a free reader account to move from email into saved institute routes and the wider Veritas archive.</li>
+                  <li>The guide handles the short answer. The companion course handles the paced buildout. The field manual handles urgent retrieval.</li>
+                </>
+              ) : (
+                <>
+                  <li>You&apos;ll receive new reporting and source releases in your inbox.</li>
+                  <li>Use a free reader account to move from email into the full archive, bookmarks, and gated chapters.</li>
+                  <li>Every beat on Veritas links back to the underlying public record.</li>
+                </>
+              )}
             </ul>
           </div>
 
-          {featuredArticles.length > 0 && (
+          {!isInstituteSource && featuredArticles.length > 0 && (
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h2 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
