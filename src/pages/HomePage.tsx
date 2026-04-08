@@ -501,7 +501,7 @@ export default function HomePage() {
 
           {/* Reading Guide CTA */}
           <section className="py-12 border-t border-border">
-            <div className="bg-ink p-8 md:p-12 text-center">
+            <div className="bg-obsidian p-8 md:p-12 text-center">
               <p className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-white/50 mb-3">Before You Begin</p>
               <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-4">Read the Methodology &amp; Evidence Standards</h3>
               <p className="font-body text-sm text-white/60 max-w-xl mx-auto mb-6">

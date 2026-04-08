@@ -106,7 +106,7 @@ export default function AuthModal() {
       aria-label={authModalMode === 'signup' ? 'Create account' : 'Sign in'}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-ink/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-obsidian/60 backdrop-blur-sm" />
 
       {/* Modal */}
       <div ref={modalRef} className="relative w-full max-w-md bg-parchment rounded-sm shadow-2xl border border-border" data-testid="auth-modal">

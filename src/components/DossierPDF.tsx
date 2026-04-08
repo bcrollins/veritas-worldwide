@@ -364,7 +364,7 @@ export default function DossierPDF() {
     <button
       onClick={handleDownload}
       disabled={generating}
-      className="inline-flex items-center gap-2 px-5 py-2.5 bg-ink text-white font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-ink/80 transition-colors disabled:opacity-50"
+      className="inline-flex items-center gap-2 px-5 py-2.5 bg-obsidian text-white font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-obsidian/80 transition-colors disabled:opacity-50"
     >
       {generating ? (
         <>

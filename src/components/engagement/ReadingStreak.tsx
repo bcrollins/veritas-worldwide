@@ -38,7 +38,7 @@ export default function ReadingStreak() {
         {streak}
       </span>
       {showToast && (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-sm shadow-lg font-sans text-sm font-medium bg-ink text-white animate-fadeIn max-w-sm text-center"
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-sm shadow-lg font-sans text-sm font-medium bg-obsidian text-white animate-fadeIn max-w-sm text-center"
           role="status" aria-live="polite">
           <p className="font-bold">{streak}-day reading streak!</p>
           {showMembershipNudge && (

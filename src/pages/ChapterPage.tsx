@@ -730,7 +730,7 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
       )}
       <div
         id="share-toast"
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-2.5 bg-ink text-white font-sans text-sm rounded-sm shadow-lg opacity-0 translate-y-2 transition-all duration-200 pointer-events-none z-[100]"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-2.5 bg-obsidian text-white font-sans text-sm rounded-sm shadow-lg opacity-0 translate-y-2 transition-all duration-200 pointer-events-none z-[100]"
         aria-live="polite"
       />
     </div>
@@ -1088,7 +1088,7 @@ export default function ChapterPage() {
               {evidenceCounts.verified > 0 && (
                 <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-verified bg-verified-bg border border-verified-border px-2.5 py-1 rounded-sm relative group cursor-help">
                   <span aria-hidden="true">✓</span> {evidenceCounts.verified} Verified
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-obsidian text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
                     Supported by primary source documents — court filings, congressional records, executive orders, peer-reviewed studies.
                   </span>
                 </span>
@@ -1096,7 +1096,7 @@ export default function ChapterPage() {
               {evidenceCounts.circumstantial > 0 && (
                 <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-circumstantial bg-circumstantial-bg border border-circumstantial-border px-2.5 py-1 rounded-sm relative group cursor-help">
                   <span aria-hidden="true">◐</span> {evidenceCounts.circumstantial} Circumstantial
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-obsidian text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
                     Individual facts are documented. The connection drawn between them is an interpretation. Alternative explanations noted.
                   </span>
                 </span>
@@ -1104,7 +1104,7 @@ export default function ChapterPage() {
               {evidenceCounts.disputed > 0 && (
                 <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-disputed bg-disputed-bg border border-disputed-border px-2.5 py-1 rounded-sm relative group cursor-help">
                   <span aria-hidden="true">⚠</span> {evidenceCounts.disputed} Disputed
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-ink text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-obsidian text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
                     Claimed by a named source or in sworn testimony but not independently confirmed. Clearly labeled.
                   </span>
                 </span>

@@ -35,7 +35,7 @@ export default function AdminLayout() {
   return (
     <div className="min-h-screen bg-[#0f0f0f] flex">
       {/* Sidebar */}
-      <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-ink border-r border-white/5 flex flex-col transition-all duration-200 flex-shrink-0`}>
+      <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-obsidian border-r border-white/5 flex flex-col transition-all duration-200 flex-shrink-0`}>
         <div className="flex items-center gap-2 px-4 h-14 border-b border-white/5">
           <div className="w-8 h-8 bg-crimson rounded flex items-center justify-center flex-shrink-0">
             <span className="font-serif text-sm font-bold text-white">V</span>
@@ -102,7 +102,7 @@ export default function AdminLayout() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="h-14 border-b border-white/5 flex items-center justify-between px-6 bg-ink/50">
+        <header className="h-14 border-b border-white/5 flex items-center justify-between px-6 bg-obsidian/50">
           <div>
             <h2 className="font-sans text-xs font-bold tracking-widest uppercase text-white/50">
               {NAV_ITEMS.find(i => i.to === location.pathname)?.label || 'Admin'}

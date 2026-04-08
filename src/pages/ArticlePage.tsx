@@ -66,7 +66,7 @@ function ContentBlock({ block }: { block: ArticleBlock }) {
       )
     case 'callout':
       return (
-        <div className="my-6 p-5 bg-ink text-white rounded-sm">
+        <div className="my-6 p-5 bg-obsidian text-white rounded-sm">
           <p className="font-body text-sm leading-relaxed">{block.text}</p>
         </div>
       )

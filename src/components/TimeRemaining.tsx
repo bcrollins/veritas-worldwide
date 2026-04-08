@@ -24,7 +24,7 @@ export default function TimeRemaining({ totalMinutes }: { totalMinutes: number }
 
   return (
     <div
-      className="fixed top-[52px] right-4 z-50 px-3 py-1.5 bg-ink/80 backdrop-blur-sm text-white font-sans text-xs rounded-full shadow-lg no-print transition-opacity duration-300"
+      className="fixed top-[52px] right-4 z-50 px-3 py-1.5 bg-obsidian/80 backdrop-blur-sm text-white font-sans text-xs rounded-full shadow-lg no-print transition-opacity duration-300"
       aria-live="polite"
       aria-label={`${remaining} minutes remaining`}
     >

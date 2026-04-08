@@ -589,7 +589,7 @@ export default function DeepStatePage() {
     <article className="min-h-screen">
       <ReadingProgress />
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-ink text-white py-20 px-6">
+      <section className="bg-obsidian text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-sans text-[0.6rem] tracking-[0.3em] uppercase text-white/40 mb-4">Veritas Worldwide — Investigative Dossier</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 tracking-tight">The Deep State</h1>
@@ -881,7 +881,7 @@ export default function DeepStatePage() {
       </div>
 
       {/* ── Methodology Footer ────────────────────────────────── */}
-      <section className="bg-ink text-white/70 py-16 px-6">
+      <section className="bg-obsidian text-white/70 py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-serif text-xl font-bold text-white mb-4">Methodology & Editorial Standards</h2>
           <div className="space-y-3 font-body text-sm leading-relaxed">

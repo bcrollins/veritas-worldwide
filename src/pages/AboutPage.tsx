@@ -185,9 +185,9 @@ export default function AboutPage() {
             </section>
 
             {/* Subscribe CTA */}
-            <section className="bg-ink text-parchment rounded-xl p-8 md:p-10">
+            <section className="bg-obsidian text-white rounded-xl p-8 md:p-10">
               <h2 className="text-2xl font-serif font-bold mb-3">Support Independent Journalism</h2>
-              <p className="text-parchment/70 mb-6 max-w-lg">
+              <p className="text-white/70 mb-6 max-w-lg">
                 Veritas Worldwide is funded entirely by readers. Subscribe to get full access to all 31 chapters, power profiles, and exclusive investigative updates.
               </p>
               <a

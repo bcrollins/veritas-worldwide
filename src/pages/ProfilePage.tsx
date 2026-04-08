@@ -788,7 +788,7 @@ export default function ProfilePage(): React.ReactNode {
                         onClick={() => setTierFilter(t)}
                         className={`px-2.5 py-1 rounded-sm text-xs font-sans font-semibold transition-colors min-h-[36px] ${
                           tierFilter === t
-                            ? t === 'all' ? 'bg-ink text-white' : `text-white`
+                            ? t === 'all' ? 'bg-obsidian text-white' : `text-white`
                             : 'text-ink-muted hover:text-ink bg-parchment-dark'
                         }`}
                         style={tierFilter === t && t !== 'all' ? { backgroundColor: TIER_COLORS[t] } : undefined}

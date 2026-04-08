@@ -56,7 +56,7 @@ export default function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-[100] bg-ink/95 backdrop-blur-md text-white px-6 py-4 no-print"
+      className="fixed bottom-0 left-0 right-0 z-[100] bg-obsidian/95 backdrop-blur-md text-white px-6 py-4 no-print"
       role="dialog"
       aria-label="Cookie consent"
       data-testid="cookie-consent-banner"

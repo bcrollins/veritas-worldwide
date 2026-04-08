@@ -327,7 +327,7 @@ function PackCard({ pack }: { pack: ContentPack }) {
   return (
     <div className="bg-white dark:bg-[#1a1a1a] border border-border rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
       {/* Stat Header */}
-      <div className="bg-ink text-white p-5">
+      <div className="bg-obsidian text-white p-5">
         <p className="font-display text-3xl font-bold text-crimson-light">{pack.stat.value}</p>
         <p className="font-sans text-[0.6rem] tracking-[0.12em] uppercase text-white/50 mt-1">{pack.stat.label}</p>
       </div>
@@ -353,7 +353,7 @@ function PackCard({ pack }: { pack: ContentPack }) {
               key={p}
               onClick={() => setActivePlatform(p)}
               className={`font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase px-3 py-1.5 rounded-sm transition-colors ${
-                activePlatform === p ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50'
+                activePlatform === p ? 'bg-obsidian text-white' : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50'
               }`}
             >
               {p === 'twitter' ? 'X / Twitter' : p.charAt(0).toUpperCase() + p.slice(1)}
@@ -375,7 +375,7 @@ function PackCard({ pack }: { pack: ContentPack }) {
           <button
             onClick={handleCopy}
             className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-sm font-sans text-xs font-semibold transition-all ${
-              copied ? 'bg-emerald-600 text-white' : 'bg-ink text-white hover:bg-ink/80'
+              copied ? 'bg-emerald-600 text-white' : 'bg-obsidian text-white hover:bg-obsidian/80'
             }`}
           >
             {copied ? (
@@ -483,7 +483,7 @@ export default function ContentPacksPage() {
         </div>
       </div>
       {/* Hero */}
-      <div className="bg-ink text-white">
+      <div className="bg-obsidian text-white">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/40 mb-3">
             Veritas Worldwide
@@ -514,7 +514,7 @@ export default function ContentPacksPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Logo Preview Dark */}
             <div className="bg-white dark:bg-[#1a1a1a] border border-border rounded-lg p-5 text-center">
-              <div className="w-20 h-20 mx-auto mb-4 bg-ink rounded-lg flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-4 bg-obsidian rounded-lg flex items-center justify-center">
                 <svg className="w-12 h-12" viewBox="0 0 32 32">
                   <rect width="32" height="32" rx="2" fill="#8B1A1A" />
                   <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="22" fontWeight="bold" fill="#FAF8F5">V</text>

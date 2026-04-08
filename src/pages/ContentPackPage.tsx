@@ -242,7 +242,7 @@ export default function ContentPackPage() {
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap items-center gap-4 border-b border-border">
         <button
           onClick={handleDownloadAll}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-ink text-white font-sans text-[13px] font-semibold hover:bg-ink/80 transition-colors"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-obsidian text-white font-sans text-[13px] font-semibold hover:bg-obsidian/80 transition-colors"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
           Download All Graphics ({SHARE_CARDS.length} images)

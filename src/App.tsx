@@ -424,7 +424,7 @@ function Header() {
 
       {menuOpen && (
         <div
-          className="fixed inset-0 z-[60] bg-ink/30 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[60] bg-obsidian/30 backdrop-blur-sm md:hidden"
           onClick={() => setMenuOpen(false)}
           aria-hidden="true"
         />

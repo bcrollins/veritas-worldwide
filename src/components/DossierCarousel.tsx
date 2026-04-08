@@ -363,7 +363,7 @@ export function CarouselDownloader({ slides, title, filenamePrefix }: {
 
   return (
     <div className="border border-border rounded-sm overflow-hidden bg-surface">
-      <div className="bg-ink text-white p-5">
+      <div className="bg-obsidian text-white p-5">
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div>
             <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-white/40 mb-1">

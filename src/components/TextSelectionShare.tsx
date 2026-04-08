@@ -37,7 +37,7 @@ export default function TextSelectionShare() {
 
   return (
     <div
-      className="fixed z-[100] flex items-center gap-1 bg-ink text-white rounded-full shadow-xl px-2 py-1.5 animate-fade-in no-print"
+      className="fixed z-[100] flex items-center gap-1 bg-obsidian text-white rounded-full shadow-xl px-2 py-1.5 animate-fade-in no-print"
       style={{ left: pos.x, top: pos.y, transform: 'translate(-50%, -100%)' }}
     >
       <button

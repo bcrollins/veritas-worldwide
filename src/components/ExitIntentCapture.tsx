@@ -82,7 +82,7 @@ export default function ExitIntentCapture() {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-ink/70 backdrop-blur-sm" onClick={handleDismiss} />
+      <div className="absolute inset-0 bg-obsidian/70 backdrop-blur-sm" onClick={handleDismiss} />
 
       {/* Modal */}
       <div className="relative bg-parchment rounded-sm shadow-2xl max-w-md w-full overflow-hidden">
@@ -98,7 +98,7 @@ export default function ExitIntentCapture() {
         </button>
 
         {/* Header bar */}
-        <div className="bg-ink px-6 py-4">
+        <div className="bg-obsidian px-6 py-4">
           <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-crimson">
             Before you go
           </p>

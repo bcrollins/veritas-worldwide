@@ -184,7 +184,7 @@ export default function NewsPage() {
               onClick={() => setActiveCategory('all')}
               className={`whitespace-nowrap font-sans text-[0.6rem] font-semibold tracking-[0.12em] uppercase px-3 py-1.5 rounded-sm transition-colors ${
                 activeCategory === 'all'
-                  ? 'bg-ink text-white'
+                  ? 'bg-obsidian text-white'
                   : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50'
               }`}
             >
@@ -196,7 +196,7 @@ export default function NewsPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`whitespace-nowrap font-sans text-[0.6rem] font-semibold tracking-[0.12em] uppercase px-3 py-1.5 rounded-sm transition-colors ${
                   activeCategory === cat
-                    ? 'bg-ink text-white'
+                    ? 'bg-obsidian text-white'
                     : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50'
                 }`}
               >
@@ -267,7 +267,7 @@ export default function NewsPage() {
                         <SharePanel variant="compact" title="Share Veritas News" url={`${SITE_URL}/news`} />
                       </div>
 
-                      <div className="mt-6 bg-ink text-white rounded-sm p-5">
+                      <div className="mt-6 bg-obsidian text-white rounded-sm p-5">
                         <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-white/50 mb-2">
                           Support Independent Journalism
                         </p>

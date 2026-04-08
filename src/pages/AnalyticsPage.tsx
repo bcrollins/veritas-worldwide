@@ -70,7 +70,7 @@ function DailyChart({ data }: { data: { date: string; views: number }[] }) {
               className="flex-1 bg-crimson/70 hover:bg-crimson rounded-t-sm transition-colors relative group"
               style={{ height: `${Math.max(pct, 2)}%` }}
             >
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 hidden group-hover:block bg-ink text-white text-[10px] font-sans px-2 py-1 rounded whitespace-nowrap z-10">
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 hidden group-hover:block bg-obsidian text-white text-[10px] font-sans px-2 py-1 rounded whitespace-nowrap z-10">
                 {d.date}: {d.views.toLocaleString()}
               </div>
             </div>

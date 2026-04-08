@@ -738,7 +738,7 @@ function MoneyTrailCard({ node }: { node: MoneyTrailNode }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="font-display text-xl font-bold text-crimson">{node.amount}</span>
-            <span className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full text-white bg-ink">
+            <span className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full text-white bg-obsidian">
               {node.type}
             </span>
           </div>
@@ -788,7 +788,7 @@ function IncidentCard({ incident }: { incident: DocumentedIncident }) {
           <div>
             <div className="flex items-center gap-2 mb-2 flex-wrap">
               <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase text-white ${
-                incident.tier === 'verified' ? 'bg-ink' : 'bg-ink/70'
+                incident.tier === 'verified' ? 'bg-obsidian' : 'bg-obsidian/70'
               }`}>
                 {incident.tier === 'verified' ? '✓ Verified' : '◐ Circumstantial'}
               </span>
@@ -1097,7 +1097,7 @@ export default function IsraelDossierPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
                         <span className="font-display text-lg font-bold text-crimson">{event.year}</span>
-                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.55rem] font-sans font-bold tracking-wider uppercase text-white ${event.tier === 'verified' ? 'bg-ink' : 'bg-ink/70'}`}>
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.55rem] font-sans font-bold tracking-wider uppercase text-white ${event.tier === 'verified' ? 'bg-obsidian' : 'bg-obsidian/70'}`}>
                           {event.tier === 'verified' ? '✓ Verified' : '◐ Circumstantial'}
                         </span>
                       </div>
@@ -1198,7 +1198,7 @@ export default function IsraelDossierPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
                     <span className="font-display text-xl font-bold text-crimson">{record.amount}</span>
-                    <span className="font-sans text-[0.55rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-ink text-white">{record.cycle}</span>
+                    <span className="font-sans text-[0.55rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-obsidian text-white">{record.cycle}</span>
                   </div>
                   <p className="font-sans text-sm font-bold text-ink">{record.organization}</p>
                   <p className="font-body text-xs text-ink-muted mt-1">Recipients: {record.recipients}</p>
@@ -1219,7 +1219,7 @@ export default function IsraelDossierPage() {
           {LEGAL_CASES.map((legalCase, i) => (
             <div key={i} className="p-4 border border-border rounded-sm bg-surface">
               <div className="flex items-center gap-2 flex-wrap mb-2">
-                <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.55rem] font-sans font-bold tracking-wider uppercase text-white ${legalCase.status === 'decided' ? 'bg-ink' : legalCase.status === 'ongoing' ? 'bg-crimson' : 'bg-ink/70'}`}>
+                <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.55rem] font-sans font-bold tracking-wider uppercase text-white ${legalCase.status === 'decided' ? 'bg-obsidian' : legalCase.status === 'ongoing' ? 'bg-crimson' : 'bg-obsidian/70'}`}>
                   {legalCase.status}
                 </span>
                 <span className="font-sans text-[0.55rem] text-ink-faint">{legalCase.court} · {legalCase.date}</span>
@@ -1258,7 +1258,7 @@ export default function IsraelDossierPage() {
                   <div className="flex items-start justify-between gap-2">
                     <p className="font-display text-3xl md:text-4xl font-bold leading-tight text-crimson">{stat.value}</p>
                     {stat.tier && (
-                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.5rem] font-sans font-bold tracking-wider uppercase text-white flex-shrink-0 ${stat.tier === 'verified' ? 'bg-ink' : 'bg-ink/70'}`}>
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[0.5rem] font-sans font-bold tracking-wider uppercase text-white flex-shrink-0 ${stat.tier === 'verified' ? 'bg-obsidian' : 'bg-obsidian/70'}`}>
                         {stat.tier === 'verified' ? '✓' : '◐'}
                       </span>
                     )}
@@ -1490,7 +1490,7 @@ export default function IsraelDossierPage() {
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('The Israel Dossier — every statistic sourced, every dollar traced, every incident documented.')}&url=${encodeURIComponent(SITE_URL + '/israel-dossier')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-ink text-white font-sans text-xs font-semibold tracking-wide rounded-sm hover:bg-ink/80 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-obsidian text-white font-sans text-xs font-semibold tracking-wide rounded-sm hover:bg-obsidian/80 transition-colors"
           >
             Share on X / Twitter
           </a>
@@ -1504,7 +1504,7 @@ export default function IsraelDossierPage() {
       </div>
 
       {/* ─── DONATION CTA ─── */}
-      <section className="p-8 bg-ink text-white rounded-sm text-center mb-12">
+      <section className="p-8 bg-obsidian text-white rounded-sm text-center mb-12">
         <p className="font-body text-sm italic text-white/60 mb-4">
           Documenting the public record takes time and resources. If this page informed you, consider supporting the work.
         </p>

@@ -36,7 +36,7 @@ export default function DonationBanner() {
   }
 
   return (
-    <section className="bg-ink text-white py-12 my-16 no-print" data-testid="donation-banner">
+    <section className="bg-obsidian text-white py-12 my-16 no-print" data-testid="donation-banner">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/50 mb-4">
           From the Publisher

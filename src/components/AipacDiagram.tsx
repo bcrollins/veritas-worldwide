@@ -107,7 +107,7 @@ function MemberPopup({ member, onClose }: { member: CongressMember; onClose: () 
   }, [onClose])
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 backdrop-blur-sm p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-obsidian/40 backdrop-blur-sm p-4">
       <div
         ref={popupRef}
         className="bg-surface border border-border rounded-sm shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto"
@@ -485,7 +485,7 @@ export default function AipacDiagram() {
       </div>
 
       {/* Aggregate stats bar */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 bg-ink text-white rounded-sm p-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 bg-obsidian text-white rounded-sm p-4">
         <div className="text-center">
           <p className="font-display text-xl md:text-2xl font-bold">{fmt(AIPAC_STATS.totalSpent2024Cycle)}</p>
           <p className="font-sans text-[0.55rem] tracking-[0.1em] uppercase text-white/60 mt-0.5">2024 Cycle Total</p>
@@ -587,7 +587,7 @@ export default function AipacDiagram() {
         <div className="overflow-x-auto border border-border rounded-sm">
           <table className="w-full text-left">
             <thead>
-              <tr className="bg-ink text-white">
+              <tr className="bg-obsidian text-white">
                 <th className="px-4 py-2.5 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase">#</th>
                 <th className="px-4 py-2.5 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase">Member</th>
                 <th className="px-4 py-2.5 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase">Party</th>
@@ -734,7 +734,7 @@ export default function AipacDiagram() {
             </div>
             <div className="overflow-x-auto border border-border rounded-sm max-h-[500px] overflow-y-auto">
               <table className="w-full text-left">
-                <thead className="sticky top-0 bg-ink text-white z-10">
+                <thead className="sticky top-0 bg-obsidian text-white z-10">
                   <tr>
                     <th className="px-3 py-2 font-sans text-[0.55rem] font-bold tracking-[0.1em] uppercase">Name</th>
                     <th className="px-3 py-2 font-sans text-[0.55rem] font-bold tracking-[0.1em] uppercase">Party</th>
