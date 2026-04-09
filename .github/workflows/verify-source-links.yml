@@ -1,0 +1,46 @@
+name: Verify Source Links
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '43 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SOURCE_LINK_STRICT: '1'
+      SOURCE_LINK_TIMEOUT_MS: '15000'
+      SOURCE_LINK_CONCURRENCY: '12'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify source links
+        run: npm run verify:sources
+
+      - name: Upload source verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-link-report
+          path: |
+            .claude-state/source-link-report.json
+            .claude-state/source-link-report.md
