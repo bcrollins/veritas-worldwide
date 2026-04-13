@@ -4,14 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "npx tsc && vite build",
+    "dev": "node scripts/dev-runtime.mjs",
+    "dev:vite": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/typescript/bin/tsc && node ./node_modules/vite/bin/vite.js build",
     "postbuild": "node scripts/export-chapter-data.mjs && node scripts/prerender.mjs",
     "start": "node server.js",
-    "preview": "vite preview",
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
     "verify:auth": "node scripts/verify-auth-flows.mjs",
+    "verify:auth-cache": "node --experimental-strip-types scripts/verify-auth-cache-isolation.mjs",
+    "verify:auth-cache-browser": "node scripts/verify-auth-cache-browser.mjs",
+    "verify:dev-runtime": "node scripts/verify-dev-runtime.mjs",
     "verify:sources": "node scripts/verify-source-links.mjs",
-    "verify:analytics": "node scripts/verify-analytics-snapshot.mjs"
+    "verify:analytics": "node scripts/verify-analytics-snapshot.mjs",
+    "verify:release": "node scripts/verify-release-identity.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

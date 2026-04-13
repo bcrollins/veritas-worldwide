@@ -92,8 +92,6 @@ export interface Community {
   bannerColor: string
   rules: { title: string; body: string }[]
   flairs: PostFlair[]
-  memberCount: number
-  onlineCount: number
   createdAt: number
   moderators: string[]
   nsfw: boolean
@@ -181,8 +179,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'question', text: 'Question', bgColor: '#92400e', textColor: '#ffffff' },
       { id: 'meta', text: 'Meta', bgColor: '#6b21a8', textColor: '#ffffff' },
     ],
-    memberCount: 14832,
-    onlineCount: 347,
     createdAt: Date.now() - 365 * 86400000,
     moderators: ['VeritasAdmin', 'TheTruthWatcher'],
     nsfw: false,
@@ -210,8 +206,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'policy-impact', text: 'Policy Impact', bgColor: '#991b1b', textColor: '#ffffff' },
       { id: 'lobbyist-watch', text: 'Lobbyist Watch', bgColor: '#6b21a8', textColor: '#ffffff' },
     ],
-    memberCount: 11204,
-    onlineCount: 289,
     createdAt: Date.now() - 300 * 86400000,
     moderators: ['VeritasAdmin', 'FollowTheMoney'],
     nsfw: false,
@@ -238,8 +232,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'intel-community', text: 'Intel Community', bgColor: '#6b21a8', textColor: '#ffffff' },
       { id: 'corporate-ties', text: 'Corporate Ties', bgColor: '#92400e', textColor: '#ffffff' },
     ],
-    memberCount: 9876,
-    onlineCount: 412,
     createdAt: Date.now() - 280 * 86400000,
     moderators: ['VeritasAdmin', 'DeepDigger'],
     nsfw: false,
@@ -266,8 +258,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'new-evidence', text: 'New Evidence', bgColor: '#1e40af', textColor: '#ffffff' },
       { id: 'debunked', text: 'Debunked', bgColor: '#4a4a4a', textColor: '#ffffff' },
     ],
-    memberCount: 6543,
-    onlineCount: 178,
     createdAt: Date.now() - 250 * 86400000,
     moderators: ['VeritasAdmin', 'SourceChecker'],
     nsfw: false,
@@ -294,8 +284,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'intel-operative', text: 'Intel Operative', bgColor: '#991b1b', textColor: '#ffffff' },
       { id: 'corporate-exec', text: 'Corporate Executive', bgColor: '#166534', textColor: '#ffffff' },
     ],
-    memberCount: 8234,
-    onlineCount: 356,
     createdAt: Date.now() - 200 * 86400000,
     moderators: ['VeritasAdmin', 'ProfileBuilder'],
     nsfw: false,
@@ -319,8 +307,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'implemented', text: 'Implemented', bgColor: '#166534', textColor: '#ffffff' },
       { id: 'rejected', text: 'Rejected', bgColor: '#991b1b', textColor: '#ffffff' },
     ],
-    memberCount: 3421,
-    onlineCount: 89,
     createdAt: Date.now() - 340 * 86400000,
     moderators: ['VeritasAdmin'],
     nsfw: false,
@@ -345,8 +331,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'success-story', text: 'Success Story', bgColor: '#166534', textColor: '#ffffff' },
       { id: 'strategy', text: 'Strategy', bgColor: '#92400e', textColor: '#ffffff' },
     ],
-    memberCount: 5678,
-    onlineCount: 201,
     createdAt: Date.now() - 180 * 86400000,
     moderators: ['VeritasAdmin', 'MediaOps'],
     nsfw: false,
@@ -372,8 +356,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'leak-analysis', text: 'Leak Analysis', bgColor: '#991b1b', textColor: '#ffffff' },
       { id: 'protection', text: 'Protection', bgColor: '#92400e', textColor: '#ffffff' },
     ],
-    memberCount: 4123,
-    onlineCount: 98,
     createdAt: Date.now() - 150 * 86400000,
     moderators: ['VeritasAdmin', 'SecureSource'],
     nsfw: false,
@@ -385,7 +367,7 @@ export const COMMUNITIES: Community[] = [
     displayName: 'Veritas Memes & Satire',
     description: 'Political satire, memes, and humor — still fact-based',
     longDescription: 'Even truth-seekers need to laugh. Post political satire, memes, and humor related to the topics covered by Veritas. Keep it sharp, keep it factual, keep it funny.',
-    icon: 'chat-bubble',
+    icon: 'chatbubble',
     bannerColor: '#ea580c',
     rules: [
       { title: 'Humor Required', body: 'This is a meme sub. Low-effort rage posts belong in General.' },
@@ -398,8 +380,6 @@ export const COMMUNITIES: Community[] = [
       { id: 'shitpost', text: 'Shitpost', bgColor: '#4a4a4a', textColor: '#ffffff' },
       { id: 'oc', text: 'Original Content', bgColor: '#166534', textColor: '#ffffff' },
     ],
-    memberCount: 7890,
-    onlineCount: 523,
     createdAt: Date.now() - 120 * 86400000,
     moderators: ['VeritasAdmin', 'MemeLord'],
     nsfw: false,
@@ -494,6 +474,19 @@ export function toggleSavePost(postId: string, userId: string) {
   savePosts(posts)
 }
 
+export function awardPost(postId: string, awardId: string, userId: string): ForumPost | undefined {
+  const posts = loadPosts()
+  const post = posts.find(p => p.id === postId)
+  if (!post) return undefined
+
+  const existingAward = post.awards.find(award => award.awardId === awardId && award.givenBy === userId)
+  if (existingAward) existingAward.count += 1
+  else post.awards.push({ awardId, givenBy: userId, count: 1 })
+
+  savePosts(posts)
+  return post
+}
+
 /* ── Comment Operations ───────────────────────────────────────── */
 
 export function loadComments(postId?: string): ForumComment[] {
@@ -529,6 +522,19 @@ export function voteComment(commentId: string, userId: string, direction: VoteDi
   if (direction === 'up') comment.upvotes.push(userId)
   else if (direction === 'down') comment.downvotes.push(userId)
   saveToStorage(COMMENTS_KEY, comments)
+}
+
+export function awardComment(commentId: string, awardId: string, userId: string): ForumComment | undefined {
+  const comments = loadFromStorage<ForumComment>(COMMENTS_KEY, SEED_COMMENTS)
+  const comment = comments.find(c => c.id === commentId)
+  if (!comment) return undefined
+
+  const existingAward = comment.awards.find(award => award.awardId === awardId && award.givenBy === userId)
+  if (existingAward) existingAward.count += 1
+  else comment.awards.push({ awardId, givenBy: userId, count: 1 })
+
+  saveToStorage(COMMENTS_KEY, comments)
+  return comment
 }
 
 

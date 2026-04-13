@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react'
+import { useState, useEffect, lazy, Suspense, type FocusEvent } from 'react'
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
 import { isAdminLoggedIn } from './lib/adminAuth'
@@ -14,6 +14,7 @@ import { useScrollDepth } from './hooks/useScrollDepth'
 import { I18nProvider, useI18n } from './lib/i18n'
 import LanguageSelector from './components/LanguageSelector'
 import NewsletterSignup from './components/NewsletterSignup'
+import { trackPageView } from './lib/hubspot'
 import { handleStripeReturn } from './lib/conversionTracking'
 import VeritasLogo from './components/VeritasLogo'
 import { useExperiment } from './hooks/useExperiment'
@@ -76,6 +77,16 @@ type ShellLink = {
   match?: (pathname: string) => boolean
 }
 
+type ShellMenuItem = ShellLink & {
+  description?: string
+}
+
+type ShellDropdown = {
+  label: string
+  items: ShellMenuItem[]
+  match: (pathname: string) => boolean
+}
+
 function normalizePath(pathname: string) {
   return pathname !== '/' && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname
 }
@@ -117,6 +128,7 @@ function ThemeToggle() {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null)
   const location = useLocation()
   const { isLoggedIn, user, logout, openAuthModal } = useAuth()
   const { t } = useI18n()
@@ -129,12 +141,14 @@ function Header() {
 
   useEffect(() => {
     setMenuOpen(false)
+    setOpenDesktopMenu(null)
   }, [location.pathname])
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setMenuOpen(false)
+        setOpenDesktopMenu(null)
       }
     }
 
@@ -154,35 +168,139 @@ function Header() {
     }
   }, [menuOpen])
 
-  const primaryLinks: ShellLink[] = [
-    { to: '/', label: 'The Record' },
-    { to: '/read', label: 'Read', match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter') },
-    { to: '/news', label: 'News', match: pathname => matchesPrefix(pathname, '/news') },
-    { to: '/israel-dossier', label: 'Dossiers', match: pathname => matchesPrefix(pathname, '/israel-dossier') || normalizePath(pathname) === '/deep-state' },
-    { to: '/profiles', label: 'Profiles', match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile') },
-    { to: '/forum', label: 'Forum', match: pathname => matchesPrefix(pathname, '/forum') },
-  ]
-
   const trustLinks: ShellLink[] = [
     { to: '/methodology', label: t('nav.methodology') },
     { to: '/sources', label: t('nav.sources') },
   ]
 
-  const utilityLinks: ShellLink[] = [
-    { to: '/institute', label: 'Institute', match: pathname => matchesPrefix(pathname, '/institute') },
-    { to: '/topics', label: 'Topics', match: pathname => matchesPrefix(pathname, '/topics') },
-    { to: '/search', label: t('nav.search') },
+  const instituteLink: ShellLink = {
+    to: '/institute',
+    label: 'Veritas Institute',
+    match: pathname => matchesPrefix(pathname, '/institute'),
+  }
+
+  const desktopDropdowns: ShellDropdown[] = [
+    {
+      label: 'The Record',
+      match: pathname =>
+        normalizePath(pathname) === '/' ||
+        normalizePath(pathname) === '/read' ||
+        matchesPrefix(pathname, '/chapter') ||
+        normalizePath(pathname) === '/timeline',
+      items: [
+        {
+          to: '/read',
+          label: 'Read the Book',
+          match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter'),
+          description: 'Foreword, overview, and the full chapter archive.',
+        },
+        {
+          to: '/',
+          label: 'Front Page',
+          match: pathname => normalizePath(pathname) === '/',
+          description: 'The publication front with the strongest current entry points.',
+        },
+        {
+          to: '/timeline',
+          label: t('nav.timeline'),
+          match: pathname => normalizePath(pathname) === '/timeline',
+          description: 'A chronological map of the record and its recurring actors.',
+        },
+      ],
+    },
+    {
+      label: 'Dossiers',
+      match: pathname => matchesPrefix(pathname, '/israel-dossier') || normalizePath(pathname) === '/deep-state',
+      items: [
+        {
+          to: '/israel-dossier',
+          label: 'Israel Dossier',
+          match: pathname => matchesPrefix(pathname, '/israel-dossier'),
+          description: 'War, lobbying, aid, and institutional influence in one dossier shell.',
+        },
+        {
+          to: '/deep-state',
+          label: 'Deep State / Epstein',
+          match: pathname => normalizePath(pathname) === '/deep-state',
+          description: 'The intelligence, blackmail, and institutional capture investigation.',
+        },
+      ],
+    },
+    {
+      label: 'Reference',
+      match: pathname =>
+        matchesPrefix(pathname, '/profiles') ||
+        matchesPrefix(pathname, '/profile') ||
+        matchesPrefix(pathname, '/topics') ||
+        normalizePath(pathname) === '/methodology' ||
+        normalizePath(pathname) === '/sources',
+      items: [
+        {
+          to: '/profiles',
+          label: 'Profiles',
+          match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile'),
+          description: 'People, organizations, and relationship context tied back to the record.',
+        },
+        {
+          to: '/topics',
+          label: 'Topics',
+          match: pathname => matchesPrefix(pathname, '/topics'),
+          description: 'Search-intent explainers that bridge investigations, news, and study paths.',
+        },
+        {
+          to: '/methodology',
+          label: t('nav.methodology'),
+          match: pathname => normalizePath(pathname) === '/methodology',
+          description: 'How evidence is graded, sourced, and corrected.',
+        },
+        {
+          to: '/sources',
+          label: t('nav.sources'),
+          match: pathname => normalizePath(pathname) === '/sources',
+          description: 'The public bibliography and outbound trust layer.',
+        },
+      ],
+    },
   ]
 
-  const drawerResearchLinks: ShellLink[] = [
-    { to: '/methodology', label: t('nav.methodology') },
-    { to: '/sources', label: t('nav.sources') },
+  const desktopPrimaryLinks: ShellLink[] = [
+    { to: '/news', label: 'Current Events', match: pathname => matchesPrefix(pathname, '/news') },
+    { to: '/forum', label: 'Forum Beta', match: pathname => matchesPrefix(pathname, '/forum') },
+  ]
+
+  const desktopUtilityLinks: ShellLink[] = [
+    { to: '/search', label: t('nav.search'), match: pathname => normalizePath(pathname) === '/search' },
+  ]
+
+  const mobileQuickLinks: ShellLink[] = [
+    { to: '/read', label: 'The Record', match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter') },
+    { to: '/news', label: 'Current Events', match: pathname => matchesPrefix(pathname, '/news') },
+    { to: '/israel-dossier', label: 'Dossiers', match: pathname => matchesPrefix(pathname, '/israel-dossier') || normalizePath(pathname) === '/deep-state' },
     { to: '/institute', label: 'Institute', match: pathname => matchesPrefix(pathname, '/institute') },
+    { to: '/search', label: t('nav.search'), match: pathname => normalizePath(pathname) === '/search' },
+  ]
+
+  const drawerPublicationLinks: ShellLink[] = [
+    { to: '/', label: 'Front Page', match: pathname => normalizePath(pathname) === '/' },
+    { to: '/read', label: 'The Record', match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter') },
+    { to: '/news', label: 'Current Events', match: pathname => matchesPrefix(pathname, '/news') },
+    { to: '/forum', label: 'Forum Beta', match: pathname => matchesPrefix(pathname, '/forum') },
+    { to: '/timeline', label: t('nav.timeline'), match: pathname => normalizePath(pathname) === '/timeline' },
+    instituteLink,
+  ]
+
+  const drawerDossierLinks: ShellLink[] = [
+    { to: '/israel-dossier', label: 'Israel Dossier', match: pathname => matchesPrefix(pathname, '/israel-dossier') },
+    { to: '/deep-state', label: 'Deep State / Epstein', match: pathname => normalizePath(pathname) === '/deep-state' },
+  ]
+
+  const drawerReferenceLinks: ShellLink[] = [
+    { to: '/profiles', label: 'Profiles', match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile') },
     { to: '/topics', label: 'Topics', match: pathname => matchesPrefix(pathname, '/topics') },
-    { to: '/timeline', label: t('nav.timeline') },
-    { to: '/content-pack', label: 'Content Packs', match: pathname => normalizePath(pathname) === '/content-pack' || normalizePath(pathname) === '/share' },
-    { to: '/deep-state', label: 'Deep State' },
-    { to: '/bible', label: 'The Bible' },
+    { to: '/methodology', label: t('nav.methodology'), match: pathname => normalizePath(pathname) === '/methodology' },
+    { to: '/sources', label: t('nav.sources'), match: pathname => normalizePath(pathname) === '/sources' },
+    { to: '/search', label: t('nav.search'), match: pathname => normalizePath(pathname) === '/search' },
+    { to: '/bible', label: 'The Bible', match: pathname => normalizePath(pathname) === '/bible' },
   ]
 
   const accountLinks: ShellLink[] = [
@@ -197,16 +315,6 @@ function Header() {
     day: 'numeric',
   })
 
-  const desktopPrimaryLinkClass = (link: ShellLink) => {
-    const active = isLinkActive(location.pathname, link)
-
-    return `inline-flex min-h-[44px] items-center rounded-full px-4 font-sans text-[0.68rem] font-semibold tracking-[0.08em] uppercase whitespace-nowrap transition-colors ${
-      active
-        ? 'bg-ink text-surface shadow-sm'
-        : 'text-ink-muted hover:bg-surface hover:text-ink'
-    }`
-  }
-
   const desktopUtilityLinkClass = (link: ShellLink) => {
     const active = isLinkActive(location.pathname, link)
 
@@ -214,6 +322,35 @@ function Header() {
       active
         ? 'text-crimson'
         : 'text-ink-faint hover:text-ink'
+    }`
+  }
+
+  const desktopNavItemClass = (active: boolean, expanded = false) =>
+    `inline-flex min-h-[44px] items-center rounded-full px-4 font-sans text-[0.68rem] font-semibold tracking-[0.08em] uppercase whitespace-nowrap transition-colors ${
+      active || expanded
+        ? 'bg-ink text-surface shadow-sm'
+        : 'text-ink-muted hover:bg-surface hover:text-ink'
+    }`
+
+  const desktopPrimaryLinkClass = (link: ShellLink) => desktopNavItemClass(isLinkActive(location.pathname, link))
+
+  const desktopInstituteLinkClass = () => {
+    const active = isLinkActive(location.pathname, instituteLink)
+
+    return `inline-flex min-h-[44px] items-center rounded-full border px-4 font-sans text-[0.62rem] font-bold tracking-[0.08em] uppercase whitespace-nowrap transition-colors ${
+      active
+        ? 'border-crimson bg-crimson text-surface shadow-sm'
+        : 'border-crimson/20 bg-surface text-crimson hover:border-crimson/40 hover:bg-crimson/5'
+    }`
+  }
+
+  const desktopSubmenuItemClass = (link: ShellMenuItem) => {
+    const active = isLinkActive(location.pathname, link)
+
+    return `block rounded-[1.1rem] px-4 py-3 transition-colors ${
+      active
+        ? 'bg-surface text-ink shadow-sm'
+        : 'text-ink-muted hover:bg-surface hover:text-ink'
     }`
   }
 
@@ -235,6 +372,12 @@ function Header() {
         ? 'bg-ink text-surface'
         : 'border border-border bg-surface text-ink-muted'
     }`
+  }
+
+  const handleDesktopMenuBlur = (event: FocusEvent<HTMLDivElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      setOpenDesktopMenu(null)
+    }
   }
 
   return (
@@ -353,9 +496,9 @@ function Header() {
           <Link to="/" className="inline-flex flex-col items-center gap-3 group sm:flex-row sm:gap-5" aria-label="Veritas Worldwide — Home">
             <VeritasLogo variant="icon" size="md" className="flex-shrink-0 transition-transform group-hover:scale-[1.02]" />
             <div className="flex flex-col items-center sm:items-start">
-              <h1 className="font-display text-2xl font-bold leading-none tracking-tight text-ink transition-colors group-hover:text-crimson sm:text-4xl lg:text-[2.75rem]">
+              <span className="font-display text-2xl font-bold leading-none tracking-tight text-ink transition-colors group-hover:text-crimson sm:text-4xl lg:text-[2.75rem]">
                 Veritas Worldwide
-              </h1>
+              </span>
               <span className="mt-1 font-serif text-sm italic text-ink-muted">
                 No party. No agenda. Just the record.
               </span>
@@ -375,7 +518,65 @@ function Header() {
               >
                 <VeritasLogo variant="icon" size="xs" />
               </Link>
-              {primaryLinks.map(link => (
+
+              {desktopDropdowns.map(menu => {
+                const active = menu.match(location.pathname)
+                const expanded = openDesktopMenu === menu.label
+
+                return (
+                  <div
+                    key={menu.label}
+                    className="relative"
+                    onMouseEnter={() => setOpenDesktopMenu(menu.label)}
+                    onMouseLeave={() => setOpenDesktopMenu(current => (current === menu.label ? null : current))}
+                    onFocus={() => setOpenDesktopMenu(menu.label)}
+                    onBlur={handleDesktopMenuBlur}
+                  >
+                    <button
+                      type="button"
+                      className={`${desktopNavItemClass(active, expanded)} gap-2`}
+                      aria-haspopup="true"
+                      aria-expanded={expanded}
+                      onClick={() => setOpenDesktopMenu(current => (current === menu.label ? null : menu.label))}
+                    >
+                      <span>{menu.label}</span>
+                      <svg
+                        className={`h-3 w-3 transition-transform ${expanded ? 'rotate-180' : ''}`}
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path d="M2.25 4.5L6 8.25L9.75 4.5" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+
+                    {expanded && (
+                      <div className="absolute left-0 top-full z-20 mt-3 w-[18rem] rounded-[1.4rem] border border-border/80 bg-parchment-dark/95 p-2 shadow-[0_20px_60px_-30px_rgba(26,26,26,0.35)] backdrop-blur">
+                        {menu.items.map(link => (
+                          <Link
+                            key={link.to}
+                            to={link.to}
+                            className={desktopSubmenuItemClass(link)}
+                            onClick={() => setOpenDesktopMenu(null)}
+                            {...(isLinkActive(location.pathname, link) ? { 'aria-current': 'page' as const } : {})}
+                          >
+                            <span className="block font-sans text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
+                              {link.label}
+                            </span>
+                            {link.description && (
+                              <span className="mt-1 block font-body text-sm leading-snug text-ink-faint">
+                                {link.description}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+
+              {desktopPrimaryLinks.map(link => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -388,7 +589,7 @@ function Header() {
             </div>
 
             <div className="flex items-center gap-2 py-2">
-              {utilityLinks.map(link => (
+              {desktopUtilityLinks.map(link => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -398,11 +599,20 @@ function Header() {
                   {link.label}
                 </Link>
               ))}
+
+              <Link
+                to={instituteLink.to}
+                className={desktopInstituteLinkClass()}
+                {...(isLinkActive(location.pathname, instituteLink) ? { 'aria-current': 'page' as const } : {})}
+              >
+                <span className="hidden lg:inline">Veritas Institute</span>
+                <span className="lg:hidden">Institute</span>
+              </Link>
             </div>
           </nav>
 
           <nav className="flex items-center gap-2 overflow-x-auto py-2 md:hidden" aria-label="Primary navigation">
-            {primaryLinks.map(link => (
+            {mobileQuickLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -412,13 +622,6 @@ function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/search"
-              className={mobilePillClass({ to: '/search', label: t('nav.search') })}
-              {...(normalizePath(location.pathname) === '/search' ? { 'aria-current': 'page' as const } : {})}
-            >
-              {t('nav.search')}
-            </Link>
           </nav>
         </div>
       </div>
@@ -459,10 +662,10 @@ function Header() {
         <div className="flex h-[calc(100vh-4rem)] flex-col overflow-y-auto px-6 py-6">
           <section>
             <p className="mb-3 font-sans text-[0.62rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
-              Primary
+              Publication
             </p>
             <div className="flex flex-col gap-2">
-              {primaryLinks.map(link => (
+              {drawerPublicationLinks.map(link => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -474,24 +677,35 @@ function Header() {
                   <span aria-hidden="true">›</span>
                 </Link>
               ))}
-              <Link
-                to="/search"
-                className={drawerLinkClass({ to: '/search', label: t('nav.search') })}
-                onClick={() => setMenuOpen(false)}
-                {...(normalizePath(location.pathname) === '/search' ? { 'aria-current': 'page' as const } : {})}
-              >
-                <span>{t('nav.search')}</span>
-                <span aria-hidden="true">›</span>
-              </Link>
             </div>
           </section>
 
           <section className="mt-7">
             <p className="mb-3 font-sans text-[0.62rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
-              Research & Archive
+              Investigations
             </p>
             <div className="flex flex-col gap-2">
-              {drawerResearchLinks.map(link => (
+              {drawerDossierLinks.map(link => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={drawerLinkClass(link)}
+                  onClick={() => setMenuOpen(false)}
+                  {...(isLinkActive(location.pathname, link) ? { 'aria-current': 'page' as const } : {})}
+                >
+                  <span>{link.label}</span>
+                  <span aria-hidden="true">›</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-7">
+            <p className="mb-3 font-sans text-[0.62rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
+              Reference
+            </p>
+            <div className="flex flex-col gap-2">
+              {drawerReferenceLinks.map(link => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -596,10 +810,10 @@ function Footer() {
   const browseLinks: ShellLink[] = [
     { to: '/', label: 'The Record' },
     { to: '/read', label: 'Read' },
-    { to: '/news', label: 'News' },
+    { to: '/news', label: 'Current Events' },
     { to: '/profiles', label: 'Profiles' },
     { to: '/israel-dossier', label: 'Dossiers' },
-    { to: '/forum', label: 'Forum' },
+    { to: '/forum', label: 'Forum Beta' },
   ]
 
   const researchLinks: ShellLink[] = [
@@ -753,6 +967,11 @@ function Footer() {
 function PageViewTracker() {
   usePageView()
   useScrollDepth()
+  const location = useLocation()
+
+  useEffect(() => {
+    trackPageView(location.pathname)
+  }, [location.pathname])
 
   useEffect(() => {
     handleStripeReturn()

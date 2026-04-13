@@ -11,7 +11,7 @@ import {
   type ForumPost, type ForumComment, type Community, type SortMode, type TopTimeframe,
   type PostType, type PostFlair, type ReportReason, type VoteDirection,
   COMMUNITIES, AWARDS, SEED_POSTS, SEED_COMMENTS,
-  loadPosts, savePosts, createPost, votePost, toggleSavePost,
+  loadPosts, savePosts, createPost, votePost, toggleSavePost, awardPost,
   loadComments, createComment, voteComment,
   sortPosts, sortComments, getScore, timeAgo, formatNumber, getInitials,
   getCommunity, getPostsForCommunity, getAllPosts, searchPosts, searchCommunities,
@@ -96,6 +96,60 @@ function ForumIcon({ name, className }: { name: string; className?: string }) {
 /* ── View Types ───────────────────────────────────────────────── */
 type ForumView = 'feed' | 'community' | 'post' | 'create' | 'search' | 'saved'
 type CommentSortMode = 'best' | 'new' | 'old' | 'controversial' | 'top'
+type CommunityActivity = { postCount: number; commentCount: number; contributorCount: number }
+type ReportTarget = { targetType: 'post' | 'comment'; targetId: string; label: string }
+
+const EMPTY_COMMUNITY_ACTIVITY: CommunityActivity = { postCount: 0, commentCount: 0, contributorCount: 0 }
+
+function pluralize(count: number, singular: string, plural = `${singular}s`) {
+  const label = count === 1 ? singular : plural
+  return `${formatNumber(count)} ${label}`
+}
+
+function buildCommunityActivityMap(posts: ForumPost[]) {
+  const raw = new Map<string, { postCount: number; commentCount: number; contributors: Set<string> }>()
+  posts.forEach(post => {
+    const current = raw.get(post.communityId) || { postCount: 0, commentCount: 0, contributors: new Set<string>() }
+    current.postCount += 1
+    current.commentCount += post.commentCount
+    if (post.author.trim()) current.contributors.add(post.author.trim().toLowerCase())
+    raw.set(post.communityId, current)
+  })
+  return new Map<string, CommunityActivity>(
+    Array.from(raw.entries()).map(([communityId, value]) => [communityId, {
+      postCount: value.postCount,
+      commentCount: value.commentCount,
+      contributorCount: value.contributors.size,
+    }]),
+  )
+}
+
+function getCommunityActivity(activityMap: Map<string, CommunityActivity>, communityId: string | null | undefined) {
+  if (!communityId) return EMPTY_COMMUNITY_ACTIVITY
+  return activityMap.get(communityId) || EMPTY_COMMUNITY_ACTIVITY
+}
+
+function getCommunitySidebarLabel(activity: CommunityActivity) {
+  if (activity.postCount === 0) return 'Local beta'
+  if (activity.commentCount === 0) return pluralize(activity.postCount, 'local post')
+  return `${pluralize(activity.postCount, 'post')} · ${pluralize(activity.commentCount, 'comment')}`
+}
+
+function getCommunityHeaderLabel(activity: CommunityActivity) {
+  if (activity.postCount === 0) return 'Local beta · no posts yet'
+  return `${pluralize(activity.postCount, 'local post')} · ${pluralize(activity.commentCount, 'comment')}`
+}
+
+function ForumTruthNotice() {
+  return (
+    <div className="mb-4 rounded border border-crimson/20 bg-parchment px-4 py-3 shadow-sm">
+      <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.24em] text-crimson">Reader Beta</p>
+      <p className="mt-1 font-body text-sm leading-relaxed text-ink-muted">
+        This forum currently stores discussion on this device only while live moderation, persistent community data, and approved-member workflows are still being built.
+      </p>
+    </div>
+  )
+}
 
 /* ── Post Card ────────────────────────────────────────────────── */
 function PostCard({ post, onOpen, onVote, onSave, userId, compact }: {
@@ -183,10 +237,10 @@ function PostCard({ post, onOpen, onVote, onSave, userId, compact }: {
 
 
 /* ── Comment Thread ───────────────────────────────────────────── */
-function CommentThread({ comment, allComments, postId, depth, onVote, onReply, userId, sortMode }: {
+function CommentThread({ comment, allComments, postId, depth, onVote, onReply, onReport, userId, sortMode }: {
   comment: ForumComment; allComments: ForumComment[]; postId: string; depth: number
   onVote: (id: string, dir: VoteDirection) => void; onReply: (parentId: string, content: string) => void
-  userId: string; sortMode: CommentSortMode
+  onReport: (comment: ForumComment) => void; userId: string; sortMode: CommentSortMode
 }) {
   const [showReply, setShowReply] = useState(false)
   const [replyText, setReplyText] = useState('')
@@ -250,7 +304,7 @@ function CommentThread({ comment, allComments, postId, depth, onVote, onReply, u
                 <button onClick={() => setShowReply(!showReply)} className="font-sans font-semibold hover:text-crimson transition-colors">Reply</button>
               )}
               <button className="hover:text-ink transition-colors">Share</button>
-              <button className="hover:text-ink transition-colors flex items-center gap-1"><ReportIcon /> Report</button>
+              <button onClick={() => onReport(comment)} className="hover:text-ink transition-colors flex items-center gap-1"><ReportIcon /> Report</button>
             </div>
 
             {/* Reply composer */}
@@ -271,7 +325,7 @@ function CommentThread({ comment, allComments, postId, depth, onVote, onReply, u
 
             {/* Nested replies */}
             {replies.map(reply => (
-              <CommentThread key={reply.id} comment={reply} allComments={allComments} postId={postId} depth={depth + 1} onVote={onVote} onReply={onReply} userId={userId} sortMode={sortMode} />
+              <CommentThread key={reply.id} comment={reply} allComments={allComments} postId={postId} depth={depth + 1} onVote={onVote} onReply={onReply} onReport={onReport} userId={userId} sortMode={sortMode} />
             ))}
           </>
         )}
@@ -282,37 +336,96 @@ function CommentThread({ comment, allComments, postId, depth, onVote, onReply, u
 
 
 /* ── Post Detail View ─────────────────────────────────────────── */
-function PostDetail({ post, onBack, userId }: {
-  post: ForumPost; onBack: () => void; userId: string
+function PostDetail({ post, onBack, userId, actorLabel, onPostChange, onRequireAuth }: {
+  post: ForumPost; onBack: () => void; userId: string; actorLabel: string; onPostChange: () => void; onRequireAuth: () => void
 }) {
   const [comments, setComments] = useState<ForumComment[]>(() => loadComments(post.id))
   const [commentSort, setCommentSort] = useState<CommentSortMode>('best')
   const [newComment, setNewComment] = useState('')
-  const [showReportModal, setShowReportModal] = useState(false)
+  const [reportTarget, setReportTarget] = useState<ReportTarget | null>(null)
   const [showAwardModal, setShowAwardModal] = useState(false)
+  const [statusMessage, setStatusMessage] = useState<string | null>(null)
   const community = getCommunity(post.communityId)
+  const communityActivity = useMemo(
+    () => getCommunityActivity(buildCommunityActivityMap(getPostsForCommunity(post.communityId)), post.communityId),
+    [post.communityId],
+  )
   const score = getScore(post)
+  const hasUpvoted = post.upvotes.includes(userId)
+  const hasDownvoted = post.downvotes.includes(userId)
+  const isSaved = post.saved.includes(userId)
   const totalAwards = post.awards.reduce((sum, a) => sum + a.count, 0)
   const topLevel = useMemo(() => sortComments(comments.filter(c => !c.parentId && !c.deleted), commentSort), [comments, commentSort])
   const totalVotes = post.pollOptions?.reduce((sum, o) => sum + o.votes.length, 0) || 0
 
-  const refresh = () => setComments(loadComments(post.id))
+  useEffect(() => {
+    if (!statusMessage) return undefined
+    const timeoutId = window.setTimeout(() => setStatusMessage(null), 2600)
+    return () => window.clearTimeout(timeoutId)
+  }, [statusMessage])
+
+  const refresh = () => {
+    setComments(loadComments(post.id))
+    onPostChange()
+  }
+
+  const handlePostVote = (dir: Exclude<VoteDirection, null>) => {
+    if (!userId) { onRequireAuth(); return }
+    const nextDirection = dir === 'up' ? (hasUpvoted ? null : 'up') : (hasDownvoted ? null : 'down')
+    votePost(post.id, userId, nextDirection)
+    onPostChange()
+  }
+
+  const handlePostSave = () => {
+    if (!userId) { onRequireAuth(); return }
+    toggleSavePost(post.id, userId)
+    onPostChange()
+  }
+
+  const handlePostAward = (awardId: string) => {
+    if (!userId) { onRequireAuth(); return }
+    const award = AWARDS.find(entry => entry.id === awardId)
+    awardPost(post.id, awardId, actorLabel)
+    setShowAwardModal(false)
+    setStatusMessage(award ? `${award.name} saved locally for this thread.` : 'Local award saved.')
+    onPostChange()
+  }
+
+  const openReport = (targetType: 'post' | 'comment', targetId: string, label: string) => {
+    if (!userId) { onRequireAuth(); return }
+    setReportTarget({ targetType, targetId, label })
+  }
+
+  const handleReportSubmit = (reason: ReportReason, details: string) => {
+    if (!reportTarget) return
+    submitReport({
+      targetType: reportTarget.targetType,
+      targetId: reportTarget.targetId,
+      communityId: post.communityId,
+      reporter: actorLabel,
+      reason,
+      details,
+    })
+    setStatusMessage(`Saved a local ${reason} report for ${reportTarget.label}.`)
+    setReportTarget(null)
+  }
 
   const handleCommentVote = (commentId: string, dir: VoteDirection) => {
-    if (!userId) return
+    if (!userId) { onRequireAuth(); return }
     voteComment(commentId, userId, dir)
     refresh()
   }
 
   const handleReply = (parentId: string, content: string) => {
-    if (!userId) return
-    createComment({ postId: post.id, parentId, author: userId.split('@')[0], content })
+    if (!userId) { onRequireAuth(); return }
+    createComment({ postId: post.id, parentId, author: actorLabel, content })
     refresh()
   }
 
   const handleTopLevelComment = () => {
-    if (!newComment.trim() || !userId) return
-    createComment({ postId: post.id, parentId: null, author: userId.split('@')[0], content: newComment.trim() })
+    if (!newComment.trim()) return
+    if (!userId) { onRequireAuth(); return }
+    createComment({ postId: post.id, parentId: null, author: actorLabel, content: newComment.trim() })
     setNewComment('')
     refresh()
   }
@@ -391,22 +504,25 @@ function PostDetail({ post, onBack, userId }: {
             {/* Action bar */}
             <div className="flex items-center gap-4 pt-3 border-t border-border text-xs text-ink-muted">
               <div className="flex items-center gap-1">
-                <button className="p-1"><UpArrow active={post.upvotes.includes(userId)} /></button>
+                <button onClick={() => handlePostVote('up')} className="p-1"><UpArrow active={hasUpvoted} /></button>
                 <span className={`font-mono font-bold ${score > 0 ? 'text-crimson' : score < 0 ? 'text-blue-600' : ''}`}>{formatNumber(score)}</span>
-                <button className="p-1"><DownArrow active={post.downvotes.includes(userId)} /></button>
+                <button onClick={() => handlePostVote('down')} className="p-1"><DownArrow active={hasDownvoted} /></button>
               </div>
               <span className="flex items-center gap-1"><CommentIcon /> {comments.filter(c => !c.deleted).length} comments</span>
-              <button className="flex items-center gap-1 hover:text-crimson"><BookmarkIcon filled={post.saved.includes(userId)} /> Save</button>
+              <button onClick={handlePostSave} className={`flex items-center gap-1 hover:text-crimson ${isSaved ? 'text-crimson' : ''}`}><BookmarkIcon filled={isSaved} /> {isSaved ? 'Saved' : 'Save'}</button>
               <button className="flex items-center gap-1 hover:text-ink"><ShareIcon /> Share</button>
               <button onClick={() => setShowAwardModal(true)} className="flex items-center gap-1 hover:text-yellow-600"><AwardIcon /> Award</button>
-              <button onClick={() => setShowReportModal(true)} className="flex items-center gap-1 hover:text-red-600"><ReportIcon /> Report</button>
+              <button onClick={() => openReport('post', post.id, 'this thread')} className="flex items-center gap-1 hover:text-red-600"><ReportIcon /> Report</button>
             </div>
+            {statusMessage && (
+              <p className="mt-3 rounded border border-border bg-white px-3 py-2 font-sans text-xs leading-relaxed text-ink-muted">{statusMessage}</p>
+            )}
           </article>
 
           {/* Comment composer */}
           {userId && !post.locked ? (
             <div className="mt-4 bg-parchment border border-border rounded p-4">
-              <p className="text-xs text-ink-muted mb-2">Comment as <span className="font-bold text-ink">{userId.split('@')[0]}</span></p>
+              <p className="text-xs text-ink-muted mb-2">Comment as <span className="font-bold text-ink">{actorLabel}</span></p>
               <textarea
                 value={newComment} onChange={e => setNewComment(e.target.value)}
                 placeholder="What are your thoughts?"
@@ -436,7 +552,18 @@ function PostDetail({ post, onBack, userId }: {
           {/* Comments */}
           <div className="space-y-0">
             {topLevel.map(c => (
-              <CommentThread key={c.id} comment={c} allComments={comments} postId={post.id} depth={0} onVote={handleCommentVote} onReply={handleReply} userId={userId} sortMode={commentSort} />
+              <CommentThread
+                key={c.id}
+                comment={c}
+                allComments={comments}
+                postId={post.id}
+                depth={0}
+                onVote={handleCommentVote}
+                onReply={handleReply}
+                onReport={(comment) => openReport('comment', comment.id, `comment by ${comment.author}`)}
+                userId={userId}
+                sortMode={commentSort}
+              />
             ))}
             {topLevel.length === 0 && (
               <div className="py-12 text-center">
@@ -450,17 +577,20 @@ function PostDetail({ post, onBack, userId }: {
         {/* Sidebar */}
         {community && (
           <aside className="hidden lg:block w-80 flex-shrink-0">
-            <CommunityCard community={community} />
+            <CommunityCard community={community} activity={communityActivity} />
           </aside>
         )}
       </div>
+
+      {showAwardModal && <AwardModal onClose={() => setShowAwardModal(false)} onSubmit={handlePostAward} />}
+      {reportTarget && <ReportModal target={reportTarget} onClose={() => setReportTarget(null)} onSubmit={handleReportSubmit} />}
     </div>
   )
 }
 
 
 /* ── Community Sidebar Card ───────────────────────────────────── */
-function CommunityCard({ community }: { community: Community }) {
+function CommunityCard({ community, activity }: { community: Community; activity: CommunityActivity }) {
   const [showRules, setShowRules] = useState(false)
   return (
     <div className="bg-parchment border border-border rounded overflow-hidden sticky top-4">
@@ -474,16 +604,25 @@ function CommunityCard({ community }: { community: Community }) {
           </div>
         </div>
         <p className="font-body text-xs text-ink-muted leading-relaxed mb-3">{community.longDescription}</p>
+        <div className="flex flex-wrap gap-2 mb-3">
+          <span className="inline-flex items-center rounded-full border border-crimson/20 bg-crimson/5 px-2 py-0.5 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-crimson">Local beta</span>
+          <span className="inline-flex items-center rounded-full border border-border bg-white px-2 py-0.5 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-ink-muted">
+            {community.restricted ? 'Read-only in beta' : 'Open posting'}
+          </span>
+        </div>
         <div className="grid grid-cols-2 gap-3 py-3 border-t border-b border-border text-center">
           <div>
-            <p className="font-mono text-sm font-bold text-ink">{formatNumber(community.memberCount)}</p>
-            <p className="font-sans text-[0.6rem] text-ink-faint uppercase tracking-wider">Members</p>
+            <p className="font-mono text-sm font-bold text-ink">{formatNumber(activity.postCount)}</p>
+            <p className="font-sans text-[0.6rem] text-ink-faint uppercase tracking-wider">Local Posts</p>
           </div>
           <div>
-            <p className="font-mono text-sm font-bold text-green-600">{formatNumber(community.onlineCount)}</p>
-            <p className="font-sans text-[0.6rem] text-ink-faint uppercase tracking-wider">Online</p>
+            <p className="font-mono text-sm font-bold text-ink">{formatNumber(activity.commentCount)}</p>
+            <p className="font-sans text-[0.6rem] text-ink-faint uppercase tracking-wider">Comments</p>
           </div>
         </div>
+        <p className="mt-3 font-sans text-[0.65rem] leading-relaxed text-ink-faint">
+          Activity reflects this browser&apos;s saved forum state, not a shared live audience.
+        </p>
 
         {/* Flairs */}
         <div className="mt-3">
@@ -529,8 +668,12 @@ function CommunityCard({ community }: { community: Community }) {
 function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
   communities: Community[]; onClose: () => void; onSubmit: (post: any) => void; defaultCommunity?: string
 }) {
+  const postableCommunities = communities.filter(c => !c.restricted)
+  const initialCommunityId = defaultCommunity && !getCommunity(defaultCommunity)?.restricted
+    ? defaultCommunity
+    : postableCommunities[0]?.id || communities[0]?.id || ''
   const [postType, setPostType] = useState<PostType>('text')
-  const [communityId, setCommunityId] = useState(defaultCommunity || communities[0]?.id || '')
+  const [communityId, setCommunityId] = useState(initialCommunityId)
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [selectedFlair, setSelectedFlair] = useState<PostFlair | undefined>()
@@ -538,7 +681,7 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
   const community = getCommunity(communityId)
 
   const handleSubmit = () => {
-    if (!title.trim() || !communityId) return
+    if (!title.trim() || !communityId || community?.restricted) return
     const post: any = { communityId, type: postType, title: title.trim(), body: body.trim(), author: 'You', postFlair: selectedFlair }
     if (postType === 'poll') {
       post.pollOptions = pollOptions.filter(o => o.trim()).map(o => ({ id: generateId(), text: o.trim(), votes: [] }))
@@ -559,8 +702,17 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
           {/* Community selector */}
           <select value={communityId} onChange={e => { setCommunityId(e.target.value); setSelectedFlair(undefined) }}
             className="w-full p-2 border border-border rounded bg-white font-sans text-sm">
-            {communities.map(c => <option key={c.id} value={c.id}>{c.name} — {c.displayName}</option>)}
+            {communities.map(c => (
+              <option key={c.id} value={c.id} disabled={c.restricted}>
+                {c.name} — {c.displayName}{c.restricted ? ' (Read-only beta)' : ''}
+              </option>
+            ))}
           </select>
+          {community?.restricted && (
+            <p className="rounded border border-yellow-200 bg-yellow-50 px-3 py-2 font-sans text-xs leading-relaxed text-yellow-800">
+              Posting to this room is disabled in beta until approved-member workflows exist.
+            </p>
+          )}
 
           {/* Post type tabs */}
           <div className="flex border border-border rounded overflow-hidden">
@@ -616,7 +768,7 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
           {/* Submit */}
           <div className="flex justify-end gap-3 pt-2">
             <button onClick={onClose} className="font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
-            <button onClick={handleSubmit} disabled={!title.trim()} className="font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Post</button>
+            <button onClick={handleSubmit} disabled={!title.trim() || community?.restricted} className="font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Post</button>
           </div>
         </div>
       </div>
@@ -624,10 +776,128 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
   )
 }
 
+/* ── Award Modal ─────────────────────────────────────────────── */
+function AwardModal({ onClose, onSubmit }: {
+  onClose: () => void; onSubmit: (awardId: string) => void
+}) {
+  const [selectedAwardId, setSelectedAwardId] = useState(AWARDS[0]?.id || '')
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-start justify-center pt-12 overflow-y-auto" onClick={onClose}>
+      <div className="bg-parchment w-full max-w-2xl rounded shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+          <div>
+            <h2 className="font-display text-lg font-bold text-ink">Add Local Appreciation</h2>
+            <p className="mt-1 font-sans text-xs text-ink-faint">Saved on this device only while shared identity and karma rules are still in beta.</p>
+          </div>
+          <button onClick={onClose} className="p-1 hover:bg-ink/5 rounded"><CloseIcon /></button>
+        </div>
+
+        <div className="p-6 space-y-4">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {AWARDS.map(award => (
+              <button
+                key={award.id}
+                onClick={() => setSelectedAwardId(award.id)}
+                className={`rounded border p-4 text-left transition-colors ${selectedAwardId === award.id ? 'border-crimson bg-crimson/5' : 'border-border hover:border-ink/25 hover:bg-white'}`}
+              >
+                <div className="flex items-start gap-3">
+                  <span className="font-display text-2xl text-ink">{award.icon}</span>
+                  <div>
+                    <p className="font-sans text-sm font-bold text-ink">{award.name}</p>
+                    <p className="mt-1 font-body text-xs leading-relaxed text-ink-muted">{award.description}</p>
+                    <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-ink-faint">{award.cost} beta karma</p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="rounded border border-border bg-white px-4 py-3">
+            <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.2em] text-ink-muted">Beta note</p>
+            <p className="mt-1 font-body text-sm leading-relaxed text-ink-muted">
+              Awards are decorative local reactions in the current beta. They do not spend shared karma or notify a live moderation system yet.
+            </p>
+          </div>
+
+          <div className="flex justify-end gap-3 pt-2">
+            <button onClick={onClose} className="font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
+            <button onClick={() => onSubmit(selectedAwardId)} disabled={!selectedAwardId} className="font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">
+              Add Award
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ── Report Modal ────────────────────────────────────────────── */
+function ReportModal({ target, onClose, onSubmit }: {
+  target: ReportTarget; onClose: () => void; onSubmit: (reason: ReportReason, details: string) => void
+}) {
+  const [reason, setReason] = useState<ReportReason>('misinformation')
+  const [details, setDetails] = useState('')
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-start justify-center pt-12 overflow-y-auto" onClick={onClose}>
+      <div className="bg-parchment w-full max-w-xl rounded shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+          <div>
+            <h2 className="font-display text-lg font-bold text-ink">Submit Local Report</h2>
+            <p className="mt-1 font-sans text-xs text-ink-faint">{target.label}</p>
+          </div>
+          <button onClick={onClose} className="p-1 hover:bg-ink/5 rounded"><CloseIcon /></button>
+        </div>
+
+        <div className="p-6 space-y-4">
+          <div className="rounded border border-border bg-white px-4 py-3">
+            <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.2em] text-ink-muted">Beta note</p>
+            <p className="mt-1 font-body text-sm leading-relaxed text-ink-muted">
+              Reports are stored on this device only for now. They help shape moderation workflows before a shared review queue exists.
+            </p>
+          </div>
+
+          <label className="block">
+            <span className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">Reason</span>
+            <select value={reason} onChange={e => setReason(e.target.value as ReportReason)} className="mt-2 w-full rounded border border-border bg-white p-3 font-sans text-sm text-ink">
+              <option value="spam">Spam</option>
+              <option value="harassment">Harassment</option>
+              <option value="misinformation">Misinformation</option>
+              <option value="off-topic">Off-topic</option>
+              <option value="doxxing">Doxxing</option>
+              <option value="violence">Violence</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+
+          <label className="block">
+            <span className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-ink-muted">Notes</span>
+            <textarea
+              value={details}
+              onChange={e => setDetails(e.target.value)}
+              placeholder="Add context for the local moderation log (optional)."
+              rows={5}
+              maxLength={2000}
+              className="mt-2 w-full rounded border border-border bg-white p-3 font-body text-sm text-ink resize-y focus:outline-none focus:ring-2 focus:ring-crimson/30"
+            />
+          </label>
+
+          <div className="flex justify-end gap-3 pt-2">
+            <button onClick={onClose} className="font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
+            <button onClick={() => onSubmit(reason, details.trim())} className="font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors">
+              Save Report
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 /* ── Community List Sidebar ───────────────────────────────────── */
-function CommunityListSidebar({ communities, activeCommunity, onSelect, onAllPosts }: {
-  communities: Community[]; activeCommunity: string | null; onSelect: (id: string) => void; onAllPosts: () => void
+function CommunityListSidebar({ communities, activeCommunity, onSelect, onAllPosts, activityMap }: {
+  communities: Community[]; activeCommunity: string | null; onSelect: (id: string) => void; onAllPosts: () => void; activityMap: Map<string, CommunityActivity>
 }) {
   return (
     <nav className="space-y-0.5">
@@ -635,16 +905,19 @@ function CommunityListSidebar({ communities, activeCommunity, onSelect, onAllPos
         className={`w-full flex items-center gap-2 px-3 py-2 rounded text-sm font-sans transition-colors ${!activeCommunity ? 'bg-crimson/10 text-crimson font-bold' : 'text-ink-muted hover:bg-parchment-dark hover:text-ink'}`}>
         <span className="text-base">🌐</span> All Posts
       </button>
-      {communities.map(c => (
+      {communities.map(c => {
+        const activity = getCommunityActivity(activityMap, c.id)
+        return (
         <button key={c.id} onClick={() => onSelect(c.id)}
           className={`w-full flex items-center gap-2 px-3 py-2 rounded text-sm font-sans transition-colors text-left ${activeCommunity === c.id ? 'bg-crimson/10 text-crimson font-bold' : 'text-ink-muted hover:bg-parchment-dark hover:text-ink'}`}>
-          <span className="text-base flex-shrink-0">{c.icon}</span>
+          <ForumIcon name={c.icon} className="w-4 h-4 flex-shrink-0" />
           <div className="min-w-0">
             <span className="block truncate">{c.name}</span>
-            <span className="block text-[0.6rem] text-ink-faint truncate">{formatNumber(c.memberCount)} members</span>
+            <span className="block text-[0.6rem] text-ink-faint truncate">{getCommunitySidebarLabel(activity)}</span>
           </div>
         </button>
-      ))}
+        )
+      })}
     </nav>
   )
 }
@@ -680,26 +953,38 @@ function TrendingSidebar({ posts }: { posts: ForumPost[] }) {
 }
 
 /* ── Forum Stats Card ─────────────────────────────────────────── */
-function ForumStatsCard() {
-  const totalMembers = COMMUNITIES.reduce((s, c) => s + c.memberCount, 0)
-  const totalOnline = COMMUNITIES.reduce((s, c) => s + c.onlineCount, 0)
+function ForumStatsCard({ posts, communities }: { posts: ForumPost[]; communities: Community[] }) {
+  const totalComments = posts.reduce((sum, post) => sum + post.commentCount, 0)
+  const activeCommunities = new Set(posts.map(post => post.communityId)).size
+  const contributors = new Set(posts.map(post => post.author.trim().toLowerCase()).filter(Boolean)).size
   return (
     <div className="bg-parchment border border-border rounded overflow-hidden">
       <div className="bg-crimson px-4 py-3">
-        <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-white">Veritas Forum</h3>
+        <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-white">Veritas Forum Beta</h3>
       </div>
       <div className="p-4">
-        <p className="font-body text-xs text-ink-muted leading-relaxed mb-3">The community hub for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.</p>
+        <p className="font-body text-xs text-ink-muted leading-relaxed mb-3">Local reader sandbox for archive discussion. Threads live in this browser until shared moderation, persistence, and community identity are production-ready.</p>
         <div className="grid grid-cols-2 gap-3 text-center py-2 border-t border-border">
           <div>
-            <p className="font-mono text-sm font-bold text-ink">{formatNumber(totalMembers)}</p>
-            <p className="font-sans text-[0.6rem] text-ink-faint">Total Members</p>
+            <p className="font-mono text-sm font-bold text-ink">{formatNumber(posts.length)}</p>
+            <p className="font-sans text-[0.6rem] text-ink-faint">Local Posts</p>
           </div>
           <div>
-            <p className="font-mono text-sm font-bold text-green-600">{formatNumber(totalOnline)}</p>
-            <p className="font-sans text-[0.6rem] text-ink-faint">Online Now</p>
+            <p className="font-mono text-sm font-bold text-ink">{formatNumber(totalComments)}</p>
+            <p className="font-sans text-[0.6rem] text-ink-faint">Comments</p>
+          </div>
+          <div>
+            <p className="font-mono text-sm font-bold text-ink">{formatNumber(activeCommunities)}</p>
+            <p className="font-sans text-[0.6rem] text-ink-faint">Active Rooms</p>
+          </div>
+          <div>
+            <p className="font-mono text-sm font-bold text-ink">{formatNumber(contributors)}</p>
+            <p className="font-sans text-[0.6rem] text-ink-faint">Contributors</p>
           </div>
         </div>
+        <p className="mt-3 font-sans text-[0.65rem] leading-relaxed text-ink-faint">
+          {communities.length} discussion rooms are mapped, but only rooms with local posts appear active.
+        </p>
       </div>
     </div>
   )
@@ -728,13 +1013,13 @@ export default function ForumPage() {
   // SEO
   useEffect(() => {
     setMetaTags({
-      title: `Community Forum | ${SITE_NAME}`,
-      description: 'Discuss the evidence, debate the findings, and connect with researchers investigating power, money, and institutional corruption.',
+      title: `Community Forum Beta | ${SITE_NAME}`,
+      description: 'A local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features before the live community stack ships.',
       url: `${SITE_URL}/forum`,
     })
     setJsonLd({
       '@context': 'https://schema.org', '@type': 'DiscussionForumPosting',
-      'name': `Community Forum — ${SITE_NAME}`, 'url': `${SITE_URL}/forum`,
+      'name': `Community Forum Beta — ${SITE_NAME}`, 'url': `${SITE_URL}/forum`,
     })
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
@@ -795,6 +1080,12 @@ export default function ForumPage() {
   }
 
   const activeCommunityObj = activeCommunity ? getCommunity(activeCommunity) : null
+  const communityActivityMap = useMemo(() => buildCommunityActivityMap(posts), [posts])
+  const activeCommunityActivity = useMemo(
+    () => getCommunityActivity(communityActivityMap, activeCommunityObj?.id),
+    [communityActivityMap, activeCommunityObj],
+  )
+  const canPostInActiveCommunity = !activeCommunityObj || !activeCommunityObj.restricted
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -808,7 +1099,7 @@ export default function ForumPage() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <span className="text-xl">📰</span>
-          <h1 className="font-display text-xl font-bold text-ink">Veritas Forum</h1>
+          <h1 className="font-display text-xl font-bold text-ink">Veritas Forum Beta</h1>
         </div>
 
         {/* Search bar */}
@@ -827,7 +1118,7 @@ export default function ForumPage() {
           {isLoggedIn ? (
             <button onClick={() => setShowCreatePost(true)}
               className="flex items-center gap-1.5 px-4 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark transition-colors">
-              <PlusIcon /> Create Post
+              <PlusIcon /> Start Thread
             </button>
           ) : (
             <button onClick={() => setShowAuthModal(true)}
@@ -837,6 +1128,8 @@ export default function ForumPage() {
           )}
         </div>
       </div>
+
+      <ForumTruthNotice />
 
       {/* ── Three-column Layout ──────────────────────────────────── */}
       <div className="flex gap-6 w-full">
@@ -855,6 +1148,7 @@ export default function ForumPage() {
               activeCommunity={activeCommunity}
               onSelect={handleSelectCommunity}
               onAllPosts={() => { setActiveCommunity(null); setView('feed'); setActivePostId(null); setShowMobileSidebar(false) }}
+              activityMap={communityActivityMap}
             />
           </div>
         </aside>
@@ -862,7 +1156,14 @@ export default function ForumPage() {
         {/* MAIN FEED / POST VIEW */}
         <main className="flex-1 min-w-0">
           {view === 'post' && activePost ? (
-            <PostDetail post={activePost} onBack={handleBack} userId={userId} />
+            <PostDetail
+              post={activePost}
+              onBack={handleBack}
+              userId={userId}
+              actorLabel={user?.displayName || userId.split('@')[0] || 'Reader'}
+              onPostChange={refresh}
+              onRequireAuth={() => setShowAuthModal(true)}
+            />
           ) : view === 'search' ? (
             /* Search Results */
             <div>
@@ -885,13 +1186,27 @@ export default function ForumPage() {
                 <div className="bg-parchment border border-border rounded mb-4 overflow-hidden">
                   <div className="h-16 sm:h-24" style={{ background: activeCommunityObj.bannerColor }} />
                   <div className="px-4 sm:px-6 pb-4 -mt-4 flex items-end gap-3">
-                    <span className="text-4xl bg-parchment rounded-full p-2 border-4 border-parchment shadow">{activeCommunityObj.icon}</span>
+                    <span className="flex h-16 w-16 items-center justify-center bg-parchment rounded-full p-2 border-4 border-parchment shadow">
+                      <ForumIcon name={activeCommunityObj.icon} className="h-8 w-8 text-ink" />
+                    </span>
                     <div className="pb-1">
                       <h2 className="font-display text-xl font-bold text-ink">{activeCommunityObj.displayName}</h2>
-                      <p className="font-sans text-xs text-ink-muted">{activeCommunityObj.name} · {formatNumber(activeCommunityObj.memberCount)} members · {formatNumber(activeCommunityObj.onlineCount)} online</p>
+                      <p className="font-sans text-xs text-ink-muted">
+                        {activeCommunityObj.name} · {getCommunityHeaderLabel(activeCommunityActivity)} · {activeCommunityObj.restricted ? 'Read-only beta' : 'Open posting'}
+                      </p>
                     </div>
                     <div className="ml-auto pb-1">
-                      <button className="px-4 py-1.5 border border-crimson text-crimson rounded-full text-xs font-sans font-bold hover:bg-crimson hover:text-white transition-colors">Join</button>
+                      <button
+                        onClick={() => {
+                          if (activeCommunityObj.restricted) return
+                          if (isLoggedIn) setShowCreatePost(true)
+                          else setShowAuthModal(true)
+                        }}
+                        disabled={!canPostInActiveCommunity}
+                        className="px-4 py-1.5 border border-crimson text-crimson rounded-full text-xs font-sans font-bold hover:bg-crimson hover:text-white transition-colors disabled:border-border disabled:text-ink-faint disabled:hover:bg-transparent disabled:hover:text-ink-faint"
+                      >
+                        {activeCommunityObj.restricted ? 'Read-only beta' : isLoggedIn ? 'Start Thread' : 'Sign In to Post'}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -922,13 +1237,30 @@ export default function ForumPage() {
                 ))}
                 {displayPosts.length === 0 && (
                   <div className="py-16 text-center bg-parchment border border-border rounded">
-                    <p className="font-display text-lg text-ink-muted mb-2">No posts yet</p>
-                    <p className="font-body text-sm text-ink-faint mb-4">Be the first to start a discussion.</p>
-                    {isLoggedIn && (
-                      <button onClick={() => setShowCreatePost(true)} className="inline-flex items-center gap-1.5 px-5 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark">
-                        <PlusIcon /> Create Post
-                      </button>
-                    )}
+                    <p className="font-display text-lg text-ink-muted mb-2">No local posts yet</p>
+                    <p className="mx-auto max-w-2xl font-body text-sm text-ink-faint mb-4 leading-relaxed">
+                      This beta forum keeps discussion on this device while the shared community stack is still under construction.
+                      {activeCommunityObj?.restricted ? ' This room stays read-only until approved-member workflows exist.' : ' Start the first thread here or keep moving through the archive.'}
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                      {!activeCommunityObj?.restricted && (
+                        isLoggedIn ? (
+                          <button onClick={() => setShowCreatePost(true)} className="inline-flex items-center gap-1.5 px-5 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark">
+                            <PlusIcon /> Start Thread
+                          </button>
+                        ) : (
+                          <button onClick={() => setShowAuthModal(true)} className="inline-flex items-center gap-1.5 px-5 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark">
+                            Sign In to Post
+                          </button>
+                        )
+                      )}
+                      <a href="/read" className="inline-flex items-center rounded border border-border px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-ink/30 hover:bg-parchment-dark">
+                        Continue Reading
+                      </a>
+                      <a href="/sources" className="inline-flex items-center rounded border border-border px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-ink/30 hover:bg-parchment-dark">
+                        Review Sources
+                      </a>
+                    </div>
                   </div>
                 )}
               </div>
@@ -939,15 +1271,15 @@ export default function ForumPage() {
         {/* RIGHT SIDEBAR — Info & Trending */}
         <aside className="hidden xl:block w-72 2xl:w-80 flex-shrink-0 space-y-4">
           {activeCommunityObj ? (
-            <CommunityCard community={activeCommunityObj} />
+            <CommunityCard community={activeCommunityObj} activity={activeCommunityActivity} />
           ) : (
-            <ForumStatsCard />
+            <ForumStatsCard posts={posts} communities={COMMUNITIES} />
           )}
           <TrendingSidebar posts={posts} />
           {/* Footer links */}
           <div className="bg-parchment border border-border rounded p-4 text-center">
             <p className="font-sans text-[0.6rem] text-ink-faint leading-relaxed">
-              Veritas Worldwide Forum — Community-driven investigation.
+              Veritas Worldwide Forum Beta — device-local discussion while the live community stack is under construction.
               <br />All claims must be sourced. No party. No agenda. Just the record.
             </p>
           </div>
