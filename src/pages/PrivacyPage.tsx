@@ -51,7 +51,7 @@ export default function PrivacyPage() {
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
                 <p>We collect information you provide directly when you create an account, subscribe, or contact us. This includes your email address, name, and payment information (processed securely via Stripe).</p>
                 <p>We automatically collect certain technical data when you visit our site, including IP address, browser type, device information, pages viewed, and referring URL. This data is collected through Google Analytics 4 and our server logs.</p>
-                <p>If you participate in our community forums, we collect the content you post and your user profile information.</p>
+                <p>If you use our current beta discussion tools, comments may be stored only in your browser on this device. We will update this policy before any shared forum system begins collecting centrally hosted discussion content or broader community profile data.</p>
               </div>
             </section>
 
