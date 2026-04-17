@@ -2,10 +2,17 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { chapterMeta } from '../data/chapterMeta'
 import type { LoadedChapter } from '../data/chapterTypes'
+import { CATEGORY_META, type Article } from '../data/articles'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import DownloadModal from '../components/DownloadModal'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
 import { useAuth } from '../lib/AuthContext'
+import {
+  getReaderOverviewStats,
+  getReadingPaths,
+  getRelatedArticlesForChapter,
+  type ReadingPath,
+} from '../lib/readerDiscovery'
 
 const PDF_URL = '/api/downloads/the-record.pdf'
 const BOOK_TITLE = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World'
@@ -39,6 +46,116 @@ function useTextToSpeech() {
   }, [isPlaying, speak, stop])
 
   return { isPlaying, toggle, stop, isSupported }
+}
+
+function ReaderStatCard({
+  label,
+  value,
+  note,
+}: {
+  label: string
+  value: string
+  note: string
+}) {
+  return (
+    <div className="rounded-2xl border border-border bg-surface p-4">
+      <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-ink-faint">
+        {label}
+      </p>
+      <p className="mt-2 font-display text-2xl font-bold text-ink">{value}</p>
+      <p className="mt-2 font-body text-sm leading-relaxed text-ink-muted">{note}</p>
+    </div>
+  )
+}
+
+function ReadingPathCard({
+  path,
+  onSelect,
+}: {
+  path: ReadingPath
+  onSelect: (chapterId: string) => void
+}) {
+  const leadChapter = path.chapters[0]
+
+  return (
+    <button
+      type="button"
+      onClick={() => leadChapter && onSelect(leadChapter.id)}
+      className="overflow-hidden rounded-[24px] border border-border bg-surface text-left transition-colors hover:border-crimson"
+    >
+      {leadChapter?.heroImage && (
+        <img
+          src={leadChapter.heroImage}
+          alt={leadChapter.title}
+          className="h-36 w-full object-cover"
+          loading="lazy"
+        />
+      )}
+      <div className="p-5">
+        <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-crimson">
+          {path.eyebrow}
+        </p>
+        <h3 className="mt-2 font-display text-2xl font-bold text-ink">{path.title}</h3>
+        <p className="mt-3 font-body text-sm leading-relaxed text-ink-muted">{path.description}</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <div>
+            <p className="font-sans text-[0.52rem] uppercase tracking-[0.14em] text-ink-faint">Chapters</p>
+            <p className="mt-1 font-serif text-lg font-semibold text-ink">{path.chapters.length}</p>
+          </div>
+          <div>
+            <p className="font-sans text-[0.52rem] uppercase tracking-[0.14em] text-ink-faint">News links</p>
+            <p className="mt-1 font-serif text-lg font-semibold text-ink">{path.relatedArticleCount}</p>
+          </div>
+          <div>
+            <p className="font-sans text-[0.52rem] uppercase tracking-[0.14em] text-ink-faint">Lead chapter</p>
+            <p className="mt-1 font-serif text-lg font-semibold text-ink">{leadChapter?.number ?? '—'}</p>
+          </div>
+        </div>
+        {path.keywordSpine.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {path.keywordSpine.map((keyword) => (
+              <span
+                key={keyword}
+                className="rounded-full border border-border px-3 py-1 font-sans text-[0.56rem] uppercase tracking-[0.12em] text-ink-muted"
+              >
+                {keyword}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </button>
+  )
+}
+
+function RelatedArticleCard({ article }: { article: Article }) {
+  return (
+    <Link
+      to={`/news/${article.slug}`}
+      className="overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-crimson"
+    >
+      <img
+        src={article.heroImage.src}
+        alt={article.heroImage.alt}
+        className="h-32 w-full object-cover"
+        loading="lazy"
+      />
+      <div className="p-4">
+        <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-crimson">
+          {CATEGORY_META[article.category].label}
+        </p>
+        <h3 className="mt-2 font-serif text-lg font-semibold leading-snug text-ink">{article.title}</h3>
+        <p className="mt-2 line-clamp-3 font-body text-sm leading-relaxed text-ink-muted">
+          {article.subtitle}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2 font-sans text-[0.55rem] uppercase tracking-[0.1em] text-ink-faint">
+          <span>{article.publishDate}</span>
+          <span className="text-border">|</span>
+          <span>{article.readingTime} min</span>
+        </div>
+      </div>
+    </Link>
+  )
 }
 
 export default function ReadTheBookPage() {
@@ -121,6 +238,12 @@ export default function ReadTheBookPage() {
   // Get the current chapter metadata and loaded content
   const chapterMetadata = chapterMeta[activeChapter]
   const chapter = loadedChapters.get(activeChapter)
+  const readerStats = getReaderOverviewStats()
+  const readingPaths = getReadingPaths()
+  const relatedArticles = chapterMetadata ? getRelatedArticlesForChapter(chapterMetadata.id, 3) : []
+  const visibleBlocks = chapter?.content.length ?? 0
+  const remainingBlocks = chapter ? Math.max(chapter.totalBlocks - visibleBlocks, 0) : 0
+  const keywordSpine = chapterMetadata?.keywords.slice(0, 8) ?? []
   const chapterText = chapter?.content
     .filter((b: any) => b.type === 'text' || b.type === 'dropcap' || b.type === 'heading' || b.type === 'subheading')
     .map((b: any) => b.text || '')
@@ -130,6 +253,13 @@ export default function ReadTheBookPage() {
     setActiveChapter(idx)
     setShowTOC(false)
     contentRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const goToChapterId = (chapterId: string) => {
+    const idx = chapterMeta.findIndex((chapterEntry) => chapterEntry.id === chapterId)
+    if (idx >= 0) {
+      goTo(idx)
+    }
   }
 
   const shareUrl = `${SITE_URL}/read`
@@ -200,6 +330,84 @@ export default function ReadTheBookPage() {
         {/* Main reading area */}
         <main ref={contentRef} className="flex-1 overflow-y-auto">
           <div className="max-w-2xl mx-auto px-6 py-12">
+            {activeChapter === 0 && (
+              <section className="mb-10 overflow-hidden rounded-[32px] border border-border bg-parchment/60">
+                <div className="border-b border-border px-6 py-6 md:px-8 md:py-8">
+                  <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-crimson">
+                    Archive guide
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-bold text-ink md:text-4xl">
+                    Read the archive like a documentary record, not a wall of chapters.
+                  </h2>
+                  <p className="mt-4 max-w-3xl font-body text-base leading-relaxed text-ink-muted">
+                    The Record is built as a structured archive: foreword, overview, 28 numbered chapters, and an epilogue. Start anywhere, then use the paths below to move by subject instead of only by chapter number.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <Link
+                      to="/methodology"
+                      className="inline-flex min-h-[42px] items-center rounded-full bg-obsidian px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-obsidian/90"
+                    >
+                      Methodology
+                    </Link>
+                    <Link
+                      to="/timeline"
+                      className="inline-flex min-h-[42px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                    >
+                      Timeline
+                    </Link>
+                    <Link
+                      to="/sources"
+                      className="inline-flex min-h-[42px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                    >
+                      Source Library
+                    </Link>
+                  </div>
+                </div>
+                <div className="grid gap-4 border-b border-border px-6 py-6 md:grid-cols-2 md:px-8 xl:grid-cols-4">
+                  <ReaderStatCard
+                    label="Archive parts"
+                    value={readerStats.sectionCount.toString()}
+                    note="Foreword, overview, 28 chapters, and epilogue in one reading stack."
+                  />
+                  <ReaderStatCard
+                    label="Dated sections"
+                    value={readerStats.datedSectionCount.toString()}
+                    note="Historical sections anchored to specific eras, not just themes."
+                  />
+                  <ReaderStatCard
+                    label="Illustrated entries"
+                    value={readerStats.illustratedSectionCount.toString()}
+                    note="Chapters with visual anchors and mapped imagery already attached."
+                  />
+                  <ReaderStatCard
+                    label="Keyword cues"
+                    value={readerStats.keywordCount.toString()}
+                    note="Searchable issue terms already embedded across the archive."
+                  />
+                </div>
+                <div className="px-6 py-6 md:px-8">
+                  <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                    <div>
+                      <p className="font-sans text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-ink-faint">
+                        Reader paths
+                      </p>
+                      <h3 className="mt-2 font-display text-2xl font-bold text-ink">
+                        Four ways into the archive.
+                      </h3>
+                    </div>
+                    <p className="max-w-2xl font-body text-sm leading-relaxed text-ink-muted">
+                      Each path uses chapters already in the repo and links them back to the live reporting layer where it exists.
+                    </p>
+                  </div>
+                  <div className="mt-6 grid gap-4 xl:grid-cols-2">
+                    {readingPaths.map((path) => (
+                      <ReadingPathCard key={path.id} path={path} onSelect={goToChapterId} />
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
             {/* Loading Indicator */}
             {loadingChapterIndex === activeChapter && (
               <div className="mb-8 p-4 bg-crimson/5 border border-crimson/20 rounded-sm">
@@ -223,6 +431,44 @@ export default function ReadTheBookPage() {
                 {chapter.dateRange && (
                   <p className="font-sans text-xs font-semibold text-crimson mt-3">{chapter.dateRange}</p>
                 )}
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  <ReaderStatCard
+                    label="Access"
+                    value={chapter.accessLevel === 'full' ? 'Full' : 'Preview'}
+                    note={
+                      chapter.accessLevel === 'full'
+                        ? 'This chapter is fully unlocked with sources and the complete block stack.'
+                        : 'Public preview is visible now; the remaining archive unlocks after reader access.'
+                    }
+                  />
+                  <ReaderStatCard
+                    label="Visible blocks"
+                    value={`${visibleBlocks}/${chapter.totalBlocks}`}
+                    note={
+                      chapter.accessLevel === 'full'
+                        ? 'All available blocks are visible in this reader.'
+                        : `${remainingBlocks} additional blocks remain behind the reader account layer.`
+                    }
+                  />
+                  <ReaderStatCard
+                    label="Linked reporting"
+                    value={relatedArticles.length.toString()}
+                    note="Current newsroom files that already connect back to this chapter."
+                  />
+                </div>
+                {keywordSpine.length > 0 && (
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {keywordSpine.map((keyword) => (
+                      <Link
+                        key={keyword}
+                        to={`/search?q=${encodeURIComponent(keyword)}`}
+                        className="rounded-full border border-border px-3 py-1 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                      >
+                        {keyword}
+                      </Link>
+                    ))}
+                  </div>
+                )}
                 {chapter.accessLevel === 'preview' && (
                   <div className="mt-5 border border-border bg-surface rounded-sm p-4">
                     <p className="font-sans text-[0.6rem] font-bold tracking-[0.14em] uppercase text-crimson mb-2">
@@ -230,8 +476,8 @@ export default function ReadTheBookPage() {
                     </p>
                     <p className="font-body text-sm text-ink-muted leading-relaxed">
                       {isDegradedProfile
-                        ? `Your reader profile is saved locally, but full archive unlock is temporarily unavailable while account sync is degraded. The remaining ${Math.max(chapter.totalBlocks - chapter.content.length, 0)} blocks will unlock again after you can re-authenticate against the live account service.`
-                        : `You are reading the free preview of this chapter. Create a free account to unlock the remaining ${Math.max(chapter.totalBlocks - chapter.content.length, 0)} blocks and read the full book without asset-level gating gaps.`}
+                        ? `Your reader profile is saved locally, but full archive unlock is temporarily unavailable while account sync is degraded. The remaining ${remainingBlocks} blocks will unlock again after you can re-authenticate against the live account service.`
+                        : `You are reading the free preview of this chapter. Create a free account to unlock the remaining ${remainingBlocks} blocks and read the full book without asset-level gating gaps.`}
                     </p>
                     <button
                       onClick={openReaderAccessModal}
@@ -242,6 +488,32 @@ export default function ReadTheBookPage() {
                   </div>
                 )}
               </header>
+            )}
+
+            {relatedArticles.length > 0 && (
+              <section className="mb-10 rounded-[28px] border border-border bg-surface p-5">
+                <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="font-sans text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-crimson">
+                      Linked reporting
+                    </p>
+                    <h2 className="mt-2 font-display text-2xl font-bold text-ink">
+                      Current newsroom files tied to this chapter
+                    </h2>
+                  </div>
+                  <Link
+                    to="/news"
+                    className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark"
+                  >
+                    View all current events →
+                  </Link>
+                </div>
+                <div className="mt-6 grid gap-4 md:grid-cols-3">
+                  {relatedArticles.map((article) => (
+                    <RelatedArticleCard key={article.id} article={article} />
+                  ))}
+                </div>
+              </section>
             )}
 
             {/* Chapter Content */}
@@ -287,7 +559,7 @@ export default function ReadTheBookPage() {
                 <p className="font-body text-sm text-ink-muted leading-relaxed">
                   {isDegradedProfile
                     ? 'Your reader profile is saved locally, but this reader is still in degraded mode. Retry sign-in once account sync is restored to unlock the full chapter, source list, and compiled download.'
-                    : 'The public preview stops here. Sign in or create a free account to continue reading this chapter, access the full sources section, and download the compiled edition.'}
+                    : `The public preview stops here. Sign in or create a free account to continue reading the remaining ${remainingBlocks} blocks, access the full sources section, and download the compiled edition.`}
                 </p>
                 <button
                   onClick={openReaderAccessModal}
@@ -344,7 +616,7 @@ export default function ReadTheBookPage() {
             </div>
           </div>
           <span className="font-sans text-[0.6rem] text-ink-faint">{activeChapter + 1} of {chapterMeta.length}</span>
-          <Link to="/membership" className="font-sans text-[0.6rem] font-semibold text-crimson hover:text-crimson-dark transition-colors">Go Ad-Free →</Link>
+          <Link to="/membership" className="font-sans text-[0.6rem] font-semibold text-crimson hover:text-crimson-dark transition-colors">Support the archive →</Link>
         </div>
       </div>
     </div>
