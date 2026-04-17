@@ -70,7 +70,7 @@ export interface LegalCase {
   status: 'decided' | 'pending' | 'ongoing'
 }
 
-// ══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════
 // HISTORICAL TIMELINE — From Balfour to Present
 // ═══════════════════════════════════════════════════════════
 
@@ -222,7 +222,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
 
 // ═══════════════════════════════════════════════════════════
 // ADDITIONAL INCIDENTS (expanding from 6 to 16+)
-// ══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════
 
 export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCIDENT: Jabalia Refugee Camp ───
   {
@@ -317,49 +317,80 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     tier: 'verified',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/UNRWA_school_in_Gaza.jpg/640px-UNRWA_school_in_Gaza.jpg',
   },
-  // ─── NEW INCIDENT: Killing of Shireen Abu Akleh ───
+  // ─── NEW INCIDENT: Killing of Journalist Shireen Abu Akleh ───
   {
     title: 'Killing of Journalist Shireen Abu Akleh',
     date: 'May 11, 2022',
     location: 'Jenin Refugee Camp, West Bank',
     summary: 'Al Jazeera journalist Shireen Abu Akleh, a Palestinian-American, was shot and killed while covering an Israeli military raid in Jenin refugee camp. She was wearing a clearly marked press vest and helmet. Israeli forces initially blamed Palestinian gunfire, then acknowledged an Israeli soldier "likely" fired the fatal shot. The U.S. State Department found no reason to pursue further investigation despite Abu Akleh\'s American citizenship.',
-    evidence: 'Multiple independent investigations (CNN, Washington Post, NYT, AP, Bellingcat) concluded the bullet was fired by an Israeli soldier from a known military position. No Palestinian gunmen were in the line of fire. Acoustic analysis of video recordings pinpointed the shot to an Israeli convoy 200 meters away. The bullet was identified as a 5.56mm round consistent with Israeli-issued M4 rifles. Despite Abu Akleh\'s U.S. citizenship, the FBI investigation was closed without charges.',
+    evidence: 'CNN, AP, The Washington Post, and Bellingcat all conducted independent video and audio analyses concluding the fatal shot came from an Israeli military convoy and that no active Palestinian gunfire was present in the immediate vicinity. The UN OHCHR similarly stated the available information was consistent with fire from Israeli security forces and inconsistent with indiscriminate armed activity by Palestinians at the location. Israel later acknowledged there was a high possibility an Israeli soldier fired the shot.',
     sources: [
-      { label: 'CNN — Investigation: Israeli forces shot Shireen Abu Akleh', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl' },
-      { label: 'Washington Post — Ballistic analysis points to Israeli soldier', url: 'https://www.washingtonpost.com/investigations/interactive/2022/shireen-abu-akleh-death/' },
-      { label: 'Al Jazeera — ICC dossier on Abu Akleh killing', url: 'https://www.aljazeera.com/news/2022/12/6/what-is-in-al-jazeera-dossier-for-the-icc-on-abu-aklehs-killing' },
-      { label: 'UN document quoting OHCHR June 24, 2022 finding on Shireen Abu Akleh', url: 'https://documents.un.org/doc/undoc/gen/n22/413/33/pdf/n2241333.pdf' },
+      { label: 'CNN — Independent investigation into the killing', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-killing-analysis-intl' },
+      { label: 'Bellingcat — Video and audio reconstruction', url: 'https://www.bellingcat.com/news/mena/2022/05/28/shireen-abu-akleh-assessment/' },
+      { label: 'UN OHCHR — Statement on killing of Shireen Abu Akleh', url: 'https://www.ohchr.org/en/press-releases/2022/06/un-human-rights-office-occupied-palestinian-territory-shireen-abu' },
     ],
     multimedia: [
-      { type: 'investigation', label: 'CNN — Visual and acoustic investigation', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl' },
-      { type: 'video', label: 'Al Jazeera — Video segment on Abu Akleh killing', url: 'https://www.aljazeera.com/video/the-stream/2022/5/11/al-jazeera-journalist-shireen-abu-akleh-killed-by-israeli-forces' },
+      { type: 'investigation', label: 'Bellingcat — Geolocated shooting sequence', url: 'https://www.bellingcat.com/news/mena/2022/05/28/shireen-abu-akleh-assessment/' },
     ],
     tier: 'verified',
-    casualties: { killed: 1 },
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Press_photographers_with_cameras.jpg/640px-Press_photographers_with_cameras.jpg',
   },
-  // ─── NEW INCIDENT: Tent Camp Strikes ───
+  // ─── NEW INCIDENT: Flour Massacre ───
   {
-    title: 'Repeated Strikes on Displacement Tent Camps',
-    date: 'May 2024 — ongoing',
-    location: 'Rafah, Khan Yunis, Al-Mawasi — designated "safe zones"',
-    summary: 'Israeli forces conducted repeated airstrikes on displacement tent camps in areas the IDF itself designated as "humanitarian safe zones." On May 26, 2024, a strike on a tent camp in Rafah killed at least 45 displaced civilians and sparked fires that burned alive people trapped in makeshift shelters. Videos showed screaming civilians on fire. On September 10, 2024, another strike on Al-Mawasi safe zone killed at least 40.',
-    evidence: 'Video evidence of the May 26 Rafah strike showed tents engulfed in flames with civilians burning alive. Reporting by the Associated Press, The Guardian, and Al Jazeera documented mass civilian casualties in areas the Israeli military had described as safe. The IDF stated it was targeting two senior Hamas operatives. Subsequent strikes on Al-Mawasi showed that displacement camps and clearly marked civilian encampments continued to be hit.',
+    title: '"Flour Massacre" — Aid Seekers Killed While Gathering Food',
+    date: 'February 29, 2024',
+    location: 'Al-Rashid Street, Gaza City',
+    summary: 'Israeli forces opened fire on Palestinians crowding around aid trucks in Gaza City, killing at least 112 people and wounding over 760. Israel said soldiers fired after feeling threatened by the crowd and that some casualties occurred in a stampede. Multiple videos showed gunfire striking people as they fled. The event became known as the "flour massacre."',
+    evidence: 'Eyewitness videos analyzed by CNN and BBC showed sustained gunfire as crowds ran away from the trucks. Doctors at Al-Shifa hospital reported gunshot wounds as the primary cause of death among many victims. The U.S. blocked an initial UN Security Council statement condemning the killings.',
     sources: [
-      { label: 'AP — Israeli strike on Rafah displacement camp', url: 'https://apnews.com/article/israel-palestinians-hamas-war-news-05-28-2024-21ea44e3b514d3f3f2bd26a33f157e48' },
-      { label: 'The Guardian — Global shock after Israeli airstrike kills dozens in Rafah tent camp', url: 'https://www.theguardian.com/world/article/2024/may/27/global-shock-after-israeli-airstrike-kills-dozens-in-rafah-tent-camp' },
-      { label: 'Al Jazeera — Israeli strike on Gaza\'s al-Mawasi safe zone kills dozens', url: 'https://www.aljazeera.com/gallery/2024/9/10/israeli-strike-on-gazas-al-mawasi-safe-zone-kills-dozens' },
+      { label: 'CNN — Video analysis of flour massacre', url: 'https://www.cnn.com/2024/03/01/middleeast/gaza-flour-massacre-video-analysis-intl' },
+      { label: 'BBC — What happened in Gaza aid convoy incident?', url: 'https://www.bbc.com/news/world-middle-east-68445973' },
+      { label: 'UN News — Secretary-General appalled by aid convoy killings', url: 'https://news.un.org/en/story/2024/03/1147157' },
     ],
     multimedia: [
-      { type: 'video', label: 'Al Jazeera Newsfeed — How safe is Gaza\'s Al-Mawasi safe zone?', url: 'https://www.aljazeera.com/video/newsfeed/2024/9/11/how-safe-is-gazas-al-mawasi-safe' },
-      { type: 'investigation', label: 'AP — Reporting from the Rafah tent camp aftermath', url: 'https://apnews.com/article/israel-palestinians-hamas-war-news-05-28-2024-21ea44e3b514d3f3f2bd26a33f157e48' },
+      { type: 'video', label: 'CNN — Frame-by-frame convoy shooting analysis', url: 'https://www.cnn.com/2024/03/01/middleeast/gaza-flour-massacre-video-analysis-intl' },
     ],
     tier: 'verified',
-    casualties: { killed: 85, injured: 200 },
+    casualties: { killed: 112, injured: 760 },
   },
-  // ─── NEW INCIDENT: UNRWA Workers Killed ───
+  // ─── NEW INCIDENT: Rafah Tent Camp Strike ───
   {
-    title: 'UNRWA Staff Killings — Highest UN Death Toll in Any Conflict',
+    title: 'Rafah Tent Camp Fire — Families Burned Alive in Designated Safe Zone',
+    date: 'May 26, 2024',
+    location: 'Tal al-Sultan, Rafah',
+    summary: 'An Israeli airstrike hit a tent camp for displaced families in Tal al-Sultan, Rafah — an area Israel had designated as a humanitarian safe zone. The strike triggered a massive fire that burned through tents and makeshift shelters. At least 45 people were killed, including many women and children, with victims reported burned alive or decapitated. The strike came two days after the ICJ ordered Israel to halt its Rafah offensive.',
+    evidence: 'Videos verified by Reuters, AP, and CNN showed charred bodies, children\'s remains, and burning tents in a densely packed camp. Israel said it was targeting two Hamas officials and blamed secondary explosions, but independent analysts said the munitions and fire spread still raised serious questions about proportionality and the designation of the site as a safe area.',
+    sources: [
+      { label: 'Reuters — Rafah camp strike verified footage', url: 'https://www.reuters.com/world/middle-east/israeli-strike-rafah-kills-displaced-palestinians-camp-fire-2024-05-27/' },
+      { label: 'AP — Rafah strike aftermath and casualty reports', url: 'https://apnews.com/article/israel-palestinians-hamas-war-news-05-27-2024-7e3dbd8b59f3d07b0c0d9067f32f6e4c' },
+      { label: 'ICJ — May 24 order on Rafah offensive', url: 'https://www.icj-cij.org/case/192' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Reuters — Verified camp fire footage', url: 'https://www.reuters.com/world/middle-east/israeli-strike-rafah-kills-displaced-palestinians-camp-fire-2024-05-27/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 45, injured: 249 },
+  },
+  // ─── NEW INCIDENT: Killing of Hind Rajab ───
+  {
+    title: 'Killing of Hind Rajab and Ambulance Crew',
+    date: 'January 29, 2024',
+    location: 'Tel al-Hawa, Gaza City',
+    summary: 'Six-year-old Hind Rajab was trapped in a car with six dead relatives after an Israeli attack in Gaza City. She was heard pleading for help in recorded calls with the Palestinian Red Crescent Society. PRCS dispatched an ambulance after coordinating safe passage with Israeli authorities. Hind, the two paramedics, and the ambulance were later found destroyed. Investigations found the car and ambulance had been repeatedly fired upon by an Israeli tank positioned about 13 meters away.',
+    evidence: 'Forensic Architecture and Earshot analyzed the audio, bullet patterns, and scene geometry, concluding Israeli tank fire was responsible. The analysis showed over 300 bullet impacts on the vehicle and no evidence supporting claims of active combat at the time of the ambulance dispatch. PRCS released the audio recordings of Hind\'s final calls.',
+    sources: [
+      { label: 'Forensic Architecture — Hind Rajab investigation', url: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab' },
+      { label: 'PRCS — Timeline and recordings', url: 'https://www.palestinercs.org/en/News/All/48628' },
+      { label: 'The Guardian — Investigation summary', url: 'https://www.theguardian.com/world/2024/jun/20/hind-rajab-killing-investigation-gaza-israel' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Forensic Architecture — Spatial reconstruction', url: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 3 },
+  },
+  // ─── NEW INCIDENT: UNRWA Staff Death Toll ───
+  {
+    title: 'UNRWA Staff Death Toll — Highest UN Death Toll in Any Conflict',
     date: 'October 2023 — ongoing',
     location: 'Throughout Gaza',
     summary: 'Over 230 UNRWA staff members have been killed since October 7, 2023 — the highest number of UN staff killed in any single conflict in the history of the United Nations. UNRWA facilities have been struck over 500 times despite coordinates being shared with Israeli forces. Israel passed legislation banning UNRWA from operating in its territory, threatening the primary aid lifeline for 5.9 million Palestinian refugees.',
@@ -414,7 +445,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
 
 // ═══════════════════════════════════════════════════════════
 // AIPAC & LOBBYING DATA
-// ═════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════
 
 export const LOBBYING_DATA: LobbyingRecord[] = [
   {
@@ -456,7 +487,7 @@ export const LOBBYING_DATA: LobbyingRecord[] = [
 
 // ═══════════════════════════════════════════════════════════
 // INTERNATIONAL LEGAL CASES
-// ══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════
 
 export const LEGAL_CASES: LegalCase[] = [
   {
@@ -622,7 +653,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'The Israel Dossier',
     body: 'Every dollar traced. Every statistic sourced. Every incident documented.\n\nSwipe to see what your government doesn\'t want you to know.',
-    source: 'Veritas Press',
+    source: 'Veritas Worldwide',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'dark',
   },
@@ -690,7 +721,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'Read the Full Dossier',
     body: 'Every statistic sourced to government records, UN agencies, and verified reporting.\n\nNo opinion. No spin. Just the documented record.\n\nveritasworldwide.com/israel-dossier',
-    source: 'Veritas Press',
+    source: 'Veritas Worldwide',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'crimson',
   },
@@ -698,7 +729,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
 
 // ═══════════════════════════════════════════════════════════
 // PINNED POST IMAGE DATA
-// ══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════
 
 export interface PinnedPostData {
   id: string
