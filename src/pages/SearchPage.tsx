@@ -1,8 +1,10 @@
-import { useState, useEffect, useCallback, useRef, startTransition } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import type { ChapterType, EvidenceTier } from '../data/chapterTypes'
 import { useAuth } from '../lib/AuthContext'
 import { chapterMeta } from '../data/chapterMeta'
+import { allArticles as articles, CATEGORY_META } from '../data/articles'
+import { PROFILES, getProfilePhoto } from '../data/profileData'
 import { topicHubs } from '../data/topicHubs'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
@@ -163,6 +165,15 @@ function HighlightText({ text, query }: { text: string; query: string }) {
   )
 }
 
+function normalizeSearchValue(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+}
+
+function includesSearchQuery(values: string[], query: string) {
+  if (!query) return false
+  return normalizeSearchValue(values.join(' ')).includes(query)
+}
+
 export default function SearchPage() {
   const { authMode, canAccessProtectedContent, isLoggedIn, openAuthModal } = useAuth()
   const location = useLocation()
@@ -195,6 +206,48 @@ export default function SearchPage() {
     effectiveEvidenceTierFilter !== 'all' ||
     effectiveMatchFilter !== 'all' ||
     effectiveChapterTypeFilter !== 'all'
+  const normalizedCrossSurfaceQuery = normalizeSearchValue(debouncedQuery)
+
+  const matchingTopics = useMemo(() => {
+    if (!normalizedCrossSurfaceQuery) return []
+    return topicHubs
+      .filter((topic) =>
+        includesSearchQuery(
+          [topic.name, topic.headline, topic.description, ...topic.aliases, ...topic.keywords],
+          normalizedCrossSurfaceQuery
+        )
+      )
+      .slice(0, 3)
+  }, [normalizedCrossSurfaceQuery])
+
+  const matchingProfiles = useMemo(() => {
+    if (!normalizedCrossSurfaceQuery) return []
+    return PROFILES.filter((profile) =>
+      includesSearchQuery(
+        [
+          profile.name,
+          profile.title,
+          profile.summary,
+          ...(profile.tags || []),
+          ...(profile.connections || []).map((connection) => connection.name),
+          ...(profile.policyActions || []).map((action) => action.action),
+        ],
+        normalizedCrossSurfaceQuery
+      )
+    ).slice(0, 4)
+  }, [normalizedCrossSurfaceQuery])
+
+  const matchingArticles = useMemo(() => {
+    if (!normalizedCrossSurfaceQuery) return []
+    return articles
+      .filter((article) =>
+        includesSearchQuery(
+          [article.title, article.subtitle, article.category, ...article.tags, ...article.relatedChapters],
+          normalizedCrossSurfaceQuery
+        )
+      )
+      .slice(0, 3)
+  }, [normalizedCrossSurfaceQuery])
 
   useEffect(() => {
     const scopeDescription = searchScope === 'full'
@@ -422,6 +475,121 @@ export default function SearchPage() {
                 </div>
               )}
             </div>
+
+            {normalizedCrossSurfaceQuery && (
+              <section className="mb-10 rounded-[28px] border border-border bg-surface-raised p-5 sm:p-6">
+                <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson">
+                      Cross-site matches
+                    </p>
+                    <h2 className="mt-2 font-display text-2xl font-bold text-ink">
+                      Search across topics, profiles, and current reporting
+                    </h2>
+                  </div>
+                  <p className="max-w-2xl font-body text-sm leading-relaxed text-ink-muted">
+                    Chapter search remains the primary engine here, but the wider publication now surfaces matches from the rest of the record as well.
+                  </p>
+                </div>
+
+                {matchingTopics.length === 0 && matchingProfiles.length === 0 && matchingArticles.length === 0 ? (
+                  <p className="mt-5 font-body text-sm leading-relaxed text-ink-muted">
+                    No additional topic, profile, or newsroom matches surfaced for this query yet.
+                  </p>
+                ) : (
+                  <div className="mt-6 grid gap-4 xl:grid-cols-3">
+                    {matchingTopics.length > 0 && (
+                      <div className="rounded-2xl border border-border bg-surface p-4">
+                        <p className="font-sans text-[0.58rem] font-bold tracking-[0.16em] uppercase text-ink-faint">
+                          Topic hubs
+                        </p>
+                        <div className="mt-4 space-y-3">
+                          {matchingTopics.map((topic) => (
+                            <Link
+                              key={topic.slug}
+                              to={`/topics/${topic.slug}`}
+                              className="block rounded-xl border border-border bg-parchment px-4 py-3 transition-colors hover:border-crimson"
+                            >
+                              <p className="font-display text-lg font-bold text-ink">
+                                <HighlightText text={topic.name} query={debouncedQuery} />
+                              </p>
+                              <p className="mt-1 line-clamp-3 font-body text-sm leading-relaxed text-ink-muted">
+                                <HighlightText text={topic.description} query={debouncedQuery} />
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {matchingProfiles.length > 0 && (
+                      <div className="rounded-2xl border border-border bg-surface p-4">
+                        <p className="font-sans text-[0.58rem] font-bold tracking-[0.16em] uppercase text-ink-faint">
+                          Profiles
+                        </p>
+                        <div className="mt-4 space-y-3">
+                          {matchingProfiles.map((profile) => (
+                            <Link
+                              key={profile.id}
+                              to={`/profile/${profile.id}`}
+                              className="flex items-start gap-3 rounded-xl border border-border bg-parchment px-4 py-3 transition-colors hover:border-crimson"
+                            >
+                              <img
+                                src={getProfilePhoto(profile.id)}
+                                alt={profile.name}
+                                className="h-14 w-14 rounded-full object-cover"
+                                loading="lazy"
+                              />
+                              <div className="min-w-0">
+                                <p className="font-display text-lg font-bold text-ink">
+                                  <HighlightText text={profile.name} query={debouncedQuery} />
+                                </p>
+                                <p className="font-sans text-xs uppercase tracking-[0.12em] text-ink-faint">
+                                  <HighlightText text={profile.title} query={debouncedQuery} />
+                                </p>
+                                <p className="mt-1 line-clamp-2 font-body text-sm leading-relaxed text-ink-muted">
+                                  <HighlightText text={profile.summary} query={debouncedQuery} />
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {matchingArticles.length > 0 && (
+                      <div className="rounded-2xl border border-border bg-surface p-4">
+                        <p className="font-sans text-[0.58rem] font-bold tracking-[0.16em] uppercase text-ink-faint">
+                          Current reporting
+                        </p>
+                        <div className="mt-4 space-y-3">
+                          {matchingArticles.map((article) => (
+                            <Link
+                              key={article.id}
+                              to={`/news/${article.slug}`}
+                              className="block rounded-xl border border-border bg-parchment px-4 py-3 transition-colors hover:border-crimson"
+                            >
+                              <p className="font-sans text-[0.55rem] font-bold tracking-[0.14em] uppercase text-crimson">
+                                {CATEGORY_META[article.category].label}
+                              </p>
+                              <p className="mt-2 font-display text-lg font-bold text-ink">
+                                <HighlightText text={article.title} query={debouncedQuery} />
+                              </p>
+                              <p className="mt-1 line-clamp-2 font-body text-sm leading-relaxed text-ink-muted">
+                                <HighlightText text={article.subtitle} query={debouncedQuery} />
+                              </p>
+                              <p className="mt-2 font-sans text-[0.55rem] uppercase tracking-[0.1em] text-ink-faint">
+                                {article.publishDate} · {article.readingTime} min
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </section>
+            )}
 
             {canAccessProtectedContent && (
               <section className="mb-10 border border-border bg-surface-raised p-4 sm:p-5">
