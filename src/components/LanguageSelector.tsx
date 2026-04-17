@@ -32,9 +32,35 @@ export default function LanguageSelector() {
       setTab('translate')
     }
     injectGTStyles()
-    // Pre-load Google Translate script in background
-    loadGoogleTranslate().then(() => setGtReady(true))
+
+    if (!stored) return
+
+    let cancelled = false
+    loadGoogleTranslate()
+      .then(() => {
+        if (!cancelled) setGtReady(true)
+      })
+      .catch(() => {})
+
+    return () => {
+      cancelled = true
+    }
   }, [])
+
+  useEffect(() => {
+    if (!open || tab !== 'translate' || gtReady) return
+
+    let cancelled = false
+    loadGoogleTranslate()
+      .then(() => {
+        if (!cancelled) setGtReady(true)
+      })
+      .catch(() => {})
+
+    return () => {
+      cancelled = true
+    }
+  }, [open, tab, gtReady])
 
   // Close on outside click
   useEffect(() => {
@@ -83,8 +109,12 @@ export default function LanguageSelector() {
 
   const handleGTLang = useCallback(async (gl: GoogleLang) => {
     if (!gtReady) {
-      await loadGoogleTranslate()
-      setGtReady(true)
+      try {
+        await loadGoogleTranslate()
+        setGtReady(true)
+      } catch {
+        return
+      }
     }
     translatePage(gl.code)
     setGtLang(gl.code)
