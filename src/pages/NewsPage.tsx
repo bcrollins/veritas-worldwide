@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { allArticles as articles, CATEGORY_META, type Article, type ArticleCategory } from '../data/articles'
 import SharePanel from '../components/SharePanel'
+import { getPreferredImageSrc } from '../lib/imageSources'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+
+function getArticleImageSrc(src: string) {
+  return getPreferredImageSrc(src) || src
+}
 
 function CategoryBadge({ category }: { category: ArticleCategory }) {
   return (
@@ -18,7 +23,7 @@ function HeroArticle({ article }: { article: Article }) {
       <article className="grid md:grid-cols-2 gap-6 md:gap-10 pb-10 border-b border-border">
         <div className="overflow-hidden">
           <img
-            src={article.heroImage.src}
+            src={getArticleImageSrc(article.heroImage.src)}
             alt={article.heroImage.alt}
             className="w-full h-64 md:h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
             loading="eager"
@@ -52,7 +57,7 @@ function ArticleCard({ article, size = 'medium' }: { article: Article; size?: 'm
       <article className={size === 'medium' ? 'pb-6' : 'pb-4'}>
         <div className="overflow-hidden mb-3">
           <img
-            src={article.heroImage.src}
+            src={getArticleImageSrc(article.heroImage.src)}
             alt={article.heroImage.alt}
             className={`w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ${
               size === 'medium' ? 'h-48' : 'h-36'
@@ -100,7 +105,7 @@ function ArticleListItem({ article }: { article: Article }) {
           </div>
         </div>
         <img
-          src={article.heroImage.src}
+          src={getArticleImageSrc(article.heroImage.src)}
           alt={article.heroImage.alt}
           className="w-20 h-20 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 flex-shrink-0"
           loading="lazy"
@@ -264,7 +269,7 @@ export default function NewsPage() {
                       </div>
 
                       <div className="mt-6">
-                        <SharePanel variant="compact" title="Share Veritas News" url={`${SITE_URL}/news`} />
+                        <SharePanel variant="compact" title="Share Current Events" url={`${SITE_URL}/news`} />
                       </div>
 
                       <div className="mt-6 bg-obsidian text-white rounded-sm p-5">

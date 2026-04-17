@@ -1,5 +1,6 @@
 // Historical images from Wikimedia Commons (public domain / CC)
 // Each chapter gets 1-3 key images of people, events, or documents
+import { getPreferredImageSrc } from '../lib/imageSources'
 
 export interface ChapterImage {
   src: string
@@ -8,7 +9,7 @@ export interface ChapterImage {
   credit: string
 }
 
-export const chapterImages: Record<string, ChapterImage[]> = {
+const rawChapterImages: Record<string, ChapterImage[]> = {
   foreword: [
     {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg',
@@ -270,6 +271,16 @@ export const chapterImages: Record<string, ChapterImage[]> = {
     },
   ],
 }
+
+export const chapterImages: Record<string, ChapterImage[]> = Object.fromEntries(
+  Object.entries(rawChapterImages).map(([chapterId, images]) => [
+    chapterId,
+    images.map((image) => ({
+      ...image,
+      src: getPreferredImageSrc(image.src) || image.src,
+    })),
+  ])
+) as Record<string, ChapterImage[]>
 
 export function getChapterImages(chapterId: string): ChapterImage[] {
   return chapterImages[chapterId] || []

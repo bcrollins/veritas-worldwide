@@ -1,4 +1,5 @@
 import type { ImageData } from './chapterTypes';
+import { getPreferredImageSrc } from '../lib/imageSources';
 
 export interface ChapterMetadata {
   id: string;
@@ -12,7 +13,7 @@ export interface ChapterMetadata {
   keywords: string[];
 }
 
-export const chapterMeta: ChapterMetadata[] = [
+const rawChapterMeta: ChapterMetadata[] = [
   {
     id: "foreword",
     number: "Foreword",
@@ -355,3 +356,8 @@ export const chapterMeta: ChapterMetadata[] = [
     keywords: ["research", "primary sources", "FOIA", "archives", "verification"],
   },
 ];
+
+export const chapterMeta: ChapterMetadata[] = rawChapterMeta.map((chapter) => ({
+  ...chapter,
+  heroImage: chapter.heroImage ? getPreferredImageSrc(chapter.heroImage) || chapter.heroImage : chapter.heroImage,
+}));
