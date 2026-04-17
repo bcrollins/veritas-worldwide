@@ -1,19 +1,43 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { getTopicArticles, getTopicChapters, getTopicHubBySlug } from '../data/topicHubs'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import { formatCompactDollars, getTopicProfileMatches, getTopicProfileStats } from '../lib/topicDiscovery'
+import { getProfilePhoto } from '../data/profileData'
+
+function TopicStatCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-border bg-surface p-4">
+      <p className="font-display text-2xl font-bold text-ink">{value}</p>
+      <p className="mt-1 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+        {label}
+      </p>
+    </div>
+  )
+}
 
 export default function TopicPage() {
   const { slug } = useParams<{ slug: string }>()
   const topic = slug ? getTopicHubBySlug(slug) : undefined
 
+  const chapters = useMemo(() => (topic ? getTopicChapters(topic) : []), [topic])
+  const articles = useMemo(() => (topic ? getTopicArticles(topic) : []), [topic])
+  const profileMatches = useMemo(() => (topic ? getTopicProfileMatches(topic).slice(0, 8) : []), [topic])
+  const profileStats = useMemo(() => (topic ? getTopicProfileStats(topic) : null), [topic])
+
+  const strongestCategories = useMemo(() => {
+    if (!profileStats) return []
+
+    return Object.entries(profileStats.categoryBreakdown)
+      .filter(([, count]) => count > 0)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+  }, [profileStats])
+
   useEffect(() => {
     if (!topic) return
-
-    const chapters = getTopicChapters(topic)
-    const articles = getTopicArticles(topic)
 
     setMetaTags({
       title: `${topic.name} | ${SITE_NAME}`,
@@ -53,6 +77,12 @@ export default function TopicPage() {
             name: article.title,
             url: `${SITE_URL}/news/${article.slug}`,
           })),
+          ...profileMatches.map((match, index) => ({
+            '@type': 'ListItem',
+            position: chapters.length + articles.length + index + 1,
+            name: match.profile.name,
+            url: `${SITE_URL}/profile/${match.profile.id}`,
+          })),
         ],
       },
       {
@@ -73,7 +103,7 @@ export default function TopicPage() {
       clearMetaTags()
       removeJsonLd()
     }
-  }, [topic])
+  }, [topic, chapters, articles, profileMatches])
 
   if (!topic) {
     return (
@@ -87,8 +117,6 @@ export default function TopicPage() {
     )
   }
 
-  const chapters = getTopicChapters(topic)
-  const articles = getTopicArticles(topic)
   const successPath = buildSubscriptionSuccessPath({
     source: 'topic_hub',
     topic: topic.slug,
@@ -101,9 +129,13 @@ export default function TopicPage() {
       <div className="border-b border-border bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 py-3 text-sm">
-            <Link to="/" className="text-ink-muted hover:text-crimson transition-colors">Home</Link>
+            <Link to="/" className="text-ink-muted hover:text-crimson transition-colors">
+              Home
+            </Link>
             <span className="text-ink-muted/50">›</span>
-            <Link to="/topics" className="text-ink-muted hover:text-crimson transition-colors">Research Topics</Link>
+            <Link to="/topics" className="text-ink-muted hover:text-crimson transition-colors">
+              Research Topics
+            </Link>
             <span className="text-ink-muted/50">›</span>
             <span className="text-ink font-medium">{topic.name}</span>
           </div>
@@ -125,13 +157,15 @@ export default function TopicPage() {
             {topic.description}
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-8 font-sans text-[0.65rem] uppercase tracking-[0.12em] text-ink-faint">
-            <span>{chapters.length} core chapters</span>
-            <span>&middot;</span>
-            <span>{articles.length} linked news briefings</span>
-            <span>&middot;</span>
-            <span>{topic.keywords.length} search terms</span>
-          </div>
+          {profileStats && (
+            <div className="grid gap-4 mt-10 sm:grid-cols-2 xl:grid-cols-5">
+              <TopicStatCard label="Core chapters" value={String(chapters.length)} />
+              <TopicStatCard label="News briefings" value={String(articles.length)} />
+              <TopicStatCard label="Related profiles" value={String(profileStats.profileCount)} />
+              <TopicStatCard label="Sourced claims" value={String(profileStats.claimCount)} />
+              <TopicStatCard label="Tracked donations" value={formatCompactDollars(profileStats.donationVolume)} />
+            </div>
+          )}
         </div>
       </section>
 
@@ -212,7 +246,80 @@ export default function TopicPage() {
             ) : (
               <div className="border border-border bg-surface p-5">
                 <p className="font-body text-sm text-ink-muted leading-relaxed">
-                  This topic hub is currently anchored in the longform documentary chapters. Use the related search terms below to explore the archive while the news desk expands this beat.
+                  This beat is currently anchored in the longform documentary archive and the profile map.
+                  Use the key figures and related searches below to continue through the record while the news
+                  desk expands current reporting on this corridor.
+                </p>
+              </div>
+            )}
+          </section>
+
+          <section>
+            <div className="flex items-center gap-4 mb-6">
+              <h2 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+                Key Figures In This Beat
+              </h2>
+              <div className="flex-1 h-[1px] bg-border" />
+            </div>
+            {profileMatches.length > 0 ? (
+              <div className="grid gap-4 md:grid-cols-2">
+                {profileMatches.map((match) => (
+                  <Link
+                    key={match.profile.id}
+                    to={`/profile/${match.profile.id}`}
+                    className="group rounded-2xl border border-border bg-surface p-5 hover:border-crimson/35 hover:bg-parchment-dark/40 transition-colors"
+                  >
+                    <div className="flex items-start gap-4">
+                      <img
+                        src={getProfilePhoto(match.profile.id)}
+                        alt={match.profile.name}
+                        className="h-16 w-16 rounded-full object-cover flex-shrink-0"
+                        loading="lazy"
+                      />
+                      <div className="min-w-0">
+                        <p className="font-sans text-[0.56rem] font-bold tracking-[0.14em] uppercase text-crimson">
+                          {match.profile.category.replace('-', ' ')}
+                        </p>
+                        <h3 className="mt-1 font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
+                          {match.profile.name}
+                        </h3>
+                        <p className="font-body text-sm text-ink-muted mt-1">{match.profile.title}</p>
+                      </div>
+                    </div>
+                    <p className="mt-4 font-body text-sm leading-relaxed text-ink-muted line-clamp-3">
+                      {match.profile.summary}
+                    </p>
+                    <div className="grid grid-cols-3 gap-3 mt-5">
+                      <div>
+                        <p className="font-display text-xl font-bold text-ink">{match.profile.sourcedClaims.length}</p>
+                        <p className="font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-faint">Claims</p>
+                      </div>
+                      <div>
+                        <p className="font-display text-xl font-bold text-ink">{match.profile.connections.length}</p>
+                        <p className="font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-faint">Links</p>
+                      </div>
+                      <div>
+                        <p className="font-display text-xl font-bold text-ink">{match.profile.donations.length}</p>
+                        <p className="font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-faint">Donations</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {match.matchedTerms.slice(0, 3).map((term) => (
+                        <span
+                          key={`${match.profile.id}-${term}`}
+                          className="inline-flex items-center rounded-sm bg-parchment px-2 py-1 font-sans text-[0.58rem] uppercase tracking-[0.08em] text-ink-faint"
+                        >
+                          {term}
+                        </span>
+                      ))}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="border border-border bg-surface p-5">
+                <p className="font-body text-sm text-ink-muted leading-relaxed">
+                  No related power profiles are mapped to this topic yet.
                 </p>
               </div>
             )}
@@ -259,14 +366,50 @@ export default function TopicPage() {
         <aside className="space-y-8">
           <div className="border border-border bg-surface p-5">
             <p className="font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
-              Free Reader Accounts
+              Beat Profile
             </p>
             <h2 className="font-display text-2xl font-bold text-ink leading-tight">
-              Move from the search result to the full archive.
+              What this topic opens up
             </h2>
             <p className="font-body text-sm text-ink-muted leading-relaxed mt-3">
-              Topic hubs are built to help readers arrive through search, understand the beat quickly, and then continue into the full chapter archive with a free reader account.
+              This corridor links historical chapters, current reporting, and related figures so a reader can move
+              from topic-level search intent into the underlying power map quickly.
             </p>
+            {profileStats && (
+              <div className="space-y-3 mt-5 border-t border-border pt-5">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-body text-sm text-ink-muted">Profiles mapped</span>
+                  <span className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-ink">{profileStats.profileCount}</span>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-body text-sm text-ink-muted">Sourced claims</span>
+                  <span className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-ink">{profileStats.claimCount}</span>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-body text-sm text-ink-muted">Tracked donations</span>
+                  <span className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-ink">
+                    {formatCompactDollars(profileStats.donationVolume)}
+                  </span>
+                </div>
+              </div>
+            )}
+            {strongestCategories.length > 0 && (
+              <div className="mt-5">
+                <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.15em] text-ink-faint">
+                  Strongest profile groups
+                </p>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {strongestCategories.map(([category, count]) => (
+                    <span
+                      key={`${topic.slug}-${category}`}
+                      className="inline-flex items-center rounded-sm bg-parchment px-2.5 py-1 font-sans text-[0.58rem] uppercase tracking-[0.08em] text-ink-faint"
+                    >
+                      {category.replace('-', ' ')} · {count}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="flex flex-col gap-3 mt-5">
               <Link
                 to="/read"
@@ -275,10 +418,10 @@ export default function TopicPage() {
                 Read The Record
               </Link>
               <Link
-                to="/methodology"
+                to="/profiles"
                 className="inline-flex items-center justify-center rounded-sm border border-border px-4 py-3 font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
               >
-                Methodology
+                Browse All Profiles
               </Link>
             </div>
           </div>
