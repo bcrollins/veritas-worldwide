@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, ImgHTMLAttributes } from 'react';
+import { getPreferredImageSrc } from '../lib/imageSources';
 
 // Global Set to track broken images
 const brokenImages = new Set<string>();
@@ -31,47 +32,38 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   className = '',
   ...props
 }) => {
+  const normalizedSrc = getPreferredImageSrc(src);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [currentSrc, setCurrentSrc] = useState(src);
+  const [currentSrc, setCurrentSrc] = useState(normalizedSrc);
   const [retryAttempts, setRetryAttempts] = useState(0);
 
-  // Check localStorage for image overrides
   useEffect(() => {
-    if (typeof window !== 'undefined' && src) {
-      try {
-        const overrides = JSON.parse(
-          localStorage.getItem('veritas_image_overrides') || '{}'
-        );
-        if (overrides[src]) {
-          setCurrentSrc(overrides[src]);
-          setHasError(false);
-          setRetryAttempts(0);
-        }
-      } catch (e) {
-        // localStorage parsing error, continue with current src
-      }
-    }
-  }, [src]);
+    setCurrentSrc(normalizedSrc);
+    setIsLoading(Boolean(src));
+    setHasError(false);
+    setRetryAttempts(0);
 
-  const getWikimediaProxy = (imageUrl: string): string => {
+    if (typeof window === 'undefined' || !src) return;
+
     try {
-      const encoded = encodeURIComponent(imageUrl);
-      return `https://commons.wikimedia.org/wiki/Special:FilePath/${encoded}?width=400`;
+      const overrides = JSON.parse(
+        localStorage.getItem('veritas_image_overrides') || '{}'
+      );
+      if (overrides[src]) {
+        setCurrentSrc(overrides[src]);
+      }
     } catch {
-      return imageUrl;
+      // localStorage parsing error, continue with normalized src
     }
-  };
+  }, [normalizedSrc, src]);
 
   const handleError = () => {
-    if (retryAttempts < retryCount) {
-      // Try Wikimedia proxy as fallback
-      const wikimediaUrl = getWikimediaProxy(src || '');
-      if (wikimediaUrl !== currentSrc) {
-        setCurrentSrc(wikimediaUrl);
-        setRetryAttempts(retryAttempts + 1);
+    if (retryAttempts < retryCount && normalizedSrc && currentSrc !== normalizedSrc) {
+        setCurrentSrc(normalizedSrc);
+        setRetryAttempts((attempts) => attempts + 1);
+        setIsLoading(true);
         return;
-      }
     }
 
     // Use fallback source if provided
