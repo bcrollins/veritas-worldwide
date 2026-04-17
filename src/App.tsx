@@ -765,6 +765,7 @@ export default function App() {
   const location = useLocation()
   const isAdmin = location.pathname.startsWith('/admin')
   const isInstitute = location.pathname.startsWith('/institute')
+  const isNewsArticle = matchesPrefix(location.pathname, '/news') && normalizePath(location.pathname) !== '/news'
 
   return (
     <I18nProvider>
@@ -891,7 +892,7 @@ export default function App() {
           {!isInstitute && (
             <>
               <NewsletterPopup />
-              <ExitIntentCapture />
+              {!isNewsArticle && <ExitIntentCapture />}
               <StickyMembershipBar />
             </>
           )}
