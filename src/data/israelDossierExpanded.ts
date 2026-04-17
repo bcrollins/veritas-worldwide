@@ -70,7 +70,7 @@ export interface LegalCase {
   status: 'decided' | 'pending' | 'ongoing'
 }
 
-// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════
 // HISTORICAL TIMELINE — From Balfour to Present
 // ═══════════════════════════════════════════════════════════
 
@@ -189,9 +189,9 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
   {
     year: '2018',
     title: 'Great March of Return — 223 Palestinians Killed',
-    description: 'Palestinians in Gaza hold weekly protests at the border fence demanding the right of return. Over 10 months, Israeli snipers kill 223 protesters and injure over 8,000 with live ammunition. A UN inquiry finds Israeli forces may have committed war crimes.',
-    source: 'UN Human Rights Council, Report A/HRC/40/CRP.2',
-    sourceUrl: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-protests/report',
+    description: 'Palestinians in Gaza hold weekly protests at the border fence demanding the right of return. Later UN reporting records 223 Palestinians killed and more than 36,100 injured during the 2018–2019 protest period, while citing earlier commission findings on lethal force used against demonstrators.',
+    source: 'UN report A/78/545 on children and armed conflict in the Occupied Palestinian Territory',
+    sourceUrl: 'https://documents.un.org/doc/undoc/gen/n23/315/25/pdf/n2331525.pdf',
     tier: 'verified',
   },
   {
@@ -222,7 +222,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
 
 // ═══════════════════════════════════════════════════════════
 // ADDITIONAL INCIDENTS (expanding from 6 to 16+)
-// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════
 
 export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCIDENT: Jabalia Refugee Camp ───
   {
@@ -307,7 +307,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     sources: [
       { label: 'IPC — Famine confirmed in northern Gaza', url: 'https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1157345/' },
       { label: 'WFP — "Catastrophic hunger" in Gaza', url: 'https://www.wfp.org/emergencies/palestine-emergency' },
-      { label: 'MSF — Children dying of malnutrition in Gaza hospitals', url: 'https://www.msf.org/gaza-children-are-dying-malnutrition-while-aid-blocked' },
+      { label: 'WHO — People in Gaza starving, sick and dying as aid blockade continues', url: 'https://www.who.int/news/item/12-05-2025-people-in-gaza-starving--sick-and-dying-as-aid-blockade-continues' },
       { label: 'Reuters — Israeli settlers block Gaza aid convoys', url: 'https://www.reuters.com/world/middle-east/israeli-activists-block-gaza-aid-trucks-2024-02-12/' },
     ],
     multimedia: [
@@ -328,7 +328,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { label: 'CNN — Investigation: Israeli forces shot Shireen Abu Akleh', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl' },
       { label: 'Washington Post — Ballistic analysis points to Israeli soldier', url: 'https://www.washingtonpost.com/investigations/interactive/2022/shireen-abu-akleh-death/' },
       { label: 'Al Jazeera — ICC dossier on Abu Akleh killing', url: 'https://www.aljazeera.com/news/2022/12/6/what-is-in-al-jazeera-dossier-for-the-icc-on-abu-aklehs-killing' },
-      { label: 'UN OHCHR — "Shots that killed Abu Akleh came from Israeli forces"', url: 'https://www.ohchr.org/en/press-releases/2022/06/un-human-rights-office-concludes-shots-killed-journalist-came-israeli' },
+      { label: 'UN document quoting OHCHR June 24, 2022 finding on Shireen Abu Akleh', url: 'https://documents.un.org/doc/undoc/gen/n22/413/33/pdf/n2241333.pdf' },
     ],
     multimedia: [
       { type: 'investigation', label: 'CNN — Visual and acoustic investigation', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl' },
@@ -414,7 +414,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
 
 // ═══════════════════════════════════════════════════════════
 // AIPAC & LOBBYING DATA
-// ═══════════════════════════════════════════════════════════
+// ═════════════════════════════════════════════════════════
 
 export const LOBBYING_DATA: LobbyingRecord[] = [
   {
@@ -456,7 +456,7 @@ export const LOBBYING_DATA: LobbyingRecord[] = [
 
 // ═══════════════════════════════════════════════════════════
 // INTERNATIONAL LEGAL CASES
-// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════
 
 export const LEGAL_CASES: LegalCase[] = [
   {
@@ -622,7 +622,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'The Israel Dossier',
     body: 'Every dollar traced. Every statistic sourced. Every incident documented.\n\nSwipe to see what your government doesn\'t want you to know.',
-    source: 'Veritas Worldwide',
+    source: 'Veritas Press',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'dark',
   },
@@ -690,7 +690,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'Read the Full Dossier',
     body: 'Every statistic sourced to government records, UN agencies, and verified reporting.\n\nNo opinion. No spin. Just the documented record.\n\nveritasworldwide.com/israel-dossier',
-    source: 'Veritas Worldwide',
+    source: 'Veritas Press',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'crimson',
   },
@@ -698,7 +698,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
 
 // ═══════════════════════════════════════════════════════════
 // PINNED POST IMAGE DATA
-// ═══════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════
 
 export interface PinnedPostData {
   id: string
