@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getArticleBySlug, CATEGORY_META, type ArticleBlock, type ArticleSource } from '../data/articles'
 import NewsletterSignup from '../components/NewsletterSignup'
-import ContentGate from '../components/ContentGate'
 import { chapterMeta } from '../data/chapterMeta'
 import { getTopicHrefForTerm, getTopicHubByKeyword } from '../data/topicHubs'
 import SharePanel from '../components/SharePanel'
@@ -387,9 +386,6 @@ export default function ArticlePage() {
           </aside>
         </div>
       </div>
-
-      {/* Scroll-depth content gate */}
-      <ContentGate triggerDepth={45} contentInterest={article.category} />
     </article>
   )
 }
