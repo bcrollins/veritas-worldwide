@@ -6,8 +6,13 @@ import ContentGate from '../components/ContentGate'
 import { chapterMeta } from '../data/chapterMeta'
 import { getTopicHrefForTerm, getTopicHubByKeyword } from '../data/topicHubs'
 import SharePanel from '../components/SharePanel'
+import { getPreferredImageSrc } from '../lib/imageSources'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+
+function getArticleImageSrc(src?: string) {
+  return getPreferredImageSrc(src) || src
+}
 
 function SourceBadge({ type }: { type: ArticleSource['type'] }) {
   const styles: Record<string, string> = {
@@ -81,7 +86,7 @@ function ContentBlock({ block }: { block: ArticleBlock }) {
       return (
         <figure className="my-8">
           <img
-            src={block.image?.src}
+            src={getArticleImageSrc(block.image?.src)}
             alt={block.image?.alt || ''}
             className="w-full rounded-sm grayscale hover:grayscale-0 transition-all duration-500"
             loading="lazy"
@@ -103,6 +108,7 @@ export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const article = slug ? getArticleBySlug(slug) : undefined
+  const heroImageSrc = article ? getArticleImageSrc(article.heroImage.src) : undefined
 
   useEffect(() => {
     if (!article) return
@@ -118,7 +124,7 @@ export default function ArticlePage() {
       '@type': 'NewsArticle',
       'headline': article.title,
       'description': article.seo.metaDescription,
-      'image': article.heroImage.src,
+      'image': heroImageSrc,
       'datePublished': article.publishDate,
       'dateModified': article.updatedDate || article.publishDate,
       'author': { '@type': 'Organization', 'name': article.author },
@@ -132,7 +138,7 @@ export default function ArticlePage() {
       'keywords': article.seo.keywords.join(', '),
     })
     return () => { clearMetaTags(); removeJsonLd() }
-  }, [article])
+  }, [article, heroImageSrc])
 
   if (!article) {
     return (
@@ -160,7 +166,6 @@ export default function ArticlePage() {
   const relatedChapterData = article.relatedChapters
     .map(id => chapterMeta.find(c => c.id === id))
     .filter(Boolean)
-
   return (
     <article className="min-h-screen">
       {/* ── Section Bar ──────────────────────────────── */}
@@ -230,7 +235,7 @@ export default function ArticlePage() {
         <div className="max-w-5xl mx-auto mt-8 mb-10">
           <figure>
             <img
-              src={article.heroImage.src}
+              src={heroImageSrc}
               alt={article.heroImage.alt}
               className="w-full h-64 sm:h-80 md:h-[420px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
               loading="eager"
