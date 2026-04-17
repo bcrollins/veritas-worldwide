@@ -133,8 +133,10 @@ export const RTL_GT_CODES = new Set(['ar', 'he', 'fa', 'ur', 'ps', 'sd', 'ug', '
 
 const GT_STORAGE_KEY = 'veritas_gt_lang'
 const GT_SCRIPT_URL = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+const GT_SCRIPT_ID = 'veritas-google-translate-script'
 
 let scriptLoaded = false
+let scriptLoadPromise: Promise<void> | null = null
 let initPromiseResolve: (() => void) | null = null
 
 /**
@@ -143,8 +145,9 @@ let initPromiseResolve: (() => void) | null = null
  */
 export function loadGoogleTranslate(): Promise<void> {
   if (scriptLoaded) return Promise.resolve()
+  if (scriptLoadPromise) return scriptLoadPromise
 
-  return new Promise<void>((resolve) => {
+  scriptLoadPromise = new Promise<void>((resolve) => {
     initPromiseResolve = resolve
 
     // Create hidden container for Google Translate widget
@@ -156,26 +159,59 @@ export function loadGoogleTranslate(): Promise<void> {
       document.body.appendChild(container)
     }
 
+    const finalizeLoad = () => {
+      scriptLoaded = true
+      scriptLoadPromise = null
+      if (initPromiseResolve) {
+        const resolveLoad = initPromiseResolve
+        initPromiseResolve = null
+        resolveLoad()
+      }
+    }
+
     // Define the callback Google Translate calls after loading
     ;(window as any).googleTranslateElementInit = () => {
-      new (window as any).google.translate.TranslateElement(
-        {
-          pageLanguage: 'en',
-          autoDisplay: false,
-          layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
-        },
-        'google_translate_element'
-      )
-      scriptLoaded = true
-      if (initPromiseResolve) initPromiseResolve()
+      const translateApi = (window as any).google?.translate?.TranslateElement
+      if (!translateApi) return
+
+      if (container?.dataset.veritasGtReady !== 'true') {
+        new translateApi(
+          {
+            pageLanguage: 'en',
+            autoDisplay: false,
+            layout: translateApi.InlineLayout.SIMPLE,
+          },
+          'google_translate_element'
+        )
+        if (container) {
+          container.dataset.veritasGtReady = 'true'
+        }
+      }
+
+      finalizeLoad()
     }
+
+    if ((window as any).google?.translate?.TranslateElement) {
+      ;(window as any).googleTranslateElementInit()
+      return
+    }
+
+    const existingScript = document.getElementById(GT_SCRIPT_ID) as HTMLScriptElement | null
+    if (existingScript) return
 
     // Inject the script
     const script = document.createElement('script')
+    script.id = GT_SCRIPT_ID
     script.src = GT_SCRIPT_URL
     script.async = true
+    script.onerror = () => {
+      scriptLoadPromise = null
+      initPromiseResolve = null
+    }
     document.head.appendChild(script)
   })
+
+  return scriptLoadPromise
 }
 
 /**
