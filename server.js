@@ -3,6 +3,8 @@ import compression from 'compression'
 import path from 'path'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
+import { registerDatabaseAndAuthRoutes } from './server-auth.js'
+import { registerBotMetaInjection } from './server-social-meta.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -145,7 +147,7 @@ function normalizeChapterRecord(chapter, fallbackChapter = null) {
     ? chapter.chapterType
     : null
   const fallbackChapterType = typeof fallbackChapter?.chapterType === 'string' && CHAPTER_TYPE_FILTERS.has(fallbackChapter.chapterType)
-    ? fallbackChapter.chapterType
+    ? fallbackChapterType = fallbackChapter.chapterType
     : null
   const preferredEvidenceTiers = normalizeAvailableEvidenceTiers(chapter.availableEvidenceTiers)
   const fallbackEvidenceTiers = normalizeAvailableEvidenceTiers(fallbackChapter?.availableEvidenceTiers)
@@ -368,7 +370,16 @@ function createAnalyticsStore() {
     pages: {},
     events: {},
     eventDaily: {},
+    signupAttribution: {
+      sources: {},
+      interests: {},
+      returnPaths: {},
+    },
   }
+}
+
+function normalizeSignupAttributionBucket(value) {
+  return value && typeof value === 'object' && !Array.isArray(value) ? value : {}
 }
 
 function normalizeAnalyticsStore(value) {
@@ -389,6 +400,13 @@ function normalizeAnalyticsStore(value) {
     pages: source.pages && typeof source.pages === 'object' && !Array.isArray(source.pages) ? source.pages : {},
     events: source.events && typeof source.events === 'object' && !Array.isArray(source.events) ? source.events : {},
     eventDaily: source.eventDaily && typeof source.eventDaily === 'object' && !Array.isArray(source.eventDaily) ? source.eventDaily : {},
+    signupAttribution: source.signupAttribution && typeof source.signupAttribution === 'object' && !Array.isArray(source.signupAttribution)
+      ? {
+          sources: normalizeSignupAttributionBucket(source.signupAttribution.sources),
+          interests: normalizeSignupAttributionBucket(source.signupAttribution.interests),
+          returnPaths: normalizeSignupAttributionBucket(source.signupAttribution.returnPaths),
+        }
+      : base.signupAttribution,
   }
 }
 
@@ -789,6 +807,38 @@ function sanitizeAnalyticsProperties(value) {
   return clean
 }
 
+function recordSignupAttribution(bucket, rawLabel, now, eventPath) {
+  if (typeof rawLabel !== 'string') return
+  const label = rawLabel.trim().slice(0, 160)
+  if (!label || label === '__proto__' || label === 'constructor' || label === 'prototype') return
+
+  if (!store.signupAttribution[bucket][label]) {
+    store.signupAttribution[bucket][label] = { count: 0, lastSeenAt: '', lastPath: '' }
+  }
+
+  const entry = store.signupAttribution[bucket][label]
+  entry.count += 1
+  entry.lastSeenAt = now.toISOString()
+  if (eventPath) {
+    entry.lastPath = eventPath
+  }
+}
+
+function buildSignupAttributionList(bucket) {
+  return Object.entries(bucket)
+    .map(([label, meta]) => ({
+      label,
+      count: meta.count || 0,
+      lastSeenAt: meta.lastSeenAt || '',
+      lastPath: meta.lastPath || '',
+    }))
+    .sort((a, b) => {
+      if (b.count !== a.count) return b.count - a.count
+      return a.label.localeCompare(b.label)
+    })
+    .slice(0, 20)
+}
+
 // Gzip/Brotli compression — reduces 549KB chapters chunk to ~188KB
 app.use(compression())
 
@@ -955,6 +1005,12 @@ app.post('/api/analytics/event', (req, res) => {
   }
   store.eventDaily[dateKey][name] = (store.eventDaily[dateKey][name] || 0) + 1
 
+  if (name === 'email_signup') {
+    recordSignupAttribution('sources', cleanProperties.source, now, eventPath)
+    recordSignupAttribution('interests', cleanProperties.content_interest, now, eventPath)
+    recordSignupAttribution('returnPaths', cleanProperties.return_to, now, eventPath)
+  }
+
   markAnalyticsDirty()
   res.setHeader('Cache-Control', 'no-store')
   res.json({ ok: true })
@@ -1012,6 +1068,9 @@ app.get('/api/analytics/snapshot', (req, res) => {
       payments: (dayEvents.payment_completed || 0) + (dayEvents.donation_completed || 0),
     })
   }
+  const signupSources = buildSignupAttributionList(store.signupAttribution.sources)
+  const signupInterests = buildSignupAttributionList(store.signupAttribution.interests)
+  const signupReturnPaths = buildSignupAttributionList(store.signupAttribution.returnPaths)
   const funnel = {
     chapterViews: eventCounts.chapter_viewed || 0,
     gateHits: eventCounts.content_gate_hit || 0,
@@ -1024,6 +1083,11 @@ app.get('/api/analytics/snapshot', (req, res) => {
     pdfDownloads: eventCounts.pdf_downloaded || 0,
     profiles: eventCounts.profile_viewed || 0,
   }
+  const instituteSignupLabels = new Set(['institute_course', 'institute_guide', 'institute_catalog', 'institute_book'])
+  const instituteSignups = signupSources.reduce(
+    (sum, entry) => sum + (instituteSignupLabels.has(entry.label) ? entry.count : 0),
+    0,
+  )
   res.json({
     lifetime: store.lifetime,
     today: store.daily[todayKey] || 0,
@@ -1037,510 +1101,41 @@ app.get('/api/analytics/snapshot', (req, res) => {
     topEvents,
     eventTrend,
     funnel,
-  })
-})
-
-
-// ── Database connection (Neon PostgreSQL) ─────────────────────────
-import pg from 'pg'
-import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken'
-import crypto from 'crypto'
-
-const DATABASE_URL = process.env.DATABASE_URL
-const JWT_SECRET = process.env.JWT_SECRET || crypto.randomBytes(32).toString('hex')
-const JWT_EXPIRY = '30d'
-const BCRYPT_ROUNDS = 12
-
-let dbPool = null
-if (DATABASE_URL) {
-  dbPool = new pg.Pool({
-    connectionString: DATABASE_URL,
-    ssl: { rejectUnauthorized: false },
-    max: 10,
-    idleTimeoutMillis: 30000,
-  })
-  dbPool.on('error', (err) => console.error('[db] Pool error:', err.message))
-  console.log('[auth] PostgreSQL connected via Neon')
-} else {
-  console.warn('[auth] DATABASE_URL not set — auth API will return 503')
-}
-
-// Helper: verify JWT and return user
-async function authenticateToken(req) {
-  const authHeader = req.headers['authorization']
-  const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null
-  if (!token) return null
-  try {
-    jwt.verify(token, JWT_SECRET)
-    if (!dbPool) return null
-    const { rows } = await dbPool.query(
-      `SELECT u.id, u.email, u.display_name, u.tier, u.created_at, u.is_student
-       FROM sessions s
-       INNER JOIN users u ON u.id = s.user_id
-       WHERE s.token = $1
-         AND s.expires_at > NOW()
-       LIMIT 1`,
-      [token]
-    )
-    return rows[0] || null
-  } catch {
-    return null
-  }
-}
-
-// Helper: require DB
-function requireDB(res) {
-  if (!dbPool) {
-    res.status(503).json({ error: 'Database not configured. Set DATABASE_URL environment variable.' })
-    return false
-  }
-  return true
-}
-
-app.get('/api/auth/status', (_req, res) => {
-  res.setHeader('Cache-Control', 'no-store')
-  res.json({
-    available: !!dbPool,
-    mode: dbPool ? 'database' : 'degraded',
-  })
-})
-
-app.get('/api/chapters', async (req, res) => {
-  const wantsFull = req.query.scope === 'full'
-
-  if (!wantsFull) {
-    res.setHeader('Cache-Control', 'no-store')
-    return res.json({
-      previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
-      chapters: publicChapterIndex,
-    })
-  }
-
-  const user = await authenticateToken(req)
-  if (!user) {
-    return res.status(401).json({ error: 'Not authenticated' })
-  }
-
-  const chapters = (chapterDataManifest.chapterIds || [])
-    .map((chapterId) => getChapterJson('full', chapterId))
-    .filter(Boolean)
-
-  res.setHeader('Cache-Control', 'private, no-store')
-  return res.json({
-    previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
-    chapters,
-  })
-})
-
-app.get('/api/chapters/:id', async (req, res) => {
-  const chapterId = sanitizeChapterId(req.params.id)
-  if (!chapterId) {
-    return res.status(400).json({ error: 'Invalid chapter id' })
-  }
-
-  const user = await authenticateToken(req)
-  const scope = user ? 'full' : 'public'
-  const chapter = getChapterJson(scope, chapterId)
-
-  if (!chapter) {
-    return res.status(404).json({ error: 'Chapter not found' })
-  }
-
-  res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
-  return res.json(chapter)
-})
-
-app.get('/api/search', async (req, res) => {
-  const query = normalizeSearchQuery(req.query.q)
-  const user = await authenticateToken(req)
-  const scope = user ? 'full' : 'public'
-  const filters = user
-    ? {
-        evidenceTier: normalizeFilter(req.query.evidence, EVIDENCE_TIER_FILTERS),
-        match: normalizeFilter(req.query.match, SEARCH_MATCH_FILTERS),
-        chapterType: normalizeFilter(req.query.chapterType, CHAPTER_TYPE_FILTERS),
-      }
-    : {
-        evidenceTier: 'all',
-        match: 'all',
-        chapterType: 'all',
-      }
-
-  res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
-
-  if (!query) {
-    return res.json({
-      query: '',
-      scope,
-      filters,
-      totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
-      results: [],
-    })
-  }
-
-  return res.json({
-    query,
-    scope,
-    filters,
-    totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
-    results: searchChapters(scope, query, filters),
-  })
-})
-
-app.get('/api/downloads/the-record.pdf', async (req, res) => {
-  const user = await authenticateToken(req)
-  if (!user) {
-    return res.status(401).json({ error: 'Sign in required to download this file.' })
-  }
-  if (!fs.existsSync(RECORD_PDF_PATH)) {
-    return res.status(404).json({ error: 'File not found' })
-  }
-
-  res.setHeader('Cache-Control', 'private, no-store')
-  return res.sendFile(RECORD_PDF_PATH)
-})
-
-app.get('/the-record.pdf', async (req, res) => {
-  const user = await authenticateToken(req)
-  if (!user) {
-    res.setHeader('Cache-Control', 'no-store')
-    return res.status(401).type('text/plain').send('Sign in required to download this file.')
-  }
-  if (!fs.existsSync(RECORD_PDF_PATH)) {
-    return res.status(404).type('text/plain').send('File not found.')
-  }
-
-  res.setHeader('Cache-Control', 'private, no-store')
-  return res.sendFile(RECORD_PDF_PATH)
-})
-
-// ── Auth API Routes ───────────────────────────────────────────────
-
-// POST /api/auth/register
-app.post('/api/auth/register', async (req, res) => {
-  if (!requireDB(res)) return
-  const { email, password, displayName } = req.body
-  if (!email || !password || !displayName) {
-    return res.status(400).json({ error: 'Email, password, and display name are required.' })
-  }
-  if (typeof password !== 'string' || password.length < 6) {
-    return res.status(400).json({ error: 'Password must be at least 6 characters.' })
-  }
-  const cleanEmail = email.toLowerCase().trim()
-  try {
-    // Check if email exists
-    const existing = await dbPool.query('SELECT id FROM users WHERE email = $1', [cleanEmail])
-    if (existing.rows.length > 0) {
-      return res.status(409).json({ error: 'An account with this email already exists.' })
-    }
-    // Hash password and create user
-    const passwordHash = await bcrypt.hash(password, BCRYPT_ROUNDS)
-    const { rows } = await dbPool.query(
-      `INSERT INTO users (email, display_name, password_hash)
-       VALUES ($1, $2, $3)
-       RETURNING id, email, display_name, tier, created_at`,
-      [cleanEmail, displayName.trim(), passwordHash]
-    )
-    const user = rows[0]
-    // Create JWT
-    const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
-    // Store session
-    const ip = getClientIP(req)
-    const ua = req.headers['user-agent'] || ''
-    const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 days
-    await dbPool.query(
-      'INSERT INTO sessions (user_id, token, expires_at, ip_address, user_agent) VALUES ($1, $2, $3, $4, $5)',
-      [user.id, token, expiresAt, ip, ua.substring(0, 500)]
-    )
-    // Create default preferences
-    await dbPool.query('INSERT INTO user_preferences (user_id) VALUES ($1) ON CONFLICT DO NOTHING', [user.id])
-    res.status(201).json({
-      token,
-      user: {
-        id: user.id,
-        email: user.email,
-        displayName: user.display_name,
-        tier: user.tier,
-        createdAt: user.created_at,
-      },
-    })
-  } catch (err) {
-    console.error('[auth] Register error:', err.message)
-    res.status(500).json({ error: 'Registration failed. Please try again.' })
-  }
-})
-
-// POST /api/auth/login
-app.post('/api/auth/login', async (req, res) => {
-  if (!requireDB(res)) return
-  const { email, password } = req.body
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email and password are required.' })
-  }
-  const cleanEmail = email.toLowerCase().trim()
-  try {
-    const { rows } = await dbPool.query(
-      'SELECT id, email, display_name, password_hash, tier, created_at, is_student FROM users WHERE email = $1',
-      [cleanEmail]
-    )
-    if (rows.length === 0) {
-      return res.status(401).json({ error: 'No account found with this email.' })
-    }
-    const user = rows[0]
-    const validPassword = await bcrypt.compare(password, user.password_hash)
-    if (!validPassword) {
-      return res.status(401).json({ error: 'Incorrect password.' })
-    }
-    // Update last login
-    await dbPool.query('UPDATE users SET last_login_at = NOW() WHERE id = $1', [user.id])
-    // Create JWT
-    const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
-    // Store session
-    const ip = getClientIP(req)
-    const ua = req.headers['user-agent'] || ''
-    const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
-    await dbPool.query(
-      'INSERT INTO sessions (user_id, token, expires_at, ip_address, user_agent) VALUES ($1, $2, $3, $4, $5)',
-      [user.id, token, expiresAt, ip, ua.substring(0, 500)]
-    )
-    res.json({
-      token,
-      user: {
-        id: user.id,
-        email: user.email,
-        displayName: user.display_name,
-        tier: user.tier,
-        createdAt: user.created_at,
-        isStudent: user.is_student,
-      },
-    })
-  } catch (err) {
-    console.error('[auth] Login error:', err.message)
-    res.status(500).json({ error: 'Login failed. Please try again.' })
-  }
-})
-
-// GET /api/auth/me — validate session + return user data
-app.get('/api/auth/me', async (req, res) => {
-  if (!requireDB(res)) return
-  const user = await authenticateToken(req)
-  if (!user) return res.status(401).json({ error: 'Not authenticated' })
-  // Get bookmarks
-  const { rows: bookmarks } = await dbPool.query(
-    'SELECT chapter_id FROM bookmarks WHERE user_id = $1 ORDER BY created_at DESC',
-    [user.id]
-  )
-  // Get reading progress
-  const { rows: progress } = await dbPool.query(
-    'SELECT chapter_id, scroll_position, completed, last_read_at FROM reading_progress WHERE user_id = $1',
-    [user.id]
-  )
-  // Get preferences
-  const { rows: prefs } = await dbPool.query(
-    'SELECT theme, font_size, newsletter_subscribed FROM user_preferences WHERE user_id = $1',
-    [user.id]
-  )
-  res.json({
-    user: {
-      id: user.id,
-      email: user.email,
-      displayName: user.display_name,
-      tier: user.tier,
-      createdAt: user.created_at,
-      isStudent: user.is_student,
+    signupAttribution: {
+      total: eventCounts.email_signup || 0,
+      instituteSignups,
+      sources: signupSources,
+      interests: signupInterests,
+      returnPaths: signupReturnPaths,
     },
-    bookmarks: bookmarks.map(b => b.chapter_id),
-    readingProgress: progress.reduce((acc, p) => {
-      acc[p.chapter_id] = { scrollPosition: p.scroll_position, completed: p.completed, lastReadAt: p.last_read_at }
-      return acc
-    }, {}),
-    preferences: prefs[0] || { theme: 'light', font_size: 'medium', newsletter_subscribed: false },
   })
 })
 
-// POST /api/auth/logout
-app.post('/api/auth/logout', async (req, res) => {
-  if (!requireDB(res)) return
-  const authHeader = req.headers['authorization']
-  const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null
-  if (token) {
-    await dbPool.query('DELETE FROM sessions WHERE token = $1', [token]).catch(() => {})
-  }
-  res.json({ ok: true })
+
+const { initializeDatabaseAndAnalytics } = registerDatabaseAndAuthRoutes({
+  app,
+  chapterState: {
+    getChapterDataManifest: () => chapterDataManifest,
+    getPublicChapterIndex: () => publicChapterIndex,
+  },
+  chapterHelpers: {
+    getChapterJson,
+    sanitizeChapterId,
+    normalizeSearchQuery,
+    normalizeFilter,
+    searchChapters,
+    evidenceTierFilters: EVIDENCE_TIER_FILTERS,
+    searchMatchFilters: SEARCH_MATCH_FILTERS,
+    chapterTypeFilters: CHAPTER_TYPE_FILTERS,
+  },
+  analyticsStore: {
+    loadStoreFromDatabase,
+    hasAnalyticsData,
+    saveStoreToDatabase,
+  },
+  recordPdfPath: RECORD_PDF_PATH,
+  getClientIP,
 })
-
-// ── User Data API Routes ──────────────────────────────────────────
-
-// POST /api/user/bookmarks — toggle bookmark
-app.post('/api/user/bookmarks', async (req, res) => {
-  if (!requireDB(res)) return
-  const user = await authenticateToken(req)
-  if (!user) return res.status(401).json({ error: 'Not authenticated' })
-  const { chapterId, action } = req.body
-  if (!chapterId) return res.status(400).json({ error: 'chapterId required' })
-  try {
-    if (action === 'remove') {
-      await dbPool.query('DELETE FROM bookmarks WHERE user_id = $1 AND chapter_id = $2', [user.id, chapterId])
-    } else {
-      await dbPool.query(
-        'INSERT INTO bookmarks (user_id, chapter_id) VALUES ($1, $2) ON CONFLICT (user_id, chapter_id) DO NOTHING',
-        [user.id, chapterId]
-      )
-    }
-    const { rows } = await dbPool.query('SELECT chapter_id FROM bookmarks WHERE user_id = $1 ORDER BY created_at DESC', [user.id])
-    res.json({ bookmarks: rows.map(r => r.chapter_id) })
-  } catch (err) {
-    console.error('[user] Bookmark error:', err.message)
-    res.status(500).json({ error: 'Failed to update bookmark' })
-  }
-})
-
-// POST /api/user/progress — save reading progress
-app.post('/api/user/progress', async (req, res) => {
-  if (!requireDB(res)) return
-  const user = await authenticateToken(req)
-  if (!user) return res.status(401).json({ error: 'Not authenticated' })
-  const { chapterId, scrollPosition, completed } = req.body
-  if (!chapterId) return res.status(400).json({ error: 'chapterId required' })
-  try {
-    await dbPool.query(
-      `INSERT INTO reading_progress (user_id, chapter_id, scroll_position, completed, last_read_at)
-       VALUES ($1, $2, $3, $4, NOW())
-       ON CONFLICT (user_id, chapter_id)
-       DO UPDATE SET scroll_position = $3, completed = COALESCE($4, reading_progress.completed), last_read_at = NOW()`,
-      [user.id, chapterId, scrollPosition || 0, completed || false]
-    )
-    res.json({ ok: true })
-  } catch (err) {
-    console.error('[user] Progress error:', err.message)
-    res.status(500).json({ error: 'Failed to save progress' })
-  }
-})
-
-// PUT /api/user/preferences — update preferences
-app.put('/api/user/preferences', async (req, res) => {
-  if (!requireDB(res)) return
-  const user = await authenticateToken(req)
-  if (!user) return res.status(401).json({ error: 'Not authenticated' })
-  const { theme, fontSize, newsletterSubscribed } = req.body
-  try {
-    await dbPool.query(
-      `INSERT INTO user_preferences (user_id, theme, font_size, newsletter_subscribed, updated_at)
-       VALUES ($1, $2, $3, $4, NOW())
-       ON CONFLICT (user_id)
-       DO UPDATE SET theme = COALESCE($2, user_preferences.theme),
-                     font_size = COALESCE($3, user_preferences.font_size),
-                     newsletter_subscribed = COALESCE($4, user_preferences.newsletter_subscribed),
-                     updated_at = NOW()`,
-      [user.id, theme, fontSize, newsletterSubscribed]
-    )
-    res.json({ ok: true })
-  } catch (err) {
-    console.error('[user] Preferences error:', err.message)
-    res.status(500).json({ error: 'Failed to update preferences' })
-  }
-})
-
-// PUT /api/user/profile — update display name
-app.put('/api/user/profile', async (req, res) => {
-  if (!requireDB(res)) return
-  const user = await authenticateToken(req)
-  if (!user) return res.status(401).json({ error: 'Not authenticated' })
-  const { displayName } = req.body
-  if (!displayName || typeof displayName !== 'string' || displayName.trim().length < 1) {
-    return res.status(400).json({ error: 'Display name is required' })
-  }
-  try {
-    await dbPool.query('UPDATE users SET display_name = $1, updated_at = NOW() WHERE id = $2', [displayName.trim(), user.id])
-    res.json({ ok: true, displayName: displayName.trim() })
-  } catch (err) {
-    console.error('[user] Profile error:', err.message)
-    res.status(500).json({ error: 'Failed to update profile' })
-  }
-})
-
-// POST /api/user/change-password
-app.post('/api/user/change-password', async (req, res) => {
-  if (!requireDB(res)) return
-  const user = await authenticateToken(req)
-  if (!user) return res.status(401).json({ error: 'Not authenticated' })
-  const { currentPassword, newPassword } = req.body
-  if (!currentPassword || !newPassword) return res.status(400).json({ error: 'Both passwords required' })
-  if (typeof newPassword !== 'string' || newPassword.length < 6) {
-    return res.status(400).json({ error: 'New password must be at least 6 characters' })
-  }
-  try {
-    const { rows } = await dbPool.query('SELECT password_hash FROM users WHERE id = $1', [user.id])
-    const valid = await bcrypt.compare(currentPassword, rows[0].password_hash)
-    if (!valid) return res.status(401).json({ error: 'Current password is incorrect' })
-    const newHash = await bcrypt.hash(newPassword, BCRYPT_ROUNDS)
-    await dbPool.query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2', [newHash, user.id])
-    // Invalidate all other sessions
-    const authHeader = req.headers['authorization']
-    const currentToken = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : ''
-    await dbPool.query('DELETE FROM sessions WHERE user_id = $1 AND token != $2', [user.id, currentToken])
-    res.json({ ok: true })
-  } catch (err) {
-    console.error('[user] Password change error:', err.message)
-    res.status(500).json({ error: 'Failed to change password' })
-  }
-})
-
-async function initializeDatabaseAndAnalytics() {
-  if (!dbPool) return
-
-  let client = null
-
-  try {
-    client = await dbPool.connect()
-    await client.query(`CREATE TABLE IF NOT EXISTS migrations (id SERIAL PRIMARY KEY, name VARCHAR(255) UNIQUE NOT NULL, applied_at TIMESTAMPTZ DEFAULT NOW())`)
-
-    const migrations = [
-      { name: '001_create_users', sql: `CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email VARCHAR(255) UNIQUE NOT NULL, display_name VARCHAR(255) NOT NULL, password_hash VARCHAR(255) NOT NULL, tier VARCHAR(50) DEFAULT 'free', created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW(), last_login_at TIMESTAMPTZ, is_student BOOLEAN DEFAULT FALSE, student_email VARCHAR(255)); CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);` },
-      { name: '002_create_sessions', sql: `CREATE TABLE IF NOT EXISTS sessions (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, token VARCHAR(512) UNIQUE NOT NULL, expires_at TIMESTAMPTZ NOT NULL, created_at TIMESTAMPTZ DEFAULT NOW(), ip_address VARCHAR(45), user_agent TEXT); CREATE INDEX IF NOT EXISTS idx_sessions_token ON sessions(token); CREATE INDEX IF NOT EXISTS idx_sessions_user_id ON sessions(user_id);` },
-      { name: '003_create_bookmarks', sql: `CREATE TABLE IF NOT EXISTS bookmarks (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, chapter_id VARCHAR(100) NOT NULL, created_at TIMESTAMPTZ DEFAULT NOW(), UNIQUE(user_id, chapter_id)); CREATE INDEX IF NOT EXISTS idx_bookmarks_user ON bookmarks(user_id);` },
-      { name: '004_create_reading_progress', sql: `CREATE TABLE IF NOT EXISTS reading_progress (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, chapter_id VARCHAR(100) NOT NULL, scroll_position FLOAT DEFAULT 0, completed BOOLEAN DEFAULT FALSE, last_read_at TIMESTAMPTZ DEFAULT NOW(), UNIQUE(user_id, chapter_id)); CREATE INDEX IF NOT EXISTS idx_progress_user ON reading_progress(user_id);` },
-      { name: '005_create_preferences', sql: `CREATE TABLE IF NOT EXISTS user_preferences (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE CASCADE UNIQUE, theme VARCHAR(20) DEFAULT 'light', font_size VARCHAR(20) DEFAULT 'medium', newsletter_subscribed BOOLEAN DEFAULT FALSE, updated_at TIMESTAMPTZ DEFAULT NOW());` },
-      { name: '006_create_analytics_state', sql: `CREATE TABLE IF NOT EXISTS analytics_state (state_key VARCHAR(100) PRIMARY KEY, payload JSONB NOT NULL, updated_at TIMESTAMPTZ DEFAULT NOW());` },
-    ]
-
-    const { rows: applied } = await client.query('SELECT name FROM migrations')
-    const appliedSet = new Set(applied.map((row) => row.name))
-
-    for (const migration of migrations) {
-      if (appliedSet.has(migration.name)) continue
-
-      try {
-        await client.query('BEGIN')
-        await client.query(migration.sql)
-        await client.query('INSERT INTO migrations (name) VALUES ($1)', [migration.name])
-        await client.query('COMMIT')
-        console.log(`[db] Migration applied: ${migration.name}`)
-      } catch (err) {
-        await client.query('ROLLBACK').catch(() => {})
-        throw err
-      }
-    }
-
-    console.log('[db] All migrations up to date')
-  } catch (err) {
-    console.error('[db] Migration error:', err.message)
-    return
-  } finally {
-    client?.release()
-  }
-
-  const loadedFromDatabase = await loadStoreFromDatabase()
-  if (!loadedFromDatabase && hasAnalyticsData()) {
-    try {
-      await saveStoreToDatabase()
-      console.log('[analytics] Seeded database state from disk analytics store')
-    } catch (err) {
-      console.warn('[analytics] Failed to seed database from disk:', err.message)
-    }
-  }
-}
 
 
 // Build-time prerender manifest for exact-route static HTML
@@ -1633,136 +1228,7 @@ app.use('/api', (req, res) => {
   res.status(404).json({ error: 'API route not found' })
 })
 
-// ── Social crawler bot meta injection ─────────────────────────────
-// Bots that don't execute JS get per-chapter OG tags injected server-side
-const BOT_UA = /googlebot|bingbot|yandexbot|baiduspider|duckduckbot|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegrambot|discordbot|redditbot|applebot|semrushbot|ahrefsbot|mj12bot/i
-const SITE_URL = 'https://veritasworldwide.com'
-const OG_IMAGE = `${SITE_URL}/og-image.png`
-
-// Lightweight chapter metadata for bot responses (avoids importing TS data)
-function getChapterMeta(slug) {
-  const chapters = {
-    'foreword': { title: 'A Note on Methodology, Evidence Standards & How to Read This Book', desc: 'This is a reference work. It compiles primary source documents — court records, congressional testimony, declassified government files, academic studies, and ve' },
-    'overview': { title: 'The World Today', desc: 'How a convergence of financial, political, pharmaceutical, and intelligence systems created the architecture of modern control — and why most people never notic' },
-    'chapter-1': { title: 'The Birth of Central Banking', desc: 'From the Frankfurt ghetto to the Bank of England, from Napoleon\'s wars to the halls of the United States Congress, the story of how private banking dynasties ca' },
-    'chapter-2': { title: 'The Bank War & The Presidents Who Fought Back', desc: 'Four American presidents took on the banking establishment. Three were assassinated. One survived an assassination attempt that should have killed him.' },
-    'chapter-3': { title: 'Jekyll Island & the Creation of the Federal Reserve', desc: 'In November 1910, six men representing a quarter of the world\'s wealth boarded a private rail car in New Jersey. Their destination: a private island off the c' },
-    'chapter-4': { title: 'The Warburg Brothers & World War I', desc: 'Two brothers from one of Europe\'s most powerful banking families found themselves on opposite sides of the Great War — one advising the Kaiser, the other shap' },
-    'chapter-5': { title: 'Henry Ford, The International Jew & the Gold Standard', desc: 'The industrialist who built the American middle class also published the most controversial newspaper series in American history — and his warnings about the go' },
-    'chapter-6': { title: 'The Talmud, the Balfour Declaration & the Origins of Zionism', desc: 'The documented history of the political movement that would reshape the Middle East and redefine the relationship between religion, nationalism, and geopolitics' },
-    'chapter-7': { title: 'Mossad: The Institute', desc: 'The intelligence agency that operates by its own rules — from covert assassinations to nuclear espionage, documented through declassified files and sworn testim' },
-    'chapter-8': { title: 'JFK, Dimona & AIPAC', desc: 'President Kennedy\'s documented confrontation with Israel\'s secret nuclear program and the lobby that would reshape American foreign policy.' },
-    'chapter-9': { title: 'JFK — Expanded Analysis', desc: 'A comprehensive examination of the evidence surrounding the assassination of President John F. Kennedy, including declassified documents released through 2025.' },
-    'chapter-10': { title: 'The Petrodollar System', desc: 'How a secret agreement between Henry Kissinger and the Saudi royal family created the foundation of American economic hegemony — and why it is now unraveling.' },
-    'chapter-11': { title: 'Shadow Institutions — Bilderberg, CFR, Trilateral Commission & the BIS', desc: 'The private organizations where the world\'s most powerful people meet behind closed doors — documented through leaked attendee lists, founding charters, and t' },
-    'chapter-12': { title: 'How the Federal Reserve Works', desc: 'A plain-English explainer on the institution that controls the American money supply, who owns it, and how it operates — stripped of jargon and presented with p' },
-    'chapter-13': { title: 'The 2008 Financial Crisis', desc: 'How Wall Street\'s reckless gambling crashed the global economy, how the government bailed out the banks with taxpayer money, and how no one went to prison.' },
-    'chapter-14': { title: 'AIPAC & Congressional Lobbying', desc: 'The most powerful foreign policy lobby in America — how it operates, who it funds, and what happens to those who oppose it.' },
-    'chapter-15': { title: 'U.S. Foreign Aid to Israel', desc: 'A comprehensive accounting of American taxpayer money sent to Israel — totaling over $300 billion in inflation-adjusted terms — and the legal framework that ena' },
-    'chapter-16': { title: 'The USS Liberty Incident', desc: 'On June 8, 1967, Israeli forces attacked an American intelligence ship in international waters, killing 34 U.S. servicemen. The official investigation was class' },
-    'chapter-17': { title: 'The Assassination of Robert F. Kennedy', desc: 'The evidence surrounding the murder of a presidential candidate who promised to reopen his brother\'s assassination investigation.' },
-    'chapter-18': { title: 'Operation Mockingbird & CIA Media Influence', desc: 'The documented CIA program to infiltrate and influence American media — from the Cold War to the present day.' },
-    'chapter-19': { title: 'MKUltra & Government Mind Control Programs', desc: 'The CIA\'s documented program of human experimentation — using drugs, torture, and psychological manipulation on unwitting American citizens.' },
-    'chapter-20': { title: 'Rockefeller Medicine & the Chronic Disease Machine', desc: 'How the Rockefeller Foundation reshaped American medicine to favor pharmaceutical treatment over prevention — and the financial incentives that keep the system ' },
-    'chapter-21': { title: 'Vaccine History — From Polio to COVID-19', desc: 'A documented history of vaccine development, the regulatory framework that governs it, and the financial incentives that shape public health policy.' },
-    'chapter-22': { title: 'September 11, 2001', desc: 'The event that changed the world — examined through the official record, the 9/11 Commission Report, and the questions that remain unanswered.' },
-    'chapter-23': { title: 'The War on Drugs', desc: 'How a policy designed to criminalize dissent became the longest and most expensive domestic war in American history.' },
-    'chapter-24': { title: 'Fluoride & Public Water', desc: 'The documented history of water fluoridation — from its industrial origins to its adoption as public health policy.' },
-    'chapter-25': { title: 'The Titanic, the Federal Reserve & the Men Who Opposed It', desc: 'Three of the wealthiest men who opposed the creation of the Federal Reserve boarded the same ship in April 1912. None of them survived.' },
-    'chapter-26': { title: 'Bohemian Grove & Elite Gatherings', desc: 'Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.' },
-    'chapter-27': { title: 'The Surveillance State — From ECHELON to Pegasus', desc: 'The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.' },
-    'chapter-28': { title: 'The Epstein Files', desc: 'The intelligence-linked operation that compromised the world\'s most powerful people — documented through court filings, flight logs, and the testimony of surv' },
-    'epilogue': { title: 'A Note on Continued Research & Primary Source Access', desc: 'Where to find the original documents, how to verify the claims in this book, and how to continue the investigation.' },
-  }
-  return chapters[slug] || null
-}
-
-app.use((req, res, next) => {
-  const ua = req.headers['user-agent'] || ''
-  if (!BOT_UA.test(ua)) return next()
-
-  // Read the HTML shell
-  const htmlPath = path.join(__dirname, 'dist', 'index.html')
-  let html = fs.readFileSync(htmlPath, 'utf-8')
-
-  // Static page meta for bots
-  const staticPages = {
-    '/methodology': { title: 'Methodology | Veritas Worldwide', desc: 'Our four-tier source hierarchy and three-tier evidence classification system explained.' },
-    '/sources': { title: 'Sources | Veritas Worldwide', desc: 'Master bibliography and source library for The Record — 500+ primary source documents.' },
-    '/search': { title: 'Search | Veritas Worldwide', desc: 'Search all 31 chapters of The Record by keyword, topic, or evidence classification.' },
-    '/timeline': { title: 'Timeline | Veritas Worldwide', desc: 'An interactive chronological timeline of events documented in The Record, from 1694 to present.' },
-    '/analytics': { title: 'Reader Analytics | Veritas Worldwide', desc: 'Public readership analytics for The Record.' },
-    '/accessibility': { title: 'Accessibility | Veritas Worldwide', desc: 'Accessibility statement and WCAG 2.1 AA compliance information for Veritas Worldwide.' },
-    '/privacy': { title: 'Privacy Policy | Veritas Worldwide', desc: 'How Veritas Worldwide handles reader data, analytics, and privacy. Minimal data collection, no advertising trackers.' },
-    '/terms': { title: 'Terms of Use | Veritas Worldwide', desc: 'Terms of use for Veritas Worldwide. Free and open access under Creative Commons BY-NC-SA 4.0.' },
-    '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide', desc: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.' },
-    '/membership': { title: 'Membership | Veritas Worldwide', desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.' },
-    '/deep-state': { title: 'The Deep State — The Epstein Network | Veritas Worldwide', desc: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.' },
-    '/forum': { title: 'Veritas Forum | Veritas Worldwide', desc: 'Community discussion forum for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.' },
-    '/profiles': { title: 'Power Profiles | Veritas Worldwide', desc: 'Sourced profiles of 235+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.' },
-    '/content-pack': { title: 'Content Packs & Brand Kit | Veritas Worldwide', desc: 'Official brand assets and social media content packs for Veritas Worldwide. Free for press, social media, and advocacy.' },
-    '/news': { title: 'News | Veritas Worldwide', desc: 'Latest news and updates from Veritas Worldwide.' },
-    '/donate': { title: 'Support Our Research | Veritas Worldwide', desc: 'Fund independent, source-verified investigative journalism. No party. No agenda. Just the record. Every contribution keeps the archive online and free.' },
-    '/read': { title: 'Read The Record | Veritas Worldwide', desc: 'Read all 31 chapters of The Record — a documentary history spanning 1694 to present. Primary sources. Public record. Your conclusions.' },
-  }
-
-  const staticMeta = staticPages[req.path]
-  if (staticMeta) {
-    html = html
-      .replace(/<title>.*?<\/title>/, `<title>${staticMeta.title}</title>`)
-      .replace(/content="The Record \| Veritas Worldwide"/, `content="${staticMeta.title}"`)
-      .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/, `content="${staticMeta.desc}"`)
-      .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/, `content="${staticMeta.desc}"`)
-  }
-
-  // Check if this is a chapter route
-  const chapterMatch = req.path.match(/^\/chapter\/(.+)$/)
-  if (chapterMatch) {
-    const meta = getChapterMeta(chapterMatch[1])
-    if (meta) {
-      const chapterUrl = `${SITE_URL}/chapter/${chapterMatch[1]}`
-      const chapterSlug = chapterMatch[1]
-      // Use PNG OG image if available, fall back to SVG, then default
-      const pngPath = path.join(__dirname, 'dist', 'og', `${chapterSlug}.png`)
-      const svgPath = path.join(__dirname, 'dist', 'og', `${chapterSlug}.svg`)
-      let chapterOgImage = OG_IMAGE
-      if (fs.existsSync(pngPath)) {
-        chapterOgImage = `${SITE_URL}/og/${chapterSlug}.png`
-      } else if (fs.existsSync(svgPath)) {
-        chapterOgImage = `${SITE_URL}/og/${chapterSlug}.svg`
-      }
-      const imgType = chapterOgImage.endsWith('.png') ? 'image/png' : chapterOgImage.endsWith('.svg') ? 'image/svg+xml' : 'image/png'
-      // Replace default meta tags with chapter-specific ones
-      html = html
-        .replace(/<title>.*?<\/title>/, `<title>${meta.title} | The Record — Veritas Worldwide</title>`)
-        .replace(/content="The Record \| Veritas Worldwide"/g, `content="${meta.title} | The Record — Veritas Worldwide"`)
-        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${meta.desc}"`)
-        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${meta.desc}"`)
-        .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${chapterUrl}"`)
-        .replace(/content="website"/, `content="article"`)
-        .replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${chapterOgImage}"`)
-        .replace(/content="image\/png"/, `content="${imgType}"`)
-    }
-  }
-
-  // Check if this is a profile route
-  const profileMatch = req.path.match(/^\/profile\/(.+)$/)
-  if (profileMatch) {
-    const slug = profileMatch[1]
-    // Convert slug to readable name: "ted-cruz" → "Ted Cruz"
-    const name = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
-    const profileUrl = `${SITE_URL}/profile/${slug}`
-    html = html
-      .replace(/<title>.*?<\/title>/, `<title>${name} — Power Profile | Veritas Worldwide</title>`)
-      .replace(/content="The Record \| Veritas Worldwide"/g, `content="${name} — Power Profile | Veritas Worldwide"`)
-      .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes. Every claim cited to FEC filings, congressional records, and verified journalism."`)
-      .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes."`)
-      .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${profileUrl}"`)
-      .replace(/content="website"/, `content="article"`)
-  }
-
-  res.send(html)
-})
+registerBotMetaInjection({ app, rootDir: __dirname })
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
