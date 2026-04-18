@@ -368,7 +368,16 @@ function createAnalyticsStore() {
     pages: {},
     events: {},
     eventDaily: {},
+    signupAttribution: {
+      sources: {},
+      interests: {},
+      returnPaths: {},
+    },
   }
+}
+
+function normalizeSignupAttributionBucket(value) {
+  return value && typeof value === 'object' && !Array.isArray(value) ? value : {}
 }
 
 function normalizeAnalyticsStore(value) {
@@ -389,6 +398,13 @@ function normalizeAnalyticsStore(value) {
     pages: source.pages && typeof source.pages === 'object' && !Array.isArray(source.pages) ? source.pages : {},
     events: source.events && typeof source.events === 'object' && !Array.isArray(source.events) ? source.events : {},
     eventDaily: source.eventDaily && typeof source.eventDaily === 'object' && !Array.isArray(source.eventDaily) ? source.eventDaily : {},
+    signupAttribution: source.signupAttribution && typeof source.signupAttribution === 'object' && !Array.isArray(source.signupAttribution)
+      ? {
+          sources: normalizeSignupAttributionBucket(source.signupAttribution.sources),
+          interests: normalizeSignupAttributionBucket(source.signupAttribution.interests),
+          returnPaths: normalizeSignupAttributionBucket(source.signupAttribution.returnPaths),
+        }
+      : base.signupAttribution,
   }
 }
 
@@ -789,6 +805,38 @@ function sanitizeAnalyticsProperties(value) {
   return clean
 }
 
+function recordSignupAttribution(bucket, rawLabel, now, eventPath) {
+  if (typeof rawLabel !== 'string') return
+  const label = rawLabel.trim().slice(0, 160)
+  if (!label || label === '__proto__' || label === 'constructor' || label === 'prototype') return
+
+  if (!store.signupAttribution[bucket][label]) {
+    store.signupAttribution[bucket][label] = { count: 0, lastSeenAt: '', lastPath: '' }
+  }
+
+  const entry = store.signupAttribution[bucket][label]
+  entry.count += 1
+  entry.lastSeenAt = now.toISOString()
+  if (eventPath) {
+    entry.lastPath = eventPath
+  }
+}
+
+function buildSignupAttributionList(bucket) {
+  return Object.entries(bucket)
+    .map(([label, meta]) => ({
+      label,
+      count: meta.count || 0,
+      lastSeenAt: meta.lastSeenAt || '',
+      lastPath: meta.lastPath || '',
+    }))
+    .sort((a, b) => {
+      if (b.count !== a.count) return b.count - a.count
+      return a.label.localeCompare(b.label)
+    })
+    .slice(0, 20)
+}
+
 // Gzip/Brotli compression — reduces 549KB chapters chunk to ~188KB
 app.use(compression())
 
@@ -955,6 +1003,12 @@ app.post('/api/analytics/event', (req, res) => {
   }
   store.eventDaily[dateKey][name] = (store.eventDaily[dateKey][name] || 0) + 1
 
+  if (name === 'email_signup') {
+    recordSignupAttribution('sources', cleanProperties.source, now, eventPath)
+    recordSignupAttribution('interests', cleanProperties.content_interest, now, eventPath)
+    recordSignupAttribution('returnPaths', cleanProperties.return_to, now, eventPath)
+  }
+
   markAnalyticsDirty()
   res.setHeader('Cache-Control', 'no-store')
   res.json({ ok: true })
@@ -1012,6 +1066,9 @@ app.get('/api/analytics/snapshot', (req, res) => {
       payments: (dayEvents.payment_completed || 0) + (dayEvents.donation_completed || 0),
     })
   }
+  const signupSources = buildSignupAttributionList(store.signupAttribution.sources)
+  const signupInterests = buildSignupAttributionList(store.signupAttribution.interests)
+  const signupReturnPaths = buildSignupAttributionList(store.signupAttribution.returnPaths)
   const funnel = {
     chapterViews: eventCounts.chapter_viewed || 0,
     gateHits: eventCounts.content_gate_hit || 0,
@@ -1024,6 +1081,11 @@ app.get('/api/analytics/snapshot', (req, res) => {
     pdfDownloads: eventCounts.pdf_downloaded || 0,
     profiles: eventCounts.profile_viewed || 0,
   }
+  const instituteSignupLabels = new Set(['institute_course', 'institute_guide', 'institute_catalog', 'institute_book'])
+  const instituteSignups = signupSources.reduce(
+    (sum, entry) => sum + (instituteSignupLabels.has(entry.label) ? entry.count : 0),
+    0,
+  )
   res.json({
     lifetime: store.lifetime,
     today: store.daily[todayKey] || 0,
@@ -1037,6 +1099,13 @@ app.get('/api/analytics/snapshot', (req, res) => {
     topEvents,
     eventTrend,
     funnel,
+    signupAttribution: {
+      total: eventCounts.email_signup || 0,
+      instituteSignups,
+      sources: signupSources,
+      interests: signupInterests,
+      returnPaths: signupReturnPaths,
+    },
   })
 })
 
@@ -1581,7 +1650,7 @@ app.get('/api/build-info', (req, res) => {
     prerenderedRouteCount: Object.keys(prerenderManifest).length,
     entryAssets: getDistEntryAssets(),
   })
-})
+}
 
 function normalizePrerenderRoute(routePath) {
   if (!routePath || routePath === '/') return '/'
