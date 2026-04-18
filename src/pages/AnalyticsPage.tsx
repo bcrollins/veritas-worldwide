@@ -1,8 +1,17 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchAnalytics } from '../lib/analytics'
-import type { AnalyticsEventSummary, AnalyticsSnapshot, CountryViews, EventTrendPoint, FunnelSnapshot } from '../lib/analytics'
+import type {
+  AnalyticsEventSummary,
+  AnalyticsSnapshot,
+  CountryViews,
+  EventTrendPoint,
+  FunnelSnapshot,
+  SignupAttributionEntry,
+  SignupAttributionSnapshot,
+} from '../lib/analytics'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
+import { formatSignupSourceLabel } from '../lib/signupAttribution'
 
 // ── Country flag emoji from ISO code ───────────────────────────────
 function flagEmoji(code: string): string {
@@ -50,6 +59,12 @@ function formatLastSeen(value: string): string {
     hour: 'numeric',
     minute: '2-digit',
   })
+}
+
+function titleCaseLabel(value: string): string {
+  return value
+    .replace(/[_-]/g, ' ')
+    .replace(/\b\w/g, char => char.toUpperCase())
 }
 
 // ── Mini bar chart (pure CSS) ──────────────────────────────────────
@@ -377,6 +392,138 @@ function TopEventsTable({ events }: { events: AnalyticsEventSummary[] }) {
   )
 }
 
+function SignupAttributionTable({
+  entries,
+  formatLabel,
+  rawLabel,
+  title,
+  total,
+  emptyText,
+}: {
+  entries: SignupAttributionEntry[]
+  formatLabel?: (value: string) => string
+  rawLabel?: (value: string) => string
+  title: string
+  total: number
+  emptyText: string
+}) {
+  const renderRawLabel = rawLabel || ((value: string) => value)
+
+  return (
+    <div className="border border-border rounded-sm bg-surface overflow-hidden">
+      <div className="px-5 py-4 border-b border-border">
+        <h3 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink">
+          {title}
+        </h3>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-left">
+          <thead>
+            <tr className="border-b border-border bg-parchment-dark">
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint w-8">#</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Label</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint text-right">Count</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint text-right">Share</th>
+              <th className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Latest Capture Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            {entries.map((entry, index) => {
+              const share = total > 0 ? (entry.count / total) * 100 : 0
+              return (
+                <tr key={`${title}-${entry.label}`} className="border-b border-border/50 hover:bg-parchment-dark/50 transition-colors">
+                  <td className="px-5 py-3 font-sans text-xs text-ink-faint">{index + 1}</td>
+                  <td className="px-5 py-3">
+                    <p className="font-sans text-sm text-ink font-semibold">
+                      {formatLabel ? formatLabel(entry.label) : entry.label}
+                    </p>
+                    <p className="font-mono text-[10px] text-ink-faint mt-0.5">
+                      {renderRawLabel(entry.label)}
+                    </p>
+                  </td>
+                  <td className="px-5 py-3 font-sans text-sm text-ink font-semibold text-right tabular-nums">
+                    {entry.count.toLocaleString()}
+                  </td>
+                  <td className="px-5 py-3 font-sans text-xs text-ink-muted text-right tabular-nums">
+                    {share.toFixed(1)}%
+                  </td>
+                  <td className="px-5 py-3">
+                    <p className="font-mono text-xs text-ink-muted">
+                      {entry.lastPath || '—'}
+                    </p>
+                    <p className="font-sans text-[10px] text-ink-faint mt-0.5">
+                      {formatLastSeen(entry.lastSeenAt)}
+                    </p>
+                  </td>
+                </tr>
+              )
+            })}
+            {entries.length === 0 && (
+              <tr>
+                <td colSpan={5} className="px-5 py-8 text-center font-body text-sm text-ink-muted italic">
+                  {emptyText}
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+function SignupAttributionSection({ attribution }: { attribution: SignupAttributionSnapshot }) {
+  const instituteShare = attribution.total > 0 ? (attribution.instituteSignups / attribution.total) * 100 : 0
+
+  return (
+    <section className="space-y-6">
+      <div className="border border-border rounded-sm bg-surface p-5 sm:p-6">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <h2 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink">
+              Newsletter Capture Attribution
+            </h2>
+            <p className="font-body text-sm text-ink-muted mt-2 max-w-3xl">
+              This view isolates newsletter capture from general reader signups so institute entry routes, topic hubs,
+              and reporting pages can be compared without mixing them into account-creation totals.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <StatCard label="Newsletter Signups" value={attribution.total} accent />
+            <StatCard label="Institute Share" value={`${instituteShare.toFixed(1)}%`} />
+          </div>
+        </div>
+      </div>
+
+      <div className="grid gap-6 xl:grid-cols-3">
+        <SignupAttributionTable
+          title="Signup Sources"
+          entries={attribution.sources}
+          total={attribution.total}
+          formatLabel={formatSignupSourceLabel}
+          rawLabel={value => value}
+          emptyText="No newsletter source attribution recorded yet."
+        />
+        <SignupAttributionTable
+          title="Content Interests"
+          entries={attribution.interests}
+          total={attribution.total}
+          formatLabel={titleCaseLabel}
+          rawLabel={value => value}
+          emptyText="No signup interests recorded yet."
+        />
+        <SignupAttributionTable
+          title="Success Handoffs"
+          entries={attribution.returnPaths}
+          total={attribution.total}
+          rawLabel={value => value}
+          emptyText="No return-path handoffs recorded yet."
+        />
+      </div>
+    </section>
+  )
+}
+
 // ── Top Pages Table ────────────────────────────────────────────────
 function TopPagesTable({ pages }: { pages: { path: string; title: string; views: number }[] }) {
   return (
@@ -529,6 +676,8 @@ export default function AnalyticsPage() {
           </div>
 
           <FunnelSection funnel={data.funnel} />
+
+          <SignupAttributionSection attribution={data.signupAttribution} />
 
           {/* Daily Trend Chart */}
           {data.dailyTrend.length > 0 && (
