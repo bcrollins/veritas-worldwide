@@ -29,6 +29,7 @@ export interface AnalyticsSnapshot {
   topEvents: AnalyticsEventSummary[]
   eventTrend: EventTrendPoint[]
   funnel: FunnelSnapshot
+  signupAttribution: SignupAttributionSnapshot
 }
 
 export interface CountryViews {
@@ -74,6 +75,61 @@ export interface FunnelSnapshot {
   searches: number
   pdfDownloads: number
   profiles: number
+}
+
+export interface SignupAttributionEntry {
+  label: string
+  count: number
+  lastSeenAt: string
+  lastPath: string
+}
+
+export interface SignupAttributionSnapshot {
+  total: number
+  instituteSignups: number
+  sources: SignupAttributionEntry[]
+  interests: SignupAttributionEntry[]
+  returnPaths: SignupAttributionEntry[]
+}
+
+function normalizeSignupAttributionEntry(value: unknown): SignupAttributionEntry | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null
+
+  const entry = value as Partial<SignupAttributionEntry>
+
+  return {
+    label: typeof entry.label === 'string' ? entry.label : '',
+    count: typeof entry.count === 'number' && Number.isFinite(entry.count) ? entry.count : 0,
+    lastSeenAt: typeof entry.lastSeenAt === 'string' ? entry.lastSeenAt : '',
+    lastPath: typeof entry.lastPath === 'string' ? entry.lastPath : '',
+  }
+}
+
+function normalizeSignupAttributionSnapshot(value: unknown): SignupAttributionSnapshot {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return {
+      total: 0,
+      instituteSignups: 0,
+      sources: [],
+      interests: [],
+      returnPaths: [],
+    }
+  }
+
+  const snapshot = value as Partial<SignupAttributionSnapshot>
+  const normalizeList = (entries: unknown) =>
+    Array.isArray(entries) ? entries.map(normalizeSignupAttributionEntry).filter(Boolean) as SignupAttributionEntry[] : []
+
+  return {
+    total: typeof snapshot.total === 'number' && Number.isFinite(snapshot.total) ? snapshot.total : 0,
+    instituteSignups:
+      typeof snapshot.instituteSignups === 'number' && Number.isFinite(snapshot.instituteSignups)
+        ? snapshot.instituteSignups
+        : 0,
+    sources: normalizeList(snapshot.sources),
+    interests: normalizeList(snapshot.interests),
+    returnPaths: normalizeList(snapshot.returnPaths),
+  }
 }
 
 // ── Always configured (server-side analytics) ─────────────────────
@@ -122,8 +178,11 @@ export async function fetchAnalytics(): Promise<AnalyticsSnapshot | null> {
       headers: { 'Cache-Control': 'no-cache' },
     })
     if (!res.ok) return null
-    const data: AnalyticsSnapshot = await res.json()
-    return data
+    const data = await res.json() as AnalyticsSnapshot & { signupAttribution?: SignupAttributionSnapshot }
+    return {
+      ...data,
+      signupAttribution: normalizeSignupAttributionSnapshot(data?.signupAttribution),
+    }
   } catch {
     return null
   }
