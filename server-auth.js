@@ -1,8 +1,8 @@
 import fs from 'fs'
-import pg from 'pg'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import crypto from 'crypto'
+import { createDatabasePool } from './db/pg-config.js'
 
 export function registerDatabaseAndAuthRoutes({
   app,
@@ -19,9 +19,7 @@ export function registerDatabaseAndAuthRoutes({
 
   let dbPool = null
   if (DATABASE_URL) {
-    dbPool = new pg.Pool({
-      connectionString: DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
+    dbPool = createDatabasePool(DATABASE_URL, {
       max: 10,
       idleTimeoutMillis: 30000,
     })

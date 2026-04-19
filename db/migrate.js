@@ -1,5 +1,4 @@
-import pg from 'pg'
-const { Pool } = pg
+import { createDatabasePool } from './pg-config.js'
 
 // Database migration script for Neon PostgreSQL
 // Run: node db/migrate.js
@@ -12,10 +11,7 @@ if (!DATABASE_URL) {
   process.exit(1)
 }
 
-const pool = new Pool({
-  connectionString: DATABASE_URL,
-  ssl: { rejectUnauthorized: false },
-})
+const pool = createDatabasePool(DATABASE_URL)
 
 const MIGRATIONS = [
   {
