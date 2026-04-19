@@ -122,6 +122,7 @@ function Header() {
   const { t } = useI18n()
   const ctaVariant = useExperiment('membership-cta-copy')
   const [isAdmin, setIsAdmin] = useState(false)
+  const BrandTitleTag = 'p'
 
   useEffect(() => {
     setIsAdmin(isAdminLoggedIn())
@@ -353,9 +354,9 @@ function Header() {
           <Link to="/" className="inline-flex flex-col items-center gap-3 group sm:flex-row sm:gap-5" aria-label="Veritas Worldwide — Home">
             <VeritasLogo variant="icon" size="md" className="flex-shrink-0 transition-transform group-hover:scale-[1.02]" />
             <div className="flex flex-col items-center sm:items-start">
-              <h1 className="font-display text-2xl font-bold leading-none tracking-tight text-ink transition-colors group-hover:text-crimson sm:text-4xl lg:text-[2.75rem]">
+              <BrandTitleTag className="font-display text-2xl font-bold leading-none tracking-tight text-ink transition-colors group-hover:text-crimson sm:text-4xl lg:text-[2.75rem]">
                 Veritas Worldwide
-              </h1>
+              </BrandTitleTag>
               <span className="mt-1 font-serif text-sm italic text-ink-muted">
                 No party. No agenda. Just the record.
               </span>
