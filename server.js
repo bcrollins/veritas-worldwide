@@ -237,7 +237,7 @@ function getAnalyticsTitleFromPath(pagePath) {
 
   const chapterMatch = pagePath.match(/^\/chapter\/([^/]+)$/)
   if (chapterMatch) {
-    const meta = getChapterMeta(chapterMatch[1])
+    const meta = chapterData.getChapterMeta(chapterMatch[1])
     if (meta) {
       return `${meta.title} | The Record — ${ANALYTICS_SITE_NAME}`
     }

@@ -139,6 +139,15 @@ export function createChapterDataTools({ rootDir }) {
     return normalizeChapterRecord(chapter)
   }
 
+  function getChapterMeta(chapterId) {
+    const publicChapter = publicChapterIndex.find((chapter) => chapter?.id === chapterId)
+    if (publicChapter) {
+      return publicChapter
+    }
+
+    return getChapterJson('public', chapterId) || getChapterJson('full', chapterId)
+  }
+
   function getChapterCollection(scope) {
     if (scope === 'public') {
       return publicChapterIndex
@@ -296,6 +305,7 @@ export function createChapterDataTools({ rootDir }) {
     getChapterDataManifest: () => chapterDataManifest,
     getPublicChapterIndex: () => publicChapterIndex,
     getChapterJson,
+    getChapterMeta,
     sanitizeChapterId,
     normalizeSearchQuery,
     normalizeFilter,
