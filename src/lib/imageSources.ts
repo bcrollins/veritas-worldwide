@@ -51,14 +51,19 @@ export function getWikimediaWidth(imageUrl: string): number | null {
 export function getPreferredImageSrc(imageUrl?: string): string | undefined {
   if (!imageUrl) return imageUrl;
 
+  try {
+    const url = new URL(imageUrl);
+    if (url.hostname === 'upload.wikimedia.org') {
+      return imageUrl;
+    }
+  } catch {
+    return imageUrl;
+  }
+
   const fileName = getWikimediaFileName(imageUrl);
   if (!fileName) return imageUrl;
 
   const stableUrl = new URL(`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}`);
-  const width = getWikimediaWidth(imageUrl);
-  if (width) {
-    stableUrl.searchParams.set('width', String(width));
-  }
 
   return stableUrl.toString();
 }
