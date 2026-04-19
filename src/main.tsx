@@ -24,7 +24,30 @@ function HeadingOwnershipGuard() {
   const location = useLocation();
 
   useEffect(() => {
-    preserveBrandHeading(location.pathname === "/" ? "h1" : "p");
+    const targetTag = location.pathname === "/" ? "h1" : "p";
+    let frameId = 0;
+
+    const applyHeadingOwnership = () => {
+      preserveBrandHeading(targetTag);
+    };
+
+    const scheduleApply = () => {
+      cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(applyHeadingOwnership);
+    };
+
+    scheduleApply();
+
+    const observer = new MutationObserver(() => {
+      applyHeadingOwnership();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      observer.disconnect();
+    };
   }, [location.pathname]);
 
   return null;
