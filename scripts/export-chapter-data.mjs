@@ -15,6 +15,7 @@ const chapterMetaFile = path.join(repoRoot, 'src', 'data', 'chapterMeta.ts')
 const sourceHierarchyFile = path.join(repoRoot, 'src', 'data', 'sourceHierarchy.ts')
 
 let sourceHierarchyUtils = null
+const emittedModuleCache = new Map()
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true })
@@ -88,18 +89,69 @@ function withDerivedMetadata(chapter) {
   }
 }
 
-async function importTsModule(filePath, tempName) {
-  const source = fs.readFileSync(filePath, 'utf8')
-  const transpiled = ts.transpileModule(source, {
-    compilerOptions: {
-      module: ts.ModuleKind.ES2020,
-      target: ts.ScriptTarget.ES2020,
-    },
-    fileName: path.basename(filePath),
-  }).outputText
+function getTempModulePath(filePath) {
+  const relativePath = path.relative(repoRoot, filePath)
+  return path.join(tempRoot, relativePath).replace(/\.(ts|tsx)$/, '.js')
+}
 
-  const tempPath = path.join(tempRoot, tempName)
-  fs.writeFileSync(tempPath, transpiled, 'utf8')
+function rewriteRelativeImportSpecifiers(filePath) {
+  const source = fs.readFileSync(filePath, 'utf8')
+  const rewritten = source.replace(
+    /((?:import|export)\s[\s\S]*?\sfrom\s*['"]|import\(\s*['"])(\.\.?\/[^'")]+)(['"]\s*\)?)/g,
+    (match, prefix, specifier, suffix) => {
+      if (path.extname(specifier)) return match
+      return `${prefix}${specifier}.js${suffix}`
+    }
+  )
+
+  if (rewritten !== source) {
+    fs.writeFileSync(filePath, rewritten, 'utf8')
+  }
+}
+
+function emitTsModuleGraph(entryFilePath) {
+  const program = ts.createProgram([entryFilePath], {
+    module: ts.ModuleKind.ES2020,
+    moduleResolution: ts.ModuleResolutionKind.Bundler,
+    target: ts.ScriptTarget.ES2020,
+    rootDir: repoRoot,
+    outDir: tempRoot,
+    rewriteRelativeImportExtensions: true,
+    esModuleInterop: false,
+    allowSyntheticDefaultImports: true,
+    skipLibCheck: true,
+  })
+
+  const { diagnostics, emitSkipped } = program.emit()
+
+  if (emitSkipped) {
+    const messages = diagnostics.map((diagnostic) =>
+      typeof diagnostic.messageText === 'string'
+        ? diagnostic.messageText
+        : diagnostic.messageText.messageText
+    )
+    throw new Error(`[chapter-data] Failed to emit TS module graph for ${entryFilePath}: ${messages.join(' | ')}`)
+  }
+
+  for (const sourceFile of program.getSourceFiles()) {
+    if (sourceFile.isDeclarationFile) continue
+    if (!sourceFile.fileName.startsWith(repoRoot)) continue
+    if (!/\.(ts|tsx)$/.test(sourceFile.fileName)) continue
+
+    const emittedPath = getTempModulePath(sourceFile.fileName)
+    if (fs.existsSync(emittedPath)) {
+      rewriteRelativeImportSpecifiers(emittedPath)
+    }
+  }
+}
+
+async function importTsModule(filePath) {
+  if (!emittedModuleCache.has(filePath)) {
+    emitTsModuleGraph(filePath)
+    emittedModuleCache.set(filePath, getTempModulePath(filePath))
+  }
+
+  const tempPath = emittedModuleCache.get(filePath)
   return import(`${pathToFileURL(tempPath).href}?v=${Date.now()}-${Math.random()}`)
 }
 
@@ -132,8 +184,8 @@ async function main() {
   ensureDir(path.join(generatedRoot, 'public'))
   ensureDir(path.join(generatedRoot, 'full'))
 
-  sourceHierarchyUtils = await importTsModule(sourceHierarchyFile, 'sourceHierarchy.mjs')
-  const chapterMetaModule = await importTsModule(chapterMetaFile, 'chapterMeta.mjs')
+  sourceHierarchyUtils = await importTsModule(sourceHierarchyFile)
+  const chapterMetaModule = await importTsModule(chapterMetaFile)
   const chapterOrder = chapterMetaModule.chapterMeta.map((chapter) => chapter.id)
 
   const chapterFiles = fs.readdirSync(chapterDir)
@@ -144,7 +196,7 @@ async function main() {
 
   for (const fileName of chapterFiles) {
     const filePath = path.join(chapterDir, fileName)
-    const chapterModule = await importTsModule(filePath, fileName.replace(/\.ts$/, '.mjs'))
+    const chapterModule = await importTsModule(filePath)
     const chapter = chapterModule.default
     const publicChapter = toPublicChapter(chapter)
     const fullChapter = toFullChapter(chapter)
