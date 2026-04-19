@@ -73,9 +73,13 @@ const chapterData = createChapterDataTools({ rootDir: __dirname })
 chapterData.loadChapterData()
 
 // ── Persistent storage ────────────────────────────────────────────
-// Uses explicit DATA_DIR, then Railway's mounted volume path, then falls back to ./data
-const DATA_DIR = process.env.DATA_DIR || process.env.RAILWAY_VOLUME_MOUNT_PATH || path.join(__dirname, 'data')
-const DATA_FILE = path.join(DATA_DIR, 'analytics.json')
+// Prefer database-backed analytics in production. Only require disk when an
+// explicit data path is configured or when no database is available.
+const CONFIGURED_DATA_DIR = process.env.DATA_DIR || process.env.RAILWAY_VOLUME_MOUNT_PATH || ''
+const HAS_DATABASE_URL = Boolean(process.env.DATABASE_URL)
+const USE_DISK_ANALYTICS = Boolean(CONFIGURED_DATA_DIR) || !HAS_DATABASE_URL
+const DATA_DIR = USE_DISK_ANALYTICS ? (CONFIGURED_DATA_DIR || path.join(__dirname, 'data')) : null
+const DATA_FILE = DATA_DIR ? path.join(DATA_DIR, 'analytics.json') : null
 
 const ANALYTICS_STATE_KEY = 'public-analytics'
 
@@ -348,6 +352,8 @@ function setAnalyticsDatabasePool(pool) {
 }
 
 function loadStoreFromDisk() {
+  if (!DATA_FILE) return false
+
   try {
     if (!fs.existsSync(DATA_FILE)) return false
     const raw = fs.readFileSync(DATA_FILE, 'utf-8')
@@ -364,6 +370,8 @@ function loadStoreFromDisk() {
 }
 
 function saveStoreToDisk() {
+  if (!DATA_FILE || !DATA_DIR) return
+
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true })
@@ -967,10 +975,16 @@ async function startServer() {
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`[veritas] Serving on port ${PORT}`)
-    console.log(`[veritas] Data dir: ${DATA_DIR}`)
     console.log(`[veritas] Analytics: ${store.lifetime} lifetime views loaded`)
+
+    if (DATA_DIR) {
+      console.log(`[veritas] Data dir: ${DATA_DIR}`)
+    }
+
     if (process.env.RAILWAY_VOLUME_MOUNT_PATH && !process.env.DATA_DIR) {
       console.log(`[veritas] Using Railway volume mount path: ${process.env.RAILWAY_VOLUME_MOUNT_PATH}`)
+    } else if (HAS_DATABASE_URL && !DATA_DIR) {
+      console.log('[veritas] Analytics persistence: database only (disk fallback disabled)')
     } else if (!process.env.DATA_DIR) {
       console.warn('[veritas] WARNING: DATA_DIR and RAILWAY_VOLUME_MOUNT_PATH not set — using ./data (data may be lost on redeploy)')
       console.warn('[veritas] Attach a Railway volume or set DATA_DIR to a persistent mount path for analytics retention')
