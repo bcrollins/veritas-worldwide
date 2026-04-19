@@ -31,6 +31,8 @@ export function registerDatabaseAndAuthRoutes({
     console.warn('[auth] DATABASE_URL not set - auth API will return 503')
   }
 
+  analyticsStore.setDatabasePool?.(dbPool)
+
   async function authenticateToken(req) {
     const authHeader = req.headers.authorization
     const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null
