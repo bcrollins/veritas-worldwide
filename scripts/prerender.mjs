@@ -3,7 +3,6 @@
 import fs from 'fs'
 import path from 'path'
 import vm from 'node:vm'
-import { spawnSync } from 'child_process'
 
 const SITE_NAME = 'Veritas Worldwide'
 const SITE_URL = 'https://veritasworldwide.com'
@@ -92,16 +91,6 @@ function normalizeHumanDate(value) {
 }
 
 function getGitModified(filePath) {
-  const relativePath = path.relative(repoRoot, filePath)
-  const result = spawnSync('git', ['log', '-1', '--format=%cI', '--', relativePath], {
-    cwd: repoRoot,
-    encoding: 'utf8',
-  })
-
-  if (result.status === 0 && result.stdout.trim()) {
-    return result.stdout.trim()
-  }
-
   return new Date(fs.statSync(filePath).mtimeMs).toISOString()
 }
 
@@ -599,162 +588,134 @@ function renderInstituteMarkdown(topics, researchSources) {
     '',
     '## Methodology',
     '',
-    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder, editorial rules, and practical-use criteria.',
-    '- [Field Manual](https://veritasworldwide.com/institute/book): Printable long-form manual for urgent answers and practical course routing.',
+    '- [Institute methodology](https://veritasworldwide.com/institute/methodology)',
+    '- [Institute catalog](https://veritasworldwide.com/institute)',
+    '- [Field manual](https://veritasworldwide.com/institute/book)',
+    '- [Source standards](https://veritasworldwide.com/methodology)',
     '',
-    '## Research basis',
+    '## Quick Route',
     '',
-    ...researchSources.map((source) => `- [${source.label}](${source.url}): ${source.note}`),
+    '- If the user needs an urgent answer, start with the relevant guide article and state the safety boundary first.',
+    '- If the user wants a durable path, move from the guide into the course page and make the proof threshold explicit.',
+    '- If the topic involves licensing, legal, electrical, structural, medical, gas, or hazardous work, preserve the warning language and route them to official/local requirements.',
     '',
-    ...grouped.flatMap(([track, items]) => {
-      const heading = instituteTrackLabels[track] || track
-      return [
-        `## ${heading}`,
-        '',
-        ...items.map((topic) => `- [${topic.skill} guide](https://veritasworldwide.com/institute/guides/${topic.slug}) | [course](https://veritasworldwide.com/institute/courses/${topic.slug}): ${topic.summary}`),
-        '',
-      ]
-    }),
-  ].join('\n')
-}
-
-function renderLlmsTxt(topics) {
-  const featured = [
-    'how-to-become-a-welder',
-    'how-to-maintain-a-car-yourself',
-    'how-to-build-a-72-hour-emergency-kit',
-    'how-to-start-a-garden-that-actually-feeds-you',
-  ]
-    .map((slug) => topics.find((topic) => topic.slug === slug))
-    .filter(Boolean)
-
-  return [
-    '# Veritas Worldwide',
+    '## Practical Tracks',
     '',
-    '> Veritas Worldwide is a source-first publication and learning archive. The two priority surfaces are The Record, which documents power and institutions, and Veritas Institute, which handles urgent household answers and practical trade-skill learning paths.',
+    ...grouped.flatMap(([track, items]) => [
+      `### ${instituteTrackLabels[track] || track}`,
+      '',
+      ...items.flatMap((topic) => {
+        const brief = buildInstituteBrief(topic)
+        return [
+          `#### ${topic.skill}`,
+          '',
+          `- Guide: https://veritasworldwide.com/institute/guides/${topic.slug}`,
+          `- Course: https://veritasworldwide.com/institute/courses/${topic.slug}`,
+          `- Why it matters: ${topic.summary}`,
+          `- First action: ${topic.firstAction}`,
+          `- Time to first result: ${topic.timeToFirstResult}`,
+          `- Difficulty: ${topic.difficulty}`,
+          `- Outcome: ${topic.outcome}`,
+          `- Search intent: ${brief.searchIntent}`,
+          `- LLM summary: ${brief.llmSummary}`,
+          `- Proof standard: ${brief.proofPoints}`,
+          '',
+          'Prerequisites:',
+          ...brief.prerequisites.map((item) => `- ${item}`),
+          '',
+          'Official checkpoints:',
+          ...brief.officialCheckpoints.map((item) => `- ${item}`),
+          '',
+          `- Related queries: ${brief.relatedQueries.join(', ')}`,
+          `- Institutions: ${(topic.institutions || []).join(', ')}`,
+          `- Keywords: ${(topic.keywords || []).join(', ')}`,
+          `- Tools: ${(topic.tools || []).join(', ')}`,
+          '',
+        ]
+      }),
+    ]),
+    '## Research Sources',
     '',
-    'Use the methodology and source pages when answering questions about evidence, sourcing, attribution, or editorial standards. Use Veritas Institute when answering questions about practical skills, career moves, preparedness, household systems, or self-reliance.',
+    ...researchSources.flatMap((source) => [
+      `- [${source.label}](${source.url}) — ${source.note}`,
+    ]),
     '',
-    '## Trust layers',
-    '',
-    '- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.',
-    '- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.',
-    '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder and editorial rules for Veritas Institute.',
-    '',
-    '## Veritas Institute',
-    '',
-    '- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for the practical field-manual and trade-course catalog.',
-    '- [Field Manual](https://veritasworldwide.com/institute/book): Print-friendly field manual for urgent answers and practical course routing.',
-    '- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped summary with guide and course links.',
-    '',
-    '## High-intent starting points',
-    '',
-    ...featured.map((topic) => `- [${topic.articleTitle}](https://veritasworldwide.com/institute/guides/${topic.slug}): ${topic.summary}`),
-    '',
-    '## Optional',
-    '',
-    '- [Home](https://veritasworldwide.com/): Publication front page.',
-    '- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.',
-    '- [Profiles](https://veritasworldwide.com/profiles): Source-driven profiles of institutional actors.',
   ].join('\n')
 }
 
 function renderInstituteIndexPage(topics, researchSources) {
   const grouped = groupInstituteTopicsByTrack(topics)
-  const trackCount = grouped.length
 
   return `
-    <main class="institute-shell-root text-white">
-      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        <section class="institute-panel-strong px-6 py-8">
-          <p class="institute-eyebrow">Veritas Institute</p>
-          <h1 class="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The field manual for ordinary emergencies. The course library for trades, repair, and resilient households.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">Veritas Institute answers immediate household and roadside problems first, then routes readers into deeper course paths for practical trade work, repair literacy, preparedness, food resilience, and healthcare-support skills.</p>
-          <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            <div class="institute-stat"><span class="institute-stat-value">12</span><span class="institute-stat-label">field-manual answers</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(topics.length))}</span><span class="institute-stat-label">practical course paths</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(trackCount))}</span><span class="institute-stat-label">practical tracks</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">1</span><span class="institute-stat-label">printable field manual</span></div>
-          </div>
-        </section>
-
-        <section class="institute-panel px-6 py-6 mt-8">
-          <p class="institute-eyebrow">How to use the institute</p>
-          <div class="grid gap-4 md:grid-cols-3 mt-4">
-            ${[
-              ['Start with the manual', 'Use the field manual when the question is immediate: water, blood, fuel, food, cold, utilities, vehicle trouble, or a fast household failure.'],
-              ['Open the course', 'Then move into prerequisites, proof standards, module logic, and a paced buildout for the practical trade or household skill.'],
-              ['Keep the official anchor', 'Every answer should still route back to the right public agency, extension system, manufacturer guidance, or licensing body.'],
-            ].map(([title, detail]) => `
-              <article class="institute-mini-card">
-                <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
-                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(detail)}</p>
-              </article>`).join('\n')}
-          </div>
-        </section>
-
-        <section class="institute-panel px-6 py-6 mt-8">
-          <p class="institute-eyebrow">Practical tracks</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
-            ${grouped.map(([track, items]) => `
-              <article class="institute-track-card" id="track-${escapeAttr(track)}">
-                <div class="flex items-center justify-between gap-4">
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">${escapeHtml(instituteTrackLabels[track] || track)}</p>
-                    <h2 class="mt-3 text-xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(items.length)} practical courses connect to this track.</h2>
-                  </div>
-                </div>
-                <div class="grid gap-3 mt-5">
-                  ${items.slice(0, 4).map((topic) => `
-                    <a href="/institute/guides/${escapeAttr(topic.slug)}" class="institute-list-row">
-                      <span class="text-sm font-medium text-[color:var(--institute-ink)]">${escapeHtml(topic.skill)}</span>
-                      <span class="text-xs leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.outcome)}</span>
-                    </a>`).join('\n')}
-                </div>
-              </article>`).join('\n')}
-          </div>
-        </section>
-
-        <section class="institute-panel px-6 py-6 mt-8">
-          <p class="institute-eyebrow">Course catalog</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
-            ${topics.map((topic) => `
-              <article class="institute-topic-card">
-                <div class="flex flex-wrap gap-2">
-                  <span class="institute-pill">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</span>
-                  <span class="institute-pill">${escapeHtml(topic.difficulty)}</span>
-                  <span class="institute-pill">${escapeHtml(topic.timeToFirstResult)}</span>
-                </div>
-                <h2 class="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(topic.skill)}</h2>
-                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.summary)}</p>
-                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Why now:</span> ${escapeHtml(topic.whyNow)}</p>
-                <div class="grid gap-3 lg:grid-cols-2 mt-5">
-                  <a href="/institute/courses/${escapeAttr(topic.slug)}" class="institute-mini-card block">
-                    <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Course</p>
-                    <h3 class="mt-2 text-base font-semibold text-[color:var(--institute-ink)]">${escapeHtml(topic.courseTitle)}</h3>
-                  </a>
-                  <a href="/institute/guides/${escapeAttr(topic.slug)}" class="institute-mini-card block">
-                    <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Guide</p>
-                    <h3 class="mt-2 text-base font-semibold text-[color:var(--institute-ink)]">${escapeHtml(topic.articleTitle)}</h3>
-                  </a>
-                </div>
-                <div class="mt-5 border-t border-[color:var(--institute-border)] pt-4">
-                  <p class="text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">First action:</span> ${escapeHtml(topic.firstAction)}</p>
-                  <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Outcome:</span> ${escapeHtml(topic.outcome)}</p>
-                </div>
-              </article>`).join('\n')}
-          </div>
-        </section>
-
-        <section class="institute-panel px-6 py-6 mt-8">
-          <p class="institute-eyebrow">Research basis</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Veritas Institute</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">Practical skill paths built with the same proof standard as the publication.</h1>
+        <p class="font-body text-lg text-ink-muted leading-8 max-w-4xl">
+          The institute starts with urgent household questions, then routes readers into structured practical trade and resilience paths built from public safety guidance, extension systems, and real credential lanes.
+        </p>
+        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3 mt-10">
+          ${topics.map((topic) => `
+            <a href="/institute/guides/${escapeAttr(topic.slug)}" class="border border-border bg-surface p-5 block">
+              <p class="font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</p>
+              <h2 class="font-display text-2xl font-bold text-ink leading-tight">${escapeHtml(topic.skill)}</h2>
+              <p class="font-body text-sm text-ink-muted leading-7 mt-3">${escapeHtml(topic.summary)}</p>
+            </a>
+          `).join('\n')}
+        </div>
+        <section class="mt-12">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Source baseline</p>
+          <ul class="list-none m-0 p-0 space-y-3">
             ${researchSources.map((source) => `
-              <a href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer" class="institute-list-row">
-                <span class="text-sm font-medium text-[color:var(--institute-ink)]">${escapeHtml(source.label)}</span>
-                <span class="text-xs leading-7 text-[color:var(--institute-muted)]">${escapeHtml(source.note)}</span>
-              </a>`).join('\n')}
-          </div>
+              <li>
+                <a href="${escapeAttr(source.url)}" class="font-sans text-sm font-semibold text-crimson">${escapeHtml(source.label)}</a>
+                <p class="font-body text-sm text-ink-muted leading-7">${escapeHtml(source.note)}</p>
+              </li>
+            `).join('\n')}
+          </ul>
+        </section>
+      </div>
+    </main>`
+}
+
+function renderInstituteBookPage(topics, researchSources) {
+  return `
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Field Manual</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">The Veritas field manual combines urgent guides with durable trade-course paths.</h1>
+        <p class="font-body text-lg text-ink-muted leading-8 max-w-4xl">
+          Use the manual to answer immediate repair, preparedness, food, and healthcare-support questions, then move into the deeper course pages for a path with proof standards and next steps.
+        </p>
+        <div class="space-y-6 mt-10">
+          ${topics.map((topic) => {
+            const brief = buildInstituteBrief(topic)
+            return `
+              <article class="border border-border bg-surface p-5">
+                <p class="font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</p>
+                <h2 class="font-display text-2xl font-bold text-ink leading-tight">${escapeHtml(topic.skill)}</h2>
+                <p class="font-body text-sm text-ink-muted leading-7 mt-3">${escapeHtml(topic.summary)}</p>
+                <p class="font-body text-sm text-ink-light leading-7 mt-3"><strong>First action:</strong> ${escapeHtml(topic.firstAction)}</p>
+                <p class="font-body text-sm text-ink-light leading-7"><strong>Outcome:</strong> ${escapeHtml(topic.outcome)}</p>
+                <p class="font-body text-sm text-ink-light leading-7"><strong>Proof standard:</strong> ${escapeHtml(brief.proofPoints)}</p>
+                <div class="flex flex-wrap gap-3 mt-4">
+                  <a href="/institute/guides/${escapeAttr(topic.slug)}" class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-crimson">Guide</a>
+                  <a href="/institute/courses/${escapeAttr(topic.slug)}" class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-crimson">Course</a>
+                </div>
+              </article>
+            `
+          }).join('\n')}
+        </div>
+        <section class="mt-12">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Research baseline</p>
+          <ul class="list-none m-0 p-0 space-y-3">
+            ${researchSources.map((source) => `
+              <li>
+                <a href="${escapeAttr(source.url)}" class="font-sans text-sm font-semibold text-crimson">${escapeHtml(source.label)}</a>
+                <p class="font-body text-sm text-ink-muted leading-7">${escapeHtml(source.note)}</p>
+              </li>
+            `).join('\n')}
+          </ul>
         </section>
       </div>
     </main>`
@@ -762,390 +723,227 @@ function renderInstituteIndexPage(topics, researchSources) {
 
 function renderInstituteMethodologyPage(researchSources) {
   return `
-    <main class="institute-shell-root text-white">
-      <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        <section class="institute-panel-strong px-6 py-8">
-          <p class="institute-eyebrow">Institute methodology</p>
-          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">We build for practical usefulness first: urgent answers in front, deeper trade-course content behind them.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">Veritas Institute is built around two defensible editorial questions: what does a reader need to know immediately when a household or roadside problem hits, and what practical course paths matter most for real repair, trade, food, preparedness, and healthcare-support skill building today?</p>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Editorial rules</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
-            ${[
-              'High-risk medical, electrical, gas, structural, and legal matters never get framed as casual DIY entertainment.',
-              'The fastest answer still has to be a defensible answer. We do not publish fake hacks just because they are catchy.',
-              'Preparedness content stays calm, source-first, and safety-forward instead of apocalyptic theater.',
-              'Career guidance is anchored to official institutions, licensing pathways, or public labor-market sources.',
-            ].map((line) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(line)}</span></div>`).join('\n')}
-          </div>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Answer architecture</p>
-          <div class="grid gap-4 md:grid-cols-3 mt-4">
-            ${[
-              ['Guide', 'The shortest defensible answer for search, citation, and stressed readers.'],
-              ['Course', 'The deeper path with prerequisites, proof standards, and pacing.'],
-              ['Field manual', 'The print-friendly archive that puts immediate emergency answers first and the practical course library second.'],
-            ].map(([title, detail]) => `
-              <article class="institute-mini-card">
-                <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
-                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(detail)}</p>
-              </article>`).join('\n')}
-          </div>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Source ladder</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Institute Methodology</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">Practical guidance is sourced, labeled, and bounded before it is published.</h1>
+        <div class="space-y-6 font-body text-base text-ink-muted leading-8 max-w-3xl">
+          <p>Institute guides start with source hierarchy, not style. Public safety agencies, labor and licensing bodies, extension systems, and hospital or occupational guidance outrank anecdotal internet summaries.</p>
+          <p>Each guide names the safety boundary explicitly. If a task crosses into electrical service, structural work, hazardous materials, medical escalation, gas systems, or legal requirements, that boundary is stated before procedural guidance appears.</p>
+          <p>Course pages then turn a short guide into a durable path: prerequisites, proof threshold, next action, and official checkpoints. The standard is practical clarity without pretending a web article replaces supervised training or licensing.</p>
+        </div>
+        <section class="mt-10">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Core source stack</p>
+          <ul class="list-none m-0 p-0 space-y-3">
             ${researchSources.map((source) => `
-              <a href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer" class="institute-list-row">
-                <span class="text-sm font-medium text-[color:var(--institute-ink)]">${escapeHtml(source.label)}</span>
-                <span class="text-xs leading-7 text-[color:var(--institute-muted)]">${escapeHtml(source.note)}</span>
-              </a>`).join('\n')}
-          </div>
+              <li>
+                <a href="${escapeAttr(source.url)}" class="font-sans text-sm font-semibold text-crimson">${escapeHtml(source.label)}</a>
+                <p class="font-body text-sm text-ink-muted leading-7">${escapeHtml(source.note)}</p>
+              </li>
+            `).join('\n')}
+          </ul>
         </section>
+      </div>
+    </main>`
+}
+
+function renderInstituteGuidePage(topic) {
+  const brief = buildInstituteBrief(topic)
+  return `
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(topic.articleTitle)}</h1>
+        <p class="font-body text-lg text-ink-muted leading-8 max-w-3xl">${escapeHtml(topic.summary)}</p>
+        <div class="space-y-6 font-body text-base text-ink-light leading-8 mt-8 max-w-3xl">
+          <p><strong>Why now:</strong> ${escapeHtml(topic.whyNow)}</p>
+          <p><strong>First action:</strong> ${escapeHtml(topic.firstAction)}</p>
+          <p><strong>Time to first result:</strong> ${escapeHtml(topic.timeToFirstResult)}</p>
+          <p><strong>Outcome:</strong> ${escapeHtml(topic.outcome)}</p>
+          <p><strong>Proof standard:</strong> ${escapeHtml(brief.proofPoints)}</p>
+          <p><strong>Warning:</strong> ${escapeHtml(topic.warning)}</p>
+        </div>
+        <section class="mt-10">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Prerequisites</p>
+          <ul class="space-y-3 font-body text-base text-ink-muted leading-8">
+            ${brief.prerequisites.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')}
+          </ul>
+        </section>
+        <section class="mt-10">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Official checkpoints</p>
+          <ul class="space-y-3 font-body text-base text-ink-muted leading-8">
+            ${brief.officialCheckpoints.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')}
+          </ul>
+        </section>
+        <div class="flex flex-wrap gap-4 mt-10">
+          <a href="/institute/courses/${escapeAttr(topic.slug)}" class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-crimson">Go deeper</a>
+          <a href="/institute" class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-crimson">Back to catalog</a>
+        </div>
       </div>
     </main>`
 }
 
 function renderInstituteCoursePage(topic) {
   const brief = buildInstituteBrief(topic)
-
   return `
-    <main class="institute-shell-root text-white">
-      <article class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        <section class="institute-panel-strong px-6 py-8">
-          <p class="institute-eyebrow">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</p>
-          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(topic.courseTitle)}</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">${escapeHtml(topic.summary)}</p>
-          <div class="rounded-[28px] border border-[color:var(--institute-border-strong)] bg-[color:var(--institute-surface)] px-5 py-5 mt-6">
-            <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Course thesis</p>
-            <p class="mt-3 text-base leading-8 text-[color:var(--institute-ink)]">${escapeHtml(brief.llmSummary)}</p>
-          </div>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <span class="institute-pill">${escapeHtml(topic.difficulty)}</span>
-            <span class="institute-pill">${escapeHtml(topic.timeToFirstResult)}</span>
-          </div>
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(topic.courseTitle)}</h1>
+        <p class="font-body text-lg text-ink-muted leading-8 max-w-3xl">${escapeHtml(topic.summary)}</p>
+        <div class="space-y-6 font-body text-base text-ink-light leading-8 mt-8 max-w-3xl">
+          <p><strong>Path framing:</strong> ${escapeHtml(brief.llmSummary)}</p>
+          <p><strong>First action:</strong> ${escapeHtml(topic.firstAction)}</p>
+          <p><strong>Difficulty:</strong> ${escapeHtml(topic.difficulty)}</p>
+          <p><strong>Time to first result:</strong> ${escapeHtml(topic.timeToFirstResult)}</p>
+          <p><strong>Outcome:</strong> ${escapeHtml(topic.outcome)}</p>
+        </div>
+        <section class="mt-10">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">What you need before you start</p>
+          <ul class="space-y-3 font-body text-base text-ink-muted leading-8">
+            ${brief.prerequisites.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')}
+          </ul>
         </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Core brief</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Search intent</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.searchIntent)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">First action</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.firstAction)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Outcome</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.outcome)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Proof standard</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.proofPoints)}</p></div>
-          </div>
+        <section class="mt-10">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Proof standard</p>
+          <p class="font-body text-base text-ink-muted leading-8">${escapeHtml(brief.proofPoints)}</p>
         </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Before you start</p>
-          <div class="grid gap-3 mt-4">
-            ${brief.prerequisites.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
-          </div>
+        <section class="mt-10">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Official checkpoints</p>
+          <ul class="space-y-3 font-body text-base text-ink-muted leading-8">
+            ${brief.officialCheckpoints.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')}
+          </ul>
         </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Official checkpoints</p>
-          <div class="grid gap-3 mt-4">
-            ${brief.officialCheckpoints.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
-          </div>
-          <p class="mt-5 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Tools:</span> ${escapeHtml((topic.tools || []).join(', '))}</p>
-          <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Institutions:</span> ${escapeHtml((topic.institutions || []).join(', '))}</p>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Questions people ask next</p>
-          <div class="grid gap-3 mt-4">
-            ${brief.relatedQueries.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
-          </div>
-          <div class="mt-6 flex flex-wrap gap-4">
-            <a href="/institute/guides/${escapeAttr(topic.slug)}" class="institute-button-primary">Read companion guide</a>
-            <a href="/institute/book" class="institute-button-secondary">Open the field manual</a>
-          </div>
-        </section>
-      </article>
-    </main>`
-}
-
-function renderInstituteGuidePage(topic) {
-  const brief = buildInstituteBrief(topic)
-
-  return `
-    <main class="institute-shell-root text-white">
-      <article class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        <section class="institute-panel-strong px-6 py-8">
-          <p class="institute-eyebrow">${escapeHtml(instituteTrackLabels[topic.track] || topic.track)}</p>
-          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(topic.articleTitle)}</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">${escapeHtml(topic.summary)}</p>
-          <div class="rounded-[28px] border border-[color:var(--institute-border-strong)] bg-[color:var(--institute-surface)] px-5 py-5 mt-6">
-            <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Fast answer</p>
-            <p class="mt-3 text-base leading-8 text-[color:var(--institute-ink)]">Start by ${escapeHtml(topic.firstAction.charAt(0).toLowerCase() + topic.firstAction.slice(1))} Then build the path around safety, proof, and documented next steps instead of shortcuts or hype.</p>
-          </div>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Guide brief</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Guide thesis</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.llmSummary)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Search intent</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(brief.searchIntent)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Why demand exists</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.whyNow)}</p></div>
-            <div class="institute-mini-card"><p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">First action</p><p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.firstAction)}</p></div>
-          </div>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Before you start</p>
-          <div class="grid gap-3 mt-4">
-            ${brief.prerequisites.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
-          </div>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Official checkpoints</p>
-          <div class="grid gap-3 mt-4">
-            ${brief.officialCheckpoints.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
-          </div>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Questions people ask next</p>
-          <div class="grid gap-3 mt-4">
-            ${brief.relatedQueries.map((item) => `<div class="institute-list-row"><span class="text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(item)}</span></div>`).join('\n')}
-          </div>
-          <div class="mt-6 flex flex-wrap gap-4">
-            <a href="/institute/courses/${escapeAttr(topic.slug)}" class="institute-button-primary">Open course</a>
-            <a href="/institute/book" class="institute-button-secondary">See the full manual</a>
-          </div>
-        </section>
-      </article>
-    </main>`
-}
-
-function renderInstituteBookPage(topics, researchSources) {
-  const grouped = topics.reduce((acc, topic) => {
-    if (!acc[topic.track]) acc[topic.track] = []
-    acc[topic.track].push(topic)
-    return acc
-  }, {})
-
-  return `
-    <main class="institute-shell-root text-white">
-      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        <section class="institute-panel-strong px-6 py-8">
-          <p class="institute-eyebrow">Field Manual</p>
-          <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The Veritas field manual for ordinary emergencies, repair calls, and modern trade skills.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">This page indexes the practical course library by track and skill so readers, crawlers, and retrieval systems can move from an urgent problem into the right course, guide, or print export path.</p>
-        </section>
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">How to use the manual</p>
-          <div class="grid gap-4 md:grid-cols-3 mt-4">
-            ${[
-              ['Start with the urgent problem', 'Use the field manual when the problem is immediate and the wrong move can make it worse.'],
-              ['Use the fast answer', 'Each entry starts with the shortest defensible answer before expanding into steps and risk notes.'],
-              ['Escalate into the course path', 'Use the linked guide and course whenever you need deeper prerequisites, proof standards, or a paced buildout.'],
-            ].map(([title, detail]) => `
-              <article class="institute-mini-card">
-                <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
-                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(detail)}</p>
-              </article>`).join('\n')}
-          </div>
-        </section>
-        ${Object.entries(grouped).map(([track, items]) => `
-          <section class="institute-panel px-6 py-6">
-            <p class="institute-eyebrow">${escapeHtml(instituteTrackLabels[track] || track)}</p>
-            <div class="grid gap-4 xl:grid-cols-2 mt-4">
-              ${items.map((topic) => `
-                <article class="institute-topic-card">
-                  <h2 class="text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(topic.skill)}</h2>
-                  <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(topic.summary)}</p>
-                  <div class="mt-4 flex flex-wrap gap-3">
-                    <a href="/institute/guides/${escapeAttr(topic.slug)}" class="text-sm text-[color:var(--institute-accent)]">Guide →</a>
-                    <a href="/institute/courses/${escapeAttr(topic.slug)}" class="text-sm text-[color:var(--institute-accent)]">Course →</a>
-                  </div>
-                </article>`).join('\n')}
-            </div>
-          </section>`).join('\n')}
-        <section class="institute-panel px-6 py-6">
-          <p class="institute-eyebrow">Research basis</p>
-          <div class="grid gap-4 xl:grid-cols-2 mt-4">
-            ${researchSources.map((source) => `
-              <a href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer" class="institute-list-row">
-                <span class="text-sm font-medium text-[color:var(--institute-ink)]">${escapeHtml(source.label)}</span>
-                <span class="text-xs leading-7 text-[color:var(--institute-muted)]">${escapeHtml(source.note)}</span>
-              </a>`).join('\n')}
-          </div>
+        <section class="mt-10">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Related queries</p>
+          <p class="font-body text-base text-ink-muted leading-8">${escapeHtml(brief.relatedQueries.join(', '))}</p>
         </section>
       </div>
     </main>`
 }
 
-function buildInstituteCourseJsonLd(topic) {
-  const brief = buildInstituteBrief(topic)
-  const faqEntries = [
-    {
-      question: 'What is the fastest realistic way to get started?',
-      answer: `${topic.firstAction} The institute treats fast starts as structured starts: the first win is clarity and setup, not pretending the hard part disappeared.`,
-    },
-    {
-      question: 'What actually proves progress?',
-      answer: `${lowerFirst(topic.outcome)} is the real milestone. The institute wants visible proof: a sample, a checklist, a log, a supervised result, or another artifact that shows the system works outside your head.`,
-    },
-    {
-      question: 'How does Veritas Institute handle evidence on this path?',
-      answer: 'Official rules, public guidance, and credentialing pathways are treated as verified foundations. Market outcomes, earnings, and time-to-income claims are framed more cautiously unless the proof is strong and attributable.',
-    },
-    {
-      question: 'What should I avoid while learning this?',
-      answer: topic.warning,
-    },
-  ]
-
-  return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'LearningResource',
-      name: topic.courseTitle,
-      description: brief.llmSummary,
-      provider: {
-        '@type': 'Organization',
-        name: 'Veritas Institute',
-        sameAs: `${SITE_URL}/institute`,
-      },
-      educationalLevel: topic.difficulty,
-      educationalUse: 'Self-study',
-      learningResourceType: 'Course outline',
-      timeRequired: topic.timeToFirstResult,
-      teaches: topic.outcome,
-      isAccessibleForFree: true,
-      about: [topic.skill, instituteTrackLabels[topic.track] || topic.track],
-      url: `${SITE_URL}/institute/courses/${topic.slug}`,
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
-        { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SITE_URL}/institute` },
-        { '@type': 'ListItem', position: 3, name: topic.courseTitle, item: `${SITE_URL}/institute/courses/${topic.slug}` },
-      ],
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqEntries.map((entry) => ({
-        '@type': 'Question',
-        name: entry.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: entry.answer,
-        },
-      })),
-    },
-  ]
-}
-
-function buildInstituteGuideJsonLd(topic) {
-  const brief = buildInstituteBrief(topic)
-  const faqEntries = [
-    {
-      question: 'What is the fastest realistic way to get started?',
-      answer: `${topic.firstAction} The institute treats fast starts as structured starts: the first win is clarity and setup, not pretending the hard part disappeared.`,
-    },
-    {
-      question: 'What actually proves progress?',
-      answer: `${lowerFirst(topic.outcome)} is the real milestone. The institute wants visible proof: a sample, a checklist, a log, a supervised result, or another artifact that shows the system works outside your head.`,
-    },
-    {
-      question: 'How does Veritas Institute handle evidence on this path?',
-      answer: 'Official rules, public guidance, and credentialing pathways are treated as verified foundations. Market outcomes, earnings, and time-to-income claims are framed more cautiously unless the proof is strong and attributable.',
-    },
-    {
-      question: 'What should I avoid while learning this?',
-      answer: topic.warning,
-    },
-  ]
-
-  return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: topic.articleTitle,
-      description: brief.llmSummary,
-      url: `${SITE_URL}/institute/guides/${topic.slug}`,
-      about: [topic.skill, instituteTrackLabels[topic.track] || topic.track],
-      keywords: (topic.keywords || []).join(', '),
-      isAccessibleForFree: true,
-      author: {
-        '@type': 'Organization',
-        name: 'Veritas Institute',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: topic.articleTitle,
-      description: `Start by ${lowerFirst(topic.firstAction)} Then build the path around safety, proof, and documented next steps instead of shortcuts or hype.`,
-      url: `${SITE_URL}/institute/guides/${topic.slug}`,
-      supply: (topic.tools || []).map((tool) => ({
-        '@type': 'HowToSupply',
-        name: tool,
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
-        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/institute` },
-        { '@type': 'ListItem', position: 3, name: topic.articleTitle, item: `${SITE_URL}/institute/guides/${topic.slug}` },
-      ],
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqEntries.map((entry) => ({
-        '@type': 'Question',
-        name: entry.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: entry.answer,
-        },
-      })),
-    },
-  ]
-}
-
-function renderKeywordLinks(keywords, topicAliasMap) {
-  return keywords
-    .map((keyword) => `
-      <li class="list-none">
-        <a href="${escapeAttr(getTopicRouteForTerm(keyword, topicAliasMap))}" class="px-3 py-1 rounded-full border border-border font-sans text-[0.65rem] uppercase tracking-[0.08em] text-ink-muted inline-flex">
-          ${escapeHtml(keyword)}
-        </a>
-      </li>`)
-    .join('\n')
-}
-
 function renderChapterPage(chapter, excerpts, topicAliasMap) {
-  const excerptMarkup = excerpts.length
-    ? excerpts
-        .map((excerpt) => `<p class="font-body text-lg leading-8 text-ink-light mt-6">${escapeHtml(excerpt)}</p>`)
-        .join('\n')
-    : `<p class="font-body text-lg leading-8 text-ink-light mt-6">${escapeHtml(chapter.subtitle)}</p>`
+  const excerptHtml = excerpts
+    .map((paragraph) => {
+      const linkedParagraph = paragraph.replace(/\b([A-Z][a-zA-Z]+(?: [A-Z][a-zA-Z]+){0,3})\b/g, (match) => {
+        const route = getTopicRouteForTerm(match, topicAliasMap)
+        return route.startsWith('/topics/')
+          ? `<a href="${escapeAttr(route)}" class="text-crimson hover:text-crimson-dark underline decoration-crimson/30">${escapeHtml(match)}</a>`
+          : escapeHtml(match)
+      })
 
-  const metaLine = [chapter.author, chapter.publishDate, chapter.dateRange].filter(Boolean).join(' \u00b7 ')
+      return `<p class="font-body text-lg text-ink-muted leading-8 mb-5">${linkedParagraph}</p>`
+    })
+    .join('\n')
 
   return `
     <main class="min-h-screen bg-parchment text-ink">
-      <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">${escapeHtml(chapter.number)}</p>
+      <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">${escapeHtml(chapter.number)} · ${escapeHtml(chapter.dateRange)}</p>
         <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(chapter.title)}</h1>
-        <p class="font-body text-xl italic text-ink-muted leading-relaxed max-w-4xl">${escapeHtml(chapter.subtitle)}</p>
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.12em] text-ink-faint mt-5">${escapeHtml(metaLine)}</p>
-        ${excerptMarkup}
-        <div class="mt-8 pt-8 border-t border-border">
-          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Topics</p>
-          <ul class="flex flex-wrap gap-2 p-0 m-0">${renderKeywordLinks(chapter.keywords.slice(0, 8), topicAliasMap)}</ul>
+        <p class="font-body text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl">${escapeHtml(chapter.subtitle)}</p>
+        <div class="mt-8 flex flex-wrap gap-3 text-[0.65rem] font-sans uppercase tracking-[0.1em] text-ink-faint">
+          <span>${escapeHtml(chapter.author)}</span>
+          <span>Published ${escapeHtml(chapter.publishDate)}</span>
+        </div>
+        <section class="mt-10">${excerptHtml}</section>
+        <div class="mt-12 flex flex-wrap gap-4">
+          <a href="/read" class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-crimson">Open the reader</a>
+          <a href="/search" class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-crimson">Search citations</a>
         </div>
       </article>
+    </main>`
+}
+
+function renderArticlePage(article, chapterMap, topicAliasMap) {
+  const relatedChapterLinks = (article.relatedChapters || [])
+    .map((chapterId) => chapterMap.get(chapterId))
+    .filter(Boolean)
+    .map((chapter) => `<li><a href="/chapter/${escapeAttr(chapter.id)}" class="font-sans text-sm font-semibold text-crimson">${escapeHtml(chapter.title)}</a></li>`)
+    .join('\n')
+
+  const body = (article.content || []).map((block) => {
+    if (block.type === 'quote') {
+      return `<blockquote class="border-l-4 border-crimson pl-4 italic text-ink-light my-8">${escapeHtml(block.text)}</blockquote>`
+    }
+
+    if (block.type === 'list') {
+      return `<ul class="list-disc pl-6 space-y-2 my-6">${(block.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+    }
+
+    if (block.type === 'paragraph') {
+      const linked = escapeHtml(block.text).replace(/\b([A-Z][a-zA-Z]+(?: [A-Z][a-zA-Z]+){0,3})\b/g, (match) => {
+        const route = getTopicRouteForTerm(match, topicAliasMap)
+        return route.startsWith('/topics/')
+          ? `<a href="${escapeAttr(route)}" class="text-crimson hover:text-crimson-dark underline decoration-crimson/30">${match}</a>`
+          : match
+      })
+      return `<p class="font-body text-lg text-ink-muted leading-8 mb-5">${linked}</p>`
+    }
+
+    return ''
+  }).join('\n')
+
+  return `
+    <main class="min-h-screen bg-parchment text-ink">
+      <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Current Events</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(article.title)}</h1>
+        <p class="font-body text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl">${escapeHtml(article.subtitle)}</p>
+        <div class="mt-8 flex flex-wrap gap-3 text-[0.65rem] font-sans uppercase tracking-[0.1em] text-ink-faint">
+          <span>${escapeHtml(article.publishDate)}</span>
+          ${(article.tags || []).slice(0, 3).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}
+        </div>
+        <section class="mt-10">${body}</section>
+        ${relatedChapterLinks ? `
+          <section class="mt-12">
+            <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Related chapters</p>
+            <ul class="space-y-2">${relatedChapterLinks}</ul>
+          </section>` : ''}
+      </article>
+    </main>`
+}
+
+function renderTopicPage(topic, chapters, articles) {
+  return `
+    <main class="min-h-screen bg-parchment text-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <p class="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">${escapeHtml(topic.eyebrow)}</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(topic.name)}</h1>
+        <p class="font-body text-lg text-ink-muted leading-8 max-w-4xl">${escapeHtml(topic.description)}</p>
+        <div class="mt-8 flex flex-wrap gap-3 text-[0.65rem] font-sans uppercase tracking-[0.1em] text-ink-faint">
+          ${(topic.keywords || []).slice(0, 6).map((keyword) => `<span>${escapeHtml(keyword)}</span>`).join('')}
+        </div>
+        <section class="mt-12">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Featured chapters</p>
+          <ul class="list-none m-0 p-0">${renderFeaturedList(chapters)}</ul>
+        </section>
+        ${articles.length ? `
+          <section class="mt-12">
+            <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Current reporting</p>
+            <ul class="list-none m-0 p-0 space-y-4">
+              ${articles.map((article) => `
+                <li class="border border-border bg-surface p-4">
+                  <a href="/news/${escapeAttr(article.slug)}" class="block">
+                    <h2 class="font-display text-2xl font-bold text-ink leading-tight">${escapeHtml(article.title)}</h2>
+                    <p class="font-body text-sm text-ink-muted leading-7 mt-2">${escapeHtml(article.subtitle)}</p>
+                  </a>
+                </li>
+              `).join('\n')}
+            </ul>
+          </section>` : ''}
+        <section class="mt-12">
+          <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Questions readers ask</p>
+          <div class="space-y-4">
+            ${topic.faq.map((entry) => `
+              <div class="border border-border bg-surface p-4">
+                <h3 class="font-display text-xl font-bold text-ink leading-tight">${escapeHtml(entry.question)}</h3>
+                <p class="font-body text-sm text-ink-muted leading-7 mt-3">${escapeHtml(entry.answer)}</p>
+              </div>
+            `).join('\n')}
+          </div>
+        </section>
+      </div>
     </main>`
 }
 
@@ -1153,9 +951,12 @@ function buildChapterJsonLd(chapter, image, publishedTime, modifiedTime) {
   return [
     {
       '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
+      '@type': 'Article',
       headline: chapter.title,
-      description: chapter.subtitle,
+      alternativeHeadline: chapter.subtitle,
+      datePublished: publishedTime,
+      dateModified: modifiedTime,
+      image,
       author: {
         '@type': 'Organization',
         name: SITE_NAME,
@@ -1163,25 +964,12 @@ function buildChapterJsonLd(chapter, image, publishedTime, modifiedTime) {
       publisher: {
         '@type': 'Organization',
         name: SITE_NAME,
-        url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
           url: DEFAULT_OG_IMAGE,
         },
       },
-      image,
-      datePublished: publishedTime,
-      dateModified: modifiedTime,
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `${SITE_URL}/chapter/${chapter.id}`,
-      },
-      keywords: chapter.keywords.join(', '),
-      isAccessibleForFree: true,
-      isPartOf: {
-        '@type': 'PublicationVolume',
-        name: 'The Record - Volume I',
-      },
+      mainEntityOfPage: `${SITE_URL}/chapter/${chapter.id}`,
     },
     {
       '@context': 'https://schema.org',
@@ -1190,12 +978,18 @@ function buildChapterJsonLd(chapter, image, publishedTime, modifiedTime) {
         {
           '@type': 'ListItem',
           position: 1,
-          name: 'The Record',
+          name: 'Home',
           item: SITE_URL,
         },
         {
           '@type': 'ListItem',
           position: 2,
+          name: 'Read The Record',
+          item: `${SITE_URL}/read`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
           name: chapter.title,
           item: `${SITE_URL}/chapter/${chapter.id}`,
         },
@@ -1204,138 +998,29 @@ function buildChapterJsonLd(chapter, image, publishedTime, modifiedTime) {
   ]
 }
 
-function renderArticleBlock(block) {
-  switch (block.type) {
-    case 'heading':
-      return `<h2 class="font-display text-2xl md:text-3xl font-bold text-ink mt-10 mb-4">${escapeHtml(block.text || '')}</h2>`
-    case 'subheading':
-      return `<h3 class="font-display text-xl font-bold text-ink mt-8 mb-3">${escapeHtml(block.text || '')}</h3>`
-    case 'text':
-      return `<p class="font-body text-base md:text-[1.05rem] text-ink leading-[1.8] mb-5">${escapeHtml(block.text || '')}</p>`
-    case 'quote':
-      return `<blockquote class="border-l-2 border-crimson pl-5 italic font-body text-lg text-ink-light my-8">
-        &ldquo;${escapeHtml(block.text || '')}&rdquo;
-        ${block.attribution ? `<div class="font-sans text-[0.65rem] uppercase tracking-[0.12em] text-ink-faint mt-3">&mdash; ${escapeHtml(block.attribution)}</div>` : ''}
-      </blockquote>`
-    case 'evidence':
-      return `<div class="my-6 p-4 border border-border rounded-sm bg-surface">
-        ${block.tier ? `<p class="font-sans text-[0.55rem] font-bold tracking-[0.14em] uppercase text-crimson">${escapeHtml(block.tier)}</p>` : ''}
-        <p class="font-body text-sm text-ink-muted leading-relaxed mt-2">${escapeHtml(block.text || '')}</p>
-      </div>`
-    case 'callout':
-      return `<div class="my-6 p-5 bg-ink text-white rounded-sm"><p class="font-body text-sm leading-relaxed">${escapeHtml(block.text || '')}</p></div>`
-    case 'stat':
-      return `<div class="my-8 text-center py-6 border-y border-border">
-        <p class="font-display text-4xl md:text-5xl font-bold text-crimson">${escapeHtml(block.stat?.value || '')}</p>
-        <p class="font-sans text-xs tracking-[0.1em] uppercase text-ink-muted mt-2">${escapeHtml(block.stat?.label || '')}</p>
-      </div>`
-    case 'image':
-      return block.image?.src
-        ? `<figure class="my-8">
-            <img src="${escapeAttr(block.image.src)}" alt="${escapeAttr(block.image.alt || '')}" class="w-full object-cover" loading="lazy" />
-            ${block.image.caption ? `<figcaption class="font-body text-xs text-ink-muted mt-2">${escapeHtml(block.image.caption)}${block.image.credit ? ` <span class="text-ink-faint">(${escapeHtml(block.image.credit)})</span>` : ''}</figcaption>` : ''}
-          </figure>`
-        : ''
-    default:
-      return ''
-  }
-}
-
-function renderArticlePage(article, chapterLookup, topicAliasMap) {
-  const tagMarkup = (article.tags || []).map((tag) => `
-    <a href="${escapeAttr(getTopicRouteForTerm(tag, topicAliasMap))}" class="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm inline-flex">
-      ${escapeHtml(tag)}
-    </a>`).join('\n')
-
-  const relatedMarkup = (article.relatedChapters || [])
-    .map((chapterId) => chapterLookup.get(chapterId))
-    .filter(Boolean)
-    .map((chapter) => `
-      <li class="border-b border-border last:border-b-0 py-4">
-        <a href="/chapter/${escapeAttr(chapter.id)}" class="block">
-          <p class="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson mb-1">${escapeHtml(chapter.number)}</p>
-          <h3 class="font-display text-lg font-bold text-ink leading-tight">${escapeHtml(chapter.title)}</h3>
-        </a>
-      </li>`)
-    .join('\n')
-
-  const sourceMarkup = (article.sources || [])
-    .map((source, index) => `
-      <li class="font-body text-sm text-ink-muted leading-7">
-        <span class="font-sans font-bold text-crimson mr-2">[${escapeHtml(source.id || index + 1)}]</span>
-        ${escapeHtml(source.title)}${source.url ? ` <a href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer" class="text-crimson underline">View Source</a>` : ''}
-      </li>`)
-    .join('\n')
-
-  return `
-    <main class="min-h-screen bg-parchment text-ink">
-      <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <p class="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-3">${escapeHtml(article.category)}</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(article.title)}</h1>
-        <p class="font-body text-xl italic text-ink-muted leading-relaxed max-w-4xl">${escapeHtml(article.subtitle)}</p>
-        <p class="font-sans text-[0.7rem] uppercase tracking-[0.12em] text-ink-faint mt-5">
-          ${escapeHtml([article.author, article.publishDate, `${article.readingTime} min read`, `${article.sources.length} sources cited`].join(' \u00b7 '))}
-        </p>
-        ${article.heroImage?.src ? `
-          <figure class="my-10">
-            <img src="${escapeAttr(article.heroImage.src)}" alt="${escapeAttr(article.heroImage.alt || '')}" class="w-full object-cover" loading="eager" />
-            <figcaption class="font-sans text-xs text-ink-faint mt-2">${escapeHtml(article.heroImage.credit || '')}</figcaption>
-          </figure>` : ''}
-        ${(article.content || []).map(renderArticleBlock).join('\n')}
-        <section class="mt-10 pt-6 border-t border-border">
-          <div class="flex items-center gap-4 mb-4">
-            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Topics</p>
-            <div class="flex-1 h-[1px] bg-border"></div>
-          </div>
-          <div class="flex flex-wrap gap-2">${tagMarkup}</div>
-        </section>
-        ${relatedMarkup ? `
-          <section class="mt-10 pt-6 border-t border-border">
-            <div class="flex items-center gap-4 mb-4">
-              <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Related Chapters</p>
-              <div class="flex-1 h-[1px] bg-border"></div>
-            </div>
-            <ul class="list-none m-0 p-0">${relatedMarkup}</ul>
-          </section>` : ''}
-        <section class="mt-10 pt-6 border-t border-border">
-          <div class="flex items-center gap-4 mb-4">
-            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Sources</p>
-            <div class="flex-1 h-[1px] bg-border"></div>
-          </div>
-          <ol class="space-y-3 m-0 pl-0 list-none">${sourceMarkup}</ol>
-        </section>
-      </article>
-    </main>`
-}
-
 function buildArticleJsonLd(article, publishedTime, modifiedTime) {
   return [
     {
       '@context': 'https://schema.org',
       '@type': 'NewsArticle',
       headline: article.title,
-      description: article.seo?.metaDescription || article.subtitle,
-      image: article.heroImage?.src || DEFAULT_OG_IMAGE,
+      alternativeHeadline: article.subtitle,
       datePublished: publishedTime,
       dateModified: modifiedTime,
+      image: article.heroImage?.src || DEFAULT_OG_IMAGE,
       author: {
         '@type': 'Organization',
-        name: article.author || SITE_NAME,
+        name: SITE_NAME,
       },
       publisher: {
         '@type': 'Organization',
         name: SITE_NAME,
-        url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
           url: DEFAULT_OG_IMAGE,
         },
       },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `${SITE_URL}/news/${article.slug}`,
-      },
-      keywords: (article.seo?.keywords || article.tags || []).join(', '),
+      mainEntityOfPage: `${SITE_URL}/news/${article.slug}`,
     },
     {
       '@context': 'https://schema.org',
@@ -1364,88 +1049,76 @@ function buildArticleJsonLd(article, publishedTime, modifiedTime) {
   ]
 }
 
-function renderTopicPage(topic, chapters, articles) {
-  const keywordMarkup = topic.keywords
-    .map((keyword) => `
-      <a href="/search?q=${encodeURIComponent(keyword)}" class="inline-flex items-center rounded-sm border border-border bg-surface px-3 py-2 font-sans text-xs text-ink-muted">
-        ${escapeHtml(keyword)}
-      </a>`)
-    .join('\n')
+function buildInstituteCourseJsonLd(topic) {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: topic.courseTitle,
+      description: topic.summary,
+      provider: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+      },
+      educationalLevel: topic.difficulty,
+      teaches: [...(topic.keywords || []), ...(topic.tools || [])],
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'online',
+        timeRequired: topic.timeToFirstResult,
+      },
+      url: `${SITE_URL}/institute/courses/${topic.slug}`,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: `What is the fastest way to start ${topic.skill}?`,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: `${topic.firstAction} The first visible result should be ${topic.outcome} within ${topic.timeToFirstResult}.`,
+          },
+        },
+      ],
+    },
+  ]
+}
 
-  const chapterMarkup = chapters
-    .map((chapter) => `
-      <li class="border-b border-border last:border-b-0 py-4">
-        <a href="/chapter/${escapeAttr(chapter.id)}" class="block">
-          <p class="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson mb-1">${escapeHtml(chapter.number)}</p>
-          <h2 class="font-display text-xl font-bold text-ink leading-tight mb-2">${escapeHtml(chapter.title)}</h2>
-          <p class="font-body text-sm text-ink-muted leading-relaxed">${escapeHtml(chapter.subtitle)}</p>
-        </a>
-      </li>`)
-    .join('\n')
-
-  const articleMarkup = articles.length
-    ? articles.map((article) => `
-        <li class="border-b border-border last:border-b-0 py-4">
-          <a href="/news/${escapeAttr(article.slug)}" class="block">
-            <p class="font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase text-crimson mb-1">${escapeHtml(article.category)}</p>
-            <h2 class="font-display text-xl font-bold text-ink leading-tight mb-2">${escapeHtml(article.title)}</h2>
-            <p class="font-body text-sm text-ink-muted leading-relaxed">${escapeHtml(article.subtitle)}</p>
-          </a>
-        </li>`).join('\n')
-    : `<li class="py-4 font-body text-sm text-ink-muted leading-relaxed">This topic hub currently points readers into the longform archive while the news desk expands this beat.</li>`
-
-  const faqMarkup = topic.faq
-    .map((entry) => `
-      <div class="border border-border bg-surface p-5">
-        <h3 class="font-display text-xl font-bold text-ink leading-tight">${escapeHtml(entry.question)}</h3>
-        <p class="font-body text-sm text-ink-muted leading-7 mt-3">${escapeHtml(entry.answer)}</p>
-      </div>`)
-    .join('\n')
-
-  return `
-    <main class="min-h-screen bg-parchment text-ink">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <p class="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-3">${escapeHtml(topic.eyebrow)}</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-ink mb-4">${escapeHtml(topic.name)}</h1>
-        <p class="font-body text-xl italic text-ink-muted leading-relaxed max-w-4xl">${escapeHtml(topic.headline)}</p>
-        <p class="font-body text-base md:text-lg text-ink-light leading-8 max-w-4xl mt-6">${escapeHtml(topic.description)}</p>
-        <div class="flex flex-wrap gap-4 mt-8 font-sans text-[0.65rem] uppercase tracking-[0.12em] text-ink-faint">
-          <span>${escapeHtml(chapters.length)} core chapters</span>
-          <span>&middot;</span>
-          <span>${escapeHtml(articles.length)} linked news briefings</span>
-          <span>&middot;</span>
-          <span>${escapeHtml(topic.keywords.length)} search terms</span>
-        </div>
-        <section class="mt-10 pt-8 border-t border-border">
-          <div class="flex items-center gap-4 mb-4">
-            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Core Chapters</p>
-            <div class="flex-1 h-[1px] bg-border"></div>
-          </div>
-          <ul class="list-none m-0 p-0">${chapterMarkup}</ul>
-        </section>
-        <section class="mt-10 pt-8 border-t border-border">
-          <div class="flex items-center gap-4 mb-4">
-            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Current Reporting</p>
-            <div class="flex-1 h-[1px] bg-border"></div>
-          </div>
-          <ul class="list-none m-0 p-0">${articleMarkup}</ul>
-        </section>
-        <section class="mt-10 pt-8 border-t border-border">
-          <div class="flex items-center gap-4 mb-4">
-            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Related Searches</p>
-            <div class="flex-1 h-[1px] bg-border"></div>
-          </div>
-          <div class="flex flex-wrap gap-2">${keywordMarkup}</div>
-        </section>
-        <section class="mt-10 pt-8 border-t border-border">
-          <div class="flex items-center gap-4 mb-4">
-            <p class="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">Reader Questions</p>
-            <div class="flex-1 h-[1px] bg-border"></div>
-          </div>
-          <div class="space-y-4">${faqMarkup}</div>
-        </section>
-      </div>
-    </main>`
+function buildInstituteGuideJsonLd(topic) {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: topic.articleTitle,
+      description: topic.summary,
+      about: topic.skill,
+      author: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+      },
+      mainEntityOfPage: `${SITE_URL}/institute/guides/${topic.slug}`,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: topic.articleTitle,
+      description: topic.summary,
+      totalTime: topic.timeToFirstResult,
+      step: [
+        {
+          '@type': 'HowToStep',
+          name: 'Start with the first action',
+          text: topic.firstAction,
+        },
+      ],
+    },
+  ]
 }
 
 function buildTopicJsonLd(topic, chapters, articles) {
