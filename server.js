@@ -341,6 +341,11 @@ const store = createAnalyticsStore()
 let analyticsDirty = false
 let analyticsFlushTimer = null
 let analyticsFlushInFlight = null
+let analyticsDbPool = null
+
+function setAnalyticsDatabasePool(pool) {
+  analyticsDbPool = pool
+}
 
 function loadStoreFromDisk() {
   try {
@@ -370,10 +375,10 @@ function saveStoreToDisk() {
 }
 
 async function loadStoreFromDatabase() {
-  if (!dbPool) return false
+  if (!analyticsDbPool) return false
 
   try {
-    const { rows } = await dbPool.query(
+    const { rows } = await analyticsDbPool.query(
       'SELECT payload FROM analytics_state WHERE state_key = $1 LIMIT 1',
       [ANALYTICS_STATE_KEY]
     )
@@ -393,10 +398,10 @@ async function loadStoreFromDatabase() {
 }
 
 async function saveStoreToDatabase() {
-  if (!dbPool) return
+  if (!analyticsDbPool) return
 
   try {
-    await dbPool.query(
+    await analyticsDbPool.query(
       `INSERT INTO analytics_state (state_key, payload, updated_at)
        VALUES ($1, $2::jsonb, NOW())
        ON CONFLICT (state_key)
@@ -849,6 +854,7 @@ const { initializeDatabaseAndAnalytics } = registerDatabaseAndAuthRoutes({
     chapterTypeFilters: chapterData.chapterTypeFilters,
   },
   analyticsStore: {
+    setDatabasePool: setAnalyticsDatabasePool,
     loadStoreFromDatabase,
     hasAnalyticsData,
     saveStoreToDatabase,
