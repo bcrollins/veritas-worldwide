@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "verify:auth": "node scripts/verify-auth-flows.mjs",
     "verify:sources": "node scripts/verify-source-links.mjs",
-    "verify:analytics": "node scripts/verify-analytics-snapshot.mjs"
+    "verify:analytics": "node scripts/verify-analytics-snapshot.mjs",
+    "verify:bundle": "node scripts/verify-bundle-health.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
