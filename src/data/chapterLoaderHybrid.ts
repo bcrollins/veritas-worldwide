@@ -4,6 +4,8 @@ export type ChapterScope = 'public' | 'full'
 
 const cache = new Map<string, LoadedChapter>()
 const pending = new Map<string, Promise<LoadedChapter | null>>()
+const loggedFallbackWarnings = new Set<string>()
+let localPublicIndexPromise: Promise<LoadedChapter[]> | null = null
 
 function getAuthHeaders(): Record<string, string> {
   if (typeof window === 'undefined') return {}
@@ -15,6 +17,55 @@ function cacheKey(chapterId: string, scope: ChapterScope) {
   return `${scope}:${chapterId}`
 }
 
+function canUseLocalGeneratedFallback() {
+  if (typeof window === 'undefined') return false
+  return import.meta.env.DEV && ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname)
+}
+
+async function fetchLocalGeneratedJson<T>(relativePath: string): Promise<T | null> {
+  if (!canUseLocalGeneratedFallback()) return null
+
+  try {
+    const response = await fetch(relativePath, {
+      headers: { accept: 'application/json' },
+    })
+
+    if (!response.ok) return null
+
+    const contentType = response.headers.get('content-type') || ''
+    if (!contentType.includes('application/json')) return null
+
+    return response.json() as Promise<T>
+  } catch {
+    return null
+  }
+}
+
+async function getLocalPublicChapter(chapterId: string): Promise<LoadedChapter | null> {
+  return fetchLocalGeneratedJson<LoadedChapter>(`/generated/chapter-data/public/${encodeURIComponent(chapterId)}.json`)
+}
+
+async function getLocalPublicIndex(): Promise<LoadedChapter[]> {
+  if (!localPublicIndexPromise) {
+    localPublicIndexPromise = fetchLocalGeneratedJson<LoadedChapter[]>('/generated/chapter-data/public-index.json')
+      .then((index) => (Array.isArray(index) ? index : []))
+  }
+
+  return localPublicIndexPromise
+}
+
+function logLocalFallbackWarningOnce(key: string, message: string) {
+  if (loggedFallbackWarnings.has(key)) return
+  loggedFallbackWarnings.add(key)
+  console.warn(message)
+}
+
+function getLocalFallbackError(url: string, response: Response, bodyPreview: string) {
+  const contentType = response.headers.get('content-type') || 'unknown content-type'
+  const preview = bodyPreview.replace(/\s+/g, ' ').trim().slice(0, 80)
+  return new Error(`Expected JSON from ${url} but received ${contentType}${preview ? ` (${preview})` : ''}`)
+}
+
 async function fetchJson<T>(url: string, scope: ChapterScope): Promise<T> {
   const response = await fetch(url, {
     headers: scope === 'full' ? getAuthHeaders() : {},
@@ -22,6 +73,12 @@ async function fetchJson<T>(url: string, scope: ChapterScope): Promise<T> {
 
   if (!response.ok) {
     throw new Error(`Request failed (${response.status}) for ${url}`)
+  }
+
+  const contentType = response.headers.get('content-type') || ''
+  if (!contentType.includes('application/json')) {
+    const bodyPreview = await response.text()
+    throw getLocalFallbackError(url, response, bodyPreview)
   }
 
   return response.json() as Promise<T>
@@ -38,6 +95,18 @@ export async function loadChapterContent(
   if (pending.has(key)) return pending.get(key) || null
 
   const promise = fetchJson<LoadedChapter>(`/api/chapters/${chapterId}`, scope)
+    .catch(async (error: Error) => {
+      if (!canUseLocalGeneratedFallback()) throw error
+
+      const fallbackChapter = await getLocalPublicChapter(chapterId)
+      if (!fallbackChapter) throw error
+
+      logLocalFallbackWarningOnce(
+        `chapter:${chapterId}`,
+        `[chapter-loader] Falling back to generated public data for "${chapterId}" because ${error.message}`,
+      )
+      return fallbackChapter
+    })
     .then((chapter) => {
       pending.delete(key)
 
@@ -95,6 +164,20 @@ export async function loadAllChapters(options: { scope?: ChapterScope } = {}): P
     })
     return data.chapters
   } catch (error) {
+    if (canUseLocalGeneratedFallback()) {
+      const localPublicIndex = await getLocalPublicIndex()
+      if (localPublicIndex.length > 0) {
+        logLocalFallbackWarningOnce(
+          'index',
+          `[chapter-loader] Falling back to generated public chapter index because ${error instanceof Error ? error.message : 'the API response was invalid'}`,
+        )
+        localPublicIndex.forEach((chapter) => {
+          cache.set(cacheKey(chapter.id, 'public'), chapter)
+        })
+        return localPublicIndex
+      }
+    }
+
     console.error('Failed to load chapters:', error)
     return []
   }
