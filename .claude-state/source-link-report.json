@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-22T07:32:21.220Z",
+  "generatedAt": "2026-04-22T07:47:13.823Z",
   "timeoutMs": 20000,
   "concurrency": 10,
   "strictMode": false,
   "summary": {
-    "referenceCount": 679,
-    "uniqueUrlCount": 391,
+    "referenceCount": 674,
+    "uniqueUrlCount": 388,
     "ok": 339,
     "redirect": 0,
-    "restricted": 52,
+    "restricted": 49,
     "missing": 0,
     "failed": 0,
     "invalid": 0,
@@ -1679,6 +1679,67 @@
       ]
     },
     {
+      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "domain": "www.972mag.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 3,
+      "referenceLabels": [
+        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
+        "+972 Magazine — Full investigation with officer testimony",
+        "+972 Magazine (six IDF intelligence officers)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "domain": "www.972mag.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "+972 Magazine — \"Where's Daddy?\" tracking system"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.aipac.org/",
+      "domain": "www.aipac.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aipac.org/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 6,
+      "referenceLabels": [
+        "Israel is not just an ally, it is a cause.",
+        "The bond between the United States and Israel is unbreakable.",
+        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
+        "I have a deep connection to Israel that goes back many years.",
+        "I wear my pro-Israel badge with pride.",
+        "AIPAC's mission is to strengthen the US-Israel relationship."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.aipac.org/resources/house-ndaa-2026",
       "domain": "www.aipac.org",
       "status": "ok",
@@ -2278,7 +2339,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.cnbc.com/",
       "redirected": false,
-      "checkedWith": "HEAD",
+      "checkedWith": "GET",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -3974,24 +4035,6 @@
       ]
     },
     {
-      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
-      "domain": "www.mfa.gov.il",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
-      "redirected": true,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Sabra and Shatila Massacre"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
       "url": "https://www.military.com/feature/2026/02/24/trumps-2026-state-of-union-1-trillion-defense-budget-warrior-dividend-and-what-it-means-troops.html",
       "domain": "www.military.com",
       "status": "ok",
@@ -4328,43 +4371,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Housing units estimated damaged in Gaza"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
-      "domain": "www.ochaopt.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "Health workers reported killed in Gaza",
-        "OCHA Reported Impact Snapshot"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Operation Protective Edge — 2,251 Palestinians Killed"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -5627,6 +5633,24 @@
       ]
     },
     {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.parliament.uk/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.paul.senate.gov/",
       "domain": "www.paul.senate.gov",
       "status": "ok",
@@ -5640,26 +5664,6 @@
       "referenceLabels": [
         "I am not for foreign aid in general, to any country.",
         "Blocked unanimous consent on Israel aid bills multiple times"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.politico.com/",
-      "domain": "www.politico.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.politico.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 3,
-      "referenceLabels": [
-        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
-        "One of few Republican senators to oppose unconditional Israel military aid",
-        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -5897,7 +5901,7 @@
       "domain": "www.springer.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=db4cb8e9-6a99-44fe-b2a5-cc250bc58ef0",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=e19f7874-82ea-435d-b5d0-7a2597fe52e4",
       "redirected": true,
       "checkedWith": "HEAD",
       "error": null,
@@ -6535,67 +6539,6 @@
       ]
     },
     {
-      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
-      "domain": "www.972mag.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 3,
-      "referenceLabels": [
-        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
-        "+972 Magazine — Full investigation with officer testimony",
-        "+972 Magazine (six IDF intelligence officers)"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
-      "domain": "www.972mag.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "+972 Magazine — \"Where's Daddy?\" tracking system"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.aipac.org/",
-      "domain": "www.aipac.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.aipac.org/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 6,
-      "referenceLabels": [
-        "Israel is not just an ally, it is a cause.",
-        "The bond between the United States and Israel is unbreakable.",
-        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
-        "I have a deep connection to Israel that goes back many years.",
-        "I wear my pro-Israel badge with pride.",
-        "AIPAC's mission is to strengthen the US-Israel relationship."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.bloomberg.com/",
       "domain": "www.bloomberg.com",
       "status": "restricted",
@@ -6822,25 +6765,6 @@
       ]
     },
     {
-      "url": "https://www.congress.gov/crs-product/RL33222",
-      "domain": "www.congress.gov",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.congress.gov/crs-product/RL33222",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "Inflation-adjusted U.S. aid obligations to Israel",
-        "Congressional Research Service, Report RL33222"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
       "url": "https://www.congress.gov/member/adam-schiff/S001150",
       "domain": "www.congress.gov",
       "status": "restricted",
@@ -6914,6 +6838,24 @@
       ]
     },
     {
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
+      "redirected": true,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Sabra and Shatila Massacre"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.mikebloomberg.com/",
       "domain": "www.mikebloomberg.com",
       "status": "restricted",
@@ -6968,6 +6910,24 @@
       ]
     },
     {
+      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Operation Protective Edge — 2,251 Palestinians Killed"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
       "domain": "www.ohchr.org",
       "status": "restricted",
@@ -6986,18 +6946,20 @@
       ]
     },
     {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
+      "url": "https://www.politico.com/",
+      "domain": "www.politico.com",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.parliament.uk/",
+      "finalUrl": "https://www.politico.com/",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 3,
       "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
+        "One of few Republican senators to oppose unconditional Israel military aid",
+        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -7168,24 +7130,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "The Nakba — 750,000 Palestinians Expelled"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
-      "domain": "www.unicef.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "UNICEF State of Palestine health update"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"

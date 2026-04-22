@@ -22,6 +22,7 @@ const distInstituteMarkdownPath = path.join(distDir, 'veritas-institute.md')
 const sourceInstituteMarkdownPath = path.join(repoRoot, 'public', 'veritas-institute.md')
 const chapterMetaPath = path.join(repoRoot, 'src', 'data', 'chapterMeta.ts')
 const chapterSourceDir = path.join(repoRoot, 'src', 'data', 'chapters')
+const israelDossierCanonPath = path.join(repoRoot, 'src', 'data', 'israelDossierCanon.ts')
 const topicHubPath = path.join(repoRoot, 'src', 'data', 'topicHubs.json')
 const profileDataPath = path.join(repoRoot, 'src', 'data', 'profileData.ts')
 const instituteCatalogPath = path.join(repoRoot, 'src', 'data', 'instituteCatalog.ts')
@@ -65,6 +66,82 @@ function decodeTsString(value) {
     .replace(/\\\\/g, '\\')
     .replace(/\s+/g, ' ')
     .trim()
+}
+
+function extractConstObjectBlock(source, exportName) {
+  const assignment = `export const ${exportName} = {`
+  const objectStart = source.indexOf(assignment)
+  if (objectStart === -1) {
+    throw new Error(`[prerender] Could not find ${exportName} in Israel dossier canon`)
+  }
+
+  const braceStart = source.indexOf('{', objectStart)
+  let depth = 0
+  let inString = false
+  let quote = ''
+  let escaped = false
+
+  for (let index = braceStart; index < source.length; index += 1) {
+    const char = source[index]
+
+    if (inString) {
+      if (escaped) {
+        escaped = false
+      } else if (char === '\\') {
+        escaped = true
+      } else if (char === quote) {
+        inString = false
+        quote = ''
+      }
+      continue
+    }
+
+    if (char === '"' || char === "'" || char === '`') {
+      inString = true
+      quote = char
+      continue
+    }
+
+    if (char === '{') depth += 1
+    if (char === '}') {
+      depth -= 1
+      if (depth === 0) {
+        return source.slice(braceStart, index + 1)
+      }
+    }
+  }
+
+  throw new Error(`[prerender] Unterminated ${exportName} object in Israel dossier canon`)
+}
+
+function extractObjectStringField(block, field) {
+  const match = block.match(new RegExp(`${field}:\\s*(['"\`])([\\s\\S]*?)\\1\\s*,`))
+  if (!match) {
+    throw new Error(`[prerender] Could not find string field ${field} in Israel dossier canon`)
+  }
+
+  return decodeTsString(match[2])
+}
+
+function readCanonicalIsraelChapter15() {
+  const source = fs.readFileSync(israelDossierCanonPath, 'utf8')
+  const assetsBlock = extractConstObjectBlock(source, 'ISRAEL_DOSSIER_ASSETS')
+  const chapterBlock = extractConstObjectBlock(source, 'ISRAEL_DOSSIER_CHAPTER_15')
+  const financialHeroImage = extractObjectStringField(assetsBlock, 'financial')
+
+  return {
+    subtitle: extractObjectStringField(chapterBlock, 'subtitle'),
+    heroImage: financialHeroImage,
+  }
+}
+
+function normalizeCanonicalChapterMetaReferences(source) {
+  if (!source.includes('ISRAEL_DOSSIER_CHAPTER_15')) return source
+
+  const chapter15 = readCanonicalIsraelChapter15()
+  return source
+    .replace(/subtitle:\s*ISRAEL_DOSSIER_CHAPTER_15\.subtitle/g, `subtitle: ${JSON.stringify(chapter15.subtitle)}`)
+    .replace(/heroImage:\s*ISRAEL_DOSSIER_CHAPTER_15\.heroImage/g, `heroImage: ${JSON.stringify(chapter15.heroImage)}`)
 }
 
 function normalizeHumanDate(value) {
@@ -187,7 +264,7 @@ function parseKeywords(rawKeywords) {
 }
 
 function parseChapterMeta() {
-  const source = fs.readFileSync(chapterMetaPath, 'utf8')
+  const source = normalizeCanonicalChapterMetaReferences(fs.readFileSync(chapterMetaPath, 'utf8'))
   const pattern = /\{\s*id:\s*"([^"]+)",\s*number:\s*"((?:\\.|[^"])*)",\s*title:\s*"((?:\\.|[^"])*)",\s*subtitle:\s*"((?:\\.|[^"])*)",\s*dateRange:\s*"((?:\\.|[^"])*)",\s*author:\s*"((?:\\.|[^"])*)",\s*publishDate:\s*"((?:\\.|[^"])*)",\s*(?:heroImage:\s*"((?:\\.|[^"])*)",\s*)?keywords:\s*\[([\s\S]*?)\],\s*\}/g
   const chapters = []
 

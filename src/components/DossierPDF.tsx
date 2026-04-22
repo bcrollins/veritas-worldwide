@@ -3,6 +3,7 @@
  * Generates a comprehensive, print-quality PDF of all dossier content
  */
 import { useState } from 'react'
+import { ISRAEL_DOSSIER_PDF_COVER_STATS, ISRAEL_DOSSIER_PDF_KEY_STATS } from '../data/israelDossierCanon'
 
 export default function DossierPDF() {
   const [generating, setGenerating] = useState(false)
@@ -150,12 +151,7 @@ export default function DossierPDF() {
       doc.text(subLines, W / 2, 155, { align: 'center' })
 
       // Key numbers
-      const nums = [
-        { v: '$298B', l: 'Inflation-adjusted aid' },
-        { v: '72,289+', l: 'Reported Gaza fatalities' },
-        { v: '21,289+', l: 'Children reported killed' },
-        { v: '261+', l: 'Journalists/media workers' },
-      ]
+      const nums = ISRAEL_DOSSIER_PDF_COVER_STATS
       let nx = ML + 5
       nums.forEach(n => {
         doc.setFontSize(18)
@@ -220,23 +216,7 @@ export default function DossierPDF() {
       // ══════════════════════════════════════════════
       addSectionHeader('I. Key Statistics')
 
-      const keyStats = [
-        { v: '$298B', l: 'Inflation-adjusted U.S. aid obligations to Israel (1946–2024)', s: 'Congressional Research Service, Report RL33222' },
-        { v: '$3.8B/year', l: 'Annual U.S. military aid under 2016 MOU (FY2019–FY2028)', s: 'U.S. State Department, 10-Year MOU' },
-        { v: '$26.4B', l: 'Emergency supplemental aid package signed April 2024', s: 'U.S. Congress, H.R.815' },
-        { v: '72,289+', l: 'Reported Palestinian fatalities in Gaza as of 1 Apr. 2026', s: 'OCHA snapshot, attributed to MoH Gaza' },
-        { v: '21,289+', l: 'Children reported killed in Gaza through 3 Feb. 2026', s: 'UNICEF State of Palestine health update' },
-        { v: '14,000+', l: 'MK-84 2,000-pound bombs supplied by U.S. to Israel', s: 'Wall Street Journal / NYT investigation' },
-        { v: '261+', l: 'Journalists and media workers among those killed since Oct. 7, 2023', s: 'Committee to Protect Journalists' },
-        { v: '1.9M', l: 'Palestinians displaced — 90% of Gaza\'s population', s: 'UNRWA' },
-        { v: 'Unlawful', l: 'ICJ ruled Israel\'s occupation of Palestinian territory illegal (July 2024)', s: 'International Court of Justice' },
-        { v: '51+', l: 'U.S. vetoes shielding Israel from UN Security Council resolutions', s: 'UNSC records' },
-        { v: '$180M+', l: 'Pro-Israel lobby spending in 2024 U.S. elections', s: 'OpenSecrets' },
-        { v: '320,600+', l: 'Housing units estimated damaged in Gaza', s: 'OCHA / UNOSAT' },
-        { v: '>1,700', l: 'Health workers reported killed in Gaza', s: 'OCHA snapshot, attributed to MoH Gaza' },
-        { v: '230+', l: 'UNRWA staff killed — highest UN death toll in any conflict', s: 'UNRWA' },
-        { v: '12/12', l: 'Universities in Gaza destroyed', s: 'Euro-Med / UNESCO' },
-      ]
+      const keyStats = ISRAEL_DOSSIER_PDF_KEY_STATS
       keyStats.forEach(s => addStat(s.v, s.l, s.s))
 
       // ══════════════════════════════════════════════

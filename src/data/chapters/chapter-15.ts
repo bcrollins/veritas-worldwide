@@ -1,18 +1,19 @@
 import type { Chapter } from '../chapterTypes'
+import { ISRAEL_DOSSIER_CHAPTER_15 } from '../israelDossierCanon'
 
 const chapter: Chapter = {
   id: 'chapter-15',
   number: 'Chapter 15',
   title: 'U.S. Foreign Aid to Israel',
-  subtitle: 'A sourced accounting of U.S. aid obligations to Israel, including the Congressional Research Service\'s $298 billion constant-dollar total for 1946–2024 and the legal framework that enables it.',
+  subtitle: ISRAEL_DOSSIER_CHAPTER_15.subtitle,
   dateRange: '1948–Present',
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: '/og/chapter-15.png',
-    alt: 'Veritas chapter card for U.S. foreign aid to Israel',
-    caption: 'CRS reports that Israel is the largest cumulative recipient of U.S. foreign assistance since World War II, with $298 billion in constant 2024 dollars obligated from 1946 through 2024.',
-    credit: 'Veritas Worldwide',
+    src: ISRAEL_DOSSIER_CHAPTER_15.heroImage,
+    alt: ISRAEL_DOSSIER_CHAPTER_15.heroAlt,
+    caption: ISRAEL_DOSSIER_CHAPTER_15.heroCaption,
+    credit: ISRAEL_DOSSIER_CHAPTER_15.heroCredit,
   },
   content: [
     { type: 'dropcap', text: 'U.S. Capitol' },
@@ -38,7 +39,7 @@ const chapter: Chapter = {
     { type: 'text', text: 'Verify Everything: Every factual claim in this chapter is sourced from publicly available documents,\ngovernment records, court filings, congressional testimony, or peer‐reviewed research. We encourage\nreaders to verify every claim independently. Click any hyperlinked source below to access the original\ndocument. If a source link is broken, search the document title directly  —  primary sources are\narchived across multiple platforms.' }
   ],
   sources: [
-    { id: 1, text: 'Congressional Research Service, "U.S. Foreign Aid to Israel," Report RL33222, Updated May 28, 2025. congress.gov/crs-product/RL33222' },
+    { id: 1, text: ISRAEL_DOSSIER_CHAPTER_15.sourceCitation },
     { id: 2, text: 'U.S. Department of State, "The United States-Israel Relationship." 2016 MOU documentation. state.gov' },
     { id: 3, text: 'Defense Security Cooperation Agency, Major Arms Sales Notifications. dsca.mil/press-media/major-arms-sales' },
     { id: 4, text: 'OpenSecrets, "Pro-Israel Industry Summary." FEC data. opensecrets.org/industries/indus.php?ind=Q05' },

@@ -1,3 +1,10 @@
+import {
+  ISRAEL_DOSSIER_ASSETS,
+  ISRAEL_DOSSIER_CANON_CAROUSEL_SLIDES,
+  ISRAEL_DOSSIER_LAST_VERIFIED,
+  ISRAEL_DOSSIER_PUBLIC_RECORDS,
+} from './israelDossierCanon'
+
 /**
  * ISRAEL DOSSIER — EXPANDED DATA (10x depth)
  * Every figure sourced to primary documents.
@@ -70,14 +77,6 @@ export interface LegalCase {
   status: 'decided' | 'pending' | 'ongoing'
 }
 
-const DOSSIER_ASSETS = {
-  financial: '/og/chapter-15.png',
-  humanitarian: '/og-image.png',
-  legal: '/og/chapter-16.png',
-  domestic: '/og/chapter-14.png',
-  source: '/og/chapter-29.png',
-} as const
-
 // ═══════════════════════════════════════════════════════════
 // HISTORICAL TIMELINE — From Balfour to Present
 // ═══════════════════════════════════════════════════════════
@@ -90,7 +89,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'The Avalon Project — The Balfour Declaration',
     sourceUrl: 'https://avalon.law.yale.edu/20th_century/balfour.asp',
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.legal,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.legal,
   },
   {
     year: '1947',
@@ -99,7 +98,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'United Nations General Assembly Resolution 181',
     sourceUrl: 'https://www.un.org/unispal/document/auto-insert-185393/',
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.legal,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.legal,
   },
   {
     year: '1948',
@@ -116,7 +115,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'UN Security Council Resolution 242',
     sourceUrl: 'https://digitallibrary.un.org/record/90717',
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.legal,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.legal,
   },
   {
     year: '1967',
@@ -244,7 +243,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     ],
     tier: 'verified',
     casualties: { killed: 120, injured: 280 },
-    imageUrl: DOSSIER_ASSETS.humanitarian,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: Al-Ahli Arab Hospital ───
   {
@@ -280,7 +279,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'photo-essay', label: 'Satellite before/after imagery of all 12 campuses', url: 'https://euromedmonitor.org/en/article/6129' },
     ],
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.humanitarian,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: Destruction of Al-Shifa Hospital ───
   {
@@ -319,7 +318,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'document', label: 'IPC Famine Review Committee Report', url: 'https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1157345/' },
     ],
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.humanitarian,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: Killing of Journalist Shireen Abu Akleh ───
   {
@@ -426,7 +425,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'investigation', label: '+972 Magazine — Full investigation with officer testimony', url: 'https://www.972mag.com/lavender-ai-israeli-army-gaza/' },
     ],
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.humanitarian,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: White Phosphorus ───
   {
@@ -443,7 +442,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'video', label: 'HRW — Video analysis of white phosphorus airburst', url: 'https://www.hrw.org/news/2023/10/12/israel-white-phosphorus-used-gaza-lebanon' },
     ],
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.humanitarian,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
   },
 ]
 
@@ -546,17 +545,17 @@ export const EXPANDED_STATS: StatCard[] = [
     category: 'infrastructure',
     lastVerified: '2026-03-24',
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.legal,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.legal,
   },
   {
     value: '>1,700',
     label: 'Health workers reported killed in Gaza',
     source: 'OCHA Reported Impact Snapshot, 1 Apr. 2026',
-    sourceUrl: 'https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
+    sourceUrl: ISRAEL_DOSSIER_PUBLIC_RECORDS.gazaFatalities.sourceUrl,
     category: 'infrastructure',
-    lastVerified: '2026-04-22',
+    lastVerified: ISRAEL_DOSSIER_LAST_VERIFIED,
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.humanitarian,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
     details: [
       { title: 'Source boundary', text: 'OCHA attributes this figure to the Gaza Ministry of Health as of 7 October 2025. It is a reported figure and should be cited with attribution.' },
       { title: 'Health system context', text: 'The same OCHA snapshot reports that Gaza health services remain mostly partial or non-functional, with no normal hospital capacity restored.' },
@@ -568,7 +567,7 @@ export const EXPANDED_STATS: StatCard[] = [
     source: 'OCHA / UNOSAT satellite damage assessment',
     sourceUrl: 'https://www.ochaopt.org/content/humanitarian-situation-report-10-april-2026',
     category: 'infrastructure',
-    lastVerified: '2026-04-22',
+    lastVerified: ISRAEL_DOSSIER_LAST_VERIFIED,
     tier: 'verified',
     details: [
       { title: 'Scale of damage', text: 'OCHA cites UNOSAT satellite imagery analysis estimating more than 320,600 damaged housing units as of 11 October 2025.' },
@@ -607,7 +606,7 @@ export const EXPANDED_STATS: StatCard[] = [
     category: 'domestic',
     lastVerified: '2026-03-24',
     tier: 'verified',
-    imageUrl: DOSSIER_ASSETS.domestic,
+    imageUrl: ISRAEL_DOSSIER_ASSETS.domestic,
     details: [
       { title: 'AIPAC\'s first Super PAC', text: 'In 2022, AIPAC launched the United Democracy Project — its first-ever Super PAC. It immediately became one of the largest spenders in U.S. politics, spending $41.7M in 2024 Democratic primaries alone.' },
       { title: 'Primary defeats', text: 'AIPAC-backed challengers defeated progressive incumbents Jamaal Bowman (NY-16, $14.5M spent) and Cori Bush (MO-1, $8.5M spent) — two vocal critics of U.S. military aid to Israel.' },
@@ -624,12 +623,12 @@ export const EXPANDED_STATS: StatCard[] = [
     tier: 'verified',
   },
   {
-    value: '$298B',
+    value: ISRAEL_DOSSIER_PUBLIC_RECORDS.aidObligations.value,
     label: 'Inflation-adjusted U.S. aid obligations to Israel',
     source: 'Congressional Research Service RL33222',
-    sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+    sourceUrl: ISRAEL_DOSSIER_PUBLIC_RECORDS.aidObligations.sourceUrl,
     category: 'comparative',
-    lastVerified: '2026-04-22',
+    lastVerified: ISRAEL_DOSSIER_LAST_VERIFIED,
     tier: 'verified',
     note: 'CRS estimate for 1946-2024 in constant 2024 dollars',
     details: [
@@ -661,30 +660,7 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'dark',
   },
-  {
-    headline: '$298 BILLION',
-    stat: '$298B',
-    body: 'CRS estimates U.S. aid obligations to Israel at $298B in constant 2024 dollars from 1946 through 2024.',
-    source: 'Congressional Research Service, Report RL33222',
-    sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
-    bgStyle: 'stat',
-  },
-  {
-    headline: '72,289+ Reported Fatalities',
-    stat: '72,289+',
-    body: 'OCHA\'s 1 April 2026 snapshot attributed 72,289 reported Palestinian fatalities in Gaza to MoH Gaza. The UN separately notes source attribution and verification boundaries.',
-    source: 'OCHA Reported Impact Snapshot',
-    sourceUrl: 'https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
-    bgStyle: 'crimson',
-  },
-  {
-    headline: '21,289+ Children Reported Killed',
-    stat: '21,289+',
-    body: 'UNICEF reported at least 21,289 children killed and 44,500 injured in Gaza through 3 February 2026.',
-    source: 'UNICEF State of Palestine health update',
-    sourceUrl: 'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
-    bgStyle: 'dark',
-  },
+  ...ISRAEL_DOSSIER_CANON_CAROUSEL_SLIDES,
   {
     headline: 'Follow the Money',
     body: 'Congress approved $26.4B in emergency aid → Pentagon purchased 14,000+ MK-84 2,000-pound bombs → Bombs documented in strikes on refugee camps, safe zones, and hospitals.\n\nEvery link in the chain is sourced.',

@@ -1,5 +1,6 @@
 import type { ImageData } from './chapterTypes';
 import { getPreferredImageSrc } from '../lib/imageSources';
+import { ISRAEL_DOSSIER_CHAPTER_15 } from './israelDossierCanon';
 
 export interface ChapterMetadata {
   id: string;
@@ -194,11 +195,11 @@ const rawChapterMeta: ChapterMetadata[] = [
     id: "chapter-15",
     number: "Chapter 15",
     title: "U.S. Foreign Aid to Israel",
-    subtitle: "A sourced accounting of U.S. aid obligations to Israel, including CRS's $298 billion constant-dollar total for 1946-2024 and the legal framework that enables it.",
+    subtitle: ISRAEL_DOSSIER_CHAPTER_15.subtitle,
     dateRange: "1948–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "/og/chapter-15.png",
+    heroImage: ISRAEL_DOSSIER_CHAPTER_15.heroImage,
     keywords: ["foreign aid", "Israel", "military aid", "taxpayer", "MOU", "defense"],
   },
   {

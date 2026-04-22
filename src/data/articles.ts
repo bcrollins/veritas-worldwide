@@ -664,7 +664,7 @@ export const articles: Article[] =
       },
       {
         "type": "callout",
-        "text": "RELATED: Chapter 15 — U.S. Foreign Aid to Israel documents CRS's $298 billion constant-dollar aid-obligation total for 1946-2024. Chapter 11 — Shadow Institutions examines the private organizations influencing defense policy."
+        "text": "RELATED: Chapter 15 - U.S. Foreign Aid to Israel documents CRS's $298 billion constant-dollar aid-obligation total for 1946-2024. Chapter 11 - Shadow Institutions examines the private organizations influencing defense policy."
       },
       {
         "type": "heading",
@@ -807,7 +807,7 @@ export const articles: Article[] =
       },
       {
         "type": "callout",
-        "text": "RELATED: Chapter 14 — AIPAC & Congressional Lobbying documents how the lobby operates, who it funds, and what happens to those who oppose it. Chapter 15 details CRS's $298 billion constant-dollar aid-obligation total for 1946-2024."
+        "text": "RELATED: Chapter 14 - AIPAC & Congressional Lobbying documents how the lobby operates, who it funds, and what happens to those who oppose it. Chapter 15 details CRS's $298 billion constant-dollar aid-obligation total for 1946-2024."
       },
       {
         "type": "heading",

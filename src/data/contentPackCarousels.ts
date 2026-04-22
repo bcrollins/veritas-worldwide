@@ -2,6 +2,7 @@
  * Content Pack Carousel Data — 10-slide carousels for each content pack
  * Each pack gets a full Instagram carousel with brand-consistent styling
  */
+import { ISRAEL_DOSSIER_BRAND_SLIDE } from './israelDossierCanon'
 
 export interface PackCarouselSlide {
   headline: string
@@ -106,7 +107,7 @@ export const PACK_CAROUSELS: PackCarousel[] = [
       { headline: '500+ Primary Sources', stat: '500+', body: 'Government documents. Court filings. Congressional records. Declassified intelligence reports. Every claim traceable.', source: 'Veritas source library', bgStyle: 'stat' },
       { headline: 'Three Evidence Tiers', body: 'VERIFIED — Primary source confirmed.\nCIRCUMSTANTIAL — Facts documented, connection interpreted.\nDISPUTED — Claimed but not independently confirmed.\n\nEvery claim is classified.', source: 'Veritas methodology', bgStyle: 'light' },
       { headline: '32 Archive Parts', stat: '32', body: 'A documentary history spanning 240+ years. From the founding of the Federal Reserve to the evidence-methods chapter. Chronological. Sourced. Complete.', source: 'The Record', bgStyle: 'crimson' },
-      { headline: 'The Israel Dossier', body: 'CRS aid records, OCHA casualty snapshots, UNICEF child casualty updates, and CPJ press-freedom tracking in one source-first dossier. Every figure linked to its source.', source: 'Veritas Israel Dossier', bgStyle: 'dark' },
+      ISRAEL_DOSSIER_BRAND_SLIDE,
       { headline: 'The Deep State Dossier', body: 'The Epstein network mapped. Intelligence community connections documented. Financial flows traced. All from court records and declassified files.', source: 'Veritas Deep State page', bgStyle: 'stat' },
       { headline: 'Free and Open', stat: '100%', body: 'No paywall. No subscription required. We believe primary source journalism should be accessible to everyone. Always.', source: 'Veritas Worldwide', bgStyle: 'crimson' },
       { headline: 'Who We Are', body: 'Independent researchers and journalists. No corporate sponsors. No government funding. No political affiliation. Just the documented record.', source: 'Veritas about page', bgStyle: 'light' },

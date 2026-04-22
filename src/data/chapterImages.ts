@@ -1,6 +1,7 @@
 // Historical images from Wikimedia Commons (public domain / CC)
 // Each chapter gets 1-3 key images of people, events, or documents
 import { getPreferredImageSrc } from '../lib/imageSources'
+import { ISRAEL_DOSSIER_CHAPTER_15 } from './israelDossierCanon'
 
 export interface ChapterImage {
   src: string
@@ -152,10 +153,10 @@ const rawChapterImages: Record<string, ChapterImage[]> = {
   ],
   'chapter-15': [
     {
-      src: '/og/chapter-15.png',
-      alt: 'Veritas chapter card for U.S. foreign aid to Israel',
-      caption: 'CRS reports that Israel is the largest cumulative recipient of U.S. foreign assistance since World War II, with $298 billion in constant 2024 dollars obligated from 1946 through 2024.',
-      credit: 'Veritas Worldwide',
+      src: ISRAEL_DOSSIER_CHAPTER_15.heroImage,
+      alt: ISRAEL_DOSSIER_CHAPTER_15.heroAlt,
+      caption: ISRAEL_DOSSIER_CHAPTER_15.heroCaption,
+      credit: ISRAEL_DOSSIER_CHAPTER_15.heroCredit,
     },
   ],
   'chapter-16': [
