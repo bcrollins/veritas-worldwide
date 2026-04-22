@@ -7,8 +7,8 @@
       "composite": 9.8,
       "previous": 9.7,
       "delta": 0.1,
-      "status": "Live production commit 49a19b627432 / deployment 93e4009b-800a-4735-b015-03d740de41ee passed crawler/social metadata, preview images, generated PDF evidence text, canonical source checks, source-link trends, build, bundle, behavior verification, primary viewport matrix, and all twelve new Institute route probes for the six-module Evidence Course Path.",
-      "plus_half_requires": "Add downloadable source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing artifacts, then attach them to the dossier and relevant Institute course/guide routes with download verification."
+      "status": "Live production commit 49a19b627432 / deployment 93e4009b-800a-4735-b015-03d740de41ee passed crawler/social metadata, preview images, generated PDF evidence text, canonical source checks, source-link trends, build, bundle, behavior verification, primary viewport matrix, and all twelve new Institute route probes for the six-module Evidence Course Path. A downloadable editor-artifact layer is locally verified but not yet deployed.",
+      "plus_half_requires": "Live-verify the source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing artifacts, then populate those artifacts with the next batch of source-labeled dossier records."
     },
     {
       "feature": "Home / Front Page",
@@ -79,8 +79,8 @@
       "composite": 8.6,
       "previous": 8.4,
       "delta": 0.2,
-      "status": "improved; all six Israel dossier source-safe course/guide pairs are live, prerendered, sitemap-listed, JSON-LD-backed, and verified in production, with representative routes passing the full primary viewport matrix",
-      "plus_half_requires": "Pressure-test the Book of Knowledge PDF/manual export on real browsers, then add editor-ready course workbooks for the six Israel dossier evidence modules."
+      "status": "improved; all six Israel dossier source-safe course/guide pairs are live, prerendered, sitemap-listed, JSON-LD-backed, and verified in production, with representative routes passing the full primary viewport matrix. Companion workbook templates are locally verified and awaiting deployment.",
+      "plus_half_requires": "Live-verify the six course workbook templates, pressure-test the Book of Knowledge PDF/manual export on real browsers, then add the templates directly into relevant course/guide detail pages."
     },
     {
       "feature": "Deployment Observability",

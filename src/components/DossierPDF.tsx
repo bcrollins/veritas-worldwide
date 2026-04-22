@@ -320,6 +320,7 @@ export default function DossierPDF() {
         y += sourceLine.length * 3.5 + 2
         addBody(`Work product: ${module.workProduct}`, 8)
         addBody(`Quality gate: ${module.qualityGate}`, 8)
+        addBody(`Artifact: ${module.artifact.label} (${module.artifact.format})`, 8)
       })
 
       // ══════════════════════════════════════════════

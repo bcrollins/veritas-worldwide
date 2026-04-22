@@ -127,6 +127,14 @@ export interface DossierCourseSourceAnchor {
   category: DossierSourceCategory
 }
 
+export interface DossierCourseArtifact {
+  label: string
+  description: string
+  url: string
+  filename: string
+  format: 'CSV' | 'Markdown'
+}
+
 export interface DossierCourseModule {
   id: string
   title: string
@@ -137,6 +145,7 @@ export interface DossierCourseModule {
   qualityGate: string
   exercise: string
   instituteSlug: string
+  artifact: DossierCourseArtifact
 }
 
 export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-04-22'
@@ -1369,6 +1378,13 @@ export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
     qualityGate: 'No claim moves into prose until the source row states what the source proves and what it does not prove.',
     exercise: 'Take the four public-record figures in the masthead and reduce each to a one-sentence claim with source boundary language.',
     instituteSlug: 'build-israel-dossier-source-file',
+    artifact: {
+      label: 'Source ledger template',
+      description: 'CSV claim ledger with sample CRS, OCHA, UNICEF, CPJ, and ICJ rows plus confidence and publication-status columns.',
+      url: '/israel-dossier/templates/source-ledger.csv',
+      filename: 'israel-dossier-source-ledger.csv',
+      format: 'CSV',
+    },
   },
   {
     id: 'aid-ledger',
@@ -1384,6 +1400,13 @@ export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
     qualityGate: 'Every amount must name the record type and time period; comparisons must be labeled as analysis unless the source makes the comparison itself.',
     exercise: 'Trace the $298B CRS figure, the $3.8B annual MOU, and H.R.815 into separate rows before writing any summary sentence.',
     instituteSlug: 'audit-israel-aid-records',
+    artifact: {
+      label: 'Aid ledger workbook',
+      description: 'CSV money-trail table separating obligations, current-dollar figures, MOU baseline funding, supplemental appropriations, and DSCA notices.',
+      url: '/israel-dossier/templates/aid-ledger.csv',
+      filename: 'israel-dossier-aid-ledger.csv',
+      format: 'CSV',
+    },
   },
   {
     id: 'humanitarian-figures',
@@ -1399,6 +1422,13 @@ export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
     qualityGate: 'Reported figures must stay attributed; survey estimates must be labeled as estimates; neither can be presented as a court finding.',
     exercise: 'Rewrite one humanitarian paragraph three ways: verified record, reported figure, and analytical context.',
     instituteSlug: 'verify-gaza-humanitarian-figures',
+    artifact: {
+      label: 'Humanitarian attribution table',
+      description: 'CSV attribution matrix for reported figures, estimates, verified samples, original sources, date ranges, and safe wording.',
+      url: '/israel-dossier/templates/humanitarian-attribution-table.csv',
+      filename: 'israel-dossier-humanitarian-attribution-table.csv',
+      format: 'CSV',
+    },
   },
   {
     id: 'incident-evidence',
@@ -1414,6 +1444,13 @@ export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
     qualityGate: 'The language must not upgrade allegation into finding unless the cited record supports that level of certainty.',
     exercise: 'Choose one incident card and write the safest possible summary using only source-supported verbs.',
     instituteSlug: 'test-israel-dossier-incident-evidence',
+    artifact: {
+      label: 'Incident evidence matrix',
+      description: 'CSV event matrix for evidence type, source ladder, disputed elements, supported wording, unsafe wording, and next checks.',
+      url: '/israel-dossier/templates/incident-evidence-matrix.csv',
+      filename: 'israel-dossier-incident-evidence-matrix.csv',
+      format: 'CSV',
+    },
   },
   {
     id: 'legal-record',
@@ -1429,6 +1466,13 @@ export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
     qualityGate: 'Legal terms such as genocide, apartheid, warrant, ruling, and obligation must match the procedural status of the cited document.',
     exercise: 'Create a four-row legal record: ICJ provisional measures, ICJ advisory opinion, ICC warrants, and unresolved merits questions.',
     instituteSlug: 'read-israel-dossier-legal-records',
+    artifact: {
+      label: 'Legal-status brief',
+      description: 'CSV legal-record brief that separates court, body, document type, procedural posture, safe language, and unsafe language.',
+      url: '/israel-dossier/templates/legal-status-brief.csv',
+      filename: 'israel-dossier-legal-status-brief.csv',
+      format: 'CSV',
+    },
   },
   {
     id: 'publishable-briefing',
@@ -1444,6 +1488,13 @@ export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
     qualityGate: 'A skeptical editor must be able to trace every sentence containing a number, legal conclusion, or incident claim back to a source row.',
     exercise: 'Draft a short briefing from the aid ledger and humanitarian attribution table without using unsupported certainty language.',
     instituteSlug: 'write-israel-dossier-briefings',
+    artifact: {
+      label: 'Publishable briefing outline',
+      description: 'Markdown briefing frame for verified floor, reported figures, aid records, incident evidence, legal posture, and editor QA.',
+      url: '/israel-dossier/templates/publishable-briefing-outline.md',
+      filename: 'israel-dossier-publishable-briefing-outline.md',
+      format: 'Markdown',
+    },
   },
 ]
 

@@ -226,7 +226,7 @@ async function runViewportSmoke(browser, name, viewport, isMobile = false) {
     await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByText(/Source Workbench/i).waitFor({ timeout: 20000 })
     const body = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', '72,289+', '21,289+', '261+', '$298b']) {
+    for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', 'evidence workbooks', '72,289+', '21,289+', '261+', '$298b']) {
       assert(body.includes(needle), `${name} missing ${needle}`)
     }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
@@ -274,6 +274,16 @@ async function runInteractiveChecks(browser) {
     assert(/open course/i.test(courseText), 'course path missing Institute course CTA')
     const courseHref = await coursePath.getByRole('link', { name: /Open course/i }).getAttribute('href')
     assert(courseHref === '/institute/courses/verify-gaza-humanitarian-figures', `course CTA href mismatch: ${courseHref}`)
+    const [templateDownload] = await Promise.all([
+      page.waitForEvent('download', { timeout: 60000 }),
+      coursePath.getByRole('link', { name: /Download template/i }).click(),
+    ])
+    const templateResult = await saveAndMeasureDownload(templateDownload, /^israel-dossier-humanitarian-attribution-table\.csv$/, 500)
+    const templateText = fs.readFileSync(templateResult.filePath, 'utf8')
+    for (const needle of ['reporting_body', 'verification_boundary', 'OCHA', 'UNICEF']) {
+      assert(templateText.includes(needle), `humanitarian template missing ${needle}`)
+    }
+    console.log(`[verify:israel-dossier:behavior] PASS course template download ${templateResult.suggestedName} ${templateResult.bytes} bytes`)
 
     const moneyTrail = page.locator('#money-trail')
     await moneyTrail.scrollIntoViewIfNeeded()

@@ -20,6 +20,7 @@ const files = {
   sourceVerifier: 'scripts/verify-source-links.mjs',
   sitemap: 'public/sitemap.xml',
   instituteCatalog: 'src/data/instituteCatalog.ts',
+  templateManifest: 'public/israel-dossier/templates/manifest.json',
 }
 
 const errors = []
@@ -46,6 +47,8 @@ const currentNeedles = [
   'ISRAEL_DOSSIER_COURSE_PATH',
   'Build the source file',
   'OCHA / UNICEF attribution table',
+  'Source ledger template',
+  'Humanitarian attribution table',
   'https://www.congress.gov/crs-product/RL33222',
   'Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
   'State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
@@ -157,6 +160,8 @@ assert(has(files.page, /ISRAEL_DOSSIER_CORE_INCIDENTS/), 'page does not consume 
 assert(has(files.page, /ISRAEL_DOSSIER_MONEY_TRAIL/), 'page does not consume canonical money trail')
 assert(has(files.page, /ISRAEL_DOSSIER_COURSE_PATH/), 'page does not consume canonical evidence course path')
 assert(has(files.page, /DossierCoursePath/), 'page does not render the evidence course path component')
+assert(has(files.page, /Template manifest/), 'page does not expose the evidence template manifest')
+assert(has(files.page, /Download template/), 'page does not expose active course template downloads')
 assert(has(files.expanded, /ISRAEL_DOSSIER_HISTORICAL_TIMELINE as HISTORICAL_TIMELINE/), 'expanded data does not re-export canonical timeline')
 assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_INCIDENTS as EXPANDED_INCIDENTS/), 'expanded data does not re-export canonical expanded incidents')
 assert(has(files.expanded, /ISRAEL_DOSSIER_LOBBYING_DATA as LOBBYING_DATA/), 'expanded data does not re-export canonical lobbying data')
@@ -182,18 +187,37 @@ assert(has(files.sourceVerifier, /source-link-trends/), 'source-link verifier do
 assert(has(files.sourceVerifier, /retryHeavy/), 'source-link verifier does not identify retry-heavy URLs')
 assert(has(files.sitemap, /https:\/\/veritasworldwide\.com\/chapter\/chapter-15/), 'sitemap is missing chapter 15 after canonical metadata normalization')
 assert(has(files.pdf, /ISRAEL_DOSSIER_COURSE_PATH/), 'PDF export does not include the evidence course path')
+assert(has(files.pdf, /module\.artifact\.label/), 'PDF export does not include evidence course artifact labels')
 assert(has(files.instituteCatalog, /Expected 106 topics/), 'Institute catalog topic-count guard was not updated for Israel dossier courses')
-for (const slug of [
+const courseSlugs = [
   'build-israel-dossier-source-file',
   'audit-israel-aid-records',
   'verify-gaza-humanitarian-figures',
   'test-israel-dossier-incident-evidence',
   'read-israel-dossier-legal-records',
   'write-israel-dossier-briefings',
-]) {
+]
+for (const slug of courseSlugs) {
   assert(read(files.instituteCatalog).includes(`slug: '${slug}'`), `Institute catalog missing Israel dossier course slug ${slug}`)
   assert(read(files.sitemap).includes(`https://veritasworldwide.com/institute/courses/${slug}`), `sitemap missing Israel dossier course ${slug}`)
   assert(read(files.sitemap).includes(`https://veritasworldwide.com/institute/guides/${slug}`), `sitemap missing Israel dossier guide ${slug}`)
+}
+for (const artifact of [
+  ['source-ledger.csv', 'confidence_label'],
+  ['aid-ledger.csv', 'record_type'],
+  ['humanitarian-attribution-table.csv', 'verification_boundary'],
+  ['incident-evidence-matrix.csv', 'unsafe_wording_to_avoid'],
+  ['legal-status-brief.csv', 'procedural_posture'],
+  ['publishable-briefing-outline.md', 'Editor QA'],
+  ['manifest.json', 'Israel Dossier Evidence Course Templates'],
+]) {
+  const [fileName, needle] = artifact
+  const templatePath = `public/israel-dossier/templates/${fileName}`
+  assert(fs.existsSync(path.join(root, templatePath)), `missing evidence course template ${templatePath}`)
+  assert(read(templatePath).includes(needle), `template ${templatePath} missing ${needle}`)
+  if (fileName !== 'manifest.json') {
+    assert(read(files.templateManifest).includes(fileName), `template manifest missing ${fileName}`)
+  }
 }
 
 if (errors.length) {

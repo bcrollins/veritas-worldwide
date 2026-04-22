@@ -1,0 +1,42 @@
+{
+  "title": "Israel Dossier Evidence Course Templates",
+  "lastVerified": "2026-04-22",
+  "items": [
+    {
+      "id": "source-file",
+      "label": "Source ledger",
+      "path": "/israel-dossier/templates/source-ledger.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "aid-ledger",
+      "label": "Aid ledger",
+      "path": "/israel-dossier/templates/aid-ledger.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "humanitarian-figures",
+      "label": "Humanitarian attribution table",
+      "path": "/israel-dossier/templates/humanitarian-attribution-table.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "incident-evidence",
+      "label": "Incident evidence matrix",
+      "path": "/israel-dossier/templates/incident-evidence-matrix.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "legal-record",
+      "label": "Legal-status brief",
+      "path": "/israel-dossier/templates/legal-status-brief.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "publishable-briefing",
+      "label": "Publishable briefing outline",
+      "path": "/israel-dossier/templates/publishable-briefing-outline.md",
+      "format": "Markdown"
+    }
+  ]
+}

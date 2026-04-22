@@ -2,6 +2,10 @@
 
 ## Recently Closed
 
+- **Israel dossier editor templates are locally source-checked and UI-wired.**
+  Impact: the course path now has usable artifacts instead of instruction-only modules: source ledger, aid ledger, humanitarian attribution table, incident evidence matrix, legal-status brief, and publishable briefing outline.
+  Resolution: added static templates under `/israel-dossier/templates/`, attached each artifact to canonical course modules, exposed downloads on `/israel-dossier`, added the template manifest to `llms.txt`, updated the generated dossier PDF with artifact labels, and extended source-link verification to scan public template files. Local verification passed, including strict source-link verification with 455 unique URLs and no hard failures; production verification is pending until the next deployment advances.
+
 - **Israel dossier course path is source-backed, verification-guarded, and live.**
   Impact: the dossier now has a reusable training layer instead of only a reading surface: source-file building, aid-ledger auditing, humanitarian figure attribution, incident evidence testing, legal-record reading, and publishable briefing work are all linked to canonical source anchors and corresponding Institute course/guide routes.
   Resolution: added `ISRAEL_DOSSIER_COURSE_PATH`, rendered it on `/israel-dossier`, exported it into the dossier PDF, added six Institute topics with source-safe course/guide copy, regenerated sitemap and `veritas-institute.md`, and extended canon plus behavior verification to cover the course path, module interaction, Institute links, and generated PDF text. Production commit `49a19b627432` / deployment `93e4009b-800a-4735-b015-03d740de41ee` passed live behavior verification, the primary viewport matrix, all twelve new Institute route probes, sitemap checks, and all GitHub Actions workflows.
@@ -21,6 +25,10 @@
   Recommendation: add Sentry or an equivalent production error monitoring service and wire both server and client exceptions into it.
 
 ## Emerging
+
+- **The Israel dossier editor templates need production confirmation.**
+  Impact: the files and UI are locally verified, but the public site must advance before these downloads can be treated as live artifacts for readers, editors, or future course work.
+  Recommendation: after push, poll `/api/build-info`, run the live dossier behavior verifier, probe the template manifest and static files, and run a representative live viewport check before marking the artifact layer deployed.
 
 - **GitHub Actions emitted the JavaScript action runtime deprecation warning.**
   Impact: the new Israel dossier workflow passes today, but `actions/cache@v4`, `actions/checkout@v4`, `actions/setup-node@v4`, and `actions/upload-artifact@v4` are still flagged by GitHub's Node 20 action-runtime deprecation notice.

@@ -652,6 +652,26 @@ function DossierCoursePath({ modules }: { modules: DossierCourseModule[] }) {
             </div>
           </div>
 
+          <div className="mt-5 rounded-sm border border-border bg-surface p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ink-muted">Editor artifact</p>
+                <h4 className="mt-1 font-sans text-sm font-bold text-ink">{activeModule.artifact.label}</h4>
+                <p className="mt-2 font-body text-sm leading-relaxed text-ink-muted">{activeModule.artifact.description}</p>
+              </div>
+              <span className="rounded-full border border-border px-2 py-0.5 font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] text-ink-muted">
+                {activeModule.artifact.format}
+              </span>
+            </div>
+            <a
+              href={activeModule.artifact.url}
+              download={activeModule.artifact.filename}
+              className="mt-4 inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-4 font-sans text-xs font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-crimson-dark"
+            >
+              Download template
+            </a>
+          </div>
+
           <div className="mt-5 border-t border-border pt-4">
             <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ink-muted">Exercise</p>
             <p className="mt-2 font-body text-sm leading-relaxed text-ink-muted">{activeModule.exercise}</p>
@@ -1166,6 +1186,43 @@ export default function IsraelDossierPage() {
               <p className="font-body text-sm text-ink-muted">Download the entire Israel Dossier as a print-quality PDF with all statistics, incidents, and sources.</p>
             </div>
             <DossierPDF />
+          </div>
+        </div>
+
+        {/* Evidence Workbooks */}
+        <div className="mb-8 p-5 border border-border rounded-sm bg-surface">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-4">
+            <div>
+              <p className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink-muted mb-1">Evidence Workbooks</p>
+              <p className="font-body text-sm text-ink-muted max-w-2xl">
+                Download the source ledger, aid ledger, attribution table, incident matrix, legal-status brief, and briefing outline used by the course path.
+              </p>
+            </div>
+            <a
+              href="/israel-dossier/templates/manifest.json"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark hover:underline"
+            >
+              Template manifest
+            </a>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {ISRAEL_DOSSIER_COURSE_PATH.map((module) => (
+              <a
+                key={module.id}
+                href={module.artifact.url}
+                download={module.artifact.filename}
+                className="group rounded-sm border border-border bg-parchment p-4 transition-colors hover:border-crimson/40"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] text-ink-faint">{module.kicker}</span>
+                  <span className="rounded-full bg-obsidian px-2 py-0.5 font-sans text-[0.5rem] font-bold uppercase tracking-[0.1em] text-white">{module.artifact.format}</span>
+                </div>
+                <p className="mt-2 font-sans text-sm font-bold text-ink group-hover:text-crimson">{module.artifact.label}</p>
+                <p className="mt-1 line-clamp-2 font-body text-xs leading-relaxed text-ink-muted">{module.artifact.description}</p>
+              </a>
+            ))}
           </div>
         </div>
 

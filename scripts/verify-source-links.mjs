@@ -35,6 +35,13 @@ const candidateFiles = [
   path.join(repoRoot, 'src', 'data', 'profileData.ts'),
 ]
 
+const publicTemplateDir = path.join(repoRoot, 'public', 'israel-dossier', 'templates')
+const staticReferenceFiles = fs.existsSync(publicTemplateDir)
+  ? fs.readdirSync(publicTemplateDir)
+    .filter((fileName) => /\.(csv|md|json)$/i.test(fileName))
+    .map((fileName) => path.join(publicTemplateDir, fileName))
+  : []
+
 const allowedPathKeys = new Set([
   'sources',
   'sourcedclaims',
@@ -239,6 +246,36 @@ function extractReferencesFromFile(filePath) {
         visitExpression(declaration.initializer, [declarationName])
       }
     }
+  }
+
+  return references
+}
+
+function extractReferencesFromStaticFile(filePath) {
+  const relativeFile = path.relative(repoRoot, filePath)
+  const sourceText = fs.readFileSync(filePath, 'utf8')
+  const references = []
+  const urlPattern = /https?:\/\/[^\s"',<>]+/g
+  const seen = new Set()
+
+  for (const match of sourceText.matchAll(urlPattern)) {
+    const rawUrl = match[0].replace(/[),.;\]]+$/, '')
+    const normalizedUrl = normalizeUrl(rawUrl)
+    if (seen.has(rawUrl)) {
+      continue
+    }
+
+    seen.add(rawUrl)
+    const lineStart = sourceText.lastIndexOf('\n', match.index) + 1
+    const lineEnd = sourceText.indexOf('\n', match.index)
+    const line = sourceText.slice(lineStart, lineEnd === -1 ? undefined : lineEnd)
+    references.push({
+      file: relativeFile,
+      path: 'static-template.url',
+      label: truncate(line || path.basename(filePath)),
+      rawUrl,
+      normalizedUrl,
+    })
   }
 
   return references
@@ -828,7 +865,10 @@ async function main() {
   ensureDir(stateDir)
   const previousReport = readJsonIfExists(reportJsonPath)
 
-  const rawReferences = candidateFiles.flatMap((filePath) => extractReferencesFromFile(filePath))
+  const rawReferences = [
+    ...candidateFiles.flatMap((filePath) => extractReferencesFromFile(filePath)),
+    ...staticReferenceFiles.flatMap((filePath) => extractReferencesFromStaticFile(filePath)),
+  ]
 
   const grouped = new Map()
   for (const reference of rawReferences) {
