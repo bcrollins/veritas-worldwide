@@ -44,3 +44,5 @@ jobs:
           path: |
             .claude-state/source-link-report.json
             .claude-state/source-link-report.md
+            .claude-state/source-link-trends.json
+            .claude-state/source-link-trends.md
