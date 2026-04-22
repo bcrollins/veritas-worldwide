@@ -37,6 +37,12 @@
       "label": "Publishable briefing draft",
       "path": "/israel-dossier/workbooks/publishable-briefing-draft.md",
       "format": "Markdown"
+    },
+    {
+      "id": "chapter-draft",
+      "label": "Public briefing chapter draft",
+      "path": "/israel-dossier/workbooks/public-briefing-chapter-draft.md",
+      "format": "Markdown"
     }
   ]
 }

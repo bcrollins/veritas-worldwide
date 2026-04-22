@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 import {
   ISRAEL_DOSSIER_ASSETS,
+  ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT,
   ISRAEL_DOSSIER_PUBLIC_BRIEFING,
   type DossierBriefingSection,
   type DossierSourceCategory,
@@ -198,11 +199,11 @@ export default function IsraelDossierBriefingPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="/israel-dossier/workbooks/publishable-briefing-draft.md"
-                download
+                href={ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT.url}
+                download={ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT.filename}
                 className="inline-flex min-h-[44px] items-center justify-center bg-white px-5 font-sans text-xs font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:bg-crimson hover:text-white"
               >
-                Download draft
+                Download chapter draft
               </a>
               <Link
                 to="/israel-dossier"
@@ -262,6 +263,25 @@ export default function IsraelDossierBriefingPage() {
                   </div>
                 ))}
               </div>
+            </section>
+
+            <section className="border border-border bg-ink p-5 text-surface sm:p-7">
+              <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-surface/60">
+                Chapter draft artifact
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-bold leading-tight">
+                Public Records, Reported Harm, and Legal Posture
+              </h2>
+              <p className="mt-4 max-w-3xl font-body text-sm leading-relaxed text-surface/72">
+                The Markdown draft expands the selected rows into a chapter-style sequence and keeps every paragraph tied to source-row IDs, unsafe-wording limits, and open questions.
+              </p>
+              <a
+                href={ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT.url}
+                download={ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT.filename}
+                className="mt-6 inline-flex min-h-[44px] items-center justify-center bg-surface px-5 font-sans text-xs font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:bg-crimson hover:text-white"
+              >
+                Download chapter draft
+              </a>
             </section>
           </div>
         </div>

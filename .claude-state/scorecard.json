@@ -7,8 +7,8 @@
       "composite": 9.9,
       "previous": 9.9,
       "delta": 0,
-      "status": "Production commit c7ec930 / deployment d2f7235f-89e6-472b-9385-d35e95c8b27d passed all GitHub Actions workflows, crawler route probes, generated PDF checks, canonical source checks, source-link trends, build, bundle, public briefing behavior, sitemap/LLM/workbook probes, and full primary viewport matrix for the new `/israel-dossier/briefing` surface.",
-      "plus_half_requires": "Expand the briefing into a larger chapter-style surface with paragraph-level source row IDs, downloadable chapter draft, confidence labels, and explicit open-question boundaries."
+      "status": "Live score held at production commit be9e244 / deployment 9b08f513-b95e-4590-b8c4-2937c5639a8e. A downloadable chapter-style Markdown draft is locally complete and verified across typecheck, build, canon, bundle, source-link, behavior-download, and primary viewport checks, but it is not yet deployed.",
+      "plus_half_requires": "Deploy and live-verify the chapter-style Markdown draft, then expand `/israel-dossier/briefing` with paragraph-level source row IDs, confidence labels, and explicit open-question boundaries."
     },
     {
       "feature": "Home / Front Page",

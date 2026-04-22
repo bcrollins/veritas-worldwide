@@ -1570,6 +1570,14 @@ export const ISRAEL_DOSSIER_WORKBOOK_PACK: DossierCourseArtifact[] = [
   },
 ]
 
+export const ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT: DossierCourseArtifact = {
+  label: 'Public briefing chapter draft',
+  description: 'Chapter-style Markdown draft built from the populated workbook rows with row IDs, source boundaries, unsafe-language warnings, and open questions.',
+  url: '/israel-dossier/workbooks/public-briefing-chapter-draft.md',
+  filename: 'israel-dossier-public-briefing-chapter-draft.md',
+  format: 'Markdown',
+}
+
 export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
   title: 'Israel Dossier Public Briefing',
   dek: 'A source-boundary briefing built from the populated workbook pack. Each paragraph keeps the row ID, source class, date range, and confidence limit visible.',

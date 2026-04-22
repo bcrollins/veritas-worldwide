@@ -798,6 +798,7 @@ function renderLlmsTxt(topics) {
     '- [Israel Dossier public briefing](https://veritasworldwide.com/israel-dossier/briefing): Source-boundary briefing generated from populated workbook rows with visible confidence limits and open questions.',
     '- [Israel Dossier template manifest](https://veritasworldwide.com/israel-dossier/templates/manifest.json): Machine-readable list of the source ledger, aid ledger, humanitarian attribution, incident matrix, legal-status, and briefing templates.',
     '- [Israel Dossier workbook manifest](https://veritasworldwide.com/israel-dossier/workbooks/manifest.json): Machine-readable list of populated source-ledger, aid-ledger, humanitarian, incident, legal-status, and briefing draft artifacts.',
+    '- [Israel Dossier chapter draft](https://veritasworldwide.com/israel-dossier/workbooks/public-briefing-chapter-draft.md): Markdown chapter-style draft built from source-labeled workbook rows.',
     '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder and editorial rules for Veritas Institute.',
     '',
     '## Veritas Institute',

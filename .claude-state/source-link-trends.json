@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-22T11:49:31.480Z",
-  "currentGeneratedAt": "2026-04-22T11:49:31.470Z",
-  "previousGeneratedAt": "2026-04-22T11:25:06.497Z",
+  "generatedAt": "2026-04-22T12:00:56.627Z",
+  "currentGeneratedAt": "2026-04-22T12:00:56.619Z",
+  "previousGeneratedAt": "2026-04-22T11:49:31.470Z",
   "summaryDelta": {
     "referenceCount": {
       "current": 804,
-      "previous": 802,
-      "delta": 2
+      "previous": 804,
+      "delta": 0
     },
     "uniqueUrlCount": {
       "current": 455,
@@ -14,9 +14,9 @@
       "delta": 0
     },
     "ok": {
-      "current": 397,
+      "current": 396,
       "previous": 397,
-      "delta": 0
+      "delta": -1
     },
     "redirect": {
       "current": 0,
@@ -24,9 +24,9 @@
       "delta": 0
     },
     "restricted": {
-      "current": 58,
+      "current": 59,
       "previous": 58,
-      "delta": 0
+      "delta": 1
     },
     "transient": {
       "current": 0,
@@ -57,10 +57,10 @@
   "totals": {
     "newUrls": 0,
     "removedUrls": 0,
-    "statusChanges": 6,
+    "statusChanges": 7,
     "newHardFailures": 0,
     "resolvedHardFailures": 0,
-    "newRestricted": 3,
+    "newRestricted": 4,
     "resolvedRestricted": 3,
     "newArchived": 0,
     "newTransient": 0,
@@ -71,29 +71,11 @@
   "removedUrls": [],
   "statusChanges": [
     {
-      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
-      "domain": "www.972mag.com",
+      "url": "https://www.aipac.org/",
+      "domain": "www.aipac.org",
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "972 Magazine — Survivor testimonies"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.aipac.org/",
-      "domain": "www.aipac.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -105,30 +87,12 @@
       "referenceFiles": [
         "src/data/profileData.ts"
       ],
-      "previousStatus": "ok",
-      "currentStatus": "restricted"
-    },
-    {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
       "previousStatus": "restricted",
       "currentStatus": "ok"
     },
     {
-      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
-      "domain": "www.mfa.gov.il",
+      "url": "https://www.aipac.org/resources/house-ndaa-2026",
+      "domain": "www.aipac.org",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -136,7 +100,43 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
+        "House Adopts Defense Bill With Pro-Israel Provisions"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ],
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
+    },
+    {
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
         "Sabra and Shatila Massacre"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
@@ -147,9 +147,9 @@
     {
       "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
       "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -159,15 +159,33 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
+    },
+    {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ],
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
     },
     {
       "url": "https://www.politico.com/",
       "domain": "www.politico.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -179,15 +197,15 @@
       "referenceFiles": [
         "src/data/profileData.ts"
       ],
-      "previousStatus": "ok",
-      "currentStatus": "restricted"
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
     }
   ],
   "newHardFailures": [],
   "resolvedHardFailures": [],
   "newRestricted": [
     {
-      "url": "https://www.aipac.org/",
+      "url": "https://www.aipac.org/resources/house-ndaa-2026",
       "domain": "www.aipac.org",
       "status": "restricted",
       "probeStatus": "restricted",
@@ -196,17 +214,15 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "Israel is not just an ally, it is a cause.",
-        "The bond between the United States and Israel is unbreakable.",
-        "Let me be clear: I will always ensure Israel has the ability to defend itself."
+        "House Adopts Defense Bill With Pro-Israel Provisions"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/articles.ts"
       ]
     },
     {
-      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
-      "domain": "www.mfa.gov.il",
+      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "domain": "www.ohchr.org",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -214,15 +230,15 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "Sabra and Shatila Massacre"
+        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ]
     },
     {
-      "url": "https://www.politico.com/",
-      "domain": "www.politico.com",
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "domain": "www.ohchr.org",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -230,9 +246,23 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
-        "One of few Republican senators to oppose unconditional Israel military aid",
-        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -241,8 +271,8 @@
   ],
   "resolvedRestricted": [
     {
-      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
-      "domain": "www.972mag.com",
+      "url": "https://www.aipac.org/",
+      "domain": "www.aipac.org",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -250,25 +280,9 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "972 Magazine — Survivor testimonies"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
+        "Israel is not just an ally, it is a cause.",
+        "The bond between the United States and Israel is unbreakable.",
+        "Let me be clear: I will always ensure Israel has the ability to defend itself."
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -277,8 +291,8 @@
       "currentStatus": "ok"
     },
     {
-      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "domain": "www.ohchr.org",
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -286,10 +300,30 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
+        "Sabra and Shatila Massacre"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
+      ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
+    },
+    {
+      "url": "https://www.politico.com/",
+      "domain": "www.politico.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
+        "One of few Republican senators to oppose unconditional Israel military aid",
+        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
       ],
       "previousStatus": "restricted",
       "currentStatus": "ok"
@@ -303,40 +337,28 @@
     "hardFailures": [],
     "restricted": [
       {
-        "domain": "www.972mag.com",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
-      },
-      {
-        "domain": "www.aipac.org",
-        "current": 1,
+        "domain": "www.ohchr.org",
+        "current": 2,
         "previous": 0,
-        "delta": 1
-      },
-      {
-        "domain": "www.citadel.com",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
+        "delta": 2
       },
       {
         "domain": "www.mfa.gov.il",
-        "current": 1,
-        "previous": 0,
-        "delta": 1
-      },
-      {
-        "domain": "www.ohchr.org",
         "current": 0,
         "previous": 1,
         "delta": -1
       },
       {
-        "domain": "www.politico.com",
+        "domain": "www.parliament.uk",
         "current": 1,
         "previous": 0,
         "delta": 1
+      },
+      {
+        "domain": "www.politico.com",
+        "current": 0,
+        "previous": 1,
+        "delta": -1
       }
     ],
     "archived": [],

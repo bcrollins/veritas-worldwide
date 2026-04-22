@@ -1,14 +1,14 @@
 # Source Link Report
 
-Generated: 2026-04-22T11:49:31.470Z
+Generated: 2026-04-22T12:00:56.619Z
 
 ## Summary
 
 - References scanned: 804
 - Unique URLs: 455
-- OK: 397
+- OK: 396
 - Redirected: 0
-- Restricted: 58
+- Restricted: 59
 - Transient / retry-limited: 0
 - Missing: 0
 - Failed: 0
@@ -28,7 +28,7 @@ Generated: 2026-04-22T11:49:31.470Z
 - https://twitter.com/JeffBezos | HTTP 403 | I stand in solidarity with Israel.
 - https://twitter.com/JohnBrennan | HTTP 403 | Trump's conduct amounts to nothing short of treasonous.
 - https://twitter.com/kevinomccarthy | HTTP 403 | I stand with Israel always.
-- https://www.aipac.org/ | HTTP 403 | Israel is not just an ally, it is a cause. ; The bond between the United States and Israel is unbreakable. ; Let me be clear: I will always ensure Israel has the ability to defend itself. ; I have a deep connection to Israel that goes back many years. ; I wear my pro-Israel badge with pride. ; AIPAC's mission is to strengthen the US-Israel relationship.
+- https://www.aipac.org/resources/house-ndaa-2026 | HTTP 403 | House Adopts Defense Bill With Pro-Israel Provisions
 - https://www.bloomberg.com/ | HTTP 403 | Elliott Management sued Argentina, attached naval vessel over sovereign debt
 - https://www.bloomberg.org/ | HTTP 403 | Bloomberg Philanthropies
 - https://www.btselem.org/gaza_strip/202512_no_place_under_heaven_forced_displacement_in_the_gaza_strip_2023_2025 | HTTP 429 | Forced displacement

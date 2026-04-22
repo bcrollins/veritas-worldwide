@@ -346,6 +346,8 @@ async function runInteractiveChecks(browser) {
 
 async function runBriefingSurfaceCheck(browser) {
   const context = await browser.newContext({
+    acceptDownloads: true,
+    downloadsPath: downloadDir,
     viewport: { width: 393, height: 852 },
     deviceScaleFactor: 3,
     isMobile: true,
@@ -356,8 +358,18 @@ async function runBriefingSurfaceCheck(browser) {
     await page.goto(`${baseUrl}/israel-dossier/briefing`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: /Source-boundary briefing/i }).waitFor({ timeout: 20000 })
     const initialBody = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['public briefing', 'source-boundary', 'src-p-001', 'hum-p-001', 'unsafe wording to avoid', 'download draft']) {
+    for (const needle of ['public briefing', 'source-boundary', 'src-p-001', 'hum-p-001', 'unsafe wording to avoid', 'download chapter draft']) {
       assert(initialBody.includes(needle), `briefing surface missing ${needle}`)
+    }
+
+    const [chapterDraftDownload] = await Promise.all([
+      page.waitForEvent('download'),
+      page.getByRole('link', { name: /Download chapter draft/i }).first().click(),
+    ])
+    const chapterDraftResult = await saveAndMeasureDownload(chapterDraftDownload, /^israel-dossier-public-briefing-chapter-draft\.md$/, 1000)
+    const chapterDraftText = fs.readFileSync(chapterDraftResult.filePath, 'utf8')
+    for (const needle of ['Source rows: SRC-P-001', 'Unsafe wording to avoid', 'Open questions']) {
+      assert(chapterDraftText.includes(needle), `chapter draft missing ${needle}`)
     }
 
     await page.getByRole('button', { name: /Legal record/i }).click()

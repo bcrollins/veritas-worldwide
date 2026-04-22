@@ -2,6 +2,10 @@
 
 ## Recently Closed
 
+- **Israel dossier downloadable chapter-style draft is locally complete and awaiting production verification.**
+  Impact: the briefing route now has a chapter-like Markdown artifact instead of only a shorter briefing draft, giving editors a direct expansion path from workbook rows to publishable chapter prose.
+  Resolution: added `/israel-dossier/workbooks/public-briefing-chapter-draft.md`, registered it in the workbook manifest and canon, exposed it on `/israel-dossier/briefing`, indexed it in `llms.txt`, and extended verification to download and assert the draft text. Local build, source-link, behavior, and viewport verification passed; production deployment and live verification are still pending for this slice.
+
 - **Israel dossier public briefing surface is source-boundary checked, prerendered, and live.**
   Impact: the populated workbook rows now have a reader-facing briefing route instead of remaining only downloadable files. The new surface keeps source-row IDs, status labels, procedural posture, unsafe-wording warnings, and open questions visible while moving the strongest rows into publishable prose.
   Resolution: added canonical briefing sections, routed `/israel-dossier/briefing`, linked it from `/israel-dossier`, added prerender/sitemap/LLM index coverage, wired bot metadata, and extended canon plus behavior verification. Production commit `c7ec930` / deployment `d2f7235f-89e6-472b-9385-d35e95c8b27d` passed all GitHub Actions workflows, live dossier behavior with briefing interaction, crawler route probes, sitemap/LLM/workbook probes, and the primary live viewport matrix.

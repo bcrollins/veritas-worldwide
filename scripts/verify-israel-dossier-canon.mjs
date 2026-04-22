@@ -56,6 +56,7 @@ const currentNeedles = [
   'ISRAEL_DOSSIER_WORKBOOK_PACK',
   'Publishable briefing draft',
   'ISRAEL_DOSSIER_PUBLIC_BRIEFING',
+  'ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT',
   'source-boundary briefing',
   'SRC-P-001',
   'HUM-P-001',
@@ -179,6 +180,7 @@ assert(has(files.page, /Download template/), 'page does not expose active course
 assert(has(files.page, /ISRAEL_DOSSIER_WORKBOOK_PACK/), 'page does not render the populated workbook pack')
 assert(has(files.page, /to="\/israel-dossier\/briefing"/), 'dossier page does not link to the public briefing surface')
 assert(has(files.briefingPage, /ISRAEL_DOSSIER_PUBLIC_BRIEFING/), 'briefing page does not consume canonical briefing data')
+assert(has(files.briefingPage, /ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT/), 'briefing page does not expose the chapter draft artifact')
 assert(has(files.briefingPage, /Unsafe wording to avoid/), 'briefing page does not expose unsafe wording boundaries')
 assert(has(files.briefingPage, /Download row file/), 'briefing page does not expose workbook row downloads')
 assert(has(files.app, /IsraelDossierBriefingPage/), 'App route does not register the Israel dossier briefing page')
@@ -250,6 +252,7 @@ for (const workbook of [
   ['incident-evidence-populated.csv', 'INC-P-001'],
   ['legal-status-populated.csv', 'LAW-P-001'],
   ['publishable-briefing-draft.md', 'Claim Boundary'],
+  ['public-briefing-chapter-draft.md', 'Source rows: SRC-P-001'],
   ['manifest.json', 'Israel Dossier Populated Evidence Workbooks'],
 ]) {
   const [fileName, needle] = workbook
