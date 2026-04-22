@@ -1,0 +1,51 @@
+name: Verify Browser Regressions
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '29 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-browser-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      CI: 'true'
+      VERITAS_BROWSER_DRIVER: playwright
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: node ./node_modules/playwright/cli.js install --with-deps chromium
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Verify reader bundle size
+        run: npm run verify:bundle
+
+      - name: Verify institute structured data
+        run: npm run verify:structured-data
+
+      - name: Verify rendered auth cache isolation
+        run: npm run verify:auth-cache-browser
+
+      - name: Verify unified dev runtime
+        run: npm run verify:dev-runtime
