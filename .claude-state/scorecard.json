@@ -4,11 +4,11 @@
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 8.9,
-      "previous": 8.7,
+      "composite": 9.1,
+      "previous": 8.9,
       "delta": 0.2,
-      "status": "core data canonicalized and live verified at commit b3bd5c9f8561",
-      "plus_half_requires": "Canonicalize expanded timeline/stats/legal/lobbying/incident records and add behavior-level browser regression coverage for source filtering, carousel rendering, PDF export, and graph integrity."
+      "status": "expanded data canonicalized and live verified at commit 692728b57df7",
+      "plus_half_requires": "Add behavior-level browser regression coverage for source-workbench filtering, carousel rendering, PDF export, money-trail graph integrity, and Chapter 15 public-preview evidence framing."
     },
     {
       "feature": "Home / Front Page",
