@@ -1844,6 +1844,7 @@ const staticPages = [
     title: 'The Israel Dossier | Veritas Worldwide',
     heading: 'The Israel Dossier',
     description: 'A sourced dossier covering U.S.-Israel policy, humanitarian impact, military spending, and the public record surrounding the conflict.',
+    type: 'article',
     body: [
       'The dossier is organized around documented facts, attributable claims, and a clearly labeled evidence structure so readers can separate record from interpretation.',
     ],
@@ -1956,7 +1957,7 @@ for (const page of staticPages) {
     title: page.title,
     description: page.description,
     url: `${SITE_URL}${route === '/' ? '' : route}`,
-    type: 'website',
+    type: page.type || 'website',
     image: DEFAULT_OG_IMAGE,
     modifiedTime,
     jsonLd: [

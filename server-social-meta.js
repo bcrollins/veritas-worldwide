@@ -60,7 +60,7 @@ export function registerBotMetaInjection({ app, rootDir }) {
       '/accessibility': { title: 'Accessibility | Veritas Worldwide', desc: 'Accessibility statement and WCAG 2.1 AA compliance information for Veritas Worldwide.' },
       '/privacy': { title: 'Privacy Policy | Veritas Worldwide', desc: 'How Veritas Worldwide handles reader data, analytics, and privacy. Minimal data collection, no advertising trackers.' },
       '/terms': { title: 'Terms of Use | Veritas Worldwide', desc: 'Terms of use for Veritas Worldwide. Free and open access under Creative Commons BY-NC-SA 4.0.' },
-      '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide', desc: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.' },
+      '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide', desc: 'A sourced dossier covering U.S.-Israel policy, humanitarian impact, military spending, and the public record surrounding the conflict.', type: 'article' },
       '/membership': { title: 'Membership | Veritas Worldwide', desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.' },
       '/deep-state': { title: 'The Deep State — The Epstein Network | Veritas Worldwide', desc: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.' },
       '/forum': { title: 'Veritas Forum | Veritas Worldwide', desc: 'Community discussion forum for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.' },
@@ -73,11 +73,15 @@ export function registerBotMetaInjection({ app, rootDir }) {
 
     const staticMeta = staticPages[req.path]
     if (staticMeta) {
+      const staticUrl = `${SITE_URL}${req.path}`
+      const staticType = staticMeta.type || 'website'
       html = html
         .replace(/<title>.*?<\/title>/, `<title>${staticMeta.title}</title>`)
-        .replace(/content="The Record \| Veritas Worldwide"/, `content="${staticMeta.title}"`)
-        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/, `content="${staticMeta.desc}"`)
-        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/, `content="${staticMeta.desc}"`)
+        .replace(/content="The Record \| Veritas Worldwide"/g, `content="${staticMeta.title}"`)
+        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${staticMeta.desc}"`)
+        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${staticMeta.desc}"`)
+        .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${staticUrl}"`)
+        .replace(/content="website"/, `content="${staticType}"`)
     }
 
     const chapterMatch = req.path.match(/^\/chapter\/(.+)$/)
