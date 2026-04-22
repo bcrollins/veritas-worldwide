@@ -1,0 +1,47 @@
+name: Verify Release Identity
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '57 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-release-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      RELEASE_VERIFY_TIMEOUT_MS: '20000'
+      RELEASE_VERIFY_EXPECT_COMMIT: ${{ github.sha }}
+      RELEASE_VERIFY_DEPLOY_TIMEOUT_MS: '720000'
+      RELEASE_VERIFY_DEPLOY_POLL_INTERVAL_MS: '15000'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify live release identity
+        run: npm run verify:release -- https://veritasworldwide.com
+
+      - name: Upload release verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-health-report
+          path: |
+            .claude-state/release-health-report.json
+            .claude-state/release-health-report.md
