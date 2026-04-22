@@ -4,11 +4,11 @@
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.6,
-      "previous": 9.5,
+      "composite": 9.7,
+      "previous": 9.6,
       "delta": 0.1,
-      "status": "Crawler/social metadata, preview images, generated PDF evidence text, canon, source links, build, bundle, and behavior verification passed on GitHub Actions run 24770703183 and live production behavior verified at commit 603aab00a7552",
-      "plus_half_requires": "Add source-link trend reporting for restricted/archive-backed/retry-heavy URLs, then capture the GitHub Actions Node action-runtime warning with a verified Node 24-compatible action update."
+      "status": "Crawler/social metadata, preview images, generated PDF evidence text, canon, source links, trend artifacts, build, bundle, and behavior verification passed on GitHub Actions run 24771280086; live production behavior was previously verified at commit 603aab00a7552 and app code did not change after that verification slice",
+      "plus_half_requires": "Build the next source-labeled dossier/course content expansion, then capture the GitHub Actions Node action-runtime warning with a verified Node 24-compatible action update."
     },
     {
       "feature": "Home / Front Page",
@@ -44,11 +44,11 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.1,
-      "previous": 9,
+      "composite": 9.2,
+      "previous": 9.1,
       "delta": 0.1,
-      "status": "strict source-link CI passed on run 24770703183 with 448 unique URLs, 360 OK, 88 restricted/bot-blocked, and 0 missing/failed/invalid; archive-backed and known restricted-host handling now reduce false publication blockers",
-      "plus_half_requires": "Reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set, then add source-link trend reporting so new restricted domains, archive recoveries, and retry-heavy URLs are visible before they become failures."
+      "status": "strict source-link CI passed on run 24771280086 with 448 unique URLs, 364 OK, 84 restricted/bot-blocked, 0 transient blockers, 0 missing/failed/invalid, and trend artifacts for restricted-domain movement, archive recoveries, retry-heavy URLs, and hard-failure deltas",
+      "plus_half_requires": "Reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set, then add longer-term trend baselines so recurring transient/restricted domains can be prioritized by frequency."
     },
     {
       "feature": "Search",

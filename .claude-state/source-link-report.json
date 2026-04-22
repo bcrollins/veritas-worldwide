@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-22T09:37:00.098Z",
+  "generatedAt": "2026-04-22T09:39:20.377Z",
   "timeoutMs": 45000,
   "concurrency": 6,
-  "strictMode": false,
+  "strictMode": true,
   "summary": {
     "referenceCount": 752,
     "uniqueUrlCount": 448,
-    "ok": 391,
+    "ok": 364,
     "redirect": 0,
-    "restricted": 57,
+    "restricted": 84,
     "transient": 0,
     "missing": 0,
     "failed": 0,
@@ -383,30 +383,6 @@
       ]
     },
     {
-      "url": "https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal",
-      "domain": "campaignlegal.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 4,
-      "referenceLabels": [
-        "Campaign Legal Center ethics complaint",
-        "Campaign Legal Center ethics complaint",
-        "Served on House Financial Services Committee — traded stocks in companies regulated by the committee",
-        "Failed to disclose 108 stock transactions worth up to $1.6 million between 2022-2023, violating the STOCK Act. Filed zero Periodic Transa..."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://campaignlegal.org/update/congressional-stock-trading-continues-raise-conflicts-interest-concerns",
       "domain": "campaignlegal.org",
       "status": "ok",
@@ -765,6 +741,27 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://en-social-sciences.tau.ac.il/peaceindex/joint-israeli-palestinian-surveys/2024-09",
+      "domain": "en-social-sciences.tau.ac.il",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://en-social-sciences.tau.ac.il/peaceindex/joint-israeli-palestinian-surveys/2024-09",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Of Israeli Jews believe Oct 7 attack justifies current military actions in Gaza"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2226,27 +2223,6 @@
       ]
     },
     {
-      "url": "https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/",
-      "domain": "web.archive.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "The United States has a deep moral obligation to support and defend Israel."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://web.archive.org/web/20250720032423/https://www.rothschildarchive.org/business/n_m_rothschild_and_sons_london/nathan_mayer_rothschild_and_the_waterloo_commission",
       "domain": "web.archive.org",
       "status": "ok",
@@ -2276,8 +2252,13 @@
       "finalUrl": "https://web.archive.org/web/20250919130757/https://www.opensecrets.org/PRES08/contrib.php?cid=N00009638",
       "redirected": false,
       "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
+      "attempts": 2,
+      "transientErrors": [
+        {
+          "attempt": 1,
+          "error": "fetch failed"
+        }
+      ],
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -2286,51 +2267,6 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
-      "domain": "www.972mag.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 3,
-      "referenceLabels": [
-        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
-        "+972 Magazine — Full investigation with officer testimony",
-        "+972 Magazine (six IDF intelligence officers)"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts",
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
-      "domain": "www.972mag.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "+972 Magazine — \"Where's Daddy?\" tracking system"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2352,32 +2288,6 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.aipac.org/",
-      "domain": "www.aipac.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.aipac.org/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 6,
-      "referenceLabels": [
-        "Israel is not just an ally, it is a cause.",
-        "The bond between the United States and Israel is unbreakable.",
-        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
-        "I have a deep connection to Israel that goes back many years.",
-        "I wear my pro-Israel badge with pride.",
-        "AIPAC's mission is to strengthen the US-Israel relationship."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
       ]
     },
     {
@@ -2837,27 +2747,6 @@
       ]
     },
     {
-      "url": "https://www.axios.com/",
-      "domain": "www.axios.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.axios.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Apologized for visiting Epstein's island after public pressure"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.bankofengland.co.uk/about/history",
       "domain": "www.bankofengland.co.uk",
       "status": "ok",
@@ -2983,91 +2872,6 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.britannica.com/money/Rothschild-family",
-      "domain": "www.britannica.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.britannica.com/money/Rothschild-family",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Britannica, \"Rothschild Family.\""
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-1.ts"
-      ]
-    },
-    {
-      "url": "https://www.britannica.com/topic/Iron-Dome",
-      "domain": "www.britannica.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.britannica.com/topic/Iron-Dome",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "Cost per Iron Dome interceptor missile",
-        "Iron Dome / David's Sling Replenishment"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.britannica.com/topic/Mossad",
-      "domain": "www.britannica.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.britannica.com/topic/Mossad",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "\"Mossad — Israeli Intelligence Agency,\" Encyclopaedia Britannica. https://www.britannica.com/topic/Mossad"
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-7.ts"
-      ]
-    },
-    {
-      "url": "https://www.britannica.com/topic/Operation-Wrath-of-God",
-      "domain": "www.britannica.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.britannica.com/topic/Operation-Wrath-of-God",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "\"Operation Wrath of God,\" Encyclopaedia Britannica. https://www.britannica.com/topic/Operation-Wrath-of-God"
-      ],
-      "referenceFiles": [
-        "src/data/chapters/chapter-7.ts"
       ]
     },
     {
@@ -3219,70 +3023,6 @@
       ]
     },
     {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.citadel.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.clintonfoundation.org/",
-      "domain": "www.clintonfoundation.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.clintonfoundation.org/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "My relationship with Israel is not political. It is personal."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.clintonfoundation.org/contributors",
-      "domain": "www.clintonfoundation.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.clintonfoundation.org/about-the-clinton-foundation/",
-      "redirected": true,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "Clinton Foundation records",
-        "Clinton Foundation received $13M+ from Haim Saban"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.cnbc.com/",
       "domain": "www.cnbc.com",
       "status": "ok",
@@ -3290,8 +3030,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.cnbc.com/",
       "redirected": false,
-      "checkedWith": "GET",
-      "attempts": 2,
+      "checkedWith": "HEAD",
+      "attempts": 1,
       "transientErrors": [],
       "error": null,
       "archive": null,
@@ -3560,27 +3300,6 @@
       ]
     },
     {
-      "url": "https://www.commonwealthfund.org/international-health-policy-center/countries/israel",
-      "domain": "www.commonwealthfund.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.commonwealthfund.org/international-health-policy-center/countries/israel",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Healthcare coverage for all Israeli citizens since 1995"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.cotton.senate.gov/",
       "domain": "www.cotton.senate.gov",
       "status": "ok",
@@ -3750,48 +3469,6 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.dci-palestine.org/israeli_forces_shoot_kill_4_year_old_palestinian_girl_in_the_backseat_of_a_car",
-      "domain": "www.dci-palestine.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.dci-palestine.org/israeli_forces_shoot_kill_4_year_old_palestinian_girl_in_the_backseat_of_a_car",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Defense for Children International — Legal brief"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.dci-palestine.org/palestinian_child_administrative_detainees_reach_all_time_high",
-      "domain": "www.dci-palestine.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.dci-palestine.org/palestinian_child_administrative_detainees_reach_all_time_high",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Palestinian children detained by Israel (Dec 2025) — 51% without charge"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3986,27 +3663,6 @@
       ],
       "referenceFiles": [
         "src/data/articlesExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.fbi.gov/",
-      "domain": "www.fbi.gov",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.fbi.gov/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Reopened Clinton email investigation 11 days before 2016 election"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
       ]
     },
     {
@@ -4595,27 +4251,6 @@
       ]
     },
     {
-      "url": "https://www.globalfirepower.com/country-military-strength-detail.php?country_id=israel",
-      "domain": "www.globalfirepower.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.globalfirepower.com/country-military-strength-detail.php?country_id=israel",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Active IDF personnel + 465,000 reservists (635,000 total force)"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.govtrack.us/congress/members/byron_donalds/456808",
       "domain": "www.govtrack.us",
       "status": "ok",
@@ -4836,28 +4471,6 @@
       ],
       "referenceFiles": [
         "src/data/chapters/epilogue.ts"
-      ]
-    },
-    {
-      "url": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
-      "domain": "www.icc-cpi.int",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "ICJ Orders Provisional Measures / ICC Issues Arrest Warrants",
-        "ICC Arrest Warrants — Netanyahu and Gallant"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6013,133 +5626,6 @@
       ]
     },
     {
-      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OHCHR — UN experts condemn \"flour massacre\""
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Israeli settlers in occupied West Bank including East Jerusalem"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Flawed Disclosures Undermine Accountability"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2026/03/israels-settlement-expansion-drives-mass-displacement-west-bank-un-report",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/03/israels-settlement-expansion-drives-mass-displacement-west-bank-un-report",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "Palestinians displaced by settlement expansion in West Bank",
-        "Documented settler violence incidents in 12 months (to Oct 2025)"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf",
       "domain": "www.ohchr.org",
       "status": "ok",
@@ -6159,47 +5645,6 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.opensecrets.org/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 20,
-      "referenceLabels": [
-        "OpenSecrets.org, \"American Israel Public Affairs Cmte — Recipients,\" FEC data, 2024 election cycle, released February 6, 2025.",
-        "Received over $2M from pro-Israel PACs in career",
-        "Received $3.4M from pro-Israel PACs",
-        "$2.9M from pro-Israel PACs during career",
-        "Haim Saban donated $25M+ to Clinton campaigns and foundation",
-        "OpenSecrets",
-        "OpenSecrets",
-        "OpenSecrets",
-        "Bolton PAC received $5M from Sheldon Adelson",
-        "Rejected PAC money, funded by small-dollar donors",
-        "Chan Zuckerberg Initiative spent $400M on 2020 election infrastructure (CTCL grants)",
-        "Donated $15M to help elect J.D. Vance to Senate",
-        "Largest individual political donor in 2022 midterms at $68M to Republican causes",
-        "Second-largest individual donor to Democrats in 2022 cycle at $40M",
-        "Donated $25M+ to Democratic campaigns, primarily Clinton-aligned",
-        "Major Republican donor focused on pro-Israel candidates, $56M+ in political giving",
-        "Among largest donors to pro-Israel Republican candidates at $40M+",
-        "Major Democratic megadonor, $45M+ in 2020-2024 cycle",
-        "Crossroads GPS raised and spent $325M+ as dark money group",
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/chapters/overview.ts",
-        "src/data/profileData.ts"
       ]
     },
     {
@@ -6304,27 +5749,6 @@
       "referenceLabels": [
         "OpenSecrets",
         "Raised substantial pro-Israel donor support during 2024 presidential campaign",
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/2024-presidential-race/ron-desantis/contributors?id=N00043593",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.opensecrets.org/2024-presidential-race",
-      "redirected": true,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
         "OpenSecrets"
       ],
       "referenceFiles": [
@@ -7599,27 +7023,6 @@
       ]
     },
     {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.parliament.uk/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.paul.senate.gov/",
       "domain": "www.paul.senate.gov",
       "status": "ok",
@@ -7931,7 +7334,7 @@
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=8dcb216a-bdfc-46db-9d8a-75c9f918b439",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=bb26f827-abb9-4158-9da3-b10d512a3ff8",
       "redirected": true,
       "checkedWith": "HEAD",
       "attempts": 1,
@@ -8522,6 +7925,30 @@
       ]
     },
     {
+      "url": "https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal",
+      "domain": "campaignlegal.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 4,
+      "referenceLabels": [
+        "Campaign Legal Center ethics complaint",
+        "Campaign Legal Center ethics complaint",
+        "Served on House Financial Services Committee — traded stocks in companies regulated by the committee",
+        "Failed to disclose 108 stock transactions worth up to $1.6 million between 2022-2023, violating the STOCK Act. Filed zero Periodic Transa..."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://crsreports.congress.gov/",
       "domain": "crsreports.congress.gov",
       "status": "restricted",
@@ -8580,27 +8007,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Six-Day War — Occupation Begins"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://en-social-sciences.tau.ac.il/peaceindex/joint-israeli-palestinian-surveys/2024-09",
-      "domain": "en-social-sciences.tau.ac.il",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 503,
-      "finalUrl": "https://en-social-sciences.tau.ac.il/peaceindex/joint-israeli-palestinian-surveys/2024-09",
-      "redirected": false,
-      "checkedWith": "GET",
-      "attempts": 2,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Of Israeli Jews believe Oct 7 attack justifies current military actions in Gaza"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
@@ -8713,6 +8119,60 @@
       ]
     },
     {
+      "url": "https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/",
+      "domain": "web.archive.org",
+      "status": "restricted",
+      "probeStatus": "error",
+      "httpStatus": null,
+      "finalUrl": "https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/",
+      "redirected": false,
+      "checkedWith": "GET",
+      "attempts": 8,
+      "transientErrors": [
+        {
+          "attempt": 1,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 2,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 3,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 4,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 1,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 2,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 3,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 4,
+          "error": "fetch failed"
+        }
+      ],
+      "error": "fetch failed",
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "The United States has a deep moral obligation to support and defend Israel."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "domain": "www.972mag.com",
       "status": "restricted",
@@ -8734,6 +8194,77 @@
       ]
     },
     {
+      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "domain": "www.972mag.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 3,
+      "referenceLabels": [
+        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
+        "+972 Magazine — Full investigation with officer testimony",
+        "+972 Magazine (six IDF intelligence officers)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "domain": "www.972mag.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "+972 Magazine — \"Where's Daddy?\" tracking system"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aipac.org/",
+      "domain": "www.aipac.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.aipac.org/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 6,
+      "referenceLabels": [
+        "Israel is not just an ally, it is a cause.",
+        "The bond between the United States and Israel is unbreakable.",
+        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
+        "I have a deep connection to Israel that goes back many years.",
+        "I wear my pro-Israel badge with pride.",
+        "AIPAC's mission is to strengthen the US-Israel relationship."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.aipac.org/resources/house-ndaa-2026",
       "domain": "www.aipac.org",
       "status": "restricted",
@@ -8752,6 +8283,27 @@
       ],
       "referenceFiles": [
         "src/data/articles.ts"
+      ]
+    },
+    {
+      "url": "https://www.axios.com/",
+      "domain": "www.axios.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.axios.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Apologized for visiting Epstein's island after public pressure"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -8794,6 +8346,91 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.britannica.com/money/Rothschild-family",
+      "domain": "www.britannica.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.britannica.com/money/Rothschild-family",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Britannica, \"Rothschild Family.\""
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-1.ts"
+      ]
+    },
+    {
+      "url": "https://www.britannica.com/topic/Iron-Dome",
+      "domain": "www.britannica.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.britannica.com/topic/Iron-Dome",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Cost per Iron Dome interceptor missile",
+        "Iron Dome / David's Sling Replenishment"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.britannica.com/topic/Mossad",
+      "domain": "www.britannica.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.britannica.com/topic/Mossad",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "\"Mossad — Israeli Intelligence Agency,\" Encyclopaedia Britannica. https://www.britannica.com/topic/Mossad"
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-7.ts"
+      ]
+    },
+    {
+      "url": "https://www.britannica.com/topic/Operation-Wrath-of-God",
+      "domain": "www.britannica.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.britannica.com/topic/Operation-Wrath-of-God",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "\"Operation Wrath of God,\" Encyclopaedia Britannica. https://www.britannica.com/topic/Operation-Wrath-of-God"
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-7.ts"
       ]
     },
     {
@@ -8906,6 +8543,91 @@
       ],
       "referenceFiles": [
         "src/data/articlesExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.citadel.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "I am deeply committed to defending democratic values and free markets."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.clintonfoundation.org/",
+      "domain": "www.clintonfoundation.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.clintonfoundation.org/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "My relationship with Israel is not political. It is personal."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.clintonfoundation.org/contributors",
+      "domain": "www.clintonfoundation.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.clintonfoundation.org/contributors",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Clinton Foundation records",
+        "Clinton Foundation received $13M+ from Haim Saban"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.commonwealthfund.org/international-health-policy-center/countries/israel",
+      "domain": "www.commonwealthfund.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.commonwealthfund.org/international-health-policy-center/countries/israel",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Healthcare coverage for all Israeli citizens since 1995"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -9083,6 +8805,90 @@
       ]
     },
     {
+      "url": "https://www.dci-palestine.org/israeli_forces_shoot_kill_4_year_old_palestinian_girl_in_the_backseat_of_a_car",
+      "domain": "www.dci-palestine.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.dci-palestine.org/israeli_forces_shoot_kill_4_year_old_palestinian_girl_in_the_backseat_of_a_car",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Defense for Children International — Legal brief"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.dci-palestine.org/palestinian_child_administrative_detainees_reach_all_time_high",
+      "domain": "www.dci-palestine.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.dci-palestine.org/palestinian_child_administrative_detainees_reach_all_time_high",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Palestinian children detained by Israel (Dec 2025) — 51% without charge"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.fbi.gov/",
+      "domain": "www.fbi.gov",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.fbi.gov/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Reopened Clinton email investigation 11 days before 2016 election"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.globalfirepower.com/country-military-strength-detail.php?country_id=israel",
+      "domain": "www.globalfirepower.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.globalfirepower.com/country-military-strength-detail.php?country_id=israel",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Active IDF personnel + 465,000 reservists (635,000 total force)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.henryakissinger.com/",
       "domain": "www.henryakissinger.com",
       "status": "restricted",
@@ -9101,6 +8907,28 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
+      "domain": "www.icc-cpi.int",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "ICJ Orders Provisional Measures / ICC Issues Arrest Warrants",
+        "ICC Arrest Warrants — Netanyahu and Gallant"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -9154,30 +8982,9 @@
       "httpStatus": 403,
       "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
       "redirected": true,
-      "checkedWith": "GET",
-      "attempts": 6,
-      "transientErrors": [
-        {
-          "attempt": 1,
-          "error": "fetch failed"
-        },
-        {
-          "attempt": 2,
-          "error": "fetch failed"
-        },
-        {
-          "attempt": 3,
-          "error": "fetch failed"
-        },
-        {
-          "attempt": 4,
-          "error": "fetch failed"
-        },
-        {
-          "attempt": 1,
-          "error": "fetch failed"
-        }
-      ],
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -9249,6 +9056,216 @@
       ],
       "referenceFiles": [
         "src/data/chapters/chapter-7.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OHCHR — UN experts condemn \"flour massacre\""
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Israeli settlers in occupied West Bank including East Jerusalem"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Flawed Disclosures Undermine Accountability"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2026/03/israels-settlement-expansion-drives-mass-displacement-west-bank-un-report",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/03/israels-settlement-expansion-drives-mass-displacement-west-bank-un-report",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Palestinians displaced by settlement expansion in West Bank",
+        "Documented settler violence incidents in 12 months (to Oct 2025)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.opensecrets.org/",
+      "domain": "www.opensecrets.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.opensecrets.org/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 20,
+      "referenceLabels": [
+        "OpenSecrets.org, \"American Israel Public Affairs Cmte — Recipients,\" FEC data, 2024 election cycle, released February 6, 2025.",
+        "Received over $2M from pro-Israel PACs in career",
+        "Received $3.4M from pro-Israel PACs",
+        "$2.9M from pro-Israel PACs during career",
+        "Haim Saban donated $25M+ to Clinton campaigns and foundation",
+        "OpenSecrets",
+        "OpenSecrets",
+        "OpenSecrets",
+        "Bolton PAC received $5M from Sheldon Adelson",
+        "Rejected PAC money, funded by small-dollar donors",
+        "Chan Zuckerberg Initiative spent $400M on 2020 election infrastructure (CTCL grants)",
+        "Donated $15M to help elect J.D. Vance to Senate",
+        "Largest individual political donor in 2022 midterms at $68M to Republican causes",
+        "Second-largest individual donor to Democrats in 2022 cycle at $40M",
+        "Donated $25M+ to Democratic campaigns, primarily Clinton-aligned",
+        "Major Republican donor focused on pro-Israel candidates, $56M+ in political giving",
+        "Among largest donors to pro-Israel Republican candidates at $40M+",
+        "Major Democratic megadonor, $45M+ in 2020-2024 cycle",
+        "Crossroads GPS raised and spent $325M+ as dark money group",
+        "OpenSecrets"
+      ],
+      "referenceFiles": [
+        "src/data/chapters/overview.ts",
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.opensecrets.org/2024-presidential-race/ron-desantis/contributors?id=N00043593",
+      "domain": "www.opensecrets.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://opensecrets.org/2024-presidential-race",
+      "redirected": true,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OpenSecrets"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.parliament.uk/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -9410,8 +9427,8 @@
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://id.elsevier.com/as/authorization.oauth2?platSite=LT%2Fthelancet&response_type=code&client_id=JBS&additionalPlatSites=LT%2Fjbs%2CSD%2Fscience%2CLT%2Fcell%2CLT%2Fgeneric&site=lancet-site&scope=openid+profile+address+email+els_auth_info+els_analytics_info+urn%3Acom%3Aelsevier%3Aidp%3Apolicy%3Aproduct%3Aindv_identity&claims=%7B%7D&redirect_uri=https%3A%2F%2Fwww.thelancet.com%2Fcallback%3Fred_uri%3D%252Fjournals%252Flanglo%252Farticle%252FPIIS2214-109X%252825%252900522-4%252Ffulltext&state=17314554943&authType=SINGLE_SIGN_IN&client_name=TheLancet.com&prompt=none",
-      "redirected": true,
+      "finalUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
+      "redirected": false,
       "checkedWith": "HEAD",
       "attempts": 1,
       "transientErrors": [],
