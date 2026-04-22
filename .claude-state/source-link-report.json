@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-04-22T09:30:27.693Z",
+  "generatedAt": "2026-04-22T09:37:00.098Z",
   "timeoutMs": 45000,
   "concurrency": 6,
   "strictMode": false,
   "summary": {
     "referenceCount": 752,
     "uniqueUrlCount": 448,
-    "ok": 387,
+    "ok": 391,
     "redirect": 0,
-    "restricted": 61,
+    "restricted": 57,
+    "transient": 0,
     "missing": 0,
     "failed": 0,
     "invalid": 0,
@@ -2354,24 +2355,29 @@
       ]
     },
     {
-      "url": "https://www.aipac.org/resources/house-ndaa-2026",
+      "url": "https://www.aipac.org/",
       "domain": "www.aipac.org",
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://www.aipac.org/resources/house-ndaa-2026",
+      "finalUrl": "https://www.aipac.org/",
       "redirected": false,
       "checkedWith": "HEAD",
       "attempts": 1,
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 6,
       "referenceLabels": [
-        "House Adopts Defense Bill With Pro-Israel Provisions"
+        "Israel is not just an ally, it is a cause.",
+        "The bond between the United States and Israel is unbreakable.",
+        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
+        "I have a deep connection to Israel that goes back many years.",
+        "I wear my pro-Israel badge with pride.",
+        "AIPAC's mission is to strengthen the US-Israel relationship."
       ],
       "referenceFiles": [
-        "src/data/articles.ts"
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -2831,6 +2837,27 @@
       ]
     },
     {
+      "url": "https://www.axios.com/",
+      "domain": "www.axios.com",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.axios.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Apologized for visiting Epstein's island after public pressure"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.bankofengland.co.uk/about/history",
       "domain": "www.bankofengland.co.uk",
       "status": "ok",
@@ -3186,6 +3213,27 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Led CIA during Russian election interference period"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.citadel.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "I am deeply committed to defending democratic values and free markets."
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -6049,6 +6097,27 @@
       ]
     },
     {
+      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Flawed Disclosures Undermine Accountability"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ]
+    },
+    {
       "url": "https://www.ohchr.org/en/press-releases/2026/03/israels-settlement-expansion-drives-mass-displacement-west-bank-un-report",
       "domain": "www.ohchr.org",
       "status": "ok",
@@ -7530,6 +7599,27 @@
       ]
     },
     {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.parliament.uk/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.paul.senate.gov/",
       "domain": "www.paul.senate.gov",
       "status": "ok",
@@ -7841,7 +7931,7 @@
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=32f3374b-3ee7-4bec-a1ac-a4907f94f632",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=8dcb216a-bdfc-46db-9d8a-75c9f918b439",
       "redirected": true,
       "checkedWith": "HEAD",
       "attempts": 1,
@@ -8644,38 +8734,12 @@
       ]
     },
     {
-      "url": "https://www.aipac.org/",
+      "url": "https://www.aipac.org/resources/house-ndaa-2026",
       "domain": "www.aipac.org",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.aipac.org/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 6,
-      "referenceLabels": [
-        "Israel is not just an ally, it is a cause.",
-        "The bond between the United States and Israel is unbreakable.",
-        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
-        "I have a deep connection to Israel that goes back many years.",
-        "I wear my pro-Israel badge with pride.",
-        "AIPAC's mission is to strengthen the US-Israel relationship."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.axios.com/",
-      "domain": "www.axios.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.axios.com/",
+      "finalUrl": "https://www.aipac.org/resources/house-ndaa-2026",
       "redirected": false,
       "checkedWith": "HEAD",
       "attempts": 1,
@@ -8684,10 +8748,10 @@
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Apologized for visiting Epstein's island after public pressure"
+        "House Adopts Defense Bill With Pro-Israel Provisions"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/articles.ts"
       ]
     },
     {
@@ -8842,27 +8906,6 @@
       ],
       "referenceFiles": [
         "src/data/articlesExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.citadel.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
       ]
     },
     {
@@ -9111,9 +9154,30 @@
       "httpStatus": 403,
       "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
       "redirected": true,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
+      "checkedWith": "GET",
+      "attempts": 6,
+      "transientErrors": [
+        {
+          "attempt": 1,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 2,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 3,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 4,
+          "error": "fetch failed"
+        },
+        {
+          "attempt": 1,
+          "error": "fetch failed"
+        }
+      ],
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -9185,48 +9249,6 @@
       ],
       "referenceFiles": [
         "src/data/chapters/chapter-7.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Flawed Disclosures Undermine Accountability"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ]
-    },
-    {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.parliament.uk/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
       ]
     },
     {
@@ -9388,8 +9410,8 @@
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
-      "redirected": false,
+      "finalUrl": "https://id.elsevier.com/as/authorization.oauth2?platSite=LT%2Fthelancet&response_type=code&client_id=JBS&additionalPlatSites=LT%2Fjbs%2CSD%2Fscience%2CLT%2Fcell%2CLT%2Fgeneric&site=lancet-site&scope=openid+profile+address+email+els_auth_info+els_analytics_info+urn%3Acom%3Aelsevier%3Aidp%3Apolicy%3Aproduct%3Aindv_identity&claims=%7B%7D&redirect_uri=https%3A%2F%2Fwww.thelancet.com%2Fcallback%3Fred_uri%3D%252Fjournals%252Flanglo%252Farticle%252FPIIS2214-109X%252825%252900522-4%252Ffulltext&state=17314554943&authType=SINGLE_SIGN_IN&client_name=TheLancet.com&prompt=none",
+      "redirected": true,
       "checkedWith": "HEAD",
       "attempts": 1,
       "transientErrors": [],

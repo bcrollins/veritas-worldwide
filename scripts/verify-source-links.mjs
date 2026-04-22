@@ -494,6 +494,7 @@ function buildSummaryDelta(currentSummary, previousSummary) {
     'ok',
     'redirect',
     'restricted',
+    'transient',
     'missing',
     'failed',
     'invalid',
@@ -610,6 +611,18 @@ function buildTrendReport(report, previousReport) {
     .filter((current) => current.status === 'archived' && previousMap.get(current.url)?.status !== 'archived')
     .map(summarizeResult)
 
+  const newTransient = currentResults
+    .filter((current) => current.status === 'transient' && previousMap.get(current.url)?.status !== 'transient')
+    .map(summarizeResult)
+
+  const resolvedTransient = previousResults
+    .filter((previous) => previous.status === 'transient' && currentMap.get(previous.url)?.status !== 'transient')
+    .map((previous) => ({
+      ...summarizeResult(previous),
+      previousStatus: previous.status,
+      currentStatus: currentMap.get(previous.url)?.status || 'removed',
+    }))
+
   const retryHeavy = currentResults
     .filter((result) => (result.attempts || 0) > 2 || (result.transientErrors?.length || 0) > 0)
     .sort((a, b) => (b.attempts || 0) - (a.attempts || 0) || (b.transientErrors?.length || 0) - (a.transientErrors?.length || 0))
@@ -630,6 +643,8 @@ function buildTrendReport(report, previousReport) {
       newRestricted: newRestricted.length,
       resolvedRestricted: resolvedRestricted.length,
       newArchived: newArchived.length,
+      newTransient: newTransient.length,
+      resolvedTransient: resolvedTransient.length,
       retryHeavy: retryHeavy.length,
     },
     newUrls: newUrls.slice(0, 40),
@@ -640,11 +655,14 @@ function buildTrendReport(report, previousReport) {
     newRestricted: newRestricted.slice(0, 40),
     resolvedRestricted: resolvedRestricted.slice(0, 40),
     newArchived: newArchived.slice(0, 40),
+    newTransient: newTransient.slice(0, 40),
+    resolvedTransient: resolvedTransient.slice(0, 40),
     retryHeavy,
     domainDeltas: {
       hardFailures: buildDomainDeltas(currentResults, previousResults, (result) => hardFailureStatuses.has(result.status)),
       restricted: buildDomainDeltas(currentResults, previousResults, (result) => result.status === 'restricted'),
       archived: buildDomainDeltas(currentResults, previousResults, (result) => result.status === 'archived'),
+      transient: buildDomainDeltas(currentResults, previousResults, (result) => result.status === 'transient'),
     },
   }
 }
@@ -705,6 +723,8 @@ function buildMarkdownTrendReport(trend) {
   pushTrendSection(lines, 'Resolved Hard Failures', trend.resolvedHardFailures, 'No resolved hard failures.')
   pushTrendSection(lines, 'New Restricted / Bot-Blocked URLs', trend.newRestricted, 'No new restricted URLs.')
   pushTrendSection(lines, 'Archive-Backed Recoveries', trend.newArchived, 'No new archive-backed recoveries.')
+  pushTrendSection(lines, 'New Transient / Retry-Limited URLs', trend.newTransient, 'No new transient URLs.')
+  pushTrendSection(lines, 'Resolved Transient URLs', trend.resolvedTransient, 'No resolved transient URLs.')
   pushTrendSection(lines, 'Retry-Heavy URLs', trend.retryHeavy, 'No retry-heavy URLs.')
   pushTrendSection(lines, 'Status Changes', trend.statusChanges, 'No status changes.', 30)
 
@@ -722,6 +742,15 @@ function buildMarkdownTrendReport(trend) {
     lines.push('No hard-failure domain delta.')
   } else {
     for (const item of trend.domainDeltas.hardFailures) {
+      lines.push(`- ${item.domain}: ${item.current} (${formatDelta(item.delta)} from ${item.previous})`)
+    }
+  }
+
+  lines.push('', '## Transient Domain Delta', '')
+  if (!trend.domainDeltas.transient.length) {
+    lines.push('No transient-domain delta.')
+  } else {
+    for (const item of trend.domainDeltas.transient) {
       lines.push(`- ${item.domain}: ${item.current} (${formatDelta(item.delta)} from ${item.previous})`)
     }
   }
@@ -745,6 +774,7 @@ function buildMarkdownReport(report) {
     `- OK: ${report.summary.ok}`,
     `- Redirected: ${report.summary.redirect}`,
     `- Restricted: ${report.summary.restricted}`,
+    `- Transient / retry-limited: ${report.summary.transient}`,
     `- Missing: ${report.summary.missing}`,
     `- Failed: ${report.summary.failed}`,
     `- Invalid: ${report.summary.invalid}`,
@@ -780,6 +810,14 @@ function buildMarkdownReport(report) {
     lines.push('', '## Restricted / Bot-Blocked', '')
     for (const result of restrictedResults.slice(0, 20)) {
       lines.push(`- ${result.url} | HTTP ${result.httpStatus ?? 'n/a'} | ${result.referenceLabels.join(' ; ')}`)
+    }
+  }
+
+  const transientResults = report.results.filter((result) => result.status === 'transient')
+  if (transientResults.length > 0) {
+    lines.push('', '## Transient / Retry-Limited', '')
+    for (const result of transientResults.slice(0, 20)) {
+      lines.push(`- ${result.url} | attempts: ${result.attempts || 0} | transient errors: ${result.transientErrors?.length || 0} | ${result.referenceLabels.join(' ; ')}`)
     }
   }
 
@@ -835,12 +873,13 @@ async function main() {
     const needsArchive = ['missing', 'failed', 'error'].includes(probe.status)
     const archive = needsArchive ? await getArchiveSnapshot(item.normalizedUrl) : null
     const verifierRestrictedError = probe.status === 'error' && isKnownVerifierRestrictedHost(item.normalizedUrl)
+    const retryLimitedTransient = probe.status === 'error' && (probe.transientErrors?.length || 0) > 0 && !probe.httpStatus
     const recoveredByArchive = needsArchive && archive?.available
 
     return {
       url: item.normalizedUrl,
       domain: item.domain,
-      status: verifierRestrictedError ? 'restricted' : recoveredByArchive ? 'archived' : probe.status,
+      status: verifierRestrictedError ? 'restricted' : recoveredByArchive ? 'archived' : retryLimitedTransient ? 'transient' : probe.status,
       probeStatus: probe.status,
       httpStatus: probe.httpStatus,
       finalUrl: probe.finalUrl,
@@ -862,6 +901,7 @@ async function main() {
     ok: results.filter((item) => item.status === 'ok').length,
     redirect: results.filter((item) => item.status === 'redirect').length,
     restricted: results.filter((item) => item.status === 'restricted').length,
+    transient: results.filter((item) => item.status === 'transient').length,
     missing: results.filter((item) => item.status === 'missing').length,
     failed: results.filter((item) => item.status === 'failed' || item.status === 'error').length,
     invalid: results.filter((item) => item.status === 'invalid').length,
