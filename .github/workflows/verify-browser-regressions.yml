@@ -47,5 +47,8 @@ jobs:
       - name: Verify rendered auth cache isolation
         run: npm run verify:auth-cache-browser
 
+      - name: Verify forum beta boundary
+        run: npm run verify:forum-beta
+
       - name: Verify unified dev runtime
         run: npm run verify:dev-runtime
