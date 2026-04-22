@@ -8,12 +8,15 @@ const repoRoot = process.cwd()
 const stateDir = path.join(repoRoot, '.claude-state')
 const reportJsonPath = path.join(stateDir, 'source-link-report.json')
 const reportMdPath = path.join(stateDir, 'source-link-report.md')
+const trendJsonPath = path.join(stateDir, 'source-link-trends.json')
+const trendMdPath = path.join(stateDir, 'source-link-trends.md')
 
 const timeoutMs = Number.parseInt(process.env.SOURCE_LINK_TIMEOUT_MS || '12000', 10)
 const concurrency = Number.parseInt(process.env.SOURCE_LINK_CONCURRENCY || '12', 10)
 const strictMode = process.env.SOURCE_LINK_STRICT === '1'
 const userAgent = process.env.SOURCE_LINK_USER_AGENT || 'Mozilla/5.0 (compatible; VeritasSourceLinkChecker/1.0; +https://veritasworldwide.com)'
 const retryCount = Number.parseInt(process.env.SOURCE_LINK_RETRIES || '1', 10)
+const hardFailureStatuses = new Set(['missing', 'failed', 'error', 'invalid'])
 
 const wafRestrictedHosts = new Set([
   'en-social-sciences.tau.ac.il',
@@ -271,13 +274,28 @@ async function fetchOnceWithTimeout(url, options) {
 
 async function fetchWithTimeout(url, options) {
   let lastError = null
+  const transientErrors = []
 
   for (let attempt = 0; attempt <= retryCount; attempt += 1) {
     try {
-      return await fetchOnceWithTimeout(url, options)
+      const response = await fetchOnceWithTimeout(url, options)
+      response.veritasAttempts = attempt + 1
+      response.veritasTransientErrors = transientErrors
+      return response
     } catch (error) {
       lastError = error
-      if (attempt >= retryCount || !isTransientFetchError(error)) {
+      const transient = isTransientFetchError(error)
+      if (transient) {
+        transientErrors.push({
+          attempt: attempt + 1,
+          error: error instanceof Error ? error.message : String(error),
+        })
+      }
+      if (attempt >= retryCount || !transient) {
+        if (error && typeof error === 'object') {
+          error.veritasAttempts = attempt + 1
+          error.veritasTransientErrors = transientErrors
+        }
         throw error
       }
       await sleep(250 * (attempt + 1))
@@ -353,10 +371,14 @@ async function probeUrl(url) {
   ]
 
   let lastError = null
+  let attemptCount = 0
+  const transientErrors = []
 
   for (const attempt of attempts) {
     try {
       const response = await fetchWithTimeout(url, { method: attempt.method })
+      attemptCount += response.veritasAttempts || 1
+      transientErrors.push(...(response.veritasTransientErrors || []))
       const classification = classifyHttpStatus(response.status, url)
 
       if (
@@ -373,6 +395,8 @@ async function probeUrl(url) {
         finalUrl: response.url || url,
         redirected: response.redirected || response.url !== url,
         checkedWith: attempt.method,
+        attempts: attemptCount,
+        transientErrors,
       }
 
       if (classification === 'redirect' && result.finalUrl === url) {
@@ -382,6 +406,8 @@ async function probeUrl(url) {
       await response.body?.cancel().catch(() => {})
       return result
     } catch (error) {
+      attemptCount += error?.veritasAttempts || 1
+      transientErrors.push(...(error?.veritasTransientErrors || []))
       lastError = error
     }
   }
@@ -392,6 +418,8 @@ async function probeUrl(url) {
     finalUrl: url,
     redirected: false,
     checkedWith: 'GET',
+    attempts: attemptCount,
+    transientErrors,
     error: lastError instanceof Error ? lastError.message : String(lastError),
   }
 }
@@ -435,6 +463,273 @@ function summarizeByDomain(results) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 15)
     .map(([domain, count]) => ({ domain, count }))
+}
+
+function readJsonIfExists(filePath) {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return null
+    }
+
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'))
+  } catch {
+    return null
+  }
+}
+
+function buildResultMap(report) {
+  const map = new Map()
+
+  for (const result of report?.results || []) {
+    map.set(result.url, result)
+  }
+
+  return map
+}
+
+function buildSummaryDelta(currentSummary, previousSummary) {
+  const keys = [
+    'referenceCount',
+    'uniqueUrlCount',
+    'ok',
+    'redirect',
+    'restricted',
+    'missing',
+    'failed',
+    'invalid',
+    'archived',
+  ]
+
+  return Object.fromEntries(keys.map((key) => {
+    const current = currentSummary?.[key] || 0
+    const previous = previousSummary?.[key] || 0
+    return [key, { current, previous, delta: current - previous }]
+  }))
+}
+
+function summarizeResult(result) {
+  return {
+    url: result.url,
+    domain: result.domain,
+    status: result.status,
+    probeStatus: result.probeStatus || result.status,
+    httpStatus: result.httpStatus,
+    attempts: result.attempts || 0,
+    transientErrorCount: result.transientErrors?.length || 0,
+    archiveUrl: result.archive?.url || null,
+    referenceLabels: (result.referenceLabels || []).slice(0, 3),
+    referenceFiles: result.referenceFiles || [],
+  }
+}
+
+function buildDomainCounts(results, predicate) {
+  const counts = new Map()
+
+  for (const result of results) {
+    if (!predicate(result)) {
+      continue
+    }
+
+    counts.set(result.domain, (counts.get(result.domain) || 0) + 1)
+  }
+
+  return counts
+}
+
+function buildDomainDeltas(currentResults, previousResults, predicate) {
+  const currentCounts = buildDomainCounts(currentResults, predicate)
+  const previousCounts = buildDomainCounts(previousResults, predicate)
+  const domains = new Set([...currentCounts.keys(), ...previousCounts.keys()])
+
+  return Array.from(domains)
+    .map((domain) => {
+      const current = currentCounts.get(domain) || 0
+      const previous = previousCounts.get(domain) || 0
+      return { domain, current, previous, delta: current - previous }
+    })
+    .filter((item) => item.delta !== 0)
+    .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta) || a.domain.localeCompare(b.domain))
+    .slice(0, 20)
+}
+
+function buildTrendReport(report, previousReport) {
+  const currentMap = buildResultMap(report)
+  const previousMap = buildResultMap(previousReport)
+  const currentResults = report.results || []
+  const previousResults = previousReport?.results || []
+
+  const newUrls = Array.from(currentMap.values())
+    .filter((result) => !previousMap.has(result.url))
+    .map(summarizeResult)
+
+  const removedUrls = Array.from(previousMap.values())
+    .filter((result) => !currentMap.has(result.url))
+    .map(summarizeResult)
+
+  const statusChanges = Array.from(currentMap.values())
+    .map((current) => {
+      const previous = previousMap.get(current.url)
+      if (!previous || previous.status === current.status) {
+        return null
+      }
+
+      return {
+        ...summarizeResult(current),
+        previousStatus: previous.status,
+        currentStatus: current.status,
+      }
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.domain.localeCompare(b.domain) || a.url.localeCompare(b.url))
+
+  const newHardFailures = currentResults
+    .filter((current) => hardFailureStatuses.has(current.status) && !hardFailureStatuses.has(previousMap.get(current.url)?.status))
+    .map(summarizeResult)
+
+  const resolvedHardFailures = previousResults
+    .filter((previous) => hardFailureStatuses.has(previous.status) && !hardFailureStatuses.has(currentMap.get(previous.url)?.status))
+    .map((previous) => ({
+      ...summarizeResult(previous),
+      previousStatus: previous.status,
+      currentStatus: currentMap.get(previous.url)?.status || 'removed',
+    }))
+
+  const newRestricted = currentResults
+    .filter((current) => current.status === 'restricted' && previousMap.get(current.url)?.status !== 'restricted')
+    .map(summarizeResult)
+
+  const resolvedRestricted = previousResults
+    .filter((previous) => previous.status === 'restricted' && currentMap.get(previous.url)?.status !== 'restricted')
+    .map((previous) => ({
+      ...summarizeResult(previous),
+      previousStatus: previous.status,
+      currentStatus: currentMap.get(previous.url)?.status || 'removed',
+    }))
+
+  const newArchived = currentResults
+    .filter((current) => current.status === 'archived' && previousMap.get(current.url)?.status !== 'archived')
+    .map(summarizeResult)
+
+  const retryHeavy = currentResults
+    .filter((result) => (result.attempts || 0) > 2 || (result.transientErrors?.length || 0) > 0)
+    .sort((a, b) => (b.attempts || 0) - (a.attempts || 0) || (b.transientErrors?.length || 0) - (a.transientErrors?.length || 0))
+    .slice(0, 40)
+    .map(summarizeResult)
+
+  return {
+    generatedAt: new Date().toISOString(),
+    currentGeneratedAt: report.generatedAt,
+    previousGeneratedAt: previousReport?.generatedAt || null,
+    summaryDelta: buildSummaryDelta(report.summary, previousReport?.summary),
+    totals: {
+      newUrls: newUrls.length,
+      removedUrls: removedUrls.length,
+      statusChanges: statusChanges.length,
+      newHardFailures: newHardFailures.length,
+      resolvedHardFailures: resolvedHardFailures.length,
+      newRestricted: newRestricted.length,
+      resolvedRestricted: resolvedRestricted.length,
+      newArchived: newArchived.length,
+      retryHeavy: retryHeavy.length,
+    },
+    newUrls: newUrls.slice(0, 40),
+    removedUrls: removedUrls.slice(0, 40),
+    statusChanges: statusChanges.slice(0, 60),
+    newHardFailures,
+    resolvedHardFailures,
+    newRestricted: newRestricted.slice(0, 40),
+    resolvedRestricted: resolvedRestricted.slice(0, 40),
+    newArchived: newArchived.slice(0, 40),
+    retryHeavy,
+    domainDeltas: {
+      hardFailures: buildDomainDeltas(currentResults, previousResults, (result) => hardFailureStatuses.has(result.status)),
+      restricted: buildDomainDeltas(currentResults, previousResults, (result) => result.status === 'restricted'),
+      archived: buildDomainDeltas(currentResults, previousResults, (result) => result.status === 'archived'),
+    },
+  }
+}
+
+function formatDelta(delta) {
+  if (delta > 0) {
+    return `+${delta}`
+  }
+
+  return String(delta)
+}
+
+function formatTrendItem(item) {
+  const status = item.previousStatus && item.currentStatus
+    ? `${item.previousStatus} -> ${item.currentStatus}`
+    : item.status
+  const attempts = item.attempts ? ` | attempts: ${item.attempts}` : ''
+  const transient = item.transientErrorCount ? ` | transient errors: ${item.transientErrorCount}` : ''
+  const archive = item.archiveUrl ? ` | archive: ${item.archiveUrl}` : ''
+  return `- [${status}] ${item.url} | ${item.referenceLabels.join(' ; ')}${attempts}${transient}${archive}`
+}
+
+function pushTrendSection(lines, title, items, emptyText, limit = 20) {
+  lines.push('', `## ${title}`, '')
+
+  if (!items.length) {
+    lines.push(emptyText)
+    return
+  }
+
+  for (const item of items.slice(0, limit)) {
+    lines.push(formatTrendItem(item))
+  }
+}
+
+function buildMarkdownTrendReport(trend) {
+  const lines = [
+    '# Source Link Trends',
+    '',
+    `Generated: ${trend.generatedAt}`,
+    `Current report: ${trend.currentGeneratedAt}`,
+    `Previous report: ${trend.previousGeneratedAt || 'none'}`,
+    '',
+    '## Summary Delta',
+    '',
+  ]
+
+  for (const [key, item] of Object.entries(trend.summaryDelta)) {
+    lines.push(`- ${key}: ${item.current} (${formatDelta(item.delta)} from ${item.previous})`)
+  }
+
+  lines.push('', '## Movement', '')
+  for (const [key, value] of Object.entries(trend.totals)) {
+    lines.push(`- ${key}: ${value}`)
+  }
+
+  pushTrendSection(lines, 'New Hard Failures', trend.newHardFailures, 'No new hard failures.')
+  pushTrendSection(lines, 'Resolved Hard Failures', trend.resolvedHardFailures, 'No resolved hard failures.')
+  pushTrendSection(lines, 'New Restricted / Bot-Blocked URLs', trend.newRestricted, 'No new restricted URLs.')
+  pushTrendSection(lines, 'Archive-Backed Recoveries', trend.newArchived, 'No new archive-backed recoveries.')
+  pushTrendSection(lines, 'Retry-Heavy URLs', trend.retryHeavy, 'No retry-heavy URLs.')
+  pushTrendSection(lines, 'Status Changes', trend.statusChanges, 'No status changes.', 30)
+
+  lines.push('', '## Restricted Domain Delta', '')
+  if (!trend.domainDeltas.restricted.length) {
+    lines.push('No restricted-domain delta.')
+  } else {
+    for (const item of trend.domainDeltas.restricted) {
+      lines.push(`- ${item.domain}: ${item.current} (${formatDelta(item.delta)} from ${item.previous})`)
+    }
+  }
+
+  lines.push('', '## Hard-Failure Domain Delta', '')
+  if (!trend.domainDeltas.hardFailures.length) {
+    lines.push('No hard-failure domain delta.')
+  } else {
+    for (const item of trend.domainDeltas.hardFailures) {
+      lines.push(`- ${item.domain}: ${item.current} (${formatDelta(item.delta)} from ${item.previous})`)
+    }
+  }
+
+  pushTrendSection(lines, 'New URLs', trend.newUrls, 'No new URLs.', 20)
+  pushTrendSection(lines, 'Removed URLs', trend.removedUrls, 'No removed URLs.', 20)
+
+  return `${lines.join('\n')}\n`
 }
 
 function buildMarkdownReport(report) {
@@ -493,6 +788,7 @@ function buildMarkdownReport(report) {
 
 async function main() {
   ensureDir(stateDir)
+  const previousReport = readJsonIfExists(reportJsonPath)
 
   const rawReferences = candidateFiles.flatMap((filePath) => extractReferencesFromFile(filePath))
 
@@ -526,6 +822,8 @@ async function main() {
         finalUrl: item.url,
         redirected: false,
         checkedWith: 'none',
+        attempts: 0,
+        transientErrors: [],
         archive: null,
         referenceCount: item.references.length,
         referenceLabels: item.references.map((reference) => reference.label),
@@ -548,6 +846,8 @@ async function main() {
       finalUrl: probe.finalUrl,
       redirected: probe.redirected,
       checkedWith: probe.checkedWith,
+      attempts: probe.attempts || 0,
+      transientErrors: probe.transientErrors || [],
       error: probe.error || null,
       archive,
       referenceCount: item.references.length,
@@ -582,6 +882,9 @@ async function main() {
 
   fs.writeFileSync(reportJsonPath, `${JSON.stringify(report, null, 2)}\n`)
   fs.writeFileSync(reportMdPath, buildMarkdownReport(report))
+  const trendReport = buildTrendReport(report, previousReport)
+  fs.writeFileSync(trendJsonPath, `${JSON.stringify(trendReport, null, 2)}\n`)
+  fs.writeFileSync(trendMdPath, buildMarkdownTrendReport(trendReport))
 
   const hardFailures = summary.invalid + summary.missing + summary.failed
   if (hardFailures > 0) {

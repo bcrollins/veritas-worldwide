@@ -170,6 +170,8 @@ assert(has(files.chapterImages, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter images do
 assert(has(files.articles, /CRS's \$298 billion constant-dollar aid-obligation total for 1946-2024/), 'article callouts are not aligned to the canonical CRS figure')
 assert(has(files.prerender, /normalizeCanonicalChapterMetaReferences/), 'prerender route discovery does not normalize canonical chapter metadata references')
 assert(has(files.sourceVerifier, /israelDossierCanon\.ts/), 'source-link verifier does not scan the Israel dossier canon')
+assert(has(files.sourceVerifier, /source-link-trends/), 'source-link verifier does not emit trend reports')
+assert(has(files.sourceVerifier, /retryHeavy/), 'source-link verifier does not identify retry-heavy URLs')
 assert(has(files.sitemap, /https:\/\/veritasworldwide\.com\/chapter\/chapter-15/), 'sitemap is missing chapter 15 after canonical metadata normalization')
 
 if (errors.length) {
