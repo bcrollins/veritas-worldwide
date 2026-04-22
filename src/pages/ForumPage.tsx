@@ -1,8 +1,7 @@
 /**
- * ForumPage.tsx — Full Reddit-style community forum for Veritas Worldwide.
- * Features: communities (subreddits), post feed, threaded comments, voting, sorting,
- * search, flairs, awards, polls, crossposting, saving, reporting, moderation panel,
- * user karma display, community sidebars, create post modal, and full-width layout.
+ * ForumPage.tsx — Device-local forum beta for Veritas Worldwide.
+ * This is intentionally not a shared live community yet. Threads, awards, and
+ * reports are browser-local until persistence, moderation, and approval flows exist.
  */
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { useAuth } from '../lib/AuthContext'
