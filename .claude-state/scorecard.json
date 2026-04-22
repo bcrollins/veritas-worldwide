@@ -4,11 +4,11 @@
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.1,
+      "composite": 9.3,
       "previous": 8.9,
-      "delta": 0.2,
-      "status": "expanded data canonicalized and live verified at commit 692728b57df7",
-      "plus_half_requires": "Add behavior-level browser regression coverage for source-workbench filtering, carousel rendering, PDF export, money-trail graph integrity, and Chapter 15 public-preview evidence framing."
+      "delta": 0.4,
+      "status": "expanded data canonicalized and behavior-verifier live verified at commit c8730570da53",
+      "plus_half_requires": "Wire canon, behavior, bundle, and source-link verification into CI or a scheduled audit job, then add dedicated coverage for social-preview card screenshots and PDF content text extraction."
     },
     {
       "feature": "Home / Front Page",
