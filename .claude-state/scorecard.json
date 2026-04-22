@@ -1,14 +1,14 @@
 {
-  "run": 25,
+  "run": 26,
   "date": "2026-04-22",
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.3,
-      "previous": 8.9,
-      "delta": 0.4,
-      "status": "expanded data canonicalized and behavior-verifier live verified at commit c8730570da53",
-      "plus_half_requires": "Wire canon, behavior, bundle, and source-link verification into CI or a scheduled audit job, then add dedicated coverage for social-preview card screenshots and PDF content text extraction."
+      "composite": 9.5,
+      "previous": 9.3,
+      "delta": 0.2,
+      "status": "CI-backed canon/source/build/bundle/behavior verification passed on GitHub Actions run 24768886858 and live production behavior verified at commit 2c26e0cd8bf6",
+      "plus_half_requires": "Add dedicated coverage for social-preview card screenshots and PDF content text extraction, then capture the GitHub Actions Node action-runtime warning with a verified Node 24-compatible action update."
     },
     {
       "feature": "Home / Front Page",
@@ -48,7 +48,7 @@
       "previous": 9,
       "delta": 0,
       "status": "watch",
-      "plus_half_requires": "Get commit `1012c25` live in production, then operationalize npm run verify:sources in CI or a scheduled Railway/GitHub check and reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set."
+      "plus_half_requires": "Reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set, then add source-link trend reporting so new restricted domains and retry-heavy URLs are visible before they become failures."
     },
     {
       "feature": "Search",
