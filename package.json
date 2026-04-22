@@ -14,6 +14,7 @@
     "verify:analytics": "node scripts/verify-analytics-snapshot.mjs",
     "verify:db-config": "node scripts/verify-db-config.mjs",
     "verify:israel-dossier": "node scripts/verify-israel-dossier-canon.mjs",
+    "verify:israel-dossier:behavior": "node scripts/verify-israel-dossier-behavior.mjs",
     "verify:bundle": "node scripts/verify-bundle-health.mjs && node scripts/verify-chapter-data.mjs",
     "verify:chapter-data": "node scripts/verify-chapter-data.mjs"
   },

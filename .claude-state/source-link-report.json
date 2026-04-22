@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-22T08:15:30.506Z",
+  "generatedAt": "2026-04-22T08:26:45.426Z",
   "timeoutMs": 20000,
   "concurrency": 10,
   "strictMode": false,
   "summary": {
     "referenceCount": 752,
     "uniqueUrlCount": 448,
-    "ok": 390,
+    "ok": 391,
     "redirect": 0,
-    "restricted": 58,
+    "restricted": 57,
     "missing": 0,
     "failed": 0,
     "invalid": 0,
@@ -1154,7 +1154,7 @@
       "httpStatus": 200,
       "finalUrl": "https://euromedmonitor.org/en/article/6129",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 3,
@@ -1982,6 +1982,45 @@
       "referenceCount": 1,
       "referenceLabels": [
         "972 Magazine — Survivor testimonies"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "domain": "www.972mag.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 3,
+      "referenceLabels": [
+        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
+        "+972 Magazine — Full investigation with officer testimony",
+        "+972 Magazine (six IDF intelligence officers)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "domain": "www.972mag.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "+972 Magazine — \"Where's Daddy?\" tracking system"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
@@ -4692,24 +4731,6 @@
       ]
     },
     {
-      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
-      "domain": "www.mfa.gov.il",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
-      "redirected": true,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Sabra and Shatila Massacre"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.middleeasteye.net/news/new-video-evidence-disputes-israeli-armys-account-medic-killings",
       "domain": "www.middleeasteye.net",
       "status": "ok",
@@ -5160,6 +5181,24 @@
       ]
     },
     {
+      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Operation Protective Edge — 2,251 Palestinians Killed"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
       "domain": "www.ohchr.org",
       "status": "ok",
@@ -5190,42 +5229,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "OHCHR — UN experts condemn \"flour massacre\""
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Israeli settlers in occupied West Bank including East Jerusalem"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
@@ -6527,6 +6530,24 @@
       ]
     },
     {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.parliament.uk/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.paul.senate.gov/",
       "domain": "www.paul.senate.gov",
       "status": "ok",
@@ -6815,7 +6836,7 @@
       "domain": "www.springer.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=74ad8dc7-179e-4403-9698-448b137b8d5e",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=af80df26-4d33-41bc-b5af-e3adf0220d5e",
       "redirected": true,
       "checkedWith": "HEAD",
       "error": null,
@@ -7490,45 +7511,6 @@
       ]
     },
     {
-      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
-      "domain": "www.972mag.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 3,
-      "referenceLabels": [
-        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
-        "+972 Magazine — Full investigation with officer testimony",
-        "+972 Magazine (six IDF intelligence officers)"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts",
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
-      "domain": "www.972mag.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "+972 Magazine — \"Where's Daddy?\" tracking system"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.axios.com/",
       "domain": "www.axios.com",
       "status": "restricted",
@@ -7888,6 +7870,24 @@
       ]
     },
     {
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
+      "redirected": true,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Sabra and Shatila Massacre"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.mikebloomberg.com/",
       "domain": "www.mikebloomberg.com",
       "status": "restricted",
@@ -7942,39 +7942,39 @@
       ]
     },
     {
-      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
       "domain": "www.ohchr.org",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Operation Protective Edge — 2,251 Palestinians Killed"
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ]
     },
     {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
+      "url": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
+      "domain": "www.ohchr.org",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.parliament.uk/",
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+        "Israeli settlers in occupied West Bank including East Jerusalem"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {

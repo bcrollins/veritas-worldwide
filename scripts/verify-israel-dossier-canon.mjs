@@ -14,7 +14,9 @@ const files = {
   chapterImages: 'src/data/chapterImages.ts',
   contentPack: 'src/data/contentPackCarousels.ts',
   articles: 'src/data/articles.ts',
+  packageJson: 'package.json',
   prerender: 'scripts/prerender.mjs',
+  behaviorVerifier: 'scripts/verify-israel-dossier-behavior.mjs',
   sourceVerifier: 'scripts/verify-source-links.mjs',
   sitemap: 'public/sitemap.xml',
 }
@@ -154,6 +156,11 @@ assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_INCIDENTS as EXPANDED_INCIDE
 assert(has(files.expanded, /ISRAEL_DOSSIER_LOBBYING_DATA as LOBBYING_DATA/), 'expanded data does not re-export canonical lobbying data')
 assert(has(files.expanded, /ISRAEL_DOSSIER_LEGAL_CASES as LEGAL_CASES/), 'expanded data does not re-export canonical legal cases')
 assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_STATS as EXPANDED_STATS/), 'expanded data does not re-export canonical expanded stats')
+assert(has(files.packageJson, /verify:israel-dossier:behavior/), 'package.json does not expose the Israel dossier behavior verifier')
+assert(has(files.behaviorVerifier, /Source Workbench/), 'behavior verifier does not exercise the source workbench')
+assert(has(files.behaviorVerifier, /Download Complete Dossier/), 'behavior verifier does not exercise dossier PDF export')
+assert(has(files.behaviorVerifier, /H\\.R\\.815/), 'behavior verifier does not exercise money-trail expansion')
+assert(has(files.behaviorVerifier, /chapter-15/), 'behavior verifier does not exercise Chapter 15 public preview')
 assert(has(files.chapter15, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter 15 does not consume canonical companion copy')
 assert(has(files.chapterMeta, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter metadata does not consume canonical chapter 15 copy')
 assert(has(files.chapterImages, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter images do not consume canonical chapter 15 imagery')
