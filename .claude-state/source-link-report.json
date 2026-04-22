@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-22T06:57:45.981Z",
+  "generatedAt": "2026-04-22T07:32:21.220Z",
   "timeoutMs": 20000,
   "concurrency": 10,
   "strictMode": false,
   "summary": {
     "referenceCount": 679,
     "uniqueUrlCount": 391,
-    "ok": 341,
+    "ok": 339,
     "redirect": 0,
-    "restricted": 50,
+    "restricted": 52,
     "missing": 0,
     "failed": 0,
     "invalid": 0,
@@ -1006,24 +1006,6 @@
       ]
     },
     {
-      "url": "https://extranet.who.int/ssa/Index.aspx",
-      "domain": "extranet.who.int",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://extranet.who.int/ssa/Index.aspx",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Healthcare workers killed in Gaza"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
       "url": "https://fcic.law.stanford.edu/",
       "domain": "fcic.law.stanford.edu",
       "status": "ok",
@@ -1567,24 +1549,6 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://unosat.org/products/",
-      "domain": "unosat.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://unosat.org/products/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Of Gaza's housing damaged or destroyed"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -2271,24 +2235,6 @@
       ]
     },
     {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.citadel.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.clintonfoundation.org/",
       "domain": "www.clintonfoundation.org",
       "status": "ok",
@@ -2332,7 +2278,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.cnbc.com/",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -4370,6 +4316,43 @@
       ]
     },
     {
+      "url": "https://www.ochaopt.org/content/humanitarian-situation-report-10-april-2026",
+      "domain": "www.ochaopt.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ochaopt.org/content/humanitarian-situation-report-10-april-2026",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Housing units estimated damaged in Gaza"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
+      "domain": "www.ochaopt.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Health workers reported killed in Gaza",
+        "OCHA Reported Impact Snapshot"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
       "domain": "www.ohchr.org",
       "status": "ok",
@@ -5644,24 +5627,6 @@
       ]
     },
     {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.parliament.uk/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.paul.senate.gov/",
       "domain": "www.paul.senate.gov",
       "status": "ok",
@@ -5675,6 +5640,26 @@
       "referenceLabels": [
         "I am not for foreign aid in general, to any country.",
         "Blocked unanimous consent on Israel aid bills multiple times"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.politico.com/",
+      "domain": "www.politico.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.politico.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 3,
+      "referenceLabels": [
+        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
+        "One of few Republican senators to oppose unconditional Israel military aid",
+        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -5912,7 +5897,7 @@
       "domain": "www.springer.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=135c69c6-f41d-4b59-96f1-237adf0543c5",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=db4cb8e9-6a99-44fe-b2a5-cc250bc58ef0",
       "redirected": true,
       "checkedWith": "HEAD",
       "error": null,
@@ -6096,24 +6081,6 @@
       "referenceLabels": [
         "UNESCO — Gaza education emergency updates",
         "UNESCO / UNOSAT / IPC"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip",
-      "domain": "www.unicef.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "UNICEF"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -6726,6 +6693,24 @@
       ]
     },
     {
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.citadel.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "I am deeply committed to defending democratic values and free markets."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.congress.gov/",
       "domain": "www.congress.gov",
       "status": "restricted",
@@ -6848,7 +6833,7 @@
       "archive": null,
       "referenceCount": 2,
       "referenceLabels": [
-        "U.S. aid to Israel vs. $0 in universal healthcare for Americans",
+        "Inflation-adjusted U.S. aid obligations to Israel",
         "Congressional Research Service, Report RL33222"
       ],
       "referenceFiles": [
@@ -7001,20 +6986,18 @@
       ]
     },
     {
-      "url": "https://www.politico.com/",
-      "domain": "www.politico.com",
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.politico.com/",
+      "finalUrl": "https://www.parliament.uk/",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 3,
+      "referenceCount": 1,
       "referenceLabels": [
-        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
-        "One of few Republican senators to oppose unconditional Israel military aid",
-        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -7124,10 +7107,9 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 1,
       "referenceLabels": [
-        "October 7 Attack and Gaza War Begins",
-        "The Lancet Global Health (2025)"
+        "October 7 Attack and Gaza War Begins"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -7186,6 +7168,24 @@
       "referenceCount": 1,
       "referenceLabels": [
         "The Nakba — 750,000 Palestinians Expelled"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "domain": "www.unicef.org",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UNICEF State of Palestine health update"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"

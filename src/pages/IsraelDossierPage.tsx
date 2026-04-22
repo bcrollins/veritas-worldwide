@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useMemo, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { DONATE_URL } from '../lib/constants'
@@ -66,12 +66,71 @@ interface MoneyTrailNode {
    CATEGORY META
    ═══════════════════════════════════════════════════════════ */
 
-const CATEGORY_META = {
-  financial: { label: 'U.S. Aid & Military Spending', icon: 'money', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/F-35A_flight_%28cropped%29.jpg/1280px-F-35A_flight_%28cropped%29.jpg', headerCaption: 'F-35A Lightning II — The U.S. has committed over $310 billion in military and economic aid to Israel since 1948' },
-  humanitarian: { label: 'Humanitarian Impact', icon: 'warning', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/UNRWA_school_in_Gaza.jpg/1280px-UNRWA_school_in_Gaza.jpg', headerCaption: 'UNRWA school shelter in Gaza — Humanitarian organizations document the ongoing crisis' },
-  legal: { label: 'International Law & UN Record', icon: 'scale', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/1280px-United_Nations_General_Assembly_Hall_%283%29.jpg', headerCaption: 'UN General Assembly Hall — The U.S. has cast 53+ vetoes shielding Israel from Security Council resolutions' },
-  social: { label: 'Domestic Policy & Public Opinion', icon: 'pillar', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/United_States_Capitol_-_west_front.jpg/1280px-United_States_Capitol_-_west_front.jpg', headerCaption: 'U.S. Capitol — Domestic lobbying and anti-BDS legislation shape U.S. policy toward Israel' },
+const DOSSIER_ASSETS = {
+  financial: '/og/chapter-15.png',
+  humanitarian: '/og-image.png',
+  legal: '/og/chapter-16.png',
+  domestic: '/og/chapter-14.png',
+  source: '/og/chapter-29.png',
+} as const
+
+type DossierCategory = 'financial' | 'humanitarian' | 'legal' | 'social'
+
+type CategoryMeta = {
+  label: string
+  icon: string
+  color: string
+  accentColor: string
+  bg: string
+  border: string
+  hoverBorder: string
+  headerImage?: string
+  headerCaption?: string
 }
+
+const CATEGORY_META: Record<DossierCategory, CategoryMeta> = {
+  financial: { label: 'U.S. Aid & Military Spending', icon: 'money', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: DOSSIER_ASSETS.financial, headerCaption: 'CRS estimates $298B in inflation-adjusted U.S. aid obligations to Israel from 1946 through 2024' },
+  humanitarian: { label: 'Humanitarian Impact', icon: 'warning', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: DOSSIER_ASSETS.humanitarian, headerCaption: 'Humanitarian-impact records are presented with source attribution and reporting boundaries' },
+  legal: { label: 'International Law & UN Record', icon: 'scale', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: DOSSIER_ASSETS.legal, headerCaption: 'International-law records require separation between court holdings, warrants, advisory opinions, and analysis' },
+  social: { label: 'Domestic Policy & Public Opinion', icon: 'pillar', color: '#1a1a1a', accentColor: '#8B0000', bg: 'bg-surface', border: 'border-border', hoverBorder: 'hover:border-ink/30', headerImage: DOSSIER_ASSETS.domestic, headerCaption: 'Domestic lobbying, campaign-finance records, and anti-BDS legislation shape U.S. policy toward Israel' },
+}
+
+const DOSSIER_LAST_VERIFIED = '2026-04-22'
+
+const LATEST_PUBLIC_RECORDS = [
+  {
+    value: '72,289+',
+    label: 'reported Palestinian fatalities in Gaza',
+    source: 'OCHA Reported Impact Snapshot',
+    sourceUrl: 'https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
+    note: 'OCHA attributes cumulative Gaza casualty figures to MoH Gaza and flags that UN verification is separate from source attribution.',
+    category: 'humanitarian',
+  },
+  {
+    value: '21,289+',
+    label: 'children reported killed in Gaza',
+    source: 'UNICEF State of Palestine update',
+    sourceUrl: 'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
+    note: 'UNICEF reported this child fatality count through 3 February 2026, alongside 44,500 reported injured children.',
+    category: 'humanitarian',
+  },
+  {
+    value: '261+',
+    label: 'journalists and media workers among the killed',
+    source: 'Committee to Protect Journalists',
+    sourceUrl: 'https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/',
+    note: 'CPJ describes these as preliminary investigations updated 17 April 2026 across Gaza, Yemen, Lebanon, Israel, and Iran since the Israel-Gaza war began.',
+    category: 'humanitarian',
+  },
+  {
+    value: '$298B',
+    label: 'inflation-adjusted U.S. aid obligations to Israel, 1946-2024',
+    source: 'Congressional Research Service RL33222',
+    sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+    note: 'CRS reports $174.965B in current dollars through 2025 and an estimated $298B in constant 2024 dollars through 2024.',
+    category: 'financial',
+  },
+] as const
 
 /* ═══════════════════════════════════════════════════════════
    STATISTICS DATA — Every figure linked to primary sources
@@ -80,15 +139,16 @@ const CATEGORY_META = {
 const STATS: StatCard[] = [
   // ─── FINANCIAL ───
   {
-    value: '$310B+',
-    label: 'Total U.S. aid to Israel (inflation-adjusted, 1948–2024)',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/US_one_hundred_dollar_bill%2C_series_2006.jpg/640px-US_one_hundred_dollar_bill%2C_series_2006.jpg',
+    value: '$298B',
+    label: 'Inflation-adjusted U.S. aid obligations to Israel (1946–2024)',
+    imageUrl: DOSSIER_ASSETS.financial,
     source: 'Congressional Research Service, Report RL33222',
     sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
     category: 'financial',
-    lastVerified: '2026-03-24',
+    lastVerified: DOSSIER_LAST_VERIFIED,
     details: [
-      { title: 'What this means', text: 'Israel is the largest cumulative recipient of U.S. foreign assistance since World War II. The majority is military aid — grants that do not need to be repaid.' },
+      { title: 'What this means', text: 'CRS identifies Israel as the largest cumulative recipient of U.S. foreign assistance since World War II. The $298B figure is CRS\'s constant-2024-dollar estimate for obligations from 1946 through 2024.' },
+      { title: 'Current-dollar figure', text: 'CRS reports $174.965B in current, non-inflation-adjusted bilateral assistance and missile defense funding through 2025.' },
       { title: 'Recent acceleration', text: 'Since October 2023, an additional $26.4B supplemental package was approved on top of the $3.8B annual baseline — the fastest acceleration of aid since the Camp David Accords.' },
     ],
   },
@@ -147,7 +207,7 @@ const STATS: StatCard[] = [
   {
     value: '14,000+',
     label: 'MK-84 2,000-pound bombs supplied by U.S. to Israel (2023–2024)',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/F-35A_flight_%28cropped%29.jpg/640px-F-35A_flight_%28cropped%29.jpg',
+    imageUrl: DOSSIER_ASSETS.financial,
     source: 'Wall Street Journal / NYT investigation',
     sourceUrl: 'https://responsiblestatecraft.org/us-weapons-gaza/',
     category: 'financial',
@@ -186,14 +246,14 @@ const STATS: StatCard[] = [
   },
   // ─── HUMANITARIAN ───
   {
-    value: '75,000+',
-    label: 'Palestinians killed in Gaza since October 7, 2023',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/640px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg',
+    value: '75,200',
+    label: 'Estimated violent deaths in Gaza through Jan. 5, 2025',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
     source: 'Gaza Ministry of Health / Lancet field survey (Jan 2025)',
     sourceUrl: 'https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext',
     category: 'humanitarian',
-    lastVerified: '2026-03-24',
-    note: 'Independent Lancet survey estimated 75,200 violent deaths — 35% higher than MoH count at the time',
+    lastVerified: DOSSIER_LAST_VERIFIED,
+    note: 'Survey estimate, not a live cumulative count. OCHA separately reported 72,289 Gaza fatalities as of 1 April 2026, attributed to MoH Gaza.',
     details: [
       { title: 'Independent verification', text: 'A population-representative household survey published in The Lancet Global Health (2025) estimated 75,200 violent deaths and 8,540 excess non-violent deaths between Oct 7, 2023 and Jan 5, 2025. The Gaza MoH figure for this period was 49,090 — 34.7% below the survey estimate.' },
       { title: 'Life-years lost', text: 'Researchers estimated over 3 million life-years lost as of July 2025 — reflecting the disproportionate killing of children and young adults.', sourceUrl: 'https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02112-9/fulltext' },
@@ -201,18 +261,18 @@ const STATS: StatCard[] = [
     ],
   },
   {
-    value: '17,000+',
-    label: 'Children killed in Gaza (as of March 2026)',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg/640px-Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg',
-    source: 'UNICEF — "Unimaginable Horrors" report',
-    sourceUrl: 'https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip',
+    value: '21,289+',
+    label: 'Children reported killed in Gaza through Feb. 3, 2026',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
+    source: 'UNICEF State of Palestine health update',
+    sourceUrl: 'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
     category: 'humanitarian',
-    lastVerified: '2026-03-24',
-    note: '50,000+ children killed or injured total. 56,000+ children have lost one or both parents.',
+    lastVerified: DOSSIER_LAST_VERIFIED,
+    note: 'UNICEF reported 44,500 injured children and more than 11,000 children with serious injuries requiring long-term rehabilitation.',
     details: [
-      { title: 'Scale', text: 'More children have been killed in Gaza since October 2023 than in all the world\'s conflict zones combined over the previous four years, according to UNICEF.' },
-      { title: 'Orphan crisis', text: 'Over 56,000 children have lost one or both parents. UNICEF documented cases of children under 5 being the sole survivors of entire family units.' },
-      { title: 'Healthcare collapse', text: 'All pediatric hospitals in northern Gaza have been destroyed or forced to cease operations. Thousands of children requiring surgery have no access to operating theaters.' },
+      { title: 'Source boundary', text: 'UNICEF frames these as reported figures, not independently verified final totals. The update covers the period from 7 October 2023 through 3 February 2026.' },
+      { title: 'Long-term injury burden', text: 'UNICEF estimated more than 11,000 children had serious injuries likely to require long-term rehabilitation, while 4,000 children needed urgent medical evacuation for advanced care unavailable inside Gaza.' },
+      { title: 'Health system condition', text: 'The same update reported that no hospital in Gaza was fully functional and only half of hospitals were partially functional.' },
     ],
   },
   {
@@ -228,18 +288,18 @@ const STATS: StatCard[] = [
     ],
   },
   {
-    value: '254+',
-    label: 'Journalists and media workers killed since October 2023',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Press_photographers_with_cameras.jpg/640px-Press_photographers_with_cameras.jpg',
-    source: 'Committee to Protect Journalists (CPJ), March 2026',
-    sourceUrl: 'https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-conflict/',
+    value: '261+',
+    label: 'Journalists and media workers among those killed since Oct. 7, 2023',
+    imageUrl: DOSSIER_ASSETS.source,
+    source: 'Committee to Protect Journalists (CPJ), Apr. 17, 2026 update',
+    sourceUrl: 'https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/',
     category: 'humanitarian',
-    lastVerified: '2026-03-24',
+    lastVerified: DOSSIER_LAST_VERIFIED,
     note: 'More journalists killed than in any conflict since CPJ began tracking in 1992',
     details: [
       { title: '2024 record', text: '2024 was the deadliest year for journalists in CPJ history — 124 killed globally, nearly two-thirds of them Palestinians killed by Israel.', sourceUrl: 'https://cpj.org/special-reports/2024-is-deadliest-year-for-journalists-in-cpj-history-almost-70-percent-killed-by-israel/' },
       { title: '2025 record broken again', text: '2025 matched the record: 126 killed globally, with Israel responsible for 2/3 of all deaths worldwide.', sourceUrl: 'https://cpj.org/special-reports/record-129-press-members-killed-in-2025-israel-responsible-for-2-of-3-of-deaths/' },
-      { title: 'Pattern', text: 'CPJ documented cases of journalists killed while wearing press vests, in marked vehicles, or at home with families — suggesting targeting rather than collateral damage.' },
+      { title: 'Targeting finding', text: 'CPJ states that, as of April 2026, it had determined at least 64 journalists and media workers were directly targeted and killed by Israeli forces in reprisal for their work, while other cases remained under investigation.' },
     ],
   },
   {
@@ -251,7 +311,7 @@ const STATS: StatCard[] = [
     lastVerified: '2026-03-24',
     details: [
       { title: 'Forced displacement', text: 'B\'Tselem documented that 90% of Gaza\'s pre-war population of 2.1 million has been displaced at least once. Many have been displaced 5–10 times, ordered to move to "safe zones" that were subsequently bombed.', sourceUrl: 'https://www.btselem.org/gaza_strip/202512_no_place_under_heaven_forced_displacement_in_the_gaza_strip_2023_2025' },
-      { title: 'Infrastructure destruction', text: 'Over 60% of all housing in Gaza has been damaged or destroyed. UNRWA estimates it would take 80 years to rebuild at pre-war construction rates.' },
+      { title: 'Infrastructure destruction', text: 'OCHA cites UNOSAT satellite imagery analysis estimating more than 320,600 damaged housing units in Gaza as of 11 October 2025. Longer-term rebuild estimates remain scenario-dependent and should be cited separately.' },
     ],
   },
   {
@@ -296,7 +356,7 @@ const STATS: StatCard[] = [
   {
     value: 'Unlawful',
     label: "ICJ ruled Israel's occupation of Palestinian territory is illegal (July 19, 2024)",
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/International_Court_of_Justice.jpg/640px-International_Court_of_Justice.jpg',
+    imageUrl: DOSSIER_ASSETS.legal,
     source: 'International Court of Justice, Advisory Opinion',
     sourceUrl: 'https://www.icj-cij.org/node/204176',
     category: 'legal',
@@ -311,7 +371,7 @@ const STATS: StatCard[] = [
   {
     value: '51+',
     label: 'U.S. vetoes of UN Security Council resolutions critical of Israel',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/640px-United_Nations_General_Assembly_Hall_%283%29.jpg',
+    imageUrl: DOSSIER_ASSETS.legal,
     source: 'UN Security Council records / Jewish Virtual Library',
     sourceUrl: 'https://jewishvirtuallibrary.org/u-s-vetoes-of-un-security-council-resolutions-critical-to-israel',
     category: 'legal',
@@ -641,7 +701,7 @@ function formatVerified(iso: string) {
 /* ═══════════════════════════════════════════════════════════
    INTERACTIVE STAT CARD COMPONENT
    ═══════════════════════════════════════════════════════════ */
-function InteractiveStatCard({ stat, meta }: { stat: StatCard; meta: typeof CATEGORY_META.financial }) {
+function InteractiveStatCard({ stat, meta }: { stat: StatCard; meta: CategoryMeta }) {
   const [open, setOpen] = useState(false)
   const hasDetails = stat.details && stat.details.length > 0
 
@@ -919,6 +979,7 @@ function LiveCounter() {
    ═══════════════════════════════════════════════════════════ */
 const SECTIONS = [
   { id: 'overview', label: 'Overview' },
+  { id: 'source-workbench', label: 'Sources' },
   { id: 'timeline', label: 'Timeline' },
   { id: 'money-trail', label: 'Follow the Money' },
   { id: 'financial', label: 'U.S. Aid & Spending' },
@@ -974,6 +1035,183 @@ function JumpNav() {
   )
 }
 
+type SourceCategory = 'public-record' | 'un-international' | 'peer-reviewed' | 'monitor-ngo' | 'press-osint' | 'other'
+
+interface SourceIndexRecord {
+  label: string
+  url: string
+  category: SourceCategory
+  context: string
+  tier?: 'verified' | 'circumstantial' | 'disputed'
+}
+
+const SOURCE_CATEGORY_META: Record<'all' | SourceCategory, { label: string; description: string }> = {
+  all: { label: 'All sources', description: 'Every linked source used by the live dossier.' },
+  'public-record': { label: 'Public record', description: 'Government, court, legislative, and official institutional records.' },
+  'un-international': { label: 'UN / international', description: 'UN agencies, ICJ, ICC, WHO, UNICEF, OCHA, IPC, and international bodies.' },
+  'peer-reviewed': { label: 'Peer reviewed', description: 'Journal articles, academic surveys, and research institutions.' },
+  'monitor-ngo': { label: 'Monitor / NGO', description: 'Rights monitors, press-freedom trackers, and specialist documentation groups.' },
+  'press-osint': { label: 'Press / OSINT', description: 'Established reporting, visual investigations, and open-source forensic work.' },
+  other: { label: 'Other', description: 'Supplemental context that should be checked before publication use.' },
+}
+
+function classifySource(label: string, url: string): SourceCategory {
+  const haystack = `${label} ${url}`.toLowerCase()
+  if (/(congress\.gov|dsca\.mil|state\.gov|defense\.gov|foreignassistance\.gov|worldbank\.org|data\.worldbank\.org|mfa\.gov\.il|gov\.il|house\.gov|senate\.gov|fec\.gov|opensecrets\.org)/.test(haystack)) return 'public-record'
+  if (/(un\.org|unrwa\.org|ochaopt\.org|ohchr\.org|unicef\.org|who\.int|icj-cij\.org|icc-cpi\.int|ipcinfo\.org|unosat\.org|unitar\.org|unesco\.org|wfp\.org)/.test(haystack)) return 'un-international'
+  if (/(thelancet\.com|sipri\.org|tandfonline\.com|jstor\.org|doi\.org|max planck|university|academic)/.test(haystack)) return 'peer-reviewed'
+  if (/(cpj\.org|btselem\.org|hrw\.org|dci-palestine\.org|airwars\.org|forensic-architecture\.org|euromedmonitor\.org|palestinelegal\.org|amnesty\.org|redcross|palestinercs\.org|wck\.org|hindrajabfoundation\.org)/.test(haystack)) return 'monitor-ngo'
+  if (/(reuters\.com|apnews\.com|cnn\.com|npr\.org|bbc\.com|washingtonpost\.com|nbcnews\.com|aljazeera\.com|theguardian\.com|972mag\.com|bellingcat\.com|cbc\.ca|middleeasteye\.net|aa\.com\.tr|trtworld\.com|responsiblestatecraft\.org)/.test(haystack)) return 'press-osint'
+  return 'other'
+}
+
+function normalizeIncidentKey(incident: DocumentedIncident) {
+  return `${incident.date}|${incident.location}`.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+}
+
+function dedupeIncidents(incidents: DocumentedIncident[]) {
+  const seen = new Set<string>()
+  const deduped: DocumentedIncident[] = []
+  for (const incident of incidents) {
+    const key = normalizeIncidentKey(incident)
+    if (seen.has(key)) continue
+    seen.add(key)
+    deduped.push(incident)
+  }
+  return deduped
+}
+
+function buildSourceIndex(): SourceIndexRecord[] {
+  const records: SourceIndexRecord[] = []
+  const push = (label: string, url: string | undefined, context: string, tier?: SourceIndexRecord['tier']) => {
+    if (!url) return
+    records.push({ label, url, context, tier, category: classifySource(label, url) })
+  }
+
+  LATEST_PUBLIC_RECORDS.forEach((record) => push(record.source, record.sourceUrl, `Latest record: ${record.label}`, 'verified'))
+  STATS.forEach((stat) => {
+    push(stat.source, stat.sourceUrl, `Statistic: ${stat.label}`, 'verified')
+    stat.details?.forEach((detail) => push(detail.title, detail.sourceUrl, `Detail under ${stat.label}`, 'verified'))
+  })
+  HISTORICAL_TIMELINE.forEach((event) => push(event.source, event.sourceUrl, `Timeline: ${event.title}`, event.tier))
+  MONEY_TRAIL.forEach((node) => push(node.label, node.sourceUrl, `Money trail: ${node.detail}`, 'verified'))
+  dedupeIncidents([...INCIDENTS, ...EXPANDED_INCIDENTS]).forEach((incident) => {
+    incident.sources.forEach((source) => push(source.label, source.url, `Incident: ${incident.title}`, incident.tier))
+    incident.multimedia.forEach((source) => push(source.label, source.url, `Incident media: ${incident.title}`, incident.tier))
+  })
+  EXPANDED_STATS.forEach((stat) => {
+    push(stat.source, stat.sourceUrl, `Expanded statistic: ${stat.label}`, stat.tier)
+    stat.details?.forEach((detail) => push(detail.title, detail.sourceUrl, `Detail under ${stat.label}`, stat.tier))
+  })
+  LOBBYING_DATA.forEach((record) => push(record.source, record.sourceUrl, `Lobbying record: ${record.organization}`, 'verified'))
+  LEGAL_CASES.forEach((legalCase) => push(legalCase.title, legalCase.sourceUrl, `Legal case: ${legalCase.court}`, 'verified'))
+
+  const unique = new Map<string, SourceIndexRecord>()
+  for (const record of records) {
+    const existing = unique.get(record.url)
+    if (existing) {
+      existing.context = `${existing.context}; ${record.context}`
+      continue
+    }
+    unique.set(record.url, record)
+  }
+  return Array.from(unique.values()).sort((a, b) => a.category.localeCompare(b.category) || a.label.localeCompare(b.label))
+}
+
+function DossierSourceWorkbench({ records }: { records: SourceIndexRecord[] }) {
+  const [category, setCategory] = useState<'all' | SourceCategory>('all')
+  const [query, setQuery] = useState('')
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    return records.filter((record) => {
+      const categoryMatch = category === 'all' || record.category === category
+      const queryMatch = !q || `${record.label} ${record.context} ${record.url}`.toLowerCase().includes(q)
+      return categoryMatch && queryMatch
+    })
+  }, [category, query, records])
+
+  const counts = useMemo(() => {
+    const result = new Map<'all' | SourceCategory, number>([['all', records.length]])
+    for (const record of records) result.set(record.category, (result.get(record.category) ?? 0) + 1)
+    return result
+  }, [records])
+
+  return (
+    <section id="source-workbench" className="mb-16 scroll-mt-20 rounded-sm border border-border bg-surface p-5">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <p className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted">Source Workbench</p>
+          <h2 className="mt-2 font-display text-2xl font-bold text-ink">Audit the dossier by source class.</h2>
+          <p className="mt-2 max-w-3xl font-body text-sm leading-relaxed text-ink-muted">
+            This index is generated from the live page data. Use it to separate public records, UN and international records,
+            peer-reviewed research, monitoring organizations, and press or open-source investigations before relying on a claim.
+          </p>
+        </div>
+        <div className="rounded-sm border border-border bg-parchment px-4 py-3">
+          <p className="font-display text-3xl font-bold text-crimson">{records.length}</p>
+          <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ink-faint">unique source URLs</p>
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-3 lg:grid-cols-[minmax(0,1fr)_260px]">
+        <div className="flex flex-wrap gap-2">
+          {(Object.keys(SOURCE_CATEGORY_META) as Array<'all' | SourceCategory>).map((key) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setCategory(key)}
+              className={`min-h-[40px] rounded-full border px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] transition-colors ${
+                category === key ? 'border-crimson bg-crimson text-white' : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+              }`}
+              title={SOURCE_CATEGORY_META[key].description}
+            >
+              {SOURCE_CATEGORY_META[key].label} ({counts.get(key) ?? 0})
+            </button>
+          ))}
+        </div>
+        <label className="block">
+          <span className="sr-only">Search source index</span>
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search sources"
+            className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
+          />
+        </label>
+      </div>
+
+      <p className="mt-4 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+        Showing {filtered.length} of {records.length} sources · {SOURCE_CATEGORY_META[category].description}
+      </p>
+      <div className="mt-4 grid max-h-[520px] gap-3 overflow-y-auto pr-1 md:grid-cols-2">
+        {filtered.map((record) => (
+          <a
+            key={record.url}
+            href={record.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-sm border border-border bg-parchment p-3 transition-colors hover:border-crimson/40 hover:bg-parchment-dark/40"
+          >
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-obsidian px-2 py-0.5 font-sans text-[0.52rem] font-bold uppercase tracking-[0.1em] text-white">
+                {SOURCE_CATEGORY_META[record.category].label}
+              </span>
+              {record.tier && (
+                <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.1em] text-ink-faint">
+                  {record.tier}
+                </span>
+              )}
+            </div>
+            <p className="mt-2 font-sans text-sm font-bold text-ink group-hover:text-crimson">{record.label}</p>
+            <p className="mt-1 line-clamp-2 font-body text-xs leading-relaxed text-ink-muted">{record.context}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 /* ═══════════════════════════════════════════════════════════
    MAIN PAGE COMPONENT
    ═══════════════════════════════════════════════════════════ */
@@ -1006,8 +1244,21 @@ export default function IsraelDossierPage() {
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 
-  const categories = ['financial', 'humanitarian', 'legal', 'social'] as const
-  const totalIncidentDeaths = INCIDENTS.reduce((sum, i) => sum + (i.casualties?.killed ?? 0), 0)
+  const categories: DossierCategory[] = ['financial', 'humanitarian', 'legal', 'social']
+  const [incidentQuery, setIncidentQuery] = useState('')
+  const [incidentTier, setIncidentTier] = useState<'all' | DocumentedIncident['tier']>('all')
+  const sourceIndex = useMemo(() => buildSourceIndex(), [])
+  const allIncidents = useMemo(() => dedupeIncidents([...INCIDENTS, ...EXPANDED_INCIDENTS]), [])
+  const filteredIncidents = useMemo(() => {
+    const q = incidentQuery.trim().toLowerCase()
+    return allIncidents.filter((incident) => {
+      const tierMatch = incidentTier === 'all' || incident.tier === incidentTier
+      const queryMatch = !q || `${incident.title} ${incident.location} ${incident.summary} ${incident.evidence}`.toLowerCase().includes(q)
+      return tierMatch && queryMatch
+    })
+  }, [allIncidents, incidentQuery, incidentTier])
+  const totalIncidentDeaths = allIncidents.reduce((sum, i) => sum + (i.casualties?.killed ?? 0), 0)
+  const verifiedIncidentCount = allIncidents.filter((incident) => incident.tier === 'verified').length
 
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -1035,19 +1286,24 @@ export default function IsraelDossierPage() {
         </div>
 
         {/* Key numbers bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-6">
-          {[
-            { val: '75,000+', sub: 'Palestinians Killed', color: '#991B1B' },
-            { val: '17,000+', sub: 'Children Killed', color: '#991B1B' },
-            { val: '$310B+', sub: 'Total U.S. Aid', color: '#92400E' },
-            { val: '14,000+', sub: 'U.S. Bombs Delivered', color: '#1E3A5F' },
-          ].map(({ val, sub, color }) => (
-            <div key={sub} className="p-3 rounded-sm border border-border bg-surface text-center">
-              <p className="font-display text-2xl md:text-3xl font-bold" style={{ color }}>{val}</p>
-              <p className="font-sans text-[0.6rem] font-semibold tracking-wider uppercase text-ink-faint mt-1">{sub}</p>
-            </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-6">
+          {LATEST_PUBLIC_RECORDS.map((record) => (
+            <a
+              key={record.label}
+              href={record.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 rounded-sm border border-border bg-surface text-center hover:border-crimson/40 transition-colors"
+              title={`${record.source}: ${record.note}`}
+            >
+              <p className="font-display text-2xl md:text-3xl font-bold text-crimson">{record.value}</p>
+              <p className="font-sans text-[0.6rem] font-semibold tracking-wider uppercase text-ink-faint mt-1 group-hover:text-crimson">{record.label}</p>
+            </a>
           ))}
         </div>
+        <p className="mt-3 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+          Latest public-record check: {formatVerified(DOSSIER_LAST_VERIFIED)}
+        </p>
       </header>
 
       {/* Live Counter */}
@@ -1060,12 +1316,14 @@ export default function IsraelDossierPage() {
       <div className="mb-12 p-5 border border-border rounded-sm bg-surface">
         <p className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink-muted mb-2">Editorial Note</p>
         <p className="font-body text-sm text-ink-muted leading-relaxed">
-          This page presents documented facts compiled from primary sources. Every figure links to its original source. Click any statistic card to expand it and see where the money went, what weapons were purchased, and what their documented impact has been. Where data is disputed or subject to methodological debate, we note it. This page takes no editorial position — it presents the documented record and lets the reader draw their own conclusions.
+          This page presents sourced public-record claims, reported figures, survey estimates, and analysis as separate evidence classes. Every figure links to its original source. Click any statistic card to expand it and see what the source can prove, what remains disputed, and where the public record stops. Reported casualty figures are attributed to the body that reported them; they are not presented as final adjudicated findings unless the cited source says so.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <DossierPDF />
         </div>
       </div>
+
+      <DossierSourceWorkbench records={sourceIndex} />
 
       {/* ═══════════════════════════════════════════════════════════
          HISTORICAL TIMELINE — From Balfour to Present
@@ -1076,7 +1334,7 @@ export default function IsraelDossierPage() {
           <h2 className="font-display text-2xl font-bold text-ink">Historical Timeline: 1917–Present</h2>
         </div>
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
-          A chronological record of key events from the Balfour Declaration to the present day. Every entry is sourced to primary documents.
+          A chronological record of key events from the Balfour Declaration to the present day. Every entry identifies its source class and links to the underlying record.
         </p>
         <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-6">
           {HISTORICAL_TIMELINE.length} documented events · Click any source to verify
@@ -1293,35 +1551,59 @@ export default function IsraelDossierPage() {
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
           The following incidents are documented through multiple independent sources including video evidence, forensic analysis, and official investigations. Each entry includes multimedia evidence links — videos, forensic reconstructions, and investigative reports you can verify yourself.
         </p>
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex flex-wrap gap-3 mb-5">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-red-100 dark:bg-red-950/30 text-red-800 dark:text-red-300">
-            {INCIDENTS.length} incidents documented
+            {allIncidents.length} deduped incidents documented
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-red-100 dark:bg-red-950/30 text-red-800 dark:text-red-300">
             {totalIncidentDeaths.toLocaleString()}+ killed in these incidents alone
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-green-100 dark:bg-green-950/30 text-green-800 dark:text-green-300">
-            All verified tier — multiple independent sources
+            {verifiedIncidentCount} verified · {allIncidents.length - verifiedIncidentCount} circumstantial / disputed-record entries
           </span>
         </div>
 
-        <div className="space-y-4">
-          {INCIDENTS.map((incident, i) => (
-            <IncidentCard key={i} incident={incident} />
-          ))}
+        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-[minmax(0,1fr)_180px]">
+          <label className="block">
+            <span className="sr-only">Search documented incidents</span>
+            <input
+              value={incidentQuery}
+              onChange={(event) => setIncidentQuery(event.target.value)}
+              placeholder="Search incidents, locations, evidence, or source language"
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
+            />
+          </label>
+          <label className="block">
+            <span className="sr-only">Filter incidents by evidence tier</span>
+            <select
+              value={incidentTier}
+              onChange={(event) => setIncidentTier(event.target.value as 'all' | DocumentedIncident['tier'])}
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
+            >
+              <option value="all">All evidence tiers</option>
+              <option value="verified">Verified only</option>
+              <option value="circumstantial">Circumstantial only</option>
+            </select>
+          </label>
+          <p className="md:col-span-2 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+            Showing {filteredIncidents.length} of {allIncidents.length}. Duplicate incident records are merged by date and location to avoid double-counting.
+          </p>
         </div>
 
-        {/* Expanded Incidents */}
-        <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted mt-10 mb-4">Additional Documented Incidents</h3>
         <div className="space-y-4">
-          {EXPANDED_INCIDENTS.map((incident, i) => (
-            <IncidentCard key={`exp-${i}`} incident={incident} />
+          {filteredIncidents.map((incident) => (
+            <IncidentCard key={`${incident.date}-${incident.location}-${incident.title}`} incident={incident} />
           ))}
+          {filteredIncidents.length === 0 && (
+            <div className="rounded-sm border border-border bg-surface p-5">
+              <p className="font-body text-sm text-ink-muted">No incidents match the current filters.</p>
+            </div>
+          )}
         </div>
 
         <div className="mt-6 p-4 border border-border rounded-sm bg-surface">
           <p className="font-body text-xs text-ink-muted italic leading-relaxed">
-            This is not an exhaustive list. Thousands of additional incidents have been documented by Airwars, OHCHR, Al Jazeera, and other monitoring organizations. These {INCIDENTS.length + EXPANDED_INCIDENTS.length} were selected for the strength and independence of their evidence.
+            This is not an exhaustive list. Thousands of additional incidents have been documented by Airwars, OHCHR, Al Jazeera, and other monitoring organizations. These {allIncidents.length} entries were selected for the strength and independence of their evidence.
             <a href="https://gaza-patterns-harm.airwars.org/" target="_blank" rel="noopener noreferrer" className="text-crimson hover:underline ml-1">
               View the Airwars Gaza Patterns of Harm database →
             </a>
@@ -1370,12 +1652,11 @@ export default function IsraelDossierPage() {
 
         {/* Key Photographic Evidence */}
         <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted mb-4">Key Photographic Evidence</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           {[
-            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/640px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg', alt: 'Destroyed residential tower in Gaza City', caption: 'Gaza City, 2024 — Residential tower destroyed by airstrike' },
-            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg/640px-Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg', alt: 'Dome of the Rock, Jerusalem', caption: 'Dome of the Rock — Epicenter of the territorial conflict' },
-            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_the_Red_Cross.svg/640px-Flag_of_the_Red_Cross.svg.png', alt: 'Red Cross emblem', caption: 'ICRC — Denied access to detainees and restricted in Gaza' },
-            { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Israeli_West-Bank_Barrier.jpg/640px-Israeli_West-Bank_Barrier.jpg', alt: 'Israeli West Bank separation barrier', caption: 'Separation barrier — Ruled illegal by ICJ in 2004' },
+            { src: DOSSIER_ASSETS.humanitarian, alt: 'Veritas Israel dossier humanitarian impact card', caption: 'Humanitarian impact — sourced casualty, displacement, and infrastructure records' },
+            { src: DOSSIER_ASSETS.legal, alt: 'Veritas Israel dossier international law card', caption: 'International law — ICJ, ICC, UN, and treaty-record source classes' },
+            { src: DOSSIER_ASSETS.financial, alt: 'Veritas Israel dossier U.S. aid card', caption: 'U.S. aid — CRS, Congress.gov, FEC, and OpenSecrets records' },
           ].map((img, i) => (
             <a key={i} href={img.src.replace('/thumb/', '/').replace(/\/\d+px-[^/]+$/, '')} target="_blank" rel="noopener noreferrer" className="group block rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-colors">
               <div className="aspect-[4/3] overflow-hidden bg-parchment-dark">

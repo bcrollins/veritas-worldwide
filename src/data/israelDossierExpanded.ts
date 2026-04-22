@@ -70,6 +70,14 @@ export interface LegalCase {
   status: 'decided' | 'pending' | 'ongoing'
 }
 
+const DOSSIER_ASSETS = {
+  financial: '/og/chapter-15.png',
+  humanitarian: '/og-image.png',
+  legal: '/og/chapter-16.png',
+  domestic: '/og/chapter-14.png',
+  source: '/og/chapter-29.png',
+} as const
+
 // ═══════════════════════════════════════════════════════════
 // HISTORICAL TIMELINE — From Balfour to Present
 // ═══════════════════════════════════════════════════════════
@@ -82,7 +90,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'The Avalon Project — The Balfour Declaration',
     sourceUrl: 'https://avalon.law.yale.edu/20th_century/balfour.asp',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Balfour_declaration_unmarked.jpg/440px-Balfour_declaration_unmarked.jpg',
+    imageUrl: DOSSIER_ASSETS.legal,
   },
   {
     year: '1947',
@@ -91,7 +99,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'United Nations General Assembly Resolution 181',
     sourceUrl: 'https://www.un.org/unispal/document/auto-insert-185393/',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/UN_Palestine_Partition_Versions_1947.jpg/440px-UN_Palestine_Partition_Versions_1947.jpg',
+    imageUrl: DOSSIER_ASSETS.legal,
   },
   {
     year: '1948',
@@ -100,7 +108,6 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'UN Conciliation Commission for Palestine, Final Report',
     sourceUrl: 'https://www.un.org/unispal/document/auto-insert-206564/',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flickr_-_Government_Press_Office_%28GPO%29_-_Arab_refugees.jpg/440px-Flickr_-_Government_Press_Office_%28GPO%29_-_Arab_refugees.jpg',
   },
   {
     year: '1967',
@@ -109,7 +116,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'UN Security Council Resolution 242',
     sourceUrl: 'https://digitallibrary.un.org/record/90717',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Six_Day_War_Territories.svg/440px-Six_Day_War_Territories.svg.png',
+    imageUrl: DOSSIER_ASSETS.legal,
   },
   {
     year: '1967',
@@ -118,7 +125,6 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'U.S. State Department FRUS, Vol. XIX, Document 284',
     sourceUrl: 'https://history.state.gov/historicaldocuments/frus1964-68v19/d284',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28NH_97379%29.jpg/440px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28NH_97379%29.jpg',
   },
   {
     year: '1978',
@@ -135,7 +141,6 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'Kahan Commission Report (Israeli government)',
     sourceUrl: 'https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Sabra_and_Shatila_massacre.jpg/440px-Sabra_and_Shatila_massacre.jpg',
   },
   {
     year: '1987',
@@ -160,7 +165,6 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
     source: 'International Court of Justice, Advisory Opinion',
     sourceUrl: 'https://www.icj-cij.org/case/131',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Israeli_West-Bank_Barrier.jpg/640px-Israeli_West-Bank_Barrier.jpg',
   },
   {
     year: '2007',
@@ -205,7 +209,7 @@ export const HISTORICAL_TIMELINE: TimelineEvent[] = [
   {
     year: '2023',
     title: 'October 7 Attack and Gaza War Begins',
-    description: 'Hamas and other Palestinian armed groups launch a surprise attack on southern Israel, killing approximately 1,139 Israelis and foreign nationals and taking 251 hostages. Israel declares war and begins a military campaign in Gaza that, as of March 2026, has killed over 75,000 Palestinians.',
+    description: 'Hamas and other Palestinian armed groups launch a surprise attack on southern Israel, killing approximately 1,139 Israelis and foreign nationals and taking 251 hostages. Israel declares war and begins a military campaign in Gaza; OCHA\'s 1 April 2026 snapshot attributed 72,289 reported Palestinian fatalities in Gaza to MoH Gaza, while survey-based estimates and identified-fatality breakdowns use different methods.',
     source: 'Israeli Ministry of Foreign Affairs / Gaza MoH / Lancet',
     sourceUrl: 'https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext',
     tier: 'verified',
@@ -240,7 +244,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     ],
     tier: 'verified',
     casualties: { killed: 120, injured: 280 },
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/640px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: Al-Ahli Arab Hospital ───
   {
@@ -276,7 +280,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'photo-essay', label: 'Satellite before/after imagery of all 12 campuses', url: 'https://euromedmonitor.org/en/article/6129' },
     ],
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/640px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: Destruction of Al-Shifa Hospital ───
   {
@@ -315,7 +319,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'document', label: 'IPC Famine Review Committee Report', url: 'https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1157345/' },
     ],
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/UNRWA_school_in_Gaza.jpg/640px-UNRWA_school_in_Gaza.jpg',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: Killing of Journalist Shireen Abu Akleh ───
   {
@@ -422,7 +426,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'investigation', label: '+972 Magazine — Full investigation with officer testimony', url: 'https://www.972mag.com/lavender-ai-israeli-army-gaza/' },
     ],
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/640px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
   },
   // ─── NEW INCIDENT: White Phosphorus ───
   {
@@ -439,7 +443,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
       { type: 'video', label: 'HRW — Video analysis of white phosphorus airburst', url: 'https://www.hrw.org/news/2023/10/12/israel-white-phosphorus-used-gaza-lebanon' },
     ],
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_the_Red_Cross.svg/640px-Flag_of_the_Red_Cross.svg.png',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
   },
 ]
 
@@ -542,33 +546,33 @@ export const EXPANDED_STATS: StatCard[] = [
     category: 'infrastructure',
     lastVerified: '2026-03-24',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg/640px-Dome_of_the_Rock%2C_Temple_Mount%2C_Jerusalem.jpg',
+    imageUrl: DOSSIER_ASSETS.legal,
   },
   {
-    value: '610+',
-    label: 'Healthcare workers killed in Gaza',
-    source: 'WHO Surveillance System for Attacks on Health Care',
-    sourceUrl: 'https://extranet.who.int/ssa/Index.aspx',
+    value: '>1,700',
+    label: 'Health workers reported killed in Gaza',
+    source: 'OCHA Reported Impact Snapshot, 1 Apr. 2026',
+    sourceUrl: 'https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
     category: 'infrastructure',
-    lastVerified: '2026-03-24',
+    lastVerified: '2026-04-22',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_the_Red_Cross.svg/640px-Flag_of_the_Red_Cross.svg.png',
+    imageUrl: DOSSIER_ASSETS.humanitarian,
     details: [
-      { title: 'Hospital attacks', text: 'WHO documented 900+ attacks on healthcare facilities in Gaza. All 36 hospitals in Gaza have been damaged; fewer than 10 remain partially functional.' },
-      { title: 'Ambulance attacks', text: 'Over 120 ambulances have been damaged or destroyed. PRCS reported multiple incidents of ambulances being directly targeted while responding to emergencies.' },
+      { title: 'Source boundary', text: 'OCHA attributes this figure to the Gaza Ministry of Health as of 7 October 2025. It is a reported figure and should be cited with attribution.' },
+      { title: 'Health system context', text: 'The same OCHA snapshot reports that Gaza health services remain mostly partial or non-functional, with no normal hospital capacity restored.' },
     ],
   },
   {
-    value: '80%',
-    label: 'Of Gaza\'s housing damaged or destroyed',
-    source: 'UNOSAT satellite damage assessment',
-    sourceUrl: 'https://unosat.org/products/',
+    value: '320,600+',
+    label: 'Housing units estimated damaged in Gaza',
+    source: 'OCHA / UNOSAT satellite damage assessment',
+    sourceUrl: 'https://www.ochaopt.org/content/humanitarian-situation-report-10-april-2026',
     category: 'infrastructure',
-    lastVerified: '2026-03-24',
+    lastVerified: '2026-04-22',
     tier: 'verified',
     details: [
-      { title: 'Scale of destruction', text: 'UNOSAT analysis found that more than 50% of all structures in Gaza have been destroyed or severely damaged — representing the highest destruction rate documented in any modern conflict.' },
-      { title: 'Rebuilding timeline', text: 'UNDP estimates it would take 80 years to rebuild Gaza\'s housing at pre-war construction rates, assuming the blockade is lifted and materials can enter.' },
+      { title: 'Scale of damage', text: 'OCHA cites UNOSAT satellite imagery analysis estimating more than 320,600 damaged housing units as of 11 October 2025.' },
+      { title: 'Assessment status', text: 'Shelter Cluster partners began further damage assessments in December 2025 to quantify repair needs and prioritize response.' },
     ],
   },
   {
@@ -603,7 +607,7 @@ export const EXPANDED_STATS: StatCard[] = [
     category: 'domestic',
     lastVerified: '2026-03-24',
     tier: 'verified',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/United_States_Capitol_-_west_front.jpg/640px-United_States_Capitol_-_west_front.jpg',
+    imageUrl: DOSSIER_ASSETS.domestic,
     details: [
       { title: 'AIPAC\'s first Super PAC', text: 'In 2022, AIPAC launched the United Democracy Project — its first-ever Super PAC. It immediately became one of the largest spenders in U.S. politics, spending $41.7M in 2024 Democratic primaries alone.' },
       { title: 'Primary defeats', text: 'AIPAC-backed challengers defeated progressive incumbents Jamaal Bowman (NY-16, $14.5M spent) and Cori Bush (MO-1, $8.5M spent) — two vocal critics of U.S. military aid to Israel.' },
@@ -620,17 +624,17 @@ export const EXPANDED_STATS: StatCard[] = [
     tier: 'verified',
   },
   {
-    value: '$310B',
-    label: 'U.S. aid to Israel vs. $0 in universal healthcare for Americans',
+    value: '$298B',
+    label: 'Inflation-adjusted U.S. aid obligations to Israel',
     source: 'Congressional Research Service RL33222',
     sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
     category: 'comparative',
-    lastVerified: '2026-03-24',
+    lastVerified: '2026-04-22',
     tier: 'verified',
-    note: 'Israel provides universal healthcare to all citizens, partially enabled by U.S. military aid offsetting defense costs',
+    note: 'CRS estimate for 1946-2024 in constant 2024 dollars',
     details: [
-      { title: 'The comparison', text: 'The U.S. has provided $310B+ in aid to Israel since 1948, helping subsidize Israel\'s universal healthcare, free university education for veterans, and extensive social safety net — benefits that American taxpayers themselves do not receive.' },
-      { title: 'What $310B could fund domestically', text: 'The Congressional Budget Office estimated universal pre-K for all American children would cost $250B over 10 years. The total U.S. aid to Israel over its lifetime exceeds the cost of providing clean water infrastructure to every American community.' },
+      { title: 'The comparison', text: 'CRS identifies Israel as the largest cumulative recipient of U.S. foreign assistance since World War II and estimates $298B in inflation-adjusted obligations from 1946 through 2024.' },
+      { title: 'Budget context', text: 'Comparisons to domestic programs are analytical, not proof that one appropriation directly displaced another. Keep this figure tied to CRS and avoid presenting it as a causal claim about any specific U.S. program.' },
     ],
   },
 ]
@@ -652,33 +656,33 @@ export interface CarouselSlide {
 export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'The Israel Dossier',
-    body: 'Every dollar traced. Every statistic sourced. Every incident documented.\n\nSwipe to see what your government doesn\'t want you to know.',
+    body: 'Every dollar traced. Every statistic sourced. Every incident documented.\n\nSwipe through the public record, then inspect the sources yourself.',
     source: 'Veritas Worldwide',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'dark',
   },
   {
-    headline: '$310 BILLION',
-    stat: '$310B+',
-    body: 'Total U.S. taxpayer money sent to Israel since 1948. The largest cumulative recipient of U.S. foreign aid in history.',
+    headline: '$298 BILLION',
+    stat: '$298B',
+    body: 'CRS estimates U.S. aid obligations to Israel at $298B in constant 2024 dollars from 1946 through 2024.',
     source: 'Congressional Research Service, Report RL33222',
     sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
     bgStyle: 'stat',
   },
   {
-    headline: '75,000+ Palestinians Killed',
-    stat: '75,000+',
-    body: 'Since October 7, 2023. Independent Lancet survey found 35% higher death toll than official counts. 70% of verified deaths were women and children.',
-    source: 'The Lancet Global Health (2025)',
-    sourceUrl: 'https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext',
+    headline: '72,289+ Reported Fatalities',
+    stat: '72,289+',
+    body: 'OCHA\'s 1 April 2026 snapshot attributed 72,289 reported Palestinian fatalities in Gaza to MoH Gaza. The UN separately notes source attribution and verification boundaries.',
+    source: 'OCHA Reported Impact Snapshot',
+    sourceUrl: 'https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
     bgStyle: 'crimson',
   },
   {
-    headline: '17,000+ Children',
-    stat: '17,000+',
-    body: 'More children killed in Gaza since October 2023 than in all the world\'s conflict zones combined over the previous four years.',
-    source: 'UNICEF',
-    sourceUrl: 'https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip',
+    headline: '21,289+ Children Reported Killed',
+    stat: '21,289+',
+    body: 'UNICEF reported at least 21,289 children killed and 44,500 injured in Gaza through 3 February 2026.',
+    source: 'UNICEF State of Palestine health update',
+    sourceUrl: 'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
     bgStyle: 'dark',
   },
   {
@@ -691,36 +695,36 @@ export const ISRAEL_DOSSIER_CAROUSEL: CarouselSlide[] = [
   {
     headline: 'The World\'s Courts Have Ruled',
     stat: 'UNLAWFUL',
-    body: 'ICJ: Occupation is illegal. ICC: Arrest warrants for Netanyahu. ICJ: Apartheid policies confirmed.\n\nThe U.S. vetoed 51+ UNSC resolutions to shield Israel from accountability.',
+    body: 'ICJ: Israel\'s continued presence in the occupied Palestinian territory is unlawful. ICC: arrest warrants issued for Netanyahu and Gallant.\n\nRead the court records, not the slogans.',
     source: 'ICJ / ICC official records',
     sourceUrl: 'https://www.icj-cij.org/node/204176',
     bgStyle: 'stat',
   },
   {
-    headline: '$180M to Buy Congress',
+    headline: '$180M+ Lobby Spending Record',
     stat: '$180M+',
-    body: 'The pro-Israel lobby spent $180M+ in the 2024 election cycle. AIPAC\'s Super PAC defeated two sitting members of Congress who criticized Israel — spending $23M against them.',
+    body: 'The pro-Israel lobby spent $180M+ in the 2024 election cycle. The record is documented through FEC filings and OpenSecrets aggregation.',
     source: 'OpenSecrets / FEC filings',
     sourceUrl: 'https://www.opensecrets.org/industries/indus?ind=Q05',
     bgStyle: 'crimson',
   },
   {
-    headline: 'AI Decides Who Dies',
-    body: '"Lavender" — an AI system that flagged 37,000 Palestinians as targets with 20 seconds of human review. "Where\'s Daddy?" — tracked targets to their family homes for nighttime strikes.',
+    headline: 'AI-Assisted Targeting Claims',
+    body: 'Israeli intelligence sources described "Lavender" and "Where\'s Daddy?" to +972 Magazine and The Guardian. The dossier labels those claims by source and confidence level.',
     source: '+972 Magazine (six IDF intelligence officers)',
     sourceUrl: 'https://www.972mag.com/lavender-ai-israeli-army-gaza/',
     bgStyle: 'dark',
   },
   {
-    headline: 'Every University Destroyed',
-    body: 'All 12 universities in Gaza demolished. 80% of housing destroyed. 176 mosques, 3 churches, and 36 hospitals damaged. Famine declared. 1.9 million displaced.\n\nThis is what $310 billion bought.',
+    headline: 'Infrastructure Losses',
+    body: 'Education, housing, health, water, and food systems are tracked through UN agencies, satellite assessments, and humanitarian updates.\n\nThe source class matters as much as the number.',
     source: 'UNESCO / UNOSAT / IPC',
     sourceUrl: 'https://www.unesco.org/en/gaza/education',
     bgStyle: 'light',
   },
   {
     headline: 'Read the Full Dossier',
-    body: 'Every statistic sourced to government records, UN agencies, and verified reporting.\n\nNo opinion. No spin. Just the documented record.\n\nveritasworldwide.com/israel-dossier',
+    body: 'Every statistic linked. Every source class labeled. Reported figures, estimates, court records, and analysis are kept separate.\n\nveritasworldwide.com/israel-dossier',
     source: 'Veritas Worldwide',
     sourceUrl: 'https://veritasworldwide.com/israel-dossier',
     bgStyle: 'crimson',
@@ -746,9 +750,9 @@ export const PINNED_POSTS: PinnedPostData[] = [
   {
     id: 'pinned-dossier',
     title: 'THE ISRAEL DOSSIER',
-    subtitle: 'Every dollar traced. Every life counted. Every source linked.',
-    stat: '$310B',
-    statLabel: 'of your money. Exposed.',
+    subtitle: 'Every dollar traced. Every casualty figure sourced. Every source linked.',
+    stat: '$298B',
+    statLabel: 'inflation-adjusted U.S. aid obligations.',
     cta: 'READ THE EVIDENCE',
     url: 'veritasworldwide.com/israel-dossier',
     bgStyle: 'dark-crimson',

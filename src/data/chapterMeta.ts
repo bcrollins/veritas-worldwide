@@ -194,11 +194,11 @@ const rawChapterMeta: ChapterMetadata[] = [
     id: "chapter-15",
     number: "Chapter 15",
     title: "U.S. Foreign Aid to Israel",
-    subtitle: "A comprehensive accounting of American taxpayer money sent to Israel — totaling over $300 billion in inflation-adjusted terms — and the legal framework that enables it.",
+    subtitle: "A sourced accounting of U.S. aid obligations to Israel, including CRS's $298 billion constant-dollar total for 1946-2024 and the legal framework that enables it.",
     dateRange: "1948–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Israeli_F-16s_at_Red_Flag.jpg/1280px-Israeli_F-16s_at_Red_Flag.jpg",
+    heroImage: "/og/chapter-15.png",
     keywords: ["foreign aid", "Israel", "military aid", "taxpayer", "MOU", "defense"],
   },
   {

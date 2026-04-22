@@ -1,7 +1,15 @@
 {
-  "run": 22,
-  "date": "2026-04-07",
+  "run": 23,
+  "date": "2026-04-22",
   "site": [
+    {
+      "feature": "Israel Dossier",
+      "composite": 8.1,
+      "previous": 6.8,
+      "delta": 1.3,
+      "status": "improved locally; awaiting production deploy verification",
+      "plus_half_requires": "Live-verify the deployed `/israel-dossier` source workbench and refreshed figures, then consolidate the page/PDF/carousel/chapter source data into one canonical module with automated route-level regression coverage."
+    },
     {
       "feature": "Home / Front Page",
       "composite": 8.3,

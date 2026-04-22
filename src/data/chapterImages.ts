@@ -152,10 +152,10 @@ const rawChapterImages: Record<string, ChapterImage[]> = {
   ],
   'chapter-15': [
     {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Israeli_F-16s_at_Red_Flag.jpg/1280px-Israeli_F-16s_at_Red_Flag.jpg',
-      alt: 'Israeli Air Force F-16 fighter jets — purchased with U.S. foreign military financing',
-      caption: 'Israeli Air Force F-16 Fighting Falcons. The United States has provided over $300 billion in inflation-adjusted aid to Israel since 1948 — the largest cumulative recipient of U.S. foreign assistance.',
-      credit: 'Photo: U.S. Air Force, Public Domain',
+      src: '/og/chapter-15.png',
+      alt: 'Veritas chapter card for U.S. foreign aid to Israel',
+      caption: 'CRS reports that Israel is the largest cumulative recipient of U.S. foreign assistance since World War II, with $298 billion in constant 2024 dollars obligated from 1946 through 2024.',
+      credit: 'Veritas Worldwide',
     },
   ],
   'chapter-16': [

@@ -1,4 +1,10 @@
-# Veritas Audit Queue — 2026-04-08
+# Veritas Audit Queue — 2026-04-22
+
+- [x] P1 — Expanded the manuscript/course surface in a first April 22 increment: added Chapter 29, registered the evidence-methods topic hub, deepened Institute course/manual summaries, corrected route counts, fixed the HubSpot script URL, added a global mobile overflow guard, and pushed `f9bb7a6`. Production advanced to `f9bb7a6` during the run.
+- [x] P1 — Rebuilt the Israel dossier local experience around source-first public records: added a searchable Source Workbench, deduplicated incident filtering, refreshed CRS/OCHA/UNICEF/CPJ figures, tightened attribution language across page/PDF/carousel/chapter-15, and replaced brittle Wikimedia thumbnail dependencies with local OG assets.
+- [x] P1 — Verified the Israel dossier enhancement locally with `npx tsc --noEmit`, `npm run build`, `npm run verify:bundle`, `npm run verify:sources`, Twitterbot/crawler metadata checks, six-viewport Playwright screenshots, source/incident interaction tests, slow-3G, and blocked-image resilience checks.
+- [P1] Live-verify `/israel-dossier` after the next deploy advances beyond `f9bb7a6`; confirm the new source workbench, refreshed figures, local imagery, canonical/OG metadata, and mobile no-overflow state are visible on production.
+- [P2] Consolidate Israel dossier source data into one structured module so the page, PDF, carousel, source workbench, and associated chapter references cannot drift again.
 
 - [x] P1 — Replaced the active operating canon in `VERITAS-PERFECTION-ENGINE.md` with the superseding v15.0 master directive supplied on April 8, 2026. Publication canon versus rights-package canon is explicit again, trust-first growth is the governing standard, and the prior prompt-level Institute AI exception is no longer active canon.
 - [x] P1 — Closed the route-canon drift around `/about` and `/content-packs`: replaced the fabricated `AboutPage.tsx` newsroom copy with a truthful publication overview, wired `/about` into `src/App.tsx`, added `/about` to prerender coverage, and added `/content-packs` as a compatibility alias to the canonical `/content-pack` route so trust links and verification memory no longer point at dead surfaces.

@@ -151,10 +151,10 @@ export default function DossierPDF() {
 
       // Key numbers
       const nums = [
-        { v: '$310B+', l: 'Total U.S. Aid' },
-        { v: '75,000+', l: 'Palestinians Killed' },
-        { v: '17,000+', l: 'Children Killed' },
-        { v: '14,000+', l: 'Bombs Delivered' },
+        { v: '$298B', l: 'Inflation-adjusted aid' },
+        { v: '72,289+', l: 'Reported Gaza fatalities' },
+        { v: '21,289+', l: 'Children reported killed' },
+        { v: '261+', l: 'Journalists/media workers' },
       ]
       let nx = ML + 5
       nums.forEach(n => {
@@ -172,7 +172,7 @@ export default function DossierPDF() {
       // Date
       doc.setFontSize(9)
       doc.setTextColor(120, 120, 120)
-      doc.text('March 2026 Edition', W / 2, 250, { align: 'center' })
+      doc.text('April 2026 Edition', W / 2, 250, { align: 'center' })
       doc.text('veritasworldwide.com/israel-dossier', W / 2, 258, { align: 'center' })
 
       // ══════════════════════════════════════════════
@@ -211,7 +211,7 @@ export default function DossierPDF() {
       // ══════════════════════════════════════════════
       newPage()
       addTitle('Editorial Note', 14)
-      addBody('This document presents facts compiled from primary sources. Every figure is sourced to its original document. Where data is disputed or subject to methodological debate, this is noted. This document takes no editorial position — it presents the documented record and invites the reader to draw their own conclusions.')
+      addBody('This document presents sourced public-record claims, reported figures, survey estimates, and analysis as separate evidence classes. Every figure is sourced to its original document. Where data is disputed or subject to methodological debate, this is noted. Reported casualty figures are attributed to the body that reported them; they are not presented as final adjudicated findings unless the cited source says so.')
       addBody('Sources include: Congressional Research Service, UN OCHA, International Court of Justice, Committee to Protect Journalists, B\'Tselem, OHCHR, The Lancet, SIPRI, UNICEF, WHO, Forensic Architecture, and established investigative journalism outlets.')
       addRule()
 
@@ -221,19 +221,19 @@ export default function DossierPDF() {
       addSectionHeader('I. Key Statistics')
 
       const keyStats = [
-        { v: '$310B+', l: 'Total U.S. aid to Israel (inflation-adjusted, 1948–2024)', s: 'Congressional Research Service, Report RL33222' },
+        { v: '$298B', l: 'Inflation-adjusted U.S. aid obligations to Israel (1946–2024)', s: 'Congressional Research Service, Report RL33222' },
         { v: '$3.8B/year', l: 'Annual U.S. military aid under 2016 MOU (FY2019–FY2028)', s: 'U.S. State Department, 10-Year MOU' },
         { v: '$26.4B', l: 'Emergency supplemental aid package signed April 2024', s: 'U.S. Congress, H.R.815' },
-        { v: '75,000+', l: 'Palestinians killed in Gaza since October 7, 2023', s: 'The Lancet Global Health (2025)' },
-        { v: '17,000+', l: 'Children killed in Gaza', s: 'UNICEF' },
+        { v: '72,289+', l: 'Reported Palestinian fatalities in Gaza as of 1 Apr. 2026', s: 'OCHA snapshot, attributed to MoH Gaza' },
+        { v: '21,289+', l: 'Children reported killed in Gaza through 3 Feb. 2026', s: 'UNICEF State of Palestine health update' },
         { v: '14,000+', l: 'MK-84 2,000-pound bombs supplied by U.S. to Israel', s: 'Wall Street Journal / NYT investigation' },
-        { v: '254+', l: 'Journalists killed — highest in any conflict since CPJ began tracking', s: 'Committee to Protect Journalists' },
+        { v: '261+', l: 'Journalists and media workers among those killed since Oct. 7, 2023', s: 'Committee to Protect Journalists' },
         { v: '1.9M', l: 'Palestinians displaced — 90% of Gaza\'s population', s: 'UNRWA' },
         { v: 'Unlawful', l: 'ICJ ruled Israel\'s occupation of Palestinian territory illegal (July 2024)', s: 'International Court of Justice' },
         { v: '51+', l: 'U.S. vetoes shielding Israel from UN Security Council resolutions', s: 'UNSC records' },
         { v: '$180M+', l: 'Pro-Israel lobby spending in 2024 U.S. elections', s: 'OpenSecrets' },
-        { v: '80%', l: 'Of Gaza\'s housing damaged or destroyed', s: 'UNOSAT' },
-        { v: '610+', l: 'Healthcare workers killed in Gaza', s: 'WHO' },
+        { v: '320,600+', l: 'Housing units estimated damaged in Gaza', s: 'OCHA / UNOSAT' },
+        { v: '>1,700', l: 'Health workers reported killed in Gaza', s: 'OCHA snapshot, attributed to MoH Gaza' },
         { v: '230+', l: 'UNRWA staff killed — highest UN death toll in any conflict', s: 'UNRWA' },
         { v: '12/12', l: 'Universities in Gaza destroyed', s: 'Euro-Med / UNESCO' },
       ]
@@ -262,7 +262,7 @@ export default function DossierPDF() {
         { yr: '2018', ev: 'Great March of Return — Israeli snipers kill 223 protesters' },
         { yr: '2021', ev: 'Human Rights Watch publishes apartheid finding' },
         { yr: '2023', ev: 'October 7 attack kills ~1,139 Israelis. Israel launches war on Gaza.' },
-        { yr: '2024', ev: 'ICJ: plausible genocide. ICJ: occupation illegal. ICC: arrest warrants for Netanyahu.' },
+        { yr: '2024', ev: 'ICJ orders provisional measures in South Africa v. Israel; ICJ advisory opinion says Israel\'s continued presence in the occupied Palestinian territory is unlawful; ICC issues arrest warrants for Netanyahu and Gallant.' },
       ]
       timeline.forEach(t => {
         checkSpace(10)
@@ -294,7 +294,7 @@ export default function DossierPDF() {
         { t: 'Jabalia Refugee Camp — 120+ killed by airstrikes on camp (Oct 31, 2023+)', s: 'CNN / Euro-Med Monitor' },
         { t: 'Al-Shifa Hospital Siege — 400+ killed in two raids (Nov 2023 - Mar 2024)', s: 'Washington Post / WHO / BBC' },
         { t: 'Deliberate Starvation — Famine declared, aid blocked (2024-ongoing)', s: 'IPC / WFP / MSF / Reuters' },
-        { t: 'Shireen Abu Akleh — Journalist assassinated in Jenin (May 11, 2022)', s: 'CNN / OHCHR / Washington Post' },
+        { t: 'Shireen Abu Akleh — Journalist killed in Jenin (May 11, 2022)', s: 'CNN / OHCHR / Washington Post' },
         { t: 'Tent Camp Strikes — 85+ killed in "safe zone" camps (May-Sep 2024)', s: 'Amnesty / BBC / Al Jazeera' },
         { t: 'UNRWA Staff — 230+ UN workers killed, facilities struck 500+ times', s: 'UNRWA / UN News' },
         { t: '"Lavender" AI Targeting — 37,000 targets, 20 seconds of review each', s: '+972 Magazine / The Guardian' },
