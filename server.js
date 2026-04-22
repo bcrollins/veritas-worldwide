@@ -907,7 +907,7 @@ app.get('/api/build-info', (req, res) => {
     replicaRegion: process.env.RAILWAY_REPLICA_REGION || '',
     distIndexLastModified,
     chapterDataGeneratedAt: chapterDataManifest.generatedAt || '',
-    previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
+    previewBlockLimit: chapterDataManifest.previewBlockLimit ?? 3,
     publicChapterCount: publicChapterIndex.length,
     prerenderedRouteCount: Object.keys(prerenderManifest).length,
     entryAssets: getDistEntryAssets(),
