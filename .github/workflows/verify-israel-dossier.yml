@@ -46,9 +46,10 @@ jobs:
       DATABASE_URL: ''
       JWT_SECRET: ci-veritas-israel-dossier
       PORT: '4382'
-      SOURCE_LINK_CONCURRENCY: '10'
+      SOURCE_LINK_CONCURRENCY: '6'
+      SOURCE_LINK_RETRIES: '3'
       SOURCE_LINK_STRICT: '1'
-      SOURCE_LINK_TIMEOUT_MS: '20000'
+      SOURCE_LINK_TIMEOUT_MS: '45000'
 
     steps:
       - name: Checkout
