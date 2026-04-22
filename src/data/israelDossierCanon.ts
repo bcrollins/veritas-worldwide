@@ -157,9 +157,26 @@ export interface DossierBriefingSourceRow {
   sourceLabel: string
   sourceUrl: string
   workbookPath: string
+  referenceLocator: string
   proof: string
   proofBoundary: string
+  archiveLookupUrl: string
+  sourceCopyStatus: string
 }
+
+type DossierBriefingSourceRowInput = Omit<DossierBriefingSourceRow, 'archiveLookupUrl' | 'sourceCopyStatus'>
+
+const REMOTE_SOURCE_COPY_PENDING =
+  'Remote primary source verified; archive lookup supplied for capture or pinning before final publication.'
+
+const makeArchiveLookupUrl = (sourceUrl: string) => `https://web.archive.org/web/*/${sourceUrl}`
+
+const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>
+  sourceRows.map((row) => ({
+    ...row,
+    archiveLookupUrl: makeArchiveLookupUrl(row.sourceUrl),
+    sourceCopyStatus: REMOTE_SOURCE_COPY_PENDING,
+  }))
 
 export interface DossierBriefingChapterStep {
   id: string
@@ -1628,7 +1645,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
         'Do not merge constant-dollar CRS totals with current-dollar figures, and do not treat appropriations language as a delivery log without a separate delivery or end-use record.',
       unsafeWording: 'Do not write that a specific death was paid for by a specific appropriation unless a delivery/end-use source proves that chain.',
       nextCheck: 'Attach delivery and end-use records before moving from funding scale to weapon-specific causation.',
-      sourceRows: [
+      sourceRows: withBriefingSourceRows([
         {
           id: 'SRC-P-001',
           label: 'CRS constant-dollar aid obligations',
@@ -1638,6 +1655,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'Congressional Research Service RL33222',
           sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
           workbookPath: '/israel-dossier/workbooks/source-ledger-populated.csv',
+          referenceLocator: 'CRS RL33222 product page and current report PDF; cumulative aid estimate summary/table for 1946-2024.',
           proof: 'CRS estimates inflation-adjusted U.S. aid obligations to Israel at $298B from 1946 through 2024.',
           proofBoundary: 'Supports the CRS estimate only; does not prove direct displacement of any specific domestic program.',
         },
@@ -1650,6 +1668,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'Congressional Research Service RL33222',
           sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
           workbookPath: '/israel-dossier/workbooks/aid-ledger-populated.csv',
+          referenceLocator: 'CRS RL33222 current report PDF; aid-obligations row carried into the populated aid ledger.',
           proof: 'Aid ledger records the $298B constant-2024-dollar cumulative obligations figure as the financial floor.',
           proofBoundary: 'Inflation-adjusted obligations estimate only; not a delivery log or incident-causation record.',
         },
@@ -1662,6 +1681,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'Congressional Research Service RL33222',
           sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
           workbookPath: '/israel-dossier/workbooks/aid-ledger-populated.csv',
+          referenceLocator: 'CRS RL33222 current report PDF; 2016 10-year security assistance MOU discussion.',
           proof: 'The 2016 MOU sets a $3.8B annual military-aid baseline for FY2019-FY2028.',
           proofBoundary: 'Annual baseline under the MOU; supplemental funds and weapon-specific deliveries require separate rows.',
         },
@@ -1674,10 +1694,11 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'H.R.815 Israel Security Supplemental',
           sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
           workbookPath: '/israel-dossier/workbooks/aid-ledger-populated.csv',
+          referenceLocator: 'Congress.gov H.R.815 record; enacted bill text and Israel Security Supplemental appropriations actions.',
           proof: 'H.R.815 added a $26.4B Israel security supplemental in April 2024.',
           proofBoundary: 'Signed supplemental package; not proof of individual deliveries, end use, or specific incident causation.',
         },
-      ],
+      ]),
     },
     {
       id: 'humanitarian-attribution',
@@ -1698,7 +1719,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
         'Reported figures are not final adjudicated findings. Survey estimates are not live administrative counts. OHCHR sample findings should not be generalized beyond the sample unless the source does so.',
       unsafeWording: 'Do not strip the OCHA/MoH attribution chain or present the Lancet survey estimate as a live death-count update.',
       nextCheck: 'Refresh every reported figure before publication and preserve date ranges in prose, captions, and metadata.',
-      sourceRows: [
+      sourceRows: withBriefingSourceRows([
         {
           id: 'HUM-P-001',
           label: 'OCHA reported fatality figure',
@@ -1708,6 +1729,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'OCHA reported impact snapshot',
           sourceUrl: 'https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026',
           workbookPath: '/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+          referenceLocator: 'OCHA reported impact snapshot for Gaza Strip, 1 April 2026; reported impact table and attribution notes.',
           proof: 'OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.',
           proofBoundary: 'Reported figure with attribution chain; not independent verification of every death record.',
         },
@@ -1718,8 +1740,9 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           statusLabel: 'Reported',
           dateRange: '7 Oct. 2023-3 Feb. 2026',
           sourceLabel: 'UNICEF humanitarian update',
-          sourceUrl: 'https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
+          sourceUrl: 'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
           workbookPath: '/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+          referenceLocator: 'UNICEF State of Palestine Humanitarian Situation Update, 5 February 2026; child fatality figure through 3 February 2026.',
           proof: 'UNICEF reported 21,289 children killed in Gaza through 3 February 2026.',
           proofBoundary: 'Reported figure and date range; not a court finding.',
         },
@@ -1730,8 +1753,9 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           statusLabel: 'Reported',
           dateRange: '7 Oct. 2023-3 Feb. 2026',
           sourceLabel: 'UNICEF humanitarian update',
-          sourceUrl: 'https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
+          sourceUrl: 'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
           workbookPath: '/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+          referenceLocator: 'UNICEF State of Palestine Humanitarian Situation Update, 5 February 2026; child injury figure through 3 February 2026.',
           proof: 'UNICEF reported 44,500 injured children in Gaza through 3 February 2026.',
           proofBoundary: 'Reported injury figure with source/date boundary; it should stay paired with the UNICEF date range.',
         },
@@ -1744,6 +1768,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'The Lancet Global Health',
           sourceUrl: 'https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext',
           workbookPath: '/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+          referenceLocator: 'The Lancet Global Health article; mortality-estimate results and methods sections.',
           proof: 'A Lancet Global Health survey estimated 75,200 violent deaths through 5 January 2025.',
           proofBoundary: 'Survey estimate with method limits; not a live administrative count.',
         },
@@ -1756,10 +1781,11 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'OHCHR Gaza update report',
           sourceUrl: 'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf',
           workbookPath: '/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+          referenceLocator: 'OHCHR Gaza update report, 6 November 2024; verified fatalities in homes and residential buildings sample.',
           proof: 'OHCHR reported that 70% of verified fatalities in homes and residential buildings were women and children.',
           proofBoundary: "Applies to OHCHR's verified residential-building sample only; keep the denominator visible.",
         },
-      ],
+      ]),
     },
     {
       id: 'incident-matrix',
@@ -1780,7 +1806,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
         'A reconstruction or incident report is not a final criminal finding. Attribute disputed details and avoid turning source analysis into individual culpability unless a competent authority has made that finding.',
       unsafeWording: 'Do not write individual criminal liability, intent, or final legal classification from incident rows alone.',
       nextCheck: 'Add exact paragraph references, archived source copies, and any official investigative findings before escalating language.',
-      sourceRows: [
+      sourceRows: withBriefingSourceRows([
         {
           id: 'INC-P-001',
           label: 'Hind Rajab killing reconstruction',
@@ -1790,6 +1816,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'Forensic Architecture',
           sourceUrl: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab',
           workbookPath: '/israel-dossier/workbooks/incident-evidence-populated.csv',
+          referenceLocator: 'Forensic Architecture Hind Rajab investigation page; reconstruction findings and evidence sections.',
           proof: 'Forensic Architecture reconstructed the killing of Hind Rajab and reported evidence of fire at close range.',
           proofBoundary: 'Supports forensic-reconstruction language; does not establish individual criminal liability by itself.',
         },
@@ -1802,6 +1829,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'World Central Kitchen',
           sourceUrl: 'https://wck.org/news/gaza-team-update/',
           workbookPath: '/israel-dossier/workbooks/incident-evidence-populated.csv',
+          referenceLocator: 'World Central Kitchen Gaza team update, 2 April 2024; convoy-strike casualty and team-account section.',
           proof: 'World Central Kitchen said seven aid workers were killed after its convoy was struck in Gaza.',
           proofBoundary: "Supports WCK's account and casualty count; motive and legal classification require separate records.",
         },
@@ -1814,6 +1842,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'OHCHR',
           sourceUrl: 'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf',
           workbookPath: '/israel-dossier/workbooks/incident-evidence-populated.csv',
+          referenceLocator: 'OHCHR Gaza update report, 6 November 2024; residential-building fatality sample and denominator.',
           proof: 'OHCHR reported that women and children made up 70% of verified fatalities in homes and residential buildings in its sample.',
           proofBoundary: 'Sample scope and denominator must remain visible; do not apply the sample figure to all fatalities without qualifier.',
         },
@@ -1826,6 +1855,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'OCHA',
           sourceUrl: 'https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025',
           workbookPath: '/israel-dossier/workbooks/incident-evidence-populated.csv',
+          referenceLocator: 'OCHA Gaza Humanitarian Response Update, 16-29 March 2025; Rafah recovery and accountability section.',
           proof: 'OCHA reported recovery of bodies from PRCS, Palestinian Civil Defense, and UN personnel in Rafah.',
           proofBoundary: 'Exact sequence and individual culpability require careful source separation.',
         },
@@ -1838,10 +1868,11 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'OCHA',
           sourceUrl: 'https://www.ochaopt.org/content/humanitarian-situation-update-176-gaza-strip',
           workbookPath: '/israel-dossier/workbooks/incident-evidence-populated.csv',
+          referenceLocator: 'OCHA Humanitarian Situation Update #176; An Nuseirat school shelter strike section.',
           proof: 'OCHA reported a UNRWA school sheltering displaced people was struck in An Nuseirat Refugee Camp.',
           proofBoundary: 'Fatality totals, combatant status, and operational details are contested; keep competing claims source-labeled.',
         },
-      ],
+      ]),
     },
     {
       id: 'legal-posture',
@@ -1862,7 +1893,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
         'Procedural posture is part of the fact. A warrant is not a conviction; provisional measures are not a final merits ruling; an advisory opinion has a different legal posture than a binding judgment.',
       unsafeWording: 'Do not write that a court has finally adjudicated genocide, guilt, or individual conviction unless the cited record says that.',
       nextCheck: 'Add paragraph-level legal citations and update posture if any court, prosecutor, or UN body changes the record.',
-      sourceRows: [
+      sourceRows: withBriefingSourceRows([
         {
           id: 'LAW-P-001',
           label: 'ICJ provisional measures order',
@@ -1872,6 +1903,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'International Court of Justice',
           sourceUrl: 'https://www.icj-cij.org/case/192',
           workbookPath: '/israel-dossier/workbooks/legal-status-populated.csv',
+          referenceLocator: 'ICJ case 192, provisional measures order dated 26 January 2024; operative measures paragraphs.',
           proof: 'The ICJ ordered provisional measures in South Africa v. Israel.',
           proofBoundary: 'Final merits determination remains unresolved at this posture; quote ordered paragraphs exactly before using them.',
         },
@@ -1884,6 +1916,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'International Court of Justice',
           sourceUrl: 'https://www.icj-cij.org/node/204176',
           workbookPath: '/israel-dossier/workbooks/legal-status-populated.csv',
+          referenceLocator: 'ICJ advisory opinion page, 19 July 2024; dispositif and operative conclusions.',
           proof: "The ICJ advisory opinion stated Israel's continued presence in the occupied Palestinian territory is unlawful.",
           proofBoundary: 'Advisory opinion posture and enforcement limits remain relevant; do not describe it as a criminal conviction.',
         },
@@ -1896,6 +1929,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'International Criminal Court',
           sourceUrl: 'https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges',
           workbookPath: '/israel-dossier/workbooks/legal-status-populated.csv',
+          referenceLocator: 'ICC Pre-Trial Chamber I news release, 21 November 2024; warrant-stage decision and jurisdiction-challenge posture.',
           proof: 'ICC public records describe warrants in the Situation in the State of Palestine.',
           proofBoundary: 'A warrant is not a conviction; exact warrant language and charges require the ICC public documents.',
         },
@@ -1908,6 +1942,7 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'United Nations Security Council',
           sourceUrl: 'https://undocs.org/S/RES/2334(2016)',
           workbookPath: '/israel-dossier/workbooks/legal-status-populated.csv',
+          referenceLocator: 'UNSC Resolution 2334 (2016); operative paragraphs on settlement legality and implementation.',
           proof: 'UNSC Resolution 2334 reaffirmed settlement-related legal language.',
           proofBoundary: 'Implementation and enforcement are separate from adoption; verify paragraph references before quotation.',
         },
@@ -1920,10 +1955,11 @@ export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
           sourceLabel: 'United Nations General Assembly',
           sourceUrl: 'https://digitallibrary.un.org/record/4061434',
           workbookPath: '/israel-dossier/workbooks/legal-status-populated.csv',
+          referenceLocator: 'UN Digital Library record A/ES-10/L.31/Rev.1; resolution metadata and operative implementation demands.',
           proof: 'The UN General Assembly demanded implementation steps following the ICJ advisory opinion.',
           proofBoundary: 'UNGA resolutions do not have the same force as Security Council enforcement actions or court judgments.',
         },
-      ],
+      ]),
     },
   ],
   chapterSequence: [

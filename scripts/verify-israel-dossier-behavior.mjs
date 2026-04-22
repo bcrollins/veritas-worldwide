@@ -288,9 +288,10 @@ async function runInteractiveChecks(browser) {
     ])
     const templateResult = await saveAndMeasureDownload(templateDownload, /^israel-dossier-humanitarian-attribution-table\.csv$/, 500)
     const templateText = fs.readFileSync(templateResult.filePath, 'utf8')
-    for (const needle of ['reporting_body', 'verification_boundary', 'OCHA', 'UNICEF']) {
+    for (const needle of ['reporting_body', 'verification_boundary', 'OCHA', 'UNICEF', '178696']) {
       assert(templateText.includes(needle), `humanitarian template missing ${needle}`)
     }
+    assert(!templateText.includes('170956'), 'humanitarian template still contains stale UNICEF media id 170956')
     console.log(`[verify:israel-dossier:behavior] PASS course template download ${templateResult.suggestedName} ${templateResult.bytes} bytes`)
 
     const moneyTrail = page.locator('#money-trail')
@@ -307,9 +308,10 @@ async function runInteractiveChecks(browser) {
     ])
     const workbookResult = await saveAndMeasureDownload(workbookDownload, /^israel-dossier-humanitarian-attribution-populated\.csv$/, 500)
     const workbookText = fs.readFileSync(workbookResult.filePath, 'utf8')
-    for (const needle of ['HUM-P-001', 'status', 'safe_wording', 'Lancet']) {
+    for (const needle of ['HUM-P-001', 'status', 'safe_wording', 'Lancet', '178696']) {
       assert(workbookText.includes(needle), `populated humanitarian workbook missing ${needle}`)
     }
+    assert(!workbookText.includes('170956'), 'populated humanitarian workbook still contains stale UNICEF media id 170956')
     console.log(`[verify:israel-dossier:behavior] PASS populated workbook download ${workbookResult.suggestedName} ${workbookResult.bytes} bytes`)
 
     const slideButtons = downloads.locator('button').filter({ hasText: /\d+\/10/ })
@@ -358,9 +360,12 @@ async function runBriefingSurfaceCheck(browser) {
     await page.goto(`${baseUrl}/israel-dossier/briefing`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: /Source-boundary briefing/i }).waitFor({ timeout: 20000 })
     const initialBody = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['public briefing', 'source-boundary', 'source row table', 'proof boundary', 'open workbook', 'paragraph source ids', 'reader-facing chapter sequence', 'src-p-001', 'aid-p-004', 'hum-p-001', 'unsafe wording to avoid', 'download chapter draft']) {
+    for (const needle of ['public briefing', 'source-boundary', 'source row table', 'reference locator', 'proof boundary', 'open workbook', 'archive lookup', 'source-copy status', 'paragraph source ids', 'reader-facing chapter sequence', 'src-p-001', 'aid-p-004', 'hum-p-001', 'unsafe wording to avoid', 'download chapter draft']) {
       assert(initialBody.includes(needle), `briefing surface missing ${needle}`)
     }
+    const archiveHref = await page.getByRole('link', { name: /Archive lookup/i }).first().getAttribute('href')
+    assert(archiveHref?.startsWith('https://web.archive.org/web/*/'), `briefing archive lookup href mismatch: ${archiveHref}`)
+    assert(initialBody.includes('remote primary source verified'), 'briefing surface missing source-copy status detail')
 
     const [chapterDraftDownload] = await Promise.all([
       page.waitForEvent('download'),

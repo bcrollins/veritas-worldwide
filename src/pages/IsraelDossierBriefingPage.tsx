@@ -59,7 +59,7 @@ function SourceBadge({ label }: { label: string }) {
 
 function SourceRowTable({ section }: { section: DossierBriefingSection }) {
   return (
-    <section className="border-t border-border bg-surface" aria-labelledby={`${section.id}-source-row-table`}>
+    <section className="min-w-0 border-t border-border bg-surface" aria-labelledby={`${section.id}-source-row-table`}>
       <div className="grid gap-3 border-b border-border p-5 sm:p-7 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-crimson">
@@ -70,12 +70,12 @@ function SourceRowTable({ section }: { section: DossierBriefingSection }) {
           </h3>
         </div>
         <p className="max-w-3xl font-body text-sm leading-relaxed text-ink-muted">
-          Footnote rows for selected paragraph. Each row keeps the source class, date range, proof, and proof boundary visible before the reader reaches the source or workbook.
+          Footnote rows for selected paragraph. Each row keeps the source class, date range, reference locator, proof boundary, archive lookup, and source-copy status visible before the reader reaches the source or workbook.
         </p>
       </div>
 
-      <div className="overflow-x-auto" role="region" aria-label={`Source row table for ${section.title}`}>
-        <table className="w-full min-w-[820px] border-collapse text-left">
+      <div className="w-full max-w-full overflow-x-auto" role="region" aria-label={`Source row table for ${section.title}`}>
+        <table className="w-full min-w-[1060px] border-collapse text-left">
           <thead>
             <tr className="border-b border-border bg-parchment">
               <th scope="col" className="w-[150px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
@@ -84,13 +84,16 @@ function SourceRowTable({ section }: { section: DossierBriefingSection }) {
               <th scope="col" className="w-[210px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
                 Source
               </th>
+              <th scope="col" className="w-[230px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+                Reference locator
+              </th>
               <th scope="col" className="px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
                 Proof
               </th>
               <th scope="col" className="px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
                 Proof boundary
               </th>
-              <th scope="col" className="w-[160px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+              <th scope="col" className="w-[190px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
                 Files
               </th>
             </tr>
@@ -110,6 +113,9 @@ function SourceRowTable({ section }: { section: DossierBriefingSection }) {
                 <td className="align-top px-4 py-4">
                   <p className="font-sans text-sm font-bold leading-snug text-ink">{row.label}</p>
                   <p className="mt-2 font-body text-xs leading-relaxed text-ink-muted">{row.sourceLabel}</p>
+                </td>
+                <td className="align-top px-4 py-4">
+                  <p className="font-body text-sm leading-relaxed text-ink-muted">{row.referenceLocator}</p>
                 </td>
                 <td className="align-top px-4 py-4">
                   <p className="font-body text-sm leading-relaxed text-ink">{row.proof}</p>
@@ -134,6 +140,17 @@ function SourceRowTable({ section }: { section: DossierBriefingSection }) {
                     >
                       Open workbook
                     </a>
+                    <a
+                      href={row.archiveLookupUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-[36px] items-center justify-center border border-border bg-parchment px-3 text-center font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                    >
+                      Archive lookup
+                    </a>
+                    <p className="font-body text-[0.68rem] leading-relaxed text-ink-faint">
+                      Source-copy status: {row.sourceCopyStatus}
+                    </p>
                   </div>
                 </td>
               </tr>
@@ -147,7 +164,7 @@ function SourceRowTable({ section }: { section: DossierBriefingSection }) {
 
 function BriefingDetail({ section }: { section: DossierBriefingSection }) {
   return (
-    <article className="border border-border bg-surface">
+    <article className="min-w-0 border border-border bg-surface">
       <div className="border-b border-border p-5 sm:p-7">
         <div className="mb-4 flex flex-wrap gap-2">
           <SourceBadge label={SOURCE_CLASS_LABELS[section.sourceClass]} />
@@ -389,7 +406,7 @@ export default function IsraelDossierBriefingPage() {
             </div>
           </aside>
 
-          <div className="space-y-8">
+          <div className="min-w-0 space-y-8">
             <section className="border border-border bg-surface p-5 sm:p-7">
               <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-crimson">
                 Editorial thesis

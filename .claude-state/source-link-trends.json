@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-04-22T12:27:52.584Z",
-  "currentGeneratedAt": "2026-04-22T12:27:52.575Z",
-  "previousGeneratedAt": "2026-04-22T12:00:56.619Z",
+  "generatedAt": "2026-04-22T13:48:29.353Z",
+  "currentGeneratedAt": "2026-04-22T13:48:29.340Z",
+  "previousGeneratedAt": "2026-04-22T12:27:52.575Z",
   "summaryDelta": {
     "referenceCount": {
-      "current": 823,
-      "previous": 804,
-      "delta": 19
+      "current": 804,
+      "previous": 823,
+      "delta": -19
     },
     "uniqueUrlCount": {
-      "current": 456,
-      "previous": 455,
-      "delta": 1
+      "current": 455,
+      "previous": 456,
+      "delta": -1
     },
     "ok": {
-      "current": 399,
-      "previous": 396,
-      "delta": 3
+      "current": 400,
+      "previous": 399,
+      "delta": 1
     },
     "redirect": {
       "current": 0,
@@ -24,8 +24,8 @@
       "delta": 0
     },
     "restricted": {
-      "current": 57,
-      "previous": 59,
+      "current": 55,
+      "previous": 57,
       "delta": -2
     },
     "transient": {
@@ -56,18 +56,41 @@
   },
   "totals": {
     "newUrls": 1,
-    "removedUrls": 0,
-    "statusChanges": 6,
+    "removedUrls": 2,
+    "statusChanges": 3,
     "newHardFailures": 0,
     "resolvedHardFailures": 0,
-    "newRestricted": 2,
-    "resolvedRestricted": 4,
+    "newRestricted": 1,
+    "resolvedRestricted": 3,
     "newArchived": 0,
     "newTransient": 0,
     "resolvedTransient": 0,
     "retryHeavy": 0
   },
   "newUrls": [
+    {
+      "url": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "domain": "www.unicef.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
+        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest...",
+        "HUM-P-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation up..."
+      ],
+      "referenceFiles": [
+        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
+      ]
+    }
+  ],
+  "removedUrls": [
     {
       "url": "https://undocs.org/S/RES/2334(2016)",
       "domain": "undocs.org",
@@ -83,16 +106,37 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ]
+    },
+    {
+      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "domain": "www.unicef.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "UNICEF child fatality figure",
+        "UNICEF child injury figure",
+        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda..."
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
+        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
+      ]
     }
   ],
-  "removedUrls": [],
   "statusChanges": [
     {
       "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "domain": "www.972mag.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -102,33 +146,15 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ],
-      "previousStatus": "ok",
-      "currentStatus": "restricted"
-    },
-    {
-      "url": "https://www.aipac.org/resources/house-ndaa-2026",
-      "domain": "www.aipac.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "House Adopts Defense Bill With Pro-Israel Provisions"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ],
       "previousStatus": "restricted",
       "currentStatus": "ok"
     },
     {
       "url": "https://www.citadel.com/",
       "domain": "www.citadel.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -138,68 +164,50 @@
       "referenceFiles": [
         "src/data/profileData.ts"
       ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
+    },
+    {
+      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Operation Protective Edge — 2,251 Palestinians Killed"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ],
       "previousStatus": "ok",
       "currentStatus": "restricted"
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
     }
   ],
   "newHardFailures": [],
   "resolvedHardFailures": [],
   "newRestricted": [
     {
+      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Operation Protective Edge — 2,251 Palestinians Killed"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    }
+  ],
+  "resolvedRestricted": [
+    {
       "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "domain": "www.972mag.com",
       "status": "restricted",
@@ -213,7 +221,9 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
-      ]
+      ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
     },
     {
       "url": "https://www.citadel.com/",
@@ -229,31 +239,13 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
-    }
-  ],
-  "resolvedRestricted": [
-    {
-      "url": "https://www.aipac.org/resources/house-ndaa-2026",
-      "domain": "www.aipac.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "House Adopts Defense Bill With Pro-Israel Provisions"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
       ],
       "previousStatus": "restricted",
       "currentStatus": "ok"
     },
     {
-      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
-      "domain": "www.ohchr.org",
+      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "domain": "www.unicef.org",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -261,49 +253,19 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
+        "UNICEF child fatality figure",
+        "UNICEF child injury figure",
+        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda..."
       ],
       "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
+        "src/data/israelDossierCanon.ts",
+        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ],
       "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
+      "currentStatus": "removed"
     }
   ],
   "newArchived": [],
@@ -314,31 +276,25 @@
     "hardFailures": [],
     "restricted": [
       {
-        "domain": "www.ohchr.org",
-        "current": 0,
-        "previous": 2,
-        "delta": -2
-      },
-      {
         "domain": "www.972mag.com",
-        "current": 1,
-        "previous": 0,
-        "delta": 1
-      },
-      {
-        "domain": "www.aipac.org",
         "current": 0,
         "previous": 1,
         "delta": -1
       },
       {
         "domain": "www.citadel.com",
+        "current": 0,
+        "previous": 1,
+        "delta": -1
+      },
+      {
+        "domain": "www.ohchr.org",
         "current": 1,
         "previous": 0,
         "delta": 1
       },
       {
-        "domain": "www.parliament.uk",
+        "domain": "www.unicef.org",
         "current": 0,
         "previous": 1,
         "delta": -1

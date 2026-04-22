@@ -7,8 +7,8 @@
       "composite": 9.9,
       "previous": 9.9,
       "delta": 0,
-      "status": "Production commit 6e3ab5f / deployment e4bb7bbc-d009-431a-b76b-e28381178915 is live and verified: /israel-dossier/briefing now renders section-level source-row tables, paragraph source ID chips, corrected AID/HUM/INC/LAW row coverage, an in-page reader-facing chapter sequence, and a paragraph-ID-enriched Markdown chapter draft. CI, live behavior, crawler metadata, direct Markdown probe, and full live primary viewport matrix passed.",
-      "plus_half_requires": "Add exact page/paragraph/order references and archive fallback/source-copy inventory fields to each high-risk briefing source row, then expand the downloadable draft into fuller chapter prose without changing certainty levels."
+      "status": "Local locator/source-copy slice verified and awaiting deployment: /israel-dossier/briefing now has reference locators, archive lookup links, source-copy status, corrected UNICEF 178696 source URLs in canon/templates/workbooks, mobile-contained source-row tables, strict source-link verification across 455 unique URLs, local behavior verification, full primary viewport matrix, and degraded-network spot checks. Production still serves commit 6e3ab5f until the next push/deploy advances.",
+      "plus_half_requires": "Push and live-verify the locator/source-copy slice, then expand the downloadable public chapter into fuller prose while preserving source-row IDs, proof boundaries, legal posture, and unsafe-wording warnings."
     },
     {
       "feature": "Home / Front Page",

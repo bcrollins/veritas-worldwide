@@ -25,6 +25,10 @@ const files = {
   instituteCatalog: 'src/data/instituteCatalog.ts',
   templateManifest: 'public/israel-dossier/templates/manifest.json',
   workbookManifest: 'public/israel-dossier/workbooks/manifest.json',
+  humanitarianTemplate: 'public/israel-dossier/templates/humanitarian-attribution-table.csv',
+  sourceLedgerTemplate: 'public/israel-dossier/templates/source-ledger.csv',
+  humanitarianWorkbook: 'public/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+  sourceLedgerWorkbook: 'public/israel-dossier/workbooks/source-ledger-populated.csv',
 }
 
 const errors = []
@@ -60,6 +64,11 @@ const currentNeedles = [
   'source-boundary briefing',
   'DossierBriefingSourceRow',
   'sourceRows',
+  'referenceLocator',
+  'archiveLookupUrl',
+  'sourceCopyStatus',
+  'makeArchiveLookupUrl',
+  'REMOTE_SOURCE_COPY_PENDING',
   'chapterSequence',
   'Paragraph source IDs',
   'SRC-P-001',
@@ -71,6 +80,7 @@ const currentNeedles = [
   'LAW-P-002',
   'https://www.congress.gov/crs-product/RL33222',
   'Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
+  'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
   'State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
   'https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/',
   'https://www.aljazeera.com/news/2025/10/21/new-al-jazeera-documentary-reveals-evidence-in-hind-rajab-familys-killing',
@@ -80,6 +90,10 @@ const currentNeedles = [
 
 for (const needle of currentNeedles) {
   assert(canon.includes(needle), `canon missing ${needle}`)
+}
+
+for (const file of [files.canon, files.humanitarianTemplate, files.sourceLedgerTemplate, files.humanitarianWorkbook, files.sourceLedgerWorkbook]) {
+  assert(!read(file).includes('/media/170956/'), `${file} contains stale UNICEF media id 170956`)
 }
 
 const requiredImports = [
@@ -192,8 +206,14 @@ assert(has(files.briefingPage, /Unsafe wording to avoid/), 'briefing page does n
 assert(has(files.briefingPage, /Download row file/), 'briefing page does not expose workbook row downloads')
 assert(has(files.briefingPage, /Source row table/), 'briefing page does not render source-row footnote tables')
 assert(has(files.briefingPage, /section\.sourceRows\.map/), 'briefing page does not render canonical source rows')
+assert(has(files.briefingPage, /Reference locator/), 'briefing page does not expose reference-locator table labels')
 assert(has(files.briefingPage, /Proof boundary/), 'briefing page does not expose proof-boundary table labels')
 assert(has(files.briefingPage, /Open workbook/), 'briefing page does not link source rows back to workbook artifacts')
+assert(has(files.briefingPage, /Archive lookup/), 'briefing page does not expose archive lookup affordances')
+assert(has(files.briefingPage, /Source-copy status/), 'briefing page does not expose source-copy status')
+assert(has(files.briefingPage, /row\.referenceLocator/), 'briefing page does not render canonical reference locators')
+assert(has(files.briefingPage, /row\.archiveLookupUrl/), 'briefing page does not render canonical archive lookup URLs')
+assert(has(files.briefingPage, /row\.sourceCopyStatus/), 'briefing page does not render canonical source-copy status')
 assert(has(files.briefingPage, /Paragraph source IDs/), 'briefing page does not expose paragraph-level source row IDs')
 assert(has(files.briefingPage, /Reader-facing chapter sequence/), 'briefing page does not expose the reader-facing chapter sequence')
 assert(has(files.briefingPage, /briefing\.chapterSequence\.map/), 'briefing page does not render canonical chapter sequence steps')
