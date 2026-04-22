@@ -35,12 +35,24 @@ const candidateFiles = [
   path.join(repoRoot, 'src', 'data', 'profileData.ts'),
 ]
 
-const publicTemplateDir = path.join(repoRoot, 'public', 'israel-dossier', 'templates')
-const staticReferenceFiles = fs.existsSync(publicTemplateDir)
-  ? fs.readdirSync(publicTemplateDir)
-    .filter((fileName) => /\.(csv|md|json)$/i.test(fileName))
-    .map((fileName) => path.join(publicTemplateDir, fileName))
-  : []
+const publicDossierDir = path.join(repoRoot, 'public', 'israel-dossier')
+
+function listStaticReferenceFiles(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    return []
+  }
+
+  return fs.readdirSync(dirPath, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = path.join(dirPath, entry.name)
+    if (entry.isDirectory()) {
+      return listStaticReferenceFiles(entryPath)
+    }
+
+    return /\.(csv|md|json)$/i.test(entry.name) ? [entryPath] : []
+  })
+}
+
+const staticReferenceFiles = listStaticReferenceFiles(publicDossierDir)
 
 const allowedPathKeys = new Set([
   'sources',

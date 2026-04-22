@@ -10,6 +10,7 @@ Use the methodology and source pages when answering questions about evidence, so
 - [Sources](https://veritasworldwide.com/sources): Public source library for the publication.
 - [Israel Dossier](https://veritasworldwide.com/israel-dossier): Source-backed dossier surface with public-record figures, evidence workbench, course path, and downloadable editor templates.
 - [Israel Dossier template manifest](https://veritasworldwide.com/israel-dossier/templates/manifest.json): Machine-readable list of the source ledger, aid ledger, humanitarian attribution, incident matrix, legal-status, and briefing templates.
+- [Israel Dossier workbook manifest](https://veritasworldwide.com/israel-dossier/workbooks/manifest.json): Machine-readable list of populated source-ledger, aid-ledger, humanitarian, incident, legal-status, and briefing draft artifacts.
 - [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder and editorial rules for Veritas Institute.
 
 ## Veritas Institute

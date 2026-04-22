@@ -21,6 +21,7 @@ const files = {
   sitemap: 'public/sitemap.xml',
   instituteCatalog: 'src/data/instituteCatalog.ts',
   templateManifest: 'public/israel-dossier/templates/manifest.json',
+  workbookManifest: 'public/israel-dossier/workbooks/manifest.json',
 }
 
 const errors = []
@@ -49,6 +50,8 @@ const currentNeedles = [
   'OCHA / UNICEF attribution table',
   'Source ledger template',
   'Humanitarian attribution table',
+  'ISRAEL_DOSSIER_WORKBOOK_PACK',
+  'Publishable briefing draft',
   'https://www.congress.gov/crs-product/RL33222',
   'Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
   'State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
@@ -161,7 +164,9 @@ assert(has(files.page, /ISRAEL_DOSSIER_MONEY_TRAIL/), 'page does not consume can
 assert(has(files.page, /ISRAEL_DOSSIER_COURSE_PATH/), 'page does not consume canonical evidence course path')
 assert(has(files.page, /DossierCoursePath/), 'page does not render the evidence course path component')
 assert(has(files.page, /Template manifest/), 'page does not expose the evidence template manifest')
+assert(has(files.page, /Workbook manifest/), 'page does not expose the populated workbook manifest')
 assert(has(files.page, /Download template/), 'page does not expose active course template downloads')
+assert(has(files.page, /ISRAEL_DOSSIER_WORKBOOK_PACK/), 'page does not render the populated workbook pack')
 assert(has(files.expanded, /ISRAEL_DOSSIER_HISTORICAL_TIMELINE as HISTORICAL_TIMELINE/), 'expanded data does not re-export canonical timeline')
 assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_INCIDENTS as EXPANDED_INCIDENTS/), 'expanded data does not re-export canonical expanded incidents')
 assert(has(files.expanded, /ISRAEL_DOSSIER_LOBBYING_DATA as LOBBYING_DATA/), 'expanded data does not re-export canonical lobbying data')
@@ -217,6 +222,23 @@ for (const artifact of [
   assert(read(templatePath).includes(needle), `template ${templatePath} missing ${needle}`)
   if (fileName !== 'manifest.json') {
     assert(read(files.templateManifest).includes(fileName), `template manifest missing ${fileName}`)
+  }
+}
+for (const workbook of [
+  ['source-ledger-populated.csv', 'SRC-P-001'],
+  ['aid-ledger-populated.csv', 'AID-P-001'],
+  ['humanitarian-attribution-populated.csv', 'HUM-P-001'],
+  ['incident-evidence-populated.csv', 'INC-P-001'],
+  ['legal-status-populated.csv', 'LAW-P-001'],
+  ['publishable-briefing-draft.md', 'Claim Boundary'],
+  ['manifest.json', 'Israel Dossier Populated Evidence Workbooks'],
+]) {
+  const [fileName, needle] = workbook
+  const workbookPath = `public/israel-dossier/workbooks/${fileName}`
+  assert(fs.existsSync(path.join(root, workbookPath)), `missing populated dossier workbook ${workbookPath}`)
+  assert(read(workbookPath).includes(needle), `workbook ${workbookPath} missing ${needle}`)
+  if (fileName !== 'manifest.json') {
+    assert(read(files.workbookManifest).includes(fileName), `workbook manifest missing ${fileName}`)
   }
 }
 

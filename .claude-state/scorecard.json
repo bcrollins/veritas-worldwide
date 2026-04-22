@@ -5,10 +5,10 @@
     {
       "feature": "Israel Dossier",
       "composite": 9.85,
-      "previous": 9.8,
-      "delta": 0.05,
-      "status": "Live production commit b205bd8f9214 / deployment 21a42519-8209-4356-a8a4-abaf6c34879e passed crawler/social metadata, preview images, generated PDF evidence text, canonical source checks, source-link trends, build, bundle, behavior verification with template download, static template probes, and primary viewport matrix for the six-module Evidence Course Path plus Evidence Workbooks.",
-      "plus_half_requires": "Populate the source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing artifacts with the next batch of source-labeled dossier records, then convert the strongest rows into publishable chapter/briefing copy."
+      "previous": 9.85,
+      "delta": 0,
+      "status": "Live score held at production commit b205bd8f9214 / deployment 21a42519-8209-4356-a8a4-abaf6c34879e. A populated source-labeled workbook pack for `/israel-dossier/workbooks/` is locally complete and verified across canon, source-link, build, bundle, behavior, direct artifact probes, and full primary viewport checks, but it is not yet deployed.",
+      "plus_half_requires": "Deploy and live-verify the populated source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing-draft artifacts, then turn the strongest verified rows into a public chapter/briefing surface with source-boundary labels."
     },
     {
       "feature": "Home / Front Page",

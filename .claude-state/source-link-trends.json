@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-04-22T10:53:03.693Z",
-  "currentGeneratedAt": "2026-04-22T10:53:03.676Z",
-  "previousGeneratedAt": "2026-04-22T10:51:38.492Z",
+  "generatedAt": "2026-04-22T11:25:06.509Z",
+  "currentGeneratedAt": "2026-04-22T11:25:06.497Z",
+  "previousGeneratedAt": "2026-04-22T10:53:03.676Z",
   "summaryDelta": {
     "referenceCount": {
-      "current": 775,
+      "current": 802,
       "previous": 775,
-      "delta": 0
+      "delta": 27
     },
     "uniqueUrlCount": {
       "current": 455,
-      "previous": 461,
-      "delta": -6
+      "previous": 455,
+      "delta": 0
     },
     "ok": {
-      "current": 399,
-      "previous": 396,
-      "delta": 3
+      "current": 397,
+      "previous": 399,
+      "delta": -2
     },
     "redirect": {
       "current": 0,
@@ -24,9 +24,9 @@
       "delta": 0
     },
     "restricted": {
-      "current": 56,
-      "previous": 59,
-      "delta": -3
+      "current": 58,
+      "previous": 56,
+      "delta": 2
     },
     "transient": {
       "current": 0,
@@ -35,13 +35,13 @@
     },
     "missing": {
       "current": 0,
-      "previous": 5,
-      "delta": -5
+      "previous": 0,
+      "delta": 0
     },
     "failed": {
       "current": 0,
-      "previous": 1,
-      "delta": -1
+      "previous": 0,
+      "delta": 0
     },
     "invalid": {
       "current": 0,
@@ -55,189 +55,27 @@
     }
   },
   "totals": {
-    "newUrls": 2,
-    "removedUrls": 8,
-    "statusChanges": 4,
+    "newUrls": 0,
+    "removedUrls": 0,
+    "statusChanges": 6,
     "newHardFailures": 0,
-    "resolvedHardFailures": 6,
-    "newRestricted": 1,
-    "resolvedRestricted": 4,
+    "resolvedHardFailures": 0,
+    "newRestricted": 4,
+    "resolvedRestricted": 2,
     "newArchived": 0,
     "newTransient": 0,
     "resolvedTransient": 0,
     "retryHeavy": 0
   },
-  "newUrls": [
-    {
-      "url": "https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025",
-      "domain": "www.ochaopt.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "INC-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"video / recovery record / official inquiry\",\"OCHA hu..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
-      ]
-    },
-    {
-      "url": "https://www.ochaopt.org/content/humanitarian-situation-update-176-gaza-strip",
-      "domain": "www.ochaopt.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "INC-005,\"Nuseirat/central Gaza civilian harm record\",2024-06-06,\"An Nuseirat Refugee Camp / central Gaza\",\"Israeli forces / conflict part..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
-      ]
-    }
-  ],
-  "removedUrls": [
-    {
-      "url": "https://www.icj-cij.org/case/192,un-international",
-      "domain": "www.icj-cij.org",
-      "status": "error",
-      "probeStatus": "error",
-      "httpStatus": 500,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "SRC-005,source-file,\"The ICJ issued provisional measures in South Africa v. Israel; the merits question remained unresolved at that stage..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ]
-    },
-    {
-      "url": "https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/,monitor-ngo",
-      "domain": "cpj.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "SRC-004,source-file,\"CPJ was investigating at least 261 journalists and media workers killed since the Israel-Gaza war began.\",press-free..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ]
-    },
-    {
-      "url": "https://www.icc-cpi.int/situations/palestine",
-      "domain": "www.icc-cpi.int",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "LAW-003,\"International Criminal Court\",\"Situation docket / warrants\",2024-11-21,\"Situation in the State of Palestine\",warrant-stage,https..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/legal-status-brief.csv"
-      ]
-    },
-    {
-      "url": "https://www.ochaopt.org/content/hostilities-gaza-strip-and-israel-flash-update-178",
-      "domain": "www.ochaopt.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "INC-005,\"Nuseirat rescue operation civilian harm\",2024-06-08,\"Nuseirat, Gaza\",\"Israeli forces / Hamas combatants\",\"press investigation / ..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
-      ]
-    },
-    {
-      "url": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026,un-international",
-      "domain": "www.ochaopt.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "SRC-002,source-file,\"OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.\",humanitarian figure..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2025/04/israel-must-account-killings-paramedics-and-rescue-workers-rafah-un-experts",
-      "domain": "www.ohchr.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "INC-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"video / recovery record / official inquiry\",\"UN / PR..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
-      ]
-    },
-    {
-      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf,un-international",
-      "domain": "www.unicef.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ]
-    },
-    {
-      "url": "https://www.congress.gov/crs-product/RL33222,public-record",
-      "domain": "www.congress.gov",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "SRC-001,source-file,\"CRS reports an estimated $298B in constant-2024-dollar U.S. aid obligations to Israel from 1946 through 2024.\",finan..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ]
-    }
-  ],
+  "newUrls": [],
+  "removedUrls": [],
   "statusChanges": [
     {
       "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "domain": "www.972mag.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -247,15 +85,15 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
     },
     {
       "url": "https://www.aipac.org/",
       "domain": "www.aipac.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -263,6 +101,24 @@
         "Israel is not just an ally, it is a cause.",
         "The bond between the United States and Israel is unbreakable.",
         "Let me be clear: I will always ensure Israel has the ability to defend itself."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
+    },
+    {
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "I am deeply committed to defending democratic values and free markets."
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -271,8 +127,8 @@
       "currentStatus": "restricted"
     },
     {
-      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "domain": "www.ohchr.org",
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
@@ -280,147 +136,130 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "Flawed Disclosures Undermine Accountability"
+        "Sabra and Shatila Massacre"
       ],
       "referenceFiles": [
-        "src/data/articles.ts"
+        "src/data/israelDossierCanon.ts"
       ],
       "previousStatus": "restricted",
       "currentStatus": "ok"
     },
     {
-      "url": "https://www.politico.com/",
-      "domain": "www.politico.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
-        "One of few Republican senators to oppose unconditional Israel military aid",
-        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/israelDossierCanon.ts"
       ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
+    },
+    {
+      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "domain": "www.unicef.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
+        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest...",
+        "HUM-P-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation up..."
+      ],
+      "referenceFiles": [
+        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
+      ],
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
     }
   ],
   "newHardFailures": [],
-  "resolvedHardFailures": [
+  "resolvedHardFailures": [],
+  "newRestricted": [
     {
-      "url": "https://www.icj-cij.org/case/192,un-international",
-      "domain": "www.icj-cij.org",
-      "status": "error",
-      "probeStatus": "error",
-      "httpStatus": 500,
-      "attempts": 2,
+      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
+      "domain": "www.972mag.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "SRC-005,source-file,\"The ICJ issued provisional measures in South Africa v. Israel; the merits question remained unresolved at that stage..."
+        "972 Magazine — Survivor testimonies"
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ],
-      "previousStatus": "error",
-      "currentStatus": "removed"
+        "src/data/israelDossierCanon.ts"
+      ]
     },
     {
-      "url": "https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/,monitor-ngo",
-      "domain": "cpj.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "SRC-004,source-file,\"CPJ was investigating at least 261 journalists and media workers killed since the Israel-Gaza war began.\",press-free..."
+        "I am deeply committed to defending democratic values and free markets."
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
+        "src/data/profileData.ts"
+      ]
     },
     {
-      "url": "https://www.icc-cpi.int/situations/palestine",
-      "domain": "www.icc-cpi.int",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "LAW-003,\"International Criminal Court\",\"Situation docket / warrants\",2024-11-21,\"Situation in the State of Palestine\",warrant-stage,https..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/legal-status-brief.csv"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.ochaopt.org/content/hostilities-gaza-strip-and-israel-flash-update-178",
-      "domain": "www.ochaopt.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "INC-005,\"Nuseirat rescue operation civilian harm\",2024-06-08,\"Nuseirat, Gaza\",\"Israeli forces / Hamas combatants\",\"press investigation / ..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026,un-international",
-      "domain": "www.ochaopt.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "SRC-002,source-file,\"OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.\",humanitarian figure..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2025/04/israel-must-account-killings-paramedics-and-rescue-workers-rafah-un-experts",
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
       "domain": "www.ohchr.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "INC-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"video / recovery record / official inquiry\",\"UN / PR..."
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "domain": "www.unicef.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
+        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest...",
+        "HUM-P-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation up..."
       ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
+      "referenceFiles": [
+        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
+      ]
     }
   ],
-  "newRestricted": [
+  "resolvedRestricted": [
     {
       "url": "https://www.aipac.org/",
       "domain": "www.aipac.org",
@@ -437,13 +276,13 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
-    }
-  ],
-  "resolvedRestricted": [
+      ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
+    },
     {
-      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
-      "domain": "www.972mag.com",
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -451,66 +290,10 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "972 Magazine — Survivor testimonies"
+        "Sabra and Shatila Massacre"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.congress.gov/crs-product/RL33222,public-record",
-      "domain": "www.congress.gov",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "SRC-001,source-file,\"CRS reports an estimated $298B in constant-2024-dollar U.S. aid obligations to Israel from 1946 through 2024.\",finan..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/source-ledger.csv"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "Flawed Disclosures Undermine Accountability"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.politico.com/",
-      "domain": "www.politico.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
-        "One of few Republican senators to oppose unconditional Israel military aid",
-        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
       ],
       "previousStatus": "restricted",
       "currentStatus": "ok"
@@ -521,68 +304,43 @@
   "resolvedTransient": [],
   "retryHeavy": [],
   "domainDeltas": {
-    "hardFailures": [
-      {
-        "domain": "www.ochaopt.org",
-        "current": 0,
-        "previous": 2,
-        "delta": -2
-      },
-      {
-        "domain": "cpj.org",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
-      },
-      {
-        "domain": "www.icc-cpi.int",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
-      },
-      {
-        "domain": "www.icj-cij.org",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
-      },
-      {
-        "domain": "www.ohchr.org",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
-      }
-    ],
+    "hardFailures": [],
     "restricted": [
       {
         "domain": "www.972mag.com",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
-      },
-      {
-        "domain": "www.aipac.org",
         "current": 1,
         "previous": 0,
         "delta": 1
       },
       {
-        "domain": "www.congress.gov",
-        "current": 7,
-        "previous": 8,
+        "domain": "www.aipac.org",
+        "current": 0,
+        "previous": 1,
+        "delta": -1
+      },
+      {
+        "domain": "www.citadel.com",
+        "current": 1,
+        "previous": 0,
+        "delta": 1
+      },
+      {
+        "domain": "www.mfa.gov.il",
+        "current": 0,
+        "previous": 1,
         "delta": -1
       },
       {
         "domain": "www.ohchr.org",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
+        "current": 1,
+        "previous": 0,
+        "delta": 1
       },
       {
-        "domain": "www.politico.com",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
+        "domain": "www.unicef.org",
+        "current": 1,
+        "previous": 0,
+        "delta": 1
       }
     ],
     "archived": [],

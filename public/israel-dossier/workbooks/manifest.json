@@ -1,0 +1,42 @@
+{
+  "title": "Israel Dossier Populated Evidence Workbooks",
+  "lastVerified": "2026-04-22",
+  "items": [
+    {
+      "id": "source-ledger",
+      "label": "Populated source ledger",
+      "path": "/israel-dossier/workbooks/source-ledger-populated.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "aid-ledger",
+      "label": "Populated aid ledger",
+      "path": "/israel-dossier/workbooks/aid-ledger-populated.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "humanitarian-attribution",
+      "label": "Populated humanitarian attribution table",
+      "path": "/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "incident-evidence",
+      "label": "Populated incident evidence matrix",
+      "path": "/israel-dossier/workbooks/incident-evidence-populated.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "legal-status",
+      "label": "Populated legal-status brief",
+      "path": "/israel-dossier/workbooks/legal-status-populated.csv",
+      "format": "CSV"
+    },
+    {
+      "id": "briefing-draft",
+      "label": "Publishable briefing draft",
+      "path": "/israel-dossier/workbooks/publishable-briefing-draft.md",
+      "format": "Markdown"
+    }
+  ]
+}

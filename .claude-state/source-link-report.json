@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-22T10:53:03.676Z",
+  "generatedAt": "2026-04-22T11:25:06.497Z",
   "timeoutMs": 45000,
   "concurrency": 6,
   "strictMode": true,
   "summary": {
-    "referenceCount": 775,
+    "referenceCount": 802,
     "uniqueUrlCount": 455,
-    "ok": 399,
+    "ok": 397,
     "redirect": 0,
-    "restricted": 56,
+    "restricted": 58,
     "transient": 0,
     "missing": 0,
     "failed": 0,
@@ -588,14 +588,18 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 4,
       "referenceLabels": [
         "HUM-004,\"261+\",\"Journalists and media workers killed\",\"Committee to Protect Journalists\",\"CPJ casualty tracker\",\"7 Oct 2023-17 Apr 2026\",...",
-        "SRC-004,source-file,\"CPJ was investigating at least 261 journalists and media workers killed since the Israel-Gaza war began.\",press-free..."
+        "SRC-004,source-file,\"CPJ was investigating at least 261 journalists and media workers killed since the Israel-Gaza war began.\",press-free...",
+        "HUM-P-006,\"261+\",\"Journalists and media workers killed\",\"Committee to Protect Journalists\",\"CPJ casualty tracker\",\"7 Oct 2023-17 Apr 2026...",
+        "SRC-P-006,press-freedom,\"CPJ reported at least 261 journalists and media workers among those killed since the Israel-Gaza war began.\",mon..."
       ],
       "referenceFiles": [
         "public/israel-dossier/templates/humanitarian-attribution-table.csv",
-        "public/israel-dossier/templates/source-ledger.csv"
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -1499,14 +1503,18 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 4,
       "referenceLabels": [
         "Forensic Architecture — Full reconstruction with audio",
-        "INC-001,\"Hind Rajab killing\",2024-01-29,\"Tel al-Hawa, Gaza City\",\"Israeli forces\",\"forensic reconstruction / audio / survivor call record..."
+        "INC-001,\"Hind Rajab killing\",2024-01-29,\"Tel al-Hawa, Gaza City\",\"Israeli forces\",\"forensic reconstruction / audio / survivor call record...",
+        "INC-P-001,\"Hind Rajab killing\",2024-01-29,\"Tel al-Hawa, Gaza City\",\"Israeli forces\",\"forensic reconstruction / audio record\",\"Forensic Ar...",
+        "SRC-P-007,incident,\"Forensic Architecture reconstructed the killing of Hind Rajab and found evidence of fire at close range.\",incident ev..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
+        "public/israel-dossier/templates/incident-evidence-matrix.csv",
+        "public/israel-dossier/workbooks/incident-evidence-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -2136,12 +2144,14 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
-        "LAW-004,\"United Nations Security Council\",\"Resolution\",2016-12-23,\"UNSC Resolution 2334\",adopted-resolution,https://undocs.org/S/RES/2334..."
+        "LAW-004,\"United Nations Security Council\",\"Resolution\",2016-12-23,\"UNSC Resolution 2334\",adopted-resolution,https://undocs.org/S/RES/2334...",
+        "LAW-P-004,\"United Nations Security Council\",\"Resolution\",2016-12-23,\"UNSC Resolution 2334\",adopted-resolution,https://undocs.org/S/RES/23..."
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/legal-status-brief.csv"
+        "public/israel-dossier/templates/legal-status-brief.csv",
+        "public/israel-dossier/workbooks/legal-status-populated.csv"
       ]
     },
     {
@@ -2242,14 +2252,18 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 4,
       "referenceLabels": [
         "World Central Kitchen — Official statement",
-        "INC-002,\"World Central Kitchen convoy strike\",2024-04-01,\"Gaza\",\"Israeli forces\",\"official admission / NGO statement / press investigatio..."
+        "INC-002,\"World Central Kitchen convoy strike\",2024-04-01,\"Gaza\",\"Israeli forces\",\"official admission / NGO statement / press investigatio...",
+        "INC-P-002,\"World Central Kitchen convoy strike\",2024-04-01,\"Gaza\",\"Israeli forces\",\"NGO statement / official admission / press investigat...",
+        "SRC-P-008,incident,\"World Central Kitchen reported seven aid workers were killed after its convoy was struck in Gaza.\",incident evidence,..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
+        "public/israel-dossier/templates/incident-evidence-matrix.csv",
+        "public/israel-dossier/workbooks/incident-evidence-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -2337,27 +2351,6 @@
       ]
     },
     {
-      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
-      "domain": "www.972mag.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "972 Magazine — Survivor testimonies"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
       "domain": "www.972mag.com",
       "status": "ok",
@@ -2421,6 +2414,32 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aipac.org/",
+      "domain": "www.aipac.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aipac.org/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 6,
+      "referenceLabels": [
+        "Israel is not just an ally, it is a cause.",
+        "The bond between the United States and Israel is unbreakable.",
+        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
+        "I have a deep connection to Israel that goes back many years.",
+        "I wear my pro-Israel badge with pride.",
+        "AIPAC's mission is to strengthen the US-Israel relationship."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -3283,27 +3302,6 @@
       ]
     },
     {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.citadel.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.clintonfoundation.org/",
       "domain": "www.clintonfoundation.org",
       "status": "ok",
@@ -3354,8 +3352,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.cnbc.com/",
       "redirected": false,
-      "checkedWith": "GET",
-      "attempts": 2,
+      "checkedWith": "HEAD",
+      "attempts": 1,
       "transientErrors": [],
       "error": null,
       "archive": null,
@@ -3938,15 +3936,17 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 3,
+      "referenceCount": 4,
       "referenceLabels": [
         "Proposed arms sale notified to Congress (January 2025)",
         "Foreign Military Financing → Weapons Procurement",
-        "AID-005,8000000000,USD,Proposed arms sale notification,2025,\"DSCA major arms sales notices\",https://www.dsca.mil/press-media/major-arms-s..."
+        "AID-005,8000000000,USD,Proposed arms sale notification,2025,\"DSCA major arms sales notices\",https://www.dsca.mil/press-media/major-arms-s...",
+        "AID-P-007,8000000000,USD,proposed arms-sale notice,2025,\"DSCA major arms sales notices\",https://www.dsca.mil/press-media/major-arms-sales..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
-        "public/israel-dossier/templates/aid-ledger.csv"
+        "public/israel-dossier/templates/aid-ledger.csv",
+        "public/israel-dossier/workbooks/aid-ledger-populated.csv"
       ]
     },
     {
@@ -4917,15 +4917,19 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 3,
+      "referenceCount": 5,
       "referenceLabels": [
         "ICJ Orders Provisional Measures / ICC Issues Arrest Warrants",
         "ICC Arrest Warrants — Netanyahu and Gallant",
-        "LAW-003,\"International Criminal Court\",\"Pre-Trial Chamber news release / warrants\",2024-11-21,\"Situation in the State of Palestine\",warra..."
+        "LAW-003,\"International Criminal Court\",\"Pre-Trial Chamber news release / warrants\",2024-11-21,\"Situation in the State of Palestine\",warra...",
+        "LAW-P-003,\"International Criminal Court\",\"Pre-Trial Chamber news release / warrants\",2024-11-21,\"Situation in the State of Palestine\",war...",
+        "SRC-P-010,legal,\"ICC public records describe warrants in the Situation in the State of Palestine; a warrant is not a conviction.\",legal r..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
-        "public/israel-dossier/templates/legal-status-brief.csv"
+        "public/israel-dossier/templates/legal-status-brief.csv",
+        "public/israel-dossier/workbooks/legal-status-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -4984,17 +4988,19 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 4,
+      "referenceCount": 5,
       "referenceLabels": [
         "ICJ — May 24 order on Rafah offensive",
         "South Africa v. Israel — Genocide Convention Case",
         "LAW-001,\"International Court of Justice\",\"Provisional measures order\",2024-01-26,\"South Africa v. Israel\",interim-order,https://www.icj-c...",
-        "SRC-005,source-file,\"The ICJ issued provisional measures in South Africa v. Israel; the merits question remained unresolved at that stage..."
+        "SRC-005,source-file,\"The ICJ issued provisional measures in South Africa v. Israel; the merits question remained unresolved at that stage...",
+        "LAW-P-001,\"International Court of Justice\",\"Provisional measures order\",2024-01-26,\"South Africa v. Israel\",interim-order,https://www.icj..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/legal-status-brief.csv",
-        "public/israel-dossier/templates/source-ledger.csv"
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/legal-status-populated.csv"
       ]
     },
     {
@@ -5010,17 +5016,21 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 4,
+      "referenceCount": 6,
       "referenceLabels": [
         "ICJ ruled Israel's occupation of Palestinian territory is illegal (July 19, 2024)",
         "ICJ Advisory Opinion — Legality of the Occupation",
         "ICJ / ICC official records",
-        "LAW-002,\"International Court of Justice\",\"Advisory opinion\",2024-07-19,\"Legal consequences arising from the policies and practices of Isr..."
+        "LAW-002,\"International Court of Justice\",\"Advisory opinion\",2024-07-19,\"Legal consequences arising from the policies and practices of Isr...",
+        "LAW-P-002,\"International Court of Justice\",\"Advisory opinion\",2024-07-19,\"Legal consequences in the Occupied Palestinian Territory\",advis...",
+        "SRC-P-009,legal,\"The ICJ advisory opinion stated Israel's continued presence in the occupied Palestinian territory is unlawful.\",legal re..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
         "src/data/israelDossierExpanded.ts",
-        "public/israel-dossier/templates/legal-status-brief.csv"
+        "public/israel-dossier/templates/legal-status-brief.csv",
+        "public/israel-dossier/workbooks/legal-status-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -5544,6 +5554,27 @@
       ]
     },
     {
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
+      "redirected": true,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Sabra and Shatila Massacre"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.middleeasteye.net/news/new-video-evidence-disputes-israeli-armys-account-medic-killings",
       "domain": "www.middleeasteye.net",
       "status": "ok",
@@ -6057,12 +6088,14 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
-        "INC-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"video / recovery record / official inquiry\",\"OCHA hu..."
+        "INC-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"video / recovery record / official inquiry\",\"OCHA hu...",
+        "INC-P-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"humanitarian response update / recovery record\",\"O..."
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
+        "public/israel-dossier/templates/incident-evidence-matrix.csv",
+        "public/israel-dossier/workbooks/incident-evidence-populated.csv"
       ]
     },
     {
@@ -6099,12 +6132,14 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
-        "INC-005,\"Nuseirat/central Gaza civilian harm record\",2024-06-06,\"An Nuseirat Refugee Camp / central Gaza\",\"Israeli forces / conflict part..."
+        "INC-005,\"Nuseirat/central Gaza civilian harm record\",2024-06-06,\"An Nuseirat Refugee Camp / central Gaza\",\"Israeli forces / conflict part...",
+        "INC-P-005,\"An Nuseirat school shelter strike\",2024-06-06,\"An Nuseirat Refugee Camp\",\"Israeli forces / conflict parties\",\"humanitarian sit..."
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
+        "public/israel-dossier/templates/incident-evidence-matrix.csv",
+        "public/israel-dossier/workbooks/incident-evidence-populated.csv"
       ]
     },
     {
@@ -6120,14 +6155,18 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 4,
       "referenceLabels": [
         "HUM-001,\"72,289\",\"Palestinians killed in Gaza\",\"UN OCHA\",\"MoH Gaza\",\"7 Oct 2023-1 Apr 2026\",\"reported impact snapshot\",reported,https://w...",
-        "SRC-002,source-file,\"OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.\",humanitarian figure..."
+        "SRC-002,source-file,\"OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.\",humanitarian figure...",
+        "HUM-P-001,\"72,289\",\"Palestinians killed in Gaza\",\"UN OCHA\",\"MoH Gaza\",\"7 Oct 2023-1 Apr 2026\",\"reported impact snapshot\",reported,https:/...",
+        "SRC-P-003,humanitarian,\"OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.\",reported figure,..."
       ],
       "referenceFiles": [
         "public/israel-dossier/templates/humanitarian-attribution-table.csv",
-        "public/israel-dossier/templates/source-ledger.csv"
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -6188,27 +6227,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "OHCHR — UN experts condemn \"flour massacre\""
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
@@ -6291,17 +6309,21 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 4,
+      "referenceCount": 6,
       "referenceLabels": [
         "Of verified fatalities in residential buildings were women and children",
         "155mm Artillery → Civilian Areas",
         "HUM-005,\"70%\",\"Verified fatalities in residential buildings who were women and children\",\"OHCHR\",\"OHCHR Gaza update report\",\"Nov 2024 rep...",
-        "INC-003,\"OHCHR residential-building fatality sample\",2024-11-06,\"Gaza\",\"Israeli forces / conflict parties\",\"UN verification report\",\"OHCH..."
+        "INC-003,\"OHCHR residential-building fatality sample\",2024-11-06,\"Gaza\",\"Israeli forces / conflict parties\",\"UN verification report\",\"OHCH...",
+        "HUM-P-005,\"70%\",\"Verified fatalities in residential buildings who were women and children\",\"OHCHR\",\"OHCHR Gaza update report\",\"Nov 2024 r...",
+        "INC-P-003,\"OHCHR residential-building fatality sample\",2024-11-06,\"Gaza\",\"Israeli forces / conflict parties\",\"UN verification report\",\"OH..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/humanitarian-attribution-table.csv",
-        "public/israel-dossier/templates/incident-evidence-matrix.csv"
+        "public/israel-dossier/templates/incident-evidence-matrix.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/incident-evidence-populated.csv"
       ]
     },
     {
@@ -8097,7 +8119,7 @@
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=6773cb01-cadc-4f1e-928a-2717bd34100a",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=37414e83-bc14-4e2b-b96e-7cdc622f7070",
       "redirected": true,
       "checkedWith": "HEAD",
       "attempts": 1,
@@ -8335,29 +8357,6 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
         "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
-      "domain": "www.unicef.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 2,
-      "referenceLabels": [
-        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
-        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
-        "public/israel-dossier/templates/source-ledger.csv"
       ]
     },
     {
@@ -8766,12 +8765,14 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
-        "LAW-005,\"United Nations General Assembly\",\"Resolution / vote\",2024-09-18,\"Implementation of ICJ advisory opinion\",political-resolution,ht..."
+        "LAW-005,\"United Nations General Assembly\",\"Resolution / vote\",2024-09-18,\"Implementation of ICJ advisory opinion\",political-resolution,ht...",
+        "LAW-P-005,\"United Nations General Assembly\",\"Resolution / vote\",2024-09-18,\"Implementation of ICJ advisory opinion\",political-resolution,..."
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/legal-status-brief.csv"
+        "public/israel-dossier/templates/legal-status-brief.csv",
+        "public/israel-dossier/workbooks/legal-status-populated.csv"
       ]
     },
     {
@@ -8923,29 +8924,24 @@
       ]
     },
     {
-      "url": "https://www.aipac.org/",
-      "domain": "www.aipac.org",
+      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
+      "domain": "www.972mag.com",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.aipac.org/",
+      "finalUrl": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "redirected": false,
       "checkedWith": "HEAD",
       "attempts": 1,
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 6,
+      "referenceCount": 1,
       "referenceLabels": [
-        "Israel is not just an ally, it is a cause.",
-        "The bond between the United States and Israel is unbreakable.",
-        "Let me be clear: I will always ensure Israel has the ability to defend itself.",
-        "I have a deep connection to Israel that goes back many years.",
-        "I wear my pro-Israel badge with pride.",
-        "AIPAC's mission is to strengthen the US-Israel relationship."
+        "972 Magazine — Survivor testimonies"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -9103,6 +9099,27 @@
       ]
     },
     {
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.citadel.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "I am deeply committed to defending democratic values and free markets."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.congress.gov/",
       "domain": "www.congress.gov",
       "status": "restricted",
@@ -9157,19 +9174,21 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 6,
+      "referenceCount": 7,
       "referenceLabels": [
         "Emergency supplemental aid package signed April 2024",
         "The bill",
         "H.R.815 — Israel Security Supplemental",
         "Artillery & Critical Munitions Production",
         "H.R.815 / DSCA / Responsible Statecraft",
-        "AID-004,26400000000,USD,Supplemental appropriation,2024,\"H.R.815 Israel Security Supplemental\",https://www.congress.gov/bill/118th-congre..."
+        "AID-004,26400000000,USD,Supplemental appropriation,2024,\"H.R.815 Israel Security Supplemental\",https://www.congress.gov/bill/118th-congre...",
+        "AID-P-004,26400000000,USD,supplemental appropriation,2024,\"H.R.815 Israel Security Supplemental\",https://www.congress.gov/bill/118th-cong..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
         "src/data/israelDossierExpanded.ts",
-        "public/israel-dossier/templates/aid-ledger.csv"
+        "public/israel-dossier/templates/aid-ledger.csv",
+        "public/israel-dossier/workbooks/aid-ledger-populated.csv"
       ]
     },
     {
@@ -9248,17 +9267,21 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 4,
+      "referenceCount": 6,
       "referenceLabels": [
         "Annual U.S. military aid under 2016 MOU (FY2019–FY2028)",
         "10-Year MOU (2016) — Annual Baseline",
         "AID-001,298000000000,USD constant 2024 dollars,CRS cumulative obligations,1946-2024,\"Congressional Research Service RL33222\",https://www....",
-        "SRC-001,source-file,\"CRS reports an estimated $298B in constant-2024-dollar U.S. aid obligations to Israel from 1946 through 2024.\",finan..."
+        "SRC-001,source-file,\"CRS reports an estimated $298B in constant-2024-dollar U.S. aid obligations to Israel from 1946 through 2024.\",finan...",
+        "AID-P-001,298000000000,USD constant 2024 dollars,CRS cumulative obligations,1946-2024,\"Congressional Research Service RL33222\",https://ww...",
+        "SRC-P-001,aid,\"CRS estimates inflation-adjusted U.S. aid obligations to Israel at $298B from 1946 through 2024.\",financial figure,\"Congre..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/aid-ledger.csv",
-        "public/israel-dossier/templates/source-ledger.csv"
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/aid-ledger-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -9347,27 +9370,6 @@
       ]
     },
     {
-      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
-      "domain": "www.mfa.gov.il",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
-      "redirected": true,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Sabra and Shatila Massacre"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.mikebloomberg.com/",
       "domain": "www.mikebloomberg.com",
       "status": "restricted",
@@ -9428,6 +9430,27 @@
       ],
       "referenceFiles": [
         "src/data/chapters/chapter-7.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "domain": "www.ohchr.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -9573,15 +9596,19 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 3,
+      "referenceCount": 5,
       "referenceLabels": [
         "Estimated violent deaths in Gaza through Jan. 5, 2025",
         "October 7 Attack and Gaza War Begins",
-        "HUM-003,\"75,200\",\"Estimated violent deaths in Gaza\",\"The Lancet Global Health\",\"Population-representative household survey\",\"7 Oct 2023-5..."
+        "HUM-003,\"75,200\",\"Estimated violent deaths in Gaza\",\"The Lancet Global Health\",\"Population-representative household survey\",\"7 Oct 2023-5...",
+        "HUM-P-004,\"75,200\",\"Estimated violent deaths in Gaza\",\"The Lancet Global Health\",\"Population-representative household survey\",\"7 Oct 2023...",
+        "SRC-P-005,humanitarian,\"A Lancet Global Health survey estimated 75,200 violent deaths in Gaza through 5 January 2025.\",survey estimate,\"T..."
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts",
-        "public/israel-dossier/templates/humanitarian-attribution-table.csv"
+        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {
@@ -9649,6 +9676,33 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "domain": "www.unicef.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 4,
+      "referenceLabels": [
+        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
+        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest...",
+        "HUM-P-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation up...",
+        "SRC-P-004,humanitarian,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",reported figure,\"UNICEF humanitarian upd..."
+      ],
+      "referenceFiles": [
+        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
+        "public/israel-dossier/templates/source-ledger.csv",
+        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
+        "public/israel-dossier/workbooks/source-ledger-populated.csv"
       ]
     },
     {

@@ -2,6 +2,10 @@
 
 ## Recently Closed
 
+- **Israel dossier populated workbook pack is locally complete and awaiting production verification.**
+  Impact: the dossier now has source-labeled working records rather than blank templates only: source ledger rows, aid-ledger entries, humanitarian attribution rows, incident evidence rows, legal-status rows, and a publishable briefing draft are bundled as public workbooks for editor/course reuse.
+  Resolution: added populated artifacts under `/israel-dossier/workbooks/`, exposed them in the `/israel-dossier` Evidence Workbooks section, linked the workbook manifest from `llms.txt`, and extended canon, behavior, source-link, and visual verification to cover the pack. Local verification passed; production deployment and live verification are still pending for this slice.
+
 - **Israel dossier editor templates are source-checked, UI-wired, and live.**
   Impact: the course path now has usable artifacts instead of instruction-only modules: source ledger, aid ledger, humanitarian attribution table, incident evidence matrix, legal-status brief, and publishable briefing outline.
   Resolution: added static templates under `/israel-dossier/templates/`, attached each artifact to canonical course modules, exposed downloads on `/israel-dossier`, added the template manifest to `llms.txt`, updated the generated dossier PDF with artifact labels, and extended source-link verification to scan public template files. Production commit `b205bd8f9214` / deployment `21a42519-8209-4356-a8a4-abaf6c34879e` passed all GitHub Actions workflows, live dossier behavior with template-download assertion, direct static template probes, and the primary viewport matrix.

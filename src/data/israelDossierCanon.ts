@@ -1498,6 +1498,51 @@ export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
   },
 ]
 
+export const ISRAEL_DOSSIER_WORKBOOK_PACK: DossierCourseArtifact[] = [
+  {
+    label: 'Populated source ledger',
+    description: 'Source-labeled record batch with claim text, source class, confidence label, source boundary, publication status, and next check.',
+    url: '/israel-dossier/workbooks/source-ledger-populated.csv',
+    filename: 'israel-dossier-source-ledger-populated.csv',
+    format: 'CSV',
+  },
+  {
+    label: 'Populated aid ledger',
+    description: 'Record-type-separated aid workbook covering CRS totals, MOU baseline funding, H.R.815 categories, and DSCA notice boundaries.',
+    url: '/israel-dossier/workbooks/aid-ledger-populated.csv',
+    filename: 'israel-dossier-aid-ledger-populated.csv',
+    format: 'CSV',
+  },
+  {
+    label: 'Populated humanitarian attribution table',
+    description: 'Attributed OCHA, UNICEF, Lancet, OHCHR, and CPJ records with status labels and safe wording.',
+    url: '/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+    filename: 'israel-dossier-humanitarian-attribution-populated.csv',
+    format: 'CSV',
+  },
+  {
+    label: 'Populated incident evidence matrix',
+    description: 'Incident rows for Hind Rajab, World Central Kitchen, OHCHR residential-building sample, Rafah, and An Nuseirat evidence boundaries.',
+    url: '/israel-dossier/workbooks/incident-evidence-populated.csv',
+    filename: 'israel-dossier-incident-evidence-populated.csv',
+    format: 'CSV',
+  },
+  {
+    label: 'Populated legal-status brief',
+    description: 'ICJ, ICC, UNSC, and UNGA legal-record rows that preserve procedural posture and unsafe wording warnings.',
+    url: '/israel-dossier/workbooks/legal-status-populated.csv',
+    filename: 'israel-dossier-legal-status-populated.csv',
+    format: 'CSV',
+  },
+  {
+    label: 'Publishable briefing draft',
+    description: 'Source-boundary briefing draft converting the first populated workbook rows into reader-facing prose without upgrading certainty.',
+    url: '/israel-dossier/workbooks/publishable-briefing-draft.md',
+    filename: 'israel-dossier-publishable-briefing-draft.md',
+    format: 'Markdown',
+  },
+]
+
 export const ISRAEL_DOSSIER_PDF_COVER_STATS = ISRAEL_DOSSIER_LATEST_PUBLIC_RECORDS.map((record) => ({
   v: record.value,
   l: record.shortLabel,

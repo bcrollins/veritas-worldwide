@@ -25,6 +25,7 @@ import {
   ISRAEL_DOSSIER_CORE_INCIDENTS,
   ISRAEL_DOSSIER_MONEY_TRAIL,
   ISRAEL_DOSSIER_COURSE_PATH,
+  ISRAEL_DOSSIER_WORKBOOK_PACK,
   type DossierCategory,
   type DossierCategoryMeta,
   type DossierSourceCategory,
@@ -1195,7 +1196,7 @@ export default function IsraelDossierPage() {
             <div>
               <p className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink-muted mb-1">Evidence Workbooks</p>
               <p className="font-body text-sm text-ink-muted max-w-2xl">
-                Download the source ledger, aid ledger, attribution table, incident matrix, legal-status brief, and briefing outline used by the course path.
+                Download blank templates and populated source-labeled workbooks for the source ledger, aid ledger, attribution table, incident matrix, legal-status brief, and briefing draft.
               </p>
             </div>
             <a
@@ -1223,6 +1224,41 @@ export default function IsraelDossierPage() {
                 <p className="mt-1 line-clamp-2 font-body text-xs leading-relaxed text-ink-muted">{module.artifact.description}</p>
               </a>
             ))}
+          </div>
+          <div className="mt-6 border-t border-border pt-5">
+            <div className="flex flex-wrap items-end justify-between gap-4 mb-4">
+              <div>
+                <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.14em] text-ink-muted">Populated record pack</p>
+                <p className="mt-1 font-body text-sm text-ink-muted max-w-2xl">
+                  These files carry the first source-labeled rows and a briefing draft so editors can audit language before expanding the dossier.
+                </p>
+              </div>
+              <a
+                href="/israel-dossier/workbooks/manifest.json"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark hover:underline"
+              >
+                Workbook manifest
+              </a>
+            </div>
+            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+              {ISRAEL_DOSSIER_WORKBOOK_PACK.map((workbook) => (
+                <a
+                  key={workbook.url}
+                  href={workbook.url}
+                  download={workbook.filename}
+                  className="group rounded-sm border border-border bg-parchment p-4 transition-colors hover:border-crimson/40"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] text-ink-faint">Populated</span>
+                    <span className="rounded-full bg-crimson px-2 py-0.5 font-sans text-[0.5rem] font-bold uppercase tracking-[0.1em] text-white">{workbook.format}</span>
+                  </div>
+                  <p className="mt-2 font-sans text-sm font-bold text-ink group-hover:text-crimson">{workbook.label}</p>
+                  <p className="mt-1 line-clamp-2 font-body text-xs leading-relaxed text-ink-muted">{workbook.description}</p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

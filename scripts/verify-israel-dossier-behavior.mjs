@@ -226,7 +226,7 @@ async function runViewportSmoke(browser, name, viewport, isMobile = false) {
     await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByText(/Source Workbench/i).waitFor({ timeout: 20000 })
     const body = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', 'evidence workbooks', '72,289+', '21,289+', '261+', '$298b']) {
+    for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', 'evidence workbooks', 'populated record pack', '72,289+', '21,289+', '261+', '$298b']) {
       assert(body.includes(needle), `${name} missing ${needle}`)
     }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
@@ -293,6 +293,17 @@ async function runInteractiveChecks(browser) {
 
     const downloads = page.locator('#downloads')
     await downloads.scrollIntoViewIfNeeded()
+    const [workbookDownload] = await Promise.all([
+      page.waitForEvent('download', { timeout: 60000 }),
+      downloads.getByRole('link', { name: /Populated humanitarian attribution table/i }).click(),
+    ])
+    const workbookResult = await saveAndMeasureDownload(workbookDownload, /^israel-dossier-humanitarian-attribution-populated\.csv$/, 500)
+    const workbookText = fs.readFileSync(workbookResult.filePath, 'utf8')
+    for (const needle of ['HUM-P-001', 'status', 'safe_wording', 'Lancet']) {
+      assert(workbookText.includes(needle), `populated humanitarian workbook missing ${needle}`)
+    }
+    console.log(`[verify:israel-dossier:behavior] PASS populated workbook download ${workbookResult.suggestedName} ${workbookResult.bytes} bytes`)
+
     const slideButtons = downloads.locator('button').filter({ hasText: /\d+\/10/ })
     const slideCount = await slideButtons.count()
     assert(slideCount === 10, `carousel preview count mismatch: ${slideCount}`)
