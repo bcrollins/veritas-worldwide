@@ -37,7 +37,7 @@ const chapter: Chapter = {
     { id: 10, text: 'United States District Court, Southern District of New York. Indictment, United States v. Jeffrey Epstein, July 2019.', url: 'https://www.justice.gov/usao-sdny' },
     { id: 11, text: 'Department of Justice. Epstein Files Release under the Epstein Files Transparency Act, January 30, 2026.', url: 'https://www.justice.gov' },
     { id: 12, text: 'United States v. Ghislaine Maxwell, Trial Transcripts (2021). Available via PACER / CourtListener.', url: 'https://www.courtlistener.com' },
-    { id: 13, text: 'Quigley, Carroll. Tragedy and Hope: A History of the World in Our Time. Macmillan, 1966.', url: 'https://archive.org/search?query=tragedy+and+hope+quigley' },
+    { id: 13, text: 'Quigley, Carroll. Tragedy and Hope: A History of the World in Our Time. Macmillan, 1966.', url: 'https://archive.org/details/tragedyhopehisto00quig' },
     { id: 14, text: 'Freedom of the Press Foundation. SecureDrop — secure whistleblower submission system.', url: 'https://securedrop.org/' },
   ],
   crossLinks: [{ label: 'Overview: The World Today', chapterId: 'overview' }, { label: 'Foreword: Methodology', chapterId: 'foreword' }],
