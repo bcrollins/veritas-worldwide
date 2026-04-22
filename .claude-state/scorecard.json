@@ -7,8 +7,8 @@
       "composite": 9.9,
       "previous": 9.9,
       "delta": 0,
-      "status": "Live score held at production commit 17b56d8 / deployment 678be049-ea66-4aa8-abd6-47316371f62d. A new `/israel-dossier/briefing` surface is locally complete and verified across typecheck, build, bundle, canon, source-link, behavior, crawler, and primary viewport checks, but it is not yet deployed.",
-      "plus_half_requires": "Deploy and live-verify `/israel-dossier/briefing`, then expand the briefing into a larger chapter-style surface with paragraph-level source row IDs, confidence labels, and explicit open-question boundaries."
+      "status": "Production commit c7ec930 / deployment d2f7235f-89e6-472b-9385-d35e95c8b27d passed all GitHub Actions workflows, crawler route probes, generated PDF checks, canonical source checks, source-link trends, build, bundle, public briefing behavior, sitemap/LLM/workbook probes, and full primary viewport matrix for the new `/israel-dossier/briefing` surface.",
+      "plus_half_requires": "Expand the briefing into a larger chapter-style surface with paragraph-level source row IDs, downloadable chapter draft, confidence labels, and explicit open-question boundaries."
     },
     {
       "feature": "Home / Front Page",
