@@ -4,11 +4,11 @@
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.85,
+      "composite": 9.9,
       "previous": 9.85,
-      "delta": 0,
-      "status": "Live score held at production commit b205bd8f9214 / deployment 21a42519-8209-4356-a8a4-abaf6c34879e. A populated source-labeled workbook pack for `/israel-dossier/workbooks/` is locally complete and verified across canon, source-link, build, bundle, behavior, direct artifact probes, and full primary viewport checks, but it is not yet deployed.",
-      "plus_half_requires": "Deploy and live-verify the populated source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing-draft artifacts, then turn the strongest verified rows into a public chapter/briefing surface with source-boundary labels."
+      "delta": 0.05,
+      "status": "Production commit ea4c1a0 / deployment 5d1991c6-2a23-4cff-af28-8dd85335484e passed all GitHub Actions workflows, crawler/social behavior checks, generated PDF checks, canonical source checks, source-link trends, build, bundle, populated-workbook download behavior, static template/workbook probes, and full primary viewport matrix for the populated Evidence Workbooks layer.",
+      "plus_half_requires": "Turn the strongest populated source-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing-draft rows into a public chapter/briefing surface with row-level source IDs, confidence labels, and explicit open-question boundaries."
     },
     {
       "feature": "Home / Front Page",
