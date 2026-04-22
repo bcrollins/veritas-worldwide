@@ -5,8 +5,10 @@ const root = process.cwd()
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8')
 
 const files = {
+  app: 'src/App.tsx',
   canon: 'src/data/israelDossierCanon.ts',
   page: 'src/pages/IsraelDossierPage.tsx',
+  briefingPage: 'src/pages/IsraelDossierBriefingPage.tsx',
   expanded: 'src/data/israelDossierExpanded.ts',
   pdf: 'src/components/DossierPDF.tsx',
   chapter15: 'src/data/chapters/chapter-15.ts',
@@ -16,6 +18,7 @@ const files = {
   articles: 'src/data/articles.ts',
   packageJson: 'package.json',
   prerender: 'scripts/prerender.mjs',
+  serverSocialMeta: 'server-social-meta.js',
   behaviorVerifier: 'scripts/verify-israel-dossier-behavior.mjs',
   sourceVerifier: 'scripts/verify-source-links.mjs',
   sitemap: 'public/sitemap.xml',
@@ -52,6 +55,12 @@ const currentNeedles = [
   'Humanitarian attribution table',
   'ISRAEL_DOSSIER_WORKBOOK_PACK',
   'Publishable briefing draft',
+  'ISRAEL_DOSSIER_PUBLIC_BRIEFING',
+  'source-boundary briefing',
+  'SRC-P-001',
+  'HUM-P-001',
+  'INC-P-001',
+  'LAW-P-001',
   'https://www.congress.gov/crs-product/RL33222',
   'Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
   'State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
@@ -67,6 +76,7 @@ for (const needle of currentNeedles) {
 
 const requiredImports = [
   files.page,
+  files.briefingPage,
   files.expanded,
   files.pdf,
   files.chapter15,
@@ -167,6 +177,11 @@ assert(has(files.page, /Template manifest/), 'page does not expose the evidence 
 assert(has(files.page, /Workbook manifest/), 'page does not expose the populated workbook manifest')
 assert(has(files.page, /Download template/), 'page does not expose active course template downloads')
 assert(has(files.page, /ISRAEL_DOSSIER_WORKBOOK_PACK/), 'page does not render the populated workbook pack')
+assert(has(files.page, /to="\/israel-dossier\/briefing"/), 'dossier page does not link to the public briefing surface')
+assert(has(files.briefingPage, /ISRAEL_DOSSIER_PUBLIC_BRIEFING/), 'briefing page does not consume canonical briefing data')
+assert(has(files.briefingPage, /Unsafe wording to avoid/), 'briefing page does not expose unsafe wording boundaries')
+assert(has(files.briefingPage, /Download row file/), 'briefing page does not expose workbook row downloads')
+assert(has(files.app, /IsraelDossierBriefingPage/), 'App route does not register the Israel dossier briefing page')
 assert(has(files.expanded, /ISRAEL_DOSSIER_HISTORICAL_TIMELINE as HISTORICAL_TIMELINE/), 'expanded data does not re-export canonical timeline')
 assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_INCIDENTS as EXPANDED_INCIDENTS/), 'expanded data does not re-export canonical expanded incidents')
 assert(has(files.expanded, /ISRAEL_DOSSIER_LOBBYING_DATA as LOBBYING_DATA/), 'expanded data does not re-export canonical lobbying data')
@@ -182,15 +197,19 @@ assert(has(files.behaviorVerifier, /chapter-15/), 'behavior verifier does not ex
 assert(has(files.behaviorVerifier, /extractPdfText/), 'behavior verifier does not assert generated PDF text')
 assert(has(files.behaviorVerifier, /og:type/), 'behavior verifier does not assert crawler Open Graph metadata')
 assert(has(files.behaviorVerifier, /naturalWidth/), 'behavior verifier does not assert social preview image renderability')
+assert(has(files.behaviorVerifier, /public briefing surface/), 'behavior verifier does not exercise the public briefing surface')
 assert(has(files.chapter15, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter 15 does not consume canonical companion copy')
 assert(has(files.chapterMeta, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter metadata does not consume canonical chapter 15 copy')
 assert(has(files.chapterImages, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter images do not consume canonical chapter 15 imagery')
 assert(has(files.articles, /CRS's \$298 billion constant-dollar aid-obligation total for 1946-2024/), 'article callouts are not aligned to the canonical CRS figure')
 assert(has(files.prerender, /normalizeCanonicalChapterMetaReferences/), 'prerender route discovery does not normalize canonical chapter metadata references')
+assert(has(files.prerender, /\/israel-dossier\/briefing/), 'prerender does not include the Israel dossier briefing route')
+assert(has(files.serverSocialMeta, /\/israel-dossier\/briefing/), 'server social metadata does not include the briefing route')
 assert(has(files.sourceVerifier, /israelDossierCanon\.ts/), 'source-link verifier does not scan the Israel dossier canon')
 assert(has(files.sourceVerifier, /source-link-trends/), 'source-link verifier does not emit trend reports')
 assert(has(files.sourceVerifier, /retryHeavy/), 'source-link verifier does not identify retry-heavy URLs')
 assert(has(files.sitemap, /https:\/\/veritasworldwide\.com\/chapter\/chapter-15/), 'sitemap is missing chapter 15 after canonical metadata normalization')
+assert(has(files.sitemap, /https:\/\/veritasworldwide\.com\/israel-dossier\/briefing/), 'sitemap is missing the Israel dossier briefing route')
 assert(has(files.pdf, /ISRAEL_DOSSIER_COURSE_PATH/), 'PDF export does not include the evidence course path')
 assert(has(files.pdf, /module\.artifact\.label/), 'PDF export does not include evidence course artifact labels')
 assert(has(files.instituteCatalog, /Expected 106 topics/), 'Institute catalog topic-count guard was not updated for Israel dossier courses')

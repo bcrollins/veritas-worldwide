@@ -5,10 +5,10 @@
     {
       "feature": "Israel Dossier",
       "composite": 9.9,
-      "previous": 9.85,
-      "delta": 0.05,
-      "status": "Production commit ea4c1a0 / deployment 5d1991c6-2a23-4cff-af28-8dd85335484e passed all GitHub Actions workflows, crawler/social behavior checks, generated PDF checks, canonical source checks, source-link trends, build, bundle, populated-workbook download behavior, static template/workbook probes, and full primary viewport matrix for the populated Evidence Workbooks layer.",
-      "plus_half_requires": "Turn the strongest populated source-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing-draft rows into a public chapter/briefing surface with row-level source IDs, confidence labels, and explicit open-question boundaries."
+      "previous": 9.9,
+      "delta": 0,
+      "status": "Live score held at production commit 17b56d8 / deployment 678be049-ea66-4aa8-abd6-47316371f62d. A new `/israel-dossier/briefing` surface is locally complete and verified across typecheck, build, bundle, canon, source-link, behavior, crawler, and primary viewport checks, but it is not yet deployed.",
+      "plus_half_requires": "Deploy and live-verify `/israel-dossier/briefing`, then expand the briefing into a larger chapter-style surface with paragraph-level source row IDs, confidence labels, and explicit open-question boundaries."
     },
     {
       "feature": "Home / Front Page",

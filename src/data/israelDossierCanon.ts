@@ -148,6 +148,33 @@ export interface DossierCourseModule {
   artifact: DossierCourseArtifact
 }
 
+export interface DossierBriefingSection {
+  id: string
+  pillar: 'Financial record' | 'Humanitarian record' | 'Incident record' | 'Legal record'
+  title: string
+  sourceIds: string[]
+  sourceClass: DossierSourceCategory
+  statusLabel: string
+  dateRange: string
+  sourceLabel: string
+  sourceUrl: string
+  workbookPath: string
+  verifiedFloor: string
+  readerCopy: string
+  boundary: string
+  unsafeWording: string
+  nextCheck: string
+}
+
+export interface DossierPublicBriefing {
+  title: string
+  dek: string
+  lastVerified: string
+  thesis: string
+  sections: DossierBriefingSection[]
+  editorChecks: string[]
+}
+
 export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-04-22'
 
 export const ISRAEL_DOSSIER_ASSETS = {
@@ -1542,6 +1569,102 @@ export const ISRAEL_DOSSIER_WORKBOOK_PACK: DossierCourseArtifact[] = [
     format: 'Markdown',
   },
 ]
+
+export const ISRAEL_DOSSIER_PUBLIC_BRIEFING: DossierPublicBriefing = {
+  title: 'Israel Dossier Public Briefing',
+  dek: 'A source-boundary briefing built from the populated workbook pack. Each paragraph keeps the row ID, source class, date range, and confidence limit visible.',
+  lastVerified: ISRAEL_DOSSIER_LAST_VERIFIED,
+  thesis:
+    'The documentary floor is strong enough to publish a reader-facing briefing on U.S. aid, reported humanitarian harm, selected incident evidence, and legal proceedings, but it is not strong enough to collapse reported figures, survey estimates, forensic reconstructions, and legal procedure into one certainty level.',
+  sections: [
+    {
+      id: 'financial-floor',
+      pillar: 'Financial record',
+      title: 'The aid record is a public-record floor, not an incident finding.',
+      sourceIds: ['SRC-P-001', 'AID-P-001', 'AID-P-003'],
+      sourceClass: 'public-record',
+      statusLabel: 'Verified public record',
+      dateRange: '1946-2024; April 2024',
+      sourceLabel: 'Congressional Research Service RL33222 and H.R.815',
+      sourceUrl: ISRAEL_DOSSIER_PUBLIC_RECORDS.aidObligations.sourceUrl,
+      workbookPath: '/israel-dossier/workbooks/aid-ledger-populated.csv',
+      verifiedFloor:
+        'CRS identifies Israel as the largest cumulative recipient of U.S. foreign assistance since World War II and estimates inflation-adjusted U.S. aid obligations at $298 billion from 1946 through 2024. H.R.815 separately records a 2024 Israel security supplemental.',
+      readerCopy:
+        'The funding record establishes scale and continuity: long-run CRS aid totals, the annual MOU baseline, and the April 2024 supplemental should be read as appropriations and obligation records. They do not, standing alone, prove delivery timing, end use, or direct causation in a specific incident.',
+      boundary:
+        'Do not merge constant-dollar CRS totals with current-dollar figures, and do not treat appropriations language as a delivery log without a separate delivery or end-use record.',
+      unsafeWording: 'Do not write that a specific death was paid for by a specific appropriation unless a delivery/end-use source proves that chain.',
+      nextCheck: 'Attach delivery and end-use records before moving from funding scale to weapon-specific causation.',
+    },
+    {
+      id: 'humanitarian-attribution',
+      pillar: 'Humanitarian record',
+      title: 'Humanitarian figures must keep the reporting chain attached.',
+      sourceIds: ['HUM-P-001', 'HUM-P-002', 'HUM-P-004', 'HUM-P-005'],
+      sourceClass: 'un-international',
+      statusLabel: 'Reported / estimate / verified sample',
+      dateRange: '7 Oct. 2023-1 Apr. 2026',
+      sourceLabel: 'OCHA, UNICEF, The Lancet Global Health, OHCHR',
+      sourceUrl: ISRAEL_DOSSIER_PUBLIC_RECORDS.gazaFatalities.sourceUrl,
+      workbookPath: '/israel-dossier/workbooks/humanitarian-attribution-populated.csv',
+      verifiedFloor:
+        'OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza. UNICEF reported child fatality and injury figures through 3 February 2026. The Lancet Global Health row is a survey estimate, and the OHCHR row is a verified residential-building sample.',
+      readerCopy:
+        'The public briefing can state that multiple humanitarian and monitoring records describe large-scale civilian harm, but each number has to carry its source class: reported administrative figure, agency situation update, survey estimate, or verified sample.',
+      boundary:
+        'Reported figures are not final adjudicated findings. Survey estimates are not live administrative counts. OHCHR sample findings should not be generalized beyond the sample unless the source does so.',
+      unsafeWording: 'Do not strip the OCHA/MoH attribution chain or present the Lancet survey estimate as a live death-count update.',
+      nextCheck: 'Refresh every reported figure before publication and preserve date ranges in prose, captions, and metadata.',
+    },
+    {
+      id: 'incident-matrix',
+      pillar: 'Incident record',
+      title: 'Incident rows can support narrative detail, not unadjudicated liability.',
+      sourceIds: ['INC-P-001', 'INC-P-002', 'INC-P-003', 'INC-P-005'],
+      sourceClass: 'press-osint',
+      statusLabel: 'Forensic reconstruction / reported incident record',
+      dateRange: 'Jan. 2024-Mar. 2025',
+      sourceLabel: 'Forensic Architecture, WCK, OHCHR, OCHA',
+      sourceUrl: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab',
+      workbookPath: '/israel-dossier/workbooks/incident-evidence-populated.csv',
+      verifiedFloor:
+        'The populated incident matrix separates forensic reconstruction, aid-organization statement, UN sample finding, and OCHA incident reporting so each event keeps its evidence type and disputed elements visible.',
+      readerCopy:
+        'The briefing can move from general harm into selected incidents only if the sentence states what the source actually did: reconstructed a killing, reported a convoy strike, verified a sample, or documented body recovery. That is enough for a sober public record without claiming more than the record proves.',
+      boundary:
+        'A reconstruction or incident report is not a final criminal finding. Attribute disputed details and avoid turning source analysis into individual culpability unless a competent authority has made that finding.',
+      unsafeWording: 'Do not write individual criminal liability, intent, or final legal classification from incident rows alone.',
+      nextCheck: 'Add exact paragraph references, archived source copies, and any official investigative findings before escalating language.',
+    },
+    {
+      id: 'legal-posture',
+      pillar: 'Legal record',
+      title: 'Legal records require procedural posture in every sentence.',
+      sourceIds: ['LAW-P-001', 'LAW-P-003', 'LAW-P-004', 'LAW-P-005'],
+      sourceClass: 'un-international',
+      statusLabel: 'Procedural legal record',
+      dateRange: 'Jan. 2024-Nov. 2024',
+      sourceLabel: 'ICJ, ICC, UNSC, UNGA',
+      sourceUrl: 'https://www.icj-cij.org/case/192',
+      workbookPath: '/israel-dossier/workbooks/legal-status-populated.csv',
+      verifiedFloor:
+        'The legal-status workbook records ICJ provisional measures, the ICJ advisory opinion on the occupied Palestinian territory, ICC warrants in the Situation in the State of Palestine, and UN Security Council or General Assembly records as distinct legal postures.',
+      readerCopy:
+        'A publication-ready legal paragraph can say that international institutions have issued provisional measures, an advisory opinion, warrants, and political resolutions. It should not describe those records as the same thing, and it should not convert warrants or provisional measures into convictions or final merits rulings.',
+      boundary:
+        'Procedural posture is part of the fact. A warrant is not a conviction; provisional measures are not a final merits ruling; an advisory opinion has a different legal posture than a binding judgment.',
+      unsafeWording: 'Do not write that a court has finally adjudicated genocide, guilt, or individual conviction unless the cited record says that.',
+      nextCheck: 'Add paragraph-level legal citations and update posture if any court, prosecutor, or UN body changes the record.',
+    },
+  ],
+  editorChecks: [
+    'Every number in the briefing must carry a source row ID, source body, and date range.',
+    'Every incident sentence must preserve whether the source is a reconstruction, statement, sample, or incident report.',
+    'Every legal sentence must name the procedural posture before it names the conclusion.',
+    'Every paragraph should state at least one boundary: what the source proves and what it does not prove.',
+  ],
+}
 
 export const ISRAEL_DOSSIER_PDF_COVER_STATS = ISRAEL_DOSSIER_LATEST_PUBLIC_RECORDS.map((record) => ({
   v: record.value,

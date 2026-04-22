@@ -2,6 +2,10 @@
 
 ## Recently Closed
 
+- **Israel dossier public briefing surface is locally complete and awaiting production verification.**
+  Impact: the populated workbook rows now have a reader-facing briefing route instead of remaining only downloadable files. The new surface keeps source-row IDs, status labels, procedural posture, unsafe-wording warnings, and open questions visible while moving the strongest rows into publishable prose.
+  Resolution: added canonical briefing sections, routed `/israel-dossier/briefing`, linked it from `/israel-dossier`, added prerender/sitemap/LLM index coverage, wired bot metadata, and extended canon plus behavior verification. Local build, source-link, behavior, crawler, and viewport verification passed; production deployment and live verification are still pending for this slice.
+
 - **Israel dossier populated workbook pack is source-checked, UI-wired, and live.**
   Impact: the dossier now has source-labeled working records rather than blank templates only: source ledger rows, aid-ledger entries, humanitarian attribution rows, incident evidence rows, legal-status rows, and a publishable briefing draft are bundled as public workbooks for editor/course reuse.
   Resolution: added populated artifacts under `/israel-dossier/workbooks/`, exposed them in the `/israel-dossier` Evidence Workbooks section, linked the workbook manifest from `llms.txt`, and extended canon, behavior, source-link, and visual verification to cover the pack. Production commit `ea4c1a0` / deployment `5d1991c6-2a23-4cff-af28-8dd85335484e` passed all GitHub Actions workflows, live dossier behavior with populated-workbook download assertion, direct static workbook/template probes, and the primary live viewport matrix.

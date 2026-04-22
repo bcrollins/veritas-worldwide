@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-22T11:25:06.509Z",
-  "currentGeneratedAt": "2026-04-22T11:25:06.497Z",
-  "previousGeneratedAt": "2026-04-22T10:53:03.676Z",
+  "generatedAt": "2026-04-22T11:49:31.480Z",
+  "currentGeneratedAt": "2026-04-22T11:49:31.470Z",
+  "previousGeneratedAt": "2026-04-22T11:25:06.497Z",
   "summaryDelta": {
     "referenceCount": {
-      "current": 802,
-      "previous": 775,
-      "delta": 27
+      "current": 804,
+      "previous": 802,
+      "delta": 2
     },
     "uniqueUrlCount": {
       "current": 455,
@@ -15,8 +15,8 @@
     },
     "ok": {
       "current": 397,
-      "previous": 399,
-      "delta": -2
+      "previous": 397,
+      "delta": 0
     },
     "redirect": {
       "current": 0,
@@ -25,8 +25,8 @@
     },
     "restricted": {
       "current": 58,
-      "previous": 56,
-      "delta": 2
+      "previous": 58,
+      "delta": 0
     },
     "transient": {
       "current": 0,
@@ -60,8 +60,8 @@
     "statusChanges": 6,
     "newHardFailures": 0,
     "resolvedHardFailures": 0,
-    "newRestricted": 4,
-    "resolvedRestricted": 2,
+    "newRestricted": 3,
+    "resolvedRestricted": 3,
     "newArchived": 0,
     "newTransient": 0,
     "resolvedTransient": 0,
@@ -73,9 +73,9 @@
     {
       "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "domain": "www.972mag.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -85,15 +85,15 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ],
-      "previousStatus": "ok",
-      "currentStatus": "restricted"
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
     },
     {
       "url": "https://www.aipac.org/",
       "domain": "www.aipac.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -105,15 +105,15 @@
       "referenceFiles": [
         "src/data/profileData.ts"
       ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
     },
     {
       "url": "https://www.citadel.com/",
       "domain": "www.citadel.com",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -123,15 +123,15 @@
       "referenceFiles": [
         "src/data/profileData.ts"
       ],
-      "previousStatus": "ok",
-      "currentStatus": "restricted"
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
     },
     {
       "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
       "domain": "www.mfa.gov.il",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -141,15 +141,15 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
+      "previousStatus": "ok",
+      "currentStatus": "restricted"
     },
     {
       "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
       "domain": "www.ohchr.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
       "attempts": 1,
       "transientErrorCount": 0,
       "archiveUrl": null,
@@ -159,12 +159,12 @@
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
       ],
-      "previousStatus": "ok",
-      "currentStatus": "restricted"
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
     },
     {
-      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
-      "domain": "www.unicef.org",
+      "url": "https://www.politico.com/",
+      "domain": "www.politico.com",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
@@ -172,15 +172,12 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
-        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest...",
-        "HUM-P-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation up..."
+        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
+        "One of few Republican senators to oppose unconditional Israel military aid",
+        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
-        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
-        "public/israel-dossier/templates/source-ledger.csv",
-        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
-        "public/israel-dossier/workbooks/source-ledger-populated.csv"
+        "src/data/profileData.ts"
       ],
       "previousStatus": "ok",
       "currentStatus": "restricted"
@@ -189,6 +186,60 @@
   "newHardFailures": [],
   "resolvedHardFailures": [],
   "newRestricted": [
+    {
+      "url": "https://www.aipac.org/",
+      "domain": "www.aipac.org",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Israel is not just an ally, it is a cause.",
+        "The bond between the United States and Israel is unbreakable.",
+        "Let me be clear: I will always ensure Israel has the ability to defend itself."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Sabra and Shatila Massacre"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.politico.com/",
+      "domain": "www.politico.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "attempts": 1,
+      "transientErrorCount": 0,
+      "archiveUrl": null,
+      "referenceLabels": [
+        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
+        "One of few Republican senators to oppose unconditional Israel military aid",
+        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    }
+  ],
+  "resolvedRestricted": [
     {
       "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "domain": "www.972mag.com",
@@ -203,7 +254,9 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
-      ]
+      ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
     },
     {
       "url": "https://www.citadel.com/",
@@ -219,7 +272,9 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
+      ],
+      "previousStatus": "restricted",
+      "currentStatus": "ok"
     },
     {
       "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
@@ -232,65 +287,6 @@
       "archiveUrl": null,
       "referenceLabels": [
         "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
-      "domain": "www.unicef.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
-        "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest...",
-        "HUM-P-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation up..."
-      ],
-      "referenceFiles": [
-        "public/israel-dossier/templates/humanitarian-attribution-table.csv",
-        "public/israel-dossier/templates/source-ledger.csv",
-        "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
-        "public/israel-dossier/workbooks/source-ledger-populated.csv"
-      ]
-    }
-  ],
-  "resolvedRestricted": [
-    {
-      "url": "https://www.aipac.org/",
-      "domain": "www.aipac.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "Israel is not just an ally, it is a cause.",
-        "The bond between the United States and Israel is unbreakable.",
-        "Let me be clear: I will always ensure Israel has the ability to defend itself."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "restricted",
-      "currentStatus": "ok"
-    },
-    {
-      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
-      "domain": "www.mfa.gov.il",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "Sabra and Shatila Massacre"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
@@ -308,36 +304,36 @@
     "restricted": [
       {
         "domain": "www.972mag.com",
-        "current": 1,
-        "previous": 0,
-        "delta": 1
+        "current": 0,
+        "previous": 1,
+        "delta": -1
       },
       {
         "domain": "www.aipac.org",
-        "current": 0,
-        "previous": 1,
-        "delta": -1
+        "current": 1,
+        "previous": 0,
+        "delta": 1
       },
       {
         "domain": "www.citadel.com",
-        "current": 1,
-        "previous": 0,
-        "delta": 1
-      },
-      {
-        "domain": "www.mfa.gov.il",
         "current": 0,
         "previous": 1,
         "delta": -1
       },
       {
-        "domain": "www.ohchr.org",
+        "domain": "www.mfa.gov.il",
         "current": 1,
         "previous": 0,
         "delta": 1
       },
       {
-        "domain": "www.unicef.org",
+        "domain": "www.ohchr.org",
+        "current": 0,
+        "previous": 1,
+        "delta": -1
+      },
+      {
+        "domain": "www.politico.com",
         "current": 1,
         "previous": 0,
         "delta": 1

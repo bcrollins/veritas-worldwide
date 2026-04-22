@@ -39,6 +39,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
 const IsraelDossierPage = lazy(() => import('./pages/IsraelDossierPage'))
+const IsraelDossierBriefingPage = lazy(() => import('./pages/IsraelDossierBriefingPage'))
 const MembershipPage = lazy(() => import('./pages/MembershipPage'))
 const DeepStatePage = lazy(() => import('./pages/DeepStatePage'))
 const ReadTheBookPage = lazy(() => import('./pages/ReadTheBookPage'))
@@ -819,6 +820,7 @@ export default function App() {
                 <Route path="/privacy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/israel-dossier" element={<IsraelDossierPage />} />
+                <Route path="/israel-dossier/briefing" element={<IsraelDossierBriefingPage />} />
                 <Route path="/membership" element={<MembershipPage />} />
                 <Route path="/deep-state" element={<DeepStatePage />} />
                 <Route path="/read" element={<ReadTheBookPage />} />

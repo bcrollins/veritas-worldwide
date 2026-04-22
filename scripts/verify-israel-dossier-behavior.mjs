@@ -164,6 +164,14 @@ async function runCrawlerMetaChecks(browser) {
       type: 'article',
       imageSuffix: '/og/chapter-15.png',
     },
+    {
+      path: '/israel-dossier/briefing',
+      label: 'Israel dossier briefing',
+      title: 'Israel Dossier Public Briefing | Veritas Worldwide',
+      description: 'A source-boundary briefing generated from the populated Israel dossier workbook rows, with visible confidence limits and open questions.',
+      type: 'article',
+      imageSuffix: '/og-image.png',
+    },
   ]
 
   for (const item of cases) {
@@ -226,7 +234,7 @@ async function runViewportSmoke(browser, name, viewport, isMobile = false) {
     await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByText(/Source Workbench/i).waitFor({ timeout: 20000 })
     const body = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', 'evidence workbooks', 'populated record pack', '72,289+', '21,289+', '261+', '$298b']) {
+    for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', 'evidence workbooks', 'populated record pack', 'open briefing', '72,289+', '21,289+', '261+', '$298b']) {
       assert(body.includes(needle), `${name} missing ${needle}`)
     }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
@@ -336,6 +344,37 @@ async function runInteractiveChecks(browser) {
   }
 }
 
+async function runBriefingSurfaceCheck(browser) {
+  const context = await browser.newContext({
+    viewport: { width: 393, height: 852 },
+    deviceScaleFactor: 3,
+    isMobile: true,
+    hasTouch: true,
+  })
+  const page = await context.newPage()
+  try {
+    await page.goto(`${baseUrl}/israel-dossier/briefing`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: /Source-boundary briefing/i }).waitFor({ timeout: 20000 })
+    const initialBody = (await page.locator('body').innerText()).toLowerCase()
+    for (const needle of ['public briefing', 'source-boundary', 'src-p-001', 'hum-p-001', 'unsafe wording to avoid', 'download draft']) {
+      assert(initialBody.includes(needle), `briefing surface missing ${needle}`)
+    }
+
+    await page.getByRole('button', { name: /Legal record/i }).click()
+    await waitForSectionText(page, 'body', 'LAW-P-001')
+    const legalBody = (await page.locator('body').innerText()).toLowerCase()
+    for (const needle of ['procedural legal record', 'warrant is not a conviction', 'provisional measures are not a final merits ruling']) {
+      assert(legalBody.includes(needle), `briefing legal panel missing ${needle}`)
+    }
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+    assert(overflow <= 2, `briefing surface has ${overflow}px horizontal overflow`)
+    console.log('[verify:israel-dossier:behavior] PASS public briefing surface')
+  } finally {
+    await context.close()
+  }
+}
+
 async function runChapter15PreviewCheck(browser) {
   const context = await browser.newContext({
     viewport: { width: 393, height: 852 },
@@ -366,6 +405,7 @@ try {
   await runViewportSmoke(browser, 'Desktop 1440', { width: 1440, height: 900 })
   await runCrawlerMetaChecks(browser)
   await runInteractiveChecks(browser)
+  await runBriefingSurfaceCheck(browser)
   await runChapter15PreviewCheck(browser)
 } finally {
   await browser.close()

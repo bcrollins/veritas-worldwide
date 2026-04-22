@@ -1233,14 +1233,22 @@ export default function IsraelDossierPage() {
                   These files carry the first source-labeled rows and a briefing draft so editors can audit language before expanding the dossier.
                 </p>
               </div>
-              <a
-                href="/israel-dossier/workbooks/manifest.json"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark hover:underline"
-              >
-                Workbook manifest
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  to="/israel-dossier/briefing"
+                  className="inline-flex min-h-[40px] items-center justify-center bg-ink px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-surface transition-colors hover:bg-crimson"
+                >
+                  Open briefing
+                </Link>
+                <a
+                  href="/israel-dossier/workbooks/manifest.json"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark hover:underline"
+                >
+                  Workbook manifest
+                </a>
+              </div>
             </div>
             <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
               {ISRAEL_DOSSIER_WORKBOOK_PACK.map((workbook) => (

@@ -795,6 +795,7 @@ function renderLlmsTxt(topics) {
     '- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.',
     '- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.',
     '- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Source-backed dossier surface with public-record figures, evidence workbench, course path, and downloadable editor templates.',
+    '- [Israel Dossier public briefing](https://veritasworldwide.com/israel-dossier/briefing): Source-boundary briefing generated from populated workbook rows with visible confidence limits and open questions.',
     '- [Israel Dossier template manifest](https://veritasworldwide.com/israel-dossier/templates/manifest.json): Machine-readable list of the source ledger, aid ledger, humanitarian attribution, incident matrix, legal-status, and briefing templates.',
     '- [Israel Dossier workbook manifest](https://veritasworldwide.com/israel-dossier/workbooks/manifest.json): Machine-readable list of populated source-ledger, aid-ledger, humanitarian, incident, legal-status, and briefing draft artifacts.',
     '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder and editorial rules for Veritas Institute.',
@@ -1887,6 +1888,18 @@ const staticPages = [
     ],
     featuredChapterIds: ['chapter-14', 'chapter-15', 'chapter-16'],
     sourceFile: 'src/pages/IsraelDossierPage.tsx',
+  },
+  {
+    route: '/israel-dossier/briefing',
+    title: 'Israel Dossier Public Briefing | Veritas Worldwide',
+    heading: 'Israel Dossier Public Briefing',
+    description: 'A source-boundary briefing generated from the populated Israel dossier workbook rows, with visible confidence limits and open questions.',
+    type: 'article',
+    body: [
+      'The briefing converts selected workbook rows into publishable prose without collapsing public records, reported figures, survey estimates, incident reconstructions, and legal procedure into one certainty level.',
+    ],
+    featuredChapterIds: ['chapter-14', 'chapter-15', 'chapter-16'],
+    sourceFile: 'src/pages/IsraelDossierBriefingPage.tsx',
   },
   {
     route: '/membership',
