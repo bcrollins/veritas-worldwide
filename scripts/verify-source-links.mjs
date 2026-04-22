@@ -471,6 +471,14 @@ function buildMarkdownReport(report) {
     }
   }
 
+  const archivedResults = report.results.filter((result) => result.status === 'archived')
+  if (archivedResults.length > 0) {
+    lines.push('', '## Archive-Backed Fallbacks', '')
+    for (const result of archivedResults.slice(0, 20)) {
+      lines.push(`- ${result.url} | live check: ${result.probeStatus || 'error'} | archive: ${result.archive.url} | ${result.referenceLabels.join(' ; ')}`)
+    }
+  }
+
   const restrictedResults = report.results.filter((result) => result.status === 'restricted')
   if (restrictedResults.length > 0) {
     lines.push('', '## Restricted / Bot-Blocked', '')
@@ -527,11 +535,13 @@ async function main() {
     const probe = await probeUrl(item.normalizedUrl)
     const needsArchive = ['missing', 'failed', 'error'].includes(probe.status)
     const archive = needsArchive ? await getArchiveSnapshot(item.normalizedUrl) : null
+    const recoveredByArchive = needsArchive && archive?.available
 
     return {
       url: item.normalizedUrl,
       domain: item.domain,
-      status: probe.status,
+      status: recoveredByArchive ? 'archived' : probe.status,
+      probeStatus: probe.status,
       httpStatus: probe.httpStatus,
       finalUrl: probe.finalUrl,
       redirected: probe.redirected,
@@ -553,7 +563,7 @@ async function main() {
     missing: results.filter((item) => item.status === 'missing').length,
     failed: results.filter((item) => item.status === 'failed' || item.status === 'error').length,
     invalid: results.filter((item) => item.status === 'invalid').length,
-    archived: results.filter((item) => item.archive?.available).length,
+    archived: results.filter((item) => item.status === 'archived').length,
   }
 
   const topFailingDomains = summarizeByDomain(results.filter((item) => ['missing', 'failed', 'error', 'invalid'].includes(item.status)))
