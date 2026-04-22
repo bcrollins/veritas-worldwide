@@ -1,33 +1,7 @@
 import { useEffect, useRef } from 'react'
+import { getScopedScrollPositions, saveScopedScrollPosition } from '../lib/readerState'
 
-const STORAGE_KEY = 'veritas_scroll_positions'
 const MAX_ENTRIES = 50
-
-function getPositions(): Record<string, number> {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')
-  } catch {
-    return {}
-  }
-}
-
-function savePosition(chapterId: string, scrollY: number) {
-  const positions = getPositions()
-  positions[chapterId] = scrollY
-
-  // Evict oldest entries if over limit
-  const keys = Object.keys(positions)
-  if (keys.length > MAX_ENTRIES) {
-    const oldest = keys.slice(0, keys.length - MAX_ENTRIES)
-    for (const k of oldest) delete positions[k]
-  }
-
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(positions))
-  } catch {
-    // localStorage full or disabled — fail silently
-  }
-}
 
 export function useScrollRestore(chapterId: string | undefined) {
   const restored = useRef(false)
@@ -35,12 +9,13 @@ export function useScrollRestore(chapterId: string | undefined) {
   // Restore scroll position on mount
   useEffect(() => {
     if (!chapterId || restored.current) return
-    const positions = getPositions()
+    const positions = getScopedScrollPositions()
     const saved = positions[chapterId]
     if (saved && saved > 100) {
       // Small delay to let content render
       const timer = setTimeout(() => {
         window.scrollTo({ top: saved, behavior: 'instant' as ScrollBehavior })
+        restored.current = true
       }, 50)
       return () => clearTimeout(timer)
     }
@@ -55,7 +30,7 @@ export function useScrollRestore(chapterId: string | undefined) {
     const onScroll = () => {
       clearTimeout(timer)
       timer = setTimeout(() => {
-        savePosition(chapterId, window.scrollY)
+        saveScopedScrollPosition(chapterId, window.scrollY, MAX_ENTRIES)
       }, 300)
     }
 
@@ -70,7 +45,7 @@ export function useScrollRestore(chapterId: string | undefined) {
   useEffect(() => {
     if (!chapterId) return
     return () => {
-      savePosition(chapterId, window.scrollY)
+      saveScopedScrollPosition(chapterId, window.scrollY, MAX_ENTRIES)
     }
   }, [chapterId])
 }

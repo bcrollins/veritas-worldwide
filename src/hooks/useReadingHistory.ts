@@ -1,12 +1,5 @@
 import { useEffect } from 'react'
-
-const STORAGE_KEY = 'veritas_reading_history'
-
-interface ReadingRecord {
-  chapterId: string
-  scrollPercent: number
-  timestamp: number
-}
+import { saveScopedReadingHistory } from '../lib/readerState'
 
 export function useReadingHistory(chapterId: string | undefined) {
   useEffect(() => {
@@ -20,20 +13,7 @@ export function useReadingHistory(chapterId: string | undefined) {
       const percent = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100))
 
       try {
-        const raw = localStorage.getItem(STORAGE_KEY)
-        const records: ReadingRecord[] = raw ? JSON.parse(raw) : []
-        const idx = records.findIndex(r => r.chapterId === chapterId)
-        const entry: ReadingRecord = { chapterId, scrollPercent: percent, timestamp: Date.now() }
-
-        if (idx >= 0) {
-          records[idx] = entry
-        } else {
-          records.push(entry)
-        }
-
-        // Keep only last 50 records
-        const trimmed = records.slice(-50)
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed))
+        saveScopedReadingHistory(chapterId, scrollTop, percent)
       } catch {}
     }
 

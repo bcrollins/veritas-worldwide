@@ -3,21 +3,15 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapterMeta } from '../data/chapterMeta'
 import { estimateReadingTime } from '../lib/readingTime'
-
-interface ReadingRecord {
-  chapterId: string
-  scrollPercent: number
-  timestamp: number
-}
+import { getScopedReadingHistory, type ReadingHistoryRecord } from '../lib/readerState'
 
 export default function ContinueReading() {
-  const [recent, setRecent] = useState<ReadingRecord[]>([])
+  const [recent, setRecent] = useState<ReadingHistoryRecord[]>([])
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem('veritas_reading_history')
-      if (!raw) return
-      const records: ReadingRecord[] = JSON.parse(raw)
+      const records = getScopedReadingHistory()
+      if (records.length === 0) return
       // Show chapters that are partially read (5-95%) and recent (last 30 days)
       const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000
       const filtered = records

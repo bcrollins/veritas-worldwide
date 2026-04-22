@@ -29,9 +29,11 @@ export interface AuthState {
 
 const AUTH_TOKEN_KEY = 'veritas_token'
 const AUTH_USER_KEY = 'veritas_auth'
-const BOOKMARKS_KEY = 'veritas_bookmarks'
+const LEGACY_BOOKMARKS_KEY = 'veritas_bookmarks'
 const USERS_KEY = 'veritas_users'
-const PROGRESS_KEY = 'veritas_progress'
+const LEGACY_PROGRESS_KEY = 'veritas_progress'
+const BOOKMARKS_KEY_PREFIX = 'veritas_bookmarks:'
+const PROGRESS_KEY_PREFIX = 'veritas_progress:'
 
 // ── Token management ──
 function getToken(): string | null {
@@ -83,6 +85,7 @@ function cacheAuthBackendStatus(
     authBackendMode = 'unknown'
     authBackendRefreshTimer = null
   }, 60000)
+  ;(authBackendRefreshTimer as { unref?: () => void }).unref?.()
 }
 
 export function getAuthBackendMode(): AuthBackendMode {
@@ -165,6 +168,110 @@ async function checkAuthBackend(): Promise<AuthBackendAvailability> {
   return authBackendAvailable!
 }
 
+function readStorageJson<T>(key: string): T | null {
+  try {
+    const raw = localStorage.getItem(key)
+    return raw ? JSON.parse(raw) as T : null
+  } catch {
+    return null
+  }
+}
+
+function writeStorageJson(key: string, value: unknown) {
+  localStorage.setItem(key, JSON.stringify(value))
+}
+
+function getStoredAuthUser(): User | null {
+  return readStorageJson<User>(AUTH_USER_KEY)
+}
+
+function getUserStorageScopes(user: User | null): string[] {
+  if (!user) {
+    return []
+  }
+
+  const scopes: string[] = []
+
+  if (typeof user.id === 'number' && Number.isFinite(user.id)) {
+    scopes.push(`id:${user.id}`)
+  }
+
+  if (typeof user.email === 'string') {
+    const normalizedEmail = user.email.trim().toLowerCase()
+    if (normalizedEmail) {
+      scopes.push(`email:${encodeURIComponent(normalizedEmail)}`)
+    }
+  }
+
+  return [...new Set(scopes)]
+}
+
+function getPrimaryUserStorageScope(user: User | null): string | null {
+  return getUserStorageScopes(user)[0] || null
+}
+
+function readScopedBookmarks(user: User | null): string[] {
+  const scopes = getUserStorageScopes(user)
+  if (scopes.length === 0) {
+    return []
+  }
+
+  for (const scope of scopes) {
+    const scopedBookmarks = readStorageJson<string[]>(`${BOOKMARKS_KEY_PREFIX}${scope}`)
+    if (Array.isArray(scopedBookmarks)) {
+      const primaryScope = scopes[0]
+      if (primaryScope && scope !== primaryScope) {
+        writeStorageJson(`${BOOKMARKS_KEY_PREFIX}${primaryScope}`, scopedBookmarks)
+      }
+      localStorage.removeItem(LEGACY_BOOKMARKS_KEY)
+      return scopedBookmarks
+    }
+  }
+
+  const legacyBookmarks = readStorageJson<string[]>(LEGACY_BOOKMARKS_KEY)
+  if (Array.isArray(legacyBookmarks)) {
+    const primaryScope = scopes[0]
+    if (primaryScope) {
+      writeStorageJson(`${BOOKMARKS_KEY_PREFIX}${primaryScope}`, legacyBookmarks)
+      localStorage.removeItem(LEGACY_BOOKMARKS_KEY)
+    }
+    return legacyBookmarks
+  }
+
+  return []
+}
+
+function readScopedProgress(user: User | null): ReadingProgress {
+  const scopes = getUserStorageScopes(user)
+  if (scopes.length === 0) {
+    return {}
+  }
+
+  for (const scope of scopes) {
+    const scopedProgress = readStorageJson<ReadingProgress>(`${PROGRESS_KEY_PREFIX}${scope}`)
+    if (scopedProgress && typeof scopedProgress === 'object') {
+      const primaryScope = scopes[0]
+      if (primaryScope && scope !== primaryScope) {
+        writeStorageJson(`${PROGRESS_KEY_PREFIX}${primaryScope}`, scopedProgress)
+      }
+      localStorage.removeItem(LEGACY_PROGRESS_KEY)
+      return scopedProgress
+    }
+  }
+
+  const legacyProgress = readStorageJson<ReadingProgress>(LEGACY_PROGRESS_KEY)
+  if (legacyProgress && typeof legacyProgress === 'object') {
+    const primaryScope = scopes[0]
+    if (primaryScope) {
+      writeStorageJson(`${PROGRESS_KEY_PREFIX}${primaryScope}`, legacyProgress)
+      localStorage.removeItem(LEGACY_PROGRESS_KEY)
+    }
+    return legacyProgress
+  }
+
+  return {}
+}
+
 // ── localStorage fallback (original MVP auth) ──
 async function hashPassword(password: string): Promise<string> {
   const encoder = new TextEncoder()
@@ -191,12 +298,11 @@ function saveStoredUsers(users: StoredUser[]) {
 // ── State management ──
 function loadState(): AuthState {
   try {
-    const stored = localStorage.getItem(AUTH_USER_KEY)
-    const bookmarks = JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]')
-    const progress = JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}')
+    const user = getStoredAuthUser()
     const token = getToken()
-    if (stored) {
-      const user = JSON.parse(stored) as User
+    if (user) {
+      const bookmarks = readScopedBookmarks(user)
+      const progress = readScopedProgress(user)
       return { user, isLoggedIn: true, bookmarks, readingProgress: progress, token }
     }
   } catch { /* ignore */ }
@@ -211,12 +317,24 @@ function saveUserLocal(user: User | null) {
   }
 }
 
-function saveBookmarksLocal(bookmarks: string[]) {
-  localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(bookmarks))
+function saveBookmarksLocal(bookmarks: string[], user: User | null = getStoredAuthUser()) {
+  const scope = getPrimaryUserStorageScope(user)
+  if (!scope) {
+    return
+  }
+
+  writeStorageJson(`${BOOKMARKS_KEY_PREFIX}${scope}`, bookmarks)
+  localStorage.removeItem(LEGACY_BOOKMARKS_KEY)
 }
 
-function saveProgressLocal(progress: ReadingProgress) {
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress))
+function saveProgressLocal(progress: ReadingProgress, user: User | null = getStoredAuthUser()) {
+  const scope = getPrimaryUserStorageScope(user)
+  if (!scope) {
+    return
+  }
+
+  writeStorageJson(`${PROGRESS_KEY_PREFIX}${scope}`, progress)
+  localStorage.removeItem(LEGACY_PROGRESS_KEY)
 }
 
 // ── Public API ──
@@ -239,6 +357,8 @@ export async function signup(email: string, password: string, displayName: strin
       const user = data?.user
       if (!user) return { success: false, error: 'Registration failed' }
       saveUserLocal(user)
+      readScopedBookmarks(user)
+      readScopedProgress(user)
       return { success: true, user }
     } catch {
       cacheAuthBackendStatus('unavailable', getAuthBackendMode())
@@ -257,6 +377,8 @@ export async function signup(email: string, password: string, displayName: strin
   saveStoredUsers(users)
   const user: User = { email: newUser.email, displayName: newUser.displayName, createdAt: newUser.createdAt }
   saveUserLocal(user)
+  readScopedBookmarks(user)
+  readScopedProgress(user)
   return { success: true, user }
 }
 
@@ -278,6 +400,8 @@ export async function login(email: string, password: string): Promise<{ success:
       const user = data?.user
       if (!user) return { success: false, error: 'Login failed' }
       saveUserLocal(user)
+      readScopedBookmarks(user)
+      readScopedProgress(user)
       return { success: true, user }
     } catch {
       cacheAuthBackendStatus('unavailable', getAuthBackendMode())
@@ -293,6 +417,8 @@ export async function login(email: string, password: string): Promise<{ success:
   if (stored.passwordHash !== passwordHash) return { success: false, error: 'Incorrect password.' }
   const user: User = { email: stored.email, displayName: stored.displayName, createdAt: stored.createdAt }
   saveUserLocal(user)
+  readScopedBookmarks(user)
+  readScopedProgress(user)
   return { success: true, user }
 }
 
@@ -321,8 +447,8 @@ export async function validateSession(): Promise<{ user: User; bookmarks: string
     }
     const user: User = data.user
     saveUserLocal(user)
-    saveBookmarksLocal(data.bookmarks || [])
-    saveProgressLocal(data.readingProgress || {})
+    saveBookmarksLocal(data.bookmarks || [], user)
+    saveProgressLocal(data.readingProgress || {}, user)
     return { user, bookmarks: data.bookmarks || [], readingProgress: data.readingProgress || {} }
   } catch {
     cacheAuthBackendStatus('unavailable', getAuthBackendMode())
@@ -338,6 +464,8 @@ export async function logout() {
   }
   setToken(null)
   saveUserLocal(null)
+  localStorage.removeItem(LEGACY_BOOKMARKS_KEY)
+  localStorage.removeItem(LEGACY_PROGRESS_KEY)
 }
 
 export function getAuthState(): AuthState {
@@ -374,14 +502,15 @@ export function isBookmarked(chapterId: string): boolean {
 }
 
 export function getBookmarks(): string[] {
-  try { return JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]') } catch { return [] }
+  return readScopedBookmarks(getStoredAuthUser())
 }
 
 export async function saveReadingProgress(chapterId: string, scrollPosition: number, completed?: boolean): Promise<void> {
   // Save locally
-  const progress = JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}')
+  const user = getStoredAuthUser()
+  const progress = readScopedProgress(user)
   progress[chapterId] = { scrollPosition, completed: completed || progress[chapterId]?.completed || false, lastReadAt: new Date().toISOString() }
-  saveProgressLocal(progress)
+  saveProgressLocal(progress, user)
 
   // Sync to API (fire and forget)
   const token = getToken()
@@ -395,7 +524,7 @@ export async function saveReadingProgress(chapterId: string, scrollPosition: num
 }
 
 export function getReadingProgress(): ReadingProgress {
-  try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}') } catch { return {} }
+  return readScopedProgress(getStoredAuthUser())
 }
 
 export async function updatePreferences(prefs: { theme?: string; fontSize?: string; newsletterSubscribed?: boolean }): Promise<void> {

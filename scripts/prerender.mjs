@@ -1147,6 +1147,12 @@ function renderInstituteBookPage(topics, researchSources) {
 
 function buildInstituteCourseJsonLd(topic) {
   const brief = buildInstituteBrief(topic)
+  const modules = brief.modules || [
+    'Set the Safety Boundary',
+    'Confirm Prerequisites',
+    'Use Official Checkpoints',
+    'Build Visible Proof',
+  ]
   const faqEntries = [
     {
       question: 'What is the fastest realistic way to get started?',
@@ -1188,6 +1194,17 @@ function buildInstituteCourseJsonLd(topic) {
     },
     {
       '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `${topic.courseTitle} module sequence`,
+      itemListElement: modules.map((moduleTitle, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: moduleTitle,
+        url: `${SITE_URL}/institute/courses/${topic.slug}#module-${index + 1}`,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
@@ -1212,6 +1229,11 @@ function buildInstituteCourseJsonLd(topic) {
 
 function buildInstituteGuideJsonLd(topic) {
   const brief = buildInstituteBrief(topic)
+  const howToSteps = [
+    topic.firstAction,
+    ...brief.prerequisites.slice(0, 2),
+    ...brief.officialCheckpoints.slice(0, 2),
+  ].filter(Boolean)
   const faqEntries = [
     {
       question: 'What is the fastest realistic way to get started?',
@@ -1257,6 +1279,12 @@ function buildInstituteGuideJsonLd(topic) {
       name: topic.articleTitle,
       description: brief.fastAnswer,
       url: `${SITE_URL}/institute/guides/${topic.slug}`,
+      step: howToSteps.map((step, index) => ({
+        '@type': 'HowToStep',
+        position: index + 1,
+        name: index === 0 ? 'Start with the first action' : `Checkpoint ${index}`,
+        text: step,
+      })),
       supply: (topic.tools || []).map((tool) => ({
         '@type': 'HowToSupply',
         name: tool,
@@ -1996,6 +2024,89 @@ const staticPages = [
   },
 ]
 
+function buildStaticPageJsonLd(page, route, modifiedTime) {
+  const url = `${SITE_URL}${route === '/' ? '' : route}`
+  const basePage = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: page.heading,
+    url,
+    description: page.description,
+    dateModified: modifiedTime,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  }
+
+  if (route === '/institute') {
+    return [
+      {
+        ...basePage,
+        '@type': 'CollectionPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Veritas Institute practical course catalog',
+        itemListElement: institutePracticalTopics.map((topic, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: topic.skill,
+          url: `${SITE_URL}/institute/guides/${topic.slug}`,
+          description: topic.summary,
+        })),
+      },
+    ]
+  }
+
+  if (route === '/institute/book') {
+    return [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        name: 'The Veritas Institute Field Manual',
+        description: page.description,
+        url,
+        dateModified: modifiedTime,
+        author: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Veritas Institute field manual course tracks',
+        itemListElement: groupInstituteTopicsByTrack(institutePracticalTopics).map(([track, topics], index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: instituteTrackLabels[track] || track,
+          url: `${SITE_URL}/institute/book#track-${track}`,
+          description: `${topics.length} practical course paths`,
+        })),
+      },
+    ]
+  }
+
+  if (route === '/institute/methodology') {
+    return [
+      {
+        ...basePage,
+        '@type': 'AboutPage',
+      },
+    ]
+  }
+
+  return [basePage]
+}
+
 const manifest = {}
 const sitemapEntries = new Map()
 
@@ -2011,21 +2122,7 @@ for (const page of staticPages) {
     type: page.type || 'website',
     image: DEFAULT_OG_IMAGE,
     modifiedTime,
-    jsonLd: [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        name: page.heading,
-        url: `${SITE_URL}${route === '/' ? '' : route}`,
-        description: page.description,
-        dateModified: modifiedTime,
-        isPartOf: {
-          '@type': 'WebSite',
-          name: SITE_NAME,
-          url: SITE_URL,
-        },
-      },
-    ],
+    jsonLd: buildStaticPageJsonLd(page, route, modifiedTime),
   }
 
   let body = renderStaticPage(page, chapters)

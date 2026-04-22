@@ -1,7 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from './lib/AuthContext'
-import { isAdminLoggedIn } from './lib/adminAuth'
 import Toast from './components/Toast'
 import ErrorBoundary from './components/ErrorBoundary'
 import ScrollToTop from './components/ScrollToTop'
@@ -125,7 +124,23 @@ function Header() {
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
-    setIsAdmin(isAdminLoggedIn())
+    let cancelled = false
+
+    import('./lib/adminAuth')
+      .then(({ isAdminLoggedIn }) => {
+        if (!cancelled) {
+          setIsAdmin(isAdminLoggedIn())
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setIsAdmin(false)
+        }
+      })
+
+    return () => {
+      cancelled = true
+    }
   }, [location.pathname, isLoggedIn])
 
   useEffect(() => {

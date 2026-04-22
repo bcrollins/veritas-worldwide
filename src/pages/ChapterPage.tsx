@@ -804,7 +804,7 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
 
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
-  const { isLoggedIn } = useAuth()
+  const { isLoggedIn, saveReadingProgress } = useAuth()
   const staticMetadata = chapterMeta.find(ch => ch.id === id)
   const [chapter, setChapter] = useState<LoadedChapter | null>(null)
   const [isLoading, setIsLoading] = useState(!staticMetadata)
@@ -883,6 +883,34 @@ export default function ChapterPage() {
     scoreContentGateHit(chapter.id)
     sessionStorage.setItem(gateKey, '1')
   }, [chapter])
+
+  useEffect(() => {
+    if (!chapter || !id || !isLoggedIn) return
+
+    let timer: ReturnType<typeof setTimeout> | null = null
+
+    const saveProgress = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (docHeight <= 0) return
+
+      const percent = Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100))
+      saveReadingProgress(id, window.scrollY, percent >= 95)
+    }
+
+    const onScroll = () => {
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(saveProgress, 500)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    saveProgress()
+
+    return () => {
+      if (timer) clearTimeout(timer)
+      saveProgress()
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [chapter, id, isLoggedIn, saveReadingProgress])
 
   /* ── Reading Milestone Tracking (GA4) ──────────────── */
   useEffect(() => {
