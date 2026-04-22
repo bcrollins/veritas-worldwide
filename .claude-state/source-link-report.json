@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-22T12:00:56.619Z",
+  "generatedAt": "2026-04-22T12:27:52.575Z",
   "timeoutMs": 45000,
   "concurrency": 6,
   "strictMode": true,
   "summary": {
-    "referenceCount": 804,
-    "uniqueUrlCount": 455,
-    "ok": 396,
+    "referenceCount": 823,
+    "uniqueUrlCount": 456,
+    "ok": 399,
     "redirect": 0,
-    "restricted": 59,
+    "restricted": 57,
     "transient": 0,
     "missing": 0,
     "failed": 0,
@@ -1503,10 +1503,11 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 5,
+      "referenceCount": 6,
       "referenceLabels": [
         "Forensic Architecture — Full reconstruction with audio",
         "Incident rows can support narrative detail, not unadjudicated liability.",
+        "Hind Rajab killing reconstruction",
         "INC-001,\"Hind Rajab killing\",2024-01-29,\"Tel al-Hawa, Gaza City\",\"Israeli forces\",\"forensic reconstruction / audio / survivor call record...",
         "INC-P-001,\"Hind Rajab killing\",2024-01-29,\"Tel al-Hawa, Gaza City\",\"Israeli forces\",\"forensic reconstruction / audio record\",\"Forensic Ar...",
         "SRC-P-007,incident,\"Forensic Architecture reconstructed the killing of Hind Rajab and found evidence of fire at close range.\",incident ev..."
@@ -2156,6 +2157,27 @@
       ]
     },
     {
+      "url": "https://undocs.org/S/RES/2334(2016)",
+      "domain": "undocs.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://docs.un.org/S/RES/2334(2016)",
+      "redirected": true,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UNSC Resolution 2334"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://unwatch.org/2024-unga-resolutions-on-israel-vs-rest-of-the-world/",
       "domain": "unwatch.org",
       "status": "ok",
@@ -2253,9 +2275,10 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 4,
+      "referenceCount": 5,
       "referenceLabels": [
         "World Central Kitchen — Official statement",
+        "World Central Kitchen convoy strike",
         "INC-002,\"World Central Kitchen convoy strike\",2024-04-01,\"Gaza\",\"Israeli forces\",\"official admission / NGO statement / press investigatio...",
         "INC-P-002,\"World Central Kitchen convoy strike\",2024-04-01,\"Gaza\",\"Israeli forces\",\"NGO statement / official admission / press investigat...",
         "SRC-P-008,incident,\"World Central Kitchen reported seven aid workers were killed after its convoy was struck in Gaza.\",incident evidence,..."
@@ -2352,27 +2375,6 @@
       ]
     },
     {
-      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
-      "domain": "www.972mag.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "972 Magazine — Survivor testimonies"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
       "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
       "domain": "www.972mag.com",
       "status": "ok",
@@ -2462,6 +2464,27 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.aipac.org/resources/house-ndaa-2026",
+      "domain": "www.aipac.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aipac.org/resources/house-ndaa-2026",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "House Adopts Defense Bill With Pro-Israel Provisions"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
       ]
     },
     {
@@ -3303,27 +3326,6 @@
       ]
     },
     {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.citadel.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.clintonfoundation.org/",
       "domain": "www.clintonfoundation.org",
       "status": "ok",
@@ -3374,8 +3376,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.cnbc.com/",
       "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
+      "checkedWith": "GET",
+      "attempts": 2,
       "transientErrors": [],
       "error": null,
       "archive": null,
@@ -4939,10 +4941,11 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 5,
+      "referenceCount": 6,
       "referenceLabels": [
         "ICJ Orders Provisional Measures / ICC Issues Arrest Warrants",
         "ICC Arrest Warrants — Netanyahu and Gallant",
+        "ICC warrant-stage record",
         "LAW-003,\"International Criminal Court\",\"Pre-Trial Chamber news release / warrants\",2024-11-21,\"Situation in the State of Palestine\",warra...",
         "LAW-P-003,\"International Criminal Court\",\"Pre-Trial Chamber news release / warrants\",2024-11-21,\"Situation in the State of Palestine\",war...",
         "SRC-P-010,legal,\"ICC public records describe warrants in the Situation in the State of Palestine; a warrant is not a conviction.\",legal r..."
@@ -5010,11 +5013,12 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 6,
+      "referenceCount": 7,
       "referenceLabels": [
         "ICJ — May 24 order on Rafah offensive",
         "South Africa v. Israel — Genocide Convention Case",
         "Legal records require procedural posture in every sentence.",
+        "ICJ provisional measures order",
         "LAW-001,\"International Court of Justice\",\"Provisional measures order\",2024-01-26,\"South Africa v. Israel\",interim-order,https://www.icj-c...",
         "SRC-005,source-file,\"The ICJ issued provisional measures in South Africa v. Israel; the merits question remained unresolved at that stage...",
         "LAW-P-001,\"International Court of Justice\",\"Provisional measures order\",2024-01-26,\"South Africa v. Israel\",interim-order,https://www.icj..."
@@ -5039,10 +5043,11 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 6,
+      "referenceCount": 7,
       "referenceLabels": [
         "ICJ ruled Israel's occupation of Palestinian territory is illegal (July 19, 2024)",
         "ICJ Advisory Opinion — Legality of the Occupation",
+        "ICJ advisory opinion",
         "ICJ / ICC official records",
         "LAW-002,\"International Court of Justice\",\"Advisory opinion\",2024-07-19,\"Legal consequences arising from the policies and practices of Isr...",
         "LAW-P-002,\"International Court of Justice\",\"Advisory opinion\",2024-07-19,\"Legal consequences in the Occupied Palestinian Territory\",advis...",
@@ -6111,12 +6116,14 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 3,
       "referenceLabels": [
+        "Rafah paramedic convoy recovery record",
         "INC-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"video / recovery record / official inquiry\",\"OCHA hu...",
         "INC-P-004,\"Rafah paramedic convoy killings\",2025-03-23,\"Rafah, Gaza\",\"Israeli forces\",\"humanitarian response update / recovery record\",\"O..."
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/incident-evidence-matrix.csv",
         "public/israel-dossier/workbooks/incident-evidence-populated.csv"
       ]
@@ -6155,12 +6162,14 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 3,
       "referenceLabels": [
+        "An Nuseirat school shelter strike",
         "INC-005,\"Nuseirat/central Gaza civilian harm record\",2024-06-06,\"An Nuseirat Refugee Camp / central Gaza\",\"Israeli forces / conflict part...",
         "INC-P-005,\"An Nuseirat school shelter strike\",2024-06-06,\"An Nuseirat Refugee Camp\",\"Israeli forces / conflict parties\",\"humanitarian sit..."
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/incident-evidence-matrix.csv",
         "public/israel-dossier/workbooks/incident-evidence-populated.csv"
       ]
@@ -6178,14 +6187,16 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 4,
+      "referenceCount": 5,
       "referenceLabels": [
+        "OCHA reported fatality figure",
         "HUM-001,\"72,289\",\"Palestinians killed in Gaza\",\"UN OCHA\",\"MoH Gaza\",\"7 Oct 2023-1 Apr 2026\",\"reported impact snapshot\",reported,https://w...",
         "SRC-002,source-file,\"OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.\",humanitarian figure...",
         "HUM-P-001,\"72,289\",\"Palestinians killed in Gaza\",\"UN OCHA\",\"MoH Gaza\",\"7 Oct 2023-1 Apr 2026\",\"reported impact snapshot\",reported,https:/...",
         "SRC-P-003,humanitarian,\"OCHA reported 72,289 Palestinian fatalities in Gaza as of 1 April 2026, attributed to MoH Gaza.\",reported figure,..."
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/humanitarian-attribution-table.csv",
         "public/israel-dossier/templates/source-ledger.csv",
         "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",
@@ -6214,6 +6225,27 @@
       ]
     },
     {
+      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
       "domain": "www.ohchr.org",
       "status": "ok",
@@ -6229,6 +6261,27 @@
       "referenceCount": 1,
       "referenceLabels": [
         "OHCHR — UN experts condemn \"flour massacre\""
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
       ],
       "referenceFiles": [
         "src/data/israelDossierCanon.ts"
@@ -6311,10 +6364,12 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 6,
+      "referenceCount": 8,
       "referenceLabels": [
         "Of verified fatalities in residential buildings were women and children",
         "155mm Artillery → Civilian Areas",
+        "OHCHR residential-building sample",
+        "OHCHR residential-building fatality sample",
         "HUM-005,\"70%\",\"Verified fatalities in residential buildings who were women and children\",\"OHCHR\",\"OHCHR Gaza update report\",\"Nov 2024 rep...",
         "INC-003,\"OHCHR residential-building fatality sample\",2024-11-06,\"Gaza\",\"Israeli forces / conflict parties\",\"UN verification report\",\"OHCH...",
         "HUM-P-005,\"70%\",\"Verified fatalities in residential buildings who were women and children\",\"OHCHR\",\"OHCHR Gaza update report\",\"Nov 2024 r...",
@@ -7766,6 +7821,27 @@
       ]
     },
     {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.parliament.uk/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.paul.senate.gov/",
       "domain": "www.paul.senate.gov",
       "status": "ok",
@@ -8100,7 +8176,7 @@
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=110ad774-3683-4f83-acc9-85861a518a32",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=e7edbad9-108f-4e1d-8fc8-27cddac20f46",
       "redirected": true,
       "checkedWith": "HEAD",
       "attempts": 1,
@@ -8746,12 +8822,14 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 3,
       "referenceLabels": [
+        "UNGA advisory-opinion implementation resolution",
         "LAW-005,\"United Nations General Assembly\",\"Resolution / vote\",2024-09-18,\"Implementation of ICJ advisory opinion\",political-resolution,ht...",
         "LAW-P-005,\"United Nations General Assembly\",\"Resolution / vote\",2024-09-18,\"Implementation of ICJ advisory opinion\",political-resolution,..."
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/legal-status-brief.csv",
         "public/israel-dossier/workbooks/legal-status-populated.csv"
       ]
@@ -8905,12 +8983,12 @@
       ]
     },
     {
-      "url": "https://www.aipac.org/resources/house-ndaa-2026",
-      "domain": "www.aipac.org",
+      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
+      "domain": "www.972mag.com",
       "status": "restricted",
       "probeStatus": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.aipac.org/resources/house-ndaa-2026",
+      "finalUrl": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "redirected": false,
       "checkedWith": "HEAD",
       "attempts": 1,
@@ -8919,10 +8997,10 @@
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "House Adopts Defense Bill With Pro-Israel Provisions"
+        "972 Magazine — Survivor testimonies"
       ],
       "referenceFiles": [
-        "src/data/articles.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -9080,6 +9158,27 @@
       ]
     },
     {
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "restricted",
+      "probeStatus": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.citadel.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "I am deeply committed to defending democratic values and free markets."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.congress.gov/",
       "domain": "www.congress.gov",
       "status": "restricted",
@@ -9134,12 +9233,13 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 7,
+      "referenceCount": 8,
       "referenceLabels": [
         "Emergency supplemental aid package signed April 2024",
         "The bill",
         "H.R.815 — Israel Security Supplemental",
         "Artillery & Critical Munitions Production",
+        "H.R.815 Israel security supplemental",
         "H.R.815 / DSCA / Responsible Statecraft",
         "AID-004,26400000000,USD,Supplemental appropriation,2024,\"H.R.815 Israel Security Supplemental\",https://www.congress.gov/bill/118th-congre...",
         "AID-P-004,26400000000,USD,supplemental appropriation,2024,\"H.R.815 Israel Security Supplemental\",https://www.congress.gov/bill/118th-cong..."
@@ -9227,10 +9327,13 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 6,
+      "referenceCount": 9,
       "referenceLabels": [
         "Annual U.S. military aid under 2016 MOU (FY2019–FY2028)",
         "10-Year MOU (2016) — Annual Baseline",
+        "CRS constant-dollar aid obligations",
+        "Aid ledger cumulative-obligations row",
+        "2016 MOU annual baseline",
         "AID-001,298000000000,USD constant 2024 dollars,CRS cumulative obligations,1946-2024,\"Congressional Research Service RL33222\",https://www....",
         "SRC-001,source-file,\"CRS reports an estimated $298B in constant-2024-dollar U.S. aid obligations to Israel from 1946 through 2024.\",finan...",
         "AID-P-001,298000000000,USD constant 2024 dollars,CRS cumulative obligations,1946-2024,\"Congressional Research Service RL33222\",https://ww...",
@@ -9393,69 +9496,6 @@
       ]
     },
     {
-      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierCanon.ts"
-      ]
-    },
-    {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
-      "status": "restricted",
-      "probeStatus": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.parliament.uk/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "attempts": 1,
-      "transientErrors": [],
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.reuters.com/",
       "domain": "www.reuters.com",
       "status": "restricted",
@@ -9598,10 +9638,11 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 5,
+      "referenceCount": 6,
       "referenceLabels": [
         "Estimated violent deaths in Gaza through Jan. 5, 2025",
         "October 7 Attack and Gaza War Begins",
+        "Lancet survey estimate",
         "HUM-003,\"75,200\",\"Estimated violent deaths in Gaza\",\"The Lancet Global Health\",\"Population-representative household survey\",\"7 Oct 2023-5...",
         "HUM-P-004,\"75,200\",\"Estimated violent deaths in Gaza\",\"The Lancet Global Health\",\"Population-representative household survey\",\"7 Oct 2023...",
         "SRC-P-005,humanitarian,\"A Lancet Global Health survey estimated 75,200 violent deaths in Gaza through 5 January 2025.\",survey estimate,\"T..."
@@ -9693,14 +9734,17 @@
       "transientErrors": [],
       "error": null,
       "archive": null,
-      "referenceCount": 4,
+      "referenceCount": 6,
       "referenceLabels": [
+        "UNICEF child fatality figure",
+        "UNICEF child injury figure",
         "HUM-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation upda...",
         "SRC-003,source-file,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",humanitarian figure,\"UNICEF State of Palest...",
         "HUM-P-002,\"21,289\",\"Children killed in Gaza\",\"UNICEF\",\"Reported health-sector figures\",\"7 Oct 2023-3 Feb 2026\",\"humanitarian situation up...",
         "SRC-P-004,humanitarian,\"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.\",reported figure,\"UNICEF humanitarian upd..."
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "public/israel-dossier/templates/humanitarian-attribution-table.csv",
         "public/israel-dossier/templates/source-ledger.csv",
         "public/israel-dossier/workbooks/humanitarian-attribution-populated.csv",

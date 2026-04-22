@@ -58,10 +58,17 @@ const currentNeedles = [
   'ISRAEL_DOSSIER_PUBLIC_BRIEFING',
   'ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT',
   'source-boundary briefing',
+  'DossierBriefingSourceRow',
+  'sourceRows',
+  'chapterSequence',
+  'Paragraph source IDs',
   'SRC-P-001',
+  'AID-P-004',
   'HUM-P-001',
   'INC-P-001',
+  'INC-P-004',
   'LAW-P-001',
+  'LAW-P-002',
   'https://www.congress.gov/crs-product/RL33222',
   'Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
   'State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
@@ -183,6 +190,13 @@ assert(has(files.briefingPage, /ISRAEL_DOSSIER_PUBLIC_BRIEFING/), 'briefing page
 assert(has(files.briefingPage, /ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT/), 'briefing page does not expose the chapter draft artifact')
 assert(has(files.briefingPage, /Unsafe wording to avoid/), 'briefing page does not expose unsafe wording boundaries')
 assert(has(files.briefingPage, /Download row file/), 'briefing page does not expose workbook row downloads')
+assert(has(files.briefingPage, /Source row table/), 'briefing page does not render source-row footnote tables')
+assert(has(files.briefingPage, /section\.sourceRows\.map/), 'briefing page does not render canonical source rows')
+assert(has(files.briefingPage, /Proof boundary/), 'briefing page does not expose proof-boundary table labels')
+assert(has(files.briefingPage, /Open workbook/), 'briefing page does not link source rows back to workbook artifacts')
+assert(has(files.briefingPage, /Paragraph source IDs/), 'briefing page does not expose paragraph-level source row IDs')
+assert(has(files.briefingPage, /Reader-facing chapter sequence/), 'briefing page does not expose the reader-facing chapter sequence')
+assert(has(files.briefingPage, /briefing\.chapterSequence\.map/), 'briefing page does not render canonical chapter sequence steps')
 assert(has(files.app, /IsraelDossierBriefingPage/), 'App route does not register the Israel dossier briefing page')
 assert(has(files.expanded, /ISRAEL_DOSSIER_HISTORICAL_TIMELINE as HISTORICAL_TIMELINE/), 'expanded data does not re-export canonical timeline')
 assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_INCIDENTS as EXPANDED_INCIDENTS/), 'expanded data does not re-export canonical expanded incidents')
@@ -252,7 +266,7 @@ for (const workbook of [
   ['incident-evidence-populated.csv', 'INC-P-001'],
   ['legal-status-populated.csv', 'LAW-P-001'],
   ['publishable-briefing-draft.md', 'Claim Boundary'],
-  ['public-briefing-chapter-draft.md', 'Source rows: SRC-P-001'],
+  ['public-briefing-chapter-draft.md', 'Paragraph source IDs'],
   ['manifest.json', 'Israel Dossier Populated Evidence Workbooks'],
 ]) {
   const [fileName, needle] = workbook

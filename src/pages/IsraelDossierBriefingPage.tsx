@@ -57,6 +57,94 @@ function SourceBadge({ label }: { label: string }) {
   )
 }
 
+function SourceRowTable({ section }: { section: DossierBriefingSection }) {
+  return (
+    <section className="border-t border-border bg-surface" aria-labelledby={`${section.id}-source-row-table`}>
+      <div className="grid gap-3 border-b border-border p-5 sm:p-7 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-crimson">
+            Footnote rows
+          </p>
+          <h3 id={`${section.id}-source-row-table`} className="mt-2 font-display text-2xl font-bold leading-tight text-ink">
+            Source row table
+          </h3>
+        </div>
+        <p className="max-w-3xl font-body text-sm leading-relaxed text-ink-muted">
+          Footnote rows for selected paragraph. Each row keeps the source class, date range, proof, and proof boundary visible before the reader reaches the source or workbook.
+        </p>
+      </div>
+
+      <div className="overflow-x-auto" role="region" aria-label={`Source row table for ${section.title}`}>
+        <table className="w-full min-w-[820px] border-collapse text-left">
+          <thead>
+            <tr className="border-b border-border bg-parchment">
+              <th scope="col" className="w-[150px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+                Row
+              </th>
+              <th scope="col" className="w-[210px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+                Source
+              </th>
+              <th scope="col" className="px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+                Proof
+              </th>
+              <th scope="col" className="px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+                Proof boundary
+              </th>
+              <th scope="col" className="w-[160px] px-4 py-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+                Files
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {section.sourceRows.map((row) => (
+              <tr key={row.id} className="border-b border-border last:border-b-0">
+                <th scope="row" className="align-top px-4 py-4">
+                  <span className="block font-sans text-sm font-bold text-ink">{row.id}</span>
+                  <span className="mt-2 block font-sans text-[0.58rem] font-bold uppercase tracking-[0.12em] text-crimson">
+                    {SOURCE_CLASS_LABELS[row.sourceClass]}
+                  </span>
+                  <span className="mt-2 block font-sans text-[0.68rem] leading-snug text-ink-faint">
+                    {row.statusLabel} / {row.dateRange}
+                  </span>
+                </th>
+                <td className="align-top px-4 py-4">
+                  <p className="font-sans text-sm font-bold leading-snug text-ink">{row.label}</p>
+                  <p className="mt-2 font-body text-xs leading-relaxed text-ink-muted">{row.sourceLabel}</p>
+                </td>
+                <td className="align-top px-4 py-4">
+                  <p className="font-body text-sm leading-relaxed text-ink">{row.proof}</p>
+                </td>
+                <td className="align-top px-4 py-4">
+                  <p className="font-body text-sm leading-relaxed text-ink-muted">{row.proofBoundary}</p>
+                </td>
+                <td className="align-top px-4 py-4">
+                  <div className="flex flex-col gap-2">
+                    <a
+                      href={row.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-[36px] items-center justify-center border border-border px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                    >
+                      Open source
+                    </a>
+                    <a
+                      href={row.workbookPath}
+                      download
+                      className="inline-flex min-h-[36px] items-center justify-center bg-ink px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-surface transition-colors hover:bg-crimson"
+                    >
+                      Open workbook
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
 function BriefingDetail({ section }: { section: DossierBriefingSection }) {
   return (
     <article className="border border-border bg-surface">
@@ -75,6 +163,19 @@ function BriefingDetail({ section }: { section: DossierBriefingSection }) {
         <p className="mt-5 max-w-3xl font-body text-base leading-relaxed text-ink-muted sm:text-lg">
           {section.readerCopy}
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-2">
+          <span className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+            Paragraph source IDs
+          </span>
+          {section.sourceIds.map((sourceId) => (
+            <span
+              key={sourceId}
+              className="inline-flex min-h-[28px] items-center border border-border bg-parchment px-3 font-sans text-[0.58rem] font-bold uppercase tracking-[0.12em] text-ink"
+            >
+              {sourceId}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="grid border-b border-border lg:grid-cols-[1fr_0.9fr]">
@@ -131,7 +232,55 @@ function BriefingDetail({ section }: { section: DossierBriefingSection }) {
           </div>
         </div>
       </div>
+
+      <SourceRowTable section={section} />
     </article>
+  )
+}
+
+function ChapterSequence({ briefing }: { briefing: typeof ISRAEL_DOSSIER_PUBLIC_BRIEFING }) {
+  return (
+    <section className="border border-border bg-surface p-5 sm:p-7">
+      <div className="max-w-3xl">
+        <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-crimson">
+          Reader-facing chapter sequence
+        </p>
+        <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-ink">
+          Build the chapter from source rows, not rhetoric.
+        </h2>
+        <p className="mt-4 font-body text-sm leading-relaxed text-ink-muted">
+          The sequence below is the public-order draft: each chapter block names the paragraph source IDs first, then states what the paragraph can safely do.
+        </p>
+      </div>
+
+      <ol className="mt-7 grid gap-4">
+        {briefing.chapterSequence.map((step) => (
+          <li key={step.id} className="border-l-2 border-border pl-5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-crimson">
+                {step.eyebrow}
+              </span>
+              <span className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint">
+                Paragraph source IDs
+              </span>
+              {step.sourceIds.map((sourceId) => (
+                <span
+                  key={sourceId}
+                  className="inline-flex min-h-[24px] items-center border border-border bg-parchment px-2.5 font-sans text-[0.55rem] font-bold uppercase tracking-[0.1em] text-ink"
+                >
+                  {sourceId}
+                </span>
+              ))}
+            </div>
+            <h3 className="mt-3 font-display text-2xl font-bold leading-tight text-ink">{step.title}</h3>
+            <p className="mt-3 max-w-4xl font-body text-sm leading-relaxed text-ink">{step.summary}</p>
+            <p className="mt-3 max-w-4xl border-l border-crimson pl-4 font-body text-sm leading-relaxed text-ink-muted">
+              {step.boundary}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </section>
   )
 }
 
@@ -251,6 +400,8 @@ export default function IsraelDossierBriefingPage() {
             </section>
 
             <BriefingDetail section={selected} />
+
+            <ChapterSequence briefing={briefing} />
 
             <section className="border-y border-border py-7">
               <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-crimson">

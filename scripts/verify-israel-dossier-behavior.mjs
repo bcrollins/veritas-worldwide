@@ -358,7 +358,7 @@ async function runBriefingSurfaceCheck(browser) {
     await page.goto(`${baseUrl}/israel-dossier/briefing`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: /Source-boundary briefing/i }).waitFor({ timeout: 20000 })
     const initialBody = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['public briefing', 'source-boundary', 'src-p-001', 'hum-p-001', 'unsafe wording to avoid', 'download chapter draft']) {
+    for (const needle of ['public briefing', 'source-boundary', 'source row table', 'proof boundary', 'open workbook', 'paragraph source ids', 'reader-facing chapter sequence', 'src-p-001', 'aid-p-004', 'hum-p-001', 'unsafe wording to avoid', 'download chapter draft']) {
       assert(initialBody.includes(needle), `briefing surface missing ${needle}`)
     }
 
@@ -368,14 +368,14 @@ async function runBriefingSurfaceCheck(browser) {
     ])
     const chapterDraftResult = await saveAndMeasureDownload(chapterDraftDownload, /^israel-dossier-public-briefing-chapter-draft\.md$/, 1000)
     const chapterDraftText = fs.readFileSync(chapterDraftResult.filePath, 'utf8')
-    for (const needle of ['Source rows: SRC-P-001', 'Unsafe wording to avoid', 'Open questions']) {
+    for (const needle of ['Source rows: SRC-P-001', 'Paragraph source IDs: AID-P-003, AID-P-004', 'Unsafe wording to avoid', 'Open questions']) {
       assert(chapterDraftText.includes(needle), `chapter draft missing ${needle}`)
     }
 
     await page.getByRole('button', { name: /Legal record/i }).click()
     await waitForSectionText(page, 'body', 'LAW-P-001')
     const legalBody = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['procedural legal record', 'warrant is not a conviction', 'provisional measures are not a final merits ruling']) {
+    for (const needle of ['procedural legal record', 'law-p-002', 'advisory opinion', 'political resolution', 'warrant is not a conviction', 'provisional measures are not a final merits ruling']) {
       assert(legalBody.includes(needle), `briefing legal panel missing ${needle}`)
     }
 

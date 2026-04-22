@@ -1,5 +1,5 @@
 {
-  "run": 27,
+  "run": 31,
   "date": "2026-04-22",
   "site": [
     {
@@ -7,8 +7,8 @@
       "composite": 9.9,
       "previous": 9.9,
       "delta": 0,
-      "status": "Production commit 88c37c6 / deployment deae3aa8-5a3b-4b81-9906-d26b67584574 passed all GitHub Actions workflows, live Markdown/manifest/LLM probes, generated PDF checks, canonical source checks, source-link trends, build, bundle, chapter-draft download behavior, and focused primary viewport matrix for `/israel-dossier/briefing`.",
-      "plus_half_requires": "Expand `/israel-dossier/briefing` with section-level footnote tables, paragraph-level source row IDs, confidence labels, and explicit open-question boundaries."
+      "status": "Local source-row expansion is verified but not yet deployed: `/israel-dossier/briefing` now has section-level footnote/source-row tables, paragraph source ID chips, corrected AID/HUM/INC/LAW row coverage, an in-page reader-facing chapter sequence, and a paragraph-ID-enriched Markdown chapter draft. Local TypeScript, build, bundle, canon, strict source-link, behavior, full primary viewport, and slow/blocked-media checks passed. Production still serves commit 88c37c6 until this increment deploys.",
+      "plus_half_requires": "Deploy and live-verify the briefing source-row expansion, then add exact paragraph/page references and archive fallback links for each high-risk source row."
     },
     {
       "feature": "Home / Front Page",

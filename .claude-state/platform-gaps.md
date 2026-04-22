@@ -2,6 +2,10 @@
 
 ## Recently Closed
 
+- **Israel dossier briefing source-row expansion is locally verified and awaiting deployment.**
+  Impact: `/israel-dossier/briefing` now carries the workbook-grade footnote layer directly in the reader experience instead of hiding the evidence chain behind downloads. The page shows paragraph source IDs, section-level source-row tables, corrected row coverage for the financial/humanitarian/incident/legal panels, and a reader-facing chapter sequence before the downloadable draft.
+  Resolution: added canonical briefing source-row objects, corrected drifted row coverage for `AID-P-004`, `HUM-P-003`, `INC-P-004`, and `LAW-P-002`, rendered the source-row table and chapter sequence on the briefing route, expanded the Markdown chapter draft with paragraph-level source IDs, and extended canon/behavior verification. Local verification passed with TypeScript, build, bundle, canon, strict source-link, local behavior, full primary viewport matrix, and slow-3G/blocked-image checks. Deployment verification is pending.
+
 - **Israel dossier downloadable chapter-style draft is source-boundary checked and live.**
   Impact: the briefing route now has a chapter-like Markdown artifact instead of only a shorter briefing draft, giving editors a direct expansion path from workbook rows to publishable chapter prose.
   Resolution: added `/israel-dossier/workbooks/public-briefing-chapter-draft.md`, registered it in the workbook manifest and canon, exposed it on `/israel-dossier/briefing`, indexed it in `llms.txt`, and extended verification to download and assert the draft text. Production commit `88c37c6` / deployment `deae3aa8-5a3b-4b81-9906-d26b67584574` passed all GitHub Actions workflows, live Markdown/manifest/LLM probes, behavior verification, and the focused primary live viewport matrix.
