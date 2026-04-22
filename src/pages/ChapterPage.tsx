@@ -27,11 +27,13 @@ import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 import NewsletterSignup from '../components/NewsletterSignup'
+import InterpretationBoundaryNotice from '../components/InterpretationBoundaryNotice'
 import { getChapterImages } from '../data/chapterImages'
 import { getTopicHrefForTerm } from '../data/topicHubs'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 import { scoreContentGateHit } from '../lib/leadScoring'
+import { getEvidenceCounts } from '../lib/evidenceSummary'
 
 const diagramComponents: Record<string, React.ComponentType> = {
   'media-ownership': MediaOwnershipDiagram,
@@ -341,16 +343,6 @@ function getRelatedByKeywords(current: Chapter, maxResults = 4): ChapterMetadata
     .filter((s: any) => s.score > 0)
     .sort((a: any, b: any) => b.score - a.score)
   return scored.slice(0, maxResults).map((s: any) => s.chapter)
-}
-
-function getEvidenceCounts(chapter: Chapter) {
-  const counts = { verified: 0, circumstantial: 0, disputed: 0 }
-  for (const block of chapter.content) {
-    if (block.type === 'evidence' && block.evidence) {
-      counts[block.evidence.tier]++
-    }
-  }
-  return counts
 }
 
 /* ── Sidebar: Table of Contents ────────────────────────── */
@@ -1111,6 +1103,7 @@ export default function ChapterPage() {
               )}
             </div>
           )}
+          <InterpretationBoundaryNotice counts={evidenceCounts} sourceCount={sourceCount} />
         </header>
 
         {/* ── Hero Image — Full Width ─────────────── */}

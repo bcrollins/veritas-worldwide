@@ -39,6 +39,16 @@ export function createChapterDataTools({ rootDir }) {
     return EVIDENCE_TIER_ORDER.filter((tier) => tiers.includes(tier))
   }
 
+  function normalizeEvidenceCounts(counts) {
+    if (!counts || typeof counts !== 'object' || Array.isArray(counts)) return null
+
+    return {
+      verified: Number.isFinite(counts.verified) ? counts.verified : 0,
+      circumstantial: Number.isFinite(counts.circumstantial) ? counts.circumstantial : 0,
+      disputed: Number.isFinite(counts.disputed) ? counts.disputed : 0,
+    }
+  }
+
   function inferChapterType(chapter) {
     if (!chapter || typeof chapter !== 'object') return null
 
@@ -79,6 +89,26 @@ export function createChapterDataTools({ rootDir }) {
     return EVIDENCE_TIER_ORDER.filter((tier) => tiers.has(tier))
   }
 
+  function inferEvidenceCounts(chapter) {
+    const counts = {
+      verified: 0,
+      circumstantial: 0,
+      disputed: 0,
+    }
+
+    for (const block of chapter?.content || []) {
+      if (
+        block?.type === 'evidence' &&
+        typeof block.evidence?.tier === 'string' &&
+        EVIDENCE_TIER_FILTERS.has(block.evidence.tier)
+      ) {
+        counts[block.evidence.tier] += 1
+      }
+    }
+
+    return counts
+  }
+
   function normalizeChapterRecord(chapter, fallbackChapter = null) {
     if (!chapter || typeof chapter !== 'object') return null
 
@@ -92,6 +122,8 @@ export function createChapterDataTools({ rootDir }) {
         : null
     const preferredEvidenceTiers = normalizeAvailableEvidenceTiers(chapter.availableEvidenceTiers)
     const fallbackEvidenceTiers = normalizeAvailableEvidenceTiers(fallbackChapter?.availableEvidenceTiers)
+    const preferredEvidenceCounts = normalizeEvidenceCounts(chapter.evidenceCounts)
+    const fallbackEvidenceCounts = normalizeEvidenceCounts(fallbackChapter?.evidenceCounts)
     const metadataSource = fallbackChapter || chapter
 
     return {
@@ -103,6 +135,7 @@ export function createChapterDataTools({ rootDir }) {
           : fallbackEvidenceTiers.length > 0
             ? fallbackEvidenceTiers
             : inferAvailableEvidenceTiers(metadataSource),
+      evidenceCounts: preferredEvidenceCounts || fallbackEvidenceCounts || inferEvidenceCounts(metadataSource),
     }
   }
 

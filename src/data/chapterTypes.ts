@@ -17,6 +17,8 @@ export interface EvidenceBox {
   text: string;
 }
 
+export type EvidenceCounts = Record<EvidenceTier, number>;
+
 export interface Quote {
   text: string;
   attribution: string;
@@ -76,6 +78,7 @@ export interface Chapter {
   videoCount?: number;
   sourceHierarchyCounts?: Record<SourceHierarchy, number>;
   availableEvidenceTiers?: EvidenceTier[];
+  evidenceCounts?: EvidenceCounts;
   chapterType?: ChapterType;
   crossLinks: { label: string; chapterId: string }[];
   keywords: string[];

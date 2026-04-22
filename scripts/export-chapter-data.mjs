@@ -52,6 +52,22 @@ function getAvailableEvidenceTiers(chapter) {
   return EVIDENCE_TIER_ORDER.filter((tier) => tiers.has(tier))
 }
 
+function getEvidenceCounts(chapter) {
+  const counts = {
+    verified: 0,
+    circumstantial: 0,
+    disputed: 0,
+  }
+
+  for (const block of chapter.content) {
+    if (block.type === 'evidence' && block.evidence?.tier && block.evidence.tier in counts) {
+      counts[block.evidence.tier] += 1
+    }
+  }
+
+  return counts
+}
+
 function getSourceHierarchyUtils() {
   if (!sourceHierarchyUtils) {
     throw new Error('[chapter-data] Source hierarchy utilities were not loaded')
@@ -85,6 +101,7 @@ function withDerivedMetadata(chapter) {
     videoCount: getVideoCount(chapter),
     sourceHierarchyCounts: getSourceHierarchyCounts(sources),
     availableEvidenceTiers: getAvailableEvidenceTiers(chapter),
+    evidenceCounts: getEvidenceCounts(chapter),
     chapterType: classifyChapterType(chapter),
   }
 }
