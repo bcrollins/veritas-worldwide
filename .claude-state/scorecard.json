@@ -7,8 +7,8 @@
       "composite": 9.9,
       "previous": 9.9,
       "delta": 0,
-      "status": "Local source-row expansion is verified but not yet deployed: `/israel-dossier/briefing` now has section-level footnote/source-row tables, paragraph source ID chips, corrected AID/HUM/INC/LAW row coverage, an in-page reader-facing chapter sequence, and a paragraph-ID-enriched Markdown chapter draft. Local TypeScript, build, bundle, canon, strict source-link, behavior, full primary viewport, and slow/blocked-media checks passed. Production still serves commit 88c37c6 until this increment deploys.",
-      "plus_half_requires": "Deploy and live-verify the briefing source-row expansion, then add exact paragraph/page references and archive fallback links for each high-risk source row."
+      "status": "Production commit 6e3ab5f / deployment e4bb7bbc-d009-431a-b76b-e28381178915 is live and verified: /israel-dossier/briefing now renders section-level source-row tables, paragraph source ID chips, corrected AID/HUM/INC/LAW row coverage, an in-page reader-facing chapter sequence, and a paragraph-ID-enriched Markdown chapter draft. CI, live behavior, crawler metadata, direct Markdown probe, and full live primary viewport matrix passed.",
+      "plus_half_requires": "Add exact page/paragraph/order references and archive fallback/source-copy inventory fields to each high-risk briefing source row, then expand the downloadable draft into fuller chapter prose without changing certainty levels."
     },
     {
       "feature": "Home / Front Page",
