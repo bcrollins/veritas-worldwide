@@ -1,14 +1,14 @@
 {
-  "run": 23,
+  "run": 24,
   "date": "2026-04-22",
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 8.1,
-      "previous": 6.8,
-      "delta": 1.3,
-      "status": "improved locally; awaiting production deploy verification",
-      "plus_half_requires": "Live-verify the deployed `/israel-dossier` source workbench and refreshed figures, then consolidate the page/PDF/carousel/chapter source data into one canonical module with automated route-level regression coverage."
+      "composite": 8.7,
+      "previous": 8.1,
+      "delta": 0.6,
+      "status": "deployed and live verified at commit 029f32341509",
+      "plus_half_requires": "Move the remaining page-only stats, timeline/source records, and incident source records into canonical structured data, then put the Israel dossier verifier and browser smoke checks into CI or scheduled audit automation."
     },
     {
       "feature": "Home / Front Page",

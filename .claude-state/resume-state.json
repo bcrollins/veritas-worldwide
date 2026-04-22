@@ -1,5 +1,5 @@
 {
-  "run": 28,
+  "run": 29,
   "date": "2026-04-22",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -61,15 +61,21 @@
     "Closed the route-canon drift on April 8, 2026 by replacing the fabricated `AboutPage.tsx` newsroom copy with a truthful publication overview, wiring `/about` into `src/App.tsx`, adding `/about` to prerender coverage, and adding `/content-packs` as a compatibility alias to the canonical `/content-pack` route so trust links and verification memory no longer point at dead surfaces.",
     "Expanded the Veritas Institute and manuscript corpus on April 22, 2026 by adding Chapter 29, registering the evidence-methods topic hub, deepening course/manual summaries, correcting Institute route counts, fixing the HubSpot script URL, and adding a global mobile overflow guard. Committed and pushed as `f9bb7a6`; production advanced to this commit during the run.",
     "Upgraded the Israel dossier locally on April 22, 2026 with a source workbench, source-category search, deduplicated incident filtering, refreshed CRS/OCHA/UNICEF/CPJ figures, safer editorial attribution boundaries, updated PDF/carousel/chapter-15 associated copy, and local OG imagery replacing fragile Wikimedia thumbnail dependencies.",
-    "Verified the Israel dossier locally on April 22, 2026 with `npx tsc --noEmit`, `npm run build`, `npm run verify:bundle`, `npm run verify:sources`, crawler metadata checks, Playwright full-device screenshots for iPhone SE, iPhone 15, iPhone 17 Pro Max, iPad 10th gen, desktop 1440, and desktop 1920, plus slow-3G and blocked-image resilience checks."
+    "Verified the Israel dossier locally on April 22, 2026 with `npx tsc --noEmit`, `npm run build`, `npm run verify:bundle`, `npm run verify:sources`, crawler metadata checks, Playwright full-device screenshots for iPhone SE, iPhone 15, iPhone 17 Pro Max, iPad 10th gen, desktop 1440, and desktop 1920, plus slow-3G and blocked-image resilience checks.",
+    "Deployed the Israel dossier source workbench enhancement as commit `02ecbf0` and verified production advanced to it on April 22, 2026 before starting the canonical data pass.",
+    "Consolidated the Israel dossier shared public-record facts, imagery, PDF stats, carousel slides, and Chapter 15 companion copy into `src/data/israelDossierCanon.ts` so page, PDF, carousel, content-pack, metadata, and chapter references no longer maintain separate CRS/OCHA/UNICEF/CPJ figures.",
+    "Added `npm run verify:israel-dossier` through `scripts/verify-israel-dossier-canon.mjs`, covering current public-record values, stale-figure regression bans, canonical imports, local imagery, shared PDF stats, shared carousel slides, and Chapter 15 sitemap presence.",
+    "Root-caused and fixed a local static-generation regression where canonical Chapter 15 metadata made `/chapter/chapter-15` disappear from prerender output because `scripts/prerender.mjs` parsed chapter metadata with a literal-string regex. The prerenderer now normalizes canonical Chapter 15 references before route discovery, restoring 276 prerendered routes and 368 sitemap URLs.",
+    "Revalidated the canonical Israel dossier pass with `npm run build`, `npm run verify:bundle`, `npm run verify:israel-dossier`, `npm run verify:sources`, `npx tsc --noEmit`, local crawler metadata checks, local six-viewport Playwright checks for `/israel-dossier` and `/chapter/chapter-15`, and a browser PDF export check.",
+    "Committed the canonical data/regression increment as `029f323` and pushed it to `origin/main`; production advanced to `029f32341509` with deployment `5b40d00f-e48f-4a5c-ad42-21a79107581a`.",
+    "Live-verified production commit `029f32341509` on April 22, 2026: `/israel-dossier` and `/chapter/chapter-15` passed the primary Playwright matrix, source search returned CRS records, canonical/OG metadata resolved for both routes, and sitemap coverage includes both `/israel-dossier` and `/chapter/chapter-15`."
   ],
-  "next_task": "After the Israel dossier commit is pushed, verify production advances beyond `f9bb7a6` and then live-check `/israel-dossier` for the source workbench, refreshed public-record figures, local image assets, canonical/OG metadata, and no horizontal overflow on mobile.",
+  "next_task": "Continue the Israel dossier hardening pass from deployed commit `029f32341509`: extract the remaining non-canonical stats, timeline/source records, and incident source records into structured canon slices, then add verifier checks that prevent route-count, sitemap, PDF, carousel, and source-workbench drift.",
   "next_priorities": [
-    "Live-verify the Israel dossier enhancement after deploy and record the deployed commit header.",
-    "Continue the Israel dossier depth pass by moving more hardcoded page stats into a single structured data module so page, PDF, carousel, and source index cannot drift.",
-    "Add build-time regression coverage for `/israel-dossier` source workbench rendering, incident deduplication, and local asset references.",
+    "Move the remaining Israel dossier page-only stat records and incident source labels into canonical structured data with evidence-tier/source-category fields.",
+    "Add browser or build-time regression coverage for source-workbench filtering, carousel rendering, and PDF export so `npm run verify:israel-dossier` can catch behavior drift beyond static text drift.",
+    "Wire `npm run verify:israel-dossier`, `npm run verify:bundle`, and `npm run verify:sources` into CI or a scheduled Veritas audit job.",
     "Build the next Israel dossier chapter/content expansion around source-labeled public records rather than unsourced narrative escalation.",
-    "Operationalize `npm run verify:sources` and the Israel dossier Playwright matrix in CI or a scheduled job.",
-    "Add production error monitoring (Sentry or equivalent) for auth, search, analytics, and prerender failures."
+    "Add production error monitoring (Sentry or equivalent) for auth, search, analytics, prerender, and dossier-export failures."
   ]
 }
