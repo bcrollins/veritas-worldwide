@@ -7,8 +7,8 @@
       "composite": 9.9,
       "previous": 9.9,
       "delta": 0,
-      "status": "Live score held at production commit be9e244 / deployment 9b08f513-b95e-4590-b8c4-2937c5639a8e. A downloadable chapter-style Markdown draft is locally complete and verified across typecheck, build, canon, bundle, source-link, behavior-download, and primary viewport checks, but it is not yet deployed.",
-      "plus_half_requires": "Deploy and live-verify the chapter-style Markdown draft, then expand `/israel-dossier/briefing` with paragraph-level source row IDs, confidence labels, and explicit open-question boundaries."
+      "status": "Production commit 88c37c6 / deployment deae3aa8-5a3b-4b81-9906-d26b67584574 passed all GitHub Actions workflows, live Markdown/manifest/LLM probes, generated PDF checks, canonical source checks, source-link trends, build, bundle, chapter-draft download behavior, and focused primary viewport matrix for `/israel-dossier/briefing`.",
+      "plus_half_requires": "Expand `/israel-dossier/briefing` with section-level footnote tables, paragraph-level source row IDs, confidence labels, and explicit open-question boundaries."
     },
     {
       "feature": "Home / Front Page",
