@@ -325,12 +325,12 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     summary: 'Al Jazeera journalist Shireen Abu Akleh, a Palestinian-American, was shot and killed while covering an Israeli military raid in Jenin refugee camp. She was wearing a clearly marked press vest and helmet. Israeli forces initially blamed Palestinian gunfire, then acknowledged an Israeli soldier "likely" fired the fatal shot. The U.S. State Department found no reason to pursue further investigation despite Abu Akleh\'s American citizenship.',
     evidence: 'CNN, AP, The Washington Post, and Bellingcat all conducted independent video and audio analyses concluding the fatal shot came from an Israeli military convoy and that no active Palestinian gunfire was present in the immediate vicinity. The UN OHCHR similarly stated the available information was consistent with fire from Israeli security forces and inconsistent with indiscriminate armed activity by Palestinians at the location. Israel later acknowledged there was a high possibility an Israeli soldier fired the shot.',
     sources: [
-      { label: 'CNN — Independent investigation into the killing', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-killing-analysis-intl' },
-      { label: 'Bellingcat — Video and audio reconstruction', url: 'https://www.bellingcat.com/news/mena/2022/05/28/shireen-abu-akleh-assessment/' },
-      { label: 'UN OHCHR — Statement on killing of Shireen Abu Akleh', url: 'https://www.ohchr.org/en/press-releases/2022/06/un-human-rights-office-occupied-palestinian-territory-shireen-abu' },
+      { label: 'CNN — Independent investigation into the killing', url: 'https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl' },
+      { label: 'Bellingcat — Geolocation and audio reconstruction', url: 'https://www.bellingcat.com/news/mena/2022/05/14/unravelling-the-killing-of-shireen-abu-akleh/' },
+      { label: 'UN OHCHR — Statement on killing of Shireen Abu Akleh', url: 'https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory' },
     ],
     multimedia: [
-      { type: 'investigation', label: 'Bellingcat — Geolocated shooting sequence', url: 'https://www.bellingcat.com/news/mena/2022/05/28/shireen-abu-akleh-assessment/' },
+      { type: 'investigation', label: 'Bellingcat — Geolocated shooting sequence', url: 'https://www.bellingcat.com/news/mena/2022/05/14/unravelling-the-killing-of-shireen-abu-akleh/' },
     ],
     tier: 'verified',
   },
@@ -342,12 +342,12 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     summary: 'Israeli forces opened fire on Palestinians crowding around aid trucks in Gaza City, killing at least 112 people and wounding over 760. Israel said soldiers fired after feeling threatened by the crowd and that some casualties occurred in a stampede. Multiple videos showed gunfire striking people as they fled. The event became known as the "flour massacre."',
     evidence: 'Eyewitness videos analyzed by CNN and BBC showed sustained gunfire as crowds ran away from the trucks. Doctors at Al-Shifa hospital reported gunshot wounds as the primary cause of death among many victims. The U.S. blocked an initial UN Security Council statement condemning the killings.',
     sources: [
-      { label: 'CNN — Video analysis of flour massacre', url: 'https://www.cnn.com/2024/03/01/middleeast/gaza-flour-massacre-video-analysis-intl' },
+      { label: 'CNN — Videos and eyewitness accounts of deadly aid delivery', url: 'https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd' },
       { label: 'BBC — What happened in Gaza aid convoy incident?', url: 'https://www.bbc.com/news/world-middle-east-68445973' },
       { label: 'UN News — Secretary-General appalled by aid convoy killings', url: 'https://news.un.org/en/story/2024/03/1147157' },
     ],
     multimedia: [
-      { type: 'video', label: 'CNN — Frame-by-frame convoy shooting analysis', url: 'https://www.cnn.com/2024/03/01/middleeast/gaza-flour-massacre-video-analysis-intl' },
+      { type: 'video', label: 'CNN — Convoy shooting evidence review', url: 'https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd' },
     ],
     tier: 'verified',
     casualties: { killed: 112, injured: 760 },
@@ -361,7 +361,7 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     evidence: 'Videos verified by Reuters, AP, and CNN showed charred bodies, children\'s remains, and burning tents in a densely packed camp. Israel said it was targeting two Hamas officials and blamed secondary explosions, but independent analysts said the munitions and fire spread still raised serious questions about proportionality and the designation of the site as a safe area.',
     sources: [
       { label: 'Reuters — Rafah camp strike verified footage', url: 'https://www.reuters.com/world/middle-east/israeli-strike-rafah-kills-displaced-palestinians-camp-fire-2024-05-27/' },
-      { label: 'AP — Rafah strike aftermath and casualty reports', url: 'https://apnews.com/article/israel-palestinians-hamas-war-news-05-27-2024-7e3dbd8b59f3d07b0c0d9067f32f6e4c' },
+      { label: 'AP — Rafah strike aftermath and casualty reports', url: 'https://apnews.com/article/israel-palestinians-hamas-war-news-05-27-2024-7b743a848ef8bfbe69a9659a4a5dd047' },
       { label: 'ICJ — May 24 order on Rafah offensive', url: 'https://www.icj-cij.org/case/192' },
     ],
     multimedia: [
@@ -378,12 +378,12 @@ export const EXPANDED_INCIDENTS: DocumentedIncident[] = [  // ─── NEW INCI
     summary: 'Six-year-old Hind Rajab was trapped in a car with six dead relatives after an Israeli attack in Gaza City. She was heard pleading for help in recorded calls with the Palestinian Red Crescent Society. PRCS dispatched an ambulance after coordinating safe passage with Israeli authorities. Hind, the two paramedics, and the ambulance were later found destroyed. Investigations found the car and ambulance had been repeatedly fired upon by an Israeli tank positioned about 13 meters away.',
     evidence: 'Forensic Architecture and Earshot analyzed the audio, bullet patterns, and scene geometry, concluding Israeli tank fire was responsible. The analysis showed over 300 bullet impacts on the vehicle and no evidence supporting claims of active combat at the time of the ambulance dispatch. PRCS released the audio recordings of Hind\'s final calls.',
     sources: [
-      { label: 'Forensic Architecture — Hind Rajab investigation', url: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab' },
-      { label: 'PRCS — Timeline and recordings', url: 'https://www.palestinercs.org/en/News/All/48628' },
-      { label: 'The Guardian — Investigation summary', url: 'https://www.theguardian.com/world/2024/jun/20/hind-rajab-killing-investigation-gaza-israel' },
+      { label: 'Forensic Architecture — Hind Rajab investigation', url: 'https://www.forensicarchitecture.org/investigation/the-killing-of-hind-rajab' },
+      { label: 'PRCS — Statement on ambulance crew killed attempting Hind rescue', url: 'https://www.palestinercs.org/public/files/image/2024/statements/en%20PRCS%20Amal%20Statement%2011022024.pdf' },
+      { label: 'Al Jazeera Fault Lines — Documentary investigation with Forensic Architecture and Earshot', url: 'https://www.aljazeera.com/video/fault-lines/2024/6/21/the-night-wont-end-bidens-war-on-gaza-2' },
     ],
     multimedia: [
-      { type: 'investigation', label: 'Forensic Architecture — Spatial reconstruction', url: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab' },
+      { type: 'investigation', label: 'Forensic Architecture — Spatial reconstruction', url: 'https://www.forensicarchitecture.org/investigation/the-killing-of-hind-rajab' },
     ],
     tier: 'verified',
     casualties: { killed: 3 },
