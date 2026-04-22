@@ -4,11 +4,11 @@
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.8,
-      "previous": 9.7,
-      "delta": 0.1,
-      "status": "Live production commit 49a19b627432 / deployment 93e4009b-800a-4735-b015-03d740de41ee passed crawler/social metadata, preview images, generated PDF evidence text, canonical source checks, source-link trends, build, bundle, behavior verification, primary viewport matrix, and all twelve new Institute route probes for the six-module Evidence Course Path. A downloadable editor-artifact layer is locally verified but not yet deployed.",
-      "plus_half_requires": "Live-verify the source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing artifacts, then populate those artifacts with the next batch of source-labeled dossier records."
+      "composite": 9.85,
+      "previous": 9.8,
+      "delta": 0.05,
+      "status": "Live production commit b205bd8f9214 / deployment 21a42519-8209-4356-a8a4-abaf6c34879e passed crawler/social metadata, preview images, generated PDF evidence text, canonical source checks, source-link trends, build, bundle, behavior verification with template download, static template probes, and primary viewport matrix for the six-module Evidence Course Path plus Evidence Workbooks.",
+      "plus_half_requires": "Populate the source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing artifacts with the next batch of source-labeled dossier records, then convert the strongest rows into publishable chapter/briefing copy."
     },
     {
       "feature": "Home / Front Page",
@@ -76,11 +76,11 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 8.6,
-      "previous": 8.4,
-      "delta": 0.2,
-      "status": "improved; all six Israel dossier source-safe course/guide pairs are live, prerendered, sitemap-listed, JSON-LD-backed, and verified in production, with representative routes passing the full primary viewport matrix. Companion workbook templates are locally verified and awaiting deployment.",
-      "plus_half_requires": "Live-verify the six course workbook templates, pressure-test the Book of Knowledge PDF/manual export on real browsers, then add the templates directly into relevant course/guide detail pages."
+      "composite": 8.7,
+      "previous": 8.6,
+      "delta": 0.1,
+      "status": "improved; all six Israel dossier source-safe course/guide pairs are live, prerendered, sitemap-listed, JSON-LD-backed, verified in production, and backed by deployed workbook templates with representative routes passing the full primary viewport matrix",
+      "plus_half_requires": "Add the workbook templates directly into relevant course/guide detail pages, then pressure-test the Book of Knowledge PDF/manual export on real browsers."
     },
     {
       "feature": "Deployment Observability",
