@@ -614,7 +614,7 @@ export const EXPANDED_STATS: StatCard[] = [
     value: '83 years',
     label: 'Israeli life expectancy vs. 74 in Palestine (9-year gap)',
     source: 'World Bank Development Indicators',
-    sourceUrl: 'https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=PS-IL',
+    sourceUrl: 'https://api.worldbank.org/v2/country/PS;IL/indicator/SP.DYN.LE00.IN?format=json&per_page=200',
     category: 'comparative',
     lastVerified: '2026-03-24',
     tier: 'verified',

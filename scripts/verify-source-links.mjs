@@ -13,6 +13,7 @@ const timeoutMs = Number.parseInt(process.env.SOURCE_LINK_TIMEOUT_MS || '12000',
 const concurrency = Number.parseInt(process.env.SOURCE_LINK_CONCURRENCY || '12', 10)
 const strictMode = process.env.SOURCE_LINK_STRICT === '1'
 const userAgent = process.env.SOURCE_LINK_USER_AGENT || 'Mozilla/5.0 (compatible; VeritasSourceLinkChecker/1.0; +https://veritasworldwide.com)'
+const retryCount = Number.parseInt(process.env.SOURCE_LINK_RETRIES || '1', 10)
 
 const candidateFiles = [
   ...fs.readdirSync(path.join(repoRoot, 'src', 'data', 'chapters'))
@@ -233,7 +234,16 @@ function extractReferencesFromFile(filePath) {
   return references
 }
 
-async function fetchWithTimeout(url, options) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+function isTransientFetchError(error) {
+  const code = error?.cause?.code || error?.code
+  return error?.name === 'AbortError' || ['ECONNRESET', 'ETIMEDOUT', 'EAI_AGAIN', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_HEADERS_TIMEOUT', 'UND_ERR_SOCKET'].includes(code)
+}
+
+async function fetchOnceWithTimeout(url, options) {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), timeoutMs)
 
@@ -250,6 +260,24 @@ async function fetchWithTimeout(url, options) {
   } finally {
     clearTimeout(timer)
   }
+}
+
+async function fetchWithTimeout(url, options) {
+  let lastError = null
+
+  for (let attempt = 0; attempt <= retryCount; attempt += 1) {
+    try {
+      return await fetchOnceWithTimeout(url, options)
+    } catch (error) {
+      lastError = error
+      if (attempt >= retryCount || !isTransientFetchError(error)) {
+        throw error
+      }
+      await sleep(250 * (attempt + 1))
+    }
+  }
+
+  throw lastError
 }
 
 async function getArchiveSnapshot(url) {
