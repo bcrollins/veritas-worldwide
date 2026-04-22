@@ -31,6 +31,9 @@ const currentNeedles = [
   "value: '21,289+'",
   "value: '261+'",
   "value: '$298B'",
+  'ISRAEL_DOSSIER_CORE_STATS',
+  'ISRAEL_DOSSIER_CORE_INCIDENTS',
+  'ISRAEL_DOSSIER_MONEY_TRAIL',
   'https://www.congress.gov/crs-product/RL33222',
   'Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
   'State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
@@ -63,6 +66,9 @@ const duplicateDefinitions = [
   /const\s+SOURCE_CATEGORY_META\s*=/,
   /const\s+nums\s*=\s*\[/,
   /const\s+keyStats\s*=\s*\[/,
+  /const\s+STATS\s*:\s*StatCard\[\]\s*=\s*\[/,
+  /const\s+INCIDENTS\s*:\s*DocumentedIncident\[\]\s*=\s*\[/,
+  /const\s+MONEY_TRAIL\s*:\s*MoneyTrailNode\[\]\s*=\s*\[/,
   /headline:\s*'\$298 BILLION'/,
 ]
 
@@ -71,6 +77,15 @@ for (const file of duplicateDefinitionFiles) {
   for (const pattern of duplicateDefinitions) {
     assert(!pattern.test(text), `${file} redefines canonical dossier data: ${pattern}`)
   }
+}
+
+const pageOnlyDuplicateDefinitions = [
+  /interface\s+StatCard\s*\{/,
+  /interface\s+DocumentedIncident\s*\{/,
+  /interface\s+MoneyTrailNode\s*\{/,
+]
+for (const pattern of pageOnlyDuplicateDefinitions) {
+  assert(!pattern.test(read(files.page)), `${files.page} redefines canonical page data types: ${pattern}`)
 }
 
 const staleTextFiles = [files.page, files.expanded, files.pdf, files.chapter15, files.chapterMeta, files.chapterImages, files.contentPack, files.articles]
@@ -103,6 +118,9 @@ assert(has(files.expanded, /\.\.\.ISRAEL_DOSSIER_CANON_CAROUSEL_SLIDES/), 'expan
 assert(has(files.pdf, /const\s+nums\s*=\s*ISRAEL_DOSSIER_PDF_COVER_STATS/), 'PDF cover stats do not consume canonical stats')
 assert(has(files.pdf, /const\s+keyStats\s*=\s*ISRAEL_DOSSIER_PDF_KEY_STATS/), 'PDF key stats do not consume canonical stats')
 assert(has(files.contentPack, /ISRAEL_DOSSIER_BRAND_SLIDE/), 'content pack does not consume canonical Israel dossier slide')
+assert(has(files.page, /ISRAEL_DOSSIER_CORE_STATS/), 'page does not consume canonical core stats')
+assert(has(files.page, /ISRAEL_DOSSIER_CORE_INCIDENTS/), 'page does not consume canonical core incidents')
+assert(has(files.page, /ISRAEL_DOSSIER_MONEY_TRAIL/), 'page does not consume canonical money trail')
 assert(has(files.chapter15, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter 15 does not consume canonical companion copy')
 assert(has(files.chapterMeta, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter metadata does not consume canonical chapter 15 copy')
 assert(has(files.chapterImages, /ISRAEL_DOSSIER_CHAPTER_15/), 'chapter images do not consume canonical chapter 15 imagery')
