@@ -15,12 +15,18 @@ const strictMode = process.env.SOURCE_LINK_STRICT === '1'
 const userAgent = process.env.SOURCE_LINK_USER_AGENT || 'Mozilla/5.0 (compatible; VeritasSourceLinkChecker/1.0; +https://veritasworldwide.com)'
 const retryCount = Number.parseInt(process.env.SOURCE_LINK_RETRIES || '1', 10)
 
+const wafRestrictedHosts = new Set([
+  'en-social-sciences.tau.ac.il',
+  'socsci-english-cms.tau.ac.il',
+])
+
 const candidateFiles = [
   ...fs.readdirSync(path.join(repoRoot, 'src', 'data', 'chapters'))
     .filter((fileName) => fileName.endsWith('.ts'))
     .map((fileName) => path.join(repoRoot, 'src', 'data', 'chapters', fileName)),
   path.join(repoRoot, 'src', 'data', 'articles.ts'),
   path.join(repoRoot, 'src', 'data', 'articlesExpanded.ts'),
+  path.join(repoRoot, 'src', 'data', 'israelDossierCanon.ts'),
   path.join(repoRoot, 'src', 'data', 'israelDossierExpanded.ts'),
   path.join(repoRoot, 'src', 'data', 'profileData.ts'),
 ]
@@ -307,7 +313,15 @@ async function getArchiveSnapshot(url) {
   }
 }
 
-function classifyHttpStatus(statusCode) {
+function isKnownVerifierRestrictedHost(url) {
+  try {
+    return wafRestrictedHosts.has(new URL(url).hostname)
+  } catch {
+    return false
+  }
+}
+
+function classifyHttpStatus(statusCode, url) {
   if (statusCode >= 200 && statusCode < 300) {
     return 'ok'
   }
@@ -316,7 +330,7 @@ function classifyHttpStatus(statusCode) {
     return 'redirect'
   }
 
-  if ([401, 403, 429].includes(statusCode)) {
+  if ([401, 403, 429].includes(statusCode) || (statusCode === 503 && isKnownVerifierRestrictedHost(url))) {
     return 'restricted'
   }
 
@@ -342,7 +356,7 @@ async function probeUrl(url) {
   for (const attempt of attempts) {
     try {
       const response = await fetchWithTimeout(url, { method: attempt.method })
-      const classification = classifyHttpStatus(response.status)
+      const classification = classifyHttpStatus(response.status, url)
 
       if (
         attempt.method === 'HEAD' &&

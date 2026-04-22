@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-22T08:00:11.016Z",
+  "generatedAt": "2026-04-22T08:15:30.506Z",
   "timeoutMs": 20000,
   "concurrency": 10,
   "strictMode": false,
   "summary": {
-    "referenceCount": 674,
-    "uniqueUrlCount": 388,
-    "ok": 343,
+    "referenceCount": 752,
+    "uniqueUrlCount": 448,
+    "ok": 390,
     "redirect": 0,
-    "restricted": 45,
+    "restricted": 58,
     "missing": 0,
     "failed": 0,
     "invalid": 0,
@@ -31,7 +31,7 @@
         "$38 Billion MOU Signed"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -71,6 +71,24 @@
       ]
     },
     {
+      "url": "https://aoav.org.uk/2025/us-ships-1600-mk-84-heavy-bombs-to-israel-amid-concerns-of-resurgent-conflict/",
+      "domain": "aoav.org.uk",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://aoav.org.uk/2025/us-ships-1600-mk-84-heavy-bombs-to-israel-amid-concerns-of-resurgent-conflict/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "AOAV — US ships 1,600 MK-84 heavy bombs to Israel"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://api.usaspending.gov/docs/",
       "domain": "api.usaspending.gov",
       "status": "ok",
@@ -103,7 +121,7 @@
         "Israeli life expectancy vs. 74 in Palestine (9-year gap)"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -145,7 +163,7 @@
         "AP — Visual analysis of the Al-Ahli hospital blast"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -163,7 +181,7 @@
         "AP — Rafah strike aftermath and casualty reports"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -221,6 +239,24 @@
       ]
     },
     {
+      "url": "https://armssalesaccountabilityproject.com/wp-content/uploads/10.4.24-JDAM-White-Paper.pdf",
+      "domain": "armssalesaccountabilityproject.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://armssalesaccountabilityproject.com/wp-content/uploads/10.4.24-JDAM-White-Paper.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "JDAM-Guided Strikes → Residential Areas"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://avalon.law.yale.edu/19th_century/ajveto01.asp",
       "domain": "avalon.law.yale.edu",
       "status": "ok",
@@ -255,7 +291,7 @@
       ],
       "referenceFiles": [
         "src/data/chapters/chapter-6.ts",
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -348,7 +384,7 @@
         "Gaza Blockade Begins"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -439,7 +475,61 @@
         "Forensic Architecture — Spatial analysis of Israeli military conduct in Gaza"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://countryeconomy.com/countries/compare/israel/palestine",
+      "domain": "countryeconomy.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://countryeconomy.com/countries/compare/israel/palestine",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "GDP per capita ratio — Israel ($54,177) vs. Palestine ($2,592)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://cpj.org/special-reports/2024-is-deadliest-year-for-journalists-in-cpj-history-almost-70-percent-killed-by-israel/",
+      "domain": "cpj.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://cpj.org/special-reports/2024-is-deadliest-year-for-journalists-in-cpj-history-almost-70-percent-killed-by-israel/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "2024 record"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://cpj.org/special-reports/record-129-press-members-killed-in-2025-israel-responsible-for-2-of-3-of-deaths/",
+      "domain": "cpj.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://cpj.org/special-reports/record-129-press-members-killed-in-2025-israel-responsible-for-2-of-3-of-deaths/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "2025 record broken again"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -461,6 +551,24 @@
       ]
     },
     {
+      "url": "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=IL",
+      "domain": "data.worldbank.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=IL",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Israel's health spending as % of GDP — below OECD average of 9.3%"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://documents.un.org/doc/undoc/gen/n23/315/25/pdf/n2331525.pdf",
       "domain": "documents.un.org",
       "status": "ok",
@@ -475,7 +583,7 @@
         "Great March of Return — 223 Palestinians Killed"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -518,6 +626,24 @@
       ]
     },
     {
+      "url": "https://edition.cnn.com/2024/04/03/middleeast/world-central-kitchen-workers-gaza-israel-strike-intl",
+      "domain": "edition.cnn.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://edition.cnn.com/2024/04/03/middleeast/world-central-kitchen-workers-gaza-israel-strike-intl",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "CNN — Who were the 7 killed workers"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://elizabethwarren.com/",
       "domain": "elizabethwarren.com",
       "status": "ok",
@@ -533,6 +659,24 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://en.idi.org.il/tags-en/1465",
+      "domain": "en.idi.org.il",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://en.idi.org.il/tags-en/1465",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Of Israelis support Saudi normalization even during ongoing conflict"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -932,6 +1076,24 @@
       ]
     },
     {
+      "url": "https://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_2334",
+      "domain": "en.wikipedia.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_2334",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Security Council resolution declaring all Israeli settlements illegal (2016)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://en.wikipedia.org/wiki/USS_Liberty_incident",
       "domain": "en.wikipedia.org",
       "status": "ok",
@@ -982,7 +1144,7 @@
         "Euro-Med Monitor — Documentation of Jabalia strikes"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -992,7 +1154,7 @@
       "httpStatus": 200,
       "finalUrl": "https://euromedmonitor.org/en/article/6129",
       "redirected": false,
-      "checkedWith": "HEAD",
+      "checkedWith": "GET",
       "error": null,
       "archive": null,
       "referenceCount": 3,
@@ -1002,7 +1164,26 @@
         "Mosques destroyed in Gaza (Oct 2023 — Mar 2026)"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://euromedmonitor.org/en/article/6773/",
+      "domain": "euromedmonitor.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://euromedmonitor.org/en/article/6773/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Euro-Med Monitor — Al Jazeera documentary warrants investigation",
+        "Euro-Med Monitor — Full investigation report"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1075,6 +1256,24 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
+      "domain": "forensic-architecture.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Forensic Architecture — Full reconstruction with audio"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1188,7 +1387,7 @@
       ],
       "referenceFiles": [
         "src/data/chapters/chapter-7.ts",
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1207,6 +1406,24 @@
       ],
       "referenceFiles": [
         "src/data/chapters/overview.ts"
+      ]
+    },
+    {
+      "url": "https://jayapal.house.gov/2026/03/12/jayapal-jacobs-welch-introduce-bicameral-bill-demanding-accountability-for-hind-rajab-palestinian-child-killed-by-israeli-forces/",
+      "domain": "jayapal.house.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://jayapal.house.gov/2026/03/12/jayapal-jacobs-welch-introduce-bicameral-bill-demanding-accountability-for-hind-rajab-palestinian-child-killed-by-israeli-forces/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "U.S. Congress — Hind Rajab Act introduced (March 2026)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1245,6 +1462,24 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://jewishvirtuallibrary.org/u-s-vetoes-of-un-security-council-resolutions-critical-to-israel",
+      "domain": "jewishvirtuallibrary.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://jewishvirtuallibrary.org/u-s-vetoes-of-un-security-council-resolutions-critical-to-israel",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "U.S. vetoes of UN Security Council resolutions critical of Israel"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1298,7 +1533,7 @@
         "UN News — Secretary-General appalled by aid convoy killings"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1316,7 +1551,7 @@
         "UN News — Highest UN staff death toll in any conflict"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1468,7 +1703,7 @@
         "U.S. states with anti-BDS laws or executive orders"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1487,6 +1722,26 @@
       ],
       "referenceFiles": [
         "src/data/chapters/chapter-1.ts"
+      ]
+    },
+    {
+      "url": "https://responsiblestatecraft.org/us-weapons-gaza/",
+      "domain": "responsiblestatecraft.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://responsiblestatecraft.org/us-weapons-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 3,
+      "referenceLabels": [
+        "MK-84 2,000-pound bombs supplied by U.S. to Israel (2023–2024)",
+        "Responsible Statecraft — 20 times Israel used US weapons in likely war crimes",
+        "MK-84 Bombs → Documented Civilian Impact"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1552,6 +1807,24 @@
       ]
     },
     {
+      "url": "https://unwatch.org/2024-unga-resolutions-on-israel-vs-rest-of-the-world/",
+      "domain": "unwatch.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://unwatch.org/2024-unga-resolutions-on-israel-vs-rest-of-the-world/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UN General Assembly resolutions against Israel (2015–2024) vs. 80 for rest of world"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases",
       "domain": "ustr.gov",
       "status": "ok",
@@ -1604,6 +1877,24 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://wck.org/news/gaza-team-update/",
+      "domain": "wck.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://wck.org/news/gaza-team-update/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "World Central Kitchen — Official statement"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1679,41 +1970,39 @@
       ]
     },
     {
-      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "domain": "www.972mag.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 3,
-      "referenceLabels": [
-        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
-        "+972 Magazine — Full investigation with officer testimony",
-        "+972 Magazine (six IDF intelligence officers)"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
-      "domain": "www.972mag.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "finalUrl": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "+972 Magazine — \"Where's Daddy?\" tracking system"
+        "972 Magazine — Survivor testimonies"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aa.com.tr/en/middle-east/interview-survivor-of-rafah-ambulance-massacre-exposes-israeli-army-atrocities/3531451",
+      "domain": "www.aa.com.tr",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aa.com.tr/en/middle-east/interview-survivor-of-rafah-ambulance-massacre-exposes-israeli-army-atrocities/3531451",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Anadolu Agency — Survivor interview"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1772,7 +2061,7 @@
         "Al Jazeera — Photo report on Gaza strike aftermath"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1790,7 +2079,62 @@
         "Al Jazeera — What we know so far about the Jabalia attack"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/news/2024/4/2/al-jazeera-sanad-probe-finds-israeli-forces-deliberately-hit-wck-convoy",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/news/2024/4/2/al-jazeera-sanad-probe-finds-israeli-forces-deliberately-hit-wck-convoy",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera Sanad — Three-strike convoy probe"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/news/2024/6/11/israeli-killings-of-gaza-civilians-during-raid-may-be-war-crimes-un",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/news/2024/6/11/israeli-killings-of-gaza-civilians-during-raid-may-be-war-crimes-un",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera — Israeli killings may be war crimes: UN"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/news/2024/9/12/what-bombs-did-israel-use-against-the-al-mawasi-safe-zone-in-gaza",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/news/2024/9/12/what-bombs-did-israel-use-against-the-al-mawasi-safe-zone-in-gaza",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Al Jazeera — What bombs were used in al-Mawasi \"safe zone\"",
+        "Al Jazeera — Bomb fragment analysis and crater mapping"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1808,7 +2152,80 @@
         "Al Jazeera — What Israel's UNRWA ban means for millions of Palestinians"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/news/2025/10/21/new-al-jazeera-documentary-reveals-evidence-in-hind-rajab-familys-killing",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/news/2025/10/21/new-al-jazeera-documentary-reveals-evidence-in-hind-rajab-familys-killing",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera — Documentary evidence summary (2025)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/news/2026/3/23/substantial-evidence-of-double-tap-strike-in-killing-of-gazas-hind-rajab",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/news/2026/3/23/substantial-evidence-of-double-tap-strike-in-killing-of-gazas-hind-rajab",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera — New double-tap strike evidence (2025 documentary)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/news/longform/2024/3/5/the-blood-was-everywhere-inside-israels-flour-massacre-in-gaza",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/news/longform/2024/3/5/the-blood-was-everywhere-inside-israels-flour-massacre-in-gaza",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Al Jazeera — \"The blood was everywhere\" (longform)",
+        "Al Jazeera — Longform visual investigation"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.aljazeera.com/video/al-jazeera-world/2025/10/22/nuseirat-274",
+      "domain": "www.aljazeera.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aljazeera.com/video/al-jazeera-world/2025/10/22/nuseirat-274",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Al Jazeera World — Nuseirat 274 documentary"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -1826,7 +2243,7 @@
         "Al Jazeera Fault Lines — Documentary investigation with Forensic Architecture and Earshot"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2005,21 +2422,21 @@
       ]
     },
     {
-      "url": "https://www.axios.com/",
-      "domain": "www.axios.com",
+      "url": "https://www.armyrecognition.com/news/army-news/2025/breaking-news-us-greenlights-mk-84-bombs-for-israel-despite-us-president-donald-trumps-military-sales-pause",
+      "domain": "www.armyrecognition.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://www.axios.com/",
+      "finalUrl": "https://www.armyrecognition.com/news/army-news/2025/breaking-news-us-greenlights-mk-84-bombs-for-israel-despite-us-president-donald-trumps-military-sales-pause",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Apologized for visiting Epstein's island after public pressure"
+        "Trump releases 1,800 MK-84 bombs"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2073,7 +2490,7 @@
         "BBC — What happened in Gaza aid convoy incident?"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2092,7 +2509,7 @@
         "Bellingcat — Geolocated shooting sequence"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2148,6 +2565,25 @@
       ],
       "referenceFiles": [
         "src/data/chapters/chapter-1.ts"
+      ]
+    },
+    {
+      "url": "https://www.britannica.com/topic/Iron-Dome",
+      "domain": "www.britannica.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.britannica.com/topic/Iron-Dome",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Cost per Iron Dome interceptor missile",
+        "Iron Dome / David's Sling Replenishment"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2220,6 +2656,24 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.cbc.ca/news/world/gaza-paramedics-first-responders-rafah-israel-1.7503193",
+      "domain": "www.cbc.ca",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cbc.ca/news/world/gaza-paramedics-first-responders-rafah-israel-1.7503193",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "CBC News — Israel changes account after video surfaces"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2357,7 +2811,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.cnbc.com/",
       "redirected": false,
-      "checkedWith": "HEAD",
+      "checkedWith": "GET",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -2438,7 +2892,7 @@
         "CNN — Independent investigation into the killing"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2456,7 +2910,25 @@
         "CNN — Mothers and babies trapped in Gaza's starvation siege"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2024/04/04/middleeast/jose-andres-wck-israel-strike-criticism-intl",
+      "domain": "www.cnn.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cnn.com/2024/04/04/middleeast/jose-andres-wck-israel-strike-criticism-intl",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "CNN — \"Systematically, car by car\" — José Andrés"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2475,7 +2947,45 @@
         "CNN — Convoy shooting evidence review"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd/index.html",
+      "domain": "www.cnn.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd/index.html",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "CNN — Videos and eyewitness accounts cast doubt on Israeli timeline",
+        "CNN — Forensic video analysis"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2025/04/07/middleeast/gaza-aid-workers-killed-audio-intl-invs",
+      "domain": "www.cnn.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cnn.com/2025/04/07/middleeast/gaza-aid-workers-killed-audio-intl-invs",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "CNN — Audio and video capture last moments",
+        "CNN Investigation — Recovered phone footage"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2512,6 +3022,42 @@
       ],
       "referenceFiles": [
         "src/data/articlesExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.commondreams.org/news/hind-rajab-forensic-investigation",
+      "domain": "www.commondreams.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.commondreams.org/news/hind-rajab-forensic-investigation",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Common Dreams — Forensic Architecture: 335 bullets at close range"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.commonwealthfund.org/international-health-policy-center/countries/israel",
+      "domain": "www.commonwealthfund.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.commonwealthfund.org/international-health-policy-center/countries/israel",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Healthcare coverage for all Israeli citizens since 1995"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2663,6 +3209,42 @@
       ]
     },
     {
+      "url": "https://www.dci-palestine.org/israeli_forces_shoot_kill_4_year_old_palestinian_girl_in_the_backseat_of_a_car",
+      "domain": "www.dci-palestine.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dci-palestine.org/israeli_forces_shoot_kill_4_year_old_palestinian_girl_in_the_backseat_of_a_car",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Defense for Children International — Legal brief"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.dci-palestine.org/palestinian_child_administrative_detainees_reach_all_time_high",
+      "domain": "www.dci-palestine.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dci-palestine.org/palestinian_child_administrative_detainees_reach_all_time_high",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Palestinian children detained by Israel (Dec 2025) — 51% without charge"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.defense.gov/",
       "domain": "www.defense.gov",
       "status": "ok",
@@ -2718,6 +3300,25 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.dsca.mil/press-media/major-arms-sales",
+      "domain": "www.dsca.mil",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dsca.mil/press-media/major-arms-sales",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Proposed arms sale notified to Congress (January 2025)",
+        "Foreign Military Financing → Weapons Procurement"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -2789,7 +3390,7 @@
         "WHO — High-risk mission to Al-Shifa hospital"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3236,7 +3837,7 @@
         "Forensic Architecture — Blast sequence analysis"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3255,7 +3856,7 @@
         "Forensic Architecture — Spatial reconstruction"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3333,6 +3934,24 @@
       ]
     },
     {
+      "url": "https://www.globalfirepower.com/country-military-strength-detail.php?country_id=israel",
+      "domain": "www.globalfirepower.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.globalfirepower.com/country-military-strength-detail.php?country_id=israel",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Active IDF personnel + 465,000 reservists (635,000 total force)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.govtrack.us/congress/members/byron_donalds/456808",
       "domain": "www.govtrack.us",
       "status": "ok",
@@ -3384,6 +4003,24 @@
       ],
       "referenceFiles": [
         "src/data/chapters/overview.ts"
+      ]
+    },
+    {
+      "url": "https://www.hindrajabfoundation.org/hind-rajabs-story",
+      "domain": "www.hindrajabfoundation.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.hindrajabfoundation.org/hind-rajabs-story",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Hind Rajab Foundation — Full story"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3450,7 +4087,7 @@
         "HRW — Video analysis of white phosphorus airburst"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3468,7 +4105,7 @@
         "Human Rights Watch — Hospital investigation"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3486,7 +4123,7 @@
         "Human Rights Watch: \"A Threshold Crossed\" — Apartheid Finding"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3523,7 +4160,7 @@
         "ICC Arrest Warrants — Netanyahu and Gallant"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3560,7 +4197,7 @@
         "ICJ Advisory Opinion — Separation Wall"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3579,7 +4216,7 @@
         "South Africa v. Israel — Genocide Convention Case"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -3592,12 +4229,14 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 3,
       "referenceLabels": [
+        "ICJ ruled Israel's occupation of Palestinian territory is illegal (July 19, 2024)",
         "ICJ Advisory Opinion — Legality of the Occupation",
         "ICJ / ICC official records"
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "src/data/israelDossierExpanded.ts"
       ]
     },
@@ -3677,7 +4316,7 @@
         "Camp David Accords — U.S. Aid Escalates"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -4067,7 +4706,25 @@
         "Sabra and Shatila Massacre"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.middleeasteye.net/news/new-video-evidence-disputes-israeli-armys-account-medic-killings",
+      "domain": "www.middleeasteye.net",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.middleeasteye.net/news/new-video-evidence-disputes-israeli-armys-account-medic-killings",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Middle East Eye — New video evidence disputes Israeli account"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -4161,6 +4818,60 @@
       ]
     },
     {
+      "url": "https://www.nbcnews.com/news/world/gaza-aid-convoy-deaths-al-rashid-israel-idf-hamas-rcna141497",
+      "domain": "www.nbcnews.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nbcnews.com/news/world/gaza-aid-convoy-deaths-al-rashid-israel-idf-hamas-rcna141497",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "NBC News — How 118 people died in the aid convoy"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.nbcnews.com/news/world/video-moment-israeli-forces-gaza-medics-killed-rcna199824",
+      "domain": "www.nbcnews.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nbcnews.com/news/world/video-moment-israeli-forces-gaza-medics-killed-rcna199824",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "NBC News — Video of the moment Israeli forces opened fire"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.nbcnews.com/news/world/world-central-kitchen-says-israeli-strike-kills-7-workers-halts-aid-rcna145976",
+      "domain": "www.nbcnews.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nbcnews.com/news/world/world-central-kitchen-says-israeli-strike-kills-7-workers-halts-aid-rcna145976",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "NBC News — Visual investigation of the strike sequence"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.nbcnews.com/politics/2026-election/aipac-super-pac-funded-illinois-groups-democratic-primaries-israel-rcna264379",
       "domain": "www.nbcnews.com",
       "status": "ok",
@@ -4176,6 +4887,24 @@
       ],
       "referenceFiles": [
         "src/data/articles.ts"
+      ]
+    },
+    {
+      "url": "https://www.nbn.org.il/life-in-israel/government-services/rights-and-benefits/student-authority-tuition-benefits/",
+      "domain": "www.nbn.org.il",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nbn.org.il/life-in-israel/government-services/rights-and-benefits/student-authority-tuition-benefits/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Tuition discount for first year of university for IDF veterans"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -4287,6 +5016,24 @@
       "referenceFiles": [
         "src/data/chapters/overview.ts",
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.npr.org/2024/04/05/1242986585/israels-military-dismisses-officers-over-world-central-kitchen-airstrike",
+      "domain": "www.npr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.npr.org/2024/04/05/1242986585/israels-military-dismisses-officers-over-world-central-kitchen-airstrike",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "NPR — Israel fires officers after drone strikes"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -4409,25 +5156,7 @@
         "Housing units estimated damaged in Gaza"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
-      "domain": "www.ohchr.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Operation Protective Edge — 2,251 Palestinians Killed"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -4445,7 +5174,117 @@
         "UN OHCHR — Statement on killing of Shireen Abu Akleh"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OHCHR — UN experts condemn \"flour massacre\""
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "OHCHR — UN experts condemn \"outrageous disregard\" for civilians"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2025/03/israel-ramps-settlement-and-annexation-west-bank-dire-human-rights",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Israeli settlers in occupied West Bank including East Jerusalem"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Flawed Disclosures Undermine Accountability"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-releases/2026/03/israels-settlement-expansion-drives-mass-displacement-west-bank-un-report",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/03/israels-settlement-expansion-drives-mass-displacement-west-bank-un-report",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Palestinians displaced by settlement expansion in West Bank",
+        "Documented settler violence incidents in 12 months (to Oct 2025)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Of verified fatalities in residential buildings were women and children",
+        "155mm Artillery → Civilian Areas"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -4920,6 +5759,7 @@
         "OpenSecrets / FEC filings"
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "src/data/israelDossierExpanded.ts"
       ]
     },
@@ -5552,7 +6392,7 @@
         "Led AIPAC as it became one of largest spenders in US elections via Super PAC"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts",
+        "src/data/israelDossierCanon.ts",
         "src/data/profileData.ts"
       ]
     },
@@ -5571,7 +6411,7 @@
         "FEC filings"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -5589,7 +6429,7 @@
         "FEC filings / OpenSecrets"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -5683,25 +6523,7 @@
         "PRCS — Statement on ambulance crew killed attempting Hind rescue"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.parliament.uk/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -5953,6 +6775,24 @@
       ]
     },
     {
+      "url": "https://www.sipri.org/databases/milex",
+      "domain": "www.sipri.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sipri.org/databases/milex",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Israel defense budget 2024 — a 65% year-over-year increase"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.speaker.gov/",
       "domain": "www.speaker.gov",
       "status": "ok",
@@ -5975,7 +6815,7 @@
       "domain": "www.springer.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=3070d819-aecc-46b6-9ad4-dbc0372b5a72",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=74ad8dc7-179e-4403-9698-448b137b8d5e",
       "redirected": true,
       "checkedWith": "HEAD",
       "error": null,
@@ -6106,7 +6946,7 @@
         "The Guardian — Israel-Gaza AI database airstrikes investigation"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6146,6 +6986,24 @@
       ]
     },
     {
+      "url": "https://www.trtworld.com/article/02f8ed7948e3",
+      "domain": "www.trtworld.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.trtworld.com/article/02f8ed7948e3",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "TRT World — Survivor testimony"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.unesco.org/en/gaza/education",
       "domain": "www.unesco.org",
       "status": "ok",
@@ -6161,6 +7019,7 @@
         "UNESCO / UNOSAT / IPC"
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "src/data/israelDossierExpanded.ts"
       ]
     },
@@ -6354,7 +7213,7 @@
         "WHO — Post-raid mission report from Al-Shifa"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6372,7 +7231,7 @@
         "WHO — People in Gaza starving, sick and dying as aid blockade continues"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6409,7 +7268,7 @@
         "Estimated reconstruction cost for Gaza (as of mid-2024)"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6518,7 +7377,25 @@
         "Six-Day War — Occupation Begins"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://en-social-sciences.tau.ac.il/peaceindex/joint-israeli-palestinian-surveys/2024-09",
+      "domain": "en-social-sciences.tau.ac.il",
+      "status": "restricted",
+      "httpStatus": 503,
+      "finalUrl": "https://en-social-sciences.tau.ac.il/peaceindex/joint-israeli-palestinian-surveys/2024-09",
+      "redirected": false,
+      "checkedWith": "GET",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Of Israeli Jews believe Oct 7 attack justifies current military actions in Gaza"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6536,7 +7413,7 @@
         "Oslo Accords"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6613,6 +7490,63 @@
       ]
     },
     {
+      "url": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "domain": "www.972mag.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 3,
+      "referenceLabels": [
+        "+972 Magazine — \"Lavender\": The AI machine directing Israel's bombing",
+        "+972 Magazine — Full investigation with officer testimony",
+        "+972 Magazine (six IDF intelligence officers)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "domain": "www.972mag.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "+972 Magazine — \"Where's Daddy?\" tracking system"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.axios.com/",
+      "domain": "www.axios.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.axios.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Apologized for visiting Epstein's island after public pressure"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.bloomberg.com/",
       "domain": "www.bloomberg.com",
       "status": "restricted",
@@ -6649,6 +7583,24 @@
       ]
     },
     {
+      "url": "https://www.btselem.org/gaza_strip/202512_no_place_under_heaven_forced_displacement_in_the_gaza_strip_2023_2025",
+      "domain": "www.btselem.org",
+      "status": "restricted",
+      "httpStatus": 429,
+      "finalUrl": "https://www.btselem.org/gaza_strip/202512_no_place_under_heaven_forced_displacement_in_the_gaza_strip_2023_2025",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Forced displacement"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.btselem.org/statistics/first_intifada_tables",
       "domain": "www.btselem.org",
       "status": "restricted",
@@ -6663,7 +7615,25 @@
         "First Intifada Begins"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.btselem.org/water",
+      "domain": "www.btselem.org",
+      "status": "restricted",
+      "httpStatus": 429,
+      "finalUrl": "https://www.btselem.org/water",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Water consumption ratio — Israelis 247L/day vs. Palestinians 82L/day"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6758,11 +7728,16 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 5,
       "referenceLabels": [
+        "Emergency supplemental aid package signed April 2024",
+        "The bill",
+        "H.R.815 — Israel Security Supplemental",
+        "Artillery & Critical Munitions Production",
         "H.R.815 / DSCA / Responsible Statecraft"
       ],
       "referenceFiles": [
+        "src/data/israelDossierCanon.ts",
         "src/data/israelDossierExpanded.ts"
       ]
     },
@@ -6821,6 +7796,25 @@
       ]
     },
     {
+      "url": "https://www.congress.gov/crs-product/RL33222",
+      "domain": "www.congress.gov",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.congress.gov/crs-product/RL33222",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Annual U.S. military aid under 2016 MOU (FY2019–FY2028)",
+        "10-Year MOU (2016) — Annual Baseline"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.congress.gov/member/adam-schiff/S001150",
       "domain": "www.congress.gov",
       "status": "restricted",
@@ -6872,7 +7866,7 @@
         "IPC Famine Review Committee Report"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -6948,21 +7942,39 @@
       ]
     },
     {
-      "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
       "domain": "www.ohchr.org",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
+      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Flawed Disclosures Undermine Accountability"
+        "Operation Protective Edge — 2,251 Palestinians Killed"
       ],
       "referenceFiles": [
-        "src/data/articles.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.parliament.uk/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
       ]
     },
     {
@@ -7037,7 +8049,7 @@
         "Reuters — Israeli settlers block Gaza aid convoys"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7056,7 +8068,25 @@
         "Reuters — Verified camp fire footage"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02112-9/fulltext",
+      "domain": "www.thelancet.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02112-9/fulltext",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Life-years lost"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7069,12 +8099,13 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
+        "Estimated violent deaths in Gaza through Jan. 5, 2025",
         "October 7 Attack and Gaza War Begins"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7114,7 +8145,7 @@
         "UN Partition Plan (Resolution 181)"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7132,7 +8163,7 @@
         "The Nakba — 750,000 Palestinians Expelled"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7154,6 +8185,24 @@
       ]
     },
     {
+      "url": "https://www.unrwa.org/resources/reports/unrwa-situation-report-155-situation-gaza-strip-and-west-bank-including-east-jerusalem",
+      "domain": "www.unrwa.org",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.unrwa.org/resources/reports/unrwa-situation-report-155-situation-gaza-strip-and-west-bank-including-east-jerusalem",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Palestinians displaced — 90% of Gaza's population"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
       "url": "https://www.unrwa.org/resources/reports/unrwa-situation-update",
       "domain": "www.unrwa.org",
       "status": "restricted",
@@ -7169,7 +8218,7 @@
         "UNRWA — Complete staff casualty documentation"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7205,7 +8254,7 @@
         "Washington Post — What is white phosphorus and why is it controversial?"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7224,7 +8273,61 @@
         "Washington Post — Evaluating the tunnel evidence"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.washingtonpost.com/world/2024/04/01/world-central-kitchen-gaza-deaths-wck/",
+      "domain": "www.washingtonpost.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.washingtonpost.com/world/2024/04/01/world-central-kitchen-gaza-deaths-wck/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Washington Post — Strike halts Gaza aid operations"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.washingtonpost.com/world/2024/06/08/israel-hostages-nuseirat-camp-gaza/",
+      "domain": "www.washingtonpost.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.washingtonpost.com/world/2024/06/08/israel-hostages-nuseirat-camp-gaza/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Washington Post — Israel rescues hostages, leaving trail of death"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
+      ]
+    },
+    {
+      "url": "https://www.washingtonpost.com/world/interactive/2024/hind-rajab-israel-gaza-killing-timeline/",
+      "domain": "www.washingtonpost.com",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.washingtonpost.com/world/interactive/2024/hind-rajab-israel-gaza-killing-timeline/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Washington Post — Full investigative timeline with forensic reconstruction"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
@@ -7242,7 +8345,7 @@
         "WFP — \"Catastrophic hunger\" in Gaza"
       ],
       "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
+        "src/data/israelDossierCanon.ts"
       ]
     },
     {
