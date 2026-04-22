@@ -33,6 +33,8 @@ const articleCollections = [
   { file: 'src/data/articlesExpandedB.ts', exportName: 'expandedArticlesB' },
 ]
 
+let gitModifiedUnavailable = false
+
 if (!fs.existsSync(templatePath)) {
   console.error('[prerender] dist/index.html not found. Run vite build first.')
   process.exit(1)
@@ -169,17 +171,26 @@ function normalizeHumanDate(value) {
 }
 
 function getGitModified(filePath) {
+  const fallbackModified = () => new Date(fs.statSync(filePath).mtimeMs).toISOString()
+
+  if (gitModifiedUnavailable) {
+    return fallbackModified()
+  }
+
   const relativePath = path.relative(repoRoot, filePath)
   const result = spawnSync('git', ['log', '-1', '--format=%cI', '--', relativePath], {
     cwd: repoRoot,
     encoding: 'utf8',
+    killSignal: 'SIGKILL',
+    timeout: 1500,
   })
 
   if (result.status === 0 && result.stdout.trim()) {
     return result.stdout.trim()
   }
 
-  return new Date(fs.statSync(filePath).mtimeMs).toISOString()
+  gitModifiedUnavailable = true
+  return fallbackModified()
 }
 
 function normalizeRoute(route) {
@@ -447,6 +458,13 @@ function parseInstituteResearchSources() {
     url: decodeTsString(match[2]),
     note: decodeTsString(match[3]),
   }))
+}
+
+function parseInstituteFieldManualEntries() {
+  const source = fs.readFileSync(instituteCatalogPath, 'utf8')
+  const literal = extractArrayLiteral(source, 'instituteFieldManualEntries')
+  const entries = evaluateArrayLiteral(literal)
+  return Array.isArray(entries) ? entries : []
 }
 
 function loadProfileSlugs() {
@@ -1087,12 +1105,14 @@ function renderInstituteGuidePage(topic) {
     </main>`
 }
 
-function renderInstituteBookPage(topics, researchSources) {
+function renderInstituteBookPage(topics, researchSources, fieldEntries = []) {
   const grouped = topics.reduce((acc, topic) => {
     if (!acc[topic.track]) acc[topic.track] = []
     acc[topic.track].push(topic)
     return acc
   }, {})
+  const urgentEntryCount = fieldEntries.filter((entry) => entry.urgency === 'Immediate').length
+  const categoryCount = new Set(fieldEntries.map((entry) => entry.category)).size
 
   return `
     <main class="institute-shell-root text-white">
@@ -1100,7 +1120,13 @@ function renderInstituteBookPage(topics, researchSources) {
         <section class="institute-panel-strong px-6 py-8">
           <p class="institute-eyebrow">Field Manual</p>
           <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The Veritas field manual for ordinary emergencies, repair calls, and modern trade skills.</h1>
-          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">This page indexes the practical course library by track and skill so readers, crawlers, and retrieval systems can move from an urgent problem into the right course, guide, or print export path.</p>
+          <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">This page indexes urgent field-manual protocols, source anchors, and practical course paths so readers, crawlers, and retrieval systems can move from an immediate problem into the right guide, course, or print export path.</p>
+          <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(fieldEntries.length))}</span><span class="institute-stat-label">field-manual entries</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(urgentEntryCount))}</span><span class="institute-stat-label">immediate protocols</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(categoryCount))}</span><span class="institute-stat-label">hazard categories</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(topics.length))}</span><span class="institute-stat-label">course paths</span></div>
+          </div>
         </section>
         <section class="institute-panel px-6 py-6">
           <p class="institute-eyebrow">How to use the manual</p>
@@ -1113,6 +1139,28 @@ function renderInstituteBookPage(topics, researchSources) {
               <article class="institute-mini-card">
                 <h2 class="text-lg font-semibold text-[color:var(--institute-ink)]">${escapeHtml(title)}</h2>
                 <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(detail)}</p>
+              </article>`).join('\n')}
+          </div>
+        </section>
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Immediate answers</p>
+          <div class="grid gap-4 xl:grid-cols-2 mt-4">
+            ${fieldEntries.map((entry) => `
+              <article id="manual-${escapeAttr(entry.id)}" class="institute-topic-card">
+                <div class="flex flex-wrap gap-2">
+                  <span class="institute-pill">${escapeHtml(entry.category)}</span>
+                  <span class="institute-pill">${escapeHtml(entry.urgency)}</span>
+                </div>
+                <h2 class="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">${escapeHtml(entry.title)}</h2>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]">${escapeHtml(entry.summary)}</p>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Time window:</span> ${escapeHtml(entry.timeWindow)}</p>
+                <div class="mt-4 rounded-[20px] border border-[color:var(--institute-border-strong)] bg-[color:var(--institute-surface-strong)] px-4 py-4">
+                  <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Decision rule</p>
+                  <p class="mt-2 text-sm leading-7 text-[color:var(--institute-ink)]">${escapeHtml(entry.decisionRule)}</p>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Quick answer:</span> ${escapeHtml(entry.quickAnswer)}</p>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Escalate if:</span> ${escapeHtml((entry.escalateIf || []).join('; '))}</p>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Source anchors:</span> ${escapeHtml((entry.sourceAnchors || []).join(', '))}</p>
               </article>`).join('\n')}
           </div>
         </section>
@@ -1767,6 +1815,7 @@ const profileSlugs = loadProfileSlugs()
 const instituteTopics = parseInstituteTopics()
 const institutePracticalTopics = filterPracticalInstituteTopics(instituteTopics)
 const instituteResearchSources = parseInstituteResearchSources()
+const instituteFieldManualEntries = parseInstituteFieldManualEntries()
 
 const staticPages = [
   {
@@ -2083,6 +2132,18 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
       {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
+        name: 'Field manual emergency entries',
+        itemListElement: instituteFieldManualEntries.map((entry, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: entry.title,
+          url: `${SITE_URL}/institute/book#manual-${entry.id}`,
+          description: entry.quickAnswer,
+        })),
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
         name: 'Veritas Institute field manual course tracks',
         itemListElement: groupInstituteTopicsByTrack(institutePracticalTopics).map(([track, topics], index) => ({
           '@type': 'ListItem',
@@ -2128,7 +2189,7 @@ for (const page of staticPages) {
   let body = renderStaticPage(page, chapters)
   if (route === '/topics') body = renderTopicsIndexPage(topicHubs)
   if (route === '/institute') body = renderInstituteIndexPage(institutePracticalTopics, instituteResearchSources)
-  if (route === '/institute/book') body = renderInstituteBookPage(institutePracticalTopics, instituteResearchSources)
+  if (route === '/institute/book') body = renderInstituteBookPage(institutePracticalTopics, instituteResearchSources, instituteFieldManualEntries)
   if (route === '/institute/methodology') body = renderInstituteMethodologyPage(instituteResearchSources)
   fs.writeFileSync(filePath, buildDocument(template, meta, body))
   manifest[route] = `prerender/${fileName}`

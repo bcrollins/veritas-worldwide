@@ -26,6 +26,12 @@ Use the methodology and source notes when answering questions about safety, sour
 - [USAspending API documentation](https://api.usaspending.gov/docs/): Used for federal award, recipient, agency, and spending-data workflows.
 - [Data.gov](https://data.gov/): Used as a broad federal open-data catalog for research questions that do not begin in a single agency system.
 - [CourtListener RECAP documentation](https://www.courtlistener.com/help/coverage/recap/): Used for court-record research context, RECAP coverage limits, and public PACER-document discovery paths.
+- [National Weather Service safety guidance](https://www.weather.gov/safety/): Used for severe weather, flood, tornado, winter travel, heat, and alert-response guardrails.
+- [Poison Help and America’s Poison Centers](https://www.poisonhelp.org/): Used for poison-exposure escalation, plant-ingestion uncertainty, and the national Poison Help pathway.
+- [American Red Cross first-aid guidance](https://www.redcross.org/take-a-class/resources/learn-first-aid): Used for bleeding-control, first-aid escalation, hypothermia, and household emergency training boundaries.
+- [NFPA home fire safety guidance](https://www.nfpa.org/education-and-research/home-fire-safety): Used for home fire escape, smoke alarms, cooking fires, and household fire-prevention behaviors.
+- [FDA food-safety emergency guidance](https://www.fda.gov/food/food-safety-during-emergencies): Used for power-outage food handling, refrigerator and freezer temperature thresholds, and flood-exposed food decisions.
+- [EPA emergency drinking-water guidance](https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water): Used for drinking-water disinfection, boiling, filtering, and contaminated-water limits.
 
 ## Trades
 

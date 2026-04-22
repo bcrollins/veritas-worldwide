@@ -26,7 +26,10 @@
     "verify:public-visuals": "node scripts/verify-public-visuals.mjs",
     "verify:analytics-write": "node scripts/verify-analytics-write.mjs",
     "verify:platform": "node scripts/verify-platform-health.mjs",
-    "verify:release": "node scripts/verify-release-identity.mjs"
+    "verify:release": "node scripts/verify-release-identity.mjs",
+    "verify:institute-manual": "node --experimental-strip-types scripts/verify-institute-field-manual.mjs",
+    "verify:institute-pdf": "node --experimental-strip-types scripts/verify-institute-field-manual-pdf.mjs",
+    "verify:institute-render": "node scripts/verify-institute-book-render.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

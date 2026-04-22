@@ -14,6 +14,8 @@ import {
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 const practicalTracks = getInstitutePracticalTrackCounts()
+const fieldManualCategories = Array.from(new Set(instituteFieldManualEntries.map((entry) => entry.category)))
+const urgentEntryCount = instituteFieldManualEntries.filter((entry) => entry.urgency === 'Immediate').length
 
 export default function InstituteBookPage() {
   useEffect(() => {
@@ -69,9 +71,9 @@ export default function InstituteBookPage() {
               The Veritas field manual for ordinary emergencies, repair calls, and modern trade skills.
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[color:var(--institute-muted)]">
-              The front half answers immediate problems: dangerous berries, heavy bleeding, dead batteries, water safety,
-              outage sanitation, gas leaks, winter vehicles, and utility failures. The back half organizes the deeper
-              course library around practical trade and household systems people can use today.
+              The front half now handles immediate household, roadside, weather, water, fire, medical-continuity, and
+              utility failures with decision rules, escalation gates, and source anchors. The back half organizes the
+              deeper course library around practical trade and household systems people can use today.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <InstituteBookPDF />
@@ -91,8 +93,8 @@ export default function InstituteBookPage() {
               <span className="institute-stat-label">practical tracks</span>
             </div>
             <div className="institute-stat">
-              <span className="institute-stat-value">{institutePracticalTopics.length}</span>
-              <span className="institute-stat-label">course paths</span>
+              <span className="institute-stat-value">{urgentEntryCount}</span>
+              <span className="institute-stat-label">immediate protocols</span>
             </div>
           </div>
         </div>
@@ -110,8 +112,8 @@ export default function InstituteBookPage() {
           <article className="institute-mini-card">
             <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">Use the fast answer</h2>
             <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
-              Each entry shows the shortest defensible answer, what to do now, what to avoid, and the public source that
-              should govern the next move.
+              Each entry shows the shortest defensible answer, the timing window, the decision rule, what to do now,
+              what to avoid, what gear matters, and when to escalate.
             </p>
           </article>
           <article className="institute-mini-card">
@@ -119,6 +121,33 @@ export default function InstituteBookPage() {
             <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
               When the answer becomes a skill, move into the related guide and course for trades, repair, food systems,
               preparedness, and healthcare-support training.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="institute-panel px-6 py-6">
+        <p className="institute-eyebrow">Manual operating logic</p>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">1. Identify the hazard</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              Use category, urgency, and time window to decide whether this is a call-now, evacuate-now, shutoff-now,
+              cool-now, or preserve-power problem.
+            </p>
+          </article>
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">2. Apply the decision rule</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              The decision rule is the shortest non-negotiable logic for the entry. If the rule fails, the workaround is
+              escalation, not improvisation.
+            </p>
+          </article>
+          <article className="institute-mini-card">
+            <h2 className="text-lg font-semibold text-[color:var(--institute-ink)]">3. Route to the deeper path</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+              Once the immediate risk is controlled, use the companion guide and course to turn the emergency answer into
+              household competence.
             </p>
           </article>
         </div>
@@ -133,7 +162,9 @@ export default function InstituteBookPage() {
               {instituteFieldManualEntries.map((entry) => (
                 <a key={entry.id} href={`#manual-${entry.id}`} className="institute-list-row">
                   <span className="text-sm font-medium text-[color:var(--institute-ink)]">{entry.title}</span>
-                  <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-muted-strong)]">{entry.category}</span>
+                  <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--institute-muted-strong)]">
+                    {entry.category} · {entry.urgency} · {entry.timeWindow}
+                  </span>
                 </a>
               ))}
             </div>
@@ -158,6 +189,10 @@ export default function InstituteBookPage() {
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
           The printable field-manual section covers the problem first, then the official anchor.
         </h2>
+        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[color:var(--institute-muted)]">
+          {fieldManualCategories.length} categories are covered across {instituteFieldManualEntries.length} field entries.
+          Each entry is written for fast retrieval under stress and then points back to the public source floor.
+        </p>
 
         <div className="mt-6 grid gap-4 xl:grid-cols-2">
           {instituteFieldManualEntries.map((entry) => {
@@ -168,6 +203,7 @@ export default function InstituteBookPage() {
                 <div className="flex flex-wrap gap-2">
                   <span className="institute-pill">{entry.category}</span>
                   <span className="institute-pill">Field manual</span>
+                  <span className="institute-pill">{entry.urgency}</span>
                 </div>
 
                 <h3 className="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
@@ -177,12 +213,22 @@ export default function InstituteBookPage() {
                 <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
                   <span className="font-medium text-[color:var(--institute-ink)]">When to use:</span> {entry.whenToUse}
                 </p>
+                <p className="mt-3 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+                  <span className="font-medium text-[color:var(--institute-ink)]">Time window:</span> {entry.timeWindow}
+                </p>
 
                 <div className="mt-5 rounded-2xl border border-[color:var(--institute-border)] bg-[color:var(--institute-surface-strong)] px-4 py-4">
                   <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
                     Quick answer
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-[color:var(--institute-ink)]">{entry.quickAnswer}</p>
+                </div>
+
+                <div className="mt-4 rounded-2xl border border-[color:var(--institute-border-strong)] bg-[color:var(--institute-surface-strong)] px-4 py-4">
+                  <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
+                    Decision rule
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-[color:var(--institute-ink)]">{entry.decisionRule}</p>
                 </div>
 
                 <div className="mt-5 grid gap-4 lg:grid-cols-2">
@@ -201,6 +247,30 @@ export default function InstituteBookPage() {
                     <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Avoid</p>
                     <div className="mt-3 grid gap-3">
                       {entry.avoid.map((item) => (
+                        <div key={item} className="institute-list-row">
+                          <span className="text-sm leading-relaxed text-[color:var(--institute-ink)]">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-5 grid gap-4 lg:grid-cols-2">
+                  <div className="institute-mini-card">
+                    <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Gear</p>
+                    <div className="mt-3 grid gap-3">
+                      {entry.gear.map((item) => (
+                        <div key={item} className="institute-list-row">
+                          <span className="text-sm leading-relaxed text-[color:var(--institute-ink)]">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="institute-mini-card">
+                    <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Escalate if</p>
+                    <div className="mt-3 grid gap-3">
+                      {entry.escalateIf.map((item) => (
                         <div key={item} className="institute-list-row">
                           <span className="text-sm leading-relaxed text-[color:var(--institute-ink)]">{item}</span>
                         </div>
