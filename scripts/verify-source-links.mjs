@@ -18,6 +18,7 @@ const retryCount = Number.parseInt(process.env.SOURCE_LINK_RETRIES || '1', 10)
 const wafRestrictedHosts = new Set([
   'en-social-sciences.tau.ac.il',
   'socsci-english-cms.tau.ac.il',
+  'web.archive.org',
 ])
 
 const candidateFiles = [
@@ -535,12 +536,13 @@ async function main() {
     const probe = await probeUrl(item.normalizedUrl)
     const needsArchive = ['missing', 'failed', 'error'].includes(probe.status)
     const archive = needsArchive ? await getArchiveSnapshot(item.normalizedUrl) : null
+    const verifierRestrictedError = probe.status === 'error' && isKnownVerifierRestrictedHost(item.normalizedUrl)
     const recoveredByArchive = needsArchive && archive?.available
 
     return {
       url: item.normalizedUrl,
       domain: item.domain,
-      status: recoveredByArchive ? 'archived' : probe.status,
+      status: verifierRestrictedError ? 'restricted' : recoveredByArchive ? 'archived' : probe.status,
       probeStatus: probe.status,
       httpStatus: probe.httpStatus,
       finalUrl: probe.finalUrl,
