@@ -269,9 +269,12 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
         <div>
           <h2 className="font-display text-xl font-bold text-ink flex items-center gap-2">
             <svg className="w-5 h-5 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            Discussion
+            Discussion Beta
           </h2>
-          <p className="font-sans text-[0.6rem] text-ink-faint tracking-wider uppercase mt-0.5">{totalCount} comment{totalCount !== 1 ? 's' : ''} on {pageTitle}</p>
+          <p className="font-sans text-[0.6rem] text-ink-faint tracking-wider uppercase mt-0.5">{totalCount} local comment{totalCount !== 1 ? 's' : ''} on {pageTitle}</p>
+          <p className="mt-2 max-w-2xl font-body text-xs leading-relaxed text-ink-muted">
+            Comments in this section stay in this browser for now. Shared discussion history, moderation, and account-wide community identity have not shipped yet.
+          </p>
         </div>
 
         {/* Sort Controls */}
@@ -291,14 +294,14 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
       {/* Composer or Sign-In Prompt */}
       {isLoggedIn ? (
         <div className="mb-8">
-          <CommentComposer pageId={pageId} parentId={null} onPost={refresh} placeholder="Join the discussion — what's your take?" />
+          <CommentComposer pageId={pageId} parentId={null} onPost={refresh} placeholder="Add a local beta comment — what's your take?" />
         </div>
       ) : (
         <button
           onClick={() => setShowAuthModal(true)}
           className="w-full mb-8 py-4 border-2 border-dashed border-border rounded-sm text-center font-sans text-sm text-ink-muted hover:border-crimson/40 hover:text-crimson transition-colors"
         >
-          Sign in to join the discussion
+          Sign in to add a local beta comment
         </button>
       )}
 
@@ -321,8 +324,8 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
           <svg className="w-10 h-10 mx-auto text-ink-faint/40 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
           </svg>
-          <p className="font-display text-sm text-ink-muted mb-1">No comments yet</p>
-          <p className="font-sans text-xs text-ink-faint">Be the first to share your analysis.</p>
+          <p className="font-display text-sm text-ink-muted mb-1">No local comments yet</p>
+          <p className="font-sans text-xs text-ink-faint">Be the first to draft a browser-local reaction to this page.</p>
         </div>
       )}
     </section>
