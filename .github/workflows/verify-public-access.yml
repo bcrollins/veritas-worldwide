@@ -1,0 +1,137 @@
+name: Verify Public Access
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/verify-public-access.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'public/**'
+      - 'scripts/**'
+      - 'server*.js'
+      - 'src/**'
+      - 'tsconfig*.json'
+      - 'vite.config.*'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/verify-public-access.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'public/**'
+      - 'scripts/**'
+      - 'server*.js'
+      - 'src/**'
+      - 'tsconfig*.json'
+      - 'vite.config.*'
+  schedule:
+    - cron: '31 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-public-access-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-public-access:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      DATABASE_URL: ''
+      DATA_DIR: /tmp/veritas-public-access-data
+      JWT_SECRET: ci-veritas-public-access
+      PORT: '4384'
+      LIVE_BASE_URL: https://veritasworldwide.com
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright browser
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
+
+      - name: Install Playwright browser
+        timeout-minutes: 10
+        run: npx playwright install --with-deps chromium
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Verify generated public chapter data
+        run: npm run verify:bundle
+
+      - name: Start local production server
+        run: |
+          npm start > /tmp/veritas-public-access-server.log 2>&1 &
+          echo "$!" > /tmp/veritas-public-access-server.pid
+
+      - name: Wait for local production server
+        run: |
+          for i in {1..30}; do
+            if curl -fsS "http://127.0.0.1:${PORT}/api/build-info" >/dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          cat /tmp/veritas-public-access-server.log || true
+          exit 1
+
+      - name: Verify local public archive access
+        run: npm run verify:public-access -- "http://127.0.0.1:${PORT}"
+
+      - name: Verify local public visual matrix
+        run: npm run verify:public-visuals -- "http://127.0.0.1:${PORT}"
+
+      - name: Wait for pushed commit to deploy
+        if: github.event_name == 'push'
+        run: |
+          expected="${GITHUB_SHA}"
+          for i in {1..90}; do
+            commit="$(node -e "fetch('${LIVE_BASE_URL}/api/build-info').then(r => r.json()).then(j => process.stdout.write(j.commit || '')).catch(() => {})")"
+            echo "poll ${i}: deployed=${commit:-none} expected=${expected}"
+            if [ "$commit" = "$expected" ]; then
+              exit 0
+            fi
+            sleep 10
+          done
+          node -e "fetch('${LIVE_BASE_URL}/api/build-info').then(r => r.text()).then(t => console.log(t)).catch(e => { console.error(e); process.exit(1) })"
+          exit 1
+
+      - name: Verify live public archive access
+        if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: npm run verify:public-access -- "${LIVE_BASE_URL}"
+
+      - name: Verify live public visual matrix
+        if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: npm run verify:public-visuals -- "${LIVE_BASE_URL}"
+
+      - name: Stop local production server
+        if: always()
+        run: |
+          if [ -f /tmp/veritas-public-access-server.pid ]; then
+            kill "$(cat /tmp/veritas-public-access-server.pid)" 2>/dev/null || true
+          fi
+
+      - name: Dump local server log on failure
+        if: failure()
+        run: cat /tmp/veritas-public-access-server.log || true
