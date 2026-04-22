@@ -2,9 +2,9 @@
 
 ## Recently Closed
 
-- **Israel dossier verification is now CI-backed.**
-  Impact: the dossier canon, source-link graph, production build, reader bundle, local rendered behavior, carousel export, PDF export, source workbench, money trail, and Chapter 15 public preview now have a single GitHub Actions workflow instead of relying on manual operator runs.
-  Resolution: added `.github/workflows/verify-israel-dossier.yml`, pinned Playwright in `package.json`, stabilized CI source-link checking with lower concurrency plus retries/longer timeouts, and verified GitHub Actions run `24768886858` passed on commit `2c26e0c`.
+- **Israel dossier verification is now CI-backed and live-behavior verified.**
+  Impact: the dossier canon, source-link graph, production build, reader bundle, local rendered behavior, crawler metadata, preview images, carousel export, PDF export/text content, source workbench, money trail, and Chapter 15 public preview now have automated verification instead of relying on manual operator runs.
+  Resolution: added `.github/workflows/verify-israel-dossier.yml`, pinned Playwright in `package.json`, added crawler/PDF assertions to `scripts/verify-israel-dossier-behavior.mjs`, stabilized CI source-link checking with archive-backed and restricted-host classification, split runtime and source-link jobs so external source checks cannot hide rendered dossier regressions, and verified GitHub Actions run `24770703183` passed on commit `603aab0`. Production served `603aab0` and passed `npm run verify:israel-dossier:behavior -- https://veritasworldwide.com` on April 22, 2026.
 
 - **Route-canon drift around `/about` and `/content-packs` is closed locally.**
   Impact: trust links and verification memory no longer point at dead routes in the local product map; `/about` is now a real trust surface again, and `/content-packs` resolves to the canonical content-pack surface instead of 404 drift.
@@ -19,7 +19,7 @@
 ## Emerging
 
 - **GitHub Actions emitted the JavaScript action runtime deprecation warning.**
-  Impact: the new Israel dossier workflow passes today, but `actions/checkout@v4`, `actions/setup-node@v4`, and `actions/upload-artifact@v4` are still flagged by GitHub's Node 20 action-runtime deprecation notice.
+  Impact: the new Israel dossier workflow passes today, but `actions/cache@v4`, `actions/checkout@v4`, `actions/setup-node@v4`, and `actions/upload-artifact@v4` are still flagged by GitHub's Node 20 action-runtime deprecation notice.
   Recommendation: revisit action versions or opt-in runtime settings after confirming the latest official action releases support Node 24 cleanly.
 
 - **The legacy `ContentPacksPage.tsx` generator module is still present off-route.**

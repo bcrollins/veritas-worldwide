@@ -1,14 +1,14 @@
 # Source Link Report
 
-Generated: 2026-04-22T08:49:49.247Z
+Generated: 2026-04-22T09:24:47.318Z
 
 ## Summary
 
 - References scanned: 752
 - Unique URLs: 448
-- OK: 363
+- OK: 360
 - Redirected: 0
-- Restricted: 85
+- Restricted: 88
 - Missing: 0
 - Failed: 0
 - Invalid: 0
