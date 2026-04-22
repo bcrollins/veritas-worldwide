@@ -756,7 +756,7 @@ export const PINNED_POSTS: PinnedPostData[] = [
   {
     id: 'pinned-record',
     title: 'THE RECORD',
-    subtitle: '31 chapters. 500+ primary sources. 240 years of documented history.',
+    subtitle: '32 archive parts. 500+ primary sources. 240 years of documented history.',
     stat: '100%',
     statLabel: 'free reader account access',
     cta: 'READ THE RECORD',

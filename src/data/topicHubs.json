@@ -210,5 +210,33 @@
     ],
     "subscribeHeading": "Get new JFK-record reporting free.",
     "subscribeSubtext": "Receive source-first reporting on JFK, RFK, Dallas, and newly surfaced archival material."
+  },
+  {
+    "slug": "evidence-methods",
+    "name": "Evidence Methods",
+    "eyebrow": "Research Discipline",
+    "headline": "Public records, citation standards, source ladders, and the method behind Veritas dossiers.",
+    "description": "This topic hub organizes the publication's evidence standards, public-record research paths, and source hierarchy so readers can inspect how claims move from records to analysis.",
+    "metaDescription": "Evidence-methods research from Veritas Worldwide. Explore public records, FOIA, Congress.gov, FEC, SEC EDGAR, CourtListener, source hierarchy, and citation discipline.",
+    "aliases": ["evidence", "methodology", "public records", "source hierarchy", "FOIA", "fact-checking"],
+    "keywords": ["evidence", "methodology", "public records", "FOIA", "source hierarchy", "fact-checking", "dossiers", "citations"],
+    "featuredChapterIds": ["foreword", "chapter-29", "epilogue", "chapter-14"],
+    "featuredArticleSlugs": [],
+    "faq": [
+      {
+        "question": "What is the evidence-methods hub for?",
+        "answer": "It gives readers and operators one place to inspect Veritas source labels, public-record workflows, dossier standards, and the boundaries between verified record, circumstantial analysis, disputed claims, and opinion."
+      },
+      {
+        "question": "Does a public record prove every interpretation attached to it?",
+        "answer": "No. A record proves only what that record can support: a filing, disclosure, vote, docket entry, contract, archival item, or official statement. Broader conclusions must be labeled and supported by additional records."
+      },
+      {
+        "question": "How should readers challenge a Veritas claim?",
+        "answer": "Start with the cited source, check the document date and custodian, compare it to later amendments or rulings, and separate what the source proves from what the analysis infers."
+      }
+    ],
+    "subscribeHeading": "Get new source-method and dossier updates.",
+    "subscribeSubtext": "Follow new evidence standards, public-record workflows, citation audits, and dossier expansions."
   }
 ]

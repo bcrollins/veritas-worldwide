@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from 'react'
 
 const STATIC_STATS = {
   readers: 47500,
-  chapters: 31,
+  chapters: 32,
   sources: 500,
   countries: 87,
 }

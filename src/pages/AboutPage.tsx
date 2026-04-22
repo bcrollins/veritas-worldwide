@@ -104,7 +104,7 @@ export default function AboutPage() {
               <div className="mt-4 space-y-4 font-body leading-relaxed text-ink-muted">
                 <p>
                   The core product is <em>The Record</em>: a structured archive built from a foreword, an overview,
-                  28 numbered chapters, and an epilogue. Around that archive, Veritas publishes source-first news,
+                  29 numbered chapters, and an epilogue. Around that archive, Veritas publishes source-first news,
                   dossiers, profiles, topic pages, and a public source and methodology layer that lets readers check
                   the work directly.
                 </p>
@@ -241,7 +241,7 @@ export default function AboutPage() {
                 <dl className="mt-4 space-y-3 text-sm">
                   <div className="flex justify-between gap-4">
                     <dt className="text-ink-muted">The Record</dt>
-                    <dd className="font-semibold text-ink">31 parts</dd>
+                    <dd className="font-semibold text-ink">32 parts</dd>
                   </div>
                   <div className="flex justify-between gap-4">
                     <dt className="text-ink-muted">Evidence taxonomy</dt>

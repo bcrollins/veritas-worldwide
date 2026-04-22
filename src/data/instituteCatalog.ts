@@ -2220,18 +2220,18 @@ const communicationTopics = [
     archetype: 'communication',
     skill: 'Research anything fast',
     courseTitle: 'How to Research Anything Fast',
-    articleTitle: 'How to Research Anything Fast in 2026: Scope, Source Ladder, Notes, and Synthesis',
-    summary: 'Research quickly by narrowing scope, climbing the source ladder, and writing notes that can become an answer.',
-    whyNow: 'The volume of information keeps rising, which makes disciplined research more valuable than casual search.',
-    firstAction: 'Write the exact question and the evidence threshold before you open ten tabs.',
-    keywords: ['how to research anything fast', 'research workflow', 'find reliable information quickly'],
-    institutions: ['public library research guidance', 'government source repositories', 'academic search guidance'],
+    articleTitle: 'How to Research Anything Fast in 2026: Scope, Source Ladder, Public Records, and Synthesis',
+    summary: 'Research quickly by reducing the question to a claim, checking public records first, and writing notes that preserve what each source can actually prove.',
+    whyNow: 'AI summaries, reposted screenshots, and search-result noise make disciplined source hierarchy more valuable than raw speed.',
+    firstAction: 'Write the exact claim, evidence threshold, and first public-record system before opening a general search tab.',
+    keywords: ['how to research anything fast', 'research workflow', 'find reliable information quickly', 'public records research', 'source ladder'],
+    institutions: ['National Archives', 'Congress.gov', 'Data.gov'],
     timeToFirstResult: '1-7 days',
     difficulty: 'Foundational',
-    outcome: 'A faster research workflow with stronger source discipline',
-    warning: 'Speed without source hierarchy produces confident junk.',
-    related: ['how-to-fact-check-information-and-avoid-scams', 'how-to-write-clearly-at-work'],
-    tools: ['research brief', 'source ladder', 'note system', 'synthesis outline'],
+    outcome: 'A faster research workflow with source hierarchy, citation discipline, and visible confidence labels',
+    warning: 'Speed without source hierarchy produces confident junk. A screenshot is not a source until the original record is found.',
+    related: ['how-to-fact-check-information-and-avoid-scams', 'how-to-write-clearly-at-work', 'how-to-use-spreadsheets-professionally'],
+    tools: ['claim brief', 'source ladder', 'record log', 'confidence label', 'synthesis outline'],
   }),
   topic({
     id: 'fact-check',
@@ -2241,17 +2241,17 @@ const communicationTopics = [
     skill: 'Fact-check information and avoid scams',
     courseTitle: 'Fact-Check Information and Avoid Scams',
     articleTitle: 'How to Fact-Check Information and Avoid Scams in 2026: Verification, Pattern Recognition, and Safer Decisions',
-    summary: 'Use source discipline, fraud pattern recognition, and slow thinking to reduce preventable information and money losses.',
-    whyNow: 'Search demand rises with every AI-content wave, scam cycle, and crisis rumor because people know the environment is noisier.',
-    firstAction: 'Build one verification habit: pause, source-check, and reverse-search before acting on anything urgent.',
-    keywords: ['how to fact check information', 'avoid scams online', 'verify information quickly'],
-    institutions: ['Federal Trade Commission', 'Consumer Financial Protection Bureau', 'government consumer alerts'],
+    summary: 'Use source discipline, fraud pattern recognition, and record-first verification to reduce preventable information and money losses.',
+    whyNow: 'Search demand rises with every AI-content wave, scam cycle, impersonation attempt, and crisis rumor because people know the information environment is noisier.',
+    firstAction: 'Slow the urgent ask, identify the original source, and verify the record or institution before clicking, paying, forwarding, or accusing.',
+    keywords: ['how to fact check information', 'avoid scams online', 'verify information quickly', 'source verification', 'AI misinformation'],
+    institutions: ['Federal Trade Commission', 'Consumer Financial Protection Bureau', 'FOIA.gov'],
     timeToFirstResult: '1-3 days',
     difficulty: 'Foundational',
-    outcome: 'A safer personal verification system for decisions and money',
-    warning: 'Scams often win by urgency, isolation, and emotion. Slow down the frame before you answer the ask.',
-    related: ['how-to-research-anything-fast', 'how-to-improve-your-credit-score'],
-    tools: ['verification checklist', 'scam red-flag list', 'reverse-search habit', 'pause protocol'],
+    outcome: 'A safer personal verification system for claims, documents, decisions, and money',
+    warning: 'Scams and false claims often win by urgency, isolation, and emotion. Slow down the frame before you answer the ask.',
+    related: ['how-to-research-anything-fast', 'how-to-improve-your-credit-score', 'how-to-write-clearly-at-work'],
+    tools: ['verification checklist', 'scam red-flag list', 'record lookup', 'reverse-search habit', 'pause protocol'],
   }),
 ]
 
@@ -2313,6 +2313,7 @@ export const institutePracticalTrackIds: InstituteTrackId[] = [
   'preparedness',
   'food-self-reliance',
   'healthcare',
+  'communication',
 ]
 
 const institutePracticalTrackSet = new Set<InstituteTrackId>(institutePracticalTrackIds)
@@ -2567,10 +2568,132 @@ export const instituteFieldManualEntries: InstituteFieldManualEntry[] = [
     sourceAnchors: ['NHTSA winter driving guidance', 'State DOT winter advisory', 'Owner manual'],
     relatedTopicSlug: 'how-to-build-a-72-hour-emergency-kit',
   },
+  {
+    id: 'public-record-claim-chain',
+    category: 'Evidence Work',
+    title: 'Turn a claim into a public-record chain',
+    summary: 'A research claim becomes usable only when it can be reduced to records, dates, custodians, and confidence labels.',
+    whenToUse: 'You are building a dossier, checking a viral claim, preparing a source note, or deciding whether a claim is publishable.',
+    quickAnswer: 'Write the narrow claim, identify the best original record system, capture the citation, and label exactly what the record proves before writing analysis.',
+    doNow: [
+      'Reduce the claim to one sentence with actor, action, date, record type, and evidence threshold.',
+      'Search the original record system first: National Archives, Congress.gov, Federal Register, FEC, SEC EDGAR, USAspending, FOIA.gov, or court dockets.',
+      'Record the source title, custodian, date, URL, access date, and what the record can and cannot prove.',
+    ],
+    avoid: [
+      'Do not cite a screenshot when the original record can be found.',
+      'Do not upgrade a pattern into intent unless the record chain supports causation or agreement.',
+      'Do not merge similarly named people, companies, committees, or agencies without independent corroboration.',
+    ],
+    sourceAnchors: ['National Archives', 'Congress.gov', 'Federal Register', 'FEC data', 'SEC EDGAR', 'USAspending'],
+    relatedTopicSlug: 'how-to-research-anything-fast',
+  },
+  {
+    id: 'urgent-claim-scam-check',
+    category: 'Information Safety',
+    title: 'Check an urgent claim before acting',
+    summary: 'False claims and scams often rely on speed. The first protective move is to slow the decision and verify the source path.',
+    whenToUse: 'A message, headline, caller, email, payment request, or social post creates urgency, fear, anger, or pressure to act fast.',
+    quickAnswer: 'Pause the ask, identify the original source, verify the institution through an independent channel, and refuse to act until the claim survives a record or authority check.',
+    doNow: [
+      'Write down what you are being asked to believe or do before clicking, paying, forwarding, or accusing.',
+      'Open a separate browser path to the official agency, company, court, filing, or consumer-alert source.',
+      'Preserve the message, link, sender, time, and payment details if fraud or impersonation may be involved.',
+    ],
+    avoid: [
+      'Do not use contact details supplied inside the urgent message as the verification path.',
+      'Do not let anger or fear replace source checking.',
+      'Do not forward accusations about a person or group before the original record is identified.',
+    ],
+    sourceAnchors: ['Federal Trade Commission', 'Consumer Financial Protection Bureau', 'FOIA.gov', 'State attorney general consumer alerts'],
+    relatedTopicSlug: 'how-to-fact-check-information-and-avoid-scams',
+  },
 ]
 
 function buildCourseModules(topic: InstituteTopic): InstituteModule[] {
   const skill = topic.skill.toLowerCase()
+
+  if (topic.id === 'research-fast') {
+    return [
+      {
+        title: 'Frame the Claim',
+        summary: 'Turn a vague research need into one testable claim with a defined evidence threshold.',
+        deliverable: 'A one-sentence claim brief with actor, action, date range, record type, and confidence threshold.',
+        lessons: ['Write a claim that can be disproved', 'Separate question from conclusion', 'Set the evidence threshold before searching'],
+      },
+      {
+        title: 'Build the Source Ladder',
+        summary: 'Rank official records, institutional explanations, reporting, expert analysis, and commentary before tabs multiply.',
+        deliverable: 'A source ladder that names the first three record systems to check.',
+        lessons: ['Know which source type can prove what', 'Start with custodians', 'Avoid treating summaries as originals'],
+      },
+      {
+        title: 'Search Public Records',
+        summary: 'Use federal, archival, court, campaign-finance, corporate, spending, and open-data systems deliberately.',
+        deliverable: 'A record log with URLs, access dates, document titles, and custodian names.',
+        lessons: ['Search official systems first', 'Capture identifiers and dates', 'Save archive fallbacks'],
+      },
+      {
+        title: 'Cross-Check the Record',
+        summary: 'Compare names, dates, amounts, amended filings, later rulings, and disconfirming records before synthesis.',
+        deliverable: 'A contradiction log showing what strengthens, weakens, or limits the claim.',
+        lessons: ['Check for amendments and updates', 'Compare entity names carefully', 'Look for disconfirming material'],
+      },
+      {
+        title: 'Write With Confidence Labels',
+        summary: 'Convert evidence into language that preserves the boundary between verified record and analysis.',
+        deliverable: 'A source-backed answer with verified, circumstantial, disputed, and open-question labels.',
+        lessons: ['Use the lowest defensible certainty', 'Quote and paraphrase carefully', 'Do not confuse pattern with proof'],
+      },
+      {
+        title: 'Maintain the Research File',
+        summary: 'Leave behind notes another reader can audit instead of making the next pass reconstruct your path.',
+        deliverable: 'A reusable research file with claim, sources, evidence labels, contradictions, and next checks.',
+        lessons: ['Store records by claim', 'Track access dates', 'Write the next verification step'],
+      },
+    ]
+  }
+
+  if (topic.id === 'fact-check') {
+    return [
+      {
+        title: 'Slow the Ask',
+        summary: 'Interrupt urgency, emotion, and isolation before the claim or scam controls the decision.',
+        deliverable: 'A pause protocol for messages, headlines, payment requests, and accusations.',
+        lessons: ['Name the requested action', 'Identify pressure tactics', 'Create a waiting rule'],
+      },
+      {
+        title: 'Find the Original Source',
+        summary: 'Trace the claim back to a record, filing, agency page, company notice, court document, or named source.',
+        deliverable: 'An origin check that separates original evidence from reposts, excerpts, and commentary.',
+        lessons: ['Avoid circular sourcing', 'Use independent navigation', 'Reject screenshot-only proof'],
+      },
+      {
+        title: 'Verify the Institution',
+        summary: 'Confirm agencies, companies, courts, banks, and consumer warnings through official channels you open yourself.',
+        deliverable: 'An institution verification log with safe contact paths and source links.',
+        lessons: ['Do not trust embedded contact details', 'Check domains and identifiers', 'Use official portals'],
+      },
+      {
+        title: 'Check the Fraud Pattern',
+        summary: 'Map urgency, payment method, impersonation, secrecy, and information-harvesting signals before responding.',
+        deliverable: 'A red-flag checklist tied to the specific message or claim.',
+        lessons: ['Spot urgency and secrecy', 'Check payment rails', 'Preserve evidence when needed'],
+      },
+      {
+        title: 'Make the Safer Decision',
+        summary: 'Escalate, report, ignore, correct, or share only after the claim survives verification.',
+        deliverable: 'A decision note that explains what you did and why.',
+        lessons: ['Use the lowest-risk action', 'Report credible fraud paths', 'Correct without amplifying falsehood'],
+      },
+      {
+        title: 'Build a Verification Habit',
+        summary: 'Turn one check into a repeatable personal operating system for claims, documents, and money decisions.',
+        deliverable: 'A reusable checklist for future urgent asks and contested claims.',
+        lessons: ['Template the repeat checks', 'Teach the household or team', 'Review misses without ego'],
+      },
+    ]
+  }
 
   switch (topic.archetype) {
     case 'career':
@@ -2858,6 +2981,22 @@ function dedupeStrings(items: string[]) {
 }
 
 function buildIdealFor(topic: InstituteTopic) {
+  if (topic.id === 'research-fast') {
+    return [
+      'Readers who need to answer real questions quickly without letting search results decide the conclusion.',
+      'Writers, analysts, students, operators, and editors who need public-record discipline and reusable source notes.',
+      'Anyone building dossiers, reports, or decisions where a weak source chain would damage trust.',
+    ]
+  }
+
+  if (topic.id === 'fact-check') {
+    return [
+      'People who receive urgent messages, payment requests, public claims, or AI-generated summaries and need a safer decision process.',
+      'Families and teams that want a shared method for scams, impersonation, false claims, and contested documents.',
+      'Readers who want to challenge claims without becoming reckless, defamatory, or easier to manipulate.',
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return [
@@ -2905,6 +3044,22 @@ function buildIdealFor(topic: InstituteTopic) {
 }
 
 function buildPrerequisites(topic: InstituteTopic) {
+  if (topic.id === 'research-fast') {
+    return [
+      'A real claim or question narrow enough to test.',
+      'A place to keep a record log with URLs, access dates, document titles, and confidence labels.',
+      'A willingness to abandon or downgrade a claim when the source chain does not support it.',
+    ]
+  }
+
+  if (topic.id === 'fact-check') {
+    return [
+      'One urgent claim, message, payment request, or public allegation to slow down and inspect.',
+      'A clean path to official websites, account portals, court records, public filings, or consumer-alert pages.',
+      'A rule that you do not click, pay, forward, accuse, or disclose private information until verification survives.',
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return [
@@ -2993,6 +3148,22 @@ function buildDemandSignals(topic: InstituteTopic): InstituteHighlight[] {
 }
 
 function buildProofFramework(topic: InstituteTopic): InstituteHighlight[] {
+  if (topic.id === 'research-fast') {
+    return [
+      { title: 'Proof of source discipline', detail: 'A useful research answer includes the claim sentence, original source links, access dates, document titles, and the confidence label attached to each major fact.' },
+      { title: 'Verified floor', detail: 'Start with National Archives, Congress.gov, Data.gov, FOIA.gov, FEC data, SEC EDGAR, Federal Register, USAspending, and court records before relying on commentary.' },
+      { title: 'Leverage signal', detail: 'Progress means another reader can audit the path from question to source to conclusion without reconstructing your search history.' },
+    ]
+  }
+
+  if (topic.id === 'fact-check') {
+    return [
+      { title: 'Proof of verification', detail: 'A checked claim has an original source, an independent institution path, and a note explaining what the source can and cannot prove.' },
+      { title: 'Verified floor', detail: 'Use FTC, CFPB, FOIA.gov, official agency pages, court records, company portals, and public filings instead of contact details supplied by the urgent message.' },
+      { title: 'Leverage signal', detail: 'Progress means fewer rushed decisions, fewer forwarded false claims, and clearer escalation when fraud or public-risk claims appear credible.' },
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return [
@@ -3081,6 +3252,14 @@ function buildSprint(topic: InstituteTopic, modules: InstituteModule[], actionPl
 }
 
 function buildLlmSummary(topic: InstituteTopic) {
+  if (topic.id === 'research-fast') {
+    return 'Research anything fast by defining the claim first, choosing the correct public-record system, capturing audit-ready citations, checking contradictions, and writing the result with confidence labels instead of unsupported certainty.'
+  }
+
+  if (topic.id === 'fact-check') {
+    return 'Fact-check information and avoid scams by slowing urgent asks, finding the original source, verifying institutions through independent channels, checking fraud patterns, and documenting the safest decision before acting.'
+  }
+
   const framing = {
     career: 'a supervised skill path with visible proof of readiness',
     'ai-income': 'a narrow workflow offer with a human QA layer',
@@ -3091,10 +3270,30 @@ function buildLlmSummary(topic: InstituteTopic) {
     communication: 'a repeatable practice system that turns clarity into leverage',
   }[topic.archetype]
 
-  return `${topic.skill} works best when you start by ${lowerFirst(topic.firstAction)}. Treat it as ${framing}, verify the floor against ${topic.institutions[0] ?? 'official guidance'}, and aim for ${lowerFirst(topic.outcome)} within ${topic.timeToFirstResult}.`
+  return `${topic.skill} works best when the first move is explicit: ${topic.firstAction} Treat it as ${framing}, verify the floor against ${topic.institutions[0] ?? 'official guidance'}, and aim for ${lowerFirst(topic.outcome)} within ${topic.timeToFirstResult}.`
 }
 
 function buildActionPlan(topic: InstituteTopic): InstituteStep[] {
+  if (topic.id === 'research-fast') {
+    return [
+      { title: 'Write the claim brief', detail: 'State the exact claim, the record type that would prove it, and the confidence threshold before searching.' },
+      { title: 'Choose the record system', detail: 'Pick the best first source: archive, legislature, regulator, court, campaign-finance database, corporate filing system, spending portal, or open-data catalog.' },
+      { title: 'Capture audit-ready citations', detail: 'Save title, custodian, date, identifier, URL, access date, and archive fallback for every source you plan to rely on.' },
+      { title: 'Log contradictions and limits', detail: 'Record amended filings, later rulings, missing documents, alternative explanations, and facts the source cannot prove.' },
+      { title: 'Synthesize with labels', detail: 'Write the answer using verified, circumstantial, disputed, and open-question labels so confidence remains visible.' },
+    ]
+  }
+
+  if (topic.id === 'fact-check') {
+    return [
+      { title: 'Pause the urgent frame', detail: 'Name the action being demanded and slow the decision before emotion, scarcity, or fear sets the terms.' },
+      { title: 'Find the original source', detail: 'Trace the claim to an original record, agency, company, court, filing, named source, or consumer warning.' },
+      { title: 'Verify through a clean path', detail: 'Open the official site, known phone number, account portal, or public database yourself instead of using embedded links or contact details.' },
+      { title: 'Check fraud and false-claim signals', detail: 'Look for impersonation, payment pressure, secrecy, mismatched domains, screenshot-only proof, and claims that skip the original record.' },
+      { title: 'Decide and document', detail: 'Ignore, report, correct, preserve, or share only after the verification path supports the decision.' },
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return [
@@ -3156,6 +3355,26 @@ function buildActionPlan(topic: InstituteTopic): InstituteStep[] {
 }
 
 function buildCommonMistakes(topic: InstituteTopic) {
+  if (topic.id === 'research-fast') {
+    return [
+      'Opening too many tabs before defining the claim',
+      'Using summaries when the original record is available',
+      'Failing to capture access dates and document identifiers',
+      'Treating a pattern as proof of motive',
+      'Ignoring amended filings, later rulings, or disconfirming records',
+    ]
+  }
+
+  if (topic.id === 'fact-check') {
+    return [
+      'Acting inside the urgent frame set by the message',
+      'Using contact details supplied by the suspicious source',
+      'Forwarding before finding the original record',
+      'Treating a screenshot as proof',
+      'Confusing a public allegation with a finding',
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return ['Choosing the wrong entry path for the local market', 'Ignoring safety or licensing realities', 'Collecting credentials without proof of work', 'Applying too broadly instead of targeting the right employer', 'Mistaking enthusiasm for readiness']
@@ -3224,7 +3443,7 @@ export function buildInstituteGuide(topic: InstituteTopic): InstituteGuideBundle
   return {
     title: topic.articleTitle,
     llmSummary,
-    quickAnswer: `To ${lowerFirst(topic.skill)}, start by ${lowerFirst(topic.firstAction)} This works best when you treat the path as a system with proof, safety, and documented next steps rather than a viral shortcut.`,
+    quickAnswer: `To ${lowerFirst(topic.skill)}, make the first move explicit: ${topic.firstAction} This works best when you treat the path as a system with proof, safety, and documented next steps rather than a viral shortcut.`,
     searchIntent: `Most readers land here because they need the shortest reliable route into ${lowerFirst(topic.outcome)}. The guide answers the immediate question, then shows the safer next move.`,
     idealFor: buildIdealFor(topic),
     prerequisites: buildPrerequisites(topic),
@@ -3281,5 +3500,50 @@ export const instituteResearchSources = [
     label: 'Energy.gov home energy guidance',
     url: 'https://www.energy.gov/energysaver/energy-saver',
     note: 'Used for weatherization, backup-power planning, and household resilience systems.',
+  },
+  {
+    label: 'National Archives research tools',
+    url: 'https://www.archives.gov/research',
+    note: 'Used for archival research discipline, record-group discovery, declassified-material paths, and historical source retrieval.',
+  },
+  {
+    label: 'Congress.gov API',
+    url: 'https://api.congress.gov/',
+    note: 'Used for legislative records, bill metadata, congressional actions, sponsors, committees, and official source paths.',
+  },
+  {
+    label: 'Federal Register API documentation',
+    url: 'https://www.federalregister.gov/developers/documentation/api/v1',
+    note: 'Used for agency-rule discovery while preserving the requirement to verify legal precision against official editions.',
+  },
+  {
+    label: 'FOIA.gov',
+    url: 'https://www.foia.gov/',
+    note: 'Used for request preparation, agency identification, and the rule that public research should come before broad FOIA filing.',
+  },
+  {
+    label: 'FEC campaign finance data',
+    url: 'https://www.fec.gov/data/',
+    note: 'Used for federal campaign-finance lookup, committee records, receipts, spending, and filing discipline.',
+  },
+  {
+    label: 'SEC EDGAR search filings',
+    url: 'https://www.sec.gov/search-filings',
+    note: 'Used for company filings, securities disclosures, issuer search, and entity-name verification.',
+  },
+  {
+    label: 'USAspending API documentation',
+    url: 'https://api.usaspending.gov/docs/',
+    note: 'Used for federal award, recipient, agency, and spending-data workflows.',
+  },
+  {
+    label: 'Data.gov',
+    url: 'https://data.gov/',
+    note: 'Used as a broad federal open-data catalog for research questions that do not begin in a single agency system.',
+  },
+  {
+    label: 'CourtListener RECAP documentation',
+    url: 'https://www.courtlistener.com/help/coverage/recap/',
+    note: 'Used for court-record research context, RECAP coverage limits, and public PACER-document discovery paths.',
   },
 ]

@@ -50,14 +50,14 @@ export default function TimelinePage() {
   useEffect(() => {
     setMetaTags({
       title: `Interactive Timeline | ${SITE_NAME}`,
-      description: 'An interactive chronological timeline of events documented in The Record, spanning from 1694 to present. Explore 31 chapters of primary source history.',
+      description: 'An interactive chronological timeline of events documented in The Record, spanning from 1694 to present. Explore 32 archive parts of primary source history.',
       url: `${SITE_URL}/timeline`,
     })
     setJsonLd({
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       'name': `Interactive Timeline | ${SITE_NAME}`,
-      'description': 'A chronological timeline of 31 chapters spanning 330+ years of documented history from primary sources.',
+      'description': 'A chronological timeline of 32 archive parts spanning 330+ years of documented history from primary sources.',
       'url': `${SITE_URL}/timeline`,
       'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
       'publisher': { '@type': 'Organization', 'name': SITE_NAME },

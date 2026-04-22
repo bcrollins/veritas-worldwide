@@ -345,6 +345,17 @@ const rawChapterMeta: ChapterMetadata[] = [
     keywords: ["Epstein", "Maxwell", "trafficking", "intelligence", "blackmail", "court filings"],
   },
   {
+    id: "chapter-29",
+    number: "Chapter 29",
+    title: "The Evidence Chain - How Claims Become Public Record",
+    subtitle: "A field guide for turning allegations, rumors, filings, disclosures, and public data into a disciplined research trail without confusing documentation with inference.",
+    dateRange: "Methodology",
+    author: "Veritas Worldwide",
+    publishDate: "April 2026",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg",
+    keywords: ["evidence", "public records", "FOIA", "Congress.gov", "FEC", "SEC EDGAR", "USAspending", "Federal Register", "CourtListener", "source hierarchy", "research methodology"],
+  },
+  {
     id: "epilogue",
     number: "Epilogue",
     title: "A Note on Continued Research & Primary Source Access",

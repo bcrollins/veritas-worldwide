@@ -493,6 +493,7 @@ const institutePracticalTrackSet = new Set([
   'preparedness',
   'food-self-reliance',
   'healthcare',
+  'communication',
 ])
 
 function filterPracticalInstituteTopics(topics) {
@@ -573,9 +574,52 @@ function buildInstituteBrief(topic) {
     .filter(Boolean)
     .map((relatedTopic) => relatedTopic.articleTitle)
 
+  if (topic.id === 'research-fast') {
+    return {
+      llmSummary: 'Research anything fast by defining the claim first, choosing the correct public-record system, capturing audit-ready citations, checking contradictions, and writing the result with confidence labels instead of unsupported certainty.',
+      searchIntent: 'People search for fast research workflows because they need reliable answers quickly without letting search results, screenshots, or AI summaries outrun the underlying record.',
+      fastAnswer: 'Write the exact claim, evidence threshold, and first public-record system before opening a general search tab. Then preserve every source with a record log, access date, and confidence label.',
+      prerequisites: [
+        'A real claim or question narrow enough to test.',
+        'A record log for URLs, access dates, document titles, custodians, and confidence labels.',
+        'A willingness to abandon or downgrade a claim when the source chain does not support it.',
+      ],
+      proofPoints: 'Progress means another reader can audit the path from question to source to conclusion without reconstructing your search history.',
+      relatedQueries: dedupeList([...(topic.keywords || []), ...relatedTitles]).slice(0, 6),
+      officialCheckpoints: [
+        'Start with National Archives, Congress.gov, Data.gov, FOIA.gov, FEC data, SEC EDGAR, Federal Register, USAspending, and court records before relying on commentary.',
+        topic.warning,
+        'Treat source hierarchy, citation discipline, and visible confidence labels as the proof threshold. Interest without evidence does not count.',
+      ],
+      modules: ['Frame the Claim', 'Build the Source Ladder', 'Search Public Records', 'Cross-Check the Record', 'Write With Confidence Labels', 'Maintain the Research File'],
+    }
+  }
+
+  if (topic.id === 'fact-check') {
+    return {
+      llmSummary: 'Fact-check information and avoid scams by slowing urgent asks, finding the original source, verifying institutions through independent channels, checking fraud patterns, and documenting the safest decision before acting.',
+      searchIntent: 'People search for fact-checking and scam-avoidance systems because urgent claims, impersonation attempts, AI summaries, and crisis rumors keep creating preventable risk.',
+      fastAnswer: 'Slow the urgent ask, identify the original source, and verify the institution through a clean path before clicking, paying, forwarding, accusing, or disclosing private information.',
+      prerequisites: [
+        'One urgent claim, message, payment request, or public allegation to slow down and inspect.',
+        'A clean path to official websites, account portals, court records, public filings, or consumer-alert pages.',
+        'A rule that you do not click, pay, forward, accuse, or disclose private information until verification survives.',
+      ],
+      proofPoints: 'Progress means fewer rushed decisions, fewer forwarded false claims, and clearer escalation when fraud or public-risk claims appear credible.',
+      relatedQueries: dedupeList([...(topic.keywords || []), ...relatedTitles]).slice(0, 6),
+      officialCheckpoints: [
+        'Use FTC, CFPB, FOIA.gov, official agency pages, court records, company portals, and public filings instead of contact details supplied by the urgent message.',
+        topic.warning,
+        'Treat an original source, an independent institution path, and a clear decision note as the proof threshold.',
+      ],
+      modules: ['Slow the Ask', 'Find the Original Source', 'Verify the Institution', 'Check the Fraud Pattern', 'Make the Safer Decision', 'Build a Verification Habit'],
+    }
+  }
+
   return {
-    llmSummary: `${topic.skill} works best when you start by ${lowerFirst(topic.firstAction)}. Treat it as ${framing}, verify the floor against ${topic.institutions?.[0] || 'official guidance'}, and aim for ${lowerFirst(topic.outcome)} within ${topic.timeToFirstResult}.`,
+    llmSummary: `${topic.skill} works best when the first move is explicit: ${topic.firstAction} Treat it as ${framing}, verify the floor against ${topic.institutions?.[0] || 'official guidance'}, and aim for ${lowerFirst(topic.outcome)} within ${topic.timeToFirstResult}.`,
     searchIntent: `People search for ${lowerFirst(topic.skill)} because they want a direct route to ${lowerFirst(topic.outcome)} without losing months to hype, vague advice, or bad sequencing.`,
+    fastAnswer: `${topic.firstAction} Then build the path around safety, proof, and documented next steps instead of shortcuts or hype.`,
     prerequisites,
     proofPoints,
     relatedQueries: dedupeList([...(topic.keywords || []), ...relatedTitles]).slice(0, 6),
@@ -810,6 +854,12 @@ function renderInstituteMethodologyPage(researchSources) {
 
 function renderInstituteCoursePage(topic) {
   const brief = buildInstituteBrief(topic)
+  const moduleMarkup = (brief.modules || [])
+    .map((moduleTitle, index) => `
+      <div class="institute-list-row">
+        <span class="text-sm leading-7 text-[color:var(--institute-ink)]"><span class="font-medium">Module ${index + 1}:</span> ${escapeHtml(moduleTitle)}</span>
+      </div>`)
+    .join('\n')
 
   return `
     <main class="institute-shell-root text-white">
@@ -850,6 +900,13 @@ function renderInstituteCoursePage(topic) {
           <p class="mt-5 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Tools:</span> ${escapeHtml((topic.tools || []).join(', '))}</p>
           <p class="mt-3 text-sm leading-7 text-[color:var(--institute-muted)]"><span class="font-medium text-[color:var(--institute-ink)]">Institutions:</span> ${escapeHtml((topic.institutions || []).join(', '))}</p>
         </section>
+        ${moduleMarkup ? `
+        <section class="institute-panel px-6 py-6">
+          <p class="institute-eyebrow">Course architecture</p>
+          <div class="grid gap-3 mt-4">
+            ${moduleMarkup}
+          </div>
+        </section>` : ''}
         <section class="institute-panel px-6 py-6">
           <p class="institute-eyebrow">Questions people ask next</p>
           <div class="grid gap-3 mt-4">
@@ -876,7 +933,7 @@ function renderInstituteGuidePage(topic) {
           <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">${escapeHtml(topic.summary)}</p>
           <div class="rounded-[28px] border border-[color:var(--institute-border-strong)] bg-[color:var(--institute-surface)] px-5 py-5 mt-6">
             <p class="text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">Fast answer</p>
-            <p class="mt-3 text-base leading-8 text-[color:var(--institute-ink)]">Start by ${escapeHtml(topic.firstAction.charAt(0).toLowerCase() + topic.firstAction.slice(1))} Then build the path around safety, proof, and documented next steps instead of shortcuts or hype.</p>
+            <p class="mt-3 text-base leading-8 text-[color:var(--institute-ink)]">${escapeHtml(brief.fastAnswer)}</p>
           </div>
         </section>
         <section class="institute-panel px-6 py-6">
@@ -1082,7 +1139,7 @@ function buildInstituteGuideJsonLd(topic) {
       '@context': 'https://schema.org',
       '@type': 'HowTo',
       name: topic.articleTitle,
-      description: `Start by ${lowerFirst(topic.firstAction)} Then build the path around safety, proof, and documented next steps instead of shortcuts or hype.`,
+      description: brief.fastAnswer,
       url: `${SITE_URL}/institute/guides/${topic.slug}`,
       supply: (topic.tools || []).map((tool) => ({
         '@type': 'HowToSupply',
@@ -1575,7 +1632,7 @@ const staticPages = [
     description: 'A documentary history of power, money, and the institutions that shaped the modern world.',
     body: [
       'Veritas Worldwide publishes longform investigative work built on primary sources, congressional records, court filings, declassified files, and public financial disclosures.',
-      'Volume I spans 31 chapters and more than 500 source documents. Every chapter is available through a free reader account, with public previews and traceable citations.',
+      'Volume I spans 32 archive parts and more than 500 source documents. Every chapter is available through a free reader account, with public previews and traceable citations.',
     ],
     featuredChapterIds: chapters.slice(0, 6).map((chapter) => chapter.id),
     sourceFile: 'src/pages/HomePage.tsx',

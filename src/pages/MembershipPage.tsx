@@ -114,7 +114,7 @@ export default function MembershipPage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm font-sans text-white/40 mb-10">
-            <span>28 chapters published</span>
+            <span>29 chapters published</span>
             <span className="text-white/20">·</span>
             <span>500+ primary sources cited</span>
             <span className="text-white/20">·</span>
@@ -342,7 +342,7 @@ export default function MembershipPage() {
             </thead>
             <tbody className="font-body text-sm text-ink">
               {[
-                ['All 28 chapters + investigations', true, true, true, true],
+                ['All 29 chapters + investigations', true, true, true, true],
                 ['Source library access', true, true, true, true],
                 ['Dark mode, bookmarks, search', true, true, true, true],
                 ['Early chapter access (48hrs)', false, true, true, true],

@@ -137,7 +137,7 @@ export default function DownloadPDF() {
       doc.setFontSize(8);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(120, 120, 120);
-      doc.text('31 CHAPTERS  \u00b7  500+ PRIMARY SOURCES  \u00b7  THREE-TIER EVIDENCE CLASSIFICATION', pageWidth / 2, y, { align: 'center' });
+      doc.text('32 ARCHIVE PARTS  \u00b7  500+ PRIMARY SOURCES  \u00b7  THREE-TIER EVIDENCE CLASSIFICATION', pageWidth / 2, y, { align: 'center' });
 
       // Bottom ornamental rule
       doc.setDrawColor(139, 26, 26);

@@ -111,9 +111,9 @@ const PACKS: ContentPack[] = [
     stat: { value: '500+', label: 'Primary sources cited across the publication' },
     hashtags: ['VeritasWorldwide', 'PrimarySources', 'TheRecord', 'Truth', 'Journalism'],
     platforms: {
-      twitter: 'We don\u2019t tell you what to think.\n\nVeritas Worldwide cites exclusively primary sources: government documents, court filings, congressional records.\n\nNo anonymous sources. No opinion. No spin.\n\n500+ sources. 31 chapters. Free reader accounts unlock the full archive.',
-      facebook: 'We don\u2019t tell you what to think.\n\nVeritas Worldwide is a documentary publication that cites exclusively primary sources: government documents, court filings, congressional records, and declassified intelligence reports.\n\nNo anonymous sources. No editorial opinion. No narrative framing.\n\n31 chapters. 500+ primary sources. Three-tier evidence classification. Free reader accounts unlock the full archive.\n\nRead the record for yourself:',
-      instagram: 'We don\u2019t tell you what to think.\n\nPrimary sources only:\n\u2022 Government documents\n\u2022 Court filings\n\u2022 Congressional records\n\u2022 Declassified reports\n\nNo anonymous sources.\nNo opinion.\nNo spin.\n\n500+ sources. 31 chapters. Free.\n\nLink in bio.',
+      twitter: 'We don\u2019t tell you what to think.\n\nVeritas Worldwide cites exclusively primary sources: government documents, court filings, congressional records.\n\nNo anonymous sources. No opinion. No spin.\n\n500+ sources. 32 archive parts. Free reader accounts unlock the full archive.',
+      facebook: 'We don\u2019t tell you what to think.\n\nVeritas Worldwide is a documentary publication that cites exclusively primary sources: government documents, court filings, congressional records, and declassified intelligence reports.\n\nNo anonymous sources. No editorial opinion. No narrative framing.\n\n32 archive parts. 500+ primary sources. Three-tier evidence classification. Free reader accounts unlock the full archive.\n\nRead the record for yourself:',
+      instagram: 'We don\u2019t tell you what to think.\n\nPrimary sources only:\n\u2022 Government documents\n\u2022 Court filings\n\u2022 Congressional records\n\u2022 Declassified reports\n\nNo anonymous sources.\nNo opinion.\nNo spin.\n\n500+ sources. 32 archive parts. Free.\n\nLink in bio.',
     },
   },
 ]

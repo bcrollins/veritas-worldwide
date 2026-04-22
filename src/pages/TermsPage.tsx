@@ -65,7 +65,7 @@ export default function TermsPage() {
             <section id="accounts" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Accounts & Subscriptions</h2>
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
-                <p>Free accounts provide access to chapter previews, bookmarking, and community features. Paid subscriptions unlock the full 31-chapter investigation, power profiles, and exclusive updates.</p>
+                <p>Free accounts provide access to chapter previews, bookmarking, and community features. Paid subscriptions unlock the full 32-part investigation, power profiles, and exclusive updates.</p>
                 <p>Subscriptions are billed through Stripe. You may cancel at any time; access continues through the end of your billing period. Refunds are handled on a case-by-case basis within 30 days of purchase.</p>
               </div>
             </section>

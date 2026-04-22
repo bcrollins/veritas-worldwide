@@ -39,7 +39,7 @@ export default function HomePage() {
   useEffect(() => {
     setMetaTags({
       title: `The Record | ${SITE_NAME}`,
-      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 31 chapters, 500+ primary sources, and free reader accounts for full archive access.',
+      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts, 500+ primary sources, and free reader accounts for full archive access.',
       url: SITE_URL,
     })
     setJsonLd([
@@ -63,7 +63,7 @@ export default function HomePage() {
         'alternateName': 'The Record',
         'url': SITE_URL,
         'logo': `${SITE_URL}/og-image.png`,
-        'description': 'Independent investigative journalism built on primary sources. 31 chapters documenting 240+ years of institutional power.',
+        'description': 'Independent investigative journalism built on primary sources. 32 archive parts documenting 240+ years of institutional power.',
         'foundingDate': '2025',
         'sameAs': [
           'https://x.com/VeritasWorldwide',
@@ -95,7 +95,7 @@ export default function HomePage() {
               <p className="hidden sm:block font-body text-sm italic text-ink-muted">A Documentary History of Power, Money &amp; Institutions</p>
             </div>
             <div className="flex items-center gap-4 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-faint">
-              <span className="hidden md:inline"><AnimatedCounter end={31} /> Chapters</span>
+              <span className="hidden md:inline"><AnimatedCounter end={32} /> Archive Parts</span>
               <span className="hidden md:inline">&middot;</span>
               <span className="hidden md:inline"><AnimatedCounter end={500} suffix="+" /> Sources</span>
               <span>Volume I</span>
@@ -473,7 +473,7 @@ export default function HomePage() {
               <div className="border-t border-border pt-8">
                 <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink mb-3">About This Project</h3>
                 <p className="font-body text-sm text-ink-muted leading-relaxed mb-4">
-                  The Record is a 31-chapter documentary history compiled from public archives, court records, and declassified documents. Every claim is sourced and evidence-classified.
+                  The Record is a 32-part documentary archive compiled from public archives, court records, and declassified documents. Every claim is sourced and evidence-classified.
                 </p>
                 <div className="flex flex-col gap-2">
                   <Link to="/methodology" className="font-sans text-xs font-semibold text-crimson hover:text-crimson-dark transition-colors">
@@ -495,7 +495,7 @@ export default function HomePage() {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <SharePanel
             title="The Record — Veritas Worldwide"
-            description="A 31-chapter documentary history compiled from primary sources — court records, congressional testimony, declassified files. Free reader accounts unlock the full archive."
+            description="A 32-part documentary archive compiled from primary sources — court records, congressional testimony, declassified files. Free reader accounts unlock the full archive."
             contentId="home"
           />
 

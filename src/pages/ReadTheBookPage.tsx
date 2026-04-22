@@ -187,7 +187,7 @@ export default function ReadTheBookPage() {
       'author': { '@type': 'Organization', 'name': SITE_NAME },
       'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
       'url': `${SITE_URL}/read`,
-      'numberOfPages': 31,
+      'numberOfPages': 32,
       'bookFormat': 'https://schema.org/EBook',
       'isAccessibleForFree': true,
       'inLanguage': 'en',
@@ -340,7 +340,7 @@ export default function ReadTheBookPage() {
                     Read the archive like a documentary record, not a wall of chapters.
                   </h2>
                   <p className="mt-4 max-w-3xl font-body text-base leading-relaxed text-ink-muted">
-                    The Record is built as a structured archive: foreword, overview, 28 numbered chapters, and an epilogue. Start anywhere, then use the paths below to move by subject instead of only by chapter number.
+                    The Record is built as a structured archive: foreword, overview, 29 numbered chapters, and an epilogue. Start anywhere, then use the paths below to move by subject instead of only by chapter number.
                   </p>
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
@@ -367,7 +367,7 @@ export default function ReadTheBookPage() {
                   <ReaderStatCard
                     label="Archive parts"
                     value={readerStats.sectionCount.toString()}
-                    note="Foreword, overview, 28 chapters, and epilogue in one reading stack."
+                    note="Foreword, overview, 29 chapters, and epilogue in one reading stack."
                   />
                   <ReaderStatCard
                     label="Dated sections"

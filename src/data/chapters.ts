@@ -32,6 +32,7 @@ import chapter25 from './chapters/chapter-25'
 import chapter26 from './chapters/chapter-26'
 import chapter27 from './chapters/chapter-27'
 import chapter28 from './chapters/chapter-28'
+import chapter29 from './chapters/chapter-29'
 import chapter3 from './chapters/chapter-3'
 import chapter4 from './chapters/chapter-4'
 import chapter5 from './chapters/chapter-5'
@@ -88,6 +89,7 @@ const chapterMap: Record<string, Chapter> = {
   'chapter-26': chapter26,
   'chapter-27': chapter27,
   'chapter-28': chapter28,
+  'chapter-29': chapter29,
   epilogue,
 }
 

@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-04-07T20:45:42.327Z",
-  "timeoutMs": 12000,
-  "concurrency": 12,
+  "generatedAt": "2026-04-22T06:57:45.981Z",
+  "timeoutMs": 20000,
+  "concurrency": 10,
   "strictMode": false,
   "summary": {
-    "referenceCount": 664,
-    "uniqueUrlCount": 379,
-    "ok": 322,
+    "referenceCount": 679,
+    "uniqueUrlCount": 391,
+    "ok": 341,
     "redirect": 0,
-    "restricted": 57,
+    "restricted": 50,
     "missing": 0,
     "failed": 0,
     "invalid": 0,
@@ -71,6 +71,42 @@
       ]
     },
     {
+      "url": "https://api.usaspending.gov/docs/",
+      "domain": "api.usaspending.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://api.usaspending.gov/docs/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "USAspending API documentation. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
+      ]
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/PS;IL/indicator/SP.DYN.LE00.IN?format=json&per_page=200",
+      "domain": "api.worldbank.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://api.worldbank.org/v2/country/PS;IL/indicator/SP.DYN.LE00.IN?format=json&per_page=200",
+      "redirected": false,
+      "checkedWith": "GET",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Israeli life expectancy vs. 74 in Palestine (9-year gap)"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://apnews.com/",
       "domain": "apnews.com",
       "status": "ok",
@@ -113,22 +149,39 @@
       ]
     },
     {
-      "url": "https://apnews.com/article/israel-palestinians-hamas-war-news-05-28-2024-21ea44e3b514d3f3f2bd26a33f157e48",
+      "url": "https://apnews.com/article/israel-palestinians-hamas-war-news-05-27-2024-7b743a848ef8bfbe69a9659a4a5dd047",
       "domain": "apnews.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://apnews.com/article/israel-palestinians-hamas-war-news-05-28-2024-21ea44e3b514d3f3f2bd26a33f157e48",
+      "finalUrl": "https://apnews.com/article/israel-palestinians-hamas-war-news-05-27-2024-7b743a848ef8bfbe69a9659a4a5dd047",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 1,
       "referenceLabels": [
-        "AP — Israeli strike on Rafah displacement camp",
-        "AP — Reporting from the Rafah tent camp aftermath"
+        "AP — Rafah strike aftermath and casualty reports"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://archive.org/details/tragedyhopehisto00quig",
+      "domain": "archive.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://archive.org/details/tragedyhopehisto00quig",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Quigley, Carroll. Tragedy and Hope: A History of the World in Our Time. Macmillan, 1966."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/epilogue.ts"
       ]
     },
     {
@@ -162,24 +215,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Sutton, Antony C. Wall Street and the Bolshevik Revolution. Arlington House, 1974. Available at archive.org."
-      ],
-      "referenceFiles": [
-        "src/data/chapters/epilogue.ts"
-      ]
-    },
-    {
-      "url": "https://archive.org/search?query=tragedy+and+hope+quigley",
-      "domain": "archive.org",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://archive.org/search?query=tragedy+and+hope+quigley",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Quigley, Carroll. Tragedy and Hope: A History of the World in Our Time. Macmillan, 1966."
       ],
       "referenceFiles": [
         "src/data/chapters/epilogue.ts"
@@ -408,18 +443,36 @@
       ]
     },
     {
-      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=PS-IL",
-      "domain": "data.worldbank.org",
+      "url": "https://data.gov/",
+      "domain": "data.gov",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=PS-IL",
+      "finalUrl": "https://data.gov/",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Israeli life expectancy vs. 74 in Palestine (9-year gap)"
+        "Data.gov, U.S. Government open data portal. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
+      ]
+    },
+    {
+      "url": "https://documents.un.org/doc/undoc/gen/n23/315/25/pdf/n2331525.pdf",
+      "domain": "documents.un.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://documents.un.org/doc/undoc/gen/n23/315/25/pdf/n2331525.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Great March of Return — 223 Palestinians Killed"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -885,7 +938,7 @@
       "httpStatus": 200,
       "finalUrl": "https://en.wikipedia.org/wiki/USS_Liberty_incident",
       "redirected": false,
-      "checkedWith": "GET",
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -1231,6 +1284,42 @@
       ]
     },
     {
+      "url": "https://legis1.com/news/aipac-is-the-biggest-follow-the-money-pac-story-of-2026-and-its-getting-complicated/",
+      "domain": "legis1.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://legis1.com/news/aipac-is-the-biggest-follow-the-money-pac-story-of-2026-and-its-getting-complicated",
+      "redirected": true,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "AIPAC Record Spending Is Reshaping Congress in 2026"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ]
+    },
+    {
+      "url": "https://news.un.org/en/story/2024/03/1147157",
+      "domain": "news.un.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://news.un.org/en/story/2024/03/1147157",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UN News — Secretary-General appalled by aid convoy killings"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://news.un.org/en/story/2024/11/1157071",
       "domain": "news.un.org",
       "status": "ok",
@@ -1546,8 +1635,8 @@
       "archive": null,
       "referenceCount": 2,
       "referenceLabels": [
-        "Veritas Press",
-        "Veritas Press"
+        "Veritas Worldwide",
+        "Veritas Worldwide"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -1626,6 +1715,24 @@
       ]
     },
     {
+      "url": "https://www.aipac.org/resources/house-ndaa-2026",
+      "domain": "www.aipac.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.aipac.org/resources/house-ndaa-2026",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "House Adopts Defense Bill With Pro-Israel Provisions"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ]
+    },
+    {
       "url": "https://www.aljazeera.com/gallery/2023/11/4/israel-ramps-up-attacks-in-gaza-striking-schools-hospitals-and-mosques",
       "domain": "www.aljazeera.com",
       "status": "ok",
@@ -1638,42 +1745,6 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Al Jazeera — Photo report on Gaza strike aftermath"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.aljazeera.com/gallery/2024/9/10/israeli-strike-on-gazas-al-mawasi-safe-zone-kills-dozens",
-      "domain": "www.aljazeera.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.aljazeera.com/gallery/2024/9/10/israeli-strike-on-gazas-al-mawasi-safe-zone-kills-dozens",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Al Jazeera — Israeli strike on Gaza's al-Mawasi safe zone kills dozens"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.aljazeera.com/news/2022/12/6/what-is-in-al-jazeera-dossier-for-the-icc-on-abu-aklehs-killing",
-      "domain": "www.aljazeera.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.aljazeera.com/news/2022/12/6/what-is-in-al-jazeera-dossier-for-the-icc-on-abu-aklehs-killing",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Al Jazeera — ICC dossier on Abu Akleh killing"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -1716,36 +1787,18 @@
       ]
     },
     {
-      "url": "https://www.aljazeera.com/video/newsfeed/2024/9/11/how-safe-is-gazas-al-mawasi-safe",
+      "url": "https://www.aljazeera.com/video/fault-lines/2024/6/21/the-night-wont-end-bidens-war-on-gaza-2",
       "domain": "www.aljazeera.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://www.aljazeera.com/video/newsfeed/2024/9/11/how-safe-is-gazas-al-mawasi-safe",
+      "finalUrl": "https://www.aljazeera.com/video/fault-lines/2024/6/21/the-night-wont-end-bidens-war-on-gaza-2",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
       "referenceLabels": [
-        "Al Jazeera Newsfeed — How safe is Gaza's Al-Mawasi safe zone?"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.aljazeera.com/video/the-stream/2022/5/11/al-jazeera-journalist-shireen-abu-akleh-killed-by-israeli-forces",
-      "domain": "www.aljazeera.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.aljazeera.com/video/the-stream/2022/5/11/al-jazeera-journalist-shireen-abu-akleh-killed-by-israeli-forces",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Al Jazeera — Video segment on Abu Akleh killing"
+        "Al Jazeera Fault Lines — Documentary investigation with Forensic Architecture and Earshot"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -1829,6 +1882,24 @@
       ]
     },
     {
+      "url": "https://www.archives.gov/research",
+      "domain": "www.archives.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.archives.gov/research",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "National Archives, \"Research Our Records.\" Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
+      ]
+    },
+    {
       "url": "https://www.archives.gov/research/jfk",
       "domain": "www.archives.gov",
       "status": "ok",
@@ -1909,6 +1980,24 @@
       ]
     },
     {
+      "url": "https://www.axios.com/",
+      "domain": "www.axios.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.axios.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Apologized for visiting Epstein's island after public pressure"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.bankofengland.co.uk/about/history",
       "domain": "www.bankofengland.co.uk",
       "status": "ok",
@@ -1942,6 +2031,43 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.bbc.com/news/world-middle-east-68445973",
+      "domain": "www.bbc.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bbc.com/news/world-middle-east-68445973",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "BBC — What happened in Gaza aid convoy incident?"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.bellingcat.com/news/mena/2022/05/14/unravelling-the-killing-of-shireen-abu-akleh/",
+      "domain": "www.bellingcat.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bellingcat.com/news/mena/2022/05/14/unravelling-the-killing-of-shireen-abu-akleh/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Bellingcat — Geolocation and audio reconstruction",
+        "Bellingcat — Geolocated shooting sequence"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -2145,6 +2271,24 @@
       ]
     },
     {
+      "url": "https://www.citadel.com/",
+      "domain": "www.citadel.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.citadel.com/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "I am deeply committed to defending democratic values and free markets."
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.clintonfoundation.org/",
       "domain": "www.clintonfoundation.org",
       "status": "ok",
@@ -2188,7 +2332,7 @@
       "httpStatus": 200,
       "finalUrl": "https://www.cnbc.com/",
       "redirected": false,
-      "checkedWith": "HEAD",
+      "checkedWith": "GET",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -2264,10 +2408,9 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 2,
+      "referenceCount": 1,
       "referenceLabels": [
-        "CNN — Investigation: Israeli forces shot Shireen Abu Akleh",
-        "CNN — Visual and acoustic investigation"
+        "CNN — Independent investigation into the killing"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -2286,6 +2429,25 @@
       "referenceCount": 1,
       "referenceLabels": [
         "CNN — Mothers and babies trapped in Gaza's starvation siege"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd",
+      "domain": "www.cnn.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "CNN — Videos and eyewitness accounts of deadly aid delivery",
+        "CNN — Convoy shooting evidence review"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -2328,42 +2490,6 @@
       ]
     },
     {
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
-      "domain": "www.congress.gov",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Epstein Files Transparency Act — Full Text"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ]
-    },
-    {
-      "url": "https://www.congress.gov/crs-product/R48860",
-      "domain": "www.congress.gov",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.congress.gov/crs-product/R48860",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "FY2026 Defense Budget: Funding for Selected Weapon Systems"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ]
-    },
-    {
       "url": "https://www.cotton.senate.gov/",
       "domain": "www.cotton.senate.gov",
       "status": "ok",
@@ -2399,6 +2525,42 @@
       ],
       "referenceFiles": [
         "src/data/chapters/epilogue.ts"
+      ]
+    },
+    {
+      "url": "https://www.courtlistener.com/help/coverage/recap/",
+      "domain": "www.courtlistener.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.courtlistener.com/help/coverage/recap/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "CourtListener, RECAP Archive coverage documentation. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
+      ]
+    },
+    {
+      "url": "https://www.courtlistener.com/recap/",
+      "domain": "www.courtlistener.com",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.courtlistener.com/recap/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "CourtListener, Advanced RECAP Archive Search for PACER. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
       ]
     },
     {
@@ -2672,6 +2834,24 @@
       ]
     },
     {
+      "url": "https://www.fec.gov/data/",
+      "domain": "www.fec.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.fec.gov/data/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Federal Election Commission, Campaign finance data. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
+      ]
+    },
+    {
       "url": "https://www.fec.gov/data/committee/C00797373/",
       "domain": "www.fec.gov",
       "status": "ok",
@@ -2687,6 +2867,24 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.federalregister.gov/developers/documentation/api/v1",
+      "domain": "www.federalregister.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.federalregister.gov/developers/documentation/api/v1",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "FederalRegister.gov, API Documentation and legal-status notice. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
       ]
     },
     {
@@ -2854,6 +3052,24 @@
       ]
     },
     {
+      "url": "https://www.foia.gov/",
+      "domain": "www.foia.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.foia.gov/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "FOIA.gov, Freedom of Information Act portal and request guidance. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
+      ]
+    },
+    {
       "url": "https://www.fool.com/",
       "domain": "www.fool.com",
       "status": "ok",
@@ -2993,6 +3209,25 @@
       "referenceLabels": [
         "Forensic Architecture — Israeli disinformation and Al-Ahli hospital",
         "Forensic Architecture — Blast sequence analysis"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.forensicarchitecture.org/investigation/the-killing-of-hind-rajab",
+      "domain": "www.forensicarchitecture.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.forensicarchitecture.org/investigation/the-killing-of-hind-rajab",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Forensic Architecture — Hind Rajab investigation",
+        "Forensic Architecture — Spatial reconstruction"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -3313,8 +3548,9 @@
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 2,
       "referenceLabels": [
+        "ICJ — May 24 order on Rafah offensive",
         "South Africa v. Israel — Genocide Convention Case"
       ],
       "referenceFiles": [
@@ -3792,6 +4028,24 @@
       ]
     },
     {
+      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "domain": "www.mfa.gov.il",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
+      "redirected": true,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Sabra and Shatila Massacre"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.military.com/feature/2026/02/24/trumps-2026-state-of-union-1-trillion-defense-budget-warrior-dividend-and-what-it-means-troops.html",
       "domain": "www.military.com",
       "status": "ok",
@@ -4113,6 +4367,42 @@
         "src/data/chapters/overview.ts",
         "src/data/articlesExpanded.ts",
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Operation Protective Edge — 2,251 Palestinians Killed"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "domain": "www.ohchr.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UN OHCHR — Statement on killing of Shireen Abu Akleh"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -5336,6 +5626,42 @@
       ]
     },
     {
+      "url": "https://www.palestinercs.org/public/files/image/2024/statements/en%20PRCS%20Amal%20Statement%2011022024.pdf",
+      "domain": "www.palestinercs.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.palestinercs.org/public/files/image/2024/statements/en%20PRCS%20Amal%20Statement%2011022024.pdf",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "PRCS — Statement on ambulance crew killed attempting Hind rescue"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.parliament.uk/",
+      "domain": "www.parliament.uk",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.parliament.uk/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+      ],
+      "referenceFiles": [
+        "src/data/profileData.ts"
+      ]
+    },
+    {
       "url": "https://www.paul.senate.gov/",
       "domain": "www.paul.senate.gov",
       "status": "ok",
@@ -5349,26 +5675,6 @@
       "referenceLabels": [
         "I am not for foreign aid in general, to any country.",
         "Blocked unanimous consent on Israel aid bills multiple times"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.politico.com/",
-      "domain": "www.politico.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.politico.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 3,
-      "referenceLabels": [
-        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
-        "One of few Republican senators to oppose unconditional Israel military aid",
-        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -5465,6 +5771,24 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/search-filings",
+      "domain": "www.sec.gov",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sec.gov/search-filings",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "U.S. Securities and Exchange Commission, EDGAR search filings. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
       ]
     },
     {
@@ -5588,7 +5912,7 @@
       "domain": "www.springer.com",
       "status": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=d775820a-412f-43f8-92f2-24ad88024bd9",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=135c69c6-f41d-4b59-96f1-237adf0543c5",
       "redirected": true,
       "checkedWith": "HEAD",
       "error": null,
@@ -5723,24 +6047,6 @@
       ]
     },
     {
-      "url": "https://www.theguardian.com/world/article/2024/may/27/global-shock-after-israeli-airstrike-kills-dozens-in-rafah-tent-camp",
-      "domain": "www.theguardian.com",
-      "status": "ok",
-      "httpStatus": 200,
-      "finalUrl": "https://www.theguardian.com/world/article/2024/may/27/global-shock-after-israeli-airstrike-kills-dozens-in-rafah-tent-camp",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "The Guardian — Global shock after Israeli airstrike kills dozens in Rafah tent camp"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
       "url": "https://www.treasury.gov/",
       "domain": "www.treasury.gov",
       "status": "ok",
@@ -5790,6 +6096,24 @@
       "referenceLabels": [
         "UNESCO — Gaza education emergency updates",
         "UNESCO / UNOSAT / IPC"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip",
+      "domain": "www.unicef.org",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "UNICEF"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -5989,6 +6313,24 @@
       ]
     },
     {
+      "url": "https://www.who.int/news/item/12-05-2025-people-in-gaza-starving--sick-and-dying-as-aid-blockade-continues",
+      "domain": "www.who.int",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.who.int/news/item/12-05-2025-people-in-gaza-starving--sick-and-dying-as-aid-blockade-continues",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "WHO — People in Gaza starving, sick and dying as aid blockade continues"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
       "url": "https://www.wikipedia.org/",
       "domain": "www.wikipedia.org",
       "status": "ok",
@@ -6062,12 +6404,30 @@
       ]
     },
     {
+      "url": "https://api.congress.gov/",
+      "domain": "api.congress.gov",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://api.congress.gov/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Congress.gov API, official congressional data access point. Accessed April 22, 2026."
+      ],
+      "referenceFiles": [
+        "src/data/chapters/chapter-29.ts"
+      ]
+    },
+    {
       "url": "https://crsreports.congress.gov/",
       "domain": "crsreports.congress.gov",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.congress.gov/crs-products/",
-      "redirected": true,
+      "finalUrl": "https://crsreports.congress.gov/",
+      "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
@@ -6085,9 +6445,9 @@
       "domain": "crsreports.congress.gov",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.congress.gov/crs-products/product/pdf/R",
-      "redirected": true,
-      "checkedWith": "GET",
+      "finalUrl": "https://crsreports.congress.gov/product/pdf/R",
+      "redirected": false,
+      "checkedWith": "HEAD",
       "error": null,
       "archive": null,
       "referenceCount": 1,
@@ -6114,24 +6474,6 @@
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://legis1.com/news/aipac-is-the-biggest-follow-the-money-pac-story-of-2026-and-its-getting-complicated/",
-      "domain": "legis1.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://legis1.com/news/aipac-is-the-biggest-follow-the-money-pac-story-of-2026-and-its-getting-complicated/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "AIPAC Record Spending Is Reshaping Congress in 2026"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
       ]
     },
     {
@@ -6287,42 +6629,6 @@
       ]
     },
     {
-      "url": "https://www.aipac.org/resources/house-ndaa-2026",
-      "domain": "www.aipac.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.aipac.org/resources/house-ndaa-2026",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "House Adopts Defense Bill With Pro-Israel Provisions"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ]
-    },
-    {
-      "url": "https://www.axios.com/",
-      "domain": "www.axios.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.axios.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Apologized for visiting Epstein's island after public pressure"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.bloomberg.com/",
       "domain": "www.bloomberg.com",
       "status": "restricted",
@@ -6420,24 +6726,6 @@
       ]
     },
     {
-      "url": "https://www.citadel.com/",
-      "domain": "www.citadel.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.citadel.com/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "I am deeply committed to defending democratic values and free markets."
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
       "url": "https://www.congress.gov/",
       "domain": "www.congress.gov",
       "status": "restricted",
@@ -6495,6 +6783,24 @@
       ]
     },
     {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
+      "domain": "www.congress.gov",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4405/text",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "Epstein Files Transparency Act — Full Text"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ]
+    },
+    {
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/7738",
       "domain": "www.congress.gov",
       "status": "restricted",
@@ -6507,6 +6813,24 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Government Surveillance Transparency Act (H.R. 7738)"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
+      ]
+    },
+    {
+      "url": "https://www.congress.gov/crs-product/R48860",
+      "domain": "www.congress.gov",
+      "status": "restricted",
+      "httpStatus": 403,
+      "finalUrl": "https://www.congress.gov/crs-product/R48860",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "FY2026 Defense Budget: Funding for Selected Weapon Systems"
       ],
       "referenceFiles": [
         "src/data/articles.ts"
@@ -6605,24 +6929,6 @@
       ]
     },
     {
-      "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
-      "domain": "www.mfa.gov.il",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs/govil-landing-page",
-      "redirected": true,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Sabra and Shatila Massacre"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
       "url": "https://www.mikebloomberg.com/",
       "domain": "www.mikebloomberg.com",
       "status": "restricted",
@@ -6638,24 +6944,6 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.msf.org/gaza-children-are-dying-malnutrition-while-aid-blocked",
-      "domain": "www.msf.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.msf.org/gaza-children-are-dying-malnutrition-while-aid-blocked",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "MSF — Children dying of malnutrition in Gaza hospitals"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
       ]
     },
     {
@@ -6695,60 +6983,6 @@
       ]
     },
     {
-      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Operation Protective Edge — 2,251 Palestinians Killed"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-protests/report",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-protests/report",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Great March of Return — 223 Palestinians Killed"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.ohchr.org/en/press-releases/2022/06/un-human-rights-office-concludes-shots-killed-journalist-came-israeli",
-      "domain": "www.ohchr.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.ohchr.org/en/press-releases/2022/06/un-human-rights-office-concludes-shots-killed-journalist-came-israeli",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "UN OHCHR — \"Shots that killed Abu Akleh came from Israeli forces\""
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
       "url": "https://www.ohchr.org/en/press-releases/2026/02/flawed-epstein-files-disclosures-undermine-accountability-grave-crimes",
       "domain": "www.ohchr.org",
       "status": "restricted",
@@ -6767,18 +7001,20 @@
       ]
     },
     {
-      "url": "https://www.parliament.uk/",
-      "domain": "www.parliament.uk",
+      "url": "https://www.politico.com/",
+      "domain": "www.politico.com",
       "status": "restricted",
       "httpStatus": 403,
-      "finalUrl": "https://www.parliament.uk/",
+      "finalUrl": "https://www.politico.com/",
       "redirected": false,
       "checkedWith": "HEAD",
       "error": null,
       "archive": null,
-      "referenceCount": 1,
+      "referenceCount": 3,
       "referenceLabels": [
-        "Primary funder of Cambridge Analytica, which harvested 87M Facebook profiles"
+        "Shifted from traditional pro-Israel position to calling for Palestinian rights",
+        "One of few Republican senators to oppose unconditional Israel military aid",
+        "Dramatic shift from progressive icon to most vocal Democratic Israel supporter"
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
@@ -6854,6 +7090,25 @@
       "referenceCount": 1,
       "referenceLabels": [
         "Reuters — Israeli settlers block Gaza aid convoys"
+      ],
+      "referenceFiles": [
+        "src/data/israelDossierExpanded.ts"
+      ]
+    },
+    {
+      "url": "https://www.reuters.com/world/middle-east/israeli-strike-rafah-kills-displaced-palestinians-camp-fire-2024-05-27/",
+      "domain": "www.reuters.com",
+      "status": "restricted",
+      "httpStatus": 401,
+      "finalUrl": "https://www.reuters.com/world/middle-east/israeli-strike-rafah-kills-displaced-palestinians-camp-fire-2024-05-27/",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "error": null,
+      "archive": null,
+      "referenceCount": 2,
+      "referenceLabels": [
+        "Reuters — Rafah camp strike verified footage",
+        "Reuters — Verified camp fire footage"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"
@@ -6937,24 +7192,6 @@
       ]
     },
     {
-      "url": "https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip",
-      "domain": "www.unicef.org",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.unicef.org/press-releases/unimaginable-horrors-more-50000-children-reportedly-killed-or-injured-gaza-strip",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "UNICEF"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
       "url": "https://www.unrwa.org/",
       "domain": "www.unrwa.org",
       "status": "restricted",
@@ -6986,24 +7223,6 @@
       "referenceLabels": [
         "UNRWA — Situation reports and staff casualty tracker",
         "UNRWA — Complete staff casualty documentation"
-      ],
-      "referenceFiles": [
-        "src/data/israelDossierExpanded.ts"
-      ]
-    },
-    {
-      "url": "https://www.washingtonpost.com/investigations/interactive/2022/shireen-abu-akleh-death/",
-      "domain": "www.washingtonpost.com",
-      "status": "restricted",
-      "httpStatus": 403,
-      "finalUrl": "https://www.washingtonpost.com/investigations/interactive/2022/shireen-abu-akleh-death/",
-      "redirected": false,
-      "checkedWith": "HEAD",
-      "error": null,
-      "archive": null,
-      "referenceCount": 1,
-      "referenceLabels": [
-        "Washington Post — Ballistic analysis points to Israeli soldier"
       ],
       "referenceFiles": [
         "src/data/israelDossierExpanded.ts"

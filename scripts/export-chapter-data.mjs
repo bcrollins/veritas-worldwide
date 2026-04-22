@@ -30,6 +30,10 @@ function getVideoCount(chapter) {
 }
 
 function classifyChapterType(chapter) {
+  if (chapter.chapterType) {
+    return chapter.chapterType
+  }
+
   if (['foreword', 'overview', 'epilogue'].includes(chapter.id)) {
     return 'reference'
   }

@@ -25,8 +25,8 @@ const DEFAULT_ACCOUNTS: SocialAccount[] = [
 
 const STANDARD_BIO = {
   short: 'Primary Sources. Public Record. Your Conclusions.',
-  medium: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 31 chapters. 600+ primary sources. Free reader accounts unlock the full archive.',
-  long: 'Veritas Worldwide publishes The Record — a 31-chapter documentary investigation into central banking, intelligence agencies, lobbying, media consolidation, and the institutions that shaped the modern world. Every claim is classified by evidence tier: Verified, Circumstantial, or Disputed. 600+ primary sources. Free reader accounts unlock the full archive. Read the evidence. Draw your own conclusions.',
+  medium: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts. 600+ primary sources. Free reader accounts unlock the full archive.',
+  long: 'Veritas Worldwide publishes The Record — a 32-part documentary investigation into central banking, intelligence agencies, lobbying, media consolidation, and the institutions that shaped the modern world. Every claim is classified by evidence tier: Verified, Circumstantial, or Disputed. 600+ primary sources. Free reader accounts unlock the full archive. Read the evidence. Draw your own conclusions.',
   link: 'https://veritasworldwide.com',
   hashtags: '#VeritasWorldwide #TheRecord #PrimarySources #Truth #DocumentaryRecord',
 }
