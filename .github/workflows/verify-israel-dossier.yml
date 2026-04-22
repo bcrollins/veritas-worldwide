@@ -1,0 +1,123 @@
+name: Verify Israel Dossier
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/verify-israel-dossier.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'public/**'
+      - 'scripts/**'
+      - 'server.js'
+      - 'src/**'
+      - 'tsconfig*.json'
+      - 'vite.config.*'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/verify-israel-dossier.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'public/**'
+      - 'scripts/**'
+      - 'server.js'
+      - 'src/**'
+      - 'tsconfig*.json'
+      - 'vite.config.*'
+  schedule:
+    - cron: '17 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-israel-dossier-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-israel-dossier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      DATABASE_URL: ''
+      JWT_SECRET: ci-veritas-israel-dossier
+      PORT: '4382'
+      SOURCE_LINK_CONCURRENCY: '10'
+      SOURCE_LINK_STRICT: '1'
+      SOURCE_LINK_TIMEOUT_MS: '20000'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify Israel dossier canonical data
+        run: npm run verify:israel-dossier
+
+      - name: Verify source links
+        run: npm run verify:sources
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Verify reader bundle guard
+        run: npm run verify:bundle
+
+      - name: Start local production server
+        run: |
+          npm start > /tmp/veritas-server.log 2>&1 &
+          echo "$!" > /tmp/veritas-server.pid
+
+      - name: Wait for local production server
+        run: |
+          for i in {1..30}; do
+            if curl -fsS "http://127.0.0.1:${PORT}/api/build-info" >/dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          cat /tmp/veritas-server.log || true
+          exit 1
+
+      - name: Verify local Israel dossier behavior
+        run: npm run verify:israel-dossier:behavior -- "http://127.0.0.1:${PORT}"
+
+      - name: Verify production Israel dossier behavior
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: npm run verify:israel-dossier:behavior -- https://veritasworldwide.com
+
+      - name: Stop local production server
+        if: always()
+        run: |
+          if [ -f /tmp/veritas-server.pid ]; then
+            kill "$(cat /tmp/veritas-server.pid)" 2>/dev/null || true
+          fi
+
+      - name: Upload source verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: israel-dossier-source-link-report
+          path: |
+            .claude-state/source-link-report.json
+            .claude-state/source-link-report.md
+          if-no-files-found: ignore
+
+      - name: Dump server log on failure
+        if: failure()
+        run: cat /tmp/veritas-server.log || true
