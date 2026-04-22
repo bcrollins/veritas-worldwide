@@ -18,7 +18,8 @@
     "verify:bundle": "node scripts/verify-bundle-health.mjs && node scripts/verify-chapter-data.mjs",
     "verify:chapter-data": "node scripts/verify-chapter-data.mjs",
     "verify:public-access": "node scripts/verify-public-access.mjs",
-    "verify:public-visuals": "node scripts/verify-public-visuals.mjs"
+    "verify:public-visuals": "node scripts/verify-public-visuals.mjs",
+    "verify:analytics-write": "node scripts/verify-analytics-write.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

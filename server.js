@@ -382,7 +382,7 @@ function saveStoreToDisk() {
   }
 }
 
-async function loadStoreFromDatabase() {
+async function loadStoreFromDatabase({ log = true } = {}) {
   if (!analyticsDbPool) return false
 
   try {
@@ -396,8 +396,11 @@ async function loadStoreFromDatabase() {
     applyAnalyticsStore(nextStore)
     if (migrateAnalyticsTitles(store)) {
       analyticsDirty = true
+      queueAnalyticsFlush()
     }
-    console.log(`[analytics] Loaded ${store.lifetime} lifetime views from database`)
+    if (log) {
+      console.log(`[analytics] Loaded ${store.lifetime} lifetime views from database`)
+    }
     return true
   } catch (err) {
     console.warn('[analytics] Failed to load from database:', err.message)
@@ -405,7 +408,7 @@ async function loadStoreFromDatabase() {
   }
 }
 
-async function saveStoreToDatabase() {
+async function saveStoreToDatabase(targetStore = store) {
   if (!analyticsDbPool) return
 
   try {
@@ -414,11 +417,53 @@ async function saveStoreToDatabase() {
        VALUES ($1, $2::jsonb, NOW())
        ON CONFLICT (state_key)
        DO UPDATE SET payload = EXCLUDED.payload, updated_at = NOW()`,
-      [ANALYTICS_STATE_KEY, JSON.stringify(store)]
+      [ANALYTICS_STATE_KEY, JSON.stringify(targetStore)]
     )
   } catch (err) {
     console.warn('[analytics] Failed to save to database:', err.message)
     throw err
+  }
+}
+
+async function commitAnalyticsMutation(mutator) {
+  if (!analyticsDbPool) {
+    mutator(store)
+    markAnalyticsDirty()
+    return store
+  }
+
+  const client = await analyticsDbPool.connect()
+
+  try {
+    await client.query('BEGIN')
+    await client.query(
+      `INSERT INTO analytics_state (state_key, payload, updated_at)
+       VALUES ($1, $2::jsonb, NOW())
+       ON CONFLICT (state_key) DO NOTHING`,
+      [ANALYTICS_STATE_KEY, JSON.stringify(createAnalyticsStore())]
+    )
+
+    const { rows } = await client.query(
+      'SELECT payload FROM analytics_state WHERE state_key = $1 FOR UPDATE',
+      [ANALYTICS_STATE_KEY]
+    )
+    const nextStore = normalizeAnalyticsStore(rows[0]?.payload)
+    migrateAnalyticsTitles(nextStore)
+    mutator(nextStore)
+
+    await client.query(
+      'UPDATE analytics_state SET payload = $2::jsonb, updated_at = NOW() WHERE state_key = $1',
+      [ANALYTICS_STATE_KEY, JSON.stringify(nextStore)]
+    )
+    await client.query('COMMIT')
+    applyAnalyticsStore(nextStore)
+    return nextStore
+  } catch (err) {
+    await client.query('ROLLBACK').catch(() => {})
+    console.warn('[analytics] Failed to commit database mutation:', err.message)
+    throw err
+  } finally {
+    client.release()
   }
 }
 
@@ -540,20 +585,80 @@ function sanitizeAnalyticsProperties(value) {
   return clean
 }
 
-function recordSignupAttribution(bucket, rawLabel, now, eventPath) {
+function recordCountryView(targetStore, countryInfo) {
+  const country = countryInfo?.country || 'Unknown'
+  const code = countryInfo?.code || 'XX'
+  if (!targetStore.countries[code]) {
+    targetStore.countries[code] = { country, code, views: 0 }
+  }
+  targetStore.countries[code].country = country
+  targetStore.countries[code].views += 1
+}
+
+function recordPageView(targetStore, { pagePath, title, now }) {
+  const dateKey = toDateKey(now)
+  const weekKey = getWeekStart(now)
+  const monthKey = getMonthKey(now)
+  const yearKey = getYearKey(now)
+  targetStore.lifetime += 1
+  targetStore.daily[dateKey] = (targetStore.daily[dateKey] || 0) + 1
+  targetStore.weekly[weekKey] = (targetStore.weekly[weekKey] || 0) + 1
+  targetStore.monthly[monthKey] = (targetStore.monthly[monthKey] || 0) + 1
+  targetStore.yearly[yearKey] = (targetStore.yearly[yearKey] || 0) + 1
+
+  const pageId = pagePath.replace(/\//g, '_') || '_home'
+  const resolvedTitle = resolveAnalyticsTitle(pagePath, title)
+  if (!targetStore.pages[pageId]) {
+    targetStore.pages[pageId] = { path: pagePath, title: resolvedTitle || pagePath, views: 0 }
+  }
+  targetStore.pages[pageId].views += 1
+  targetStore.pages[pageId].path = pagePath
+  if (resolvedTitle) {
+    targetStore.pages[pageId].title = resolvedTitle
+  }
+}
+
+function recordSignupAttribution(targetStore, bucket, rawLabel, now, eventPath) {
   if (typeof rawLabel !== 'string') return
   const label = rawLabel.trim().slice(0, 160)
   if (!label || label === '__proto__' || label === 'constructor' || label === 'prototype') return
 
-  if (!store.signupAttribution[bucket][label]) {
-    store.signupAttribution[bucket][label] = { count: 0, lastSeenAt: '', lastPath: '' }
+  if (!targetStore.signupAttribution[bucket][label]) {
+    targetStore.signupAttribution[bucket][label] = { count: 0, lastSeenAt: '', lastPath: '' }
   }
 
-  const entry = store.signupAttribution[bucket][label]
+  const entry = targetStore.signupAttribution[bucket][label]
   entry.count += 1
   entry.lastSeenAt = now.toISOString()
   if (eventPath) {
     entry.lastPath = eventPath
+  }
+}
+
+function recordAnalyticsEvent(targetStore, { name, eventPath, cleanProperties, now }) {
+  const dateKey = toDateKey(now)
+
+  if (!targetStore.events[name]) {
+    targetStore.events[name] = { count: 0, lastSeenAt: '', lastPath: '', lastProperties: {} }
+  }
+  targetStore.events[name].count += 1
+  targetStore.events[name].lastSeenAt = now.toISOString()
+  if (eventPath) {
+    targetStore.events[name].lastPath = eventPath
+  }
+  if (Object.keys(cleanProperties).length > 0) {
+    targetStore.events[name].lastProperties = cleanProperties
+  }
+
+  if (!targetStore.eventDaily[dateKey]) {
+    targetStore.eventDaily[dateKey] = {}
+  }
+  targetStore.eventDaily[dateKey][name] = (targetStore.eventDaily[dateKey][name] || 0) + 1
+
+  if (name === 'email_signup') {
+    recordSignupAttribution(targetStore, 'sources', cleanProperties.source, now, eventPath)
+    recordSignupAttribution(targetStore, 'interests', cleanProperties.content_interest, now, eventPath)
+    recordSignupAttribution(targetStore, 'returnPaths', cleanProperties.return_to, now, eventPath)
   }
 }
 
@@ -660,30 +765,26 @@ app.post('/api/analytics/pageview', async (req, res) => {
     return res.status(400).json({ error: 'path required' })
   }
   const now = new Date()
-  const dateKey = toDateKey(now)
-  const weekKey = getWeekStart(now)
-  const monthKey = getMonthKey(now)
-  const yearKey = getYearKey(now)
-  store.lifetime += 1
-  store.daily[dateKey] = (store.daily[dateKey] || 0) + 1
-  store.weekly[weekKey] = (store.weekly[weekKey] || 0) + 1
-  store.monthly[monthKey] = (store.monthly[monthKey] || 0) + 1
-  store.yearly[yearKey] = (store.yearly[yearKey] || 0) + 1
   const ip = getClientIP(req)
-  detectCountryFromIP(ip).then(({ country, code }) => {
-    if (!store.countries[code]) { store.countries[code] = { country, code, views: 0 } }
-    store.countries[code].views += 1
-    markAnalyticsDirty()
-  })
-  const pageId = pagePath.replace(/\//g, '_') || '_home'
-  const resolvedTitle = resolveAnalyticsTitle(pagePath, title)
-  if (!store.pages[pageId]) { store.pages[pageId] = { path: pagePath, title: resolvedTitle || pagePath, views: 0 } }
-  store.pages[pageId].views += 1
-  store.pages[pageId].path = pagePath
-  if (resolvedTitle) { store.pages[pageId].title = resolvedTitle }
-  markAnalyticsDirty()
-  res.setHeader('Cache-Control', 'no-store')
-  res.json({ ok: true })
+
+  try {
+    await commitAnalyticsMutation((targetStore) => {
+      recordPageView(targetStore, { pagePath, title, now })
+    })
+
+    void detectCountryFromIP(ip)
+      .then((countryInfo) => commitAnalyticsMutation((targetStore) => {
+        recordCountryView(targetStore, countryInfo)
+      }))
+      .catch((err) => {
+        console.warn('[analytics] Failed to record country view:', err.message)
+      })
+
+    res.setHeader('Cache-Control', 'no-store')
+    res.json({ ok: true })
+  } catch {
+    res.status(500).json({ error: 'Failed to record analytics pageview' })
+  }
 })
 
 const ANALYTICS_EVENTS = new Set([
@@ -710,51 +811,37 @@ function getSignupEventCount(eventCounts) {
   return (eventCounts.email_signup || 0) + (eventCounts.account_created || 0)
 }
 
-app.post('/api/analytics/event', (req, res) => {
+app.post('/api/analytics/event', async (req, res) => {
   const { name, path: rawPath, properties } = req.body || {}
   if (typeof name !== 'string' || !ANALYTICS_EVENTS.has(name)) {
     return res.status(400).json({ error: 'valid event name required' })
   }
 
   const now = new Date()
-  const dateKey = toDateKey(now)
   const eventPath = sanitizeAnalyticsPath(rawPath)
   const cleanProperties = sanitizeAnalyticsProperties(properties)
 
-  if (!store.events[name]) {
-    store.events[name] = { count: 0, lastSeenAt: '', lastPath: '', lastProperties: {} }
-  }
-  store.events[name].count += 1
-  store.events[name].lastSeenAt = now.toISOString()
-  if (eventPath) {
-    store.events[name].lastPath = eventPath
-  }
-  if (Object.keys(cleanProperties).length > 0) {
-    store.events[name].lastProperties = cleanProperties
-  }
+  try {
+    await commitAnalyticsMutation((targetStore) => {
+      recordAnalyticsEvent(targetStore, { name, eventPath, cleanProperties, now })
+    })
 
-  if (!store.eventDaily[dateKey]) {
-    store.eventDaily[dateKey] = {}
+    res.setHeader('Cache-Control', 'no-store')
+    res.json({ ok: true })
+  } catch {
+    res.status(500).json({ error: 'Failed to record analytics event' })
   }
-  store.eventDaily[dateKey][name] = (store.eventDaily[dateKey][name] || 0) + 1
-
-  if (name === 'email_signup') {
-    recordSignupAttribution('sources', cleanProperties.source, now, eventPath)
-    recordSignupAttribution('interests', cleanProperties.content_interest, now, eventPath)
-    recordSignupAttribution('returnPaths', cleanProperties.return_to, now, eventPath)
-  }
-
-  markAnalyticsDirty()
-  res.setHeader('Cache-Control', 'no-store')
-  res.json({ ok: true })
 })
 
-app.get('/api/analytics/snapshot', (req, res) => {
+app.get('/api/analytics/snapshot', async (req, res) => {
   // Never cache analytics — always show live cumulative data
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
   res.setHeader('Pragma', 'no-cache')
   res.setHeader('Expires', '0')
   res.setHeader('Surrogate-Control', 'no-store')
+  if (analyticsDbPool) {
+    await loadStoreFromDatabase({ log: false })
+  }
   const now = new Date()
   const todayKey = toDateKey(now)
   const weekKey = getWeekStart(now)
