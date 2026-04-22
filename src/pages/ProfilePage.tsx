@@ -54,6 +54,21 @@ const SECTION_LABELS: Record<SectionId, string> = {
   connections: 'Connections',
 };
 
+function getProfileInitials(name: string): string {
+  return name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .filter(Boolean)
+    .join('')
+    .slice(0, 3)
+    .toUpperCase() || '?';
+}
+
+function getProfileInitialsImage(name: string): string {
+  const initials = getProfileInitials(name);
+  return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#8B1A1A"/><text x="50" y="56" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="34" font-weight="700">${initials}</text></svg>`)}`;
+}
+
 /* ── Utility: Animated Counter ──────────────────────────────── */
 function useAnimatedCounter(end: number, duration = 1200): number {
   const [value, setValue] = useState(0);
@@ -936,7 +951,11 @@ export default function ProfilePage(): React.ReactNode {
                           alt={rp.name}
                           className="w-full h-full object-cover"
                           loading="lazy"
-                          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                          onError={(e) => {
+                            const img = e.target as HTMLImageElement;
+                            img.onerror = null;
+                            img.src = getProfileInitialsImage(rp.name);
+                          }}
                         />
                       </div>
                       <p className="font-display text-sm font-bold text-ink group-hover:text-crimson transition-colors">{rp.name}</p>
