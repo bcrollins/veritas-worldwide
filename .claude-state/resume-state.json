@@ -1,5 +1,5 @@
 {
-  "run": 29,
+  "run": 30,
   "date": "2026-04-22",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -68,12 +68,17 @@
     "Root-caused and fixed a local static-generation regression where canonical Chapter 15 metadata made `/chapter/chapter-15` disappear from prerender output because `scripts/prerender.mjs` parsed chapter metadata with a literal-string regex. The prerenderer now normalizes canonical Chapter 15 references before route discovery, restoring 276 prerendered routes and 368 sitemap URLs.",
     "Revalidated the canonical Israel dossier pass with `npm run build`, `npm run verify:bundle`, `npm run verify:israel-dossier`, `npm run verify:sources`, `npx tsc --noEmit`, local crawler metadata checks, local six-viewport Playwright checks for `/israel-dossier` and `/chapter/chapter-15`, and a browser PDF export check.",
     "Committed the canonical data/regression increment as `029f323` and pushed it to `origin/main`; production advanced to `029f32341509` with deployment `5b40d00f-e48f-4a5c-ad42-21a79107581a`.",
-    "Live-verified production commit `029f32341509` on April 22, 2026: `/israel-dossier` and `/chapter/chapter-15` passed the primary Playwright matrix, source search returned CRS records, canonical/OG metadata resolved for both routes, and sitemap coverage includes both `/israel-dossier` and `/chapter/chapter-15`."
+    "Live-verified production commit `029f32341509` on April 22, 2026: `/israel-dossier` and `/chapter/chapter-15` passed the primary Playwright matrix, source search returned CRS records, canonical/OG metadata resolved for both routes, and sitemap coverage includes both `/israel-dossier` and `/chapter/chapter-15`.",
+    "Moved the Israel dossier page-local core stats, documented incidents, and money-trail graph out of `src/pages/IsraelDossierPage.tsx` into `src/data/israelDossierCanon.ts`, preserving rendered behavior while reducing page/data drift risk.",
+    "Extended `npm run verify:israel-dossier` so it now fails if the page reintroduces local `STATS`, `INCIDENTS`, `MONEY_TRAIL`, or their local type definitions instead of consuming canonical exports.",
+    "Verified the core-data canonicalization with `npx tsc --noEmit`, `npm run build`, `npm run verify:bundle`, `npm run verify:israel-dossier`, `npm run verify:sources`, and a local six-viewport Playwright pass on `/israel-dossier` including source search and core incident/money-trail text.",
+    "Committed the core-data canonicalization as `b3bd5c9`, pushed it to `origin/main`, and verified production advanced to `b3bd5c9f8561` with deployment `6efacf04-783b-4675-8597-eedf0927eb48`.",
+    "Live-verified production commit `b3bd5c9f8561` on April 22, 2026: `/israel-dossier` passed the primary Playwright matrix, source search returned Hind Rajab records, the source workbench/core public-record figures rendered, canonical/OG metadata resolved, and sitemap coverage retained `/israel-dossier` plus `/chapter/chapter-15`."
   ],
-  "next_task": "Continue the Israel dossier hardening pass from deployed commit `029f32341509`: extract the remaining non-canonical stats, timeline/source records, and incident source records into structured canon slices, then add verifier checks that prevent route-count, sitemap, PDF, carousel, and source-workbench drift.",
+  "next_task": "Continue from deployed commit `b3bd5c9f8561`: move the expanded timeline, expanded stats, legal/lobbying records, and expanded incident source records into canonical structured slices, then extend the Israel dossier verifier so no page or expanded-data surface can drift from the canon.",
   "next_priorities": [
-    "Move the remaining Israel dossier page-only stat records and incident source labels into canonical structured data with evidence-tier/source-category fields.",
-    "Add browser or build-time regression coverage for source-workbench filtering, carousel rendering, and PDF export so `npm run verify:israel-dossier` can catch behavior drift beyond static text drift.",
+    "Canonicalize `HISTORICAL_TIMELINE`, `EXPANDED_STATS`, `LOBBYING_DATA`, `LEGAL_CASES`, and `EXPANDED_INCIDENTS` into named canon slices or shared typed exports.",
+    "Add behavior-level verifier checks for source-workbench filtering, carousel rendering, PDF export, and money-trail graph integrity.",
     "Wire `npm run verify:israel-dossier`, `npm run verify:bundle`, and `npm run verify:sources` into CI or a scheduled Veritas audit job.",
     "Build the next Israel dossier chapter/content expansion around source-labeled public records rather than unsourced narrative escalation.",
     "Add production error monitoring (Sentry or equivalent) for auth, search, analytics, prerender, and dossier-export failures."

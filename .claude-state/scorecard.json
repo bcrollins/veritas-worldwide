@@ -1,14 +1,14 @@
 {
-  "run": 24,
+  "run": 25,
   "date": "2026-04-22",
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 8.7,
-      "previous": 8.1,
-      "delta": 0.6,
-      "status": "deployed and live verified at commit 029f32341509",
-      "plus_half_requires": "Move the remaining page-only stats, timeline/source records, and incident source records into canonical structured data, then put the Israel dossier verifier and browser smoke checks into CI or scheduled audit automation."
+      "composite": 8.9,
+      "previous": 8.7,
+      "delta": 0.2,
+      "status": "core data canonicalized and live verified at commit b3bd5c9f8561",
+      "plus_half_requires": "Canonicalize expanded timeline/stats/legal/lobbying/incident records and add behavior-level browser regression coverage for source filtering, carousel rendering, PDF export, and graph integrity."
     },
     {
       "feature": "Home / Front Page",
