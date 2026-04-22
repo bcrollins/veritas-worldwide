@@ -19,6 +19,7 @@ const files = {
   behaviorVerifier: 'scripts/verify-israel-dossier-behavior.mjs',
   sourceVerifier: 'scripts/verify-source-links.mjs',
   sitemap: 'public/sitemap.xml',
+  instituteCatalog: 'src/data/instituteCatalog.ts',
 }
 
 const errors = []
@@ -42,6 +43,9 @@ const currentNeedles = [
   'ISRAEL_DOSSIER_LOBBYING_DATA',
   'ISRAEL_DOSSIER_LEGAL_CASES',
   'ISRAEL_DOSSIER_EXPANDED_STATS',
+  'ISRAEL_DOSSIER_COURSE_PATH',
+  'Build the source file',
+  'OCHA / UNICEF attribution table',
   'https://www.congress.gov/crs-product/RL33222',
   'Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
   'State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
@@ -151,6 +155,8 @@ assert(has(files.contentPack, /ISRAEL_DOSSIER_BRAND_SLIDE/), 'content pack does 
 assert(has(files.page, /ISRAEL_DOSSIER_CORE_STATS/), 'page does not consume canonical core stats')
 assert(has(files.page, /ISRAEL_DOSSIER_CORE_INCIDENTS/), 'page does not consume canonical core incidents')
 assert(has(files.page, /ISRAEL_DOSSIER_MONEY_TRAIL/), 'page does not consume canonical money trail')
+assert(has(files.page, /ISRAEL_DOSSIER_COURSE_PATH/), 'page does not consume canonical evidence course path')
+assert(has(files.page, /DossierCoursePath/), 'page does not render the evidence course path component')
 assert(has(files.expanded, /ISRAEL_DOSSIER_HISTORICAL_TIMELINE as HISTORICAL_TIMELINE/), 'expanded data does not re-export canonical timeline')
 assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_INCIDENTS as EXPANDED_INCIDENTS/), 'expanded data does not re-export canonical expanded incidents')
 assert(has(files.expanded, /ISRAEL_DOSSIER_LOBBYING_DATA as LOBBYING_DATA/), 'expanded data does not re-export canonical lobbying data')
@@ -158,6 +164,8 @@ assert(has(files.expanded, /ISRAEL_DOSSIER_LEGAL_CASES as LEGAL_CASES/), 'expand
 assert(has(files.expanded, /ISRAEL_DOSSIER_EXPANDED_STATS as EXPANDED_STATS/), 'expanded data does not re-export canonical expanded stats')
 assert(has(files.packageJson, /verify:israel-dossier:behavior/), 'package.json does not expose the Israel dossier behavior verifier')
 assert(has(files.behaviorVerifier, /Source Workbench/), 'behavior verifier does not exercise the source workbench')
+assert(has(files.behaviorVerifier, /evidence course path/i), 'behavior verifier does not exercise the evidence course path')
+assert(has(files.behaviorVerifier, /OCHA \/ UNICEF attribution table/), 'behavior verifier does not exercise the course module interaction')
 assert(has(files.behaviorVerifier, /Download Complete Dossier/), 'behavior verifier does not exercise dossier PDF export')
 assert(has(files.behaviorVerifier, /H\\.R\\.815/), 'behavior verifier does not exercise money-trail expansion')
 assert(has(files.behaviorVerifier, /chapter-15/), 'behavior verifier does not exercise Chapter 15 public preview')
@@ -173,6 +181,20 @@ assert(has(files.sourceVerifier, /israelDossierCanon\.ts/), 'source-link verifie
 assert(has(files.sourceVerifier, /source-link-trends/), 'source-link verifier does not emit trend reports')
 assert(has(files.sourceVerifier, /retryHeavy/), 'source-link verifier does not identify retry-heavy URLs')
 assert(has(files.sitemap, /https:\/\/veritasworldwide\.com\/chapter\/chapter-15/), 'sitemap is missing chapter 15 after canonical metadata normalization')
+assert(has(files.pdf, /ISRAEL_DOSSIER_COURSE_PATH/), 'PDF export does not include the evidence course path')
+assert(has(files.instituteCatalog, /Expected 106 topics/), 'Institute catalog topic-count guard was not updated for Israel dossier courses')
+for (const slug of [
+  'build-israel-dossier-source-file',
+  'audit-israel-aid-records',
+  'verify-gaza-humanitarian-figures',
+  'test-israel-dossier-incident-evidence',
+  'read-israel-dossier-legal-records',
+  'write-israel-dossier-briefings',
+]) {
+  assert(read(files.instituteCatalog).includes(`slug: '${slug}'`), `Institute catalog missing Israel dossier course slug ${slug}`)
+  assert(read(files.sitemap).includes(`https://veritasworldwide.com/institute/courses/${slug}`), `sitemap missing Israel dossier course ${slug}`)
+  assert(read(files.sitemap).includes(`https://veritasworldwide.com/institute/guides/${slug}`), `sitemap missing Israel dossier guide ${slug}`)
+}
 
 if (errors.length) {
   console.error('[verify:israel-dossier] FAIL')

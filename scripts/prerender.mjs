@@ -573,6 +573,19 @@ const institutePracticalTrackSet = new Set([
   'communication',
 ])
 
+const israelDossierInstituteTopicSet = new Set([
+  'israel-dossier-source-file',
+  'israel-aid-ledger',
+  'israel-humanitarian-figures',
+  'israel-incident-evidence',
+  'israel-legal-records',
+  'israel-briefings',
+])
+
+function isIsraelDossierInstituteTopic(topic) {
+  return israelDossierInstituteTopicSet.has(topic.id)
+}
+
 function filterPracticalInstituteTopics(topics) {
   return topics.filter((topic) => institutePracticalTrackSet.has(topic.track))
 }
@@ -690,6 +703,27 @@ function buildInstituteBrief(topic) {
         'Treat an original source, an independent institution path, and a clear decision note as the proof threshold.',
       ],
       modules: ['Slow the Ask', 'Find the Original Source', 'Verify the Institution', 'Check the Fraud Pattern', 'Make the Safer Decision', 'Build a Verification Habit'],
+    }
+  }
+
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return {
+      llmSummary: `${topic.skill} by reducing each claim to a source row, classifying the evidence, preserving attribution boundaries, auditing legal and humanitarian language, and leaving a publishable file another editor can verify.`,
+      searchIntent: 'People search for Israel dossier evidence workflows because the public record is high-risk, fast-moving, and easy to misstate when source classes are blended.',
+      fastAnswer: `${topic.firstAction} Then label every source by class and every claim by confidence before drafting reader-facing prose.`,
+      prerequisites: [
+        'One Israel dossier claim narrow enough to test.',
+        'A source ledger for claim text, source class, custodian, date, URL, access date, confidence label, and open question.',
+        'A rule that no claim moves into public copy until its evidence tier and source boundary are explicit.',
+      ],
+      proofPoints: 'Progress means a skeptical editor can trace every number, legal term, and incident claim from prose back to the source row without guessing.',
+      relatedQueries: dedupeList([...(topic.keywords || []), ...relatedTitles]).slice(0, 6),
+      officialCheckpoints: [
+        `Use ${(topic.institutions || []).slice(0, 3).join(', ')} as the first source ladder before relying on commentary, screenshots, reposts, or unsourced summaries.`,
+        topic.warning,
+        'Treat claim rows, source classes, confidence labels, access dates, and open questions as the proof threshold.',
+      ],
+      modules: ['Set the Claim Boundary', 'Build the Source Ladder', 'Classify the Evidence', 'Write the Safest Version', 'Audit the Briefing', 'Leave a Durable File'],
     }
   }
 

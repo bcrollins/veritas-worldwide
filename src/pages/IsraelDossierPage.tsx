@@ -24,12 +24,14 @@ import {
   ISRAEL_DOSSIER_CORE_STATS,
   ISRAEL_DOSSIER_CORE_INCIDENTS,
   ISRAEL_DOSSIER_MONEY_TRAIL,
+  ISRAEL_DOSSIER_COURSE_PATH,
   type DossierCategory,
   type DossierCategoryMeta,
   type DossierSourceCategory,
   type DossierStatCard,
   type DossierDocumentedIncident,
   type DossierMoneyTrailNode,
+  type DossierCourseModule,
 } from '../data/israelDossierCanon'
 
 /* ═══════════════════════════════════════════════════════════
@@ -328,6 +330,7 @@ function LiveCounter() {
 const SECTIONS = [
   { id: 'overview', label: 'Overview' },
   { id: 'source-workbench', label: 'Sources' },
+  { id: 'course-path', label: 'Course' },
   { id: 'timeline', label: 'Timeline' },
   { id: 'money-trail', label: 'Follow the Money' },
   { id: 'financial', label: 'U.S. Aid & Spending' },
@@ -548,6 +551,125 @@ function DossierSourceWorkbench({ records }: { records: SourceIndexRecord[] }) {
   )
 }
 
+function DossierCoursePath({ modules }: { modules: DossierCourseModule[] }) {
+  const [activeId, setActiveId] = useState(modules[0]?.id ?? '')
+  const activeModule = useMemo(() => modules.find((module) => module.id === activeId) ?? modules[0], [activeId, modules])
+  const sourceCount = useMemo(() => new Set(modules.flatMap((module) => module.sourceAnchors.map((source) => source.url))).size, [modules])
+
+  if (!activeModule) return null
+
+  return (
+    <section id="course-path" className="mb-16 scroll-mt-20 rounded-sm border border-border bg-surface p-5">
+      <div className="grid gap-6 xl:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <p className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink-muted">Evidence Course Path</p>
+          <h2 className="mt-2 font-display text-2xl font-bold text-ink">Train the dossier, not just the reader.</h2>
+          <p className="mt-3 font-body text-sm leading-relaxed text-ink-muted">
+            This course layer turns the Israel dossier into a reusable source-workflow: source file, aid ledger,
+            humanitarian attribution table, incident matrix, legal-status brief, and publishable briefing.
+          </p>
+
+          <div className="mt-5 grid grid-cols-3 gap-3">
+            <div className="rounded-sm border border-border bg-parchment p-3">
+              <p className="font-display text-2xl font-bold text-crimson">{modules.length}</p>
+              <p className="mt-1 font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] text-ink-faint">modules</p>
+            </div>
+            <div className="rounded-sm border border-border bg-parchment p-3">
+              <p className="font-display text-2xl font-bold text-crimson">{sourceCount}</p>
+              <p className="mt-1 font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] text-ink-faint">source anchors</p>
+            </div>
+            <div className="rounded-sm border border-border bg-parchment p-3">
+              <p className="font-display text-2xl font-bold text-crimson">6</p>
+              <p className="mt-1 font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] text-ink-faint">work products</p>
+            </div>
+          </div>
+
+          <div className="mt-5 grid gap-2" role="tablist" aria-label="Israel dossier course modules">
+            {modules.map((module) => (
+              <button
+                key={module.id}
+                type="button"
+                role="tab"
+                aria-selected={activeModule.id === module.id}
+                aria-controls={`course-module-${module.id}`}
+                onClick={() => setActiveId(module.id)}
+                className={`min-h-[52px] rounded-sm border px-3 py-2 text-left transition-colors ${
+                  activeModule.id === module.id
+                    ? 'border-crimson bg-crimson text-white'
+                    : 'border-border bg-parchment text-ink hover:border-crimson/40'
+                }`}
+              >
+                <span className={`block font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] ${activeModule.id === module.id ? 'text-white/70' : 'text-ink-faint'}`}>
+                  {module.kicker}
+                </span>
+                <span className="block font-sans text-sm font-bold">{module.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <article id={`course-module-${activeModule.id}`} role="tabpanel" className="rounded-sm border border-border bg-parchment p-5">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-obsidian px-2 py-0.5 font-sans text-[0.55rem] font-bold uppercase tracking-[0.12em] text-white">
+              {activeModule.kicker}
+            </span>
+            <span className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.12em] text-ink-faint">
+              Source-safe course module
+            </span>
+          </div>
+
+          <h3 className="mt-4 font-display text-2xl font-bold text-ink">{activeModule.title}</h3>
+          <p className="mt-3 font-body text-sm leading-relaxed text-ink-muted">{activeModule.objective}</p>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+            <div className="rounded-sm border border-border bg-surface p-4">
+              <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ink-muted">Work product</p>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink">{activeModule.workProduct}</p>
+            </div>
+            <div className="rounded-sm border border-border bg-surface p-4">
+              <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ink-muted">Quality gate</p>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink">{activeModule.qualityGate}</p>
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-sm border border-border bg-surface p-4">
+            <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ink-muted">Source anchors</p>
+            <div className="mt-3 grid gap-2">
+              {activeModule.sourceAnchors.map((source) => (
+                <a
+                  key={`${activeModule.id}-${source.url}`}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2 rounded-sm border border-border bg-parchment px-3 py-2 transition-colors hover:border-crimson/40"
+                >
+                  <span className="mt-0.5 rounded-full bg-obsidian px-2 py-0.5 font-sans text-[0.5rem] font-bold uppercase tracking-[0.1em] text-white">
+                    {ISRAEL_DOSSIER_SOURCE_CATEGORY_META[source.category].label}
+                  </span>
+                  <span className="font-sans text-xs font-semibold leading-relaxed text-ink group-hover:text-crimson">{source.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5 border-t border-border pt-4">
+            <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ink-muted">Exercise</p>
+            <p className="mt-2 font-body text-sm leading-relaxed text-ink-muted">{activeModule.exercise}</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link to={`/institute/courses/${activeModule.instituteSlug}`} className="inline-flex min-h-[44px] items-center rounded-sm bg-obsidian px-4 font-sans text-xs font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-obsidian/80">
+                Open course
+              </Link>
+              <Link to={`/institute/guides/${activeModule.instituteSlug}`} className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-4 font-sans text-xs font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson">
+                Read guide
+              </Link>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  )
+}
+
 /* ═══════════════════════════════════════════════════════════
    MAIN PAGE COMPONENT
    ═══════════════════════════════════════════════════════════ */
@@ -660,6 +782,8 @@ export default function IsraelDossierPage() {
       </div>
 
       <DossierSourceWorkbench records={sourceIndex} />
+
+      <DossierCoursePath modules={ISRAEL_DOSSIER_COURSE_PATH} />
 
       {/* ═══════════════════════════════════════════════════════════
          HISTORICAL TIMELINE — From Balfour to Present

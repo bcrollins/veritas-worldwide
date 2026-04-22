@@ -18,6 +18,7 @@ const filters: { id: InstituteTrackId | 'all'; label: string }[] = [
   { id: 'home-repair', label: 'Repair' },
   { id: 'food-self-reliance', label: 'Food & Garden' },
   { id: 'preparedness', label: 'Preparedness' },
+  { id: 'communication', label: 'Evidence & Core Skills' },
 ]
 
 export default function InstitutePage() {
@@ -94,10 +95,10 @@ export default function InstitutePage() {
           <div>
             <p className="institute-eyebrow">Veritas Institute</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-[color:var(--institute-ink)] sm:text-5xl lg:text-6xl">
-              The field manual for ordinary emergencies. The course library for trades, repair, and resilient households.
+              The field manual for ordinary emergencies. The course library for trades, repair, resilience, and evidence work.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[color:var(--institute-muted)]">
-              Veritas Institute is built around two jobs. First: answer the immediate question in front of you, fast and safely. Second: route readers into practical course paths for real trade work, household systems, food resilience, and healthcare-support skills.
+              Veritas Institute is built around two jobs. First: answer the immediate question in front of you, fast and safely. Second: route readers into practical course paths for real trade work, household systems, food resilience, healthcare-support skills, and source-safe evidence work.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -186,10 +187,10 @@ export default function InstitutePage() {
           <div>
             <p className="institute-eyebrow">Trade course library</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
-              Five practical tracks built around work people can actually do and systems households actually need.
+              Practical and evidence-backed tracks built around work people can actually do and records readers can actually audit.
             </h2>
             <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[color:var(--institute-muted)]">
-              These tracks are intentionally concrete: skilled trades, repair, preparedness, food resilience, and healthcare-support pathways. The goal is not breadth for its own sake. The goal is practical usefulness.
+              These tracks are intentionally concrete: skilled trades, repair, preparedness, food resilience, healthcare-support pathways, and evidence workflows. The goal is not breadth for its own sake. The goal is practical usefulness.
             </p>
           </div>
           <Link to="/institute/methodology" className="text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">

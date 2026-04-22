@@ -3,7 +3,7 @@
  * Generates a comprehensive, print-quality PDF of all dossier content
  */
 import { useState } from 'react'
-import { ISRAEL_DOSSIER_PDF_COVER_STATS, ISRAEL_DOSSIER_PDF_KEY_STATS } from '../data/israelDossierCanon'
+import { ISRAEL_DOSSIER_COURSE_PATH, ISRAEL_DOSSIER_PDF_COVER_STATS, ISRAEL_DOSSIER_PDF_KEY_STATS } from '../data/israelDossierCanon'
 
 export default function DossierPDF() {
   const [generating, setGenerating] = useState(false)
@@ -190,7 +190,8 @@ export default function DossierPDF() {
         'X. Infrastructure Destruction',
         'XI. Media & Information',
         'XII. Comparative Analysis',
-        'XIII. Source Methodology',
+        'XIII. Evidence Course Path',
+        'XIV. Source Methodology',
       ]
       toc.forEach((item, i) => {
         doc.setFontSize(11)
@@ -297,9 +298,34 @@ export default function DossierPDF() {
       })
 
       // ══════════════════════════════════════════════
+      // EVIDENCE COURSE PATH
+      // ══════════════════════════════════════════════
+      addSectionHeader('XIII. Evidence Course Path')
+      addBody('The dossier now includes a six-module evidence course that teaches the reader how to rebuild the source file, audit the aid ledger, verify humanitarian figures, test incident evidence, read the legal record, and write a publishable briefing without overstating the record.')
+      y += 4
+
+      ISRAEL_DOSSIER_COURSE_PATH.forEach((module) => {
+        checkSpace(18)
+        doc.setFontSize(10)
+        doc.setFont('helvetica', 'bold')
+        doc.setTextColor(26, 26, 26)
+        doc.text(`${module.kicker}: ${module.title}`, ML, y)
+        y += 5
+        addBody(module.objective, 8)
+        doc.setFontSize(7)
+        doc.setFont('helvetica', 'italic')
+        doc.setTextColor(120, 120, 120)
+        const sourceLine = doc.splitTextToSize(`Source anchors: ${module.sourceAnchors.map((source) => source.label).join('; ')}`, CW)
+        doc.text(sourceLine, ML, y)
+        y += sourceLine.length * 3.5 + 2
+        addBody(`Work product: ${module.workProduct}`, 8)
+        addBody(`Quality gate: ${module.qualityGate}`, 8)
+      })
+
+      // ══════════════════════════════════════════════
       // METHODOLOGY & CLOSING
       // ══════════════════════════════════════════════
-      addSectionHeader('XIII. Source Methodology')
+      addSectionHeader('XIV. Source Methodology')
       addBody('Every statistic in this document is sourced to one or more categories of primary evidence: official government publications (CRS, Israeli ministries), international body records (UN OCHA, ICJ, OHCHR, UNSC), verified independent organizations (CPJ, B\'Tselem, DCIP, Airwars), peer-reviewed research (The Lancet), and established investigative journalism with named sources and corroborating evidence.')
       addBody('Where figures are disputed or represent estimates with methodological uncertainty, this is noted. Readers are encouraged to verify all claims independently using the linked primary sources.')
       y += 10

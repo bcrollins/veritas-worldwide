@@ -7,8 +7,8 @@
       "composite": 9.7,
       "previous": 9.6,
       "delta": 0.1,
-      "status": "Crawler/social metadata, preview images, generated PDF evidence text, canon, source links, trend artifacts, build, bundle, and behavior verification passed on GitHub Actions run 24771280086; live production behavior was previously verified at commit 603aab00a7552 and app code did not change after that verification slice",
-      "plus_half_requires": "Build the next source-labeled dossier/course content expansion, then capture the GitHub Actions Node action-runtime warning with a verified Node 24-compatible action update."
+      "status": "Crawler/social metadata, preview images, generated PDF evidence text, canon, source links, trend artifacts, build, bundle, and behavior verification passed on GitHub Actions run 24771280086. A six-module Evidence Course Path with PDF export and Institute route links is locally verified on April 22, 2026; score is held until production advances and live behavior is verified.",
+      "plus_half_requires": "Live-verify the Evidence Course Path on production, then add downloadable source-ledger, aid-ledger, humanitarian-attribution, incident-matrix, legal-status, and briefing artifacts."
     },
     {
       "feature": "Home / Front Page",
@@ -79,8 +79,8 @@
       "composite": 8.4,
       "previous": 7.8,
       "delta": 0.6,
-      "status": "improved",
-      "plus_half_requires": "Verify the rebuilt /institute, /institute/book, and representative course/guide routes live at 390px and 430px, confirm /llms.txt and /veritas-institute.md are reachable in production, and pressure-test the PDF/manual export on real browsers."
+      "status": "improved; the Israel dossier Evidence Course Path now adds six locally verified source-safe course/guide routes, but production route verification is pending until the next deploy advances",
+      "plus_half_requires": "Live-verify the rebuilt /institute, /institute/book, all six Israel dossier course/guide routes, /llms.txt, and /veritas-institute.md, then pressure-test the PDF/manual export on real browsers."
     },
     {
       "feature": "Deployment Observability",

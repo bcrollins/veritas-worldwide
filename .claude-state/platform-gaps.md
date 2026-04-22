@@ -2,6 +2,10 @@
 
 ## Recently Closed
 
+- **Israel dossier course path is locally source-backed and verification-guarded.**
+  Impact: the dossier now has a reusable training layer instead of only a reading surface: source-file building, aid-ledger auditing, humanitarian figure attribution, incident evidence testing, legal-record reading, and publishable briefing work are all linked to canonical source anchors and corresponding Institute course/guide routes.
+  Resolution: added `ISRAEL_DOSSIER_COURSE_PATH`, rendered it on `/israel-dossier`, exported it into the dossier PDF, added six Institute topics with source-safe course/guide copy, regenerated sitemap and `veritas-institute.md`, and extended canon plus behavior verification to cover the course path, module interaction, Institute links, and generated PDF text. Local verification passed; production verification is pending until the next deployment advances.
+
 - **Israel dossier verification is now CI-backed and live-behavior verified.**
   Impact: the dossier canon, source-link graph, production build, reader bundle, local rendered behavior, crawler metadata, preview images, carousel export, PDF export/text content, source workbench, money trail, and Chapter 15 public preview now have automated verification instead of relying on manual operator runs.
   Resolution: added `.github/workflows/verify-israel-dossier.yml`, pinned Playwright in `package.json`, added crawler/PDF assertions to `scripts/verify-israel-dossier-behavior.mjs`, stabilized CI source-link checking with archive-backed, restricted-host, and transient/retry-limited classification, split runtime and source-link jobs so external source checks cannot hide rendered dossier regressions, and added `.claude-state/source-link-trends.*` artifacts for run-over-run source drift. GitHub Actions run `24771280086` passed on commit `98f320f` with runtime verification plus source-link trend artifacts; the source graph had 448 unique URLs, 0 missing, 0 failed, 0 invalid, and 0 transient blockers.
@@ -17,6 +21,10 @@
   Recommendation: add Sentry or an equivalent production error monitoring service and wire both server and client exceptions into it.
 
 ## Emerging
+
+- **The new Israel dossier course path needs production confirmation.**
+  Impact: the code, generated artifacts, and local rendered behavior are verified, but the public site must advance before Orville can validate the new course path and Institute routes by opening production.
+  Recommendation: after push, poll `/api/build-info`, run the live Israel dossier behavior verifier, probe the new Institute course/guide URLs, and only then mark the increment deployed and live.
 
 - **GitHub Actions emitted the JavaScript action runtime deprecation warning.**
   Impact: the new Israel dossier workflow passes today, but `actions/cache@v4`, `actions/checkout@v4`, `actions/setup-node@v4`, and `actions/upload-artifact@v4` are still flagged by GitHub's Node 20 action-runtime deprecation notice.

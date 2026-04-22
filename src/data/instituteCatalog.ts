@@ -2253,6 +2253,126 @@ const communicationTopics = [
     related: ['how-to-research-anything-fast', 'how-to-improve-your-credit-score', 'how-to-write-clearly-at-work'],
     tools: ['verification checklist', 'scam red-flag list', 'record lookup', 'reverse-search habit', 'pause protocol'],
   }),
+  topic({
+    id: 'israel-dossier-source-file',
+    slug: 'build-israel-dossier-source-file',
+    track: 'communication',
+    archetype: 'communication',
+    skill: 'Build an Israel Dossier source file',
+    courseTitle: 'Build an Israel Dossier Source File',
+    articleTitle: 'How to Build an Israel Dossier Source File: Source Classes, Claim Boundaries, and Audit Notes',
+    summary: 'Turn the Israel dossier into a source ledger where every claim has a source class, access date, confidence label, and publishability note.',
+    whyNow: 'High-risk public claims require a visible source chain, especially when readers need to distinguish official records, reported figures, forensic evidence, and analysis.',
+    firstAction: 'Extract one statistic, one incident claim, one aid figure, and one legal claim into a source ledger before writing prose.',
+    keywords: ['Israel dossier source file', 'dossier source ledger', 'public record research', 'evidence labels', 'source audit'],
+    institutions: ['Congressional Research Service', 'UN OCHA', 'UNICEF', 'Committee to Protect Journalists'],
+    timeToFirstResult: '1-7 days',
+    difficulty: 'Moderate',
+    outcome: 'A reusable Israel dossier source file with claim text, source class, confidence label, access date, and next verification step',
+    warning: 'A dossier without claim-level source rows will eventually blur reported figures, verified records, estimates, and analysis.',
+    related: ['audit-israel-aid-records', 'verify-gaza-humanitarian-figures', 'how-to-research-anything-fast'],
+    tools: ['claim ledger', 'source class taxonomy', 'access-date column', 'confidence label', 'publishability note'],
+  }),
+  topic({
+    id: 'israel-aid-ledger',
+    slug: 'audit-israel-aid-records',
+    track: 'communication',
+    archetype: 'communication',
+    skill: 'Audit Israel aid records',
+    courseTitle: 'Audit Israel Aid Records Without Collapsing the Numbers',
+    articleTitle: 'How to Audit Israel Aid Records: CRS Totals, H.R.815, MOU Funding, and Arms-Sale Notices',
+    summary: 'Separate obligations, appropriations, annual MOU funding, supplemental packages, arms-sale notices, deliveries, and analysis before writing dollar claims.',
+    whyNow: 'Israel aid figures are often quoted as one blended number even though CRS records, appropriations bills, MOU commitments, and DSCA notices describe different things.',
+    firstAction: 'Create separate rows for the CRS constant-dollar total, annual MOU funding, H.R.815 supplemental appropriations, and DSCA arms-sale notices.',
+    keywords: ['Israel aid records', 'CRS RL33222', 'H.R.815 Israel Security Supplemental', 'US foreign aid to Israel', 'arms sale notices'],
+    institutions: ['Congressional Research Service', 'Congress.gov', 'Defense Security Cooperation Agency'],
+    timeToFirstResult: '1-7 days',
+    difficulty: 'Moderate',
+    outcome: 'A defensible aid ledger that keeps record type, amount, time period, and analysis separate',
+    warning: 'Do not add figures from different record types together unless the source and method justify the calculation.',
+    related: ['build-israel-dossier-source-file', 'write-israel-dossier-briefings', 'how-to-research-anything-fast'],
+    tools: ['aid ledger', 'record-type column', 'bill tracker', 'source notes', 'comparison warning'],
+  }),
+  topic({
+    id: 'israel-humanitarian-figures',
+    slug: 'verify-gaza-humanitarian-figures',
+    track: 'communication',
+    archetype: 'communication',
+    skill: 'Verify Gaza humanitarian figures',
+    courseTitle: 'Verify Gaza Humanitarian Figures With Attribution Boundaries',
+    articleTitle: 'How to Verify Gaza Humanitarian Figures: OCHA, UNICEF, Lancet, CPJ, and Source Boundaries',
+    summary: 'Keep reported figures, UN attribution, institutional verification, survey estimates, and press-freedom trackers visibly separate.',
+    whyNow: 'Humanitarian figures change, methods differ, and public debate often treats reported counts, survey estimates, and verified fatalities as interchangeable.',
+    firstAction: 'Build an attribution table that names the reporting body, original source, date range, method, and what remains unverified.',
+    keywords: ['Gaza humanitarian figures', 'OCHA casualty figures', 'UNICEF Gaza children killed', 'Lancet Gaza mortality', 'CPJ journalist casualties'],
+    institutions: ['UN OCHA', 'UNICEF', 'The Lancet Global Health', 'Committee to Protect Journalists'],
+    timeToFirstResult: '1-7 days',
+    difficulty: 'Moderate',
+    outcome: 'An attribution table that prevents reported figures, estimates, and verified findings from being presented as the same evidence class',
+    warning: 'Attribution is not a cosmetic footnote. It is the difference between careful publication and unsupported certainty.',
+    related: ['build-israel-dossier-source-file', 'read-israel-dossier-legal-records', 'how-to-fact-check-information-and-avoid-scams'],
+    tools: ['attribution table', 'date-range note', 'method column', 'reported-vs-verified label', 'revision log'],
+  }),
+  topic({
+    id: 'israel-incident-evidence',
+    slug: 'test-israel-dossier-incident-evidence',
+    track: 'communication',
+    archetype: 'communication',
+    skill: 'Test Israel Dossier incident evidence',
+    courseTitle: 'Test Israel Dossier Incident Evidence',
+    articleTitle: 'How to Test Israel Dossier Incident Evidence: Forensic Work, Video, Admissions, and Disputed Accounts',
+    summary: 'Grade incident records by evidence type before deciding whether the wording can say documented, alleged, reported, disputed, or independently verified.',
+    whyNow: 'Incident narratives carry the highest legal and trust risk because source type, actor attribution, and evidence quality often vary within the same event.',
+    firstAction: 'Choose one incident and build a matrix with date, location, alleged actor, evidence type, disputed elements, and minimum defensible wording.',
+    keywords: ['Israel dossier incidents', 'incident evidence matrix', 'Forensic Architecture Hind Rajab', 'World Central Kitchen strike', 'Gaza incident verification'],
+    institutions: ['Forensic Architecture', 'OHCHR', 'World Central Kitchen', 'Palestine Red Crescent Society'],
+    timeToFirstResult: '1-7 days',
+    difficulty: 'Advanced',
+    outcome: 'An incident evidence matrix that separates source-supported findings from allegations, disputed elements, and open questions',
+    warning: 'Do not let moral urgency override the evidence tier. A serious incident still needs exact attribution and careful verbs.',
+    related: ['build-israel-dossier-source-file', 'write-israel-dossier-briefings', 'how-to-fact-check-information-and-avoid-scams'],
+    tools: ['incident matrix', 'evidence-type labels', 'actor-attribution note', 'disputed-elements log', 'wording audit'],
+  }),
+  topic({
+    id: 'israel-legal-records',
+    slug: 'read-israel-dossier-legal-records',
+    track: 'communication',
+    archetype: 'communication',
+    skill: 'Read Israel Dossier legal records',
+    courseTitle: 'Read Israel Dossier Legal Records',
+    articleTitle: 'How to Read Israel Dossier Legal Records: ICJ Orders, Advisory Opinions, ICC Warrants, and Merits Questions',
+    summary: 'Distinguish pleadings, provisional measures, advisory opinions, arrest warrants, merits rulings, and commentary before using legal language.',
+    whyNow: 'Legal terms are frequently used loosely in public debate, but a dossier needs to match each term to the procedural status of the court record.',
+    firstAction: 'Create a four-row legal-status brief for ICJ provisional measures, the ICJ occupation advisory opinion, ICC warrants, and unresolved merits questions.',
+    keywords: ['ICJ Israel case', 'ICC Palestine warrants', 'Israel legal records', 'ICJ advisory opinion occupation', 'South Africa v Israel'],
+    institutions: ['International Court of Justice', 'International Criminal Court', 'United Nations'],
+    timeToFirstResult: '1-7 days',
+    difficulty: 'Advanced',
+    outcome: 'A legal-status brief that states the court, document type, procedural posture, exact order or holding, and unresolved questions',
+    warning: 'Do not treat allegations, warrants, provisional measures, advisory opinions, and final merits rulings as interchangeable.',
+    related: ['verify-gaza-humanitarian-figures', 'write-israel-dossier-briefings', 'how-to-research-anything-fast'],
+    tools: ['legal-status brief', 'procedural posture column', 'exact holding note', 'open-question log', 'term audit'],
+  }),
+  topic({
+    id: 'israel-briefings',
+    slug: 'write-israel-dossier-briefings',
+    track: 'communication',
+    archetype: 'communication',
+    skill: 'Write Israel Dossier briefings',
+    courseTitle: 'Write Israel Dossier Briefings',
+    articleTitle: 'How to Write Israel Dossier Briefings: Verified Facts, Attributed Figures, Analysis, and Open Questions',
+    summary: 'Convert source files into publishable briefings that preserve evidence tiers, access dates, legal boundaries, and unresolved checks.',
+    whyNow: 'A dossier becomes useful when readers can move from records into clear prose without losing source boundaries or exaggerating certainty.',
+    firstAction: 'Draft a 900-word briefing from the aid ledger and humanitarian attribution table while tagging every sentence with a source row.',
+    keywords: ['Israel dossier briefing', 'evidence briefing', 'source-backed writing', 'investigative briefing', 'confidence labels'],
+    institutions: ['Congressional Research Service', 'UN OCHA', 'International Court of Justice', 'Veritas source methodology'],
+    timeToFirstResult: '7-14 days',
+    difficulty: 'Advanced',
+    outcome: 'A publishable briefing with verified facts, attributed figures, analysis sections, source notes, and unresolved checks',
+    warning: 'A polished briefing that hides uncertainty is not stronger. It is harder to trust.',
+    related: ['build-israel-dossier-source-file', 'audit-israel-aid-records', 'read-israel-dossier-legal-records'],
+    tools: ['briefing outline', 'source-row tags', 'evidence-tier labels', 'editorial note', 'unresolved-checks list'],
+  }),
 ]
 
 export const instituteTopicSeeds: InstituteTopicSeed[] = [
@@ -2281,8 +2401,8 @@ export const instituteTopics: InstituteTopic[] = instituteTopicSeeds.map((seed) 
   }
 })
 
-if (instituteTopics.length !== 100) {
-  throw new Error(`[institute] Expected 100 topics, found ${instituteTopics.length}`)
+if (instituteTopics.length !== 106) {
+  throw new Error(`[institute] Expected 106 topics, found ${instituteTopics.length}`)
 }
 
 export function getInstituteTopicBySlug(slug: string) {
@@ -2610,8 +2730,62 @@ export const instituteFieldManualEntries: InstituteFieldManualEntry[] = [
   },
 ]
 
+const israelDossierTopicIds = new Set([
+  'israel-dossier-source-file',
+  'israel-aid-ledger',
+  'israel-humanitarian-figures',
+  'israel-incident-evidence',
+  'israel-legal-records',
+  'israel-briefings',
+])
+
+function isIsraelDossierInstituteTopic(topic: InstituteTopic) {
+  return israelDossierTopicIds.has(topic.id)
+}
+
 function buildCourseModules(topic: InstituteTopic): InstituteModule[] {
   const skill = topic.skill.toLowerCase()
+
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return [
+      {
+        title: 'Set the Claim Boundary',
+        summary: 'Convert the topic into narrow claims with actor, action, record type, date range, and evidence threshold visible.',
+        deliverable: 'A claim brief that states what would prove, weaken, or disprove the claim.',
+        lessons: ['Write one testable claim', 'Name the record type', 'Set the confidence threshold first'],
+      },
+      {
+        title: 'Build the Source Ladder',
+        summary: 'Rank official records, UN or court records, peer-reviewed work, monitor records, press investigations, and analysis before drafting.',
+        deliverable: 'A source ladder that lists the best original record for each claim and one fallback archive path.',
+        lessons: ['Prefer original records', 'Separate custodian from commentator', 'Capture access dates and archive fallbacks'],
+      },
+      {
+        title: 'Classify the Evidence',
+        summary: 'Assign verified, reported, circumstantial, disputed, analysis, or open-question labels before the prose is written.',
+        deliverable: 'An evidence matrix with confidence labels and exact source boundaries.',
+        lessons: ['Do not upgrade attribution', 'Separate estimates from counts', 'Keep court status precise'],
+      },
+      {
+        title: 'Write the Safest Version',
+        summary: 'Turn the evidence matrix into language that preserves what the source proves and what remains unresolved.',
+        deliverable: 'A paragraph draft with source-supported verbs and no unsupported certainty language.',
+        lessons: ['Use the lowest defensible certainty', 'Avoid motive claims without records', 'Keep open questions visible'],
+      },
+      {
+        title: 'Audit the Briefing',
+        summary: 'Check every number, incident, legal term, and actor attribution against the source row before publication.',
+        deliverable: 'A line-by-line audit sheet tying each high-risk sentence back to a source row.',
+        lessons: ['Check numbers and dates', 'Verify legal posture', 'Mark disputed elements explicitly'],
+      },
+      {
+        title: 'Leave a Durable File',
+        summary: 'Package the work so another editor can update it without reconstructing the research path.',
+        deliverable: 'A reusable dossier file with source rows, archive fallbacks, revision notes, and next checks.',
+        lessons: ['Write next checks', 'Record source drift', 'Make maintenance visible'],
+      },
+    ]
+  }
 
   if (topic.id === 'research-fast') {
     return [
@@ -2997,6 +3171,14 @@ function buildIdealFor(topic: InstituteTopic) {
     ]
   }
 
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return [
+      'Readers, editors, researchers, and operators working with the Israel dossier or similarly high-risk public-record files.',
+      'People who need to distinguish public records, reported humanitarian figures, legal records, forensic evidence, and analysis before sharing a claim.',
+      'Writers building briefings where exact attribution matters more than rhetorical force.',
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return [
@@ -3057,6 +3239,14 @@ function buildPrerequisites(topic: InstituteTopic) {
       'One urgent claim, message, payment request, or public allegation to slow down and inspect.',
       'A clean path to official websites, account portals, court records, public filings, or consumer-alert pages.',
       'A rule that you do not click, pay, forward, accuse, or disclose private information until verification survives.',
+    ]
+  }
+
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return [
+      'One Israel dossier claim narrow enough to test.',
+      'A source ledger with columns for claim text, source class, custodian, date, URL, access date, confidence label, and open question.',
+      'A rule that no claim moves into reader-facing copy until its evidence tier and source boundary are explicit.',
     ]
   }
 
@@ -3164,6 +3354,14 @@ function buildProofFramework(topic: InstituteTopic): InstituteHighlight[] {
     ]
   }
 
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return [
+      { title: 'Proof of source discipline', detail: 'A usable dossier artifact includes claim rows, original source links, access dates, source classes, confidence labels, and explicit open questions.' },
+      { title: 'Verified floor', detail: `Use ${topic.institutions.slice(0, 3).join(', ')} as the first source ladder before relying on commentary, screenshots, reposts, or unsourced summaries.` },
+      { title: 'Leverage signal', detail: 'Progress means a skeptical editor can trace every number, legal term, and incident claim from prose back to the source row without guessing.' },
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return [
@@ -3260,6 +3458,10 @@ function buildLlmSummary(topic: InstituteTopic) {
     return 'Fact-check information and avoid scams by slowing urgent asks, finding the original source, verifying institutions through independent channels, checking fraud patterns, and documenting the safest decision before acting.'
   }
 
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return `${topic.skill} by reducing each claim to a source row, classifying the evidence, preserving attribution boundaries, auditing legal and humanitarian language, and leaving a publishable file another editor can verify.`
+  }
+
   const framing = {
     career: 'a supervised skill path with visible proof of readiness',
     'ai-income': 'a narrow workflow offer with a human QA layer',
@@ -3291,6 +3493,16 @@ function buildActionPlan(topic: InstituteTopic): InstituteStep[] {
       { title: 'Verify through a clean path', detail: 'Open the official site, known phone number, account portal, or public database yourself instead of using embedded links or contact details.' },
       { title: 'Check fraud and false-claim signals', detail: 'Look for impersonation, payment pressure, secrecy, mismatched domains, screenshot-only proof, and claims that skip the original record.' },
       { title: 'Decide and document', detail: 'Ignore, report, correct, preserve, or share only after the verification path supports the decision.' },
+    ]
+  }
+
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return [
+      { title: 'Write the claim row', detail: 'State the exact claim, record type, source custodian, date range, and evidence threshold before drafting prose.' },
+      { title: 'Find the original anchor', detail: 'Use CRS, Congress.gov, UN agencies, court dockets, peer-reviewed research, or named investigative records before summaries.' },
+      { title: 'Classify the evidence', detail: 'Label the claim as verified, reported, estimate, circumstantial, disputed, analysis, or open question.' },
+      { title: 'Draft with source-supported verbs', detail: 'Use wording that matches the source class and avoids motive, collective blame, or legal certainty the source does not establish.' },
+      { title: 'Audit and preserve the file', detail: 'Attach access dates, archive fallbacks, contradiction notes, and the next verification step for future updates.' },
     ]
   }
 
@@ -3375,6 +3587,16 @@ function buildCommonMistakes(topic: InstituteTopic) {
     ]
   }
 
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return [
+      'Blending official records, reported figures, estimates, and analysis into one confidence level',
+      'Writing legal conclusions without matching the procedural status of the court record',
+      'Using incident evidence without naming disputed elements or source type',
+      'Publishing a dollar figure without record type, time period, and source boundary',
+      'Letting strong moral language outrun what the source row can prove',
+    ]
+  }
+
   switch (topic.archetype) {
     case 'career':
       return ['Choosing the wrong entry path for the local market', 'Ignoring safety or licensing realities', 'Collecting credentials without proof of work', 'Applying too broadly instead of targeting the right employer', 'Mistaking enthusiasm for readiness']
@@ -3394,6 +3616,27 @@ function buildCommonMistakes(topic: InstituteTopic) {
 }
 
 function buildFaq(topic: InstituteTopic): InstituteFaq[] {
+  if (isIsraelDossierInstituteTopic(topic)) {
+    return [
+      {
+        question: `What is the fastest realistic way to start ${topic.skill.toLowerCase()}?`,
+        answer: `${topic.firstAction} The first win is not a finished essay; it is a source row that keeps the claim, source class, confidence label, and next check visible.`,
+      },
+      {
+        question: `What actually proves progress in ${topic.skill.toLowerCase()}?`,
+        answer: `${lowerFirst(topic.outcome)} is the real milestone. The artifact should be auditable by someone who does not trust the conclusion yet.`,
+      },
+      {
+        question: 'How does Veritas Institute handle Israel dossier evidence?',
+        answer: 'It separates public records, UN or court records, peer-reviewed research, monitor records, press or OSINT investigations, and analysis before allowing the wording to carry certainty.',
+      },
+      {
+        question: `What should I avoid while learning ${topic.skill.toLowerCase()}?`,
+        answer: topic.warning,
+      },
+    ]
+  }
+
   return [
     {
       question: `What is the fastest realistic way to start ${topic.skill.toLowerCase()}?`,

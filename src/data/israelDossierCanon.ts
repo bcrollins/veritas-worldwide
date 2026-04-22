@@ -121,6 +121,24 @@ export interface DossierCarouselSlideCanon {
   bgStyle: 'dark' | 'crimson' | 'light' | 'stat'
 }
 
+export interface DossierCourseSourceAnchor {
+  label: string
+  url: string
+  category: DossierSourceCategory
+}
+
+export interface DossierCourseModule {
+  id: string
+  title: string
+  kicker: string
+  objective: string
+  sourceAnchors: DossierCourseSourceAnchor[]
+  workProduct: string
+  qualityGate: string
+  exercise: string
+  instituteSlug: string
+}
+
 export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-04-22'
 
 export const ISRAEL_DOSSIER_ASSETS = {
@@ -1335,6 +1353,99 @@ export const ISRAEL_DOSSIER_SOURCE_CATEGORY_META: Record<'all' | DossierSourceCa
   'press-osint': { label: 'Press / OSINT', description: 'Established reporting, visual investigations, and open-source forensic work.' },
   other: { label: 'Other', description: 'Supplemental context that should be checked before publication use.' },
 }
+
+export const ISRAEL_DOSSIER_COURSE_PATH: DossierCourseModule[] = [
+  {
+    id: 'source-file',
+    title: 'Build the source file',
+    kicker: 'Module 1',
+    objective: 'Turn the dossier into a claim-by-claim source file with one row per claim, one source class, one confidence label, and one next verification step.',
+    sourceAnchors: [
+      { label: 'Congressional Research Service RL33222', url: ISRAEL_DOSSIER_PUBLIC_RECORDS.aidObligations.sourceUrl, category: 'public-record' },
+      { label: 'OCHA reported impact snapshot', url: ISRAEL_DOSSIER_PUBLIC_RECORDS.gazaFatalities.sourceUrl, category: 'un-international' },
+      { label: 'Committee to Protect Journalists casualty tracker', url: ISRAEL_DOSSIER_PUBLIC_RECORDS.journalistDeaths.sourceUrl, category: 'monitor-ngo' },
+    ],
+    workProduct: 'A source ledger with claim text, source URL, custodian, access date, evidence class, confidence label, and publication status.',
+    qualityGate: 'No claim moves into prose until the source row states what the source proves and what it does not prove.',
+    exercise: 'Take the four public-record figures in the masthead and reduce each to a one-sentence claim with source boundary language.',
+    instituteSlug: 'build-israel-dossier-source-file',
+  },
+  {
+    id: 'aid-ledger',
+    title: 'Audit the aid ledger',
+    kicker: 'Module 2',
+    objective: 'Separate long-run CRS aid obligations, annual MOU funding, supplemental appropriations, and proposed arms sales so dollar figures do not collapse into one unsupported total.',
+    sourceAnchors: [
+      { label: 'Congressional Research Service RL33222', url: ISRAEL_DOSSIER_PUBLIC_RECORDS.aidObligations.sourceUrl, category: 'public-record' },
+      { label: 'H.R.815 Israel Security Supplemental', url: 'https://www.congress.gov/bill/118th-congress/house-bill/815', category: 'public-record' },
+      { label: 'DSCA major arms sales notices', url: 'https://www.dsca.mil/press-media/major-arms-sales', category: 'public-record' },
+    ],
+    workProduct: 'A money-trail table that distinguishes obligations, appropriations, authorizations, sales notices, deliveries, and analysis.',
+    qualityGate: 'Every amount must name the record type and time period; comparisons must be labeled as analysis unless the source makes the comparison itself.',
+    exercise: 'Trace the $298B CRS figure, the $3.8B annual MOU, and H.R.815 into separate rows before writing any summary sentence.',
+    instituteSlug: 'audit-israel-aid-records',
+  },
+  {
+    id: 'humanitarian-figures',
+    title: 'Verify humanitarian figures',
+    kicker: 'Module 3',
+    objective: 'Keep reported casualty figures, survey estimates, institutional verification, and source attribution visibly separate.',
+    sourceAnchors: [
+      { label: 'OCHA reported impact snapshot', url: ISRAEL_DOSSIER_PUBLIC_RECORDS.gazaFatalities.sourceUrl, category: 'un-international' },
+      { label: 'UNICEF State of Palestine update', url: ISRAEL_DOSSIER_PUBLIC_RECORDS.childrenKilled.sourceUrl, category: 'un-international' },
+      { label: 'The Lancet Global Health survey', url: 'https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext', category: 'peer-reviewed' },
+    ],
+    workProduct: 'An OCHA / UNICEF attribution table that names the reporting body, the original source, the date range, and the verification boundary.',
+    qualityGate: 'Reported figures must stay attributed; survey estimates must be labeled as estimates; neither can be presented as a court finding.',
+    exercise: 'Rewrite one humanitarian paragraph three ways: verified record, reported figure, and analytical context.',
+    instituteSlug: 'verify-gaza-humanitarian-figures',
+  },
+  {
+    id: 'incident-evidence',
+    title: 'Test incident evidence',
+    kicker: 'Module 4',
+    objective: 'Grade incident records by evidence type: official admission, video, forensic reconstruction, survivor testimony, press investigation, or contested account.',
+    sourceAnchors: [
+      { label: 'Forensic Architecture - Hind Rajab investigation', url: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab', category: 'press-osint' },
+      { label: 'World Central Kitchen statement', url: 'https://wck.org/news/gaza-team-update/', category: 'monitor-ngo' },
+      { label: 'OHCHR Gaza update report', url: 'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf', category: 'un-international' },
+    ],
+    workProduct: 'An incident matrix with date, location, alleged actor, evidence type, source links, disputed elements, and minimum defensible wording.',
+    qualityGate: 'The language must not upgrade allegation into finding unless the cited record supports that level of certainty.',
+    exercise: 'Choose one incident card and write the safest possible summary using only source-supported verbs.',
+    instituteSlug: 'test-israel-dossier-incident-evidence',
+  },
+  {
+    id: 'legal-record',
+    title: 'Read the legal record',
+    kicker: 'Module 5',
+    objective: 'Distinguish court orders, advisory opinions, warrants, allegations, pleadings, and commentary before using legal language.',
+    sourceAnchors: [
+      { label: 'ICJ South Africa v. Israel case docket', url: 'https://www.icj-cij.org/case/192', category: 'un-international' },
+      { label: 'ICJ advisory opinion on the occupied Palestinian territory', url: 'https://www.icj-cij.org/node/204176', category: 'un-international' },
+      { label: 'ICC Situation in the State of Palestine', url: 'https://www.icc-cpi.int/situations/palestine', category: 'un-international' },
+    ],
+    workProduct: 'A legal-status brief that states jurisdiction, procedural posture, exact holding or order, and what remains undecided.',
+    qualityGate: 'Legal terms such as genocide, apartheid, warrant, ruling, and obligation must match the procedural status of the cited document.',
+    exercise: 'Create a four-row legal record: ICJ provisional measures, ICJ advisory opinion, ICC warrants, and unresolved merits questions.',
+    instituteSlug: 'read-israel-dossier-legal-records',
+  },
+  {
+    id: 'publishable-briefing',
+    title: 'Write the publishable briefing',
+    kicker: 'Module 6',
+    objective: 'Convert the source file into a reader-facing briefing that preserves confidence labels, dates, access notes, and open questions.',
+    sourceAnchors: [
+      { label: 'Veritas Israel Dossier', url: 'https://veritasworldwide.com/israel-dossier', category: 'other' },
+      { label: 'Veritas source methodology chapter', url: 'https://veritasworldwide.com/chapter/chapter-29', category: 'other' },
+      { label: 'Congressional Research Service RL33222', url: ISRAEL_DOSSIER_PUBLIC_RECORDS.aidObligations.sourceUrl, category: 'public-record' },
+    ],
+    workProduct: 'A 900-word briefing with verified facts, attributed figures, analysis sections, source notes, and unresolved checks.',
+    qualityGate: 'A skeptical editor must be able to trace every sentence containing a number, legal conclusion, or incident claim back to a source row.',
+    exercise: 'Draft a short briefing from the aid ledger and humanitarian attribution table without using unsupported certainty language.',
+    instituteSlug: 'write-israel-dossier-briefings',
+  },
+]
 
 export const ISRAEL_DOSSIER_PDF_COVER_STATS = ISRAEL_DOSSIER_LATEST_PUBLIC_RECORDS.map((record) => ({
   v: record.value,

@@ -226,7 +226,7 @@ async function runViewportSmoke(browser, name, viewport, isMobile = false) {
     await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByText(/Source Workbench/i).waitFor({ timeout: 20000 })
     const body = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['the israel dossier', 'source workbench', '72,289+', '21,289+', '261+', '$298b']) {
+    for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', '72,289+', '21,289+', '261+', '$298b']) {
       assert(body.includes(needle), `${name} missing ${needle}`)
     }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
@@ -265,6 +265,16 @@ async function runInteractiveChecks(browser) {
     assert(publicRecordCount && publicRecordCount.filtered > 0 && publicRecordCount.filtered < publicRecordCount.total, `public-record category filter did not narrow results: ${JSON.stringify(publicRecordCount)}`)
     assert((await workbench.innerText()).includes('Congressional Research Service'), 'public-record filter did not surface CRS source context')
 
+    const coursePath = page.locator('#course-path')
+    await coursePath.scrollIntoViewIfNeeded()
+    await coursePath.getByRole('tab', { name: /Module 3 Verify humanitarian figures/i }).click()
+    await waitForSectionText(page, '#course-path', 'OCHA / UNICEF attribution table')
+    const courseText = await coursePath.innerText()
+    assert(courseText.includes('Verify humanitarian figures'), 'course path did not activate humanitarian figures module')
+    assert(/open course/i.test(courseText), 'course path missing Institute course CTA')
+    const courseHref = await coursePath.getByRole('link', { name: /Open course/i }).getAttribute('href')
+    assert(courseHref === '/institute/courses/verify-gaza-humanitarian-figures', `course CTA href mismatch: ${courseHref}`)
+
     const moneyTrail = page.locator('#money-trail')
     await moneyTrail.scrollIntoViewIfNeeded()
     await moneyTrail.getByText(/H\.R\.815 — Israel Security Supplemental/i).click()
@@ -292,14 +302,14 @@ async function runInteractiveChecks(browser) {
     console.log(`[verify:israel-dossier:behavior] PASS PDF download ${pdfResult.suggestedName} ${pdfResult.bytes} bytes`)
     const pdfErrorCount = errors.length
     const pdfText = extractPdfText(pdfResult.filePath)
-    for (const needle of ['THE ISRAEL DOSSIER', 'Congressional Research Service', 'UN OCHA', 'Forensic Architecture', 'Hind Rajab', '$298B', 'SOURCE METHODOLOGY']) {
+    for (const needle of ['THE ISRAEL DOSSIER', 'Congressional Research Service', 'UN OCHA', 'Forensic Architecture', 'Hind Rajab', '$298B', 'EVIDENCE COURSE PATH', 'OCHA / UNICEF attribution table', 'SOURCE METHODOLOGY']) {
       assert(pdfText.includes(needle), `PDF text missing ${needle}`)
     }
     if (errors.length === pdfErrorCount) {
       console.log('[verify:israel-dossier:behavior] PASS PDF text assertions')
     }
 
-    console.log('[verify:israel-dossier:behavior] PASS source workbench, money trail, carousel, and PDF interactions')
+    console.log('[verify:israel-dossier:behavior] PASS source workbench, course path, money trail, carousel, and PDF interactions')
   } finally {
     await context.close()
   }
