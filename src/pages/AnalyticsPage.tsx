@@ -107,7 +107,7 @@ function DailyChart({ data }: { data: { date: string; views: number }[] }) {
 function FunnelSection({ funnel }: { funnel: FunnelSnapshot }) {
   const stages = [
     { label: 'Chapter Views', value: funnel.chapterViews, description: 'Readers who reached a chapter page.' },
-    { label: 'Content Gate Hits', value: funnel.gateHits, description: 'Anonymous readers who reached gated depth.' },
+    { label: 'Archive Depth Events', value: funnel.gateHits, description: 'Anonymous readers who reached deep reading milestones.' },
     { label: 'Reader Signups', value: funnel.signups, description: 'Free account creation and newsletter subscriptions.' },
     { label: 'Checkout Starts', value: funnel.checkoutStarts, description: 'Donation or membership checkout intent.' },
     { label: 'Completed Support', value: funnel.payments, description: 'Confirmed donation or membership return.' },

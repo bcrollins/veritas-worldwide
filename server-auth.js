@@ -74,30 +74,14 @@ export function registerDatabaseAndAuthRoutes({
   })
 
   app.get('/api/chapters', async (req, res) => {
-    const wantsFull = req.query.scope === 'full'
     const chapterDataManifest = chapterState.getChapterDataManifest()
-    const publicChapterIndex = chapterState.getPublicChapterIndex()
-
-    if (!wantsFull) {
-      res.setHeader('Cache-Control', 'no-store')
-      return res.json({
-        previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
-        chapters: publicChapterIndex,
-      })
-    }
-
-    const user = await authenticateToken(req)
-    if (!user) {
-      return res.status(401).json({ error: 'Not authenticated' })
-    }
-
     const chapters = (chapterDataManifest.chapterIds || [])
       .map((chapterId) => chapterHelpers.getChapterJson('full', chapterId))
       .filter(Boolean)
 
-    res.setHeader('Cache-Control', 'private, no-store')
+    res.setHeader('Cache-Control', 'no-store')
     return res.json({
-      previewBlockLimit: chapterDataManifest.previewBlockLimit || 3,
+      previewBlockLimit: chapterDataManifest.previewBlockLimit || 0,
       chapters,
     })
   })
@@ -108,38 +92,29 @@ export function registerDatabaseAndAuthRoutes({
       return res.status(400).json({ error: 'Invalid chapter id' })
     }
 
-    const user = await authenticateToken(req)
-    const scope = user ? 'full' : 'public'
-    const chapter = chapterHelpers.getChapterJson(scope, chapterId)
+    const chapter = chapterHelpers.getChapterJson('full', chapterId)
 
     if (!chapter) {
       return res.status(404).json({ error: 'Chapter not found' })
     }
 
-    res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
+    res.setHeader('Cache-Control', 'no-store')
     return res.json(chapter)
   })
 
   app.get('/api/search', async (req, res) => {
     const query = chapterHelpers.normalizeSearchQuery(req.query.q)
-    const user = await authenticateToken(req)
-    const scope = user ? 'full' : 'public'
-    const filters = user
-      ? {
-          evidenceTier: chapterHelpers.normalizeFilter(req.query.evidence, chapterHelpers.evidenceTierFilters),
-          match: chapterHelpers.normalizeFilter(req.query.match, chapterHelpers.searchMatchFilters),
-          chapterType: chapterHelpers.normalizeFilter(req.query.chapterType, chapterHelpers.chapterTypeFilters),
-        }
-      : {
-          evidenceTier: 'all',
-          match: 'all',
-          chapterType: 'all',
-        }
+    const scope = 'full'
+    const filters = {
+      evidenceTier: chapterHelpers.normalizeFilter(req.query.evidence, chapterHelpers.evidenceTierFilters),
+      match: chapterHelpers.normalizeFilter(req.query.match, chapterHelpers.searchMatchFilters),
+      chapterType: chapterHelpers.normalizeFilter(req.query.chapterType, chapterHelpers.chapterTypeFilters),
+    }
 
     const chapterDataManifest = chapterState.getChapterDataManifest()
     const publicChapterIndex = chapterState.getPublicChapterIndex()
 
-    res.setHeader('Cache-Control', user ? 'private, no-store' : 'no-store')
+    res.setHeader('Cache-Control', 'no-store')
 
     if (!query) {
       return res.json({
@@ -161,29 +136,20 @@ export function registerDatabaseAndAuthRoutes({
   })
 
   app.get('/api/downloads/the-record.pdf', async (req, res) => {
-    const user = await authenticateToken(req)
-    if (!user) {
-      return res.status(401).json({ error: 'Sign in required to download this file.' })
-    }
     if (!fs.existsSync(recordPdfPath)) {
       return res.status(404).json({ error: 'File not found' })
     }
 
-    res.setHeader('Cache-Control', 'private, no-store')
+    res.setHeader('Cache-Control', 'public, max-age=0')
     return res.sendFile(recordPdfPath)
   })
 
   app.get('/the-record.pdf', async (req, res) => {
-    const user = await authenticateToken(req)
-    if (!user) {
-      res.setHeader('Cache-Control', 'no-store')
-      return res.status(401).type('text/plain').send('Sign in required to download this file.')
-    }
     if (!fs.existsSync(recordPdfPath)) {
       return res.status(404).type('text/plain').send('File not found.')
     }
 
-    res.setHeader('Cache-Control', 'private, no-store')
+    res.setHeader('Cache-Control', 'public, max-age=0')
     return res.sendFile(recordPdfPath)
   })
 

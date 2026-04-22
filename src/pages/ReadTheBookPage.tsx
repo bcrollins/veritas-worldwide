@@ -6,7 +6,6 @@ import { CATEGORY_META, type Article } from '../data/articles'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import DownloadModal from '../components/DownloadModal'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
-import { useAuth } from '../lib/AuthContext'
 import {
   getReaderOverviewStats,
   getReadingPaths,
@@ -159,7 +158,6 @@ function RelatedArticleCard({ article }: { article: Article }) {
 }
 
 export default function ReadTheBookPage() {
-  const { authMode, canAccessProtectedContent, isLoggedIn, openAuthModal } = useAuth()
   const [activeChapter, setActiveChapter] = useState(0)
   const [loadedChapters, setLoadedChapters] = useState<Map<number, LoadedChapter>>(new Map())
   const [loadingChapterIndex, setLoadingChapterIndex] = useState<number | null>(null)
@@ -168,16 +166,15 @@ export default function ReadTheBookPage() {
   const [fontSize, setFontSize] = useState(16)
   const contentRef = useRef<HTMLDivElement>(null)
   const tts = useTextToSpeech()
-  const chapterScope = canAccessProtectedContent ? 'full' : 'public'
-  const isDegradedProfile = isLoggedIn && !canAccessProtectedContent && authMode === 'degraded'
-  const openReaderAccessModal = useCallback(() => {
-    openAuthModal({ mode: isDegradedProfile ? 'login' : 'signup' })
-  }, [isDegradedProfile, openAuthModal])
+  const chapterScope = 'full'
+  const refreshReaderPayload = useCallback(() => {
+    window.location.reload()
+  }, [])
 
   useEffect(() => {
     setMetaTags({
       title: `Read The Record | ${SITE_NAME}`,
-      description: 'Read The Record online with a free reader account. Public visitors can preview every chapter before unlocking the full documentary archive.',
+      description: 'Read The Record online in full. Every chapter, source list, and archive path is open to every reader.',
       url: `${SITE_URL}/read`,
     })
     setJsonLd({
@@ -434,11 +431,11 @@ export default function ReadTheBookPage() {
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
                   <ReaderStatCard
                     label="Access"
-                    value={chapter.accessLevel === 'full' ? 'Full' : 'Preview'}
+                    value={chapter.accessLevel === 'full' ? 'Full' : 'Incomplete'}
                     note={
                       chapter.accessLevel === 'full'
-                        ? 'This chapter is fully unlocked with sources and the complete block stack.'
-                        : 'Public preview is visible now; the remaining archive unlocks after reader access.'
+                        ? 'This chapter is public with sources and the complete block stack.'
+                        : 'The public reader received an incomplete payload and should be refreshed.'
                     }
                   />
                   <ReaderStatCard
@@ -447,7 +444,7 @@ export default function ReadTheBookPage() {
                     note={
                       chapter.accessLevel === 'full'
                         ? 'All available blocks are visible in this reader.'
-                        : `${remainingBlocks} additional blocks remain behind the reader account layer.`
+                        : `${remainingBlocks} additional blocks are missing from the public payload.`
                     }
                   />
                   <ReaderStatCard
@@ -472,18 +469,16 @@ export default function ReadTheBookPage() {
                 {chapter.accessLevel === 'preview' && (
                   <div className="mt-5 border border-border bg-surface rounded-sm p-4">
                     <p className="font-sans text-[0.6rem] font-bold tracking-[0.14em] uppercase text-crimson mb-2">
-                      {isDegradedProfile ? 'Archive Sync Unavailable' : 'Preview Mode'}
+                      Public Archive
                     </p>
                     <p className="font-body text-sm text-ink-muted leading-relaxed">
-                      {isDegradedProfile
-                        ? `Your reader profile is saved locally, but full archive unlock is temporarily unavailable while account sync is degraded. The remaining ${remainingBlocks} blocks will unlock again after you can re-authenticate against the live account service.`
-                        : `You are reading the free preview of this chapter. Create a free account to unlock the remaining ${remainingBlocks} blocks and read the full book without asset-level gating gaps.`}
+                      The full reader is public. If this notice appears, the chapter API returned an incomplete payload with {remainingBlocks} missing blocks.
                     </p>
                     <button
-                      onClick={openReaderAccessModal}
+                      onClick={refreshReaderPayload}
                       className="mt-4 inline-flex items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                     >
-                      {isDegradedProfile ? 'Retry Sign-In' : 'Unlock Full Access'}
+                      Refresh Chapter
                     </button>
                   </div>
                 )}
@@ -554,18 +549,16 @@ export default function ReadTheBookPage() {
             {chapter?.accessLevel === 'preview' && (
               <div className="mt-8 border border-border bg-surface rounded-sm p-5">
                 <p className="font-display text-xl font-bold text-ink mb-2">
-                  {isDegradedProfile ? 'Archive unlock is temporarily unavailable.' : 'Continue with a free account.'}
+                  This chapter should be fully open.
                 </p>
                 <p className="font-body text-sm text-ink-muted leading-relaxed">
-                  {isDegradedProfile
-                    ? 'Your reader profile is saved locally, but this reader is still in degraded mode. Retry sign-in once account sync is restored to unlock the full chapter, source list, and compiled download.'
-                    : `The public preview stops here. Sign in or create a free account to continue reading the remaining ${remainingBlocks} blocks, access the full sources section, and download the compiled edition.`}
+                  The public reader received an incomplete payload with {remainingBlocks} missing blocks. Refresh the page; account sign-in is not required for the main archive.
                 </p>
                 <button
-                  onClick={openReaderAccessModal}
+                  onClick={refreshReaderPayload}
                   className="mt-4 inline-flex items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                 >
-                  {isDegradedProfile ? 'Retry Sign-In' : 'Create Free Account'}
+                  Refresh Chapter
                 </button>
               </div>
             )}

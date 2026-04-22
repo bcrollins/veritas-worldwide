@@ -67,7 +67,7 @@ if (!Array.isArray(publicIndex) || publicIndex.length !== manifest.chapterIds.le
 const publicIndexById = new Map(publicIndex.map((chapter) => [chapter?.id, chapter]))
 const missingCounts = []
 const mismatchedCounts = []
-const leakedPublicSources = []
+const missingPublicSources = []
 
 for (const chapterId of manifest.chapterIds) {
   const publicChapter = readJson(path.join(publicDir, `${chapterId}.json`))
@@ -89,12 +89,24 @@ for (const chapterId of manifest.chapterIds) {
     }
   }
 
-  if (Array.isArray(publicChapter.sources) && publicChapter.sources.length > 0) {
-    leakedPublicSources.push(`${chapterId}: public JSON contains ${publicChapter.sources.length} source rows`)
+  if (!Array.isArray(publicChapter.content) || publicChapter.content.length !== fullChapter.totalBlocks) {
+    mismatchedCounts.push(`${chapterId}: public JSON content length ${Array.isArray(publicChapter.content) ? publicChapter.content.length : 'invalid'} does not match totalBlocks ${fullChapter.totalBlocks}`)
   }
 
-  if (Array.isArray(indexChapter.sources) && indexChapter.sources.length > 0) {
-    leakedPublicSources.push(`${chapterId}: public index contains ${indexChapter.sources.length} source rows`)
+  if (publicChapter.accessLevel !== 'full' || indexChapter.accessLevel !== 'full') {
+    mismatchedCounts.push(`${chapterId}: public accessLevel is not full`)
+  }
+
+  if (publicChapter.previewBlockLimit !== 0 || indexChapter.previewBlockLimit !== 0) {
+    mismatchedCounts.push(`${chapterId}: public previewBlockLimit is not 0`)
+  }
+
+  if (!Array.isArray(publicChapter.sources) || publicChapter.sources.length !== fullChapter.sources.length) {
+    missingPublicSources.push(`${chapterId}: public JSON source count ${Array.isArray(publicChapter.sources) ? publicChapter.sources.length : 'invalid'} does not match full source count ${fullChapter.sources.length}`)
+  }
+
+  if (!Array.isArray(indexChapter.sources) || indexChapter.sources.length !== fullChapter.sources.length) {
+    missingPublicSources.push(`${chapterId}: public index source count ${Array.isArray(indexChapter.sources) ? indexChapter.sources.length : 'invalid'} does not match full source count ${fullChapter.sources.length}`)
   }
 
   const fullBlockCounts = evidenceBlockCounts(fullChapter)
@@ -119,8 +131,8 @@ if (mismatchedCounts.length > 0) {
   fail(mismatchedCounts.join('; '))
 }
 
-if (leakedPublicSources.length > 0) {
-  fail(leakedPublicSources.join('; '))
+if (missingPublicSources.length > 0) {
+  fail(missingPublicSources.join('; '))
 }
 
 const chaptersWithInterpretiveEvidence = publicIndex.filter((chapter) =>
@@ -132,5 +144,5 @@ if (chaptersWithInterpretiveEvidence.length === 0) {
 }
 
 console.log(
-  `[verify:chapter-data] PASS - ${manifest.chapterIds.length} chapters expose valid public/full evidenceCounts; ${chaptersWithInterpretiveEvidence.length} preview records carry interpretive-evidence guardrail data`
+  `[verify:chapter-data] PASS - ${manifest.chapterIds.length} public chapter records expose full bodies, source rows, and valid evidenceCounts; ${chaptersWithInterpretiveEvidence.length} records carry interpretive-evidence guardrail data`
 )

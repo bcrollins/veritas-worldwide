@@ -21,7 +21,7 @@ export const SIGNUP_SOURCE_META = {
     isInstitute: false,
   },
   content_gate: {
-    displayLabel: 'Content Gate',
+    displayLabel: 'Deep Archive',
     subscriberLabel: 'Archive Subscriber',
     isInstitute: false,
   },

@@ -109,7 +109,7 @@ export function trackMembershipClick(tier: string, price: number, interval: 'mon
   })
 }
 
-/** Content gate triggered — user hit the paywall */
+/** Deep archive milestone reached by an anonymous reader. */
 export function trackContentGate(chapterId: string, scrollDepth: number): void {
   getGtag()?.('event', 'content_gate_triggered', {
     chapter_id: chapterId,

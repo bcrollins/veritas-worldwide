@@ -16,10 +16,10 @@ const TIERS = [
     monthlyPrice: 0,
     annualPrice: 0,
     features: [
-      'Full access to the published archive with a free reader account',
+      'Full public access to the published archive',
       'Israel Dossier & all special investigations',
       'Source library with primary documents',
-      'Dark mode, bookmarks, search',
+      'Optional account for dark mode, bookmarks, and reading state',
       'RSS feed & social sharing',
     ],
     cta: 'Start Reading — Free',
@@ -118,7 +118,7 @@ export default function MembershipPage() {
             <span className="text-white/20">·</span>
             <span>500+ primary sources cited</span>
             <span className="text-white/20">·</span>
-            <span>Free reader accounts unlock the full archive</span>
+            <span>Full archive access stays public</span>
           </div>
 
           <div className="inline-flex items-center gap-3 bg-white/10 rounded-full p-1">
@@ -385,7 +385,7 @@ export default function MembershipPage() {
           {[
             {
               q: 'Will the content stay free?',
-              a: 'Yes — always. Every chapter, investigation, and source document remains available through a free reader account. Membership adds premium features like early access, exclusive dossiers, and editorial tools, but the documentary record itself will not disappear behind a paid tier.',
+              a: 'Yes — always. Every chapter, investigation, and source document remains public without a login. Reader accounts are optional for saved state, and membership funds premium features like early access, exclusive dossiers, and editorial tools without moving the documentary record behind a paid tier.',
             },
             {
               q: 'Who is behind Veritas Worldwide?',

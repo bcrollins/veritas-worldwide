@@ -22,59 +22,6 @@ interface Suggestion {
   bullets: [string, string, string]
 }
 
-// ── Password Gate ──────────────────────────────────────────
-function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
-  const [pw, setPw] = useState('')
-  const [error, setError] = useState(false)
-  const [shake, setShake] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (pw === 'rosie2010') {
-      sessionStorage.setItem('bernie-auth', '1')
-      onUnlock()
-    } else {
-      setError(true)
-      setShake(true)
-      setTimeout(() => setShake(false), 500)
-    }
-  }
-
-  return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4">
-      <div className={`max-w-md w-full text-center transition-transform ${shake ? 'animate-pulse' : ''}`}>
-        <div className="mb-8">
-          <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-          </div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Private Access</h1>
-          <p className="text-neutral-400 text-sm">Enter the password to continue.</p>
-        </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="password"
-            value={pw}
-            onChange={e => { setPw(e.target.value); setError(false) }}
-            placeholder="Password"
-            autoFocus
-            className="w-full px-4 py-3 bg-neutral-900 border border-neutral-700 rounded-lg text-white text-center text-lg tracking-widest placeholder-neutral-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors"
-          />
-          {error && <p className="text-red-400 text-sm">Incorrect password. Try again.</p>}
-          <button
-            type="submit"
-            className="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-lg hover:from-amber-400 hover:to-orange-500 transition-all duration-200 tracking-wide"
-          >
-            ENTER
-          </button>
-        </form>
-      </div>
-    </div>
-  )
-}
-
 // ── Inline SVG Components ──────────────────────────────────
 function FirePitArt() {
   return (
@@ -524,7 +471,6 @@ function EpisodeCard({ ep }: { ep: Episode }) {
 
 // ── Main Page Component ────────────────────────────────────
 export default function BernieShowPage() {
-  const [unlocked, setUnlocked] = useState(() => sessionStorage.getItem('bernie-auth') === '1')
   const [activeCategory, setActiveCategory] = useState<CategoryKey>('government')
   const [expandedSuggestion, setExpandedSuggestion] = useState<number | null>(null)
 
@@ -546,8 +492,6 @@ export default function BernieShowPage() {
       if (robotsMeta) robotsMeta.content = ''
     }
   }, [])
-
-  if (!unlocked) return <PasswordGate onUnlock={() => setUnlocked(true)} />
 
   const filteredSuggestions = SUGGESTIONS.filter(s => s.category === activeCategory)
 

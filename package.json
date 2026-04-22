@@ -16,7 +16,9 @@
     "verify:israel-dossier": "node scripts/verify-israel-dossier-canon.mjs",
     "verify:israel-dossier:behavior": "node scripts/verify-israel-dossier-behavior.mjs",
     "verify:bundle": "node scripts/verify-bundle-health.mjs && node scripts/verify-chapter-data.mjs",
-    "verify:chapter-data": "node scripts/verify-chapter-data.mjs"
+    "verify:chapter-data": "node scripts/verify-chapter-data.mjs",
+    "verify:public-access": "node scripts/verify-public-access.mjs",
+    "verify:public-visuals": "node scripts/verify-public-visuals.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

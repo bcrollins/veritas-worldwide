@@ -109,10 +109,10 @@ export default function AboutPage() {
                   the work directly.
                 </p>
                 <p>
-                  The product is intentionally split between public trust surfaces and reader account surfaces. The
-                  public side explains method, preserves source visibility, and gives preview access. Reader accounts
-                  deepen the archive relationship. Paid support funds the operation without turning the methodology
-                  into a black box.
+                  The product is intentionally split between public trust surfaces and optional reader account surfaces.
+                  The public side explains method, preserves source visibility, and gives full archive access. Reader
+                  accounts deepen the archive relationship through saved state. Paid support funds the operation without
+                  turning the methodology into a black box.
                 </p>
               </div>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -122,7 +122,7 @@ export default function AboutPage() {
                   </p>
                   <ul className="mt-4 space-y-2 font-body text-sm leading-relaxed text-ink-muted">
                     <li>Methodology and sources stay readable without paid access.</li>
-                    <li>Preview routes explain what the work is before asking for a relationship.</li>
+                    <li>Archive routes remain readable before asking for a relationship.</li>
                     <li>Evidence labels and source hierarchy remain visible and explicit.</li>
                   </ul>
                 </div>
@@ -131,9 +131,9 @@ export default function AboutPage() {
                     Reader relationship
                   </p>
                   <ul className="mt-4 space-y-2 font-body text-sm leading-relaxed text-ink-muted">
-                    <li>Free reader accounts unlock the archive relationship.</li>
+                    <li>Free reader accounts save the archive relationship without gating the record.</li>
                     <li>Membership funds reporting, document work, and publication durability.</li>
-                    <li>Protected downloads and full-source utilities stay behind real auth boundaries.</li>
+                    <li>Account-only utilities stay limited to saved reader state and private preferences.</li>
                   </ul>
                 </div>
               </div>

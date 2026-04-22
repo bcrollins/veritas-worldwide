@@ -353,7 +353,7 @@ export default function SubscribeSuccessPage() {
               ) : (
                 <>
                   <li>You&apos;ll receive new reporting and source releases in your inbox.</li>
-                  <li>Use a free reader account to move from email into the full archive, bookmarks, and gated chapters.</li>
+                  <li>Use a free reader account to move from email into bookmarks, saved reading state, and the wider public archive.</li>
                   <li>Every beat on Veritas links back to the underlying public record.</li>
                 </>
               )}

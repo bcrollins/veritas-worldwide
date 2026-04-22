@@ -60,7 +60,8 @@ function getEvidenceTierClasses(tier: EvidenceTier | 'all', active: boolean) {
 export default function SourcesPage() {
   const { authMode, canAccessProtectedContent, isLoggedIn, openAuthModal } = useAuth()
   const location = useLocation()
-  const { chapters, loading: chaptersLoading } = useAllChapters({ scope: canAccessProtectedContent ? 'full' : 'public' })
+  const publicSourceLibrary = true
+  const { chapters, loading: chaptersLoading } = useAllChapters({ scope: publicSourceLibrary ? 'full' : canAccessProtectedContent ? 'full' : 'public' })
   const [sourceFilter, setSourceFilter] = useState('')
   const [sourceHierarchyFilter, setSourceHierarchyFilter] = useState<SourceHierarchyFilter>('all')
   const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTier | 'all'>('all')
@@ -69,7 +70,7 @@ export default function SourcesPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Sources & Bibliography | The Record — Veritas Worldwide',
-      description: 'Master bibliography and verification library for The Record. Free reader accounts unlock the full source archive.',
+      description: 'Master bibliography and verification library for The Record. Every chapter source and direct link is open to every reader.',
       url: `${SITE_URL}/sources`,
     })
     setJsonLd({
@@ -117,7 +118,7 @@ export default function SourcesPage() {
       }
     })
 
-  const filteredChapterSources = canAccessProtectedContent
+  const filteredChapterSources = publicSourceLibrary || canAccessProtectedContent
     ? chapterSources
         .filter(chapter =>
           evidenceTierFilter === 'all' || chapter.availableEvidenceTiers.includes(evidenceTierFilter)
@@ -175,9 +176,9 @@ export default function SourcesPage() {
               <p className="font-body text-lg italic text-ink-muted leading-relaxed max-w-2xl">
                 {isDegradedProfile
                   ? 'Your reader profile is saved locally, but the database-backed source browser is temporarily unavailable while account sync is degraded. Public source counts remain visible below.'
-                  : canAccessProtectedContent
+                  : publicSourceLibrary || canAccessProtectedContent
                   ? 'Every source cited in this publication is organized here for direct verification. The reader is encouraged to inspect the record independently.'
-                  : 'Free reader accounts unlock the full source archive. Public readers can review chapter-by-chapter source counts and verification databases before signing in.'}
+                  : 'Every source cited in this publication is organized here for direct verification. Accounts are optional for saved reader state.'}
               </p>
               <div className="grid grid-cols-3 gap-4 mt-6">
                 <div className="text-center">
@@ -190,10 +191,10 @@ export default function SourcesPage() {
                 </div>
                 <div className="text-center">
                   <p className="font-display text-xl sm:text-2xl font-bold text-crimson">
-                    {canAccessProtectedContent ? allSources.filter(source => source.url).length : 'Free'}
+                    {publicSourceLibrary || canAccessProtectedContent ? allSources.filter(source => source.url).length : 'Free'}
                   </p>
                   <p className="font-sans text-[0.6rem] font-semibold tracking-[0.1em] uppercase text-ink-faint">
-                    {canAccessProtectedContent ? 'With Direct Links' : 'Reader Access'}
+                    {publicSourceLibrary || canAccessProtectedContent ? 'With Direct Links' : 'Reader Access'}
                   </p>
                 </div>
               </div>
@@ -204,12 +205,12 @@ export default function SourcesPage() {
                 <div className="inline-block w-8 h-8 border-2 border-crimson/20 border-t-crimson rounded-full animate-spin mb-4" />
                 <p className="font-body text-base text-ink-muted">Loading the source archive…</p>
               </div>
-            ) : canAccessProtectedContent ? (
+            ) : publicSourceLibrary || canAccessProtectedContent ? (
               <>
                 <section className="mb-8 no-print border border-border bg-surface-raised p-4 sm:p-5">
                   <div className="mb-4">
                     <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
-                      Signed-In Filters
+                      Source Filters
                     </p>
                     <p className="font-body text-sm text-ink-muted leading-relaxed">
                       Filter the full bibliography by source provenance and by the evidence mix present in each chapter.
@@ -415,12 +416,12 @@ export default function SourcesPage() {
                   {isDegradedProfile ? 'Account Sync' : 'Reader Access'}
                 </p>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-4">
-                  {isDegradedProfile ? 'Full bibliography access is temporarily unavailable.' : 'Create a free account to browse the full bibliography.'}
+                  {isDegradedProfile ? 'Account sync is temporarily unavailable.' : 'The full bibliography is public.'}
                 </h2>
                 <p className="font-body text-base text-ink-muted leading-relaxed max-w-2xl mb-6">
                   {isDegradedProfile
-                    ? 'Your reader profile is saved locally, but full citation links and source filters require the database-backed account service. Public source counts remain available until account sync returns.'
-                    : 'The public preview shows how heavily each chapter is sourced. Signing in unlocks the full citation library, direct links, and filter tools for document-by-document verification.'}
+                    ? 'Your reader profile is saved locally. The source library itself remains public; account sync only affects saved reader state.'
+                    : 'Every chapter source, direct link, and filter tool is available without signing in. Accounts are optional for saved reader state.'}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 mb-8">
                   <button
@@ -541,7 +542,7 @@ export default function SourcesPage() {
                   Support The Archive
                 </p>
                 <p className="font-body text-xs text-ink-muted leading-relaxed mb-4">
-                  Free reader accounts unlock the full source archive. If this kind of traceable research matters to you, a contribution keeps the record online.
+                  The full source archive is public. If this kind of traceable research matters to you, a contribution keeps the record online.
                 </p>
                 <a
                   href={DONATE_URL}

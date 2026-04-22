@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { DONATE_URL } from '../lib/constants'
-import { useAuth } from '../lib/AuthContext'
 
 interface DownloadModalProps {
   isOpen: boolean
@@ -10,7 +9,6 @@ interface DownloadModalProps {
 }
 
 export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: DownloadModalProps) {
-  const { authMode, canAccessProtectedContent, isLoggedIn, setShowAuthModal } = useAuth()
   const [step, setStep] = useState<'cta' | 'downloading' | 'error'>('cta')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -24,51 +22,13 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
   if (!isOpen) return null
 
   const handleDownload = async () => {
-    if (!isLoggedIn) {
-      onClose()
-      setShowAuthModal(true)
-      return
-    }
-
-    if (!canAccessProtectedContent) {
-      if (authMode === 'degraded') {
-        setStep('error')
-        setErrorMessage('Your reader profile is saved locally, but protected downloads are temporarily unavailable while account sync is degraded.')
-        return
-      }
-
-      onClose()
-      setShowAuthModal(true)
-      return
-    }
-
-    const token = localStorage.getItem('veritas_token')
-    if (!token) {
-      if (authMode === 'degraded') {
-        setStep('error')
-        setErrorMessage('Protected downloads require the live account service. Please try again once account sync is restored.')
-        return
-      }
-
-      onClose()
-      setShowAuthModal(true)
-      return
-    }
-
     setStep('downloading')
     setErrorMessage('')
 
     try {
-      const response = await fetch(fileUrl, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      const response = await fetch(fileUrl)
 
       if (!response.ok) {
-        if (response.status === 401) {
-          onClose()
-          setShowAuthModal(true)
-          return
-        }
         throw new Error('Download request failed')
       }
 
@@ -84,12 +44,12 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
       setTimeout(() => { setStep('cta'); onClose() }, 3000)
     } catch {
       setStep('error')
-      setErrorMessage('We could not prepare the download. Please try again after signing in again.')
+      setErrorMessage('We could not prepare the download. Please try again in a moment.')
     }
   }
 
   const shareUrl = window.location.origin
-  const shareText = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Free reader accounts unlock the full archive.'
+  const shareText = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. The full archive and source library are public.'
 
   const handleShare = (platform: string) => {
     const urls: Record<string, string> = {
@@ -160,7 +120,7 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               Just Download — I Can't Support Right Now
             </button>
-            <p className="font-sans text-[0.55rem] text-ink-faint text-center mt-2">No judgment. The truth is free. Full downloads require a free reader account.</p>
+            <p className="font-sans text-[0.55rem] text-ink-faint text-center mt-2">No judgment. The truth is free. Downloads are public; accounts are optional for saved reader state.</p>
           </>
         )}
 

@@ -1748,7 +1748,7 @@ const staticPages = [
     description: 'A documentary history of power, money, and the institutions that shaped the modern world.',
     body: [
       'Veritas Worldwide publishes longform investigative work built on primary sources, congressional records, court filings, declassified files, and public financial disclosures.',
-      'Volume I spans 32 archive parts and more than 500 source documents. Every chapter is available through a free reader account, with public previews and traceable citations.',
+      'Volume I spans 32 archive parts and more than 500 source documents. Every chapter is publicly readable, with traceable citations and source rows available without signing in.',
     ],
     featuredChapterIds: chapters.slice(0, 6).map((chapter) => chapter.id),
     sourceFile: 'src/pages/HomePage.tsx',
@@ -1820,7 +1820,7 @@ const staticPages = [
     route: '/search',
     title: 'Search | The Record - Veritas Worldwide',
     heading: 'Search The Record',
-    description: 'Search chapter titles, public preview text, sources, and documentary references.',
+    description: 'Search chapter titles, full chapter text, sources, and documentary references.',
     body: [
       'Search is built for readers who need to move from a name, institution, or event directly into the available chapter material and citations.',
     ],

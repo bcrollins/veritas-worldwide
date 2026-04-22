@@ -14,7 +14,7 @@ export function createChapterDataTools({ rootDir }) {
   const chapterManifestFile = path.join(generatedChapterDataDir, 'manifest.json')
 
   let publicChapterIndex = []
-  let chapterDataManifest = { previewBlockLimit: 3, chapterIds: [], generatedAt: '' }
+  let chapterDataManifest = { previewBlockLimit: 0, chapterIds: [], generatedAt: '' }
 
   function sanitizeChapterId(value) {
     if (typeof value !== 'string') return ''

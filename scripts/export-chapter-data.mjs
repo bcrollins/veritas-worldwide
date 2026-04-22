@@ -5,7 +5,7 @@ import path from 'path'
 import ts from 'typescript'
 import { pathToFileURL } from 'url'
 
-const PREVIEW_BLOCK_LIMIT = 3
+const PREVIEW_BLOCK_LIMIT = 0
 const EVIDENCE_TIER_ORDER = ['verified', 'circumstantial', 'disputed']
 const repoRoot = process.cwd()
 const generatedRoot = path.join(repoRoot, 'generated', 'chapter-data')
@@ -181,9 +181,7 @@ function toPublicChapter(chapter) {
 
   return {
     ...chapterWithMetadata,
-    content: chapter.content.slice(0, PREVIEW_BLOCK_LIMIT),
-    sources: [],
-    accessLevel: 'preview',
+    accessLevel: 'full',
     previewBlockLimit: PREVIEW_BLOCK_LIMIT,
     totalBlocks: chapter.content.length,
   }

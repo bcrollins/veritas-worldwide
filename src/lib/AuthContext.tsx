@@ -200,7 +200,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       showToast(
         hasProtectedAccess
           ? 'Welcome back.'
-          : 'Signed in locally. Full archive access is temporarily unavailable while account sync is degraded.'
+          : 'Signed in locally. Saved reader sync is temporarily unavailable while account sync is degraded.'
       )
       // Sync full state from server
       validateSession().then(data => {
@@ -225,7 +225,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       showToast(
         hasProtectedAccess
           ? 'Account created. Welcome.'
-          : 'Reader profile saved locally. Full archive access is temporarily unavailable while account sync is degraded.'
+          : 'Reader profile saved locally. Saved reader sync is temporarily unavailable while account sync is degraded.'
       )
     }
     return { success: result.success, error: result.error }

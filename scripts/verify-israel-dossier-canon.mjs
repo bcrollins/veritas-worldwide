@@ -229,7 +229,7 @@ assert(has(files.behaviorVerifier, /evidence course path/i), 'behavior verifier 
 assert(has(files.behaviorVerifier, /OCHA \/ UNICEF attribution table/), 'behavior verifier does not exercise the course module interaction')
 assert(has(files.behaviorVerifier, /Download Complete Dossier/), 'behavior verifier does not exercise dossier PDF export')
 assert(has(files.behaviorVerifier, /H\\.R\\.815/), 'behavior verifier does not exercise money-trail expansion')
-assert(has(files.behaviorVerifier, /chapter-15/), 'behavior verifier does not exercise Chapter 15 public preview')
+assert(has(files.behaviorVerifier, /chapter-15/), 'behavior verifier does not exercise Chapter 15 public access')
 assert(has(files.behaviorVerifier, /extractPdfText/), 'behavior verifier does not assert generated PDF text')
 assert(has(files.behaviorVerifier, /og:type/), 'behavior verifier does not assert crawler Open Graph metadata')
 assert(has(files.behaviorVerifier, /naturalWidth/), 'behavior verifier does not assert social preview image renderability')

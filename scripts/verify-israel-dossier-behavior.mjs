@@ -392,7 +392,7 @@ async function runBriefingSurfaceCheck(browser) {
   }
 }
 
-async function runChapter15PreviewCheck(browser) {
+async function runChapter15PublicAccessCheck(browser) {
   const context = await browser.newContext({
     viewport: { width: 393, height: 852 },
     deviceScaleFactor: 3,
@@ -404,12 +404,12 @@ async function runChapter15PreviewCheck(browser) {
     await page.goto(`${baseUrl}/chapter/chapter-15`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: 'U.S. Foreign Aid to Israel' }).waitFor({ timeout: 20000 })
     const body = (await page.locator('body').innerText()).toLowerCase()
-    for (const needle of ['u.s. foreign aid to israel', '$298 billion', 'crs', 'free account']) {
-      assert(body.includes(needle), `chapter 15 public preview missing ${needle}`)
+    for (const needle of ['u.s. foreign aid to israel', '$298 billion', 'crs', 'sources & references']) {
+      assert(body.includes(needle), `chapter 15 public access missing ${needle}`)
     }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
-    assert(overflow <= 2, `chapter 15 public preview has ${overflow}px horizontal overflow`)
-    console.log('[verify:israel-dossier:behavior] PASS chapter 15 public preview')
+    assert(overflow <= 2, `chapter 15 public access has ${overflow}px horizontal overflow`)
+    console.log('[verify:israel-dossier:behavior] PASS chapter 15 public access')
   } finally {
     await context.close()
   }
@@ -423,7 +423,7 @@ try {
   await runCrawlerMetaChecks(browser)
   await runInteractiveChecks(browser)
   await runBriefingSurfaceCheck(browser)
-  await runChapter15PreviewCheck(browser)
+  await runChapter15PublicAccessCheck(browser)
 } finally {
   await browser.close()
   fs.rmSync(downloadDir, { recursive: true, force: true })

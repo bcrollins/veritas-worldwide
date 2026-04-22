@@ -39,7 +39,7 @@ export default function HomePage() {
   useEffect(() => {
     setMetaTags({
       title: `The Record | ${SITE_NAME}`,
-      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts, 500+ primary sources, and free reader accounts for full archive access.',
+      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts, 500+ primary sources, and public full-archive access.',
       url: SITE_URL,
     })
     setJsonLd([
@@ -495,7 +495,7 @@ export default function HomePage() {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <SharePanel
             title="The Record — Veritas Worldwide"
-            description="A 32-part documentary archive compiled from primary sources — court records, congressional testimony, declassified files. Free reader accounts unlock the full archive."
+            description="A 32-part documentary archive compiled from primary sources — court records, congressional testimony, declassified files. The full archive and source library are public."
             contentId="home"
           />
 

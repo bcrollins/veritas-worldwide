@@ -122,7 +122,7 @@ export const PINNED_POSTS: PinnedPostData[] = [
     title: 'THE RECORD',
     subtitle: '32 archive parts. 500+ primary sources. 240 years of documented history.',
     stat: '100%',
-    statLabel: 'free reader account access',
+    statLabel: 'public archive access',
     cta: 'READ THE RECORD',
     url: 'veritasworldwide.com',
     bgStyle: 'parchment',

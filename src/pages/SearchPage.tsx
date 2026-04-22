@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
-import { Link, useLocation, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import type { ChapterType, EvidenceTier } from '../data/chapterTypes'
-import { useAuth } from '../lib/AuthContext'
 import { chapterMeta } from '../data/chapterMeta'
 import { allArticles as articles, CATEGORY_META } from '../data/articles'
 import { PROFILES, getProfilePhoto } from '../data/profileData'
@@ -55,12 +54,6 @@ const MATCH_FILTER_OPTIONS: Array<{ value: SearchMatchFilter; label: string }> =
   { value: 'all', label: 'All Matches' },
   { value: 'sources', label: 'Source Only' },
 ]
-
-function getAuthHeaders(): Record<string, string> {
-  if (typeof window === 'undefined') return {}
-  const token = window.localStorage.getItem('veritas_token')
-  return token ? { Authorization: `Bearer ${token}` } : {}
-}
 
 function sanitizeEvidenceTier(value: string | null): EvidenceTier | 'all' {
   if (value === 'verified' || value === 'circumstantial' || value === 'disputed') {
@@ -175,14 +168,12 @@ function includesSearchQuery(values: string[], query: string) {
 }
 
 export default function SearchPage() {
-  const { authMode, canAccessProtectedContent, isLoggedIn, openAuthModal } = useAuth()
-  const location = useLocation()
   const [searchParams, setSearchParams] = useSearchParams()
   const initialQuery = searchParams.get('q') || ''
   const [query, setQuery] = useState(initialQuery)
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery)
   const [results, setResults] = useState<SearchResult[]>([])
-  const [searchScope, setSearchScope] = useState<'public' | 'full'>(canAccessProtectedContent ? 'full' : 'public')
+  const [searchScope, setSearchScope] = useState<'public' | 'full'>('full')
   const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTier | 'all'>(
     sanitizeEvidenceTier(searchParams.get('evidence'))
   )
@@ -197,11 +188,9 @@ export default function SearchPage() {
   const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const totalChapters = chapterMeta.length
   const searchParamString = searchParams.toString()
-  const effectiveEvidenceTierFilter = canAccessProtectedContent ? evidenceTierFilter : 'all'
-  const effectiveMatchFilter = canAccessProtectedContent ? matchFilter : 'all'
-  const effectiveChapterTypeFilter = canAccessProtectedContent ? chapterTypeFilter : 'all'
-  const isDegradedProfile = isLoggedIn && !canAccessProtectedContent && authMode === 'degraded'
-  const authReturnTo = `${location.pathname}${location.search}${location.hash}`
+  const effectiveEvidenceTierFilter = evidenceTierFilter
+  const effectiveMatchFilter = matchFilter
+  const effectiveChapterTypeFilter = chapterTypeFilter
   const hasActiveFilters =
     effectiveEvidenceTierFilter !== 'all' ||
     effectiveMatchFilter !== 'all' ||
@@ -252,7 +241,7 @@ export default function SearchPage() {
   useEffect(() => {
     const scopeDescription = searchScope === 'full'
       ? 'full chapter text, keywords, and source libraries'
-      : 'chapter titles, keywords, and public preview text'
+      : 'chapter titles, keywords, and source references'
 
     setMetaTags({
       title: 'Search | The Record — Veritas Worldwide',
@@ -340,7 +329,7 @@ export default function SearchPage() {
       setResults([])
       setError(null)
       setLoading(false)
-      setSearchScope(canAccessProtectedContent ? 'full' : 'public')
+      setSearchScope('full')
       return
     }
 
@@ -364,7 +353,6 @@ export default function SearchPage() {
     setError(null)
 
     fetch(`/api/search?${params.toString()}`, {
-      headers: canAccessProtectedContent ? getAuthHeaders() : {},
       signal: controller.signal,
     })
       .then(async (response) => {
@@ -397,7 +385,6 @@ export default function SearchPage() {
     effectiveChapterTypeFilter,
     effectiveEvidenceTierFilter,
     effectiveMatchFilter,
-    canAccessProtectedContent,
   ])
 
   const isPreviewSearch = searchScope === 'public'
@@ -426,34 +413,9 @@ export default function SearchPage() {
                 Search The Record
               </h1>
               <p className="font-body text-base text-ink-muted">
-                Search chapter titles, keywords, and {isPreviewSearch ? 'public preview text' : 'full chapter text plus source libraries'} across all {totalChapters} chapters.
+                Search chapter titles, keywords, full chapter text, and source libraries across all {totalChapters} chapters.
               </p>
             </header>
-
-            {isPreviewSearch && (
-              <div className="mb-8 border border-border bg-surface p-4 sm:p-5">
-                <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
-                  {isDegradedProfile ? 'Account Sync' : 'Preview Search'}
-                </p>
-                <p className="font-body text-sm text-ink-muted leading-relaxed mb-3">
-                  {isDegradedProfile
-                    ? 'Your reader profile is saved locally, but full-archive and source-text search are temporarily unavailable while account sync is degraded. Preview search remains available until the live auth service returns.'
-                    : 'Anonymous readers can search titles, keywords, and the three-block public preview. Sign in with a free reader account to search the full archive and source text.'}
-                </p>
-                <button
-                  onClick={() => openAuthModal({
-                    mode: isDegradedProfile ? 'login' : 'signup',
-                    intent: {
-                      returnTo: authReturnTo,
-                      source: 'search',
-                    },
-                  })}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
-                >
-                  {isDegradedProfile ? 'Retry Sign-In' : 'Unlock Full Search'}
-                </button>
-              </div>
-            )}
 
             <div className="relative mb-8">
               <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ink-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -591,14 +553,14 @@ export default function SearchPage() {
               </section>
             )}
 
-            {canAccessProtectedContent && (
+            {(
               <section className="mb-10 border border-border bg-surface-raised p-4 sm:p-5">
                 <div className="mb-4">
                   <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
-                    Signed-In Filters
+                    Archive Filters
                   </p>
                   <p className="font-body text-sm text-ink-muted leading-relaxed">
-                    Narrow the full archive by evidence tier, source-only matches, and chapter format without widening anonymous preview access.
+                    Narrow the full public archive by evidence tier, source-only matches, and chapter format.
                   </p>
                 </div>
 

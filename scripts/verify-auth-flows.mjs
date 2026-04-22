@@ -1,6 +1,6 @@
 const cliBaseUrl = process.argv[2]
 const baseUrl = cliBaseUrl || process.env.AUTH_TEST_BASE_URL || 'http://127.0.0.1:3000'
-const chapterId = process.env.AUTH_TEST_CHAPTER_ID || 'foreword'
+const chapterId = process.env.AUTH_TEST_CHAPTER_ID || 'chapter-1'
 const searchQuery = process.env.AUTH_TEST_QUERY || 'federal reserve'
 const password = process.env.AUTH_TEST_PASSWORD || 'AuditPass2026!'
 const displayName = process.env.AUTH_TEST_DISPLAY_NAME || 'Veritas Auth Smoke'
@@ -60,7 +60,7 @@ async function verifyPdfAccess(token, expectedStatus) {
       const contentType = response.headers.get('content-type') || ''
       assert(
         contentType.includes('application/pdf'),
-        `Expected protected download content-type to include application/pdf, received ${contentType || 'none'}`
+        `Expected public download content-type to include application/pdf, received ${contentType || 'none'}`
       )
     }
   } finally {
@@ -73,23 +73,23 @@ async function main() {
 
   const previewResult = await requestJson(`/api/chapters/${chapterId}`)
   assert(previewResult.response.status === 200, `Anonymous chapter request failed with ${previewResult.response.status}`)
-  assert(previewResult.data?.accessLevel === 'preview', `Expected anonymous chapter accessLevel=preview, received ${previewResult.data?.accessLevel}`)
+  assert(previewResult.data?.accessLevel === 'full', `Expected anonymous chapter accessLevel=full, received ${previewResult.data?.accessLevel}`)
   assert(
-    Array.isArray(previewResult.data?.content) && previewResult.data.content.length === previewResult.data.previewBlockLimit,
-    'Anonymous preview did not respect previewBlockLimit'
+    Array.isArray(previewResult.data?.content) && previewResult.data.content.length === previewResult.data.totalBlocks,
+    'Anonymous chapter did not return the full public body'
   )
   assert(
-    previewResult.data.totalBlocks > previewResult.data.content.length,
-    'Anonymous preview unexpectedly returned the full chapter body'
+    previewResult.data.previewBlockLimit === 0,
+    `Expected previewBlockLimit=0 for open public access, received ${previewResult.data.previewBlockLimit}`
   )
   assert(
-    Array.isArray(previewResult.data?.sources) && previewResult.data.sources.length === 0,
-    'Anonymous preview leaked protected source rows'
+    Array.isArray(previewResult.data?.sources) && previewResult.data.sources.length > 0,
+    'Anonymous chapter did not expose source rows'
   )
-  logStep('Anonymous chapter preview boundary holds', `${previewResult.data.content.length}/${previewResult.data.totalBlocks} blocks`)
+  logStep('Anonymous full chapter access verified', `${previewResult.data.content.length}/${previewResult.data.totalBlocks} blocks`)
 
-  await verifyPdfAccess(null, 401)
-  logStep('Anonymous protected download blocked')
+  await verifyPdfAccess(null, 200)
+  logStep('Anonymous PDF download verified')
 
   const registerResult = await requestJson('/api/auth/register', {
     method: 'POST',
@@ -119,9 +119,9 @@ async function main() {
   )
   assert(
     Array.isArray(fullChapterResult.data?.sources) && fullChapterResult.data.sources.length > 0,
-    'Authenticated chapter did not return protected source rows'
+    'Authenticated chapter did not return source rows'
   )
-  logStep('Authenticated chapter unlock verified', `${fullChapterResult.data.content.length} blocks`)
+  logStep('Authenticated chapter access verified', `${fullChapterResult.data.content.length} blocks`)
 
   const searchParams = new URLSearchParams({ q: searchQuery, match: 'sources' })
   const fullSearchResult = await requestJson(`/api/search?${searchParams.toString()}`, {
@@ -134,7 +134,7 @@ async function main() {
   logStep('Authenticated source-only search verified', `${fullSearchResult.data.results.length} result(s)`)
 
   await verifyPdfAccess(token, 200)
-  logStep('Authenticated protected download verified')
+  logStep('Authenticated PDF download remains public')
 
   const logoutResult = await requestJson('/api/auth/logout', {
     method: 'POST',
@@ -152,19 +152,24 @@ async function main() {
   assert(revokedMeResult.response.status === 401, `Revoked token still authenticated /api/auth/me with ${revokedMeResult.response.status}`)
   logStep('Revoked token rejected by /api/auth/me')
 
-  await verifyPdfAccess(token, 401)
-  logStep('Revoked token rejected by protected download')
+  await verifyPdfAccess(token, 200)
+  logStep('Revoked token does not block public PDF download')
 
   const downgradedChapterResult = await requestJson(`/api/chapters/${chapterId}`, {
     headers: { Authorization: `Bearer ${token}` },
   })
   assert(downgradedChapterResult.response.status === 200, `Revoked-token chapter request failed with ${downgradedChapterResult.response.status}`)
   assert(
-    downgradedChapterResult.data?.accessLevel === 'preview' &&
-      downgradedChapterResult.data.content.length === downgradedChapterResult.data.previewBlockLimit,
-    'Revoked token did not downgrade chapter access back to preview scope'
+    downgradedChapterResult.data?.accessLevel === 'full' &&
+      Array.isArray(downgradedChapterResult.data?.content) &&
+      downgradedChapterResult.data.content.length === downgradedChapterResult.data.totalBlocks,
+    'Revoked token changed public chapter access'
   )
-  logStep('Revoked token downgraded chapter access back to preview')
+  assert(
+    Array.isArray(downgradedChapterResult.data?.sources) && downgradedChapterResult.data.sources.length > 0,
+    'Revoked token request lost public source access'
+  )
+  logStep('Revoked token preserves public chapter access')
 
   console.log('[verify:auth] PASS')
 }

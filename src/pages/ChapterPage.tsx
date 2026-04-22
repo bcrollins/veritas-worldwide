@@ -41,7 +41,7 @@ const diagramComponents: Record<string, React.ComponentType> = {
   'asset-manager-cross-sector': AssetManagerDiagram,
 }
 
-const PREVIEW_BLOCK_LIMIT = 3
+const PREVIEW_BLOCK_LIMIT = 0
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -520,12 +520,10 @@ function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: strin
 function ChapterAccessGate({
   chapter,
   remainingBlocks,
-  isDegradedProfile,
   onUnlock,
 }: {
   chapter: Chapter
   remainingBlocks: number
-  isDegradedProfile: boolean
   onUnlock: () => void
 }) {
   const sourceCount = chapter.sourceCount ?? chapter.sources.length
@@ -533,27 +531,25 @@ function ChapterAccessGate({
   return (
     <section
       className="relative overflow-hidden border border-border bg-surface mb-12"
-      aria-label={isDegradedProfile ? 'Archive access is temporarily unavailable' : 'Create a free account to continue reading'}
+      aria-label="Public archive data is incomplete"
     >
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-crimson/80 to-transparent" />
       <div className="p-6 sm:p-8">
         <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-3">
-          {isDegradedProfile ? 'Account Sync' : 'Reader Access'}
+          Public Archive
         </p>
         <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink leading-tight mb-4">
-          {isDegradedProfile ? 'Archive unlock is temporarily unavailable.' : 'Continue reading with a free account.'}
+          This chapter should be fully open.
         </h2>
         <p className="font-body text-base text-ink-muted leading-relaxed max-w-2xl">
-          {isDegradedProfile
-            ? `Your reader profile is saved locally, but the account backend is currently in degraded mode. The remaining ${remainingBlocks} blocks of this chapter and the protected source links will unlock again once server-backed account sync is restored.`
-            : `Veritas keeps the documentary record free to the public. Create a free reader account to unlock the remaining ${remainingBlocks} blocks of this chapter, keep your place, save bookmarks, and receive weekly source-first updates.`}
+          The main archive is not account-gated. If this notice appears, the chapter API is serving an incomplete payload and should be treated as a platform defect, not a reader access requirement. Try refreshing the page while the system recovers.
         </p>
 
         <div className="grid sm:grid-cols-3 gap-3 mt-6 mb-6">
           <div className="border border-border rounded-sm bg-parchment px-4 py-3">
-            <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Preview</p>
+            <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Expected limit</p>
             <p className="font-display text-2xl font-bold text-ink">{PREVIEW_BLOCK_LIMIT}</p>
-            <p className="font-sans text-xs text-ink-muted">blocks unlocked</p>
+            <p className="font-sans text-xs text-ink-muted">missing blocks allowed</p>
           </div>
           <div className="border border-border rounded-sm bg-parchment px-4 py-3">
             <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Remaining</p>
@@ -564,7 +560,7 @@ function ChapterAccessGate({
             <p className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-1">Sources</p>
             <p className="font-display text-2xl font-bold text-ink">{sourceCount}</p>
             <p className="font-sans text-xs text-ink-muted">
-              {isDegradedProfile ? 'references unlock when account sync returns' : 'references available after sign-in'}
+              public references expected
             </p>
           </div>
         </div>
@@ -575,21 +571,10 @@ function ChapterAccessGate({
             className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M12 4v16m8-8H4" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M4 4v6h6M20 20v-6h-6M5 19A9 9 0 0019 5" />
             </svg>
-            {isDegradedProfile ? 'Retry Sign-In' : 'Create Free Account'}
+            Refresh Chapter
           </button>
-          {!isDegradedProfile && (
-            <button
-              onClick={onUnlock}
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-crimson hover:text-crimson transition-colors"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M15 11V7a3 3 0 10-6 0v4m-1 0h8a2 2 0 012 2v5a2 2 0 01-2 2H8a2 2 0 01-2-2v-5a2 2 0 012-2z" />
-              </svg>
-              Log In To Continue
-            </button>
-          )}
           <Link
             to="/membership"
             className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink-muted font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-ink hover:text-ink transition-colors"
@@ -603,12 +588,8 @@ function ChapterAccessGate({
             variant="minimal"
             source="content_gate"
             contentInterest={chapter.id}
-            heading={isDegradedProfile ? 'Get source-first updates while account sync is restored.' : 'Get free access + weekly updates.'}
-            subtext={
-              isDegradedProfile
-                ? 'Your local reader profile is saved, but archive unlock is temporarily unavailable in degraded mode. Subscribe here if you want source-first updates while access is restored.'
-                : 'Create your free account above to unlock the rest of this chapter. If you just want source-first updates in your inbox, subscribe here.'
-            }
+            heading="Get source-first updates."
+            subtext="Accounts and email updates are optional. They keep readers connected without gating the public record."
           />
         </div>
       </div>
@@ -751,7 +732,7 @@ function DownloadButton({ chapter }: { chapter: Chapter }) {
     chapter.sources.forEach(s => {
       lines.push(`[${s.id}] ${s.text}${s.url ? ` — ${s.url}` : ''}`)
     })
-    lines.push('', '© 2026 Veritas Worldwide — veritasworldwide.com — Free reader account access')
+    lines.push('', '© 2026 Veritas Worldwide — veritasworldwide.com — Public archive access')
 
     const blob = new Blob([lines.join('\n')], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
@@ -823,11 +804,11 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
 
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
-  const { authMode, canAccessProtectedContent, isLoggedIn, openAuthModal } = useAuth()
+  const { isLoggedIn } = useAuth()
   const staticMetadata = chapterMeta.find(ch => ch.id === id)
   const [chapter, setChapter] = useState<LoadedChapter | null>(null)
   const [isLoading, setIsLoading] = useState(!staticMetadata)
-  const chapterScope = canAccessProtectedContent ? 'full' : 'public'
+  const chapterScope = 'full'
   
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
   const evidenceCounts = useMemo(() => chapter ? getEvidenceCounts(chapter) : { verified: 0, circumstantial: 0, disputed: 0 }, [chapter])
@@ -960,10 +941,9 @@ export default function ChapterPage() {
 
   const images = getChapterImages(chapter.id)
   const relatedChapters = getRelatedByKeywords(chapter)
-  const hasLockedContent = chapter.accessLevel === 'preview'
-  const isDegradedProfile = isLoggedIn && !canAccessProtectedContent && authMode === 'degraded'
-  const openArchiveAccessModal = () => {
-    openAuthModal({ mode: isDegradedProfile ? 'login' : 'signup' })
+  const hasLockedContent = chapter.accessLevel === 'preview' || chapter.content.length < chapter.totalBlocks
+  const refreshChapterPayload = () => {
+    window.location.reload()
   }
   const visibleBlocks = chapter.content
   const remainingBlocks = Math.max(chapter.totalBlocks - chapter.content.length, 0)
@@ -1042,7 +1022,7 @@ export default function ChapterPage() {
             ) : (
               <>
                 <PremiumAction
-                  onClick={openArchiveAccessModal}
+                  onClick={refreshChapterPayload}
                   label="Download"
                   icon={
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1051,7 +1031,7 @@ export default function ChapterPage() {
                   }
                 />
                 <PremiumAction
-                  onClick={openArchiveAccessModal}
+                  onClick={refreshChapterPayload}
                   label="PDF"
                   icon={
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1060,7 +1040,7 @@ export default function ChapterPage() {
                   }
                 />
                 <PremiumAction
-                  onClick={openArchiveAccessModal}
+                  onClick={refreshChapterPayload}
                   label="Print"
                   icon={
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1157,8 +1137,7 @@ export default function ChapterPage() {
               <ChapterAccessGate
                 chapter={chapter}
                 remainingBlocks={remainingBlocks}
-                isDegradedProfile={isDegradedProfile}
-                onUnlock={openArchiveAccessModal}
+                onUnlock={refreshChapterPayload}
               />
             )}
 
