@@ -39,17 +39,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  verify-israel-dossier:
+  verify-israel-dossier-runtime:
+    name: Verify dossier runtime
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 25
     env:
       DATABASE_URL: ''
       JWT_SECRET: ci-veritas-israel-dossier
       PORT: '4382'
-      SOURCE_LINK_CONCURRENCY: '6'
-      SOURCE_LINK_RETRIES: '3'
-      SOURCE_LINK_STRICT: '1'
-      SOURCE_LINK_TIMEOUT_MS: '45000'
 
     steps:
       - name: Checkout
@@ -64,14 +61,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache Playwright browser
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
+
       - name: Install Playwright browser
+        timeout-minutes: 10
         run: npx playwright install --with-deps chromium
 
       - name: Verify Israel dossier canonical data
         run: npm run verify:israel-dossier
-
-      - name: Verify source links
-        run: npm run verify:sources
 
       - name: Build production bundle
         run: npm run build
@@ -109,6 +112,36 @@ jobs:
             kill "$(cat /tmp/veritas-server.pid)" 2>/dev/null || true
           fi
 
+      - name: Dump server log on failure
+        if: failure()
+        run: cat /tmp/veritas-server.log || true
+
+  verify-source-links:
+    name: Verify source links
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      SOURCE_LINK_CONCURRENCY: '6'
+      SOURCE_LINK_RETRIES: '3'
+      SOURCE_LINK_STRICT: '1'
+      SOURCE_LINK_TIMEOUT_MS: '45000'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify source links
+        run: npm run verify:sources
+
       - name: Upload source verification reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -118,7 +151,3 @@ jobs:
             .claude-state/source-link-report.json
             .claude-state/source-link-report.md
           if-no-files-found: ignore
-
-      - name: Dump server log on failure
-        if: failure()
-        run: cat /tmp/veritas-server.log || true
