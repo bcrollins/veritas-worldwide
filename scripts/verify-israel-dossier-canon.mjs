@@ -286,7 +286,7 @@ for (const workbook of [
   ['incident-evidence-populated.csv', 'INC-P-001'],
   ['legal-status-populated.csv', 'LAW-P-001'],
   ['publishable-briefing-draft.md', 'Claim Boundary'],
-  ['public-briefing-chapter-draft.md', 'Paragraph source IDs'],
+  ['public-briefing-chapter-draft.md', 'Final publication lock'],
   ['manifest.json', 'Israel Dossier Populated Evidence Workbooks'],
 ]) {
   const [fileName, needle] = workbook

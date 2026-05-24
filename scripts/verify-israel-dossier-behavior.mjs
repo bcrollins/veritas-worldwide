@@ -371,9 +371,18 @@ async function runBriefingSurfaceCheck(browser) {
       page.waitForEvent('download'),
       page.getByRole('link', { name: /Download chapter draft/i }).first().click(),
     ])
-    const chapterDraftResult = await saveAndMeasureDownload(chapterDraftDownload, /^israel-dossier-public-briefing-chapter-draft\.md$/, 1000)
+    const chapterDraftResult = await saveAndMeasureDownload(chapterDraftDownload, /^israel-dossier-public-briefing-chapter-draft\.md$/, 9000)
     const chapterDraftText = fs.readFileSync(chapterDraftResult.filePath, 'utf8')
-    for (const needle of ['Source rows: SRC-P-001', 'Paragraph source IDs: AID-P-003, AID-P-004', 'Unsafe wording to avoid', 'Open questions']) {
+    for (const needle of [
+      'Source rows: SRC-P-001',
+      'Paragraph source IDs: AID-P-003, AID-P-004',
+      'Final publication lock',
+      'No causation claim without delivery, end-use, and incident-chain records',
+      'A warrant is a procedural record, not a final adjudication of guilt',
+      'The row ID is not decoration; it is the audit trail',
+      'Unsafe wording to avoid',
+      'Open questions',
+    ]) {
       assert(chapterDraftText.includes(needle), `chapter draft missing ${needle}`)
     }
 
