@@ -162,7 +162,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 2100000,
         year: '2013-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098'
+        url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085'
       }
     ],
     policyActions: [
@@ -194,7 +194,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['U.S. Senator (R-TX) 2013-present', 'Solicitor General of Texas', 'Federal Trade Commission attorney'],
     websites: [
       { label: 'Senate Website', url: 'https://www.cruz.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085' }
     ]
   },
   {
@@ -439,7 +439,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 3400000,
         year: '1999-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148'
+        url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093'
       }
     ],
     policyActions: [
@@ -471,7 +471,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['Senate Majority Leader 2021-present', 'U.S. Senator (D-NY) 1999-present', 'U.S. Representative (D-NY)', 'New York Assembly member'],
     websites: [
       { label: 'Senate Website', url: 'https://www.schumer.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093' }
     ]
   },
   {
@@ -492,7 +492,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 1800000,
         year: '2007-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197'
+        url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=N00007360'
       }
     ],
     policyActions: [
@@ -517,7 +517,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['Speaker of the House 2019-2023, 2007-2011', 'U.S. Representative (D-CA) 1987-2023', 'House Minority Leader'],
     websites: [
       { label: 'Official Website', url: 'https://pelosi.house.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=N00007360' }
     ]
   },
   {
@@ -538,7 +538,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 2900000,
         year: '1985-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355'
+        url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=N00003389'
       }
     ],
     policyActions: [
@@ -563,7 +563,7 @@ export const PROFILES: PowerProfile[] = [
     career: ['Senate Republican Leader 2007-present', 'U.S. Senator (R-KY) 1985-present', 'U.S. Representative (R-KY)'],
     websites: [
       { label: 'Senate Website', url: 'https://www.mcconnell.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355' }
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=N00003389' }
     ]
   },
   {
@@ -1288,7 +1288,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 1412000,
         year: '2017-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583'
+        url: 'https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00038734'
       }
     ],
     policyActions: [
@@ -1312,7 +1312,7 @@ export const PROFILES: PowerProfile[] = [
       {
         claim: 'Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583',
+        url: 'https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00038734',
         tier: 'verified',
         date: '2024'
       }
@@ -1465,7 +1465,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 478000,
         year: '2021-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895'
+        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044346'
       }
     ],
     policyActions: [
@@ -1496,7 +1496,7 @@ export const PROFILES: PowerProfile[] = [
       {
         claim: 'Received $478K from pro-Israel PACs in first two terms',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895',
+        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044346',
         tier: 'verified',
         date: '2024'
       }
@@ -3254,7 +3254,7 @@ export const PROFILES: PowerProfile[] = [
         amount: 384000,
         year: '2017-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00042398'
+        url: 'https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106'
       }
     ],
     policyActions: [

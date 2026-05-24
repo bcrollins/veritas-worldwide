@@ -1,31 +1,31 @@
 # Source Link Trends
 
-Generated: 2026-04-22T13:48:29.353Z
-Current report: 2026-04-22T13:48:29.340Z
-Previous report: 2026-04-22T12:27:52.575Z
+Generated: 2026-05-24T05:08:27.451Z
+Current report: 2026-05-24T05:08:27.440Z
+Previous report: 2026-05-24T05:05:26.199Z
 
 ## Summary Delta
 
-- referenceCount: 804 (-19 from 823)
-- uniqueUrlCount: 455 (-1 from 456)
-- ok: 400 (+1 from 399)
+- referenceCount: 804 (0 from 804)
+- uniqueUrlCount: 455 (0 from 455)
+- ok: 385 (+7 from 378)
 - redirect: 0 (0 from 0)
-- restricted: 55 (-2 from 57)
+- restricted: 69 (0 from 69)
 - transient: 0 (0 from 0)
-- missing: 0 (0 from 0)
+- missing: 0 (-7 from 7)
 - failed: 0 (0 from 0)
 - invalid: 0 (0 from 0)
-- archived: 0 (0 from 0)
+- archived: 1 (0 from 1)
 
 ## Movement
 
-- newUrls: 1
-- removedUrls: 2
-- statusChanges: 3
+- newUrls: 7
+- removedUrls: 7
+- statusChanges: 0
 - newHardFailures: 0
-- resolvedHardFailures: 0
-- newRestricted: 1
-- resolvedRestricted: 3
+- resolvedHardFailures: 7
+- newRestricted: 0
+- resolvedRestricted: 0
 - newArchived: 0
 - newTransient: 0
 - resolvedTransient: 0
@@ -37,11 +37,17 @@ No new hard failures.
 
 ## Resolved Hard Failures
 
-No resolved hard failures.
+- [missing -> removed] https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148 | OpenSecrets | attempts: 2
+- [missing -> removed] https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583 | OpenSecrets ; Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+ | attempts: 2
+- [missing -> removed] https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00042398 | OpenSecrets | attempts: 2
+- [missing -> removed] https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355 | OpenSecrets | attempts: 2
+- [missing -> removed] https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197 | OpenSecrets | attempts: 2
+- [missing -> removed] https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895 | OpenSecrets ; Received $478K from pro-Israel PACs in first two terms | attempts: 2
+- [missing -> removed] https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098 | OpenSecrets | attempts: 2
 
 ## New Restricted / Bot-Blocked URLs
 
-- [restricted] https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza | Operation Protective Edge — 2,251 Palestinians Killed | attempts: 1
+No new restricted URLs.
 
 ## Archive-Backed Recoveries
 
@@ -61,20 +67,15 @@ No retry-heavy URLs.
 
 ## Status Changes
 
-- [restricted -> ok] https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/ | 972 Magazine — Survivor testimonies | attempts: 1
-- [restricted -> ok] https://www.citadel.com/ | I am deeply committed to defending democratic values and free markets. | attempts: 1
-- [ok -> restricted] https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza | Operation Protective Edge — 2,251 Palestinians Killed | attempts: 1
+No status changes.
 
 ## Restricted Domain Delta
 
-- www.972mag.com: 0 (-1 from 1)
-- www.citadel.com: 0 (-1 from 1)
-- www.ohchr.org: 1 (+1 from 0)
-- www.unicef.org: 0 (-1 from 1)
+No restricted-domain delta.
 
 ## Hard-Failure Domain Delta
 
-No hard-failure domain delta.
+- www.opensecrets.org: 0 (-7 from 7)
 
 ## Transient Domain Delta
 
@@ -82,9 +83,20 @@ No transient-domain delta.
 
 ## New URLs
 
-- [ok] https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf | HUM-002,"21,289","Children killed in Gaza","UNICEF","Reported health-sector figures","7 Oct 2023-3 Feb 2026","humanitarian situation upda... ; SRC-003,source-file,"UNICEF reported 21,289 children killed in Gaza through 3 February 2026.",humanitarian figure,"UNICEF State of Palest... ; HUM-P-002,"21,289","Children killed in Gaza","UNICEF","Reported health-sector figures","7 Oct 2023-3 Feb 2026","humanitarian situation up... | attempts: 1
+- [ok] https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093 | OpenSecrets | attempts: 1
+- [ok] https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00038734 | OpenSecrets ; Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+ | attempts: 1
+- [ok] https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106 | OpenSecrets | attempts: 1
+- [ok] https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=N00003389 | OpenSecrets | attempts: 1
+- [ok] https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=N00007360 | OpenSecrets | attempts: 1
+- [ok] https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044346 | OpenSecrets ; Received $478K from pro-Israel PACs in first two terms | attempts: 1
+- [ok] https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085 | OpenSecrets | attempts: 1
 
 ## Removed URLs
 
-- [ok] https://undocs.org/S/RES/2334(2016) | UNSC Resolution 2334 | attempts: 1
-- [restricted] https://www.unicef.org/media/170956/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf | UNICEF child fatality figure ; UNICEF child injury figure ; HUM-002,"21,289","Children killed in Gaza","UNICEF","Reported health-sector figures","7 Oct 2023-3 Feb 2026","humanitarian situation upda... | attempts: 1
+- [missing] https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148 | OpenSecrets | attempts: 2
+- [missing] https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583 | OpenSecrets ; Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+ | attempts: 2
+- [missing] https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00042398 | OpenSecrets | attempts: 2
+- [missing] https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355 | OpenSecrets | attempts: 2
+- [missing] https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197 | OpenSecrets | attempts: 2
+- [missing] https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895 | OpenSecrets ; Received $478K from pro-Israel PACs in first two terms | attempts: 2
+- [missing] https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098 | OpenSecrets | attempts: 2
