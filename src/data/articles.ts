@@ -769,7 +769,7 @@ export const articles: Article[] =
         "id": 6,
         "title": "House Adopts Defense Bill With Pro-Israel Provisions",
         "publisher": "AIPAC",
-        "url": "https://www.aipac.org/resources/house-ndaa-2026",
+        "url": "https://web.archive.org/web/20260301202801/https://www.aipac.org/resources/house-ndaa-2026",
         "date": "2026",
         "type": "primary"
       }

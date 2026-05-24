@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-24T05:08:27.451Z",
-  "currentGeneratedAt": "2026-05-24T05:08:27.440Z",
-  "previousGeneratedAt": "2026-05-24T05:05:26.199Z",
+  "generatedAt": "2026-05-24T05:21:04.373Z",
+  "currentGeneratedAt": "2026-05-24T05:21:04.365Z",
+  "previousGeneratedAt": "2026-05-24T05:19:49.482Z",
   "summaryDelta": {
     "referenceCount": {
       "current": 804,
@@ -14,9 +14,9 @@
       "delta": 0
     },
     "ok": {
-      "current": 385,
-      "previous": 378,
-      "delta": 7
+      "current": 386,
+      "previous": 385,
+      "delta": 1
     },
     "redirect": {
       "current": 0,
@@ -35,8 +35,8 @@
     },
     "missing": {
       "current": 0,
-      "previous": 7,
-      "delta": -7
+      "previous": 1,
+      "delta": -1
     },
     "failed": {
       "current": 0,
@@ -49,17 +49,17 @@
       "delta": 0
     },
     "archived": {
-      "current": 1,
-      "previous": 1,
+      "current": 0,
+      "previous": 0,
       "delta": 0
     }
   },
   "totals": {
-    "newUrls": 7,
-    "removedUrls": 7,
+    "newUrls": 1,
+    "removedUrls": 1,
     "statusChanges": 0,
     "newHardFailures": 0,
-    "resolvedHardFailures": 7,
+    "resolvedHardFailures": 1,
     "newRestricted": 0,
     "resolvedRestricted": 0,
     "newArchived": 0,
@@ -69,8 +69,8 @@
   },
   "newUrls": [
     {
-      "url": "https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093",
-      "domain": "www.opensecrets.org",
+      "url": "https://web.archive.org/web/20260301202801/https://www.aipac.org/resources/house-ndaa-2026",
+      "domain": "web.archive.org",
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
@@ -78,115 +78,17 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "OpenSecrets"
+        "House Adopts Defense Bill With Pro-Israel Provisions"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00038734",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets",
-        "Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=N00003389",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=N00007360",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044346",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets",
-        "Received $478K from pro-Israel PACs in first two terms"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085",
-      "domain": "www.opensecrets.org",
-      "status": "ok",
-      "probeStatus": "ok",
-      "httpStatus": 200,
-      "attempts": 1,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/articles.ts"
       ]
     }
   ],
   "removedUrls": [
     {
-      "url": "https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148",
-      "domain": "www.opensecrets.org",
+      "url": "https://www.aipac.org/resources/house-ndaa-2026",
+      "domain": "www.aipac.org",
       "status": "missing",
       "probeStatus": "missing",
       "httpStatus": 404,
@@ -194,108 +96,10 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "OpenSecrets"
+        "House Adopts Defense Bill With Pro-Israel Provisions"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets",
-        "Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00042398",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets",
-        "Received $478K from pro-Israel PACs in first two terms"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ]
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/articles.ts"
       ]
     }
   ],
@@ -303,8 +107,8 @@
   "newHardFailures": [],
   "resolvedHardFailures": [
     {
-      "url": "https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148",
-      "domain": "www.opensecrets.org",
+      "url": "https://www.aipac.org/resources/house-ndaa-2026",
+      "domain": "www.aipac.org",
       "status": "missing",
       "probeStatus": "missing",
       "httpStatus": 404,
@@ -312,120 +116,10 @@
       "transientErrorCount": 0,
       "archiveUrl": null,
       "referenceLabels": [
-        "OpenSecrets"
+        "House Adopts Defense Bill With Pro-Israel Provisions"
       ],
       "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets",
-        "Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00042398",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets",
-        "Received $478K from pro-Israel PACs in first two terms"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
-      ],
-      "previousStatus": "missing",
-      "currentStatus": "removed"
-    },
-    {
-      "url": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098",
-      "domain": "www.opensecrets.org",
-      "status": "missing",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "attempts": 2,
-      "transientErrorCount": 0,
-      "archiveUrl": null,
-      "referenceLabels": [
-        "OpenSecrets"
-      ],
-      "referenceFiles": [
-        "src/data/profileData.ts"
+        "src/data/articles.ts"
       ],
       "previousStatus": "missing",
       "currentStatus": "removed"
@@ -440,10 +134,10 @@
   "domainDeltas": {
     "hardFailures": [
       {
-        "domain": "www.opensecrets.org",
+        "domain": "www.aipac.org",
         "current": 0,
-        "previous": 7,
-        "delta": -7
+        "previous": 1,
+        "delta": -1
       }
     ],
     "restricted": [],

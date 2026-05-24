@@ -1,48 +1,22 @@
 {
-  "generatedAt": "2026-05-24T05:08:27.440Z",
-  "timeoutMs": 15000,
-  "concurrency": 12,
+  "generatedAt": "2026-05-24T05:21:04.365Z",
+  "timeoutMs": 45000,
+  "concurrency": 6,
   "strictMode": true,
   "summary": {
     "referenceCount": 804,
     "uniqueUrlCount": 455,
-    "ok": 385,
+    "ok": 386,
     "redirect": 0,
     "restricted": 69,
     "transient": 0,
     "missing": 0,
     "failed": 0,
     "invalid": 0,
-    "archived": 1
+    "archived": 0
   },
   "topFailingDomains": [],
   "results": [
-    {
-      "url": "https://www.aipac.org/resources/house-ndaa-2026",
-      "domain": "www.aipac.org",
-      "status": "archived",
-      "probeStatus": "missing",
-      "httpStatus": 404,
-      "finalUrl": "https://www.aipac.org/resources/house-ndaa-2026",
-      "redirected": false,
-      "checkedWith": "GET",
-      "attempts": 2,
-      "transientErrors": [],
-      "error": null,
-      "archive": {
-        "available": true,
-        "url": "http://web.archive.org/web/20260301202801/https://www.aipac.org/resources/house-ndaa-2026",
-        "timestamp": "20260301202801",
-        "status": "200"
-      },
-      "referenceCount": 1,
-      "referenceLabels": [
-        "House Adopts Defense Bill With Pro-Israel Provisions"
-      ],
-      "referenceFiles": [
-        "src/data/articles.ts"
-      ]
-    },
     {
       "url": "https://2009-2017.state.gov/r/pa/prs/ps/2016/09/261987.htm",
       "domain": "2009-2017.state.gov",
@@ -2396,6 +2370,27 @@
       ],
       "referenceFiles": [
         "src/data/profileData.ts"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20260301202801/https://www.aipac.org/resources/house-ndaa-2026",
+      "domain": "web.archive.org",
+      "status": "ok",
+      "probeStatus": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://web.archive.org/web/20260301202801/https://www.aipac.org/resources/house-ndaa-2026",
+      "redirected": false,
+      "checkedWith": "HEAD",
+      "attempts": 1,
+      "transientErrors": [],
+      "error": null,
+      "archive": null,
+      "referenceCount": 1,
+      "referenceLabels": [
+        "House Adopts Defense Bill With Pro-Israel Provisions"
+      ],
+      "referenceFiles": [
+        "src/data/articles.ts"
       ]
     },
     {
@@ -7889,7 +7884,7 @@
       "status": "ok",
       "probeStatus": "ok",
       "httpStatus": 200,
-      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=28b16d6e-fb17-4ea0-b003-a3f8a1dcd0f5",
+      "finalUrl": "https://link.springer.com/brands/springer?error=cookies_not_supported&code=a8b20b60-c642-49fc-b261-f24b3bccf909",
       "redirected": true,
       "checkedWith": "HEAD",
       "attempts": 1,

@@ -1,29 +1,29 @@
 # Source Link Trends
 
-Generated: 2026-05-24T05:08:27.451Z
-Current report: 2026-05-24T05:08:27.440Z
-Previous report: 2026-05-24T05:05:26.199Z
+Generated: 2026-05-24T05:21:04.373Z
+Current report: 2026-05-24T05:21:04.365Z
+Previous report: 2026-05-24T05:19:49.482Z
 
 ## Summary Delta
 
 - referenceCount: 804 (0 from 804)
 - uniqueUrlCount: 455 (0 from 455)
-- ok: 385 (+7 from 378)
+- ok: 386 (+1 from 385)
 - redirect: 0 (0 from 0)
 - restricted: 69 (0 from 69)
 - transient: 0 (0 from 0)
-- missing: 0 (-7 from 7)
+- missing: 0 (-1 from 1)
 - failed: 0 (0 from 0)
 - invalid: 0 (0 from 0)
-- archived: 1 (0 from 1)
+- archived: 0 (0 from 0)
 
 ## Movement
 
-- newUrls: 7
-- removedUrls: 7
+- newUrls: 1
+- removedUrls: 1
 - statusChanges: 0
 - newHardFailures: 0
-- resolvedHardFailures: 7
+- resolvedHardFailures: 1
 - newRestricted: 0
 - resolvedRestricted: 0
 - newArchived: 0
@@ -37,13 +37,7 @@ No new hard failures.
 
 ## Resolved Hard Failures
 
-- [missing -> removed] https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148 | OpenSecrets | attempts: 2
-- [missing -> removed] https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583 | OpenSecrets ; Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+ | attempts: 2
-- [missing -> removed] https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00042398 | OpenSecrets | attempts: 2
-- [missing -> removed] https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355 | OpenSecrets | attempts: 2
-- [missing -> removed] https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197 | OpenSecrets | attempts: 2
-- [missing -> removed] https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895 | OpenSecrets ; Received $478K from pro-Israel PACs in first two terms | attempts: 2
-- [missing -> removed] https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098 | OpenSecrets | attempts: 2
+- [missing -> removed] https://www.aipac.org/resources/house-ndaa-2026 | House Adopts Defense Bill With Pro-Israel Provisions | attempts: 2
 
 ## New Restricted / Bot-Blocked URLs
 
@@ -75,7 +69,7 @@ No restricted-domain delta.
 
 ## Hard-Failure Domain Delta
 
-- www.opensecrets.org: 0 (-7 from 7)
+- www.aipac.org: 0 (-1 from 1)
 
 ## Transient Domain Delta
 
@@ -83,20 +77,8 @@ No transient-domain delta.
 
 ## New URLs
 
-- [ok] https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093 | OpenSecrets | attempts: 1
-- [ok] https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00038734 | OpenSecrets ; Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+ | attempts: 1
-- [ok] https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106 | OpenSecrets | attempts: 1
-- [ok] https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=N00003389 | OpenSecrets | attempts: 1
-- [ok] https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=N00007360 | OpenSecrets | attempts: 1
-- [ok] https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044346 | OpenSecrets ; Received $478K from pro-Israel PACs in first two terms | attempts: 1
-- [ok] https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085 | OpenSecrets | attempts: 1
+- [ok] https://web.archive.org/web/20260301202801/https://www.aipac.org/resources/house-ndaa-2026 | House Adopts Defense Bill With Pro-Israel Provisions | attempts: 1
 
 ## Removed URLs
 
-- [missing] https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=S000148 | OpenSecrets | attempts: 2
-- [missing] https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040583 | OpenSecrets ; Among highest Democratic Senate recipients of pro-Israel PAC money at $1.4M+ | attempts: 2
-- [missing] https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00042398 | OpenSecrets | attempts: 2
-- [missing] https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=M000355 | OpenSecrets | attempts: 2
-- [missing] https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=P000197 | OpenSecrets | attempts: 2
-- [missing] https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00045895 | OpenSecrets ; Received $478K from pro-Israel PACs in first two terms | attempts: 2
-- [missing] https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=C001098 | OpenSecrets | attempts: 2
+- [missing] https://www.aipac.org/resources/house-ndaa-2026 | House Adopts Defense Bill With Pro-Israel Provisions | attempts: 2

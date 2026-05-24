@@ -1,23 +1,19 @@
 # Source Link Report
 
-Generated: 2026-05-24T05:08:27.440Z
+Generated: 2026-05-24T05:21:04.365Z
 
 ## Summary
 
 - References scanned: 804
 - Unique URLs: 455
-- OK: 385
+- OK: 386
 - Redirected: 0
 - Restricted: 69
 - Transient / retry-limited: 0
 - Missing: 0
 - Failed: 0
 - Invalid: 0
-- Archive fallbacks found: 1
-
-## Archive-Backed Fallbacks
-
-- https://www.aipac.org/resources/house-ndaa-2026 | live check: missing | archive: http://web.archive.org/web/20260301202801/https://www.aipac.org/resources/house-ndaa-2026 | House Adopts Defense Bill With Pro-Israel Provisions
+- Archive fallbacks found: 0
 
 ## Restricted / Bot-Blocked
 
