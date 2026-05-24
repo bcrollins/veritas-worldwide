@@ -1,0 +1,248 @@
+{
+  "checkedAt": "2026-05-24T05:24:03.338Z",
+  "baseUrl": "https://veritasworldwide.com",
+  "status": "pass",
+  "build": {
+    "version": "1.0.0",
+    "commit": "83e2451ae18a820ffb7e30f5495f6fb1469a2658",
+    "commitShort": "83e2451ae18a",
+    "deploymentId": "b27d1e14-8aa7-427e-9968-52bc2c3bde82",
+    "environment": "production",
+    "prerenderedRouteCount": 289
+  },
+  "auth": {
+    "available": true,
+    "mode": "database",
+    "anonymousAuthStatus": 401,
+    "anonymousDownloadStatus": 200
+  },
+  "search": {
+    "query": "federal reserve",
+    "scope": "full",
+    "totalResults": 19,
+    "firstResultChapterId": "chapter-25"
+  },
+  "analytics": {
+    "lifetime": 3520,
+    "today": 148,
+    "signups": 8,
+    "payments": 0
+  },
+  "prerenderRoutes": [
+    {
+      "path": "/read",
+      "label": "Read route prerender",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "marker": "Read The Record | Veritas Worldwide",
+      "markerFound": true
+    },
+    {
+      "path": "/chapter/chapter-1",
+      "label": "Chapter route prerender",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "marker": "The Birth of Central Banking",
+      "markerFound": true
+    },
+    {
+      "path": "/institute",
+      "label": "Institute landing prerender",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "marker": "Veritas Institute | Practical Skills Catalog, Guides, and Field Manual",
+      "markerFound": true
+    },
+    {
+      "path": "/institute/book",
+      "label": "Institute field manual prerender",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "marker": "Field Manual | Veritas Institute",
+      "markerFound": true
+    }
+  ],
+  "checks": [
+    {
+      "ok": true,
+      "label": "Build info route responds",
+      "detail": "GET /api/build-info returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Build info reports prerender coverage",
+      "detail": "prerenderedRouteCount=289"
+    },
+    {
+      "ok": true,
+      "label": "Auth status route responds",
+      "detail": "GET /api/auth/status returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Auth status exposes availability",
+      "detail": "available=true"
+    },
+    {
+      "ok": true,
+      "label": "Auth status exposes a known mode",
+      "detail": "mode=database"
+    },
+    {
+      "ok": true,
+      "label": "Anonymous auth probe returns a guarded status",
+      "detail": "GET /api/auth/me returned 401 while mode=database"
+    },
+    {
+      "ok": true,
+      "label": "Public PDF download is readable for signed-out probes",
+      "detail": "GET /api/downloads/the-record.pdf returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Public chapter route responds",
+      "detail": "GET /api/chapters/chapter-1 returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Public chapter payload returns the full reader body",
+      "detail": "accessLevel=full"
+    },
+    {
+      "ok": true,
+      "label": "Public chapter payload is not block-limited",
+      "detail": "content=25 preview=0 total=25"
+    },
+    {
+      "ok": true,
+      "label": "Public chapter payload exposes source rows",
+      "detail": "sources=8"
+    },
+    {
+      "ok": true,
+      "label": "Public chapter payload exposes chapter type metadata",
+      "detail": "chapterType=investigation"
+    },
+    {
+      "ok": true,
+      "label": "Public chapter payload exposes evidence tier metadata",
+      "detail": "availableEvidenceTiers=verified, circumstantial"
+    },
+    {
+      "ok": true,
+      "label": "Public chapter payload exposes evidence counts metadata",
+      "detail": "evidenceCounts={\"verified\":1,\"circumstantial\":2,\"disputed\":0}"
+    },
+    {
+      "ok": true,
+      "label": "Anonymous search route responds",
+      "detail": "GET /api/search returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Anonymous search uses full public reader scope",
+      "detail": "scope=full"
+    },
+    {
+      "ok": true,
+      "label": "Anonymous search returns results for a stable investigative query",
+      "detail": "results=19"
+    },
+    {
+      "ok": true,
+      "label": "Anonymous search results expose chapter type metadata",
+      "detail": "chapterType=investigation"
+    },
+    {
+      "ok": true,
+      "label": "Anonymous search results expose full public access",
+      "detail": "accessLevel=full"
+    },
+    {
+      "ok": true,
+      "label": "Anonymous search results expose evidence tier metadata",
+      "detail": "availableEvidenceTiers=verified, circumstantial, disputed"
+    },
+    {
+      "ok": true,
+      "label": "Analytics snapshot route responds",
+      "detail": "GET /api/analytics/snapshot returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Analytics lifetime stays non-negative",
+      "detail": "lifetime=3520"
+    },
+    {
+      "ok": true,
+      "label": "Analytics today count stays non-negative",
+      "detail": "today=148"
+    },
+    {
+      "ok": true,
+      "label": "Analytics funnel exposes signup totals",
+      "detail": "signups=8"
+    },
+    {
+      "ok": true,
+      "label": "Read route prerender responds",
+      "detail": "GET /read returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Read route prerender returns HTML",
+      "detail": "content-type=text/html; charset=utf-8"
+    },
+    {
+      "ok": true,
+      "label": "Read route prerender contains its route-specific marker",
+      "detail": "marker=Read The Record | Veritas Worldwide"
+    },
+    {
+      "ok": true,
+      "label": "Chapter route prerender responds",
+      "detail": "GET /chapter/chapter-1 returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Chapter route prerender returns HTML",
+      "detail": "content-type=text/html; charset=utf-8"
+    },
+    {
+      "ok": true,
+      "label": "Chapter route prerender contains its route-specific marker",
+      "detail": "marker=The Birth of Central Banking"
+    },
+    {
+      "ok": true,
+      "label": "Institute landing prerender responds",
+      "detail": "GET /institute returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Institute landing prerender returns HTML",
+      "detail": "content-type=text/html; charset=utf-8"
+    },
+    {
+      "ok": true,
+      "label": "Institute landing prerender contains its route-specific marker",
+      "detail": "marker=Veritas Institute | Practical Skills Catalog, Guides, and Field Manual"
+    },
+    {
+      "ok": true,
+      "label": "Institute field manual prerender responds",
+      "detail": "GET /institute/book returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Institute field manual prerender returns HTML",
+      "detail": "content-type=text/html; charset=utf-8"
+    },
+    {
+      "ok": true,
+      "label": "Institute field manual prerender contains its route-specific marker",
+      "detail": "marker=Field Manual | Veritas Institute"
+    }
+  ],
+  "failures": []
+}

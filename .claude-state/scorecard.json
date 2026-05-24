@@ -1,14 +1,14 @@
 {
-  "run": 31,
-  "date": "2026-04-22",
+  "run": 32,
+  "date": "2026-05-24",
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.9,
+      "composite": 9.95,
       "previous": 9.9,
-      "delta": 0,
-      "status": "Local locator/source-copy slice verified and awaiting deployment: /israel-dossier/briefing now has reference locators, archive lookup links, source-copy status, corrected UNICEF 178696 source URLs in canon/templates/workbooks, mobile-contained source-row tables, strict source-link verification across 455 unique URLs, local behavior verification, full primary viewport matrix, and degraded-network spot checks. Production still serves commit 6e3ab5f until the next push/deploy advances.",
-      "plus_half_requires": "Push and live-verify the locator/source-copy slice, then expand the downloadable public chapter into fuller prose while preserving source-row IDs, proof boundaries, legal posture, and unsafe-wording warnings."
+      "delta": 0.05,
+      "status": "live on 83e2451ae18a: locator/source-copy slice remains live, the public briefing chapter draft is expanded and guarded by behavior/canon tests, the removed AIPAC source is archive-pinned, all GitHub Actions verification lanes passed, and live release/platform/public-access/dossier behavior probes passed on deployment b27d1e14-8aa7-427e-9968-52bc2c3bde82",
+      "plus_half_requires": "Add exact paragraph/page locators and archived source-copy manifests for every remaining public briefing claim, then add an operator-visible monitor that alerts on source-link, audit, and dossier behavior regressions."
     },
     {
       "feature": "Home / Front Page",
@@ -44,11 +44,11 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.2,
-      "previous": 9.1,
+      "composite": 9.3,
+      "previous": 9.2,
       "delta": 0.1,
-      "status": "strict source-link CI passed on run 24771280086 with 448 unique URLs, 364 OK, 84 restricted/bot-blocked, 0 transient blockers, 0 missing/failed/invalid, and trend artifacts for restricted-domain movement, archive recoveries, retry-heavy URLs, and hard-failure deltas",
-      "plus_half_requires": "Reduce dependence on bot-blocked third-party pages by capturing more first-party or archive-backed equivalents for the restricted set, then add longer-term trend baselines so recurring transient/restricted domains can be prioritized by frequency."
+      "status": "strict source-link verification now passes after current OpenSecrets member URLs and the archive-backed AIPAC replacement; the May 24 CI Source Links workflow passed for 455 unique URLs with 0 actionable failures",
+      "plus_half_requires": "Add archived source-copy manifests and locator fields for high-value restricted/bot-blocked sources so publication evidence remains inspectable even when third-party hosts block automated probes."
     },
     {
       "feature": "Search",
@@ -84,11 +84,11 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 8.3,
-      "previous": 5.6,
-      "delta": 2.7,
-      "status": "improved",
-      "plus_half_requires": "Hook `/api/build-info` and the live `X-Veritas-*` headers into an operator workflow or dashboard so release identity is checked automatically instead of by manual probing."
+      "composite": 8.8,
+      "previous": 8.3,
+      "delta": 0.5,
+      "status": "improved; release-health and platform-health reports now capture live commit 83e2451ae18a, deployment b27d1e14-8aa7-427e-9968-52bc2c3bde82, release headers, build-info assets, prerender route coverage, auth mode, public access, analytics counts, and trust-route probes",
+      "plus_half_requires": "Wire the release/platform/source/audit probes into a scheduled operator workflow with notifications and retained trend history instead of relying on manual post-deploy checks."
     },
     {
       "feature": "Public Analytics",
@@ -110,19 +110,19 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 9.2,
-      "previous": 8.8,
-      "delta": 0.4,
-      "status": "improved",
-      "plus_half_requires": "Validate Search Console coverage for the rebuilt institute route family plus the new /llms.txt and /veritas-institute.md assets, then confirm live crawl/index behavior after the stale deploy incident is resolved."
+      "score": 9.25,
+      "previous": 9.2,
+      "delta": 0.05,
+      "status": "improved; sitemap is refreshed after Institute/profile route generation, live prerendered route count is 289, and public briefing/dossier crawl surfaces remain live-verified on the current production SHA",
+      "plus_half_requires": "Confirm Search Console indexing for the dossier, briefing, Institute, llms.txt, and refreshed sitemap entries, then add crawler-diff monitoring for route-count regressions."
     },
     {
       "area": "Analytics & Measurement",
-      "score": 8.4,
-      "previous": 8.2,
-      "delta": 0.2,
-      "status": "improved",
-      "plus_half_requires": "Verify the live title normalization and durability path after deploy, then map GA4 plus HubSpot lifecycle stages into a public or operator-visible conversion dashboard with route-specific attribution that does not collapse distinct pages into shell titles."
+      "score": 8.5,
+      "previous": 8.4,
+      "delta": 0.1,
+      "status": "improved; release/platform health reports now record live analytics lifetime and signup counts alongside build identity, public access, and prerender checks",
+      "plus_half_requires": "Expose those live health and funnel metrics in an operator dashboard with dated trend lines and alert thresholds."
     },
     {
       "area": "Monetization Infrastructure",
@@ -149,7 +149,8 @@
       "Auth entry points now preserve intended archive destinations without defaulting every flow to signup mode.",
       "Bearer token auth now requires a live, unexpired session row, so logout and other session invalidations revoke protected access instead of leaving tokens valid until JWT expiry.",
       "Reader surfaces now reload scope-appropriate chapter payloads when auth state changes, preventing stale full-content payloads from lingering after logout or requiring a manual refresh after signup.",
-      "A repo-native auth smoke runner now exercises anonymous preview, register, login, full chapter unlock, source-only search, protected PDF download, logout revocation, and post-logout downgrade against the target environment."
+      "A repo-native auth smoke runner now exercises anonymous preview, register, login, full chapter unlock, source-only search, protected PDF download, logout revocation, and post-logout downgrade against the target environment.",
+      "Patched vulnerable transitive packages and verified npm audit reports 0 info/low/moderate/high/critical vulnerabilities on May 24, 2026."
     ],
     "p0_open": [],
     "new_p0": []

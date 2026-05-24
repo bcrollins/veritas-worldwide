@@ -1,6 +1,6 @@
 {
-  "run": 31,
-  "date": "2026-04-22",
+  "run": 32,
+  "date": "2026-05-24",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
     "Confirmed a live auth boundary defect: logout deleted session rows, but authenticateToken only trusted JWT verification plus the users table, so revoked tokens could still unlock protected content until expiry.",
@@ -114,14 +114,23 @@
     "Verified the local briefing source-row expansion with `npx tsc --noEmit`, `npm run build` generating 289 prerendered routes and 381 sitemap URLs, `npm run verify:bundle`, `npm run verify:israel-dossier`, strict `SOURCE_LINK_STRICT=1 SOURCE_LINK_TIMEOUT_MS=45000 SOURCE_LINK_CONCURRENCY=6 SOURCE_LINK_RETRIES=3 npm run verify:sources` across 456 unique URLs with 0 actionable failures, `npm run verify:israel-dossier:behavior -- http://127.0.0.1:4382`, a full primary viewport matrix for `/israel-dossier/briefing`, and slow-3G/blocked-image resilience checks.",
     "Pushed commit `6e3ab5f87c9c91441de543fb2800e0491bb1c457` on April 22, 2026 and verified production deployment `e4bb7bbc-d009-431a-b76b-e28381178915`: all five GitHub Actions workflows passed, /api/build-info reported the new commit, `npm run verify:israel-dossier:behavior -- https://veritasworldwide.com` passed, the live primary viewport matrix passed for /israel-dossier/briefing across iPhone SE, iPhone 15/16, iPhone 17 Pro Max, iPad 10th gen, desktop 1440, and desktop 1920, crawler metadata returned article OG tags, and the live Markdown chapter draft includes paragraph-level source IDs for AID-P-004, INC-P-004, and LAW-P-002.",
     "Built the Israel dossier briefing locator/source-copy slice locally on April 22, 2026: corrected the stale UNICEF media id from 170956 to 178696 across the canon, source-ledger template, humanitarian template, populated source ledger, and populated humanitarian workbook; added reference locators, derived archive lookup links, and source-copy status to every briefing source-row table; and constrained the source-row table layout with min-w-0 so mobile uses an internal scroll region instead of clipped evidence columns.",
-    "Verified the local locator/source-copy slice with `npx tsc --noEmit`, `npm run build` generating 289 prerendered routes and 381 sitemap URLs, `npm run verify:bundle`, `npm run verify:israel-dossier`, strict `SOURCE_LINK_STRICT=1 SOURCE_LINK_TIMEOUT_MS=45000 SOURCE_LINK_CONCURRENCY=6 SOURCE_LINK_RETRIES=3 npm run verify:sources` across 455 unique URLs with 0 actionable failures, `npm run verify:israel-dossier:behavior -- http://127.0.0.1:4382`, direct local CSV artifact probes, Node HEAD verification of the corrected UNICEF PDF URL, the full primary `/israel-dossier/briefing` viewport matrix, and slow-3G/blocked-image checks."
+    "Verified the local locator/source-copy slice with `npx tsc --noEmit`, `npm run build` generating 289 prerendered routes and 381 sitemap URLs, `npm run verify:bundle`, `npm run verify:israel-dossier`, strict `SOURCE_LINK_STRICT=1 SOURCE_LINK_TIMEOUT_MS=45000 SOURCE_LINK_CONCURRENCY=6 SOURCE_LINK_RETRIES=3 npm run verify:sources` across 455 unique URLs with 0 actionable failures, `npm run verify:israel-dossier:behavior -- http://127.0.0.1:4382`, direct local CSV artifact probes, Node HEAD verification of the corrected UNICEF PDF URL, the full primary `/israel-dossier/briefing` viewport matrix, and slow-3G/blocked-image checks.",
+    "On May 24, 2026, worked from a clean temporary clone because the iCloud checkout was dirty and on a separate branch; no user or parallel-agent changes in the iCloud checkout were touched.",
+    "Patched vulnerable transitive packages with npm audit fix: brace-expansion 5.0.6, fast-uri 3.1.2, and qs 6.15.2; npm audit now reports 0 vulnerabilities.",
+    "Refreshed generated sitemap lastmod output for the Institute manual and profile routes after deterministic build/data changes.",
+    "Repaired seven stale OpenSecrets member citation URLs in src/data/profileData.ts and regenerated source-link reports/trends; strict source-link verification passed afterward.",
+    "Expanded /israel-dossier/workbooks/public-briefing-chapter-draft.md into fuller publication-ready prose while preserving row IDs, proof boundaries, legal posture, unsafe-wording warnings, and open questions.",
+    "Extended Israel dossier canon and behavior verification so the public briefing chapter draft must include final publication-lock language, no unsupported causation claims, a procedural-warrant warning, and a row-ID audit-trail warning.",
+    "Fixed a CI-only source-link regression by replacing a removed AIPAC live article URL with a Wayback archive URL that returns 200 and preserves the citation target.",
+    "Pushed and live-verified production commit 83e2451ae18a on May 24, 2026 with Railway deployment b27d1e14-8aa7-427e-9968-52bc2c3bde82: release identity, platform health, public access, Israel dossier behavior, expanded draft content, archived AIPAC source, and npm audit all passed.",
+    "Confirmed GitHub Actions were green for the deployed fix-forward commit: Verify DB Config, Analytics Snapshot, Reader Bundle, Source Links, Israel Dossier, Release Identity, Platform Health, Browser Regressions, and Public Access all completed successfully."
   ],
-  "next_task": "Push and live-verify the locally built Israel dossier briefing locator/source-copy slice: confirm production serves the corrected UNICEF 178696 source URL, rendered reference locators, archive lookup links, source-copy status, no mobile overflow, and passing live behavior verification. Then expand the downloadable public chapter into fuller prose without changing certainty levels.",
+  "next_task": "Add operator-visible release/source monitoring and retire the GitHub Actions Node 20 deprecation warning while preserving the now-live Israel dossier draft/source-link/audit baseline.",
   "next_priorities": [
-    "Push the locator/source-copy commit and wait for production `/api/build-info` to report the new commit.",
-    "Run `npm run verify:israel-dossier:behavior -- https://veritasworldwide.com` and the full primary live viewport matrix for `/israel-dossier/briefing`.",
-    "Probe the live humanitarian and source-ledger CSV artifacts for `media/178696` and absence of current-source references to `media/170956`.",
-    "Expand the downloadable public chapter into fuller prose while preserving row IDs, proof boundaries, legal posture, and unsafe-wording warnings.",
-    "Add operator monitoring for dossier export/source-link regressions and resolve the GitHub Actions Node action-runtime deprecation warning."
+    "Upgrade GitHub Actions workflow action/runtime posture for the June 2, 2026 Node 24 default change and September 16, 2026 Node 20 removal warning, then prove every verification workflow still passes.",
+    "Create an operator-visible release/source health dashboard or scheduled monitor that tracks /api/build-info, source-link failures, audit status, and Israel dossier behavior results without manual probing.",
+    "Add exact page/paragraph locators and archived source-copy manifests to the remaining public briefing source rows and workbook artifacts.",
+    "Pressure-test /israel-dossier/briefing and the expanded chapter draft at the full device matrix after the next content pass, including blocked-image and slow-network conditions.",
+    "Connect Search Console coverage and HubSpot workflow configuration once Brandon supplies portal/account access."
   ]
 }

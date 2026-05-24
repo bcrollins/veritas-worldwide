@@ -1,20 +1,59 @@
 {
-  "run": 7,
-  "date": "2026-03-29",
+  "run": 8,
+  "date": "2026-05-24",
   "channels": {
-    "website": { "status": "live", "handle": "https://veritasworldwide.com" },
-    "instagram": { "status": "planned", "handle": "" },
-    "x": { "status": "planned", "handle": "@VeritasWorldwide" },
-    "threads": { "status": "planned", "handle": "" },
-    "linkedin": { "status": "planned", "handle": "" },
-    "facebook": { "status": "planned", "handle": "" },
-    "youtube": { "status": "planned", "handle": "" },
-    "tiktok": { "status": "planned", "handle": "" },
-    "pinterest": { "status": "planned", "handle": "" },
-    "reddit": { "status": "planned", "handle": "" },
-    "discord": { "status": "planned", "handle": "" },
-    "substack": { "status": "planned", "handle": "" },
-    "podcast": { "status": "planned", "handle": "" }
+    "website": {
+      "status": "live",
+      "handle": "https://veritasworldwide.com"
+    },
+    "instagram": {
+      "status": "planned",
+      "handle": ""
+    },
+    "x": {
+      "status": "planned",
+      "handle": "@VeritasWorldwide"
+    },
+    "threads": {
+      "status": "planned",
+      "handle": ""
+    },
+    "linkedin": {
+      "status": "planned",
+      "handle": ""
+    },
+    "facebook": {
+      "status": "planned",
+      "handle": ""
+    },
+    "youtube": {
+      "status": "planned",
+      "handle": ""
+    },
+    "tiktok": {
+      "status": "planned",
+      "handle": ""
+    },
+    "pinterest": {
+      "status": "planned",
+      "handle": ""
+    },
+    "reddit": {
+      "status": "planned",
+      "handle": ""
+    },
+    "discord": {
+      "status": "planned",
+      "handle": ""
+    },
+    "substack": {
+      "status": "planned",
+      "handle": ""
+    },
+    "podcast": {
+      "status": "planned",
+      "handle": ""
+    }
   },
   "integrations": {
     "hubspot_pixel": true,
@@ -61,6 +100,11 @@
     "Routed topic hubs, current-reporting pages, the Deep State page, and the Israel Dossier page into beat-aware success paths instead of a generic post-signup success state.",
     "Wired the shared newsletter component to GA4 newsletter conversion tracking and success-path navigation for higher-intent subscriber capture surfaces.",
     "Closed measurement gaps by firing newsletter conversion tracking from the content gate and exit-intent capture components.",
-    "Verified the new production client bundle and live /subscribe/success route on both veritasworldwide.com and Railway."
+    "Verified the new production client bundle and live /subscribe/success route on both veritasworldwide.com and Railway.",
+    "Verified the live production release 83e2451ae18a on May 24, 2026 with release identity, platform health, public access, Israel dossier behavior, and GitHub Actions checks all passing.",
+    "Refreshed SEO sitemap outputs after Institute/profile route generation changes and confirmed production reports 289 prerendered routes.",
+    "Hardened citation reliability by refreshing stale OpenSecrets profile URLs and pinning a removed AIPAC source to a working archived copy.",
+    "Expanded the public Israel dossier briefing chapter draft and added automated publication-lock assertions so future downloads retain source-row, legal-posture, and no-causation safeguards.",
+    "Patched vulnerable transitive dependencies and verified npm audit reports zero vulnerabilities."
   ]
 }

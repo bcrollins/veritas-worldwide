@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-05-24T05:23:46.238Z",
+  "baseUrl": "https://veritasworldwide.com",
+  "status": "pass",
+  "build": {
+    "version": "1.0.0",
+    "commit": "83e2451ae18a820ffb7e30f5495f6fb1469a2658",
+    "commitShort": "83e2451ae18a",
+    "deploymentId": "b27d1e14-8aa7-427e-9968-52bc2c3bde82",
+    "environment": "production",
+    "prerenderedRouteCount": 289
+  },
+  "headers": {
+    "version": "1.0.0",
+    "commit": "83e2451ae18a",
+    "deployment": "b27d1e14-8aa7-427e-9968-52bc2c3bde82"
+  },
+  "analytics": {
+    "lifetime": 3520,
+    "today": 148,
+    "signups": 8,
+    "payments": 0
+  },
+  "checks": [
+    {
+      "ok": true,
+      "label": "Build info route responds",
+      "detail": "GET /api/build-info returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Live commit matches expected release",
+      "detail": "expected 83e2451, observed 83e2451ae18a"
+    },
+    {
+      "ok": true,
+      "label": "Homepage release headers respond",
+      "detail": "HEAD / returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Release version header present",
+      "detail": "1.0.0"
+    },
+    {
+      "ok": true,
+      "label": "Release commit header present",
+      "detail": "83e2451ae18a"
+    },
+    {
+      "ok": true,
+      "label": "Release deployment header present",
+      "detail": "b27d1e14-8aa7-427e-9968-52bc2c3bde82"
+    },
+    {
+      "ok": true,
+      "label": "Release headers match build info",
+      "detail": "api=83e2451ae18a / b27d1e14-8aa7-427e-9968-52bc2c3bde82 · headers=83e2451ae18a / b27d1e14-8aa7-427e-9968-52bc2c3bde82"
+    },
+    {
+      "ok": true,
+      "label": "Build info includes JavaScript entry assets",
+      "detail": "js=11"
+    },
+    {
+      "ok": true,
+      "label": "Build info includes CSS entry assets",
+      "detail": "css=1"
+    },
+    {
+      "ok": true,
+      "label": "Public bundle excludes deprecated admin auth assets",
+      "detail": "js=assets/index-BxJbQdrQ.js, assets/rolldown-runtime-Dw2cE7zH.js, assets/vendor-react-CQ9I-_Vi.js, assets/MarketingConsentField-BFTKUqXL.js, assets/analytics-c2mS4NBB.js, assets/hubspot-BdmdrxY9.js, assets/ga4-FDeMVNLC.js, assets/NewsletterSignup-DmHeVz1Z.js, assets/AuthContext-CGOIQa28.js, assets/constants-D7mKDxHq.js, assets/conversionTracking-DcBVciny.js"
+    },
+    {
+      "ok": true,
+      "label": "Analytics snapshot responds",
+      "detail": "GET /api/analytics/snapshot returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Machine-readable llms surface responds",
+      "detail": "HEAD /llms.txt returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Institute markdown surface responds",
+      "detail": "HEAD /veritas-institute.md returned 200"
+    }
+  ],
+  "failures": []
+}
