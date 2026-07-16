@@ -349,6 +349,23 @@ const healthResult = await fetchJson('/api/health')
           `accessTokenTtl=${authStatus.accessTokenTtl}`
         )
       }
+      if (authStatus.sessionRefresh === true) {
+        addCheck(
+          checks,
+          failures,
+          true,
+          'Auth status reports session refresh available',
+          'sessionRefresh=true'
+        )
+      } else if (authStatus.sessionRefresh === false) {
+        addCheck(
+          checks,
+          failures,
+          false,
+          'Auth status reports session refresh available',
+          'sessionRefresh=false'
+        )
+      }
 
       const authMeResult = await fetchJson('/api/auth/me')
       const expectedAuthMeStatuses = authStatus.available ? new Set([401]) : new Set([503])
