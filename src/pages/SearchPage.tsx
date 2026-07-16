@@ -4,7 +4,7 @@ import type { ChapterType, EvidenceTier } from '../data/chapterTypes'
 import { chapterMeta } from '../data/chapterMeta'
 import { allArticles as articles, CATEGORY_META } from '../data/articles'
 import { PROFILES, getProfilePhoto } from '../data/profileData'
-import { topicHubs } from '../data/topicHubs'
+import { getTopicHubsForChapter, topicHubs } from '../data/topicHubs'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
@@ -728,12 +728,18 @@ export default function SearchPage() {
                 </div>
 
                 <div className="space-y-0">
-                  {results.map(result => (
-                    <Link
+                  {results.map(result => {
+                    const relatedTopics = getTopicHubsForChapter(result.chapterId)
+                    return (
+                    <div
                       key={result.chapterId}
-                      to={`/chapter/${result.chapterId}`}
-                      className="group block py-6 border-b border-border"
+                      className="group py-6 border-b border-border"
+                      data-testid={`search-result-${result.chapterId}`}
                     >
+                      <Link
+                        to={`/chapter/${result.chapterId}`}
+                        className="block"
+                      >
                       <div className="flex items-baseline gap-3 mb-1">
                         <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson">
                           {result.chapterNumber}
@@ -783,8 +789,27 @@ export default function SearchPage() {
                           </span>
                         ))}
                       </div>
-                    </Link>
-                  ))}
+                      </Link>
+
+                      {relatedTopics.length > 0 && (
+                        <div className="mt-3 flex flex-wrap items-center gap-2" data-testid={`search-topics-${result.chapterId}`}>
+                          <span className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
+                            Topics
+                          </span>
+                          {relatedTopics.map((topic) => (
+                            <Link
+                              key={topic.slug}
+                              to={`/topics/${topic.slug}`}
+                              className="inline-flex min-h-[32px] items-center rounded-sm border border-border bg-parchment-dark/60 px-2.5 py-1 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                            >
+                              {topic.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    )
+                  })}
                 </div>
               </div>
             )}

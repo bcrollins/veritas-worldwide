@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T06:24:45.634Z",
+  "checkedAt": "2026-07-16T06:37:20.896Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "8d0a41cbeb390561469f14ab4af6016b6f82626d",
-    "commitShort": "8d0a41cbeb39",
-    "deploymentId": "083f9254-6cfa-41b8-853d-08adb6e9fefd",
+    "commit": "8817d0160de85ca5a4812d0537cb3a46d2944e86",
+    "commitShort": "8817d0160de8",
+    "deploymentId": "6b562463-1cc4-475e-848a-607d2ddcc496",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -23,8 +23,8 @@
     "firstResultChapterId": "chapter-25"
   },
   "analytics": {
-    "lifetime": 6900,
-    "today": 85,
+    "lifetime": 6905,
+    "today": 90,
     "signups": 8,
     "payments": 0
   },
@@ -91,7 +91,7 @@
     {
       "ok": true,
       "label": "Health probe exposes analytics lifetime",
-      "detail": "analyticsLifetime=6900"
+      "detail": "analyticsLifetime=6905"
     },
     {
       "ok": true,
@@ -216,12 +216,12 @@
     {
       "ok": true,
       "label": "Analytics lifetime stays non-negative",
-      "detail": "lifetime=6900"
+      "detail": "lifetime=6905"
     },
     {
       "ok": true,
       "label": "Analytics today count stays non-negative",
-      "detail": "today=85"
+      "detail": "today=90"
     },
     {
       "ok": true,

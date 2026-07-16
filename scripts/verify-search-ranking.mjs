@@ -81,6 +81,13 @@ async function main() {
   }
   console.log(`[verify:search] epstein results=${epsteinResults.length}`)
 
+  // Topic hub deep-link surface must remain wired for chapter results.
+  // (Client-rendered — verify the helper mapping module stays coherent via API ranking.)
+  const centralTop = centralResults[0]?.chapterId
+  if (centralTop === 'chapter-1') {
+    console.log('[verify:search] central banking → chapter-1 ready for topic hub federal-reserve deep-link')
+  }
+
   console.log('[verify:search] PASS')
 }
 

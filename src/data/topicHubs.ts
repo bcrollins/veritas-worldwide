@@ -65,6 +65,49 @@ export function getTopicHrefForTerm(term: string): string {
   return topic ? `/topics/${topic.slug}` : `/search?q=${encodeURIComponent(term)}`
 }
 
+const chapterIdToTopics = new Map<string, TopicHub[]>()
+
+for (const topic of topicHubs) {
+  for (const chapterId of topic.featuredChapterIds) {
+    const existing = chapterIdToTopics.get(chapterId) || []
+    existing.push(topic)
+    chapterIdToTopics.set(chapterId, existing)
+  }
+}
+
+/** Topic hubs that feature a given chapter — used for search result deep-links. */
+export function getTopicHubsForChapter(chapterId: string): TopicHub[] {
+  return chapterIdToTopics.get(chapterId) || []
+}
+
+/** Topic hubs matching a free-text query (exact alias/keyword first, then partial). */
+export function getTopicHubsForQuery(query: string): TopicHub[] {
+  const normalized = normalizeTopicTerm(query)
+  if (!normalized) return []
+
+  const exact = getTopicHubByKeyword(normalized)
+  const matches: TopicHub[] = []
+  const seen = new Set<string>()
+
+  if (exact) {
+    matches.push(exact)
+    seen.add(exact.slug)
+  }
+
+  for (const topic of topicHubs) {
+    if (seen.has(topic.slug)) continue
+    const haystack = [topic.name, ...topic.aliases, ...topic.keywords]
+      .join(' ')
+      .toLowerCase()
+    if (haystack.includes(normalized) || normalized.split(' ').every((term) => haystack.includes(term))) {
+      matches.push(topic)
+      seen.add(topic.slug)
+    }
+  }
+
+  return matches
+}
+
 export function getTopicChapters(topic: TopicHub) {
   return topic.featuredChapterIds
     .map((chapterId) => chapterMeta.find((chapter) => chapter.id === chapterId))
