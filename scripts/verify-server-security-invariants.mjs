@@ -95,6 +95,8 @@ assert(
   server.includes('name: \'auth-login\'') || server.includes('name: "auth-login"') || server.includes("name: 'auth-login'"),
   'rateLimit keys must be named (auth-login scope required)',
 )
+assert(server.includes("name: 'search'") || server.includes('name: "search"'), 'search rateLimit must be named')
+assert(server.includes("name: 'analytics-pageview'") || server.includes('name: "analytics-pageview"'), 'pageview rateLimit must be named')
 assert(server.includes('`${name}:${identity') || server.includes('${name}:${identity'), 'rateLimit keys must combine name + identity')
 
 // Dependency hygiene — start is node server.js; do not reintroduce dead static servers
