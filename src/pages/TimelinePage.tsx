@@ -269,7 +269,7 @@ export default function TimelinePage() {
                     <button
                       key={era.name}
                       onClick={() => setFilterEra(filterEra === era.name ? null : era.name)}
-                      className={`flex items-center gap-2 w-full text-left group transition-colors ${
+                      className={`flex min-h-[44px] items-center gap-2 w-full text-left group transition-colors ${
                         filterEra === era.name ? 'opacity-100' : 'opacity-70 hover:opacity-100'
                       }`}
                     >
@@ -333,7 +333,7 @@ export default function TimelinePage() {
                   href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-crimson text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-crimson-dark transition-colors"
+                  className="flex min-h-[44px] items-center justify-center text-center bg-crimson text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-crimson-dark transition-colors"
                 >
                   Subscribe
                 </a>

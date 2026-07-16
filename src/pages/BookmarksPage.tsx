@@ -481,7 +481,7 @@ export default function BookmarksPage() {
                   href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 block rounded-full bg-crimson px-4 py-2 text-center font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-crimson-dark"
+                  className="mt-4 flex min-h-[44px] items-center justify-center rounded-full bg-crimson px-4 py-2 text-center font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-crimson-dark"
                 >
                   View membership
                 </a>
