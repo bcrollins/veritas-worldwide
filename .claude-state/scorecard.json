@@ -1,5 +1,5 @@
 {
-  "run": 71,
+  "run": 72,
   "date": "2026-07-16",
   "site": [
     {
@@ -28,10 +28,10 @@
     },
     {
       "feature": "Chapter Reading",
-      "composite": 9.2,
-      "previous": 9.1,
+      "composite": 9.3,
+      "previous": 9.2,
       "delta": 0.1,
-      "status": "topic hub chips on chapter pages",
+      "status": "prev/next 44px; tip 30f714f live",
       "plus_half_requires": "Verify the auth upgrade/downgrade experience at 390px and 430px in a browser session and add regression coverage for the /read reader shell as well as individual chapter routes."
     },
     {
