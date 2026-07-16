@@ -1,5 +1,5 @@
 {
-  "run": 97,
+  "run": 98,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "HEAD 43ca0b5 15-step masterpiece; full rate-limit + dual security.txt; 456 a11y",
+      "status": "HEAD 31df3cb 15-step green; PDF rate limit 90; dual security.txt; 456 a11y",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
