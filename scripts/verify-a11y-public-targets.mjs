@@ -49,7 +49,7 @@ const floors = [
   { path: 'src/pages/admin/AdminLoginPage.tsx', min: 3, label: 'admin login form' },
   { path: 'src/pages/admin/AdminDisputes.tsx', min: 2, label: 'admin disputes' },
   { path: 'src/pages/AccessibilityPage.tsx', min: 11, label: 'accessibility trust page' },
-  { path: 'src/pages/AnalyticsPage.tsx', min: 3, label: 'analytics refresh' },
+  { path: 'src/pages/AnalyticsPage.tsx', min: 4, label: 'analytics refresh' },
   { path: 'src/pages/TermsPage.tsx', min: 8, label: 'terms sidebar' },
   { path: 'src/pages/PrivacyPage.tsx', min: 7, label: 'privacy sidebar' },
   { path: 'src/pages/BookmarksPage.tsx', min: 13, label: 'bookmarks shell' },

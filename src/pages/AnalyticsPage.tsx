@@ -547,7 +547,7 @@ function TopPagesTable({ pages }: { pages: { path: string; title: string; views:
               <tr key={p.path} className="border-b border-border/50 hover:bg-parchment-dark/50 transition-colors">
                 <td className="px-5 py-3 font-sans text-xs text-ink-faint">{i + 1}</td>
                 <td className="px-5 py-3">
-                  <Link to={p.path} className="font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
+                  <Link to={p.path} className="inline-flex min-h-[44px] items-center font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
                     {p.title || p.path}
                   </Link>
                   <span className="block font-sans text-[10px] text-ink-faint mt-0.5">{p.path}</span>
