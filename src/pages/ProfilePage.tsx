@@ -328,13 +328,13 @@ function DonationTable({ donations }: { donations: PowerProfile['donations'] }) 
       <table className="w-full text-sm font-body" data-testid="donation-table">
         <thead>
           <tr className="border-b-2 border-border">
-            <th className="text-left py-3 px-2 cursor-pointer hover:text-crimson select-none" onClick={() => toggleSort('from')}>
+            <th className="text-left py-3 px-2 min-h-[44px] cursor-pointer hover:text-crimson select-none" onClick={() => toggleSort('from')}>
               Source <SortIcon field="from" />
             </th>
-            <th className="text-left py-3 px-2 cursor-pointer hover:text-crimson select-none" onClick={() => toggleSort('year')}>
+            <th className="text-left py-3 px-2 min-h-[44px] cursor-pointer hover:text-crimson select-none" onClick={() => toggleSort('year')}>
               Period <SortIcon field="year" />
             </th>
-            <th className="text-right py-3 px-2 cursor-pointer hover:text-crimson select-none" onClick={() => toggleSort('amount')}>
+            <th className="text-right py-3 px-2 min-h-[44px] cursor-pointer hover:text-crimson select-none" onClick={() => toggleSort('amount')}>
               Amount <SortIcon field="amount" />
             </th>
             <th className="text-right py-3 px-2 hidden sm:table-cell">Source</th>

@@ -279,13 +279,13 @@ function CountryTable({ countries }: { countries: CountryViews[] }) {
                 #
               </th>
               <th
-                className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint cursor-pointer hover:text-crimson transition-colors"
+                className="px-5 py-3 min-h-[44px] font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint cursor-pointer hover:text-crimson transition-colors"
                 onClick={() => toggleSort('country')}
               >
                 Country{arrow('country')}
               </th>
               <th
-                className="px-5 py-3 font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint text-right cursor-pointer hover:text-crimson transition-colors"
+                className="px-5 py-3 min-h-[44px] font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint text-right cursor-pointer hover:text-crimson transition-colors"
                 onClick={() => toggleSort('views')}
               >
                 Views{arrow('views')}
