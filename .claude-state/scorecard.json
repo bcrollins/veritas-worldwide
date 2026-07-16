@@ -1,5 +1,5 @@
 {
-  "run": 59,
+  "run": 60,
   "date": "2026-07-16",
   "site": [
     {
@@ -7,7 +7,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "41 pins floor 38; briefing action chips 44px; Lancet lookup-only residual",
+      "status": "43 archive pins floor 40 incl DOJ/NTSB investigations; Lancet lookup-only",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.4,
-      "previous": 9.35,
+      "composite": 9.45,
+      "previous": 9.4,
       "delta": 0.05,
-      "status": "44px across shell+membership+home+topics+forum+news; tip series through 167761b",
+      "status": "44px wave complete through tip 62550a8; donation+continue-reading+membership+home+topics",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {

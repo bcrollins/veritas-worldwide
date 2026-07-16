@@ -70,16 +70,16 @@
 ## Recently Closed (2026-07-16 — a11y shell + auth validation + archive pins)
 
 - **Invalid-email register hole closed and live.**
-  Impact: `/api/auth/register` previously accepted bare tokens like `not-an-email` (201 + session). Now returns 400 with no token; login also validates email shape and password max length.
+  Impact: `/api/auth/register` previously accepted bare tokens like `not-an-email` (201 + session). Now returns 400 with no token; login also validates email shape and password max length; display names strip control characters.
   Resolution: `isValidEmail` + bounds in `server-auth.js`; auth smoke covers bad-login and invalid-email. Live tip `e5e5a51` / `0845489` verified with `verify:auth` PASS and curl proof (`400 Please enter a valid email address`).
 
-- **41 archive pins live (floor 38).**
-  Impact: NTSB, Fed H.15, FAA, HRW news, Amnesty, CPJ, UNRWA resources join CISA/NIST/FiscalData/SCOTUS and dossier pins; Lancet remains explicit lookup-only until Wayback captures the Langlo article.
-  Resolution: `briefing-source-archive-manifest.json` + raised `verify-archive-manifest` / platform floors. Live pin count 41 on tip `c5acb73`+.
+- **43 archive pins live (floor 40).**
+  Impact: NTSB, Fed H.15, FAA, HRW, Amnesty, CPJ, UNRWA, DOJ, NTSB investigations join CISA/NIST/FiscalData/SCOTUS and dossier pins; Lancet remains explicit lookup-only until Wayback captures the Langlo article.
+  Resolution: `briefing-source-archive-manifest.json` + raised floors. Live pin count **43** on tip `11775a1`+.
 
-- **Shell touch-target wave (44px) shipped across key controls.**
-  Impact: BackToTop, FontSizeToggle, AuthModal, ContentGate, TextSelectionShare, Search clear/retry/topics, ExitIntent, CitationGenerator, CommunityForum, DownloadModal, Bookmark, Newsletter, StickyMembership (prior) all meet 44px minimum hit areas.
-  Resolution: incremental commits `4ed5161` → `35b7510`. Platform asserts four sourced news routes.
+- **Public 44px touch-target wave complete across reader surfaces.**
+  Impact: Shell, modals, news, search, membership, home, topics, forum, dossier, donation, continue-reading, institute pills, and chapter share controls meet 44px minimum hit areas.
+  Resolution: incremental commits `4ed5161` → `62550a8`. Platform asserts four sourced news routes.
 
 ## Critical
 
