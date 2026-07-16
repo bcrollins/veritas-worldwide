@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T08:46:31.338Z",
+  "checkedAt": "2026-07-16T08:48:38.381Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "7aac0d087092c4df0bb06179f47f09fcb2d326f8",
-    "commitShort": "7aac0d087092",
-    "deploymentId": "a0d58100-c6ba-48f6-880d-50db2a2d8e36",
+    "commit": "9da154e87f88828491fc42e79d474d2b94893585",
+    "commitShort": "9da154e87f88",
+    "deploymentId": "6c296f6a-b6c0-4a19-918c-ef9106be0307",
     "environment": "production",
     "prerenderedRouteCount": 285
   },
@@ -141,7 +141,7 @@
     {
       "ok": true,
       "label": "Health history exposes uniqueReplicas array",
-      "detail": "uniqueReplicas=true count=58"
+      "detail": "uniqueReplicas=true count=66"
     },
     {
       "ok": true,
