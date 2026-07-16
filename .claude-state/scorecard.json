@@ -1,5 +1,5 @@
 {
-  "run": 199,
+  "run": 200,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "ocean wave through 18356a0; 71/548 a11y; 13 headers; CORS expose",
+      "status": "scorecard 200 milestone; tip 15377f6 continuous green",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -79,7 +79,7 @@
       "composite": 9.77,
       "previous": 9.7,
       "delta": 0.05,
-      "status": "book+methodology 44px floors; 71 surfaces 548 markers; tip 6bdc7e2 15-step",
+      "status": "Field Manual PDF CTA 44px; 72/549 a11y; tip 15377f6 15-step",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
