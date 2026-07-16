@@ -45,7 +45,8 @@
     "verify:security-headers": "PLATFORM_VERIFY_BASE_URL=https://veritasworldwide.com node scripts/verify-security-headers.mjs",
     "verify:server-security-invariants": "node scripts/verify-server-security-invariants.mjs",
     "verify:home-toc-structure": "node scripts/verify-home-toc-structure.mjs",
-    "verify:csp-meta": "node scripts/verify-csp-meta.mjs"
+    "verify:csp-meta": "node scripts/verify-csp-meta.mjs",
+    "verify:pure": "node scripts/verify-pure.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
