@@ -10,7 +10,7 @@ const REQUIRED = {
   'x-content-type-options': /^nosniff$/i,
   'referrer-policy': /strict-origin-when-cross-origin/i,
   'strict-transport-security': /max-age=\d+/i,
-  'permissions-policy': /camera=\(\)/i,
+  'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\)/i,
   'x-xss-protection': /1/,
 }
 
