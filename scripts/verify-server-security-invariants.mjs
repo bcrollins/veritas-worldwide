@@ -107,6 +107,12 @@ assert(
 assert(serverAuth.includes('change-password'), 'change-password route present in server-auth')
 assert(serverAuth.includes('newPassword.length > 128'), 'change-password rejects overlong new passwords')
 assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rejects overlong current passwords')
+// JWT algorithm pin — prevent alg=none / confusion
+assert(serverAuth.includes("algorithm: 'HS256'") || serverAuth.includes('algorithm: "HS256"'), 'jwt.sign must pin HS256')
+assert(
+  serverAuth.includes("algorithms: ['HS256']") || serverAuth.includes('algorithms: ["HS256"]'),
+  'jwt.verify must restrict algorithms to HS256',
+)
 
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length

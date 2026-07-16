@@ -22,6 +22,7 @@ export function registerDatabaseAndAuthRoutes({
 
   function mintAccessToken(user) {
     // Include a unique jti so same-second refreshes never mint byte-identical tokens.
+    // Explicit HS256 blocks alg=none / algorithm-confusion attacks on verify.
     return jwt.sign(
       {
         userId: user.id,
@@ -29,7 +30,7 @@ export function registerDatabaseAndAuthRoutes({
         jti: crypto.randomBytes(12).toString('hex'),
       },
       JWT_SECRET,
-      { expiresIn: JWT_EXPIRY }
+      { expiresIn: JWT_EXPIRY, algorithm: 'HS256' }
     )
   }
 
@@ -53,7 +54,7 @@ export function registerDatabaseAndAuthRoutes({
     if (!token) return null
 
     try {
-      jwt.verify(token, JWT_SECRET)
+      jwt.verify(token, JWT_SECRET, { algorithms: ['HS256'] })
       if (!dbPool) return null
 
       const { rows } = await dbPool.query(
