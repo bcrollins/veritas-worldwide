@@ -1,5 +1,5 @@
 {
-  "run": 122,
+  "run": 123,
   "date": "2026-07-16",
   "site": [
     {
@@ -28,10 +28,10 @@
     },
     {
       "feature": "Chapter Reading",
-      "composite": 9.4,
-      "previous": 9.35,
+      "composite": 9.45,
+      "previous": 9.4,
       "delta": 0.05,
-      "status": "read chrome 44px; a11y floors in verify:live; tip 1c4fea6+",
+      "status": "skip-to-content 44px focus target live; App shell floor 25; tip 548c913",
       "plus_half_requires": "Verify the auth upgrade/downgrade experience at 390px and 430px in a browser session and add regression coverage for the /read reader shell as well as individual chapter routes."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip ed0b9b9 live 15-step; scorecard 122; JWT HS256 + full security matrix",
+      "status": "product tip 548c913 live 15-step; skip-link 44px; JWT HS256; scorecard 123; 69 a11y/522",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
