@@ -96,6 +96,7 @@ assert(
 )
 assert(server.includes('SECURITY_TXT_FALLBACK') && server.includes('loadSecurityTxtBody'), 'security.txt in-process fallback present')
 assert(server.includes('privacy@veritasworldwide.com'), 'security.txt contact embedded for production fallback')
+assert(server.includes('Preferred-Languages: en'), 'SECURITY_TXT_FALLBACK includes Preferred-Languages: en')
 const publicSecurity = readFileSync(join(root, 'public', '.well-known', 'security.txt'), 'utf8')
 const fallbackExpires = server.match(/Expires:\s*(\S+)/)
 const publicExpires = publicSecurity.match(/Expires:\s*(\S+)/)
@@ -103,6 +104,13 @@ assert(fallbackExpires && publicExpires, 'Expires present in fallback and public
 assert(
   fallbackExpires[1] === publicExpires[1],
   `SECURITY_TXT_FALLBACK Expires (${fallbackExpires[1]}) must match public/.well-known (${publicExpires[1]})`,
+)
+const fallbackLang = server.match(/Preferred-Languages:\s*(\S+)/)
+const publicLang = publicSecurity.match(/Preferred-Languages:\s*(\S+)/)
+assert(fallbackLang && publicLang, 'Preferred-Languages present in fallback and public security.txt')
+assert(
+  fallbackLang[1] === publicLang[1],
+  `SECURITY_TXT_FALLBACK Preferred-Languages (${fallbackLang[1]}) must match public/.well-known (${publicLang[1]})`,
 )
 
 // Change-password validation mirrors register/login max length floor
