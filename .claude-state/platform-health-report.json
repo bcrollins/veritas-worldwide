@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T08:50:29.130Z",
+  "checkedAt": "2026-07-16T08:52:58.719Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "48712723489eefb885340e8c39d554a8c995b687",
-    "commitShort": "48712723489e",
-    "deploymentId": "16b3629e-674a-47bb-8667-767df3d1f5c1",
+    "commit": "838269f6a2dce1cca55f6cd44e6b1539b55024b3",
+    "commitShort": "838269f6a2dc",
+    "deploymentId": "86e0c9f5-ed7c-45dc-9076-c663d31ad8b7",
     "environment": "production",
     "prerenderedRouteCount": 285
   },
@@ -121,7 +121,7 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=26"
+      "detail": "pinned=30"
     },
     {
       "ok": true,

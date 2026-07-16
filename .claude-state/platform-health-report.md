@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:50:29.130Z
+- Checked at: 2026-07-16T08:52:58.719Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 48712723489e
-- Deployment: 16b3629e-674a-47bb-8667-767df3d1f5c1
+- Build commit: 838269f6a2dc
+- Deployment: 86e0c9f5-ed7c-45dc-9076-c663d31ad8b7
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
@@ -21,7 +21,7 @@
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
 - PASS — Health probe exposes client error intake count: clientErrorIntakeCount=1
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
-- PASS — Briefing source archive manifest has pinned snapshots: pinned=26
+- PASS — Briefing source archive manifest has pinned snapshots: pinned=30
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
