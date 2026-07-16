@@ -523,16 +523,16 @@ export default function BibleHistoryPage() {
                   On This Page
                 </h3>
                 <div className="space-y-2.5">
-                  <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Introduction
                   </a>
-                  <a href="#" onClick={(e) => { e.preventDefault(); document.querySelector('h2')?.scrollIntoView({ behavior: 'smooth' }) }} className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <a href="#" onClick={(e) => { e.preventDefault(); document.querySelector('h2')?.scrollIntoView({ behavior: 'smooth' }) }} className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     By the Numbers
                   </a>
-                  <a href="#" onClick={(e) => { e.preventDefault(); document.querySelectorAll('h2')[2]?.scrollIntoView({ behavior: 'smooth' }) }} className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <a href="#" onClick={(e) => { e.preventDefault(); document.querySelectorAll('h2')[2]?.scrollIntoView({ behavior: 'smooth' }) }} className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     The Evidence
                   </a>
-                  <a href="#" onClick={(e) => { e.preventDefault(); document.querySelectorAll('h2')[3]?.scrollIntoView({ behavior: 'smooth' }) }} className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <a href="#" onClick={(e) => { e.preventDefault(); document.querySelectorAll('h2')[3]?.scrollIntoView({ behavior: 'smooth' }) }} className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Historical Timeline
                   </a>
                 </div>
@@ -567,10 +567,10 @@ export default function BibleHistoryPage() {
                   Related Sections
                 </h3>
                 <div className="space-y-2.5">
-                  <Link to="/methodology" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/methodology" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Methodology &amp; Evidence Standards →
                   </Link>
-                  <Link to="/sources" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/sources" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Source Library →
                   </Link>
                   <Link to="/timeline" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">

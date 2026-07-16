@@ -244,7 +244,7 @@ export default function MethodologyPage() {
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors leading-relaxed"
+                      className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors leading-relaxed"
                     >
                       {section.label}
                     </a>
@@ -279,24 +279,24 @@ export default function MethodologyPage() {
                   Related Pages
                 </h3>
                 <div className="space-y-2">
-                  <Link to="/sources" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/sources" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Sources &amp; Bibliography
                   </Link>
-                  <Link to="/chapter/foreword" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/chapter/foreword" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Foreword
                   </Link>
-                  <Link to="/search" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/search" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Search The Record
                   </Link>
-                  <Link to="/institute/methodology" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/institute/methodology" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Institute Methodology
                   </Link>
-                  <Link to="/institute/book" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/institute/book" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Field Manual
                   </Link>
                   <a
                     href="/veritas-institute-field-manual.pdf"
-                    className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
                     download="veritas-institute-field-manual.pdf"
                   >
                     Field Manual PDF

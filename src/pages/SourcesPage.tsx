@@ -525,28 +525,28 @@ export default function SourcesPage() {
                   Related Pages
                 </h3>
                 <div className="space-y-2">
-                  <Link to="/methodology" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/methodology" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Methodology &amp; Standards
                   </Link>
-                  <Link to="/search" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/search" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Search The Record
                   </Link>
-                  <Link to="/chapter/foreword" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/chapter/foreword" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Foreword
                   </Link>
-                  <Link to="/institute/book" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/institute/book" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Field Manual
                   </Link>
                   <a
                     href="/veritas-institute-field-manual.pdf"
-                    className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
                     download="veritas-institute-field-manual.pdf"
                   >
                     Field Manual PDF
                   </a>
                   <a
                     href="/the-record.pdf"
-                    className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
                   >
                     The Record PDF
                   </a>
