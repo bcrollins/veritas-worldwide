@@ -1,5 +1,5 @@
 {
-  "run": 197,
+  "run": 198,
   "date": "2026-07-16",
   "site": [
     {
@@ -76,10 +76,10 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 9.75,
+      "composite": 9.77,
       "previous": 9.7,
       "delta": 0.05,
-      "status": "course/guide/catalog 44px residual closed; tip 5e8213c 15-step; 540 markers",
+      "status": "book+methodology 44px floors; 71 surfaces 548 markers; tip 6bdc7e2 15-step",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
