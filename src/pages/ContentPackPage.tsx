@@ -507,7 +507,7 @@ export default function ContentPackPage() {
               </div>
               <button
                 onClick={() => copyText(`${SITE_URL}/news/${article.slug}`, article.id)}
-                className="flex-shrink-0 inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold text-ink-muted hover:text-ink transition-colors"
+                className="flex-shrink-0 inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[11px] font-semibold text-ink-muted hover:text-ink transition-colors"
               >
                 {copiedId === article.id ? 'Copied' : 'Copy link'}
               </button>
