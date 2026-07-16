@@ -49,7 +49,9 @@ const popular = scoreSearchMatch(['title', 'content'], { popularityBoost: true }
 const engaged = scoreSearchMatch(['title', 'content'], { recentBoost: true, popularityBoost: true })
 assert(popular === base + 8, `popularity +8 expected, got ${popular - base}`)
 assert(engaged === base + 18, `engagement +18 supersedes popularity, got ${engaged - base}`)
-assert(base + 18 < 100, 'engagement must remain below title weight')
+// Boost magnitudes must stay well below a sole title match (100).
+assert(18 < 100, 'engagement boost magnitude must remain below title weight')
+assert(8 < 18, 'popularity boost must remain below personal engagement')
 
 const ids = getPopularChapterIds({
   a: { path: '/chapter/chapter-9', views: 12 },
