@@ -1,5 +1,5 @@
 {
-  "run": 85,
+  "run": 86,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "TLD≥2 email floor live; 13-step verify; tip ff8886b",
+      "status": "429-resilient auth smoke; register 24/min; tip c444c99",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -84,10 +84,10 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.93,
+      "composite": 9.95,
       "previous": 9.93,
-      "delta": 0.01,
-      "status": "verify:live full green tip e5e5a51; interval ships 4ed5161→e5e5a51 · popularChapterCount floor ≥1 tip 76171c6",
+      "delta": 0.02,
+      "status": "CSP meta pure suite + 7 security headers live; tip 30ccc05+",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
