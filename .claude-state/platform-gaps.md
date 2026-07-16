@@ -244,6 +244,19 @@
   Impact: RFC 9116 updates revalidate within one hour.
   Resolution: tip `f1def06`.
 
+
+## Recently Closed (2026-07-16 — ocean CSP/auth/CORS/a11y wave complete)
+
+- **HTTP CSP frame-ancestors + Topics denial + meta hardening (13 headers).** Tips `0db6fb3`+.
+- **Password floor 8** with 7-char reject live. Tip `6461238`.
+- **Login + register anti-enumeration** with dummy bcrypt work. Tips `3b9d2ed` / `3cadc01`.
+- **Admin de-index**: robots Disallow + X-Robots-Tag. Tips `5423b8c` / `cbd9729`.
+- **security.txt must-revalidate**. Tip `f1def06`.
+- **CORS Vary / Max-Age 600 / Expose RateLimit**. Tips `39e33ad` / `3277c22`.
+- **Public a11y residual**: DeepState, Forum, Topics, Analytics, Institute catalog/course/guide/book/methodology — 71 surfaces / 548 markers.
+- **Sitemap + prerender pure-lock exclude /admin**.
+- **AuthModal TLD ≥2 parity** with server. Tip `18356a0`.
+
 ## External residual (2026-07-16)
 
 - **GitHub Actions runners are not allocating (jobs fail in ~2s with empty steps).**

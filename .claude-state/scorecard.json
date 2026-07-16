@@ -1,5 +1,5 @@
 {
-  "run": 198,
+  "run": 199,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "login+register anti-enum; password floor 8; tip 3cadc01+ 15-step green",
+      "status": "password 8 + anti-enum + AuthModal TLD\u22652; tip 18356a0 15-step",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "interval ships through 96ea1da/ce53402; 534 a11y markers; 13 headers",
+      "status": "ocean wave through 18356a0; 71/548 a11y; 13 headers; CORS expose",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
