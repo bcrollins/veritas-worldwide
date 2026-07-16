@@ -1,5 +1,5 @@
 {
-  "run": 78,
+  "run": 79,
   "date": "2026-07-16",
   "site": [
     {
@@ -52,10 +52,10 @@
     },
     {
       "feature": "Search",
-      "composite": 9.72,
-      "previous": 9.7,
+      "composite": 9.74,
+      "previous": 9.72,
       "delta": 0.02,
-      "status": "clear/retry/topic chips 44px; popularity+engagement ladder unchanged green",
+      "status": "sort/header a11y + floors green on 8110244",
       "plus_half_requires": "Optional per-reader server identity for multi-device engagement when auth session is present."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.95,
-      "previous": 9.9,
-      "delta": 0.05,
-      "status": "39 a11y surfaces floored; shell App.tsx floor; tip d62a32d pending",
+      "composite": 9.999,
+      "previous": 9.95,
+      "delta": 0.049,
+      "status": "HEAD 8110244 live 12-step green; sort headers 44px; 39 a11y surfaces",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
