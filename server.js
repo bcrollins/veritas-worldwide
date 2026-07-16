@@ -737,7 +737,8 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use(express.json())
+// Default JSON body cap — per-route overrides (e.g. client-error 16kb) still apply when declared first.
+app.use(express.json({ limit: '64kb' }))
 
 // ── Rate limiter (in-memory, zero dependencies) ──────────────────────
 const rateLimitStore = new Map()
