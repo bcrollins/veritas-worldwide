@@ -781,6 +781,9 @@ function ReleaseHealthPanel({
                 {history?.sharedAcrossReplicas || health.healthHistorySharedAcrossReplicas
                   ? ' · multi-replica'
                   : ''}
+                {Array.isArray(history?.uniqueReplicas) && history.uniqueReplicas.length > 0
+                  ? ` · ${history.uniqueReplicas.length} replica${history.uniqueReplicas.length === 1 ? '' : 's'}`
+                  : ''}
                 {typeof health.sentryForwardConfigured === 'boolean'
                   ? health.sentryForwardConfigured
                     ? ' · sentry on'
