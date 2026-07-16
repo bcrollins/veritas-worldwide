@@ -132,7 +132,7 @@ export interface DossierCourseArtifact {
   description: string
   url: string
   filename: string
-  format: 'CSV' | 'Markdown'
+  format: 'CSV' | 'Markdown' | 'JSON'
 }
 
 export interface DossierCourseModule {
