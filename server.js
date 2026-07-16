@@ -1001,6 +1001,54 @@ app.get('/api/build-info', (req, res) => {
   })
 })
 
+// Operator-visible liveness probe — no secrets, safe to scrape and schedule.
+// Returns 200 when core publish surfaces are present, 503 when degraded.
+app.get('/api/health', (req, res) => {
+  const chapterDataManifest = chapterData.getChapterDataManifest()
+  const publicChapterIndex = chapterData.getPublicChapterIndex()
+  const releaseCommit = getReleaseCommit()
+  const prerenderedRouteCount = Object.keys(prerenderManifest).length
+
+  const checks = {
+    distIndex: fs.existsSync(DIST_INDEX_HTML_PATH),
+    chapterData: publicChapterIndex.length > 0,
+    chapterManifest: Boolean(chapterDataManifest.generatedAt),
+    prerender: prerenderedRouteCount > 0,
+    analyticsStore: typeof store.lifetime === 'number' && Number.isFinite(store.lifetime) && store.lifetime >= 0,
+    recordPdf: fs.existsSync(RECORD_PDF_PATH),
+    databaseConfigured: HAS_DATABASE_URL,
+  }
+
+  const failed = Object.entries(checks)
+    .filter(([key, ok]) => {
+      // databaseConfigured is informational when degraded fallbacks exist;
+      // only hard-fail the publish-critical checks.
+      if (key === 'databaseConfigured') return false
+      return !ok
+    })
+    .map(([key]) => key)
+
+  const status = failed.length === 0 ? 'ok' : 'degraded'
+  const httpStatus = status === 'ok' ? 200 : 503
+
+  res.setHeader('Cache-Control', 'no-store')
+  res.status(httpStatus).json({
+    status,
+    checkedAt: new Date().toISOString(),
+    version: APP_VERSION,
+    commit: releaseCommit,
+    commitShort: releaseCommit ? releaseCommit.slice(0, 12) : '',
+    deploymentId: process.env.RAILWAY_DEPLOYMENT_ID || '',
+    environment: process.env.RAILWAY_ENVIRONMENT_NAME || process.env.NODE_ENV || '',
+    publicChapterCount: publicChapterIndex.length,
+    prerenderedRouteCount,
+    chapterDataGeneratedAt: chapterDataManifest.generatedAt || '',
+    analyticsLifetime: store.lifetime || 0,
+    checks,
+    failed,
+  })
+})
+
 function normalizePrerenderRoute(routePath) {
   if (!routePath || routePath === '/') return '/'
   return routePath.endsWith('/') ? routePath.slice(0, -1) : routePath

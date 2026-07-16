@@ -571,9 +571,105 @@ function TopPagesTable({ pages }: { pages: { path: string; title: string; views:
   )
 }
 
+type ReleaseHealth = {
+  status: string
+  checkedAt?: string
+  commitShort?: string
+  deploymentId?: string
+  environment?: string
+  publicChapterCount?: number
+  prerenderedRouteCount?: number
+  chapterDataGeneratedAt?: string
+  analyticsLifetime?: number
+  checks?: Record<string, boolean>
+  failed?: string[]
+  version?: string
+}
+
+function ReleaseHealthPanel({ health }: { health: ReleaseHealth | null }) {
+  if (!health) {
+    return (
+      <section className="border border-border rounded-sm bg-surface p-5 sm:p-6">
+        <h2 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink mb-2">
+          Release Health
+        </h2>
+        <p className="font-body text-sm text-ink-muted">
+          Live release probe unavailable. Open <code className="font-mono text-xs">/api/health</code> directly if this persists.
+        </p>
+      </section>
+    )
+  }
+
+  const isOk = health.status === 'ok'
+  const checkEntries = Object.entries(health.checks || {})
+
+  return (
+    <section
+      className={`border rounded-sm p-5 sm:p-6 ${isOk ? 'border-border bg-surface' : 'border-disputed bg-disputed-bg'}`}
+      data-testid="release-health-panel"
+    >
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between mb-4">
+        <div>
+          <h2 className="font-sans text-xs font-bold tracking-[0.1em] uppercase text-ink">
+            Release Health
+          </h2>
+          <p className="font-body text-sm text-ink-muted mt-2 max-w-2xl">
+            Operator-visible liveness for the live deploy. Confirms chapter data, prerender coverage, analytics store, and the manuscript PDF without requiring Railway console access.
+          </p>
+        </div>
+        <span
+          className={`inline-flex items-center self-start font-sans text-[10px] font-bold tracking-[0.12em] uppercase px-3 py-1.5 rounded-sm border ${
+            isOk
+              ? 'border-verified text-verified bg-verified/10'
+              : 'border-disputed text-disputed bg-disputed/10'
+          }`}
+        >
+          {isOk ? 'OK' : 'DEGRADED'}
+        </span>
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
+        <StatCard label="Commit" value={health.commitShort || '—'} />
+        <StatCard label="Chapters" value={health.publicChapterCount ?? '—'} />
+        <StatCard label="Prerender Routes" value={health.prerenderedRouteCount ?? '—'} />
+        <StatCard label="Analytics Lifetime" value={health.analyticsLifetime ?? '—'} />
+        <StatCard label="Version" value={health.version || '—'} />
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {checkEntries.map(([key, ok]) => (
+          <span
+            key={key}
+            className={`font-mono text-[10px] px-2 py-1 rounded-sm border ${
+              ok ? 'border-border text-ink-muted' : 'border-disputed text-disputed'
+            }`}
+          >
+            {ok ? '✓' : '✗'} {key}
+          </span>
+        ))}
+      </div>
+
+      {Array.isArray(health.failed) && health.failed.length > 0 && (
+        <p className="font-sans text-xs text-disputed mt-3">
+          Failed checks: {health.failed.join(', ')}
+        </p>
+      )}
+
+      <p className="font-sans text-[10px] text-ink-faint mt-3">
+        Deploy {health.deploymentId || 'unknown'} · env {health.environment || 'unknown'} · probed{' '}
+        {health.checkedAt ? new Date(health.checkedAt).toLocaleString() : '—'} · endpoint{' '}
+        <a href="/api/health" className="underline hover:text-crimson">
+          /api/health
+        </a>
+      </p>
+    </section>
+  )
+}
+
 // ── Main Page ──────────────────────────────────────────────────────
 export default function AnalyticsPage() {
   const [data, setData] = useState<AnalyticsSnapshot | null>(null)
+  const [health, setHealth] = useState<ReleaseHealth | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date())
@@ -599,12 +695,24 @@ export default function AnalyticsPage() {
     setLoading(true)
     setError(null)
     try {
-      const snapshot = await fetchAnalytics()
+      const [snapshot, healthRes] = await Promise.all([
+        fetchAnalytics(),
+        fetch('/api/health', { cache: 'no-store' })
+          .then(async (res) => {
+            try {
+              return (await res.json()) as ReleaseHealth
+            } catch {
+              return null
+            }
+          })
+          .catch(() => null),
+      ])
       if (snapshot) {
         setData(snapshot)
       } else {
         setError('fetch-failed')
       }
+      setHealth(healthRes)
     } catch {
       setError('fetch-failed')
     } finally {
@@ -658,6 +766,8 @@ export default function AnalyticsPage() {
       {/* Data */}
       {data && (
         <div className="space-y-8">
+          <ReleaseHealthPanel health={health} />
+
           {/* Stat Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             <StatCard label="Lifetime Views" value={data.lifetime} accent />

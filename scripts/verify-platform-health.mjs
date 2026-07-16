@@ -172,6 +172,38 @@ async function main() {
         `prerenderedRouteCount=${build.prerenderedRouteCount ?? 'unknown'}`
       )
 
+      const healthResult = await fetchJson('/api/health')
+      const health = typeof healthResult.data === 'object' && healthResult.data !== null ? healthResult.data : {}
+
+      addCheck(
+        checks,
+        failures,
+        healthResult.response.ok && health.status === 'ok',
+        'Health probe reports ok',
+        `GET /api/health returned ${healthResult.response.status} status=${health.status || 'unknown'}`
+      )
+      addCheck(
+        checks,
+        failures,
+        typeof health.checks === 'object' && health.checks !== null && health.checks.chapterData === true,
+        'Health probe confirms chapter data',
+        `chapterData=${health.checks?.chapterData}`
+      )
+      addCheck(
+        checks,
+        failures,
+        typeof health.checks === 'object' && health.checks !== null && health.checks.prerender === true,
+        'Health probe confirms prerender coverage',
+        `prerender=${health.checks?.prerender}`
+      )
+      addCheck(
+        checks,
+        failures,
+        isNonNegativeNumber(health.analyticsLifetime),
+        'Health probe exposes analytics lifetime',
+        `analyticsLifetime=${health.analyticsLifetime}`
+      )
+
       const authStatusResult = await fetchJson('/api/auth/status')
       const authStatus = typeof authStatusResult.data === 'object' && authStatusResult.data !== null ? authStatusResult.data : {}
 

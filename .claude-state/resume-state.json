@@ -1,6 +1,6 @@
 {
-  "run": 32,
-  "date": "2026-05-24",
+  "run": 33,
+  "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
     "Confirmed a live auth boundary defect: logout deleted session rows, but authenticateToken only trusted JWT verification plus the users table, so revoked tokens could still unlock protected content until expiry.",
@@ -123,14 +123,19 @@
     "Extended Israel dossier canon and behavior verification so the public briefing chapter draft must include final publication-lock language, no unsupported causation claims, a procedural-warrant warning, and a row-ID audit-trail warning.",
     "Fixed a CI-only source-link regression by replacing a removed AIPAC live article URL with a Wayback archive URL that returns 200 and preserves the citation target.",
     "Pushed and live-verified production commit 83e2451ae18a on May 24, 2026 with Railway deployment b27d1e14-8aa7-427e-9968-52bc2c3bde82: release identity, platform health, public access, Israel dossier behavior, expanded draft content, archived AIPAC source, and npm audit all passed.",
-    "Confirmed GitHub Actions were green for the deployed fix-forward commit: Verify DB Config, Analytics Snapshot, Reader Bundle, Source Links, Israel Dossier, Release Identity, Platform Health, Browser Regressions, and Public Access all completed successfully."
+    "Confirmed GitHub Actions were green for the deployed fix-forward commit: Verify DB Config, Analytics Snapshot, Reader Bundle, Source Links, Israel Dossier, Release Identity, Platform Health, Browser Regressions, and Public Access all completed successfully.",
+    "On 2026-07-16, Evidence Engine session discovered active roots: GitHub clone at /Users/brandonrollins/Code/veritas-worldwide (matches live commit 7e2948d6118f), document root at iCloud Veritas Worldwide Assets, state root at .claude-state. Live API matrix green: build-info, analytics snapshot/pageview, auth status, chapters, search, PDF download, chapter bot meta.",
+    "Added operator-visible /api/health liveness probe (commit, chapter data, prerender, analytics store, PDF presence; 200 ok / 503 degraded), Release Health panel on /analytics, and platform-health verifier coverage for the probe.",
+    "Upgraded all nine GitHub Actions workflows to node-version 24 with FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true to close the Node 20 action-runtime deprecation warning.",
+    "Compacted the mobile cookie consent banner so first-screen editorial context stays visible on 390px/430px while preserving 44pt touch targets.",
+    "Patched vulnerable transitive packages via npm audit fix; npm audit reports 0 vulnerabilities. Local verification: tsc --noEmit, node --check server.js, npm run build (289 prerendered routes), local /api/health returns status=ok."
   ],
-  "next_task": "Add operator-visible release/source monitoring and retire the GitHub Actions Node 20 deprecation warning while preserving the now-live Israel dossier draft/source-link/audit baseline.",
+  "next_task": "After production advances past this commit: live-verify /api/health and /analytics Release Health panel; then add Sentry (needs DSN) or archive ContentPacksPage.tsx dead module.",
   "next_priorities": [
-    "Upgrade GitHub Actions workflow action/runtime posture for the June 2, 2026 Node 24 default change and September 16, 2026 Node 20 removal warning, then prove every verification workflow still passes.",
-    "Create an operator-visible release/source health dashboard or scheduled monitor that tracks /api/build-info, source-link failures, audit status, and Israel dossier behavior results without manual probing.",
-    "Add exact page/paragraph locators and archived source-copy manifests to the remaining public briefing source rows and workbook artifacts.",
-    "Pressure-test /israel-dossier/briefing and the expanded chapter draft at the full device matrix after the next content pass, including blocked-image and slow-network conditions.",
+    "Live-verify /api/health and the /analytics Release Health panel on the deployed commit after Railway advances.",
+    "Add Sentry or equivalent error monitoring once a DSN credential is available.",
+    "Archive or delete unused ContentPacksPage.tsx so route audits have one content-pack canon.",
+    "Add exact page/paragraph locators and archived source-copy manifests to remaining public briefing source rows.",
     "Connect Search Console coverage and HubSpot workflow configuration once Brandon supplies portal/account access."
   ]
 }

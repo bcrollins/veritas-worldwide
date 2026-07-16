@@ -1,6 +1,6 @@
 {
-  "run": 32,
-  "date": "2026-05-24",
+  "run": 33,
+  "date": "2026-07-16",
   "site": [
     {
       "feature": "Israel Dossier",
@@ -12,11 +12,11 @@
     },
     {
       "feature": "Home / Front Page",
-      "composite": 8.3,
-      "previous": 7.5,
-      "delta": 0.8,
-      "status": "improved",
-      "plus_half_requires": "Compact the mobile cookie banner so fresh visits keep the first-screen editorial context and primary CTAs visible at 390px and 430px."
+      "composite": 8.5,
+      "previous": 8.3,
+      "delta": 0.2,
+      "status": "improved; mobile cookie banner compacted to single-row 390px layout; CODE ONLY until deploy",
+      "plus_half_requires": "Live 390px/430px screenshots after deploy confirming first-screen CTAs remain fully visible with consent pending."
     },
     {
       "feature": "Methodology & Trust Layer",
@@ -84,19 +84,19 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 8.8,
-      "previous": 8.3,
-      "delta": 0.5,
-      "status": "improved; release-health and platform-health reports now capture live commit 83e2451ae18a, deployment b27d1e14-8aa7-427e-9968-52bc2c3bde82, release headers, build-info assets, prerender route coverage, auth mode, public access, analytics counts, and trust-route probes",
-      "plus_half_requires": "Wire the release/platform/source/audit probes into a scheduled operator workflow with notifications and retained trend history instead of relying on manual post-deploy checks."
+      "composite": 9.1,
+      "previous": 8.8,
+      "delta": 0.3,
+      "status": "improved; /api/health operator probe + analytics Release Health panel + platform verifier coverage; CODE ONLY until deploy",
+      "plus_half_requires": "Wire Sentry (or equivalent) for stack-trace alerting, then prove scheduled platform-health failures notify an operator."
     },
     {
       "feature": "Public Analytics",
-      "composite": 8.4,
-      "previous": 8,
-      "delta": 0.4,
-      "status": "improved",
-      "plus_half_requires": "Verify the deployed route-specific title normalization across `/news`, `/profiles`, `/topics/:slug`, `/chapter/:slug`, and institute routes, then source exact article titles for dynamic news paths instead of relying on slug humanization when the client title is missing."
+      "composite": 8.6,
+      "previous": 8.4,
+      "delta": 0.2,
+      "status": "improved; Release Health panel on /analytics; CODE ONLY until deploy",
+      "plus_half_requires": "Live-verify the panel on production and add dated trend lines for health probe failures."
     }
   ],
   "growth": [

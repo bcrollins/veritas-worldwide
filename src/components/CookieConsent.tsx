@@ -56,29 +56,37 @@ export default function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-[100] bg-obsidian/95 backdrop-blur-md text-white px-6 py-4 no-print"
+      className="fixed bottom-0 left-0 right-0 z-[100] bg-obsidian/95 backdrop-blur-md text-white px-3 py-2.5 sm:px-6 sm:py-4 no-print safe-area-pb"
       role="dialog"
       aria-label="Cookie consent"
       data-testid="cookie-consent-banner"
     >
-      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <p className="font-sans text-sm text-white/80 leading-relaxed flex-1">
-          We use cookies for analytics (Google Analytics) and reader tools (HubSpot) to improve your experience.
-          No advertising trackers. No data sold.{' '}
-          <a href="/privacy" className="text-crimson-light hover:text-white underline transition-colors">
-            Privacy Policy
-          </a>
+      <div className="max-w-5xl mx-auto flex flex-row items-center gap-2.5 sm:gap-4">
+        <p className="font-sans text-[11px] sm:text-sm text-white/80 leading-snug sm:leading-relaxed flex-1 min-w-0">
+          <span className="sm:hidden">
+            Analytics cookies only. No ads sold.{' '}
+            <a href="/privacy" className="text-crimson-light hover:text-white underline transition-colors">
+              Privacy
+            </a>
+          </span>
+          <span className="hidden sm:inline">
+            We use cookies for analytics (Google Analytics) and reader tools (HubSpot) to improve your experience.
+            No advertising trackers. No data sold.{' '}
+            <a href="/privacy" className="text-crimson-light hover:text-white underline transition-colors">
+              Privacy Policy
+            </a>
+          </span>
         </p>
-        <div className="flex items-center gap-3 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           <button
             onClick={handleDecline}
-            className="font-sans text-xs font-semibold tracking-[0.1em] uppercase px-4 py-2.5 min-h-[44px] border border-white/20 text-white/70 rounded-sm hover:border-white/40 hover:text-white transition-colors"
+            className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-3 py-2 sm:px-4 sm:py-2.5 min-h-[44px] border border-white/20 text-white/70 rounded-sm hover:border-white/40 hover:text-white transition-colors"
           >
             Decline
           </button>
           <button
             onClick={handleAccept}
-            className="font-sans text-xs font-semibold tracking-[0.1em] uppercase px-5 py-2.5 min-h-[44px] bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors"
+            className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-3.5 py-2 sm:px-5 sm:py-2.5 min-h-[44px] bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors"
           >
             Accept
           </button>

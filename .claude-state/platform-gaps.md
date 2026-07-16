@@ -36,15 +36,21 @@
 
 ## Critical
 
-- **Production monitoring is absent.**
-  Impact: auth, search, analytics, and prerender regressions can ship without structured alerting or stack traces.
-  Recommendation: add Sentry or an equivalent production error monitoring service and wire both server and client exceptions into it.
+- **Third-party error monitoring (Sentry or equivalent) is still absent.**
+  Impact: uncaught server/client exceptions do not page an operator even though release liveness is now probeable.
+  Recommendation: add Sentry or an equivalent production error monitoring service once a project DSN credential is available, and wire both server and client exceptions into it.
+
+## Recently Closed (2026-07-16)
+
+- **Operator-visible release health probe is live in code.**
+  Impact: `/api/health` returns commit, chapter count, prerender coverage, analytics lifetime, and per-check status (200 ok / 503 degraded). `/analytics` now surfaces a Release Health panel. Platform health verification asserts the probe.
+  Resolution: added `/api/health` in `server.js`, Release Health panel on `AnalyticsPage`, and `/api/health` checks in `scripts/verify-platform-health.mjs`.
+
+- **GitHub Actions Node 20 action-runtime deprecation posture upgraded.**
+  Impact: all nine verification workflows now pin `node-version: '24'` and set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` so the June/September 2026 Node 20 action-runtime deprecation does not silently age out the verification fleet.
+  Resolution: updated every workflow under `.github/workflows/`.
 
 ## Emerging
-
-- **GitHub Actions emitted the JavaScript action runtime deprecation warning.**
-  Impact: the new Israel dossier workflow passes today, but `actions/cache@v4`, `actions/checkout@v4`, `actions/setup-node@v4`, and `actions/upload-artifact@v4` are still flagged by GitHub's Node 20 action-runtime deprecation notice.
-  Recommendation: revisit action versions or opt-in runtime settings after confirming the latest official action releases support Node 24 cleanly.
 
 - **The legacy `ContentPacksPage.tsx` generator module is still present off-route.**
   Impact: the canonical public surface is `/content-pack`, with `/content-packs` now only acting as a compatibility alias, but repo searches can still surface the older `ContentPacksPage.tsx` module and confuse future audits about which implementation is live.
