@@ -1596,6 +1596,15 @@ app.get('/api/health', (req, res) => {
     healthHistorySharedAcrossReplicas: Boolean(analyticsDbPool),
     healthHistorySampleCount: healthHistory.length,
     popularChapterCount: getPopularChapterIdsFromAnalytics({ limit: 8, minViews: 3 }).length,
+    // Operator diagnostics for the engines.node / strip-types deploy class of failures.
+    nodeRuntime: process.version,
+    packageEnginesNode: (() => {
+      try {
+        return JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'))?.engines?.node || ''
+      } catch {
+        return ''
+      }
+    })(),
     checks,
     failed,
   }

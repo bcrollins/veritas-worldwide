@@ -138,6 +138,9 @@ assert(
   'postbuild must not hardcode bare --experimental-strip-types (breaks Node 20 and Node 24+)',
 )
 
+assert(server.includes('nodeRuntime'), 'health payload exposes nodeRuntime')
+assert(server.includes('packageEnginesNode'), 'health payload exposes packageEnginesNode')
+
 // Pin the Node major that railpack/mise will select for strip-types-capable builds.
 const nodeVersionFile = readFileSync(join(root, '.node-version'), 'utf8').trim()
 assert(/^\d+\.\d+\.\d+$/.test(nodeVersionFile), `.node-version must be x.y.z, got ${nodeVersionFile}`)

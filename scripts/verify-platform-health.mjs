@@ -335,6 +335,20 @@ const healthResult = await fetchJson('/api/health')
       addCheck(
         checks,
         failures,
+        typeof health.nodeRuntime === 'string' && /^v\d+\./.test(health.nodeRuntime),
+        'Health reports Node runtime version',
+        `nodeRuntime=${health.nodeRuntime}`,
+      )
+      addCheck(
+        checks,
+        failures,
+        typeof health.packageEnginesNode === 'string' && String(health.packageEnginesNode).includes('22'),
+        'Health reports package engines.node (strip-types capable floor)',
+        `packageEnginesNode=${health.packageEnginesNode}`,
+      )
+      addCheck(
+        checks,
+        failures,
         typeof health.healthHistoryStorage === 'string' && health.healthHistoryStorage.length > 0,
         'Health exposes health history storage label',
         `healthHistoryStorage=${health.healthHistoryStorage || 'missing'}`
