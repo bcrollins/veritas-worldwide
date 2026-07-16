@@ -84,6 +84,21 @@ assert(
     server.includes('name: "health", windowMs: 60_000, max: 120'),
   'health rateLimit must allow 120/min multi-agent headroom',
 )
+for (const scope of [
+  'auth-login',
+  'auth-register',
+  'auth-refresh',
+  'search',
+  'client-error',
+  'health',
+  'field-manual-pdf',
+  'analytics-pageview',
+]) {
+  assert(
+    server.includes(`name: '${scope}'`) || server.includes(`name: "${scope}"`),
+    `named rateLimit scope required: ${scope}`,
+  )
+}
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
 assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
