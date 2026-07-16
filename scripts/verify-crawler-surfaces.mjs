@@ -205,10 +205,11 @@ assert(
   securityTxt.includes('Contact:') &&
     securityTxt.includes('Expires:') &&
     securityTxt.includes('Canonical: https://veritasworldwide.com/.well-known/security.txt') &&
+    securityTxt.includes('Preferred-Languages: en') &&
     securityTxt.includes('privacy@veritasworldwide.com'),
   'public/.well-known/security.txt missing required RFC 9116 fields'
 )
-console.log('[verify:crawler-surfaces] security.txt present with Contact + Expires + Canonical')
+console.log('[verify:crawler-surfaces] security.txt present with Contact + Expires + Canonical + Preferred-Languages')
 
 const expiresMatch = securityTxt.match(/Expires:\s*(\S+)/)
 assert(expiresMatch, 'security.txt Expires field parseable')
