@@ -397,7 +397,7 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
       {/* Card Header */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full text-left px-5 py-4 flex items-start justify-between gap-3"
+        className="w-full min-h-[44px] text-left px-5 py-4 flex items-start justify-between gap-3"
       >
         <div className="flex items-start gap-4 flex-1 min-w-0">
           {/* Profile Image */}
@@ -509,7 +509,7 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
                   <button
                     key={cId}
                     onClick={(e) => { e.stopPropagation(); onSelect(cId) }}
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-sans font-medium transition-colors hover:bg-crimson/10"
+                    className="inline-flex min-h-[44px] items-center gap-1 px-2.5 py-1 rounded text-xs font-sans font-medium transition-colors hover:bg-crimson/10"
                     style={{ color: CATEGORY_CONFIG[connected.category].color, border: `1px solid ${CATEGORY_CONFIG[connected.category].color}30` }}
                   >
                     <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: CATEGORY_CONFIG[connected.category].color }} />
@@ -637,13 +637,13 @@ export default function DeepStatePage() {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1">
           <button
             onClick={() => setActiveSection('network')}
-            className={`font-sans text-[0.7rem] tracking-[0.1em] uppercase px-4 py-3 border-b-2 transition-colors ${activeSection === 'network' ? 'border-crimson text-crimson font-semibold' : 'border-transparent text-ink-muted hover:text-ink'}`}
+            className={`inline-flex min-h-[44px] items-center font-sans text-[0.7rem] tracking-[0.1em] uppercase px-4 py-3 border-b-2 transition-colors ${activeSection === 'network' ? 'border-crimson text-crimson font-semibold' : 'border-transparent text-ink-muted hover:text-ink'}`}
           >
             <span className="inline-flex items-center gap-1.5"><IconNetwork className="w-3.5 h-3.5" /> Network Map</span>
           </button>
           <button
             onClick={() => setActiveSection('timeline')}
-            className={`font-sans text-[0.7rem] tracking-[0.1em] uppercase px-4 py-3 border-b-2 transition-colors ${activeSection === 'timeline' ? 'border-crimson text-crimson font-semibold' : 'border-transparent text-ink-muted hover:text-ink'}`}
+            className={`inline-flex min-h-[44px] items-center font-sans text-[0.7rem] tracking-[0.1em] uppercase px-4 py-3 border-b-2 transition-colors ${activeSection === 'timeline' ? 'border-crimson text-crimson font-semibold' : 'border-transparent text-ink-muted hover:text-ink'}`}
           >
             <span className="inline-flex items-center gap-1.5"><IconTimeline className="w-3.5 h-3.5" /> Timeline</span>
           </button>
@@ -703,7 +703,7 @@ export default function DeepStatePage() {
             {selectedPerson && (
               <div className="flex items-center gap-2 mb-4 p-3 bg-crimson/5 border border-crimson/20 rounded-sm">
                 <span className="font-sans text-xs text-crimson font-semibold">Viewing connections for: {PERSONS.find(p => p.id === selectedPerson)?.name}</span>
-                <button onClick={() => setSelectedPerson(null)} className="ml-auto font-sans text-[0.65rem] text-ink-muted hover:text-crimson uppercase tracking-wider font-semibold">Clear Selection</button>
+                <button onClick={() => setSelectedPerson(null)} className="ml-auto inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson uppercase tracking-wider font-semibold">Clear Selection</button>
               </div>
             )}
 
@@ -727,7 +727,7 @@ export default function DeepStatePage() {
             {selectedPerson && (
               <div className="flex items-center gap-2 mb-6 p-3 bg-crimson/5 border border-crimson/20 rounded-sm">
                 <span className="font-sans text-xs text-crimson font-semibold">Timeline filtered for: {PERSONS.find(p => p.id === selectedPerson)?.name}</span>
-                <button onClick={() => setSelectedPerson(null)} className="ml-auto font-sans text-[0.65rem] text-ink-muted hover:text-crimson uppercase tracking-wider font-semibold">Show All</button>
+                <button onClick={() => setSelectedPerson(null)} className="ml-auto inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson uppercase tracking-wider font-semibold">Show All</button>
               </div>
             )}
             <div className="relative">
@@ -758,7 +758,7 @@ export default function DeepStatePage() {
                             <button
                               key={pId}
                               onClick={() => handleSelectPerson(pId)}
-                              className="font-sans text-[0.6rem] px-1.5 py-0.5 rounded hover:bg-crimson/10 transition-colors"
+                              className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] px-2 py-1 rounded hover:bg-crimson/10 transition-colors"
                               style={{ color: CATEGORY_CONFIG[p.category].color, border: `1px solid ${CATEGORY_CONFIG[p.category].color}25` }}
                             >
                               {p.name}
