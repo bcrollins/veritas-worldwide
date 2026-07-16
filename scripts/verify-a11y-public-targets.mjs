@@ -21,7 +21,7 @@ const floors = [
   { path: 'src/pages/InstitutePage.tsx', min: 2, label: 'institute catalog filters' },
   { path: 'src/pages/SourcesPage.tsx', min: 12, label: 'sources library filters' },
   { path: 'src/pages/DeepStatePage.tsx', min: 10, label: 'deep-state controls' },
-  { path: 'src/pages/BibleHistoryPage.tsx', min: 8, label: 'bible-history sidebar' },
+  { path: 'src/pages/BibleHistoryPage.tsx', min: 9, label: 'bible-history sidebar' },
   { path: 'src/pages/SearchPage.tsx', min: 4, label: 'search chips' },
   { path: 'src/pages/MembershipPage.tsx', min: 6, label: 'membership CTAs' },
   { path: 'src/pages/TimelinePage.tsx', min: 4, label: 'timeline filters' },

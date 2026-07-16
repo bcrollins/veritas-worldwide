@@ -297,7 +297,7 @@ function EvidenceCard({ block }: { block: EvidenceBlock }) {
         {/* Sources Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="mt-4 inline-flex items-center gap-1.5 font-sans text-[0.7rem] font-semibold tracking-[0.05em] uppercase transition-colors"
+          className="mt-4 inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.7rem] font-semibold tracking-[0.05em] uppercase transition-colors"
           style={{ color: cfg.color }}
           aria-expanded={open}
         >
