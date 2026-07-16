@@ -1,5 +1,5 @@
 {
-  "run": 57,
+  "run": 58,
   "date": "2026-07-16",
   "site": [
     {
@@ -7,7 +7,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "41 archive pins (NTSB/H.15/FAA/HRW/Amnesty/CPJ/UNRWA + prior); Lancet lookup-only; floor 38",
+      "status": "41 pins floor 38; briefing action chips 44px; Lancet lookup-only residual",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -36,10 +36,10 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.75,
-      "previous": 9.65,
-      "delta": 0.1,
-      "status": "invalid-email register rejected 400 live; password max 128; auth smoke negative paths PASS tip e5e5a51",
+      "composite": 9.78,
+      "previous": 9.75,
+      "delta": 0.03,
+      "status": "email shape + password bounds + displayName control-char strip; auth negative paths live PASS",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.2,
-      "previous": 9.05,
+      "composite": 9.35,
+      "previous": 9.2,
       "delta": 0.15,
-      "status": "44px touch targets across shell/modals/search/newsletter/download/bookmark; news platform route asserts",
+      "status": "44px wave across shell/modals/news/forum/dossier/profiles/bible/chapter share; tip a964c08 verify:live green",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
