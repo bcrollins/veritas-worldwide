@@ -1498,6 +1498,9 @@ app.get('/api/health', (req, res) => {
     sentryForwardCount: clientErrorSentryForwardCount,
     sentryForwardLastAt: clientErrorSentryForwardLastAt,
     sentryForwardLastStatus: clientErrorSentryForwardLastStatus,
+    healthHistoryStorage: getHealthHistoryStorageLabel(),
+    healthHistorySharedAcrossReplicas: Boolean(analyticsDbPool),
+    healthHistorySampleCount: healthHistory.length,
     checks,
     failed,
   }
