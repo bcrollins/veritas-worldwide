@@ -11,6 +11,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 // Do not advertise Express in X-Powered-By (reduces fingerprinting noise).
 app.disable('x-powered-by')
+// Railway (and most reverse proxies) terminate TLS and set X-Forwarded-*.
+// Trust a single hop so req.ip / protocol are correct when Express uses them.
+app.set('trust proxy', 1)
 const PORT = process.env.PORT || 3000
 const RECORD_PDF_PATH = path.join(__dirname, 'dist', 'the-record.pdf')
 const INSTITUTE_FIELD_MANUAL_PDF_PATH = path.join(__dirname, 'dist', 'veritas-institute-field-manual.pdf')
