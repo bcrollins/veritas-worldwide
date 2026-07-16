@@ -431,6 +431,15 @@ const healthResult = await fetchJson('/api/health')
         `feed status=${feedResult.response.status} hasFieldManualPdf=${feedText.includes('/veritas-institute-field-manual.pdf')}`
       )
 
+      const robotsResult = await fetchText('/robots.txt')
+      addCheck(
+        checks,
+        failures,
+        robotsResult.response.ok && (robotsResult.text || '').includes('/veritas-institute-field-manual.pdf'),
+        'robots.txt allows the field manual PDF',
+        `status=${robotsResult.response.status}`
+      )
+
       const instituteHtml = await fetchText('/institute')
       addCheck(
         checks,
