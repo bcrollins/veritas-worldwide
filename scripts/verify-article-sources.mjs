@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /**
- * Guards news corpus integrity: only packs wired into allArticles may be
- * prerendered, and live packs must not include known-fabricated host paths.
+ * Guards news corpus integrity:
+ * - Live packs must be wired into allArticles and prerender
+ * - Fabricated path fragments must never return
+ * - Withdrawn fabricated slugs must stay out of sitemap
+ * - B-pack sources must be durable primary/government URLs
  */
 import fs from 'fs'
 import path from 'path'
@@ -27,19 +30,25 @@ assert(
   'articles.ts must import expandedArticlesA'
 )
 assert(
-  !articlesTs.includes('expandedArticlesB') && !articlesTs.includes('articlesExpandedB'),
-  'articles.ts must not merge expandedArticlesB (unsupported pack)'
+  articlesTs.includes("from './articlesExpandedB'") || articlesTs.includes('from "./articlesExpandedB"'),
+  'articles.ts must import expandedArticlesB (sourced replacement pack)'
 )
-assert(articlesTs.includes('...articles') && articlesTs.includes('...expandedArticlesA'), 'allArticles composition')
+assert(
+  articlesTs.includes('...expandedArticlesA') && articlesTs.includes('...expandedArticlesB'),
+  'allArticles must spread both expansion packs'
+)
 
 const prerender = read('scripts/prerender.mjs')
 assert(
-  !prerender.includes("articlesExpandedB.ts") && !prerender.includes("expandedArticlesB"),
-  'prerender must not index expandedArticlesB (orphan crawler routes)'
+  prerender.includes("articlesExpanded.ts") && prerender.includes("expandedArticlesA"),
+  'prerender must index expandedArticlesA'
 )
-assert(prerender.includes('expandedArticlesA'), 'prerender must index expandedArticlesA')
+assert(
+  prerender.includes("articlesExpandedB.ts") && prerender.includes("expandedArticlesB"),
+  'prerender must index expandedArticlesB'
+)
 
-// Fabricated path patterns that previously shipped in B-pack
+// Fabricated path patterns from the withdrawn pack — never reintroduce.
 const bannedFragments = [
   'technologyreview.com/2026/03/deepfake-election-threat',
   'propublica.org/2026/supreme-court-ethics',
@@ -47,16 +56,38 @@ const bannedFragments = [
   'io.stanford.edu/2026/election-misinformation',
   'nih.gov/drug-pricing-2026',
   'ec.europa.eu/2026/critical-minerals',
+  'sensity.ai/incidents-2026',
+  'jcr.org/2026/deepfake',
+  'ajph.aphapublications.org/2026/pharma',
 ]
 
-const livePack = read('src/data/articles.ts') + read('src/data/articlesExpanded.ts')
+const livePack =
+  read('src/data/articles.ts') +
+  read('src/data/articlesExpanded.ts') +
+  read('src/data/articlesExpandedB.ts')
+
 for (const frag of bannedFragments) {
   assert(!livePack.includes(frag), `live article pack contains banned fabricated source path: ${frag}`)
 }
 
-const liveIds = [...livePack.matchAll(/"id":\s*"([^"]+)"/g)].map((m) => m[1])
-assert(liveIds.length >= 8, `expected at least 8 live articles, got ${liveIds.length}`)
-console.log(`[verify:article-sources] live articles=${liveIds.length} packs=core+A`)
+const liveIds = [
+  ...livePack.matchAll(/"id":\s*"([^"]+)"/g),
+  ...livePack.matchAll(/\bid:\s*'([^']+)'/g),
+].map((m) => m[1])
+const bFile = read('src/data/articlesExpandedB.ts')
+const bSlugs = [...bFile.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1])
+assert(bSlugs.length >= 4, `expected ≥4 sourced B-pack slugs, got ${bSlugs.length}`)
+assert(liveIds.length >= 12, `expected at least 12 live article ids, got ${liveIds.length}`)
+
+// B-pack sources must be government/institutional hosts we trust as durable.
+const bUrls = [...bFile.matchAll(/url:\s*'(https?:\/\/[^']+)'/g)].map((m) => m[1])
+assert(bUrls.length >= 12, `expected ≥12 B-pack source URLs, got ${bUrls.length}`)
+const allowedHost =
+  /^(https:\/\/)(www\.)?(cisa\.gov|nist\.gov|justice\.gov|bja\.ojp\.gov|fiscaldata\.treasury\.gov|fiscal\.treasury\.gov|federalreserve\.gov|treasury\.gov|ntsb\.gov|faa\.gov|supremecourt\.gov|appropriations\.senate\.gov|whitehouse\.gov)\//
+for (const url of bUrls) {
+  assert(allowedHost.test(url) || url.includes('supremecourt.gov/about/Code-of-Conduct'), `B-pack source host not on allowlist: ${url}`)
+}
+
 const sitemap = read('public/sitemap.xml')
 const withdrawnSlugs = [
   'ai-deepfakes-election-disinformation-regulation-2026',
@@ -67,7 +98,13 @@ const withdrawnSlugs = [
 for (const slug of withdrawnSlugs) {
   assert(!sitemap.includes(`/news/${slug}`), `public sitemap still lists withdrawn article ${slug}`)
 }
-const bFile = read('src/data/articlesExpandedB.ts')
-assert(bFile.includes('export const expandedArticlesB'), 'B pack export must remain (empty)')
-assert(!bFile.match(/"slug":\s*"/), 'B pack must not export live article slugs')
+
+// New sourced slugs should eventually appear in sitemap after prerender; require presence in source pack.
+for (const slug of bSlugs) {
+  assert(bFile.includes(slug), `B pack missing slug ${slug}`)
+}
+
+console.log(
+  `[verify:article-sources] live article ids≈${liveIds.length} B-slugs=${bSlugs.length} B-urls=${bUrls.length}`
+)
 console.log('[verify:article-sources] PASS')

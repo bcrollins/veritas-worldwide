@@ -1,6 +1,7 @@
 // Current events publication engine — primary source journalism
 // Updated daily with the top stories in power, money, and institutions
 import { expandedArticlesA } from './articlesExpanded'
+import { expandedArticlesB } from './articlesExpandedB'
 
 export interface Article {
   id: string
@@ -860,10 +861,12 @@ export const articles: Article[] =
 ]
 
 
-// Merge all article batches into single collection
+// Merge all article batches into single collection.
+// expandedArticlesB is the sourced replacement pack (durable primary URLs only).
 export const allArticles: Article[] = [
   ...articles,
   ...expandedArticlesA,
+  ...expandedArticlesB,
 ]
 
 export function getArticleBySlug(slug: string): Article | undefined {
