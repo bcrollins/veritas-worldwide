@@ -208,6 +208,27 @@ async function main() {
       addCheck(
         checks,
         failures,
+        build.recordPdf === true,
+        'Build info reports manuscript PDF present',
+        `recordPdf=${build.recordPdf}`
+      )
+      addCheck(
+        checks,
+        failures,
+        build.instituteFieldManualPdf === true,
+        'Build info reports institute field manual PDF present',
+        `instituteFieldManualPdf=${build.instituteFieldManualPdf}`
+      )
+      addCheck(
+        checks,
+        failures,
+        build.instituteFieldManualPdfUrl === '/veritas-institute-field-manual.pdf',
+        'Build info exposes institute field manual PDF URL',
+        `instituteFieldManualPdfUrl=${build.instituteFieldManualPdfUrl || 'missing'}`
+      )
+      addCheck(
+        checks,
+        failures,
         Array.isArray(build.entryAssets?.js) &&
           !build.entryAssets.js.some((asset) => typeof asset === 'string' && asset.includes('adminAuth')),
         'Public bundle excludes deprecated admin auth assets',
