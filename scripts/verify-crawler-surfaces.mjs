@@ -210,6 +210,13 @@ assert(
 )
 console.log('[verify:crawler-surfaces] security.txt present with Contact + Expires + Canonical')
 
+const expiresMatch = securityTxt.match(/Expires:\s*(\S+)/)
+assert(expiresMatch, 'security.txt Expires field parseable')
+const expiresAt = Date.parse(expiresMatch[1])
+assert(Number.isFinite(expiresAt), `security.txt Expires not a date: ${expiresMatch[1]}`)
+assert(expiresAt > Date.now(), `security.txt Expires must be in the future (got ${expiresMatch[1]})`)
+console.log(`[verify:crawler-surfaces] security.txt Expires future-dated (${expiresMatch[1]})`)
+
 const robotsTxt = read('public/robots.txt')
 assert(
   robotsTxt.includes('Allow: /.well-known/security.txt'),
