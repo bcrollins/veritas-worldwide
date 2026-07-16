@@ -73,7 +73,7 @@ const floors = [
   { path: 'src/components/NewsletterSignup.tsx', min: 2, label: 'newsletter signup' },
   { path: 'src/pages/InstituteCoursePage.tsx', min: 3, label: 'institute course chrome' },
   { path: 'src/pages/InstituteGuidePage.tsx', min: 3, label: 'institute guide chrome' },
-  { path: 'src/pages/TopicsIndexPage.tsx', min: 1, label: 'topics index' },
+  { path: 'src/pages/TopicsIndexPage.tsx', min: 3, label: 'topics index' },
   { path: 'src/components/StickyMembershipBar.tsx', min: 2, label: 'sticky membership bar' },
   { path: 'src/components/TextSelectionShare.tsx', min: 2, label: 'text selection share' },
   { path: 'src/components/BackToTop.tsx', min: 1, label: 'back to top' },

@@ -149,7 +149,7 @@ export default function TopicsIndexPage() {
             <Link
               key={topic.slug}
               to={`/topics/${topic.slug}`}
-              className="group rounded-[28px] border border-border bg-surface p-6 transition-colors hover:border-crimson/35 hover:bg-parchment-dark/30"
+              className="group min-h-[44px] rounded-[28px] border border-border bg-surface p-6 transition-colors hover:border-crimson/35 hover:bg-parchment-dark/30"
             >
               <p className="font-sans text-[0.58rem] font-bold tracking-[0.18em] uppercase text-crimson">
                 {topic.eyebrow}
@@ -205,7 +205,7 @@ export default function TopicsIndexPage() {
             <Link
               key={topic.slug}
               to={`/topics/${topic.slug}`}
-              className="group border border-border bg-surface p-6 hover:border-crimson/40 hover:bg-parchment-dark/40 transition-colors"
+              className="group min-h-[44px] border border-border bg-surface p-6 hover:border-crimson/40 hover:bg-parchment-dark/40 transition-colors"
             >
               <p className="font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
                 {topic.eyebrow}
