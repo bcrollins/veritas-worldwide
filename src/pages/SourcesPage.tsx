@@ -534,6 +534,22 @@ export default function SourcesPage() {
                   <Link to="/chapter/foreword" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Foreword
                   </Link>
+                  <Link to="/institute/book" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                    Field Manual
+                  </Link>
+                  <a
+                    href="/veritas-institute-field-manual.pdf"
+                    className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download="veritas-institute-field-manual.pdf"
+                  >
+                    Field Manual PDF
+                  </a>
+                  <a
+                    href="/the-record.pdf"
+                    className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                  >
+                    The Record PDF
+                  </a>
                 </div>
               </div>
 
