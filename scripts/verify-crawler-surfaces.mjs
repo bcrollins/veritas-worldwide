@@ -217,4 +217,13 @@ assert(
 )
 console.log('[verify:crawler-surfaces] robots.txt allows security.txt')
 
+const prerenderLlms = read('scripts/prerender.mjs')
+assert(
+  prerenderLlms.includes('renderLlmsTxt') &&
+    prerenderLlms.includes('/.well-known/security.txt') &&
+    prerenderLlms.includes('Security disclosure'),
+  'prerender renderLlmsTxt must emit security.txt so postbuild cannot wipe it',
+)
+console.log('[verify:crawler-surfaces] prerender llms generator emits security.txt')
+
 console.log('[verify:crawler-surfaces] PASS')
