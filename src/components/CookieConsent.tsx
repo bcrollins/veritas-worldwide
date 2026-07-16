@@ -65,14 +65,14 @@ export default function CookieConsent() {
         <p className="font-sans text-[11px] sm:text-sm text-white/80 leading-snug sm:leading-relaxed flex-1 min-w-0">
           <span className="sm:hidden">
             Analytics cookies only. No ads sold.{' '}
-            <a href="/privacy" className="text-crimson-light hover:text-white underline transition-colors">
+            <a href="/privacy" className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline transition-colors">
               Privacy
             </a>
           </span>
           <span className="hidden sm:inline">
             We use cookies for analytics (Google Analytics) and reader tools (HubSpot) to improve your experience.
             No advertising trackers. No data sold.{' '}
-            <a href="/privacy" className="text-crimson-light hover:text-white underline transition-colors">
+            <a href="/privacy" className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline transition-colors">
               Privacy Policy
             </a>
           </span>

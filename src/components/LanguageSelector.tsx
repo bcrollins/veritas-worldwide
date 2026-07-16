@@ -167,7 +167,7 @@ export default function LanguageSelector() {
           <div className="flex border-b border-border shrink-0">
             <button
               onClick={() => { setTab('manual'); setSearch('') }}
-              className={`flex-1 py-2 px-3 font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase transition-colors ${
+              className={`flex-1 min-h-[44px] py-2 px-3 font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase transition-colors ${
                 tab === 'manual'
                   ? 'text-crimson border-b-2 border-crimson'
                   : 'text-ink-faint hover:text-ink-muted'
@@ -177,7 +177,7 @@ export default function LanguageSelector() {
             </button>
             <button
               onClick={() => { setTab('translate'); setSearch('') }}
-              className={`flex-1 py-2 px-3 font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase transition-colors ${
+              className={`flex-1 min-h-[44px] py-2 px-3 font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase transition-colors ${
                 tab === 'translate'
                   ? 'text-crimson border-b-2 border-crimson'
                   : 'text-ink-faint hover:text-ink-muted'
@@ -198,7 +198,7 @@ export default function LanguageSelector() {
               </div>
               <button
                 onClick={handleResetGT}
-                className="font-sans text-[0.55rem] font-bold tracking-wider uppercase text-ink-faint hover:text-crimson transition-colors"
+                className="inline-flex min-h-[44px] items-center font-sans text-[0.55rem] font-bold tracking-wider uppercase text-ink-faint hover:text-crimson transition-colors"
               >
                 Reset
               </button>
@@ -214,7 +214,7 @@ export default function LanguageSelector() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search languages..."
-                className="w-full px-2.5 py-1.5 font-sans text-xs bg-parchment-dark dark:bg-ink-dark border border-border rounded-sm focus:outline-none focus:border-crimson/40 placeholder:text-ink-faint"
+                className="w-full min-h-[44px] px-2.5 py-1.5 font-sans text-xs bg-parchment-dark dark:bg-ink-dark border border-border rounded-sm focus:outline-none focus:border-crimson/40 placeholder:text-ink-faint"
               />
             </div>
           )}
@@ -230,7 +230,7 @@ export default function LanguageSelector() {
                     <button
                       key={code}
                       onClick={() => handleManualLang(code)}
-                      className={`w-full flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
+                      className={`w-full min-h-[44px] flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
                         isActive ? 'bg-crimson/5 text-crimson' : 'text-ink dark:text-parchment'
                       }`}
                     >
@@ -255,7 +255,7 @@ export default function LanguageSelector() {
                 {/* Show original English option */}
                 <button
                   onClick={handleResetGT}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
+                  className={`w-full min-h-[44px] flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
                     !gtLang ? 'bg-crimson/5 text-crimson' : 'text-ink dark:text-parchment'
                   }`}
                 >
@@ -272,7 +272,7 @@ export default function LanguageSelector() {
                     <button
                       key={gl.code}
                       onClick={() => handleGTLang(gl)}
-                      className={`w-full flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
+                      className={`w-full min-h-[44px] flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
                         isActive ? 'bg-crimson/5 text-crimson' : 'text-ink dark:text-parchment'
                       }`}
                     >

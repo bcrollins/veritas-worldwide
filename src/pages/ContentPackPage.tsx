@@ -500,7 +500,7 @@ export default function ContentPackPage() {
           {articles.map(article => (
             <div key={article.id} className="flex items-center justify-between gap-4 py-3 border-b border-border/50">
               <div className="min-w-0">
-                <Link to={`/news/${article.slug}`} className="font-display text-sm font-bold text-ink hover:text-crimson transition-colors line-clamp-1">
+                <Link to={`/news/${article.slug}`} className="inline-flex min-h-[44px] items-center font-display text-sm font-bold text-ink hover:text-crimson transition-colors line-clamp-1">
                   {article.title}
                 </Link>
                 <p className="font-sans text-[10px] text-ink-faint mt-0.5">{article.sources.length} sources · {article.readingTime} min read</p>
