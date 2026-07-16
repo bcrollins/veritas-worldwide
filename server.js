@@ -783,7 +783,13 @@ function rateLimit({ windowMs = 60_000, max = 10, keyFn, name = 'default' } = {}
     res.setHeader('X-RateLimit-Reset', String(resetSec))
     if (entry.count > max) {
       res.setHeader('Retry-After', String(resetSec))
-      return res.status(429).json({ error: 'Too many requests. Please try again later.' })
+      return res.status(429).json({
+        error: 'Too many requests. Please try again later.',
+        limit: max,
+        remaining: 0,
+        reset: resetSec,
+        scope: name,
+      })
     }
     next()
   }

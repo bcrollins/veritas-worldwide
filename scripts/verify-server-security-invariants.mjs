@@ -49,6 +49,8 @@ assert(server.includes("'off'") || server.includes('"off"'), 'DNS prefetch contr
 assert(server.includes('RateLimit-Limit'), 'rateLimit emits RateLimit-Limit header')
 assert(server.includes('RateLimit-Remaining'), 'rateLimit emits RateLimit-Remaining header')
 assert(server.includes('RateLimit-Reset'), 'rateLimit emits RateLimit-Reset header')
+assert(server.includes('remaining: 0'), '429 JSON body includes remaining: 0')
+assert(server.includes('scope: name'), '429 JSON body includes named scope')
 assert(server.includes('isSyntheticProbe') || server.includes('platform-health probe'), 'client-error skips synthetic probes')
 assert(server.includes('Origin-Agent-Cluster'), 'Origin-Agent-Cluster set')
 assert(server.includes("'Origin-Agent-Cluster', '?1'") || server.includes('Origin-Agent-Cluster\', \'?1\''), 'Origin-Agent-Cluster value ?1')
