@@ -664,7 +664,7 @@ export default function ProfilePage(): React.ReactNode {
       <div className="border-b border-border bg-surface no-print">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 py-2 text-[0.6rem] font-sans font-bold tracking-[0.15em] uppercase" aria-label="Breadcrumb">
-            <Link to="/" className="text-ink-faint hover:text-crimson transition-colors">The Record</Link>
+            <Link to="/" className="inline-flex min-h-[44px] items-center text-ink-faint hover:text-crimson transition-colors">The Record</Link>
             <span className="text-ink-faint">/</span>
             <Link to="/profiles" className="text-ink-faint hover:text-crimson transition-colors">Profiles</Link>
             <span className="text-ink-faint">/</span>

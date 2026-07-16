@@ -154,7 +154,7 @@ export default function SourcesPage() {
       <div className="border-b border-border bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 py-2">
-            <Link to="/" className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint hover:text-crimson transition-colors">
+            <Link to="/" className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint hover:text-crimson transition-colors">
               The Record
             </Link>
             <span className="text-ink-faint">/</span>

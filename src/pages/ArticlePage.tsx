@@ -188,7 +188,7 @@ export default function ArticlePage() {
         <header className="max-w-4xl mx-auto pt-8 pb-8 border-b border-border">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.1em] uppercase text-ink-faint mb-6" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-ink transition-colors">Home</Link>
+            <Link to="/" className="inline-flex min-h-[44px] items-center hover:text-ink transition-colors">Home</Link>
             <span>/</span>
             <Link to="/news" className="hover:text-ink transition-colors">Current Events</Link>
             <span>/</span>
