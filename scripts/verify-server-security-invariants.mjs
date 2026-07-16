@@ -140,6 +140,10 @@ assert(
 
 assert(server.includes('nodeRuntime'), 'health payload exposes nodeRuntime')
 assert(server.includes('packageEnginesNode'), 'health payload exposes packageEnginesNode')
+const analyticsPage = readFileSync(join(root, 'src/pages/AnalyticsPage.tsx'), 'utf8')
+assert(analyticsPage.includes('nodeRuntime'), 'AnalyticsPage types nodeRuntime')
+assert(analyticsPage.includes('packageEnginesNode'), 'AnalyticsPage types packageEnginesNode')
+assert(analyticsPage.includes('release-health-node'), 'AnalyticsPage renders release-health-node test id')
 
 // Pin the Node major that railpack/mise will select for strip-types-capable builds.
 const nodeVersionFile = readFileSync(join(root, '.node-version'), 'utf8').trim()

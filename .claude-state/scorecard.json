@@ -1,5 +1,5 @@
 {
-  "run": 112,
+  "run": 113,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip b15a00c live 15-step; Railway Node 22.14; scorecard 112; 69 a11y/521",
+      "status": "product tip d7ffe48 live 15-step; full security matrix; scorecard 113; 69 a11y/521",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -85,17 +85,17 @@
     {
       "feature": "Deployment Observability",
       "composite": 9.999,
-      "previous": 9.99,
-      "delta": 0.009,
-      "status": "HEAD b15a00c nodeRuntime v22.14.0 engines>=22.6; health probe diagnostics live; 15-step green",
+      "previous": 9.999,
+      "delta": 0.0,
+      "status": "HEAD d7ffe48 /analytics shows nodeRuntime+engines; health probe+UI closed loop; 15-step",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
       "feature": "Public Analytics",
-      "composite": 9.6,
+      "composite": 9.65,
       "previous": 9.6,
       "delta": 0.05,
-      "status": "health history maxSamples=96 multi-day retention; uniqueReplicas platform-asserted \u00b7 popularChapterCount floor \u22651 tip 76171c6",
+      "status": "Release Health renders Node runtime + engines.node (tip d7ffe48)",
       "plus_half_requires": "Per-replica contributor labels in analytics UI if multi-region grows."
     }
   ],
