@@ -69,6 +69,11 @@ assert(server.includes("app.use('/api/health', rateLimit"), 'health rateLimit re
 assert(server.includes("app.use('/api/health/history', rateLimit"), 'health/history rateLimit registered')
 assert(server.includes("app.use('/api/build-info', rateLimit"), 'build-info rateLimit registered')
 assert(server.includes("name: 'health'") || server.includes('name: "health"'), 'health rateLimit must be named')
+assert(
+  server.includes("name: 'health', windowMs: 60_000, max: 120") ||
+    server.includes('name: "health", windowMs: 60_000, max: 120'),
+  'health rateLimit must allow 120/min multi-agent headroom',
+)
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
 assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
