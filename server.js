@@ -720,7 +720,7 @@ app.use((req, res, next) => {
   res.setHeader('Origin-Agent-Cluster', '?1')
   res.setHeader(
     'Permissions-Policy',
-    'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()',
+    'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=(), display-capture=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard-read=(), clipboard-write=()',
   )
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
   if (APP_VERSION) {
