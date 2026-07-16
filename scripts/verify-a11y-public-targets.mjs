@@ -15,7 +15,7 @@ const floors = [
   { path: 'src/pages/ChapterPage.tsx', min: 8, label: 'chapter actions/nav' },
   { path: 'src/pages/HomePage.tsx', min: 10, label: 'home CTAs' },
   { path: 'src/pages/ForumPage.tsx', min: 26, label: 'forum votes/actions' },
-  { path: 'src/pages/IsraelDossierPage.tsx', min: 10, label: 'dossier source anchors' },
+  { path: 'src/pages/IsraelDossierPage.tsx', min: 12, label: 'dossier source anchors' },
   { path: 'src/pages/IsraelDossierBriefingPage.tsx', min: 1, label: 'dossier briefing sections' },
   { path: 'src/pages/ProfilesIndexPage.tsx', min: 4, label: 'profiles index filters' },
   { path: 'src/pages/InstitutePage.tsx', min: 2, label: 'institute catalog filters' },
