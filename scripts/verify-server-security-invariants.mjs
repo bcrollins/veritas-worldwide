@@ -58,6 +58,14 @@ assert(
   (server.match(/no-cache, no-store, must-revalidate/g) || []).length >= 2,
   'HTML/SPA shell Cache-Control must force revalidation (no-store)',
 )
+assert(
+  server.includes("filePath.endsWith('.pdf')") || server.includes('filePath.endsWith(".pdf")'),
+  'static setHeaders must special-case PDF cache policy',
+)
+assert(
+  server.includes('max-age=3600, must-revalidate') || server.includes("max-age=3600, must-revalidate"),
+  'stable-name PDFs must use must-revalidate (not year-long immutable)',
+)
 assert(server.includes('RateLimit-Limit'), 'rateLimit emits RateLimit-Limit header')
 assert(server.includes('RateLimit-Remaining'), 'rateLimit emits RateLimit-Remaining header')
 assert(server.includes('RateLimit-Reset'), 'rateLimit emits RateLimit-Reset header')
