@@ -71,4 +71,10 @@ assert(serverAuth.includes('change-password'), 'change-password route present in
 assert(serverAuth.includes('newPassword.length > 128'), 'change-password rejects overlong new passwords')
 assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rejects overlong current passwords')
 
-console.log('[verify:server-security-invariants] PASS — server.js security surface locked')
+// Rate-limit fleet floor — protect against accidental deletion of middleware rows
+const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length
+assert(rateLimitUses >= 20, `rateLimit middleware count ${rateLimitUses} below floor 20`)
+
+console.log(
+  `[verify:server-security-invariants] PASS — server.js security surface locked · rateLimit×${rateLimitUses}`,
+)
