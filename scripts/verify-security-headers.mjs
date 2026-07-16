@@ -76,6 +76,17 @@ assert(
   'security.txt must not be SPA HTML shell',
 )
 
+const securityRoot = await fetch(`${baseUrl}/security.txt`, {
+  signal: AbortSignal.timeout(15_000),
+})
+assert(securityRoot.ok, `root /security.txt status ${securityRoot.status}`)
+const securityRootBody = await securityRoot.text()
+assert(securityRootBody.includes('Contact:'), 'root /security.txt missing Contact')
+assert(
+  !(securityRoot.headers.get('content-type') || '').includes('text/html'),
+  'root /security.txt must not be SPA HTML shell',
+)
+
 console.log(
-  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt`,
+  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths`,
 )
