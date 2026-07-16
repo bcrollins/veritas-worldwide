@@ -101,7 +101,7 @@ assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rej
 
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length
-assert(rateLimitUses >= 20, `rateLimit middleware count ${rateLimitUses} below floor 20`)
+assert(rateLimitUses >= 22, `rateLimit middleware count ${rateLimitUses} below floor 22`)
 // Isolation: counters must be scoped per route name so analytics cannot exhaust auth
 assert(
   server.includes('name: \'auth-login\'') || server.includes('name: "auth-login"') || server.includes("name: 'auth-login'"),
@@ -112,7 +112,7 @@ assert(server.includes("name: 'analytics-pageview'") || server.includes('name: "
 assert(server.includes('`${name}:${identity') || server.includes('${name}:${identity'), 'rateLimit keys must combine name + identity')
 
 const namedLimiterCount = (server.match(/rateLimit\(\{\s*name:\s*'/g) || []).length
-assert(namedLimiterCount >= 20, `named rateLimit configs ${namedLimiterCount} below floor 20`)
+assert(namedLimiterCount >= 22, `named rateLimit configs ${namedLimiterCount} below floor 22`)
 
 // Dependency hygiene — start is node server.js; do not reintroduce dead static servers
 assert(packageJson.scripts?.start === 'node server.js', 'start script must be node server.js')
