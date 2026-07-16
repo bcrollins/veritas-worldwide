@@ -26,6 +26,7 @@ assert(server.includes('payment=()'), 'Permissions-Policy disables payment')
 assert(server.includes('usb=()'), 'Permissions-Policy disables usb')
 assert(server.includes('interest-cohort=()'), 'Permissions-Policy disables FLoC')
 assert(server.includes('Referrer-Policy'), 'Referrer-Policy set')
+assert(server.includes('strict-origin-when-cross-origin'), 'Referrer-Policy value locked')
 assert(server.includes('X-XSS-Protection'), 'X-XSS-Protection set')
 
 console.log('[verify:server-security-invariants] PASS — server.js security surface locked')

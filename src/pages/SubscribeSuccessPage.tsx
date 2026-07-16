@@ -268,7 +268,7 @@ export default function SubscribeSuccessPage() {
               <div className="flex flex-col sm:flex-row gap-3 mt-8">
                 <Link
                   to={continueHref}
-                  className="inline-flex items-center justify-center rounded-sm bg-crimson px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white hover:bg-crimson-dark transition-colors"
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-crimson px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white hover:bg-crimson-dark transition-colors"
                 >
                   {isInstituteSource
                     ? isInstituteTopicSource
@@ -283,7 +283,7 @@ export default function SubscribeSuccessPage() {
                 {isLoggedIn ? (
                   <Link
                     to={isInstituteSource ? '/institute' : '/read'}
-                    className="inline-flex items-center justify-center rounded-sm border border-border px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
+                    className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
                   >
                     {isInstituteSource ? 'Open the institute' : 'Open the full archive'}
                   </Link>
@@ -296,7 +296,7 @@ export default function SubscribeSuccessPage() {
                         source: 'subscribe_success',
                       },
                     })}
-                    className="inline-flex items-center justify-center rounded-sm border border-border px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
+                    className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-5 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
                   >
                     Create free reader account
                   </button>
