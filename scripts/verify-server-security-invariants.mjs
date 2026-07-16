@@ -36,7 +36,17 @@ assert(
   'client-error JSON body limit must be 16kb',
 )
 assert(server.includes("X-Frame-Options"), 'X-Frame-Options set')
+assert(
+  server.includes("'X-Frame-Options', 'SAMEORIGIN'") ||
+    server.includes('"X-Frame-Options", "SAMEORIGIN"'),
+  'X-Frame-Options must be SAMEORIGIN exactly',
+)
 assert(server.includes('X-Content-Type-Options'), 'X-Content-Type-Options set')
+assert(
+  server.includes("'X-Content-Type-Options', 'nosniff'") ||
+    server.includes('"X-Content-Type-Options", "nosniff"'),
+  'X-Content-Type-Options must be nosniff exactly',
+)
 assert(server.includes('Strict-Transport-Security'), 'HSTS set')
 assert(server.includes('includeSubDomains; preload') || server.includes('preload'), 'HSTS includes preload directive')
 assert(
@@ -53,8 +63,23 @@ assert(server.includes('clipboard-write=(self)'), 'Permissions-Policy allows sam
 assert(!server.includes('clipboard-write=()'), 'must not fully deny clipboard-write (breaks copy CTAs)')
 assert(server.includes('Referrer-Policy'), 'Referrer-Policy set')
 assert(server.includes('strict-origin-when-cross-origin'), 'Referrer-Policy value locked')
+assert(
+  server.includes("'Referrer-Policy', 'strict-origin-when-cross-origin'") ||
+    server.includes('"Referrer-Policy", "strict-origin-when-cross-origin"'),
+  'Referrer-Policy must be strict-origin-when-cross-origin exactly',
+)
 assert(server.includes('X-XSS-Protection'), 'X-XSS-Protection set')
+assert(
+  server.includes("'X-XSS-Protection', '1; mode=block'") ||
+    server.includes('"X-XSS-Protection", "1; mode=block"'),
+  'X-XSS-Protection must be 1; mode=block exactly',
+)
 assert(server.includes('X-Permitted-Cross-Domain-Policies'), 'X-Permitted-Cross-Domain-Policies set')
+assert(
+  server.includes("'X-Permitted-Cross-Domain-Policies', 'none'") ||
+    server.includes('"X-Permitted-Cross-Domain-Policies", "none"'),
+  'X-Permitted-Cross-Domain-Policies must be none exactly',
+)
 assert(server.includes('X-Download-Options'), 'X-Download-Options set')
 assert(server.includes("'noopen'") || server.includes('"noopen"'), 'X-Download-Options value noopen')
 assert(server.includes('Cross-Origin-Opener-Policy'), 'Cross-Origin-Opener-Policy set')
