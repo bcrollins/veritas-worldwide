@@ -1,5 +1,5 @@
 {
-  "run": 120,
+  "run": 121,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.49,
-      "previous": 9.47,
-      "delta": 0.02,
-      "status": "HEAD 97350a8 15-step; health RateLimit asserted; full security matrix; node v22.14",
+      "composite": 9.52,
+      "previous": 9.49,
+      "delta": 0.03,
+      "status": "HEAD ef4e527 15-step; 12 baseline headers; X-Download-Options noopen; health 120/min; rateLimit\u00d723",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip a025b1b+ live 15-step (tip 97350a8); rateLimit\u00d723; a11y 69/521; scorecard 120",
+      "status": "product tip ef4e527 live 15-step; scorecard 121; security masterpiece 12 headers",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
