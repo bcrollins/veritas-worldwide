@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T08:15:31.192Z",
+  "checkedAt": "2026-07-16T08:19:05.777Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "b0c4731fb3eb9bd4b2b584f43ea672808637221e",
-    "commitShort": "b0c4731fb3eb",
-    "deploymentId": "9c218870-a1bb-4527-982d-c5d6585c9c12",
+    "commit": "139aa08ccc6d339a4abeaa8447347824d27a702d",
+    "commitShort": "139aa08ccc6d",
+    "deploymentId": "0e99f1b5-30a4-475d-b0e2-5dccb4472999",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
