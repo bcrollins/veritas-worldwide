@@ -127,6 +127,29 @@ const robotsTag = admin.headers.get('x-robots-tag') || ''
 assert(/noindex/i.test(robotsTag), `admin missing X-Robots-Tag noindex (got: ${robotsTag})`)
 assert(/nofollow/i.test(robotsTag), `admin missing X-Robots-Tag nofollow (got: ${robotsTag})`)
 
+// CORS preflight contract: Vary Origin + Max-Age on allowlisted Origin.
+const preflight = await fetch(`${baseUrl}/api/health`, {
+  method: 'OPTIONS',
+  headers: {
+    Origin: 'https://veritasworldwide.com',
+    'Access-Control-Request-Method': 'GET',
+  },
+  signal: AbortSignal.timeout(15_000),
+})
+assert(preflight.status === 204 || preflight.status === 200, `CORS OPTIONS status ${preflight.status}`)
+assert(
+  (preflight.headers.get('access-control-allow-origin') || '') === 'https://veritasworldwide.com',
+  `CORS Allow-Origin unexpected: ${preflight.headers.get('access-control-allow-origin')}`,
+)
+assert(
+  /origin/i.test(preflight.headers.get('vary') || ''),
+  `CORS missing Vary: Origin (got: ${preflight.headers.get('vary')})`,
+)
+assert(
+  preflight.headers.get('access-control-max-age') === '600',
+  `CORS Max-Age must be 600 (got: ${preflight.headers.get('access-control-max-age')})`,
+)
+
 console.log(
-  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths + RateLimit on field-manual + admin X-Robots-Tag`,
+  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths + RateLimit on field-manual + admin X-Robots-Tag + CORS preflight`,
 )
