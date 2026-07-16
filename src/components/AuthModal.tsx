@@ -151,7 +151,7 @@ export default function AuthModal() {
                   value={displayName}
                   onChange={e => setDisplayName(e.target.value)}
                   placeholder="Your name"
-                  className="w-full px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                  className="w-full min-h-[44px] px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
                 />
               </div>
             )}
@@ -165,7 +165,7 @@ export default function AuthModal() {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                className="w-full min-h-[44px] px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
               />
             </div>
             <div>
@@ -177,7 +177,7 @@ export default function AuthModal() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="At least 6 characters"
-                className="w-full px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
+                className="w-full min-h-[44px] px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
               />
             </div>
 

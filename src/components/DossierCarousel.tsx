@@ -374,7 +374,7 @@ export function CarouselDownloader({ slides, title, filenamePrefix }: {
           <button
             onClick={handleDownloadAll}
             disabled={generating}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
+            className="inline-flex min-h-[44px] items-center gap-2 px-5 py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
           >
             {generating ? (
               <>Downloading {progress}/{slides.length}...</>
@@ -485,7 +485,7 @@ export function PinnedPostDownloader({ posts }: { posts: PinnedPostData[] }) {
           <button
             onClick={handleDownloadAll}
             disabled={generating !== null}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-crimson font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-white/90 transition-colors disabled:opacity-50"
+            className="inline-flex min-h-[44px] items-center gap-2 px-5 py-2.5 bg-white text-crimson font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-white/90 transition-colors disabled:opacity-50"
           >
             {generating === 'all' ? 'Downloading...' : (
               <>
