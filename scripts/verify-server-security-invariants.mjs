@@ -28,6 +28,7 @@ assert(
 assert(server.includes("X-Frame-Options"), 'X-Frame-Options set')
 assert(server.includes('X-Content-Type-Options'), 'X-Content-Type-Options set')
 assert(server.includes('Strict-Transport-Security'), 'HSTS set')
+assert(server.includes('includeSubDomains; preload') || server.includes('preload'), 'HSTS includes preload directive')
 assert(server.includes('Permissions-Policy'), 'Permissions-Policy set')
 assert(server.includes('payment=()'), 'Permissions-Policy disables payment')
 assert(server.includes('usb=()'), 'Permissions-Policy disables usb')

@@ -9,7 +9,7 @@ const REQUIRED = {
   'x-frame-options': /^(SAMEORIGIN|DENY)$/i,
   'x-content-type-options': /^nosniff$/i,
   'referrer-policy': /strict-origin-when-cross-origin/i,
-  'strict-transport-security': /max-age=\d+/i,
+  'strict-transport-security': /max-age=\d+.*includeSubDomains.*preload/i,
   'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\).*display-capture=\(\).*clipboard-write=\(self\)/i,
   'x-xss-protection': /1/,
   'x-permitted-cross-domain-policies': /^none$/i,
@@ -89,6 +89,22 @@ assert(
   'root /security.txt must not be SPA HTML shell',
 )
 
+// Rate-limited public PDF must expose limiter budget headers for operators/clients.
+const fieldManual = await fetch(`${baseUrl}/veritas-institute-field-manual.pdf`, {
+  method: 'HEAD',
+  signal: AbortSignal.timeout(20_000),
+})
+assert(fieldManual.ok, `field manual HEAD status ${fieldManual.status}`)
+const rateLimit =
+  fieldManual.headers.get('ratelimit-limit') || fieldManual.headers.get('x-ratelimit-limit')
+const rateRemaining =
+  fieldManual.headers.get('ratelimit-remaining') || fieldManual.headers.get('x-ratelimit-remaining')
+assert(rateLimit && Number(rateLimit) > 0, `missing RateLimit-Limit on field manual: ${rateLimit}`)
+assert(
+  rateRemaining !== null && rateRemaining !== undefined && rateRemaining !== '',
+  `missing RateLimit-Remaining on field manual: ${rateRemaining}`,
+)
+
 console.log(
-  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths`,
+  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths + RateLimit on field-manual`,
 )

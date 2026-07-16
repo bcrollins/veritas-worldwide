@@ -730,7 +730,8 @@ app.use((req, res, next) => {
     // clipboard-write=(self) preserves same-origin Copy Link / citation CTAs.
     'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=(), display-capture=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard-write=(self)',
   )
-  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
+  // preload signals eligibility for the HSTS preload list (includeSubDomains already required).
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
   if (APP_VERSION) {
     res.setHeader('X-Veritas-Version', APP_VERSION)
   }
