@@ -60,6 +60,20 @@ if (process.env.ALLOW_POWERED_BY !== '1') {
   assert(!health.headers.get('x-powered-by'), 'health must not expose X-Powered-By')
 }
 
+// RFC 9116 security.txt must be live (not SPA HTML / not extension-404)
+const securityTxt = await fetch(`${baseUrl}/.well-known/security.txt`, {
+  signal: AbortSignal.timeout(15_000),
+})
+assert(securityTxt.ok, `security.txt status ${securityTxt.status}`)
+const securityBody = await securityTxt.text()
+assert(securityBody.includes('Contact:'), 'security.txt missing Contact')
+assert(securityBody.includes('Expires:'), 'security.txt missing Expires')
+assert(securityBody.includes('Canonical:'), 'security.txt missing Canonical')
+assert(
+  !(securityTxt.headers.get('content-type') || '').includes('text/html'),
+  'security.txt must not be SPA HTML shell',
+)
+
 console.log(
-  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'}`,
+  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt`,
 )

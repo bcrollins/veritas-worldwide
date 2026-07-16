@@ -1610,6 +1610,32 @@ app.use((req, res, next) => {
   res.sendFile(filePath)
 })
 
+// RFC 9116 security.txt — serve explicitly so /.well-known is not lost when
+// build tooling or packaging skips hidden public dirs. Prefer dist, fall back to source.
+const SECURITY_TXT_CANDIDATES = [
+  path.join(__dirname, 'dist', '.well-known', 'security.txt'),
+  path.join(__dirname, 'dist', 'security.txt'),
+  path.join(__dirname, 'public', '.well-known', 'security.txt'),
+  path.join(__dirname, 'public', 'security.txt'),
+]
+function resolveSecurityTxtPath() {
+  for (const candidate of SECURITY_TXT_CANDIDATES) {
+    if (fs.existsSync(candidate)) return candidate
+  }
+  return null
+}
+app.get(['/.well-known/security.txt', '/security.txt'], (req, res) => {
+  const filePath = resolveSecurityTxtPath()
+  if (!filePath) {
+    res.status(404)
+    res.type('text/plain')
+    return res.send('Not found')
+  }
+  res.setHeader('Cache-Control', 'public, max-age=3600')
+  res.type('text/plain; charset=utf-8')
+  return res.sendFile(filePath)
+})
+
 // Static files with aggressive caching for hashed assets
 app.use(express.static(path.join(__dirname, 'dist'), {
   maxAge: '1y',

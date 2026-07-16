@@ -29,5 +29,11 @@ assert(server.includes('Referrer-Policy'), 'Referrer-Policy set')
 assert(server.includes('strict-origin-when-cross-origin'), 'Referrer-Policy value locked')
 assert(server.includes('X-XSS-Protection'), 'X-XSS-Protection set')
 assert(server.includes('X-Permitted-Cross-Domain-Policies'), 'X-Permitted-Cross-Domain-Policies set')
+assert(
+  server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
+    server.includes('/.well-known/security.txt'),
+  'security.txt routes must be registered on the Express app',
+)
+assert(server.includes('resolveSecurityTxtPath') || server.includes('SECURITY_TXT_CANDIDATES'), 'security.txt path resolver present')
 
 console.log('[verify:server-security-invariants] PASS — server.js security surface locked')

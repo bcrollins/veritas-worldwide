@@ -1,5 +1,5 @@
 {
-  "title": "Israel dossier public briefing — source archive manifest",
+  "title": "Israel dossier public briefing \u2014 source archive manifest",
   "generatedAt": "2026-07-16",
   "purpose": "Pinned Wayback snapshots for briefing source rows so evidence remains inspectable when hosts block automated probes.",
   "entries": [
@@ -95,9 +95,13 @@
       "timestamp": null,
       "archiveUrl": "https://web.archive.org/web/*/https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
       "status": "lookup-only",
-      "note": "CDX lists timestamps (20260222/20260306/20260316) but live Wayback fetches return 403 for all probes; not pinable until a 200 capture exists.",
-      "lastProbedAt": "2026-07-16T11:06:00.000Z",
-      "cdxTimestampsSeen": ["20260222150518", "20260306031405", "20260316213658"]
+      "note": "CDX lists timestamps (20260222/20260306/20260316); 20260222 redirects to 20260306; live Wayback still returns 403 (CF challenge on origin capture). Not pinable until a 200 capture exists.",
+      "lastProbedAt": "2026-07-16T11:28:12.000Z",
+      "cdxTimestampsSeen": [
+        "20260222150518",
+        "20260306031405",
+        "20260316213658"
+      ]
     },
     {
       "sourceUrl": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
@@ -243,7 +247,7 @@
       "timestamp": "20260403215153",
       "archiveUrl": "https://web.archive.org/web/20260403215153/https://www.ntsb.gov/",
       "status": "pinned",
-      "note": "NTSB home — durable aviation-safety primary host"
+      "note": "NTSB home \u2014 durable aviation-safety primary host"
     },
     {
       "sourceUrl": "https://www.federalreserve.gov/releases/h15/",
@@ -285,7 +289,7 @@
       "timestamp": "20260715072948",
       "archiveUrl": "https://web.archive.org/web/20260715072948/https://www.faa.gov/",
       "status": "pinned",
-      "note": "FAA home — aviation primary host"
+      "note": "FAA home \u2014 aviation primary host"
     },
     {
       "sourceUrl": "https://www.justice.gov/",
@@ -306,7 +310,7 @@
       "timestamp": "20241121232741",
       "archiveUrl": "https://web.archive.org/web/20241121232741/https://www.documentcloud.org/documents/1507315-epstein-flight-manifests.html",
       "status": "pinned",
-      "note": "Epstein flight manifests on DocumentCloud — primary-source deep-state document"
+      "note": "Epstein flight manifests on DocumentCloud \u2014 primary-source deep-state document"
     },
     {
       "sourceUrl": "https://www.courtlistener.com/docket/4355835/parties/giuffre-v-maxwell/",

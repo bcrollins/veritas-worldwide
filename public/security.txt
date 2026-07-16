@@ -1,0 +1,14 @@
+# Veritas Worldwide — security disclosure (RFC 9116)
+# https://veritasworldwide.com/.well-known/security.txt
+
+Contact: mailto:privacy@veritasworldwide.com
+Contact: mailto:corrections@veritasworldwide.com
+Expires: 2027-07-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://veritasworldwide.com/.well-known/security.txt
+Policy: https://veritasworldwide.com/privacy
+Hiring: https://veritasworldwide.com/about
+
+# Scope: veritasworldwide.com production web application and related APIs.
+# Please report vulnerabilities privately; do not publicly disclose until fixed.
+# We do not offer a paid bug bounty program at this time.
