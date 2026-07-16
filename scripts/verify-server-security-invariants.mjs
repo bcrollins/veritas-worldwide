@@ -400,6 +400,10 @@ assert(
   'AuthModal email regex must require TLD ≥2 chars (server parity)',
 )
 assert(
+  authModal.includes('\\u0000-\\u001F') || authModal.includes('\u0000-\u001F') || authModal.includes('u0000'),
+  'AuthModal must strip control characters from display names',
+)
+assert(
   !/\[^\s@\]\+\$/.test(authModal) || authModal.includes('{2,}'),
   'AuthModal must not accept single-char TLDs',
 )

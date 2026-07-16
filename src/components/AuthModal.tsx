@@ -74,7 +74,9 @@ export default function AuthModal() {
       setError('Password must be at least 8 characters.')
       return
     }
-    if (authModalMode === 'signup' && !displayName.trim()) {
+    // Strip control characters client-side (mirrors server-auth cleanDisplayName).
+    const cleanName = displayName.trim().replace(/[\u0000-\u001F\u007F]/g, '')
+    if (authModalMode === 'signup' && !cleanName) {
       setError('Please enter your name.')
       return
     }
@@ -82,7 +84,7 @@ export default function AuthModal() {
     setLoading(true)
     try {
       const result = authModalMode === 'signup'
-        ? await signup(email, password, displayName.trim())
+        ? await signup(email, password, cleanName)
         : await login(email, password)
 
       if (result.success) {
