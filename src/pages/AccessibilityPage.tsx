@@ -90,7 +90,7 @@ export default function AccessibilityPage() {
               <p className="text-sm text-ink-muted leading-relaxed mb-4">
                 If you encounter any accessibility barriers while using this publication, please contact us. We take accessibility feedback seriously and will work to address any issues promptly.
               </p>
-              <a href="mailto:rights@veritasworldwide.com" className="font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
+              <a href="mailto:rights@veritasworldwide.com" className="inline-flex min-h-[44px] items-center font-sans text-sm text-crimson hover:text-crimson-dark transition-colors">
                 rights@veritasworldwide.com
               </a>
             </section>
@@ -113,7 +113,7 @@ export default function AccessibilityPage() {
                 <h3 className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">On This Page</h3>
                 <nav className="space-y-2">
                   {sections.map((s) => (
-                    <a key={s.id} href={`#${s.id}`} className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                    <a key={s.id} href={`#${s.id}`} className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                       {s.title}
                     </a>
                   ))}
@@ -156,14 +156,14 @@ export default function AccessibilityPage() {
               <div className="bg-surface border border-border rounded-lg p-5">
                 <h3 className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">Related Pages</h3>
                 <nav className="space-y-2">
-                  <Link to="/about" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ About</Link>
-                  <Link to="/privacy" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Privacy Policy</Link>
-                  <Link to="/terms" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Terms of Use</Link>
-                  <Link to="/methodology" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Methodology</Link>
-                  <Link to="/institute/book" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Field Manual</Link>
+                  <Link to="/about" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">→ About</Link>
+                  <Link to="/privacy" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">→ Privacy Policy</Link>
+                  <Link to="/terms" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">→ Terms of Use</Link>
+                  <Link to="/methodology" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">→ Methodology</Link>
+                  <Link to="/institute/book" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">→ Field Manual</Link>
                   <a
                     href="/veritas-institute-field-manual.pdf"
-                    className="block text-sm text-ink-muted hover:text-crimson transition-colors"
+                    className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors"
                     download="veritas-institute-field-manual.pdf"
                   >
                     → Field Manual PDF

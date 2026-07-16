@@ -999,7 +999,7 @@ export default function AnalyticsPage() {
           <button
             onClick={loadData}
             disabled={loading}
-            className="font-sans text-xs font-semibold px-4 py-2 border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors disabled:opacity-50"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold px-4 py-2 border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors disabled:opacity-50"
           >
             {loading ? 'Refreshing...' : 'Refresh'}
           </button>

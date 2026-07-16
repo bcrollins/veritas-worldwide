@@ -43,6 +43,8 @@ const floors = [
   { path: 'src/pages/admin/AdminSubscriptions.tsx', min: 2, label: 'admin subscriptions' },
   { path: 'src/pages/admin/AdminLoginPage.tsx', min: 3, label: 'admin login form' },
   { path: 'src/pages/admin/AdminDisputes.tsx', min: 2, label: 'admin disputes' },
+  { path: 'src/pages/AccessibilityPage.tsx', min: 6, label: 'accessibility trust page' },
+  { path: 'src/pages/AnalyticsPage.tsx', min: 1, label: 'analytics refresh' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
