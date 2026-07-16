@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T09:08:16.410Z",
+  "checkedAt": "2026-07-16T09:15:04.981Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "ffbd43f16094667b932c266bdc6cc8f05b31bd27",
-    "commitShort": "ffbd43f16094",
-    "deploymentId": "0717a69b-a9fb-41cc-bcf0-feded89e641d",
+    "commit": "e5e5a51e2afcd48c6db298288eaed58c1bcc91ed",
+    "commitShort": "e5e5a51e2afc",
+    "deploymentId": "74467788-dd9b-47c3-ba13-a15dbe25e8e4",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -111,7 +111,7 @@
     {
       "ok": true,
       "label": "Health probe exposes client error intake count",
-      "detail": "clientErrorIntakeCount=1"
+      "detail": "clientErrorIntakeCount=0"
     },
     {
       "ok": true,
@@ -121,7 +121,7 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=34"
+      "detail": "pinned=41"
     },
     {
       "ok": true,
@@ -141,7 +141,7 @@
     {
       "ok": true,
       "label": "Health history exposes uniqueReplicas array",
-      "detail": "uniqueReplicas=true count=75"
+      "detail": "uniqueReplicas=true count=76"
     },
     {
       "ok": true,

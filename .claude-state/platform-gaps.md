@@ -67,6 +67,20 @@
   Impact: recently read chapters receive a modest ranking boost without displacing title/source relevance.
   Resolution: recent= query param, +18 score, SearchPage reading-history wiring, verify:search boost assertion.
 
+## Recently Closed (2026-07-16 — a11y shell + auth validation + archive pins)
+
+- **Invalid-email register hole closed and live.**
+  Impact: `/api/auth/register` previously accepted bare tokens like `not-an-email` (201 + session). Now returns 400 with no token; login also validates email shape and password max length.
+  Resolution: `isValidEmail` + bounds in `server-auth.js`; auth smoke covers bad-login and invalid-email. Live tip `e5e5a51` / `0845489` verified with `verify:auth` PASS and curl proof (`400 Please enter a valid email address`).
+
+- **41 archive pins live (floor 38).**
+  Impact: NTSB, Fed H.15, FAA, HRW news, Amnesty, CPJ, UNRWA resources join CISA/NIST/FiscalData/SCOTUS and dossier pins; Lancet remains explicit lookup-only until Wayback captures the Langlo article.
+  Resolution: `briefing-source-archive-manifest.json` + raised `verify-archive-manifest` / platform floors. Live pin count 41 on tip `c5acb73`+.
+
+- **Shell touch-target wave (44px) shipped across key controls.**
+  Impact: BackToTop, FontSizeToggle, AuthModal, ContentGate, TextSelectionShare, Search clear/retry/topics, ExitIntent, CitationGenerator, CommunityForum, DownloadModal, Bookmark, Newsletter, StickyMembership (prior) all meet 44px minimum hit areas.
+  Resolution: incremental commits `4ed5161` → `35b7510`. Platform asserts four sourced news routes.
+
 ## Critical
 
 - **Third-party paging (Sentry cloud) is still optional.**

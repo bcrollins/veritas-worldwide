@@ -1,13 +1,13 @@
 {
-  "run": 56,
+  "run": 57,
   "date": "2026-07-16",
   "site": [
     {
       "feature": "Israel Dossier",
       "composite": 9.999,
       "previous": 9.999,
-      "delta": 0.001,
-      "status": "34+ archive pins including CISA/NIST/FiscalData/SCOTUS Code; Lancet lookup-only",
+      "delta": 0,
+      "status": "41 archive pins (NTSB/H.15/FAA/HRW/Amnesty/CPJ/UNRWA + prior); Lancet lookup-only; floor 38",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -36,42 +36,42 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.65,
-      "previous": 9.45,
-      "delta": 0.2,
-      "status": "7d TTL + silent refresh with jti rotation; auth smoke PASS live",
+      "composite": 9.75,
+      "previous": 9.65,
+      "delta": 0.1,
+      "status": "invalid-email register rejected 400 live; password max 128; auth smoke negative paths PASS tip e5e5a51",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
       "feature": "Source Browser",
-      "composite": 9.8,
-      "previous": 9.7,
-      "delta": 0.1,
-      "status": "expanded archive pins for restricted hosts (+972, CBO, OHCHR, Airwars, BTselem, UNRWA)",
+      "composite": 9.85,
+      "previous": 9.8,
+      "delta": 0.05,
+      "status": "41 pins incl aviation/rates/rights hosts; Wayback 200 verified for new snapshots",
       "plus_half_requires": "Expand archive pins beyond briefing rows to restricted/bot-blocked bibliography URLs."
     },
     {
       "feature": "Search",
-      "composite": 9.7,
-      "previous": 9.55,
-      "delta": 0.15,
-      "status": "popularityBoost + engagement live; pure score-ladder + live ranking + platform popularChapterIds asserts; verify:live env fixed",
+      "composite": 9.72,
+      "previous": 9.7,
+      "delta": 0.02,
+      "status": "clear/retry/topic chips 44px; popularity+engagement ladder unchanged green",
       "plus_half_requires": "Optional per-reader server identity for multi-device engagement when auth session is present."
     },
     {
       "feature": "News & Topic Entry",
-      "composite": 9.55,
-      "previous": 9.2,
-      "delta": 0.35,
-      "status": "4 sourced B-pack articles live (CISA/NIST/Treasury/NTSB-FAA/SCOTUS Code); content-pack slugs fixed; 17/17 primary URLs 200",
+      "composite": 9.6,
+      "previous": 9.55,
+      "delta": 0.05,
+      "status": "4 sourced articles newest-first; platform asserts live routes; archive pins for news hosts",
       "plus_half_requires": "Continue adding primary-sourced reporting only; never reintroduce fabricated journalism paths."
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.05,
-      "previous": 8.9,
+      "composite": 9.2,
+      "previous": 9.05,
       "delta": 0.15,
-      "status": "UTM+referrer attribution on donate/membership; PDF CTAs across home/institute/feed/sitemap | LIVE 74dec67 proven",
+      "status": "44px touch targets across shell/modals/search/newsletter/download/bookmark; news platform route asserts",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -84,10 +84,10 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.92,
-      "previous": 9.9,
-      "delta": 0.02,
-      "status": "shared-database health history across 10+ SHAs with replica tags; optional Sentry; platform/auth/search PASS tip 5fe3fff",
+      "composite": 9.93,
+      "previous": 9.92,
+      "delta": 0.01,
+      "status": "verify:live full green tip e5e5a51; interval ships 4ed5161→e5e5a51",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
