@@ -39,3 +39,15 @@ Extra curl proofs:
 
 - Lancet Langlo article still lookup-only (Wayback CDX empty for that URL).
 - Sentry DSN still optional for external paging.
+
+## Later interval ships (same session)
+
+| SHA | Summary |
+|-----|---------|
+| `35b7510` | Newsletter 44px |
+| `83f3a25` | Scorecard run 57 + proof |
+| `62ef63b` | News/briefing/share/forum 44px |
+| `5085f9b` | Article/profile/dossier chips 44px — **verify:live green** |
+| `605ac46` | displayName control-char strip; chapter keyword chips — **verify:live green** |
+| `33193d1` | Deep-state media + profile tier filters 44px |
+
