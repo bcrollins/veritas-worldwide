@@ -155,7 +155,12 @@ export function registerDatabaseAndAuthRoutes({
     return res.json({
       query,
       scope,
-      filters,
+      filters: {
+        evidenceTier: filters.evidenceTier,
+        match: filters.match,
+        chapterType: filters.chapterType,
+        recentChapterIds,
+      },
       totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
       results: chapterHelpers.searchChapters(scope, query, filters),
     })
