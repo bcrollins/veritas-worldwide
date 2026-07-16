@@ -1,5 +1,5 @@
 {
-  "run": 123,
+  "run": 124,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,15 +71,15 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 548c913 live 15-step; skip-link 44px; JWT HS256; scorecard 123; 69 a11y/522",
+      "status": "product tip bd1c2bc live 15-step; scorecard 124; 69 a11y/523; JWT HS256; 12 headers",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
       "feature": "Veritas Institute",
-      "composite": 9.6,
-      "previous": 9.55,
-      "delta": 0.05,
-      "status": "institute footer 44px; tip aa602cf",
+      "composite": 9.7,
+      "previous": 9.6,
+      "delta": 0.1,
+      "status": "institute skip-to-content 44px live; tip bd1c2bc 15-step",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
