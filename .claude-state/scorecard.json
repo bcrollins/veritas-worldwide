@@ -1,5 +1,5 @@
 {
-  "run": 60,
+  "run": 61,
   "date": "2026-07-16",
   "site": [
     {
@@ -44,10 +44,10 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.85,
-      "previous": 9.8,
-      "delta": 0.05,
-      "status": "41 pins incl aviation/rates/rights hosts; Wayback 200 verified for new snapshots",
+      "composite": 9.88,
+      "previous": 9.85,
+      "delta": 0.03,
+      "status": "43 pins floor 42; DOJ+NTSB investigations; sources page CTAs 44px",
       "plus_half_requires": "Expand archive pins beyond briefing rows to restricted/bot-blocked bibliography URLs."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.45,
-      "previous": 9.4,
+      "composite": 9.5,
+      "previous": 9.45,
       "delta": 0.05,
-      "status": "44px wave complete through tip 62550a8; donation+continue-reading+membership+home+topics",
+      "status": "44px wave through sources/methodology/content-pack; tip d5a3844 verify:live green",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
