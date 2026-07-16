@@ -89,6 +89,11 @@
 - **verify:auth-validation pure suite** in `verify:live`; short-password register rejected.
 - **Public 44px wave** extended to deep-state, forum, dossier footer, dispute form, terms/privacy, breadcrumbs across shells.
 
+
+- **Auth returnTo open-redirect hole closed.**
+  Impact: post-login navigation no longer accepts protocol-relative or absolute URLs from sessionStorage intent.
+  Resolution: `sanitizeReturnTo` in AuthContext + pure suite asserts. Tip ships with verify:auth-validation.
+
 ## Critical
 
 - **Third-party paging (Sentry cloud) is still optional.**
