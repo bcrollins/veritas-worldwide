@@ -290,7 +290,7 @@ export default function SourcesPage() {
                             setSourceHierarchyFilter('all')
                             setEvidenceTierFilter('all')
                           }}
-                          className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
+                          className="inline-flex min-h-[44px] items-center font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
                         >
                           Clear filters
                         </button>
@@ -335,7 +335,7 @@ export default function SourcesPage() {
                             setSourceHierarchyFilter('all')
                             setEvidenceTierFilter('all')
                           }}
-                          className="font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
+                          className="inline-flex min-h-[44px] items-center font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
                         >
                           Clear the filters
                         </button>
