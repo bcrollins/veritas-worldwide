@@ -1,5 +1,5 @@
 {
-  "run": 202,
+  "run": 203,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "password 8 + anti-enum + AuthModal TLD\u22652; tip 18356a0 15-step",
+      "status": "password 8 + dual anti-enum + AuthModal TLD/control strip; tip 701b327 15-step",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "scorecard 200 milestone; tip 15377f6 continuous green",
+      "status": "session stop tip 701b327 live; scorecard 203; full ocean wave green",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
