@@ -1,5 +1,5 @@
 {
-  "run": 33,
+  "run": 34,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -129,14 +129,18 @@
     "Upgraded all nine GitHub Actions workflows to node-version 24 with FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true to close the Node 20 action-runtime deprecation warning.",
     "Compacted the mobile cookie consent banner so first-screen editorial context stays visible on 390px/430px while preserving 44pt touch targets.",
     "Patched vulnerable transitive packages via npm audit fix; npm audit reports 0 vulnerabilities. Local verification: tsc --noEmit, node --check server.js, npm run build (289 prerendered routes), local /api/health returns status=ok.",
-    "Live-verified production commit c809452a9e1d / deployment 28a30bf8-5c47-4108-b6ad-ee1688b872bc on 2026-07-16: /api/health status=ok, npm run verify:platform -- https://veritasworldwide.com PASS, AnalyticsPage and CookieConsent live chunks contain new UI strings."
+    "Live-verified production commit c809452a9e1d / deployment 28a30bf8-5c47-4108-b6ad-ee1688b872bc on 2026-07-16: /api/health status=ok, npm run verify:platform -- https://veritasworldwide.com PASS, AnalyticsPage and CookieConsent live chunks contain new UI strings.",
+    "Merged brand assets and usage guidelines into live /content-pack (ContentPackPage), deleted dead ContentPacksPage.tsx dual-route drift.",
+    "Pinned 11 Wayback snapshots for public briefing source rows, published briefing-source-archive-manifest.json, indexed in llms/workbook manifest/platform health.",
+    "Live-verified production commit db4519dd0187 / deployment f3c2af13-0654-420e-8a7f-38b9ec6ea405: /api/health ok, archive manifest 200 with 11 pins, content-pack brand kit strings live, verify:platform PASS, verify:israel-dossier PASS.",
+    "GitHub Actions jobs fail to start due to account billing lock; Railway still deploys main successfully.",
+    "Added dossier UI link to archive pins manifest (commit 6edd179)."
   ],
-  "next_task": "Add Sentry (needs DSN) or archive ContentPacksPage.tsx dead module; optionally screenshot 390px homepage with pending cookie consent.",
+  "next_task": "When GitHub billing unlocks, re-run Actions; pin remaining 5 briefing lookup-only URLs; add Sentry if DSN available.",
   "next_priorities": [
-    "Live-verify /api/health and the /analytics Release Health panel on the deployed commit after Railway advances.",
-    "Add Sentry or equivalent error monitoring once a DSN credential is available.",
-    "Archive or delete unused ContentPacksPage.tsx so route audits have one content-pack canon.",
-    "Add exact page/paragraph locators and archived source-copy manifests to remaining public briefing source rows.",
-    "Connect Search Console coverage and HubSpot workflow configuration once Brandon supplies portal/account access."
+    "Unlock GitHub billing so CI verification fleet can run again.",
+    "Pin remaining briefing source URLs once Wayback has snapshots (Forensic Architecture, Lancet, OCHA content URLs, UN Digital Library).",
+    "Add Sentry error monitoring when DSN is available.",
+    "Pressure-test /content-pack brand downloads and /israel-dossier/briefing archive links at the full device matrix."
   ]
 }

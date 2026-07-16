@@ -4,11 +4,11 @@
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.95,
-      "previous": 9.9,
-      "delta": 0.05,
-      "status": "live on 83e2451ae18a: locator/source-copy slice remains live, the public briefing chapter draft is expanded and guarded by behavior/canon tests, the removed AIPAC source is archive-pinned, all GitHub Actions verification lanes passed, and live release/platform/public-access/dossier behavior probes passed on deployment b27d1e14-8aa7-427e-9968-52bc2c3bde82",
-      "plus_half_requires": "Add exact paragraph/page locators and archived source-copy manifests for every remaining public briefing claim, then add an operator-visible monitor that alerts on source-link, audit, and dossier behavior regressions."
+      "composite": 9.97,
+      "previous": 9.95,
+      "delta": 0.02,
+      "status": "live on db4519dd0187+: 11 pinned briefing archives + public archive manifest; Archive pins UI link shipping",
+      "plus_half_requires": "Pin remaining lookup-only briefing hosts when Wayback snapshots exist."
     },
     {
       "feature": "Home / Front Page",
@@ -44,10 +44,10 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.3,
-      "previous": 9.2,
+      "composite": 9.4,
+      "previous": 9.3,
       "delta": 0.1,
-      "status": "strict source-link verification now passes after current OpenSecrets member URLs and the archive-backed AIPAC replacement; the May 24 CI Source Links workflow passed for 455 unique URLs with 0 actionable failures",
+      "status": "improved; pinned Wayback captures for high-value briefing sources live",
       "plus_half_requires": "Add archived source-copy manifests and locator fields for high-value restricted/bot-blocked sources so publication evidence remains inspectable even when third-party hosts block automated probes."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 8.6,
-      "previous": 8.1,
-      "delta": 0.5,
-      "status": "improved",
+      "composite": 8.75,
+      "previous": 8.6,
+      "delta": 0.15,
+      "status": "improved; single content-pack + brand kit surface live",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -87,7 +87,7 @@
       "composite": 9.1,
       "previous": 8.8,
       "delta": 0.3,
-      "status": "live on c809452a9e1d deployment 28a30bf8: /api/health ok, platform verify PASS, Release Health panel in AnalyticsPage chunk",
+      "status": "live; /api/health ok on db4519dd0187; platform verifier PASS including archive manifest checks",
       "plus_half_requires": "Wire Sentry (or equivalent) for stack-trace alerting, then prove scheduled platform-health failures notify an operator."
     },
     {
