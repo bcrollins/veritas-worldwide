@@ -172,7 +172,22 @@ async function main() {
         `prerenderedRouteCount=${build.prerenderedRouteCount ?? 'unknown'}`
       )
 
-      const healthResult = await fetchJson('/api/health')
+      
+      addCheck(
+        checks,
+        failures,
+        build.recordPdf === true,
+        'Build info reports manuscript PDF present',
+        `recordPdf=${build.recordPdf}`
+      )
+      addCheck(
+        checks,
+        failures,
+        build.instituteFieldManualPdf === true,
+        'Build info reports institute field manual PDF present',
+        `instituteFieldManualPdf=${build.instituteFieldManualPdf}`
+      )
+const healthResult = await fetchJson('/api/health')
       const health = typeof healthResult.data === 'object' && healthResult.data !== null ? healthResult.data : {}
 
       addCheck(
