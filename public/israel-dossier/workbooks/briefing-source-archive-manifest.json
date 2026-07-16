@@ -313,6 +313,13 @@
       "archiveUrl": "https://web.archive.org/web/20251201041753/https://www.courtlistener.com/docket/4355835/parties/giuffre-v-maxwell/",
       "status": "pinned",
       "note": "Giuffre v. Maxwell CourtListener parties page (durable capture; docket root unarchived)"
+    },
+    {
+      "sourceUrl": "https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/",
+      "timestamp": "20250606164012",
+      "archiveUrl": "https://web.archive.org/web/20250606164012/https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/?s=09",
+      "status": "pinned",
+      "note": "Giuffre v. Maxwell CourtListener docket (Wayback capture with sort param)"
     }
   ]
 }

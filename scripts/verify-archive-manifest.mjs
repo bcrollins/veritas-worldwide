@@ -8,7 +8,7 @@ const m = JSON.parse(fs.readFileSync(path.join(root, 'public/israel-dossier/work
 assert(Array.isArray(m.entries), 'entries array')
 const pinned = m.entries.filter((e) => e.status === 'pinned')
 const lookup = m.entries.filter((e) => e.status === 'lookup-only')
-assert(pinned.length >= 45, `pinned ${pinned.length} < 45`)
+assert(pinned.length >= 46, `pinned ${pinned.length} < 46`)
 assert(lookup.length <= 3, `lookup-only ${lookup.length} too many`)
 for (const e of pinned) {
   assert(e.archiveUrl && e.archiveUrl.includes('web.archive.org/web/'), `pinned missing archiveUrl: ${e.sourceUrl}`)
