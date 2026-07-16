@@ -863,11 +863,15 @@ export const articles: Article[] =
 
 // Merge all article batches into single collection.
 // expandedArticlesB is the sourced replacement pack (durable primary URLs only).
-export const allArticles: Article[] = [
-  ...articles,
-  ...expandedArticlesA,
-  ...expandedArticlesB,
-]
+// Newest-first ordering keeps News front pages and getLatestArticles current.
+function publishTimeMs(article: Article): number {
+  const parsed = Date.parse(article.publishDate || '')
+  return Number.isFinite(parsed) ? parsed : 0
+}
+
+export const allArticles: Article[] = [...articles, ...expandedArticlesA, ...expandedArticlesB].sort(
+  (a, b) => publishTimeMs(b) - publishTimeMs(a) || a.slug.localeCompare(b.slug)
+)
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return allArticles.find(a => a.slug === slug)
