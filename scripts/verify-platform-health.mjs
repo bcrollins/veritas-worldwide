@@ -728,6 +728,16 @@ const healthResult = await fetchJson('/api/health')
         )
       }
 
+      const baseSearch = await fetchJson('/api/search?q=federal%20reserve')
+      const baseSearchData =
+        typeof baseSearch.data === 'object' && baseSearch.data !== null ? baseSearch.data : {}
+      addCheck(
+        checks,
+        failures,
+        baseSearch.response.ok && Array.isArray(baseSearchData.filters?.popularChapterIds),
+        'Search exposes sitewide popularChapterIds from analytics',
+        `status=${baseSearch.response.status} popularCount=${Array.isArray(baseSearchData.filters?.popularChapterIds) ? baseSearchData.filters.popularChapterIds.length : 0}`
+      )
 
       const analyticsResult = await fetchJson('/api/analytics/snapshot')
       const analytics = typeof analyticsResult.data === 'object' && analyticsResult.data !== null ? analyticsResult.data : {}

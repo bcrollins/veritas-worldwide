@@ -131,6 +131,27 @@
       "archiveUrl": "https://web.archive.org/web/20260520163824/https://www.unrwa.org/",
       "status": "pinned",
       "note": "UNRWA org landing (companion for host-level archive fallback)"
+    },
+    {
+      "sourceUrl": "https://www.btselem.org/gaza_strip",
+      "timestamp": "20260618123110",
+      "archiveUrl": "https://web.archive.org/web/20260618123110/https://www.btselem.org/gaza_strip",
+      "status": "pinned",
+      "note": "B'Tselem Gaza Strip topic hub"
+    },
+    {
+      "sourceUrl": "https://reliefweb.int/",
+      "timestamp": "20260707144848",
+      "archiveUrl": "https://web.archive.org/web/20260707144848/https://reliefweb.int/",
+      "status": "pinned",
+      "note": "ReliefWeb host landing"
+    },
+    {
+      "sourceUrl": "https://www.hrw.org/",
+      "timestamp": "20260714040613",
+      "archiveUrl": "https://web.archive.org/web/20260714040613/https://www.hrw.org/",
+      "status": "pinned",
+      "note": "Human Rights Watch host landing"
     }
   ]
 }
