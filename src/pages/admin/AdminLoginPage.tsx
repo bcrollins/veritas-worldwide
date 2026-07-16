@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="w-full px-3 py-2.5 bg-white/5 border border-white/10 rounded text-white font-sans text-sm focus:outline-none focus:border-crimson/50 focus:ring-1 focus:ring-crimson/30 transition-colors"
+              className="w-full min-h-[44px] px-3 py-2.5 bg-white/5 border border-white/10 rounded text-white font-sans text-sm focus:outline-none focus:border-crimson/50 focus:ring-1 focus:ring-crimson/30 transition-colors"
               placeholder="admin@veritasworldwide.com"
               required
               autoFocus
@@ -56,7 +56,7 @@ export default function AdminLoginPage() {
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className="w-full px-3 py-2.5 bg-white/5 border border-white/10 rounded text-white font-sans text-sm focus:outline-none focus:border-crimson/50 focus:ring-1 focus:ring-crimson/30 transition-colors"
+              className="w-full min-h-[44px] px-3 py-2.5 bg-white/5 border border-white/10 rounded text-white font-sans text-sm focus:outline-none focus:border-crimson/50 focus:ring-1 focus:ring-crimson/30 transition-colors"
               placeholder="Enter password"
               required
             />
@@ -64,7 +64,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-widest uppercase rounded hover:bg-crimson-dark transition-colors disabled:opacity-50"
+            className="w-full min-h-[44px] py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-widest uppercase rounded hover:bg-crimson-dark transition-colors disabled:opacity-50"
           >
             {loading ? 'Authenticating...' : 'Sign In'}
           </button>

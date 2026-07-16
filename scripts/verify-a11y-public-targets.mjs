@@ -39,6 +39,10 @@ const floors = [
   { path: 'src/pages/admin/AdminDashboard.tsx', min: 6, label: 'admin dashboard CTAs' },
   { path: 'src/pages/admin/AdminSocialPacks.tsx', min: 3, label: 'admin social packs' },
   { path: 'src/pages/admin/AdminSocialHub.tsx', min: 1, label: 'admin social hub tabs' },
+  { path: 'src/pages/admin/AdminUsers.tsx', min: 2, label: 'admin users' },
+  { path: 'src/pages/admin/AdminSubscriptions.tsx', min: 2, label: 'admin subscriptions' },
+  { path: 'src/pages/admin/AdminLoginPage.tsx', min: 3, label: 'admin login form' },
+  { path: 'src/pages/admin/AdminDisputes.tsx', min: 2, label: 'admin disputes' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 

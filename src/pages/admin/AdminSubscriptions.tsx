@@ -102,7 +102,7 @@ export default function AdminSubscriptions() {
             href="https://dashboard.stripe.com/subscriptions"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-sans text-[10px] tracking-wide text-crimson hover:text-crimson-light"
+            className="inline-flex min-h-[44px] items-center font-sans text-[10px] tracking-wide text-crimson hover:text-crimson-light"
           >
             Full Data in Stripe →
           </a>
@@ -142,7 +142,7 @@ export default function AdminSubscriptions() {
       <div className="bg-crimson/5 border border-crimson/10 rounded-lg p-5">
         <p className="font-sans text-xs text-crimson/60 leading-relaxed">
           <strong className="text-crimson">Note:</strong> This is a localStorage-backed MVP. For full subscription management with payment history, refunds, and invoice generation, use the{' '}
-          <a href="https://dashboard.stripe.com" target="_blank" rel="noopener noreferrer" className="text-crimson underline hover:no-underline">Stripe Dashboard</a>.
+          <a href="https://dashboard.stripe.com" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center text-crimson underline hover:no-underline">Stripe Dashboard</a>.
           All payment processing flows through Stripe Payment Links — no sensitive financial data is stored locally.
         </p>
       </div>

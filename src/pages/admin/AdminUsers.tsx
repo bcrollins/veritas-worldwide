@@ -41,7 +41,7 @@ export default function AdminUsers() {
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search users..."
-            className="w-56 pl-8 pr-3 py-2 bg-white/5 border border-white/10 rounded text-white font-sans text-xs focus:outline-none focus:border-crimson/30"
+            className="w-56 min-h-[44px] pl-8 pr-3 py-2 bg-white/5 border border-white/10 rounded text-white font-sans text-xs focus:outline-none focus:border-crimson/30"
           />
           <svg className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -79,7 +79,7 @@ export default function AdminUsers() {
                 <td className="px-5 py-3 text-right">
                   <button
                     onClick={() => handleDelete(user.email)}
-                    className="font-sans text-[10px] tracking-wide text-crimson/50 hover:text-crimson transition-colors"
+                    className="inline-flex min-h-[44px] items-center font-sans text-[10px] tracking-wide text-crimson/50 hover:text-crimson transition-colors"
                   >
                     Remove
                   </button>
