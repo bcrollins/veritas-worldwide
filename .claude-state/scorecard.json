@@ -1,5 +1,5 @@
 {
-  "run": 42,
+  "run": 43,
   "date": "2026-07-16",
   "site": [
     {
@@ -68,18 +68,18 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 8.9,
-      "previous": 8.75,
+      "composite": 9.05,
+      "previous": 8.9,
       "delta": 0.15,
-      "status": "improved; single content-pack + brand kit surface live",
+      "status": "UTM+referrer attribution on donate/membership; PDF CTAs across home/institute/feed/sitemap",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
       "feature": "Veritas Institute",
-      "composite": 9.45,
-      "previous": 9.35,
+      "composite": 9.55,
+      "previous": 9.45,
       "delta": 0.1,
-      "status": "durable PDF download from catalog + book; schema encoding; non-stale cache",
+      "status": "durable PDF live + prerender + RSS + non-stale cache + schema encoding",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
