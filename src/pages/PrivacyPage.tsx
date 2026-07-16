@@ -135,6 +135,16 @@ export default function PrivacyPage() {
                   <Link to="/methodology" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Methodology
                   </Link>
+                  <Link to="/institute/book" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                    → Field Manual
+                  </Link>
+                  <a
+                    href="/veritas-institute-field-manual.pdf"
+                    className="block text-sm text-ink-muted hover:text-crimson transition-colors"
+                    download="veritas-institute-field-manual.pdf"
+                  >
+                    → Field Manual PDF
+                  </a>
                 </nav>
               </div>
 
