@@ -114,6 +114,16 @@ for (const scope of [
     `named rateLimit scope required: ${scope}`,
   )
 }
+assert(
+  server.includes("name: 'field-manual-pdf', windowMs: 60_000, max: 90") ||
+    server.includes('name: "field-manual-pdf", windowMs: 60_000, max: 90'),
+  'field-manual PDF rateLimit must allow 90/min multi-agent headroom',
+)
+assert(
+  server.includes("name: 'the-record-pdf', windowMs: 60_000, max: 90") ||
+    server.includes('name: "the-record-pdf", windowMs: 60_000, max: 90'),
+  'the-record PDF rateLimit must allow 90/min multi-agent headroom',
+)
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
 assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
