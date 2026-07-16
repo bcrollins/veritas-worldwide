@@ -771,6 +771,8 @@ app.use('/api/auth/login', rateLimit({ windowMs: 60_000, max: 20 }))
 app.use('/api/auth/register', rateLimit({ windowMs: 60_000, max: 24 }))
 // Session refresh is authenticated and low-risk; allow regular client heartbeat calls.
 app.use('/api/auth/refresh', rateLimit({ windowMs: 60_000, max: 30 }))
+// Password changes are authenticated but still brute-forceable on currentPassword.
+app.use('/api/user/change-password', rateLimit({ windowMs: 60_000, max: 10 }))
 app.use('/api/analytics/event', rateLimit({ windowMs: 60_000, max: 120 }))
 app.use('/api/client-error', rateLimit({ windowMs: 60_000, max: 30 }))
 

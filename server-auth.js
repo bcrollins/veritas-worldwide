@@ -560,6 +560,12 @@ export function registerDatabaseAndAuthRoutes({
     if (typeof newPassword !== 'string' || newPassword.length < 6) {
       return res.status(400).json({ error: 'New password must be at least 6 characters' })
     }
+    if (typeof newPassword === 'string' && newPassword.length > 128) {
+      return res.status(400).json({ error: 'Password is too long' })
+    }
+    if (typeof currentPassword === 'string' && currentPassword.length > 128) {
+      return res.status(400).json({ error: 'Password is too long' })
+    }
 
     try {
       const { rows } = await dbPool.query('SELECT password_hash FROM users WHERE id = $1', [user.id])

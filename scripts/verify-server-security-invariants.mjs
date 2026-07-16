@@ -34,6 +34,11 @@ assert(server.includes('same-origin-allow-popups'), 'COOP allows intentional sha
 assert(server.includes('Origin-Agent-Cluster'), 'Origin-Agent-Cluster set')
 assert(server.includes("'Origin-Agent-Cluster', '?1'") || server.includes('Origin-Agent-Cluster\', \'?1\''), 'Origin-Agent-Cluster value ?1')
 assert(
+  server.includes("/api/user/change-password") && server.includes('rateLimit'),
+  'change-password must be rate-limited',
+)
+assert(server.includes("app.use('/api/user/change-password', rateLimit"), 'change-password rateLimit middleware registered')
+assert(
   server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
     server.includes('/.well-known/security.txt'),
   'security.txt routes must be registered on the Express app',
