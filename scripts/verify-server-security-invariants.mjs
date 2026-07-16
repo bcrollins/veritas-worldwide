@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const server = readFileSync(join(root, 'server.js'), 'utf8')
+const serverAuth = readFileSync(join(root, 'server-auth.js'), 'utf8')
 
 function assert(c, m) {
   if (!c) {
@@ -45,5 +46,10 @@ assert(
 )
 assert(server.includes('SECURITY_TXT_FALLBACK') && server.includes('loadSecurityTxtBody'), 'security.txt in-process fallback present')
 assert(server.includes('privacy@veritasworldwide.com'), 'security.txt contact embedded for production fallback')
+
+// Change-password validation mirrors register/login max length floor
+assert(serverAuth.includes('change-password'), 'change-password route present in server-auth')
+assert(serverAuth.includes('newPassword.length > 128'), 'change-password rejects overlong new passwords')
+assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rejects overlong current passwords')
 
 console.log('[verify:server-security-invariants] PASS — server.js security surface locked')
