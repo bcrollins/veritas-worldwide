@@ -615,6 +615,26 @@ const healthResult = await fetchJson('/api/health')
         'Anonymous search results expose evidence tier metadata',
         `availableEvidenceTiers=${Array.isArray(firstSearchResult.availableEvidenceTiers) ? firstSearchResult.availableEvidenceTiers.join(', ') : 'invalid'}`
       )
+      const boostedSearch = await fetchJson('/api/search?q=federal%20reserve&recent=chapter-9')
+      const boostedRows = Array.isArray(boostedSearch.data?.results) ? boostedSearch.data.results : []
+      const boostedChapter9 = boostedRows.find((row) => row && row.chapterId === 'chapter-9')
+      addCheck(
+        checks,
+        failures,
+        boostedSearch.response.ok,
+        'Engagement-boosted search responds',
+        `status=${boostedSearch.response.status}`
+      )
+      if (boostedChapter9) {
+        addCheck(
+          checks,
+          failures,
+          boostedChapter9.engagementBoost === true,
+          'Engagement boost flags recently read chapter',
+          `engagementBoost=${boostedChapter9.engagementBoost}`
+        )
+      }
+
 
       const analyticsResult = await fetchJson('/api/analytics/snapshot')
       const analytics = typeof analyticsResult.data === 'object' && analyticsResult.data !== null ? analyticsResult.data : {}
