@@ -86,8 +86,8 @@ export function registerDatabaseAndAuthRoutes({
     if (typeof value !== 'string') return false
     const email = value.trim()
     if (email.length < 5 || email.length > 254) return false
-    // Local@domain with at least one dot in the domain; no spaces or angle brackets.
-    return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)
+    // Local@domain with at least one dot and a TLD of 2+ chars; no spaces or angle brackets.
+    return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/.test(email)
   }
 
   app.get('/api/auth/status', (_req, res) => {

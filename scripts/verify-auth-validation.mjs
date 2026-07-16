@@ -7,7 +7,7 @@ function isValidEmail(value) {
   if (typeof value !== 'string') return false
   const email = value.trim()
   if (email.length < 5 || email.length > 254) return false
-  return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)
+  return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/.test(email)
 }
 
 function isValidPassword(value) {
