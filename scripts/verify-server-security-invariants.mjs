@@ -219,6 +219,16 @@ assert(
   (verifyLive.split('&&').length) >= 15,
   `verify:live must stay at least 15 steps (got ${verifyLive.split('&&').length})`,
 )
+const verifyPure = readFileSync(join(root, 'scripts', 'verify-pure.mjs'), 'utf8')
+for (const pureScript of [
+  'verify-server-security-invariants.mjs',
+  'verify-a11y-public-targets.mjs',
+  'verify-crawler-surfaces.mjs',
+  'verify-auth-validation.mjs',
+  'verify-csp-meta.mjs',
+]) {
+  assert(verifyPure.includes(pureScript), `verify:pure must include ${pureScript}`)
+}
 assert(
   typeof packageJson.dependencies?.react === 'string' &&
     /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies.react.replace(/^\^/, '')),
