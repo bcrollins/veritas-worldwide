@@ -168,6 +168,11 @@ if (failures > 0) {
 
 const total = results.reduce((n, r) => n + r.count, 0)
 const MIN_TOTAL_MARKERS = 520
+const MIN_SURFACES = 69
+if (floors.length < MIN_SURFACES) {
+  console.error(`[verify:a11y-public-targets] FAIL — surface count ${floors.length} < floor ${MIN_SURFACES}`)
+  process.exit(1)
+}
 if (total < MIN_TOTAL_MARKERS) {
   console.error(`[verify:a11y-public-targets] FAIL — total markers ${total} < floor ${MIN_TOTAL_MARKERS}`)
   process.exit(1)
