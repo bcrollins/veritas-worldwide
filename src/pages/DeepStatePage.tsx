@@ -449,7 +449,7 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
               <h4 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Related Media</h4>
               <div className="flex flex-wrap gap-2">
                 {person.mediaLinks.map((ml, i) => (
-                  <a key={i} href={ml.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-border rounded-sm text-xs font-sans font-semibold text-ink-muted hover:text-crimson hover:border-crimson transition-colors">
+                  <a key={i} href={ml.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 border border-border rounded-sm text-xs font-sans font-semibold text-ink-muted hover:text-crimson hover:border-crimson transition-colors">
                     {ml.type === 'video' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><polygon points="5 3 19 12 5 21 5 3"/></svg>}
                     {ml.type === 'document' && <IconDocument className="w-3 h-3" />}
                     {ml.type === 'photo' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>}
