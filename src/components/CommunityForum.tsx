@@ -306,7 +306,7 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
       ) : (
         <button
           onClick={() => setShowAuthModal(true)}
-          className="w-full mb-8 py-4 border-2 border-dashed border-border rounded-sm text-center font-sans text-sm text-ink-muted hover:border-crimson/40 hover:text-crimson transition-colors"
+          className="w-full min-h-[44px] mb-8 py-4 border-2 border-dashed border-border rounded-sm text-center font-sans text-sm text-ink-muted hover:border-crimson/40 hover:text-crimson transition-colors"
         >
           Sign in to add a local beta comment
         </button>

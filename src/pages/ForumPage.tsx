@@ -265,7 +265,7 @@ function CommentThread({ comment, allComments, postId, depth, onVote, onReply, o
       <div className="py-2">
         {/* Collapse line */}
         {collapsed ? (
-          <button onClick={() => setCollapsed(false)} className="flex items-center gap-2 text-xs text-ink-faint hover:text-ink">
+          <button onClick={() => setCollapsed(false)} className="inline-flex min-h-[44px] items-center gap-2 text-xs text-ink-faint hover:text-ink">
             <span className="w-5 h-5 rounded-full bg-ink/5 flex items-center justify-center text-[0.5rem] font-bold">{getInitials(comment.author)}</span>
             <span className="font-semibold">{comment.author}</span>
             <span>{formatNumber(score)} points</span>
@@ -276,7 +276,7 @@ function CommentThread({ comment, allComments, postId, depth, onVote, onReply, o
           <>
             {/* Header */}
             <div className="flex items-center gap-2 text-xs mb-1">
-              <button onClick={() => setCollapsed(true)} className="w-5 h-5 rounded-full bg-ink/10 flex items-center justify-center text-[0.5rem] font-bold text-ink-muted hover:bg-ink/20 flex-shrink-0">{getInitials(comment.author)}</button>
+              <button onClick={() => setCollapsed(true)} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-ink/10 text-[0.5rem] font-bold text-ink-muted hover:bg-ink/20 flex-shrink-0" aria-label={`Collapse thread by ${comment.author}`}>{getInitials(comment.author)}</button>
               <span className="font-sans font-bold text-ink">{comment.author}</span>
               {comment.authorFlair && (
                 <span className="px-1.5 py-0.5 rounded text-[0.55rem] font-bold" style={{ background: comment.authorFlair.bgColor, color: comment.authorFlair.textColor }}>{comment.authorFlair.text}</span>
