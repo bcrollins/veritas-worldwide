@@ -839,9 +839,12 @@ function renderLlmsTxt(topics) {
   ].join('\n')
 }
 
-function renderInstituteIndexPage(topics, researchSources) {
+function renderInstituteIndexPage(topics, researchSources, fieldManualEntries = []) {
   const grouped = groupInstituteTopicsByTrack(topics)
   const trackCount = grouped.length
+  const fieldManualCount = Array.isArray(fieldManualEntries) && fieldManualEntries.length > 0
+    ? fieldManualEntries.length
+    : 25
 
   return `
     <main class="institute-shell-root text-white">
@@ -851,10 +854,10 @@ function renderInstituteIndexPage(topics, researchSources) {
           <h1 class="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The field manual for ordinary emergencies. The course library for trades, repair, and resilient households.</h1>
           <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">Veritas Institute answers immediate household and roadside problems first, then routes readers into deeper course paths for practical trade work, repair literacy, preparedness, food resilience, and healthcare-support skills.</p>
           <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            <div class="institute-stat"><span class="institute-stat-value">12</span><span class="institute-stat-label">field-manual answers</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(fieldManualCount))}</span><span class="institute-stat-label">field-manual answers</span></div>
             <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(topics.length))}</span><span class="institute-stat-label">practical course paths</span></div>
             <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(trackCount))}</span><span class="institute-stat-label">practical tracks</span></div>
-            <div class="institute-stat"><span class="institute-stat-value">1</span><span class="institute-stat-label">printable field manual</span></div>
+            <div class="institute-stat"><span class="institute-stat-value">1</span><span class="institute-stat-label">printable field manual PDF</span></div>
           </div>
         </section>
 
@@ -2190,7 +2193,7 @@ for (const page of staticPages) {
 
   let body = renderStaticPage(page, chapters)
   if (route === '/topics') body = renderTopicsIndexPage(topicHubs)
-  if (route === '/institute') body = renderInstituteIndexPage(institutePracticalTopics, instituteResearchSources)
+  if (route === '/institute') body = renderInstituteIndexPage(institutePracticalTopics, instituteResearchSources, instituteFieldManualEntries)
   if (route === '/institute/book') body = renderInstituteBookPage(institutePracticalTopics, instituteResearchSources, instituteFieldManualEntries)
   if (route === '/institute/methodology') body = renderInstituteMethodologyPage(instituteResearchSources)
   fs.writeFileSync(filePath, buildDocument(template, meta, body))
