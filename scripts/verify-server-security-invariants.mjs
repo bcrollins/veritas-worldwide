@@ -59,7 +59,9 @@ assert(server.includes('RateLimit-Remaining'), 'rateLimit emits RateLimit-Remain
 assert(server.includes('RateLimit-Reset'), 'rateLimit emits RateLimit-Reset header')
 assert(server.includes('remaining: 0'), '429 JSON body includes remaining: 0')
 assert(server.includes('scope: name'), '429 JSON body includes named scope')
-assert(server.includes('isSyntheticProbe') || server.includes('platform-health probe'), 'client-error skips synthetic probes')
+assert(server.includes('isSyntheticProbe'), 'client-error isSyntheticProbe gate present')
+assert(server.includes('platform-health probe'), 'client-error skips platform-health probe messages')
+assert(server.includes('verify:platform'), 'client-error skips verify:platform source')
 assert(server.includes('Origin-Agent-Cluster'), 'Origin-Agent-Cluster set')
 assert(server.includes("'Origin-Agent-Cluster', '?1'") || server.includes('Origin-Agent-Cluster\', \'?1\''), 'Origin-Agent-Cluster value ?1')
 assert(
