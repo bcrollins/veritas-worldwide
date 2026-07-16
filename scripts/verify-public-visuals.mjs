@@ -31,6 +31,18 @@ const routes = [
   { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL'] },
   { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
   {
+    path: '/institute',
+    text: ['Veritas Institute', 'VERITAS INSTITUTE', 'Field Manual', 'FIELD MANUAL'],
+    anyText: [
+      'Download Field Manual PDF',
+      'DOWNLOAD FIELD MANUAL PDF',
+      'field-manual',
+      'FIELD-MANUAL',
+      'Open the Field Manual',
+      'OPEN THE FIELD MANUAL',
+    ],
+  },
+  {
     path: '/institute/book',
     text: ['Field Manual', 'FIELD MANUAL'],
     anyText: [
