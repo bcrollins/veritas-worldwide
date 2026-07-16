@@ -41,9 +41,12 @@ const REQUIRED_LLMS_NEEDLES = [
   '/methodology',
   '/sources',
   '/israel-dossier',
+  '/deep-state',
+  '/forum',
   'election-security-ai-risk-frameworks-cisa-nist-2026',
   'treasury-debt-transparency-fiscaldata-fed-h15-2026',
   'Current reporting',
+  'Investigations',
 ]
 
 function assert(condition, message) {
