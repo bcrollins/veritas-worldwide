@@ -724,25 +724,25 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
 
           {/* Title */}
           <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" maxLength={300}
-            className="w-full p-3 border border-border rounded bg-white font-sans text-sm focus:outline-none focus:ring-2 focus:ring-crimson/30" />
+            className="w-full min-h-[44px] p-3 border border-border rounded bg-white font-sans text-sm focus:outline-none focus:ring-2 focus:ring-crimson/30" />
 
           {/* Body */}
           {postType === 'text' && (
             <textarea value={body} onChange={e => setBody(e.target.value)} placeholder="Text (optional)" rows={8}
-              className="w-full p-3 border border-border rounded bg-white font-body text-sm resize-y focus:outline-none focus:ring-2 focus:ring-crimson/30" maxLength={40000} />
+              className="w-full min-h-[44px] p-3 border border-border rounded bg-white font-body text-sm resize-y focus:outline-none focus:ring-2 focus:ring-crimson/30" maxLength={40000} />
           )}
           {postType === 'link' && (
             <input type="url" value={body} onChange={e => setBody(e.target.value)} placeholder="URL"
-              className="w-full p-3 border border-border rounded bg-white font-sans text-sm focus:outline-none focus:ring-2 focus:ring-crimson/30" />
+              className="w-full min-h-[44px] p-3 border border-border rounded bg-white font-sans text-sm focus:outline-none focus:ring-2 focus:ring-crimson/30" />
           )}
           {postType === 'poll' && (
             <div className="space-y-2">
               <textarea value={body} onChange={e => setBody(e.target.value)} placeholder="Description (optional)" rows={3}
-                className="w-full p-3 border border-border rounded bg-white font-body text-sm resize-y focus:outline-none focus:ring-2 focus:ring-crimson/30" />
+                className="w-full min-h-[44px] p-3 border border-border rounded bg-white font-body text-sm resize-y focus:outline-none focus:ring-2 focus:ring-crimson/30" />
               {pollOptions.map((opt, i) => (
                 <div key={i} className="flex gap-2">
                   <input type="text" value={opt} onChange={e => { const n = [...pollOptions]; n[i] = e.target.value; setPollOptions(n) }}
-                    placeholder={`Option ${i + 1}`} className="flex-1 p-2 border border-border rounded bg-white font-sans text-sm focus:outline-none focus:ring-1 focus:ring-crimson/30" />
+                    placeholder={`Option ${i + 1}`} className="flex-1 min-h-[44px] p-2 border border-border rounded bg-white font-sans text-sm focus:outline-none focus:ring-1 focus:ring-crimson/30" />
                   {pollOptions.length > 2 && <button onClick={() => setPollOptions(pollOptions.filter((_, j) => j !== i))} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-red-600 px-2" aria-label="Remove poll option">×</button>}
                 </div>
               ))}

@@ -664,7 +664,7 @@ export default function DeepStatePage() {
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   placeholder="Search names, roles, evidence..."
-                  className="w-full pl-9 pr-4 py-2.5 border border-border rounded-sm bg-parchment font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
+                  className="w-full min-h-[44px] pl-9 pr-4 py-2.5 border border-border rounded-sm bg-parchment font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson/30 focus:border-crimson/40"
                 />
               </div>
 
@@ -674,7 +674,7 @@ export default function DeepStatePage() {
                 <select
                   value={categoryFilter}
                   onChange={e => setCategoryFilter(e.target.value as ConnectionCategory | 'all')}
-                  className="pl-8 pr-8 py-2.5 border border-border rounded-sm bg-parchment font-sans text-xs text-ink appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-crimson/30"
+                  className="min-h-[44px] pl-8 pr-8 py-2.5 border border-border rounded-sm bg-parchment font-sans text-xs text-ink appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-crimson/30"
                 >
                   <option value="all">All Categories</option>
                   {(Object.entries(CATEGORY_CONFIG) as [ConnectionCategory, typeof CATEGORY_CONFIG[ConnectionCategory]][]).map(([key, cfg]) => (
