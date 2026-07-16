@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:40:22.486Z
+- Checked at: 2026-07-16T08:44:15.362Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: eff10266e94f
-- Deployment: c6f4cdbb-1faf-486c-be1f-b6b832320678
+- Build commit: d0e4eebf37a8
+- Deployment: 0d25a173-c0d9-4350-a80f-8177673a9f2e
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
@@ -21,11 +21,11 @@
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
 - PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
-- PASS — Briefing source archive manifest has pinned snapshots: pinned=22
+- PASS — Briefing source archive manifest has pinned snapshots: pinned=23
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
-- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=45
+- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=50
 - PASS — Health history max samples supports multi-day retention: maxSamples=96
 - PASS — Health history reports known storage backend: storage=shared-database
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true

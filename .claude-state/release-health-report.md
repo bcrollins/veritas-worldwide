@@ -1,10 +1,10 @@
 # Release Health Report
 
-- Checked at: 2026-07-16T08:40:24.852Z
+- Checked at: 2026-07-16T08:44:17.557Z
 - Base URL: http://localhost:4175
 - Status: pass
 - Version: 1.0.0
-- Commit: eff10266e94f
+- Commit: 53fc2cf403fe
 - Deployment: unknown
 - Analytics lifetime views: 0
 - Analytics signups: 0
@@ -13,9 +13,9 @@
 - PASS — Build info route responds: GET /api/build-info returned 200
 - PASS — Homepage release headers respond: HEAD / returned 200
 - PASS — Release version header present: 1.0.0
-- PASS — Release commit header present: eff10266e94f
+- PASS — Release commit header present: 53fc2cf403fe
 - PASS — Release deployment header present: Deployment header not expected outside Railway
-- PASS — Release headers match build info: api=eff10266e94f / n/a · headers=eff10266e94f / missing
+- PASS — Release headers match build info: api=53fc2cf403fe / n/a · headers=53fc2cf403fe / missing
 - PASS — Build info includes JavaScript entry assets: js=5
 - PASS — Build info includes CSS entry assets: css=1
 - PASS — Build info reports manuscript PDF present: recordPdf=true
