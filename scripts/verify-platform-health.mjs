@@ -386,6 +386,23 @@ async function main() {
         `feed status=${feedResult.response.status} hasFieldManualPdf=${feedText.includes('/veritas-institute-field-manual.pdf')}`
       )
 
+      const instituteHtml = await fetchText('/institute')
+      addCheck(
+        checks,
+        failures,
+        instituteHtml.response.ok && (instituteHtml.text || '').includes('/veritas-institute-field-manual.pdf'),
+        'Institute catalog prerender links the field manual PDF',
+        `status=${instituteHtml.response.status} hasPdfLink=${(instituteHtml.text || '').includes('/veritas-institute-field-manual.pdf')}`
+      )
+      const instituteBookHtml = await fetchText('/institute/book')
+      addCheck(
+        checks,
+        failures,
+        instituteBookHtml.response.ok && (instituteBookHtml.text || '').includes('encodingFormat') && (instituteBookHtml.text || '').includes('/veritas-institute-field-manual.pdf'),
+        'Institute book prerender exposes PDF encoding schema',
+        `status=${instituteBookHtml.response.status}`
+      )
+
       const chapterPreviewResult = await fetchJson('/api/chapters/chapter-1')
       const chapterPreview = typeof chapterPreviewResult.data === 'object' && chapterPreviewResult.data !== null ? chapterPreviewResult.data : {}
 
