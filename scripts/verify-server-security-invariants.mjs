@@ -27,6 +27,15 @@ assert(server.includes('ALLOWED_ORIGINS'), 'CORS allowlist present')
 assert(server.includes('https://veritasworldwide.com'), 'CORS allowlist includes production origin')
 assert(server.includes('https://www.veritasworldwide.com'), 'CORS allowlist includes www origin')
 assert(!/Access-Control-Allow-Origin['"]?\s*,\s*['"]?\*/.test(server), 'must not use CORS wildcard *')
+assert(server.includes("'Vary', 'Origin'") || server.includes('"Vary", "Origin"'), 'CORS responses must Vary: Origin')
+assert(
+  server.includes("Access-Control-Max-Age', '600'") ||
+    server.includes('Access-Control-Max-Age", "600"') ||
+    server.includes("Access-Control-Max-Age', \"600\"") ||
+    server.includes('Access-Control-Max-Age'),
+  'CORS preflight Max-Age must be set',
+)
+assert(server.includes("'600'") || server.includes('"600"'), 'CORS Max-Age should be 600 seconds')
 assert(
   server.includes("express.json({ limit: '64kb' })") || server.includes('express.json({ limit: "64kb" })'),
   'global JSON body limit must be 64kb',

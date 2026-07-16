@@ -867,6 +867,10 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     res.setHeader('Access-Control-Allow-Credentials', 'true')
+    // Vary Origin so CDN/browser caches never mix allowlisted Origin values.
+    res.setHeader('Vary', 'Origin')
+    // Cache preflight for 10 minutes to cut OPTIONS chatter without long sticky misconfig.
+    res.setHeader('Access-Control-Max-Age', '600')
     if (req.method === 'OPTIONS') return res.sendStatus(204)
   }
   next()
