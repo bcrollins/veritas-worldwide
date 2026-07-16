@@ -590,6 +590,8 @@ type ReleaseHealth = {
   healthHistorySharedAcrossReplicas?: boolean
   healthHistorySampleCount?: number
   popularChapterCount?: number
+  nodeRuntime?: string
+  packageEnginesNode?: string
   checks?: Record<string, boolean>
   failed?: string[]
   version?: string
@@ -719,6 +721,19 @@ function ReleaseHealthPanel({
         <StatCard label="Version" value={health.version || '—'} />
       </div>
 
+      {(health.nodeRuntime || health.packageEnginesNode) && (
+        <p className="font-sans text-[10px] text-ink-muted mb-3" data-testid="release-health-node">
+          Runtime:{' '}
+          <span className="font-mono text-ink">{health.nodeRuntime || '—'}</span>
+          {health.packageEnginesNode ? (
+            <>
+              {' · engines.node '}
+              <span className="font-mono text-ink">{health.packageEnginesNode}</span>
+            </>
+          ) : null}
+        </p>
+      )}
+
       {health.clientErrorIntakeLastAt && (
         <p className="font-sans text-[10px] text-ink-muted mb-3">
           Last client error on this replica:{' '}
@@ -793,6 +808,7 @@ function ReleaseHealthPanel({
                     ? ' · sentry on'
                     : ' · sentry off'
                   : ''}
+                {health.nodeRuntime ? ` · ${health.nodeRuntime}` : ''}
               </p>
             </div>
             <a href="/api/health/history" className="font-mono text-[10px] text-crimson underline hover:text-crimson-dark">
