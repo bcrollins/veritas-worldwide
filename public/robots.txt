@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
 Sitemap: https://veritasworldwide.com/sitemap.xml
+
+# Durable public PDF downloads
+Allow: /veritas-institute-field-manual.pdf
+Allow: /the-record.pdf
