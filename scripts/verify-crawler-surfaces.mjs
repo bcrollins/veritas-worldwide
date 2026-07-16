@@ -15,7 +15,8 @@ const root = path.join(__dirname, '..')
 // so legitimate content growth is free, but accidental drops still fail CI/local verify.
 const MIN_PRERENDER_ROUTES = 270
 const MIN_SITEMAP_URLS = 300
-const MIN_LLMS_LINKS = 24
+// Floor sits ~10% under the 2026-07-16 baseline (~30 llms links after About/Accessibility GEO).
+const MIN_LLMS_LINKS = 27
 
 const REQUIRED_SITEMAP_PATHS = [
   '/',
