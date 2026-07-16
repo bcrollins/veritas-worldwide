@@ -288,6 +288,19 @@ export default function MethodologyPage() {
                   <Link to="/search" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Search The Record
                   </Link>
+                  <Link to="/institute/methodology" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                    Institute Methodology
+                  </Link>
+                  <Link to="/institute/book" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                    Field Manual
+                  </Link>
+                  <a
+                    href="/veritas-institute-field-manual.pdf"
+                    className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download="veritas-institute-field-manual.pdf"
+                  >
+                    Field Manual PDF
+                  </a>
                 </div>
               </div>
 
