@@ -1,5 +1,5 @@
 {
-  "run": 67,
+  "run": 68,
   "date": "2026-07-16",
   "site": [
     {
@@ -36,10 +36,10 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.9,
-      "previous": 9.85,
+      "composite": 9.95,
+      "previous": 9.9,
       "delta": 0.05,
-      "status": "returnTo open-redirect closed; auth-validation suite live tip a043ec4",
+      "status": "authPaths sanitizeReturnTo shared; AuthModal double-guard; tip c868106",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
