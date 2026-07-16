@@ -1,5 +1,5 @@
 {
-  "run": 125,
+  "run": 126,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip c8f3feb live 15-step; skip links site+institute+admin; scorecard 125; 69 a11y/524",
+      "status": "product tip c8f3feb live 15-step re-proven; skip locks pure; scorecard 126; 69 a11y/524",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
