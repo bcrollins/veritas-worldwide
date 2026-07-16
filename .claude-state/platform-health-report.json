@@ -1,14 +1,14 @@
 {
-  "checkedAt": "2026-07-16T08:57:01.041Z",
+  "checkedAt": "2026-07-16T09:06:18.962Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "7e480bc892964ad120b4eb782b4d7c224ef4dbf9",
-    "commitShort": "7e480bc89296",
-    "deploymentId": "79be7277-6741-42b0-8b13-20e9b75b4931",
+    "commit": "86b3320ba273bba232684a280e65c60b6ed07eac",
+    "commitShort": "86b3320ba273",
+    "deploymentId": "b71470cd-3cab-462d-ac03-dabdaa53bf95",
     "environment": "production",
-    "prerenderedRouteCount": 285
+    "prerenderedRouteCount": 289
   },
   "auth": {
     "available": true,
@@ -71,7 +71,7 @@
     {
       "ok": true,
       "label": "Build info reports prerender coverage",
-      "detail": "prerenderedRouteCount=285"
+      "detail": "prerenderedRouteCount=289"
     },
     {
       "ok": true,
@@ -111,7 +111,7 @@
     {
       "ok": true,
       "label": "Health probe exposes client error intake count",
-      "detail": "clientErrorIntakeCount=1"
+      "detail": "clientErrorIntakeCount=0"
     },
     {
       "ok": true,
@@ -121,7 +121,7 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=30"
+      "detail": "pinned=34"
     },
     {
       "ok": true,
@@ -141,7 +141,7 @@
     {
       "ok": true,
       "label": "Health history exposes uniqueReplicas array",
-      "detail": "uniqueReplicas=true count=71"
+      "detail": "uniqueReplicas=true count=72"
     },
     {
       "ok": true,
@@ -161,7 +161,7 @@
     {
       "ok": true,
       "label": "Live prerender route count stays above crawler floor",
-      "detail": "prerenderedRouteCount=285"
+      "detail": "prerenderedRouteCount=289"
     },
     {
       "ok": true,

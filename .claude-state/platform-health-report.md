@@ -1,17 +1,17 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:57:01.041Z
+- Checked at: 2026-07-16T09:06:18.962Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 7e480bc89296
-- Deployment: 79be7277-6741-42b0-8b13-20e9b75b4931
+- Build commit: 86b3320ba273
+- Deployment: b71470cd-3cab-462d-ac03-dabdaa53bf95
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
 
 ## Checks
 - PASS — Build info route responds: GET /api/build-info returned 200
-- PASS — Build info reports prerender coverage: prerenderedRouteCount=285
+- PASS — Build info reports prerender coverage: prerenderedRouteCount=289
 - PASS — Build info reports manuscript PDF present: recordPdf=true
 - PASS — Build info reports institute field manual PDF present: instituteFieldManualPdf=true
 - PASS — Health probe reports ok: GET /api/health returned 200 status=ok
@@ -19,17 +19,17 @@
 - PASS — Health probe confirms prerender coverage: prerender=true
 - PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
-- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=1
+- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
-- PASS — Briefing source archive manifest has pinned snapshots: pinned=30
+- PASS — Briefing source archive manifest has pinned snapshots: pinned=34
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
-- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=71
+- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=72
 - PASS — Health history max samples supports multi-day retention: maxSamples=96
 - PASS — Health history reports known storage backend: storage=shared-database
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
-- PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=285
+- PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=289
 - PASS — Health exposes optional Sentry forward configuration flag: sentryForwardConfigured=false
 - PASS — Health exposes health history storage label: healthHistoryStorage=shared-database
 - PASS — Health exposes popular chapter count from analytics: popularChapterCount=8
