@@ -742,7 +742,16 @@ app.use((req, res, next) => {
   res.setHeader(
     'Permissions-Policy',
     // clipboard-write=(self) preserves same-origin Copy Link / citation CTAs.
-    'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=(), display-capture=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard-write=(self)',
+    // browsing-topics=() kills Topics API interest profiling (successor to FLoC).
+    'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=(), display-capture=(), accelerometer=(), gyroscope=(), magnetometer=(), browsing-topics=(), clipboard-write=(self)',
+  )
+  // HTTP CSP complements the index.html meta policy:
+  // - frame-ancestors is ignored in <meta> and must be an HTTP header
+  // - upgrade-insecure-requests hardens mixed-content leftovers site-wide
+  // Browsers enforce meta + header as separate policies (both must pass).
+  res.setHeader(
+    'Content-Security-Policy',
+    "frame-ancestors 'self'; upgrade-insecure-requests",
   )
   // preload signals eligibility for the HSTS preload list (includeSubDomains already required).
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')

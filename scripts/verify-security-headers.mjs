@@ -10,7 +10,7 @@ const REQUIRED = {
   'x-content-type-options': /^nosniff$/i,
   'referrer-policy': /strict-origin-when-cross-origin/i,
   'strict-transport-security': /max-age=\d+.*includeSubDomains.*preload/i,
-  'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\).*display-capture=\(\).*clipboard-write=\(self\)/i,
+  'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\).*display-capture=\(\).*browsing-topics=\(\).*clipboard-write=\(self\)/i,
   'x-xss-protection': /1/,
   'x-permitted-cross-domain-policies': /^none$/i,
   'x-download-options': /^noopen$/i,
@@ -18,6 +18,8 @@ const REQUIRED = {
   'cross-origin-resource-policy': /^same-site$/i,
   'x-dns-prefetch-control': /^off$/i,
   'origin-agent-cluster': /^\?1$/,
+  // HTTP CSP carries frame-ancestors (meta-ignored) + upgrade-insecure-requests.
+  'content-security-policy': /frame-ancestors\s+'self'/i,
 }
 
 function assert(c, m) {

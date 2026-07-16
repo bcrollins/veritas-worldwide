@@ -67,6 +67,25 @@ assert(server.includes('microphone=()'), 'Permissions-Policy disables microphone
 assert(server.includes('geolocation=()'), 'Permissions-Policy disables geolocation')
 assert(server.includes('clipboard-write=(self)'), 'Permissions-Policy allows same-origin clipboard write only')
 assert(!server.includes('clipboard-write=()'), 'must not fully deny clipboard-write (breaks copy CTAs)')
+assert(server.includes('browsing-topics=()'), 'Permissions-Policy disables Topics API profiling')
+// HTTP CSP: frame-ancestors is meta-ignored; upgrade-insecure-requests hardens mixed content.
+assert(server.includes('Content-Security-Policy'), 'Content-Security-Policy HTTP header set')
+assert(
+  server.includes("frame-ancestors 'self'") || server.includes('frame-ancestors "self"'),
+  "HTTP CSP must set frame-ancestors 'self'",
+)
+assert(server.includes('upgrade-insecure-requests'), 'HTTP CSP must upgrade-insecure-requests')
+assert(
+  server.includes("'Content-Security-Policy'") || server.includes('"Content-Security-Policy"'),
+  'Content-Security-Policy header name locked',
+)
+// Meta CSP must carry worker/manifest/media + upgrade-insecure-requests (detailed allowlist).
+const indexHtml = readFileSync(join(root, 'index.html'), 'utf8')
+assert(/http-equiv=["']Content-Security-Policy["']/i.test(indexHtml), 'index.html CSP meta present')
+assert(/worker-src\s+'self'/.test(indexHtml), "meta CSP worker-src 'self'")
+assert(/manifest-src\s+'self'/.test(indexHtml), "meta CSP manifest-src 'self'")
+assert(/media-src[^;]*'self'/.test(indexHtml), "meta CSP media-src includes 'self'")
+assert(/upgrade-insecure-requests/.test(indexHtml), 'meta CSP upgrade-insecure-requests')
 assert(server.includes('Referrer-Policy'), 'Referrer-Policy set')
 assert(server.includes('strict-origin-when-cross-origin'), 'Referrer-Policy value locked')
 assert(
