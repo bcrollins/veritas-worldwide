@@ -1,5 +1,5 @@
 {
-  "run": 46,
+  "run": 47,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,11 +20,11 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 8.5,
-      "previous": 8.4,
-      "delta": 0.1,
-      "status": "improved",
-      "plus_half_requires": "Verify trust-page navigation plus evidence labels at 390px and 430px in a real browser session, then finish a locale-by-locale audit of the evidence taxonomy strings."
+      "composite": 8.8,
+      "previous": 8.5,
+      "delta": 0.3,
+      "status": "About/Methodology/Sources trust nav links Institute + durable PDFs live",
+      "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
       "feature": "Chapter Reading",
@@ -44,10 +44,10 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.6,
-      "previous": 9.5,
+      "composite": 9.7,
+      "previous": 9.6,
       "delta": 0.1,
-      "status": "15/16 briefing source URLs pinned to Wayback (Lancet still lookup-only)",
+      "status": "sources related pages link Field Manual + PDF downloads",
       "plus_half_requires": "Expand archive pins beyond briefing rows to restricted/bot-blocked bibliography URLs."
     },
     {
