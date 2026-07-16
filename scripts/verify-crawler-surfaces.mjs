@@ -226,4 +226,11 @@ assert(
 )
 console.log('[verify:crawler-surfaces] prerender llms generator emits security.txt')
 
+const securityRoot = read('public/security.txt')
+assert(
+  securityRoot === securityTxt,
+  'public/security.txt must match public/.well-known/security.txt (dual publish)',
+)
+console.log('[verify:crawler-surfaces] dual security.txt publish in sync')
+
 console.log('[verify:crawler-surfaces] PASS')
