@@ -410,8 +410,8 @@ export default function HomePage() {
               </div>
               <div className="space-y-0 divide-y divide-border">
                 {rest.map((chapter) => (
-                  <Link key={chapter.id} to={`/chapter/${chapter.id}`} className="group py-5 block hover:bg-parchment-dark/30 transition-colors px-4 -mx-4">
-                    <div className="flex gap-4">
+                  <div key={chapter.id} className="group py-5 px-4 -mx-4 hover:bg-parchment-dark/30 transition-colors">
+                    <Link to={`/chapter/${chapter.id}`} className="flex gap-4">
                       {chapter.heroImage && (
                         <div className="hidden sm:block shrink-0 w-24 h-24 overflow-hidden bg-parchment-dark border border-border">
                           <img
@@ -432,22 +432,22 @@ export default function HomePage() {
                           {chapter.title}
                         </h3>
                         <p className="font-body text-sm text-ink-muted line-clamp-2">{chapter.subtitle}</p>
-                        {chapter.keywords && chapter.keywords.slice(0, 3).length > 0 && (
-                          <div className="flex flex-wrap items-center gap-2 mt-2">
-                            {chapter.keywords.slice(0, 3).map(kw => (
-                              <Link
-                                key={kw}
-                                to={getTopicHrefForTerm(kw)}
-                                className="font-sans text-[0.6rem] px-2 py-0.5 bg-border text-ink-faint hover:text-crimson hover:bg-crimson/5 transition-colors"
-                              >
-                                {kw}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                    {chapter.keywords && chapter.keywords.slice(0, 3).length > 0 && (
+                      <div className="flex flex-wrap items-center gap-2 mt-2 sm:pl-28">
+                        {chapter.keywords.slice(0, 3).map(kw => (
+                          <Link
+                            key={kw}
+                            to={getTopicHrefForTerm(kw)}
+                            className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] px-2.5 bg-border text-ink-faint hover:text-crimson hover:bg-crimson/5 transition-colors rounded-sm"
+                          >
+                            {kw}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>

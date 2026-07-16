@@ -100,6 +100,25 @@ for (const rel of banFiles) {
   }
 }
 
+
+// Ban residual sub-44px min-height tokens on public surfaces
+const sub44Files = [
+  'src/pages/NewsPage.tsx',
+  'src/pages/ChapterPage.tsx',
+  'src/pages/IsraelDossierPage.tsx',
+  'src/pages/ArticlePage.tsx',
+  'src/pages/SearchPage.tsx',
+  'src/pages/ReadTheBookPage.tsx',
+]
+for (const rel of sub44Files) {
+  const src = readFileSync(join(root, rel), 'utf8')
+  const hits = src.match(/min-h-\[(3[0-9]|4[0-3])px\]/g) || []
+  if (hits.length > 0) {
+    console.error(`[verify:a11y-public-targets] FAIL — ${rel} has sub-44 min-h: ${hits.join(',')}`)
+    failures++
+  }
+}
+
 if (failures > 0) {
   console.error(`[verify:a11y-public-targets] FAIL — ${failures} floor(s) breached`)
   process.exit(1)
