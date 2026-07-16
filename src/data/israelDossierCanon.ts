@@ -267,7 +267,19 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
   'https://airwars.org/': {
     archiveUrl: 'https://web.archive.org/web/20260701145501/https://airwars.org/',
     status: 'Pinned Wayback snapshot 20260701145501 host landing for Airwars fallback.',
+  },  'https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/': {
+    archiveUrl: 'https://web.archive.org/web/20260707180357/https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/',
+    status: 'Pinned Wayback snapshot 20260707180357; primary host may block automated probes.',
   },
+  'https://peacemaker.un.org/israelopt-osloaccord93': {
+    archiveUrl: 'https://web.archive.org/web/20240731193308/https://peacemaker.un.org/israelopt-osloaccord93',
+    status: 'Pinned Wayback snapshot 20240731193308; primary host may block automated probes.',
+  },
+  'https://digitallibrary.un.org/record/90717': {
+    archiveUrl: 'https://web.archive.org/web/20260404091844/https://digitallibrary.un.org/record/90717',
+    status: 'Pinned Wayback snapshot 20260404091844; primary host may block automated probes.',
+  },
+
 }
 
 const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>
