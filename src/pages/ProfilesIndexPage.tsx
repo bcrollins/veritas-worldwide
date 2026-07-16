@@ -400,7 +400,7 @@ export default function ProfilesIndexPage(): React.ReactNode {
             </div>
             <Link
               to="/topics"
-              className="inline-flex items-center rounded-full border border-border px-5 py-3 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson transition-colors"
+              className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 py-3 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson transition-colors"
             >
               Browse Topic Hubs
             </Link>

@@ -267,7 +267,7 @@ export default function ReadTheBookPage() {
       <div className="sticky top-0 z-50 bg-parchment/95 dark:bg-ink/95 backdrop-blur-sm border-b border-border">
         <div className="max-w-5xl mx-auto px-4 py-2 flex items-center gap-3">
           {/* TOC Toggle */}
-          <button onClick={() => setShowTOC(!showTOC)} className="p-2 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors" title="Table of Contents">
+          <button onClick={() => setShowTOC(!showTOC)} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors" title="Table of Contents">
             <svg className="w-5 h-5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" /></svg>
           </button>
 
@@ -282,12 +282,12 @@ export default function ReadTheBookPage() {
           </div>
 
           {/* Font size controls */}
-          <button onClick={() => setFontSize(s => Math.max(12, s - 2))} className="p-1.5 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors font-sans text-xs text-ink-muted" title="Smaller text">A-</button>
-          <button onClick={() => setFontSize(s => Math.min(24, s + 2))} className="p-1.5 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors font-sans text-sm font-bold text-ink-muted" title="Larger text">A+</button>
+          <button onClick={() => setFontSize(s => Math.max(12, s - 2))} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-1.5 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors font-sans text-xs text-ink-muted" title="Smaller text">A-</button>
+          <button onClick={() => setFontSize(s => Math.min(24, s + 2))} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-1.5 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors font-sans text-sm font-bold text-ink-muted" title="Larger text">A+</button>
 
           {/* TTS */}
           {tts.isSupported && (
-            <button onClick={() => tts.toggle(chapterText)} className={`p-2 rounded-sm transition-colors ${tts.isPlaying ? 'bg-crimson/10 text-crimson' : 'hover:bg-parchment-dark dark:hover:bg-white/5 text-ink-muted'}`} title={tts.isPlaying ? 'Stop reading' : 'Read aloud'}>
+            <button onClick={() => tts.toggle(chapterText)} className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 rounded-sm transition-colors ${tts.isPlaying ? 'bg-crimson/10 text-crimson' : 'hover:bg-parchment-dark dark:hover:bg-white/5 text-ink-muted'}`} title={tts.isPlaying ? 'Stop reading' : 'Read aloud'}>
               {tts.isPlaying ? (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 005 0" /></svg>
               ) : (
@@ -297,12 +297,12 @@ export default function ReadTheBookPage() {
           )}
 
           {/* Download */}
-          <button onClick={() => setShowDownloadModal(true)} className="p-2 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors text-ink-muted" title="Download PDF">
+          <button onClick={() => setShowDownloadModal(true)} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors text-ink-muted" title="Download PDF">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
           </button>
 
           {/* Share */}
-          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(BOOK_TITLE)}&url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors text-ink-muted" title="Share">
+          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(BOOK_TITLE)}&url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 rounded-sm hover:bg-parchment-dark dark:hover:bg-white/5 transition-colors text-ink-muted" title="Share">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
           </a>
         </div>
@@ -342,19 +342,19 @@ export default function ReadTheBookPage() {
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
                       to="/methodology"
-                      className="inline-flex min-h-[42px] items-center rounded-full bg-obsidian px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-obsidian/90"
+                      className="inline-flex min-h-[44px] items-center rounded-full bg-obsidian px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-obsidian/90"
                     >
                       Methodology
                     </Link>
                     <Link
                       to="/timeline"
-                      className="inline-flex min-h-[42px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                      className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
                     >
                       Timeline
                     </Link>
                     <Link
                       to="/sources"
-                      className="inline-flex min-h-[42px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                      className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
                     >
                       Source Library
                     </Link>
@@ -459,7 +459,7 @@ export default function ReadTheBookPage() {
                       <Link
                         key={keyword}
                         to={`/search?q=${encodeURIComponent(keyword)}`}
-                        className="rounded-full border border-border px-3 py-1 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                        className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3 py-1 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
                       >
                         {keyword}
                       </Link>
@@ -498,7 +498,7 @@ export default function ReadTheBookPage() {
                   </div>
                   <Link
                     to="/news"
-                    className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark"
+                    className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark"
                   >
                     View all current events →
                   </Link>
@@ -581,13 +581,13 @@ export default function ReadTheBookPage() {
             {/* Chapter Navigation */}
             <div className="mt-12 pt-8 border-t border-border grid grid-cols-2 gap-4">
               {activeChapter > 0 && (
-                <button onClick={() => goTo(activeChapter - 1)} className="text-left p-4 border border-border rounded-sm hover:border-crimson transition-colors">
+                <button onClick={() => goTo(activeChapter - 1)} className="min-h-[44px] text-left p-4 border border-border rounded-sm hover:border-crimson transition-colors">
                   <p className="font-sans text-[0.6rem] font-bold tracking-wider uppercase text-ink-faint">&larr; Previous</p>
                   <p className="font-sans text-sm font-bold text-ink mt-1">{chapterMeta[activeChapter - 1].title}</p>
                 </button>
               )}
               {activeChapter < chapterMeta.length - 1 && (
-                <button onClick={() => goTo(activeChapter + 1)} className="text-right p-4 border border-border rounded-sm hover:border-crimson transition-colors col-start-2">
+                <button onClick={() => goTo(activeChapter + 1)} className="min-h-[44px] text-right p-4 border border-border rounded-sm hover:border-crimson transition-colors col-start-2">
                   <p className="font-sans text-[0.6rem] font-bold tracking-wider uppercase text-ink-faint">Next &rarr;</p>
                   <p className="font-sans text-sm font-bold text-ink mt-1">{chapterMeta[activeChapter + 1].title}</p>
                 </button>
@@ -609,7 +609,7 @@ export default function ReadTheBookPage() {
             </div>
           </div>
           <span className="font-sans text-[0.6rem] text-ink-faint">{activeChapter + 1} of {chapterMeta.length}</span>
-          <Link to="/membership" className="font-sans text-[0.6rem] font-semibold text-crimson hover:text-crimson-dark transition-colors">Support the archive →</Link>
+          <Link to="/membership" className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-semibold text-crimson hover:text-crimson-dark transition-colors">Support the archive →</Link>
         </div>
       </div>
     </div>

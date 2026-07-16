@@ -85,13 +85,13 @@ export default function AdminDisputes() {
                 <div className="px-5 py-3 border-t border-white/5 flex items-center gap-2">
                   <button
                     onClick={() => updateStatus(i, 'reviewed')}
-                    className="px-3 py-1.5 bg-green-500/10 rounded font-sans text-xs text-green-400 hover:bg-green-500/20 transition-colors"
+                    className="inline-flex min-h-[44px] items-center px-3 py-1.5 bg-green-500/10 rounded font-sans text-xs text-green-400 hover:bg-green-500/20 transition-colors"
                   >
                     Mark Reviewed
                   </button>
                   <button
                     onClick={() => updateStatus(i, 'dismissed')}
-                    className="px-3 py-1.5 bg-white/5 rounded font-sans text-xs text-white/30 hover:text-white/50 transition-colors"
+                    className="inline-flex min-h-[44px] items-center px-3 py-1.5 bg-white/5 rounded font-sans text-xs text-white/30 hover:text-white/50 transition-colors"
                   >
                     Dismiss
                   </button>

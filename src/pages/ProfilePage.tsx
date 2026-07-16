@@ -221,7 +221,7 @@ function SourceLink({ url, label }: { url: string; label: string }) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 text-xs text-crimson hover:text-crimson-dark hover:underline font-sans transition-colors"
+      className="inline-flex min-h-[44px] items-center gap-1.5 text-xs text-crimson hover:text-crimson-dark hover:underline font-sans transition-colors"
       title={`View source: ${domain}`}
     >
       <img
@@ -666,9 +666,9 @@ export default function ProfilePage(): React.ReactNode {
           <nav className="flex items-center gap-2 py-2 text-[0.6rem] font-sans font-bold tracking-[0.15em] uppercase" aria-label="Breadcrumb">
             <Link to="/" className="inline-flex min-h-[44px] items-center text-ink-faint hover:text-crimson transition-colors">The Record</Link>
             <span className="text-ink-faint">/</span>
-            <Link to="/profiles" className="text-ink-faint hover:text-crimson transition-colors">Profiles</Link>
+            <Link to="/profiles" className="inline-flex min-h-[44px] items-center text-ink-faint hover:text-crimson transition-colors">Profiles</Link>
             <span className="text-ink-faint">/</span>
-            <Link to={`/profiles?category=${profile.category}`} className="text-ink-faint hover:text-crimson transition-colors capitalize">{profile.category.replace('-', ' ')}</Link>
+            <Link to={`/profiles?category=${profile.category}`} className="inline-flex min-h-[44px] items-center text-ink-faint hover:text-crimson transition-colors capitalize">{profile.category.replace('-', ' ')}</Link>
             <span className="text-ink-faint">/</span>
             <span className="text-crimson">{profile.name}</span>
           </nav>
@@ -1033,7 +1033,7 @@ export default function ProfilePage(): React.ReactNode {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-crimson hover:text-crimson-dark hover:underline font-body transition-colors py-1"
+                        className="flex min-h-[44px] items-center gap-2 text-sm text-crimson hover:text-crimson-dark hover:underline font-body transition-colors py-1"
                       >
                         <img
                           src={`https://www.google.com/s2/favicons?domain=${new URL(link.url).hostname}&sz=16`}

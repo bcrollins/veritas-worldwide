@@ -193,7 +193,7 @@ export default function AboutPage() {
                     </p>
                     <a
                       href={channel.href}
-                      className="mt-2 inline-flex text-lg font-semibold text-crimson transition-colors hover:text-crimson-dark"
+                      className="mt-2 inline-flex min-h-[44px] items-center text-lg font-semibold text-crimson transition-colors hover:text-crimson-dark"
                     >
                       {channel.value}
                     </a>
@@ -276,21 +276,21 @@ export default function AboutPage() {
                     <Link
                       key={link.to}
                       to={link.to}
-                      className="block text-sm text-ink-muted transition-colors hover:text-crimson"
+                      className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson"
                     >
                       → {link.label}
                     </Link>
                   ))}
                   <a
                     href="/veritas-institute-field-manual.pdf"
-                    className="block text-sm text-ink-muted transition-colors hover:text-crimson"
+                    className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson"
                     download="veritas-institute-field-manual.pdf"
                   >
                     → Field Manual PDF
                   </a>
                   <a
                     href="/the-record.pdf"
-                    className="block text-sm text-ink-muted transition-colors hover:text-crimson"
+                    className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson"
                   >
                     → The Record PDF
                   </a>

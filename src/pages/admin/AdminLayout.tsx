@@ -49,7 +49,7 @@ export default function AdminLayout() {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-2.5 px-3 py-2 rounded text-sm font-sans transition-colors ${
+                className={`flex min-h-[44px] items-center gap-2.5 px-3 py-2 rounded text-sm font-sans transition-colors ${
                   isActive
                     ? 'bg-crimson/10 text-crimson'
                     : 'text-white/40 hover:text-white/70 hover:bg-white/5'
@@ -67,7 +67,7 @@ export default function AdminLayout() {
         <div className="px-2 py-3 border-t border-white/5 space-y-1">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="flex items-center gap-2.5 px-3 py-2 rounded text-white/30 hover:text-white/60 text-sm font-sans w-full transition-colors"
+            className="flex min-h-[44px] items-center gap-2.5 px-3 py-2 rounded text-white/30 hover:text-white/60 text-sm font-sans w-full transition-colors"
           >
             <svg className={`w-4 h-4 flex-shrink-0 transition-transform ${sidebarOpen ? '' : 'rotate-180'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
@@ -76,7 +76,7 @@ export default function AdminLayout() {
           </button>
           <Link
             to="/"
-            className="flex items-center gap-2.5 px-3 py-2 rounded text-white/30 hover:text-white/60 text-sm font-sans w-full transition-colors"
+            className="flex min-h-[44px] items-center gap-2.5 px-3 py-2 rounded text-white/30 hover:text-white/60 text-sm font-sans w-full transition-colors"
           >
             <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -85,7 +85,7 @@ export default function AdminLayout() {
           </Link>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2.5 px-3 py-2 rounded text-crimson/60 hover:text-crimson text-sm font-sans w-full transition-colors"
+            className="flex min-h-[44px] items-center gap-2.5 px-3 py-2 rounded text-crimson/60 hover:text-crimson text-sm font-sans w-full transition-colors"
           >
             <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
