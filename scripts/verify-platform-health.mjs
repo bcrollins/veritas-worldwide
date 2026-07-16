@@ -378,19 +378,13 @@ async function main() {
 
       const feedResult = await fetchText('/feed.xml')
       const feedText = feedResult.text || ''
-      if (feedResult.response.ok && feedText.includes('/veritas-institute-field-manual.pdf')) {
-        addCheck(
-          checks,
-          failures,
-          true,
-          'RSS feed announces the institute field manual PDF',
-          `feed status=${feedResult.response.status} hasFieldManualPdf=true`
-        )
-      } else {
-        console.warn(
-          `[verify:platform] WARN — feed missing field-manual PDF (status=${feedResult.response.status}); deploy bbd4213+ required`
-        )
-      }
+      addCheck(
+        checks,
+        failures,
+        feedResult.response.ok && feedText.includes('/veritas-institute-field-manual.pdf'),
+        'RSS feed announces the institute field manual PDF',
+        `feed status=${feedResult.response.status} hasFieldManualPdf=${feedText.includes('/veritas-institute-field-manual.pdf')}`
+      )
 
       const chapterPreviewResult = await fetchJson('/api/chapters/chapter-1')
       const chapterPreview = typeof chapterPreviewResult.data === 'object' && chapterPreviewResult.data !== null ? chapterPreviewResult.data : {}
