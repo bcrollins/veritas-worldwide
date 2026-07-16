@@ -160,3 +160,9 @@
 - **Express X-Powered-By disabled** live; fingerprinting closed.
 - **Crawler floors** require `/profiles` and `/analytics`.
 
+## Recently Closed (2026-07-16 — TLD email + 13-step verify:live)
+
+- **Email TLD floor ≥2 chars live** (`ff8886b`). `a@b.c` register returns 400.
+- **verify:live is now 13 steps**: + a11y floors + security-headers + server-security-invariants.
+- **Admin + public + footer 44px wave complete** with pure floors (40 surfaces / 313 markers).
+
