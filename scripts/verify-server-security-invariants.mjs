@@ -138,6 +138,23 @@ assert(
   'postbuild must not hardcode bare --experimental-strip-types (breaks Node 20 and Node 24+)',
 )
 
+// Pin the Node major that railpack/mise will select for strip-types-capable builds.
+const nodeVersionFile = readFileSync(join(root, '.node-version'), 'utf8').trim()
+assert(/^\d+\.\d+\.\d+$/.test(nodeVersionFile), `.node-version must be x.y.z, got ${nodeVersionFile}`)
+const [nodeMajor, nodeMinor] = nodeVersionFile.split('.').map(Number)
+assert(
+  nodeMajor > 22 || (nodeMajor === 22 && nodeMinor >= 6),
+  `.node-version ${nodeVersionFile} must be >= 22.6.0 for type stripping`,
+)
+
+for (const scriptName of ['generate:institute-pdf', 'verify:institute-pdf', 'verify:institute-manual', 'verify:auth-cache']) {
+  const script = packageJson.scripts?.[scriptName] || ''
+  assert(
+    script.includes('run-with-strip-types.mjs') || !script.includes('--experimental-strip-types'),
+    `${scriptName} must use run-with-strip-types runner when strip-types is required`,
+  )
+}
+
 console.log(
   `[verify:server-security-invariants] PASS — server.js security surface locked · rateLimit×${rateLimitUses}`,
 )

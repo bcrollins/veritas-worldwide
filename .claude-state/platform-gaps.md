@@ -214,3 +214,9 @@
 - **Public a11y floors expanded to conversion surfaces.**
   Impact: MethodologyPage, DownloadModal, DonationBanner, DisputeStory, ContentGate, ExitIntent, NewsletterSignup floor-gated; residual floors raised toward measured counts (60 surfaces / 506 markers).
 
+## External residual (2026-07-16)
+
+- **GitHub Actions runners are not allocating (jobs fail in ~2s with empty steps).**
+  Impact: all `verify-*` workflows report `failure` with `runner_id: 0` and zero steps — not a product regression. Railway is the production deploy path and is green after the Node 22.6 engines fix.
+  Recommendation: restore GitHub Actions minutes/billing or self-hosted runners; local `npm run verify:live` + Railway remain the release gate.
+
