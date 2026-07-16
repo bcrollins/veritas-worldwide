@@ -1248,6 +1248,14 @@ export default function IsraelDossierPage() {
                 >
                   Workbook manifest
                 </a>
+                <a
+                  href="/israel-dossier/workbooks/briefing-source-archive-manifest.json"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark hover:underline"
+                >
+                  Archive pins
+                </a>
               </div>
             </div>
             <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">

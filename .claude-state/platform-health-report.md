@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T05:33:07.576Z
+- Checked at: 2026-07-16T05:39:13.213Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: c809452a9e1d
-- Deployment: 28a30bf8-5c47-4108-b6ad-ee1688b872bc
+- Build commit: db4519dd0187
+- Deployment: f3c2af13-0654-420e-8a7f-38b9ec6ea405
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6820
@@ -16,6 +16,9 @@
 - PASS — Health probe confirms chapter data: chapterData=true
 - PASS — Health probe confirms prerender coverage: prerender=true
 - PASS — Health probe exposes analytics lifetime: analyticsLifetime=6820
+- PASS — Briefing source archive manifest responds: GET archive manifest returned 200
+- PASS — Briefing source archive manifest has pinned snapshots: pinned=11
+- PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Auth status route responds: GET /api/auth/status returned 200
 - PASS — Auth status exposes availability: available=true
 - PASS — Auth status exposes a known mode: mode=database

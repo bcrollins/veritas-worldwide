@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T05:33:07.576Z",
+  "checkedAt": "2026-07-16T05:39:13.213Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "c809452a9e1d15449e8338200b5e7abd81a2827e",
-    "commitShort": "c809452a9e1d",
-    "deploymentId": "28a30bf8-5c47-4108-b6ad-ee1688b872bc",
+    "commit": "db4519dd01878ba6223fcd674094097536bc2884",
+    "commitShort": "db4519dd0187",
+    "deploymentId": "f3c2af13-0654-420e-8a7f-38b9ec6ea405",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -92,6 +92,21 @@
       "ok": true,
       "label": "Health probe exposes analytics lifetime",
       "detail": "analyticsLifetime=6820"
+    },
+    {
+      "ok": true,
+      "label": "Briefing source archive manifest responds",
+      "detail": "GET archive manifest returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Briefing source archive manifest has pinned snapshots",
+      "detail": "pinned=11"
+    },
+    {
+      "ok": true,
+      "label": "Content pack route responds",
+      "detail": "GET /content-pack returned 200"
     },
     {
       "ok": true,
