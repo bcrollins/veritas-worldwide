@@ -230,3 +230,9 @@
   Impact: `/api/health`, `/api/build-info`, and `/analytics` all expose runtime Node + engines floor so the strip-types deploy class is operator-visible.
   Resolution: tips `b15a00c` → `d7ffe48` → `d83ff5f` → `45fb992`.
 
+## Recently Closed (2026-07-16 — tip ef4e527)
+
+- **X-Download-Options: noopen live (12 baseline header suite).**
+  Impact: legacy IE/Edge cannot open HTML downloads as same-origin documents; security-headers pure+live suite now asserts 12 baseline headers.
+  Resolution: Express security middleware + pure/live locks. Tip `ef4e527` 15-step green.
+
