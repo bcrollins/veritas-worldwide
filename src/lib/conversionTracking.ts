@@ -133,6 +133,25 @@ export function withCheckoutAttribution(
   }
 }
 
+function attributionFromReferrer(pathname: string): MarketingAttribution | null {
+  try {
+    const referrer = document.referrer
+    if (!referrer) return null
+    const refUrl = new URL(referrer)
+    // Ignore same-site SPA navigations and empty hosts.
+    if (!refUrl.hostname || refUrl.hostname === window.location.hostname) return null
+    return {
+      utm_source: refUrl.hostname.replace(/^www\./, '').slice(0, 120),
+      utm_medium: 'referral',
+      ref: refUrl.hostname.replace(/^www\./, '').slice(0, 120),
+      landingPath: pathname || '/',
+      capturedAt: Date.now(),
+    }
+  } catch {
+    return null
+  }
+}
+
 /** Capture UTM/ref from the current URL into session (last-touch) and local (first-touch). */
 export function captureMarketingAttribution(
   search: string = typeof window !== 'undefined' ? window.location.search : '',
@@ -140,11 +159,16 @@ export function captureMarketingAttribution(
 ): MarketingAttribution | null {
   if (typeof window === 'undefined') return null
 
-  const attr = attributionFromSearch(search, pathname)
+  // Explicit campaign params win; otherwise first external referrer seeds first-touch only.
+  const fromQuery = attributionFromSearch(search, pathname)
+  const attr = fromQuery || (!localStorage.getItem(ATTRIBUTION_FIRST_KEY) ? attributionFromReferrer(pathname) : null)
   if (!attr) return getMarketingAttribution()
 
   try {
-    sessionStorage.setItem(ATTRIBUTION_SESSION_KEY, JSON.stringify(attr))
+    // Only overwrite last-touch when the hit carries explicit campaign params.
+    if (fromQuery) {
+      sessionStorage.setItem(ATTRIBUTION_SESSION_KEY, JSON.stringify(attr))
+    }
     if (!localStorage.getItem(ATTRIBUTION_FIRST_KEY)) {
       localStorage.setItem(ATTRIBUTION_FIRST_KEY, JSON.stringify(attr))
     }
@@ -152,7 +176,7 @@ export function captureMarketingAttribution(
     // storage may be unavailable (private mode); ignore
   }
 
-  return attr
+  return getMarketingAttribution()
 }
 
 /** Prefer last-touch session attribution, fall back to first-touch. */
