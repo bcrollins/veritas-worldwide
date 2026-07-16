@@ -1,5 +1,5 @@
 {
-  "run": 115,
+  "run": 116,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.45,
-      "previous": 9.42,
-      "delta": 0.03,
-      "status": "HEAD 45fb992 15-step; HSTS preload; CORP; DNS-prefetch; RateLimit; node diagnostics",
+      "composite": 9.47,
+      "previous": 9.45,
+      "delta": 0.02,
+      "status": "HEAD 7316998 15-step; structured 429 JSON; HSTS preload; CORP; RateLimit headers; 69 a11y/521",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 45fb992 live 15-step; scorecard 115; full security+deploy diagnostics",
+      "status": "product tip 7316998 live 15-step; scorecard 116; security masterpiece wave complete",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -87,7 +87,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0.0,
-      "status": "HEAD 45fb992 readPackageEnginesNode helper; health+build-info+analytics; 15-step green",
+      "status": "HEAD 7316998 node v22.14; structured 429; full diagnostics loop; 15-step green",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {

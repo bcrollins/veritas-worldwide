@@ -220,3 +220,13 @@
   Impact: all `verify-*` workflows report `failure` with `runner_id: 0` and zero steps — not a product regression. Railway is the production deploy path and is green after the Node 22.6 engines fix.
   Recommendation: restore GitHub Actions minutes/billing or self-hosted runners; local `npm run verify:live` + Railway remain the release gate.
 
+## Recently Closed (2026-07-16 — ocean tip 7316998)
+
+- **Structured 429 JSON with named limiter scope is live.**
+  Impact: multi-agent fleets and clients can see which rate-limit scope fired (`auth-login`, `field-manual-pdf`, etc.) plus limit/remaining/reset.
+  Resolution: rateLimit middleware 429 body; pure-locked. Tip `7316998` 15-step green.
+
+- **Node runtime diagnostics closed loop live.**
+  Impact: `/api/health`, `/api/build-info`, and `/analytics` all expose runtime Node + engines floor so the strip-types deploy class is operator-visible.
+  Resolution: tips `b15a00c` → `d7ffe48` → `d83ff5f` → `45fb992`.
+
