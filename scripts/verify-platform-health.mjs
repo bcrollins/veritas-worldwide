@@ -426,6 +426,15 @@ const healthResult = await fetchJson('/api/health')
         `status=${instituteBookHtml.response.status}`
       )
 
+      const instituteMd = await fetchText('/veritas-institute.md')
+      addCheck(
+        checks,
+        failures,
+        instituteMd.response.ok && (instituteMd.text || '').includes('/veritas-institute-field-manual.pdf'),
+        'Institute markdown indexes the field manual PDF',
+        `status=${instituteMd.response.status}`
+      )
+
       const chapterPreviewResult = await fetchJson('/api/chapters/chapter-1')
       const chapterPreview = typeof chapterPreviewResult.data === 'object' && chapterPreviewResult.data !== null ? chapterPreviewResult.data : {}
 
