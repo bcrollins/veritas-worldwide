@@ -461,8 +461,8 @@ const requiredHeaderCount = (securityHeadersScript.match(/^\s+'[a-z0-9-]+':\s+/g
 assert(requiredHeaderCount >= 13, `live headers suite must require ≥13 baseline headers (got ${requiredHeaderCount})`)
 // A11y pure floors must not regress below measured ocean baseline.
 const a11yScript = readFileSync(join(root, 'scripts/verify-a11y-public-targets.mjs'), 'utf8')
-assert(/MIN_SURFACES\s*=\s*71/.test(a11yScript), 'a11y MIN_SURFACES must be ≥71')
-assert(/MIN_TOTAL_MARKERS\s*=\s*548/.test(a11yScript), 'a11y MIN_TOTAL_MARKERS must be ≥548')
+assert(/MIN_SURFACES\s*=\s*72/.test(a11yScript), 'a11y MIN_SURFACES must be ≥72')
+assert(/MIN_TOTAL_MARKERS\s*=\s*549/.test(a11yScript), 'a11y MIN_TOTAL_MARKERS must be ≥549')
 assert(verifyLive.includes('verify-server-security-invariants'), 'verify:live must include server-security-invariants')
 assert(verifyLive.includes('verify-a11y-public-targets'), 'verify:live must include a11y floors')
 assert(verifyLive.includes('verify-auth-flows'), 'verify:live must include auth smoke')

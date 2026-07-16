@@ -83,6 +83,7 @@ const floors = [
   { path: 'src/components/ContinueReading.tsx', min: 1, label: 'continue reading' },
   { path: 'src/components/FontSizeToggle.tsx', min: 1, label: 'font size toggle' },
   { path: 'src/styles/index.css', min: 2, label: 'institute-button min-height 44' },
+  { path: 'src/components/institute/InstituteBookPDF.tsx', min: 1, label: 'field manual PDF CTA' },
 ]
 
 const TARGET_RE = /min-h-\[44px\]|min-h-11|min-height:\s*44px/g
@@ -193,8 +194,8 @@ if (failures > 0) {
 }
 
 const total = results.reduce((n, r) => n + r.count, 0)
-const MIN_TOTAL_MARKERS = 548
-const MIN_SURFACES = 71
+const MIN_TOTAL_MARKERS = 549
+const MIN_SURFACES = 72
 if (floors.length < MIN_SURFACES) {
   console.error(`[verify:a11y-public-targets] FAIL — surface count ${floors.length} < floor ${MIN_SURFACES}`)
   process.exit(1)

@@ -59,7 +59,7 @@ export default function InstituteBookPDF() {
       type="button"
       onClick={() => void handleExport()}
       disabled={generating}
-      className="institute-button-primary"
+      className="institute-button-primary min-h-[44px]"
     >
       {generating ? 'Preparing PDF…' : 'Download Field Manual PDF'}
     </button>
