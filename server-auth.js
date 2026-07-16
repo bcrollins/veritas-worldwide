@@ -75,6 +75,7 @@ export function registerDatabaseAndAuthRoutes({
       mode: dbPool ? 'database' : 'degraded',
       accessTokenTtl: JWT_EXPIRY,
       sessionTtlMs: SESSION_TTL_MS,
+      sessionRefresh: true,
     })
   })
 
@@ -109,11 +110,18 @@ export function registerDatabaseAndAuthRoutes({
 
   app.get('/api/search', async (req, res) => {
     const query = chapterHelpers.normalizeSearchQuery(req.query.q)
+    const recentRaw = typeof req.query.recent === 'string' ? req.query.recent : ''
+    const recentChapterIds = recentRaw
+      .split(',')
+      .map((id) => id.trim())
+      .filter((id) => /^(chapter-\d+|foreword|overview|epilogue)$/.test(id))
+      .slice(0, 12)
     const scope = 'full'
     const filters = {
       evidenceTier: chapterHelpers.normalizeFilter(req.query.evidence, chapterHelpers.evidenceTierFilters),
       match: chapterHelpers.normalizeFilter(req.query.match, chapterHelpers.searchMatchFilters),
       chapterType: chapterHelpers.normalizeFilter(req.query.chapterType, chapterHelpers.chapterTypeFilters),
+      recentChapterIds,
     }
 
     const chapterDataManifest = chapterState.getChapterDataManifest()
@@ -203,6 +211,9 @@ export function registerDatabaseAndAuthRoutes({
 
       res.status(201).json({
         token,
+        expiresAt: expiresAt.toISOString(),
+        accessTokenTtl: JWT_EXPIRY,
+        sessionTtlMs: SESSION_TTL_MS,
         user: {
           id: user.id,
           email: user.email,
@@ -256,6 +267,9 @@ export function registerDatabaseAndAuthRoutes({
 
       res.json({
         token,
+        expiresAt: expiresAt.toISOString(),
+        accessTokenTtl: JWT_EXPIRY,
+        sessionTtlMs: SESSION_TTL_MS,
         user: {
           id: user.id,
           email: user.email,
@@ -322,6 +336,55 @@ export function registerDatabaseAndAuthRoutes({
     }
 
     res.json({ ok: true })
+  })
+
+  // Silent session refresh — rotates a still-valid bearer token without re-entering credentials.
+  // Old session row is deleted so refresh is single-use and stolen tokens cannot be re-refreshed.
+  app.post('/api/auth/refresh', async (req, res) => {
+    if (!requireDB(res)) return
+
+    const authHeader = req.headers.authorization
+    const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null
+    if (!token) {
+      return res.status(401).json({ error: 'Not authenticated' })
+    }
+
+    const user = await authenticateToken(req)
+    if (!user) {
+      return res.status(401).json({ error: 'Not authenticated' })
+    }
+
+    try {
+      const newToken = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
+      const ip = getClientIP(req)
+      const ua = req.headers['user-agent'] || ''
+      const expiresAt = new Date(Date.now() + SESSION_TTL_MS)
+
+      await dbPool.query('DELETE FROM sessions WHERE token = $1', [token])
+      await dbPool.query(
+        'INSERT INTO sessions (user_id, token, expires_at, ip_address, user_agent) VALUES ($1, $2, $3, $4, $5)',
+        [user.id, newToken, expiresAt, ip, ua.substring(0, 500)]
+      )
+      await dbPool.query('UPDATE users SET last_login_at = NOW() WHERE id = $1', [user.id]).catch(() => {})
+
+      return res.json({
+        token: newToken,
+        expiresAt: expiresAt.toISOString(),
+        accessTokenTtl: JWT_EXPIRY,
+        sessionTtlMs: SESSION_TTL_MS,
+        user: {
+          id: user.id,
+          email: user.email,
+          displayName: user.display_name,
+          tier: user.tier,
+          createdAt: user.created_at,
+          isStudent: user.is_student,
+        },
+      })
+    } catch (err) {
+      console.error('[auth] Refresh error:', err.message)
+      return res.status(500).json({ error: 'Session refresh failed. Please sign in again.' })
+    }
   })
 
   app.post('/api/user/bookmarks', async (req, res) => {

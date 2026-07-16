@@ -28,6 +28,7 @@ export interface AuthState {
 }
 
 const AUTH_TOKEN_KEY = 'veritas_token'
+const AUTH_TOKEN_EXPIRES_KEY = 'veritas_token_expires_at'
 const AUTH_USER_KEY = 'veritas_auth'
 const LEGACY_BOOKMARKS_KEY = 'veritas_bookmarks'
 const USERS_KEY = 'veritas_users'
@@ -40,12 +41,43 @@ function getToken(): string | null {
   return localStorage.getItem(AUTH_TOKEN_KEY)
 }
 
-function setToken(token: string | null) {
+function setToken(token: string | null, expiresAt?: string | null) {
   if (token) {
     localStorage.setItem(AUTH_TOKEN_KEY, token)
+    if (expiresAt) {
+      localStorage.setItem(AUTH_TOKEN_EXPIRES_KEY, expiresAt)
+    }
   } else {
     localStorage.removeItem(AUTH_TOKEN_KEY)
+    localStorage.removeItem(AUTH_TOKEN_EXPIRES_KEY)
   }
+}
+
+function setTokenExpiry(expiresAt: string | null) {
+  if (expiresAt) {
+    localStorage.setItem(AUTH_TOKEN_EXPIRES_KEY, expiresAt)
+  } else {
+    localStorage.removeItem(AUTH_TOKEN_EXPIRES_KEY)
+  }
+}
+
+export function getTokenExpiresAt(): string | null {
+  try {
+    return localStorage.getItem(AUTH_TOKEN_EXPIRES_KEY)
+  } catch {
+    return null
+  }
+}
+
+/** True when the stored token is missing expiry or expires within the given window. */
+export function shouldRefreshSession(withinMs = 12 * 60 * 60 * 1000): boolean {
+  const token = getToken()
+  if (!token) return false
+  const expiresAt = getTokenExpiresAt()
+  if (!expiresAt) return true
+  const expiresMs = Date.parse(expiresAt)
+  if (!Number.isFinite(expiresMs)) return true
+  return expiresMs - Date.now() <= withinMs
 }
 
 function authHeaders(): Record<string, string> {
@@ -351,9 +383,9 @@ export async function signup(email: string, password: string, displayName: strin
       })
       const backendResponse = updateAuthBackendAvailabilityFromResponse(res.status)
       if (backendResponse === 'unavailable') throw new Error('Auth backend unavailable')
-      const data = await readJsonResponse<{ error?: string; token?: string; user?: User }>(res)
+      const data = await readJsonResponse<{ error?: string; token?: string; user?: User; expiresAt?: string }>(res)
       if (!res.ok) return { success: false, error: data?.error || 'Registration failed' }
-      setToken(data?.token || null)
+      setToken(data?.token || null, data?.expiresAt || null)
       const user = data?.user
       if (!user) return { success: false, error: 'Registration failed' }
       saveUserLocal(user)
@@ -394,9 +426,9 @@ export async function login(email: string, password: string): Promise<{ success:
       })
       const backendResponse = updateAuthBackendAvailabilityFromResponse(res.status)
       if (backendResponse === 'unavailable') throw new Error('Auth backend unavailable')
-      const data = await readJsonResponse<{ error?: string; token?: string; user?: User }>(res)
+      const data = await readJsonResponse<{ error?: string; token?: string; user?: User; expiresAt?: string }>(res)
       if (!res.ok) return { success: false, error: data?.error || 'Login failed' }
-      setToken(data?.token || null)
+      setToken(data?.token || null, data?.expiresAt || null)
       const user = data?.user
       if (!user) return { success: false, error: 'Login failed' }
       saveUserLocal(user)
@@ -454,6 +486,54 @@ export async function validateSession(): Promise<{ user: User; bookmarks: string
     cacheAuthBackendStatus('unavailable', getAuthBackendMode())
     // Offline — use cached state
     return getCachedFallbackState()
+  }
+}
+
+/**
+ * Silently rotate a still-valid session. Returns true when a new token was stored.
+ * Safe to call on interval / tab focus; no-ops when no token or backend is degraded.
+ */
+export async function refreshSession(): Promise<{ success: boolean; user?: User }> {
+  const token = getToken()
+  if (!token) return { success: false }
+
+  const authBackendStatus = await checkAuthBackend()
+  if (!shouldTryAuthBackend(authBackendStatus)) {
+    return { success: false }
+  }
+
+  try {
+    const res = await fetch('/api/auth/refresh', {
+      method: 'POST',
+      headers: authHeaders(),
+    })
+    const backendResponse = updateAuthBackendAvailabilityFromResponse(res.status)
+    if (!res.ok) {
+      if (backendResponse === 'unavailable') {
+        return { success: false }
+      }
+      if (res.status === 401) {
+        setToken(null)
+        saveUserLocal(null)
+      }
+      return { success: false }
+    }
+
+    const data = await readJsonResponse<{
+      token?: string
+      expiresAt?: string
+      user?: User
+    }>(res)
+    if (!data?.token || !data.user) {
+      return { success: false }
+    }
+
+    setToken(data.token, data.expiresAt || null)
+    saveUserLocal(data.user)
+    return { success: true, user: data.user }
+  } catch {
+    cacheAuthBackendStatus('unavailable', getAuthBackendMode())
+    return { success: false }
   }
 }
 

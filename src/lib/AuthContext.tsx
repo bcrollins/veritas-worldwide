@@ -9,6 +9,8 @@ import {
   toggleBookmark as authToggleBookmark,
   getBookmarks,
   validateSession,
+  refreshSession as authRefreshSession,
+  shouldRefreshSession,
   saveReadingProgress as authSaveProgress,
   getReadingProgress,
   updatePreferences as authUpdatePrefs,
@@ -188,6 +190,38 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     })
   }, [initial.token, syncAccessState]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Silent session refresh — rotate token when missing expiry or within 12h of expiry.
+  useEffect(() => {
+    if (!user || !getAuthState().token) return
+
+    let cancelled = false
+    let timer: ReturnType<typeof setInterval> | null = null
+
+    const attemptRefresh = () => {
+      if (cancelled || !shouldRefreshSession()) return
+      void authRefreshSession().then((result) => {
+        if (cancelled || !result.success || !result.user) return
+        setUser(result.user)
+        syncAccessState(getAuthBackendMode())
+      })
+    }
+
+    // Immediate attempt for legacy tokens without stored expiry, then every 6 hours.
+    attemptRefresh()
+    timer = setInterval(attemptRefresh, 6 * 60 * 60 * 1000)
+
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') attemptRefresh()
+    }
+    document.addEventListener('visibilitychange', onVisible)
+
+    return () => {
+      cancelled = true
+      if (timer) clearInterval(timer)
+      document.removeEventListener('visibilitychange', onVisible)
+    }
+  }, [user, syncAccessState])
 
   const login = useCallback(async (email: string, password: string) => {
     const result = await authLogin(email, password)

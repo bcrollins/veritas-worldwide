@@ -108,8 +108,35 @@ async function main() {
   assert(meResult.data?.user?.email === email, 'Authenticated session returned the wrong user')
   logStep('Authenticated session validated')
 
-  const fullChapterResult = await requestJson(`/api/chapters/${chapterId}`, {
+  const refreshResult = await requestJson('/api/auth/refresh', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  })
+  assert(refreshResult.response.status === 200, `Session refresh failed with ${refreshResult.response.status}`)
+  assert(typeof refreshResult.data?.token === 'string' && refreshResult.data.token.length > 20, 'Refresh did not return a usable token')
+  assert(refreshResult.data.token !== token, 'Refresh must rotate to a new token')
+  assert(typeof refreshResult.data?.expiresAt === 'string', 'Refresh did not return expiresAt')
+  const refreshedToken = refreshResult.data.token
+  logStep('Session refresh rotated token')
+
+  const oldTokenMe = await requestJson('/api/auth/me', {
     headers: { Authorization: `Bearer ${token}` },
+  })
+  assert(oldTokenMe.response.status === 401, `Old token still valid after refresh (${oldTokenMe.response.status})`)
+  logStep('Pre-refresh token revoked')
+
+  const refreshedMe = await requestJson('/api/auth/me', {
+    headers: { Authorization: `Bearer ${refreshedToken}` },
+  })
+  assert(refreshedMe.response.status === 200, `Refreshed token rejected by /api/auth/me (${refreshedMe.response.status})`)
+  assert(refreshedMe.data?.user?.email === email, 'Refreshed session returned the wrong user')
+  logStep('Refreshed token validated')
+
+  const fullChapterResult = await requestJson(`/api/chapters/${chapterId}`, {
+    headers: { Authorization: `Bearer ${refreshedToken}` },
   })
   assert(fullChapterResult.response.status === 200, `Authenticated chapter request failed with ${fullChapterResult.response.status}`)
   assert(fullChapterResult.data?.accessLevel === 'full', `Expected authenticated chapter accessLevel=full, received ${fullChapterResult.data?.accessLevel}`)
@@ -125,7 +152,7 @@ async function main() {
 
   const searchParams = new URLSearchParams({ q: searchQuery, match: 'sources' })
   const fullSearchResult = await requestJson(`/api/search?${searchParams.toString()}`, {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${refreshedToken}` },
   })
   assert(fullSearchResult.response.status === 200, `Authenticated search failed with ${fullSearchResult.response.status}`)
   assert(fullSearchResult.data?.scope === 'full', `Expected authenticated search scope=full, received ${fullSearchResult.data?.scope}`)
@@ -133,13 +160,13 @@ async function main() {
   assert(Array.isArray(fullSearchResult.data?.results) && fullSearchResult.data.results.length > 0, 'Authenticated source-only search returned no results')
   logStep('Authenticated source-only search verified', `${fullSearchResult.data.results.length} result(s)`)
 
-  await verifyPdfAccess(token, 200)
+  await verifyPdfAccess(refreshedToken, 200)
   logStep('Authenticated PDF download remains public')
 
   const logoutResult = await requestJson('/api/auth/logout', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${refreshedToken}`,
       'Content-Type': 'application/json',
     },
   })
@@ -147,16 +174,16 @@ async function main() {
   logStep('Logout request completed')
 
   const revokedMeResult = await requestJson('/api/auth/me', {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${refreshedToken}` },
   })
   assert(revokedMeResult.response.status === 401, `Revoked token still authenticated /api/auth/me with ${revokedMeResult.response.status}`)
   logStep('Revoked token rejected by /api/auth/me')
 
-  await verifyPdfAccess(token, 200)
+  await verifyPdfAccess(refreshedToken, 200)
   logStep('Revoked token does not block public PDF download')
 
   const downgradedChapterResult = await requestJson(`/api/chapters/${chapterId}`, {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${refreshedToken}` },
   })
   assert(downgradedChapterResult.response.status === 200, `Revoked-token chapter request failed with ${downgradedChapterResult.response.status}`)
   assert(
