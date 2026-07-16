@@ -28,6 +28,9 @@ const routes = [
   { path: '/israel-dossier', text: ['Israel', 'ISRAEL'], anyText: ['Archive pins', 'ARCHIVE PINS', 'Evidence Workbooks', 'EVIDENCE WORKBOOKS', 'Dossier', 'DOSSIER'] },
   { path: '/israel-dossier/briefing', text: ['briefing', 'BRIEFING'], anyText: ['source', 'Source', 'SOURCE', 'workbook', 'WORKBOOK'] },
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
+  { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL'] },
+  { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
+  { path: '/topics/federal-reserve', text: ['Federal Reserve', 'FEDERAL RESERVE'], anyText: ['primary-source', 'Topic', 'Subscribe', 'SUBSCRIBE'] },
   { path: '/terms', text: ['core downloads are public without a login'] },
 ]
 
