@@ -126,24 +126,24 @@ export default function TermsPage() {
               <div className="bg-surface border border-border rounded-lg p-5">
                 <h3 className="text-sm font-semibold text-ink uppercase tracking-wider mb-4">Related Pages</h3>
                 <nav className="space-y-2">
-                  <Link to="/privacy" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/privacy" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Privacy Policy
                   </Link>
-                  <Link to="/about" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/about" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → About
                   </Link>
-                  <Link to="/methodology" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/methodology" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Methodology
                   </Link>
-                  <Link to="/sources" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/sources" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Sources
                   </Link>
-                  <Link to="/institute/book" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/institute/book" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Field Manual
                   </Link>
                   <a
                     href="/veritas-institute-field-manual.pdf"
-                    className="block text-sm text-ink-muted hover:text-crimson transition-colors"
+                    className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors"
                     download="veritas-institute-field-manual.pdf"
                   >
                     → Field Manual PDF
