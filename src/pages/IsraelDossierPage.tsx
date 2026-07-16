@@ -1340,13 +1340,13 @@ export default function IsraelDossierPage() {
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('The Israel Dossier — every statistic sourced, every dollar traced, every incident documented.')}&url=${encodeURIComponent(SITE_URL + '/israel-dossier')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-obsidian text-white font-sans text-xs font-semibold tracking-wide rounded-sm hover:bg-obsidian/80 transition-colors"
+            className="inline-flex min-h-[44px] items-center gap-2 px-4 py-2 bg-obsidian text-white font-sans text-xs font-semibold tracking-wide rounded-sm hover:bg-obsidian/80 transition-colors"
           >
             Share on X / Twitter
           </a>
           <button
             onClick={() => { navigator.clipboard.writeText(SITE_URL + '/israel-dossier'); alert('Link copied to clipboard') }}
-            className="inline-flex items-center gap-2 px-4 py-2 border border-border text-ink font-sans text-xs font-semibold tracking-wide rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+            className="inline-flex min-h-[44px] items-center gap-2 px-4 py-2 border border-border text-ink font-sans text-xs font-semibold tracking-wide rounded-sm hover:border-crimson hover:text-crimson transition-colors"
           >
             Copy Link
           </button>
