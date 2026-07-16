@@ -1,5 +1,5 @@
 {
-  "run": 193,
+  "run": 194,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "login+register anti-enum live; tip 3cadc01 15-step",
+      "status": "login+register anti-enum; password floor 8; tip 3cadc01+ 15-step green",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "interval ships through cbd9729 admin X-Robots + robots Disallow",
+      "status": "interval ships through 96ea1da/ce53402; 534 a11y markers; 13 headers",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -92,10 +92,10 @@
     },
     {
       "feature": "Public Analytics",
-      "composite": 9.65,
-      "previous": 9.6,
-      "delta": 0.05,
-      "status": "Release Health renders Node runtime + engines.node (tip d7ffe48)",
+      "composite": 9.67,
+      "previous": 9.65,
+      "delta": 0.02,
+      "status": "analytics page links 44px; tip 96ea1da 15-step",
       "plus_half_requires": "Per-replica contributor labels in analytics UI if multi-region grows."
     }
   ],
