@@ -15,6 +15,7 @@ import {
   institutePracticalTopics,
   type InstituteTopic,
 } from '../data/instituteCatalog'
+import { trackDownload } from '../lib/ga4'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
 import SocialProofBanner from '../components/engagement/SocialProofBanner'
@@ -289,6 +290,7 @@ export default function HomePage() {
                         href="/veritas-institute-field-manual.pdf"
                         className="institute-button-secondary"
                         download="veritas-institute-field-manual.pdf"
+                        onClick={() => trackDownload('veritas-institute-field-manual')}
                       >
                         Download PDF
                       </a>

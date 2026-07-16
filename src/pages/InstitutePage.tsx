@@ -9,6 +9,7 @@ import {
   type InstituteTrackId,
 } from '../data/instituteCatalog'
 import InstituteCollectionSignupPanel from '../components/institute/InstituteCollectionSignupPanel'
+import { trackDownload } from '../lib/ga4'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 const filters: { id: InstituteTrackId | 'all'; label: string }[] = [
@@ -109,6 +110,7 @@ export default function InstitutePage() {
                 href="/veritas-institute-field-manual.pdf"
                 className="institute-button-secondary"
                 download="veritas-institute-field-manual.pdf"
+                onClick={() => trackDownload('veritas-institute-field-manual')}
               >
                 Download Field Manual PDF
               </a>
