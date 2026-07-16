@@ -140,10 +140,10 @@ export default function InstituteMethodologyPage() {
       <section className="institute-panel px-6 py-6">
         <p className="institute-eyebrow">Connected surfaces</p>
         <div className="mt-4 flex flex-wrap gap-3">
-          <Link to="/institute" className="institute-button-primary">Browse the catalog</Link>
-          <Link to="/institute/book" className="institute-button-secondary">Open the Field Manual</Link>
-          <Link to="/methodology" className="institute-button-secondary">Compare with publication methodology</Link>
-          <Link to="/sources" className="institute-button-secondary">Open the source library</Link>
+          <Link to="/institute" className="institute-button-primary min-h-[44px]">Browse the catalog</Link>
+          <Link to="/institute/book" className="institute-button-secondary min-h-[44px]">Open the Field Manual</Link>
+          <Link to="/methodology" className="institute-button-secondary min-h-[44px]">Compare with publication methodology</Link>
+          <Link to="/sources" className="institute-button-secondary min-h-[44px]">Open the source library</Link>
         </div>
       </section>
     </div>

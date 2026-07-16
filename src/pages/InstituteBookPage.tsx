@@ -302,10 +302,10 @@ export default function InstituteBookPage() {
 
                 {relatedTopic ? (
                   <div className="mt-5 flex flex-wrap gap-3">
-                    <Link to={`/institute/guides/${relatedTopic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
+                    <Link to={`/institute/guides/${relatedTopic.slug}`} className="inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)]">
                       Companion guide →
                     </Link>
-                    <Link to={`/institute/courses/${relatedTopic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
+                    <Link to={`/institute/courses/${relatedTopic.slug}`} className="inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)]">
                       Companion course →
                     </Link>
                   </div>
@@ -387,10 +387,10 @@ export default function InstituteBookPage() {
                     </div>
 
                     <div className="mt-5 flex flex-wrap gap-3">
-                      <Link to={`/institute/guides/${topic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
+                      <Link to={`/institute/guides/${topic.slug}`} className="inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)]">
                         Guide →
                       </Link>
-                      <Link to={`/institute/courses/${topic.slug}`} className="text-sm font-medium text-[color:var(--institute-accent)]">
+                      <Link to={`/institute/courses/${topic.slug}`} className="inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)]">
                         Course →
                       </Link>
                     </div>
