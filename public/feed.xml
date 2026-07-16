@@ -5,13 +5,22 @@
     <link>https://veritasworldwide.com</link>
     <description>A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Primary Sources. Public Record. Your Conclusions.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 17:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 07:27:01 GMT</lastBuildDate>
     <atom:link href="https://veritasworldwide.com/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://veritasworldwide.com/og-image.png</url>
       <title>The Record — Veritas Worldwide</title>
       <link>https://veritasworldwide.com</link>
     </image>
+    <item>
+      <title>Veritas Institute Field Manual (PDF)</title>
+      <link>https://veritasworldwide.com/veritas-institute-field-manual.pdf</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/veritas-institute-field-manual.pdf</guid>
+      <description>Build-time durable PDF of the Veritas Institute field manual: urgent household and roadside protocols plus practical course paths, source-anchored for print and offline use.</description>
+      <pubDate>Thu, 16 Jul 2026 07:27:01 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/veritas-institute-field-manual.pdf" length="524188" type="application/pdf" />
+    </item>
+
     <item>
       <title>A Note on Methodology, Evidence Standards &amp; How to Read This Book</title>
       <link>https://veritasworldwide.com/chapter/foreword</link>
