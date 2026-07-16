@@ -16,8 +16,9 @@ function assert(condition, message) {
   if (!condition) throw new Error(message)
 }
 
-async function search(query) {
-  const response = await fetch(getUrl(`/api/search?q=${encodeURIComponent(query)}`), {
+async function search(query, extraParams = {}) {
+  const params = new URLSearchParams({ q: query, ...extraParams })
+  const response = await fetch(getUrl(`/api/search?${params.toString()}`), {
     headers: { accept: 'application/json', 'Cache-Control': 'no-cache' },
     signal: AbortSignal.timeout(timeoutMs),
   })
@@ -69,6 +70,30 @@ async function main() {
     `central banking top result should prefer Chapter 1 / title match, got ${centralResults[0].chapterId} matchedIn=${JSON.stringify(centralResults[0].matchedIn)}`
   )
   console.log(`[verify:search] central banking top: ${centralResults[0].chapterId} (score=${centralResults[0].score})`)
+
+  // Engagement boost must raise a recently-read chapter without erasing title relevance.
+  const boosted = await search('federal reserve', { recent: 'chapter-9' })
+  assert(boosted.response.ok, `boosted federal reserve search returned ${boosted.response.status}`)
+  const boostedResults = boosted.data?.results || []
+  const chapter9 = boostedResults.find((row) => row.chapterId === 'chapter-9')
+  const chapter9Base = federalResults.find((row) => row.chapterId === 'chapter-9')
+  if (chapter9 && chapter9Base) {
+    assert(
+      chapter9.score >= chapter9Base.score + 18,
+      `expected +18 engagement boost for chapter-9, base=${chapter9Base.score} boosted=${chapter9.score}`
+    )
+    assert(chapter9.engagementBoost === true, 'boosted hit should set engagementBoost=true')
+    console.log(`[verify:search] engagement boost chapter-9: ${chapter9Base.score} → ${chapter9.score}`)
+  } else {
+    console.log('[verify:search] engagement boost skipped — chapter-9 not in federal reserve results')
+  }
+  // Title-bearing Fed chapters must still dominate even with a boost applied.
+  assert(
+    boostedResults[0].matchedIn?.includes('title') ||
+      boostedResults[0].matchedIn?.includes('subtitle') ||
+      boostedResults[0].matchedIn?.includes('keywords'),
+    `boosted top hit should still match title/subtitle/keywords, got matchedIn=${JSON.stringify(boostedResults[0]?.matchedIn)}`
+  )
 
   const epstein = await search('epstein')
   assert(epstein.response.ok, `epstein search returned ${epstein.response.status}`)

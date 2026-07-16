@@ -8,6 +8,7 @@ import { getTopicHubsForChapter, topicHubs } from '../data/topicHubs'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
+import { getScopedReadingHistory } from '../lib/readerState'
 
 type SearchMatchedField = 'title' | 'subtitle' | 'keywords' | 'content' | 'sources'
 type SearchMatchFilter = 'all' | 'sources'
@@ -348,6 +349,21 @@ export default function SearchPage() {
 
     if (effectiveChapterTypeFilter !== 'all') {
       params.set('chapterType', effectiveChapterTypeFilter)
+    }
+
+    // Modest personalization: boost chapters the reader recently opened.
+    try {
+      const recentIds = getScopedReadingHistory()
+        .slice()
+        .sort((a, b) => b.timestamp - a.timestamp)
+        .map((record) => record.chapterId)
+        .filter(Boolean)
+        .slice(0, 12)
+      if (recentIds.length > 0) {
+        params.set('recent', recentIds.join(','))
+      }
+    } catch {
+      // localStorage may be unavailable
     }
 
     setLoading(true)

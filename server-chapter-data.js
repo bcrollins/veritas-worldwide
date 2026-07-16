@@ -287,7 +287,7 @@ export function createChapterDataTools({ rootDir }) {
     content: 12,
   }
 
-  function scoreSearchMatch(matchedIn = [], chapter = {}, terms = []) {
+  function scoreSearchMatch(matchedIn = [], chapter = {}, terms = [], recentBoost = false) {
     let score = matchedIn.reduce((sum, field) => sum + (SEARCH_FIELD_WEIGHTS[field] || 0), 0)
 
     const title = String(chapter.title || '').toLowerCase()
@@ -303,6 +303,12 @@ export function createChapterDataTools({ rootDir }) {
       score += 25
     }
 
+    // Modest engagement boost for chapters the reader recently opened.
+    // Kept well below title weights so personalization never overrides topical relevance.
+    if (recentBoost) {
+      score += 18
+    }
+
     return score
   }
 
@@ -312,6 +318,12 @@ export function createChapterDataTools({ rootDir }) {
 
     const terms = normalized.toLowerCase().split(/\s+/).filter(Boolean)
     if (terms.length === 0) return []
+
+    const recentBoostIds = new Set(
+      Array.isArray(filters.recentChapterIds)
+        ? filters.recentChapterIds.filter((id) => typeof id === 'string' && id.length > 0)
+        : []
+    )
 
     return getChapterCollection(scope)
       .map((chapter) => {
@@ -339,7 +351,8 @@ export function createChapterDataTools({ rootDir }) {
           return null
         }
 
-        const score = scoreSearchMatch(matchedIn, chapter, terms)
+        const recentBoost = recentBoostIds.has(chapter.id)
+        const score = scoreSearchMatch(matchedIn, chapter, terms, recentBoost)
 
         return {
           chapterId: chapter.id,
@@ -352,6 +365,7 @@ export function createChapterDataTools({ rootDir }) {
           availableEvidenceTiers: chapter.availableEvidenceTiers || [],
           matchedIn,
           score,
+          engagementBoost: recentBoost,
           snippet: getSearchSnippet(chapter, terms),
         }
       })
