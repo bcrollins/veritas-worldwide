@@ -154,6 +154,11 @@ assert(
     server.includes('name: "analytics-event", windowMs: 60_000, max: 120'),
   'analytics-event rateLimit must allow 120/min',
 )
+assert(
+  server.includes("name: 'change-password', windowMs: 60_000, max: 10") ||
+    server.includes('name: "change-password", windowMs: 60_000, max: 10'),
+  'change-password rateLimit must stay at 10/min',
+)
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
 assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
