@@ -226,6 +226,7 @@ for (const pureScript of [
   'verify-crawler-surfaces.mjs',
   'verify-auth-validation.mjs',
   'verify-csp-meta.mjs',
+  'verify-archive-manifest.mjs',
 ]) {
   assert(verifyPure.includes(pureScript), `verify:pure must include ${pureScript}`)
 }
