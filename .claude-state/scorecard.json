@@ -1,5 +1,5 @@
 {
-  "run": 92,
+  "run": 93,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "429-resilient auth smoke; register 24/min; tip c444c99",
+      "status": "change-password rate limit + user mutation caps; tip 5571c4e",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "15-step green; 9 headers; dual security.txt; HEAD 7aff1b5; 456 a11y markers",
+      "status": "15-step green HEAD 5571c4e; 9 headers; dual security.txt; 456 a11y",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
