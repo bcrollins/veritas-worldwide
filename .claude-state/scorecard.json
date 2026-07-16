@@ -1,14 +1,14 @@
 {
-  "run": 49,
+  "run": 50,
   "date": "2026-07-16",
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.99,
-      "previous": 9.97,
-      "delta": 0.02,
-      "status": "live on db4519dd0187: 11 pinned briefing archives + public archive manifest; brand kit consolidated on /content-pack",
-      "plus_half_requires": "Pin remaining lookup-only briefing hosts (Forensic Architecture, Lancet, OCHA content URLs, UN Digital Library) when snapshots become available."
+      "composite": 9.995,
+      "previous": 9.99,
+      "delta": 0,
+      "status": "live cf6c5c5: 15/16 briefing archives pinned; OCHA HTML + Forensic Architecture snapshots upgraded; Lancet remains lookup-only (Wayback empty 2026-07-16)",
+      "plus_half_requires": "Pin Lancet Global Health survey page when Wayback accepts a durable capture (save currently 520 / available empty)."
     },
     {
       "feature": "Home / Front Page",
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 8.8,
-      "previous": 8.5,
-      "delta": 0.3,
-      "status": "About/Methodology/Sources trust nav links Institute + durable PDFs live",
+      "composite": 9,
+      "previous": 8.8,
+      "delta": 0.2,
+      "status": "Terms + Accessibility Related Pages now link Field Manual route + durable PDF (live SPA chunks TermsPage-BiEtwjX4 / AccessibilityPage-VMG1cSwx); Privacy/About/Methodology/Sources already covered",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -84,19 +84,19 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.65,
-      "previous": 9.55,
-      "delta": 0.1,
-      "status": "build-info PDF flags + release/platform asserts; client-error counters; non-immutable PDF cache | LIVE 74dec67 proven",
+      "composite": 9.8,
+      "previous": 9.65,
+      "delta": 0.15,
+      "status": "multi-replica health history via analytics_state storage=shared-database sharedAcrossReplicas=true LIVE cf6c5c5; platform PASS; force samples on deploy; crawler floor guards",
       "plus_half_requires": "Optional Sentry DSN for external paging on top of native client-error intake."
     },
     {
       "feature": "Public Analytics",
-      "composite": 9.2,
-      "previous": 9.0,
-      "delta": 0.2,
-      "status": "commit transitions + unique commits on Release Health; force samples on deploy",
-      "plus_half_requires": "Multi-replica aggregation of health history when more than one Railway replica is hot."
+      "composite": 9.45,
+      "previous": 9.2,
+      "delta": 0.25,
+      "status": "shared health history across Railway replicas; Release Health shows storage + multi-replica badge; commit transitions retained in Postgres",
+      "plus_half_requires": "Longer retention window and per-replica contributor tags if multi-region scaling requires forensics."
     }
   ],
   "growth": [
@@ -110,11 +110,11 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 9.25,
-      "previous": 9.2,
-      "delta": 0.05,
-      "status": "improved; sitemap is refreshed after Institute/profile route generation, live prerendered route count is 289, and public briefing/dossier crawl surfaces remain live-verified on the current production SHA",
-      "plus_half_requires": "Confirm Search Console indexing for the dossier, briefing, Institute, llms.txt, and refreshed sitemap entries, then add crawler-diff monitoring for route-count regressions."
+      "score": 9.35,
+      "previous": 9.25,
+      "delta": 0.1,
+      "status": "verify:crawler-surfaces floors prerender≥250 sitemap≥300 + trust-page PDF link regression; live sitemap/llms/robots PDF discovery PASS on cf6c5c5",
+      "plus_half_requires": "Confirm Search Console indexing for dossier, briefing, Institute, llms.txt, and PDF entries."
     },
     {
       "area": "Analytics & Measurement",

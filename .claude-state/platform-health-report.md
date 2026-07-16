@@ -1,31 +1,54 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T06:56:18.208Z
+- Checked at: 2026-07-16T08:09:47.772Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: e91cb484a2c9
-- Deployment: fca3d460-58d8-4bc3-ac47-ab32551b04c2
+- Build commit: cf6c5c5c0b4d
+- Deployment: 4fcd9dbc-e4e9-40d2-afad-3c2e0cc3b86b
 - Auth mode: database
 - Search results: 19
-- Analytics lifetime views: 6911
+- Analytics lifetime views: 6918
 
 ## Checks
 - PASS — Build info route responds: GET /api/build-info returned 200
 - PASS — Build info reports prerender coverage: prerenderedRouteCount=289
+- PASS — Build info reports manuscript PDF present: recordPdf=true
+- PASS — Build info reports institute field manual PDF present: instituteFieldManualPdf=true
 - PASS — Health probe reports ok: GET /api/health returned 200 status=ok
 - PASS — Health probe confirms chapter data: chapterData=true
 - PASS — Health probe confirms prerender coverage: prerender=true
-- PASS — Health probe exposes analytics lifetime: analyticsLifetime=6911
+- PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
+- PASS — Health probe reports client error intake enabled: clientErrorIntake=true
+- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=15
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
+- PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
+- PASS — Health history reports known storage backend: storage=shared-database
+- PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
+- PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=289
 - PASS — Client error intake accepts or rate-limits probes: POST /api/client-error returned 204
 - PASS — Auth status route responds: GET /api/auth/status returned 200
 - PASS — Auth status exposes availability: available=true
 - PASS — Auth status exposes a known mode: mode=database
+- PASS — Auth status exposes access token TTL when present: accessTokenTtl=7d
+- PASS — Auth access token TTL is 7 days: accessTokenTtl=7d
+- PASS — Auth status reports session refresh available: sessionRefresh=true
 - PASS — Anonymous auth probe returns a guarded status: GET /api/auth/me returned 401 while mode=database
 - PASS — Public PDF download is readable for signed-out probes: GET /api/downloads/the-record.pdf returned 200
+- PASS — Institute field manual PDF is publicly downloadable: HEAD /veritas-institute-field-manual.pdf returned 200 type=application/pdf
+- PASS — Health probe reports institute field manual PDF (or asset responds): checks.instituteFieldManualPdf=true
+- PASS — Institute field manual PDF is not immutably cached: cache-control=public, max-age=3600, must-revalidate
+- PASS — Institute field manual PDF sets Content-Disposition filename: content-disposition=inline; filename="veritas-institute-field-manual.pdf"
+- PASS — The Record PDF is publicly downloadable and not immutably cached: status=200 cache=public, max-age=3600, must-revalidate
+- PASS — The Record PDF sets Content-Disposition filename: content-disposition=inline; filename="the-record.pdf"
+- PASS — Sitemap indexes the institute field manual PDF: sitemap status=200 hasFieldManualPdf=true
+- PASS — RSS feed announces the institute field manual PDF: feed status=200 hasFieldManualPdf=true
+- PASS — robots.txt allows the field manual PDF: status=200
+- PASS — Institute catalog prerender links the field manual PDF: status=200 hasPdfLink=true
+- PASS — Institute book prerender exposes PDF encoding schema: status=200
+- PASS — Institute markdown indexes the field manual PDF: status=200
 - PASS — Public chapter route responds: GET /api/chapters/chapter-1 returned 200
 - PASS — Public chapter payload returns the full reader body: accessLevel=full
 - PASS — Public chapter payload is not block-limited: content=25 preview=0 total=25
@@ -39,9 +62,11 @@
 - PASS — Anonymous search results expose chapter type metadata: chapterType=investigation
 - PASS — Anonymous search results expose full public access: accessLevel=full
 - PASS — Anonymous search results expose evidence tier metadata: availableEvidenceTiers=verified, circumstantial, disputed
+- PASS — Engagement-boosted search responds: status=200
+- PASS — Engagement boost flags recently read chapter: engagementBoost=true
 - PASS — Analytics snapshot route responds: GET /api/analytics/snapshot returned 200
-- PASS — Analytics lifetime stays non-negative: lifetime=6911
-- PASS — Analytics today count stays non-negative: today=96
+- PASS — Analytics lifetime stays non-negative: lifetime=6918
+- PASS — Analytics today count stays non-negative: today=103
 - PASS — Analytics funnel exposes signup totals: signups=8
 - PASS — Read route prerender responds: GET /read returned 200
 - PASS — Read route prerender returns HTML: content-type=text/html; charset=utf-8

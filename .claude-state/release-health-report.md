@@ -1,24 +1,27 @@
 # Release Health Report
 
-- Checked at: 2026-07-16T06:17:30.787Z
-- Base URL: https://veritasworldwide.com
+- Checked at: 2026-07-16T08:09:49.600Z
+- Base URL: http://localhost:4175
 - Status: pass
 - Version: 1.0.0
-- Commit: 7a646ee5088a
-- Deployment: 42bd6fc3-2090-421b-81fd-c3a34622c851
-- Analytics lifetime views: 6895
-- Analytics signups: 8
+- Commit: cf6c5c5c0b4d
+- Deployment: unknown
+- Analytics lifetime views: 0
+- Analytics signups: 0
 
 ## Checks
 - PASS — Build info route responds: GET /api/build-info returned 200
 - PASS — Homepage release headers respond: HEAD / returned 200
 - PASS — Release version header present: 1.0.0
-- PASS — Release commit header present: 7a646ee5088a
-- PASS — Release deployment header present: 42bd6fc3-2090-421b-81fd-c3a34622c851
-- PASS — Release headers match build info: api=7a646ee5088a / 42bd6fc3-2090-421b-81fd-c3a34622c851 · headers=7a646ee5088a / 42bd6fc3-2090-421b-81fd-c3a34622c851
+- PASS — Release commit header present: cf6c5c5c0b4d
+- PASS — Release deployment header present: Deployment header not expected outside Railway
+- PASS — Release headers match build info: api=cf6c5c5c0b4d / n/a · headers=cf6c5c5c0b4d / missing
 - PASS — Build info includes JavaScript entry assets: js=5
 - PASS — Build info includes CSS entry assets: css=1
-- PASS — Public bundle excludes deprecated admin auth assets: js=assets/index-BSzrF2Y0.js, assets/rolldown-runtime-QTnfLwEv.js, assets/vendor-react-CyYHJXCk.js, assets/hubspot-BhVuqbwi.js, assets/analytics-D_b_jtBZ.js
+- PASS — Build info reports manuscript PDF present: recordPdf=true
+- PASS — Build info reports institute field manual PDF present: instituteFieldManualPdf=true
+- PASS — Build info exposes institute field manual PDF URL: instituteFieldManualPdfUrl=/veritas-institute-field-manual.pdf
+- PASS — Public bundle excludes deprecated admin auth assets: js=assets/index-C3ExZca7.js, assets/rolldown-runtime-QTnfLwEv.js, assets/vendor-react-CyYHJXCk.js, assets/hubspot-BhVuqbwi.js, assets/analytics-D_b_jtBZ.js
 - PASS — Analytics snapshot responds: GET /api/analytics/snapshot returned 200
 - PASS — Machine-readable llms surface responds: HEAD /llms.txt returned 200
 - PASS — Institute markdown surface responds: HEAD /veritas-institute.md returned 200

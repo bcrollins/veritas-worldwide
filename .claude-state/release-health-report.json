@@ -1,24 +1,24 @@
 {
-  "checkedAt": "2026-07-16T06:17:30.787Z",
-  "baseUrl": "https://veritasworldwide.com",
+  "checkedAt": "2026-07-16T08:09:49.600Z",
+  "baseUrl": "http://localhost:4175",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "7a646ee5088a5560025ba881a6c3c7e667e8a241",
-    "commitShort": "7a646ee5088a",
-    "deploymentId": "42bd6fc3-2090-421b-81fd-c3a34622c851",
-    "environment": "production",
+    "commit": "cf6c5c5c0b4dd1623f37d3499f037d7d230f026b",
+    "commitShort": "cf6c5c5c0b4d",
+    "deploymentId": "",
+    "environment": "",
     "prerenderedRouteCount": 289
   },
   "headers": {
     "version": "1.0.0",
-    "commit": "7a646ee5088a",
-    "deployment": "42bd6fc3-2090-421b-81fd-c3a34622c851"
+    "commit": "cf6c5c5c0b4d",
+    "deployment": ""
   },
   "analytics": {
-    "lifetime": 6895,
-    "today": 80,
-    "signups": 8,
+    "lifetime": 0,
+    "today": 0,
+    "signups": 0,
     "payments": 0
   },
   "checks": [
@@ -40,17 +40,17 @@
     {
       "ok": true,
       "label": "Release commit header present",
-      "detail": "7a646ee5088a"
+      "detail": "cf6c5c5c0b4d"
     },
     {
       "ok": true,
       "label": "Release deployment header present",
-      "detail": "42bd6fc3-2090-421b-81fd-c3a34622c851"
+      "detail": "Deployment header not expected outside Railway"
     },
     {
       "ok": true,
       "label": "Release headers match build info",
-      "detail": "api=7a646ee5088a / 42bd6fc3-2090-421b-81fd-c3a34622c851 · headers=7a646ee5088a / 42bd6fc3-2090-421b-81fd-c3a34622c851"
+      "detail": "api=cf6c5c5c0b4d / n/a · headers=cf6c5c5c0b4d / missing"
     },
     {
       "ok": true,
@@ -64,8 +64,23 @@
     },
     {
       "ok": true,
+      "label": "Build info reports manuscript PDF present",
+      "detail": "recordPdf=true"
+    },
+    {
+      "ok": true,
+      "label": "Build info reports institute field manual PDF present",
+      "detail": "instituteFieldManualPdf=true"
+    },
+    {
+      "ok": true,
+      "label": "Build info exposes institute field manual PDF URL",
+      "detail": "instituteFieldManualPdfUrl=/veritas-institute-field-manual.pdf"
+    },
+    {
+      "ok": true,
       "label": "Public bundle excludes deprecated admin auth assets",
-      "detail": "js=assets/index-BSzrF2Y0.js, assets/rolldown-runtime-QTnfLwEv.js, assets/vendor-react-CyYHJXCk.js, assets/hubspot-BhVuqbwi.js, assets/analytics-D_b_jtBZ.js"
+      "detail": "js=assets/index-C3ExZca7.js, assets/rolldown-runtime-QTnfLwEv.js, assets/vendor-react-CyYHJXCk.js, assets/hubspot-BhVuqbwi.js, assets/analytics-D_b_jtBZ.js"
     },
     {
       "ok": true,

@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T06:56:18.208Z",
+  "checkedAt": "2026-07-16T08:09:47.772Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "e91cb484a2c937354034295cba8547fb762bacad",
-    "commitShort": "e91cb484a2c9",
-    "deploymentId": "fca3d460-58d8-4bc3-ac47-ab32551b04c2",
+    "commit": "cf6c5c5c0b4dd1623f37d3499f037d7d230f026b",
+    "commitShort": "cf6c5c5c0b4d",
+    "deploymentId": "4fcd9dbc-e4e9-40d2-afad-3c2e0cc3b86b",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -23,8 +23,8 @@
     "firstResultChapterId": "chapter-25"
   },
   "analytics": {
-    "lifetime": 6911,
-    "today": 96,
+    "lifetime": 6918,
+    "today": 103,
     "signups": 8,
     "payments": 0
   },
@@ -75,6 +75,16 @@
     },
     {
       "ok": true,
+      "label": "Build info reports manuscript PDF present",
+      "detail": "recordPdf=true"
+    },
+    {
+      "ok": true,
+      "label": "Build info reports institute field manual PDF present",
+      "detail": "instituteFieldManualPdf=true"
+    },
+    {
+      "ok": true,
       "label": "Health probe reports ok",
       "detail": "GET /api/health returned 200 status=ok"
     },
@@ -91,7 +101,17 @@
     {
       "ok": true,
       "label": "Health probe exposes analytics lifetime",
-      "detail": "analyticsLifetime=6911"
+      "detail": "analyticsLifetime=6918"
+    },
+    {
+      "ok": true,
+      "label": "Health probe reports client error intake enabled",
+      "detail": "clientErrorIntake=true"
+    },
+    {
+      "ok": true,
+      "label": "Health probe exposes client error intake count",
+      "detail": "clientErrorIntakeCount=0"
     },
     {
       "ok": true,
@@ -115,6 +135,26 @@
     },
     {
       "ok": true,
+      "label": "Health history exposes commit transition fields",
+      "detail": "commitTransitions=true uniqueCommits=true"
+    },
+    {
+      "ok": true,
+      "label": "Health history reports known storage backend",
+      "detail": "storage=shared-database"
+    },
+    {
+      "ok": true,
+      "label": "Health history is shared across replicas via database",
+      "detail": "storage=shared-database sharedAcrossReplicas=true"
+    },
+    {
+      "ok": true,
+      "label": "Live prerender route count stays above crawler floor",
+      "detail": "prerenderedRouteCount=289"
+    },
+    {
+      "ok": true,
       "label": "Client error intake accepts or rate-limits probes",
       "detail": "POST /api/client-error returned 204"
     },
@@ -135,6 +175,21 @@
     },
     {
       "ok": true,
+      "label": "Auth status exposes access token TTL when present",
+      "detail": "accessTokenTtl=7d"
+    },
+    {
+      "ok": true,
+      "label": "Auth access token TTL is 7 days",
+      "detail": "accessTokenTtl=7d"
+    },
+    {
+      "ok": true,
+      "label": "Auth status reports session refresh available",
+      "detail": "sessionRefresh=true"
+    },
+    {
+      "ok": true,
       "label": "Anonymous auth probe returns a guarded status",
       "detail": "GET /api/auth/me returned 401 while mode=database"
     },
@@ -142,6 +197,66 @@
       "ok": true,
       "label": "Public PDF download is readable for signed-out probes",
       "detail": "GET /api/downloads/the-record.pdf returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Institute field manual PDF is publicly downloadable",
+      "detail": "HEAD /veritas-institute-field-manual.pdf returned 200 type=application/pdf"
+    },
+    {
+      "ok": true,
+      "label": "Health probe reports institute field manual PDF (or asset responds)",
+      "detail": "checks.instituteFieldManualPdf=true"
+    },
+    {
+      "ok": true,
+      "label": "Institute field manual PDF is not immutably cached",
+      "detail": "cache-control=public, max-age=3600, must-revalidate"
+    },
+    {
+      "ok": true,
+      "label": "Institute field manual PDF sets Content-Disposition filename",
+      "detail": "content-disposition=inline; filename=\"veritas-institute-field-manual.pdf\""
+    },
+    {
+      "ok": true,
+      "label": "The Record PDF is publicly downloadable and not immutably cached",
+      "detail": "status=200 cache=public, max-age=3600, must-revalidate"
+    },
+    {
+      "ok": true,
+      "label": "The Record PDF sets Content-Disposition filename",
+      "detail": "content-disposition=inline; filename=\"the-record.pdf\""
+    },
+    {
+      "ok": true,
+      "label": "Sitemap indexes the institute field manual PDF",
+      "detail": "sitemap status=200 hasFieldManualPdf=true"
+    },
+    {
+      "ok": true,
+      "label": "RSS feed announces the institute field manual PDF",
+      "detail": "feed status=200 hasFieldManualPdf=true"
+    },
+    {
+      "ok": true,
+      "label": "robots.txt allows the field manual PDF",
+      "detail": "status=200"
+    },
+    {
+      "ok": true,
+      "label": "Institute catalog prerender links the field manual PDF",
+      "detail": "status=200 hasPdfLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Institute book prerender exposes PDF encoding schema",
+      "detail": "status=200"
+    },
+    {
+      "ok": true,
+      "label": "Institute markdown indexes the field manual PDF",
+      "detail": "status=200"
     },
     {
       "ok": true,
@@ -210,18 +325,28 @@
     },
     {
       "ok": true,
+      "label": "Engagement-boosted search responds",
+      "detail": "status=200"
+    },
+    {
+      "ok": true,
+      "label": "Engagement boost flags recently read chapter",
+      "detail": "engagementBoost=true"
+    },
+    {
+      "ok": true,
       "label": "Analytics snapshot route responds",
       "detail": "GET /api/analytics/snapshot returned 200"
     },
     {
       "ok": true,
       "label": "Analytics lifetime stays non-negative",
-      "detail": "lifetime=6911"
+      "detail": "lifetime=6918"
     },
     {
       "ok": true,
       "label": "Analytics today count stays non-negative",
-      "detail": "today=96"
+      "detail": "today=103"
     },
     {
       "ok": true,

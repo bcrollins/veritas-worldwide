@@ -1,5 +1,5 @@
 {
-  "title": "Israel dossier public briefing \u2014 source archive manifest",
+  "title": "Israel dossier public briefing — source archive manifest",
   "generatedAt": "2026-07-16",
   "purpose": "Pinned Wayback snapshots for briefing source rows so evidence remains inspectable when hosts block automated probes.",
   "entries": [
@@ -12,9 +12,10 @@
     },
     {
       "sourceUrl": "https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
-      "timestamp": "20240621135854",
-      "archiveUrl": "https://web.archive.org/web/20240621135854/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
-      "status": "pinned"
+      "timestamp": "20260705041620",
+      "archiveUrl": "https://web.archive.org/web/20260705041620/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
+      "status": "pinned",
+      "note": "Wayback HTML snapshot of Hind Rajab investigation page"
     },
     {
       "sourceUrl": "https://undocs.org/S/RES/2334(2016)",
@@ -72,10 +73,10 @@
     },
     {
       "sourceUrl": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026",
-      "timestamp": "20260515102538",
-      "archiveUrl": "https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
+      "timestamp": "20260703122825",
+      "archiveUrl": "https://web.archive.org/web/20260703122825/https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026",
       "status": "pinned",
-      "note": "Companion PDF snapshot of same OCHA 1 Apr 2026 impact table"
+      "note": "HTML page snapshot of OCHA 1 Apr 2026 impact report; PDF companion also pinned"
     },
     {
       "sourceUrl": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
@@ -93,7 +94,9 @@
       "sourceUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
       "timestamp": null,
       "archiveUrl": "https://web.archive.org/web/*/https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
-      "status": "lookup-only"
+      "status": "lookup-only",
+      "note": "Wayback has no capturable snapshot as of 2026-07-16 (save endpoint 520; available API empty). Retain wildcard lookup until a durable capture exists.",
+      "lastProbedAt": "2026-07-16T08:10:00.000Z"
     },
     {
       "sourceUrl": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
