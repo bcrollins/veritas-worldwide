@@ -34,6 +34,7 @@ assert(
     server.includes('/.well-known/security.txt'),
   'security.txt routes must be registered on the Express app',
 )
-assert(server.includes('resolveSecurityTxtPath') || server.includes('SECURITY_TXT_CANDIDATES'), 'security.txt path resolver present')
+assert(server.includes('SECURITY_TXT_FALLBACK') && server.includes('loadSecurityTxtBody'), 'security.txt in-process fallback present')
+assert(server.includes('privacy@veritasworldwide.com'), 'security.txt contact embedded for production fallback')
 
 console.log('[verify:server-security-invariants] PASS — server.js security surface locked')

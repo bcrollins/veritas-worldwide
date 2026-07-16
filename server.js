@@ -1610,30 +1610,46 @@ app.use((req, res, next) => {
   res.sendFile(filePath)
 })
 
-// RFC 9116 security.txt — serve explicitly so /.well-known is not lost when
-// build tooling or packaging skips hidden public dirs. Prefer dist, fall back to source.
+// RFC 9116 security.txt — always serve from an in-process body so production
+// never depends on Vite copying hidden public/.well-known into dist. Disk
+// candidates still win when present so public/security.txt remains editable.
+const SECURITY_TXT_FALLBACK = `# Veritas Worldwide — security disclosure (RFC 9116)
+# https://veritasworldwide.com/.well-known/security.txt
+
+Contact: mailto:privacy@veritasworldwide.com
+Contact: mailto:corrections@veritasworldwide.com
+Expires: 2027-07-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://veritasworldwide.com/.well-known/security.txt
+Policy: https://veritasworldwide.com/privacy
+Hiring: https://veritasworldwide.com/about
+
+# Scope: veritasworldwide.com production web application and related APIs.
+# Please report vulnerabilities privately; do not publicly disclose until fixed.
+# We do not offer a paid bug bounty program at this time.
+`
 const SECURITY_TXT_CANDIDATES = [
   path.join(__dirname, 'dist', '.well-known', 'security.txt'),
   path.join(__dirname, 'dist', 'security.txt'),
   path.join(__dirname, 'public', '.well-known', 'security.txt'),
   path.join(__dirname, 'public', 'security.txt'),
 ]
-function resolveSecurityTxtPath() {
+function loadSecurityTxtBody() {
   for (const candidate of SECURITY_TXT_CANDIDATES) {
-    if (fs.existsSync(candidate)) return candidate
+    try {
+      if (fs.existsSync(candidate)) return fs.readFileSync(candidate, 'utf8')
+    } catch {
+      // continue
+    }
   }
-  return null
+  return SECURITY_TXT_FALLBACK
 }
-app.get(['/.well-known/security.txt', '/security.txt'], (req, res) => {
-  const filePath = resolveSecurityTxtPath()
-  if (!filePath) {
-    res.status(404)
-    res.type('text/plain')
-    return res.send('Not found')
-  }
+app.get(['/.well-known/security.txt', '/security.txt'], (_req, res) => {
+  const body = loadSecurityTxtBody()
+  res.status(200)
   res.setHeader('Cache-Control', 'public, max-age=3600')
   res.type('text/plain; charset=utf-8')
-  return res.sendFile(filePath)
+  return res.send(body)
 })
 
 // Static files with aggressive caching for hashed assets
