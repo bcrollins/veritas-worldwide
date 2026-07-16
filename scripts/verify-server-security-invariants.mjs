@@ -61,8 +61,23 @@ assert(server.includes('Cross-Origin-Opener-Policy'), 'Cross-Origin-Opener-Polic
 assert(server.includes('same-origin-allow-popups'), 'COOP allows intentional share popups')
 assert(server.includes('Cross-Origin-Resource-Policy'), 'Cross-Origin-Resource-Policy set')
 assert(server.includes("'same-site'") || server.includes('"same-site"') || server.includes('same-site'), 'CORP value same-site')
+assert(
+  server.includes("'Cross-Origin-Resource-Policy', 'same-site'") ||
+    server.includes('"Cross-Origin-Resource-Policy", "same-site"'),
+  'CORP header must be set to same-site exactly',
+)
 assert(server.includes('X-DNS-Prefetch-Control'), 'X-DNS-Prefetch-Control set')
 assert(server.includes("'off'") || server.includes('"off"'), 'DNS prefetch control off')
+assert(
+  server.includes("'X-DNS-Prefetch-Control', 'off'") ||
+    server.includes('"X-DNS-Prefetch-Control", "off"'),
+  'X-DNS-Prefetch-Control must be off exactly',
+)
+assert(
+  server.includes("'X-Download-Options', 'noopen'") ||
+    server.includes('"X-Download-Options", "noopen"'),
+  'X-Download-Options must be noopen exactly',
+)
 assert(
   (server.match(/no-cache, no-store, must-revalidate/g) || []).length >= 2,
   'HTML/SPA shell Cache-Control must force revalidation (no-store)',
