@@ -1,13 +1,13 @@
 {
-  "run": 53,
+  "run": 54,
   "date": "2026-07-16",
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.997,
-      "previous": 9.995,
-      "delta": 0,
-      "status": "19/20 archives pinned (B'Tselem + UNRWA added); Lancet lookup-only after re-probe",
+      "composite": 9.998,
+      "previous": 9.997,
+      "delta": 0.001,
+      "status": "23/24 archives pinned (Airwars/HRW/ReliefWeb/B'Tselem/UNRWA); Lancet lookup-only",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -55,7 +55,7 @@
       "composite": 9.7,
       "previous": 9.55,
       "delta": 0.15,
-      "status": "sitewide popularityBoost +8 from analytics page views; personal engagement +18 supersedes; filters.popularChapterIds live; Widely read badge",
+      "status": "popularityBoost + engagement live; pure score-ladder + live ranking + platform popularChapterIds asserts; verify:live env fixed",
       "plus_half_requires": "Optional per-reader server identity for multi-device engagement when auth session is present."
     },
     {
