@@ -285,6 +285,20 @@
       "archiveUrl": "https://web.archive.org/web/20260715072948/https://www.faa.gov/",
       "status": "pinned",
       "note": "FAA home — aviation primary host"
+    },
+    {
+      "sourceUrl": "https://www.justice.gov/",
+      "timestamp": "20260716045103",
+      "archiveUrl": "https://web.archive.org/web/20260716045103/https://www.justice.gov/",
+      "status": "pinned",
+      "note": "U.S. Department of Justice portal"
+    },
+    {
+      "sourceUrl": "https://www.ntsb.gov/investigations",
+      "timestamp": "20130621082757",
+      "archiveUrl": "https://web.archive.org/web/20130621082757/http://www.ntsb.gov/investigations/",
+      "status": "pinned",
+      "note": "NTSB investigations hub (durable Wayback capture)"
     }
   ]
 }
