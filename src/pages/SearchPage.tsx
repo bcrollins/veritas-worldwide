@@ -877,13 +877,13 @@ export default function SearchPage() {
                     <Link
                       key={ch.id}
                       to={`/chapter/${ch.id}`}
-                      className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors py-0.5 leading-relaxed"
+                      className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors py-0.5 leading-relaxed"
                     >
                       <span className="text-crimson font-semibold">{ch.number}</span> {ch.title}
                     </Link>
                   ))}
                   {chapterMeta.length > 15 && (
-                    <Link to="/" className="block font-sans text-xs text-crimson hover:text-crimson-dark mt-2">
+                    <Link to="/" className="inline-flex min-h-[44px] items-center font-sans text-xs text-crimson hover:text-crimson-dark mt-2">
                       View all {chapterMeta.length} chapters &rarr;
                     </Link>
                   )}
@@ -895,16 +895,16 @@ export default function SearchPage() {
                   Related Pages
                 </h3>
                 <div className="space-y-2">
-                  <Link to="/sources" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/sources" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Sources &amp; Bibliography
                   </Link>
-                  <Link to="/topics" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/topics" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Research Topics
                   </Link>
-                  <Link to="/methodology" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/methodology" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Methodology &amp; Standards
                   </Link>
-                  <Link to="/profiles" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/profiles" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Power Profiles
                   </Link>
                 </div>
