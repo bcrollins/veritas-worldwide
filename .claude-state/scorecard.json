@@ -1,5 +1,5 @@
 {
-  "run": 93,
+  "run": 94,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.37,
       "previous": 9.33,
       "delta": 0.04,
-      "status": "15-step green; 9 headers; dual security.txt; HEAD 7aff1b5; 456 a11y markers",
+      "status": "HEAD 293c389 15-step green; 9 headers; dual security.txt; rate-limit matrix; 456 a11y",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "change-password rate limit + user mutation caps; tip 5571c4e",
+      "status": "HEAD 293c389 15-step green; 9 headers; dual security.txt; rate-limit matrix; 456 a11y",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "15-step green HEAD 5571c4e; 9 headers; dual security.txt; 456 a11y",
+      "status": "HEAD 293c389 15-step green; 9 headers; dual security.txt; rate-limit matrix; 456 a11y",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
