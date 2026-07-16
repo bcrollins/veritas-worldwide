@@ -268,6 +268,8 @@ export default function AboutPage() {
                     { to: '/read', label: 'Read The Record' },
                     { to: '/methodology', label: 'Methodology' },
                     { to: '/sources', label: 'Sources' },
+                    { to: '/institute', label: 'Veritas Institute' },
+                    { to: '/institute/book', label: 'Field Manual' },
                     { to: '/membership', label: 'Membership' },
                     { to: '/content-pack', label: 'Content Pack' },
                   ].map((link) => (
@@ -279,6 +281,19 @@ export default function AboutPage() {
                       → {link.label}
                     </Link>
                   ))}
+                  <a
+                    href="/veritas-institute-field-manual.pdf"
+                    className="block text-sm text-ink-muted transition-colors hover:text-crimson"
+                    download="veritas-institute-field-manual.pdf"
+                  >
+                    → Field Manual PDF
+                  </a>
+                  <a
+                    href="/the-record.pdf"
+                    className="block text-sm text-ink-muted transition-colors hover:text-crimson"
+                  >
+                    → The Record PDF
+                  </a>
                 </nav>
               </div>
 
