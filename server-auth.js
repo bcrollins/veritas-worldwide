@@ -140,7 +140,9 @@ export function registerDatabaseAndAuthRoutes({
       return res.status(404).json({ error: 'File not found' })
     }
 
-    res.setHeader('Cache-Control', 'public, max-age=0')
+    res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
+    res.setHeader('Content-Type', 'application/pdf')
+    res.setHeader('Content-Disposition', 'inline; filename="the-record.pdf"')
     return res.sendFile(recordPdfPath)
   })
 
@@ -149,7 +151,9 @@ export function registerDatabaseAndAuthRoutes({
       return res.status(404).type('text/plain').send('File not found.')
     }
 
-    res.setHeader('Cache-Control', 'public, max-age=0')
+    res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
+    res.setHeader('Content-Type', 'application/pdf')
+    res.setHeader('Content-Disposition', 'inline; filename="the-record.pdf"')
     return res.sendFile(recordPdfPath)
   })
 
