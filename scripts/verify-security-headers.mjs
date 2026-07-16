@@ -13,6 +13,7 @@ const REQUIRED = {
   'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\).*display-capture=\(\).*clipboard-write=\(self\)/i,
   'x-xss-protection': /1/,
   'x-permitted-cross-domain-policies': /^none$/i,
+  'x-download-options': /^noopen$/i,
   'cross-origin-opener-policy': /same-origin-allow-popups/i,
   'cross-origin-resource-policy': /^same-site$/i,
   'x-dns-prefetch-control': /^off$/i,

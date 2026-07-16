@@ -724,6 +724,8 @@ app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff')
   res.setHeader('X-XSS-Protection', '1; mode=block')
   res.setHeader('X-Permitted-Cross-Domain-Policies', 'none')
+  // Legacy IE/Edge: prevent HTML-as-attachment opening in the site's context.
+  res.setHeader('X-Download-Options', 'noopen')
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
   // Allow intentional share popups (window.open to X/Facebook/etc.) while isolating
   // the browsing context from unexpected cross-origin openers.
