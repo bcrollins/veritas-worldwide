@@ -124,7 +124,7 @@ export default function MembershipPage() {
           <div className="inline-flex items-center gap-3 bg-white/10 rounded-full p-1">
             <button
               onClick={() => setAnnual(false)}
-              className={`font-sans text-xs font-semibold tracking-wide px-5 py-2.5 rounded-full transition-all ${
+              className={`inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-wide px-5 py-2.5 rounded-full transition-all ${
                 !annual ? 'bg-white text-ink' : 'text-white/60 hover:text-white'
               }`}
             >
@@ -132,7 +132,7 @@ export default function MembershipPage() {
             </button>
             <button
               onClick={() => setAnnual(true)}
-              className={`font-sans text-xs font-semibold tracking-wide px-5 py-2.5 rounded-full transition-all flex items-center gap-2 ${
+              className={`inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-wide px-5 py-2.5 rounded-full transition-all flex items-center gap-2 ${
                 annual ? 'bg-white text-ink' : 'text-white/60 hover:text-white'
               }`}
             >
@@ -559,14 +559,14 @@ function StudentAccessSection() {
             />
             {email && !isEdu && <p className="font-sans text-xs text-disputed mt-1">Must be a .edu email address</p>}
           </div>
-          <label className="flex items-start gap-2.5 cursor-pointer">
-            <input type="checkbox" checked={isStudent} onChange={e => setIsStudent(e.target.checked)} className="mt-0.5 accent-crimson" />
+          <label className="flex items-start gap-2.5 min-h-[44px] cursor-pointer">
+            <input type="checkbox" checked={isStudent} onChange={e => setIsStudent(e.target.checked)} className="mt-0.5 h-5 w-5 accent-crimson" />
             <span className="font-body text-xs text-ink leading-relaxed">I confirm that I am a currently enrolled college student.</span>
           </label>
           {error && <p className="font-sans text-xs text-disputed font-semibold">{error}</p>}
           <button
             type="submit"
-            className="w-full py-3 bg-obsidian text-white font-sans text-xs font-bold tracking-[0.15em] uppercase rounded-sm hover:bg-crimson transition-colors"
+            className="w-full min-h-[44px] py-3 bg-obsidian text-white font-sans text-xs font-bold tracking-[0.15em] uppercase rounded-sm hover:bg-crimson transition-colors"
           >
             Activate Free Student Access
           </button>
@@ -583,7 +583,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
     <div className="border-b border-border last:border-b-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-surface/50 transition-colors"
+        className="w-full min-h-[44px] flex items-center justify-between gap-4 p-5 text-left hover:bg-surface/50 transition-colors"
         aria-expanded={open}
       >
         <span className="font-sans text-sm font-semibold text-ink">{question}</span>
