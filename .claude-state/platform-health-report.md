@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:53:40.207Z
+- Checked at: 2026-07-16T08:55:23.717Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 838269f6a2dc
-- Deployment: 86e0c9f5-ed7c-45dc-9076-c663d31ad8b7
+- Build commit: 73fd0616e377
+- Deployment: d986ba86-5a7d-4bea-8ccb-a35f321ed304
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
@@ -19,19 +19,20 @@
 - PASS — Health probe confirms prerender coverage: prerender=true
 - PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
-- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=4
+- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=1
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=30
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
-- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=70
+- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=71
 - PASS — Health history max samples supports multi-day retention: maxSamples=96
 - PASS — Health history reports known storage backend: storage=shared-database
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
 - PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=285
 - PASS — Health exposes optional Sentry forward configuration flag: sentryForwardConfigured=false
 - PASS — Health exposes health history storage label: healthHistoryStorage=shared-database
+- PASS — Health exposes popular chapter count from analytics: popularChapterCount=8
 - PASS — Health reports shared multi-replica history storage: healthHistoryStorage=shared-database shared=true
 - PASS — Client error intake accepts or rate-limits probes: POST /api/client-error returned 204
 - PASS — Auth status route responds: GET /api/auth/status returned 200
