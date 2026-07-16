@@ -159,6 +159,25 @@ assert(
     server.includes('name: "change-password", windowMs: 60_000, max: 10'),
   'change-password rateLimit must stay at 10/min',
 )
+const rateBudgetLocks = [
+  ["auth-refresh", 30],
+  ["auth-logout", 30],
+  ["auth-me", 60],
+  ["auth-status", 60],
+  ["downloads", 90],
+  ["bookmarks", 60],
+  ["progress", 60],
+  ["preferences", 30],
+  ["profile", 20],
+  ["analytics-snapshot", 60],
+  ["health-history", 60],
+  ["build-info", 60],
+]
+for (const [name, max] of rateBudgetLocks) {
+  const needleA = `name: '${name}', windowMs: 60_000, max: ${max}`
+  const needleB = `name: "${name}", windowMs: 60_000, max: ${max}`
+  assert(server.includes(needleA) || server.includes(needleB), `${name} rateLimit must stay at ${max}/min`)
+}
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
 assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
