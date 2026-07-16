@@ -203,6 +203,20 @@ async function main() {
         'Health probe exposes analytics lifetime',
         `analyticsLifetime=${health.analyticsLifetime}`
       )
+      addCheck(
+        checks,
+        failures,
+        health.clientErrorIntake === true,
+        'Health probe reports client error intake enabled',
+        `clientErrorIntake=${health.clientErrorIntake}`
+      )
+      addCheck(
+        checks,
+        failures,
+        isNonNegativeNumber(health.clientErrorIntakeCount),
+        'Health probe exposes client error intake count',
+        `clientErrorIntakeCount=${health.clientErrorIntakeCount}`
+      )
 
       const archiveManifestResult = await fetchJson('/israel-dossier/workbooks/briefing-source-archive-manifest.json')
       const archiveManifest =

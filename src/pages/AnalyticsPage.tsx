@@ -581,6 +581,10 @@ type ReleaseHealth = {
   prerenderedRouteCount?: number
   chapterDataGeneratedAt?: string
   analyticsLifetime?: number
+  clientErrorIntake?: boolean
+  clientErrorIntakeCount?: number
+  clientErrorIntakeLastAt?: string
+  clientErrorIntakeLastMessage?: string
   checks?: Record<string, boolean>
   failed?: string[]
   version?: string
@@ -659,13 +663,31 @@ function ReleaseHealthPanel({
         </span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-4">
         <StatCard label="Commit" value={health.commitShort || '—'} />
         <StatCard label="Chapters" value={health.publicChapterCount ?? '—'} />
         <StatCard label="Prerender Routes" value={health.prerenderedRouteCount ?? '—'} />
         <StatCard label="Analytics Lifetime" value={health.analyticsLifetime ?? '—'} />
+        <StatCard
+          label="Client Errors (replica)"
+          value={health.clientErrorIntakeCount ?? 0}
+          accent={(health.clientErrorIntakeCount || 0) > 0}
+        />
         <StatCard label="Version" value={health.version || '—'} />
       </div>
+
+      {health.clientErrorIntakeLastAt && (
+        <p className="font-sans text-[10px] text-ink-muted mb-3">
+          Last client error on this replica:{' '}
+          <span className="font-mono">{new Date(health.clientErrorIntakeLastAt).toLocaleString()}</span>
+          {health.clientErrorIntakeLastMessage ? (
+            <>
+              {' — '}
+              <span className="text-ink">{health.clientErrorIntakeLastMessage}</span>
+            </>
+          ) : null}
+        </p>
+      )}
 
       {hasInstitutePdfCheck && (
         <p className="font-sans text-[10px] text-ink-muted mb-3">

@@ -935,6 +935,11 @@ app.get('/api/analytics/snapshot', async (req, res) => {
 
 // Client-side error intake — structured operator logs without requiring Sentry.
 // Accepts small anonymized payloads from ErrorBoundary + global handlers.
+// Replica-local counters give operators a live signal without external paging.
+let clientErrorIntakeCount = 0
+let clientErrorIntakeLastAt = ''
+let clientErrorIntakeLastMessage = ''
+
 app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
   const body = req.body && typeof req.body === 'object' ? req.body : {}
   const message = typeof body.message === 'string' ? body.message.slice(0, 500) : ''
@@ -956,6 +961,10 @@ app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
     commit: getReleaseCommit().slice(0, 12),
     receivedAt: new Date().toISOString(),
   }
+
+  clientErrorIntakeCount += 1
+  clientErrorIntakeLastAt = payload.receivedAt
+  clientErrorIntakeLastMessage = payload.message.slice(0, 160)
 
   console.error(`[monitor] ${JSON.stringify(payload)}`)
 
@@ -1131,6 +1140,9 @@ app.get('/api/health', (req, res) => {
     chapterDataGeneratedAt: chapterDataManifest.generatedAt || '',
     analyticsLifetime: store.lifetime || 0,
     clientErrorIntake: true,
+    clientErrorIntakeCount,
+    clientErrorIntakeLastAt,
+    clientErrorIntakeLastMessage,
     checks,
     failed,
   }
