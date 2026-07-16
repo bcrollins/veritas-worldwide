@@ -204,6 +204,38 @@ async function main() {
         `analyticsLifetime=${health.analyticsLifetime}`
       )
 
+      const archiveManifestResult = await fetchJson('/israel-dossier/workbooks/briefing-source-archive-manifest.json')
+      const archiveManifest =
+        typeof archiveManifestResult.data === 'object' && archiveManifestResult.data !== null
+          ? archiveManifestResult.data
+          : {}
+      const archiveEntries = Array.isArray(archiveManifest.entries) ? archiveManifest.entries : []
+      const pinnedArchiveCount = archiveEntries.filter((entry) => entry && entry.status === 'pinned').length
+
+      addCheck(
+        checks,
+        failures,
+        archiveManifestResult.response.ok,
+        'Briefing source archive manifest responds',
+        `GET archive manifest returned ${archiveManifestResult.response.status}`
+      )
+      addCheck(
+        checks,
+        failures,
+        pinnedArchiveCount >= 8,
+        'Briefing source archive manifest has pinned snapshots',
+        `pinned=${pinnedArchiveCount}`
+      )
+
+      const contentPackResult = await fetchText('/content-pack')
+      addCheck(
+        checks,
+        failures,
+        contentPackResult.response.ok,
+        'Content pack route responds',
+        `GET /content-pack returned ${contentPackResult.response.status}`
+      )
+
       const authStatusResult = await fetchJson('/api/auth/status')
       const authStatus = typeof authStatusResult.data === 'object' && authStatusResult.data !== null ? authStatusResult.data : {}
 

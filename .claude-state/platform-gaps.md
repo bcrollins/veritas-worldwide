@@ -50,11 +50,15 @@
   Impact: all nine verification workflows now pin `node-version: '24'` and set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` so the June/September 2026 Node 20 action-runtime deprecation does not silently age out the verification fleet.
   Resolution: updated every workflow under `.github/workflows/`.
 
-## Emerging
+- **Dead ContentPacksPage dual-route drift is closed.**
+  Impact: brand kit and content packs now live on one canon (`/content-pack`); `/content-packs` remains a redirect alias.
+  Resolution: merged Brand Assets + Usage Guidelines into `ContentPackPage.tsx` and deleted `ContentPacksPage.tsx`.
 
-- **The legacy `ContentPacksPage.tsx` generator module is still present off-route.**
-  Impact: the canonical public surface is `/content-pack`, with `/content-packs` now only acting as a compatibility alias, but repo searches can still surface the older `ContentPacksPage.tsx` module and confuse future audits about which implementation is live.
-  Recommendation: either intentionally restore that larger generator as a real surface or archive/delete the unused module so future route audits have one obvious content-pack canon.
+- **Public briefing source archive pins are published.**
+  Impact: 11 briefing source URLs now carry exact Wayback snapshot URLs instead of wildcard lookups; a machine-readable manifest is public for editors and verifiers.
+  Resolution: `PINNED_BRIEFING_ARCHIVES` in `israelDossierCanon.ts` plus `public/israel-dossier/workbooks/briefing-source-archive-manifest.json`.
+
+## Emerging
 
 - **The Veritas Institute manual export is browser-side only.**
   Impact: very large Book of Knowledge generations depend on client memory and device stability, which is fragile for a long-form field manual.
