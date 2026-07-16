@@ -20,6 +20,19 @@ export function registerDatabaseAndAuthRoutes({
   const SESSION_TTL_MS = Number.parseInt(process.env.SESSION_TTL_MS || String(7 * 24 * 60 * 60 * 1000), 10)
   const BCRYPT_ROUNDS = 12
 
+  function mintAccessToken(user) {
+    // Include a unique jti so same-second refreshes never mint byte-identical tokens.
+    return jwt.sign(
+      {
+        userId: user.id,
+        email: user.email,
+        jti: crypto.randomBytes(12).toString('hex'),
+      },
+      JWT_SECRET,
+      { expiresIn: JWT_EXPIRY }
+    )
+  }
+
   let dbPool = null
   if (DATABASE_URL) {
     dbPool = createDatabasePool(DATABASE_URL, {
@@ -198,7 +211,7 @@ export function registerDatabaseAndAuthRoutes({
       )
 
       const user = rows[0]
-      const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
+      const token = mintAccessToken(user)
       const ip = getClientIP(req)
       const ua = req.headers['user-agent'] || ''
       const expiresAt = new Date(Date.now() + SESSION_TTL_MS)
@@ -255,7 +268,7 @@ export function registerDatabaseAndAuthRoutes({
 
       await dbPool.query('UPDATE users SET last_login_at = NOW() WHERE id = $1', [user.id])
 
-      const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
+      const token = mintAccessToken(user)
       const ip = getClientIP(req)
       const ua = req.headers['user-agent'] || ''
       const expiresAt = new Date(Date.now() + SESSION_TTL_MS)
@@ -355,7 +368,7 @@ export function registerDatabaseAndAuthRoutes({
     }
 
     try {
-      const newToken = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
+      const newToken = mintAccessToken(user)
       const ip = getClientIP(req)
       const ua = req.headers['user-agent'] || ''
       const expiresAt = new Date(Date.now() + SESSION_TTL_MS)
