@@ -134,7 +134,11 @@
     "Pinned 11 Wayback snapshots for public briefing source rows, published briefing-source-archive-manifest.json, indexed in llms/workbook manifest/platform health.",
     "Live-verified production commit db4519dd0187 / deployment f3c2af13-0654-420e-8a7f-38b9ec6ea405: /api/health ok, archive manifest 200 with 11 pins, content-pack brand kit strings live, verify:platform PASS, verify:israel-dossier PASS.",
     "GitHub Actions jobs fail to start due to account billing lock; Railway still deploys main successfully.",
-    "Added dossier UI link to archive pins manifest (commit 6edd179)."
+    "Added dossier UI link to archive pins manifest (commit 6edd179).",
+    "Merged brand assets and usage guidelines into live /content-pack (ContentPackPage), deleted dead ContentPacksPage.tsx dual-route drift.",
+    "Pinned 11 Wayback snapshots for public briefing source rows, published briefing-source-archive-manifest.json, indexed in llms/workbook manifest/platform health.",
+    "Live-verified production commit db4519dd0187 / deployment f3c2af13-0654-420e-8a7f-38b9ec6ea405: /api/health ok, archive manifest 200 with 11 pins, content-pack brand kit strings live, verify:platform PASS, verify:israel-dossier PASS.",
+    "GitHub Actions runs fail at job start due to GitHub account billing lock (not code); Railway deploy still advanced production."
   ],
   "next_task": "When GitHub billing unlocks, re-run Actions; pin remaining 5 briefing lookup-only URLs; add Sentry if DSN available.",
   "next_priorities": [

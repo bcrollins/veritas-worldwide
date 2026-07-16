@@ -71,9 +71,10 @@
     },
     {
       "sourceUrl": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026",
-      "timestamp": null,
-      "archiveUrl": "https://web.archive.org/web/*/https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026",
-      "status": "lookup-only"
+      "timestamp": "20260515102538",
+      "archiveUrl": "https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
+      "status": "pinned",
+      "note": "Companion PDF snapshot of same OCHA 1 Apr 2026 impact table"
     },
     {
       "sourceUrl": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",

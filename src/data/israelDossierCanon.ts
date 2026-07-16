@@ -209,6 +209,11 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     archiveUrl: 'https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
     status: 'Pinned Wayback snapshot 20260515102538; primary host may block automated probes.',
   },
+  // Content URL maps to the same 1 April 2026 snapshot PDF capture when the HTML path has no independent snapshot.
+  'https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026': {
+    archiveUrl: 'https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
+    status: 'Pinned via companion PDF snapshot 20260515102538 (same OCHA 1 Apr 2026 impact table); HTML path lacked an independent Wayback capture.',
+  },
   'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf': {
     archiveUrl: 'https://web.archive.org/web/20260708051442/https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf',
     status: 'Pinned Wayback snapshot 20260708051442; primary host may block automated probes.',
@@ -1659,6 +1664,13 @@ export const ISRAEL_DOSSIER_WORKBOOK_PACK: DossierCourseArtifact[] = [
     url: '/israel-dossier/workbooks/publishable-briefing-draft.md',
     filename: 'israel-dossier-publishable-briefing-draft.md',
     format: 'Markdown',
+  },
+  {
+    label: 'Briefing source archive manifest',
+    description: 'Pinned Wayback snapshots for public briefing source rows so evidence remains inspectable when third-party hosts block automated probes.',
+    url: '/israel-dossier/workbooks/briefing-source-archive-manifest.json',
+    filename: 'israel-dossier-briefing-source-archive-manifest.json',
+    format: 'JSON',
   },
 ]
 
