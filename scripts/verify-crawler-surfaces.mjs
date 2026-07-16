@@ -141,6 +141,17 @@ for (const routePath of REQUIRED_SITEMAP_PATHS) {
   assert(sitemapHasPath(publicSitemapXml, routePath), `public sitemap missing required path ${routePath}`)
 }
 console.log(`[verify:crawler-surfaces] public sitemap includes ${REQUIRED_SITEMAP_PATHS.length} required trust/PDF paths`)
+// Operator console must never appear in the public sitemap (salesforce-admin course slugs are ok).
+assert(
+  !/veritasworldwide\.com\/admin(\/|"|<|\s)/i.test(publicSitemapXml),
+  'public sitemap must not include /admin operator routes',
+)
+if (distSitemapXml) {
+  assert(
+    !/veritasworldwide\.com\/admin(\/|"|<|\s)/i.test(distSitemapXml),
+    'dist sitemap must not include /admin operator routes',
+  )
+}
 
 if (distSitemapXml) {
   for (const routePath of ['/the-record.pdf', '/veritas-institute-field-manual.pdf']) {
