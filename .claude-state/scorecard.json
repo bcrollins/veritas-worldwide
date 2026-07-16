@@ -1,5 +1,5 @@
 {
-  "run": 83,
+  "run": 84,
   "date": "2026-07-16",
   "site": [
     {
@@ -12,10 +12,10 @@
     },
     {
       "feature": "Home / Front Page",
-      "composite": 8.65,
-      "previous": 8.6,
-      "delta": 0.05,
-      "status": "GEO about/a11y in llms; public a11y wave complete",
+      "composite": 8.75,
+      "previous": 8.65,
+      "delta": 0.1,
+      "status": "TOC keyword chips un-nested + 44px; pure structure floor; tip b8ebe37+",
       "plus_half_requires": "Live 390px/430px screenshots after deploy confirming first-screen CTAs remain fully visible with consent pending."
     },
     {
@@ -60,10 +60,10 @@
     },
     {
       "feature": "News & Topic Entry",
-      "composite": 9.6,
-      "previous": 9.55,
+      "composite": 9.65,
+      "previous": 9.6,
       "delta": 0.05,
-      "status": "4 sourced articles newest-first; platform asserts live routes; archive pins for news hosts",
+      "status": "article/news 44px residual closed; tip 2376fea+",
       "plus_half_requires": "Continue adding primary-sourced reporting only; never reintroduce fabricated journalism paths."
     },
     {
@@ -76,10 +76,10 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 9.55,
-      "previous": 9.45,
-      "delta": 0.1,
-      "status": "durable PDF live + prerender + RSS + non-stale cache + schema encoding | LIVE 74dec67 proven",
+      "composite": 9.6,
+      "previous": 9.55,
+      "delta": 0.05,
+      "status": "institute footer 44px; tip aa602cf",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
