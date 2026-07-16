@@ -1,5 +1,5 @@
 {
-  "run": 74,
+  "run": 75,
   "date": "2026-07-16",
   "site": [
     {
@@ -36,10 +36,10 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.97,
-      "previous": 9.95,
+      "composite": 9.99,
+      "previous": 9.97,
       "delta": 0.02,
-      "status": "auth inputs 44px; pure a11y floors; tip 1c4fea6",
+      "status": "admin login 44px; a11y floors 32 surfaces; tip 6520515 pending",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.75,
-      "previous": 9.7,
+      "composite": 9.8,
+      "previous": 9.75,
       "delta": 0.05,
-      "status": "RecordTabs 44px; about/profile/admin shell; tip b14c5cd+",
+      "status": "admin shell 44px complete; security-headers verify shipping; tip 9503fbf+",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
