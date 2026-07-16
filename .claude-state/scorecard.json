@@ -1,5 +1,5 @@
 {
-  "run": 124,
+  "run": 125,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.54,
       "previous": 9.52,
       "delta": 0.02,
-      "status": "HEAD ed0b9b9 15-step; JWT HS256; 12 headers; health 120/min; rateLimit\u00d723",
+      "status": "HEAD c8f3feb 15-step; JWT HS256; 12 headers; health 120/min; full skip-link coverage",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip bd1c2bc live 15-step; scorecard 124; 69 a11y/523; JWT HS256; 12 headers",
+      "status": "product tip c8f3feb live 15-step; skip links site+institute+admin; scorecard 125; 69 a11y/524",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
