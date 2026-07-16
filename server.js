@@ -1052,6 +1052,9 @@ app.get('/api/build-info', (req, res) => {
     publicChapterCount: publicChapterIndex.length,
     prerenderedRouteCount: Object.keys(prerenderManifest).length,
     entryAssets: getDistEntryAssets(),
+    recordPdf: fs.existsSync(RECORD_PDF_PATH),
+    instituteFieldManualPdf: fs.existsSync(INSTITUTE_FIELD_MANUAL_PDF_PATH),
+    instituteFieldManualPdfUrl: '/veritas-institute-field-manual.pdf',
   })
 })
 
