@@ -1,5 +1,5 @@
 {
-  "run": 114,
+  "run": 115,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.45,
       "previous": 9.42,
       "delta": 0.03,
-      "status": "HEAD b15a00c 15-step; HSTS preload; CORP; DNS-prefetch; RateLimit; nodeRuntime on health; 69 a11y/521",
+      "status": "HEAD 45fb992 15-step; HSTS preload; CORP; DNS-prefetch; RateLimit; node diagnostics",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip d83ff5f live 15-step; scorecard 114; 69 a11y/521; security matrix complete",
+      "status": "product tip 45fb992 live 15-step; scorecard 115; full security+deploy diagnostics",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -87,7 +87,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0.0,
-      "status": "HEAD d83ff5f nodeRuntime on health+build-info+analytics; platform asserts both; 15-step",
+      "status": "HEAD 45fb992 readPackageEnginesNode helper; health+build-info+analytics; 15-step green",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
