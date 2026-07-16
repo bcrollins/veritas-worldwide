@@ -118,12 +118,12 @@ async function main() {
   assert(!badLogin.data?.token, 'Bad login must not return a token')
   logStep('Invalid login rejected without session')
 
-  // Negative path: register with invalid email shape
-  const badRegister = await requestJson('/api/auth/register', {
+  // Negative path: register with invalid email shape (retry through multi-agent 429s)
+  const badRegister = await requestJsonWithRetry('/api/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: 'not-an-email', password, displayName }),
-  })
+  }, { retries: 8 })
   assert(
     badRegister.response.status === 400 || badRegister.response.status === 422,
     `Expected invalid-email register to return 400/422, received ${badRegister.response.status}`
@@ -132,11 +132,11 @@ async function main() {
   logStep('Invalid-email register rejected')
 
   // Negative path: password too short
-  const shortPassword = await requestJson('/api/auth/register', {
+  const shortPassword = await requestJsonWithRetry('/api/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: `short-pw-${Date.now()}@example.com`, password: 'ab12', displayName }),
-  })
+  }, { retries: 8 })
   assert(
     shortPassword.response.status === 400 || shortPassword.response.status === 422,
     `Expected short-password register to return 400/422, received ${shortPassword.response.status}`
@@ -148,7 +148,7 @@ async function main() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password, displayName }),
-  })
+  }, { retries: 8 })
   assert(registerResult.response.status === 201, `Register failed with ${registerResult.response.status}`)
   assert(typeof registerResult.data?.token === 'string' && registerResult.data.token.length > 20, 'Register did not return a usable token')
   const token = registerResult.data.token
