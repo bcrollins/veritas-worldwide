@@ -585,6 +585,10 @@ type ReleaseHealth = {
   clientErrorIntakeCount?: number
   clientErrorIntakeLastAt?: string
   clientErrorIntakeLastMessage?: string
+  sentryForwardConfigured?: boolean
+  healthHistoryStorage?: string
+  healthHistorySharedAcrossReplicas?: boolean
+  healthHistorySampleCount?: number
   checks?: Record<string, boolean>
   failed?: string[]
   version?: string
@@ -770,8 +774,17 @@ function ReleaseHealthPanel({
                 {failedSampleCount > 0 ? ` · ${failedSampleCount} with failures` : ''}
                 {history?.minIntervalMinutes ? ` · ≥${history.minIntervalMinutes}m apart` : ''}
                 {history?.persistence ? ' · persisted' : ' · in-memory until volume available'}
-                {history?.storage ? ` · ${history.storage}` : ''}
-                {history?.sharedAcrossReplicas ? ' · multi-replica' : ''}
+                {history?.storage || health.healthHistoryStorage
+                  ? ` · ${history?.storage || health.healthHistoryStorage}`
+                  : ''}
+                {history?.sharedAcrossReplicas || health.healthHistorySharedAcrossReplicas
+                  ? ' · multi-replica'
+                  : ''}
+                {typeof health.sentryForwardConfigured === 'boolean'
+                  ? health.sentryForwardConfigured
+                    ? ' · sentry on'
+                    : ' · sentry off'
+                  : ''}
               </p>
             </div>
             <a href="/api/health/history" className="font-mono text-[10px] text-crimson underline hover:text-crimson-dark">
