@@ -80,6 +80,14 @@ assert(
   !(securityTxt.headers.get('content-type') || '').includes('text/html'),
   'security.txt must not be SPA HTML shell',
 )
+assert(
+  /text\/plain/i.test(securityTxt.headers.get('content-type') || ''),
+  `security.txt content-type must be text/plain, got ${securityTxt.headers.get('content-type')}`,
+)
+assert(
+  /must-revalidate/i.test(securityTxt.headers.get('cache-control') || ''),
+  `security.txt Cache-Control must include must-revalidate, got ${securityTxt.headers.get('cache-control')}`,
+)
 
 const securityRoot = await fetch(`${baseUrl}/security.txt`, {
   signal: AbortSignal.timeout(15_000),

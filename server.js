@@ -1744,7 +1744,8 @@ function loadSecurityTxtBody() {
 app.get(['/.well-known/security.txt', '/security.txt'], (_req, res) => {
   const body = loadSecurityTxtBody()
   res.status(200)
-  res.setHeader('Cache-Control', 'public, max-age=3600')
+  // Revalidate after 1h so Expires/Contact updates are not sticky for a full day.
+  res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
   res.type('text/plain; charset=utf-8')
   return res.send(body)
 })

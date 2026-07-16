@@ -69,6 +69,17 @@ assert(server.includes('clipboard-write=(self)'), 'Permissions-Policy allows sam
 assert(!server.includes('clipboard-write=()'), 'must not fully deny clipboard-write (breaks copy CTAs)')
 assert(server.includes('browsing-topics=()'), 'Permissions-Policy disables Topics API profiling')
 // HTTP CSP: frame-ancestors is meta-ignored; upgrade-insecure-requests hardens mixed content.
+// security.txt must revalidate so RFC 9116 Expires/Contact updates are not sticky.
+assert(
+  server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
+    server.includes('app.get(["/.well-known/security.txt", "/security.txt"]'),
+  'security.txt dual routes registered',
+)
+assert(
+  server.includes("max-age=3600, must-revalidate") &&
+    server.includes('security.txt'),
+  'security.txt Cache-Control must include must-revalidate',
+)
 assert(server.includes('Content-Security-Policy'), 'Content-Security-Policy HTTP header set')
 assert(
   server.includes("frame-ancestors 'self'") || server.includes('frame-ancestors "self"'),
