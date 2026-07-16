@@ -6,6 +6,7 @@
  * attaches it to analytics events, and stamps Stripe Payment Links with
  * client_reference_id so sessions remain attributable after redirect.
  */
+import { DONATE_URL } from './constants'
 import { trackEvent } from './hubspot'
 import { recordAnalyticsEvent } from './analytics'
 import { scoreDonationCompleted } from './leadScoring'
@@ -158,6 +159,26 @@ export function captureMarketingAttribution(
 export function getMarketingAttribution(): MarketingAttribution | null {
   if (typeof window === 'undefined') return null
   return readStoredAttribution(ATTRIBUTION_SESSION_KEY) || readStoredAttribution(ATTRIBUTION_FIRST_KEY)
+}
+
+/**
+ * Stripe donation Payment Link with current UTM/ref attribution applied.
+ * Optional amountCents maps to Stripe Payment Link prefilled_amount (cents).
+ */
+export function getAttributedDonateUrl(options?: { amountCents?: number }): string {
+  const attributed = withCheckoutAttribution(DONATE_URL, {
+    tier: 'donation',
+    billing: 'one-time',
+    attribution: getMarketingAttribution(),
+  })
+  if (!options?.amountCents || options.amountCents <= 0) return attributed
+  try {
+    const url = new URL(attributed)
+    url.searchParams.set('prefilled_amount', String(Math.round(options.amountCents)))
+    return url.toString()
+  } catch {
+    return attributed
+  }
 }
 
 /** Parse URL for Stripe checkout success indicators */

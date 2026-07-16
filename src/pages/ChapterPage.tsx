@@ -16,7 +16,6 @@ import { useScrollRestore } from '../hooks/useScrollRestore'
 import { useReadingHistory } from '../hooks/useReadingHistory'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
-import { DONATE_URL } from '../lib/constants'
 import { trackShare, trackDownload, trackReadingMilestone, trackChapterComplete } from '../lib/ga4'
 import { scoreChapterViewed, scorePdfDownloaded } from '../lib/leadScoring'
 import ChapterPDF from '../components/ChapterPDF'
@@ -34,6 +33,7 @@ import { ImageWithFallback } from '../components/ImageWithFallback'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 import { scoreContentGateHit } from '../lib/leadScoring'
 import { getEvidenceCounts } from '../lib/evidenceSummary'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 const diagramComponents: Record<string, React.ComponentType> = {
   'media-ownership': MediaOwnershipDiagram,
@@ -1302,7 +1302,7 @@ export default function ChapterPage() {
                 This chapter — and every chapter of The Record — is free because we believe the public record belongs to everyone. If this research has been useful to you, a small contribution helps us continue.
               </p>
               <a
-                href={DONATE_URL}
+                href={getAttributedDonateUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
@@ -1340,7 +1340,7 @@ export default function ChapterPage() {
                   If you value independent, source-verified journalism, any contribution helps us continue.
                 </p>
                 <a
-                  href={DONATE_URL}
+                  href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase hover:bg-crimson-dark transition-colors"
@@ -1431,7 +1431,7 @@ export default function ChapterPage() {
                   Independent, source-verified research. Free forever.
                 </p>
                 <a
-                  href={DONATE_URL}
+                  href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase hover:bg-crimson-dark transition-colors"

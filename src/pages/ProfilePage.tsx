@@ -21,8 +21,8 @@ import {
 } from '../lib/seo';
 import { trackShare, trackProfileView } from '../lib/ga4';
 import SharePanel from '../components/SharePanel';
-import { DONATE_URL } from '../lib/constants';
 import { scoreProfileViewed } from '../lib/leadScoring';
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 /* ── Constants ──────────────────────────────────────────────── */
 const CATEGORY_COLORS: Record<string, { gradient: string; badge: string; text: string }> = {
@@ -919,7 +919,7 @@ export default function ProfilePage(): React.ReactNode {
                 If you value independent, source-verified journalism, any contribution helps us continue.
               </p>
               <a
-                href={DONATE_URL}
+                href={getAttributedDonateUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase hover:bg-crimson-dark transition-colors"

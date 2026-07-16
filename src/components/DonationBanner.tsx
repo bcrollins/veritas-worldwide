@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { DONATE_URL } from '../lib/constants'
 import { trackDonationClick } from '../lib/ga4'
 import { scoreDonationClicked } from '../lib/leadScoring'
-import { trackDonationIntent } from '../lib/conversionTracking'
+import { getAttributedDonateUrl, trackDonationIntent } from '../lib/conversionTracking'
 
 
 const DONATION_TIERS = [
@@ -110,7 +109,14 @@ export default function DonationBanner() {
         {/* Donate Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={`${DONATE_URL}?prefilled_amount=${selected === 'custom' ? (parseFloat(customAmount) > 0 ? Math.round(parseFloat(customAmount) * 100) : '') : selected * 100}`}
+            href={getAttributedDonateUrl({
+              amountCents:
+                selected === 'custom'
+                  ? parseFloat(customAmount) > 0
+                    ? Math.round(parseFloat(customAmount) * 100)
+                    : undefined
+                  : selected * 100,
+            })}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {

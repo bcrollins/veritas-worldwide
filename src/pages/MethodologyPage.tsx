@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
-import { DONATE_URL } from '../lib/constants'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 const methodologySections = [
   { id: 'five-tier-source-hierarchy', label: 'Five-Tier Source Hierarchy' },
@@ -300,7 +300,7 @@ export default function MethodologyPage() {
                   Maintaining rigorous editorial standards takes time and resources.
                 </p>
                 <a
-                  href={DONATE_URL}
+                  href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-crimson text-white font-sans text-[0.65rem] font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"

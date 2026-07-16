@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { DONATE_URL } from '../lib/constants'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 interface DownloadModalProps {
   isOpen: boolean
@@ -91,7 +91,7 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
 
             <div className="space-y-3 mb-6">
               <a
-                href={DONATE_URL}
+                href={getAttributedDonateUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-wide rounded-sm hover:bg-crimson-dark transition-colors"

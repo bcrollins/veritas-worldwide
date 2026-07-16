@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
 import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
-import { DONATE_URL } from '../lib/constants'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import { getScopedReadingHistory, type ReadingHistoryRecord } from '../lib/readerState'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 interface BookmarkCardModel {
   chapter: ChapterMetadata
@@ -478,7 +478,7 @@ export default function BookmarksPage() {
                   Reader funding keeps the archive public-facing, the evidence layer inspectable, and the reporting durable over time.
                 </p>
                 <a
-                  href={DONATE_URL}
+                  href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 block rounded-full bg-crimson px-4 py-2 text-center font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-crimson-dark"

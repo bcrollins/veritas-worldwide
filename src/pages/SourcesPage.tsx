@@ -11,7 +11,7 @@ import {
 import { useAllChapters } from '../hooks/useAllChapters'
 import { useAuth } from '../lib/AuthContext'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
-import { DONATE_URL } from '../lib/constants'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 type SourceHierarchyFilter = SourceHierarchy | 'all'
 
@@ -545,7 +545,7 @@ export default function SourcesPage() {
                   The full source archive is public. If this kind of traceable research matters to you, a contribution keeps the record online.
                 </p>
                 <a
-                  href={DONATE_URL}
+                  href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-crimson text-white font-sans text-[0.65rem] font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"

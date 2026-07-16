@@ -2,7 +2,7 @@ import { useMemo, useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapterMeta } from '../data/chapterMeta'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
-import { DONATE_URL } from '../lib/constants'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 interface TimelineEntry {
   chapterId: string
@@ -330,7 +330,7 @@ export default function TimelinePage() {
                 <h3 className="text-sm font-semibold text-ink mb-2">Support This Work</h3>
                 <p className="text-xs text-ink-muted mb-3">Independent, source-verified research spanning {maxYear - minYear}+ years of documented history.</p>
                 <a
-                  href={DONATE_URL}
+                  href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center bg-crimson text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-crimson-dark transition-colors"

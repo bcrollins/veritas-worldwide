@@ -6,14 +6,17 @@ import ErrorBoundary from './components/ErrorBoundary'
 import ScrollToTop from './components/ScrollToTop'
 import { usePageView } from './hooks/usePageView'
 import { useTheme } from './lib/ThemeContext'
-import { DONATE_URL } from './lib/constants'
 import { trackSupportClick } from './lib/ga4'
 import ReadingStreak from './components/engagement/ReadingStreak'
 import { useScrollDepth } from './hooks/useScrollDepth'
 import { I18nProvider, useI18n } from './lib/i18n'
 import LanguageSelector from './components/LanguageSelector'
 import NewsletterSignup from './components/NewsletterSignup'
-import { captureMarketingAttribution, handleStripeReturn } from './lib/conversionTracking'
+import {
+  captureMarketingAttribution,
+  getAttributedDonateUrl,
+  handleStripeReturn,
+} from './lib/conversionTracking'
 import VeritasLogo from './components/VeritasLogo'
 import { useExperiment } from './hooks/useExperiment'
 import { trackConversion } from './lib/abTest'
@@ -665,7 +668,7 @@ function Footer() {
                 {t('nav.membership')}
               </Link>
               <a
-                href={DONATE_URL}
+                href={getAttributedDonateUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[44px] items-center rounded-full border border-white/15 px-5 font-sans text-[0.68rem] font-bold tracking-[0.08em] uppercase text-white transition-colors hover:border-white/35"

@@ -47,6 +47,22 @@ function withCheckoutAttribution(checkoutUrl, options = {}) {
   }
 }
 
+function getAttributedDonateUrl(donateBase, options = {}) {
+  const attributed = withCheckoutAttribution(donateBase, {
+    tier: 'donation',
+    billing: 'one-time',
+    attribution: options.attribution || null,
+  })
+  if (!options.amountCents || options.amountCents <= 0) return attributed
+  try {
+    const url = new URL(attributed)
+    url.searchParams.set('prefilled_amount', String(Math.round(options.amountCents)))
+    return url.toString()
+  } catch {
+    return attributed
+  }
+}
+
 function assert(condition, message) {
   if (!condition) {
     console.error(`[verify:checkout-attribution] FAIL — ${message}`)
@@ -89,5 +105,13 @@ assert(empty === 'https://buy.stripe.com/test_link' || !empty.includes('utm_sour
 const dirty = buildClientReferenceId({ utm_source: 'a|b' }, 'tier|x', 'monthly')
 assert(!dirty.split('|').some((part, i) => i > 0 && part.includes('|')), 'pipes should be sanitized inside segments')
 assert(dirty.includes('a-b'), `expected sanitized source in ${dirty}`)
+
+const donate = getAttributedDonateUrl('https://buy.stripe.com/donate_test', {
+  amountCents: 2500,
+  attribution: attr,
+})
+assert(donate.includes('prefilled_amount=2500'), `missing prefilled amount: ${donate}`)
+assert(donate.includes('client_reference_id='), `donate missing client_reference_id: ${donate}`)
+assert(donate.includes('utm_source=newsletter'), `donate missing utm: ${donate}`)
 
 console.log('[verify:checkout-attribution] PASS')

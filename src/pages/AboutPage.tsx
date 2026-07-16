@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { DONATE_URL, TAGLINE } from '../lib/constants'
+import { TAGLINE } from '../lib/constants'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 const operatingPrinciples = [
   {
@@ -221,7 +222,7 @@ export default function AboutPage() {
                   View Membership
                 </Link>
                 <a
-                  href={DONATE_URL}
+                  href={getAttributedDonateUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[44px] items-center rounded-full border border-white/15 px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:border-white/35"

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
-import { DONATE_URL } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
 import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
@@ -15,6 +14,7 @@ import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
 import ReadingProgress from '../components/ReadingProgress'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
+import { getAttributedDonateUrl } from '../lib/conversionTracking'
 import {
   ISRAEL_DOSSIER_ASSETS,
   ISRAEL_DOSSIER_CATEGORY_META,
@@ -1359,7 +1359,7 @@ export default function IsraelDossierPage() {
           Documenting the public record takes time and resources. If this page informed you, consider supporting the work.
         </p>
         <a
-          href={DONATE_URL}
+          href={getAttributedDonateUrl()}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
