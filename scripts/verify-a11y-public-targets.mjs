@@ -71,6 +71,15 @@ const floors = [
   { path: 'src/components/ContentGate.tsx', min: 3, label: 'content gate subscribe' },
   { path: 'src/components/ExitIntentCapture.tsx', min: 3, label: 'exit-intent capture' },
   { path: 'src/components/NewsletterSignup.tsx', min: 2, label: 'newsletter signup' },
+  { path: 'src/pages/InstituteCoursePage.tsx', min: 3, label: 'institute course chrome' },
+  { path: 'src/pages/InstituteGuidePage.tsx', min: 3, label: 'institute guide chrome' },
+  { path: 'src/pages/TopicsIndexPage.tsx', min: 1, label: 'topics index' },
+  { path: 'src/components/StickyMembershipBar.tsx', min: 2, label: 'sticky membership bar' },
+  { path: 'src/components/TextSelectionShare.tsx', min: 2, label: 'text selection share' },
+  { path: 'src/components/BackToTop.tsx', min: 1, label: 'back to top' },
+  { path: 'src/components/BookmarkButton.tsx', min: 1, label: 'bookmark button' },
+  { path: 'src/components/ContinueReading.tsx', min: 1, label: 'continue reading' },
+  { path: 'src/components/FontSizeToggle.tsx', min: 1, label: 'font size toggle' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
@@ -158,7 +167,7 @@ if (failures > 0) {
 }
 
 const total = results.reduce((n, r) => n + r.count, 0)
-const MIN_TOTAL_MARKERS = 500
+const MIN_TOTAL_MARKERS = 510
 if (total < MIN_TOTAL_MARKERS) {
   console.error(`[verify:a11y-public-targets] FAIL — total markers ${total} < floor ${MIN_TOTAL_MARKERS}`)
   process.exit(1)
