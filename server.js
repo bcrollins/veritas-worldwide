@@ -11,6 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const PORT = process.env.PORT || 3000
 const RECORD_PDF_PATH = path.join(__dirname, 'dist', 'the-record.pdf')
+const INSTITUTE_FIELD_MANUAL_PDF_PATH = path.join(__dirname, 'dist', 'veritas-institute-field-manual.pdf')
 const DIST_INDEX_HTML_PATH = path.join(__dirname, 'dist', 'index.html')
 const PACKAGE_JSON_PATH = path.join(__dirname, 'package.json')
 
@@ -1101,6 +1102,9 @@ app.get('/api/health', (req, res) => {
     prerender: prerenderedRouteCount > 0,
     analyticsStore: typeof store.lifetime === 'number' && Number.isFinite(store.lifetime) && store.lifetime >= 0,
     recordPdf: fs.existsSync(RECORD_PDF_PATH),
+    // Informational until every deployed build has postbuild PDF generation.
+    // Hard-fail only after production fleets are confirmed to ship the asset.
+    instituteFieldManualPdf: fs.existsSync(INSTITUTE_FIELD_MANUAL_PDF_PATH),
     databaseConfigured: HAS_DATABASE_URL,
   }
 
@@ -1108,7 +1112,9 @@ app.get('/api/health', (req, res) => {
     .filter(([key, ok]) => {
       // databaseConfigured is informational when degraded fallbacks exist;
       // only hard-fail the publish-critical checks.
-      if (key === 'databaseConfigured') return false
+      // instituteFieldManualPdf is soft until the first full postbuild ship lands
+      // on every replica; it still surfaces on /api/health for operators.
+      if (key === 'databaseConfigured' || key === 'instituteFieldManualPdf') return false
       return !ok
     })
     .map(([key]) => key)

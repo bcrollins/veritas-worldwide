@@ -13,7 +13,7 @@ import { useScrollDepth } from './hooks/useScrollDepth'
 import { I18nProvider, useI18n } from './lib/i18n'
 import LanguageSelector from './components/LanguageSelector'
 import NewsletterSignup from './components/NewsletterSignup'
-import { handleStripeReturn } from './lib/conversionTracking'
+import { captureMarketingAttribution, handleStripeReturn } from './lib/conversionTracking'
 import VeritasLogo from './components/VeritasLogo'
 import { useExperiment } from './hooks/useExperiment'
 import { trackConversion } from './lib/abTest'
@@ -771,6 +771,7 @@ function PageViewTracker() {
   useScrollDepth()
 
   useEffect(() => {
+    captureMarketingAttribution()
     handleStripeReturn()
   }, [])
 

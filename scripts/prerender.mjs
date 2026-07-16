@@ -824,6 +824,7 @@ function renderLlmsTxt(topics) {
     '',
     '- [Institute catalog](https://veritasworldwide.com/institute): Main entry point for the practical field-manual and trade-course catalog.',
     '- [Field Manual](https://veritasworldwide.com/institute/book): Print-friendly field manual for urgent answers and practical course routing.',
+    '- [Field Manual PDF](https://veritasworldwide.com/veritas-institute-field-manual.pdf): Build-time durable PDF of the full field manual and practical course paths.',
     '- [Institute markdown index](https://veritasworldwide.com/veritas-institute.md): LLM-friendly grouped summary with guide and course links.',
     '',
     '## High-intent starting points',

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { MEMBERSHIP, TAGLINE } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
-import { trackCheckoutIntent } from '../lib/conversionTracking'
+import { trackCheckoutIntent, withCheckoutAttribution } from '../lib/conversionTracking'
 import { TierIcon } from '../components/TierIcons'
 
 // Membership is framed as public-interest support, not scarcity-driven commerce.
@@ -153,11 +153,18 @@ export default function MembershipPage() {
             const price = isFree ? 0 : annual ? tier.annualPrice : tier.monthlyPrice
             const period = isFree ? '' : annual ? '/year' : '/month'
             const dailyCost = isFree ? '' : `${(price / (annual ? 365 : 30)).toFixed(2)}`
-            const href = isFree
+            const billingPeriod = annual ? 'annual' : 'monthly'
+            const rawCheckoutUrl = isFree
               ? '/'
               : annual
                 ? ('annualUrl' in tier ? tier.annualUrl : '/')
                 : ('monthlyUrl' in tier ? tier.monthlyUrl : '/')
+            const href = isFree
+              ? '/'
+              : withCheckoutAttribution(rawCheckoutUrl, {
+                  tier: tier.key,
+                  billing: billingPeriod,
+                })
             const isInternal = isFree
 
             return (
@@ -253,8 +260,8 @@ export default function MembershipPage() {
                             : 'border border-ink/20 dark:border-white/20 text-ink dark:text-white hover:bg-obsidian hover:text-white'
                       }`}
                       onClick={() => {
-                        trackSupportClick(`membership-${tier.key}-${annual ? 'annual' : 'monthly'}`)
-                        trackCheckoutIntent(tier.key, annual ? 'annual' : 'monthly', price)
+                        trackSupportClick(`membership-${tier.key}-${billingPeriod}`)
+                        trackCheckoutIntent(tier.key, billingPeriod, price)
                       }}
                     >
                       {tier.cta}
@@ -431,11 +438,21 @@ export default function MembershipPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={annual ? MEMBERSHIP.investigator.annualUrl : MEMBERSHIP.investigator.monthlyUrl}
+              href={withCheckoutAttribution(
+                annual ? MEMBERSHIP.investigator.annualUrl : MEMBERSHIP.investigator.monthlyUrl,
+                { tier: 'investigator', billing: annual ? 'annual' : 'monthly' }
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-crimson text-white font-sans text-sm font-semibold tracking-wide rounded-sm hover:bg-crimson-dark transition-colors"
-              onClick={() => trackSupportClick('membership-bottom-cta')}
+              onClick={() => {
+                trackSupportClick('membership-bottom-cta')
+                trackCheckoutIntent(
+                  'investigator',
+                  annual ? 'annual' : 'monthly',
+                  annual ? MEMBERSHIP.investigator.annualPrice : MEMBERSHIP.investigator.monthlyPrice
+                )
+              }}
             >
               Support as Investigator — ${annual ? MEMBERSHIP.investigator.annualPrice : MEMBERSHIP.investigator.monthlyPrice}{annual ? '/yr' : '/mo'}
             </a>
@@ -459,11 +476,21 @@ export default function MembershipPage() {
           </p>
           <div className="flex items-center gap-3 ml-auto">
             <a
-              href={annual ? MEMBERSHIP.investigator.annualUrl : MEMBERSHIP.investigator.monthlyUrl}
+              href={withCheckoutAttribution(
+                annual ? MEMBERSHIP.investigator.annualUrl : MEMBERSHIP.investigator.monthlyUrl,
+                { tier: 'investigator', billing: annual ? 'annual' : 'monthly' }
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2 bg-crimson text-white font-sans text-xs font-semibold tracking-wide rounded-sm hover:bg-crimson-dark transition-colors whitespace-nowrap"
-              onClick={() => trackSupportClick('membership-sticky')}
+              onClick={() => {
+                trackSupportClick('membership-sticky')
+                trackCheckoutIntent(
+                  'investigator',
+                  annual ? 'annual' : 'monthly',
+                  annual ? MEMBERSHIP.investigator.annualPrice : MEMBERSHIP.investigator.monthlyPrice
+                )
+              }}
             >
               Choose a Plan
             </a>

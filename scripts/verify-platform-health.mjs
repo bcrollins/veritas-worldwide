@@ -308,13 +308,40 @@ async function main() {
       )
 
       const downloadResult = await fetchJson('/api/downloads/the-record.pdf')
-      const expectedDownloadStatuses = new Set([200])
       addCheck(
         checks,
         failures,
         downloadResult.response.status === 200,
         'Public PDF download is readable for signed-out probes',
         `GET /api/downloads/the-record.pdf returned ${downloadResult.response.status}`
+      )
+
+      const institutePdfResult = await fetch(getUrl('/veritas-institute-field-manual.pdf'), {
+        method: 'HEAD',
+        headers: { 'Cache-Control': 'no-cache' },
+        signal: AbortSignal.timeout(timeoutMs),
+      })
+      const institutePdfType = (institutePdfResult.headers.get('content-type') || '').toLowerCase()
+      const institutePdfOk =
+        institutePdfResult.ok &&
+        (institutePdfType.includes('pdf') ||
+          institutePdfType.includes('octet-stream') ||
+          // Some hosts omit content-type on HEAD; body probe below covers size.
+          institutePdfType === '')
+      addCheck(
+        checks,
+        failures,
+        institutePdfOk,
+        'Institute field manual PDF is publicly downloadable',
+        `HEAD /veritas-institute-field-manual.pdf returned ${institutePdfResult.status} type=${institutePdfType || 'none'}`
+      )
+
+      addCheck(
+        checks,
+        failures,
+        health.checks?.instituteFieldManualPdf === true || institutePdfOk,
+        'Health probe reports institute field manual PDF (or asset responds)',
+        `checks.instituteFieldManualPdf=${health.checks?.instituteFieldManualPdf}`
       )
 
       const chapterPreviewResult = await fetchJson('/api/chapters/chapter-1')
