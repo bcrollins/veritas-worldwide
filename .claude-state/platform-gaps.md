@@ -152,3 +152,11 @@
 - **verify:a11y-public-targets** pure scanner in `verify:live` with per-surface floors so the wave cannot silently regress.
 - Interval-shipped tips through `a4e73a5` / `b14c5cd` / `1c4fea6` / `ec05960` / `47dc991` with full live green on successive deploys.
 
+## Recently Closed (2026-07-16 — admin a11y + security headers)
+
+- **Admin shell 44px complete.** Layout nav, dashboard CTAs, media/content filters, social packs/hub, disputes, users, subscriptions, login form fields all meet 44px.
+- **Public a11y wave closed residual p-0.5 forum list votes** and claim share; pure floors + p-0.5 ban on core pages.
+- **verify:security-headers** in verify:live (HSTS/XFO/nosniff/referrer/permissions/XSS + X-Veritas-Commit).
+- **Express X-Powered-By disabled** live; fingerprinting closed.
+- **Crawler floors** require `/profiles` and `/analytics`.
+

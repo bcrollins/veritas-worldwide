@@ -1,5 +1,5 @@
 {
-  "run": 76,
+  "run": 77,
   "date": "2026-07-16",
   "site": [
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.85,
-      "previous": 9.8,
+      "composite": 9.9,
+      "previous": 9.85,
       "delta": 0.05,
-      "status": "legal/timeline/bookmarks sidebars 44px; crawler profiles/analytics floors; tip 9307848",
+      "status": "admin+public a11y complete; p-0.5 ban; tip 25f9847+/c6e6bcc",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
