@@ -166,6 +166,16 @@ assert(packageJson.scripts?.start === 'node server.js', 'start script must be no
 assert(!packageJson.dependencies?.serve, 'must not reintroduce unused serve package')
 assert(packageJson.dependencies?.pg, 'pg runtime dependency required')
 assert(packageJson.engines?.node, 'package.json engines.node required')
+const verifyLive = packageJson.scripts?.['verify:live'] || ''
+assert(verifyLive.includes('verify-security-headers'), 'verify:live must include security-headers')
+assert(verifyLive.includes('verify-server-security-invariants'), 'verify:live must include server-security-invariants')
+assert(verifyLive.includes('verify-a11y-public-targets'), 'verify:live must include a11y floors')
+assert(verifyLive.includes('verify-auth-flows'), 'verify:live must include auth smoke')
+assert(verifyLive.includes('verify-platform-health'), 'verify:live must include platform health')
+assert(
+  (verifyLive.split('&&').length) >= 15,
+  `verify:live must stay at least 15 steps (got ${verifyLive.split('&&').length})`,
+)
 assert(
   typeof packageJson.dependencies?.react === 'string' &&
     /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies.react.replace(/^\^/, '')),
