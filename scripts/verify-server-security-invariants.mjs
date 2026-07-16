@@ -132,6 +132,12 @@ assert(
   'bcrypt cost factor must be >= 12',
 )
 assert(serverAuth.includes('jti:'), 'access tokens must include unique jti claims')
+assert(serverAuth.includes("app.post('/api/auth/refresh'"), 'refresh route registered')
+assert(
+  serverAuth.includes('DELETE FROM sessions WHERE token = $1') ||
+    serverAuth.includes('DELETE FROM sessions WHERE token=$1'),
+  'session refresh must invalidate previous session row (single-use)',
+)
 
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length
