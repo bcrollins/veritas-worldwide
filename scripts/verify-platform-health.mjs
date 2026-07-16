@@ -541,6 +541,35 @@ const healthResult = await fetchJson('/api/health')
         `status=${instituteMd.response.status}`
       )
 
+      // Trust-layer prerender shells must advertise the durable Field Manual PDF
+      // without waiting for SPA hydration (crawler + first-paint discovery).
+      const trustShellRoutes = [
+        { path: '/terms', label: 'Terms' },
+        { path: '/privacy', label: 'Privacy' },
+        { path: '/accessibility', label: 'Accessibility' },
+        { path: '/about', label: 'About' },
+        { path: '/methodology', label: 'Methodology' },
+        { path: '/sources', label: 'Sources' },
+      ]
+      for (const shell of trustShellRoutes) {
+        const shellHtml = await fetchText(shell.path)
+        const text = shellHtml.text || ''
+        addCheck(
+          checks,
+          failures,
+          shellHtml.response.ok && text.includes('/veritas-institute-field-manual.pdf'),
+          `${shell.label} prerender links the field manual PDF`,
+          `status=${shellHtml.response.status} hasPdfLink=${text.includes('/veritas-institute-field-manual.pdf')}`
+        )
+        addCheck(
+          checks,
+          failures,
+          shellHtml.response.ok && text.includes('/institute/book'),
+          `${shell.label} prerender links the Field Manual route`,
+          `status=${shellHtml.response.status} hasBookLink=${text.includes('/institute/book')}`
+        )
+      }
+
       const chapterPreviewResult = await fetchJson('/api/chapters/chapter-1')
       const chapterPreview = typeof chapterPreviewResult.data === 'object' && chapterPreviewResult.data !== null ? chapterPreviewResult.data : {}
 

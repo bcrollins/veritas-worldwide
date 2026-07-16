@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-16T08:19:05.777Z",
+  "checkedAt": "2026-07-16T08:19:27.972Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
@@ -111,7 +111,7 @@
     {
       "ok": true,
       "label": "Health probe exposes client error intake count",
-      "detail": "clientErrorIntakeCount=0"
+      "detail": "clientErrorIntakeCount=1"
     },
     {
       "ok": true,
@@ -262,6 +262,66 @@
       "ok": true,
       "label": "Institute markdown indexes the field manual PDF",
       "detail": "status=200"
+    },
+    {
+      "ok": true,
+      "label": "Terms prerender links the field manual PDF",
+      "detail": "status=200 hasPdfLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Terms prerender links the Field Manual route",
+      "detail": "status=200 hasBookLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Privacy prerender links the field manual PDF",
+      "detail": "status=200 hasPdfLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Privacy prerender links the Field Manual route",
+      "detail": "status=200 hasBookLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Accessibility prerender links the field manual PDF",
+      "detail": "status=200 hasPdfLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Accessibility prerender links the Field Manual route",
+      "detail": "status=200 hasBookLink=true"
+    },
+    {
+      "ok": true,
+      "label": "About prerender links the field manual PDF",
+      "detail": "status=200 hasPdfLink=true"
+    },
+    {
+      "ok": true,
+      "label": "About prerender links the Field Manual route",
+      "detail": "status=200 hasBookLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Methodology prerender links the field manual PDF",
+      "detail": "status=200 hasPdfLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Methodology prerender links the Field Manual route",
+      "detail": "status=200 hasBookLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Sources prerender links the field manual PDF",
+      "detail": "status=200 hasPdfLink=true"
+    },
+    {
+      "ok": true,
+      "label": "Sources prerender links the Field Manual route",
+      "detail": "status=200 hasBookLink=true"
     },
     {
       "ok": true,

@@ -1,6 +1,6 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:19:05.777Z
+- Checked at: 2026-07-16T08:19:27.972Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
 - Build commit: 139aa08ccc6d
@@ -19,7 +19,7 @@
 - PASS — Health probe confirms prerender coverage: prerender=true
 - PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
-- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
+- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=1
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=15
 - PASS — Content pack route responds: GET /content-pack returned 200
@@ -50,6 +50,18 @@
 - PASS — Institute catalog prerender links the field manual PDF: status=200 hasPdfLink=true
 - PASS — Institute book prerender exposes PDF encoding schema: status=200
 - PASS — Institute markdown indexes the field manual PDF: status=200
+- PASS — Terms prerender links the field manual PDF: status=200 hasPdfLink=true
+- PASS — Terms prerender links the Field Manual route: status=200 hasBookLink=true
+- PASS — Privacy prerender links the field manual PDF: status=200 hasPdfLink=true
+- PASS — Privacy prerender links the Field Manual route: status=200 hasBookLink=true
+- PASS — Accessibility prerender links the field manual PDF: status=200 hasPdfLink=true
+- PASS — Accessibility prerender links the Field Manual route: status=200 hasBookLink=true
+- PASS — About prerender links the field manual PDF: status=200 hasPdfLink=true
+- PASS — About prerender links the Field Manual route: status=200 hasBookLink=true
+- PASS — Methodology prerender links the field manual PDF: status=200 hasPdfLink=true
+- PASS — Methodology prerender links the Field Manual route: status=200 hasBookLink=true
+- PASS — Sources prerender links the field manual PDF: status=200 hasPdfLink=true
+- PASS — Sources prerender links the Field Manual route: status=200 hasBookLink=true
 - PASS — Public chapter route responds: GET /api/chapters/chapter-1 returned 200
 - PASS — Public chapter payload returns the full reader body: accessLevel=full
 - PASS — Public chapter payload is not block-limited: content=25 preview=0 total=25
