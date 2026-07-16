@@ -33,6 +33,12 @@ export default function InstituteLayout() {
 
   return (
     <div className="institute-shell">
+      <a
+        href="#institute-main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:inline-flex focus:min-h-[44px] focus:min-w-[44px] focus:items-center focus:rounded-sm focus:bg-[color:var(--institute-accent)] focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-semibold focus:text-white"
+      >
+        Skip to content
+      </a>
       <div className="institute-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
 
       <header className="sticky top-0 z-50 border-b border-[color:var(--institute-border)] bg-[color:var(--institute-surface-strong)]/90 backdrop-blur-xl no-print">
@@ -81,7 +87,7 @@ export default function InstituteLayout() {
         </div>
       </header>
 
-      <main className="relative z-10 mx-auto w-full max-w-[1600px] px-4 py-8 sm:px-6 lg:px-8">
+      <main id="institute-main" className="relative z-10 mx-auto w-full max-w-[1600px] px-4 py-8 sm:px-6 lg:px-8">
         <Outlet />
       </main>
 

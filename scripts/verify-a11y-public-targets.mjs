@@ -59,7 +59,7 @@ const floors = [
   { path: 'src/pages/ArticlePage.tsx', min: 6, label: 'article news chrome' },
   { path: 'src/pages/NewsPage.tsx', min: 9, label: 'news desk CTAs' },
   { path: 'src/pages/SearchPage.tsx', min: 18, label: 'search filters/sidebar' },
-  { path: 'src/components/institute/InstituteLayout.tsx', min: 10, label: 'institute footer nav' },
+  { path: 'src/components/institute/InstituteLayout.tsx', min: 11, label: 'institute footer nav' },
   { path: 'src/pages/SubscribeSuccessPage.tsx', min: 3, label: 'subscribe success CTAs' },
   { path: 'src/components/AipacDiagram.tsx', min: 8, label: 'AIPAC map controls' },
   { path: 'src/pages/BernieShowPage.tsx', min: 5, label: 'Bernie show controls' },
@@ -167,7 +167,7 @@ if (failures > 0) {
 }
 
 const total = results.reduce((n, r) => n + r.count, 0)
-const MIN_TOTAL_MARKERS = 521
+const MIN_TOTAL_MARKERS = 522
 const MIN_SURFACES = 69
 if (floors.length < MIN_SURFACES) {
   console.error(`[verify:a11y-public-targets] FAIL — surface count ${floors.length} < floor ${MIN_SURFACES}`)
