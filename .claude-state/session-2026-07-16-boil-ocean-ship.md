@@ -36,3 +36,12 @@
 - Newsletter signup UTM attribution
 - About + Methodology trust nav → Institute / Field Manual / PDFs
 - Verifiers green on production tip `aa82296+`
+
+## Live tip proof (ab9ab71)
+
+- /api/health ok; instituteFieldManualPdf + recordPdf true
+- /api/auth/status accessTokenTtl=7d sessionTtlMs=604800000
+- /api/health/history uniqueCommits + commitTransitions fields present
+- Field manual + The Record PDFs: 200, must-revalidate, Content-Disposition filenames
+- Trust nav PDF links live on About, Methodology, Sources chunks
+- platform / release / search / checkout-attribution / health-transitions / israel-dossier PASS
