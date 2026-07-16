@@ -134,11 +134,18 @@ function CommentComposer({ pageId, parentId, onPost, onCancel, placeholder }: {
         <div className="flex items-center justify-between mt-2">
           <span className="font-sans text-[0.55rem] text-ink-faint">{text.length}/5000</span>
           <div className="flex gap-2">
-            {onCancel && <button onClick={onCancel} className="font-sans text-xs text-ink-muted hover:text-ink px-3 py-1.5">Cancel</button>}
+            {onCancel && (
+              <button
+                onClick={onCancel}
+                className="inline-flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-ink px-3 py-1.5"
+              >
+                Cancel
+              </button>
+            )}
             <button
               onClick={handleSubmit}
               disabled={!text.trim()}
-              className="font-sans text-xs font-bold tracking-[0.08em] uppercase px-4 py-1.5 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="inline-flex min-h-[44px] items-center font-sans text-xs font-bold tracking-[0.08em] uppercase px-4 py-1.5 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {parentId ? 'Reply' : 'Post'}
             </button>

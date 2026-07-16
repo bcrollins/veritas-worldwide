@@ -105,6 +105,32 @@ async function main() {
   await verifyPdfAccess(null, 200)
   logStep('Anonymous PDF download verified')
 
+  // Negative path: invalid credentials must not mint a session
+  const badLogin = await requestJson('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: 'nobody-does-not-exist@example.com', password: 'wrong-password-xyz' }),
+  })
+  assert(
+    badLogin.response.status === 401 || badLogin.response.status === 400,
+    `Expected bad login to return 400/401, received ${badLogin.response.status}`
+  )
+  assert(!badLogin.data?.token, 'Bad login must not return a token')
+  logStep('Invalid login rejected without session')
+
+  // Negative path: register with invalid email shape
+  const badRegister = await requestJson('/api/auth/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: 'not-an-email', password, displayName }),
+  })
+  assert(
+    badRegister.response.status === 400 || badRegister.response.status === 422,
+    `Expected invalid-email register to return 400/422, received ${badRegister.response.status}`
+  )
+  assert(!badRegister.data?.token, 'Invalid-email register must not return a token')
+  logStep('Invalid-email register rejected')
+
   const registerResult = await requestJsonWithRetry('/api/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

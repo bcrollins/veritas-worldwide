@@ -89,7 +89,7 @@ export default function ExitIntentCapture() {
         {/* Close */}
         <button
           onClick={handleDismiss}
-          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center text-ink-faint hover:text-ink transition-colors z-10"
+          className="absolute top-2 right-2 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors z-10"
           aria-label="Close"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ export default function ExitIntentCapture() {
                   placeholder="your@email.com"
                   required
                   autoFocus
-                  className="w-full px-3 py-2.5 font-sans text-sm border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40"
+                  className="w-full min-h-[44px] px-3 py-2.5 font-sans text-sm border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40"
                 />
                 <MarketingConsentField checked={consented} onChange={setConsented} />
                 {errorMessage && (
@@ -143,7 +143,7 @@ export default function ExitIntentCapture() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
+                  className="w-full min-h-[44px] py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
                 >
                   {status === 'submitting' ? 'Joining...' : 'Get Free Investigations'}
                 </button>

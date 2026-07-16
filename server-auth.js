@@ -81,6 +81,15 @@ export function registerDatabaseAndAuthRoutes({
     return true
   }
 
+  /** Minimal RFC-shaped email check — rejects bare tokens like "not-an-email". */
+  function isValidEmail(value) {
+    if (typeof value !== 'string') return false
+    const email = value.trim()
+    if (email.length < 5 || email.length > 254) return false
+    // Local@domain with at least one dot in the domain; no spaces or angle brackets.
+    return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)
+  }
+
   app.get('/api/auth/status', (_req, res) => {
     res.setHeader('Cache-Control', 'no-store')
     res.json({
@@ -211,6 +220,15 @@ export function registerDatabaseAndAuthRoutes({
     if (typeof password !== 'string' || password.length < 6) {
       return res.status(400).json({ error: 'Password must be at least 6 characters.' })
     }
+    if (typeof password === 'string' && password.length > 128) {
+      return res.status(400).json({ error: 'Password must be at most 128 characters.' })
+    }
+    if (!isValidEmail(email)) {
+      return res.status(400).json({ error: 'Please enter a valid email address.' })
+    }
+    if (typeof displayName !== 'string' || displayName.trim().length < 1 || displayName.trim().length > 100) {
+      return res.status(400).json({ error: 'Display name must be 1–100 characters.' })
+    }
 
     const cleanEmail = email.toLowerCase().trim()
 
@@ -265,6 +283,12 @@ export function registerDatabaseAndAuthRoutes({
     const { email, password } = req.body
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password are required.' })
+    }
+    if (!isValidEmail(email)) {
+      return res.status(400).json({ error: 'Please enter a valid email address.' })
+    }
+    if (typeof password === 'string' && password.length > 128) {
+      return res.status(400).json({ error: 'Password must be at most 128 characters.' })
     }
 
     const cleanEmail = email.toLowerCase().trim()

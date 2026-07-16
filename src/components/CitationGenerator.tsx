@@ -101,7 +101,7 @@ export default function CitationGenerator({ chapter }: { chapter: Chapter }) {
               <button
                 key={f}
                 onClick={() => { setFormat(f); setCopied(false) }}
-                className={`font-sans text-[0.6rem] font-semibold tracking-[0.08em] uppercase px-2.5 py-1.5 rounded-sm transition-colors ${
+                className={`inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-semibold tracking-[0.08em] uppercase px-2.5 py-1.5 rounded-sm transition-colors ${
                   format === f
                     ? 'bg-crimson text-white'
                     : 'bg-parchment-dark text-ink-muted hover:text-ink'
@@ -126,7 +126,7 @@ export default function CitationGenerator({ chapter }: { chapter: Chapter }) {
           {/* Copy button */}
           <button
             onClick={handleCopy}
-            className={`mt-3 w-full font-sans text-xs font-semibold tracking-[0.08em] uppercase py-2.5 rounded-sm transition-all ${
+            className={`mt-3 w-full min-h-[44px] font-sans text-xs font-semibold tracking-[0.08em] uppercase py-2.5 rounded-sm transition-all ${
               copied
                 ? 'bg-verified text-white'
                 : 'bg-crimson text-white hover:bg-crimson-dark'
