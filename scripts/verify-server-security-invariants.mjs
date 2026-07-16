@@ -359,9 +359,16 @@ for (const pureScript of [
   'verify-auth-validation.mjs',
   'verify-csp-meta.mjs',
   'verify-archive-manifest.mjs',
+  'verify-search-scoring.mjs',
+  'verify-article-sources.mjs',
+  'verify-home-toc-structure.mjs',
 ]) {
   assert(verifyPure.includes(pureScript), `verify:pure must include ${pureScript}`)
 }
+assert(
+  (verifyPure.match(/verify-[a-z0-9-]+\.mjs/g) || []).length >= 9,
+  'verify:pure must list at least 9 pure scripts',
+)
 assert(
   typeof packageJson.dependencies?.react === 'string' &&
     /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies.react.replace(/^\^/, '')),
