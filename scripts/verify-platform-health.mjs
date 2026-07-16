@@ -342,8 +342,8 @@ const healthResult = await fetchJson('/api/health')
       addCheck(
         checks,
         failures,
-        typeof health.popularChapterCount === 'number' && health.popularChapterCount >= 0,
-        'Health exposes popular chapter count from analytics',
+        typeof health.popularChapterCount === 'number' && health.popularChapterCount >= 1,
+        'Health exposes popular chapter count from analytics (≥1)',
         `popularChapterCount=${health.popularChapterCount}`
       )
       if (health.checks?.databaseConfigured === true) {
