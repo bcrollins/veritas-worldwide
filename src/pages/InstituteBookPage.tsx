@@ -42,6 +42,12 @@ export default function InstituteBookPage() {
           name: SITE_NAME,
           url: SITE_URL,
         },
+        encoding: {
+          '@type': 'MediaObject',
+          contentUrl: `${SITE_URL}/veritas-institute-field-manual.pdf`,
+          encodingFormat: 'application/pdf',
+          name: 'Veritas Institute Field Manual PDF',
+        },
       },
       {
         '@context': 'https://schema.org',
