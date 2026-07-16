@@ -471,6 +471,13 @@ assert(
   (verifyLive.split('&&').length) >= 15,
   `verify:live must stay at least 15 steps (got ${verifyLive.split('&&').length})`,
 )
+assert(
+  verifyLive.split('&&').length === 15,
+  `verify:live must stay at exactly 15 steps (got ${verifyLive.split('&&').length})`,
+)
+assert(verifyLive.includes('verify-csp-meta'), 'verify:live must include csp-meta')
+assert(verifyLive.includes('verify-crawler-surfaces'), 'verify:live must include crawler-surfaces')
+assert(verifyLive.includes('verify-archive-manifest'), 'verify:live must include archive-manifest')
 const verifyPure = readFileSync(join(root, 'scripts', 'verify-pure.mjs'), 'utf8')
 for (const pureScript of [
   'verify-server-security-invariants.mjs',
