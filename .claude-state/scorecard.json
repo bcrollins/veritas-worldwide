@@ -1,5 +1,5 @@
 {
-  "run": 47,
+  "run": 48,
   "date": "2026-07-16",
   "site": [
     {
@@ -36,11 +36,11 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.45,
-      "previous": 9.3,
-      "delta": 0.15,
-      "status": "access token + session TTL shortened 30d \u2192 7d; status exposes TTL fields",
-      "plus_half_requires": "Add refresh rotation or silent re-auth for long-lived readers without re-login friction."
+      "composite": 9.65,
+      "previous": 9.45,
+      "delta": 0.2,
+      "status": "7d TTL + silent single-use session refresh with rotation",
+      "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
       "feature": "Source Browser",
@@ -52,11 +52,11 @@
     },
     {
       "feature": "Search",
-      "composite": 9.4,
-      "previous": 9.3,
-      "delta": 0.1,
-      "status": "topic hub chips on results + weighted ranking live",
-      "plus_half_requires": "Personalize topic ranking by engagement when analytics identity exists."
+      "composite": 9.55,
+      "previous": 9.4,
+      "delta": 0.15,
+      "status": "title-weighted ranking + modest recent-reading engagement boost (+18)",
+      "plus_half_requires": "Server-side engagement signals when analytics identity exists beyond local history."
     },
     {
       "feature": "News & Topic Entry",
