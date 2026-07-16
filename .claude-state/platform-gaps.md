@@ -214,6 +214,21 @@
 - **Public a11y floors expanded to conversion surfaces.**
   Impact: MethodologyPage, DownloadModal, DonationBanner, DisputeStory, ContentGate, ExitIntent, NewsletterSignup floor-gated; residual floors raised toward measured counts (60 surfaces / 506 markers).
 
+
+## Recently Closed (2026-07-16 — CSP frame-ancestors + password floor 8 + a11y residual)
+
+- **HTTP Content-Security-Policy with frame-ancestors is live (13 baseline headers).**
+  Impact: clickjacking defense is now enforced via HTTP (meta CSP cannot carry frame-ancestors). Meta CSP also carries worker-src/manifest-src/media-src and upgrade-insecure-requests. Topics API denied via browsing-topics=().
+  Resolution: tips `0db6fb3` → pure+live header suite; verify:security-headers 13 baseline PASS on tip `3e1f119`.
+
+- **Password floor raised 6 → 8 characters and live.**
+  Impact: register and change-password reject 7-character passwords; AuthModal mirrors the floor. Live curl proof + verify:auth 7-char reject step.
+  Resolution: tip `6461238` 15-step green.
+
+- **DeepState filters + Forum compose 44px residual closed.**
+  Impact: search/category controls and forum title/link/body/poll-option inputs meet WCAG 2.5.5 target size.
+  Resolution: tip `3e1f119`; pure floors Forum 57 / DeepState 17 (531 markers / 69 surfaces).
+
 ## External residual (2026-07-16)
 
 - **GitHub Actions runners are not allocating (jobs fail in ~2s with empty steps).**
