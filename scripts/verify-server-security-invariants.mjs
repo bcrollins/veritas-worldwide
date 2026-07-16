@@ -328,6 +328,17 @@ assert(
 assert(serverAuth.includes('change-password'), 'change-password route present in server-auth')
 assert(serverAuth.includes('newPassword.length > 128'), 'change-password rejects overlong new passwords')
 assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rejects overlong current passwords')
+// Login must not enumerate accounts (same message + dummy bcrypt on miss).
+assert(serverAuth.includes('LOGIN_GENERIC_ERROR'), 'login generic error constant present')
+assert(serverAuth.includes('LOGIN_TIMING_DUMMY_HASH'), 'login timing dummy hash present')
+assert(serverAuth.includes('Invalid email or password.'), 'login uses generic error copy')
+assert(!serverAuth.includes('No account found with this email.'), 'login must not leak missing-account copy')
+assert(!serverAuth.includes("'Incorrect password.'") && !serverAuth.includes('"Incorrect password."'), 'login must not leak incorrect-password copy')
+assert(
+  serverAuth.includes('bcrypt.compare') && serverAuth.includes('LOGIN_TIMING_DUMMY_HASH'),
+  'missing-account path must burn a bcrypt compare',
+)
+
 // Password floor: 8 chars on register + change-password (NIST-aligned practical minimum).
 assert(
   (serverAuth.match(/password\.length < 8/g) || []).length >= 1,

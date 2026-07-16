@@ -19,6 +19,10 @@ export function registerDatabaseAndAuthRoutes({
   const JWT_EXPIRY = process.env.JWT_EXPIRY || '7d'
   const SESSION_TTL_MS = Number.parseInt(process.env.SESSION_TTL_MS || String(7 * 24 * 60 * 60 * 1000), 10)
   const BCRYPT_ROUNDS = 12
+  // Dummy bcrypt hash used when no account exists so login timing does not
+  // reveal email existence (compare still runs ~same cost as a real user).
+  const LOGIN_TIMING_DUMMY_HASH = bcrypt.hashSync('veritas-login-timing-dummy', BCRYPT_ROUNDS)
+  const LOGIN_GENERIC_ERROR = 'Invalid email or password.'
 
   function mintAccessToken(user) {
     // Include a unique jti so same-second refreshes never mint byte-identical tokens.
@@ -305,13 +309,15 @@ export function registerDatabaseAndAuthRoutes({
         [cleanEmail]
       )
       if (rows.length === 0) {
-        return res.status(401).json({ error: 'No account found with this email.' })
+        // Burn a bcrypt compare so missing-account responses match real failures.
+        await bcrypt.compare(typeof password === 'string' ? password : '', LOGIN_TIMING_DUMMY_HASH)
+        return res.status(401).json({ error: LOGIN_GENERIC_ERROR })
       }
 
       const user = rows[0]
       const validPassword = await bcrypt.compare(password, user.password_hash)
       if (!validPassword) {
-        return res.status(401).json({ error: 'Incorrect password.' })
+        return res.status(401).json({ error: LOGIN_GENERIC_ERROR })
       }
 
       await dbPool.query('UPDATE users SET last_login_at = NOW() WHERE id = $1', [user.id])

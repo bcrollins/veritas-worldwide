@@ -116,6 +116,14 @@ async function main() {
     `Expected bad login to return 400/401, received ${badLogin.response.status}`
   )
   assert(!badLogin.data?.token, 'Bad login must not return a token')
+  assert(
+    !/no account found|incorrect password/i.test(String(badLogin.data?.error || '')),
+    `Login must not enumerate accounts (got: ${badLogin.data?.error})`,
+  )
+  assert(
+    /invalid email or password/i.test(String(badLogin.data?.error || '')),
+    `Login error must be generic (got: ${badLogin.data?.error})`,
+  )
   logStep('Invalid login rejected without session')
 
   // Negative path: register with invalid email shape (retry through multi-agent 429s)
