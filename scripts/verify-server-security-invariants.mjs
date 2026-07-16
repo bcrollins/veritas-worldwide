@@ -138,6 +138,11 @@ assert(
     serverAuth.includes('DELETE FROM sessions WHERE token=$1'),
   'session refresh must invalidate previous session row (single-use)',
 )
+assert(
+  serverAuth.includes('DELETE FROM sessions WHERE user_id = $1 AND token != $2') ||
+    serverAuth.includes('DELETE FROM sessions WHERE user_id=$1 AND token!=$2'),
+  'password change must revoke other sessions for the user',
+)
 
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length
