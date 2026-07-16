@@ -1,5 +1,5 @@
 {
-  "run": 86,
+  "run": 87,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "X-Permitted-Cross-Domain-Policies; 47 a11y surfaces; tip 30ccc05+/6ab02c5",
+      "status": "15-step verify:live; HEAD b7ff342; 47 a11y surfaces",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -84,10 +84,10 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.95,
-      "previous": 9.93,
+      "composite": 9.97,
+      "previous": 9.95,
       "delta": 0.02,
-      "status": "CSP meta pure suite + 7 security headers live; tip 30ccc05+",
+      "status": "pg 8.22 + react/vite patches live; 0 vulns",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
