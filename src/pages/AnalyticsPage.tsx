@@ -622,6 +622,7 @@ type HealthHistory = {
   sharedAcrossReplicas?: boolean
   commitTransitions?: HealthHistoryTransition[]
   uniqueCommits?: string[]
+  uniqueReplicas?: string[]
 }
 
 function ReleaseHealthPanel({
