@@ -2330,6 +2330,17 @@ for (const profileSlug of profileSlugs) {
   sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, profileModified, 'monthly', '0.7'))
 }
 
+// Durable static PDFs (not SPA routes, but crawlable public assets).
+const today = new Date().toISOString().slice(0, 10)
+sitemapEntries.set(
+  '/veritas-institute-field-manual.pdf',
+  renderUrlEntry(`${SITE_URL}/veritas-institute-field-manual.pdf`, today, 'monthly', '0.7')
+)
+sitemapEntries.set(
+  '/the-record.pdf',
+  renderUrlEntry(`${SITE_URL}/the-record.pdf`, today, 'monthly', '0.6')
+)
+
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
 writeSitemap([...sitemapEntries.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([, entry]) => entry))
 const llmsTxt = renderLlmsTxt(institutePracticalTopics)
