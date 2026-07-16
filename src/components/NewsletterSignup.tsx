@@ -148,7 +148,7 @@ export default function NewsletterSignup({
           placeholder="your@email.com"
           required
           data-testid="newsletter-email-input"
-          className={`flex-1 px-3 py-2.5 font-sans text-sm rounded-sm border focus:outline-none focus:ring-1 focus:ring-crimson/40 ${
+          className={`flex-1 min-h-[44px] px-3 py-2.5 font-sans text-sm rounded-sm border focus:outline-none focus:ring-1 focus:ring-crimson/40 ${
             isDark
               ? 'bg-white/10 border-white/20 text-white placeholder:text-white/30'
               : 'bg-white border-border text-ink placeholder:text-ink-faint'
@@ -158,7 +158,7 @@ export default function NewsletterSignup({
           type="submit"
           disabled={status === 'submitting'}
           data-testid="newsletter-submit"
-          className="px-5 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap"
+          className="inline-flex min-h-[44px] items-center px-5 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap"
         >
           {status === 'submitting' ? 'Joining...' : 'Subscribe'}
         </button>
