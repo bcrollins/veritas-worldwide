@@ -34,6 +34,17 @@
   Impact: trust links and verification memory no longer point at dead routes in the local product map; `/about` is now a real trust surface again, and `/content-packs` resolves to the canonical content-pack surface instead of 404 drift.
   Resolution: rewrote `src/pages/AboutPage.tsx` with truthful publication copy, wired `/about` into `src/App.tsx`, added `/about` to `scripts/prerender.mjs`, and added a compatibility alias from `/content-packs` to `/content-pack`.
 
+
+## Recently Closed (2026-07-16 — PDF cache + client errors)
+
+- **Stable-name PDF immutable cache bug fixed and live.**
+  Impact: `/veritas-institute-field-manual.pdf` no longer returns `max-age=31536000, immutable`, which would pin readers to a year-old PDF after content updates.
+  Resolution: `server.js` setHeaders marks `*.pdf` as `public, max-age=3600, must-revalidate`; platform health asserts non-immutable. Live on `d734137`.
+
+- **Replica client-error counters are live on release health.**
+  Impact: operators see intake count + last message from `/api/health` and the analytics Release Health panel without Sentry.
+  Resolution: in-memory counters on `/api/client-error` intake, surfaced in health payload and AnalyticsPage.
+
 ## Critical
 
 - **Third-party paging (Sentry cloud) is still optional.**
