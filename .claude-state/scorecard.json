@@ -1,5 +1,5 @@
 {
-  "run": 62,
+  "run": 63,
   "date": "2026-07-16",
   "site": [
     {
@@ -7,7 +7,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "44 pins floor 44 incl DocumentCloud flight manifests; Lancet lookup-only",
+      "status": "45 pins floor 45: CourtListener parties + DocumentCloud; tip 25f0b3c",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -36,18 +36,18 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.8,
-      "previous": 9.78,
-      "delta": 0.02,
-      "status": "short-password register rejected in smoke; tip 3c5147f",
+      "composite": 9.85,
+      "previous": 9.8,
+      "delta": 0.05,
+      "status": "verify:auth-validation pure suite in verify:live; tip 25f0b3c",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
       "feature": "Source Browser",
       "composite": 9.88,
-      "previous": 9.85,
+      "previous": 9.88,
       "delta": 0.03,
-      "status": "43 pins floor 42; DOJ+NTSB investigations; sources page CTAs 44px",
+      "status": "45 pins floor 45: CourtListener parties + DocumentCloud; tip 25f0b3c",
       "plus_half_requires": "Expand archive pins beyond briefing rows to restricted/bot-blocked bibliography URLs."
     },
     {
