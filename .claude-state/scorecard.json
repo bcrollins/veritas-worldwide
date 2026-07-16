@@ -1,5 +1,5 @@
 {
-  "run": 48,
+  "run": 49,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.65,
       "previous": 9.45,
       "delta": 0.2,
-      "status": "7d TTL + silent single-use session refresh with rotation",
+      "status": "7d TTL + silent refresh with jti rotation; auth smoke PASS live",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -55,7 +55,7 @@
       "composite": 9.55,
       "previous": 9.4,
       "delta": 0.15,
-      "status": "title-weighted ranking + modest recent-reading engagement boost (+18)",
+      "status": "engagement boost + continue-reading badge; title relevance preserved",
       "plus_half_requires": "Server-side engagement signals when analytics identity exists beyond local history."
     },
     {
