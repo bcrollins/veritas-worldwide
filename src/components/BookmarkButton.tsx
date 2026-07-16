@@ -17,8 +17,10 @@ export default function BookmarkButton({ chapterId }: { chapterId: string }) {
   return (
     <button
       onClick={handleClick}
-      className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
+      className="inline-flex min-h-[44px] items-center gap-1.5 px-1 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
       title={isLoggedIn ? (saved ? 'Remove bookmark' : 'Save article') : 'Sign in to save'}
+      aria-label={isLoggedIn ? (saved ? 'Remove bookmark' : 'Save article') : 'Sign in to save'}
+      aria-pressed={saved}
     >
       <svg className="w-4 h-4" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={saved ? 0 : 1.5} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
