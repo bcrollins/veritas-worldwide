@@ -1,5 +1,5 @@
 {
-  "run": 40,
+  "run": 41,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -151,7 +151,12 @@
     "Health history sampling endpoint /api/health/history live; analytics panel shows sample trend when samples exist.",
     "Search results deep-link to topic hubs via chapter reverse map (getTopicHubsForChapter).",
     "Chapter pages surface Topic Hubs chips for featured hubs.",
-    "Institute guides for Israel-dossier paths attach workbook downloads (mirrors courses)."
+    "Institute guides for Israel-dossier paths attach workbook downloads (mirrors courses).",
+    "Shipped build-time Veritas Institute Field Manual PDF at /veritas-institute-field-manual.pdf (60 pages, postbuild generator, static-first download, llms.txt index, health check instituteFieldManualPdf) and live-verified production commit 3cfe939 with platform PASS.",
+    "Shipped membership checkout UTM/ref first- and last-touch attribution with Stripe client_reference_id stamps and verify:checkout-attribution pure-function suite.",
+    "Promoted instituteFieldManualPdf to a hard /api/health failure after production proof; added dual lifetime/failed-check trends and PDF status on the analytics Release Health panel (de0f815).",
+    "Indexed durable PDF downloads in sitemap (field manual + the-record.pdf) for crawler discovery (7e1e1f4).",
+    "Confirmed Lancet briefing URL still has no usable Wayback snapshot (CDX returns only 404 partials); left lookup-only with honest archive fallback."
   ],
   "next_task": "External only remaining for archives/CI/Sentry. Continue product polish: news corpus, membership attribution, institute PDF server artifact.",
   "next_priorities": [
