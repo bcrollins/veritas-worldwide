@@ -16,7 +16,7 @@ const root = path.join(__dirname, '..')
 const MIN_PRERENDER_ROUTES = 270
 const MIN_SITEMAP_URLS = 300
 // Floor sits ~10% under the 2026-07-16 baseline (~30 llms links after About/Accessibility GEO).
-const MIN_LLMS_LINKS = 27
+const MIN_LLMS_LINKS = 28
 
 const REQUIRED_SITEMAP_PATHS = [
   '/',
@@ -49,6 +49,7 @@ const REQUIRED_LLMS_NEEDLES = [
   '/profiles',
   '/about',
   '/accessibility',
+  'security.txt',
   'election-security-ai-risk-frameworks-cisa-nist-2026',
   'treasury-debt-transparency-fiscaldata-fed-h15-2026',
   'Current reporting',
