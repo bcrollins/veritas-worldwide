@@ -167,9 +167,9 @@ function PostCard({ post, onOpen, onVote, onSave, userId, compact }: {
       <div className="flex">
         {/* Vote column */}
         <div className="flex flex-col items-center w-10 sm:w-12 py-2 flex-shrink-0">
-          <button onClick={e => { e.stopPropagation(); onVote(post.id, hasUpvoted ? null : 'up') }} className="p-0.5"><UpArrow active={hasUpvoted} /></button>
+          <button onClick={e => { e.stopPropagation(); onVote(post.id, hasUpvoted ? null : 'up') }} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center" aria-label="Upvote"><UpArrow active={hasUpvoted} /></button>
           <span className={`font-mono text-xs font-bold ${score > 0 ? 'text-crimson' : score < 0 ? 'text-blue-600' : 'text-ink-faint'}`}>{formatNumber(score)}</span>
-          <button onClick={e => { e.stopPropagation(); onVote(post.id, hasDownvoted ? null : 'down') }} className="p-0.5"><DownArrow active={hasDownvoted} /></button>
+          <button onClick={e => { e.stopPropagation(); onVote(post.id, hasDownvoted ? null : 'down') }} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center" aria-label="Downvote"><DownArrow active={hasDownvoted} /></button>
         </div>
 
         {/* Content */}

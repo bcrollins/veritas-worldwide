@@ -281,7 +281,7 @@ function ClaimCard({ claim, index }: { claim: { claim: string; source: string; u
         <SourceLink url={claim.url} label={claim.source} />
         <button
           onClick={handleShare}
-          className="inline-flex items-center gap-1 px-2 py-1 text-xs text-ink-faint hover:text-crimson transition-colors rounded"
+          className="inline-flex min-h-[44px] items-center gap-1.5 px-2 py-1 text-xs text-ink-faint hover:text-crimson transition-colors rounded"
           aria-label="Share this claim"
           title="Share this evidence"
         >
