@@ -318,6 +318,22 @@ const healthResult = await fetchJson('/api/health')
         'Health exposes optional Sentry forward configuration flag',
         `sentryForwardConfigured=${health.sentryForwardConfigured}`
       )
+      addCheck(
+        checks,
+        failures,
+        typeof health.healthHistoryStorage === 'string' && health.healthHistoryStorage.length > 0,
+        'Health exposes health history storage label',
+        `healthHistoryStorage=${health.healthHistoryStorage || 'missing'}`
+      )
+      if (health.checks?.databaseConfigured === true) {
+        addCheck(
+          checks,
+          failures,
+          health.healthHistoryStorage === 'shared-database' && health.healthHistorySharedAcrossReplicas === true,
+          'Health reports shared multi-replica history storage',
+          `healthHistoryStorage=${health.healthHistoryStorage} shared=${health.healthHistorySharedAcrossReplicas}`
+        )
+      }
 
       const clientErrorProbe = await fetch(getUrl('/api/client-error'), {
         method: 'POST',
