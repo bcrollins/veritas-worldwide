@@ -105,6 +105,13 @@ export default function InstitutePage() {
               <Link to="/institute/book" className="institute-button-primary">
                 Open the Field Manual
               </Link>
+              <a
+                href="/veritas-institute-field-manual.pdf"
+                className="institute-button-secondary"
+                download="veritas-institute-field-manual.pdf"
+              >
+                Download Field Manual PDF
+              </a>
               <Link to="/institute/methodology" className="institute-button-secondary">
                 See the sourcing method
               </Link>
