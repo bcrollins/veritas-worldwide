@@ -175,3 +175,8 @@
 - **Institute footer** 44px columns.
 - **verify:live = 14 steps** (a11y floors, security-headers, server invariants, home-toc).
 
+## Recently Closed (2026-07-16 — security.txt masterpiece)
+
+- **RFC 9116 security.txt is live and verify-gated.**
+  Impact: researchers and automated scanners can discover `/.well-known/security.txt` with Contact, Expires, Canonical, and Privacy policy links. Root `/security.txt` also 200s.
+  Resolution: Express in-process fallback (Vite/deploy skipped hidden `public/.well-known`); dual public files; Privacy link; robots Allow; live verify:security-headers asserts body. Tip `34e9a94` 15-step green.

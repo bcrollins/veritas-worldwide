@@ -1,5 +1,5 @@
 {
-  "run": 87,
+  "run": 88,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.28,
-      "previous": 9.2,
-      "delta": 0.08,
-      "status": "llms About+Accessibility live; security-headers; tip 36aadeb",
+      "composite": 9.33,
+      "previous": 9.28,
+      "delta": 0.05,
+      "status": "RFC 9116 security.txt live + headers; tip 34e9a94",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "15-step verify:live; HEAD b7ff342; 47 a11y surfaces",
+      "status": "15-step verify:live + security.txt; HEAD 34e9a94; 49 a11y surfaces",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -95,7 +95,7 @@
       "composite": 9.6,
       "previous": 9.6,
       "delta": 0.05,
-      "status": "health history maxSamples=96 multi-day retention; uniqueReplicas platform-asserted · popularChapterCount floor ≥1 tip 76171c6",
+      "status": "health history maxSamples=96 multi-day retention; uniqueReplicas platform-asserted \u00b7 popularChapterCount floor \u22651 tip 76171c6",
       "plus_half_requires": "Per-replica contributor labels in analytics UI if multi-region grows."
     }
   ],
