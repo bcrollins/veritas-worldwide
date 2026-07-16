@@ -11,9 +11,9 @@
     },
     {
       "sourceUrl": "https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
-      "timestamp": null,
-      "archiveUrl": "https://web.archive.org/web/*/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
-      "status": "lookup-only"
+      "timestamp": "20240621135854",
+      "archiveUrl": "https://web.archive.org/web/20240621135854/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
+      "status": "pinned"
     },
     {
       "sourceUrl": "https://undocs.org/S/RES/2334(2016)",
@@ -59,9 +59,9 @@
     },
     {
       "sourceUrl": "https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025",
-      "timestamp": null,
-      "archiveUrl": "https://web.archive.org/web/*/https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025",
-      "status": "lookup-only"
+      "timestamp": "20250404145748",
+      "archiveUrl": "https://web.archive.org/web/20250404145748/https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025",
+      "status": "pinned"
     },
     {
       "sourceUrl": "https://www.ochaopt.org/content/humanitarian-situation-update-176-gaza-strip",

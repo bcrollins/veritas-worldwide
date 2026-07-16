@@ -236,6 +236,29 @@ async function main() {
         `GET /content-pack returned ${contentPackResult.response.status}`
       )
 
+      const clientErrorProbe = await fetch(getUrl('/api/client-error'), {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+          'Cache-Control': 'no-cache',
+        },
+        body: JSON.stringify({
+          message: 'platform-health probe',
+          name: 'PlatformHealthProbe',
+          source: 'verify:platform',
+          path: '/api/client-error',
+        }),
+        signal: AbortSignal.timeout(timeoutMs),
+      })
+      addCheck(
+        checks,
+        failures,
+        clientErrorProbe.status === 204 || clientErrorProbe.status === 429,
+        'Client error intake accepts or rate-limits probes',
+        `POST /api/client-error returned ${clientErrorProbe.status}`
+      )
+
       const authStatusResult = await fetchJson('/api/auth/status')
       const authStatus = typeof authStatusResult.data === 'object' && authStatusResult.data !== null ? authStatusResult.data : {}
 

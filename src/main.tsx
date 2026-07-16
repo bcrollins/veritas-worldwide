@@ -3,8 +3,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, useLocation } from "react-router-dom";
 import { AuthProvider } from "./lib/AuthContext";
 import { ThemeProvider } from "./lib/ThemeContext";
+import { installGlobalClientErrorReporting } from "./lib/clientErrorReporting";
 import App from "./App";
 import "./styles/index.css";
+
+installGlobalClientErrorReporting();
 
 function preserveBrandHeading(targetTag: "h1" | "p") {
   const brandLink = document.querySelector('a[aria-label="Veritas Worldwide — Home"]');

@@ -1,5 +1,6 @@
 import { Component, type ReactNode, type ErrorInfo } from 'react'
 import { Link } from 'react-router-dom'
+import { reportClientError } from '../lib/clientErrorReporting'
 
 interface Props {
   children: ReactNode
@@ -22,6 +23,14 @@ export default class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     console.error('[ErrorBoundary]', error, errorInfo)
+    reportClientError({
+      message: error.message,
+      name: error.name,
+      stack: error.stack || '',
+      componentStack: errorInfo.componentStack || '',
+      source: 'ErrorBoundary',
+      path: typeof window !== 'undefined' ? window.location.pathname : '',
+    })
   }
 
   render(): ReactNode {

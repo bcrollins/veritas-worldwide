@@ -214,6 +214,14 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     archiveUrl: 'https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
     status: 'Pinned via companion PDF snapshot 20260515102538 (same OCHA 1 Apr 2026 impact table); HTML path lacked an independent Wayback capture.',
   },
+  'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab': {
+    archiveUrl: 'https://web.archive.org/web/20240621135854/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab',
+    status: 'Pinned Wayback snapshot 20240621135854; primary host may block automated probes.',
+  },
+  'https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025': {
+    archiveUrl: 'https://web.archive.org/web/20250404145748/https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025',
+    status: 'Pinned Wayback snapshot 20250404145748; primary host may block automated probes.',
+  },
   'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf': {
     archiveUrl: 'https://web.archive.org/web/20260708051442/https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf',
     status: 'Pinned Wayback snapshot 20260708051442; primary host may block automated probes.',

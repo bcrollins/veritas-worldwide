@@ -165,7 +165,7 @@ const STATIC_ANALYTICS_TITLES = {
   '/institute/methodology': `Veritas Institute Methodology | ${ANALYTICS_SITE_NAME}`,
   '/israel-dossier': `The Israel Dossier | ${ANALYTICS_SITE_NAME}`,
   '/deep-state': `The Deep State — The Epstein Network | ${ANALYTICS_SITE_NAME}`,
-  '/content-pack': `Content Pack — Shareable Assets | ${ANALYTICS_SITE_NAME}`,
+  '/content-pack': `Content Packs & Brand Kit | ${ANALYTICS_SITE_NAME}`,
   '/timeline': `Interactive Timeline | ${ANALYTICS_SITE_NAME}`,
   '/accessibility': `Accessibility | ${ANALYTICS_SITE_NAME}`,
   '/privacy': `Privacy Policy | ${ANALYTICS_SITE_NAME}`,
@@ -734,6 +734,7 @@ setInterval(() => {
 app.use('/api/auth/login', rateLimit({ windowMs: 60_000, max: 5 }))
 app.use('/api/auth/register', rateLimit({ windowMs: 60_000, max: 3 }))
 app.use('/api/analytics/event', rateLimit({ windowMs: 60_000, max: 120 }))
+app.use('/api/client-error', rateLimit({ windowMs: 60_000, max: 30 }))
 
 // CORS — restrict to known origins
 const ALLOWED_ORIGINS = new Set([
@@ -929,6 +930,49 @@ app.get('/api/analytics/snapshot', async (req, res) => {
       returnPaths: signupReturnPaths,
     },
   })
+})
+
+// Client-side error intake — structured operator logs without requiring Sentry.
+// Accepts small anonymized payloads from ErrorBoundary + global handlers.
+app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
+  const body = req.body && typeof req.body === 'object' ? req.body : {}
+  const message = typeof body.message === 'string' ? body.message.slice(0, 500) : ''
+  if (!message) {
+    return res.status(400).json({ error: 'message required' })
+  }
+
+  const payload = {
+    type: 'client-error',
+    message,
+    name: typeof body.name === 'string' ? body.name.slice(0, 120) : 'Error',
+    stack: typeof body.stack === 'string' ? body.stack.slice(0, 4000) : '',
+    componentStack: typeof body.componentStack === 'string' ? body.componentStack.slice(0, 4000) : '',
+    source: typeof body.source === 'string' ? body.source.slice(0, 80) : 'client',
+    path: typeof body.path === 'string' ? body.path.slice(0, 240) : '',
+    href: typeof body.href === 'string' ? body.href.slice(0, 500) : '',
+    userAgent: typeof body.userAgent === 'string' ? body.userAgent.slice(0, 300) : '',
+    ip: getClientIP(req),
+    commit: getReleaseCommit().slice(0, 12),
+    receivedAt: new Date().toISOString(),
+  }
+
+  console.error(`[monitor] ${JSON.stringify(payload)}`)
+
+  // Optional durable append when a persistent data volume is configured.
+  if (DATA_DIR) {
+    try {
+      fs.mkdirSync(DATA_DIR, { recursive: true })
+      fs.appendFileSync(
+        path.join(DATA_DIR, 'client-errors.ndjson'),
+        `${JSON.stringify(payload)}\n`,
+        'utf8'
+      )
+    } catch (error) {
+      console.error('[monitor] failed to persist client-error', error instanceof Error ? error.message : error)
+    }
+  }
+
+  return res.status(204).end()
 })
 
 

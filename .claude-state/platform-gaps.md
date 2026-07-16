@@ -36,9 +36,18 @@
 
 ## Critical
 
-- **Third-party error monitoring (Sentry or equivalent) is still absent.**
-  Impact: uncaught server/client exceptions do not page an operator even though release liveness is now probeable.
-  Recommendation: add Sentry or an equivalent production error monitoring service once a project DSN credential is available, and wire both server and client exceptions into it.
+- **Third-party paging (Sentry cloud) is still optional.**
+  Impact: client errors now reach structured Railway logs via `/api/client-error` and optional volume NDJSON, but there is still no external pager/email until a Sentry DSN or similar is configured.
+  Recommendation: if out-of-band paging is required, set a Sentry DSN (or equivalent) on top of the native client-error intake.
+
+## Recently Closed (2026-07-16 continued)
+
+- **Native client error intake is live.**
+  Impact: ErrorBoundary and global window error/rejection handlers report to `/api/client-error` with rate limiting and structured `[monitor]` logs (and optional volume persistence).
+  Resolution: `src/lib/clientErrorReporting.ts`, ErrorBoundary/main wiring, and Express intake route.
+
+- **Additional briefing archive pins landed.**
+  Impact: Forensic Architecture Hind Rajab and OCHA Mar 2025 response update now carry exact Wayback snapshots (14/16 briefing source URLs pinned).
 
 ## Recently Closed (2026-07-16)
 

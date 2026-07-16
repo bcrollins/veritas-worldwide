@@ -22,6 +22,10 @@ const routes = [
   { path: '/chapter/chapter-1', text: ['The Birth of Central Banking', '8 SOURCES CITED'] },
   { path: '/sources', text: ['Sources & References', 'WITH DIRECT LINKS'] },
   { path: '/search?q=federal+reserve', text: ['Search The Record'] },
+  { path: '/content-pack', text: ['Brand Assets', 'Usage Guidelines'] },
+  { path: '/analytics', text: ['Reader Analytics', 'Release Health'] },
+  { path: '/israel-dossier', text: ['Archive pins', 'Evidence Workbooks'] },
+  { path: '/israel-dossier/briefing', text: ['source', 'briefing'] },
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
   { path: '/terms', text: ['core downloads are public without a login'] },
 ]
