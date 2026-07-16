@@ -1,5 +1,5 @@
 {
-  "run": 191,
+  "run": 192,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.58,
-      "previous": 9.56,
-      "delta": 0.02,
-      "status": "HTTP CSP frame-ancestors + Topics deny + 13 headers; tip 0db6fb3/6461238",
+      "composite": 9.59,
+      "previous": 9.58,
+      "delta": 0.01,
+      "status": "security.txt must-revalidate + 13 CSP headers + admin noindex; tip cbd9729+",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "password floor 8 live; 7-char register rejected; tip 6461238 15-step",
+      "status": "password floor 8 + anti-enumeration login live; tip 3b9d2ed 15-step",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tips 0db6fb3\u21926461238\u21923e1f119 CSP/auth/a11y interval ship",
+      "status": "interval ships through cbd9729 admin X-Robots + robots Disallow",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {

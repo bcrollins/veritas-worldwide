@@ -229,6 +229,21 @@
   Impact: search/category controls and forum title/link/body/poll-option inputs meet WCAG 2.5.5 target size.
   Resolution: tip `3e1f119`; pure floors Forum 57 / DeepState 17 (531 markers / 69 surfaces).
 
+
+## Recently Closed (2026-07-16 — anti-enum + admin noindex)
+
+- **Login email enumeration closed and live.**
+  Impact: missing accounts and wrong passwords both return `Invalid email or password.`; dummy bcrypt compare on misses equalizes timing.
+  Resolution: tip `3b9d2ed` 15-step green with auth smoke assert.
+
+- **Admin console de-indexed (robots + header).**
+  Impact: `Disallow: /admin` in robots.txt and `X-Robots-Tag: noindex, nofollow` on `/admin` SPA shell responses.
+  Resolution: tips `5423b8c` + `cbd9729`; live security-headers asserts admin tag.
+
+- **security.txt Cache-Control must-revalidate live.**
+  Impact: RFC 9116 updates revalidate within one hour.
+  Resolution: tip `f1def06`.
+
 ## External residual (2026-07-16)
 
 - **GitHub Actions runners are not allocating (jobs fail in ~2s with empty steps).**
