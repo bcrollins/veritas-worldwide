@@ -48,20 +48,21 @@ export default function StickyMembershipBar() {
           <div className="flex items-center gap-2 shrink-0">
             <Link
               to="/membership"
-              className="px-4 py-1.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-4 py-2 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
               onClick={() => trackSupportClick('sticky-bar')}
             >
               Join
             </Link>
             <button
+              type="button"
               onClick={() => {
                 setDismissed(true)
                 sessionStorage.setItem('veritas_sticky_dismissed', '1')
               }}
-              className="p-1.5 text-white/40 hover:text-white/80 transition-colors"
-              aria-label="Dismiss"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm text-white/40 hover:text-white/80 transition-colors"
+              aria-label="Dismiss membership bar"
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
