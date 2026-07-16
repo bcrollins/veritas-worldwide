@@ -9,6 +9,8 @@ import { registerBotMetaInjection } from './server-social-meta.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
+// Do not advertise Express in X-Powered-By (reduces fingerprinting noise).
+app.disable('x-powered-by')
 const PORT = process.env.PORT || 3000
 const RECORD_PDF_PATH = path.join(__dirname, 'dist', 'the-record.pdf')
 const INSTITUTE_FIELD_MANUAL_PDF_PATH = path.join(__dirname, 'dist', 'veritas-institute-field-manual.pdf')

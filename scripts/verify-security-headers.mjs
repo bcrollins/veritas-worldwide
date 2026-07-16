@@ -41,6 +41,13 @@ assert(commit && commit.length >= 7, `missing or short x-veritas-commit: ${commi
 const version = response.headers.get('x-veritas-version')
 assert(version, 'missing x-veritas-version')
 
+// Fingerprinting: Express should not advertise itself once disable('x-powered-by') ships.
+// Tolerate older deploys briefly only if env ALLOW_POWERED_BY=1 (local/debug).
+const poweredBy = response.headers.get('x-powered-by')
+if (process.env.ALLOW_POWERED_BY !== '1') {
+  assert(!poweredBy, `unexpected X-Powered-By: ${poweredBy}`)
+}
+
 // API health should also carry security headers
 const health = await fetch(`${baseUrl}/api/health`, {
   signal: AbortSignal.timeout(15_000),
@@ -48,7 +55,10 @@ const health = await fetch(`${baseUrl}/api/health`, {
 assert(health.ok, `health status ${health.status}`)
 assert(health.headers.get('x-content-type-options') === 'nosniff', 'health nosniff')
 assert(/max-age=/.test(health.headers.get('strict-transport-security') || ''), 'health HSTS')
+if (process.env.ALLOW_POWERED_BY !== '1') {
+  assert(!health.headers.get('x-powered-by'), 'health must not expose X-Powered-By')
+}
 
 console.log(
-  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}`,
+  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'}`,
 )
