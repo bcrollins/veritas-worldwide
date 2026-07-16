@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T08:44:15.362Z",
+  "checkedAt": "2026-07-16T08:46:31.338Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "d0e4eebf37a8734ee750df83c7ad2be5b3c8cf44",
-    "commitShort": "d0e4eebf37a8",
-    "deploymentId": "0d25a173-c0d9-4350-a80f-8177673a9f2e",
+    "commit": "7aac0d087092c4df0bb06179f47f09fcb2d326f8",
+    "commitShort": "7aac0d087092",
+    "deploymentId": "a0d58100-c6ba-48f6-880d-50db2a2d8e36",
     "environment": "production",
     "prerenderedRouteCount": 285
   },
@@ -121,7 +121,7 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=23"
+      "detail": "pinned=26"
     },
     {
       "ok": true,
@@ -141,7 +141,7 @@
     {
       "ok": true,
       "label": "Health history exposes uniqueReplicas array",
-      "detail": "uniqueReplicas=true count=50"
+      "detail": "uniqueReplicas=true count=58"
     },
     {
       "ok": true,
