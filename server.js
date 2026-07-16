@@ -741,10 +741,13 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '64kb' }))
 
 // ── Rate limiter (in-memory, zero dependencies) ──────────────────────
+// Keys are scoped per limiter name so analytics traffic cannot exhaust auth
+// budgets (and vice versa). Without a scope, all routes shared one IP counter.
 const rateLimitStore = new Map()
-function rateLimit({ windowMs = 60_000, max = 10, keyFn } = {}) {
+function rateLimit({ windowMs = 60_000, max = 10, keyFn, name = 'default' } = {}) {
   return (req, res, next) => {
-    const key = keyFn ? keyFn(req) : getClientIP(req)
+    const identity = keyFn ? keyFn(req) : getClientIP(req)
+    const key = `${name}:${identity || 'unknown'}`
     const now = Date.now()
     let entry = rateLimitStore.get(key)
     if (!entry || now - entry.start > windowMs) {
@@ -769,35 +772,35 @@ setInterval(() => {
 
 // Auth endpoints stay strict, but leave headroom for concurrent multi-agent smoke
 // verification without locking out legitimate readers for a full minute.
-app.use('/api/auth/login', rateLimit({ windowMs: 60_000, max: 20 }))
-app.use('/api/auth/register', rateLimit({ windowMs: 60_000, max: 24 }))
+app.use('/api/auth/login', rateLimit({ name: 'auth-login', windowMs: 60_000, max: 20 }))
+app.use('/api/auth/register', rateLimit({ name: 'auth-register', windowMs: 60_000, max: 24 }))
 // Session refresh is authenticated and low-risk; allow regular client heartbeat calls.
-app.use('/api/auth/refresh', rateLimit({ windowMs: 60_000, max: 30 }))
-app.use('/api/auth/logout', rateLimit({ windowMs: 60_000, max: 30 }))
+app.use('/api/auth/refresh', rateLimit({ name: 'auth-refresh', windowMs: 60_000, max: 30 }))
+app.use('/api/auth/logout', rateLimit({ name: 'auth-logout', windowMs: 60_000, max: 30 }))
 // Public search is read-heavy; cap abusive scrapers without hurting normal readers.
-app.use('/api/search', rateLimit({ windowMs: 60_000, max: 90 }))
+app.use('/api/search', rateLimit({ name: 'search', windowMs: 60_000, max: 90 }))
 // Chapter list/detail are the main content API — generous ceiling for readers.
-app.use('/api/chapters', rateLimit({ windowMs: 60_000, max: 120 }))
-app.use('/api/auth/me', rateLimit({ windowMs: 60_000, max: 60 }))
-app.use('/api/auth/status', rateLimit({ windowMs: 60_000, max: 60 }))
+app.use('/api/chapters', rateLimit({ name: 'chapters', windowMs: 60_000, max: 120 }))
+app.use('/api/auth/me', rateLimit({ name: 'auth-me', windowMs: 60_000, max: 60 }))
+app.use('/api/auth/status', rateLimit({ name: 'auth-status', windowMs: 60_000, max: 60 }))
 // Large PDF downloads — protect origin bandwidth (headroom for multi-agent verify).
-app.use('/api/downloads', rateLimit({ windowMs: 60_000, max: 90 }))
-app.use('/the-record.pdf', rateLimit({ windowMs: 60_000, max: 90 }))
-app.use('/veritas-institute-field-manual.pdf', rateLimit({ windowMs: 60_000, max: 90 }))
+app.use('/api/downloads', rateLimit({ name: 'downloads', windowMs: 60_000, max: 90 }))
+app.use('/the-record.pdf', rateLimit({ name: 'the-record-pdf', windowMs: 60_000, max: 90 }))
+app.use('/veritas-institute-field-manual.pdf', rateLimit({ name: 'field-manual-pdf', windowMs: 60_000, max: 90 }))
 // Password changes are authenticated but still brute-forceable on currentPassword.
-app.use('/api/user/change-password', rateLimit({ windowMs: 60_000, max: 10 }))
+app.use('/api/user/change-password', rateLimit({ name: 'change-password', windowMs: 60_000, max: 10 }))
 // Authenticated mutation endpoints — generous for UX, hard ceiling against abuse.
-app.use('/api/user/bookmarks', rateLimit({ windowMs: 60_000, max: 60 }))
-app.use('/api/user/progress', rateLimit({ windowMs: 60_000, max: 60 }))
-app.use('/api/user/preferences', rateLimit({ windowMs: 60_000, max: 30 }))
-app.use('/api/user/profile', rateLimit({ windowMs: 60_000, max: 20 }))
-app.use('/api/analytics/event', rateLimit({ windowMs: 60_000, max: 120 }))
-app.use('/api/analytics/pageview', rateLimit({ windowMs: 60_000, max: 120 }))
-app.use('/api/analytics/snapshot', rateLimit({ windowMs: 60_000, max: 60 }))
-app.use('/api/client-error', rateLimit({ windowMs: 60_000, max: 30 }))
+app.use('/api/user/bookmarks', rateLimit({ name: 'bookmarks', windowMs: 60_000, max: 60 }))
+app.use('/api/user/progress', rateLimit({ name: 'progress', windowMs: 60_000, max: 60 }))
+app.use('/api/user/preferences', rateLimit({ name: 'preferences', windowMs: 60_000, max: 30 }))
+app.use('/api/user/profile', rateLimit({ name: 'profile', windowMs: 60_000, max: 20 }))
+app.use('/api/analytics/event', rateLimit({ name: 'analytics-event', windowMs: 60_000, max: 120 }))
+app.use('/api/analytics/pageview', rateLimit({ name: 'analytics-pageview', windowMs: 60_000, max: 120 }))
+app.use('/api/analytics/snapshot', rateLimit({ name: 'analytics-snapshot', windowMs: 60_000, max: 60 }))
+app.use('/api/client-error', rateLimit({ name: 'client-error', windowMs: 60_000, max: 30 }))
 // Operator probes — keep readable under multi-agent verify fleets.
-app.use('/api/health/history', rateLimit({ windowMs: 60_000, max: 60 }))
-app.use('/api/build-info', rateLimit({ windowMs: 60_000, max: 60 }))
+app.use('/api/health/history', rateLimit({ name: 'health-history', windowMs: 60_000, max: 60 }))
+app.use('/api/build-info', rateLimit({ name: 'build-info', windowMs: 60_000, max: 60 }))
 
 // CORS — restrict to known origins
 const ALLOWED_ORIGINS = new Set([
