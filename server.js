@@ -619,6 +619,29 @@ function recordPageView(targetStore, { pagePath, title, now }) {
   }
 }
 
+// Sitewide popularity for search personalization without reader identity.
+// Only chapter routes; minimum views gate avoids cold-start noise.
+function getPopularChapterIdsFromAnalytics({ limit = 8, minViews = 3 } = {}) {
+  if (!store?.pages || typeof store.pages !== 'object') return []
+
+  const chapterIdFromPath = (pathValue) => {
+    if (typeof pathValue !== 'string') return ''
+    const match = pathValue.match(/^\/chapter\/(chapter-\d+|foreword|overview|epilogue)\/?$/i)
+    return match ? match[1].toLowerCase() : ''
+  }
+
+  return Object.values(store.pages)
+    .map((page) => {
+      const chapterId = chapterIdFromPath(page?.path || '')
+      const views = Number(page?.views) || 0
+      return chapterId && views >= minViews ? { chapterId, views } : null
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.views - a.views || a.chapterId.localeCompare(b.chapterId))
+    .slice(0, limit)
+    .map((row) => row.chapterId)
+}
+
 function recordSignupAttribution(targetStore, bucket, rawLabel, now, eventPath) {
   if (typeof rawLabel !== 'string') return
   const label = rawLabel.trim().slice(0, 160)
@@ -1132,6 +1155,7 @@ const { initializeDatabaseAndAnalytics } = registerDatabaseAndAuthRoutes({
     loadStoreFromDatabase,
     hasAnalyticsData,
     saveStoreToDatabase,
+    getPopularChapterIds: getPopularChapterIdsFromAnalytics,
   },
   recordPdfPath: RECORD_PDF_PATH,
   getClientIP,
@@ -1183,7 +1207,8 @@ app.get('/api/build-info', (req, res) => {
   })
 })
 
-const HEALTH_HISTORY_MAX = 48
+// 96 samples @ 15m floor ≈ 24h of routine probes, with force samples on deploys.
+const HEALTH_HISTORY_MAX = 96
 const HEALTH_HISTORY_MIN_INTERVAL_MS = 15 * 60 * 1000
 const HEALTH_HISTORY_STATE_KEY = 'health-history'
 // Prefer volume/data dir when configured; otherwise best-effort local data path on the replica.

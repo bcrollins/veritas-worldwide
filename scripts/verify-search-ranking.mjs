@@ -87,6 +87,29 @@ async function main() {
   } else {
     console.log('[verify:search] engagement boost skipped — chapter-9 not in federal reserve results')
   }
+
+  // Sitewide popularity filter is always echoed (may be empty on cold analytics).
+  assert(
+    Array.isArray(federal.data?.filters?.popularChapterIds),
+    'search response must expose popularChapterIds filter array from server analytics'
+  )
+  console.log(
+    `[verify:search] popularChapterIds=${(federal.data?.filters?.popularChapterIds || []).join(',') || '(none)'}`
+  )
+  // Results may carry popularityBoost boolean when analytics has chapter page views.
+  if ((federal.data?.filters?.popularChapterIds || []).length > 0) {
+    const popularId = federal.data.filters.popularChapterIds[0]
+    const popularHit = federalResults.find((row) => row.chapterId === popularId)
+    if (popularHit) {
+      assert(
+        typeof popularHit.popularityBoost === 'boolean',
+        'popular chapter hit should expose popularityBoost boolean'
+      )
+      console.log(
+        `[verify:search] popularityBoost on ${popularId}=${popularHit.popularityBoost} score=${popularHit.score}`
+      )
+    }
+  }
   // Title-bearing Fed chapters must still dominate even with a boost applied.
   assert(
     boostedResults[0].matchedIn?.includes('title') ||

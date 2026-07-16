@@ -129,12 +129,18 @@ export function registerDatabaseAndAuthRoutes({
       .map((id) => id.trim())
       .filter((id) => /^(chapter-\d+|foreword|overview|epilogue)$/.test(id))
       .slice(0, 12)
+    // Sitewide popularity from analytics page views — no cookies, no reader identity.
+    const popularChapterIds =
+      typeof analyticsStore.getPopularChapterIds === 'function'
+        ? analyticsStore.getPopularChapterIds({ limit: 8, minViews: 3 })
+        : []
     const scope = 'full'
     const filters = {
       evidenceTier: chapterHelpers.normalizeFilter(req.query.evidence, chapterHelpers.evidenceTierFilters),
       match: chapterHelpers.normalizeFilter(req.query.match, chapterHelpers.searchMatchFilters),
       chapterType: chapterHelpers.normalizeFilter(req.query.chapterType, chapterHelpers.chapterTypeFilters),
       recentChapterIds,
+      popularChapterIds,
     }
 
     const chapterDataManifest = chapterState.getChapterDataManifest()
@@ -146,7 +152,13 @@ export function registerDatabaseAndAuthRoutes({
       return res.json({
         query: '',
         scope,
-        filters,
+        filters: {
+          evidenceTier: filters.evidenceTier,
+          match: filters.match,
+          chapterType: filters.chapterType,
+          recentChapterIds,
+          popularChapterIds,
+        },
         totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
         results: [],
       })
@@ -160,6 +172,7 @@ export function registerDatabaseAndAuthRoutes({
         match: filters.match,
         chapterType: filters.chapterType,
         recentChapterIds,
+        popularChapterIds,
       },
       totalChapters: (chapterDataManifest.chapterIds || []).length || publicChapterIndex.length,
       results: chapterHelpers.searchChapters(scope, query, filters),

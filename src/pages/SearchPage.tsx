@@ -22,6 +22,7 @@ interface SearchResult {
   matchedIn: SearchMatchedField[]
   score?: number
   engagementBoost?: boolean
+  popularityBoost?: boolean
   snippet: string
   accessLevel: 'preview' | 'full'
   chapterType: ChapterType | null
@@ -772,6 +773,14 @@ export default function SearchPage() {
                             title="Boosted because you recently read this chapter"
                           >
                             Continue reading
+                          </span>
+                        )}
+                        {result.popularityBoost && !result.engagementBoost && (
+                          <span
+                            className="inline-flex items-center rounded-sm border border-border bg-parchment-dark px-2 py-0.5 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.1em] text-ink-muted"
+                            title="Slightly boosted from sitewide chapter readership (no personal identity)"
+                          >
+                            Widely read
                           </span>
                         )}
                       </div>

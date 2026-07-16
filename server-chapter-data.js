@@ -287,7 +287,12 @@ export function createChapterDataTools({ rootDir }) {
     content: 12,
   }
 
-  function scoreSearchMatch(matchedIn = [], chapter = {}, terms = [], recentBoost = false) {
+  function scoreSearchMatch(
+    matchedIn = [],
+    chapter = {},
+    terms = [],
+    { recentBoost = false, popularityBoost = false } = {}
+  ) {
     let score = matchedIn.reduce((sum, field) => sum + (SEARCH_FIELD_WEIGHTS[field] || 0), 0)
 
     const title = String(chapter.title || '').toLowerCase()
@@ -309,6 +314,12 @@ export function createChapterDataTools({ rootDir }) {
       score += 18
     }
 
+    // Smaller sitewide popularity boost from aggregate analytics (no reader identity).
+    // Strictly below personal engagement and far below title relevance.
+    if (popularityBoost && !recentBoost) {
+      score += 8
+    }
+
     return score
   }
 
@@ -322,6 +333,11 @@ export function createChapterDataTools({ rootDir }) {
     const recentBoostIds = new Set(
       Array.isArray(filters.recentChapterIds)
         ? filters.recentChapterIds.filter((id) => typeof id === 'string' && id.length > 0)
+        : []
+    )
+    const popularBoostIds = new Set(
+      Array.isArray(filters.popularChapterIds)
+        ? filters.popularChapterIds.filter((id) => typeof id === 'string' && id.length > 0)
         : []
     )
 
@@ -352,7 +368,8 @@ export function createChapterDataTools({ rootDir }) {
         }
 
         const recentBoost = recentBoostIds.has(chapter.id)
-        const score = scoreSearchMatch(matchedIn, chapter, terms, recentBoost)
+        const popularityBoost = popularBoostIds.has(chapter.id)
+        const score = scoreSearchMatch(matchedIn, chapter, terms, { recentBoost, popularityBoost })
 
         return {
           chapterId: chapter.id,
@@ -366,6 +383,7 @@ export function createChapterDataTools({ rootDir }) {
           matchedIn,
           score,
           engagementBoost: recentBoost,
+          popularityBoost: popularityBoost && !recentBoost,
           snippet: getSearchSnippet(chapter, terms),
         }
       })

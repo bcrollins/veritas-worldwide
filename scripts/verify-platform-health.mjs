@@ -284,6 +284,20 @@ const healthResult = await fetchJson('/api/health')
         'Health history exposes commit transition fields',
         `commitTransitions=${Array.isArray(healthHistory.commitTransitions)} uniqueCommits=${Array.isArray(healthHistory.uniqueCommits)}`
       )
+      addCheck(
+        checks,
+        failures,
+        Array.isArray(healthHistory.uniqueReplicas),
+        'Health history exposes uniqueReplicas array',
+        `uniqueReplicas=${Array.isArray(healthHistory.uniqueReplicas)} count=${Array.isArray(healthHistory.uniqueReplicas) ? healthHistory.uniqueReplicas.length : 0}`
+      )
+      addCheck(
+        checks,
+        failures,
+        Number(healthHistory.maxSamples || 0) >= 96,
+        'Health history max samples supports multi-day retention',
+        `maxSamples=${healthHistory.maxSamples}`
+      )
       const healthHistoryStorage = typeof healthHistory.storage === 'string' ? healthHistory.storage : ''
       const knownStorage = ['shared-database', 'configured-data-dir', 'replica-local-data-dir']
       addCheck(
