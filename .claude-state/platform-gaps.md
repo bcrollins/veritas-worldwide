@@ -166,3 +166,12 @@
 - **verify:live is now 13 steps**: + a11y floors + security-headers + server-security-invariants.
 - **Admin + public + footer 44px wave complete** with pure floors (40 surfaces / 313 markers).
 
+## Recently Closed (2026-07-16 — wave 2)
+
+- **Home TOC nested-link bug fixed.** Keyword topic chips no longer nest inside chapter Links; pure `verify:home-toc-structure` locks the invariant.
+- **X-Permitted-Cross-Domain-Policies: none** live with pure+live header suites (7 baseline headers).
+- **Residual sub-44 min-h (40/42) eliminated** on news/article/chapter/dossier; pure ban on 30–43px tokens for core pages.
+- **AIPAC diagram + Bernie show** interactive controls 44px.
+- **Institute footer** 44px columns.
+- **verify:live = 14 steps** (a11y floors, security-headers, server invariants, home-toc).
+
