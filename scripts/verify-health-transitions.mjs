@@ -113,4 +113,31 @@ assert(getHealthHistoryStorageLabel({ hasDb: true, hasDataDir: false }) === 'sha
 assert(getHealthHistoryStorageLabel({ hasDb: false, hasDataDir: true }) === 'configured-data-dir', 'volume storage label')
 assert(getHealthHistoryStorageLabel({ hasDb: false, hasDataDir: false }) === 'replica-local-data-dir', 'local storage label')
 
+function parseSentryDsn(dsn) {
+  if (!dsn || typeof dsn !== 'string') return null
+  try {
+    const url = new URL(dsn)
+    const publicKey = url.username
+    const projectId = url.pathname.replace(/^\//, '').split('/')[0]
+    if (!publicKey || !projectId) return null
+    return {
+      publicKey,
+      projectId,
+      storeUrl: `${url.protocol}//${url.host}/api/${projectId}/store/`,
+    }
+  } catch {
+    return null
+  }
+}
+
+const sentryOk = parseSentryDsn('https://abc123@o999.ingest.sentry.io/12345')
+assert(sentryOk && sentryOk.publicKey === 'abc123' && sentryOk.projectId === '12345', 'sentry dsn parse publicKey/project')
+assert(
+  sentryOk.storeUrl === 'https://o999.ingest.sentry.io/api/12345/store/',
+  `sentry store url wrong: ${sentryOk.storeUrl}`
+)
+assert(parseSentryDsn('') === null, 'empty sentry dsn should be null')
+assert(parseSentryDsn('not-a-url') === null, 'invalid sentry dsn should be null')
+assert(parseSentryDsn('https://@host/1') === null, 'missing key sentry dsn should be null')
+
 console.log('[verify:health-transitions] PASS')
