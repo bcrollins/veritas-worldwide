@@ -197,3 +197,20 @@
 - **PDF download rate limits** (Record + Field Manual) at 90/min with multi-agent headroom.
 - **Residual public 44px** forum flair/awards, dossier carousel, deep-state, profiles, sources, Bernie, Read paths; pure bans expanded; 460 markers / 52 surfaces.
 
+## Recently Closed (2026-07-16 — deploy + security ocean)
+
+- **Railway postbuild restored after engines.node floor regression.**
+  Impact: every deploy after `b8d840e` failed on `node: bad option: --experimental-strip-types` because railpack selected Node 20.20.2 for `engines.node: >=20`.
+  Resolution: require `>=22.6.0`, pin `.node-version` 22.14.0, route PDF/TS scripts through `run-with-strip-types.mjs`. Live tip `1626660` SUCCESS + 15-step green.
+
+- **CORP same-site + DNS-prefetch off + RateLimit headers live.**
+  Impact: cross-site resource isolation, no opportunistic third-party DNS prefetch, clients see limiter budgets.
+  Resolution: Express security middleware + rateLimit header emission; pure + live header suites (11 baseline).
+
+- **Synthetic client-error probes no longer pollute operator counters.**
+  Impact: platform-health probes return 204 without incrementing intake count, lastMessage, NDJSON, or Sentry.
+  Resolution: early return for `platform-health probe` / `verify:platform` source.
+
+- **Public a11y floors expanded to conversion surfaces.**
+  Impact: MethodologyPage, DownloadModal, DonationBanner, DisputeStory, ContentGate, ExitIntent, NewsletterSignup floor-gated; residual floors raised toward measured counts (60 surfaces / 506 markers).
+

@@ -1,5 +1,5 @@
 {
-  "run": 109,
+  "run": 110,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.37,
-      "previous": 9.33,
-      "delta": 0.04,
-      "status": "HEAD 9ab05c5 15-step; trust proxy; rate-limit isolation; dual security.txt; 460 a11y",
+      "composite": 9.42,
+      "previous": 9.37,
+      "delta": 0.05,
+      "status": "HEAD 1626660 15-step; CORP same-site; DNS-prefetch off; RateLimit headers; probe-clean client-error; 60 a11y/506",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "HEAD 9ab05c5 15-step; trust proxy; rate-limit isolation; dual security.txt; 460 a11y",
+      "status": "HEAD 1626660 15-step; RateLimit headers on auth; trust proxy; dual security.txt",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 9ab05c5 family live 15-step; rate-limit isolation; 53 a11y surfaces/471 markers; scorecard 109",
+      "status": "product tip 1626660 live 15-step; deploy pipeline restored (Node 22.6+); 60 a11y/506 markers; scorecard 110",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -84,10 +84,10 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.97,
-      "previous": 9.95,
+      "composite": 9.99,
+      "previous": 9.97,
       "delta": 0.02,
-      "status": "pg 8.22 + react/vite patches live; 0 vulns",
+      "status": "Railway deploy restored: engines>=22.6 + strip-types runner; tip 1626660 SUCCESS",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
