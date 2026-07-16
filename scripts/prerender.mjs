@@ -878,6 +878,8 @@ function renderLlmsTxt(topics) {
     '## Optional',
     '',
     '- [Home](https://veritasworldwide.com/): Publication front page.',
+    '- [About](https://veritasworldwide.com/about): Publication model, evidence labels, and reader funding.',
+    '- [Accessibility](https://veritasworldwide.com/accessibility): WCAG targets, contrast, and touch-target standards.',
     '- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.',
     '- [Profiles](https://veritasworldwide.com/profiles): Source-driven profiles of institutional actors.',
   ].join('\n')
