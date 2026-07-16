@@ -1,5 +1,5 @@
 {
-  "run": 79,
+  "run": 80,
   "date": "2026-07-16",
   "site": [
     {
@@ -36,10 +36,10 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.99,
-      "previous": 9.97,
-      "delta": 0.02,
-      "status": "admin login 44px; a11y floors 32 surfaces; tip 6520515 pending",
+      "composite": 9.999,
+      "previous": 9.99,
+      "delta": 0.009,
+      "status": "Permissions-Policy tightened; security suite live tip 7c9601e",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -69,9 +69,9 @@
     {
       "feature": "Publication Shell",
       "composite": 9.999,
-      "previous": 9.95,
-      "delta": 0.049,
-      "status": "HEAD 8110244 live 12-step green; sort headers 44px; 39 a11y surfaces",
+      "previous": 9.999,
+      "delta": 0,
+      "status": "HEAD 7c9601e 12-step green; Permissions-Policy payment/usb/FLoC off",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
