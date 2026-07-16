@@ -49,6 +49,7 @@ const floors = [
   { path: 'src/pages/PrivacyPage.tsx', min: 5, label: 'privacy sidebar' },
   { path: 'src/pages/BookmarksPage.tsx', min: 8, label: 'bookmarks shell' },
   { path: 'src/pages/TimelinePage.tsx', min: 6, label: 'timeline shell' },
+  { path: 'src/App.tsx', min: 12, label: 'site shell header/nav' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
