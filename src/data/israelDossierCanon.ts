@@ -252,6 +252,18 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     archiveUrl: 'https://web.archive.org/web/20260520163824/https://www.unrwa.org/',
     status: 'Pinned Wayback snapshot 20260520163824 host landing for UNRWA fallback.',
   },
+  'https://www.btselem.org/gaza_strip': {
+    archiveUrl: 'https://web.archive.org/web/20260618123110/https://www.btselem.org/gaza_strip',
+    status: 'Pinned Wayback snapshot 20260618123110; primary host may block automated probes.',
+  },
+  'https://reliefweb.int/': {
+    archiveUrl: 'https://web.archive.org/web/20260707144848/https://reliefweb.int/',
+    status: 'Pinned Wayback snapshot 20260707144848 host landing for ReliefWeb fallback.',
+  },
+  'https://www.hrw.org/': {
+    archiveUrl: 'https://web.archive.org/web/20260714040613/https://www.hrw.org/',
+    status: 'Pinned Wayback snapshot 20260714040613 host landing for HRW fallback.',
+  },
 }
 
 const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>
