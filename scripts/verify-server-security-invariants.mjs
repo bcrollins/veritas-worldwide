@@ -54,6 +54,10 @@ assert(server.includes('Cross-Origin-Resource-Policy'), 'Cross-Origin-Resource-P
 assert(server.includes("'same-site'") || server.includes('"same-site"') || server.includes('same-site'), 'CORP value same-site')
 assert(server.includes('X-DNS-Prefetch-Control'), 'X-DNS-Prefetch-Control set')
 assert(server.includes("'off'") || server.includes('"off"'), 'DNS prefetch control off')
+assert(
+  (server.match(/no-cache, no-store, must-revalidate/g) || []).length >= 2,
+  'HTML/SPA shell Cache-Control must force revalidation (no-store)',
+)
 assert(server.includes('RateLimit-Limit'), 'rateLimit emits RateLimit-Limit header')
 assert(server.includes('RateLimit-Remaining'), 'rateLimit emits RateLimit-Remaining header')
 assert(server.includes('RateLimit-Reset'), 'rateLimit emits RateLimit-Reset header')
