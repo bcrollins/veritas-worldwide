@@ -224,8 +224,8 @@ function PostCard({ post, onOpen, onVote, onSave, userId, compact }: {
           {/* Action bar */}
           <div className="flex items-center gap-4 text-xs text-ink-muted">
             <span className="flex items-center gap-1 hover:text-ink transition-colors"><CommentIcon /> {formatNumber(post.commentCount)} comments</span>
-            <button onClick={e => { e.stopPropagation(); onSave(post.id) }} className={`flex items-center gap-1 hover:text-crimson transition-colors ${isSaved ? 'text-crimson' : ''}`}><BookmarkIcon filled={isSaved} /> {isSaved ? 'Saved' : 'Save'}</button>
-            <button className="flex items-center gap-1 hover:text-ink transition-colors"><ShareIcon /> Share</button>
+            <button onClick={e => { e.stopPropagation(); onSave(post.id) }} className={`inline-flex min-h-[44px] items-center gap-1.5 hover:text-crimson transition-colors ${isSaved ? 'text-crimson' : ''}`}><BookmarkIcon filled={isSaved} /> {isSaved ? 'Saved' : 'Save'}</button>
+            <button className="inline-flex min-h-[44px] items-center gap-1.5 hover:text-ink transition-colors"><ShareIcon /> Share</button>
             {totalAwards > 0 && <span className="flex items-center gap-1"><AwardIcon /> {totalAwards}</span>}
           </div>
         </div>
@@ -295,15 +295,15 @@ function CommentThread({ comment, allComments, postId, depth, onVote, onReply, o
             {/* Actions */}
             <div className="flex items-center gap-3 ml-7 text-xs text-ink-muted">
               <div className="flex items-center gap-1">
-                <button onClick={() => onVote(comment.id, hasUpvoted ? null : 'up')} className="p-0.5"><UpArrow active={hasUpvoted} /></button>
+                <button onClick={() => onVote(comment.id, hasUpvoted ? null : 'up')} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center" aria-label="Upvote comment"><UpArrow active={hasUpvoted} /></button>
                 <span className={`font-mono font-bold min-w-[1.5rem] text-center ${score > 0 ? 'text-crimson' : score < 0 ? 'text-blue-600' : ''}`}>{formatNumber(score)}</span>
-                <button onClick={() => onVote(comment.id, hasDownvoted ? null : 'down')} className="p-0.5"><DownArrow active={hasDownvoted} /></button>
+                <button onClick={() => onVote(comment.id, hasDownvoted ? null : 'down')} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center" aria-label="Downvote comment"><DownArrow active={hasDownvoted} /></button>
               </div>
               {userId && depth < maxDepth && (
-                <button onClick={() => setShowReply(!showReply)} className="font-sans font-semibold hover:text-crimson transition-colors">Reply</button>
+                <button onClick={() => setShowReply(!showReply)} className="inline-flex min-h-[44px] items-center font-sans font-semibold hover:text-crimson transition-colors">Reply</button>
               )}
-              <button className="hover:text-ink transition-colors">Share</button>
-              <button onClick={() => onReport(comment)} className="hover:text-ink transition-colors flex items-center gap-1"><ReportIcon /> Report</button>
+              <button className="inline-flex min-h-[44px] items-center hover:text-ink transition-colors">Share</button>
+              <button onClick={() => onReport(comment)} className="inline-flex min-h-[44px] items-center gap-1.5 hover:text-ink transition-colors"><ReportIcon /> Report</button>
             </div>
 
             {/* Reply composer */}
@@ -432,7 +432,7 @@ function PostDetail({ post, onBack, userId, actorLabel, onPostChange, onRequireA
   return (
     <div className="w-full">
       {/* Back nav */}
-      <button onClick={onBack} className="flex items-center gap-2 text-sm text-ink-muted hover:text-crimson mb-4 font-sans">
+      <button onClick={onBack} className="inline-flex min-h-[44px] items-center gap-2 text-sm text-ink-muted hover:text-crimson mb-4 font-sans">
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
         Back to {community?.displayName || 'feed'}
       </button>
@@ -503,15 +503,15 @@ function PostDetail({ post, onBack, userId, actorLabel, onPostChange, onRequireA
             {/* Action bar */}
             <div className="flex items-center gap-4 pt-3 border-t border-border text-xs text-ink-muted">
               <div className="flex items-center gap-1">
-                <button onClick={() => handlePostVote('up')} className="p-1"><UpArrow active={hasUpvoted} /></button>
+                <button onClick={() => handlePostVote('up')} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center" aria-label="Upvote"><UpArrow active={hasUpvoted} /></button>
                 <span className={`font-mono font-bold ${score > 0 ? 'text-crimson' : score < 0 ? 'text-blue-600' : ''}`}>{formatNumber(score)}</span>
-                <button onClick={() => handlePostVote('down')} className="p-1"><DownArrow active={hasDownvoted} /></button>
+                <button onClick={() => handlePostVote('down')} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center" aria-label="Downvote"><DownArrow active={hasDownvoted} /></button>
               </div>
               <span className="flex items-center gap-1"><CommentIcon /> {comments.filter(c => !c.deleted).length} comments</span>
-              <button onClick={handlePostSave} className={`flex items-center gap-1 hover:text-crimson ${isSaved ? 'text-crimson' : ''}`}><BookmarkIcon filled={isSaved} /> {isSaved ? 'Saved' : 'Save'}</button>
-              <button className="flex items-center gap-1 hover:text-ink"><ShareIcon /> Share</button>
-              <button onClick={() => setShowAwardModal(true)} className="flex items-center gap-1 hover:text-yellow-600"><AwardIcon /> Award</button>
-              <button onClick={() => openReport('post', post.id, 'this thread')} className="flex items-center gap-1 hover:text-red-600"><ReportIcon /> Report</button>
+              <button onClick={handlePostSave} className={`inline-flex min-h-[44px] items-center gap-1.5 hover:text-crimson ${isSaved ? 'text-crimson' : ''}`}><BookmarkIcon filled={isSaved} /> {isSaved ? 'Saved' : 'Save'}</button>
+              <button className="inline-flex min-h-[44px] items-center gap-1.5 hover:text-ink"><ShareIcon /> Share</button>
+              <button onClick={() => setShowAwardModal(true)} className="inline-flex min-h-[44px] items-center gap-1.5 hover:text-yellow-600"><AwardIcon /> Award</button>
+              <button onClick={() => openReport('post', post.id, 'this thread')} className="inline-flex min-h-[44px] items-center gap-1.5 hover:text-red-600"><ReportIcon /> Report</button>
             </div>
             {statusMessage && (
               <p className="mt-3 rounded border border-border bg-white px-3 py-2 font-sans text-xs leading-relaxed text-ink-muted">{statusMessage}</p>
@@ -694,7 +694,7 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
       <div className="bg-parchment w-full max-w-3xl rounded shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between px-6 py-4 border-b border-border">
           <h2 className="font-display text-lg font-bold text-ink">Create a Post</h2>
-          <button onClick={onClose} className="p-1 hover:bg-ink/5 rounded"><CloseIcon /></button>
+          <button onClick={onClose} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center hover:bg-ink/5 rounded" aria-label="Close"><CloseIcon /></button>
         </div>
 
         <div className="p-6 space-y-4">
@@ -789,7 +789,7 @@ function AwardModal({ onClose, onSubmit }: {
             <h2 className="font-display text-lg font-bold text-ink">Add Local Appreciation</h2>
             <p className="mt-1 font-sans text-xs text-ink-faint">Saved on this device only while shared identity and karma rules are still in beta.</p>
           </div>
-          <button onClick={onClose} className="p-1 hover:bg-ink/5 rounded"><CloseIcon /></button>
+          <button onClick={onClose} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center hover:bg-ink/5 rounded" aria-label="Close"><CloseIcon /></button>
         </div>
 
         <div className="p-6 space-y-4">
@@ -846,7 +846,7 @@ function ReportModal({ target, onClose, onSubmit }: {
             <h2 className="font-display text-lg font-bold text-ink">Submit Local Report</h2>
             <p className="mt-1 font-sans text-xs text-ink-faint">{target.label}</p>
           </div>
-          <button onClick={onClose} className="p-1 hover:bg-ink/5 rounded"><CloseIcon /></button>
+          <button onClick={onClose} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center hover:bg-ink/5 rounded" aria-label="Close"><CloseIcon /></button>
         </div>
 
         <div className="p-6 space-y-4">

@@ -194,11 +194,11 @@ function CommentThread({ comment, allComments, pageId, depth, onUpdate }: {
       <div className="flex gap-2 py-3">
         {/* Vote Column */}
         <div className="flex flex-col items-center gap-0.5 pt-0.5">
-          <button onClick={() => handleVote('up')} className={`p-0.5 rounded hover:bg-crimson/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''}`} disabled={!user} aria-label="Upvote">
+          <button onClick={() => handleVote('up')} className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded hover:bg-crimson/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''}`} disabled={!user} aria-label="Upvote">
             <UpIcon active={hasUpvoted} />
           </button>
           <span className={`font-mono text-[0.65rem] font-bold min-w-[1.5rem] text-center ${score > 0 ? 'text-crimson' : score < 0 ? 'text-blue-600' : 'text-ink-faint'}`}>{score}</span>
-          <button onClick={() => handleVote('down')} className={`p-0.5 rounded hover:bg-blue-600/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''}`} disabled={!user} aria-label="Downvote">
+          <button onClick={() => handleVote('down')} className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded hover:bg-blue-600/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''}`} disabled={!user} aria-label="Downvote">
             <DownIcon active={hasDownvoted} />
           </button>
         </div>
@@ -215,7 +215,7 @@ function CommentThread({ comment, allComments, pageId, depth, onUpdate }: {
           </div>
 
           {collapsed ? (
-            <button onClick={() => setCollapsed(false)} className="font-sans text-xs text-ink-faint hover:text-ink mt-1">
+            <button onClick={() => setCollapsed(false)} className="inline-flex min-h-[44px] items-center font-sans text-xs text-ink-faint hover:text-ink mt-1">
               [{replies.length} repl{replies.length === 1 ? 'y' : 'ies'} hidden — click to expand]
             </button>
           ) : (
@@ -223,12 +223,12 @@ function CommentThread({ comment, allComments, pageId, depth, onUpdate }: {
               <p className="font-body text-sm text-ink leading-relaxed mt-1.5 whitespace-pre-wrap break-words">{comment.content}</p>
               <div className="flex items-center gap-3 mt-2">
                 {user && depth < maxDepth && (
-                  <button onClick={() => setShowReply(!showReply)} className="inline-flex items-center gap-1 font-sans text-[0.6rem] font-semibold text-ink-muted hover:text-crimson uppercase tracking-wider transition-colors">
+                  <button onClick={() => setShowReply(!showReply)} className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.6rem] font-semibold text-ink-muted hover:text-crimson uppercase tracking-wider transition-colors">
                     <ReplyIcon /> Reply
                   </button>
                 )}
                 {replies.length > 0 && (
-                  <button onClick={() => setCollapsed(true)} className="font-sans text-[0.6rem] text-ink-faint hover:text-ink uppercase tracking-wider">
+                  <button onClick={() => setCollapsed(true)} className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] text-ink-faint hover:text-ink uppercase tracking-wider">
                     Collapse
                   </button>
                 )}

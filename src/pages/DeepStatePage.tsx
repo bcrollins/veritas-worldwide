@@ -488,7 +488,7 @@ function PersonCard({ person, onSelect, isSelected }: { person: Person; onSelect
                     <span className="font-mono text-[0.6rem] text-ink-faint">{ev.date}</span>
                   </div>
                   <p className="font-body text-xs text-ink leading-relaxed mb-1.5">{ev.text}</p>
-                  <a href={ev.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-sans text-[0.6rem] text-crimson hover:text-crimson-dark transition-colors font-semibold tracking-wide uppercase">
+                  <a href={ev.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.6rem] text-crimson hover:text-crimson-dark transition-colors font-semibold tracking-wide uppercase">
                     <IconDocument className="w-3 h-3" /> {ev.source}
                   </a>
                 </div>

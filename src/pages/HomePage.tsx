@@ -254,7 +254,7 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="mt-6">
-                <Link to="/topics" className="font-sans text-xs font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors">
+                <Link to="/topics" className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors">
                   Browse all research topics &rarr;
                 </Link>
               </div>
@@ -485,10 +485,10 @@ export default function HomePage() {
                   The Record is a 32-part documentary archive compiled from public archives, court records, and declassified documents. Every claim is sourced and evidence-classified.
                 </p>
                 <div className="flex flex-col gap-2">
-                  <Link to="/methodology" className="font-sans text-xs font-semibold text-crimson hover:text-crimson-dark transition-colors">
+                  <Link to="/methodology" className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold text-crimson hover:text-crimson-dark transition-colors">
                     → Methodology
                   </Link>
-                  <Link to="/chapter/foreword" className="font-sans text-xs font-semibold text-crimson hover:text-crimson-dark transition-colors">
+                  <Link to="/chapter/foreword" className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold text-crimson hover:text-crimson-dark transition-colors">
                     → Read the Foreword
                   </Link>
                 </div>

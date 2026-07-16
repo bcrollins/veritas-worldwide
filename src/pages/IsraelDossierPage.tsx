@@ -89,7 +89,7 @@ function InteractiveStatCard({ stat, meta }: { stat: DossierStatCard; meta: Doss
           href={stat.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 font-sans text-[0.6rem] font-semibold tracking-wide uppercase hover:underline transition-colors text-crimson hover:text-crimson-dark"
+          className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.6rem] font-semibold tracking-wide uppercase hover:underline transition-colors text-crimson hover:text-crimson-dark"
           onClick={e => e.stopPropagation()}
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -108,7 +108,7 @@ function InteractiveStatCard({ stat, meta }: { stat: DossierStatCard; meta: Doss
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase mb-1 text-ink">{d.title}</p>
               <p className="font-body text-xs text-ink leading-relaxed">{d.text}</p>
               {d.sourceUrl && (
-                <a href={d.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-1 font-sans text-[0.55rem] hover:underline text-crimson hover:text-crimson-dark">
+                <a href={d.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 mt-1 font-sans text-[0.55rem] hover:underline text-crimson hover:text-crimson-dark">
                   <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   View source
                 </a>
@@ -156,7 +156,7 @@ function MoneyTrailCard({ node }: { node: DossierMoneyTrailNode }) {
           <p className="font-sans text-sm font-semibold text-ink mt-1">{node.label}</p>
           <p className="font-sans text-[0.6rem] text-ink-faint mt-0.5">{node.date}</p>
           <p className="font-body text-xs text-ink-muted leading-relaxed mt-2">{node.detail}</p>
-          <a href={node.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 font-sans text-[0.6rem] font-semibold hover:underline text-crimson hover:text-crimson-dark" onClick={e => e.stopPropagation()}>
+          <a href={node.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 mt-2 font-sans text-[0.6rem] font-semibold hover:underline text-crimson hover:text-crimson-dark" onClick={e => e.stopPropagation()}>
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             Source
           </a>
@@ -842,7 +842,7 @@ export default function IsraelDossierPage() {
                       </div>
                       <h3 className="font-sans text-sm font-bold text-ink mb-1">{event.title}</h3>
                       <p className="font-body text-xs text-ink-muted leading-relaxed">{event.description}</p>
-                      <a href={event.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline transition-colors">
+                      <a href={event.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 mt-2 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline transition-colors">
                         <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                         {event.source}
                       </a>
@@ -943,7 +943,7 @@ export default function IsraelDossierPage() {
                   <p className="font-body text-xs text-ink-muted mt-1">Recipients: {record.recipients}</p>
                   {record.note && <p className="font-body text-xs text-ink-muted italic mt-1">{record.note}</p>}
                 </div>
-                <a href={record.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline flex-shrink-0">
+                <a href={record.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline flex-shrink-0">
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   {record.source}
                 </a>
@@ -966,7 +966,7 @@ export default function IsraelDossierPage() {
               <h4 className="font-sans text-sm font-bold text-ink mb-1">{legalCase.title}</h4>
               <p className="font-body text-xs text-ink-muted leading-relaxed mb-1">{legalCase.ruling}</p>
               <p className="font-body text-xs text-ink-muted italic leading-relaxed mb-2">{legalCase.significance}</p>
-              <a href={legalCase.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline">
+              <a href={legalCase.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline">
                 <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                 View ruling
               </a>
@@ -1010,7 +1010,7 @@ export default function IsraelDossierPage() {
                       <p className="font-body text-xs text-ink-muted leading-relaxed">{d.text}</p>
                     </div>
                   ))}
-                  <a href={stat.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline">
+                  <a href={stat.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-1.5 mt-2 font-sans text-[0.55rem] font-semibold text-crimson hover:text-crimson-dark hover:underline">
                     <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     {stat.source}
                   </a>

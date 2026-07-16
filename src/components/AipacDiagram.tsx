@@ -149,7 +149,7 @@ function MemberPopup({ member, onClose }: { member: CongressMember; onClose: () 
                 </span>
               )}
             </div>
-            <button onClick={onClose} className="text-ink-faint hover:text-ink transition-colors p-1 shrink-0" aria-label="Close">
+            <button onClick={onClose} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors shrink-0" aria-label="Close">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
