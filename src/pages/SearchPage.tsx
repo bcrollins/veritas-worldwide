@@ -708,7 +708,7 @@ export default function SearchPage() {
                   No results found for &ldquo;{debouncedQuery}&rdquo;
                 </p>
                 <p className="font-sans text-sm text-ink-faint mb-4">
-                  Try different keywords or browse the <Link to="/" className="text-crimson hover:underline">table of contents</Link>.
+                  Try different keywords or browse the <Link to="/" className="inline-flex min-h-[44px] items-center text-crimson hover:underline">table of contents</Link>.
                 </p>
                 {hasActiveFilters && (
                   <button
