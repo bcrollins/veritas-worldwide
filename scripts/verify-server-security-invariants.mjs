@@ -134,6 +134,16 @@ assert(
     server.includes('name: "search", windowMs: 60_000, max: 90'),
   'search rateLimit must allow 90/min reader headroom',
 )
+assert(
+  server.includes("name: 'client-error', windowMs: 60_000, max: 30") ||
+    server.includes('name: "client-error", windowMs: 60_000, max: 30'),
+  'client-error rateLimit must stay at 30/min',
+)
+assert(
+  server.includes("name: 'auth-register', windowMs: 60_000, max: 24") ||
+    server.includes('name: "auth-register", windowMs: 60_000, max: 24'),
+  'auth-register rateLimit must stay at 24/min',
+)
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
 assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
