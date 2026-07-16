@@ -1,5 +1,5 @@
 {
-  "run": 192,
+  "run": 193,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "password floor 8 + anti-enumeration login live; tip 3b9d2ed 15-step",
+      "status": "login+register anti-enum live; tip 3cadc01 15-step",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {

@@ -173,6 +173,27 @@ async function main() {
   assert(registerResult.response.status === 201, `Register failed with ${registerResult.response.status}`)
   assert(typeof registerResult.data?.token === 'string' && registerResult.data.token.length > 20, 'Register did not return a usable token')
   const token = registerResult.data.token
+
+  // Negative path: re-register same email must not confirm "already exists".
+  const dupRegister = await requestJsonWithRetry('/api/auth/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password, displayName }),
+  }, { retries: 6 })
+  assert(
+    dupRegister.response.status === 409 || dupRegister.response.status === 400,
+    `Expected duplicate register 409/400, received ${dupRegister.response.status}`,
+  )
+  assert(!dupRegister.data?.token, 'Duplicate register must not return a token')
+  assert(
+    !/already exists/i.test(String(dupRegister.data?.error || '')),
+    `Duplicate register must not confirm email existence (got: ${dupRegister.data?.error})`,
+  )
+  assert(
+    /unable to complete registration|try signing in/i.test(String(dupRegister.data?.error || '')),
+    `Duplicate register should use generic copy (got: ${dupRegister.data?.error})`,
+  )
+  logStep('Duplicate-email register rejected without existence confirmation')
   logStep('Disposable reader account created', email)
 
   const meResult = await requestJson('/api/auth/me', {
