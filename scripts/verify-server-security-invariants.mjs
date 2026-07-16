@@ -154,6 +154,13 @@ for (const field of ['Policy', 'Hiring', 'Canonical']) {
   assert(fb && pub, `${field} present in fallback and public security.txt`)
   assert(fb[1] === pub[1], `SECURITY_TXT_FALLBACK ${field} must match public/.well-known`)
 }
+const fallbackContacts = (server.match(/Contact:/g) || []).length
+const publicContacts = (publicSecurity.match(/Contact:/g) || []).length
+assert(fallbackContacts >= 2 && publicContacts >= 2, 'security.txt must list at least two Contact lines')
+assert(
+  fallbackContacts === publicContacts,
+  `SECURITY_TXT_FALLBACK Contact count (${fallbackContacts}) must match public (${publicContacts})`,
+)
 
 // Change-password validation mirrors register/login max length floor
 assert(serverAuth.includes('change-password'), 'change-password route present in server-auth')
