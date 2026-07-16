@@ -434,7 +434,7 @@ function EpisodeCard({ ep }: { ep: Episode }) {
   const formatColor = { solo: 'bg-amber-500/20 text-amber-400', guest: 'bg-blue-500/20 text-blue-400', 'call-in': 'bg-emerald-500/20 text-emerald-400' }
   return (
     <div className="border border-neutral-800 rounded-xl overflow-hidden hover:border-amber-500/30 transition-colors bg-neutral-900/50">
-      <button onClick={() => setOpen(!open)} className="w-full text-left p-6 flex items-start gap-4">
+      <button onClick={() => setOpen(!open)} className="w-full min-h-[44px] text-left p-6 flex items-start gap-4">
         <span className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-black text-lg">
           {ep.number}
         </span>

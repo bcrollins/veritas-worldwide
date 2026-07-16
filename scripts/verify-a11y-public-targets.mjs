@@ -34,7 +34,7 @@ const floors = [
   { path: 'src/components/Breadcrumb.tsx', min: 1, label: 'breadcrumb' },
   { path: 'src/components/ErrorBoundary.tsx', min: 2, label: 'error recovery' },
   { path: 'src/components/DossierCarousel.tsx', min: 2, label: 'dossier carousel downloads' },
-  { path: 'src/pages/ReadTheBookPage.tsx', min: 10, label: 'read reader chrome' },
+  { path: 'src/pages/ReadTheBookPage.tsx', min: 12, label: 'read reader chrome' },
   { path: 'src/pages/AboutPage.tsx', min: 7, label: 'about key routes' },
   { path: 'src/pages/ProfilePage.tsx', min: 6, label: 'profile sources/nav' },
   { path: 'src/pages/admin/AdminLayout.tsx', min: 4, label: 'admin shell nav' },
@@ -62,7 +62,7 @@ const floors = [
   { path: 'src/components/institute/InstituteLayout.tsx', min: 8, label: 'institute footer nav' },
   { path: 'src/pages/SubscribeSuccessPage.tsx', min: 3, label: 'subscribe success CTAs' },
   { path: 'src/components/AipacDiagram.tsx', min: 6, label: 'AIPAC map controls' },
-  { path: 'src/pages/BernieShowPage.tsx', min: 4, label: 'Bernie show controls' },
+  { path: 'src/pages/BernieShowPage.tsx', min: 5, label: 'Bernie show controls' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 

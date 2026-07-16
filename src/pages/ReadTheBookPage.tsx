@@ -80,7 +80,7 @@ function ReadingPathCard({
     <button
       type="button"
       onClick={() => leadChapter && onSelect(leadChapter.id)}
-      className="overflow-hidden rounded-[24px] border border-border bg-surface text-left transition-colors hover:border-crimson"
+      className="min-h-[44px] overflow-hidden rounded-[24px] border border-border bg-surface text-left transition-colors hover:border-crimson"
     >
       {leadChapter?.heroImage && (
         <img
