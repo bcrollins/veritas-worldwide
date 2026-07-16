@@ -116,6 +116,17 @@ assert(
   `missing RateLimit-Remaining on field manual: ${rateRemaining}`,
 )
 
+// Operator console must advertise noindex even if a crawler ignores robots.txt.
+const admin = await fetch(`${baseUrl}/admin`, {
+  method: 'GET',
+  redirect: 'manual',
+  signal: AbortSignal.timeout(15_000),
+})
+assert(admin.status === 200 || admin.status === 301 || admin.status === 302, `admin status ${admin.status}`)
+const robotsTag = admin.headers.get('x-robots-tag') || ''
+assert(/noindex/i.test(robotsTag), `admin missing X-Robots-Tag noindex (got: ${robotsTag})`)
+assert(/nofollow/i.test(robotsTag), `admin missing X-Robots-Tag nofollow (got: ${robotsTag})`)
+
 console.log(
-  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths + RateLimit on field-manual`,
+  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths + RateLimit on field-manual + admin X-Robots-Tag`,
 )

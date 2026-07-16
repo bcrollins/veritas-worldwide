@@ -1794,6 +1794,11 @@ registerBotMetaInjection({ app, rootDir: __dirname })
 app.use((req, res) => {
   // SPA shell must never be immutably cached (deploy-safe HTML).
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+  // Defense-in-depth for the operator console: robots.txt Disallow + header.
+  // Covers crawlers that ignore robots.txt or fetch deep admin client routes.
+  if (req.path === '/admin' || req.path.startsWith('/admin/')) {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+  }
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 

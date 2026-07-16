@@ -69,6 +69,19 @@ assert(server.includes('clipboard-write=(self)'), 'Permissions-Policy allows sam
 assert(!server.includes('clipboard-write=()'), 'must not fully deny clipboard-write (breaks copy CTAs)')
 assert(server.includes('browsing-topics=()'), 'Permissions-Policy disables Topics API profiling')
 // HTTP CSP: frame-ancestors is meta-ignored; upgrade-insecure-requests hardens mixed content.
+// Admin console must not be indexed (robots Disallow + SPA X-Robots-Tag).
+assert(server.includes("X-Robots-Tag"), 'X-Robots-Tag set for admin SPA shell')
+assert(server.includes('noindex, nofollow'), 'admin X-Robots-Tag is noindex, nofollow')
+assert(
+  server.includes("req.path === '/admin'") || server.includes('req.path === "/admin"'),
+  'admin path detection for X-Robots-Tag',
+)
+assert(
+  server.includes("req.path.startsWith('/admin/')") ||
+    server.includes('req.path.startsWith("/admin/")'),
+  'nested admin paths also receive X-Robots-Tag',
+)
+
 // security.txt must revalidate so RFC 9116 Expires/Contact updates are not sticky.
 assert(
   server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
