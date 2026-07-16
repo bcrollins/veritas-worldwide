@@ -13,6 +13,7 @@ const REQUIRED = {
   'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\)/i,
   'x-xss-protection': /1/,
   'x-permitted-cross-domain-policies': /^none$/i,
+  'cross-origin-opener-policy': /same-origin-allow-popups/i,
 }
 
 function assert(c, m) {

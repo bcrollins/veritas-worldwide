@@ -713,6 +713,9 @@ app.use((req, res, next) => {
   res.setHeader('X-XSS-Protection', '1; mode=block')
   res.setHeader('X-Permitted-Cross-Domain-Policies', 'none')
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
+  // Allow intentional share popups (window.open to X/Facebook/etc.) while isolating
+  // the browsing context from unexpected cross-origin openers.
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups')
   res.setHeader(
     'Permissions-Policy',
     'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()',

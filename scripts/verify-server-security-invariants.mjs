@@ -29,6 +29,8 @@ assert(server.includes('Referrer-Policy'), 'Referrer-Policy set')
 assert(server.includes('strict-origin-when-cross-origin'), 'Referrer-Policy value locked')
 assert(server.includes('X-XSS-Protection'), 'X-XSS-Protection set')
 assert(server.includes('X-Permitted-Cross-Domain-Policies'), 'X-Permitted-Cross-Domain-Policies set')
+assert(server.includes('Cross-Origin-Opener-Policy'), 'Cross-Origin-Opener-Policy set')
+assert(server.includes('same-origin-allow-popups'), 'COOP allows intentional share popups')
 assert(
   server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
     server.includes('/.well-known/security.txt'),
