@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:48:38.381Z
+- Checked at: 2026-07-16T08:50:29.130Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 9da154e87f88
-- Deployment: 6c296f6a-b6c0-4a19-918c-ef9106be0307
+- Build commit: 48712723489e
+- Deployment: 16b3629e-674a-47bb-8667-767df3d1f5c1
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
@@ -19,13 +19,13 @@
 - PASS — Health probe confirms prerender coverage: prerender=true
 - PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
-- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
+- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=1
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=26
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
-- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=66
+- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=70
 - PASS — Health history max samples supports multi-day retention: maxSamples=96
 - PASS — Health history reports known storage backend: storage=shared-database
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
@@ -49,6 +49,7 @@
 - PASS — The Record PDF is publicly downloadable and not immutably cached: status=200 cache=public, max-age=3600, must-revalidate
 - PASS — The Record PDF sets Content-Disposition filename: content-disposition=inline; filename="the-record.pdf"
 - PASS — Sitemap indexes the institute field manual PDF: sitemap status=200 hasFieldManualPdf=true
+- PASS — Sitemap excludes withdrawn unsupported news pack: orphans=none
 - PASS — RSS feed announces the institute field manual PDF: feed status=200 hasFieldManualPdf=true
 - PASS — robots.txt allows the field manual PDF: status=200
 - PASS — Institute catalog prerender links the field manual PDF: status=200 hasPdfLink=true
