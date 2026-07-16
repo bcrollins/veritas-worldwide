@@ -1212,6 +1212,11 @@ app.use(express.static(path.join(__dirname, 'dist'), {
     // Stable-name PDFs are rebuilt in place each deploy — never mark immutable.
     if (filePath.endsWith('.pdf')) {
       res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
+      const base = path.basename(filePath)
+      // Hint browsers to download with a stable filename for known public manuals.
+      if (base === 'veritas-institute-field-manual.pdf' || base === 'the-record.pdf') {
+        res.setHeader('Content-Disposition', `inline; filename="${base}"`)
+      }
     }
   },
 }))
