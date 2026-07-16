@@ -1047,18 +1047,25 @@ app.get('/api/build-info', (req, res) => {
 
 const HEALTH_HISTORY_MAX = 48
 const HEALTH_HISTORY_MIN_INTERVAL_MS = 15 * 60 * 1000
-const HEALTH_HISTORY_FILE = DATA_DIR ? path.join(DATA_DIR, 'health-history.json') : null
+// Prefer volume/data dir when configured; otherwise best-effort local data path on the replica.
+const HEALTH_HISTORY_DIR = DATA_DIR || path.join(__dirname, 'data')
+const HEALTH_HISTORY_FILE = path.join(HEALTH_HISTORY_DIR, 'health-history.json')
 let healthHistory = []
 let lastHealthHistoryWriteAt = 0
 
 function loadHealthHistory() {
-  if (!HEALTH_HISTORY_FILE || !fs.existsSync(HEALTH_HISTORY_FILE)) {
+  if (!fs.existsSync(HEALTH_HISTORY_FILE)) {
     healthHistory = []
     return
   }
   try {
     const parsed = JSON.parse(fs.readFileSync(HEALTH_HISTORY_FILE, 'utf8'))
     healthHistory = Array.isArray(parsed) ? parsed.slice(-HEALTH_HISTORY_MAX) : []
+    if (healthHistory.length > 0) {
+      const last = healthHistory[healthHistory.length - 1]
+      const lastTs = Date.parse(last?.checkedAt || '')
+      if (Number.isFinite(lastTs)) lastHealthHistoryWriteAt = lastTs
+    }
   } catch {
     healthHistory = []
   }
@@ -1069,9 +1076,8 @@ function persistHealthHistorySample(sample) {
   if (now - lastHealthHistoryWriteAt < HEALTH_HISTORY_MIN_INTERVAL_MS) return
   lastHealthHistoryWriteAt = now
   healthHistory = [...healthHistory, sample].slice(-HEALTH_HISTORY_MAX)
-  if (!HEALTH_HISTORY_FILE) return
   try {
-    fs.mkdirSync(DATA_DIR, { recursive: true })
+    fs.mkdirSync(HEALTH_HISTORY_DIR, { recursive: true })
     fs.writeFileSync(HEALTH_HISTORY_FILE, `${JSON.stringify(healthHistory, null, 2)}\n`, 'utf8')
   } catch (error) {
     console.error('[monitor] failed to persist health history', error instanceof Error ? error.message : error)
@@ -1148,7 +1154,8 @@ app.get('/api/health/history', (_req, res) => {
     sampleCount: healthHistory.length,
     minIntervalMinutes: HEALTH_HISTORY_MIN_INTERVAL_MS / 60_000,
     maxSamples: HEALTH_HISTORY_MAX,
-    persistence: Boolean(HEALTH_HISTORY_FILE),
+    persistence: true,
+    storage: DATA_DIR ? 'configured-data-dir' : 'replica-local-data-dir',
   })
 })
 

@@ -19,6 +19,7 @@ interface SearchResult {
   chapterSubtitle: string
   dateRange: string
   matchedIn: SearchMatchedField[]
+  score?: number
   snippet: string
   accessLevel: 'preview' | 'full'
   chapterType: ChapterType | null

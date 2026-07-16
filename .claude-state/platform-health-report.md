@@ -1,13 +1,13 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T06:18:58.217Z
+- Checked at: 2026-07-16T06:24:45.634Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 3d2bfbe85b83
-- Deployment: 3ab10a69-9adc-418e-ad26-fc329e0581e4
+- Build commit: 8d0a41cbeb39
+- Deployment: 083f9254-6cfa-41b8-853d-08adb6e9fefd
 - Auth mode: database
 - Search results: 19
-- Analytics lifetime views: 6895
+- Analytics lifetime views: 6900
 
 ## Checks
 - PASS — Build info route responds: GET /api/build-info returned 200
@@ -15,10 +15,11 @@
 - PASS — Health probe reports ok: GET /api/health returned 200 status=ok
 - PASS — Health probe confirms chapter data: chapterData=true
 - PASS — Health probe confirms prerender coverage: prerender=true
-- PASS — Health probe exposes analytics lifetime: analyticsLifetime=6895
+- PASS — Health probe exposes analytics lifetime: analyticsLifetime=6900
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=15
 - PASS — Content pack route responds: GET /content-pack returned 200
+- PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Client error intake accepts or rate-limits probes: POST /api/client-error returned 204
 - PASS — Auth status route responds: GET /api/auth/status returned 200
 - PASS — Auth status exposes availability: available=true
@@ -39,8 +40,8 @@
 - PASS — Anonymous search results expose full public access: accessLevel=full
 - PASS — Anonymous search results expose evidence tier metadata: availableEvidenceTiers=verified, circumstantial, disputed
 - PASS — Analytics snapshot route responds: GET /api/analytics/snapshot returned 200
-- PASS — Analytics lifetime stays non-negative: lifetime=6895
-- PASS — Analytics today count stays non-negative: today=80
+- PASS — Analytics lifetime stays non-negative: lifetime=6900
+- PASS — Analytics today count stays non-negative: today=85
 - PASS — Analytics funnel exposes signup totals: signups=8
 - PASS — Read route prerender responds: GET /read returned 200
 - PASS — Read route prerender returns HTML: content-type=text/html; charset=utf-8

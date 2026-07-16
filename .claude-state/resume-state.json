@@ -1,5 +1,5 @@
 {
-  "run": 38,
+  "run": 39,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -145,9 +145,12 @@
     "Live-verified 031f7b2: client-error 204, platform PASS, israel-dossier PASS, pinned=14 (pre-UN pin).",
     "Expanded public visual verifier for brand kit/analytics/dossier with case-insensitive matching for CSS uppercase headings.",
     "Live tip 7a646ee5088a: 15/16 briefing archives pinned, /api/client-error 204, platform+release PASS, full 6-device visual matrix PASS on production.",
-    "Live tip 3d2bfbe85b83 / deployment 3ab10a69: clientErrorIntake true on /api/health, 15/16 archive pins, platform PASS."
+    "Live tip 3d2bfbe85b83 / deployment 3ab10a69: clientErrorIntake true on /api/health, 15/16 archive pins, platform PASS.",
+    "Weighted search ranking live (title/source over body): verify:search PASS; federal reserve tops chapter-25/3/12.",
+    "Institute Israel-dossier course pages now expose workbook artifact downloads + dossier links.",
+    "Health history sampling endpoint /api/health/history live; analytics panel shows sample trend when samples exist."
   ],
-  "next_task": "External only: Lancet pin if Wayback captures it; unlock GitHub Actions billing; optional Sentry DSN for paging beyond native /api/client-error.",
+  "next_task": "External: Lancet pin if Wayback ever has it; GitHub billing unlock; optional Sentry DSN. Code path clear of P0s.",
   "next_priorities": [
     "Lancet briefing source remains lookup-only until Wayback has a snapshot.",
     "Unlock GitHub Actions billing lock.",

@@ -1,5 +1,5 @@
 {
-  "run": 36,
+  "run": 39,
   "date": "2026-07-16",
   "site": [
     {
@@ -52,11 +52,11 @@
     },
     {
       "feature": "Search",
-      "composite": 9,
-      "previous": 8.9,
-      "delta": 0.1,
-      "status": "improved",
-      "plus_half_requires": "Confirm the public search cards render the restored chapter-type and evidence metadata live at 390px and 430px, then improve result ranking with stronger title/source weighting and topic-aware deep links."
+      "composite": 9.3,
+      "previous": 9,
+      "delta": 0.3,
+      "status": "live weighted ranking: title/source outrank body-only; verify:search PASS on production",
+      "plus_half_requires": "Add topic-aware deep links from search cards into /topics hubs."
     },
     {
       "feature": "News & Topic Entry",
@@ -76,10 +76,10 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 8.7,
-      "previous": 8.6,
-      "delta": 0.1,
-      "status": "improved; all six Israel dossier source-safe course/guide pairs are live, prerendered, sitemap-listed, JSON-LD-backed, verified in production, and backed by deployed workbook templates with representative routes passing the full primary viewport matrix",
+      "composite": 8.9,
+      "previous": 8.7,
+      "delta": 0.2,
+      "status": "Israel dossier courses surface workbook download artifacts on course pages",
       "plus_half_requires": "Add the workbook templates directly into relevant course/guide detail pages, then pressure-test the Book of Knowledge PDF/manual export on real browsers."
     },
     {
@@ -87,15 +87,15 @@
       "composite": 9.3,
       "previous": 9.1,
       "delta": 0.2,
-      "status": "live: /api/client-error intake + structured monitor logs; /api/health ok",
+      "status": "health history endpoint + client error intake live on 8d0a41c+",
       "plus_half_requires": "Optional Sentry DSN for external paging on top of native client-error intake."
     },
     {
       "feature": "Public Analytics",
-      "composite": 8.6,
-      "previous": 8.4,
-      "delta": 0.2,
-      "status": "live on c809452a9e1d: Release Health panel strings present in AnalyticsPage-CJzhs0tG.js; /api/health returns ok",
+      "composite": 8.85,
+      "previous": 8.6,
+      "delta": 0.25,
+      "status": "health history samples + trend bar on /analytics Release Health panel",
       "plus_half_requires": "Live-verify the panel on production and add dated trend lines for health probe failures."
     }
   ],
