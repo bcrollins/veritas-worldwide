@@ -1,13 +1,13 @@
 {
-  "run": 55,
+  "run": 56,
   "date": "2026-07-16",
   "site": [
     {
       "feature": "Israel Dossier",
       "composite": 9.999,
-      "previous": 9.998,
+      "previous": 9.999,
       "delta": 0.001,
-      "status": "30/31 archives pinned live 838269f; Lancet still lookup-only",
+      "status": "34+ archive pins including CISA/NIST/FiscalData/SCOTUS Code; Lancet lookup-only",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -60,11 +60,11 @@
     },
     {
       "feature": "News & Topic Entry",
-      "composite": 9.2,
-      "previous": 8.9,
-      "delta": 0.3,
-      "status": "withdrawn unsupported B pack (orphan crawler routes removed); live pack core+A with 9 sourced articles; verify:article-sources",
-      "plus_half_requires": "Add fully sourced replacement reporting pieces with durable primary URLs only."
+      "composite": 9.55,
+      "previous": 9.2,
+      "delta": 0.35,
+      "status": "4 sourced B-pack articles live (CISA/NIST/Treasury/NTSB-FAA/SCOTUS Code); content-pack slugs fixed; 17/17 primary URLs 200",
+      "plus_half_requires": "Continue adding primary-sourced reporting only; never reintroduce fabricated journalism paths."
     },
     {
       "feature": "Publication Shell",
