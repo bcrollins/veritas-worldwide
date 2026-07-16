@@ -277,19 +277,13 @@ const healthResult = await fetchJson('/api/health')
         'Health history endpoint responds',
         `GET /api/health/history returned ${healthHistoryResult.response.status}`
       )
-      if (Array.isArray(healthHistory.commitTransitions) || Array.isArray(healthHistory.uniqueCommits)) {
-        addCheck(
-          checks,
-          failures,
-          true,
-          'Health history exposes commit transition fields',
-          `commitTransitions=${Array.isArray(healthHistory.commitTransitions)} uniqueCommits=${Array.isArray(healthHistory.uniqueCommits)}`
-        )
-      } else if (healthHistoryResult.response.ok) {
-        console.warn(
-          '[verify:platform] WARN — health history missing commit transition fields; deploy with transition ship required'
-        )
-      }
+      addCheck(
+        checks,
+        failures,
+        Array.isArray(healthHistory.commitTransitions) && Array.isArray(healthHistory.uniqueCommits),
+        'Health history exposes commit transition fields',
+        `commitTransitions=${Array.isArray(healthHistory.commitTransitions)} uniqueCommits=${Array.isArray(healthHistory.uniqueCommits)}`
+      )
 
       const clientErrorProbe = await fetch(getUrl('/api/client-error'), {
         method: 'POST',
