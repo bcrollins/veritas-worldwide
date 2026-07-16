@@ -662,7 +662,7 @@ export default function SearchPage() {
                           setMatchFilter('all')
                           setChapterTypeFilter('all')
                         }}
-                        className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
+                        className="inline-flex min-h-[44px] items-center font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
                       >
                         Clear filters
                       </button>
@@ -692,7 +692,7 @@ export default function SearchPage() {
                 <p className="font-body text-lg text-ink-muted mb-2">{error}</p>
                 <button
                   onClick={() => handleSearch(debouncedQuery)}
-                  className="font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
+                  className="inline-flex min-h-[44px] items-center font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
                 >
                   Try again
                 </button>
@@ -834,7 +834,7 @@ export default function SearchPage() {
                             <Link
                               key={topic.slug}
                               to={`/topics/${topic.slug}`}
-                              className="inline-flex min-h-[32px] items-center rounded-sm border border-border bg-parchment-dark/60 px-2.5 py-1 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                              className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment-dark/60 px-2.5 py-1 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
                             >
                               {topic.name}
                             </Link>

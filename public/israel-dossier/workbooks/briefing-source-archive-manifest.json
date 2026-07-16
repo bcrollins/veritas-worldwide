@@ -236,6 +236,55 @@
       "archiveUrl": "https://web.archive.org/web/20260709033020/https://www.supremecourt.gov/about/Code-of-Conduct-for-Justices_November_13_2023.pdf",
       "status": "pinned",
       "note": "SCOTUS Code of Conduct PDF"
+    },
+    {
+      "sourceUrl": "https://www.ntsb.gov/",
+      "timestamp": "20260403215153",
+      "archiveUrl": "https://web.archive.org/web/20260403215153/https://www.ntsb.gov/",
+      "status": "pinned",
+      "note": "NTSB home — durable aviation-safety primary host"
+    },
+    {
+      "sourceUrl": "https://www.federalreserve.gov/releases/h15/",
+      "timestamp": "20260714005443",
+      "archiveUrl": "https://web.archive.org/web/20260714005443/https://www.federalreserve.gov/releases/h15/",
+      "status": "pinned",
+      "note": "Federal Reserve H.15 selected interest rates release"
+    },
+    {
+      "sourceUrl": "https://www.hrw.org/news",
+      "timestamp": "20260714084010",
+      "archiveUrl": "https://web.archive.org/web/20260714084010/https://www.hrw.org/news",
+      "status": "pinned",
+      "note": "Human Rights Watch news index"
+    },
+    {
+      "sourceUrl": "https://cpj.org/",
+      "timestamp": "20200105225844",
+      "archiveUrl": "https://web.archive.org/web/20200105225844/https://cpj.org/",
+      "status": "pinned",
+      "note": "Committee to Protect Journalists home"
+    },
+    {
+      "sourceUrl": "https://www.amnesty.org/en/",
+      "timestamp": "20260715040227",
+      "archiveUrl": "https://web.archive.org/web/20260715040227/https://www.amnesty.org/en/",
+      "status": "pinned",
+      "note": "Amnesty International English hub"
+    },
+    {
+      "sourceUrl": "https://www.unrwa.org/resources/reports",
+      "timestamp": "20130920035606",
+      "archiveUrl": "https://web.archive.org/web/20130920035606/https://www.unrwa.org/resources/reports",
+      "status": "pinned",
+      "note": "UNRWA resources/reports hub"
+    },
+    {
+      "sourceUrl": "https://www.faa.gov/",
+      "timestamp": "20260715072948",
+      "archiveUrl": "https://web.archive.org/web/20260715072948/https://www.faa.gov/",
+      "status": "pinned",
+      "note": "FAA home — aviation primary host"
     }
   ]
 }

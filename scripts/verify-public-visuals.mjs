@@ -54,6 +54,16 @@ const routes = [
   { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
   { path: '/news', text: ['News', 'NEWS', 'Current', 'CURRENT'], anyText: ['source', 'Source', 'SOURCE', 'article', 'Article', 'ARTICLE'] },
   {
+    path: '/news/election-security-ai-risk-frameworks-cisa-nist-2026',
+    text: ['Election', 'ELECTION', 'CISA', 'NIST'],
+    anyText: ['source', 'Source', 'SOURCE', 'Risk', 'RISK', 'Security', 'SECURITY'],
+  },
+  {
+    path: '/news/treasury-debt-transparency-fiscaldata-fed-h15-2026',
+    text: ['Treasury', 'TREASURY', 'Debt', 'DEBT', 'Fiscal'],
+    anyText: ['source', 'Source', 'SOURCE', 'H.15', 'FiscalData', 'Federal'],
+  },
+  {
     path: '/institute',
     text: ['Veritas Institute', 'VERITAS INSTITUTE', 'Field Manual', 'FIELD MANUAL'],
     anyText: [
