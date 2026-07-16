@@ -1,5 +1,5 @@
 {
-  "run": 43,
+  "run": 44,
   "date": "2026-07-16",
   "site": [
     {
@@ -84,10 +84,10 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.55,
-      "previous": 9.45,
+      "composite": 9.65,
+      "previous": 9.55,
       "delta": 0.1,
-      "status": "clientErrorIntakeCount live; PDF non-immutable cache; hard instituteFieldManualPdf",
+      "status": "build-info PDF flags + release/platform asserts; client-error counters; non-immutable PDF cache",
       "plus_half_requires": "Optional Sentry DSN for external paging on top of native client-error intake."
     },
     {
