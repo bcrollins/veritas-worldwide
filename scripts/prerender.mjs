@@ -527,6 +527,24 @@ function renderStaticPage(page, chapters) {
       </section>`
     : ''
 
+  const trustLinks = Array.isArray(page.trustLinks) ? page.trustLinks : []
+  const trustMarkup = trustLinks.length
+    ? `
+      <nav class="mt-10 border border-border bg-surface rounded-lg p-5 max-w-xl" aria-label="Related pages">
+        <p class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-faint mb-3">Related Pages</p>
+        <ul class="list-none m-0 p-0 space-y-2">
+          ${trustLinks
+            .map((link) => {
+              const href = escapeAttr(link.href || '')
+              const label = escapeHtml(link.label || '')
+              const download = link.download ? ` download="${escapeAttr(link.download)}"` : ''
+              return `<li><a href="${href}" class="block text-sm text-ink-muted hover:text-crimson transition-colors"${download}>${label}</a></li>`
+            })
+            .join('\n')}
+        </ul>
+      </nav>`
+    : ''
+
   return `
     <main class="min-h-screen bg-parchment text-ink">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -535,9 +553,19 @@ function renderStaticPage(page, chapters) {
         <p class="font-body text-lg md:text-xl text-ink-muted leading-relaxed max-w-3xl">${escapeHtml(page.description)}</p>
         ${page.body.map((paragraph) => `<p class="font-body text-base md:text-lg text-ink-light leading-8 mt-6 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('\n')}
         ${relatedMarkup}
+        ${trustMarkup}
       </div>
     </main>`
 }
+
+const FIELD_MANUAL_TRUST_LINKS = [
+  { href: '/institute/book', label: '→ Field Manual' },
+  {
+    href: '/veritas-institute-field-manual.pdf',
+    label: '→ Field Manual PDF',
+    download: 'veritas-institute-field-manual.pdf',
+  },
+]
 
 function renderTopicsIndexPage(topics) {
   return `
@@ -1948,6 +1976,13 @@ const staticPages = [
     body: [
       'Veritas Worldwide treats accessibility as part of publication integrity: strong contrast, keyboard navigation, semantic structure, and screen-reader clarity are baseline requirements.',
     ],
+    trustLinks: [
+      { href: '/about', label: '→ About' },
+      { href: '/privacy', label: '→ Privacy Policy' },
+      { href: '/terms', label: '→ Terms of Use' },
+      { href: '/methodology', label: '→ Methodology' },
+      ...FIELD_MANUAL_TRUST_LINKS,
+    ],
     sourceFile: 'src/pages/AccessibilityPage.tsx',
   },
   {
@@ -1958,6 +1993,12 @@ const staticPages = [
     body: [
       'The publication minimizes data collection, keeps analytics purpose-specific, and avoids turning readership into an advertising product.',
     ],
+    trustLinks: [
+      { href: '/terms', label: '→ Terms of Use' },
+      { href: '/about', label: '→ About' },
+      { href: '/methodology', label: '→ Methodology' },
+      ...FIELD_MANUAL_TRUST_LINKS,
+    ],
     sourceFile: 'src/pages/PrivacyPage.tsx',
   },
   {
@@ -1967,6 +2008,13 @@ const staticPages = [
     description: 'Usage terms for The Record, supporting materials, and Veritas publication assets.',
     body: [
       'The publication is intended for public reading, citation, and responsible sharing. Source material remains attributable to its original creators and archives.',
+    ],
+    trustLinks: [
+      { href: '/privacy', label: '→ Privacy Policy' },
+      { href: '/about', label: '→ About' },
+      { href: '/methodology', label: '→ Methodology' },
+      { href: '/sources', label: '→ Sources' },
+      ...FIELD_MANUAL_TRUST_LINKS,
     ],
     sourceFile: 'src/pages/TermsPage.tsx',
   },

@@ -172,4 +172,15 @@ for (const page of trustPages) {
 }
 console.log(`[verify:crawler-surfaces] ${trustPages.length} trust pages link Field Manual + PDF`)
 
+// Prerender source embeds the same Field Manual trust links for crawler HTML shells.
+const prerenderSource = read('scripts/prerender.mjs')
+assert(
+  prerenderSource.includes('FIELD_MANUAL_TRUST_LINKS') &&
+    prerenderSource.includes('/veritas-institute-field-manual.pdf') &&
+    prerenderSource.includes("route: '/terms'") &&
+    prerenderSource.includes("route: '/accessibility'"),
+  'prerender.mjs missing Field Manual trust links for terms/accessibility shells'
+)
+console.log('[verify:crawler-surfaces] prerender source embeds Field Manual trust links on legal shells')
+
 console.log('[verify:crawler-surfaces] PASS')
