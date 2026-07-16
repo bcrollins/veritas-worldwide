@@ -60,6 +60,21 @@ const routes = [
     text: ['Forum', 'FORUM', 'Community', 'COMMUNITY'],
     anyText: ['thread', 'Thread', 'THREAD', 'beta', 'Beta', 'BETA', 'post', 'Post', 'POST'],
   },
+  {
+    path: '/about',
+    text: ['About', 'ABOUT'],
+    anyText: ['Record', 'RECORD', 'Methodology', 'METHODOLOGY', 'Membership', 'MEMBERSHIP'],
+  },
+  {
+    path: '/accessibility',
+    text: ['Accessibility', 'ACCESSIBILITY'],
+    anyText: ['WCAG', 'contrast', 'Contrast', 'touch', 'Touch', '44'],
+  },
+  {
+    path: '/profiles',
+    text: ['Profiles', 'PROFILES'],
+    anyText: ['topic', 'Topic', 'TOPIC', 'people', 'People', 'PEOPLE', 'claim', 'Claim', 'CLAIM'],
+  },
   { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL', 'Field Manual', 'FIELD MANUAL', 'Institute', 'INSTITUTE'] },
   { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
   { path: '/news', text: ['News', 'NEWS', 'Current', 'CURRENT'], anyText: ['source', 'Source', 'SOURCE', 'article', 'Article', 'ARTICLE'] },
