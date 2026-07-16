@@ -31,6 +31,8 @@ assert(server.includes('X-XSS-Protection'), 'X-XSS-Protection set')
 assert(server.includes('X-Permitted-Cross-Domain-Policies'), 'X-Permitted-Cross-Domain-Policies set')
 assert(server.includes('Cross-Origin-Opener-Policy'), 'Cross-Origin-Opener-Policy set')
 assert(server.includes('same-origin-allow-popups'), 'COOP allows intentional share popups')
+assert(server.includes('Origin-Agent-Cluster'), 'Origin-Agent-Cluster set')
+assert(server.includes("'Origin-Agent-Cluster', '?1'") || server.includes('Origin-Agent-Cluster\', \'?1\''), 'Origin-Agent-Cluster value ?1')
 assert(
   server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
     server.includes('/.well-known/security.txt'),

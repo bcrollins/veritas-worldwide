@@ -716,6 +716,8 @@ app.use((req, res, next) => {
   // Allow intentional share popups (window.open to X/Facebook/etc.) while isolating
   // the browsing context from unexpected cross-origin openers.
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups')
+  // Request origin-keyed agent cluster isolation for modern browsers.
+  res.setHeader('Origin-Agent-Cluster', '?1')
   res.setHeader(
     'Permissions-Policy',
     'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()',
