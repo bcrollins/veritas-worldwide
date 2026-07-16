@@ -113,6 +113,11 @@ const sub44Files = [
   'src/pages/ArticlePage.tsx',
   'src/pages/SearchPage.tsx',
   'src/pages/ReadTheBookPage.tsx',
+  'src/pages/HomePage.tsx',
+  'src/pages/ForumPage.tsx',
+  'src/App.tsx',
+  'src/components/AipacDiagram.tsx',
+  'src/pages/BernieShowPage.tsx',
 ]
 for (const rel of sub44Files) {
   const src = readFileSync(join(root, rel), 'utf8')
