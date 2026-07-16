@@ -1,5 +1,5 @@
 {
-  "run": 130,
+  "run": 131,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.56,
       "previous": 9.54,
       "delta": 0.02,
-      "status": "HEAD 53a2297 15-step; req.ip under trust proxy; JWT HS256; 12 headers; rateLimit\u00d723",
+      "status": "HEAD 2d6eb9c+ pure fortress; dual security.txt full field parity; 15-step green; scorecard 131",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
