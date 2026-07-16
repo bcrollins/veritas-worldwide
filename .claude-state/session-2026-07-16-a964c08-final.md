@@ -24,3 +24,12 @@ platform · release · auth · search-scoring · search · crawler-surfaces · h
 - Lancet Langlo article: lookup-only until Wayback captures
 - Sentry DSN optional for external paging
 - Admin surfaces not fully 44px-audited (operator-only)
+
+## Continued ships after a964c08
+
+| SHA | Summary | Live verify |
+|-----|---------|-------------|
+| `d218006` | Membership toggle/FAQ/student 44px | PASS |
+| `1530043` | Membership sticky CTA + email | PASS |
+| `3ca60ea` | Home methodology/book CTAs | PASS |
+| `167761b` | Topic hub CTAs | (awaiting) |

@@ -1,5 +1,5 @@
 {
-  "run": 58,
+  "run": 59,
   "date": "2026-07-16",
   "site": [
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.35,
-      "previous": 9.2,
-      "delta": 0.15,
-      "status": "44px wave across shell/modals/news/forum/dossier/profiles/bible/chapter share; tip a964c08 verify:live green",
+      "composite": 9.4,
+      "previous": 9.35,
+      "delta": 0.05,
+      "status": "44px across shell+membership+home+topics+forum+news; tip series through 167761b",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
