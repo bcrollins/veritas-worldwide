@@ -29,7 +29,7 @@ import AdBanner from '../components/AdBanner'
 import NewsletterSignup from '../components/NewsletterSignup'
 import InterpretationBoundaryNotice from '../components/InterpretationBoundaryNotice'
 import { getChapterImages } from '../data/chapterImages'
-import { getTopicHrefForTerm } from '../data/topicHubs'
+import { getTopicHrefForTerm, getTopicHubsForChapter } from '../data/topicHubs'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 import { scoreContentGateHit } from '../lib/leadScoring'
@@ -969,6 +969,7 @@ export default function ChapterPage() {
 
   const images = getChapterImages(chapter.id)
   const relatedChapters = getRelatedByKeywords(chapter)
+  const relatedTopicHubs = getTopicHubsForChapter(chapter.id)
   const hasLockedContent = chapter.accessLevel === 'preview' || chapter.content.length < chapter.totalBlocks
   const refreshChapterPayload = () => {
     window.location.reload()
@@ -1225,6 +1226,29 @@ export default function ChapterPage() {
                       className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm hover:text-crimson hover:bg-crimson/5 transition-colors"
                     >
                       {kw}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Topic hubs featuring this chapter */}
+            {relatedTopicHubs.length > 0 && (
+              <section className="border-t border-border pt-8 mb-8" data-testid="chapter-topic-hubs">
+                <div className="flex items-center gap-4 mb-6">
+                  <h3 className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+                    Topic Hubs
+                  </h3>
+                  <div className="flex-1 h-[1px] bg-border" />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {relatedTopicHubs.map((topic) => (
+                    <Link
+                      key={topic.slug}
+                      to={`/topics/${topic.slug}`}
+                      className="inline-flex min-h-[40px] items-center rounded-sm border border-border bg-surface px-3 py-2 font-sans text-xs font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                    >
+                      {topic.name} →
                     </Link>
                   ))}
                 </div>
