@@ -13,7 +13,7 @@ const root = path.join(__dirname, '..')
 
 // Floors sit ~10% under the 2026-07-16 production baseline (289 prerender / 383 sitemap)
 // so legitimate content growth is free, but accidental drops still fail CI/local verify.
-const MIN_PRERENDER_ROUTES = 250
+const MIN_PRERENDER_ROUTES = 270
 const MIN_SITEMAP_URLS = 300
 const MIN_LLMS_LINKS = 15
 

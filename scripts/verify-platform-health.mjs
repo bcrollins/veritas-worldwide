@@ -251,7 +251,7 @@ const healthResult = await fetchJson('/api/health')
       addCheck(
         checks,
         failures,
-        pinnedArchiveCount >= 8,
+        pinnedArchiveCount >= 20,
         'Briefing source archive manifest has pinned snapshots',
         `pinned=${pinnedArchiveCount}`
       )
@@ -321,7 +321,7 @@ const healthResult = await fetchJson('/api/health')
       addCheck(
         checks,
         failures,
-        livePrerenderCount >= 250,
+        livePrerenderCount >= 270,
         'Live prerender route count stays above crawler floor',
         `prerenderedRouteCount=${livePrerenderCount}`
       )
