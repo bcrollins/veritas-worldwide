@@ -1,5 +1,5 @@
 {
-  "run": 77,
+  "run": 78,
   "date": "2026-07-16",
   "site": [
     {
@@ -12,18 +12,18 @@
     },
     {
       "feature": "Home / Front Page",
-      "composite": 8.6,
-      "previous": 8.5,
-      "delta": 0.1,
-      "status": "methodology/topics/home CTAs 44px; tip ec05960 live",
+      "composite": 8.65,
+      "previous": 8.6,
+      "delta": 0.05,
+      "status": "GEO about/a11y in llms; public a11y wave complete",
       "plus_half_requires": "Live 390px/430px screenshots after deploy confirming first-screen CTAs remain fully visible with consent pending."
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.2,
-      "previous": 9.15,
-      "delta": 0.05,
-      "status": "accessibility TOC 44px; security-headers+no powered-by live 9307848",
+      "composite": 9.28,
+      "previous": 9.2,
+      "delta": 0.08,
+      "status": "llms About+Accessibility live; security-headers; tip 36aadeb",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.9,
-      "previous": 9.85,
+      "composite": 9.95,
+      "previous": 9.9,
       "delta": 0.05,
-      "status": "admin+public a11y complete; p-0.5 ban; tip 25f9847+/c6e6bcc",
+      "status": "39 a11y surfaces floored; shell App.tsx floor; tip d62a32d pending",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
