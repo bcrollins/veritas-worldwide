@@ -209,4 +209,11 @@ assert(
 )
 console.log('[verify:crawler-surfaces] security.txt present with Contact + Expires + Canonical')
 
+const robotsTxt = read('public/robots.txt')
+assert(
+  robotsTxt.includes('Allow: /.well-known/security.txt'),
+  'robots.txt must Allow /.well-known/security.txt for researcher discovery'
+)
+console.log('[verify:crawler-surfaces] robots.txt allows security.txt')
+
 console.log('[verify:crawler-surfaces] PASS')

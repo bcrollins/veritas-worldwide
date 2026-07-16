@@ -100,6 +100,17 @@ export default function PrivacyPage() {
                 <a href="mailto:privacy@veritasworldwide.com" className="text-crimson hover:underline">privacy@veritasworldwide.com</a>.
                 We respond to all privacy requests within 30 days.
               </p>
+              <p className="mt-3 text-sm text-ink-muted leading-relaxed">
+                Security researchers can report vulnerabilities via the same privacy contact. Machine-readable disclosure metadata is published at{' '}
+                <a
+                  href="https://veritasworldwide.com/.well-known/security.txt"
+                  className="text-crimson hover:underline"
+                  rel="noopener noreferrer"
+                >
+                  /.well-known/security.txt
+                </a>
+                {' '}(RFC 9116).
+              </p>
             </section>
           </article>
 

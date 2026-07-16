@@ -5,3 +5,6 @@ Sitemap: https://veritasworldwide.com/sitemap.xml
 # Durable public PDF downloads
 Allow: /veritas-institute-field-manual.pdf
 Allow: /the-record.pdf
+
+# Security disclosure (RFC 9116)
+Allow: /.well-known/security.txt
