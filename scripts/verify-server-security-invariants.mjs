@@ -28,5 +28,6 @@ assert(server.includes('interest-cohort=()'), 'Permissions-Policy disables FLoC'
 assert(server.includes('Referrer-Policy'), 'Referrer-Policy set')
 assert(server.includes('strict-origin-when-cross-origin'), 'Referrer-Policy value locked')
 assert(server.includes('X-XSS-Protection'), 'X-XSS-Protection set')
+assert(server.includes('X-Permitted-Cross-Domain-Policies'), 'X-Permitted-Cross-Domain-Policies set')
 
 console.log('[verify:server-security-invariants] PASS — server.js security surface locked')

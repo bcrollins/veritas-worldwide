@@ -12,6 +12,7 @@ const REQUIRED = {
   'strict-transport-security': /max-age=\d+/i,
   'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\)/i,
   'x-xss-protection': /1/,
+  'x-permitted-cross-domain-policies': /^none$/i,
 }
 
 function assert(c, m) {
