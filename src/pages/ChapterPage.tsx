@@ -1246,7 +1246,7 @@ export default function ChapterPage() {
                     <Link
                       key={topic.slug}
                       to={`/topics/${topic.slug}`}
-                      className="inline-flex min-h-[40px] items-center rounded-sm border border-border bg-surface px-3 py-2 font-sans text-xs font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                      className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-3 py-2 font-sans text-xs font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
                     >
                       {topic.name} →
                     </Link>

@@ -144,7 +144,7 @@ export default function ArticlePage() {
       <div className="max-w-3xl mx-auto px-6 py-20 text-center">
         <h1 className="font-display text-3xl font-bold text-ink mb-4">Article Not Found</h1>
         <p className="font-body text-ink-muted mb-6">The article you are looking for does not exist or has been removed.</p>
-        <Link to="/news" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
+        <Link to="/news" className="inline-flex min-h-[44px] items-center font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
           &larr; Back to Current Events
         </Link>
       </div>
@@ -171,7 +171,7 @@ export default function ArticlePage() {
       <div className="border-b border-border no-print">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10">
-            <Link to="/news" className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
+            <Link to="/news" className="inline-flex min-h-[44px] items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
               Current Events
             </Link>
@@ -301,7 +301,7 @@ export default function ArticlePage() {
             <div className="py-12">
               <Link
                 to="/news"
-                className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-crimson hover:text-crimson-dark transition-colors"
+                className="inline-flex min-h-[44px] items-center gap-2 font-sans text-sm font-semibold text-crimson hover:text-crimson-dark transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -334,7 +334,7 @@ export default function ArticlePage() {
                             href={source.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-body text-xs text-ink hover:text-crimson transition-colors leading-snug block"
+                            className="inline-flex min-h-[44px] items-start font-body text-xs text-ink hover:text-crimson transition-colors leading-snug"
                           >
                             {source.title}
                           </a>

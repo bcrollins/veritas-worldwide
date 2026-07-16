@@ -718,7 +718,7 @@ export default function SearchPage() {
                       setMatchFilter('all')
                       setChapterTypeFilter('all')
                     }}
-                    className="font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
+                    className="inline-flex min-h-[44px] items-center font-sans text-sm text-crimson hover:text-crimson-dark underline underline-offset-2"
                   >
                     Clear the signed-in filters
                   </button>
@@ -738,7 +738,7 @@ export default function SearchPage() {
                         setMatchFilter('all')
                         setChapterTypeFilter('all')
                       }}
-                      className="font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
+                      className="inline-flex min-h-[44px] items-center font-sans text-xs text-crimson hover:text-crimson-dark underline underline-offset-2"
                     >
                       Clear filters
                     </button>
@@ -860,7 +860,7 @@ export default function SearchPage() {
                     <Link
                       key={topic.slug}
                       to={`/topics/${topic.slug}`}
-                      className="block w-full text-left font-sans text-xs text-ink-muted hover:text-crimson transition-colors py-1"
+                      className="flex min-h-[44px] w-full items-center text-left font-sans text-xs text-ink-muted hover:text-crimson transition-colors py-1"
                     >
                       {topic.name}
                     </Link>

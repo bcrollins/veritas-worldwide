@@ -270,7 +270,7 @@ function IncidentCard({ incident }: { incident: DossierDocumentedIncident }) {
                   href={src.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 font-sans text-xs text-crimson hover:text-crimson-dark transition-colors group"
+                  className="flex min-h-[44px] items-start gap-2 font-sans text-xs text-crimson hover:text-crimson-dark transition-colors group"
                 >
                   <svg className="w-3 h-3 mt-0.5 flex-shrink-0 opacity-50 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -501,7 +501,7 @@ function DossierSourceWorkbench({ records }: { records: SourceIndexRecord[] }) {
               key={key}
               type="button"
               onClick={() => setCategory(key)}
-              className={`min-h-[40px] rounded-full border px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] transition-colors ${
+              className={`min-h-[44px] rounded-full border px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] transition-colors ${
                 category === key ? 'border-crimson bg-crimson text-white' : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
               }`}
               title={ISRAEL_DOSSIER_SOURCE_CATEGORY_META[key].description}
@@ -1203,7 +1203,7 @@ export default function IsraelDossierPage() {
               href="/israel-dossier/templates/manifest.json"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark hover:underline"
+              className="inline-flex min-h-[44px] items-center font-sans text-xs font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark hover:underline"
             >
               Template manifest
             </a>
@@ -1236,7 +1236,7 @@ export default function IsraelDossierPage() {
               <div className="flex flex-wrap items-center gap-3">
                 <Link
                   to="/israel-dossier/briefing"
-                  className="inline-flex min-h-[40px] items-center justify-center bg-ink px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-surface transition-colors hover:bg-crimson"
+                  className="inline-flex min-h-[44px] items-center justify-center bg-ink px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-surface transition-colors hover:bg-crimson"
                 >
                   Open briefing
                 </Link>

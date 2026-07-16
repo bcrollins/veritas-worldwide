@@ -51,6 +51,9 @@ const floors = [
   { path: 'src/pages/TimelinePage.tsx', min: 6, label: 'timeline shell' },
   { path: 'src/App.tsx', min: 20, label: 'site shell header/nav/footer' },
   { path: 'src/pages/TopicPage.tsx', min: 4, label: 'topic hub breadcrumbs' },
+  { path: 'src/pages/ArticlePage.tsx', min: 4, label: 'article news chrome' },
+  { path: 'src/pages/NewsPage.tsx', min: 4, label: 'news desk CTAs' },
+  { path: 'src/pages/SearchPage.tsx', min: 8, label: 'search filters/sidebar' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 

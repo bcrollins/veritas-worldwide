@@ -321,7 +321,7 @@ export default function BookmarksPage() {
                             Your saved chapters are sorted by the most recent reading activity first.
                           </p>
                         </div>
-                        <Link to="/read" className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark">
+                        <Link to="/read" className="inline-flex min-h-[44px] items-center font-sans text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark">
                           Open full reader
                         </Link>
                       </div>

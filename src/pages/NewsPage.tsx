@@ -183,7 +183,7 @@ function CoverageLaneCard({ summary }: { summary: NewsCategorySummary }) {
             <Link
               key={tag}
               to={`/search?q=${encodeURIComponent(tag)}`}
-              className="rounded-full border border-border px-3 py-1 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3 py-1 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
             >
               {tag}
             </Link>
@@ -193,7 +193,7 @@ function CoverageLaneCard({ summary }: { summary: NewsCategorySummary }) {
       {summary.leadArticle && (
         <Link
           to={`/news/${summary.leadArticle.slug}`}
-          className="mt-5 inline-flex items-center font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark"
+          className="mt-5 inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark"
         >
           Lead file: {summary.leadArticle.title}
         </Link>
@@ -344,7 +344,7 @@ export default function NewsPage() {
                     <Link
                       key={tag}
                       to={`/search?q=${encodeURIComponent(tag)}`}
-                      className="rounded-full border border-border px-3 py-1 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                      className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3 py-1 font-sans text-[0.58rem] uppercase tracking-[0.12em] text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
                     >
                       {tag}
                     </Link>
@@ -354,13 +354,13 @@ export default function NewsPage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   to="/methodology"
-                  className="inline-flex min-h-[42px] items-center rounded-full bg-obsidian px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-obsidian/90"
+                  className="inline-flex min-h-[44px] items-center rounded-full bg-obsidian px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-obsidian/90"
                 >
                   Methodology
                 </Link>
                 <Link
                   to="/sources"
-                  className="inline-flex min-h-[42px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
                 >
                   Source Library
                 </Link>
@@ -516,7 +516,7 @@ export default function NewsPage() {
                     </p>
                     <Link
                       to="/methodology"
-                      className="mt-5 inline-flex font-sans text-[0.62rem] font-bold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark"
+                      className="mt-5 inline-flex min-h-[44px] items-center font-sans text-[0.62rem] font-bold uppercase tracking-[0.12em] text-crimson transition-colors hover:text-crimson-dark"
                     >
                       Read our methodology →
                     </Link>

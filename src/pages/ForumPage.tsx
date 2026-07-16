@@ -1168,7 +1168,7 @@ export default function ForumPage() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h2 className="font-display text-lg font-bold text-ink">Search: "{searchQuery}" — {searchResults.length} results</h2>
-                <button onClick={() => { setView('feed'); setSearchQuery('') }} className="text-xs text-ink-muted hover:text-crimson font-sans">Clear search</button>
+                <button onClick={() => { setView('feed'); setSearchQuery('') }} className="inline-flex min-h-[44px] items-center text-xs text-ink-muted hover:text-crimson font-sans">Clear search</button>
               </div>
               <div className="space-y-2">
                 {searchResults.map(p => (
