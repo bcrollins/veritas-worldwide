@@ -19,6 +19,14 @@ function cleanDisplayName(value) {
   return value.trim().replace(/[\u0000-\u001F\u007F]/g, '')
 }
 
+function sanitizeReturnTo(returnTo) {
+  if (typeof returnTo !== 'string') return null
+  const path = returnTo.trim()
+  if (!path.startsWith('/') || path.startsWith('//') || path.includes('\\')) return null
+  if (path.includes('://')) return null
+  return path
+}
+
 function assert(c, m) {
   if (!c) {
     console.error(`[verify:auth-validation] FAIL — ${m}`)
@@ -36,5 +44,10 @@ assert(!isValidPassword('a'.repeat(129)), 'reject overlong password')
 assert(cleanDisplayName('  Alice  ') === 'Alice', 'trim display name')
 assert(cleanDisplayName('A\u0000B') === 'AB', 'strip control chars')
 assert(cleanDisplayName('\u0000\u0001') === '', 'control-only becomes empty')
+assert(sanitizeReturnTo('/chapter/chapter-1') === '/chapter/chapter-1', 'allow relative path')
+assert(sanitizeReturnTo('//evil.com') === null, 'reject protocol-relative')
+assert(sanitizeReturnTo('https://evil.com') === null, 'reject absolute URL')
+assert(sanitizeReturnTo('/\\evil') === null, 'reject backslash')
+assert(sanitizeReturnTo('chapter-1') === null, 'reject non-root-relative')
 
 console.log('[verify:auth-validation] PASS')

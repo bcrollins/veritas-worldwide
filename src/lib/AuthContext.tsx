@@ -61,6 +61,15 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null)
 
+/** Only allow same-origin relative paths — blocks open redirects via //evil.com. */
+function sanitizeReturnTo(returnTo: string): string | null {
+  if (typeof returnTo !== 'string') return null
+  const path = returnTo.trim()
+  if (!path.startsWith('/') || path.startsWith('//') || path.includes('\\')) return null
+  if (path.includes('://')) return null
+  return path
+}
+
 function loadAuthIntent(): AuthIntent | null {
   if (typeof window === 'undefined') return null
 
@@ -73,9 +82,14 @@ function loadAuthIntent(): AuthIntent | null {
       window.sessionStorage.removeItem(AUTH_INTENT_KEY)
       return null
     }
+    const returnTo = sanitizeReturnTo(parsed.returnTo)
+    if (!returnTo) {
+      window.sessionStorage.removeItem(AUTH_INTENT_KEY)
+      return null
+    }
 
     return {
-      returnTo: parsed.returnTo,
+      returnTo,
       source: parsed.source,
     }
   } catch {
@@ -131,8 +145,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const openAuthModal = useCallback((options: OpenAuthModalOptions = {}) => {
     setAuthModalMode(options.mode ?? 'signup')
     if (options.intent) {
-      setAuthIntent(options.intent)
-      persistAuthIntent(options.intent)
+      const returnTo = sanitizeReturnTo(options.intent.returnTo)
+      if (returnTo) {
+        const safeIntent = { ...options.intent, returnTo }
+        setAuthIntent(safeIntent)
+        persistAuthIntent(safeIntent)
+      } else {
+        clearAuthIntent()
+      }
     } else {
       clearAuthIntent()
     }
