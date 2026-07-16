@@ -171,6 +171,20 @@ async function main() {
         'Build info reports prerender coverage',
         `prerenderedRouteCount=${build.prerenderedRouteCount ?? 'unknown'}`
       )
+      addCheck(
+        checks,
+        failures,
+        typeof build.nodeRuntime === 'string' && /^v\d+\./.test(build.nodeRuntime),
+        'Build info reports Node runtime version',
+        `build.nodeRuntime=${build.nodeRuntime}`,
+      )
+      addCheck(
+        checks,
+        failures,
+        typeof build.packageEnginesNode === 'string' && String(build.packageEnginesNode).includes('22'),
+        'Build info reports package engines.node floor',
+        `build.packageEnginesNode=${build.packageEnginesNode}`,
+      )
 
       
       addCheck(
