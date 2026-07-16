@@ -1194,6 +1194,10 @@ app.use(express.static(path.join(__dirname, 'dist'), {
     if (/\.(xml|txt)$/.test(filePath)) {
       res.setHeader('Cache-Control', 'public, max-age=3600')
     }
+    // Stable-name PDFs are rebuilt in place each deploy — never mark immutable.
+    if (filePath.endsWith('.pdf')) {
+      res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
+    }
   },
 }))
 

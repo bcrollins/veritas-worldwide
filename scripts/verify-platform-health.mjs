@@ -322,6 +322,7 @@ async function main() {
         signal: AbortSignal.timeout(timeoutMs),
       })
       const institutePdfType = (institutePdfResult.headers.get('content-type') || '').toLowerCase()
+      const institutePdfCache = (institutePdfResult.headers.get('cache-control') || '').toLowerCase()
       const institutePdfOk =
         institutePdfResult.ok &&
         (institutePdfType.includes('pdf') ||
@@ -342,6 +343,23 @@ async function main() {
         health.checks?.instituteFieldManualPdf === true || institutePdfOk,
         'Health probe reports institute field manual PDF (or asset responds)',
         `checks.instituteFieldManualPdf=${health.checks?.instituteFieldManualPdf}`
+      )
+      addCheck(
+        checks,
+        failures,
+        !institutePdfCache.includes('immutable'),
+        'Institute field manual PDF is not immutably cached',
+        `cache-control=${institutePdfCache || 'none'}`
+      )
+
+      const sitemapResult = await fetchText('/sitemap.xml')
+      const sitemapText = sitemapResult.text || ''
+      addCheck(
+        checks,
+        failures,
+        sitemapResult.response.ok && sitemapText.includes('/veritas-institute-field-manual.pdf'),
+        'Sitemap indexes the institute field manual PDF',
+        `sitemap status=${sitemapResult.response.status} hasFieldManualPdf=${sitemapText.includes('/veritas-institute-field-manual.pdf')}`
       )
 
       const chapterPreviewResult = await fetchJson('/api/chapters/chapter-1')
