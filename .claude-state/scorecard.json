@@ -1,5 +1,5 @@
 {
-  "run": 84,
+  "run": 85,
   "date": "2026-07-16",
   "site": [
     {
@@ -7,7 +7,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "source anchors 44px across money trail/events/legal; tip ec05960; pins floor 46",
+      "status": "source anchors residual 44px; Lancet CDX 403 re-probe; tip 2376fea+",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "40 a11y surfaces; footer complete; tip 07b3cd8 HEAD live",
+      "status": "X-Permitted-Cross-Domain-Policies; 47 a11y surfaces; tip 30ccc05+/6ab02c5",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
