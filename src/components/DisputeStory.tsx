@@ -48,7 +48,7 @@ export default function DisputeStory({ pageId, pageTitle }: DisputeStoryProps) {
           </p>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="font-sans text-xs font-semibold text-crimson hover:text-crimson-dark transition-colors"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold text-crimson hover:text-crimson-dark transition-colors"
           >
             {isOpen ? 'Close Form' : 'Submit a Factual Dispute →'}
           </button>
@@ -69,13 +69,13 @@ export default function DisputeStory({ pageId, pageTitle }: DisputeStoryProps) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase text-ink-faint">Factual Dispute Form</p>
               <div className="grid sm:grid-cols-2 gap-3">
-                <input type="text" placeholder="Your name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className="w-full px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none" required />
-                <input type="email" placeholder="Your email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} className="w-full px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none" required />
+                <input type="text" placeholder="Your name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className="w-full min-h-[44px] px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none" required />
+                <input type="email" placeholder="Your email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} className="w-full min-h-[44px] px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none" required />
               </div>
               <textarea placeholder="Which specific claim do you dispute? Quote the exact text." value={form.claim} onChange={e => setForm(f => ({ ...f, claim: e.target.value }))} rows={3} className="w-full px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none resize-none" required />
               <textarea placeholder="What is your counter-evidence? Cite specific sources." value={form.evidence} onChange={e => setForm(f => ({ ...f, evidence: e.target.value }))} rows={3} className="w-full px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none resize-none" required />
-              <input type="url" placeholder="Link to your source (optional)" value={form.sourceUrl} onChange={e => setForm(f => ({ ...f, sourceUrl: e.target.value }))} className="w-full px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none" />
-              <button type="submit" className="px-5 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-wide uppercase rounded-sm hover:bg-crimson-dark transition-colors">
+              <input type="url" placeholder="Link to your source (optional)" value={form.sourceUrl} onChange={e => setForm(f => ({ ...f, sourceUrl: e.target.value }))} className="w-full min-h-[44px] px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none" />
+              <button type="submit" className="inline-flex min-h-[44px] items-center px-5 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-wide uppercase rounded-sm hover:bg-crimson-dark transition-colors">
                 Submit Dispute for Review
               </button>
             </form>
