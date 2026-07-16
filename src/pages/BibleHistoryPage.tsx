@@ -573,10 +573,10 @@ export default function BibleHistoryPage() {
                   <Link to="/sources" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Source Library →
                   </Link>
-                  <Link to="/timeline" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/timeline" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Master Timeline →
                   </Link>
-                  <Link to="/" className="block font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     The Record — All Chapters →
                   </Link>
                 </div>
