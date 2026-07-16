@@ -311,6 +311,13 @@ const healthResult = await fetchJson('/api/health')
         'Live prerender route count stays above crawler floor',
         `prerenderedRouteCount=${livePrerenderCount}`
       )
+      addCheck(
+        checks,
+        failures,
+        typeof health.sentryForwardConfigured === 'boolean',
+        'Health exposes optional Sentry forward configuration flag',
+        `sentryForwardConfigured=${health.sentryForwardConfigured}`
+      )
 
       const clientErrorProbe = await fetch(getUrl('/api/client-error'), {
         method: 'POST',

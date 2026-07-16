@@ -1208,6 +1208,7 @@ function normalizeHealthHistorySample(raw) {
       ? Number(raw.prerenderedRouteCount)
       : 0,
     failedCount: Number.isFinite(Number(raw.failedCount)) ? Number(raw.failedCount) : 0,
+    replica: typeof raw.replica === 'string' ? raw.replica.slice(0, 64) : '',
   }
 }
 
@@ -1227,6 +1228,7 @@ function healthHistorySampleKey(sample) {
     sample.status || '',
     String(sample.failedCount ?? 0),
     String(sample.prerenderedRouteCount ?? 0),
+    sample.replica || '',
   ].join('|')
 }
 
@@ -1427,6 +1429,7 @@ function seedBootHealthHistorySample() {
       publicChapterCount: 0,
       prerenderedRouteCount: Object.keys(prerenderManifest || {}).length,
       failedCount: 0,
+      replica: process.env.RAILWAY_REPLICA_ID || '',
     })
   }
 }
@@ -1507,6 +1510,7 @@ app.get('/api/health', (req, res) => {
     publicChapterCount: payload.publicChapterCount,
     prerenderedRouteCount: payload.prerenderedRouteCount,
     failedCount: failed.length,
+    replica: process.env.RAILWAY_REPLICA_ID || '',
   })
 
   res.setHeader('Cache-Control', 'no-store')
