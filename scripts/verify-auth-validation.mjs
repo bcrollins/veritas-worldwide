@@ -52,6 +52,8 @@ assert(sanitizeReturnTo('chapter-1') === null, 'reject non-root-relative')
 
 
 assert(!isValidEmail('a@b.c'), 'reject single-char TLD')
+assert(!isValidEmail('a@1.2'), 'reject short numeric TLD')
+assert(isValidEmail('user@mail.example.com'), 'accept multi-label domain')
 assert(isValidEmail('  reader@example.com  '), 'trim valid email')
 assert(sanitizeReturnTo('/about?x=1') === '/about?x=1', 'allow query on relative path')
 assert(sanitizeReturnTo('//evil.com/path') === null, 'reject // with path')
