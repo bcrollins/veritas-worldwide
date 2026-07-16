@@ -84,6 +84,11 @@ assert(server.includes('X-Download-Options'), 'X-Download-Options set')
 assert(server.includes("'noopen'") || server.includes('"noopen"'), 'X-Download-Options value noopen')
 assert(server.includes('Cross-Origin-Opener-Policy'), 'Cross-Origin-Opener-Policy set')
 assert(server.includes('same-origin-allow-popups'), 'COOP allows intentional share popups')
+assert(
+  server.includes("'Cross-Origin-Opener-Policy', 'same-origin-allow-popups'") ||
+    server.includes('"Cross-Origin-Opener-Policy", "same-origin-allow-popups"'),
+  'COOP must be same-origin-allow-popups exactly',
+)
 assert(server.includes('Cross-Origin-Resource-Policy'), 'Cross-Origin-Resource-Policy set')
 assert(server.includes("'same-site'") || server.includes('"same-site"') || server.includes('same-site'), 'CORP value same-site')
 assert(
