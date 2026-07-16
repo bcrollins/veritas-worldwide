@@ -222,7 +222,15 @@ assert(
   robotsTxt.includes('Allow: /.well-known/security.txt'),
   'robots.txt must Allow /.well-known/security.txt for researcher discovery'
 )
-console.log('[verify:crawler-surfaces] robots.txt allows security.txt')
+assert(
+  robotsTxt.includes('Sitemap: https://veritasworldwide.com/sitemap.xml'),
+  'robots.txt must declare absolute Sitemap URL'
+)
+assert(
+  robotsTxt.includes('Allow: /veritas-institute-field-manual.pdf'),
+  'robots.txt must Allow field manual PDF'
+)
+console.log('[verify:crawler-surfaces] robots.txt allows security.txt + field manual + Sitemap')
 
 const prerenderLlms = read('scripts/prerender.mjs')
 assert(
