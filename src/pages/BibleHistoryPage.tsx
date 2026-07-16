@@ -314,7 +314,7 @@ function EvidenceCard({ block }: { block: EvidenceBlock }) {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block font-sans text-xs text-ink-muted hover:text-ink transition-colors leading-relaxed"
+                className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-ink transition-colors leading-relaxed"
               >
                 <span className="font-semibold" style={{ color: cfg.color }}>[{i + 1}]</span> {s.label} <span className="text-ink-faint">↗</span>
               </a>
