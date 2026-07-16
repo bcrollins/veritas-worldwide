@@ -938,9 +938,130 @@ app.get('/api/analytics/snapshot', async (req, res) => {
 // Client-side error intake — structured operator logs without requiring Sentry.
 // Accepts small anonymized payloads from ErrorBoundary + global handlers.
 // Replica-local counters give operators a live signal without external paging.
+// When SENTRY_DSN is configured, also fire-and-forget a store event for external paging.
 let clientErrorIntakeCount = 0
 let clientErrorIntakeLastAt = ''
 let clientErrorIntakeLastMessage = ''
+let clientErrorSentryForwardCount = 0
+let clientErrorSentryForwardLastAt = ''
+let clientErrorSentryForwardLastStatus = ''
+
+function parseSentryDsn(dsn) {
+  if (!dsn || typeof dsn !== 'string') return null
+  try {
+    const url = new URL(dsn)
+    const publicKey = url.username
+    const projectId = url.pathname.replace(/^\//, '').split('/')[0]
+    if (!publicKey || !projectId) return null
+    return {
+      publicKey,
+      projectId,
+      storeUrl: `${url.protocol}//${url.host}/api/${projectId}/store/`,
+    }
+  } catch {
+    return null
+  }
+}
+
+const SENTRY_DSN_CONFIG = parseSentryDsn(process.env.SENTRY_DSN || process.env.SENTRY_DSN_SERVER || '')
+
+function forwardClientErrorToSentry(payload) {
+  if (!SENTRY_DSN_CONFIG) return
+  const eventId = cryptoRandomHex(16)
+  const event = {
+    event_id: eventId,
+    timestamp: Math.floor(Date.now() / 1000),
+    platform: 'javascript',
+    level: 'error',
+    logger: 'veritas.client-error',
+    server_name: process.env.RAILWAY_SERVICE_NAME || 'veritas-worldwide',
+    release: payload.commit || getReleaseCommit().slice(0, 12) || undefined,
+    environment: process.env.RAILWAY_ENVIRONMENT_NAME || process.env.NODE_ENV || 'production',
+    message: payload.message,
+    exception: {
+      values: [
+        {
+          type: payload.name || 'Error',
+          value: payload.message,
+          stacktrace: payload.stack
+            ? {
+                frames: payload.stack
+                  .split('\n')
+                  .slice(0, 20)
+                  .map((line) => ({ filename: 'app', function: line.trim().slice(0, 240) })),
+              }
+            : undefined,
+        },
+      ],
+    },
+    tags: {
+      source: payload.source || 'client',
+      path: payload.path || '',
+    },
+    extra: {
+      componentStack: payload.componentStack || '',
+      href: payload.href || '',
+      userAgent: payload.userAgent || '',
+    },
+    request: {
+      url: payload.href || payload.path || undefined,
+      headers: payload.userAgent ? { 'User-Agent': payload.userAgent } : undefined,
+    },
+  }
+
+  const authHeader = [
+    'Sentry sentry_version=7',
+    `sentry_client=veritas-worldwide/${APP_VERSION || '1.0.0'}`,
+    `sentry_key=${SENTRY_DSN_CONFIG.publicKey}`,
+  ].join(', ')
+
+  // Fire-and-forget — never block the 204 response to the browser.
+  void fetch(SENTRY_DSN_CONFIG.storeUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Sentry-Auth': authHeader,
+    },
+    body: JSON.stringify(event),
+    signal: AbortSignal.timeout(4000),
+  })
+    .then((response) => {
+      clientErrorSentryForwardCount += 1
+      clientErrorSentryForwardLastAt = new Date().toISOString()
+      clientErrorSentryForwardLastStatus = String(response.status)
+      if (!response.ok) {
+        console.warn(`[monitor] sentry forward returned ${response.status}`)
+      }
+    })
+    .catch((error) => {
+      clientErrorSentryForwardLastAt = new Date().toISOString()
+      clientErrorSentryForwardLastStatus = 'error'
+      console.warn(
+        '[monitor] sentry forward failed',
+        error instanceof Error ? error.message : error
+      )
+    })
+}
+
+function cryptoRandomHex(byteLength) {
+  // Prefer Web Crypto when available (Node 19+); fall back to Math.random for older runtimes.
+  try {
+    if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
+      const bytes = new Uint8Array(byteLength)
+      crypto.getRandomValues(bytes)
+      return [...bytes].map((b) => b.toString(16).padStart(2, '0')).join('')
+    }
+  } catch {
+    // fall through
+  }
+  let out = ''
+  for (let i = 0; i < byteLength; i += 1) {
+    out += Math.floor(Math.random() * 256)
+      .toString(16)
+      .padStart(2, '0')
+  }
+  return out
+}
 
 app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
   const body = req.body && typeof req.body === 'object' ? req.body : {}
@@ -983,6 +1104,8 @@ app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
       console.error('[monitor] failed to persist client-error', error instanceof Error ? error.message : error)
     }
   }
+
+  forwardClientErrorToSentry(payload)
 
   return res.status(204).end()
 })
@@ -1368,6 +1491,10 @@ app.get('/api/health', (req, res) => {
     clientErrorIntakeCount,
     clientErrorIntakeLastAt,
     clientErrorIntakeLastMessage,
+    sentryForwardConfigured: Boolean(SENTRY_DSN_CONFIG),
+    sentryForwardCount: clientErrorSentryForwardCount,
+    sentryForwardLastAt: clientErrorSentryForwardLastAt,
+    sentryForwardLastStatus: clientErrorSentryForwardLastStatus,
     checks,
     failed,
   }

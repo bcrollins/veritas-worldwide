@@ -209,14 +209,14 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     archiveUrl: 'https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
     status: 'Pinned Wayback snapshot 20260515102538; primary host may block automated probes.',
   },
-  // Content URL maps to the same 1 April 2026 snapshot PDF capture when the HTML path has no independent snapshot.
+  // HTML page now has an independent Wayback capture; PDF companion remains pinned separately.
   'https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026': {
-    archiveUrl: 'https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
-    status: 'Pinned via companion PDF snapshot 20260515102538 (same OCHA 1 Apr 2026 impact table); HTML path lacked an independent Wayback capture.',
+    archiveUrl: 'https://web.archive.org/web/20260703122825/https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026',
+    status: 'Pinned Wayback HTML snapshot 20260703122825; PDF companion also pinned at 20260515102538.',
   },
   'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab': {
-    archiveUrl: 'https://web.archive.org/web/20240621135854/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab',
-    status: 'Pinned Wayback snapshot 20240621135854; primary host may block automated probes.',
+    archiveUrl: 'https://web.archive.org/web/20260705041620/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab',
+    status: 'Pinned Wayback snapshot 20260705041620; primary host may block automated probes.',
   },
   'https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025': {
     archiveUrl: 'https://web.archive.org/web/20250404145748/https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025',
