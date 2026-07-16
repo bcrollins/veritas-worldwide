@@ -17,10 +17,15 @@ function assert(c, m) {
   }
 }
 
-const m = html.match(/http-equiv=["']Content-Security-Policy["'][^>]*content=["']([^"']+)["']/i)
-  || html.match(/content=["']([^"']+)["'][^>]*http-equiv=["']Content-Security-Policy["']/i)
+// content="..." may contain single quotes (CSP tokens). Match double-quoted content only.
+const m = html.match(
+  /http-equiv=["']Content-Security-Policy["']\s+content="([^"]+)"/i,
+) || html.match(
+  /content="([^"]+)"\s+http-equiv=["']Content-Security-Policy["']/i,
+)
 assert(m, 'CSP meta missing in index.html')
 const csp = m[1]
+assert(csp.length > 40, `CSP meta too short (${csp.length})`)
 assert(/object-src\s+'none'/.test(csp), 'object-src none required')
 assert(/base-uri\s+'self'/.test(csp), 'base-uri self required')
 assert(/default-src\s+'self'/.test(csp), 'default-src self required')
