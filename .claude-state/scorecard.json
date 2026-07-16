@@ -1,5 +1,5 @@
 {
-  "run": 61,
+  "run": 62,
   "date": "2026-07-16",
   "site": [
     {
@@ -7,7 +7,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "43 archive pins floor 40 incl DOJ/NTSB investigations; Lancet lookup-only",
+      "status": "44 pins floor 44 incl DocumentCloud flight manifests; Lancet lookup-only",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -36,10 +36,10 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.78,
-      "previous": 9.75,
-      "delta": 0.03,
-      "status": "email shape + password bounds + displayName control-char strip; auth negative paths live PASS",
+      "composite": 9.8,
+      "previous": 9.78,
+      "delta": 0.02,
+      "status": "short-password register rejected in smoke; tip 3c5147f",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.5,
-      "previous": 9.45,
+      "composite": 9.55,
+      "previous": 9.5,
       "delta": 0.05,
-      "status": "44px wave through sources/methodology/content-pack; tip d5a3844 verify:live green",
+      "status": "deep-state/forum/dossier/terms/privacy/dispute 44px; tip 3c5147f live",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
