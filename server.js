@@ -1551,6 +1551,9 @@ app.get('/api/health/history', async (_req, res) => {
     sharedAcrossReplicas: Boolean(analyticsDbPool),
     commitTransitions,
     uniqueCommits: [...new Set(healthHistory.map((sample) => sample?.commitShort).filter(Boolean))],
+    uniqueReplicas: [
+      ...new Set(healthHistory.map((sample) => sample?.replica).filter(Boolean)),
+    ],
   })
 })
 
