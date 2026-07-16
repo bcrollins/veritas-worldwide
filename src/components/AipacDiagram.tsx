@@ -511,12 +511,12 @@ export default function AipacDiagram() {
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Search by name or state..."
-          className="flex-1 min-w-[200px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson"
+          className="flex-1 min-h-[44px] min-w-[200px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson"
         />
         <select
           value={chamberFilter}
           onChange={e => setChamberFilter(e.target.value as 'all' | Chamber)}
-          className="px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink"
+          className="min-h-[44px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink"
         >
           <option value="all">All Chambers</option>
           <option value="senate">Senate</option>
@@ -525,7 +525,7 @@ export default function AipacDiagram() {
         <select
           value={partyFilter}
           onChange={e => setPartyFilter(e.target.value as 'all' | Party)}
-          className="px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink"
+          className="min-h-[44px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink"
         >
           <option value="all">All Parties</option>
           <option value="D">Democrat</option>
@@ -632,7 +632,7 @@ export default function AipacDiagram() {
       <section className="mb-12">
         <button
           onClick={() => setShowVotes(!showVotes)}
-          className="flex items-center gap-4 w-full mb-4"
+          className="flex min-h-[44px] items-center gap-4 w-full mb-4"
         >
           <h3 className="font-display text-xl md:text-2xl font-bold text-ink">Key Israel-Related Votes</h3>
           <div className="flex-1 h-[1px] bg-border" />
@@ -671,7 +671,7 @@ export default function AipacDiagram() {
       <section className="mb-12">
         <button
           onClick={() => setShowLobbyists(!showLobbyists)}
-          className="flex items-center gap-4 w-full mb-4"
+          className="flex min-h-[44px] items-center gap-4 w-full mb-4"
         >
           <h3 className="font-display text-xl md:text-2xl font-bold text-ink">AIPAC Registered Lobbyists</h3>
           <div className="flex-1 h-[1px] bg-border" />
@@ -710,7 +710,7 @@ export default function AipacDiagram() {
       <section className="mb-12">
         <button
           onClick={() => setShowAllMembers(!showAllMembers)}
-          className="flex items-center gap-4 w-full mb-4"
+          className="flex min-h-[44px] items-center gap-4 w-full mb-4"
         >
           <h3 className="font-display text-xl md:text-2xl font-bold text-ink">All Tracked Members ({filtered.length})</h3>
           <div className="flex-1 h-[1px] bg-border" />
@@ -724,7 +724,7 @@ export default function AipacDiagram() {
                 <button
                   key={s}
                   onClick={() => setSortBy(s)}
-                  className={`font-sans text-[0.6rem] px-2 py-1 rounded-sm border transition-colors ${
+                  className={`inline-flex min-h-[44px] items-center font-sans text-[0.6rem] px-2.5 py-1 rounded-sm border transition-colors ${
                     sortBy === s ? 'bg-crimson text-white border-crimson' : 'border-border text-ink-muted hover:border-ink'
                   }`}
                 >

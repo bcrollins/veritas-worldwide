@@ -56,6 +56,7 @@ const floors = [
   { path: 'src/pages/SearchPage.tsx', min: 8, label: 'search filters/sidebar' },
   { path: 'src/components/institute/InstituteLayout.tsx', min: 8, label: 'institute footer nav' },
   { path: 'src/pages/SubscribeSuccessPage.tsx', min: 3, label: 'subscribe success CTAs' },
+  { path: 'src/components/AipacDiagram.tsx', min: 6, label: 'AIPAC map controls' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
