@@ -45,3 +45,10 @@
 - Field manual + The Record PDFs: 200, must-revalidate, Content-Disposition filenames
 - Trust nav PDF links live on About, Methodology, Sources chunks
 - platform / release / search / checkout-attribution / health-transitions / israel-dossier PASS
+
+## Live tip proof (fbe7bc1)
+
+- Session refresh PASS: rotate token, revoke old, validate new, logout revoke
+- Search engagement PASS: chapter-9 42→60 under federal reserve + recent=chapter-9
+- Auth status: sessionRefresh=true, accessTokenTtl=7d
+- platform/release/search/auth/israel-dossier green
