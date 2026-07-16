@@ -131,6 +131,19 @@ async function main() {
   assert(!badRegister.data?.token, 'Invalid-email register must not return a token')
   logStep('Invalid-email register rejected')
 
+  // Negative path: password too short
+  const shortPassword = await requestJson('/api/auth/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: `short-pw-${Date.now()}@example.com`, password: 'ab12', displayName }),
+  })
+  assert(
+    shortPassword.response.status === 400 || shortPassword.response.status === 422,
+    `Expected short-password register to return 400/422, received ${shortPassword.response.status}`
+  )
+  assert(!shortPassword.data?.token, 'Short-password register must not return a token')
+  logStep('Short-password register rejected')
+
   const registerResult = await requestJsonWithRetry('/api/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

@@ -50,6 +50,16 @@ const routes = [
   { path: '/israel-dossier', text: ['Israel', 'ISRAEL'], anyText: ['Archive pins', 'ARCHIVE PINS', 'Evidence Workbooks', 'EVIDENCE WORKBOOKS', 'Dossier', 'DOSSIER'] },
   { path: '/israel-dossier/briefing', text: ['briefing', 'BRIEFING'], anyText: ['source', 'Source', 'SOURCE', 'workbook', 'WORKBOOK'] },
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
+  {
+    path: '/deep-state',
+    text: ['Deep State', 'DEEP STATE', 'Epstein', 'EPSTEIN'],
+    anyText: ['source', 'Source', 'SOURCE', 'Verified', 'VERIFIED', 'Methodology', 'METHODOLOGY'],
+  },
+  {
+    path: '/forum',
+    text: ['Forum', 'FORUM', 'Community', 'COMMUNITY'],
+    anyText: ['thread', 'Thread', 'THREAD', 'beta', 'Beta', 'BETA', 'post', 'Post', 'POST'],
+  },
   { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL', 'Field Manual', 'FIELD MANUAL', 'Institute', 'INSTITUTE'] },
   { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
   { path: '/news', text: ['News', 'NEWS', 'Current', 'CURRENT'], anyText: ['source', 'Source', 'SOURCE', 'article', 'Article', 'ARTICLE'] },
