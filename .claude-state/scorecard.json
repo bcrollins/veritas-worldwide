@@ -1,5 +1,5 @@
 {
-  "run": 196,
+  "run": 197,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.59,
       "previous": 9.58,
       "delta": 0.01,
-      "status": "CORS Vary/Max-Age + CSP 13 headers + anti-enum; tip 39e33ad 15-step",
+      "status": "CORS expose RateLimit + preflight; tip 3277c22 15-step full green",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
