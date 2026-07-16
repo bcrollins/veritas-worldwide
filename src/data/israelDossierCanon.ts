@@ -230,6 +230,12 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     archiveUrl: 'https://web.archive.org/web/20260227165001/https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
     status: 'Pinned Wayback snapshot 20260227165001; primary host may block automated probes.',
   },
+  // UN Digital Library record 4061434 is the UNGA ES-10 advisory-opinion implementation resolution;
+  // docs.un.org hosts the same A/ES-10/L.31/Rev.1 text with a durable Wayback capture.
+  'https://digitallibrary.un.org/record/4061434': {
+    archiveUrl: 'https://web.archive.org/web/20250310150211/https://docs.un.org/en/A/ES-10/L.31/Rev.1',
+    status: 'Pinned via companion docs.un.org A/ES-10/L.31/Rev.1 snapshot 20250310150211; UN Digital Library host blocks automated probes.',
+  },
 }
 
 const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>

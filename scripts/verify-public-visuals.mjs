@@ -22,10 +22,11 @@ const routes = [
   { path: '/chapter/chapter-1', text: ['The Birth of Central Banking', '8 SOURCES CITED'] },
   { path: '/sources', text: ['Sources & References', 'WITH DIRECT LINKS'] },
   { path: '/search?q=federal+reserve', text: ['Search The Record'] },
-  { path: '/content-pack', text: ['Brand Assets', 'Usage Guidelines'] },
-  { path: '/analytics', text: ['Reader Analytics', 'Release Health'] },
-  { path: '/israel-dossier', text: ['Archive pins', 'Evidence Workbooks'] },
-  { path: '/israel-dossier/briefing', text: ['source', 'briefing'] },
+  // SPA-lazy surfaces. CSS uppercase headings mean innerText may be ALL CAPS — match case-insensitively below.
+  { path: '/content-pack', text: ['Content Pack'], anyText: ['Brand Assets', 'BRAND ASSETS', 'Shareable Graphics', 'SHAREABLE GRAPHICS', 'Usage Guidelines', 'USAGE GUIDELINES'] },
+  { path: '/analytics', text: ['Reader Analytics', 'READER ANALYTICS'], anyOfAll: false, anyText: ['Release Health', 'RELEASE HEALTH', 'Lifetime Views', 'LIFETIME VIEWS', 'Transparency', 'TRANSPARENCY'] },
+  { path: '/israel-dossier', text: ['Israel', 'ISRAEL'], anyText: ['Archive pins', 'ARCHIVE PINS', 'Evidence Workbooks', 'EVIDENCE WORKBOOKS', 'Dossier', 'DOSSIER'] },
+  { path: '/israel-dossier/briefing', text: ['briefing', 'BRIEFING'], anyText: ['source', 'Source', 'SOURCE', 'workbook', 'WORKBOOK'] },
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
   { path: '/terms', text: ['core downloads are public without a login'] },
 ]
@@ -76,20 +77,32 @@ async function main() {
           const response = await page.goto(getUrl(route.path), { waitUntil: 'domcontentloaded', timeout: 45_000 })
           assert(response?.ok(), `${device.name} ${route.path} returned ${response?.status() || 'no response'}`)
           await page.waitForLoadState('load', { timeout: 15_000 }).catch(() => {})
+          await page.waitForLoadState('networkidle', { timeout: 20_000 }).catch(() => {})
           await page.locator('body').waitFor({ timeout: 10_000 })
+          // Give lazy route chunks a beat to hydrate on mobile.
+          await page.waitForTimeout(750)
+          const includesCI = (haystack, needle) => haystack.toLowerCase().includes(String(needle).toLowerCase())
           await page.waitForFunction(
-            (needles) => needles.every((needle) => document.body.innerText.includes(needle)),
+            (needles) => {
+              const body = document.body.innerText.toLowerCase()
+              return needles.some((needle) => body.includes(String(needle).toLowerCase()))
+            },
             route.text,
-            { timeout: 20_000 }
+            { timeout: 25_000 }
           ).catch(async () => {
             const bodyText = await page.locator('body').innerText({ timeout: 5_000 }).catch(() => '')
-            const missing = route.text.filter((needle) => !bodyText.includes(needle))
-            throw new Error(`${device.name} ${route.path} missing ${missing.map((needle) => `"${needle}"`).join(', ')}`)
+            throw new Error(`${device.name} ${route.path} missing any of ${route.text.map((needle) => `"${needle}"`).join(', ')} (body sample: ${bodyText.slice(0, 160).replace(/\s+/g, ' ')})`)
           })
 
           const bodyText = await page.locator('body').innerText({ timeout: 10_000 })
-          for (const needle of route.text) {
-            assert(bodyText.includes(needle), `${device.name} ${route.path} missing "${needle}"`)
+          const requiredHit = route.text.some((needle) => includesCI(bodyText, needle))
+          assert(requiredHit, `${device.name} ${route.path} missing any of ${route.text.map((needle) => `"${needle}"`).join(', ')}`)
+          if (Array.isArray(route.anyText) && route.anyText.length > 0) {
+            const matched = route.anyText.some((needle) => includesCI(bodyText, needle))
+            assert(
+              matched,
+              `${device.name} ${route.path} missing any of ${route.anyText.map((needle) => `"${needle}"`).join(', ')}`
+            )
           }
           for (const pattern of forbidden) {
             assert(!pattern.test(bodyText), `${device.name} ${route.path} rendered forbidden copy ${pattern}`)

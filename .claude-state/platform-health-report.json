@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T05:43:17.435Z",
+  "checkedAt": "2026-07-16T05:49:58.488Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "3a2c952960973194b786190a1f5d68367a3eeff3",
-    "commitShort": "3a2c95296097",
-    "deploymentId": "2422b8c8-14fe-4c49-b77a-f73811a5de6e",
+    "commit": "031f7b2a85bb5954b4a9aa4ecf23451d5bf98f89",
+    "commitShort": "031f7b2a85bb",
+    "deploymentId": "18dee4a5-6766-40fa-b978-3e750c1b968c",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -101,12 +101,17 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=12"
+      "detail": "pinned=14"
     },
     {
       "ok": true,
       "label": "Content pack route responds",
       "detail": "GET /content-pack returned 200"
+    },
+    {
+      "ok": true,
+      "label": "Client error intake accepts or rate-limits probes",
+      "detail": "POST /api/client-error returned 204"
     },
     {
       "ok": true,

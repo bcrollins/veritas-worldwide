@@ -5,9 +5,10 @@
   "entries": [
     {
       "sourceUrl": "https://digitallibrary.un.org/record/4061434",
-      "timestamp": null,
-      "archiveUrl": "https://web.archive.org/web/*/https://digitallibrary.un.org/record/4061434",
-      "status": "lookup-only"
+      "timestamp": "20250310150211",
+      "archiveUrl": "https://web.archive.org/web/20250310150211/https://docs.un.org/en/A/ES-10/L.31/Rev.1",
+      "status": "pinned",
+      "note": "Companion docs.un.org A/ES-10/L.31/Rev.1 snapshot of the same UNGA ES-10 resolution"
     },
     {
       "sourceUrl": "https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",

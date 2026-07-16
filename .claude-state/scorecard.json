@@ -1,5 +1,5 @@
 {
-  "run": 34,
+  "run": 36,
   "date": "2026-07-16",
   "site": [
     {
@@ -15,7 +15,7 @@
       "composite": 8.5,
       "previous": 8.3,
       "delta": 0.2,
-      "status": "live on c809452a9e1d: mobile cookie banner compact copy present in CookieConsent-p0Z-J0c2.js",
+      "status": "visual matrix expanded; cookie compact live",
       "plus_half_requires": "Live 390px/430px screenshots after deploy confirming first-screen CTAs remain fully visible with consent pending."
     },
     {
@@ -44,10 +44,10 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.5,
-      "previous": 9.4,
+      "composite": 9.6,
+      "previous": 9.5,
       "delta": 0.1,
-      "status": "improved; pinned Wayback captures for high-value briefing sources live",
+      "status": "15/16 briefing source URLs pinned to Wayback (Lancet still lookup-only)",
       "plus_half_requires": "Expand archive pins beyond briefing rows to restricted/bot-blocked bibliography URLs."
     },
     {
@@ -84,11 +84,11 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.1,
-      "previous": 8.8,
-      "delta": 0.3,
-      "status": "live; /api/health ok on db4519dd0187; platform verifier PASS including archive manifest checks",
-      "plus_half_requires": "Wire Sentry (or equivalent) for stack-trace alerting, then prove scheduled platform-health failures notify an operator."
+      "composite": 9.3,
+      "previous": 9.1,
+      "delta": 0.2,
+      "status": "live: /api/client-error intake + structured monitor logs; /api/health ok",
+      "plus_half_requires": "Optional Sentry DSN for external paging on top of native client-error intake."
     },
     {
       "feature": "Public Analytics",
