@@ -1527,6 +1527,7 @@ app.get('/api/health', (req, res) => {
     healthHistoryStorage: getHealthHistoryStorageLabel(),
     healthHistorySharedAcrossReplicas: Boolean(analyticsDbPool),
     healthHistorySampleCount: healthHistory.length,
+    popularChapterCount: getPopularChapterIdsFromAnalytics({ limit: 8, minViews: 3 }).length,
     checks,
     failed,
   }

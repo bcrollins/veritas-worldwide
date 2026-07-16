@@ -339,6 +339,13 @@ const healthResult = await fetchJson('/api/health')
         'Health exposes health history storage label',
         `healthHistoryStorage=${health.healthHistoryStorage || 'missing'}`
       )
+      addCheck(
+        checks,
+        failures,
+        typeof health.popularChapterCount === 'number' && health.popularChapterCount >= 0,
+        'Health exposes popular chapter count from analytics',
+        `popularChapterCount=${health.popularChapterCount}`
+      )
       if (health.checks?.databaseConfigured === true) {
         addCheck(
           checks,
