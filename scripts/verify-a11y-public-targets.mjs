@@ -13,7 +13,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 /** @type {Array<{ path: string, min: number, label: string }>} */
 const floors = [
   { path: 'src/pages/ChapterPage.tsx', min: 10, label: 'chapter actions/nav' },
-  { path: 'src/pages/HomePage.tsx', min: 10, label: 'home CTAs' },
+  { path: 'src/pages/HomePage.tsx', min: 11, label: 'home CTAs' },
   { path: 'src/pages/ForumPage.tsx', min: 50, label: 'forum votes/actions' },
   { path: 'src/pages/IsraelDossierPage.tsx', min: 22, label: 'dossier source anchors' },
   { path: 'src/pages/IsraelDossierBriefingPage.tsx', min: 7, label: 'dossier briefing sections' },
@@ -54,7 +54,7 @@ const floors = [
   { path: 'src/pages/PrivacyPage.tsx', min: 6, label: 'privacy sidebar' },
   { path: 'src/pages/BookmarksPage.tsx', min: 11, label: 'bookmarks shell' },
   { path: 'src/pages/TimelinePage.tsx', min: 8, label: 'timeline shell' },
-  { path: 'src/App.tsx', min: 23, label: 'site shell header/nav/footer' },
+  { path: 'src/App.tsx', min: 24, label: 'site shell header/nav/footer' },
   { path: 'src/pages/TopicPage.tsx', min: 5, label: 'topic hub breadcrumbs' },
   { path: 'src/pages/ArticlePage.tsx', min: 5, label: 'article news chrome' },
   { path: 'src/pages/NewsPage.tsx', min: 7, label: 'news desk CTAs' },
