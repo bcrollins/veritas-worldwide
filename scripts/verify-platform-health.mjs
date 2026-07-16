@@ -525,6 +525,20 @@ const healthResult = await fetchJson('/api/health')
         'Sitemap indexes the institute field manual PDF',
         `sitemap status=${sitemapResult.response.status} hasFieldManualPdf=${sitemapText.includes('/veritas-institute-field-manual.pdf')}`
       )
+      const withdrawnNews = [
+        'ai-deepfakes-election-disinformation-regulation-2026',
+        'pharmaceutical-lobbying-record-spending-drug-prices-2026',
+        'ukraine-russia-peace-negotiations-minerals-deal-2026',
+        'supreme-court-ethics-undisclosed-gifts-recusal-2026',
+      ]
+      const withdrawnInSitemap = withdrawnNews.filter((slug) => sitemapText.includes(`/news/${slug}`))
+      addCheck(
+        checks,
+        failures,
+        withdrawnInSitemap.length === 0,
+        'Sitemap excludes withdrawn unsupported news pack',
+        `orphans=${withdrawnInSitemap.join(',') || 'none'}`
+      )
 
       const feedResult = await fetchText('/feed.xml')
       const feedText = feedResult.text || ''
