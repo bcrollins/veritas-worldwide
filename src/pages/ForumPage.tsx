@@ -543,7 +543,7 @@ function PostDetail({ post, onBack, userId, actorLabel, onPostChange, onRequireA
             <span className="text-xs text-ink-muted font-sans">Sort by:</span>
             {(['best', 'new', 'old', 'top', 'controversial'] as CommentSortMode[]).map(mode => (
               <button key={mode} onClick={() => setCommentSort(mode)}
-                className={`font-sans text-xs font-semibold px-2 py-1 rounded transition-colors ${commentSort === mode ? 'bg-crimson/10 text-crimson' : 'text-ink-muted hover:text-ink'}`}
+                className={`inline-flex min-h-[44px] items-center font-sans text-xs font-semibold px-2 py-1 rounded transition-colors ${commentSort === mode ? 'bg-crimson/10 text-crimson' : 'text-ink-muted hover:text-ink'}`}
               >{mode.charAt(0).toUpperCase() + mode.slice(1)}</button>
             ))}
           </div>
@@ -635,7 +635,7 @@ function CommunityCard({ community, activity }: { community: Community; activity
 
         {/* Rules */}
         <div className="mt-3">
-          <button onClick={() => setShowRules(!showRules)} className="font-sans text-[0.6rem] font-bold text-ink-muted uppercase tracking-wider hover:text-ink w-full text-left flex items-center justify-between">
+          <button onClick={() => setShowRules(!showRules)} className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-bold text-ink-muted uppercase tracking-wider hover:text-ink w-full text-left justify-between">
             Rules ({community.rules.length})
             <svg className={`w-3 h-3 transition-transform ${showRules ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -717,7 +717,7 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
           <div className="flex border border-border rounded overflow-hidden">
             {(['text', 'link', 'poll'] as PostType[]).map(t => (
               <button key={t} onClick={() => setPostType(t)}
-                className={`flex-1 py-2 font-sans text-xs font-bold uppercase tracking-wider transition-colors ${postType === t ? 'bg-crimson text-white' : 'bg-parchment text-ink-muted hover:bg-parchment-dark'}`}
+                className={`flex-1 min-h-[44px] py-2 font-sans text-xs font-bold uppercase tracking-wider transition-colors ${postType === t ? 'bg-crimson text-white' : 'bg-parchment text-ink-muted hover:bg-parchment-dark'}`}
               >{t === 'text' ? <><ForumIcon name="newspaper" className="w-3 h-3 inline mr-1" /> Post</> : t === 'link' ? <><ForumIcon name="layers" className="w-3 h-3 inline mr-1" /> Link</> : <><ForumIcon name="trending" className="w-3 h-3 inline mr-1" /> Poll</>}</button>
             ))}
           </div>
@@ -743,10 +743,10 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
                 <div key={i} className="flex gap-2">
                   <input type="text" value={opt} onChange={e => { const n = [...pollOptions]; n[i] = e.target.value; setPollOptions(n) }}
                     placeholder={`Option ${i + 1}`} className="flex-1 p-2 border border-border rounded bg-white font-sans text-sm focus:outline-none focus:ring-1 focus:ring-crimson/30" />
-                  {pollOptions.length > 2 && <button onClick={() => setPollOptions(pollOptions.filter((_, j) => j !== i))} className="text-ink-faint hover:text-red-600 px-2">×</button>}
+                  {pollOptions.length > 2 && <button onClick={() => setPollOptions(pollOptions.filter((_, j) => j !== i))} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-red-600 px-2" aria-label="Remove poll option">×</button>}
                 </div>
               ))}
-              {pollOptions.length < 6 && <button onClick={() => setPollOptions([...pollOptions, ''])} className="text-xs text-crimson font-semibold hover:underline">+ Add option</button>}
+              {pollOptions.length < 6 && <button onClick={() => setPollOptions([...pollOptions, ''])} className="inline-flex min-h-[44px] items-center text-xs text-crimson font-semibold hover:underline">+ Add option</button>}
             </div>
           )}
 
@@ -1091,7 +1091,7 @@ export default function ForumPage() {
       {/* ── Top Bar ─────────────────────────────────────────────── */}
       <div className="flex items-center gap-4 py-4 border-b border-border mb-4 flex-wrap">
         {/* Mobile sidebar toggle */}
-        <button onClick={() => setShowMobileSidebar(!showMobileSidebar)} className="lg:hidden p-2 border border-border rounded hover:bg-parchment-dark">
+        <button onClick={() => setShowMobileSidebar(!showMobileSidebar)} className="lg:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 border border-border rounded hover:bg-parchment-dark" aria-label="Toggle communities menu">
           <svg className="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
 
@@ -1139,7 +1139,7 @@ export default function ForumPage() {
             {showMobileSidebar && (
               <div className="flex justify-between items-center mb-4 lg:hidden">
                 <span className="font-sans text-sm font-bold text-ink">Communities</span>
-                <button onClick={() => setShowMobileSidebar(false)}><CloseIcon /></button>
+                <button onClick={() => setShowMobileSidebar(false)} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center" aria-label="Close communities menu"><CloseIcon /></button>
               </div>
             )}
             <CommunityListSidebar
