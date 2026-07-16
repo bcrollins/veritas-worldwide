@@ -236,6 +236,19 @@ async function main() {
         `GET /content-pack returned ${contentPackResult.response.status}`
       )
 
+      const healthHistoryResult = await fetchJson('/api/health/history')
+      const healthHistory =
+        typeof healthHistoryResult.data === 'object' && healthHistoryResult.data !== null
+          ? healthHistoryResult.data
+          : {}
+      addCheck(
+        checks,
+        failures,
+        healthHistoryResult.response.ok && Array.isArray(healthHistory.samples),
+        'Health history endpoint responds',
+        `GET /api/health/history returned ${healthHistoryResult.response.status}`
+      )
+
       const clientErrorProbe = await fetch(getUrl('/api/client-error'), {
         method: 'POST',
         headers: {

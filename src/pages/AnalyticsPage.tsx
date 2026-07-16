@@ -586,7 +586,31 @@ type ReleaseHealth = {
   version?: string
 }
 
-function ReleaseHealthPanel({ health }: { health: ReleaseHealth | null }) {
+type HealthHistorySample = {
+  checkedAt?: string
+  status?: string
+  commitShort?: string
+  analyticsLifetime?: number
+  publicChapterCount?: number
+  prerenderedRouteCount?: number
+  failedCount?: number
+}
+
+type HealthHistory = {
+  samples?: HealthHistorySample[]
+  sampleCount?: number
+  minIntervalMinutes?: number
+  maxSamples?: number
+  persistence?: boolean
+}
+
+function ReleaseHealthPanel({
+  health,
+  history,
+}: {
+  health: ReleaseHealth | null
+  history: HealthHistory | null
+}) {
   if (!health) {
     return (
       <section className="border border-border rounded-sm bg-surface p-5 sm:p-6">
@@ -602,6 +626,10 @@ function ReleaseHealthPanel({ health }: { health: ReleaseHealth | null }) {
 
   const isOk = health.status === 'ok'
   const checkEntries = Object.entries(health.checks || {})
+  const samples = Array.isArray(history?.samples) ? history.samples : []
+  const recent = samples.slice(-12)
+  const okCount = recent.filter((sample) => sample.status === 'ok').length
+  const maxLifetime = Math.max(...recent.map((sample) => sample.analyticsLifetime || 0), 1)
 
   return (
     <section
@@ -655,6 +683,40 @@ function ReleaseHealthPanel({ health }: { health: ReleaseHealth | null }) {
         </p>
       )}
 
+      {recent.length > 0 && (
+        <div className="mt-5 border-t border-border pt-4" data-testid="health-history-trend">
+          <div className="flex flex-wrap items-end justify-between gap-2 mb-3">
+            <div>
+              <p className="font-sans text-[0.6rem] font-bold tracking-[0.12em] uppercase text-ink">
+                Health samples
+              </p>
+              <p className="font-body text-xs text-ink-muted mt-1">
+                {okCount}/{recent.length} recent samples OK
+                {history?.minIntervalMinutes ? ` · ≥${history.minIntervalMinutes}m apart` : ''}
+                {history?.persistence ? ' · persisted' : ' · in-memory until volume available'}
+              </p>
+            </div>
+            <a href="/api/health/history" className="font-mono text-[10px] text-crimson underline hover:text-crimson-dark">
+              /api/health/history
+            </a>
+          </div>
+          <div className="flex items-end gap-1 h-16">
+            {recent.map((sample, index) => {
+              const height = Math.max(8, Math.round(((sample.analyticsLifetime || 0) / maxLifetime) * 100))
+              const ok = sample.status === 'ok'
+              return (
+                <div
+                  key={`${sample.checkedAt || index}-${sample.commitShort || index}`}
+                  className={`flex-1 rounded-t-sm ${ok ? 'bg-crimson/70' : 'bg-disputed/80'}`}
+                  style={{ height: `${height}%` }}
+                  title={`${sample.checkedAt || 'sample'} · ${sample.status || 'unknown'} · lifetime ${sample.analyticsLifetime ?? '—'}`}
+                />
+              )
+            })}
+          </div>
+        </div>
+      )}
+
       <p className="font-sans text-[10px] text-ink-faint mt-3">
         Deploy {health.deploymentId || 'unknown'} · env {health.environment || 'unknown'} · probed{' '}
         {health.checkedAt ? new Date(health.checkedAt).toLocaleString() : '—'} · endpoint{' '}
@@ -670,6 +732,7 @@ function ReleaseHealthPanel({ health }: { health: ReleaseHealth | null }) {
 export default function AnalyticsPage() {
   const [data, setData] = useState<AnalyticsSnapshot | null>(null)
   const [health, setHealth] = useState<ReleaseHealth | null>(null)
+  const [healthHistory, setHealthHistory] = useState<HealthHistory | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date())
@@ -695,12 +758,21 @@ export default function AnalyticsPage() {
     setLoading(true)
     setError(null)
     try {
-      const [snapshot, healthRes] = await Promise.all([
+      const [snapshot, healthRes, historyRes] = await Promise.all([
         fetchAnalytics(),
         fetch('/api/health', { cache: 'no-store' })
           .then(async (res) => {
             try {
               return (await res.json()) as ReleaseHealth
+            } catch {
+              return null
+            }
+          })
+          .catch(() => null),
+        fetch('/api/health/history', { cache: 'no-store' })
+          .then(async (res) => {
+            try {
+              return (await res.json()) as HealthHistory
             } catch {
               return null
             }
@@ -713,6 +785,7 @@ export default function AnalyticsPage() {
         setError('fetch-failed')
       }
       setHealth(healthRes)
+      setHealthHistory(historyRes)
     } catch {
       setError('fetch-failed')
     } finally {
@@ -766,7 +839,7 @@ export default function AnalyticsPage() {
       {/* Data */}
       {data && (
         <div className="space-y-8">
-          <ReleaseHealthPanel health={health} />
+          <ReleaseHealthPanel health={health} history={healthHistory} />
 
           {/* Stat Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">

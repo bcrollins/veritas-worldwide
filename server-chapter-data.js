@@ -277,6 +277,35 @@ export function createChapterDataTools({ rootDir }) {
     return matchedFields
   }
 
+  // Field weights for ranked retrieval. Title/source hits must outrank body-only hits
+  // so readers land on the chapter that is actually about the query, not a tangential mention.
+  const SEARCH_FIELD_WEIGHTS = {
+    title: 100,
+    subtitle: 45,
+    keywords: 35,
+    sources: 30,
+    content: 12,
+  }
+
+  function scoreSearchMatch(matchedIn = [], chapter = {}, terms = []) {
+    let score = matchedIn.reduce((sum, field) => sum + (SEARCH_FIELD_WEIGHTS[field] || 0), 0)
+
+    const title = String(chapter.title || '').toLowerCase()
+    const subtitle = String(chapter.subtitle || '').toLowerCase()
+    const phrase = terms.join(' ')
+
+    // Exact phrase bonuses for title/subtitle when multi-term queries are used.
+    if (phrase && title.includes(phrase)) score += 40
+    if (phrase && subtitle.includes(phrase)) score += 15
+
+    // Prefer chapters where every term appears in the title.
+    if (terms.length > 1 && terms.every((term) => title.includes(term))) {
+      score += 25
+    }
+
+    return score
+  }
+
   function searchChapters(scope, query, filters = {}) {
     const normalized = normalizeSearchQuery(query)
     if (!normalized) return []
@@ -310,6 +339,8 @@ export function createChapterDataTools({ rootDir }) {
           return null
         }
 
+        const score = scoreSearchMatch(matchedIn, chapter, terms)
+
         return {
           chapterId: chapter.id,
           chapterNumber: chapter.number,
@@ -320,15 +351,17 @@ export function createChapterDataTools({ rootDir }) {
           chapterType: chapter.chapterType || null,
           availableEvidenceTiers: chapter.availableEvidenceTiers || [],
           matchedIn,
+          score,
           snippet: getSearchSnippet(chapter, terms),
         }
       })
       .filter(Boolean)
       .sort((a, b) => {
-        if (b.matchedIn.length !== a.matchedIn.length) {
-          return b.matchedIn.length - a.matchedIn.length
+        if (b.score !== a.score) {
+          return b.score - a.score
         }
 
+        // Stable secondary sort for equal scores.
         return a.chapterId.localeCompare(b.chapterId, undefined, { numeric: true })
       })
   }

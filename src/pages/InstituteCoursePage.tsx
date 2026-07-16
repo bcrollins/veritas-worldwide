@@ -5,6 +5,7 @@ import {
   getInstituteRelatedTopics,
   getInstituteTopicBySlug,
 } from '../data/instituteCatalog'
+import { ISRAEL_DOSSIER_COURSE_PATH } from '../data/israelDossierCanon'
 import InstituteSignupPanel from '../components/institute/InstituteSignupPanel'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
@@ -12,6 +13,9 @@ export default function InstituteCoursePage() {
   const { slug } = useParams<{ slug: string }>()
   const topic = slug ? getInstituteTopicBySlug(slug) : undefined
   const course = topic ? buildInstituteCourse(topic) : undefined
+  const dossierModule = topic
+    ? ISRAEL_DOSSIER_COURSE_PATH.find((module) => module.instituteSlug === topic.slug)
+    : undefined
 
   useEffect(() => {
     if (!topic || !course) return
@@ -261,6 +265,43 @@ export default function InstituteCoursePage() {
           </section>
         </div>
       </section>
+
+      {dossierModule?.artifact && (
+        <section className="institute-panel px-6 py-6" data-testid="institute-dossier-artifact">
+          <p className="institute-eyebrow">Evidence workbook for this course</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[color:var(--institute-ink)]">
+            Download the source-labeled artifact
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[color:var(--institute-muted)]">
+            This path is paired with the Israel dossier workbook pack so practice work stays tied to
+            public-record rows, confidence labels, and proof boundaries.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <a
+              href={dossierModule.artifact.url}
+              download={dossierModule.artifact.filename}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[color:var(--institute-ink)] px-5 text-sm font-semibold text-[color:var(--institute-surface)] transition-opacity hover:opacity-90"
+            >
+              Download {dossierModule.artifact.format}: {dossierModule.artifact.label}
+            </a>
+            <Link
+              to="/israel-dossier"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[color:var(--institute-border-strong)] px-5 text-sm font-semibold text-[color:var(--institute-ink)] transition-colors hover:border-[color:var(--institute-accent)]"
+            >
+              Open Israel dossier →
+            </Link>
+            <Link
+              to="/israel-dossier/briefing"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[color:var(--institute-border-strong)] px-5 text-sm font-semibold text-[color:var(--institute-ink)] transition-colors hover:border-[color:var(--institute-accent)]"
+            >
+              Public briefing →
+            </Link>
+          </div>
+          <p className="mt-4 text-sm leading-relaxed text-[color:var(--institute-muted)]">
+            {dossierModule.artifact.description}
+          </p>
+        </section>
+      )}
 
       <section className="institute-panel px-6 py-6">
         <p className="institute-eyebrow">Course architecture</p>

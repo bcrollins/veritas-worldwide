@@ -1045,6 +1045,41 @@ app.get('/api/build-info', (req, res) => {
   })
 })
 
+const HEALTH_HISTORY_MAX = 48
+const HEALTH_HISTORY_MIN_INTERVAL_MS = 15 * 60 * 1000
+const HEALTH_HISTORY_FILE = DATA_DIR ? path.join(DATA_DIR, 'health-history.json') : null
+let healthHistory = []
+let lastHealthHistoryWriteAt = 0
+
+function loadHealthHistory() {
+  if (!HEALTH_HISTORY_FILE || !fs.existsSync(HEALTH_HISTORY_FILE)) {
+    healthHistory = []
+    return
+  }
+  try {
+    const parsed = JSON.parse(fs.readFileSync(HEALTH_HISTORY_FILE, 'utf8'))
+    healthHistory = Array.isArray(parsed) ? parsed.slice(-HEALTH_HISTORY_MAX) : []
+  } catch {
+    healthHistory = []
+  }
+}
+
+function persistHealthHistorySample(sample) {
+  const now = Date.now()
+  if (now - lastHealthHistoryWriteAt < HEALTH_HISTORY_MIN_INTERVAL_MS) return
+  lastHealthHistoryWriteAt = now
+  healthHistory = [...healthHistory, sample].slice(-HEALTH_HISTORY_MAX)
+  if (!HEALTH_HISTORY_FILE) return
+  try {
+    fs.mkdirSync(DATA_DIR, { recursive: true })
+    fs.writeFileSync(HEALTH_HISTORY_FILE, `${JSON.stringify(healthHistory, null, 2)}\n`, 'utf8')
+  } catch (error) {
+    console.error('[monitor] failed to persist health history', error instanceof Error ? error.message : error)
+  }
+}
+
+loadHealthHistory()
+
 // Operator-visible liveness probe — no secrets, safe to scrape and schedule.
 // Returns 200 when core publish surfaces are present, 503 when degraded.
 app.get('/api/health', (req, res) => {
@@ -1074,11 +1109,10 @@ app.get('/api/health', (req, res) => {
 
   const status = failed.length === 0 ? 'ok' : 'degraded'
   const httpStatus = status === 'ok' ? 200 : 503
-
-  res.setHeader('Cache-Control', 'no-store')
-  res.status(httpStatus).json({
+  const checkedAt = new Date().toISOString()
+  const payload = {
     status,
-    checkedAt: new Date().toISOString(),
+    checkedAt,
     version: APP_VERSION,
     commit: releaseCommit,
     commitShort: releaseCommit ? releaseCommit.slice(0, 12) : '',
@@ -1091,6 +1125,30 @@ app.get('/api/health', (req, res) => {
     clientErrorIntake: true,
     checks,
     failed,
+  }
+
+  persistHealthHistorySample({
+    checkedAt,
+    status,
+    commitShort: payload.commitShort,
+    analyticsLifetime: payload.analyticsLifetime,
+    publicChapterCount: payload.publicChapterCount,
+    prerenderedRouteCount: payload.prerenderedRouteCount,
+    failedCount: failed.length,
+  })
+
+  res.setHeader('Cache-Control', 'no-store')
+  res.status(httpStatus).json(payload)
+})
+
+app.get('/api/health/history', (_req, res) => {
+  res.setHeader('Cache-Control', 'no-store')
+  res.json({
+    samples: healthHistory,
+    sampleCount: healthHistory.length,
+    minIntervalMinutes: HEALTH_HISTORY_MIN_INTERVAL_MS / 60_000,
+    maxSamples: HEALTH_HISTORY_MAX,
+    persistence: Boolean(HEALTH_HISTORY_FILE),
   })
 })
 
