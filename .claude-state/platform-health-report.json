@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T08:19:27.972Z",
+  "checkedAt": "2026-07-16T08:21:01.678Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "139aa08ccc6d339a4abeaa8447347824d27a702d",
-    "commitShort": "139aa08ccc6d",
-    "deploymentId": "0e99f1b5-30a4-475d-b0e2-5dccb4472999",
+    "commit": "5fe3fffec52a68e84506e3ce8ceebfe0cda8ac2a",
+    "commitShort": "5fe3fffec52a",
+    "deploymentId": "9a74e664-5734-4d6c-b84a-e4c33556112c",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -111,7 +111,7 @@
     {
       "ok": true,
       "label": "Health probe exposes client error intake count",
-      "detail": "clientErrorIntakeCount=1"
+      "detail": "clientErrorIntakeCount=0"
     },
     {
       "ok": true,

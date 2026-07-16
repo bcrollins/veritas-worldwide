@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:19:27.972Z
+- Checked at: 2026-07-16T08:21:01.678Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 139aa08ccc6d
-- Deployment: 0e99f1b5-30a4-475d-b0e2-5dccb4472999
+- Build commit: 5fe3fffec52a
+- Deployment: 9a74e664-5734-4d6c-b84a-e4c33556112c
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
@@ -19,7 +19,7 @@
 - PASS — Health probe confirms prerender coverage: prerender=true
 - PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
-- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=1
+- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=15
 - PASS — Content pack route responds: GET /content-pack returned 200

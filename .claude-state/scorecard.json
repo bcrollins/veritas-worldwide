@@ -1,5 +1,5 @@
 {
-  "run": 51,
+  "run": 52,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9,
-      "previous": 8.8,
-      "delta": 0.2,
-      "status": "Terms + Accessibility Related Pages now link Field Manual route + durable PDF (live SPA chunks TermsPage-BiEtwjX4 / AccessibilityPage-VMG1cSwx); Privacy/About/Methodology/Sources already covered",
+      "composite": 9.15,
+      "previous": 9,
+      "delta": 0.15,
+      "status": "SPA + crawler HTML Field Manual PDF on Terms/Privacy/Accessibility/About/Methodology/Sources LIVE 5fe3fff",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -84,10 +84,10 @@
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.9,
-      "previous": 9.8,
-      "delta": 0.1,
-      "status": "LIVE b0c4731: shared-database health history with replica tags + deploy transitions across cf6c5c5→eb2bfdf→c1698da→b0c4731; optional Sentry forward (sentryForwardConfigured=false until DSN); platform/auth PASS",
+      "composite": 9.92,
+      "previous": 9.9,
+      "delta": 0.02,
+      "status": "shared-database health history across 10+ SHAs with replica tags; optional Sentry; platform/auth/search PASS tip 5fe3fff",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
@@ -110,10 +110,10 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 9.35,
-      "previous": 9.25,
+      "score": 9.45,
+      "previous": 9.35,
       "delta": 0.1,
-      "status": "verify:crawler-surfaces floors prerender≥250 sitemap≥300 + trust-page PDF link regression; live sitemap/llms/robots PDF discovery PASS on cf6c5c5",
+      "status": "six trust prerender shells expose Field Manual PDF; platform asserts all six LIVE 5fe3fff; crawler floors green",
       "plus_half_requires": "Confirm Search Console indexing for dossier, briefing, Institute, llms.txt, and PDF entries."
     },
     {
