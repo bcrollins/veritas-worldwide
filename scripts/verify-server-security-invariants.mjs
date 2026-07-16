@@ -448,8 +448,13 @@ assert(securityHeadersScript.includes('browsing-topics'), 'live headers suite as
 assert(securityHeadersScript.includes('must-revalidate'), 'live headers suite asserts security.txt must-revalidate')
 assert(securityHeadersScript.includes('x-robots-tag') || securityHeadersScript.includes('X-Robots-Tag'), 'live headers suite probes admin X-Robots-Tag')
 assert(securityHeadersScript.includes('/admin'), 'live headers suite probes /admin for noindex')
+assert(securityHeadersScript.includes('access-control-expose-headers') || securityHeadersScript.includes('Access-Control-Expose-Headers') || securityHeadersScript.includes('Expose-Headers'), 'live headers suite locks CORS expose')
 const requiredHeaderCount = (securityHeadersScript.match(/^\s+'[a-z0-9-]+':\s+/gm) || []).length
 assert(requiredHeaderCount >= 13, `live headers suite must require ≥13 baseline headers (got ${requiredHeaderCount})`)
+// A11y pure floors must not regress below measured ocean baseline.
+const a11yScript = readFileSync(join(root, 'scripts/verify-a11y-public-targets.mjs'), 'utf8')
+assert(/MIN_SURFACES\s*=\s*71/.test(a11yScript), 'a11y MIN_SURFACES must be ≥71')
+assert(/MIN_TOTAL_MARKERS\s*=\s*548/.test(a11yScript), 'a11y MIN_TOTAL_MARKERS must be ≥548')
 assert(verifyLive.includes('verify-server-security-invariants'), 'verify:live must include server-security-invariants')
 assert(verifyLive.includes('verify-a11y-public-targets'), 'verify:live must include a11y floors')
 assert(verifyLive.includes('verify-auth-flows'), 'verify:live must include auth smoke')
