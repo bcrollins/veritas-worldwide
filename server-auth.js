@@ -245,7 +245,12 @@ export function registerDatabaseAndAuthRoutes({
     try {
       const existing = await dbPool.query('SELECT id FROM users WHERE email = $1', [cleanEmail])
       if (existing.rows.length > 0) {
-        return res.status(409).json({ error: 'An account with this email already exists.' })
+        // Burn a bcrypt hash so duplicate-email responses match create cost.
+        await bcrypt.hash(password, BCRYPT_ROUNDS)
+        // Do not confirm the address is registered (enumeration surface).
+        return res.status(409).json({
+          error: 'Unable to complete registration. Try signing in or use a different email.',
+        })
       }
 
       const passwordHash = await bcrypt.hash(password, BCRYPT_ROUNDS)

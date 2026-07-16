@@ -351,6 +351,20 @@ assert(
   serverAuth.includes('bcrypt.compare') && serverAuth.includes('LOGIN_TIMING_DUMMY_HASH'),
   'missing-account path must burn a bcrypt compare',
 )
+// Register must not confirm "email already exists" (enumeration surface).
+assert(
+  !serverAuth.includes('An account with this email already exists.'),
+  'register must not confirm email already exists',
+)
+assert(
+  serverAuth.includes('Unable to complete registration. Try signing in or use a different email.'),
+  'register duplicate-email uses generic copy',
+)
+assert(
+  serverAuth.includes('bcrypt.hash(password, BCRYPT_ROUNDS)') &&
+    (serverAuth.match(/bcrypt\.hash\(password, BCRYPT_ROUNDS\)/g) || []).length >= 2,
+  'duplicate-email path must burn a bcrypt.hash for timing parity',
+)
 
 // Password floor: 8 chars on register + change-password (NIST-aligned practical minimum).
 assert(
