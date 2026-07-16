@@ -509,7 +509,7 @@ function PremiumAction({ icon, label, onClick }: { icon: ReactNode; label: strin
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
+      className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
     >
       {icon}
       {label}
@@ -568,7 +568,7 @@ function ChapterAccessGate({
         <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={onUnlock}
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M4 4v6h6M20 20v-6h-6M5 19A9 9 0 0019 5" />
@@ -577,7 +577,7 @@ function ChapterAccessGate({
           </button>
           <Link
             to="/membership"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink-muted font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-ink hover:text-ink transition-colors"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 px-5 py-3 border border-border text-ink-muted font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:border-ink hover:text-ink transition-colors"
           >
             Support The Archive
           </Link>
@@ -676,7 +676,7 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
+        className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
         aria-expanded={open}
         aria-haspopup="true"
         aria-label="Share this chapter"
@@ -693,7 +693,7 @@ function ShareButton({ chapter }: { chapter: Chapter }) {
               key={link.label}
               role="menuitem"
               onClick={link.onClick}
-              className="w-full text-left px-4 py-2.5 font-sans text-sm text-ink hover:bg-parchment-dark transition-colors flex items-center gap-3"
+              className="w-full min-h-[44px] text-left px-4 py-2.5 font-sans text-sm text-ink hover:bg-parchment-dark transition-colors flex items-center gap-3"
             >
               <span className="w-5 text-center text-xs" aria-hidden="true">{link.icon}</span>
               {link.label}
