@@ -248,7 +248,7 @@ function TierFilter({ active, onToggle }: { active: Set<EvidenceTier>; onToggle:
           <button
             key={tier}
             onClick={() => onToggle(tier)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-xs font-sans font-medium transition-all border"
+            className="inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 rounded-sm text-xs font-sans font-medium transition-all border"
             style={{
               backgroundColor: isActive ? cfg.bg : 'transparent',
               color: isActive ? cfg.color : 'var(--color-ink-muted)',

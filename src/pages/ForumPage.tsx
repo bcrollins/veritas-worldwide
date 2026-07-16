@@ -1202,7 +1202,7 @@ export default function ForumPage() {
                           else setShowAuthModal(true)
                         }}
                         disabled={!canPostInActiveCommunity}
-                        className="px-4 py-1.5 border border-crimson text-crimson rounded-full text-xs font-sans font-bold hover:bg-crimson hover:text-white transition-colors disabled:border-border disabled:text-ink-faint disabled:hover:bg-transparent disabled:hover:text-ink-faint"
+                        className="inline-flex min-h-[44px] items-center px-4 py-1.5 border border-crimson text-crimson rounded-full text-xs font-sans font-bold hover:bg-crimson hover:text-white transition-colors disabled:border-border disabled:text-ink-faint disabled:hover:bg-transparent disabled:hover:text-ink-faint"
                       >
                         {activeCommunityObj.restricted ? 'Read-only beta' : isLoggedIn ? 'Start Thread' : 'Sign In to Post'}
                       </button>
@@ -1215,7 +1215,7 @@ export default function ForumPage() {
               <div className="flex items-center gap-2 mb-4 bg-parchment border border-border rounded px-4 py-2 flex-wrap">
                 {(['hot', 'best', 'new', 'top', 'controversial', 'rising'] as SortMode[]).map(mode => (
                   <button key={mode} onClick={() => setSortMode(mode)}
-                    className={`font-sans text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${sortMode === mode ? 'bg-crimson text-white' : 'text-ink-muted hover:bg-parchment-dark'}`}>
+                    className={`inline-flex min-h-[44px] items-center font-sans text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${sortMode === mode ? 'bg-crimson text-white' : 'text-ink-muted hover:bg-parchment-dark'}`}>
                     <ForumIcon name={mode === 'hot' ? 'fire' : mode === 'best' ? 'star' : mode === 'new' ? 'new' : mode === 'top' ? 'trending' : mode === 'controversial' ? 'thunder' : 'rocket'} className="w-3 h-3 inline mr-1" /> {mode.charAt(0).toUpperCase() + mode.slice(1)}
                   </button>
                 ))}
