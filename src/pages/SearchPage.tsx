@@ -21,6 +21,7 @@ interface SearchResult {
   dateRange: string
   matchedIn: SearchMatchedField[]
   score?: number
+  engagementBoost?: boolean
   snippet: string
   accessLevel: 'preview' | 'full'
   chapterType: ChapterType | null
@@ -756,13 +757,21 @@ export default function SearchPage() {
                         to={`/chapter/${result.chapterId}`}
                         className="block"
                       >
-                      <div className="flex items-baseline gap-3 mb-1">
+                      <div className="flex flex-wrap items-baseline gap-3 mb-1">
                         <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-crimson">
                           {result.chapterNumber}
                         </span>
                         {result.dateRange && (
                           <span className="font-sans text-[0.6rem] text-ink-faint">
                             {result.dateRange}
+                          </span>
+                        )}
+                        {result.engagementBoost && (
+                          <span
+                            className="inline-flex items-center rounded-sm border border-crimson/20 bg-crimson/5 px-2 py-0.5 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.1em] text-crimson"
+                            title="Boosted because you recently read this chapter"
+                          >
+                            Continue reading
                           </span>
                         )}
                       </div>
