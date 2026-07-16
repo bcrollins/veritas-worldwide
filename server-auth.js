@@ -14,7 +14,10 @@ export function registerDatabaseAndAuthRoutes({
 }) {
   const DATABASE_URL = process.env.DATABASE_URL
   const JWT_SECRET = process.env.JWT_SECRET || crypto.randomBytes(32).toString('hex')
-  const JWT_EXPIRY = '30d'
+  // Shorten access-token lifetime so revoked/stolen tokens age out faster while
+  // still keeping the reading session usable for a full week of return visits.
+  const JWT_EXPIRY = process.env.JWT_EXPIRY || '7d'
+  const SESSION_TTL_MS = Number.parseInt(process.env.SESSION_TTL_MS || String(7 * 24 * 60 * 60 * 1000), 10)
   const BCRYPT_ROUNDS = 12
 
   let dbPool = null
@@ -70,6 +73,8 @@ export function registerDatabaseAndAuthRoutes({
     res.json({
       available: !!dbPool,
       mode: dbPool ? 'database' : 'degraded',
+      accessTokenTtl: JWT_EXPIRY,
+      sessionTtlMs: SESSION_TTL_MS,
     })
   })
 
@@ -188,7 +193,7 @@ export function registerDatabaseAndAuthRoutes({
       const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
       const ip = getClientIP(req)
       const ua = req.headers['user-agent'] || ''
-      const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
+      const expiresAt = new Date(Date.now() + SESSION_TTL_MS)
 
       await dbPool.query(
         'INSERT INTO sessions (user_id, token, expires_at, ip_address, user_agent) VALUES ($1, $2, $3, $4, $5)',
@@ -242,7 +247,7 @@ export function registerDatabaseAndAuthRoutes({
       const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: JWT_EXPIRY })
       const ip = getClientIP(req)
       const ua = req.headers['user-agent'] || ''
-      const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
+      const expiresAt = new Date(Date.now() + SESSION_TTL_MS)
 
       await dbPool.query(
         'INSERT INTO sessions (user_id, token, expires_at, ip_address, user_agent) VALUES ($1, $2, $3, $4, $5)',
