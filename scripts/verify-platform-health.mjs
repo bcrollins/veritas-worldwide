@@ -547,6 +547,24 @@ const healthResult = await fetchJson('/api/health')
         `orphans=${withdrawnInSitemap.join(',') || 'none'}`
       )
 
+      const sourcedNewsSlugs = [
+        'election-security-ai-risk-frameworks-cisa-nist-2026',
+        'treasury-debt-transparency-fiscaldata-fed-h15-2026',
+        'aviation-safety-ntsb-faa-primary-records-2026',
+        'judicial-ethics-supreme-court-code-of-conduct-primary-2026',
+      ]
+      for (const slug of sourcedNewsSlugs) {
+        const newsResult = await fetchText(`/news/${slug}`)
+        const body = newsResult.text || ''
+        addCheck(
+          checks,
+          failures,
+          newsResult.response.ok && (body.includes(slug) || body.includes('CISA') || body.includes('FiscalData') || body.includes('NTSB') || body.includes('Code of Conduct') || body.includes('Election Security') || body.includes('Treasury Debt') || body.includes('Aviation Safety') || body.includes('Judicial Ethics')),
+          `Sourced news route responds: /news/${slug}`,
+          `status=${newsResult.response.status}`
+        )
+      }
+
       const feedResult = await fetchText('/feed.xml')
       const feedText = feedResult.text || ''
       addCheck(

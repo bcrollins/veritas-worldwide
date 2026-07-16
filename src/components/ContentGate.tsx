@@ -81,11 +81,11 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 animate-slide-up">
       <div className="max-w-2xl mx-auto px-4 pb-4">
-        <div className="bg-parchment border border-border rounded-sm shadow-xl overflow-hidden">
+        <div className="relative bg-parchment border border-border rounded-sm shadow-xl overflow-hidden">
           {/* Close */}
           <button
             onClick={handleDismiss}
-            className="absolute top-2 right-2 w-7 h-7 flex items-center justify-center text-ink-faint hover:text-ink transition-colors"
+            className="absolute top-1 right-1 z-10 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors"
             aria-label="Dismiss"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,12 +126,12 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
                     }}
                     placeholder="your@email.com"
                     required
-                    className="flex-1 min-w-0 px-2.5 py-1.5 font-sans text-xs border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40"
+                    className="flex-1 min-h-[44px] min-w-0 px-2.5 py-1.5 font-sans text-xs border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40"
                   />
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="px-4 py-1.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap"
+                    className="inline-flex min-h-[44px] items-center px-4 py-1.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap"
                   >
                     {status === 'submitting' ? '...' : 'Subscribe'}
                   </button>

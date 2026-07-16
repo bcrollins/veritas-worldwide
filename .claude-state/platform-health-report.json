@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T09:06:18.962Z",
+  "checkedAt": "2026-07-16T09:08:16.410Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "86b3320ba273bba232684a280e65c60b6ed07eac",
-    "commitShort": "86b3320ba273",
-    "deploymentId": "b71470cd-3cab-462d-ac03-dabdaa53bf95",
+    "commit": "ffbd43f16094667b932c266bdc6cc8f05b31bd27",
+    "commitShort": "ffbd43f16094",
+    "deploymentId": "0717a69b-a9fb-41cc-bcf0-feded89e641d",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -111,7 +111,7 @@
     {
       "ok": true,
       "label": "Health probe exposes client error intake count",
-      "detail": "clientErrorIntakeCount=0"
+      "detail": "clientErrorIntakeCount=1"
     },
     {
       "ok": true,
@@ -141,7 +141,7 @@
     {
       "ok": true,
       "label": "Health history exposes uniqueReplicas array",
-      "detail": "uniqueReplicas=true count=72"
+      "detail": "uniqueReplicas=true count=75"
     },
     {
       "ok": true,
@@ -267,6 +267,26 @@
       "ok": true,
       "label": "Sitemap excludes withdrawn unsupported news pack",
       "detail": "orphans=none"
+    },
+    {
+      "ok": true,
+      "label": "Sourced news route responds: /news/election-security-ai-risk-frameworks-cisa-nist-2026",
+      "detail": "status=200"
+    },
+    {
+      "ok": true,
+      "label": "Sourced news route responds: /news/treasury-debt-transparency-fiscaldata-fed-h15-2026",
+      "detail": "status=200"
+    },
+    {
+      "ok": true,
+      "label": "Sourced news route responds: /news/aviation-safety-ntsb-faa-primary-records-2026",
+      "detail": "status=200"
+    },
+    {
+      "ok": true,
+      "label": "Sourced news route responds: /news/judicial-ethics-supreme-court-code-of-conduct-primary-2026",
+      "detail": "status=200"
     },
     {
       "ok": true,

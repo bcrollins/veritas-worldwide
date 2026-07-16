@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T09:06:18.962Z
+- Checked at: 2026-07-16T09:08:16.410Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 86b3320ba273
-- Deployment: b71470cd-3cab-462d-ac03-dabdaa53bf95
+- Build commit: ffbd43f16094
+- Deployment: 0717a69b-a9fb-41cc-bcf0-feded89e641d
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
@@ -19,13 +19,13 @@
 - PASS — Health probe confirms prerender coverage: prerender=true
 - PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
-- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
+- PASS — Health probe exposes client error intake count: clientErrorIntakeCount=1
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=34
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
-- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=72
+- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=75
 - PASS — Health history max samples supports multi-day retention: maxSamples=96
 - PASS — Health history reports known storage backend: storage=shared-database
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
@@ -51,6 +51,10 @@
 - PASS — The Record PDF sets Content-Disposition filename: content-disposition=inline; filename="the-record.pdf"
 - PASS — Sitemap indexes the institute field manual PDF: sitemap status=200 hasFieldManualPdf=true
 - PASS — Sitemap excludes withdrawn unsupported news pack: orphans=none
+- PASS — Sourced news route responds: /news/election-security-ai-risk-frameworks-cisa-nist-2026: status=200
+- PASS — Sourced news route responds: /news/treasury-debt-transparency-fiscaldata-fed-h15-2026: status=200
+- PASS — Sourced news route responds: /news/aviation-safety-ntsb-faa-primary-records-2026: status=200
+- PASS — Sourced news route responds: /news/judicial-ethics-supreme-court-code-of-conduct-primary-2026: status=200
 - PASS — RSS feed announces the institute field manual PDF: feed status=200 hasFieldManualPdf=true
 - PASS — robots.txt allows the field manual PDF: status=200
 - PASS — Institute catalog prerender links the field manual PDF: status=200 hasPdfLink=true

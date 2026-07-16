@@ -29,13 +29,14 @@ export default function FontSizeToggle() {
           role="radio"
           aria-checked={active === s.key}
           onClick={() => setActive(s.key)}
-          className={`px-2.5 py-1.5 font-sans transition-colors ${
+          className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-2.5 py-1.5 font-sans transition-colors ${
             active === s.key
               ? 'bg-crimson text-white'
               : 'text-ink-muted hover:text-ink hover:bg-parchment-dark'
           } ${i > 0 ? 'border-l border-border' : ''}`}
           style={{ fontSize: i === 0 ? '0.7rem' : i === 1 ? '0.85rem' : '1rem' }}
           title={`${s.key.charAt(0).toUpperCase() + s.key.slice(1)} text`}
+          aria-label={`${s.key.charAt(0).toUpperCase() + s.key.slice(1)} text size`}
         >
           {s.label}
         </button>

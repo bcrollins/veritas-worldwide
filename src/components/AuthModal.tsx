@@ -113,7 +113,7 @@ export default function AuthModal() {
         {/* Close */}
         <button
           onClick={() => setShowAuthModal(false)}
-          className="absolute top-4 right-4 text-ink-muted hover:text-ink transition-colors"
+          className="absolute top-3 right-3 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-muted hover:text-ink transition-colors"
           aria-label="Close"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,7 +186,7 @@ export default function AuthModal() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
+              className="w-full min-h-[44px] py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
             >
               {loading ? 'Please wait...' : authModalMode === 'signup' ? 'Create Free Account' : 'Sign In'}
             </button>
@@ -201,7 +201,7 @@ export default function AuthModal() {
                   setAuthModalMode(authModalMode === 'signup' ? 'login' : 'signup')
                   setError('')
                 }}
-                className="text-crimson font-semibold hover:text-crimson-dark transition-colors"
+                className="inline-flex min-h-[44px] items-center text-crimson font-semibold hover:text-crimson-dark transition-colors"
               >
                 {authModalMode === 'signup' ? 'Sign in' : 'Create one free'}
               </button>

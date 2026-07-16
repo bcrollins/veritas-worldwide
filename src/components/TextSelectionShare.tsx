@@ -37,7 +37,7 @@ export default function TextSelectionShare() {
 
   return (
     <div
-      className="fixed z-[100] flex items-center gap-1 bg-obsidian text-white rounded-full shadow-xl px-2 py-1.5 animate-fade-in no-print"
+      className="fixed z-[100] flex items-center gap-1 bg-obsidian text-white rounded-full shadow-xl px-2 py-1 animate-fade-in no-print"
       style={{ left: pos.x, top: pos.y, transform: 'translate(-50%, -100%)' }}
     >
       <button
@@ -45,8 +45,9 @@ export default function TextSelectionShare() {
           await navigator.clipboard.writeText(`"${text}"`)
           setShow(false)
         }}
-        className="px-2 py-1 text-xs font-sans hover:text-crimson-light transition-colors"
+        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-2 text-xs font-sans hover:text-crimson-light transition-colors"
         title="Copy quote"
+        aria-label="Copy quote"
       >
         Copy
       </button>
@@ -55,9 +56,10 @@ export default function TextSelectionShare() {
         href={`https://x.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="px-2 py-1 text-xs font-sans hover:text-crimson-light transition-colors"
+        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-2 text-xs font-sans hover:text-crimson-light transition-colors"
         onClick={() => setShow(false)}
         title="Share on X"
+        aria-label="Share quote on X"
       >
         Post
       </a>
