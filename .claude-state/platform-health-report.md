@@ -1,10 +1,10 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:21:01.678Z
+- Checked at: 2026-07-16T08:24:18.253Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 5fe3fffec52a
-- Deployment: 9a74e664-5734-4d6c-b84a-e4c33556112c
+- Build commit: 3a15bcdb8503
+- Deployment: 0fac9d4a-0ef4-4dda-b92e-8befc9239a84
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
@@ -29,6 +29,8 @@
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
 - PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=289
 - PASS — Health exposes optional Sentry forward configuration flag: sentryForwardConfigured=false
+- PASS — Health exposes health history storage label: healthHistoryStorage=shared-database
+- PASS — Health reports shared multi-replica history storage: healthHistoryStorage=shared-database shared=true
 - PASS — Client error intake accepts or rate-limits probes: POST /api/client-error returned 204
 - PASS — Auth status route responds: GET /api/auth/status returned 200
 - PASS — Auth status exposes availability: available=true

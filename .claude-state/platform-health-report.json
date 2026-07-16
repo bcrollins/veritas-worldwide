@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T08:21:01.678Z",
+  "checkedAt": "2026-07-16T08:24:18.253Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "5fe3fffec52a68e84506e3ce8ceebfe0cda8ac2a",
-    "commitShort": "5fe3fffec52a",
-    "deploymentId": "9a74e664-5734-4d6c-b84a-e4c33556112c",
+    "commit": "3a15bcdb8503e6433c8b411f3334bf1055bdefca",
+    "commitShort": "3a15bcdb8503",
+    "deploymentId": "0fac9d4a-0ef4-4dda-b92e-8befc9239a84",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -157,6 +157,16 @@
       "ok": true,
       "label": "Health exposes optional Sentry forward configuration flag",
       "detail": "sentryForwardConfigured=false"
+    },
+    {
+      "ok": true,
+      "label": "Health exposes health history storage label",
+      "detail": "healthHistoryStorage=shared-database"
+    },
+    {
+      "ok": true,
+      "label": "Health reports shared multi-replica history storage",
+      "detail": "healthHistoryStorage=shared-database shared=true"
     },
     {
       "ok": true,
