@@ -45,6 +45,17 @@
   Impact: operators see intake count + last message from `/api/health` and the analytics Release Health panel without Sentry.
   Resolution: in-memory counters on `/api/client-error` intake, surfaced in health payload and AnalyticsPage.
 
+
+## Recently Closed (2026-07-16 — auth TTL + health transitions)
+
+- **Access-token lifetime shortened 30d → 7d and live.**
+  Impact: new sessions expire in one week instead of a month, reducing the window for stolen tokens while preserving weekly return reading.
+  Resolution: JWT_EXPIRY/SESSION_TTL_MS in server-auth; status fields on /api/auth/status. Live-verified accessTokenTtl=7d.
+
+- **Health history deploy transitions are operator-visible and live.**
+  Impact: /api/health/history exposes commitTransitions and uniqueCommits; samples force-write on commit/status/failure changes and process boot; analytics Release Health renders the timeline.
+  Resolution: server.js history + AnalyticsPage UI + verify:health-transitions.
+
 ## Critical
 
 - **Third-party paging (Sentry cloud) is still optional.**

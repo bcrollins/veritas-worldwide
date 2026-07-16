@@ -1,5 +1,5 @@
 {
-  "run": 45,
+  "run": 46,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -167,7 +167,11 @@
     "LIVE production tip series verified on f36461a+: durable field manual PDF (512KB, 60 pages, non-immutable cache), membership+donate UTM/referrer attribution, client-error counters, RSS/sitemap/robots/llms/prerender PDF discovery, build-info PDF flags \u2014 platform/search/release PASS.",
     "GA4 trackDownload wired on static field-manual PDF CTAs (home, institute catalog, book).",
     "LIVE f982261+: veritas-institute.md indexes field manual PDF; Content-Disposition on field manual PDF; full platform/search/release green.",
-    "The Record PDF routes aligned to max-age=3600 must-revalidate + Content-Disposition filename (74dec67)."
+    "The Record PDF routes aligned to max-age=3600 must-revalidate + Content-Disposition filename (74dec67).",
+    "LIVE 6cc035f+: health history commitTransitions/uniqueCommits; force samples on deploy/status/failure; boot seed sample; analytics Release Health shows commit window + deploy transitions.",
+    "LIVE 429edd6+: access token + session TTL 30d\u21927d; /api/auth/status exposes accessTokenTtl=7d and sessionTtlMs=604800000.",
+    "Newsletter signup events carry UTM/campaign attribution from conversionTracking (0694cd7).",
+    "About page key routes include Institute, Field Manual, and durable PDF downloads (34d7b0d)."
   ],
   "next_task": "External only remaining for archives/CI/Sentry. Continue product polish: news corpus, membership attribution, institute PDF server artifact.",
   "next_priorities": [
