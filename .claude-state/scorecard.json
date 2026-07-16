@@ -1,5 +1,5 @@
 {
-  "run": 82,
+  "run": 83,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "13-step verify:live; server security invariants; tip 07b3cd8",
+      "status": "TLD≥2 email floor live; 13-step verify; tip ff8886b",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
