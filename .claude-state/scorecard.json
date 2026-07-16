@@ -1,5 +1,5 @@
 {
-  "run": 136,
+  "run": 137,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.56,
       "previous": 9.54,
       "delta": 0.02,
-      "status": "HEAD 2d6eb9c+ pure fortress; dual security.txt full field parity; 15-step green; scorecard 131",
+      "status": "HEAD continuous 15-step; 12 headers; rateLimit\u00d723; JWT HS256; skip\u00d73; 69/524 a11y",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 53a2297+ continuous 15-step; scorecard 136; a11y ban expansion",
+      "status": "product tip 53a2297+ continuous 15-step re-proven; scorecard 137; pure fortress",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
