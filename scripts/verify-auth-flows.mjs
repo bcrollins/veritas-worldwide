@@ -45,6 +45,20 @@ async function requestJson(pathname, options = {}) {
   return { response, data }
 }
 
+async function requestJsonWithRetry(pathname, options = {}, { retries = 4, retryOn = [429] } = {}) {
+  let last = null
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    last = await requestJson(pathname, options)
+    if (!retryOn.includes(last.response.status)) {
+      return last
+    }
+    const waitMs = 1500 * (attempt + 1)
+    logStep(`Rate limited (${last.response.status}), retrying`, `${pathname} in ${waitMs}ms`)
+    await new Promise((resolve) => setTimeout(resolve, waitMs))
+  }
+  return last
+}
+
 async function verifyPdfAccess(token, expectedStatus) {
   const response = await request('/api/downloads/the-record.pdf', {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
@@ -91,7 +105,7 @@ async function main() {
   await verifyPdfAccess(null, 200)
   logStep('Anonymous PDF download verified')
 
-  const registerResult = await requestJson('/api/auth/register', {
+  const registerResult = await requestJsonWithRetry('/api/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password, displayName }),
