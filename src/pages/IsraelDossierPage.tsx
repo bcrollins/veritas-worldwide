@@ -371,7 +371,7 @@ function JumpNav() {
           <a
             key={s.id}
             href={`#${s.id}`}
-            className={`font-sans text-[0.6rem] font-semibold tracking-wide uppercase px-3 py-1.5 rounded-full transition-all whitespace-nowrap ${
+            className={`inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-semibold tracking-wide uppercase px-3 py-1.5 rounded-full transition-all whitespace-nowrap ${
               active === s.id ? 'bg-crimson text-white' : 'text-ink-muted hover:text-crimson hover:bg-crimson/5'
             }`}
             onClick={e => {

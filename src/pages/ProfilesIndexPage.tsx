@@ -467,7 +467,7 @@ export default function ProfilesIndexPage(): React.ReactNode {
               key={suggestion}
               type="button"
               onClick={() => setSearchQuery(suggestion)}
-              className="inline-flex items-center rounded-full border border-border px-3 py-1.5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-ink-muted hover:border-crimson hover:text-crimson transition-colors"
+              className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3 py-1.5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-ink-muted hover:border-crimson hover:text-crimson transition-colors"
             >
               {suggestion}
             </button>
