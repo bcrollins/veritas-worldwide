@@ -245,12 +245,17 @@ assert(
 // --experimental-strip-types and failed every deploy after that declaration.
 assert(
   typeof packageJson.engines.node === 'string' &&
-    (/^>=22(\.6(\.0)?)?/.test(packageJson.engines.node) ||
+    (packageJson.engines.node === '>=22.6.0' ||
+      /^>=22(\.6(\.0)?)?$/.test(packageJson.engines.node) ||
       /^>=22\.[6-9]/.test(packageJson.engines.node) ||
       /^>=22\.[1-9][0-9]/.test(packageJson.engines.node) ||
       /^>=2[3-9]/.test(packageJson.engines.node) ||
       packageJson.engines.node.includes('22.6')),
   `engines.node must require strip-types-capable Node (>=22.6.0), got ${packageJson.engines.node}`,
+)
+assert(
+  packageJson.engines.node === '>=22.6.0',
+  `engines.node should stay pinned at >=22.6.0 for railpack (got ${packageJson.engines.node})`,
 )
 assert(
   packageJson.scripts?.postbuild?.includes('run-with-strip-types.mjs'),
