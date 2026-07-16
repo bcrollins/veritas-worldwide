@@ -1,18 +1,18 @@
 {
-  "checkedAt": "2026-07-16T08:31:08.816Z",
+  "checkedAt": "2026-07-16T08:40:24.852Z",
   "baseUrl": "http://localhost:4175",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "1e0903027210a2ec2f45f406df0c00a99290cb8f",
-    "commitShort": "1e0903027210",
+    "commit": "eff10266e94f6e6a7365a38cc5daa2d69f5197e2",
+    "commitShort": "eff10266e94f",
     "deploymentId": "",
     "environment": "",
     "prerenderedRouteCount": 289
   },
   "headers": {
     "version": "1.0.0",
-    "commit": "1e0903027210",
+    "commit": "eff10266e94f",
     "deployment": ""
   },
   "analytics": {
@@ -40,7 +40,7 @@
     {
       "ok": true,
       "label": "Release commit header present",
-      "detail": "1e0903027210"
+      "detail": "eff10266e94f"
     },
     {
       "ok": true,
@@ -50,7 +50,7 @@
     {
       "ok": true,
       "label": "Release headers match build info",
-      "detail": "api=1e0903027210 / n/a · headers=1e0903027210 / missing"
+      "detail": "api=eff10266e94f / n/a · headers=eff10266e94f / missing"
     },
     {
       "ok": true,

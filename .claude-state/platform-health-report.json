@@ -1,14 +1,14 @@
 {
-  "checkedAt": "2026-07-16T08:31:06.585Z",
+  "checkedAt": "2026-07-16T08:40:22.486Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "1e0903027210a2ec2f45f406df0c00a99290cb8f",
-    "commitShort": "1e0903027210",
-    "deploymentId": "7f066fd6-5a60-483c-bda8-f2b3610d496d",
+    "commit": "eff10266e94f6e6a7365a38cc5daa2d69f5197e2",
+    "commitShort": "eff10266e94f",
+    "deploymentId": "c6f4cdbb-1faf-486c-be1f-b6b832320678",
     "environment": "production",
-    "prerenderedRouteCount": 289
+    "prerenderedRouteCount": 285
   },
   "auth": {
     "available": true,
@@ -71,7 +71,7 @@
     {
       "ok": true,
       "label": "Build info reports prerender coverage",
-      "detail": "prerenderedRouteCount=289"
+      "detail": "prerenderedRouteCount=285"
     },
     {
       "ok": true,
@@ -121,7 +121,7 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=15"
+      "detail": "pinned=22"
     },
     {
       "ok": true,
@@ -140,6 +140,16 @@
     },
     {
       "ok": true,
+      "label": "Health history exposes uniqueReplicas array",
+      "detail": "uniqueReplicas=true count=45"
+    },
+    {
+      "ok": true,
+      "label": "Health history max samples supports multi-day retention",
+      "detail": "maxSamples=96"
+    },
+    {
+      "ok": true,
       "label": "Health history reports known storage backend",
       "detail": "storage=shared-database"
     },
@@ -151,7 +161,7 @@
     {
       "ok": true,
       "label": "Live prerender route count stays above crawler floor",
-      "detail": "prerenderedRouteCount=289"
+      "detail": "prerenderedRouteCount=285"
     },
     {
       "ok": true,
@@ -407,6 +417,11 @@
       "ok": true,
       "label": "Engagement boost flags recently read chapter",
       "detail": "engagementBoost=true"
+    },
+    {
+      "ok": true,
+      "label": "Search exposes sitewide popularChapterIds from analytics",
+      "detail": "status=200 popularCount=8"
     },
     {
       "ok": true,

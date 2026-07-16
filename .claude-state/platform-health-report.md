@@ -1,17 +1,17 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T08:31:06.585Z
+- Checked at: 2026-07-16T08:40:22.486Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 1e0903027210
-- Deployment: 7f066fd6-5a60-483c-bda8-f2b3610d496d
+- Build commit: eff10266e94f
+- Deployment: c6f4cdbb-1faf-486c-be1f-b6b832320678
 - Auth mode: database
 - Search results: 19
 - Analytics lifetime views: 6918
 
 ## Checks
 - PASS — Build info route responds: GET /api/build-info returned 200
-- PASS — Build info reports prerender coverage: prerenderedRouteCount=289
+- PASS — Build info reports prerender coverage: prerenderedRouteCount=285
 - PASS — Build info reports manuscript PDF present: recordPdf=true
 - PASS — Build info reports institute field manual PDF present: instituteFieldManualPdf=true
 - PASS — Health probe reports ok: GET /api/health returned 200 status=ok
@@ -21,13 +21,15 @@
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
 - PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
-- PASS — Briefing source archive manifest has pinned snapshots: pinned=15
+- PASS — Briefing source archive manifest has pinned snapshots: pinned=22
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
+- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=45
+- PASS — Health history max samples supports multi-day retention: maxSamples=96
 - PASS — Health history reports known storage backend: storage=shared-database
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
-- PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=289
+- PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=285
 - PASS — Health exposes optional Sentry forward configuration flag: sentryForwardConfigured=false
 - PASS — Health exposes health history storage label: healthHistoryStorage=shared-database
 - PASS — Health reports shared multi-replica history storage: healthHistoryStorage=shared-database shared=true
@@ -79,6 +81,7 @@
 - PASS — Anonymous search results expose evidence tier metadata: availableEvidenceTiers=verified, circumstantial, disputed
 - PASS — Engagement-boosted search responds: status=200
 - PASS — Engagement boost flags recently read chapter: engagementBoost=true
+- PASS — Search exposes sitewide popularChapterIds from analytics: status=200 popularCount=8
 - PASS — Analytics snapshot route responds: GET /api/analytics/snapshot returned 200
 - PASS — Analytics lifetime stays non-negative: lifetime=6918
 - PASS — Analytics today count stays non-negative: today=103
