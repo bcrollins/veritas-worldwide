@@ -21,6 +21,8 @@ function assert(c, m) {
 
 assert(server.includes("app.disable('x-powered-by')"), 'x-powered-by must be disabled')
 assert(server.includes("app.set('trust proxy', 1)") || server.includes('app.set("trust proxy", 1)'), 'trust proxy must be enabled for Railway')
+assert(server.includes('function getClientIP'), 'getClientIP helper present')
+assert(server.includes('req.ip'), 'getClientIP must prefer Express req.ip under trust proxy')
 assert(
   server.includes("express.json({ limit: '64kb' })") || server.includes('express.json({ limit: "64kb" })'),
   'global JSON body limit must be 64kb',

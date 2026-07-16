@@ -572,6 +572,9 @@ async function detectCountryFromIP(ip) {
 }
 
 function getClientIP(req) {
+  // Prefer Express req.ip when trust proxy is enabled so X-Forwarded-For is
+  // honoured only for the trusted hop count (see app.set('trust proxy', 1)).
+  if (typeof req.ip === 'string' && req.ip) return req.ip
   const forwarded = req.headers['x-forwarded-for']
   if (forwarded) return forwarded.split(',')[0].trim()
   return req.socket?.remoteAddress || ''
