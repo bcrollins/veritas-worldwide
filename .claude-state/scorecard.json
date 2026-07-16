@@ -1,5 +1,5 @@
 {
-  "run": 117,
+  "run": 118,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.47,
-      "previous": 9.45,
+      "composite": 9.49,
+      "previous": 9.47,
       "delta": 0.02,
-      "status": "HEAD 7316998 15-step; structured 429 JSON; HSTS preload; CORP; RateLimit headers; 69 a11y/521",
+      "status": "HEAD a025b1b 15-step; health rate-limit 120/min; 23 named limiters; structured 429; HSTS preload",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 2f803e1 live 15-step; react 19.2.7; security wave; scorecard 117; 69 a11y/521",
+      "status": "product tip a025b1b live 15-step; scorecard 118; full security+rate-limit matrix",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -87,7 +87,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0.0,
-      "status": "HEAD 2f803e1 react@19.2.7; node v22.14; structured 429; full diagnostics; 15-step",
+      "status": "HEAD a025b1b health rate-limited; node v22.14; 15-step green",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
