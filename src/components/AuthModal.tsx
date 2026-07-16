@@ -65,7 +65,8 @@ export default function AuthModal() {
       setError('Please fill in all fields.')
       return
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Mirror server-auth isValidEmail TLD floor (≥2 chars) to fail closed before network.
+    if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/.test(email.trim())) {
       setError('Please enter a valid email address.')
       return
     }

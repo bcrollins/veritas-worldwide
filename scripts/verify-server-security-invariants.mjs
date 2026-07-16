@@ -395,6 +395,14 @@ const authModal = readFileSync(join(root, 'src/components/AuthModal.tsx'), 'utf8
 assert(authModal.includes('password.length < 8'), 'AuthModal client floor is 8 characters')
 assert(authModal.includes('At least 8 characters'), 'AuthModal placeholder mirrors 8-char floor')
 assert(!authModal.includes('At least 6 characters'), 'AuthModal must not advertise 6-char floor')
+assert(
+  authModal.includes('[^\\s@<>]{2,}') || authModal.includes('[^\\s@<>]{2,}'),
+  'AuthModal email regex must require TLD ≥2 chars (server parity)',
+)
+assert(
+  !/\[^\s@\]\+\$/.test(authModal) || authModal.includes('{2,}'),
+  'AuthModal must not accept single-char TLDs',
+)
 // JWT algorithm pin — prevent alg=none / confusion
 assert(serverAuth.includes("algorithm: 'HS256'") || serverAuth.includes('algorithm: "HS256"'), 'jwt.sign must pin HS256')
 assert(
