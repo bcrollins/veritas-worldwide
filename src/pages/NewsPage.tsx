@@ -398,7 +398,7 @@ export default function NewsPage() {
           <div className="-mx-2 flex items-center gap-1 overflow-x-auto px-2 py-2 scrollbar-hide">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`whitespace-nowrap rounded-full px-3 py-1.5 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.12em] transition-colors ${
+              className={`inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-3 py-1.5 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.12em] transition-colors ${
                 activeCategory === 'all'
                   ? 'bg-obsidian text-white'
                   : 'text-ink-muted hover:bg-parchment-dark/50 hover:text-ink'
@@ -410,7 +410,7 @@ export default function NewsPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`whitespace-nowrap rounded-full px-3 py-1.5 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.12em] transition-colors ${
+                className={`inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-3 py-1.5 font-sans text-[0.6rem] font-semibold uppercase tracking-[0.12em] transition-colors ${
                   activeCategory === category
                     ? 'bg-obsidian text-white'
                     : 'text-ink-muted hover:bg-parchment-dark/50 hover:text-ink'

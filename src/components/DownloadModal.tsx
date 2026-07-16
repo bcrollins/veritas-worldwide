@@ -68,7 +68,13 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Download The Record"
+    >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div className="relative bg-parchment dark:bg-ink border border-border rounded-sm max-w-lg w-full p-8 shadow-2xl" onClick={e => e.stopPropagation()}>
         <button

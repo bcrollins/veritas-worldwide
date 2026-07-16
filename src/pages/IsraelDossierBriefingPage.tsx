@@ -129,14 +129,14 @@ function SourceRowTable({ section }: { section: DossierBriefingSection }) {
                       href={row.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[36px] items-center justify-center border border-border px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                      className="inline-flex min-h-[44px] items-center justify-center border border-border px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:border-crimson hover:text-crimson"
                     >
                       Open source
                     </a>
                     <a
                       href={row.workbookPath}
                       download
-                      className="inline-flex min-h-[36px] items-center justify-center bg-ink px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-surface transition-colors hover:bg-crimson"
+                      className="inline-flex min-h-[44px] items-center justify-center bg-ink px-3 font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-surface transition-colors hover:bg-crimson"
                     >
                       Open workbook
                     </a>
@@ -144,7 +144,7 @@ function SourceRowTable({ section }: { section: DossierBriefingSection }) {
                       href={row.archiveLookupUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[36px] items-center justify-center border border-border bg-parchment px-3 text-center font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                      className="inline-flex min-h-[44px] items-center justify-center border border-border bg-parchment px-3 text-center font-sans text-[0.62rem] font-bold uppercase tracking-[0.1em] text-ink transition-colors hover:border-crimson hover:text-crimson"
                     >
                       Archive lookup
                     </a>

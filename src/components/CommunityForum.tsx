@@ -290,7 +290,7 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
             <button
               key={mode}
               onClick={() => setSortMode(mode)}
-              className={`font-sans text-[0.6rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-sm transition-colors ${sortMode === mode ? 'bg-parchment text-crimson shadow-sm' : 'text-ink-muted hover:text-ink'}`}
+              className={`inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-sm transition-colors ${sortMode === mode ? 'bg-parchment text-crimson shadow-sm' : 'text-ink-muted hover:text-ink'}`}
             >
               {mode}
             </button>

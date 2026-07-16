@@ -773,7 +773,7 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const btnClass = "inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-semibold text-ink-muted border border-border rounded-sm hover:border-ink hover:text-ink transition-colors"
+  const btnClass = "inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-semibold text-ink-muted border border-border rounded-sm hover:border-ink hover:text-ink transition-colors"
 
   return (
     <div className="flex flex-wrap items-center gap-3 py-6 border-t border-b border-border my-8 no-print">

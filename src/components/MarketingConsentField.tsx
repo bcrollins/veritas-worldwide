@@ -14,12 +14,12 @@ export default function MarketingConsentField({ checked, onChange, tone = 'light
     : 'border-border bg-surface'
 
   return (
-    <label className="flex items-start gap-2.5 mt-3">
+    <label className="flex items-start gap-2.5 mt-3 min-h-[44px] cursor-pointer">
       <input
         type="checkbox"
         checked={checked}
         onChange={(event) => onChange(event.target.checked)}
-        className={`mt-0.5 h-4 w-4 shrink-0 rounded-sm border ${checkboxClass} text-crimson focus:ring-2 focus:ring-crimson/30`}
+        className={`mt-0.5 h-5 w-5 shrink-0 rounded-sm border ${checkboxClass} text-crimson focus:ring-2 focus:ring-crimson/30`}
       />
       <span className={`font-sans text-[0.65rem] leading-relaxed ${textClass}`}>
         I agree to receive email updates from Veritas Worldwide and understand I can unsubscribe at any time. See the{' '}

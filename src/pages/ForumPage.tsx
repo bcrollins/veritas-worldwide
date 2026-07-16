@@ -316,8 +316,8 @@ function CommentThread({ comment, allComments, postId, depth, onVote, onReply, o
                   maxLength={10000}
                 />
                 <div className="flex gap-2 mt-1 justify-end">
-                  <button onClick={() => setShowReply(false)} className="font-sans text-xs text-ink-muted hover:text-ink px-3 py-1.5">Cancel</button>
-                  <button onClick={handleReply} disabled={!replyText.trim()} className="font-sans text-xs font-bold uppercase tracking-wider px-4 py-1.5 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Reply</button>
+                  <button onClick={() => setShowReply(false)} className="inline-flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-ink px-3 py-1.5">Cancel</button>
+                  <button onClick={handleReply} disabled={!replyText.trim()} className="inline-flex min-h-[44px] items-center font-sans text-xs font-bold uppercase tracking-wider px-4 py-1.5 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Reply</button>
                 </div>
               </div>
             )}
