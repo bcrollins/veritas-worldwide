@@ -15,7 +15,7 @@
       "composite": 8.5,
       "previous": 8.3,
       "delta": 0.2,
-      "status": "improved; mobile cookie banner compacted to single-row 390px layout; CODE ONLY until deploy",
+      "status": "live on c809452a9e1d: mobile cookie banner compact copy present in CookieConsent-p0Z-J0c2.js",
       "plus_half_requires": "Live 390px/430px screenshots after deploy confirming first-screen CTAs remain fully visible with consent pending."
     },
     {
@@ -87,7 +87,7 @@
       "composite": 9.1,
       "previous": 8.8,
       "delta": 0.3,
-      "status": "improved; /api/health operator probe + analytics Release Health panel + platform verifier coverage; CODE ONLY until deploy",
+      "status": "live on c809452a9e1d deployment 28a30bf8: /api/health ok, platform verify PASS, Release Health panel in AnalyticsPage chunk",
       "plus_half_requires": "Wire Sentry (or equivalent) for stack-trace alerting, then prove scheduled platform-health failures notify an operator."
     },
     {
@@ -95,7 +95,7 @@
       "composite": 8.6,
       "previous": 8.4,
       "delta": 0.2,
-      "status": "improved; Release Health panel on /analytics; CODE ONLY until deploy",
+      "status": "live on c809452a9e1d: Release Health panel strings present in AnalyticsPage-CJzhs0tG.js; /api/health returns ok",
       "plus_half_requires": "Live-verify the panel on production and add dated trend lines for health probe failures."
     }
   ],

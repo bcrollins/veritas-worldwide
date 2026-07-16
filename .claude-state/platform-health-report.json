@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-05-24T05:24:03.338Z",
+  "checkedAt": "2026-07-16T05:33:07.576Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "83e2451ae18a820ffb7e30f5495f6fb1469a2658",
-    "commitShort": "83e2451ae18a",
-    "deploymentId": "b27d1e14-8aa7-427e-9968-52bc2c3bde82",
+    "commit": "c809452a9e1d15449e8338200b5e7abd81a2827e",
+    "commitShort": "c809452a9e1d",
+    "deploymentId": "28a30bf8-5c47-4108-b6ad-ee1688b872bc",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -23,8 +23,8 @@
     "firstResultChapterId": "chapter-25"
   },
   "analytics": {
-    "lifetime": 3520,
-    "today": 148,
+    "lifetime": 6820,
+    "today": 5,
     "signups": 8,
     "payments": 0
   },
@@ -72,6 +72,26 @@
       "ok": true,
       "label": "Build info reports prerender coverage",
       "detail": "prerenderedRouteCount=289"
+    },
+    {
+      "ok": true,
+      "label": "Health probe reports ok",
+      "detail": "GET /api/health returned 200 status=ok"
+    },
+    {
+      "ok": true,
+      "label": "Health probe confirms chapter data",
+      "detail": "chapterData=true"
+    },
+    {
+      "ok": true,
+      "label": "Health probe confirms prerender coverage",
+      "detail": "prerender=true"
+    },
+    {
+      "ok": true,
+      "label": "Health probe exposes analytics lifetime",
+      "detail": "analyticsLifetime=6820"
     },
     {
       "ok": true,
@@ -171,12 +191,12 @@
     {
       "ok": true,
       "label": "Analytics lifetime stays non-negative",
-      "detail": "lifetime=3520"
+      "detail": "lifetime=6820"
     },
     {
       "ok": true,
       "label": "Analytics today count stays non-negative",
-      "detail": "today=148"
+      "detail": "today=5"
     },
     {
       "ok": true,

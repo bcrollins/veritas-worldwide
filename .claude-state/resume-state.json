@@ -128,9 +128,10 @@
     "Added operator-visible /api/health liveness probe (commit, chapter data, prerender, analytics store, PDF presence; 200 ok / 503 degraded), Release Health panel on /analytics, and platform-health verifier coverage for the probe.",
     "Upgraded all nine GitHub Actions workflows to node-version 24 with FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true to close the Node 20 action-runtime deprecation warning.",
     "Compacted the mobile cookie consent banner so first-screen editorial context stays visible on 390px/430px while preserving 44pt touch targets.",
-    "Patched vulnerable transitive packages via npm audit fix; npm audit reports 0 vulnerabilities. Local verification: tsc --noEmit, node --check server.js, npm run build (289 prerendered routes), local /api/health returns status=ok."
+    "Patched vulnerable transitive packages via npm audit fix; npm audit reports 0 vulnerabilities. Local verification: tsc --noEmit, node --check server.js, npm run build (289 prerendered routes), local /api/health returns status=ok.",
+    "Live-verified production commit c809452a9e1d / deployment 28a30bf8-5c47-4108-b6ad-ee1688b872bc on 2026-07-16: /api/health status=ok, npm run verify:platform -- https://veritasworldwide.com PASS, AnalyticsPage and CookieConsent live chunks contain new UI strings."
   ],
-  "next_task": "After production advances past this commit: live-verify /api/health and /analytics Release Health panel; then add Sentry (needs DSN) or archive ContentPacksPage.tsx dead module.",
+  "next_task": "Add Sentry (needs DSN) or archive ContentPacksPage.tsx dead module; optionally screenshot 390px homepage with pending cookie consent.",
   "next_priorities": [
     "Live-verify /api/health and the /analytics Release Health panel on the deployed commit after Railway advances.",
     "Add Sentry or equivalent error monitoring once a DSN credential is available.",
