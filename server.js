@@ -1109,6 +1109,25 @@ function persistHealthHistorySample(sample) {
 
 loadHealthHistory()
 
+// Seed a boot sample so the first deploy transition has a previous commit to
+// compare against and the analytics panel is not empty after restart.
+;(() => {
+  const bootCommit = getReleaseCommit()
+  const bootShort = bootCommit ? bootCommit.slice(0, 12) : ''
+  const last = healthHistory.length > 0 ? healthHistory[healthHistory.length - 1] : null
+  if (bootShort && (!last || last.commitShort !== bootShort)) {
+    persistHealthHistorySample({
+      checkedAt: new Date().toISOString(),
+      status: 'ok',
+      commitShort: bootShort,
+      analyticsLifetime: typeof store?.lifetime === 'number' ? store.lifetime : 0,
+      publicChapterCount: 0,
+      prerenderedRouteCount: Object.keys(prerenderManifest || {}).length,
+      failedCount: 0,
+    })
+  }
+})()
+
 // Operator-visible liveness probe — no secrets, safe to scrape and schedule.
 // Returns 200 when core publish surfaces are present, 503 when degraded.
 app.get('/api/health', (req, res) => {
