@@ -60,3 +60,11 @@
 - sessionRefresh=true accessTokenTtl=7d
 - Field manual PDF headers healthy
 - All primary verifiers green
+
+## Live tip proof (ef34e9e)
+
+- Full verifier suite green: auth (refresh rotation), search (engagement +18), platform, release, checkout-attribution, health-transitions, israel-dossier
+- sessionRefresh=true, accessTokenTtl=7d
+- Continue reading badge live in SearchPage
+- Field manual PDF headers healthy
+- Privacy + trust-nav PDF mesh complete
