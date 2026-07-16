@@ -1,5 +1,5 @@
 {
-  "run": 91,
+  "run": 92,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.37,
       "previous": 9.33,
       "delta": 0.04,
-      "status": "security.txt+GEO+COOP+OAC live; tip 8c710cc",
+      "status": "15-step green; 9 headers; dual security.txt; HEAD 7aff1b5; 456 a11y markers",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "15-step green; 9 headers; security.txt; HEAD 8c710cc; 52 a11y surfaces/449 markers",
+      "status": "15-step green; 9 headers; dual security.txt; HEAD 7aff1b5; 456 a11y markers",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
