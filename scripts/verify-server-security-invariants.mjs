@@ -144,6 +144,11 @@ assert(
   (server.match(/nodeRuntime:\s*process\.version/g) || []).length >= 2,
   'nodeRuntime must be exposed on both /api/health and /api/build-info',
 )
+assert(server.includes('function readPackageEnginesNode'), 'readPackageEnginesNode helper present')
+assert(
+  (server.match(/packageEnginesNode:\s*readPackageEnginesNode\(\)/g) || []).length >= 2,
+  'packageEnginesNode must use shared helper on health and build-info',
+)
 const analyticsPage = readFileSync(join(root, 'src/pages/AnalyticsPage.tsx'), 'utf8')
 assert(analyticsPage.includes('nodeRuntime'), 'AnalyticsPage types nodeRuntime')
 assert(analyticsPage.includes('packageEnginesNode'), 'AnalyticsPage types packageEnginesNode')
