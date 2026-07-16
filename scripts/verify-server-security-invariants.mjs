@@ -290,6 +290,10 @@ assert(
   nodeMajor > 22 || (nodeMajor === 22 && nodeMinor >= 6),
   `.node-version ${nodeVersionFile} must be >= 22.6.0 for type stripping`,
 )
+assert(
+  nodeVersionFile === '22.14.0',
+  `.node-version should stay pinned at 22.14.0 (got ${nodeVersionFile}) to match live Railway runtime`,
+)
 
 for (const scriptName of ['generate:institute-pdf', 'verify:institute-pdf', 'verify:institute-manual', 'verify:auth-cache']) {
   const script = packageJson.scripts?.[scriptName] || ''
