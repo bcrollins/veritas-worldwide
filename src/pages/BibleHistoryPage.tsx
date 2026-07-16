@@ -590,7 +590,7 @@ export default function BibleHistoryPage() {
                 </p>
                 <Link
                   to="/membership"
-                  className="inline-flex items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-[0.08em] uppercase hover:bg-crimson-dark transition-colors rounded-sm w-full"
+                  className="inline-flex min-h-[44px] items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-[0.08em] uppercase hover:bg-crimson-dark transition-colors rounded-sm w-full"
                 >
                   Become a Member
                 </Link>
