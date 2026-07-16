@@ -23,6 +23,10 @@ assert(server.includes("app.disable('x-powered-by')"), 'x-powered-by must be dis
 assert(server.includes("app.set('trust proxy', 1)") || server.includes('app.set("trust proxy", 1)'), 'trust proxy must be enabled for Railway')
 assert(server.includes('function getClientIP'), 'getClientIP helper present')
 assert(server.includes('req.ip'), 'getClientIP must prefer Express req.ip under trust proxy')
+assert(server.includes('ALLOWED_ORIGINS'), 'CORS allowlist present')
+assert(server.includes('https://veritasworldwide.com'), 'CORS allowlist includes production origin')
+assert(server.includes('https://www.veritasworldwide.com'), 'CORS allowlist includes www origin')
+assert(!/Access-Control-Allow-Origin['"]?\s*,\s*['"]?\*/.test(server), 'must not use CORS wildcard *')
 assert(
   server.includes("express.json({ limit: '64kb' })") || server.includes('express.json({ limit: "64kb" })'),
   'global JSON body limit must be 64kb',
