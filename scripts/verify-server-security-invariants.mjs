@@ -69,6 +69,14 @@ assert(
 )
 assert(server.includes('SECURITY_TXT_FALLBACK') && server.includes('loadSecurityTxtBody'), 'security.txt in-process fallback present')
 assert(server.includes('privacy@veritasworldwide.com'), 'security.txt contact embedded for production fallback')
+const publicSecurity = readFileSync(join(root, 'public', '.well-known', 'security.txt'), 'utf8')
+const fallbackExpires = server.match(/Expires:\s*(\S+)/)
+const publicExpires = publicSecurity.match(/Expires:\s*(\S+)/)
+assert(fallbackExpires && publicExpires, 'Expires present in fallback and public security.txt')
+assert(
+  fallbackExpires[1] === publicExpires[1],
+  `SECURITY_TXT_FALLBACK Expires (${fallbackExpires[1]}) must match public/.well-known (${publicExpires[1]})`,
+)
 
 // Change-password validation mirrors register/login max length floor
 assert(serverAuth.includes('change-password'), 'change-password route present in server-auth')
