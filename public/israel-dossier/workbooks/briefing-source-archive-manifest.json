@@ -95,14 +95,42 @@
       "timestamp": null,
       "archiveUrl": "https://web.archive.org/web/*/https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
       "status": "lookup-only",
-      "note": "Wayback has no capturable snapshot as of 2026-07-16 (save endpoint 520; available API empty). Retain wildcard lookup until a durable capture exists.",
-      "lastProbedAt": "2026-07-16T08:10:00.000Z"
+      "note": "Wayback still has no capturable snapshot as of 2026-07-16 re-probe (available API empty).",
+      "lastProbedAt": "2026-07-16T08:35:00.000Z"
     },
     {
       "sourceUrl": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
       "timestamp": "20260227165001",
       "archiveUrl": "https://web.archive.org/web/20260227165001/https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
       "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.btselem.org/statistics/first_intifada_tables",
+      "timestamp": "20260628164943",
+      "archiveUrl": "https://web.archive.org/web/20260628164943/https://www.btselem.org/statistics/first_intifada_tables",
+      "status": "pinned",
+      "note": "B'Tselem first intifada statistics tables"
+    },
+    {
+      "sourceUrl": "https://www.unrwa.org/resources/reports/unrwa-situation-report-155-situation-gaza-strip-and-west-bank-including-east-jerusalem",
+      "timestamp": "20260520212037",
+      "archiveUrl": "https://web.archive.org/web/20260520212037/https://www.unrwa.org/resources/reports/unrwa-situation-report-155-situation-gaza-strip-and-west-bank-including-east-jerusalem",
+      "status": "pinned",
+      "note": "UNRWA situation report 155"
+    },
+    {
+      "sourceUrl": "https://www.btselem.org/",
+      "timestamp": "20260713145746",
+      "archiveUrl": "https://web.archive.org/web/20260713145746/https://www.btselem.org/",
+      "status": "pinned",
+      "note": "B'Tselem org landing (companion for host-level archive fallback)"
+    },
+    {
+      "sourceUrl": "https://www.unrwa.org/",
+      "timestamp": "20260520163824",
+      "archiveUrl": "https://web.archive.org/web/20260520163824/https://www.unrwa.org/",
+      "status": "pinned",
+      "note": "UNRWA org landing (companion for host-level archive fallback)"
     }
   ]
 }

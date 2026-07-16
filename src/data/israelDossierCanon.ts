@@ -236,6 +236,22 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     archiveUrl: 'https://web.archive.org/web/20250310150211/https://docs.un.org/en/A/ES-10/L.31/Rev.1',
     status: 'Pinned via companion docs.un.org A/ES-10/L.31/Rev.1 snapshot 20250310150211; UN Digital Library host blocks automated probes.',
   },
+  'https://www.btselem.org/statistics/first_intifada_tables': {
+    archiveUrl: 'https://web.archive.org/web/20260628164943/https://www.btselem.org/statistics/first_intifada_tables',
+    status: 'Pinned Wayback snapshot 20260628164943; primary host may block automated probes.',
+  },
+  'https://www.unrwa.org/resources/reports/unrwa-situation-report-155-situation-gaza-strip-and-west-bank-including-east-jerusalem': {
+    archiveUrl: 'https://web.archive.org/web/20260520212037/https://www.unrwa.org/resources/reports/unrwa-situation-report-155-situation-gaza-strip-and-west-bank-including-east-jerusalem',
+    status: 'Pinned Wayback snapshot 20260520212037; primary host may block automated probes.',
+  },
+  'https://www.btselem.org/': {
+    archiveUrl: 'https://web.archive.org/web/20260713145746/https://www.btselem.org/',
+    status: 'Pinned Wayback snapshot 20260713145746 host landing for B\'Tselem fallback.',
+  },
+  'https://www.unrwa.org/': {
+    archiveUrl: 'https://web.archive.org/web/20260520163824/https://www.unrwa.org/',
+    status: 'Pinned Wayback snapshot 20260520163824 host landing for UNRWA fallback.',
+  },
 }
 
 const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>
