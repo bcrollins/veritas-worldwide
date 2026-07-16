@@ -340,7 +340,7 @@ export default function ProfilesIndexPage(): React.ReactNode {
               key={snapshot.category}
               type="button"
               onClick={() => setActiveCategory(snapshot.category)}
-              className="text-left rounded-[28px] border border-border bg-surface p-6 transition-colors hover:border-crimson/35 hover:bg-parchment-dark/30"
+              className="min-h-[44px] text-left rounded-[28px] border border-border bg-surface p-6 transition-colors hover:border-crimson/35 hover:bg-parchment-dark/30"
             >
               <p className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.18em] text-crimson">
                 {CATEGORY_LABELS[snapshot.category]}
@@ -481,7 +481,7 @@ export default function ProfilesIndexPage(): React.ReactNode {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded text-sm font-body whitespace-nowrap transition-colors ${
+                className={`inline-flex min-h-[44px] items-center px-4 py-2 rounded text-sm font-body whitespace-nowrap transition-colors ${
                   activeCategory === category
                     ? 'bg-crimson text-white'
                     : 'bg-parchment-dark text-ink border border-border hover:border-crimson'
@@ -510,7 +510,7 @@ export default function ProfilesIndexPage(): React.ReactNode {
                 setActiveCategory('all')
                 setSortBy('claims-desc')
               }}
-              className="text-crimson hover:underline font-body"
+              className="inline-flex min-h-[44px] items-center text-crimson hover:underline font-body"
             >
               Clear filters
             </button>

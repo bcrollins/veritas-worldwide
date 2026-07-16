@@ -246,12 +246,12 @@ export default function InstitutePage() {
               <div className="mt-5 flex flex-wrap gap-3 border-t border-[color:var(--institute-border)] pt-4">
                 <button
                   type="button"
-                  className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]"
+                  className="inline-flex min-h-[44px] items-center text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]"
                   onClick={() => setActiveFilter(track.id)}
                 >
                   Filter catalog
                 </button>
-                <a href={`#catalog`} className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
+                <a href={`#catalog`} className="inline-flex min-h-[44px] items-center text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
                   Jump to results
                 </a>
               </div>
