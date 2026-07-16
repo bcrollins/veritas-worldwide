@@ -1,5 +1,5 @@
 {
-  "run": 101,
+  "run": 102,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.37,
       "previous": 9.33,
       "delta": 0.04,
-      "status": "HEAD c39fe04+ 15-step; tight Permissions-Policy; rateLimit\u00d722; dual security.txt; 460 a11y",
+      "status": "HEAD cfc9a84 15-step masterpiece; Permissions-Policy tight; rateLimit\u00d722; dual security.txt; 460 a11y",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "HEAD family ff01233+/c39fe04+ 15-step; Permissions-Policy tight; rateLimit\u00d722; 460 a11y; scorecard 101",
+      "status": "HEAD cfc9a84 15-step masterpiece; Permissions-Policy tight; rateLimit\u00d722; dual security.txt; 460 a11y",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
