@@ -27,3 +27,12 @@
 - GitHub Actions billing lock (known)
 - Lancet Wayback pin still unavailable (CDX 404 partials only)
 - Optional Sentry DSN for external paging
+
+## Continuation ship (auth + analytics + trust nav)
+
+- 7d JWT/session TTL live (`accessTokenTtl=7d`, `sessionTtlMs=604800000`)
+- Health history commit transitions + unique commits + force-on-deploy/boot
+- Analytics Release Health: commits in window + deploy transitions UI
+- Newsletter signup UTM attribution
+- About + Methodology trust nav → Institute / Field Manual / PDFs
+- Verifiers green on production tip `aa82296+`
