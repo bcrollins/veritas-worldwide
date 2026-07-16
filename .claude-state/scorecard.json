@@ -1,5 +1,5 @@
 {
-  "run": 148,
+  "run": 149,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 53a2297+ continuous 15-step; scorecard 148",
+      "status": "product tip 53a2297+ continuous 15-step; scorecard 149; pure+auth+platform green",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
