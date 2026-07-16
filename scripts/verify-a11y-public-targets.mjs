@@ -13,8 +13,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 /** @type {Array<{ path: string, min: number, label: string }>} */
 const floors = [
   { path: 'src/pages/ChapterPage.tsx', min: 8, label: 'chapter actions/nav' },
-  { path: 'src/pages/HomePage.tsx', min: 8, label: 'home CTAs' },
-  { path: 'src/pages/ForumPage.tsx', min: 12, label: 'forum votes/actions' },
+  { path: 'src/pages/HomePage.tsx', min: 10, label: 'home CTAs' },
+  { path: 'src/pages/ForumPage.tsx', min: 20, label: 'forum votes/actions' },
   { path: 'src/pages/IsraelDossierPage.tsx', min: 10, label: 'dossier source anchors' },
   { path: 'src/pages/DeepStatePage.tsx', min: 6, label: 'deep-state controls' },
   { path: 'src/pages/BibleHistoryPage.tsx', min: 8, label: 'bible-history sidebar' },
@@ -49,7 +49,7 @@ const floors = [
   { path: 'src/pages/PrivacyPage.tsx', min: 5, label: 'privacy sidebar' },
   { path: 'src/pages/BookmarksPage.tsx', min: 8, label: 'bookmarks shell' },
   { path: 'src/pages/TimelinePage.tsx', min: 6, label: 'timeline shell' },
-  { path: 'src/App.tsx', min: 20, label: 'site shell header/nav/footer' },
+  { path: 'src/App.tsx', min: 22, label: 'site shell header/nav/footer' },
   { path: 'src/pages/TopicPage.tsx', min: 4, label: 'topic hub breadcrumbs' },
   { path: 'src/pages/ArticlePage.tsx', min: 4, label: 'article news chrome' },
   { path: 'src/pages/NewsPage.tsx', min: 4, label: 'news desk CTAs' },
