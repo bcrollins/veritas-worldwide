@@ -1,5 +1,5 @@
 {
-  "run": 42,
+  "run": 43,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -160,7 +160,10 @@
     "Attributed all public donate CTAs via getAttributedDonateUrl (footer, chapters, dossier, sources, methodology, about, profile, timeline, bookmarks, download modal, donation banner) with optional prefilled amounts \u2014 live on bcfeb10+.",
     "Fixed stable-name PDF immutable cache bug: /veritas-institute-field-manual.pdf and other PDFs now use max-age=3600 must-revalidate (d734137 live-verified).",
     "Exposed replica clientErrorIntakeCount/LastAt/LastMessage on /api/health and analytics Release Health panel (dd07032 live-verified; platform PASS).",
-    "Surface durable field manual PDF from Institute catalog, book, homepage, prerender HTML, sitemap, and llms.txt with Book schema encoding."
+    "Surface durable field manual PDF from Institute catalog, book, homepage, prerender HTML, sitemap, and llms.txt with Book schema encoding.",
+    "Live-verified series through 2716a13/bbd4213: prerender PDF CTAs, Book encoding schema, RSS enclosure, platform PASS with sitemap+feed+PDF non-immutable cache.",
+    "First-touch external referrer attribution (hostname as utm_source/medium=referral) for organic traffic without UTM params (2005bf1).",
+    "Platform health now asserts Institute prerender HTML + book encoding schema for the durable PDF."
   ],
   "next_task": "External only remaining for archives/CI/Sentry. Continue product polish: news corpus, membership attribution, institute PDF server artifact.",
   "next_priorities": [
