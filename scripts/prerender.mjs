@@ -853,6 +853,11 @@ function renderInstituteIndexPage(topics, researchSources, fieldManualEntries = 
           <p class="institute-eyebrow">Veritas Institute</p>
           <h1 class="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The field manual for ordinary emergencies. The course library for trades, repair, and resilient households.</h1>
           <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">Veritas Institute answers immediate household and roadside problems first, then routes readers into deeper course paths for practical trade work, repair literacy, preparedness, food resilience, and healthcare-support skills.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/institute/book" class="institute-button-primary">Open the Field Manual</a>
+            <a href="/veritas-institute-field-manual.pdf" class="institute-button-secondary" download="veritas-institute-field-manual.pdf">Download Field Manual PDF</a>
+            <a href="/institute/methodology" class="institute-button-secondary">See the sourcing method</a>
+          </div>
           <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(fieldManualCount))}</span><span class="institute-stat-label">field-manual answers</span></div>
             <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(topics.length))}</span><span class="institute-stat-label">practical course paths</span></div>
@@ -1126,6 +1131,10 @@ function renderInstituteBookPage(topics, researchSources, fieldEntries = []) {
           <p class="institute-eyebrow">Field Manual</p>
           <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[color:var(--institute-ink)]">The Veritas field manual for ordinary emergencies, repair calls, and modern trade skills.</h1>
           <p class="mt-5 max-w-4xl text-lg leading-8 text-[color:var(--institute-muted)]">This page indexes urgent field-manual protocols, source anchors, and practical course paths so readers, crawlers, and retrieval systems can move from an immediate problem into the right guide, course, or print export path.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/veritas-institute-field-manual.pdf" class="institute-button-primary" download="veritas-institute-field-manual.pdf">Download Field Manual PDF</a>
+            <a href="/veritas-institute-field-manual.pdf" class="institute-button-secondary">Direct PDF link</a>
+          </div>
           <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(fieldEntries.length))}</span><span class="institute-stat-label">field-manual entries</span></div>
             <div class="institute-stat"><span class="institute-stat-value">${escapeHtml(String(urgentEntryCount))}</span><span class="institute-stat-label">immediate protocols</span></div>
@@ -2132,6 +2141,12 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
           '@type': 'Organization',
           name: SITE_NAME,
           url: SITE_URL,
+        },
+        encoding: {
+          '@type': 'MediaObject',
+          contentUrl: `${SITE_URL}/veritas-institute-field-manual.pdf`,
+          encodingFormat: 'application/pdf',
+          name: 'Veritas Institute Field Manual PDF',
         },
       },
       {
