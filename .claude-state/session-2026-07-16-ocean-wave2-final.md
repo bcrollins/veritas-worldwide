@@ -8,7 +8,7 @@
 - Residual news/article/search/dossier 40→44 (`2376fea`)
 - Lancet CDX re-probe: timestamps exist, Wayback 403 → lookup-only
 
-## verify:live = 14 steps
+## verify:live = 15 steps (+ csp-meta)
 platform · release · auth · auth-validation · search-scoring · search ·
 crawler · health-transitions · article-sources · archive-manifest ·
 a11y-public-targets (47 surfaces / 383 markers) · security-headers (7) ·
@@ -20,3 +20,6 @@ ok · shared-database · prerender 289 · popular 8 · pins 46
 ## Residual external
 - Lancet: not pinable until Wayback 200
 - Sentry DSN optional
+
+- Auth smoke multi-agent 429 resilience (c444c99)
+- CSP pure meta suite (e593483)
