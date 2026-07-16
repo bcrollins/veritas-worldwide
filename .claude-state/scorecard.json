@@ -1,5 +1,5 @@
 {
-  "run": 39,
+  "run": 40,
   "date": "2026-07-16",
   "site": [
     {
@@ -28,10 +28,10 @@
     },
     {
       "feature": "Chapter Reading",
-      "composite": 9.1,
-      "previous": 9,
+      "composite": 9.2,
+      "previous": 9.1,
       "delta": 0.1,
-      "status": "improved",
+      "status": "topic hub chips on chapter pages",
       "plus_half_requires": "Verify the auth upgrade/downgrade experience at 390px and 430px in a browser session and add regression coverage for the /read reader shell as well as individual chapter routes."
     },
     {
@@ -52,11 +52,11 @@
     },
     {
       "feature": "Search",
-      "composite": 9.3,
-      "previous": 9,
-      "delta": 0.3,
-      "status": "live weighted ranking: title/source outrank body-only; verify:search PASS on production",
-      "plus_half_requires": "Add topic-aware deep links from search cards into /topics hubs."
+      "composite": 9.4,
+      "previous": 9.3,
+      "delta": 0.1,
+      "status": "topic hub chips on results + weighted ranking live",
+      "plus_half_requires": "Personalize topic ranking by engagement when analytics identity exists."
     },
     {
       "feature": "News & Topic Entry",
@@ -76,10 +76,10 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 8.9,
-      "previous": 8.7,
-      "delta": 0.2,
-      "status": "Israel dossier courses surface workbook download artifacts on course pages",
+      "composite": 9.0,
+      "previous": 8.9,
+      "delta": 0.1,
+      "status": "dossier workbooks on course + guide pages",
       "plus_half_requires": "Add the workbook templates directly into relevant course/guide detail pages, then pressure-test the Book of Knowledge PDF/manual export on real browsers."
     },
     {

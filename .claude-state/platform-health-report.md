@@ -1,13 +1,13 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T06:37:20.896Z
+- Checked at: 2026-07-16T06:54:38.859Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: 8817d0160de8
-- Deployment: 6b562463-1cc4-475e-848a-607d2ddcc496
+- Build commit: 7374fc08f3ec
+- Deployment: e7330a03-1410-4dfa-b6e1-b9319423b450
 - Auth mode: database
 - Search results: 19
-- Analytics lifetime views: 6905
+- Analytics lifetime views: 6911
 
 ## Checks
 - PASS — Build info route responds: GET /api/build-info returned 200
@@ -15,7 +15,7 @@
 - PASS — Health probe reports ok: GET /api/health returned 200 status=ok
 - PASS — Health probe confirms chapter data: chapterData=true
 - PASS — Health probe confirms prerender coverage: prerender=true
-- PASS — Health probe exposes analytics lifetime: analyticsLifetime=6905
+- PASS — Health probe exposes analytics lifetime: analyticsLifetime=6911
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
 - PASS — Briefing source archive manifest has pinned snapshots: pinned=15
 - PASS — Content pack route responds: GET /content-pack returned 200
@@ -40,8 +40,8 @@
 - PASS — Anonymous search results expose full public access: accessLevel=full
 - PASS — Anonymous search results expose evidence tier metadata: availableEvidenceTiers=verified, circumstantial, disputed
 - PASS — Analytics snapshot route responds: GET /api/analytics/snapshot returned 200
-- PASS — Analytics lifetime stays non-negative: lifetime=6905
-- PASS — Analytics today count stays non-negative: today=90
+- PASS — Analytics lifetime stays non-negative: lifetime=6911
+- PASS — Analytics today count stays non-negative: today=96
 - PASS — Analytics funnel exposes signup totals: signups=8
 - PASS — Read route prerender responds: GET /read returned 200
 - PASS — Read route prerender returns HTML: content-type=text/html; charset=utf-8

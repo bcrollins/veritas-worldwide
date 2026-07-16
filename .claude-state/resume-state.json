@@ -1,5 +1,5 @@
 {
-  "run": 39,
+  "run": 40,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -148,9 +148,12 @@
     "Live tip 3d2bfbe85b83 / deployment 3ab10a69: clientErrorIntake true on /api/health, 15/16 archive pins, platform PASS.",
     "Weighted search ranking live (title/source over body): verify:search PASS; federal reserve tops chapter-25/3/12.",
     "Institute Israel-dossier course pages now expose workbook artifact downloads + dossier links.",
-    "Health history sampling endpoint /api/health/history live; analytics panel shows sample trend when samples exist."
+    "Health history sampling endpoint /api/health/history live; analytics panel shows sample trend when samples exist.",
+    "Search results deep-link to topic hubs via chapter reverse map (getTopicHubsForChapter).",
+    "Chapter pages surface Topic Hubs chips for featured hubs.",
+    "Institute guides for Israel-dossier paths attach workbook downloads (mirrors courses)."
   ],
-  "next_task": "External: Lancet pin if Wayback ever has it; GitHub billing unlock; optional Sentry DSN. Code path clear of P0s.",
+  "next_task": "External only remaining for archives/CI/Sentry. Continue product polish: news corpus, membership attribution, institute PDF server artifact.",
   "next_priorities": [
     "Lancet briefing source remains lookup-only until Wayback has a snapshot.",
     "Unlock GitHub Actions billing lock.",
