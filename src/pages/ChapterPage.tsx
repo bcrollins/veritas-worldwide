@@ -1223,7 +1223,7 @@ export default function ChapterPage() {
                     <Link
                       key={kw}
                       to={getTopicHrefForTerm(kw)}
-                      className="font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm hover:text-crimson hover:bg-crimson/5 transition-colors"
+                      className="inline-flex min-h-[44px] items-center font-sans text-xs px-3 py-1.5 bg-parchment-dark text-ink-muted rounded-sm hover:text-crimson hover:bg-crimson/5 transition-colors"
                     >
                       {kw}
                     </Link>

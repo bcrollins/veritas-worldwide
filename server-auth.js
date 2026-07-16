@@ -229,6 +229,11 @@ export function registerDatabaseAndAuthRoutes({
     if (typeof displayName !== 'string' || displayName.trim().length < 1 || displayName.trim().length > 100) {
       return res.status(400).json({ error: 'Display name must be 1–100 characters.' })
     }
+    // Strip control characters; keep printable text only.
+    const cleanDisplayName = displayName.trim().replace(/[\u0000-\u001F\u007F]/g, '')
+    if (cleanDisplayName.length < 1) {
+      return res.status(400).json({ error: 'Display name must be 1–100 characters.' })
+    }
 
     const cleanEmail = email.toLowerCase().trim()
 
@@ -243,7 +248,7 @@ export function registerDatabaseAndAuthRoutes({
         `INSERT INTO users (email, display_name, password_hash)
          VALUES ($1, $2, $3)
          RETURNING id, email, display_name, tier, created_at`,
-        [cleanEmail, displayName.trim(), passwordHash]
+        [cleanEmail, cleanDisplayName, passwordHash]
       )
 
       const user = rows[0]
