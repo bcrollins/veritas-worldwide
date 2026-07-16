@@ -423,13 +423,13 @@ export default function ContentPackPage() {
               <div className="flex items-center justify-between px-4 py-3 bg-surface">
                 <Link
                   to={`/news/${card.articleSlug}`}
-                  className="font-sans text-[11px] font-semibold text-crimson hover:text-crimson-dark transition-colors"
+                  className="inline-flex min-h-[44px] items-center font-sans text-[11px] font-semibold text-crimson hover:text-crimson-dark transition-colors"
                 >
                   Read full article &rarr;
                 </Link>
                 <button
                   onClick={() => handleDownloadCard(card)}
-                  className="inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold text-ink-muted hover:text-ink transition-colors"
+                  className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[11px] font-semibold text-ink-muted hover:text-ink transition-colors"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
                   {downloadingId === card.id ? 'Downloaded' : 'Download PNG'}
@@ -464,7 +464,7 @@ export default function ContentPackPage() {
                         <span className="font-sans text-[10px] text-ink-faint">{post.chars} characters</span>
                         <button
                           onClick={() => copyText(post.text, postId)}
-                          className="inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold text-ink-muted hover:text-ink transition-colors"
+                          className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[11px] font-semibold text-ink-muted hover:text-ink transition-colors"
                         >
                           {copiedId === postId ? (
                             <>

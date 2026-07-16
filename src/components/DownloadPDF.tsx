@@ -569,7 +569,7 @@ export default function DownloadPDF() {
     <button
       onClick={handleDownload}
       disabled={generating}
-      className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-parchment font-sans font-semibold text-sm rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      className="inline-flex min-h-[44px] items-center gap-2 px-6 py-3 bg-crimson text-parchment font-sans font-semibold text-sm rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       aria-label="Download the entire publication as a PDF"
     >
       {generating ? (
