@@ -1,5 +1,5 @@
 {
-  "run": 128,
+  "run": 129,
   "date": "2026-07-16",
   "site": [
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "HEAD ed0b9b9 JWT HS256 pin; full auth smoke green; 15-step",
+      "status": "HEAD 2d6eb9c JWT HS256; single-use refresh; password-change multi-session revoke pure-locked; 15-step",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 53a2297 live 15-step re-proven; scorecard 128; 69 a11y/524; security masterpiece",
+      "status": "product tip 53a2297+ live 15-step tip 2d6eb9c; scorecard 129; pure security locks complete",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
