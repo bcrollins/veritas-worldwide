@@ -1,5 +1,5 @@
 {
-  "run": 168,
+  "run": 169,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.56,
       "previous": 9.54,
       "delta": 0.02,
-      "status": "HEAD continuous 15-step; HSTS 1y+preload pure-locked; 12 headers; rateLimit\u00d723",
+      "status": "HEAD continuous 15-step; exact CORP/DNS/XDO/HSTS pure-locked; 12 headers",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 53a2297+ continuous 15-step; scorecard 168; HSTS exact pure-locked",
+      "status": "product tip 53a2297+ continuous 15-step; scorecard 169; exact security header pure locks",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
