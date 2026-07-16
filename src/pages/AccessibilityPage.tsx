@@ -160,6 +160,14 @@ export default function AccessibilityPage() {
                   <Link to="/privacy" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Privacy Policy</Link>
                   <Link to="/terms" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Terms of Use</Link>
                   <Link to="/methodology" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Methodology</Link>
+                  <Link to="/institute/book" className="block text-sm text-ink-muted hover:text-crimson transition-colors">→ Field Manual</Link>
+                  <a
+                    href="/veritas-institute-field-manual.pdf"
+                    className="block text-sm text-ink-muted hover:text-crimson transition-colors"
+                    download="veritas-institute-field-manual.pdf"
+                  >
+                    → Field Manual PDF
+                  </a>
                 </nav>
               </div>
             </div>

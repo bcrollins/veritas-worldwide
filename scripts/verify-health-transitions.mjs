@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Pure-function checks for health-history commit transition derivation.
+ * Pure-function checks for health-history commit transition derivation,
+ * force-sample gating, and multi-replica sample merge behavior.
  */
 
 function deriveCommitTransitions(samples) {
@@ -34,6 +35,29 @@ function shouldForceSample(last, sample) {
   return commitChanged || statusChanged || hasFailures
 }
 
+function healthHistorySampleKey(sample) {
+  return [
+    sample.checkedAt,
+    sample.commitShort || '',
+    sample.status || '',
+    String(sample.failedCount ?? 0),
+    String(sample.prerenderedRouteCount ?? 0),
+  ].join('|')
+}
+
+function mergeHealthHistorySamples(...lists) {
+  const map = new Map()
+  for (const list of lists) {
+    const samples = Array.isArray(list) ? list : list?.samples || []
+    for (const sample of samples) {
+      if (!sample?.checkedAt) continue
+      map.set(healthHistorySampleKey(sample), sample)
+    }
+  }
+  return [...map.values()]
+    .sort((a, b) => Date.parse(a.checkedAt) - Date.parse(b.checkedAt))
+}
+
 function assert(condition, message) {
   if (!condition) {
     console.error(`[verify:health-transitions] FAIL — ${message}`)
@@ -61,5 +85,32 @@ assert(!shouldForceSample(samples[0], samples[1]), 'same commit/status should no
 assert(shouldForceSample(samples[1], samples[2]), 'commit change should force')
 assert(shouldForceSample(samples[2], samples[3]), 'status/failure should force')
 assert(shouldForceSample(samples[3], samples[4]), 'commit change after failure should force')
+
+// Multi-replica merge: two replicas report overlapping windows; keys de-dupe.
+const replicaA = [
+  { checkedAt: '2026-07-16T02:00:00.000Z', commitShort: 'ddd444', status: 'ok', failedCount: 0, prerenderedRouteCount: 289 },
+  { checkedAt: '2026-07-16T02:15:00.000Z', commitShort: 'ddd444', status: 'ok', failedCount: 0, prerenderedRouteCount: 289 },
+]
+const replicaB = [
+  { checkedAt: '2026-07-16T02:15:00.000Z', commitShort: 'ddd444', status: 'ok', failedCount: 0, prerenderedRouteCount: 289 },
+  { checkedAt: '2026-07-16T02:16:00.000Z', commitShort: 'eee555', status: 'ok', failedCount: 0, prerenderedRouteCount: 290 },
+]
+const merged = mergeHealthHistorySamples(replicaA, replicaB)
+assert(merged.length === 3, `expected 3 merged samples, got ${merged.length}`)
+assert(merged[2].commitShort === 'eee555', 'merged order should keep deploy transition last')
+assert(
+  deriveCommitTransitions(merged).length === 1 && deriveCommitTransitions(merged)[0].to === 'eee555',
+  'merged history should expose the deploy transition'
+)
+
+// Storage label contract used by /api/health/history
+function getHealthHistoryStorageLabel({ hasDb, hasDataDir }) {
+  if (hasDb) return 'shared-database'
+  if (hasDataDir) return 'configured-data-dir'
+  return 'replica-local-data-dir'
+}
+assert(getHealthHistoryStorageLabel({ hasDb: true, hasDataDir: false }) === 'shared-database', 'db storage label')
+assert(getHealthHistoryStorageLabel({ hasDb: false, hasDataDir: true }) === 'configured-data-dir', 'volume storage label')
+assert(getHealthHistoryStorageLabel({ hasDb: false, hasDataDir: false }) === 'replica-local-data-dir', 'local storage label')
 
 console.log('[verify:health-transitions] PASS')

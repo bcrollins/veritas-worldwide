@@ -284,6 +284,33 @@ const healthResult = await fetchJson('/api/health')
         'Health history exposes commit transition fields',
         `commitTransitions=${Array.isArray(healthHistory.commitTransitions)} uniqueCommits=${Array.isArray(healthHistory.uniqueCommits)}`
       )
+      const healthHistoryStorage = typeof healthHistory.storage === 'string' ? healthHistory.storage : ''
+      const knownStorage = ['shared-database', 'configured-data-dir', 'replica-local-data-dir']
+      addCheck(
+        checks,
+        failures,
+        knownStorage.includes(healthHistoryStorage),
+        'Health history reports known storage backend',
+        `storage=${healthHistoryStorage || 'missing'}`
+      )
+      // Production always has DATABASE_URL; prefer shared multi-replica persistence.
+      if (health.checks?.databaseConfigured === true) {
+        addCheck(
+          checks,
+          failures,
+          healthHistoryStorage === 'shared-database' && healthHistory.sharedAcrossReplicas === true,
+          'Health history is shared across replicas via database',
+          `storage=${healthHistoryStorage} sharedAcrossReplicas=${healthHistory.sharedAcrossReplicas}`
+        )
+      }
+      const livePrerenderCount = Number(health.prerenderedRouteCount || build.prerenderedRouteCount || 0)
+      addCheck(
+        checks,
+        failures,
+        livePrerenderCount >= 250,
+        'Live prerender route count stays above crawler floor',
+        `prerenderedRouteCount=${livePrerenderCount}`
+      )
 
       const clientErrorProbe = await fetch(getUrl('/api/client-error'), {
         method: 'POST',

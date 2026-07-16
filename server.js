@@ -1062,58 +1062,236 @@ app.get('/api/build-info', (req, res) => {
 
 const HEALTH_HISTORY_MAX = 48
 const HEALTH_HISTORY_MIN_INTERVAL_MS = 15 * 60 * 1000
+const HEALTH_HISTORY_STATE_KEY = 'health-history'
 // Prefer volume/data dir when configured; otherwise best-effort local data path on the replica.
+// When DATABASE_URL is set, samples are also shared across replicas via analytics_state.
 const HEALTH_HISTORY_DIR = DATA_DIR || path.join(__dirname, 'data')
 const HEALTH_HISTORY_FILE = path.join(HEALTH_HISTORY_DIR, 'health-history.json')
 let healthHistory = []
 let lastHealthHistoryWriteAt = 0
+let healthHistoryDbWriteInFlight = null
 
-function loadHealthHistory() {
-  if (!fs.existsSync(HEALTH_HISTORY_FILE)) {
-    healthHistory = []
-    return
-  }
-  try {
-    const parsed = JSON.parse(fs.readFileSync(HEALTH_HISTORY_FILE, 'utf8'))
-    healthHistory = Array.isArray(parsed) ? parsed.slice(-HEALTH_HISTORY_MAX) : []
-    if (healthHistory.length > 0) {
-      const last = healthHistory[healthHistory.length - 1]
-      const lastTs = Date.parse(last?.checkedAt || '')
-      if (Number.isFinite(lastTs)) lastHealthHistoryWriteAt = lastTs
-    }
-  } catch {
-    healthHistory = []
+function normalizeHealthHistorySample(raw) {
+  if (!raw || typeof raw !== 'object') return null
+  const checkedAt = typeof raw.checkedAt === 'string' ? raw.checkedAt : ''
+  if (!checkedAt) return null
+  return {
+    checkedAt,
+    status: typeof raw.status === 'string' ? raw.status : '',
+    commitShort: typeof raw.commitShort === 'string' ? raw.commitShort : '',
+    analyticsLifetime: Number.isFinite(Number(raw.analyticsLifetime)) ? Number(raw.analyticsLifetime) : 0,
+    publicChapterCount: Number.isFinite(Number(raw.publicChapterCount)) ? Number(raw.publicChapterCount) : 0,
+    prerenderedRouteCount: Number.isFinite(Number(raw.prerenderedRouteCount))
+      ? Number(raw.prerenderedRouteCount)
+      : 0,
+    failedCount: Number.isFinite(Number(raw.failedCount)) ? Number(raw.failedCount) : 0,
   }
 }
 
-function persistHealthHistorySample(sample) {
-  const now = Date.now()
-  const last = healthHistory.length > 0 ? healthHistory[healthHistory.length - 1] : null
+function normalizeHealthHistorySamples(raw) {
+  const list = Array.isArray(raw)
+    ? raw
+    : raw && typeof raw === 'object' && Array.isArray(raw.samples)
+      ? raw.samples
+      : []
+  return list.map(normalizeHealthHistorySample).filter(Boolean)
+}
+
+function healthHistorySampleKey(sample) {
+  return [
+    sample.checkedAt,
+    sample.commitShort || '',
+    sample.status || '',
+    String(sample.failedCount ?? 0),
+    String(sample.prerenderedRouteCount ?? 0),
+  ].join('|')
+}
+
+function mergeHealthHistorySamples(...lists) {
+  const map = new Map()
+  for (const list of lists) {
+    for (const sample of normalizeHealthHistorySamples(list)) {
+      map.set(healthHistorySampleKey(sample), sample)
+    }
+  }
+  return [...map.values()]
+    .sort((a, b) => Date.parse(a.checkedAt) - Date.parse(b.checkedAt))
+    .slice(-HEALTH_HISTORY_MAX)
+}
+
+function shouldForceHealthHistorySample(last, sample) {
   const commitChanged =
     Boolean(last?.commitShort) &&
     Boolean(sample?.commitShort) &&
     last.commitShort !== sample.commitShort
   const statusChanged = Boolean(last?.status) && Boolean(sample?.status) && last.status !== sample.status
   const hasFailures = Number(sample?.failedCount || 0) > 0
-  // Always capture deploy transitions and degradations so operators can see
-  // release movement even when the min interval would otherwise drop samples.
-  const forceSample = commitChanged || statusChanged || hasFailures
-  if (!forceSample && now - lastHealthHistoryWriteAt < HEALTH_HISTORY_MIN_INTERVAL_MS) return
-  lastHealthHistoryWriteAt = now
-  healthHistory = [...healthHistory, sample].slice(-HEALTH_HISTORY_MAX)
+  return commitChanged || statusChanged || hasFailures
+}
+
+function getHealthHistoryStorageLabel() {
+  if (analyticsDbPool) return 'shared-database'
+  if (DATA_DIR) return 'configured-data-dir'
+  return 'replica-local-data-dir'
+}
+
+function syncHealthHistoryWriteCursor(samples = healthHistory) {
+  if (!Array.isArray(samples) || samples.length === 0) {
+    lastHealthHistoryWriteAt = 0
+    return
+  }
+  const last = samples[samples.length - 1]
+  const lastTs = Date.parse(last?.checkedAt || '')
+  lastHealthHistoryWriteAt = Number.isFinite(lastTs) ? lastTs : 0
+}
+
+function writeHealthHistoryToDisk(samples = healthHistory) {
   try {
     fs.mkdirSync(HEALTH_HISTORY_DIR, { recursive: true })
-    fs.writeFileSync(HEALTH_HISTORY_FILE, `${JSON.stringify(healthHistory, null, 2)}\n`, 'utf8')
+    fs.writeFileSync(HEALTH_HISTORY_FILE, `${JSON.stringify(samples, null, 2)}\n`, 'utf8')
   } catch (error) {
-    console.error('[monitor] failed to persist health history', error instanceof Error ? error.message : error)
+    console.error('[monitor] failed to persist health history to disk', error instanceof Error ? error.message : error)
   }
 }
 
-loadHealthHistory()
+function loadHealthHistoryFromDisk() {
+  if (!fs.existsSync(HEALTH_HISTORY_FILE)) {
+    healthHistory = []
+    lastHealthHistoryWriteAt = 0
+    return
+  }
+  try {
+    const parsed = JSON.parse(fs.readFileSync(HEALTH_HISTORY_FILE, 'utf8'))
+    healthHistory = mergeHealthHistorySamples(parsed)
+    syncHealthHistoryWriteCursor(healthHistory)
+  } catch {
+    healthHistory = []
+    lastHealthHistoryWriteAt = 0
+  }
+}
 
-// Seed a boot sample so the first deploy transition has a previous commit to
-// compare against and the analytics panel is not empty after restart.
-;(() => {
+async function loadHealthHistoryFromDatabase({ log = true } = {}) {
+  if (!analyticsDbPool) return false
+
+  try {
+    const { rows } = await analyticsDbPool.query(
+      'SELECT payload FROM analytics_state WHERE state_key = $1 LIMIT 1',
+      [HEALTH_HISTORY_STATE_KEY]
+    )
+    if (rows.length === 0 || !rows[0].payload) return false
+    const fromDb = normalizeHealthHistorySamples(rows[0].payload)
+    if (fromDb.length === 0) return false
+    healthHistory = mergeHealthHistorySamples(healthHistory, fromDb)
+    syncHealthHistoryWriteCursor(healthHistory)
+    writeHealthHistoryToDisk(healthHistory)
+    if (log) {
+      console.log(`[monitor] Loaded ${healthHistory.length} health history samples from database`)
+    }
+    return true
+  } catch (err) {
+    console.warn('[monitor] Failed to load health history from database:', err.message)
+    return false
+  }
+}
+
+async function commitHealthHistorySampleToDatabase(sample) {
+  if (!analyticsDbPool) return false
+
+  const client = await analyticsDbPool.connect()
+  try {
+    await client.query('BEGIN')
+    await client.query(
+      `INSERT INTO analytics_state (state_key, payload, updated_at)
+       VALUES ($1, $2::jsonb, NOW())
+       ON CONFLICT (state_key) DO NOTHING`,
+      [HEALTH_HISTORY_STATE_KEY, JSON.stringify({ samples: [] })]
+    )
+
+    const { rows } = await client.query(
+      'SELECT payload FROM analytics_state WHERE state_key = $1 FOR UPDATE',
+      [HEALTH_HISTORY_STATE_KEY]
+    )
+    const existing = normalizeHealthHistorySamples(rows[0]?.payload)
+    const last = existing.length > 0 ? existing[existing.length - 1] : null
+    const sampleTs = Date.parse(sample?.checkedAt || '') || Date.now()
+    const lastTs = last ? Date.parse(last.checkedAt || '') : 0
+    const forceSample = shouldForceHealthHistorySample(last, sample)
+
+    // Shared interval gate so multi-replica probes do not thrash the ring buffer.
+    if (!forceSample && Number.isFinite(lastTs) && sampleTs - lastTs < HEALTH_HISTORY_MIN_INTERVAL_MS) {
+      healthHistory = mergeHealthHistorySamples(existing)
+      syncHealthHistoryWriteCursor(healthHistory)
+      await client.query('COMMIT')
+      return false
+    }
+
+    const next = mergeHealthHistorySamples(existing, [sample])
+    await client.query(
+      'UPDATE analytics_state SET payload = $2::jsonb, updated_at = NOW() WHERE state_key = $1',
+      [HEALTH_HISTORY_STATE_KEY, JSON.stringify({ samples: next })]
+    )
+    await client.query('COMMIT')
+    healthHistory = next
+    syncHealthHistoryWriteCursor(healthHistory)
+    writeHealthHistoryToDisk(healthHistory)
+    return true
+  } catch (err) {
+    await client.query('ROLLBACK').catch(() => {})
+    console.warn('[monitor] Failed to commit health history to database:', err.message)
+    throw err
+  } finally {
+    client.release()
+  }
+}
+
+function queueHealthHistoryDatabaseWrite(sample) {
+  if (!analyticsDbPool) return
+  healthHistoryDbWriteInFlight = (healthHistoryDbWriteInFlight || Promise.resolve())
+    .then(() => commitHealthHistorySampleToDatabase(sample))
+    .catch((error) => {
+      console.error(
+        '[monitor] health history database write failed',
+        error instanceof Error ? error.message : error
+      )
+    })
+    .finally(() => {
+      // Keep the chain only while work remains; next write re-seeds.
+      if (healthHistoryDbWriteInFlight && typeof healthHistoryDbWriteInFlight.then === 'function') {
+        // no-op placeholder so callers can await the shared chain
+      }
+    })
+}
+
+function persistHealthHistorySample(sample) {
+  const normalized = normalizeHealthHistorySample(sample)
+  if (!normalized) return
+
+  // Database path owns the shared interval/force gate across replicas.
+  if (analyticsDbPool) {
+    // Optimistic local append so this replica's /api/health/history is never empty
+    // while the shared write is in flight. Shared commit re-merges and re-gates.
+    const last = healthHistory.length > 0 ? healthHistory[healthHistory.length - 1] : null
+    const forceSample = shouldForceHealthHistorySample(last, normalized)
+    const now = Date.parse(normalized.checkedAt) || Date.now()
+    if (forceSample || now - lastHealthHistoryWriteAt >= HEALTH_HISTORY_MIN_INTERVAL_MS) {
+      healthHistory = mergeHealthHistorySamples(healthHistory, [normalized])
+      syncHealthHistoryWriteCursor(healthHistory)
+      writeHealthHistoryToDisk(healthHistory)
+    }
+    queueHealthHistoryDatabaseWrite(normalized)
+    return
+  }
+
+  const now = Date.now()
+  const last = healthHistory.length > 0 ? healthHistory[healthHistory.length - 1] : null
+  const forceSample = shouldForceHealthHistorySample(last, normalized)
+  if (!forceSample && now - lastHealthHistoryWriteAt < HEALTH_HISTORY_MIN_INTERVAL_MS) return
+  lastHealthHistoryWriteAt = now
+  healthHistory = mergeHealthHistorySamples(healthHistory, [normalized])
+  writeHealthHistoryToDisk(healthHistory)
+}
+
+function seedBootHealthHistorySample() {
   const bootCommit = getReleaseCommit()
   const bootShort = bootCommit ? bootCommit.slice(0, 12) : ''
   const last = healthHistory.length > 0 ? healthHistory[healthHistory.length - 1] : null
@@ -1128,7 +1306,20 @@ loadHealthHistory()
       failedCount: 0,
     })
   }
-})()
+}
+
+async function hydrateHealthHistory() {
+  loadHealthHistoryFromDisk()
+  if (analyticsDbPool) {
+    await loadHealthHistoryFromDatabase({ log: true })
+  }
+  seedBootHealthHistorySample()
+  if (analyticsDbPool && healthHistoryDbWriteInFlight) {
+    await healthHistoryDbWriteInFlight.catch(() => {})
+  }
+}
+
+loadHealthHistoryFromDisk()
 
 // Operator-visible liveness probe — no secrets, safe to scrape and schedule.
 // Returns 200 when core publish surfaces are present, 503 when degraded.
@@ -1195,7 +1386,12 @@ app.get('/api/health', (req, res) => {
   res.status(httpStatus).json(payload)
 })
 
-app.get('/api/health/history', (_req, res) => {
+app.get('/api/health/history', async (_req, res) => {
+  if (analyticsDbPool) {
+    // Return the shared multi-replica view, not just this container's ring buffer.
+    await loadHealthHistoryFromDatabase({ log: false })
+  }
+
   const commitTransitions = []
   for (let i = 1; i < healthHistory.length; i += 1) {
     const prev = healthHistory[i - 1]
@@ -1217,7 +1413,8 @@ app.get('/api/health/history', (_req, res) => {
     minIntervalMinutes: HEALTH_HISTORY_MIN_INTERVAL_MS / 60_000,
     maxSamples: HEALTH_HISTORY_MAX,
     persistence: true,
-    storage: DATA_DIR ? 'configured-data-dir' : 'replica-local-data-dir',
+    storage: getHealthHistoryStorageLabel(),
+    sharedAcrossReplicas: Boolean(analyticsDbPool),
     commitTransitions,
     uniqueCommits: [...new Set(healthHistory.map((sample) => sample?.commitShort).filter(Boolean))],
   })
@@ -1290,10 +1487,14 @@ app.use((req, res) => {
 
 async function startServer() {
   await initializeDatabaseAndAnalytics()
+  await hydrateHealthHistory()
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`[veritas] Serving on port ${PORT}`)
     console.log(`[veritas] Analytics: ${store.lifetime} lifetime views loaded`)
+    console.log(
+      `[veritas] Health history: ${healthHistory.length} samples · storage=${getHealthHistoryStorageLabel()}`
+    )
 
     if (DATA_DIR) {
       console.log(`[veritas] Data dir: ${DATA_DIR}`)

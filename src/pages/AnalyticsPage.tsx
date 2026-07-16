@@ -613,6 +613,8 @@ type HealthHistory = {
   minIntervalMinutes?: number
   maxSamples?: number
   persistence?: boolean
+  storage?: string
+  sharedAcrossReplicas?: boolean
   commitTransitions?: HealthHistoryTransition[]
   uniqueCommits?: string[]
 }
@@ -767,6 +769,8 @@ function ReleaseHealthPanel({
                 {failedSampleCount > 0 ? ` · ${failedSampleCount} with failures` : ''}
                 {history?.minIntervalMinutes ? ` · ≥${history.minIntervalMinutes}m apart` : ''}
                 {history?.persistence ? ' · persisted' : ' · in-memory until volume available'}
+                {history?.storage ? ` · ${history.storage}` : ''}
+                {history?.sharedAcrossReplicas ? ' · multi-replica' : ''}
               </p>
             </div>
             <a href="/api/health/history" className="font-mono text-[10px] text-crimson underline hover:text-crimson-dark">
