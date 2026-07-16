@@ -118,6 +118,12 @@ assert(
   fallbackLang[1] === publicLang[1],
   `SECURITY_TXT_FALLBACK Preferred-Languages (${fallbackLang[1]}) must match public/.well-known (${publicLang[1]})`,
 )
+for (const field of ['Policy', 'Hiring', 'Canonical']) {
+  const fb = server.match(new RegExp(`${field}:\\s*(\\S+)`))
+  const pub = publicSecurity.match(new RegExp(`${field}:\\s*(\\S+)`))
+  assert(fb && pub, `${field} present in fallback and public security.txt`)
+  assert(fb[1] === pub[1], `SECURITY_TXT_FALLBACK ${field} must match public/.well-known`)
+}
 
 // Change-password validation mirrors register/login max length floor
 assert(serverAuth.includes('change-password'), 'change-password route present in server-auth')
