@@ -78,12 +78,19 @@ async function main() {
   const chapter9 = boostedResults.find((row) => row.chapterId === 'chapter-9')
   const chapter9Base = federalResults.find((row) => row.chapterId === 'chapter-9')
   if (chapter9 && chapter9Base) {
+    // Personal engagement is +18. When the unpersonalized base already carried the
+    // sitewide +8 popularity boost, the net gain is +10 (engagement replaces popularity).
+    const expectedDelta = chapter9Base.popularityBoost === true ? 10 : 18
+    const delta = chapter9.score - chapter9Base.score
     assert(
-      chapter9.score >= chapter9Base.score + 18,
-      `expected +18 engagement boost for chapter-9, base=${chapter9Base.score} boosted=${chapter9.score}`
+      delta >= expectedDelta,
+      `expected +${expectedDelta} engagement delta for chapter-9 (popularityInBase=${chapter9Base.popularityBoost === true}), base=${chapter9Base.score} boosted=${chapter9.score} delta=${delta}`
     )
     assert(chapter9.engagementBoost === true, 'boosted hit should set engagementBoost=true')
-    console.log(`[verify:search] engagement boost chapter-9: ${chapter9Base.score} → ${chapter9.score}`)
+    assert(chapter9.popularityBoost !== true, 'personal engagement should supersede popularityBoost flag')
+    console.log(
+      `[verify:search] engagement boost chapter-9: ${chapter9Base.score} → ${chapter9.score} (delta=${delta}, expected≥${expectedDelta})`
+    )
   } else {
     console.log('[verify:search] engagement boost skipped — chapter-9 not in federal reserve results')
   }
