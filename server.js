@@ -791,7 +791,11 @@ app.use('/api/user/preferences', rateLimit({ windowMs: 60_000, max: 30 }))
 app.use('/api/user/profile', rateLimit({ windowMs: 60_000, max: 20 }))
 app.use('/api/analytics/event', rateLimit({ windowMs: 60_000, max: 120 }))
 app.use('/api/analytics/pageview', rateLimit({ windowMs: 60_000, max: 120 }))
+app.use('/api/analytics/snapshot', rateLimit({ windowMs: 60_000, max: 60 }))
 app.use('/api/client-error', rateLimit({ windowMs: 60_000, max: 30 }))
+// Operator probes — keep readable under multi-agent verify fleets.
+app.use('/api/health/history', rateLimit({ windowMs: 60_000, max: 60 }))
+app.use('/api/build-info', rateLimit({ windowMs: 60_000, max: 60 }))
 
 // CORS — restrict to known origins
 const ALLOWED_ORIGINS = new Set([

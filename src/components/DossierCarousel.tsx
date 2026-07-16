@@ -410,7 +410,7 @@ export function CarouselDownloader({ slides, title, filenamePrefix }: {
               <button
                 key={i}
                 onClick={() => handleDownloadSingle(i)}
-                className="group relative aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-md"
+                className="group relative min-h-[44px] aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-md"
                 style={{ backgroundColor: bgColors[slide.bgStyle] }}
               >
                 <div className="absolute inset-0 p-3 flex flex-col justify-between">
@@ -517,7 +517,7 @@ export function PinnedPostDownloader({ posts }: { posts: PinnedPostData[] }) {
                 key={post.id}
                 onClick={() => handleDownload(post)}
                 disabled={generating !== null}
-                className="group relative aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-lg text-left"
+                className="group relative min-h-[44px] aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-lg text-left"
                 style={{ backgroundColor: bgMap[post.bgStyle] }}
               >
                 <div className="absolute inset-0 p-6 flex flex-col justify-between">

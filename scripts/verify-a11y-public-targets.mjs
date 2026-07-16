@@ -33,7 +33,7 @@ const floors = [
   { path: 'src/components/CommunityForum.tsx', min: 5, label: 'community forum votes' },
   { path: 'src/components/Breadcrumb.tsx', min: 1, label: 'breadcrumb' },
   { path: 'src/components/ErrorBoundary.tsx', min: 2, label: 'error recovery' },
-  { path: 'src/components/DossierCarousel.tsx', min: 2, label: 'dossier carousel downloads' },
+  { path: 'src/components/DossierCarousel.tsx', min: 4, label: 'dossier carousel downloads' },
   { path: 'src/pages/ReadTheBookPage.tsx', min: 12, label: 'read reader chrome' },
   { path: 'src/pages/AboutPage.tsx', min: 7, label: 'about key routes' },
   { path: 'src/pages/ProfilePage.tsx', min: 6, label: 'profile sources/nav' },
