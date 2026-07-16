@@ -25,7 +25,7 @@ const routes = [
     text: ['Sources & References', 'WITH DIRECT LINKS'],
     anyText: ['Field Manual', 'FIELD MANUAL', 'Methodology', 'METHODOLOGY', 'Record PDF', 'RECORD PDF'],
   },
-  { path: '/search?q=federal+reserve', text: ['Search The Record'] },
+  { path: '/search?q=federal+reserve', text: ['Search The Record'], anyText: ['result', 'Result', 'RESULT', 'Federal', 'FEDERAL'] },
   // SPA-lazy surfaces. CSS uppercase headings mean innerText may be ALL CAPS — match case-insensitively below.
   { path: '/content-pack', text: ['Content Pack'], anyText: ['Brand Assets', 'BRAND ASSETS', 'Shareable Graphics', 'SHAREABLE GRAPHICS', 'Usage Guidelines', 'USAGE GUIDELINES'] },
   {
