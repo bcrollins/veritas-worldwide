@@ -27,10 +27,12 @@ const topicHubPath = path.join(repoRoot, 'src', 'data', 'topicHubs.json')
 const profileDataPath = path.join(repoRoot, 'src', 'data', 'profileData.ts')
 const instituteCatalogPath = path.join(repoRoot, 'src', 'data', 'instituteCatalog.ts')
 
+// Only publish article packs that are wired into allArticles (SPA reader).
+// The unsupported secondary expansion pack is intentionally excluded: it is not
+// merged into allArticles and contained fabricated source paths that fail integrity checks.
 const articleCollections = [
   { file: 'src/data/articles.ts', exportName: 'articles' },
   { file: 'src/data/articlesExpanded.ts', exportName: 'expandedArticlesA' },
-  { file: 'src/data/articlesExpandedB.ts', exportName: 'expandedArticlesB' },
 ]
 
 let gitModifiedUnavailable = false
