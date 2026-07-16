@@ -251,7 +251,7 @@ const healthResult = await fetchJson('/api/health')
       addCheck(
         checks,
         failures,
-        pinnedArchiveCount >= 40,
+        pinnedArchiveCount >= 42,
         'Briefing source archive manifest has pinned snapshots',
         `pinned=${pinnedArchiveCount}`
       )
