@@ -770,13 +770,15 @@ function Footer() {
 }
 
 function PageViewTracker() {
+  const location = useLocation()
   usePageView()
   useScrollDepth()
 
   useEffect(() => {
-    captureMarketingAttribution()
+    // Re-capture on each navigation so mid-session UTM deep-links update last-touch.
+    captureMarketingAttribution(location.search, location.pathname)
     handleStripeReturn()
-  }, [])
+  }, [location.pathname, location.search])
 
   return null
 }

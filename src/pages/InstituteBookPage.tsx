@@ -77,6 +77,13 @@ export default function InstituteBookPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <InstituteBookPDF />
+              <a
+                href="/veritas-institute-field-manual.pdf"
+                className="institute-button-secondary"
+                download="veritas-institute-field-manual.pdf"
+              >
+                Direct PDF link
+              </a>
               <button type="button" onClick={() => window.print()} className="institute-button-secondary">
                 Print this page
               </button>

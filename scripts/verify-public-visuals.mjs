@@ -30,6 +30,18 @@ const routes = [
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
   { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL'] },
   { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
+  {
+    path: '/institute/book',
+    text: ['Field Manual', 'FIELD MANUAL'],
+    anyText: [
+      'Download Field Manual PDF',
+      'DOWNLOAD FIELD MANUAL PDF',
+      'Direct PDF link',
+      'DIRECT PDF LINK',
+      'field-manual',
+      'FIELD-MANUAL',
+    ],
+  },
   { path: '/topics/federal-reserve', text: ['Federal Reserve', 'FEDERAL RESERVE'], anyText: ['primary-source', 'Topic', 'Subscribe', 'SUBSCRIBE'] },
   { path: '/terms', text: ['core downloads are public without a login'] },
 ]
