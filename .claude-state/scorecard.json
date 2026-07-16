@@ -1,5 +1,5 @@
 {
-  "run": 63,
+  "run": 64,
   "date": "2026-07-16",
   "site": [
     {
@@ -110,10 +110,10 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 9.5,
-      "previous": 9.45,
-      "delta": 0.05,
-      "status": "withdrawn orphan news sitemap entries; crawler floors + article-sources guard",
+      "score": 9.6,
+      "previous": 9.5,
+      "delta": 0.1,
+      "status": "llms investigations section + deep-state/forum sitemap floors; tip c27bb72",
       "plus_half_requires": "Confirm Search Console indexing for dossier, briefing, Institute, llms.txt, and PDF entries."
     },
     {
