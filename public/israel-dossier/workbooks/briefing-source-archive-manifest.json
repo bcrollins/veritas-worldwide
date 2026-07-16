@@ -180,6 +180,34 @@
       "archiveUrl": "https://web.archive.org/web/20260404091844/https://digitallibrary.un.org/record/90717",
       "note": "UN Digital Library record 90717",
       "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "timestamp": "20260714100248",
+      "archiveUrl": "https://web.archive.org/web/20260714100248/https://www.972mag.com/lavender-ai-israeli-army-gaza/",
+      "status": "pinned",
+      "note": "+972 Lavender investigation"
+    },
+    {
+      "sourceUrl": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
+      "timestamp": "20260214042343",
+      "archiveUrl": "https://web.archive.org/web/20260214042343/https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/",
+      "status": "pinned",
+      "note": "+972 aid convoy massacre testimonies"
+    },
+    {
+      "sourceUrl": "https://www.cbo.gov/publication/59014",
+      "timestamp": "20260511175135",
+      "archiveUrl": "https://web.archive.org/web/20260511175135/https://www.cbo.gov/publication/59014",
+      "status": "pinned",
+      "note": "CBO publication 59014"
+    },
+    {
+      "sourceUrl": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
+      "timestamp": "20260701170453",
+      "archiveUrl": "https://web.archive.org/web/20260701170453/https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
+      "status": "pinned",
+      "note": "OHCHR flour massacre press release"
     }
   ]
 }

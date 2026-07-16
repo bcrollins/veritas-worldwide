@@ -280,6 +280,22 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     status: 'Pinned Wayback snapshot 20260404091844; primary host may block automated probes.',
   },
 
+  'https://www.972mag.com/lavender-ai-israeli-army-gaza/': {
+    archiveUrl: 'https://web.archive.org/web/20260714100248/https://www.972mag.com/lavender-ai-israeli-army-gaza/',
+    status: 'Pinned Wayback snapshot 20260714100248; primary host may block automated probes.',
+  },
+  'https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/': {
+    archiveUrl: 'https://web.archive.org/web/20260214042343/https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/',
+    status: 'Pinned Wayback snapshot 20260214042343; primary host may block automated probes.',
+  },
+  'https://www.cbo.gov/publication/59014': {
+    archiveUrl: 'https://web.archive.org/web/20260511175135/https://www.cbo.gov/publication/59014',
+    status: 'Pinned Wayback snapshot 20260511175135; primary host may block automated probes.',
+  },
+  'https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza': {
+    archiveUrl: 'https://web.archive.org/web/20260701170453/https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza',
+    status: 'Pinned Wayback snapshot 20260701170453; primary host may block automated probes.',
+  },
 }
 
 const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>
