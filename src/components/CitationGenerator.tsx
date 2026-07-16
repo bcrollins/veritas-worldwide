@@ -79,9 +79,10 @@ export default function CitationGenerator({ chapter }: { chapter: Chapter }) {
     <div ref={panelRef} className="relative inline-block">
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
+        className="inline-flex min-h-[44px] min-w-[44px] items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors px-2"
         aria-expanded={open}
         aria-haspopup="true"
+        aria-label="Cite this chapter"
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />

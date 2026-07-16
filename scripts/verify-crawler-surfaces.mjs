@@ -198,4 +198,15 @@ assert(
 )
 console.log('[verify:crawler-surfaces] prerender source embeds Field Manual trust links on legal shells')
 
+// ── RFC 9116 security.txt (crawler / researcher discovery) ────────
+const securityTxt = read('public/.well-known/security.txt')
+assert(
+  securityTxt.includes('Contact:') &&
+    securityTxt.includes('Expires:') &&
+    securityTxt.includes('Canonical: https://veritasworldwide.com/.well-known/security.txt') &&
+    securityTxt.includes('privacy@veritasworldwide.com'),
+  'public/.well-known/security.txt missing required RFC 9116 fields'
+)
+console.log('[verify:crawler-surfaces] security.txt present with Contact + Expires + Canonical')
+
 console.log('[verify:crawler-surfaces] PASS')
