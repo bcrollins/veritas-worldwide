@@ -285,6 +285,13 @@ export default function HomePage() {
                       <Link to="/institute/book" className="institute-button-secondary">
                         Open the Field Manual
                       </Link>
+                      <a
+                        href="/veritas-institute-field-manual.pdf"
+                        className="institute-button-secondary"
+                        download="veritas-institute-field-manual.pdf"
+                      >
+                        Download PDF
+                      </a>
                       <Link
                         to="/institute/methodology"
                         className="inline-flex min-h-[44px] items-center font-sans text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]"

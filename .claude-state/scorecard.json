@@ -1,5 +1,5 @@
 {
-  "run": 41,
+  "run": 42,
   "date": "2026-07-16",
   "site": [
     {
@@ -76,18 +76,18 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 9.35,
-      "previous": 9.0,
-      "delta": 0.35,
-      "status": "build-time field manual PDF live on 3cfe939; durable download + health check",
+      "composite": 9.45,
+      "previous": 9.35,
+      "delta": 0.1,
+      "status": "durable PDF download from catalog + book; schema encoding; non-stale cache",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.45,
-      "previous": 9.3,
-      "delta": 0.15,
-      "status": "instituteFieldManualPdf on /api/health; platform verifier HEAD-checks PDF; failed-check trend on analytics panel",
+      "composite": 9.55,
+      "previous": 9.45,
+      "delta": 0.1,
+      "status": "clientErrorIntakeCount live; PDF non-immutable cache; hard instituteFieldManualPdf",
       "plus_half_requires": "Optional Sentry DSN for external paging on top of native client-error intake."
     },
     {
