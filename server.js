@@ -1086,7 +1086,17 @@ function loadHealthHistory() {
 
 function persistHealthHistorySample(sample) {
   const now = Date.now()
-  if (now - lastHealthHistoryWriteAt < HEALTH_HISTORY_MIN_INTERVAL_MS) return
+  const last = healthHistory.length > 0 ? healthHistory[healthHistory.length - 1] : null
+  const commitChanged =
+    Boolean(last?.commitShort) &&
+    Boolean(sample?.commitShort) &&
+    last.commitShort !== sample.commitShort
+  const statusChanged = Boolean(last?.status) && Boolean(sample?.status) && last.status !== sample.status
+  const hasFailures = Number(sample?.failedCount || 0) > 0
+  // Always capture deploy transitions and degradations so operators can see
+  // release movement even when the min interval would otherwise drop samples.
+  const forceSample = commitChanged || statusChanged || hasFailures
+  if (!forceSample && now - lastHealthHistoryWriteAt < HEALTH_HISTORY_MIN_INTERVAL_MS) return
   lastHealthHistoryWriteAt = now
   healthHistory = [...healthHistory, sample].slice(-HEALTH_HISTORY_MAX)
   try {
@@ -1165,6 +1175,20 @@ app.get('/api/health', (req, res) => {
 })
 
 app.get('/api/health/history', (_req, res) => {
+  const commitTransitions = []
+  for (let i = 1; i < healthHistory.length; i += 1) {
+    const prev = healthHistory[i - 1]
+    const curr = healthHistory[i]
+    if (prev?.commitShort && curr?.commitShort && prev.commitShort !== curr.commitShort) {
+      commitTransitions.push({
+        from: prev.commitShort,
+        to: curr.commitShort,
+        at: curr.checkedAt || '',
+        status: curr.status || '',
+      })
+    }
+  }
+
   res.setHeader('Cache-Control', 'no-store')
   res.json({
     samples: healthHistory,
@@ -1173,6 +1197,8 @@ app.get('/api/health/history', (_req, res) => {
     maxSamples: HEALTH_HISTORY_MAX,
     persistence: true,
     storage: DATA_DIR ? 'configured-data-dir' : 'replica-local-data-dir',
+    commitTransitions,
+    uniqueCommits: [...new Set(healthHistory.map((sample) => sample?.commitShort).filter(Boolean))],
   })
 })
 

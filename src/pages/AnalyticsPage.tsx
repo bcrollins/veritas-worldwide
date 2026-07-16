@@ -600,12 +600,21 @@ type HealthHistorySample = {
   failedCount?: number
 }
 
+type HealthHistoryTransition = {
+  from?: string
+  to?: string
+  at?: string
+  status?: string
+}
+
 type HealthHistory = {
   samples?: HealthHistorySample[]
   sampleCount?: number
   minIntervalMinutes?: number
   maxSamples?: number
   persistence?: boolean
+  commitTransitions?: HealthHistoryTransition[]
+  uniqueCommits?: string[]
 }
 
 function ReleaseHealthPanel({
@@ -637,6 +646,31 @@ function ReleaseHealthPanel({
   const maxLifetime = Math.max(...recent.map((sample) => sample.analyticsLifetime || 0), 1)
   const maxFailed = Math.max(...recent.map((sample) => sample.failedCount || 0), 1)
   const hasInstitutePdfCheck = Object.prototype.hasOwnProperty.call(health.checks || {}, 'instituteFieldManualPdf')
+
+  const commitTransitions = (() => {
+    if (Array.isArray(history?.commitTransitions) && history.commitTransitions.length > 0) {
+      return history.commitTransitions.slice(-8)
+    }
+    const derived: HealthHistoryTransition[] = []
+    for (let i = 1; i < recent.length; i += 1) {
+      const prev = recent[i - 1]
+      const curr = recent[i]
+      if (prev.commitShort && curr.commitShort && prev.commitShort !== curr.commitShort) {
+        derived.push({
+          from: prev.commitShort,
+          to: curr.commitShort,
+          at: curr.checkedAt,
+          status: curr.status,
+        })
+      }
+    }
+    return derived.slice(-8)
+  })()
+
+  const uniqueCommits =
+    Array.isArray(history?.uniqueCommits) && history.uniqueCommits.length > 0
+      ? history.uniqueCommits.slice(-8)
+      : [...new Set(recent.map((sample) => sample.commitShort).filter(Boolean) as string[])].slice(-8)
 
   return (
     <section
@@ -779,6 +813,69 @@ function ReleaseHealthPanel({
               </div>
             </div>
           </div>
+
+          {(uniqueCommits.length > 0 || commitTransitions.length > 0) && (
+            <div className="mt-4 grid gap-3 lg:grid-cols-2" data-testid="health-commit-transitions">
+              <div>
+                <p className="font-sans text-[10px] uppercase tracking-[0.12em] text-ink-faint mb-2">
+                  Commits in window
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {uniqueCommits.length > 0 ? (
+                    uniqueCommits.map((commit) => (
+                      <span
+                        key={commit}
+                        className={`font-mono text-[10px] px-2 py-1 rounded-sm border ${
+                          commit === health.commitShort
+                            ? 'border-crimson text-crimson bg-crimson/5'
+                            : 'border-border text-ink-muted'
+                        }`}
+                      >
+                        {commit.slice(0, 12)}
+                        {commit === health.commitShort ? ' · live' : ''}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="font-body text-xs text-ink-faint">No commit samples yet</span>
+                  )}
+                </div>
+              </div>
+              <div>
+                <p className="font-sans text-[10px] uppercase tracking-[0.12em] text-ink-faint mb-2">
+                  Deploy transitions
+                </p>
+                {commitTransitions.length > 0 ? (
+                  <ul className="space-y-1.5">
+                    {commitTransitions.map((transition, index) => (
+                      <li
+                        key={`${transition.from}-${transition.to}-${transition.at || index}`}
+                        className="font-mono text-[10px] text-ink-muted"
+                      >
+                        <span className="text-ink-faint">{transition.from?.slice(0, 8)}</span>
+                        <span className="mx-1 text-crimson">→</span>
+                        <span className="text-ink">{transition.to?.slice(0, 8)}</span>
+                        {transition.at ? (
+                          <span className="text-ink-faint">
+                            {' · '}
+                            {new Date(transition.at).toLocaleString([], {
+                              month: 'short',
+                              day: 'numeric',
+                              hour: 'numeric',
+                              minute: '2-digit',
+                            })}
+                          </span>
+                        ) : null}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="font-body text-xs text-ink-faint">
+                    No commit changes in recent samples yet. Deploy transitions force a history sample.
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       )}
 

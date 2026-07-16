@@ -277,6 +277,19 @@ const healthResult = await fetchJson('/api/health')
         'Health history endpoint responds',
         `GET /api/health/history returned ${healthHistoryResult.response.status}`
       )
+      if (Array.isArray(healthHistory.commitTransitions) || Array.isArray(healthHistory.uniqueCommits)) {
+        addCheck(
+          checks,
+          failures,
+          true,
+          'Health history exposes commit transition fields',
+          `commitTransitions=${Array.isArray(healthHistory.commitTransitions)} uniqueCommits=${Array.isArray(healthHistory.uniqueCommits)}`
+        )
+      } else if (healthHistoryResult.response.ok) {
+        console.warn(
+          '[verify:platform] WARN — health history missing commit transition fields; deploy with transition ship required'
+        )
+      }
 
       const clientErrorProbe = await fetch(getUrl('/api/client-error'), {
         method: 'POST',
@@ -325,6 +338,23 @@ const healthResult = await fetchJson('/api/health')
         'Auth status exposes a known mode',
         `mode=${authStatus.mode || 'unknown'}`
       )
+      addCheck(
+        checks,
+        failures,
+        typeof authStatus.accessTokenTtl === 'string' || authStatus.accessTokenTtl === undefined,
+        'Auth status exposes access token TTL when present',
+        `accessTokenTtl=${authStatus.accessTokenTtl || 'missing'}`
+      )
+      // After the 7d access-token ship, require a non-30d TTL when the field is present.
+      if (typeof authStatus.accessTokenTtl === 'string') {
+        addCheck(
+          checks,
+          failures,
+          authStatus.accessTokenTtl !== '30d',
+          'Auth access token TTL is shorter than 30 days',
+          `accessTokenTtl=${authStatus.accessTokenTtl}`
+        )
+      }
 
       const authMeResult = await fetchJson('/api/auth/me')
       const expectedAuthMeStatuses = authStatus.available ? new Set([401]) : new Set([503])
