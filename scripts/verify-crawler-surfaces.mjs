@@ -25,6 +25,8 @@ const REQUIRED_SITEMAP_PATHS = [
   '/terms',
   '/privacy',
   '/accessibility',
+  '/profiles',
+  '/analytics',
   '/institute',
   '/institute/book',
   '/search',
