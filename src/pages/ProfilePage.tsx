@@ -271,7 +271,7 @@ function ClaimCard({ claim, index }: { claim: { claim: string; source: string; u
             {claim.claim}
           </p>
           {claim.claim.length > 200 && (
-            <button onClick={() => setExpanded(!expanded)} className="font-sans text-xs text-crimson hover:underline mt-1">
+            <button onClick={() => setExpanded(!expanded)} className="inline-flex min-h-[44px] items-center font-sans text-xs text-crimson hover:underline mt-1">
               {expanded ? 'Show less' : 'Read full claim'}
             </button>
           )}
@@ -818,7 +818,7 @@ export default function ProfilePage(): React.ReactNode {
                     <ClaimCard key={idx} claim={claim} index={idx} />
                   ))}
                   {filteredClaims.length === 0 && tierFilter !== 'all' && (
-                    <p className="text-sm text-ink-muted font-body py-4">No {tierFilter} claims found. <button onClick={() => setTierFilter('all')} className="text-crimson hover:underline">Show all claims</button></p>
+                    <p className="text-sm text-ink-muted font-body py-4">No {tierFilter} claims found. <button onClick={() => setTierFilter('all')} className="inline-flex min-h-[44px] items-center text-crimson hover:underline">Show all claims</button></p>
                   )}
                 </div>
               </>
