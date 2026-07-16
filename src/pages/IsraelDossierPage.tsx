@@ -1404,16 +1404,16 @@ export default function IsraelDossierPage() {
 
       {/* ─── BOTTOM NAV ─── */}
       <div className="border-t border-border pt-8 flex flex-col sm:flex-row gap-4">
-        <Link to="/" className="font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors text-center">
+        <Link to="/" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors text-center">
           Read The Record
         </Link>
-        <Link to="/chapter/chapter-15" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
+        <Link to="/chapter/chapter-15" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
           Ch. 15: U.S. Foreign Aid to Israel
         </Link>
-        <Link to="/sources" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
+        <Link to="/sources" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
           Source Library
         </Link>
-        <Link to="/deep-state" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
+        <Link to="/deep-state" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
           The Deep State — Epstein Network
         </Link>
       </div>

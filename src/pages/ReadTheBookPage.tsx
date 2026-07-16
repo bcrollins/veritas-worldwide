@@ -315,7 +315,7 @@ export default function ReadTheBookPage() {
             <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">Table of Contents</p>
             <div className="space-y-1">
               {chapterMeta.map((ch, i) => (
-                <button key={ch.id} onClick={() => goTo(i)} className={`w-full text-left px-3 py-2 rounded-sm transition-colors ${i === activeChapter ? 'bg-crimson/10 text-crimson' : 'text-ink-muted hover:text-ink hover:bg-parchment-dark dark:hover:bg-white/5'}`}>
+                <button key={ch.id} onClick={() => goTo(i)} className={`w-full min-h-[44px] text-left px-3 py-2 rounded-sm transition-colors ${i === activeChapter ? 'bg-crimson/10 text-crimson' : 'text-ink-muted hover:text-ink hover:bg-parchment-dark dark:hover:bg-white/5'}`}>
                   <p className="font-sans text-[0.55rem] font-bold tracking-wider uppercase">{ch.number}</p>
                   <p className="font-sans text-xs leading-snug">{ch.title}</p>
                 </button>

@@ -648,7 +648,7 @@ export default function ProfilePage(): React.ReactNode {
           <p className="font-display text-5xl text-crimson mb-4">404</p>
           <p className="font-display text-xl text-ink mb-2">{error || 'Profile not found'}</p>
           <p className="font-body text-sm text-ink-muted mb-6">The profile you're looking for doesn't exist or has been moved.</p>
-          <Link to="/profiles" className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white font-sans text-sm font-semibold rounded-sm hover:bg-crimson-dark transition-colors">
+          <Link to="/profiles" className="inline-flex min-h-[44px] items-center gap-2 px-6 py-3 bg-crimson text-white font-sans text-sm font-semibold rounded-sm hover:bg-crimson-dark transition-colors">
             ← Browse All Profiles
           </Link>
         </div>

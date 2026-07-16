@@ -539,10 +539,10 @@ export default function BernieShowPage() {
 
           {/* Platform buttons */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <a href="#episodes" className="px-8 py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold rounded-full hover:from-amber-400 hover:to-orange-500 transition-all shadow-lg shadow-amber-500/25 text-sm tracking-wide uppercase">
+            <a href="#episodes" className="inline-flex min-h-[44px] items-center px-8 py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold rounded-full hover:from-amber-400 hover:to-orange-500 transition-all shadow-lg shadow-amber-500/25 text-sm tracking-wide uppercase">
               Listen Now
             </a>
-            <a href="https://www.facebook.com/bernie.rollins.14/" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 bg-white/5 border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-sm tracking-wide uppercase flex items-center gap-2">
+            <a href="https://www.facebook.com/bernie.rollins.14/" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center px-8 py-3.5 bg-white/5 border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all text-sm tracking-wide uppercase flex items-center gap-2">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
               Follow on Facebook
             </a>

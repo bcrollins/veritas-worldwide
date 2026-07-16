@@ -529,7 +529,7 @@ function PostDetail({ post, onBack, userId, actorLabel, onPostChange, onRequireA
                 maxLength={10000}
               />
               <div className="flex justify-end mt-2">
-                <button onClick={handleTopLevelComment} disabled={!newComment.trim()} className="font-sans text-xs font-bold uppercase tracking-wider px-5 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Comment</button>
+                <button onClick={handleTopLevelComment} disabled={!newComment.trim()} className="inline-flex min-h-[44px] items-center font-sans text-xs font-bold uppercase tracking-wider px-5 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Comment</button>
               </div>
             </div>
           ) : post.locked ? (
@@ -766,8 +766,8 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
 
           {/* Submit */}
           <div className="flex justify-end gap-3 pt-2">
-            <button onClick={onClose} className="font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
-            <button onClick={handleSubmit} disabled={!title.trim() || community?.restricted} className="font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Post</button>
+            <button onClick={onClose} className="inline-flex min-h-[44px] items-center font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
+            <button onClick={handleSubmit} disabled={!title.trim() || community?.restricted} className="inline-flex min-h-[44px] items-center font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">Post</button>
           </div>
         </div>
       </div>
@@ -820,8 +820,8 @@ function AwardModal({ onClose, onSubmit }: {
           </div>
 
           <div className="flex justify-end gap-3 pt-2">
-            <button onClick={onClose} className="font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
-            <button onClick={() => onSubmit(selectedAwardId)} disabled={!selectedAwardId} className="font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">
+            <button onClick={onClose} className="inline-flex min-h-[44px] items-center font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
+            <button onClick={() => onSubmit(selectedAwardId)} disabled={!selectedAwardId} className="inline-flex min-h-[44px] items-center font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors disabled:opacity-40">
               Add Award
             </button>
           </div>
@@ -883,8 +883,8 @@ function ReportModal({ target, onClose, onSubmit }: {
           </label>
 
           <div className="flex justify-end gap-3 pt-2">
-            <button onClick={onClose} className="font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
-            <button onClick={() => onSubmit(reason, details.trim())} className="font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors">
+            <button onClick={onClose} className="inline-flex min-h-[44px] items-center font-sans text-sm text-ink-muted hover:text-ink px-4 py-2">Cancel</button>
+            <button onClick={() => onSubmit(reason, details.trim())} className="inline-flex min-h-[44px] items-center font-sans text-sm font-bold uppercase tracking-wider px-6 py-2 bg-crimson text-white rounded hover:bg-crimson-dark transition-colors">
               Save Report
             </button>
           </div>
@@ -1244,19 +1244,19 @@ export default function ForumPage() {
                     <div className="flex flex-wrap items-center justify-center gap-3">
                       {!activeCommunityObj?.restricted && (
                         isLoggedIn ? (
-                          <button onClick={() => setShowCreatePost(true)} className="inline-flex items-center gap-1.5 px-5 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark">
+                          <button onClick={() => setShowCreatePost(true)} className="inline-flex min-h-[44px] items-center gap-1.5 px-5 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark">
                             <PlusIcon /> Start Thread
                           </button>
                         ) : (
-                          <button onClick={() => setShowAuthModal(true)} className="inline-flex items-center gap-1.5 px-5 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark">
+                          <button onClick={() => setShowAuthModal(true)} className="inline-flex min-h-[44px] items-center gap-1.5 px-5 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark">
                             Sign In to Post
                           </button>
                         )
                       )}
-                      <a href="/read" className="inline-flex items-center rounded border border-border px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-ink/30 hover:bg-parchment-dark">
+                      <a href="/read" className="inline-flex min-h-[44px] items-center rounded border border-border px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-ink/30 hover:bg-parchment-dark">
                         Continue Reading
                       </a>
-                      <a href="/sources" className="inline-flex items-center rounded border border-border px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-ink/30 hover:bg-parchment-dark">
+                      <a href="/sources" className="inline-flex min-h-[44px] items-center rounded border border-border px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-ink/30 hover:bg-parchment-dark">
                         Review Sources
                       </a>
                     </div>
