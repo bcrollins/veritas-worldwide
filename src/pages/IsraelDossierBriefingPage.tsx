@@ -32,7 +32,7 @@ function SectionButton({
       type="button"
       onClick={onSelect}
       aria-pressed={selected}
-      className={`w-full border px-4 py-4 text-left transition-colors ${
+      className={`w-full min-h-[44px] border px-4 py-4 text-left transition-colors ${
         selected
           ? 'border-ink bg-ink text-surface'
           : 'border-border bg-surface text-ink hover:border-ink/30'

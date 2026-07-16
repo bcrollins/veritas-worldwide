@@ -14,8 +14,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const floors = [
   { path: 'src/pages/ChapterPage.tsx', min: 8, label: 'chapter actions/nav' },
   { path: 'src/pages/HomePage.tsx', min: 10, label: 'home CTAs' },
-  { path: 'src/pages/ForumPage.tsx', min: 20, label: 'forum votes/actions' },
+  { path: 'src/pages/ForumPage.tsx', min: 24, label: 'forum votes/actions' },
   { path: 'src/pages/IsraelDossierPage.tsx', min: 10, label: 'dossier source anchors' },
+  { path: 'src/pages/IsraelDossierBriefingPage.tsx', min: 1, label: 'dossier briefing sections' },
   { path: 'src/pages/DeepStatePage.tsx', min: 6, label: 'deep-state controls' },
   { path: 'src/pages/BibleHistoryPage.tsx', min: 8, label: 'bible-history sidebar' },
   { path: 'src/pages/SearchPage.tsx', min: 4, label: 'search chips' },

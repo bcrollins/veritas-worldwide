@@ -476,7 +476,7 @@ export default function ReadTheBookPage() {
                     </p>
                     <button
                       onClick={refreshReaderPayload}
-                      className="mt-4 inline-flex items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+                      className="mt-4 inline-flex min-h-[44px] items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                     >
                       Refresh Chapter
                     </button>
@@ -556,7 +556,7 @@ export default function ReadTheBookPage() {
                 </p>
                 <button
                   onClick={refreshReaderPayload}
-                  className="mt-4 inline-flex items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+                  className="mt-4 inline-flex min-h-[44px] items-center justify-center px-4 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.12em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
                 >
                   Refresh Chapter
                 </button>

@@ -901,14 +901,14 @@ function CommunityListSidebar({ communities, activeCommunity, onSelect, onAllPos
   return (
     <nav className="space-y-0.5">
       <button onClick={onAllPosts}
-        className={`w-full flex items-center gap-2 px-3 py-2 rounded text-sm font-sans transition-colors ${!activeCommunity ? 'bg-crimson/10 text-crimson font-bold' : 'text-ink-muted hover:bg-parchment-dark hover:text-ink'}`}>
+        className={`w-full flex min-h-[44px] items-center gap-2 px-3 py-2 rounded text-sm font-sans transition-colors ${!activeCommunity ? 'bg-crimson/10 text-crimson font-bold' : 'text-ink-muted hover:bg-parchment-dark hover:text-ink'}`}>
         <span className="text-base">🌐</span> All Posts
       </button>
       {communities.map(c => {
         const activity = getCommunityActivity(activityMap, c.id)
         return (
         <button key={c.id} onClick={() => onSelect(c.id)}
-          className={`w-full flex items-center gap-2 px-3 py-2 rounded text-sm font-sans transition-colors text-left ${activeCommunity === c.id ? 'bg-crimson/10 text-crimson font-bold' : 'text-ink-muted hover:bg-parchment-dark hover:text-ink'}`}>
+          className={`w-full flex min-h-[44px] items-center gap-2 px-3 py-2 rounded text-sm font-sans transition-colors text-left ${activeCommunity === c.id ? 'bg-crimson/10 text-crimson font-bold' : 'text-ink-muted hover:bg-parchment-dark hover:text-ink'}`}>
           <ForumIcon name={c.icon} className="w-4 h-4 flex-shrink-0" />
           <div className="min-w-0">
             <span className="block truncate">{c.name}</span>
@@ -1107,8 +1107,8 @@ export default function ForumPage() {
             <input ref={searchRef} type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && handleSearch()}
               placeholder="Search posts, communities, users..."
-              className="w-full pl-9 pr-4 py-2 border border-border rounded-full bg-parchment-dark/30 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-crimson/30 focus:bg-white" />
-            <button onClick={handleSearch} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-faint"><SearchIcon /></button>
+              className="w-full min-h-[44px] pl-11 pr-4 py-2 border border-border rounded-full bg-parchment-dark/30 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-crimson/30 focus:bg-white" />
+            <button onClick={handleSearch} className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint" aria-label="Search forum"><SearchIcon /></button>
           </div>
         </div>
 
@@ -1116,12 +1116,12 @@ export default function ForumPage() {
         <div className="flex items-center gap-2">
           {isLoggedIn ? (
             <button onClick={() => setShowCreatePost(true)}
-              className="flex items-center gap-1.5 px-4 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark transition-colors">
+              className="inline-flex min-h-[44px] items-center gap-1.5 px-4 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark transition-colors">
               <PlusIcon /> Start Thread
             </button>
           ) : (
             <button onClick={() => setShowAuthModal(true)}
-              className="flex items-center gap-1.5 px-4 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark transition-colors">
+              className="inline-flex min-h-[44px] items-center gap-1.5 px-4 py-2 bg-crimson text-white rounded font-sans text-xs font-bold uppercase tracking-wider hover:bg-crimson-dark transition-colors">
               Sign In to Post
             </button>
           )}
