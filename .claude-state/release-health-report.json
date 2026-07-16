@@ -1,23 +1,23 @@
 {
-  "checkedAt": "2026-07-16T05:43:44.760Z",
+  "checkedAt": "2026-07-16T06:17:30.787Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "3a2c952960973194b786190a1f5d68367a3eeff3",
-    "commitShort": "3a2c95296097",
-    "deploymentId": "2422b8c8-14fe-4c49-b77a-f73811a5de6e",
+    "commit": "7a646ee5088a5560025ba881a6c3c7e667e8a241",
+    "commitShort": "7a646ee5088a",
+    "deploymentId": "42bd6fc3-2090-421b-81fd-c3a34622c851",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
   "headers": {
     "version": "1.0.0",
-    "commit": "3a2c95296097",
-    "deployment": "2422b8c8-14fe-4c49-b77a-f73811a5de6e"
+    "commit": "7a646ee5088a",
+    "deployment": "42bd6fc3-2090-421b-81fd-c3a34622c851"
   },
   "analytics": {
-    "lifetime": 6820,
-    "today": 5,
+    "lifetime": 6895,
+    "today": 80,
     "signups": 8,
     "payments": 0
   },
@@ -40,17 +40,17 @@
     {
       "ok": true,
       "label": "Release commit header present",
-      "detail": "3a2c95296097"
+      "detail": "7a646ee5088a"
     },
     {
       "ok": true,
       "label": "Release deployment header present",
-      "detail": "2422b8c8-14fe-4c49-b77a-f73811a5de6e"
+      "detail": "42bd6fc3-2090-421b-81fd-c3a34622c851"
     },
     {
       "ok": true,
       "label": "Release headers match build info",
-      "detail": "api=3a2c95296097 / 2422b8c8-14fe-4c49-b77a-f73811a5de6e · headers=3a2c95296097 / 2422b8c8-14fe-4c49-b77a-f73811a5de6e"
+      "detail": "api=7a646ee5088a / 42bd6fc3-2090-421b-81fd-c3a34622c851 · headers=7a646ee5088a / 42bd6fc3-2090-421b-81fd-c3a34622c851"
     },
     {
       "ok": true,
@@ -65,7 +65,7 @@
     {
       "ok": true,
       "label": "Public bundle excludes deprecated admin auth assets",
-      "detail": "js=assets/index-HwDp1cla.js, assets/rolldown-runtime-QTnfLwEv.js, assets/vendor-react-CyYHJXCk.js, assets/hubspot-BhVuqbwi.js, assets/analytics-D_b_jtBZ.js"
+      "detail": "js=assets/index-BSzrF2Y0.js, assets/rolldown-runtime-QTnfLwEv.js, assets/vendor-react-CyYHJXCk.js, assets/hubspot-BhVuqbwi.js, assets/analytics-D_b_jtBZ.js"
     },
     {
       "ok": true,

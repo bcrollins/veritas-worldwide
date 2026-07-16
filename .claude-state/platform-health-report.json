@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-16T05:49:58.488Z",
+  "checkedAt": "2026-07-16T06:18:58.217Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "031f7b2a85bb5954b4a9aa4ecf23451d5bf98f89",
-    "commitShort": "031f7b2a85bb",
-    "deploymentId": "18dee4a5-6766-40fa-b978-3e750c1b968c",
+    "commit": "3d2bfbe85b83612d8386b0b2452a3bd45269c7e6",
+    "commitShort": "3d2bfbe85b83",
+    "deploymentId": "3ab10a69-9adc-418e-ad26-fc329e0581e4",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
@@ -23,8 +23,8 @@
     "firstResultChapterId": "chapter-25"
   },
   "analytics": {
-    "lifetime": 6820,
-    "today": 5,
+    "lifetime": 6895,
+    "today": 80,
     "signups": 8,
     "payments": 0
   },
@@ -91,7 +91,7 @@
     {
       "ok": true,
       "label": "Health probe exposes analytics lifetime",
-      "detail": "analyticsLifetime=6820"
+      "detail": "analyticsLifetime=6895"
     },
     {
       "ok": true,
@@ -101,7 +101,7 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=14"
+      "detail": "pinned=15"
     },
     {
       "ok": true,
@@ -211,12 +211,12 @@
     {
       "ok": true,
       "label": "Analytics lifetime stays non-negative",
-      "detail": "lifetime=6820"
+      "detail": "lifetime=6895"
     },
     {
       "ok": true,
       "label": "Analytics today count stays non-negative",
-      "detail": "today=5"
+      "detail": "today=80"
     },
     {
       "ok": true,
