@@ -149,7 +149,11 @@ assert(
   preflight.headers.get('access-control-max-age') === '600',
   `CORS Max-Age must be 600 (got: ${preflight.headers.get('access-control-max-age')})`,
 )
+const expose = preflight.headers.get('access-control-expose-headers') || ''
+assert(/RateLimit-Limit/i.test(expose), `CORS missing Expose-Headers RateLimit-Limit (got: ${expose})`)
+assert(/RateLimit-Remaining/i.test(expose), `CORS missing Expose-Headers RateLimit-Remaining (got: ${expose})`)
+assert(/X-Veritas-Commit/i.test(expose), `CORS missing Expose-Headers X-Veritas-Commit (got: ${expose})`)
 
 console.log(
-  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths + RateLimit on field-manual + admin X-Robots-Tag + CORS preflight`,
+  `[verify:security-headers] PASS — ${Object.keys(REQUIRED).length} baseline headers + release commit ${commit}${poweredBy ? '' : ' · no X-Powered-By'} + security.txt dual paths + RateLimit on field-manual + admin X-Robots-Tag + CORS preflight/expose`,
 )

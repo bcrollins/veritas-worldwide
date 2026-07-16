@@ -867,6 +867,11 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     res.setHeader('Access-Control-Allow-Credentials', 'true')
+    // Expose RateLimit budget headers to allowlisted SPA clients (fetch default hides them).
+    res.setHeader(
+      'Access-Control-Expose-Headers',
+      'RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, X-Veritas-Commit',
+    )
     // Vary Origin so CDN/browser caches never mix allowlisted Origin values.
     res.setHeader('Vary', 'Origin')
     // Cache preflight for 10 minutes to cut OPTIONS chatter without long sticky misconfig.

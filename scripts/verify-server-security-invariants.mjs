@@ -36,6 +36,10 @@ assert(
   'CORS preflight Max-Age must be set',
 )
 assert(server.includes("'600'") || server.includes('"600"'), 'CORS Max-Age should be 600 seconds')
+assert(server.includes('Access-Control-Expose-Headers'), 'CORS must expose RateLimit headers to clients')
+assert(server.includes('RateLimit-Limit'), 'CORS Expose-Headers includes RateLimit-Limit')
+assert(server.includes('RateLimit-Remaining'), 'CORS Expose-Headers includes RateLimit-Remaining')
+assert(server.includes('X-Veritas-Commit'), 'CORS Expose-Headers includes X-Veritas-Commit')
 assert(
   server.includes("express.json({ limit: '64kb' })") || server.includes('express.json({ limit: "64kb" })'),
   'global JSON body limit must be 64kb',
