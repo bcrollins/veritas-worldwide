@@ -264,6 +264,10 @@ const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: str
     archiveUrl: 'https://web.archive.org/web/20260714040613/https://www.hrw.org/',
     status: 'Pinned Wayback snapshot 20260714040613 host landing for HRW fallback.',
   },
+  'https://airwars.org/': {
+    archiveUrl: 'https://web.archive.org/web/20260701145501/https://airwars.org/',
+    status: 'Pinned Wayback snapshot 20260701145501 host landing for Airwars fallback.',
+  },
 }
 
 const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>

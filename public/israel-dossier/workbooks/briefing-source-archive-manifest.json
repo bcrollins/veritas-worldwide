@@ -152,6 +152,13 @@
       "archiveUrl": "https://web.archive.org/web/20260714040613/https://www.hrw.org/",
       "status": "pinned",
       "note": "Human Rights Watch host landing"
+    },
+    {
+      "sourceUrl": "https://airwars.org/",
+      "timestamp": "20260701145501",
+      "archiveUrl": "https://web.archive.org/web/20260701145501/https://airwars.org/",
+      "status": "pinned",
+      "note": "Airwars host landing"
     }
   ]
 }
