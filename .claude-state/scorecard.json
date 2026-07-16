@@ -1,5 +1,5 @@
 {
-  "run": 72,
+  "run": 73,
   "date": "2026-07-16",
   "site": [
     {
@@ -7,15 +7,15 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "45 pins floor 45: CourtListener parties + DocumentCloud; tip 25f0b3c",
+      "status": "source anchors 44px across money trail/events/legal; tip ec05960; pins floor 46",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
       "feature": "Home / Front Page",
-      "composite": 8.5,
-      "previous": 8.3,
-      "delta": 0.2,
-      "status": "visual matrix expanded; cookie compact live",
+      "composite": 8.6,
+      "previous": 8.5,
+      "delta": 0.1,
+      "status": "methodology/topics/home CTAs 44px; tip ec05960 live",
       "plus_half_requires": "Live 390px/430px screenshots after deploy confirming first-screen CTAs remain fully visible with consent pending."
     },
     {
@@ -28,10 +28,10 @@
     },
     {
       "feature": "Chapter Reading",
-      "composite": 9.3,
-      "previous": 9.2,
-      "delta": 0.1,
-      "status": "prev/next 44px; tip 30f714f live",
+      "composite": 9.35,
+      "previous": 9.3,
+      "delta": 0.05,
+      "status": "chapter actions/access-gate/share 44px; tip 47dc991 + home/dossier/forum wave ec05960 live",
       "plus_half_requires": "Verify the auth upgrade/downgrade experience at 390px and 430px in a browser session and add regression coverage for the /read reader shell as well as individual chapter routes."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.65,
-      "previous": 9.6,
+      "composite": 9.7,
+      "previous": 9.65,
       "delta": 0.05,
-      "status": "timeline/bookmarks/search sidebars 44px; tip a043ec4",
+      "status": "home about links + content-pack titles + shell controls 44px wave continuing",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
