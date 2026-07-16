@@ -104,9 +104,9 @@ export default function InstituteLayout() {
               Institute
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <Link to="/institute" className="hover:text-[color:var(--institute-ink)] transition-colors">Trade course catalog</Link>
-              <Link to="/institute/book" className="hover:text-[color:var(--institute-ink)] transition-colors">Field manual</Link>
-              <Link to="/institute/methodology" className="hover:text-[color:var(--institute-ink)] transition-colors">Demand methodology</Link>
+              <Link to="/institute" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Trade course catalog</Link>
+              <Link to="/institute/book" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Field manual</Link>
+              <Link to="/institute/methodology" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Demand methodology</Link>
             </div>
           </nav>
 
@@ -115,10 +115,10 @@ export default function InstituteLayout() {
               Core tracks
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <a href="/institute#track-trades" className="hover:text-[color:var(--institute-ink)] transition-colors">Trades</a>
-              <a href="/institute#track-home-repair" className="hover:text-[color:var(--institute-ink)] transition-colors">Repair</a>
-              <a href="/institute#track-preparedness" className="hover:text-[color:var(--institute-ink)] transition-colors">Preparedness</a>
-              <a href="/institute#track-food-self-reliance" className="hover:text-[color:var(--institute-ink)] transition-colors">Food & Garden</a>
+              <a href="/institute#track-trades" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Trades</a>
+              <a href="/institute#track-home-repair" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Repair</a>
+              <a href="/institute#track-preparedness" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Preparedness</a>
+              <a href="/institute#track-food-self-reliance" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Food & Garden</a>
             </div>
           </nav>
 
@@ -127,9 +127,9 @@ export default function InstituteLayout() {
               Veritas
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <Link to="/methodology" className="hover:text-[color:var(--institute-ink)] transition-colors">Publication methodology</Link>
-              <Link to="/sources" className="hover:text-[color:var(--institute-ink)] transition-colors">Source library</Link>
-              <Link to="/membership" className="hover:text-[color:var(--institute-ink)] transition-colors">Support Veritas</Link>
+              <Link to="/methodology" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Publication methodology</Link>
+              <Link to="/sources" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Source library</Link>
+              <Link to="/membership" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Support Veritas</Link>
             </div>
           </nav>
         </div>

@@ -54,6 +54,8 @@ const floors = [
   { path: 'src/pages/ArticlePage.tsx', min: 4, label: 'article news chrome' },
   { path: 'src/pages/NewsPage.tsx', min: 4, label: 'news desk CTAs' },
   { path: 'src/pages/SearchPage.tsx', min: 8, label: 'search filters/sidebar' },
+  { path: 'src/components/institute/InstituteLayout.tsx', min: 8, label: 'institute footer nav' },
+  { path: 'src/pages/SubscribeSuccessPage.tsx', min: 3, label: 'subscribe success CTAs' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
