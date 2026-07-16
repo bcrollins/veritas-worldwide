@@ -46,7 +46,7 @@ const routes = [
   { path: '/israel-dossier', text: ['Israel', 'ISRAEL'], anyText: ['Archive pins', 'ARCHIVE PINS', 'Evidence Workbooks', 'EVIDENCE WORKBOOKS', 'Dossier', 'DOSSIER'] },
   { path: '/israel-dossier/briefing', text: ['briefing', 'BRIEFING'], anyText: ['source', 'Source', 'SOURCE', 'workbook', 'WORKBOOK'] },
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
-  { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL'] },
+  { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL', 'Field Manual', 'FIELD MANUAL', 'Institute', 'INSTITUTE'] },
   { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
   { path: '/news', text: ['News', 'NEWS', 'Current', 'CURRENT'], anyText: ['source', 'Source', 'SOURCE', 'article', 'Article', 'ARTICLE'] },
   {
