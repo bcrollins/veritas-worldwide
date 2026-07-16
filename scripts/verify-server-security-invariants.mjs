@@ -119,6 +119,16 @@ assert(packageJson.scripts?.start === 'node server.js', 'start script must be no
 assert(!packageJson.dependencies?.serve, 'must not reintroduce unused serve package')
 assert(packageJson.dependencies?.pg, 'pg runtime dependency required')
 assert(packageJson.engines?.node, 'package.json engines.node required')
+assert(
+  typeof packageJson.dependencies?.react === 'string' &&
+    /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies.react.replace(/^\^/, '')),
+  `react must be ^19.2.7+, got ${packageJson.dependencies?.react}`,
+)
+assert(
+  typeof packageJson.dependencies?.['react-dom'] === 'string' &&
+    /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies['react-dom'].replace(/^\^/, '')),
+  `react-dom must be ^19.2.7+, got ${packageJson.dependencies?.['react-dom']}`,
+)
 // Field-manual PDF postbuild imports .ts sources via Node type stripping (22.6+).
 // engines >=20 previously forced Railway railpack onto Node 20.20 which rejects
 // --experimental-strip-types and failed every deploy after that declaration.
