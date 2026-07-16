@@ -52,6 +52,10 @@ assert(server.includes("app.use('/api/auth/status', rateLimit"), 'auth/status ra
 assert(server.includes("app.use('/api/downloads', rateLimit"), 'downloads rateLimit middleware registered')
 assert(server.includes("app.use('/the-record.pdf', rateLimit"), 'the-record.pdf rateLimit middleware registered')
 assert(
+  server.includes("app.use('/veritas-institute-field-manual.pdf', rateLimit"),
+  'field-manual.pdf rateLimit middleware registered',
+)
+assert(
   server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
     server.includes('/.well-known/security.txt'),
   'security.txt routes must be registered on the Express app',

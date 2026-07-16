@@ -757,7 +757,7 @@ function CreatePostModal({ communities, onClose, onSubmit, defaultCommunity }: {
               <div className="flex flex-wrap gap-1.5">
                 {community.flairs.map(f => (
                   <button key={f.id} onClick={() => setSelectedFlair(selectedFlair?.id === f.id ? undefined : f)}
-                    className={`px-2 py-1 rounded text-xs font-bold transition-all ${selectedFlair?.id === f.id ? 'ring-2 ring-ink scale-105' : 'opacity-70 hover:opacity-100'}`}
+                    className={`inline-flex min-h-[44px] items-center px-2 py-1 rounded text-xs font-bold transition-all ${selectedFlair?.id === f.id ? 'ring-2 ring-ink scale-105' : 'opacity-70 hover:opacity-100'}`}
                     style={{ background: f.bgColor, color: f.textColor }}>{f.text}</button>
                 ))}
               </div>
@@ -798,7 +798,7 @@ function AwardModal({ onClose, onSubmit }: {
               <button
                 key={award.id}
                 onClick={() => setSelectedAwardId(award.id)}
-                className={`rounded border p-4 text-left transition-colors ${selectedAwardId === award.id ? 'border-crimson bg-crimson/5' : 'border-border hover:border-ink/25 hover:bg-white'}`}
+                className={`min-h-[44px] rounded border p-4 text-left transition-colors ${selectedAwardId === award.id ? 'border-crimson bg-crimson/5' : 'border-border hover:border-ink/25 hover:bg-white'}`}
               >
                 <div className="flex items-start gap-3">
                   <span className="font-display text-2xl text-ink">{award.icon}</span>

@@ -781,6 +781,7 @@ app.use('/api/auth/status', rateLimit({ windowMs: 60_000, max: 60 }))
 // Large PDF downloads — protect origin bandwidth (headroom for multi-agent verify).
 app.use('/api/downloads', rateLimit({ windowMs: 60_000, max: 90 }))
 app.use('/the-record.pdf', rateLimit({ windowMs: 60_000, max: 90 }))
+app.use('/veritas-institute-field-manual.pdf', rateLimit({ windowMs: 60_000, max: 90 }))
 // Password changes are authenticated but still brute-forceable on currentPassword.
 app.use('/api/user/change-password', rateLimit({ windowMs: 60_000, max: 10 }))
 // Authenticated mutation endpoints — generous for UX, hard ceiling against abuse.
