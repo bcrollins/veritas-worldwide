@@ -774,6 +774,7 @@ function renderInstituteMarkdown(topics, researchSources) {
     '',
     '- [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder, editorial rules, and practical-use criteria.',
     '- [Field Manual](https://veritasworldwide.com/institute/book): Printable long-form manual for urgent answers and practical course routing.',
+    '- [Field Manual PDF](https://veritasworldwide.com/veritas-institute-field-manual.pdf): Durable build-time download of the full field manual.',
     '',
     '## Research basis',
     '',
