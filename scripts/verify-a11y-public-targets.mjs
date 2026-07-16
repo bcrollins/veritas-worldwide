@@ -122,6 +122,9 @@ const banFiles = [
   'src/pages/ArticlePage.tsx',
   'src/pages/DeepStatePage.tsx',
   'src/pages/BernieShowPage.tsx',
+  'src/pages/admin/AdminLayout.tsx',
+  'src/components/institute/InstituteLayout.tsx',
+  'src/pages/MembershipPage.tsx',
 ]
 for (const rel of banFiles) {
   const src = readFileSync(join(root, rel), 'utf8')
@@ -151,6 +154,11 @@ const sub44Files = [
   'src/pages/SourcesPage.tsx',
   'src/components/SharePanel.tsx',
   'src/components/DossierCarousel.tsx',
+  'src/pages/admin/AdminLayout.tsx',
+  'src/components/institute/InstituteLayout.tsx',
+  'src/pages/MembershipPage.tsx',
+  'src/pages/ContentPackPage.tsx',
+  'src/pages/MethodologyPage.tsx',
 ]
 for (const rel of sub44Files) {
   const src = readFileSync(join(root, rel), 'utf8')
