@@ -688,7 +688,7 @@ export default function BernieShowPage() {
               <button
                 key={cat.key}
                 onClick={() => { setActiveCategory(cat.key); setExpandedSuggestion(null) }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`inline-flex min-h-[44px] items-center px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === cat.key
                     ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-lg shadow-amber-500/25'
                     : 'bg-neutral-800/50 text-neutral-400 hover:text-white hover:bg-neutral-800'
@@ -705,7 +705,7 @@ export default function BernieShowPage() {
               <div key={s.id} className="border border-neutral-800 rounded-lg overflow-hidden hover:border-neutral-700 transition-colors">
                 <button
                   onClick={() => setExpandedSuggestion(expandedSuggestion === s.id ? null : s.id)}
-                  className="w-full text-left px-5 py-4 flex items-center gap-4"
+                  className="w-full min-h-[44px] text-left px-5 py-4 flex items-center gap-4"
                 >
                   <span className="text-amber-500/60 text-xs font-mono w-8 flex-shrink-0">#{String(s.id).padStart(3, '0')}</span>
                   <span className="text-white font-medium flex-1">{s.title}</span>
