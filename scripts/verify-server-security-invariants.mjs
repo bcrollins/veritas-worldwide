@@ -117,6 +117,7 @@ assert(
   /BCRYPT_ROUNDS\s*=\s*(\d+)/.test(serverAuth) && Number(serverAuth.match(/BCRYPT_ROUNDS\s*=\s*(\d+)/)[1]) >= 12,
   'bcrypt cost factor must be >= 12',
 )
+assert(serverAuth.includes('jti:'), 'access tokens must include unique jti claims')
 
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length

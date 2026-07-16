@@ -80,7 +80,7 @@ const floors = [
   { path: 'src/components/BookmarkButton.tsx', min: 1, label: 'bookmark button' },
   { path: 'src/components/ContinueReading.tsx', min: 1, label: 'continue reading' },
   { path: 'src/components/FontSizeToggle.tsx', min: 1, label: 'font size toggle' },
-  { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
+  { path: 'src/styles/index.css', min: 2, label: 'institute-button min-height 44' },
 ]
 
 const TARGET_RE = /min-h-\[44px\]|min-h-11|min-height:\s*44px/g
