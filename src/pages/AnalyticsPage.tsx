@@ -589,6 +589,7 @@ type ReleaseHealth = {
   healthHistoryStorage?: string
   healthHistorySharedAcrossReplicas?: boolean
   healthHistorySampleCount?: number
+  popularChapterCount?: number
   checks?: Record<string, boolean>
   failed?: string[]
   version?: string
@@ -783,6 +784,9 @@ function ReleaseHealthPanel({
                   : ''}
                 {Array.isArray(history?.uniqueReplicas) && history.uniqueReplicas.length > 0
                   ? ` · ${history.uniqueReplicas.length} replica${history.uniqueReplicas.length === 1 ? '' : 's'}`
+                  : ''}
+                {typeof health.popularChapterCount === 'number' && health.popularChapterCount > 0
+                  ? ` · ${health.popularChapterCount} popular chapters`
                   : ''}
                 {typeof health.sentryForwardConfigured === 'boolean'
                   ? health.sentryForwardConfigured
