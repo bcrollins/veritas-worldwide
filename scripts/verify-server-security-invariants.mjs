@@ -100,6 +100,9 @@ assert(server.includes("name: 'search'") || server.includes('name: "search"'), '
 assert(server.includes("name: 'analytics-pageview'") || server.includes('name: "analytics-pageview"'), 'pageview rateLimit must be named')
 assert(server.includes('`${name}:${identity') || server.includes('${name}:${identity'), 'rateLimit keys must combine name + identity')
 
+const namedLimiterCount = (server.match(/rateLimit\(\{\s*name:\s*'/g) || []).length
+assert(namedLimiterCount >= 20, `named rateLimit configs ${namedLimiterCount} below floor 20`)
+
 // Dependency hygiene — start is node server.js; do not reintroduce dead static servers
 assert(packageJson.scripts?.start === 'node server.js', 'start script must be node server.js')
 assert(!packageJson.dependencies?.serve, 'must not reintroduce unused serve package')
