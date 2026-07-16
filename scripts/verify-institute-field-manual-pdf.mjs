@@ -24,7 +24,8 @@ function assert(condition, message) {
   }
 }
 
-const generate = spawnSync(process.execPath, ['--experimental-strip-types', generateScript], {
+const runner = path.join(repoRoot, 'scripts', 'run-with-strip-types.mjs')
+const generate = spawnSync(process.execPath, [runner, generateScript], {
   cwd: repoRoot,
   encoding: 'utf8',
   stdio: ['ignore', 'pipe', 'pipe'],

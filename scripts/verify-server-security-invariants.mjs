@@ -116,6 +116,26 @@ assert(packageJson.scripts?.start === 'node server.js', 'start script must be no
 assert(!packageJson.dependencies?.serve, 'must not reintroduce unused serve package')
 assert(packageJson.dependencies?.pg, 'pg runtime dependency required')
 assert(packageJson.engines?.node, 'package.json engines.node required')
+// Field-manual PDF postbuild imports .ts sources via Node type stripping (22.6+).
+// engines >=20 previously forced Railway railpack onto Node 20.20 which rejects
+// --experimental-strip-types and failed every deploy after that declaration.
+assert(
+  typeof packageJson.engines.node === 'string' &&
+    (/^>=22(\.6(\.0)?)?/.test(packageJson.engines.node) ||
+      /^>=22\.[6-9]/.test(packageJson.engines.node) ||
+      /^>=22\.[1-9][0-9]/.test(packageJson.engines.node) ||
+      /^>=2[3-9]/.test(packageJson.engines.node) ||
+      packageJson.engines.node.includes('22.6')),
+  `engines.node must require strip-types-capable Node (>=22.6.0), got ${packageJson.engines.node}`,
+)
+assert(
+  packageJson.scripts?.postbuild?.includes('run-with-strip-types.mjs'),
+  'postbuild must use run-with-strip-types runner (not bare --experimental-strip-types)',
+)
+assert(
+  !packageJson.scripts?.postbuild?.includes('node --experimental-strip-types'),
+  'postbuild must not hardcode bare --experimental-strip-types (breaks Node 20 and Node 24+)',
+)
 
 console.log(
   `[verify:server-security-invariants] PASS — server.js security surface locked · rateLimit×${rateLimitUses}`,

@@ -7,12 +7,12 @@
     "dev": "node scripts/dev-runtime.mjs",
     "dev:vite": "node ./node_modules/vite/bin/vite.js",
     "build": "node ./node_modules/typescript/bin/tsc && node ./node_modules/vite/bin/vite.js build",
-    "postbuild": "node scripts/export-chapter-data.mjs && node scripts/prerender.mjs && node --experimental-strip-types scripts/generate-institute-field-manual-pdf.mjs",
-    "generate:institute-pdf": "node --experimental-strip-types scripts/generate-institute-field-manual-pdf.mjs",
+    "postbuild": "node scripts/export-chapter-data.mjs && node scripts/prerender.mjs && node scripts/run-with-strip-types.mjs scripts/generate-institute-field-manual-pdf.mjs",
+    "generate:institute-pdf": "node scripts/run-with-strip-types.mjs scripts/generate-institute-field-manual-pdf.mjs",
     "start": "node server.js",
     "preview": "node ./node_modules/vite/bin/vite.js preview",
     "verify:auth": "node scripts/verify-auth-flows.mjs",
-    "verify:auth-cache": "node --experimental-strip-types scripts/verify-auth-cache-isolation.mjs",
+    "verify:auth-cache": "node scripts/run-with-strip-types.mjs scripts/verify-auth-cache-isolation.mjs",
     "verify:auth-cache-browser": "node scripts/verify-auth-cache-browser.mjs",
     "verify:dev-runtime": "node scripts/verify-dev-runtime.mjs",
     "verify:sources": "node scripts/verify-source-links.mjs",
@@ -34,8 +34,8 @@
     "verify:crawler-surfaces": "node scripts/verify-crawler-surfaces.mjs",
     "verify:live": "PLATFORM_VERIFY_BASE_URL=https://veritasworldwide.com node scripts/verify-platform-health.mjs && PLATFORM_VERIFY_BASE_URL=https://veritasworldwide.com node scripts/verify-release-identity.mjs && AUTH_TEST_BASE_URL=https://veritasworldwide.com node scripts/verify-auth-flows.mjs && node scripts/verify-auth-validation.mjs && node scripts/verify-search-scoring.mjs && SEARCH_VERIFY_BASE_URL=https://veritasworldwide.com node scripts/verify-search-ranking.mjs && node scripts/verify-crawler-surfaces.mjs && node scripts/verify-health-transitions.mjs && node scripts/verify-article-sources.mjs && node scripts/verify-archive-manifest.mjs && node scripts/verify-a11y-public-targets.mjs && PLATFORM_VERIFY_BASE_URL=https://veritasworldwide.com node scripts/verify-security-headers.mjs && node scripts/verify-server-security-invariants.mjs && node scripts/verify-home-toc-structure.mjs && node scripts/verify-csp-meta.mjs",
     "verify:release": "node scripts/verify-release-identity.mjs",
-    "verify:institute-manual": "node --experimental-strip-types scripts/verify-institute-field-manual.mjs",
-    "verify:institute-pdf": "node --experimental-strip-types scripts/verify-institute-field-manual-pdf.mjs",
+    "verify:institute-manual": "node scripts/run-with-strip-types.mjs scripts/verify-institute-field-manual.mjs",
+    "verify:institute-pdf": "node scripts/run-with-strip-types.mjs scripts/verify-institute-field-manual-pdf.mjs",
     "verify:institute-render": "node scripts/verify-institute-book-render.mjs",
     "verify:article-sources": "node scripts/verify-article-sources.mjs",
     "verify:search-scoring": "node scripts/verify-search-scoring.mjs",
@@ -78,6 +78,6 @@
     "brace-expansion": ">=2.0.3"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.6.0"
   }
 }
