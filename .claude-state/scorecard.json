@@ -1,5 +1,5 @@
 {
-  "run": 45,
+  "run": 46,
   "date": "2026-07-16",
   "site": [
     {
@@ -36,11 +36,11 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.3,
-      "previous": 9.2,
-      "delta": 0.1,
-      "status": "improved",
-      "plus_half_requires": "Shorten access-token lifetime or add refresh rotation, then prove revocation and session expiry with automated integration coverage."
+      "composite": 9.45,
+      "previous": 9.3,
+      "delta": 0.15,
+      "status": "access token + session TTL shortened 30d \u2192 7d; status exposes TTL fields",
+      "plus_half_requires": "Add refresh rotation or silent re-auth for long-lived readers without re-login friction."
     },
     {
       "feature": "Source Browser",
@@ -92,11 +92,11 @@
     },
     {
       "feature": "Public Analytics",
-      "composite": 9.0,
-      "previous": 8.85,
-      "delta": 0.15,
-      "status": "health history dual trend: lifetime + failed-check bars on Release Health",
-      "plus_half_requires": "Accumulate multi-sample health history on multi-replica fleet and surface commit transitions in the trend UI."
+      "composite": 9.2,
+      "previous": 9.0,
+      "delta": 0.2,
+      "status": "commit transitions + unique commits on Release Health; force samples on deploy",
+      "plus_half_requires": "Multi-replica aggregation of health history when more than one Railway replica is hot."
     }
   ],
   "growth": [

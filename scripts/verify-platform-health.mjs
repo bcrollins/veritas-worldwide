@@ -350,8 +350,8 @@ const healthResult = await fetchJson('/api/health')
         addCheck(
           checks,
           failures,
-          authStatus.accessTokenTtl !== '30d',
-          'Auth access token TTL is shorter than 30 days',
+          authStatus.accessTokenTtl === '7d',
+          'Auth access token TTL is 7 days',
           `accessTokenTtl=${authStatus.accessTokenTtl}`
         )
       }
