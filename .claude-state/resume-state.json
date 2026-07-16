@@ -1,5 +1,5 @@
 {
-  "run": 41,
+  "run": 42,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -156,7 +156,11 @@
     "Shipped membership checkout UTM/ref first- and last-touch attribution with Stripe client_reference_id stamps and verify:checkout-attribution pure-function suite.",
     "Promoted instituteFieldManualPdf to a hard /api/health failure after production proof; added dual lifetime/failed-check trends and PDF status on the analytics Release Health panel (de0f815).",
     "Indexed durable PDF downloads in sitemap (field manual + the-record.pdf) for crawler discovery (7e1e1f4).",
-    "Confirmed Lancet briefing URL still has no usable Wayback snapshot (CDX returns only 404 partials); left lookup-only with honest archive fallback."
+    "Confirmed Lancet briefing URL still has no usable Wayback snapshot (CDX returns only 404 partials); left lookup-only with honest archive fallback.",
+    "Attributed all public donate CTAs via getAttributedDonateUrl (footer, chapters, dossier, sources, methodology, about, profile, timeline, bookmarks, download modal, donation banner) with optional prefilled amounts \u2014 live on bcfeb10+.",
+    "Fixed stable-name PDF immutable cache bug: /veritas-institute-field-manual.pdf and other PDFs now use max-age=3600 must-revalidate (d734137 live-verified).",
+    "Exposed replica clientErrorIntakeCount/LastAt/LastMessage on /api/health and analytics Release Health panel (dd07032 live-verified; platform PASS).",
+    "Surface durable field manual PDF from Institute catalog, book, homepage, prerender HTML, sitemap, and llms.txt with Book schema encoding."
   ],
   "next_task": "External only remaining for archives/CI/Sentry. Continue product polish: news corpus, membership attribution, institute PDF server artifact.",
   "next_priorities": [

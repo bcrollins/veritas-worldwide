@@ -213,8 +213,8 @@ async function main() {
       addCheck(
         checks,
         failures,
-        health.clientErrorIntakeCount === undefined || isNonNegativeNumber(health.clientErrorIntakeCount),
-        'Health probe exposes client error intake count when present',
+        isNonNegativeNumber(health.clientErrorIntakeCount),
+        'Health probe exposes client error intake count',
         `clientErrorIntakeCount=${health.clientErrorIntakeCount}`
       )
 
