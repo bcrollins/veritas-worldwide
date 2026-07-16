@@ -1,5 +1,5 @@
 {
-  "run": 69,
+  "run": 70,
   "date": "2026-07-16",
   "site": [
     {
@@ -44,10 +44,10 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.88,
+      "composite": 9.9,
       "previous": 9.88,
-      "delta": 0.03,
-      "status": "45 pins floor 45: CourtListener parties + DocumentCloud; tip 25f0b3c",
+      "delta": 0.02,
+      "status": "46 pins floor 46: CourtListener docket+parties; tip 3a7da10",
       "plus_half_requires": "Expand archive pins beyond briefing rows to restricted/bot-blocked bibliography URLs."
     },
     {
