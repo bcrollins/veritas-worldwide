@@ -52,3 +52,11 @@
 - Search engagement PASS: chapter-9 42→60 under federal reserve + recent=chapter-9
 - Auth status: sessionRefresh=true, accessTokenTtl=7d
 - platform/release/search/auth/israel-dossier green
+
+## Live tip proof (493d26e)
+
+- Silent session refresh PASS (rotate + revoke old + validate new)
+- Search engagement +18 PASS (chapter-9 42→60); Continue reading badge live in SearchPage chunk
+- sessionRefresh=true accessTokenTtl=7d
+- Field manual PDF headers healthy
+- All primary verifiers green
