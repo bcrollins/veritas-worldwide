@@ -27,7 +27,7 @@ export default function TermsPage() {
       <div className="border-b border-border bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 py-3 text-sm">
-            <Link to="/" className="text-ink-muted hover:text-crimson transition-colors">Home</Link>
+            <Link to="/" className="inline-flex min-h-[44px] items-center text-ink-muted hover:text-crimson transition-colors">Home</Link>
             <span className="text-ink-muted/50">›</span>
             <span className="text-ink font-medium">Terms of Use</span>
           </div>

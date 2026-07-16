@@ -28,6 +28,9 @@ const REQUIRED_SITEMAP_PATHS = [
   '/institute',
   '/institute/book',
   '/search',
+  '/deep-state',
+  '/forum',
+  '/israel-dossier',
   '/the-record.pdf',
   '/veritas-institute-field-manual.pdf',
 ]
