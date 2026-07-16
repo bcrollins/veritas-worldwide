@@ -1,5 +1,5 @@
 {
-  "run": 81,
+  "run": 82,
   "date": "2026-07-16",
   "site": [
     {
@@ -37,9 +37,9 @@
     {
       "feature": "Reader Access Control",
       "composite": 9.999,
-      "previous": 9.99,
-      "delta": 0.009,
-      "status": "Permissions-Policy tightened; security suite live tip 7c9601e",
+      "previous": 9.999,
+      "delta": 0,
+      "status": "13-step verify:live; server security invariants; tip 07b3cd8",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "footer columns 44px; 40 a11y surfaces; tip 74ba88e live",
+      "status": "40 a11y surfaces; footer complete; tip 07b3cd8 HEAD live",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {

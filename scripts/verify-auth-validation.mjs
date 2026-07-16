@@ -50,4 +50,13 @@ assert(sanitizeReturnTo('https://evil.com') === null, 'reject absolute URL')
 assert(sanitizeReturnTo('/\\evil') === null, 'reject backslash')
 assert(sanitizeReturnTo('chapter-1') === null, 'reject non-root-relative')
 
+
+assert(!isValidEmail('a@b.c'), 'reject single-char TLD')
+assert(isValidEmail('  reader@example.com  '), 'trim valid email')
+assert(sanitizeReturnTo('/about?x=1') === '/about?x=1', 'allow query on relative path')
+assert(sanitizeReturnTo('//evil.com/path') === null, 'reject // with path')
+assert(sanitizeReturnTo(null) === null, 'reject null')
+assert(sanitizeReturnTo('') === null, 'reject empty returnTo')
+assert(sanitizeReturnTo('/chapter/1://x') === null, 'reject embedded scheme')
+
 console.log('[verify:auth-validation] PASS')
