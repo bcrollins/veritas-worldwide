@@ -389,6 +389,28 @@ const healthResult = await fetchJson('/api/health')
         `content-disposition=${institutePdfDisposition || 'none'}`
       )
 
+      const recordPdfResult = await fetch(getUrl('/the-record.pdf'), {
+        method: 'HEAD',
+        headers: { 'Cache-Control': 'no-cache' },
+        signal: AbortSignal.timeout(timeoutMs),
+      })
+      const recordPdfCache = (recordPdfResult.headers.get('cache-control') || '').toLowerCase()
+      const recordPdfDisposition = (recordPdfResult.headers.get('content-disposition') || '').toLowerCase()
+      addCheck(
+        checks,
+        failures,
+        recordPdfResult.ok && !recordPdfCache.includes('immutable'),
+        'The Record PDF is publicly downloadable and not immutably cached',
+        `status=${recordPdfResult.status} cache=${recordPdfCache || 'none'}`
+      )
+      addCheck(
+        checks,
+        failures,
+        recordPdfDisposition.includes('the-record.pdf'),
+        'The Record PDF sets Content-Disposition filename',
+        `content-disposition=${recordPdfDisposition || 'none'}`
+      )
+
       const sitemapResult = await fetchText('/sitemap.xml')
       const sitemapText = sitemapResult.text || ''
       addCheck(
