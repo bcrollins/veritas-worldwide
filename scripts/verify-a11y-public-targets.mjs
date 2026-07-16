@@ -23,7 +23,7 @@ const floors = [
   { path: 'src/pages/DeepStatePage.tsx', min: 13, label: 'deep-state controls' },
   { path: 'src/pages/BibleHistoryPage.tsx', min: 11, label: 'bible-history sidebar' },
   { path: 'src/pages/SearchPage.tsx', min: 4, label: 'search chips' },
-  { path: 'src/pages/MembershipPage.tsx', min: 7, label: 'membership CTAs' },
+  { path: 'src/pages/MembershipPage.tsx', min: 8, label: 'membership CTAs' },
   { path: 'src/pages/TimelinePage.tsx', min: 4, label: 'timeline filters' },
   { path: 'src/components/AuthModal.tsx', min: 6, label: 'auth modal' },
   { path: 'src/components/CookieConsent.tsx', min: 4, label: 'cookie consent' },
