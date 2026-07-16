@@ -140,7 +140,7 @@ export default function BookmarksPage() {
       <div className="border-b border-border bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 py-3 text-sm">
-            <Link to="/" className="text-ink-muted transition-colors hover:text-crimson">Home</Link>
+            <Link to="/" className="inline-flex min-h-[44px] items-center text-ink-muted transition-colors hover:text-crimson">Home</Link>
             <span className="text-ink-muted/50">›</span>
             <span className="font-medium text-ink">Bookmarks</span>
           </div>
