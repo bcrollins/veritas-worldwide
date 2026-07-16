@@ -1,5 +1,5 @@
 {
-  "run": 44,
+  "run": 45,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.05,
       "previous": 8.9,
       "delta": 0.15,
-      "status": "UTM+referrer attribution on donate/membership; PDF CTAs across home/institute/feed/sitemap",
+      "status": "UTM+referrer attribution on donate/membership; PDF CTAs across home/institute/feed/sitemap | LIVE 74dec67 proven",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -79,7 +79,7 @@
       "composite": 9.55,
       "previous": 9.45,
       "delta": 0.1,
-      "status": "durable PDF live + prerender + RSS + non-stale cache + schema encoding",
+      "status": "durable PDF live + prerender + RSS + non-stale cache + schema encoding | LIVE 74dec67 proven",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
@@ -87,7 +87,7 @@
       "composite": 9.65,
       "previous": 9.55,
       "delta": 0.1,
-      "status": "build-info PDF flags + release/platform asserts; client-error counters; non-immutable PDF cache",
+      "status": "build-info PDF flags + release/platform asserts; client-error counters; non-immutable PDF cache | LIVE 74dec67 proven",
       "plus_half_requires": "Optional Sentry DSN for external paging on top of native client-error intake."
     },
     {
