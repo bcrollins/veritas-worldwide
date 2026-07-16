@@ -21,6 +21,12 @@ export interface SubscriberData {
   source: SubscriptionSource
   contentInterest?: string
   referrer?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+  utm_content?: string
+  utm_term?: string
+  campaign_ref?: string
 }
 
 export type SubscriptionSource =
@@ -67,11 +73,20 @@ export function identifyContact(data: SubscriberData): void {
   hsq.push(['identify', properties])
   hsq.push(['trackPageView'])
 
-  // Track the subscription event
+  // Track the subscription event with campaign attribution when available.
+  const attribution: Record<string, string> = {}
+  if (data.utm_source) attribution.utm_source = data.utm_source
+  if (data.utm_medium) attribution.utm_medium = data.utm_medium
+  if (data.utm_campaign) attribution.utm_campaign = data.utm_campaign
+  if (data.utm_content) attribution.utm_content = data.utm_content
+  if (data.utm_term) attribution.utm_term = data.utm_term
+  if (data.campaign_ref) attribution.campaign_ref = data.campaign_ref
+
   trackEvent('newsletter_signup', {
     source: data.source,
     content_interest: data.contentInterest || 'general',
     referrer: data.referrer || document.referrer || 'direct',
+    ...attribution,
   })
 
   // Store locally to prevent re-prompting
@@ -80,6 +95,7 @@ export function identifyContact(data: SubscriberData): void {
       email: data.email,
       subscribedAt: new Date().toISOString(),
       source: data.source,
+      ...attribution,
     }))
   } catch {}
 }

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { identifyContact, isSubscribed, type SubscriptionSource } from '../lib/hubspot'
 import { trackNewsletterSignup } from '../lib/ga4'
 import { scoreEmailSignup } from '../lib/leadScoring'
+import { getMarketingAttribution } from '../lib/conversionTracking'
 import MarketingConsentField from './MarketingConsentField'
 
 interface Props {
@@ -60,11 +61,18 @@ export default function NewsletterSignup({
     setErrorMessage('')
 
     try {
+      const attribution = getMarketingAttribution()
       identifyContact({
         email,
         source,
         contentInterest: contentInterest || 'general',
         referrer: window.location.pathname,
+        utm_source: attribution?.utm_source,
+        utm_medium: attribution?.utm_medium,
+        utm_campaign: attribution?.utm_campaign,
+        utm_content: attribution?.utm_content,
+        utm_term: attribution?.utm_term,
+        campaign_ref: attribution?.ref,
       })
       scoreEmailSignup(source)
       trackNewsletterSignup(source)
