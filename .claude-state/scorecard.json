@@ -1,5 +1,5 @@
 {
-  "run": 66,
+  "run": 67,
   "date": "2026-07-16",
   "site": [
     {
@@ -36,10 +36,10 @@
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.85,
-      "previous": 9.8,
+      "composite": 9.9,
+      "previous": 9.85,
       "delta": 0.05,
-      "status": "verify:auth-validation pure suite in verify:live; tip 25f0b3c",
+      "status": "returnTo open-redirect closed; auth-validation suite live tip a043ec4",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.6,
-      "previous": 9.55,
+      "composite": 9.65,
+      "previous": 9.6,
       "delta": 0.05,
-      "status": "breadcrumb 44px across public shells; tip b287aa4 live",
+      "status": "timeline/bookmarks/search sidebars 44px; tip a043ec4",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
