@@ -180,3 +180,9 @@
 - **RFC 9116 security.txt is live and verify-gated.**
   Impact: researchers and automated scanners can discover `/.well-known/security.txt` with Contact, Expires, Canonical, and Privacy policy links. Root `/security.txt` also 200s.
   Resolution: Express in-process fallback (Vite/deploy skipped hidden `public/.well-known`); dual public files; Privacy link; robots Allow; live verify:security-headers asserts body. Tip `34e9a94` 15-step green.
+
+## Recently Closed (2026-07-16 — GEO generator lock)
+
+- **llms.txt security disclosure survives postbuild.**
+  Impact: AI crawlers discover RFC 9116 security.txt via llms.txt; hand-edits no longer wiped by prerender.
+  Resolution: `renderLlmsTxt` emits Security disclosure; pure suite asserts generator + robots + files. Live tip `5bda159`.
