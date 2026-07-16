@@ -218,8 +218,8 @@ export function registerDatabaseAndAuthRoutes({
     if (!email || !password || !displayName) {
       return res.status(400).json({ error: 'Email, password, and display name are required.' })
     }
-    if (typeof password !== 'string' || password.length < 6) {
-      return res.status(400).json({ error: 'Password must be at least 6 characters.' })
+    if (typeof password !== 'string' || password.length < 8) {
+      return res.status(400).json({ error: 'Password must be at least 8 characters.' })
     }
     if (typeof password === 'string' && password.length > 128) {
       return res.status(400).json({ error: 'Password must be at most 128 characters.' })
@@ -558,8 +558,8 @@ export function registerDatabaseAndAuthRoutes({
     if (!currentPassword || !newPassword) {
       return res.status(400).json({ error: 'Both passwords required' })
     }
-    if (typeof newPassword !== 'string' || newPassword.length < 6) {
-      return res.status(400).json({ error: 'New password must be at least 6 characters' })
+    if (typeof newPassword !== 'string' || newPassword.length < 8) {
+      return res.status(400).json({ error: 'New password must be at least 8 characters' })
     }
     if (typeof newPassword === 'string' && newPassword.length > 128) {
       return res.status(400).json({ error: 'Password is too long' })

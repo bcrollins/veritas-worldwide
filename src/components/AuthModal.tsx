@@ -69,8 +69,8 @@ export default function AuthModal() {
       setError('Please enter a valid email address.')
       return
     }
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters.')
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters.')
       return
     }
     if (authModalMode === 'signup' && !displayName.trim()) {
@@ -176,7 +176,7 @@ export default function AuthModal() {
                 type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                placeholder="At least 6 characters"
+                placeholder="At least 8 characters"
                 className="w-full min-h-[44px] px-4 py-2.5 bg-surface border border-border rounded-sm font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-crimson transition-colors"
               />
             </div>

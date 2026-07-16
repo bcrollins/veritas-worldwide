@@ -120,14 +120,14 @@ async function signUp(name, email, password) {
   await openAuthModalWithSave()
   await fillInput('Your name', name, '[data-testid="auth-modal"]')
   await fillInput('you@example.com', email, '[data-testid="auth-modal"]')
-  await fillInput('At least 6 characters', password, '[data-testid="auth-modal"]')
+  await fillInput('At least 8 characters', password, '[data-testid="auth-modal"]')
   await clickButton('Create Free Account', '[data-testid="auth-modal"]')
 }
 
 async function logIn(email, password) {
   await clickButton('Log In')
   await fillInput('you@example.com', email, '[data-testid="auth-modal"]')
-  await fillInput('At least 6 characters', password, '[data-testid="auth-modal"]')
+  await fillInput('At least 8 characters', password, '[data-testid="auth-modal"]')
   await clickButton('Sign In', '[data-testid="auth-modal"]')
 }
 

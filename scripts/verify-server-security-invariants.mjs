@@ -317,6 +317,22 @@ assert(
 assert(serverAuth.includes('change-password'), 'change-password route present in server-auth')
 assert(serverAuth.includes('newPassword.length > 128'), 'change-password rejects overlong new passwords')
 assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rejects overlong current passwords')
+// Password floor: 8 chars on register + change-password (NIST-aligned practical minimum).
+assert(
+  (serverAuth.match(/password\.length < 8/g) || []).length >= 1,
+  'register must reject passwords shorter than 8 characters',
+)
+assert(
+  serverAuth.includes('newPassword.length < 8'),
+  'change-password must reject new passwords shorter than 8 characters',
+)
+assert(serverAuth.includes('at least 8 characters'), 'password floor error copy mentions 8 characters')
+assert(!serverAuth.includes('at least 6 characters'), 'password floor must not regress to 6 characters')
+// Client AuthModal must mirror the 8-char floor (no soft client that accepts 6 while server rejects).
+const authModal = readFileSync(join(root, 'src/components/AuthModal.tsx'), 'utf8')
+assert(authModal.includes('password.length < 8'), 'AuthModal client floor is 8 characters')
+assert(authModal.includes('At least 8 characters'), 'AuthModal placeholder mirrors 8-char floor')
+assert(!authModal.includes('At least 6 characters'), 'AuthModal must not advertise 6-char floor')
 // JWT algorithm pin — prevent alg=none / confusion
 assert(serverAuth.includes("algorithm: 'HS256'") || serverAuth.includes('algorithm: "HS256"'), 'jwt.sign must pin HS256')
 assert(

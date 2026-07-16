@@ -131,7 +131,7 @@ async function main() {
   assert(!badRegister.data?.token, 'Invalid-email register must not return a token')
   logStep('Invalid-email register rejected')
 
-  // Negative path: password too short
+  // Negative path: password too short (4 chars — well under floor)
   const shortPassword = await requestJsonWithRetry('/api/auth/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -143,6 +143,19 @@ async function main() {
   )
   assert(!shortPassword.data?.token, 'Short-password register must not return a token')
   logStep('Short-password register rejected')
+
+  // Negative path: 7-char password must fail once floor is 8 (NIST-aligned practical minimum).
+  const sevenCharPassword = await requestJsonWithRetry('/api/auth/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: `seven-pw-${Date.now()}@example.com`, password: 'abcdefg', displayName }),
+  }, { retries: 8 })
+  assert(
+    sevenCharPassword.response.status === 400 || sevenCharPassword.response.status === 422,
+    `Expected 7-char password register to return 400/422, received ${sevenCharPassword.response.status}`
+  )
+  assert(!sevenCharPassword.data?.token, '7-char password register must not return a token')
+  logStep('7-char password register rejected')
 
   const registerResult = await requestJsonWithRetry('/api/auth/register', {
     method: 'POST',
