@@ -45,14 +45,14 @@ async function requestJson(pathname, options = {}) {
   return { response, data }
 }
 
-async function requestJsonWithRetry(pathname, options = {}, { retries = 4, retryOn = [429] } = {}) {
+async function requestJsonWithRetry(pathname, options = {}, { retries = 8, retryOn = [429] } = {}) {
   let last = null
   for (let attempt = 0; attempt <= retries; attempt += 1) {
     last = await requestJson(pathname, options)
     if (!retryOn.includes(last.response.status)) {
       return last
     }
-    const waitMs = 1500 * (attempt + 1)
+    const waitMs = 2500 * (attempt + 1)
     logStep(`Rate limited (${last.response.status}), retrying`, `${pathname} in ${waitMs}ms`)
     await new Promise((resolve) => setTimeout(resolve, waitMs))
   }
@@ -106,11 +106,11 @@ async function main() {
   logStep('Anonymous PDF download verified')
 
   // Negative path: invalid credentials must not mint a session
-  const badLogin = await requestJson('/api/auth/login', {
+  const badLogin = await requestJsonWithRetry('/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: 'nobody-does-not-exist@example.com', password: 'wrong-password-xyz' }),
-  })
+  }, { retries: 6 })
   assert(
     badLogin.response.status === 401 || badLogin.response.status === 400,
     `Expected bad login to return 400/401, received ${badLogin.response.status}`
