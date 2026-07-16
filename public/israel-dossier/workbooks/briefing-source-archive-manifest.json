@@ -159,6 +159,27 @@
       "archiveUrl": "https://web.archive.org/web/20260701145501/https://airwars.org/",
       "status": "pinned",
       "note": "Airwars host landing"
+    },
+    {
+      "sourceUrl": "https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "timestamp": "20260707180357",
+      "archiveUrl": "https://web.archive.org/web/20260707180357/https://www.972mag.com/mass-assassination-factory-israel-calculated-bombing-gaza/",
+      "note": "+972 Magazine mass assassination factory investigation",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://peacemaker.un.org/israelopt-osloaccord93",
+      "timestamp": "20240731193308",
+      "archiveUrl": "https://web.archive.org/web/20240731193308/https://peacemaker.un.org/israelopt-osloaccord93",
+      "note": "UN Peacemaker Oslo Accords text",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://digitallibrary.un.org/record/90717",
+      "timestamp": "20260404091844",
+      "archiveUrl": "https://web.archive.org/web/20260404091844/https://digitallibrary.un.org/record/90717",
+      "note": "UN Digital Library record 90717",
+      "status": "pinned"
     }
   ]
 }
