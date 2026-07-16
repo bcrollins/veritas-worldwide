@@ -1,5 +1,5 @@
 {
-  "run": 140,
+  "run": 141,
   "date": "2026-07-16",
   "site": [
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip 53a2297+ continuous 15-step; scorecard 140; pure security fortress complete",
+      "status": "product tip 53a2297+ continuous 15-step; scorecard 141",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
@@ -87,7 +87,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0.0,
-      "status": "verify:live 15-step pure-locked; tip 2d6eb9c family 15-step green; scorecard 130",
+      "status": "verify:live + verify:pure core membership pure-locked; continuous 15-step; scorecard 141",
       "plus_half_requires": "Set SENTRY_DSN in Railway to enable external paging; counters remain available without it."
     },
     {
