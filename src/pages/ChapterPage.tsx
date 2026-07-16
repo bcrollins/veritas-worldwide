@@ -960,7 +960,7 @@ export default function ChapterPage() {
       <div className="max-w-3xl mx-auto px-6 py-20 text-center">
         <h1 className="font-display text-4xl font-bold text-ink mb-4">Chapter Not Found</h1>
         <p className="font-body text-lg text-ink-muted mb-8">The chapter you're looking for doesn't exist.</p>
-        <Link to="/" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
+        <Link to="/" className="inline-flex min-h-[44px] items-center font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
           &larr; Return to The Record
         </Link>
       </div>
