@@ -186,3 +186,14 @@
 - **llms.txt security disclosure survives postbuild.**
   Impact: AI crawlers discover RFC 9116 security.txt via llms.txt; hand-edits no longer wiped by prerender.
   Resolution: `renderLlmsTxt` emits Security disclosure; pure suite asserts generator + robots + files. Live tip `5bda159`.
+
+## Recently Closed (2026-07-16 — ocean rate-limit + trust-proxy wave)
+
+- **Rate-limit counter isolation fixed.** Limiters previously shared one IP key; analytics traffic could exhaust auth budgets. Keys are now `name:ip` with 22 named scopes. Pure floors lock isolation.
+- **Express trust proxy enabled** for Railway single-hop X-Forwarded-*.
+- **JSON body capped at 64kb** (413 on oversized POST); client-error keeps 16kb.
+- **Permissions-Policy tightened** (display-capture/sensors denied; clipboard-write=(self) for copy CTAs).
+- **Dead `serve` package removed**; package.json hygiene pure-locked.
+- **PDF download rate limits** (Record + Field Manual) at 90/min with multi-agent headroom.
+- **Residual public 44px** forum flair/awards, dossier carousel, deep-state, profiles, sources, Bernie, Read paths; pure bans expanded; 460 markers / 52 surfaces.
+
