@@ -1088,6 +1088,7 @@ app.get('/api/health', (req, res) => {
     prerenderedRouteCount,
     chapterDataGeneratedAt: chapterDataManifest.generatedAt || '',
     analyticsLifetime: store.lifetime || 0,
+    clientErrorIntake: true,
     checks,
     failed,
   })

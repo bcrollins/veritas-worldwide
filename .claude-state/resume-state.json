@@ -1,5 +1,5 @@
 {
-  "run": 36,
+  "run": 37,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -143,9 +143,10 @@
     "Pinned Forensic Architecture Hind Rajab + OCHA Mar 2025 response + UNGA companion docs.un.org archive (15/16 briefing pins).",
     "Shipped native client error intake: POST /api/client-error with rate limit, ErrorBoundary + global handlers, optional volume NDJSON.",
     "Live-verified 031f7b2: client-error 204, platform PASS, israel-dossier PASS, pinned=14 (pre-UN pin).",
-    "Expanded public visual verifier for brand kit/analytics/dossier with case-insensitive matching for CSS uppercase headings."
+    "Expanded public visual verifier for brand kit/analytics/dossier with case-insensitive matching for CSS uppercase headings.",
+    "Live tip 7a646ee5088a: 15/16 briefing archives pinned, /api/client-error 204, platform+release PASS, full 6-device visual matrix PASS on production."
   ],
-  "next_task": "Pin Lancet if Wayback ever captures it; unlock GitHub billing for CI; optional Sentry DSN for paging.",
+  "next_task": "Only remaining non-code blockers: Lancet Wayback pin if/when available; GitHub billing unlock; optional Sentry DSN for external paging.",
   "next_priorities": [
     "Lancet briefing source remains lookup-only until Wayback has a snapshot.",
     "Unlock GitHub Actions billing lock.",
