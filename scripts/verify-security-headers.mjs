@@ -14,6 +14,8 @@ const REQUIRED = {
   'x-xss-protection': /1/,
   'x-permitted-cross-domain-policies': /^none$/i,
   'cross-origin-opener-policy': /same-origin-allow-popups/i,
+  'cross-origin-resource-policy': /^same-site$/i,
+  'x-dns-prefetch-control': /^off$/i,
   'origin-agent-cluster': /^\?1$/,
 }
 

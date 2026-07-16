@@ -719,6 +719,10 @@ app.use((req, res, next) => {
   // Allow intentional share popups (window.open to X/Facebook/etc.) while isolating
   // the browsing context from unexpected cross-origin openers.
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups')
+  // Same-site CORP blocks cross-site resource reads while keeping first-party embeds working.
+  res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
+  // Disable opportunistic DNS prefetch of third-party hosts from link markup.
+  res.setHeader('X-DNS-Prefetch-Control', 'off')
   // Request origin-keyed agent cluster isolation for modern browsers.
   res.setHeader('Origin-Agent-Cluster', '?1')
   res.setHeader(
@@ -758,8 +762,17 @@ function rateLimit({ windowMs = 60_000, max = 10, keyFn, name = 'default' } = {}
       rateLimitStore.set(key, entry)
     }
     entry.count++
+    const remaining = Math.max(0, max - entry.count)
+    const resetSec = Math.max(1, Math.ceil((entry.start + windowMs - now) / 1000))
+    // Draft RateLimit header fields — clients and operators can see budget without guessing.
+    res.setHeader('RateLimit-Limit', String(max))
+    res.setHeader('RateLimit-Remaining', String(remaining))
+    res.setHeader('RateLimit-Reset', String(resetSec))
+    res.setHeader('X-RateLimit-Limit', String(max))
+    res.setHeader('X-RateLimit-Remaining', String(remaining))
+    res.setHeader('X-RateLimit-Reset', String(resetSec))
     if (entry.count > max) {
-      res.setHeader('Retry-After', Math.ceil((entry.start + windowMs - now) / 1000))
+      res.setHeader('Retry-After', String(resetSec))
       return res.status(429).json({ error: 'Too many requests. Please try again later.' })
     }
     next()
@@ -1136,13 +1149,25 @@ app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
     return res.status(400).json({ error: 'message required' })
   }
 
+  const source = typeof body.source === 'string' ? body.source.slice(0, 80) : 'client'
+  // Synthetic verify probes prove the route is alive without polluting operator
+  // error counters, NDJSON logs, or optional Sentry forwarding.
+  const isSyntheticProbe =
+    message === 'platform-health probe' ||
+    source === 'verify:platform' ||
+    source === 'platform-health'
+
+  if (isSyntheticProbe) {
+    return res.status(204).end()
+  }
+
   const payload = {
     type: 'client-error',
     message,
     name: typeof body.name === 'string' ? body.name.slice(0, 120) : 'Error',
     stack: typeof body.stack === 'string' ? body.stack.slice(0, 4000) : '',
     componentStack: typeof body.componentStack === 'string' ? body.componentStack.slice(0, 4000) : '',
-    source: typeof body.source === 'string' ? body.source.slice(0, 80) : 'client',
+    source,
     path: typeof body.path === 'string' ? body.path.slice(0, 240) : '',
     href: typeof body.href === 'string' ? body.href.slice(0, 500) : '',
     userAgent: typeof body.userAgent === 'string' ? body.userAgent.slice(0, 300) : '',
@@ -1730,6 +1755,8 @@ app.use('/api', (req, res) => {
 registerBotMetaInjection({ app, rootDir: __dirname })
 
 app.use((req, res) => {
+  // SPA shell must never be immutably cached (deploy-safe HTML).
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 

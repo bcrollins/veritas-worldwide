@@ -64,6 +64,13 @@ const floors = [
   { path: 'src/components/AipacDiagram.tsx', min: 6, label: 'AIPAC map controls' },
   { path: 'src/pages/BernieShowPage.tsx', min: 5, label: 'Bernie show controls' },
   { path: 'src/pages/ContentPackPage.tsx', min: 8, label: 'content pack downloads' },
+  { path: 'src/pages/MethodologyPage.tsx', min: 12, label: 'methodology trust CTAs' },
+  { path: 'src/components/DownloadModal.tsx', min: 6, label: 'download modal controls' },
+  { path: 'src/components/DonationBanner.tsx', min: 4, label: 'donation banner CTAs' },
+  { path: 'src/components/DisputeStory.tsx', min: 5, label: 'dispute form fields' },
+  { path: 'src/components/ContentGate.tsx', min: 3, label: 'content gate subscribe' },
+  { path: 'src/components/ExitIntentCapture.tsx', min: 3, label: 'exit-intent capture' },
+  { path: 'src/components/NewsletterSignup.tsx', min: 2, label: 'newsletter signup' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
@@ -151,7 +158,7 @@ if (failures > 0) {
 }
 
 const total = results.reduce((n, r) => n + r.count, 0)
-const MIN_TOTAL_MARKERS = 440
+const MIN_TOTAL_MARKERS = 500
 if (total < MIN_TOTAL_MARKERS) {
   console.error(`[verify:a11y-public-targets] FAIL — total markers ${total} < floor ${MIN_TOTAL_MARKERS}`)
   process.exit(1)
