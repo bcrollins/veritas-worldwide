@@ -1,5 +1,5 @@
 {
-  "run": 43,
+  "run": 44,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -163,7 +163,9 @@
     "Surface durable field manual PDF from Institute catalog, book, homepage, prerender HTML, sitemap, and llms.txt with Book schema encoding.",
     "Live-verified series through 2716a13/bbd4213: prerender PDF CTAs, Book encoding schema, RSS enclosure, platform PASS with sitemap+feed+PDF non-immutable cache.",
     "First-touch external referrer attribution (hostname as utm_source/medium=referral) for organic traffic without UTM params (2005bf1).",
-    "Platform health now asserts Institute prerender HTML + book encoding schema for the durable PDF."
+    "Platform health now asserts Institute prerender HTML + book encoding schema for the durable PDF.",
+    "LIVE production tip series verified on f36461a+: durable field manual PDF (512KB, 60 pages, non-immutable cache), membership+donate UTM/referrer attribution, client-error counters, RSS/sitemap/robots/llms/prerender PDF discovery, build-info PDF flags \u2014 platform/search/release PASS.",
+    "GA4 trackDownload wired on static field-manual PDF CTAs (home, institute catalog, book)."
   ],
   "next_task": "External only remaining for archives/CI/Sentry. Continue product polish: news corpus, membership attribution, institute PDF server artifact.",
   "next_priorities": [
