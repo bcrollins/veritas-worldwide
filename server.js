@@ -732,8 +732,10 @@ setInterval(() => {
 }, 300_000)
 
 // Apply strict rate limit to auth endpoints (5 attempts per minute per IP)
-app.use('/api/auth/login', rateLimit({ windowMs: 60_000, max: 5 }))
-app.use('/api/auth/register', rateLimit({ windowMs: 60_000, max: 3 }))
+app.use('/api/auth/login', rateLimit({ windowMs: 60_000, max: 8 }))
+app.use('/api/auth/register', rateLimit({ windowMs: 60_000, max: 5 }))
+// Session refresh is authenticated and low-risk; allow regular client heartbeat calls.
+app.use('/api/auth/refresh', rateLimit({ windowMs: 60_000, max: 20 }))
 app.use('/api/analytics/event', rateLimit({ windowMs: 60_000, max: 120 }))
 app.use('/api/client-error', rateLimit({ windowMs: 60_000, max: 30 }))
 
