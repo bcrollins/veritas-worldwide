@@ -1,5 +1,5 @@
 {
-  "run": 121,
+  "run": 122,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.52,
-      "previous": 9.49,
-      "delta": 0.03,
-      "status": "HEAD ef4e527 15-step; 12 baseline headers; X-Download-Options noopen; health 120/min; rateLimit\u00d723",
+      "composite": 9.54,
+      "previous": 9.52,
+      "delta": 0.02,
+      "status": "HEAD ed0b9b9 15-step; JWT HS256; 12 headers; health 120/min; rateLimit\u00d723",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -39,7 +39,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "HEAD 1626660 15-step; RateLimit headers on auth; trust proxy; dual security.txt",
+      "status": "HEAD ed0b9b9 JWT HS256 pin; full auth smoke green; 15-step",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip ef4e527 live 15-step; scorecard 121; security masterpiece 12 headers",
+      "status": "product tip ed0b9b9 live 15-step; scorecard 122; JWT HS256 + full security matrix",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {

@@ -236,3 +236,9 @@
   Impact: legacy IE/Edge cannot open HTML downloads as same-origin documents; security-headers pure+live suite now asserts 12 baseline headers.
   Resolution: Express security middleware + pure/live locks. Tip `ef4e527` 15-step green.
 
+## Recently Closed (2026-07-16 — tip ed0b9b9)
+
+- **JWT algorithm pinned to HS256 on sign and verify.**
+  Impact: Bearer tokens reject alg=none and algorithm-confusion vectors; sessions continue to rotate with unique jti.
+  Resolution: server-auth mintAccessToken + authenticateToken options; pure suite locks both. Tip `ed0b9b9` auth smoke 15-step green.
+
