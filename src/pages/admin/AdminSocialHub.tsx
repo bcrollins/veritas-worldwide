@@ -115,7 +115,7 @@ export default function AdminSocialHub() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2.5 font-sans text-xs tracking-wide capitalize transition-colors border-b-2 -mb-px ${
+            className={`inline-flex min-h-[44px] items-center px-4 py-2.5 font-sans text-xs tracking-wide capitalize transition-colors border-b-2 -mb-px ${
               activeTab === tab
                 ? 'text-white border-crimson'
                 : 'text-white/30 border-transparent hover:text-white/60'

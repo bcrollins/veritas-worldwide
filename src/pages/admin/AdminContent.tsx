@@ -171,7 +171,7 @@ export default function AdminContent() {
           {articles.length === 0 ? (
             <div className="bg-white/5 border border-white/5 rounded-lg px-5 py-12 text-center">
               <p className="font-sans text-sm text-white/20 mb-3">No articles yet</p>
-              <button onClick={() => setTab('generator')} className="px-4 py-2 bg-crimson/10 text-crimson font-sans text-xs rounded hover:bg-crimson/20">
+              <button onClick={() => setTab('generator')} className="inline-flex min-h-[44px] items-center px-4 py-2 bg-crimson/10 text-crimson font-sans text-xs rounded hover:bg-crimson/20">
                 Create First Article
               </button>
             </div>
@@ -281,10 +281,10 @@ export default function AdminContent() {
 
             {/* Actions */}
             <div className="flex items-center gap-3 pt-2 border-t border-white/5">
-              <button onClick={() => saveArticle('draft')} className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs rounded hover:bg-white/10 transition-colors">
+              <button onClick={() => saveArticle('draft')} className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs rounded hover:bg-white/10 transition-colors">
                 Save Draft
               </button>
-              <button onClick={() => saveArticle('published')} className="px-4 py-2 bg-crimson text-white font-sans text-xs rounded hover:bg-crimson-dark transition-colors">
+              <button onClick={() => saveArticle('published')} className="inline-flex min-h-[44px] items-center px-4 py-2 bg-crimson text-white font-sans text-xs rounded hover:bg-crimson-dark transition-colors">
                 Publish
               </button>
               {editingArticle && (

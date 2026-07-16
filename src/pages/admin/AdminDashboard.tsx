@@ -94,7 +94,7 @@ export default function AdminDashboard() {
               placeholder="Paste Looker Studio embed URL..."
               className="flex-1 px-3 py-2 bg-white/5 border border-white/10 rounded text-white font-sans text-xs focus:outline-none focus:border-crimson/30"
             />
-            <button onClick={saveGaUrl} className="px-3 py-2 bg-crimson/10 text-crimson font-sans text-xs rounded hover:bg-crimson/20">Save</button>
+            <button onClick={saveGaUrl} className="inline-flex min-h-[44px] items-center px-3 py-2 bg-crimson/10 text-crimson font-sans text-xs rounded hover:bg-crimson/20">Save</button>
           </div>
         )}
         {gaUrl ? (
@@ -160,30 +160,30 @@ export default function AdminDashboard() {
       <div className="bg-white/5 border border-white/5 rounded-lg p-5">
         <h3 className="font-sans text-xs font-bold tracking-widest uppercase text-white/50 mb-4">Quick Actions</h3>
         <div className="flex flex-wrap gap-3">
-          <Link to="/admin/content" className="px-4 py-2 bg-crimson/10 text-crimson font-sans text-xs tracking-wide rounded hover:bg-crimson/20 transition-colors">
+          <Link to="/admin/content" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-crimson/10 text-crimson font-sans text-xs tracking-wide rounded hover:bg-crimson/20 transition-colors">
             Create Article
           </Link>
-          <Link to="/admin/content" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          <Link to="/admin/content" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Manage Chapters
           </Link>
-          <Link to="/admin/media" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          <Link to="/admin/media" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Media Library
-          </Link>          <Link to="/admin/social" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          </Link>          <Link to="/admin/social" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Social Packs
           </Link>
-          <Link to="/admin/social-hub" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          <Link to="/admin/social-hub" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Social Hub
           </Link>
-          <a href="https://dashboard.stripe.com" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          <a href="https://dashboard.stripe.com" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Stripe Dashboard ↗
           </a>
-          <a href="https://app.hubspot.com" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          <a href="https://app.hubspot.com" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             HubSpot ↗
           </a>
-          <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Search Console ↗
           </a>
-          <Link to="/" className="px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          <Link to="/" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             View Live Site →
           </Link>
         </div>

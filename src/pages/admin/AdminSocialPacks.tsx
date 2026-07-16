@@ -220,7 +220,7 @@ export default function AdminSocialPacks() {
           <button
             key={p}
             onClick={() => setSelectedPlatform(p)}
-            className={`px-4 py-1.5 rounded font-sans text-xs tracking-wide transition-colors ${
+            className={`inline-flex min-h-[44px] items-center px-4 py-1.5 rounded font-sans text-xs tracking-wide transition-colors ${
               selectedPlatform === p ? 'bg-crimson/10 text-crimson' : 'bg-white/5 text-white/30 hover:text-white/50'
             }`}
           >
@@ -262,13 +262,13 @@ export default function AdminSocialPacks() {
             <div className="px-5 py-3 border-t border-white/5 flex items-center gap-2">
               <button
                 onClick={() => copyToClipboard(post, i)}
-                className="px-3 py-1.5 bg-white/5 rounded font-sans text-xs text-white/50 hover:text-white hover:bg-white/10 transition-colors"
+                className="inline-flex min-h-[44px] items-center px-3 py-1.5 bg-white/5 rounded font-sans text-xs text-white/50 hover:text-white hover:bg-white/10 transition-colors"
               >
                 {copiedIndex === i ? '✓ Copied!' : 'Copy Text'}
               </button>
               <button
                 onClick={() => downloadCarousel(post, i)}
-                className="px-3 py-1.5 bg-crimson/10 rounded font-sans text-xs text-crimson hover:bg-crimson/20 transition-colors"
+                className="inline-flex min-h-[44px] items-center px-3 py-1.5 bg-crimson/10 rounded font-sans text-xs text-crimson hover:bg-crimson/20 transition-colors"
               >
                 Download Carousel (3 slides)
               </button>
@@ -276,7 +276,7 @@ export default function AdminSocialPacks() {
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 bg-white/5 rounded font-sans text-xs text-white/30 hover:text-white/50 transition-colors ml-auto"
+                className="inline-flex min-h-[44px] items-center px-3 py-1.5 bg-white/5 rounded font-sans text-xs text-white/30 hover:text-white/50 transition-colors ml-auto"
               >
                 Preview Link →
               </a>

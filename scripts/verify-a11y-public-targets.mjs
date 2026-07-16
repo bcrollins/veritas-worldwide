@@ -35,7 +35,10 @@ const floors = [
   { path: 'src/pages/admin/AdminLayout.tsx', min: 4, label: 'admin shell nav' },
   { path: 'src/components/RecordTabs.tsx', min: 3, label: 'record section tabs' },
   { path: 'src/pages/admin/AdminMedia.tsx', min: 3, label: 'admin media controls' },
-  { path: 'src/pages/admin/AdminContent.tsx', min: 1, label: 'admin content tabs' },
+  { path: 'src/pages/admin/AdminContent.tsx', min: 3, label: 'admin content tabs' },
+  { path: 'src/pages/admin/AdminDashboard.tsx', min: 6, label: 'admin dashboard CTAs' },
+  { path: 'src/pages/admin/AdminSocialPacks.tsx', min: 3, label: 'admin social packs' },
+  { path: 'src/pages/admin/AdminSocialHub.tsx', min: 1, label: 'admin social hub tabs' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
