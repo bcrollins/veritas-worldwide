@@ -477,10 +477,10 @@ export default function SourcesPage() {
             )}
 
             <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row gap-4">
-              <Link to="/methodology" className="font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors text-center">
+              <Link to="/methodology" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors text-center">
                 Read the Methodology
               </Link>
-              <Link to="/" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
+              <Link to="/" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors text-center">
                 Back to The Record
               </Link>
             </div>
