@@ -310,16 +310,16 @@ export default function TimelinePage() {
               <div className="bg-surface border border-border rounded-lg p-5">
                 <h3 className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">Related Pages</h3>
                 <nav className="space-y-2">
-                  <Link to="/methodology" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/methodology" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Methodology
                   </Link>
-                  <Link to="/sources" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/sources" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Sources
                   </Link>
-                  <Link to="/profiles" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/profiles" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Power Profiles
                   </Link>
-                  <Link to="/search" className="block text-sm text-ink-muted hover:text-crimson transition-colors">
+                  <Link to="/search" className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors">
                     → Search
                   </Link>
                 </nav>

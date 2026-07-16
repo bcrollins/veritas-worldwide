@@ -454,19 +454,19 @@ export default function BookmarksPage() {
                   Quick routes
                 </h3>
                 <nav className="mt-4 space-y-2">
-                  <Link to="/read" className="block text-sm text-ink-muted transition-colors hover:text-crimson">
+                  <Link to="/read" className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson">
                     → Read The Record
                   </Link>
-                  <Link to="/profiles" className="block text-sm text-ink-muted transition-colors hover:text-crimson">
+                  <Link to="/profiles" className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson">
                     → Power Profiles
                   </Link>
-                  <Link to="/timeline" className="block text-sm text-ink-muted transition-colors hover:text-crimson">
+                  <Link to="/timeline" className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson">
                     → Timeline
                   </Link>
-                  <Link to="/search" className="block text-sm text-ink-muted transition-colors hover:text-crimson">
+                  <Link to="/search" className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson">
                     → Search
                   </Link>
-                  <Link to="/sources" className="block text-sm text-ink-muted transition-colors hover:text-crimson">
+                  <Link to="/sources" className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson">
                     → Sources
                   </Link>
                 </nav>

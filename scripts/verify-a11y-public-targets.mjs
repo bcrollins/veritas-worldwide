@@ -45,6 +45,10 @@ const floors = [
   { path: 'src/pages/admin/AdminDisputes.tsx', min: 2, label: 'admin disputes' },
   { path: 'src/pages/AccessibilityPage.tsx', min: 6, label: 'accessibility trust page' },
   { path: 'src/pages/AnalyticsPage.tsx', min: 1, label: 'analytics refresh' },
+  { path: 'src/pages/TermsPage.tsx', min: 6, label: 'terms sidebar' },
+  { path: 'src/pages/PrivacyPage.tsx', min: 5, label: 'privacy sidebar' },
+  { path: 'src/pages/BookmarksPage.tsx', min: 8, label: 'bookmarks shell' },
+  { path: 'src/pages/TimelinePage.tsx', min: 6, label: 'timeline shell' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 

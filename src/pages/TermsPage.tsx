@@ -105,7 +105,7 @@ export default function TermsPage() {
                     <a
                       key={s.id}
                       href={`#${s.id}`}
-                      className="block text-sm text-ink-muted hover:text-crimson transition-colors"
+                      className="flex min-h-[44px] items-center text-sm text-ink-muted hover:text-crimson transition-colors"
                     >
                       {s.title}
                     </a>
