@@ -37,7 +37,7 @@ const floors = [
   { path: 'src/pages/ReadTheBookPage.tsx', min: 18, label: 'read reader chrome' },
   { path: 'src/pages/AboutPage.tsx', min: 7, label: 'about key routes' },
   { path: 'src/pages/ProfilePage.tsx', min: 14, label: 'profile sources/nav' },
-  { path: 'src/pages/admin/AdminLayout.tsx', min: 4, label: 'admin shell nav' },
+  { path: 'src/pages/admin/AdminLayout.tsx', min: 5, label: 'admin shell nav' },
   { path: 'src/components/RecordTabs.tsx', min: 3, label: 'record section tabs' },
   { path: 'src/pages/admin/AdminMedia.tsx', min: 3, label: 'admin media controls' },
   { path: 'src/pages/admin/AdminContent.tsx', min: 4, label: 'admin content tabs' },
@@ -167,7 +167,7 @@ if (failures > 0) {
 }
 
 const total = results.reduce((n, r) => n + r.count, 0)
-const MIN_TOTAL_MARKERS = 522
+const MIN_TOTAL_MARKERS = 523
 const MIN_SURFACES = 69
 if (floors.length < MIN_SURFACES) {
   console.error(`[verify:a11y-public-targets] FAIL — surface count ${floors.length} < floor ${MIN_SURFACES}`)

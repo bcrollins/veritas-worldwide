@@ -34,6 +34,12 @@ export default function AdminLayout() {
 
   return (
     <div className="min-h-screen bg-[#0f0f0f] flex">
+      <a
+        href="#admin-main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:inline-flex focus:min-h-[44px] focus:min-w-[44px] focus:items-center focus:rounded-sm focus:bg-crimson focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-semibold focus:text-white"
+      >
+        Skip to content
+      </a>
       {/* Sidebar */}
       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-obsidian border-r border-white/5 flex flex-col transition-all duration-200 flex-shrink-0`}>
         <div className="flex items-center gap-2 px-4 h-14 border-b border-white/5">
@@ -114,7 +120,7 @@ export default function AdminLayout() {
             </span>
           </div>
         </header>
-        <main className="flex-1 overflow-y-auto p-6">
+        <main id="admin-main" className="flex-1 overflow-y-auto p-6">
           <Outlet />
         </main>
       </div>
