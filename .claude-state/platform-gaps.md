@@ -81,6 +81,14 @@
   Impact: Shell, modals, news, search, membership, home, topics, forum, dossier, donation, continue-reading, institute pills, and chapter share controls meet 44px minimum hit areas.
   Resolution: incremental commits `4ed5161` → `62550a8`. Platform asserts four sourced news routes.
 
+
+## Recently Closed (2026-07-16 — ocean continuation wave)
+
+- **llms investigations section live.** Deep-state + forum indexed for AI crawlers; crawler floors require them in sitemap and llms needles. Tip `c27bb72`/`b287aa4`.
+- **45 archive pins (floor 45).** DocumentCloud Epstein manifests + CourtListener Giuffre parties; floors raised through 45.
+- **verify:auth-validation pure suite** in `verify:live`; short-password register rejected.
+- **Public 44px wave** extended to deep-state, forum, dossier footer, dispute form, terms/privacy, breadcrumbs across shells.
+
 ## Critical
 
 - **Third-party paging (Sentry cloud) is still optional.**

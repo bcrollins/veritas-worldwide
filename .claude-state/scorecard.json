@@ -1,5 +1,5 @@
 {
-  "run": 64,
+  "run": 65,
   "date": "2026-07-16",
   "site": [
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.55,
-      "previous": 9.5,
+      "composite": 9.6,
+      "previous": 9.55,
       "delta": 0.05,
-      "status": "deep-state/forum/dossier/terms/privacy/dispute 44px; tip 3c5147f live",
+      "status": "breadcrumb 44px across public shells; tip b287aa4 live",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
