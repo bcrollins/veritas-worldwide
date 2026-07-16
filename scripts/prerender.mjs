@@ -1923,6 +1923,11 @@ const staticPages = [
       'Primary sources and traceable citations are the foundation. Interpretation is labeled clearly and separated from established record.',
     ],
     featuredChapterIds: ['foreword'],
+    trustLinks: [
+      { href: '/sources', label: '→ Sources' },
+      { href: '/about', label: '→ About' },
+      ...FIELD_MANUAL_TRUST_LINKS,
+    ],
     sourceFile: 'src/pages/MethodologyPage.tsx',
   },
   {
@@ -1934,6 +1939,11 @@ const staticPages = [
       'The publication collects source material from court filings, congressional testimony, executive records, declassified archives, peer-reviewed research, and verified investigative reporting.',
     ],
     featuredChapterIds: ['foreword', 'overview'],
+    trustLinks: [
+      { href: '/methodology', label: '→ Methodology' },
+      { href: '/about', label: '→ About' },
+      ...FIELD_MANUAL_TRUST_LINKS,
+    ],
     sourceFile: 'src/pages/SourcesPage.tsx',
   },
   {
@@ -2059,6 +2069,11 @@ const staticPages = [
     description: 'How Veritas Worldwide publishes, verifies claims, and keeps its trust layer public.',
     body: [
       'The about page explains the publication model directly: what The Record is, how evidence labels work, and how reader funding supports the archive without turning the methodology into a black box.',
+    ],
+    trustLinks: [
+      { href: '/methodology', label: '→ Methodology' },
+      { href: '/sources', label: '→ Sources' },
+      ...FIELD_MANUAL_TRUST_LINKS,
     ],
     sourceFile: 'src/pages/AboutPage.tsx',
   },
