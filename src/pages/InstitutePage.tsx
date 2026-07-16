@@ -202,7 +202,7 @@ export default function InstitutePage() {
               These tracks are intentionally concrete: skilled trades, repair, preparedness, food resilience, healthcare-support pathways, and evidence workflows. The goal is not breadth for its own sake. The goal is practical usefulness.
             </p>
           </div>
-          <Link to="/institute/methodology" className="text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
+          <Link to="/institute/methodology" className="inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
             Read the full methodology →
           </Link>
         </div>
@@ -302,7 +302,7 @@ export default function InstitutePage() {
           <p className="text-sm text-[color:var(--institute-muted)]">
             Showing <span className="font-semibold text-[color:var(--institute-ink)]">{filteredTopics.length}</span> of {practicalCourseCount} practical course paths
           </p>
-          <Link to="/institute/book" className="text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
+          <Link to="/institute/book" className="inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
             Jump to the full manual →
           </Link>
         </div>
@@ -334,7 +334,7 @@ export default function InstitutePage() {
                   <h4 className="mt-2 text-base font-semibold text-[color:var(--institute-ink)]">
                     {topic.courseTitle}
                   </h4>
-                  <Link to={`/institute/courses/${topic.slug}`} className="mt-4 inline-flex text-sm font-medium text-[color:var(--institute-accent)]">
+                  <Link to={`/institute/courses/${topic.slug}`} className="mt-4 inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)]">
                     Open course →
                   </Link>
                 </div>
@@ -346,7 +346,7 @@ export default function InstitutePage() {
                   <h4 className="mt-2 text-base font-semibold text-[color:var(--institute-ink)]">
                     {topic.articleTitle}
                   </h4>
-                  <Link to={`/institute/guides/${topic.slug}`} className="mt-4 inline-flex text-sm font-medium text-[color:var(--institute-accent)]">
+                  <Link to={`/institute/guides/${topic.slug}`} className="mt-4 inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)]">
                     Open guide →
                   </Link>
                 </div>

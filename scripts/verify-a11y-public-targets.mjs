@@ -18,7 +18,7 @@ const floors = [
   { path: 'src/pages/IsraelDossierPage.tsx', min: 24, label: 'dossier source anchors' },
   { path: 'src/pages/IsraelDossierBriefingPage.tsx', min: 9, label: 'dossier briefing sections' },
   { path: 'src/pages/ProfilesIndexPage.tsx', min: 6, label: 'profiles index filters' },
-  { path: 'src/pages/InstitutePage.tsx', min: 2, label: 'institute catalog filters' },
+  { path: 'src/pages/InstitutePage.tsx', min: 6, label: 'institute catalog filters' },
   { path: 'src/pages/SourcesPage.tsx', min: 19, label: 'sources library filters' },
   { path: 'src/pages/DeepStatePage.tsx', min: 17, label: 'deep-state controls' },
   { path: 'src/pages/BibleHistoryPage.tsx', min: 13, label: 'bible-history sidebar' },
