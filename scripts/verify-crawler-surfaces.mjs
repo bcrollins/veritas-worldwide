@@ -231,7 +231,11 @@ assert(
   robotsTxt.includes('Allow: /veritas-institute-field-manual.pdf'),
   'robots.txt must Allow field manual PDF'
 )
-console.log('[verify:crawler-surfaces] robots.txt allows security.txt + field manual + Sitemap')
+assert(
+  /Disallow:\s*\/admin\/?/i.test(robotsTxt),
+  'robots.txt must Disallow /admin operator console',
+)
+console.log('[verify:crawler-surfaces] robots.txt allows security.txt + field manual + Sitemap; Disallow /admin')
 
 const prerenderLlms = read('scripts/prerender.mjs')
 assert(
