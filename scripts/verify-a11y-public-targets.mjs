@@ -77,6 +77,24 @@ for (const floor of floors) {
   }
 }
 
+
+// Ban residual p-0.5 icon buttons on high-traffic public surfaces
+const banFiles = [
+  'src/pages/ForumPage.tsx',
+  'src/pages/ChapterPage.tsx',
+  'src/pages/HomePage.tsx',
+  'src/pages/SearchPage.tsx',
+  'src/components/AuthModal.tsx',
+]
+for (const rel of banFiles) {
+  const src = readFileSync(join(root, rel), 'utf8')
+  const hits = src.match(/className="p-0\.5"/g) || []
+  if (hits.length > 0) {
+    console.error(`[verify:a11y-public-targets] FAIL — ${rel} still has ${hits.length} className="p-0.5" controls`)
+    failures++
+  }
+}
+
 if (failures > 0) {
   console.error(`[verify:a11y-public-targets] FAIL — ${failures} floor(s) breached`)
   process.exit(1)
