@@ -1,5 +1,5 @@
 {
-  "run": 194,
+  "run": 195,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.59,
       "previous": 9.58,
       "delta": 0.01,
-      "status": "security.txt must-revalidate + 13 CSP headers + admin noindex; tip cbd9729+",
+      "status": "CORS Vary/Max-Age + CSP 13 headers + anti-enum; tip 39e33ad 15-step",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -76,10 +76,10 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 9.7,
-      "previous": 9.6,
-      "delta": 0.1,
-      "status": "institute skip-to-content 44px live; tip bd1c2bc 15-step",
+      "composite": 9.75,
+      "previous": 9.7,
+      "delta": 0.05,
+      "status": "catalog text links 44px floor 6; tip 33eca83+",
       "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
