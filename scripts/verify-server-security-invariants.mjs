@@ -43,6 +43,7 @@ assert(server.includes("app.use('/api/user/bookmarks', rateLimit"), 'bookmarks r
 assert(server.includes("app.use('/api/user/progress', rateLimit"), 'progress rateLimit middleware registered')
 assert(server.includes("app.use('/api/user/preferences', rateLimit"), 'preferences rateLimit middleware registered')
 assert(server.includes("app.use('/api/user/profile', rateLimit"), 'profile rateLimit middleware registered')
+assert(server.includes("app.use('/api/analytics/pageview', rateLimit"), 'pageview rateLimit middleware registered')
 assert(
   server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
     server.includes('/.well-known/security.txt'),
