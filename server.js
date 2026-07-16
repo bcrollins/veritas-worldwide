@@ -831,6 +831,7 @@ app.use('/api/analytics/pageview', rateLimit({ name: 'analytics-pageview', windo
 app.use('/api/analytics/snapshot', rateLimit({ name: 'analytics-snapshot', windowMs: 60_000, max: 60 }))
 app.use('/api/client-error', rateLimit({ name: 'client-error', windowMs: 60_000, max: 30 }))
 // Operator probes — keep readable under multi-agent verify fleets.
+app.use('/api/health', rateLimit({ name: 'health', windowMs: 60_000, max: 120 }))
 app.use('/api/health/history', rateLimit({ name: 'health-history', windowMs: 60_000, max: 60 }))
 app.use('/api/build-info', rateLimit({ name: 'build-info', windowMs: 60_000, max: 60 }))
 

@@ -65,8 +65,10 @@ assert(server.includes("app.use('/api/user/preferences', rateLimit"), 'preferenc
 assert(server.includes("app.use('/api/user/profile', rateLimit"), 'profile rateLimit middleware registered')
 assert(server.includes("app.use('/api/analytics/pageview', rateLimit"), 'pageview rateLimit middleware registered')
 assert(server.includes("app.use('/api/analytics/snapshot', rateLimit"), 'analytics snapshot rateLimit registered')
+assert(server.includes("app.use('/api/health', rateLimit"), 'health rateLimit registered')
 assert(server.includes("app.use('/api/health/history', rateLimit"), 'health/history rateLimit registered')
 assert(server.includes("app.use('/api/build-info', rateLimit"), 'build-info rateLimit registered')
+assert(server.includes("name: 'health'") || server.includes('name: "health"'), 'health rateLimit must be named')
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
 assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
@@ -101,7 +103,7 @@ assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rej
 
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length
-assert(rateLimitUses >= 22, `rateLimit middleware count ${rateLimitUses} below floor 22`)
+assert(rateLimitUses >= 23, `rateLimit middleware count ${rateLimitUses} below floor 23`)
 // Isolation: counters must be scoped per route name so analytics cannot exhaust auth
 assert(
   server.includes('name: \'auth-login\'') || server.includes('name: "auth-login"') || server.includes("name: 'auth-login'"),
@@ -112,7 +114,7 @@ assert(server.includes("name: 'analytics-pageview'") || server.includes('name: "
 assert(server.includes('`${name}:${identity') || server.includes('${name}:${identity'), 'rateLimit keys must combine name + identity')
 
 const namedLimiterCount = (server.match(/rateLimit\(\{\s*name:\s*'/g) || []).length
-assert(namedLimiterCount >= 22, `named rateLimit configs ${namedLimiterCount} below floor 22`)
+assert(namedLimiterCount >= 23, `named rateLimit configs ${namedLimiterCount} below floor 23`)
 
 // Dependency hygiene — start is node server.js; do not reintroduce dead static servers
 assert(packageJson.scripts?.start === 'node server.js', 'start script must be node server.js')
