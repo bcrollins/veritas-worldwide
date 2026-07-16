@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
+import { sanitizeReturnTo } from '../lib/authPaths'
 
 export default function AuthModal() {
   const { showAuthModal, setShowAuthModal, authModalMode, setAuthModalMode, consumeAuthIntent, login, signup } = useAuth()
@@ -86,8 +87,9 @@ export default function AuthModal() {
       if (result.success) {
         const intent = consumeAuthIntent()
         setShowAuthModal(false)
-        if (intent?.returnTo) {
-          navigate(intent.returnTo, { replace: true })
+        const returnTo = intent?.returnTo ? sanitizeReturnTo(intent.returnTo) : null
+        if (returnTo) {
+          navigate(returnTo, { replace: true })
         }
       } else {
         setError(result.error || 'Something went wrong.')

@@ -20,6 +20,7 @@ import {
 } from './authStore'
 import { trackSignUp, trackLogin, trackBookmark } from './ga4'
 import { scoreAccountCreated } from './leadScoring'
+import { sanitizeReturnTo } from './authPaths'
 
 const AUTH_INTENT_KEY = 'veritas_auth_intent'
 
@@ -60,15 +61,6 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType | null>(null)
-
-/** Only allow same-origin relative paths — blocks open redirects via //evil.com. */
-function sanitizeReturnTo(returnTo: string): string | null {
-  if (typeof returnTo !== 'string') return null
-  const path = returnTo.trim()
-  if (!path.startsWith('/') || path.startsWith('//') || path.includes('\\')) return null
-  if (path.includes('://')) return null
-  return path
-}
 
 function loadAuthIntent(): AuthIntent | null {
   if (typeof window === 'undefined') return null
