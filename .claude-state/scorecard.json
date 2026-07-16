@@ -1,5 +1,5 @@
 {
-  "run": 126,
+  "run": 127,
   "date": "2026-07-16",
   "site": [
     {
@@ -20,10 +20,10 @@
     },
     {
       "feature": "Methodology & Trust Layer",
-      "composite": 9.54,
-      "previous": 9.52,
+      "composite": 9.56,
+      "previous": 9.54,
       "delta": 0.02,
-      "status": "HEAD c8f3feb 15-step; JWT HS256; 12 headers; health 120/min; full skip-link coverage",
+      "status": "HEAD 53a2297 15-step; req.ip under trust proxy; JWT HS256; 12 headers; rateLimit\u00d723",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip c8f3feb live 15-step re-proven; skip locks pure; scorecard 126; 69 a11y/524",
+      "status": "product tip 53a2297 live 15-step; scorecard 127; full security+a11y skip coverage",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
