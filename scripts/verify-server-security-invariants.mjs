@@ -427,6 +427,16 @@ assert(packageJson.dependencies?.pg, 'pg runtime dependency required')
 assert(packageJson.engines?.node, 'package.json engines.node required')
 const verifyLive = packageJson.scripts?.['verify:live'] || ''
 assert(verifyLive.includes('verify-security-headers'), 'verify:live must include security-headers')
+// Live security-headers suite composition (13 baseline + CSP + admin noindex).
+const securityHeadersScript = readFileSync(join(root, 'scripts/verify-security-headers.mjs'), 'utf8')
+assert(securityHeadersScript.includes("'content-security-policy'"), 'live headers suite requires content-security-policy')
+assert(securityHeadersScript.includes('frame-ancestors'), 'live headers suite asserts frame-ancestors')
+assert(securityHeadersScript.includes('browsing-topics'), 'live headers suite asserts browsing-topics denial')
+assert(securityHeadersScript.includes('must-revalidate'), 'live headers suite asserts security.txt must-revalidate')
+assert(securityHeadersScript.includes('x-robots-tag') || securityHeadersScript.includes('X-Robots-Tag'), 'live headers suite probes admin X-Robots-Tag')
+assert(securityHeadersScript.includes('/admin'), 'live headers suite probes /admin for noindex')
+const requiredHeaderCount = (securityHeadersScript.match(/^\s+'[a-z0-9-]+':\s+/gm) || []).length
+assert(requiredHeaderCount >= 13, `live headers suite must require ≥13 baseline headers (got ${requiredHeaderCount})`)
 assert(verifyLive.includes('verify-server-security-invariants'), 'verify:live must include server-security-invariants')
 assert(verifyLive.includes('verify-a11y-public-targets'), 'verify:live must include a11y floors')
 assert(verifyLive.includes('verify-auth-flows'), 'verify:live must include auth smoke')
