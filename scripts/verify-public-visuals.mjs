@@ -74,6 +74,7 @@ const routes = [
     ],
   },
   { path: '/topics/federal-reserve', text: ['Federal Reserve', 'FEDERAL RESERVE'], anyText: ['primary-source', 'Topic', 'Subscribe', 'SUBSCRIBE'] },
+  { path: '/about', text: ['About', 'ABOUT'], anyText: ['Methodology', 'Field Manual', 'Membership', 'Veritas'] },
   { path: '/terms', text: ['core downloads are public without a login'] },
 ]
 
