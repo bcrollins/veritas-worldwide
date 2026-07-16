@@ -107,6 +107,7 @@ assert(namedLimiterCount >= 20, `named rateLimit configs ${namedLimiterCount} be
 assert(packageJson.scripts?.start === 'node server.js', 'start script must be node server.js')
 assert(!packageJson.dependencies?.serve, 'must not reintroduce unused serve package')
 assert(packageJson.dependencies?.pg, 'pg runtime dependency required')
+assert(packageJson.engines?.node, 'package.json engines.node required')
 
 console.log(
   `[verify:server-security-invariants] PASS — server.js security surface locked · rateLimit×${rateLimitUses}`,
