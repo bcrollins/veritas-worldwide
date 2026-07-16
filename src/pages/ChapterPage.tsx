@@ -447,7 +447,7 @@ function ChapterPositionBar({ current }: { current: Chapter }) {
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-10">
           {prev ? (
-            <Link to={`/chapter/${prev.id}`} className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
+            <Link to={`/chapter/${prev.id}`} className="flex min-h-[44px] items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
               <span className="hidden sm:inline">{prev.number}</span>
               <span className="sm:hidden">Prev</span>
@@ -462,7 +462,7 @@ function ChapterPositionBar({ current }: { current: Chapter }) {
             </span>
           </div>
           {next ? (
-            <Link to={`/chapter/${next.id}`} className="flex items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
+            <Link to={`/chapter/${next.id}`} className="flex min-h-[44px] items-center gap-2 font-sans text-[0.6rem] tracking-[0.08em] uppercase text-ink-muted hover:text-crimson transition-colors">
               <span className="hidden sm:inline">{next.number}</span>
               <span className="sm:hidden">Next</span>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
