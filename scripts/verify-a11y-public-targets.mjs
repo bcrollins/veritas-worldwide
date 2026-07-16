@@ -161,6 +161,22 @@ for (const rel of sub44Files) {
   }
 }
 
+// Skip-to-content must exist on public, institute, and admin shells with 44px focus targets.
+const skipShells = [
+  { path: 'src/App.tsx', target: '#main-content', label: 'public shell' },
+  { path: 'src/components/institute/InstituteLayout.tsx', target: '#institute-main', label: 'institute shell' },
+  { path: 'src/pages/admin/AdminLayout.tsx', target: '#admin-main', label: 'admin shell' },
+]
+for (const shell of skipShells) {
+  const src = readFileSync(join(root, shell.path), 'utf8')
+  if (!src.includes('Skip to content') || !src.includes(shell.target) || !src.includes('min-h-[44px]')) {
+    console.error(
+      `[verify:a11y-public-targets] FAIL — ${shell.label} missing 44px skip-to-content → ${shell.target}`,
+    )
+    failures++
+  }
+}
+
 if (failures > 0) {
   console.error(`[verify:a11y-public-targets] FAIL — ${failures} floor(s) breached`)
   process.exit(1)
