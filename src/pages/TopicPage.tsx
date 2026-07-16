@@ -337,7 +337,7 @@ export default function TopicPage() {
                 <Link
                   key={`${topic.slug}-${keyword}`}
                   to={`/search?q=${encodeURIComponent(keyword)}`}
-                  className="inline-flex items-center rounded-sm border border-border bg-surface px-3 py-2 font-sans text-xs text-ink-muted hover:border-crimson hover:text-crimson transition-colors"
+                  className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-3 py-2 font-sans text-xs text-ink-muted hover:border-crimson hover:text-crimson transition-colors"
                 >
                   {keyword}
                 </Link>
@@ -413,13 +413,13 @@ export default function TopicPage() {
             <div className="flex flex-col gap-3 mt-5">
               <Link
                 to="/read"
-                className="inline-flex items-center justify-center rounded-sm bg-crimson px-4 py-3 font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white hover:bg-crimson-dark transition-colors"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-crimson px-4 py-3 font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white hover:bg-crimson-dark transition-colors"
               >
                 Read The Record
               </Link>
               <Link
                 to="/profiles"
-                className="inline-flex items-center justify-center rounded-sm border border-border px-4 py-3 font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-4 py-3 font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink hover:border-crimson hover:text-crimson transition-colors"
               >
                 Browse All Profiles
               </Link>
