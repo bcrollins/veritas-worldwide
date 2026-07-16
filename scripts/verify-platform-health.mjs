@@ -211,6 +211,16 @@ const healthResult = await fetchJson('/api/health')
         'Health probe reports ok',
         `GET /api/health returned ${healthResult.response.status} status=${health.status || 'unknown'}`
       )
+      const healthRateLimit =
+        healthResult.response.headers.get('ratelimit-limit') ||
+        healthResult.response.headers.get('x-ratelimit-limit')
+      addCheck(
+        checks,
+        failures,
+        healthRateLimit && Number(healthRateLimit) >= 60,
+        'Health probe exposes rate-limit budget headers',
+        `health RateLimit-Limit=${healthRateLimit}`,
+      )
       addCheck(
         checks,
         failures,
