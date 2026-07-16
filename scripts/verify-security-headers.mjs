@@ -10,7 +10,7 @@ const REQUIRED = {
   'x-content-type-options': /^nosniff$/i,
   'referrer-policy': /strict-origin-when-cross-origin/i,
   'strict-transport-security': /max-age=\d+/i,
-  'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\).*display-capture=\(\)/i,
+  'permissions-policy': /camera=\(\).*microphone=\(\).*geolocation=\(\).*display-capture=\(\).*clipboard-write=\(self\)/i,
   'x-xss-protection': /1/,
   'x-permitted-cross-domain-policies': /^none$/i,
   'cross-origin-opener-policy': /same-origin-allow-popups/i,
