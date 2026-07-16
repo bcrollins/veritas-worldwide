@@ -1,5 +1,5 @@
 {
-  "run": 34,
+  "run": 35,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -138,9 +138,10 @@
     "Merged brand assets and usage guidelines into live /content-pack (ContentPackPage), deleted dead ContentPacksPage.tsx dual-route drift.",
     "Pinned 11 Wayback snapshots for public briefing source rows, published briefing-source-archive-manifest.json, indexed in llms/workbook manifest/platform health.",
     "Live-verified production commit db4519dd0187 / deployment f3c2af13-0654-420e-8a7f-38b9ec6ea405: /api/health ok, archive manifest 200 with 11 pins, content-pack brand kit strings live, verify:platform PASS, verify:israel-dossier PASS.",
-    "GitHub Actions runs fail at job start due to GitHub account billing lock (not code); Railway deploy still advanced production."
+    "GitHub Actions runs fail at job start due to GitHub account billing lock (not code); Railway deploy still advanced production.",
+    "Live tip 3a2c95296097 / deployment 2422b8c8-14fe-4c49-b77a-f73811a5de6e verified: health ok, 12 pinned archives, brand kit + archive pack live, all critical routes 200, platform verifier PASS."
   ],
-  "next_task": "When GitHub billing unlocks, re-run Actions; pin remaining 5 briefing lookup-only URLs; add Sentry if DSN available.",
+  "next_task": "External only: unlock GitHub billing for CI; pin remaining 4 lookup-only briefing hosts; add Sentry when DSN exists.",
   "next_priorities": [
     "Unlock GitHub billing so CI verification fleet can run again.",
     "Pin remaining briefing source URLs once Wayback has snapshots (Forensic Architecture, Lancet, OCHA content URLs, UN Digital Library).",

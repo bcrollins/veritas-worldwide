@@ -1,23 +1,23 @@
 {
-  "checkedAt": "2026-05-24T05:23:46.238Z",
+  "checkedAt": "2026-07-16T05:43:44.760Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "83e2451ae18a820ffb7e30f5495f6fb1469a2658",
-    "commitShort": "83e2451ae18a",
-    "deploymentId": "b27d1e14-8aa7-427e-9968-52bc2c3bde82",
+    "commit": "3a2c952960973194b786190a1f5d68367a3eeff3",
+    "commitShort": "3a2c95296097",
+    "deploymentId": "2422b8c8-14fe-4c49-b77a-f73811a5de6e",
     "environment": "production",
     "prerenderedRouteCount": 289
   },
   "headers": {
     "version": "1.0.0",
-    "commit": "83e2451ae18a",
-    "deployment": "b27d1e14-8aa7-427e-9968-52bc2c3bde82"
+    "commit": "3a2c95296097",
+    "deployment": "2422b8c8-14fe-4c49-b77a-f73811a5de6e"
   },
   "analytics": {
-    "lifetime": 3520,
-    "today": 148,
+    "lifetime": 6820,
+    "today": 5,
     "signups": 8,
     "payments": 0
   },
@@ -26,11 +26,6 @@
       "ok": true,
       "label": "Build info route responds",
       "detail": "GET /api/build-info returned 200"
-    },
-    {
-      "ok": true,
-      "label": "Live commit matches expected release",
-      "detail": "expected 83e2451, observed 83e2451ae18a"
     },
     {
       "ok": true,
@@ -45,22 +40,22 @@
     {
       "ok": true,
       "label": "Release commit header present",
-      "detail": "83e2451ae18a"
+      "detail": "3a2c95296097"
     },
     {
       "ok": true,
       "label": "Release deployment header present",
-      "detail": "b27d1e14-8aa7-427e-9968-52bc2c3bde82"
+      "detail": "2422b8c8-14fe-4c49-b77a-f73811a5de6e"
     },
     {
       "ok": true,
       "label": "Release headers match build info",
-      "detail": "api=83e2451ae18a / b27d1e14-8aa7-427e-9968-52bc2c3bde82 · headers=83e2451ae18a / b27d1e14-8aa7-427e-9968-52bc2c3bde82"
+      "detail": "api=3a2c95296097 / 2422b8c8-14fe-4c49-b77a-f73811a5de6e · headers=3a2c95296097 / 2422b8c8-14fe-4c49-b77a-f73811a5de6e"
     },
     {
       "ok": true,
       "label": "Build info includes JavaScript entry assets",
-      "detail": "js=11"
+      "detail": "js=5"
     },
     {
       "ok": true,
@@ -70,7 +65,7 @@
     {
       "ok": true,
       "label": "Public bundle excludes deprecated admin auth assets",
-      "detail": "js=assets/index-BxJbQdrQ.js, assets/rolldown-runtime-Dw2cE7zH.js, assets/vendor-react-CQ9I-_Vi.js, assets/MarketingConsentField-BFTKUqXL.js, assets/analytics-c2mS4NBB.js, assets/hubspot-BdmdrxY9.js, assets/ga4-FDeMVNLC.js, assets/NewsletterSignup-DmHeVz1Z.js, assets/AuthContext-CGOIQa28.js, assets/constants-D7mKDxHq.js, assets/conversionTracking-DcBVciny.js"
+      "detail": "js=assets/index-HwDp1cla.js, assets/rolldown-runtime-QTnfLwEv.js, assets/vendor-react-CyYHJXCk.js, assets/hubspot-BhVuqbwi.js, assets/analytics-D_b_jtBZ.js"
     },
     {
       "ok": true,
