@@ -63,6 +63,7 @@ const floors = [
   { path: 'src/pages/SubscribeSuccessPage.tsx', min: 3, label: 'subscribe success CTAs' },
   { path: 'src/components/AipacDiagram.tsx', min: 6, label: 'AIPAC map controls' },
   { path: 'src/pages/BernieShowPage.tsx', min: 5, label: 'Bernie show controls' },
+  { path: 'src/pages/ContentPackPage.tsx', min: 8, label: 'content pack downloads' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 
