@@ -1,5 +1,5 @@
 {
-  "run": 46,
+  "run": 48,
   "date": "2026-07-16",
   "completed": [
     "Verified the live public health surface: /, /search, /methodology, /sources, /membership, /analytics, /api/analytics/snapshot, and anonymous /api/search all returned successfully on April 7, 2026.",
@@ -171,7 +171,10 @@
     "LIVE 6cc035f+: health history commitTransitions/uniqueCommits; force samples on deploy/status/failure; boot seed sample; analytics Release Health shows commit window + deploy transitions.",
     "LIVE 429edd6+: access token + session TTL 30d\u21927d; /api/auth/status exposes accessTokenTtl=7d and sessionTtlMs=604800000.",
     "Newsletter signup events carry UTM/campaign attribution from conversionTracking (0694cd7).",
-    "About page key routes include Institute, Field Manual, and durable PDF downloads (34d7b0d)."
+    "About page key routes include Institute, Field Manual, and durable PDF downloads (34d7b0d).",
+    "Silent session refresh live: POST /api/auth/refresh rotates bearer tokens, revokes prior session rows, returns expiresAt; client refreshes within 12h of expiry and on tab focus (fc6d4d0+).",
+    "JWT jti uniqueness ensures same-second refresh always mints a new token (fbe7bc1).",
+    "Search engagement boost: recent=chapter ids get +18 score; title relevance still dominates; verified chapter-9 42\u219260 on federal reserve (251ffab+)."
   ],
   "next_task": "External only remaining for archives/CI/Sentry. Continue product polish: news corpus, membership attribution, institute PDF server artifact.",
   "next_priorities": [

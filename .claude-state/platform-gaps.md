@@ -56,6 +56,17 @@
   Impact: /api/health/history exposes commitTransitions and uniqueCommits; samples force-write on commit/status/failure changes and process boot; analytics Release Health renders the timeline.
   Resolution: server.js history + AnalyticsPage UI + verify:health-transitions.
 
+
+## Recently Closed (2026-07-16 — session refresh + search engagement)
+
+- **Silent session refresh is live.**
+  Impact: readers stay signed in across the 7-day TTL without re-entering credentials; refresh rotates tokens and invalidates the previous session row (single-use).
+  Resolution: POST /api/auth/refresh, client refreshSession/shouldRefreshSession, auth smoke rotation proof, unique JWT jti.
+
+- **Search engagement personalization is live.**
+  Impact: recently read chapters receive a modest ranking boost without displacing title/source relevance.
+  Resolution: recent= query param, +18 score, SearchPage reading-history wiring, verify:search boost assertion.
+
 ## Critical
 
 - **Third-party paging (Sentry cloud) is still optional.**
