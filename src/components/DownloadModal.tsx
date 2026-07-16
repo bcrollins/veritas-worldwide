@@ -71,7 +71,13 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div className="relative bg-parchment dark:bg-ink border border-border rounded-sm max-w-lg w-full p-8 shadow-2xl" onClick={e => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute top-4 right-4 text-ink-faint hover:text-ink transition-colors text-xl">&times;</button>
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors text-xl"
+          aria-label="Close"
+        >
+          &times;
+        </button>
 
         {step === 'cta' && (
           <>
@@ -94,7 +100,7 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
                 href={getAttributedDonateUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-wide rounded-sm hover:bg-crimson-dark transition-colors"
+                className="w-full min-h-[44px] flex items-center justify-center gap-2 px-5 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-wide rounded-sm hover:bg-crimson-dark transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                 Support This Work
@@ -102,20 +108,27 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
             </div>
 
             <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint text-center mb-3">Or share the truth</p>
-            <div className="flex justify-center gap-2 mb-6">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
               {(['twitter', 'facebook', 'whatsapp', 'telegram', 'email'] as const).map(p => (
-                <button key={p} onClick={() => handleShare(p)} className="px-3 py-2 border border-border rounded-sm font-sans text-xs text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors capitalize">
+                <button
+                  key={p}
+                  onClick={() => handleShare(p)}
+                  className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-3 py-2 border border-border rounded-sm font-sans text-xs text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors capitalize"
+                >
                   {p === 'twitter' ? 'X' : p === 'email' ? 'Email' : p.charAt(0).toUpperCase() + p.slice(1)}
                 </button>
               ))}
-              <button onClick={handleCopy} className="px-3 py-2 border border-border rounded-sm font-sans text-xs text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors">
+              <button
+                onClick={handleCopy}
+                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-3 py-2 border border-border rounded-sm font-sans text-xs text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors"
+              >
                 Copy
               </button>
             </div>
 
             <button
               onClick={handleDownload}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-sm font-semibold tracking-wide rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+              className="w-full min-h-[44px] flex items-center justify-center gap-2 px-5 py-3 border border-border text-ink font-sans text-sm font-semibold tracking-wide rounded-sm hover:border-crimson hover:text-crimson transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               Just Download — I Can't Support Right Now
@@ -145,7 +158,7 @@ export default function DownloadModal({ isOpen, onClose, fileName, fileUrl }: Do
             <p className="font-body text-sm text-ink-muted">{errorMessage}</p>
             <button
               onClick={() => setStep('cta')}
-              className="mt-4 inline-flex items-center justify-center px-4 py-2.5 border border-border text-ink font-sans text-xs font-semibold tracking-wide rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+              className="mt-4 inline-flex min-h-[44px] items-center justify-center px-4 py-2.5 border border-border text-ink font-sans text-xs font-semibold tracking-wide rounded-sm hover:border-crimson hover:text-crimson transition-colors"
             >
               Back
             </button>
