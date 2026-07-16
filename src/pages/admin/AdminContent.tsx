@@ -108,7 +108,7 @@ export default function AdminContent() {
             <button
               key={t}
               onClick={() => { setTab(t); if (t === 'generator' && !editingArticle) resetGenerator() }}
-              className={`px-3 py-1.5 rounded font-sans text-xs tracking-wide transition-colors ${
+              className={`inline-flex min-h-[44px] items-center px-3 py-1.5 rounded font-sans text-xs tracking-wide transition-colors ${
                 tab === t ? 'bg-crimson/10 text-crimson' : 'bg-white/5 text-white/30 hover:text-white/50'
               }`}
             >

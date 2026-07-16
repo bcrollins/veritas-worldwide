@@ -145,3 +145,10 @@
 - **The Veritas Institute catalog is code-authored, not editor-authored.**
   Impact: the new learning vertical can scale fast in the repo, but long-term editorial expansion will bottleneck on code changes instead of structured publishing workflows.
   Recommendation: once the information architecture is validated, introduce a structured authoring system or content model for courses, guides, and manual sections.
+
+## Recently Closed (2026-07-16 — a11y ocean wave + floors)
+
+- **Public 44px wave expanded and floor-gated.** Home/dossier/forum/deep-state sources, chapter actions, /read chrome, about key routes, profiles, language picker, cookie privacy, breadcrumbs, error recovery, admin shell/media/content/disputes, RecordTabs.
+- **verify:a11y-public-targets** pure scanner in `verify:live` with per-surface floors so the wave cannot silently regress.
+- Interval-shipped tips through `a4e73a5` / `b14c5cd` / `1c4fea6` / `ec05960` / `47dc991` with full live green on successive deploys.
+

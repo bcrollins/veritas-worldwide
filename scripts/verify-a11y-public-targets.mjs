@@ -33,6 +33,9 @@ const floors = [
   { path: 'src/pages/AboutPage.tsx', min: 7, label: 'about key routes' },
   { path: 'src/pages/ProfilePage.tsx', min: 4, label: 'profile sources/nav' },
   { path: 'src/pages/admin/AdminLayout.tsx', min: 4, label: 'admin shell nav' },
+  { path: 'src/components/RecordTabs.tsx', min: 3, label: 'record section tabs' },
+  { path: 'src/pages/admin/AdminMedia.tsx', min: 3, label: 'admin media controls' },
+  { path: 'src/pages/admin/AdminContent.tsx', min: 1, label: 'admin content tabs' },
   { path: 'src/styles/index.css', min: 1, label: 'institute-button min-height 44' },
 ]
 

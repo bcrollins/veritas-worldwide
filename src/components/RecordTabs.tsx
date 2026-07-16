@@ -67,7 +67,7 @@ export default function RecordTabs({ activeTab, onTabChange }: Props) {
         {/* Collapse toggle */}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="flex items-center justify-center w-full py-2 mb-1 text-ink-faint hover:text-ink transition-colors"
+          className="flex min-h-[44px] items-center justify-center w-full py-2 mb-1 text-ink-faint hover:text-ink transition-colors"
           aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           title={collapsed ? 'Expand' : 'Collapse'}
         >
@@ -84,7 +84,7 @@ export default function RecordTabs({ activeTab, onTabChange }: Props) {
               <button
                 key={tab.id}
                 onClick={() => onTabChange(tab.id)}
-                className={`group flex items-center gap-3 px-3 py-2.5 rounded-sm text-left transition-all duration-200 ${
+                className={`group flex min-h-[44px] items-center gap-3 px-3 py-2.5 rounded-sm text-left transition-all duration-200 ${
                   isActive
                     ? 'bg-crimson/8 text-crimson font-semibold border-l-2 border-crimson'
                     : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50 border-l-2 border-transparent'
@@ -127,7 +127,7 @@ export default function RecordTabs({ activeTab, onTabChange }: Props) {
               <button
                 key={tab.id}
                 onClick={() => onTabChange(tab.id)}
-                className={`flex-1 flex flex-col items-center justify-center gap-0.5 py-2.5 transition-colors ${
+                className={`flex-1 flex min-h-[44px] flex-col items-center justify-center gap-0.5 py-2.5 transition-colors ${
                   isActive
                     ? 'text-crimson bg-crimson/5 border-t-2 border-crimson'
                     : 'text-ink-faint hover:text-ink border-t-2 border-transparent'

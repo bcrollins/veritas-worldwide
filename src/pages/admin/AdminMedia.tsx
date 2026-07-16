@@ -87,7 +87,7 @@ export default function AdminMedia() {
           <button
             onClick={checkAllImages}
             disabled={checking}
-            className={`px-3 py-1.5 rounded font-sans text-xs transition-colors ${
+            className={`inline-flex min-h-[44px] items-center px-3 py-1.5 rounded font-sans text-xs transition-colors ${
               checking ? 'bg-white/5 text-white/20 cursor-wait' : 'bg-crimson/10 text-crimson hover:bg-crimson/20'
             }`}
           >
@@ -135,7 +135,7 @@ export default function AdminMedia() {
           <button
             key={t}
             onClick={() => setFilter(t)}
-            className={`px-3 py-1.5 rounded font-sans text-xs tracking-wide transition-colors ${
+            className={`inline-flex min-h-[44px] items-center px-3 py-1.5 rounded font-sans text-xs tracking-wide transition-colors ${
               filter === t ? 'bg-crimson/10 text-crimson' : 'bg-white/5 text-white/30 hover:text-white/50'
             }`}
           >
@@ -190,7 +190,7 @@ export default function AdminMedia() {
                               placeholder="New image URL..."
                               className="flex-1 px-2 py-1 bg-white/5 border border-white/10 rounded text-white font-mono text-[10px] focus:outline-none focus:border-crimson/30"
                             />
-                            <button onClick={() => saveOverride(img.src)} className="px-2 py-1 bg-crimson/10 text-crimson font-sans text-[10px] rounded">Save</button>
+                            <button onClick={() => saveOverride(img.src)} className="inline-flex min-h-[44px] items-center px-2 py-1 bg-crimson/10 text-crimson font-sans text-[10px] rounded">Save</button>
                           </div>
                         ) : (
                           <button

@@ -1,5 +1,5 @@
 {
-  "run": 73,
+  "run": 74,
   "date": "2026-07-16",
   "site": [
     {
@@ -28,18 +28,18 @@
     },
     {
       "feature": "Chapter Reading",
-      "composite": 9.35,
-      "previous": 9.3,
+      "composite": 9.4,
+      "previous": 9.35,
       "delta": 0.05,
-      "status": "chapter actions/access-gate/share 44px; tip 47dc991 + home/dossier/forum wave ec05960 live",
+      "status": "read chrome 44px; a11y floors in verify:live; tip 1c4fea6+",
       "plus_half_requires": "Verify the auth upgrade/downgrade experience at 390px and 430px in a browser session and add regression coverage for the /read reader shell as well as individual chapter routes."
     },
     {
       "feature": "Reader Access Control",
-      "composite": 9.95,
-      "previous": 9.9,
-      "delta": 0.05,
-      "status": "authPaths sanitizeReturnTo shared; AuthModal double-guard; tip c868106",
+      "composite": 9.97,
+      "previous": 9.95,
+      "delta": 0.02,
+      "status": "auth inputs 44px; pure a11y floors; tip 1c4fea6",
       "plus_half_requires": "Optional multi-device session inventory UI for readers."
     },
     {
@@ -68,10 +68,10 @@
     },
     {
       "feature": "Publication Shell",
-      "composite": 9.7,
-      "previous": 9.65,
+      "composite": 9.75,
+      "previous": 9.7,
       "delta": 0.05,
-      "status": "home about links + content-pack titles + shell controls 44px wave continuing",
+      "status": "RecordTabs 44px; about/profile/admin shell; tip b14c5cd+",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
