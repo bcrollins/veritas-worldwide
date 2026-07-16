@@ -1,5 +1,5 @@
 {
-  "run": 40,
+  "run": 41,
   "date": "2026-07-16",
   "site": [
     {
@@ -76,27 +76,27 @@
     },
     {
       "feature": "Veritas Institute",
-      "composite": 9.0,
-      "previous": 8.9,
-      "delta": 0.1,
-      "status": "dossier workbooks on course + guide pages",
-      "plus_half_requires": "Add the workbook templates directly into relevant course/guide detail pages, then pressure-test the Book of Knowledge PDF/manual export on real browsers."
+      "composite": 9.35,
+      "previous": 9.0,
+      "delta": 0.35,
+      "status": "build-time field manual PDF live on 3cfe939; durable download + health check",
+      "plus_half_requires": "Pressure-test multi-device PDF download from /institute/book and expand manual entry coverage with new source-backed protocols."
     },
     {
       "feature": "Deployment Observability",
-      "composite": 9.3,
-      "previous": 9.1,
-      "delta": 0.2,
-      "status": "health history endpoint + client error intake live on 8d0a41c+",
+      "composite": 9.45,
+      "previous": 9.3,
+      "delta": 0.15,
+      "status": "instituteFieldManualPdf on /api/health; platform verifier HEAD-checks PDF; failed-check trend on analytics panel",
       "plus_half_requires": "Optional Sentry DSN for external paging on top of native client-error intake."
     },
     {
       "feature": "Public Analytics",
-      "composite": 8.85,
-      "previous": 8.6,
-      "delta": 0.25,
-      "status": "health history samples + trend bar on /analytics Release Health panel",
-      "plus_half_requires": "Live-verify the panel on production and add dated trend lines for health probe failures."
+      "composite": 9.0,
+      "previous": 8.85,
+      "delta": 0.15,
+      "status": "health history dual trend: lifetime + failed-check bars on Release Health",
+      "plus_half_requires": "Accumulate multi-sample health history on multi-replica fleet and surface commit transitions in the trend UI."
     }
   ],
   "growth": [

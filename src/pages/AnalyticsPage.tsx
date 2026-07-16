@@ -629,7 +629,10 @@ function ReleaseHealthPanel({
   const samples = Array.isArray(history?.samples) ? history.samples : []
   const recent = samples.slice(-12)
   const okCount = recent.filter((sample) => sample.status === 'ok').length
+  const failedSampleCount = recent.filter((sample) => (sample.failedCount || 0) > 0 || sample.status === 'degraded').length
   const maxLifetime = Math.max(...recent.map((sample) => sample.analyticsLifetime || 0), 1)
+  const maxFailed = Math.max(...recent.map((sample) => sample.failedCount || 0), 1)
+  const hasInstitutePdfCheck = Object.prototype.hasOwnProperty.call(health.checks || {}, 'instituteFieldManualPdf')
 
   return (
     <section
@@ -642,7 +645,7 @@ function ReleaseHealthPanel({
             Release Health
           </h2>
           <p className="font-body text-sm text-ink-muted mt-2 max-w-2xl">
-            Operator-visible liveness for the live deploy. Confirms chapter data, prerender coverage, analytics store, and the manuscript PDF without requiring Railway console access.
+            Operator-visible liveness for the live deploy. Confirms chapter data, prerender coverage, analytics store, the manuscript PDF, and the Institute field-manual PDF without requiring Railway console access.
           </p>
         </div>
         <span
@@ -663,6 +666,19 @@ function ReleaseHealthPanel({
         <StatCard label="Analytics Lifetime" value={health.analyticsLifetime ?? '—'} />
         <StatCard label="Version" value={health.version || '—'} />
       </div>
+
+      {hasInstitutePdfCheck && (
+        <p className="font-sans text-[10px] text-ink-muted mb-3">
+          Institute field manual PDF check:{' '}
+          <span className={health.checks?.instituteFieldManualPdf ? 'text-verified font-semibold' : 'text-disputed font-semibold'}>
+            {health.checks?.instituteFieldManualPdf ? 'present' : 'missing'}
+          </span>
+          {' · '}
+          <a href="/veritas-institute-field-manual.pdf" className="text-crimson underline hover:text-crimson-dark">
+            /veritas-institute-field-manual.pdf
+          </a>
+        </p>
+      )}
 
       <div className="flex flex-wrap gap-2">
         {checkEntries.map(([key, ok]) => (
@@ -692,6 +708,7 @@ function ReleaseHealthPanel({
               </p>
               <p className="font-body text-xs text-ink-muted mt-1">
                 {okCount}/{recent.length} recent samples OK
+                {failedSampleCount > 0 ? ` · ${failedSampleCount} with failures` : ''}
                 {history?.minIntervalMinutes ? ` · ≥${history.minIntervalMinutes}m apart` : ''}
                 {history?.persistence ? ' · persisted' : ' · in-memory until volume available'}
               </p>
@@ -700,19 +717,45 @@ function ReleaseHealthPanel({
               /api/health/history
             </a>
           </div>
-          <div className="flex items-end gap-1 h-16">
-            {recent.map((sample, index) => {
-              const height = Math.max(8, Math.round(((sample.analyticsLifetime || 0) / maxLifetime) * 100))
-              const ok = sample.status === 'ok'
-              return (
-                <div
-                  key={`${sample.checkedAt || index}-${sample.commitShort || index}`}
-                  className={`flex-1 rounded-t-sm ${ok ? 'bg-crimson/70' : 'bg-disputed/80'}`}
-                  style={{ height: `${height}%` }}
-                  title={`${sample.checkedAt || 'sample'} · ${sample.status || 'unknown'} · lifetime ${sample.analyticsLifetime ?? '—'}`}
-                />
-              )
-            })}
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div>
+              <p className="font-sans text-[10px] uppercase tracking-[0.12em] text-ink-faint mb-2">
+                Analytics lifetime trend
+              </p>
+              <div className="flex items-end gap-1 h-16">
+                {recent.map((sample, index) => {
+                  const height = Math.max(8, Math.round(((sample.analyticsLifetime || 0) / maxLifetime) * 100))
+                  const ok = sample.status === 'ok'
+                  return (
+                    <div
+                      key={`life-${sample.checkedAt || index}-${sample.commitShort || index}`}
+                      className={`flex-1 rounded-t-sm ${ok ? 'bg-crimson/70' : 'bg-disputed/80'}`}
+                      style={{ height: `${height}%` }}
+                      title={`${sample.checkedAt || 'sample'} · ${sample.status || 'unknown'} · lifetime ${sample.analyticsLifetime ?? '—'}`}
+                    />
+                  )
+                })}
+              </div>
+            </div>
+            <div>
+              <p className="font-sans text-[10px] uppercase tracking-[0.12em] text-ink-faint mb-2">
+                Failed-check trend
+              </p>
+              <div className="flex items-end gap-1 h-16">
+                {recent.map((sample, index) => {
+                  const failed = sample.failedCount || 0
+                  const height = failed === 0 ? 6 : Math.max(12, Math.round((failed / maxFailed) * 100))
+                  return (
+                    <div
+                      key={`fail-${sample.checkedAt || index}-${sample.commitShort || index}`}
+                      className={`flex-1 rounded-t-sm ${failed === 0 ? 'bg-border' : 'bg-disputed/90'}`}
+                      style={{ height: `${height}%` }}
+                      title={`${sample.checkedAt || 'sample'} · failedCount ${failed} · commit ${sample.commitShort || '—'}`}
+                    />
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </div>
       )}

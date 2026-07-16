@@ -40,6 +40,17 @@
   Impact: client errors now reach structured Railway logs via `/api/client-error` and optional volume NDJSON, but there is still no external pager/email until a Sentry DSN or similar is configured.
   Recommendation: if out-of-band paging is required, set a Sentry DSN (or equivalent) on top of the native client-error intake.
 
+
+## Recently Closed (2026-07-16 — field manual PDF)
+
+- **Build-time Veritas Institute Field Manual PDF is live.**
+  Impact: `/veritas-institute-field-manual.pdf` is a durable 60-page static asset (application/pdf) generated at postbuild, indexed in `llms.txt`, preferred by the book download control, and reported on `/api/health` as `instituteFieldManualPdf`.
+  Resolution: `scripts/generate-institute-field-manual-pdf.mjs`, postbuild wiring, InstituteBookPDF static-first download, platform health HEAD check. Production commit `3cfe939` verified with platform PASS.
+
+- **Membership checkout UTM attribution is live.**
+  Impact: first/last-touch UTM+ref capture, Stripe `client_reference_id` stamps, and checkout analytics attribution properties on membership CTAs.
+  Resolution: `src/lib/conversionTracking.ts` + MembershipPage wiring + `verify:checkout-attribution`.
+
 ## Recently Closed (2026-07-16 continued)
 
 - **Native client error intake is live.**
@@ -69,9 +80,7 @@
 
 ## Emerging
 
-- **The Veritas Institute manual export is browser-side only.**
-  Impact: very large Book of Knowledge generations depend on client memory and device stability, which is fragile for a long-form field manual.
-  Recommendation: if live browser testing shows instability, move the institute PDF build to a server-side or build-time artifact so the manual becomes a durable downloadable asset rather than a best-effort client render.
+- **The Veritas Institute manual export now has a durable build-time PDF** at `/veritas-institute-field-manual.pdf`, with client-side generation retained only as a fallback when the static asset is absent (local dev).
 
 - **The Veritas Institute catalog is code-authored, not editor-authored.**
   Impact: the new learning vertical can scale fast in the repo, but long-term editorial expansion will bottleneck on code changes instead of structured publishing workflows.
