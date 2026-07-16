@@ -598,6 +598,7 @@ type HealthHistorySample = {
   publicChapterCount?: number
   prerenderedRouteCount?: number
   failedCount?: number
+  replica?: string
 }
 
 type HealthHistoryTransition = {
@@ -810,7 +811,7 @@ function ReleaseHealthPanel({
                       key={`fail-${sample.checkedAt || index}-${sample.commitShort || index}`}
                       className={`flex-1 rounded-t-sm ${failed === 0 ? 'bg-border' : 'bg-disputed/90'}`}
                       style={{ height: `${height}%` }}
-                      title={`${sample.checkedAt || 'sample'} · failedCount ${failed} · commit ${sample.commitShort || '—'}`}
+                      title={`${sample.checkedAt || 'sample'} · failedCount ${failed} · commit ${sample.commitShort || '—'}${sample.replica ? ` · replica ${sample.replica.slice(0, 8)}` : ''}`}
                     />
                   )
                 })}
