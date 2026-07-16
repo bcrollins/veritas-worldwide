@@ -380,6 +380,14 @@ const healthResult = await fetchJson('/api/health')
         'Institute field manual PDF is not immutably cached',
         `cache-control=${institutePdfCache || 'none'}`
       )
+      const institutePdfDisposition = (institutePdfResult.headers.get('content-disposition') || '').toLowerCase()
+      addCheck(
+        checks,
+        failures,
+        institutePdfDisposition.includes('veritas-institute-field-manual.pdf'),
+        'Institute field manual PDF sets Content-Disposition filename',
+        `content-disposition=${institutePdfDisposition || 'none'}`
+      )
 
       const sitemapResult = await fetchText('/sitemap.xml')
       const sitemapText = sitemapResult.text || ''
