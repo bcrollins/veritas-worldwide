@@ -159,6 +159,11 @@ assert(
     server.includes('name: "change-password", windowMs: 60_000, max: 10'),
   'change-password rateLimit must stay at 10/min',
 )
+assert(
+  server.includes("name: 'chapters', windowMs: 60_000, max: 120") ||
+    server.includes('name: "chapters", windowMs: 60_000, max: 120'),
+  'chapters rateLimit must allow 120/min',
+)
 const rateBudgetLocks = [
   ["auth-refresh", 30],
   ["auth-logout", 30],
