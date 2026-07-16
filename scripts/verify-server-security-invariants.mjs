@@ -46,6 +46,9 @@ assert(server.includes("app.use('/api/user/profile', rateLimit"), 'profile rateL
 assert(server.includes("app.use('/api/analytics/pageview', rateLimit"), 'pageview rateLimit middleware registered')
 assert(server.includes("app.use('/api/auth/logout', rateLimit"), 'logout rateLimit middleware registered')
 assert(server.includes("app.use('/api/search', rateLimit"), 'search rateLimit middleware registered')
+assert(server.includes("app.use('/api/chapters', rateLimit"), 'chapters rateLimit middleware registered')
+assert(server.includes("app.use('/api/auth/me', rateLimit"), 'auth/me rateLimit middleware registered')
+assert(server.includes("app.use('/api/auth/status', rateLimit"), 'auth/status rateLimit middleware registered')
 assert(
   server.includes("app.get(['/.well-known/security.txt', '/security.txt']") ||
     server.includes('/.well-known/security.txt'),

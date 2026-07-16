@@ -774,6 +774,10 @@ app.use('/api/auth/refresh', rateLimit({ windowMs: 60_000, max: 30 }))
 app.use('/api/auth/logout', rateLimit({ windowMs: 60_000, max: 30 }))
 // Public search is read-heavy; cap abusive scrapers without hurting normal readers.
 app.use('/api/search', rateLimit({ windowMs: 60_000, max: 90 }))
+// Chapter list/detail are the main content API — generous ceiling for readers.
+app.use('/api/chapters', rateLimit({ windowMs: 60_000, max: 120 }))
+app.use('/api/auth/me', rateLimit({ windowMs: 60_000, max: 60 }))
+app.use('/api/auth/status', rateLimit({ windowMs: 60_000, max: 60 }))
 // Password changes are authenticated but still brute-forceable on currentPassword.
 app.use('/api/user/change-password', rateLimit({ windowMs: 60_000, max: 10 }))
 // Authenticated mutation endpoints — generous for UX, hard ceiling against abuse.
