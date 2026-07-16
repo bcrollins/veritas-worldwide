@@ -1,5 +1,5 @@
 {
-  "run": 118,
+  "run": 119,
   "date": "2026-07-16",
   "site": [
     {
@@ -23,7 +23,7 @@
       "composite": 9.49,
       "previous": 9.47,
       "delta": 0.02,
-      "status": "HEAD a025b1b 15-step; health rate-limit 120/min; 23 named limiters; structured 429; HSTS preload",
+      "status": "HEAD a025b1b 15-step re-proven; health 120/min; 23 limiters; residual a11y floors maxed",
       "plus_half_requires": "Locale-by-locale evidence taxonomy string audit at 390px/430px."
     },
     {
@@ -71,7 +71,7 @@
       "composite": 9.999,
       "previous": 9.999,
       "delta": 0,
-      "status": "product tip a025b1b live 15-step; scorecard 118; full security+rate-limit matrix",
+      "status": "product tip a025b1b live 15-step re-proven; 69 a11y/521 floor 520; scorecard 119",
       "plus_half_requires": "Finish the live 390px and 430px shell audit on /read, /news, and /membership, then trim mobile navigation density and route-level bundle weight without reintroducing menu sprawl."
     },
     {
