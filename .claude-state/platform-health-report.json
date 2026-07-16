@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-16T08:52:58.719Z",
+  "checkedAt": "2026-07-16T08:53:40.207Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
@@ -111,7 +111,7 @@
     {
       "ok": true,
       "label": "Health probe exposes client error intake count",
-      "detail": "clientErrorIntakeCount=1"
+      "detail": "clientErrorIntakeCount=4"
     },
     {
       "ok": true,
