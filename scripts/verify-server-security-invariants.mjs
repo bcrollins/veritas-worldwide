@@ -113,6 +113,10 @@ assert(
   serverAuth.includes("algorithms: ['HS256']") || serverAuth.includes('algorithms: ["HS256"]'),
   'jwt.verify must restrict algorithms to HS256',
 )
+assert(
+  /BCRYPT_ROUNDS\s*=\s*(\d+)/.test(serverAuth) && Number(serverAuth.match(/BCRYPT_ROUNDS\s*=\s*(\d+)/)[1]) >= 12,
+  'bcrypt cost factor must be >= 12',
+)
 
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length

@@ -54,7 +54,7 @@ const floors = [
   { path: 'src/pages/PrivacyPage.tsx', min: 7, label: 'privacy sidebar' },
   { path: 'src/pages/BookmarksPage.tsx', min: 13, label: 'bookmarks shell' },
   { path: 'src/pages/TimelinePage.tsx', min: 9, label: 'timeline shell' },
-  { path: 'src/App.tsx', min: 24, label: 'site shell header/nav/footer' },
+  { path: 'src/App.tsx', min: 25, label: 'site shell header/nav/footer' },
   { path: 'src/pages/TopicPage.tsx', min: 6, label: 'topic hub breadcrumbs' },
   { path: 'src/pages/ArticlePage.tsx', min: 6, label: 'article news chrome' },
   { path: 'src/pages/NewsPage.tsx', min: 9, label: 'news desk CTAs' },
@@ -167,7 +167,7 @@ if (failures > 0) {
 }
 
 const total = results.reduce((n, r) => n + r.count, 0)
-const MIN_TOTAL_MARKERS = 520
+const MIN_TOTAL_MARKERS = 521
 const MIN_SURFACES = 69
 if (floors.length < MIN_SURFACES) {
   console.error(`[verify:a11y-public-targets] FAIL — surface count ${floors.length} < floor ${MIN_SURFACES}`)

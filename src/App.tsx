@@ -795,7 +795,7 @@ export default function App() {
         {!isAdmin && !isInstitute && (
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:rounded-sm focus:bg-crimson focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-semibold focus:text-white"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:inline-flex focus:min-h-[44px] focus:min-w-[44px] focus:items-center focus:rounded-sm focus:bg-crimson focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-semibold focus:text-white"
           >
             Skip to content
           </a>
