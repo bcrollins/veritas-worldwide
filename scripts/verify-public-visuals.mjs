@@ -48,6 +48,7 @@ const routes = [
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
   { path: '/methodology', text: ['Methodology', 'evidence'], anyText: ['Verified', 'VERIFIED', 'Circumstantial', 'CIRCUMSTANTIAL'] },
   { path: '/membership', text: ['Membership', 'MEMBERSHIP'], anyText: ['Support', 'SUPPORT', 'free', 'Free'] },
+  { path: '/news', text: ['News', 'NEWS', 'Current', 'CURRENT'], anyText: ['source', 'Source', 'SOURCE', 'article', 'Article', 'ARTICLE'] },
   {
     path: '/institute',
     text: ['Veritas Institute', 'VERITAS INSTITUTE', 'Field Manual', 'FIELD MANUAL'],
