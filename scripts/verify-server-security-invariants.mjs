@@ -140,6 +140,10 @@ assert(
 
 assert(server.includes('nodeRuntime'), 'health payload exposes nodeRuntime')
 assert(server.includes('packageEnginesNode'), 'health payload exposes packageEnginesNode')
+assert(
+  (server.match(/nodeRuntime:\s*process\.version/g) || []).length >= 2,
+  'nodeRuntime must be exposed on both /api/health and /api/build-info',
+)
 const analyticsPage = readFileSync(join(root, 'src/pages/AnalyticsPage.tsx'), 'utf8')
 assert(analyticsPage.includes('nodeRuntime'), 'AnalyticsPage types nodeRuntime')
 assert(analyticsPage.includes('packageEnginesNode'), 'AnalyticsPage types packageEnginesNode')

@@ -1273,6 +1273,14 @@ app.get('/api/build-info', (req, res) => {
     recordPdf: fs.existsSync(RECORD_PDF_PATH),
     instituteFieldManualPdf: fs.existsSync(INSTITUTE_FIELD_MANUAL_PDF_PATH),
     instituteFieldManualPdfUrl: '/veritas-institute-field-manual.pdf',
+    nodeRuntime: process.version,
+    packageEnginesNode: (() => {
+      try {
+        return JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'))?.engines?.node || ''
+      } catch {
+        return ''
+      }
+    })(),
   })
 })
 
