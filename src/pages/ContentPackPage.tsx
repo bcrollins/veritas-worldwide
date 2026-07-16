@@ -163,15 +163,68 @@ function generateCardCanvas(card: ShareCard, canvas: HTMLCanvasElement) {
   ctx.fillRect(0, h - 4, w, 4)
 }
 
+function downloadBlob(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = filename
+  link.click()
+  URL.revokeObjectURL(url)
+}
+
+async function generateLogoPNG(size: number, variant: 'dark' | 'light'): Promise<Blob> {
+  const canvas = document.createElement('canvas')
+  canvas.width = size
+  canvas.height = size
+  const ctx = canvas.getContext('2d')
+  if (!ctx) throw new Error('Canvas unavailable')
+
+  const bg = variant === 'dark' ? '#1A1A1A' : '#FAF8F5'
+  const markBg = variant === 'dark' ? '#8B1A1A' : '#1A1A1A'
+  const markFg = '#FAF8F5'
+  const radius = Math.round(size * 0.06)
+
+  ctx.fillStyle = bg
+  ctx.fillRect(0, 0, size, size)
+
+  const pad = Math.round(size * 0.18)
+  const box = size - pad * 2
+  const x = pad
+  const y = pad
+  ctx.fillStyle = markBg
+  ctx.beginPath()
+  ctx.moveTo(x + radius, y)
+  ctx.arcTo(x + box, y, x + box, y + box, radius)
+  ctx.arcTo(x + box, y + box, x, y + box, radius)
+  ctx.arcTo(x, y + box, x, y, radius)
+  ctx.arcTo(x, y, x + box, y, radius)
+  ctx.closePath()
+  ctx.fill()
+
+  ctx.fillStyle = markFg
+  ctx.font = `bold ${Math.round(size * 0.42)}px Georgia, serif`
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText('V', size / 2, size / 2 + Math.round(size * 0.03))
+
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (blob) resolve(blob)
+      else reject(new Error('PNG export failed'))
+    }, 'image/png')
+  })
+}
+
 export default function ContentPackPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [copiedId, setCopiedId] = useState<string | null>(null)
   const [downloadingId, setDownloadingId] = useState<string | null>(null)
+  const [downloadingLogo, setDownloadingLogo] = useState(false)
 
   useEffect(() => {
     setMetaTags({
-      title: `Content Pack \u2014 Shareable Assets | ${SITE_NAME}`,
-      description: 'Download shareable social media graphics, pre-written posts, and article cards. Help spread primary-source journalism.',
+      title: `Content Packs & Brand Kit | ${SITE_NAME}`,
+      description: 'Official brand assets, shareable social graphics, pre-written posts, and article cards. Free for press, social media, and advocacy with attribution.',
       url: `${SITE_URL}/content-pack`,
     })
     setJsonLd({
@@ -217,6 +270,21 @@ export default function ContentPackPage() {
     setTimeout(() => setCopiedId(null), 2000)
   }, [])
 
+  const handleLogoDownload = useCallback(async (variant: 'dark' | 'light', size: number) => {
+    setDownloadingLogo(true)
+    try {
+      const blob = await generateLogoPNG(size, variant)
+      downloadBlob(blob, `veritas-logo-${variant}-${size}px.png`)
+    } finally {
+      setDownloadingLogo(false)
+    }
+  }, [])
+
+  const handleSVGDownload = useCallback(() => {
+    const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="2" fill="#1A1A1A"/><text x="16" y="23" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#FAF8F5">V</text><line x1="4" y1="28" x2="28" y2="28" stroke="#8B1A1A" stroke-width="2"/></svg>`
+    downloadBlob(new Blob([svgContent], { type: 'image/svg+xml' }), 'veritas-logo.svg')
+  }, [])
+
   return (
     <div className="min-h-screen">
       {/* Hidden canvas for generation */}
@@ -229,20 +297,86 @@ export default function ContentPackPage() {
             Veritas Worldwide
           </p>
           <h1 className="font-display text-3xl md:text-4xl font-bold text-ink mb-3">
-            Content Pack
+            Content Packs &amp; Brand Kit
           </h1>
           <p className="font-body text-base text-ink-muted max-w-2xl leading-relaxed">
-            Pre-made shareable graphics, social media copy, and article links. Download, share, and help
-            primary-source journalism reach more people. Every asset links back to a fully sourced article.
+            Official logos, brand colors, shareable graphics, social copy, and article links.
+            Download, share, and help primary-source journalism reach more people. Every editorial asset
+            links back to a fully sourced article.
           </p>
         </div>
       </div>
+
+      {/* Brand Assets — merged from retired ContentPacksPage so one route owns the kit */}
+      <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-10 border-b border-border" data-testid="brand-assets-section">
+        <h2 className="font-sans text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-2 pb-2 border-b border-border">
+          Brand Assets
+        </h2>
+        <p className="font-body text-sm text-ink-muted mb-6 max-w-2xl">
+          Logo files and brand marks for press coverage and social posts that reference Veritas Worldwide.
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="border border-border rounded-sm p-5 text-center bg-surface">
+            <div className="w-20 h-20 mx-auto mb-4 bg-obsidian rounded-sm flex items-center justify-center">
+              <svg className="w-12 h-12" viewBox="0 0 32 32" aria-hidden="true">
+                <rect width="32" height="32" rx="2" fill="#8B1A1A" />
+                <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="22" fontWeight="bold" fill="#FAF8F5">V</text>
+              </svg>
+            </div>
+            <p className="font-sans text-xs font-semibold text-ink mb-2">Logo — Dark BG</p>
+            <div className="flex gap-1 justify-center">
+              <button type="button" onClick={() => handleLogoDownload('dark', 512)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">512px</button>
+              <button type="button" onClick={() => handleLogoDownload('dark', 1024)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">1024px</button>
+            </div>
+          </div>
+          <div className="border border-border rounded-sm p-5 text-center bg-surface">
+            <div className="w-20 h-20 mx-auto mb-4 bg-parchment border border-border rounded-sm flex items-center justify-center">
+              <svg className="w-12 h-12" viewBox="0 0 32 32" aria-hidden="true">
+                <rect width="32" height="32" rx="2" fill="#1A1A1A" />
+                <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="22" fontWeight="bold" fill="#FAF8F5">V</text>
+              </svg>
+            </div>
+            <p className="font-sans text-xs font-semibold text-ink mb-2">Logo — Light BG</p>
+            <div className="flex gap-1 justify-center">
+              <button type="button" onClick={() => handleLogoDownload('light', 512)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">512px</button>
+              <button type="button" onClick={() => handleLogoDownload('light', 1024)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">1024px</button>
+            </div>
+          </div>
+          <div className="border border-border rounded-sm p-5 text-center bg-surface">
+            <div className="w-20 h-20 mx-auto mb-4 bg-surface border border-border rounded-sm flex items-center justify-center">
+              <span className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint">SVG</span>
+            </div>
+            <p className="font-sans text-xs font-semibold text-ink mb-2">Vector Logo</p>
+            <button type="button" onClick={handleSVGDownload} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] font-semibold text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors">
+              Download SVG
+            </button>
+          </div>
+          <div className="border border-border rounded-sm p-5 bg-surface">
+            <p className="font-sans text-xs font-semibold text-ink mb-3">Brand Colors</p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-sm bg-[#1A1A1A]" aria-hidden="true" />
+                <span className="font-mono text-[0.6rem] text-ink-muted">Ink #1A1A1A</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-sm bg-[#8B1A1A]" aria-hidden="true" />
+                <span className="font-mono text-[0.6rem] text-ink-muted">Crimson #8B1A1A</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-sm bg-[#FAF8F5] border border-border" aria-hidden="true" />
+                <span className="font-mono text-[0.6rem] text-ink-muted">Parchment #FAF8F5</span>
+              </div>
+            </div>
+            <p className="font-sans text-[0.55rem] text-ink-faint mt-3">Fonts: Playfair Display, Source Serif 4, Inter</p>
+          </div>
+        </div>
+      </section>
 
       {/* Download All CTA */}
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap items-center gap-4 border-b border-border">
         <button
           onClick={handleDownloadAll}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-obsidian text-white font-sans text-[13px] font-semibold hover:bg-obsidian/80 transition-colors"
+          className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] bg-obsidian text-white font-sans text-[13px] font-semibold hover:bg-obsidian/80 transition-colors"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
           Download All Graphics ({SHARE_CARDS.length} images)
@@ -379,6 +513,23 @@ export default function ContentPackPage() {
               </button>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Usage guidelines */}
+      <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-8">
+        <div className="bg-surface border border-border rounded-sm p-6 sm:p-8">
+          <h2 className="font-display text-xl font-bold text-ink mb-4">Usage Guidelines</h2>
+          <div className="grid sm:grid-cols-2 gap-6 font-body text-sm text-ink-muted leading-relaxed">
+            <div>
+              <h3 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-2">You May</h3>
+              <p>Share any content pack on any platform. Download and use any graphic. Modify post text to fit your audience. Link to any article or chapter. Use our logo in press coverage or social posts that reference Veritas Worldwide.</p>
+            </div>
+            <div>
+              <h3 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-2">Please Do Not</h3>
+              <p>Alter the meaning of quoted statistics or claims. Remove attribution to Veritas Worldwide. Use our brand to imply endorsement of products, candidates, or organizations. Misrepresent our editorial stance — we present evidence, not opinion.</p>
+            </div>
+          </div>
         </div>
       </section>
 

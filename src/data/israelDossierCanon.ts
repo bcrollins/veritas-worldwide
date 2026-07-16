@@ -171,12 +171,63 @@ const REMOTE_SOURCE_COPY_PENDING =
 
 const makeArchiveLookupUrl = (sourceUrl: string) => `https://web.archive.org/web/*/${sourceUrl}`
 
+/** Pinned Wayback snapshots for public briefing rows — prefer exact captures over wildcard lookups. */
+const PINNED_BRIEFING_ARCHIVES: Record<string, { archiveUrl: string; status: string }> = {
+  'https://undocs.org/S/RES/2334(2016)': {
+    archiveUrl: 'https://web.archive.org/web/20220303173341/https://undocs.org/S/RES/2334(2016)',
+    status: 'Pinned Wayback snapshot 20220303173341; primary host may block automated probes.',
+  },
+  'https://wck.org/news/gaza-team-update/': {
+    archiveUrl: 'https://web.archive.org/web/20260711064801/https://wck.org/news/gaza-team-update/',
+    status: 'Pinned Wayback snapshot 20260711064801; primary host may block automated probes.',
+  },
+  'https://www.congress.gov/bill/118th-congress/house-bill/815': {
+    archiveUrl: 'https://web.archive.org/web/20260529041247/https://www.congress.gov/bill/118th-congress/house-bill/815',
+    status: 'Pinned Wayback snapshot 20260529041247; primary host may block automated probes.',
+  },
+  'https://www.congress.gov/crs-product/RL33222': {
+    archiveUrl: 'https://web.archive.org/web/20260629145154/https://www.congress.gov/crs-product/RL33222',
+    status: 'Pinned Wayback snapshot 20260629145154; primary host may block automated probes.',
+  },
+  'https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges': {
+    archiveUrl: 'https://web.archive.org/web/20260713201725/https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges',
+    status: 'Pinned Wayback snapshot 20260713201725; primary host may block automated probes.',
+  },
+  'https://www.icj-cij.org/case/192': {
+    archiveUrl: 'https://web.archive.org/web/20260711055715/https://www.icj-cij.org/case/192',
+    status: 'Pinned Wayback snapshot 20260711055715; primary host may block automated probes.',
+  },
+  'https://www.icj-cij.org/node/204176': {
+    archiveUrl: 'https://web.archive.org/web/20260712203553/https://www.icj-cij.org/node/204176',
+    status: 'Pinned Wayback snapshot 20260712203553; primary host may block automated probes.',
+  },
+  'https://www.ochaopt.org/content/humanitarian-situation-update-176-gaza-strip': {
+    archiveUrl: 'https://web.archive.org/web/20260515174453/https://www.ochaopt.org/content/humanitarian-situation-update-176-gaza-strip',
+    status: 'Pinned Wayback snapshot 20260515174453; primary host may block automated probes.',
+  },
+  'https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf': {
+    archiveUrl: 'https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
+    status: 'Pinned Wayback snapshot 20260515102538; primary host may block automated probes.',
+  },
+  'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf': {
+    archiveUrl: 'https://web.archive.org/web/20260708051442/https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf',
+    status: 'Pinned Wayback snapshot 20260708051442; primary host may block automated probes.',
+  },
+  'https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf': {
+    archiveUrl: 'https://web.archive.org/web/20260227165001/https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf',
+    status: 'Pinned Wayback snapshot 20260227165001; primary host may block automated probes.',
+  },
+}
+
 const withBriefingSourceRows = (sourceRows: DossierBriefingSourceRowInput[]): DossierBriefingSourceRow[] =>
-  sourceRows.map((row) => ({
-    ...row,
-    archiveLookupUrl: makeArchiveLookupUrl(row.sourceUrl),
-    sourceCopyStatus: REMOTE_SOURCE_COPY_PENDING,
-  }))
+  sourceRows.map((row) => {
+    const pinned = PINNED_BRIEFING_ARCHIVES[row.sourceUrl]
+    return {
+      ...row,
+      archiveLookupUrl: pinned?.archiveUrl ?? makeArchiveLookupUrl(row.sourceUrl),
+      sourceCopyStatus: pinned?.status ?? REMOTE_SOURCE_COPY_PENDING,
+    }
+  })
 
 export interface DossierBriefingChapterStep {
   id: string

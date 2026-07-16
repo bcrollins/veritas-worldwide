@@ -69,6 +69,8 @@ const currentNeedles = [
   'sourceCopyStatus',
   'makeArchiveLookupUrl',
   'REMOTE_SOURCE_COPY_PENDING',
+  'PINNED_BRIEFING_ARCHIVES',
+  'Pinned Wayback snapshot',
   'chapterSequence',
   'Paragraph source IDs',
   'SRC-P-001',
@@ -298,6 +300,16 @@ for (const workbook of [
   }
 }
 
+const archiveManifestPath = 'public/israel-dossier/workbooks/briefing-source-archive-manifest.json'
+assert(fs.existsSync(path.join(root, archiveManifestPath)), 'briefing source archive manifest missing')
+const archiveJson = JSON.parse(read(archiveManifestPath))
+assert(Array.isArray(archiveJson.entries) && archiveJson.entries.length >= 10, 'archive manifest has too few entries')
+const pinnedEntries = archiveJson.entries.filter((entry) => entry.status === 'pinned')
+assert(pinnedEntries.length >= 8, `archive manifest expected >=8 pinned snapshots, got ${pinnedEntries.length}`)
+assert(canon.includes('web.archive.org/web/20260629145154'), 'canon missing pinned CRS archive snapshot')
+assert(!fs.existsSync(path.join(root, 'src/pages/ContentPacksPage.tsx')), 'dead ContentPacksPage.tsx still present — use ContentPackPage only')
+assert(read('src/pages/ContentPackPage.tsx').includes('brand-assets-section'), 'ContentPackPage missing brand assets section from merged kit')
+
 if (errors.length) {
   console.error('[verify:israel-dossier] FAIL')
   for (const error of errors) console.error(`- ${error}`)
@@ -305,3 +317,5 @@ if (errors.length) {
 }
 
 console.log('[verify:israel-dossier] PASS - canonical Israel dossier data is shared across page, PDF, carousel, and chapter companions')
+
+

@@ -1,0 +1,103 @@
+{
+  "title": "Israel dossier public briefing \u2014 source archive manifest",
+  "generatedAt": "2026-07-16",
+  "purpose": "Pinned Wayback snapshots for briefing source rows so evidence remains inspectable when hosts block automated probes.",
+  "entries": [
+    {
+      "sourceUrl": "https://digitallibrary.un.org/record/4061434",
+      "timestamp": null,
+      "archiveUrl": "https://web.archive.org/web/*/https://digitallibrary.un.org/record/4061434",
+      "status": "lookup-only"
+    },
+    {
+      "sourceUrl": "https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
+      "timestamp": null,
+      "archiveUrl": "https://web.archive.org/web/*/https://forensic-architecture.org/investigation/the-killing-of-hind-rajab",
+      "status": "lookup-only"
+    },
+    {
+      "sourceUrl": "https://undocs.org/S/RES/2334(2016)",
+      "timestamp": "20220303173341",
+      "archiveUrl": "https://web.archive.org/web/20220303173341/https://undocs.org/S/RES/2334(2016)",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://wck.org/news/gaza-team-update/",
+      "timestamp": "20260711064801",
+      "archiveUrl": "https://web.archive.org/web/20260711064801/https://wck.org/news/gaza-team-update/",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815",
+      "timestamp": "20260529041247",
+      "archiveUrl": "https://web.archive.org/web/20260529041247/https://www.congress.gov/bill/118th-congress/house-bill/815",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.congress.gov/crs-product/RL33222",
+      "timestamp": "20260629145154",
+      "archiveUrl": "https://web.archive.org/web/20260629145154/https://www.congress.gov/crs-product/RL33222",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
+      "timestamp": "20260713201725",
+      "archiveUrl": "https://web.archive.org/web/20260713201725/https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.icj-cij.org/case/192",
+      "timestamp": "20260711055715",
+      "archiveUrl": "https://web.archive.org/web/20260711055715/https://www.icj-cij.org/case/192",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.icj-cij.org/node/204176",
+      "timestamp": "20260712203553",
+      "archiveUrl": "https://web.archive.org/web/20260712203553/https://www.icj-cij.org/node/204176",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025",
+      "timestamp": null,
+      "archiveUrl": "https://web.archive.org/web/*/https://www.ochaopt.org/content/gaza-humanitarian-response-update-16-29-march-2025",
+      "status": "lookup-only"
+    },
+    {
+      "sourceUrl": "https://www.ochaopt.org/content/humanitarian-situation-update-176-gaza-strip",
+      "timestamp": "20260515174453",
+      "archiveUrl": "https://web.archive.org/web/20260515174453/https://www.ochaopt.org/content/humanitarian-situation-update-176-gaza-strip",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026",
+      "timestamp": null,
+      "archiveUrl": "https://web.archive.org/web/*/https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-1-april-2026",
+      "status": "lookup-only"
+    },
+    {
+      "sourceUrl": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
+      "timestamp": "20260515102538",
+      "archiveUrl": "https://web.archive.org/web/20260515102538/https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf",
+      "timestamp": "20260708051442",
+      "archiveUrl": "https://web.archive.org/web/20260708051442/https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf",
+      "status": "pinned"
+    },
+    {
+      "sourceUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
+      "timestamp": null,
+      "archiveUrl": "https://web.archive.org/web/*/https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
+      "status": "lookup-only"
+    },
+    {
+      "sourceUrl": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "timestamp": "20260227165001",
+      "archiveUrl": "https://web.archive.org/web/20260227165001/https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "status": "pinned"
+    }
+  ]
+}
