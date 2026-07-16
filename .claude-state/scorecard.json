@@ -1,13 +1,13 @@
 {
-  "run": 52,
+  "run": 53,
   "date": "2026-07-16",
   "site": [
     {
       "feature": "Israel Dossier",
-      "composite": 9.995,
+      "composite": 9.997,
       "previous": 9.995,
       "delta": 0,
-      "status": "15/16 archives pinned LIVE; OCHA HTML + FA refreshed; Lancet lookup-only after failed Wayback capture",
+      "status": "19/20 archives pinned (B'Tselem + UNRWA added); Lancet lookup-only after re-probe",
       "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
@@ -52,19 +52,19 @@
     },
     {
       "feature": "Search",
-      "composite": 9.55,
-      "previous": 9.4,
+      "composite": 9.7,
+      "previous": 9.55,
       "delta": 0.15,
-      "status": "engagement boost + continue-reading badge; title relevance preserved",
-      "plus_half_requires": "Server-side engagement signals when analytics identity exists beyond local history."
+      "status": "sitewide popularityBoost +8 from analytics page views; personal engagement +18 supersedes; filters.popularChapterIds live; Widely read badge",
+      "plus_half_requires": "Optional per-reader server identity for multi-device engagement when auth session is present."
     },
     {
       "feature": "News & Topic Entry",
-      "composite": 8.9,
-      "previous": 8.8,
-      "delta": 0.1,
-      "status": "improved",
-      "plus_half_requires": "Replace the withdrawn unsupported article pack with fully sourced current-reporting pieces so topic breadth grows without sacrificing citation integrity."
+      "composite": 9.2,
+      "previous": 8.9,
+      "delta": 0.3,
+      "status": "withdrawn unsupported B pack (orphan crawler routes removed); live pack core+A with 9 sourced articles; verify:article-sources",
+      "plus_half_requires": "Add fully sourced replacement reporting pieces with durable primary URLs only."
     },
     {
       "feature": "Publication Shell",
@@ -92,11 +92,11 @@
     },
     {
       "feature": "Public Analytics",
-      "composite": 9.55,
-      "previous": 9.45,
-      "delta": 0.1,
-      "status": "multi-replica ring buffer in Postgres with replica IDs and commit transitions visible on Release Health",
-      "plus_half_requires": "Longer retention and contributor aggregation if multi-region forensics require it."
+      "composite": 9.6,
+      "previous": 9.55,
+      "delta": 0.05,
+      "status": "health history maxSamples=96 multi-day retention; uniqueReplicas platform-asserted",
+      "plus_half_requires": "Per-replica contributor labels in analytics UI if multi-region grows."
     }
   ],
   "growth": [
@@ -110,10 +110,10 @@
     },
     {
       "area": "SEO Foundation",
-      "score": 9.45,
-      "previous": 9.35,
-      "delta": 0.1,
-      "status": "six trust prerender shells expose Field Manual PDF; platform asserts all six LIVE 5fe3fff; crawler floors green",
+      "score": 9.5,
+      "previous": 9.45,
+      "delta": 0.05,
+      "status": "withdrawn orphan news sitemap entries; crawler floors + article-sources guard",
       "plus_half_requires": "Confirm Search Console indexing for dossier, briefing, Institute, llms.txt, and PDF entries."
     },
     {
