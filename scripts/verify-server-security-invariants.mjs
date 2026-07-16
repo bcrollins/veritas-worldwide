@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const server = readFileSync(join(root, 'server.js'), 'utf8')
 const serverAuth = readFileSync(join(root, 'server-auth.js'), 'utf8')
+const packageJson = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))
 
 function assert(c, m) {
   if (!c) {
@@ -77,6 +78,11 @@ assert(serverAuth.includes('currentPassword.length > 128'), 'change-password rej
 // Rate-limit fleet floor — protect against accidental deletion of middleware rows
 const rateLimitUses = (server.match(/app\.use\([^,]+,\s*rateLimit/g) || []).length
 assert(rateLimitUses >= 20, `rateLimit middleware count ${rateLimitUses} below floor 20`)
+
+// Dependency hygiene — start is node server.js; do not reintroduce dead static servers
+assert(packageJson.scripts?.start === 'node server.js', 'start script must be node server.js')
+assert(!packageJson.dependencies?.serve, 'must not reintroduce unused serve package')
+assert(packageJson.dependencies?.pg, 'pg runtime dependency required')
 
 console.log(
   `[verify:server-security-invariants] PASS — server.js security surface locked · rateLimit×${rateLimitUses}`,
