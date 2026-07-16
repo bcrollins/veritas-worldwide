@@ -107,4 +107,15 @@ for (const slug of bSlugs) {
 console.log(
   `[verify:article-sources] live article ids≈${liveIds.length} B-slugs=${bSlugs.length} B-urls=${bUrls.length}`
 )
+// Content pack share cards must deep-link to real article slugs.
+const contentPack = read('src/pages/ContentPackPage.tsx')
+const packSlugs = [...contentPack.matchAll(/articleSlug:\s*'([^']+)'/g)].map((m) => m[1])
+const knownSlugs = new Set(bSlugs.concat(
+  [...read('src/data/articles.ts').matchAll(/"slug":\s*"([^"]+)"/g)].map((m) => m[1]),
+  [...read('src/data/articlesExpanded.ts').matchAll(/"slug":\s*"([^"]+)"/g)].map((m) => m[1]),
+))
+for (const slug of packSlugs) {
+  assert(knownSlugs.has(slug), `ContentPackPage articleSlug not in live catalog: ${slug}`)
+}
+console.log(`[verify:article-sources] content-pack slugs=${packSlugs.length} ok`)
 console.log('[verify:article-sources] PASS')

@@ -208,6 +208,34 @@
       "archiveUrl": "https://web.archive.org/web/20260701170453/https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza",
       "status": "pinned",
       "note": "OHCHR flour massacre press release"
+    },
+    {
+      "sourceUrl": "https://www.cisa.gov/topics/election-security",
+      "timestamp": "20260702173634",
+      "archiveUrl": "https://web.archive.org/web/20260702173634/https://www.cisa.gov/topics/election-security",
+      "status": "pinned",
+      "note": "CISA election security hub"
+    },
+    {
+      "sourceUrl": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "timestamp": "20260715082052",
+      "archiveUrl": "https://web.archive.org/web/20260715082052/https://www.nist.gov/itl/ai-risk-management-framework",
+      "status": "pinned",
+      "note": "NIST AI RMF"
+    },
+    {
+      "sourceUrl": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/debt-to-the-penny",
+      "timestamp": "20260713075625",
+      "archiveUrl": "https://web.archive.org/web/20260713075625/https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/debt-to-the-penny",
+      "status": "pinned",
+      "note": "Debt to the Penny"
+    },
+    {
+      "sourceUrl": "https://www.supremecourt.gov/about/Code-of-Conduct-for-Justices_November_13_2023.pdf",
+      "timestamp": "20260709033020",
+      "archiveUrl": "https://web.archive.org/web/20260709033020/https://www.supremecourt.gov/about/Code-of-Conduct-for-Justices_November_13_2023.pdf",
+      "status": "pinned",
+      "note": "SCOTUS Code of Conduct PDF"
     }
   ]
 }
