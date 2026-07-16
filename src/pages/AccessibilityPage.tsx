@@ -96,10 +96,10 @@ export default function AccessibilityPage() {
             </section>
 
             <div className="border-t border-border pt-8 flex flex-col sm:flex-row gap-4">
-              <Link to="/" className="font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-lg hover:bg-crimson-dark transition-colors text-center">
+              <Link to="/" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 bg-crimson text-white rounded-lg hover:bg-crimson-dark transition-colors text-center">
                 Read The Record
               </Link>
-              <Link to="/about" className="font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-lg hover:border-crimson hover:text-crimson transition-colors text-center">
+              <Link to="/about" className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-lg hover:border-crimson hover:text-crimson transition-colors text-center">
                 About Us
               </Link>
             </div>
