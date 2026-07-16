@@ -152,6 +152,15 @@ if (distSitemapXml) {
     'dist sitemap must not include /admin operator routes',
   )
 }
+// Prerender route map must never emit the operator console.
+const prerenderManifestPath = path.join(root, 'dist/prerender-manifest.json')
+if (fs.existsSync(prerenderManifestPath)) {
+  const prerenderKeys = Object.keys(JSON.parse(fs.readFileSync(prerenderManifestPath, 'utf8')))
+  assert(
+    !prerenderKeys.some((k) => k === '/admin' || k.startsWith('/admin/')),
+    'prerender-manifest must not include /admin routes',
+  )
+}
 
 if (distSitemapXml) {
   for (const routePath of ['/the-record.pdf', '/veritas-institute-field-manual.pdf']) {
