@@ -703,7 +703,7 @@ function Footer() {
           </p>
           <div className="mt-4 flex flex-col gap-3">
             {browseLinks.map(link => (
-              <Link key={link.to} to={link.to} className="font-sans text-sm text-white/45 transition-colors hover:text-white">
+              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
                 {link.label}
               </Link>
             ))}
@@ -716,7 +716,7 @@ function Footer() {
           </p>
           <div className="mt-4 flex flex-col gap-3">
             {researchLinks.map(link => (
-              <Link key={link.to} to={link.to} className="font-sans text-sm text-white/45 transition-colors hover:text-white">
+              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
                 {link.label}
               </Link>
             ))}
@@ -729,11 +729,11 @@ function Footer() {
           </p>
           <div className="mt-4 flex flex-col gap-3">
             {utilityLinks.map(link => (
-              <Link key={link.to} to={link.to} className="font-sans text-sm text-white/45 transition-colors hover:text-white">
+              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
                 {link.label}
               </Link>
             ))}
-            <a href="mailto:rights@veritasworldwide.com" className="font-sans text-sm text-white/45 transition-colors hover:text-white">
+            <a href="mailto:rights@veritasworldwide.com" className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
               Contact
             </a>
           </div>

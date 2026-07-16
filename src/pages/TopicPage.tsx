@@ -110,7 +110,7 @@ export default function TopicPage() {
       <div className="max-w-3xl mx-auto px-6 py-20 text-center">
         <h1 className="font-display text-3xl font-bold text-ink mb-4">Topic Not Found</h1>
         <p className="font-body text-ink-muted mb-6">The research topic you requested does not exist.</p>
-        <Link to="/topics" className="font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
+        <Link to="/topics" className="inline-flex min-h-[44px] items-center font-sans text-sm font-semibold text-crimson hover:text-crimson-dark">
           &larr; Back to Research Topics
         </Link>
       </div>
@@ -133,7 +133,7 @@ export default function TopicPage() {
               Home
             </Link>
             <span className="text-ink-muted/50">›</span>
-            <Link to="/topics" className="text-ink-muted hover:text-crimson transition-colors">
+            <Link to="/topics" className="inline-flex min-h-[44px] items-center text-ink-muted hover:text-crimson transition-colors">
               Research Topics
             </Link>
             <span className="text-ink-muted/50">›</span>
