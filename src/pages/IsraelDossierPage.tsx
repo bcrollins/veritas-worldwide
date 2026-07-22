@@ -391,7 +391,7 @@ function ProfileChip({ profileId }: { profileId: string }) {
   const label = profile?.name ?? profileId.replace(/-/g, ' ')
   return (
     <Link
-      to={`/profiles/${profileId}`}
+      to={`/profile/${profileId}`}
       className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border bg-parchment px-3 py-1.5 font-sans text-[0.65rem] font-semibold text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
       onClick={(e) => e.stopPropagation()}
     >
@@ -1100,7 +1100,7 @@ export default function IsraelDossierPage() {
                 <p className="font-sans text-xs text-ink-muted mt-1">{selectedActor.role}</p>
               </div>
               <Link
-                to={`/profiles/${selectedActor.profileId}`}
+                to={`/profile/${selectedActor.profileId}`}
                 className="inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
               >
                 Open full profile →

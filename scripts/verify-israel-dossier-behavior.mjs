@@ -364,8 +364,19 @@ async function runBriefingSurfaceCheck(browser) {
       assert(initialBody.includes(needle), `briefing surface missing ${needle}`)
     }
     const archiveHref = await page.getByRole('link', { name: /Archive lookup/i }).first().getAttribute('href')
-    assert(archiveHref?.startsWith('https://web.archive.org/web/*/'), `briefing archive lookup href mismatch: ${archiveHref}`)
-    assert(initialBody.includes('remote primary source verified'), 'briefing surface missing source-copy status detail')
+    // Accept either pinned Wayback captures (/web/YYYYMMDDhhmmss/) or wildcard lookup fallbacks (/web/*/).
+    assert(
+      typeof archiveHref === 'string' &&
+        (archiveHref.startsWith('https://web.archive.org/web/*/') ||
+          /^https:\/\/web\.archive\.org\/web\/\d{14}\//.test(archiveHref)),
+      `briefing archive lookup href mismatch: ${archiveHref}`,
+    )
+    assert(
+      initialBody.includes('remote primary source verified') ||
+        initialBody.includes('pinned wayback snapshot') ||
+        initialBody.includes('pinned via companion'),
+      'briefing surface missing source-copy status detail',
+    )
 
     const [chapterDraftDownload] = await Promise.all([
       page.waitForEvent('download'),
