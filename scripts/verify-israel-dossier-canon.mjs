@@ -330,6 +330,11 @@ for (const needle of [
   'qana-1996',
   'cast-lead-2008-09',
   'oct7-hamas-attack-2023',
+  'khan-yunis-1956',
+  'beit-hanoun-2006',
+  'pillar-of-defense-2012',
+  'second-intifada-civilian-toll',
+  'gaza-war-2008-white-phosphorus',
   'ISRAEL_DOSSIER_TIMELINE_EXPANSION',
   'ISRAEL_DOSSIER_ERA_META',
 ]) {

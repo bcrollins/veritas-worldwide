@@ -824,7 +824,16 @@ export default function IsraelDossierPage() {
   const [actorQuery, setActorQuery] = useState('')
   const [selectedActorId, setSelectedActorId] = useState<string | null>(null)
   const sourceIndex = useMemo(() => buildSourceIndex(), [])
-  const allIncidents = useMemo(() => dedupeIncidents([...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS]), [])
+  const allIncidents = useMemo(() => {
+    const deduped = dedupeIncidents([...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS])
+    // Chronological order (oldest first) for historical reading; undated strings sort last.
+    return deduped.sort((a, b) => {
+      const ya = Number((a.date.match(/(\d{4})/) || [])[1] || 9999)
+      const yb = Number((b.date.match(/(\d{4})/) || [])[1] || 9999)
+      if (ya !== yb) return ya - yb
+      return a.title.localeCompare(b.title)
+    })
+  }, [])
   const filteredIncidents = useMemo(() => {
     const q = incidentQuery.trim().toLowerCase()
     return allIncidents.filter((incident) => {
@@ -833,7 +842,7 @@ export default function IsraelDossierPage() {
         incidentFocus === 'all' ||
         (incidentFocus === 'civilians' && incident.targetsCivilians) ||
         (incidentFocus === 'children' && incident.targetsChildren)
-      const queryMatch = !q || `${incident.title} ${incident.location} ${incident.summary} ${incident.evidence}`.toLowerCase().includes(q)
+      const queryMatch = !q || `${incident.title} ${incident.location} ${incident.summary} ${incident.evidence} ${incident.id ?? ''}`.toLowerCase().includes(q)
       return tierMatch && focusMatch && queryMatch
     })
   }, [allIncidents, incidentQuery, incidentTier, incidentFocus])

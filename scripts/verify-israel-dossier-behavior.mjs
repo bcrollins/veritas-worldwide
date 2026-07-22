@@ -300,6 +300,43 @@ async function runInteractiveChecks(browser) {
     await waitForSectionText(page, '#money-trail', 'Artillery & Critical Munitions Production')
     assert((await moneyTrail.innerText()).toLowerCase().includes('where this money went'), 'money-trail expansion did not show child-node explainer')
 
+    // Historical densification + actors enablement graph
+    const timeline = page.locator('#timeline')
+    await timeline.scrollIntoViewIfNeeded()
+    const timelineText = await timeline.innerText()
+    for (const needle of ['Deir Yassin', 'Qibya', 'Kafr Qasim', 'Historical Timeline']) {
+      assert(timelineText.includes(needle), `timeline missing historical densification needle: ${needle}`)
+    }
+    const eraSelect = timeline.locator('select').first()
+    if (await eraSelect.count()) {
+      await eraSelect.selectOption({ label: /Mandate/i }).catch(() => eraSelect.selectOption({ index: 1 }))
+      await page.waitForTimeout(200)
+    }
+
+    const actors = page.locator('#actors')
+    await actors.scrollIntoViewIfNeeded()
+    await waitForSectionText(page, '#actors', 'Benjamin Netanyahu')
+    assert((await actors.innerText()).includes('Actors'), 'actors section heading missing')
+    await actors.getByRole('button', { name: /Benjamin Netanyahu/i }).first().click()
+    await waitForSectionText(page, '#actors', 'Open full profile')
+    const profileHref = await actors.getByRole('link', { name: /Open full profile/i }).first().getAttribute('href')
+    assert(profileHref === '/profile/benjamin-netanyahu', `actor profile href mismatch: ${profileHref}`)
+    assert((await actors.innerText()).toLowerCase().includes('funds'), 'actor panel missing funds section language')
+
+    const incidents = page.locator('#incidents')
+    await incidents.scrollIntoViewIfNeeded()
+    const incidentText = await incidents.innerText()
+    for (const needle of ['Documented Incidents', 'Deir Yassin', 'Children among victims']) {
+      assert(incidentText.includes(needle), `incidents section missing ${needle}`)
+    }
+    const childrenFilter = incidents.locator('select').filter({ has: page.locator('option', { hasText: /Children among victims/i }) }).first()
+    if (await childrenFilter.count()) {
+      await childrenFilter.selectOption({ label: /Children among victims/i })
+      await page.waitForTimeout(250)
+      const filtered = await incidents.innerText()
+      assert(/Showing\s+\d+\s+of\s+\d+/i.test(filtered), 'children incident filter did not update showing count')
+    }
+
     const downloads = page.locator('#downloads')
     await downloads.scrollIntoViewIfNeeded()
     const [workbookDownload] = await Promise.all([

@@ -424,6 +424,136 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1139 },
     imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
   },
+  {
+    id: 'khan-yunis-1956',
+    era: '1948-1967',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Khan Yunis Massacre (1956)',
+    date: 'November 3, 1956',
+    location: 'Khan Yunis, Gaza Strip',
+    summary:
+      'During the Sinai Campaign, Israeli forces entered Khan Yunis. Contemporary UN and later historical accounts document mass killings of Palestinian men in and around the town, with death-toll estimates commonly cited in the hundreds. The event remains one of the deadliest single episodes of the 1956 Gaza occupation period.',
+    evidence:
+      'UNRWA and contemporaneous diplomatic reporting recorded large-scale civilian deaths. Later historical synthesis (including works drawing on Israeli and Palestinian archives) treats Khan Yunis 1956 as a documented mass-killing event even where exact body counts remain contested within a high range.',
+    sources: [
+      { label: 'UNISPAL / UNRWA historical Gaza documentation index', url: 'https://www.un.org/unispal/' },
+      { label: 'Britannica — Suez Crisis context for 1956 Sinai Campaign', url: 'https://www.britannica.com/event/Suez-Crisis' },
+      { label: 'UNRWA — Gaza refugee history overview', url: 'https://www.unrwa.org/where-we-work/gaza-strip' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNISPAL document library — 1956 period records', url: 'https://www.un.org/unispal/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 275 },
+  },
+  {
+    id: 'beit-hanoun-2006',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['artillery-use', 'annual-mou'],
+    legalStatus: 'un-finding',
+    title: 'Beit Hanoun Shelling — 19 Killed in Residential Area',
+    date: 'November 8, 2006',
+    location: 'Beit Hanoun, northern Gaza',
+    summary:
+      'Israeli artillery shells struck a residential neighborhood in Beit Hanoun, killing 19 Palestinians, including many women and children from the Athamneh family, and wounding dozens. Israel said the strike was an error caused by a technical malfunction; UN and human-rights monitors demanded independent investigation.',
+    evidence:
+      'UN Human Rights Council special session and subsequent reporting documented the civilian composition of the dead. Human Rights Watch and Amnesty called for investigation of possible violations of the principles of distinction and proportionality. The IDF acknowledged a targeting failure while disputing criminal intent.',
+    sources: [
+      { label: 'Human Rights Watch — Beit Hanoun shelling', url: 'https://www.hrw.org/news/2006/11/08/israelopt-investigate-gaza-shelling' },
+      { label: 'UN News — Secretary-General condemns Beit Hanoun killings', url: 'https://news.un.org/en/story/2006/11/199202' },
+      { label: 'Amnesty International — Gaza: end unlawful killings', url: 'https://www.amnesty.org/en/documents/mde15/098/2006/en/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UN News — official condemnation record', url: 'https://news.un.org/en/story/2006/11/199202' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 19 },
+  },
+  {
+    id: 'pillar-of-defense-2012',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou', 'iron-dome', 'fmf-weapons'],
+    legalStatus: 'un-finding',
+    title: 'Operation Pillar of Defense — Civilian Harm in Gaza',
+    date: 'November 14–21, 2012',
+    location: 'Gaza Strip',
+    summary:
+      'An eight-day Israeli military operation killed more than 160 Palestinians, including substantial numbers of civilians and children according to UN and B\'Tselem tallies, while six Israelis were killed by rocket fire. Human-rights organizations documented attacks on civilian homes and infrastructure alongside rocket fire from Gaza into Israeli civilian areas.',
+    evidence:
+      'B\'Tselem, HRW, and UN OCHA issued fatality and civilian-harm tallies. Both Israeli forces and Palestinian armed groups were accused by monitors of violations. U.S. diplomatic and military support continued under the standing aid relationship during and after the operation.',
+    sources: [
+      { label: 'B\'Tselem — Pillar of Defense fatality data', url: 'https://www.btselem.org/press_releases/20121108_pillar_of_defense_operation' },
+      { label: 'Human Rights Watch — Gaza: Palestinian rocket attacks', url: 'https://www.hrw.org/news/2012/12/24/gaza-palestinian-rockets-unlawfully-targeted-israeli-civilians' },
+      { label: 'OCHA — Humanitarian situation reporting 2012 Gaza escalation', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem operation documentation', url: 'https://www.btselem.org/gaza_strip' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 167 },
+  },
+  {
+    id: 'second-intifada-civilian-toll',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Second Intifada — Documented Civilian Death Toll',
+    date: 'September 2000 – February 2005',
+    location: 'West Bank, Gaza Strip, and Israel',
+    summary:
+      'The Second Intifada killed roughly 3,000–3,300 Palestinians and about 1,000 Israelis by most independent tallies, with a high civilian share on both sides. Documented patterns include suicide bombings against Israeli civilians, Israeli targeted killings and military operations in dense urban areas, and child casualties tracked by B\'Tselem and UNICEF.',
+    evidence:
+      'B\'Tselem statistical tables, Israeli MFA and Palestinian Authority figures (used critically), and UN reporting provide multi-source fatality floors. This entry is a pattern record, not a single-incident case file — included so the interactive timeline does not jump from 1987 to 2002 without the intervening mass civilian harm.',
+    sources: [
+      { label: 'B\'Tselem — Fatalities during the Second Intifada', url: 'https://www.btselem.org/statistics/fatalities/before-cast-lead/by-date-of-event' },
+      { label: 'UN OCHA — Humanitarian overview archives (Second Intifada period)', url: 'https://www.ochaopt.org/' },
+      { label: 'Britannica — Second Intifada overview', url: 'https://www.britannica.com/topic/second-intifada' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem fatalities database', url: 'https://www.btselem.org/statistics' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 4000 },
+  },
+  {
+    id: 'gaza-war-2008-white-phosphorus',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['barack-obama', 'joe-biden'],
+    relatedMoneyNodeIds: ['annual-mou', 'artillery-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'White Phosphorus over Gaza Civilian Areas (Cast Lead)',
+    date: 'December 2008 – January 2009',
+    location: 'Gaza Strip urban areas including Gaza City',
+    summary:
+      'During Operation Cast Lead, Human Rights Watch and Amnesty International documented Israeli use of white phosphorus munitions over densely populated areas. The munitions caused severe burns and fires in civilian neighborhoods. HRW concluded the use in populated areas was unlawfully indiscriminate.',
+    evidence:
+      'HRW\'s "Rain of Fire" investigation identified munition remnants, burn patterns, and eyewitness accounts. Amnesty published parallel findings. Israel said the munitions were used for obscuration; monitors argued effects in dense urban areas still violated IHL precautions and distinction rules.',
+    sources: [
+      { label: 'Human Rights Watch — Rain of Fire (white phosphorus in Gaza)', url: 'https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza' },
+      { label: 'Amnesty International — Operation Cast Lead findings', url: 'https://www.amnesty.org/en/documents/mde15/015/2009/en/' },
+      { label: 'UN Fact-Finding Mission on the Gaza Conflict materials', url: 'https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'HRW — Rain of Fire full report', url: 'https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza' },
+    ],
+    tier: 'verified',
+    imageUrl: ISRAEL_DOSSIER_ASSETS.humanitarian,
+  },
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -557,6 +687,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     sourceUrl: 'https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution',
     tier: 'verified',
     tags: ['legal', 'apartheid-finding'],
+  },
+  {
+    id: 'tl-khan-yunis-1956',
+    year: '1956',
+    era: '1948-1967',
+    title: 'Khan Yunis Mass Killings during Sinai Campaign',
+    description:
+      'Israeli forces enter Khan Yunis during the 1956 war. Contemporary UN and later historical accounts document mass killings of Palestinian residents — one of the deadliest episodes of the brief 1956 Gaza occupation.',
+    source: 'UNISPAL / UNRWA historical record',
+    sourceUrl: 'https://www.unrwa.org/where-we-work/gaza-strip',
+    tier: 'verified',
+    relatedIncidentIds: ['khan-yunis-1956'],
+    tags: ['civilians', 'children'],
+  },
+  {
+    id: 'tl-second-intifada',
+    year: '2000–2005',
+    era: 'occupation-1967-2005',
+    title: 'Second Intifada — Multi-Thousand Civilian Death Toll',
+    description:
+      'Roughly 3,000+ Palestinians and ~1,000 Israelis killed. Pattern record of suicide bombings against Israeli civilians and Israeli military operations causing mass Palestinian civilian casualties, tracked by B\'Tselem and UN agencies.',
+    source: 'B\'Tselem fatalities statistics',
+    sourceUrl: 'https://www.btselem.org/statistics/fatalities/before-cast-lead/by-date-of-event',
+    tier: 'verified',
+    relatedIncidentIds: ['second-intifada-civilian-toll', 'jenin-2002'],
+    tags: ['civilians', 'children', 'pattern-record'],
+  },
+  {
+    id: 'tl-beit-hanoun-2006',
+    year: '2006',
+    era: 'occupation-1967-2005',
+    title: 'Beit Hanoun Artillery Strike Kills 19',
+    description:
+      'Israeli artillery hits a residential area in Beit Hanoun. 19 Palestinians killed, many of them women and children. UN and HRW demand investigation.',
+    source: 'Human Rights Watch / UN News',
+    sourceUrl: 'https://www.hrw.org/news/2006/11/08/israelopt-investigate-gaza-shelling',
+    tier: 'verified',
+    relatedIncidentIds: ['beit-hanoun-2006'],
+    tags: ['civilians', 'children', 'artillery'],
+  },
+  {
+    id: 'tl-pillar-defense-2012',
+    year: '2012',
+    era: 'blockade-2007-2023',
+    title: 'Operation Pillar of Defense',
+    description:
+      'Eight-day Gaza war. 160+ Palestinians killed per monitor tallies; six Israelis killed by rockets. U.S. aid and Iron Dome support continue under the standing MOU architecture.',
+    source: 'B\'Tselem / HRW',
+    sourceUrl: 'https://www.btselem.org/gaza_strip',
+    tier: 'verified',
+    relatedIncidentIds: ['pillar-of-defense-2012'],
+    relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
+    tags: ['civilians', 'children', 'us-aid'],
   },
 ]
 

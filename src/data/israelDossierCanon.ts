@@ -1239,9 +1239,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: Al-Ahli Arab Hospital ───
   {
+    id: 'al-ahli-hospital-2023',
     title: 'Al-Ahli Arab Hospital Explosion — Disputed Responsibility',
     date: 'October 17, 2023',
     location: 'Al-Ahli Arab Hospital, Gaza City',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: [],
     summary: 'A massive explosion in the courtyard of Al-Ahli Arab Hospital killed an estimated 100-300 people sheltering there. Initial Palestinian reports blamed an Israeli airstrike. Israel claimed a misfired Palestinian Islamic Jihad rocket caused the explosion. Multiple independent investigations reached conflicting conclusions.',
     evidence: 'AP visual analysis and Human Rights Watch found evidence more consistent with a rocket than a large air-dropped bomb, while Forensic Architecture challenged key elements of Israel\'s public narrative and argued the available evidence remained inconclusive. The crater size was smaller than typical MK-84 impacts. U.S. intelligence assessed with "low confidence" it was a Palestinian rocket misfire. No party has provided conclusive evidence.',
     sources: [
@@ -1257,9 +1262,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: Systematic Destruction of Universities ───
   {
+    id: 'gaza-universities-destroyed',
     title: 'Systematic Destruction of Every University in Gaza',
     date: 'October 2023 — March 2026',
     location: 'All university campuses in Gaza',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['mk84-use', 'fmf-weapons'],
     summary: 'All 12 universities in Gaza have been damaged or destroyed by Israeli military operations, including the Islamic University of Gaza, Al-Azhar University, and Al-Aqsa University. Satellite imagery shows controlled demolitions of campus buildings weeks after Israeli forces secured the areas — suggesting destruction beyond military necessity.',
     evidence: 'Euro-Med Human Rights Monitor documented the destruction of all 12 institutions using satellite imagery comparisons. Forensic Architecture published spatial analysis showing several university buildings were demolished by controlled explosions rather than airstrikes, indicating deliberate destruction rather than collateral damage. UNESCO condemned the "scholasticide" — the systematic destruction of educational infrastructure.',
     sources: [
@@ -1324,9 +1334,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: Killing of Journalist Shireen Abu Akleh ───
   {
+    id: 'shireen-abu-akleh-2022',
     title: 'Killing of Journalist Shireen Abu Akleh',
     date: 'May 11, 2022',
     location: 'Jenin Refugee Camp, West Bank',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['joe-biden', 'antony-blinken'],
+    relatedMoneyNodeIds: ['annual-mou'],
     summary: 'Al Jazeera journalist Shireen Abu Akleh, a Palestinian-American, was shot and killed while covering an Israeli military raid in Jenin refugee camp. She was wearing a clearly marked press vest and helmet. Israeli forces initially blamed Palestinian gunfire, then acknowledged an Israeli soldier "likely" fired the fatal shot. The U.S. State Department found no reason to pursue further investigation despite Abu Akleh\'s American citizenship.',
     evidence: 'CNN, AP, The Washington Post, and Bellingcat all conducted independent video and audio analyses concluding the fatal shot came from an Israeli military convoy and that no active Palestinian gunfire was present in the immediate vicinity. The UN OHCHR similarly stated the available information was consistent with fire from Israeli security forces and inconsistent with indiscriminate armed activity by Palestinians at the location. Israel later acknowledged there was a high possibility an Israeli soldier fired the shot.',
     sources: [
@@ -1359,9 +1374,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: Rafah Tent Camp Strike ───
   {
+    id: 'rafah-tent-camp-2024',
     title: 'Rafah Tent Camp Fire — Families Burned Alive in Designated Safe Zone',
     date: 'May 26, 2024',
     location: 'Tal al-Sultan, Rafah',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'hr815'],
     summary: 'An Israeli airstrike hit a tent camp for displaced families in Tal al-Sultan, Rafah — an area Israel had designated as a humanitarian safe zone. The strike triggered a massive fire that burned through tents and makeshift shelters. At least 45 people were killed, including many women and children, with victims reported burned alive or decapitated. The strike came two days after the ICJ ordered Israel to halt its Rafah offensive.',
     evidence: 'Videos verified by Reuters, AP, and CNN showed charred bodies, children\'s remains, and burning tents in a densely packed camp. Israel said it was targeting two Hamas officials and blamed secondary explosions, but independent analysts said the munitions and fire spread still raised serious questions about proportionality and the designation of the site as a safe area.',
     sources: [
@@ -1395,9 +1415,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: UNRWA Staff Death Toll ───
   {
+    id: 'unrwa-staff-deaths',
     title: 'UNRWA Staff Death Toll — Highest UN Death Toll in Any Conflict',
     date: 'October 2023 — ongoing',
     location: 'Throughout Gaza',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden', 'antony-blinken'],
+    relatedMoneyNodeIds: ['hr815'],
     summary: 'Over 230 UNRWA staff members have been killed since October 7, 2023 — the highest number of UN staff killed in any single conflict in the history of the United Nations. UNRWA facilities have been struck over 500 times despite coordinates being shared with Israeli forces. Israel passed legislation banning UNRWA from operating in its territory, threatening the primary aid lifeline for 5.9 million Palestinian refugees.',
     evidence: 'UNRWA Commissioner-General Philippe Lazzarini has formally documented each staff killing. GPS coordinates of all UNRWA facilities were shared with the IDF as required by international humanitarian law. Despite this, UNRWA schools, shelters, and warehouses have been struck repeatedly. Israel\'s Knesset voted to ban UNRWA on October 28, 2024 — a move condemned by the UN Secretary-General, WHO, UNICEF, and 120+ member states.',
     sources: [
@@ -1413,9 +1438,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: Use of AI Targeting Systems ───
   {
+    id: 'lavender-ai-targeting',
     title: '"Lavender" and "Where\'s Daddy?" — AI-Assisted Targeting of Homes',
     date: 'October 2023 — ongoing',
     location: 'Throughout Gaza',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['mk84-use', 'jdam-use', 'hr815'],
     summary: 'Israeli military sources revealed to +972 Magazine that the IDF used two AI systems: "Lavender," which generated a database of 37,000+ suspected Hamas operatives with minimal human verification (an average of 20 seconds per target), and "Where\'s Daddy?", which tracked targets to their family homes and authorized strikes when they entered. Sources stated the acceptable civilian casualty ratio was 15-20 civilians per low-ranking militant and up to 100+ for senior commanders.',
     evidence: 'Six Israeli intelligence officers provided testimony to +972 Magazine and Local Call, speaking on condition of anonymity. They described the AI systems, the minimal human oversight, and the policy of striking targets at home with their families. The investigation was corroborated by analysis of strike patterns showing a disproportionate number of residential building attacks during nighttime hours. The IDF did not deny the existence of the systems but disputed the characterization of their use.',
     sources: [
@@ -1431,9 +1461,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: White Phosphorus ───
   {
+    id: 'white-phosphorus-2023',
     title: 'White Phosphorus Use in Populated Areas',
     date: 'October 2023',
     location: 'Gaza City, Southern Lebanon',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['artillery-use', 'fmf-weapons'],
     summary: 'Human Rights Watch verified the use of white phosphorus by Israeli forces over populated areas in Gaza City on October 10-11, 2023, and in southern Lebanon. White phosphorus burns at 800°C, causes severe chemical burns that can penetrate to the bone, and reignites when exposed to oxygen. Its use in populated areas violates international humanitarian law.',
     evidence: 'HRW researchers verified 155mm artillery-delivered white phosphorus munitions through video analysis and munition fragment identification. The organization identified the specific munition type as M825A1 155mm smoke projectiles — U.S.-manufactured. The Washington Post summarized the munition\'s effects and the legal controversy surrounding its use in populated areas. The IDF stated it uses white phosphorus "in accordance with international law" but did not deny its use.',
     sources: [
