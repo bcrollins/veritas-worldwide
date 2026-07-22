@@ -1,14 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T19:31:25.419Z",
+  "generatedAt": "2026-07-22T19:40:09.668Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 49,
     "timelineEvents": 40,
-    "actors": 23,
+    "actors": 27,
     "moneyTrailNodes": 11,
-    "historicalWarCrimesPack": 34
+    "historicalWarCrimesPack": 34,
+    "legalCases": 7,
+    "lobbyingRecords": 4
   },
   "publicRecords": [
     {
@@ -892,6 +894,122 @@
         {
           "label": "State Department / FRUS-style public statements archive (Trump era)",
           "sourceUrl": "https://2017-2021.state.gov/"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "josh-gottheimer",
+      "name": "Josh Gottheimer",
+      "role": "U.S. Representative (D-NJ); Democratic Majority for Israel co-founder network",
+      "category": "us-congress",
+      "enablementSummary": "House Democrat closely aligned with pro-Israel PACs and Democratic Majority for Israel; consistent floor advocate for unconditional wartime aid and opponent of progressive conditionality efforts during the Gaza war.",
+      "relatedTimelineYears": [
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "guardian-of-the-walls-2021",
+        "protective-edge-2014-children"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou",
+        "pro-israel-lobby-2024"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Gottheimer pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/josh-gottheimer/summary?cid=N00036944"
+        },
+        {
+          "label": "OpenSecrets — Democratic Majority for Israel PAC",
+          "sourceUrl": "https://www.opensecrets.org/political-action-committees-pacs/democratic-majority-for-israel/C00764126/summary/2024"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "tom-cotton",
+      "name": "Tom Cotton",
+      "role": "U.S. Senator (R-AR)",
+      "category": "us-congress",
+      "enablementSummary": "Senate Republican hard-liner on Israel aid and Iran policy; consistent votes for supplemental packages, Iron Dome funding, and maximal executive latitude on munitions transfers.",
+      "relatedTimelineYears": [
+        "2014",
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "protective-edge-2014-children",
+        "guardian-of-the-walls-2021"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "iron-dome",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Cotton / pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00033363"
+        },
+        {
+          "label": "Congress.gov — Cotton voting and cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/tom-cotton/C001095"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "aoc",
+      "name": "Alexandria Ocasio-Cortez",
+      "role": "U.S. Representative (D-NY)",
+      "category": "us-congress",
+      "enablementSummary": "High-profile House progressive opponent of unconditional Israel military aid and advocate for ceasefire / conditionality; mapped as counter-enablement so the graph documents congressional opposition as well as sponsorship.",
+      "relatedTimelineYears": [
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815"
+      ],
+      "fundingLinks": [
+        {
+          "label": "Congress.gov — member voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/alexandria-ocasio-cortez/O000172"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "john-bolton",
+      "name": "John Bolton",
+      "role": "U.S. National Security Advisor (2018–2019); UN Ambassador (2005–2006)",
+      "category": "us-executive",
+      "enablementSummary": "Long-running national-security hard-liner advocating maximal U.S. military and diplomatic support for Israeli government positions, including during Gaza operations and broader Middle East force posture.",
+      "relatedTimelineYears": [
+        "2005",
+        "2006",
+        "2018",
+        "2019"
+      ],
+      "relatedIncidentIds": [
+        "summer-rains-2006",
+        "cast-lead-2008-09"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons"
+      ],
+      "fundingLinks": [
+        {
+          "label": "CRS RL33222 — multi-administration aid continuity",
+          "sourceUrl": "https://www.congress.gov/crs-product/RL33222"
         }
       ],
       "tier": "verified"
@@ -3649,6 +3767,108 @@
       "casualties": {
         "killed": 15
       }
+    }
+  ],
+  "legalCases": [
+    {
+      "title": "South Africa v. Israel — Genocide Convention Case",
+      "court": "International Court of Justice (ICJ)",
+      "date": "December 29, 2023 — ongoing",
+      "ruling": "ICJ ordered provisional measures (Jan 26, 2024): Israel must prevent genocide, ensure humanitarian aid, prevent incitement. Additional order (Mar 28, 2024): Israel must ensure unhindered food aid. The court found it \"plausible\" that Israel's actions could constitute genocide.",
+      "significance": "First time the ICJ has ordered provisional measures against Israel under the Genocide Convention. Supported by 50+ countries intervening on South Africa's behalf.",
+      "sourceUrl": "https://www.icj-cij.org/case/192",
+      "status": "ongoing"
+    },
+    {
+      "title": "ICC Arrest Warrants — Netanyahu and Gallant",
+      "court": "International Criminal Court (ICC)",
+      "date": "November 21, 2024",
+      "ruling": "Pre-Trial Chamber I issued arrest warrants for Israeli PM Benjamin Netanyahu and former Defense Minister Yoav Gallant for war crimes and crimes against humanity including: starvation as a method of warfare, murder, persecution, and other inhumane acts.",
+      "significance": "First arrest warrants issued for a sitting Western-allied head of state since the ICC's establishment. ICC member states (124 countries) are legally obligated to arrest Netanyahu if he enters their territory.",
+      "sourceUrl": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
+      "status": "decided"
+    },
+    {
+      "title": "ICJ Advisory Opinion — Legality of the Occupation",
+      "court": "International Court of Justice (ICJ)",
+      "date": "July 19, 2024",
+      "ruling": "The court found Israel's continued presence in the Occupied Palestinian Territory is unlawful, that settlements violate Article 49 of the Fourth Geneva Convention, and that Israel's policies amount to de facto annexation and apartheid.",
+      "significance": "First time the world's highest court applied the term \"apartheid\" to Israeli policies. Called on all states to distinguish between Israel and the occupied territories in their dealings.",
+      "sourceUrl": "https://www.icj-cij.org/node/204176",
+      "status": "decided"
+    },
+    {
+      "title": "ICJ Advisory Opinion — Separation Wall",
+      "court": "International Court of Justice (ICJ)",
+      "date": "July 9, 2004",
+      "ruling": "The court ruled 14-1 that the construction of the wall in the occupied Palestinian territory is contrary to international law. Israel was obligated to dismantle it and make reparation for damage caused.",
+      "significance": "Israel refused to comply. 22 years later, the wall remains, now 712 km long, with 85% built inside the West Bank rather than on the Green Line.",
+      "sourceUrl": "https://www.icj-cij.org/case/131",
+      "status": "decided"
+    },
+    {
+      "title": "Kahan Commission — Sabra and Shatila",
+      "court": "Israeli Commission of Inquiry (Kahan Commission)",
+      "date": "February 8, 1983",
+      "ruling": "Found that Defense Minister Ariel Sharon bore \"personal responsibility\" for failing to prevent the Phalangist massacre of civilians in the Sabra and Shatila camps; recommended his removal from the defense portfolio.",
+      "significance": "Rare official Israeli government finding of personal ministerial responsibility for mass civilian killing by allied forces under Israeli military control of the perimeter.",
+      "sourceUrl": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "status": "decided"
+    },
+    {
+      "title": "UN Commission of Inquiry — Great March of Return (2018)",
+      "court": "UN Human Rights Council Commission of Inquiry",
+      "date": "March 18, 2019 report",
+      "ruling": "Found reasonable grounds that Israeli snipers intentionally shot children, medics, journalists, and persons with disabilities during the 2018 Gaza protests, amounting to possible war crimes and crimes against humanity.",
+      "significance": "Highest-level UN investigative finding on the 2018 protest killings; Israel rejected the mandate and findings.",
+      "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index",
+      "status": "decided"
+    },
+    {
+      "title": "B'Tselem / HRW / Amnesty — Apartheid Characterizations",
+      "court": "Leading human-rights organizations (not a court judgment)",
+      "date": "2021–2022",
+      "ruling": "B'Tselem (2021), Human Rights Watch (2021), and Amnesty International (2022) each concluded that Israeli authorities commit the crime against humanity of apartheid (and, for HRW/Amnesty, persecution) against Palestinians.",
+      "significance": "NGO legal characterizations — not ICJ/ICC final judgments. Tracked here so readers can distinguish court orders from organizational findings.",
+      "sourceUrl": "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
+      "status": "decided"
+    }
+  ],
+  "lobbying": [
+    {
+      "organization": "AIPAC (American Israel Public Affairs Committee)",
+      "amount": "$100M+",
+      "cycle": "2024 election cycle",
+      "recipients": "Pro-Israel candidates across both parties",
+      "source": "OpenSecrets",
+      "sourceUrl": "https://www.opensecrets.org/political-action-committees-pacs/aipac/C00104638/summary/2024",
+      "note": "AIPAC launched its first-ever Super PAC in 2022, immediately becoming one of the largest spenders in U.S. politics"
+    },
+    {
+      "organization": "United Democracy Project (AIPAC Super PAC)",
+      "amount": "$41.7M",
+      "cycle": "2024 primaries",
+      "recipients": "Targeted progressive candidates who criticized Israel",
+      "source": "FEC filings / OpenSecrets",
+      "sourceUrl": "https://www.opensecrets.org/political-action-committees-pacs/united-democracy-project/C00822007/summary/2024",
+      "note": "Largest spender in 2024 Democratic primaries. Defeated Jamaal Bowman ($14.5M spent) and Cori Bush ($8.5M spent)"
+    },
+    {
+      "organization": "Democratic Majority for Israel",
+      "amount": "$15M+",
+      "cycle": "2024 cycle",
+      "recipients": "Pro-Israel Democrats in competitive primaries",
+      "source": "FEC filings",
+      "sourceUrl": "https://www.opensecrets.org/political-action-committees-pacs/democratic-majority-for-israel/C00764126/summary/2024"
+    },
+    {
+      "organization": "Pro-Israel lobby (total — all organizations)",
+      "amount": "$180M+",
+      "cycle": "2024 cycle (total)",
+      "recipients": "Both parties, federal candidates",
+      "source": "OpenSecrets aggregate analysis",
+      "sourceUrl": "https://www.opensecrets.org/industries/indus?ind=Q05",
+      "note": "The pro-Israel lobby was the single largest source of PAC spending in the 2024 federal election cycle"
     }
   ],
   "eraMeta": {

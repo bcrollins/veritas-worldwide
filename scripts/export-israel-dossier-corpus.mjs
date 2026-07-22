@@ -118,12 +118,16 @@ async function main() {
       actors: actorsMod.ISRAEL_DOSSIER_ACTORS.length,
       moneyTrailNodes: canon.ISRAEL_DOSSIER_MONEY_TRAIL.length,
       historicalWarCrimesPack: history.ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES.length,
+      legalCases: (canon.ISRAEL_DOSSIER_LEGAL_CASES || []).length,
+      lobbyingRecords: (canon.ISRAEL_DOSSIER_LOBBYING_DATA || []).length,
     },
     publicRecords: canon.ISRAEL_DOSSIER_LATEST_PUBLIC_RECORDS,
     moneyTrail: canon.ISRAEL_DOSSIER_MONEY_TRAIL,
     actors: actorsMod.ISRAEL_DOSSIER_ACTORS,
     timeline: expanded.HISTORICAL_TIMELINE,
     incidents,
+    legalCases: canon.ISRAEL_DOSSIER_LEGAL_CASES || [],
+    lobbying: canon.ISRAEL_DOSSIER_LOBBYING_DATA || [],
     eraMeta: history.ISRAEL_DOSSIER_ERA_META,
   }
 

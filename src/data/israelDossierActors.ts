@@ -517,6 +517,86 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'josh-gottheimer',
+    name: 'Josh Gottheimer',
+    role: 'U.S. Representative (D-NJ); Democratic Majority for Israel co-founder network',
+    category: 'us-congress',
+    enablementSummary:
+      'House Democrat closely aligned with pro-Israel PACs and Democratic Majority for Israel; consistent floor advocate for unconditional wartime aid and opponent of progressive conditionality efforts during the Gaza war.',
+    relatedTimelineYears: ['2021', '2023', '2024'],
+    relatedIncidentIds: ['guardian-of-the-walls-2021', 'protective-edge-2014-children'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'pro-israel-lobby-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Gottheimer pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/josh-gottheimer/summary?cid=N00036944',
+      },
+      {
+        label: 'OpenSecrets — Democratic Majority for Israel PAC',
+        sourceUrl: 'https://www.opensecrets.org/political-action-committees-pacs/democratic-majority-for-israel/C00764126/summary/2024',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'tom-cotton',
+    name: 'Tom Cotton',
+    role: 'U.S. Senator (R-AR)',
+    category: 'us-congress',
+    enablementSummary:
+      'Senate Republican hard-liner on Israel aid and Iran policy; consistent votes for supplemental packages, Iron Dome funding, and maximal executive latitude on munitions transfers.',
+    relatedTimelineYears: ['2014', '2021', '2023', '2024'],
+    relatedIncidentIds: ['protective-edge-2014-children', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Cotton / pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00033363',
+      },
+      {
+        label: 'Congress.gov — Cotton voting and cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/tom-cotton/C001095',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'aoc',
+    name: 'Alexandria Ocasio-Cortez',
+    role: 'U.S. Representative (D-NY)',
+    category: 'us-congress',
+    enablementSummary:
+      'High-profile House progressive opponent of unconditional Israel military aid and advocate for ceasefire / conditionality; mapped as counter-enablement so the graph documents congressional opposition as well as sponsorship.',
+    relatedTimelineYears: ['2021', '2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815'],
+    fundingLinks: [
+      {
+        label: 'Congress.gov — member voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/alexandria-ocasio-cortez/O000172',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'john-bolton',
+    name: 'John Bolton',
+    role: 'U.S. National Security Advisor (2018–2019); UN Ambassador (2005–2006)',
+    category: 'us-executive',
+    enablementSummary:
+      'Long-running national-security hard-liner advocating maximal U.S. military and diplomatic support for Israeli government positions, including during Gaza operations and broader Middle East force posture.',
+    relatedTimelineYears: ['2005', '2006', '2018', '2019'],
+    relatedIncidentIds: ['summer-rains-2006', 'cast-lead-2008-09'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    fundingLinks: [
+      {
+        label: 'CRS RL33222 — multi-administration aid continuity',
+        sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
