@@ -246,7 +246,7 @@ export default function HomePage() {
                       The Israel Dossier
                     </h3>
                     <p className="font-body text-sm text-ink-muted leading-relaxed max-w-3xl">
-                      1948→ documented civilian-targeting record, U.S. aid money trail, actors enablement graph, multimedia source checks, and CSV export. Every claim labeled and linked.
+                      1948→ high-evidence incident corpus, bipartisan actors enablement graph, U.S. aid money trail, legal docket, multimedia source checks, CSV export, and machine-readable corpus.json. Every claim labeled and linked — not an exhaustive global ledger.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2 shrink-0">
