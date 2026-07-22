@@ -273,6 +273,25 @@ export default function ContentPackPage() {
   const handleLogoDownload = useCallback(async (variant: 'dark' | 'light', size: number) => {
     setDownloadingLogo(true)
     try {
+      // Prefer production brand-kit rasters; fall back to canvas generator.
+      const kitUrl =
+        variant === 'dark'
+          ? size >= 512
+            ? '/brand-kit/02-icons/app-icon-512.png'
+            : '/brand-kit/04-social/social-profile-400.png'
+          : size >= 512
+            ? '/brand-kit/01-logos/logo-mark-512.png'
+            : '/brand-kit/01-logos/logo-mark-256.png'
+      try {
+        const res = await fetch(kitUrl)
+        if (res.ok) {
+          const blob = await res.blob()
+          downloadBlob(blob, `veritas-logo-${variant}-${size}px.png`)
+          return
+        }
+      } catch {
+        /* fall through */
+      }
       const blob = await generateLogoPNG(size, variant)
       downloadBlob(blob, `veritas-logo-${variant}-${size}px.png`)
     } finally {
@@ -280,7 +299,16 @@ export default function ContentPackPage() {
     }
   }, [])
 
-  const handleSVGDownload = useCallback(() => {
+  const handleSVGDownload = useCallback(async () => {
+    try {
+      const res = await fetch('/brand-kit/01-logos/logo-mark.svg')
+      if (res.ok) {
+        downloadBlob(await res.blob(), 'veritas-logo-mark.svg')
+        return
+      }
+    } catch {
+      /* fall through */
+    }
     const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="2" fill="#1A1A1A"/><text x="16" y="23" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#FAF8F5">V</text><line x1="4" y1="28" x2="28" y2="28" stroke="#8B1A1A" stroke-width="2"/></svg>`
     downloadBlob(new Blob([svgContent], { type: 'image/svg+xml' }), 'veritas-logo.svg')
   }, [])
@@ -307,47 +335,60 @@ export default function ContentPackPage() {
         </div>
       </div>
 
-      {/* Brand Assets — merged from retired ContentPacksPage so one route owns the kit */}
+      {/* Brand Assets — production seal from Ultimate Brand Kit */}
       <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-10 border-b border-border" data-testid="brand-assets-section">
-        <h2 className="font-sans text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-2 pb-2 border-b border-border">
-          Brand Assets
-        </h2>
-        <p className="font-body text-sm text-ink-muted mb-6 max-w-2xl">
-          Logo files and brand marks for press coverage and social posts that reference Veritas Worldwide.
-        </p>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-6">
+          <div>
+            <h2 className="font-sans text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-ink-faint mb-2 pb-2 border-b border-border">
+              Brand Assets
+            </h2>
+            <p className="font-body text-sm text-ink-muted max-w-2xl">
+              Official seal mark, app icon, and colors from the Ultimate Brand Kit. Prefer the Media Kit for the full package.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              to="/media-kit"
+              className="inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-white hover:bg-crimson-dark"
+            >
+              Open Media Kit
+            </Link>
+            <a
+              href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip"
+              download
+              className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson"
+            >
+              Download ZIP
+            </a>
+          </div>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="border border-border rounded-sm p-5 text-center bg-surface">
-            <div className="w-20 h-20 mx-auto mb-4 bg-obsidian rounded-sm flex items-center justify-center">
-              <svg className="w-12 h-12" viewBox="0 0 32 32" aria-hidden="true">
-                <rect width="32" height="32" rx="2" fill="#8B1A1A" />
-                <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="22" fontWeight="bold" fill="#FAF8F5">V</text>
-              </svg>
+            <div className="w-20 h-20 mx-auto mb-4 bg-obsidian rounded-sm flex items-center justify-center overflow-hidden">
+              <img src="/brand-kit/02-icons/app-icon.svg" alt="" className="h-16 w-16" width={64} height={64} />
             </div>
-            <p className="font-sans text-xs font-semibold text-ink mb-2">Logo — Dark BG</p>
+            <p className="font-sans text-xs font-semibold text-ink mb-2">App icon — crimson</p>
             <div className="flex gap-1 justify-center">
               <button type="button" onClick={() => handleLogoDownload('dark', 512)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">512px</button>
-              <button type="button" onClick={() => handleLogoDownload('dark', 1024)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">1024px</button>
+              <button type="button" onClick={() => handleLogoDownload('dark', 1024)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">PNG</button>
             </div>
           </div>
           <div className="border border-border rounded-sm p-5 text-center bg-surface">
-            <div className="w-20 h-20 mx-auto mb-4 bg-parchment border border-border rounded-sm flex items-center justify-center">
-              <svg className="w-12 h-12" viewBox="0 0 32 32" aria-hidden="true">
-                <rect width="32" height="32" rx="2" fill="#1A1A1A" />
-                <text x="16" y="23" textAnchor="middle" fontFamily="Georgia, serif" fontSize="22" fontWeight="bold" fill="#FAF8F5">V</text>
-              </svg>
+            <div className="w-20 h-20 mx-auto mb-4 bg-parchment border border-border rounded-sm flex items-center justify-center overflow-hidden">
+              <img src="/brand-kit/01-logos/logo-mark.svg" alt="" className="h-16 w-16" width={64} height={64} />
             </div>
-            <p className="font-sans text-xs font-semibold text-ink mb-2">Logo — Light BG</p>
+            <p className="font-sans text-xs font-semibold text-ink mb-2">Seal mark — parchment</p>
             <div className="flex gap-1 justify-center">
               <button type="button" onClick={() => handleLogoDownload('light', 512)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">512px</button>
-              <button type="button" onClick={() => handleLogoDownload('light', 1024)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">1024px</button>
+              <button type="button" onClick={() => handleLogoDownload('light', 256)} disabled={downloadingLogo} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors disabled:opacity-50">256px</button>
             </div>
           </div>
           <div className="border border-border rounded-sm p-5 text-center bg-surface">
-            <div className="w-20 h-20 mx-auto mb-4 bg-surface border border-border rounded-sm flex items-center justify-center">
-              <span className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint">SVG</span>
+            <div className="w-20 h-20 mx-auto mb-4 bg-surface border border-border rounded-sm flex items-center justify-center overflow-hidden p-2">
+              <img src="/brand-kit/01-logos/logo-mark.svg" alt="" className="max-h-full max-w-full" />
             </div>
-            <p className="font-sans text-xs font-semibold text-ink mb-2">Vector Logo</p>
-            <button type="button" onClick={handleSVGDownload} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] font-semibold text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors">
+            <p className="font-sans text-xs font-semibold text-ink mb-2">Vector seal (SVG)</p>
+            <button type="button" onClick={() => void handleSVGDownload()} className="min-h-[44px] px-3 py-2 rounded-sm border border-border font-sans text-[0.55rem] font-semibold text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors">
               Download SVG
             </button>
           </div>
@@ -368,6 +409,9 @@ export default function ContentPackPage() {
               </div>
             </div>
             <p className="font-sans text-[0.55rem] text-ink-faint mt-3">Fonts: Playfair Display, Source Serif 4, Inter</p>
+            <a href="/brand-kit/06-tokens/tokens.css" className="mt-2 inline-flex min-h-[44px] items-center font-sans text-[0.6rem] text-crimson hover:underline">
+              tokens.css →
+            </a>
           </div>
         </div>
       </section>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="YouTube thumbnail template">
+  <rect width="1280" height="720" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1280" height="6" fill="#8B1A1A"/>
+  <rect x="0" y="714" width="1280" height="6" fill="#8B1A1A"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6" fill="#B8860B">VERITAS WORLDWIDE PRESS</text>
+  <text x="80" y="280" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#FFFFFF">The Record</text>
+  <text x="80" y="360" font-family="Georgia, serif" font-size="32" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record.</text>
+  <text x="80" y="420" font-family="Georgia, serif" font-size="32" font-style="italic" fill="rgba(255,255,255,0.7)">Your conclusions.</text>
+  <circle cx="1100" cy="360" r="90" fill="none" stroke="#8B1A1A" stroke-width="6"/>
+  <text x="1100" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#FFFFFF">V</text>
+  <text x="80" y="640" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+</svg>

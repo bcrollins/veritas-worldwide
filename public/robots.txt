@@ -29,6 +29,8 @@ Allow: /feed.xml
 Allow: /sitemap.xml
 Allow: /profiles/corpus.json
 Allow: /israel-dossier/workbooks/
+Allow: /media-kit
+Allow: /brand-kit/
 
 Sitemap: https://veritasworldwide.com/sitemap.xml
 

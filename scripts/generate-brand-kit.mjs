@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.3.0'
+const KIT_VERSION = '2.4.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -493,22 +493,36 @@ institutional power history, public record investigation, evidence taxonomy
 `
 }
 
-function quoteCardSvg(quote = 'Primary sources. Public record. Your conclusions.') {
-  const q = String(quote).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+function quoteCardSvg() {
+  // Pure SVG text (no foreignObject) so PNG rasterization stays reliable.
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Quote card">
   <rect width="1080" height="1080" fill="${C.black}"/>
   <rect x="0" y="0" width="1080" height="8" fill="${C.crimson}"/>
   <rect x="0" y="1072" width="1080" height="8" fill="${C.crimson}"/>
   <text x="120" y="280" font-family="Georgia, serif" font-size="120" fill="${C.crimson}" opacity="0.35">“</text>
-  <foreignObject x="120" y="320" width="840" height="420">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Georgia,serif;font-size:48px;line-height:1.35;color:#FFFFFF;font-style:italic;">
-      ${q}
-    </div>
-  </foreignObject>
+  <text x="120" y="400" font-family="Georgia, serif" font-size="48" font-style="italic" fill="${C.white}">Primary sources.</text>
+  <text x="120" y="470" font-family="Georgia, serif" font-size="48" font-style="italic" fill="${C.white}">Public record.</text>
+  <text x="120" y="540" font-family="Georgia, serif" font-size="48" font-style="italic" fill="${C.white}">Your conclusions.</text>
   <line x1="120" y1="800" x2="360" y2="800" stroke="${C.gold}" stroke-width="2"/>
   <text x="120" y="860" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="4" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
   <text x="120" y="900" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.45)">veritasworldwide.com</text>
+</svg>`
+}
+
+function youtubeThumbnailSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="YouTube thumbnail template">
+  <rect width="1280" height="720" fill="${C.black}"/>
+  <rect x="0" y="0" width="1280" height="6" fill="${C.crimson}"/>
+  <rect x="0" y="714" width="1280" height="6" fill="${C.crimson}"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+  <text x="80" y="280" font-family="Georgia, serif" font-size="64" font-weight="700" fill="${C.white}">The Record</text>
+  <text x="80" y="360" font-family="Georgia, serif" font-size="32" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record.</text>
+  <text x="80" y="420" font-family="Georgia, serif" font-size="32" font-style="italic" fill="rgba(255,255,255,0.7)">Your conclusions.</text>
+  <circle cx="1100" cy="360" r="90" fill="none" stroke="${C.crimson}" stroke-width="6"/>
+  <text x="1100" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" fill="${C.white}">V</text>
+  <text x="80" y="640" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
 </svg>`
 }
 
@@ -848,6 +862,7 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('09-templates/press-release-header.svg', pressReleaseHeaderSvg())
   writeSvg('09-templates/business-card.svg', businessCardSvg())
   writeSvg('04-social/quote-card.svg', quoteCardSvg())
+  writeSvg('04-social/youtube-thumbnail.svg', youtubeThumbnailSvg())
   writeFileSync(join(KIT, '09-templates', 'email-signature.html'), emailSignatureHtml())
   writeFileSync(join(KIT, '09-templates', 'media-kit.html'), mediaKitHtml())
   writeFileSync(join(KIT, '06-tokens', 'tokens.css'), tokensCss())
@@ -877,6 +892,7 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/highlight-sources.svg', '04-social/highlight-sources.png', 400],
     ['04-social/highlight-record.svg', '04-social/highlight-record.png', 400],
     ['04-social/quote-card.svg', '04-social/quote-card.png', 1080],
+    ['04-social/youtube-thumbnail.svg', '04-social/youtube-thumbnail.png', 1280],
   ]
   for (const [src, dest, w] of rasters) {
     try {

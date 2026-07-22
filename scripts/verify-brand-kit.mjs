@@ -58,6 +58,7 @@ const required = [
   '09-templates/business-card.svg',
   '09-templates/media-kit.html',
   '04-social/quote-card.svg',
+  '04-social/youtube-thumbnail.svg',
   '07-docs/BRAND-VOICE.md',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
 ]
@@ -148,6 +149,7 @@ if (base) {
     '/brand-kit/09-templates/business-card.svg',
     '/brand-kit/09-templates/media-kit.html',
     '/brand-kit/04-social/quote-card.svg',
+    '/brand-kit/04-social/youtube-thumbnail.svg',
     '/brand-kit/07-docs/BRAND-VOICE.md',
     '/brand-kit/06-tokens/tokens.css',
     '/media-kit',

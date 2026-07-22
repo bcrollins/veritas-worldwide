@@ -26,6 +26,8 @@ const ASSETS = [
       { href: '/og-image.png', label: 'OG image' },
       { href: '/brand-kit/04-social/social-banner-x.svg', label: 'X banner' },
       { href: '/brand-kit/04-social/story-1080x1920.svg', label: 'IG story' },
+      { href: '/brand-kit/04-social/quote-card.svg', label: 'Quote card' },
+      { href: '/brand-kit/04-social/youtube-thumbnail.svg', label: 'YouTube thumbnail' },
       { href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md', label: 'Asset matrix' },
     ],
   },

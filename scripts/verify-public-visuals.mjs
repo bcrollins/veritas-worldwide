@@ -66,6 +66,11 @@ const routes = [
     anyText: ['Record', 'RECORD', 'Methodology', 'METHODOLOGY', 'Membership', 'MEMBERSHIP'],
   },
   {
+    path: '/media-kit',
+    text: ['Media Kit', 'MEDIA KIT'],
+    anyText: ['Brand', 'BRAND', 'Download', 'DOWNLOAD', 'logo', 'Logo', 'LOGO', 'ZIP'],
+  },
+  {
     path: '/accessibility',
     text: ['Accessibility', 'ACCESSIBILITY'],
     anyText: ['WCAG', 'contrast', 'Contrast', 'touch', 'Touch', '44'],

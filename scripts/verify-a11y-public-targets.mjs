@@ -36,6 +36,8 @@ const floors = [
   { path: 'src/components/DossierCarousel.tsx', min: 4, label: 'dossier carousel downloads' },
   { path: 'src/pages/ReadTheBookPage.tsx', min: 18, label: 'read reader chrome' },
   { path: 'src/pages/AboutPage.tsx', min: 7, label: 'about key routes' },
+  { path: 'src/pages/MediaKitPage.tsx', min: 5, label: 'media kit press CTAs' },
+  { path: 'src/pages/admin/AdminBrandKit.tsx', min: 8, label: 'admin brand kit downloads' },
   { path: 'src/pages/ProfilePage.tsx', min: 14, label: 'profile sources/nav' },
   { path: 'src/pages/admin/AdminLayout.tsx', min: 5, label: 'admin shell nav' },
   { path: 'src/components/RecordTabs.tsx', min: 3, label: 'record section tabs' },

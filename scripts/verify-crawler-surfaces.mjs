@@ -24,6 +24,7 @@ const MIN_LLMS_LINKS = 40
 const REQUIRED_SITEMAP_PATHS = [
   '/',
   '/about',
+  '/media-kit',
   '/methodology',
   '/sources',
   '/terms',
@@ -51,6 +52,8 @@ const REQUIRED_LLMS_NEEDLES = [
   '/forum',
   '/profiles',
   '/about',
+  '/media-kit',
+  '/brand-kit/manifest.json',
   '/accessibility',
   'security.txt',
   'election-security-ai-risk-frameworks-cisa-nist-2026',
