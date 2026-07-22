@@ -674,25 +674,18 @@ export const PROFILES: PowerProfile[] = [
     ],
     donations: [
       {
-        from: 'Preserve America PAC (Miriam Adelson → pro-Trump Super PAC)',
+        from: 'Preserve America PAC (Miriam Adelson Super PAC transfers — 2024 FEC window)',
         amount: 100000000,
         year: '2024',
-        source: 'FEC disclosures / Times of Israel reporting of itemized monthly transfers',
+        source: 'FEC disclosures / Times of Israel itemized reporting',
         url: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/',
       },
       {
-        from: 'Adelson Clinic / Miriam Adelson — OpenSecrets organization outside-spending total (2024 cycle)',
-        amount: 146881700,
-        year: '2024 cycle',
-        source: 'OpenSecrets — Top Organizations outside spending',
+        from: 'Additional Adelson Clinic / Miriam Adelson outside spending beyond Preserve America core (OpenSecrets org total ~$146.9M minus $100M PAC line)',
+        amount: 46881700,
+        year: '2024 cycle residual',
+        source: 'OpenSecrets Top Organizations — Adelson Clinic / Miriam Adelson',
         url: 'https://www.opensecrets.org/elections-overview/top-organizations',
-      },
-      {
-        from: 'TrackAIPAC aggregation — Preserve America spend benefiting Trump (multi-cycle)',
-        amount: 215000000,
-        year: '2020–2024',
-        source: 'TrackAIPAC — Trump / pro-Israel outside-spend analysis',
-        url: 'https://www.trackaipac.com/trump',
       },
     ],
     policyActions: [
