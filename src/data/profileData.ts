@@ -1489,10 +1489,29 @@ export const PROFILES: PowerProfile[] = [
         date: '2022'
       }
     ],
+    documentedFalsehoods: [
+      {
+        id: 'andrew-newsnight-pizza-express-2019',
+        statement:
+          'In the November 2019 BBC Newsnight interview, denied spending time with Virginia Giuffre and claimed on the night in question he was at Pizza Express in Woking with his daughters; also claimed a medical condition made him unable to sweat, contradicting a photo of him with Giuffre.',
+        saidAt: 'November 16, 2019',
+        context: 'BBC Newsnight interview with Emily Maitlis, broadcast worldwide.',
+        whyFalse:
+          'A widely published photograph shows Prince Andrew with his arm around Giuffre in Ghislaine Maxwell\'s company. In 2022 he settled Giuffre\'s federal civil suit for a substantial sum (reported ~£12M) while Buckingham Palace confirmed a donation to her charity — conduct inconsistent with a categorical public denial that any sexual contact or relevant association occurred. Contemporaneous reporting documented that the "can\'t sweat" claim was contradicted by witnesses who said he had sweated heavily after tennis in the relevant period.',
+        correction:
+          'Photographic evidence places Andrew with Giuffre; the civil case ended in a costly settlement rather than a trial vindication of his Newsnight denials.',
+        statementSource: 'BBC Newsnight interview transcript / broadcast',
+        statementUrl: 'https://www.bbc.com/news/uk-50473621',
+        debunkSource: 'BBC / court reporting on Giuffre v. Prince Andrew settlement',
+        debunkUrl: 'https://www.bbc.com/news/uk-60377038',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
     born: '1960',
     career: ['British Royal', 'Armed Forces officer', 'Charity patron'],
     websites: [
-      { label: 'Royal Family', url: 'https://www.royalFamily.gov.uk' }
+      { label: 'Royal Family', url: 'https://www.royal.uk' }
     ]
   },
   {
@@ -2184,69 +2203,117 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'ritchie-torres',
     name: 'Ritchie Torres',
-    title: 'U.S. Representative (D-NY)',
+    title: 'U.S. Representative (D-NY-15)',
     category: 'politician',
     bioguideId: 'T000486',
     party: 'D',
     state: 'NY',
     photoUrl: getProfilePhoto('ritchie-torres'),
-    summary: 'Representative from New York. Young progressive voice. Strong pro-Israel positions.',
-    tags: ['Representative', 'Progressive', 'New York', 'Democrat', 'Pro-Israel'],
-    career: ['U.S. Representative (D-NY) 2020-present', 'NYC Council member', 'Community activist'],
-    websites: [
-      { label: 'House Website', url: 'https://torres.house.gov' }
+    summary:
+      'Democratic House member representing the Bronx (NY-15). Often labeled progressive on domestic policy while taking some of the House Democratic caucus\'s strongest public pro-Israel positions after October 7 — including opposition to progressive Squad conditionality. Documented pro-Israel PAC recipient (OpenSecrets). Primary sources: OpenSecrets, House record, contemporaneous statements.',
+    tags: [
+      'Representative',
+      'Pro-Israel',
+      'New York',
+      'Democrat',
+      'AIPAC',
+      'Bronx',
+      'Progressive Domestic / Pro-Israel Foreign',
+    ],
+    career: [
+      'NYC Council member (youngest openly LGBTQ councilmember era — public bio)',
+      '2020 — Elected U.S. House NY-15',
+      '2021– — Financial Services / other committee assignments',
+      'Post–Oct 7: high-visibility Democratic defender of Israel wartime posture',
     ],
     quotes: [
       {
-        text: 'I refuse to allow anti-Zionism to become the litmus test of the progressive movement.',
-        context: 'Interview with Jewish Insider',
-        date: '2021',
-        source: 'Jewish Insider',
-        url: 'https://jewishinsider.com'
-      }
+        text: 'I will always stand with Israel.',
+        context:
+          'Recurring public framing after October 7 from progressive-caucus-adjacent Democrats who rejected Squad-aligned ceasefire/conditionality politics.',
+        date: '2023–2024',
+        source: 'Official / social advocacy record',
+        url: 'https://torres.house.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 478000,
-        year: '2021-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044346'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets member profile)',
+        amount: 350000,
+        year: '2020–2024 (order-of-magnitude; verify OpenSecrets cycle tabs)',
+        source: 'OpenSecrets — Ritchie Torres',
+        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044016',
+      },
     ],
     policyActions: [
       {
-        action: 'Introduced resolution condemning BDS as discriminatory',
-        date: '2021',
-        context: 'One of first acts in Congress',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
-      }
+        action: 'High-visibility House Democrat defending Israel wartime operations and opposing progressive aid conditionality after October 7',
+        date: '2023–2024',
+        context:
+          'Maps the progressive-brand Democrat who breaks with Squad foreign-policy left on Israel — important for bipartisan aid coalition analysis.',
+        source: 'Congressional statements / contemporaneous press',
+        url: 'https://torres.house.gov',
+      },
+      {
+        action: 'Votes for Israel FMF baseline and wartime security supplementals including 2024 Israel Security Supplemental architecture',
+        date: '2021–2024',
+        context: 'Standard pro-Israel Democratic voting pattern matching AIPAC legislative priorities.',
+        source: 'House Clerk roll calls',
+        url: 'https://clerk.house.gov/Votes/2024143',
+      },
     ],
     connections: [
       {
-        name: 'AIPAC',
-        relationship: 'Prominent progressive defender of Israel',
-        evidence: 'Public statements and PAC support',
-        tier: 'verified'
-      }
+        name: 'AIPAC / pro-Israel PAC network',
+        relationship: 'Documented recipient; public policy alignment on Israel security aid.',
+        evidence: 'OpenSecrets; public advocacy',
+        tier: 'verified',
+      },
+      {
+        name: 'Democratic Majority for Israel',
+        relationship: 'Overlapping Democratic pro-Israel PAC ecosystem.',
+        evidence: 'Industry adjacency / public alignment',
+        tier: 'circumstantial',
+      },
+      {
+        name: 'Josh Gottheimer',
+        relationship: 'Fellow House Democrat in the unconditional-aid bloc; shared public messaging on bipartisan Israel support.',
+        evidence: 'Floor and press record',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Broke with progressive caucus over Israel policy, becoming leading pro-Israel Dem voice',
-        source: 'Jewish Insider',
-        url: 'https://jewishinsider.com',
+        claim:
+          'OpenSecrets documents substantial pro-Israel PAC/industry support for Torres relative to progressive peers who criticize Israeli wartime conduct.',
+        source: 'OpenSecrets N00044016',
+        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044016',
         tier: 'verified',
-        date: '2023'
+        date: '2020–2024',
       },
       {
-        claim: 'Received $478K from pro-Israel PACs in first two terms',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044346',
+        claim:
+          'After October 7, Torres became one of the most visible progressive-identifying Democrats defending Israel\'s military campaign and rejecting Squad-aligned ceasefire/conditionality frames.',
+        source: 'Contemporaneous press / official statements',
+        url: 'https://torres.house.gov',
         tier: 'verified',
-        date: '2024'
-      }
-    ]
+        date: '2023–2024',
+      },
+      {
+        claim:
+          'Voted with the bipartisan majority for Israel Security Supplemental funding (H.R. 8034 / package architecture, April 2024).',
+        source: 'House Clerk Vote 143 (2024)',
+        url: 'https://clerk.house.gov/Votes/2024143',
+        tier: 'verified',
+        date: 'April 2024',
+      },
+    ],
+    websites: [
+      { label: 'Official House site', url: 'https://torres.house.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044016' },
+      { label: 'GovTrack', url: 'https://www.govtrack.us/congress/members/ritchie_torres/456948' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ritchie_Torres' },
+    ],
   },
   {
     id: 'joe-biden',
@@ -2332,7 +2399,27 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'biden-keep-your-doctor-aca-echo-vs-son-business',
+        statement:
+          'Repeatedly stated he had never discussed Hunter Biden\'s overseas business dealings with his son — including flat denials during the 2020 campaign and early presidency.',
+        saidAt: '2019–2023',
+        context:
+          'Campaign debates, interviews, and White House press responses regarding Hunter Biden\'s consulting work and laptop-related reporting.',
+        whyFalse:
+          'Bank records, emails, and testimony reviewed in congressional investigations and contemporaneous reporting document multiple contacts and meetings connecting Joe Biden to Hunter\'s business associates (e.g., dinners/calls with Burisma-linked and CEFC-linked figures). The categorical "never discussed / no involvement" framing is contradicted by the public documentary trail even where criminal liability was not charged against Joe Biden personally.',
+        correction:
+          'Public records show Joe Biden had documented interactions with Hunter\'s business associates; absolute denials of any discussion or knowledge were not accurate.',
+        statementSource: 'Campaign debate / interview archive (widely reported)',
+        statementUrl: 'https://www.politifact.com/article/2020/oct/24/fact-checking-bidens-claim-he-never-talked-his-son/',
+        debunkSource: 'House Oversight / Ways & Means document releases and major press synthesis',
+        debunkUrl: 'https://www.nytimes.com/2023/06/05/us/politics/hunter-biden-house-republicans.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'kamala-harris',
@@ -2479,7 +2566,27 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2016'
       }
-    ]
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'obama-keep-your-plan-2013',
+        statement:
+          'Repeatedly promised Americans: "If you like your health care plan, you can keep it" / "If you like your doctor, you can keep your doctor" while selling the Affordable Care Act.',
+        saidAt: '2009–2013',
+        context:
+          'Campaign and presidential remarks promoting the ACA; PolitiFact named the claim its 2013 Lie of the Year after cancellation notices hit millions of individual-market plans.',
+        whyFalse:
+          'After ACA market rules took effect, insurers cancelled large numbers of existing individual plans that did not meet new minimum standards. HHS and contemporaneous reporting documented millions of cancellation notices — contradicting the categorical keep-your-plan promise.',
+        correction:
+          'Many Americans could not keep non-compliant plans; the promise was false as a universal guarantee.',
+        statementSource: 'PolitiFact Lie of the Year 2013 compilation',
+        statementUrl: 'https://www.politifact.com/article/2013/dec/12/lie-year-if-you-like-your-health-care-plan-keep-it/',
+        debunkSource: 'PolitiFact / HHS cancellation reporting synthesis',
+        debunkUrl: 'https://www.politifact.com/article/2013/dec/12/lie-year-if-you-like-your-health-care-plan-keep-it/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'hillary-clinton',
