@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T21:30:02.968Z",
+  "generatedAt": "2026-07-22T21:32:06.916Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -9,7 +9,7 @@
     "actors": 40,
     "moneyTrailNodes": 15,
     "historicalWarCrimesPack": 43,
-    "legalCases": 7,
+    "legalCases": 9,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 2,
@@ -4866,6 +4866,24 @@
       "ruling": "B'Tselem (2021), Human Rights Watch (2021), and Amnesty International (2022) each concluded that Israeli authorities commit the crime against humanity of apartheid (and, for HRW/Amnesty, persecution) against Palestinians.",
       "significance": "NGO legal characterizations — not ICJ/ICC final judgments. Tracked here so readers can distinguish court orders from organizational findings.",
       "sourceUrl": "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
+      "status": "decided"
+    },
+    {
+      "title": "UN Security Council Resolution 2334 — Settlements",
+      "court": "UN Security Council",
+      "date": "December 23, 2016",
+      "ruling": "Reaffirmed that Israeli settlements in occupied Palestinian territory, including East Jerusalem, have no legal validity and constitute a flagrant violation under international law; demanded that Israel immediately and completely cease all settlement activities.",
+      "significance": "U.S. abstained under Obama rather than vetoing — a rare break from automatic cover. The resolution remains the core Security Council floor on settlement illegality.",
+      "sourceUrl": "https://digitallibrary.un.org/record/853516",
+      "status": "decided"
+    },
+    {
+      "title": "UN Security Council Resolution 242 — Land for Peace Framework",
+      "court": "UN Security Council",
+      "date": "November 22, 1967",
+      "ruling": "Called for withdrawal of Israeli armed forces from territories occupied in the 1967 conflict and for respect for the right of every state in the area to live in peace within secure and recognized boundaries.",
+      "significance": "Foundational post-1967 diplomatic framework still cited in every major peace process and occupation-law debate. Implementation remains incomplete and contested.",
+      "sourceUrl": "https://digitallibrary.un.org/record/90717",
       "status": "decided"
     }
   ],

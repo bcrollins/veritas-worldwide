@@ -1642,6 +1642,24 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     sourceUrl: 'https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution',
     status: 'decided',
   },
+  {
+    title: 'UN Security Council Resolution 2334 — Settlements',
+    court: 'UN Security Council',
+    date: 'December 23, 2016',
+    ruling: 'Reaffirmed that Israeli settlements in occupied Palestinian territory, including East Jerusalem, have no legal validity and constitute a flagrant violation under international law; demanded that Israel immediately and completely cease all settlement activities.',
+    significance: 'U.S. abstained under Obama rather than vetoing — a rare break from automatic cover. The resolution remains the core Security Council floor on settlement illegality.',
+    sourceUrl: 'https://digitallibrary.un.org/record/853516',
+    status: 'decided',
+  },
+  {
+    title: 'UN Security Council Resolution 242 — Land for Peace Framework',
+    court: 'UN Security Council',
+    date: 'November 22, 1967',
+    ruling: 'Called for withdrawal of Israeli armed forces from territories occupied in the 1967 conflict and for respect for the right of every state in the area to live in peace within secure and recognized boundaries.',
+    significance: 'Foundational post-1967 diplomatic framework still cited in every major peace process and occupation-law debate. Implementation remains incomplete and contested.',
+    sourceUrl: 'https://digitallibrary.un.org/record/90717',
+    status: 'decided',
+  },
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [
