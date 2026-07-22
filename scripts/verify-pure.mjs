@@ -23,6 +23,7 @@ const pure = [
   'verify-home-toc-structure.mjs',
   'verify-csp-meta.mjs',
   'verify-checkout-attribution.mjs',
+  'verify-trust-corpora-links.mjs',
 ]
 
 let failed = 0
@@ -30,7 +31,7 @@ for (const script of pure) {
   const r = spawnSync(process.execPath, [join(root, 'scripts', script)], { stdio: 'inherit' })
   if (r.status !== 0) failed += 1
 }
-if (pure.length < 15) {
+if (pure.length < 16) {
   console.error(`[verify:pure] FAIL — suite list shrunk to ${pure.length}`)
   process.exit(1)
 }

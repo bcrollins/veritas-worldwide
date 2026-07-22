@@ -54,6 +54,7 @@
     "verify:server-security-invariants": "node scripts/verify-server-security-invariants.mjs",
     "verify:home-toc-structure": "node scripts/verify-home-toc-structure.mjs",
     "verify:csp-meta": "node scripts/verify-csp-meta.mjs",
+    "verify:trust-corpora-links": "node scripts/verify-trust-corpora-links.mjs",
     "verify:pure": "node scripts/verify-pure.mjs"
   },
   "dependencies": {
