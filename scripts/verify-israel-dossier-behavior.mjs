@@ -162,7 +162,8 @@ async function runCrawlerMetaChecks(browser) {
       title: 'U.S. Foreign Aid to Israel | The Record - Veritas Worldwide',
       descriptionIncludes: ['CRS', '$298 billion', '1946-2024'],
       type: 'article',
-      imageSuffix: '/og/chapter-15.png',
+      // First-party editorial hero preferred; legacy generated OG still accepted during migration.
+      imageSuffixes: ['/chapters/heroes/chapter-15.jpg', '/og/chapter-15.png'],
     },
     {
       path: '/israel-dossier/briefing',
@@ -197,7 +198,11 @@ async function runCrawlerMetaChecks(browser) {
     assert(twitterTitle === item.title, `${item.label} twitter:title mismatch: ${twitterTitle}`)
     assert(ogType === item.type, `${item.label} og:type mismatch: ${ogType}`)
     assert(ogUrl === publicUrl, `${item.label} og:url mismatch: ${ogUrl}`)
-    assert(ogImage.endsWith(item.imageSuffix), `${item.label} og:image mismatch: ${ogImage}`)
+    const allowedImageSuffixes = item.imageSuffixes || (item.imageSuffix ? [item.imageSuffix] : [])
+    assert(
+      allowedImageSuffixes.some((suffix) => ogImage.endsWith(suffix)),
+      `${item.label} og:image mismatch: ${ogImage}`,
+    )
     assert(twitterImage === ogImage, `${item.label} twitter:image diverges from og:image`)
 
     if (item.description) {
