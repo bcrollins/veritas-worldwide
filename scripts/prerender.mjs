@@ -565,6 +565,42 @@ function renderProfilePage(profile) {
   `
 }
 
+function buildProfileJsonLd(profile) {
+  const url = `${SITE_URL}/profile/${profile.id}`
+  const image = profile.photo ? absoluteSiteUrl(profile.photo) : DEFAULT_OG_IMAGE
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      name: `${profile.name} — Power Profile`,
+      url,
+      description: profile.summary,
+      mainEntity: {
+        '@type': 'Person',
+        name: profile.name,
+        jobTitle: profile.title,
+        description: profile.summary,
+        image,
+        url,
+      },
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Veritas Worldwide',
+        url: SITE_URL,
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Profiles', item: `${SITE_URL}/profiles` },
+        { '@type': 'ListItem', position: 3, name: profile.name, item: url },
+      ],
+    },
+  ]
+}
+
 function normalizeTopicTerm(value) {
   return String(value).trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -2602,6 +2638,7 @@ for (const profileSlug of profileSlugs) {
     image: photoAbs,
     keywords: [profile.name, profile.category, 'power profile', 'FEC', 'primary sources'],
     modifiedTime: profileModified,
+    jsonLd: buildProfileJsonLd(profile),
   }
   fs.writeFileSync(filePath, buildDocument(template, meta, renderProfilePage(profile)))
   manifest[route] = `prerender/${fileName}`

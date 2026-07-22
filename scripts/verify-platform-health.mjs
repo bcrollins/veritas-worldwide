@@ -345,7 +345,7 @@ const healthResult = await fetchJson('/api/health')
       addCheck(
         checks,
         failures,
-        livePrerenderCount >= 270,
+        livePrerenderCount >= 360,
         'Live prerender route count stays above crawler floor',
         `prerenderedRouteCount=${livePrerenderCount}`
       )
@@ -691,6 +691,8 @@ const healthResult = await fetchJson('/api/health')
         '/profiles/ted-cruz.jpg',
         '/profiles/donald-trump.jpg',
         '/profiles/nancy-pelosi.jpg',
+        '/profiles/aoc.jpg',
+        '/profiles/bernie-sanders.jpg',
         '/profiles/benjamin-netanyahu.svg',
         '/profiles/jeffrey-epstein.svg',
       ]) {

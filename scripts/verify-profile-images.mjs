@@ -20,7 +20,7 @@ assert(!profileData.includes('upload.wikimedia.org'), 'profileData still has Wik
 assert(!profileData.includes('commons.wikimedia.org'), 'profileData still has Wikimedia commons URLs')
 
 const photoRefs = [...profileData.matchAll(/['"](\/profiles\/[^'"]+)['"]/g)].map((m) => m[1])
-assert(photoRefs.length >= 30, `expected ≥30 local profile photo refs, got ${photoRefs.length}`)
+assert(photoRefs.length >= 90, `expected ≥90 local profile photo refs, got ${photoRefs.length}`)
 
 const missing = []
 const small = []
