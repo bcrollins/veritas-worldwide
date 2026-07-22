@@ -436,11 +436,15 @@ async function runInteractiveChecks(browser) {
 
     // Expanded search keyword surface (liberty / UNRWA / lobby)
     await page.goto(`${baseUrl}/search?q=liberty`, { waitUntil: 'domcontentloaded', timeout: 30000 })
-    await page.waitForFunction(
-      () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
-      null,
-      { timeout: 20000 },
-    )
+    try {
+      await page.waitForFunction(
+        () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
+        null,
+        { timeout: 20000 },
+      )
+    } catch {
+      // fall through to assert with body text for a clear failure message
+    }
     assert(
       (await page.locator('body').innerText()).toLowerCase().includes('israel dossier evidence engine'),
       'search?q=liberty missing Israel Dossier evidence engine promo',
