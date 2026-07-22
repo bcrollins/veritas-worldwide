@@ -982,6 +982,29 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     tier: 'verified',
   },
 
+  {
+    profileId: 'jared-kushner',
+    name: 'Jared Kushner',
+    role: 'Senior Advisor (2017–2021); Abraham Accords / Jerusalem embassy / Golan recognition principal',
+    category: 'us-executive',
+    enablementSummary:
+      'Trump-era Middle East principal who delivered structural diplomatic enablement: Jerusalem embassy move, Golan recognition, and Abraham Accords normalization — without a final-status Palestinian agreement. Executive-branch counterpart to congressional aid pipelines.',
+    relatedTimelineYears: ['2017', '2018', '2019', '2020'],
+    relatedIncidentIds: ['great-march-return-2018'],
+    relatedMoneyNodeIds: ['annual-mou', 'iron-dome', 'fmf-weapons'],
+    fundingLinks: [
+      {
+        label: 'U.S. State Department — Abraham Accords',
+        sourceUrl: 'https://www.state.gov/the-abraham-accords/',
+      },
+      {
+        label: 'U.S. Embassy Jerusalem',
+        sourceUrl: 'https://il.usembassy.gov',
+      },
+    ],
+    tier: 'verified',
+  },
+
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

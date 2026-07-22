@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T23:23:51.922Z",
+  "generatedAt": "2026-07-22T23:27:06.819Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 69,
     "timelineEvents": 57,
-    "actors": 42,
+    "actors": 44,
     "moneyTrailNodes": 16,
     "historicalWarCrimesPack": 54,
     "legalCases": 10,
@@ -25,9 +25,9 @@
     "childrenTagged": 59,
     "civiliansTagged": 68,
     "actorsByCategory": {
-      "us-executive": 11,
+      "us-executive": 12,
       "us-congress": 25,
-      "us-donor-lobby": 4,
+      "us-donor-lobby": 5,
       "israeli-leadership": 2
     },
     "moneyTrailByType": {
@@ -932,12 +932,12 @@
       ],
       "fundingLinks": [
         {
-          "label": "OpenSecrets — Saban donor profile / soft-money history",
-          "sourceUrl": "https://www.opensecrets.org/"
+          "label": "OpenSecrets — Haim Saban donor lookup",
+          "sourceUrl": "https://www.opensecrets.org/donor-lookup/results?name=haim+saban&order=desc&sort=D"
         },
         {
-          "label": "FEC individual contribution search (public filings)",
-          "sourceUrl": "https://www.fec.gov/data/receipts/individual-contributions/"
+          "label": "Brookings — Saban Center institutional history",
+          "sourceUrl": "https://www.brookings.edu"
         }
       ],
       "tier": "verified"
@@ -1647,6 +1647,70 @@
           "label": "CRS RL33222 — U.S. Foreign Aid to Israel (MOU baseline context)",
           "amount": "~$3.8B/year FMF+missile defense",
           "sourceUrl": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "paul-singer",
+      "name": "Paul Singer",
+      "role": "Founder, Elliott Management; Republican & pro-Israel megadonor",
+      "category": "us-donor-lobby",
+      "enablementSummary": "Finance-capital Republican megadonor and public pro-Israel hawk. Multi-cycle Super PAC / outside spending (OpenSecrets) funding candidates who lock in unconditional FMF and wartime Israel security orthodoxy — parallel to Adelson casino capital on the Republican side.",
+      "relatedTimelineYears": [
+        "2012",
+        "2016",
+        "2020",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou",
+        "pro-israel-lobby-2024",
+        "fmf-weapons",
+        "iron-dome"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Paul Singer donor lookup",
+          "sourceUrl": "https://www.opensecrets.org/donor-lookup/results?name=paul+singer&order=desc&sort=D"
+        },
+        {
+          "label": "Elliott Management (commercial base of political capital)",
+          "sourceUrl": "https://www.elliottmgmt.com"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "jared-kushner",
+      "name": "Jared Kushner",
+      "role": "Senior Advisor (2017–2021); Abraham Accords / Jerusalem embassy / Golan recognition principal",
+      "category": "us-executive",
+      "enablementSummary": "Trump-era Middle East principal who delivered structural diplomatic enablement: Jerusalem embassy move, Golan recognition, and Abraham Accords normalization — without a final-status Palestinian agreement. Executive-branch counterpart to congressional aid pipelines.",
+      "relatedTimelineYears": [
+        "2017",
+        "2018",
+        "2019",
+        "2020"
+      ],
+      "relatedIncidentIds": [
+        "great-march-return-2018"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "iron-dome",
+        "fmf-weapons"
+      ],
+      "fundingLinks": [
+        {
+          "label": "U.S. State Department — Abraham Accords",
+          "sourceUrl": "https://www.state.gov/the-abraham-accords/"
+        },
+        {
+          "label": "U.S. Embassy Jerusalem",
+          "sourceUrl": "https://il.usembassy.gov"
         }
       ],
       "tier": "verified"
