@@ -133,14 +133,36 @@ export function registerBotMetaInjection({ app, rootDir }) {
       const slug = profileMatch[1]
       const name = slug.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
       const profileUrl = `${SITE_URL}/profile/${slug}`
+      const profileDesc = `Sourced profile of ${name} — donations, policy actions, network connections, and quotes. Every claim cited to FEC filings, congressional records, and verified journalism.`
+
+      // Prefer first-party /profiles/* portraits (jpg then svg); fall back to site OG.
+      const portraitCandidates = [
+        path.join(rootDir, 'dist', 'profiles', `${slug}.jpg`),
+        path.join(rootDir, 'public', 'profiles', `${slug}.jpg`),
+        path.join(rootDir, 'dist', 'profiles', `${slug}.svg`),
+        path.join(rootDir, 'public', 'profiles', `${slug}.svg`),
+      ]
+      let profileImage = OG_IMAGE
+      let profileImgType = 'image/png'
+      for (const candidate of portraitCandidates) {
+        if (fs.existsSync(candidate)) {
+          const ext = path.extname(candidate).toLowerCase()
+          profileImage = `${SITE_URL}/profiles/${slug}${ext}`
+          profileImgType = ext === '.svg' ? 'image/svg+xml' : ext === '.jpg' || ext === '.jpeg' ? 'image/jpeg' : 'image/png'
+          break
+        }
+      }
 
       html = html
         .replace(/<title>.*?<\/title>/, `<title>${name} — Power Profile | Veritas Worldwide</title>`)
         .replace(/content="The Record \| Veritas Worldwide"/g, `content="${name} — Power Profile | Veritas Worldwide"`)
-        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes. Every claim cited to FEC filings, congressional records, and verified journalism."`)
-        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="Sourced profile of ${name} — donations, policy actions, network connections, and quotes."`)
+        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${profileDesc}"`)
+        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${profileDesc}"`)
         .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${profileUrl}"`)
-        .replace(/content="website"/, 'content="article"')
+        .replace(/content="website"/, 'content="profile"')
+        .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${profileImage}$2`)
+        .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${profileImage}$2`)
+        .replace(/(<meta property="og:image:type" content=")[^"]*(")/, `$1${profileImgType}$2`)
     }
 
     // Current-events articles — title/description/hero from exported meta.json

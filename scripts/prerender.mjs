@@ -501,6 +501,70 @@ function loadProfileSlugs() {
   return [...new Set([...source.matchAll(/id:\s*'([^']+)'/g)].map((match) => match[1]))]
 }
 
+function loadProfilePhotos() {
+  const source = fs.readFileSync(profileDataPath, 'utf8')
+  const photos = {}
+  for (const match of source.matchAll(/'([a-z0-9-]+)':\s*'(\/profiles\/[^']+)'/g)) {
+    photos[match[1]] = match[2]
+  }
+  return photos
+}
+
+/**
+ * Parse PowerProfile list shells for crawler-visible prerender HTML.
+ * Full interactive profile UI still hydrates client-side.
+ */
+function parseProfiles() {
+  const source = fs.readFileSync(profileDataPath, 'utf8')
+  const photos = loadProfilePhotos()
+  const profiles = []
+  const pattern =
+    /\{\s*id:\s*'([^']+)',\s*name:\s*'((?:\\.|[^'])*)',\s*title:\s*'((?:\\.|[^'])*)',\s*category:\s*'([^']+)',[\s\S]*?summary:\s*'((?:\\.|[^'])*)'/g
+
+  for (const match of source.matchAll(pattern)) {
+    const id = match[1]
+    profiles.push({
+      id,
+      name: decodeTsString(match[2]),
+      title: decodeTsString(match[3]),
+      category: match[4],
+      summary: decodeTsString(match[5]),
+      photo: photos[id] || '',
+    })
+  }
+
+  if (profiles.length < 30) {
+    console.warn(`[prerender] parseProfiles only found ${profiles.length} profiles (expected ≥30)`)
+  }
+
+  return profiles
+}
+
+function renderProfilePage(profile) {
+  const photo = profile.photo
+    ? `<img src="${escapeAttr(profile.photo)}" alt="${escapeAttr(profile.name)}" class="w-28 h-28 rounded-sm object-cover border border-border" width="112" height="112" loading="eager" />`
+    : ''
+  return `
+    <main class="max-w-3xl mx-auto px-4 py-12">
+      <p class="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Power Profile · ${escapeHtml(profile.category)}</p>
+      <div class="flex flex-col sm:flex-row gap-6 items-start">
+        ${photo}
+        <div>
+          <h1 class="font-display text-4xl font-bold text-ink leading-tight">${escapeHtml(profile.name)}</h1>
+          <p class="font-sans text-sm text-ink-muted mt-2">${escapeHtml(profile.title)}</p>
+        </div>
+      </div>
+      <p class="font-body text-lg text-ink-muted leading-relaxed mt-8">${escapeHtml(profile.summary)}</p>
+      <p class="font-body text-sm text-ink-faint mt-6">This prerendered shell is for crawlers and social previews. Open the live profile for donations, policy actions, sourced claims, and network connections.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/profile/${escapeAttr(profile.id)}" class="inline-flex min-h-[44px] items-center px-4 py-2 bg-crimson text-white font-sans text-xs font-bold uppercase tracking-wider rounded-sm">Open interactive profile</a>
+        <a href="/profiles" class="inline-flex min-h-[44px] items-center px-4 py-2 border border-border font-sans text-xs font-bold uppercase tracking-wider rounded-sm text-ink">All profiles</a>
+        <a href="/israel-dossier" class="inline-flex min-h-[44px] items-center px-4 py-2 border border-border font-sans text-xs font-bold uppercase tracking-wider rounded-sm text-ink">Israel Dossier</a>
+      </div>
+    </main>
+  `
+}
+
 function normalizeTopicTerm(value) {
   return String(value).trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -922,6 +986,10 @@ function renderLlmsTxt(topics) {
     '- [Accessibility](https://veritasworldwide.com/accessibility): WCAG targets, contrast, and touch-target standards.',
     '- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.',
     '- [Profiles](https://veritasworldwide.com/profiles): Source-driven profiles of institutional actors.',
+    '- [Ted Cruz](https://veritasworldwide.com/profile/ted-cruz): FEC/AIPAC-sourced senator profile.',
+    '- [Donald Trump](https://veritasworldwide.com/profile/donald-trump): Sourced executive/profile record.',
+    '- [Nancy Pelosi](https://veritasworldwide.com/profile/nancy-pelosi): Sourced congressional leadership profile.',
+    '- [Benjamin Netanyahu](https://veritasworldwide.com/profile/benjamin-netanyahu): Sourced foreign-leader profile linked to the Israel Dossier.',
   ].join('\n')
 }
 
@@ -2506,8 +2574,37 @@ for (const topic of instituteTopics) {
 }
 
 const profileModified = getGitModified(profileDataPath).slice(0, 10)
+const profiles = parseProfiles()
+const profileById = new Map(profiles.map((p) => [p.id, p]))
 for (const profileSlug of profileSlugs) {
   const route = `/profile/${profileSlug}`
+  const profile = profileById.get(profileSlug) || {
+    id: profileSlug,
+    name: profileSlug
+      .split('-')
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(' '),
+    title: 'Power Profile',
+    category: 'actor',
+    summary: 'Sourced profile of institutional actors — donations, policy actions, and network connections.',
+    photo: '',
+  }
+  const fileName = `profile__${profileSlug}.html`
+  const filePath = path.join(prerenderDir, fileName)
+  const photoAbs = profile.photo
+    ? absoluteSiteUrl(profile.photo)
+    : DEFAULT_OG_IMAGE
+  const meta = {
+    title: `${profile.name} — Power Profile | Veritas Worldwide`,
+    description: profile.summary.slice(0, 200),
+    url: `${SITE_URL}${route}`,
+    type: 'profile',
+    image: photoAbs,
+    keywords: [profile.name, profile.category, 'power profile', 'FEC', 'primary sources'],
+    modifiedTime: profileModified,
+  }
+  fs.writeFileSync(filePath, buildDocument(template, meta, renderProfilePage(profile)))
+  manifest[route] = `prerender/${fileName}`
   sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, profileModified, 'monthly', '0.7'))
 }
 
