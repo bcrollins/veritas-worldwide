@@ -15,6 +15,7 @@ import {
   institutePracticalTopics,
   type InstituteTopic,
 } from '../data/instituteCatalog'
+import { PROFILES, getProfilePhoto } from '../data/profileData'
 import { trackDownload } from '../lib/ga4'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
@@ -33,6 +34,11 @@ const instituteFeaturedTopics = [
 
 const instituteTrackCount = getInstitutePracticalTrackCounts().length
 const instituteGuideAndCourseCount = institutePracticalTopics.length * 2
+
+/** High-signal power profiles for the home discovery strip (claims-dense + first-party portraits). */
+const homeFeaturedProfiles = [...PROFILES]
+  .sort((a, b) => b.sourcedClaims.length - a.sourcedClaims.length)
+  .slice(0, 6)
 
 export default function HomePage() {
   const [showDownloadModal, setShowDownloadModal] = useState(false)
@@ -303,6 +309,67 @@ export default function HomePage() {
                 <Link to="/topics" className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors">
                   Browse all research topics &rarr;
                 </Link>
+              </div>
+            </section>
+          </FadeInSection>
+
+          <FadeInSection>
+            <section className="py-12 border-b border-border" aria-labelledby="home-power-profiles-heading">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 id="home-power-profiles-heading" className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-ink">
+                  Power Profiles
+                </h2>
+                <div className="flex-1 h-[1px] bg-border" />
+              </div>
+              <p className="font-body text-sm text-ink-muted max-w-3xl mb-6">
+                The people layer behind the record — donations, policy actions, and sourced claims with first-party portraits.
+                Machine-readable index at{' '}
+                <a href="/profiles/corpus.json" className="text-crimson hover:underline">
+                  /profiles/corpus.json
+                </a>
+                .
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                {homeFeaturedProfiles.map((profile) => (
+                  <Link
+                    key={profile.id}
+                    to={`/profile/${profile.id}`}
+                    className="group border border-border bg-surface p-4 hover:border-crimson/40 transition-colors text-center min-h-[44px]"
+                  >
+                    <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden bg-parchment-dark ring-1 ring-border">
+                      <img
+                        src={getProfilePhoto(profile.id)}
+                        alt=""
+                        width={64}
+                        height={64}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                      />
+                    </div>
+                    <p className="font-display text-sm font-bold text-ink leading-snug group-hover:text-crimson transition-colors">
+                      {profile.name}
+                    </p>
+                    <p className="font-sans text-[0.55rem] uppercase tracking-wider text-ink-faint mt-1 line-clamp-2">
+                      {profile.title}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  to="/profiles"
+                  className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-[0.1em] uppercase text-crimson hover:text-crimson-dark transition-colors"
+                >
+                  Browse all {PROFILES.length} profiles &rarr;
+                </Link>
+                <a
+                  href="/profiles/corpus.json"
+                  className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-[0.1em] uppercase text-ink-muted hover:text-crimson transition-colors"
+                  download="veritas-profiles-corpus.json"
+                >
+                  Download corpus (JSON)
+                </a>
               </div>
             </section>
           </FadeInSection>
