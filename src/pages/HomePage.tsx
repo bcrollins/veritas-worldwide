@@ -274,6 +274,18 @@ export default function HomePage() {
                     >
                       Actors graph
                     </Link>
+                    <Link
+                      to="/israel-dossier?money=hr815"
+                      className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                    >
+                      Money trail
+                    </Link>
+                    <Link
+                      to="/israel-dossier?era=mandate-1948"
+                      className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                    >
+                      1948 era
+                    </Link>
                   </div>
                 </div>
               </div>
