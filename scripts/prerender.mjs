@@ -514,6 +514,35 @@ function loadProfilePhotos() {
  * Parse PowerProfile list shells for crawler-visible prerender HTML.
  * Full interactive profile UI still hydrates client-side.
  */
+function parseIntegrityFromProfileWindow(window) {
+  if (!window.includes('documentedFalsehoods:')) {
+    return { integrityScore: null, integrityFalsehoods: 0, integrityHasDocket: false }
+  }
+  if (/documentedFalsehoods:\s*\[\s*\]/.test(window)) {
+    return { integrityScore: 100, integrityFalsehoods: 0, integrityHasDocket: true }
+  }
+  const blockMatch = window.match(/documentedFalsehoods:\s*\[([\s\S]*?)\n\s*\],/)
+  if (!blockMatch) {
+    return { integrityScore: null, integrityFalsehoods: 0, integrityHasDocket: false }
+  }
+  const block = blockMatch[1]
+  const severities = [...block.matchAll(/severity:\s*'(minor|material|egregious)'/g)].map((m) => m[1])
+  const tiers = [...block.matchAll(/tier:\s*'(verified|circumstantial|disputed)'/g)].map((m) => m[1])
+  const deduct = { minor: 8, material: 15, egregious: 25 }
+  let total = 0
+  let verified = 0
+  for (let i = 0; i < severities.length; i++) {
+    if ((tiers[i] || 'verified') !== 'verified') continue
+    total += deduct[severities[i]] || 0
+    verified += 1
+  }
+  return {
+    integrityScore: Math.max(0, 100 - total),
+    integrityFalsehoods: verified,
+    integrityHasDocket: true,
+  }
+}
+
 function parseProfiles() {
   const source = fs.readFileSync(profileDataPath, 'utf8')
   const photos = loadProfilePhotos()
@@ -523,6 +552,10 @@ function parseProfiles() {
 
   for (const match of source.matchAll(pattern)) {
     const id = match[1]
+    const idIdx = match.index ?? source.indexOf(`id: '${id}'`)
+    const nextId = source.indexOf("\n  {\n    id: '", idIdx + 10)
+    const window = source.slice(idIdx, nextId > 0 ? nextId : idIdx + 25000)
+    const integrity = parseIntegrityFromProfileWindow(window)
     profiles.push({
       id,
       name: decodeTsString(match[2]),
@@ -530,6 +563,7 @@ function parseProfiles() {
       category: match[4],
       summary: decodeTsString(match[5]),
       photo: photos[id] || '',
+      ...integrity,
     })
   }
 
@@ -544,6 +578,14 @@ function renderProfilePage(profile) {
   const photo = profile.photo
     ? `<img src="${escapeAttr(profile.photo)}" alt="${escapeAttr(profile.name)}" class="w-28 h-28 rounded-sm object-cover border border-border" width="112" height="112" loading="eager" />`
     : ''
+  const integrityBlock =
+    profile.integrityHasDocket && profile.integrityScore != null
+      ? `<div class="mt-6 border border-border rounded-sm bg-surface p-4">
+          <p class="font-sans text-[0.6rem] font-bold tracking-[0.14em] uppercase text-crimson">Integrity Score</p>
+          <p class="font-display text-3xl font-bold text-ink tabular-nums mt-1">${profile.integrityScore}<span class="text-base font-sans font-normal text-ink-muted">/100</span></p>
+          <p class="font-body text-sm text-ink-muted mt-1">${profile.integrityFalsehoods} verified public falsehood${profile.integrityFalsehoods === 1 ? '' : 's'} on file — open the interactive profile to inspect each statement, when it was said, why it was false, and dual sources.</p>
+        </div>`
+      : `<p class="font-body text-sm text-ink-faint mt-6">Integrity Score not yet compiled for this profile (unscored ≠ clean docket).</p>`
   return `
     <main class="max-w-3xl mx-auto px-4 py-12">
       <p class="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-crimson mb-3">Power Profile · ${escapeHtml(profile.category)}</p>
@@ -555,11 +597,12 @@ function renderProfilePage(profile) {
         </div>
       </div>
       <p class="font-body text-lg text-ink-muted leading-relaxed mt-8">${escapeHtml(profile.summary)}</p>
-      <p class="font-body text-sm text-ink-faint mt-6">This prerendered shell is for crawlers and social previews. Open the live profile for donations, policy actions, sourced claims, and network connections.</p>
+      ${integrityBlock}
+      <p class="font-body text-sm text-ink-faint mt-6">This prerendered shell is for crawlers and social previews. Open the live profile for donations, policy actions, sourced claims, network connections, and the full Integrity Docket.</p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="/profile/${escapeAttr(profile.id)}" class="inline-flex min-h-[44px] items-center px-4 py-2 bg-crimson text-white font-sans text-xs font-bold uppercase tracking-wider rounded-sm">Open interactive profile</a>
-        <a href="/profiles" class="inline-flex min-h-[44px] items-center px-4 py-2 border border-border font-sans text-xs font-bold uppercase tracking-wider rounded-sm text-ink">All profiles</a>
-        <a href="/israel-dossier" class="inline-flex min-h-[44px] items-center px-4 py-2 border border-border font-sans text-xs font-bold uppercase tracking-wider rounded-sm text-ink">Israel Dossier</a>
+        <a href="/profiles?sort=integrity-asc" class="inline-flex min-h-[44px] items-center px-4 py-2 border border-border font-sans text-xs font-bold uppercase tracking-wider rounded-sm text-ink">Profiles by integrity</a>
+        <a href="/methodology#integrity-score" class="inline-flex min-h-[44px] items-center px-4 py-2 border border-border font-sans text-xs font-bold uppercase tracking-wider rounded-sm text-ink">Score methodology</a>
       </div>
     </main>
   `
