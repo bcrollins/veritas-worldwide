@@ -1011,6 +1011,84 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 100 },
   },
+  {
+    id: 'cave-of-patriarchs-1994',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'court-finding',
+    title: 'Cave of the Patriarchs Massacre — Baruch Goldstein',
+    date: 'February 25, 1994',
+    location: 'Ibrahimi Mosque / Cave of the Patriarchs, Hebron',
+    summary:
+      'American-Israeli settler Baruch Goldstein opened fire on Palestinian Muslim worshippers during Ramadan prayers, killing 29 and wounding more than 100. He was beaten to death at the scene. Israeli authorities condemned the attack; subsequent curfews and movement restrictions in Hebron fell heavily on Palestinian residents.',
+    evidence:
+      'Israeli government investigation, contemporaneous international press, and B\'Tselem documentation establish the death toll and perpetrator identity beyond serious dispute. Included as a high-evidence civilian massacre by a settler actor — distinct from state military operations but part of the occupation-era civilian-harm record.',
+    sources: [
+      { label: 'B\'Tselem — Hebron / Cave of the Patriarchs documentation', url: 'https://www.btselem.org/' },
+      { label: 'Britannica — Cave of the Patriarchs massacre', url: 'https://www.britannica.com/event/Cave-of-the-Patriarchs-massacre' },
+      { label: 'UNISPAL — 1994 Hebron massacre documentation', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica encyclopedic synthesis', url: 'https://www.britannica.com/event/Cave-of-the-Patriarchs-massacre' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 29, injured: 125 },
+  },
+  {
+    id: 'huwara-2023',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Huwara Settler Rampage (February 2023)',
+    date: 'February 26, 2023',
+    location: 'Huwara, West Bank',
+    summary:
+      'After two Israeli brothers were killed nearby, hundreds of Israeli settlers attacked the Palestinian town of Huwara, burning homes, cars, and businesses. One Palestinian was killed and dozens wounded. Senior Israeli officials used language that appeared to endorse or minimize the rampage; international monitors called for accountability.',
+    evidence:
+      'OCHA protection reports, B\'Tselem field documentation, contemporaneous video, and multi-outlet investigative reporting establish the scale of arson and assault. Perpetrator identity is collective (settler mob) rather than a single state unit; state responsibility questions turn on prevention, facilitation, and official statements — labeled multi-source investigation.',
+    sources: [
+      { label: 'OCHA — Protection of Civilians reporting (Feb 2023)', url: 'https://www.ochaopt.org/' },
+      { label: 'B\'Tselem — settler violence documentation', url: 'https://www.btselem.org/topic/settler_violence' },
+      { label: 'Human Rights Watch — West Bank settler violence context', url: 'https://www.hrw.org/middle-east/n-africa/israel/palestine' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem settler violence hub', url: 'https://www.btselem.org/topic/settler_violence' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 1 },
+  },
+  {
+    id: 'second-lebanon-war-2006-pattern',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Second Lebanon War — Civilian Harm Pattern (2006)',
+    date: 'July 12 – August 14, 2006',
+    location: 'Lebanon (and northern Israel under rocket fire)',
+    summary:
+      'A 34-day war between Israel and Hezbollah killed roughly 1,000+ Lebanese (majority civilians per UN/HRW tallies) and dozens of Israeli civilians from rocket fire. Cluster munitions use in south Lebanon and strikes on civilian infrastructure were extensively documented. Distinct from the single-building Qana 2006 entry — this is the campaign-level civilian-harm floor.',
+    evidence:
+      'HRW Fatal Strikes / Flooding South Lebanon reports, Amnesty field investigations, and UN mine-action cluster-munition assessments form a multi-source floor. U.S. munitions resupply during the war is part of the enablement context under standing FMF/stockpile architecture.',
+    sources: [
+      { label: 'Human Rights Watch — Fatal Strikes (Lebanon 2006)', url: 'https://www.hrw.org/report/2006/08/02/fatal-strikes/israels-indiscriminate-attacks-against-civilians-lebanon' },
+      { label: 'Human Rights Watch — Flooding South Lebanon (cluster munitions)', url: 'https://www.hrw.org/report/2008/02/16/flooding-south-lebanon/israels-use-cluster-munitions-lebanon-july-and-august-2006' },
+      { label: 'Amnesty International — Lebanon 2006 civilian harm', url: 'https://www.amnesty.org/en/documents/mde18/007/2006/en/' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'HRW cluster munitions investigation', url: 'https://www.hrw.org/report/2008/02/16/flooding-south-lebanon/israels-use-cluster-munitions-lebanon-july-and-august-2006' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 1100 },
+  },
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -1356,6 +1434,46 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['days-of-penitence-2004'],
     tags: ['civilians', 'children', 'gaza'],
+  },
+  {
+    id: 'tl-cave-patriarchs-1994',
+    year: '1994',
+    era: 'occupation-1967-2005',
+    title: 'Cave of the Patriarchs Massacre',
+    description:
+      'Settler Baruch Goldstein kills 29 Palestinian worshippers in Hebron. Israeli investigation and international record confirm the civilian massacre.',
+    source: 'Britannica / B\'Tselem',
+    sourceUrl: 'https://www.britannica.com/event/Cave-of-the-Patriarchs-massacre',
+    tier: 'verified',
+    relatedIncidentIds: ['cave-of-patriarchs-1994'],
+    tags: ['civilians', 'settler-violence', 'hebron'],
+  },
+  {
+    id: 'tl-huwara-2023',
+    year: '2023',
+    era: 'blockade-2007-2023',
+    title: 'Huwara Settler Rampage',
+    description:
+      'Settler mob burns homes and businesses in Huwara after nearby killings. One Palestinian dead; dozens wounded. OCHA/B\'Tselem document the rampage.',
+    source: 'OCHA / B\'Tselem',
+    sourceUrl: 'https://www.btselem.org/topic/settler_violence',
+    tier: 'verified',
+    relatedIncidentIds: ['huwara-2023'],
+    relatedProfileIds: ['benjamin-netanyahu'],
+    tags: ['civilians', 'settler-violence', 'west-bank'],
+  },
+  {
+    id: 'tl-second-lebanon-2006',
+    year: '2006',
+    era: 'occupation-1967-2005',
+    title: 'Second Lebanon War — ~1,000+ Lebanese Dead',
+    description:
+      '34-day war. HRW/Amnesty document majority-civilian Lebanese deaths and cluster-munition contamination. Distinct from the single Qana building strike entry.',
+    source: 'Human Rights Watch / Amnesty',
+    sourceUrl: 'https://www.hrw.org/report/2006/08/02/fatal-strikes/israels-indiscriminate-attacks-against-civilians-lebanon',
+    tier: 'verified',
+    relatedIncidentIds: ['second-lebanon-war-2006-pattern', 'qana-2006'],
+    tags: ['civilians', 'children', 'lebanon', 'cluster-munitions'],
   },
 ]
 

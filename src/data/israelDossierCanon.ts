@@ -1105,6 +1105,17 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['munitions', 'mk84-use', 'artillery-use'],
     relatedProfileIds: ['joe-biden', 'donald-trump', 'benjamin-netanyahu'],
   },
+  {
+    id: 'hellfire-missiles',
+    label: 'AGM-114 Hellfire missiles (FMF / wartime resupply)',
+    amount: 'thousands transferred (multi-year)',
+    type: 'weapon',
+    date: 'ongoing / post-Oct-7 surge',
+    detail: 'U.S.-made Hellfire air-to-ground missiles are a core precision munition for Israeli attack helicopters and drones. DSCA notices and wartime resupply reporting document continued transfers under FMF and emergency drawdowns. Documented in strikes affecting civilian areas; specific strike-to-missile attribution is often incomplete in open sources.',
+    sourceUrl: 'https://www.dsca.mil/press-media/major-arms-sales',
+    children: ['jdam-use'],
+    relatedProfileIds: ['joe-biden', 'antony-blinken', 'benjamin-netanyahu', 'donald-trump'],
+  },
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [

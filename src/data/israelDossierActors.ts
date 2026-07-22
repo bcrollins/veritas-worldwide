@@ -704,6 +704,94 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'elise-stefanik',
+    name: 'Elise Stefanik',
+    role: 'U.S. Representative (R-NY); House Republican Conference Chair',
+    category: 'us-congress',
+    enablementSummary:
+      'House Republican leadership voice for unconditional wartime aid, Iron Dome replenishment, and maximal executive latitude on munitions transfers; high-visibility floor and media advocate against aid conditionality during the Gaza war.',
+    relatedTimelineYears: ['2023', '2024', '2025'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou', 'pro-israel-lobby-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Stefanik pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/elise-stefanik/summary?cid=N00035523',
+      },
+      {
+        label: 'Congress.gov — Stefanik voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/elise-stefanik/S001196',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'ritchie-torres',
+    name: 'Ritchie Torres',
+    role: 'U.S. Representative (D-NY)',
+    category: 'us-congress',
+    enablementSummary:
+      'House Democrat and high-profile defender of Israel military aid packages during the Gaza war; frequent floor and media advocate against progressive conditionality proposals and for supplemental FMF/Iron Dome funding.',
+    relatedTimelineYears: ['2021', '2023', '2024'],
+    relatedIncidentIds: ['guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou', 'pro-israel-lobby-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Torres pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044704',
+      },
+      {
+        label: 'Congress.gov — Torres voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/ritchie-torres/T000486',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'jacky-rosen',
+    name: 'Jacky Rosen',
+    role: 'U.S. Senator (D-NV)',
+    category: 'us-congress',
+    enablementSummary:
+      'Senate Democrat with consistent votes for Iron Dome, MOU-baseline FMF, and wartime supplementals; caucus voice for robust bilateral military assistance across multiple Gaza escalations.',
+    relatedTimelineYears: ['2018', '2021', '2023', '2024'],
+    relatedIncidentIds: ['great-march-return-2018', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Rosen pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040750',
+      },
+      {
+        label: 'Congress.gov — Rosen voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/jacky-rosen/R000608',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'brad-sherman',
+    name: 'Brad Sherman',
+    role: 'U.S. Representative (D-CA)',
+    category: 'us-congress',
+    enablementSummary:
+      'Long-serving House Democrat on foreign-affairs committees and consistent sponsor/advocate of Israel military aid, loan guarantees, and wartime packages; maps the durable bipartisan House floor for FMF continuity.',
+    relatedTimelineYears: ['2008', '2014', '2021', '2023', '2024'],
+    relatedIncidentIds: ['cast-lead-2008-09', 'protective-edge-2014-children'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'iron-dome'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Sherman pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/brad-sherman/summary?cid=N00006897',
+      },
+      {
+        label: 'Congress.gov — Sherman voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/brad-sherman/S000344',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

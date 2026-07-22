@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T20:02:39.115Z",
+  "generatedAt": "2026-07-22T20:07:43.566Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 52,
-    "timelineEvents": 43,
-    "actors": 32,
-    "moneyTrailNodes": 13,
-    "historicalWarCrimesPack": 37,
+    "incidents": 55,
+    "timelineEvents": 46,
+    "actors": 36,
+    "moneyTrailNodes": 14,
+    "historicalWarCrimesPack": 40,
     "legalCases": 7,
     "lobbyingRecords": 4
   },
@@ -273,6 +273,24 @@
         "joe-biden",
         "donald-trump",
         "benjamin-netanyahu"
+      ]
+    },
+    {
+      "id": "hellfire-missiles",
+      "label": "AGM-114 Hellfire missiles (FMF / wartime resupply)",
+      "amount": "thousands transferred (multi-year)",
+      "type": "weapon",
+      "date": "ongoing / post-Oct-7 surge",
+      "detail": "U.S.-made Hellfire air-to-ground missiles are a core precision munition for Israeli attack helicopters and drones. DSCA notices and wartime resupply reporting document continued transfers under FMF and emergency drawdowns. Documented in strikes affecting civilian areas; specific strike-to-missile attribution is often incomplete in open sources.",
+      "sourceUrl": "https://www.dsca.mil/press-media/major-arms-sales",
+      "children": [
+        "jdam-use"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "antony-blinken",
+        "benjamin-netanyahu",
+        "donald-trump"
       ]
     }
   ],
@@ -1210,6 +1228,135 @@
         }
       ],
       "tier": "verified"
+    },
+    {
+      "profileId": "elise-stefanik",
+      "name": "Elise Stefanik",
+      "role": "U.S. Representative (R-NY); House Republican Conference Chair",
+      "category": "us-congress",
+      "enablementSummary": "House Republican leadership voice for unconditional wartime aid, Iron Dome replenishment, and maximal executive latitude on munitions transfers; high-visibility floor and media advocate against aid conditionality during the Gaza war.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "iron-dome",
+        "annual-mou",
+        "pro-israel-lobby-2024"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Stefanik pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/elise-stefanik/summary?cid=N00035523"
+        },
+        {
+          "label": "Congress.gov — Stefanik voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/elise-stefanik/S001196"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "ritchie-torres",
+      "name": "Ritchie Torres",
+      "role": "U.S. Representative (D-NY)",
+      "category": "us-congress",
+      "enablementSummary": "House Democrat and high-profile defender of Israel military aid packages during the Gaza war; frequent floor and media advocate against progressive conditionality proposals and for supplemental FMF/Iron Dome funding.",
+      "relatedTimelineYears": [
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "guardian-of-the-walls-2021"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "iron-dome",
+        "annual-mou",
+        "pro-israel-lobby-2024"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Torres pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/ritchie-torres/summary?cid=N00044704"
+        },
+        {
+          "label": "Congress.gov — Torres voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/ritchie-torres/T000486"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "jacky-rosen",
+      "name": "Jacky Rosen",
+      "role": "U.S. Senator (D-NV)",
+      "category": "us-congress",
+      "enablementSummary": "Senate Democrat with consistent votes for Iron Dome, MOU-baseline FMF, and wartime supplementals; caucus voice for robust bilateral military assistance across multiple Gaza escalations.",
+      "relatedTimelineYears": [
+        "2018",
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "great-march-return-2018",
+        "guardian-of-the-walls-2021"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "iron-dome",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Rosen pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/jacky-rosen/summary?cid=N00040750"
+        },
+        {
+          "label": "Congress.gov — Rosen voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/jacky-rosen/R000608"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "brad-sherman",
+      "name": "Brad Sherman",
+      "role": "U.S. Representative (D-CA)",
+      "category": "us-congress",
+      "enablementSummary": "Long-serving House Democrat on foreign-affairs committees and consistent sponsor/advocate of Israel military aid, loan guarantees, and wartime packages; maps the durable bipartisan House floor for FMF continuity.",
+      "relatedTimelineYears": [
+        "2008",
+        "2014",
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "cast-lead-2008-09",
+        "protective-edge-2014-children"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou",
+        "iron-dome"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Sherman pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/brad-sherman/summary?cid=N00006897"
+        },
+        {
+          "label": "Congress.gov — Sherman voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/brad-sherman/S000344"
+        }
+      ],
+      "tier": "verified"
     }
   ],
   "timeline": [
@@ -1450,6 +1597,24 @@
       "tier": "verified"
     },
     {
+      "id": "tl-cave-patriarchs-1994",
+      "year": "1994",
+      "era": "occupation-1967-2005",
+      "title": "Cave of the Patriarchs Massacre",
+      "description": "Settler Baruch Goldstein kills 29 Palestinian worshippers in Hebron. Israeli investigation and international record confirm the civilian massacre.",
+      "source": "Britannica / B'Tselem",
+      "sourceUrl": "https://www.britannica.com/event/Cave-of-the-Patriarchs-massacre",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "cave-of-patriarchs-1994"
+      ],
+      "tags": [
+        "civilians",
+        "settler-violence",
+        "hebron"
+      ]
+    },
+    {
       "id": "tl-qana-1996",
       "year": "1996",
       "era": "occupation-1967-2005",
@@ -1564,6 +1729,26 @@
         "civilians",
         "children",
         "gaza"
+      ]
+    },
+    {
+      "id": "tl-second-lebanon-2006",
+      "year": "2006",
+      "era": "occupation-1967-2005",
+      "title": "Second Lebanon War — ~1,000+ Lebanese Dead",
+      "description": "34-day war. HRW/Amnesty document majority-civilian Lebanese deaths and cluster-munition contamination. Distinct from the single Qana building strike entry.",
+      "source": "Human Rights Watch / Amnesty",
+      "sourceUrl": "https://www.hrw.org/report/2006/08/02/fatal-strikes/israels-indiscriminate-attacks-against-civilians-lebanon",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "second-lebanon-war-2006-pattern",
+        "qana-2006"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "lebanon",
+        "cluster-munitions"
       ]
     },
     {
@@ -1761,6 +1946,27 @@
       "source": "Human Rights Watch",
       "sourceUrl": "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
       "tier": "verified"
+    },
+    {
+      "id": "tl-huwara-2023",
+      "year": "2023",
+      "era": "blockade-2007-2023",
+      "title": "Huwara Settler Rampage",
+      "description": "Settler mob burns homes and businesses in Huwara after nearby killings. One Palestinian dead; dozens wounded. OCHA/B'Tselem document the rampage.",
+      "source": "OCHA / B'Tselem",
+      "sourceUrl": "https://www.btselem.org/topic/settler_violence",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "huwara-2023"
+      ],
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "tags": [
+        "civilians",
+        "settler-violence",
+        "west-bank"
+      ]
     },
     {
       "id": "tl-jenin-2023",
@@ -2368,6 +2574,46 @@
       }
     },
     {
+      "id": "cave-of-patriarchs-1994",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "court-finding",
+      "title": "Cave of the Patriarchs Massacre — Baruch Goldstein",
+      "date": "February 25, 1994",
+      "location": "Ibrahimi Mosque / Cave of the Patriarchs, Hebron",
+      "summary": "American-Israeli settler Baruch Goldstein opened fire on Palestinian Muslim worshippers during Ramadan prayers, killing 29 and wounding more than 100. He was beaten to death at the scene. Israeli authorities condemned the attack; subsequent curfews and movement restrictions in Hebron fell heavily on Palestinian residents.",
+      "evidence": "Israeli government investigation, contemporaneous international press, and B'Tselem documentation establish the death toll and perpetrator identity beyond serious dispute. Included as a high-evidence civilian massacre by a settler actor — distinct from state military operations but part of the occupation-era civilian-harm record.",
+      "sources": [
+        {
+          "label": "B'Tselem — Hebron / Cave of the Patriarchs documentation",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "Britannica — Cave of the Patriarchs massacre",
+          "url": "https://www.britannica.com/event/Cave-of-the-Patriarchs-massacre"
+        },
+        {
+          "label": "UNISPAL — 1994 Hebron massacre documentation",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Britannica encyclopedic synthesis",
+          "url": "https://www.britannica.com/event/Cave-of-the-Patriarchs-massacre"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 29,
+        "injured": 125
+      }
+    },
+    {
       "id": "qana-1996",
       "era": "occupation-1967-2005",
       "targetsCivilians": true,
@@ -2789,6 +3035,48 @@
         }
       ],
       "tier": "verified"
+    },
+    {
+      "id": "second-lebanon-war-2006-pattern",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Second Lebanon War — Civilian Harm Pattern (2006)",
+      "date": "July 12 – August 14, 2006",
+      "location": "Lebanon (and northern Israel under rocket fire)",
+      "summary": "A 34-day war between Israel and Hezbollah killed roughly 1,000+ Lebanese (majority civilians per UN/HRW tallies) and dozens of Israeli civilians from rocket fire. Cluster munitions use in south Lebanon and strikes on civilian infrastructure were extensively documented. Distinct from the single-building Qana 2006 entry — this is the campaign-level civilian-harm floor.",
+      "evidence": "HRW Fatal Strikes / Flooding South Lebanon reports, Amnesty field investigations, and UN mine-action cluster-munition assessments form a multi-source floor. U.S. munitions resupply during the war is part of the enablement context under standing FMF/stockpile architecture.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — Fatal Strikes (Lebanon 2006)",
+          "url": "https://www.hrw.org/report/2006/08/02/fatal-strikes/israels-indiscriminate-attacks-against-civilians-lebanon"
+        },
+        {
+          "label": "Human Rights Watch — Flooding South Lebanon (cluster munitions)",
+          "url": "https://www.hrw.org/report/2008/02/16/flooding-south-lebanon/israels-use-cluster-munitions-lebanon-july-and-august-2006"
+        },
+        {
+          "label": "Amnesty International — Lebanon 2006 civilian harm",
+          "url": "https://www.amnesty.org/en/documents/mde18/007/2006/en/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "HRW cluster munitions investigation",
+          "url": "https://www.hrw.org/report/2008/02/16/flooding-south-lebanon/israels-use-cluster-munitions-lebanon-july-and-august-2006"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 1100
+      }
     },
     {
       "id": "gaza-blockade-2007",
@@ -3459,6 +3747,50 @@
         }
       ],
       "tier": "verified"
+    },
+    {
+      "id": "huwara-2023",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Huwara Settler Rampage (February 2023)",
+      "date": "February 26, 2023",
+      "location": "Huwara, West Bank",
+      "summary": "After two Israeli brothers were killed nearby, hundreds of Israeli settlers attacked the Palestinian town of Huwara, burning homes, cars, and businesses. One Palestinian was killed and dozens wounded. Senior Israeli officials used language that appeared to endorse or minimize the rampage; international monitors called for accountability.",
+      "evidence": "OCHA protection reports, B'Tselem field documentation, contemporaneous video, and multi-outlet investigative reporting establish the scale of arson and assault. Perpetrator identity is collective (settler mob) rather than a single state unit; state responsibility questions turn on prevention, facilitation, and official statements — labeled multi-source investigation.",
+      "sources": [
+        {
+          "label": "OCHA — Protection of Civilians reporting (Feb 2023)",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "B'Tselem — settler violence documentation",
+          "url": "https://www.btselem.org/topic/settler_violence"
+        },
+        {
+          "label": "Human Rights Watch — West Bank settler violence context",
+          "url": "https://www.hrw.org/middle-east/n-africa/israel/palestine"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "B'Tselem settler violence hub",
+          "url": "https://www.btselem.org/topic/settler_violence"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 1
+      }
     },
     {
       "id": "jabalia-refugee-camp",
