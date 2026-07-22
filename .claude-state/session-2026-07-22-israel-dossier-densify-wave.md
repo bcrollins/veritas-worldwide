@@ -43,6 +43,29 @@
 - Gaza blockade 2007 formalization + settlement enterprise (ICJ/UN floors)
 - Timeline: blockade + UNSC 2334
 
+### `0fba0f0` — Warren + Booker
+- Actors **31**
+- Conditionality debate (Warren) + pro-aid floor (Booker)
+
+### `95ad631` — WRSA-I stockpile
+- Money nodes **13** including war reserve stockpile drawdowns
+
+### `e6ba629` — Days of Penitence 2004
+- Incidents **52** · timeline **43** · historical pack **37**
+- **Full live behavior PASS** on production
+
+## Live corpus floor (proven)
+```
+incidents: 52
+timelineEvents: 43
+actors: 31
+moneyTrailNodes: 13
+historicalWarCrimesPack: 37
+legalCases: 7
+lobbyingRecords: 4
+```
+`npm run verify:israel-dossier:behavior -- https://veritasworldwide.com` → **PASS**
+
 ## Editorial boundaries (preserved)
 - Evidence tiers labeled; non-exhaustive disclaimer retained
 - No ethnicity/religion as enablement; funds/votes/warrants only
