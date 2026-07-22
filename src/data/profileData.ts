@@ -310,6 +310,25 @@ export const PROFILES: PowerProfile[] = [
         date: '2015–2024',
       },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'cruz-zuckerberg-hearings-libel-context-not-used',
+        statement:
+          'Cruz has repeatedly claimed the 2020 election was marred by fraud sufficient to justify objecting to electoral votes — while courts and CISA found no evidence of outcome-determinative fraud.',
+        saidAt: 'January 2021 electoral count period',
+        context: 'Senate objection strategy after 2020 election.',
+        whyFalse:
+          'The Cybersecurity and Infrastructure Security Agency and extensive court record found no evidence of fraud on a scale that would change the 2020 outcome; objections were political, not evidence-based.',
+        correction:
+          'Joe Biden won the 2020 electoral college and popular vote; no court found outcome-determinative fraud.',
+        statementSource: 'Senate objection / contemporaneous Cruz statements',
+        statementUrl: 'https://www.nytimes.com/2021/01/02/us/politics/ted-cruz-election.html',
+        debunkSource: 'CISA joint statement on 2020 election security',
+        debunkUrl: 'https://www.cisa.gov/news-events/news/joint-statement-elections-infrastructure-government-coordinating-council-election',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.cruz.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085' },
@@ -397,8 +416,8 @@ export const PROFILES: PowerProfile[] = [
           'Obama\'s 2009 inauguration drew a larger documented crowd by NPS estimates and WMATA ridership; independent photo forensics contradicted the "largest ever" claim.',
         statementSource: 'White House / press pool reporting of Spicer briefing',
         statementUrl: 'https://www.washingtonpost.com/news/the-fix/wp/2017/01/22/how-sean-spicer-and-his-comically-large-crowd-size-claim-became-the-first-test-of-the-trump-era/',
-        debunkSource: 'Washington Post photo analysis; WMATA ridership data (reported)',
-        debunkUrl: 'https://www.washingtonpost.com/news/the-fix/wp/2017/01/22/how-sean-spicer-and-his-comically-large-crowd-size-claim-became-the-first-test-of-the-trump-era/',
+        debunkSource: 'NPS / WMATA ridership reporting; multi-outlet crowd analysis',
+        debunkUrl: 'https://www.nytimes.com/2017/01/22/us/politics/trump-inauguration-crowd-white-house.html',
         severity: 'material',
         tier: 'verified',
       },
@@ -415,8 +434,8 @@ export const PROFILES: PowerProfile[] = [
           'Official NHC forecasts and NWS Birmingham stated Alabama was not in Dorian\'s expected impact path at the time of the claim.',
         statementSource: 'White House remarks / Oval Office photo pool',
         statementUrl: 'https://www.nytimes.com/2019/09/04/us/politics/trump-hurricane-dorian-alabama.html',
-        debunkSource: 'NWS Birmingham official tweet; NHC advisory archive (reported)',
-        debunkUrl: 'https://www.nytimes.com/2019/09/04/us/politics/trump-hurricane-dorian-alabama.html',
+        debunkSource: 'NWS Birmingham correction; NHC advisory archive',
+        debunkUrl: 'https://www.washingtonpost.com/weather/2019/09/05/alabama-hurricane-dorian-trump-map/',
         severity: 'egregious',
         tier: 'verified',
       },
@@ -947,6 +966,25 @@ export const PROFILES: PowerProfile[] = [
         url: 'https://www.congress.gov/crs-product/RL33222',
         tier: 'verified',
         date: '2007–2024',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'mcconnell-garland-election-year-scotus-2016',
+        statement:
+          'Refused to consider Merrick Garland in 2016 citing an election-year principle, then advanced Amy Coney Barrett in 2020 in an election year — presenting both as consistent institutional principles.',
+        saidAt: '2016 and 2020',
+        context: 'Supreme Court vacancy politics under Obama and Trump.',
+        whyFalse:
+          'The 2016 "election year" rationale was not applied consistently in 2020 when Republicans held the presidency and Senate; the principle was power-contingent, not a fixed constitutional rule.',
+        correction:
+          'Senate rules allow consideration in election years; McConnell\'s 2016 and 2020 postures were opposite under opposite partisan incentives.',
+        statementSource: 'McConnell 2016 Garland blockade statements',
+        statementUrl: 'https://www.nytimes.com/2016/02/14/us/politics/supreme-court-nominee-obama.html',
+        debunkSource: '2020 Barrett confirmation timeline reporting',
+        debunkUrl: 'https://www.nytimes.com/2020/10/26/us/politics/amy-coney-barrett-confirmed.html',
+        severity: 'material',
+        tier: 'verified',
       },
     ],
     websites: [
@@ -7885,6 +7923,7 @@ export const PROFILES: PowerProfile[] = [
       'June 2024 — Publicly discussed as Trump VP short-list candidate',
       'September 5, 2024 — CLC files OCE ethics complaint (108 trades, up to $1.6M)',
       '2025 — Announces 2026 Florida gubernatorial candidacy; large state PAC fundraising reported',
+      'May 4, 2026 — Benny Johnson interview: claimed VRA was passed because Democrats racially gerrymandered (PolitiFact False)',
     ],
     documentedFalsehoods: [
       {
@@ -7941,24 +7980,6 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
-      {
-        id: 'donalds-school-districts-property-tax-drivers-2026',
-        statement:
-          'Florida school districts are the "biggest" drivers of increased property taxes in the state.',
-        saidAt: 'March 8, 2026',
-        context:
-          'Gubernatorial-campaign interview framing local school districts as the primary cause of rising Florida property tax burdens.',
-        whyFalse:
-          'PolitiFact rated the claim Mostly False. Statewide property-tax revenue rose over 60% since 2020 largely because assessed home values soared; millage-rate choices by districts are secondary. Districts can roll back rates but the dominant driver of higher bills has been valuation growth under Florida\'s property-tax structure, not district budgets as the "biggest" cause.',
-        correction:
-          'Rising property values — not school-district millage as the primary engine — explain most of the post-2020 increase in Florida property-tax collections. District control exists but is not the dominant statewide driver.',
-        statementSource: 'PolitiFact FL statement capture of March 8, 2026 interview',
-        statementUrl: 'https://www.politifact.com/factchecks/2026/mar/19/byron-donalds/school-districts-increase-florida-property-taxes/',
-        debunkSource: 'PolitiFact — Mostly False (March 19, 2026); WUSF republication of same check',
-        debunkUrl: 'https://www.wusf.org/politics-issues/2026-03-19/politifact-fl-is-byron-donalds-right-that-school-districts-are-to-blame-for-florida-property-tax-increases',
-        severity: 'minor',
-        tier: 'verified',
-      },
     ],
     websites: [
       { label: 'Official Congressional Site', url: 'https://donalds.house.gov' },
@@ -7977,6 +7998,8 @@ export const PROFILES: PowerProfile[] = [
       { label: 'Stand With Israel (House office email)', url: 'https://donalds.house.gov/news/email/show.aspx?ID=45LDXVDEPPTNG' },
       { label: 'Jim Crow comments — Washington Post', url: 'https://www.washingtonpost.com/politics/2024/06/05/byron-donalds-black-families-jim-crow/' },
       { label: 'PolitiFact — Jim Crow fact-check', url: 'https://www.politifact.com/article/2024/jun/10/fact-checking-byron-donalds-jim-crow-comments/' },
+      { label: 'PolitiFact — VRA gerrymandering claim (False)', url: 'https://www.politifact.com/factchecks/2026/may/08/byron-donalds/florida-voting-rights-act-democrats-gerrymandering/' },
+      { label: 'Business Insider — STOCK Act non-disclosure', url: 'https://www.businessinsider.com/byron-donalds-stock-trades-insider-trading-ethics-complaint-2024-9' },
       { label: 'CBS Miami — criminal record coverage', url: 'https://www.cbsnews.com/miami/news/byron-donalds-florida-governor-race-marijuana-arrest/' },
       { label: 'Florida Bulldog — spouse charter contracts', url: 'https://www.floridabulldog.org/2025/06/firms-belonging-to-rep-donalds-wife-grabbed-millions-in-charter-school-contracts/' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Byron_Donalds' },
