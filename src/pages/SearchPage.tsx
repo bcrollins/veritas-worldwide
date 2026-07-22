@@ -292,6 +292,14 @@ export default function SearchPage() {
       'cast lead',
       'stefanik',
       'aipac',
+      'hellfire',
+      'small diameter',
+      'sdb',
+      'settler violence',
+      'huwara',
+      'hebron',
+      'fetterman',
+      'pence',
     ]
     const hits = haystack.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
     if (!hits) return []
