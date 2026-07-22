@@ -2081,6 +2081,40 @@ const staticPages = [
     sourceFile: 'src/pages/MembershipPage.tsx',
   },
   {
+    route: '/membership/success',
+    title: 'Membership Confirmed | Veritas Worldwide',
+    heading: 'Welcome to the Membership circle.',
+    description: 'Thank-you landing after Stripe membership checkout. Configure Payment Link after-payment redirect to this path.',
+    body: [
+      'Your membership funds independent investigative publishing. The public archive stays open.',
+      'Stripe emails a receipt to the address used at checkout.',
+    ],
+    noindex: true,
+    sourceFile: 'src/pages/SupportSuccessPage.tsx',
+  },
+  {
+    route: '/donation/success',
+    title: 'Donation Received | Veritas Worldwide',
+    heading: 'Thank you for supporting the record.',
+    description: 'Thank-you landing after Stripe donation checkout. Configure Payment Link after-payment redirect to this path.',
+    body: [
+      'Your gift funds document acquisition, primary-source research, and the infrastructure that keeps the core archive free to read.',
+    ],
+    noindex: true,
+    sourceFile: 'src/pages/SupportSuccessPage.tsx',
+  },
+  {
+    route: '/thank-you',
+    title: 'Thank You | Veritas Worldwide',
+    heading: 'Thank you for supporting the record.',
+    description: 'Generic post-support thank-you landing used as a Stripe redirect alias.',
+    body: [
+      'Thank you for supporting independent investigative publishing at Veritas Worldwide.',
+    ],
+    noindex: true,
+    sourceFile: 'src/pages/SupportSuccessPage.tsx',
+  },
+  {
     route: '/about',
     title: 'About | Veritas Worldwide',
     heading: 'About Veritas Worldwide',
@@ -2285,6 +2319,7 @@ for (const page of staticPages) {
     type: page.type || 'website',
     image: DEFAULT_OG_IMAGE,
     modifiedTime,
+    robots: page.noindex ? 'noindex,nofollow' : 'index,follow',
     jsonLd: buildStaticPageJsonLd(page, route, modifiedTime),
   }
 
@@ -2296,8 +2331,11 @@ for (const page of staticPages) {
   fs.writeFileSync(filePath, buildDocument(template, meta, body))
   manifest[route] = `prerender/${fileName}`
 
-  const sitemapMeta = getStaticPageSitemapMeta(route)
-  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route === '/' ? '' : route}`, modifiedTime, sitemapMeta.changefreq, sitemapMeta.priority))
+  // Thank-you / post-checkout landings are noindex and must not inflate the sitemap.
+  if (!page.noindex) {
+    const sitemapMeta = getStaticPageSitemapMeta(route)
+    sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route === '/' ? '' : route}`, modifiedTime, sitemapMeta.changefreq, sitemapMeta.priority))
+  }
 }
 
 for (const chapter of chapters) {

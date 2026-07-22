@@ -205,15 +205,33 @@ export function getAttributedDonateUrl(options?: { amountCents?: number }): stri
   }
 }
 
+const SUPPORT_SUCCESS_PATHS = new Set([
+  '/membership/success',
+  '/donation/success',
+  '/thank-you',
+])
+
 /** Parse URL for Stripe checkout success indicators */
 export function detectStripeReturn(): { success: boolean; tier?: string; billing?: string } {
   const params = new URLSearchParams(window.location.search)
-  // Stripe Payment Links redirect back with checkout_session_id
+  // Stripe Payment Links redirect back with checkout_session_id (or session_id).
   const sessionId = params.get('checkout_session_id') || params.get('session_id')
-  if (sessionId) {
-    // Try to extract tier from the referrer or stored state
-    const tier = localStorage.getItem('veritas_checkout_tier') || 'unknown'
-    const billing = localStorage.getItem('veritas_checkout_billing') || 'unknown'
+  const path = window.location.pathname.replace(/\/$/, '') || '/'
+  const onSuccessPath = SUPPORT_SUCCESS_PATHS.has(path)
+  const checkoutTs = parseInt(localStorage.getItem('veritas_checkout_ts') || '0', 10)
+  const intentFresh = checkoutTs > 0 && Date.now() - checkoutTs <= 2 * 60 * 60 * 1000
+
+  // Dedicated thank-you routes count as success when recent checkout intent exists,
+  // even if the Payment Link omits session_id (common for hosted Payment Links).
+  if (sessionId || (onSuccessPath && intentFresh)) {
+    const tier =
+      params.get('tier') ||
+      localStorage.getItem('veritas_checkout_tier') ||
+      (path.includes('donation') ? 'donation' : 'unknown')
+    const billing =
+      params.get('billing') ||
+      localStorage.getItem('veritas_checkout_billing') ||
+      (tier === 'donation' ? 'one-time' : 'unknown')
     return { success: true, tier, billing }
   }
   return { success: false }

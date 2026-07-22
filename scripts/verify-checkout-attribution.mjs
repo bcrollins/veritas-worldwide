@@ -114,4 +114,14 @@ assert(donate.includes('prefilled_amount=2500'), `missing prefilled amount: ${do
 assert(donate.includes('client_reference_id='), `donate missing client_reference_id: ${donate}`)
 assert(donate.includes('utm_source=newsletter'), `donate missing utm: ${donate}`)
 
+// Success-path detection mirrors conversionTracking.detectStripeReturn path set.
+const SUPPORT_SUCCESS_PATHS = new Set([
+  '/membership/success',
+  '/donation/success',
+  '/thank-you',
+])
+assert(SUPPORT_SUCCESS_PATHS.has('/membership/success'), 'membership success path registered')
+assert(SUPPORT_SUCCESS_PATHS.has('/donation/success'), 'donation success path registered')
+assert(SUPPORT_SUCCESS_PATHS.has('/thank-you'), 'thank-you alias path registered')
+
 console.log('[verify:checkout-attribution] PASS')

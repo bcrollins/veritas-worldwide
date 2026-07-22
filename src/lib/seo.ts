@@ -19,6 +19,8 @@ interface SEOConfig {
   author?: string
   section?: string
   tags?: string[]
+  /** Optional robots directive (e.g. noindex,nofollow for thank-you pages). */
+  robots?: string
 }
 
 function normalizePublicationDate(value: string): string {
@@ -51,7 +53,7 @@ function normalizePublicationDate(value: string): string {
  * Creates tags if they don't exist, updates them if they do.
  */
 export function setMetaTags(config: SEOConfig): void {
-  const { title, description, url, type = 'website', image, publishedTime, author, section, tags } = config
+  const { title, description, url, type = 'website', image, publishedTime, author, section, tags, robots } = config
   const ogImage = image || OG_IMAGE
 
   document.title = title
@@ -71,6 +73,10 @@ export function setMetaTags(config: SEOConfig): void {
     'twitter:title': title,
     'twitter:description': description,
     'twitter:image': ogImage,
+  }
+
+  if (robots) {
+    metas.robots = robots
   }
 
   if (type === 'article') {

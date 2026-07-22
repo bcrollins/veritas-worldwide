@@ -276,6 +276,13 @@ export default function MembershipPage() {
         <p className="font-sans text-[0.6rem] text-ink-faint text-center mt-5 tracking-wide">
           Secure Stripe checkout · Cancel anytime · Core archive remains free
         </p>
+        <p className="font-sans text-[0.55rem] text-ink-faint text-center mt-2 tracking-wide max-w-xl mx-auto leading-relaxed">
+          After payment, return to{' '}
+          <Link to="/membership/success" className="text-crimson hover:underline">
+            /membership/success
+          </Link>{' '}
+          (configure this as the Stripe Payment Link after-payment redirect).
+        </p>
       </section>
 
       <section className="max-w-5xl mx-auto px-6 mb-20">

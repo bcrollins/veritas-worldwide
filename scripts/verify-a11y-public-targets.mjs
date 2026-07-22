@@ -61,6 +61,7 @@ const floors = [
   { path: 'src/pages/SearchPage.tsx', min: 18, label: 'search filters/sidebar' },
   { path: 'src/components/institute/InstituteLayout.tsx', min: 11, label: 'institute footer nav' },
   { path: 'src/pages/SubscribeSuccessPage.tsx', min: 3, label: 'subscribe success CTAs' },
+  { path: 'src/pages/SupportSuccessPage.tsx', min: 4, label: 'membership/donation success CTAs' },
   { path: 'src/components/AipacDiagram.tsx', min: 8, label: 'AIPAC map controls' },
   { path: 'src/pages/BernieShowPage.tsx', min: 5, label: 'Bernie show controls' },
   { path: 'src/pages/ContentPackPage.tsx', min: 11, label: 'content pack downloads' },

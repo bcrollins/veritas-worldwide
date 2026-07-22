@@ -147,16 +147,22 @@ export default function HomePage() {
 
                       <div className="mt-6 flex flex-wrap gap-3">
                         <Link
-                          to="/institute"
-                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-border px-6 py-3 text-ink font-sans text-sm font-semibold hover:border-crimson hover:text-crimson transition-colors"
-                        >
-                          Veritas Institute
-                        </Link>
-                        <Link
                           to="/read"
                           className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm bg-crimson px-6 py-3 text-white font-sans text-sm font-semibold hover:bg-crimson-dark transition-colors"
                         >
                           Read The Record
+                        </Link>
+                        <Link
+                          to="/israel-dossier"
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-crimson/40 bg-crimson/5 px-6 py-3 text-crimson font-sans text-sm font-semibold hover:bg-crimson/10 transition-colors"
+                        >
+                          Israel Dossier
+                        </Link>
+                        <Link
+                          to="/institute"
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-border px-6 py-3 text-ink font-sans text-sm font-semibold hover:border-crimson hover:text-crimson transition-colors"
+                        >
+                          Veritas Institute
                         </Link>
                       </div>
                     </div>
