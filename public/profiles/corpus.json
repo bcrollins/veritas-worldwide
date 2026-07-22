@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T23:32:45.518Z",
+  "generatedAt": "2026-07-22T23:33:55.024Z",
   "count": 94,
   "profiles": [
     {
@@ -331,18 +331,20 @@
     {
       "id": "adam-schiff",
       "name": "Adam Schiff",
-      "title": "U.S. Representative (D-CA)",
+      "title": "U.S. Senator (D-CA); former House Intelligence Chair",
       "category": "politician",
-      "summary": "Former Chair of House Intelligence Committee. Vocal on Russia investigation and Trump impeachment. Strong pro-Israel voting record.",
+      "summary": "California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Primary: OpenSecrets, Congress.gov, CRS RL33222.",
       "photo": "/profiles/adam-schiff.jpg",
       "url": "https://veritasworldwide.com/profile/adam-schiff",
       "bioguideId": "S001150",
       "tags": [
-        "Intelligence Committee",
-        "Trump Investigation",
+        "Senator",
         "Pro-Israel",
+        "AIPAC",
+        "California",
         "Democrat",
-        "California"
+        "Intelligence",
+        "Iron Dome"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -351,17 +353,19 @@
     {
       "id": "hakeem-jeffries",
       "name": "Hakeem Jeffries",
-      "title": "U.S. Representative, Democratic Leader",
+      "title": "U.S. Representative (D-NY); House Democratic Leader",
       "category": "politician",
-      "summary": "House Democratic Leader from New York. Rising Democratic voice. Represents Brooklyn district.",
+      "summary": "House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Primary: OpenSecrets, House leadership record, CRS RL33222.",
       "photo": "/profiles/hakeem-jeffries.jpg",
       "url": "https://veritasworldwide.com/profile/hakeem-jeffries",
       "bioguideId": "J000294",
       "tags": [
-        "Democratic Leader",
+        "House Democratic Leader",
+        "Pro-Israel",
+        "AIPAC",
         "New York",
-        "House Leadership",
-        "Progressive"
+        "Democrat",
+        "Institutional Enablement"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,

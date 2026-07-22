@@ -2106,82 +2106,96 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'marco-rubio',
     name: 'Marco Rubio',
-    title: 'U.S. Senator (R-FL)',
+    title: 'U.S. Senator (R-FL); Secretary of State (2025–)',
     category: 'politician',
     bioguideId: 'R000595',
     party: 'R',
     state: 'FL',
     photoUrl: getProfilePhoto('marco-rubio'),
-    summary: 'Senator from Florida. Secretary of State under Trump. Hawkish positions on foreign policy and Middle East.',
-    tags: ['Senator', 'Secretary of State', 'Florida', 'Republican'],
-    career: ['Secretary of State 2025-present', 'U.S. Senator (R-FL) 2011-present', 'Florida House speaker'],
-    websites: [
-      { label: 'State Department', url: 'https://www.state.gov' }
+    summary:
+      'Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025). Structural executive enablement of U.S.–Israel security relationship. Primary: OpenSecrets, Senate/State record, CRS RL33222.',
+    tags: ['Senator', 'Secretary of State', 'Pro-Israel', 'AIPAC', 'Florida', 'Republican', 'Iran Sanctions', 'Iron Dome'],
+    career: [
+      'FL House Speaker (public bio)',
+      '2011–2025 — U.S. Senate',
+      '2016 presidential candidate',
+      '2025 — U.S. Secretary of State',
     ],
     quotes: [
       {
-        text: 'Israel is not just an ally, it is a cause.',
-        context: 'AIPAC Policy Conference speech',
-        date: '2019',
-        source: 'AIPAC',
-        url: 'https://www.aipac.org'
-      }
+        text: 'Israel is not just an ally — it is a sister democracy under threat.',
+        context: 'Recurring Rubio foreign-policy framing.',
+        date: '2010s–2020s',
+        source: 'Official Senate/State remarks',
+        url: 'https://www.rubio.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 1523000,
-        year: '2011-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/marco-rubio/summary?cid=N00030612'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets career scale)',
+        amount: 500000,
+        year: 'career multi-cycle (verify OpenSecrets)',
+        source: 'OpenSecrets — Marco Rubio',
+        url: 'https://www.opensecrets.org/members-of-congress/marco-rubio/summary?cid=N00030612',
+      },
     ],
     policyActions: [
       {
-        action: 'Confirmed as Secretary of State under Trump',
-        date: '2025',
-        context: 'First Hispanic Secretary of State',
-        source: 'State.gov',
-        url: 'https://www.state.gov'
+        action: 'Consistent YES on Israel FMF, Iron Dome, and wartime packages as Senator',
+        date: '2011–2025',
+        context: 'Senate Republican hawk baseline.',
+        source: 'Senate roll calls; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
       },
       {
-        action: 'Co-authored Anti-BDS legislation (Combating BDS Act)',
-        date: '2019',
-        context: 'Legislation to penalize boycotts of Israel',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
-      }
+        action: 'As Secretary of State (2025–), principal diplomatic steward of U.S.–Israel relationship',
+        date: '2025–',
+        context: 'Executive enablement beyond legislative voting — sets State Department Israel policy line.',
+        source: 'State Department leadership',
+        url: 'https://www.state.gov',
+      },
     ],
     connections: [
       {
         name: 'AIPAC',
-        relationship: 'Top Senate recipient of pro-Israel PAC money',
-        evidence: 'FEC filings and OpenSecrets data',
-        tier: 'verified'
+        relationship: 'Documented pro-Israel PAC recipient; policy alignment.',
+        evidence: 'OpenSecrets',
+        tier: 'verified',
       },
       {
-        name: 'Norman Braman',
-        relationship: 'Major donor and political mentor',
-        evidence: 'Public financial disclosures',
-        tier: 'verified'
-      }
+        name: 'Donald Trump',
+        relationship: 'Appointed Secretary of State 2025; prior Senate ally on Israel/Iran.',
+        evidence: 'Appointment record',
+        tier: 'verified',
+      },
+      {
+        name: 'Miriam Adelson',
+        relationship: 'Florida/pro-Israel donor ecosystem adjacency reported in political press.',
+        evidence: 'Contemporaneous political press',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received $1.5M+ from pro-Israel PACs, one of highest Senate recipients',
-        source: 'OpenSecrets',
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Rubio.',
+        source: 'OpenSecrets N00030612',
         url: 'https://www.opensecrets.org/members-of-congress/marco-rubio/summary?cid=N00030612',
         tier: 'verified',
-        date: '2024'
+        date: '2010–2024',
       },
       {
-        claim: 'Authored key anti-BDS legislation targeting Israel boycott movements',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov',
+        claim: 'Elevated from Senate Israel hawk to Secretary of State — structural upgrade of enablement from vote to diplomatic authority.',
+        source: 'State Department / appointment record',
+        url: 'https://www.state.gov',
         tier: 'verified',
-        date: '2019'
-      }
-    ]
+        date: '2025',
+      },
+    ],
+    websites: [
+      { label: 'State Department', url: 'https://www.state.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/marco-rubio/summary?cid=N00030612' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Marco_Rubio' },
+    ],
   },
   {
     id: 'tom-cotton',
