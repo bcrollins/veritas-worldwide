@@ -158,12 +158,13 @@ export function registerBotMetaInjection({ app, rootDir }) {
       }
       if (newsMeta) {
         const newsUrl = `${SITE_URL}/news/${slug}`
-        const newsImage = newsMeta.image || OG_IMAGE
-        const imgType = newsImage.endsWith('.jpg') || newsImage.endsWith('.jpeg')
+        let newsImage = newsMeta.image || OG_IMAGE
+        if (newsImage.startsWith('/')) newsImage = `${SITE_URL}${newsImage}`
+        const imgType = /\.jpe?g($|\?)/i.test(newsImage)
           ? 'image/jpeg'
-          : newsImage.endsWith('.webp')
+          : /\.webp($|\?)/i.test(newsImage)
             ? 'image/webp'
-            : newsImage.endsWith('.svg')
+            : /\.svg($|\?)/i.test(newsImage)
               ? 'image/svg+xml'
               : 'image/png'
         const safeTitle = String(newsMeta.title || slug).replace(/"/g, '&quot;')
@@ -173,10 +174,12 @@ export function registerBotMetaInjection({ app, rootDir }) {
           .replace(/content="The Record \| Veritas Worldwide"/g, `content="${safeTitle}"`)
           .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${safeDesc}"`)
           .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${safeDesc}"`)
-          .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${newsUrl}"`)
-          .replace(/content="website"/, 'content="article"')
-          .replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${newsImage}"`)
-          .replace(/content="image\/png"/, `content="${imgType}"`)
+          .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${newsUrl}$2`)
+          .replace(/(<meta property="og:type" content=")[^"]*(")/, '$1article$2')
+          .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${newsImage}$2`)
+          .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${newsImage}$2`)
+          .replace(/(<meta property="og:image:type" content=")[^"]*(")/, `$1${imgType}$2`)
+          .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${newsUrl}$2`)
       }
     }
 
