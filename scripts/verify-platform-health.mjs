@@ -726,6 +726,35 @@ const healthResult = await fetchJson('/api/health')
         }
       }
 
+      // Machine-readable profiles corpus for crawlers / GEO.
+      try {
+        const corpusRes = await fetch(getUrl('/profiles/corpus.json'), {
+          signal: AbortSignal.timeout(timeoutMs),
+        })
+        let corpusOk = false
+        let corpusCount = 0
+        if (corpusRes.ok) {
+          const body = await corpusRes.json()
+          corpusCount = Array.isArray(body?.profiles) ? body.profiles.length : 0
+          corpusOk = corpusCount >= 90
+        }
+        addCheck(
+          checks,
+          failures,
+          corpusOk,
+          'Profiles corpus.json responds with ≥90 profiles',
+          `status=${corpusRes.status} count=${corpusCount}`,
+        )
+      } catch (error) {
+        addCheck(
+          checks,
+          failures,
+          false,
+          'Profiles corpus.json responds with ≥90 profiles',
+          `error=${error instanceof Error ? error.message : String(error)}`,
+        )
+      }
+
       // Live CSP meta must not re-open Wikimedia img-src after first-party cutover.
       try {
         const home = await fetchText('/')
