@@ -71,41 +71,95 @@ function getProfileInitialsImage(name: string): string {
 }
 
 /* ── Utility: Animated Counter ──────────────────────────────── */
-function useAnimatedCounter(end: number, duration = 1200): number {
+/**
+ * Returns [displayValue, ref]. Attach `ref` to the observed element.
+ * Guarantees the final number is always shown (never stuck at 0) even if
+ * IntersectionObserver misses or the ref attaches after the first effect run.
+ */
+function useAnimatedCounter(end: number, duration = 1200): [number, React.RefObject<HTMLDivElement | null>] {
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!ref.current || hasAnimated.current) return;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) { setValue(end); hasAnimated.current = true; return; }
+    hasAnimated.current = false;
+    setValue(0);
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting || hasAnimated.current) return;
+    const prefersReduced =
+      typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      setValue(end);
+      hasAnimated.current = true;
+      return;
+    }
+
+    let cancelled = false;
+    let observer: IntersectionObserver | null = null;
+    let fallbackTimer = 0;
+    let attachTimer = 0;
+    let raf = 0;
+
+    const run = () => {
+      if (cancelled || hasAnimated.current) return;
       hasAnimated.current = true;
       const start = performance.now();
       const step = (now: number) => {
+        if (cancelled) return;
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
         setValue(Math.floor(eased * end));
-        if (progress < 1) requestAnimationFrame(step);
+        if (progress < 1) raf = requestAnimationFrame(step);
+        else setValue(end);
       };
-      requestAnimationFrame(step);
-    }, { threshold: 0.3 });
-    observer.observe(ref.current);
-    return () => observer.disconnect();
+      raf = requestAnimationFrame(step);
+    };
+
+    const attach = () => {
+      if (cancelled) return;
+      const el = ref.current;
+      if (!el) {
+        // Ref still missing after paint — never leave stats at zero
+        setValue(end);
+        hasAnimated.current = true;
+        return;
+      }
+
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            run();
+            observer?.disconnect();
+          }
+        },
+        { threshold: 0.1 },
+      );
+      observer.observe(el);
+
+      // Fallback if already in viewport or IO never fires
+      fallbackTimer = window.setTimeout(() => {
+        if (!hasAnimated.current) run();
+      }, 900);
+    };
+
+    // Defer one tick so StatCounter's ref is committed before we observe
+    attachTimer = window.setTimeout(attach, 0);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(attachTimer);
+      window.clearTimeout(fallbackTimer);
+      observer?.disconnect();
+      cancelAnimationFrame(raf);
+    };
   }, [end, duration]);
 
-  return value;
+  return [value, ref];
 }
 
 function StatCounter({ end, label, prefix = '', suffix = '' }: {
   end: number; label: string; prefix?: string; suffix?: string;
 }) {
-  const value = useAnimatedCounter(end);
-  const ref = useRef<HTMLDivElement>(null);
-  // Attach ref for IntersectionObserver — reuse hook logic
+  const [value, ref] = useAnimatedCounter(end);
   return (
     <div ref={ref} className="text-center">
       <p className="font-display text-3xl md:text-4xl font-bold text-crimson" aria-label={`${prefix}${end.toLocaleString()}${suffix}`}>
