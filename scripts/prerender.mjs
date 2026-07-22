@@ -1629,6 +1629,12 @@ function renderArticlePage(article, chapterLookup, topicAliasMap) {
     </main>`
 }
 
+function absoluteSiteUrl(maybePath) {
+  if (!maybePath) return DEFAULT_OG_IMAGE
+  if (String(maybePath).startsWith('http')) return maybePath
+  return `${SITE_URL}${String(maybePath).startsWith('/') ? '' : '/'}${maybePath}`
+}
+
 function buildArticleJsonLd(article, publishedTime, modifiedTime) {
   return [
     {
@@ -1636,7 +1642,7 @@ function buildArticleJsonLd(article, publishedTime, modifiedTime) {
       '@type': 'NewsArticle',
       headline: article.title,
       description: article.seo?.metaDescription || article.subtitle,
-      image: article.heroImage?.src || DEFAULT_OG_IMAGE,
+      image: absoluteSiteUrl(article.heroImage?.src || DEFAULT_OG_IMAGE),
       datePublished: publishedTime,
       dateModified: modifiedTime,
       author: {
@@ -2410,12 +2416,13 @@ for (const article of articles) {
   const articleSourceFile = path.join(repoRoot, article.__sourceFile)
   const publishedTime = normalizeHumanDate(article.publishDate)
   const modifiedTime = getGitModified(articleSourceFile).slice(0, 10)
+  const absoluteHero = absoluteSiteUrl(article.heroImage?.src || DEFAULT_OG_IMAGE)
   const meta = {
     title: article.seo?.metaTitle || `${article.title} | ${SITE_NAME}`,
     description: article.seo?.metaDescription || article.subtitle,
     url: `${SITE_URL}${route}`,
     type: 'article',
-    image: article.heroImage?.src || DEFAULT_OG_IMAGE,
+    image: absoluteHero,
     keywords: article.seo?.keywords || article.tags || [],
     publishedTime,
     modifiedTime,
