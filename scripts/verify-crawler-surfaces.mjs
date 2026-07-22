@@ -15,7 +15,8 @@ const root = path.join(__dirname, '..')
 // so legitimate content growth is free, but accidental drops still fail CI/local verify.
 // Chapter + static shells (~292) plus full power-profile prerender set (~94).
 const MIN_PRERENDER_ROUTES = 360
-const MIN_SITEMAP_URLS = 300
+// Profile prerenders + corpus (~387 public sitemap URLs).
+const MIN_SITEMAP_URLS = 360
 // Floor sits ~10% under the 2026-07-16 baseline (~30 llms links after About/Accessibility GEO).
 // After profile corpus + flagship profile GEO links (~49).
 const MIN_LLMS_LINKS = 40
