@@ -44,12 +44,15 @@ export default function CookieConsent() {
     localStorage.setItem(CONSENT_KEY, 'granted')
     setConsent('granted')
     updateGtagConsent(true)
+    // Notify same-tab listeners (sticky membership bar) without a storage event.
+    window.dispatchEvent(new Event('veritas-cookie-consent'))
   }
 
   function handleDecline() {
     localStorage.setItem(CONSENT_KEY, 'denied')
     setConsent('denied')
     updateGtagConsent(false)
+    window.dispatchEvent(new Event('veritas-cookie-consent'))
   }
 
   if (consent !== 'pending') return null

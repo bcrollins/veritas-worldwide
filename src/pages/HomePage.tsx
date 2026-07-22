@@ -145,25 +145,28 @@ export default function HomePage() {
                         </div>
                       </Link>
 
-                      <div className="mt-6 flex flex-wrap gap-3">
+                      {/* Mobile: primary CTA + compact text links so first-screen density stays readable */}
+                      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                         <Link
                           to="/read"
-                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm bg-crimson px-6 py-3 text-white font-sans text-sm font-semibold hover:bg-crimson-dark transition-colors"
+                          className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-sm bg-crimson px-6 py-3 text-white font-sans text-sm font-semibold hover:bg-crimson-dark transition-colors"
                         >
                           Read The Record
                         </Link>
-                        <Link
-                          to="/israel-dossier"
-                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-crimson/40 bg-crimson/5 px-6 py-3 text-crimson font-sans text-sm font-semibold hover:bg-crimson/10 transition-colors"
-                        >
-                          Israel Dossier
-                        </Link>
-                        <Link
-                          to="/institute"
-                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-border px-6 py-3 text-ink font-sans text-sm font-semibold hover:border-crimson hover:text-crimson transition-colors"
-                        >
-                          Veritas Institute
-                        </Link>
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 sm:contents">
+                          <Link
+                            to="/israel-dossier"
+                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm sm:border sm:border-crimson/40 sm:bg-crimson/5 sm:px-6 sm:py-3 text-crimson font-sans text-sm font-semibold hover:text-crimson-dark sm:hover:bg-crimson/10 transition-colors"
+                          >
+                            Israel Dossier
+                          </Link>
+                          <Link
+                            to="/institute"
+                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm sm:border sm:border-border sm:px-6 sm:py-3 text-ink-muted sm:text-ink font-sans text-sm font-semibold hover:text-crimson sm:hover:border-crimson transition-colors"
+                          >
+                            Veritas Institute
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   )}

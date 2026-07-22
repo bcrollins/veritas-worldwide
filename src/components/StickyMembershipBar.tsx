@@ -5,16 +5,55 @@ import { trackSupportClick } from '../lib/ga4'
 /**
  * Sticky bottom bar promoting membership — appears after user scrolls
  * past 400px on content pages. Hidden on membership page itself,
- * admin pages, and for existing subscribers.
+ * admin pages, success landings, and for existing subscribers.
+ *
+ * Also stays hidden while the cookie-consent banner is pending so mobile
+ * first-screens are not double-stacked with two full-width bottom bars.
  */
 export default function StickyMembershipBar() {
   const [show, setShow] = useState(false)
   const [dismissed, setDismissed] = useState(false)
+  const [cookiePending, setCookiePending] = useState(true)
   const location = useLocation()
 
   const isExcluded =
     location.pathname === '/membership' ||
+    location.pathname.startsWith('/membership/') ||
+    location.pathname.startsWith('/donation/') ||
+    location.pathname === '/thank-you' ||
     location.pathname.startsWith('/admin')
+
+  useEffect(() => {
+    // Mirror CookieConsent storage key — hide while banner is still pending.
+    try {
+      const v = localStorage.getItem('veritas_cookie_consent')
+      setCookiePending(v !== 'granted' && v !== 'denied')
+    } catch {
+      setCookiePending(true)
+    }
+
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'veritas_cookie_consent') {
+        setCookiePending(e.newValue !== 'granted' && e.newValue !== 'denied')
+      }
+    }
+    window.addEventListener('storage', onStorage)
+
+    // Same-tab consent changes write localStorage but do not fire storage events.
+    const onConsent = () => {
+      try {
+        const v = localStorage.getItem('veritas_cookie_consent')
+        setCookiePending(v !== 'granted' && v !== 'denied')
+      } catch {
+        /* ignore */
+      }
+    }
+    window.addEventListener('veritas-cookie-consent', onConsent)
+    return () => {
+      window.removeEventListener('storage', onStorage)
+      window.removeEventListener('veritas-cookie-consent', onConsent)
+    }
+  }, [])
 
   useEffect(() => {
     if (isExcluded || dismissed) return
@@ -32,7 +71,7 @@ export default function StickyMembershipBar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isExcluded, dismissed])
 
-  if (!show || isExcluded || dismissed) return null
+  if (!show || isExcluded || dismissed || cookiePending) return null
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 no-print animate-slide-up">
