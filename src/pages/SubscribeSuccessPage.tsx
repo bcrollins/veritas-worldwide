@@ -237,6 +237,8 @@ export default function SubscribeSuccessPage() {
       title: `Subscription Confirmed | ${SITE_NAME}`,
       description,
       url: `${SITE_URL}/subscribe/success`,
+      // Transactional landing — must not compete with evergreen archive pages in organic SERPs.
+      robots: 'noindex, nofollow',
     })
 
     return () => {

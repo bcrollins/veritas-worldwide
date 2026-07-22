@@ -1976,14 +1976,23 @@ function buildTopicJsonLd(topic, chapters, articles) {
   ]
 }
 
-function renderUrlEntry(loc, lastmod, changefreq, priority) {
-  return `  <url><loc>${escapeHtml(loc)}</loc><lastmod>${escapeHtml(lastmod)}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`
+/**
+ * Sitemap URL entry. Optional imageUrl enables Google Image search discovery
+ * (image sitemap extension — Search Central image guidelines).
+ */
+function renderUrlEntry(loc, lastmod, changefreq, priority, imageUrl = null, imageTitle = null) {
+  const base = `  <url><loc>${escapeHtml(loc)}</loc><lastmod>${escapeHtml(lastmod)}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority>`
+  if (!imageUrl) return `${base}</url>`
+  const titleXml = imageTitle
+    ? `<image:title>${escapeHtml(imageTitle)}</image:title>`
+    : ''
+  return `${base}<image:image><image:loc>${escapeHtml(imageUrl)}</image:loc>${titleXml}</image:image></url>`
 }
 
 function writeSitemap(entries) {
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ...entries,
     '</urlset>',
     '',
@@ -2515,7 +2524,17 @@ for (const chapter of chapters) {
 
   fs.writeFileSync(filePath, buildDocument(template, meta, body))
   manifest[route] = `prerender/${fileName}`
-  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, modifiedTime, 'monthly', chapter.id === 'foreword' || chapter.id === 'overview' ? '0.9' : '0.8'))
+  sitemapEntries.set(
+    route,
+    renderUrlEntry(
+      `${SITE_URL}${route}`,
+      modifiedTime,
+      'monthly',
+      chapter.id === 'foreword' || chapter.id === 'overview' ? '0.9' : '0.8',
+      image,
+      chapter.title,
+    ),
+  )
 }
 
 for (const topic of topicHubs) {
@@ -2568,7 +2587,17 @@ for (const article of articles) {
 
   fs.writeFileSync(filePath, buildDocument(template, meta, renderArticlePage(article, chapterLookup, topicAliasMap)))
   manifest[route] = `prerender/${fileName}`
-  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, modifiedTime, 'weekly', '0.7'))
+  sitemapEntries.set(
+    route,
+    renderUrlEntry(
+      `${SITE_URL}${route}`,
+      modifiedTime,
+      'weekly',
+      '0.7',
+      absoluteHero,
+      article.title,
+    ),
+  )
 }
 
 const instituteDataModified = getGitModified(instituteCatalogPath).slice(0, 10)
@@ -2647,7 +2676,17 @@ for (const profileSlug of profileSlugs) {
   }
   fs.writeFileSync(filePath, buildDocument(template, meta, renderProfilePage(profile)))
   manifest[route] = `prerender/${fileName}`
-  sitemapEntries.set(route, renderUrlEntry(`${SITE_URL}${route}`, profileModified, 'monthly', '0.7'))
+  sitemapEntries.set(
+    route,
+    renderUrlEntry(
+      `${SITE_URL}${route}`,
+      profileModified,
+      'monthly',
+      '0.7',
+      photoAbs,
+      profile.name,
+    ),
+  )
 }
 
 // Durable static PDFs / machine-readable corpora (not SPA routes, but crawlable public assets).

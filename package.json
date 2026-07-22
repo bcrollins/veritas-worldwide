@@ -60,6 +60,7 @@
     "verify:csp-meta": "node scripts/verify-csp-meta.mjs",
     "verify:trust-corpora-links": "node scripts/verify-trust-corpora-links.mjs",
     "verify:profile-counters": "node scripts/verify-profile-counters.mjs",
+    "verify:seo-meta": "node scripts/verify-seo-meta.mjs",
     "verify:pure": "node scripts/verify-pure.mjs",
     "verify:brand-kit": "node scripts/verify-brand-kit.mjs"
   },

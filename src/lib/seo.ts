@@ -8,6 +8,10 @@ const SITE_URL = 'https://veritasworldwide.com'
 const DEFAULT_DESCRIPTION = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Published by Veritas Worldwide.'
 const OG_IMAGE = `${SITE_URL}/og-image.png`
 const TWITTER_HANDLE = '@VeritasWorldwide'
+/** Google typically displays ~50–60 chars of title; keep headroom for SERP truncation. */
+const META_TITLE_MAX = 60
+/** Meta descriptions perform best around 150–160 characters in SERP snippets. */
+const META_DESCRIPTION_MAX = 160
 
 interface SEOConfig {
   title: string
@@ -21,6 +25,29 @@ interface SEOConfig {
   tags?: string[]
   /** Optional robots directive (e.g. noindex,nofollow for thank-you pages). */
   robots?: string
+}
+
+/**
+ * Clamp a title for SERP display without mid-word cuts when possible.
+ * Google Search Central: unique, concise, descriptive titles.
+ */
+export function clampMetaTitle(title: string, max = META_TITLE_MAX): string {
+  const t = title.replace(/\s+/g, ' ').trim()
+  if (t.length <= max) return t
+  const cut = t.slice(0, max - 1)
+  const sp = cut.lastIndexOf(' ')
+  return `${(sp > 40 ? cut.slice(0, sp) : cut).trimEnd()}…`
+}
+
+/**
+ * Clamp a meta description for SERP snippet eligibility (~150–160 chars).
+ */
+export function clampMetaDescription(description: string, max = META_DESCRIPTION_MAX): string {
+  const d = description.replace(/\s+/g, ' ').trim()
+  if (d.length <= max) return d
+  const cut = d.slice(0, max - 1)
+  const sp = cut.lastIndexOf(' ')
+  return `${(sp > 100 ? cut.slice(0, sp) : cut).trimEnd()}…`
 }
 
 function normalizePublicationDate(value: string): string {
@@ -53,24 +80,29 @@ function normalizePublicationDate(value: string): string {
  * Creates tags if they don't exist, updates them if they do.
  */
 export function setMetaTags(config: SEOConfig): void {
-  const { title, description, url, type = 'website', image, publishedTime, author, section, tags, robots } = config
+  const { url, type = 'website', image, publishedTime, author, section, tags, robots } = config
+  // Keep document.title full for browser tabs; clamp only SERP/social fields.
+  const title = config.title.replace(/\s+/g, ' ').trim()
+  const description = clampMetaDescription(config.description)
+  const ogTitle = clampMetaTitle(title, 70) // OG allows slightly longer than SERP title
   const ogImage = image || OG_IMAGE
 
   document.title = title
 
   const metas: Record<string, string> = {
     'description': description,
-    'og:title': title,
+    'og:title': ogTitle,
     'og:description': description,
     'og:url': url,
     'og:type': type,
     'og:site_name': SITE_NAME,
+    'og:locale': 'en_US',
     'og:image': ogImage,
     'og:image:width': '1200',
     'og:image:height': '630',
     'twitter:card': 'summary_large_image',
     'twitter:site': TWITTER_HANDLE,
-    'twitter:title': title,
+    'twitter:title': ogTitle,
     'twitter:description': description,
     'twitter:image': ogImage,
   }
@@ -279,6 +311,7 @@ export function websiteJsonLd(): Record<string, unknown> {
     'alternateName': 'The Record',
     'url': SITE_URL,
     'description': DEFAULT_DESCRIPTION,
+    'inLanguage': 'en-US',
     'publisher': {
       '@type': 'Organization',
       'name': SITE_NAME,
@@ -295,4 +328,84 @@ export function websiteJsonLd(): Record<string, unknown> {
   }
 }
 
-export { SITE_NAME, SITE_URL, DEFAULT_DESCRIPTION }
+/**
+ * Organization entity for E-E-A-T / knowledge-panel eligibility.
+ * Google Search Central: provide identity + sameAs social/profile URLs.
+ */
+export function organizationJsonLd(): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': SITE_NAME,
+    'alternateName': 'The Record',
+    'url': SITE_URL,
+    'logo': {
+      '@type': 'ImageObject',
+      'url': OG_IMAGE,
+      'width': 1200,
+      'height': 630,
+    },
+    'description':
+      'Independent investigative journalism built on primary sources. The Record documents 240+ years of institutional power with public archives.',
+    'foundingDate': '2025',
+    'sameAs': [
+      'https://x.com/VeritasWorldwide',
+      'https://github.com/bcrollins/veritas-worldwide',
+      'https://www.reddit.com/r/VeritasWorldwide',
+    ],
+    'contactPoint': [
+      {
+        '@type': 'ContactPoint',
+        'email': 'rights@veritasworldwide.com',
+        'contactType': 'editorial',
+        'availableLanguage': 'English',
+      },
+      {
+        '@type': 'ContactPoint',
+        'email': 'corrections@veritasworldwide.com',
+        'contactType': 'corrections',
+        'availableLanguage': 'English',
+      },
+    ],
+  }
+}
+
+/**
+ * FAQPage JSON-LD for methodology / trust Q&A surfaces (rich-result eligible).
+ */
+export function faqJsonLd(
+  questions: { question: string; answer: string }[],
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': questions.map((q) => ({
+      '@type': 'Question',
+      'name': q.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': q.answer,
+      },
+    })),
+  }
+}
+
+/**
+ * BreadcrumbList helper for non-chapter routes.
+ */
+export function breadcrumbJsonLd(
+  items: { name: string; url: string }[],
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': items.map((item, i) => ({
+      '@type': 'ListItem',
+      'position': i + 1,
+      'name': item.name,
+      'item': item.url,
+    })),
+  }
+}
+
+export { SITE_NAME, SITE_URL, DEFAULT_DESCRIPTION, OG_IMAGE, META_TITLE_MAX, META_DESCRIPTION_MAX }

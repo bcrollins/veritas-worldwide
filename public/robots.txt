@@ -1,9 +1,19 @@
+# Veritas Worldwide — crawler policy
+# https://veritasworldwide.com/robots.txt
+# Companion AI discovery: https://veritasworldwide.com/llms.txt
+
 User-agent: *
 Allow: /
 # Operator console is not a public content surface.
 Disallow: /admin
 Disallow: /admin/
-Sitemap: https://veritasworldwide.com/sitemap.xml
+# Transactional / post-checkout landings (also noindex in HTML).
+Disallow: /subscribe/success
+Disallow: /membership/success
+Disallow: /donation/success
+Disallow: /thank-you
+# Client-only reader state (auth-gated; low SEO value).
+Disallow: /bookmarks
 
 # Durable public PDF downloads
 Allow: /veritas-institute-field-manual.pdf
@@ -11,3 +21,42 @@ Allow: /the-record.pdf
 
 # Security disclosure (RFC 9116)
 Allow: /.well-known/security.txt
+Allow: /security.txt
+
+# Machine-readable discovery for AI crawlers / GEO
+Allow: /llms.txt
+Allow: /feed.xml
+Allow: /sitemap.xml
+Allow: /profiles/corpus.json
+Allow: /israel-dossier/workbooks/
+
+Sitemap: https://veritasworldwide.com/sitemap.xml
+
+# Major search engines — full public archive access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI / answer-engine crawlers — allow public research corpus; still respect Disallow above via * defaults where supported
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

@@ -1,6 +1,15 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  SITE_URL,
+  SITE_NAME,
+  faqJsonLd,
+  breadcrumbJsonLd,
+} from '../lib/seo'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 const methodologySections = [
@@ -31,19 +40,51 @@ export default function MethodologyPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Methodology & Evidence Standards | The Record — Veritas Worldwide',
-      description: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
+      description:
+        'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
       url: `${SITE_URL}/methodology`,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      'name': 'Methodology & Evidence Standards',
-      'description': 'How The Record classifies evidence: Verified, Circumstantial, and Disputed.',
-      'url': `${SITE_URL}/methodology`,
-      'isPartOf': { '@type': 'WebSite', 'name': `The Record — ${SITE_NAME}`, 'url': SITE_URL },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Methodology & Evidence Standards',
+        description: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed.',
+        url: `${SITE_URL}/methodology`,
+        isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Methodology', url: `${SITE_URL}/methodology` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What evidence tiers does The Record use?',
+          answer:
+            'The Record classifies claims as Verified (primary-source documentation), Circumstantial (documented facts with interpretive conclusion), or Disputed (reported but not independently confirmed).',
+        },
+        {
+          question: 'How does the five-tier source hierarchy work?',
+          answer:
+            'Primary government and court records sit at the top, followed by peer-reviewed research, investigative journalism with documents, contemporaneous reporting, and finally secondary commentary used only for context.',
+        },
+        {
+          question: 'Can readers verify claims independently?',
+          answer:
+            'Yes. Every major claim links to public sources, archive pins, or downloadable workbooks so readers can re-check the public record without trusting the narrative alone.',
+        },
+        {
+          question: 'Where is the archive pin manifest?',
+          answer:
+            'Pinned Wayback snapshots for briefing sources are published at /israel-dossier/workbooks/briefing-source-archive-manifest.json for durability when origin hosts block automated probes.',
+        },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
   return (
     <div className="w-full max-w-[1920px] mx-auto">

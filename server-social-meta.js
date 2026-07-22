@@ -67,7 +67,7 @@ export function registerBotMetaInjection({ app, rootDir }) {
       '/forum': { title: 'Veritas Forum | Veritas Worldwide', desc: 'Community discussion forum for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.' },
       '/profiles': { title: 'Power Profiles | Veritas Worldwide', desc: 'Sourced profiles of 235+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.' },
       '/content-pack': { title: 'Content Packs & Brand Kit | Veritas Worldwide', desc: 'Official brand assets and social media content packs for Veritas Worldwide. Free for press, social media, and advocacy.' },
-      '/news': { title: 'News | Veritas Worldwide', desc: 'Latest news and updates from Veritas Worldwide.' },
+      '/news': { title: 'News | Veritas Worldwide', desc: 'Source-first reporting on power, money, accountability, and the institutions shaping current events. Primary documents and public records.' },
       '/donate': { title: 'Support Our Research | Veritas Worldwide', desc: 'Fund independent, source-verified investigative journalism. No party. No agenda. Just the record. Every contribution keeps the archive online and free.' },
       '/read': { title: 'Read The Record | Veritas Worldwide', desc: 'Read all 31 chapters of The Record — a documentary history spanning 1694 to present. Primary sources. Public record. Your conclusions.' },
     }

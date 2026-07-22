@@ -1806,6 +1806,79 @@ app.use('/api', (req, res) => {
 
 registerBotMetaInjection({ app, rootDir: __dirname })
 
+/**
+ * Google Search Central: unknown URLs must not soft-404 with HTTP 200 + homepage title.
+ * Known SPA surfaces (prerender manifest + dynamic public prefixes) keep 200 + shell.
+ * Everything else returns HTTP 404 + noindex so crawlers de-index junk paths.
+ */
+function isKnownSpaRoute(pathname) {
+  const route = normalizePrerenderRoute(pathname || '/')
+  if (route === '/') return true
+  if (prerenderManifest && prerenderManifest[route]) return true
+
+  // Client-only / dynamic public routes (may not all be prerendered yet).
+  const knownExact = new Set([
+    '/bookmarks',
+    '/share',
+    '/brand-kit',
+    '/content-packs',
+    '/subscribe/success',
+    '/membership/success',
+    '/donation/success',
+    '/thank-you',
+    '/admin',
+    '/admin/login',
+    '/bernie',
+    '/bible',
+    '/forum',
+  ])
+  if (knownExact.has(route)) return true
+
+  const patterns = [
+    /^\/chapter\/[a-z0-9-]+$/i,
+    /^\/profile\/[a-z0-9-]+$/i,
+    /^\/news\/[a-z0-9-]+$/i,
+    /^\/topics\/[a-z0-9-]+$/i,
+    /^\/institute\/courses\/[a-z0-9-]+$/i,
+    /^\/institute\/guides\/[a-z0-9-]+$/i,
+    /^\/admin(\/|$)/i,
+    /^\/forum(\/|$)/i,
+  ]
+  return patterns.some((re) => re.test(route))
+}
+
+function buildNotFoundHtml() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Veritas Worldwide</title>
+  <meta name="description" content="This page is not part of The Record public archive." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://veritasworldwide.com/404" />
+  <meta property="og:title" content="Page Not Found | Veritas Worldwide" />
+  <meta property="og:description" content="This page is not part of The Record public archive." />
+  <meta property="og:type" content="website" />
+  <style>
+    body{margin:0;font-family:Georgia,serif;background:#FDFBF7;color:#1a1a1a;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    main{max-width:36rem;padding:2rem;text-align:center}
+    h1{font-size:4rem;margin:0 0 .5rem;color:#8B1A1A}
+    p{line-height:1.5;color:#444}
+    a{color:#8B1A1A;margin:0 .5rem}
+  </style>
+</head>
+<body>
+  <main>
+    <p style="letter-spacing:.2em;text-transform:uppercase;font-size:.7rem;color:#8B1A1A;font-weight:700">Document Not Found</p>
+    <h1>404</h1>
+    <p>This page is not part of the record. It may have been moved or never published.</p>
+    <p><a href="/">The Record</a><a href="/search">Search</a><a href="/read">Browse</a></p>
+  </main>
+</body>
+</html>`
+}
+
 app.use((req, res) => {
   // SPA shell must never be immutably cached (deploy-safe HTML).
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
@@ -1814,6 +1887,15 @@ app.use((req, res) => {
   if (req.path === '/admin' || req.path.startsWith('/admin/')) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')
   }
+
+  // Soft-404 kill: unknown URLs must not return 200 with the homepage shell.
+  if ((req.method === 'GET' || req.method === 'HEAD') && !path.extname(req.path) && !isKnownSpaRoute(req.path)) {
+    res.status(404)
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+    res.type('html')
+    return res.send(buildNotFoundHtml())
+  }
+
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 
