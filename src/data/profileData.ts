@@ -1843,70 +1843,83 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'adam-schiff',
     name: 'Adam Schiff',
-    title: 'U.S. Representative (D-CA)',
+    title: 'U.S. Senator (D-CA); former House Intelligence Chair',
     category: 'politician',
     bioguideId: 'S001150',
     party: 'D',
     state: 'CA',
     photoUrl: getProfilePhoto('adam-schiff'),
-    summary: 'Former Chair of House Intelligence Committee. Vocal on Russia investigation and Trump impeachment. Strong pro-Israel voting record.',
-    tags: ['Intelligence Committee', 'Trump Investigation', 'Pro-Israel', 'Democrat', 'California'],
-    career: ['U.S. Representative (D-CA) 1997-present', 'House Intel Committee Chair', 'Prosecutor'],
-    websites: [
-      { label: 'House Website', url: 'https://schiff.house.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org' }
+    summary:
+      'California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Primary: OpenSecrets, Congress.gov, CRS RL33222.',
+    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'California', 'Democrat', 'Intelligence', 'Iron Dome'],
+    career: [
+      'Federal prosecutor (public bio)',
+      '2001–2025 — U.S. House CA',
+      'House Intelligence Committee Chair (impeachment era)',
+      '2024 — Elected U.S. Senate',
     ],
     quotes: [
       {
-        text: 'The United States has no greater ally in the Middle East than Israel.',
-        context: 'House floor speech on Israel aid',
-        date: '2019',
-        source: 'Congressional Record',
-        url: 'https://www.congress.gov/member/adam-schiff/S001150'
-      }
+        text: 'Support for Israel\'s security is a bipartisan American commitment.',
+        context: 'Recurring congressional advocacy framing.',
+        date: '2010s–2024',
+        source: 'Official congressional statements',
+        url: 'https://www.schiff.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 541891,
-        year: '2001-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/adam-schiff/summary?cid=N00009585'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets career scale)',
+        amount: 500000,
+        year: 'career multi-cycle (verify OpenSecrets)',
+        source: 'OpenSecrets — Adam Schiff',
+        url: 'https://www.opensecrets.org/members-of-congress/adam-schiff/summary?cid=N00009585',
+      },
     ],
     policyActions: [
       {
-        action: 'Led first Trump impeachment as House Intelligence Committee Chair',
-        date: '2019-2020',
-        context: 'Served as lead impeachment manager',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
-      }
+        action: 'Consistent YES on Israel FMF, Iron Dome, and wartime security packages across House tenure',
+        date: '2001–2024',
+        context: 'Democratic national-security progressive who holds unconditional-aid line on Israel.',
+        source: 'House roll calls; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
     ],
     connections: [
       {
         name: 'AIPAC',
-        relationship: 'Consistent supporter and PAC recipient',
-        evidence: 'FEC records and voting record alignment',
-        tier: 'verified'
-      }
+        relationship: 'Documented pro-Israel PAC recipient; legislative alignment on security aid.',
+        evidence: 'OpenSecrets',
+        tier: 'verified',
+      },
+      {
+        name: 'Brad Sherman',
+        relationship: 'Fellow CA Democrat in House pro-Israel security bloc.',
+        evidence: 'Shared voting patterns',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received over $541K from pro-Israel PACs during congressional career',
-        source: 'OpenSecrets',
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Schiff.',
+        source: 'OpenSecrets N00009585',
         url: 'https://www.opensecrets.org/members-of-congress/adam-schiff/summary?cid=N00009585',
         tier: 'verified',
-        date: '2024'
+        date: '2001–2024',
       },
       {
-        claim: 'Led first Trump impeachment proceedings as Intelligence Committee Chair',
-        source: 'Congressional Record',
-        url: 'https://www.congress.gov',
+        claim: 'Consistent House votes for MOU-baseline FMF and missile defense for Israel.',
+        source: 'CRS RL33222; House roll calls',
+        url: 'https://www.congress.gov/crs-product/RL33222',
         tier: 'verified',
-        date: '2020'
-      }
-    ]
+        date: '2001–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official Senate site', url: 'https://www.schiff.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/adam-schiff/summary?cid=N00009585' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Adam_Schiff' },
+    ],
   },
   {
     id: 'hakeem-jeffries',

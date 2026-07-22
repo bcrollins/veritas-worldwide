@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T23:27:06.256Z",
+  "generatedAt": "2026-07-22T23:32:45.518Z",
   "count": 94,
   "profiles": [
     {
@@ -7,18 +7,20 @@
       "name": "Ted Cruz",
       "title": "U.S. Senator (R-TX)",
       "category": "politician",
-      "summary": "Senior Senator from Texas, prominent AIPAC recipient with $2M+ in career donations from pro-Israel PACs. Known for hardline positions on Israel-Palestine, Iran sanctions.",
+      "summary": "Texas Republican senator and leading hawk on Iran and Israel security. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages; frequent legislative sponsor of Iran sanctions and anti-BDS vehicles. Primary: OpenSecrets, Congress.gov, Senate record.",
       "photo": "/profiles/ted-cruz.jpg",
       "url": "https://veritasworldwide.com/profile/ted-cruz",
       "bioguideId": "C001098",
       "tags": [
-        "AIPAC",
+        "Senator",
         "Pro-Israel",
-        "Tea Party",
-        "Conservative",
-        "PAC Funded"
+        "AIPAC",
+        "Texas",
+        "Republican",
+        "Iran Sanctions",
+        "Iron Dome"
       ],
-      "integrityScore": 85,
+      "integrityScore": 75,
       "integrityFalsehoods": 1,
       "integrityHasDocket": true
     },
@@ -107,18 +109,21 @@
     {
       "id": "chuck-schumer",
       "name": "Chuck Schumer",
-      "title": "U.S. Senator, Senate Majority Leader",
+      "title": "U.S. Senator (D-NY); Senate Majority/Minority Leader",
       "category": "politician",
-      "summary": "Senate Majority Leader from NY. Self-described \"shomer\" (guardian) of Israel. Received $3.4M+ from pro-Israel PACs over career. Leading voice on AIPAC-aligned foreign policy.",
+      "summary": "Longest-serving Senate Democratic leader from New York and one of Congress's most powerful pro-Israel institutional voices. Controls Senate floor schedule for FMF, Iron Dome, and wartime Israel security packages. Documented multi-decade pro-Israel PAC recipient (OpenSecrets). Publicly broke with Netanyahu on judicial overhaul/Gaza wartime conduct in 2024 while remaining a structural enabler of the aid pipeline. Primary: OpenSecrets, Senate leadership record, CRS RL33222.",
       "photo": "/profiles/chuck-schumer.jpg",
       "url": "https://veritasworldwide.com/profile/chuck-schumer",
       "bioguideId": "S000148",
       "tags": [
-        "AIPAC",
-        "Pro-Israel",
         "Senate Leader",
-        "PAC Funded",
-        "New York"
+        "Pro-Israel",
+        "AIPAC",
+        "New York",
+        "Democrat",
+        "FMF",
+        "Iron Dome",
+        "Institutional Enablement"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -127,18 +132,20 @@
     {
       "id": "nancy-pelosi",
       "name": "Nancy Pelosi",
-      "title": "Former Speaker of the House",
+      "title": "Former Speaker of the House (D-CA); House Speaker Emerita",
       "category": "politician",
-      "summary": "Former Speaker of House from CA. AIPAC recipient with significant stock trading controversy during tenure. Strong pro-Israel voting record and fundraising.",
+      "summary": "Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Primary: OpenSecrets, House leadership history, CRS RL33222.",
       "photo": "/profiles/nancy-pelosi.jpg",
       "url": "https://veritasworldwide.com/profile/nancy-pelosi",
       "bioguideId": "P000197",
       "tags": [
-        "AIPAC",
-        "Pro-Israel",
-        "Stock Trading",
         "Former Speaker",
-        "Fundraising"
+        "Pro-Israel",
+        "AIPAC",
+        "California",
+        "Democrat",
+        "Institutional Enablement",
+        "Iron Dome"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -147,18 +154,21 @@
     {
       "id": "mitch-mcconnell",
       "name": "Mitch McConnell",
-      "title": "U.S. Senator, Senate Republican Leader",
+      "title": "U.S. Senator (R-KY); Senate Republican Leader",
       "category": "politician",
-      "summary": "Senate Republican Leader from Kentucky. Significant AIPAC funding recipient. Key role in confirming Trump judges and blocking progressive legislation.",
+      "summary": "Longest-serving Senate Republican leader and institutional steward of bipartisan Israel security aid on the Republican side. Controls Senate GOP floor strategy for FMF, Iron Dome, and wartime packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement pair with Schumer across party lines. Primary: OpenSecrets, Senate leadership record, CRS RL33222.",
       "photo": "/profiles/mitch-mcconnell.jpg",
       "url": "https://veritasworldwide.com/profile/mitch-mcconnell",
       "bioguideId": "M000355",
       "tags": [
+        "Senate Leader",
+        "Pro-Israel",
         "AIPAC",
-        "Senate Republican",
-        "Judge Confirmations",
-        "Obstruction",
-        "Kentucky"
+        "Kentucky",
+        "Republican",
+        "FMF",
+        "Iron Dome",
+        "Institutional Enablement"
       ],
       "integrityScore": 85,
       "integrityFalsehoods": 1,
@@ -362,16 +372,18 @@
       "name": "Lindsey Graham",
       "title": "U.S. Senator (R-SC)",
       "category": "politician",
-      "summary": "Senator from South Carolina. Known for hawkish foreign policy positions on Middle East and Russia.",
+      "summary": "South Carolina Republican senator and high-visibility foreign-policy hawk. Frequent Israel trips and floor advocacy for maximal military support; documented pro-Israel PAC recipient (OpenSecrets). Leading voice for unconditional wartime aid after October 7. Primary: OpenSecrets, Senate record, CRS RL33222.",
       "photo": "/profiles/lindsey-graham.jpg",
       "url": "https://veritasworldwide.com/profile/lindsey-graham",
       "bioguideId": "G000359",
       "tags": [
         "Senator",
-        "Hawk",
+        "Pro-Israel",
+        "AIPAC",
         "South Carolina",
         "Republican",
-        "Foreign Policy"
+        "Foreign Policy Hawk",
+        "Iron Dome"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -401,16 +413,18 @@
       "name": "Tom Cotton",
       "title": "U.S. Senator (R-AR)",
       "category": "politician",
-      "summary": "Senator from Arkansas. Prominent voice on Iran policy and Middle East. AIPAC recipient.",
+      "summary": "Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Primary: OpenSecrets, Congress.gov, CRS RL33222.",
       "photo": "/profiles/tom-cotton.jpg",
       "url": "https://veritasworldwide.com/profile/tom-cotton",
       "bioguideId": "C001095",
       "tags": [
         "Senator",
-        "Iran Hawk",
+        "Pro-Israel",
+        "AIPAC",
         "Arkansas",
         "Republican",
-        "AIPAC"
+        "Iran Sanctions",
+        "Iron Dome"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -1006,17 +1020,20 @@
     {
       "id": "mike-johnson",
       "name": "Mike Johnson",
-      "title": "House Speaker",
+      "title": "Speaker of the House (R-LA)",
       "category": "politician",
-      "summary": "Current House Speaker from Louisiana. Conservative Christian. Trump ally.",
+      "summary": "House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034 context.",
       "photo": "/profiles/mike-johnson.jpg",
       "url": "https://veritasworldwide.com/profile/mike-johnson",
       "bioguideId": "J000299",
       "tags": [
-        "House Speaker",
+        "Speaker of the House",
+        "Pro-Israel",
+        "AIPAC",
         "Louisiana",
         "Republican",
-        "Christian Conservative"
+        "H.R. 815",
+        "Institutional Enablement"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -1863,8 +1880,8 @@
         "FL-19",
         "Florida Governor 2026"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
