@@ -224,14 +224,40 @@ export default function AdminBrandKit() {
           WCAG 2.2 AA required. Vectors are source of truth; AI rasters in 08-ai-generated are direction
           references only.
         </p>
-        <a
-          href="/brand-kit/07-docs/BRAND-GUIDE.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-flex min-h-[44px] items-center font-sans text-xs text-crimson hover:text-crimson-light"
-        >
-          Open full brand guide →
-        </a>
+        <div className="mt-3 flex flex-wrap gap-4">
+          <a
+            href="/brand-kit/07-docs/BRAND-GUIDE.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-crimson hover:text-crimson-light"
+          >
+            Brand guide →
+          </a>
+          <a
+            href="/brand-kit/07-docs/USAGE-LEGAL.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Usage & legal →
+          </a>
+          <a
+            href="/brand-kit/07-docs/CRISIS-MEDIA.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Crisis media templates →
+          </a>
+          <a
+            href="/brand-kit/09-templates/email-signature.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Email signature →
+          </a>
+        </div>
       </section>
 
       {/* AI references */}
