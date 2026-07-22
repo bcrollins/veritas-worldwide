@@ -119,6 +119,26 @@ async function main() {
     }),
   )
 
+  // Power profiles machine-readable corpus
+  const profilesCorpusPath = path.join(root, 'public', 'profiles', 'corpus.json')
+  const profilesCorpusLen = fs.existsSync(profilesCorpusPath) ? fs.statSync(profilesCorpusPath).size : 0
+  if (profilesCorpusLen > 0) {
+    items.push(
+      itemXml({
+        title: 'Power Profiles Corpus (JSON)',
+        link: `${SITE}/profiles/corpus.json`,
+        description:
+          'Machine-readable index of Veritas power profiles — name, title, category, first-party portrait path, Bioguide ID when available, and canonical profile URLs for crawlers and tools.',
+        pubDate: now,
+        enclosure: {
+          url: `${SITE}/profiles/corpus.json`,
+          length: profilesCorpusLen,
+          type: 'application/json',
+        },
+      }),
+    )
+  }
+
   // News first (current events)
   for (const article of articles) {
     const hero = article.heroImage?.src || '/og-image.png'

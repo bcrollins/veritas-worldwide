@@ -5,7 +5,7 @@
     <link>https://veritasworldwide.com</link>
     <description>A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Primary Sources. Public Record. Your Conclusions.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jul 2026 19:32:23 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 22:27:30 GMT</lastBuildDate>
     <atom:link href="https://veritasworldwide.com/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://veritasworldwide.com/og-image.png</url>
@@ -18,8 +18,16 @@
       <link>https://veritasworldwide.com/veritas-institute-field-manual.pdf</link>
       <guid isPermaLink="true">https://veritasworldwide.com/veritas-institute-field-manual.pdf</guid>
       <description>Build-time durable PDF of the Veritas Institute field manual: urgent household and roadside protocols plus practical course paths, source-anchored for print and offline use.</description>
-      <pubDate>Wed, 22 Jul 2026 19:32:23 GMT</pubDate>
+      <pubDate>Wed, 22 Jul 2026 22:27:30 GMT</pubDate>
       <enclosure url="https://veritasworldwide.com/veritas-institute-field-manual.pdf" length="524188" type="application/pdf" />
+    </item>
+    <item>
+      <title>Power Profiles Corpus (JSON)</title>
+      <link>https://veritasworldwide.com/profiles/corpus.json</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/profiles/corpus.json</guid>
+      <description>Machine-readable index of Veritas power profiles — name, title, category, first-party portrait path, Bioguide ID when available, and canonical profile URLs for crawlers and tools.</description>
+      <pubDate>Wed, 22 Jul 2026 22:27:30 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/profiles/corpus.json" length="41803" type="application/json" />
     </item>
     <item>
       <title>Aviation Safety Claims Belong in NTSB and FAA Primary Records</title>

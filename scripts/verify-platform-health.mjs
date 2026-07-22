@@ -612,6 +612,13 @@ const healthResult = await fetchJson('/api/health')
         'RSS feed announces the institute field manual PDF',
         `feed status=${feedResult.response.status} hasFieldManualPdf=${feedText.includes('/veritas-institute-field-manual.pdf')}`
       )
+      addCheck(
+        checks,
+        failures,
+        feedResult.response.ok && feedText.includes('/profiles/corpus.json'),
+        'RSS feed announces the power profiles corpus JSON',
+        `feed status=${feedResult.response.status} hasProfilesCorpus=${feedText.includes('/profiles/corpus.json')}`,
+      )
 
       for (const successRoute of [
         { path: '/membership/success', needle: 'Membership Confirmed' },
