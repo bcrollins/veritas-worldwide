@@ -1371,6 +1371,85 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 0 },
   },
+  {
+    id: 'munich-olympics-1972',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Munich Olympics Massacre (Black September)',
+    date: 'September 5–6, 1972',
+    location: 'Olympic Village, Munich, West Germany',
+    summary:
+      'Black September militants took Israeli Olympic athletes hostage; the crisis ended with eleven Israeli athletes and a German police officer dead after a failed rescue at Fürstenfeldbruck airfield. The attack is among the most documented terrorist massacres of the late 20th century and reshaped Israeli overseas security and counterterrorism doctrine.',
+    evidence:
+      'German investigations, Israeli government casualty lists, IOC records, and multi-decade historiography form a multi-source floor. Included for chronological balance: deliberate targeting of Israeli civilians/athletes by a Palestinian faction — not collective blame of any people.',
+    sources: [
+      { label: 'Britannica — Munich massacre', url: 'https://www.britannica.com/event/Munich-Massacre' },
+      { label: 'Israeli MFA historical materials (index)', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+      { label: 'UNISPAL period documentation index', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica Munich massacre', url: 'https://www.britannica.com/event/Munich-Massacre' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 12 },
+  },
+  {
+    id: 'maalot-massacre-1974',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Ma\'alot School Massacre (DFLP)',
+    date: 'May 15, 1974',
+    location: 'Netiv Meir elementary school, Ma\'alot, Israel',
+    summary:
+      'Democratic Front for the Liberation of Palestine militants took more than 100 Israeli schoolchildren and teachers hostage. The rescue assault left 25 hostages dead, most of them children. One of the clearest documented attacks deliberately centered on children in the Israeli-Palestinian conflict record.',
+    evidence:
+      'Israeli casualty lists, contemporaneous international press, and organizational claim of responsibility form multi-source documentation of a school-centered hostage massacre.',
+    sources: [
+      { label: 'Israeli MFA / historical summaries', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+      { label: 'Britannica conflict chronology context', url: 'https://www.britannica.com/place/Israel' },
+      { label: 'B\'Tselem statistics methodology (broader intifada-era data practices)', url: 'https://www.btselem.org/statistics' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli MFA historical materials', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 25 },
+  },
+  {
+    id: 'sabra-shatila-kahan-1983',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'official-commission',
+    title: 'Kahan Commission — Sabra and Shatila (Official Israeli Finding)',
+    date: 'February 8, 1983',
+    location: 'Jerusalem (commission); massacre sites Sabra and Shatila, Beirut',
+    summary:
+      'Israel\'s official Kahan Commission found that Israeli officials bore indirect responsibility for the September 1982 Phalangist massacre of Palestinian and Lebanese civilians in Sabra and Shatila camps while the IDF controlled the perimeter. Defense Minister Ariel Sharon was found to bear personal responsibility for ignoring the danger of bloodshed; he resigned as defense minister. Distinct from the massacre event entry — this isolates the official Israeli legal-political finding.',
+    evidence:
+      'The Kahan Commission report is a primary official Israeli state document. It is the authoritative Israeli government attribution of indirect responsibility — essential for evidence-tier labeling of Sabra/Shatila beyond partisan narratives.',
+    sources: [
+      { label: 'Kahan Commission Report (English text archives / academic mirrors)', url: 'https://www.jewishvirtuallibrary.org/the-kahan-commission-of-inquiry' },
+      { label: 'UN documentation of 1982 Beirut massacres context', url: 'https://www.un.org/unispal/' },
+      { label: 'Britannica — Sabra and Shatila massacre', url: 'https://www.britannica.com/event/Sabra-and-Shatila-massacre' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Kahan Commission materials (archived text)', url: 'https://www.jewishvirtuallibrary.org/the-kahan-commission-of-inquiry' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 800 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -1863,6 +1942,46 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
     tags: ['civilians', 'children', 'infrastructure', 'gaza'],
   },
+  {
+    id: 'tl-munich-1972',
+    year: '1972',
+    era: 'occupation-1967-2005',
+    title: 'Munich Olympics Massacre — 11 Israeli Athletes Killed',
+    description:
+      'Black September hostage-taking at the Munich Olympics ends with eleven Israeli athletes dead. Multi-source official and historical record.',
+    source: 'Britannica / Israeli MFA',
+    sourceUrl: 'https://www.britannica.com/event/Munich-Massacre',
+    tier: 'verified',
+    relatedIncidentIds: ['munich-olympics-1972'],
+    tags: ['civilians', 'israelis', 'terrorism'],
+  },
+  {
+    id: 'tl-maalot-1974',
+    year: '1974',
+    era: 'occupation-1967-2005',
+    title: 'Ma\'alot School Massacre — Children Hostages Killed',
+    description:
+      'DFLP school hostage crisis in Ma\'alot kills 25 hostages, mostly children. Multi-source civilian-child targeting record.',
+    source: 'Israeli MFA historical record',
+    sourceUrl: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs',
+    tier: 'verified',
+    relatedIncidentIds: ['maalot-massacre-1974'],
+    tags: ['civilians', 'children', 'israelis'],
+  },
+  {
+    id: 'tl-kahan-1983',
+    year: '1983',
+    era: 'occupation-1967-2005',
+    title: 'Kahan Commission — Indirect Responsibility for Sabra/Shatila',
+    description:
+      'Official Israeli commission finds indirect responsibility for Phalangist massacre; Sharon resigns as defense minister.',
+    source: 'Kahan Commission Report',
+    sourceUrl: 'https://www.jewishvirtuallibrary.org/the-kahan-commission-of-inquiry',
+    tier: 'verified',
+    relatedIncidentIds: ['sabra-shatila-kahan-1983', 'sabra-shatila-1982'],
+    tags: ['civilians', 'children', 'official-commission', 'lebanon'],
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_ERA_META: Record<

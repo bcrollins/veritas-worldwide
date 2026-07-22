@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T23:05:17.450Z",
+  "generatedAt": "2026-07-22T23:23:51.922Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 66,
-    "timelineEvents": 54,
+    "incidents": 69,
+    "timelineEvents": 57,
     "actors": 42,
     "moneyTrailNodes": 16,
-    "historicalWarCrimesPack": 51,
+    "historicalWarCrimesPack": 54,
     "legalCases": 10,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
       "1948-1967": 6,
-      "occupation-1967-2005": 18,
+      "occupation-1967-2005": 21,
       "blockade-2007-2023": 22,
       "post-oct7": 17
     },
     "incidentsByTier": {
-      "verified": 64,
+      "verified": 67,
       "circumstantial": 2
     },
-    "childrenTagged": 57,
-    "civiliansTagged": 65,
+    "childrenTagged": 59,
+    "civiliansTagged": 68,
     "actorsByCategory": {
       "us-executive": 11,
       "us-congress": 25,
@@ -533,23 +533,46 @@
     {
       "profileId": "miriam-adelson",
       "name": "Miriam Adelson",
-      "role": "Mega-donor; Adelson Family Foundation / Republican megadonor",
+      "role": "Physician / casino heiress; Preserve America PAC megadonor; Israel Hayom publisher",
       "category": "us-donor-lobby",
-      "enablementSummary": "Among the largest individual political donors supporting strongly pro-Israel Republican candidates and policy agendas; financial enablement of electoral outcomes that lock in unconditional aid orthodoxy.",
+      "enablementSummary": "Largest single-node Republican pro-Israel megadonor of the 2024 cycle via Preserve America PAC (~$100M FEC-window transfers; OpenSecrets org total ~$147M). Publisher of Israel Hayom. Presidential Medal of Freedom (2018). Financial enablement of candidates and administrations that lock in unconditional FMF / wartime supplemental orthodoxy — parallel to, and often larger than, formal AIPAC PAC hard money.",
       "relatedTimelineYears": [
         "2016",
+        "2018",
+        "2019",
         "2020",
         "2024"
       ],
-      "relatedIncidentIds": [],
+      "relatedIncidentIds": [
+        "jabalia-refugee-camp",
+        "al-mawasi-safe-zone"
+      ],
       "relatedMoneyNodeIds": [
         "hr815",
-        "annual-mou"
+        "annual-mou",
+        "pro-israel-lobby-2024",
+        "fmf-weapons",
+        "iron-dome"
       ],
       "fundingLinks": [
         {
-          "label": "OpenSecrets — Adelson family / related PAC activity",
-          "sourceUrl": "https://www.opensecrets.org/"
+          "label": "Times of Israel / FEC — ~$100M Preserve America PAC (2024)",
+          "amount": "~$100M",
+          "sourceUrl": "https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/"
+        },
+        {
+          "label": "OpenSecrets — Adelson Clinic / Miriam Adelson top organization outside spending",
+          "amount": "~$146.9M (2024 cycle)",
+          "sourceUrl": "https://www.opensecrets.org/elections-overview/top-organizations"
+        },
+        {
+          "label": "TrackAIPAC — Preserve America multi-cycle Trump spend",
+          "amount": ">$215M since 2020",
+          "sourceUrl": "https://www.trackaipac.com/trump"
+        },
+        {
+          "label": "Israel Hayom — ownership / publisher record",
+          "sourceUrl": "https://www.israelhayom.com/writer/dr-miriam-adelson/"
         }
       ],
       "tier": "verified"
@@ -1020,9 +1043,9 @@
     {
       "profileId": "josh-gottheimer",
       "name": "Josh Gottheimer",
-      "role": "U.S. Representative (D-NJ); Democratic Majority for Israel co-founder network",
+      "role": "U.S. Representative (D-NJ-5); Problem Solvers Caucus; top House Democrat pro-Israel PAC recipient",
       "category": "us-congress",
-      "enablementSummary": "House Democrat closely aligned with pro-Israel PACs and Democratic Majority for Israel; consistent floor advocate for unconditional wartime aid and opponent of progressive conditionality efforts during the Gaza war.",
+      "enablementSummary": "Among the highest career House Democratic recipients of pro-Israel PAC money (~$892k OpenSecrets). Co-founder of Problem Solvers Caucus. Leading floor Democrat framing Israel support as bipartisan consensus and opposing progressive wartime-aid conditionality — the Democratic-side enablement complement to Freedom Caucus Republican orthodoxy.",
       "relatedTimelineYears": [
         "2021",
         "2023",
@@ -1030,17 +1053,26 @@
       ],
       "relatedIncidentIds": [
         "guardian-of-the-walls-2021",
-        "protective-edge-2014-children"
+        "protective-edge-2014-children",
+        "jabalia-refugee-camp"
       ],
       "relatedMoneyNodeIds": [
         "hr815",
         "annual-mou",
-        "pro-israel-lobby-2024"
+        "pro-israel-lobby-2024",
+        "iron-dome",
+        "fmf-weapons"
       ],
       "fundingLinks": [
         {
-          "label": "OpenSecrets — Gottheimer pro-Israel PAC summary",
+          "label": "OpenSecrets — Gottheimer pro-Israel PAC career total",
+          "amount": "~$892k",
           "sourceUrl": "https://www.opensecrets.org/members-of-congress/josh-gottheimer/summary?cid=N00036944"
+        },
+        {
+          "label": "House Clerk — H.R. 8034 Israel Security Supplemental (Vote 143)",
+          "amount": "YES (bill 366–58)",
+          "sourceUrl": "https://clerk.house.gov/Votes/2024143"
         },
         {
           "label": "OpenSecrets — Democratic Majority for Israel PAC",
@@ -1789,6 +1821,42 @@
       "tier": "verified"
     },
     {
+      "id": "tl-munich-1972",
+      "year": "1972",
+      "era": "occupation-1967-2005",
+      "title": "Munich Olympics Massacre — 11 Israeli Athletes Killed",
+      "description": "Black September hostage-taking at the Munich Olympics ends with eleven Israeli athletes dead. Multi-source official and historical record.",
+      "source": "Britannica / Israeli MFA",
+      "sourceUrl": "https://www.britannica.com/event/Munich-Massacre",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "munich-olympics-1972"
+      ],
+      "tags": [
+        "civilians",
+        "israelis",
+        "terrorism"
+      ]
+    },
+    {
+      "id": "tl-maalot-1974",
+      "year": "1974",
+      "era": "occupation-1967-2005",
+      "title": "Ma'alot School Massacre — Children Hostages Killed",
+      "description": "DFLP school hostage crisis in Ma'alot kills 25 hostages, mostly children. Multi-source civilian-child targeting record.",
+      "source": "Israeli MFA historical record",
+      "sourceUrl": "https://www.gov.il/en/departments/ministry_of_foreign_affairs",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "maalot-massacre-1974"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "israelis"
+      ]
+    },
+    {
       "id": "tl-land-day-1976",
       "year": "1976",
       "era": "occupation-1967-2005",
@@ -1875,6 +1943,26 @@
       "tags": [
         "civilians",
         "children",
+        "lebanon"
+      ]
+    },
+    {
+      "id": "tl-kahan-1983",
+      "year": "1983",
+      "era": "occupation-1967-2005",
+      "title": "Kahan Commission — Indirect Responsibility for Sabra/Shatila",
+      "description": "Official Israeli commission finds indirect responsibility for Phalangist massacre; Sharon resigns as defense minister.",
+      "source": "Kahan Commission Report",
+      "sourceUrl": "https://www.jewishvirtuallibrary.org/the-kahan-commission-of-inquiry",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "sabra-shatila-kahan-1983",
+        "sabra-shatila-1982"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "official-commission",
         "lebanon"
       ]
     },
@@ -2833,6 +2921,84 @@
       "tier": "verified"
     },
     {
+      "id": "munich-olympics-1972",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Munich Olympics Massacre (Black September)",
+      "date": "September 5–6, 1972",
+      "location": "Olympic Village, Munich, West Germany",
+      "summary": "Black September militants took Israeli Olympic athletes hostage; the crisis ended with eleven Israeli athletes and a German police officer dead after a failed rescue at Fürstenfeldbruck airfield. The attack is among the most documented terrorist massacres of the late 20th century and reshaped Israeli overseas security and counterterrorism doctrine.",
+      "evidence": "German investigations, Israeli government casualty lists, IOC records, and multi-decade historiography form a multi-source floor. Included for chronological balance: deliberate targeting of Israeli civilians/athletes by a Palestinian faction — not collective blame of any people.",
+      "sources": [
+        {
+          "label": "Britannica — Munich massacre",
+          "url": "https://www.britannica.com/event/Munich-Massacre"
+        },
+        {
+          "label": "Israeli MFA historical materials (index)",
+          "url": "https://www.gov.il/en/departments/ministry_of_foreign_affairs"
+        },
+        {
+          "label": "UNISPAL period documentation index",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Britannica Munich massacre",
+          "url": "https://www.britannica.com/event/Munich-Massacre"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 12
+      }
+    },
+    {
+      "id": "maalot-massacre-1974",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Ma'alot School Massacre (DFLP)",
+      "date": "May 15, 1974",
+      "location": "Netiv Meir elementary school, Ma'alot, Israel",
+      "summary": "Democratic Front for the Liberation of Palestine militants took more than 100 Israeli schoolchildren and teachers hostage. The rescue assault left 25 hostages dead, most of them children. One of the clearest documented attacks deliberately centered on children in the Israeli-Palestinian conflict record.",
+      "evidence": "Israeli casualty lists, contemporaneous international press, and organizational claim of responsibility form multi-source documentation of a school-centered hostage massacre.",
+      "sources": [
+        {
+          "label": "Israeli MFA / historical summaries",
+          "url": "https://www.gov.il/en/departments/ministry_of_foreign_affairs"
+        },
+        {
+          "label": "Britannica conflict chronology context",
+          "url": "https://www.britannica.com/place/Israel"
+        },
+        {
+          "label": "B'Tselem statistics methodology (broader intifada-era data practices)",
+          "url": "https://www.btselem.org/statistics"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli MFA historical materials",
+          "url": "https://www.gov.il/en/departments/ministry_of_foreign_affairs"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 25
+      }
+    },
+    {
       "id": "land-day-1976",
       "era": "occupation-1967-2005",
       "targetsCivilians": true,
@@ -3032,6 +3198,48 @@
         }
       ],
       "tier": "verified"
+    },
+    {
+      "id": "sabra-shatila-kahan-1983",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons"
+      ],
+      "legalStatus": "official-commission",
+      "title": "Kahan Commission — Sabra and Shatila (Official Israeli Finding)",
+      "date": "February 8, 1983",
+      "location": "Jerusalem (commission); massacre sites Sabra and Shatila, Beirut",
+      "summary": "Israel's official Kahan Commission found that Israeli officials bore indirect responsibility for the September 1982 Phalangist massacre of Palestinian and Lebanese civilians in Sabra and Shatila camps while the IDF controlled the perimeter. Defense Minister Ariel Sharon was found to bear personal responsibility for ignoring the danger of bloodshed; he resigned as defense minister. Distinct from the massacre event entry — this isolates the official Israeli legal-political finding.",
+      "evidence": "The Kahan Commission report is a primary official Israeli state document. It is the authoritative Israeli government attribution of indirect responsibility — essential for evidence-tier labeling of Sabra/Shatila beyond partisan narratives.",
+      "sources": [
+        {
+          "label": "Kahan Commission Report (English text archives / academic mirrors)",
+          "url": "https://www.jewishvirtuallibrary.org/the-kahan-commission-of-inquiry"
+        },
+        {
+          "label": "UN documentation of 1982 Beirut massacres context",
+          "url": "https://www.un.org/unispal/"
+        },
+        {
+          "label": "Britannica — Sabra and Shatila massacre",
+          "url": "https://www.britannica.com/event/Sabra-and-Shatila-massacre"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Kahan Commission materials (archived text)",
+          "url": "https://www.jewishvirtuallibrary.org/the-kahan-commission-of-inquiry"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 800
+      }
     },
     {
       "id": "first-intifada-civilian-pattern",
