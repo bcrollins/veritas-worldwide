@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T23:00:21.392Z",
+  "generatedAt": "2026-07-22T23:20:56.726Z",
   "count": 94,
   "profiles": [
     {
@@ -17,7 +17,10 @@
         "Tea Party",
         "Conservative",
         "PAC Funded"
-      ]
+      ],
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "donald-trump",
@@ -34,7 +37,10 @@
         "Jerusalem Embassy",
         "Golan Heights",
         "AIPAC"
-      ]
+      ],
+      "integrityScore": 35,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "bill-gates",
@@ -51,7 +57,10 @@
         "Gates Foundation",
         "Global Health",
         "Philanthropy"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "george-soros",
@@ -68,7 +77,10 @@
         "Progressive",
         "Billionaire",
         "Political Influence"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "jared-kushner",
@@ -85,7 +97,10 @@
         "Kushner Companies",
         "Middle East",
         "Foreign Investment"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "chuck-schumer",
@@ -102,7 +117,10 @@
         "Senate Leader",
         "PAC Funded",
         "New York"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "nancy-pelosi",
@@ -119,7 +137,10 @@
         "Stock Trading",
         "Former Speaker",
         "Fundraising"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "mitch-mcconnell",
@@ -136,41 +157,59 @@
         "Judge Confirmations",
         "Obstruction",
         "Kentucky"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "miriam-adelson",
       "name": "Miriam Adelson",
-      "title": "Casino Billionaire, Political Donor",
+      "title": "Physician, Casino Heiress, Pro-Israel Political Megadonor; Publisher, Israel Hayom",
       "category": "billionaire",
-      "summary": "Widow of Sheldon Adelson, casino billionaire. Donated $100M+ to Trump 2024 campaign. Major pro-Israel donor funding conservative and Republican candidates.",
+      "summary": "Israeli-American physician and widow of Las Vegas Sands founder Sheldon Adelson. Principal of one of the largest private pro-Israel and Republican political funding networks in the United States. Seeded Preserve America PAC with roughly $100 million in 2024 for Donald Trump's reelection (FEC / contemporaneous reporting). OpenSecrets ranked Adelson Clinic / Miriam Adelson among the top organization-level outside spenders of the 2024 cycle (~$147M). Publisher / controlling owner of Israel Hayom, Israel's largest free daily, long associated with Benjamin Netanyahu's political orbit. Awarded the U.S. Presidential Medal of Freedom (Nov. 2018). Publicly advocates maximal U.S. support for Israeli government positions including West Bank sovereignty claims. Facts below are FEC, OpenSecrets, and named-publication primary/checkable records — not collective or ethnic claims.",
       "photo": "/profiles/miriam-adelson.svg",
       "url": "https://veritasworldwide.com/profile/miriam-adelson",
       "bioguideId": null,
       "tags": [
         "Adelson Family",
         "Trump Donor",
+        "Preserve America PAC",
         "Casino Billionaire",
         "Pro-Israel",
-        "Conservative"
-      ]
+        "Israel Hayom",
+        "AIPAC Orbit",
+        "Republican",
+        "Presidential Medal of Freedom",
+        "West Bank Annexation Advocacy",
+        "Dual U.S.–Israel Citizen"
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "sheldon-adelson",
       "name": "Sheldon Adelson",
-      "title": "Casino Billionaire (Deceased)",
+      "title": "Founder, Las Vegas Sands; Pro-Israel Republican Megadonor (Deceased 2021)",
       "category": "billionaire",
-      "summary": "Deceased casino mogul. Donated $200M+ to Republican candidates and pro-Israel causes. Major influence on Middle East policy through campaign funding.",
+      "summary": "Late founder of Las Vegas Sands and principal architect (with Miriam Adelson) of a multi-decade Republican and pro-Israel political funding machine. OpenSecrets and contemporaneous reporting document hundreds of millions in Republican outside spending across cycles. Founded Israel Hayom (2007) as a free mass daily that reshaped Israeli media competition. Publicly celebrated by Trump-era officials as a key backer of the Jerusalem embassy move and Golan Heights recognition. Died January 11, 2021; political project continued under Miriam Adelson.",
       "photo": "/profiles/sheldon-adelson.svg",
       "url": "https://veritasworldwide.com/profile/sheldon-adelson",
       "bioguideId": null,
       "tags": [
         "Adelson Family",
-        "Casino Billionaire",
-        "Republican Donor",
+        "Las Vegas Sands",
+        "Republican Megadonor",
         "Pro-Israel",
-        "Deceased 2021"
-      ]
+        "Israel Hayom",
+        "Deceased 2021",
+        "Jerusalem Embassy",
+        "Golan Recognition"
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "ghislaine-maxwell",
@@ -187,7 +226,10 @@
         "Convicted",
         "Imprisoned",
         "Network"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "jeffrey-epstein",
@@ -204,7 +246,10 @@
         "Network Hub",
         "Deceased",
         "Convicted"
-      ]
+      ],
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "alan-dershowitz",
@@ -226,7 +271,10 @@
         "Palm Beach / Miami USAO",
         "Civil Rights History",
         "Public Intellectual"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "les-wexner",
@@ -243,7 +291,10 @@
         "Fashion Billionaire",
         "Financial Backer",
         "Controversy"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "prince-andrew",
@@ -260,7 +311,10 @@
         "Giuffre Settlement",
         "Flight Logs",
         "Sex Abuse Allegations"
-      ]
+      ],
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "adam-schiff",
@@ -277,7 +331,10 @@
         "Pro-Israel",
         "Democrat",
         "California"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "hakeem-jeffries",
@@ -293,7 +350,10 @@
         "New York",
         "House Leadership",
         "Progressive"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "lindsey-graham",
@@ -310,7 +370,10 @@
         "South Carolina",
         "Republican",
         "Foreign Policy"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "marco-rubio",
@@ -326,7 +389,10 @@
         "Secretary of State",
         "Florida",
         "Republican"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "tom-cotton",
@@ -343,7 +409,10 @@
         "Arkansas",
         "Republican",
         "AIPAC"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "cory-booker",
@@ -359,7 +428,10 @@
         "Democratic Leader",
         "New Jersey",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "jacky-rosen",
@@ -376,24 +448,34 @@
         "Nevada",
         "Democrat",
         "AIPAC"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "josh-gottheimer",
       "name": "Josh Gottheimer",
-      "title": "U.S. Representative (D-NJ)",
+      "title": "U.S. Representative (D-NJ-5); Problem Solvers Caucus co-chair",
       "category": "politician",
-      "summary": "Representative from New Jersey. Prominent AIPAC supporter and pro-Israel advocate.",
+      "summary": "Democratic House member (NJ-5) and among the highest career recipients of pro-Israel PAC money in Congress (OpenSecrets Q05). Co-founder of the Problem Solvers Caucus. Publicly frames Israel support as bipartisan American consensus and has been a leading House Democrat opposing progressive conditionality on wartime Israel aid. Primary sources: OpenSecrets member pages, House floor/advocacy record, FEC.",
       "photo": "/profiles/josh-gottheimer.jpg",
       "url": "https://veritasworldwide.com/profile/josh-gottheimer",
-      "bioguideId": "G000580",
+      "bioguideId": "G000583",
       "tags": [
         "Representative",
         "Pro-Israel",
+        "AIPAC",
         "New Jersey",
         "Democrat",
-        "AIPAC"
-      ]
+        "Problem Solvers Caucus",
+        "TrackAIPAC",
+        "Iron Dome",
+        "FMF"
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "brad-sherman",
@@ -409,24 +491,32 @@
         "Financial Services",
         "California",
         "Democrat"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "ritchie-torres",
       "name": "Ritchie Torres",
-      "title": "U.S. Representative (D-NY)",
+      "title": "U.S. Representative (D-NY-15)",
       "category": "politician",
-      "summary": "Representative from New York. Young progressive voice. Strong pro-Israel positions.",
+      "summary": "Democratic House member representing the Bronx (NY-15). Often labeled progressive on domestic policy while taking some of the House Democratic caucus's strongest public pro-Israel positions after October 7 — including opposition to progressive Squad conditionality. Documented pro-Israel PAC recipient (OpenSecrets). Primary sources: OpenSecrets, House record, contemporaneous statements.",
       "photo": "/profiles/ritchie-torres.jpg",
       "url": "https://veritasworldwide.com/profile/ritchie-torres",
       "bioguideId": "T000486",
       "tags": [
         "Representative",
-        "Progressive",
+        "Pro-Israel",
         "New York",
         "Democrat",
-        "Pro-Israel"
-      ]
+        "AIPAC",
+        "Bronx",
+        "Progressive Domestic / Pro-Israel Foreign"
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "joe-biden",
@@ -443,7 +533,10 @@
         "Democrat",
         "Delaware",
         "Long Career"
-      ]
+      ],
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "kamala-harris",
@@ -459,7 +552,10 @@
         "California",
         "Democrat",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "barack-obama",
@@ -475,7 +571,10 @@
         "Illinois",
         "Democrat",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "hillary-clinton",
@@ -492,7 +591,10 @@
         "New York",
         "Democrat",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "bill-clinton",
@@ -508,7 +610,10 @@
         "Democrat",
         "Pro-Israel",
         "Philanthropist"
-      ]
+      ],
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "mike-pence",
@@ -525,7 +630,10 @@
         "Indiana",
         "Republican",
         "Evangelical"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "dick-cheney",
@@ -542,7 +650,10 @@
         "Neoconservative",
         "Wyoming",
         "Republican"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "henry-kissinger",
@@ -558,7 +669,10 @@
         "National Security Advisor",
         "Foreign Policy",
         "Neoconservative"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "john-bolton",
@@ -574,7 +688,10 @@
         "Neoconservative",
         "War Hawk",
         "Republican"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "mike-pompeo",
@@ -590,7 +707,10 @@
         "CIA Director",
         "Kansas",
         "Republican"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "antony-blinken",
@@ -606,7 +726,10 @@
         "Democrat",
         "Foreign Service",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "ron-desantis",
@@ -623,7 +746,10 @@
         "Florida",
         "Republican",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "nikki-haley",
@@ -640,7 +766,10 @@
         "Republican",
         "South Carolina",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "bernie-sanders",
@@ -657,7 +786,10 @@
         "Vermont",
         "Progressive",
         "Palestinian Rights"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "elizabeth-warren",
@@ -674,7 +806,10 @@
         "Democrat",
         "Progressive",
         "Consumer Protection"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "rand-paul",
@@ -691,7 +826,10 @@
         "Kentucky",
         "Republican",
         "Non-interventionist"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "ilhan-omar",
@@ -708,7 +846,10 @@
         "Democrat",
         "Progressive",
         "Palestinian Rights Advocate"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "rashida-tlaib",
@@ -725,7 +866,10 @@
         "Democrat",
         "Palestinian-American",
         "Palestinian Rights"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "aoc",
@@ -742,7 +886,10 @@
         "Democrat",
         "Progressive",
         "Palestinian Rights"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "matt-gaetz",
@@ -759,7 +906,10 @@
         "Republican",
         "Conservative",
         "Trump Ally"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "jim-jordan",
@@ -776,24 +926,33 @@
         "Republican",
         "Trump Ally",
         "Conservative"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "elise-stefanik",
       "name": "Elise Stefanik",
-      "title": "U.S. Representative (R-NY)",
+      "title": "U.S. Representative (R-NY-21); House Republican Conference Chair",
       "category": "politician",
-      "summary": "Representative from New York. House Republican Conference Chair. Trump supporter and AIPAC recipient.",
+      "summary": "House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Primary sources: OpenSecrets, House leadership record, committee hearings.",
       "photo": "/profiles/elise-stefanik.jpg",
       "url": "https://veritasworldwide.com/profile/elise-stefanik",
       "bioguideId": "S001196",
       "tags": [
-        "Representative",
+        "House GOP Conference Chair",
+        "Pro-Israel",
+        "AIPAC",
+        "Trump Ally",
         "New York",
         "Republican",
-        "House Leadership",
-        "AIPAC"
-      ]
+        "Campus Antisemitism Hearings",
+        "Iron Dome"
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "dianne-feinstein",
@@ -810,7 +969,10 @@
         "Democrat",
         "Intelligence Committee",
         "Deceased 2023"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "kevin-mccarthy",
@@ -826,7 +988,10 @@
         "California",
         "Republican",
         "Trump Ally"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "mike-johnson",
@@ -842,7 +1007,10 @@
         "Louisiana",
         "Republican",
         "Christian Conservative"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "tim-scott",
@@ -858,7 +1026,10 @@
         "South Carolina",
         "Republican",
         "African American"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "john-fetterman",
@@ -874,7 +1045,10 @@
         "Pennsylvania",
         "Democrat",
         "Progressive"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "rupert-murdoch",
@@ -891,7 +1065,10 @@
         "News Corp",
         "Political Influence",
         "News Mogul"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "michael-bloomberg",
@@ -908,7 +1085,10 @@
         "Political Donor",
         "Media Founder",
         "Philanthropist"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "jeff-bezos",
@@ -924,7 +1104,10 @@
         "Amazon Founder",
         "Washington Post Owner",
         "Tech Mogul"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "mark-zuckerberg",
@@ -941,7 +1124,10 @@
         "Facebook",
         "Tech Monopoly",
         "Social Media"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "elon-musk",
@@ -958,7 +1144,10 @@
         "SpaceX Founder",
         "Twitter/X Owner",
         "Tech Entrepreneur"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "peter-thiel",
@@ -975,7 +1164,10 @@
         "Venture Capitalist",
         "Political Influencer",
         "Palantir"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "larry-fink",
@@ -992,7 +1184,10 @@
         "Asset Manager",
         "Corporate Governance",
         "Financial Power"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "jamie-dimon",
@@ -1009,7 +1204,10 @@
         "Banker",
         "Financial Power",
         "Policy Influence"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "warren-buffett",
@@ -1026,7 +1224,10 @@
         "Investment Legend",
         "Philanthropist",
         "Warren Buffett"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "ken-griffin",
@@ -1042,7 +1243,10 @@
         "Hedge Fund Manager",
         "Republican Donor",
         "Political Influence"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "sam-bankman-fried",
@@ -1059,7 +1263,10 @@
         "Crypto Billionaire",
         "Democratic Donor",
         "Prison"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "haim-saban",
@@ -1076,7 +1283,10 @@
         "Democratic Donor",
         "AIPAC",
         "Pro-Israel"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "paul-singer",
@@ -1093,7 +1303,10 @@
         "Republican Donor",
         "Pro-Israel",
         "Political Influencer"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "bernard-marcus",
@@ -1110,7 +1323,10 @@
         "Republican Donor",
         "Pro-Israel",
         "Conservative Philanthropist"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "robert-mercer",
@@ -1127,7 +1343,10 @@
         "Republican Donor",
         "Data Mining",
         "Political Operative"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "leon-black",
@@ -1144,7 +1363,10 @@
         "Apollo Founder",
         "Epstein Connection",
         "Financier"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "reid-hoffman",
@@ -1161,7 +1383,10 @@
         "Venture Capitalist",
         "Democratic Donor",
         "Tech Industry"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "marc-andreessen",
@@ -1177,7 +1402,10 @@
         "Venture Capitalist",
         "Tech Entrepreneur",
         "Andreessen Horowitz"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "larry-ellison",
@@ -1193,7 +1421,10 @@
         "Oracle Founder",
         "Tech Entrepreneur",
         "Philanthropist"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "charles-koch",
@@ -1210,23 +1441,33 @@
         "Libertarian Donor",
         "Political Influence",
         "Businessman"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "howard-kohr",
       "name": "Howard Kohr",
-      "title": "AIPAC Executive Director",
+      "title": "CEO, American Israel Public Affairs Committee (AIPAC)",
       "category": "lobbyist",
-      "summary": "AIPAC Executive Director. Leads major pro-Israel lobbying organization. Significant influence on US foreign policy.",
+      "summary": "Long-serving chief executive of AIPAC, the largest U.S. pro-Israel lobbying organization. Under Kohr's leadership AIPAC expanded from classic Hill lobbying into large-scale electoral Super PAC spending via the United Democracy Project (UDP) and related vehicles — tens of millions per cycle in hard PAC money and nine-figure outside spending in recent cycles (OpenSecrets / FEC). AIPAC is a domestic 501(c)(4)/PAC complex, not a FARA-registered foreign agent; its documented product is candidate recruitment, scorecards, lobby days, and independent expenditures favoring candidates who vote for Israel FMF, Iron Dome, and wartime supplementals without progressive conditionality.",
       "photo": "/profiles/howard-kohr.svg",
       "url": "https://veritasworldwide.com/profile/howard-kohr",
       "bioguideId": null,
       "tags": [
         "AIPAC",
+        "United Democracy Project",
         "Lobbyist",
         "Pro-Israel",
-        "Political Influencer"
-      ]
+        "Super PAC",
+        "FEC",
+        "OpenSecrets",
+        "Foreign Policy Lobby"
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "tony-podesta",
@@ -1241,7 +1482,10 @@
         "Lobbyist",
         "Democratic Operative",
         "Washington Power Broker"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "john-podesta",
@@ -1257,7 +1501,10 @@
         "Democratic Operative",
         "Clinton Era",
         "Political Strategist"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "paul-manafort",
@@ -1274,7 +1521,10 @@
         "Trump Campaign",
         "Foreign Lobbying",
         "Prison"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "michael-flynn",
@@ -1291,7 +1541,10 @@
         "Trump Ally",
         "Pardoned",
         "QAnon"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "roger-stone",
@@ -1308,7 +1561,10 @@
         "Convicted",
         "Pardoned",
         "Operative"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "steve-bannon",
@@ -1325,7 +1581,10 @@
         "Media Executive",
         "Political Activist",
         "Controversial"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "karl-rove",
@@ -1342,7 +1601,10 @@
         "Fox News",
         "Bush Era",
         "Super PAC"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "rahm-emanuel",
@@ -1358,7 +1620,10 @@
         "Chicago Mayor",
         "Democratic Operative",
         "Political Strategist"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "james-comey",
@@ -1375,7 +1640,10 @@
         "Clinton Email",
         "Election Interference",
         "Law Enforcement"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "john-brennan",
@@ -1392,7 +1660,10 @@
         "Drone Program",
         "Torture",
         "Intelligence"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "james-clapper",
@@ -1408,7 +1679,10 @@
         "NSA Surveillance",
         "Military Intelligence",
         "Trump Critic"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "erik-prince",
@@ -1425,7 +1699,10 @@
         "Private Army",
         "Trump Advisor",
         "Controversial"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "david-petraeus",
@@ -1442,7 +1719,10 @@
         "Military Commander",
         "Afghanistan",
         "Iraq"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "robert-mueller",
@@ -1459,7 +1739,10 @@
         "Trump Investigation",
         "Russia",
         "Mueller Report"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "tucker-carlson",
@@ -1476,7 +1759,10 @@
         "Conservative",
         "Political Commentary",
         "Controversial"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "joe-rogan",
@@ -1493,7 +1779,10 @@
         "Political Commentary",
         "Spotify",
         "Influence"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "ben-shapiro",
@@ -1509,7 +1798,10 @@
         "Daily Wire",
         "Conservative",
         "Media Personality"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "rachel-maddow",
@@ -1526,7 +1818,10 @@
         "Progressive",
         "Political Commentary",
         "Trump Investigation"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "byron-donalds",
@@ -1551,7 +1846,10 @@
         "Financial Services",
         "FL-19",
         "Florida Governor 2026"
-      ]
+      ],
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "benjamin-netanyahu",
@@ -1569,7 +1867,10 @@
         "Gaza War",
         "Likud",
         "U.S. Aid Recipient Leadership"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     },
     {
       "id": "yoav-gallant",
@@ -1586,7 +1887,10 @@
         "ICC Warrant",
         "Gaza Siege",
         "IDF"
-      ]
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
     }
   ]
 }

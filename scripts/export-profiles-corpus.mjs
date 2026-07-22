@@ -36,6 +36,37 @@ function loadPhotoMap() {
   return photos
 }
 
+/** Rough integrity score from documentedFalsehoods block (verified-only deductions). */
+function parseIntegrityFromWindow(window) {
+  if (!window.includes('documentedFalsehoods:')) {
+    return { integrityScore: null, integrityFalsehoods: 0, integrityHasDocket: false }
+  }
+  // Empty array → clean 100
+  if (/documentedFalsehoods:\s*\[\s*\]/.test(window)) {
+    return { integrityScore: 100, integrityFalsehoods: 0, integrityHasDocket: true }
+  }
+  const blockMatch = window.match(/documentedFalsehoods:\s*\[([\s\S]*?)\n\s*\],/)
+  if (!blockMatch) {
+    return { integrityScore: null, integrityFalsehoods: 0, integrityHasDocket: false }
+  }
+  const block = blockMatch[1]
+  const severities = [...block.matchAll(/severity:\s*'(minor|material|egregious)'/g)].map((m) => m[1])
+  const tiers = [...block.matchAll(/tier:\s*'(verified|circumstantial|disputed)'/g)].map((m) => m[1])
+  const deduct = { minor: 8, material: 15, egregious: 25 }
+  let total = 0
+  let verified = 0
+  for (let i = 0; i < severities.length; i++) {
+    if ((tiers[i] || 'verified') !== 'verified') continue
+    total += deduct[severities[i]] || 0
+    verified += 1
+  }
+  return {
+    integrityScore: Math.max(0, 100 - total),
+    integrityFalsehoods: verified,
+    integrityHasDocket: true,
+  }
+}
+
 function parseProfiles() {
   const source = fs.readFileSync(profileDataPath, 'utf8')
   const photos = loadPhotoMap()
@@ -58,6 +89,7 @@ function parseProfiles() {
     const tags = tagsBlock
       ? [...tagsBlock[1].matchAll(/'((?:\\.|[^'])*)'/g)].map((m) => decodeTsString(m[1]))
       : []
+    const integrity = parseIntegrityFromWindow(window)
     profiles.push({
       id,
       name: decodeTsString(match[2]),
@@ -68,6 +100,7 @@ function parseProfiles() {
       url: `https://veritasworldwide.com/profile/${id}`,
       bioguideId: bioguide ? bioguide[1] : null,
       tags,
+      ...integrity,
     })
   }
 

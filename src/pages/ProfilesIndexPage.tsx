@@ -3,11 +3,12 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { PowerProfile, PROFILES, searchProfiles, getProfilePhoto } from '../data/profileData'
+import { computeIntegrityScore } from '../lib/integrityScore'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { formatCompactDollars, getTopicProfileStats } from '../lib/topicDiscovery'
 import { topicHubs } from '../data/topicHubs'
 
-type SortOption = 'name-asc' | 'donations-desc' | 'claims-desc' | 'connections-desc'
+type SortOption = 'name-asc' | 'donations-desc' | 'claims-desc' | 'connections-desc' | 'integrity-asc'
 type CategoryFilter = 'all' | 'politician' | 'billionaire' | 'lobbyist' | 'intel' | 'media' | 'corporate' | 'foreign-agent'
 
 interface ProfileCardProps {
@@ -49,6 +50,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
   }
 
   const bgColor = categoryColors[profile.category] || '#8B1A1A'
+  const integrity = computeIntegrityScore(profile.documentedFalsehoods)
 
   return (
     <Link
@@ -90,6 +92,14 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
           {profile.party && (
             <span className="inline-block px-2 py-1 bg-parchment-dark text-ink rounded text-xs font-body border border-border">
               {profile.party}
+            </span>
+          )}
+          {integrity.hasDocket && integrity.score != null && (
+            <span
+              className="inline-block px-2 py-1 rounded text-xs font-body border border-border bg-surface font-bold tabular-nums"
+              title={`${integrity.label} — open profile for full docket`}
+            >
+              Integrity {integrity.score}
             </span>
           )}
         </div>
@@ -188,6 +198,15 @@ export default function ProfilesIndexPage(): React.ReactNode {
       case 'connections-desc':
         results.sort((a, b) => b.connections.length - a.connections.length)
         break
+      case 'integrity-asc': {
+        // Lowest integrity first; unscored dockets sort last.
+        const rank = (p: PowerProfile) => {
+          const r = computeIntegrityScore(p.documentedFalsehoods)
+          return r.score == null ? 101 : r.score
+        }
+        results.sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name))
+        break
+      }
     }
 
     return results
@@ -476,6 +495,7 @@ export default function ProfilesIndexPage(): React.ReactNode {
             <option value="claims-desc">Sort: Most Claims</option>
             <option value="connections-desc">Sort: Most Connections</option>
             <option value="donations-desc">Sort: Donations (High→Low)</option>
+            <option value="integrity-asc">Sort: Integrity (Lowest First)</option>
             <option value="name-asc">Sort: A-Z</option>
           </select>
         </div>
