@@ -1,0 +1,1583 @@
+{
+  "generatedAt": "2026-07-22T21:20:33.295Z",
+  "count": 94,
+  "profiles": [
+    {
+      "id": "ted-cruz",
+      "name": "Ted Cruz",
+      "title": "U.S. Senator (R-TX)",
+      "category": "politician",
+      "summary": "Senior Senator from Texas, prominent AIPAC recipient with $2M+ in career donations from pro-Israel PACs. Known for hardline positions on Israel-Palestine, Iran sanctions.",
+      "photo": "/profiles/ted-cruz.jpg",
+      "url": "https://veritasworldwide.com/profile/ted-cruz",
+      "bioguideId": "C001098",
+      "tags": [
+        "AIPAC",
+        "Pro-Israel",
+        "Tea Party",
+        "Conservative",
+        "PAC Funded"
+      ]
+    },
+    {
+      "id": "donald-trump",
+      "name": "Donald Trump",
+      "title": "45th & 47th President",
+      "category": "politician",
+      "summary": "Former and current president. Key Israel policy moves include 2017 Jerusalem embassy relocation, 2020 Golan Heights recognition. Recipient of $200M+ in donations from Adelson family interests.",
+      "photo": "/profiles/donald-trump.jpg",
+      "url": "https://veritasworldwide.com/profile/donald-trump",
+      "bioguideId": null,
+      "tags": [
+        "Pro-Israel",
+        "Adelson",
+        "Jerusalem Embassy",
+        "Golan Heights",
+        "AIPAC"
+      ]
+    },
+    {
+      "id": "bill-gates",
+      "name": "Bill Gates",
+      "title": "Microsoft Founder, Philanthropist",
+      "category": "billionaire",
+      "summary": "Microsoft co-founder, Gates Foundation chairman. NYT documented multiple meetings with Jeffrey Epstein between 2013-2014. Flight logs show travel connections.",
+      "photo": "/profiles/bill-gates.svg",
+      "url": "https://veritasworldwide.com/profile/bill-gates",
+      "bioguideId": null,
+      "tags": [
+        "Tech Billionaire",
+        "Epstein",
+        "Gates Foundation",
+        "Global Health",
+        "Philanthropy"
+      ]
+    },
+    {
+      "id": "george-soros",
+      "name": "George Soros",
+      "title": "Investor, Philanthropist",
+      "category": "billionaire",
+      "summary": "Open Society Foundations founder. Distributed $32B+ in grants globally. Funded 75+ District Attorney campaigns, influencing criminal justice policy across US.",
+      "photo": "/profiles/george-soros.svg",
+      "url": "https://veritasworldwide.com/profile/george-soros",
+      "bioguideId": null,
+      "tags": [
+        "Open Society",
+        "DA Funding",
+        "Progressive",
+        "Billionaire",
+        "Political Influence"
+      ]
+    },
+    {
+      "id": "jared-kushner",
+      "name": "Jared Kushner",
+      "title": "Former White House Advisor",
+      "category": "politician",
+      "summary": "Led Trump Middle East policy, negotiated Abraham Accords. Post-White House: received $2B Saudi PIF investment for Affinity Partners fund, raising questions about foreign influence.",
+      "photo": "/profiles/jared-kushner.svg",
+      "url": "https://veritasworldwide.com/profile/jared-kushner",
+      "bioguideId": null,
+      "tags": [
+        "Abraham Accords",
+        "Saudi PIF",
+        "Kushner Companies",
+        "Middle East",
+        "Foreign Investment"
+      ]
+    },
+    {
+      "id": "chuck-schumer",
+      "name": "Chuck Schumer",
+      "title": "U.S. Senator, Senate Majority Leader",
+      "category": "politician",
+      "summary": "Senate Majority Leader from NY. Self-described \"shomer\" (guardian) of Israel. Received $3.4M+ from pro-Israel PACs over career. Leading voice on AIPAC-aligned foreign policy.",
+      "photo": "/profiles/chuck-schumer.jpg",
+      "url": "https://veritasworldwide.com/profile/chuck-schumer",
+      "bioguideId": "S000148",
+      "tags": [
+        "AIPAC",
+        "Pro-Israel",
+        "Senate Leader",
+        "PAC Funded",
+        "New York"
+      ]
+    },
+    {
+      "id": "nancy-pelosi",
+      "name": "Nancy Pelosi",
+      "title": "Former Speaker of the House",
+      "category": "politician",
+      "summary": "Former Speaker of House from CA. AIPAC recipient with significant stock trading controversy during tenure. Strong pro-Israel voting record and fundraising.",
+      "photo": "/profiles/nancy-pelosi.jpg",
+      "url": "https://veritasworldwide.com/profile/nancy-pelosi",
+      "bioguideId": "P000197",
+      "tags": [
+        "AIPAC",
+        "Pro-Israel",
+        "Stock Trading",
+        "Former Speaker",
+        "Fundraising"
+      ]
+    },
+    {
+      "id": "mitch-mcconnell",
+      "name": "Mitch McConnell",
+      "title": "U.S. Senator, Senate Republican Leader",
+      "category": "politician",
+      "summary": "Senate Republican Leader from Kentucky. Significant AIPAC funding recipient. Key role in confirming Trump judges and blocking progressive legislation.",
+      "photo": "/profiles/mitch-mcconnell.jpg",
+      "url": "https://veritasworldwide.com/profile/mitch-mcconnell",
+      "bioguideId": "M000355",
+      "tags": [
+        "AIPAC",
+        "Senate Republican",
+        "Judge Confirmations",
+        "Obstruction",
+        "Kentucky"
+      ]
+    },
+    {
+      "id": "miriam-adelson",
+      "name": "Miriam Adelson",
+      "title": "Casino Billionaire, Political Donor",
+      "category": "billionaire",
+      "summary": "Widow of Sheldon Adelson, casino billionaire. Donated $100M+ to Trump 2024 campaign. Major pro-Israel donor funding conservative and Republican candidates.",
+      "photo": "/profiles/miriam-adelson.svg",
+      "url": "https://veritasworldwide.com/profile/miriam-adelson",
+      "bioguideId": null,
+      "tags": [
+        "Adelson Family",
+        "Trump Donor",
+        "Casino Billionaire",
+        "Pro-Israel",
+        "Conservative"
+      ]
+    },
+    {
+      "id": "sheldon-adelson",
+      "name": "Sheldon Adelson",
+      "title": "Casino Billionaire (Deceased)",
+      "category": "billionaire",
+      "summary": "Deceased casino mogul. Donated $200M+ to Republican candidates and pro-Israel causes. Major influence on Middle East policy through campaign funding.",
+      "photo": "/profiles/sheldon-adelson.svg",
+      "url": "https://veritasworldwide.com/profile/sheldon-adelson",
+      "bioguideId": null,
+      "tags": [
+        "Adelson Family",
+        "Casino Billionaire",
+        "Republican Donor",
+        "Pro-Israel",
+        "Deceased 2021"
+      ]
+    },
+    {
+      "id": "ghislaine-maxwell",
+      "name": "Ghislaine Maxwell",
+      "title": "Epstein Co-Conspirator (Convicted)",
+      "category": "foreign-agent",
+      "summary": "Convicted in 2021 of trafficking minors for Jeffrey Epstein. Sentenced to 20 years. Served as Epstein network facilitator and recruiter.",
+      "photo": "/profiles/ghislaine-maxwell.svg",
+      "url": "https://veritasworldwide.com/profile/ghislaine-maxwell",
+      "bioguideId": null,
+      "tags": [
+        "Epstein",
+        "Sex Trafficking",
+        "Convicted",
+        "Imprisoned",
+        "Network"
+      ]
+    },
+    {
+      "id": "jeffrey-epstein",
+      "name": "Jeffrey Epstein",
+      "title": "Financier (Deceased)",
+      "category": "corporate",
+      "summary": "Deceased financier and convicted sex offender. Central hub of network involving politicians, billionaires, royalty. Died in jail 2019 awaiting trial.",
+      "photo": "/profiles/jeffrey-epstein.svg",
+      "url": "https://veritasworldwide.com/profile/jeffrey-epstein",
+      "bioguideId": null,
+      "tags": [
+        "Sex Trafficking",
+        "Financier",
+        "Network Hub",
+        "Deceased",
+        "Convicted"
+      ]
+    },
+    {
+      "id": "alan-dershowitz",
+      "name": "Alan Dershowitz",
+      "title": "Harvard Law Professor, Defense Attorney",
+      "category": "corporate",
+      "summary": "Prominent attorney and Harvard professor. Defended Epstein and represented him in legal matters. Later defended Trump in impeachment trials.",
+      "photo": "/profiles/alan-dershowitz.svg",
+      "url": "https://veritasworldwide.com/profile/alan-dershowitz",
+      "bioguideId": null,
+      "tags": [
+        "Epstein Defense",
+        "Trump Lawyer",
+        "Harvard Professor",
+        "Controversial",
+        "Civil Rights"
+      ]
+    },
+    {
+      "id": "les-wexner",
+      "name": "Les Wexner",
+      "title": "Victoria's Secret Founder, Billionaire",
+      "category": "billionaire",
+      "summary": "Victoria's Secret founder and L Brands CEO. Documented financial relationship with Jeffrey Epstein spanning decades. Provided significant financial support.",
+      "photo": "/profiles/les-wexner.svg",
+      "url": "https://veritasworldwide.com/profile/les-wexner",
+      "bioguideId": null,
+      "tags": [
+        "Epstein",
+        "Victoria's Secret",
+        "Fashion Billionaire",
+        "Financial Backer",
+        "Controversy"
+      ]
+    },
+    {
+      "id": "prince-andrew",
+      "name": "Prince Andrew, Duke of York",
+      "title": "British Royal",
+      "category": "foreign-agent",
+      "summary": "British Royal family member. Settled civil lawsuit with Virginia Giuffre alleging sexual abuse. Flight logs document Epstein network participation.",
+      "photo": "/profiles/prince-andrew.svg",
+      "url": "https://veritasworldwide.com/profile/prince-andrew",
+      "bioguideId": null,
+      "tags": [
+        "Royal Family",
+        "Epstein",
+        "Giuffre Settlement",
+        "Flight Logs",
+        "Sex Abuse Allegations"
+      ]
+    },
+    {
+      "id": "adam-schiff",
+      "name": "Adam Schiff",
+      "title": "U.S. Representative (D-CA)",
+      "category": "politician",
+      "summary": "Former Chair of House Intelligence Committee. Vocal on Russia investigation and Trump impeachment. Strong pro-Israel voting record.",
+      "photo": "/profiles/adam-schiff.jpg",
+      "url": "https://veritasworldwide.com/profile/adam-schiff",
+      "bioguideId": "S001150",
+      "tags": [
+        "Intelligence Committee",
+        "Trump Investigation",
+        "Pro-Israel",
+        "Democrat",
+        "California"
+      ]
+    },
+    {
+      "id": "hakeem-jeffries",
+      "name": "Hakeem Jeffries",
+      "title": "U.S. Representative, Democratic Leader",
+      "category": "politician",
+      "summary": "House Democratic Leader from New York. Rising Democratic voice. Represents Brooklyn district.",
+      "photo": "/profiles/hakeem-jeffries.jpg",
+      "url": "https://veritasworldwide.com/profile/hakeem-jeffries",
+      "bioguideId": "J000294",
+      "tags": [
+        "Democratic Leader",
+        "New York",
+        "House Leadership",
+        "Progressive"
+      ]
+    },
+    {
+      "id": "lindsey-graham",
+      "name": "Lindsey Graham",
+      "title": "U.S. Senator (R-SC)",
+      "category": "politician",
+      "summary": "Senator from South Carolina. Known for hawkish foreign policy positions on Middle East and Russia.",
+      "photo": "/profiles/lindsey-graham.jpg",
+      "url": "https://veritasworldwide.com/profile/lindsey-graham",
+      "bioguideId": "G000359",
+      "tags": [
+        "Senator",
+        "Hawk",
+        "South Carolina",
+        "Republican",
+        "Foreign Policy"
+      ]
+    },
+    {
+      "id": "marco-rubio",
+      "name": "Marco Rubio",
+      "title": "U.S. Senator (R-FL)",
+      "category": "politician",
+      "summary": "Senator from Florida. Secretary of State under Trump. Hawkish positions on foreign policy and Middle East.",
+      "photo": "/profiles/marco-rubio.jpg",
+      "url": "https://veritasworldwide.com/profile/marco-rubio",
+      "bioguideId": "R000595",
+      "tags": [
+        "Senator",
+        "Secretary of State",
+        "Florida",
+        "Republican"
+      ]
+    },
+    {
+      "id": "tom-cotton",
+      "name": "Tom Cotton",
+      "title": "U.S. Senator (R-AR)",
+      "category": "politician",
+      "summary": "Senator from Arkansas. Prominent voice on Iran policy and Middle East. AIPAC recipient.",
+      "photo": "/profiles/tom-cotton.jpg",
+      "url": "https://veritasworldwide.com/profile/tom-cotton",
+      "bioguideId": "C001095",
+      "tags": [
+        "Senator",
+        "Iran Hawk",
+        "Arkansas",
+        "Republican",
+        "AIPAC"
+      ]
+    },
+    {
+      "id": "cory-booker",
+      "name": "Cory Booker",
+      "title": "U.S. Senator (D-NJ)",
+      "category": "politician",
+      "summary": "Senator from New Jersey. Presidential candidate 2020. Strong pro-Israel voting record.",
+      "photo": "/profiles/cory-booker.jpg",
+      "url": "https://veritasworldwide.com/profile/cory-booker",
+      "bioguideId": "B001288",
+      "tags": [
+        "Senator",
+        "Democratic Leader",
+        "New Jersey",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "jacky-rosen",
+      "name": "Jacky Rosen",
+      "title": "U.S. Senator (D-NV)",
+      "category": "politician",
+      "summary": "Senator from Nevada. First female Jewish senator from Nevada. Strong AIPAC supporter.",
+      "photo": "/profiles/jacky-rosen.jpg",
+      "url": "https://veritasworldwide.com/profile/jacky-rosen",
+      "bioguideId": "R000608",
+      "tags": [
+        "Senator",
+        "Jewish",
+        "Nevada",
+        "Democrat",
+        "AIPAC"
+      ]
+    },
+    {
+      "id": "josh-gottheimer",
+      "name": "Josh Gottheimer",
+      "title": "U.S. Representative (D-NJ)",
+      "category": "politician",
+      "summary": "Representative from New Jersey. Prominent AIPAC supporter and pro-Israel advocate.",
+      "photo": "/profiles/josh-gottheimer.jpg",
+      "url": "https://veritasworldwide.com/profile/josh-gottheimer",
+      "bioguideId": "G000580",
+      "tags": [
+        "Representative",
+        "Pro-Israel",
+        "New Jersey",
+        "Democrat",
+        "AIPAC"
+      ]
+    },
+    {
+      "id": "brad-sherman",
+      "name": "Brad Sherman",
+      "title": "U.S. Representative (D-CA)",
+      "category": "politician",
+      "summary": "Representative from California. House Financial Services Committee member. Pro-Israel voting record.",
+      "photo": "/profiles/brad-sherman.jpg",
+      "url": "https://veritasworldwide.com/profile/brad-sherman",
+      "bioguideId": "S000344",
+      "tags": [
+        "Representative",
+        "Financial Services",
+        "California",
+        "Democrat"
+      ]
+    },
+    {
+      "id": "ritchie-torres",
+      "name": "Ritchie Torres",
+      "title": "U.S. Representative (D-NY)",
+      "category": "politician",
+      "summary": "Representative from New York. Young progressive voice. Strong pro-Israel positions.",
+      "photo": "/profiles/ritchie-torres.jpg",
+      "url": "https://veritasworldwide.com/profile/ritchie-torres",
+      "bioguideId": "T000486",
+      "tags": [
+        "Representative",
+        "Progressive",
+        "New York",
+        "Democrat",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "joe-biden",
+      "name": "Joe Biden",
+      "title": "46th U.S. President",
+      "category": "politician",
+      "summary": "Current U.S. President (2021-2025). Long pro-Israel voting record as Senator and VP. Continued strong Israel support.",
+      "photo": "/profiles/joe-biden.jpg",
+      "url": "https://veritasworldwide.com/profile/joe-biden",
+      "bioguideId": "B000444",
+      "tags": [
+        "President",
+        "Pro-Israel",
+        "Democrat",
+        "Delaware",
+        "Long Career"
+      ]
+    },
+    {
+      "id": "kamala-harris",
+      "name": "Kamala Harris",
+      "title": "49th Vice President",
+      "category": "politician",
+      "summary": "Vice President under Biden. Former California Attorney General. Pro-Israel voting record.",
+      "photo": "/profiles/kamala-harris.jpg",
+      "url": "https://veritasworldwide.com/profile/kamala-harris",
+      "bioguideId": "H001075",
+      "tags": [
+        "Vice President",
+        "California",
+        "Democrat",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "barack-obama",
+      "name": "Barack Obama",
+      "title": "44th U.S. President",
+      "category": "politician",
+      "summary": "Former U.S. President 2009-2017. Provided record aid to Israel during presidency. Now involved in various initiatives.",
+      "photo": "/profiles/barack-obama.jpg",
+      "url": "https://veritasworldwide.com/profile/barack-obama",
+      "bioguideId": "O000167",
+      "tags": [
+        "Former President",
+        "Illinois",
+        "Democrat",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "hillary-clinton",
+      "name": "Hillary Clinton",
+      "title": "Former Secretary of State",
+      "category": "politician",
+      "summary": "Former Secretary of State, Senator, 2016 presidential candidate. Strong pro-Israel record.",
+      "photo": "/profiles/hillary-clinton.jpg",
+      "url": "https://veritasworldwide.com/profile/hillary-clinton",
+      "bioguideId": "C001041",
+      "tags": [
+        "Secretary of State",
+        "Senator",
+        "New York",
+        "Democrat",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "bill-clinton",
+      "name": "Bill Clinton",
+      "title": "42nd U.S. President",
+      "category": "politician",
+      "summary": "Former president 1993-2001. Strong pro-Israel record. Clinton Foundation involved in global initiatives.",
+      "photo": "/profiles/bill-clinton.jpg",
+      "url": "https://veritasworldwide.com/profile/bill-clinton",
+      "bioguideId": "C000537",
+      "tags": [
+        "Former President",
+        "Democrat",
+        "Pro-Israel",
+        "Philanthropist"
+      ]
+    },
+    {
+      "id": "mike-pence",
+      "name": "Mike Pence",
+      "title": "48th Vice President",
+      "category": "politician",
+      "summary": "Former Vice President under Trump. Christian Zionist. Evangelical Christian with strong pro-Israel positions.",
+      "photo": "/profiles/mike-pence.jpg",
+      "url": "https://veritasworldwide.com/profile/mike-pence",
+      "bioguideId": "P000587",
+      "tags": [
+        "Vice President",
+        "Christian Zionist",
+        "Indiana",
+        "Republican",
+        "Evangelical"
+      ]
+    },
+    {
+      "id": "dick-cheney",
+      "name": "Dick Cheney",
+      "title": "46th Vice President",
+      "category": "politician",
+      "summary": "Former Vice President under George W. Bush. Architect of Iraq War. Halliburton connections.",
+      "photo": "/profiles/dick-cheney.jpg",
+      "url": "https://veritasworldwide.com/profile/dick-cheney",
+      "bioguideId": "C000321",
+      "tags": [
+        "Vice President",
+        "Iraq War",
+        "Neoconservative",
+        "Wyoming",
+        "Republican"
+      ]
+    },
+    {
+      "id": "henry-kissinger",
+      "name": "Henry Kissinger",
+      "title": "Former National Security Advisor, Secretary of State",
+      "category": "politician",
+      "summary": "Longtime foreign policy figure. National Security Advisor and Secretary of State under Nixon/Ford. Controversial Middle East record.",
+      "photo": "/profiles/henry-kissinger.svg",
+      "url": "https://veritasworldwide.com/profile/henry-kissinger",
+      "bioguideId": null,
+      "tags": [
+        "Secretary of State",
+        "National Security Advisor",
+        "Foreign Policy",
+        "Neoconservative"
+      ]
+    },
+    {
+      "id": "john-bolton",
+      "name": "John Bolton",
+      "title": "Former National Security Advisor",
+      "category": "politician",
+      "summary": "Trump National Security Advisor 2018-2019. Prominent neoconservative. Advocate for military intervention in Middle East.",
+      "photo": "/profiles/john-bolton.jpg",
+      "url": "https://veritasworldwide.com/profile/john-bolton",
+      "bioguideId": "B000611",
+      "tags": [
+        "National Security Advisor",
+        "Neoconservative",
+        "War Hawk",
+        "Republican"
+      ]
+    },
+    {
+      "id": "mike-pompeo",
+      "name": "Mike Pompeo",
+      "title": "Former Secretary of State",
+      "category": "politician",
+      "summary": "Trump Secretary of State 2018-2021. CIA Director 2017-2018. Hawkish foreign policy stance on Iran and Middle East.",
+      "photo": "/profiles/mike-pompeo.jpg",
+      "url": "https://veritasworldwide.com/profile/mike-pompeo",
+      "bioguideId": "P000602",
+      "tags": [
+        "Secretary of State",
+        "CIA Director",
+        "Kansas",
+        "Republican"
+      ]
+    },
+    {
+      "id": "antony-blinken",
+      "name": "Antony Blinken",
+      "title": "Secretary of State",
+      "category": "politician",
+      "summary": "Biden Secretary of State. Career foreign service officer. Strong pro-Israel positions.",
+      "photo": "/profiles/antony-blinken.svg",
+      "url": "https://veritasworldwide.com/profile/antony-blinken",
+      "bioguideId": null,
+      "tags": [
+        "Secretary of State",
+        "Democrat",
+        "Foreign Service",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "ron-desantis",
+      "name": "Ron DeSantis",
+      "title": "Governor of Florida",
+      "category": "politician",
+      "summary": "Governor of Florida. 2024 presidential candidate. Strong pro-Israel and religious right alignment.",
+      "photo": "/profiles/ron-desantis.jpg",
+      "url": "https://veritasworldwide.com/profile/ron-desantis",
+      "bioguideId": "D000621",
+      "tags": [
+        "Governor",
+        "Presidential Candidate",
+        "Florida",
+        "Republican",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "nikki-haley",
+      "name": "Nikki Haley",
+      "title": "Former UN Ambassador, South Carolina Governor",
+      "category": "politician",
+      "summary": "Trump UN Ambassador 2017-2018. Former South Carolina Governor. 2024 presidential candidate. Pro-Israel positions.",
+      "photo": "/profiles/nikki-haley.svg",
+      "url": "https://veritasworldwide.com/profile/nikki-haley",
+      "bioguideId": null,
+      "tags": [
+        "UN Ambassador",
+        "Governor",
+        "Republican",
+        "South Carolina",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "bernie-sanders",
+      "name": "Bernie Sanders",
+      "title": "U.S. Senator (I-VT)",
+      "category": "politician",
+      "summary": "Independent Senator from Vermont. Prominent progressive voice. Critical of Israeli occupation policies.",
+      "photo": "/profiles/bernie-sanders.jpg",
+      "url": "https://veritasworldwide.com/profile/bernie-sanders",
+      "bioguideId": "S000033",
+      "tags": [
+        "Senator",
+        "Independent",
+        "Vermont",
+        "Progressive",
+        "Palestinian Rights"
+      ]
+    },
+    {
+      "id": "elizabeth-warren",
+      "name": "Elizabeth Warren",
+      "title": "U.S. Senator (D-MA)",
+      "category": "politician",
+      "summary": "Senator from Massachusetts. Consumer protection advocate. Progressive positions on various issues.",
+      "photo": "/profiles/elizabeth-warren.jpg",
+      "url": "https://veritasworldwide.com/profile/elizabeth-warren",
+      "bioguideId": "W000817",
+      "tags": [
+        "Senator",
+        "Massachusetts",
+        "Democrat",
+        "Progressive",
+        "Consumer Protection"
+      ]
+    },
+    {
+      "id": "rand-paul",
+      "name": "Rand Paul",
+      "title": "U.S. Senator (R-KY)",
+      "category": "politician",
+      "summary": "Libertarian-leaning Senator from Kentucky. Skeptical of foreign interventionism. Son of Ron Paul.",
+      "photo": "/profiles/rand-paul.jpg",
+      "url": "https://veritasworldwide.com/profile/rand-paul",
+      "bioguideId": "P000603",
+      "tags": [
+        "Senator",
+        "Libertarian",
+        "Kentucky",
+        "Republican",
+        "Non-interventionist"
+      ]
+    },
+    {
+      "id": "ilhan-omar",
+      "name": "Ilhan Omar",
+      "title": "U.S. Representative (D-MN)",
+      "category": "politician",
+      "summary": "Representative from Minnesota. Progressive voice. Critical of Israeli occupation and US foreign policy.",
+      "photo": "/profiles/ilhan-omar.jpg",
+      "url": "https://veritasworldwide.com/profile/ilhan-omar",
+      "bioguideId": "O000173",
+      "tags": [
+        "Representative",
+        "Minnesota",
+        "Democrat",
+        "Progressive",
+        "Palestinian Rights Advocate"
+      ]
+    },
+    {
+      "id": "rashida-tlaib",
+      "name": "Rashida Tlaib",
+      "title": "U.S. Representative (D-MI)",
+      "category": "politician",
+      "summary": "Representative from Michigan. First Palestinian-American in Congress. Strong advocate for Palestinian rights.",
+      "photo": "/profiles/rashida-tlaib.jpg",
+      "url": "https://veritasworldwide.com/profile/rashida-tlaib",
+      "bioguideId": "T000481",
+      "tags": [
+        "Representative",
+        "Michigan",
+        "Democrat",
+        "Palestinian-American",
+        "Palestinian Rights"
+      ]
+    },
+    {
+      "id": "aoc",
+      "name": "Alexandria Ocasio-Cortez",
+      "title": "U.S. Representative (D-NY)",
+      "category": "politician",
+      "summary": "Progressive Representative from New York. Vocal critic of Israeli occupation. Member of Squad.",
+      "photo": "/profiles/aoc.jpg",
+      "url": "https://veritasworldwide.com/profile/aoc",
+      "bioguideId": "O000172",
+      "tags": [
+        "Representative",
+        "New York",
+        "Democrat",
+        "Progressive",
+        "Palestinian Rights"
+      ]
+    },
+    {
+      "id": "matt-gaetz",
+      "name": "Matt Gaetz",
+      "title": "U.S. Representative (R-FL)",
+      "category": "politician",
+      "summary": "Representative from Florida. Conservative firebrand. Controversial figure.",
+      "photo": "/profiles/matt-gaetz.jpg",
+      "url": "https://veritasworldwide.com/profile/matt-gaetz",
+      "bioguideId": "G000578",
+      "tags": [
+        "Representative",
+        "Florida",
+        "Republican",
+        "Conservative",
+        "Trump Ally"
+      ]
+    },
+    {
+      "id": "jim-jordan",
+      "name": "Jim Jordan",
+      "title": "U.S. Representative (R-OH)",
+      "category": "politician",
+      "summary": "Representative from Ohio. House Judiciary Chairman. Trump ally and election denier.",
+      "photo": "/profiles/jim-jordan.jpg",
+      "url": "https://veritasworldwide.com/profile/jim-jordan",
+      "bioguideId": "J000289",
+      "tags": [
+        "Representative",
+        "Ohio",
+        "Republican",
+        "Trump Ally",
+        "Conservative"
+      ]
+    },
+    {
+      "id": "elise-stefanik",
+      "name": "Elise Stefanik",
+      "title": "U.S. Representative (R-NY)",
+      "category": "politician",
+      "summary": "Representative from New York. House Republican Conference Chair. Trump supporter and AIPAC recipient.",
+      "photo": "/profiles/elise-stefanik.jpg",
+      "url": "https://veritasworldwide.com/profile/elise-stefanik",
+      "bioguideId": "S001196",
+      "tags": [
+        "Representative",
+        "New York",
+        "Republican",
+        "House Leadership",
+        "AIPAC"
+      ]
+    },
+    {
+      "id": "dianne-feinstein",
+      "name": "Dianne Feinstein",
+      "title": "Former U.S. Senator (D-CA)",
+      "category": "politician",
+      "summary": "Deceased former Senator from California. Served 1992-2023. Controversial intelligence committee tenure.",
+      "photo": "/profiles/dianne-feinstein.jpg",
+      "url": "https://veritasworldwide.com/profile/dianne-feinstein",
+      "bioguideId": "F000062",
+      "tags": [
+        "Senator",
+        "California",
+        "Democrat",
+        "Intelligence Committee",
+        "Deceased 2023"
+      ]
+    },
+    {
+      "id": "kevin-mccarthy",
+      "name": "Kevin McCarthy",
+      "title": "Former House Speaker",
+      "category": "politician",
+      "summary": "Former House Speaker and Representative from California. Ousted in 2023. Trump ally.",
+      "photo": "/profiles/kevin-mccarthy.jpg",
+      "url": "https://veritasworldwide.com/profile/kevin-mccarthy",
+      "bioguideId": "M001165",
+      "tags": [
+        "Former Speaker",
+        "California",
+        "Republican",
+        "Trump Ally"
+      ]
+    },
+    {
+      "id": "mike-johnson",
+      "name": "Mike Johnson",
+      "title": "House Speaker",
+      "category": "politician",
+      "summary": "Current House Speaker from Louisiana. Conservative Christian. Trump ally.",
+      "photo": "/profiles/mike-johnson.jpg",
+      "url": "https://veritasworldwide.com/profile/mike-johnson",
+      "bioguideId": "J000299",
+      "tags": [
+        "House Speaker",
+        "Louisiana",
+        "Republican",
+        "Christian Conservative"
+      ]
+    },
+    {
+      "id": "tim-scott",
+      "name": "Tim Scott",
+      "title": "U.S. Senator (R-SC)",
+      "category": "politician",
+      "summary": "Senator from South Carolina. Only Black Republican senator. Conservative positions.",
+      "photo": "/profiles/tim-scott.jpg",
+      "url": "https://veritasworldwide.com/profile/tim-scott",
+      "bioguideId": "S001184",
+      "tags": [
+        "Senator",
+        "South Carolina",
+        "Republican",
+        "African American"
+      ]
+    },
+    {
+      "id": "john-fetterman",
+      "name": "John Fetterman",
+      "title": "U.S. Senator (D-PA)",
+      "category": "politician",
+      "summary": "Senator from Pennsylvania elected 2022. Former Mayor of Braddock. Progressive voice.",
+      "photo": "/profiles/john-fetterman.jpg",
+      "url": "https://veritasworldwide.com/profile/john-fetterman",
+      "bioguideId": "F000479",
+      "tags": [
+        "Senator",
+        "Pennsylvania",
+        "Democrat",
+        "Progressive"
+      ]
+    },
+    {
+      "id": "rupert-murdoch",
+      "name": "Rupert Murdoch",
+      "title": "News Corp Founder",
+      "category": "billionaire",
+      "summary": "Media mogul and News Corp founder. Controls Fox News and other major outlets. Influence on politics and policy.",
+      "photo": "/profiles/rupert-murdoch.svg",
+      "url": "https://veritasworldwide.com/profile/rupert-murdoch",
+      "bioguideId": null,
+      "tags": [
+        "Media Billionaire",
+        "Fox News",
+        "News Corp",
+        "Political Influence",
+        "News Mogul"
+      ]
+    },
+    {
+      "id": "michael-bloomberg",
+      "name": "Michael Bloomberg",
+      "title": "Former NYC Mayor, Billionaire",
+      "category": "billionaire",
+      "summary": "Bloomberg LP founder. Former NYC Mayor 2002-2013. Major political donor and philanthropist.",
+      "photo": "/profiles/michael-bloomberg.svg",
+      "url": "https://veritasworldwide.com/profile/michael-bloomberg",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "NYC Mayor",
+        "Political Donor",
+        "Media Founder",
+        "Philanthropist"
+      ]
+    },
+    {
+      "id": "jeff-bezos",
+      "name": "Jeff Bezos",
+      "title": "Amazon Founder, Billionaire",
+      "category": "billionaire",
+      "summary": "Amazon founder and Executive Chair. Richest person in the world. Owns Washington Post.",
+      "photo": "/profiles/jeff-bezos.svg",
+      "url": "https://veritasworldwide.com/profile/jeff-bezos",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Amazon Founder",
+        "Washington Post Owner",
+        "Tech Mogul"
+      ]
+    },
+    {
+      "id": "mark-zuckerberg",
+      "name": "Mark Zuckerberg",
+      "title": "Facebook/Meta Founder, Billionaire",
+      "category": "billionaire",
+      "summary": "Meta (Facebook) founder and CEO. Controls major social media platform. Significant political influence.",
+      "photo": "/profiles/mark-zuckerberg.svg",
+      "url": "https://veritasworldwide.com/profile/mark-zuckerberg",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Meta Founder",
+        "Facebook",
+        "Tech Monopoly",
+        "Social Media"
+      ]
+    },
+    {
+      "id": "elon-musk",
+      "name": "Elon Musk",
+      "title": "Tesla CEO, Tech Entrepreneur",
+      "category": "billionaire",
+      "summary": "Tesla CEO, SpaceX founder. Richest person and major political influence. Twitter/X owner.",
+      "photo": "/profiles/elon-musk.svg",
+      "url": "https://veritasworldwide.com/profile/elon-musk",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Tesla CEO",
+        "SpaceX Founder",
+        "Twitter/X Owner",
+        "Tech Entrepreneur"
+      ]
+    },
+    {
+      "id": "peter-thiel",
+      "name": "Peter Thiel",
+      "title": "Venture Capitalist, Billionaire",
+      "category": "billionaire",
+      "summary": "PayPal co-founder, venture capitalist. Palantir Technologies founder. Political influencer on right.",
+      "photo": "/profiles/peter-thiel.svg",
+      "url": "https://veritasworldwide.com/profile/peter-thiel",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "PayPal Co-founder",
+        "Venture Capitalist",
+        "Political Influencer",
+        "Palantir"
+      ]
+    },
+    {
+      "id": "larry-fink",
+      "name": "Larry Fink",
+      "title": "BlackRock CEO, Billionaire",
+      "category": "billionaire",
+      "summary": "BlackRock CEO. Controls over $10 trillion in assets. Major influence on corporate governance.",
+      "photo": "/profiles/larry-fink.svg",
+      "url": "https://veritasworldwide.com/profile/larry-fink",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "BlackRock CEO",
+        "Asset Manager",
+        "Corporate Governance",
+        "Financial Power"
+      ]
+    },
+    {
+      "id": "jamie-dimon",
+      "name": "Jamie Dimon",
+      "title": "JPMorgan Chase CEO, Billionaire",
+      "category": "billionaire",
+      "summary": "JPMorgan Chase CEO. Major influence on banking policy and regulation. Financial sector power broker.",
+      "photo": "/profiles/jamie-dimon.svg",
+      "url": "https://veritasworldwide.com/profile/jamie-dimon",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "JPMorgan Chase CEO",
+        "Banker",
+        "Financial Power",
+        "Policy Influence"
+      ]
+    },
+    {
+      "id": "warren-buffett",
+      "name": "Warren Buffett",
+      "title": "Berkshire Hathaway CEO, Billionaire",
+      "category": "billionaire",
+      "summary": "Berkshire Hathaway CEO and investment legend. Pledge to give away fortune. Philanthropic and political influence.",
+      "photo": "/profiles/warren-buffett.svg",
+      "url": "https://veritasworldwide.com/profile/warren-buffett",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Berkshire Hathaway",
+        "Investment Legend",
+        "Philanthropist",
+        "Warren Buffett"
+      ]
+    },
+    {
+      "id": "ken-griffin",
+      "name": "Ken Griffin",
+      "title": "Hedge Fund Manager, Billionaire",
+      "category": "billionaire",
+      "summary": "Citadel hedge fund founder and CEO. Major Republican donor and policy influencer.",
+      "photo": "/profiles/ken-griffin.svg",
+      "url": "https://veritasworldwide.com/profile/ken-griffin",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Hedge Fund Manager",
+        "Republican Donor",
+        "Political Influence"
+      ]
+    },
+    {
+      "id": "sam-bankman-fried",
+      "name": "Sam Bankman-Fried",
+      "title": "FTX Founder (Convicted)",
+      "category": "billionaire",
+      "summary": "FTX founder. Convicted of fraud and money laundering. Major Democratic donor with connections.",
+      "photo": "/profiles/sam-bankman-fried.svg",
+      "url": "https://veritasworldwide.com/profile/sam-bankman-fried",
+      "bioguideId": null,
+      "tags": [
+        "Convicted Fraudster",
+        "FTX Founder",
+        "Crypto Billionaire",
+        "Democratic Donor",
+        "Prison"
+      ]
+    },
+    {
+      "id": "haim-saban",
+      "name": "Haim Saban",
+      "title": "Entertainment Billionaire",
+      "category": "billionaire",
+      "summary": "Entertainment mogul, Univision founder. Major Democratic donor and AIPAC supporter. Pro-Israel activist.",
+      "photo": "/profiles/haim-saban.svg",
+      "url": "https://veritasworldwide.com/profile/haim-saban",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Entertainment",
+        "Democratic Donor",
+        "AIPAC",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "paul-singer",
+      "name": "Paul Singer",
+      "title": "Hedge Fund Manager, Billionaire",
+      "category": "billionaire",
+      "summary": "Elliott Management founder. Republican mega-donor. Pro-Israel activist and hawk on foreign policy.",
+      "photo": "/profiles/paul-singer.svg",
+      "url": "https://veritasworldwide.com/profile/paul-singer",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Hedge Fund Manager",
+        "Republican Donor",
+        "Pro-Israel",
+        "Political Influencer"
+      ]
+    },
+    {
+      "id": "bernard-marcus",
+      "name": "Bernard Marcus",
+      "title": "Home Depot Co-founder, Billionaire",
+      "category": "billionaire",
+      "summary": "Home Depot co-founder. Republican mega-donor. Pro-Israel activist and conservative philanthropist.",
+      "photo": "/profiles/bernard-marcus.svg",
+      "url": "https://veritasworldwide.com/profile/bernard-marcus",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Home Depot Founder",
+        "Republican Donor",
+        "Pro-Israel",
+        "Conservative Philanthropist"
+      ]
+    },
+    {
+      "id": "robert-mercer",
+      "name": "Robert Mercer",
+      "title": "Hedge Fund Manager, Billionaire",
+      "category": "billionaire",
+      "summary": "Renaissance Technologies hedge fund co-founder. Major Republican donor. Data mining and political influence.",
+      "photo": "/profiles/robert-mercer.svg",
+      "url": "https://veritasworldwide.com/profile/robert-mercer",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Hedge Fund Manager",
+        "Republican Donor",
+        "Data Mining",
+        "Political Operative"
+      ]
+    },
+    {
+      "id": "leon-black",
+      "name": "Leon Black",
+      "title": "Apollo Global Management Founder",
+      "category": "billionaire",
+      "summary": "Apollo Global Management founder. Private equity magnate. Epstein connection controversy.",
+      "photo": "/profiles/leon-black.svg",
+      "url": "https://veritasworldwide.com/profile/leon-black",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Private Equity",
+        "Apollo Founder",
+        "Epstein Connection",
+        "Financier"
+      ]
+    },
+    {
+      "id": "reid-hoffman",
+      "name": "Reid Hoffman",
+      "title": "LinkedIn Founder, Billionaire",
+      "category": "billionaire",
+      "summary": "LinkedIn founder and venture capitalist. Democratic donor and philanthropist. Tech influencer.",
+      "photo": "/profiles/reid-hoffman.svg",
+      "url": "https://veritasworldwide.com/profile/reid-hoffman",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "LinkedIn Founder",
+        "Venture Capitalist",
+        "Democratic Donor",
+        "Tech Industry"
+      ]
+    },
+    {
+      "id": "marc-andreessen",
+      "name": "Marc Andreessen",
+      "title": "Venture Capitalist, Tech Entrepreneur",
+      "category": "billionaire",
+      "summary": "Andreessen Horowitz co-founder. Major venture capitalist. Tech industry influencer.",
+      "photo": "/profiles/marc-andreessen.svg",
+      "url": "https://veritasworldwide.com/profile/marc-andreessen",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Venture Capitalist",
+        "Tech Entrepreneur",
+        "Andreessen Horowitz"
+      ]
+    },
+    {
+      "id": "larry-ellison",
+      "name": "Larry Ellison",
+      "title": "Oracle Founder, Billionaire",
+      "category": "billionaire",
+      "summary": "Oracle founder and tech entrepreneur. Major business and political influence. Philanthropist.",
+      "photo": "/profiles/larry-ellison.svg",
+      "url": "https://veritasworldwide.com/profile/larry-ellison",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Oracle Founder",
+        "Tech Entrepreneur",
+        "Philanthropist"
+      ]
+    },
+    {
+      "id": "charles-koch",
+      "name": "Charles Koch",
+      "title": "Koch Industries Chairman, Billionaire",
+      "category": "billionaire",
+      "summary": "Koch Industries chairman. Libertarian philanthropist. Major influence on conservative and libertarian politics.",
+      "photo": "/profiles/charles-koch.svg",
+      "url": "https://veritasworldwide.com/profile/charles-koch",
+      "bioguideId": null,
+      "tags": [
+        "Billionaire",
+        "Koch Industries",
+        "Libertarian Donor",
+        "Political Influence",
+        "Businessman"
+      ]
+    },
+    {
+      "id": "howard-kohr",
+      "name": "Howard Kohr",
+      "title": "AIPAC Executive Director",
+      "category": "lobbyist",
+      "summary": "AIPAC Executive Director. Leads major pro-Israel lobbying organization. Significant influence on US foreign policy.",
+      "photo": "/profiles/howard-kohr.svg",
+      "url": "https://veritasworldwide.com/profile/howard-kohr",
+      "bioguideId": null,
+      "tags": [
+        "AIPAC",
+        "Lobbyist",
+        "Pro-Israel",
+        "Political Influencer"
+      ]
+    },
+    {
+      "id": "tony-podesta",
+      "name": "Tony Podesta",
+      "title": "Lobbyist",
+      "category": "lobbyist",
+      "summary": "Prominent Washington lobbyist and political operative. Brother of John Podesta. Major influence on policy.",
+      "photo": "/profiles/tony-podesta.svg",
+      "url": "https://veritasworldwide.com/profile/tony-podesta",
+      "bioguideId": null,
+      "tags": [
+        "Lobbyist",
+        "Democratic Operative",
+        "Washington Power Broker"
+      ]
+    },
+    {
+      "id": "john-podesta",
+      "name": "John Podesta",
+      "title": "White House Senior Advisor",
+      "category": "lobbyist",
+      "summary": "Biden White House Senior Advisor. Long Democratic operative and political strategist. Major influence on policy.",
+      "photo": "/profiles/john-podesta.svg",
+      "url": "https://veritasworldwide.com/profile/john-podesta",
+      "bioguideId": null,
+      "tags": [
+        "White House Advisor",
+        "Democratic Operative",
+        "Clinton Era",
+        "Political Strategist"
+      ]
+    },
+    {
+      "id": "paul-manafort",
+      "name": "Paul Manafort",
+      "title": "Political Consultant (Convicted)",
+      "category": "lobbyist",
+      "summary": "Trump campaign chairman. Convicted of fraud and tax crimes. Foreign lobbying work.",
+      "photo": "/profiles/paul-manafort.svg",
+      "url": "https://veritasworldwide.com/profile/paul-manafort",
+      "bioguideId": null,
+      "tags": [
+        "Convicted Felon",
+        "Political Consultant",
+        "Trump Campaign",
+        "Foreign Lobbying",
+        "Prison"
+      ]
+    },
+    {
+      "id": "michael-flynn",
+      "name": "Michael Flynn",
+      "title": "Former National Security Advisor",
+      "category": "intel",
+      "summary": "Trump National Security Advisor. Pleaded guilty to lying to FBI. Later pardoned by Trump.",
+      "photo": "/profiles/michael-flynn.svg",
+      "url": "https://veritasworldwide.com/profile/michael-flynn",
+      "bioguideId": null,
+      "tags": [
+        "National Security Advisor",
+        "Convicted",
+        "Trump Ally",
+        "Pardoned",
+        "QAnon"
+      ]
+    },
+    {
+      "id": "roger-stone",
+      "name": "Roger Stone",
+      "title": "Political Consultant",
+      "category": "lobbyist",
+      "summary": "Long-time political operative and Trump advisor. Convicted in Mueller probe, later pardoned by Trump.",
+      "photo": "/profiles/roger-stone.svg",
+      "url": "https://veritasworldwide.com/profile/roger-stone",
+      "bioguideId": null,
+      "tags": [
+        "Political Consultant",
+        "Trump Advisor",
+        "Convicted",
+        "Pardoned",
+        "Operative"
+      ]
+    },
+    {
+      "id": "steve-bannon",
+      "name": "Steve Bannon",
+      "title": "Trump Strategist, Media Executive",
+      "category": "media",
+      "summary": "Trump campaign chief strategist. Breitbart News chair. Political influencer and media figure.",
+      "photo": "/profiles/steve-bannon.svg",
+      "url": "https://veritasworldwide.com/profile/steve-bannon",
+      "bioguideId": null,
+      "tags": [
+        "Trump Strategist",
+        "Breitbart",
+        "Media Executive",
+        "Political Activist",
+        "Controversial"
+      ]
+    },
+    {
+      "id": "karl-rove",
+      "name": "Karl Rove",
+      "title": "Political Strategist",
+      "category": "lobbyist",
+      "summary": "Bush administration political strategist. Fox News contributor. Long-time Republican operative.",
+      "photo": "/profiles/karl-rove.svg",
+      "url": "https://veritasworldwide.com/profile/karl-rove",
+      "bioguideId": null,
+      "tags": [
+        "Political Strategist",
+        "Republican Operative",
+        "Fox News",
+        "Bush Era",
+        "Super PAC"
+      ]
+    },
+    {
+      "id": "rahm-emanuel",
+      "name": "Rahm Emanuel",
+      "title": "Chicago Mayor, White House Chief of Staff",
+      "category": "lobbyist",
+      "summary": "Former Chicago Mayor and Obama White House Chief of Staff. Democratic operative and political power broker.",
+      "photo": "/profiles/rahm-emanuel.svg",
+      "url": "https://veritasworldwide.com/profile/rahm-emanuel",
+      "bioguideId": null,
+      "tags": [
+        "White House Chief of Staff",
+        "Chicago Mayor",
+        "Democratic Operative",
+        "Political Strategist"
+      ]
+    },
+    {
+      "id": "james-comey",
+      "name": "James Comey",
+      "title": "Former FBI Director",
+      "category": "intel",
+      "summary": "Former FBI Director under Obama and Trump. Controversial role in 2016 election. Trump critic.",
+      "photo": "/profiles/james-comey.svg",
+      "url": "https://veritasworldwide.com/profile/james-comey",
+      "bioguideId": null,
+      "tags": [
+        "FBI Director",
+        "Trump Critic",
+        "Clinton Email",
+        "Election Interference",
+        "Law Enforcement"
+      ]
+    },
+    {
+      "id": "john-brennan",
+      "name": "John Brennan",
+      "title": "Former CIA Director",
+      "category": "intel",
+      "summary": "Former CIA Director under Obama. Trump critic. Major role in drone programs and enhanced interrogation.",
+      "photo": "/profiles/john-brennan.svg",
+      "url": "https://veritasworldwide.com/profile/john-brennan",
+      "bioguideId": null,
+      "tags": [
+        "CIA Director",
+        "Trump Critic",
+        "Drone Program",
+        "Torture",
+        "Intelligence"
+      ]
+    },
+    {
+      "id": "james-clapper",
+      "name": "James Clapper",
+      "title": "Former Director of National Intelligence",
+      "category": "intel",
+      "summary": "Former Director of National Intelligence under Obama. Defended NSA surveillance. Military intelligence officer.",
+      "photo": "/profiles/james-clapper.svg",
+      "url": "https://veritasworldwide.com/profile/james-clapper",
+      "bioguideId": null,
+      "tags": [
+        "Intelligence Director",
+        "NSA Surveillance",
+        "Military Intelligence",
+        "Trump Critic"
+      ]
+    },
+    {
+      "id": "erik-prince",
+      "name": "Erik Prince",
+      "title": "Blackwater Founder, Military Contractor",
+      "category": "intel",
+      "summary": "Blackwater (now Academi) founder. Private military contractor. Trump administration connection.",
+      "photo": "/profiles/erik-prince.svg",
+      "url": "https://veritasworldwide.com/profile/erik-prince",
+      "bioguideId": null,
+      "tags": [
+        "Military Contractor",
+        "Blackwater",
+        "Private Army",
+        "Trump Advisor",
+        "Controversial"
+      ]
+    },
+    {
+      "id": "david-petraeus",
+      "name": "David Petraeus",
+      "title": "Former General, CIA Director",
+      "category": "intel",
+      "summary": "Retired four-star general. Former CIA Director. Pled guilty to mishandling classified information.",
+      "photo": "/profiles/david-petraeus.svg",
+      "url": "https://veritasworldwide.com/profile/david-petraeus",
+      "bioguideId": null,
+      "tags": [
+        "General",
+        "CIA Director",
+        "Military Commander",
+        "Afghanistan",
+        "Iraq"
+      ]
+    },
+    {
+      "id": "robert-mueller",
+      "name": "Robert Mueller",
+      "title": "Former FBI Director, Special Counsel",
+      "category": "intel",
+      "summary": "Former FBI Director and Special Counsel investigating Trump-Russia. Led Trump impeachment probe.",
+      "photo": "/profiles/robert-mueller.svg",
+      "url": "https://veritasworldwide.com/profile/robert-mueller",
+      "bioguideId": null,
+      "tags": [
+        "FBI Director",
+        "Special Counsel",
+        "Trump Investigation",
+        "Russia",
+        "Mueller Report"
+      ]
+    },
+    {
+      "id": "tucker-carlson",
+      "name": "Tucker Carlson",
+      "title": "Fox News Host",
+      "category": "media",
+      "summary": "Former Fox News prime-time host. Influential conservative commentator. Controversial statements and positions.",
+      "photo": "/profiles/tucker-carlson.svg",
+      "url": "https://veritasworldwide.com/profile/tucker-carlson",
+      "bioguideId": null,
+      "tags": [
+        "News Host",
+        "Fox News",
+        "Conservative",
+        "Political Commentary",
+        "Controversial"
+      ]
+    },
+    {
+      "id": "joe-rogan",
+      "name": "Joe Rogan",
+      "title": "Podcast Host, Sports Commentator",
+      "category": "media",
+      "summary": "Spotify podcast host with massive audience. Sports commentator. Political interviews and commentary.",
+      "photo": "/profiles/joe-rogan.svg",
+      "url": "https://veritasworldwide.com/profile/joe-rogan",
+      "bioguideId": null,
+      "tags": [
+        "Podcast Host",
+        "Media Personality",
+        "Political Commentary",
+        "Spotify",
+        "Influence"
+      ]
+    },
+    {
+      "id": "ben-shapiro",
+      "name": "Ben Shapiro",
+      "title": "Political Commentator, Media Host",
+      "category": "media",
+      "summary": "Conservative political commentator and Daily Wire founder. Influential in right-wing media sphere.",
+      "photo": "/profiles/ben-shapiro.svg",
+      "url": "https://veritasworldwide.com/profile/ben-shapiro",
+      "bioguideId": null,
+      "tags": [
+        "Political Commentator",
+        "Daily Wire",
+        "Conservative",
+        "Media Personality"
+      ]
+    },
+    {
+      "id": "rachel-maddow",
+      "name": "Rachel Maddow",
+      "title": "MSNBC News Host",
+      "category": "media",
+      "summary": "MSNBC prime-time news host. Influential progressive voice. Covered Trump investigation extensively.",
+      "photo": "/profiles/rachel-maddow.svg",
+      "url": "https://veritasworldwide.com/profile/rachel-maddow",
+      "bioguideId": null,
+      "tags": [
+        "News Host",
+        "MSNBC",
+        "Progressive",
+        "Political Commentary",
+        "Trump Investigation"
+      ]
+    },
+    {
+      "id": "byron-donalds",
+      "name": "Byron Donalds",
+      "title": "U.S. Representative (R-FL-19)",
+      "category": "politician",
+      "summary": "U.S. Representative from Florida's 19th district since 2021. Former financial services professional. Nominated for Speaker of the House during January 2023 standoff — first time both parties nominated a Black American for the role. Heritage Action score: 96%. Subject of Campaign Legal Center ethics complaint for failing to disclose up to $1.6M in stock trades (108 transactions). Received $84,000+ from AIPAC and pro-Israel lobby.",
+      "photo": "/profiles/byron-donalds.jpg",
+      "url": "https://veritasworldwide.com/profile/byron-donalds",
+      "bioguideId": "D000032",
+      "tags": [
+        "Freedom Caucus",
+        "Pro-Israel",
+        "AIPAC",
+        "Trump Ally",
+        "STOCK Act",
+        "Heritage Foundation",
+        "School Choice",
+        "Speaker Nominee",
+        "Financial Services"
+      ]
+    },
+    {
+      "id": "benjamin-netanyahu",
+      "name": "Benjamin Netanyahu",
+      "title": "Prime Minister of Israel",
+      "category": "foreign-agent",
+      "summary": "Longest-serving Israeli prime minister and wartime head of government after October 7, 2023. Subject of an ICC arrest warrant (November 2024) for alleged war crimes and crimes against humanity, including starvation as a method of warfare. Ultimate political authority over IDF operations and aid-access policy during the Gaza war. Primary Israeli counterpart for U.S. military-aid and weapons transfers.",
+      "photo": "/profiles/benjamin-netanyahu.svg",
+      "url": "https://veritasworldwide.com/profile/benjamin-netanyahu",
+      "bioguideId": null,
+      "tags": [
+        "Israel",
+        "Prime Minister",
+        "ICC Warrant",
+        "Gaza War",
+        "Likud",
+        "U.S. Aid Recipient Leadership"
+      ]
+    },
+    {
+      "id": "yoav-gallant",
+      "name": "Yoav Gallant",
+      "title": "Former Israeli Defense Minister",
+      "category": "foreign-agent",
+      "summary": "Israeli Defense Minister from 2022 until November 2024. Publicly announced a \"complete siege\" of Gaza (electricity, food, fuel) after October 7. Subject of an ICC arrest warrant for alleged war crimes and crimes against humanity. Central operational political authority over the IDF during the opening phase of the Gaza war.",
+      "photo": "/profiles/yoav-gallant.svg",
+      "url": "https://veritasworldwide.com/profile/yoav-gallant",
+      "bioguideId": null,
+      "tags": [
+        "Israel",
+        "Defense Minister",
+        "ICC Warrant",
+        "Gaza Siege",
+        "IDF"
+      ]
+    }
+  ]
+}

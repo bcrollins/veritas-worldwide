@@ -1022,9 +1022,12 @@ function renderLlmsTxt(topics) {
     '- [Accessibility](https://veritasworldwide.com/accessibility): WCAG targets, contrast, and touch-target standards.',
     '- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.',
     '- [Profiles](https://veritasworldwide.com/profiles): Source-driven profiles of institutional actors.',
+    '- [Profiles corpus (JSON)](https://veritasworldwide.com/profiles/corpus.json): Machine-readable index of all power profiles with photo paths and Bioguide IDs.',
     '- [Ted Cruz](https://veritasworldwide.com/profile/ted-cruz): FEC/AIPAC-sourced senator profile.',
     '- [Donald Trump](https://veritasworldwide.com/profile/donald-trump): Sourced executive/profile record.',
     '- [Nancy Pelosi](https://veritasworldwide.com/profile/nancy-pelosi): Sourced congressional leadership profile.',
+    '- [AOC](https://veritasworldwide.com/profile/aoc): Progressive House profile with first-party Bioguide portrait.',
+    '- [Bernie Sanders](https://veritasworldwide.com/profile/bernie-sanders): Senate profile with first-party Bioguide portrait.',
     '- [Benjamin Netanyahu](https://veritasworldwide.com/profile/benjamin-netanyahu): Sourced foreign-leader profile linked to the Israel Dossier.',
   ].join('\n')
 }
@@ -2658,6 +2661,10 @@ sitemapEntries.set(
 sitemapEntries.set(
   '/israel-dossier/corpus.json',
   renderUrlEntry(`${SITE_URL}/israel-dossier/corpus.json`, today, 'weekly', '0.7')
+)
+sitemapEntries.set(
+  '/profiles/corpus.json',
+  renderUrlEntry(`${SITE_URL}/profiles/corpus.json`, today, 'weekly', '0.6')
 )
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))

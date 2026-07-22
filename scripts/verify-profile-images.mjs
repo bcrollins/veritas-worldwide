@@ -39,6 +39,15 @@ for (const src of new Set(photoRefs)) {
 assert(missing.length === 0, `missing public assets: ${missing.join(', ')}`)
 assert(small.length === 0, `assets too small: ${small.join(', ')}`)
 
+const corpusPath = path.join(root, 'public', 'profiles', 'corpus.json')
+assert(fs.existsSync(corpusPath), 'public/profiles/corpus.json missing')
+const corpus = JSON.parse(fs.readFileSync(corpusPath, 'utf8'))
+assert(Array.isArray(corpus.profiles) && corpus.profiles.length >= 90, 'profiles corpus too small')
+assert(
+  corpus.profiles.every((p) => typeof p.id === 'string' && typeof p.url === 'string' && typeof p.photo === 'string'),
+  'profiles corpus rows missing id/url/photo',
+)
+
 console.log(
-  `[verify:profile-images] PASS — refs=${photoRefs.length} unique=${new Set(photoRefs).size}`,
+  `[verify:profile-images] PASS — refs=${photoRefs.length} unique=${new Set(photoRefs).size} corpus=${corpus.profiles.length}`,
 )
