@@ -377,8 +377,10 @@ async function runInteractiveChecks(browser) {
       assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
-    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 20, 'corpus.json incidents too few')
-    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 12, 'corpus.json actors too few')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 40, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 20, 'corpus.json actors too few')
+    assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 35, 'corpus.json timeline too few')
+    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 10, 'corpus.json moneyTrail too few')
 
     // Deep-link surface: actor query opens enablement panel
     await page.goto(`${baseUrl}/israel-dossier?actor=joe-biden`, { waitUntil: 'domcontentloaded', timeout: 30000 })
@@ -412,9 +414,41 @@ async function runInteractiveChecks(browser) {
     assert(topicBody.includes('israel dossier') || topicBody.includes('interactive evidence'), 'israel-policy topic missing dossier CTA copy')
     assert((await page.getByRole('link', { name: /Open Israel Dossier/i }).count()) > 0, 'israel-policy topic missing Open Israel Dossier link')
 
+    // Search cross-surface promo for gaza/israel queries
+    await page.goto(`${baseUrl}/search?q=gaza`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: /Search/i }).first().waitFor({ timeout: 20000 }).catch(() => {})
+    await page.waitForFunction(
+      () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
+      null,
+      { timeout: 20000 },
+    )
+    const searchBody = (await page.locator('body').innerText()).toLowerCase()
+    assert(searchBody.includes('israel dossier evidence engine'), 'search?q=gaza missing Israel Dossier evidence engine promo')
+    assert(searchBody.includes('the israel dossier'), 'search?q=gaza missing The Israel Dossier surface title')
+    assert(
+      (await page.getByRole('link', { name: /The Israel Dossier/i }).count()) > 0 ||
+        (await page.locator('a[href="/israel-dossier"]').count()) > 0,
+      'search?q=gaza missing dossier deep link',
+    )
+    console.log('[verify:israel-dossier:behavior] PASS search cross-surface dossier promo')
+
     // Return to dossier before download/carousel assertions (#downloads is dossier-only).
     await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
+    const densifyBody = (await page.locator('body').innerText()).toLowerCase()
+    for (const needle of [
+      'un schools and shelters',
+      'unrwa shelters hit',
+      'uss liberty',
+      'land day',
+      'operation litani',
+      'guardian of the walls',
+      'howard kohr',
+      'pro-israel lobby',
+    ]) {
+      assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
+    }
+    console.log('[verify:israel-dossier:behavior] PASS densify wave surface text')
 
     const downloads = page.locator('#downloads')
     await downloads.scrollIntoViewIfNeeded()

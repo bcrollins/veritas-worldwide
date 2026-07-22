@@ -405,6 +405,118 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'howard-kohr',
+    name: 'Howard Kohr',
+    role: 'CEO, American Israel Public Affairs Committee (AIPAC)',
+    category: 'us-donor-lobby',
+    enablementSummary:
+      'Leads AIPAC, the largest pro-Israel lobbying organization by electoral spend. AIPAC and affiliated PACs spent record sums in the 2024 cycle targeting members who supported conditioning aid or ceasefire measures — structural enablement via campaign finance and Hill lobbying, not direct weapons transfer.',
+    relatedTimelineYears: ['2016', '2024'],
+    relatedIncidentIds: ['protective-edge-2014-children', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'pro-israel-lobby-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Pro-Israel industry / AIPAC-related flows',
+        amount: '$180M+ cycle context (industry aggregate)',
+        sourceUrl: 'https://www.opensecrets.org/industries/indus?ind=Q05',
+      },
+      {
+        label: 'AIPAC — public lobbying and PAC disclosures (FEC)',
+        sourceUrl: 'https://www.fec.gov/',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'haim-saban',
+    name: 'Haim Saban',
+    role: 'Media executive; major Democratic donor and pro-Israel philanthropist',
+    category: 'us-donor-lobby',
+    enablementSummary:
+      'Long-running megadonor to Democratic campaigns and pro-Israel causes; public record of large contributions and explicit advocacy for robust U.S. military and diplomatic support for Israel across multiple administrations.',
+    relatedTimelineYears: ['2008', '2012', '2016', '2020', '2024'],
+    relatedIncidentIds: ['cast-lead-2008-09', 'protective-edge-2014-children'],
+    relatedMoneyNodeIds: ['annual-mou', 'hr815', 'pro-israel-lobby-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Saban donor profile / soft-money history',
+        sourceUrl: 'https://www.opensecrets.org/',
+      },
+      {
+        label: 'FEC individual contribution search (public filings)',
+        sourceUrl: 'https://www.fec.gov/data/receipts/individual-contributions/',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'kamala-harris',
+    name: 'Kamala Harris',
+    role: 'U.S. Vice President (2021–2025); 2024 Democratic presidential nominee',
+    category: 'us-executive',
+    enablementSummary:
+      'As VP in the Biden administration during the post–October 7 Gaza war, part of the executive chain that maintained MOU baseline aid and the H.R.815 supplemental while publicly urging humanitarian restraint — dual-track weapons continuity plus diplomatic messaging.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: ['jabalia-refugee-camp', 'al-mawasi-safe-zone'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'fmf-weapons'],
+    fundingLinks: [
+      {
+        label: 'H.R.815 — Israel Security Supplemental (administration-backed)',
+        amount: '$26.4B',
+        sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
+      },
+      {
+        label: 'CRS RL33222 — U.S. Foreign Aid to Israel',
+        sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'marco-rubio',
+    name: 'Marco Rubio',
+    role: 'U.S. Senator (R-FL); Secretary of State (2025–)',
+    category: 'us-congress',
+    enablementSummary:
+      'Consistent Senate sponsor and floor advocate for unconditional Israel military assistance, Iron Dome funding, and post–October 7 supplemental packages; later State Department role places him inside executive arms-transfer architecture.',
+    relatedTimelineYears: ['2014', '2021', '2023', '2024', '2025'],
+    relatedIncidentIds: ['protective-edge-2014-children', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Rubio / pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/marco-rubio/summary?cid=N00030612',
+      },
+      {
+        label: 'Congress.gov — Rubio cosponsorships and votes',
+        sourceUrl: 'https://www.congress.gov/member/marco-rubio/R000595',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'mike-pompeo',
+    name: 'Mike Pompeo',
+    role: 'U.S. Secretary of State (2018–2021); CIA Director (2017–2018)',
+    category: 'us-executive',
+    enablementSummary:
+      'As Secretary of State under Trump, oversaw the Golan recognition, embassy move follow-through, and continuous FMF/missile-defense transfers; public champion of maximal diplomatic and military support for Israeli government positions.',
+    relatedTimelineYears: ['2017', '2018', '2019', '2020'],
+    relatedIncidentIds: ['great-march-return-2018'],
+    relatedMoneyNodeIds: ['annual-mou', 'iron-dome', 'fmf-weapons'],
+    fundingLinks: [
+      {
+        label: 'CRS RL33222 — multi-administration aid continuity',
+        sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        label: 'State Department / FRUS-style public statements archive (Trump era)',
+        sourceUrl: 'https://2017-2021.state.gov/',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

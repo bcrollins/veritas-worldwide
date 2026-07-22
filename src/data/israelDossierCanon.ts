@@ -1070,6 +1070,17 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['annual-mou', 'hr815'],
     relatedProfileIds: ['joe-biden', 'barack-obama', 'donald-trump', 'benjamin-netanyahu'],
   },
+  {
+    id: 'pro-israel-lobby-2024',
+    label: 'Pro-Israel lobby / PAC spend (2024 cycle)',
+    amount: '$180M+',
+    type: 'legislation',
+    date: '2023–2024 cycle',
+    detail: 'OpenSecrets aggregates more than $180M in pro-Israel industry political spending for the 2024 cycle (PACs, outside spending, and related vehicles). This is campaign-finance enablement of the congressional aid floor — not a weapons transfer — and is tracked separately from FMF/MOU dollars.',
+    sourceUrl: 'https://www.opensecrets.org/industries/indus?ind=Q05',
+    children: ['hr815', 'annual-mou'],
+    relatedProfileIds: ['howard-kohr', 'haim-saban', 'miriam-adelson', 'chuck-schumer', 'mike-johnson'],
+  },
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
