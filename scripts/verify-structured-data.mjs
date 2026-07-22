@@ -23,6 +23,7 @@ function routeType(route) {
   if (route === '/institute/methodology') return 'methodology'
   if (route.startsWith('/institute/courses/')) return 'course'
   if (route.startsWith('/institute/guides/')) return 'guide'
+  if (route.startsWith('/profile/')) return 'profile'
   return 'other'
 }
 
@@ -137,6 +138,21 @@ function verifyRoute(route, html, entries) {
       }
       break
     }
+    case 'profile': {
+      if (!includesType(entries, 'ProfilePage')) issues.push('missing ProfilePage')
+      if (!includesType(entries, 'BreadcrumbList')) issues.push('missing BreadcrumbList')
+      const page = getEntry(entries, 'ProfilePage')
+      if (page?.url !== expectedCanonical) {
+        issues.push(`ProfilePage.url mismatch: expected ${expectedCanonical}, received ${page?.url || 'missing'}`)
+      }
+      const person = page?.mainEntity
+      if (!person || person['@type'] !== 'Person') {
+        issues.push('ProfilePage.mainEntity must be a Person')
+      } else if (!person.name || !person.image) {
+        issues.push('Person missing name or image')
+      }
+      break
+    }
     default:
       break
   }
@@ -151,9 +167,19 @@ function main() {
   const instituteRoutes = Object.keys(manifest).filter((route) => route.startsWith('/institute'))
   assert(instituteRoutes.length > 0, 'No /institute routes found in prerender manifest.')
 
-  const failures = []
+  // Flagship power profiles — first-party portrait + Person JSON-LD contract.
+  const profileSample = [
+    '/profile/ted-cruz',
+    '/profile/aoc',
+    '/profile/bernie-sanders',
+    '/profile/donald-trump',
+  ].filter((route) => manifest[route])
+  assert(profileSample.length >= 3, 'Expected flagship profile prerender routes in manifest')
 
-  for (const route of instituteRoutes) {
+  const failures = []
+  const routes = [...instituteRoutes, ...profileSample]
+
+  for (const route of routes) {
     const html = loadHtmlForRoute(manifest, route)
     const entries = extractJsonLdEntries(html)
     const issues = verifyRoute(route, html, entries)
@@ -175,7 +201,9 @@ function main() {
 
   const courseCount = instituteRoutes.filter((route) => routeType(route) === 'course').length
   const guideCount = instituteRoutes.filter((route) => routeType(route) === 'guide').length
-  logStep(`PASS — verified ${instituteRoutes.length} institute prerender routes (${courseCount} courses, ${guideCount} guides)`)
+  logStep(
+    `PASS — verified ${instituteRoutes.length} institute + ${profileSample.length} profile prerender routes (${courseCount} courses, ${guideCount} guides)`,
+  )
 }
 
 try {
