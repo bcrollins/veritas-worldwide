@@ -99,6 +99,23 @@ async function getWorkbenchCount(workbench) {
   return parseShowingCount(text)
 }
 
+/** Dismiss sticky cookie consent so it cannot intercept Playwright clicks. */
+async function dismissCookieConsent(page) {
+  const banner = page.getByTestId('cookie-consent-banner')
+  if ((await banner.count()) === 0) return
+  try {
+    await banner.getByRole('button', { name: /Accept/i }).click({ timeout: 3000, force: true })
+    await banner.waitFor({ state: 'hidden', timeout: 5000 }).catch(() => {})
+  } catch {
+    // Banner may already be dismissed or animating out
+  }
+}
+
+async function gotoAndDismiss(page, url, options = {}) {
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000, ...options })
+  await dismissCookieConsent(page)
+}
+
 async function waitForSectionText(page, selector, needle) {
   await page.waitForFunction(
     ({ selector: sectionSelector, needle: expected }) => document.querySelector(sectionSelector)?.textContent?.toLowerCase().includes(expected.toLowerCase()),
@@ -236,7 +253,7 @@ async function runViewportSmoke(browser, name, viewport, isMobile = false) {
   })
   const page = await context.newPage()
   try {
-    await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier`)
     await page.getByText(/Source Workbench/i).waitFor({ timeout: 20000 })
     const body = (await page.locator('body').innerText()).toLowerCase()
     for (const needle of ['the israel dossier', 'source workbench', 'evidence course path', 'evidence workbooks', 'populated record pack', 'open briefing', '72,289+', '21,289+', '261+', '$298b']) {
@@ -258,7 +275,7 @@ async function runInteractiveChecks(browser) {
   })
   const page = await context.newPage()
   try {
-    await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier`)
     await page.getByText(/Source Workbench/i).waitFor({ timeout: 20000 })
 
     const workbench = page.locator('#source-workbench')
@@ -396,7 +413,7 @@ async function runInteractiveChecks(browser) {
     )
 
     // Deep-link surface: actor query opens enablement panel
-    await page.goto(`${baseUrl}/israel-dossier?actor=joe-biden`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier?actor=joe-biden`)
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
     await waitForSectionText(page, '#actors', 'Joe Biden')
     await waitForSectionText(page, '#actors', 'Open full profile')
@@ -419,7 +436,7 @@ async function runInteractiveChecks(browser) {
     }
 
     // Incident era filter narrows documented incidents (shareable ?era=)
-    await page.goto(`${baseUrl}/israel-dossier?era=mandate-1948`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier?era=mandate-1948`)
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
     await page.locator('#incidents').scrollIntoViewIfNeeded()
     await waitForSectionText(page, '#incidents', 'Deir Yassin')
@@ -436,7 +453,7 @@ async function runInteractiveChecks(browser) {
     console.log('[verify:israel-dossier:behavior] PASS incident era filter deep-link')
 
     // Topic hub CTA for israel-policy (client-hydrated — wait for CTA, not just h1)
-    await page.goto(`${baseUrl}/topics/israel-policy`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/topics/israel-policy`)
     await page.getByRole('heading', { name: /Israel Policy/i }).first().waitFor({ timeout: 20000 })
     const dossierCta = page.getByRole('link', { name: /Open Israel Dossier/i }).first()
     await dossierCta.waitFor({ state: 'visible', timeout: 20000 })
@@ -445,7 +462,7 @@ async function runInteractiveChecks(browser) {
     assert((await page.getByRole('link', { name: /Open Israel Dossier/i }).count()) > 0, 'israel-policy topic missing Open Israel Dossier link')
 
     // Search cross-surface promo for gaza/israel queries
-    await page.goto(`${baseUrl}/search?q=gaza`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/search?q=gaza`)
     await page.getByRole('heading', { name: /Search/i }).first().waitFor({ timeout: 20000 }).catch(() => {})
     await page.waitForFunction(
       () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
@@ -463,7 +480,7 @@ async function runInteractiveChecks(browser) {
     console.log('[verify:israel-dossier:behavior] PASS search cross-surface dossier promo')
 
     // Expanded search keyword surface (liberty / UNRWA / lobby)
-    await page.goto(`${baseUrl}/search?q=liberty`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/search?q=liberty`)
     try {
       await page.waitForFunction(
         () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
@@ -480,7 +497,7 @@ async function runInteractiveChecks(browser) {
     console.log('[verify:israel-dossier:behavior] PASS search liberty keyword dossier promo')
 
     // Settler-violence / Hebron discovery path
-    await page.goto(`${baseUrl}/search?q=hebron`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/search?q=hebron`)
     try {
       await page.waitForFunction(
         () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
@@ -497,7 +514,7 @@ async function runInteractiveChecks(browser) {
     console.log('[verify:israel-dossier:behavior] PASS search hebron keyword dossier promo')
 
     // Return to dossier before download/carousel assertions (#downloads is dossier-only).
-    await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier`)
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
     const densifyBody = (await page.locator('body').innerText()).toLowerCase()
     for (const needle of [
@@ -534,7 +551,7 @@ async function runInteractiveChecks(browser) {
     console.log('[verify:israel-dossier:behavior] PASS densify wave surface text')
 
     // Chapter 15/16 companion CTAs into the dossier evidence engine
-    await page.goto(`${baseUrl}/chapter/chapter-15`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/chapter/chapter-15`)
     await page.getByRole('heading', { name: 'U.S. Foreign Aid to Israel' }).waitFor({ timeout: 20000 })
     assert(
       (await page.getByRole('link', { name: /Open money trail/i }).count()) > 0,
@@ -544,7 +561,7 @@ async function runInteractiveChecks(browser) {
       (await page.getByRole('link', { name: /Full Israel Dossier/i }).count()) > 0,
       'chapter 15 missing Full Israel Dossier CTA',
     )
-    await page.goto(`${baseUrl}/chapter/chapter-16`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/chapter/chapter-16`)
     await page.getByRole('heading', { name: /USS Liberty/i }).first().waitFor({ timeout: 20000 })
     assert(
       (await page.getByRole('link', { name: /Open Liberty in dossier/i }).count()) > 0,
@@ -553,7 +570,7 @@ async function runInteractiveChecks(browser) {
     console.log('[verify:israel-dossier:behavior] PASS chapter 15/16 dossier companion CTAs')
 
     // Profile enablement deep-link uses ?actor=
-    await page.goto(`${baseUrl}/profile/howard-kohr`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/profile/howard-kohr`)
     await page.waitForFunction(
       () => document.body?.innerText?.toLowerCase().includes('israel dossier'),
       null,
@@ -567,7 +584,7 @@ async function runInteractiveChecks(browser) {
     console.log('[verify:israel-dossier:behavior] PASS profile actor deep-link')
 
     // Return to dossier for download assertions after companion surface checks
-    await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier`)
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
 
     const downloads = page.locator('#downloads')
@@ -627,7 +644,7 @@ async function runBriefingSurfaceCheck(browser) {
   })
   const page = await context.newPage()
   try {
-    await page.goto(`${baseUrl}/israel-dossier/briefing`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier/briefing`)
     await page.getByRole('heading', { name: /Source-boundary briefing/i }).waitFor({ timeout: 20000 })
     const initialBody = (await page.locator('body').innerText()).toLowerCase()
     for (const needle of ['public briefing', 'source-boundary', 'source row table', 'reference locator', 'proof boundary', 'open workbook', 'archive lookup', 'source-copy status', 'paragraph source ids', 'reader-facing chapter sequence', 'src-p-001', 'aid-p-004', 'hum-p-001', 'unsafe wording to avoid', 'download chapter draft']) {
@@ -691,7 +708,7 @@ async function runChapter15PublicAccessCheck(browser) {
   })
   const page = await context.newPage()
   try {
-    await page.goto(`${baseUrl}/chapter/chapter-15`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await gotoAndDismiss(page, `${baseUrl}/chapter/chapter-15`)
     await page.getByRole('heading', { name: 'U.S. Foreign Aid to Israel' }).waitFor({ timeout: 20000 })
     const body = (await page.locator('body').innerText()).toLowerCase()
     for (const needle of ['u.s. foreign aid to israel', '$298 billion', 'crs', 'sources & references']) {
