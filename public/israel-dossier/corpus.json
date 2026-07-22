@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T20:18:18.287Z",
+  "generatedAt": "2026-07-22T21:00:12.435Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 57,
     "timelineEvents": 48,
-    "actors": 37,
-    "moneyTrailNodes": 14,
+    "actors": 39,
+    "moneyTrailNodes": 15,
     "historicalWarCrimesPack": 42,
     "legalCases": 7,
     "lobbyingRecords": 4,
@@ -19,8 +19,8 @@
       "post-oct7": 17
     },
     "actorsByCategory": {
-      "us-executive": 9,
-      "us-congress": 22,
+      "us-executive": 10,
+      "us-congress": 23,
       "us-donor-lobby": 4,
       "israeli-leadership": 2
     }
@@ -302,6 +302,23 @@
       "relatedProfileIds": [
         "joe-biden",
         "antony-blinken",
+        "benjamin-netanyahu",
+        "donald-trump"
+      ]
+    },
+    {
+      "id": "gbu39-sdb",
+      "label": "GBU-39 Small Diameter Bomb (SDB)",
+      "amount": "precision glide bombs (multi-year FMF)",
+      "type": "weapon",
+      "date": "ongoing / wartime resupply",
+      "detail": "The GBU-39 SDB is a GPS-guided 250-pound-class bomb transferred under U.S. FMF and wartime packages. Marketed as reducing collateral damage relative to heavier munitions, it remains a high-explosive weapon used in dense urban targeting. Tracked as a distinct precision munition class from MK-84/JDAM heavy bombs.",
+      "sourceUrl": "https://www.dsca.mil/press-media/major-arms-sales",
+      "children": [
+        "jdam-use"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
         "benjamin-netanyahu",
         "donald-trump"
       ]
@@ -1400,6 +1417,62 @@
         {
           "label": "Congress.gov — Scott voting / cosponsorships",
           "sourceUrl": "https://www.congress.gov/member/tim-scott/S001184"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "mike-pence",
+      "name": "Mike Pence",
+      "role": "U.S. Vice President (2017–2021); former Indiana governor",
+      "category": "us-executive",
+      "enablementSummary": "As VP under Trump, part of the executive chain for embassy move, Golan recognition, and continuous FMF/missile-defense transfers; public champion of unconditional U.S. support for Israeli government positions.",
+      "relatedTimelineYears": [
+        "2017",
+        "2018",
+        "2019",
+        "2020"
+      ],
+      "relatedIncidentIds": [
+        "great-march-return-2018"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "iron-dome",
+        "fmf-weapons"
+      ],
+      "fundingLinks": [
+        {
+          "label": "CRS RL33222 — multi-administration aid continuity",
+          "sourceUrl": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "john-fetterman",
+      "name": "John Fetterman",
+      "role": "U.S. Senator (D-PA)",
+      "category": "us-congress",
+      "enablementSummary": "Senate Democrat and high-visibility wartime advocate for continued Israel military aid and against progressive conditionality efforts during the Gaza war; maps the bipartisan Senate floor for supplemental packages.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "iron-dome",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Fetterman pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/john-fetterman/summary?cid=N00050190"
+        },
+        {
+          "label": "Congress.gov — Fetterman voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/john-fetterman/F000479"
         }
       ],
       "tier": "verified"

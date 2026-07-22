@@ -814,6 +814,46 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'mike-pence',
+    name: 'Mike Pence',
+    role: 'U.S. Vice President (2017–2021); former Indiana governor',
+    category: 'us-executive',
+    enablementSummary:
+      'As VP under Trump, part of the executive chain for embassy move, Golan recognition, and continuous FMF/missile-defense transfers; public champion of unconditional U.S. support for Israeli government positions.',
+    relatedTimelineYears: ['2017', '2018', '2019', '2020'],
+    relatedIncidentIds: ['great-march-return-2018'],
+    relatedMoneyNodeIds: ['annual-mou', 'iron-dome', 'fmf-weapons'],
+    fundingLinks: [
+      {
+        label: 'CRS RL33222 — multi-administration aid continuity',
+        sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'john-fetterman',
+    name: 'John Fetterman',
+    role: 'U.S. Senator (D-PA)',
+    category: 'us-congress',
+    enablementSummary:
+      'Senate Democrat and high-visibility wartime advocate for continued Israel military aid and against progressive conditionality efforts during the Gaza war; maps the bipartisan Senate floor for supplemental packages.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Fetterman pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/john-fetterman/summary?cid=N00050190',
+      },
+      {
+        label: 'Congress.gov — Fetterman voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/john-fetterman/F000479',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

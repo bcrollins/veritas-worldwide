@@ -1116,6 +1116,17 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['jdam-use'],
     relatedProfileIds: ['joe-biden', 'antony-blinken', 'benjamin-netanyahu', 'donald-trump'],
   },
+  {
+    id: 'gbu39-sdb',
+    label: 'GBU-39 Small Diameter Bomb (SDB)',
+    amount: 'precision glide bombs (multi-year FMF)',
+    type: 'weapon',
+    date: 'ongoing / wartime resupply',
+    detail: 'The GBU-39 SDB is a GPS-guided 250-pound-class bomb transferred under U.S. FMF and wartime packages. Marketed as reducing collateral damage relative to heavier munitions, it remains a high-explosive weapon used in dense urban targeting. Tracked as a distinct precision munition class from MK-84/JDAM heavy bombs.',
+    sourceUrl: 'https://www.dsca.mil/press-media/major-arms-sales',
+    children: ['jdam-use'],
+    relatedProfileIds: ['joe-biden', 'benjamin-netanyahu', 'donald-trump'],
+  },
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
