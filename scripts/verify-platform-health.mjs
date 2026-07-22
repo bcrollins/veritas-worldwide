@@ -634,6 +634,43 @@ const healthResult = await fetchJson('/api/health')
         )
       }
 
+      // First-party news heroes must not regress to 404 broken icons.
+      for (const hero of [
+        '/news/heroes/federal-reserve.jpg',
+        '/news/heroes/doj-courthouse.jpg',
+        '/news/heroes/boeing-airliner.jpg',
+        '/news/heroes/supreme-court.jpg',
+      ]) {
+        try {
+          const heroRes = await fetch(getUrl(hero), {
+            method: 'HEAD',
+            signal: AbortSignal.timeout(timeoutMs),
+          })
+          const len = Number(heroRes.headers.get('content-length') || 0)
+          const type = heroRes.headers.get('content-type') || ''
+          addCheck(
+            checks,
+            failures,
+            heroRes.ok && type.includes('image') && len > 10_000,
+            `News hero asset present: ${hero}`,
+            `status=${heroRes.status} type=${type} bytes=${len}`,
+          )
+        } catch (error) {
+          addCheck(checks, failures, false, `News hero asset present: ${hero}`, `error=${error instanceof Error ? error.message : String(error)}`)
+        }
+      }
+
+      // RSS must announce current-events desk + field manual.
+      const feedNow = await fetchText('/feed.xml')
+      const feedBody = feedNow.text || ''
+      addCheck(
+        checks,
+        failures,
+        feedNow.response.ok && feedBody.includes('/news/') && feedBody.includes('/news/heroes/'),
+        'RSS feed includes news desk items with hero enclosures',
+        `status=${feedNow.response.status} hasNews=${feedBody.includes('/news/')} hasHeroEnc=${feedBody.includes('/news/heroes/')}`,
+      )
+
       // /rss.xml is a discovery alias used by many readers; must 301 to canonical /feed.xml.
       let rssOk = false
       let rssDetail = 'probe-unavailable'
