@@ -1,0 +1,34 @@
+/**
+ * Veritas Worldwide Press — design tokens (CSS custom properties)
+ * Brand kit v2.2.0 · https://veritasworldwide.com/brand-kit/
+ */
+:root {
+  --veritas-parchment: #FAF8F5;
+  --veritas-parchment-dark: #F2EDE7;
+  --veritas-ink: #1A1A1A;
+  --veritas-ink-muted: #666666;
+  --veritas-crimson: #8B1A1A;
+  --veritas-crimson-light: #A52A2A;
+  --veritas-gold: #B8860B;
+  --veritas-obsidian: #0A0A0A;
+  --veritas-white: #FFFFFF;
+
+  --veritas-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --veritas-font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --veritas-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --veritas-font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --veritas-radius-sm: 2px;
+  --veritas-radius-md: 6px;
+  --veritas-space-unit: 8px;
+}
+
+html.dark,
+[data-theme="dark"] {
+  --veritas-parchment: #1A1A1A;
+  --veritas-parchment-dark: #141414;
+  --veritas-ink: #E8E4DF;
+  --veritas-ink-muted: #A09A92;
+  --veritas-crimson: #C43030;
+  --veritas-crimson-light: #D44040;
+}

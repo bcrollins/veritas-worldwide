@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Veritas Worldwide Brand Kit Generator v2.0
+ * Veritas Worldwide Brand Kit Generator v2.2
  * Produces production SVG/PNG brand assets + downloadable ZIP for admin.
  * Run: node scripts/generate-brand-kit.mjs
  */
@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.1.0'
+const KIT_VERSION = '2.2.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -349,6 +349,170 @@ function pressReleaseHeaderSvg() {
 </svg>`
 }
 
+function highlightCoverSvg(label) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Instagram highlight: ${label}">
+  <rect width="400" height="400" fill="${C.black}"/>
+  <circle cx="200" cy="175" r="72" fill="none" stroke="${C.crimson}" stroke-width="4"/>
+  <circle cx="200" cy="175" r="60" fill="none" stroke="${C.crimson}" stroke-width="1.5" opacity="0.7"/>
+  <path d="M152 130 L170 130 C172 130 173 131 174 133 L197 198 L200 206 L203 198 L226 133 C227 131 228 130 230 130 L248 130 C251 130 252 132 251 135 L208 220 C206 225 200 228 200 228 C200 228 194 225 192 220 L149 135 C148 132 149 130 152 130 Z" fill="${C.white}"/>
+  <rect x="148" y="126" width="36" height="5" rx="1" fill="${C.white}"/>
+  <rect x="216" y="126" width="36" height="5" rx="1" fill="${C.white}"/>
+  <text x="200" y="300" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="4" fill="${C.white}">${label.toUpperCase()}</text>
+</svg>`
+}
+
+function businessCardSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="600" viewBox="0 0 1050 600" role="img" aria-label="Veritas business card">
+  <rect width="1050" height="600" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="12" height="600" fill="${C.crimson}"/>
+  <g transform="translate(80,140) scale(0.35)">
+    <circle cx="256" cy="256" r="210" fill="none" stroke="${C.crimson}" stroke-width="10"/>
+    <circle cx="256" cy="256" r="192" fill="none" stroke="${C.crimson}" stroke-width="3"/>
+    <path d="M118 128 L156 128 C160 128 163 130 165 134 L250 348 L256 364 L262 348 L347 134 C349 130 352 128 356 128 L394 128 C399 128 402 131 400 136 L270 402 C266 412 256 418 256 418 C256 418 246 412 242 402 L112 136 C110 131 113 128 118 128 Z" fill="${C.ink}"/>
+    <rect x="108" y="122" width="68" height="8" rx="1.5" fill="${C.ink}"/>
+    <rect x="336" y="122" width="68" height="8" rx="1.5" fill="${C.ink}"/>
+  </g>
+  <text x="320" y="240" font-family="Georgia, serif" font-size="42" font-weight="700" letter-spacing="4" fill="${C.ink}">VERITAS</text>
+  <text x="320" y="280" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" letter-spacing="5" fill="${C.inkMuted}">WORLDWIDE PRESS</text>
+  <line x1="320" y1="300" x2="620" y2="300" stroke="${C.crimson}" stroke-width="1.5"/>
+  <text x="320" y="340" font-family="Georgia, serif" font-size="16" font-style="italic" fill="${C.inkMuted}">Primary sources. Public record. Your conclusions.</text>
+  <text x="320" y="420" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" fill="${C.ink}">veritasworldwide.com</text>
+  <text x="320" y="450" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" fill="${C.inkMuted}">rights@veritasworldwide.com</text>
+</svg>`
+}
+
+function tokensCss() {
+  return `/**
+ * Veritas Worldwide Press — design tokens (CSS custom properties)
+ * Brand kit v${KIT_VERSION} · https://veritasworldwide.com/brand-kit/
+ */
+:root {
+  --veritas-parchment: ${C.parchment};
+  --veritas-parchment-dark: ${C.parchmentDark};
+  --veritas-ink: ${C.ink};
+  --veritas-ink-muted: ${C.inkMuted};
+  --veritas-crimson: ${C.crimson};
+  --veritas-crimson-light: ${C.crimsonLight};
+  --veritas-gold: ${C.gold};
+  --veritas-obsidian: ${C.black};
+  --veritas-white: ${C.white};
+
+  --veritas-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --veritas-font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --veritas-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --veritas-font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --veritas-radius-sm: 2px;
+  --veritas-radius-md: 6px;
+  --veritas-space-unit: 8px;
+}
+
+html.dark,
+[data-theme="dark"] {
+  --veritas-parchment: #1A1A1A;
+  --veritas-parchment-dark: #141414;
+  --veritas-ink: #E8E4DF;
+  --veritas-ink-muted: #A09A92;
+  --veritas-crimson: #C43030;
+  --veritas-crimson-light: #D44040;
+}
+`
+}
+
+function socialAssetMatrixMd() {
+  return `# Social Asset Matrix — Veritas Worldwide Press
+
+Use these paths when standing up or refreshing platform identities.
+All paths are relative to \`https://veritasworldwide.com\`.
+
+| Platform | Profile / logo | Banner / cover | Notes |
+|----------|----------------|----------------|-------|
+| **X (Twitter)** | \`/brand-kit/04-social/social-profile.svg\` or \`social-profile-400.png\` | \`/brand-kit/04-social/social-banner-x.svg\` (1500×500) | Handle @VeritasWorldwide |
+| **Instagram** | same profile 320–400px PNG | Feed: square seal; Stories: \`story-1080x1920.svg\` | Handle @veritasworldwidepress |
+| **Instagram Highlights** | \`highlight-chapters.svg\`, \`highlight-sources.svg\`, \`highlight-record.svg\` | — | 3 covers in 04-social |
+| **LinkedIn Company** | \`/brand-kit/01-logos/logo-mark-512.png\` | \`/brand-kit/04-social/social-banner-linkedin.svg\` (1584×396) | Company: Veritas Worldwide Press |
+| **Facebook Page** | profile PNG | \`social-banner-facebook.svg\` (820×312) | News/Media category |
+| **YouTube** | app-icon / social-profile | \`social-banner-youtube.svg\` (2560×1440) | @VeritasWorldwide |
+| **TikTok** | social-profile-400.png | N/A | @veritasworldwidepress |
+| **Pinterest** | social-profile | story or OG for pins | veritasworldwide |
+| **Open Graph / default share** | — | \`/og-image.png\` + \`/brand-kit/05-og/\` | Site-wide default |
+
+## Bios (copy/paste)
+
+- **Short:** Primary Sources. Public Record. Your Conclusions.
+- **Medium:** A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts. 600+ primary sources. Full archive public.
+- **Link:** https://veritasworldwide.com
+
+## Hashtags
+
+See \`07-docs/HASHTAGS.md\`.
+
+## Full kit
+
+Download: \`/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip\`  
+Admin UI: \`/admin/brand-kit\`
+`
+}
+
+function hashtagsMd() {
+  return `# Hashtag & Keyword Library — Veritas Worldwide
+
+## Always-on brand
+- #VeritasWorldwide
+- #TheRecord
+- #PrimarySources
+- #PublicRecord
+- #DocumentaryRecord
+
+## Editorial / methodology
+- #EvidenceBased
+- #SourceFirst
+- #OpenSources
+- #InvestigativeJournalism
+- #MediaLiteracy
+
+## Topic clusters (use 1–2 max with brand tags)
+- #CentralBanking #FederalReserve
+- #Lobbying #AIPAC
+- #Surveillance #Intelligence
+- #DefenseSpending
+- #CorporatePower
+- #CampaignFinance
+
+## Platform notes
+- **X:** 1–3 hashtags max; prefer inline claims + link.
+- **Instagram:** 5–12 in first comment; brand tags first.
+- **LinkedIn:** 3–5 professional tags; avoid spam density.
+- **YouTube:** title keywords + description hashtags sparingly.
+
+## Keywords (SEO / discovery)
+veritas worldwide, the record documentary, primary source journalism,
+institutional power history, public record investigation, evidence taxonomy
+`
+}
+
+function wcagContrastMd() {
+  return `# Brand Color Contrast — WCAG 2.2 AA
+
+| Pair | Ratio (approx) | Body text | Large text / UI |
+|------|----------------|-----------|-----------------|
+| Ink #1A1A1A on Parchment #FAF8F5 | ~16:1 | Pass | Pass |
+| Crimson #8B1A1A on Parchment | ~8:1 | Pass | Pass |
+| White on Crimson #8B1A1A | ~7:1 | Pass | Pass |
+| Ink muted #666666 on Parchment | ~5.7:1 | Pass | Pass |
+| Gold #B8860B on Parchment | ~3.1:1 | Fail body | Pass large only |
+| Gold on Obsidian #0A0A0A | ~6:1 | Pass | Pass |
+
+## Rules
+- Never use gold for body copy on parchment.
+- CTAs: white text on crimson, or crimson text on parchment with underline/weight.
+- Dark mode raises crimson to #C43030 for AA on near-black surfaces.
+- Minimum touch target for branded controls: 44×44 CSS px.
+`
+}
+
 function brandGuideMd() {
   return `# Veritas Worldwide Press — Brand Kit v${KIT_VERSION}
 
@@ -517,6 +681,10 @@ function main() {
   writeSvg('04-social/social-banner-linkedin.svg', socialBanner({ w: 1584, h: 396 }))
   writeSvg('04-social/social-banner-youtube.svg', socialBanner({ w: 2560, h: 1440, title: 'The Record', subtitle: 'DOCUMENTARY ARCHIVE' }))
   writeSvg('04-social/story-1080x1920.svg', socialBanner({ w: 1080, h: 1920, title: 'The Record', subtitle: 'PRIMARY SOURCES  ·  PUBLIC RECORD' }))
+  writeSvg('04-social/highlight-chapters.svg', highlightCoverSvg('Chapters'))
+  writeSvg('04-social/highlight-sources.svg', highlightCoverSvg('Sources'))
+  writeSvg('04-social/highlight-record.svg', highlightCoverSvg('The Record'))
+  writeFileSync(join(KIT, '04-social', 'SOCIAL-ASSET-MATRIX.md'), socialAssetMatrixMd())
 
   writeSvg('05-og/og-image.svg', ogImage())
 
@@ -564,7 +732,12 @@ Editorial and licensing: rights@veritasworldwide.com
   // Templates
   writeSvg('09-templates/letterhead.svg', letterheadSvg())
   writeSvg('09-templates/press-release-header.svg', pressReleaseHeaderSvg())
+  writeSvg('09-templates/business-card.svg', businessCardSvg())
   writeFileSync(join(KIT, '09-templates', 'email-signature.html'), emailSignatureHtml())
+  writeFileSync(join(KIT, '06-tokens', 'tokens.css'), tokensCss())
+  writeFileSync(join(KIT, '07-docs', 'HASHTAGS.md'), hashtagsMd())
+  writeFileSync(join(KIT, '07-docs', 'WCAG-CONTRAST.md'), wcagContrastMd())
+  writeFileSync(join(KIT, '07-docs', 'SOCIAL-ASSET-MATRIX.md'), socialAssetMatrixMd())
 
   // Rasterize key assets
   const rasters = [
@@ -582,6 +755,10 @@ Editorial and licensing: rights@veritasworldwide.com
     ['03-wordmarks/wordmark.svg', '03-wordmarks/wordmark.png', 720],
     ['09-templates/letterhead.svg', '09-templates/letterhead.png', 850],
     ['09-templates/press-release-header.svg', '09-templates/press-release-header.png', 1200],
+    ['09-templates/business-card.svg', '09-templates/business-card.png', 1050],
+    ['04-social/highlight-chapters.svg', '04-social/highlight-chapters.png', 400],
+    ['04-social/highlight-sources.svg', '04-social/highlight-sources.png', 400],
+    ['04-social/highlight-record.svg', '04-social/highlight-record.png', 400],
   ]
   for (const [src, dest, w] of rasters) {
     try {
@@ -618,7 +795,7 @@ Editorial and licensing: rights@veritasworldwide.com
       { id: '06-tokens', title: 'Design Tokens', description: 'Colors, type, usage rules (JSON)' },
       { id: '07-docs', title: 'Documentation', description: 'Brand guide and alt-text manifest' },
       { id: '08-ai-generated', title: 'AI References', description: 'Grok Imagine brand direction renders' },
-      { id: '09-templates', title: 'Templates', description: 'Letterhead, email signature, press header' },
+      { id: '09-templates', title: 'Templates', description: 'Letterhead, email signature, press header, business card' },
     ],
     downloads: [
       { label: 'Ultimate Brand Kit (.zip)', href: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip', adminOnly: true },
@@ -629,11 +806,24 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Apple touch icon (PNG)', href: '/brand-kit/02-icons/apple-touch-icon.png' },
       { label: 'Wordmark (SVG)', href: '/brand-kit/03-wordmarks/wordmark.svg' },
       { label: 'OG image (PNG)', href: '/brand-kit/05-og/og-image.png' },
+      { label: 'X banner (SVG)', href: '/brand-kit/04-social/social-banner-x.svg' },
+      { label: 'IG story (SVG)', href: '/brand-kit/04-social/story-1080x1920.svg' },
+      { label: 'Social asset matrix', href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md' },
       { label: 'Email signature (HTML)', href: '/brand-kit/09-templates/email-signature.html' },
       { label: 'Letterhead (SVG)', href: '/brand-kit/09-templates/letterhead.svg' },
+      { label: 'Business card (SVG)', href: '/brand-kit/09-templates/business-card.svg' },
       { label: 'Brand guide (MD)', href: '/brand-kit/07-docs/BRAND-GUIDE.md' },
+      { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },
+      { label: 'Tokens (CSS)', href: '/brand-kit/06-tokens/tokens.css' },
     ],
+    platformAssets: {
+      x: { profile: '/brand-kit/04-social/social-profile-400.png', banner: '/brand-kit/04-social/social-banner-x.svg' },
+      instagram: { profile: '/brand-kit/04-social/social-profile-400.png', story: '/brand-kit/04-social/story-1080x1920.svg' },
+      linkedin: { logo: '/brand-kit/01-logos/logo-mark-512.png', banner: '/brand-kit/04-social/social-banner-linkedin.svg' },
+      facebook: { profile: '/brand-kit/04-social/social-profile-400.png', cover: '/brand-kit/04-social/social-banner-facebook.svg' },
+      youtube: { profile: '/brand-kit/02-icons/app-icon-512.png', banner: '/brand-kit/04-social/social-banner-youtube.svg' },
+    },
   }
   writeFileSync(join(KIT, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n')
 

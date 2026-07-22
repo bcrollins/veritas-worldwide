@@ -23,11 +23,20 @@ const PREVIEW_ASSETS = [
   { label: 'Press Header', href: '/brand-kit/09-templates/press-release-header.svg', bg: 'bg-parchment' },
 ]
 
+const TOKEN_SWATCHES = [
+  { name: 'Parchment', hex: '#FAF8F5', text: 'text-ink' },
+  { name: 'Ink', hex: '#1A1A1A', text: 'text-white' },
+  { name: 'Crimson', hex: '#8B1A1A', text: 'text-white' },
+  { name: 'Gold', hex: '#B8860B', text: 'text-white' },
+  { name: 'Obsidian', hex: '#0A0A0A', text: 'text-white' },
+] as const
+
 export default function AdminBrandKit() {
   const [manifest, setManifest] = useState<BrandManifest | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [zipOk, setZipOk] = useState<boolean | null>(null)
   const [zipBytes, setZipBytes] = useState<number | null>(null)
+  const [copied, setCopied] = useState('')
 
   useEffect(() => {
     let cancelled = false
@@ -58,6 +67,12 @@ export default function AdminBrandKit() {
     zipBytes != null
       ? `Download Ultimate Brand Kit (.zip · ${(zipBytes / 1024).toFixed(0)} KB)`
       : 'Download Ultimate Brand Kit (.zip)'
+
+  const copyText = (text: string, label: string) => {
+    void navigator.clipboard.writeText(text)
+    setCopied(label)
+    window.setTimeout(() => setCopied(''), 1800)
+  }
 
   return (
     <div className="space-y-6">
@@ -200,23 +215,32 @@ export default function AdminBrandKit() {
 
       {/* Tokens snapshot */}
       <section className="rounded-lg border border-white/5 bg-white/5 p-5">
-        <h2 className="mb-4 font-sans text-xs font-bold uppercase tracking-widest text-white/50">
-          Brand Tokens (Law)
-        </h2>
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <h2 className="font-sans text-xs font-bold uppercase tracking-widest text-white/50">
+            Brand Tokens (Law)
+          </h2>
+          {copied && (
+            <span className="font-sans text-[10px] text-emerald-400" role="status">
+              Copied {copied}
+            </span>
+          )}
+        </div>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-          {[
-            { name: 'Parchment', hex: '#FAF8F5', text: 'text-ink' },
-            { name: 'Ink', hex: '#1A1A1A', text: 'text-white' },
-            { name: 'Crimson', hex: '#8B1A1A', text: 'text-white' },
-            { name: 'Gold', hex: '#B8860B', text: 'text-white' },
-            { name: 'Obsidian', hex: '#0A0A0A', text: 'text-white' },
-          ].map(c => (
-            <div key={c.hex} className="overflow-hidden rounded-md border border-white/10">
+          {TOKEN_SWATCHES.map(c => (
+            <button
+              key={c.hex}
+              type="button"
+              onClick={() => copyText(c.hex, c.name)}
+              className="overflow-hidden rounded-md border border-white/10 text-left transition-colors hover:border-crimson/50"
+              title={`Copy ${c.hex}`}
+            >
               <div className={`flex h-16 items-end p-2 ${c.text}`} style={{ backgroundColor: c.hex }}>
                 <span className="font-mono text-[10px] opacity-90">{c.hex}</span>
               </div>
-              <p className="bg-black/40 px-2 py-1.5 font-sans text-[10px] text-white/60">{c.name}</p>
-            </div>
+              <p className="bg-black/40 px-2 py-1.5 font-sans text-[10px] text-white/60">
+                {c.name} · tap to copy
+              </p>
+            </button>
           ))}
         </div>
         <p className="mt-4 font-sans text-[11px] leading-relaxed text-white/35">
@@ -257,6 +281,69 @@ export default function AdminBrandKit() {
           >
             Email signature →
           </a>
+          <a
+            href="/brand-kit/07-docs/HASHTAGS.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Hashtags →
+          </a>
+          <a
+            href="/brand-kit/06-tokens/tokens.css"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            tokens.css →
+          </a>
+          <a
+            href="/admin/social-hub"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Social Hub →
+          </a>
+        </div>
+      </section>
+
+      {/* Platform matrix */}
+      <section className="rounded-lg border border-white/5 bg-white/5 p-5">
+        <h2 className="mb-3 font-sans text-xs font-bold uppercase tracking-widest text-white/50">
+          Platform upload map
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] text-left font-sans text-[11px]">
+            <thead>
+              <tr className="border-b border-white/10 text-white/40">
+                <th className="px-2 py-2 font-medium">Platform</th>
+                <th className="px-2 py-2 font-medium">Profile / logo</th>
+                <th className="px-2 py-2 font-medium">Banner</th>
+              </tr>
+            </thead>
+            <tbody className="text-white/70">
+              {[
+                ['X', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/social-banner-x.svg'],
+                ['Instagram', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/story-1080x1920.svg'],
+                ['LinkedIn', '/brand-kit/01-logos/logo-mark-512.png', '/brand-kit/04-social/social-banner-linkedin.svg'],
+                ['Facebook', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/social-banner-facebook.svg'],
+                ['YouTube', '/brand-kit/02-icons/app-icon-512.png', '/brand-kit/04-social/social-banner-youtube.svg'],
+              ].map(row => (
+                <tr key={row[0]} className="border-b border-white/5">
+                  <td className="px-2 py-2 font-semibold text-white/90">{row[0]}</td>
+                  <td className="px-2 py-2">
+                    <a href={row[1]} className="text-crimson hover:underline" target="_blank" rel="noopener noreferrer">
+                      {row[1].split('/').pop()}
+                    </a>
+                  </td>
+                  <td className="px-2 py-2">
+                    <a href={row[2]} className="text-crimson hover:underline" target="_blank" rel="noopener noreferrer">
+                      {row[2].split('/').pop()}
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 

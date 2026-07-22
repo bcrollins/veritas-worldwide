@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Instagram highlight: Sources">
+  <rect width="400" height="400" fill="#0A0A0A"/>
+  <circle cx="200" cy="175" r="72" fill="none" stroke="#8B1A1A" stroke-width="4"/>
+  <circle cx="200" cy="175" r="60" fill="none" stroke="#8B1A1A" stroke-width="1.5" opacity="0.7"/>
+  <path d="M152 130 L170 130 C172 130 173 131 174 133 L197 198 L200 206 L203 198 L226 133 C227 131 228 130 230 130 L248 130 C251 130 252 132 251 135 L208 220 C206 225 200 228 200 228 C200 228 194 225 192 220 L149 135 C148 132 149 130 152 130 Z" fill="#FFFFFF"/>
+  <rect x="148" y="126" width="36" height="5" rx="1" fill="#FFFFFF"/>
+  <rect x="216" y="126" width="36" height="5" rx="1" fill="#FFFFFF"/>
+  <text x="200" y="300" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="4" fill="#FFFFFF">SOURCES</text>
+</svg>

@@ -46,7 +46,16 @@ const required = [
   '09-templates/press-release-header.svg',
   '07-docs/USAGE-LEGAL.md',
   '07-docs/CRISIS-MEDIA.md',
+  '07-docs/HASHTAGS.md',
+  '07-docs/WCAG-CONTRAST.md',
+  '07-docs/SOCIAL-ASSET-MATRIX.md',
+  '06-tokens/tokens.css',
   '04-social/story-1080x1920.svg',
+  '04-social/SOCIAL-ASSET-MATRIX.md',
+  '04-social/highlight-chapters.svg',
+  '04-social/highlight-sources.svg',
+  '04-social/highlight-record.svg',
+  '09-templates/business-card.svg',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
 ]
 
@@ -130,6 +139,11 @@ if (base) {
     '/brand-kit/02-icons/apple-touch-icon.png',
     '/brand-kit/09-templates/email-signature.html',
     '/brand-kit/09-templates/letterhead.svg',
+    '/brand-kit/09-templates/business-card.svg',
+    '/brand-kit/06-tokens/tokens.css',
+    '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md',
+    '/brand-kit/04-social/highlight-chapters.svg',
+    '/brand-kit/07-docs/HASHTAGS.md',
     '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
     '/og-image.png',
   ]

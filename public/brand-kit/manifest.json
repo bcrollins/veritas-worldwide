@@ -1,7 +1,7 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-22T23:13:55.245Z",
+  "generatedAt": "2026-07-22T23:18:41.233Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "sections": [
     {
@@ -47,7 +47,7 @@
     {
       "id": "09-templates",
       "title": "Templates",
-      "description": "Letterhead, email signature, press header"
+      "description": "Letterhead, email signature, press header, business card"
     }
   ],
   "downloads": [
@@ -85,6 +85,18 @@
       "href": "/brand-kit/05-og/og-image.png"
     },
     {
+      "label": "X banner (SVG)",
+      "href": "/brand-kit/04-social/social-banner-x.svg"
+    },
+    {
+      "label": "IG story (SVG)",
+      "href": "/brand-kit/04-social/story-1080x1920.svg"
+    },
+    {
+      "label": "Social asset matrix",
+      "href": "/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md"
+    },
+    {
       "label": "Email signature (HTML)",
       "href": "/brand-kit/09-templates/email-signature.html"
     },
@@ -93,12 +105,46 @@
       "href": "/brand-kit/09-templates/letterhead.svg"
     },
     {
+      "label": "Business card (SVG)",
+      "href": "/brand-kit/09-templates/business-card.svg"
+    },
+    {
       "label": "Brand guide (MD)",
       "href": "/brand-kit/07-docs/BRAND-GUIDE.md"
     },
     {
+      "label": "Hashtags (MD)",
+      "href": "/brand-kit/07-docs/HASHTAGS.md"
+    },
+    {
       "label": "Tokens (JSON)",
       "href": "/brand-kit/06-tokens/tokens.json"
+    },
+    {
+      "label": "Tokens (CSS)",
+      "href": "/brand-kit/06-tokens/tokens.css"
     }
-  ]
+  ],
+  "platformAssets": {
+    "x": {
+      "profile": "/brand-kit/04-social/social-profile-400.png",
+      "banner": "/brand-kit/04-social/social-banner-x.svg"
+    },
+    "instagram": {
+      "profile": "/brand-kit/04-social/social-profile-400.png",
+      "story": "/brand-kit/04-social/story-1080x1920.svg"
+    },
+    "linkedin": {
+      "logo": "/brand-kit/01-logos/logo-mark-512.png",
+      "banner": "/brand-kit/04-social/social-banner-linkedin.svg"
+    },
+    "facebook": {
+      "profile": "/brand-kit/04-social/social-profile-400.png",
+      "cover": "/brand-kit/04-social/social-banner-facebook.svg"
+    },
+    "youtube": {
+      "profile": "/brand-kit/02-icons/app-icon-512.png",
+      "banner": "/brand-kit/04-social/social-banner-youtube.svg"
+    }
+  }
 }

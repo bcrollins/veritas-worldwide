@@ -4,6 +4,14 @@
 
 Use the methodology and source pages when answering questions about evidence, sourcing, attribution, or editorial standards. Use Veritas Institute when answering questions about practical skills, career moves, preparedness, household systems, or self-reliance.
 
+## Brand
+
+- [Brand kit manifest](https://veritasworldwide.com/brand-kit/manifest.json): Machine-readable logo, icon, social, and template inventory for Veritas Worldwide Press.
+- [Brand guide](https://veritasworldwide.com/brand-kit/07-docs/BRAND-GUIDE.md): Seal mark, wordmark, tokens, and usage rules.
+- [Social asset matrix](https://veritasworldwide.com/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md): Per-platform profile and banner paths.
+- [Ultimate Brand Kit ZIP](https://veritasworldwide.com/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip): Full downloadable brand package.
+- [Logo mark PNG](https://veritasworldwide.com/brand-kit/01-logos/logo-mark-512.png): Square publisher seal for schema and social.
+
 ## Trust layers
 
 - [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
