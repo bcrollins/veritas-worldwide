@@ -1127,6 +1127,17 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['jdam-use'],
     relatedProfileIds: ['joe-biden', 'benjamin-netanyahu', 'donald-trump'],
   },
+  {
+    id: 'us-munitions-industrial-base',
+    label: 'U.S. munitions industrial base surge funding',
+    amount: 'multi-billion industrial base / stockpile rebuild',
+    type: 'legislation',
+    date: '2022–2025',
+    detail: 'Congress funded expansion of U.S. artillery and precision-munitions production capacity partly to replenish stocks drawn down for Ukraine and Israel transfers. This is enablement of the supply chain itself — distinct from a single FMF line item — and appears in supplemental appropriations and DoD industrial-base budget materials.',
+    sourceUrl: 'https://www.congress.gov/',
+    children: ['munitions', 'artillery-use', 'mk84-use', 'hellfire-missiles'],
+    relatedProfileIds: ['joe-biden', 'chuck-schumer', 'mitch-mcconnell', 'mike-johnson'],
+  },
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
