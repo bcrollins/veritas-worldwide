@@ -23,7 +23,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg",
+    heroImage: '/chapters/heroes/foreword.jpg',
     keywords: ["methodology", "evidence", "conspiracy theory", "CIA", "Warren Commission", "primary sources", "historiography"],
   },
   {
@@ -34,7 +34,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "2025",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Times_Square_Ball_from_above.jpg/1280px-Times_Square_Ball_from_above.jpg",
+    heroImage: '/chapters/heroes/overview.jpg',
     keywords: ["AIPAC", "BlackRock", "Vanguard", "State Street", "media consolidation", "seed oils", "chronic disease", "Pfizer", "lobbying", "modern slavery", "Kushner", "Soros", "Freemasonry", "Skull and Bones"],
   },
   {
@@ -45,7 +45,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1694–1836",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG/1280px-Banco_de_Inglaterra%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_141.JPG",
+    heroImage: '/chapters/heroes/chapter-1.jpg',
     keywords: ["Rothschild", "central banking", "Bank of England", "Waterloo", "Nathan Rothschild", "First Bank", "Second Bank", "money creation", "Frankfurt", "Wilhelm IX"],
   },
   {
@@ -56,7 +56,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1832–1901",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Andrew_jackson_head.jpg/800px-Andrew_jackson_head.jpg",
+    heroImage: '/chapters/heroes/chapter-2.jpg',
     keywords: ["Andrew Jackson", "Bank War", "Lincoln", "greenbacks", "Second Bank", "Nicholas Biddle", "assassination", "Legal Tender Act", "central banking"],
   },
   {
@@ -67,7 +67,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1907–1913",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/GA_Jekyll_Island_Club_HD_Clubhouse01.jpg/1280px-GA_Jekyll_Island_Club_HD_Clubhouse01.jpg",
+    heroImage: '/chapters/heroes/chapter-3.jpg',
     keywords: ["Jekyll Island", "Federal Reserve", "J.P. Morgan", "Aldrich", "Warburg", "central bank", "1913"],
   },
   {
@@ -78,7 +78,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1914–1919",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg",
+    heroImage: '/chapters/heroes/chapter-4.jpg',
     keywords: ["Warburg", "World War I", "Paul Warburg", "Max Warburg", "Federal Reserve", "banking"],
   },
   {
@@ -89,7 +89,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1920–1971",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Henry_ford_1919.jpg/800px-Henry_ford_1919.jpg",
+    heroImage: '/chapters/heroes/chapter-5.jpg',
     keywords: ["Henry Ford", "gold standard", "Dearborn Independent", "industrialism", "currency"],
   },
   {
@@ -100,7 +100,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1897–1948",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Balfour_declaration_unmarked.jpg/960px-Balfour_declaration_unmarked.jpg",
+    heroImage: '/chapters/heroes/chapter-6.jpg',
     keywords: ["Zionism", "Balfour Declaration", "Herzl", "Palestine", "British Mandate", "Israel"],
   },
   {
@@ -111,7 +111,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1949–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg/1280px-Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg",
+    heroImage: '/chapters/heroes/chapter-7.jpg',
     keywords: ["Mossad", "intelligence", "Israel", "espionage", "covert operations"],
   },
   {
@@ -122,7 +122,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1963",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/800px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg",
+    heroImage: '/chapters/heroes/chapter-8.jpg',
     keywords: ["JFK", "Kennedy", "Dimona", "AIPAC", "nuclear", "Israel"],
   },
   {
@@ -133,7 +133,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1963",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Dealey_Plaza_2003.jpg/1280px-Dealey_Plaza_2003.jpg",
+    heroImage: '/chapters/heroes/chapter-9.jpg',
     keywords: ["JFK", "assassination", "Warren Commission", "Oswald", "CIA", "Dallas"],
   },
   {
@@ -144,7 +144,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1971–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Nixon_30-0316a.jpg/960px-Nixon_30-0316a.jpg",
+    heroImage: '/chapters/heroes/chapter-10.jpg',
     keywords: ["petrodollar", "Kissinger", "Saudi Arabia", "oil", "USD reserve currency", "Nixon"],
   },
   {
@@ -155,7 +155,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1921–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harold_Pratt_House_north_staircase_jeh.jpg/1280px-Harold_Pratt_House_north_staircase_jeh.jpg",
+    heroImage: '/chapters/heroes/chapter-11.jpg',
     keywords: ["Bilderberg", "CFR", "Trilateral Commission", "BIS", "elite", "globalism"],
   },
   {
@@ -166,7 +166,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "Explainer",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg/1280px-Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg",
+    heroImage: '/chapters/heroes/chapter-12.jpg',
     keywords: ["Federal Reserve", "monetary policy", "money creation", "interest rates", "FOMC"],
   },
   {
@@ -177,7 +177,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "2007–2010",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wall_Street_-_New_York_Stock_Exchange.jpg/1280px-Wall_Street_-_New_York_Stock_Exchange.jpg",
+    heroImage: '/chapters/heroes/chapter-13.jpg',
     keywords: ["2008 crisis", "subprime", "bailout", "Lehman Brothers", "TARP", "Goldman Sachs"],
   },
   {
@@ -188,7 +188,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1963–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1280px-US_Capitol_west_side.JPG",
+    heroImage: '/chapters/heroes/chapter-14.jpg',
     keywords: ["AIPAC", "lobbying", "Congress", "Israel", "campaign finance", "FEC"],
   },
   {
@@ -210,7 +210,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1967",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg/1280px-USS_Liberty_%28AGTR-5%29_underway_in_Chesapeake_Bay_on_29_July_1967_%28K-39927%29.jpg",
+    heroImage: '/chapters/heroes/chapter-16.jpg',
     keywords: ["USS Liberty", "Israel", "military", "1967", "Six-Day War", "cover-up"],
   },
   {
@@ -221,7 +221,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1968",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Robert_Kennedy_CORE_rally_speech2.jpg/960px-Robert_Kennedy_CORE_rally_speech2.jpg",
+    heroImage: '/chapters/heroes/chapter-17.jpg',
     keywords: ["RFK", "Robert Kennedy", "assassination", "Sirhan Sirhan", "1968"],
   },
   {
@@ -232,7 +232,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1948–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Aerial_view_of_CIA_headquarters%2C_Langley%2C_Virginia_14762v.jpg",
+    heroImage: '/chapters/heroes/chapter-18.jpg',
     keywords: ["Operation Mockingbird", "CIA", "media", "propaganda", "journalism", "Church Committee"],
   },
   {
@@ -243,7 +243,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1953–1973",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Allen_Dulles%2C_CIA_photo_portrait.jpg/440px-Allen_Dulles%2C_CIA_photo_portrait.jpg",
+    heroImage: '/chapters/heroes/chapter-19.jpg',
     keywords: ["MKUltra", "CIA", "mind control", "LSD", "experimentation", "Church Committee"],
   },
   {
@@ -254,7 +254,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1910–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG",
+    heroImage: '/chapters/heroes/chapter-20.jpg',
     keywords: ["Rockefeller", "medicine", "pharmaceutical", "Flexner Report", "chronic disease", "healthcare"],
   },
   {
@@ -265,7 +265,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1955–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Typhoid_inoculation2.jpg/960px-Typhoid_inoculation2.jpg",
+    heroImage: '/chapters/heroes/chapter-21.jpg',
     keywords: ["vaccines", "polio", "COVID-19", "pharmaceutical", "FDA", "public health"],
   },
   {
@@ -276,7 +276,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "2001",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg/1280px-New_York_-_National_September_11_Memorial_South_Pool_-_April_2012_-_9693C.jpg",
+    heroImage: '/chapters/heroes/chapter-22.jpg',
     keywords: ["9/11", "September 11", "terrorism", "War on Terror", "PATRIOT Act", "Commission"],
   },
   {
@@ -287,7 +287,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1971–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg",
+    heroImage: '/chapters/heroes/chapter-23.jpg',
     keywords: ["War on Drugs", "Nixon", "DEA", "incarceration", "drug policy", "CIA"],
   },
   {
@@ -298,7 +298,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1945–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg",
+    heroImage: '/chapters/heroes/chapter-24.jpg',
     keywords: ["fluoride", "water", "public health", "industrial waste", "EPA"],
   },
   {
@@ -309,7 +309,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1910–1913",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg",
+    heroImage: '/chapters/heroes/chapter-25.jpg',
     keywords: ["Titanic", "Federal Reserve", "Astor", "Guggenheim", "Straus", "conspiracy"],
   },
   {
@@ -320,7 +320,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1872–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Owl_Shrine.jpg/960px-Owl_Shrine.jpg",
+    heroImage: '/chapters/heroes/chapter-26.jpg',
     keywords: ["Bohemian Grove", "elite", "secret society", "California", "power"],
   },
   {
@@ -331,7 +331,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1947–Present",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg",
+    heroImage: '/chapters/heroes/chapter-27.jpg',
     keywords: ["surveillance", "ECHELON", "NSA", "Pegasus", "Snowden", "PRISM", "privacy"],
   },
   {
@@ -342,7 +342,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "1991–2026",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/9/95/Ghislaine_Maxwell_%28cropped%29.jpg",
+    heroImage: '/chapters/heroes/chapter-28.jpg',
     keywords: ["Epstein", "Maxwell", "trafficking", "intelligence", "blackmail", "court filings"],
   },
   {
@@ -353,7 +353,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "Methodology",
     author: "Veritas Worldwide",
     publishDate: "April 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg",
+    heroImage: '/chapters/heroes/chapter-29.jpg',
     keywords: ["evidence", "public records", "FOIA", "Congress.gov", "FEC", "SEC EDGAR", "USAspending", "Federal Register", "CourtListener", "source hierarchy", "research methodology"],
   },
   {
@@ -364,7 +364,7 @@ const rawChapterMeta: ChapterMetadata[] = [
     dateRange: "",
     author: "Veritas Worldwide",
     publishDate: "March 2026",
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/LOC_Main_Reading_Room_Highsmith.jpg/1280px-LOC_Main_Reading_Room_Highsmith.jpg",
+    heroImage: '/chapters/heroes/epilogue.jpg',
     keywords: ["research", "primary sources", "FOIA", "archives", "verification"],
   },
 ];
