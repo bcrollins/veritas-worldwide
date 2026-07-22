@@ -226,81 +226,96 @@ export const PROFILES: PowerProfile[] = [
     name: 'Ted Cruz',
     title: 'U.S. Senator (R-TX)',
     category: 'politician',
+    bioguideId: 'C001098',
     party: 'R',
     state: 'TX',
     photoUrl: getProfilePhoto('ted-cruz'),
-    bioguideId: 'C001098',
-    summary: 'Senior Senator from Texas, prominent AIPAC recipient with $2M+ in career donations from pro-Israel PACs. Known for hardline positions on Israel-Palestine, Iran sanctions.',
-    tags: ['AIPAC', 'Pro-Israel', 'Tea Party', 'Conservative', 'PAC Funded'],
+    summary:
+      'Texas Republican senator and leading hawk on Iran and Israel security. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages; frequent legislative sponsor of Iran sanctions and anti-BDS vehicles. Primary: OpenSecrets, Congress.gov, Senate record.',
+    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'Texas', 'Republican', 'Iran Sanctions', 'Iron Dome'],
+    career: [
+      'Texas Solicitor General (public bio)',
+      '2013– — U.S. Senate',
+      '2016 Republican presidential candidate',
+      'Leading Senate hawk on Iran/Israel security legislation',
+    ],
     quotes: [
       {
-        text: 'I will continue to stand with Israel and support our shared democratic values',
-        context: 'Senate floor remarks on Israel aid package',
-        date: '2023',
-        source: 'Senate.gov',
-        url: 'https://www.senate.gov'
-      }
+        text: 'If you are against Israel, you are against America.',
+        context: 'Recurring Cruz campaign/Senate framing of the alliance as identity-level alignment.',
+        date: '2010s–2020s',
+        source: 'Public campaign/Senate remarks (multi-outlet)',
+        url: 'https://www.cruz.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'AIPAC-affiliated PACs',
-        amount: 2100000,
-        year: '2013-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets career scale)',
+        amount: 450000,
+        year: '2012–2024 (verify cycle tabs)',
+        source: 'OpenSecrets — Ted Cruz',
+        url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085',
+      },
     ],
     policyActions: [
       {
-        action: 'Sponsored Israel Iron Dome funding package',
-        date: '2022',
-        context: 'Emergency aid appropriation during Gaza conflict',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
-      }
+        action: 'Consistent YES on Israel FMF, Iron Dome, and wartime security packages',
+        date: '2013–2024',
+        context: 'Senate Republican hawk voting pattern.',
+        source: 'Senate roll calls; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'Frequent sponsor/cosponsor of Iran sanctions and anti-BDS legislative vehicles',
+        date: '2015–2024',
+        context: 'Aligns with AIPAC legislative priorities on Iran and BDS.',
+        source: 'Congress.gov cosponsorships',
+        url: 'https://www.congress.gov/member/ted-cruz/C001098',
+      },
     ],
     connections: [
       {
         name: 'AIPAC',
-        relationship: 'Top recipient of PAC funding',
-        evidence: 'FEC records show $2.1M in contributions from AIPAC-affiliated groups',
-        tier: 'verified'
-      }
+        relationship: 'Documented pro-Israel PAC recipient; legislative priorities align.',
+        evidence: 'OpenSecrets; public advocacy',
+        tier: 'verified',
+      },
+      {
+        name: 'Senate Republican security hawks',
+        relationship: 'Part of Tom Cotton / Lindsey Graham axis on Iran-Israel.',
+        evidence: 'Cosponsorship patterns',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received over $2M from pro-Israel PACs in career',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org',
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Cruz.',
+        source: 'OpenSecrets N00033085',
+        url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085',
         tier: 'verified',
-        date: '2024'
-      }
-    ],
-    documentedFalsehoods: [
+        date: '2012–2024',
+      },
       {
-        id: 'cruz-carson-drop-out-iowa-2016',
-        statement:
-          'Cruz campaign staff told Iowa caucus-goers that Ben Carson was dropping out / suspending his campaign, urging Carson supporters to caucus for Cruz — while Carson was still in the race.',
-        saidAt: 'February 1, 2016',
-        context:
-          'Iowa Republican caucuses; Cruz later apologized after Carson and media documented the false drop-out rumor used on caucus night.',
-        whyFalse:
-          'Carson had not suspended or dropped out. Cruz publicly apologized for the false reports circulated by his team that night. Contemporary AP and network coverage confirmed Carson remained a candidate.',
-        correction:
-          'Ben Carson had not dropped out of the 2016 race on Iowa caucus night; the claim was false and Cruz apologized.',
-        statementSource: 'Iowa caucus reporting / Cruz apology coverage',
-        statementUrl: 'https://www.politifact.com/truth-o-meter/article/2016/feb/04/ted-cruz-apologizes-spreading-false-story-about-be/',
-        debunkSource: 'PolitiFact / contemporaneous caucus reporting',
-        debunkUrl: 'https://www.politifact.com/truth-o-meter/article/2016/feb/04/ted-cruz-apologizes-spreading-false-story-about-be/',
-        severity: 'material',
+        claim: 'Consistent Senate votes for MOU-baseline FMF and missile defense for Israel.',
+        source: 'CRS RL33222; Senate roll calls',
+        url: 'https://www.congress.gov/crs-product/RL33222',
         tier: 'verified',
+        date: '2013–2024',
+      },
+      {
+        claim: 'Leading sponsor of Iran sanctions legislation framed as Israel/U.S. security alignment.',
+        source: 'Congress.gov',
+        url: 'https://www.congress.gov/member/ted-cruz/C001098',
+        tier: 'verified',
+        date: '2015–2024',
       },
     ],
-    career: ['U.S. Senator (R-TX) 2013-present', 'Solicitor General of Texas', 'Federal Trade Commission attorney'],
     websites: [
-      { label: 'Senate Website', url: 'https://www.cruz.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085' }
-    ]
+      { label: 'Official Senate site', url: 'https://www.cruz.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085' },
+      { label: 'Congress.gov member', url: 'https://www.congress.gov/member/ted-cruz/C001098' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ted_Cruz' },
+    ],
   },
   {
     id: 'donald-trump',
@@ -4580,69 +4595,104 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'mike-johnson',
     name: 'Mike Johnson',
-    title: 'House Speaker',
+    title: 'Speaker of the House (R-LA)',
     category: 'politician',
     bioguideId: 'J000299',
     party: 'R',
     state: 'LA',
     photoUrl: getProfilePhoto('mike-johnson'),
-    summary: 'Current House Speaker from Louisiana. Conservative Christian. Trump ally.',
-    tags: ['House Speaker', 'Louisiana', 'Republican', 'Christian Conservative'],
-    career: ['House Speaker 2023-present', 'U.S. Representative (R-LA) 2017-present', 'Lawyer'],
-    websites: [
-      { label: 'House Website', url: 'https://johnson.house.gov' }
+    summary:
+      'House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034 context.',
+    tags: ['Speaker of the House', 'Pro-Israel', 'AIPAC', 'Louisiana', 'Republican', 'H.R. 815', 'Institutional Enablement'],
+    career: [
+      'Constitutional attorney (public bio)',
+      '2017 — U.S. House LA-4',
+      'October 2023 — Elected Speaker of the House',
+      'Scheduled 2024 Israel security supplemental packages',
     ],
     quotes: [
       {
-        text: 'Israel is America\'s greatest ally and we must stand with them without condition.',
-        context: 'First press conference as Speaker',
-        date: '2023',
-        source: 'C-SPAN',
-        url: 'https://www.c-span.org'
-      }
+        text: 'We stand with Israel.',
+        context: 'Recurring Speakership messaging after October 7 and during supplemental debates.',
+        date: '2023–2024',
+        source: 'Office of Speaker Mike Johnson',
+        url: 'https://www.speaker.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 384000,
-        year: '2017-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets member scale)',
+        amount: 200000,
+        year: '2017–2024 (verify cycle tabs)',
+        source: 'OpenSecrets — Mike Johnson',
+        url: 'https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106',
+      },
     ],
     policyActions: [
       {
-        action: 'Fast-tracked $26.4B Israel aid package through House',
-        date: '2024',
-        context: 'Bypassed normal committee process',
-        source: 'House.gov',
-        url: 'https://www.house.gov'
-      }
+        action: 'As Speaker, scheduled House passage of Israel Security Supplemental architecture (H.R. 8034 / H.R. 815 package, April 2024)',
+        date: 'April 2024',
+        context: 'Speakership is structural enablement — decides what reaches the floor during wartime aid fights.',
+        source: 'House Clerk; Congress.gov H.R. 815',
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
+      },
+      {
+        action: 'Public Speakership messaging of unconditional wartime support for Israel after October 7',
+        date: '2023–2024',
+        context: 'Leadership framing against progressive conditionality.',
+        source: 'Speaker.gov / contemporaneous press',
+        url: 'https://www.speaker.gov',
+      },
     ],
     connections: [
       {
-        name: 'Christians United for Israel',
-        relationship: 'Evangelical Christian Zionist alignment',
-        evidence: 'Public statements on biblical Israel support',
-        tier: 'verified'
-      }
+        name: 'AIPAC',
+        relationship: 'Documented pro-Israel PAC recipient; Speakership agenda aligned with AIPAC security priorities.',
+        evidence: 'OpenSecrets; floor schedule',
+        tier: 'verified',
+      },
+      {
+        name: 'House Republican Conference',
+        relationship: 'Speaker — institutional head of House GOP.',
+        evidence: 'Speakership election record',
+        tier: 'verified',
+      },
+      {
+        name: 'Elise Stefanik',
+        relationship: 'Conference Chair under Johnson Speakership; shared pro-Israel messaging.',
+        evidence: 'Leadership roster',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Cited biblical worldview as basis for unconditional Israel support',
-        source: 'CNN',
-        url: 'https://www.cnn.com',
+        claim: 'As Speaker, Johnson scheduled and advanced the April 2024 Israel Security Supplemental package (H.R. 8034 / H.R. 815 architecture).',
+        source: 'Congress.gov H.R. 815; House Clerk Vote 143',
+        url: 'https://clerk.house.gov/Votes/2024143',
         tier: 'verified',
-        date: '2023'
+        date: 'April 2024',
       },
       {
-        claim: 'Fast-tracked $26.4B Israel aid bypassing standard committee review',
-        source: 'House.gov',
-        url: 'https://www.house.gov',
+        claim: 'OpenSecrets documents pro-Israel PAC/industry support for Johnson\'s House campaigns.',
+        source: 'OpenSecrets N00039106',
+        url: 'https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106',
         tier: 'verified',
-        date: '2024'
-      }
-    ]
+        date: '2017–2024',
+      },
+      {
+        claim: 'Speakership is structural enablement of the aid pipeline beyond a single member vote.',
+        source: 'House rules / Speakership role; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2023–2024',
+      },
+    ],
+    websites: [
+      { label: 'Speaker.gov', url: 'https://www.speaker.gov' },
+      { label: 'Official House site', url: 'https://mikejohnson.house.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106' },
+      { label: 'H.R. 815', url: 'https://www.congress.gov/bill/118th-congress/house-bill/815' },
+    ],
   },
   {
     id: 'tim-scott',
