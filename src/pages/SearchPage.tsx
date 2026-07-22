@@ -279,6 +279,19 @@ export default function SearchPage() {
       'lobby',
       'iron dome',
       'gallant',
+      'hebron',
+      'huwara',
+      'settler',
+      'settlement',
+      'hellfire',
+      'f-35',
+      'f35',
+      'blockade',
+      'lebanon',
+      'qana',
+      'cast lead',
+      'stefanik',
+      'aipac',
     ]
     const hits = haystack.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
     if (!hits) return []

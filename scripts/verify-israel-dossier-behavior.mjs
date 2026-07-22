@@ -456,6 +456,23 @@ async function runInteractiveChecks(browser) {
     )
     console.log('[verify:israel-dossier:behavior] PASS search liberty keyword dossier promo')
 
+    // Settler-violence / Hebron discovery path
+    await page.goto(`${baseUrl}/search?q=hebron`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    try {
+      await page.waitForFunction(
+        () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
+        null,
+        { timeout: 20000 },
+      )
+    } catch {
+      // clear assert below
+    }
+    assert(
+      (await page.locator('body').innerText()).toLowerCase().includes('israel dossier evidence engine'),
+      'search?q=hebron missing Israel Dossier evidence engine promo',
+    )
+    console.log('[verify:israel-dossier:behavior] PASS search hebron keyword dossier promo')
+
     // Return to dossier before download/carousel assertions (#downloads is dossier-only).
     await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
