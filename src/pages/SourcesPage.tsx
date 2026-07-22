@@ -553,6 +553,47 @@ export default function SourcesPage() {
                 </div>
               </div>
 
+              <div>
+                <h3 className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-4 pb-2 border-b border-border">
+                  Machine-Readable Corpora
+                </h3>
+                <div className="space-y-2">
+                  <a
+                    href="/israel-dossier/workbooks/briefing-source-archive-manifest.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download
+                  >
+                    Archive pin manifest (JSON)
+                  </a>
+                  <a
+                    href="/profiles/corpus.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download="veritas-profiles-corpus.json"
+                  >
+                    Power profiles corpus (JSON)
+                  </a>
+                  <a
+                    href="/israel-dossier/corpus.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download
+                  >
+                    Israel dossier corpus (JSON)
+                  </a>
+                  <a
+                    href="/feed.xml"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                  >
+                    RSS feed
+                  </a>
+                  <a
+                    href="/llms.txt"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                  >
+                    llms.txt (AI crawlers)
+                  </a>
+                </div>
+              </div>
+
               <div className="border-t border-border pt-6">
                 <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
                   Support The Archive

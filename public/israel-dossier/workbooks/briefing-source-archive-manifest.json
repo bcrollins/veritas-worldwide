@@ -357,6 +357,46 @@
       "status": "pinned",
       "note": "ICJ case 186 (occupation advisory)",
       "lastProbedAt": "2026-07-22T22:31:23.000Z"
+    },
+    {
+      "sourceUrl": "https://www.un.org/unispal/document/auto-insert-185393/",
+      "timestamp": "20221222111208",
+      "archiveUrl": "https://web.archive.org/web/20221222111208/https://www.un.org/unispal/document/auto-insert-185393/",
+      "status": "pinned",
+      "note": "UNISPAL document",
+      "lastProbedAt": "2026-07-22T22:34:07.000Z"
+    },
+    {
+      "sourceUrl": "https://www.securitycouncilreport.org/un-documents/israelpalestine/",
+      "timestamp": "20140119081808",
+      "archiveUrl": "https://web.archive.org/web/20140119081808/https://www.securitycouncilreport.org/un-documents/israelpalestine/",
+      "status": "pinned",
+      "note": "Security Council Report Israel/Palestine docs",
+      "lastProbedAt": "2026-07-22T22:34:07.000Z"
+    },
+    {
+      "sourceUrl": "https://www.justice.gov/opa/pr",
+      "timestamp": "20130429040702",
+      "archiveUrl": "https://web.archive.org/web/20130429040702/https://www.justice.gov/opa/pr",
+      "status": "pinned",
+      "note": "DOJ OPA press releases hub",
+      "lastProbedAt": "2026-07-22T22:34:07.000Z"
+    },
+    {
+      "sourceUrl": "https://www.ntsb.gov/investigations/AccidentReports/Pages/accidentreports.aspx",
+      "timestamp": "20150216012726",
+      "archiveUrl": "https://web.archive.org/web/20150216012726/https://www.ntsb.gov/investigations/AccidentReports/Pages/accidentreports.aspx",
+      "status": "pinned",
+      "note": "NTSB accident reports",
+      "lastProbedAt": "2026-07-22T22:34:07.000Z"
+    },
+    {
+      "sourceUrl": "https://fiscaldata.treasury.gov/",
+      "timestamp": "20200928155832",
+      "archiveUrl": "https://web.archive.org/web/20200928155832/https://fiscaldata.treasury.gov/",
+      "status": "pinned",
+      "note": "US Treasury FiscalData",
+      "lastProbedAt": "2026-07-22T22:34:07.000Z"
     }
   ]
 }
