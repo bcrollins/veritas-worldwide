@@ -1450,6 +1450,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 800 },
   },
 
+  {
+    id: 'gaza-great-march-snipers-2018',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'donald-trump'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'un-finding',
+    title: 'Great March of Return — Sniper ROE Pattern (UN COI 2018–19)',
+    date: 'March 30 – December 2018',
+    location: 'Gaza perimeter fence',
+    summary:
+      'During weekly Gaza perimeter protests, Israeli snipers used live fire under rules of engagement that the UN Commission of Inquiry found produced systematic civilian casualties including medics, journalists, and children. Distinct from the medics-focused entry — this isolates the campaign-level ROE finding.',
+    evidence:
+      'UN HRC Commission of Inquiry (2019) found reasonable grounds that Israeli snipers intentionally shot civilians in violation of IHL. Israel disputed legal characterizations; casualty scale is multi-source.',
+    sources: [
+      { label: 'OHCHR — COI on the 2018 Gaza protests', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index' },
+      { label: 'B\'Tselem — Great March of Return', url: 'https://www.btselem.org' },
+      { label: 'Amnesty — Gaza protests killings 2018', url: 'https://www.amnesty.org/en/latest/news/2018/04/israel-arms-embargo-needed-as-military-unlawfully-kills-and-maims-gaza-protesters/' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'OHCHR COI', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 214 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -1980,6 +2007,21 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['sabra-shatila-kahan-1983', 'sabra-shatila-1982'],
     tags: ['civilians', 'children', 'official-commission', 'lebanon'],
+  },
+
+  {
+    id: 'tl-gmr-snipers-2018',
+    year: '2018',
+    era: 'blockade-2007-2023',
+    title: 'Great March of Return — UN COI Sniper Findings',
+    description:
+      'UN Commission of Inquiry finds reasonable grounds that Israeli snipers intentionally shot civilians during Gaza perimeter protests.',
+    source: 'OHCHR COI',
+    sourceUrl: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-great-march-snipers-2018', 'great-march-return-2018', 'great-march-return-medics-2018'],
+    relatedProfileIds: ['benjamin-netanyahu', 'donald-trump'],
+    tags: ['civilians', 'children', 'un-finding', 'gaza'],
   },
 
 ]

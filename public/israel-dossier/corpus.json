@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T23:27:06.819Z",
+  "generatedAt": "2026-07-22T23:29:01.304Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 69,
-    "timelineEvents": 57,
+    "incidents": 70,
+    "timelineEvents": 58,
     "actors": 44,
     "moneyTrailNodes": 16,
-    "historicalWarCrimesPack": 54,
+    "historicalWarCrimesPack": 55,
     "legalCases": 10,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
       "1948-1967": 6,
       "occupation-1967-2005": 21,
-      "blockade-2007-2023": 22,
+      "blockade-2007-2023": 23,
       "post-oct7": 17
     },
     "incidentsByTier": {
-      "verified": 67,
+      "verified": 68,
       "circumstantial": 2
     },
-    "childrenTagged": 59,
-    "civiliansTagged": 68,
+    "childrenTagged": 60,
+    "civiliansTagged": 69,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 25,
@@ -2456,6 +2456,31 @@
       "tier": "verified"
     },
     {
+      "id": "tl-gmr-snipers-2018",
+      "year": "2018",
+      "era": "blockade-2007-2023",
+      "title": "Great March of Return — UN COI Sniper Findings",
+      "description": "UN Commission of Inquiry finds reasonable grounds that Israeli snipers intentionally shot civilians during Gaza perimeter protests.",
+      "source": "OHCHR COI",
+      "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-great-march-snipers-2018",
+        "great-march-return-2018",
+        "great-march-return-medics-2018"
+      ],
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "donald-trump"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "un-finding",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-guardian-walls-2021",
       "year": "2021",
       "era": "blockade-2007-2023",
@@ -4676,6 +4701,51 @@
         }
       ],
       "tier": "verified"
+    },
+    {
+      "id": "gaza-great-march-snipers-2018",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "donald-trump"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Great March of Return — Sniper ROE Pattern (UN COI 2018–19)",
+      "date": "March 30 – December 2018",
+      "location": "Gaza perimeter fence",
+      "summary": "During weekly Gaza perimeter protests, Israeli snipers used live fire under rules of engagement that the UN Commission of Inquiry found produced systematic civilian casualties including medics, journalists, and children. Distinct from the medics-focused entry — this isolates the campaign-level ROE finding.",
+      "evidence": "UN HRC Commission of Inquiry (2019) found reasonable grounds that Israeli snipers intentionally shot civilians in violation of IHL. Israel disputed legal characterizations; casualty scale is multi-source.",
+      "sources": [
+        {
+          "label": "OHCHR — COI on the 2018 Gaza protests",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index"
+        },
+        {
+          "label": "B'Tselem — Great March of Return",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Amnesty — Gaza protests killings 2018",
+          "url": "https://www.amnesty.org/en/latest/news/2018/04/israel-arms-embargo-needed-as-military-unlawfully-kills-and-maims-gaza-protesters/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "OHCHR COI",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 214
+      }
     },
     {
       "id": "guardian-of-the-walls-2021",
