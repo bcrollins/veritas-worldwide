@@ -29,6 +29,20 @@
 - `corpus.json` now exports `legalCases` (7) and `lobbying` (4)
 - Behavior floors: actors ≥24, legalCases ≥5, lobbying ≥3
 
+### `24940ef` — search discovery keywords
+- Liberty, UNRWA, Jenin, Qibya, Sabra, lobby, Iron Dome, Gallant
+- **Live behavior PASS** including `search?q=liberty`
+
+### `083a25c` — F-35 + Adelson/Pelosi
+- Money nodes **12** including F-35 fleet
+- Actors **29** including Sheldon Adelson, Nancy Pelosi
+- **Live behavior PASS** full suite
+
+### `d9d02fd` — blockade + settlement structural patterns
+- Incidents **51** · timeline **42**
+- Gaza blockade 2007 formalization + settlement enterprise (ICJ/UN floors)
+- Timeline: blockade + UNSC 2334
+
 ## Editorial boundaries (preserved)
 - Evidence tiers labeled; non-exhaustive disclaimer retained
 - No ethnicity/religion as enablement; funds/votes/warrants only
