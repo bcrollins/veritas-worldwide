@@ -1,4 +1,4 @@
-# Veritas Worldwide Press — Brand Kit v2.0
+# Veritas Worldwide Press — Brand Kit v2.1.0
 
 **Updated:** 2026-07-22  
 **Domain:** veritasworldwide.com  
@@ -26,6 +26,8 @@ The visual system signals documentary rigor: parchment paper, ink, crimson seals
 | `04-social/*` | Profile + platform banners |
 | `05-og/og-image.svg` | Default Open Graph card |
 | `08-ai-generated/*` | Grok Imagine reference renders |
+| `09-templates/*` | Letterhead, email signature, press header |
+| `02-icons/apple-touch-icon.png` | iOS home screen (180×180) |
 
 ### Clear space
 Leave empty space around the mark equal to the height of the V's top serif bar.  

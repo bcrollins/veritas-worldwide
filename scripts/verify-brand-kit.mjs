@@ -22,9 +22,13 @@ const required = [
   '01-logos/logo-mark.svg',
   '01-logos/logo-full.svg',
   '01-logos/logo-full-stacked.svg',
+  '01-logos/logo-mark-512.png',
   '02-icons/app-icon.svg',
   '02-icons/favicon.svg',
   '02-icons/app-icon-512.png',
+  '02-icons/apple-touch-icon.png',
+  '02-icons/favicon-32.png',
+  '02-icons/favicon-16.png',
   '03-wordmarks/wordmark.svg',
   '04-social/social-profile.svg',
   '04-social/social-banner-x.svg',
@@ -37,6 +41,9 @@ const required = [
   '08-ai-generated/wordmark-lockup.jpg',
   '08-ai-generated/og-the-record.jpg',
   '08-ai-generated/avatar-crimson.jpg',
+  '09-templates/letterhead.svg',
+  '09-templates/email-signature.html',
+  '09-templates/press-release-header.svg',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
 ]
 
@@ -69,17 +76,38 @@ for (const rel of ['logo-mark.svg', '01-logos/logo-mark.svg', '02-icons/favicon.
   else ok(`${rel} is valid SVG`)
 }
 
-// Favicon at site root
+// Favicon + apple-touch at site root
 const fav = join(ROOT, 'public', 'favicon.svg')
 if (!existsSync(fav) || !readFileSync(fav, 'utf8').includes('<svg')) bad('public/favicon.svg invalid')
 else ok('public/favicon.svg valid')
+const apple = join(ROOT, 'public', 'apple-touch-icon.png')
+if (!existsSync(apple) || statSync(apple).size < 500) bad('public/apple-touch-icon.png missing/small')
+else ok(`public/apple-touch-icon.png (${statSync(apple).size}b)`)
+const rootMark = join(ROOT, 'public', 'logo-mark-512.png')
+if (!existsSync(rootMark) || statSync(rootMark).size < 500) bad('public/logo-mark-512.png missing/small')
+else ok(`public/logo-mark-512.png (${statSync(rootMark).size}b)`)
+
+// index.html brand head tags
+const indexHtml = readFileSync(join(ROOT, 'index.html'), 'utf8')
+for (const needle of [
+  'apple-touch-icon',
+  'theme-color" content="#FAF8F5"',
+  'theme-color" content="#1A1A1A"',
+  'favicon-32.png',
+  'mask-icon',
+]) {
+  if (!indexHtml.includes(needle)) bad(`index.html missing ${needle}`)
+  else ok(`index.html has ${needle}`)
+}
 
 // Manifest schema
 const manifest = JSON.parse(readFileSync(join(KIT, 'manifest.json'), 'utf8'))
 if (!manifest.zipPath?.includes('Brand-Kit.zip')) bad('manifest zipPath missing')
 else ok(`manifest v${manifest.version}`)
-if (!Array.isArray(manifest.sections) || manifest.sections.length < 6) bad('manifest sections incomplete')
+if (!Array.isArray(manifest.sections) || manifest.sections.length < 8) bad('manifest sections incomplete')
 else ok(`${manifest.sections.length} sections`)
+if (!String(manifest.version || '').startsWith('2.')) bad('manifest version not 2.x')
+else ok(`version ${manifest.version}`)
 
 const zip = join(KIT, 'exports', 'Veritas-Worldwide-Ultimate-Brand-Kit.zip')
 const zipSize = statSync(zip).size
@@ -91,8 +119,14 @@ if (base) {
   console.log(`\nLive checks against ${base}`)
   const paths = [
     '/favicon.svg',
+    '/apple-touch-icon.png',
+    '/logo-mark-512.png',
     '/brand-kit/manifest.json',
     '/brand-kit/01-logos/logo-mark.svg',
+    '/brand-kit/01-logos/logo-mark-512.png',
+    '/brand-kit/02-icons/apple-touch-icon.png',
+    '/brand-kit/09-templates/email-signature.html',
+    '/brand-kit/09-templates/letterhead.svg',
     '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
     '/og-image.png',
   ]

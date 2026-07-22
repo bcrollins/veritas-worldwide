@@ -14,6 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
+const KIT_VERSION = '2.1.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -38,6 +39,7 @@ function ensureDirs() {
     join(KIT, '06-tokens'),
     join(KIT, '07-docs'),
     join(KIT, '08-ai-generated'),
+    join(KIT, '09-templates'),
     EXPORTS,
   ]
   for (const d of dirs) mkdirSync(d, { recursive: true })
@@ -229,7 +231,7 @@ function favicon() {
 function tokensJson() {
   return JSON.stringify({
     name: 'Veritas Worldwide Press Brand Tokens',
-    version: '2.0.0',
+    version: KIT_VERSION,
     updated: new Date().toISOString().slice(0, 10),
     brand: {
       legalName: 'Veritas Worldwide Press',
@@ -282,8 +284,73 @@ function tokensJson() {
   }, null, 2)
 }
 
+function letterheadSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="1100" viewBox="0 0 850 1100" role="img" aria-label="Veritas letterhead">
+  <rect width="850" height="1100" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="850" height="6" fill="${C.crimson}"/>
+  <g transform="translate(48,40) scale(0.22)">
+    <circle cx="256" cy="256" r="210" fill="none" stroke="${C.crimson}" stroke-width="10"/>
+    <circle cx="256" cy="256" r="192" fill="none" stroke="${C.crimson}" stroke-width="3"/>
+    <path d="M118 128 L156 128 C160 128 163 130 165 134 L250 348 L256 364 L262 348 L347 134 C349 130 352 128 356 128 L394 128 C399 128 402 131 400 136 L270 402 C266 412 256 418 256 418 C256 418 246 412 242 402 L112 136 C110 131 113 128 118 128 Z" fill="${C.ink}"/>
+    <rect x="108" y="122" width="68" height="8" rx="1.5" fill="${C.ink}"/>
+    <rect x="336" y="122" width="68" height="8" rx="1.5" fill="${C.ink}"/>
+  </g>
+  <text x="180" y="78" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="4" fill="${C.ink}">VERITAS WORLDWIDE PRESS</text>
+  <text x="180" y="104" font-family="Inter, Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3" fill="${C.inkMuted}">THE DOCUMENTARY RECORD</text>
+  <line x1="48" y1="140" x2="802" y2="140" stroke="${C.crimson}" stroke-width="1"/>
+  <text x="48" y="1040" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" fill="${C.inkMuted}">veritasworldwide.com  ·  rights@veritasworldwide.com  ·  Primary sources · Public record · Your conclusions</text>
+  <rect x="0" y="1094" width="850" height="6" fill="${C.crimson}"/>
+</svg>`
+}
+
+function emailSignatureHtml() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Veritas Worldwide — Email Signature</title>
+</head>
+<body style="margin:0;padding:24px;background:#ffffff;font-family:Georgia,'Times New Roman',serif;">
+  <!-- Paste from <table> through </table> into your mail client -->
+  <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;max-width:480px;">
+    <tr>
+      <td style="padding-right:16px;vertical-align:top;">
+        <img src="https://veritasworldwide.com/brand-kit/01-logos/logo-mark-256.png" width="56" height="56" alt="Veritas Worldwide" style="display:block;border:0;" />
+      </td>
+      <td style="vertical-align:top;border-left:2px solid #8B1A1A;padding-left:16px;">
+        <div style="font-family:Georgia,serif;font-size:16px;font-weight:700;color:#1A1A1A;letter-spacing:0.04em;">VERITAS WORLDWIDE PRESS</div>
+        <div style="font-family:Inter,Helvetica,Arial,sans-serif;font-size:11px;color:#666666;letter-spacing:0.12em;text-transform:uppercase;margin-top:2px;">The Documentary Record</div>
+        <div style="font-family:Inter,Helvetica,Arial,sans-serif;font-size:12px;color:#1A1A1A;margin-top:10px;">
+          <a href="https://veritasworldwide.com" style="color:#8B1A1A;text-decoration:none;">veritasworldwide.com</a>
+          <span style="color:#999999;"> · </span>
+          <a href="mailto:rights@veritasworldwide.com" style="color:#666666;text-decoration:none;">rights@veritasworldwide.com</a>
+        </div>
+        <div style="font-family:Inter,Helvetica,Arial,sans-serif;font-size:11px;color:#999999;margin-top:6px;font-style:italic;">
+          Primary sources. Public record. Your conclusions.
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`
+}
+
+function pressReleaseHeaderSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200" role="img" aria-label="Press release header">
+  <rect width="1200" height="200" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1200" height="4" fill="${C.crimson}"/>
+  <text x="60" y="70" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="${C.crimson}">FOR IMMEDIATE RELEASE</text>
+  <text x="60" y="120" font-family="Georgia, serif" font-size="36" font-weight="700" fill="${C.ink}">Veritas Worldwide Press</text>
+  <text x="60" y="155" font-family="Georgia, serif" font-size="16" font-style="italic" fill="${C.inkMuted}">Independent investigative publishing · veritasworldwide.com</text>
+  <line x1="60" y1="180" x2="1140" y2="180" stroke="${C.crimson}" stroke-width="1"/>
+</svg>`
+}
+
 function brandGuideMd() {
-  return `# Veritas Worldwide Press — Brand Kit v2.0
+  return `# Veritas Worldwide Press — Brand Kit v${KIT_VERSION}
 
 **Updated:** ${new Date().toISOString().slice(0, 10)}  
 **Domain:** veritasworldwide.com  
@@ -311,6 +378,8 @@ The visual system signals documentary rigor: parchment paper, ink, crimson seals
 | \`04-social/*\` | Profile + platform banners |
 | \`05-og/og-image.svg\` | Default Open Graph card |
 | \`08-ai-generated/*\` | Grok Imagine reference renders |
+| \`09-templates/*\` | Letterhead, email signature, press header |
+| \`02-icons/apple-touch-icon.png\` | iOS home screen (180×180) |
 
 ### Clear space
 Leave empty space around the mark equal to the height of the V's top serif bar.  
@@ -364,12 +433,13 @@ Do not alter the mark for third-party products without written permission.
 
 function altTextManifest() {
   return JSON.stringify({
-    version: '2.0.0',
+    version: KIT_VERSION,
     assets: [
       { path: '01-logos/logo-mark.svg', alt: 'Veritas Worldwide publisher seal: serif letter V inside concentric crimson rings on parchment' },
       { path: '01-logos/logo-full.svg', alt: 'Veritas Worldwide Press logo lockup with seal and wordmark' },
       { path: '02-icons/app-icon.svg', alt: 'Veritas app icon: white V in circle on crimson rounded square' },
       { path: '02-icons/favicon.svg', alt: 'Veritas favicon' },
+      { path: '02-icons/apple-touch-icon.png', alt: 'Veritas iOS home screen icon' },
       { path: '03-wordmarks/wordmark.svg', alt: 'VERITAS WORLDWIDE PRESS wordmark' },
       { path: '04-social/social-profile.svg', alt: 'Veritas social profile mark on crimson' },
       { path: '04-social/social-banner-x.svg', alt: 'The Record social banner for X' },
@@ -378,6 +448,9 @@ function altTextManifest() {
       { path: '08-ai-generated/wordmark-lockup.jpg', alt: 'AI reference: horizontal wordmark lockup' },
       { path: '08-ai-generated/og-the-record.jpg', alt: 'AI reference: The Record social banner' },
       { path: '08-ai-generated/avatar-crimson.jpg', alt: 'AI reference: crimson avatar with white V' },
+      { path: '09-templates/letterhead.svg', alt: 'Veritas Worldwide Press letterhead template' },
+      { path: '09-templates/press-release-header.svg', alt: 'Press release header with Veritas branding' },
+      { path: '09-templates/email-signature.html', alt: 'HTML email signature for Veritas Worldwide Press' },
     ],
   }, null, 2)
 }
@@ -457,6 +530,11 @@ function main() {
   writeFileSync(join(ROOT, 'public', 'og-image.svg'), ogImage() + '\n')
   copyFileSync(join(KIT, '05-og', 'og-image.svg'), join(ROOT, 'public', 'og-image.svg'))
 
+  // Templates
+  writeSvg('09-templates/letterhead.svg', letterheadSvg())
+  writeSvg('09-templates/press-release-header.svg', pressReleaseHeaderSvg())
+  writeFileSync(join(KIT, '09-templates', 'email-signature.html'), emailSignatureHtml())
+
   // Rasterize key assets
   const rasters = [
     ['01-logos/logo-mark.svg', '01-logos/logo-mark-512.png', 512],
@@ -465,9 +543,14 @@ function main() {
     ['01-logos/logo-full-stacked.svg', '01-logos/logo-full-stacked.png', 600],
     ['02-icons/app-icon.svg', '02-icons/app-icon-512.png', 512],
     ['02-icons/app-icon.svg', '02-icons/app-icon-192.png', 192],
+    ['02-icons/app-icon.svg', '02-icons/apple-touch-icon.png', 180],
+    ['02-icons/favicon.svg', '02-icons/favicon-32.png', 32],
+    ['02-icons/favicon.svg', '02-icons/favicon-16.png', 16],
     ['04-social/social-profile.svg', '04-social/social-profile-400.png', 400],
     ['05-og/og-image.svg', '05-og/og-image.png', 1200],
     ['03-wordmarks/wordmark.svg', '03-wordmarks/wordmark.png', 720],
+    ['09-templates/letterhead.svg', '09-templates/letterhead.png', 850],
+    ['09-templates/press-release-header.svg', '09-templates/press-release-header.png', 1200],
   ]
   for (const [src, dest, w] of rasters) {
     try {
@@ -478,34 +561,45 @@ function main() {
     }
   }
 
-  // Copy OG png to public root
+  // Site root deployables
   try {
     copyFileSync(join(KIT, '05-og', 'og-image.png'), join(ROOT, 'public', 'og-image.png'))
-  } catch { /* optional */ }
+    copyFileSync(join(KIT, '02-icons', 'apple-touch-icon.png'), join(ROOT, 'public', 'apple-touch-icon.png'))
+    copyFileSync(join(KIT, '02-icons', 'favicon.svg'), join(ROOT, 'public', 'favicon.svg'))
+    copyFileSync(join(KIT, '02-icons', 'favicon.svg'), join(KIT, 'favicon.svg'))
+    copyFileSync(join(KIT, '01-logos', 'logo-mark-512.png'), join(ROOT, 'public', 'logo-mark-512.png'))
+  } catch (e) {
+    console.warn('Root asset copy warning:', e.message)
+  }
 
   // Manifest for admin UI
   const manifest = {
-    version: '2.0.0',
+    version: KIT_VERSION,
     name: 'Veritas Worldwide Ultimate Brand Kit',
     generatedAt: new Date().toISOString(),
     zipPath: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
     sections: [
       { id: '01-logos', title: 'Logos', description: 'Primary seal, full lockups, monochrome variants' },
-      { id: '02-icons', title: 'Icons & Favicon', description: 'App icon, favicon, sized marks' },
+      { id: '02-icons', title: 'Icons & Favicon', description: 'App icon, favicon, apple-touch, sized marks' },
       { id: '03-wordmarks', title: 'Wordmarks', description: 'Text-only brand typography' },
       { id: '04-social', title: 'Social', description: 'Profile and platform banners' },
       { id: '05-og', title: 'Open Graph', description: 'Default social share card' },
       { id: '06-tokens', title: 'Design Tokens', description: 'Colors, type, usage rules (JSON)' },
       { id: '07-docs', title: 'Documentation', description: 'Brand guide and alt-text manifest' },
       { id: '08-ai-generated', title: 'AI References', description: 'Grok Imagine brand direction renders' },
+      { id: '09-templates', title: 'Templates', description: 'Letterhead, email signature, press header' },
     ],
     downloads: [
       { label: 'Ultimate Brand Kit (.zip)', href: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip', adminOnly: true },
       { label: 'Logo mark (SVG)', href: '/brand-kit/01-logos/logo-mark.svg' },
+      { label: 'Logo mark (PNG 512)', href: '/brand-kit/01-logos/logo-mark-512.png' },
       { label: 'Full lockup (SVG)', href: '/brand-kit/01-logos/logo-full.svg' },
       { label: 'App icon (SVG)', href: '/brand-kit/02-icons/app-icon.svg' },
+      { label: 'Apple touch icon (PNG)', href: '/brand-kit/02-icons/apple-touch-icon.png' },
       { label: 'Wordmark (SVG)', href: '/brand-kit/03-wordmarks/wordmark.svg' },
       { label: 'OG image (PNG)', href: '/brand-kit/05-og/og-image.png' },
+      { label: 'Email signature (HTML)', href: '/brand-kit/09-templates/email-signature.html' },
+      { label: 'Letterhead (SVG)', href: '/brand-kit/09-templates/letterhead.svg' },
       { label: 'Brand guide (MD)', href: '/brand-kit/07-docs/BRAND-GUIDE.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },
     ],
@@ -513,7 +607,7 @@ function main() {
   writeFileSync(join(KIT, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n')
 
   buildZip()
-  console.log('Brand kit generation complete.')
+  console.log(`Brand kit v${KIT_VERSION} generation complete.`)
 }
 
 main()

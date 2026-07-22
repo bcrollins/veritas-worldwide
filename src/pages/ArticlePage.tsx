@@ -142,7 +142,7 @@ export default function ArticlePage() {
         '@type': 'Organization',
         'name': SITE_NAME,
         'url': SITE_URL,
-        'logo': { '@type': 'ImageObject', 'url': `${SITE_URL}/favicon.svg` },
+        'logo': { '@type': 'ImageObject', 'url': `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`, width: 512, height: 512 },
       },
       'mainEntityOfPage': { '@type': 'WebPage', '@id': `${SITE_URL}/news/${article.slug}` },
       'keywords': article.seo.keywords.join(', '),

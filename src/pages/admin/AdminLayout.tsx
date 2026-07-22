@@ -44,9 +44,14 @@ export default function AdminLayout() {
       {/* Sidebar */}
       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-obsidian border-r border-white/5 flex flex-col transition-all duration-200 flex-shrink-0`}>
         <div className="flex items-center gap-2 px-4 h-14 border-b border-white/5">
-          <div className="w-8 h-8 bg-crimson rounded flex items-center justify-center flex-shrink-0">
-            <span className="font-serif text-sm font-bold text-white">V</span>
-          </div>
+          <img
+            src="/brand-kit/02-icons/app-icon.svg"
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 flex-shrink-0 rounded"
+            aria-hidden="true"
+          />
           {sidebarOpen && <span className="font-sans text-xs font-bold tracking-widest uppercase text-white/70">Admin</span>}
         </div>
         <nav className="flex-1 py-3 px-2 space-y-0.5">

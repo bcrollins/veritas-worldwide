@@ -26,11 +26,15 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-obsidian flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-crimson rounded mb-4">
-            <span className="font-serif text-2xl font-bold text-white">V</span>
-          </div>
+          <img
+            src="/brand-kit/02-icons/app-icon.svg"
+            alt="Veritas Worldwide"
+            width={56}
+            height={56}
+            className="mx-auto mb-4 h-14 w-14 rounded-lg shadow-lg shadow-crimson/20"
+          />
           <h1 className="font-serif text-2xl font-bold text-white tracking-tight">Admin Access</h1>
-          <p className="font-sans text-xs tracking-widest uppercase text-white/40 mt-2">Veritas Worldwide</p>
+          <p className="font-sans text-xs tracking-widest uppercase text-white/40 mt-2">Veritas Worldwide Press</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-white/5 border border-white/10 rounded p-6 space-y-4">
           {error && (

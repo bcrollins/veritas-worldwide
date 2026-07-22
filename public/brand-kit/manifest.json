@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-22T23:04:01.216Z",
+  "generatedAt": "2026-07-22T23:11:32.828Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "sections": [
     {
@@ -12,7 +12,7 @@
     {
       "id": "02-icons",
       "title": "Icons & Favicon",
-      "description": "App icon, favicon, sized marks"
+      "description": "App icon, favicon, apple-touch, sized marks"
     },
     {
       "id": "03-wordmarks",
@@ -43,6 +43,11 @@
       "id": "08-ai-generated",
       "title": "AI References",
       "description": "Grok Imagine brand direction renders"
+    },
+    {
+      "id": "09-templates",
+      "title": "Templates",
+      "description": "Letterhead, email signature, press header"
     }
   ],
   "downloads": [
@@ -56,6 +61,10 @@
       "href": "/brand-kit/01-logos/logo-mark.svg"
     },
     {
+      "label": "Logo mark (PNG 512)",
+      "href": "/brand-kit/01-logos/logo-mark-512.png"
+    },
+    {
       "label": "Full lockup (SVG)",
       "href": "/brand-kit/01-logos/logo-full.svg"
     },
@@ -64,12 +73,24 @@
       "href": "/brand-kit/02-icons/app-icon.svg"
     },
     {
+      "label": "Apple touch icon (PNG)",
+      "href": "/brand-kit/02-icons/apple-touch-icon.png"
+    },
+    {
       "label": "Wordmark (SVG)",
       "href": "/brand-kit/03-wordmarks/wordmark.svg"
     },
     {
       "label": "OG image (PNG)",
       "href": "/brand-kit/05-og/og-image.png"
+    },
+    {
+      "label": "Email signature (HTML)",
+      "href": "/brand-kit/09-templates/email-signature.html"
+    },
+    {
+      "label": "Letterhead (SVG)",
+      "href": "/brand-kit/09-templates/letterhead.svg"
     },
     {
       "label": "Brand guide (MD)",

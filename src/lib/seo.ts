@@ -7,6 +7,8 @@ const SITE_NAME = 'Veritas Worldwide'
 const SITE_URL = 'https://veritasworldwide.com'
 const DEFAULT_DESCRIPTION = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Published by Veritas Worldwide.'
 const OG_IMAGE = `${SITE_URL}/og-image.png`
+/** Square publisher mark for Organization / NewsMediaOrganization schema (not the wide OG card). */
+const LOGO_IMAGE = `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`
 const TWITTER_HANDLE = '@VeritasWorldwide'
 /** Google typically displays ~50–60 chars of title; keep headroom for SERP truncation. */
 const META_TITLE_MAX = 60
@@ -258,7 +260,9 @@ export function chapterJsonLd(chapter: {
         'url': SITE_URL,
         'logo': {
           '@type': 'ImageObject',
-          'url': OG_IMAGE,
+          'url': LOGO_IMAGE,
+          'width': 512,
+          'height': 512,
         },
       },
       'image': chapterImage,
@@ -341,10 +345,11 @@ export function organizationJsonLd(): Record<string, unknown> {
     'url': SITE_URL,
     'logo': {
       '@type': 'ImageObject',
-      'url': OG_IMAGE,
-      'width': 1200,
-      'height': 630,
+      'url': LOGO_IMAGE,
+      'width': 512,
+      'height': 512,
     },
+    'image': OG_IMAGE,
     'description':
       'Independent investigative journalism built on primary sources. The Record documents 240+ years of institutional power with public archives.',
     'foundingDate': '2025',
@@ -408,4 +413,4 @@ export function breadcrumbJsonLd(
   }
 }
 
-export { SITE_NAME, SITE_URL, DEFAULT_DESCRIPTION, OG_IMAGE, META_TITLE_MAX, META_DESCRIPTION_MAX }
+export { SITE_NAME, SITE_URL, DEFAULT_DESCRIPTION, OG_IMAGE, LOGO_IMAGE, META_TITLE_MAX, META_DESCRIPTION_MAX }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="1100" viewBox="0 0 850 1100" role="img" aria-label="Veritas letterhead">
+  <rect width="850" height="1100" fill="#FAF8F5"/>
+  <rect x="0" y="0" width="850" height="6" fill="#8B1A1A"/>
+  <g transform="translate(48,40) scale(0.22)">
+    <circle cx="256" cy="256" r="210" fill="none" stroke="#8B1A1A" stroke-width="10"/>
+    <circle cx="256" cy="256" r="192" fill="none" stroke="#8B1A1A" stroke-width="3"/>
+    <path d="M118 128 L156 128 C160 128 163 130 165 134 L250 348 L256 364 L262 348 L347 134 C349 130 352 128 356 128 L394 128 C399 128 402 131 400 136 L270 402 C266 412 256 418 256 418 C256 418 246 412 242 402 L112 136 C110 131 113 128 118 128 Z" fill="#1A1A1A"/>
+    <rect x="108" y="122" width="68" height="8" rx="1.5" fill="#1A1A1A"/>
+    <rect x="336" y="122" width="68" height="8" rx="1.5" fill="#1A1A1A"/>
+  </g>
+  <text x="180" y="78" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="4" fill="#1A1A1A">VERITAS WORLDWIDE PRESS</text>
+  <text x="180" y="104" font-family="Inter, Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3" fill="#666666">THE DOCUMENTARY RECORD</text>
+  <line x1="48" y1="140" x2="802" y2="140" stroke="#8B1A1A" stroke-width="1"/>
+  <text x="48" y="1040" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" fill="#666666">veritasworldwide.com  ·  rights@veritasworldwide.com  ·  Primary sources · Public record · Your conclusions</text>
+  <rect x="0" y="1094" width="850" height="6" fill="#8B1A1A"/>
+</svg>

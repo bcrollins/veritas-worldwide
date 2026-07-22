@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "assets": [
     {
       "path": "01-logos/logo-mark.svg",
@@ -16,6 +16,10 @@
     {
       "path": "02-icons/favicon.svg",
       "alt": "Veritas favicon"
+    },
+    {
+      "path": "02-icons/apple-touch-icon.png",
+      "alt": "Veritas iOS home screen icon"
     },
     {
       "path": "03-wordmarks/wordmark.svg",
@@ -48,6 +52,18 @@
     {
       "path": "08-ai-generated/avatar-crimson.jpg",
       "alt": "AI reference: crimson avatar with white V"
+    },
+    {
+      "path": "09-templates/letterhead.svg",
+      "alt": "Veritas Worldwide Press letterhead template"
+    },
+    {
+      "path": "09-templates/press-release-header.svg",
+      "alt": "Press release header with Veritas branding"
+    },
+    {
+      "path": "09-templates/email-signature.html",
+      "alt": "HTML email signature for Veritas Worldwide Press"
     }
   ]
 }

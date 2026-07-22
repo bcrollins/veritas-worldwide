@@ -15,9 +15,12 @@ const PREVIEW_ASSETS = [
   { label: 'White Mark', href: '/brand-kit/01-logos/logo-mark-white.svg', bg: 'bg-black' },
   { label: 'Full Lockup', href: '/brand-kit/01-logos/logo-full.svg', bg: 'bg-parchment' },
   { label: 'App Icon', href: '/brand-kit/02-icons/app-icon.svg', bg: 'bg-white/5' },
+  { label: 'Apple Touch', href: '/apple-touch-icon.png', bg: 'bg-white/5' },
   { label: 'Wordmark', href: '/brand-kit/03-wordmarks/wordmark.svg', bg: 'bg-parchment' },
   { label: 'Social Profile', href: '/brand-kit/04-social/social-profile.svg', bg: 'bg-white/5' },
   { label: 'OG Card', href: '/brand-kit/05-og/og-image.svg', bg: 'bg-black' },
+  { label: 'Letterhead', href: '/brand-kit/09-templates/letterhead.svg', bg: 'bg-parchment' },
+  { label: 'Press Header', href: '/brand-kit/09-templates/press-release-header.svg', bg: 'bg-parchment' },
 ]
 
 export default function AdminBrandKit() {
