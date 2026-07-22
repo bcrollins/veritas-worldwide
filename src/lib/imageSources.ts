@@ -48,34 +48,32 @@ export function getWikimediaWidth(imageUrl: string): number | null {
   }
 }
 
+export function isWikimediaHost(imageUrl: string): boolean {
+  try {
+    const url = new URL(imageUrl);
+    return url.hostname === 'upload.wikimedia.org' || url.hostname.endsWith('wikimedia.org');
+  } catch {
+    return false;
+  }
+}
+
 /**
- * Prefer first-party hosted assets. Local /news/* paths pass through.
- * Legacy Wikimedia URLs are rewritten only when still present in data;
- * prefer replacing data with /news/heroes and /news/inline assets.
+ * Prefer first-party hosted assets (/, https://veritasworldwide.com/).
+ * Wikimedia hotlinks are refused — they 400 in production and are blocked by CSP.
+ * Callers should use /chapters/heroes, /news/heroes, /profiles, or ImageWithFallback placeholders.
  */
 export function getPreferredImageSrc(imageUrl?: string): string | undefined {
   if (!imageUrl) return imageUrl;
 
   // First-party absolute or root-relative assets
   if (imageUrl.startsWith('/') || imageUrl.startsWith('https://veritasworldwide.com/')) {
-    return imageUrl
-  }
-
-  try {
-    const url = new URL(imageUrl);
-    // Hotlinked Wikimedia thumbs are unreliable (broken icons in production).
-    // Callers should use local /news/* paths; leave remote only for non-wiki hosts.
-    if (url.hostname === 'upload.wikimedia.org' || url.hostname.endsWith('wikimedia.org')) {
-      return imageUrl;
-    }
-  } catch {
     return imageUrl;
   }
 
-  const fileName = getWikimediaFileName(imageUrl);
-  if (!fileName) return imageUrl;
+  // Refuse Wikimedia hotlinks entirely (do not rewrite to another wiki URL).
+  if (isWikimediaHost(imageUrl) || getWikimediaFileName(imageUrl)) {
+    return undefined;
+  }
 
-  const stableUrl = new URL(`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}`);
-
-  return stableUrl.toString();
+  return imageUrl;
 }

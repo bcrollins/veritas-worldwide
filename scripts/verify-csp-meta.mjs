@@ -39,4 +39,8 @@ assert(/media-src[^;]*'self'/.test(csp), "media-src must include 'self'")
 assert(/upgrade-insecure-requests/.test(csp), 'upgrade-insecure-requests required')
 // frame-ancestors is ignored in <meta>; HTTP header (server.js) owns clickjacking.
 assert(!/frame-ancestors/.test(csp), 'frame-ancestors belongs in HTTP CSP header, not meta')
-console.log('[verify:csp-meta] PASS — worker/manifest/media + upgrade-insecure-requests')
+// First-party image campaign complete — do not re-open Wikimedia img-src.
+assert(!/upload\.wikimedia\.org/.test(csp), 'img-src must not allow upload.wikimedia.org')
+assert(!/commons\.wikimedia\.org/.test(csp), 'img-src must not allow commons.wikimedia.org')
+assert(/img-src[^;]*'self'/.test(csp), "img-src must include 'self'")
+console.log('[verify:csp-meta] PASS — worker/manifest/media + upgrade-insecure-requests + no-wikimedia-img')
