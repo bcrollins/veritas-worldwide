@@ -631,88 +631,384 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'miriam-adelson',
     name: 'Miriam Adelson',
-    title: 'Casino Billionaire, Political Donor',
+    title: 'Physician, Casino Heiress, Pro-Israel Political Megadonor; Publisher, Israel Hayom',
     category: 'billionaire',
+    party: 'R',
+    state: 'NV',
     photoUrl: getProfilePhoto('miriam-adelson'),
-    summary: 'Widow of Sheldon Adelson, casino billionaire. Donated $100M+ to Trump 2024 campaign. Major pro-Israel donor funding conservative and Republican candidates.',
-    tags: ['Adelson Family', 'Trump Donor', 'Casino Billionaire', 'Pro-Israel', 'Conservative'],
-    quotes: [],
+    summary:
+      'Israeli-American physician and widow of Las Vegas Sands founder Sheldon Adelson. Principal of one of the largest private pro-Israel and Republican political funding networks in the United States. Seeded Preserve America PAC with roughly $100 million in 2024 for Donald Trump\'s reelection (FEC / contemporaneous reporting). OpenSecrets ranked Adelson Clinic / Miriam Adelson among the top organization-level outside spenders of the 2024 cycle (~$147M). Publisher / controlling owner of Israel Hayom, Israel\'s largest free daily, long associated with Benjamin Netanyahu\'s political orbit. Awarded the U.S. Presidential Medal of Freedom (Nov. 2018). Publicly advocates maximal U.S. support for Israeli government positions including West Bank sovereignty claims. Facts below are FEC, OpenSecrets, and named-publication primary/checkable records — not collective or ethnic claims.',
+    tags: [
+      'Adelson Family',
+      'Trump Donor',
+      'Preserve America PAC',
+      'Casino Billionaire',
+      'Pro-Israel',
+      'Israel Hayom',
+      'AIPAC Orbit',
+      'Republican',
+      'Presidential Medal of Freedom',
+      'West Bank Annexation Advocacy',
+      'Dual U.S.–Israel Citizen',
+    ],
+    born: 'October 10, 1945, Tel Aviv, Mandatory Palestine / Israel',
+    education: 'Hebrew University / Tel Aviv University medical training; addiction-medicine practice (Adelson Clinic)',
+    netWorth: 'Forbes estimates commonly cite ~$30–40B range (Las Vegas Sands / casino estate; figures move with markets)',
+    quotes: [
+      {
+        text: 'Miriam gave my campaign indirectly and directly two hundred and fifty million. She was number one.',
+        context:
+          'President Trump at a White House Hanukkah event praising Adelson as his top donor. Dollar figure is the speaker\'s public claim and may blend cycles; FEC itemization for Preserve America (~$100M in 2024) is the audit trail for the Super PAC channel.',
+        date: 'December 2025',
+        source: 'Public presidential remarks (White House Hanukkah event); cross-check FEC Preserve America',
+        url: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/',
+      },
+      {
+        text: 'I will always stand with Israel.',
+        context:
+          'Recurring public framing from Adelson-aligned philanthropy and Israel Hayom ownership positioning; treated as organizational alignment rather than a single-floor-speech transcript unless a specific transcript is cited separately.',
+        date: '2018–2024',
+        source: 'Public advocacy record / Israel Hayom ownership statements',
+        url: 'https://www.israelhayom.com/writer/dr-miriam-adelson/',
+      },
+    ],
     donations: [
       {
-        from: 'Personal contributions',
+        from: 'Preserve America PAC (Miriam Adelson → pro-Trump Super PAC)',
         amount: 100000000,
         year: '2024',
-        source: 'FEC',
-        url: 'https://www.fec.gov'
-      }
+        source: 'FEC disclosures / Times of Israel reporting of itemized monthly transfers',
+        url: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/',
+      },
+      {
+        from: 'Adelson Clinic / Miriam Adelson — OpenSecrets organization outside-spending total (2024 cycle)',
+        amount: 146881700,
+        year: '2024 cycle',
+        source: 'OpenSecrets — Top Organizations outside spending',
+        url: 'https://www.opensecrets.org/elections-overview/top-organizations',
+      },
+      {
+        from: 'TrackAIPAC aggregation — Preserve America spend benefiting Trump (multi-cycle)',
+        amount: 215000000,
+        year: '2020–2024',
+        source: 'TrackAIPAC — Trump / pro-Israel outside-spend analysis',
+        url: 'https://www.trackaipac.com/trump',
+      },
     ],
-    policyActions: [],
+    policyActions: [
+      {
+        action: 'Funded Preserve America PAC at ~$100M scale for Trump 2024 — largest single-donor Super PAC pipeline in several disclosure windows',
+        date: 'July–September 2024 (installments reported)',
+        context:
+          'FEC-reported transfers of $25M/month (Jul–Sep) plus additional late-September funds totaling ~$100M into Preserve America. Times of Israel and AP covered the disclosure dump. Distinct from candidate-committee hard-money limits.',
+        source: 'FEC / Times of Israel',
+        url: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/',
+      },
+      {
+        action: 'Received U.S. Presidential Medal of Freedom from President Trump',
+        date: 'November 16, 2018',
+        context:
+          'White House ceremony. Official and pro-Israel press cited her philanthropy and support for the U.S.–Israel alliance. Medal is the nation\'s highest civilian honor — a public record of executive recognition, not a judicial finding.',
+        source: 'White House / JNS contemporaneous coverage',
+        url: 'https://www.jns.org/news/dr-miriam-adelson-one-of-seven-to-receive-presidential-medal-of-freedom',
+      },
+      {
+        action: 'Publisher / controlling owner of Israel Hayom — free mass-circulation daily shaping Israeli political media environment',
+        date: '2010s–present',
+        context:
+          'Israel Hayom was founded with Sheldon Adelson capital and remains under Adelson-family ownership. Widely described by Israeli and international press as editorially favorable to Netanyahu-aligned politics. Media ownership is a documented structural influence channel.',
+        source: 'Israel Hayom ownership statements; Haaretz / international press',
+        url: 'https://www.israelhayom.com/writer/dr-miriam-adelson/',
+      },
+      {
+        action: 'Public advocacy for Israeli sovereignty over West Bank / maximalist U.S. Israel policy',
+        date: '2010s–2024',
+        context:
+          'Contemporaneous reporting (Wikipedia synthesis of primary interviews/op-eds; OpenSecrets donor identity) documents consistent advocacy for annexation-friendly and unconditional-aid positions. Treat as political advocacy record, not covert agency.',
+        source: 'Public interviews / donor profile synthesis',
+        url: 'https://en.wikipedia.org/wiki/Miriam_Adelson',
+      },
+      {
+        action: 'Israeli Presidential Medal of Honor (Herzog) for contribution to Israel',
+        date: 'October 2025',
+        context:
+          'President Isaac Herzog awarded Adelson Israel\'s Presidential Medal of Honor alongside other pro-Israel media figures. Public state honor acknowledging her role as a major diaspora funder and Israel Hayom owner.',
+        source: 'Haaretz',
+        url: 'https://www.haaretz.com/israel-news/2025-10-22/ty-article/herzog-presents-presidential-award-to-miriam-adelson-and-pro-israel-german-media-mogul/0000019a-0d34-d77b-a3ff-2ff523820000',
+      },
+    ],
     connections: [
       {
         name: 'Donald Trump',
-        relationship: 'Major campaign donor',
-        evidence: '$100M+ contributed to 2024 campaign and PACs',
-        tier: 'verified'
-      }
+        relationship:
+          'Top-tier campaign / Super PAC funder (Preserve America ~$100M in 2024 alone per FEC-window reporting); recipient of Presidential Medal of Freedom from Trump (2018).',
+        evidence: 'FEC Super PAC filings; Times of Israel; White House medal ceremony',
+        tier: 'verified',
+      },
+      {
+        name: 'Sheldon Adelson (spouse, deceased 2021)',
+        relationship:
+          'Joint builders of Las Vegas Sands fortune and Israel Hayom; shared Republican megadonor strategy and pro-Israel political project.',
+        evidence: 'Estate, corporate, and contemporaneous donor records',
+        tier: 'verified',
+      },
+      {
+        name: 'Benjamin Netanyahu',
+        relationship:
+          'Israel Hayom ownership historically associated with Netanyahu-favorable coverage; overlapping pro-Israel political agendas in U.S. and Israeli media ecosystems.',
+        evidence: 'Israeli press analyses of Israel Hayom editorial posture; public political alignment',
+        tier: 'circumstantial',
+      },
+      {
+        name: 'AIPAC / pro-Israel lobby ecosystem',
+        relationship:
+          'Major parallel funder of pro-Israel Republican politics; TrackAIPAC and OpenSecrets place Adelson vehicles among the largest pro-Israel-aligned outside spenders even when legally separate from AIPAC PAC itself.',
+        evidence: 'OpenSecrets Q05 / organization tables; TrackAIPAC Trump analysis',
+        tier: 'verified',
+      },
+      {
+        name: 'Preserve America PAC',
+        relationship: 'Founding / controlling megadonor of the Super PAC vehicle used for 2024 Trump outside spending.',
+        evidence: 'FEC committee filings; disclosure reporting',
+        tier: 'verified',
+      },
+      {
+        name: 'Israel Hayom',
+        relationship: 'Publisher / family controlling shareholder of Israel\'s largest free newspaper.',
+        evidence: 'Israel Hayom masthead / ownership disclosures',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Donated $100M+ to Trump 2024 campaign',
-        source: 'FEC records',
-        url: 'https://www.fec.gov',
+        claim:
+          'In 2024, Miriam Adelson transferred approximately $100 million into Preserve America PAC in support of Donald Trump\'s presidential campaign, disclosed in FEC filings and reported by Times of Israel / AP as the largest single item in that disclosure window (installments of ~$25M/month Jul–Sep plus additional funds).',
+        source: 'Times of Israel; FEC Super PAC disclosures',
+        url: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/',
         tier: 'verified',
-        date: '2024'
-      }
+        date: 'October 2024',
+      },
+      {
+        claim:
+          'OpenSecrets listed Adelson Clinic / Miriam Adelson at approximately $146.9 million in 2024-cycle organization outside spending — among the top organization donors nationally.',
+        source: 'OpenSecrets — Top Organizations',
+        url: 'https://www.opensecrets.org/elections-overview/top-organizations',
+        tier: 'verified',
+        date: '2024 cycle',
+      },
+      {
+        claim:
+          'TrackAIPAC analysis attributes more than $215 million in Preserve America / Adelson-linked spending benefiting Trump presidential efforts since 2020 — the largest single node in their pro-Israel-interest Trump spend map.',
+        source: 'TrackAIPAC Trump page',
+        url: 'https://www.trackaipac.com/trump',
+        tier: 'verified',
+        date: '2020–2024',
+      },
+      {
+        claim:
+          'Awarded the U.S. Presidential Medal of Freedom by President Trump on November 16, 2018 — cited for philanthropy and support for the U.S.–Israel relationship.',
+        source: 'White House / JNS',
+        url: 'https://www.jns.org/news/dr-miriam-adelson-one-of-seven-to-receive-presidential-medal-of-freedom',
+        tier: 'verified',
+        date: 'November 2018',
+      },
+      {
+        claim:
+          'Controls / publishes Israel Hayom, a free mass-circulation Israeli daily founded with Adelson capital and widely analyzed as editorially favorable to Netanyahu-aligned politics.',
+        source: 'Israel Hayom; Haaretz ownership/context reporting',
+        url: 'https://www.israelhayom.com/writer/dr-miriam-adelson/',
+        tier: 'verified',
+        date: '2010s–present',
+      },
+      {
+        claim:
+          'Publicly supports Israeli annexation / sovereignty claims over the West Bank and maximal U.S. military-diplomatic support for Israeli government positions (documented advocacy record).',
+        source: 'Public interviews / secondary encyclopedic synthesis with primary citations',
+        url: 'https://en.wikipedia.org/wiki/Miriam_Adelson',
+        tier: 'verified',
+        date: '2010s–2024',
+      },
+      {
+        claim:
+          'Israeli President Isaac Herzog awarded Adelson the Israeli Presidential Medal of Honor (Oct 2025) for contributions to Israel — a state honor parallel to her U.S. Medal of Freedom.',
+        source: 'Haaretz',
+        url: 'https://www.haaretz.com/israel-news/2025-10-22/ty-article/herzog-presents-presidential-award-to-miriam-adelson-and-pro-israel-german-media-mogul/0000019a-0d34-d77b-a3ff-2ff523820000',
+        tier: 'verified',
+        date: 'October 2025',
+      },
+      {
+        claim:
+          'Named as a defendant (with Netanyahu, Trump, AIPAC, and others) in a 2020 D.C. district-court lawsuit alleging apartheid-related claims regarding the OPT; case dismissed in 2021. Inclusion is public-record litigation history, not a finding of liability.',
+        source: 'Court record / encyclopedic summary',
+        url: 'https://en.wikipedia.org/wiki/Miriam_Adelson',
+        tier: 'verified',
+        date: '2020–2021',
+      },
     ],
-    netWorth: '~$38 billion',
-    born: '1948',
-    career: ['Casino operator', 'Political donor', 'Philanthropy'],
+    career: [
+      '1945 — Born Tel Aviv (Mandatory Palestine / Israel)',
+      'Medical training and addiction-medicine practice; Adelson Clinic network',
+      'Marriage to Sheldon Adelson; partnership in casino fortune and political philanthropy',
+      '2007– — Israel Hayom founded / expanded with Adelson capital; Miriam later publisher',
+      '2016–2020 — Major Trump donor alongside Sheldon; embassy Jerusalem / Golan policy era',
+      'November 2018 — Presidential Medal of Freedom',
+      'January 2021 — Sheldon Adelson dies; Miriam becomes principal steward of estate political giving',
+      '2024 — ~$100M Preserve America PAC for Trump; OpenSecrets top organization outside spender',
+      'October 2025 — Israeli Presidential Medal of Honor (Herzog)',
+    ],
     websites: [
-      { label: 'FEC Records', url: 'https://www.fec.gov' }
-    ]
+      { label: 'OpenSecrets — Top Organizations (Adelson line)', url: 'https://www.opensecrets.org/elections-overview/top-organizations' },
+      { label: 'OpenSecrets — Miriam Adelson donor lookup', url: 'https://www.opensecrets.org/donor-lookup/results?name=miriam+adelson&order=desc&sort=D' },
+      { label: 'Times of Israel — $100M Preserve America report', url: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/' },
+      { label: 'TrackAIPAC — Trump pro-Israel spend map', url: 'https://www.trackaipac.com/trump' },
+      { label: 'Israel Hayom — Miriam Adelson', url: 'https://www.israelhayom.com/writer/dr-miriam-adelson/' },
+      { label: 'JNS — Medal of Freedom', url: 'https://www.jns.org/news/dr-miriam-adelson-one-of-seven-to-receive-presidential-medal-of-freedom' },
+      { label: 'Haaretz — Herzog medal 2025', url: 'https://www.haaretz.com/israel-news/2025-10-22/ty-article/herzog-presents-presidential-award-to-miriam-adelson-and-pro-israel-german-media-mogul/0000019a-0d34-d77b-a3ff-2ff523820000' },
+      { label: 'Wikipedia (secondary index of primary cites)', url: 'https://en.wikipedia.org/wiki/Miriam_Adelson' },
+      { label: 'FEC.gov', url: 'https://www.fec.gov' },
+    ],
   },
   {
     id: 'sheldon-adelson',
     name: 'Sheldon Adelson',
-    title: 'Casino Billionaire (Deceased)',
+    title: 'Founder, Las Vegas Sands; Pro-Israel Republican Megadonor (Deceased 2021)',
     category: 'billionaire',
+    party: 'R',
+    state: 'NV',
     photoUrl: getProfilePhoto('sheldon-adelson'),
-    summary: 'Deceased casino mogul. Donated $200M+ to Republican candidates and pro-Israel causes. Major influence on Middle East policy through campaign funding.',
-    tags: ['Adelson Family', 'Casino Billionaire', 'Republican Donor', 'Pro-Israel', 'Deceased 2021'],
-    quotes: [],
+    summary:
+      'Late founder of Las Vegas Sands and principal architect (with Miriam Adelson) of a multi-decade Republican and pro-Israel political funding machine. OpenSecrets and contemporaneous reporting document hundreds of millions in Republican outside spending across cycles. Founded Israel Hayom (2007) as a free mass daily that reshaped Israeli media competition. Publicly celebrated by Trump-era officials as a key backer of the Jerusalem embassy move and Golan Heights recognition. Died January 11, 2021; political project continued under Miriam Adelson.',
+    tags: [
+      'Adelson Family',
+      'Las Vegas Sands',
+      'Republican Megadonor',
+      'Pro-Israel',
+      'Israel Hayom',
+      'Deceased 2021',
+      'Jerusalem Embassy',
+      'Golan Recognition',
+    ],
+    born: 'August 4, 1933, Boston, Massachusetts',
+    netWorth: '~$30–40B estimated at death (Forbes range; casino equity volatile)',
+    quotes: [
+      {
+        text: 'I\'m a one-issue person, and my issue is Israel.',
+        context:
+          'Widely attributed public formulation of Adelson\'s donor priorities in contemporaneous political reporting. Use as characterizing quote from secondary press synthesis; primary interviews vary in wording.',
+        date: '2010s',
+        source: 'Contemporaneous political press synthesis',
+        url: 'https://www.opensecrets.org',
+      },
+    ],
     donations: [
       {
-        from: 'Personal contributions',
+        from: 'Republican / pro-Israel outside spending (career multi-cycle, OpenSecrets-order magnitude)',
         amount: 200000000,
-        year: '2012-2021',
-        source: 'FEC',
-        url: 'https://www.fec.gov'
-      }
+        year: '2012–2020',
+        source: 'OpenSecrets career donor aggregation (order-of-magnitude public estimates)',
+        url: 'https://www.opensecrets.org',
+      },
     ],
-    policyActions: [],
+    policyActions: [
+      {
+        action: 'Founded Israel Hayom (2007) — free mass daily competing with paid Israeli broadsheets',
+        date: '2007',
+        context:
+          'Structural media intervention in Israeli politics; later scholarship and press analysis document competitive pressure on Haaretz/Yedioth and editorial tilt favorable to Netanyahu-aligned coalitions.',
+        source: 'Israel Hayom founding record; Israeli press analyses',
+        url: 'https://www.israelhayom.com',
+      },
+      {
+        action: 'Principal Republican megadonor across 2012–2020 cycles including Trump 2016/2020',
+        date: '2012–2020',
+        context:
+          'FEC and OpenSecrets document Adelson as repeatedly among the largest single Republican outside spenders. Influence claims around embassy/Golan are political narrative from officials and press — money trail is FEC-primary.',
+        source: 'OpenSecrets / FEC',
+        url: 'https://www.opensecrets.org',
+      },
+      {
+        action: 'Public champion of moving U.S. embassy to Jerusalem and recognizing Golan Heights as Israeli',
+        date: '2016–2019',
+        context:
+          'Trump administration enacted both policies. Adelson publicly advocated and funded aligned politics; causal weight is political historiography, not a single statute naming him.',
+        source: 'Contemporaneous White House / press record',
+        url: 'https://www.whitehouse.gov',
+      },
+    ],
     connections: [
       {
+        name: 'Miriam Adelson',
+        relationship: 'Spouse and political co-principal; continued the donor project after his death.',
+        evidence: 'Marriage, joint philanthropy, estate succession',
+        tier: 'verified',
+      },
+      {
         name: 'Donald Trump',
-        relationship: 'Major donor',
-        evidence: 'Significant contributions to Trump campaigns',
-        tier: 'verified'
-      }
+        relationship: 'Major campaign/outside-spend benefactor; policy alignment on Jerusalem embassy and Golan.',
+        evidence: 'FEC; public statements',
+        tier: 'verified',
+      },
+      {
+        name: 'Benjamin Netanyahu',
+        relationship: 'Israel Hayom media environment historically favorable; shared maximalist U.S.–Israel policy goals.',
+        evidence: 'Israeli media analyses; public political alignment',
+        tier: 'circumstantial',
+      },
+      {
+        name: 'Las Vegas Sands',
+        relationship: 'Founder and long-time controlling figure; casino cash flow underwrote political and media projects.',
+        evidence: 'Corporate history / SEC filings era',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Donated $200M+ to Republican campaigns and causes',
-        source: 'FEC records',
-        url: 'https://www.fec.gov',
+        claim:
+          'Built Las Vegas Sands into a global casino conglomerate; personal fortune funded Republican and pro-Israel political giving at nine-figure multi-cycle scale.',
+        source: 'Forbes / OpenSecrets career record',
+        url: 'https://www.opensecrets.org',
         tier: 'verified',
-        date: '2021'
-      }
+        date: '2000s–2020',
+      },
+      {
+        claim:
+          'Founded Israel Hayom in 2007 as a free newspaper that became Israel\'s highest-circulation daily, restructuring the Israeli print market.',
+        source: 'Israel Hayom; Israeli press history',
+        url: 'https://www.israelhayom.com',
+        tier: 'verified',
+        date: '2007',
+      },
+      {
+        claim:
+          'Died January 11, 2021; Miriam Adelson assumed control of the political-giving apparatus including later Preserve America PAC activity.',
+        source: 'Contemporaneous obituaries / FEC succession of giving',
+        url: 'https://www.timesofisrael.com',
+        tier: 'verified',
+        date: 'January 2021',
+      },
+      {
+        claim:
+          'Among the largest single Republican donors of the 2012, 2016, and 2020 cycles per OpenSecrets rankings — structural enablement of candidates who advanced unconditional U.S. support for Israeli government priorities.',
+        source: 'OpenSecrets donor rankings',
+        url: 'https://www.opensecrets.org',
+        tier: 'verified',
+        date: '2012–2020',
+      },
     ],
-    netWorth: '~$40 billion (at death)',
-    born: '1933',
-    career: ['Casino operator', 'Political donor'],
+    career: [
+      '1933 — Born Boston, MA',
+      'Built trade-show and later casino empire culminating in Las Vegas Sands / Macau expansion',
+      '2007 — Launches Israel Hayom',
+      '2012–2020 — Peak Republican megadonor years',
+      '2016–2020 — Trump alliance; Jerusalem embassy and Golan policy era',
+      'January 11, 2021 — Dies; estate and political project continue under Miriam Adelson',
+    ],
     websites: [
-      { label: 'FEC Records', url: 'https://www.fec.gov' }
-    ]
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org' },
+      { label: 'Israel Hayom', url: 'https://www.israelhayom.com' },
+      { label: 'FEC.gov', url: 'https://www.fec.gov' },
+      { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Sheldon_Adelson' },
+    ],
   },
   {
     id: 'ghislaine-maxwell',

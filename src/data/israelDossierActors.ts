@@ -163,17 +163,32 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
   {
     profileId: 'miriam-adelson',
     name: 'Miriam Adelson',
-    role: 'Mega-donor; Adelson Family Foundation / Republican megadonor',
+    role: 'Physician / casino heiress; Preserve America PAC megadonor; Israel Hayom publisher',
     category: 'us-donor-lobby',
     enablementSummary:
-      'Among the largest individual political donors supporting strongly pro-Israel Republican candidates and policy agendas; financial enablement of electoral outcomes that lock in unconditional aid orthodoxy.',
-    relatedTimelineYears: ['2016', '2020', '2024'],
-    relatedIncidentIds: [],
-    relatedMoneyNodeIds: ['hr815', 'annual-mou'],
+      'Largest single-node Republican pro-Israel megadonor of the 2024 cycle via Preserve America PAC (~$100M FEC-window transfers; OpenSecrets org total ~$147M). Publisher of Israel Hayom. Presidential Medal of Freedom (2018). Financial enablement of candidates and administrations that lock in unconditional FMF / wartime supplemental orthodoxy — parallel to, and often larger than, formal AIPAC PAC hard money.',
+    relatedTimelineYears: ['2016', '2018', '2019', '2020', '2024'],
+    relatedIncidentIds: ['jabalia-refugee-camp', 'al-mawasi-safe-zone'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'pro-israel-lobby-2024', 'fmf-weapons', 'iron-dome'],
     fundingLinks: [
       {
-        label: 'OpenSecrets — Adelson family / related PAC activity',
-        sourceUrl: 'https://www.opensecrets.org/',
+        label: 'Times of Israel / FEC — ~$100M Preserve America PAC (2024)',
+        amount: '~$100M',
+        sourceUrl: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/',
+      },
+      {
+        label: 'OpenSecrets — Adelson Clinic / Miriam Adelson top organization outside spending',
+        amount: '~$146.9M (2024 cycle)',
+        sourceUrl: 'https://www.opensecrets.org/elections-overview/top-organizations',
+      },
+      {
+        label: 'TrackAIPAC — Preserve America multi-cycle Trump spend',
+        amount: '>$215M since 2020',
+        sourceUrl: 'https://www.trackaipac.com/trump',
+      },
+      {
+        label: 'Israel Hayom — ownership / publisher record',
+        sourceUrl: 'https://www.israelhayom.com/writer/dr-miriam-adelson/',
       },
     ],
     tier: 'verified',
