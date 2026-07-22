@@ -403,12 +403,18 @@ async function runInteractiveChecks(browser) {
       }
     }
 
-    // Topic hub CTA for israel-policy
+    // Topic hub CTA for israel-policy (client-hydrated — wait for CTA, not just h1)
     await page.goto(`${baseUrl}/topics/israel-policy`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: /Israel Policy/i }).first().waitFor({ timeout: 20000 })
+    const dossierCta = page.getByRole('link', { name: /Open Israel Dossier/i }).first()
+    await dossierCta.waitFor({ state: 'visible', timeout: 20000 })
     const topicBody = (await page.locator('body').innerText()).toLowerCase()
     assert(topicBody.includes('israel dossier') || topicBody.includes('interactive evidence'), 'israel-policy topic missing dossier CTA copy')
     assert((await page.getByRole('link', { name: /Open Israel Dossier/i }).count()) > 0, 'israel-policy topic missing Open Israel Dossier link')
+
+    // Return to dossier before download/carousel assertions (#downloads is dossier-only).
+    await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
 
     const downloads = page.locator('#downloads')
     await downloads.scrollIntoViewIfNeeded()
