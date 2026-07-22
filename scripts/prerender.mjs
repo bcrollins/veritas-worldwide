@@ -2039,6 +2039,7 @@ const staticPages = [
     body: [
       'Veritas Worldwide publishes longform investigative work built on primary sources, congressional records, court filings, declassified files, and public financial disclosures.',
       'Volume I spans 32 archive parts and more than 500 source documents. Every chapter is publicly readable, with traceable citations and source rows available without signing in.',
+      'Power Profiles map politicians, donors, and institutional actors with first-party portraits — browse https://veritasworldwide.com/profiles or the machine-readable corpus at https://veritasworldwide.com/profiles/corpus.json.',
     ],
     featuredChapterIds: chapters.slice(0, 6).map((chapter) => chapter.id),
     sourceFile: 'src/pages/HomePage.tsx',

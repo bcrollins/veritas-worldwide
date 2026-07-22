@@ -38,4 +38,10 @@ assert(src.includes('to="/read"'), 'home hero must link Read The Record')
 assert(src.includes('to="/israel-dossier"'), 'home hero must link Israel Dossier')
 assert(src.includes('Israel Dossier'), 'home hero must show Israel Dossier label')
 
+// Power Profiles discovery strip (first-party portraits + corpus)
+assert(src.includes('homeFeaturedProfiles'), 'home must feature power profiles strip')
+assert(src.includes('to="/profiles"'), 'home must deep-link to profiles index')
+assert(src.includes('/profiles/corpus.json'), 'home must expose profiles corpus URL')
+assert(src.includes('getProfilePhoto'), 'home profile cards must use first-party getProfilePhoto')
+
 console.log('[verify:home-toc-structure] PASS')
