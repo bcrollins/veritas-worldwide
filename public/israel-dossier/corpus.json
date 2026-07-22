@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T21:20:21.407Z",
+  "generatedAt": "2026-07-22T21:30:02.968Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 57,
-    "timelineEvents": 48,
+    "incidents": 58,
+    "timelineEvents": 49,
     "actors": 40,
     "moneyTrailNodes": 15,
-    "historicalWarCrimesPack": 42,
+    "historicalWarCrimesPack": 43,
     "legalCases": 7,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 2,
       "1948-1967": 6,
-      "occupation-1967-2005": 14,
+      "occupation-1967-2005": 15,
       "blockade-2007-2023": 18,
       "post-oct7": 17
     },
     "incidentsByTier": {
-      "verified": 55,
+      "verified": 56,
       "circumstantial": 2
     },
-    "childrenTagged": 49,
-    "civiliansTagged": 56,
+    "childrenTagged": 50,
+    "civiliansTagged": 57,
     "actorsByCategory": {
       "us-executive": 11,
       "us-congress": 23,
@@ -1863,6 +1863,25 @@
       ]
     },
     {
+      "id": "tl-gaza-disengagement-2005",
+      "year": "2005",
+      "era": "occupation-1967-2005",
+      "title": "Gaza Disengagement — Settlements Evacuated",
+      "description": "Israel removes settlements and bases from Gaza while retaining control of airspace, waters, and most crossings — the prelude architecture to the post-2007 blockade.",
+      "source": "UNRWA / OCHA",
+      "sourceUrl": "https://www.unrwa.org/where-we-work/gaza-strip",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-disengagement-2005",
+        "gaza-blockade-2007"
+      ],
+      "tags": [
+        "gaza",
+        "structure",
+        "occupation"
+      ]
+    },
+    {
       "id": "tl-beit-hanoun-2006",
       "year": "2006",
       "era": "occupation-1967-2005",
@@ -3137,6 +3156,44 @@
           "type": "investigation",
           "label": "HRW Razing Rafah full report",
           "url": "https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "id": "gaza-disengagement-2005",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Disengagement — Settlements Evacuated; Occupation Architecture Continues",
+      "date": "August – September 2005",
+      "location": "Gaza Strip",
+      "summary": "Israel unilaterally evacuated all settlements and military bases from Gaza. The withdrawal ended permanent ground presence inside the Strip but left Israel controlling airspace, territorial waters, and most crossings — the architecture later formalized as the post-2007 blockade. Included as a structural turning point, not a kinetic massacre.",
+      "evidence": "Israeli government disengagement plan documents, UNRWA/OCHA post-withdrawal reporting, and subsequent ICJ/UN characterizations of ongoing control form the public floor. Civilian impact of the later blockade is tracked in the separate 2007 blockade entry.",
+      "sources": [
+        {
+          "label": "UNRWA — Gaza historical context",
+          "url": "https://www.unrwa.org/where-we-work/gaza-strip"
+        },
+        {
+          "label": "OCHA — Gaza access evolution materials",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "Britannica — Israeli disengagement from Gaza",
+          "url": "https://www.britannica.com/event/Israels-disengagement-from-Gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNRWA Gaza hub",
+          "url": "https://www.unrwa.org/where-we-work/gaza-strip"
         }
       ],
       "tier": "verified"

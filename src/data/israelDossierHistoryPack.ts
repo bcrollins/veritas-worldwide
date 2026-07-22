@@ -1064,6 +1064,31 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1 },
   },
   {
+    id: 'gaza-disengagement-2005',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Disengagement — Settlements Evacuated; Occupation Architecture Continues',
+    date: 'August – September 2005',
+    location: 'Gaza Strip',
+    summary:
+      'Israel unilaterally evacuated all settlements and military bases from Gaza. The withdrawal ended permanent ground presence inside the Strip but left Israel controlling airspace, territorial waters, and most crossings — the architecture later formalized as the post-2007 blockade. Included as a structural turning point, not a kinetic massacre.',
+    evidence:
+      'Israeli government disengagement plan documents, UNRWA/OCHA post-withdrawal reporting, and subsequent ICJ/UN characterizations of ongoing control form the public floor. Civilian impact of the later blockade is tracked in the separate 2007 blockade entry.',
+    sources: [
+      { label: 'UNRWA — Gaza historical context', url: 'https://www.unrwa.org/where-we-work/gaza-strip' },
+      { label: 'OCHA — Gaza access evolution materials', url: 'https://www.ochaopt.org/' },
+      { label: 'Britannica — Israeli disengagement from Gaza', url: 'https://www.britannica.com/event/Israels-disengagement-from-Gaza' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNRWA Gaza hub', url: 'https://www.unrwa.org/where-we-work/gaza-strip' },
+    ],
+    tier: 'verified',
+  },
+  {
     id: 'settler-violence-pattern-2021-2023',
     era: 'blockade-2007-2023',
     targetsCivilians: true,
@@ -1484,6 +1509,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['operation-rainbow-2004'],
     tags: ['civilians', 'children', 'demolitions', 'gaza'],
+  },
+  {
+    id: 'tl-gaza-disengagement-2005',
+    year: '2005',
+    era: 'occupation-1967-2005',
+    title: 'Gaza Disengagement — Settlements Evacuated',
+    description:
+      'Israel removes settlements and bases from Gaza while retaining control of airspace, waters, and most crossings — the prelude architecture to the post-2007 blockade.',
+    source: 'UNRWA / OCHA',
+    sourceUrl: 'https://www.unrwa.org/where-we-work/gaza-strip',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-disengagement-2005', 'gaza-blockade-2007'],
+    tags: ['gaza', 'structure', 'occupation'],
   },
   {
     id: 'tl-days-of-penitence-2004',
