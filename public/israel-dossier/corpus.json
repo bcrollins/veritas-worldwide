@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T19:52:55.401Z",
+  "generatedAt": "2026-07-22T19:55:50.924Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 51,
     "timelineEvents": 42,
     "actors": 31,
-    "moneyTrailNodes": 12,
+    "moneyTrailNodes": 13,
     "historicalWarCrimesPack": 36,
     "legalCases": 7,
     "lobbyingRecords": 4
@@ -254,6 +254,25 @@
         "joe-biden",
         "benjamin-netanyahu",
         "donald-trump"
+      ]
+    },
+    {
+      "id": "war-reserve-stockpile",
+      "label": "U.S. War Reserve Stockpile Allies-Israel (WRSA-I)",
+      "amount": "prepositioned munitions stockpile",
+      "type": "delivery",
+      "date": "ongoing / wartime drawdowns",
+      "detail": "The U.S. maintains a prepositioned munitions stockpile in Israel (WRSA-I) that can be drawn down in wartime under U.S. law and presidential authority. Drawdowns during the Gaza war accelerated munitions availability beyond annual FMF purchases alone. Tracked separately because stockpile release is a delivery mechanism, not a new appropriation.",
+      "sourceUrl": "https://www.congress.gov/crs-product/RL33222",
+      "children": [
+        "munitions",
+        "mk84-use",
+        "artillery-use"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "donald-trump",
+        "benjamin-netanyahu"
       ]
     }
   ],

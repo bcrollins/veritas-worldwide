@@ -1092,6 +1092,17 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['fmf-weapons', 'jdam-use'],
     relatedProfileIds: ['barack-obama', 'joe-biden', 'benjamin-netanyahu', 'donald-trump'],
   },
+  {
+    id: 'war-reserve-stockpile',
+    label: 'U.S. War Reserve Stockpile Allies-Israel (WRSA-I)',
+    amount: 'prepositioned munitions stockpile',
+    type: 'delivery',
+    date: 'ongoing / wartime drawdowns',
+    detail: 'The U.S. maintains a prepositioned munitions stockpile in Israel (WRSA-I) that can be drawn down in wartime under U.S. law and presidential authority. Drawdowns during the Gaza war accelerated munitions availability beyond annual FMF purchases alone. Tracked separately because stockpile release is a delivery mechanism, not a new appropriation.',
+    sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+    children: ['munitions', 'mk84-use', 'artillery-use'],
+    relatedProfileIds: ['joe-biden', 'donald-trump', 'benjamin-netanyahu'],
+  },
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
