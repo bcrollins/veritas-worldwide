@@ -316,7 +316,18 @@ function getChapterExcerpt(chapterId) {
   return excerpts
 }
 
-function getOgImage(chapterId) {
+function getOgImage(chapterId, chapterHeroPath = '') {
+  // Prefer first-party editorial chapter heroes when present.
+  const localHeroRel = chapterHeroPath?.startsWith('/')
+    ? chapterHeroPath
+    : chapterHeroPath
+      ? `/${chapterHeroPath}`
+      : `/chapters/heroes/${chapterId}.jpg`
+  const localHeroDisk = path.join(repoRoot, 'public', localHeroRel.replace(/^\//, ''))
+  if (fs.existsSync(localHeroDisk)) {
+    return `${SITE_URL}${localHeroRel.startsWith('/') ? '' : '/'}${localHeroRel}`
+  }
+
   const pngPath = path.join(distDir, 'og', `${chapterId}.png`)
   const svgPath = path.join(distDir, 'og', `${chapterId}.svg`)
 
@@ -2362,7 +2373,7 @@ for (const chapter of chapters) {
   const chapterFile = path.join(chapterSourceDir, `${chapter.id}.ts`)
   const publishedTime = normalizeHumanDate(chapter.publishDate)
   const modifiedTime = getGitModified(chapterFile).slice(0, 10)
-  const image = getOgImage(chapter.id)
+  const image = getOgImage(chapter.id, chapter.heroImage || '')
   const body = renderChapterPage(chapter, getChapterExcerpt(chapter.id), topicAliasMap)
   const meta = {
     title: `${chapter.title} | The Record - ${SITE_NAME}`,

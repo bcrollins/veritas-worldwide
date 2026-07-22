@@ -93,9 +93,16 @@ export function registerBotMetaInjection({ app, rootDir }) {
         const chapterSlug = chapterMatch[1]
         const pngPath = path.join(rootDir, 'dist', 'og', `${chapterSlug}.png`)
         const svgPath = path.join(rootDir, 'dist', 'og', `${chapterSlug}.svg`)
+        const localHeroCandidates = [
+          path.join(rootDir, 'dist', 'chapters', 'heroes', `${chapterSlug}.jpg`),
+          path.join(rootDir, 'public', 'chapters', 'heroes', `${chapterSlug}.jpg`),
+        ]
         let chapterOgImage = OG_IMAGE
 
-        if (fs.existsSync(pngPath)) {
+        const localHero = localHeroCandidates.find((p) => fs.existsSync(p))
+        if (localHero) {
+          chapterOgImage = `${SITE_URL}/chapters/heroes/${chapterSlug}.jpg`
+        } else if (fs.existsSync(pngPath)) {
           chapterOgImage = `${SITE_URL}/og/${chapterSlug}.png`
         } else if (fs.existsSync(svgPath)) {
           chapterOgImage = `${SITE_URL}/og/${chapterSlug}.svg`

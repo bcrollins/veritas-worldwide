@@ -634,6 +634,32 @@ const healthResult = await fetchJson('/api/health')
         )
       }
 
+      // First-party chapter heroes must not regress to 404 broken icons.
+      for (const hero of [
+        '/chapters/heroes/chapter-1.jpg',
+        '/chapters/heroes/foreword.jpg',
+        '/chapters/heroes/chapter-12.jpg',
+        '/chapters/heroes/epilogue.jpg',
+      ]) {
+        try {
+          const heroRes = await fetch(getUrl(hero), {
+            method: 'HEAD',
+            signal: AbortSignal.timeout(timeoutMs),
+          })
+          const len = Number(heroRes.headers.get('content-length') || 0)
+          const type = heroRes.headers.get('content-type') || ''
+          addCheck(
+            checks,
+            failures,
+            heroRes.ok && type.includes('image') && len > 10_000,
+            `Chapter hero asset present: ${hero}`,
+            `status=${heroRes.status} type=${type} bytes=${len}`,
+          )
+        } catch (error) {
+          addCheck(checks, failures, false, `Chapter hero asset present: ${hero}`, `error=${error instanceof Error ? error.message : String(error)}`)
+        }
+      }
+
       // First-party news heroes must not regress to 404 broken icons.
       for (const hero of [
         '/news/heroes/federal-reserve.jpg',
