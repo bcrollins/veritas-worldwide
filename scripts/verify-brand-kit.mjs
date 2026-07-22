@@ -57,6 +57,8 @@ const required = [
   '04-social/highlight-record.svg',
   '09-templates/business-card.svg',
   '09-templates/media-kit.html',
+  '04-social/quote-card.svg',
+  '07-docs/BRAND-VOICE.md',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
 ]
 
@@ -121,6 +123,9 @@ if (!Array.isArray(manifest.sections) || manifest.sections.length < 8) bad('mani
 else ok(`${manifest.sections.length} sections`)
 if (!String(manifest.version || '').startsWith('2.')) bad('manifest version not 2.x')
 else ok(`version ${manifest.version}`)
+if (manifest.zipSha256 && !/^[a-f0-9]{64}$/i.test(manifest.zipSha256)) bad('zipSha256 invalid')
+else if (manifest.zipSha256) ok(`zipSha256 ${manifest.zipSha256.slice(0, 12)}…`)
+else ok('zipSha256 optional (regen kit to populate)')
 
 const zip = join(KIT, 'exports', 'Veritas-Worldwide-Ultimate-Brand-Kit.zip')
 const zipSize = statSync(zip).size
@@ -142,7 +147,10 @@ if (base) {
     '/brand-kit/09-templates/letterhead.svg',
     '/brand-kit/09-templates/business-card.svg',
     '/brand-kit/09-templates/media-kit.html',
+    '/brand-kit/04-social/quote-card.svg',
+    '/brand-kit/07-docs/BRAND-VOICE.md',
     '/brand-kit/06-tokens/tokens.css',
+    '/media-kit',
     '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md',
     '/brand-kit/04-social/highlight-chapters.svg',
     '/brand-kit/07-docs/HASHTAGS.md',

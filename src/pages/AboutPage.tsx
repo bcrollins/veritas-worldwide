@@ -183,6 +183,29 @@ export default function AboutPage() {
               </div>
             </section>
 
+            <section id="press" className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">Press &amp; brand assets</h2>
+              <p className="mt-4 font-body leading-relaxed text-ink-muted">
+                Logos, social banners, letterhead, and usage rules ship from the official media kit. Prefer vectors;
+                do not recolor the seal outside brand tokens.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  to="/media-kit"
+                  className="inline-flex min-h-[44px] items-center rounded-full bg-crimson px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-crimson-dark"
+                >
+                  Open Media Kit
+                </Link>
+                <a
+                  href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip"
+                  download
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                >
+                  Download Brand Kit ZIP
+                </a>
+              </div>
+            </section>
+
             <section id="contact" className="mt-12">
               <h2 className="font-display text-2xl font-semibold text-ink">Contact</h2>
               <div className="mt-5 grid gap-4">
@@ -266,6 +289,7 @@ export default function AboutPage() {
                 <nav className="mt-4 space-y-3">
                   {[
                     { to: '/read', label: 'Read The Record' },
+                    { to: '/media-kit', label: 'Media Kit' },
                     { to: '/methodology', label: 'Methodology' },
                     { to: '/sources', label: 'Sources' },
                     { to: '/institute', label: 'Veritas Institute' },

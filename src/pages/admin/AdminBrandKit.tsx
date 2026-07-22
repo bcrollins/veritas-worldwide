@@ -38,6 +38,7 @@ export default function AdminBrandKit() {
   const [zipOk, setZipOk] = useState<boolean | null>(null)
   const [zipBytes, setZipBytes] = useState<number | null>(null)
   const [copied, setCopied] = useState('')
+  const [zipSha, setZipSha] = useState<string | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -45,14 +46,18 @@ export default function AdminBrandKit() {
       try {
         const res = await fetch('/brand-kit/manifest.json', { cache: 'no-store' })
         if (!res.ok) throw new Error(`manifest ${res.status}`)
-        const data = (await res.json()) as BrandManifest
-        if (!cancelled) setManifest(data)
+        const data = (await res.json()) as BrandManifest & { zipSha256?: string; zipBytes?: number }
+        if (!cancelled) {
+          setManifest(data)
+          if (data.zipSha256) setZipSha(data.zipSha256)
+          if (typeof data.zipBytes === 'number') setZipBytes(data.zipBytes)
+        }
 
         const zipRes = await fetch(data.zipPath, { method: 'HEAD', cache: 'no-store' })
         if (!cancelled) {
           setZipOk(zipRes.ok)
           const len = zipRes.headers.get('content-length')
-          setZipBytes(len ? Number(len) : null)
+          if (len) setZipBytes(Number(len))
         }
       } catch (e) {
         if (!cancelled) setError(e instanceof Error ? e.message : 'Failed to load brand kit')
@@ -117,6 +122,16 @@ export default function AdminBrandKit() {
           >
             {zipOk === true ? 'Ready' : zipOk === false ? 'Missing' : 'Checking…'}
           </p>
+          {zipSha && (
+            <button
+              type="button"
+              onClick={() => copyText(zipSha, 'SHA-256')}
+              className="mt-2 break-all text-left font-mono text-[9px] text-white/25 hover:text-crimson"
+              title="Copy SHA-256"
+            >
+              sha256:{zipSha.slice(0, 16)}…
+            </button>
+          )}
         </div>
         <div className="rounded-lg border border-white/5 bg-white/5 p-4">
           <p className="font-sans text-[10px] uppercase tracking-widest text-white/30">Sections</p>
@@ -311,6 +326,22 @@ export default function AdminBrandKit() {
             className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
           >
             Social Hub →
+          </a>
+          <a
+            href="/media-kit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Public /media-kit →
+          </a>
+          <a
+            href="/brand-kit/07-docs/BRAND-VOICE.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Brand voice →
           </a>
         </div>
       </section>

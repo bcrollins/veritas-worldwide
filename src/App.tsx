@@ -75,6 +75,7 @@ const AdminSocialPacks = lazy(() => import('./pages/admin/AdminSocialPacks'))
 const AdminSocialHub = lazy(() => import('./pages/admin/AdminSocialHub'))
 const AdminDisputes = lazy(() => import('./pages/admin/AdminDisputes'))
 const AdminBrandKit = lazy(() => import('./pages/admin/AdminBrandKit'))
+const MediaKitPage = lazy(() => import('./pages/MediaKitPage'))
 
 type ShellLink = {
   to: string
@@ -639,6 +640,7 @@ function Footer() {
     { to: '/bookmarks', label: t('nav.bookmarks') },
     { to: '/analytics', label: t('nav.analytics') },
     { to: '/about', label: t('nav.about') },
+    { to: '/media-kit', label: 'Media Kit' },
     { to: '/accessibility', label: t('nav.accessibility') },
     { to: '/privacy', label: t('nav.privacy') },
     { to: '/terms', label: t('nav.terms') },
@@ -844,6 +846,7 @@ export default function App() {
                 <Route path="/analytics" element={<AnalyticsPage />} />
                 <Route path="/accessibility" element={<AccessibilityPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/media-kit" element={<MediaKitPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/israel-dossier" element={<IsraelDossierPage />} />

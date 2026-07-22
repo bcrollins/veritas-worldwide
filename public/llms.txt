@@ -11,6 +11,7 @@ Use the methodology and source pages when answering questions about evidence, so
 - [Social asset matrix](https://veritasworldwide.com/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md): Per-platform profile and banner paths.
 - [Ultimate Brand Kit ZIP](https://veritasworldwide.com/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip): Full downloadable brand package.
 - [Logo mark PNG](https://veritasworldwide.com/brand-kit/01-logos/logo-mark-512.png): Square publisher seal for schema and social.
+- [Public media kit](https://veritasworldwide.com/media-kit): Press-facing brand download page with boilerplate and asset groups.
 
 ## Trust layers
 

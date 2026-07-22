@@ -1,8 +1,10 @@
 {
-  "version": "2.2.0",
+  "version": "2.3.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-22T23:21:09.050Z",
+  "generatedAt": "2026-07-22T23:26:09.499Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
+  "publicMediaKit": "/media-kit",
+  "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
   "sections": [
     {
       "id": "01-logos",
@@ -22,7 +24,7 @@
     {
       "id": "04-social",
       "title": "Social",
-      "description": "Profile and platform banners"
+      "description": "Profile, banners, story, highlights, quote cards"
     },
     {
       "id": "05-og",
@@ -32,12 +34,12 @@
     {
       "id": "06-tokens",
       "title": "Design Tokens",
-      "description": "Colors, type, usage rules (JSON)"
+      "description": "Colors, type, CSS custom properties"
     },
     {
       "id": "07-docs",
       "title": "Documentation",
-      "description": "Brand guide and alt-text manifest"
+      "description": "Guide, voice, legal, hashtags, contrast"
     },
     {
       "id": "08-ai-generated",
@@ -47,7 +49,7 @@
     {
       "id": "09-templates",
       "title": "Templates",
-      "description": "Letterhead, email signature, press header, business card"
+      "description": "Letterhead, signature, press, business card, media kit"
     }
   ],
   "downloads": [
@@ -93,6 +95,10 @@
       "href": "/brand-kit/04-social/story-1080x1920.svg"
     },
     {
+      "label": "Quote card (SVG)",
+      "href": "/brand-kit/04-social/quote-card.svg"
+    },
+    {
       "label": "Social asset matrix",
       "href": "/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md"
     },
@@ -109,8 +115,20 @@
       "href": "/brand-kit/09-templates/business-card.svg"
     },
     {
+      "label": "Media kit (HTML)",
+      "href": "/brand-kit/09-templates/media-kit.html"
+    },
+    {
+      "label": "Public media kit page",
+      "href": "/media-kit"
+    },
+    {
       "label": "Brand guide (MD)",
       "href": "/brand-kit/07-docs/BRAND-GUIDE.md"
+    },
+    {
+      "label": "Brand voice (MD)",
+      "href": "/brand-kit/07-docs/BRAND-VOICE.md"
     },
     {
       "label": "Hashtags (MD)",
@@ -123,10 +141,6 @@
     {
       "label": "Tokens (CSS)",
       "href": "/brand-kit/06-tokens/tokens.css"
-    },
-    {
-      "label": "Media kit (HTML)",
-      "href": "/brand-kit/09-templates/media-kit.html"
     }
   ],
   "platformAssets": {
@@ -150,5 +164,7 @@
       "profile": "/brand-kit/02-icons/app-icon-512.png",
       "banner": "/brand-kit/04-social/social-banner-youtube.svg"
     }
-  }
+  },
+  "zipBytes": 1075065,
+  "zipSha256": "760327b48367522181d73823455045ac8a47c29975c16aac4eac8d3ec6953e52"
 }

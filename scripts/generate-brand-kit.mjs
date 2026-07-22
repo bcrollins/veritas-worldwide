@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.2.0'
+const KIT_VERSION = '2.3.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -493,6 +493,116 @@ institutional power history, public record investigation, evidence taxonomy
 `
 }
 
+function quoteCardSvg(quote = 'Primary sources. Public record. Your conclusions.') {
+  const q = String(quote).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Quote card">
+  <rect width="1080" height="1080" fill="${C.black}"/>
+  <rect x="0" y="0" width="1080" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="${C.crimson}"/>
+  <text x="120" y="280" font-family="Georgia, serif" font-size="120" fill="${C.crimson}" opacity="0.35">“</text>
+  <foreignObject x="120" y="320" width="840" height="420">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Georgia,serif;font-size:48px;line-height:1.35;color:#FFFFFF;font-style:italic;">
+      ${q}
+    </div>
+  </foreignObject>
+  <line x1="120" y1="800" x2="360" y2="800" stroke="${C.gold}" stroke-width="2"/>
+  <text x="120" y="860" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="4" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+  <text x="120" y="900" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.45)">veritasworldwide.com</text>
+</svg>`
+}
+
+function brandVoiceMd() {
+  return `# Brand Voice — Veritas Worldwide Press
+
+## Positioning
+Sober investigative publisher. Archive, not agitprop. Documentary record, not punditry.
+
+## Voice attributes
+- **Precise** — prefer dates, document names, and institutional nouns over adjectives.
+- **Sourced** — claims sit next to evidence tiers or source paths.
+- **Calm** — intensity comes from facts, not punctuation or ALL CAPS.
+- **Independent** — no party cheerleading; no protected-class blame shortcuts.
+- **Readable** — longform serif body, short UI labels, plain words when possible.
+
+## Do
+- Lead with the document or institutional fact.
+- Separate verified fact from analysis and opinion.
+- Invite the reader to inspect sources.
+
+## Do not
+- Use unsupported accusation as fact.
+- Use collective ethnic/religious blame narratives.
+- Hype with "bombshell," "destroyed," or engagement bait.
+
+## Signature line
+Primary sources. Public record. Your conclusions.
+
+## Sample social posts
+1. New in The Record: [chapter]. Sources open. Methodology public.  
+2. Evidence label: Verified — [claim]. Full citation on the page.  
+3. We updated [page] after a source challenge. Correction logged. Trust layer first.
+`
+}
+
+function mediaKitHtml() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veritas Worldwide Press — Media Kit</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root { --parchment:#FAF8F5; --ink:#1A1A1A; --muted:#666666; --crimson:#8B1A1A; --gold:#B8860B; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--parchment); line-height:1.55; }
+    .bar { height:4px; background:var(--crimson); }
+    .wrap { max-width:760px; margin:0 auto; padding:40px 24px 80px; }
+    .logo { width:72px; height:72px; display:block; margin-bottom:20px; }
+    h1 { font-size:2rem; letter-spacing:0.06em; margin:0 0 8px; }
+    .sub { font-family:Inter,Helvetica,Arial,sans-serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); }
+    hr { border:0; border-top:1px solid var(--crimson); margin:28px 0; opacity:0.5; }
+    h2 { font-size:1.15rem; margin:28px 0 10px; }
+    p, li { font-size:1rem; color:#333; }
+    a { color:var(--crimson); }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:12px; }
+    @media (max-width:560px){ .grid { grid-template-columns:1fr; } }
+    .card { border:1px solid #e5e7eb; background:#fff; padding:16px; border-radius:4px; }
+    .card h3 { margin:0 0 8px; font-size:0.95rem; font-family:Inter,Helvetica,Arial,sans-serif; letter-spacing:0.04em; text-transform:uppercase; color:var(--crimson); }
+    .card a { font-family:Inter,Helvetica,Arial,sans-serif; font-size:0.85rem; word-break:break-all; }
+    .tag { color:var(--gold); font-family:Inter,Helvetica,Arial,sans-serif; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
+    footer { margin-top:40px; font-family:Inter,Helvetica,Arial,sans-serif; font-size:0.8rem; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="bar"></div>
+  <div class="wrap">
+    <p class="tag">Media kit · Veritas Worldwide Press · v${KIT_VERSION}</p>
+    <img class="logo" src="/brand-kit/01-logos/logo-mark.svg" alt="Veritas Worldwide seal" />
+    <h1>VERITAS WORLDWIDE PRESS</h1>
+    <p class="sub">The Documentary Record</p>
+    <hr />
+    <p>Independent investigative publisher. Flagship work <em>The Record</em> is a multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier labeling.</p>
+    <h2>Boilerplate</h2>
+    <p>Veritas Worldwide publishes source-first investigations into power, money, and institutions. Full archive: <a href="https://veritasworldwide.com">veritasworldwide.com</a>. Interactive kit: <a href="https://veritasworldwide.com/media-kit">/media-kit</a>.</p>
+    <h2>Brand assets</h2>
+    <div class="grid">
+      <div class="card"><h3>Logo mark</h3><a href="/brand-kit/01-logos/logo-mark.svg">logo-mark.svg</a><br /><a href="/brand-kit/01-logos/logo-mark-512.png">logo-mark-512.png</a></div>
+      <div class="card"><h3>Wordmark / lockup</h3><a href="/brand-kit/01-logos/logo-full.svg">logo-full.svg</a><br /><a href="/brand-kit/03-wordmarks/wordmark.svg">wordmark.svg</a></div>
+      <div class="card"><h3>Social / OG</h3><a href="/og-image.png">og-image.png</a><br /><a href="/brand-kit/04-social/social-banner-x.svg">X banner</a></div>
+      <div class="card"><h3>Full kit</h3><a href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip">Ultimate Brand Kit (.zip)</a><br /><a href="/brand-kit/07-docs/BRAND-GUIDE.md">Brand guide</a></div>
+    </div>
+    <h2>Press contact</h2>
+    <p>Rights &amp; media: <a href="mailto:rights@veritasworldwide.com">rights@veritasworldwide.com</a><br />Site: <a href="https://veritasworldwide.com">veritasworldwide.com</a></p>
+    <footer>© Veritas Worldwide Press · Brand kit v${KIT_VERSION} · Primary sources. Public record. Your conclusions.</footer>
+  </div>
+  <div class="bar"></div>
+</body>
+</html>
+`
+}
+
 function wcagContrastMd() {
   return `# Brand Color Contrast — WCAG 2.2 AA
 
@@ -621,8 +731,6 @@ function altTextManifest() {
 
 function buildZip() {
   const zipPath = join(ROOT, 'public', 'brand-kit', 'exports', 'Veritas-Worldwide-Ultimate-Brand-Kit.zip')
-  // zip from inside brand-kit so paths are clean
-  const exclude = ['exports/*']
   try {
     execSync(
       `cd "${KIT}" && rm -f exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip && zip -r exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip . -x "exports/*" -x "*.DS_Store"`,
@@ -633,8 +741,14 @@ function buildZip() {
     process.exit(1)
   }
   const size = statSync(zipPath).size
-  console.log(`ZIP: ${zipPath} (${(size / 1024).toFixed(1)} KB)`)
-  return zipPath
+  let sha256 = ''
+  try {
+    sha256 = execSync(`shasum -a 256 "${zipPath}"`).toString().trim().split(/\s+/)[0]
+  } catch {
+    sha256 = ''
+  }
+  console.log(`ZIP: ${zipPath} (${(size / 1024).toFixed(1)} KB)${sha256 ? ` sha256=${sha256.slice(0, 12)}…` : ''}`)
+  return { zipPath, size, sha256 }
 }
 
 function main() {
@@ -733,11 +847,14 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('09-templates/letterhead.svg', letterheadSvg())
   writeSvg('09-templates/press-release-header.svg', pressReleaseHeaderSvg())
   writeSvg('09-templates/business-card.svg', businessCardSvg())
+  writeSvg('04-social/quote-card.svg', quoteCardSvg())
   writeFileSync(join(KIT, '09-templates', 'email-signature.html'), emailSignatureHtml())
+  writeFileSync(join(KIT, '09-templates', 'media-kit.html'), mediaKitHtml())
   writeFileSync(join(KIT, '06-tokens', 'tokens.css'), tokensCss())
   writeFileSync(join(KIT, '07-docs', 'HASHTAGS.md'), hashtagsMd())
   writeFileSync(join(KIT, '07-docs', 'WCAG-CONTRAST.md'), wcagContrastMd())
   writeFileSync(join(KIT, '07-docs', 'SOCIAL-ASSET-MATRIX.md'), socialAssetMatrixMd())
+  writeFileSync(join(KIT, '07-docs', 'BRAND-VOICE.md'), brandVoiceMd())
 
   // Rasterize key assets
   const rasters = [
@@ -759,6 +876,7 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/highlight-chapters.svg', '04-social/highlight-chapters.png', 400],
     ['04-social/highlight-sources.svg', '04-social/highlight-sources.png', 400],
     ['04-social/highlight-record.svg', '04-social/highlight-record.png', 400],
+    ['04-social/quote-card.svg', '04-social/quote-card.png', 1080],
   ]
   for (const [src, dest, w] of rasters) {
     try {
@@ -780,22 +898,24 @@ Editorial and licensing: rights@veritasworldwide.com
     console.warn('Root asset copy warning:', e.message)
   }
 
-  // Manifest for admin UI
-  const manifest = {
+  // Manifest for admin UI (written twice: before zip for completeness, after zip for hash)
+  const manifestBase = {
     version: KIT_VERSION,
     name: 'Veritas Worldwide Ultimate Brand Kit',
     generatedAt: new Date().toISOString(),
     zipPath: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
+    publicMediaKit: '/media-kit',
+    staticMediaKit: '/brand-kit/09-templates/media-kit.html',
     sections: [
       { id: '01-logos', title: 'Logos', description: 'Primary seal, full lockups, monochrome variants' },
       { id: '02-icons', title: 'Icons & Favicon', description: 'App icon, favicon, apple-touch, sized marks' },
       { id: '03-wordmarks', title: 'Wordmarks', description: 'Text-only brand typography' },
-      { id: '04-social', title: 'Social', description: 'Profile and platform banners' },
+      { id: '04-social', title: 'Social', description: 'Profile, banners, story, highlights, quote cards' },
       { id: '05-og', title: 'Open Graph', description: 'Default social share card' },
-      { id: '06-tokens', title: 'Design Tokens', description: 'Colors, type, usage rules (JSON)' },
-      { id: '07-docs', title: 'Documentation', description: 'Brand guide and alt-text manifest' },
+      { id: '06-tokens', title: 'Design Tokens', description: 'Colors, type, CSS custom properties' },
+      { id: '07-docs', title: 'Documentation', description: 'Guide, voice, legal, hashtags, contrast' },
       { id: '08-ai-generated', title: 'AI References', description: 'Grok Imagine brand direction renders' },
-      { id: '09-templates', title: 'Templates', description: 'Letterhead, email signature, press header, business card' },
+      { id: '09-templates', title: 'Templates', description: 'Letterhead, signature, press, business card, media kit' },
     ],
     downloads: [
       { label: 'Ultimate Brand Kit (.zip)', href: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip', adminOnly: true },
@@ -808,11 +928,15 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'OG image (PNG)', href: '/brand-kit/05-og/og-image.png' },
       { label: 'X banner (SVG)', href: '/brand-kit/04-social/social-banner-x.svg' },
       { label: 'IG story (SVG)', href: '/brand-kit/04-social/story-1080x1920.svg' },
+      { label: 'Quote card (SVG)', href: '/brand-kit/04-social/quote-card.svg' },
       { label: 'Social asset matrix', href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md' },
       { label: 'Email signature (HTML)', href: '/brand-kit/09-templates/email-signature.html' },
       { label: 'Letterhead (SVG)', href: '/brand-kit/09-templates/letterhead.svg' },
       { label: 'Business card (SVG)', href: '/brand-kit/09-templates/business-card.svg' },
+      { label: 'Media kit (HTML)', href: '/brand-kit/09-templates/media-kit.html' },
+      { label: 'Public media kit page', href: '/media-kit' },
       { label: 'Brand guide (MD)', href: '/brand-kit/07-docs/BRAND-GUIDE.md' },
+      { label: 'Brand voice (MD)', href: '/brand-kit/07-docs/BRAND-VOICE.md' },
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },
       { label: 'Tokens (CSS)', href: '/brand-kit/06-tokens/tokens.css' },
@@ -825,9 +949,22 @@ Editorial and licensing: rights@veritasworldwide.com
       youtube: { profile: '/brand-kit/02-icons/app-icon-512.png', banner: '/brand-kit/04-social/social-banner-youtube.svg' },
     },
   }
-  writeFileSync(join(KIT, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n')
+  writeFileSync(join(KIT, 'manifest.json'), JSON.stringify(manifestBase, null, 2) + '\n')
 
-  buildZip()
+  const { size, sha256 } = buildZip()
+  // Publish integrity on the site (not re-zipped — self-hash would thrash)
+  const manifestFinal = {
+    ...manifestBase,
+    zipBytes: size,
+    zipSha256: sha256 || null,
+  }
+  writeFileSync(join(KIT, 'manifest.json'), JSON.stringify(manifestFinal, null, 2) + '\n')
+  if (sha256) {
+    writeFileSync(
+      join(KIT, 'exports', 'Veritas-Worldwide-Ultimate-Brand-Kit.sha256'),
+      `${sha256}  Veritas-Worldwide-Ultimate-Brand-Kit.zip\n`,
+    )
+  }
   console.log(`Brand kit v${KIT_VERSION} generation complete.`)
 }
 
