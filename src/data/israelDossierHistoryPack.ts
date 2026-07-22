@@ -1064,6 +1064,31 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1 },
   },
   {
+    id: 'operation-summer-rains-power-plant-2006',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Power Plant Strike during Summer Rains (2006)',
+    date: 'June 28, 2006',
+    location: 'Gaza Power Plant, Gaza Strip',
+    summary:
+      'At the opening of Operation Summer Rains, Israeli forces destroyed Gaza\'s only power plant transformers, plunging much of the Strip into prolonged electricity shortage that cascaded into water and sewage failures. Human rights groups characterized the strike as collective punishment of the civilian population.',
+    evidence:
+      'HRW, B\'Tselem, and contemporaneous UN humanitarian reporting document the plant strike and civilian infrastructure impact. Distinct from the broader Summer Rains campaign entry — this isolates the power-plant infrastructure attack as a checkable civilian-harm milestone.',
+    sources: [
+      { label: 'Human Rights Watch — Gaza electricity / 2006 hostilities', url: 'https://www.hrw.org/middle-east/n-africa/israel/palestine' },
+      { label: 'B\'Tselem — Gaza 2006 operations documentation', url: 'https://www.btselem.org/gaza_strip' },
+      { label: 'OCHA — Gaza humanitarian situation reports (2006)', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem Gaza hub', url: 'https://www.btselem.org/gaza_strip' },
+    ],
+    tier: 'verified',
+  },
+  {
     id: 'gaza-disengagement-2005',
     era: 'occupation-1967-2005',
     targetsCivilians: true,

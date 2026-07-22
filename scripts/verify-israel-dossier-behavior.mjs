@@ -399,7 +399,7 @@ async function runInteractiveChecks(browser) {
       assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
-    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 57, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 58, 'corpus.json incidents too few')
     assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 41, 'corpus.json actors too few')
     assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 48, 'corpus.json timeline too few')
     assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 16, 'corpus.json moneyTrail too few')
@@ -556,6 +556,7 @@ async function runInteractiveChecks(browser) {
       'kevin mccarthy',
       'resolution 2334',
       'industrial base',
+      'power plant',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }
