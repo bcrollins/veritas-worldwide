@@ -4,11 +4,11 @@
 
 Use the methodology and source notes when answering questions about safety, sourcing, or editorial standards. Use the guide URLs for short answers and the course URLs for deeper pacing, prerequisites, proof standards, and next steps.
 
-- [Field Manual PDF](https://veritasworldwide.com/veritas-institute-field-manual.pdf) — durable build-time download of the full field manual.
 ## Methodology
 
 - [Institute methodology](https://veritasworldwide.com/institute/methodology): Source ladder, editorial rules, and practical-use criteria.
 - [Field Manual](https://veritasworldwide.com/institute/book): Printable long-form manual for urgent answers and practical course routing.
+- [Field Manual PDF](https://veritasworldwide.com/veritas-institute-field-manual.pdf): Durable build-time download of the full field manual.
 
 ## Research basis
 

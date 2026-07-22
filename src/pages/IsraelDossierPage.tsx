@@ -15,6 +15,9 @@ import ContentGate from '../components/ContentGate'
 import ReadingProgress from '../components/ReadingProgress'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+import { getProfileBySlug, getProfilePhoto } from '../data/profileData'
+import { ISRAEL_DOSSIER_ACTORS, type DossierActorEnablement } from '../data/israelDossierActors'
+import { ISRAEL_DOSSIER_ERA_META, type DossierEra } from '../data/israelDossierHistoryPack'
 import {
   ISRAEL_DOSSIER_ASSETS,
   ISRAEL_DOSSIER_CATEGORY_META,
@@ -33,6 +36,7 @@ import {
   type DossierDocumentedIncident,
   type DossierMoneyTrailNode,
   type DossierCourseModule,
+  type DossierTimelineEvent,
 } from '../data/israelDossierCanon'
 
 /* ═══════════════════════════════════════════════════════════
@@ -184,9 +188,10 @@ function MoneyTrailCard({ node }: { node: DossierMoneyTrailNode }) {
 function IncidentCard({ incident }: { incident: DossierDocumentedIncident }) {
   const [expanded, setExpanded] = useState(false)
   const MEDIA_ICONS: Record<string, string> = { video: 'video', investigation: 'search', 'photo-essay': 'camera', document: 'file' }
+  const anchorId = incident.id ? `incident-${incident.id}` : undefined
 
   return (
-    <article className="border border-border rounded-sm overflow-hidden hover:shadow-lg transition-shadow duration-200">
+    <article id={anchorId} className="border border-border rounded-sm overflow-hidden hover:shadow-lg transition-shadow duration-200 scroll-mt-24">
       {/* Header */}
       <div
         className="p-5 border-b border-border bg-surface cursor-pointer"
@@ -203,6 +208,16 @@ function IncidentCard({ incident }: { incident: DossierDocumentedIncident }) {
               }`}>
                 {incident.tier === 'verified' ? '✓ Verified' : '◐ Circumstantial'}
               </span>
+              {incident.targetsCivilians && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-sans font-bold bg-amber-100 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200">
+                  Civilian targeting documented
+                </span>
+              )}
+              {incident.targetsChildren && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-sans font-bold bg-rose-100 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200">
+                  Children among victims
+                </span>
+              )}
               {incident.casualties && (
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-sans font-bold bg-red-100 dark:bg-red-950/30 text-red-800 dark:text-red-300">
                   {incident.casualties.killed} killed{incident.casualties.injured ? ` · ${incident.casualties.injured} injured` : ''}
@@ -236,6 +251,31 @@ function IncidentCard({ incident }: { incident: DossierDocumentedIncident }) {
             <p className="font-body text-sm text-ink leading-relaxed">{incident.evidence}</p>
           </div>
 
+          {(incident.relatedProfileIds?.length || incident.relatedMoneyNodeIds?.length) ? (
+            <div className="space-y-3">
+              {incident.relatedProfileIds && incident.relatedProfileIds.length > 0 && (
+                <div>
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Linked political profiles</p>
+                  <div className="flex flex-wrap gap-2">
+                    {incident.relatedProfileIds.map((id) => (
+                      <ProfileChip key={id} profileId={id} />
+                    ))}
+                  </div>
+                </div>
+              )}
+              {incident.relatedMoneyNodeIds && incident.relatedMoneyNodeIds.length > 0 && (
+                <div>
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">U.S. funds / weapons trail</p>
+                  <div className="flex flex-wrap gap-2">
+                    {incident.relatedMoneyNodeIds.map((id) => (
+                      <MoneyNodeChip key={id} nodeId={id} />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : null}
+
           {/* Multimedia Evidence */}
           {incident.multimedia.length > 0 && (
             <div>
@@ -262,7 +302,7 @@ function IncidentCard({ incident }: { incident: DossierDocumentedIncident }) {
 
           {/* Sources */}
           <div>
-            <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Sources</p>
+            <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Sources — click to verify</p>
             <div className="space-y-1.5">
               {incident.sources.map((src, j) => (
                 <a
@@ -333,6 +373,7 @@ const SECTIONS = [
   { id: 'source-workbench', label: 'Sources' },
   { id: 'course-path', label: 'Course' },
   { id: 'timeline', label: 'Timeline' },
+  { id: 'actors', label: 'Actors & Enablement' },
   { id: 'money-trail', label: 'Follow the Money' },
   { id: 'financial', label: 'U.S. Aid & Spending' },
   { id: 'humanitarian', label: 'Humanitarian Impact' },
@@ -344,6 +385,57 @@ const SECTIONS = [
   { id: 'downloads', label: 'Download & Share' },
   { id: 'methodology', label: 'Methodology' },
 ]
+
+function ProfileChip({ profileId }: { profileId: string }) {
+  const profile = getProfileBySlug(profileId)
+  const label = profile?.name ?? profileId.replace(/-/g, ' ')
+  return (
+    <Link
+      to={`/profiles/${profileId}`}
+      className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border bg-parchment px-3 py-1.5 font-sans text-[0.65rem] font-semibold text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <img
+        src={getProfilePhoto(profileId)}
+        alt=""
+        className="h-5 w-5 rounded-full object-cover"
+        loading="lazy"
+        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+      />
+      {label}
+    </Link>
+  )
+}
+
+function MoneyNodeChip({ nodeId }: { nodeId: string }) {
+  const node = ISRAEL_DOSSIER_MONEY_TRAIL.find((n) => n.id === nodeId)
+  if (!node) return null
+  return (
+    <a
+      href="#money-trail"
+      className="inline-flex min-h-[44px] items-center rounded-full border border-crimson/20 bg-crimson/5 px-3 py-1.5 font-sans text-[0.65rem] font-semibold text-crimson hover:bg-crimson/10 transition-colors"
+      onClick={(e) => {
+        e.stopPropagation()
+        document.getElementById('money-trail')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }}
+    >
+      {node.label} · {node.amount}
+    </a>
+  )
+}
+
+function yearToEra(year: string): DossierEra {
+  const y = Number((year.match(/(\d{4})/) || [])[1] || 0)
+  if (y <= 1949) return 'mandate-1948'
+  if (y <= 1967) return '1948-1967'
+  if (y <= 2005) return 'occupation-1967-2005'
+  if (y < 2023 || (y === 2023 && !year.includes('2024') && year !== '2023')) {
+    // 2006-2022 blockade era; Oct 2023+ is post-oct7 — approximate by year number
+    if (y >= 2023) return 'post-oct7'
+    return 'blockade-2007-2023'
+  }
+  return 'post-oct7'
+}
 
 function JumpNav() {
   const [active, setActive] = useState('')
@@ -726,18 +818,47 @@ export default function IsraelDossierPage() {
   const categories: DossierCategory[] = ['financial', 'humanitarian', 'legal', 'social']
   const [incidentQuery, setIncidentQuery] = useState('')
   const [incidentTier, setIncidentTier] = useState<'all' | DossierDocumentedIncident['tier']>('all')
+  const [incidentFocus, setIncidentFocus] = useState<'all' | 'civilians' | 'children'>('all')
+  const [timelineEra, setTimelineEra] = useState<'all' | DossierEra>('all')
+  const [timelineQuery, setTimelineQuery] = useState('')
+  const [actorQuery, setActorQuery] = useState('')
+  const [selectedActorId, setSelectedActorId] = useState<string | null>(null)
   const sourceIndex = useMemo(() => buildSourceIndex(), [])
   const allIncidents = useMemo(() => dedupeIncidents([...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS]), [])
   const filteredIncidents = useMemo(() => {
     const q = incidentQuery.trim().toLowerCase()
     return allIncidents.filter((incident) => {
       const tierMatch = incidentTier === 'all' || incident.tier === incidentTier
+      const focusMatch =
+        incidentFocus === 'all' ||
+        (incidentFocus === 'civilians' && incident.targetsCivilians) ||
+        (incidentFocus === 'children' && incident.targetsChildren)
       const queryMatch = !q || `${incident.title} ${incident.location} ${incident.summary} ${incident.evidence}`.toLowerCase().includes(q)
-      return tierMatch && queryMatch
+      return tierMatch && focusMatch && queryMatch
     })
-  }, [allIncidents, incidentQuery, incidentTier])
+  }, [allIncidents, incidentQuery, incidentTier, incidentFocus])
+  const filteredTimeline = useMemo(() => {
+    const q = timelineQuery.trim().toLowerCase()
+    return (HISTORICAL_TIMELINE as DossierTimelineEvent[]).filter((event) => {
+      const era = (event as DossierTimelineEvent & { era?: DossierEra }).era ?? yearToEra(event.year)
+      const eraMatch = timelineEra === 'all' || era === timelineEra
+      const queryMatch = !q || `${event.year} ${event.title} ${event.description} ${event.source}`.toLowerCase().includes(q)
+      return eraMatch && queryMatch
+    })
+  }, [timelineEra, timelineQuery])
+  const filteredActors = useMemo(() => {
+    const q = actorQuery.trim().toLowerCase()
+    return ISRAEL_DOSSIER_ACTORS.filter((actor) => {
+      if (!q) return true
+      return `${actor.name} ${actor.role} ${actor.enablementSummary} ${actor.category}`.toLowerCase().includes(q)
+    })
+  }, [actorQuery])
+  const selectedActor: DossierActorEnablement | undefined = selectedActorId
+    ? ISRAEL_DOSSIER_ACTORS.find((a) => a.profileId === selectedActorId)
+    : undefined
   const totalIncidentDeaths = allIncidents.reduce((sum, i) => sum + (i.casualties?.killed ?? 0), 0)
   const verifiedIncidentCount = allIncidents.filter((incident) => incident.tier === 'verified').length
+  const childrenIncidentCount = allIncidents.filter((incident) => incident.targetsChildren).length
 
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -815,16 +936,44 @@ export default function IsraelDossierPage() {
           <h2 className="font-display text-2xl font-bold text-ink">Historical Timeline: 1917–Present</h2>
         </div>
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
-          A chronological record of key events from the Balfour Declaration to the present day. Every entry identifies its source class and links to the underlying record.
+          A chronological record densified with documented civilian-targeting and war-crimes milestones from 1948 forward. Every entry links to a checkable source. This is a high-evidence sample, not a claim of completeness.
         </p>
-        <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-6">
-          {HISTORICAL_TIMELINE.length} documented events · Click any source to verify
+        <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-4">
+          {HISTORICAL_TIMELINE.length} documented events · Showing {filteredTimeline.length} · Click any source to verify
         </p>
+
+        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-[minmax(0,1fr)_220px]">
+          <label className="block">
+            <span className="sr-only">Search timeline</span>
+            <input
+              value={timelineQuery}
+              onChange={(event) => setTimelineQuery(event.target.value)}
+              placeholder="Search years, massacres, courts, aid packages…"
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
+            />
+          </label>
+          <label className="block">
+            <span className="sr-only">Filter timeline by era</span>
+            <select
+              value={timelineEra}
+              onChange={(event) => setTimelineEra(event.target.value as 'all' | DossierEra)}
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
+            >
+              <option value="all">All eras</option>
+              {(Object.keys(ISRAEL_DOSSIER_ERA_META) as DossierEra[]).map((era) => (
+                <option key={era} value={era}>
+                  {ISRAEL_DOSSIER_ERA_META[era].label} ({ISRAEL_DOSSIER_ERA_META[era].range})
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
         <div className="relative">
           <div className="absolute left-[22px] top-0 bottom-0 w-px bg-border" />
           <div className="space-y-1">
-            {HISTORICAL_TIMELINE.map((event, i) => (
-              <div key={i} className="relative pl-12 pb-4">
+            {filteredTimeline.map((event, i) => (
+              <div key={event.id ?? `${event.year}-${event.title}-${i}`} className="relative pl-12 pb-4">
                 <div className="absolute left-[14px] top-1.5 w-[17px] h-[17px] rounded-full border-2 border-crimson bg-parchment dark:bg-ink flex items-center justify-center z-10">
                   <div className="w-[7px] h-[7px] rounded-full bg-crimson" />
                 </div>
@@ -846,13 +995,174 @@ export default function IsraelDossierPage() {
                         <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                         {event.source}
                       </a>
+                      {event.relatedProfileIds && event.relatedProfileIds.length > 0 && (
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {event.relatedProfileIds.map((id) => (
+                            <ProfileChip key={id} profileId={id} />
+                          ))}
+                        </div>
+                      )}
+                      {event.relatedIncidentIds && event.relatedIncidentIds.length > 0 && (
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {event.relatedIncidentIds.map((id) => (
+                            <a
+                              key={id}
+                              href={`#incident-${id}`}
+                              className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3 py-1 font-sans text-[0.6rem] font-semibold text-ink-muted hover:text-crimson hover:border-crimson/30 transition-colors"
+                            >
+                              Open incident →
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+            {filteredTimeline.length === 0 && (
+              <div className="rounded-sm border border-border bg-surface p-5 ml-12">
+                <p className="font-body text-sm text-ink-muted">No timeline events match the current filters.</p>
+              </div>
+            )}
           </div>
         </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+         ACTORS & ENABLEMENT — Profiles × funds × incidents
+         ═══════════════════════════════════════════════════════════ */}
+      <section id="actors" className="mb-16 scroll-mt-20">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
+          <h2 className="font-display text-2xl font-bold text-ink">Actors &amp; Enablement</h2>
+        </div>
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
+          Named political and lobbying actors linked to the public funding, weapons, and incident record. Enablement means documented votes, executive transfers, court warrants, or campaign-finance flows — not ethnicity, religion, or ancestry.
+        </p>
+        <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-4">
+          {ISRAEL_DOSSIER_ACTORS.length} actors mapped · click a card for funds + incident links
+        </p>
+
+        <label className="mb-4 block">
+          <span className="sr-only">Search actors</span>
+          <input
+            value={actorQuery}
+            onChange={(event) => setActorQuery(event.target.value)}
+            placeholder="Search Biden, Netanyahu, AIPAC donors, Congress…"
+            className="min-h-[44px] w-full rounded-sm border border-border bg-surface px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
+          />
+        </label>
+
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {filteredActors.map((actor) => {
+            const active = selectedActorId === actor.profileId
+            return (
+              <button
+                key={actor.profileId}
+                type="button"
+                onClick={() => setSelectedActorId(active ? null : actor.profileId)}
+                className={`text-left rounded-sm border p-4 transition-all min-h-[44px] ${
+                  active ? 'border-crimson bg-crimson/5 shadow-md' : 'border-border bg-surface hover:border-crimson/30'
+                }`}
+              >
+                <div className="flex items-start gap-3">
+                  <img
+                    src={getProfilePhoto(actor.profileId)}
+                    alt=""
+                    className="h-12 w-12 rounded-full object-cover flex-shrink-0"
+                    loading="lazy"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                  />
+                  <div className="min-w-0">
+                    <p className="font-sans text-sm font-bold text-ink">{actor.name}</p>
+                    <p className="font-sans text-[0.65rem] text-ink-muted mt-0.5 line-clamp-2">{actor.role}</p>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      <span className="rounded-full bg-obsidian/90 px-2 py-0.5 text-[0.55rem] font-bold uppercase tracking-wider text-white">
+                        {actor.tier === 'verified' ? 'Verified' : 'Circumstantial'}
+                      </span>
+                      <span className="rounded-full border border-border px-2 py-0.5 text-[0.55rem] font-semibold uppercase tracking-wider text-ink-faint">
+                        {actor.category.replace(/-/g, ' ')}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            )
+          })}
+        </div>
+
+        {selectedActor && (
+          <div className="mt-5 rounded-sm border border-crimson/30 bg-surface p-5 space-y-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 className="font-display text-xl font-bold text-ink">{selectedActor.name}</h3>
+                <p className="font-sans text-xs text-ink-muted mt-1">{selectedActor.role}</p>
+              </div>
+              <Link
+                to={`/profiles/${selectedActor.profileId}`}
+                className="inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
+              >
+                Open full profile →
+              </Link>
+            </div>
+            <p className="font-body text-sm text-ink leading-relaxed">{selectedActor.enablementSummary}</p>
+            {selectedActor.fundingLinks.length > 0 && (
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Funds &amp; public records</p>
+                <ul className="space-y-2">
+                  {selectedActor.fundingLinks.map((link) => (
+                    <li key={link.sourceUrl + link.label}>
+                      <a
+                        href={link.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-[44px] items-start gap-2 font-sans text-xs text-crimson hover:underline"
+                      >
+                        <span className="font-semibold">{link.label}</span>
+                        {link.amount && <span className="text-ink-muted">({link.amount})</span>}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {selectedActor.relatedMoneyNodeIds.length > 0 && (
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Money-trail nodes</p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedActor.relatedMoneyNodeIds.map((id) => (
+                    <MoneyNodeChip key={id} nodeId={id} />
+                  ))}
+                </div>
+              </div>
+            )}
+            {selectedActor.relatedIncidentIds.length > 0 && (
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Linked incidents</p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedActor.relatedIncidentIds.map((id) => {
+                    const incident = allIncidents.find((item) => item.id === id)
+                    return (
+                      <a
+                        key={id}
+                        href={incident?.id ? `#incident-${incident.id}` : '#incidents'}
+                        className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3 py-1.5 font-sans text-[0.65rem] font-semibold text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                      >
+                        {incident?.title ?? id}
+                      </a>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+            {selectedActor.relatedTimelineYears.length > 0 && (
+              <p className="font-sans text-[0.65rem] text-ink-faint">
+                Timeline years: {selectedActor.relatedTimelineYears.join(' · ')}
+              </p>
+            )}
+          </div>
+        )}
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
@@ -864,15 +1174,24 @@ export default function IsraelDossierPage() {
           <h2 className="font-display text-2xl font-bold text-ink">Follow the Money</h2>
         </div>
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
-          Click any node to trace U.S. taxpayer dollars from Congress → weapons procurement → delivery → documented civilian impact. Every link in the chain is sourced.
+          Click any node to trace U.S. taxpayer dollars from Congress → weapons procurement → delivery → documented civilian impact. Every link in the chain is sourced. Actor chips open full political profiles.
         </p>
         <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-6">
-          Interactive — click to expand each level
+          Interactive — click to expand each level · includes CRS lifetime $298B floor
         </p>
 
         <div className="space-y-3">
           {ISRAEL_DOSSIER_MONEY_TRAIL.filter(n => n.type === 'legislation' || n.type === 'delivery').map(node => (
-            <MoneyTrailCard key={node.id} node={node} />
+            <div key={node.id} className="space-y-2">
+              <MoneyTrailCard node={node} />
+              {node.relatedProfileIds && node.relatedProfileIds.length > 0 && (
+                <div className="pl-2 flex flex-wrap gap-2">
+                  {node.relatedProfileIds.map((id) => (
+                    <ProfileChip key={id} profileId={id} />
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </section>
@@ -1044,13 +1363,13 @@ export default function IsraelDossierPage() {
           </span>
         </div>
 
-        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-[minmax(0,1fr)_180px]">
+        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-[minmax(0,1fr)_180px_180px]">
           <label className="block">
             <span className="sr-only">Search documented incidents</span>
             <input
               value={incidentQuery}
               onChange={(event) => setIncidentQuery(event.target.value)}
-              placeholder="Search incidents, locations, evidence, or source language"
+              placeholder="Search incidents, locations, children, massacres, hospitals…"
               className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
             />
           </label>
@@ -1066,8 +1385,20 @@ export default function IsraelDossierPage() {
               <option value="circumstantial">Circumstantial only</option>
             </select>
           </label>
-          <p className="md:col-span-2 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
-            Showing {filteredIncidents.length} of {allIncidents.length}. Duplicate incident records are merged by date and location to avoid double-counting.
+          <label className="block">
+            <span className="sr-only">Filter by civilian or children focus</span>
+            <select
+              value={incidentFocus}
+              onChange={(event) => setIncidentFocus(event.target.value as 'all' | 'civilians' | 'children')}
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
+            >
+              <option value="all">All victim focuses</option>
+              <option value="civilians">Civilian targeting tagged</option>
+              <option value="children">Children among victims ({childrenIncidentCount})</option>
+            </select>
+          </label>
+          <p className="md:col-span-3 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+            Showing {filteredIncidents.length} of {allIncidents.length}. Historical pack (1948→) is merged with post-Oct-7 investigations. Duplicates merge by date and location.
           </p>
         </div>
 

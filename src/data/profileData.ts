@@ -111,6 +111,8 @@ const PROFILE_PHOTOS: Record<string, string> = {
   'mike-pompeo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Mike_Pompeo_official_photo.jpg/440px-Mike_Pompeo_official_photo.jpg',
   'antony-blinken': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Antony_Blinken_official_State_Department_photo.jpg/440px-Antony_Blinken_official_State_Department_photo.jpg',
   'byron-donalds': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Byron_Donalds_117th_Congress.jpg/440px-Byron_Donalds_117th_Congress.jpg',
+  'benjamin-netanyahu': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Benjamin_Netanyahu%2C_February_2023.jpg/440px-Benjamin_Netanyahu%2C_February_2023.jpg',
+  'yoav-gallant': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Yoav_Gallant_2023.jpg/440px-Yoav_Gallant_2023.jpg',
 }
 
 export function getProfilePhoto(profileId: string): string {
@@ -6125,5 +6127,182 @@ export const PROFILES: PowerProfile[] = [
       { label: 'VoteSmart Key Votes', url: 'https://justfacts.votesmart.org/candidate/key-votes/137655/byron-donalds' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Byron_Donalds' },
     ]
+  },
+  {
+    id: 'benjamin-netanyahu',
+    name: 'Benjamin Netanyahu',
+    title: 'Prime Minister of Israel',
+    category: 'foreign-agent',
+    party: 'N/A',
+    state: undefined,
+    summary:
+      'Longest-serving Israeli prime minister and wartime head of government after October 7, 2023. Subject of an ICC arrest warrant (November 2024) for alleged war crimes and crimes against humanity, including starvation as a method of warfare. Ultimate political authority over IDF operations and aid-access policy during the Gaza war. Primary Israeli counterpart for U.S. military-aid and weapons transfers.',
+    tags: ['Israel', 'Prime Minister', 'ICC Warrant', 'Gaza War', 'Likud', 'U.S. Aid Recipient Leadership'],
+    quotes: [
+      {
+        text: 'We will fight and we will win.',
+        context: 'Wartime address framing total military campaign after October 7',
+        date: '2023-10',
+        source: 'Israeli Prime Minister public addresses (contemporaneous reporting)',
+        url: 'https://www.gov.il/en/departments/prime_ministers_office',
+      },
+    ],
+    donations: [],
+    policyActions: [
+      {
+        action: 'Directed Israeli military campaign in Gaza following October 7 attack',
+        date: '2023-10 to present',
+        context: 'As PM and security cabinet chair, holds ultimate civilian authority over wartime operations with record civilian casualty tolls attributed by OCHA to MoH Gaza figures',
+        source: 'OCHA Reported Impact Snapshot / Israeli PMO',
+        url: 'https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf',
+      },
+      {
+        action: 'ICC Pre-Trial Chamber issued arrest warrant',
+        date: '2024-11',
+        context: 'Alleged war crimes and crimes against humanity including starvation as a method of warfare; warrant is a judicial finding of reasonable grounds, not a final conviction',
+        source: 'International Criminal Court',
+        url: 'https://www.icc-cpi.int/palestine',
+      },
+    ],
+    connections: [
+      {
+        name: 'Yoav Gallant',
+        relationship: 'Defense Minister during opening phase of Gaza war; co-subject of ICC warrant',
+        evidence: 'ICC Situation in the State of Palestine — warrants for Netanyahu and Gallant',
+        tier: 'verified',
+      },
+      {
+        name: 'Joe Biden',
+        relationship: 'Primary U.S. presidential counterpart for wartime military aid (2023–2025)',
+        evidence: 'H.R.815 supplemental and continuous munitions transfers under Biden administration',
+        tier: 'verified',
+      },
+      {
+        name: 'AIPAC',
+        relationship: 'U.S. lobbying ecosystem that mobilizes support for Israeli government policy in Congress',
+        evidence: 'OpenSecrets pro-Israel industry and AIPAC Super PAC spending in 2024 cycle',
+        tier: 'verified',
+      },
+    ],
+    sourcedClaims: [
+      {
+        claim: 'ICC Pre-Trial Chamber I issued an arrest warrant for Benjamin Netanyahu for alleged war crimes and crimes against humanity in the Situation in the State of Palestine.',
+        source: 'International Criminal Court',
+        url: 'https://www.icc-cpi.int/palestine',
+        tier: 'verified',
+        date: '2024-11',
+      },
+      {
+        claim: 'Israel under Netanyahu governments has been the largest cumulative recipient of U.S. foreign military aid, with CRS estimating ~$298B inflation-adjusted obligations through 2024.',
+        source: 'Congressional Research Service RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2024',
+      },
+      {
+        claim: 'As wartime PM, Netanyahu retained political authority over operations that UN agencies and multiple fact-finding bodies documented as causing mass civilian harm in Gaza.',
+        source: 'OCHA / OHCHR public records',
+        url: 'https://www.ohchr.org/en/countries/palestine',
+        tier: 'verified',
+        date: '2023-2026',
+      },
+    ],
+    born: '1949-10-21',
+    education: 'MIT (architecture/management studies); service in Sayeret Matkal',
+    career: [
+      '1949 — Born in Tel Aviv',
+      '1967–1972 — IDF special forces (Sayeret Matkal)',
+      '1984–1988 — Israeli Ambassador to the United Nations',
+      '1996–1999 — First term as Prime Minister',
+      '2009–2021 — Prime Minister (consecutive terms)',
+      '2022–present — Prime Minister (current wartime government)',
+      '2024-11 — ICC arrest warrant issued (alleged war crimes / crimes against humanity)',
+    ],
+    websites: [
+      { label: 'Prime Minister\'s Office', url: 'https://www.gov.il/en/departments/prime_ministers_office' },
+      { label: 'ICC — Situation in Palestine', url: 'https://www.icc-cpi.int/palestine' },
+      { label: 'CRS RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Benjamin_Netanyahu' },
+    ],
+  },
+  {
+    id: 'yoav-gallant',
+    name: 'Yoav Gallant',
+    title: 'Former Israeli Defense Minister',
+    category: 'foreign-agent',
+    party: 'N/A',
+    summary:
+      'Israeli Defense Minister from 2022 until November 2024. Publicly announced a "complete siege" of Gaza (electricity, food, fuel) after October 7. Subject of an ICC arrest warrant for alleged war crimes and crimes against humanity. Central operational political authority over the IDF during the opening phase of the Gaza war.',
+    tags: ['Israel', 'Defense Minister', 'ICC Warrant', 'Gaza Siege', 'IDF'],
+    quotes: [
+      {
+        text: 'I have ordered a complete siege on the Gaza Strip. There will be no electricity, no food, no fuel, everything is closed.',
+        context: 'October 9, 2023 statement as Defense Minister — widely cited in international legal filings on starvation and collective punishment allegations',
+        date: '2023-10-09',
+        source: 'Israeli Defense Ministry / contemporaneous international reporting',
+        url: 'https://www.ohchr.org/en/countries/palestine',
+      },
+    ],
+    donations: [],
+    policyActions: [
+      {
+        action: 'Ordered complete siege of Gaza (electricity, food, fuel)',
+        date: '2023-10-09',
+        context: 'Public order as Defense Minister at start of Gaza war; later cited in UN expert statements and ICC filings context',
+        source: 'OHCHR / contemporaneous reporting of official statement',
+        url: 'https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza',
+      },
+      {
+        action: 'ICC Pre-Trial Chamber issued arrest warrant',
+        date: '2024-11',
+        context: 'Alleged war crimes and crimes against humanity; judicial finding of reasonable grounds, not final conviction',
+        source: 'International Criminal Court',
+        url: 'https://www.icc-cpi.int/palestine',
+      },
+    ],
+    connections: [
+      {
+        name: 'Benjamin Netanyahu',
+        relationship: 'Prime Minister and wartime superior; co-subject of ICC warrant',
+        evidence: 'ICC Situation in the State of Palestine',
+        tier: 'verified',
+      },
+      {
+        name: 'Joe Biden',
+        relationship: 'U.S. president authorizing wartime munitions while Gallant ran defense portfolio',
+        evidence: 'H.R.815 and continuous FMF / munitions pipeline',
+        tier: 'verified',
+      },
+    ],
+    sourcedClaims: [
+      {
+        claim: 'As Defense Minister, Gallant publicly ordered a complete siege of Gaza cutting electricity, food, and fuel on October 9, 2023.',
+        source: 'OHCHR / contemporaneous public record of official statement',
+        url: 'https://www.ohchr.org/en/countries/palestine',
+        tier: 'verified',
+        date: '2023-10-09',
+      },
+      {
+        claim: 'ICC Pre-Trial Chamber issued an arrest warrant for Yoav Gallant for alleged war crimes and crimes against humanity.',
+        source: 'International Criminal Court',
+        url: 'https://www.icc-cpi.int/palestine',
+        tier: 'verified',
+        date: '2024-11',
+      },
+    ],
+    born: '1958-11-08',
+    education: 'University of Haifa; IDF command path',
+    career: [
+      '1958 — Born in Jaffa',
+      'IDF naval commando and senior command career',
+      '2015–2019 — Member of Knesset',
+      '2022–2024 — Minister of Defense',
+      '2024-11 — ICC arrest warrant issued; removed from defense portfolio same month in coalition reshuffle context',
+    ],
+    websites: [
+      { label: 'ICC — Situation in Palestine', url: 'https://www.icc-cpi.int/palestine' },
+      { label: 'OHCHR — Occupied Palestinian Territory', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Yoav_Gallant' },
+    ],
   },
 ];

@@ -7,9 +7,12 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8')
 const files = {
   app: 'src/App.tsx',
   canon: 'src/data/israelDossierCanon.ts',
+  historyPack: 'src/data/israelDossierHistoryPack.ts',
+  actors: 'src/data/israelDossierActors.ts',
   page: 'src/pages/IsraelDossierPage.tsx',
   briefingPage: 'src/pages/IsraelDossierBriefingPage.tsx',
   expanded: 'src/data/israelDossierExpanded.ts',
+  profiles: 'src/data/profileData.ts',
   pdf: 'src/components/DossierPDF.tsx',
   chapter15: 'src/data/chapters/chapter-15.ts',
   chapterMeta: 'src/data/chapterMeta.ts',
@@ -39,7 +42,7 @@ const assert = (condition, message) => {
 
 const canon = read(files.canon)
 const currentNeedles = [
-  "ISRAEL_DOSSIER_LAST_VERIFIED = '2026-04-22'",
+  "ISRAEL_DOSSIER_LAST_VERIFIED = '2026-07-22'",
   "value: '72,289+'",
   "value: '21,289+'",
   "value: '261+'",
@@ -309,6 +312,51 @@ assert(pinnedEntries.length >= 8, `archive manifest expected >=8 pinned snapshot
 assert(canon.includes('web.archive.org/web/20260629145154'), 'canon missing pinned CRS archive snapshot')
 assert(!fs.existsSync(path.join(root, 'src/pages/ContentPacksPage.tsx')), 'dead ContentPacksPage.tsx still present — use ContentPackPage only')
 assert(read('src/pages/ContentPackPage.tsx').includes('brand-assets-section'), 'ContentPackPage missing brand assets section from merged kit')
+
+// Historical war-crimes densification + actor enablement graph (2026-07-22)
+assert(fs.existsSync(path.join(root, files.historyPack)), 'missing israelDossierHistoryPack.ts')
+assert(fs.existsSync(path.join(root, files.actors)), 'missing israelDossierActors.ts')
+const historyPack = read(files.historyPack)
+const actors = read(files.actors)
+const expanded = read(files.expanded)
+const page = read(files.page)
+const profiles = read(files.profiles)
+for (const needle of [
+  'ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES',
+  'deir-yassin-1948',
+  'qibya-1953',
+  'kafr-qasim-1956',
+  'sabra-shatila-1982',
+  'qana-1996',
+  'cast-lead-2008-09',
+  'oct7-hamas-attack-2023',
+  'ISRAEL_DOSSIER_TIMELINE_EXPANSION',
+  'ISRAEL_DOSSIER_ERA_META',
+]) {
+  assert(historyPack.includes(needle), `history pack missing ${needle}`)
+}
+for (const needle of [
+  'ISRAEL_DOSSIER_ACTORS',
+  "profileId: 'joe-biden'",
+  "profileId: 'benjamin-netanyahu'",
+  "profileId: 'yoav-gallant'",
+  "profileId: 'donald-trump'",
+  'relatedMoneyNodeIds',
+  'fundingLinks',
+]) {
+  assert(actors.includes(needle), `actors graph missing ${needle}`)
+}
+assert(expanded.includes('israelDossierHistoryPack'), 'expanded module does not merge history pack')
+assert(expanded.includes('ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES'), 'expanded module does not re-export historical incidents')
+assert(page.includes('ISRAEL_DOSSIER_ACTORS'), 'dossier page does not render actors graph')
+assert(page.includes('Actors &amp; Enablement') || page.includes('Actors & Enablement'), 'dossier page missing Actors section heading')
+assert(page.includes('ProfileChip'), 'dossier page missing profile hyperlink chips')
+assert(page.includes('incidentFocus'), 'dossier page missing civilians/children incident filter')
+assert(page.includes('timelineEra'), 'dossier page missing timeline era filter')
+assert(profiles.includes("id: 'benjamin-netanyahu'"), 'profileData missing Netanyahu profile')
+assert(profiles.includes("id: 'yoav-gallant'"), 'profileData missing Gallant profile')
+assert(canon.includes("id: 'crs-lifetime-aid'"), 'money trail missing CRS lifetime aid node')
+assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wiring')
 
 if (errors.length) {
   console.error('[verify:israel-dossier] FAIL')

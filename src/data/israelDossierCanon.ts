@@ -58,6 +58,7 @@ export interface DossierStatCard {
 }
 
 export interface DossierDocumentedIncident {
+  id?: string
   title: string
   date: string
   location: string
@@ -68,6 +69,12 @@ export interface DossierDocumentedIncident {
   tier: 'verified' | 'circumstantial'
   casualties?: { killed: number; injured?: number }
   imageUrl?: string
+  /** Optional cross-links into profile pages (/profiles/:id) */
+  relatedProfileIds?: string[]
+  /** Optional cross-links into money-trail nodes */
+  relatedMoneyNodeIds?: string[]
+  targetsCivilians?: boolean
+  targetsChildren?: boolean
 }
 
 export interface DossierMoneyTrailNode {
@@ -79,10 +86,12 @@ export interface DossierMoneyTrailNode {
   detail: string
   sourceUrl: string
   children?: string[]
+  relatedProfileIds?: string[]
 }
 
 
 export interface DossierTimelineEvent {
+  id?: string
   year: string
   title: string
   description: string
@@ -90,6 +99,9 @@ export interface DossierTimelineEvent {
   sourceUrl: string
   tier: 'verified' | 'circumstantial'
   imageUrl?: string
+  relatedProfileIds?: string[]
+  relatedIncidentIds?: string[]
+  tags?: string[]
 }
 
 export interface DossierLobbyingRecord {
@@ -346,7 +358,7 @@ export interface DossierPublicBriefing {
   editorChecks: string[]
 }
 
-export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-04-22'
+export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-07-22'
 
 export const ISRAEL_DOSSIER_ASSETS = {
   financial: '/og/chapter-15.png',
@@ -803,9 +815,14 @@ export const ISRAEL_DOSSIER_CORE_STATS: DossierStatCard[] = [
 
 export const ISRAEL_DOSSIER_CORE_INCIDENTS: DossierDocumentedIncident[] = [
   {
+    id: 'hind-rajab-2024',
     title: 'The Killing of Hind Rajab, Age 5',
     date: 'January 29, 2024',
     location: 'Tel al-Hawa, Gaza City',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'artillery-use'],
     summary: 'Five-year-old Hind Rajab and six family members were fleeing Gaza City when their civilian Kia Picanto was fired upon by an Israeli tank. Hind\'s 15-year-old cousin Layan called the Palestine Red Crescent: "They are shooting at us. The tank is right next to me." All passengers except Hind were killed instantly. Hind survived in the car for three hours, speaking to PRCS dispatchers by phone, whispering: "Come take me. I\'m so scared." Two paramedics — Yusuf Zeino and Ahmed al-Madhoun — were dispatched with Israeli military coordination. Both were killed en route. Twelve days later, when Israeli forces withdrew, the bodies were recovered.',
     evidence: 'Forensic Architecture analysis found 335 bullet holes in the family\'s Kia Picanto. The firing tank was positioned 13–23 meters away. Investigators concluded: "It is not plausible that the shooter could not have seen that the car was occupied by civilians, including children." Audio recordings of Hind\'s phone calls were released publicly. Al Jazeera\'s October 2025 documentary revealed new evidence of a "double-tap" strike — the ambulance was hit by a separate, deliberate attack. A bipartisan U.S. congressional bill (the Hind Rajab Act) was introduced in March 2026.',
     sources: [
@@ -824,9 +841,14 @@ export const ISRAEL_DOSSIER_CORE_INCIDENTS: DossierDocumentedIncident[] = [
     casualties: { killed: 9 },
   },
   {
+    id: 'rafah-paramedic-convoy-2025',
     title: 'The Rafah Paramedic Convoy Massacre',
     date: 'March 23, 2025',
     location: 'Al-Hashashin, Southern Rafah',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons'],
     summary: 'Israeli forces attacked a convoy of clearly marked humanitarian vehicles — five ambulances, a fire truck, and a UN vehicle — killing 15 aid workers at dawn. The dead included eight Palestine Red Crescent members, five civil defense workers, and one UN employee. All vehicles had emergency lights activated and were traveling a coordinated route. Israel initially claimed the convoy approached without lights and was suspected of transporting militants.',
     evidence: 'Video footage recovered from the buried phone of paramedic Rifaat Radwan — interred with the victims in a mass grave for eight days — directly contradicted the IDF account. The video, filmed from the front seat, shows all emergency lights on and clearly marked ambulances. Radwan is heard reciting prayers and saying: "Forgive me mom, this is the path I chose — to help people." The bodies were found in an unmarked mass grave on March 30. Under pressure from the video evidence, the Israeli military reversed its initial account on March 31.',
     sources: [
@@ -844,9 +866,14 @@ export const ISRAEL_DOSSIER_CORE_INCIDENTS: DossierDocumentedIncident[] = [
     casualties: { killed: 15 },
   },
   {
+    id: 'wck-drone-strikes-2024',
     title: 'World Central Kitchen Aid Workers Targeted by Drone Strikes',
     date: 'April 1, 2024',
     location: 'Deir al-Balah, Central Gaza',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons'],
     summary: 'Three separate Israeli drone strikes killed seven World Central Kitchen aid workers traveling in a three-car convoy that had coordinated its movements with the IDF. The team had just finished unloading 100 tons of humanitarian food aid brought by ship from Cyprus. Killed were nationals of the United States, Canada, United Kingdom, Australia, Poland, and Palestine. WCK founder José Andrés said Israel "targeted us deliberately, car by car."',
     evidence: 'The three vehicles were struck sequentially over 2.4 km — each car hit after survivors attempted to flee the previous strike. GPS coordinates had been shared with the IDF in advance. Israel\'s own military investigation concluded the strike "violated its standards and should not have occurred." A reserve colonel and major were dismissed; three more officers reprimanded. Despite coordination and clearly marked vehicles with WCK logo on the roof, all three were hit in succession.',
     sources: [
@@ -864,9 +891,14 @@ export const ISRAEL_DOSSIER_CORE_INCIDENTS: DossierDocumentedIncident[] = [
     casualties: { killed: 7 },
   },
   {
+    id: 'flour-massacre-2024',
     title: 'The Flour Massacre — Aid Seekers Shot While Waiting for Food',
     date: 'February 29, 2024',
     location: 'Al-Rashid Street, Gaza City',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['artillery-use', 'fmf-weapons'],
     summary: 'At approximately 4:30 a.m., Israeli tanks and snipers opened fire on thousands of Palestinian civilians who had been waiting hours for an aid convoy on coastal Al-Rashid Street. The shooting continued for approximately 90 minutes as aid trucks arrived. At least 118 Palestinians were killed and 760 injured. The attack came one day after the World Food Programme warned that over 500,000 Gazans were at risk of famine.',
     evidence: 'Forensic and ballistic experts reviewed video evidence showing that automatic gunfire began before the IDF said the convoy had started crossing through its checkpoint — contradicting the Israeli account that a "stampede" caused most deaths. Hospital records showed the majority of victims had gunshot wounds, not trampling injuries. The 972 Magazine published survivor testimonies describing "indiscriminate" Israeli fire into crowds. UN experts formally condemned the attack as a deliberate massacre.',
     sources: [
@@ -884,9 +916,14 @@ export const ISRAEL_DOSSIER_CORE_INCIDENTS: DossierDocumentedIncident[] = [
     casualties: { killed: 118, injured: 760 },
   },
   {
+    id: 'nuseirat-rescue-2024',
     title: 'Nuseirat Hostage Rescue — 274 Civilians Killed in "Rescue" Operation',
     date: 'June 8, 2024',
     location: 'Nuseirat Refugee Camp, Central Gaza',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'artillery-use', 'fmf-weapons'],
     summary: 'The IDF launched a large-scale operation to rescue four Israeli hostages from two residential apartment buildings in Nuseirat refugee camp. The operation succeeded in recovering Noa Argamani, Shlomi Ziv, Almog Meir Jan, and Andrey Kozlov. It also killed at least 274 Palestinians — including 64 children and 57 women — and injured nearly 700. Israeli forces allegedly entered the camp disguised as displaced persons and aid workers in a humanitarian truck before calling in intense air, sea, and ground bombardment.',
     evidence: 'The use of a humanitarian aid truck as a Trojan horse was confirmed by multiple eyewitness accounts and later acknowledged by Israeli media. OHCHR documented 274 fatalities including 64 children. EU foreign policy chief Josep Borrell called it a "bloodbath." OHCHR stated both Israeli forces and Palestinian armed groups may have committed war crimes. The Israeli military acknowledged fewer than 100 deaths — a figure contradicted by hospital records and morgue counts.',
     sources: [
@@ -903,9 +940,14 @@ export const ISRAEL_DOSSIER_CORE_INCIDENTS: DossierDocumentedIncident[] = [
     casualties: { killed: 274, injured: 698 },
   },
   {
+    id: 'al-mawasi-safe-zone',
     title: 'Al-Mawasi "Safe Zone" Bombing — 90+ Killed in Designated Humanitarian Area',
     date: 'July 13, 2024',
     location: 'Al-Mawasi, Khan Yunis (IDF-designated "safe zone")',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden', 'donald-trump'],
+    relatedMoneyNodeIds: ['mk84-use', 'trump-release', 'hr815'],
     summary: 'Israeli forces dropped multiple MK-84 2,000-pound bombs on the al-Mawasi area — a zone the IDF itself had designated as a humanitarian "safe zone" for displaced civilians. The strike targeted Hamas military wing commander Mohammed Deif. At least 90 Palestinians were killed and over 300 wounded. The area was packed with displaced families living in tents who had followed IDF evacuation orders to move there.',
     evidence: 'Satellite imagery, crater analysis, and munition fragments confirmed the use of at least two MK-84 2,000-pound bombs — U.S.-manufactured weapons with a lethal blast radius of 360 meters. The bombs were dropped on a densely packed tent encampment. Israel later said it successfully killed its target (confirmed months later), but international observers noted that using 2,000-pound bombs in a civilian "safe zone" represents a disproportionate use of force under international humanitarian law.',
     sources: [
@@ -931,6 +973,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     detail: 'Signed into law. Passed House 366-58, Senate 79-18. Includes $4B for Iron Dome replenishment, $3.5B for weapons procurement, $1.2B for Iron Beam, $1B for artillery munitions.',
     sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
     children: ['iron-dome', 'fmf-weapons', 'munitions'],
+    relatedProfileIds: ['joe-biden', 'chuck-schumer', 'mitch-mcconnell', 'mike-johnson', 'lindsey-graham'],
   },
   {
     id: 'annual-mou',
@@ -941,6 +984,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     detail: 'Automatic annual aid: $3.3B in Foreign Military Financing + $500M for missile defense. Israel is the only recipient allowed to spend FMF on its own defense industry.',
     sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
     children: ['fmf-weapons', 'iron-dome'],
+    relatedProfileIds: ['barack-obama', 'joe-biden', 'benjamin-netanyahu'],
   },
   {
     id: 'trump-release',
@@ -951,6 +995,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     detail: 'President Trump released a Biden-era hold on 1,800 MK-84 2,000-pound bombs immediately upon taking office. Each MK-84 costs ~$3,100 bare; with JDAM kits, ~$25,000 each.',
     sourceUrl: 'https://www.armyrecognition.com/news/army-news/2025/breaking-news-us-greenlights-mk-84-bombs-for-israel-despite-us-president-donald-trumps-military-sales-pause',
     children: ['mk84-use'],
+    relatedProfileIds: ['donald-trump', 'benjamin-netanyahu'],
   },
   {
     id: 'fmf-weapons',
@@ -961,6 +1006,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     detail: 'FMF grants used to purchase: F-35 stealth fighters, Apache attack helicopters, MK-84 bombs, JDAM guidance kits, 155mm artillery shells, Hellfire missiles, and small-diameter bombs.',
     sourceUrl: 'https://www.dsca.mil/press-media/major-arms-sales',
     children: ['mk84-use', 'jdam-use'],
+    relatedProfileIds: ['joe-biden', 'antony-blinken', 'benjamin-netanyahu'],
   },
   {
     id: 'iron-dome',
@@ -970,6 +1016,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     date: '2024',
     detail: 'Tamir interceptors ($50K–$100K each) and David\'s Sling Stunner missiles ($1M+ each). Used to defend Israeli territory from rocket attacks while offensive operations continue in Gaza.',
     sourceUrl: 'https://www.britannica.com/topic/Iron-Dome',
+    relatedProfileIds: ['joe-biden', 'barack-obama'],
   },
   {
     id: 'munitions',
@@ -980,6 +1027,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     detail: '155mm artillery shells, tank ammunition, and other ground-force munitions used in the Gaza ground invasion. 155mm shells have been documented striking residential areas.',
     sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
     children: ['artillery-use'],
+    relatedProfileIds: ['joe-biden', 'chuck-schumer'],
   },
   {
     id: 'mk84-use',
@@ -989,6 +1037,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     date: '2023–2025',
     detail: 'MK-84 2,000-pound bombs identified in: al-Mawasi "safe zone" attack (90+ killed, July 2024), Jabalia refugee camp strikes (120+ killed, Oct 2023), and numerous residential building collapses. Lethal blast radius: 360 meters.',
     sourceUrl: 'https://responsiblestatecraft.org/us-weapons-gaza/',
+    relatedProfileIds: ['joe-biden', 'donald-trump', 'benjamin-netanyahu', 'yoav-gallant'],
   },
   {
     id: 'jdam-use',
@@ -998,6 +1047,7 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     date: '2024',
     detail: 'A $680M package of Joint Direct Attack Munitions (JDAM) kits and small-diameter bombs approved November 2024. JDAMs convert unguided "dumb bombs" into GPS-guided munitions — but in Gaza\'s density (6,500 people/km²), even "precision" strikes kill civilians.',
     sourceUrl: 'https://armssalesaccountabilityproject.com/wp-content/uploads/10.4.24-JDAM-White-Paper.pdf',
+    relatedProfileIds: ['joe-biden', 'antony-blinken'],
   },
   {
     id: 'artillery-use',
@@ -1007,6 +1057,18 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     date: '2023–2025',
     detail: '155mm artillery, designed for open-battlefield use, has been fired into one of the most densely populated areas on Earth. Each shell has a casualty radius of 50+ meters. Used extensively during the Jabalia and Nuseirat operations.',
     sourceUrl: 'https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf',
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+  },
+  {
+    id: 'crs-lifetime-aid',
+    label: 'CRS lifetime U.S. aid obligations (1946–2024)',
+    amount: '$298B',
+    type: 'legislation',
+    date: '1946–2024',
+    detail: 'Congressional Research Service RL33222 estimates $174.965B in current dollars through 2025 and roughly $298B in constant 2024 dollars through 2024 — the long-run public-record floor for U.S. financial enablement of Israeli military capacity.',
+    sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+    children: ['annual-mou', 'hr815'],
+    relatedProfileIds: ['joe-biden', 'barack-obama', 'donald-trump', 'benjamin-netanyahu'],
   },
 ]
 
@@ -1154,9 +1216,14 @@ export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
 
 export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [  // ─── NEW INCIDENT: Jabalia Refugee Camp ───
   {
+    id: 'jabalia-refugee-camp',
     title: 'Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area',
     date: 'October 31, 2023 — ongoing through 2024',
     location: 'Jabalia Refugee Camp, Northern Gaza',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'hr815'],
     summary: 'Israel conducted multiple large-scale airstrikes on Jabalia refugee camp, one of the most densely populated places on Earth (116,000 people in 1.4 km²). The first strike on October 31, 2023 hit a residential area, killing over 120 people. Israel stated it was targeting a Hamas commander. Subsequent strikes in November 2023 and throughout 2024 continued hitting residential buildings, UN shelters, and market areas within the camp.',
     evidence: 'Satellite imagery from Planet Labs showed at least 15 large craters consistent with MK-84 2,000-pound bombs in a residential area. Euro-Med Human Rights Monitor documented the use of at least six heavy bombs in the first attack alone. CNN geolocated video of the aftermath, confirming residential buildings were the primary structures destroyed.',
     sources: [
@@ -1208,9 +1275,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: Destruction of Al-Shifa Hospital ───
   {
+    id: 'al-shifa-hospital',
     title: 'Al-Shifa Hospital Siege and Destruction',
     date: 'November 2023 — March 2024',
     location: 'Al-Shifa Hospital, Gaza City',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'mk84-use'],
     summary: 'Israeli forces besieged and raided Al-Shifa Hospital — Gaza\'s largest medical complex — twice. The first raid (November 15, 2023) was justified by claims of a Hamas command center beneath the hospital. Israel presented video of a tunnel shaft and a few weapons but no evidence of the extensive underground complex initially described. The second raid (March 18, 2024) lasted two weeks and left the hospital in ruins. Over 400 people were killed in and around the hospital during the two operations.',
     evidence: 'Israel released video showing a tunnel shaft and corridor beneath Al-Shifa during the first raid, along with a small cache of weapons. Independent analysts, including the Washington Post, found the evidence fell short of the claimed "command and control center." The second raid resulted in near-total destruction of the facility. WHO reported the hospital was rendered "a death zone" and "an empty shell."',
     sources: [
@@ -1227,9 +1299,14 @@ export const ISRAEL_DOSSIER_EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [ 
   },
   // ─── NEW INCIDENT: Starvation as Weapon ───
   {
+    id: 'starvation-aid-blockade',
     title: 'Deliberate Starvation — Aid Blocked While Famine Declared',
     date: 'January 2024 — ongoing',
     location: 'Northern Gaza',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden', 'antony-blinken'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou'],
     summary: 'The Integrated Food Security Phase Classification (IPC) — the global authority on hunger — declared famine in northern Gaza in March 2024, making it the first official famine declaration since 2017 Somalia. Israel was documented blocking, delaying, and restricting humanitarian aid delivery while the population starved. The IPC found that 100% of Gaza\'s population was in crisis-level food insecurity or worse.',
     evidence: 'The IPC Famine Review Committee confirmed famine conditions in northern Gaza. COGAT (Israeli military body controlling aid) approved only 37% of humanitarian aid missions in November 2024. WFP reported that food aid trucks were held at checkpoints for days. Multiple videos showed Israeli settlers and soldiers physically blocking aid convoys. Documented cases of children dying from malnutrition were reported by WHO, UNICEF, and MSF.',
     sources: [
