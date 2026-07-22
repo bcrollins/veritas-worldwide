@@ -872,6 +872,29 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'kevin-mccarthy',
+    name: 'Kevin McCarthy',
+    role: 'Former Speaker of the U.S. House (R-CA)',
+    category: 'us-congress',
+    enablementSummary:
+      'House Republican Speaker during early Gaza-war aid debates; institutional leadership role advancing wartime supplemental packages and opposing conditionality measures on the House floor.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou', 'pro-israel-lobby-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — McCarthy pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/kevin-mccarthy/summary?cid=N00006863',
+      },
+      {
+        label: 'H.R.815 — Israel Security Supplemental context',
+        amount: '$26.4B',
+        sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

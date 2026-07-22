@@ -400,7 +400,7 @@ async function runInteractiveChecks(browser) {
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
     assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 57, 'corpus.json incidents too few')
-    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 40, 'corpus.json actors too few')
+    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 41, 'corpus.json actors too few')
     assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 48, 'corpus.json timeline too few')
     assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 15, 'corpus.json moneyTrail too few')
     assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 8, 'corpus.json legalCases too few')
@@ -553,6 +553,8 @@ async function runInteractiveChecks(browser) {
       'gbu-39',
       'ron desantis',
       'gaza disengagement',
+      'kevin mccarthy',
+      'resolution 2334',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }
