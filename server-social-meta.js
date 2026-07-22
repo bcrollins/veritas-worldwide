@@ -134,6 +134,52 @@ export function registerBotMetaInjection({ app, rootDir }) {
         .replace(/content="website"/, 'content="article"')
     }
 
+    // Current-events articles — title/description/hero from exported meta.json
+    const newsMatch = req.path.match(/^\/news\/([^/]+)$/)
+    if (newsMatch) {
+      const slug = newsMatch[1]
+      const candidates = [
+        path.join(rootDir, 'dist', 'news', 'meta.json'),
+        path.join(rootDir, 'public', 'news', 'meta.json'),
+      ]
+      let newsMeta = null
+      for (const candidate of candidates) {
+        try {
+          if (fs.existsSync(candidate)) {
+            const all = JSON.parse(fs.readFileSync(candidate, 'utf8'))
+            if (all && all[slug]) {
+              newsMeta = all[slug]
+              break
+            }
+          }
+        } catch {
+          // continue
+        }
+      }
+      if (newsMeta) {
+        const newsUrl = `${SITE_URL}/news/${slug}`
+        const newsImage = newsMeta.image || OG_IMAGE
+        const imgType = newsImage.endsWith('.jpg') || newsImage.endsWith('.jpeg')
+          ? 'image/jpeg'
+          : newsImage.endsWith('.webp')
+            ? 'image/webp'
+            : newsImage.endsWith('.svg')
+              ? 'image/svg+xml'
+              : 'image/png'
+        const safeTitle = String(newsMeta.title || slug).replace(/"/g, '&quot;')
+        const safeDesc = String(newsMeta.desc || '').replace(/"/g, '&quot;')
+        html = html
+          .replace(/<title>.*?<\/title>/, `<title>${safeTitle}</title>`)
+          .replace(/content="The Record \| Veritas Worldwide"/g, `content="${safeTitle}"`)
+          .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${safeDesc}"`)
+          .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${safeDesc}"`)
+          .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${newsUrl}"`)
+          .replace(/content="website"/, 'content="article"')
+          .replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${newsImage}"`)
+          .replace(/content="image\/png"/, `content="${imgType}"`)
+      }
+    }
+
     res.send(html)
   })
 }

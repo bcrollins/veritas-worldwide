@@ -115,19 +115,26 @@ export default function ArticlePage() {
 
   useEffect(() => {
     if (!article) return
+    const absoluteHero =
+      heroImageSrc && heroImageSrc.startsWith('http')
+        ? heroImageSrc
+        : heroImageSrc
+          ? `${SITE_URL}${heroImageSrc.startsWith('/') ? '' : '/'}${heroImageSrc}`
+          : `${SITE_URL}/og-image.png`
     setMetaTags({
       title: article.seo.metaTitle,
       description: article.seo.metaDescription,
       url: `${SITE_URL}/news/${article.slug}`,
       type: 'article',
       author: article.author,
+      image: absoluteHero,
     })
     setJsonLd({
       '@context': 'https://schema.org',
       '@type': 'NewsArticle',
       'headline': article.title,
       'description': article.seo.metaDescription,
-      'image': heroImageSrc,
+      'image': absoluteHero,
       'datePublished': article.publishDate,
       'dateModified': article.updatedDate || article.publishDate,
       'author': { '@type': 'Organization', 'name': article.author },

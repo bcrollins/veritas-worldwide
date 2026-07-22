@@ -35,4 +35,18 @@ for (const src of srcs) {
   assert(fs.statSync(filePath).size > 5_000, `asset too small: ${src}`)
 }
 
-console.log(`[verify:article-images] PASS — ${srcs.size} first-party news assets on disk`)
+const metaPath = path.join(root, 'public', 'news', 'meta.json')
+assert(fs.existsSync(metaPath), 'missing public/news/meta.json bot meta export')
+const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'))
+const metaKeys = Object.keys(meta)
+assert(metaKeys.length >= 13, `news meta.json expected ≥13 articles, got ${metaKeys.length}`)
+for (const slug of metaKeys) {
+  assert(meta[slug].title, `meta missing title for ${slug}`)
+  assert(meta[slug].image?.includes('/news/heroes/') || meta[slug].image?.includes('og-image'), `meta image not first-party for ${slug}`)
+}
+
+const socialMeta = fs.readFileSync(path.join(root, 'server-social-meta.js'), 'utf8')
+assert(socialMeta.includes("req.path.match(/^\\/news\\/([^/]+)$/)"), 'server-social-meta must inject /news/:slug bot meta')
+assert(socialMeta.includes('meta.json'), 'server-social-meta must load news meta.json')
+
+console.log(`[verify:article-images] PASS — ${srcs.size} first-party news assets + ${metaKeys.length} bot meta rows`)
