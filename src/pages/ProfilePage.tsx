@@ -23,6 +23,7 @@ import { trackShare, trackProfileView } from '../lib/ga4';
 import SharePanel from '../components/SharePanel';
 import { scoreProfileViewed } from '../lib/leadScoring';
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+import { getDossierActorByProfileId } from '../data/israelDossierActors'
 
 /* ── Constants ──────────────────────────────────────────────── */
 const CATEGORY_COLORS: Record<string, { gradient: string; badge: string; text: string }> = {
@@ -762,6 +763,30 @@ export default function ProfilePage(): React.ReactNode {
           </div>
         </div>
       </div>
+
+      {/* ── Israel Dossier enablement cross-link ──────────────── */}
+      {getDossierActorByProfileId(profile.id) && (
+        <div className="border-b border-border bg-surface">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex flex-col gap-3 rounded-sm border border-crimson/25 bg-crimson/5 p-4 md:flex-row md:items-center md:justify-between">
+              <div className="min-w-0">
+                <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-crimson">
+                  Israel Dossier — enablement graph
+                </p>
+                <p className="mt-1 font-body text-sm text-ink leading-relaxed">
+                  {getDossierActorByProfileId(profile.id)!.enablementSummary}
+                </p>
+              </div>
+              <Link
+                to="/israel-dossier#actors"
+                className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-sm bg-crimson px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
+              >
+                Open dossier actors →
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Sticky Section Navigation ─────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
