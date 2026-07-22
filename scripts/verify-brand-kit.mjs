@@ -44,6 +44,9 @@ const required = [
   '09-templates/letterhead.svg',
   '09-templates/email-signature.html',
   '09-templates/press-release-header.svg',
+  '07-docs/USAGE-LEGAL.md',
+  '07-docs/CRISIS-MEDIA.md',
+  '04-social/story-1080x1920.svg',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
 ]
 
