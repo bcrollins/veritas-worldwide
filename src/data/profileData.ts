@@ -3691,66 +3691,79 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'antony-blinken',
     name: 'Antony Blinken',
-    title: 'Secretary of State',
+    title: 'U.S. Secretary of State (2021–2025)',
     category: 'politician',
     party: 'D',
     photoUrl: getProfilePhoto('antony-blinken'),
-    summary: 'Biden Secretary of State. Career foreign service officer. Strong pro-Israel positions.',
-    tags: ['Secretary of State', 'Democrat', 'Foreign Service', 'Pro-Israel'],
-    career: ['Secretary of State 2021-present', 'Deputy National Security Advisor', 'Deputy Secretary of State', 'Law professor'],
-    websites: [
-      { label: 'State Department', url: 'https://www.state.gov' }
+    summary:
+      'Biden-Harris Secretary of State during the post–October 7 Gaza war. Principal diplomatic steward of continuous U.S. munitions transfers and diplomatic cover for Israeli wartime operations while briefly pausing some MK-84 deliveries over civilian-casualty concerns. Structural executive enablement of the aid/munitions pipeline. Primary: State Department, CRS RL33222, contemporaneous munitions reporting.',
+    tags: ['Secretary of State', 'Pro-Israel', 'Biden Administration', 'Munitions Transfers', 'Gaza War', 'FMF'],
+    career: [
+      'Clinton/Obama foreign policy staff (public bio)',
+      '2021–2025 — U.S. Secretary of State',
+      'Oversaw wartime munitions diplomacy after October 7',
     ],
     quotes: [
       {
-        text: 'Israel has the right to defend itself. Full stop.',
-        context: 'Press conference after October 7 attack',
-        date: '2023',
-        source: 'State Department',
-        url: 'https://www.state.gov'
-      }
+        text: 'Israel has the right and the duty to defend itself.',
+        context: 'Recurring State Department framing after October 7.',
+        date: '2023–2024',
+        source: 'U.S. Department of State briefings',
+        url: 'https://www.state.gov',
+      },
     ],
     donations: [],
     policyActions: [
       {
-        action: 'Made 10+ trips to Israel/Middle East during Gaza conflict',
-        date: '2023-2024',
-        context: 'Diplomatic shuttle missions',
-        source: 'State Department',
-        url: 'https://www.state.gov'
+        action: 'Authorized continuous munitions and diplomatic support to Israel during Gaza war while managing limited pauses',
+        date: '2023–2025',
+        context: 'Executive enablement of wartime resupply under FMF/emergency authorities; brief MK-84 pause reported then reversed under successor.',
+        source: 'State Department / Defense reporting; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
       },
       {
-        action: 'Approved emergency arms transfers to Israel bypassing congressional review',
-        date: '2023',
-        context: 'Emergency authorization of weapons shipments',
-        source: 'Reuters',
-        url: 'https://www.reuters.com'
-      }
+        action: 'Public diplomatic defense of Israeli self-defense framing at UN and allied capitals',
+        date: '2023–2024',
+        context: 'State Department press record.',
+        source: 'state.gov briefings',
+        url: 'https://www.state.gov',
+      },
     ],
     connections: [
       {
         name: 'Joe Biden',
-        relationship: 'Longtime foreign policy advisor since Senate days',
-        evidence: 'Public career record',
-        tier: 'verified'
-      }
+        relationship: 'Principal foreign-policy executor as Secretary of State.',
+        evidence: 'Cabinet appointment',
+        tier: 'verified',
+      },
+      {
+        name: 'Benjamin Netanyahu',
+        relationship: 'Primary Israeli counterpart during Gaza war diplomacy.',
+        evidence: 'Public diplomacy record',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Approved emergency arms transfers to Israel bypassing normal congressional review',
-        source: 'Reuters',
-        url: 'https://www.reuters.com',
+        claim: 'As Secretary of State during the Gaza war, Blinken was a principal public face of continuous U.S. security assistance and munitions policy.',
+        source: 'State Department; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
         tier: 'verified',
-        date: '2023'
+        date: '2023–2025',
       },
       {
-        claim: 'Stepfather was Holocaust survivor, cited as shaping worldview',
-        source: 'State Department bio',
+        claim: 'Administration briefly paused some 2,000-lb bomb deliveries over civilian-casualty concerns before later continuity under multi-administration aid architecture.',
+        source: 'Contemporaneous defense/press reporting',
         url: 'https://www.state.gov',
         tier: 'verified',
-        date: '2021'
-      }
-    ]
+        date: '2024',
+      },
+    ],
+    websites: [
+      { label: 'State Department', url: 'https://www.state.gov' },
+      { label: 'CRS RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Antony_Blinken' },
+    ],
   },
   {
     id: 'ron-desantis',
