@@ -353,6 +353,26 @@ async function runInteractiveChecks(browser) {
       'incidents section missing share-link control',
     )
 
+    const moneyTrailSection = page.locator('#money-trail')
+    await moneyTrailSection.scrollIntoViewIfNeeded()
+    assert(
+      (await moneyTrailSection.getByRole('button', { name: /Export money-trail CSV/i }).count()) > 0,
+      'money-trail section missing CSV export',
+    )
+    const timelineSection = page.locator('#timeline')
+    await timelineSection.scrollIntoViewIfNeeded()
+    assert(
+      (await timelineSection.getByRole('button', { name: /Export timeline CSV/i }).count()) > 0,
+      'timeline section missing CSV export',
+    )
+
+    const corpusResponse = await page.request.get(`${baseUrl}/israel-dossier/corpus.json`)
+    assert(corpusResponse.ok(), `corpus.json HTTP ${corpusResponse.status()}`)
+    const corpus = await corpusResponse.json()
+    assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 20, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 12, 'corpus.json actors too few')
+
     // Deep-link surface: actor query opens enablement panel
     await page.goto(`${baseUrl}/israel-dossier?actor=joe-biden`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
