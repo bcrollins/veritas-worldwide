@@ -613,6 +613,27 @@ const healthResult = await fetchJson('/api/health')
         `feed status=${feedResult.response.status} hasFieldManualPdf=${feedText.includes('/veritas-institute-field-manual.pdf')}`
       )
 
+      for (const successRoute of [
+        { path: '/membership/success', needle: 'Membership Confirmed' },
+        { path: '/donation/success', needle: 'Donation Received' },
+        { path: '/thank-you', needle: 'Thank You' },
+      ]) {
+        const result = await fetchText(successRoute.path)
+        const body = result.text || ''
+        addCheck(
+          checks,
+          failures,
+          result.response.ok &&
+            (body.includes(successRoute.needle) ||
+              body.includes('supporting the record') ||
+              body.includes('Membership circle') ||
+              body.includes('Support Confirmed') ||
+              body.includes('Membership Confirmed')),
+          `Post-checkout landing responds: ${successRoute.path}`,
+          `status=${result.response.status} hasMarker=${body.includes(successRoute.needle) || body.includes('supporting the record')}`,
+        )
+      }
+
       // /rss.xml is a discovery alias used by many readers; must 301 to canonical /feed.xml.
       let rssOk = false
       let rssDetail = 'probe-unavailable'
