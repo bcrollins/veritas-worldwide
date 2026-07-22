@@ -22,6 +22,8 @@ const PREVIEW_ASSETS = [
   { label: 'Letterhead', href: '/brand-kit/09-templates/letterhead.svg', bg: 'bg-parchment' },
   { label: 'Press Header', href: '/brand-kit/09-templates/press-release-header.svg', bg: 'bg-parchment' },
   { label: 'Business Card', href: '/brand-kit/09-templates/business-card.svg', bg: 'bg-parchment' },
+  { label: 'Quote Card', href: '/brand-kit/04-social/quote-card.svg', bg: 'bg-black' },
+  { label: 'YouTube Thumb', href: '/brand-kit/04-social/youtube-thumbnail.svg', bg: 'bg-black' },
 ]
 
 const TOKEN_SWATCHES = [
