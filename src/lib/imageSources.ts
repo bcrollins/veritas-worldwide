@@ -48,12 +48,24 @@ export function getWikimediaWidth(imageUrl: string): number | null {
   }
 }
 
+/**
+ * Prefer first-party hosted assets. Local /news/* paths pass through.
+ * Legacy Wikimedia URLs are rewritten only when still present in data;
+ * prefer replacing data with /news/heroes and /news/inline assets.
+ */
 export function getPreferredImageSrc(imageUrl?: string): string | undefined {
   if (!imageUrl) return imageUrl;
 
+  // First-party absolute or root-relative assets
+  if (imageUrl.startsWith('/') || imageUrl.startsWith('https://veritasworldwide.com/')) {
+    return imageUrl
+  }
+
   try {
     const url = new URL(imageUrl);
-    if (url.hostname === 'upload.wikimedia.org') {
+    // Hotlinked Wikimedia thumbs are unreliable (broken icons in production).
+    // Callers should use local /news/* paths; leave remote only for non-wiki hosts.
+    if (url.hostname === 'upload.wikimedia.org' || url.hostname.endsWith('wikimedia.org')) {
       return imageUrl;
     }
   } catch {

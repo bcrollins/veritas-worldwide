@@ -18,7 +18,7 @@ export const expandedArticlesA: Article[] = [
       "commerce"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/WhiteHouseSouthFacade.JPG/1280px-WhiteHouseSouthFacade.JPG",
+      "src": "/news/heroes/white-house.jpg",
       "alt": "The White House, site of Trump trade policy decisions",
       "credit": "Public Domain"
     },
@@ -109,10 +109,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Emma_Maersk.jpg/1200px-Emma_Maersk.jpg",
+          "src": "/news/inline/container-ship.jpg",
           "alt": "Container ship loaded with cargo from Asia",
           "caption": "Global trade containers: American retailers depend on Chinese-sourced goods flowing through major ports",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -153,10 +153,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Port_of_Shanghai.jpg/1200px-Port_of_Shanghai.jpg",
+          "src": "/news/inline/container-port.jpg",
           "alt": "Shanghai Port, the world's busiest container port",
           "caption": "Chinese trade infrastructure: Retaliatory measures target American agricultural and industrial exports",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -187,10 +187,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shenzhen_electronic_market.jpg/1200px-Shenzhen_electronic_market.jpg",
+          "src": "/news/inline/electronics-factory.jpg",
           "alt": "Electronics manufacturing facility in China",
           "caption": "Chinese electronics production facilities face tariff pressure, driving immediate price increases",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -249,7 +249,7 @@ export const expandedArticlesA: Article[] = [
       "aid blockade"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_Nations_General_Assembly_Hall_%283%29.jpg/1200px-United_Nations_General_Assembly_Hall_%283%29.jpg",
+      "src": "/news/heroes/un-assembly.jpg",
       "alt": "UN General Assembly meeting chamber",
       "credit": "Public Domain"
     },
@@ -342,10 +342,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/UNHCR_Dadaab_refugee_camp.jpg/1200px-UNHCR_Dadaab_refugee_camp.jpg",
+          "src": "/news/inline/humanitarian-aid.jpg",
           "alt": "UN humanitarian aid distribution in conflict zones",
           "caption": "Limited humanitarian aid delivery: Blockade restrictions severely constrain relief operations in Gaza",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -390,10 +390,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg/1200px-Destroyed_apartment_tower_in_Gaza_City_%28cropped%29.jpg",
+          "src": "/news/inline/urban-ruins.jpg",
           "alt": "Destroyed residential buildings in Gaza",
           "caption": "Infrastructure devastation: 70% of Gaza housing damaged or destroyed, creating cascading humanitarian failures",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -433,10 +433,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/WHO_HQ_main_building%2C_Geneva.jpg/1200px-WHO_HQ_main_building%2C_Geneva.jpg",
+          "src": "/news/inline/intl-hq.jpg",
           "alt": "World Health Organization headquarters in Geneva",
           "caption": "WHO assessments document disease epidemiology in famine-stricken populations",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -497,9 +497,9 @@ export const expandedArticlesA: Article[] = [
       "manufacturing defects"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Southwest_Airlines_Boeing_737_MAX_8_N8706W.jpg/1200px-Southwest_Airlines_Boeing_737_MAX_8_N8706W.jpg",
+      "src": "/news/heroes/boeing-airliner.jpg",
       "alt": "Boeing 737 MAX aircraft",
-      "credit": "Wikimedia Commons"
+      "credit": "Editorial illustration · Veritas Worldwide"
     },
     "readingTime": 19,
     "seo": {
@@ -603,10 +603,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Boeing_Renton_Factory_October_2011.jpg/1200px-Boeing_Renton_Factory_October_2011.jpg",
+          "src": "/news/inline/aircraft-hangar.jpg",
           "alt": "Boeing 737 MAX aircraft in production",
           "caption": "737 MAX production line: Design flaws traced to cost-cutting and pressure to match competitor aircraft",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -646,10 +646,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Boeing-Stearman_Model_75_PT-17_Kaydet_-_15977419726.jpg/1200px-Boeing-Stearman_Model_75_PT-17_Kaydet_-_15977419726.jpg",
+          "src": "/news/inline/aircraft-fuselage.jpg",
           "alt": "Boeing 737 fuselage during manufacturing",
           "caption": "Fuselage manufacturing defects bypass quality inspection systems",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -704,10 +704,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Boeing_full_logo.svg/1200px-Boeing_full_logo.svg.png",
+          "src": "/news/inline/aircraft-logo-abstract.jpg",
           "alt": "Boeing corporate logo",
           "caption": "Corporate accountability remains elusive despite repeated safety failures",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -745,9 +745,9 @@ export const expandedArticlesA: Article[] = [
       "deficit spending"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/US_Treasury_Building_and_Albert_Gallatin_Statue.jpg/1200px-US_Treasury_Building_and_Albert_Gallatin_Statue.jpg",
+      "src": "/news/heroes/treasury-building.jpg",
       "alt": "U.S. Treasury Department building",
-      "credit": "Wikimedia Commons"
+      "credit": "Editorial illustration · Veritas Worldwide"
     },
     "readingTime": 17,
     "seo": {
@@ -867,10 +867,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/US_Federal_Debt_as_Percent_of_GDP.png/1200px-US_Federal_Debt_as_Percent_of_GDP.png",
+          "src": "/news/inline/debt-documents.jpg",
           "alt": "Chart showing U.S. federal debt growth over time",
           "caption": "Thirty-year trajectory: National debt growth from $5.67 trillion (2000) to $36 trillion (2026)",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -916,10 +916,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/US_Capitol_west_side.JPG/1200px-US_Capitol_west_side.JPG",
+          "src": "/news/inline/capitol-day.jpg",
           "alt": "U.S. Capitol building",
           "caption": "Congressional dysfunction over debt ceiling has cost taxpayers billions in higher borrowing rates",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {
@@ -969,10 +969,10 @@ export const expandedArticlesA: Article[] = [
       {
         "type": "image",
         "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg/1200px-Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg",
+          "src": "/news/heroes/federal-reserve.jpg",
           "alt": "Federal Reserve seal",
           "caption": "The Federal Reserve, constrained by dual mandate of price stability and full employment, cannot solve structural fiscal imbalances",
-          "credit": "Wikimedia Commons"
+          "credit": "Editorial illustration · Veritas Worldwide"
         }
       },
       {

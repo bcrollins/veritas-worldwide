@@ -39,6 +39,7 @@
     "verify:institute-pdf": "node scripts/run-with-strip-types.mjs scripts/verify-institute-field-manual-pdf.mjs",
     "verify:institute-render": "node scripts/verify-institute-book-render.mjs",
     "verify:article-sources": "node scripts/verify-article-sources.mjs",
+    "verify:article-images": "node scripts/verify-article-images.mjs",
     "verify:search-scoring": "node scripts/verify-search-scoring.mjs",
     "verify:archive-manifest": "node scripts/verify-archive-manifest.mjs",
     "verify:auth-validation": "node scripts/verify-auth-validation.mjs",

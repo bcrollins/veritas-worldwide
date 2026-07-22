@@ -73,7 +73,7 @@ export const articles: Article[] =
       "inflation"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg/1200px-Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg",
+      "src": "/news/heroes/federal-reserve.jpg",
       "alt": "Federal Reserve Board headquarters, the Eccles Building",
       "credit": "Public Domain"
     },
@@ -236,9 +236,9 @@ export const articles: Article[] =
       "Epstein Files Transparency Act"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/NY_Southern_District_Courthouse.jpg/1200px-NY_Southern_District_Courthouse.jpg",
+      "src": "/news/heroes/doj-courthouse.jpg",
       "alt": "U.S. District Court, Southern District of New York",
-      "credit": "Wikimedia Commons / CC BY-SA 4.0"
+      "credit": "Editorial illustration · Veritas Worldwide"
     },
     "readingTime": 14,
     "seo": {
@@ -406,9 +406,9 @@ export const articles: Article[] =
       "Lee"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Edward_Snowden-2.jpg/800px-Edward_Snowden-2.jpg",
+      "src": "/news/heroes/surveillance.jpg",
       "alt": "Edward Snowden, former NSA contractor who exposed mass surveillance",
-      "credit": "Wikimedia Commons / CC BY 3.0"
+      "credit": "Editorial illustration · Veritas Worldwide"
     },
     "readingTime": 11,
     "seo": {
@@ -553,7 +553,7 @@ export const articles: Article[] =
       "defense appropriations"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/The_Pentagon_January_2008.jpg/1200px-The_Pentagon_January_2008.jpg",
+      "src": "/news/heroes/pentagon.jpg",
       "alt": "Aerial view of the Pentagon",
       "credit": "Public Domain — U.S. Department of Defense"
     },
@@ -704,9 +704,9 @@ export const articles: Article[] =
       "foreign aid"
     ],
     "heroImage": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/US_Capitol_Building_at_night_Jan_2006.jpg/1200px-US_Capitol_Building_at_night_Jan_2006.jpg",
+      "src": "/news/heroes/capitol-night.jpg",
       "alt": "U.S. Capitol Building at night",
-      "credit": "Public Domain — Wikimedia Commons"
+      "credit": "Editorial illustration · Veritas Worldwide"
     },
     "readingTime": 11,
     "seo": {

@@ -8,10 +8,13 @@ import SharePanel from '../components/SharePanel'
 import { getPreferredImageSrc } from '../lib/imageSources'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import { ImageWithFallback } from '../components/ImageWithFallback'
 
 function getArticleImageSrc(src?: string) {
   return getPreferredImageSrc(src) || src
 }
+
+const NEWS_IMAGE_FALLBACK = '/og-image.png'
 
 function SourceBadge({ type }: { type: ArticleSource['type'] }) {
   const styles: Record<string, string> = {
@@ -84,8 +87,9 @@ function ContentBlock({ block }: { block: ArticleBlock }) {
     case 'image':
       return (
         <figure className="my-8">
-          <img
+          <ImageWithFallback
             src={getArticleImageSrc(block.image?.src)}
+            fallbackSrc={NEWS_IMAGE_FALLBACK}
             alt={block.image?.alt || ''}
             className="w-full rounded-sm grayscale hover:grayscale-0 transition-all duration-500"
             loading="lazy"
@@ -233,8 +237,9 @@ export default function ArticlePage() {
         {/* ── Hero Image ───────────────────────────── */}
         <div className="max-w-5xl mx-auto mt-8 mb-10">
           <figure>
-            <img
+            <ImageWithFallback
               src={heroImageSrc}
+              fallbackSrc={NEWS_IMAGE_FALLBACK}
               alt={article.heroImage.alt}
               className="w-full h-64 sm:h-80 md:h-[420px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
               loading="eager"

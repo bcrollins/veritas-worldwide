@@ -17,7 +17,7 @@ export const expandedArticlesB: Article[] = [
     category: 'Surveillance & Civil Liberties',
     tags: ['election security', 'CISA', 'NIST', 'AI risk', 'infrastructure'],
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Seal_of_the_United_States_Department_of_Homeland_Security.svg/1024px-Seal_of_the_United_States_Department_of_Homeland_Security.svg.png',
+      src: '/news/heroes/election-security.jpg',
       alt: 'Seal of the U.S. Department of Homeland Security',
       credit: 'Public Domain',
     },
@@ -133,7 +133,7 @@ export const expandedArticlesB: Article[] = [
     category: 'Federal Reserve & Banking',
     tags: ['national debt', 'Treasury', 'FiscalData', 'FOMC', 'H.15', 'interest rates'],
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/United_States_Department_of_the_Treasury_Seal.svg/1024px-United_States_Department_of_the_Treasury_Seal.svg.png',
+      src: '/news/heroes/treasury-seal.jpg',
       alt: 'Seal of the United States Department of the Treasury',
       credit: 'Public Domain',
     },
@@ -259,7 +259,7 @@ export const expandedArticlesB: Article[] = [
     category: 'Accountability & Transparency',
     tags: ['aviation safety', 'NTSB', 'FAA', 'accident investigation', 'primary sources'],
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/FAA_logo.svg/1024px-FAA_logo.svg.png',
+      src: '/news/heroes/aviation-tower.jpg',
       alt: 'Federal Aviation Administration logo',
       credit: 'Public Domain',
     },
@@ -356,7 +356,7 @@ export const expandedArticlesB: Article[] = [
     category: 'Accountability & Transparency',
     tags: ['Supreme Court', 'judicial ethics', 'Code of Conduct', 'recusal', 'transparency'],
     heroImage: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Supreme_Court_US_2021.jpg/1280px-Supreme_Court_US_2021.jpg',
+      src: '/news/heroes/supreme-court.jpg',
       alt: 'United States Supreme Court building',
       credit: 'Public Domain',
     },

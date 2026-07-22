@@ -15,10 +15,13 @@ import {
   type NewsSourceBreakdown,
 } from '../lib/newsDiscovery'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import { ImageWithFallback } from '../components/ImageWithFallback'
 
 function getArticleImageSrc(src: string) {
   return getPreferredImageSrc(src) || src
 }
+
+const NEWS_IMAGE_FALLBACK = '/og-image.png'
 
 function CategoryBadge({ category }: { category: ArticleCategory }) {
   return (
@@ -53,8 +56,9 @@ function HeroArticle({ article }: { article: Article }) {
     <Link to={`/news/${article.slug}`} className="group block">
       <article className="grid gap-6 border-b border-border pb-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:gap-10">
         <div className="overflow-hidden rounded-[24px] border border-border bg-surface">
-          <img
+          <ImageWithFallback
             src={getArticleImageSrc(article.heroImage.src)}
+            fallbackSrc={NEWS_IMAGE_FALLBACK}
             alt={article.heroImage.alt}
             className="h-72 w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 md:h-full"
             loading="eager"
@@ -89,8 +93,9 @@ function ArticleCard({ article, size = 'medium' }: { article: Article; size?: 'm
     <Link to={`/news/${article.slug}`} className="group block">
       <article className={size === 'medium' ? 'pb-6' : 'pb-4'}>
         <div className="mb-3 overflow-hidden rounded-[20px] border border-border bg-surface">
-          <img
+          <ImageWithFallback
             src={getArticleImageSrc(article.heroImage.src)}
+            fallbackSrc={NEWS_IMAGE_FALLBACK}
             alt={article.heroImage.alt}
             className={`w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 ${
               size === 'medium' ? 'h-52' : 'h-36'
@@ -143,8 +148,9 @@ function ArticleListItem({ article }: { article: Article }) {
             <span>{article.sources.length} sources</span>
           </div>
         </div>
-        <img
+        <ImageWithFallback
           src={getArticleImageSrc(article.heroImage.src)}
+          fallbackSrc={NEWS_IMAGE_FALLBACK}
           alt={article.heroImage.alt}
           className="h-20 w-20 shrink-0 rounded-xl object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
           loading="lazy"
