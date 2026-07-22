@@ -56,6 +56,7 @@ const required = [
   '04-social/highlight-sources.svg',
   '04-social/highlight-record.svg',
   '09-templates/business-card.svg',
+  '09-templates/media-kit.html',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
 ]
 
@@ -140,6 +141,7 @@ if (base) {
     '/brand-kit/09-templates/email-signature.html',
     '/brand-kit/09-templates/letterhead.svg',
     '/brand-kit/09-templates/business-card.svg',
+    '/brand-kit/09-templates/media-kit.html',
     '/brand-kit/06-tokens/tokens.css',
     '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md',
     '/brand-kit/04-social/highlight-chapters.svg',

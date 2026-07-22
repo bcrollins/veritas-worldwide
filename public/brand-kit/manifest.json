@@ -1,7 +1,7 @@
 {
   "version": "2.2.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-22T23:18:41.233Z",
+  "generatedAt": "2026-07-22T23:21:09.050Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "sections": [
     {
@@ -123,6 +123,10 @@
     {
       "label": "Tokens (CSS)",
       "href": "/brand-kit/06-tokens/tokens.css"
+    },
+    {
+      "label": "Media kit (HTML)",
+      "href": "/brand-kit/09-templates/media-kit.html"
     }
   ],
   "platformAssets": {

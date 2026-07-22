@@ -21,6 +21,7 @@ const PREVIEW_ASSETS = [
   { label: 'OG Card', href: '/brand-kit/05-og/og-image.svg', bg: 'bg-black' },
   { label: 'Letterhead', href: '/brand-kit/09-templates/letterhead.svg', bg: 'bg-parchment' },
   { label: 'Press Header', href: '/brand-kit/09-templates/press-release-header.svg', bg: 'bg-parchment' },
+  { label: 'Business Card', href: '/brand-kit/09-templates/business-card.svg', bg: 'bg-parchment' },
 ]
 
 const TOKEN_SWATCHES = [
@@ -280,6 +281,14 @@ export default function AdminBrandKit() {
             className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
           >
             Email signature →
+          </a>
+          <a
+            href="/brand-kit/09-templates/media-kit.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Media kit page →
           </a>
           <a
             href="/brand-kit/07-docs/HASHTAGS.md"
