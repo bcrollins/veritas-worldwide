@@ -382,9 +382,9 @@ async function runInteractiveChecks(browser) {
       assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
-    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 54, 'corpus.json incidents too few')
-    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 34, 'corpus.json actors too few')
-    assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 44, 'corpus.json timeline too few')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 55, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 36, 'corpus.json actors too few')
+    assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 45, 'corpus.json timeline too few')
     assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 14, 'corpus.json moneyTrail too few')
     assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 5, 'corpus.json legalCases too few')
     assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 3, 'corpus.json lobbying too few')
@@ -519,6 +519,8 @@ async function runInteractiveChecks(browser) {
       'hellfire',
       'elise stefanik',
       'ritchie torres',
+      'operation rainbow',
+      'razing rafah',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }

@@ -1064,6 +1064,31 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1 },
   },
   {
+    id: 'operation-rainbow-2004',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Operation Rainbow — Rafah Offensive (2004)',
+    date: 'May 18–24, 2004',
+    location: 'Rafah, Gaza Strip',
+    summary:
+      'Israeli forces conducted a major offensive in Rafah aimed at destroying smuggling tunnels and armed groups. Human-rights monitors documented dozens of Palestinian deaths including civilians, and large-scale house demolitions that left hundreds of families homeless.',
+    evidence:
+      'HRW "Razing Rafah" investigation, B\'Tselem fatality tables, and UN agency reporting document civilian harm and demolitions. Distinct from the later Rachel Corrie killing (2003) and Days of Penitence (later 2004) entries.',
+    sources: [
+      { label: 'Human Rights Watch — Razing Rafah', url: 'https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip' },
+      { label: 'B\'Tselem — Rafah / house demolitions documentation', url: 'https://www.btselem.org/gaza_strip' },
+      { label: 'UNRWA — Rafah emergency / shelter materials (historical)', url: 'https://www.unrwa.org/' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'HRW Razing Rafah full report', url: 'https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip' },
+    ],
+    tier: 'verified',
+  },
+  {
     id: 'second-lebanon-war-2006-pattern',
     era: 'occupation-1967-2005',
     targetsCivilians: true,
@@ -1421,6 +1446,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     relatedIncidentIds: ['settlement-enterprise-pattern'],
     relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
     tags: ['legal', 'settlements', 'un-finding'],
+  },
+  {
+    id: 'tl-operation-rainbow-2004',
+    year: '2004',
+    era: 'occupation-1967-2005',
+    title: 'Operation Rainbow — Rafah House Demolitions',
+    description:
+      'Major Rafah offensive. HRW documents mass home demolitions and civilian deaths in southern Gaza.',
+    source: 'Human Rights Watch — Razing Rafah',
+    sourceUrl: 'https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip',
+    tier: 'verified',
+    relatedIncidentIds: ['operation-rainbow-2004'],
+    tags: ['civilians', 'children', 'demolitions', 'gaza'],
   },
   {
     id: 'tl-days-of-penitence-2004',

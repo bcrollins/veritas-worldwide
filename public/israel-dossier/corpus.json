@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T20:07:43.566Z",
+  "generatedAt": "2026-07-22T20:12:37.445Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 55,
-    "timelineEvents": 46,
+    "incidents": 56,
+    "timelineEvents": 47,
     "actors": 36,
     "moneyTrailNodes": 14,
-    "historicalWarCrimesPack": 40,
+    "historicalWarCrimesPack": 41,
     "legalCases": 7,
     "lobbyingRecords": 4
   },
@@ -1695,6 +1695,25 @@
       ]
     },
     {
+      "id": "tl-operation-rainbow-2004",
+      "year": "2004",
+      "era": "occupation-1967-2005",
+      "title": "Operation Rainbow — Rafah House Demolitions",
+      "description": "Major Rafah offensive. HRW documents mass home demolitions and civilian deaths in southern Gaza.",
+      "source": "Human Rights Watch — Razing Rafah",
+      "sourceUrl": "https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "operation-rainbow-2004"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "demolitions",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-beit-hanoun-2006",
       "year": "2006",
       "era": "occupation-1967-2005",
@@ -2911,6 +2930,44 @@
       "casualties": {
         "killed": 100
       }
+    },
+    {
+      "id": "operation-rainbow-2004",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Operation Rainbow — Rafah Offensive (2004)",
+      "date": "May 18–24, 2004",
+      "location": "Rafah, Gaza Strip",
+      "summary": "Israeli forces conducted a major offensive in Rafah aimed at destroying smuggling tunnels and armed groups. Human-rights monitors documented dozens of Palestinian deaths including civilians, and large-scale house demolitions that left hundreds of families homeless.",
+      "evidence": "HRW \"Razing Rafah\" investigation, B'Tselem fatality tables, and UN agency reporting document civilian harm and demolitions. Distinct from the later Rachel Corrie killing (2003) and Days of Penitence (later 2004) entries.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — Razing Rafah",
+          "url": "https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip"
+        },
+        {
+          "label": "B'Tselem — Rafah / house demolitions documentation",
+          "url": "https://www.btselem.org/gaza_strip"
+        },
+        {
+          "label": "UNRWA — Rafah emergency / shelter materials (historical)",
+          "url": "https://www.unrwa.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "HRW Razing Rafah full report",
+          "url": "https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip"
+        }
+      ],
+      "tier": "verified"
     },
     {
       "id": "qana-2006",
