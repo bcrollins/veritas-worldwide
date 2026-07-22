@@ -397,6 +397,70 @@
       "status": "pinned",
       "note": "US Treasury FiscalData",
       "lastProbedAt": "2026-07-22T22:34:07.000Z"
+    },
+    {
+      "sourceUrl": "https://www.congress.gov/crs-product/R48860",
+      "timestamp": "20260403203225",
+      "archiveUrl": "https://web.archive.org/web/20260403203225/https://www.congress.gov/crs-product/R48860",
+      "status": "pinned",
+      "note": "CRS product R48860",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://www.gao.gov/products/gao-11-696",
+      "timestamp": "20111208211634",
+      "archiveUrl": "https://web.archive.org/web/20111208211634/https://www.gao.gov/products/gao-11-696",
+      "status": "pinned",
+      "note": "GAO-11-696 security assistance observations",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
+      "timestamp": "20210427075129",
+      "archiveUrl": "https://web.archive.org/web/20210427075129/https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
+      "status": "pinned",
+      "note": "HRW Threshold Crossed report",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://www.amnesty.org/en/documents/mde18/007/2006/en/",
+      "timestamp": "20200224175453",
+      "archiveUrl": "https://web.archive.org/web/20200224175453/https://www.amnesty.org/en/documents/mde18/007/2006/en/",
+      "status": "pinned",
+      "note": "Amnesty MDE18/007/2006",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://clintonwhitehouse5.archives.gov/",
+      "timestamp": "20181128203348",
+      "archiveUrl": "https://web.archive.org/web/20181128203348/https://clintonwhitehouse5.archives.gov/",
+      "status": "pinned",
+      "note": "Clinton White House archives",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://obamawhitehouse.archives.gov/",
+      "timestamp": "20170120171746",
+      "archiveUrl": "https://web.archive.org/web/20170120171746/https://obamawhitehouse.archives.gov/",
+      "status": "pinned",
+      "note": "Obama White House archives",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://www.cisa.gov/",
+      "timestamp": "20190916022309",
+      "archiveUrl": "https://web.archive.org/web/20190916022309/https://www.cisa.gov/",
+      "status": "pinned",
+      "note": "CISA home",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://www.supremecourt.gov/about/code-of-conduct-for-justices.aspx",
+      "timestamp": "20231118010948",
+      "archiveUrl": "https://web.archive.org/web/20231118010948/https://www.supremecourt.gov/about/code-of-conduct-for-justices.aspx",
+      "status": "pinned",
+      "note": "SCOTUS Code of Conduct for Justices",
+      "lastProbedAt": "2026-07-22T22:38:38.000Z"
     }
   ]
 }

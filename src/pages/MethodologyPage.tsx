@@ -301,6 +301,23 @@ export default function MethodologyPage() {
                   >
                     Field Manual PDF
                   </a>
+                  <a
+                    href="/israel-dossier/workbooks/briefing-source-archive-manifest.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download
+                  >
+                    Archive pin manifest (JSON)
+                  </a>
+                  <a
+                    href="/profiles/corpus.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download="veritas-profiles-corpus.json"
+                  >
+                    Profiles corpus (JSON)
+                  </a>
+                  <Link to="/profiles" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                    Power Profiles
+                  </Link>
                 </div>
               </div>
 

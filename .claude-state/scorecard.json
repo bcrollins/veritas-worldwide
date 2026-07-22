@@ -44,11 +44,11 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.9,
-      "previous": 9.9,
-      "delta": 0,
-      "status": "archive pins 46; NTSB/Fed H.15 CDX re-probe matches pins; Lancet still lookup-only",
-      "plus_half_requires": "Expand archive pins beyond briefing rows to restricted/bot-blocked bibliography URLs."
+      "composite": 9.92,
+      "previous": 9.85,
+      "delta": 0.07,
+      "status": "archive pins 63; pure/platform floors 60; Sources+Methodology corpora links; Lancet still lookup-only",
+      "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
     },
     {
       "feature": "Search",
