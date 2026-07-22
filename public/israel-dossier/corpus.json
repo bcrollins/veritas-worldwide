@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T19:55:50.924Z",
+  "generatedAt": "2026-07-22T19:59:36.146Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 51,
-    "timelineEvents": 42,
+    "incidents": 52,
+    "timelineEvents": 43,
     "actors": 31,
     "moneyTrailNodes": 13,
-    "historicalWarCrimesPack": 36,
+    "historicalWarCrimesPack": 37,
     "legalCases": 7,
     "lobbyingRecords": 4
   },
@@ -1185,7 +1185,7 @@
       "source": "The Avalon Project — The Balfour Declaration",
       "sourceUrl": "https://avalon.law.yale.edu/20th_century/balfour.asp",
       "tier": "verified",
-      "imageUrl": "/og/chapter-16.png"
+      "imageUrl": "/chapters/heroes/chapter-16.jpg"
     },
     {
       "year": "1947",
@@ -1194,7 +1194,7 @@
       "source": "United Nations General Assembly Resolution 181",
       "sourceUrl": "https://www.un.org/unispal/document/auto-insert-185393/",
       "tier": "verified",
-      "imageUrl": "/og/chapter-16.png"
+      "imageUrl": "/chapters/heroes/chapter-16.jpg"
     },
     {
       "id": "tl-deir-yassin",
@@ -1317,7 +1317,7 @@
       "source": "UN Security Council Resolution 242",
       "sourceUrl": "https://digitallibrary.un.org/record/90717",
       "tier": "verified",
-      "imageUrl": "/og/chapter-16.png"
+      "imageUrl": "/chapters/heroes/chapter-16.jpg"
     },
     {
       "year": "1967",
@@ -1475,6 +1475,24 @@
       "source": "International Court of Justice, Advisory Opinion",
       "sourceUrl": "https://www.icj-cij.org/case/131",
       "tier": "verified"
+    },
+    {
+      "id": "tl-days-of-penitence-2004",
+      "year": "2004",
+      "era": "occupation-1967-2005",
+      "title": "Operation Days of Penitence — Northern Gaza",
+      "description": "Major northern Gaza offensive. Monitors record ~100+ Palestinian dead including many civilians; widespread housing destruction in Jabalia/Beit Hanoun area.",
+      "source": "B'Tselem / OCHA",
+      "sourceUrl": "https://www.btselem.org/gaza_strip",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "days-of-penitence-2004"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "gaza"
+      ]
     },
     {
       "id": "tl-beit-hanoun-2006",
@@ -1829,7 +1847,7 @@
       "casualties": {
         "killed": 110
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "lydda-ramle-1948",
@@ -1869,7 +1887,7 @@
       "casualties": {
         "killed": 350
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "qibya-1953",
@@ -2233,7 +2251,7 @@
       "casualties": {
         "killed": 800
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "beirut-siege-1982",
@@ -2573,6 +2591,47 @@
       }
     },
     {
+      "id": "days-of-penitence-2004",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Operation Days of Penitence — Northern Gaza Offensive (2004)",
+      "date": "September 29 – October 16, 2004",
+      "location": "Northern Gaza Strip (Jabalia / Beit Hanoun area)",
+      "summary": "A major Israeli ground and air offensive in northern Gaza after Qassam rocket fire. Human-rights monitors recorded roughly 100+ Palestinian deaths including many civilians and children, plus widespread housing destruction in dense refugee-camp areas.",
+      "evidence": "B'Tselem fatality tables, OCHA access reports, and contemporaneous HRW/Amnesty documentation establish civilian-harm floors. Distinct from later Cast Lead; included to densify the 2000–2005 escalation period with checkable multi-source tallies.",
+      "sources": [
+        {
+          "label": "B'Tselem — 2004 Gaza fatalities / operations",
+          "url": "https://www.btselem.org/gaza_strip"
+        },
+        {
+          "label": "OCHA — historical Gaza protection reporting",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "Human Rights Watch — Israel/Palestine archives (2004 period)",
+          "url": "https://www.hrw.org/middle-east/n-africa/israel/palestine"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "B'Tselem Gaza documentation hub",
+          "url": "https://www.btselem.org/gaza_strip"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 100
+      }
+    },
+    {
       "id": "qana-2006",
       "era": "occupation-1967-2005",
       "targetsCivilians": true,
@@ -2783,7 +2842,7 @@
       "casualties": {
         "killed": 1400
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "gaza-war-2008-white-phosphorus",
@@ -2826,7 +2885,7 @@
         }
       ],
       "tier": "verified",
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "operation-cast-lead-school-strikes",
@@ -3052,7 +3111,7 @@
       "casualties": {
         "killed": 2251
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "operation-protective-edge-unrwa-shelters",
@@ -3148,7 +3207,7 @@
         "killed": 223,
         "injured": 36100
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "great-march-return-medics-2018",
@@ -3322,7 +3381,7 @@
       "casualties": {
         "killed": 1139
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "jenin-2023-july",
@@ -3406,7 +3465,7 @@
         "killed": 120,
         "injured": 280
       },
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "al-ahli-hospital-2023",
@@ -3488,7 +3547,7 @@
         }
       ],
       "tier": "verified",
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "al-shifa-hospital",
@@ -3618,7 +3677,7 @@
         }
       ],
       "tier": "verified",
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "hind-rajab-2024",
@@ -3948,7 +4007,7 @@
         }
       ],
       "tier": "verified",
-      "imageUrl": "/og-image.png"
+      "imageUrl": "/chapters/heroes/chapter-29.jpg"
     },
     {
       "id": "rafah-tent-camp-2024",

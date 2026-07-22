@@ -985,6 +985,32 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     ],
     tier: 'verified',
   },
+  {
+    id: 'days-of-penitence-2004',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Operation Days of Penitence — Northern Gaza Offensive (2004)',
+    date: 'September 29 – October 16, 2004',
+    location: 'Northern Gaza Strip (Jabalia / Beit Hanoun area)',
+    summary:
+      'A major Israeli ground and air offensive in northern Gaza after Qassam rocket fire. Human-rights monitors recorded roughly 100+ Palestinian deaths including many civilians and children, plus widespread housing destruction in dense refugee-camp areas.',
+    evidence:
+      'B\'Tselem fatality tables, OCHA access reports, and contemporaneous HRW/Amnesty documentation establish civilian-harm floors. Distinct from later Cast Lead; included to densify the 2000–2005 escalation period with checkable multi-source tallies.',
+    sources: [
+      { label: 'B\'Tselem — 2004 Gaza fatalities / operations', url: 'https://www.btselem.org/gaza_strip' },
+      { label: 'OCHA — historical Gaza protection reporting', url: 'https://www.ochaopt.org/' },
+      { label: 'Human Rights Watch — Israel/Palestine archives (2004 period)', url: 'https://www.hrw.org/middle-east/n-africa/israel/palestine' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem Gaza documentation hub', url: 'https://www.btselem.org/gaza_strip' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 100 },
+  },
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -1317,6 +1343,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     relatedIncidentIds: ['settlement-enterprise-pattern'],
     relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
     tags: ['legal', 'settlements', 'un-finding'],
+  },
+  {
+    id: 'tl-days-of-penitence-2004',
+    year: '2004',
+    era: 'occupation-1967-2005',
+    title: 'Operation Days of Penitence — Northern Gaza',
+    description:
+      'Major northern Gaza offensive. Monitors record ~100+ Palestinian dead including many civilians; widespread housing destruction in Jabalia/Beit Hanoun area.',
+    source: 'B\'Tselem / OCHA',
+    sourceUrl: 'https://www.btselem.org/gaza_strip',
+    tier: 'verified',
+    relatedIncidentIds: ['days-of-penitence-2004'],
+    tags: ['civilians', 'children', 'gaza'],
   },
 ]
 
