@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T23:23:15.434Z",
+  "generatedAt": "2026-07-22T23:27:06.256Z",
   "count": 94,
   "profiles": [
     {
@@ -85,18 +85,20 @@
     {
       "id": "jared-kushner",
       "name": "Jared Kushner",
-      "title": "Former White House Advisor",
+      "title": "Senior Advisor to the President (2017–2021); Abraham Accords architect",
       "category": "politician",
-      "summary": "Led Trump Middle East policy, negotiated Abraham Accords. Post-White House: received $2B Saudi PIF investment for Affinity Partners fund, raising questions about foreign influence.",
+      "summary": "Son-in-law and Senior Advisor to President Trump (2017–2021). Led White House Middle East portfolio including the Abraham Accords (2020), the U.S. embassy move to Jerusalem (2018), and Golan Heights recognition (2019). Post-government investor via Affinity Partners with reported Gulf capital. Public record of structural diplomatic enablement of Israeli government positions — not a PAC megadonor like Adelson, but an executive-branch policy principal. Primary: White House archives, State Department, Abraham Accords texts.",
       "photo": "/profiles/jared-kushner.svg",
       "url": "https://veritasworldwide.com/profile/jared-kushner",
       "bioguideId": null,
       "tags": [
+        "Trump Administration",
         "Abraham Accords",
-        "Saudi PIF",
-        "Kushner Companies",
-        "Middle East",
-        "Foreign Investment"
+        "Jerusalem Embassy",
+        "Golan Recognition",
+        "Middle East Envoy",
+        "Affinity Partners",
+        "Pro-Israel"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -227,9 +229,9 @@
         "Imprisoned",
         "Network"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "jeffrey-epstein",
@@ -419,15 +421,17 @@
       "name": "Cory Booker",
       "title": "U.S. Senator (D-NJ)",
       "category": "politician",
-      "summary": "Senator from New Jersey. Presidential candidate 2020. Strong pro-Israel voting record.",
+      "summary": "New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7. Primary: OpenSecrets, Senate record.",
       "photo": "/profiles/cory-booker.jpg",
       "url": "https://veritasworldwide.com/profile/cory-booker",
       "bioguideId": "B001288",
       "tags": [
         "Senator",
-        "Democratic Leader",
+        "Pro-Israel",
+        "AIPAC",
         "New Jersey",
-        "Pro-Israel"
+        "Democrat",
+        "2020 Presidential Candidate"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -438,7 +442,7 @@
       "name": "Jacky Rosen",
       "title": "U.S. Senator (D-NV)",
       "category": "politician",
-      "summary": "Nevada Democrat; first woman elected to both chambers from Nevada and among the Senate's most consistent pro-Israel Democrats. Documented pro-Israel PAC recipient (OpenSecrets). Co-sponsors and floor advocate for Iron Dome, FMF, and wartime Israel security packages; active on antisemitism and campus-related legislation. Primary: OpenSecrets, Congress.gov, Senate record.",
+      "summary": "Nevada Democrat; among the Senate's most consistent pro-Israel Democrats. Documented pro-Israel PAC recipient (OpenSecrets). Co-sponsors and floor advocate for Iron Dome, FMF, and wartime Israel security packages; active on antisemitism legislation. Primary: OpenSecrets, Congress.gov, Senate record.",
       "photo": "/profiles/jacky-rosen.jpg",
       "url": "https://veritasworldwide.com/profile/jacky-rosen",
       "bioguideId": "R000608",
@@ -1023,15 +1027,18 @@
       "name": "Tim Scott",
       "title": "U.S. Senator (R-SC)",
       "category": "politician",
-      "summary": "Senator from South Carolina. Only Black Republican senator. Conservative positions.",
+      "summary": "South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, Senate roll calls, CRS RL33222 context.",
       "photo": "/profiles/tim-scott.jpg",
       "url": "https://veritasworldwide.com/profile/tim-scott",
       "bioguideId": "S001184",
       "tags": [
         "Senator",
+        "Pro-Israel",
+        "AIPAC",
         "South Carolina",
         "Republican",
-        "African American"
+        "Iron Dome",
+        "FMF"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,

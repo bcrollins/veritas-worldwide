@@ -97,6 +97,7 @@ const required = [
   'jeffrey-epstein',
   'ted-cruz',
   'mitch-mcconnell',
+  'ghislaine-maxwell',
 ];
 const scores = {};
 for (const id of required) {
@@ -113,7 +114,7 @@ for (const id of required) {
 }
 
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 10) throw new Error('expected ≥10 compiled dockets, got ' + docketCount);
+if (docketCount < 11) throw new Error('expected ≥11 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

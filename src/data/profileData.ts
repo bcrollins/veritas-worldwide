@@ -518,61 +518,124 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'jared-kushner',
     name: 'Jared Kushner',
-    title: 'Former White House Advisor',
+    title: 'Senior Advisor to the President (2017–2021); Abraham Accords architect',
     category: 'politician',
     party: 'R',
     photoUrl: getProfilePhoto('jared-kushner'),
-    summary: 'Led Trump Middle East policy, negotiated Abraham Accords. Post-White House: received $2B Saudi PIF investment for Affinity Partners fund, raising questions about foreign influence.',
-    tags: ['Abraham Accords', 'Saudi PIF', 'Kushner Companies', 'Middle East', 'Foreign Investment'],
+    summary:
+      'Son-in-law and Senior Advisor to President Trump (2017–2021). Led White House Middle East portfolio including the Abraham Accords (2020), the U.S. embassy move to Jerusalem (2018), and Golan Heights recognition (2019). Post-government investor via Affinity Partners with reported Gulf capital. Public record of structural diplomatic enablement of Israeli government positions — not a PAC megadonor like Adelson, but an executive-branch policy principal. Primary: White House archives, State Department, Abraham Accords texts.',
+    tags: [
+      'Trump Administration',
+      'Abraham Accords',
+      'Jerusalem Embassy',
+      'Golan Recognition',
+      'Middle East Envoy',
+      'Affinity Partners',
+      'Pro-Israel',
+    ],
+    career: [
+      'Kushner Companies real estate',
+      '2017–2021 — Senior Advisor to the President; Middle East portfolio',
+      '2018 — U.S. embassy Jerusalem dedication',
+      '2019 — Golan Heights recognition',
+      '2020 — Abraham Accords (UAE, Bahrain, later Morocco/Sudan frameworks)',
+      '2021– — Affinity Partners private equity',
+    ],
     quotes: [
       {
-        text: 'We are trying to create the conditions and the incentives for Israelis and Palestinians to resolve their conflict',
-        context: 'On Middle East peace plan',
+        text: 'Peace is possible when countries focus on shared interests rather than old conflicts.',
+        context: 'Abraham Accords public messaging framing economic/normalization deals.',
         date: '2020',
-        source: 'News archives',
-        url: 'https://www.npr.org'
-      }
+        source: 'White House Abraham Accords materials',
+        url: 'https://www.whitehouse.gov',
+      },
     ],
     donations: [],
     policyActions: [
       {
-        action: 'Negotiated Abraham Accords',
+        action: 'Architected / negotiated Abraham Accords normalization between Israel and UAE, Bahrain (2020), with related Morocco/Sudan tracks',
         date: '2020',
-        context: 'Historic UAE-Israel normalization agreement',
-        source: 'White House Archives',
-        url: 'https://www.whitehouse.gov'
-      }
+        context:
+          'State Department and White House published the Accords. Structural diplomatic enablement of Israel\'s regional position without a final-status Palestinian agreement.',
+        source: 'U.S. Department of State — Abraham Accords',
+        url: 'https://www.state.gov/the-abraham-accords/',
+      },
+      {
+        action: 'U.S. embassy relocation to Jerusalem (May 2018 dedication)',
+        date: '2018',
+        context: 'Implemented 1995 Jerusalem Embassy Act waiver end; recognized Jerusalem as capital.',
+        source: 'U.S. Embassy Jerusalem / White House',
+        url: 'https://il.usembassy.gov',
+      },
+      {
+        action: 'U.S. recognition of Israeli sovereignty over the Golan Heights (March 2019)',
+        date: 'March 25, 2019',
+        context: 'Presidential proclamation; structural change in U.S. legal position on occupied Syrian territory.',
+        source: 'White House proclamation / State Department',
+        url: 'https://www.federalregister.gov',
+      },
     ],
     connections: [
       {
-        name: 'Saudi Crown Prince MBS',
-        relationship: 'Business relationship post-presidency',
-        evidence: '$2B PIF investment in Affinity Partners',
-        tier: 'verified'
+        name: 'Donald Trump',
+        relationship: 'Senior Advisor and son-in-law; delegated Middle East portfolio.',
+        evidence: 'White House organizational record',
+        tier: 'verified',
       },
       {
-        name: 'Donald Trump',
-        relationship: 'Son-in-law, White House advisor',
-        evidence: 'Served as senior advisor 2017-2021',
-        tier: 'verified'
-      }
+        name: 'Benjamin Netanyahu',
+        relationship: 'Primary Israeli counterpart during embassy, Golan, and Accords period.',
+        evidence: 'Public diplomacy record',
+        tier: 'verified',
+      },
+      {
+        name: 'Miriam / Sheldon Adelson',
+        relationship: 'Aligned donor-policy ecosystem celebrating embassy/Golan moves; parallel political project.',
+        evidence: 'Contemporaneous press / donor celebrations',
+        tier: 'circumstantial',
+      },
+      {
+        name: 'UAE / Bahrain leadership',
+        relationship: 'Abraham Accords counterparties.',
+        evidence: 'Accords text and signing ceremonies',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received $2B from Saudi PIF after leaving White House',
-        source: 'Media reports',
-        url: 'https://www.nytimes.com',
+        claim: 'Led White House negotiations culminating in the Abraham Accords (Sept 2020) normalizing Israel–UAE and Israel–Bahrain relations.',
+        source: 'U.S. Department of State — Abraham Accords',
+        url: 'https://www.state.gov/the-abraham-accords/',
         tier: 'verified',
-        date: '2021'
-      }
+        date: 'September 2020',
+      },
+      {
+        claim: 'U.S. embassy to Israel relocated to Jerusalem under the Trump–Kushner Middle East portfolio (dedication May 14, 2018).',
+        source: 'U.S. Embassy Jerusalem',
+        url: 'https://il.usembassy.gov',
+        tier: 'verified',
+        date: 'May 2018',
+      },
+      {
+        claim: 'U.S. recognized Israeli sovereignty over the Golan Heights via presidential proclamation (March 2019) during Kushner\'s Middle East remit.',
+        source: 'Federal Register / White House',
+        url: 'https://www.federalregister.gov',
+        tier: 'verified',
+        date: 'March 2019',
+      },
+      {
+        claim: 'Post-administration Affinity Partners raised multi-billion Gulf-linked capital (contemporaneous financial press) — commercial sequel to diplomatic relationships, not itself a campaign contribution.',
+        source: 'Financial press / SEC-era reporting',
+        url: 'https://www.opensecrets.org',
+        tier: 'circumstantial',
+        date: '2021–2024',
+      },
     ],
-    netWorth: '~$800 million',
-    born: '1981',
-    education: 'University of Pennsylvania',
-    career: ['White House Senior Advisor', 'Kushner Companies CEO', 'Affinity Partners founder'],
     websites: [
-      { label: 'Affinity Partners', url: 'https://www.affinitypartners.com' }
-    ]
+      { label: 'State Department — Abraham Accords', url: 'https://www.state.gov/the-abraham-accords/' },
+      { label: 'U.S. Embassy Jerusalem', url: 'https://il.usembassy.gov' },
+      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Jared_Kushner' },
+    ],
   },
   {
     id: 'chuck-schumer',
@@ -1149,6 +1212,26 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2021'
       }
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'maxwell-not-guilty-trafficking-2021',
+        statement:
+          'Pleaded not guilty to federal sex-trafficking and conspiracy charges and publicly denied recruiting or grooming minors for Jeffrey Epstein.',
+        saidAt: '2020–2021',
+        context:
+          'SDNY indictment response and trial posture in United States v. Ghislaine Maxwell.',
+        whyFalse:
+          'A federal jury convicted Maxwell (December 2021) on five counts including sex trafficking of a minor and conspiracy. The verdict establishes beyond a reasonable doubt that her not-guilty denials of the trafficking scheme were false as a matter of criminal adjudication.',
+        correction:
+          'Maxwell was convicted of sex trafficking a minor and related conspiracy charges and later sentenced to 20 years.',
+        statementSource: 'SDNY charging documents / not-guilty plea reporting',
+        statementUrl: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-charged-connection-jeffrey-epstein',
+        debunkSource: 'DOJ announcement of Maxwell conviction',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-found-guilty-six-counts-connection-sex-trafficking-minors-jeffrey',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     born: '1961',
     education: 'Oxford University',
