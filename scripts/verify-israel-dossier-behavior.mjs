@@ -434,6 +434,19 @@ async function runInteractiveChecks(browser) {
     )
     console.log('[verify:israel-dossier:behavior] PASS search cross-surface dossier promo')
 
+    // Expanded search keyword surface (liberty / UNRWA / lobby)
+    await page.goto(`${baseUrl}/search?q=liberty`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.waitForFunction(
+      () => document.body?.innerText?.toLowerCase().includes('israel dossier evidence engine'),
+      null,
+      { timeout: 20000 },
+    )
+    assert(
+      (await page.locator('body').innerText()).toLowerCase().includes('israel dossier evidence engine'),
+      'search?q=liberty missing Israel Dossier evidence engine promo',
+    )
+    console.log('[verify:israel-dossier:behavior] PASS search liberty keyword dossier promo')
+
     // Return to dossier before download/carousel assertions (#downloads is dossier-only).
     await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })

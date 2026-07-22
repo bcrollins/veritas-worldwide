@@ -270,6 +270,15 @@ export default function SearchPage() {
       'hamas',
       'icc',
       'icj',
+      'liberty',
+      'uss liberty',
+      'unrwa',
+      'jenin',
+      'qibya',
+      'sabra',
+      'lobby',
+      'iron dome',
+      'gallant',
     ]
     const hits = haystack.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
     if (!hits) return []
