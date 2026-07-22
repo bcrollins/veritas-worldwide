@@ -377,10 +377,10 @@ async function runInteractiveChecks(browser) {
       assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
-    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 40, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 45, 'corpus.json incidents too few')
     assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 20, 'corpus.json actors too few')
-    assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 35, 'corpus.json timeline too few')
-    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 10, 'corpus.json moneyTrail too few')
+    assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 38, 'corpus.json timeline too few')
+    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 11, 'corpus.json moneyTrail too few')
 
     // Deep-link surface: actor query opens enablement panel
     await page.goto(`${baseUrl}/israel-dossier?actor=joe-biden`, { waitUntil: 'domcontentloaded', timeout: 30000 })
@@ -445,6 +445,9 @@ async function runInteractiveChecks(browser) {
       'guardian of the walls',
       'howard kohr',
       'pro-israel lobby',
+      'summer rains',
+      'jenin camp raid',
+      'kahan commission',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }

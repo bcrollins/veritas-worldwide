@@ -1569,6 +1569,33 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     sourceUrl: 'https://www.icj-cij.org/case/131',
     status: 'decided',
   },
+  {
+    title: 'Kahan Commission — Sabra and Shatila',
+    court: 'Israeli Commission of Inquiry (Kahan Commission)',
+    date: 'February 8, 1983',
+    ruling: 'Found that Defense Minister Ariel Sharon bore "personal responsibility" for failing to prevent the Phalangist massacre of civilians in the Sabra and Shatila camps; recommended his removal from the defense portfolio.',
+    significance: 'Rare official Israeli government finding of personal ministerial responsibility for mass civilian killing by allied forces under Israeli military control of the perimeter.',
+    sourceUrl: 'https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx',
+    status: 'decided',
+  },
+  {
+    title: 'UN Commission of Inquiry — Great March of Return (2018)',
+    court: 'UN Human Rights Council Commission of Inquiry',
+    date: 'March 18, 2019 report',
+    ruling: 'Found reasonable grounds that Israeli snipers intentionally shot children, medics, journalists, and persons with disabilities during the 2018 Gaza protests, amounting to possible war crimes and crimes against humanity.',
+    significance: 'Highest-level UN investigative finding on the 2018 protest killings; Israel rejected the mandate and findings.',
+    sourceUrl: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index',
+    status: 'decided',
+  },
+  {
+    title: 'B\'Tselem / HRW / Amnesty — Apartheid Characterizations',
+    court: 'Leading human-rights organizations (not a court judgment)',
+    date: '2021–2022',
+    ruling: 'B\'Tselem (2021), Human Rights Watch (2021), and Amnesty International (2022) each concluded that Israeli authorities commit the crime against humanity of apartheid (and, for HRW/Amnesty, persecution) against Palestinians.',
+    significance: 'NGO legal characterizations — not ICJ/ICC final judgments. Tracked here so readers can distinguish court orders from organizational findings.',
+    sourceUrl: 'https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution',
+    status: 'decided',
+  },
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [

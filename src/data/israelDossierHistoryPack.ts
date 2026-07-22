@@ -835,6 +835,106 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 260 },
   },
+  {
+    id: 'summer-rains-2006',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Operation Summer Rains — Gaza Offensive (2006)',
+    date: 'June 28 – November 26, 2006',
+    location: 'Gaza Strip',
+    summary:
+      'After the capture of Israeli soldier Gilad Shalit, Israel launched a months-long Gaza offensive involving airstrikes, artillery, and ground raids. Human rights monitors documented hundreds of Palestinian deaths, including many civilians, and severe damage to civilian infrastructure including Gaza\'s only power plant.',
+    evidence:
+      'B\'Tselem fatality tables, HRW and Amnesty field reporting, and OCHA situation reports document civilian harm and infrastructure destruction during Summer Rains / Autumn Clouds. Israel framed the operation as pressure to free Shalit; monitors documented disproportionate civilian impact.',
+    sources: [
+      { label: 'B\'Tselem — 2006 Gaza fatalities and operations', url: 'https://www.btselem.org/gaza_strip' },
+      { label: 'Human Rights Watch — Gaza 2006 civilian harm reporting', url: 'https://www.hrw.org/middle-east/n-africa/israel/palestine' },
+      { label: 'OCHA — historical Gaza protection reporting', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem Gaza documentation hub', url: 'https://www.btselem.org/gaza_strip' },
+    ],
+    tier: 'verified',
+  },
+  {
+    id: 'operation-cast-lead-white-phosphorus-pattern',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['barack-obama', 'joe-biden'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Cast Lead — Civilian Infrastructure and Power System Strikes',
+    date: 'December 2008 – January 2009',
+    location: 'Gaza Strip (civilian infrastructure)',
+    summary:
+      'Beyond the school-shelter and white-phosphorus entries, Cast Lead included widespread strikes on civilian infrastructure — water, sewage, electricity, and housing — that UN and human-rights monitors treated as a pattern of civilian-harm amplification, not isolated targeting errors.',
+    evidence:
+      'UN Fact-Finding Mission materials, UNEP post-conflict environmental assessment, and HRW infrastructure reporting document systematic damage to civilian systems. Distinct from the UN school/shelter and white-phosphorus records; this entry tracks infrastructure pattern evidence.',
+    sources: [
+      { label: 'UN Fact-Finding Mission on the Gaza Conflict', url: 'https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission' },
+      { label: 'UNEP — Environmental Assessment of the Gaza Strip following Cast Lead', url: 'https://www.unep.org/' },
+      { label: 'Human Rights Watch — Cast Lead civilian harm series', url: 'https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OHCHR Fact-Finding Mission materials', url: 'https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission' },
+    ],
+    tier: 'verified',
+  },
+  {
+    id: 'great-march-return-medics-2018',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['donald-trump', 'benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'un-finding',
+    title: 'Great March of Return — Medics and Journalists Shot',
+    date: 'March 2018 – December 2019',
+    location: 'Gaza perimeter fence (medics, first responders, and press)',
+    summary:
+      'Alongside the broader Great March of Return lethal-force pattern, Israeli snipers and forces killed and maimed clearly marked medics, first responders, and journalists covering the protests — including cases documented by UN commissions of inquiry as possible war crimes / crimes against humanity.',
+    evidence:
+      'UN Commission of Inquiry on the 2018 protests, WHO health-worker tallies, and CPJ/RSF journalist tallies document killings of protected persons. This entry isolates the medic/press subset from the general demonstration death toll (separate entry).',
+    sources: [
+      { label: 'UN OHCHR — COI on the 2018 Gaza protests', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index' },
+      { label: 'Committee to Protect Journalists — Gaza 2018 coverage', url: 'https://cpj.org/' },
+      { label: 'B\'Tselem — Great March of Return documentation', url: 'https://www.btselem.org/gaza_strip' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OHCHR Commission of Inquiry materials', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index' },
+    ],
+    tier: 'verified',
+  },
+  {
+    id: 'jenin-2023-july',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['joe-biden', 'benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Jenin Camp Raid — July 2023',
+    date: 'July 3–5, 2023',
+    location: 'Jenin Refugee Camp, West Bank',
+    summary:
+      'Israeli forces conducted a large multi-day raid on Jenin refugee camp months before October 7, involving drones, bulldozers, and ground troops. Monitors recorded roughly a dozen Palestinians killed and widespread damage to civilian infrastructure and housing — among the largest West Bank operations of 2023 prior to the Gaza war.',
+    evidence:
+      'OCHA protection reports, UNRWA camp updates, and contemporaneous press/human-rights documentation establish casualty and damage floors. Included as a high-evidence pre-Oct-7 West Bank densification point with U.S. MOU continuity as background enablement.',
+    sources: [
+      { label: 'OCHA — Protection of Civilians weekly reports (July 2023)', url: 'https://www.ochaopt.org/' },
+      { label: 'UNRWA — Jenin camp situation updates', url: 'https://www.unrwa.org/' },
+      { label: 'B\'Tselem — West Bank fatalities documentation', url: 'https://www.btselem.org/statistics' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA opt reporting hub', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+  },
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -1113,6 +1213,33 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
     tags: ['legal', 'icc', 'war-crimes'],
+  },
+  {
+    id: 'tl-summer-rains-2006',
+    year: '2006',
+    era: 'occupation-1967-2005',
+    title: 'Operation Summer Rains — Gaza Offensive',
+    description:
+      'Months-long Gaza offensive after Shalit capture. Monitors document hundreds of Palestinian deaths and major civilian-infrastructure damage including power generation.',
+    source: 'B\'Tselem / OCHA',
+    sourceUrl: 'https://www.btselem.org/gaza_strip',
+    tier: 'verified',
+    relatedIncidentIds: ['summer-rains-2006', 'beit-hanoun-2006'],
+    tags: ['civilians', 'children', 'gaza'],
+  },
+  {
+    id: 'tl-jenin-2023',
+    year: '2023',
+    era: 'blockade-2007-2023',
+    title: 'Jenin Camp Raid (July 2023)',
+    description:
+      'Large multi-day IDF raid on Jenin camp months before October 7. Dozen-plus killed; widespread housing and infrastructure damage per OCHA/UNRWA.',
+    source: 'OCHA / UNRWA',
+    sourceUrl: 'https://www.ochaopt.org/',
+    tier: 'verified',
+    relatedIncidentIds: ['jenin-2023-july'],
+    relatedProfileIds: ['joe-biden', 'benjamin-netanyahu'],
+    tags: ['civilians', 'west-bank', 'us-aid'],
   },
 ]
 
