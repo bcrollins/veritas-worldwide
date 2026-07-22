@@ -2350,6 +2350,7 @@ const staticPages = [
     description: 'Sourced profiles of politicians, donors, billionaires, lobbyists, and institutional actors.',
     body: [
       'Profiles aggregate claims, donations, quotes, and documented connections so readers can understand networks of influence without losing the underlying citations.',
+      'Machine-readable index: https://veritasworldwide.com/profiles/corpus.json — 94 profiles with first-party portrait paths and Bioguide IDs where available.',
     ],
     sourceFile: 'src/pages/ProfilesIndexPage.tsx',
   },
