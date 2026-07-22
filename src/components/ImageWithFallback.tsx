@@ -90,33 +90,38 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 
   const placeholderClasses =
     'bg-gradient-to-br from-[#FAF8F5] to-[#EFE9E0] dark:from-[#2A2520] dark:to-[#1A1815] animate-pulse';
-  const containerClasses = `relative overflow-hidden rounded-lg ${className}`;
-  const imgClasses = `w-full h-full object-cover transition-opacity duration-500 ${
+  // Layout sizing classes stay on the wrapper; img fills the box.
+  const containerClasses = `relative overflow-hidden ${className}`;
+  const imgClasses = `absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
     isLoading ? 'opacity-0' : 'opacity-100'
   }`;
 
+  // Keep a min box so absolute img does not collapse before load.
+  const needsIntrinsicBox = !/\b(h-|min-h-|aspect-)/.test(className);
+
   return (
-    <div className={containerClasses}>
+    <div className={`${containerClasses}${needsIntrinsicBox ? ' min-h-[8rem]' : ''}`}>
       {showPlaceholder && isLoading && (
-        <div className={`absolute inset-0 ${placeholderClasses}`} />
+        <div className={`absolute inset-0 ${placeholderClasses}`} aria-hidden="true" />
       )}
 
       {!hasError ? (
         <img
+          {...props}
           src={currentSrc}
           alt={alt}
           onError={handleError}
           onLoad={handleLoad}
           className={imgClasses}
-          {...props}
+          decoding={props.decoding || 'async'}
         />
       ) : (
         <div
-          className={`w-full h-full flex items-center justify-center bg-[#FAF8F5] dark:bg-[#1A1815] text-[#8B1A1A] dark:text-[#D4A5A5]`}
+          className={`flex h-full min-h-[8rem] w-full items-center justify-center bg-[#FAF8F5] text-[#8B1A1A] dark:bg-[#1A1815] dark:text-[#D4A5A5]`}
         >
-          <div className="text-center px-4">
-            <p className="text-sm font-serif">Image unavailable</p>
-            <p className="text-xs mt-1 opacity-75">{alt || 'No image'}</p>
+          <div className="px-4 text-center">
+            <p className="font-serif text-sm">Image unavailable</p>
+            <p className="mt-1 text-xs opacity-75">{alt || 'No image'}</p>
           </div>
         </div>
       )}

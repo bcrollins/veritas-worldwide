@@ -5,6 +5,7 @@ import type { LoadedChapter } from '../data/chapterTypes'
 import { CATEGORY_META, type Article } from '../data/articles'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import DownloadModal from '../components/DownloadModal'
+import { ImageWithFallback } from '../components/ImageWithFallback'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
 import {
   getReaderOverviewStats,
@@ -133,10 +134,11 @@ function RelatedArticleCard({ article }: { article: Article }) {
       to={`/news/${article.slug}`}
       className="overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-crimson"
     >
-      <img
+      <ImageWithFallback
         src={article.heroImage.src}
+        fallbackSrc="/og-image.png"
         alt={article.heroImage.alt}
-        className="h-32 w-full object-cover"
+        className="h-32 w-full"
         loading="lazy"
       />
       <div className="p-4">
