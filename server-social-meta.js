@@ -108,11 +108,13 @@ export function registerBotMetaInjection({ app, rootDir }) {
           chapterOgImage = `${SITE_URL}/og/${chapterSlug}.svg`
         }
 
-        const imgType = chapterOgImage.endsWith('.png')
-          ? 'image/png'
-          : chapterOgImage.endsWith('.svg')
-            ? 'image/svg+xml'
-            : 'image/png'
+        const imgType = /\.jpe?g($|\?)/i.test(chapterOgImage)
+          ? 'image/jpeg'
+          : /\.webp($|\?)/i.test(chapterOgImage)
+            ? 'image/webp'
+            : /\.svg($|\?)/i.test(chapterOgImage)
+              ? 'image/svg+xml'
+              : 'image/png'
 
         html = html
           .replace(/<title>.*?<\/title>/, `<title>${meta.title} | The Record — Veritas Worldwide</title>`)

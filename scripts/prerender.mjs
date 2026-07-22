@@ -236,18 +236,28 @@ function injectRoot(html, body) {
   return html.replace('<div id="root"></div>', `<div id="root">${body}</div>`)
 }
 
+function ogImageMimeType(imageUrl = '') {
+  if (/\.jpe?g($|\?)/i.test(imageUrl)) return 'image/jpeg'
+  if (/\.webp($|\?)/i.test(imageUrl)) return 'image/webp'
+  if (/\.svg($|\?)/i.test(imageUrl)) return 'image/svg+xml'
+  if (/\.gif($|\?)/i.test(imageUrl)) return 'image/gif'
+  return 'image/png'
+}
+
 function buildDocument(baseHtml, meta, body) {
   let html = baseHtml
+  const image = meta.image || DEFAULT_OG_IMAGE
   html = setTitle(html, meta.title)
   html = setMetaTag(html, 'name', 'description', meta.description)
   html = setMetaTag(html, 'property', 'og:title', meta.title)
   html = setMetaTag(html, 'property', 'og:description', meta.description)
   html = setMetaTag(html, 'property', 'og:type', meta.type || 'website')
   html = setMetaTag(html, 'property', 'og:url', meta.url)
-  html = setMetaTag(html, 'property', 'og:image', meta.image || DEFAULT_OG_IMAGE)
+  html = setMetaTag(html, 'property', 'og:image', image)
+  html = setMetaTag(html, 'property', 'og:image:type', ogImageMimeType(image))
   html = setMetaTag(html, 'name', 'twitter:title', meta.title)
   html = setMetaTag(html, 'name', 'twitter:description', meta.description)
-  html = setMetaTag(html, 'name', 'twitter:image', meta.image || DEFAULT_OG_IMAGE)
+  html = setMetaTag(html, 'name', 'twitter:image', image)
   html = setMetaTag(html, 'name', 'robots', meta.robots || 'index,follow')
   html = setLinkTag(html, 'canonical', meta.url)
 

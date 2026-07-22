@@ -1,38 +1,43 @@
 # Platform Health Report
 
-- Checked at: 2026-07-16T09:15:04.981Z
+- Checked at: 2026-07-22T20:04:22.715Z
 - Base URL: https://veritasworldwide.com
 - Status: pass
-- Build commit: e5e5a51e2afc
-- Deployment: 74467788-dd9b-47c3-ba13-a15dbe25e8e4
+- Build commit: 914ff87516ab
+- Deployment: 57ed106c-1788-434c-9345-1a8da8a384c0
 - Auth mode: database
 - Search results: 19
-- Analytics lifetime views: 6918
+- Analytics lifetime views: 7342
 
 ## Checks
 - PASS — Build info route responds: GET /api/build-info returned 200
-- PASS — Build info reports prerender coverage: prerenderedRouteCount=289
+- PASS — Build info reports prerender coverage: prerenderedRouteCount=292
+- PASS — Build info reports Node runtime version: build.nodeRuntime=v22.14.0
+- PASS — Build info reports package engines.node floor: build.packageEnginesNode=>=22.6.0
 - PASS — Build info reports manuscript PDF present: recordPdf=true
 - PASS — Build info reports institute field manual PDF present: instituteFieldManualPdf=true
 - PASS — Health probe reports ok: GET /api/health returned 200 status=ok
+- PASS — Health probe exposes rate-limit budget headers: health RateLimit-Limit=120
 - PASS — Health probe confirms chapter data: chapterData=true
 - PASS — Health probe confirms prerender coverage: prerender=true
-- PASS — Health probe exposes analytics lifetime: analyticsLifetime=6918
+- PASS — Health probe exposes analytics lifetime: analyticsLifetime=7342
 - PASS — Health probe reports client error intake enabled: clientErrorIntake=true
 - PASS — Health probe exposes client error intake count: clientErrorIntakeCount=0
 - PASS — Briefing source archive manifest responds: GET archive manifest returned 200
-- PASS — Briefing source archive manifest has pinned snapshots: pinned=41
+- PASS — Briefing source archive manifest has pinned snapshots: pinned=46
 - PASS — Content pack route responds: GET /content-pack returned 200
 - PASS — Health history endpoint responds: GET /api/health/history returned 200
 - PASS — Health history exposes commit transition fields: commitTransitions=true uniqueCommits=true
-- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=76
+- PASS — Health history exposes uniqueReplicas array: uniqueReplicas=true count=79
 - PASS — Health history max samples supports multi-day retention: maxSamples=96
 - PASS — Health history reports known storage backend: storage=shared-database
 - PASS — Health history is shared across replicas via database: storage=shared-database sharedAcrossReplicas=true
-- PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=289
+- PASS — Live prerender route count stays above crawler floor: prerenderedRouteCount=292
 - PASS — Health exposes optional Sentry forward configuration flag: sentryForwardConfigured=false
+- PASS — Health reports Node runtime version: nodeRuntime=v22.14.0
+- PASS — Health reports package engines.node (strip-types capable floor): packageEnginesNode=>=22.6.0
 - PASS — Health exposes health history storage label: healthHistoryStorage=shared-database
-- PASS — Health exposes popular chapter count from analytics: popularChapterCount=8
+- PASS — Health exposes popular chapter count from analytics (≥1): popularChapterCount=8
 - PASS — Health reports shared multi-replica history storage: healthHistoryStorage=shared-database shared=true
 - PASS — Client error intake accepts or rate-limits probes: POST /api/client-error returned 204
 - PASS — Auth status route responds: GET /api/auth/status returned 200
@@ -56,6 +61,19 @@
 - PASS — Sourced news route responds: /news/aviation-safety-ntsb-faa-primary-records-2026: status=200
 - PASS — Sourced news route responds: /news/judicial-ethics-supreme-court-code-of-conduct-primary-2026: status=200
 - PASS — RSS feed announces the institute field manual PDF: feed status=200 hasFieldManualPdf=true
+- PASS — Post-checkout landing responds: /membership/success: status=200 hasMarker=true
+- PASS — Post-checkout landing responds: /donation/success: status=200 hasMarker=true
+- PASS — Post-checkout landing responds: /thank-you: status=200 hasMarker=true
+- PASS — Chapter hero asset present: /chapters/heroes/chapter-1.jpg: status=200 type=image/jpeg bytes=147021
+- PASS — Chapter hero asset present: /chapters/heroes/foreword.jpg: status=200 type=image/jpeg bytes=130263
+- PASS — Chapter hero asset present: /chapters/heroes/chapter-12.jpg: status=200 type=image/jpeg bytes=124343
+- PASS — Chapter hero asset present: /chapters/heroes/epilogue.jpg: status=200 type=image/jpeg bytes=142159
+- PASS — News hero asset present: /news/heroes/federal-reserve.jpg: status=200 type=image/jpeg bytes=124432
+- PASS — News hero asset present: /news/heroes/doj-courthouse.jpg: status=200 type=image/jpeg bytes=117675
+- PASS — News hero asset present: /news/heroes/boeing-airliner.jpg: status=200 type=image/jpeg bytes=90471
+- PASS — News hero asset present: /news/heroes/supreme-court.jpg: status=200 type=image/jpeg bytes=93209
+- PASS — RSS feed includes news desk items with hero enclosures: status=200 hasNews=true hasHeroEnc=true
+- PASS — RSS discovery alias /rss.xml resolves to canonical feed: status=301 location=/feed.xml
 - PASS — robots.txt allows the field manual PDF: status=200
 - PASS — Institute catalog prerender links the field manual PDF: status=200 hasPdfLink=true
 - PASS — Institute book prerender exposes PDF encoding schema: status=200
@@ -89,8 +107,8 @@
 - PASS — Engagement boost flags recently read chapter: engagementBoost=true
 - PASS — Search exposes sitewide popularChapterIds from analytics: status=200 popularCount=8
 - PASS — Analytics snapshot route responds: GET /api/analytics/snapshot returned 200
-- PASS — Analytics lifetime stays non-negative: lifetime=6918
-- PASS — Analytics today count stays non-negative: today=103
+- PASS — Analytics lifetime stays non-negative: lifetime=7342
+- PASS — Analytics today count stays non-negative: today=316
 - PASS — Analytics funnel exposes signup totals: signups=8
 - PASS — Read route prerender responds: GET /read returned 200
 - PASS — Read route prerender returns HTML: content-type=text/html; charset=utf-8

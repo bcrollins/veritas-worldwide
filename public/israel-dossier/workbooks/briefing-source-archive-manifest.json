@@ -95,8 +95,8 @@
       "timestamp": null,
       "archiveUrl": "https://web.archive.org/web/*/https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
       "status": "lookup-only",
-      "note": "CDX lists timestamps (20260222/20260306/20260316); live Wayback still 403 (CF challenge). Not pinable until a durable 200 capture exists. Re-probed 2026-07-16 ocean continuation.",
-      "lastProbedAt": "2026-07-16T12:30:50.000Z",
+      "note": "CDX lists timestamps (20260222/20260306/20260316); live Wayback still 403 (CF challenge) as of 2026-07-22 re-probe; archive.ph 429. Not pinable until a durable 200 capture exists.",
+      "lastProbedAt": "2026-07-22T20:05:32.000Z",
       "cdxTimestampsSeen": [
         "20260222150518",
         "20260306031405",

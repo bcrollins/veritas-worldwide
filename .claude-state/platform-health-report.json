@@ -1,14 +1,14 @@
 {
-  "checkedAt": "2026-07-16T09:15:04.981Z",
+  "checkedAt": "2026-07-22T20:04:22.715Z",
   "baseUrl": "https://veritasworldwide.com",
   "status": "pass",
   "build": {
     "version": "1.0.0",
-    "commit": "e5e5a51e2afcd48c6db298288eaed58c1bcc91ed",
-    "commitShort": "e5e5a51e2afc",
-    "deploymentId": "74467788-dd9b-47c3-ba13-a15dbe25e8e4",
+    "commit": "914ff87516ab9d30a0771cad50a98a87cb12f290",
+    "commitShort": "914ff87516ab",
+    "deploymentId": "57ed106c-1788-434c-9345-1a8da8a384c0",
     "environment": "production",
-    "prerenderedRouteCount": 289
+    "prerenderedRouteCount": 292
   },
   "auth": {
     "available": true,
@@ -23,8 +23,8 @@
     "firstResultChapterId": "chapter-25"
   },
   "analytics": {
-    "lifetime": 6918,
-    "today": 103,
+    "lifetime": 7342,
+    "today": 316,
     "signups": 8,
     "payments": 0
   },
@@ -71,7 +71,17 @@
     {
       "ok": true,
       "label": "Build info reports prerender coverage",
-      "detail": "prerenderedRouteCount=289"
+      "detail": "prerenderedRouteCount=292"
+    },
+    {
+      "ok": true,
+      "label": "Build info reports Node runtime version",
+      "detail": "build.nodeRuntime=v22.14.0"
+    },
+    {
+      "ok": true,
+      "label": "Build info reports package engines.node floor",
+      "detail": "build.packageEnginesNode=>=22.6.0"
     },
     {
       "ok": true,
@@ -90,6 +100,11 @@
     },
     {
       "ok": true,
+      "label": "Health probe exposes rate-limit budget headers",
+      "detail": "health RateLimit-Limit=120"
+    },
+    {
+      "ok": true,
       "label": "Health probe confirms chapter data",
       "detail": "chapterData=true"
     },
@@ -101,7 +116,7 @@
     {
       "ok": true,
       "label": "Health probe exposes analytics lifetime",
-      "detail": "analyticsLifetime=6918"
+      "detail": "analyticsLifetime=7342"
     },
     {
       "ok": true,
@@ -121,7 +136,7 @@
     {
       "ok": true,
       "label": "Briefing source archive manifest has pinned snapshots",
-      "detail": "pinned=41"
+      "detail": "pinned=46"
     },
     {
       "ok": true,
@@ -141,7 +156,7 @@
     {
       "ok": true,
       "label": "Health history exposes uniqueReplicas array",
-      "detail": "uniqueReplicas=true count=76"
+      "detail": "uniqueReplicas=true count=79"
     },
     {
       "ok": true,
@@ -161,7 +176,7 @@
     {
       "ok": true,
       "label": "Live prerender route count stays above crawler floor",
-      "detail": "prerenderedRouteCount=289"
+      "detail": "prerenderedRouteCount=292"
     },
     {
       "ok": true,
@@ -170,12 +185,22 @@
     },
     {
       "ok": true,
+      "label": "Health reports Node runtime version",
+      "detail": "nodeRuntime=v22.14.0"
+    },
+    {
+      "ok": true,
+      "label": "Health reports package engines.node (strip-types capable floor)",
+      "detail": "packageEnginesNode=>=22.6.0"
+    },
+    {
+      "ok": true,
       "label": "Health exposes health history storage label",
       "detail": "healthHistoryStorage=shared-database"
     },
     {
       "ok": true,
-      "label": "Health exposes popular chapter count from analytics",
+      "label": "Health exposes popular chapter count from analytics (≥1)",
       "detail": "popularChapterCount=8"
     },
     {
@@ -292,6 +317,71 @@
       "ok": true,
       "label": "RSS feed announces the institute field manual PDF",
       "detail": "feed status=200 hasFieldManualPdf=true"
+    },
+    {
+      "ok": true,
+      "label": "Post-checkout landing responds: /membership/success",
+      "detail": "status=200 hasMarker=true"
+    },
+    {
+      "ok": true,
+      "label": "Post-checkout landing responds: /donation/success",
+      "detail": "status=200 hasMarker=true"
+    },
+    {
+      "ok": true,
+      "label": "Post-checkout landing responds: /thank-you",
+      "detail": "status=200 hasMarker=true"
+    },
+    {
+      "ok": true,
+      "label": "Chapter hero asset present: /chapters/heroes/chapter-1.jpg",
+      "detail": "status=200 type=image/jpeg bytes=147021"
+    },
+    {
+      "ok": true,
+      "label": "Chapter hero asset present: /chapters/heroes/foreword.jpg",
+      "detail": "status=200 type=image/jpeg bytes=130263"
+    },
+    {
+      "ok": true,
+      "label": "Chapter hero asset present: /chapters/heroes/chapter-12.jpg",
+      "detail": "status=200 type=image/jpeg bytes=124343"
+    },
+    {
+      "ok": true,
+      "label": "Chapter hero asset present: /chapters/heroes/epilogue.jpg",
+      "detail": "status=200 type=image/jpeg bytes=142159"
+    },
+    {
+      "ok": true,
+      "label": "News hero asset present: /news/heroes/federal-reserve.jpg",
+      "detail": "status=200 type=image/jpeg bytes=124432"
+    },
+    {
+      "ok": true,
+      "label": "News hero asset present: /news/heroes/doj-courthouse.jpg",
+      "detail": "status=200 type=image/jpeg bytes=117675"
+    },
+    {
+      "ok": true,
+      "label": "News hero asset present: /news/heroes/boeing-airliner.jpg",
+      "detail": "status=200 type=image/jpeg bytes=90471"
+    },
+    {
+      "ok": true,
+      "label": "News hero asset present: /news/heroes/supreme-court.jpg",
+      "detail": "status=200 type=image/jpeg bytes=93209"
+    },
+    {
+      "ok": true,
+      "label": "RSS feed includes news desk items with hero enclosures",
+      "detail": "status=200 hasNews=true hasHeroEnc=true"
+    },
+    {
+      "ok": true,
+      "label": "RSS discovery alias /rss.xml resolves to canonical feed",
+      "detail": "status=301 location=/feed.xml"
     },
     {
       "ok": true,
@@ -461,12 +551,12 @@
     {
       "ok": true,
       "label": "Analytics lifetime stays non-negative",
-      "detail": "lifetime=6918"
+      "detail": "lifetime=7342"
     },
     {
       "ok": true,
       "label": "Analytics today count stays non-negative",
-      "detail": "today=103"
+      "detail": "today=316"
     },
     {
       "ok": true,
