@@ -1,28 +1,23 @@
-# Israel Dossier Evidence Engine — LIVE FLOOR 60
+# Israel Dossier Evidence Engine — LIVE 60/41/16/10
 
-## Production-verified corpus
+## Production-verified (behavior PASS)
 ```
 incidents: 60
 timelineEvents: 49
 actors: 41
 moneyTrailNodes: 16
 historicalWarCrimesPack: 45
-legalCases: 9
+legalCases: 10
 lobbyingRecords: 4
 incidentsByTier: verified 58 · circumstantial 2
 childrenTagged: 52 · civiliansTagged: 59
+moneyTrailByType: legislation 5 · delivery 2 · weapon 6 · impact 3
 ```
 
-`npm run verify:israel-dossier:behavior -- https://veritasworldwide.com` → **PASS**
-(including era filter, money deep-link, search promos, densify surface)
+Full suite: era filter, money deep-link, search promos, densify surface, cookie-safe Playwright.
 
-## Deep links
-- /israel-dossier?era=mandate-1948
-- /israel-dossier?money=hr815
-- /israel-dossier?actor=benjamin-netanyahu
-- /israel-dossier?focus=children
-- /search?q=gaza | hebron | liberty
-
-## Continuity shipped this session
-Historical densify, bipartisan actor graph, money trail expansion, legal docket,
-corpus research breakdowns, shareable filters, cookie-safe Playwright suite.
+## URLs
+- https://veritasworldwide.com/israel-dossier
+- https://veritasworldwide.com/israel-dossier/corpus.json
+- https://veritasworldwide.com/israel-dossier?money=hr815
+- https://veritasworldwide.com/israel-dossier?era=mandate-1948
