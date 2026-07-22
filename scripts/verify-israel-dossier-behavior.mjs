@@ -412,6 +412,23 @@ async function runInteractiveChecks(browser) {
       }
     }
 
+    // Incident era filter narrows documented incidents (shareable ?era=)
+    await page.goto(`${baseUrl}/israel-dossier?era=mandate-1948`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
+    await page.locator('#incidents').scrollIntoViewIfNeeded()
+    await waitForSectionText(page, '#incidents', 'Deir Yassin')
+    const eraBody = (await page.locator('#incidents').innerText()).toLowerCase()
+    assert(eraBody.includes('deir yassin') || eraBody.includes('lydda'), 'era=mandate-1948 did not surface 1948 incidents')
+    assert(/showing\s+\d+\s+of\s+\d+/i.test(eraBody), 'era filter did not update showing count')
+    // Post-filter count should be less than full corpus for a single era
+    const showingMatch = eraBody.match(/showing\s+(\d+)\s+of\s+(\d+)/i)
+    if (showingMatch) {
+      const filtered = Number(showingMatch[1])
+      const total = Number(showingMatch[2])
+      assert(filtered > 0 && filtered < total, `era filter did not narrow incidents: ${showingMatch[0]}`)
+    }
+    console.log('[verify:israel-dossier:behavior] PASS incident era filter deep-link')
+
     // Topic hub CTA for israel-policy (client-hydrated — wait for CTA, not just h1)
     await page.goto(`${baseUrl}/topics/israel-policy`, { waitUntil: 'domcontentloaded', timeout: 30000 })
     await page.getByRole('heading', { name: /Israel Policy/i }).first().waitFor({ timeout: 20000 })

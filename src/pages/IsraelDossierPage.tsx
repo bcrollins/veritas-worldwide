@@ -939,6 +939,11 @@ export default function IsraelDossierPage() {
     const s = searchParams.get('sort')
     return s === 'newest' || s === 'deaths' || s === 'oldest' ? s : 'oldest'
   })
+  const [incidentEra, setIncidentEra] = useState<'all' | DossierEra>(() => {
+    const e = searchParams.get('era')
+    const allowed = Object.keys(ISRAEL_DOSSIER_ERA_META) as DossierEra[]
+    return allowed.includes(e as DossierEra) ? (e as DossierEra) : 'all'
+  })
   const [timelineEra, setTimelineEra] = useState<'all' | DossierEra>('all')
   const [timelineQuery, setTimelineQuery] = useState('')
   const [actorQuery, setActorQuery] = useState('')
@@ -977,8 +982,10 @@ export default function IsraelDossierPage() {
       const mediaMatch =
         incidentMedia === 'all' ||
         incident.multimedia.some((m) => m.type === incidentMedia)
+      const era = yearToEra(incident.date)
+      const eraMatch = incidentEra === 'all' || era === incidentEra
       const queryMatch = !q || `${incident.title} ${incident.location} ${incident.summary} ${incident.evidence} ${incident.id ?? ''}`.toLowerCase().includes(q)
-      return tierMatch && focusMatch && mediaMatch && queryMatch
+      return tierMatch && focusMatch && mediaMatch && eraMatch && queryMatch
     })
     return filtered.sort((a, b) => {
       if (incidentSort === 'deaths') {
@@ -989,7 +996,7 @@ export default function IsraelDossierPage() {
       if (ya !== yb) return incidentSort === 'oldest' ? ya - yb : yb - ya
       return a.title.localeCompare(b.title)
     })
-  }, [allIncidents, incidentQuery, incidentTier, incidentFocus, incidentMedia, incidentSort])
+  }, [allIncidents, incidentQuery, incidentTier, incidentFocus, incidentMedia, incidentSort, incidentEra])
   const filteredTimeline = useMemo(() => {
     const q = timelineQuery.trim().toLowerCase()
     return (HISTORICAL_TIMELINE as DossierTimelineEvent[]).filter((event) => {
@@ -1029,6 +1036,7 @@ export default function IsraelDossierPage() {
       tier?: typeof incidentTier
       media?: typeof incidentMedia
       sort?: typeof incidentSort
+      era?: typeof incidentEra
       q?: string
     }) => {
       const params = new URLSearchParams(searchParams)
@@ -1042,6 +1050,7 @@ export default function IsraelDossierPage() {
       if ('tier' in next) setOrDelete('tier', next.tier)
       if ('media' in next) setOrDelete('media', next.media)
       if ('sort' in next) setOrDelete('sort', next.sort === 'oldest' ? null : next.sort)
+      if ('era' in next) setOrDelete('era', next.era)
       if ('q' in next) setOrDelete('q', next.q)
       setSearchParams(params, { replace: true })
     },
@@ -1084,10 +1093,11 @@ export default function IsraelDossierPage() {
     if (incidentTier !== 'all') params.set('tier', incidentTier)
     if (incidentMedia !== 'all') params.set('media', incidentMedia)
     if (incidentSort !== 'oldest') params.set('sort', incidentSort)
+    if (incidentEra !== 'all') params.set('era', incidentEra)
     if (incidentQuery.trim()) params.set('q', incidentQuery.trim())
     const qs = params.toString()
     return `${SITE_URL}/israel-dossier${qs ? `?${qs}` : ''}`
-  }, [selectedActorId, deepIncidentId, incidentFocus, incidentTier, incidentMedia, incidentSort, incidentQuery])
+  }, [selectedActorId, deepIncidentId, incidentFocus, incidentTier, incidentMedia, incidentSort, incidentEra, incidentQuery])
 
   const copyShareUrl = async () => {
     try {
@@ -1706,7 +1716,7 @@ export default function IsraelDossierPage() {
           </span>
         </div>
 
-        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-2 xl:grid-cols-6">
           <label className="block md:col-span-2 xl:col-span-1">
             <span className="sr-only">Search documented incidents</span>
             <input
@@ -1718,6 +1728,25 @@ export default function IsraelDossierPage() {
               placeholder="Search incidents, locations, children, massacres, hospitals…"
               className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
             />
+          </label>
+          <label className="block">
+            <span className="sr-only">Filter incidents by historical era</span>
+            <select
+              value={incidentEra}
+              onChange={(event) => {
+                const value = event.target.value as 'all' | DossierEra
+                setIncidentEra(value)
+                syncShareParams({ era: value })
+              }}
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
+            >
+              <option value="all">All eras (1948→)</option>
+              {(Object.keys(ISRAEL_DOSSIER_ERA_META) as DossierEra[]).map((era) => (
+                <option key={era} value={era}>
+                  {ISRAEL_DOSSIER_ERA_META[era].label}
+                </option>
+              ))}
+            </select>
           </label>
           <label className="block">
             <span className="sr-only">Filter incidents by evidence tier</span>
@@ -1785,7 +1814,7 @@ export default function IsraelDossierPage() {
               <option value="deaths">Sort: highest death toll</option>
             </select>
           </label>
-          <div className="md:col-span-2 xl:col-span-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="md:col-span-2 xl:col-span-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
               Showing {filteredIncidents.length} of {allIncidents.length}. Historical pack (1948→) is merged with post-Oct-7 investigations. Every entry has checkable sources; this is not an exhaustive global ledger.
             </p>
@@ -1812,11 +1841,11 @@ export default function IsraelDossierPage() {
             </div>
           </div>
           {copyStatus && (
-            <p className="md:col-span-2 xl:col-span-5 font-sans text-xs text-crimson" role="status">
+            <p className="md:col-span-2 xl:col-span-6 font-sans text-xs text-crimson" role="status">
               {copyStatus}
             </p>
           )}
-          <p className="md:col-span-2 xl:col-span-5 font-mono text-[0.65rem] text-ink-faint break-all">
+          <p className="md:col-span-2 xl:col-span-6 font-mono text-[0.65rem] text-ink-faint break-all">
             {shareUrl}
           </p>
         </div>
