@@ -642,6 +642,46 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'elizabeth-warren',
+    name: 'Elizabeth Warren',
+    role: 'U.S. Senator (D-MA)',
+    category: 'us-congress',
+    enablementSummary:
+      'Senate progressive who publicly supported conditioning military aid over civilian casualties while remaining inside the Democratic caucus that advanced wartime packages; mapped as mixed/counter-enablement documenting the conditionality debate.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'mk84-use'],
+    fundingLinks: [
+      {
+        label: 'Congress.gov — Warren voting and statements context',
+        sourceUrl: 'https://www.congress.gov/member/elizabeth-warren/W000817',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'cory-booker',
+    name: 'Cory Booker',
+    role: 'U.S. Senator (D-NJ)',
+    category: 'us-congress',
+    enablementSummary:
+      'Senate Democrat with long-standing pro-Israel record and support for Iron Dome and wartime supplemental packages; frequent floor and caucus voice for robust bilateral military assistance.',
+    relatedTimelineYears: ['2014', '2021', '2023', '2024'],
+    relatedIncidentIds: ['protective-edge-2014-children', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Booker pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/cory-booker/summary?cid=N00035267',
+      },
+      {
+        label: 'Congress.gov — Booker voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/cory-booker/B001288',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
