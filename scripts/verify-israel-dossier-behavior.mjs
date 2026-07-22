@@ -367,8 +367,15 @@ async function runInteractiveChecks(browser) {
     )
 
     const corpusResponse = await page.request.get(`${baseUrl}/israel-dossier/corpus.json`)
-    assert(corpusResponse.ok(), `corpus.json HTTP ${corpusResponse.status()}`)
-    const corpus = await corpusResponse.json()
+    const corpusStatus = corpusResponse.status()
+    assert(corpusResponse.ok(), `corpus.json HTTP ${corpusStatus}`)
+    const corpusText = await corpusResponse.text()
+    let corpus
+    try {
+      corpus = JSON.parse(corpusText)
+    } catch {
+      assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
+    }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
     assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 20, 'corpus.json incidents too few')
     assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 12, 'corpus.json actors too few')
