@@ -111,7 +111,7 @@ const PROFILE_PHOTOS: Record<string, string> = {
   'henry-kissinger': '/profiles/henry-kissinger.svg',
   'john-bolton': '/profiles/john-bolton.jpg',
   'mike-pompeo': '/profiles/mike-pompeo.jpg',
-  'antony-blinken': '/profiles/antony-blinken.jpg',
+  'antony-blinken': '/profiles/antony-blinken.svg',
   'ron-desantis': '/profiles/ron-desantis.jpg',
   'nikki-haley': '/profiles/nikki-haley.svg',
   'bernie-sanders': '/profiles/bernie-sanders.jpg',
