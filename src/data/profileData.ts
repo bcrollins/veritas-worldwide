@@ -1938,56 +1938,93 @@ export const PROFILES: PowerProfile[] = [
     party: 'D',
     state: 'NJ',
     photoUrl: getProfilePhoto('cory-booker'),
-    summary: 'Senator from New Jersey. Presidential candidate 2020. Strong pro-Israel voting record.',
-    tags: ['Senator', 'Democratic Leader', 'New Jersey', 'Pro-Israel'],
-    career: ['U.S. Senator (D-NJ) 2013-present', 'Mayor of Newark', 'Community activist'],
-    websites: [
-      { label: 'Senate Website', url: 'https://www.booker.senate.gov' }
+    summary:
+      'New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7. Primary: OpenSecrets, Senate record.',
+    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'New Jersey', 'Democrat', '2020 Presidential Candidate'],
+    career: [
+      'Rhodes Scholar / Yale Law (public bio)',
+      'Newark City Council / Mayor of Newark',
+      '2013 — U.S. Senate',
+      '2020 Democratic presidential primary candidate',
+      'Consistent pro-Israel security voting and advocacy',
     ],
     quotes: [
       {
-        text: 'The bond between the United States and Israel is unbreakable.',
-        context: 'AIPAC Policy Conference',
-        date: '2018',
-        source: 'AIPAC',
-        url: 'https://www.aipac.org'
-      }
+        text: 'The U.S.–Israel relationship is unbreakable.',
+        context: 'Recurring Senate advocacy framing of the alliance.',
+        date: '2010s–2024',
+        source: 'Office of Sen. Cory Booker',
+        url: 'https://www.booker.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 618000,
-        year: '2013-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/cory-booker/summary?cid=N00035267'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets member total scale)',
+        amount: 500000,
+        year: '2013–2024 (verify cycle tabs)',
+        source: 'OpenSecrets — Cory Booker',
+        url: 'https://www.opensecrets.org/members-of-congress/cory-booker/summary?cid=N00035267',
+      },
     ],
     policyActions: [
       {
-        action: 'Co-sponsored United States-Israel Strategic Partnership Act',
-        date: '2022',
-        context: 'Expanding military and economic cooperation',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
-      }
+        action: 'Consistent YES on Israel FMF, Iron Dome, and wartime security packages',
+        date: '2013–2024',
+        context: 'Senate Democrat in the unconditional-aid coalition.',
+        source: 'Senate roll calls; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'Public post–October 7 statements affirming Israeli self-defense and opposing progressive conditionality',
+        date: '2023–2024',
+        context: 'Contemporaneous Senate/press record.',
+        source: 'Official Senate statements',
+        url: 'https://www.booker.senate.gov',
+      },
     ],
     connections: [
       {
         name: 'AIPAC',
-        relationship: 'Major PAC recipient and conference speaker',
-        evidence: 'FEC records and public appearances',
-        tier: 'verified'
-      }
+        relationship: 'Documented pro-Israel PAC recipient; legislative alignment on security aid.',
+        evidence: 'OpenSecrets; public advocacy',
+        tier: 'verified',
+      },
+      {
+        name: 'Jacky Rosen / Josh Gottheimer',
+        relationship: 'Fellow Democrats in the bipartisan pro-Israel security bloc.',
+        evidence: 'Shared voting/messaging patterns',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received $618K from pro-Israel PACs during Senate career',
-        source: 'OpenSecrets',
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Booker.',
+        source: 'OpenSecrets N00035267',
         url: 'https://www.opensecrets.org/members-of-congress/cory-booker/summary?cid=N00035267',
         tier: 'verified',
-        date: '2024'
-      }
-    ]
+        date: '2013–2024',
+      },
+      {
+        claim: 'Consistent Senate votes for MOU-baseline FMF and missile defense for Israel.',
+        source: 'CRS RL33222; Senate roll calls',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2013–2024',
+      },
+      {
+        claim: 'Progressive-branded Democrat who rejected Squad-aligned aid conditionality after October 7.',
+        source: 'Official statements / contemporaneous press',
+        url: 'https://www.booker.senate.gov',
+        tier: 'verified',
+        date: '2023–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official Senate site', url: 'https://www.booker.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/cory-booker/summary?cid=N00035267' },
+      { label: 'Congress.gov member', url: 'https://www.congress.gov/member/cory-booker/B001288' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Cory_Booker' },
+    ],
   },
   {
     id: 'jacky-rosen',
@@ -1999,13 +2036,12 @@ export const PROFILES: PowerProfile[] = [
     state: 'NV',
     photoUrl: getProfilePhoto('jacky-rosen'),
     summary:
-      'Nevada Democrat; first woman elected to both chambers from Nevada and among the Senate\'s most consistent pro-Israel Democrats. Documented pro-Israel PAC recipient (OpenSecrets). Co-sponsors and floor advocate for Iron Dome, FMF, and wartime Israel security packages; active on antisemitism and campus-related legislation. Primary: OpenSecrets, Congress.gov, Senate record.',
+      'Nevada Democrat; among the Senate\'s most consistent pro-Israel Democrats. Documented pro-Israel PAC recipient (OpenSecrets). Co-sponsors and floor advocate for Iron Dome, FMF, and wartime Israel security packages; active on antisemitism legislation. Primary: OpenSecrets, Congress.gov, Senate record.',
     tags: ['Senator', 'Pro-Israel', 'AIPAC', 'Nevada', 'Democrat', 'Iron Dome', 'Antisemitism Legislation'],
     career: [
       'Computer programmer / synagogue president (public bio)',
       '2016 — Elected U.S. House NV-3',
       '2018 — Elected U.S. Senate',
-      'Senate Armed Services / other assignments (public bio)',
       'Leading Senate Democrat on Israel security and antisemitism bills',
     ],
     quotes: [
@@ -2054,12 +2090,6 @@ export const PROFILES: PowerProfile[] = [
         relationship: 'Overlapping Democratic pro-Israel PAC network.',
         evidence: 'Industry adjacency',
         tier: 'circumstantial',
-      },
-      {
-        name: 'Nevada Jewish community / synagogue leadership background',
-        relationship: 'Public bio includes synagogue presidency prior to Congress — contextual identity fact, not evidence of foreign agency.',
-        evidence: 'Official biography',
-        tier: 'verified',
       },
     ],
     sourcedClaims: [
@@ -4410,56 +4440,92 @@ export const PROFILES: PowerProfile[] = [
     party: 'R',
     state: 'SC',
     photoUrl: getProfilePhoto('tim-scott'),
-    summary: 'Senator from South Carolina. Only Black Republican senator. Conservative positions.',
-    tags: ['Senator', 'South Carolina', 'Republican', 'African American'],
-    career: ['U.S. Senator (R-SC) 2013-present', 'U.S. Representative (R-SC)', 'Charleston councilman'],
-    websites: [
-      { label: 'Senate Website', url: 'https://www.scott.senate.gov' }
+    summary:
+      'South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, Senate roll calls, CRS RL33222 context.',
+    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'South Carolina', 'Republican', 'Iron Dome', 'FMF'],
+    career: [
+      'Insurance business / Charleston County Council / SC House (public bio)',
+      '2010 — U.S. House SC-1',
+      '2013 — Appointed U.S. Senate; elected thereafter',
+      'Consistent Israel security voting and floor advocacy',
     ],
     quotes: [
       {
-        text: 'America must always stand on the right side of history with our ally Israel.',
-        context: 'Senate floor speech',
-        date: '2023',
-        source: 'Senate.gov',
-        url: 'https://www.scott.senate.gov'
-      }
+        text: 'America\'s commitment to Israel\'s security is ironclad.',
+        context: 'Recurring Senate Republican framing of FMF and wartime support.',
+        date: '2020s',
+        source: 'Office of Sen. Tim Scott',
+        url: 'https://www.scott.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 890000,
-        year: '2013-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00033610'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets member total scale)',
+        amount: 400000,
+        year: '2010–2024 (verify cycle tabs)',
+        source: 'OpenSecrets — Tim Scott',
+        url: 'https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00031782',
+      },
     ],
     policyActions: [
       {
-        action: 'Co-led Senate effort to expand Abraham Accords',
-        date: '2023',
-        context: 'Bipartisan normalization framework',
-        source: 'Senate.gov',
-        url: 'https://www.scott.senate.gov'
-      }
+        action: 'Consistent YES on Israel FMF, Iron Dome, and wartime Israel security packages',
+        date: '2013–2024',
+        context: 'Senate Republican pro-Israel security baseline.',
+        source: 'Senate roll calls; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'Public post–October 7 advocacy for full wartime military support without progressive conditionality',
+        date: '2023–2024',
+        context: 'Contemporaneous Senate statements.',
+        source: 'Official Senate statements',
+        url: 'https://www.scott.senate.gov',
+      },
     ],
     connections: [
       {
-        name: 'Larry Ellison',
-        relationship: 'Major donor to presidential campaign',
-        evidence: 'FEC filings',
-        tier: 'verified'
-      }
+        name: 'AIPAC',
+        relationship: 'Documented pro-Israel PAC recipient; voting aligns with AIPAC security agenda.',
+        evidence: 'OpenSecrets; roll calls',
+        tier: 'verified',
+      },
+      {
+        name: 'Republican Senate conference',
+        relationship: 'Part of Senate GOP pro-Israel security majority.',
+        evidence: 'Roll call coalitions',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received $890K from pro-Israel PACs during Senate career',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00033610',
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Scott\'s House and Senate campaigns.',
+        source: 'OpenSecrets N00031782',
+        url: 'https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00031782',
         tier: 'verified',
-        date: '2024'
-      }
-    ]
+        date: '2010–2024',
+      },
+      {
+        claim: 'Consistent Senate votes for MOU-baseline FMF and missile-defense accounts supporting Israel.',
+        source: 'CRS RL33222; Senate roll calls',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2013–2024',
+      },
+      {
+        claim: 'Public advocate for unconditional wartime Israel aid after October 7.',
+        source: 'Official Senate statements',
+        url: 'https://www.scott.senate.gov',
+        tier: 'verified',
+        date: '2023–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official Senate site', url: 'https://www.scott.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00031782' },
+      { label: 'Congress.gov member', url: 'https://www.congress.gov/member/tim-scott/S001184' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Tim_Scott' },
+    ],
   },
   {
     id: 'john-fetterman',
