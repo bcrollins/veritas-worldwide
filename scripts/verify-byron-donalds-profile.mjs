@@ -35,6 +35,7 @@ function runNodeStrip(code) {
 const out = runNodeStrip(`
 import { getProfileBySlug } from './src/data/profileData.ts';
 import { getDossierActorByProfileId } from './src/data/israelDossierActors.ts';
+import { computeIntegrityScore } from './src/lib/integrityScore.ts';
 
 const p = getProfileBySlug('byron-donalds');
 if (!p) throw new Error('profile missing');
@@ -89,6 +90,35 @@ if (!actor) throw new Error('dossier actor missing');
 if (actor.category !== 'us-congress') throw new Error('bad actor category');
 if ((actor.fundingLinks?.length ?? 0) < 4) throw new Error('actor fundingLinks < 4');
 
+// Exhaustive integrity deep-dive: dual-cited verified falsehoods only
+const integrity = computeIntegrityScore(p.documentedFalsehoods);
+if (!integrity.hasDocket) throw new Error('integrity docket missing');
+if (integrity.scoredFalsehoods.length < 3) {
+  throw new Error('integrity docket too thin: ' + integrity.scoredFalsehoods.length + ' (need ≥3 verified)');
+}
+if (integrity.score == null || integrity.score > 60) {
+  throw new Error('integrity score expected ≤60 after multi-entry deep dive, got ' + integrity.score);
+}
+const requiredIds = [
+  'donalds-jim-crow-black-families-2024',
+  'donalds-vra-gerrymandering-reason-2026',
+  'donalds-stock-act-sanctions-hypocrisy-2022-2024',
+];
+for (const id of requiredIds) {
+  if (!integrity.scoredFalsehoods.some((f) => f.id === id)) throw new Error('missing falsehood id: ' + id);
+}
+for (const f of integrity.scoredFalsehoods) {
+  if (!/^https?:\\/\\//i.test(f.statementUrl) || !/^https?:\\/\\//i.test(f.debunkUrl)) {
+    throw new Error('falsehood ' + f.id + ' missing dual URLs');
+  }
+  if (f.statementUrl === f.debunkUrl) throw new Error('falsehood ' + f.id + ' statement/debunk must differ');
+  if (f.tier !== 'verified') throw new Error('falsehood ' + f.id + ' must be verified');
+}
+const docketBlob = JSON.stringify(p.documentedFalsehoods);
+for (const n of ['Jim Crow', 'Voting Rights Act', 'STOCK Act', 'Periodic Transaction', 'PolitiFact']) {
+  if (!docketBlob.includes(n)) throw new Error('docket missing needle: ' + n);
+}
+
 console.log(JSON.stringify({
   ok: true,
   quotes: p.quotes.length,
@@ -100,6 +130,9 @@ console.log(JSON.stringify({
   websites: p.websites.length,
   career: p.career.length,
   actorFundingLinks: actor.fundingLinks.length,
+  integrityScore: integrity.score,
+  integrityFalsehoods: integrity.scoredFalsehoods.length,
+  integrityIds: integrity.scoredFalsehoods.map((f) => f.id),
 }, null, 2));
 `)
 

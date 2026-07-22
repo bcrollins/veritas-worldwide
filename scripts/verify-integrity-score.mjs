@@ -113,6 +113,23 @@ for (const id of required) {
   scores[id] = { score: r.score, n: r.scoredFalsehoods.length };
 }
 
+// Byron Donalds exhaustive integrity deep-dive gate (dual-cite strict)
+const byron = scores['byron-donalds'];
+if (!byron || byron.n < 3) throw new Error('byron-donalds needs ≥3 verified falsehoods, got ' + (byron?.n ?? 0));
+if (byron.score > 60) throw new Error('byron-donalds score expected ≤60 after deep dive, got ' + byron.score);
+const byronP = getProfileBySlug('byron-donalds');
+const byronIds = new Set((byronP.documentedFalsehoods || []).map((f) => f.id));
+for (const id of [
+  'donalds-jim-crow-black-families-2024',
+  'donalds-vra-gerrymandering-reason-2026',
+  'donalds-stock-act-sanctions-hypocrisy-2022-2024',
+]) {
+  if (!byronIds.has(id)) throw new Error('byron-donalds missing docket id: ' + id);
+}
+for (const f of (byronP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('byron dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
 if (docketCount < 11) throw new Error('expected ≥11 compiled dockets, got ' + docketCount);
 
