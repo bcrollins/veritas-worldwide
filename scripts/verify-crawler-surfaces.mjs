@@ -17,7 +17,8 @@ const root = path.join(__dirname, '..')
 const MIN_PRERENDER_ROUTES = 360
 const MIN_SITEMAP_URLS = 300
 // Floor sits ~10% under the 2026-07-16 baseline (~30 llms links after About/Accessibility GEO).
-const MIN_LLMS_LINKS = 28
+// After profile corpus + flagship profile GEO links (~49).
+const MIN_LLMS_LINKS = 40
 
 const REQUIRED_SITEMAP_PATHS = [
   '/',
