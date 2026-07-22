@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T22:37:03.583Z",
+  "generatedAt": "2026-07-22T22:39:23.734Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -9,7 +9,7 @@
     "actors": 41,
     "moneyTrailNodes": 16,
     "historicalWarCrimesPack": 45,
-    "legalCases": 9,
+    "legalCases": 10,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 2,
@@ -5027,6 +5027,15 @@
       "ruling": "Called for withdrawal of Israeli armed forces from territories occupied in the 1967 conflict and for respect for the right of every state in the area to live in peace within secure and recognized boundaries.",
       "significance": "Foundational post-1967 diplomatic framework still cited in every major peace process and occupation-law debate. Implementation remains incomplete and contested.",
       "sourceUrl": "https://digitallibrary.un.org/record/90717",
+      "status": "decided"
+    },
+    {
+      "title": "UN Fact-Finding Mission on the Gaza Conflict (Goldstone)",
+      "court": "UN Human Rights Council Fact-Finding Mission",
+      "date": "September 15, 2009 report",
+      "ruling": "Found evidence of war crimes and possible crimes against humanity by Israeli forces and Palestinian armed groups during Operation Cast Lead; recommended accountability processes in national and international forums.",
+      "significance": "The most cited UN fact-finding product on the 2008–09 Gaza war. Later public statements by the chair about reassessing some conclusions do not erase the mission's underlying multi-source field documentation still used by courts and scholars.",
+      "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission",
       "status": "decided"
     }
   ],

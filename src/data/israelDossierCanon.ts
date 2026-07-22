@@ -1671,6 +1671,15 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     sourceUrl: 'https://digitallibrary.un.org/record/90717',
     status: 'decided',
   },
+  {
+    title: 'UN Fact-Finding Mission on the Gaza Conflict (Goldstone)',
+    court: 'UN Human Rights Council Fact-Finding Mission',
+    date: 'September 15, 2009 report',
+    ruling: 'Found evidence of war crimes and possible crimes against humanity by Israeli forces and Palestinian armed groups during Operation Cast Lead; recommended accountability processes in national and international forums.',
+    significance: 'The most cited UN fact-finding product on the 2008–09 Gaza war. Later public statements by the chair about reassessing some conclusions do not erase the mission\'s underlying multi-source field documentation still used by courts and scholars.',
+    sourceUrl: 'https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission',
+    status: 'decided',
+  },
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [
