@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T22:24:01.404Z",
+  "generatedAt": "2026-07-22T22:24:37.689Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -1961,7 +1961,8 @@
       "tier": "verified",
       "relatedIncidentIds": [
         "summer-rains-2006",
-        "beit-hanoun-2006"
+        "beit-hanoun-2006",
+        "operation-summer-rains-power-plant-2006"
       ],
       "tags": [
         "civilians",

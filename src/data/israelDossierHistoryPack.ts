@@ -1478,7 +1478,7 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     source: 'B\'Tselem / OCHA',
     sourceUrl: 'https://www.btselem.org/gaza_strip',
     tier: 'verified',
-    relatedIncidentIds: ['summer-rains-2006', 'beit-hanoun-2006'],
+    relatedIncidentIds: ['summer-rains-2006', 'beit-hanoun-2006', 'operation-summer-rains-power-plant-2006'],
     tags: ['civilians', 'children', 'gaza'],
   },
   {
