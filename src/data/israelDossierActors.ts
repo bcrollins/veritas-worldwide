@@ -455,12 +455,12 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     relatedMoneyNodeIds: ['annual-mou', 'hr815', 'pro-israel-lobby-2024'],
     fundingLinks: [
       {
-        label: 'OpenSecrets — Saban donor profile / soft-money history',
-        sourceUrl: 'https://www.opensecrets.org/',
+        label: 'OpenSecrets — Haim Saban donor lookup',
+        sourceUrl: 'https://www.opensecrets.org/donor-lookup/results?name=haim+saban&order=desc&sort=D',
       },
       {
-        label: 'FEC individual contribution search (public filings)',
-        sourceUrl: 'https://www.fec.gov/data/receipts/individual-contributions/',
+        label: 'Brookings — Saban Center institutional history',
+        sourceUrl: 'https://www.brookings.edu',
       },
     ],
     tier: 'verified',
@@ -959,6 +959,29 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'paul-singer',
+    name: 'Paul Singer',
+    role: 'Founder, Elliott Management; Republican & pro-Israel megadonor',
+    category: 'us-donor-lobby',
+    enablementSummary:
+      'Finance-capital Republican megadonor and public pro-Israel hawk. Multi-cycle Super PAC / outside spending (OpenSecrets) funding candidates who lock in unconditional FMF and wartime Israel security orthodoxy — parallel to Adelson casino capital on the Republican side.',
+    relatedTimelineYears: ['2012', '2016', '2020', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'pro-israel-lobby-2024', 'fmf-weapons', 'iron-dome'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Paul Singer donor lookup',
+        sourceUrl: 'https://www.opensecrets.org/donor-lookup/results?name=paul+singer&order=desc&sort=D',
+      },
+      {
+        label: 'Elliott Management (commercial base of political capital)',
+        sourceUrl: 'https://www.elliottmgmt.com',
+      },
+    ],
+    tier: 'verified',
+  },
+
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
