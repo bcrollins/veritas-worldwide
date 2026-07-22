@@ -141,7 +141,10 @@ function MoneyTrailCard({ node }: { node: DossierMoneyTrailNode }) {
   const childNodes = node.children?.map(cid => ISRAEL_DOSSIER_MONEY_TRAIL.find(n => n.id === cid)).filter(Boolean) as DossierMoneyTrailNode[] | undefined
 
   return (
-    <div className={`border rounded-sm overflow-hidden transition-all duration-200 ${style.border} ${style.bg} ${childNodes ? 'cursor-pointer hover:shadow-md' : ''}`}>
+    <div
+      id={`money-${node.id}`}
+      className={`scroll-mt-24 border rounded-sm overflow-hidden transition-all duration-200 ${style.border} ${style.bg} ${childNodes ? 'cursor-pointer hover:shadow-md' : ''}`}
+    >
       <div
         className="p-4 flex items-start gap-3"
         onClick={() => childNodes && setOpen(!open)}
@@ -1057,16 +1060,23 @@ export default function IsraelDossierPage() {
     [searchParams, setSearchParams],
   )
 
-  // Deep-link: open actor panel / incident card from query or hash once on load
+  // Deep-link: open actor panel / incident card / money node from query or hash once on load
   useEffect(() => {
     if (deepLinkHandled.current) return
     const actor = searchParams.get('actor')
     const incident = searchParams.get('incident')
+    const money = searchParams.get('money')
     const hash = window.location.hash.replace(/^#/, '')
     if (actor && ISRAEL_DOSSIER_ACTORS.some((a) => a.profileId === actor)) {
       setSelectedActorId(actor)
       requestAnimationFrame(() => {
         document.getElementById('actors')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+      deepLinkHandled.current = true
+    } else if (money && ISRAEL_DOSSIER_MONEY_TRAIL.some((n) => n.id === money)) {
+      requestAnimationFrame(() => {
+        document.getElementById(`money-${money}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          || document.getElementById('money-trail')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       })
       deepLinkHandled.current = true
     } else if (incident || hash.startsWith('incident-')) {

@@ -455,6 +455,15 @@ async function runInteractiveChecks(browser) {
     }
     console.log('[verify:israel-dossier:behavior] PASS incident era filter deep-link')
 
+    // Money-trail deep-link ?money=
+    await gotoAndDismiss(page, `${baseUrl}/israel-dossier?money=hr815`)
+    await page.waitForTimeout(400)
+    const moneyNode = page.locator('#money-hr815')
+    assert((await moneyNode.count()) > 0, 'money-hr815 node missing for deep-link')
+    const moneyText = (await moneyNode.innerText()).toLowerCase()
+    assert(moneyText.includes('h.r.815') || moneyText.includes('$26.4'), 'money deep-link card missing H.R.815 content')
+    console.log('[verify:israel-dossier:behavior] PASS money-trail deep-link')
+
     // Topic hub CTA for israel-policy (client-hydrated — wait for CTA, not just h1)
     await gotoAndDismiss(page, `${baseUrl}/topics/israel-policy`)
     await page.getByRole('heading', { name: /Israel Policy/i }).first().waitFor({ timeout: 20000 })
