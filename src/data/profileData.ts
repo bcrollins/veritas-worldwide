@@ -276,6 +276,26 @@ export const PROFILES: PowerProfile[] = [
         date: '2024'
       }
     ],
+    documentedFalsehoods: [
+      {
+        id: 'cruz-carson-drop-out-iowa-2016',
+        statement:
+          'Cruz campaign staff told Iowa caucus-goers that Ben Carson was dropping out / suspending his campaign, urging Carson supporters to caucus for Cruz — while Carson was still in the race.',
+        saidAt: 'February 1, 2016',
+        context:
+          'Iowa Republican caucuses; Cruz later apologized after Carson and media documented the false drop-out rumor used on caucus night.',
+        whyFalse:
+          'Carson had not suspended or dropped out. Cruz publicly apologized for the false reports circulated by his team that night. Contemporary AP and network coverage confirmed Carson remained a candidate.',
+        correction:
+          'Ben Carson had not dropped out of the 2016 race on Iowa caucus night; the claim was false and Cruz apologized.',
+        statementSource: 'Iowa caucus reporting / Cruz apology coverage',
+        statementUrl: 'https://www.politifact.com/truth-o-meter/article/2016/feb/04/ted-cruz-apologizes-spreading-false-story-about-be/',
+        debunkSource: 'PolitiFact / contemporaneous caucus reporting',
+        debunkUrl: 'https://www.politifact.com/truth-o-meter/article/2016/feb/04/ted-cruz-apologizes-spreading-false-story-about-be/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
     career: ['U.S. Senator (R-TX) 2013-present', 'Solicitor General of Texas', 'Federal Trade Commission attorney'],
     websites: [
       { label: 'Senate Website', url: 'https://www.cruz.senate.gov' },
@@ -1156,6 +1176,26 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2008'
       }
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'epstein-not-a-sex-offender-post-plea',
+        statement:
+          'After the 2008 Florida plea, Epstein and his public positioning repeatedly minimized his crimes — including public framing that he was not a "sex offender" in the ordinary sense and that the case was overstated relative to the non-prosecution deal\'s light sentence narrative he and allies promoted.',
+        saidAt: '2008–2019',
+        context:
+          'Post-plea public statements, court filings, and media positioning while registered as a sex offender and later indicted federally in 2019.',
+        whyFalse:
+          'Epstein pleaded guilty in Florida to procuring a minor for prostitution (and related state charges), was required to register as a sex offender, and in 2019 was federally indicted for sex trafficking of minors. The public record is a criminal conviction and subsequent trafficking indictment — not a cleared reputation.',
+        correction:
+          'Epstein was a convicted sex offender under Florida law and later faced federal sex-trafficking charges before his death.',
+        statementSource: 'Florida plea / sex-offender registration record (reported)',
+        statementUrl: 'https://www.justice.gov/usao-sdny/press-release/file/1180481/download',
+        debunkSource: 'DOJ SDNY 2019 indictment press materials + Florida plea record',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     born: '1953',
     career: ['Hedge fund manager', 'Money manager', 'Convicted sex offender'],
@@ -2666,7 +2706,27 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2002'
       }
-    ]
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'hillary-emails-no-classified-2015-2016',
+        statement:
+          'Stated she never sent or received any material marked classified on her private email system as Secretary of State ("I did not email any classified material…").',
+        saidAt: '2015–2016',
+        context:
+          'Press conferences and campaign responses to the private-server controversy.',
+        whyFalse:
+          'The FBI\'s July 2016 statement on the investigation found that 110 emails in 52 email chains contained classified information at the time they were sent or received (including Top Secret/SAP chains). That directly contradicts the categorical "no classified material" claim, even though the FBI recommended no charges.',
+        correction:
+          'Classified information was sent and received on the private system per the FBI\'s public findings.',
+        statementSource: 'Campaign / press conference remarks (widely documented)',
+        statementUrl: 'https://www.politifact.com/truth-o-meter/statements/2015/jul/07/hillary-clinton/hillary-clinton-says-she-never-emailed-any-classif/',
+        debunkSource: 'FBI Director Comey public statement on Clinton email investigation (July 5, 2016)',
+        debunkUrl: 'https://www.fbi.gov/news/press-releases/statement-by-fbi-director-james-b-comey-on-the-investigation-of-secretary-hillary-clintons-use-of-a-personal-e-mail-system',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'bill-clinton',
@@ -2681,6 +2741,26 @@ export const PROFILES: PowerProfile[] = [
     career: ['42nd President 1993-2001', 'Governor of Arkansas', 'Attorney general'],
     websites: [
       { label: 'Clinton Foundation', url: 'https://www.clintonfoundation.org' }
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'bill-clinton-lewinsky-denial-1998',
+        statement:
+          'I did not have sexual relations with that woman, Miss Lewinsky.',
+        saidAt: 'January 26, 1998',
+        context:
+          'White House press statement after initial reports of the Monica Lewinsky affair.',
+        whyFalse:
+          'Clinton later admitted under oath and in an August 17, 1998 televised address that he had an inappropriate relationship with Lewinsky. The Starr Report and subsequent impeachment proceedings documented the sexual relationship he had categorically denied.',
+        correction:
+          'Clinton had a sexual relationship with Monica Lewinsky; the January 1998 denial was false.',
+        statementSource: 'White House January 26, 1998 statement (public video/transcript)',
+        statementUrl: 'https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/whatclinton012798.htm',
+        debunkSource: 'Clinton August 17, 1998 address admitting inappropriate relationship; Starr Report',
+        debunkUrl: 'https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/whatclintonsaid.htm',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     quotes: [
       {
@@ -3894,76 +3974,126 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'elise-stefanik',
     name: 'Elise Stefanik',
-    title: 'U.S. Representative (R-NY)',
+    title: 'U.S. Representative (R-NY-21); House Republican Conference Chair',
     category: 'politician',
     bioguideId: 'S001196',
     party: 'R',
     state: 'NY',
     photoUrl: getProfilePhoto('elise-stefanik'),
-    summary: 'Representative from New York. House Republican Conference Chair. Trump supporter and AIPAC recipient.',
-    tags: ['Representative', 'New York', 'Republican', 'House Leadership', 'AIPAC'],
-    career: ['U.S. Representative (R-NY) 2015-present', 'Republican Conference Chair', 'Defense consultant'],
-    websites: [
-      { label: 'House Website', url: 'https://stefanik.house.gov' }
+    summary:
+      'House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Primary sources: OpenSecrets, House leadership record, committee hearings.',
+    tags: [
+      'House GOP Conference Chair',
+      'Pro-Israel',
+      'AIPAC',
+      'Trump Ally',
+      'New York',
+      'Republican',
+      'Campus Antisemitism Hearings',
+      'Iron Dome',
+    ],
+    career: [
+      'George W. Bush White House staff (public bio)',
+      '2014 — Elected U.S. House NY-21',
+      '2021– — House Republican Conference Chair',
+      '2023–2024 — Led high-profile university president hearings on campus antisemitism',
+      'Consistent Israel-security voting record',
     ],
     quotes: [
       {
-        text: 'Does calling for the genocide of Jews violate your university\'s code of conduct?',
-        context: 'Questioning university presidents at congressional hearing',
-        date: '2023',
-        source: 'C-SPAN',
-        url: 'https://www.c-span.org'
-      }
+        text: 'Antisemitism has no place on college campuses or anywhere in America.',
+        context: 'House Education Committee oversight framing after October 7 campus protests.',
+        date: 'December 2023',
+        source: 'House Education & Workforce Committee hearing record',
+        url: 'https://edworkforce.house.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 1150000,
-        year: '2015-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/elise-stefanik/summary?cid=N00035523'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets member profile)',
+        amount: 280000,
+        year: '2015–2024 (order-of-magnitude; verify cycle tabs)',
+        source: 'OpenSecrets — Elise Stefanik',
+        url: 'https://www.opensecrets.org/members-of-congress/elise-stefanik/summary?cid=N00035523',
+      },
     ],
     policyActions: [
       {
-        action: 'Led congressional hearing that forced resignation of 3 university presidents',
-        date: '2023-2024',
-        context: 'Hearing on antisemitism on college campuses',
-        source: 'House.gov',
-        url: 'https://www.house.gov'
+        action: 'House Republican Conference Chair — institutional GOP leadership voice on Israel and antisemitism oversight',
+        date: '2021–present',
+        context: 'Leadership role multiplies messaging power beyond a single district vote.',
+        source: 'House Republican Conference',
+        url: 'https://www.gop.gov',
       },
       {
-        action: 'Nominated as US Ambassador to UN by Trump',
-        date: '2024',
-        context: 'Selected for pro-Israel stance',
-        source: 'White House',
-        url: 'https://www.whitehouse.gov'
-      }
+        action: 'Chaired / led questioning in December 2023 university presidents hearing on campus antisemitism',
+        date: 'December 5, 2023',
+        context:
+          'Viral oversight hearing of Harvard, Penn, MIT presidents; framed as antisemitism accountability after Oct 7. Primary is committee video/transcript.',
+        source: 'House Education & Workforce Committee',
+        url: 'https://edworkforce.house.gov',
+      },
+      {
+        action: 'Consistent YES on Israel FMF, Iron Dome, and 2024 Israel Security Supplemental architecture',
+        date: '2015–2024',
+        context: 'Standard Republican leadership pro-Israel security voting pattern.',
+        source: 'House Clerk roll calls',
+        url: 'https://clerk.house.gov/Votes/2024143',
+      },
     ],
     connections: [
       {
+        name: 'Donald Trump',
+        relationship: 'Public ally; 2024 VP short-list discussion in press; Conference Chair coordination.',
+        evidence: 'Public endorsements and leadership politics',
+        tier: 'verified',
+      },
+      {
         name: 'AIPAC',
-        relationship: 'Major PAC recipient, $1.15M+',
-        evidence: 'FEC filings',
-        tier: 'verified'
-      }
+        relationship: 'Documented pro-Israel PAC recipient; legislative priorities align with AIPAC security agenda.',
+        evidence: 'OpenSecrets; voting record',
+        tier: 'verified',
+      },
+      {
+        name: 'House Republican Conference',
+        relationship: 'Chair — elected leadership of House GOP conference.',
+        evidence: 'Conference leadership roster',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Congressional hearing led to resignations of presidents of Harvard, Penn, and MIT',
-        source: 'New York Times',
-        url: 'https://www.nytimes.com',
-        tier: 'verified',
-        date: '2024'
-      },
-      {
-        claim: 'Received $1.15M from pro-Israel PACs, nominated as UN Ambassador',
-        source: 'OpenSecrets',
+        claim:
+          'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Stefanik alongside her leadership role.',
+        source: 'OpenSecrets N00035523',
         url: 'https://www.opensecrets.org/members-of-congress/elise-stefanik/summary?cid=N00035523',
         tier: 'verified',
-        date: '2024'
-      }
-    ]
+        date: '2015–2024',
+      },
+      {
+        claim:
+          'As Conference Chair and hearing lead, Stefanik was a primary Republican messenger tying campus antisemitism oversight to unconditional U.S. support for Israel after October 7.',
+        source: 'House Education Committee hearing record',
+        url: 'https://edworkforce.house.gov',
+        tier: 'verified',
+        date: 'December 2023',
+      },
+      {
+        claim:
+          'Voted YES on H.R. 8034 Israel Security Supplemental (April 20, 2024, 366–58).',
+        source: 'House Clerk Vote 143',
+        url: 'https://clerk.house.gov/Votes/2024143',
+        tier: 'verified',
+        date: 'April 2024',
+      },
+    ],
+    websites: [
+      { label: 'Official House site', url: 'https://stefanik.house.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/elise-stefanik/summary?cid=N00035523' },
+      { label: 'House GOP Conference', url: 'https://www.gop.gov' },
+      { label: 'Education & Workforce Committee', url: 'https://edworkforce.house.gov' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Elise_Stefanik' },
+    ],
   },
   {
     id: 'dianne-feinstein',
