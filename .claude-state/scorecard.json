@@ -44,11 +44,11 @@
     },
     {
       "feature": "Source Browser",
-      "composite": 9.92,
-      "previous": 9.85,
-      "delta": 0.07,
-      "status": "archive pins 63; pure/platform floors 60; Sources+Methodology corpora links; Lancet still lookup-only",
-      "plus_half_requires": "Pin Lancet when Wayback accepts a durable capture."
+      "composite": 9.95,
+      "previous": 9.92,
+      "delta": 0.03,
+      "status": "archive pins 77; pure floors 72; pure suite 19; Lancet still lookup-only; tip 452c6e2+",
+      "plus_half_requires": "Pin Lancet when Wayback accepts a durable Langlo capture."
     },
     {
       "feature": "Search",
