@@ -597,6 +597,51 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'sheldon-adelson',
+    name: 'Sheldon Adelson',
+    role: 'Late casino magnate; major Republican megadonor and pro-Israel philanthropist (d. 2021)',
+    category: 'us-donor-lobby',
+    enablementSummary:
+      'With Miriam Adelson, among the largest single-family sources of pro-Israel political money in U.S. history. Funded Republican campaigns, pro-Israel advocacy, and settlement-adjacent philanthropy; mapped as a historical donor-lobby enablement node with public FEC and OpenSecrets floors.',
+    relatedTimelineYears: ['2012', '2016', '2020'],
+    relatedIncidentIds: ['protective-edge-2014-children', 'great-march-return-2018'],
+    relatedMoneyNodeIds: ['pro-israel-lobby-2024', 'annual-mou', 'hr815'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Adelson donor history / soft money',
+        sourceUrl: 'https://www.opensecrets.org/',
+      },
+      {
+        label: 'FEC individual contribution search (public filings)',
+        sourceUrl: 'https://www.fec.gov/data/receipts/individual-contributions/',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'nancy-pelosi',
+    name: 'Nancy Pelosi',
+    role: 'Former Speaker of the U.S. House; long-time Democratic leadership',
+    category: 'us-congress',
+    enablementSummary:
+      'House Democratic leadership during multiple Israel aid packages and wartime supplementals; institutional floor leadership enabling bipartisan aid continuity even when progressive members sought conditionality.',
+    relatedTimelineYears: ['2008', '2014', '2021', '2023', '2024'],
+    relatedIncidentIds: ['cast-lead-2008-09', 'protective-edge-2014-children', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'iron-dome'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Pelosi pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=N00007360',
+      },
+      {
+        label: 'H.R.815 context — House leadership role in wartime aid',
+        amount: '$26.4B',
+        sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

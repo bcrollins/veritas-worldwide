@@ -1081,6 +1081,17 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['hr815', 'annual-mou'],
     relatedProfileIds: ['howard-kohr', 'haim-saban', 'miriam-adelson', 'chuck-schumer', 'mike-johnson'],
   },
+  {
+    id: 'f35-fleet',
+    label: 'F-35 Joint Strike Fighter fleet (FMF-financed)',
+    amount: '50+ aircraft program',
+    type: 'weapon',
+    date: '2016–ongoing',
+    detail: 'Israel is the first international operator of the F-35I Adir. Aircraft and sustainment are financed largely through U.S. Foreign Military Financing under the MOU architecture. F-35s provide the long-range strike backbone used in multi-theater operations; exact sortie attribution to specific Gaza strikes is not always public.',
+    sourceUrl: 'https://www.dsca.mil/press-media/major-arms-sales',
+    children: ['fmf-weapons', 'jdam-use'],
+    relatedProfileIds: ['barack-obama', 'joe-biden', 'benjamin-netanyahu', 'donald-trump'],
+  },
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
