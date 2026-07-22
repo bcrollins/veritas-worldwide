@@ -1064,6 +1064,32 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1 },
   },
   {
+    id: 'rafah-black-friday-2014',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons', 'artillery-use'],
+    legalStatus: 'un-finding',
+    title: 'Rafah "Black Friday" — Protective Edge (2014)',
+    date: 'August 1, 2014',
+    location: 'Rafah, Gaza Strip',
+    summary:
+      'After the capture of an Israeli soldier during a temporary humanitarian pause, Israeli forces launched intense bombardment and ground operations in Rafah. Human-rights and UN monitors recorded well over 100 Palestinians killed in a single day, including large civilian and child shares — among the deadliest 24-hour periods of the 2014 war.',
+    evidence:
+      'Amnesty International "Black Friday" investigation, OHCHR COI materials, and OCHA casualty tallies document the scale of civilian harm. Distinct from Shuja\'iyya and UNRWA-shelter entries for Protective Edge.',
+    sources: [
+      { label: 'Amnesty International — Black Friday: Carnage in Rafah', url: 'https://www.amnesty.org/en/documents/mde15/0280/2015/en/' },
+      { label: 'OHCHR — COI report on 2014 Gaza conflict', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza' },
+      { label: 'B\'Tselem — 2014 Gaza conflict documentation', url: 'https://www.btselem.org/gaza_strip/2014_gaza_conflict' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Amnesty Black Friday report', url: 'https://www.amnesty.org/en/documents/mde15/0280/2015/en/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 135 },
+  },
+  {
     id: 'shujaiya-2014',
     era: 'blockade-2007-2023',
     targetsCivilians: true,

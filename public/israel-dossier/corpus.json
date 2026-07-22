@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T22:39:23.734Z",
+  "generatedAt": "2026-07-22T22:41:53.588Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 60,
+    "incidents": 61,
     "timelineEvents": 49,
     "actors": 41,
     "moneyTrailNodes": 16,
-    "historicalWarCrimesPack": 45,
+    "historicalWarCrimesPack": 46,
     "legalCases": 10,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 2,
       "1948-1967": 6,
       "occupation-1967-2005": 15,
-      "blockade-2007-2023": 20,
+      "blockade-2007-2023": 21,
       "post-oct7": 17
     },
     "incidentsByTier": {
-      "verified": 58,
+      "verified": 59,
       "circumstantial": 2
     },
-    "childrenTagged": 52,
-    "civiliansTagged": 59,
+    "childrenTagged": 53,
+    "civiliansTagged": 60,
     "actorsByCategory": {
       "us-executive": 11,
       "us-congress": 24,
@@ -3862,6 +3862,52 @@
         }
       ],
       "tier": "verified"
+    },
+    {
+      "id": "rafah-black-friday-2014",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "barack-obama",
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons",
+        "artillery-use"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Rafah \"Black Friday\" — Protective Edge (2014)",
+      "date": "August 1, 2014",
+      "location": "Rafah, Gaza Strip",
+      "summary": "After the capture of an Israeli soldier during a temporary humanitarian pause, Israeli forces launched intense bombardment and ground operations in Rafah. Human-rights and UN monitors recorded well over 100 Palestinians killed in a single day, including large civilian and child shares — among the deadliest 24-hour periods of the 2014 war.",
+      "evidence": "Amnesty International \"Black Friday\" investigation, OHCHR COI materials, and OCHA casualty tallies document the scale of civilian harm. Distinct from Shuja'iyya and UNRWA-shelter entries for Protective Edge.",
+      "sources": [
+        {
+          "label": "Amnesty International — Black Friday: Carnage in Rafah",
+          "url": "https://www.amnesty.org/en/documents/mde15/0280/2015/en/"
+        },
+        {
+          "label": "OHCHR — COI report on 2014 Gaza conflict",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza"
+        },
+        {
+          "label": "B'Tselem — 2014 Gaza conflict documentation",
+          "url": "https://www.btselem.org/gaza_strip/2014_gaza_conflict"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Amnesty Black Friday report",
+          "url": "https://www.amnesty.org/en/documents/mde15/0280/2015/en/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 135
+      }
     },
     {
       "id": "shujaiya-2014",
