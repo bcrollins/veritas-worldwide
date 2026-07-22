@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0",
+  "name": "Veritas Worldwide Ultimate Brand Kit",
+  "generatedAt": "2026-07-22T23:04:01.216Z",
+  "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
+  "sections": [
+    {
+      "id": "01-logos",
+      "title": "Logos",
+      "description": "Primary seal, full lockups, monochrome variants"
+    },
+    {
+      "id": "02-icons",
+      "title": "Icons & Favicon",
+      "description": "App icon, favicon, sized marks"
+    },
+    {
+      "id": "03-wordmarks",
+      "title": "Wordmarks",
+      "description": "Text-only brand typography"
+    },
+    {
+      "id": "04-social",
+      "title": "Social",
+      "description": "Profile and platform banners"
+    },
+    {
+      "id": "05-og",
+      "title": "Open Graph",
+      "description": "Default social share card"
+    },
+    {
+      "id": "06-tokens",
+      "title": "Design Tokens",
+      "description": "Colors, type, usage rules (JSON)"
+    },
+    {
+      "id": "07-docs",
+      "title": "Documentation",
+      "description": "Brand guide and alt-text manifest"
+    },
+    {
+      "id": "08-ai-generated",
+      "title": "AI References",
+      "description": "Grok Imagine brand direction renders"
+    }
+  ],
+  "downloads": [
+    {
+      "label": "Ultimate Brand Kit (.zip)",
+      "href": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
+      "adminOnly": true
+    },
+    {
+      "label": "Logo mark (SVG)",
+      "href": "/brand-kit/01-logos/logo-mark.svg"
+    },
+    {
+      "label": "Full lockup (SVG)",
+      "href": "/brand-kit/01-logos/logo-full.svg"
+    },
+    {
+      "label": "App icon (SVG)",
+      "href": "/brand-kit/02-icons/app-icon.svg"
+    },
+    {
+      "label": "Wordmark (SVG)",
+      "href": "/brand-kit/03-wordmarks/wordmark.svg"
+    },
+    {
+      "label": "OG image (PNG)",
+      "href": "/brand-kit/05-og/og-image.png"
+    },
+    {
+      "label": "Brand guide (MD)",
+      "href": "/brand-kit/07-docs/BRAND-GUIDE.md"
+    },
+    {
+      "label": "Tokens (JSON)",
+      "href": "/brand-kit/06-tokens/tokens.json"
+    }
+  ]
+}

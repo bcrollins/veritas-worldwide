@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="160" viewBox="0 0 720 160" role="img" aria-label="Veritas Worldwide wordmark">
+  <rect width="720" height="160" fill="#FAF8F5"/>
+  <text x="360" y="78" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" letter-spacing="10" fill="#1A1A1A">VERITAS</text>
+  <line x1="220" y1="98" x2="500" y2="98" stroke="#8B1A1A" stroke-width="1.5"/>
+  <text x="360" y="128" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="500" letter-spacing="6" fill="#666666">WORLDWIDE PRESS</text>
+</svg>

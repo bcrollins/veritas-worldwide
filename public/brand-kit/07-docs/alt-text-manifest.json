@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "assets": [
+    {
+      "path": "01-logos/logo-mark.svg",
+      "alt": "Veritas Worldwide publisher seal: serif letter V inside concentric crimson rings on parchment"
+    },
+    {
+      "path": "01-logos/logo-full.svg",
+      "alt": "Veritas Worldwide Press logo lockup with seal and wordmark"
+    },
+    {
+      "path": "02-icons/app-icon.svg",
+      "alt": "Veritas app icon: white V in circle on crimson rounded square"
+    },
+    {
+      "path": "02-icons/favicon.svg",
+      "alt": "Veritas favicon"
+    },
+    {
+      "path": "03-wordmarks/wordmark.svg",
+      "alt": "VERITAS WORLDWIDE PRESS wordmark"
+    },
+    {
+      "path": "04-social/social-profile.svg",
+      "alt": "Veritas social profile mark on crimson"
+    },
+    {
+      "path": "04-social/social-banner-x.svg",
+      "alt": "The Record social banner for X"
+    },
+    {
+      "path": "05-og/og-image.svg",
+      "alt": "Open Graph card for The Record by Veritas Worldwide Press"
+    },
+    {
+      "path": "08-ai-generated/seal-mark-parchment.jpg",
+      "alt": "AI reference: parchment seal mark with crimson rings"
+    },
+    {
+      "path": "08-ai-generated/wordmark-lockup.jpg",
+      "alt": "AI reference: horizontal wordmark lockup"
+    },
+    {
+      "path": "08-ai-generated/og-the-record.jpg",
+      "alt": "AI reference: The Record social banner"
+    },
+    {
+      "path": "08-ai-generated/avatar-crimson.jpg",
+      "alt": "AI reference: crimson avatar with white V"
+    }
+  ]
+}

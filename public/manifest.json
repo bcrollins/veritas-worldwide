@@ -20,13 +20,31 @@
       "purpose": "any"
     },
     {
-      "src": "/brand-kit/logo-mark.svg",
+      "src": "/brand-kit/02-icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/brand-kit/02-icons/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand-kit/02-icons/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/brand-kit/01-logos/logo-mark.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "maskable"
     },
     {
-      "src": "/brand-kit/social-profile.svg",
+      "src": "/brand-kit/04-social/social-profile.svg",
       "sizes": "400x400",
       "type": "image/svg+xml"
     }

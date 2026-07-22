@@ -168,7 +168,11 @@ export default function AdminDashboard() {
           </Link>
           <Link to="/admin/media" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Media Library
-          </Link>          <Link to="/admin/social" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
+          </Link>
+          <Link to="/admin/brand-kit" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-crimson/10 text-crimson font-sans text-xs tracking-wide rounded hover:bg-crimson/20 transition-colors">
+            Brand Kit Download
+          </Link>
+          <Link to="/admin/social" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Social Packs
           </Link>
           <Link to="/admin/social-hub" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">

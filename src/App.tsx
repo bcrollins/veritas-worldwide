@@ -63,6 +63,7 @@ const SupportSuccessPage = lazy(() => import('./pages/SupportSuccessPage'))
 const BibleHistoryPage = lazy(() => import('./pages/BibleHistoryPage'))
 const BernieShowPage = lazy(() => import('./pages/BernieShowPage'))
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'))
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'))
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
@@ -73,6 +74,7 @@ const AdminContent = lazy(() => import('./pages/admin/AdminContent'))
 const AdminSocialPacks = lazy(() => import('./pages/admin/AdminSocialPacks'))
 const AdminSocialHub = lazy(() => import('./pages/admin/AdminSocialHub'))
 const AdminDisputes = lazy(() => import('./pages/admin/AdminDisputes'))
+const AdminBrandKit = lazy(() => import('./pages/admin/AdminBrandKit'))
 
 type ShellLink = {
   to: string
@@ -876,36 +878,9 @@ export default function App() {
                   <Route path="social" element={<AdminSocialPacks />} />
                   <Route path="social-hub" element={<AdminSocialHub />} />
                   <Route path="disputes" element={<AdminDisputes />} />
+                  <Route path="brand-kit" element={<AdminBrandKit />} />
                 </Route>
-                <Route
-                  path="*"
-                  element={
-                    <div className="mx-auto max-w-3xl px-6 py-20 text-center">
-                      <p className="mb-6 font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson">
-                        Document Not Found
-                      </p>
-                      <h1 className="mb-4 font-display text-6xl font-bold text-ink md:text-8xl">404</h1>
-                      <div className="mb-6 flex items-center justify-center gap-4">
-                        <div className="h-[1px] w-12 bg-crimson" />
-                        <p className="font-body text-lg italic text-ink-muted">
-                          This page is not part of the record.
-                        </p>
-                        <div className="h-[1px] w-12 bg-crimson" />
-                      </div>
-                      <p className="mx-auto mb-10 max-w-md font-body text-sm text-ink-faint">
-                        The page you requested does not exist, may have been moved, or is not yet published.
-                      </p>
-                      <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                        <Link to="/" className="rounded-sm bg-crimson px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-crimson-dark">
-                          Return to The Record
-                        </Link>
-                        <Link to="/search" className="rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson">
-                          Search All Chapters
-                        </Link>
-                      </div>
-                    </div>
-                  }
-                />
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </Suspense>
           </ErrorBoundary>

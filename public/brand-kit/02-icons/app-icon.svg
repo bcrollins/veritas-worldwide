@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Veritas Worldwide app icon">
+  <rect width="512" height="512" rx="96" fill="#8B1A1A"/>
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#FFFFFF" stroke-width="14"/>
+  <path d="M148 150 L186 150 C190 150 193 152 195 156 L250 320 L256 336 L262 320 L317 156 C319 152 322 150 326 150 L364 150 C369 150 372 153 370 158 L270 374 C266 384 256 390 256 390 C256 390 246 384 242 374 L142 158 C140 153 143 150 148 150 Z" fill="#FFFFFF"/>
+  <rect x="140" y="144" width="60" height="8" rx="1.5" fill="#FFFFFF"/>
+  <rect x="312" y="144" width="60" height="8" rx="1.5" fill="#FFFFFF"/>
+</svg>

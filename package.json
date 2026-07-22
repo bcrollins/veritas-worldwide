@@ -13,6 +13,7 @@
     "export:profiles-corpus": "node scripts/export-profiles-corpus.mjs",
     "export:news-meta": "node scripts/export-news-meta.mjs",
     "export:rss-feed": "node scripts/export-rss-feed.mjs",
+    "generate:brand-kit": "node scripts/generate-brand-kit.mjs",
     "start": "node server.js",
     "preview": "node ./node_modules/vite/bin/vite.js preview",
     "verify:auth": "node scripts/verify-auth-flows.mjs",
@@ -59,7 +60,8 @@
     "verify:csp-meta": "node scripts/verify-csp-meta.mjs",
     "verify:trust-corpora-links": "node scripts/verify-trust-corpora-links.mjs",
     "verify:profile-counters": "node scripts/verify-profile-counters.mjs",
-    "verify:pure": "node scripts/verify-pure.mjs"
+    "verify:pure": "node scripts/verify-pure.mjs",
+    "verify:brand-kit": "node scripts/verify-brand-kit.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

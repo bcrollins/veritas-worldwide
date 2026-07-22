@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="720" viewBox="0 0 600 720" role="img" aria-label="Veritas Worldwide Press stacked">
+  <rect width="600" height="720" fill="#FAF8F5"/>
+  <g transform="translate(150,80)">
+    <circle cx="150" cy="150" r="130" fill="none" stroke="#8B1A1A" stroke-width="8"/>
+    <circle cx="150" cy="150" r="116" fill="none" stroke="#8B1A1A" stroke-width="2.5" opacity="0.85"/>
+    <path d="M58 68 L88 68 C91 68 94 70 95 73 L145 220 L150 234 L155 220 L205 73 C206 70 209 68 212 68 L242 68 C246 68 249 71 247 75 L162 252 C159 260 150 266 150 266 C150 266 141 260 138 252 L53 75 C51 71 54 68 58 68 Z" fill="#1A1A1A"/>
+    <rect x="52" y="62" width="50" height="7" rx="1" fill="#1A1A1A"/>
+    <rect x="198" y="62" width="50" height="7" rx="1" fill="#1A1A1A"/>
+  </g>
+  <text x="300" y="480" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" letter-spacing="10" fill="#1A1A1A">VERITAS</text>
+  <line x1="180" y1="510" x2="420" y2="510" stroke="#8B1A1A" stroke-width="1.5"/>
+  <text x="300" y="545" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="6" fill="#666666">WORLDWIDE PRESS</text>
+  <text x="300" y="590" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" letter-spacing="3" fill="#666666">THE DOCUMENTARY RECORD</text>
+</svg>

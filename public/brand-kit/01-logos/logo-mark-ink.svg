@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Veritas Worldwide mark">
   <rect width="512" height="512" fill="#FAF8F5"/>
-  <circle cx="256" cy="256" r="210" fill="none" stroke="#8B1A1A" stroke-width="10"/>
-  <circle cx="256" cy="256" r="192" fill="none" stroke="#8B1A1A" stroke-width="3" opacity="0.85"/>
-  <circle cx="256" cy="256" r="178" fill="none" stroke="#8B1A1A" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#1A1A1A" stroke-width="10"/>
+  <circle cx="256" cy="256" r="192" fill="none" stroke="#1A1A1A" stroke-width="3" opacity="0.85"/>
+  <circle cx="256" cy="256" r="178" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity="0.55"/>
   <!-- Angular serif V -->
   <path d="M118 128 L156 128 C160 128 163 130 165 134 L250 348 L256 364 L262 348 L347 134 C349 130 352 128 356 128 L394 128 C399 128 402 131 400 136 L270 402 C266 412 256 418 256 418 C256 418 246 412 242 402 L112 136 C110 131 113 128 118 128 Z" fill="#1A1A1A"/>
   <!-- Serif caps -->
