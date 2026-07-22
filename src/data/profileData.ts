@@ -1,16 +1,24 @@
 // Type definitions for power profiles
-import type { DocumentedFalsehood } from '../lib/integrityScore'
-export type { DocumentedFalsehood, FalsehoodSeverity } from '../lib/integrityScore'
-export {
-  computeIntegrityScore,
-  getScoredFalsehoods,
-  FALSEHOOD_SEVERITY_DEDUCTION,
-  INTEGRITY_SCORE_MAX,
-} from '../lib/integrityScore'
-
 export type ProfileCategory = 'politician' | 'billionaire' | 'lobbyist' | 'intel' | 'media' | 'corporate' | 'foreign-agent'
 export type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
 export type Party = 'D' | 'R' | 'I' | 'N/A'
+export type FalsehoodSeverity = 'minor' | 'material' | 'egregious'
+
+/** Dual-cited public falsehood for Integrity Score dockets (see src/lib/integrityScore.ts). */
+export interface DocumentedFalsehood {
+  id: string
+  statement: string
+  saidAt: string
+  context: string
+  whyFalse: string
+  correction: string
+  statementSource: string
+  statementUrl: string
+  debunkSource: string
+  debunkUrl: string
+  severity: FalsehoodSeverity
+  tier: 'verified' | 'circumstantial' | 'disputed'
+}
 
 export interface SourcedClaim {
   claim: string
@@ -7021,6 +7029,26 @@ export const PROFILES: PowerProfile[] = [
       'June 2024 — Publicly discussed as Trump VP short-list candidate',
       'September 5, 2024 — CLC files OCE ethics complaint (108 trades, up to $1.6M)',
       '2025 — Announces 2026 Florida gubernatorial candidacy; large state PAC fundraising reported',
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'donalds-jim-crow-black-families-2024',
+        statement:
+          'Claimed that "during Jim Crow, the Black family was together" and that more Black people "voted conservatively" in that era — framing segregation-era family structure as a positive contrast to the present.',
+        saidAt: 'June 4, 2024',
+        context:
+          'Pro-Trump event in Philadelphia; remarks widely reported; Congressional Black Caucus demanded an apology.',
+        whyFalse:
+          'The claim omits that Jim Crow was a system of legal racial terror, disenfranchisement, and economic subordination. PolitiFact and historical consensus document that Black Americans were systematically barred from the ballot and subjected to segregationist violence — not a period of conservative electoral strength or voluntary family "intactness" separable from that coercion.',
+        correction:
+          'Jim Crow enforced racial hierarchy through law and violence; it is not an evidence-based model of healthy Black family life or conservative voting power. Full franchise and legal equality came later via civil-rights legislation.',
+        statementSource: 'Washington Post reporting of Donalds remarks',
+        statementUrl: 'https://www.washingtonpost.com/politics/2024/06/05/byron-donalds-black-families-jim-crow/',
+        debunkSource: 'PolitiFact fact-check of Jim Crow comments',
+        debunkUrl: 'https://www.politifact.com/article/2024/jun/10/fact-checking-byron-donalds-jim-crow-comments/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Congressional Site', url: 'https://donalds.house.gov' },

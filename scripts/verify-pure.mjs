@@ -29,6 +29,7 @@ const pure = [
   'verify-byron-donalds-profile.mjs',
   'verify-seo-meta.mjs',
   'verify-brand-kit.mjs',
+  'verify-integrity-score.mjs',
 ]
 
 let failed = 0
@@ -36,7 +37,7 @@ for (const script of pure) {
   const r = spawnSync(process.execPath, [join(root, 'scripts', script)], { stdio: 'inherit' })
   if (r.status !== 0) failed += 1
 }
-if (pure.length < 20) {
+if (pure.length < 22) {
   console.error(`[verify:pure] FAIL — suite list shrunk to ${pure.length}`)
   process.exit(1)
 }

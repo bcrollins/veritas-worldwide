@@ -49,6 +49,7 @@
     "verify:byron-donalds": "node scripts/verify-byron-donalds-profile.mjs",
     "verify:alan-dershowitz": "node scripts/verify-alan-dershowitz-profile.mjs",
     "verify:dropcap-pdf": "node scripts/verify-dropcap-pdf.mjs",
+    "verify:integrity-score": "node scripts/verify-integrity-score.mjs",
     "verify:image-sources": "node scripts/verify-image-sources.mjs",
     "verify:search-scoring": "node scripts/verify-search-scoring.mjs",
     "verify:archive-manifest": "node scripts/verify-archive-manifest.mjs",
@@ -61,6 +62,7 @@
     "verify:trust-corpora-links": "node scripts/verify-trust-corpora-links.mjs",
     "verify:profile-counters": "node scripts/verify-profile-counters.mjs",
     "verify:seo-meta": "node scripts/verify-seo-meta.mjs",
+    "verify:integrity-score": "node scripts/verify-integrity-score.mjs",
     "verify:pure": "node scripts/verify-pure.mjs",
     "verify:brand-kit": "node scripts/verify-brand-kit.mjs"
   },
