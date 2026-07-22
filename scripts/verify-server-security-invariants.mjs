@@ -502,8 +502,8 @@ for (const pureScript of [
   assert(verifyPure.includes(pureScript), `verify:pure must include ${pureScript}`)
 }
 const pureScriptCount = (verifyPure.match(/verify-[a-z0-9-]+\.mjs/g) || []).length
-assert(pureScriptCount >= 9, 'verify:pure must list at least 9 pure scripts')
-assert(pureScriptCount === 9, `verify:pure must stay at exactly 9 pure scripts (got ${pureScriptCount})`)
+assert(pureScriptCount >= 10, 'verify:pure must list at least 10 pure scripts')
+assert(pureScriptCount === 10, `verify:pure must stay at exactly 10 pure scripts (got ${pureScriptCount})`)
 assert(
   typeof packageJson.dependencies?.react === 'string' &&
     /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies.react.replace(/^\^/, '')),
