@@ -535,17 +535,23 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
   {
     profileId: 'josh-gottheimer',
     name: 'Josh Gottheimer',
-    role: 'U.S. Representative (D-NJ); Democratic Majority for Israel co-founder network',
+    role: 'U.S. Representative (D-NJ-5); Problem Solvers Caucus; top House Democrat pro-Israel PAC recipient',
     category: 'us-congress',
     enablementSummary:
-      'House Democrat closely aligned with pro-Israel PACs and Democratic Majority for Israel; consistent floor advocate for unconditional wartime aid and opponent of progressive conditionality efforts during the Gaza war.',
+      'Among the highest career House Democratic recipients of pro-Israel PAC money (~$892k OpenSecrets). Co-founder of Problem Solvers Caucus. Leading floor Democrat framing Israel support as bipartisan consensus and opposing progressive wartime-aid conditionality — the Democratic-side enablement complement to Freedom Caucus Republican orthodoxy.',
     relatedTimelineYears: ['2021', '2023', '2024'],
-    relatedIncidentIds: ['guardian-of-the-walls-2021', 'protective-edge-2014-children'],
-    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'pro-israel-lobby-2024'],
+    relatedIncidentIds: ['guardian-of-the-walls-2021', 'protective-edge-2014-children', 'jabalia-refugee-camp'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'pro-israel-lobby-2024', 'iron-dome', 'fmf-weapons'],
     fundingLinks: [
       {
-        label: 'OpenSecrets — Gottheimer pro-Israel PAC summary',
+        label: 'OpenSecrets — Gottheimer pro-Israel PAC career total',
+        amount: '~$892k',
         sourceUrl: 'https://www.opensecrets.org/members-of-congress/josh-gottheimer/summary?cid=N00036944',
+      },
+      {
+        label: 'House Clerk — H.R. 8034 Israel Security Supplemental (Vote 143)',
+        amount: 'YES (bill 366–58)',
+        sourceUrl: 'https://clerk.house.gov/Votes/2024143',
       },
       {
         label: 'OpenSecrets — Democratic Majority for Israel PAC',
