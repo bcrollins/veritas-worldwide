@@ -17,7 +17,7 @@ interface ImageWithFallbackProps extends ImgHTMLAttributes<HTMLImageElement> {
  * ImageWithFallback Component
  * Handles image loading with fallback support, retry logic, and error tracking
  * Features:
- * - Automatic retry using Wikimedia Commons thumbnail proxy
+ * - Refuses Wikimedia hotlinks via getPreferredImageSrc (CSP + 400-safe)
  * - Loading skeleton during image load
  * - Fade-in transition on successful load
  * - Global tracking of broken images
@@ -32,31 +32,37 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   className = '',
   ...props
 }) => {
-  const normalizedSrc = getPreferredImageSrc(src);
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  const preferredSrc = getPreferredImageSrc(src);
+  // Prefer first-party preferred URL; fall back to explicit fallbackSrc; never load raw wiki.
+  const normalizedSrc = preferredSrc || (fallbackSrc ? getPreferredImageSrc(fallbackSrc) || fallbackSrc : undefined);
+  const [isLoading, setIsLoading] = useState(Boolean(normalizedSrc));
+  const [hasError, setHasError] = useState(!normalizedSrc && Boolean(src));
   const [currentSrc, setCurrentSrc] = useState(normalizedSrc);
   const [retryAttempts, setRetryAttempts] = useState(0);
 
   useEffect(() => {
-    setCurrentSrc(normalizedSrc);
-    setIsLoading(Boolean(src));
-    setHasError(false);
+    const preferred = getPreferredImageSrc(src);
+    const next = preferred || (fallbackSrc ? getPreferredImageSrc(fallbackSrc) || fallbackSrc : undefined);
+    setCurrentSrc(next);
+    setIsLoading(Boolean(next));
+    setHasError(!next && Boolean(src));
     setRetryAttempts(0);
 
-    if (typeof window === 'undefined' || !src) return;
+    if (typeof window === 'undefined' || !src || !next) return;
 
     try {
       const overrides = JSON.parse(
         localStorage.getItem('veritas_image_overrides') || '{}'
       );
-      if (overrides[src]) {
+      if (overrides[src] && getPreferredImageSrc(overrides[src])) {
         setCurrentSrc(overrides[src]);
+        setHasError(false);
+        setIsLoading(true);
       }
     } catch {
       // localStorage parsing error, continue with normalized src
     }
-  }, [normalizedSrc, src]);
+  }, [src, fallbackSrc]);
 
   const handleError = () => {
     if (retryAttempts < retryCount && normalizedSrc && currentSrc !== normalizedSrc) {
