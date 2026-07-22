@@ -8,35 +8,9 @@
  * Editorial rule: disputed or opinion claims never affect the score.
  */
 
-export type FalsehoodSeverity = 'minor' | 'material' | 'egregious'
+import type { DocumentedFalsehood, FalsehoodSeverity } from '../data/profileData'
 
-/** Dual-cited public falsehood suitable for the integrity docket. */
-export interface DocumentedFalsehood {
-  /** Stable id for deep-links / keys */
-  id: string
-  /** What they said (verbatim or tightly attributed paraphrase) */
-  statement: string
-  /** When the statement was made */
-  saidAt: string
-  /** Venue / audience / campaign context */
-  context: string
-  /** Why the statement is false (factual contradiction) */
-  whyFalse: string
-  /** Concise truth statement */
-  correction: string
-  /** Source documenting the original statement */
-  statementSource: string
-  statementUrl: string
-  /** Source documenting the contradiction / debunk */
-  debunkSource: string
-  debunkUrl: string
-  severity: FalsehoodSeverity
-  /**
-   * Only `verified` entries reduce the score.
-   * Circumstantial/disputed may be stored for research but are ignored by scoring.
-   */
-  tier: 'verified' | 'circumstantial' | 'disputed'
-}
+export type { DocumentedFalsehood, FalsehoodSeverity }
 
 export const FALSEHOOD_SEVERITY_DEDUCTION: Record<FalsehoodSeverity, number> = {
   minor: 8,
@@ -121,15 +95,15 @@ export function computeIntegrityScore(
 export function integrityBandColor(band: IntegrityScoreResult['band']): string {
   switch (band) {
     case 'high':
-      return '#166534' // green-800
+      return '#166534'
     case 'moderate':
-      return '#92400E' // amber-800
+      return '#92400E'
     case 'low':
-      return '#9A3412' // orange-800
+      return '#9A3412'
     case 'critical':
-      return '#991B1B' // red-800
+      return '#991B1B'
     default:
-      return '#6B7280' // gray
+      return '#6B7280'
   }
 }
 

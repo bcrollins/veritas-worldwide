@@ -10,7 +10,15 @@ import {
   getProfileBySlug,
   getProfilePhoto,
   searchProfiles,
-} from '../data/profileData';
+} from '../data/profileData'
+import {
+  computeIntegrityScore,
+  integrityBandBg,
+  integrityBandColor,
+  FALSEHOOD_SEVERITY_DEDUCTION,
+  type DocumentedFalsehood,
+  type IntegrityScoreResult,
+} from '../lib/integrityScore'
 import {
   setMetaTags,
   clearMetaTags,
@@ -43,11 +51,12 @@ const PARTY_COLORS: Record<string, string> = {
   'N/A': '#6B7280',
 };
 
-const SECTION_IDS = ['overview', 'claims', 'donations', 'quotes', 'policy', 'connections'] as const;
+const SECTION_IDS = ['overview', 'integrity', 'claims', 'donations', 'quotes', 'policy', 'connections'] as const;
 type SectionId = typeof SECTION_IDS[number];
 
 const SECTION_LABELS: Record<SectionId, string> = {
   overview: 'Overview',
+  integrity: 'Integrity Docket',
   claims: 'Sourced Claims',
   donations: 'Donations',
   quotes: 'Quotes',
@@ -168,6 +177,200 @@ function StatCounter({ end, label, prefix = '', suffix = '' }: {
       <p className="font-sans text-xs text-ink-muted uppercase tracking-wider mt-1">{label}</p>
     </div>
   );
+}
+
+function severityLabel(s: DocumentedFalsehood['severity']): string {
+  if (s === 'egregious') return 'Egregious (−25)'
+  if (s === 'material') return 'Material (−15)'
+  return 'Minor (−8)'
+}
+
+/** Clickable integrity score — opens full falsehood docket. */
+function IntegrityScoreControl({
+  result,
+  onOpen,
+}: {
+  result: IntegrityScoreResult
+  onOpen: () => void
+}) {
+  const scored = result.score != null
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      className={`text-center w-full rounded-sm border px-2 py-3 min-h-[88px] transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson ${integrityBandBg(result.band)}`}
+      aria-label={
+        scored
+          ? `Integrity score ${result.score} out of 100. ${result.label}. Click to view documented falsehoods.`
+          : 'Integrity score not yet compiled for this profile. Click for methodology.'
+      }
+    >
+      <p
+        className="font-display text-3xl md:text-4xl font-bold tabular-nums"
+        style={scored ? { color: integrityBandColor(result.band) } : undefined}
+      >
+        {scored ? result.score : '—'}
+      </p>
+      <p className="font-sans text-xs uppercase tracking-wider mt-1 font-bold">
+        Integrity Score
+      </p>
+      <p className="font-sans text-[0.65rem] mt-0.5 opacity-80">
+        {result.label} · tap for docket
+      </p>
+    </button>
+  )
+}
+
+function IntegrityDocketModal({
+  name,
+  result,
+  onClose,
+}: {
+  name: string
+  result: IntegrityScoreResult
+  onClose: () => void
+}) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKey)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prev
+    }
+  }, [onClose])
+
+  return (
+    <div
+      className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center p-0 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="integrity-docket-title"
+    >
+      <button
+        type="button"
+        className="absolute inset-0 bg-obsidian/50 backdrop-blur-sm"
+        aria-label="Close integrity docket"
+        onClick={onClose}
+      />
+      <div className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-t-lg sm:rounded-sm border border-border bg-parchment shadow-2xl">
+        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-border bg-parchment/95 px-5 py-4 backdrop-blur">
+          <div>
+            <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.16em] text-crimson">
+              Public-record integrity docket
+            </p>
+            <h2 id="integrity-docket-title" className="font-display text-xl md:text-2xl font-bold text-ink mt-1">
+              {name}
+            </h2>
+            <p className="font-body text-sm text-ink-muted mt-1">
+              {result.hasDocket ? (
+                <>
+                  Score{' '}
+                  <strong className="text-ink tabular-nums">{result.score}/100</strong>
+                  {' · '}
+                  {result.label}
+                  {result.totalDeduction > 0 ? ` · −${result.totalDeduction} pts` : ''}
+                </>
+              ) : (
+                'No compiled docket yet — score withheld (not a perfect 100).'
+              )}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm border border-border text-ink-muted hover:text-crimson hover:border-crimson"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div className="px-5 py-4 space-y-4">
+          <p className="font-body text-xs text-ink-muted leading-relaxed border border-border bg-surface p-3 rounded-sm">
+            Only <strong className="text-ink">verified</strong> public falsehoods reduce the score
+            (minor −{FALSEHOOD_SEVERITY_DEDUCTION.minor}, material −{FALSEHOOD_SEVERITY_DEDUCTION.material}, egregious −
+            {FALSEHOOD_SEVERITY_DEDUCTION.egregious}). Each entry requires the original statement source and an
+            independent contradiction source. Opinion, spin without a hard factual contradiction, and unproven
+            allegations do not count.
+          </p>
+
+          {!result.hasDocket && (
+            <p className="font-body text-sm text-ink">
+              Editors have not yet compiled a dual-cited falsehood docket for this profile. When researched, the
+              score will appear here with full citations.
+            </p>
+          )}
+
+          {result.hasDocket && result.scoredFalsehoods.length === 0 && (
+            <p className="font-body text-sm text-ink">
+              Docket compiled: no verified public falsehoods on file. Score remains 100 until a dual-cited entry
+              is added.
+            </p>
+          )}
+
+          {result.scoredFalsehoods.map((f) => (
+            <article
+              key={f.id}
+              id={`falsehood-${f.id}`}
+              className="border border-border rounded-sm bg-surface-raised p-4 space-y-3"
+            >
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center px-2 py-0.5 rounded-sm text-[0.6rem] font-bold uppercase tracking-wider border border-disputed-border bg-disputed-bg text-disputed">
+                  {severityLabel(f.severity)}
+                </span>
+                <span className="font-sans text-[0.65rem] text-ink-faint uppercase tracking-wider">
+                  {f.saidAt}
+                </span>
+              </div>
+              <blockquote className="font-body text-sm text-ink leading-relaxed border-l-2 border-crimson pl-3 italic">
+                “{f.statement}”
+              </blockquote>
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.12em] text-ink-faint mb-1">
+                  When / where
+                </p>
+                <p className="font-body text-sm text-ink-muted leading-relaxed">{f.context}</p>
+              </div>
+              <div>
+                <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.12em] text-ink-faint mb-1">
+                  Why it was false
+                </p>
+                <p className="font-body text-sm text-ink leading-relaxed">{f.whyFalse}</p>
+              </div>
+              <div className="rounded-sm bg-verified-bg/40 border border-verified-border/40 p-3">
+                <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.12em] text-verified mb-1">
+                  Correction (public record)
+                </p>
+                <p className="font-body text-sm text-ink leading-relaxed">{f.correction}</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2 pt-1">
+                <a
+                  href={f.statementUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-3 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson"
+                >
+                  Statement source → {f.statementSource}
+                </a>
+                <a
+                  href={f.debunkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-3 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson"
+                >
+                  Debunk / primary record → {f.debunkSource}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 /* ── Sub-component: Evidence Tier Badge ─────────────────────── */
@@ -551,6 +754,7 @@ export default function ProfilePage(): React.ReactNode {
   const [error, setError] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<SectionId>('overview');
   const [tierFilter, setTierFilter] = useState<EvidenceTier | 'all'>('all');
+  const [integrityOpen, setIntegrityOpen] = useState(false);
 
   // ── Data Loading ─────────────────────────────────────────────
   useEffect(() => {
@@ -658,12 +862,19 @@ export default function ProfilePage(): React.ReactNode {
     };
   }, [profile]);
 
+  const integrity = useMemo(
+    () => computeIntegrityScore(profile?.documentedFalsehoods),
+    [profile],
+  );
+
   // ── Section config for nav ───────────────────────────────────
   const sections = useMemo(() => {
     if (!profile) return [];
+    const falsehoodCount = integrity.scoredFalsehoods.length
     return SECTION_IDS.map(id => ({
       id,
       count: id === 'overview' ? 0
+        : id === 'integrity' ? (integrity.hasDocket ? Math.max(falsehoodCount, 1) : 0)
         : id === 'claims' ? profile.sourcedClaims.length
         : id === 'donations' ? profile.donations.length
         : id === 'quotes' ? profile.quotes.length
@@ -671,7 +882,7 @@ export default function ProfilePage(): React.ReactNode {
         : id === 'connections' ? profile.connections.length
         : 0,
     })).filter(s => s.id === 'overview' || s.count > 0);
-  }, [profile]);
+  }, [profile, integrity]);
 
   // ── Loading State ────────────────────────────────────────────
   if (loading) {
@@ -812,7 +1023,8 @@ export default function ProfilePage(): React.ReactNode {
       {/* ── Stat Counters Row ─────────────────────────────────── */}
       <div className="border-b border-border bg-parchment">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+            <IntegrityScoreControl result={integrity} onOpen={() => setIntegrityOpen(true)} />
             <StatCounter end={stats.claimCount} label="Sourced Claims" />
             <StatCounter end={stats.totalDonations} label="Documented Funding" prefix="$" />
             <StatCounter end={stats.connectionCount} label="Network Connections" />
@@ -820,6 +1032,14 @@ export default function ProfilePage(): React.ReactNode {
           </div>
         </div>
       </div>
+
+      {integrityOpen && (
+        <IntegrityDocketModal
+          name={profile.name}
+          result={integrity}
+          onClose={() => setIntegrityOpen(false)}
+        />
+      )}
 
       {/* ── Israel Dossier enablement cross-link ──────────────── */}
       {getDossierActorByProfileId(profile.id) && (
@@ -872,6 +1092,65 @@ export default function ProfilePage(): React.ReactNode {
                 </div>
               )}
             </div>
+
+            {/* ── INTEGRITY DOCKET SECTION ────────────────────── */}
+            {integrity.hasDocket && (
+              <>
+                <SectionHeader
+                  id="integrity"
+                  title="Integrity Docket"
+                  count={integrity.scoredFalsehoods.length}
+                />
+                <div className="mb-10 space-y-4">
+                  <div
+                    className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-sm border p-5 ${integrityBandBg(integrity.band)}`}
+                  >
+                    <div>
+                      <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] opacity-80">
+                        Integrity Score
+                      </p>
+                      <p className="font-display text-4xl font-bold tabular-nums mt-1">
+                        {integrity.score}
+                        <span className="text-lg font-sans font-normal opacity-70">/100</span>
+                      </p>
+                      <p className="font-body text-sm mt-1 opacity-90">{integrity.label}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setIntegrityOpen(true)}
+                      className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-obsidian px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson transition-colors"
+                    >
+                      Open full docket →
+                    </button>
+                  </div>
+
+                  {integrity.scoredFalsehoods.length === 0 ? (
+                    <p className="font-body text-sm text-ink-muted">
+                      Editors compiled a docket for this profile and found no dual-cited verified public
+                      falsehoods on file.
+                    </p>
+                  ) : (
+                    integrity.scoredFalsehoods.map((f) => (
+                      <button
+                        key={f.id}
+                        type="button"
+                        onClick={() => setIntegrityOpen(true)}
+                        className="w-full text-left border border-border rounded-sm bg-parchment p-4 hover:border-crimson transition-colors min-h-[44px]"
+                      >
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="text-[0.6rem] font-bold uppercase tracking-wider text-disputed">
+                            {severityLabel(f.severity)}
+                          </span>
+                          <span className="text-[0.65rem] text-ink-faint">{f.saidAt}</span>
+                        </div>
+                        <p className="font-body text-sm text-ink italic line-clamp-2">“{f.statement}”</p>
+                        <p className="font-sans text-xs text-crimson mt-2">View sources &amp; correction →</p>
+                      </button>
+                    ))
+                  )}
+                </div>
+              </>
+            )}
 
             {/* ── SOURCED CLAIMS SECTION ──────────────────────── */}
             {profile.sourcedClaims.length > 0 && (

@@ -506,8 +506,8 @@ for (const pureScript of [
   assert(verifyPure.includes(pureScript), `verify:pure must include ${pureScript}`)
 }
 const pureScriptCount = (verifyPure.match(/verify-[a-z0-9-]+\.mjs/g) || []).length
-assert(pureScriptCount >= 20, 'verify:pure must list at least 20 pure scripts')
-assert(pureScriptCount === 20, `verify:pure must stay at exactly 20 pure scripts (got ${pureScriptCount})`)
+assert(pureScriptCount >= 22, 'verify:pure must list at least 22 pure scripts')
+assert(pureScriptCount === 22, `verify:pure must stay at exactly 22 pure scripts (got ${pureScriptCount})`)
 assert(verifyPure.includes('verify-profile-images.mjs'), 'verify:pure must include profile-images')
 assert(verifyPure.includes('verify-image-sources.mjs'), 'verify:pure must include image-sources')
 assert(verifyPure.includes('verify-structured-data.mjs'), 'verify:pure must include structured-data')
@@ -516,6 +516,8 @@ assert(verifyPure.includes('verify-profile-counters.mjs'), 'verify:pure must inc
 assert(verifyPure.includes('verify-dropcap-pdf.mjs'), 'verify:pure must include dropcap-pdf')
 assert(verifyPure.includes('verify-byron-donalds-profile.mjs'), 'verify:pure must include byron-donalds profile densify')
 assert(verifyPure.includes('verify-seo-meta.mjs'), 'verify:pure must include seo-meta floors')
+assert(verifyPure.includes('verify-brand-kit.mjs'), 'verify:pure must include brand-kit')
+assert(verifyPure.includes('verify-integrity-score.mjs'), 'verify:pure must include integrity-score floors')
 assert(
   typeof packageJson.dependencies?.react === 'string' &&
     /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies.react.replace(/^\^/, '')),

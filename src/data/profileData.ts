@@ -6987,26 +6987,6 @@ export const PROFILES: PowerProfile[] = [
         date: '2016–2028 MOU window',
       },
     ],
-    documentedFalsehoods: [
-      {
-        id: 'donalds-jim-crow-2024',
-        statement:
-          'During Jim Crow, the Black family was together… more Black people voted conservatively / were conservative-minded.',
-        saidAt: 'June 4, 2024',
-        context:
-          'Remarks at a pro-Trump event in Philadelphia while being discussed as a potential vice-presidential pick; widely recorded and transcribed by national press.',
-        whyFalse:
-          'The claim presents Jim Crow as a period of intact Black family stability and conservative voting while omitting the defining legal facts of that era: state-enforced racial segregation, disenfranchisement (poll taxes, literacy tests, violence), and systemic suppression of Black political participation. Historians and contemporaneous voting data contradict the implication that Jim Crow was a model of family or civic health for Black Americans. PolitiFact\'s review found the comments omitted essential historical context that reverses the intended political meaning.',
-        correction:
-          'Jim Crow was a system of racial apartheid and disenfranchisement; it is not a documented era of freer conservative Black electoral participation or family "wholeness" produced by segregation law.',
-        statementSource: 'Washington Post contemporaneous report of remarks',
-        statementUrl: 'https://www.washingtonpost.com/politics/2024/06/05/byron-donalds-black-families-jim-crow/',
-        debunkSource: 'PolitiFact fact-check of Jim Crow comments',
-        debunkUrl: 'https://www.politifact.com/article/2024/jun/10/fact-checking-byron-donalds-jim-crow-comments/',
-        severity: 'material',
-        tier: 'verified',
-      },
-    ],
     career: [
       '1978 — Born Brooklyn, NY to Jamaican immigrant parents',
       '1997 — Marijuana possession arrest; pre-trial diversion (charges dropped)',
