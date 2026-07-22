@@ -411,6 +411,9 @@ async function runInteractiveChecks(browser) {
       Number(corpus.counts.incidentsByEra['mandate-1948'] || 0) >= 1,
       'corpus.json incidentsByEra missing mandate-1948 floor',
     )
+    assert(corpus?.counts?.incidentsByTier?.verified >= 1, 'corpus.json missing incidentsByTier.verified')
+    assert(Number(corpus.counts.childrenTagged || 0) >= 1, 'corpus.json missing childrenTagged floor')
+    assert(Number(corpus.counts.civiliansTagged || 0) >= 1, 'corpus.json missing civiliansTagged floor')
 
     // Deep-link surface: actor query opens enablement panel
     await gotoAndDismiss(page, `${baseUrl}/israel-dossier?actor=joe-biden`)

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T21:00:12.435Z",
+  "generatedAt": "2026-07-22T21:15:46.936Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -18,6 +18,12 @@
       "blockade-2007-2023": 18,
       "post-oct7": 17
     },
+    "incidentsByTier": {
+      "verified": 55,
+      "circumstantial": 2
+    },
+    "childrenTagged": 49,
+    "civiliansTagged": 56,
     "actorsByCategory": {
       "us-executive": 10,
       "us-congress": 23,

@@ -126,6 +126,16 @@ async function main() {
     actorsByCategory[actor.category] = (actorsByCategory[actor.category] || 0) + 1
   }
 
+  const incidentsByTier = { verified: 0, circumstantial: 0 }
+  let childrenTagged = 0
+  let civiliansTagged = 0
+  for (const incident of incidents) {
+    if (incident.tier === 'verified') incidentsByTier.verified += 1
+    else if (incident.tier === 'circumstantial') incidentsByTier.circumstantial += 1
+    if (incident.targetsChildren) childrenTagged += 1
+    if (incident.targetsCivilians) civiliansTagged += 1
+  }
+
   const corpus = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
@@ -141,6 +151,9 @@ async function main() {
       legalCases: (canon.ISRAEL_DOSSIER_LEGAL_CASES || []).length,
       lobbyingRecords: (canon.ISRAEL_DOSSIER_LOBBYING_DATA || []).length,
       incidentsByEra,
+      incidentsByTier,
+      childrenTagged,
+      civiliansTagged,
       actorsByCategory,
     },
     publicRecords: canon.ISRAEL_DOSSIER_LATEST_PUBLIC_RECORDS,
