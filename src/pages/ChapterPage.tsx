@@ -30,6 +30,7 @@ import InterpretationBoundaryNotice from '../components/InterpretationBoundaryNo
 import { getChapterImages } from '../data/chapterImages'
 import { getTopicHrefForTerm, getTopicHubsForChapter } from '../data/topicHubs'
 import { ImageWithFallback } from '../components/ImageWithFallback'
+import DropCapParagraph from '../components/DropCapParagraph'
 import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiagram } from '../components/Diagrams'
 import { scoreContentGateHit } from '../lib/leadScoring'
 import { getEvidenceCounts } from '../lib/evidenceSummary'
@@ -149,11 +150,7 @@ function HeroImage({ image }: { image: ImageData }) {
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
     case 'dropcap':
-      return (
-        <p className="article-body drop-cap mb-6">
-          {block.text}
-        </p>
-      )
+      return <DropCapParagraph text={block.text || ''} />
 
     case 'text':
       return (

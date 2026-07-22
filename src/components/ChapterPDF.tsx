@@ -5,6 +5,7 @@
 import { useState } from 'react'
 import type { Chapter, ContentBlock } from '../data/chapterTypes'
 import { trackDownload } from '../lib/ga4'
+import { writeDropCapParagraph } from '../lib/pdfDropCap'
 
 interface Props {
   chapter: Chapter
@@ -116,8 +117,30 @@ export default function ChapterPDF({ chapter }: Props) {
 
       function renderBlock(block: ContentBlock) {
         switch (block.type) {
-          case 'text':
           case 'dropcap': {
+            checkSpace(22)
+            const result = writeDropCapParagraph({
+              doc,
+              text: block.text || '',
+              x: ML,
+              y,
+              maxWidth: CW,
+              bodyFontSize: 10,
+              bodyLineHeight: 5.5,
+              dropFontSize: 34,
+              wrapLines: 3,
+              bodyFont: 'times',
+              dropFont: 'times',
+              ensureSpace: (needed, currentY) => {
+                y = currentY
+                checkSpace(needed)
+                return y
+              },
+            })
+            y = result.y + 4
+            break
+          }
+          case 'text': {
             checkSpace(6)
             doc.setTextColor(26, 26, 26)
             wrapText(block.text || '', 10, 5.5)

@@ -6,6 +6,7 @@ import { CATEGORY_META, type Article } from '../data/articles'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import DownloadModal from '../components/DownloadModal'
 import { ImageWithFallback } from '../components/ImageWithFallback'
+import DropCapParagraph from '../components/DropCapParagraph'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
 import {
   getReaderOverviewStats,
@@ -518,7 +519,14 @@ export default function ReadTheBookPage() {
               {chapter && chapter.content.map((block, idx) => {
                 switch (block.type) {
                   case 'dropcap':
-                    return <p key={idx} className="font-body leading-relaxed mb-6 first-letter:text-5xl first-letter:font-display first-letter:font-bold first-letter:text-crimson first-letter:float-left first-letter:mr-2 first-letter:mt-1" style={{ fontSize: 'inherit' }}>{block.text}</p>
+                    return (
+                      <DropCapParagraph
+                        key={idx}
+                        text={block.text || ''}
+                        className="font-body leading-relaxed"
+                        style={{ fontSize: 'inherit' }}
+                      />
+                    )
                   case 'text':
                     return <p key={idx} className="font-body leading-relaxed mb-6 text-ink" style={{ fontSize: 'inherit' }}>{block.text}</p>
                   case 'heading':

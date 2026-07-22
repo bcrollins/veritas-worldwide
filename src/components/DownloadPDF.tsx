@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { writeDropCapParagraph } from '../lib/pdfDropCap';
 
 export default function DownloadPDF() {
   const [generating, setGenerating] = useState(false);
@@ -300,7 +301,29 @@ export default function DownloadPDF() {
         // ── Content blocks ──
         for (const block of ch.content) {
           switch (block.type) {
-            case 'dropcap':
+            case 'dropcap': {
+              checkPage(24);
+              const result = writeDropCapParagraph({
+                doc,
+                text: block.text || '',
+                x: marginLeft,
+                y,
+                maxWidth: contentWidth,
+                bodyFontSize: 9.5,
+                bodyLineHeight: bodyLH,
+                dropFontSize: 32,
+                wrapLines: 3,
+                bodyFont: 'times',
+                dropFont: 'times',
+                ensureSpace: (needed, currentY) => {
+                  y = currentY;
+                  checkPage(needed);
+                  return y;
+                },
+              });
+              y = result.y + 3;
+              break;
+            }
             case 'text':
               doc.setTextColor(30, 30, 30);
               writeWrapped(block.text || '', 9.5, 'normal', bodyLH);

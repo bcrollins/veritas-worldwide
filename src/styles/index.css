@@ -120,22 +120,71 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-/* Drop cap */
+/* Drop cap — span-based (DropCapParagraph). Avoid ::first-letter alone:
+   variable article font-size + float metrics caused crimson letter to overlap
+   following lines ("B" over "efore proceeding"). */
+.drop-cap-paragraph {
+  /* Create BFC so float is contained and does not collide with next siblings */
+  display: flow-root;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.drop-cap-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.65rem;
+  /* ≥ 3 body lines: body 1.125rem × 1.8 LH × 3 ≈ 6.075rem; letter box ~3.3rem visual */
+  line-height: 0.88;
+  color: var(--color-crimson);
+  padding: 0.05em 0.18em 0.02em 0;
+  margin: 0.04em 0.06em 0 0;
+  /* Prevent subpixel collision with body glyphs */
+  shape-outside: margin-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 640px) {
+  .drop-cap-letter {
+    font-size: 4.35rem;
+    padding-right: 0.22em;
+    margin-right: 0.08em;
+  }
+}
+
+/* Legacy class: rewrite to span styles if any markup still uses bare .drop-cap */
+.drop-cap {
+  display: flow-root;
+}
+
 .drop-cap::first-letter {
   float: left;
   font-family: var(--font-display);
-  font-size: 3.5rem;
-  line-height: 0.8;
-  padding-right: 0.4rem;
-  padding-top: 0.15rem;
+  font-size: 3.65rem;
+  line-height: 0.88;
+  padding-right: 0.5rem;
+  padding-top: 0.08rem;
+  margin-right: 0.08rem;
   color: var(--color-crimson);
   font-weight: 700;
 }
 
 @media (min-width: 640px) {
   .drop-cap::first-letter {
-    font-size: 4.5rem;
-    padding-right: 0.5rem;
+    font-size: 4.35rem;
+    padding-right: 0.55rem;
+  }
+}
+
+/* Print: keep drop caps crisp and non-overlapping */
+@media print {
+  .drop-cap-letter,
+  .drop-cap::first-letter {
+    color: #8b1a1a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 
