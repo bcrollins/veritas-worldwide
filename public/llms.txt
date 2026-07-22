@@ -33,10 +33,21 @@ Use the methodology and source pages when answering questions about evidence, so
 ## Current reporting (primary-source news)
 
 - [News index](https://veritasworldwide.com/news): Current reporting built from government and institutional primary sources.
+- [News bot meta](https://veritasworldwide.com/news/meta.json): Machine-readable title, description, and first-party hero image for every news desk article.
+- [RSS feed](https://veritasworldwide.com/feed.xml): Archive chapters plus current-events news items with hero image enclosures.
 - [Election security and AI risk frameworks](https://veritasworldwide.com/news/election-security-ai-risk-frameworks-cisa-nist-2026): CISA election-security guidance and the NIST AI Risk Management Framework as the public institutional baseline.
 - [Treasury debt transparency](https://veritasworldwide.com/news/treasury-debt-transparency-fiscaldata-fed-h15-2026): FiscalData Debt-to-the-Penny, Monthly Treasury Statements, Fed H.15, and FOMC materials.
 - [Aviation safety primary records](https://veritasworldwide.com/news/aviation-safety-ntsb-faa-primary-records-2026): NTSB investigation records and FAA public portals for safety claims.
 - [Supreme Court Code of Conduct](https://veritasworldwide.com/news/judicial-ethics-supreme-court-code-of-conduct-primary-2026): The Court's November 13, 2023 Code of Conduct PDF as the primary ethics text.
+- [Federal Reserve holds rates — Iran oil crisis](https://veritasworldwide.com/news/federal-reserve-holds-rates-march-2026-iran-oil-crisis): FOMC decision context against energy-price and inflation primary records.
+- [DOJ Epstein files release](https://veritasworldwide.com/news/doj-releases-3-5-million-pages-epstein-files-2026): Documented scope of the Epstein Files Transparency Act release and privacy failures.
+- [FISA Section 702 reform](https://veritasworldwide.com/news/government-surveillance-reform-act-fisa-section-702-2026): Warrant requirements and sunset pressure on bulk surveillance authorities.
+- [Defense budget $1.5T proposal](https://veritasworldwide.com/news/us-defense-budget-1-5-trillion-2027-proposal): Senate appropriations and reconciliation primary materials.
+- [AIPAC record spending](https://veritasworldwide.com/news/aipac-record-spending-reshaping-congress-2026): FEC-traced super PAC and primary spending.
+- [China tariff escalation](https://veritasworldwide.com/news/trump-tariffs-china-145-percent-trade-war-2026): USTR and tariff-schedule documentation.
+- [Gaza famine / UN-ICC record](https://veritasworldwide.com/news/gaza-famine-humanitarian-crisis-un-icc-2026): UN, ICC, and humanitarian primary-source framing.
+- [Boeing whistleblower / FAA safety](https://veritasworldwide.com/news/boeing-whistleblower-deaths-safety-crisis-faa-2026): FAA and safety-record primary materials.
+- [National debt interest burden](https://veritasworldwide.com/news/national-debt-36-trillion-interest-payments-2026): Treasury and FiscalData debt service records.
 
 ## Investigations & community
 
