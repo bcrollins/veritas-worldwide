@@ -136,6 +136,11 @@ async function main() {
     if (incident.targetsCivilians) civiliansTagged += 1
   }
 
+  const moneyTrailByType = {}
+  for (const node of canon.ISRAEL_DOSSIER_MONEY_TRAIL) {
+    moneyTrailByType[node.type] = (moneyTrailByType[node.type] || 0) + 1
+  }
+
   const corpus = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
@@ -155,6 +160,7 @@ async function main() {
       childrenTagged,
       civiliansTagged,
       actorsByCategory,
+      moneyTrailByType,
     },
     publicRecords: canon.ISRAEL_DOSSIER_LATEST_PUBLIC_RECORDS,
     moneyTrail: canon.ISRAEL_DOSSIER_MONEY_TRAIL,

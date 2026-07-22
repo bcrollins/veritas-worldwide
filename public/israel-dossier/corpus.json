@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T22:33:44.554Z",
+  "generatedAt": "2026-07-22T22:37:03.583Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -29,6 +29,12 @@
       "us-congress": 24,
       "us-donor-lobby": 4,
       "israeli-leadership": 2
+    },
+    "moneyTrailByType": {
+      "legislation": 5,
+      "delivery": 2,
+      "weapon": 6,
+      "impact": 3
     }
   },
   "publicRecords": [

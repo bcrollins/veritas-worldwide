@@ -414,6 +414,7 @@ async function runInteractiveChecks(browser) {
     assert(corpus?.counts?.incidentsByTier?.verified >= 1, 'corpus.json missing incidentsByTier.verified')
     assert(Number(corpus.counts.childrenTagged || 0) >= 1, 'corpus.json missing childrenTagged floor')
     assert(Number(corpus.counts.civiliansTagged || 0) >= 1, 'corpus.json missing civiliansTagged floor')
+    assert(corpus?.counts?.moneyTrailByType && typeof corpus.counts.moneyTrailByType === 'object', 'corpus.json missing moneyTrailByType')
 
     // Deep-link surface: actor query opens enablement panel
     await gotoAndDismiss(page, `${baseUrl}/israel-dossier?actor=joe-biden`)
