@@ -111,7 +111,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         <div className={`absolute inset-0 ${placeholderClasses}`} aria-hidden="true" />
       )}
 
-      {!hasError ? (
+      {!hasError && currentSrc ? (
         <img
           {...props}
           src={currentSrc}
