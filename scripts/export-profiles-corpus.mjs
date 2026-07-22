@@ -40,14 +40,21 @@ function parseProfiles() {
   const source = fs.readFileSync(profileDataPath, 'utf8')
   const photos = loadPhotoMap()
   const profiles = []
+  // Capture through summary; tags/bioguide may sit before OR after summary in source.
   const pattern =
     /\{\s*id:\s*'([^']+)',\s*name:\s*'((?:\\.|[^'])*)',\s*title:\s*'((?:\\.|[^'])*)',\s*category:\s*'([^']+)',([\s\S]*?)summary:\s*'((?:\\.|[^'])*)'/g
 
   for (const match of source.matchAll(pattern)) {
     const id = match[1]
     const mid = match[5] || ''
-    const bioguide = mid.match(/bioguideId:\s*'([^']+)'/)
-    const tagsBlock = mid.match(/tags:\s*\[([\s\S]*?)\]/)
+    // Window after this profile's id for fields that often follow summary (tags, websites, …)
+    const idIdx = match.index ?? source.indexOf(`id: '${id}'`)
+    const nextId = source.indexOf("\n  {\n    id: '", idIdx + 10)
+    const window = source.slice(idIdx, nextId > 0 ? nextId : idIdx + 25000)
+
+    const bioguide =
+      mid.match(/bioguideId:\s*'([^']+)'/) || window.match(/bioguideId:\s*'([^']+)'/)
+    const tagsBlock = window.match(/tags:\s*\[([\s\S]*?)\]/)
     const tags = tagsBlock
       ? [...tagsBlock[1].matchAll(/'((?:\\.|[^'])*)'/g)].map((m) => decodeTsString(m[1]))
       : []

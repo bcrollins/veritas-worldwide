@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T22:21:35.618Z",
+  "generatedAt": "2026-07-22T22:55:16.251Z",
   "count": 94,
   "profiles": [
     {
@@ -11,7 +11,13 @@
       "photo": "/profiles/ted-cruz.jpg",
       "url": "https://veritasworldwide.com/profile/ted-cruz",
       "bioguideId": "C001098",
-      "tags": []
+      "tags": [
+        "AIPAC",
+        "Pro-Israel",
+        "Tea Party",
+        "Conservative",
+        "PAC Funded"
+      ]
     },
     {
       "id": "donald-trump",
@@ -22,7 +28,13 @@
       "photo": "/profiles/donald-trump.jpg",
       "url": "https://veritasworldwide.com/profile/donald-trump",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Pro-Israel",
+        "Adelson",
+        "Jerusalem Embassy",
+        "Golan Heights",
+        "AIPAC"
+      ]
     },
     {
       "id": "bill-gates",
@@ -33,7 +45,13 @@
       "photo": "/profiles/bill-gates.svg",
       "url": "https://veritasworldwide.com/profile/bill-gates",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Tech Billionaire",
+        "Epstein",
+        "Gates Foundation",
+        "Global Health",
+        "Philanthropy"
+      ]
     },
     {
       "id": "george-soros",
@@ -44,7 +62,13 @@
       "photo": "/profiles/george-soros.svg",
       "url": "https://veritasworldwide.com/profile/george-soros",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Open Society",
+        "DA Funding",
+        "Progressive",
+        "Billionaire",
+        "Political Influence"
+      ]
     },
     {
       "id": "jared-kushner",
@@ -55,7 +79,13 @@
       "photo": "/profiles/jared-kushner.svg",
       "url": "https://veritasworldwide.com/profile/jared-kushner",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Abraham Accords",
+        "Saudi PIF",
+        "Kushner Companies",
+        "Middle East",
+        "Foreign Investment"
+      ]
     },
     {
       "id": "chuck-schumer",
@@ -66,7 +96,13 @@
       "photo": "/profiles/chuck-schumer.jpg",
       "url": "https://veritasworldwide.com/profile/chuck-schumer",
       "bioguideId": "S000148",
-      "tags": []
+      "tags": [
+        "AIPAC",
+        "Pro-Israel",
+        "Senate Leader",
+        "PAC Funded",
+        "New York"
+      ]
     },
     {
       "id": "nancy-pelosi",
@@ -77,7 +113,13 @@
       "photo": "/profiles/nancy-pelosi.jpg",
       "url": "https://veritasworldwide.com/profile/nancy-pelosi",
       "bioguideId": "P000197",
-      "tags": []
+      "tags": [
+        "AIPAC",
+        "Pro-Israel",
+        "Stock Trading",
+        "Former Speaker",
+        "Fundraising"
+      ]
     },
     {
       "id": "mitch-mcconnell",
@@ -88,7 +130,13 @@
       "photo": "/profiles/mitch-mcconnell.jpg",
       "url": "https://veritasworldwide.com/profile/mitch-mcconnell",
       "bioguideId": "M000355",
-      "tags": []
+      "tags": [
+        "AIPAC",
+        "Senate Republican",
+        "Judge Confirmations",
+        "Obstruction",
+        "Kentucky"
+      ]
     },
     {
       "id": "miriam-adelson",
@@ -99,7 +147,13 @@
       "photo": "/profiles/miriam-adelson.svg",
       "url": "https://veritasworldwide.com/profile/miriam-adelson",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Adelson Family",
+        "Trump Donor",
+        "Casino Billionaire",
+        "Pro-Israel",
+        "Conservative"
+      ]
     },
     {
       "id": "sheldon-adelson",
@@ -110,7 +164,13 @@
       "photo": "/profiles/sheldon-adelson.svg",
       "url": "https://veritasworldwide.com/profile/sheldon-adelson",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Adelson Family",
+        "Casino Billionaire",
+        "Republican Donor",
+        "Pro-Israel",
+        "Deceased 2021"
+      ]
     },
     {
       "id": "ghislaine-maxwell",
@@ -121,7 +181,13 @@
       "photo": "/profiles/ghislaine-maxwell.svg",
       "url": "https://veritasworldwide.com/profile/ghislaine-maxwell",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Epstein",
+        "Sex Trafficking",
+        "Convicted",
+        "Imprisoned",
+        "Network"
+      ]
     },
     {
       "id": "jeffrey-epstein",
@@ -132,7 +198,13 @@
       "photo": "/profiles/jeffrey-epstein.svg",
       "url": "https://veritasworldwide.com/profile/jeffrey-epstein",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Sex Trafficking",
+        "Financier",
+        "Network Hub",
+        "Deceased",
+        "Convicted"
+      ]
     },
     {
       "id": "alan-dershowitz",
@@ -143,7 +215,13 @@
       "photo": "/profiles/alan-dershowitz.svg",
       "url": "https://veritasworldwide.com/profile/alan-dershowitz",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Epstein Defense",
+        "Trump Lawyer",
+        "Harvard Professor",
+        "Controversial",
+        "Civil Rights"
+      ]
     },
     {
       "id": "les-wexner",
@@ -154,7 +232,13 @@
       "photo": "/profiles/les-wexner.svg",
       "url": "https://veritasworldwide.com/profile/les-wexner",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Epstein",
+        "Victoria's Secret",
+        "Fashion Billionaire",
+        "Financial Backer",
+        "Controversy"
+      ]
     },
     {
       "id": "prince-andrew",
@@ -165,7 +249,13 @@
       "photo": "/profiles/prince-andrew.svg",
       "url": "https://veritasworldwide.com/profile/prince-andrew",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Royal Family",
+        "Epstein",
+        "Giuffre Settlement",
+        "Flight Logs",
+        "Sex Abuse Allegations"
+      ]
     },
     {
       "id": "adam-schiff",
@@ -176,7 +266,13 @@
       "photo": "/profiles/adam-schiff.jpg",
       "url": "https://veritasworldwide.com/profile/adam-schiff",
       "bioguideId": "S001150",
-      "tags": []
+      "tags": [
+        "Intelligence Committee",
+        "Trump Investigation",
+        "Pro-Israel",
+        "Democrat",
+        "California"
+      ]
     },
     {
       "id": "hakeem-jeffries",
@@ -187,7 +283,12 @@
       "photo": "/profiles/hakeem-jeffries.jpg",
       "url": "https://veritasworldwide.com/profile/hakeem-jeffries",
       "bioguideId": "J000294",
-      "tags": []
+      "tags": [
+        "Democratic Leader",
+        "New York",
+        "House Leadership",
+        "Progressive"
+      ]
     },
     {
       "id": "lindsey-graham",
@@ -198,7 +299,13 @@
       "photo": "/profiles/lindsey-graham.jpg",
       "url": "https://veritasworldwide.com/profile/lindsey-graham",
       "bioguideId": "G000359",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Hawk",
+        "South Carolina",
+        "Republican",
+        "Foreign Policy"
+      ]
     },
     {
       "id": "marco-rubio",
@@ -209,7 +316,12 @@
       "photo": "/profiles/marco-rubio.jpg",
       "url": "https://veritasworldwide.com/profile/marco-rubio",
       "bioguideId": "R000595",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Secretary of State",
+        "Florida",
+        "Republican"
+      ]
     },
     {
       "id": "tom-cotton",
@@ -220,7 +332,13 @@
       "photo": "/profiles/tom-cotton.jpg",
       "url": "https://veritasworldwide.com/profile/tom-cotton",
       "bioguideId": "C001095",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Iran Hawk",
+        "Arkansas",
+        "Republican",
+        "AIPAC"
+      ]
     },
     {
       "id": "cory-booker",
@@ -231,7 +349,12 @@
       "photo": "/profiles/cory-booker.jpg",
       "url": "https://veritasworldwide.com/profile/cory-booker",
       "bioguideId": "B001288",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Democratic Leader",
+        "New Jersey",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "jacky-rosen",
@@ -242,7 +365,13 @@
       "photo": "/profiles/jacky-rosen.jpg",
       "url": "https://veritasworldwide.com/profile/jacky-rosen",
       "bioguideId": "R000608",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Jewish",
+        "Nevada",
+        "Democrat",
+        "AIPAC"
+      ]
     },
     {
       "id": "josh-gottheimer",
@@ -253,7 +382,13 @@
       "photo": "/profiles/josh-gottheimer.jpg",
       "url": "https://veritasworldwide.com/profile/josh-gottheimer",
       "bioguideId": "G000580",
-      "tags": []
+      "tags": [
+        "Representative",
+        "Pro-Israel",
+        "New Jersey",
+        "Democrat",
+        "AIPAC"
+      ]
     },
     {
       "id": "brad-sherman",
@@ -264,7 +399,12 @@
       "photo": "/profiles/brad-sherman.jpg",
       "url": "https://veritasworldwide.com/profile/brad-sherman",
       "bioguideId": "S000344",
-      "tags": []
+      "tags": [
+        "Representative",
+        "Financial Services",
+        "California",
+        "Democrat"
+      ]
     },
     {
       "id": "ritchie-torres",
@@ -275,7 +415,13 @@
       "photo": "/profiles/ritchie-torres.jpg",
       "url": "https://veritasworldwide.com/profile/ritchie-torres",
       "bioguideId": "T000486",
-      "tags": []
+      "tags": [
+        "Representative",
+        "Progressive",
+        "New York",
+        "Democrat",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "joe-biden",
@@ -286,7 +432,13 @@
       "photo": "/profiles/joe-biden.jpg",
       "url": "https://veritasworldwide.com/profile/joe-biden",
       "bioguideId": "B000444",
-      "tags": []
+      "tags": [
+        "President",
+        "Pro-Israel",
+        "Democrat",
+        "Delaware",
+        "Long Career"
+      ]
     },
     {
       "id": "kamala-harris",
@@ -297,7 +449,12 @@
       "photo": "/profiles/kamala-harris.jpg",
       "url": "https://veritasworldwide.com/profile/kamala-harris",
       "bioguideId": "H001075",
-      "tags": []
+      "tags": [
+        "Vice President",
+        "California",
+        "Democrat",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "barack-obama",
@@ -308,7 +465,12 @@
       "photo": "/profiles/barack-obama.jpg",
       "url": "https://veritasworldwide.com/profile/barack-obama",
       "bioguideId": "O000167",
-      "tags": []
+      "tags": [
+        "Former President",
+        "Illinois",
+        "Democrat",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "hillary-clinton",
@@ -319,7 +481,13 @@
       "photo": "/profiles/hillary-clinton.jpg",
       "url": "https://veritasworldwide.com/profile/hillary-clinton",
       "bioguideId": "C001041",
-      "tags": []
+      "tags": [
+        "Secretary of State",
+        "Senator",
+        "New York",
+        "Democrat",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "bill-clinton",
@@ -330,7 +498,12 @@
       "photo": "/profiles/bill-clinton.jpg",
       "url": "https://veritasworldwide.com/profile/bill-clinton",
       "bioguideId": "C000537",
-      "tags": []
+      "tags": [
+        "Former President",
+        "Democrat",
+        "Pro-Israel",
+        "Philanthropist"
+      ]
     },
     {
       "id": "mike-pence",
@@ -341,7 +514,13 @@
       "photo": "/profiles/mike-pence.jpg",
       "url": "https://veritasworldwide.com/profile/mike-pence",
       "bioguideId": "P000587",
-      "tags": []
+      "tags": [
+        "Vice President",
+        "Christian Zionist",
+        "Indiana",
+        "Republican",
+        "Evangelical"
+      ]
     },
     {
       "id": "dick-cheney",
@@ -352,7 +531,13 @@
       "photo": "/profiles/dick-cheney.jpg",
       "url": "https://veritasworldwide.com/profile/dick-cheney",
       "bioguideId": "C000321",
-      "tags": []
+      "tags": [
+        "Vice President",
+        "Iraq War",
+        "Neoconservative",
+        "Wyoming",
+        "Republican"
+      ]
     },
     {
       "id": "henry-kissinger",
@@ -363,7 +548,12 @@
       "photo": "/profiles/henry-kissinger.svg",
       "url": "https://veritasworldwide.com/profile/henry-kissinger",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Secretary of State",
+        "National Security Advisor",
+        "Foreign Policy",
+        "Neoconservative"
+      ]
     },
     {
       "id": "john-bolton",
@@ -374,7 +564,12 @@
       "photo": "/profiles/john-bolton.jpg",
       "url": "https://veritasworldwide.com/profile/john-bolton",
       "bioguideId": "B000611",
-      "tags": []
+      "tags": [
+        "National Security Advisor",
+        "Neoconservative",
+        "War Hawk",
+        "Republican"
+      ]
     },
     {
       "id": "mike-pompeo",
@@ -385,7 +580,12 @@
       "photo": "/profiles/mike-pompeo.jpg",
       "url": "https://veritasworldwide.com/profile/mike-pompeo",
       "bioguideId": "P000602",
-      "tags": []
+      "tags": [
+        "Secretary of State",
+        "CIA Director",
+        "Kansas",
+        "Republican"
+      ]
     },
     {
       "id": "antony-blinken",
@@ -396,7 +596,12 @@
       "photo": "/profiles/antony-blinken.svg",
       "url": "https://veritasworldwide.com/profile/antony-blinken",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Secretary of State",
+        "Democrat",
+        "Foreign Service",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "ron-desantis",
@@ -407,7 +612,13 @@
       "photo": "/profiles/ron-desantis.jpg",
       "url": "https://veritasworldwide.com/profile/ron-desantis",
       "bioguideId": "D000621",
-      "tags": []
+      "tags": [
+        "Governor",
+        "Presidential Candidate",
+        "Florida",
+        "Republican",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "nikki-haley",
@@ -418,7 +629,13 @@
       "photo": "/profiles/nikki-haley.svg",
       "url": "https://veritasworldwide.com/profile/nikki-haley",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "UN Ambassador",
+        "Governor",
+        "Republican",
+        "South Carolina",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "bernie-sanders",
@@ -429,7 +646,13 @@
       "photo": "/profiles/bernie-sanders.jpg",
       "url": "https://veritasworldwide.com/profile/bernie-sanders",
       "bioguideId": "S000033",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Independent",
+        "Vermont",
+        "Progressive",
+        "Palestinian Rights"
+      ]
     },
     {
       "id": "elizabeth-warren",
@@ -440,7 +663,13 @@
       "photo": "/profiles/elizabeth-warren.jpg",
       "url": "https://veritasworldwide.com/profile/elizabeth-warren",
       "bioguideId": "W000817",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Massachusetts",
+        "Democrat",
+        "Progressive",
+        "Consumer Protection"
+      ]
     },
     {
       "id": "rand-paul",
@@ -451,7 +680,13 @@
       "photo": "/profiles/rand-paul.jpg",
       "url": "https://veritasworldwide.com/profile/rand-paul",
       "bioguideId": "P000603",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Libertarian",
+        "Kentucky",
+        "Republican",
+        "Non-interventionist"
+      ]
     },
     {
       "id": "ilhan-omar",
@@ -462,7 +697,13 @@
       "photo": "/profiles/ilhan-omar.jpg",
       "url": "https://veritasworldwide.com/profile/ilhan-omar",
       "bioguideId": "O000173",
-      "tags": []
+      "tags": [
+        "Representative",
+        "Minnesota",
+        "Democrat",
+        "Progressive",
+        "Palestinian Rights Advocate"
+      ]
     },
     {
       "id": "rashida-tlaib",
@@ -473,7 +714,13 @@
       "photo": "/profiles/rashida-tlaib.jpg",
       "url": "https://veritasworldwide.com/profile/rashida-tlaib",
       "bioguideId": "T000481",
-      "tags": []
+      "tags": [
+        "Representative",
+        "Michigan",
+        "Democrat",
+        "Palestinian-American",
+        "Palestinian Rights"
+      ]
     },
     {
       "id": "aoc",
@@ -484,7 +731,13 @@
       "photo": "/profiles/aoc.jpg",
       "url": "https://veritasworldwide.com/profile/aoc",
       "bioguideId": "O000172",
-      "tags": []
+      "tags": [
+        "Representative",
+        "New York",
+        "Democrat",
+        "Progressive",
+        "Palestinian Rights"
+      ]
     },
     {
       "id": "matt-gaetz",
@@ -495,7 +748,13 @@
       "photo": "/profiles/matt-gaetz.jpg",
       "url": "https://veritasworldwide.com/profile/matt-gaetz",
       "bioguideId": "G000578",
-      "tags": []
+      "tags": [
+        "Representative",
+        "Florida",
+        "Republican",
+        "Conservative",
+        "Trump Ally"
+      ]
     },
     {
       "id": "jim-jordan",
@@ -506,7 +765,13 @@
       "photo": "/profiles/jim-jordan.jpg",
       "url": "https://veritasworldwide.com/profile/jim-jordan",
       "bioguideId": "J000289",
-      "tags": []
+      "tags": [
+        "Representative",
+        "Ohio",
+        "Republican",
+        "Trump Ally",
+        "Conservative"
+      ]
     },
     {
       "id": "elise-stefanik",
@@ -517,7 +782,13 @@
       "photo": "/profiles/elise-stefanik.jpg",
       "url": "https://veritasworldwide.com/profile/elise-stefanik",
       "bioguideId": "S001196",
-      "tags": []
+      "tags": [
+        "Representative",
+        "New York",
+        "Republican",
+        "House Leadership",
+        "AIPAC"
+      ]
     },
     {
       "id": "dianne-feinstein",
@@ -528,7 +799,13 @@
       "photo": "/profiles/dianne-feinstein.jpg",
       "url": "https://veritasworldwide.com/profile/dianne-feinstein",
       "bioguideId": "F000062",
-      "tags": []
+      "tags": [
+        "Senator",
+        "California",
+        "Democrat",
+        "Intelligence Committee",
+        "Deceased 2023"
+      ]
     },
     {
       "id": "kevin-mccarthy",
@@ -539,7 +816,12 @@
       "photo": "/profiles/kevin-mccarthy.jpg",
       "url": "https://veritasworldwide.com/profile/kevin-mccarthy",
       "bioguideId": "M001165",
-      "tags": []
+      "tags": [
+        "Former Speaker",
+        "California",
+        "Republican",
+        "Trump Ally"
+      ]
     },
     {
       "id": "mike-johnson",
@@ -550,7 +832,12 @@
       "photo": "/profiles/mike-johnson.jpg",
       "url": "https://veritasworldwide.com/profile/mike-johnson",
       "bioguideId": "J000299",
-      "tags": []
+      "tags": [
+        "House Speaker",
+        "Louisiana",
+        "Republican",
+        "Christian Conservative"
+      ]
     },
     {
       "id": "tim-scott",
@@ -561,7 +848,12 @@
       "photo": "/profiles/tim-scott.jpg",
       "url": "https://veritasworldwide.com/profile/tim-scott",
       "bioguideId": "S001184",
-      "tags": []
+      "tags": [
+        "Senator",
+        "South Carolina",
+        "Republican",
+        "African American"
+      ]
     },
     {
       "id": "john-fetterman",
@@ -572,7 +864,12 @@
       "photo": "/profiles/john-fetterman.jpg",
       "url": "https://veritasworldwide.com/profile/john-fetterman",
       "bioguideId": "F000479",
-      "tags": []
+      "tags": [
+        "Senator",
+        "Pennsylvania",
+        "Democrat",
+        "Progressive"
+      ]
     },
     {
       "id": "rupert-murdoch",
@@ -583,7 +880,13 @@
       "photo": "/profiles/rupert-murdoch.svg",
       "url": "https://veritasworldwide.com/profile/rupert-murdoch",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Media Billionaire",
+        "Fox News",
+        "News Corp",
+        "Political Influence",
+        "News Mogul"
+      ]
     },
     {
       "id": "michael-bloomberg",
@@ -594,7 +897,13 @@
       "photo": "/profiles/michael-bloomberg.svg",
       "url": "https://veritasworldwide.com/profile/michael-bloomberg",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "NYC Mayor",
+        "Political Donor",
+        "Media Founder",
+        "Philanthropist"
+      ]
     },
     {
       "id": "jeff-bezos",
@@ -605,7 +914,12 @@
       "photo": "/profiles/jeff-bezos.svg",
       "url": "https://veritasworldwide.com/profile/jeff-bezos",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Amazon Founder",
+        "Washington Post Owner",
+        "Tech Mogul"
+      ]
     },
     {
       "id": "mark-zuckerberg",
@@ -616,7 +930,13 @@
       "photo": "/profiles/mark-zuckerberg.svg",
       "url": "https://veritasworldwide.com/profile/mark-zuckerberg",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Meta Founder",
+        "Facebook",
+        "Tech Monopoly",
+        "Social Media"
+      ]
     },
     {
       "id": "elon-musk",
@@ -627,7 +947,13 @@
       "photo": "/profiles/elon-musk.svg",
       "url": "https://veritasworldwide.com/profile/elon-musk",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Tesla CEO",
+        "SpaceX Founder",
+        "Twitter/X Owner",
+        "Tech Entrepreneur"
+      ]
     },
     {
       "id": "peter-thiel",
@@ -638,7 +964,13 @@
       "photo": "/profiles/peter-thiel.svg",
       "url": "https://veritasworldwide.com/profile/peter-thiel",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "PayPal Co-founder",
+        "Venture Capitalist",
+        "Political Influencer",
+        "Palantir"
+      ]
     },
     {
       "id": "larry-fink",
@@ -649,7 +981,13 @@
       "photo": "/profiles/larry-fink.svg",
       "url": "https://veritasworldwide.com/profile/larry-fink",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "BlackRock CEO",
+        "Asset Manager",
+        "Corporate Governance",
+        "Financial Power"
+      ]
     },
     {
       "id": "jamie-dimon",
@@ -660,7 +998,13 @@
       "photo": "/profiles/jamie-dimon.svg",
       "url": "https://veritasworldwide.com/profile/jamie-dimon",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "JPMorgan Chase CEO",
+        "Banker",
+        "Financial Power",
+        "Policy Influence"
+      ]
     },
     {
       "id": "warren-buffett",
@@ -671,7 +1015,13 @@
       "photo": "/profiles/warren-buffett.svg",
       "url": "https://veritasworldwide.com/profile/warren-buffett",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Berkshire Hathaway",
+        "Investment Legend",
+        "Philanthropist",
+        "Warren Buffett"
+      ]
     },
     {
       "id": "ken-griffin",
@@ -682,7 +1032,12 @@
       "photo": "/profiles/ken-griffin.svg",
       "url": "https://veritasworldwide.com/profile/ken-griffin",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Hedge Fund Manager",
+        "Republican Donor",
+        "Political Influence"
+      ]
     },
     {
       "id": "sam-bankman-fried",
@@ -693,7 +1048,13 @@
       "photo": "/profiles/sam-bankman-fried.svg",
       "url": "https://veritasworldwide.com/profile/sam-bankman-fried",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Convicted Fraudster",
+        "FTX Founder",
+        "Crypto Billionaire",
+        "Democratic Donor",
+        "Prison"
+      ]
     },
     {
       "id": "haim-saban",
@@ -704,7 +1065,13 @@
       "photo": "/profiles/haim-saban.svg",
       "url": "https://veritasworldwide.com/profile/haim-saban",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Entertainment",
+        "Democratic Donor",
+        "AIPAC",
+        "Pro-Israel"
+      ]
     },
     {
       "id": "paul-singer",
@@ -715,7 +1082,13 @@
       "photo": "/profiles/paul-singer.svg",
       "url": "https://veritasworldwide.com/profile/paul-singer",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Hedge Fund Manager",
+        "Republican Donor",
+        "Pro-Israel",
+        "Political Influencer"
+      ]
     },
     {
       "id": "bernard-marcus",
@@ -726,7 +1099,13 @@
       "photo": "/profiles/bernard-marcus.svg",
       "url": "https://veritasworldwide.com/profile/bernard-marcus",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Home Depot Founder",
+        "Republican Donor",
+        "Pro-Israel",
+        "Conservative Philanthropist"
+      ]
     },
     {
       "id": "robert-mercer",
@@ -737,7 +1116,13 @@
       "photo": "/profiles/robert-mercer.svg",
       "url": "https://veritasworldwide.com/profile/robert-mercer",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Hedge Fund Manager",
+        "Republican Donor",
+        "Data Mining",
+        "Political Operative"
+      ]
     },
     {
       "id": "leon-black",
@@ -748,7 +1133,13 @@
       "photo": "/profiles/leon-black.svg",
       "url": "https://veritasworldwide.com/profile/leon-black",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Private Equity",
+        "Apollo Founder",
+        "Epstein Connection",
+        "Financier"
+      ]
     },
     {
       "id": "reid-hoffman",
@@ -759,7 +1150,13 @@
       "photo": "/profiles/reid-hoffman.svg",
       "url": "https://veritasworldwide.com/profile/reid-hoffman",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "LinkedIn Founder",
+        "Venture Capitalist",
+        "Democratic Donor",
+        "Tech Industry"
+      ]
     },
     {
       "id": "marc-andreessen",
@@ -770,7 +1167,12 @@
       "photo": "/profiles/marc-andreessen.svg",
       "url": "https://veritasworldwide.com/profile/marc-andreessen",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Venture Capitalist",
+        "Tech Entrepreneur",
+        "Andreessen Horowitz"
+      ]
     },
     {
       "id": "larry-ellison",
@@ -781,7 +1183,12 @@
       "photo": "/profiles/larry-ellison.svg",
       "url": "https://veritasworldwide.com/profile/larry-ellison",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Oracle Founder",
+        "Tech Entrepreneur",
+        "Philanthropist"
+      ]
     },
     {
       "id": "charles-koch",
@@ -792,7 +1199,13 @@
       "photo": "/profiles/charles-koch.svg",
       "url": "https://veritasworldwide.com/profile/charles-koch",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Billionaire",
+        "Koch Industries",
+        "Libertarian Donor",
+        "Political Influence",
+        "Businessman"
+      ]
     },
     {
       "id": "howard-kohr",
@@ -803,7 +1216,12 @@
       "photo": "/profiles/howard-kohr.svg",
       "url": "https://veritasworldwide.com/profile/howard-kohr",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "AIPAC",
+        "Lobbyist",
+        "Pro-Israel",
+        "Political Influencer"
+      ]
     },
     {
       "id": "tony-podesta",
@@ -814,7 +1232,11 @@
       "photo": "/profiles/tony-podesta.svg",
       "url": "https://veritasworldwide.com/profile/tony-podesta",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Lobbyist",
+        "Democratic Operative",
+        "Washington Power Broker"
+      ]
     },
     {
       "id": "john-podesta",
@@ -825,7 +1247,12 @@
       "photo": "/profiles/john-podesta.svg",
       "url": "https://veritasworldwide.com/profile/john-podesta",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "White House Advisor",
+        "Democratic Operative",
+        "Clinton Era",
+        "Political Strategist"
+      ]
     },
     {
       "id": "paul-manafort",
@@ -836,7 +1263,13 @@
       "photo": "/profiles/paul-manafort.svg",
       "url": "https://veritasworldwide.com/profile/paul-manafort",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Convicted Felon",
+        "Political Consultant",
+        "Trump Campaign",
+        "Foreign Lobbying",
+        "Prison"
+      ]
     },
     {
       "id": "michael-flynn",
@@ -847,7 +1280,13 @@
       "photo": "/profiles/michael-flynn.svg",
       "url": "https://veritasworldwide.com/profile/michael-flynn",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "National Security Advisor",
+        "Convicted",
+        "Trump Ally",
+        "Pardoned",
+        "QAnon"
+      ]
     },
     {
       "id": "roger-stone",
@@ -858,7 +1297,13 @@
       "photo": "/profiles/roger-stone.svg",
       "url": "https://veritasworldwide.com/profile/roger-stone",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Political Consultant",
+        "Trump Advisor",
+        "Convicted",
+        "Pardoned",
+        "Operative"
+      ]
     },
     {
       "id": "steve-bannon",
@@ -869,7 +1314,13 @@
       "photo": "/profiles/steve-bannon.svg",
       "url": "https://veritasworldwide.com/profile/steve-bannon",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Trump Strategist",
+        "Breitbart",
+        "Media Executive",
+        "Political Activist",
+        "Controversial"
+      ]
     },
     {
       "id": "karl-rove",
@@ -880,7 +1331,13 @@
       "photo": "/profiles/karl-rove.svg",
       "url": "https://veritasworldwide.com/profile/karl-rove",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Political Strategist",
+        "Republican Operative",
+        "Fox News",
+        "Bush Era",
+        "Super PAC"
+      ]
     },
     {
       "id": "rahm-emanuel",
@@ -891,7 +1348,12 @@
       "photo": "/profiles/rahm-emanuel.svg",
       "url": "https://veritasworldwide.com/profile/rahm-emanuel",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "White House Chief of Staff",
+        "Chicago Mayor",
+        "Democratic Operative",
+        "Political Strategist"
+      ]
     },
     {
       "id": "james-comey",
@@ -902,7 +1364,13 @@
       "photo": "/profiles/james-comey.svg",
       "url": "https://veritasworldwide.com/profile/james-comey",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "FBI Director",
+        "Trump Critic",
+        "Clinton Email",
+        "Election Interference",
+        "Law Enforcement"
+      ]
     },
     {
       "id": "john-brennan",
@@ -913,7 +1381,13 @@
       "photo": "/profiles/john-brennan.svg",
       "url": "https://veritasworldwide.com/profile/john-brennan",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "CIA Director",
+        "Trump Critic",
+        "Drone Program",
+        "Torture",
+        "Intelligence"
+      ]
     },
     {
       "id": "james-clapper",
@@ -924,7 +1398,12 @@
       "photo": "/profiles/james-clapper.svg",
       "url": "https://veritasworldwide.com/profile/james-clapper",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Intelligence Director",
+        "NSA Surveillance",
+        "Military Intelligence",
+        "Trump Critic"
+      ]
     },
     {
       "id": "erik-prince",
@@ -935,7 +1414,13 @@
       "photo": "/profiles/erik-prince.svg",
       "url": "https://veritasworldwide.com/profile/erik-prince",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Military Contractor",
+        "Blackwater",
+        "Private Army",
+        "Trump Advisor",
+        "Controversial"
+      ]
     },
     {
       "id": "david-petraeus",
@@ -946,7 +1431,13 @@
       "photo": "/profiles/david-petraeus.svg",
       "url": "https://veritasworldwide.com/profile/david-petraeus",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "General",
+        "CIA Director",
+        "Military Commander",
+        "Afghanistan",
+        "Iraq"
+      ]
     },
     {
       "id": "robert-mueller",
@@ -957,7 +1448,13 @@
       "photo": "/profiles/robert-mueller.svg",
       "url": "https://veritasworldwide.com/profile/robert-mueller",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "FBI Director",
+        "Special Counsel",
+        "Trump Investigation",
+        "Russia",
+        "Mueller Report"
+      ]
     },
     {
       "id": "tucker-carlson",
@@ -968,7 +1465,13 @@
       "photo": "/profiles/tucker-carlson.svg",
       "url": "https://veritasworldwide.com/profile/tucker-carlson",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "News Host",
+        "Fox News",
+        "Conservative",
+        "Political Commentary",
+        "Controversial"
+      ]
     },
     {
       "id": "joe-rogan",
@@ -979,7 +1482,13 @@
       "photo": "/profiles/joe-rogan.svg",
       "url": "https://veritasworldwide.com/profile/joe-rogan",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Podcast Host",
+        "Media Personality",
+        "Political Commentary",
+        "Spotify",
+        "Influence"
+      ]
     },
     {
       "id": "ben-shapiro",
@@ -990,7 +1499,12 @@
       "photo": "/profiles/ben-shapiro.svg",
       "url": "https://veritasworldwide.com/profile/ben-shapiro",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Political Commentator",
+        "Daily Wire",
+        "Conservative",
+        "Media Personality"
+      ]
     },
     {
       "id": "rachel-maddow",
@@ -1001,18 +1515,38 @@
       "photo": "/profiles/rachel-maddow.svg",
       "url": "https://veritasworldwide.com/profile/rachel-maddow",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "News Host",
+        "MSNBC",
+        "Progressive",
+        "Political Commentary",
+        "Trump Investigation"
+      ]
     },
     {
       "id": "byron-donalds",
       "name": "Byron Donalds",
-      "title": "U.S. Representative (R-FL-19)",
+      "title": "U.S. Representative (R-FL-19); 2026 Florida gubernatorial candidate",
       "category": "politician",
-      "summary": "U.S. Representative from Florida's 19th district since 2021. Former financial services professional. Nominated for Speaker of the House during January 2023 standoff — first time both parties nominated a Black American for the role. Heritage Action score: 96%. Subject of Campaign Legal Center ethics complaint for failing to disclose up to $1.6M in stock trades (108 transactions). Received $84,000+ from AIPAC and pro-Israel lobby.",
+      "summary": "U.S. Representative for Florida's 19th congressional district (2021–present) and 2026 Florida gubernatorial candidate. Former Florida state representative and financial-services professional. House Freedom Caucus member; Heritage Action scorecard 96% (117th–118th Congress). Documented recipient of roughly $75k–$84k from AIPAC and other pro-Israel PACs (FEC / TrackAIPAC / OpenSecrets Q05), with a public record of consistent yes votes on Israel security supplementals including H.R. 8034 (April 20, 2024, 366–58). Subject of a Campaign Legal Center ethics complaint (Sept. 5, 2024) alleging failure to file Periodic Transaction Reports for 108 stock trades valued up to $1.6 million under the STOCK Act. Public record also includes a 1997 marijuana arrest resolved by pre-trial diversion and a 2000 no-contest plea to a felony bad-check/bank-fraud charge later sealed and expunged under Florida law. Wife Erika Donalds' OptimaEd / Education Freedom entities have received millions in Florida charter-school contracts (Florida Bulldog).",
       "photo": "/profiles/byron-donalds.jpg",
       "url": "https://veritasworldwide.com/profile/byron-donalds",
       "bioguideId": "D000032",
-      "tags": []
+      "tags": [
+        "Freedom Caucus",
+        "Pro-Israel",
+        "AIPAC",
+        "TrackAIPAC",
+        "Trump Ally",
+        "STOCK Act",
+        "Campaign Legal Center",
+        "Heritage Foundation",
+        "School Choice",
+        "Speaker Nominee",
+        "Financial Services",
+        "FL-19",
+        "Florida Governor 2026"
+      ]
     },
     {
       "id": "benjamin-netanyahu",
@@ -1023,7 +1557,14 @@
       "photo": "/profiles/benjamin-netanyahu.svg",
       "url": "https://veritasworldwide.com/profile/benjamin-netanyahu",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Israel",
+        "Prime Minister",
+        "ICC Warrant",
+        "Gaza War",
+        "Likud",
+        "U.S. Aid Recipient Leadership"
+      ]
     },
     {
       "id": "yoav-gallant",
@@ -1034,7 +1575,13 @@
       "photo": "/profiles/yoav-gallant.svg",
       "url": "https://veritasworldwide.com/profile/yoav-gallant",
       "bioguideId": null,
-      "tags": []
+      "tags": [
+        "Israel",
+        "Defense Minister",
+        "ICC Warrant",
+        "Gaza Siege",
+        "IDF"
+      ]
     }
   ]
 }
