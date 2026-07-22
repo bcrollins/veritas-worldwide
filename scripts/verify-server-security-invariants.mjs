@@ -315,6 +315,11 @@ assert(
     server.includes('/.well-known/security.txt'),
   'security.txt routes must be registered on the Express app',
 )
+assert(
+  (server.includes("app.get(['/rss.xml', '/rss']") || server.includes('app.get(["/rss.xml", "/rss"]')) &&
+    server.includes("redirect(301, '/feed.xml')"),
+  'RSS discovery alias /rss.xml must 301 to canonical /feed.xml',
+)
 assert(server.includes('SECURITY_TXT_FALLBACK') && server.includes('loadSecurityTxtBody'), 'security.txt in-process fallback present')
 const publicSecurity = readFileSync(join(root, 'public', '.well-known', 'security.txt'), 'utf8')
 assert(server.includes('privacy@veritasworldwide.com'), 'security.txt contact embedded for production fallback')

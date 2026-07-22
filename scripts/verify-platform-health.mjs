@@ -613,6 +613,31 @@ const healthResult = await fetchJson('/api/health')
         `feed status=${feedResult.response.status} hasFieldManualPdf=${feedText.includes('/veritas-institute-field-manual.pdf')}`
       )
 
+      // /rss.xml is a discovery alias used by many readers; must 301 to canonical /feed.xml.
+      let rssOk = false
+      let rssDetail = 'probe-unavailable'
+      try {
+        const raw = await fetch(getUrl('/rss.xml'), {
+          redirect: 'manual',
+          headers: { accept: 'application/rss+xml, application/xml, text/xml, */*', 'Cache-Control': 'no-cache' },
+          signal: AbortSignal.timeout(timeoutMs),
+        })
+        const location = raw.headers.get('location') || ''
+        rssOk =
+          (raw.status === 301 || raw.status === 302 || raw.status === 308) &&
+          (location === '/feed.xml' || location.endsWith('/feed.xml'))
+        rssDetail = `status=${raw.status} location=${location}`
+        if (!rssOk && raw.status === 200) {
+          // Accept same-body alias if a host rewrites instead of redirecting.
+          const body = await raw.text()
+          rssOk = body.includes('<rss') && body.includes('/veritas-institute-field-manual.pdf')
+          rssDetail = `status=200 body-has-rss=${body.includes('<rss')}`
+        }
+      } catch (error) {
+        rssDetail = `error=${error instanceof Error ? error.message : String(error)}`
+      }
+      addCheck(checks, failures, rssOk, 'RSS discovery alias /rss.xml resolves to canonical feed', rssDetail)
+
       const robotsResult = await fetchText('/robots.txt')
       addCheck(
         checks,

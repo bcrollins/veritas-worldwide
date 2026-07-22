@@ -1759,6 +1759,12 @@ app.get(['/.well-known/security.txt', '/security.txt'], (_req, res) => {
   return res.send(body)
 })
 
+// Common RSS discovery path — canonical feed remains /feed.xml (atom:self).
+app.get(['/rss.xml', '/rss'], (_req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=3600')
+  return res.redirect(301, '/feed.xml')
+})
+
 // Static files with aggressive caching for hashed assets
 app.use(express.static(path.join(__dirname, 'dist'), {
   maxAge: '1y',
