@@ -5,238 +5,349 @@
     <link>https://veritasworldwide.com</link>
     <description>A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Primary Sources. Public Record. Your Conclusions.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jul 2026 19:10:33 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 19:32:23 GMT</lastBuildDate>
     <atom:link href="https://veritasworldwide.com/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://veritasworldwide.com/og-image.png</url>
       <title>The Record — Veritas Worldwide</title>
       <link>https://veritasworldwide.com</link>
     </image>
+
     <item>
       <title>Veritas Institute Field Manual (PDF)</title>
       <link>https://veritasworldwide.com/veritas-institute-field-manual.pdf</link>
       <guid isPermaLink="true">https://veritasworldwide.com/veritas-institute-field-manual.pdf</guid>
       <description>Build-time durable PDF of the Veritas Institute field manual: urgent household and roadside protocols plus practical course paths, source-anchored for print and offline use.</description>
-      <pubDate>Wed, 22 Jul 2026 19:10:33 GMT</pubDate>
+      <pubDate>Wed, 22 Jul 2026 19:32:23 GMT</pubDate>
       <enclosure url="https://veritasworldwide.com/veritas-institute-field-manual.pdf" length="524188" type="application/pdf" />
     </item>
-
+    <item>
+      <title>Aviation Safety Claims Belong in NTSB and FAA Primary Records</title>
+      <link>https://veritasworldwide.com/news/aviation-safety-ntsb-faa-primary-records-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/aviation-safety-ntsb-faa-primary-records-2026</guid>
+      <description>How to evaluate manufacturing, maintenance, and accident narratives using NTSB investigations and FAA public portals — not viral corporate conspiracy frames.</description>
+      <pubDate>Thu, 16 Jul 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/aviation-tower.jpg" length="74078" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Election Security and AI Risk Frameworks: What Primary Institutions Actually Publish</title>
+      <link>https://veritasworldwide.com/news/election-security-ai-risk-frameworks-cisa-nist-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/election-security-ai-risk-frameworks-cisa-nist-2026</guid>
+      <description>CISA election-security guidance and NIST’s AI Risk Management Framework define the public baseline for infrastructure protection and model risk — without requiring unverified incident claims.</description>
+      <pubDate>Thu, 16 Jul 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/election-security.jpg" length="106366" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Judicial Ethics Starts With the Court’s Own Code — Not Viral Gift Lists Alone</title>
+      <link>https://veritasworldwide.com/news/judicial-ethics-supreme-court-code-of-conduct-primary-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/judicial-ethics-supreme-court-code-of-conduct-primary-2026</guid>
+      <description>The Supreme Court’s November 13, 2023 Code of Conduct for Justices is the primary institutional text for ethics claims about the Court; secondary reporting must still attach to primary documents.</description>
+      <pubDate>Thu, 16 Jul 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/supreme-court.jpg" length="93209" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Debt Transparency Without the Panic: FiscalData, Monthly Treasury Statements, and Fed Rate Tables</title>
+      <link>https://veritasworldwide.com/news/treasury-debt-transparency-fiscaldata-fed-h15-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/treasury-debt-transparency-fiscaldata-fed-h15-2026</guid>
+      <description>How to read the federal debt position from primary Treasury datasets and Federal Reserve statistical releases — and what those sources do not claim.</description>
+      <pubDate>Thu, 16 Jul 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/treasury-seal.jpg" length="114071" type="image/jpeg" />
+    </item>
+    <item>
+      <title>AIPAC Has Spent $28 Million Reshaping Congress in 2026. Here Is Where the Money Went.</title>
+      <link>https://veritasworldwide.com/news/aipac-record-spending-reshaping-congress-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/aipac-record-spending-reshaping-congress-2026</guid>
+      <description>The most powerful foreign policy lobby in America is funneling record sums through shell super PACs to defeat candidates who support conditioning U.S. aid to Israel. The Illinois primaries reveal the full playbook.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/capitol-night.jpg" length="75347" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Boeing's Culture of Silence: Inside the Whistleblower Deaths and the FAA's Failure to Protect Safety</title>
+      <link>https://veritasworldwide.com/news/boeing-whistleblower-deaths-safety-crisis-faa-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/boeing-whistleblower-deaths-safety-crisis-faa-2026</guid>
+      <description>The unexplained death of quality control engineer John Barnett, following threats from Boeing management, exposes systemic failures in aircraft safety oversight and regulatory capture of the Federal Aviation Administration.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/boeing-airliner.jpg" length="90471" type="image/jpeg" />
+    </item>
+    <item>
+      <title>The DOJ Has Released 3.5 Million Pages of Epstein Files. Here Is What They Contain.</title>
+      <link>https://veritasworldwide.com/news/doj-releases-3-5-million-pages-epstein-files-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/doj-releases-3-5-million-pages-epstein-files-2026</guid>
+      <description>The largest disclosure of criminal case materials in American history includes 2,000 videos, 180,000 images, and records from five federal investigations — and has exposed catastrophic failures in victim privacy protections.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/doj-courthouse.jpg" length="117675" type="image/jpeg" />
+    </item>
+    <item>
+      <title>The Federal Reserve Holds Rates Steady as Iran Conflict Roils Global Oil Markets</title>
+      <link>https://veritasworldwide.com/news/federal-reserve-holds-rates-march-2026-iran-oil-crisis</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/federal-reserve-holds-rates-march-2026-iran-oil-crisis</guid>
+      <description>With the federal funds rate anchored at 3.5–3.75% and crude oil prices surging past $110 per barrel, the central bank faces its most consequential policy crossroads since 2008.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/federal-reserve.jpg" length="124432" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Gaza Faces UN-Declared Famine Amid Aid Blockade: The Humanitarian Catastrophe Beyond the Headlines</title>
+      <link>https://veritasworldwide.com/news/gaza-famine-humanitarian-crisis-un-icc-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/gaza-famine-humanitarian-crisis-un-icc-2026</guid>
+      <description>The United Nations formally declared Gaza in famine conditions on March 15, 2026, marking the first UN famine declaration since 2011 as international institutions struggle to force open humanitarian corridors.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/un-assembly.jpg" length="103884" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Congress Races to Reform FISA Section 702 Before April Sunset. Here Is What the Bill Would Change.</title>
+      <link>https://veritasworldwide.com/news/government-surveillance-reform-act-fisa-section-702-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/government-surveillance-reform-act-fisa-section-702-2026</guid>
+      <description>The bipartisan Government Surveillance Reform Act would require warrants for FBI searches, close the data broker loophole, and restore oversight of the secret FISA court — the most significant surveillance reform since the Snowden disclosures.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/surveillance.jpg" length="117226" type="image/jpeg" />
+    </item>
+    <item>
+      <title>The $36 Trillion Debt: How Interest Payments Became America's Largest Budget Item</title>
+      <link>https://veritasworldwide.com/news/national-debt-36-trillion-interest-payments-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/national-debt-36-trillion-interest-payments-2026</guid>
+      <description>As the national debt surpasses $36 trillion, the federal government spends more on interest payments than on defense, education, or healthcare—a milestone that redefines fiscal policy constraints.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/treasury-building.jpg" length="119435" type="image/jpeg" />
+    </item>
+    <item>
+      <title>The 145% Tariff Wall: Trump's Trade War With China Redefines Supply Chains and Consumer Prices</title>
+      <link>https://veritasworldwide.com/news/trump-tariffs-china-145-percent-trade-war-2026</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/trump-tariffs-china-145-percent-trade-war-2026</guid>
+      <description>As the Trump administration imposes unprecedented tariffs on Chinese goods, American consumers face surging inflation while supply chains built over three decades come under stress.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/white-house.jpg" length="121168" type="image/jpeg" />
+    </item>
+    <item>
+      <title>$1.5 Trillion: The Pentagon’s Proposed 2027 Budget Would Be the Largest in American History</title>
+      <link>https://veritasworldwide.com/news/us-defense-budget-1-5-trillion-2027-proposal</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/news/us-defense-budget-1-5-trillion-2027-proposal</guid>
+      <description>Coming on the heels of an $839 billion FY2026 appropriation and a $152 billion reconciliation boost, the White House is requesting a defense budget that exceeds the GDP of all but 12 nations on Earth.</description>
+      <pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate>
+      <enclosure url="https://veritasworldwide.com/news/heroes/pentagon.jpg" length="177303" type="image/jpeg" />
+    </item>
     <item>
       <title>A Note on Methodology, Evidence Standards &amp; How to Read This Book</title>
       <link>https://veritasworldwide.com/chapter/foreword</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/foreword</guid>
       <description>This is a reference work. It compiles primary source documents — court records, congressional testimony, declassified government files, academic studies, and verified financial disclosures — into a single chronological narrative.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The World Today</title>
       <link>https://veritasworldwide.com/chapter/overview</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/overview</guid>
       <description>How a convergence of financial, political, pharmaceutical, and intelligence systems created the architecture of modern control — and why most people never notice.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Birth of Central Banking</title>
       <link>https://veritasworldwide.com/chapter/chapter-1</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-1</guid>
       <description>From the Frankfurt ghetto to the Bank of England, from Napoleon's wars to the halls of the United States Congress, the story of how private banking dynasties captured the power to create money, and what happened to those who tried to take it back.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Bank War &amp; The Presidents Who Fought Back</title>
       <link>https://veritasworldwide.com/chapter/chapter-2</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-2</guid>
       <description>Four American presidents took on the banking establishment. Three were assassinated. One survived an assassination attempt that should have killed him.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Jekyll Island &amp; the Creation of the Federal Reserve</title>
       <link>https://veritasworldwide.com/chapter/chapter-3</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-3</guid>
       <description>In November 1910, six men representing a quarter of the world's wealth boarded a private rail car in New Jersey. Their destination: a private island off the coast of Georgia. Their mission: to draft the blueprint for a new central bank.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Warburg Brothers &amp; World War I</title>
       <link>https://veritasworldwide.com/chapter/chapter-4</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-4</guid>
       <description>Two brothers from one of Europe's most powerful banking families found themselves on opposite sides of the Great War — one advising the Kaiser, the other shaping American financial policy.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Henry Ford, The International Jew &amp; the Gold Standard</title>
       <link>https://veritasworldwide.com/chapter/chapter-5</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-5</guid>
       <description>The industrialist who built the American middle class also published the most controversial newspaper series in American history — and his warnings about the gold standard proved prophetic.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Talmud, the Balfour Declaration &amp; the Origins of Zionism</title>
       <link>https://veritasworldwide.com/chapter/chapter-6</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-6</guid>
       <description>The documented history of the political movement that would reshape the Middle East and redefine the relationship between religion, nationalism, and geopolitics.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Mossad: The Institute</title>
       <link>https://veritasworldwide.com/chapter/chapter-7</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-7</guid>
       <description>The intelligence agency that operates by its own rules — from covert assassinations to nuclear espionage, documented through declassified files and sworn testimony.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>JFK, Dimona &amp; AIPAC</title>
       <link>https://veritasworldwide.com/chapter/chapter-8</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-8</guid>
       <description>President Kennedy's documented confrontation with Israel's secret nuclear program and the lobby that would reshape American foreign policy.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>JFK — Expanded Analysis</title>
       <link>https://veritasworldwide.com/chapter/chapter-9</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-9</guid>
       <description>A comprehensive examination of the evidence surrounding the assassination of President John F. Kennedy, including declassified documents released through 2025.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Petrodollar System</title>
       <link>https://veritasworldwide.com/chapter/chapter-10</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-10</guid>
       <description>How a secret agreement between Henry Kissinger and the Saudi royal family created the foundation of American economic hegemony — and why it is now unraveling.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Shadow Institutions — Bilderberg, CFR, Trilateral Commission &amp; the BIS</title>
       <link>https://veritasworldwide.com/chapter/chapter-11</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-11</guid>
       <description>The private organizations where the world's most powerful people meet behind closed doors — documented through leaked attendee lists, founding charters, and their own publications.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>How the Federal Reserve Works</title>
       <link>https://veritasworldwide.com/chapter/chapter-12</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-12</guid>
       <description>A plain-English explainer on the institution that controls the American money supply, who owns it, and how it operates — stripped of jargon and presented with primary source documentation.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The 2008 Financial Crisis</title>
       <link>https://veritasworldwide.com/chapter/chapter-13</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-13</guid>
       <description>How Wall Street's reckless gambling crashed the global economy, how the government bailed out the banks with taxpayer money, and how no one went to prison.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>AIPAC &amp; Congressional Lobbying</title>
       <link>https://veritasworldwide.com/chapter/chapter-14</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-14</guid>
       <description>The most powerful foreign policy lobby in America — how it operates, who it funds, and what happens to those who oppose it.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>U.S. Foreign Aid to Israel</title>
       <link>https://veritasworldwide.com/chapter/chapter-15</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-15</guid>
-      <description>A comprehensive accounting of American taxpayer money sent to Israel — totaling over $300 billion in inflation-adjusted terms — and the legal framework that enables it.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <description>A sourced accounting of U.S. aid obligations to Israel, including CRS's $298 billion constant-dollar total for 1946-2024 and the legal framework that enables it.</description>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The USS Liberty Incident</title>
       <link>https://veritasworldwide.com/chapter/chapter-16</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-16</guid>
       <description>On June 8, 1967, Israeli forces attacked an American intelligence ship in international waters, killing 34 U.S. servicemen. The official investigation was classified for decades.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Assassination of Robert F. Kennedy</title>
       <link>https://veritasworldwide.com/chapter/chapter-17</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-17</guid>
       <description>The evidence surrounding the murder of a presidential candidate who promised to reopen his brother's assassination investigation.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Operation Mockingbird &amp; CIA Media Influence</title>
       <link>https://veritasworldwide.com/chapter/chapter-18</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-18</guid>
       <description>The documented CIA program to infiltrate and influence American media — from the Cold War to the present day.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>MKUltra &amp; Government Mind Control Programs</title>
       <link>https://veritasworldwide.com/chapter/chapter-19</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-19</guid>
       <description>The CIA's documented program of human experimentation — using drugs, torture, and psychological manipulation on unwitting American citizens.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Rockefeller Medicine &amp; the Chronic Disease Machine</title>
       <link>https://veritasworldwide.com/chapter/chapter-20</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-20</guid>
       <description>How the Rockefeller Foundation reshaped American medicine to favor pharmaceutical treatment over prevention — and the financial incentives that keep the system in place.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Vaccine History — From Polio to COVID-19</title>
       <link>https://veritasworldwide.com/chapter/chapter-21</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-21</guid>
       <description>A documented history of vaccine development, the regulatory framework that governs it, and the financial incentives that shape public health policy.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>September 11, 2001</title>
       <link>https://veritasworldwide.com/chapter/chapter-22</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-22</guid>
       <description>The event that changed the world — examined through the official record, the 9/11 Commission Report, and the questions that remain unanswered.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The War on Drugs</title>
       <link>https://veritasworldwide.com/chapter/chapter-23</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-23</guid>
       <description>How a policy designed to criminalize dissent became the longest and most expensive domestic war in American history.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Fluoride &amp; Public Water</title>
       <link>https://veritasworldwide.com/chapter/chapter-24</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-24</guid>
       <description>The documented history of water fluoridation — from its industrial origins to its adoption as public health policy.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Titanic, the Federal Reserve &amp; the Men Who Opposed It</title>
       <link>https://veritasworldwide.com/chapter/chapter-25</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-25</guid>
       <description>Three of the wealthiest men who opposed the creation of the Federal Reserve boarded the same ship in April 1912. None of them survived.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Bohemian Grove &amp; Elite Gatherings</title>
       <link>https://veritasworldwide.com/chapter/chapter-26</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-26</guid>
       <description>Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Surveillance State — From ECHELON to Pegasus</title>
       <link>https://veritasworldwide.com/chapter/chapter-27</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-27</guid>
       <description>The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The Epstein Files</title>
       <link>https://veritasworldwide.com/chapter/chapter-28</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-28</guid>
       <description>The intelligence-linked operation that compromised the world's most powerful people — documented through court filings, flight logs, and the testimony of survivors.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Evidence Chain - How Claims Become Public Record</title>
+      <link>https://veritasworldwide.com/chapter/chapter-29</link>
+      <guid isPermaLink="true">https://veritasworldwide.com/chapter/chapter-29</guid>
+      <description>A field guide for turning allegations, rumors, filings, disclosures, and public data into a disciplined research trail without confusing documentation with inference.</description>
+      <pubDate>Wed, 01 Apr 2026 04:00:00 GMT</pubDate>
     </item>
     <item>
       <title>A Note on Continued Research &amp; Primary Source Access</title>
       <link>https://veritasworldwide.com/chapter/epilogue</link>
       <guid isPermaLink="true">https://veritasworldwide.com/chapter/epilogue</guid>
       <description>Where to find the original documents, how to verify the claims in this book, and how to continue the investigation.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Mar 2026 05:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
