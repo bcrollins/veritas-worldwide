@@ -640,63 +640,130 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'chuck-schumer',
     name: 'Chuck Schumer',
-    title: 'U.S. Senator, Senate Majority Leader',
+    title: 'U.S. Senator (D-NY); Senate Majority/Minority Leader',
     category: 'politician',
+    bioguideId: 'S000148',
     party: 'D',
     state: 'NY',
     photoUrl: getProfilePhoto('chuck-schumer'),
-    bioguideId: 'S000148',
-    summary: 'Senate Majority Leader from NY. Self-described "shomer" (guardian) of Israel. Received $3.4M+ from pro-Israel PACs over career. Leading voice on AIPAC-aligned foreign policy.',
-    tags: ['AIPAC', 'Pro-Israel', 'Senate Leader', 'PAC Funded', 'New York'],
+    summary:
+      'Longest-serving Senate Democratic leader from New York and one of Congress\'s most powerful pro-Israel institutional voices. Controls Senate floor schedule for FMF, Iron Dome, and wartime Israel security packages. Documented multi-decade pro-Israel PAC recipient (OpenSecrets). Publicly broke with Netanyahu on judicial overhaul/Gaza wartime conduct in 2024 while remaining a structural enabler of the aid pipeline. Primary: OpenSecrets, Senate leadership record, CRS RL33222.',
+    tags: [
+      'Senate Leader',
+      'Pro-Israel',
+      'AIPAC',
+      'New York',
+      'Democrat',
+      'FMF',
+      'Iron Dome',
+      'Institutional Enablement',
+    ],
+    career: [
+      'NY State Assembly / Senate (public bio)',
+      '1981–1999 — U.S. House',
+      '1999– — U.S. Senate',
+      '2017– — Senate Democratic Leader (Majority/Minority by cycle)',
+      'Institutional steward of bipartisan Israel security aid on the Senate floor',
+    ],
     quotes: [
       {
-        text: 'I am a guardian of Israel',
-        context: 'Senate floor statement on US-Israel relations',
-        date: '2021',
-        source: 'Senate.gov',
-        url: 'https://www.senate.gov'
-      }
+        text: 'Israel has not just the right but the obligation to defend itself.',
+        context: 'Recurring leadership framing after rocket attacks and post–October 7.',
+        date: '2020s',
+        source: 'Office of Sen. Chuck Schumer / floor remarks',
+        url: 'https://www.schumer.senate.gov',
+      },
+      {
+        text: 'Netanyahu has lost his way.',
+        context:
+          'March 2024 Senate floor speech calling for new Israeli elections — rare public break with Netanyahu while maintaining support for military aid; dual-track of personal criticism + structural enablement.',
+        date: 'March 14, 2024',
+        source: 'Senate floor remarks (contemporaneous multi-outlet transcript reporting)',
+        url: 'https://www.schumer.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'AIPAC-affiliated PACs',
-        amount: 3400000,
-        year: '1999-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets career member total scale)',
+        amount: 1200000,
+        year: 'career multi-cycle (verify OpenSecrets for current exact)',
+        source: 'OpenSecrets — Chuck Schumer',
+        url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093',
+      },
     ],
     policyActions: [
       {
-        action: 'Voted to support all Israel aid packages',
-        date: '2023-2024',
-        context: 'Consistently voted for Israel military aid allocations',
-        source: 'Senate.gov voting records',
-        url: 'https://www.senate.gov'
-      }
+        action: 'As Senate Democratic Leader, schedules and whips votes for Israel FMF, Iron Dome, and wartime security supplementals',
+        date: '2017–2024',
+        context:
+          'Leadership role is structural enablement beyond a single vote — controls what reaches the floor and when. Distinct from backbench cosponsorship.',
+        source: 'Senate leadership record; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'March 2024 floor speech criticizing Netanyahu while continuing to support military aid pipeline',
+        date: 'March 14, 2024',
+        context: 'Documents dual posture: political criticism of a specific PM + continuity of U.S. security assistance.',
+        source: 'Senate floor transcript / contemporaneous reporting',
+        url: 'https://www.schumer.senate.gov',
+      },
+      {
+        action: 'Long-term cosponsor/advocate of Iran sanctions and anti-BDS legislative vehicles',
+        date: '2000s–2020s',
+        context: 'Consistent with AIPAC-aligned Democratic foreign-policy package.',
+        source: 'Congress.gov cosponsorships',
+        url: 'https://www.congress.gov/member/charles-schumer/S000148',
+      },
     ],
     connections: [
       {
         name: 'AIPAC',
-        relationship: 'Top PAC recipient',
-        evidence: '$3.4M from AIPAC-affiliated groups',
-        tier: 'verified'
-      }
+        relationship: 'Multi-decade top-tier pro-Israel PAC recipient; leadership agenda aligns with AIPAC security priorities.',
+        evidence: 'OpenSecrets; public advocacy',
+        tier: 'verified',
+      },
+      {
+        name: 'Senate Democratic Caucus',
+        relationship: 'Leader — institutional power over floor schedule for aid packages.',
+        evidence: 'Senate leadership roster',
+        tier: 'verified',
+      },
+      {
+        name: 'Benjamin Netanyahu',
+        relationship: 'Long working relationship; public break in March 2024 speech while aid continuity remained.',
+        evidence: 'Floor speech + aid votes',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received $3.4M from pro-Israel PACs',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org',
+        claim: 'OpenSecrets documents multi-decade large-scale pro-Israel PAC/industry support for Schumer.',
+        source: 'OpenSecrets N00001093',
+        url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093',
         tier: 'verified',
-        date: '2024'
-      }
+        date: '1999–2024',
+      },
+      {
+        claim: 'As Senate Democratic Leader, Schumer is a structural enabler of Israel security appropriations regardless of personal criticism of Netanyahu.',
+        source: 'Senate leadership role + CRS RL33222 aid architecture',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2017–2024',
+      },
+      {
+        claim: 'March 14, 2024 floor speech called for new Israeli elections / said Netanyahu had "lost his way" while not moving to cut military aid.',
+        source: 'Senate floor remarks',
+        url: 'https://www.schumer.senate.gov',
+        tier: 'verified',
+        date: 'March 2024',
+      },
     ],
-    career: ['Senate Majority Leader 2021-present', 'U.S. Senator (D-NY) 1999-present', 'U.S. Representative (D-NY)', 'New York Assembly member'],
     websites: [
-      { label: 'Senate Website', url: 'https://www.schumer.senate.gov' },
-      { label: 'OpenSecrets', url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093' }
-    ]
+      { label: 'Official Senate site', url: 'https://www.schumer.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093' },
+      { label: 'Congress.gov member', url: 'https://www.congress.gov/member/charles-schumer/S000148' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Chuck_Schumer' },
+    ],
   },
   {
     id: 'nancy-pelosi',
