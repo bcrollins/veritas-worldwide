@@ -450,6 +450,43 @@ async function runInteractiveChecks(browser) {
     }
     console.log('[verify:israel-dossier:behavior] PASS densify wave surface text')
 
+    // Chapter 15/16 companion CTAs into the dossier evidence engine
+    await page.goto(`${baseUrl}/chapter/chapter-15`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: 'U.S. Foreign Aid to Israel' }).waitFor({ timeout: 20000 })
+    assert(
+      (await page.getByRole('link', { name: /Open money trail/i }).count()) > 0,
+      'chapter 15 missing Open money trail dossier CTA',
+    )
+    assert(
+      (await page.getByRole('link', { name: /Full Israel Dossier/i }).count()) > 0,
+      'chapter 15 missing Full Israel Dossier CTA',
+    )
+    await page.goto(`${baseUrl}/chapter/chapter-16`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: /USS Liberty/i }).first().waitFor({ timeout: 20000 })
+    assert(
+      (await page.getByRole('link', { name: /Open Liberty in dossier/i }).count()) > 0,
+      'chapter 16 missing Open Liberty in dossier CTA',
+    )
+    console.log('[verify:israel-dossier:behavior] PASS chapter 15/16 dossier companion CTAs')
+
+    // Profile enablement deep-link uses ?actor=
+    await page.goto(`${baseUrl}/profile/howard-kohr`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.waitForFunction(
+      () => document.body?.innerText?.toLowerCase().includes('israel dossier'),
+      null,
+      { timeout: 20000 },
+    )
+    const profileDossierHref = await page.getByRole('link', { name: /Open dossier actors/i }).first().getAttribute('href')
+    assert(
+      profileDossierHref === '/israel-dossier?actor=howard-kohr' || profileDossierHref?.includes('actor=howard-kohr'),
+      `profile enablement deep-link mismatch: ${profileDossierHref}`,
+    )
+    console.log('[verify:israel-dossier:behavior] PASS profile actor deep-link')
+
+    // Return to dossier for download assertions after companion surface checks
+    await page.goto(`${baseUrl}/israel-dossier`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
+
     const downloads = page.locator('#downloads')
     await downloads.scrollIntoViewIfNeeded()
     const [workbookDownload] = await Promise.all([

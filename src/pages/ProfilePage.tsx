@@ -778,7 +778,7 @@ export default function ProfilePage(): React.ReactNode {
                 </p>
               </div>
               <Link
-                to="/israel-dossier#actors"
+                to={`/israel-dossier?actor=${profile.id}`}
                 className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-sm bg-crimson px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
               >
                 Open dossier actors →

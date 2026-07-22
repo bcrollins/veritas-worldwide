@@ -1113,6 +1113,33 @@ export default function ChapterPage() {
             </div>
           )}
           <InterpretationBoundaryNotice counts={evidenceCounts} sourceCount={sourceCount} />
+
+          {(chapter.id === 'chapter-15' || chapter.id === 'chapter-16') && (
+            <div className="mt-6 rounded-sm border border-crimson/25 bg-crimson/5 p-4 sm:p-5">
+              <p className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-crimson mb-2">
+                Interactive evidence engine
+              </p>
+              <p className="font-body text-sm text-ink-muted leading-relaxed mb-3 max-w-3xl">
+                {chapter.id === 'chapter-15'
+                  ? 'Trace the same U.S. aid dollars through the Israel Dossier money trail, actor enablement graph, and 1948→ incident corpus — every node linked to checkable sources.'
+                  : 'Open the USS Liberty incident inside the Israel Dossier evidence engine alongside the broader civilian-targeting record, money trail, and enablement graph.'}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Link
+                  to={chapter.id === 'chapter-16' ? '/israel-dossier?q=USS+Liberty' : '/israel-dossier#money-trail'}
+                  className="inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
+                >
+                  {chapter.id === 'chapter-16' ? 'Open Liberty in dossier' : 'Open money trail'}
+                </Link>
+                <Link
+                  to="/israel-dossier"
+                  className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                >
+                  Full Israel Dossier
+                </Link>
+              </div>
+            </div>
+          )}
         </header>
 
         {/* ── Hero Image — Full Width ─────────────── */}
