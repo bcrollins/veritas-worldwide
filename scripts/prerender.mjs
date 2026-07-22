@@ -276,7 +276,10 @@ function parseKeywords(rawKeywords) {
 }
 
 function parseChapterMeta() {
-  const source = normalizeCanonicalChapterMetaReferences(fs.readFileSync(chapterMetaPath, 'utf8'))
+  // Expand ISRAEL_DOSSIER_CHAPTER_15.* then normalize single-quoted heroImage paths
+  // so the double-quote regex matches every chapter (historical meta uses ').
+  let source = normalizeCanonicalChapterMetaReferences(fs.readFileSync(chapterMetaPath, 'utf8'))
+  source = source.replace(/heroImage:\s*'((?:\\.|[^'])*)'/g, 'heroImage: "$1"')
   const pattern = /\{\s*id:\s*"([^"]+)",\s*number:\s*"((?:\\.|[^"])*)",\s*title:\s*"((?:\\.|[^"])*)",\s*subtitle:\s*"((?:\\.|[^"])*)",\s*dateRange:\s*"((?:\\.|[^"])*)",\s*author:\s*"((?:\\.|[^"])*)",\s*publishDate:\s*"((?:\\.|[^"])*)",\s*(?:heroImage:\s*"((?:\\.|[^"])*)",\s*)?keywords:\s*\[([\s\S]*?)\],\s*\}/g
   const chapters = []
 
@@ -292,6 +295,10 @@ function parseChapterMeta() {
       heroImage: match[8] ? decodeTsString(match[8]) : '',
       keywords: parseKeywords(match[9]),
     })
+  }
+
+  if (chapters.length < 30) {
+    console.warn(`[prerender] parseChapterMeta only found ${chapters.length} chapters (expected ≥30)`)
   }
 
   return chapters

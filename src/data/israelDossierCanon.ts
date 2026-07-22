@@ -361,11 +361,13 @@ export interface DossierPublicBriefing {
 export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-07-22'
 
 export const ISRAEL_DOSSIER_ASSETS = {
-  financial: '/og/chapter-15.png',
-  humanitarian: '/og-image.png',
-  legal: '/og/chapter-16.png',
-  domestic: '/og/chapter-14.png',
-  source: '/og/chapter-29.png',
+  // Prefer first-party editorial heroes over generated OG cards so chapter + dossier
+  // surfaces share durable, self-hosted artwork (no external hotlinks).
+  financial: '/chapters/heroes/chapter-15.jpg',
+  humanitarian: '/chapters/heroes/chapter-29.jpg',
+  legal: '/chapters/heroes/chapter-16.jpg',
+  domestic: '/chapters/heroes/chapter-14.jpg',
+  source: '/chapters/heroes/chapter-29.jpg',
 } as const
 
 export const ISRAEL_DOSSIER_CATEGORY_META: Record<DossierCategory, DossierCategoryMeta> = {
