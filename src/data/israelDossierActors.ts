@@ -792,6 +792,28 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'tim-scott',
+    name: 'Tim Scott',
+    role: 'U.S. Senator (R-SC)',
+    category: 'us-congress',
+    enablementSummary:
+      'Senate Republican and consistent vote for Iron Dome, MOU-baseline FMF, and wartime Israel security supplementals; public advocate for maximal U.S. military support across multiple Gaza escalations.',
+    relatedTimelineYears: ['2014', '2021', '2023', '2024'],
+    relatedIncidentIds: ['protective-edge-2014-children', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Scott pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00031782',
+      },
+      {
+        label: 'Congress.gov — Scott voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/tim-scott/S001184',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

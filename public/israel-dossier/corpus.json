@@ -1,16 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T20:12:37.445Z",
+  "generatedAt": "2026-07-22T20:17:01.632Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 56,
     "timelineEvents": 47,
-    "actors": 36,
+    "actors": 37,
     "moneyTrailNodes": 14,
     "historicalWarCrimesPack": 41,
     "legalCases": 7,
-    "lobbyingRecords": 4
+    "lobbyingRecords": 4,
+    "incidentsByEra": {
+      "mandate-1948": 2,
+      "1948-1967": 6,
+      "occupation-1967-2005": 14,
+      "blockade-2007-2023": 17,
+      "post-oct7": 17
+    },
+    "actorsByCategory": {
+      "us-executive": 9,
+      "us-congress": 22,
+      "us-donor-lobby": 4,
+      "israeli-leadership": 2
+    }
   },
   "publicRecords": [
     {
@@ -1354,6 +1367,39 @@
         {
           "label": "Congress.gov — Sherman voting / cosponsorships",
           "sourceUrl": "https://www.congress.gov/member/brad-sherman/S000344"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "tim-scott",
+      "name": "Tim Scott",
+      "role": "U.S. Senator (R-SC)",
+      "category": "us-congress",
+      "enablementSummary": "Senate Republican and consistent vote for Iron Dome, MOU-baseline FMF, and wartime Israel security supplementals; public advocate for maximal U.S. military support across multiple Gaza escalations.",
+      "relatedTimelineYears": [
+        "2014",
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "protective-edge-2014-children",
+        "guardian-of-the-walls-2021"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "iron-dome",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Scott pro-Israel PAC summary",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00031782"
+        },
+        {
+          "label": "Congress.gov — Scott voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/tim-scott/S001184"
         }
       ],
       "tier": "verified"

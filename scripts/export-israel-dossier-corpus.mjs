@@ -106,6 +106,26 @@ async function main() {
     return ya - yb
   })
 
+  function yearToEra(date) {
+    const y = Number((String(date).match(/(\d{4})/) || [])[1] || 0)
+    if (y <= 1949) return 'mandate-1948'
+    if (y <= 1967) return '1948-1967'
+    if (y <= 2005) return 'occupation-1967-2005'
+    if (y < 2023) return 'blockade-2007-2023'
+    return 'post-oct7'
+  }
+
+  const incidentsByEra = {}
+  for (const incident of incidents) {
+    const era = yearToEra(incident.date)
+    incidentsByEra[era] = (incidentsByEra[era] || 0) + 1
+  }
+
+  const actorsByCategory = {}
+  for (const actor of actorsMod.ISRAEL_DOSSIER_ACTORS) {
+    actorsByCategory[actor.category] = (actorsByCategory[actor.category] || 0) + 1
+  }
+
   const corpus = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
@@ -120,6 +140,8 @@ async function main() {
       historicalWarCrimesPack: history.ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES.length,
       legalCases: (canon.ISRAEL_DOSSIER_LEGAL_CASES || []).length,
       lobbyingRecords: (canon.ISRAEL_DOSSIER_LOBBYING_DATA || []).length,
+      incidentsByEra,
+      actorsByCategory,
     },
     publicRecords: canon.ISRAEL_DOSSIER_LATEST_PUBLIC_RECORDS,
     moneyTrail: canon.ISRAEL_DOSSIER_MONEY_TRAIL,

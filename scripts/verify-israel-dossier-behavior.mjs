@@ -383,11 +383,17 @@ async function runInteractiveChecks(browser) {
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
     assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 55, 'corpus.json incidents too few')
-    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 36, 'corpus.json actors too few')
+    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 37, 'corpus.json actors too few')
     assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 45, 'corpus.json timeline too few')
     assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 14, 'corpus.json moneyTrail too few')
     assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 5, 'corpus.json legalCases too few')
     assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 3, 'corpus.json lobbying too few')
+    assert(corpus?.counts?.incidentsByEra && typeof corpus.counts.incidentsByEra === 'object', 'corpus.json missing incidentsByEra breakdown')
+    assert(corpus?.counts?.actorsByCategory && typeof corpus.counts.actorsByCategory === 'object', 'corpus.json missing actorsByCategory breakdown')
+    assert(
+      Number(corpus.counts.incidentsByEra['mandate-1948'] || 0) >= 1,
+      'corpus.json incidentsByEra missing mandate-1948 floor',
+    )
 
     // Deep-link surface: actor query opens enablement panel
     await page.goto(`${baseUrl}/israel-dossier?actor=joe-biden`, { waitUntil: 'domcontentloaded', timeout: 30000 })
