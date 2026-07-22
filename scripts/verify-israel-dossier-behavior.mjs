@@ -388,6 +388,28 @@ async function runInteractiveChecks(browser) {
     const deepActorHref = await page.locator('#actors').getByRole('link', { name: /Open full profile/i }).first().getAttribute('href')
     assert(deepActorHref === '/profile/joe-biden', `deep-link actor profile href mismatch: ${deepActorHref}`)
 
+    // Actor category filter narrows the enablement graph
+    const actorsSection = page.locator('#actors')
+    await actorsSection.scrollIntoViewIfNeeded()
+    const actorCategorySelect = actorsSection.locator('select').first()
+    if (await actorCategorySelect.count()) {
+      const optionLabels = await actorCategorySelect.locator('option').allTextContents()
+      const congressLabel = optionLabels.find((opt) => /congress/i.test(opt))
+      if (congressLabel) {
+        await actorCategorySelect.selectOption({ label: congressLabel })
+        await page.waitForTimeout(200)
+        const actorText = await actorsSection.innerText()
+        assert(/Showing\s+\d+\s+of\s+\d+\s+actors/i.test(actorText), 'actor category filter did not update count')
+      }
+    }
+
+    // Topic hub CTA for israel-policy
+    await page.goto(`${baseUrl}/topics/israel-policy`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: /Israel Policy/i }).first().waitFor({ timeout: 20000 })
+    const topicBody = (await page.locator('body').innerText()).toLowerCase()
+    assert(topicBody.includes('israel dossier') || topicBody.includes('interactive evidence'), 'israel-policy topic missing dossier CTA copy')
+    assert((await page.getByRole('link', { name: /Open Israel Dossier/i }).count()) > 0, 'israel-policy topic missing Open Israel Dossier link')
+
     const downloads = page.locator('#downloads')
     await downloads.scrollIntoViewIfNeeded()
     const [workbookDownload] = await Promise.all([
