@@ -61,6 +61,10 @@ assert(methodology.includes('breadcrumbJsonLd'), 'Methodology must emit breadcru
 const prerender = read('scripts/prerender.mjs')
 assert(prerender.includes('xmlns:image='), 'sitemap must declare image namespace')
 assert(prerender.includes('image:image'), 'sitemap entries must support image:image')
+assert(
+  prerender.includes("route === '/methodology'") && prerender.includes("'@type': 'FAQPage'"),
+  'prerender must emit FAQPage JSON-LD for /methodology (bot-visible)',
+)
 
 // Home Organization sameAs still present
 const home = read('src/pages/HomePage.tsx')

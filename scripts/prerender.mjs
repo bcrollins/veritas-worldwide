@@ -2464,6 +2464,60 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  // Publication methodology — FAQ + breadcrumbs for bot-visible rich results
+  // (client MethodologyPage also sets these on hydrate; prerender must match for Googlebot).
+  if (route === '/methodology') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Methodology', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What evidence tiers does The Record use?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The Record classifies claims as Verified (primary-source documentation), Circumstantial (documented facts with interpretive conclusion), or Disputed (reported but not independently confirmed).',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How does the five-tier source hierarchy work?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Primary government and court records sit at the top, followed by peer-reviewed research, investigative journalism with documents, contemporaneous reporting, and finally secondary commentary used only for context.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can readers verify claims independently?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Every major claim links to public sources, archive pins, or downloadable workbooks so readers can re-check the public record without trusting the narrative alone.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where is the archive pin manifest?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Pinned Wayback snapshots for briefing sources are published at /israel-dossier/workbooks/briefing-source-archive-manifest.json for durability when origin hosts block automated probes.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   return [basePage]
 }
 
