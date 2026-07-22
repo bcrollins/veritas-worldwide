@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/LOC_Main_Reading_Room_Highsmith.jpg/1280px-LOC_Main_Reading_Room_Highsmith.jpg',
+    src: '/chapters/heroes/epilogue.jpg',
     alt: 'The Main Reading Room of the Library of Congress in Washington, D.C.',
     caption: 'The Main Reading Room, Library of Congress. Every source cited in this publication is publicly accessible. The reader is encouraged to verify any claim independently.',
-    credit: 'Photo: Carol M. Highsmith, Public Domain via Library of Congress',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'The purpose of this book is not to make you angry. Anger without action is just entertainment. The purpose of this book is to give you the documented facts, the primary sources, and the analytical framework to understand how power actually operates.' },

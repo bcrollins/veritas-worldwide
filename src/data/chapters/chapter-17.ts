@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Robert_Kennedy_CORE_rally_speech2.jpg/960px-Robert_Kennedy_CORE_rally_speech2.jpg',
+    src: '/chapters/heroes/chapter-17.jpg',
     alt: 'Robert F. Kennedy announcing the death of Martin Luther King Jr., Indianapolis, April 4, 1968',
     caption: 'Robert F. Kennedy speaking to a crowd in Indianapolis on April 4, 1968, informing them of the assassination of Martin Luther King Jr. Two months later, Kennedy himself would be assassinated.',
-    credit: 'Photo: Library of Congress, Public Domain',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'Just after midnight on June 5, 1968, in the crowded pantry of the Ambassador Hotel in Los Angeles, Senator Robert F. Kennedy was shot and killed moments after winning the California Democratic presidential primary.' },

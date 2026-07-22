@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg/1280px-Change_of_command_ceremony_of_the_Mossad%2C_1968._III.jpg',
+    src: '/chapters/heroes/chapter-7.jpg',
     alt: 'Former headquarters of the Mossad, Israel\'s national intelligence agency',
     caption: 'The Mossad — HaMossad leModiʿin uleTafkidim Meyuḥadim (the Institute for Intelligence and Special Operations) — operates as one of the most effective intelligence agencies in the world.',
-    credit: 'Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'On December 13, 1949, Prime Minister David Ben-Gurion signed the order that created the Central Institute for Intelligence and Security — what would become the Mossad.' },

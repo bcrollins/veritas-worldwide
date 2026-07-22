@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nixon_edited_transcripts.jpg/1280px-Nixon_edited_transcripts.jpg',
+    src: '/chapters/heroes/chapter-23.jpg',
     alt: 'President Richard Nixon at a press briefing — architect of the War on Drugs',
     caption: 'President Nixon declared drug abuse "public enemy number one" in 1971. A former domestic policy advisor later admitted the War on Drugs was designed to target anti-war and Black communities.',
-    credit: 'Photo: White House Photo Office, Public Domain via National Archives',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'The "War on Drugs," launched by President Richard Nixon in 1971, was never primarily about public health. A top Nixon aide later admitted it was a political weapon designed to target the antiwar left and Black communities.' },

@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harold_Pratt_House_north_staircase_jeh.jpg/1280px-Harold_Pratt_House_north_staircase_jeh.jpg',
+    src: '/chapters/heroes/chapter-11.jpg',
     alt: 'The Harold Pratt House in New York City, headquarters of the Council on Foreign Relations',
     caption: 'The Harold Pratt House, 58 East 68th Street, New York — headquarters of the Council on Foreign Relations since 1945. CFR membership has included virtually every Secretary of State, Treasury, and Defense since its founding.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'Carroll Quigley was a professor of history at Georgetown University, a mentor to Bill Clinton, and one of the most respected academic historians of the twentieth century. What he documented in his 1966 book Tragedy and Hope would reshape the understanding of how global power operates.' },

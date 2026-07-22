@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg',
+    src: '/chapters/heroes/foreword.jpg',
     alt: 'The National Archives Building in Washington, D.C., viewed from Pennsylvania Avenue — the repository of America\'s founding documents and declassified government records',
     caption: 'The National Archives Building, Washington, D.C. — where the primary source documents cited throughout this publication are preserved and publicly accessible.',
-    credit: 'Photo: National Archives, Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
     creditUrl: 'https://commons.wikimedia.org/wiki/File:National_Archives_Building_-_from_Pennsylvania_Avenue.jpg',
   },
   content: [

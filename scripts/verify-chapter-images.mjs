@@ -36,6 +36,15 @@ for (const src of all) {
   assert(fs.statSync(filePath).size > 5_000, `asset too small ${src}`)
 }
 
+// Content chapter sources must also be first-party
+const chaptersDir = path.join(root, 'src', 'data', 'chapters')
+if (fs.existsSync(chaptersDir)) {
+  for (const f of fs.readdirSync(chaptersDir).filter((x) => x.endsWith('.ts'))) {
+    const body = fs.readFileSync(path.join(chaptersDir, f), 'utf8')
+    assert(!body.includes('upload.wikimedia.org'), `chapter source still hotlinks Wikimedia: ${f}`)
+  }
+}
+
 console.log(
   `[verify:chapter-images] PASS — metaHeroes=${heroRefs.length} gallery=${galleryRefs.length} uniqueAssets=${all.size}`,
 )

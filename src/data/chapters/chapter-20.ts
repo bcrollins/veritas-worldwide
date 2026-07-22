@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rockefeller_Center_MAM.JPG/960px-Rockefeller_Center_MAM.JPG',
+    src: '/chapters/heroes/chapter-20.jpg',
     alt: 'Rockefeller Center, New York City — symbol of the Rockefeller family\'s influence on American institutions',
     caption: 'Rockefeller Center, New York City. The Rockefeller Foundation\'s 1910 Flexner Report reshaped American medical education to favor pharmaceutical treatment — a system that generates $4.5 trillion annually.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'Rockefeller Medicine\nHow one family\'s oil fortune was used to reshape American medicine, eliminate natural healing traditions, and build a pharmaceutical empire that\nprofits from chronic illness.' },

@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Deer_Island_Waste_Water_Treatment_Plant.jpg/1280px-Deer_Island_Waste_Water_Treatment_Plant.jpg',
+    src: '/chapters/heroes/chapter-24.jpg',
     alt: 'Water treatment facility with flocculators and sedimentation basins — where fluoride is added to public water supplies',
     caption: 'A municipal water treatment facility. Since 1945, fluoride — an industrial byproduct — has been added to public water supplies across the United States, a practice that remains controversial among researchers.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'The official narrative of water fluoridation is a public health triumph. The documented history tells a more complicated story — one that begins not in a dental clinic but in an aluminum smelting plant.' },

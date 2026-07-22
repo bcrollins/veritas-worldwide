@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Balfour_declaration_unmarked.jpg/960px-Balfour_declaration_unmarked.jpg',
+    src: '/chapters/heroes/chapter-6.jpg',
     alt: 'The Balfour Declaration of 1917 — the letter from British Foreign Secretary Arthur Balfour to Lord Rothschild pledging British support for a Jewish homeland in Palestine',
     caption: 'The Balfour Declaration, November 2, 1917 — a 67-word letter from British Foreign Secretary Arthur Balfour to Lord Walter Rothschild that would reshape the Middle East for the next century.',
-    credit: 'British Government, Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'To understand the forces that shaped the modern Middle East, one must begin with the texts that shaped the worldview, the letter that created the state, and the family that financed both.' },

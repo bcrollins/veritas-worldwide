@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg',
+    src: '/chapters/heroes/chapter-4.jpg',
     alt: 'British soldiers in the trenches during the Battle of the Somme, 1916 — World War I',
     caption: 'British soldiers in the trenches during the Battle of the Somme, 1916. The Great War that reshaped Europe was financed on both sides by interconnected banking dynasties.',
-    credit: 'Photo: Imperial War Museum, Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'World War I' },

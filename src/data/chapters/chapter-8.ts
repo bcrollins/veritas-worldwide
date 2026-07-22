@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/800px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg',
+    src: '/chapters/heroes/chapter-8.jpg',
     alt: 'Official White House portrait of President John F. Kennedy',
     caption: 'President John F. Kennedy demanded inspections of Israel\'s Dimona nuclear facility and moved to register AIPAC\'s predecessor as a foreign agent. He was assassinated on November 22, 1963.',
-    credit: 'Official White House photo by Cecil Stoughton, Public Domain',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'In 1963, President Kennedy signed Executive Order 11110, demanded nuclear inspections at Israel\'s secret Dimona reactor, and ordered the American Zionist Council to register as a foreign agent. Five months later, he was dead.' },

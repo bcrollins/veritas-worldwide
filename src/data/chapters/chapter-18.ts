@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Aerial_view_of_CIA_headquarters%2C_Langley%2C_Virginia_14762v.jpg',
+    src: '/chapters/heroes/chapter-18.jpg',
     alt: 'The Original Headquarters Building of the Central Intelligence Agency in Langley, Virginia',
     caption: 'CIA Headquarters, Langley, Virginia. Operation Mockingbird — the documented CIA program to infiltrate and influence American media — was run from this building beginning in the early 1950s.',
-    credit: 'Photo: Carol M. Highsmith, Public Domain via Library of Congress',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: '1975 Church Committee hearings. Over 400 journalists\non the CIA payroll. Carl Bernstein\'s 1977 Rolling Stone' },

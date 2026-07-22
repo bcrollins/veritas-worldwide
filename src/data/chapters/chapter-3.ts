@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/GA_Jekyll_Island_Club_HD_Clubhouse01.jpg/1280px-GA_Jekyll_Island_Club_HD_Clubhouse01.jpg',
+    src: '/chapters/heroes/chapter-3.jpg',
     alt: 'The Jekyll Island Club in Georgia, site of the secret 1910 meeting that drafted the Federal Reserve Act',
     caption: 'The Jekyll Island Club, Georgia — in November 1910, six men representing one quarter of the world\'s wealth met here in secret to draft the blueprint for the Federal Reserve System.',
-    credit: 'Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'In 1910, the six most powerful men in American finance boarded a private railcar at a New Jersey station and traveled south under assumed names to a private island off the coast of Georgia.' },

@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Nixon_30-0316a.jpg/960px-Nixon_30-0316a.jpg',
+    src: '/chapters/heroes/chapter-10.jpg',
     alt: 'President Richard Nixon — who ended the gold standard in 1971 and established the petrodollar system',
     caption: 'President Richard Nixon ended the Bretton Woods gold standard on August 15, 1971 — the "Nixon Shock." The petrodollar system that replaced it, secretly negotiated by Henry Kissinger, became the foundation of American economic hegemony.',
-    credit: 'Official White House photo, Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'On the evening of August 15, 1971, Richard Nixon appeared on national television and announced that the United States would no longer convert dollars to gold. The gold standard was dead.' },

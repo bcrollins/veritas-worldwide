@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg/1280px-Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg',
+    src: '/chapters/heroes/chapter-12.jpg',
     alt: 'The Marriner S. Eccles Federal Reserve Board Building in Washington, D.C.',
     caption: 'The Marriner S. Eccles Building, Washington, D.C. — headquarters of the Federal Reserve Board of Governors. The institution that controls the American money supply is neither fully federal nor a reserve.',
-    credit: 'Photo: AgnosticPreachersKid, CC BY-SA 3.0, via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'Federal Reserve Building' },

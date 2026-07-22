@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg',
+    src: '/chapters/heroes/chapter-25.jpg',
     alt: 'RMS Titanic departing Southampton on April 10, 1912',
     caption: 'RMS Titanic departing Southampton, April 10, 1912. The ship was owned by the White Star Line, which was controlled by J.P. Morgan\'s International Mercantile Marine Company. Morgan had a ticket but cancelled his passage at the last minute.',
-    credit: 'Photo: F.G.O. Stuart, Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'The Unsinkable Plan\nThree of the wealthiest men in the world, all vocal opponents of the new Federal Reserve, died on the Titanic. The man who financed the ship, J.P. Morgan,  cancelled  his  trip  at  the  last  minute.  Coincidence?  This  chapter\nexamines the facts.' },
@@ -29,7 +29,7 @@ const chapter: Chapter = {
     { type: 'subheading', text: 'Isidor Straus: The Merchant Prince' },
     { type: 'text', text: 'Isidor Straus, the co-owner of Macy\'s department store, was another of the notable businessmen who perished on the Titanic. Unlike Astor and Guggenheim, Straus\'s position on the Federal Reserve is more complex. Some sources claim he was a supporter of the Aldrich Plan, a precursor to the Federal Reserve Act. However, other researchers contend that he was a vocal opponent of the final version of the Act, which he believed gave too much power to a small group of bankers. His death, along with those of Astor and Guggenheim, removed a significant voice from the debate.' },
     { type: 'evidence', evidence: { tier: 'disputed', label: 'DISPUTED — STRAUS\'S STANCE ON THE FEDERAL RESERVE', text: 'The claim that Isidor Straus was a staunch opponent of the Federal Reserve is a point of contention among historians. While he did express reservations about certain aspects of the proposed legislation, he was also a member of the National Monetary Commission, which laid the groundwork for the Fed. This has led some to conclude that he was, at worst, a moderate critic and not the ardent opponent that some conspiracy theories suggest.' } },
-    { type: 'image', image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1280px-RMS_Titanic_3.jpg', alt: 'RMS Titanic departing Southampton on April 10, 1912', caption: 'RMS Titanic departing Southampton, April 10, 1912. The ship was owned by the White Star Line, which was controlled by J.P. Morgan\'s International Mercantile Marine Company. Morgan had a ticket but cancelled his passage at the last minute.', credit: 'Photo: F.G.O. Stuart, Public Domain via Wikimedia Commons' } },
+    { type: 'image', image: { src: '/chapters/heroes/chapter-25.jpg', alt: 'RMS Titanic departing Southampton on April 10, 1912', caption: 'RMS Titanic departing Southampton, April 10, 1912. The ship was owned by the White Star Line, which was controlled by J.P. Morgan\'s International Mercantile Marine Company. Morgan had a ticket but cancelled his passage at the last minute.', credit: 'Editorial illustration · Veritas Worldwide' } },
     { type: 'heading', text: 'II. The Architect: J.P. Morgan and the Federal Reserve' },
     { type: 'text', text: 'At the heart of the plan for a new American central bank stood John Pierpont Morgan, the most powerful banker of his time. J.P. Morgan & Co. was not just a bank; it was a financial empire, with vast holdings in railroads, steel, and shipping. Morgan had long advocated for a centralized banking system, arguing that it would bring stability to the volatile American economy. In 1907, he had personally intervened to stop a financial panic, an event that bolstered his argument for a permanent institution to manage the nation\'s money supply.' },
     { type: 'subheading', text: 'The Jekyll Island Meeting' },

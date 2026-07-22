@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg/1280px-National_Security_Agency_headquarters%2C_Fort_Meade%2C_Maryland.jpg',
+    src: '/chapters/heroes/chapter-27.jpg',
     alt: 'National Security Agency headquarters at Fort Meade, Maryland',
     caption: 'NSA Headquarters, Fort Meade, Maryland. Edward Snowden\'s 2013 disclosures confirmed what critics had alleged for decades: the U.S. government conducts mass surveillance on its own citizens.',
-    credit: 'Photo: NSA, Public Domain',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'On June 5, 2013, The Guardian published the first of Edward Snowden\'s revelations, exposing a global surveillance apparatus that monitors the communications of billions of people worldwide.' },

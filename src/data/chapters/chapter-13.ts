@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'March 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wall_Street_-_New_York_Stock_Exchange.jpg/1280px-Wall_Street_-_New_York_Stock_Exchange.jpg',
+    src: '/chapters/heroes/chapter-13.jpg',
     alt: 'The New York Stock Exchange on Wall Street — epicenter of the 2008 financial crisis',
     caption: 'The New York Stock Exchange, Wall Street. In 2008, the reckless gambling of the institutions inside this building crashed the global economy. The government bailed out the banks with taxpayer money. No senior executive went to prison.',
-    credit: 'Photo: Public Domain via Wikimedia Commons',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   content: [
     { type: 'dropcap', text: 'The story of the 2008 financial crisis begins not in 2008 but in 1999, when the Glass-Steagall Act was repealed. What followed was the largest transfer of wealth from the public to the private sector in American history.' },

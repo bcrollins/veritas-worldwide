@@ -9,10 +9,10 @@ const chapter: Chapter = {
   author: 'Veritas Worldwide',
   publishDate: 'April 2026',
   heroImage: {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/US_National_Archives_Building.jpg/1280px-US_National_Archives_Building.jpg',
+    src: '/chapters/heroes/chapter-29.jpg',
     alt: 'The National Archives Building in Washington, D.C.',
     caption: 'A durable investigation begins with records that can be retrieved, cited, compared, and challenged.',
-    credit: 'Carol M. Highsmith, Library of Congress',
+    credit: 'Editorial illustration · Veritas Worldwide',
   },
   chapterType: 'reference',
   content: [
