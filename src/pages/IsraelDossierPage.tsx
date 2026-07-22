@@ -1897,6 +1897,22 @@ export default function IsraelDossierPage() {
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-8 max-w-3xl">
           Download the complete dossier as a PDF, share a 10-slide Instagram carousel, or pin high-impact images to your profile. Every asset is free to use — the documented record only matters if people see it.
         </p>
+        <div className="mb-6 mt-4 rounded-sm border border-border bg-surface p-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-crimson mb-1">Machine-readable corpus</p>
+            <p className="font-body text-sm text-ink-muted">
+              Full JSON of incidents, timeline, actors, and money-trail nodes for editors, researchers, and offline audit.
+            </p>
+          </div>
+          <a
+            href="/israel-dossier/corpus.json"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-obsidian px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:opacity-90 transition-opacity"
+          >
+            Open corpus.json
+          </a>
+        </div>
 
         {/* PDF Download */}
         <div className="mb-8 p-5 border border-border rounded-sm bg-surface">

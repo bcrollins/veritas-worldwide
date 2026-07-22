@@ -1,0 +1,2753 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-22T18:50:17.099Z",
+  "lastVerified": "2026-07-22",
+  "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
+  "counts": {
+    "incidents": 35,
+    "timelineEvents": 31,
+    "actors": 18,
+    "moneyTrailNodes": 10,
+    "historicalWarCrimesPack": 20
+  },
+  "publicRecords": [
+    {
+      "id": "gaza-fatalities",
+      "value": "72,289+",
+      "label": "reported Palestinian fatalities in Gaza",
+      "shortLabel": "Reported Gaza fatalities",
+      "source": "OCHA Reported Impact Snapshot",
+      "sourceUrl": "https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_01_April_2026.pdf",
+      "note": "OCHA attributes cumulative Gaza casualty figures to MoH Gaza and flags that UN verification is separate from source attribution.",
+      "category": "humanitarian"
+    },
+    {
+      "id": "children-killed",
+      "value": "21,289+",
+      "label": "children reported killed in Gaza",
+      "shortLabel": "Children reported killed",
+      "source": "UNICEF State of Palestine update",
+      "sourceUrl": "https://www.unicef.org/media/178696/file/State-of-Palestine-Humanitarian-Situation-Update-and-Humanitarian-Response-5-February-2026.pdf.pdf",
+      "note": "UNICEF reported this child fatality count through 3 February 2026, alongside 44,500 reported injured children.",
+      "category": "humanitarian"
+    },
+    {
+      "id": "journalists-killed",
+      "value": "261+",
+      "label": "journalists and media workers among the killed",
+      "shortLabel": "Journalists/media workers",
+      "source": "Committee to Protect Journalists",
+      "sourceUrl": "https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/",
+      "note": "CPJ describes these as preliminary investigations updated 17 April 2026 across Gaza, Yemen, Lebanon, Israel, and Iran since the Israel-Gaza war began.",
+      "category": "humanitarian"
+    },
+    {
+      "id": "us-aid-obligations",
+      "value": "$298B",
+      "label": "inflation-adjusted U.S. aid obligations to Israel, 1946-2024",
+      "shortLabel": "Inflation-adjusted aid",
+      "source": "Congressional Research Service RL33222",
+      "sourceUrl": "https://www.congress.gov/crs-product/RL33222",
+      "note": "CRS reports $174.965B in current dollars through 2025 and an estimated $298B in constant 2024 dollars through 2024.",
+      "category": "financial"
+    }
+  ],
+  "moneyTrail": [
+    {
+      "id": "hr815",
+      "label": "H.R.815 — Israel Security Supplemental",
+      "amount": "$26.4B",
+      "type": "legislation",
+      "date": "April 24, 2024",
+      "detail": "Signed into law. Passed House 366-58, Senate 79-18. Includes $4B for Iron Dome replenishment, $3.5B for weapons procurement, $1.2B for Iron Beam, $1B for artillery munitions.",
+      "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815",
+      "children": [
+        "iron-dome",
+        "fmf-weapons",
+        "munitions"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "chuck-schumer",
+        "mitch-mcconnell",
+        "mike-johnson",
+        "lindsey-graham"
+      ]
+    },
+    {
+      "id": "annual-mou",
+      "label": "10-Year MOU (2016) — Annual Baseline",
+      "amount": "$3.8B/year",
+      "type": "legislation",
+      "date": "2019–2028",
+      "detail": "Automatic annual aid: $3.3B in Foreign Military Financing + $500M for missile defense. Israel is the only recipient allowed to spend FMF on its own defense industry.",
+      "sourceUrl": "https://www.congress.gov/crs-product/RL33222",
+      "children": [
+        "fmf-weapons",
+        "iron-dome"
+      ],
+      "relatedProfileIds": [
+        "barack-obama",
+        "joe-biden",
+        "benjamin-netanyahu"
+      ]
+    },
+    {
+      "id": "trump-release",
+      "label": "Trump releases 1,800 MK-84 bombs",
+      "amount": "~$360M",
+      "type": "delivery",
+      "date": "January 2025",
+      "detail": "President Trump released a Biden-era hold on 1,800 MK-84 2,000-pound bombs immediately upon taking office. Each MK-84 costs ~$3,100 bare; with JDAM kits, ~$25,000 each.",
+      "sourceUrl": "https://www.armyrecognition.com/news/army-news/2025/breaking-news-us-greenlights-mk-84-bombs-for-israel-despite-us-president-donald-trumps-military-sales-pause",
+      "children": [
+        "mk84-use"
+      ],
+      "relatedProfileIds": [
+        "donald-trump",
+        "benjamin-netanyahu"
+      ]
+    },
+    {
+      "id": "fmf-weapons",
+      "label": "Foreign Military Financing → Weapons Procurement",
+      "amount": "$3.5B+",
+      "type": "weapon",
+      "date": "2024",
+      "detail": "FMF grants used to purchase: F-35 stealth fighters, Apache attack helicopters, MK-84 bombs, JDAM guidance kits, 155mm artillery shells, Hellfire missiles, and small-diameter bombs.",
+      "sourceUrl": "https://www.dsca.mil/press-media/major-arms-sales",
+      "children": [
+        "mk84-use",
+        "jdam-use"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "antony-blinken",
+        "benjamin-netanyahu"
+      ]
+    },
+    {
+      "id": "iron-dome",
+      "label": "Iron Dome / David's Sling Replenishment",
+      "amount": "$4B+",
+      "type": "weapon",
+      "date": "2024",
+      "detail": "Tamir interceptors ($50K–$100K each) and David's Sling Stunner missiles ($1M+ each). Used to defend Israeli territory from rocket attacks while offensive operations continue in Gaza.",
+      "sourceUrl": "https://www.britannica.com/topic/Iron-Dome",
+      "relatedProfileIds": [
+        "joe-biden",
+        "barack-obama"
+      ]
+    },
+    {
+      "id": "munitions",
+      "label": "Artillery & Critical Munitions Production",
+      "amount": "$1B",
+      "type": "weapon",
+      "date": "2024",
+      "detail": "155mm artillery shells, tank ammunition, and other ground-force munitions used in the Gaza ground invasion. 155mm shells have been documented striking residential areas.",
+      "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815",
+      "children": [
+        "artillery-use"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "chuck-schumer"
+      ]
+    },
+    {
+      "id": "mk84-use",
+      "label": "MK-84 Bombs → Documented Civilian Impact",
+      "amount": "14,000+ delivered",
+      "type": "impact",
+      "date": "2023–2025",
+      "detail": "MK-84 2,000-pound bombs identified in: al-Mawasi \"safe zone\" attack (90+ killed, July 2024), Jabalia refugee camp strikes (120+ killed, Oct 2023), and numerous residential building collapses. Lethal blast radius: 360 meters.",
+      "sourceUrl": "https://responsiblestatecraft.org/us-weapons-gaza/",
+      "relatedProfileIds": [
+        "joe-biden",
+        "donald-trump",
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ]
+    },
+    {
+      "id": "jdam-use",
+      "label": "JDAM-Guided Strikes → Residential Areas",
+      "amount": "$680M package (Nov 2024)",
+      "type": "impact",
+      "date": "2024",
+      "detail": "A $680M package of Joint Direct Attack Munitions (JDAM) kits and small-diameter bombs approved November 2024. JDAMs convert unguided \"dumb bombs\" into GPS-guided munitions — but in Gaza's density (6,500 people/km²), even \"precision\" strikes kill civilians.",
+      "sourceUrl": "https://armssalesaccountabilityproject.com/wp-content/uploads/10.4.24-JDAM-White-Paper.pdf",
+      "relatedProfileIds": [
+        "joe-biden",
+        "antony-blinken"
+      ]
+    },
+    {
+      "id": "artillery-use",
+      "label": "155mm Artillery → Civilian Areas",
+      "amount": "Thousands of shells",
+      "type": "impact",
+      "date": "2023–2025",
+      "detail": "155mm artillery, designed for open-battlefield use, has been fired into one of the most densely populated areas on Earth. Each shell has a casualty radius of 50+ meters. Used extensively during the Jabalia and Nuseirat operations.",
+      "sourceUrl": "https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf",
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ]
+    },
+    {
+      "id": "crs-lifetime-aid",
+      "label": "CRS lifetime U.S. aid obligations (1946–2024)",
+      "amount": "$298B",
+      "type": "legislation",
+      "date": "1946–2024",
+      "detail": "Congressional Research Service RL33222 estimates $174.965B in current dollars through 2025 and roughly $298B in constant 2024 dollars through 2024 — the long-run public-record floor for U.S. financial enablement of Israeli military capacity.",
+      "sourceUrl": "https://www.congress.gov/crs-product/RL33222",
+      "children": [
+        "annual-mou",
+        "hr815"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "barack-obama",
+        "donald-trump",
+        "benjamin-netanyahu"
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "profileId": "joe-biden",
+      "name": "Joe Biden",
+      "role": "U.S. President (2021–2025); long-time Senate foreign-policy power broker",
+      "category": "us-executive",
+      "enablementSummary": "Approved the $26.4B Israel Security Supplemental (H.R.815), maintained the $3.8B/year MOU baseline, and authorized continuous munitions transfers during the post–October 7 Gaza war while briefly pausing some MK-84 deliveries over civilian-casualty concerns.",
+      "relatedTimelineYears": [
+        "2014",
+        "2016",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "cast-lead-2008-09",
+        "protective-edge-2014-children",
+        "great-march-return-2018",
+        "jabalia-refugee-camp",
+        "al-mawasi-safe-zone"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou",
+        "fmf-weapons",
+        "mk84-use",
+        "jdam-use"
+      ],
+      "fundingLinks": [
+        {
+          "label": "H.R.815 — Israel Security Supplemental Appropriations Act, 2024",
+          "amount": "$26.4B",
+          "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815"
+        },
+        {
+          "label": "CRS RL33222 — U.S. Foreign Aid to Israel",
+          "amount": "$298B inflation-adjusted through 2024",
+          "sourceUrl": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "donald-trump",
+      "name": "Donald Trump",
+      "role": "U.S. President (2017–2021; 2025–)",
+      "category": "us-executive",
+      "enablementSummary": "Released the Biden-era hold on 1,800 MK-84 2,000-pound bombs in January 2025; previously recognized Jerusalem as capital, moved the U.S. embassy, and recognized Israeli sovereignty over the Golan Heights — structural diplomatic enablement of occupation policy.",
+      "relatedTimelineYears": [
+        "2017",
+        "2018",
+        "2019",
+        "2025"
+      ],
+      "relatedIncidentIds": [
+        "great-march-return-2018",
+        "al-mawasi-safe-zone"
+      ],
+      "relatedMoneyNodeIds": [
+        "trump-release",
+        "mk84-use",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "Trump administration release of MK-84 bombs (reporting)",
+          "amount": "~$360M package context",
+          "sourceUrl": "https://www.armyrecognition.com/news/army-news/2025/breaking-news-us-greenlights-mk-84-bombs-for-israel-despite-us-president-donald-trumps-military-sales-pause"
+        },
+        {
+          "label": "CRS RL33222 — multi-administration aid continuity",
+          "sourceUrl": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "antony-blinken",
+      "name": "Antony Blinken",
+      "role": "U.S. Secretary of State (2021–2025)",
+      "category": "us-executive",
+      "enablementSummary": "As chief diplomat, oversaw State Department arms-transfer determinations and public justifications for continued U.S. military support during the Gaza war while stating humanitarian concerns — the dual track of weapons continuity plus diplomatic cover.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "fmf-weapons",
+        "jdam-use"
+      ],
+      "fundingLinks": [
+        {
+          "label": "DSCA major arms sales notices",
+          "sourceUrl": "https://www.dsca.mil/press-media/major-arms-sales"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "chuck-schumer",
+      "name": "Chuck Schumer",
+      "role": "U.S. Senate Majority / Minority Leader",
+      "category": "us-congress",
+      "enablementSummary": "Floor leadership role in advancing Israel aid packages and defending unconditional military assistance; major AIPAC-aligned fundraising recipient whose votes track supplemental and baseline FMF flows.",
+      "relatedTimelineYears": [
+        "2016",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "protective-edge-2014-children"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Schumer / pro-Israel PAC flows",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/charles-schumer/summary?cid=N00001093"
+        },
+        {
+          "label": "H.R.815 roll-call context (Senate passage 79-18)",
+          "amount": "$26.4B",
+          "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "mitch-mcconnell",
+      "name": "Mitch McConnell",
+      "role": "U.S. Senate Republican Leader",
+      "category": "us-congress",
+      "enablementSummary": "Key Republican Senate vote and messaging driver for Israel aid supplementals and opposition to conditions on military assistance.",
+      "relatedTimelineYears": [
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — McConnell profile",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=N00003389"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "mike-johnson",
+      "name": "Mike Johnson",
+      "role": "Speaker of the U.S. House",
+      "category": "us-congress",
+      "enablementSummary": "House leadership role in advancing Israel security supplementals and framing U.S. military aid as non-negotiable during the Gaza war.",
+      "relatedTimelineYears": [
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815"
+      ],
+      "fundingLinks": [
+        {
+          "label": "H.R.815 — House passage 366-58",
+          "amount": "$26.4B",
+          "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "miriam-adelson",
+      "name": "Miriam Adelson",
+      "role": "Mega-donor; Adelson Family Foundation / Republican megadonor",
+      "category": "us-donor-lobby",
+      "enablementSummary": "Among the largest individual political donors supporting strongly pro-Israel Republican candidates and policy agendas; financial enablement of electoral outcomes that lock in unconditional aid orthodoxy.",
+      "relatedTimelineYears": [
+        "2016",
+        "2020",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Adelson family / related PAC activity",
+          "sourceUrl": "https://www.opensecrets.org/"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "benjamin-netanyahu",
+      "name": "Benjamin Netanyahu",
+      "role": "Prime Minister of Israel (multiple terms; current wartime PM)",
+      "category": "israeli-leadership",
+      "enablementSummary": "Sitting head of government during the post–October 7 Gaza campaign. Subject of ICC arrest warrant (Nov 2024) for alleged war crimes and crimes against humanity including starvation as a method of warfare. Ultimate political authority over IDF operations and COGAT aid policy.",
+      "relatedTimelineYears": [
+        "1996",
+        "2009",
+        "2014",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "cast-lead-2008-09",
+        "protective-edge-2014-children",
+        "oct7-hamas-attack-2023",
+        "jabalia-refugee-camp",
+        "starvation-aid-blockade"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou",
+        "mk84-use",
+        "artillery-use"
+      ],
+      "fundingLinks": [
+        {
+          "label": "ICC — arrest warrant decision (Netanyahu / Gallant)",
+          "sourceUrl": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges"
+        },
+        {
+          "label": "CRS RL33222 — U.S. aid received under Netanyahu governments",
+          "sourceUrl": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "yoav-gallant",
+      "name": "Yoav Gallant",
+      "role": "Israeli Defense Minister (2022–2024)",
+      "category": "israeli-leadership",
+      "enablementSummary": "Defense Minister during the opening phase of the Gaza war. Subject of ICC arrest warrant for alleged war crimes and crimes against humanity. Publicly announced a \"complete siege\" of Gaza (electricity, food, fuel) in October 2023 — language cited in international legal filings.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [
+        "oct7-hamas-attack-2023",
+        "starvation-aid-blockade",
+        "jabalia-refugee-camp",
+        "al-shifa-hospital"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "artillery-use",
+        "fmf-weapons"
+      ],
+      "fundingLinks": [
+        {
+          "label": "ICC — Situation in the State of Palestine",
+          "sourceUrl": "https://www.icc-cpi.int/palestine"
+        },
+        {
+          "label": "OHCHR — Gaza updates and siege documentation",
+          "sourceUrl": "https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "barack-obama",
+      "name": "Barack Obama",
+      "role": "U.S. President (2009–2017)",
+      "category": "us-executive",
+      "enablementSummary": "Signed the record $38B 10-year MOU (2016) that set the modern $3.8B/year baseline. Continuity of FMF during Cast Lead aftermath and Protective Edge established the institutional floor still operating today.",
+      "relatedTimelineYears": [
+        "2009",
+        "2014",
+        "2016"
+      ],
+      "relatedIncidentIds": [
+        "cast-lead-2008-09",
+        "protective-edge-2014-children",
+        "mavi-marmara-2010"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "iron-dome",
+        "fmf-weapons"
+      ],
+      "fundingLinks": [
+        {
+          "label": "State Department — 2016 MOU fact sheet",
+          "amount": "$38B / 10 years",
+          "sourceUrl": "https://2009-2017.state.gov/r/pa/prs/ps/2016/09/261987.htm"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "lindsey-graham",
+      "name": "Lindsey Graham",
+      "role": "U.S. Senator (R-SC)",
+      "category": "us-congress",
+      "enablementSummary": "Leading Senate voice for maximal military aid and against conditions; frequent public statements framing any pause in weapons as strategic betrayal.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Graham / pro-Israel contributions",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/lindsey-graham/summary?cid=N00009975"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "ted-cruz",
+      "name": "Ted Cruz",
+      "role": "U.S. Senator (R-TX)",
+      "category": "us-congress",
+      "enablementSummary": "Consistent legislative and rhetorical support for unconditional Israel aid and sanctions frameworks targeting critics of Israeli policy.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Cruz profile",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "hillary-clinton",
+      "name": "Hillary Clinton",
+      "role": "Former Secretary of State; former U.S. Senator (D-NY)",
+      "category": "us-executive",
+      "enablementSummary": "As Secretary of State and senator, a durable institutional advocate for the U.S.–Israel military and diplomatic partnership during multiple Gaza escalations and aid cycles; continuum of executive-branch enablement before the 2016 MOU peak.",
+      "relatedTimelineYears": [
+        "2008–2009",
+        "2012",
+        "2014"
+      ],
+      "relatedIncidentIds": [
+        "cast-lead-2008-09",
+        "pillar-of-defense-2012",
+        "protective-edge-2014-children"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "iron-dome"
+      ],
+      "fundingLinks": [
+        {
+          "label": "State Department historical Israel policy archive",
+          "sourceUrl": "https://2009-2017.state.gov/"
+        },
+        {
+          "label": "CRS RL33222 — multi-administration aid continuity",
+          "sourceUrl": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "nikki-haley",
+      "name": "Nikki Haley",
+      "role": "Former U.S. Ambassador to the United Nations",
+      "category": "us-executive",
+      "enablementSummary": "As UN Ambassador, led U.S. diplomatic defense of Israel at the Security Council and General Assembly — including veto and walkout diplomacy that insulated Israeli operations from multilateral constraints during her tenure.",
+      "relatedTimelineYears": [
+        "2017",
+        "2018",
+        "2019"
+      ],
+      "relatedIncidentIds": [
+        "great-march-return-2018"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "U.S. Mission to the UN — historical statements archive",
+          "sourceUrl": "https://usun.usmission.gov/"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "hakeem-jeffries",
+      "name": "Hakeem Jeffries",
+      "role": "House Democratic Leader",
+      "category": "us-congress",
+      "enablementSummary": "House Democratic leadership role during the post–October 7 aid votes; helped maintain bipartisan floor majorities for Israel security supplementals while managing caucus splits over conditions.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "H.R.815 legislative record",
+          "amount": "$26.4B",
+          "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/815"
+        },
+        {
+          "label": "OpenSecrets — Jeffries profile",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/hakeem-jeffries/summary?cid=N00033640"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "bernie-sanders",
+      "name": "Bernie Sanders",
+      "role": "U.S. Senator (I-VT)",
+      "category": "us-congress",
+      "enablementSummary": "Among the most visible Senate critics of unconditional wartime aid; repeatedly proposed conditioning or pausing munitions over civilian casualties. Mapped here as a counter-enablement actor so the graph is not one-directional.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "mk84-use"
+      ],
+      "fundingLinks": [
+        {
+          "label": "Congressional record / aid conditionality proposals (public statements + votes)",
+          "sourceUrl": "https://www.congress.gov/"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "rashida-tlaib",
+      "name": "Rashida Tlaib",
+      "role": "U.S. Representative (D-MI)",
+      "category": "us-congress",
+      "enablementSummary": "Consistent House opponent of Israel military aid packages and advocate for ceasefire / accountability measures; included as a counter-enablement node documenting the congressional minority against the aid floor.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815"
+      ],
+      "fundingLinks": [
+        {
+          "label": "Congress.gov — member voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/rashida-tlaib/T000481"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "ilhan-omar",
+      "name": "Ilhan Omar",
+      "role": "U.S. Representative (D-MN)",
+      "category": "us-congress",
+      "enablementSummary": "House progressive critic of Israel aid and U.S. diplomatic cover; mapped as counter-enablement for the same reason as Tlaib and Sanders — the graph must show opposition as well as sponsorship.",
+      "relatedTimelineYears": [
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815"
+      ],
+      "fundingLinks": [
+        {
+          "label": "Congress.gov — member voting / cosponsorships",
+          "sourceUrl": "https://www.congress.gov/member/ilhan-omar/O000173"
+        }
+      ],
+      "tier": "verified"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1917",
+      "title": "The Balfour Declaration",
+      "description": "British Foreign Secretary Arthur Balfour writes to Lord Rothschild: \"His Majesty's Government view with favour the establishment in Palestine of a national home for the Jewish people.\" Britain controlled neither the land nor the consent of its 700,000 Arab inhabitants.",
+      "source": "The Avalon Project — The Balfour Declaration",
+      "sourceUrl": "https://avalon.law.yale.edu/20th_century/balfour.asp",
+      "tier": "verified",
+      "imageUrl": "/og/chapter-16.png"
+    },
+    {
+      "year": "1947",
+      "title": "UN Partition Plan (Resolution 181)",
+      "description": "The UN General Assembly votes to partition Palestine into Jewish and Arab states, granting 56% of the land to the Jewish state despite Jews comprising 33% of the population and owning 7% of the land. Arab states reject the plan.",
+      "source": "United Nations General Assembly Resolution 181",
+      "sourceUrl": "https://www.un.org/unispal/document/auto-insert-185393/",
+      "tier": "verified",
+      "imageUrl": "/og/chapter-16.png"
+    },
+    {
+      "id": "tl-deir-yassin",
+      "year": "1948",
+      "era": "mandate-1948",
+      "title": "Deir Yassin Massacre",
+      "description": "Irgun and Lehi forces kill roughly 100–200+ Palestinian villagers at Deir Yassin. The massacre accelerates mass flight and becomes a foundational event of the Nakba.",
+      "source": "Britannica / UN refugee documentation",
+      "sourceUrl": "https://www.britannica.com/event/Deir-Yassin-massacre",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "deir-yassin-1948"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "nakba"
+      ]
+    },
+    {
+      "id": "tl-lydda-ramle",
+      "year": "1948",
+      "era": "mandate-1948",
+      "title": "Lydda–Ramle Expulsions",
+      "description": "Israeli forces expel tens of thousands of Palestinian civilians from Lydda and Ramle. Hundreds die on the forced march. Among the largest single expulsions of 1948.",
+      "source": "UN Conciliation Commission / UNRWA",
+      "sourceUrl": "https://www.unrwa.org/palestine-refugees",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "lydda-ramle-1948"
+      ],
+      "tags": [
+        "civilians",
+        "expulsion",
+        "nakba"
+      ]
+    },
+    {
+      "year": "1948",
+      "title": "The Nakba — 750,000 Palestinians Expelled",
+      "description": "During the 1948 Arab-Israeli War, approximately 750,000 Palestinians are expelled or flee from their homes. Over 400 Palestinian villages are depopulated and destroyed. Israel declares independence on May 14.",
+      "source": "UN Conciliation Commission for Palestine, Final Report",
+      "sourceUrl": "https://www.un.org/unispal/document/auto-insert-206564/",
+      "tier": "verified"
+    },
+    {
+      "id": "tl-qibya",
+      "year": "1953",
+      "era": "1948-1967",
+      "title": "Qibya Raid Condemned by UN Security Council",
+      "description": "Unit 101 kills 69 villagers in Qibya. UNSC Resolution 101 condemns the attack. Ariel Sharon commands the unit.",
+      "source": "UN Security Council Resolution 101",
+      "sourceUrl": "https://digitallibrary.un.org/record/112088",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "qibya-1953"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "un-finding"
+      ]
+    },
+    {
+      "id": "tl-kafr-qasim",
+      "year": "1956",
+      "era": "1948-1967",
+      "title": "Kafr Qasim Massacre — Israeli Court Convictions",
+      "description": "Border Police kill 49 Palestinian citizens of Israel for a curfew many had not been told about. Israeli courts convict perpetrators and articulate the \"manifestly illegal order\" doctrine.",
+      "source": "Britannica — Kafr Qasim massacre",
+      "sourceUrl": "https://www.britannica.com/event/Kafr-Qasim-massacre",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "kafr-qasim-1956"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "court-finding"
+      ]
+    },
+    {
+      "id": "tl-khan-yunis-1956",
+      "year": "1956",
+      "era": "1948-1967",
+      "title": "Khan Yunis Mass Killings during Sinai Campaign",
+      "description": "Israeli forces enter Khan Yunis during the 1956 war. Contemporary UN and later historical accounts document mass killings of Palestinian residents — one of the deadliest episodes of the brief 1956 Gaza occupation.",
+      "source": "UNISPAL / UNRWA historical record",
+      "sourceUrl": "https://www.unrwa.org/where-we-work/gaza-strip",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "khan-yunis-1956"
+      ],
+      "tags": [
+        "civilians",
+        "children"
+      ]
+    },
+    {
+      "year": "1967",
+      "title": "Six-Day War — Occupation Begins",
+      "description": "Israel captures the West Bank, Gaza Strip, Sinai Peninsula, and Golan Heights. Military occupation of Palestinian territories begins — now in its 58th year. UN Security Council Resolution 242 calls for Israeli withdrawal.",
+      "source": "UN Security Council Resolution 242",
+      "sourceUrl": "https://digitallibrary.un.org/record/90717",
+      "tier": "verified",
+      "imageUrl": "/og/chapter-16.png"
+    },
+    {
+      "year": "1967",
+      "title": "USS Liberty Attack — 34 Americans Killed",
+      "description": "Israeli air and naval forces attack the USS Liberty, a clearly marked U.S. Navy intelligence ship, in international waters off the Sinai Peninsula. 34 American servicemen killed, 171 wounded. Israel calls it a case of mistaken identity; surviving crew members and multiple investigations dispute this.",
+      "source": "U.S. State Department FRUS, Vol. XIX, Document 284",
+      "sourceUrl": "https://history.state.gov/historicaldocuments/frus1964-68v19/d284",
+      "tier": "verified"
+    },
+    {
+      "year": "1978",
+      "title": "Camp David Accords — U.S. Aid Escalates",
+      "description": "Israel and Egypt sign the Camp David Accords, brokered by President Carter. As part of the deal, the U.S. commits to $3 billion/year in military and economic aid to Israel and $2 billion/year to Egypt — permanently reshaping U.S. foreign aid.",
+      "source": "Jimmy Carter Presidential Library",
+      "sourceUrl": "https://www.jimmycarterlibrary.gov/research/camp_david_accords",
+      "tier": "verified"
+    },
+    {
+      "year": "1982",
+      "title": "Sabra and Shatila Massacre",
+      "description": "Israeli-allied Lebanese Phalangist militia massacres between 800 and 3,500 Palestinian and Lebanese Shia civilians in the Sabra and Shatila refugee camps. Israeli forces surround the camps and provide illumination. The Kahan Commission finds Defense Minister Ariel Sharon bears \"personal responsibility.\"",
+      "source": "Kahan Commission Report (Israeli government)",
+      "sourceUrl": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx",
+      "tier": "verified"
+    },
+    {
+      "year": "1987",
+      "title": "First Intifada Begins",
+      "description": "Palestinian uprising against Israeli occupation. Over six years, 1,551 Palestinians and 422 Israelis are killed. Defense Minister Yitzhak Rabin orders soldiers to \"break their bones\" — a policy documented by B'Tselem.",
+      "source": "B'Tselem — Israeli Information Center for Human Rights",
+      "sourceUrl": "https://www.btselem.org/statistics/first_intifada_tables",
+      "tier": "verified"
+    },
+    {
+      "year": "1993",
+      "title": "Oslo Accords",
+      "description": "Israel and the PLO sign the Declaration of Principles on Interim Self-Government. Intended as a 5-year interim arrangement leading to a final status agreement. That agreement never materializes. Settlement population triples in the years following Oslo.",
+      "source": "UN Peacemaker",
+      "sourceUrl": "https://peacemaker.un.org/israelopt-osloaccord93",
+      "tier": "verified"
+    },
+    {
+      "id": "tl-qana-1996",
+      "year": "1996",
+      "era": "occupation-1967-2005",
+      "title": "Qana UN Compound Shelling — 106 Civilians Killed",
+      "description": "Israeli artillery hits a UNIFIL compound sheltering civilians in Qana, Lebanon. UN investigation challenges the accidental-error account.",
+      "source": "UNISPAL / Amnesty International",
+      "sourceUrl": "https://www.un.org/unispal/document/auto-insert-179197/",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "qana-1996"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "un-finding"
+      ]
+    },
+    {
+      "id": "tl-second-intifada",
+      "year": "2000–2005",
+      "era": "occupation-1967-2005",
+      "title": "Second Intifada — Multi-Thousand Civilian Death Toll",
+      "description": "Roughly 3,000+ Palestinians and ~1,000 Israelis killed. Pattern record of suicide bombings against Israeli civilians and Israeli military operations causing mass Palestinian civilian casualties, tracked by B'Tselem and UN agencies.",
+      "source": "B'Tselem fatalities statistics",
+      "sourceUrl": "https://www.btselem.org/statistics/fatalities/before-cast-lead/by-date-of-event",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "second-intifada-civilian-toll",
+        "jenin-2002"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "pattern-record"
+      ]
+    },
+    {
+      "id": "tl-jenin-2002",
+      "year": "2002",
+      "era": "occupation-1967-2005",
+      "title": "Jenin Camp Assault — UN Corrects Massacre Inflation",
+      "description": "Heavy fighting and house demolitions in Jenin. UN finds ~52 Palestinian dead — serious civilian harm, not the hundreds initially claimed. Included to defeat both denial and exaggeration.",
+      "source": "UN Secretary-General report A/ES-10/186",
+      "sourceUrl": "https://www.un.org/unispal/document/auto-insert-183434/",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "jenin-2002"
+      ],
+      "tags": [
+        "civilians",
+        "un-finding"
+      ]
+    },
+    {
+      "year": "2004",
+      "title": "ICJ Rules Separation Wall Illegal",
+      "description": "The International Court of Justice rules 14-1 that Israel's construction of a wall in the occupied Palestinian territory is contrary to international law. Israel ignores the ruling. The wall is now 712 km long, 85% built inside the West Bank.",
+      "source": "International Court of Justice, Advisory Opinion",
+      "sourceUrl": "https://www.icj-cij.org/case/131",
+      "tier": "verified"
+    },
+    {
+      "id": "tl-beit-hanoun-2006",
+      "year": "2006",
+      "era": "occupation-1967-2005",
+      "title": "Beit Hanoun Artillery Strike Kills 19",
+      "description": "Israeli artillery hits a residential area in Beit Hanoun. 19 Palestinians killed, many of them women and children. UN and HRW demand investigation.",
+      "source": "Human Rights Watch / UN News",
+      "sourceUrl": "https://www.hrw.org/news/2006/11/08/israelopt-investigate-gaza-shelling",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "beit-hanoun-2006"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "artillery"
+      ]
+    },
+    {
+      "year": "2007",
+      "title": "Gaza Blockade Begins",
+      "description": "Following Hamas's takeover of Gaza, Israel imposes a land, air, and sea blockade. The UN and ICRC describe it as collective punishment of 2 million civilians. The blockade continues for 19 years.",
+      "source": "ICRC — Gaza closure: not another year!",
+      "sourceUrl": "https://casebook.icrc.org/print/pdf/node/21121",
+      "tier": "verified"
+    },
+    {
+      "id": "tl-cast-lead",
+      "year": "2008–2009",
+      "era": "blockade-2007-2023",
+      "title": "Cast Lead — Goldstone Fact-Finding Mission",
+      "description": "≈1,400 Palestinians killed in Gaza. UN fact-finding mission documents evidence of war crimes by Israeli forces and Palestinian armed groups.",
+      "source": "UN Fact-Finding Mission on the Gaza Conflict",
+      "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "cast-lead-2008-09"
+      ],
+      "relatedProfileIds": [
+        "barack-obama",
+        "joe-biden"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "war-crimes",
+        "us-aid"
+      ]
+    },
+    {
+      "id": "tl-mavi-marmara",
+      "year": "2010",
+      "era": "blockade-2007-2023",
+      "title": "Mavi Marmara Flotilla Raid",
+      "description": "Israeli commandos kill 9–10 activists aboard a civilian aid ship in international waters. UN fact-finding missions issue conflicting but critical findings on use of force.",
+      "source": "OHCHR Flotilla Fact-Finding Mission",
+      "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/regular-sessions/session15/flotilla-fact-finding-mission",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "mavi-marmara-2010"
+      ],
+      "tags": [
+        "civilians",
+        "blockade"
+      ]
+    },
+    {
+      "id": "tl-pillar-defense-2012",
+      "year": "2012",
+      "era": "blockade-2007-2023",
+      "title": "Operation Pillar of Defense",
+      "description": "Eight-day Gaza war. 160+ Palestinians killed per monitor tallies; six Israelis killed by rockets. U.S. aid and Iron Dome support continue under the standing MOU architecture.",
+      "source": "B'Tselem / HRW",
+      "sourceUrl": "https://www.btselem.org/gaza_strip",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "pillar-of-defense-2012"
+      ],
+      "relatedProfileIds": [
+        "barack-obama",
+        "benjamin-netanyahu"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "us-aid"
+      ]
+    },
+    {
+      "year": "2014",
+      "title": "Operation Protective Edge — 2,251 Palestinians Killed",
+      "description": "51-day Israeli military operation in Gaza. 2,251 Palestinians killed (including 551 children) and 73 Israelis killed (including 6 civilians). UN Human Rights Council finds evidence of war crimes by both sides.",
+      "source": "UN OHCHR Report A/HRC/29/52",
+      "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza",
+      "tier": "verified"
+    },
+    {
+      "id": "tl-icc-palestine-2015",
+      "year": "2015",
+      "era": "blockade-2007-2023",
+      "title": "Palestine Accedes to Rome Statute — ICC Jurisdiction Opens",
+      "description": "The State of Palestine joins the ICC, opening a path to international criminal investigation of alleged crimes on Palestinian territory — later expanded after October 2023.",
+      "source": "ICC — Situation in the State of Palestine",
+      "sourceUrl": "https://www.icc-cpi.int/palestine",
+      "tier": "verified",
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "tags": [
+        "legal",
+        "icc"
+      ]
+    },
+    {
+      "year": "2016",
+      "title": "$38 Billion MOU Signed",
+      "description": "Obama administration signs the largest military aid package in U.S. history: $38 billion over 10 years ($3.8B/year). Israel is the only country permitted to spend part of U.S. military aid on its own defense industry.",
+      "source": "U.S. State Department Fact Sheet",
+      "sourceUrl": "https://2009-2017.state.gov/r/pa/prs/ps/2016/09/261987.htm",
+      "tier": "verified"
+    },
+    {
+      "year": "2018",
+      "title": "Great March of Return — 223 Palestinians Killed",
+      "description": "Palestinians in Gaza hold weekly protests at the border fence demanding the right of return. Later UN reporting records 223 Palestinians killed and more than 36,100 injured during the 2018–2019 protest period, while citing earlier commission findings on lethal force used against demonstrators.",
+      "source": "UN report A/78/545 on children and armed conflict in the Occupied Palestinian Territory",
+      "sourceUrl": "https://documents.un.org/doc/undoc/gen/n23/315/25/pdf/n2331525.pdf",
+      "tier": "verified"
+    },
+    {
+      "id": "tl-hrw-apartheid-2021",
+      "year": "2021",
+      "era": "blockade-2007-2023",
+      "title": "HRW: \"A Threshold Crossed\" — Apartheid Finding",
+      "description": "Human Rights Watch concludes Israeli authorities commit the crimes against humanity of apartheid and persecution. Amnesty reaches a parallel conclusion in 2022. These are legal characterizations by NGOs, not final court judgments.",
+      "source": "Human Rights Watch",
+      "sourceUrl": "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
+      "tier": "verified",
+      "tags": [
+        "legal",
+        "apartheid-finding"
+      ]
+    },
+    {
+      "year": "2021",
+      "title": "Human Rights Watch: \"A Threshold Crossed\" — Apartheid Finding",
+      "description": "Human Rights Watch publishes a 213-page report concluding that Israel's treatment of Palestinians amounts to the crimes of apartheid and persecution. Amnesty International publishes a similar finding in February 2022.",
+      "source": "Human Rights Watch",
+      "sourceUrl": "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
+      "tier": "verified"
+    },
+    {
+      "year": "2023",
+      "title": "October 7 Attack and Gaza War Begins",
+      "description": "Hamas and other Palestinian armed groups launch a surprise attack on southern Israel, killing approximately 1,139 Israelis and foreign nationals and taking 251 hostages. Israel declares war and begins a military campaign in Gaza; OCHA's 1 April 2026 snapshot attributed 72,289 reported Palestinian fatalities in Gaza to MoH Gaza, while survey-based estimates and identified-fatality breakdowns use different methods.",
+      "source": "Israeli Ministry of Foreign Affairs / Gaza MoH / Lancet",
+      "sourceUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
+      "tier": "verified"
+    },
+    {
+      "year": "2024",
+      "title": "ICJ Orders Provisional Measures / ICC Issues Arrest Warrants",
+      "description": "The ICJ orders Israel to prevent genocide in Gaza (Jan). The ICJ rules the occupation itself is illegal (Jul). The ICC issues arrest warrants for Netanyahu and Gallant for war crimes and crimes against humanity (Nov).",
+      "source": "ICJ / ICC official records",
+      "sourceUrl": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges",
+      "tier": "verified"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "deir-yassin-1948",
+      "era": "mandate-1948",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Deir Yassin Massacre",
+      "date": "April 9, 1948",
+      "location": "Deir Yassin, near Jerusalem",
+      "summary": "Irgun and Lehi paramilitary forces attacked the Palestinian village of Deir Yassin during the civil war phase preceding Israeli statehood. Estimates of those killed range roughly from about 100 to over 200, including women and children. The attack became a pivotal trauma in Palestinian collective memory and accelerated flight from other villages.",
+      "evidence": "Contemporary Red Cross and British Mandate reporting, survivor testimony, and later archival work by Israeli and Palestinian historians document a deliberate assault on a civilian village. Exact death toll remains disputed among historians; the fact of a large-scale killing of non-combatants is not seriously contested in the scholarly record.",
+      "sources": [
+        {
+          "label": "UN Conciliation Commission — historical refugee documentation context",
+          "url": "https://www.un.org/unispal/document/auto-insert-206564/"
+        },
+        {
+          "label": "Britannica — Deir Yassin massacre overview",
+          "url": "https://www.britannica.com/event/Deir-Yassin-massacre"
+        },
+        {
+          "label": "Jewish Virtual Library — contemporaneous source compilation (use critically)",
+          "url": "https://www.jewishvirtuallibrary.org/the-capture-of-deir-yassin"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNISPAL — 1948 refugee and war documentation index",
+          "url": "https://www.un.org/unispal/"
+        },
+        {
+          "type": "investigation",
+          "label": "Britannica — Encyclopedic synthesis with bibliography",
+          "url": "https://www.britannica.com/event/Deir-Yassin-massacre"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 110
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "lydda-ramle-1948",
+      "era": "mandate-1948",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Lydda and Ramle Expulsions",
+      "date": "July 1948",
+      "location": "Lydda (Lod) and Ramle, central Palestine",
+      "summary": "During Operation Dani, Israeli forces captured Lydda and Ramle. Tens of thousands of Palestinian civilians were expelled on foot toward the West Bank in extreme heat. Hundreds died from exhaustion, dehydration, and related violence. These expulsions are among the largest single population removals of the 1948 war.",
+      "evidence": "Israeli military orders, IDF archival material cited by historians (including Benny Morris), UN refugee registration, and survivor testimony document mass expulsion. Death estimates for the march vary; the forced removal of the majority civilian population is documented.",
+      "sources": [
+        {
+          "label": "UN Conciliation Commission for Palestine — Final Report context",
+          "url": "https://www.un.org/unispal/document/auto-insert-206564/"
+        },
+        {
+          "label": "Britannica — 1948 Palestine war / refugee creation",
+          "url": "https://www.britannica.com/event/1948-Arab-Israeli-War"
+        },
+        {
+          "label": "UNRWA — Palestine refugees origin overview",
+          "url": "https://www.unrwa.org/palestine-refugees"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNRWA — Refugee status origin documentation",
+          "url": "https://www.unrwa.org/palestine-refugees"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 350
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "qibya-1953",
+      "era": "1948-1967",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Qibya Raid — Unit 101",
+      "date": "October 14–15, 1953",
+      "location": "Qibya, West Bank (then Jordanian-controlled)",
+      "summary": "Israeli special forces Unit 101, commanded by Ariel Sharon, raided the West Bank village of Qibya. Sixty-nine Palestinian villagers were killed, more than half of them women and children. Homes were dynamited with occupants inside. The raid followed cross-border fedayeen attacks, but the scale of civilian killing drew international condemnation.",
+      "evidence": "UN Security Council Resolution 101 (1953) condemned the action. U.S. and UK diplomatic protests are on record. Israeli official and later historical accounts acknowledge the raid and the civilian death toll.",
+      "sources": [
+        {
+          "label": "UN Security Council Resolution 101 (1953)",
+          "url": "https://digitallibrary.un.org/record/112088"
+        },
+        {
+          "label": "UNISPAL — Qibya incident documentation",
+          "url": "https://www.un.org/unispal/document/auto-insert-179434/"
+        },
+        {
+          "label": "Britannica — Ariel Sharon biographical record of Qibya",
+          "url": "https://www.britannica.com/biography/Ariel-Sharon"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UN Digital Library — Resolution 101 text",
+          "url": "https://digitallibrary.un.org/record/112088"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 69
+      }
+    },
+    {
+      "id": "kafr-qasim-1956",
+      "era": "1948-1967",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "court-finding",
+      "title": "Kafr Qasim Massacre",
+      "date": "October 29, 1956",
+      "location": "Kafr Qasim, Israel",
+      "summary": "Israeli Border Police shot and killed 49 Palestinian citizens of Israel — including women and children returning from work — for violating a newly imposed curfew of which many had not been informed. The killings occurred on the first day of the Sinai Campaign.",
+      "evidence": "Israeli military court convicted several officers and soldiers. The trial established the \"manifestly illegal order\" doctrine in Israeli military law. Annual commemorations and official apologies have since acknowledged the massacre; the historical fact pattern is not in serious dispute.",
+      "sources": [
+        {
+          "label": "B'Tselem — Kafr Qasim background",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "Britannica — Kafr Qasim massacre",
+          "url": "https://www.britannica.com/event/Kafr-Qasim-massacre"
+        },
+        {
+          "label": "Israeli MFA historical yearbook references (use with commission context)",
+          "url": "https://www.gov.il/en/departments/ministry_of_foreign_affairs"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Encyclopedic record with court history",
+          "url": "https://www.britannica.com/event/Kafr-Qasim-massacre"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 49
+      }
+    },
+    {
+      "id": "khan-yunis-1956",
+      "era": "1948-1967",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Khan Yunis Massacre (1956)",
+      "date": "November 3, 1956",
+      "location": "Khan Yunis, Gaza Strip",
+      "summary": "During the Sinai Campaign, Israeli forces entered Khan Yunis. Contemporary UN and later historical accounts document mass killings of Palestinian men in and around the town, with death-toll estimates commonly cited in the hundreds. The event remains one of the deadliest single episodes of the 1956 Gaza occupation period.",
+      "evidence": "UNRWA and contemporaneous diplomatic reporting recorded large-scale civilian deaths. Later historical synthesis (including works drawing on Israeli and Palestinian archives) treats Khan Yunis 1956 as a documented mass-killing event even where exact body counts remain contested within a high range.",
+      "sources": [
+        {
+          "label": "UNISPAL / UNRWA historical Gaza documentation index",
+          "url": "https://www.un.org/unispal/"
+        },
+        {
+          "label": "Britannica — Suez Crisis context for 1956 Sinai Campaign",
+          "url": "https://www.britannica.com/event/Suez-Crisis"
+        },
+        {
+          "label": "UNRWA — Gaza refugee history overview",
+          "url": "https://www.unrwa.org/where-we-work/gaza-strip"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNISPAL document library — 1956 period records",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 275
+      }
+    },
+    {
+      "id": "sabra-shatila-1982",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "official-commission",
+      "title": "Sabra and Shatila Massacre",
+      "date": "September 16–18, 1982",
+      "location": "Sabra and Shatila refugee camps, Beirut, Lebanon",
+      "summary": "Lebanese Phalangist militia massacred between roughly 800 and 3,500 Palestinian and Lebanese Shia civilians in the Sabra and Shatila camps after Israel occupied West Beirut. Israeli forces controlled the perimeter, illuminated the area at night, and allowed the militia entry. Defense Minister Ariel Sharon was found to bear personal responsibility by Israel's own Kahan Commission.",
+      "evidence": "The Kahan Commission (Israeli government) found that Israeli officials bore indirect responsibility and that Sharon bore personal responsibility for ignoring the danger of a massacre. UN General Assembly Resolution 37/123 condemned the massacre as an act of genocide (a political determination distinct from a criminal court judgment). Contemporary journalism and later archival work corroborate the scale of civilian killing.",
+      "sources": [
+        {
+          "label": "Kahan Commission Report — Israeli government inquiry",
+          "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx"
+        },
+        {
+          "label": "UN General Assembly Resolution 37/123",
+          "url": "https://digitallibrary.un.org/record/40572"
+        },
+        {
+          "label": "Britannica — Sabra and Shatila massacre",
+          "url": "https://www.britannica.com/event/Sabra-and-Shatila-massacre"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Kahan Commission — official finding on responsibility",
+          "url": "https://www.mfa.gov.il/mfa/foreignpolicy/mfadocuments/yearbook6/pages/104%20report%20of%20the%20commission%20of%20inquiry%20into%20the%20e.aspx"
+        },
+        {
+          "type": "investigation",
+          "label": "Britannica — documented overview",
+          "url": "https://www.britannica.com/event/Sabra-and-Shatila-massacre"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 800
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "qana-1996",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "artillery-use"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Qana Massacre (UN Compound, 1996)",
+      "date": "April 18, 1996",
+      "location": "Qana, southern Lebanon",
+      "summary": "Israeli artillery struck a UNIFIL compound in Qana where more than 800 Lebanese civilians were sheltering. At least 106 civilians were killed, including many children, and around 116 wounded. The attack occurred during Operation Grapes of Wrath.",
+      "evidence": "A UN investigation concluded it was unlikely the shelling of the compound was the result of technical or procedural errors alone. Amnesty International and Human Rights Watch documented the civilian toll. Israel said it was responding to Hezbollah fire; the UN report challenged the claim that the compound strike was purely accidental.",
+      "sources": [
+        {
+          "label": "UN report on the Qana shelling (UNIFIL investigation context)",
+          "url": "https://www.un.org/unispal/document/auto-insert-179197/"
+        },
+        {
+          "label": "Amnesty International — Qana investigation archive",
+          "url": "https://www.amnesty.org/en/documents/mde15/042/1996/en/"
+        },
+        {
+          "label": "Human Rights Watch — Operation Grapes of Wrath / civilian protection",
+          "url": "https://www.hrw.org/reports/1997/isrleb/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNISPAL — Qana investigation materials",
+          "url": "https://www.un.org/unispal/document/auto-insert-179197/"
+        },
+        {
+          "type": "document",
+          "label": "HRW — 1996 Lebanon civilian casualties report",
+          "url": "https://www.hrw.org/reports/1997/isrleb/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 106,
+        "injured": 116
+      }
+    },
+    {
+      "id": "second-intifada-civilian-toll",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Second Intifada — Documented Civilian Death Toll",
+      "date": "September 2000 – February 2005",
+      "location": "West Bank, Gaza Strip, and Israel",
+      "summary": "The Second Intifada killed roughly 3,000–3,300 Palestinians and about 1,000 Israelis by most independent tallies, with a high civilian share on both sides. Documented patterns include suicide bombings against Israeli civilians, Israeli targeted killings and military operations in dense urban areas, and child casualties tracked by B'Tselem and UNICEF.",
+      "evidence": "B'Tselem statistical tables, Israeli MFA and Palestinian Authority figures (used critically), and UN reporting provide multi-source fatality floors. This entry is a pattern record, not a single-incident case file — included so the interactive timeline does not jump from 1987 to 2002 without the intervening mass civilian harm.",
+      "sources": [
+        {
+          "label": "B'Tselem — Fatalities during the Second Intifada",
+          "url": "https://www.btselem.org/statistics/fatalities/before-cast-lead/by-date-of-event"
+        },
+        {
+          "label": "UN OCHA — Humanitarian overview archives (Second Intifada period)",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "Britannica — Second Intifada overview",
+          "url": "https://www.britannica.com/topic/second-intifada"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "B'Tselem fatalities database",
+          "url": "https://www.btselem.org/statistics"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 4000
+      }
+    },
+    {
+      "id": "jenin-2002",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Jenin Refugee Camp Operation (2002)",
+      "date": "April 2002",
+      "location": "Jenin Refugee Camp, West Bank",
+      "summary": "During Operation Defensive Shield, Israeli forces conducted a major assault on Jenin refugee camp. Early claims of a large-scale \"massacre\" of hundreds were not sustained by later UN and other investigations, which documented roughly 52 Palestinian deaths (including combatants and civilians) and 23 Israeli soldiers killed. The operation still involved heavy destruction of civilian housing and documented civilian deaths.",
+      "evidence": "UN Secretary-General report A/ES-10/186 found no evidence of mass killing on the scale initially alleged, while documenting serious civilian harm, house demolitions, and restricted humanitarian access. This entry is included precisely because it is frequently misreported in both directions — the UN record is the verification floor.",
+      "sources": [
+        {
+          "label": "UN Secretary-General report on Jenin (A/ES-10/186)",
+          "url": "https://www.un.org/unispal/document/auto-insert-183434/"
+        },
+        {
+          "label": "Human Rights Watch — Jenin: IDF Military Operations",
+          "url": "https://www.hrw.org/report/2002/05/02/jenin/idf-military-operations"
+        },
+        {
+          "label": "Amnesty International — Shielded from scrutiny / Jenin findings",
+          "url": "https://www.amnesty.org/en/documents/mde15/143/2002/en/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UN report — corrects inflated and minimized claims",
+          "url": "https://www.un.org/unispal/document/auto-insert-183434/"
+        },
+        {
+          "type": "investigation",
+          "label": "HRW — field investigation",
+          "url": "https://www.hrw.org/report/2002/05/02/jenin/idf-military-operations"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 52
+      }
+    },
+    {
+      "id": "operation-defensive-shield-2002",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Operation Defensive Shield — West Bank Military Offensive",
+      "date": "March – May 2002",
+      "location": "West Bank (Jenin, Nablus, Ramallah, Bethlehem and other cities)",
+      "summary": "Israel's large-scale reoccupation of West Bank cities after a wave of suicide bombings. Human rights monitors documented extensive civilian casualties, house demolitions, and restricted medical access. Jenin camp became the most contested single site (see separate Jenin entry). This pattern record covers the operation as a whole.",
+      "evidence": "HRW, Amnesty, and UN reporting catalogued civilian harm and access denials across multiple cities. Israeli authorities framed the operation as counterterrorism after Passover and other bombings. Both the military necessity claim and the civilian harm record are part of the public documentary floor.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — Jenin and Defensive Shield reporting",
+          "url": "https://www.hrw.org/report/2002/05/02/jenin/idf-military-operations"
+        },
+        {
+          "label": "Amnesty International — Shielded from scrutiny",
+          "url": "https://www.amnesty.org/en/documents/mde15/143/2002/en/"
+        },
+        {
+          "label": "UN Secretary-General report on Jenin (A/ES-10/186)",
+          "url": "https://www.un.org/unispal/document/auto-insert-183434/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UN report — Jenin and related findings",
+          "url": "https://www.un.org/unispal/document/auto-insert-183434/"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "id": "rachel-corrie-2003",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "disputed-attribution",
+      "title": "Killing of Rachel Corrie",
+      "date": "March 16, 2003",
+      "location": "Rafah, Gaza Strip",
+      "summary": "American activist Rachel Corrie was crushed to death by an Israeli military bulldozer while nonviolently opposing house demolitions in Rafah. She was 23. Israel said the driver did not see her; her family and witnesses said she was clearly visible in a fluorescent vest.",
+      "evidence": "Israeli military investigation cleared the soldiers involved. A 2012 Haifa District Court ruling accepted the military account. Corrie's family and multiple eyewitnesses disputed that finding. U.S. diplomatic engagement was limited. Status: verified death by IDF equipment; intent/visibility remains disputed — labeled circumstantial for criminal attribution.",
+      "sources": [
+        {
+          "label": "Rachel Corrie Foundation — case documentation",
+          "url": "https://rachelcorriefoundation.org/"
+        },
+        {
+          "label": "Amnesty International — call for independent investigation",
+          "url": "https://www.amnesty.org/en/latest/news/2003/03/israelopt-killing-rachel-corrie/"
+        },
+        {
+          "label": "Human Rights Watch — Rafah house demolitions context",
+          "url": "https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "HRW — Rafah demolitions investigation (context)",
+          "url": "https://www.hrw.org/report/2004/10/17/razing-rafah/mass-home-demolitions-gaza-strip"
+        }
+      ],
+      "tier": "circumstantial",
+      "casualties": {
+        "killed": 1
+      }
+    },
+    {
+      "id": "qana-2006",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "dick-cheney",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Qana Building Strike (2006 Lebanon War)",
+      "date": "July 30, 2006",
+      "location": "Qana, southern Lebanon",
+      "summary": "An Israeli airstrike destroyed a residential building in Qana where civilians were sheltering. At least 28 people were killed, the majority children. The strike became one of the defining civilian-casualty events of the 2006 Lebanon War.",
+      "evidence": "Human Rights Watch and Amnesty International field investigations documented the civilian composition of the dead and raised proportionality and precaution concerns. Israel said it targeted Hezbollah rocket launch sites; monitors found no evidence of military activity in the building at the time of the strike sufficient to justify the civilian toll under IHL standards they applied.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — Fatal Strikes: Israel's Indiscriminate Attacks Against Civilians in Lebanon",
+          "url": "https://www.hrw.org/report/2006/08/02/fatal-strikes/israels-indiscriminate-attacks-against-civilians-lebanon"
+        },
+        {
+          "label": "Amnesty International — Israel/Lebanon: Deliberate destruction or \"collateral damage\"?",
+          "url": "https://www.amnesty.org/en/documents/mde18/007/2006/en/"
+        },
+        {
+          "label": "UNIFIL / UN reporting on 2006 conflict civilian harm",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "HRW — Fatal Strikes report",
+          "url": "https://www.hrw.org/report/2006/08/02/fatal-strikes/israels-indiscriminate-attacks-against-civilians-lebanon"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 28
+      }
+    },
+    {
+      "id": "beit-hanoun-2006",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "artillery-use",
+        "annual-mou"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Beit Hanoun Shelling — 19 Killed in Residential Area",
+      "date": "November 8, 2006",
+      "location": "Beit Hanoun, northern Gaza",
+      "summary": "Israeli artillery shells struck a residential neighborhood in Beit Hanoun, killing 19 Palestinians, including many women and children from the Athamneh family, and wounding dozens. Israel said the strike was an error caused by a technical malfunction; UN and human-rights monitors demanded independent investigation.",
+      "evidence": "UN Human Rights Council special session and subsequent reporting documented the civilian composition of the dead. Human Rights Watch and Amnesty called for investigation of possible violations of the principles of distinction and proportionality. The IDF acknowledged a targeting failure while disputing criminal intent.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — Beit Hanoun shelling",
+          "url": "https://www.hrw.org/news/2006/11/08/israelopt-investigate-gaza-shelling"
+        },
+        {
+          "label": "UN News — Secretary-General condemns Beit Hanoun killings",
+          "url": "https://news.un.org/en/story/2006/11/199202"
+        },
+        {
+          "label": "Amnesty International — Gaza: end unlawful killings",
+          "url": "https://www.amnesty.org/en/documents/mde15/098/2006/en/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UN News — official condemnation record",
+          "url": "https://news.un.org/en/story/2006/11/199202"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 19
+      }
+    },
+    {
+      "id": "cast-lead-2008-09",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "barack-obama",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Operation Cast Lead — UN Fact-Finding Mission",
+      "date": "December 27, 2008 – January 18, 2009",
+      "location": "Gaza Strip",
+      "summary": "Israel's three-week military operation in Gaza killed approximately 1,400 Palestinians, including hundreds of civilians and children, and 13 Israelis. The UN Fact-Finding Mission led by Justice Richard Goldstone found evidence of war crimes and possible crimes against humanity by Israeli forces and by Palestinian armed groups.",
+      "evidence": "The Goldstone Report (A/HRC/12/48) documented attacks on civilian infrastructure, white phosphorus use in populated areas, and shootings of civilians waving white flags. Goldstone later partially walked back one personal conclusion about intentionality of civilian targeting as policy, while the underlying factual catalog of civilian harm and the dual-party war-crimes findings by other UN and NGO monitors remain part of the public record. B'Tselem and HRW published parallel investigations.",
+      "sources": [
+        {
+          "label": "UN Fact-Finding Mission on the Gaza Conflict (Goldstone Report)",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission"
+        },
+        {
+          "label": "Human Rights Watch — Rain of Fire (white phosphorus in Gaza)",
+          "url": "https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza"
+        },
+        {
+          "label": "B'Tselem — Cast Lead fatalities and civilian harm",
+          "url": "https://www.btselem.org/gaza_strip/castlead_operation"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OHCHR — Fact-finding mission materials",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission"
+        },
+        {
+          "type": "investigation",
+          "label": "HRW — White phosphorus investigation",
+          "url": "https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 1400
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "gaza-war-2008-white-phosphorus",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "barack-obama",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "artillery-use"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "White Phosphorus over Gaza Civilian Areas (Cast Lead)",
+      "date": "December 2008 – January 2009",
+      "location": "Gaza Strip urban areas including Gaza City",
+      "summary": "During Operation Cast Lead, Human Rights Watch and Amnesty International documented Israeli use of white phosphorus munitions over densely populated areas. The munitions caused severe burns and fires in civilian neighborhoods. HRW concluded the use in populated areas was unlawfully indiscriminate.",
+      "evidence": "HRW's \"Rain of Fire\" investigation identified munition remnants, burn patterns, and eyewitness accounts. Amnesty published parallel findings. Israel said the munitions were used for obscuration; monitors argued effects in dense urban areas still violated IHL precautions and distinction rules.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — Rain of Fire (white phosphorus in Gaza)",
+          "url": "https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza"
+        },
+        {
+          "label": "Amnesty International — Operation Cast Lead findings",
+          "url": "https://www.amnesty.org/en/documents/mde15/015/2009/en/"
+        },
+        {
+          "label": "UN Fact-Finding Mission on the Gaza Conflict materials",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "HRW — Rain of Fire full report",
+          "url": "https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza"
+        }
+      ],
+      "tier": "verified",
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "mavi-marmara-2010",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "barack-obama"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Gaza Flotilla Raid — Mavi Marmara",
+      "date": "May 31, 2010",
+      "location": "International waters, Mediterranean Sea",
+      "summary": "Israeli naval commandos boarded the Mavi Marmara, the lead ship of a civilian aid flotilla attempting to breach the Gaza blockade in international waters. Nine Turkish activists were killed (a tenth later died of wounds). Dozens were wounded. The raid triggered a major diplomatic crisis with Turkey.",
+      "evidence": "The UN Human Rights Council fact-finding mission concluded that force used was disproportionate and that violations of international law occurred. The UN Palmer Report was more mixed, finding the blockade legal in some respects while criticizing the raid's execution. Passenger videos and autopsy findings documented close-range shootings.",
+      "sources": [
+        {
+          "label": "UN HRC Fact-Finding Mission report on the flotilla incident",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/regular-sessions/session15/flotilla-fact-finding-mission"
+        },
+        {
+          "label": "UN Palmer Report summary context",
+          "url": "https://www.un.org/unispal/document/auto-insert-205958/"
+        },
+        {
+          "label": "Human Rights Watch — flotilla accountability",
+          "url": "https://www.hrw.org/news/2010/06/01/israel-investigate-killings-gaza-flotilla"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OHCHR — Flotilla fact-finding mission",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/regular-sessions/session15/flotilla-fact-finding-mission"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 10
+      }
+    },
+    {
+      "id": "pillar-of-defense-2012",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "barack-obama",
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "iron-dome",
+        "fmf-weapons"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Operation Pillar of Defense — Civilian Harm in Gaza",
+      "date": "November 14–21, 2012",
+      "location": "Gaza Strip",
+      "summary": "An eight-day Israeli military operation killed more than 160 Palestinians, including substantial numbers of civilians and children according to UN and B'Tselem tallies, while six Israelis were killed by rocket fire. Human-rights organizations documented attacks on civilian homes and infrastructure alongside rocket fire from Gaza into Israeli civilian areas.",
+      "evidence": "B'Tselem, HRW, and UN OCHA issued fatality and civilian-harm tallies. Both Israeli forces and Palestinian armed groups were accused by monitors of violations. U.S. diplomatic and military support continued under the standing aid relationship during and after the operation.",
+      "sources": [
+        {
+          "label": "B'Tselem — Pillar of Defense fatality data",
+          "url": "https://www.btselem.org/press_releases/20121108_pillar_of_defense_operation"
+        },
+        {
+          "label": "Human Rights Watch — Gaza: Palestinian rocket attacks",
+          "url": "https://www.hrw.org/news/2012/12/24/gaza-palestinian-rockets-unlawfully-targeted-israeli-civilians"
+        },
+        {
+          "label": "OCHA — Humanitarian situation reporting 2012 Gaza escalation",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "B'Tselem operation documentation",
+          "url": "https://www.btselem.org/gaza_strip"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 167
+      }
+    },
+    {
+      "id": "protective-edge-2014-children",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "barack-obama",
+        "joe-biden",
+        "chuck-schumer"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons",
+        "iron-dome"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Operation Protective Edge — Child Casualties",
+      "date": "July 8 – August 26, 2014",
+      "location": "Gaza Strip",
+      "summary": "A 51-day Israeli military operation killed 2,251 Palestinians, including 551 children, according to UN figures, and 73 Israelis (including 6 civilians). Entire families were wiped out in single strikes on homes. UN Human Rights Council COI found evidence of war crimes by both Israeli forces and Palestinian armed groups.",
+      "evidence": "OHCHR Commission of Inquiry report A/HRC/29/52 documented patterns of attacks on residential buildings, UN shelters, and civilian infrastructure. UNICEF and Defense for Children International documented child fatalities case-by-case. The U.S. resupplied munitions during the operation under the existing MOU framework.",
+      "sources": [
+        {
+          "label": "UN OHCHR — COI report on 2014 Gaza conflict",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza"
+        },
+        {
+          "label": "UNICEF — Children under attack in Gaza 2014",
+          "url": "https://www.unicef.org/stories/children-under-attack-gaza"
+        },
+        {
+          "label": "B'Tselem — 50 days: Protective Edge fatality data",
+          "url": "https://www.btselem.org/gaza_strip/2014_gaza_conflict"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OHCHR — Commission of Inquiry findings",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza"
+        },
+        {
+          "type": "photo-essay",
+          "label": "UNICEF — Children under attack documentation",
+          "url": "https://www.unicef.org/stories/children-under-attack-gaza"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 2251
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "great-march-return-2018",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "donald-trump",
+        "mike-pompeo",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Great March of Return — Lethal Force Against Demonstrators",
+      "date": "March 2018 – December 2019",
+      "location": "Gaza perimeter fence",
+      "summary": "Weekly mass demonstrations at the Gaza fence demanding end of blockade and right of return. UN reporting recorded 223 Palestinians killed and more than 36,100 injured, many by live ammunition, including children, medics, journalists, and persons with disabilities. The UN Commission of Inquiry found Israeli snipers intentionally shot civilians.",
+      "evidence": "UN COI (A/HRC/40/74) concluded that Israeli security forces committed violations of international human rights and humanitarian law, some of which may constitute war crimes or crimes against humanity. Israel rejected the findings. Medical data from Gaza hospitals and WHO corroborated the injury patterns (limb amputations from high-velocity rounds).",
+      "sources": [
+        {
+          "label": "UN COI report on the 2018 Gaza protests (A/HRC/40/74)",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-iopt/index"
+        },
+        {
+          "label": "UN report A/78/545 — children and armed conflict in OPT",
+          "url": "https://documents.un.org/doc/undoc/gen/n23/315/25/pdf/n2331525.pdf"
+        },
+        {
+          "label": "B'Tselem — Great March of Return documentation",
+          "url": "https://www.btselem.org/firearms/20190327_authorizing_live_fire_against_unarmed_demonstrators"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OHCHR — Commission of Inquiry materials",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-iopt/index"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem — live-fire policy analysis",
+          "url": "https://www.btselem.org/firearms/20190327_authorizing_live_fire_against_unarmed_demonstrators"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 223,
+        "injured": 36100
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "shireen-abu-akleh-2022",
+      "title": "Killing of Journalist Shireen Abu Akleh",
+      "date": "May 11, 2022",
+      "location": "Jenin Refugee Camp, West Bank",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "joe-biden",
+        "antony-blinken"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "summary": "Al Jazeera journalist Shireen Abu Akleh, a Palestinian-American, was shot and killed while covering an Israeli military raid in Jenin refugee camp. She was wearing a clearly marked press vest and helmet. Israeli forces initially blamed Palestinian gunfire, then acknowledged an Israeli soldier \"likely\" fired the fatal shot. The U.S. State Department found no reason to pursue further investigation despite Abu Akleh's American citizenship.",
+      "evidence": "CNN, AP, The Washington Post, and Bellingcat all conducted independent video and audio analyses concluding the fatal shot came from an Israeli military convoy and that no active Palestinian gunfire was present in the immediate vicinity. The UN OHCHR similarly stated the available information was consistent with fire from Israeli security forces and inconsistent with indiscriminate armed activity by Palestinians at the location. Israel later acknowledged there was a high possibility an Israeli soldier fired the shot.",
+      "sources": [
+        {
+          "label": "CNN — Independent investigation into the killing",
+          "url": "https://www.cnn.com/2022/05/24/middleeast/shireen-abu-akleh-jenin-killing-investigation-cmd-intl"
+        },
+        {
+          "label": "Bellingcat — Geolocation and audio reconstruction",
+          "url": "https://www.bellingcat.com/news/mena/2022/05/14/unravelling-the-killing-of-shireen-abu-akleh/"
+        },
+        {
+          "label": "UN OHCHR — Statement on killing of Shireen Abu Akleh",
+          "url": "https://www.ohchr.org/en/press-briefing-notes/2022/06/killing-journalist-occupied-palestinian-territory"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Bellingcat — Geolocated shooting sequence",
+          "url": "https://www.bellingcat.com/news/mena/2022/05/14/unravelling-the-killing-of-shireen-abu-akleh/"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "id": "oct7-hamas-attack-2023",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "October 7 Attack — Mass Killing of Israeli Civilians",
+      "date": "October 7, 2023",
+      "location": "Southern Israel (Gaza envelope communities and festival site)",
+      "summary": "Hamas and other Palestinian armed groups launched a cross-border assault killing approximately 1,139 people in Israel (mostly civilians) and taking 251 hostages. Documented crimes include deliberate killing of civilians, sexual violence, hostage-taking, and attacks on a civilian music festival. This entry is required for a non-selective war-crimes record.",
+      "evidence": "Israeli government fatality lists, UN reporting, Human Rights Watch, Amnesty International, and extensive forensic/video documentation establish deliberate targeting of civilians. ICC Prosecutor sought arrest warrants related to hostage-taking and extermination/murder charges against Hamas leaders. Inclusion here does not offset or excuse any other party's crimes.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — October 7 crimes against humanity findings",
+          "url": "https://www.hrw.org/news/2024/07/17/october-7-crimes-against-humanity-war-crimes-hamas"
+        },
+        {
+          "label": "Amnesty International — Damning evidence of war crimes by Hamas-led groups",
+          "url": "https://www.amnesty.org/en/latest/news/2023/10/israel-opt-damning-evidence-of-war-crimes-as-israeli-forces-unleash-hell-on-gaza/"
+        },
+        {
+          "label": "UN OHCHR — reporting on October 7 and subsequent hostilities",
+          "url": "https://www.ohchr.org/en/countries/palestine"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "HRW — October 7 investigation",
+          "url": "https://www.hrw.org/news/2024/07/17/october-7-crimes-against-humanity-war-crimes-hamas"
+        },
+        {
+          "type": "document",
+          "label": "OHCHR country page — ongoing documentation",
+          "url": "https://www.ohchr.org/en/countries/palestine"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 1139
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "jabalia-refugee-camp",
+      "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
+      "date": "October 31, 2023 — ongoing through 2024",
+      "location": "Jabalia Refugee Camp, Northern Gaza",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "hr815"
+      ],
+      "summary": "Israel conducted multiple large-scale airstrikes on Jabalia refugee camp, one of the most densely populated places on Earth (116,000 people in 1.4 km²). The first strike on October 31, 2023 hit a residential area, killing over 120 people. Israel stated it was targeting a Hamas commander. Subsequent strikes in November 2023 and throughout 2024 continued hitting residential buildings, UN shelters, and market areas within the camp.",
+      "evidence": "Satellite imagery from Planet Labs showed at least 15 large craters consistent with MK-84 2,000-pound bombs in a residential area. Euro-Med Human Rights Monitor documented the use of at least six heavy bombs in the first attack alone. CNN geolocated video of the aftermath, confirming residential buildings were the primary structures destroyed.",
+      "sources": [
+        {
+          "label": "Euro-Med Monitor — Documentation of Jabalia strikes",
+          "url": "https://euromedmonitor.org/en/article/5908"
+        },
+        {
+          "label": "Al Jazeera — What we know so far about the Jabalia attack",
+          "url": "https://www.aljazeera.com/news/2023/11/1/israels-deadly-attack-on-the-jabalia-refugee-camp-what-we-know-so-far"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Al Jazeera — Photo report on Gaza strike aftermath",
+          "url": "https://www.aljazeera.com/gallery/2023/11/4/israel-ramps-up-attacks-in-gaza-striking-schools-hospitals-and-mosques"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 120,
+        "injured": 280
+      },
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "al-ahli-hospital-2023",
+      "title": "Al-Ahli Arab Hospital Explosion — Disputed Responsibility",
+      "date": "October 17, 2023",
+      "location": "Al-Ahli Arab Hospital, Gaza City",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [],
+      "summary": "A massive explosion in the courtyard of Al-Ahli Arab Hospital killed an estimated 100-300 people sheltering there. Initial Palestinian reports blamed an Israeli airstrike. Israel claimed a misfired Palestinian Islamic Jihad rocket caused the explosion. Multiple independent investigations reached conflicting conclusions.",
+      "evidence": "AP visual analysis and Human Rights Watch found evidence more consistent with a rocket than a large air-dropped bomb, while Forensic Architecture challenged key elements of Israel's public narrative and argued the available evidence remained inconclusive. The crater size was smaller than typical MK-84 impacts. U.S. intelligence assessed with \"low confidence\" it was a Palestinian rocket misfire. No party has provided conclusive evidence.",
+      "sources": [
+        {
+          "label": "AP — Visual analysis of the Al-Ahli hospital blast",
+          "url": "https://apnews.com/article/israel-palestinians-hamas-war-hospital-rocket-gaza-e0fa550faa4678f024797b72132452e3"
+        },
+        {
+          "label": "Forensic Architecture — Israeli disinformation and Al-Ahli hospital",
+          "url": "https://www.forensicarchitecture.org/investigation/israeli-disinformation-al-ahli-hospital"
+        },
+        {
+          "label": "Human Rights Watch — Hospital investigation",
+          "url": "https://www.hrw.org/news/2023/11/26/gaza-findings-october-17-al-ahli-hospital-explosion"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Forensic Architecture — Blast sequence analysis",
+          "url": "https://www.forensicarchitecture.org/investigation/israeli-disinformation-al-ahli-hospital"
+        }
+      ],
+      "tier": "circumstantial",
+      "casualties": {
+        "killed": 200,
+        "injured": 500
+      }
+    },
+    {
+      "id": "gaza-universities-destroyed",
+      "title": "Systematic Destruction of Every University in Gaza",
+      "date": "October 2023 — March 2026",
+      "location": "All university campuses in Gaza",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "fmf-weapons"
+      ],
+      "summary": "All 12 universities in Gaza have been damaged or destroyed by Israeli military operations, including the Islamic University of Gaza, Al-Azhar University, and Al-Aqsa University. Satellite imagery shows controlled demolitions of campus buildings weeks after Israeli forces secured the areas — suggesting destruction beyond military necessity.",
+      "evidence": "Euro-Med Human Rights Monitor documented the destruction of all 12 institutions using satellite imagery comparisons. Forensic Architecture published spatial analysis showing several university buildings were demolished by controlled explosions rather than airstrikes, indicating deliberate destruction rather than collateral damage. UNESCO condemned the \"scholasticide\" — the systematic destruction of educational infrastructure.",
+      "sources": [
+        {
+          "label": "Euro-Med Monitor — Complete destruction of Gaza universities",
+          "url": "https://euromedmonitor.org/en/article/6129"
+        },
+        {
+          "label": "UNESCO — Gaza education emergency updates",
+          "url": "https://www.unesco.org/en/gaza/education"
+        },
+        {
+          "label": "Forensic Architecture — Spatial analysis of Israeli military conduct in Gaza",
+          "url": "https://content.forensic-architecture.org/wp-content/uploads/2024/10/Summary-of-Findings_Spatial-Analysis-of-the-Israeli-militarys-conduct-in-Gaza-since-October-2023.pdf"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "photo-essay",
+          "label": "Satellite before/after imagery of all 12 campuses",
+          "url": "https://euromedmonitor.org/en/article/6129"
+        }
+      ],
+      "tier": "verified",
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "al-shifa-hospital",
+      "title": "Al-Shifa Hospital Siege and Destruction",
+      "date": "November 2023 — March 2024",
+      "location": "Al-Shifa Hospital, Gaza City",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "mk84-use"
+      ],
+      "summary": "Israeli forces besieged and raided Al-Shifa Hospital — Gaza's largest medical complex — twice. The first raid (November 15, 2023) was justified by claims of a Hamas command center beneath the hospital. Israel presented video of a tunnel shaft and a few weapons but no evidence of the extensive underground complex initially described. The second raid (March 18, 2024) lasted two weeks and left the hospital in ruins. Over 400 people were killed in and around the hospital during the two operations.",
+      "evidence": "Israel released video showing a tunnel shaft and corridor beneath Al-Shifa during the first raid, along with a small cache of weapons. Independent analysts, including the Washington Post, found the evidence fell short of the claimed \"command and control center.\" The second raid resulted in near-total destruction of the facility. WHO reported the hospital was rendered \"a death zone\" and \"an empty shell.\"",
+      "sources": [
+        {
+          "label": "Washington Post — Analysis of Israel's Al-Shifa evidence",
+          "url": "https://www.washingtonpost.com/world/2023/11/17/israel-hamas-al-shifa-hospital-evidence/"
+        },
+        {
+          "label": "WHO — High-risk mission to Al-Shifa hospital",
+          "url": "https://www.emro.who.int/opt/news/who-leads-very-high-risk-joint-humanitarian-mission-to-al-shifa-hospital-in-gaza.html"
+        },
+        {
+          "label": "WHO — Six months of war leave Al-Shifa hospital in ruins",
+          "url": "https://www.who.int/news/item/06-04-2024-six-months-of-war-leave-al-shifa-hospital-in-ruins--who-mission-reports"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO — Post-raid mission report from Al-Shifa",
+          "url": "https://www.who.int/news/item/06-04-2024-six-months-of-war-leave-al-shifa-hospital-in-ruins--who-mission-reports"
+        },
+        {
+          "type": "investigation",
+          "label": "Washington Post — Evaluating the tunnel evidence",
+          "url": "https://www.washingtonpost.com/world/2023/11/17/israel-hamas-al-shifa-hospital-evidence/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 400
+      }
+    },
+    {
+      "id": "unrwa-staff-deaths",
+      "title": "UNRWA Staff Death Toll — Highest UN Death Toll in Any Conflict",
+      "date": "October 2023 — ongoing",
+      "location": "Throughout Gaza",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden",
+        "antony-blinken"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815"
+      ],
+      "summary": "Over 230 UNRWA staff members have been killed since October 7, 2023 — the highest number of UN staff killed in any single conflict in the history of the United Nations. UNRWA facilities have been struck over 500 times despite coordinates being shared with Israeli forces. Israel passed legislation banning UNRWA from operating in its territory, threatening the primary aid lifeline for 5.9 million Palestinian refugees.",
+      "evidence": "UNRWA Commissioner-General Philippe Lazzarini has formally documented each staff killing. GPS coordinates of all UNRWA facilities were shared with the IDF as required by international humanitarian law. Despite this, UNRWA schools, shelters, and warehouses have been struck repeatedly. Israel's Knesset voted to ban UNRWA on October 28, 2024 — a move condemned by the UN Secretary-General, WHO, UNICEF, and 120+ member states.",
+      "sources": [
+        {
+          "label": "UNRWA — Situation reports and staff casualty tracker",
+          "url": "https://www.unrwa.org/resources/reports/unrwa-situation-update"
+        },
+        {
+          "label": "UN News — Highest UN staff death toll in any conflict",
+          "url": "https://news.un.org/en/story/2024/11/1157071"
+        },
+        {
+          "label": "Al Jazeera — What Israel's UNRWA ban means for millions of Palestinians",
+          "url": "https://www.aljazeera.com/news/2025/1/29/what-israels-unrwa-ban-means-for-millions-of-palestinians-by-the-numbers"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNRWA — Complete staff casualty documentation",
+          "url": "https://www.unrwa.org/resources/reports/unrwa-situation-update"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 230
+      }
+    },
+    {
+      "id": "white-phosphorus-2023",
+      "title": "White Phosphorus Use in Populated Areas",
+      "date": "October 2023",
+      "location": "Gaza City, Southern Lebanon",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "artillery-use",
+        "fmf-weapons"
+      ],
+      "summary": "Human Rights Watch verified the use of white phosphorus by Israeli forces over populated areas in Gaza City on October 10-11, 2023, and in southern Lebanon. White phosphorus burns at 800°C, causes severe chemical burns that can penetrate to the bone, and reignites when exposed to oxygen. Its use in populated areas violates international humanitarian law.",
+      "evidence": "HRW researchers verified 155mm artillery-delivered white phosphorus munitions through video analysis and munition fragment identification. The organization identified the specific munition type as M825A1 155mm smoke projectiles — U.S.-manufactured. The Washington Post summarized the munition's effects and the legal controversy surrounding its use in populated areas. The IDF stated it uses white phosphorus \"in accordance with international law\" but did not deny its use.",
+      "sources": [
+        {
+          "label": "Human Rights Watch — Israel uses white phosphorus in Gaza, Lebanon",
+          "url": "https://www.hrw.org/news/2023/10/12/israel-white-phosphorus-used-gaza-lebanon"
+        },
+        {
+          "label": "Washington Post — What is white phosphorus and why is it controversial?",
+          "url": "https://www.washingtonpost.com/world/2023/10/13/white-phosphorus-israel-gaza-lebanon/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "HRW — Video analysis of white phosphorus airburst",
+          "url": "https://www.hrw.org/news/2023/10/12/israel-white-phosphorus-used-gaza-lebanon"
+        }
+      ],
+      "tier": "verified",
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "hind-rajab-2024",
+      "title": "The Killing of Hind Rajab, Age 5",
+      "date": "January 29, 2024",
+      "location": "Tel al-Hawa, Gaza City",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "artillery-use"
+      ],
+      "summary": "Five-year-old Hind Rajab and six family members were fleeing Gaza City when their civilian Kia Picanto was fired upon by an Israeli tank. Hind's 15-year-old cousin Layan called the Palestine Red Crescent: \"They are shooting at us. The tank is right next to me.\" All passengers except Hind were killed instantly. Hind survived in the car for three hours, speaking to PRCS dispatchers by phone, whispering: \"Come take me. I'm so scared.\" Two paramedics — Yusuf Zeino and Ahmed al-Madhoun — were dispatched with Israeli military coordination. Both were killed en route. Twelve days later, when Israeli forces withdrew, the bodies were recovered.",
+      "evidence": "Forensic Architecture analysis found 335 bullet holes in the family's Kia Picanto. The firing tank was positioned 13–23 meters away. Investigators concluded: \"It is not plausible that the shooter could not have seen that the car was occupied by civilians, including children.\" Audio recordings of Hind's phone calls were released publicly. Al Jazeera's October 2025 documentary revealed new evidence of a \"double-tap\" strike — the ambulance was hit by a separate, deliberate attack. A bipartisan U.S. congressional bill (the Hind Rajab Act) was introduced in March 2026.",
+      "sources": [
+        {
+          "label": "Washington Post — Full investigative timeline with forensic reconstruction",
+          "url": "https://www.washingtonpost.com/world/interactive/2024/hind-rajab-israel-gaza-killing-timeline/"
+        },
+        {
+          "label": "Al Jazeera — New double-tap strike evidence (2025 documentary)",
+          "url": "https://www.aljazeera.com/news/2026/3/23/substantial-evidence-of-double-tap-strike-in-killing-of-gazas-hind-rajab"
+        },
+        {
+          "label": "Common Dreams — Forensic Architecture: 335 bullets at close range",
+          "url": "https://www.commondreams.org/news/hind-rajab-forensic-investigation"
+        },
+        {
+          "label": "Hind Rajab Foundation — Full story",
+          "url": "https://www.hindrajabfoundation.org/hind-rajabs-story"
+        },
+        {
+          "label": "U.S. Congress — Hind Rajab Act introduced (March 2026)",
+          "url": "https://jayapal.house.gov/2026/03/12/jayapal-jacobs-welch-introduce-bicameral-bill-demanding-accountability-for-hind-rajab-palestinian-child-killed-by-israeli-forces/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Forensic Architecture — Full reconstruction with audio",
+          "url": "https://forensic-architecture.org/investigation/the-killing-of-hind-rajab"
+        },
+        {
+          "type": "investigation",
+          "label": "Al Jazeera — Documentary evidence summary (2025)",
+          "url": "https://www.aljazeera.com/news/2025/10/21/new-al-jazeera-documentary-reveals-evidence-in-hind-rajab-familys-killing"
+        },
+        {
+          "type": "document",
+          "label": "Defense for Children International — Legal brief",
+          "url": "https://www.dci-palestine.org/israeli_forces_shoot_kill_4_year_old_palestinian_girl_in_the_backseat_of_a_car"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 9
+      }
+    },
+    {
+      "id": "wck-drone-strikes-2024",
+      "title": "World Central Kitchen Aid Workers Targeted by Drone Strikes",
+      "date": "April 1, 2024",
+      "location": "Deir al-Balah, Central Gaza",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons"
+      ],
+      "summary": "Three separate Israeli drone strikes killed seven World Central Kitchen aid workers traveling in a three-car convoy that had coordinated its movements with the IDF. The team had just finished unloading 100 tons of humanitarian food aid brought by ship from Cyprus. Killed were nationals of the United States, Canada, United Kingdom, Australia, Poland, and Palestine. WCK founder José Andrés said Israel \"targeted us deliberately, car by car.\"",
+      "evidence": "The three vehicles were struck sequentially over 2.4 km — each car hit after survivors attempted to flee the previous strike. GPS coordinates had been shared with the IDF in advance. Israel's own military investigation concluded the strike \"violated its standards and should not have occurred.\" A reserve colonel and major were dismissed; three more officers reprimanded. Despite coordination and clearly marked vehicles with WCK logo on the roof, all three were hit in succession.",
+      "sources": [
+        {
+          "label": "NPR — Israel fires officers after drone strikes",
+          "url": "https://www.npr.org/2024/04/05/1242986585/israels-military-dismisses-officers-over-world-central-kitchen-airstrike"
+        },
+        {
+          "label": "CNN — Who were the 7 killed workers",
+          "url": "https://edition.cnn.com/2024/04/03/middleeast/world-central-kitchen-workers-gaza-israel-strike-intl"
+        },
+        {
+          "label": "Washington Post — Strike halts Gaza aid operations",
+          "url": "https://www.washingtonpost.com/world/2024/04/01/world-central-kitchen-gaza-deaths-wck/"
+        },
+        {
+          "label": "World Central Kitchen — Official statement",
+          "url": "https://wck.org/news/gaza-team-update/"
+        },
+        {
+          "label": "CNN — \"Systematically, car by car\" — José Andrés",
+          "url": "https://www.cnn.com/2024/04/04/middleeast/jose-andres-wck-israel-strike-criticism-intl"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "photo-essay",
+          "label": "NBC News — Visual investigation of the strike sequence",
+          "url": "https://www.nbcnews.com/news/world/world-central-kitchen-says-israeli-strike-kills-7-workers-halts-aid-rcna145976"
+        },
+        {
+          "type": "investigation",
+          "label": "Al Jazeera Sanad — Three-strike convoy probe",
+          "url": "https://www.aljazeera.com/news/2024/4/2/al-jazeera-sanad-probe-finds-israeli-forces-deliberately-hit-wck-convoy"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 7
+      }
+    },
+    {
+      "id": "flour-massacre-2024",
+      "title": "The Flour Massacre — Aid Seekers Shot While Waiting for Food",
+      "date": "February 29, 2024",
+      "location": "Al-Rashid Street, Gaza City",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "artillery-use",
+        "fmf-weapons"
+      ],
+      "summary": "At approximately 4:30 a.m., Israeli tanks and snipers opened fire on thousands of Palestinian civilians who had been waiting hours for an aid convoy on coastal Al-Rashid Street. The shooting continued for approximately 90 minutes as aid trucks arrived. At least 118 Palestinians were killed and 760 injured. The attack came one day after the World Food Programme warned that over 500,000 Gazans were at risk of famine.",
+      "evidence": "Forensic and ballistic experts reviewed video evidence showing that automatic gunfire began before the IDF said the convoy had started crossing through its checkpoint — contradicting the Israeli account that a \"stampede\" caused most deaths. Hospital records showed the majority of victims had gunshot wounds, not trampling injuries. The 972 Magazine published survivor testimonies describing \"indiscriminate\" Israeli fire into crowds. UN experts formally condemned the attack as a deliberate massacre.",
+      "sources": [
+        {
+          "label": "CNN — Videos and eyewitness accounts cast doubt on Israeli timeline",
+          "url": "https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd/index.html"
+        },
+        {
+          "label": "OHCHR — UN experts condemn \"flour massacre\"",
+          "url": "https://www.ohchr.org/en/press-releases/2024/03/un-experts-condemn-flour-massacre-urge-israel-end-campaign-starvation-gaza"
+        },
+        {
+          "label": "Al Jazeera — \"The blood was everywhere\" (longform)",
+          "url": "https://www.aljazeera.com/news/longform/2024/3/5/the-blood-was-everywhere-inside-israels-flour-massacre-in-gaza"
+        },
+        {
+          "label": "972 Magazine — Survivor testimonies",
+          "url": "https://www.972mag.com/gaza-aid-convoy-massacre-testimonies/"
+        },
+        {
+          "label": "NBC News — How 118 people died in the aid convoy",
+          "url": "https://www.nbcnews.com/news/world/gaza-aid-convoy-deaths-al-rashid-israel-idf-hamas-rcna141497"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Al Jazeera — Longform visual investigation",
+          "url": "https://www.aljazeera.com/news/longform/2024/3/5/the-blood-was-everywhere-inside-israels-flour-massacre-in-gaza"
+        },
+        {
+          "type": "investigation",
+          "label": "CNN — Forensic video analysis",
+          "url": "https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-investigation-cmd/index.html"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 118,
+        "injured": 760
+      }
+    },
+    {
+      "id": "nuseirat-rescue-2024",
+      "title": "Nuseirat Hostage Rescue — 274 Civilians Killed in \"Rescue\" Operation",
+      "date": "June 8, 2024",
+      "location": "Nuseirat Refugee Camp, Central Gaza",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "artillery-use",
+        "fmf-weapons"
+      ],
+      "summary": "The IDF launched a large-scale operation to rescue four Israeli hostages from two residential apartment buildings in Nuseirat refugee camp. The operation succeeded in recovering Noa Argamani, Shlomi Ziv, Almog Meir Jan, and Andrey Kozlov. It also killed at least 274 Palestinians — including 64 children and 57 women — and injured nearly 700. Israeli forces allegedly entered the camp disguised as displaced persons and aid workers in a humanitarian truck before calling in intense air, sea, and ground bombardment.",
+      "evidence": "The use of a humanitarian aid truck as a Trojan horse was confirmed by multiple eyewitness accounts and later acknowledged by Israeli media. OHCHR documented 274 fatalities including 64 children. EU foreign policy chief Josep Borrell called it a \"bloodbath.\" OHCHR stated both Israeli forces and Palestinian armed groups may have committed war crimes. The Israeli military acknowledged fewer than 100 deaths — a figure contradicted by hospital records and morgue counts.",
+      "sources": [
+        {
+          "label": "OHCHR — UN experts condemn \"outrageous disregard\" for civilians",
+          "url": "https://www.ohchr.org/en/press-releases/2024/06/un-experts-condemn-outrageous-disregard-palestinian-civilians-during-israels"
+        },
+        {
+          "label": "Washington Post — Israel rescues hostages, leaving trail of death",
+          "url": "https://www.washingtonpost.com/world/2024/06/08/israel-hostages-nuseirat-camp-gaza/"
+        },
+        {
+          "label": "Al Jazeera — Israeli killings may be war crimes: UN",
+          "url": "https://www.aljazeera.com/news/2024/6/11/israeli-killings-of-gaza-civilians-during-raid-may-be-war-crimes-un"
+        },
+        {
+          "label": "Euro-Med Monitor — Al Jazeera documentary warrants investigation",
+          "url": "https://euromedmonitor.org/en/article/6773/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Al Jazeera World — Nuseirat 274 documentary",
+          "url": "https://www.aljazeera.com/video/al-jazeera-world/2025/10/22/nuseirat-274"
+        },
+        {
+          "type": "investigation",
+          "label": "Euro-Med Monitor — Full investigation report",
+          "url": "https://euromedmonitor.org/en/article/6773/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 274,
+        "injured": 698
+      }
+    },
+    {
+      "id": "al-mawasi-safe-zone",
+      "title": "Al-Mawasi \"Safe Zone\" Bombing — 90+ Killed in Designated Humanitarian Area",
+      "date": "July 13, 2024",
+      "location": "Al-Mawasi, Khan Yunis (IDF-designated \"safe zone\")",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden",
+        "donald-trump"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "trump-release",
+        "hr815"
+      ],
+      "summary": "Israeli forces dropped multiple MK-84 2,000-pound bombs on the al-Mawasi area — a zone the IDF itself had designated as a humanitarian \"safe zone\" for displaced civilians. The strike targeted Hamas military wing commander Mohammed Deif. At least 90 Palestinians were killed and over 300 wounded. The area was packed with displaced families living in tents who had followed IDF evacuation orders to move there.",
+      "evidence": "Satellite imagery, crater analysis, and munition fragments confirmed the use of at least two MK-84 2,000-pound bombs — U.S.-manufactured weapons with a lethal blast radius of 360 meters. The bombs were dropped on a densely packed tent encampment. Israel later said it successfully killed its target (confirmed months later), but international observers noted that using 2,000-pound bombs in a civilian \"safe zone\" represents a disproportionate use of force under international humanitarian law.",
+      "sources": [
+        {
+          "label": "Al Jazeera — What bombs were used in al-Mawasi \"safe zone\"",
+          "url": "https://www.aljazeera.com/news/2024/9/12/what-bombs-did-israel-use-against-the-al-mawasi-safe-zone-in-gaza"
+        },
+        {
+          "label": "Responsible Statecraft — 20 times Israel used US weapons in likely war crimes",
+          "url": "https://responsiblestatecraft.org/us-weapons-gaza/"
+        },
+        {
+          "label": "AOAV — US ships 1,600 MK-84 heavy bombs to Israel",
+          "url": "https://aoav.org.uk/2025/us-ships-1600-mk-84-heavy-bombs-to-israel-amid-concerns-of-resurgent-conflict/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Al Jazeera — Bomb fragment analysis and crater mapping",
+          "url": "https://www.aljazeera.com/news/2024/9/12/what-bombs-did-israel-use-against-the-al-mawasi-safe-zone-in-gaza"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 90,
+        "injured": 300
+      }
+    },
+    {
+      "id": "starvation-aid-blockade",
+      "title": "Deliberate Starvation — Aid Blocked While Famine Declared",
+      "date": "January 2024 — ongoing",
+      "location": "Northern Gaza",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden",
+        "antony-blinken"
+      ],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "summary": "The Integrated Food Security Phase Classification (IPC) — the global authority on hunger — declared famine in northern Gaza in March 2024, making it the first official famine declaration since 2017 Somalia. Israel was documented blocking, delaying, and restricting humanitarian aid delivery while the population starved. The IPC found that 100% of Gaza's population was in crisis-level food insecurity or worse.",
+      "evidence": "The IPC Famine Review Committee confirmed famine conditions in northern Gaza. COGAT (Israeli military body controlling aid) approved only 37% of humanitarian aid missions in November 2024. WFP reported that food aid trucks were held at checkpoints for days. Multiple videos showed Israeli settlers and soldiers physically blocking aid convoys. Documented cases of children dying from malnutrition were reported by WHO, UNICEF, and MSF.",
+      "sources": [
+        {
+          "label": "IPC — Famine confirmed in northern Gaza",
+          "url": "https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1157345/"
+        },
+        {
+          "label": "WFP — \"Catastrophic hunger\" in Gaza",
+          "url": "https://www.wfp.org/emergencies/palestine-emergency"
+        },
+        {
+          "label": "WHO — People in Gaza starving, sick and dying as aid blockade continues",
+          "url": "https://www.who.int/news/item/12-05-2025-people-in-gaza-starving--sick-and-dying-as-aid-blockade-continues"
+        },
+        {
+          "label": "Reuters — Israeli settlers block Gaza aid convoys",
+          "url": "https://www.reuters.com/world/middle-east/israeli-activists-block-gaza-aid-trucks-2024-02-12/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "CNN — Mothers and babies trapped in Gaza's starvation siege",
+          "url": "https://www.cnn.com/2024/03/06/middleeast/israel-gaza-starvation-siege-mothers-babies-intl"
+        },
+        {
+          "type": "document",
+          "label": "IPC Famine Review Committee Report",
+          "url": "https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1157345/"
+        }
+      ],
+      "tier": "verified",
+      "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "rafah-tent-camp-2024",
+      "title": "Rafah Tent Camp Fire — Families Burned Alive in Designated Safe Zone",
+      "date": "May 26, 2024",
+      "location": "Tal al-Sultan, Rafah",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "hr815"
+      ],
+      "summary": "An Israeli airstrike hit a tent camp for displaced families in Tal al-Sultan, Rafah — an area Israel had designated as a humanitarian safe zone. The strike triggered a massive fire that burned through tents and makeshift shelters. At least 45 people were killed, including many women and children, with victims reported burned alive or decapitated. The strike came two days after the ICJ ordered Israel to halt its Rafah offensive.",
+      "evidence": "Videos verified by Reuters, AP, and CNN showed charred bodies, children's remains, and burning tents in a densely packed camp. Israel said it was targeting two Hamas officials and blamed secondary explosions, but independent analysts said the munitions and fire spread still raised serious questions about proportionality and the designation of the site as a safe area.",
+      "sources": [
+        {
+          "label": "Reuters — Rafah camp strike verified footage",
+          "url": "https://www.reuters.com/world/middle-east/israeli-strike-rafah-kills-displaced-palestinians-camp-fire-2024-05-27/"
+        },
+        {
+          "label": "AP — Rafah strike aftermath and casualty reports",
+          "url": "https://apnews.com/article/israel-palestinians-hamas-war-news-05-27-2024-7b743a848ef8bfbe69a9659a4a5dd047"
+        },
+        {
+          "label": "ICJ — May 24 order on Rafah offensive",
+          "url": "https://www.icj-cij.org/case/192"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Reuters — Verified camp fire footage",
+          "url": "https://www.reuters.com/world/middle-east/israeli-strike-rafah-kills-displaced-palestinians-camp-fire-2024-05-27/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 45,
+        "injured": 249
+      }
+    },
+    {
+      "id": "rafah-paramedic-convoy-2025",
+      "title": "The Rafah Paramedic Convoy Massacre",
+      "date": "March 23, 2025",
+      "location": "Al-Hashashin, Southern Rafah",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons"
+      ],
+      "summary": "Israeli forces attacked a convoy of clearly marked humanitarian vehicles — five ambulances, a fire truck, and a UN vehicle — killing 15 aid workers at dawn. The dead included eight Palestine Red Crescent members, five civil defense workers, and one UN employee. All vehicles had emergency lights activated and were traveling a coordinated route. Israel initially claimed the convoy approached without lights and was suspected of transporting militants.",
+      "evidence": "Video footage recovered from the buried phone of paramedic Rifaat Radwan — interred with the victims in a mass grave for eight days — directly contradicted the IDF account. The video, filmed from the front seat, shows all emergency lights on and clearly marked ambulances. Radwan is heard reciting prayers and saying: \"Forgive me mom, this is the path I chose — to help people.\" The bodies were found in an unmarked mass grave on March 30. Under pressure from the video evidence, the Israeli military reversed its initial account on March 31.",
+      "sources": [
+        {
+          "label": "CNN — Audio and video capture last moments",
+          "url": "https://www.cnn.com/2025/04/07/middleeast/gaza-aid-workers-killed-audio-intl-invs"
+        },
+        {
+          "label": "NBC News — Video of the moment Israeli forces opened fire",
+          "url": "https://www.nbcnews.com/news/world/video-moment-israeli-forces-gaza-medics-killed-rcna199824"
+        },
+        {
+          "label": "CBC News — Israel changes account after video surfaces",
+          "url": "https://www.cbc.ca/news/world/gaza-paramedics-first-responders-rafah-israel-1.7503193"
+        },
+        {
+          "label": "Middle East Eye — New video evidence disputes Israeli account",
+          "url": "https://www.middleeasteye.net/news/new-video-evidence-disputes-israeli-armys-account-medic-killings"
+        },
+        {
+          "label": "Anadolu Agency — Survivor interview",
+          "url": "https://www.aa.com.tr/en/middle-east/interview-survivor-of-rafah-ambulance-massacre-exposes-israeli-army-atrocities/3531451"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "CNN Investigation — Recovered phone footage",
+          "url": "https://www.cnn.com/2025/04/07/middleeast/gaza-aid-workers-killed-audio-intl-invs"
+        },
+        {
+          "type": "video",
+          "label": "TRT World — Survivor testimony",
+          "url": "https://www.trtworld.com/article/02f8ed7948e3"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 15
+      }
+    }
+  ],
+  "eraMeta": {
+    "mandate-1948": {
+      "label": "Mandate → 1948 War",
+      "range": "1917–1949",
+      "description": "British Mandate, partition, war, and mass displacement (Nakba)."
+    },
+    "1948-1967": {
+      "label": "Armistice period",
+      "range": "1949–1967",
+      "description": "Cross-border raids, martial law over Palestinian citizens, and pre-occupation violence."
+    },
+    "occupation-1967-2005": {
+      "label": "Occupation era",
+      "range": "1967–2005",
+      "description": "Military occupation of West Bank, Gaza, Golan; Lebanon invasions; intifadas."
+    },
+    "blockade-2007-2023": {
+      "label": "Blockade & wars on Gaza",
+      "range": "2007–Oct 2023",
+      "description": "Gaza blockade, repeated military operations, settlement expansion, protest killings."
+    },
+    "post-oct7": {
+      "label": "Post–October 7",
+      "range": "Oct 2023–present",
+      "description": "October 7 attack and the subsequent Gaza war with record civilian tolls."
+    }
+  }
+}
