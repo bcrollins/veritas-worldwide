@@ -547,7 +547,7 @@ async function runInteractiveChecks(browser) {
       'settler violence',
       'mike pence',
       'john fetterman',
-      'small diameter bomb',
+      'gbu-39',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }
