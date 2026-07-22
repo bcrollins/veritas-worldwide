@@ -796,43 +796,15 @@ function DossierCoursePath({ modules }: { modules: DossierCourseModule[] }) {
 /* ═══════════════════════════════════════════════════════════
    MAIN PAGE COMPONENT
    ═══════════════════════════════════════════════════════════ */
-function downloadIncidentsCsv(incidents: DossierDocumentedIncident[], filename: string) {
-  const escape = (value: string) => `"${value.replace(/"/g, '""')}"`
-  const header = [
-    'id',
-    'date',
-    'title',
-    'location',
-    'tier',
-    'targets_civilians',
-    'targets_children',
-    'killed',
-    'injured',
-    'related_profiles',
-    'related_money_nodes',
-    'source_labels',
-    'source_urls',
-    'multimedia_urls',
-    'summary',
-  ]
-  const rows = incidents.map((incident) => [
-    incident.id ?? '',
-    incident.date,
-    incident.title,
-    incident.location,
-    incident.tier,
-    incident.targetsCivilians ? 'yes' : 'no',
-    incident.targetsChildren ? 'yes' : 'no',
-    String(incident.casualties?.killed ?? ''),
-    String(incident.casualties?.injured ?? ''),
-    (incident.relatedProfileIds ?? []).join('|'),
-    (incident.relatedMoneyNodeIds ?? []).join('|'),
-    incident.sources.map((s) => s.label).join(' | '),
-    incident.sources.map((s) => s.url).join(' | '),
-    incident.multimedia.map((m) => m.url).join(' | '),
-    incident.summary,
-  ].map((cell) => escape(String(cell))))
-  const csv = [header.join(','), ...rows.map((r) => r.join(','))].join('\n')
+function escapeCsvCell(value: string) {
+  return `"${value.replace(/"/g, '""')}"`
+}
+
+function downloadCsv(filename: string, header: string[], rows: string[][]) {
+  const csv = [
+    header.join(','),
+    ...rows.map((row) => row.map((cell) => escapeCsvCell(String(cell))).join(',')),
+  ].join('\n')
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -840,6 +812,83 @@ function downloadIncidentsCsv(incidents: DossierDocumentedIncident[], filename: 
   a.download = filename
   a.click()
   URL.revokeObjectURL(url)
+}
+
+function downloadIncidentsCsv(incidents: DossierDocumentedIncident[], filename: string) {
+  downloadCsv(
+    filename,
+    [
+      'id',
+      'date',
+      'title',
+      'location',
+      'tier',
+      'targets_civilians',
+      'targets_children',
+      'killed',
+      'injured',
+      'related_profiles',
+      'related_money_nodes',
+      'source_labels',
+      'source_urls',
+      'multimedia_urls',
+      'summary',
+    ],
+    incidents.map((incident) => [
+      incident.id ?? '',
+      incident.date,
+      incident.title,
+      incident.location,
+      incident.tier,
+      incident.targetsCivilians ? 'yes' : 'no',
+      incident.targetsChildren ? 'yes' : 'no',
+      String(incident.casualties?.killed ?? ''),
+      String(incident.casualties?.injured ?? ''),
+      (incident.relatedProfileIds ?? []).join('|'),
+      (incident.relatedMoneyNodeIds ?? []).join('|'),
+      incident.sources.map((s) => s.label).join(' | '),
+      incident.sources.map((s) => s.url).join(' | '),
+      incident.multimedia.map((m) => m.url).join(' | '),
+      incident.summary,
+    ]),
+  )
+}
+
+function downloadMoneyTrailCsv(nodes: DossierMoneyTrailNode[], filename: string) {
+  downloadCsv(
+    filename,
+    ['id', 'label', 'amount', 'type', 'date', 'related_profiles', 'children', 'source_url', 'detail'],
+    nodes.map((node) => [
+      node.id,
+      node.label,
+      node.amount,
+      node.type,
+      node.date,
+      (node.relatedProfileIds ?? []).join('|'),
+      (node.children ?? []).join('|'),
+      node.sourceUrl,
+      node.detail,
+    ]),
+  )
+}
+
+function downloadTimelineCsv(events: DossierTimelineEvent[], filename: string) {
+  downloadCsv(
+    filename,
+    ['id', 'year', 'title', 'tier', 'source', 'source_url', 'related_profiles', 'related_incidents', 'tags', 'description'],
+    events.map((event) => [
+      event.id ?? '',
+      event.year,
+      event.title,
+      event.tier,
+      event.source,
+      event.sourceUrl,
+      (event.relatedProfileIds ?? []).join('|'),
+      (event.relatedIncidentIds ?? []).join('|'),
+      (event.tags ?? []).join('|'),
+      event.description,
+    ]),
+  )
 }
 
 export default function IsraelDossierPage() {
@@ -1118,9 +1167,23 @@ export default function IsraelDossierPage() {
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
           A chronological record densified with documented civilian-targeting and war-crimes milestones from 1948 forward. Every entry links to a checkable source. This is a high-evidence sample, not a claim of completeness.
         </p>
-        <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-4">
-          {HISTORICAL_TIMELINE.length} documented events · Showing {filteredTimeline.length} · Click any source to verify
-        </p>
+        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint">
+            {HISTORICAL_TIMELINE.length} documented events · Showing {filteredTimeline.length} · Click any source to verify
+          </p>
+          <button
+            type="button"
+            onClick={() =>
+              downloadTimelineCsv(
+                filteredTimeline,
+                `veritas-israel-dossier-timeline-${new Date().toISOString().slice(0, 10)}.csv`,
+              )
+            }
+            className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+          >
+            Export timeline CSV
+          </button>
+        </div>
 
         <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-[minmax(0,1fr)_220px]">
           <label className="block">
@@ -1389,9 +1452,23 @@ export default function IsraelDossierPage() {
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
           Click any node to trace U.S. taxpayer dollars from Congress → weapons procurement → delivery → documented civilian impact. Every link in the chain is sourced. Actor chips open full political profiles.
         </p>
-        <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-6">
-          Interactive — click to expand each level · includes CRS lifetime $298B floor
-        </p>
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint">
+            Interactive — click to expand each level · includes CRS lifetime $298B floor · {ISRAEL_DOSSIER_MONEY_TRAIL.length} nodes
+          </p>
+          <button
+            type="button"
+            onClick={() =>
+              downloadMoneyTrailCsv(
+                ISRAEL_DOSSIER_MONEY_TRAIL,
+                `veritas-israel-dossier-money-trail-${new Date().toISOString().slice(0, 10)}.csv`,
+              )
+            }
+            className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+          >
+            Export money-trail CSV
+          </button>
+        </div>
 
         <div className="space-y-3">
           {ISRAEL_DOSSIER_MONEY_TRAIL.filter(n => n.type === 'legislation' || n.type === 'delivery').map(node => (

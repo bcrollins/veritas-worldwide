@@ -288,6 +288,123 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'hillary-clinton',
+    name: 'Hillary Clinton',
+    role: 'Former Secretary of State; former U.S. Senator (D-NY)',
+    category: 'us-executive',
+    enablementSummary:
+      'As Secretary of State and senator, a durable institutional advocate for the U.S.–Israel military and diplomatic partnership during multiple Gaza escalations and aid cycles; continuum of executive-branch enablement before the 2016 MOU peak.',
+    relatedTimelineYears: ['2008–2009', '2012', '2014'],
+    relatedIncidentIds: ['cast-lead-2008-09', 'pillar-of-defense-2012', 'protective-edge-2014-children'],
+    relatedMoneyNodeIds: ['annual-mou', 'iron-dome'],
+    fundingLinks: [
+      {
+        label: 'State Department historical Israel policy archive',
+        sourceUrl: 'https://2009-2017.state.gov/',
+      },
+      {
+        label: 'CRS RL33222 — multi-administration aid continuity',
+        sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'nikki-haley',
+    name: 'Nikki Haley',
+    role: 'Former U.S. Ambassador to the United Nations',
+    category: 'us-executive',
+    enablementSummary:
+      'As UN Ambassador, led U.S. diplomatic defense of Israel at the Security Council and General Assembly — including veto and walkout diplomacy that insulated Israeli operations from multilateral constraints during her tenure.',
+    relatedTimelineYears: ['2017', '2018', '2019'],
+    relatedIncidentIds: ['great-march-return-2018'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    fundingLinks: [
+      {
+        label: 'U.S. Mission to the UN — historical statements archive',
+        sourceUrl: 'https://usun.usmission.gov/',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'hakeem-jeffries',
+    name: 'Hakeem Jeffries',
+    role: 'House Democratic Leader',
+    category: 'us-congress',
+    enablementSummary:
+      'House Democratic leadership role during the post–October 7 aid votes; helped maintain bipartisan floor majorities for Israel security supplementals while managing caucus splits over conditions.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'H.R.815 legislative record',
+        amount: '$26.4B',
+        sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
+      },
+      {
+        label: 'OpenSecrets — Jeffries profile',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/hakeem-jeffries/summary?cid=N00033640',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'bernie-sanders',
+    name: 'Bernie Sanders',
+    role: 'U.S. Senator (I-VT)',
+    category: 'us-congress',
+    enablementSummary:
+      'Among the most visible Senate critics of unconditional wartime aid; repeatedly proposed conditioning or pausing munitions over civilian casualties. Mapped here as a counter-enablement actor so the graph is not one-directional.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'mk84-use'],
+    fundingLinks: [
+      {
+        label: 'Congressional record / aid conditionality proposals (public statements + votes)',
+        sourceUrl: 'https://www.congress.gov/',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'rashida-tlaib',
+    name: 'Rashida Tlaib',
+    role: 'U.S. Representative (D-MI)',
+    category: 'us-congress',
+    enablementSummary:
+      'Consistent House opponent of Israel military aid packages and advocate for ceasefire / accountability measures; included as a counter-enablement node documenting the congressional minority against the aid floor.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815'],
+    fundingLinks: [
+      {
+        label: 'Congress.gov — member voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/rashida-tlaib/T000481',
+      },
+    ],
+    tier: 'verified',
+  },
+  {
+    profileId: 'ilhan-omar',
+    name: 'Ilhan Omar',
+    role: 'U.S. Representative (D-MN)',
+    category: 'us-congress',
+    enablementSummary:
+      'House progressive critic of Israel aid and U.S. diplomatic cover; mapped as counter-enablement for the same reason as Tlaib and Sanders — the graph must show opposition as well as sponsorship.',
+    relatedTimelineYears: ['2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815'],
+    fundingLinks: [
+      {
+        label: 'Congress.gov — member voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/ilhan-omar/O000173',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {

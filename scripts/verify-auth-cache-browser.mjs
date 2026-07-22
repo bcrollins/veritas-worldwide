@@ -242,11 +242,18 @@ async function runVerification(baseUrl) {
     assert(await bodyIncludes('a note on methodology'), 'Alice bookmark did not return after re-login')
 
     await openPage(new URL('/chapter/foreword', baseUrl).toString())
-    await waitMs(700)
-    const aliceRestoredScrollY = await evalNumber('window.scrollY')
-    assert(
-      aliceRestoredScrollY > Math.max(200, Math.floor(aliceScrollTarget * 0.5)),
-      `Alice did not recover her own scroll position (${aliceRestoredScrollY}px)`,
+    // Scroll restore is async (history hydrate + layout). Poll instead of a single fixed wait —
+    // CI runners frequently miss a 700ms window and false-fail the suite.
+    const minRestoredScroll = Math.max(200, Math.floor(aliceScrollTarget * 0.5))
+    let aliceRestoredScrollY = 0
+    await poll(
+      async () => {
+        aliceRestoredScrollY = await evalNumber('window.scrollY')
+        return aliceRestoredScrollY > minRestoredScroll
+      },
+      `Alice did not recover her own scroll position (${aliceRestoredScrollY}px; target ${aliceScrollTarget}px)`,
+      12000,
+      250,
     )
 
     assert(
