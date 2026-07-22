@@ -525,6 +525,54 @@
       "status": "pinned",
       "note": "UN News Nov 2006",
       "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://www.state.gov/reports/country-reports-on-terrorism-2022/",
+      "timestamp": "20231201130710",
+      "archiveUrl": "https://web.archive.org/web/20231201130710/https://www.state.gov/reports/country-reports-on-terrorism-2022/",
+      "status": "pinned",
+      "note": "State Country Reports Terrorism 2022",
+      "lastProbedAt": "2026-07-22T22:55:10.000Z"
+    },
+    {
+      "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/6126",
+      "timestamp": "20231103055340",
+      "archiveUrl": "https://web.archive.org/web/20231103055340/https://www.congress.gov/bill/118th-congress/house-bill/6126",
+      "status": "pinned",
+      "note": "Congress Israel Supplemental H.R.6126",
+      "lastProbedAt": "2026-07-22T22:55:10.000Z"
+    },
+    {
+      "sourceUrl": "https://www.justice.gov/opa",
+      "timestamp": "20040101074916",
+      "archiveUrl": "https://web.archive.org/web/20040101074916/https://www.justice.gov/opa",
+      "status": "pinned",
+      "note": "DOJ OPA",
+      "lastProbedAt": "2026-07-22T22:55:10.000Z"
+    },
+    {
+      "sourceUrl": "https://home.treasury.gov/policy-issues/financial-sanctions/sanctions-programs-and-country-information",
+      "timestamp": "20200901044134",
+      "archiveUrl": "https://web.archive.org/web/20200901044134/https://home.treasury.gov/policy-issues/financial-sanctions/sanctions-programs-and-country-information",
+      "status": "pinned",
+      "note": "Treasury OFAC programs",
+      "lastProbedAt": "2026-07-22T22:55:10.000Z"
+    },
+    {
+      "sourceUrl": "https://sgp.fas.org/crs/mideast/RL33222.pdf",
+      "timestamp": "20210904052701",
+      "archiveUrl": "https://web.archive.org/web/20210904052701/https://sgp.fas.org/crs/mideast/RL33222.pdf",
+      "status": "pinned",
+      "note": "CRS RL33222 FAS mirror",
+      "lastProbedAt": "2026-07-22T22:55:10.000Z"
+    },
+    {
+      "sourceUrl": "https://news.un.org/en/story/2023/10/1142507",
+      "timestamp": "20231018174154",
+      "archiveUrl": "https://web.archive.org/web/20231018174154/https://news.un.org/en/story/2023/10/1142507",
+      "status": "pinned",
+      "note": "UN News Oct 2023",
+      "lastProbedAt": "2026-07-22T22:55:10.000Z"
     }
   ]
 }
