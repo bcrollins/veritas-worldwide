@@ -942,6 +942,19 @@ export default function IsraelDossierPage() {
   const [timelineEra, setTimelineEra] = useState<'all' | DossierEra>('all')
   const [timelineQuery, setTimelineQuery] = useState('')
   const [actorQuery, setActorQuery] = useState('')
+  const [actorCategory, setActorCategory] = useState<'all' | DossierActorEnablement['category']>(() => {
+    const c = searchParams.get('actorCategory')
+    const allowed: DossierActorEnablement['category'][] = [
+      'us-executive',
+      'us-congress',
+      'us-donor-lobby',
+      'israeli-leadership',
+      'legal-actor',
+    ]
+    return allowed.includes(c as DossierActorEnablement['category'])
+      ? (c as DossierActorEnablement['category'])
+      : 'all'
+  })
   const [selectedActorId, setSelectedActorId] = useState<string | null>(() => searchParams.get('actor'))
   const [deepIncidentId, setDeepIncidentId] = useState<string | null>(() => searchParams.get('incident'))
   const [copyStatus, setCopyStatus] = useState('')
@@ -989,10 +1002,12 @@ export default function IsraelDossierPage() {
   const filteredActors = useMemo(() => {
     const q = actorQuery.trim().toLowerCase()
     return ISRAEL_DOSSIER_ACTORS.filter((actor) => {
+      const categoryMatch = actorCategory === 'all' || actor.category === actorCategory
+      if (!categoryMatch) return false
       if (!q) return true
       return `${actor.name} ${actor.role} ${actor.enablementSummary} ${actor.category}`.toLowerCase().includes(q)
     })
-  }, [actorQuery])
+  }, [actorQuery, actorCategory])
   const selectedActor: DossierActorEnablement | undefined = selectedActorId
     ? ISRAEL_DOSSIER_ACTORS.find((a) => a.profileId === selectedActorId)
     : undefined
@@ -1326,15 +1341,35 @@ export default function IsraelDossierPage() {
           </button>
         </div>
 
-        <label className="mb-4 block">
-          <span className="sr-only">Search actors</span>
-          <input
-            value={actorQuery}
-            onChange={(event) => setActorQuery(event.target.value)}
-            placeholder="Search Biden, Netanyahu, AIPAC donors, Congress…"
-            className="min-h-[44px] w-full rounded-sm border border-border bg-surface px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
-          />
-        </label>
+        <div className="mb-4 grid gap-3 md:grid-cols-[minmax(0,1fr)_220px]">
+          <label className="block">
+            <span className="sr-only">Search actors</span>
+            <input
+              value={actorQuery}
+              onChange={(event) => setActorQuery(event.target.value)}
+              placeholder="Search Biden, Netanyahu, AIPAC donors, Congress…"
+              className="min-h-[44px] w-full rounded-sm border border-border bg-surface px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
+            />
+          </label>
+          <label className="block">
+            <span className="sr-only">Filter actors by category</span>
+            <select
+              value={actorCategory}
+              onChange={(event) => setActorCategory(event.target.value as typeof actorCategory)}
+              className="min-h-[44px] w-full rounded-sm border border-border bg-surface px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
+            >
+              <option value="all">All actor categories</option>
+              <option value="us-executive">U.S. executive</option>
+              <option value="us-congress">U.S. Congress</option>
+              <option value="us-donor-lobby">U.S. donors / lobby</option>
+              <option value="israeli-leadership">Israeli leadership</option>
+              <option value="legal-actor">Legal actors</option>
+            </select>
+          </label>
+        </div>
+        <p className="mb-4 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+          Showing {filteredActors.length} of {ISRAEL_DOSSIER_ACTORS.length} actors
+        </p>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
           {filteredActors.map((actor) => {

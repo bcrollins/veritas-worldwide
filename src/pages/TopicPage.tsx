@@ -156,6 +156,44 @@ export default function TopicPage() {
           <p className="font-body text-base md:text-lg text-ink-light leading-8 max-w-4xl mt-6">
             {topic.description}
           </p>
+          {topic.slug === 'israel-policy' && (
+            <div className="mt-8 max-w-4xl rounded-sm border border-crimson/25 bg-crimson/5 p-5">
+              <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-crimson mb-2">
+                Interactive evidence engine
+              </p>
+              <p className="font-body text-sm text-ink-muted leading-relaxed mb-4">
+                The Israel Dossier densifies the 1948→ civilian-targeting and U.S. aid record with actors, money-trail nodes, multimedia source checks, CSV exports, and a machine-readable corpus.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Link
+                  to="/israel-dossier"
+                  className="inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
+                >
+                  Open Israel Dossier
+                </Link>
+                <Link
+                  to="/israel-dossier?focus=children"
+                  className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                >
+                  Children cases
+                </Link>
+                <Link
+                  to="/israel-dossier?actor=benjamin-netanyahu"
+                  className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                >
+                  Actors graph
+                </Link>
+                <a
+                  href="/israel-dossier/corpus.json"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                >
+                  corpus.json
+                </a>
+              </div>
+            </div>
+          )}
 
           {profileStats && (
             <div className="grid gap-4 mt-10 sm:grid-cols-2 xl:grid-cols-5">

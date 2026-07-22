@@ -67,10 +67,10 @@
     "name": "Israel Policy & U.S. Aid",
     "eyebrow": "Foreign Policy",
     "headline": "U.S.-Israel policy, military aid, Gaza, and the documentary record behind modern foreign policy debates.",
-    "description": "This hub connects the historical chapters on Zionism, intelligence, aid, and war with current reporting on Gaza, defense spending, and American policy commitments.",
-    "metaDescription": "U.S.-Israel policy and aid reporting from Veritas Worldwide. Explore military aid, Gaza, intelligence, and the public record behind American policy decisions.",
-    "aliases": ["Israel", "U.S. aid to Israel", "Gaza", "Israel policy", "foreign aid"],
-    "keywords": ["Israel", "Gaza", "foreign aid", "military aid", "U.S. policy", "Middle East"],
+    "description": "This hub connects the historical chapters on Zionism, intelligence, aid, and war with current reporting on Gaza, defense spending, and American policy commitments. For the interactive evidence engine — 1948→ incidents, actors enablement graph, money trail, and corpus export — open the Israel Dossier.",
+    "metaDescription": "U.S.-Israel policy and aid reporting from Veritas Worldwide. Explore military aid, Gaza, intelligence, the Israel Dossier evidence engine, and the public record behind American policy decisions.",
+    "aliases": ["Israel", "U.S. aid to Israel", "Gaza", "Israel policy", "foreign aid", "Israel Dossier"],
+    "keywords": ["Israel", "Gaza", "foreign aid", "military aid", "U.S. policy", "Middle East", "war crimes", "AIPAC"],
     "featuredChapterIds": ["chapter-6", "chapter-7", "chapter-15", "chapter-16"],
     "featuredArticleSlugs": [
       "gaza-famine-humanitarian-crisis-un-icc-2026",
@@ -80,11 +80,15 @@
     "faq": [
       {
         "question": "What does this Israel policy hub cover?",
-        "answer": "It covers the historical origins of the conflict, U.S. military aid, intelligence relationships, humanitarian consequences, and the current policy disputes playing out in Congress and international institutions."
+        "answer": "It covers the historical origins of the conflict, U.S. military aid, intelligence relationships, humanitarian consequences, and the current policy disputes playing out in Congress and international institutions. The interactive Israel Dossier at /israel-dossier densifies the 1948→ civilian-targeting and aid record with checkable sources."
       },
       {
         "question": "Are humanitarian claims sourced?",
-        "answer": "Yes. Veritas uses public records, UN agencies, court filings, congressional documents, and clearly identified journalism to distinguish verified facts from contested interpretations."
+        "answer": "Yes. Veritas uses public records, UN agencies, court filings, congressional documents, and clearly identified journalism to distinguish verified facts from contested interpretations. The dossier labels each claim Verified or Circumstantial and links primary sources."
+      },
+      {
+        "question": "Where is the interactive evidence engine?",
+        "answer": "Open the Israel Dossier at /israel-dossier for the timeline, actors enablement graph, money trail, multimedia incident filters, CSV exports, and machine-readable corpus.json. Deep links like /israel-dossier?focus=children and /israel-dossier?actor=joe-biden jump straight into filtered views."
       },
       {
         "question": "How can I follow future U.S.-Israel policy reporting?",
