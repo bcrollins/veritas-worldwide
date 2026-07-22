@@ -1064,6 +1064,32 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1 },
   },
   {
+    id: 'shujaiya-2014',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons', 'artillery-use'],
+    legalStatus: 'un-finding',
+    title: 'Shuja\'iyya Assault — Protective Edge (2014)',
+    date: 'July 19–20, 2014',
+    location: "Shuja'iyya, Gaza City",
+    summary:
+      'During Operation Protective Edge, Israeli forces conducted a massive assault on the dense Shuja\'iyya neighborhood. UN and human-rights tallies recorded more than 100 Palestinians killed in about 24 hours, including large numbers of civilians and children, amid artillery and air bombardment of residential blocks.',
+    evidence:
+      'OHCHR Commission of Inquiry materials on the 2014 Gaza conflict, OCHA casualty snapshots, and B\'Tselem field documentation establish the scale of civilian harm. Distinct from the child-casualty and UNRWA-shelter entries for Protective Edge — this isolates the single-neighborhood peak-intensity assault.',
+    sources: [
+      { label: 'OHCHR — COI report on 2014 Gaza conflict', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza' },
+      { label: 'B\'Tselem — 2014 Gaza conflict documentation', url: 'https://www.btselem.org/gaza_strip/2014_gaza_conflict' },
+      { label: 'OCHA — Protection of Civilians / 2014 hostilities', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OHCHR COI 2014 materials', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 120 },
+  },
+  {
     id: 'operation-summer-rains-power-plant-2006',
     era: 'occupation-1967-2005',
     targetsCivilians: true,
