@@ -43,6 +43,7 @@
     "verify:article-sources": "node scripts/verify-article-sources.mjs",
     "verify:article-images": "node scripts/verify-article-images.mjs",
     "verify:chapter-images": "node scripts/verify-chapter-images.mjs",
+    "verify:profile-images": "node scripts/verify-profile-images.mjs",
     "verify:search-scoring": "node scripts/verify-search-scoring.mjs",
     "verify:archive-manifest": "node scripts/verify-archive-manifest.mjs",
     "verify:auth-validation": "node scripts/verify-auth-validation.mjs",

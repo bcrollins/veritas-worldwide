@@ -14,6 +14,7 @@ const pure = [
   'verify-article-sources.mjs',
   'verify-article-images.mjs',
   'verify-chapter-images.mjs',
+  'verify-profile-images.mjs',
   'verify-archive-manifest.mjs',
   'verify-a11y-public-targets.mjs',
   'verify-server-security-invariants.mjs',
@@ -27,7 +28,7 @@ for (const script of pure) {
   const r = spawnSync(process.execPath, [join(root, 'scripts', script)], { stdio: 'inherit' })
   if (r.status !== 0) failed += 1
 }
-if (pure.length < 12) {
+if (pure.length < 13) {
   console.error(`[verify:pure] FAIL — suite list shrunk to ${pure.length}`)
   process.exit(1)
 }
