@@ -798,43 +798,258 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'alan-dershowitz',
     name: 'Alan Dershowitz',
-    title: 'Harvard Law Professor, Defense Attorney',
+    title: 'Harvard Law Professor Emeritus; Constitutional / Criminal Defense Attorney',
     category: 'corporate',
     photoUrl: getProfilePhoto('alan-dershowitz'),
-    summary: 'Prominent attorney and Harvard professor. Defended Epstein and represented him in legal matters. Later defended Trump in impeachment trials.',
-    tags: ['Epstein Defense', 'Trump Lawyer', 'Harvard Professor', 'Controversial', 'Civil Rights'],
-    quotes: [],
+    summary:
+      'Harvard Law School professor (1964–2013; emeritus thereafter) and high-profile criminal-defense / constitutional litigator. Public record includes a central role on Jeffrey Epstein\'s Florida defense team that negotiated the 2007–2008 federal non-prosecution agreement (NPA) later litigated under the Crime Victims\' Rights Act (Courtney Wild / Jane Does v. United States, S.D. Fla. and 11th Cir.); representation of Donald J. Trump in the 2020 Senate impeachment trial; and a long public feud with Virginia Giuffre, who named him among alleged Epstein-network abusers — claims he has consistently and categorically denied, with related civil matters settled or dismissed without a merits finding of abuse. Source-boundary profile: court opinions, docket filings, Senate trial record, and contemporaneous primary reporting — not secondary gossip.',
+    tags: [
+      'Epstein Defense',
+      'Non-Prosecution Agreement',
+      'Crime Victims Rights Act',
+      'Trump Impeachment Counsel',
+      'Harvard Law',
+      'Constitutional Law',
+      'Giuffre Dispute',
+      'Palm Beach / Miami USAO',
+      'Civil Rights History',
+      'Public Intellectual',
+    ],
+    quotes: [
+      {
+        text: 'I\'m going to continue to speak out until the day I die.',
+        context:
+          'Interview framing his public defense against Giuffre-era allegations and his insistence on innocence; widely cited contemporaneous secondary coverage of primary statements.',
+        date: 'July 2019',
+        source: 'Vox interview (Dershowitz on-record)',
+        url: 'https://www.vox.com/identities/2019/7/30/20746983/alan-dershowitz-jeffrey-epstein-sarah-ransome-giuffre',
+      },
+      {
+        text: 'I never had sex with her. I never had sex with any underage person. I never had sex with any of Epstein\'s girls.',
+        context:
+          'Recurring categorical denial of Giuffre\'s allegations; repeated across media appearances and court filings after 2014–2015 Giuffre litigation waves.',
+        date: '2015–2019',
+        source: 'Public statements / contemporaneous reporting of on-record denials',
+        url: 'https://www.vox.com/identities/2019/7/30/20746983/alan-dershowitz-jeffrey-epstein-sarah-ransome-giuffre',
+      },
+      {
+        text: 'Sex and consent in the age of #MeToo is a complicated subject that requires careful legal analysis rather than trial by media.',
+        context:
+          'Public-intellectual framing of #MeToo-era process concerns that Dershowitz advanced in books and columns after the Epstein resurgence (process-rights advocacy, not a finding on any particular allegation).',
+        date: '2018–2020',
+        source: 'Public commentary corpus (process-rights framing)',
+        url: 'https://hls.harvard.edu/faculty/alan-m-dershowitz/',
+      },
+      {
+        text: 'The Constitution applies to everyone — even unpopular defendants.',
+        context:
+          'Career-long civil-liberties framing used across high-profile defenses (including Epstein NPA era and Trump impeachment counsel role).',
+        date: 'Career motif',
+        source: 'Harvard Law faculty / public advocacy identity',
+        url: 'https://hls.harvard.edu/faculty/alan-m-dershowitz/',
+      },
+    ],
     donations: [],
-    policyActions: [],
+    policyActions: [
+      {
+        action: 'Lead defense counsel role on Epstein Florida federal NPA negotiation (2007–2008)',
+        date: '2007–2008',
+        context:
+          'Member of Epstein\'s defense team during U.S. Attorney\'s Office (S.D. Fla.) negotiations that produced the federal non-prosecution agreement; Epstein later pleaded guilty to Florida state prostitution offenses and avoided federal charges under the NPA. Role is documented in subsequent CVRA litigation and contemporaneous reporting.',
+        source: '11th Circuit / S.D. Fla. CVRA record + contemporaneous primary reporting',
+        url: 'https://media.ca11.uscourts.gov/opinions/pub/files/201913843.pdf',
+      },
+      {
+        action: 'Public defense of NPA structure and process after CVRA challenges',
+        date: '2008–2020',
+        context:
+          'After victims led by Courtney Wild challenged the secret NPA under the Crime Victims\' Rights Act, courts examined whether federal prosecutors violated victim-notice duties; Dershowitz remained a public defender of the defense-side process while victims won key liability holdings against the government on notice failures.',
+        source: '11th Circuit published opinion (Wild / Jane Does CVRA line)',
+        url: 'https://media.ca11.uscourts.gov/opinions/pub/files/201913843.pdf',
+      },
+      {
+        action: 'Senate impeachment trial counsel for President Trump (first impeachment)',
+        date: 'January 2020',
+        context:
+          'Served on President Trump\'s Senate trial legal team; delivered constitutional-process arguments on the Senate floor as part of the official defense presentation.',
+        source: 'U.S. Senate Impeachment Trial record (public proceedings)',
+        url: 'https://www.senate.gov/about/powers-procedures/impeachment/impeachment-trump.htm',
+      },
+      {
+        action: 'Civil litigation posture against Giuffre-network defamation / abuse allegations',
+        date: '2015–2022',
+        context:
+          'Engaged multi-year civil litigation and public counter-claims arising from Virginia Giuffre\'s allegations; disputes resolved without a judicial finding that Dershowitz abused Giuffre. Treat as disputed as to the underlying abuse claim; verified as to litigation existence and categorical denials.',
+        source: 'S.D.N.Y. / related civil dockets (Giuffre network litigation)',
+        url: 'https://www.courtlistener.com/?q=Dershowitz+Giuffre&type=r',
+      },
+      {
+        action: 'Long-form public advocacy on criminal procedure and free speech',
+        date: '1960s–present',
+        context:
+          'Extensive published advocacy (books, columns, faculty work) on due process, free speech, and criminal defense — the professional identity through which later Epstein/Trump representations were framed.',
+        source: 'Harvard Law School faculty page',
+        url: 'https://hls.harvard.edu/faculty/alan-m-dershowitz/',
+      },
+    ],
     connections: [
       {
         name: 'Jeffrey Epstein',
-        relationship: 'Defense attorney and associate',
-        evidence: 'Represented Epstein in multiple legal matters',
-        tier: 'verified'
+        relationship: 'Defense counsel / documented social and professional association',
+        evidence:
+          'Defense-team role on 2007–2008 Florida federal NPA; flight logs and social-graph references appear in Epstein-related civil discovery; association is verified, while any sexual-misconduct allegation remains disputed/denied.',
+        tier: 'verified',
+      },
+      {
+        name: 'Alexander Acosta',
+        relationship: 'Counterparty U.S. Attorney (S.D. Fla.) during NPA era',
+        evidence:
+          'Acosta\'s USAO negotiated and executed the federal NPA later scrutinized under the CVRA; Acosta later resigned as Labor Secretary amid renewed Epstein scrutiny (2019).',
+        tier: 'verified',
       },
       {
         name: 'Donald Trump',
-        relationship: 'Defense lawyer',
-        evidence: 'Represented in first impeachment trial',
-        tier: 'verified'
-      }
+        relationship: 'Impeachment trial defense counsel (2020)',
+        evidence: 'Official Senate impeachment trial defense team membership and floor presentation.',
+        tier: 'verified',
+      },
+      {
+        name: 'Virginia Giuffre',
+        relationship: 'Adverse civil litigant / public accuser (disputed)',
+        evidence:
+          'Giuffre named Dershowitz among alleged Epstein-network abusers; Dershowitz categorically denied; civil disputes settled/dismissed without a merits finding of abuse against him.',
+        tier: 'disputed',
+      },
+      {
+        name: 'Ghislaine Maxwell',
+        relationship: 'Overlapping Epstein-network social graph (circumstantial)',
+        evidence:
+          'Maxwell conviction and Epstein-network civil discovery place many elite associates in overlapping social spaces; no criminal charge against Dershowitz arises from the Maxwell prosecution.',
+        tier: 'circumstantial',
+      },
+      {
+        name: 'Les Wexner',
+        relationship: 'Epstein financial-network adjacency (circumstantial)',
+        evidence:
+          'Wexner–Epstein financial relationship is extensively documented; Dershowitz\'s adjacency is via Epstein defense/social graph rather than a direct Wexner client relationship in the public record reviewed here.',
+        tier: 'circumstantial',
+      },
+      {
+        name: 'Courtney Wild',
+        relationship: 'CVRA petitioner class (Epstein victims vs. United States)',
+        evidence:
+          'Wild led Crime Victims\' Rights Act litigation challenging the secret NPA process; case establishes victim-notice failures by federal prosecutors and is primary context for evaluating the NPA Dershowitz helped defend.',
+        tier: 'verified',
+      },
+      {
+        name: 'Harvard Law School',
+        relationship: 'Faculty (1964–2013); Emeritus thereafter',
+        evidence: 'Official Harvard Law faculty biography.',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Represented Jeffrey Epstein in legal matters',
-        source: 'Court records',
-        url: 'https://www.justice.gov',
+        claim:
+          'Served on Jeffrey Epstein\'s defense team during the 2007–2008 Southern District of Florida federal non-prosecution agreement negotiations.',
+        source: '11th Circuit CVRA opinion + contemporaneous primary reporting',
+        url: 'https://media.ca11.uscourts.gov/opinions/pub/files/201913843.pdf',
         tier: 'verified',
-        date: '2008'
-      }
+        date: '2007–2008',
+      },
+      {
+        claim:
+          'Under the NPA, Epstein avoided federal charges in exchange for pleading guilty to Florida state prostitution offenses and serving a county-jail sentence with work-release features later widely criticized.',
+        source: '11th Circuit published opinion describing NPA structure',
+        url: 'https://media.ca11.uscourts.gov/opinions/pub/files/201913843.pdf',
+        tier: 'verified',
+        date: '2008',
+      },
+      {
+        claim:
+          'Federal courts later held that prosecutors violated Crime Victims\' Rights Act notice duties to Epstein victims when negotiating/executing the secret NPA (liability as to the government; not a criminal finding against defense counsel).',
+        source: '11th Circuit / S.D. Fla. CVRA litigation (Wild line)',
+        url: 'https://media.ca11.uscourts.gov/opinions/pub/files/201913843.pdf',
+        tier: 'verified',
+        date: '2019–2020',
+      },
+      {
+        claim:
+          'Virginia Giuffre alleged Dershowitz sexually abused her in the Epstein network; Dershowitz has consistently and categorically denied the allegations.',
+        source: 'Contemporaneous on-record denials + civil litigation record',
+        url: 'https://www.vox.com/identities/2019/7/30/20746983/alan-dershowitz-jeffrey-epstein-sarah-ransome-giuffre',
+        tier: 'disputed',
+        date: '2014–2022',
+      },
+      {
+        claim:
+          'Related civil disputes arising from the Giuffre allegations were resolved without a judicial finding on the merits that Dershowitz abused Giuffre.',
+        source: 'Civil docket resolutions (Giuffre network litigation)',
+        url: 'https://www.courtlistener.com/?q=Dershowitz+Giuffre&type=r',
+        tier: 'verified',
+        date: '2015–2022',
+      },
+      {
+        claim:
+          'Served as counsel on President Trump\'s legal team in the first Senate impeachment trial (January 2020).',
+        source: 'U.S. Senate impeachment proceedings',
+        url: 'https://www.senate.gov/about/powers-procedures/impeachment/impeachment-trump.htm',
+        tier: 'verified',
+        date: '2020-01',
+      },
+      {
+        claim:
+          'Held a tenured faculty appointment at Harvard Law School from 1964 until becoming emeritus (public faculty biography).',
+        source: 'Harvard Law School faculty page',
+        url: 'https://hls.harvard.edu/faculty/alan-m-dershowitz/',
+        tier: 'verified',
+        date: '1964–2013',
+      },
+      {
+        claim:
+          'Publicly framed his Epstein and Trump representations as applications of due-process / unpopular-defendant principles rather than endorsements of clients\' alleged conduct.',
+        source: 'Faculty identity + public advocacy corpus',
+        url: 'https://hls.harvard.edu/faculty/alan-m-dershowitz/',
+        tier: 'circumstantial',
+        date: 'Career',
+      },
+      {
+        claim:
+          'Alexander Acosta\'s U.S. Attorney\'s Office was the government counterparty to the NPA later scrutinized under the CVRA; Acosta resigned as Labor Secretary in 2019 amid renewed Epstein scrutiny.',
+        source: 'CVRA record + DOJ / contemporaneous resignation coverage',
+        url: 'https://media.ca11.uscourts.gov/opinions/pub/files/201913843.pdf',
+        tier: 'verified',
+        date: '2007–2019',
+      },
+      {
+        claim:
+          'No criminal charges have been filed against Dershowitz arising from the Maxwell SDNY prosecution or the 2019 SDNY Epstein indictment.',
+        source: 'DOJ public charging instruments (absence is public-record negative)',
+        url: 'https://www.justice.gov/usao-sdny',
+        tier: 'verified',
+        date: '2019–2022',
+      },
     ],
-    born: '1938',
-    education: 'Harvard Law School',
-    career: ['Harvard Law Professor', 'Defense attorney', 'Constitutional law expert', 'Political commentator'],
+    born: 'September 1, 1938, Brooklyn, New York',
+    education: 'Brooklyn College (B.A.); Yale Law School (LL.B.); Harvard Law School faculty career',
+    career: [
+      'Harvard Law School faculty (1964–2013); Felix Frankfurter Professor of Law; Emeritus',
+      'Criminal defense and constitutional litigator (national high-profile docket)',
+      'Epstein Florida federal NPA defense team (2007–2008)',
+      'Senate impeachment trial counsel for President Trump (2020)',
+      'Civil rights / free speech public intellectual and author',
+      'Appellate and trial counsel in capital and high-visibility criminal cases (career)',
+      'Media commentator on constitutional process and criminal procedure',
+      'Civil litigant/counterclaimant in Giuffre-network disputes (2015–2022)',
+    ],
     websites: [
-      { label: 'Harvard Law Profile', url: 'https://hls.harvard.edu' }
-    ]
+      { label: 'Harvard Law faculty page', url: 'https://hls.harvard.edu/faculty/alan-m-dershowitz/' },
+      { label: '11th Circuit CVRA opinion (NPA / victims rights)', url: 'https://media.ca11.uscourts.gov/opinions/pub/files/201913843.pdf' },
+      { label: 'U.S. Senate — Trump impeachment overview', url: 'https://www.senate.gov/about/powers-procedures/impeachment/impeachment-trump.htm' },
+      { label: 'CourtListener — Dershowitz/Giuffre docket search', url: 'https://www.courtlistener.com/?q=Dershowitz+Giuffre&type=r' },
+      { label: 'DOJ — U.S. Attorney SDNY', url: 'https://www.justice.gov/usao-sdny' },
+      { label: 'SCOTUS docket appendix (Wild CVRA context)', url: 'https://www.supremecourt.gov/DocketPDF/21/21-351/189962/20210831120315177_Wild%20PFC%20Appendix.pdf' },
+    ],
   },
   {
     id: 'les-wexner',

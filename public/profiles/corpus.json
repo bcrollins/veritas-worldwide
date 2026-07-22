@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T22:55:16.251Z",
+  "generatedAt": "2026-07-22T23:00:21.392Z",
   "count": 94,
   "profiles": [
     {
@@ -209,18 +209,23 @@
     {
       "id": "alan-dershowitz",
       "name": "Alan Dershowitz",
-      "title": "Harvard Law Professor, Defense Attorney",
+      "title": "Harvard Law Professor Emeritus; Constitutional / Criminal Defense Attorney",
       "category": "corporate",
-      "summary": "Prominent attorney and Harvard professor. Defended Epstein and represented him in legal matters. Later defended Trump in impeachment trials.",
+      "summary": "Harvard Law School professor (1964–2013; emeritus thereafter) and high-profile criminal-defense / constitutional litigator. Public record includes a central role on Jeffrey Epstein's Florida defense team that negotiated the 2007–2008 federal non-prosecution agreement (NPA) later litigated under the Crime Victims' Rights Act (Courtney Wild / Jane Does v. United States, S.D. Fla. and 11th Cir.); representation of Donald J. Trump in the 2020 Senate impeachment trial; and a long public feud with Virginia Giuffre, who named him among alleged Epstein-network abusers — claims he has consistently and categorically denied, with related civil matters settled or dismissed without a merits finding of abuse. Source-boundary profile: court opinions, docket filings, Senate trial record, and contemporaneous primary reporting — not secondary gossip.",
       "photo": "/profiles/alan-dershowitz.svg",
       "url": "https://veritasworldwide.com/profile/alan-dershowitz",
       "bioguideId": null,
       "tags": [
         "Epstein Defense",
-        "Trump Lawyer",
-        "Harvard Professor",
-        "Controversial",
-        "Civil Rights"
+        "Non-Prosecution Agreement",
+        "Crime Victims Rights Act",
+        "Trump Impeachment Counsel",
+        "Harvard Law",
+        "Constitutional Law",
+        "Giuffre Dispute",
+        "Palm Beach / Miami USAO",
+        "Civil Rights History",
+        "Public Intellectual"
       ]
     },
     {
