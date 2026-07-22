@@ -309,7 +309,10 @@ async function runInteractiveChecks(browser) {
     }
     const eraSelect = timeline.locator('select').first()
     if (await eraSelect.count()) {
-      await eraSelect.selectOption({ label: /Mandate/i }).catch(() => eraSelect.selectOption({ index: 1 }))
+      const eraOptions = await eraSelect.locator('option').allTextContents()
+      const mandate = eraOptions.find((opt) => /mandate/i.test(opt))
+      if (mandate) await eraSelect.selectOption({ label: mandate })
+      else await eraSelect.selectOption({ index: 1 })
       await page.waitForTimeout(200)
     }
 
@@ -331,10 +334,14 @@ async function runInteractiveChecks(browser) {
     }
     const childrenFilter = incidents.locator('select').filter({ has: page.locator('option', { hasText: /Children among victims/i }) }).first()
     if (await childrenFilter.count()) {
-      await childrenFilter.selectOption({ label: /Children among victims/i })
-      await page.waitForTimeout(250)
-      const filtered = await incidents.innerText()
-      assert(/Showing\s+\d+\s+of\s+\d+/i.test(filtered), 'children incident filter did not update showing count')
+      const childOptions = await childrenFilter.locator('option').allTextContents()
+      const childrenLabel = childOptions.find((opt) => /children among victims/i.test(opt))
+      if (childrenLabel) {
+        await childrenFilter.selectOption({ label: childrenLabel })
+        await page.waitForTimeout(250)
+        const filtered = await incidents.innerText()
+        assert(/Showing\s+\d+\s+of\s+\d+/i.test(filtered), 'children incident filter did not update showing count')
+      }
     }
 
     const downloads = page.locator('#downloads')
