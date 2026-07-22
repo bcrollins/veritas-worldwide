@@ -1241,6 +1241,136 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 1100 },
   },
+  {
+    id: 'king-david-hotel-1946',
+    era: 'mandate-1948',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'King David Hotel Bombing (Irgun)',
+    date: 'July 22, 1946',
+    location: 'King David Hotel, Jerusalem (British Mandate administrative HQ)',
+    summary:
+      'The Irgun Zionist paramilitary organization bombed the southern wing of the King David Hotel, which housed British Mandate administrative and military headquarters. Ninety-one people were killed — British officials, Arab and Jewish hotel workers and visitors — in one of the deadliest attacks of the Mandate period.',
+    evidence:
+      'British Mandate inquiries, contemporaneous press, and later archival historiography (including Irgun admissions of responsibility) establish Irgun authorship and the death toll. Included for chronological balance: civilian and administrative deaths by a Zionist paramilitary before statehood, with checkable primary-period documentation — not as collective blame of any people.',
+    sources: [
+      { label: 'Britannica — King David Hotel bombing', url: 'https://www.britannica.com/event/King-David-Hotel-bombing' },
+      { label: 'UNISPAL — Mandate-era documentation index', url: 'https://www.un.org/unispal/' },
+      { label: 'British National Archives — Palestine Mandate records (catalog entry point)', url: 'https://www.nationalarchives.gov.uk/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica synthesis with bibliography', url: 'https://www.britannica.com/event/King-David-Hotel-bombing' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 91 },
+  },
+  {
+    id: 'coastal-road-massacre-1978',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Coastal Road Massacre (Fatah)',
+    date: 'March 11, 1978',
+    location: 'Coastal Highway between Haifa and Tel Aviv, Israel',
+    summary:
+      'Fatah militants who landed from Lebanon hijacked a civilian bus on Israel\'s Coastal Road. Thirty-eight Israeli civilians were killed, including thirteen children, and dozens were wounded. Israel launched Operation Litani into southern Lebanon days later.',
+    evidence:
+      'Israeli government casualty lists, contemporaneous international press, and Fatah organizational context are multi-source. Documented as a deliberate attack on civilian transport. Distinct from Operation Litani (Israeli military response entry) — this isolates the bus massacre itself.',
+    sources: [
+      { label: 'Israeli MFA historical summary — Coastal Road massacre', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+      { label: 'Britannica / encyclopedic secondary synthesis (cross-check primary lists)', url: 'https://www.britannica.com/topic/Palestine-Liberation-Organization' },
+      { label: 'UN Security Council context — Resolution 425 (Litani aftermath)', url: 'https://digitallibrary.un.org/record/67123' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNSC Resolution 425 (post-Litani)', url: 'https://digitallibrary.un.org/record/67123' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 38 },
+  },
+  {
+    id: 'netanya-passover-massacre-2002',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Park Hotel Passover Massacre — Netanya',
+    date: 'March 27, 2002',
+    location: 'Park Hotel, Netanya, Israel',
+    summary:
+      'A Hamas suicide bomber detonated inside the Park Hotel dining room during a Passover seder, killing 30 Israeli civilians and wounding about 140. It was among the deadliest single attacks of the Second Intifada and immediately preceded Israel\'s Operation Defensive Shield.',
+    evidence:
+      'Israeli police and government casualty tallies, contemporaneous international reporting, and Hamas claim of responsibility form a multi-source floor. Distinct from the Operation Defensive Shield campaign entry — this isolates the Netanya hotel attack as a civilian-targeting incident.',
+    sources: [
+      { label: 'Israeli MFA — Park Hotel / Passover massacre documentation', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+      { label: 'UN / Second Intifada period reporting context', url: 'https://www.un.org/unispal/' },
+      { label: 'B\'Tselem — Second Intifada casualty statistics methodology', url: 'https://www.btselem.org/statistics' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem statistics methodology', url: 'https://www.btselem.org/statistics' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 30 },
+  },
+  {
+    id: 'dolphinarium-disco-2001',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Dolphinarium Discotheque Bombing — Tel Aviv',
+    date: 'June 1, 2001',
+    location: 'Dolphinarium discotheque, Tel Aviv seafront, Israel',
+    summary:
+      'A Hamas suicide bomber detonated outside a seaside discotheque packed with teenagers, killing 21 people — mostly civilian youth, many recent immigrants from the former Soviet Union — and wounding more than 100. One of the Second Intifada\'s most notorious attacks on children and adolescents.',
+    evidence:
+      'Israeli casualty lists, multi-outlet international coverage, and Hamas claim of responsibility are multi-source. Targets were overwhelmingly civilian youth at a leisure venue — a clear civilian-targeting case on the Israeli side of the ledger.',
+    sources: [
+      { label: 'Israeli MFA — Dolphinarium attack documentation', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+      { label: 'UNISPAL — Second Intifada period index', url: 'https://www.un.org/unispal/' },
+      { label: 'B\'Tselem — Intifada casualty data', url: 'https://www.btselem.org/statistics' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem statistics', url: 'https://www.btselem.org/statistics' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 21 },
+  },
+  {
+    id: 'gaza-power-plant-2014',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons', 'artillery-use'],
+    legalStatus: 'un-finding',
+    title: 'Gaza Power Plant Strike — Protective Edge (2014)',
+    date: 'July 29, 2014',
+    location: 'Gaza Power Plant, Gaza Strip',
+    summary:
+      'Israeli strikes hit Gaza\'s only power plant during Operation Protective Edge, crippling electricity generation for the entire Strip. The attack accelerated a humanitarian crisis already defined by water, sewage, hospital, and refrigeration failures affecting the civilian population — including children dependent on powered medical and water systems.',
+    evidence:
+      'OCHA humanitarian snapshots, Amnesty and HRW war reporting, and UN board materials document the plant strike and cascading civilian harm. Distinct from Shuja\'iyya / Rafah Black Friday combat-zone entries — this isolates infrastructure destruction with predictable civilian life-support consequences.',
+    sources: [
+      { label: 'OCHA — Gaza crisis / 2014 hostilities snapshots', url: 'https://www.ochaopt.org/' },
+      { label: 'Amnesty International — 2014 Gaza conflict reporting', url: 'https://www.amnesty.org/en/location/middle-east-and-north-africa/palestine-state-of/' },
+      { label: 'OHCHR — COI report on 2014 Gaza conflict', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OHCHR COI 2014', url: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -1666,6 +1796,72 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['second-lebanon-war-2006-pattern', 'qana-2006'],
     tags: ['civilians', 'children', 'lebanon', 'cluster-munitions'],
+  },
+  {
+    id: 'tl-king-david-1946',
+    year: '1946',
+    era: 'mandate-1948',
+    title: 'King David Hotel Bombing — 91 Killed',
+    description:
+      'Irgun bombs British Mandate HQ in the King David Hotel. 91 dead including British, Arab, and Jewish victims. Foundational Mandate-era atrocity with multi-source documentation.',
+    source: 'Britannica / British Mandate archival record',
+    sourceUrl: 'https://www.britannica.com/event/King-David-Hotel-bombing',
+    tier: 'verified',
+    relatedIncidentIds: ['king-david-hotel-1946'],
+    tags: ['civilians', 'mandate', 'irgun'],
+  },
+  {
+    id: 'tl-coastal-road-1978',
+    year: '1978',
+    era: 'occupation-1967-2005',
+    title: 'Coastal Road Massacre — 38 Israeli Civilians',
+    description:
+      'Fatah bus hijacking/massacre on the Coastal Road kills 38 civilians including 13 children. Triggers Operation Litani.',
+    source: 'Israeli MFA / UNSC 425 context',
+    sourceUrl: 'https://digitallibrary.un.org/record/67123',
+    tier: 'verified',
+    relatedIncidentIds: ['coastal-road-massacre-1978', 'operation-litani-1978'],
+    tags: ['civilians', 'children', 'israelis'],
+  },
+  {
+    id: 'tl-netanya-passover-2002',
+    year: '2002',
+    era: 'occupation-1967-2005',
+    title: 'Park Hotel Passover Massacre — Netanya',
+    description:
+      'Hamas suicide bombing at a Passover seder kills 30 civilians. Immediate prelude to Operation Defensive Shield.',
+    source: 'Israeli MFA / Second Intifada record',
+    sourceUrl: 'https://www.btselem.org/statistics',
+    tier: 'verified',
+    relatedIncidentIds: ['netanya-passover-massacre-2002', 'operation-defensive-shield-2002'],
+    tags: ['civilians', 'children', 'second-intifada', 'hamas'],
+  },
+  {
+    id: 'tl-dolphinarium-2001',
+    year: '2001',
+    era: 'occupation-1967-2005',
+    title: 'Dolphinarium Discotheque Bombing — 21 Dead',
+    description:
+      'Hamas bombing outside a Tel Aviv youth discotheque kills 21, mostly teenagers. Multi-source civilian-targeting record.',
+    source: 'Israeli MFA / B\'Tselem statistics',
+    sourceUrl: 'https://www.btselem.org/statistics',
+    tier: 'verified',
+    relatedIncidentIds: ['dolphinarium-disco-2001'],
+    tags: ['civilians', 'children', 'second-intifada', 'hamas'],
+  },
+  {
+    id: 'tl-gaza-power-plant-2014',
+    year: '2014',
+    era: 'blockade-2007-2023',
+    title: 'Gaza Power Plant Struck — Protective Edge',
+    description:
+      'Israeli strikes cripple Gaza\'s sole power plant, cascading into water, sewage, and hospital failures for the civilian population.',
+    source: 'OCHA / Amnesty / OHCHR COI 2014',
+    sourceUrl: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-power-plant-2014', 'protective-edge-2014-children'],
+    relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
+    tags: ['civilians', 'children', 'infrastructure', 'gaza'],
   },
 ]
 
