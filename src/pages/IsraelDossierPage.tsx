@@ -999,6 +999,12 @@ export default function IsraelDossierPage() {
   const totalIncidentDeaths = allIncidents.reduce((sum, i) => sum + (i.casualties?.killed ?? 0), 0)
   const verifiedIncidentCount = allIncidents.filter((incident) => incident.tier === 'verified').length
   const childrenIncidentCount = allIncidents.filter((incident) => incident.targetsChildren).length
+  const civilianIncidentCount = allIncidents.filter((incident) => incident.targetsCivilians).length
+  const multimediaSourceCount = allIncidents.reduce((sum, i) => sum + i.multimedia.length + i.sources.length, 0)
+  const preOct7Count = allIncidents.filter((incident) => {
+    const y = Number((incident.date.match(/(\d{4})/) || [])[1] || 9999)
+    return y < 2023
+  }).length
 
   const syncShareParams = useCallback(
     (next: {
@@ -1650,6 +1656,18 @@ export default function IsraelDossierPage() {
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-green-100 dark:bg-green-950/30 text-green-800 dark:text-green-300">
             {verifiedIncidentCount} verified · {allIncidents.length - verifiedIncidentCount} circumstantial / disputed-record entries
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-amber-100 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200">
+            {civilianIncidentCount} civilian-tagged · {childrenIncidentCount} children-tagged
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-surface border border-border text-ink-muted">
+            {preOct7Count} pre-Oct-7 · {allIncidents.length - preOct7Count} post-Oct-7
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-surface border border-border text-ink-muted">
+            {multimediaSourceCount} checkable source + media links
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-surface border border-border text-ink-muted">
+            {ISRAEL_DOSSIER_ACTORS.length} enablement actors · {ISRAEL_DOSSIER_MONEY_TRAIL.length} money nodes · {HISTORICAL_TIMELINE.length} timeline events
           </span>
         </div>
 
