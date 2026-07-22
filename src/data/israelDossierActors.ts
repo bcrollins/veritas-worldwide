@@ -895,6 +895,49 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'byron-donalds',
+    name: 'Byron Donalds',
+    role: 'U.S. Representative (R-FL-19); House Freedom Caucus; 2026 FL gubernatorial candidate',
+    category: 'us-congress',
+    enablementSummary:
+      'Florida House Republican with documented AIPAC / pro-Israel PAC receipts (~$75k–$84k depending on tracker) and a public “I will always Stand With Israel” record. Voted YES on H.R. 8034 (Israel Security Supplemental, April 20, 2024, 366–58) and supports MOU-baseline FMF / Iron Dome continuity without progressive conditionality. Freedom Caucus hard-right voting profile (Heritage Action ~96%) maps the non-conditional wartime aid bloc in the House.',
+    relatedTimelineYears: ['2021', '2023', '2024'],
+    relatedIncidentIds: ['jabalia-refugee-camp', 'al-mawasi-safe-zone'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'iron-dome', 'pro-israel-lobby-2024', 'fmf-weapons'],
+    fundingLinks: [
+      {
+        label: 'PoliTrack — pro-Israel PAC career total (FEC-derived)',
+        amount: '$74,628',
+        sourceUrl: 'https://quwwaa.com/politrack/byron-donalds',
+        note: 'AIPAC PAC ~$59,864; U.S. Israel PAC ~$18,500',
+      },
+      {
+        label: 'TrackAIPAC public count — AIPAC & Israel lobby',
+        amount: '~$84,000',
+        sourceUrl: 'https://x.com/TrackAIPAC/status/1815916931133890962',
+      },
+      {
+        label: 'OpenSecrets — Byron Donalds member summary (incl. pro-Israel industry lines)',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/byron-donalds/summary?cid=N00034016',
+      },
+      {
+        label: 'House Clerk — H.R. 8034 Israel Security Supplemental (Vote 143, Apr 20 2024)',
+        amount: 'YES (bill passed 366–58)',
+        sourceUrl: 'https://clerk.house.gov/Votes/2024143',
+      },
+      {
+        label: 'Official House office — “I will always Stand With Israel”',
+        sourceUrl: 'https://donalds.house.gov/news/email/show.aspx?ID=45LDXVDEPPTNG',
+      },
+      {
+        label: 'CRS RL33222 — U.S. Foreign Aid to Israel (MOU baseline context)',
+        amount: '~$3.8B/year FMF+missile defense',
+        sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
