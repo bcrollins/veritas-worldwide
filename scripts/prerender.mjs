@@ -2513,6 +2513,14 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
               text: 'Pinned Wayback snapshots for briefing sources are published at /israel-dossier/workbooks/briefing-source-archive-manifest.json for durability when origin hosts block automated probes.',
             },
           },
+          {
+            '@type': 'Question',
+            name: 'How does the Integrity Score on Power Profiles work?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Each profile may carry a compiled falsehood docket. The score starts at 100 and subtracts only for verified, dual-cited public falsehoods (minor −8, material −15, egregious −25). Profiles without a compiled docket show as not scored rather than a fake perfect score. Click the score to read each statement, when it was said, why it was false, and both the statement and debunk sources.',
+            },
+          },
         ],
       },
     ]

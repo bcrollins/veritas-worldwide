@@ -16,6 +16,7 @@ const methodologySections = [
   { id: 'five-tier-source-hierarchy', label: 'Five-Tier Source Hierarchy' },
   { id: 'three-tier-evidence-classification', label: 'Three-Tier Evidence Classification' },
   { id: 'research-standards', label: 'Research Standards' },
+  { id: 'integrity-score', label: 'Integrity Score' },
 ]
 
 const methodologyEvidenceSummary = [
@@ -78,6 +79,11 @@ export default function MethodologyPage() {
           question: 'Where is the archive pin manifest?',
           answer:
             'Pinned Wayback snapshots for briefing sources are published at /israel-dossier/workbooks/briefing-source-archive-manifest.json for durability when origin hosts block automated probes.',
+        },
+        {
+          question: 'How does the Integrity Score on Power Profiles work?',
+          answer:
+            'Each profile may carry a compiled falsehood docket. The score starts at 100 and subtracts only for verified, dual-cited public falsehoods (minor −8, material −15, egregious −25). Profiles without a compiled docket show as not scored rather than a fake perfect score. Click the score to read each statement, when it was said, why it was false, and both the statement and debunk sources.',
         },
       ]),
     ])
@@ -253,6 +259,47 @@ export default function MethodologyPage() {
                   </div>
                 ))}
               </div>
+            </section>
+
+            {/* Integrity Score */}
+            <section id="integrity-score" className="mb-16 scroll-mt-28">
+              <h2 className="font-display text-2xl font-bold text-ink mb-6">Power Profile Integrity Score</h2>
+              <p className="article-body mb-6">
+                Power Profiles may display an <strong>Integrity Score</strong> (0–100) derived only from a compiled
+                docket of <em>verified, dual-cited public falsehoods</em> — not from opinion, partisan spin, or
+                unproven allegations.
+              </p>
+              <div className="space-y-4 mb-6">
+                {[
+                  {
+                    title: 'How the score is calculated',
+                    body: 'Every compiled docket starts at 100. Only entries marked verified reduce the score: minor −8, material −15, egregious −25 (floor 0). Circumstantial or disputed rows may be stored for research but never change the number.',
+                  },
+                  {
+                    title: 'What counts as a documented falsehood',
+                    body: 'A public statement (with a citable source URL) plus an independent contradiction (court, agency, primary document, or authoritative dual reporting) that shows the statement was factually false when made. Each docket row shows the statement, when/where it was said, why it was false, a correction, and both source links.',
+                  },
+                  {
+                    title: 'Unscored profiles are not “perfect”',
+                    body: 'If editors have not yet compiled a docket, the profile shows “—” / Not scored. That is deliberate: a missing docket is not a clean bill of health. Empty researched dockets score 100 (“Clean docket”).',
+                  },
+                  {
+                    title: 'How to inspect the docket',
+                    body: 'On any scored profile, click the Integrity Score control to open the full falsehood docket. The profiles index can sort by lowest integrity first and badges scored cards.',
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="border border-border rounded-sm bg-surface p-5">
+                    <h3 className="font-sans text-sm font-bold text-ink mb-2">{item.title}</h3>
+                    <p className="font-body text-sm text-ink-light leading-relaxed">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/profiles?sort=integrity-asc"
+                className="inline-flex min-h-[44px] items-center justify-center font-sans text-sm font-semibold px-6 py-3 border border-border text-ink rounded-sm hover:border-crimson hover:text-crimson transition-colors"
+              >
+                Browse profiles by integrity →
+              </Link>
             </section>
 
             {/* CTA */}
