@@ -687,9 +687,12 @@ export default function ProfilePage(): React.ReactNode {
               <div className="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-white/30 overflow-hidden shadow-2xl bg-white/10">
                 <img
                   src={getProfilePhoto(profile.id)}
-                  alt={`Official portrait of ${profile.name}`}
+                  alt={`Portrait of ${profile.name}`}
                   className="w-full h-full object-cover"
+                  width={160}
+                  height={160}
                   loading="eager"
+                  decoding="async"
                   onError={(e) => {
                     const img = e.target as HTMLImageElement;
                     img.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%238B1A1A'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='36' font-weight='bold'%3E${profile.name.split(' ').map(n => n[0]).join('')}%3C/text%3E%3C/svg%3E`;

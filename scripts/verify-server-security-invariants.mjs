@@ -539,6 +539,10 @@ assert(
   'postbuild must use run-with-strip-types runner (not bare --experimental-strip-types)',
 )
 assert(
+  packageJson.scripts?.postbuild?.includes('export-profiles-corpus.mjs'),
+  'postbuild must export profiles corpus for crawler GEO',
+)
+assert(
   !packageJson.scripts?.postbuild?.includes('node --experimental-strip-types'),
   'postbuild must not hardcode bare --experimental-strip-types (breaks Node 20 and Node 24+)',
 )
