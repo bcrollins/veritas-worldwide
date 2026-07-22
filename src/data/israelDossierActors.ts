@@ -854,6 +854,24 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'ron-desantis',
+    name: 'Ron DeSantis',
+    role: 'Governor of Florida; former U.S. Representative',
+    category: 'us-executive',
+    enablementSummary:
+      'State-level executive and former congressman with a high-profile record of state actions and public advocacy supporting Israeli government positions and against boycott/divestment campaigns; maps state-federal political enablement beyond congressional FMF votes alone.',
+    relatedTimelineYears: ['2021', '2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['pro-israel-lobby-2024', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — DeSantis fundraising / PAC context',
+        sourceUrl: 'https://www.opensecrets.org/',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
