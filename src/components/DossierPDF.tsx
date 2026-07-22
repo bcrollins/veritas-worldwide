@@ -3,7 +3,13 @@
  * Generates a comprehensive, print-quality PDF of all dossier content
  */
 import { useState } from 'react'
-import { ISRAEL_DOSSIER_COURSE_PATH, ISRAEL_DOSSIER_PDF_COVER_STATS, ISRAEL_DOSSIER_PDF_KEY_STATS } from '../data/israelDossierCanon'
+import {
+  ISRAEL_DOSSIER_COURSE_PATH,
+  ISRAEL_DOSSIER_PDF_COVER_STATS,
+  ISRAEL_DOSSIER_PDF_KEY_STATS,
+  ISRAEL_DOSSIER_CORE_INCIDENTS,
+} from '../data/israelDossierCanon'
+import { HISTORICAL_TIMELINE, EXPANDED_INCIDENTS } from '../data/israelDossierExpanded'
 
 export default function DossierPDF() {
   const [generating, setGenerating] = useState(false)
@@ -224,77 +230,85 @@ export default function DossierPDF() {
       // HISTORICAL TIMELINE
       // ══════════════════════════════════════════════
       addSectionHeader('II. Historical Timeline')
-      addBody('A chronological record of key events from the Balfour Declaration to the present.')
+      addBody(
+        `A chronological record densified with documented civilian-targeting and war-crimes milestones from 1948 forward (${HISTORICAL_TIMELINE.length} entries). Every online entry links to a checkable source; this PDF lists titles and years for offline reading.`,
+      )
       y += 4
 
-      const timeline = [
-        { yr: '1917', ev: 'Balfour Declaration — Britain pledges support for a "national home for the Jewish people" in Palestine' },
-        { yr: '1947', ev: 'UN Partition Plan (Resolution 181) grants 56% of Palestine to the Jewish state' },
-        { yr: '1948', ev: 'The Nakba — 750,000 Palestinians expelled; Israel declares independence' },
-        { yr: '1967', ev: 'Six-Day War — Israel occupies West Bank, Gaza, Sinai, Golan Heights. USS Liberty attacked, 34 Americans killed' },
-        { yr: '1978', ev: 'Camp David Accords — U.S. commits $3B/year in military aid to Israel' },
-        { yr: '1982', ev: 'Sabra and Shatila massacre — 800-3,500 Palestinian civilians killed' },
-        { yr: '1987', ev: 'First Intifada begins' },
-        { yr: '1993', ev: 'Oslo Accords signed — settlement population triples afterward' },
-        { yr: '2004', ev: 'ICJ rules separation wall illegal — Israel ignores ruling' },
-        { yr: '2007', ev: 'Gaza blockade begins — 19 years and counting' },
-        { yr: '2014', ev: 'Operation Protective Edge — 2,251 Palestinians killed including 551 children' },
-        { yr: '2016', ev: '$38B MOU signed — largest military aid package in U.S. history' },
-        { yr: '2018', ev: 'Great March of Return — Israeli snipers kill 223 protesters' },
-        { yr: '2021', ev: 'Human Rights Watch publishes apartheid finding' },
-        { yr: '2023', ev: 'October 7 attack kills ~1,139 Israelis. Israel launches war on Gaza.' },
-        { yr: '2024', ev: 'ICJ orders provisional measures in South Africa v. Israel; ICJ advisory opinion says Israel\'s continued presence in the occupied Palestinian territory is unlawful; ICC issues arrest warrants for Netanyahu and Gallant.' },
-      ]
-      timeline.forEach(t => {
+      HISTORICAL_TIMELINE.forEach((event) => {
         checkSpace(10)
         doc.setFontSize(10)
         doc.setFont('helvetica', 'bold')
         doc.setTextColor(139, 26, 26)
-        doc.text(t.yr, ML, y)
+        doc.text(event.year, ML, y)
         doc.setFont('helvetica', 'normal')
         doc.setTextColor(50, 50, 50)
-        const evLines = doc.splitTextToSize(t.ev, CW - 20)
+        const evLines = doc.splitTextToSize(`${event.title} — ${event.description}`, CW - 20)
         doc.text(evLines, ML + 18, y)
-        y += evLines.length * 4.5 + 3
+        y += evLines.length * 4.5 + 2
+        doc.setFontSize(7)
+        doc.setFont('helvetica', 'italic')
+        doc.setTextColor(120, 120, 120)
+        const srcLines = doc.splitTextToSize(`Source: ${event.source}`, CW - 20)
+        doc.text(srcLines, ML + 18, y)
+        y += srcLines.length * 3.5 + 3
       })
 
       // ══════════════════════════════════════════════
       // DOCUMENTED INCIDENTS
       // ══════════════════════════════════════════════
       addSectionHeader('IX. Documented Incidents')
-      addBody('The following incidents are documented through multiple independent sources including video evidence, forensic analysis, and official investigations.')
+      addBody(
+        'High-evidence incident sample from 1948 through the present — core forensic cases plus historical densification. Not an exhaustive global ledger. Prefer the interactive dossier for full multimedia and source links.',
+      )
       y += 4
 
-      const incidents = [
-        { t: 'Hind Rajab, Age 5 — Killed in car by tank (Jan 29, 2024)', s: 'Washington Post / Forensic Architecture / Al Jazeera' },
-        { t: 'Rafah Paramedic Convoy — 15 aid workers killed at dawn (Mar 23, 2025)', s: 'CNN / NBC News / CBC News' },
-        { t: 'World Central Kitchen — 7 aid workers killed by 3 drone strikes (Apr 1, 2024)', s: 'NPR / Washington Post / WCK' },
-        { t: 'Flour Massacre — 118 killed while waiting for food aid (Feb 29, 2024)', s: 'CNN / OHCHR / Al Jazeera' },
-        { t: 'Nuseirat Hostage Rescue — 274 civilians killed (Jun 8, 2024)', s: 'OHCHR / Washington Post' },
-        { t: 'Al-Mawasi "Safe Zone" Bombing — 90+ killed (Jul 13, 2024)', s: 'Al Jazeera / Responsible Statecraft' },
-        { t: 'Jabalia Refugee Camp — 120+ killed by airstrikes on camp (Oct 31, 2023+)', s: 'CNN / Euro-Med Monitor' },
-        { t: 'Al-Shifa Hospital Siege — 400+ killed in two raids (Nov 2023 - Mar 2024)', s: 'Washington Post / WHO / BBC' },
-        { t: 'Deliberate Starvation — Famine declared, aid blocked (2024-ongoing)', s: 'IPC / WFP / MSF / Reuters' },
-        { t: 'Shireen Abu Akleh — Journalist killed in Jenin (May 11, 2022)', s: 'CNN / OHCHR / Washington Post' },
-        { t: 'Tent Camp Strikes — 85+ killed in "safe zone" camps (May-Sep 2024)', s: 'Amnesty / BBC / Al Jazeera' },
-        { t: 'UNRWA Staff — 230+ UN workers killed, facilities struck 500+ times', s: 'UNRWA / UN News' },
-        { t: '"Lavender" AI Targeting — 37,000 targets, 20 seconds of review each', s: '+972 Magazine / The Guardian' },
-        { t: 'White Phosphorus in Populated Areas (Oct 2023)', s: 'Human Rights Watch / Amnesty International' },
-        { t: 'All 12 Universities Destroyed — "Scholasticide"', s: 'Euro-Med Monitor / UNESCO / The Guardian' },
-      ]
-      incidents.forEach(inc => {
-        checkSpace(12)
+      const seenKeys = new Set<string>()
+      const incidents = [...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS]
+        .filter((incident) => {
+          const key = `${incident.date}|${incident.location}`.toLowerCase()
+          if (seenKeys.has(key)) return false
+          seenKeys.add(key)
+          return true
+        })
+        .sort((a, b) => {
+          const ya = Number((a.date.match(/(\d{4})/) || [])[1] || 9999)
+          const yb = Number((b.date.match(/(\d{4})/) || [])[1] || 9999)
+          return ya - yb
+        })
+
+      incidents.forEach((incident) => {
+        checkSpace(14)
+        const death = incident.casualties?.killed
+        const flags = [
+          incident.targetsChildren ? 'children among victims' : null,
+          incident.targetsCivilians ? 'civilian targeting tagged' : null,
+          incident.tier,
+        ]
+          .filter(Boolean)
+          .join(' · ')
         doc.setFontSize(9)
         doc.setFont('helvetica', 'bold')
         doc.setTextColor(26, 26, 26)
-        const tLines = doc.splitTextToSize('• ' + inc.t, CW)
+        const title = `• ${incident.title} (${incident.date}${death ? ` · ${death} killed` : ''})`
+        const tLines = doc.splitTextToSize(title, CW)
         doc.text(tLines, ML, y)
         y += tLines.length * 4
         doc.setFontSize(7)
+        doc.setFont('helvetica', 'normal')
+        doc.setTextColor(80, 80, 80)
+        const loc = doc.splitTextToSize(`${incident.location}${flags ? ` — ${flags}` : ''}`, CW - 3)
+        doc.text(loc, ML + 3, y)
+        y += loc.length * 3.4
         doc.setFont('helvetica', 'italic')
         doc.setTextColor(120, 120, 120)
-        doc.text('Sources: ' + inc.s, ML + 3, y)
-        y += 6
+        const src = incident.sources
+          .slice(0, 3)
+          .map((s) => s.label)
+          .join(' / ')
+        const srcLines = doc.splitTextToSize(`Sources: ${src}`, CW - 3)
+        doc.text(srcLines, ML + 3, y)
+        y += srcLines.length * 3.4 + 4
       })
 
       // ══════════════════════════════════════════════
