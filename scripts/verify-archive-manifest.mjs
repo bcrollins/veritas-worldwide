@@ -8,8 +8,8 @@ const m = JSON.parse(fs.readFileSync(path.join(root, 'public/israel-dossier/work
 assert(Array.isArray(m.entries), 'entries array')
 const pinned = m.entries.filter((e) => e.status === 'pinned')
 const lookup = m.entries.filter((e) => e.status === 'lookup-only')
-// Floor raised 2026-07-22 after multi-wave primary-source Wayback pins (55→63).
-assert(pinned.length >= 60, `pinned ${pinned.length} < 60`)
+// Floor raised 2026-07-22 after multi-wave primary-source Wayback pins (55→63→69).
+assert(pinned.length >= 66, `pinned ${pinned.length} < 66`)
 assert(lookup.length <= 3, `lookup-only ${lookup.length} too many`)
 for (const e of pinned) {
   assert(e.archiveUrl && e.archiveUrl.includes('web.archive.org/web/'), `pinned missing archiveUrl: ${e.sourceUrl}`)

@@ -461,6 +461,70 @@
       "status": "pinned",
       "note": "SCOTUS Code of Conduct for Justices",
       "lastProbedAt": "2026-07-22T22:38:38.000Z"
+    },
+    {
+      "sourceUrl": "https://avalon.law.yale.edu/19th_century/ajveto01.asp",
+      "timestamp": "20090407140623",
+      "archiveUrl": "https://web.archive.org/web/20090407140623/https://avalon.law.yale.edu/19th_century/ajveto01.asp",
+      "status": "pinned",
+      "note": "Jackson bank veto (Avalon)",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://digitallibrary.un.org/record/40572",
+      "timestamp": "20231019205253",
+      "archiveUrl": "https://web.archive.org/web/20231019205253/https://digitallibrary.un.org/record/40572",
+      "status": "pinned",
+      "note": "UN Digital Library 40572",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://digitallibrary.un.org/record/112088",
+      "timestamp": "20250303201720",
+      "archiveUrl": "https://web.archive.org/web/20250303201720/https://digitallibrary.un.org/record/112088",
+      "status": "pinned",
+      "note": "UN Digital Library 112088",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://cpj.org/special-reports/2024-is-deadliest-year-for-journalists-in-cpj-history-almost-70-percent-killed-by-israel/",
+      "timestamp": "20250213130730",
+      "archiveUrl": "https://web.archive.org/web/20250213130730/https://cpj.org/special-reports/2024-is-deadliest-year-for-journalists-in-cpj-history-almost-70-percent-killed-by-israel/",
+      "status": "pinned",
+      "note": "CPJ 2024 deadliest year special report",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://georgewbush-whitehouse.archives.gov/",
+      "timestamp": "20090317200212",
+      "archiveUrl": "https://web.archive.org/web/20090317200212/https://georgewbush-whitehouse.archives.gov/",
+      "status": "pinned",
+      "note": "George W. Bush White House archives",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://trumpwhitehouse.archives.gov/",
+      "timestamp": "20210120190028",
+      "archiveUrl": "https://web.archive.org/web/20210120190028/https://trumpwhitehouse.archives.gov/",
+      "status": "pinned",
+      "note": "Trump White House archives",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://fiscal.treasury.gov/reports-statements/mts/",
+      "timestamp": "20190116131847",
+      "archiveUrl": "https://web.archive.org/web/20190116131847/https://fiscal.treasury.gov/reports-statements/mts/",
+      "status": "pinned",
+      "note": "Treasury Monthly Treasury Statement",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
+    },
+    {
+      "sourceUrl": "https://news.un.org/en/story/2006/11/199202",
+      "timestamp": "20230916103659",
+      "archiveUrl": "https://web.archive.org/web/20230916103659/https://news.un.org/en/story/2006/11/199202",
+      "status": "pinned",
+      "note": "UN News Nov 2006",
+      "lastProbedAt": "2026-07-22T22:46:15.000Z"
     }
   ]
 }
