@@ -1064,6 +1064,31 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1 },
   },
   {
+    id: 'settler-violence-pattern-2021-2023',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Settler Violence Surge — West Bank Pattern (2021–2023)',
+    date: '2021 – September 2023',
+    location: 'West Bank (multiple governorates)',
+    summary:
+      'OCHA, B\'Tselem, and other monitors documented a multi-year surge in settler attacks on Palestinian civilians, agriculture, and property across the West Bank before October 7 — including arson, assaults, and displacement. Distinct from the single-day Huwara rampage entry; this is the multi-year pattern floor.',
+    evidence:
+      'OCHA Protection of Civilians dashboards, B\'Tselem settler-violence tracking, and UN Secretary-General reporting establish rising attack counts and civilian impact. State responsibility debates turn on prevention and accountability; the attack pattern itself is multi-source documented.',
+    sources: [
+      { label: 'OCHA — Protection of Civilians data', url: 'https://www.ochaopt.org/' },
+      { label: 'B\'Tselem — settler violence topic page', url: 'https://www.btselem.org/topic/settler_violence' },
+      { label: 'UN OHCHR — West Bank settler violence statements', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA opt reporting hub', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+  },
+  {
     id: 'operation-rainbow-2004',
     era: 'occupation-1967-2005',
     targetsCivilians: true,
@@ -1485,6 +1510,20 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['cave-of-patriarchs-1994'],
     tags: ['civilians', 'settler-violence', 'hebron'],
+  },
+  {
+    id: 'tl-settler-violence-surge',
+    year: '2021–2023',
+    era: 'blockade-2007-2023',
+    title: 'Settler Violence Surge Documented by OCHA/B\'Tselem',
+    description:
+      'Multi-year rise in settler attacks on Palestinian civilians and property across the West Bank. Pattern record separate from single-day Huwara rampage.',
+    source: 'OCHA / B\'Tselem',
+    sourceUrl: 'https://www.btselem.org/topic/settler_violence',
+    tier: 'verified',
+    relatedIncidentIds: ['settler-violence-pattern-2021-2023', 'huwara-2023'],
+    relatedProfileIds: ['benjamin-netanyahu'],
+    tags: ['civilians', 'settler-violence', 'west-bank', 'pattern-record'],
   },
   {
     id: 'tl-huwara-2023',

@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T20:17:01.632Z",
+  "generatedAt": "2026-07-22T20:18:18.287Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 56,
-    "timelineEvents": 47,
+    "incidents": 57,
+    "timelineEvents": 48,
     "actors": 37,
     "moneyTrailNodes": 14,
-    "historicalWarCrimesPack": 41,
+    "historicalWarCrimesPack": 42,
     "legalCases": 7,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 2,
       "1948-1967": 6,
       "occupation-1967-2005": 14,
-      "blockade-2007-2023": 17,
+      "blockade-2007-2023": 18,
       "post-oct7": 17
     },
     "actorsByCategory": {
@@ -2013,6 +2013,29 @@
       "tier": "verified"
     },
     {
+      "id": "tl-settler-violence-surge",
+      "year": "2021–2023",
+      "era": "blockade-2007-2023",
+      "title": "Settler Violence Surge Documented by OCHA/B'Tselem",
+      "description": "Multi-year rise in settler attacks on Palestinian civilians and property across the West Bank. Pattern record separate from single-day Huwara rampage.",
+      "source": "OCHA / B'Tselem",
+      "sourceUrl": "https://www.btselem.org/topic/settler_violence",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "settler-violence-pattern-2021-2023",
+        "huwara-2023"
+      ],
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "tags": [
+        "civilians",
+        "settler-violence",
+        "west-bank",
+        "pattern-record"
+      ]
+    },
+    {
       "id": "tl-huwara-2023",
       "year": "2023",
       "era": "blockade-2007-2023",
@@ -3721,6 +3744,47 @@
       "casualties": {
         "killed": 260
       }
+    },
+    {
+      "id": "settler-violence-pattern-2021-2023",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Settler Violence Surge — West Bank Pattern (2021–2023)",
+      "date": "2021 – September 2023",
+      "location": "West Bank (multiple governorates)",
+      "summary": "OCHA, B'Tselem, and other monitors documented a multi-year surge in settler attacks on Palestinian civilians, agriculture, and property across the West Bank before October 7 — including arson, assaults, and displacement. Distinct from the single-day Huwara rampage entry; this is the multi-year pattern floor.",
+      "evidence": "OCHA Protection of Civilians dashboards, B'Tselem settler-violence tracking, and UN Secretary-General reporting establish rising attack counts and civilian impact. State responsibility debates turn on prevention and accountability; the attack pattern itself is multi-source documented.",
+      "sources": [
+        {
+          "label": "OCHA — Protection of Civilians data",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "B'Tselem — settler violence topic page",
+          "url": "https://www.btselem.org/topic/settler_violence"
+        },
+        {
+          "label": "UN OHCHR — West Bank settler violence statements",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA opt reporting hub",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified"
     },
     {
       "id": "shireen-abu-akleh-2022",
