@@ -24,6 +24,7 @@ const pure = [
   'verify-csp-meta.mjs',
   'verify-checkout-attribution.mjs',
   'verify-trust-corpora-links.mjs',
+  'verify-profile-counters.mjs',
 ]
 
 let failed = 0

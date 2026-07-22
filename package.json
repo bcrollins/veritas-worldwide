@@ -56,6 +56,7 @@
     "verify:home-toc-structure": "node scripts/verify-home-toc-structure.mjs",
     "verify:csp-meta": "node scripts/verify-csp-meta.mjs",
     "verify:trust-corpora-links": "node scripts/verify-trust-corpora-links.mjs",
+    "verify:profile-counters": "node scripts/verify-profile-counters.mjs",
     "verify:pure": "node scripts/verify-pure.mjs"
   },
   "dependencies": {
@@ -85,7 +86,8 @@
   "overrides": {
     "dompurify": ">=3.2.4",
     "path-to-regexp": ">=8.0.0",
-    "brace-expansion": ">=2.0.3"
+    "brace-expansion": ">=2.0.3",
+    "body-parser": ">=2.3.0"
   },
   "engines": {
     "node": ">=22.6.0"
