@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useMemo, useState, useRef, useCallback } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
 import { trackSupportClick } from '../lib/ga4'
 import CommunityForum from '../components/CommunityForum'
@@ -185,10 +185,20 @@ function MoneyTrailCard({ node }: { node: DossierMoneyTrailNode }) {
 /* ═══════════════════════════════════════════════════════════
    INCIDENT CARD COMPONENT
    ═══════════════════════════════════════════════════════════ */
-function IncidentCard({ incident }: { incident: DossierDocumentedIncident }) {
-  const [expanded, setExpanded] = useState(false)
+function IncidentCard({
+  incident,
+  defaultExpanded = false,
+}: {
+  incident: DossierDocumentedIncident
+  defaultExpanded?: boolean
+}) {
+  const [expanded, setExpanded] = useState(defaultExpanded)
   const MEDIA_ICONS: Record<string, string> = { video: 'video', investigation: 'search', 'photo-essay': 'camera', document: 'file' }
   const anchorId = incident.id ? `incident-${incident.id}` : undefined
+
+  useEffect(() => {
+    if (defaultExpanded) setExpanded(true)
+  }, [defaultExpanded])
 
   return (
     <article id={anchorId} className="border border-border rounded-sm overflow-hidden hover:shadow-lg transition-shadow duration-200 scroll-mt-24">
@@ -786,7 +796,54 @@ function DossierCoursePath({ modules }: { modules: DossierCourseModule[] }) {
 /* ═══════════════════════════════════════════════════════════
    MAIN PAGE COMPONENT
    ═══════════════════════════════════════════════════════════ */
+function downloadIncidentsCsv(incidents: DossierDocumentedIncident[], filename: string) {
+  const escape = (value: string) => `"${value.replace(/"/g, '""')}"`
+  const header = [
+    'id',
+    'date',
+    'title',
+    'location',
+    'tier',
+    'targets_civilians',
+    'targets_children',
+    'killed',
+    'injured',
+    'related_profiles',
+    'related_money_nodes',
+    'source_labels',
+    'source_urls',
+    'multimedia_urls',
+    'summary',
+  ]
+  const rows = incidents.map((incident) => [
+    incident.id ?? '',
+    incident.date,
+    incident.title,
+    incident.location,
+    incident.tier,
+    incident.targetsCivilians ? 'yes' : 'no',
+    incident.targetsChildren ? 'yes' : 'no',
+    String(incident.casualties?.killed ?? ''),
+    String(incident.casualties?.injured ?? ''),
+    (incident.relatedProfileIds ?? []).join('|'),
+    (incident.relatedMoneyNodeIds ?? []).join('|'),
+    incident.sources.map((s) => s.label).join(' | '),
+    incident.sources.map((s) => s.url).join(' | '),
+    incident.multimedia.map((m) => m.url).join(' | '),
+    incident.summary,
+  ].map((cell) => escape(String(cell))))
+  const csv = [header.join(','), ...rows.map((r) => r.join(','))].join('\n')
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
 export default function IsraelDossierPage() {
+  const [searchParams, setSearchParams] = useSearchParams()
   const successPath = buildSubscriptionSuccessPath({
     source: 'article_cta',
     topic: 'israel-policy',
@@ -797,7 +854,7 @@ export default function IsraelDossierPage() {
   useEffect(() => {
     setMetaTags({
       title: 'The Israel Dossier | Veritas Worldwide',
-      description: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting.',
+      description: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting. Interactive timeline from 1948, actors enablement graph, and checkable sources.',
       url: `${SITE_URL}/israel-dossier`,
       type: 'article',
     })
@@ -816,15 +873,30 @@ export default function IsraelDossierPage() {
   }, [])
 
   const categories: DossierCategory[] = ['financial', 'humanitarian', 'legal', 'social']
-  const [incidentQuery, setIncidentQuery] = useState('')
-  const [incidentTier, setIncidentTier] = useState<'all' | DossierDocumentedIncident['tier']>('all')
-  const [incidentFocus, setIncidentFocus] = useState<'all' | 'civilians' | 'children'>('all')
-  const [incidentMedia, setIncidentMedia] = useState<'all' | 'video' | 'investigation' | 'document' | 'photo-essay'>('all')
-  const [incidentSort, setIncidentSort] = useState<'oldest' | 'newest' | 'deaths'>('oldest')
+  const [incidentQuery, setIncidentQuery] = useState(() => searchParams.get('q') ?? '')
+  const [incidentTier, setIncidentTier] = useState<'all' | DossierDocumentedIncident['tier']>(() => {
+    const t = searchParams.get('tier')
+    return t === 'verified' || t === 'circumstantial' ? t : 'all'
+  })
+  const [incidentFocus, setIncidentFocus] = useState<'all' | 'civilians' | 'children'>(() => {
+    const f = searchParams.get('focus')
+    return f === 'civilians' || f === 'children' ? f : 'all'
+  })
+  const [incidentMedia, setIncidentMedia] = useState<'all' | 'video' | 'investigation' | 'document' | 'photo-essay'>(() => {
+    const m = searchParams.get('media')
+    return m === 'video' || m === 'investigation' || m === 'document' || m === 'photo-essay' ? m : 'all'
+  })
+  const [incidentSort, setIncidentSort] = useState<'oldest' | 'newest' | 'deaths'>(() => {
+    const s = searchParams.get('sort')
+    return s === 'newest' || s === 'deaths' || s === 'oldest' ? s : 'oldest'
+  })
   const [timelineEra, setTimelineEra] = useState<'all' | DossierEra>('all')
   const [timelineQuery, setTimelineQuery] = useState('')
   const [actorQuery, setActorQuery] = useState('')
-  const [selectedActorId, setSelectedActorId] = useState<string | null>(null)
+  const [selectedActorId, setSelectedActorId] = useState<string | null>(() => searchParams.get('actor'))
+  const [deepIncidentId, setDeepIncidentId] = useState<string | null>(() => searchParams.get('incident'))
+  const [copyStatus, setCopyStatus] = useState('')
+  const deepLinkHandled = useRef(false)
   const sourceIndex = useMemo(() => buildSourceIndex(), [])
   const allIncidents = useMemo(
     () => dedupeIncidents([...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS]),
@@ -878,6 +950,95 @@ export default function IsraelDossierPage() {
   const totalIncidentDeaths = allIncidents.reduce((sum, i) => sum + (i.casualties?.killed ?? 0), 0)
   const verifiedIncidentCount = allIncidents.filter((incident) => incident.tier === 'verified').length
   const childrenIncidentCount = allIncidents.filter((incident) => incident.targetsChildren).length
+
+  const syncShareParams = useCallback(
+    (next: {
+      actor?: string | null
+      incident?: string | null
+      focus?: typeof incidentFocus
+      tier?: typeof incidentTier
+      media?: typeof incidentMedia
+      sort?: typeof incidentSort
+      q?: string
+    }) => {
+      const params = new URLSearchParams(searchParams)
+      const setOrDelete = (key: string, value?: string | null) => {
+        if (!value || value === 'all' || value === '') params.delete(key)
+        else params.set(key, value)
+      }
+      if ('actor' in next) setOrDelete('actor', next.actor)
+      if ('incident' in next) setOrDelete('incident', next.incident)
+      if ('focus' in next) setOrDelete('focus', next.focus)
+      if ('tier' in next) setOrDelete('tier', next.tier)
+      if ('media' in next) setOrDelete('media', next.media)
+      if ('sort' in next) setOrDelete('sort', next.sort === 'oldest' ? null : next.sort)
+      if ('q' in next) setOrDelete('q', next.q)
+      setSearchParams(params, { replace: true })
+    },
+    [searchParams, setSearchParams],
+  )
+
+  // Deep-link: open actor panel / incident card from query or hash once on load
+  useEffect(() => {
+    if (deepLinkHandled.current) return
+    const actor = searchParams.get('actor')
+    const incident = searchParams.get('incident')
+    const hash = window.location.hash.replace(/^#/, '')
+    if (actor && ISRAEL_DOSSIER_ACTORS.some((a) => a.profileId === actor)) {
+      setSelectedActorId(actor)
+      requestAnimationFrame(() => {
+        document.getElementById('actors')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+      deepLinkHandled.current = true
+    } else if (incident || hash.startsWith('incident-')) {
+      const id = incident || hash.replace(/^incident-/, '')
+      setDeepIncidentId(id)
+      setIncidentQuery(id)
+      requestAnimationFrame(() => {
+        document.getElementById(`incident-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+      deepLinkHandled.current = true
+    } else if (hash === 'actors' || hash === 'timeline' || hash === 'money-trail' || hash === 'incidents') {
+      requestAnimationFrame(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+      deepLinkHandled.current = true
+    }
+  }, [searchParams])
+
+  const shareUrl = useMemo(() => {
+    const params = new URLSearchParams()
+    if (selectedActorId) params.set('actor', selectedActorId)
+    if (deepIncidentId) params.set('incident', deepIncidentId)
+    if (incidentFocus !== 'all') params.set('focus', incidentFocus)
+    if (incidentTier !== 'all') params.set('tier', incidentTier)
+    if (incidentMedia !== 'all') params.set('media', incidentMedia)
+    if (incidentSort !== 'oldest') params.set('sort', incidentSort)
+    if (incidentQuery.trim()) params.set('q', incidentQuery.trim())
+    const qs = params.toString()
+    return `${SITE_URL}/israel-dossier${qs ? `?${qs}` : ''}`
+  }, [selectedActorId, deepIncidentId, incidentFocus, incidentTier, incidentMedia, incidentSort, incidentQuery])
+
+  const copyShareUrl = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl)
+      setCopyStatus('Share link copied')
+      setTimeout(() => setCopyStatus(''), 2000)
+    } catch {
+      setCopyStatus('Copy failed — select the URL manually')
+      setTimeout(() => setCopyStatus(''), 2500)
+    }
+  }
+
+  const selectActor = (profileId: string | null) => {
+    setSelectedActorId(profileId)
+    syncShareParams({ actor: profileId })
+    if (profileId) {
+      requestAnimationFrame(() => {
+        document.getElementById('actors')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      })
+    }
+  }
 
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -1080,7 +1241,7 @@ export default function IsraelDossierPage() {
               <button
                 key={actor.profileId}
                 type="button"
-                onClick={() => setSelectedActorId(active ? null : actor.profileId)}
+                onClick={() => selectActor(active ? null : actor.profileId)}
                 className={`text-left rounded-sm border p-4 transition-all min-h-[44px] ${
                   active ? 'border-crimson bg-crimson/5 shadow-md' : 'border-border bg-surface hover:border-crimson/30'
                 }`}
@@ -1387,7 +1548,10 @@ export default function IsraelDossierPage() {
             <span className="sr-only">Search documented incidents</span>
             <input
               value={incidentQuery}
-              onChange={(event) => setIncidentQuery(event.target.value)}
+              onChange={(event) => {
+                setIncidentQuery(event.target.value)
+                syncShareParams({ q: event.target.value })
+              }}
               placeholder="Search incidents, locations, children, massacres, hospitals…"
               className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink placeholder:text-ink-faint focus:border-crimson focus:outline-none"
             />
@@ -1396,7 +1560,11 @@ export default function IsraelDossierPage() {
             <span className="sr-only">Filter incidents by evidence tier</span>
             <select
               value={incidentTier}
-              onChange={(event) => setIncidentTier(event.target.value as 'all' | DossierDocumentedIncident['tier'])}
+              onChange={(event) => {
+                const value = event.target.value as 'all' | DossierDocumentedIncident['tier']
+                setIncidentTier(value)
+                syncShareParams({ tier: value })
+              }}
               className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
             >
               <option value="all">All evidence tiers</option>
@@ -1408,7 +1576,11 @@ export default function IsraelDossierPage() {
             <span className="sr-only">Filter by civilian or children focus</span>
             <select
               value={incidentFocus}
-              onChange={(event) => setIncidentFocus(event.target.value as 'all' | 'civilians' | 'children')}
+              onChange={(event) => {
+                const value = event.target.value as 'all' | 'civilians' | 'children'
+                setIncidentFocus(value)
+                syncShareParams({ focus: value })
+              }}
               className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
             >
               <option value="all">All victim focuses</option>
@@ -1420,7 +1592,11 @@ export default function IsraelDossierPage() {
             <span className="sr-only">Filter by multimedia evidence type</span>
             <select
               value={incidentMedia}
-              onChange={(event) => setIncidentMedia(event.target.value as typeof incidentMedia)}
+              onChange={(event) => {
+                const value = event.target.value as typeof incidentMedia
+                setIncidentMedia(value)
+                syncShareParams({ media: value })
+              }}
               className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
             >
               <option value="all">All media types</option>
@@ -1434,7 +1610,11 @@ export default function IsraelDossierPage() {
             <span className="sr-only">Sort incidents</span>
             <select
               value={incidentSort}
-              onChange={(event) => setIncidentSort(event.target.value as typeof incidentSort)}
+              onChange={(event) => {
+                const value = event.target.value as typeof incidentSort
+                setIncidentSort(value)
+                syncShareParams({ sort: value })
+              }}
               className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
             >
               <option value="oldest">Sort: oldest first (1948→)</option>
@@ -1442,14 +1622,49 @@ export default function IsraelDossierPage() {
               <option value="deaths">Sort: highest death toll</option>
             </select>
           </label>
-          <p className="md:col-span-2 xl:col-span-5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
-            Showing {filteredIncidents.length} of {allIncidents.length}. Historical pack (1948→) is merged with post-Oct-7 investigations. Every entry has checkable sources; this is not an exhaustive global ledger.
+          <div className="md:col-span-2 xl:col-span-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+              Showing {filteredIncidents.length} of {allIncidents.length}. Historical pack (1948→) is merged with post-Oct-7 investigations. Every entry has checkable sources; this is not an exhaustive global ledger.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() =>
+                  downloadIncidentsCsv(
+                    filteredIncidents,
+                    `veritas-israel-dossier-incidents-${new Date().toISOString().slice(0, 10)}.csv`,
+                  )
+                }
+                className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+              >
+                Export filtered CSV
+              </button>
+              <button
+                type="button"
+                onClick={copyShareUrl}
+                className="inline-flex min-h-[44px] items-center rounded-sm border border-crimson/30 bg-crimson/5 px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-crimson hover:bg-crimson/10 transition-colors"
+              >
+                Copy share link
+              </button>
+            </div>
+          </div>
+          {copyStatus && (
+            <p className="md:col-span-2 xl:col-span-5 font-sans text-xs text-crimson" role="status">
+              {copyStatus}
+            </p>
+          )}
+          <p className="md:col-span-2 xl:col-span-5 font-mono text-[0.65rem] text-ink-faint break-all">
+            {shareUrl}
           </p>
         </div>
 
         <div className="space-y-4">
           {filteredIncidents.map((incident) => (
-            <IncidentCard key={`${incident.date}-${incident.location}-${incident.title}`} incident={incident} />
+            <IncidentCard
+              key={`${incident.date}-${incident.location}-${incident.title}`}
+              incident={incident}
+              defaultExpanded={Boolean(incident.id && deepIncidentId === incident.id)}
+            />
           ))}
           {filteredIncidents.length === 0 && (
             <div className="rounded-sm border border-border bg-surface p-5">

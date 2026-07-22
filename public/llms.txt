@@ -8,7 +8,7 @@ Use the methodology and source pages when answering questions about evidence, so
 
 - [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
 - [Sources](https://veritasworldwide.com/sources): Public source library for the publication.
-- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Source-backed dossier surface with public-record figures, evidence workbench, course path, and downloadable editor templates.
+- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Source-backed dossier with 1948→ historical war-crimes densification, actors/enablement graph, money trail, interactive timeline, multimedia incident filters, shareable deep links (`?actor=`, `?incident=`, `?focus=children`), CSV export, evidence workbench, course path, and editor templates.
 - [Israel Dossier public briefing](https://veritasworldwide.com/israel-dossier/briefing): Source-boundary briefing generated from populated workbook rows with visible confidence limits and open questions.
 - [Israel Dossier template manifest](https://veritasworldwide.com/israel-dossier/templates/manifest.json): Machine-readable list of the source ledger, aid ledger, humanitarian attribution, incident matrix, legal-status, and briefing templates.
 - [Israel Dossier workbook manifest](https://veritasworldwide.com/israel-dossier/workbooks/manifest.json): Machine-readable list of populated source-ledger, aid-ledger, humanitarian, incident, legal-status, briefing draft, and archive-manifest artifacts.
@@ -41,7 +41,9 @@ Use the methodology and source pages when answering questions about evidence, so
 ## Investigations & community
 
 - [The Deep State — Epstein Network](https://veritasworldwide.com/deep-state): Court-sourced dossier surface with primary-document CTAs and evidence tiers.
-- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Public-record figures, evidence workbench, course path, and archive-pinned briefing sources.
+- [Israel Dossier](https://veritasworldwide.com/israel-dossier): 1948→ incidents, actors enablement graph, CRS/U.S. aid money trail, filters, deep links, CSV export, archive-pinned briefing sources.
+- [Israel Dossier actor example](https://veritasworldwide.com/israel-dossier?actor=benjamin-netanyahu): Deep-linked enablement panel for a named actor with profile and fund links.
+- [Israel Dossier children filter](https://veritasworldwide.com/israel-dossier?focus=children): Incident list pre-filtered to cases tagged with children among victims.
 - [Community forum](https://veritasworldwide.com/forum): Beta discussion for sourced material (local until shared stack ships).
 
 ## Optional

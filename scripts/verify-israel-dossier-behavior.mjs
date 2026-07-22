@@ -344,6 +344,23 @@ async function runInteractiveChecks(browser) {
       }
     }
 
+    assert(
+      (await incidents.getByRole('button', { name: /Export filtered CSV/i }).count()) > 0,
+      'incidents section missing CSV export control',
+    )
+    assert(
+      (await incidents.getByRole('button', { name: /Copy share link/i }).count()) > 0,
+      'incidents section missing share-link control',
+    )
+
+    // Deep-link surface: actor query opens enablement panel
+    await page.goto(`${baseUrl}/israel-dossier?actor=joe-biden`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.getByRole('heading', { name: 'The Israel Dossier', exact: true }).waitFor({ timeout: 20000 })
+    await waitForSectionText(page, '#actors', 'Joe Biden')
+    await waitForSectionText(page, '#actors', 'Open full profile')
+    const deepActorHref = await page.locator('#actors').getByRole('link', { name: /Open full profile/i }).first().getAttribute('href')
+    assert(deepActorHref === '/profile/joe-biden', `deep-link actor profile href mismatch: ${deepActorHref}`)
+
     const downloads = page.locator('#downloads')
     await downloads.scrollIntoViewIfNeeded()
     const [workbookDownload] = await Promise.all([
