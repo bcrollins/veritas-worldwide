@@ -935,6 +935,56 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     ],
     tier: 'verified',
   },
+  {
+    id: 'gaza-blockade-2007',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Land, Air, and Sea Blockade Formalized (2007)',
+    date: 'June 2007 – ongoing through October 2023',
+    location: 'Gaza Strip',
+    summary:
+      'After Hamas took control of Gaza in June 2007, Israel (with Egypt controlling the Rafah crossing) formalized a comprehensive land, air, and sea blockade. UN agencies and human-rights organizations documented severe restrictions on movement, dual-use goods, fuel, and construction materials that degraded civilian infrastructure and living standards for more than 15 years before the post–October 7 war.',
+    evidence:
+      'UN OCHA access reporting, World Bank economic assessments, and HRW/Amnesty blockade analyses form a multi-source floor. Israel frames the blockade as security containment; monitors document collective civilian impact. This is a structural pattern record, not a single kinetic incident.',
+    sources: [
+      { label: 'OCHA — Gaza access and blockade reporting', url: 'https://www.ochaopt.org/' },
+      { label: 'Human Rights Watch — Unwilling or Unable / blockade context', url: 'https://www.hrw.org/middle-east/n-africa/israel/palestine' },
+      { label: 'UNRWA — Gaza blockade humanitarian impact materials', url: 'https://www.unrwa.org/where-we-work/gaza-strip' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA opt access reporting', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+  },
+  {
+    id: 'settlement-enterprise-pattern',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden', 'donald-trump'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'court-finding',
+    title: 'Settlement Enterprise — Civilian Displacement Pattern (UN / ICJ Floor)',
+    date: '1967 – ongoing',
+    location: 'West Bank including East Jerusalem',
+    summary:
+      'Israeli civilian settlements in occupied territory have expanded for decades, accompanied by land seizures, home demolitions, movement restrictions, and settler violence against Palestinians. The ICJ 2004 wall advisory opinion and 2024 occupation advisory opinion treat settlement activity as unlawful under international law; this entry tracks the multi-decade pattern rather than any single outpost.',
+    evidence:
+      'ICJ advisory opinions (2004 wall; 2024 occupation), UNSC Resolution 2334, B\'Tselem settlement data, and Peace Now tracking form the public floor. U.S. policy has oscillated between labeling settlements unhelpful and recognizing related claims — aid continuity continued throughout.',
+    sources: [
+      { label: 'ICJ — 2024 advisory opinion on the occupation', url: 'https://www.icj-cij.org/node/204176' },
+      { label: 'UN Security Council Resolution 2334 (2016)', url: 'https://digitallibrary.un.org/record/853516' },
+      { label: 'B\'Tselem — settlements and land policy', url: 'https://www.btselem.org/settlements' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'ICJ occupation advisory opinion', url: 'https://www.icj-cij.org/node/204176' },
+    ],
+    tier: 'verified',
+  },
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -1240,6 +1290,33 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     relatedIncidentIds: ['jenin-2023-july'],
     relatedProfileIds: ['joe-biden', 'benjamin-netanyahu'],
     tags: ['civilians', 'west-bank', 'us-aid'],
+  },
+  {
+    id: 'tl-gaza-blockade-2007',
+    year: '2007',
+    era: 'blockade-2007-2023',
+    title: 'Gaza Blockade Formalized',
+    description:
+      'After Hamas takes control of Gaza, Israel and Egypt formalize a comprehensive blockade. UN agencies document multi-year civilian access and goods restrictions.',
+    source: 'OCHA / UNRWA',
+    sourceUrl: 'https://www.ochaopt.org/',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-blockade-2007'],
+    tags: ['blockade', 'civilians', 'structure'],
+  },
+  {
+    id: 'tl-unsc-2334',
+    year: '2016',
+    era: 'blockade-2007-2023',
+    title: 'UNSC Resolution 2334 — Settlements Illegal',
+    description:
+      'Security Council reaffirms that Israeli settlements in occupied territory have no legal validity and constitute a flagrant violation of international law. U.S. abstains under Obama.',
+    source: 'UN Security Council Resolution 2334',
+    sourceUrl: 'https://digitallibrary.un.org/record/853516',
+    tier: 'verified',
+    relatedIncidentIds: ['settlement-enterprise-pattern'],
+    relatedProfileIds: ['barack-obama', 'benjamin-netanyahu'],
+    tags: ['legal', 'settlements', 'un-finding'],
   },
 ]
 

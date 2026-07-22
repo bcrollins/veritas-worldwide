@@ -377,7 +377,7 @@ async function runInteractiveChecks(browser) {
       assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
-    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 45, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 50, 'corpus.json incidents too few')
     assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 27, 'corpus.json actors too few')
     assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 38, 'corpus.json timeline too few')
     assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 12, 'corpus.json moneyTrail too few')
@@ -470,6 +470,8 @@ async function runInteractiveChecks(browser) {
       'f-35',
       'nancy pelosi',
       'sheldon adelson',
+      'gaza land, air, and sea blockade',
+      'settlement enterprise',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }
