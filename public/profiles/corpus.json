@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T23:20:56.726Z",
+  "generatedAt": "2026-07-22T23:23:15.434Z",
   "count": 94,
   "profiles": [
     {
@@ -158,9 +158,9 @@
         "Obstruction",
         "Kentucky"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "miriam-adelson",
@@ -438,16 +438,18 @@
       "name": "Jacky Rosen",
       "title": "U.S. Senator (D-NV)",
       "category": "politician",
-      "summary": "Senator from Nevada. First female Jewish senator from Nevada. Strong AIPAC supporter.",
+      "summary": "Nevada Democrat; first woman elected to both chambers from Nevada and among the Senate's most consistent pro-Israel Democrats. Documented pro-Israel PAC recipient (OpenSecrets). Co-sponsors and floor advocate for Iron Dome, FMF, and wartime Israel security packages; active on antisemitism and campus-related legislation. Primary: OpenSecrets, Congress.gov, Senate record.",
       "photo": "/profiles/jacky-rosen.jpg",
       "url": "https://veritasworldwide.com/profile/jacky-rosen",
       "bioguideId": "R000608",
       "tags": [
         "Senator",
-        "Jewish",
+        "Pro-Israel",
+        "AIPAC",
         "Nevada",
         "Democrat",
-        "AIPAC"
+        "Iron Dome",
+        "Antisemitism Legislation"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -480,17 +482,21 @@
     {
       "id": "brad-sherman",
       "name": "Brad Sherman",
-      "title": "U.S. Representative (D-CA)",
+      "title": "U.S. Representative (D-CA-32); House Foreign Affairs",
       "category": "politician",
-      "summary": "Representative from California. House Financial Services Committee member. Pro-Israel voting record.",
+      "summary": "Long-serving California Democrat on House Financial Services and Foreign Affairs. One of Congress's most consistent pro-Israel legislative voices and a multi-cycle top recipient of pro-Israel PAC money (OpenSecrets Q05). Public champion of Iron Dome, FMF MOU baseline, and wartime Israel supplementals; frequent critic of progressive conditionality. Primary: OpenSecrets, Congress.gov, House roll calls.",
       "photo": "/profiles/brad-sherman.jpg",
       "url": "https://veritasworldwide.com/profile/brad-sherman",
       "bioguideId": "S000344",
       "tags": [
         "Representative",
-        "Financial Services",
+        "Pro-Israel",
+        "AIPAC",
         "California",
-        "Democrat"
+        "Democrat",
+        "Foreign Affairs",
+        "Financial Services",
+        "Iron Dome"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -1271,18 +1277,20 @@
     {
       "id": "haim-saban",
       "name": "Haim Saban",
-      "title": "Entertainment Billionaire",
+      "title": "Entertainment Mogul; Democratic & Pro-Israel Megadonor",
       "category": "billionaire",
-      "summary": "Entertainment mogul, Univision founder. Major Democratic donor and AIPAC supporter. Pro-Israel activist.",
+      "summary": "Israeli-American media billionaire (Saban Capital / Power Rangers fortune; Univision investment history). Among the largest Democratic Party megadonors of the 2000s–2010s and a public, explicit pro-Israel political funder. Documented support for Hillary Clinton, Democratic super PACs, and pro-Israel advocacy infrastructure. Primary: OpenSecrets donor records, contemporaneous FEC reporting, public interviews.",
       "photo": "/profiles/haim-saban.svg",
       "url": "https://veritasworldwide.com/profile/haim-saban",
       "bioguideId": null,
       "tags": [
         "Billionaire",
+        "Democratic Megadonor",
+        "Pro-Israel",
+        "Saban Capital",
         "Entertainment",
-        "Democratic Donor",
-        "AIPAC",
-        "Pro-Israel"
+        "AIPAC Orbit",
+        "Dual U.S.–Israel Citizen"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -1291,18 +1299,19 @@
     {
       "id": "paul-singer",
       "name": "Paul Singer",
-      "title": "Hedge Fund Manager, Billionaire",
+      "title": "Founder, Elliott Management; Republican & Pro-Israel Megadonor",
       "category": "billionaire",
-      "summary": "Elliott Management founder. Republican mega-donor. Pro-Israel activist and hawk on foreign policy.",
+      "summary": "Founder of Elliott Management hedge fund and multi-cycle Republican megadonor. Public pro-Israel hawk and funder of conservative foreign-policy infrastructure. Documented large outside spending via Super PACs and related vehicles (OpenSecrets). Distinct from Adelson casino capital — Singer is finance-capital pro-Israel Republican funding. Primary: OpenSecrets, FEC, public advocacy record.",
       "photo": "/profiles/paul-singer.svg",
       "url": "https://veritasworldwide.com/profile/paul-singer",
       "bioguideId": null,
       "tags": [
         "Billionaire",
-        "Hedge Fund Manager",
-        "Republican Donor",
+        "Elliott Management",
+        "Republican Megadonor",
         "Pro-Israel",
-        "Political Influencer"
+        "Hedge Fund",
+        "Foreign Policy Hawk"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
