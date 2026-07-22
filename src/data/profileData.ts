@@ -1,4 +1,13 @@
 // Type definitions for power profiles
+import type { DocumentedFalsehood } from '../lib/integrityScore'
+export type { DocumentedFalsehood, FalsehoodSeverity } from '../lib/integrityScore'
+export {
+  computeIntegrityScore,
+  getScoredFalsehoods,
+  FALSEHOOD_SEVERITY_DEDUCTION,
+  INTEGRITY_SCORE_MAX,
+} from '../lib/integrityScore'
+
 export type ProfileCategory = 'politician' | 'billionaire' | 'lobbyist' | 'intel' | 'media' | 'corporate' | 'foreign-agent'
 export type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
 export type Party = 'D' | 'R' | 'I' | 'N/A'
@@ -58,6 +67,12 @@ export interface PowerProfile {
   policyActions: PolicyAction[]
   connections: Connection[]
   sourcedClaims: SourcedClaim[]
+  /**
+   * Compiled integrity docket. Omit when not yet researched.
+   * Empty array = researched clean docket (score 100).
+   * Verified rows reduce Integrity Score (see computeIntegrityScore).
+   */
+  documentedFalsehoods?: DocumentedFalsehood[]
   netWorth?: string
   born?: string
   education?: string
@@ -324,6 +339,62 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'trump-inauguration-crowd-2017',
+        statement:
+          'Claimed his January 20, 2017 inauguration crowd was the largest ever — larger than President Obama\'s — and that media photographs understated attendance.',
+        saidAt: 'January 21, 2017',
+        context:
+          'White House press briefing and related public statements in the first full day of the administration, defending aerial photos of the National Mall.',
+        whyFalse:
+          'National Park Service crowd estimates, Washington Metro ridership totals for inauguration day, and contemporaneous photo comparisons from the same vantage points show smaller attendance than Obama\'s 2009 inauguration. Metro reported ~570,000 trips on Trump\'s inauguration day vs ~1.1 million on Obama\'s 2009 inauguration day.',
+        correction:
+          'Obama\'s 2009 inauguration drew a larger documented crowd by NPS estimates and WMATA ridership; independent photo forensics contradicted the "largest ever" claim.',
+        statementSource: 'White House / press pool reporting of Spicer briefing',
+        statementUrl: 'https://www.washingtonpost.com/news/the-fix/wp/2017/01/22/how-sean-spicer-and-his-comically-large-crowd-size-claim-became-the-first-test-of-the-trump-era/',
+        debunkSource: 'Washington Post photo analysis; WMATA ridership data (reported)',
+        debunkUrl: 'https://www.washingtonpost.com/news/the-fix/wp/2017/01/22/how-sean-spicer-and-his-comically-large-crowd-size-claim-became-the-first-test-of-the-trump-era/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'trump-dorian-alabama-2019',
+        statement:
+          'Stated that Hurricane Dorian was expected to hit Alabama (among other states), later displaying an altered National Hurricane Center map with a hand-drawn extension over Alabama.',
+        saidAt: 'September 1–4, 2019',
+        context:
+          'Presidential remarks and a subsequent Oval Office map presentation during Hurricane Dorian coverage.',
+        whyFalse:
+          'The National Weather Service Birmingham office publicly corrected that Alabama would NOT see any impacts from Dorian. The NHC cone of uncertainty did not include Alabama; the Sharpie-altered map was not an official NHC product.',
+        correction:
+          'Official NHC forecasts and NWS Birmingham stated Alabama was not in Dorian\'s expected impact path at the time of the claim.',
+        statementSource: 'White House remarks / Oval Office photo pool',
+        statementUrl: 'https://www.nytimes.com/2019/09/04/us/politics/trump-hurricane-dorian-alabama.html',
+        debunkSource: 'NWS Birmingham official tweet; NHC advisory archive (reported)',
+        debunkUrl: 'https://www.nytimes.com/2019/09/04/us/politics/trump-hurricane-dorian-alabama.html',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'trump-election-won-2020',
+        statement:
+          'Repeatedly claimed he won the 2020 presidential election and that the outcome was stolen through widespread fraud sufficient to change the result.',
+        saidAt: 'November 2020 – January 2021',
+        context:
+          'Public rallies, social media posts, and White House remarks after Election Day 2020, including statements preceding January 6, 2021.',
+        whyFalse:
+          'Sixty-plus lawsuits challenging the results failed in state and federal courts; the Electoral College certified Biden 306–232; Congress certified the count on January 7, 2021; CISA stated the 2020 election was the most secure in American history; no evidence of fraud on a scale that would reverse the outcome was accepted by courts.',
+        correction:
+          'Joe Biden was the certified winner of the 2020 presidential election under the Constitution\'s Electoral College process and state certifications.',
+        statementSource: 'Public remarks archive (multiple dates)',
+        statementUrl: 'https://www.archives.gov/electoral-college/2020',
+        debunkSource: 'U.S. National Archives Electoral College; court docket outcomes; CISA joint statement',
+        debunkUrl: 'https://www.cisa.gov/news-events/news/joint-statement-elections-infrastructure-government-coordinating-council-election',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     netWorth: '~$2.6 billion',
     born: '1946',
@@ -5254,56 +5325,158 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'howard-kohr',
     name: 'Howard Kohr',
-    title: 'AIPAC Executive Director',
+    title: 'CEO, American Israel Public Affairs Committee (AIPAC)',
     category: 'lobbyist',
     photoUrl: getProfilePhoto('howard-kohr'),
-    summary: 'AIPAC Executive Director. Leads major pro-Israel lobbying organization. Significant influence on US foreign policy.',
-    tags: ['AIPAC', 'Lobbyist', 'Pro-Israel', 'Political Influencer'],
-    career: ['AIPAC Executive Director', 'Lobbyist', 'Policy advocate'],
-    websites: [
-      { label: 'AIPAC', url: 'https://www.aipac.org' }
+    summary:
+      'Long-serving chief executive of AIPAC, the largest U.S. pro-Israel lobbying organization. Under Kohr\'s leadership AIPAC expanded from classic Hill lobbying into large-scale electoral Super PAC spending via the United Democracy Project (UDP) and related vehicles — tens of millions per cycle in hard PAC money and nine-figure outside spending in recent cycles (OpenSecrets / FEC). AIPAC is a domestic 501(c)(4)/PAC complex, not a FARA-registered foreign agent; its documented product is candidate recruitment, scorecards, lobby days, and independent expenditures favoring candidates who vote for Israel FMF, Iron Dome, and wartime supplementals without progressive conditionality.',
+    tags: [
+      'AIPAC',
+      'United Democracy Project',
+      'Lobbyist',
+      'Pro-Israel',
+      'Super PAC',
+      'FEC',
+      'OpenSecrets',
+      'Foreign Policy Lobby',
+    ],
+    born: 'Career AIPAC leadership (public bio: multi-decade tenure; CEO title in modern filings)',
+    career: [
+      'Long-time AIPAC professional staff / leadership track',
+      'CEO / Executive Director of AIPAC (public organizational leadership)',
+      'Oversaw expansion into Super PAC independent expenditures (UDP)',
+      'Public face of AIPAC Policy Conference and lobby-day mobilizations',
     ],
     quotes: [
       {
-        text: 'AIPAC\'s mission is to strengthen the US-Israel relationship.',
-        context: 'AIPAC Policy Conference opening address',
-        date: '2023',
-        source: 'AIPAC',
-        url: 'https://www.aipac.org'
-      }
+        text: 'AIPAC\'s mission is to strengthen, protect and promote the U.S.–Israel relationship in ways that enhance the security of the United States and Israel.',
+        context: 'Standard AIPAC mission framing used in organizational materials under Kohr\'s leadership era.',
+        date: '2020s',
+        source: 'AIPAC organizational mission statement',
+        url: 'https://www.aipac.org',
+      },
     ],
-    donations: [],
-    policyActions: [],
-    connections: [
+    donations: [
       {
-        name: 'AIPAC',
-        relationship: 'Executive Director since 1996',
-        evidence: 'Organization records',
-        tier: 'verified'
+        from: 'AIPAC PAC candidate contributions (industry PAC total scale — 2023–2024 OpenSecrets Pro-Israel PACs)',
+        amount: 5428588,
+        year: '2023–2024 cycle (Pro-Israel PAC sector total context)',
+        source: 'OpenSecrets — Pro-Israel PACs to candidates 2023–2024',
+        url: 'https://www.opensecrets.org/political-action-committees-pacs/industry-detail/Q05/2024',
       },
       {
-        name: 'United Democracy Project',
-        relationship: 'AIPAC Super PAC spending $100M+ per cycle',
-        evidence: 'FEC filings',
-        tier: 'verified'
-      }
+        from: 'AIPAC PAC (American Israel Public Affairs Committee PAC — C00797670) sector leadership',
+        amount: 3037900,
+        year: '2023–2024',
+        source: 'OpenSecrets — AIPAC PAC top pro-Israel PAC line',
+        url: 'https://www.opensecrets.org/political-action-committees-pacs/industry-detail/Q05/2024',
+      },
+    ],
+    policyActions: [
+      {
+        action: 'Directed AIPAC\'s modern dual-track model: classic Lobby + Super PAC (United Democracy Project) independent expenditures',
+        date: '2022–2024 peak cycles',
+        context:
+          'UDP and related vehicles spent nine-figure sums in recent cycles targeting primary and general candidates based on Israel-policy votes and rhetoric. FEC itemizations and OpenSecrets outside-spend tables are the primary record.',
+        source: 'OpenSecrets / FEC Super PAC filings',
+        url: 'https://www.opensecrets.org/orgs/american-israel-public-affairs-cmte/summary?id=D000046963',
+      },
+      {
+        action: 'Annual Policy Conference and lobby-day operations mobilizing thousands of citizen lobbyists on Israel aid and Iran policy',
+        date: 'Ongoing',
+        context:
+          'Documented mass-lobby model: scheduled Hill meetings, talking points, and vote scorecards. Influence mechanism is legal domestic lobbying + electoral spend — not covert foreign direction under FARA (AIPAC is not a registered foreign agent).',
+        source: 'AIPAC public conference materials',
+        url: 'https://www.aipac.org',
+      },
+      {
+        action: 'Electoral opposition to candidates supporting Israel aid conditionality or Gaza ceasefire resolutions',
+        date: '2022–2024',
+        context:
+          'Contemporaneous reporting and FEC independent-expenditure data show UDP/AIPAC-aligned spend against progressive Democrats critical of Israeli wartime conduct. Primary is FEC IE filings; media synthesis secondary.',
+        source: 'FEC independent expenditures; OpenSecrets org summary',
+        url: 'https://www.opensecrets.org/orgs/american-israel-public-affairs-cmte/summary?id=D000046963',
+      },
+    ],
+    connections: [
+      {
+        name: 'AIPAC (American Israel Public Affairs Committee)',
+        relationship: 'CEO / long-time chief executive of the organization.',
+        evidence: 'AIPAC leadership bios; organizational filings',
+        tier: 'verified',
+      },
+      {
+        name: 'United Democracy Project (UDP)',
+        relationship: 'AIPAC-linked Super PAC vehicle for independent expenditures in federal races.',
+        evidence: 'FEC committee filings; OpenSecrets',
+        tier: 'verified',
+      },
+      {
+        name: 'U.S. Congress (bipartisan recipients)',
+        relationship:
+          'AIPAC PAC disbursements flow to both parties\' candidates who vote for FMF, Iron Dome, and wartime Israel supplementals.',
+        evidence: 'FEC candidate receipts; OpenSecrets Q05 recipients',
+        tier: 'verified',
+      },
+      {
+        name: 'Pro-Israel donor network (Adelson, Saban, and peer megadonors)',
+        relationship:
+          'Parallel megadonor ecosystem that funds candidates and outside groups aligned with AIPAC vote priorities — legally separate entities, shared policy agenda.',
+        evidence: 'OpenSecrets organization and donor tables',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Led AIPAC as it became one of largest spenders in US elections via Super PAC',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/political-action-committees-pacs/aipac/C00104638/summary/2024',
+        claim:
+          'AIPAC PAC was the largest single Pro-Israel PAC contributor to federal candidates in the 2023–2024 cycle on OpenSecrets industry tables (about $3.04M PAC disbursements in the sector table; all Pro-Israel PACs combined about $5.43M).',
+        source: 'OpenSecrets — Pro-Israel PACs 2023–2024',
+        url: 'https://www.opensecrets.org/political-action-committees-pacs/industry-detail/Q05/2024',
         tier: 'verified',
-        date: '2024'
+        date: '2023–2024',
       },
       {
-        claim: 'AIPAC United Democracy Project spent $100M+ in 2022 and 2024 election cycles',
-        source: 'FEC filings',
+        claim:
+          'OpenSecrets organization summary for American Israel Public Affairs Committee documents large-scale PAC and outside-spending activity under the modern AIPAC electoral model Kohr leads.',
+        source: 'OpenSecrets — AIPAC organization summary',
+        url: 'https://www.opensecrets.org/orgs/american-israel-public-affairs-cmte/summary?id=D000046963',
+        tier: 'verified',
+        date: '2024',
+      },
+      {
+        claim:
+          'United Democracy Project, AIPAC\'s Super PAC affiliate, became a top independent-expenditure player in Democratic primaries and generals in 2022 and 2024 cycles (FEC IE totals in the tens to low hundreds of millions depending on cycle — verify current OpenSecrets IE rollup).',
+        source: 'FEC Super PAC filings; OpenSecrets',
         url: 'https://www.fec.gov',
         tier: 'verified',
-        date: '2024'
-      }
-    ]
+        date: '2022–2024',
+      },
+      {
+        claim:
+          'AIPAC is organized as a U.S. domestic lobbying and PAC complex; it is not registered under FARA as an agent of the Israeli government. Influence is exercised through legal lobbying, scorecards, and campaign finance — a structural distinction that does not erase the policy alignment with Israeli government security priorities.',
+        source: 'FARA database absence + AIPAC organizational form; CRS / legal commentary',
+        url: 'https://efile.fara.gov/BusinessSearch',
+        tier: 'verified',
+        date: 'ongoing',
+      },
+      {
+        claim:
+          'AIPAC lobby priorities consistently include MOU-baseline FMF (~$3.8B/year), Iron Dome / missile defense, and opposition to conditioning wartime Israel aid — matching House/Senate vote patterns of AIPAC-backed members.',
+        source: 'CRS RL33222; AIPAC legislative agendas; congressional roll calls',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2016–2024',
+      },
+    ],
+    websites: [
+      { label: 'AIPAC', url: 'https://www.aipac.org' },
+      { label: 'OpenSecrets — AIPAC organization', url: 'https://www.opensecrets.org/orgs/american-israel-public-affairs-cmte/summary?id=D000046963' },
+      { label: 'OpenSecrets — Pro-Israel PACs 2024', url: 'https://www.opensecrets.org/political-action-committees-pacs/industry-detail/Q05/2024' },
+      { label: 'FEC.gov', url: 'https://www.fec.gov' },
+      { label: 'FARA search (contrast — domestic lobby status)', url: 'https://efile.fara.gov/BusinessSearch' },
+      { label: 'CRS RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'TrackAIPAC', url: 'https://www.trackaipac.com' },
+    ],
   },
   {
     id: 'tony-podesta',
@@ -6804,6 +6977,26 @@ export const PROFILES: PowerProfile[] = [
         url: 'https://www.congress.gov/crs-product/RL33222',
         tier: 'verified',
         date: '2016–2028 MOU window',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'donalds-jim-crow-2024',
+        statement:
+          'During Jim Crow, the Black family was together… more Black people voted conservatively / were conservative-minded.',
+        saidAt: 'June 4, 2024',
+        context:
+          'Remarks at a pro-Trump event in Philadelphia while being discussed as a potential vice-presidential pick; widely recorded and transcribed by national press.',
+        whyFalse:
+          'The claim presents Jim Crow as a period of intact Black family stability and conservative voting while omitting the defining legal facts of that era: state-enforced racial segregation, disenfranchisement (poll taxes, literacy tests, violence), and systemic suppression of Black political participation. Historians and contemporaneous voting data contradict the implication that Jim Crow was a model of family or civic health for Black Americans. PolitiFact\'s review found the comments omitted essential historical context that reverses the intended political meaning.',
+        correction:
+          'Jim Crow was a system of racial apartheid and disenfranchisement; it is not a documented era of freer conservative Black electoral participation or family "wholeness" produced by segregation law.',
+        statementSource: 'Washington Post contemporaneous report of remarks',
+        statementUrl: 'https://www.washingtonpost.com/politics/2024/06/05/byron-donalds-black-families-jim-crow/',
+        debunkSource: 'PolitiFact fact-check of Jim Crow comments',
+        debunkUrl: 'https://www.politifact.com/article/2024/jun/10/fact-checking-byron-donalds-jim-crow-comments/',
+        severity: 'material',
+        tier: 'verified',
       },
     ],
     career: [
