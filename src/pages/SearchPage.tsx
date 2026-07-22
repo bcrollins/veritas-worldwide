@@ -242,6 +242,70 @@ export default function SearchPage() {
       .slice(0, 3)
   }, [normalizedCrossSurfaceQuery])
 
+  /** Surface the interactive Israel Dossier evidence engine for related queries. */
+  const matchingDossierSurfaces = useMemo(() => {
+    if (!normalizedCrossSurfaceQuery) return [] as Array<{
+      id: string
+      title: string
+      description: string
+      href: string
+      eyebrow: string
+    }>
+    const haystack = [
+      'israel',
+      'gaza',
+      'palestine',
+      'palestinian',
+      'aipac',
+      'netanyahu',
+      'dossier',
+      'military aid',
+      'foreign aid',
+      'war crime',
+      'war crimes',
+      'idf',
+      'occupation',
+      'nakba',
+      'west bank',
+      'hamas',
+      'icc',
+      'icj',
+    ]
+    const hits = haystack.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
+    if (!hits) return []
+    return [
+      {
+        id: 'israel-dossier',
+        eyebrow: 'Evidence engine',
+        title: 'The Israel Dossier',
+        description:
+          '1948→ incidents, actors enablement graph, U.S. aid money trail, multimedia source checks, CSV export, and machine-readable corpus.json.',
+        href: '/israel-dossier',
+      },
+      {
+        id: 'israel-dossier-children',
+        eyebrow: 'Filtered view',
+        title: 'Children among victims',
+        description: 'Jump into incidents tagged with children among victims — every entry linked to checkable sources.',
+        href: '/israel-dossier?focus=children',
+      },
+      {
+        id: 'israel-dossier-actors',
+        eyebrow: 'Enablement graph',
+        title: 'Actors & funds',
+        description: 'Named political actors linked to aid packages, munitions nodes, and documented incidents.',
+        href: '/israel-dossier?actor=benjamin-netanyahu',
+      },
+      {
+        id: 'israel-dossier-corpus',
+        eyebrow: 'Machine-readable',
+        title: 'corpus.json',
+        description: 'Offline JSON export of incidents, timeline, actors, and money-trail nodes for editors and researchers.',
+        href: '/israel-dossier/corpus.json',
+      },
+    ]
+  }, [normalizedCrossSurfaceQuery])
+
   useEffect(() => {
     const scopeDescription = searchScope === 'full'
       ? 'full chapter text, keywords, and source libraries'
@@ -473,12 +537,56 @@ export default function SearchPage() {
                   </p>
                 </div>
 
-                {matchingTopics.length === 0 && matchingProfiles.length === 0 && matchingArticles.length === 0 ? (
+                {matchingTopics.length === 0 && matchingProfiles.length === 0 && matchingArticles.length === 0 && matchingDossierSurfaces.length === 0 ? (
                   <p className="mt-5 font-body text-sm leading-relaxed text-ink-muted">
-                    No additional topic, profile, or newsroom matches surfaced for this query yet.
+                    No additional topic, profile, dossier, or newsroom matches surfaced for this query yet.
                   </p>
                 ) : (
                   <div className="mt-6 grid gap-4 xl:grid-cols-3">
+                    {matchingDossierSurfaces.length > 0 && (
+                      <div className="rounded-2xl border border-crimson/25 bg-crimson/5 p-4 xl:col-span-3">
+                        <p className="font-sans text-[0.58rem] font-bold tracking-[0.16em] uppercase text-crimson">
+                          Israel Dossier evidence engine
+                        </p>
+                        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                          {matchingDossierSurfaces.map((surface) => {
+                            const className =
+                              'block rounded-xl border border-border bg-parchment px-4 py-3 transition-colors hover:border-crimson'
+                            const body = (
+                              <>
+                                <p className="font-sans text-[0.55rem] font-bold tracking-[0.14em] uppercase text-crimson">
+                                  {surface.eyebrow}
+                                </p>
+                                <p className="mt-2 font-display text-lg font-bold text-ink">
+                                  <HighlightText text={surface.title} query={debouncedQuery} />
+                                </p>
+                                <p className="mt-1 line-clamp-3 font-body text-sm leading-relaxed text-ink-muted">
+                                  {surface.description}
+                                </p>
+                              </>
+                            )
+                            if (surface.href.endsWith('.json')) {
+                              return (
+                                <a
+                                  key={surface.id}
+                                  href={surface.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={className}
+                                >
+                                  {body}
+                                </a>
+                              )
+                            }
+                            return (
+                              <Link key={surface.id} to={surface.href} className={className}>
+                                {body}
+                              </Link>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    )}
                     {matchingTopics.length > 0 && (
                       <div className="rounded-2xl border border-border bg-surface p-4">
                         <p className="font-sans text-[0.58rem] font-bold tracking-[0.16em] uppercase text-ink-faint">

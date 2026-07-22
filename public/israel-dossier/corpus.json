@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-22T18:58:01.857Z",
+  "generatedAt": "2026-07-22T19:09:14.180Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 37,
+    "incidents": 39,
     "timelineEvents": 31,
     "actors": 18,
     "moneyTrailNodes": 10,
-    "historicalWarCrimesPack": 22
+    "historicalWarCrimesPack": 24
   },
   "publicRecords": [
     {
@@ -1841,6 +1841,48 @@
       "imageUrl": "/og-image.png"
     },
     {
+      "id": "operation-cast-lead-school-strikes",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "barack-obama",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Cast Lead — UN Schools and Shelters Struck",
+      "date": "December 2008 – January 2009",
+      "location": "Gaza Strip (UNRWA schools and civilian shelters)",
+      "summary": "During Operation Cast Lead, multiple UNRWA schools and civilian shelters were struck, killing and wounding civilians who had sought refuge under UN flags. The Goldstone Fact-Finding Mission and subsequent UN reporting catalogued these attacks as among the most serious civilian-protection failures of the operation.",
+      "evidence": "UN Fact-Finding Mission materials, UNRWA contemporaneous statements, and HRW field reporting document strikes on facilities whose coordinates had been shared with Israeli forces. Israel disputed intent; monitors documented civilian composition of the dead and prior knowledge of shelter locations.",
+      "sources": [
+        {
+          "label": "UN Fact-Finding Mission on the Gaza Conflict",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission"
+        },
+        {
+          "label": "Human Rights Watch — Rain of Fire / Cast Lead civilian harm",
+          "url": "https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza"
+        },
+        {
+          "label": "UNRWA historical Cast Lead statements (via UNISPAL)",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OHCHR Fact-Finding Mission materials",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
       "id": "mavi-marmara-2010",
       "era": "blockade-2007-2023",
       "targetsCivilians": true,
@@ -1981,6 +2023,50 @@
         "killed": 2251
       },
       "imageUrl": "/og-image.png"
+    },
+    {
+      "id": "operation-protective-edge-unrwa-shelters",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "barack-obama",
+        "joe-biden",
+        "chuck-schumer"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons",
+        "iron-dome"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Protective Edge — UNRWA Shelters Hit While Hosting Displaced Families",
+      "date": "July – August 2014",
+      "location": "Gaza Strip UNRWA schools used as emergency shelters",
+      "summary": "During the 2014 Gaza war, several UNRWA schools functioning as emergency shelters for displaced families were hit by Israeli fire. UN boards of inquiry documented civilian deaths and injuries at sites whose locations had been communicated to Israeli authorities.",
+      "evidence": "UN Headquarters Board of Inquiry summaries, OCHA situation reports, and OHCHR COI materials document attacks affecting UN premises. The pattern is distinct from the broader Protective Edge child-casualty record and focuses on protected civilian shelter sites.",
+      "sources": [
+        {
+          "label": "UN OHCHR — COI report on 2014 Gaza conflict",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza"
+        },
+        {
+          "label": "UN News — UNRWA schools hit during 2014 hostilities",
+          "url": "https://news.un.org/en/story/2014/07/473992"
+        },
+        {
+          "label": "B'Tselem — 2014 Gaza conflict documentation",
+          "url": "https://www.btselem.org/gaza_strip/2014_gaza_conflict"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OHCHR Commission of Inquiry findings",
+          "url": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-gaza-conflict/report-co-i-gaza"
+        }
+      ],
+      "tier": "verified"
     },
     {
       "id": "great-march-return-2018",
