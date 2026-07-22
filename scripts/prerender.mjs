@@ -2331,9 +2331,27 @@ const staticPages = [
     trustLinks: [
       { href: '/methodology', label: '→ Methodology' },
       { href: '/sources', label: '→ Sources' },
+      { href: '/media-kit', label: '→ Media Kit' },
       ...FIELD_MANUAL_TRUST_LINKS,
     ],
     sourceFile: 'src/pages/AboutPage.tsx',
+  },
+  {
+    route: '/media-kit',
+    title: 'Media Kit | Veritas Worldwide',
+    heading: 'Media Kit',
+    description:
+      'Official logos, social banners, letterhead, and brand guidelines for Veritas Worldwide Press and The Record.',
+    body: [
+      'Download the Ultimate Brand Kit ZIP, individual seal and wordmark assets, social platform banners, and press templates. Prefer vectors; do not recolor the seal outside brand tokens.',
+      'Press contact: rights@veritasworldwide.com. Interactive page and static HTML media kit both ship from the brand kit.',
+    ],
+    trustLinks: [
+      { href: '/about', label: '→ About' },
+      { href: '/methodology', label: '→ Methodology' },
+      { href: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip', label: '→ Download ZIP' },
+    ],
+    sourceFile: 'src/pages/MediaKitPage.tsx',
   },
   {
     route: '/deep-state',

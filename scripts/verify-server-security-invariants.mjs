@@ -87,6 +87,7 @@ assert(server.includes("X-Robots-Tag"), 'X-Robots-Tag set for admin SPA shell')
 assert(server.includes('noindex, nofollow'), 'admin X-Robots-Tag is noindex, nofollow')
 // Soft-404 kill: unknown SPA paths must return HTTP 404 (Google Search Central).
 assert(server.includes('isKnownSpaRoute'), 'server must classify known SPA routes')
+assert(server.includes("'/media-kit'"), 'server must allow /media-kit as a known SPA route (not soft-404)')
 assert(server.includes('buildNotFoundHtml'), 'server must serve dedicated 404 HTML for unknown URLs')
 assert(server.includes('res.status(404)'), 'server must emit HTTP 404 for unknown public paths')
 assert(

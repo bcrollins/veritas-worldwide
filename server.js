@@ -1821,6 +1821,7 @@ function isKnownSpaRoute(pathname) {
     '/bookmarks',
     '/share',
     '/brand-kit',
+    '/media-kit',
     '/content-packs',
     '/subscribe/success',
     '/membership/success',
