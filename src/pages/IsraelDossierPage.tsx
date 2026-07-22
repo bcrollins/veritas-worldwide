@@ -819,33 +819,43 @@ export default function IsraelDossierPage() {
   const [incidentQuery, setIncidentQuery] = useState('')
   const [incidentTier, setIncidentTier] = useState<'all' | DossierDocumentedIncident['tier']>('all')
   const [incidentFocus, setIncidentFocus] = useState<'all' | 'civilians' | 'children'>('all')
+  const [incidentMedia, setIncidentMedia] = useState<'all' | 'video' | 'investigation' | 'document' | 'photo-essay'>('all')
+  const [incidentSort, setIncidentSort] = useState<'oldest' | 'newest' | 'deaths'>('oldest')
   const [timelineEra, setTimelineEra] = useState<'all' | DossierEra>('all')
   const [timelineQuery, setTimelineQuery] = useState('')
   const [actorQuery, setActorQuery] = useState('')
   const [selectedActorId, setSelectedActorId] = useState<string | null>(null)
   const sourceIndex = useMemo(() => buildSourceIndex(), [])
-  const allIncidents = useMemo(() => {
-    const deduped = dedupeIncidents([...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS])
-    // Chronological order (oldest first) for historical reading; undated strings sort last.
-    return deduped.sort((a, b) => {
-      const ya = Number((a.date.match(/(\d{4})/) || [])[1] || 9999)
-      const yb = Number((b.date.match(/(\d{4})/) || [])[1] || 9999)
-      if (ya !== yb) return ya - yb
-      return a.title.localeCompare(b.title)
-    })
-  }, [])
+  const allIncidents = useMemo(
+    () => dedupeIncidents([...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS]),
+    [],
+  )
   const filteredIncidents = useMemo(() => {
     const q = incidentQuery.trim().toLowerCase()
-    return allIncidents.filter((incident) => {
+    const yearOf = (incident: DossierDocumentedIncident) =>
+      Number((incident.date.match(/(\d{4})/) || [])[1] || 9999)
+    const filtered = allIncidents.filter((incident) => {
       const tierMatch = incidentTier === 'all' || incident.tier === incidentTier
       const focusMatch =
         incidentFocus === 'all' ||
         (incidentFocus === 'civilians' && incident.targetsCivilians) ||
         (incidentFocus === 'children' && incident.targetsChildren)
+      const mediaMatch =
+        incidentMedia === 'all' ||
+        incident.multimedia.some((m) => m.type === incidentMedia)
       const queryMatch = !q || `${incident.title} ${incident.location} ${incident.summary} ${incident.evidence} ${incident.id ?? ''}`.toLowerCase().includes(q)
-      return tierMatch && focusMatch && queryMatch
+      return tierMatch && focusMatch && mediaMatch && queryMatch
     })
-  }, [allIncidents, incidentQuery, incidentTier, incidentFocus])
+    return filtered.sort((a, b) => {
+      if (incidentSort === 'deaths') {
+        return (b.casualties?.killed ?? 0) - (a.casualties?.killed ?? 0)
+      }
+      const ya = yearOf(a)
+      const yb = yearOf(b)
+      if (ya !== yb) return incidentSort === 'oldest' ? ya - yb : yb - ya
+      return a.title.localeCompare(b.title)
+    })
+  }, [allIncidents, incidentQuery, incidentTier, incidentFocus, incidentMedia, incidentSort])
   const filteredTimeline = useMemo(() => {
     const q = timelineQuery.trim().toLowerCase()
     return (HISTORICAL_TIMELINE as DossierTimelineEvent[]).filter((event) => {
@@ -1372,8 +1382,8 @@ export default function IsraelDossierPage() {
           </span>
         </div>
 
-        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-[minmax(0,1fr)_180px_180px]">
-          <label className="block">
+        <div className="mb-6 grid gap-3 rounded-sm border border-border bg-surface p-4 md:grid-cols-2 xl:grid-cols-5">
+          <label className="block md:col-span-2 xl:col-span-1">
             <span className="sr-only">Search documented incidents</span>
             <input
               value={incidentQuery}
@@ -1406,8 +1416,34 @@ export default function IsraelDossierPage() {
               <option value="children">Children among victims ({childrenIncidentCount})</option>
             </select>
           </label>
-          <p className="md:col-span-3 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
-            Showing {filteredIncidents.length} of {allIncidents.length}. Historical pack (1948→) is merged with post-Oct-7 investigations. Duplicates merge by date and location.
+          <label className="block">
+            <span className="sr-only">Filter by multimedia evidence type</span>
+            <select
+              value={incidentMedia}
+              onChange={(event) => setIncidentMedia(event.target.value as typeof incidentMedia)}
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
+            >
+              <option value="all">All media types</option>
+              <option value="video">Has video evidence</option>
+              <option value="investigation">Has forensic investigation</option>
+              <option value="document">Has document evidence</option>
+              <option value="photo-essay">Has photo essay</option>
+            </select>
+          </label>
+          <label className="block">
+            <span className="sr-only">Sort incidents</span>
+            <select
+              value={incidentSort}
+              onChange={(event) => setIncidentSort(event.target.value as typeof incidentSort)}
+              className="min-h-[44px] w-full rounded-sm border border-border bg-parchment px-3 font-sans text-sm text-ink focus:border-crimson focus:outline-none"
+            >
+              <option value="oldest">Sort: oldest first (1948→)</option>
+              <option value="newest">Sort: newest first</option>
+              <option value="deaths">Sort: highest death toll</option>
+            </select>
+          </label>
+          <p className="md:col-span-2 xl:col-span-5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+            Showing {filteredIncidents.length} of {allIncidents.length}. Historical pack (1948→) is merged with post-Oct-7 investigations. Every entry has checkable sources; this is not an exhaustive global ledger.
           </p>
         </div>
 
