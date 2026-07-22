@@ -516,6 +516,7 @@ function main() {
   writeSvg('04-social/social-banner-facebook.svg', socialBanner({ w: 820, h: 312 }))
   writeSvg('04-social/social-banner-linkedin.svg', socialBanner({ w: 1584, h: 396 }))
   writeSvg('04-social/social-banner-youtube.svg', socialBanner({ w: 2560, h: 1440, title: 'The Record', subtitle: 'DOCUMENTARY ARCHIVE' }))
+  writeSvg('04-social/story-1080x1920.svg', socialBanner({ w: 1080, h: 1920, title: 'The Record', subtitle: 'PRIMARY SOURCES  ·  PUBLIC RECORD' }))
 
   writeSvg('05-og/og-image.svg', ogImage())
 
@@ -523,6 +524,36 @@ function main() {
   writeFileSync(join(KIT, '06-tokens', 'color-palette.svg'), colorPalette() + '\n')
   writeFileSync(join(KIT, '07-docs', 'BRAND-GUIDE.md'), brandGuideMd())
   writeFileSync(join(KIT, '07-docs', 'alt-text-manifest.json'), altTextManifest() + '\n')
+  writeFileSync(join(KIT, '07-docs', 'USAGE-LEGAL.md'), `# Veritas Worldwide — Brand Usage & Legal
+
+**Version:** ${KIT_VERSION}
+**Owner:** Veritas Worldwide Press
+**Contact:** rights@veritasworldwide.com
+
+## Authorized use
+- Official Veritas Worldwide Press communications, The Record product surfaces, licensed partners, and authorized media kits.
+- Social profiles and banners for official @VeritasWorldwide accounts.
+
+## Prohibited use
+- Implying endorsement of a third party, political campaign, or product without written approval.
+- Altering the seal proportions, recoloring outside brand tokens, or combining with competing marks that create confusion.
+- Using the mark on merchandise sold for profit without a license.
+
+## Press & rights
+Editorial and licensing: rights@veritasworldwide.com
+`)
+  writeFileSync(join(KIT, '07-docs', 'CRISIS-MEDIA.md'), `# Crisis & Media Response Templates
+
+## Holding statement
+> Veritas Worldwide Press is reviewing the matter carefully. We publish from primary sources and will update The Record when documentary evidence is complete and verified. Media inquiries: rights@veritasworldwide.com
+
+## Correction notice
+> Correction — [DATE]: An earlier version of [piece] stated [claim]. The public record shows [correction]. We regret the error.
+
+## Source challenge
+> Please send documentary materials (URL or PDF with page numbers). We evaluate challenges against our Methodology standards.
+`)
+
   writeFileSync(join(KIT, 'README.md'), brandGuideMd())
 
   // Site root favicon + OG

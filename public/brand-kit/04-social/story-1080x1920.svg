@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="Veritas Worldwide social banner">
+  <rect width="1080" height="1920" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1080" height="6" fill="#8B1A1A"/>
+  <rect x="0" y="1914" width="1080" height="6" fill="#8B1A1A"/>
+  <text x="540" y="614.4" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="6" fill="#B8860B">VERITAS WORLDWIDE PRESS</text>
+  <text x="540" y="998.4000000000001" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#FFFFFF">The Record</text>
+  <line x1="460" y1="1113.6" x2="620" y2="1113.6" stroke="#B8860B" stroke-width="1.5"/>
+  <text x="540" y="1382.3999999999999" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="4" fill="rgba(255,255,255,0.7)">PRIMARY SOURCES  ·  PUBLIC RECORD</text>
+  <text x="540" y="1651.2" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.35)">veritasworldwide.com</text>
+</svg>
