@@ -325,6 +325,38 @@
       "archiveUrl": "https://web.archive.org/web/20250606164012/https://www.courtlistener.com/docket/4355835/giuffre-v-maxwell/?s=09",
       "status": "pinned",
       "note": "Giuffre v. Maxwell CourtListener docket (Wayback capture with sort param)"
+    },
+    {
+      "sourceUrl": "https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/",
+      "timestamp": "20260422055043",
+      "archiveUrl": "https://web.archive.org/web/20260422055043/https://cpj.org/2023/10/journalist-casualties-in-the-israel-gaza-war/",
+      "status": "pinned",
+      "note": "CPJ journalist casualties tracker",
+      "lastProbedAt": "2026-07-22T22:31:23.000Z"
+    },
+    {
+      "sourceUrl": "https://avalon.law.yale.edu/20th_century/balfour.asp",
+      "timestamp": "20100609213401",
+      "archiveUrl": "https://web.archive.org/web/20100609213401/https://avalon.law.yale.edu/20th_century/balfour.asp",
+      "status": "pinned",
+      "note": "Balfour Declaration (Yale Avalon)",
+      "lastProbedAt": "2026-07-22T22:31:23.000Z"
+    },
+    {
+      "sourceUrl": "https://history.state.gov/historicaldocuments/frus1964-68v19/d284",
+      "timestamp": "20220704222329",
+      "archiveUrl": "https://web.archive.org/web/20220704222329/https://history.state.gov/historicaldocuments/frus1964-68v19/d284",
+      "status": "pinned",
+      "note": "FRUS historical document (State Dept)",
+      "lastProbedAt": "2026-07-22T22:31:23.000Z"
+    },
+    {
+      "sourceUrl": "https://www.icj-cij.org/case/186",
+      "timestamp": "20230726143427",
+      "archiveUrl": "https://web.archive.org/web/20230726143427/https://www.icj-cij.org/case/186",
+      "status": "pinned",
+      "note": "ICJ case 186 (occupation advisory)",
+      "lastProbedAt": "2026-07-22T22:31:23.000Z"
     }
   ]
 }
