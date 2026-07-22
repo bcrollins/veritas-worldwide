@@ -42,7 +42,7 @@ const READING_PATH_DEFINITIONS = [
     eyebrow: 'Lobbying and foreign policy',
     title: 'Follow the lobbying and war-power record',
     description:
-      'A focused path through the Israel, lobbying, aid, Liberty, and congressional influence material.',
+      'A focused path through the Israel, lobbying, aid, Liberty, and congressional influence material — then continue into the interactive Israel Dossier evidence engine at /israel-dossier.',
     chapterIds: ['chapter-6', 'chapter-8', 'chapter-14', 'chapter-15', 'chapter-16'],
   },
   {
