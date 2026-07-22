@@ -1,85 +1,34 @@
-# Israel Dossier Densify Waves — 2026-07-22
+# Israel Dossier Densify Ocean — Live Floor
 
-## Shipped & live (or queued)
+## Live corpus (proven)
+- **57 incidents** (target after a78a4e9)
+- **48 timeline events**
+- **37 actors**
+- **14 money nodes**
+- **41 historical war-crimes pack**
+- **7 legal cases · 4 lobbying records**
+- **incidentsByEra + actorsByCategory** in corpus.json
 
-### `1f4dfe9` — densify 1966–2021 + lobby + actors
-- **Live proven** on deployment `2fd2eb0c-38e0-4c0f-928a-df2a91408788`
-- Corpus: **45 incidents · 38 timeline · 23 actors · 11 money nodes**
-- Incidents: Al-Samu 1966, USS Liberty, Land Day, Litani 1978, Beirut siege 1982, Guardian of the Walls 2021
-- Timeline: ICJ provisional measures + ICC warrants 2024
-- Actors: Howard Kohr, Haim Saban, Kamala Harris, Marco Rubio, Mike Pompeo
-- Money: `pro-israel-lobby-2024` ($180M+ OpenSecrets cycle)
-- Behavior: search?q=gaza promo + densify surface text locked
+## Key commits this continuation
+| Commit | What |
+|---|---|
+| `2c0b95a` | Cave of Patriarchs, Huwara, Second Lebanon War + Stefanik/Torres/Rosen/Sherman + Hellfire |
+| `ef73c0d` | Search discovery Hebron/Huwara/Hellfire |
+| `0887a89` | Shareable incident era filter `?era=` |
+| `c138d83` | Operation Rainbow Rafah 2004 |
+| `c6aca99` | Home CTA copy for densified engine |
+| `b09d9af` | Corpus era/category breakdowns + Tim Scott |
+| `a78a4e9` | Settler violence surge pattern 2021–2023 |
 
-### `d16963d` / `773e0d2` — discovery CTAs
-- Chapter 15 → money trail + full dossier
-- Chapter 16 → Liberty in dossier (`?q=USS+Liberty`)
-- Profile enablement cards deep-link `?actor=:id`
-- **Live behavior PASS** (chapter CTAs + profile deep-link)
+## Behavior suite locks
+- search gaza / liberty / hebron promos
+- densify surface text (including Rainbow, settler violence)
+- era filter deep-link
+- chapter 15/16 CTAs, profile actor deep-links
+- corpus floors + incidentsByEra / actorsByCategory
 
-### `df552c2` — densify wave 2 (Summer Rains / Jenin / legal)
-- Corpus target: **49 incidents · 40 timeline · 23 actors · 11 money**
-- Incidents: Summer Rains 2006, Cast Lead infrastructure pattern, Great March medics/press, Jenin July 2023
-- Legal cases: Kahan Commission, UN COI March of Return, NGO apartheid characterizations
-- Behavior floors raised to 45/20/38/11
-- **Live behavior PASS** (full suite) with corpus 49 on production
-
-### `249639e` — enablement graph + corpus legal/lobby export
-- Actors **27**: +Gottheimer, Cotton, Ocasio-Cortez (counter), Bolton
-- `corpus.json` now exports `legalCases` (7) and `lobbying` (4)
-- Behavior floors: actors ≥24, legalCases ≥5, lobbying ≥3
-
-### `24940ef` — search discovery keywords
-- Liberty, UNRWA, Jenin, Qibya, Sabra, lobby, Iron Dome, Gallant
-- **Live behavior PASS** including `search?q=liberty`
-
-### `083a25c` — F-35 + Adelson/Pelosi
-- Money nodes **12** including F-35 fleet
-- Actors **29** including Sheldon Adelson, Nancy Pelosi
-- **Live behavior PASS** full suite
-
-### `d9d02fd` — blockade + settlement structural patterns
-- Incidents **51** · timeline **42**
-- Gaza blockade 2007 formalization + settlement enterprise (ICJ/UN floors)
-- Timeline: blockade + UNSC 2334
-
-### `0fba0f0` — Warren + Booker
-- Actors **31**
-- Conditionality debate (Warren) + pro-aid floor (Booker)
-
-### `95ad631` — WRSA-I stockpile
-- Money nodes **13** including war reserve stockpile drawdowns
-
-### `e6ba629` — Days of Penitence 2004
-- Incidents **52** · timeline **43** · historical pack **37**
-- **Full live behavior PASS** on production
-
-## Live corpus floor (proven)
-```
-incidents: 52
-timelineEvents: 43
-actors: 31
-moneyTrailNodes: 13
-historicalWarCrimesPack: 37
-legalCases: 7
-lobbyingRecords: 4
-```
-`npm run verify:israel-dossier:behavior -- https://veritasworldwide.com` → **PASS**
-
-## Editorial boundaries (preserved)
-- Evidence tiers labeled; non-exhaustive disclaimer retained
-- No ethnicity/religion as enablement; funds/votes/warrants only
-- October 7 included for non-selective war-crimes record
-- Court vs NGO findings distinguished in legal section
-
-## Coordination notes
-- Multi-agent: news RSS/OG (`c7327cb`, `61dfd1b`) and dossier CTAs interleaved cleanly on `main`
-- Did not touch parallel agent files (e.g. `public/news/`, home-toc verifier noise)
-- Railway queue: ship interval commits; later deploys supersede earlier SUCCESS
-
-## Live proof commands
+## Verify
 ```bash
-curl -sS https://veritasworldwide.com/api/build-info
 curl -sS https://veritasworldwide.com/israel-dossier/corpus.json | jq .counts
 npm run verify:israel-dossier:behavior -- https://veritasworldwide.com
 ```

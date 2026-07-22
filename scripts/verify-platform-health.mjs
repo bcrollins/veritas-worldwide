@@ -686,6 +686,68 @@ const healthResult = await fetchJson('/api/health')
         }
       }
 
+      // First-party profile portraits (Bioguide/White House + monograms).
+      for (const portrait of [
+        '/profiles/ted-cruz.jpg',
+        '/profiles/donald-trump.jpg',
+        '/profiles/nancy-pelosi.jpg',
+        '/profiles/benjamin-netanyahu.svg',
+        '/profiles/jeffrey-epstein.svg',
+      ]) {
+        try {
+          const portraitRes = await fetch(getUrl(portrait), {
+            method: 'HEAD',
+            signal: AbortSignal.timeout(timeoutMs),
+          })
+          const len = Number(portraitRes.headers.get('content-length') || 0)
+          const type = portraitRes.headers.get('content-type') || ''
+          const isSvg = portrait.endsWith('.svg')
+          const minBytes = isSvg ? 200 : 10_000
+          const typeOk = isSvg
+            ? type.includes('svg') || type.includes('image') || type.includes('text/xml') || type.includes('octet-stream')
+            : type.includes('image')
+          addCheck(
+            checks,
+            failures,
+            portraitRes.ok && typeOk && len >= minBytes,
+            `Profile portrait asset present: ${portrait}`,
+            `status=${portraitRes.status} type=${type} bytes=${len}`,
+          )
+        } catch (error) {
+          addCheck(
+            checks,
+            failures,
+            false,
+            `Profile portrait asset present: ${portrait}`,
+            `error=${error instanceof Error ? error.message : String(error)}`,
+          )
+        }
+      }
+
+      // Live CSP meta must not re-open Wikimedia img-src after first-party cutover.
+      try {
+        const home = await fetchText('/')
+        const homeCsp = (home.text || '').match(
+          /http-equiv=["']Content-Security-Policy["']\s+content="([^"]+)"/i,
+        )
+        const csp = homeCsp?.[1] || ''
+        addCheck(
+          checks,
+          failures,
+          Boolean(csp) && !csp.includes('upload.wikimedia.org') && !csp.includes('commons.wikimedia.org'),
+          'Live CSP meta excludes Wikimedia img hosts',
+          `hasCsp=${Boolean(csp)} wikiBlocked=${Boolean(csp) && !csp.includes('wikimedia')}`,
+        )
+      } catch (error) {
+        addCheck(
+          checks,
+          failures,
+          false,
+          'Live CSP meta excludes Wikimedia img hosts',
+          `error=${error instanceof Error ? error.message : String(error)}`,
+        )
+      }
+
       // RSS must announce current-events desk + field manual.
       const feedNow = await fetchText('/feed.xml')
       const feedBody = feedNow.text || ''
