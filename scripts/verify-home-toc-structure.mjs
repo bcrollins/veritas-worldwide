@@ -33,4 +33,9 @@ const chapterLinkClose = block.indexOf('</Link>')
 const keywordLink = block.indexOf('getTopicHrefForTerm')
 assert(chapterLinkClose > 0 && keywordLink > chapterLinkClose, 'keyword links must follow chapter Link close (no nesting)')
 
+// First-screen CTAs: archive + live investigation must remain one tap away
+assert(src.includes('to="/read"'), 'home hero must link Read The Record')
+assert(src.includes('to="/israel-dossier"'), 'home hero must link Israel Dossier')
+assert(src.includes('Israel Dossier'), 'home hero must show Israel Dossier label')
+
 console.log('[verify:home-toc-structure] PASS')
