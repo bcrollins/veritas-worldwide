@@ -682,6 +682,28 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     ],
     tier: 'verified',
   },
+  {
+    profileId: 'adam-schiff',
+    name: 'Adam Schiff',
+    role: 'U.S. Senator (D-CA); former House Intelligence Committee chair',
+    category: 'us-congress',
+    enablementSummary:
+      'Long-serving California Democrat and consistent floor advocate for Israel military aid, Iron Dome funding, and wartime packages; high-visibility voice against conditioning aid during the Gaza war period.',
+    relatedTimelineYears: ['2014', '2021', '2023', '2024', '2025'],
+    relatedIncidentIds: ['protective-edge-2014-children', 'guardian-of-the-walls-2021'],
+    relatedMoneyNodeIds: ['hr815', 'iron-dome', 'annual-mou', 'pro-israel-lobby-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Schiff pro-Israel PAC summary',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/adam-schiff/summary?cid=N00009585',
+      },
+      {
+        label: 'Congress.gov — Schiff voting / cosponsorships',
+        sourceUrl: 'https://www.congress.gov/member/adam-schiff/S001150',
+      },
+    ],
+    tier: 'verified',
+  },
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
