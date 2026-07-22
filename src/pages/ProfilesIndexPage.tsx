@@ -58,10 +58,14 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
       <div className="h-2" style={{ backgroundColor: bgColor }} />
 
       <div className="p-4">
-        <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-parchment-dark flex items-center justify-center overflow-hidden">
+        <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-parchment-dark flex items-center justify-center overflow-hidden ring-1 ring-border">
           <img
             src={getProfilePhoto(profile.id)}
-            alt={profile.name}
+            alt=""
+            width={64}
+            height={64}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
             onError={(e) => {
               const img = e.target as HTMLImageElement
@@ -297,6 +301,21 @@ export default function ProfilesIndexPage(): React.ReactNode {
             about them, and where the evidence trail is strongest. This is the quickest way to move from a
             name to a network, then into the chapters, topic hubs, and source trail around that figure.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="/profiles/corpus.json"
+              className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson hover:text-crimson transition-colors"
+              download="veritas-profiles-corpus.json"
+            >
+              Download profiles corpus (JSON)
+            </a>
+            <Link
+              to="/israel-dossier"
+              className="inline-flex min-h-[44px] items-center rounded-sm border border-crimson/30 bg-crimson/5 px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-crimson hover:bg-crimson/10 transition-colors"
+            >
+              Open Israel Dossier
+            </Link>
+          </div>
 
           <div className="grid gap-4 mt-10 sm:grid-cols-2 xl:grid-cols-4">
             <div className="rounded-2xl border border-border bg-surface p-5">
