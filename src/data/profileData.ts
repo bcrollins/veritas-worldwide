@@ -1946,69 +1946,84 @@ export const PROFILES: PowerProfile[] = [
     party: 'R',
     state: 'SC',
     photoUrl: getProfilePhoto('lindsey-graham'),
-    summary: 'Senator from South Carolina. Known for hawkish foreign policy positions on Middle East and Russia.',
-    tags: ['Senator', 'Hawk', 'South Carolina', 'Republican', 'Foreign Policy'],
-    career: ['U.S. Senator (R-SC) 2003-present', 'U.S. Representative', 'Military officer'],
-    websites: [
-      { label: 'Senate Website', url: 'https://www.graham.senate.gov' }
+    summary:
+      'South Carolina Republican senator and high-visibility foreign-policy hawk. Frequent Israel trips and floor advocacy for maximal military support; documented pro-Israel PAC recipient (OpenSecrets). Leading voice for unconditional wartime aid after October 7. Primary: OpenSecrets, Senate record, CRS RL33222.',
+    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'South Carolina', 'Republican', 'Foreign Policy Hawk', 'Iron Dome'],
+    career: [
+      'U.S. Air Force JAG (public bio)',
+      '1995–2003 — U.S. House',
+      '2003– — U.S. Senate',
+      'High-visibility Israel security advocate across administrations',
     ],
     quotes: [
       {
-        text: 'If you want to neuter Iran, you have to hit their oil refineries.',
-        context: 'Fox News interview on Iran policy',
-        date: '2023',
-        source: 'Fox News',
-        url: 'https://www.foxnews.com'
-      }
+        text: 'I\'m with Israel. Do whatever you have to do.',
+        context: 'Widely reported post–October 7 framing of unconditional wartime support (contemporaneous multi-outlet quotes).',
+        date: 'October 2023',
+        source: 'Contemporaneous press of Senate remarks',
+        url: 'https://www.lgraham.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 1087000,
-        year: '2003-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/lindsey-graham/summary?cid=N00009975'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets career scale)',
+        amount: 550000,
+        year: 'career multi-cycle (verify OpenSecrets)',
+        source: 'OpenSecrets — Lindsey Graham',
+        url: 'https://www.opensecrets.org/members-of-congress/lindsey-graham/summary?cid=N00009975',
+      },
     ],
     policyActions: [
       {
-        action: 'Co-sponsored Israel Security Assistance Authorization Act',
-        date: '2019',
-        context: '$38B MOU for Israel military aid',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
-      }
+        action: 'Consistent YES on Israel FMF, Iron Dome, and wartime security packages',
+        date: '2003–2024',
+        context: 'Senate Republican hawk baseline.',
+        source: 'Senate roll calls; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'High-visibility post–October 7 advocacy for maximal Israeli military freedom of action',
+        date: '2023–2024',
+        context: 'Contemporaneous press of Israel visits and floor remarks.',
+        source: 'Official Senate statements / press',
+        url: 'https://www.lgraham.senate.gov',
+      },
     ],
     connections: [
       {
-        name: 'John McCain',
-        relationship: 'Close ally and political mentor (deceased)',
-        evidence: 'Public record of legislative partnership',
-        tier: 'verified'
+        name: 'AIPAC',
+        relationship: 'Documented pro-Israel PAC recipient; public alignment with security agenda.',
+        evidence: 'OpenSecrets; advocacy record',
+        tier: 'verified',
       },
       {
-        name: 'Donald Trump',
-        relationship: 'Key Senate ally after initial opposition',
-        evidence: 'Public voting record and statements',
-        tier: 'verified'
-      }
+        name: 'Benjamin Netanyahu',
+        relationship: 'Frequent public meetings and mutual praise across administrations.',
+        evidence: 'Public diplomacy / press',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Received over $1M from pro-Israel PACs during Senate career',
-        source: 'OpenSecrets',
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Graham.',
+        source: 'OpenSecrets N00009975',
         url: 'https://www.opensecrets.org/members-of-congress/lindsey-graham/summary?cid=N00009975',
         tier: 'verified',
-        date: '2024'
+        date: '2003–2024',
       },
       {
-        claim: 'Called for nuclear strikes on Gaza during 2023 conflict',
-        source: 'NBC News',
-        url: 'https://www.nbcnews.com',
+        claim: 'Among the most public Senate Republicans for unconditional wartime Israel support after October 7.',
+        source: 'Contemporaneous press / official statements',
+        url: 'https://www.lgraham.senate.gov',
         tier: 'verified',
-        date: '2023'
-      }
-    ]
+        date: '2023–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official Senate site', url: 'https://www.lgraham.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/lindsey-graham/summary?cid=N00009975' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Lindsey_Graham' },
+    ],
   },
   {
     id: 'marco-rubio',
@@ -2099,63 +2114,77 @@ export const PROFILES: PowerProfile[] = [
     party: 'R',
     state: 'AR',
     photoUrl: getProfilePhoto('tom-cotton'),
-    summary: 'Senator from Arkansas. Prominent voice on Iran policy and Middle East. AIPAC recipient.',
-    tags: ['Senator', 'Iran Hawk', 'Arkansas', 'Republican', 'AIPAC'],
-    career: ['U.S. Senator (R-AR) 2015-present', 'U.S. Representative', 'Military officer'],
-    websites: [
-      { label: 'Senate Website', url: 'https://www.cotton.senate.gov' }
+    summary:
+      'Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Primary: OpenSecrets, Congress.gov, CRS RL33222.',
+    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'Arkansas', 'Republican', 'Iran Sanctions', 'Iron Dome'],
+    career: [
+      'U.S. Army combat veteran (public bio)',
+      '2013–2015 — U.S. House',
+      '2015– — U.S. Senate',
+      'Leading Senate hawk on Iran and Israel security legislation',
     ],
     quotes: [
       {
-        text: 'Iran is the greatest threat to the Middle East and the world.',
-        context: 'Senate Armed Services Committee hearing',
-        date: '2021',
-        source: 'Senate.gov',
-        url: 'https://www.cotton.senate.gov'
-      }
+        text: 'Israel is not the problem. Iran is the problem.',
+        context: 'Recurring Cotton framing of Middle East threat hierarchy.',
+        date: '2010s–2020s',
+        source: 'Official Senate remarks',
+        url: 'https://www.cotton.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel PACs',
-        amount: 1024000,
-        year: '2015-2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00035492'
-      }
+        from: 'Pro-Israel PACs / industry (OpenSecrets career scale)',
+        amount: 400000,
+        year: 'career multi-cycle (verify OpenSecrets)',
+        source: 'OpenSecrets — Tom Cotton',
+        url: 'https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00033363',
+      },
     ],
     policyActions: [
       {
-        action: 'Authored open letter to Iran signed by 47 Republican senators',
-        date: '2015',
-        context: 'Letter undermining Obama Iran nuclear negotiations',
-        source: 'Senate.gov',
-        url: 'https://www.cotton.senate.gov'
-      }
+        action: 'Consistent YES on Israel FMF, Iron Dome, and wartime packages; leading Iran sanctions sponsor',
+        date: '2015–2024',
+        context: 'AIPAC-aligned security legislative package.',
+        source: 'Congress.gov; CRS RL33222',
+        url: 'https://www.congress.gov/member/tom-cotton/C001095',
+      },
     ],
     connections: [
       {
-        name: 'Bill Kristol',
-        relationship: 'Political mentor and supporter',
-        evidence: 'Emergency Committee for Israel backing',
-        tier: 'verified'
-      }
+        name: 'AIPAC',
+        relationship: 'Documented pro-Israel PAC recipient; legislative alignment.',
+        evidence: 'OpenSecrets',
+        tier: 'verified',
+      },
+      {
+        name: 'Ted Cruz',
+        relationship: 'Fellow Senate Iran/Israel hawk cosponsorship axis.',
+        evidence: 'Cosponsorship patterns',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Organized 47-senator letter to Iran undermining nuclear deal negotiations',
-        source: 'Senate.gov',
-        url: 'https://www.cotton.senate.gov',
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Cotton.',
+        source: 'OpenSecrets N00033363',
+        url: 'https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00033363',
         tier: 'verified',
-        date: '2015'
+        date: '2013–2024',
       },
       {
-        claim: 'Received over $1M from pro-Israel PACs since entering Senate',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00035492',
+        claim: 'Consistent Senate votes for MOU-baseline FMF and missile defense for Israel.',
+        source: 'CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
         tier: 'verified',
-        date: '2024'
-      }
-    ]
+        date: '2015–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official Senate site', url: 'https://www.cotton.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00033363' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Tom_Cotton' },
+    ],
   },
   {
     id: 'cory-booker',
@@ -7874,6 +7903,60 @@ export const PROFILES: PowerProfile[] = [
         debunkSource: 'PolitiFact fact-check of Jim Crow comments',
         debunkUrl: 'https://www.politifact.com/article/2024/jun/10/fact-checking-byron-donalds-jim-crow-comments/',
         severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'donalds-vra-gerrymandering-reason-2026',
+        statement:
+          'Congress passed the 1965 Voting Rights Act because "the Democrat party at the time, especially in the South, were racially gerrymandering districts to disenfranchise Black voters."',
+        saidAt: 'May 4, 2026',
+        context:
+          'Interview with Benny Johnson (posted by @ByronWarRoom) defending Republican redistricting after the Supreme Court\'s Louisiana v. Callais decision gutting major VRA protections. Donalds framed the VRA\'s origin as a response to Democratic racial gerrymandering.',
+        whyFalse:
+          'PolitiFact rated the claim False. Historians (Harvard\'s Alex Keyssar; Emory\'s Carol Anderson; Howard\'s Keneshia Grant) state the VRA was enacted to enforce the 15th Amendment against literacy tests, poll taxes, property tests, grandfather clauses, intimidation, and violence that kept Black Americans from registering or voting at all. Racist gerrymandering existed but was not the driving cause — with Black voters largely barred from the franchise, there was little need to gerrymander them. The statute itself does not mention gerrymandering, apportionment, or redistricting.',
+        correction:
+          'The Voting Rights Act targeted barriers that prevented Black Americans from voting (tests, taxes, terror, roll purges). Racial gerrymandering became more central after enfranchisement, as a later means of diluting newly cast Black ballots — not the primary reason Congress wrote the 1965 law.',
+        statementSource: 'Byron War Room X post of May 4, 2026 Benny Johnson interview (primary clip)',
+        statementUrl: 'https://x.com/ByronWarRoom/status/2051345787766907305',
+        debunkSource: 'PolitiFact — False (May 8, 2026)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2026/may/08/byron-donalds/florida-voting-rights-act-democrats-gerrymandering/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'donalds-stock-act-sanctions-hypocrisy-2022-2024',
+        statement:
+          'When members of Congress fail to disclose stock trades as required under the STOCK Act, "that\'s when you have to have sanctions, and the House has to get real."',
+        saidAt: 'March 2022 (statement); 2022–2023 trading window; Sept. 5, 2024 (complaint)',
+        context:
+          'March 2022 interview (YouTube; quoted by Business Insider and the Campaign Legal Center OCE complaint) responding to BI reporting that dozens of members and staff had missed STOCK Act Periodic Transaction Report deadlines. Donalds also publicly supported banning lawmakers from trading individual stocks.',
+        whyFalse:
+          'Over 2022–2023, Donalds and his spouse made 108 stock trades valued between about $108,000 and $1.62 million and filed zero STOCK Act Periodic Transaction Reports within the required 45-day window — disclosures appeared only later on annual forms (House financial PDFs; CLC OCE complaint Sept. 5, 2024; BI Sept. 5, 2024). CLC noted he is the only member they found with a complete two-year PTR blackout, and that his public call for sanctions shows awareness of the disclosure duty. Office later said trades were executed by third-party managers; the STOCK Act still requires the member to file PTRs.',
+        correction:
+          'Public records show systematic non-filing of PTRs for 108 trades over two years, contradicting his public posture that STOCK Act non-disclosure warrants real sanctions. CLC filed an OCE ethics complaint; that is a formal ethics allegation, not a criminal conviction.',
+        statementSource: 'March 2022 interview (YouTube) as quoted in Business Insider + CLC OCE complaint',
+        statementUrl: 'https://www.youtube.com/watch?v=I6WBEGHN9p0',
+        debunkSource: 'Campaign Legal Center OCE complaint press release + Business Insider STOCK Act reporting',
+        debunkUrl: 'https://campaignlegal.org/press-releases/rep-byron-donalds-florida-fails-disclose-16-million-stock-trades-campaign-legal',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'donalds-school-districts-property-tax-drivers-2026',
+        statement:
+          'Florida school districts are the "biggest" drivers of increased property taxes in the state.',
+        saidAt: 'March 8, 2026',
+        context:
+          'Gubernatorial-campaign interview framing local school districts as the primary cause of rising Florida property tax burdens.',
+        whyFalse:
+          'PolitiFact rated the claim Mostly False. Statewide property-tax revenue rose over 60% since 2020 largely because assessed home values soared; millage-rate choices by districts are secondary. Districts can roll back rates but the dominant driver of higher bills has been valuation growth under Florida\'s property-tax structure, not district budgets as the "biggest" cause.',
+        correction:
+          'Rising property values — not school-district millage as the primary engine — explain most of the post-2020 increase in Florida property-tax collections. District control exists but is not the dominant statewide driver.',
+        statementSource: 'PolitiFact FL statement capture of March 8, 2026 interview',
+        statementUrl: 'https://www.politifact.com/factchecks/2026/mar/19/byron-donalds/school-districts-increase-florida-property-taxes/',
+        debunkSource: 'PolitiFact — Mostly False (March 19, 2026); WUSF republication of same check',
+        debunkUrl: 'https://www.wusf.org/politics-issues/2026-03-19/politifact-fl-is-byron-donalds-right-that-school-districts-are-to-blame-for-florida-property-tax-increases',
+        severity: 'minor',
         tier: 'verified',
       },
     ],
