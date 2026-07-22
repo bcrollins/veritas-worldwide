@@ -1220,9 +1220,42 @@ export default function IsraelDossierPage() {
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
           Named political and lobbying actors linked to the public funding, weapons, and incident record. Enablement means documented votes, executive transfers, court warrants, or campaign-finance flows — not ethnicity, religion, or ancestry.
         </p>
-        <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint mb-4">
-          {ISRAEL_DOSSIER_ACTORS.length} actors mapped · click a card for funds + incident links
-        </p>
+        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-[0.55rem] font-semibold tracking-wider uppercase text-ink-faint">
+            {ISRAEL_DOSSIER_ACTORS.length} actors mapped · click a card for funds + incident links
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              const escape = (value: string) => `"${value.replace(/"/g, '""')}"`
+              const header = ['profile_id', 'name', 'role', 'category', 'tier', 'money_nodes', 'incident_ids', 'timeline_years', 'funding_labels', 'funding_urls', 'enablement_summary']
+              const rows = filteredActors.map((actor) => [
+                actor.profileId,
+                actor.name,
+                actor.role,
+                actor.category,
+                actor.tier,
+                actor.relatedMoneyNodeIds.join('|'),
+                actor.relatedIncidentIds.join('|'),
+                actor.relatedTimelineYears.join('|'),
+                actor.fundingLinks.map((f) => f.label).join(' | '),
+                actor.fundingLinks.map((f) => f.sourceUrl).join(' | '),
+                actor.enablementSummary,
+              ].map((c) => escape(String(c))))
+              const csv = [header.join(','), ...rows.map((r) => r.join(','))].join('\n')
+              const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
+              const url = URL.createObjectURL(blob)
+              const a = document.createElement('a')
+              a.href = url
+              a.download = `veritas-israel-dossier-actors-${new Date().toISOString().slice(0, 10)}.csv`
+              a.click()
+              URL.revokeObjectURL(url)
+            }}
+            className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+          >
+            Export actors CSV
+          </button>
+        </div>
 
         <label className="mb-4 block">
           <span className="sr-only">Search actors</span>
