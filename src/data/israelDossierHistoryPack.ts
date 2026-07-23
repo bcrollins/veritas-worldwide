@@ -5679,6 +5679,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-hostages-elderly-medical-captivity-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Elderly Hostages Medical Crisis in Captivity Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (elderly-captivity cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Israeli government hostage lists, released-elderly testimony, and multi-source reporting document acute medical crises among elderly Israeli civilian hostages — denied chronic medications, mobility aids, and specialist care. Pattern card for elderly-specific captivity medical harm distinct from aggregate medical-neglect and hostages-children-elderly cards.',
+    evidence:
+      'Israeli government named elderly-hostage lists, multi-source release medical assessments, and multi-outlet coverage establish multi-source elderly medical crisis in captivity. Exact clinical counts evolve; multi-source elderly medical harm in captivity is the claim.',
+    sources: [
+      { label: 'Israeli government hostage public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet elderly hostage medical coverage', url: 'https://apnews.com' },
+      { label: 'ICRC access / medical standards context', url: 'https://www.icrc.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-disability-care-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Disability Care & Assistive Services Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (disability-care cohort)',
+    location: 'Gaza Strip disability service sites and displacement camps',
+    summary:
+      'Humanity & Inclusion, UNICEF, and multi-source reporting document collapse of disability care — destroyed assistive devices, inaccessible shelters, and lost rehab services for civilians including children with disabilities. Pattern card for disability-care system collapse distinct from assistive-devices-destroyed and amputee-rehab cards.',
+    evidence:
+      'HI/UNICEF disability materials and multi-outlet coverage establish multi-source disability-care collapse under war. Exact beneficiary counts evolve; multi-source wartime disability service failure is the claim.',
+    sources: [
+      { label: 'Humanity & Inclusion materials', url: 'https://www.hi.org' },
+      { label: 'UNICEF disability / child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza disability coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-night-raids-children-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Night Raids Affecting Children Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (night-raid cohort)',
+    location: 'West Bank Palestinian homes and refugee camps',
+    summary:
+      'UNICEF, Save the Children, and multi-source reporting document elevated night military raids into Palestinian homes after October 7 — with children present during arrests, property damage, and trauma exposure. Pattern card for night-raid child harm distinct from mass-arrests and children-killed cards.',
+    evidence:
+      'UNICEF child-protection materials, multi-source NGO raid documentation, and multi-outlet coverage establish multi-source night-raid exposure of children. Exact raid counts evolve; multi-source wartime night-raid child trauma pattern is the claim.',
+    sources: [
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Save the Children materials', url: 'https://www.savethechildren.org' },
+      { label: 'Multi-outlet West Bank night raid coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8665,6 +8746,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['waste', 'disease', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-hostages-elderly-medical-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Elderly Hostages Medical Captivity Pattern',
+    description: 'Multi-source documentation of acute medical crises among elderly Israeli civilian hostages in Gaza.',
+    source: 'Israeli government / multi-outlet / ICRC',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-elderly-medical-captivity-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+      'oct7-hostages-children-elderly-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'elderly', 'medical', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-disability-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Disability Care Collapse Pattern',
+    description: 'HI/UNICEF multi-source documentation of disability care and assistive-service collapse under war.',
+    source: 'HI / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-disability-care-collapse-pattern-2023-2025',
+      'gaza-assistive-devices-destroyed-pattern-2023-2025',
+      'gaza-amputee-children-rehab-collapse-pattern-2023-2025',
+    ],
+    tags: ['disability', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-wb-night-raids-children-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Night Raids Affecting Children Pattern',
+    description: 'UNICEF multi-source documentation of elevated night military raids into homes with children present.',
+    source: 'UNICEF / Save the Children / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-night-raids-children-pattern-2023-2025',
+      'west-bank-mass-arrests-2023-2025',
+      'west-bank-children-killed-pattern-2023-2025',
+    ],
+    tags: ['raids', 'children', 'night', 'west-bank'],
+  },
+
+
 
 
 
