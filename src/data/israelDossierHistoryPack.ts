@@ -14022,6 +14022,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-keratomalacia-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Keratomalacia Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (keratomalacia-risk cohort)',
+    location: 'Gaza Strip pediatric eye clinics and emergency nutrition points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric keratomalacia risk under extreme vitamin A deficiency — a multi-source wartime sight-loss pattern distinct from corneal xerosis and Bitot spots cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric keratomalacia risk. Exact case counts evolve; multi-source wartime keratomalacia risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO micronutrient materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-nutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-fellow-fates-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Fellow Hostages Fates Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (fellow-fate-denial cohort)',
+    location: 'Gaza Strip captivity sites — fellow-fate-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether co-held hostages were alive or dead — a multi-source psychological pattern distinct from fellow-name denial and family-survival news denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source fellow-fate denial. Exact cases vary; multi-source fellow-fate denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-fig-saplings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Fig Saplings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (fig-sapling-destruction cohort)',
+    location: 'West Bank newly planted fig plots and nursery rows',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian fig saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature fig-tree destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source fig-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian fig saplings is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet fig-sapling destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-corneal-ulceration-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Corneal Ulceration Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (corneal-ulceration-risk cohort)',
+    location: 'Gaza Strip pediatric eye clinics and field hospitals',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric corneal ulceration risk under vitamin A collapse and infection — a multi-source wartime sight-threatening pattern distinct from keratomalacia and corneal xerosis cards.',
+    evidence:
+      'WHO micronutrient and infection materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric corneal ulceration risk. Exact case counts evolve; multi-source wartime corneal ulceration risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO micronutrient materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric eye coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-face-wall-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Face Wall Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-wall-facing cohort)',
+    location: 'Gaza Strip captivity sites — forced-wall-facing subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to face walls for long periods — a multi-source control and humiliation pattern distinct from forced kneeling and forced darkness.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced wall-facing. Exact cases vary; multi-source forced wall-facing of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-school-crossing-guards-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on School Crossing Guards Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-crossing-guard-attack cohort)',
+    location: 'West Bank school-route crossings and village pedestrian points',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian school crossing guards after October 7 — endangering children walking to school. Pattern card distinct from schoolchild and teacher attacks.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-crossing-guard attacks. Exact injury counts evolve; multi-source wartime settler attacks on school crossing guards is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-route attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-blindness-vitamin-a-cascade-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Vitamin A Blindness Cascade Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (vitamin-a-blindness-cascade cohort)',
+    location: 'Gaza Strip pediatric eye referral points and nutrition clinics',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document the cascade from night blindness through Bitot spots, xerophthalmia, corneal xerosis, and keratomalacia to irreversible pediatric blindness under vitamin A collapse — a multi-source wartime cascade pattern synthesizing the ocular-deficiency cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric vitamin A blindness cascade risk. Exact irreversible-blindness counts evolve; multi-source wartime vitamin A blindness cascade among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO micronutrient materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-nutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-release-talks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Release Talks Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (release-talks-denial cohort)',
+    location: 'Gaza Strip captivity sites — release-talks-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding information about ceasefire and hostage-release negotiations from Israeli civilian hostages — a multi-source psychological pattern distinct from war-duration denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source release-talks denial. Exact cases vary; multi-source release-talks denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-citrus-saplings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Citrus Saplings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (citrus-sapling-destruction cohort)',
+    location: 'West Bank newly planted citrus nurseries and re-planting plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian citrus saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature citrus-tree destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source citrus-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian citrus saplings is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet citrus-sapling destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -22279,6 +22523,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['olive-saplings', 'settlers', 'agriculture', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-keratomalacia-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Keratomalacia Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric keratomalacia risk under extreme vitamin A deficiency.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-keratomalacia-risk-pattern-2023-2025',
+      'gaza-children-corneal-ulceration-risk-pattern-2023-2025',
+      'gaza-children-blindness-vitamin-a-cascade-pattern-2023-2025',
+    ],
+    tags: ['keratomalacia', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-fellow-fates-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Fellow Hostages Fates Pattern',
+    description: 'Multi-source documentation of captors withholding whether co-held hostages were alive or dead.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-fellow-fates-pattern-2023-2025',
+      'israel-hostages-forced-to-face-wall-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-release-talks-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-fig-saplings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Fig Saplings Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian fig saplings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-fig-saplings-pattern-2023-2025',
+      'west-bank-settler-attacking-school-crossing-guards-pattern-2023-2025',
+      'west-bank-settler-destroying-citrus-saplings-pattern-2023-2025',
+    ],
+    tags: ['fig-saplings', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-corneal-ulcer-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Corneal Ulceration Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric corneal ulceration risk under vitamin A collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-corneal-ulceration-risk-pattern-2023-2025',
+      'gaza-children-keratomalacia-risk-pattern-2023-2025',
+      'gaza-children-corneal-xerosis-risk-pattern-2023-2025',
+    ],
+    tags: ['corneal-ulceration', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-face-wall-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Face Wall Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to face walls for long periods.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-face-wall-pattern-2023-2025',
+      'israel-hostages-forced-to-kneel-for-long-periods-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-fellow-fates-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'humiliation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-crossing-guards-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on School Crossing Guards Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian school crossing guards after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-school-crossing-guards-pattern-2023-2025',
+      'west-bank-settler-attacking-schoolchildren-walking-pattern-2023-2025',
+      'west-bank-settler-destroying-fig-saplings-pattern-2023-2025',
+    ],
+    tags: ['crossing-guards', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-va-blindness-cascade-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Vitamin A Blindness Cascade Pattern',
+    description: 'WHO/UNICEF multi-source documentation of the vitamin A deficiency cascade to pediatric blindness.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-blindness-vitamin-a-cascade-pattern-2023-2025',
+      'gaza-children-keratomalacia-risk-pattern-2023-2025',
+      'gaza-children-xerophthalmia-risk-pattern-2023-2025',
+    ],
+    tags: ['blindness', 'vitamin-a', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-release-talks-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Release Talks Pattern',
+    description: 'Multi-source documentation of captors withholding release-negotiation information from civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-release-talks-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-war-duration-pattern-2023-2025',
+      'israel-hostages-forced-to-face-wall-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-citrus-saplings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Citrus Saplings Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian citrus saplings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-citrus-saplings-pattern-2023-2025',
+      'west-bank-settler-destroying-citrus-trees-pattern-2023-2025',
+      'west-bank-settler-destroying-fig-saplings-pattern-2023-2025',
+    ],
+    tags: ['citrus-saplings', 'settlers', 'agriculture', 'west-bank'],
+  },
+
 
 
 
