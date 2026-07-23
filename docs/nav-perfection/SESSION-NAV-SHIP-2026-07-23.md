@@ -79,7 +79,7 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 
 
 ## Recovery suite scale
-- `verify-nav-recovery-surfaces`: **53 surface needles** + family mounts + Hick/soft-404 exactness
+- `verify-nav-recovery-surfaces`: **54 surface needles** + family mounts + Hick/soft-404 exactness
 - Live continuously green under densify tip ≥1500 incidents
 
 | `75ff335` | recovery suite 40 needles (not-found-page) |
@@ -98,11 +98,13 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `4de6574` | sticky dismiss key |
 
 | `b7a2376` | trackSupportClick on membership bar |
-| recovery | **53 surface needles** milestone |
+| recovery | **54 surface needles** milestone |
 
 | `7567a6b` | Join CTA label |
 
 | `3e75719` | Dismiss aria-label |
-| recovery | **53 surface needles** |
+| recovery | **54 surface needles** |
 
 | `7600a35` | mobile support copy |
+
+| `8a22f6d` | animate-slide-up entrance |
