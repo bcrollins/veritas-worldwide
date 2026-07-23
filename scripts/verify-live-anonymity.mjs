@@ -63,7 +63,7 @@ if (!corpusRes.ok) {
   if (corpus?.meta?.publisher !== 'Veritas Worldwide') {
     failures.push(`corpus publisher must be Veritas Worldwide, got ${corpus?.meta?.publisher}`)
   }
-  if (typeof corpus?.claimCount === 'number' && corpus.claimCount < 190) {
+  if (typeof corpus?.claimCount === 'number' && corpus.claimCount < 198) {
     failures.push(`corpus claimCount unexpectedly low: ${corpus.claimCount}`)
   }
   const blob = JSON.stringify(corpus)

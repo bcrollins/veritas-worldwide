@@ -6,18 +6,25 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:10:48.596Z",
-  "claimCount": 191,
+  "generatedAt": "2026-07-23T09:14:32.258Z",
+  "claimCount": 200,
   "tierHistogram": {
-    "verified": 66,
-    "well_attested": 72,
+    "verified": 69,
+    "well_attested": 76,
     "contested": 26,
-    "interpretive": 14,
+    "interpretive": 15,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 8
+    "circumstantial": 9
   },
   "claims": [
+    {
+      "id": "ane-amarna-letters",
+      "claim": "The Amarna letters (14th c. BCE) document Late Bronze Canaanite-Egyptian diplomacy and conflict language used in comparative ANE historical method.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave11.ts"
+    },
     {
       "id": "ane-babylonian-chronicles",
       "claim": "Babylonian Chronicles document Nebuchadnezzar’s campaigns against Jerusalem, providing independent chronological control for the late Iron Age Judah narrative.",
@@ -278,6 +285,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "arch-tiberias",
+      "claim": "Tiberias, founded by Antipas on the Sea of Galilee, is archaeologically and literarily documented as a Herodian urban center.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
       "id": "arch-titus",
       "claim": "1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative.",
       "tier": "well_attested",
@@ -362,6 +376,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "cosmo-inflation-status",
+      "claim": "Cosmic inflation is the leading early-universe paradigm for flatness and horizon problems; direct detection of primordial B-mode polarization remains an active observational goal.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
       "id": "cosmo-matter-energy",
       "claim": "Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe.",
       "tier": "well_attested",
@@ -416,6 +437,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ec-barnabas",
+      "claim": "The Epistle of Barnabas (late 1st / early 2nd c.) allegorizes Hebrew Bible law and shows early Christian supersessionist interpretation.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
       "id": "ec-didache",
@@ -584,6 +612,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-disciples-twelve",
+      "claim": "A circle of close followers including a group remembered as “the Twelve” is multiply attested; exact membership lists vary slightly across Gospels.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
       "id": "hj-empty-tomb",
@@ -796,6 +831,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "mod-criterion-embarrassment-limits",
+      "claim": "The criterion of embarrassment is heuristic and circular if “embarrassing” is defined by later Christian theology rather than first-century Jewish context.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
       "id": "mod-critical-editions",
       "claim": "NA28/UBS5 (and ongoing ECM/INTF work) are the standard working critical texts of the Greek NT for academic use.",
       "tier": "verified",
@@ -992,6 +1034,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nc-suetonius-chrestus",
+      "claim": "Suetonius (Claudius 25) mentions disturbances in Rome under Claudius involving “Chrestus” — identification with Christ/Christians is possible but contested.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
       "id": "nc-tacitus",
       "claim": "Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea.",
       "tier": "well_attested",
@@ -1088,6 +1137,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-harmonie-readings",
+      "claim": "Harmonization among Synoptic parallels is a recognized scribal tendency that can produce secondary agreements in later manuscripts.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
       "id": "nt-homoeoteleuton",
@@ -1256,6 +1312,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "st-herod-antipas",
+      "claim": "Herod Antipas ruled Galilee and Perea as tetrarch (4 BCE–39 CE); Josephus and coins document his rule and cities (Tiberias; Sepphoris reconstruction).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
       "id": "st-herod-temple",

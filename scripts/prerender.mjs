@@ -1023,7 +1023,7 @@ function renderLlmsTxt(topics) {
     '- [Privacy Policy](https://veritasworldwide.com/privacy): Minimal analytics, no ads, no data sales — how reader data is handled.',
     '- [Terms of Use](https://veritasworldwide.com/terms): CC BY-NC-SA 4.0 open-access terms for The Record and Veritas assets.',
     '- [Membership](https://veritasworldwide.com/membership): Fund independent primary-source journalism without paywalling the core archive.',
-    '- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (190+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.',
+    '- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (200+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.',
     '- [Record of Jesus Christ corpus (JSON)](https://veritasworldwide.com/record-of-jesus-christ/corpus.json): Machine-readable claim index with seven evidence tiers for retrieval systems.',
     '- [Record of Jesus Christ claim index (PDF)](https://veritasworldwide.com/record-of-jesus-christ/record-of-jesus-christ.pdf): Portable tier-labeled claim list for offline research.',
     '- [The Bible: History & Factual Record](https://veritasworldwide.com/bible): Companion manuscript and archaeology evidence surface.',
@@ -2464,6 +2464,26 @@ const staticPages = [
     sourceFile: 'src/pages/ProfilesIndexPage.tsx',
   },
   {
+    route: '/comprehensive-profile',
+    title: 'Comprehensive Online Profile ($499) | Veritas Worldwide',
+    heading: 'Comprehensive Online Profile',
+    description:
+      'Commission a $499 comprehensive online profile from Veritas researchers: authenticated public trails, device/account links only when verified, full methodology appendix.',
+    body: [
+      'Fixed-price OSINT deliverable: identity resolution, public web and records trails, and device/account identifiers only when independently authenticated to the subject.',
+      'Every report includes a methodology appendix so clients can re-verify sources. Lawful-purpose attestation required. Separate from free Power Profiles.',
+    ],
+    sourceFile: 'src/pages/ComprehensiveProfilePage.tsx',
+  },
+  {
+    route: '/comprehensive-profile/success',
+    title: 'Profile Order Received | Veritas Worldwide',
+    heading: 'Order received',
+    description: 'Your Comprehensive Online Profile order was received.',
+    body: ['Post-checkout confirmation for the $499 Comprehensive Online Profile research service.'],
+    sourceFile: 'src/pages/ComprehensiveProfileSuccessPage.tsx',
+  },
+  {
     route: '/bible',
     title: 'The Bible: History & Factual Record | Veritas Worldwide',
     heading: 'The Bible: History & Factual Record',
@@ -2739,7 +2759,7 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
             name: 'How many claims are in the corpus and where can researchers export them?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'The live index contains 190+ tier-labeled claims. Export JSON/CSV on the page, fetch the machine corpus at /record-of-jesus-christ/corpus.json, or download the portable PDF claim index at /record-of-jesus-christ/record-of-jesus-christ.pdf.',
+              text: 'The live index contains 200+ tier-labeled claims. Export JSON/CSV on the page, fetch the machine corpus at /record-of-jesus-christ/corpus.json, or download the portable PDF claim index at /record-of-jesus-christ/record-of-jesus-christ.pdf.',
             },
           },
           {
@@ -2774,7 +2794,7 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
         '@type': 'Dataset',
         name: 'Record of Jesus Christ — claim corpus',
         description:
-          'Machine-readable index of 190+ tier-labeled evidentiary claims on historical Jesus, biblical manuscripts, Levantine archaeology, and related scientific context. Publisher: Veritas Worldwide only.',
+          'Machine-readable index of 200+ tier-labeled evidentiary claims on historical Jesus, biblical manuscripts, Levantine archaeology, and related scientific context. Publisher: Veritas Worldwide only.',
         url,
         identifier: `${SITE_URL}/record-of-jesus-christ/corpus.json`,
         keywords: [
@@ -3004,7 +3024,7 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
             name: 'Where is the machine-readable Record of Jesus Christ claim corpus?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'At /record-of-jesus-christ/corpus.json (190+ tier-labeled claims), with on-page JSON/CSV export and a portable PDF index. Publisher: Veritas Worldwide only.',
+              text: 'At /record-of-jesus-christ/corpus.json (200+ tier-labeled claims), with on-page JSON/CSV export and a portable PDF index. Publisher: Veritas Worldwide only.',
             },
           },
         ],
