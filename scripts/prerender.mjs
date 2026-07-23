@@ -258,7 +258,13 @@ function buildDocument(baseHtml, meta, body) {
   html = setMetaTag(html, 'name', 'twitter:title', meta.title)
   html = setMetaTag(html, 'name', 'twitter:description', meta.description)
   html = setMetaTag(html, 'name', 'twitter:image', image)
-  html = setMetaTag(html, 'name', 'robots', meta.robots || 'index,follow')
+  // Discover-friendly robots (Search Central max-image-preview) unless page opts out
+  html = setMetaTag(
+    html,
+    'name',
+    'robots',
+    meta.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  )
   html = setLinkTag(html, 'canonical', meta.url)
 
   if (meta.keywords?.length) {
@@ -2834,7 +2840,9 @@ for (const page of staticPages) {
     type: page.type || 'website',
     image: DEFAULT_OG_IMAGE,
     modifiedTime,
-    robots: page.noindex ? 'noindex,nofollow' : 'index,follow',
+    robots: page.noindex
+      ? 'noindex, nofollow'
+      : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     jsonLd: buildStaticPageJsonLd(page, route, modifiedTime),
   }
 
