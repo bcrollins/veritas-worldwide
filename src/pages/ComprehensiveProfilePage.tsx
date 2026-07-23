@@ -28,6 +28,7 @@ import { useI18n } from '../lib/i18n'
 const OSINT_HUBS: readonly RelatedHub[] = [
   { to: '/profiles', label: 'Profiles' },
   { to: '/methodology', label: 'Methodology' },
+  { to: '/israel-dossier', label: 'Dossiers' },
   { to: '/search', label: 'Search' },
   { to: '/read', label: 'Read' },
 ]

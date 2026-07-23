@@ -16,6 +16,8 @@ import {
 const A11Y_HUBS: readonly RelatedHub[] = [
   { to: '/read', label: 'Read' },
   { to: '/about', label: 'About' },
+  { to: '/membership', label: 'Membership' },
+  { to: '/profiles', label: 'Profiles' },
   { to: '/search', label: 'Search' },
 ]
 
