@@ -5517,6 +5517,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-humanitarian-zones-false-safety-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'mk84-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Designated Humanitarian Zones False-Safety Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (safe-zone cohort)',
+    location: 'Gaza Strip designated “humanitarian” / safe zones (al-Mawasi and successors)',
+    summary:
+      'OCHA, OHCHR, and multi-source reporting document repeated civilian deaths and tent-camp strikes inside or near areas designated as humanitarian or safer zones after forced displacement orders — a false-safety harm pattern distinct from the single al-Mawasi incident card and the winter-tent flooding card.',
+    evidence:
+      'OCHA protection updates, multi-source tent-camp strike reporting, and multi-outlet coverage of deaths in designated zones establish multi-source lethal harm inside supposed safer areas. Exact zone maps and death counts evolve; multi-source civilian deaths in designated humanitarian zones is the claim.',
+    sources: [
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'OHCHR statements', url: 'https://www.ohchr.org' },
+      { label: 'Multi-outlet safe-zone strike coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-starvation-captivity-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Starvation & Malnutrition in Captivity Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (captivity-starvation cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony, Israeli medical authorities, and multi-source reporting document severe malnutrition and starvation conditions among Israeli civilian hostages in Gaza captivity — a protected-person treatment crime pattern distinct from medical-neglect and tunnel-captivity cards.',
+    evidence:
+      'Multi-source released-hostage medical assessments, Israeli government health materials, and multi-outlet coverage establish multi-source malnutrition in captivity. Exact clinical severity varies by case; multi-source starvation/malnutrition of civilian hostages is the claim.',
+    sources: [
+      { label: 'Israeli government hostage / health materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage malnutrition coverage', url: 'https://apnews.com' },
+      { label: 'ICRC detention standards context', url: 'https://www.icrc.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-school-raids-closure-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank School Raids & Education Disruption Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (WB-school cohort)',
+    location: 'West Bank Palestinian schools and UNRWA classrooms',
+    summary:
+      'UNICEF, OCHA, and multi-source reporting document elevated Israeli military raids on or near schools, school closures, and movement barriers blocking children\'s education access in the West Bank after October 7 — a child-specific harm pattern distinct from home-demolitions and children-killed cards.',
+    evidence:
+      'UNICEF education-in-emergencies materials, OCHA protection notes, and multi-outlet school-raid coverage establish multi-source education disruption for West Bank children. Exact school-day losses evolve; multi-source wartime school disruption is the claim.',
+    sources: [
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet West Bank school raid coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8401,6 +8482,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['hostages', 'trauma', 'civilians', 'children', 'israel'],
   },
+
+  {
+    id: 'tl-gaza-false-safety-zones-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Designated Humanitarian Zones False-Safety Pattern',
+    description: 'OCHA/OHCHR multi-source documentation of civilian deaths inside or near designated safer/humanitarian zones.',
+    source: 'OCHA / OHCHR / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-humanitarian-zones-false-safety-pattern-2023-2025',
+      'al-mawasi-safe-zone',
+      'gaza-evacuation-orders-pattern-2023-2024',
+    ],
+    tags: ['safe-zones', 'displacement', 'civilians', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-starvation-captivity-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Starvation in Captivity Pattern',
+    description: 'Multi-source documentation of severe malnutrition among Israeli civilian hostages in Gaza captivity.',
+    source: 'Israeli government / multi-outlet / ICRC',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-starvation-captivity-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'starvation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-school-raids-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank School Raids & Education Disruption Pattern',
+    description: 'UNICEF/OCHA multi-source documentation of elevated school raids and education disruption for West Bank children.',
+    source: 'UNICEF / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-school-raids-closure-pattern-2023-2025',
+      'west-bank-children-killed-pattern-2023-2025',
+      'west-bank-checkpoint-movement-restriction-pattern-2023-2025',
+    ],
+    tags: ['schools', 'children', 'education', 'west-bank'],
+  },
+
+
 
 
 
