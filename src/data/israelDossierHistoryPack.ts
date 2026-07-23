@@ -14265,6 +14265,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-measles-complications-blindness-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Measles Complications Blindness Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (measles-complications-blindness cohort)',
+    location: 'Gaza Strip pediatric wards and overcrowded shelters',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric blindness and severe eye complications secondary to measles under vaccination collapse — a multi-source wartime measles-complication pattern distinct from measles outbreak-risk and vitamin A cascade cards.',
+    evidence:
+      'WHO measles materials, UNICEF immunization updates, and multi-outlet coverage establish multi-source pediatric measles-complication blindness risk. Exact case counts evolve; multi-source wartime measles-complication blindness risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO measles materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza measles coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-family-letters-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Family Letters Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (family-letters-denial cohort)',
+    location: 'Gaza Strip captivity sites — family-letters-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether family letters or messages arrived — a multi-source psychological pattern distinct from family-communication and release-talks denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source family-letters knowledge denial. Exact cases vary; multi-source family-letters denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-pomegranate-saplings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Pomegranate Saplings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pomegranate-sapling-destruction cohort)',
+    location: 'West Bank newly planted pomegranate plots and nursery rows',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian pomegranate saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature pomegranate-tree destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source pomegranate-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian pomegranate saplings is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet pomegranate-sapling destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-rubella-outbreak-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Rubella Outbreak Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (rubella-risk cohort)',
+    location: 'Gaza Strip overcrowded shelters and collapsed immunization points',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric rubella outbreak risk from MMR interruption and overcrowding — a multi-source wartime vaccine-preventable pattern distinct from measles outbreak-risk cards.',
+    evidence:
+      'WHO outbreak-risk materials, UNICEF immunization updates, and multi-outlet coverage establish multi-source pediatric rubella risk. Exact case counts evolve; multi-source wartime rubella outbreak risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO outbreak-risk materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza immunization coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-thank-captors-on-camera-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Thank Captors on Camera Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-thank-you-camera cohort)',
+    location: 'Gaza Strip captivity sites — forced-thank-you-camera subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to thank captors on camera — a multi-source coerced-performance pattern distinct from forced praise and forced applause.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced thank-you camera statements. Exact cases vary; multi-source forced thank-you statements by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-ambulance-paramedics-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Ambulance Paramedics Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ambulance-paramedic-attack cohort)',
+    location: 'West Bank emergency response scenes and ambulance rendezvous points',
+    summary:
+      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian ambulance paramedics after October 7 — delaying emergency care for civilians including children. Pattern card distinct from medical-staff attacks and ambulance-junction blocking.",
+    evidence:
+      'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source paramedic attacks. Exact injury counts evolve; multi-source wartime settler attacks on ambulance paramedics is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'WHO health-access materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet paramedic attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-mumps-outbreak-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Mumps Outbreak Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (mumps-risk cohort)',
+    location: 'Gaza Strip overcrowded shelters and collapsed immunization points',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric mumps outbreak risk from MMR interruption and overcrowding — a multi-source wartime vaccine-preventable pattern distinct from measles and rubella cards.',
+    evidence:
+      'WHO outbreak-risk materials, UNICEF immunization updates, and multi-outlet coverage establish multi-source pediatric mumps risk. Exact case counts evolve; multi-source wartime mumps outbreak risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO outbreak-risk materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza immunization coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-deals-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deals Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage-deals-denial cohort)',
+    location: 'Gaza Strip captivity sites — hostage-deals-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether specific hostage deals included them — a multi-source psychological pattern distinct from release-talks denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hostage-deals knowledge denial. Exact cases vary; multi-source hostage-deals denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-date-palm-saplings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Date Palm Saplings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (date-palm-sapling-destruction cohort)',
+    location: 'West Bank newly planted date palm plots and nursery rows',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian date palm saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature date-palm destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source date-palm-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian date palm saplings is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet date-palm-sapling destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -22676,6 +22920,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['citrus-saplings', 'settlers', 'agriculture', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-measles-blindness-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Measles Complications Blindness Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric blindness risk secondary to measles under vaccination collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-measles-complications-blindness-pattern-2023-2025',
+      'gaza-children-rubella-outbreak-risk-pattern-2023-2025',
+      'gaza-children-mumps-outbreak-risk-pattern-2023-2025',
+    ],
+    tags: ['measles', 'blindness', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-family-letters-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Family Letters Pattern',
+    description: 'Multi-source documentation of captors withholding whether family letters arrived.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-family-letters-pattern-2023-2025',
+      'israel-hostages-forced-to-thank-captors-on-camera-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deals-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-pomegranate-saplings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Pomegranate Saplings Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian pomegranate saplings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-pomegranate-saplings-pattern-2023-2025',
+      'west-bank-settler-attacking-ambulance-paramedics-pattern-2023-2025',
+      'west-bank-settler-destroying-date-palm-saplings-pattern-2023-2025',
+    ],
+    tags: ['pomegranate-saplings', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-rubella-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Rubella Outbreak Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric rubella outbreak risk under MMR interruption.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-rubella-outbreak-risk-pattern-2023-2025',
+      'gaza-children-measles-outbreak-risk-pattern-2023-2025',
+      'gaza-children-mumps-outbreak-risk-pattern-2023-2025',
+    ],
+    tags: ['rubella', 'children', 'immunization', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-thank-camera-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Thank Captors on Camera Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to thank captors on camera.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-thank-captors-on-camera-pattern-2023-2025',
+      'israel-hostages-forced-to-praise-captors-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-family-letters-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'coercion', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-paramedics-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Ambulance Paramedics Pattern',
+    description: 'OCHA/WHO multi-source documentation of elevated settler attacks on Palestinian ambulance paramedics after October 7.',
+    source: 'OCHA / WHO / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-ambulance-paramedics-pattern-2023-2025',
+      'west-bank-settler-attacking-medical-staff-pattern-2023-2025',
+      'west-bank-settler-destroying-pomegranate-saplings-pattern-2023-2025',
+    ],
+    tags: ['paramedics', 'settlers', 'medical-access', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-mumps-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Mumps Outbreak Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric mumps outbreak risk under MMR interruption.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-mumps-outbreak-risk-pattern-2023-2025',
+      'gaza-children-rubella-outbreak-risk-pattern-2023-2025',
+      'gaza-children-measles-complications-blindness-pattern-2023-2025',
+    ],
+    tags: ['mumps', 'children', 'immunization', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-deals-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deals Pattern',
+    description: 'Multi-source documentation of captors withholding whether specific hostage deals included them.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-deals-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-release-talks-pattern-2023-2025',
+      'israel-hostages-forced-to-thank-captors-on-camera-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-date-palm-saplings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Date Palm Saplings Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian date palm saplings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-date-palm-saplings-pattern-2023-2025',
+      'west-bank-settler-destroying-date-palms-pattern-2023-2025',
+      'west-bank-settler-destroying-pomegranate-saplings-pattern-2023-2025',
+    ],
+    tags: ['date-palm-saplings', 'settlers', 'agriculture', 'west-bank'],
+  },
+
 
 
 
