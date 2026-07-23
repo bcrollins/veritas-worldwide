@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:43:28.557Z",
-  "claimCount": 525,
+  "generatedAt": "2026-07-23T10:47:55.557Z",
+  "claimCount": 534,
   "tierHistogram": {
-    "well_attested": 211,
-    "verified": 185,
-    "contested": 46,
-    "interpretive": 55,
+    "well_attested": 213,
+    "verified": 190,
+    "contested": 47,
+    "interpretive": 56,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 23
@@ -397,6 +397,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "ane-yehoash-tablet-forgery-caution",
+      "claim": "The so-called Jehoash Inscription tablet is widely regarded as a modern forgery by many epigraphers; it must not be used as VERIFIED royal Judean building evidence.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave48.ts"
+    },
+    {
       "id": "arch-babatha-archive",
       "claim": "The Babatha archive (Nahal Hever) is a major Judean Desert papyrus find documenting a Jewish woman’s legal and economic life under Roman rule in the early 2nd century CE.",
       "tier": "verified",
@@ -577,6 +584,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
+      "id": "arch-jerusalem-burnt-house",
+      "claim": "The Burnt House and related Upper City destruction layers preserve evidence of the 70 CE Roman destruction of Jerusalem elite neighborhoods.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
       "id": "arch-jerusalem-city-of-david",
@@ -983,6 +997,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "cosmo-flatness-omega-k",
+      "claim": "CMB data constrain spatial curvature Ω_k to be consistent with flat geometry at high precision within standard ΛCDM analyses.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
       "id": "cosmo-helium-mass-fraction",
@@ -1538,6 +1559,13 @@
       "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
+      "id": "ec-shepherd-similitudes",
+      "claim": "The Shepherd of Hermas Similitudes develop elaborate allegorical visions of the church as a tower — major 2nd-century Roman Christian apocalyptic-ethical literature.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave48.ts"
+    },
+    {
       "id": "ec-tatian-diatessaron",
       "claim": "Tatian’s Diatessaron (late 2nd c.) is a gospel harmony that dominated Syriac Christian reading for centuries — major reception evidence for four-Gospel prestige and regional text forms.",
       "tier": "well_attested",
@@ -1760,6 +1788,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
+      "id": "hj-galilee-village-itinerancy",
+      "claim": "Jesus’ activity is widely reconstructed as itinerant village-to-village ministry in Galilee rather than a fixed urban base, matching agrarian social patterns under Antipas.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
       "id": "hj-healings-reputation",
@@ -2089,6 +2124,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
+      "id": "mod-500-plus-living-corpus",
+      "claim": "A 500+ claim evidentiary corpus remains a living index: new editions, finds, and scientific results require continuous card updates under the ROC update-triggers doctrine.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
       "id": "mod-amy-jill-levine-jewish-jesus",
@@ -2693,6 +2735,13 @@
       "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
+      "id": "nc-pliny-legal-procedure",
+      "claim": "Pliny’s letter details interrogation procedure, thrice-questioned persistence tests, and punishment of obstinate Christians — primary early 2nd-c. administrative procedure evidence.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave48.ts"
+    },
+    {
       "id": "nc-pliny-legal-template",
       "claim": "Pliny’s letter became a template cited in later Roman legal memory for handling Christians as a judicial category.",
       "tier": "well_attested",
@@ -2922,6 +2971,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "nt-coptic-versions-witness",
+      "claim": "Coptic versions (Sahidic, Bohairic, and dialects) are early Egyptian witnesses valuable for the apparatus, especially where Greek evidence is divided.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
       "id": "nt-correctors-hands",
@@ -3412,6 +3468,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "st-herod-coinage-propaganda",
+      "claim": "Herodian coinage avoids human portraits in Judean issues while displaying Greek-style symbols and inscriptions — primary numismatic evidence of cultural negotiation under client kingship.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
       "id": "st-herod-great-death",
