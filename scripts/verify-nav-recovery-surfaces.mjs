@@ -856,4 +856,11 @@ assert(topicHubsSrc.includes('topic-related-hubs'), 'topic-related-hubs testid')
 assert(topicHubsSrc.includes("to: '/news'") || topicHubsSrc.includes('to: "/news"') || topicHubsSrc.includes('/news'), 'Topic News dest unique')
 assert(topicHubsSrc.includes('/israel-dossier'), 'Topic Dossiers dest unique')
 
+
+// AIPAC RelatedHubs Methodology destination
+const aipacHubsSrc = read('src/pages/AipacPage.tsx')
+assert(aipacHubsSrc.includes('aipac-related-hubs'), 'aipac-related-hubs testid')
+assert(aipacHubsSrc.includes('/methodology'), 'AIPAC Methodology dest unique')
+assert(aipacHubsSrc.includes('/topics'), 'AIPAC Topics dest unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
