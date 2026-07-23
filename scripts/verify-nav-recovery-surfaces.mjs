@@ -1423,4 +1423,27 @@ for (const [rel, id] of [
 }
 
 
+
+// detail surfaces RelatedHubs testids reaffirm final
+for (const [rel, id] of [
+  ['src/pages/ChapterPage.tsx', 'chapter-related-hubs'],
+  ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
+  ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
+  ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
+  ['src/pages/AipacPage.tsx', 'aipac-related-hubs'],
+]) {
+  assert(read(rel).includes(id), `${id} final`)
+  assert(read(rel).includes('RelatedHubs'), `${rel} RelatedHubs final`)
+}
+
+// success surfaces RelatedHubs reaffirm final
+for (const [rel, id] of [
+  ['src/pages/SupportSuccessPage.tsx', 'support-success-related-hubs'],
+  ['src/pages/SubscribeSuccessPage.tsx', 'subscribe-success-related-hubs'],
+]) {
+  assert(read(rel).includes(id), `${id} final`)
+  assert(read(rel).includes('RelatedHubs'), `${rel} RelatedHubs final`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
