@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 /**
  * Primary-hub recovery chips (≤5 destinations by default).
@@ -55,6 +55,7 @@ export default function RelatedHubs({
   ariaLabel = 'Related hubs',
   emphasizeTo,
 }: RelatedHubsProps) {
+  const { pathname } = useLocation()
   const excluded = new Set(
     Array.isArray(excludeTo) ? excludeTo : excludeTo ? [excludeTo] : [],
   )
@@ -71,15 +72,22 @@ export default function RelatedHubs({
       aria-label={ariaLabel}
       data-testid={testId}
     >
-      {list.map((hub) => (
-        <Link
-          key={hub.to}
-          to={hub.to}
-          className={emphasizeTo && hub.to === emphasizeTo ? emphasizeChip : toneClass}
-        >
-          {hub.label}
-        </Link>
-      ))}
+      {list.map((hub) => {
+        const active =
+          hub.to === '/'
+            ? pathname === '/' || pathname === ''
+            : pathname === hub.to || pathname.startsWith(`${hub.to}/`)
+        return (
+          <Link
+            key={hub.to}
+            to={hub.to}
+            className={emphasizeTo && hub.to === emphasizeTo ? emphasizeChip : toneClass}
+            {...(active ? { 'aria-current': 'page' as const } : {})}
+          >
+            {hub.label}
+          </Link>
+        )
+      })}
     </nav>
   )
 }
