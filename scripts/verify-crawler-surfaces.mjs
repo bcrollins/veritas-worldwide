@@ -297,4 +297,12 @@ assert(
 )
 console.log('[verify:crawler-surfaces] dual security.txt publish in sync')
 
+
+// humans.txt — human/crawler team card with corpora paths
+const humansText = read('public/humans.txt')
+assert(humansText.includes('Veritas Worldwide'), 'humans.txt publisher entity')
+assert(humansText.includes('/research-pack.zip'), 'humans.txt must list research-pack.zip')
+assert(!/brollins|brandon\s+rollins|@gmail\.com/i.test(humansText), 'humans.txt identity leak')
+console.log('[verify:crawler-surfaces] humans.txt entity + research-pack path present')
+
 console.log('[verify:crawler-surfaces] PASS')
