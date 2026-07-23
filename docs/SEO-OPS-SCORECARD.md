@@ -209,3 +209,10 @@ Verified live Googlebot matrix:
 | admin / success / search / bookmarks / bernie | **200 + noindex** |
 
 ROC corpus **417** claims; soft floor **417**. Pure + live gates green.
+
+
+### wave36/37 SEO production (2026-07-23)
+
+- Soft-404 matrix + slug 301s still **live green** (junk 404; Ted-Cruz/CHAPTER/trailing-slash 301)
+- Soft floor tracks latest ROC wave (435 for wave37); GEO public floors 440+
+- Live regression: `verify:live-bot-noindex` includes soft-404 matrix **and** 301 canonical checks
