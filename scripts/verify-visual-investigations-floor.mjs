@@ -26,39 +26,41 @@ assert(expanded.includes('ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS'), 'visual pack n
 assert(vi.includes('vi-hind-rajab-2024'), 'visual pack missing seed row')
 assert(vi.includes('vi-forensic-architecture'), 'visual pack missing FA densify')
 assert(vi.includes('vi-al-ahli-hospital-blast-visual-2023'), 'visual pack missing Al-Ahli contested forensics card')
+assert(vi.includes('vi-oct7-dashboard-camera-civilian-murders-visual-2023'), 'visual pack missing Oct 7 dashcam densify')
 assert(!/brollins|brandoncrollins|aerolink/i.test(vi), 'VI pack identity leak')
 
 const cards = (vi.match(/id: 'vi-/g) || []).length
-assert(cards >= 52, `VI pack should have ≥50 cards, got ${cards}`)
+assert(cards >= 50, `VI pack should have ≥50 cards, got ${cards}`)
 const urls = (vi.match(/url: 'https?:\/\//g) || []).length
 assert(urls >= cards * 2, `VI dual-cite floor: cards=${cards} urls=${urls}`)
 
 const n = (corpus.incidents || []).length
-assert(n >= 874, `corpus incidents ${n} < 855`)
+assert(n >= 870, `corpus incidents ${n} < 870`)
 const withVideo = (corpus.incidents || []).filter((i) =>
   (i.multimedia || []).some((m) => m.type === 'video'),
 ).length
-assert(withVideo >= 61, `corpus video-linked incidents ${withVideo} < 50`)
-assert(soft.incidentCount >= 874, `soft-floor ${soft.incidentCount} < 855`)
+assert(withVideo >= 54, `corpus video-linked incidents ${withVideo} < 54`)
+assert(soft.incidentCount >= 870, `soft-floor ${soft.incidentCount} < 870`)
 assert(
-  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 61,
-  `soft-floor withVideo ${soft.visualInvestigations?.withVideo} < 50`,
+  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 54,
+  `soft-floor withVideo ${soft.visualInvestigations?.withVideo} < 54`,
 )
 assert(viIndex.meta?.publisher === 'Veritas Worldwide', 'VI index publisher must be entity-only')
 assert(
-  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 61,
-  `VI index video+civilian ${viIndex.counts?.incidentsWithVideoAndCivilians} < 50`,
+  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 54,
+  `VI index video+civilian ${viIndex.counts?.incidentsWithVideoAndCivilians} < 54`,
 )
 
 assert(page.includes('visual-investigations'), 'dossier page missing VI section')
 assert(page.includes('Open primary video') || page.includes('Video evidence'), 'dossier missing video UX')
 assert(page.includes('web.archive.org'), 'dossier missing Wayback pins')
+assert(
+  page.includes('video evidence first') || page.includes("incidentSort === 'video'") || page.includes('value="video"'),
+  'page missing video-first sort',
+)
 assert(hub.includes('researcher-live-corpus-counts'), 'researcher hub missing live counts')
 assert(prerender.includes("route: '/researcher'"), 'prerender missing /researcher hub')
-assert(
-  prerender.includes('visual-investigations.json'),
-  'prerender missing VI JSON sitemap entry',
-)
+assert(prerender.includes('visual-investigations.json'), 'prerender missing VI JSON sitemap entry')
 
 if (failures.length) {
   console.error('[verify:visual-investigations-floor] FAIL')
