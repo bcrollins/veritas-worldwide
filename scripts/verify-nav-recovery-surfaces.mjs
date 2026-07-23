@@ -1708,4 +1708,13 @@ for (const id of ['israel', 'briefing', 'deep-state', 'forum', 'profiles']) {
 }
 
 
+
+// surfaces 102 pair shape ultimate final end
+assert(surfaces.length >= 102, `surfaces final end ${surfaces.length}`)
+assert(surfaces.every((r) => Array.isArray(r) && r.length === 2), 'surfaces pairs final end')
+// unique testids among surface needles where second column looks like testid
+const ids = surfaces.map((r) => r[1])
+assert(ids.includes('Related hubs') || ids.includes('PRIMARY_RELATED_HUBS') || ids.includes('mobile-tab-bar'), 'core needles present end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
