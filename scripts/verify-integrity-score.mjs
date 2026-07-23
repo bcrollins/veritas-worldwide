@@ -437,11 +437,14 @@ for (const f of (schiffP.documentedFalsehoods || []).filter((x) => x.tier === 'v
 
 // Cory Booker integrity gate
 const booker = scores['cory-booker'];
-if (!booker || booker.n < 1) throw new Error('cory-booker needs ≥1 verified falsehood, got ' + (booker?.n ?? 0));
-if (booker.score > 90) throw new Error('cory-booker score expected ≤90, got ' + booker.score);
+if (!booker || booker.n < 2) throw new Error('cory-booker needs ≥2 verified falsehoods, got ' + (booker?.n ?? 0));
+if (booker.score > 75) throw new Error('cory-booker score expected ≤75 after dual-cite densify, got ' + booker.score);
 const bookerP = getProfileBySlug('cory-booker');
 if (!(bookerP.documentedFalsehoods || []).some((f) => f.id === 'booker-nonexistent-cbo-medicare-50-2019')) {
   throw new Error('cory-booker missing CBO Medicare docket id');
+}
+if (!(bookerP.documentedFalsehoods || []).some((f) => f.id === 'booker-farmer-suicides-great-depression-2019')) {
+  throw new Error('cory-booker missing farmer-suicides Great Depression docket id');
 }
 for (const f of (bookerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('booker dual-cite collision: ' + f.id);

@@ -2915,7 +2915,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'NJ',
     photoUrl: getProfilePhoto('cory-booker'),
     summary:
-      'New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Integrity docket: dual-cited PolitiFact False for citing a nonexistent CBO study on Medicare-at-50 savings. Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact.',
+      'New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Integrity docket: dual-cited PolitiFact Falses — nonexistent CBO Medicare-at-50 study + farmer-suicide rates “as high as Great Depression” (no supporting data). Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact.',
     tags: [
       'Senator',
       'Pro-Israel',
@@ -3033,12 +3033,38 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'booker-farmer-suicides-great-depression-2019',
+        statement:
+          '“Farmer suicide rates are as high as they have been since the Great Depression.”',
+        saidAt: 'March 18, 2019',
+        context: 'MSNBC Hardball interview while campaigning in the 2020 Democratic presidential primary on rural/farmer distress.',
+        whyFalse:
+          'PolitiFact rated False. There are no known comparable farmer-suicide statistics extending back to the 1930s; Booker’s staff provided no supporting data. CDC occupational suicide rates for farmers (17-state samples) do not establish a Great Depression peak comparison, and prior inflated CDC figures used in media/legislative debates had been retracted.',
+        correction:
+          'No public data series supports the claim that contemporary farmer suicide rates match Great Depression levels; the historical comparison is not measurable with available CDC occupational series.',
+        statementSource: 'MSNBC Hardball interview transcript (Mar 18, 2019)',
+        statementUrl: 'http://www.msnbc.com/transcripts/hardball/2019-03-18',
+        debunkSource: 'PolitiFact — False (Mar 21, 2019); CDC MMWR occupational suicide rates',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/mar/21/cory-booker/farmer-suicides-high-great-depression-no-data-says/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.booker.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/cory-booker/summary?cid=N00035267' },
       { label: 'Congress.gov member', url: 'https://www.congress.gov/member/cory-booker/B001288' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Cory_Booker' },
+      {
+        label: 'PolitiFact — Medicare-at-50 CBO claim (False)',
+        url: 'https://www.politifact.com/factchecks/2019/feb/08/cory-booker/medicare-booker-cites-non-existent-cbo-study/',
+      },
+      {
+        label: 'PolitiFact — farmer suicides Great Depression claim (False)',
+        url: 'https://www.politifact.com/factchecks/2019/mar/21/cory-booker/farmer-suicides-high-great-depression-no-data-says/',
+      },
     ],
   },
   {
