@@ -2742,4 +2742,23 @@ assert(read('src/pages/BibleHistoryPage.tsx').includes('bible-history-related-hu
 assert(read('src/pages/VolumeIIHubPage.tsx').includes('volume-ii-related-hubs'), 'perpetual v18 volume-ii')
 assert(read('src/pages/ContentPackPage.tsx').includes('content-pack-related-hubs'), 'perpetual v18 content-pack')
 
+
+
+// RelatedHubs platform perpetual densify lock v19
+assert(surfaces.length >= 115, `perpetual v19 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v19 RelatedHubs focus')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v19 ResearchHubChips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v19 DossierHubSpokes focus')
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v19 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v19 emphasize')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v19 mobile tab bar')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v19 server soft-404')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v19 institute')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v19 methodology')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v19 coverage')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v19 soft-404')
+assert(read('src/pages/SourcesPage.tsx').includes('sources-related-hubs'), 'perpetual v19 sources')
+assert(read('src/pages/ResearcherHubPage.tsx').includes('researcher-related-hubs'), 'perpetual v19 researcher')
+assert(read('src/pages/RecordOfJesusChristPage.tsx').includes('roc-related-hubs'), 'perpetual v19 roc')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
