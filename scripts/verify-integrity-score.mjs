@@ -135,6 +135,8 @@ const required = [
   'tucker-carlson',
   'james-comey',
   'john-brennan',
+  'roger-stone',
+  'paul-manafort',
 ];
 const scores = {};
 for (const id of required) {
@@ -990,8 +992,33 @@ for (const f of (brennanP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('brennan dual-cite collision: ' + f.id);
 }
 
+
+// Roger Stone densify gate (n≥3)
+const stoneS = scores['roger-stone'];
+if (!stoneS || stoneS.n < 3) throw new Error('roger-stone needs ≥3 verified falsehoods, got ' + (stoneS?.n ?? 0));
+if (stoneS.score > 30) throw new Error('roger-stone score expected ≤30 after densify, got ' + stoneS.score);
+const stoneP = getProfileBySlug('roger-stone');
+for (const id of ['stone-no-wikileaks-contact-denial-2016','stone-false-statements-congress-wikileaks-2017','stone-credico-witness-tampering-2018']) {
+  if (!(stoneP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('roger-stone missing docket id: ' + id);
+}
+for (const f of (stoneP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('stone dual-cite collision: ' + f.id);
+}
+
+// Paul Manafort densify gate (n≥3)
+const manafortS = scores['paul-manafort'];
+if (!manafortS || manafortS.n < 3) throw new Error('paul-manafort needs ≥3 verified falsehoods, got ' + (manafortS?.n ?? 0));
+if (manafortS.score > 30) throw new Error('paul-manafort score expected ≤30 after densify, got ' + manafortS.score);
+const manafortP = getProfileBySlug('paul-manafort');
+for (const id of ['manafort-ukraine-lobbying-fara-concealment','manafort-tax-bank-fraud-denials-2018','manafort-no-coordination-while-sharing-polling-kilimnik']) {
+  if (!(manafortP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('paul-manafort missing docket id: ' + id);
+}
+for (const f of (manafortP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('manafort dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 48) throw new Error('expected ≥48 compiled dockets, got ' + docketCount);
+if (docketCount < 50) throw new Error('expected ≥50 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

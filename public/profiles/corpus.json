@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:20:46.339Z",
+  "generatedAt": "2026-07-23T10:21:44.582Z",
   "count": 96,
   "profiles": [
     {
@@ -1633,9 +1633,9 @@
         "Foreign Lobbying",
         "Prison"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 25,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "michael-flynn",
@@ -1673,9 +1673,9 @@
         "Pardoned",
         "Operative"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 25,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "steve-bannon",
