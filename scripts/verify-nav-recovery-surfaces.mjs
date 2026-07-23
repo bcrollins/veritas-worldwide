@@ -743,4 +743,10 @@ const nfPageSrc = read('src/pages/NotFoundPage.tsx')
 assert(nfPageSrc.includes('noindex') && nfPageSrc.includes('nofollow'), 'NotFound noindex nofollow')
 assert(!/url:\s*[`'"][^`'"]*\/404/.test(nfPageSrc), 'NotFound does not invent /404 canonical url')
 
+
+// verify-pure suite list includes nav floors
+const pureRunner = read('scripts/verify-pure.mjs')
+assert(pureRunner.includes('nav-ia') || pureRunner.includes('verify-nav-ia'), 'verify-pure includes nav-ia')
+assert(pureRunner.includes('nav-recovery') || pureRunner.includes('verify-nav-recovery'), 'verify-pure includes nav-recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
