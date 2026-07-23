@@ -391,3 +391,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Multi-agent | densify-only |
 | Live | lag-aware soft-floor WARN path |
 
+
+## Interval densify — tip post-2011 analgesia densify + playground / Modi’in / packing-house
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza morphine/fentanyl/midazolam/propofol · hostage tunnel-shafts/stroller-marches/loud-speakers/ferry-signs · WB broccoli/radiology/savory/garlic-seedlings |
+| VI | school playground · Modi’in safe room · grape packing-house arson |
+| Pure | visual + israel-dossier PASS |
+
