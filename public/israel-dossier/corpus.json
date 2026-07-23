@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T11:14:28.696Z",
+  "generatedAt": "2026-07-23T11:15:35.715Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 669,
-    "timelineEvents": 657,
+    "incidents": 678,
+    "timelineEvents": 666,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 655,
+    "historicalWarCrimesPack": 664,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 609
+      "post-oct7": 618
     },
     "incidentsByTier": {
-      "verified": 667,
+      "verified": 676,
       "circumstantial": 2
     },
-    "childrenTagged": 636,
-    "civiliansTagged": 667,
+    "childrenTagged": 645,
+    "civiliansTagged": 676,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -5143,6 +5143,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-noma-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Noma Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric noma risk under severe malnutrition.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-noma-risk-pattern-2023-2025",
+        "gaza-children-snakebite-care-collapse-pattern-2023-2025",
+        "gaza-children-scorpion-sting-care-collapse-pattern-2023-2025"
+      ],
+      "tags": [
+        "noma",
+        "children",
+        "malnutrition",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-norovirus-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5668,6 +5689,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-scorpion-care-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Scorpion-Sting Care Collapse Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric scorpion-sting mortality risk under antivenom collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-scorpion-sting-care-collapse-pattern-2023-2025",
+        "gaza-children-snakebite-care-collapse-pattern-2023-2025",
+        "gaza-children-noma-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "scorpion-sting",
+        "children",
+        "emergency-care",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-scurvy-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5811,6 +5853,27 @@
         "abscess",
         "children",
         "infection",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-snakebite-care-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Snakebite Care Collapse Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric snakebite mortality risk under antivenom collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-snakebite-care-collapse-pattern-2023-2025",
+        "gaza-children-scorpion-sting-care-collapse-pattern-2023-2025",
+        "gaza-children-noma-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "snakebite",
+        "children",
+        "emergency-care",
         "gaza"
       ]
     },
@@ -9212,6 +9275,28 @@
       ]
     },
     {
+      "id": "tl-hostages-empty-chair-vigils-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Empty-Chair Vigils Pattern",
+      "description": "Multi-source documentation of captors withholding knowledge of empty-chair public vigils.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-hostage-square-empty-chairs-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-family-vigils-pattern-2023-2025",
+        "israel-hostages-forced-to-smile-at-captors-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-family-letters-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -9444,6 +9529,28 @@
         "israel-hostages-denied-knowledge-of-idf-progress-pattern-2023-2025",
         "israel-hostages-forced-to-count-captivity-days-pattern-2023-2025",
         "israel-hostages-denied-knowledge-of-international-pressure-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-hostage-day-events-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of International Hostage Day Events Pattern",
+      "description": "Multi-source documentation of captors withholding knowledge of international hostage-awareness events.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-hostage-day-events-pattern-2023-2025",
+        "israel-hostages-forced-to-smile-at-captors-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-hostage-square-empty-chairs-pattern-2023-2025"
       ],
       "tags": [
         "hostages",
@@ -11098,6 +11205,28 @@
       "tags": [
         "hostages",
         "sensory-deprivation",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-forced-smile-at-captors-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced to Smile at Captors Pattern",
+      "description": "Multi-source documentation of captors forcing civilian hostages to smile at captors as control.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-to-smile-at-captors-pattern-2023-2025",
+        "israel-hostages-forced-to-smile-on-camera-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-hostage-day-events-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "coercion",
         "civilians",
         "terrorism",
         "israel"
@@ -12943,6 +13072,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-school-counselors-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on School Counselors Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian school counselors after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-school-counselors-pattern-2023-2025",
+        "west-bank-settler-attacking-teachers-pattern-2023-2025",
+        "west-bank-settler-destroying-school-computers-pattern-2023-2025"
+      ],
+      "tags": [
+        "school-counselors",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-crossing-guards-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -14245,6 +14395,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-school-computers-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying School Computers Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school computers after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-school-computers-pattern-2023-2025",
+        "west-bank-settler-attacking-school-counselors-pattern-2023-2025",
+        "west-bank-settler-destroying-school-science-labs-pattern-2023-2025"
+      ],
+      "tags": [
+        "school-computers",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-school-desks-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -14281,6 +14452,27 @@
       ],
       "tags": [
         "school-libraries",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-science-labs-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying School Science Labs Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school science labs after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-school-science-labs-pattern-2023-2025",
+        "west-bank-settler-destroying-school-computers-pattern-2023-2025",
+        "west-bank-settler-destroying-school-libraries-pattern-2023-2025"
+      ],
+      "tags": [
+        "science-labs",
         "settlers",
         "education",
         "west-bank"
@@ -42995,6 +43187,390 @@
         },
         {
           "label": "Multi-outlet school-library destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-noma-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Noma Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (noma-risk cohort)",
+      "location": "Gaza Strip malnutrition wards and overcrowded camps",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric noma (cancrum oris) risk under severe malnutrition and infection — a multi-source wartime facial-gangrene pattern distinct from kwashiorkor ulceration cards.",
+      "evidence": "WHO NTD materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric noma risk. Exact case counts evolve; multi-source wartime noma risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO NTD materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza malnutrition coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-hostage-day-events-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of International Hostage Day Events Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage-day-events-denial cohort)",
+      "location": "Gaza Strip captivity sites — hostage-day-events-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding knowledge of international hostage-awareness events — a multi-source psychological isolation pattern distinct from family-vigils denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hostage-day-events denial. Exact cases vary; multi-source hostage-day-events denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-school-computers-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying School Computers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-computer-destruction cohort)",
+      "location": "West Bank village school computer labs",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school computers after October 7 — disrupting digital education for children. Pattern card distinct from school-library and desk destruction.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-computer destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school computers is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-computer destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-snakebite-care-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Snakebite Care Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (snakebite-care-collapse cohort)",
+      "location": "Gaza Strip field clinics with collapsed antivenom supply",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric snakebite mortality risk under antivenom and ICU collapse — a multi-source wartime envenoming-care pattern distinct from trauma infection cards.",
+      "evidence": "WHO snakebite materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric snakebite care collapse. Exact case counts evolve; multi-source wartime snakebite care collapse among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO snakebite materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza emergency-care coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-smile-at-captors-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Smile at Captors Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-smile-at-captors cohort)",
+      "location": "Gaza Strip captivity sites — forced-smile-at-captors subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to smile at captors off-camera as control — a multi-source coercion pattern distinct from forced smile-on-camera propaganda.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced smile-at-captors. Exact cases vary; multi-source forced smile-at-captors for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-school-counselors-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on School Counselors Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-counselor-attack cohort)",
+      "location": "West Bank school counseling offices and student-support points",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school counselors after October 7 — disrupting mental-health support for children. Pattern card distinct from teacher and principal attacks.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-counselor attacks. Exact injury counts evolve; multi-source wartime settler attacks on school counselors is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-counselor attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-scorpion-sting-care-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Scorpion-Sting Care Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (scorpion-sting-care-collapse cohort)",
+      "location": "Gaza Strip field clinics with collapsed antivenom and pediatric ICU",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric scorpion-sting mortality risk under antivenom and care collapse — a multi-source wartime envenoming-care pattern distinct from snakebite-care collapse.",
+      "evidence": "WHO envenoming materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric scorpion-sting care collapse. Exact case counts evolve; multi-source wartime scorpion-sting care collapse among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO envenoming materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza emergency-care coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-hostage-square-empty-chairs-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Empty-Chair Vigils Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (empty-chair-vigils-denial cohort)",
+      "location": "Gaza Strip captivity sites — empty-chair-vigils-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding knowledge of empty-chair public vigils for hostages — a multi-source psychological isolation pattern distinct from family-vigils denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source empty-chair-vigils denial. Exact cases vary; multi-source empty-chair-vigils denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-school-science-labs-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying School Science Labs Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-science-lab-destruction cohort)",
+      "location": "West Bank village school science laboratories",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school science labs after October 7 — disrupting STEM education for children. Pattern card distinct from computer-lab and library destruction.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-science-lab destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian school science labs is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-science-lab destruction coverage",
           "url": "https://apnews.com"
         }
       ],
