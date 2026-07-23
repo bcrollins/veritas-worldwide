@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:00:04.624Z",
-  "claimCount": 336,
+  "generatedAt": "2026-07-23T10:03:39.420Z",
+  "claimCount": 345,
   "tierHistogram": {
-    "well_attested": 128,
-    "verified": 120,
+    "well_attested": 132,
+    "verified": 124,
     "contested": 34,
-    "interpretive": 33,
+    "interpretive": 34,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 16
@@ -215,6 +215,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "ane-sennacherib-prism-tribute",
+      "claim": "Sennacherib prisms claim Hezekiah was shut up “like a bird in a cage” and paid tribute — Assyrian framing of 701 BCE without claiming Jerusalem’s capture.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave27.ts"
+    },
+    {
       "id": "ane-siloam-inscription",
       "claim": "The Siloam Tunnel inscription (Jerusalem) is a primary Hebrew epigraphic witness associated with Hezekiah’s water system construction narrative.",
       "tier": "verified",
@@ -290,6 +297,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-capernaum-synagogue-strata",
+      "claim": "Capernaum’s white limestone synagogue is later (Byzantine); basalt foundations and village remains inform earlier occupation debates under the later building.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
       "id": "arch-dead-sea-scroll-caves",
@@ -719,6 +733,13 @@
       "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
+      "id": "cosmo-spectral-index",
+      "claim": "The scalar spectral index n_s ≈ 0.96 from CMB data is slightly red-tilted, consistent with many slow-roll inflation models.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave27.ts"
+    },
+    {
       "id": "cosmo-structure-formation",
       "claim": "Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO.",
       "tier": "verified",
@@ -871,6 +892,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
+      "id": "ec-justin-memoirs",
+      "claim": "Justin Martyr refers to “memoirs of the apostles” read in worship — mid-2nd-c. evidence for Gospel-like texts in liturgical use.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
       "id": "ec-marcion",
@@ -1193,6 +1221,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-last-supper-tradition",
+      "claim": "A final meal tradition with bread/cup words is multiply attested (Paul 1 Cor 11; Synoptics) as early Christian memory of Jesus’ last night.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
       "id": "hj-literacy",
@@ -1524,6 +1559,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "mod-open-questions-remain",
+      "claim": "Even after hundreds of tier-labeled claims, open questions remain: exact chronology of many events, reconstruction of Q (if any), and the limits of criteria-based authenticity.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave27.ts"
+    },
+    {
       "id": "mod-population-genetics",
       "claim": "Population genetics of the Levant documents deep regional continuity with admixture layers; it does not identify individuals named in ancient texts.",
       "tier": "well_attested",
@@ -1732,6 +1774,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
+      "id": "nc-pliny-legal-template",
+      "claim": "Pliny’s letter became a template cited in later Roman legal memory for handling Christians as a judicial category.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
       "id": "nc-suetonius",
@@ -2012,6 +2061,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "nt-p45-cheaster",
+      "claim": "Papyrus P45 (Chester Beatty) is a major early substantial Gospels/Acts witness typically dated 3rd century.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
       "id": "nt-p45-p46-p47",
@@ -2341,6 +2397,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
+      "id": "st-synagogue-inscriptions",
+      "claim": "Dedicatory inscriptions (e.g., Theodotos inscription) document pre-70 synagogue buildings used for reading Torah and hospitality.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
       "id": "st-synagogue-origins",

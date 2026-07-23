@@ -405,10 +405,10 @@ const topicHubs = read('src/data/topicHubs.json')
 assert(topicHubs.includes('historical-jesus-evidence'), 'topic hubs must include historical-jesus-evidence')
 assert(!topicHubs.includes('150+ tier-labeled'), 'historical Jesus topic must not advertise stale 150+ claim floor')
 assert(
-  topicHubs.includes('330+ tier-labeled') ||
-    topicHubs.includes('320+ tier-labeled') ||
+  topicHubs.includes('340+ tier-labeled') ||
+    topicHubs.includes('340+ tier-labeled') ||
     topicHubs.includes('300+ tier-labeled'),
-  'historical Jesus topic must advertise current 330+ claim floor',
+  'historical Jesus topic must advertise current 340+ claim floor',
 )
 
 // Soft-404: unknown /chapter/* must not soft-serve homepage shells to crawlers.
