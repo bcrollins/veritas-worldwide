@@ -70,3 +70,9 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `bda6919` | pure: server soft-404 exactly 5 hub hrefs |
 | `0c05345` | pure: NotFound noindex |
 | live | tip carries shell+home+search+soft-404 100% green |
+
+
+## Pure recovery suite maturity
+- 30+ surface needles + family mounts + Hick/server soft-404 exact hubs
+- Latest: `f21bf93` ResearchHubChips=5, `e204b92` DOSSIER_SPOKES=5
+- Live matrix continuously green under densify tip advances
