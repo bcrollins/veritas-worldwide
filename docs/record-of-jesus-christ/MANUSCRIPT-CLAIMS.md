@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T10:06:11.328Z  
+**Generated:** 2026-07-23T10:08:45.927Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 354  
-**Tier histogram:** `{"circumstantial": 16, "contested": 34, "interpretive": 35, "literary_theological": 3, "speculative": 2, "verified": 128, "well_attested": 136}`
+**Claim count:** 363  
+**Tier histogram:** `{"circumstantial": 18, "contested": 35, "interpretive": 36, "literary_theological": 3, "speculative": 2, "verified": 131, "well_attested": 138}`
 
 Entity-only attribution. Live on veritasworldwide.com.
 
@@ -42,6 +42,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ane-siloam-inscription` | verified | proof_grade_data | The Siloam Tunnel inscription (Jerusalem) is a primary Hebrew epigraphic witness associated with Hezekiah’s water system construction narrative. |
 | `ane-siloam-tunnel-engineering` | verified | proof_grade_data | Hezekiah’s tunnel engineering is archaeologically verified; the Siloam inscription describes the breakthrough meeting of two work crews. |
 | `ane-tel-dan` | verified | proof_grade_data | The Tel Dan Stele (9th century BCE) attests the phrase “House of David” (bytdwd) outside the Bible. |
+| `ane-tel-dan-aramaic` | well_attested | attested_report | The Tel Dan stele is Aramaic royal victory propaganda, not an Israelite court text — genre matters for historical use. |
 | `ane-tel-dan-house-of-david` | verified | proof_grade_data | The Tel Dan stele’s “House of David” reading is the strongest extra-biblical epigraphic control for a Davidic dynasty name in the 9th century BCE context. |
 | `ane-ugarit` | well_attested | attested_report | Ugaritic texts (Ras Shamra) supply Northwest Semitic mythic and ritual parallels used in comparative study of Hebrew Bible poetry and divine council language. |
 | `arch-bar-kokhba` | verified | proof_grade_data | The Bar Kokhba revolt (132–135 CE) is archaeologically and papyrologically attested; its aftermath reshaped Judean demography and Jewish–Christian trajectories. |
@@ -64,6 +65,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `arch-jerusalem-burn-layer-70` | verified | proof_grade_data | Burn layers and collapse debris in Second Temple Jerusalem strata align with the 70 CE destruction horizon across multiple excavation areas. |
 | `arch-jerusalem-destruction-layers` | verified | proof_grade_data | Destruction layers and burn evidence in Jerusalem’s Upper City and related loci align with the 70 CE Roman destruction horizon. |
 | `arch-jerusalem-pilgrim-road` | verified | proof_grade_data | The Stepped Street / pilgrim road from the Pool of Siloam toward the Temple Mount is excavated and dated to the late Second Temple period. |
+| `arch-jerusalem-western-wall` | verified | proof_grade_data | The Western Wall is a visible Herodian retaining wall of the Temple Mount platform — primary material remnant of Second Temple monumental architecture. |
 | `arch-kursi` | interpretive | tradition | Kursi (traditional Gergesa/Gadara region) has a Byzantine monastery commemorating the swine miracle tradition — reception archaeology, not first-century proof of the miracle. |
 | `arch-magdala` | well_attested | attested_report | Magdala excavations reveal a first-century Galilean town with a synagogue and harbor installations, enriching the social map of Jesus’ activity zone. |
 | `arch-magdala-stone` | verified | proof_grade_data | The Magdala stone (synagogue furniture with Temple imagery) is a major late Second Temple Jewish artifactual find from a Galilean synagogue context. |
@@ -103,6 +105,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `cosmo-flatness` | verified | science_model | Spatial curvature is consistent with flat geometry (Ω_k ≈ 0) within ΛCDM fits to CMB and BAO data. |
 | `cosmo-hubble-tension` | contested | science_model | The Hubble tension denotes a statistically significant discrepancy between early-universe (CMB-inferred) and some late-universe local H₀ measurements. |
 | `cosmo-inflation-status` | well_attested | science_model | Cosmic inflation is the leading early-universe paradigm for flatness and horizon problems; direct detection of primordial B-mode polarization remains an active observational goal. |
+| `cosmo-isocurvature-limits` | verified | science_model | CMB data tightly limit isocurvature modes relative to adiabatic initial conditions in standard inflationary scenarios. |
 | `cosmo-lambda-equation` | contested | science_model | Dark energy is commonly parameterized with equation-of-state w ≈ −1 (cosmological constant-like); deviations are constrained but not fully excluded by current surveys. |
 | `cosmo-matter-energy` | well_attested | science_model | Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe. |
 | `cosmo-matter-power` | verified | science_model | The matter power spectrum from galaxy surveys and Lyman-α forests constrains structure growth consistent with cold dark matter frameworks at large scales. |
@@ -148,6 +151,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ec-nicaea` | literary_theological | tradition | The Council of Nicaea (325 CE) addressed Christological doctrine (homoousios) under Constantine; it did not create the NT canon list. |
 | `ec-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek OT columns for comparative textual work — early Christian engagement with pluriform scriptural text. |
 | `ec-papias` | circumstantial | attested_report | Papias of Hierapolis (early 2nd c.), preserved in fragments via Eusebius, offers early traditions about Mark and Matthew’s composition — valuable and debated. |
+| `ec-papias-mark-matthew` | circumstantial | attested_report | Papias traditions (via Eusebius) claim Mark recorded Peter’s preaching and Matthew compiled logia in Hebrew/Aramaic — early but second-hand Gospel origin traditions. |
 | `ec-polycarp` | well_attested | attested_report | Polycarp’s Letter to the Philippians (mid-2nd c.) cites or alludes to multiple NT writings and shows early reception of Pauline and Gospel traditions. |
 | `ec-polycarp-philippians` | well_attested | attested_report | Polycarp’s Philippians cites or alludes to multiple NT writings, showing early 2nd-century reception of Pauline and Gospel traditions. |
 | `ec-quadratus` | circumstantial | attested_report | Quadratus’s apology (early 2nd c.), preserved in fragment via Eusebius, claims some healed/raised by Jesus lived into later times — early apologetic tradition, not contemporary medical record. |
@@ -166,6 +170,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `hj-crucifixion-year` | contested | debate | Crucifixion year is commonly constrained to c. 30–33 CE by Pilate’s tenure (26–36), Passover weekday arguments, and astronomical full-moon tables — exact year remains debated. |
 | `hj-disciples-twelve` | well_attested | reconstruction | A circle of close followers including a group remembered as “the Twelve” is multiply attested; exact membership lists vary slightly across Gospels. |
 | `hj-empty-tomb` | contested | debate | Empty-tomb narratives appear in the canonical Gospels with differences; whether an empty tomb is historical is debated; early creed in 1 Cor 15 emphasizes appearances more than tomb logistics. |
+| `hj-empty-tomb-debate` | contested | debate | The empty tomb tradition is early and multiply developed in Gospels; historians disagree whether it is historical fact, legendary development, or both layered. |
 | `hj-existence` | well_attested | attested_report | The existence of Jesus of Nazareth as a first-century Jewish man is the near-consensus position of critical historians of antiquity. |
 | `hj-exorcism-reputation` | well_attested | reconstruction | Exorcism / spirit-expulsion is multiply attested as a public activity associated with Jesus in Synoptic tradition and is treated by many historians as a characteristic reputation. |
 | `hj-family-rejection` | circumstantial | reconstruction | Traditions of family misunderstanding or tension (Mark 3; John 7) are often cited under the criterion of embarrassment as unlikely free invention by later church idealization. |
@@ -220,6 +225,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `mod-criterion-embarrassment-limits` | interpretive | reconstruction | The criterion of embarrassment is heuristic and circular if “embarrassing” is defined by later Christian theology rather than first-century Jewish context. |
 | `mod-critical-editions` | verified | proof_grade_data | NA28/UBS5 (and ongoing ECM/INTF work) are the standard working critical texts of the Greek NT for academic use. |
 | `mod-digital-dss` | verified | proof_grade_data | The Leon Levy Dead Sea Scrolls Digital Library enables open inspection of high-resolution plate images for many Qumran manuscripts. |
+| `mod-entity-only-attribution` | interpretive | reconstruction | This compilation is published under Veritas Worldwide entity attribution only; personal operator identity is excluded from public scholarly surfaces by design. |
 | `mod-form-criticism-limits` | interpretive | reconstruction | Form criticism classifies Gospel units by genre and Sitz im Leben; its older assumption of pure oral isolation before writing is now heavily qualified. |
 | `mod-genetics-limits` | well_attested | science_model | Ancient DNA of the Southern Levant informs regional demographic history; it cannot identify named New Testament individuals or prove specific genealogies in the Gospels. |
 | `mod-gospel-genre-bios` | interpretive | reconstruction | Many scholars classify the Gospels as a form of ancient biography (bios) with flexible historical conventions rather than modern historiography. |
@@ -269,6 +275,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nc-pliny-legal-template` | well_attested | attested_report | Pliny’s letter became a template cited in later Roman legal memory for handling Christians as a judicial category. |
 | `nc-suetonius` | circumstantial | reconstruction | Suetonius, Claudius 25.4, refers to disturbances in Rome impulsore Chresto — often discussed as a possible garbled reference to Christ-related conflict, but identification is uncertain. |
 | `nc-suetonius-chrestus` | circumstantial | attested_report | Suetonius (Claudius 25) mentions disturbances in Rome under Claudius involving “Chrestus” — identification with Christ/Christians is possible but contested. |
+| `nc-suetonius-chrestus-limits` | circumstantial | attested_report | Suetonius’s Chrestus notice remains ambiguous; it cannot carry the weight of a secure independent Jesus biography. |
 | `nc-suetonius-nero` | well_attested | attested_report | Suetonius (Nero 16) mentions punishments of Christians under Nero as adherents of a new and mischievous superstition. |
 | `nc-tacitus` | well_attested | attested_report | Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea. |
 | `nc-tacitus-christus-title` | well_attested | attested_report | Tacitus’s use of “Christus” as a title/name and “Christians” as a group label reflects Roman awareness of the Christ-derived name by the early second century. |
@@ -322,6 +329,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nt-singular-readings` | verified | proof_grade_data | Singular readings (unique to one MS) are used in scribal-habits studies to profile individual copyists without treating them as initial text. |
 | `nt-synoptic-problem` | contested | debate | The Synoptic Problem (literary relationship of Matthew, Mark, Luke) remains an active field; Markan priority is majority, Q hypothesis is majority but contested by Farrer and other models. |
 | `nt-textual-criticism` | verified | proof_grade_data | Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions. |
+| `nt-textus-receptus-history` | verified | proof_grade_data | The Textus Receptus is a printed early modern Greek text tradition, not identical to the earliest recoverable initial text. |
 | `nt-ubs-rating-letters` | well_attested | attested_report | UBS editions assign letter ratings (A–D) to selected variants expressing editorial confidence — a pedagogical signal, not a probability in the Bayesian sense. |
 | `nt-variants` | verified | proof_grade_data | Hundreds of thousands of variant readings exist across the tradition; the vast majority are orthographic or trivial, while a minority affect meaning. |
 | `nt-versional-evidence` | well_attested | proof_grade_data | Early versions (Old Latin, Syriac, Coptic) are independent textual witnesses that can preserve early readings not always visible in later Greek majority streams. |
@@ -341,6 +349,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `st-herod-temple-expansion` | verified | proof_grade_data | Herod’s Temple Mount expansion created a massive platform whose retaining architecture remains archaeologically visible (Western Wall, etc.). |
 | `st-high-priest-politics` | well_attested | attested_report | High-priestly appointment and deposition under Herodian and Roman authorities show the Temple leadership’s political entanglement with imperial power. |
 | `st-isaiah-stability` | well_attested | attested_report | Comparison of 1QIsaᵃ (c. 2nd–1st century BCE) with the medieval Masoretic Text shows high overall agreement with mostly orthographic and minor variants. |
+| `st-josephus-biases` | well_attested | attested_report | Josephus writes as a Flavian client and aristocratic Judean survivor; his portraits of groups and events require bias-aware reading. |
 | `st-josephus-corpus` | verified | proof_grade_data | Flavius Josephus (late first century CE) is a principal non-Christian Jewish historian for Herodian and early Roman Judea. |
 | `st-lxx-textual` | verified | proof_grade_data | The Septuagint often preserves readings that differ from the medieval Masoretic Text; some align with Qumran Hebrew witnesses. |
 | `st-mikvaot` | verified | proof_grade_data | Stepped ritual baths (miqva’ot) are archaeologically widespread in late Second Temple Judea and Galilee, evidencing purity practice infrastructure. |
