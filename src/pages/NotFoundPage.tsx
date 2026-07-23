@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import RelatedHubs, { PRIMARY_RELATED_HUBS, type RelatedHub } from '../components/RelatedHubs'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
@@ -8,8 +7,6 @@ import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_UR
  * Server also returns HTTP 404 + X-Robots-Tag for unknown URLs (see server.js).
  * Hub chips mirror the ≤5 primary IA so recovery never dumps readers into a dead end.
  */
-const PRIMARY_HUBS = PRIMARY_RELATED_HUBS
-
 const NOT_FOUND_SECONDARY_HUBS: readonly RelatedHub[] = [
   { to: '/news', label: 'News' },
   { to: '/methodology', label: 'Methodology' },
@@ -56,25 +53,13 @@ export default function NotFoundPage() {
       <p className="mb-3 font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-ink-faint">
         Primary hubs
       </p>
-      <div
-        className="mb-8 flex flex-wrap items-center justify-center gap-2"
-        data-testid="not-found-hub-chips"
-        aria-label="Primary hubs"
-      >
-        {PRIMARY_HUBS.map((hub) => (
-          <Link
-            key={hub.to}
-            to={hub.to}
-            className={`inline-flex min-h-[44px] items-center justify-center rounded-full px-5 py-2.5 font-sans text-sm font-semibold transition-colors ${
-              hub.to === '/'
-                ? 'bg-crimson text-white hover:bg-crimson-dark'
-                : 'border border-border text-ink hover:border-crimson hover:text-crimson'
-            }`}
-          >
-            {hub.label}
-          </Link>
-        ))}
-      </div>
+      <RelatedHubs
+        testId="not-found-hub-chips"
+        hubs={PRIMARY_RELATED_HUBS}
+        emphasizeTo="/"
+        className="mb-8 justify-center"
+        ariaLabel="Primary hubs"
+      />
 
       <p className="mb-3 font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-ink-faint">
         Also useful

@@ -24,6 +24,10 @@ export const PRIMARY_RELATED_HUBS: readonly RelatedHub[] = [
 const chipBase =
   'inline-flex min-h-[44px] items-center rounded-full border border-border px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson'
 
+/** Emphasized chip (soft-404 Record CTA, home primary escape). */
+const emphasizeChip =
+  'inline-flex min-h-[44px] items-center justify-center rounded-full bg-crimson px-5 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-crimson-dark'
+
 interface RelatedHubsProps {
   /** data-testid for pure floors (page-specific) */
   testId: string
@@ -35,6 +39,8 @@ interface RelatedHubsProps {
   /** Surface token for parchment / surface / dark (quarantine show pages) */
   tone?: 'surface' | 'parchment' | 'dark'
   ariaLabel?: string
+  /** Path that receives crimson solid CTA styling (e.g. '/' on soft-404) */
+  emphasizeTo?: string
 }
 
 const darkChip =
@@ -47,6 +53,7 @@ export default function RelatedHubs({
   className = '',
   tone = 'surface',
   ariaLabel = 'Related hubs',
+  emphasizeTo,
 }: RelatedHubsProps) {
   const excluded = new Set(
     Array.isArray(excludeTo) ? excludeTo : excludeTo ? [excludeTo] : [],
@@ -65,7 +72,11 @@ export default function RelatedHubs({
       data-testid={testId}
     >
       {list.map((hub) => (
-        <Link key={hub.to} to={hub.to} className={toneClass}>
+        <Link
+          key={hub.to}
+          to={hub.to}
+          className={emphasizeTo && hub.to === emphasizeTo ? emphasizeChip : toneClass}
+        >
           {hub.label}
         </Link>
       ))}
