@@ -6326,7 +6326,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'NY',
     photoUrl: getProfilePhoto('elise-stefanik'),
     summary:
-      'House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Integrity docket: dual-cited PolitiFact False that H.R. 1 would prevent removal of ineligible voters. Primary sources: OpenSecrets, House leadership record, committee hearings, PolitiFact.',
+      'House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Integrity docket: dual-cited PolitiFact Falses — H.R. 1 would prevent removal of ineligible voters (bill text contradicts) and “53% of Americans made aware of Hunter Biden laptop would have changed 2020 vote” (TIPP subset misframed as Americans; Republican-leaning sample). Primary: OpenSecrets, House leadership record, committee hearings, PolitiFact, C-SPAN, X.',
     tags: [
       'House GOP Conference Chair',
       'Pro-Israel',
@@ -6440,6 +6440,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2021',
       },
+      {
+        claim:
+          'Integrity docket: Feb 2023 claim “53% of Americans made aware of the Hunter Biden laptop story would have changed their vote in 2020” rated False (TIPP subset of story-followers, not Americans; Republican-leaning).',
+        source: 'PolitiFact False; TIPP Insights poll; Stefanik X/C-SPAN',
+        url: 'https://www.politifact.com/factchecks/2023/feb/25/elise-stefanik/poll-on-voters-opinion-of-biden-laptop-story-needs/',
+        tier: 'verified',
+        date: '2023',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -6459,6 +6467,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'stefanik-53-percent-laptop-changed-vote-2023',
+        statement:
+          '“53% of Americans made aware of the Hunter Biden laptop story would have changed their vote in 2020.”',
+        saidAt: 'February 9, 2023',
+        context:
+          'X post amplifying House DOJ oversight hearing remarks citing a TIPP Insights poll about the Hunter Biden laptop and 2020 vote switching.',
+        whyFalse:
+          'PolitiFact rated False. The TIPP question applied only to the 37% subset already following the laptop story (~501 of 1,351), not “Americans” generally. That subset leaned more Republican than the national population; combining “very” and “somewhat likely” into 53% overstates certainty; experts noted the result is illogical as a national vote-switch claim and at most ~19.6% of the full sample when scaled.',
+        correction:
+          'The poll does not show 53% of Americans would have switched 2020 votes; it reflects a smaller, Republican-leaning subset of self-reported story-followers answering a hypothetical two years later.',
+        statementSource: 'Rep. Elise Stefanik X post, Feb. 9, 2023 (hearing video clip)',
+        statementUrl: 'https://twitter.com/RepStefanik/status/1623773115284090880',
+        debunkSource: 'PolitiFact — False (Feb. 25, 2023); TIPP Insights methodology + polling experts',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2023/feb/25/elise-stefanik/poll-on-voters-opinion-of-biden-laptop-story-needs/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://stefanik.house.gov' },
@@ -6468,6 +6495,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — H.R. 1 voter rolls (False)',
         url: 'https://www.politifact.com/factchecks/2021/mar/04/elise-stefanik/gop-lawmaker-misleads-about-hr-1-and-removal-ineli/',
+      },
+      {
+        label: 'PolitiFact — laptop poll 53% claim (False)',
+        url: 'https://www.politifact.com/factchecks/2023/feb/25/elise-stefanik/poll-on-voters-opinion-of-biden-laptop-story-needs/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Elise_Stefanik' },
     ],

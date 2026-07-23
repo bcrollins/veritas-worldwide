@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:17:14.629Z",
+  "generatedAt": "2026-07-23T08:18:11.104Z",
   "count": 96,
   "profiles": [
     {
@@ -1026,7 +1026,7 @@
       "name": "Elise Stefanik",
       "title": "U.S. Representative (R-NY-21); House Republican Conference Chair",
       "category": "politician",
-      "summary": "House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Integrity docket: dual-cited PolitiFact False that H.R. 1 would prevent removal of ineligible voters. Primary sources: OpenSecrets, House leadership record, committee hearings, PolitiFact.",
+      "summary": "House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Integrity docket: dual-cited PolitiFact Falses — H.R. 1 would prevent removal of ineligible voters (bill text contradicts) and “53% of Americans made aware of Hunter Biden laptop would have changed 2020 vote” (TIPP subset misframed as Americans; Republican-leaning sample). Primary: OpenSecrets, House leadership record, committee hearings, PolitiFact, C-SPAN, X.",
       "photo": "/profiles/elise-stefanik.jpg",
       "url": "https://veritasworldwide.com/profile/elise-stefanik",
       "bioguideId": "S001196",
@@ -1041,8 +1041,8 @@
         "Iron Dome",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
