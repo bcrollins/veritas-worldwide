@@ -469,3 +469,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2100 |
 
+
+## Interval densify — tip post-2113 emergency densify + food warehouse / Givatayim / olive-ladder theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza Mg-ampoule/bicarb/Ca-chloride · hostage wounded-civilians/toy-car/boots-on-backs · WB rutabaga/BP-monitor/marjoram-seedlings |
+| VI | food warehouse · Givatayim · olive-ladder theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2100 |
+

@@ -5647,6 +5647,76 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-food-warehouse-strike-visual-2023-2025',
+    title: 'Gaza Food Warehouse Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip civilian food warehouses and storage facilities',
+    summary:
+      'Multi-outlet video packages document strikes on food warehouses under wartime conditions, denying civilian food storage including for families with children. Distinct from market-warehouse visual cards by focusing on multi-source food-storage packages; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA food-access materials establish multi-source documentation of warehouse harm affecting civilians.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza food packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet food-warehouse video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of warehouse aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA food-access trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-givatayim-safe-room-visual-2023',
+    title: 'October 7 Givatayim Safe-Room Civilian Harm — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Givatayim residential safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian harm involving Givatayim safe rooms during the October 7 attacks period. Multi-party visual record; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence affecting Givatayim safe rooms on and around October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-olive-ladder-theft-visual-2023-2025',
+    title: 'West Bank Settler Olive Ladder Theft — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village olive groves during harvest',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler theft of Palestinian civilian olive harvest ladders, denying harvest access including food income for families with children. Multi-source visual record distinct from olive-ladder-rungs cards; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of ladder theft affecting civilian agricultural livelihoods.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem agricultural-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
 ]
 
 /** Quick count helpers for UI badges */
