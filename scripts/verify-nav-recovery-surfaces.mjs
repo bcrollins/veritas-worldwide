@@ -121,6 +121,12 @@ const spokesBody = read('src/components/DossierHubSpokes.tsx').match(/export con
 assert(spokesBody, 'DOSSIER_SPOKES export')
 const spokeCount = (spokesBody[1].match(/id:/g) || []).length
 assert(spokeCount === 5, `DOSSIER_SPOKES count ${spokeCount} !== 5`)
+
+// DossierHubSpokes labels lockstep
+const spokesSrc = read('src/components/DossierHubSpokes.tsx')
+for (const label of ['Israel', 'Briefing', 'Deep State', 'Forum', 'Profiles']) {
+  assert(spokesSrc.includes(`label: '${label}'`) || spokesSrc.includes(`label: "${label}"`), `Dossier spoke label ${label}`)
+}
 assert(read('src/components/DossierHubSpokes.tsx').includes('Also in Dossiers') || read('src/components/DossierHubSpokes.tsx').includes('Dossier hub'), 'DossierHubSpokes aria labels')
 
 // Detail-surface recovery mounts ResearchHubChips or related-hub navs
