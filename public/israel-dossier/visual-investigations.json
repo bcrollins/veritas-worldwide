@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T12:03:10.831Z"
+    "generatedAt": "2026-07-23T12:03:26.627Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 36,
+    "incidentsWithVideoAndCivilians": 37,
     "viPackCards": 29,
-    "totalIncidents": 770
+    "totalIncidents": 779
   },
   "incidents": [
     {
@@ -196,6 +196,39 @@
           "type": "investigation",
           "label": "B’Tselem settler violence case compilation",
           "url": "https://www.btselem.org/settler_violence"
+        }
+      ]
+    },
+    {
+      "id": "israel-hostages-forced-to-record-coerced-statements-pattern-2023-2025",
+      "title": "Israeli Hostages Forced to Record Coerced Video Statements Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage coerced-statement cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony and public videos)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "casualties": {
+        "killed": 0
+      },
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet video and testimony analysis",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Public multi-outlet packages on coerced videos",
+          "url": "https://apnews.com"
         }
       ]
     },
