@@ -118,7 +118,7 @@ export default function AuthModal() {
         {/* Close */}
         <button
           onClick={() => setShowAuthModal(false)}
-          className="absolute top-3 right-3 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-muted hover:text-ink transition-colors"
+          className="absolute top-3 right-3 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           aria-label="Close"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -191,7 +191,7 @@ export default function AuthModal() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full min-h-[44px] py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
+              className="w-full min-h-[44px] py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
             >
               {loading ? 'Please wait...' : authModalMode === 'signup' ? 'Create Free Account' : 'Sign In'}
             </button>
@@ -206,7 +206,7 @@ export default function AuthModal() {
                   setAuthModalMode(authModalMode === 'signup' ? 'login' : 'signup')
                   setError('')
                 }}
-                className="inline-flex min-h-[44px] items-center text-crimson font-semibold hover:text-crimson-dark transition-colors"
+                className="inline-flex min-h-[44px] items-center text-crimson font-semibold hover:text-crimson-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
               >
                 {authModalMode === 'signup' ? 'Sign in' : 'Create one free'}
               </button>
