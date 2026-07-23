@@ -1997,4 +1997,12 @@ assert((osintBlock[1].match(/to:/g) || []).length === 5, 'OSINT_HUBS count 5')
 assert(osintBlock[1].includes('/israel-dossier'), 'OSINT hubs Dossiers')
 
 
+
+// RelatedHubs emphasizeChip no-print ultimate
+const relatedEmphUlt = read('src/components/RelatedHubs.tsx')
+assert(relatedEmphUlt.includes('emphasizeChip') || relatedEmphUlt.includes('emphasizeTo'), 'emphasize platform ultimate')
+assert(relatedEmphUlt.includes('no-print'), 'RelatedHubs no-print with emphasize ultimate')
+assert(relatedEmphUlt.includes('min-h-[44px]'), 'emphasize inherits 44px ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
