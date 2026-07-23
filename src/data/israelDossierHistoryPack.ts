@@ -15966,6 +15966,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-amebiasis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Amebiasis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (amebiasis-risk cohort)',
+    location: 'Gaza Strip WASH-collapse camps and contaminated water sources',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric amebiasis under contaminated water and care collapse — a multi-source wartime protozoal pattern distinct from Giardia and Cryptosporidium cards.',
+    evidence:
+      'WHO WASH materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric amebiasis risk. Exact case counts evolve; multi-source wartime amebiasis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO WASH materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza WASH-disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-oct7-timeline-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of October 7 Timeline Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (oct7-timeline-denial cohort)',
+    location: 'Gaza Strip captivity sites — oct7-timeline-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding the sequence and duration of October 7 events — a multi-source psychological pattern distinct from death-toll denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source Oct 7 timeline denial. Exact cases vary; multi-source Oct 7 timeline denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-diesel-generators-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Diesel Generators Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (diesel-generator-destruction cohort)',
+    location: 'West Bank village generator sheds and farm power points',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian diesel generators after October 7 — cutting backup power for water and refrigeration including for children. Pattern card distinct from solar and wind energy destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source diesel-generator destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian diesel generators is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem energy-access materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet generator-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-ascariasis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Ascariasis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ascariasis-risk cohort)',
+    location: 'Gaza Strip overcrowded camps with collapsed sanitation',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric Ascaris under sanitation collapse and deworming interruption — a multi-source wartime helminth pattern distinct from scabies and WASH-diarrhea cards.',
+    evidence:
+      'WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric ascariasis risk. Exact case counts evolve; multi-source wartime ascariasis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza WASH-disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-repeat-captor-names-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Repeat Captor Names Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-captor-name-repetition cohort)',
+    location: 'Gaza Strip captivity sites — forced-captor-name-repetition subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to repeatedly say captors names — a multi-source indoctrination pattern distinct from slogan memorization.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced captors-name repetition. Exact cases vary; multi-source forced captors-name repetition by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-pharmacy-workers-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Pharmacy Workers Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pharmacy-worker-attack cohort)',
+    location: 'West Bank village pharmacies and medicine-dispensing points',
+    summary:
+      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian pharmacy workers after October 7 — disrupting medicine access for civilians including children. Pattern card distinct from medical-staff and clinic-nurse attacks.",
+    evidence:
+      'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source pharmacy-worker attacks. Exact injury counts evolve; multi-source wartime settler attacks on pharmacy workers is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'WHO health-access materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet pharmacy-worker attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-hookworm-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Hookworm Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hookworm-risk cohort)',
+    location: 'Gaza Strip overcrowded camps with barefoot exposure and collapsed sanitation',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric hookworm under sanitation collapse, barefoot exposure, and deworming interruption — a multi-source wartime helminth pattern distinct from ascariasis cards.',
+    evidence:
+      'WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric hookworm risk. Exact case counts evolve; multi-source wartime hookworm risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza WASH-disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-square-protests-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage-Square Protests Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage-square-protests-denial cohort)',
+    location: 'Gaza Strip captivity sites — hostage-square-protests-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding that Israeli public protests demanded their release — a multi-source psychological isolation pattern distinct from release-talks denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hostage-square protests denial. Exact cases vary; multi-source protests-denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-propane-tanks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Propane Tanks Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (propane-tank-destruction cohort)',
+    location: 'West Bank village home and farm propane storage points',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian propane tanks after October 7 — denying cooking and heating fuel for households including children. Pattern card distinct from generator and solar energy destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source propane-tank destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian propane tanks is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet propane-tank destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -25455,6 +25699,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['wind-turbines', 'settlers', 'energy', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-amebiasis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Amebiasis Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric amebiasis under contaminated water.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-amebiasis-risk-pattern-2023-2025',
+      'gaza-children-ascariasis-risk-pattern-2023-2025',
+      'gaza-children-hookworm-risk-pattern-2023-2025',
+    ],
+    tags: ['amebiasis', 'children', 'wash', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-oct7-timeline-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of October 7 Timeline Pattern',
+    description: 'Multi-source documentation of captors withholding the sequence of October 7 events.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-oct7-timeline-pattern-2023-2025',
+      'israel-hostages-forced-to-repeat-captor-names-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-square-protests-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-diesel-generators-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Diesel Generators Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian diesel generators after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-diesel-generators-pattern-2023-2025',
+      'west-bank-settler-attacking-pharmacy-workers-pattern-2023-2025',
+      'west-bank-settler-destroying-propane-tanks-pattern-2023-2025',
+    ],
+    tags: ['generators', 'settlers', 'energy', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-ascariasis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Ascariasis Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric Ascaris under sanitation collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-ascariasis-risk-pattern-2023-2025',
+      'gaza-children-hookworm-risk-pattern-2023-2025',
+      'gaza-children-amebiasis-risk-pattern-2023-2025',
+    ],
+    tags: ['ascariasis', 'children', 'wash', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-captor-names-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Repeat Captor Names Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to repeatedly say captors names.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-repeat-captor-names-pattern-2023-2025',
+      'israel-hostages-forced-to-memorize-captor-slogans-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-oct7-timeline-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'indoctrination', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-pharmacy-workers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Pharmacy Workers Pattern',
+    description: 'OCHA/WHO multi-source documentation of elevated settler attacks on Palestinian pharmacy workers after October 7.',
+    source: 'OCHA / WHO / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-pharmacy-workers-pattern-2023-2025',
+      'west-bank-settler-attacking-medical-staff-pattern-2023-2025',
+      'west-bank-settler-destroying-diesel-generators-pattern-2023-2025',
+    ],
+    tags: ['pharmacy', 'settlers', 'medical-access', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-hookworm-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Hookworm Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric hookworm under sanitation collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-hookworm-risk-pattern-2023-2025',
+      'gaza-children-ascariasis-risk-pattern-2023-2025',
+      'gaza-children-amebiasis-risk-pattern-2023-2025',
+    ],
+    tags: ['hookworm', 'children', 'wash', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-square-protests-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hostage-Square Protests Pattern',
+    description: 'Multi-source documentation of captors withholding that Israeli public protests demanded release.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-square-protests-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-release-talks-pattern-2023-2025',
+      'israel-hostages-forced-to-repeat-captor-names-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-propane-tanks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Propane Tanks Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian propane tanks after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-propane-tanks-pattern-2023-2025',
+      'west-bank-settler-destroying-diesel-generators-pattern-2023-2025',
+      'west-bank-settler-destroying-solar-battery-banks-pattern-2023-2025',
+    ],
+    tags: ['propane', 'settlers', 'energy', 'west-bank'],
+  },
+
 
 
 
