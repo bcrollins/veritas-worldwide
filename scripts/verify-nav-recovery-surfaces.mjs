@@ -63,6 +63,7 @@ const surfaces = [
   ['src/components/StickyMembershipBar.tsx', 'trackSupportClick'],
   ['src/components/StickyMembershipBar.tsx', 'Join'],
   ['src/components/StickyMembershipBar.tsx', 'Dismiss'],
+  ['src/components/StickyMembershipBar.tsx', 'Support independent'],
   ['src/components/StickyMembershipBar.tsx', 'veritas_cookie_consent'],
 ]
 
