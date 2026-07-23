@@ -2059,6 +2059,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-reim-civilian-visual-2023',
+    title: 'October 7 Re’im Area Civilian Attacks — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Re’im area, southern Israel (near Nova festival approach routes)',
+    summary:
+      'Multi-outlet video and authenticated phone footage document the October 7 assault around Re’im, including civilian murders on roads and approach routes near the Nova festival. Multi-party visual record distinct from Nova festival and roadside ambush packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence around Re’im on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Re’im-area October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-school-shelter-morning-strike-visual-2023-2025',
+    title: 'Gaza School-Shelter Morning Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'UNRWA and public school shelters across Gaza',
+    summary:
+      'Multi-outlet phone video and OHCHR materials document morning strikes on school buildings used as civilian shelters. Distinct from night school-shelter visual card by focusing on multi-source daytime packages; ethnicity is never evidence.',
+    evidence:
+      'OCHA shelter tallies, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of civilian harm at school shelters.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters school-shelter packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet school-shelter strike video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of school-shelter aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR shelter trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-farm-gate-blockade-visual-2023-2025',
+    title: 'West Bank Settler Farm-Gate Blockades — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village farm gates and agricultural access roads',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document settler blockades of Palestinian civilian farm gates, denying agricultural access including food production for families with children. Multi-source visual record distinct from roadblock and olive-harvest cards; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA access tallies, and multi-outlet reporting establish multi-source documentation of farm-gate blockades affecting civilians.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT access updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem farm-gate blockade video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
