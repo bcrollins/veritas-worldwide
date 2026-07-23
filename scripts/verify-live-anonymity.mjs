@@ -45,6 +45,10 @@ const paths = [
   '/comprehensive-profile',
   // OPSEC quarantine surface: must never reintroduce personal social profile URLs
   '/bernie',
+  // Local-only researcher + volume scaffold — entity-only copy
+  '/researcher',
+  '/researcher/timeline',
+  '/volume-ii',
 ]
 
 const FORBIDDEN = [
