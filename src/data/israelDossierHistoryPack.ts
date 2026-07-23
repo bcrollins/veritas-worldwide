@@ -7299,6 +7299,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Zinc & Vitamin-A Deficiency Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (micronutrient-specific cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'UNICEF, WHO, and multi-source nutrition reporting document elevated zinc and vitamin-A deficiency risk among Gaza children under wartime diet collapse — compounding infection and night-blindness risk. Pattern card for specific micronutrient deficits distinct from anemia and stunting cards.',
+    evidence:
+      'UNICEF micronutrient materials, WHO nutrition notes, and multi-outlet coverage establish multi-source zinc/vitamin-A deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric zinc/vitamin-A failure is the claim.',
+    sources: [
+      { label: 'UNICEF micronutrient materials', url: 'https://www.unicef.org' },
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza micronutrient deficiency coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-medical-devices-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Medical Devices Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (device-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document confiscation or denial of medical devices for Israeli civilian hostages — hearing aids, glasses, mobility aids, CPAP — a protected-person medical-treatment pattern distinct from chronic-meds denial and elderly-medical cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source medical-device denial in captivity. Exact device lists vary; multi-source medical-device denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-displacement-villages-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler-Forced Village Displacement Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (village-displacement cohort)',
+    location: 'West Bank herding and farming communities',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document entire Palestinian communities forced to flee after October 7 under settler violence and intimidation — emptying villages and grazing areas. Pattern card for community-scale displacement distinct from home-demolitions and herding dispossession cards.',
+    evidence:
+      'OCHA displacement tallies, B\'Tselem community case files, and multi-outlet coverage establish multi-source community flight under settler pressure. Exact community counts evolve; multi-source wartime settler-forced village displacement is the claim.',
+    sources: [
+      { label: 'OCHA displacement materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem community displacement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet village displacement coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -11305,6 +11386,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['killings', 'settlers', 'civilians', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-zinc-vita-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Zinc & Vitamin-A Deficiency Pattern',
+    description: 'UNICEF/WHO multi-source documentation of elevated zinc and vitamin-A deficiency risk among children.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025',
+      'gaza-children-anemia-micronutrient-pattern-2023-2025',
+      'gaza-child-malnutrition-pattern-2023-2025',
+    ],
+    tags: ['zinc', 'vitamin-a', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-medical-devices-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Medical Devices Pattern',
+    description: 'Multi-source documentation of confiscation or denial of medical devices for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-medical-devices-pattern-2023-2025',
+      'israel-hostages-denied-medications-chronic-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medical-devices', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-village-displacement-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler-Forced Village Displacement Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of entire communities forced to flee under settler violence after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-displacement-villages-pattern-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'west-bank-settler-killing-civilians-pattern-2023-2025',
+    ],
+    tags: ['displacement', 'settlers', 'villages', 'west-bank'],
+  },
+
+
 
 
 
