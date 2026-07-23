@@ -443,14 +443,17 @@ for (const f of (schumerP.documentedFalsehoods || []).filter((x) => x.tier === '
 
 // Adam Schiff integrity gate
 const schiff = scores['adam-schiff'];
-if (!schiff || schiff.n < 2) throw new Error('adam-schiff needs ≥2 verified falsehoods, got ' + (schiff?.n ?? 0));
-if (schiff.score > 75) throw new Error('adam-schiff score expected ≤75, got ' + schiff.score);
+if (!schiff || schiff.n < 3) throw new Error('adam-schiff needs ≥3 verified falsehoods, got ' + (schiff?.n ?? 0));
+if (schiff.score > 60) throw new Error('adam-schiff score expected ≤60 after densify, got ' + schiff.score);
 const schiffP = getProfileBySlug('adam-schiff');
-if (!(schiffP.documentedFalsehoods || []).some((f) => f.id === 'schiff-not-spoken-whistleblower-2019')) {
-  throw new Error('adam-schiff missing whistleblower docket id');
-}
-if (!(schiffP.documentedFalsehoods || []).some((f) => f.id === 'schiff-secret-service-trump-golf-carts-2018')) {
-  throw new Error('adam-schiff missing Secret Service golf-cart docket id');
+for (const id of [
+  'schiff-not-spoken-whistleblower-2019',
+  'schiff-secret-service-trump-golf-carts-2018',
+  'schiff-whistleblower-statutory-anonymity-2019',
+]) {
+  if (!(schiffP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('adam-schiff missing docket id: ' + id);
+  }
 }
 for (const f of (schiffP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('adam-schiff dual-cite collision: ' + f.id);

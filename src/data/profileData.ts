@@ -2277,6 +2277,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'schiff-whistleblower-statutory-anonymity-2019',
+        statement:
+          '“The whistleblower has the right — a statutory right to anonymity.” / “These proceedings will not be used to out the whistleblower.”',
+        saidAt: 'November 19, 2019',
+        context:
+          'House Intelligence Committee public impeachment hearing (day three); Schiff cut off a line of questioning citing a statutory anonymity right after challenges to produce the statute.',
+        whyFalse:
+          'FactCheck.org: the Intelligence Community Whistleblower Protection Act and related statutes protect against certain retaliatory personnel actions and provide IG pathways, but do not create an absolute “statutory right to anonymity” that binds members of Congress from disclosing a whistleblower’s identity. Schiff’s absolute framing overstated what the statute requires of Congress.',
+        correction:
+          'IC whistleblower statutes protect against retaliation in specified channels; they do not grant an absolute statutory anonymity right that bars members of Congress from identifying a complainant.',
+        statementSource: 'House Intelligence Committee impeachment hearing, Nov. 19, 2019 (C-SPAN)',
+        statementUrl: 'https://www.c-span.org/video/?466377-1/impeachment-hearing-kurt-volker-tim-morrison',
+        debunkSource: 'FactCheck.org — Legal Implications of Outing the Whistleblower (Nov. 20, 2019)',
+        debunkUrl: 'https://www.factcheck.org/2019/11/legal-implications-of-outing-the-whistleblower/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.schiff.senate.gov' },
