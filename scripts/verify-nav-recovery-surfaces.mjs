@@ -151,6 +151,8 @@ const primaryBlock = app.match(/const primaryLinks: ShellLink\[\] = \[([\s\S]*?)
 assert(primaryBlock, 'primaryLinks block')
 const primaryCount = (primaryBlock[1].match(/to:\s*['"]/g) || []).length
 assert(primaryCount === 5, `primaryLinks count ${primaryCount} !== 5`)
+const tabBar = app.split('function MobileTabBar')[1]?.split('function Footer')[0] || ''
+assert(tabBar.includes('z-50'), 'MobileTabBar z-50 above content')
 const footerBrowse = app.split('const browseLinks')[1]?.split('const researchLinks')[0] || ''
 assert(footerBrowse.includes('/search'), 'footer browseLinks includes Search')
 assert(footerBrowse.includes('/israel-dossier'), 'footer browseLinks includes Dossiers')
