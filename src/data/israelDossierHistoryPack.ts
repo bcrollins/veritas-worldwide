@@ -4707,6 +4707,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-field-hospitals-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Field Hospitals & Temporary Medical Points Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (field-hospital cohort)',
+    location: 'Gaza Strip field hospitals and emergency medical points',
+    summary:
+      'WHO, MSF, ICRC, and multi-source reporting document proliferation of field hospitals and temporary medical points after fixed hospital capacity collapsed — under-equipped sites treating trauma including large numbers of children. Pattern card for field-hospital substitution under health-system destruction, distinct from hospital-evacuation and ICU-collapse cards.',
+    evidence:
+      'WHO health-cluster updates, MSF/ICRC facility statements, and multi-outlet coverage of field hospitals establish multi-source temporary medical infrastructure under war. Exact bed counts evolve; multi-source field-hospital reliance after fixed-hospital collapse is the claim.',
+    sources: [
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'MSF field-hospital statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza field hospital coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-uxo-child-casualties-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'artillery-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza UXO Child Casualties Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (UXO-child cohort)',
+    location: 'Gaza Strip rubble fields and former combat zones',
+    summary:
+      'UNICEF, UNMAS, and multi-source reporting document children killed and maimed by unexploded ordnance and ERW while playing in rubble or returning to damaged neighborhoods — a post-strike civilian harm pattern distinct from the aggregate rubble/UXO waste structural card.',
+    evidence:
+      'UNICEF child-protection and UNMAS ERW materials plus multi-outlet coverage of child UXO injuries establish multi-source UXO harm to children. Exact casualty counts evolve; multi-source recurrent child UXO casualties is the claim.',
+    sources: [
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'UNMAS explosive-ordnance materials', url: 'https://www.unmas.org' },
+      { label: 'Multi-outlet Gaza UXO child-casualty coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-summer-heat-tent-harm-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Summer Heat & Tent Displacement Harm Pattern (2023–2025)',
+    date: '2024 – 2025 (heat/tent cohort)',
+    location: 'Gaza Strip tent camps and makeshift shelters',
+    summary:
+      'OCHA, UNICEF, and multi-source reporting document extreme heat, dehydration risk, and heat-related illness among displaced civilians living in tents and makeshift shelters — a seasonal civilian-harm pattern dual to winter tent-flooding. Pattern card for heat exposure under mass displacement.',
+    evidence:
+      'OCHA displacement-site updates, UNICEF WASH/health materials, and multi-outlet heat-risk coverage establish multi-source heat harm in tent displacement. Exact heat-illness counts are incomplete; multi-source elevated heat exposure risk for tent-displaced civilians including children is the claim.',
+    sources: [
+      { label: 'OCHA displacement-site materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF WASH / health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza tent heat coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -7081,6 +7162,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['lebanon', 'civilians', 'children', 'displacement', 'war'],
   },
+
+  {
+    id: 'tl-gaza-field-hospitals-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Field Hospitals Pattern',
+    description: 'WHO/MSF multi-source documentation of field hospitals and temporary medical points after fixed hospital capacity collapsed.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-field-hospitals-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+      'gaza-hospital-forced-evacuations-pattern-2023-2025',
+    ],
+    tags: ['hospitals', 'field-hospitals', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-uxo-children-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza UXO Child Casualties Pattern',
+    description: 'UNICEF/UNMAS multi-source documentation of children killed and maimed by unexploded ordnance in rubble fields.',
+    source: 'UNICEF / UNMAS / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-uxo-child-casualties-pattern-2023-2025',
+      'gaza-rubble-uxo-waste-pattern-2023-2025',
+      'gaza-children-killed-pattern-2023-2025',
+    ],
+    tags: ['uxo', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-heat-tents-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Gaza Summer Heat Tent Harm Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of extreme heat and dehydration risk among tent-displaced civilians.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-summer-heat-tent-harm-pattern-2023-2025',
+      'gaza-winter-tent-flooding-pattern-2023-2025',
+      'gaza-evacuation-orders-pattern-2023-2024',
+    ],
+    tags: ['heat', 'tents', 'children', 'civilians', 'gaza'],
+  },
+
+
 
 
 
