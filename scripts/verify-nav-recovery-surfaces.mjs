@@ -1513,4 +1513,25 @@ assert(chipsUlt, 'RHC CHIPS ultimate')
 assert((chipsUlt[1].match(/to:/g) || []).length === 5, 'RHC count 5 ultimate')
 
 
+
+// cookie membership z-order ultimate reaffirm
+const cookieUlt = read('src/components/CookieConsent.tsx')
+const stickyUlt = read('src/components/StickyMembershipBar.tsx')
+const appUlt = read('src/App.tsx')
+assert(cookieUlt.includes('z-[100]'), 'cookie z-100 ultimate')
+assert(stickyUlt.includes('z-40'), 'membership z-40 ultimate')
+assert(appUlt.includes('z-50'), 'tab z-50 ultimate')
+assert(cookieUlt.includes('cookie-consent-banner') || cookieUlt.includes('veritas-cookie-consent'), 'cookie test surface ultimate')
+
+// server soft-404 five hrefs ultimate
+const serverUlt = read('server.js')
+const nfUlt = serverUlt.match(/function buildNotFoundHtml\(\) \{([\s\S]*?)\n\}/)
+assert(nfUlt, 'buildNotFoundHtml ultimate')
+const hrefsUlt = [...nfUlt[1].matchAll(/href="(\/[^"]*)"/g)].map((x) => x[1])
+assert(hrefsUlt.length === 5, `server soft-404 hrefs ${hrefsUlt.length} ultimate`)
+for (const dest of ['/', '/read', '/israel-dossier', '/profiles', '/search']) {
+  assert(hrefsUlt.includes(dest), `server soft-404 has ${dest} ultimate`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
