@@ -20,6 +20,7 @@ const surfaces = [
   ['src/pages/BernieShowPage.tsx', 'bernie-related-hubs'],
   ['src/components/ResearchHubChips.tsx', 'research-hub-chips'],
   ['src/pages/HomePage.tsx', 'home-hub-cta-row'],
+  ['src/pages/HomePage.tsx', 'home-related-hubs'],
   ['src/pages/HomePage.tsx', 'home-news-chip'],
   ['src/pages/HomePage.tsx', 'home-research-pack-zip'],
   ['src/pages/SearchPage.tsx', 'search-idle-hubs'],
@@ -994,7 +995,7 @@ assert(israelSticky.includes('israel-dossier-related-hubs'), 'Israel RelatedHubs
 
 
 // Recovery suite surface needle floor
-assert(surfaces.length >= 100, `surfaces length floor 90 (got ${surfaces.length})`)
+assert(surfaces.length >= 101, `surfaces length floor 90 (got ${surfaces.length})`)
 
 
 // Cookie z-100 above tab z-50 unique final
@@ -1026,7 +1027,7 @@ assert(relatedAriaFinal.includes('Related hubs'), 'RelatedHubs aria Related hubs
 
 // Recovery suite reports needle count in PASS line format
 // (surfaces array is the authoritative floor via length assert above)
-assert(typeof surfaces.length === 'number' && surfaces.length >= 100, 'surfaces array healthy')
+assert(typeof surfaces.length === 'number' && surfaces.length >= 101, 'surfaces array healthy')
 
 
 // DOSSIER_SPOKES count reaffirm unique final
@@ -1191,6 +1192,14 @@ assert((osBlock[1].match(/to:/g) || []).length === 5, 'OSINT_SUCCESS_HUBS count 
 const notFoundPrimarySrc = read('src/pages/NotFoundPage.tsx')
 assert(notFoundPrimarySrc.includes('PRIMARY_RELATED_HUBS'), 'NotFound PRIMARY_RELATED_HUBS')
 assert(notFoundPrimarySrc.includes('not-found-hub-chips'), 'not-found-hub-chips')
+
+
+
+// Home RelatedHubs underfold recovery
+const homeRelatedS7d = read('src/pages/HomePage.tsx')
+assert(homeRelatedS7d.includes('home-related-hubs'), 'home-related-hubs')
+assert(homeRelatedS7d.includes('RelatedHubs'), 'Home mounts RelatedHubs')
+assert(homeRelatedS7d.includes('excludeTo="/"') || homeRelatedS7d.includes("excludeTo='/'"), 'Home excludes Record self')
 
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
