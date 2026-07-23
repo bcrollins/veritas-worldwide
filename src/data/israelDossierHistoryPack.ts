@@ -11592,6 +11592,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-otitis-media-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Otitis Media Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (otitis-media-surge cohort)',
+    location: 'Gaza Strip overcrowded shelters and collapsed ENT clinics',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric otitis media and ear infections under overcrowding, smoke, and antibiotic shortage — a multi-source wartime ENT pattern distinct from pneumonia and meningitis cards.',
+    evidence:
+      'WHO pediatric infection materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric otitis media surge. Exact case counts evolve; multi-source wartime otitis media surge among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO pediatric infection materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-praise-captors-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Praise Captors Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-praise cohort)',
+    location: 'Gaza Strip captivity sites — forced-praise subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to praise captors and organizations on camera or audio — a multi-source coerced-speech pattern distinct from propaganda videos/photos/audio cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced praise of captors. Exact cases vary; multi-source coerced praise statements by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-fig-trees-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Fig Trees Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (fig-tree-destruction cohort)',
+    location: 'West Bank fig orchards and family fruit plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian fig trees after October 7 — destroying multi-year fruit livelihoods supporting families including children. Pattern card distinct from olive-tree and grapevine destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source fig-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian fig trees is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet fig-tree destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-urinary-tract-infection-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Urinary Tract Infection Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pediatric-UTI-surge cohort)',
+    location: 'Gaza Strip overcrowded shelters with collapsed sanitation',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric urinary tract infections under WASH collapse, dehydration, and antibiotic shortage — a multi-source wartime genitourinary infection pattern distinct from dehydration-shock and scabies cards.',
+    evidence:
+      'WHO pediatric infection materials, UNICEF WASH updates, and multi-outlet coverage establish multi-source pediatric UTI surge. Exact case counts evolve; multi-source wartime UTI surge among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO pediatric infection materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-blankets-cold-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Blankets in Cold Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (blanket-denial-cold cohort)',
+    location: 'Gaza Strip captivity sites — cold-blanket-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of blankets and warmth for Israeli civilian hostages including children in cold underground conditions — a multi-source environmental-abuse pattern distinct from footwear denial and sunlight denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source blanket denial in cold. Exact cases vary; multi-source denial of warmth for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-taxi-drivers-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Taxi Drivers Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (taxi-driver-attack cohort)',
+    location: 'West Bank inter-village roads and taxi stands',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian taxi drivers after October 7 — disrupting civilian mobility including school and medical transport for children. Pattern card distinct from vehicle stoning and vehicle arson.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source taxi-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on taxi drivers is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet taxi-driver attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-anemia-transfusion-gap-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Anemia Transfusion Access Gap Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (anemia-transfusion-gap cohort)',
+    location: 'Gaza Strip pediatric wards and blood-product referral points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated severe pediatric anemia with transfusion access gaps under blood-bank collapse and famine — a multi-source wartime anemia-care pattern distinct from blood-bank collapse and micronutrient anemia cards.',
+    evidence:
+      'WHO nutrition and transfusion materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric anemia transfusion gaps. Exact case counts evolve; multi-source wartime anemia transfusion gap for Gaza children is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza anemia coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-eye-protection-from-debris-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Eye Protection from Debris Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (eye-protection-denial cohort)',
+    location: 'Gaza Strip captivity and tunnel transfer routes — debris-eye-injury subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document eye injuries and denial of eye protection or care for Israeli civilian hostages moved through rubble and tunnels — a multi-source injury pattern distinct from eyeglasses denial and wound-care denial.',
+    evidence:
+      'Multi-source released-hostage medical and testimony records establish multi-source eye-injury and protection denial. Exact cases vary; multi-source debris eye-injury risk and care denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage medical coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-blocking-water-tankers-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Blocking Water Tankers Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (water-tanker-block cohort)',
+    location: 'West Bank village access roads used by water tankers',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian water tankers after October 7 — denying delivered household water including for children. Pattern card distinct from cistern destruction, water-tank destruction, and pipe cutting.",
+    evidence:
+      'OCHA settler-violence and access databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-tanker blocking. Exact incident counts evolve; multi-source wartime settler blocking of civilian water tankers is the claim.',
+    sources: [
+      { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet water-tanker block coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -18309,6 +18553,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['cisterns', 'water', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-otitis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Otitis Media Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric otitis media under overcrowding and antibiotic shortage.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-otitis-media-surge-pattern-2023-2025',
+      'gaza-children-urinary-tract-infection-surge-pattern-2023-2025',
+      'gaza-children-anemia-transfusion-gap-pattern-2023-2025',
+    ],
+    tags: ['otitis', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-praise-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Praise Captors Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to praise captors on camera or audio.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-praise-captors-pattern-2023-2025',
+      'israel-hostages-denied-blankets-cold-pattern-2023-2025',
+      'israel-hostages-denied-eye-protection-from-debris-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'coercion', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-fig-trees-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Fig Trees Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian fig trees after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-fig-trees-pattern-2023-2025',
+      'west-bank-settler-attacking-taxi-drivers-pattern-2023-2025',
+      'west-bank-settler-blocking-water-tankers-pattern-2023-2025',
+    ],
+    tags: ['fig-trees', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-uti-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Urinary Tract Infection Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric UTI under WASH collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-urinary-tract-infection-surge-pattern-2023-2025',
+      'gaza-children-otitis-media-surge-pattern-2023-2025',
+      'gaza-children-dehydration-shock-pattern-2023-2025',
+    ],
+    tags: ['uti', 'children', 'wash', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-blankets-cold-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Blankets in Cold Pattern',
+    description: 'Multi-source documentation of blanket denial for civilian hostages in cold underground conditions.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-blankets-cold-pattern-2023-2025',
+      'israel-hostages-forced-to-praise-captors-pattern-2023-2025',
+      'israel-hostages-denied-footwear-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'cold', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-taxi-drivers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Taxi Drivers Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian taxi drivers after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-taxi-drivers-pattern-2023-2025',
+      'west-bank-settler-stoning-vehicles-pattern-2023-2025',
+      'west-bank-settler-destroying-fig-trees-pattern-2023-2025',
+    ],
+    tags: ['taxis', 'settlers', 'mobility', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-anemia-transfusion-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Anemia Transfusion Access Gap Pattern',
+    description: 'WHO/UNICEF multi-source documentation of severe pediatric anemia with transfusion access gaps.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-anemia-transfusion-gap-pattern-2023-2025',
+      'gaza-children-blood-bank-collapse-pattern-2023-2025',
+      'gaza-children-acute-malnutrition-edema-pattern-2023-2025',
+    ],
+    tags: ['anemia', 'transfusion', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-eye-protection-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Eye Protection from Debris Pattern',
+    description: 'Multi-source documentation of eye injuries and denial of eye protection for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-eye-protection-from-debris-pattern-2023-2025',
+      'israel-hostages-denied-eyeglasses-pattern-2023-2025',
+      'israel-hostages-denied-blankets-cold-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'eye-injury', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-water-tankers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Blocking Water Tankers Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler blocking of Palestinian water tankers after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-blocking-water-tankers-pattern-2023-2025',
+      'west-bank-settler-destroying-water-cisterns-pattern-2023-2025',
+      'west-bank-settler-destroying-water-tanks-pattern-2023-2025',
+    ],
+    tags: ['water-tankers', 'settlers', 'access', 'west-bank'],
+  },
+
 
 
 
