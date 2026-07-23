@@ -16,6 +16,7 @@ import {
 const TERMS_HUBS: readonly RelatedHub[] = [
   { to: '/privacy', label: 'Privacy' },
   { to: '/about', label: 'About' },
+  { to: '/membership', label: 'Membership' },
   { to: '/read', label: 'Read' },
   { to: '/search', label: 'Search' },
 ]

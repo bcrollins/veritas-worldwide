@@ -16,6 +16,7 @@ import {
 const PRIVACY_HUBS: readonly RelatedHub[] = [
   { to: '/terms', label: 'Terms' },
   { to: '/about', label: 'About' },
+  { to: '/membership', label: 'Membership' },
   { to: '/read', label: 'Read' },
   { to: '/search', label: 'Search' },
 ]
