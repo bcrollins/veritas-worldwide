@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:13:35.679Z",
+  "generatedAt": "2026-07-23T09:14:00.015Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 148,
-    "timelineEvents": 136,
+    "incidents": 149,
+    "timelineEvents": 137,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 134,
+    "historicalWarCrimesPack": 135,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 88
+      "post-oct7": 89
     },
     "incidentsByTier": {
-      "verified": 146,
+      "verified": 147,
       "circumstantial": 2
     },
-    "childrenTagged": 124,
-    "civiliansTagged": 146,
+    "childrenTagged": 125,
+    "civiliansTagged": 147,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3142,6 +3142,28 @@
         "civilians",
         "gaza",
         "humanitarian"
+      ]
+    },
+    {
+      "id": "tl-gaza-ambulance-access-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Ambulance Access Denial Pattern",
+      "description": "WHO/PRCS multi-source documentation of repeated denial or delay of ambulance access to wounded civilians.",
+      "source": "WHO / OCHA / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-ambulance-access-denial-pattern-2023-2025",
+        "rafah-paramedic-convoy-2025",
+        "gaza-civil-defense-killed-pattern-2023-2025"
+      ],
+      "tags": [
+        "ambulance",
+        "medical",
+        "civilians",
+        "children",
+        "gaza"
       ]
     },
     {
@@ -9889,6 +9911,50 @@
           "type": "document",
           "label": "Israeli government public updates",
           "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-ambulance-access-denial-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Ambulance Access Denial Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (ambulance cohort)",
+      "location": "Gaza Strip roads / checkpoints / combat zones",
+      "summary": "PRCS, WHO, and multi-source reporting document repeated denial, delay, or obstruction of ambulance access to wounded civilians — a protected-transport harm pattern distinct from paramedic-convoy killings and civil-defense rescue cards. Pattern card for ambulance access denial as a civilian-harm multiplier.",
+      "evidence": "PRCS operational statements, WHO health-access materials, and multi-outlet coverage establish multi-source ambulance access failures. Exact denial counts evolve; multi-source repeated ambulance obstruction is the claim.",
+      "sources": [
+        {
+          "label": "WHO health access / ambulance materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA protection materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet PRCS ambulance coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
         }
       ],
       "tier": "verified",

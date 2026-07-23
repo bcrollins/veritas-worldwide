@@ -3600,6 +3600,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-ambulance-access-denial-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Ambulance Access Denial Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ambulance cohort)',
+    location: 'Gaza Strip roads / checkpoints / combat zones',
+    summary:
+      'PRCS, WHO, and multi-source reporting document repeated denial, delay, or obstruction of ambulance access to wounded civilians — a protected-transport harm pattern distinct from paramedic-convoy killings and civil-defense rescue cards. Pattern card for ambulance access denial as a civilian-harm multiplier.',
+    evidence:
+      'PRCS operational statements, WHO health-access materials, and multi-outlet coverage establish multi-source ambulance access failures. Exact denial counts evolve; multi-source repeated ambulance obstruction is the claim.',
+    sources: [
+      { label: 'WHO health access / ambulance materials', url: 'https://www.who.int' },
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet PRCS ambulance coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5276,6 +5303,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['injuries', 'rockets', 'civilians', 'children', 'israel'],
   },
+
+  {
+    id: 'tl-gaza-ambulance-access-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Ambulance Access Denial Pattern',
+    description: 'WHO/PRCS multi-source documentation of repeated denial or delay of ambulance access to wounded civilians.',
+    source: 'WHO / OCHA / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-ambulance-access-denial-pattern-2023-2025',
+      'rafah-paramedic-convoy-2025',
+      'gaza-civil-defense-killed-pattern-2023-2025',
+    ],
+    tags: ['ambulance', 'medical', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
