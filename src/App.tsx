@@ -863,7 +863,7 @@ export default function App() {
                 <Route path="/news" element={<NewsPage />} />
                 <Route path="/content-pack" element={<ContentPackPage />} />
                 <Route path="/content-packs" element={<Navigate replace to="/content-pack" />} />
-                <Route path="/share" element={<ContentPackPage />} />
+                <Route path="/share" element={<Navigate replace to="/content-pack" />} />
                 <Route path="/forum" element={<ForumPage />} />
                 <Route path="/profiles" element={<ProfilesIndexPage />} />
                 <Route path="/profile/:slug" element={<ProfilePage />} />

@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:38:15.894Z",
-  "claimCount": 489,
+  "generatedAt": "2026-07-23T10:39:10.693Z",
+  "claimCount": 498,
   "tierHistogram": {
-    "well_attested": 197,
-    "verified": 171,
-    "contested": 43,
-    "interpretive": 51,
+    "well_attested": 201,
+    "verified": 174,
+    "contested": 44,
+    "interpretive": 52,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 22
@@ -285,6 +285,13 @@
       "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
+      "id": "ane-ophel-inscription-fragment",
+      "claim": "Hebrew inscription fragments from the Ophel excavations (including early alphabetic pieces) contribute to debates on literacy and administration in Iron Age Jerusalem.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave44.ts"
+    },
+    {
       "id": "ane-samaria-ostraca",
       "claim": "The Samaria ostraca (Iron Age Israel) are primary Hebrew administrative dockets recording wine/oil deliveries and personal names in the Northern Kingdom capital region.",
       "tier": "verified",
@@ -500,6 +507,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
+      "id": "arch-herodium-lower-palace",
+      "claim": "Herodium’s lower palace and pool complex document Herodian luxury architecture at monumental scale beyond the hilltop fortress cylinder.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave44.ts"
     },
     {
       "id": "arch-herodium-tomb-debate",
@@ -822,6 +836,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-cmb-e-mode-polarization",
+      "claim": "CMB E-mode polarization has been measured by multiple experiments and tightly constrains reionization optical depth and lensing potential within ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave44.ts"
     },
     {
       "id": "cosmo-cmb-lensing",
@@ -1293,6 +1314,13 @@
       "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
+      "id": "ec-justin-first-apology-eucharist",
+      "claim": "Justin’s First Apology describes Sunday assembly with readings, prayer, and eucharistic thanksgiving — mid-2nd-century evidence of Christian worship structure.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave44.ts"
+    },
+    {
       "id": "ec-justin-memoirs",
       "claim": "Justin Martyr refers to “memoirs of the apostles” read in worship — mid-2nd-c. evidence for Gospel-like texts in liturgical use.",
       "tier": "well_attested",
@@ -1704,6 +1732,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
+      "id": "hj-kingdom-present-future",
+      "claim": "Critical reconstructions disagree whether Jesus’ kingdom proclamation was primarily present, future, or both (“already/not yet”); the tension is a central HJ interpretive debate.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave44.ts"
     },
     {
       "id": "hj-kingdom-proclamation",
@@ -2189,6 +2224,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "mod-new-perspective-paul",
+      "claim": "The “New Perspective on Paul” (Sanders, Dunn, Wright and interlocutors) reinterprets Second Temple Judaism and Paul’s relation to Torah against Lutheran law/gospel stereotypes — a major late-20th-century shift still debated.",
+      "tier": "interpretive",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave44.ts"
+    },
+    {
       "id": "mod-no-neutral-jesus",
       "claim": "There is no value-free historical Jesus reconstruction: every reconstruction reflects criteria choices, source theories, and contextual models that must be stated.",
       "tier": "interpretive",
@@ -2334,6 +2376,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
+      "id": "nc-celsus-true-doctrine-title",
+      "claim": "Celsus’s work is conventionally titled True Doctrine (Alēthēs Logos); the title and structure are reconstructed primarily from Origen’s quotations rather than a complete pagan manuscript.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave44.ts"
     },
     {
       "id": "nc-celsus-virgin",
@@ -2852,6 +2901,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
+      "id": "nt-lectionary-text-type",
+      "claim": "Greek Gospel lectionaries form a large medieval witness class with distinctive textual profiles; they are valuable but secondary to continuous-text majuscules/minuscules for initial-text work.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave44.ts"
     },
     {
       "id": "nt-majority-text-debate",
@@ -3412,6 +3468,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
+      "id": "st-temple-warning-inscription",
+      "claim": "The Temple balustrade warning inscription (soreg) forbids Gentiles to enter the inner courts on pain of death — a primary Greek epigraphic control for Temple spatial purity rules.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave44.ts"
     },
     {
       "id": "st-therapeutae-philo",

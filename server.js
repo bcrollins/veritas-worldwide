@@ -1745,15 +1745,21 @@ const STATIC_CANONICAL_PATHS = new Set([
   '/read',
   '/record-of-jesus-christ',
   '/search',
-  '/share',
   '/sources',
   '/terms',
   '/timeline',
   '/topics',
 ])
 
-/** Legacy plural alias → singular content-pack (client Navigate + crawl lock). */
-const PATH_ALIASES = new Map([['/content-packs', '/content-pack']])
+/**
+ * Legacy aliases → single canonical content surface.
+ * /content-packs (plural) and /share both historically rendered ContentPackPage;
+ * consolidating prevents dual-canonical index bloat and homepage soft-404 shells.
+ */
+const PATH_ALIASES = new Map([
+  ['/content-packs', '/content-pack'],
+  ['/share', '/content-pack'],
+])
 
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
@@ -2113,10 +2119,9 @@ function isKnownSpaRoute(pathname) {
   // Client-only / dynamic public routes (may not all be prerendered yet).
   const knownExact = new Set([
     '/bookmarks',
-    '/share',
+    // /share and /content-packs are PATH_ALIASES → /content-pack (never SPA shell)
     '/brand-kit',
     '/media-kit',
-    // /content-packs is PATH_ALIASES → /content-pack (never serve SPA shell here)
     '/content-pack',
     '/subscribe/success',
     '/membership/success',
@@ -2185,7 +2190,6 @@ function buildNotFoundHtml() {
   <title>Page Not Found | Veritas Worldwide</title>
   <meta name="description" content="This page is not part of The Record public archive." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href="https://veritasworldwide.com/404" />
   <meta property="og:title" content="Page Not Found | Veritas Worldwide" />
   <meta property="og:description" content="This page is not part of The Record public archive." />
   <meta property="og:type" content="website" />

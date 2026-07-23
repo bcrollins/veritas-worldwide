@@ -180,7 +180,10 @@ export function isKnownInstituteSlug(slug, rootDir) {
  * Rewrite first-paint shell metas for bots.
  * Shell defaults (index.html): Primary Sources title + primary-source description.
  */
-function applyBotPageMeta(html, { title, description, url, type = 'website', image = null, imageType = null }) {
+function applyBotPageMeta(
+  html,
+  { title, description, url, type = 'website', image = null, imageType = null, omitCanonical = false },
+) {
   let out = html
     .replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
     // Title variants used as og/twitter content
@@ -204,13 +207,19 @@ function applyBotPageMeta(html, { title, description, url, type = 'website', ima
       /content="A documentary history of power, money, and the institutions that shaped the modern world\."/g,
       `content="${description}"`,
     )
-    .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${url}"`)
-    // Canonical is href=, not content= — without this, noindex shells keep homepage canonical.
-    .replace(
-      /<link rel="canonical" href="https:\/\/veritasworldwide\.com\/?"\s*\/?>/,
-      `<link rel="canonical" href="${url}" />`,
-    )
-    .replace(/content="website"/, `content="${type}"`)
+  if (url && !omitCanonical) {
+    out = out
+      .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${url}"`)
+      // Canonical is href=, not content= — without this, noindex shells keep homepage canonical.
+      .replace(
+        /<link rel="canonical" href="https:\/\/veritasworldwide\.com\/?"\s*\/?>/,
+        `<link rel="canonical" href="${url}" />`,
+      )
+  } else if (omitCanonical) {
+    // Soft-404 shells: noindex only — do not invent a /404 URL for crawlers.
+    out = out.replace(/<link rel="canonical"[^>]*>\s*/i, '')
+  }
+  out = out.replace(/content="website"/, `content="${type}"`)
 
   if (image) {
     out = out.replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${image}"`)
@@ -455,8 +464,8 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         let notFound = applyBotPageMeta(html, {
           title: 'Page Not Found | Veritas Worldwide',
           description: 'This chapter is not part of The Record public archive.',
-          url: `${SITE_URL}/404`,
           type: 'website',
+          omitCanonical: true,
         })
         notFound = notFound.replace(
           /<meta name="robots" content="[^"]*"/,
@@ -514,8 +523,8 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         let notFound = applyBotPageMeta(html, {
           title: 'Page Not Found | Veritas Worldwide',
           description: 'This Institute page is not part of The Record public archive.',
-          url: `${SITE_URL}/404`,
           type: 'website',
+          omitCanonical: true,
         })
         notFound = notFound.replace(
           /<meta name="robots" content="[^"]*"/,
@@ -535,8 +544,8 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         let notFound = applyBotPageMeta(html, {
           title: 'Page Not Found | Veritas Worldwide',
           description: 'This topic hub is not part of The Record public archive.',
-          url: `${SITE_URL}/404`,
           type: 'website',
+          omitCanonical: true,
         })
         notFound = notFound.replace(
           /<meta name="robots" content="[^"]*"/,
@@ -557,8 +566,8 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         let notFound = applyBotPageMeta(html, {
           title: 'Page Not Found | Veritas Worldwide',
           description: 'This profile is not part of The Record public archive.',
-          url: `${SITE_URL}/404`,
           type: 'website',
+          omitCanonical: true,
         })
         notFound = notFound.replace(
           /<meta name="robots" content="[^"]*"/,
@@ -614,8 +623,8 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         let notFound = applyBotPageMeta(html, {
           title: 'Page Not Found | Veritas Worldwide',
           description: 'This article is not part of The Record public archive.',
-          url: `${SITE_URL}/404`,
           type: 'website',
+          omitCanonical: true,
         })
         notFound = notFound.replace(
           /<meta name="robots" content="[^"]*"/,

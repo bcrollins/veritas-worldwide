@@ -485,11 +485,23 @@ assert(server.includes('rawPath') || server.includes("split('?')[0]"), 'slug can
 
 // Exact hub case + content-packs alias — never soft-404 /About or serve homepage on /content-packs.
 assert(server.includes('STATIC_CANONICAL_PATHS'), 'server must 301 mixed-case exact hubs (/About → /about)')
-assert(server.includes('PATH_ALIASES') && server.includes("['/content-packs', '/content-pack']"), 'server must 301 /content-packs → /content-pack')
+assert(
+  server.includes('PATH_ALIASES') &&
+    server.includes("'/content-packs'") &&
+    server.includes("'/share'") &&
+    server.includes("'/content-pack'"),
+  'server must 301 /content-packs and /share → /content-pack',
+)
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
 assert(
-  !knownExactBlock.includes("'/content-packs'"),
-  'isKnownSpaRoute knownExact must not list /content-packs (alias 301 only)',
+  !knownExactBlock.includes("'/content-packs'") && !knownExactBlock.includes("'/share'"),
+  'isKnownSpaRoute knownExact must not list /content-packs or /share (alias 301 only)',
 )
 assert(knownExactBlock.includes("'/content-pack'"), 'isKnownSpaRoute knownExact must list canonical /content-pack')
+assert(!prerender.includes("route: '/share'"), 'prerender must not emit duplicate /share content-pack page')
+assert(prerender.includes("route: '/content-pack'"), 'prerender must emit canonical /content-pack')
+// Soft-404 shells: no invented /404 canonical (noindex only).
+assert(botMeta.includes('omitCanonical'), 'bot-meta soft-404 shells must omit canonical (/404 not a real page)')
+assert(!server.includes('veritasworldwide.com/404'), 'server buildNotFoundHtml must not invent /404 canonical')
+assert(!notFound.includes("url: `${SITE_URL}/404`") && !notFound.includes("url: '${SITE_URL}/404'"), 'NotFoundPage must not invent /404 canonical URL')

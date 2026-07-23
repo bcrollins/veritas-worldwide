@@ -218,11 +218,12 @@ ROC corpus **417** claims; soft floor **417**. Pure + live gates green.
 - Live regression: `verify:live-bot-noindex` includes soft-404 matrix **and** 301 canonical checks
 
 
-### wave38–41 crawl canonicalization (2026-07-23)
+### wave38–42 crawl canonicalization (2026-07-23)
 
-- Soft floor tracks latest ROC wave (**471** for wave41); GEO public floors **470+**
+- Soft floor tracks latest ROC wave; GEO public floors track wave public copy
 - **301 lock expanded:** mixed-case exact hubs (`/About` → `/about`, `/Read` → `/read`)
 - **301 lock expanded:** trailing-slash exact hubs (`/methodology/` → `/methodology`)
-- **Alias lock:** `/content-packs` → `/content-pack` (kills homepage soft-404 shell on plural path)
+- **Alias lock:** `/content-packs` + `/share` → `/content-pack` (single canonical; kills dual-index + homepage shell)
+- **404 hygiene:** soft-404 shells omit `rel=canonical` (no invented `/404` URL); noindex + X-Robots only
 - Slug-prefix 301s unchanged (profile/chapter/news/topics/institute)
-- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` (About/Read/content-packs 301s)
+- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` (About/Read/content-packs/share 301s)

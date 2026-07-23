@@ -8,11 +8,11 @@ import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_UR
  */
 export default function NotFoundPage() {
   useEffect(() => {
+    // No canonical on 404 — noindex alone; do not invent a /404 URL for crawlers.
     setMetaTags({
       title: `Page Not Found | ${SITE_NAME}`,
       description:
         'This page is not part of The Record. Search the archive, open a chapter, or return to the home page.',
-      url: `${SITE_URL}/404`,
       robots: 'noindex, nofollow',
     })
     setJsonLd({
@@ -20,7 +20,6 @@ export default function NotFoundPage() {
       '@type': 'WebPage',
       name: 'Page Not Found',
       description: 'Requested page does not exist in the Veritas Worldwide public archive.',
-      url: `${SITE_URL}/404`,
       isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
     })
     return () => {
