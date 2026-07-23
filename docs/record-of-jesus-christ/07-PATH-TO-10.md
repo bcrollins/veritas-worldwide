@@ -1,14 +1,14 @@
 # Path to 10.0 — Record of Jesus Christ Surface
 
-**Current verified baseline (2026-07-23 Interval 9 / Wave 6):** ~9.0 / 10 for core evidentiary surface.
+**Current verified baseline (2026-07-23 Interval 10 / Wave 7):** ~9.2 / 10 for core evidentiary surface.
 
 | Dimension | Score | Notes |
 |-----------|------:|-------|
-| Evidence rigor / tiers | 9.3 | Seven-tier + proofVsConcept on every claim |
-| Citation integrity | 8.9 | Primary/peer/critical-edition paths; ECM/CBGM apparatus cards |
-| Completeness of corpus | 8.7 | 150+ claims across waves 3–6 (BAO, Sennacherib, P66/P75, Mark ending, Celsus, 70 CE) |
-| Researcher tools | 9.0 | JSON/CSV export, cite-as, PDF index, corpus.json, timeline filters |
-| Discoverability | 8.8 | Home card, llms, sitemap, OG PNG, FAQ/Book schema |
+| Evidence rigor / tiers | 9.4 | Seven-tier + proofVsConcept on every claim |
+| Citation integrity | 9.0 | Primary/peer/critical-edition paths; ECM/CBGM + Comma Johanneum + Western text |
+| Completeness of corpus | 8.9 | 162 claims waves 3–7 (dark energy, Lachish, Q debate, ossuaries, Hexapla) |
+| Researcher tools | 9.1 | JSON/CSV export, cite-as, PDF, corpus.json, Dataset schema, HowTo |
+| Discoverability | 9.0 | Home card, llms, sitemap, OG, FAQ/Book/HowTo/Dataset schemas |
 | A11y / print | 8.5 | Skip link, 44px targets, print CSS |
 | Anonymity | 9.5 public / 7.0 infra | Personal GH scrubbed from sameAs (live); operator env + org GH residual |
 | Device matrix proof | 7.5 | Code a11y present; visual matrix not fully automated |

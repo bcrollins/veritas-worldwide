@@ -38,6 +38,8 @@ const rocPage = read('src/pages/RecordOfJesusChristPage.tsx')
 assert(rocPage.includes('howToJsonLd'), 'ROC page must emit HowTo schema for export/researcher path')
 assert(rocPage.includes('faqJsonLd'), 'ROC page must emit FAQPage schema')
 assert(rocPage.includes('breadcrumbJsonLd'), 'ROC page must emit BreadcrumbList schema')
+assert(rocPage.includes("'@type': 'Dataset'") || rocPage.includes('"@type": "Dataset"'), 'ROC page must emit Dataset schema for corpus GEO')
+assert(rocPage.includes('DataDownload'), 'ROC Dataset must list DataDownload distributions')
 assert(seo.includes('personJsonLd'), 'seo.ts must export Person helper')
 assert(seo.includes('speakable'), 'chapter NewsArticle must include speakable for voice SEO')
 

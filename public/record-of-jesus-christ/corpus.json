@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T08:51:48.961Z",
-  "claimCount": 152,
+  "generatedAt": "2026-07-23T08:55:45.186Z",
+  "claimCount": 162,
   "tierHistogram": {
-    "verified": 51,
-    "well_attested": 58,
-    "contested": 22,
-    "interpretive": 10,
+    "verified": 54,
+    "well_attested": 62,
+    "contested": 23,
+    "interpretive": 12,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 6
@@ -73,6 +73,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "ane-lachish-letters",
+      "claim": "The Lachish ostraca (letters) are late-Iron-Age Hebrew administrative/military correspondence relevant to Judah’s final decades before the Babylonian destruction.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
       "id": "ane-merneptah",
@@ -187,6 +194,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "arch-ossuaries-practice",
+      "claim": "Secondary burial in limestone ossuaries is archaeologically well attested in late Second Temple Jerusalem and environs (roughly late 1st c. BCE–70 CE).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
       "id": "arch-pool-bethesda",
       "claim": "Excavations north of the Temple Mount have exposed twin pools matching John’s description of Bethesda with five porticoes (John 5) better than once assumed.",
       "tier": "well_attested",
@@ -271,6 +285,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "cosmo-dark-energy",
+      "claim": "Type Ia supernova surveys (1990s–present) established late-time accelerated expansion, modeled in ΛCDM as a cosmological-constant / dark-energy component.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
       "id": "cosmo-expansion",
       "claim": "Spectroscopic redshift of galaxies correlates with distance (Hubble–Lemaître law), indicating metric expansion of space.",
       "tier": "verified",
@@ -341,6 +362,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "ec-eusebius-he",
+      "claim": "Eusebius’s Ecclesiastical History (early 4th c.) is a foundational but tendentious narrative source for earlier Christian writers, martyrdoms, and canon discussions.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
       "id": "ec-gospel-harmony",
       "claim": "Tatian’s Diatessaron (late 2nd c.) harmonized the four Gospels into a single narrative widely used in Syriac Christianity — evidence of early fourfold Gospel prestige and of textual fluidity in use.",
       "tier": "well_attested",
@@ -397,6 +425,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "ec-origen-hexapla",
+      "claim": "Origen’s Hexapla (3rd c.) arranged Hebrew and Greek OT columns for comparative textual work — early Christian engagement with pluriform scriptural text.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
       "id": "ec-update-triggers",
       "claim": "This Record’s perpetual update triggers include: new major papyri/majuscule publications, INTF Liste changes, peer-reviewed dig reports, and material consensus shifts in historical Jesus research.",
       "tier": "interpretive",
@@ -444,6 +479,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "hj-criterion-coherence",
+      "claim": "Coherence criteria ask whether a proposed saying/deed fits a reconstructed core portrait of Jesus; the method is circular if the core is itself unstable.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
       "id": "hj-crucifixion",
@@ -577,6 +619,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-q-hypothesis",
+      "claim": "The Two-Source Hypothesis posits Markan priority plus a sayings source “Q” behind Matthew and Luke; Q remains a scholarly reconstruction without a surviving manuscript.",
+      "tier": "contested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
       "id": "hj-quirinius",
@@ -719,6 +768,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "mod-social-memory",
+      "claim": "Social memory approaches treat Gospel traditions as communal remembering under social constraints rather than pure invention or pure stenography.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
       "id": "mod-textus-receptus",
       "claim": "The Textus Receptus tradition (Erasmus onward) underlies early modern vernacular Bibles but is not the base text of modern critical editions (NA/UBS).",
       "tier": "verified",
@@ -766,6 +822,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-martial-juvenes",
+      "claim": "No contemporary Roman historian from Jesus’ lifetime mentions him; the earliest non-Christian literary controls (Josephus, Tacitus, Pliny) are decades later.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
       "id": "nc-pliny",
@@ -832,10 +895,10 @@
     },
     {
       "id": "nt-comma-johanneum",
-      "claim": "The Comma Johanneum (1 John 5:7–8 Trinitarian formula in some later Latin/TR traditions) lacks early Greek support and is omitted in modern critical editions.",
-      "tier": "verified",
+      "claim": "The Comma Johanneum (1 John 5:7–8 Trinitarian expansion in some later Latin/Textus Receptus traditions) is absent from the earliest Greek manuscript tradition and is treated as secondary in modern critical editions.",
+      "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
-      "file": "src/data/recordOfJesusChristExtras.ts"
+      "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
       "id": "nt-ecm-method",
@@ -972,10 +1035,17 @@
     },
     {
       "id": "nt-western-text",
-      "claim": "The so-called Western text (e.g., Codex Bezae in Acts) exhibits expansive and paraphrastic tendencies relative to Alexandrian witnesses.",
+      "claim": "The so-called Western text (e.g., Codex Bezae in Acts) often presents freer, paraphrastic readings that complicate simple Alexandrian/Byzantine dichotomies.",
       "tier": "well_attested",
-      "proofVsConcept": "attested_report",
-      "file": "src/data/recordOfJesusChristWave4.ts"
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "st-coinage-revolt",
+      "claim": "Jewish revolt coinage (First Revolt 66–70 CE; Bar Kokhba 132–135 CE) provides dated material propaganda and economic evidence independent of Christian texts.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
       "id": "st-community-rule",

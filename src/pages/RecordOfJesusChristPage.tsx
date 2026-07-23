@@ -397,6 +397,40 @@ export default function RecordOfJesusChristPage() {
           },
         ],
       }),
+      // Dataset: machine-readable corpus for GEO / data-search discovery (entity publisher only)
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: 'Record of Jesus Christ — claim corpus',
+        description: `Machine-readable index of ${claimCount} tier-labeled evidentiary claims on historical Jesus, biblical manuscripts, Levantine archaeology, and related scientific context. Publisher: Veritas Worldwide only.`,
+        url: `${SITE_URL}${ROC_META.path}`,
+        identifier: `${SITE_URL}/record-of-jesus-christ/corpus.json`,
+        keywords: [
+          'historical Jesus',
+          'New Testament textual criticism',
+          'Dead Sea Scrolls',
+          'Levantine archaeology',
+          'evidence tiers',
+        ],
+        license: 'https://veritasworldwide.com/methodology',
+        isAccessibleForFree: true,
+        creator: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        distribution: [
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/json',
+            contentUrl: `${SITE_URL}/record-of-jesus-christ/corpus.json`,
+          },
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/pdf',
+            contentUrl: `${SITE_URL}/record-of-jesus-christ/record-of-jesus-christ.pdf`,
+          },
+        ],
+        variableMeasured: 'Scholarly evidence tier (verified through literary_theological)',
+        measurementTechnique: 'Historical-critical method; Nestle-Aland/ECM textual standards; archaeological and scientific literature',
+      },
     ])
     return () => {
       clearMetaTags()
