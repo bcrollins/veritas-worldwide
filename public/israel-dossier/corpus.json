@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:08:10.430Z",
+  "generatedAt": "2026-07-23T10:09:08.165Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 300,
-    "timelineEvents": 288,
+    "incidents": 303,
+    "timelineEvents": 291,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 286,
+    "historicalWarCrimesPack": 289,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 240
+      "post-oct7": 243
     },
     "incidentsByTier": {
-      "verified": 298,
+      "verified": 301,
       "circumstantial": 2
     },
-    "childrenTagged": 268,
-    "civiliansTagged": 298,
+    "childrenTagged": 271,
+    "civiliansTagged": 301,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3591,6 +3591,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-folate-b12-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Folate & B12 Deficiency Pattern",
+      "description": "UNICEF/WHO multi-source documentation of elevated folate and vitamin-B12 deficiency risk among children.",
+      "source": "UNICEF / WHO / multi-outlet",
+      "sourceUrl": "https://www.unicef.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-folate-b12-deficiency-pattern-2023-2025",
+        "gaza-children-anemia-micronutrient-pattern-2023-2025",
+        "gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025"
+      ],
+      "tags": [
+        "folate",
+        "b12",
+        "children",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-iodine-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5753,6 +5774,28 @@
       ]
     },
     {
+      "id": "tl-hostages-clothing-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Adequate Clothing Pattern",
+      "description": "Multi-source documentation of denial of adequate clothing and temperature protection for civilian hostages.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-adequate-clothing-pattern-2023-2025",
+        "israel-hostages-denied-hygiene-sanitation-pattern-2023-2025",
+        "oct7-hostages-held-pattern"
+      ],
+      "tags": [
+        "hostages",
+        "clothing",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-food-variety-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7425,6 +7468,27 @@
         "schools",
         "settlers",
         "children",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-solar-theft-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Solar-Panel Theft Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated theft of Palestinian solar panels and generators after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-solar-panel-theft-pattern-2023-2025",
+        "gaza-solar-power-destruction-pattern-2023-2025",
+        "west-bank-settler-farm-equipment-destruction-pattern-2023-2025"
+      ],
+      "tags": [
+        "solar",
+        "energy",
+        "settlers",
         "west-bank"
       ]
     },
@@ -19428,6 +19492,134 @@
         },
         {
           "label": "Multi-outlet beehive destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-folate-b12-deficiency-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Folate & B12 Deficiency Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (folate/B12 cohort)",
+      "location": "Gaza Strip clinics and displacement sites",
+      "summary": "UNICEF, WHO, and multi-source nutrition reporting document elevated folate and vitamin-B12 deficiency risk among Gaza children under wartime diet collapse — compounding anemia and developmental risk. Pattern card for B-vitamin deficits distinct from iron-anemia and zinc cards.",
+      "evidence": "UNICEF micronutrient materials, WHO nutrition notes, and multi-outlet coverage establish multi-source folate/B12 deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric folate/B12 failure is the claim.",
+      "sources": [
+        {
+          "label": "UNICEF micronutrient materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "WHO nutrition materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "Multi-outlet Gaza micronutrient coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNICEF public updates",
+          "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-adequate-clothing-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Adequate Clothing Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (clothing-denial cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of adequate clothing and temperature protection for Israeli civilian hostages including children — a protected-person treatment pattern distinct from hygiene and daylight-denial cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source clothing inadequacy in captivity. Exact conditions vary; multi-source clothing denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-solar-panel-theft-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Solar-Panel & Generator Theft Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (solar-theft cohort)",
+      "location": "West Bank Palestinian homes and farms",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler theft and destruction of Palestinian solar panels and generators after October 7 — collapsing off-grid civilian electricity for water and cold storage. Pattern card for energy-asset theft distinct from Gaza solar-destruction and farm-equipment cards.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source solar/generator theft. Exact asset counts evolve; multi-source wartime energy-asset theft is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem field materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet solar panel theft coverage",
           "url": "https://apnews.com"
         }
       ],
