@@ -703,4 +703,11 @@ assert(packPage.includes('ResearchHubChips') && packPage.includes('excludePath='
 const researcherPage = read('src/pages/ResearcherHubPage.tsx')
 assert(researcherPage.includes('ResearchHubChips') && researcherPage.includes('excludePath='), 'Researcher excludePath')
 
+
+// Methodology + Sources excludePath pair
+const methPage = read('src/pages/MethodologyPage.tsx')
+const srcPage = read('src/pages/SourcesPage.tsx')
+assert(methPage.includes('ResearchHubChips') && methPage.includes('excludePath='), 'Methodology excludePath')
+assert(srcPage.includes('ResearchHubChips') && srcPage.includes('excludePath='), 'Sources excludePath')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
