@@ -222,6 +222,25 @@ export default function SourcesPage() {
                   ? 'Every source cited in this publication is organized here for direct verification. The reader is encouraged to inspect the record independently.'
                   : 'Every source cited in this publication is organized here for direct verification. Accounts are optional for saved reader state.'}
               </p>
+              <div className="mt-6 rounded-sm border border-border bg-surface p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <p className="font-body text-sm text-ink-muted max-w-2xl">
+                  Looking for the historical Jesus / manuscript claim corpus? Open the 180+ tier-labeled Record of Jesus Christ with JSON, CSV, and PDF export.
+                </p>
+                <div className="flex flex-wrap gap-2 shrink-0">
+                  <Link
+                    to="/record-of-jesus-christ"
+                    className="inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
+                  >
+                    Record of Jesus Christ
+                  </Link>
+                  <Link
+                    to="/bible"
+                    className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                  >
+                    Bible history
+                  </Link>
+                </div>
+              </div>
               <div className="grid grid-cols-3 gap-4 mt-6">
                 <div className="text-center">
                   <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{totalSources}</p>
