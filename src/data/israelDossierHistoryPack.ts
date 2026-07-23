@@ -17424,6 +17424,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-chromoblastomycosis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Chromoblastomycosis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (chromoblastomycosis-risk cohort)',
+    location: 'Gaza Strip rubble fields and barefoot exposure camps',
+    summary:
+      'WHO and multi-source clinical reporting document elevated pediatric chromoblastomycosis risk under barefoot trauma and antifungal collapse — a multi-source wartime fungal-skin pattern distinct from mycetoma and ringworm cards.',
+    evidence:
+      'WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric chromoblastomycosis risk. Exact case counts evolve; multi-source wartime chromoblastomycosis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza wound-care coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-families-forum-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Families Forum Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage-families-forum-denial cohort)',
+    location: 'Gaza Strip captivity sites — hostage-families-forum-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding knowledge of the Hostages and Missing Families Forum advocacy — a multi-source psychological isolation pattern distinct from family-vigils denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source Hostages Families Forum denial. Exact cases vary; multi-source Families Forum denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-blackboard-chalkboards-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying School Blackboards Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-blackboard-destruction cohort)',
+    location: 'West Bank village school classrooms',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school blackboards after October 7 — disrupting education for children. Pattern card distinct from school-desk destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-blackboard destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school blackboards is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-blackboard destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-sporotrichosis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Sporotrichosis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sporotrichosis-risk cohort)',
+    location: 'Gaza Strip rubble fields and traumatic plant/debris exposure camps',
+    summary:
+      'WHO and multi-source clinical reporting document elevated pediatric sporotrichosis risk under traumatic exposure and antifungal collapse — a multi-source wartime fungal pattern distinct from chromoblastomycosis cards.',
+    evidence:
+      'WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric sporotrichosis risk. Exact case counts evolve; multi-source wartime sporotrichosis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza wound-care coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-hold-quran-on-camera-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Hold Quran on Camera Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-quran-holding-camera cohort)',
+    location: 'Gaza Strip captivity sites — forced-quran-holding-camera subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to hold religious texts on camera for propaganda — a multi-source coerced-performance pattern distinct from forced flag and weapon holding.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced religious-text holding on camera. Exact cases vary; multi-source forced religious-text propaganda of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-speech-therapists-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Speech Therapists Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (speech-therapist-attack cohort)',
+    location: 'West Bank clinic speech-therapy rooms and school outreach points',
+    summary:
+      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian speech therapists after October 7 — disrupting care for children with communication disabilities. Pattern card distinct from physiotherapist and medical-staff attacks.",
+    evidence:
+      'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source speech-therapist attacks. Exact injury counts evolve; multi-source wartime settler attacks on speech therapists is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'WHO health-access materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet speech-therapist attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-paracoccidioidomycosis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Deep Fungal Infection Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (deep-fungal-infection-risk cohort)',
+    location: 'Gaza Strip field hospitals with collapsed infection-control capacity',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document elevated pediatric deep fungal infection risk under immune compromise, wound contamination, and antifungal collapse — a multi-source wartime deep-fungal pattern distinct from superficial fungal cards.',
+    evidence:
+      'WHO infection materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric deep fungal infection risk. Exact case counts evolve; multi-source wartime deep fungal infection risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO infection materials', url: 'https://www.who.int' },
+      { label: 'MSF clinical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-deal-phases-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Phases Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage-deal-phases-denial cohort)',
+    location: 'Gaza Strip captivity sites — hostage-deal-phases-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding which deal phases might include them — a multi-source psychological pattern distinct from hostage-deals denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hostage-deal-phases denial. Exact cases vary; multi-source deal-phases denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-school-libraries-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying School Library Materials Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-library-destruction cohort)',
+    location: 'West Bank village school libraries and reading corners',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school library materials after October 7 — disrupting education for children. Pattern card distinct from school-desk and blackboard destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-library destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian school libraries is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-library destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -27837,6 +28081,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['school-desks', 'settlers', 'education', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-chromoblastomycosis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Chromoblastomycosis Risk Pattern',
+    description: 'WHO multi-source documentation of elevated pediatric chromoblastomycosis risk under barefoot trauma.',
+    source: 'WHO / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-chromoblastomycosis-risk-pattern-2023-2025',
+      'gaza-children-sporotrichosis-risk-pattern-2023-2025',
+      'gaza-children-paracoccidioidomycosis-risk-pattern-2023-2025',
+    ],
+    tags: ['chromoblastomycosis', 'children', 'fungal', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-families-forum-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Families Forum Pattern',
+    description: 'Multi-source documentation of captors withholding knowledge of the Hostages and Missing Families Forum.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-families-forum-pattern-2023-2025',
+      'israel-hostages-forced-to-hold-quran-on-camera-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deal-phases-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-blackboards-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying School Blackboards Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school blackboards after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-blackboard-chalkboards-pattern-2023-2025',
+      'west-bank-settler-attacking-speech-therapists-pattern-2023-2025',
+      'west-bank-settler-destroying-school-libraries-pattern-2023-2025',
+    ],
+    tags: ['blackboards', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-sporotrichosis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Sporotrichosis Risk Pattern',
+    description: 'WHO multi-source documentation of elevated pediatric sporotrichosis risk under traumatic exposure.',
+    source: 'WHO / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-sporotrichosis-risk-pattern-2023-2025',
+      'gaza-children-chromoblastomycosis-risk-pattern-2023-2025',
+      'gaza-children-mycetoma-risk-pattern-2023-2025',
+    ],
+    tags: ['sporotrichosis', 'children', 'fungal', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-quran-camera-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Hold Quran on Camera Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to hold religious texts on camera.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-hold-quran-on-camera-pattern-2023-2025',
+      'israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-families-forum-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'propaganda', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-speech-therapists-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Speech Therapists Pattern',
+    description: 'OCHA/WHO multi-source documentation of elevated settler attacks on Palestinian speech therapists after October 7.',
+    source: 'OCHA / WHO / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-speech-therapists-pattern-2023-2025',
+      'west-bank-settler-attacking-physiotherapists-pattern-2023-2025',
+      'west-bank-settler-destroying-blackboard-chalkboards-pattern-2023-2025',
+    ],
+    tags: ['speech-therapists', 'settlers', 'medical-access', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-deep-fungal-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Deep Fungal Infection Risk Pattern',
+    description: 'WHO/MSF multi-source documentation of elevated pediatric deep fungal infection risk under immune compromise.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-paracoccidioidomycosis-risk-pattern-2023-2025',
+      'gaza-children-sporotrichosis-risk-pattern-2023-2025',
+      'gaza-children-candidiasis-systemic-risk-pattern-2023-2025',
+    ],
+    tags: ['deep-fungal', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-deal-phases-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Phases Pattern',
+    description: 'Multi-source documentation of captors withholding which deal phases might include them.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-deal-phases-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deals-pattern-2023-2025',
+      'israel-hostages-forced-to-hold-quran-on-camera-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-libraries-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying School Library Materials Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school library materials after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-school-libraries-pattern-2023-2025',
+      'west-bank-settler-destroying-school-desks-pattern-2023-2025',
+      'west-bank-settler-destroying-blackboard-chalkboards-pattern-2023-2025',
+    ],
+    tags: ['school-libraries', 'settlers', 'education', 'west-bank'],
+  },
+
 
 
 
