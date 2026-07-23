@@ -6,18 +6,25 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:41:16.215Z",
-  "claimCount": 272,
+  "generatedAt": "2026-07-23T09:43:38.051Z",
+  "claimCount": 281,
   "tierHistogram": {
-    "verified": 95,
-    "well_attested": 104,
-    "contested": 29,
-    "interpretive": 25,
+    "well_attested": 108,
+    "verified": 96,
+    "contested": 30,
+    "interpretive": 27,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 14
+    "circumstantial": 15
   },
   "claims": [
+    {
+      "id": "ane-amarna-habiru",
+      "claim": "Amarna letters mention ʿApiru/Habiru groups in Late Bronze Canaan — sociopolitical bandits/mercenaries, not a simple ethnonym for “Hebrews.”",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave20.ts"
+    },
     {
       "id": "ane-amarna-letters",
       "claim": "The Amarna letters (14th c. BCE) document Late Bronze Canaanite-Egyptian diplomacy and conflict language used in comparative ANE historical method.",
@@ -264,6 +271,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "arch-herodium-tomb-debate",
+      "claim": "A monumental mausoleum at Herodium has been proposed as Herod’s tomb; identification remains debated among excavators and reviewers.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
       "id": "arch-hippos-sussita",
       "claim": "Hippos-Sussita (Decapolis) excavations illuminate Greco-Roman urbanism east of the Sea of Galilee relevant to Gospel geographic horizons.",
       "tier": "verified",
@@ -416,6 +430,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave13.ts"
+    },
+    {
+      "id": "cosmo-acoustic-scale",
+      "claim": "The angular scale of the CMB acoustic peaks (θ_*) tightly constrains the angular diameter distance to recombination in flat ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
       "id": "cosmo-age",
@@ -684,6 +705,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "ec-justin-dialogue",
+      "claim": "Justin Martyr’s Dialogue with Trypho engages Jewish-Christian scriptural argument in the mid-2nd century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
       "id": "ec-marcion",
       "claim": "Marcion of Sinope (mid-2nd century) promulgated a reduced Gospel+Paul collection, prompting proto-orthodox canon and theological responses.",
       "tier": "well_attested",
@@ -943,6 +971,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "hj-john-baptizer-independence",
+      "claim": "John the Baptist is treated as an independent prophetic figure in Josephus and the Gospels, not a mere literary foil invented de novo.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
       "id": "hj-kingdom-proclamation",
       "claim": "A core historical judgment across diverse scholars is that Jesus proclaimed God’s kingdom / reign as central to his public activity.",
       "tier": "well_attested",
@@ -1174,6 +1209,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "mod-gospel-genre-bios",
+      "claim": "Many scholars classify the Gospels as a form of ancient biography (bios) with flexible historical conventions rather than modern historiography.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
       "id": "mod-historical-jesus-quests",
       "claim": "“Quests” for the historical Jesus are historiographical programs with shifting criteria; no single reconstruction commands universal assent.",
       "tier": "interpretive",
@@ -1312,6 +1354,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nc-celsus-virgin",
+      "claim": "Celsus (via Origen) preserves a hostile Jewish/pagan counter-narrative about Jesus’ birth involving panthera traditions — reception of controversy, not primary birth documentation.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
       "id": "nc-epictetus-christians",
@@ -1557,6 +1606,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "nt-initial-text-vs-autograph",
+      "claim": "Modern critical editions target an initial text (Ausgangstext) that may not be identical to a single authorial autograph in every book.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
       "id": "nt-itacism",
@@ -1914,6 +1970,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-temple-tax",
+      "claim": "The half-shekel Temple tax and related fiscal practices are documented in Josephus, Matthew 17 tradition, and later rabbinic memory.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
       "id": "st-war-scroll",
