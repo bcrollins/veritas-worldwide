@@ -350,19 +350,32 @@ function IncidentCard({
               <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Multimedia Evidence</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {incident.multimedia.map((m, j) => (
-                  <a
+                  <div
                     key={j}
-                    href={m.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 p-3 rounded-sm border border-border bg-surface hover:border-crimson/30 hover:bg-parchment-dark/10 transition-all group"
+                    className="flex flex-col gap-1 p-3 rounded-sm border border-border bg-surface hover:border-crimson/30 hover:bg-parchment-dark/10 transition-all group"
                   >
-                    <span className="flex-shrink-0 text-crimson"><TierIcon name={MEDIA_ICONS[m.type] || 'file'} className="w-4 h-4" /></span>
-                    <div>
-                      <span className="font-sans text-[0.55rem] font-bold tracking-wider uppercase text-crimson">{m.type.replace('-', ' ')}</span>
-                      <p className="font-sans text-xs text-ink group-hover:text-crimson transition-colors">{m.label}</p>
-                    </div>
-                  </a>
+                    <a
+                      href={m.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 min-h-[44px]"
+                    >
+                      <span className="flex-shrink-0 text-crimson"><TierIcon name={MEDIA_ICONS[m.type] || 'file'} className="w-4 h-4" /></span>
+                      <div>
+                        <span className="font-sans text-[0.55rem] font-bold tracking-wider uppercase text-crimson">{m.type.replace('-', ' ')}</span>
+                        <p className="font-sans text-xs text-ink group-hover:text-crimson transition-colors">{m.label}</p>
+                      </div>
+                    </a>
+                    <a
+                      href={`https://web.archive.org/web/*/${m.url}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-sans text-[0.55rem] text-ink-faint hover:text-crimson pl-6"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Wayback archive search ↗
+                    </a>
+                  </div>
                 ))}
               </div>
             </div>
