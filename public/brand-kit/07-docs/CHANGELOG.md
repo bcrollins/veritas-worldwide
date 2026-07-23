@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.2 — 2026-07-23
+## 2.9.3 — 2026-07-23
+- Static media-kit.html links evidence tiers, Pinterest, social launch checklist
+
+## 2.9.2
 - Pinterest pin template + SOCIAL-LAUNCH.md checklist
 
 ## 2.9.1

@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.2'
+const KIT_VERSION = '2.9.3'
 
 const C = {
   parchment: '#FAF8F5',
@@ -695,7 +695,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.2 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.3 — ${new Date().toISOString().slice(0, 10)}
+- Static media-kit.html links evidence tiers, Pinterest, social launch checklist
+
+## 2.9.2
 - Pinterest pin template + SOCIAL-LAUNCH.md checklist
 
 ## 2.9.1
@@ -1102,8 +1105,8 @@ function mediaKitHtml() {
     <div class="grid">
       <div class="card"><h3>Logo mark</h3><a href="/brand-kit/01-logos/logo-mark.svg">logo-mark.svg</a><br /><a href="/brand-kit/01-logos/logo-mark-512.png">logo-mark-512.png</a></div>
       <div class="card"><h3>Wordmark / lockup</h3><a href="/brand-kit/01-logos/logo-full.svg">logo-full.svg</a><br /><a href="/brand-kit/03-wordmarks/wordmark.svg">wordmark.svg</a></div>
-      <div class="card"><h3>Social / OG</h3><a href="/og-image.png">og-image.png</a><br /><a href="/brand-kit/04-social/social-banner-x.svg">X banner</a></div>
-      <div class="card"><h3>Full kit</h3><a href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip">Ultimate Brand Kit (.zip)</a><br /><a href="/brand-kit/07-docs/BRAND-GUIDE.md">Brand guide</a></div>
+      <div class="card"><h3>Social / OG</h3><a href="/og-image.png">og-image.png</a><br /><a href="/brand-kit/04-social/social-banner-x.svg">X banner</a><br /><a href="/brand-kit/04-social/evidence-tier-verified.svg">Evidence tiers</a><br /><a href="/brand-kit/04-social/pinterest-pin.svg">Pinterest pin</a></div>
+      <div class="card"><h3>Full kit</h3><a href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip">Ultimate Brand Kit (.zip)</a><br /><a href="/brand-kit/07-docs/BRAND-GUIDE.md">Brand guide</a><br /><a href="/brand-kit/07-docs/SOCIAL-LAUNCH.md">Social launch checklist</a><br /><a href="/brand-kit/07-docs/EVIDENCE-TIERS.md">Evidence tiers</a></div>
     </div>
     <h2>Press contact</h2>
     <p>Rights &amp; media: <a href="mailto:rights@veritasworldwide.com">rights@veritasworldwide.com</a><br />Site: <a href="https://veritasworldwide.com">veritasworldwide.com</a></p>
