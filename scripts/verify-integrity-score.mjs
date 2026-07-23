@@ -166,6 +166,9 @@ const required = [
   'george-soros',
   'sheldon-adelson',
   'larry-ellison',
+  'marc-andreessen',
+  'reid-hoffman',
+  'john-podesta',
 ];
 const scores = {};
 for (const id of required) {
@@ -1514,8 +1517,57 @@ for (const f of (ellisonP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('ellison dual-cite collision: ' + f.id);
 }
 
+
+// Marc Andreessen densify gate (n≥3)
+const andreessen = scores['marc-andreessen'];
+if (!andreessen || andreessen.n < 3) throw new Error('marc-andreessen needs ≥3 verified falsehoods, got ' + (andreessen?.n ?? 0));
+if (andreessen.score > 80) throw new Error('marc-andreessen score expected ≤80 after densify, got ' + andreessen.score);
+const andreessenP = getProfileBySlug('marc-andreessen');
+for (const id of [
+  'andreessen-tech-only-progress-no-tradeoffs-absolute',
+  'andreessen-a16z-not-political-absolute-while-pac-spending',
+  'andreessen-crypto-only-empowerment-no-fraud-vector-absolute',
+]) {
+  if (!(andreessenP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('marc-andreessen missing docket id: ' + id);
+}
+for (const f of (andreessenP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('andreessen dual-cite collision: ' + f.id);
+}
+
+// Reid Hoffman densify gate (n≥3)
+const hoffman = scores['reid-hoffman'];
+if (!hoffman || hoffman.n < 3) throw new Error('reid-hoffman needs ≥3 verified falsehoods, got ' + (hoffman?.n ?? 0));
+if (hoffman.score > 80) throw new Error('reid-hoffman score expected ≤80 after densify, got ' + hoffman.score);
+const hoffmanP = getProfileBySlug('reid-hoffman');
+for (const id of [
+  'hoffman-linkedin-data-purely-user-controlled-absolute',
+  'hoffman-soft-power-not-political-intervention-absolute',
+  'hoffman-blitzscaling-no-externalities-absolute',
+]) {
+  if (!(hoffmanP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('reid-hoffman missing docket id: ' + id);
+}
+for (const f of (hoffmanP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('hoffman dual-cite collision: ' + f.id);
+}
+
+// John Podesta densify gate (n≥3)
+const johnPodesta = scores['john-podesta'];
+if (!johnPodesta || johnPodesta.n < 3) throw new Error('john-podesta needs ≥3 verified falsehoods, got ' + (johnPodesta?.n ?? 0));
+if (johnPodesta.score > 80) throw new Error('john-podesta score expected ≤80 after densify, got ' + johnPodesta.score);
+const johnPodestaP = getProfileBySlug('john-podesta');
+for (const id of [
+  'john-podesta-clinton-email-no-big-deal-absolute-framing',
+  'john-podesta-super-pac-coordination-firewall-absolute',
+  'john-podesta-wikileaks-only-russia-no-content-substance-absolute',
+]) {
+  if (!(johnPodestaP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('john-podesta missing docket id: ' + id);
+}
+for (const f of (johnPodestaP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('john-podesta dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 79) throw new Error('expected ≥79 compiled dockets, got ' + docketCount);
+if (docketCount < 82) throw new Error('expected ≥82 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

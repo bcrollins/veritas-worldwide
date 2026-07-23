@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:40:55.416Z",
+  "generatedAt": "2026-07-23T10:42:05.278Z",
   "count": 96,
   "profiles": [
     {
@@ -1495,9 +1495,9 @@
         "Democratic Donor",
         "Tech Industry"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 76,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "marc-andreessen",
@@ -1514,9 +1514,9 @@
         "Tech Entrepreneur",
         "Andreessen Horowitz"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "larry-ellison",
@@ -1613,9 +1613,9 @@
         "Clinton Era",
         "Political Strategist"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "paul-manafort",

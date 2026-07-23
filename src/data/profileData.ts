@@ -10338,7 +10338,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'hoffman-linkedin-data-purely-user-controlled-absolute',
+        statement:
+          'Framed LinkedIn data practices as purely user-controlled with absolute user sovereignty.',
+        saidAt: '2010s',
+        context: 'Public defenses of LinkedIn data/privacy model pre- and post-Microsoft.',
+        whyFalse:
+          'LinkedIn faced data-scraping litigation and privacy controversies showing limits of user control. Absolute pure-user-sovereignty framing overstated control relative to platform design and third-party scraping realities.',
+        correction:
+          'Users do not have absolute sovereignty over LinkedIn network data in practice.',
+        statementSource: 'Hoffman/LinkedIn public user-control privacy framing',
+        statementUrl: 'https://www.linkedin.com',
+        debunkSource: 'hiQ v. LinkedIn litigation record; multi-outlet LinkedIn data controversies',
+        debunkUrl: 'https://www.supremecourt.gov',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'hoffman-soft-power-not-political-intervention-absolute',
+        statement:
+          'Framed large Democratic political giving and candidate incubation as pure civic engagement without political machine characteristics.',
+        saidAt: '2016–2020s',
+        context: 'Hoffman political spending and candidate support.',
+        whyFalse:
+          'Hoffman is a major political donor and networker with documented candidate pipelines. Absolute pure-civic-no-machine framing is false to the scale and structure of that political operation.',
+        correction:
+          'Hoffman’s political giving and candidate networks are a political operation — not pure non-machine civic hobby only.',
+        statementSource: 'Hoffman public pure-civic framing of political activity',
+        statementUrl: 'https://www.reidhoffman.org',
+        debunkSource: 'OpenSecrets Hoffman political giving; multi-outlet candidate-network reporting',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'hoffman-blitzscaling-no-externalities-absolute',
+        statement:
+          'Blitzscaling advocacy frames speed-over-efficiency growth as pure win with absolute minimization of externalities.',
+        saidAt: '2010s (Blitzscaling book/talks)',
+        context: 'Public blitzscaling thesis.',
+        whyFalse:
+          'Documented externalities include labor precarity, regulatory arbitrage, and systemic risk (see WeWork/Uber controversies). Absolute no-externality framing is false to that startup-economy record.',
+        correction:
+          'Blitzscaling produces documented externalities — not pure externality-free growth.',
+        statementSource: 'Hoffman Blitzscaling public thesis',
+        statementUrl: 'https://www.blitzscaling.com',
+        debunkSource: 'Multi-outlet analyses of blitzscaling externalities (labor, safety, governance failures)',
+        debunkUrl: 'https://www.ft.com',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'marc-andreessen',
@@ -10401,7 +10455,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'andreessen-tech-only-progress-no-tradeoffs-absolute',
+        statement:
+          'Techno-optimist manifesto framing treats technology as pure progress with absolute dismissal of meaningful downside tradeoffs.',
+        saidAt: '2023',
+        context: '“The Techno-Optimist Manifesto” essay.',
+        whyFalse:
+          'Documented tech harms (privacy, labor, addiction, weapons) exist alongside benefits. Absolute no-meaningful-tradeoff progress framing is false to the multi-decade empirical harm record.',
+        correction:
+          'Technology creates benefits and harms; absolute no-tradeoff optimism fails the empirical record.',
+        statementSource: 'Andreessen Techno-Optimist Manifesto 2023',
+        statementUrl: 'https://a16z.com/the-techno-optimist-manifesto/',
+        debunkSource: 'Multi-decade empirical literature on tech externalities (privacy, labor, attention, weapons)',
+        debunkUrl: 'https://www.ftc.gov',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'andreessen-a16z-not-political-absolute-while-pac-spending',
+        statement:
+          'Framed a16z as pure markets/tech without political project while the firm and partners ran major political spending and policy campaigns.',
+        saidAt: '2020s',
+        context: 'a16z American Dynamism / crypto policy / PAC activity.',
+        whyFalse:
+          'a16z ran explicit political and policy campaigns with large spending. Absolute non-political pure-markets framing is false to that political operation record.',
+        correction:
+          'a16z conducts explicit political spending and policy campaigns — not pure non-political markets only.',
+        statementSource: 'a16z/Andreessen pure-markets public framing',
+        statementUrl: 'https://a16z.com',
+        debunkSource: 'FEC/OpenSecrets a16z political spending; multi-outlet American Dynamism political reporting',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'andreessen-crypto-only-empowerment-no-fraud-vector-absolute',
+        statement:
+          'Absolute crypto-empowerment framing that minimizes structural fraud and consumer-harm vectors as peripheral.',
+        saidAt: '2021–2022',
+        context: 'a16z crypto boom public messaging pre-FTX collapse wave.',
+        whyFalse:
+          'FTX, Terraform, and multi-billion fraud/collapse cases established structural fraud vectors. Absolute empowerment-only minimization was false to that collapse record.',
+        correction:
+          'Crypto markets produced multi-billion fraud collapses; absolute empowerment-only framing fails that record.',
+        statementSource: 'Andreessen/a16z crypto empowerment public messaging 2021–2022',
+        statementUrl: 'https://a16z.com',
+        debunkSource: 'DOJ FTX/SBF record; multi-outlet crypto-collapse accounting',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/samuel-bankman-fried-convicted-multiple-counts-fraud-and-conspiracy',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'larry-ellison',
@@ -10961,7 +11069,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'john-podesta-clinton-email-no-big-deal-absolute-framing',
+        statement:
+          'Campaign leadership public framing treated the Clinton private-email controversy as pure overblown partisan attack with no legitimate process concern.',
+        saidAt: '2015–2016',
+        context: 'Clinton campaign chair responses to private-email server scandal.',
+        whyFalse:
+          'State IG and FBI found classified information on the private server and process failures. Absolute “zero legitimate issue” framing was false to those official findings — even while criminal intent was not charged.',
+        correction:
+          'Official investigations found classified material and process failures on the private server; absolute zero-issue framing fails that record.',
+        statementSource: 'Clinton campaign / Podesta public email-server minimizations 2015–2016',
+        statementUrl: 'https://www.hillaryclinton.com',
+        debunkSource: 'State OIG and FBI Midyear Exam findings on private email server',
+        debunkUrl: 'https://www.justice.gov/archives/opa/blog/statement-fbi-director-james-b-comey-investigation-secretary-hillary-clinton-s-use',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'john-podesta-super-pac-coordination-firewall-absolute',
+        statement:
+          'Absolute legal-firewall framing between campaign and supportive super PACs as pure non-coordination.',
+        saidAt: '2016',
+        context: 'Campaign finance public messaging.',
+        whyFalse:
+          'Contemporaneous reporting documented extensive soft coordination norms industry-wide. Absolute pure-firewall purity claims overstate the practical separation even when formal independent-expenditure rules are asserted.',
+        correction:
+          'Soft coordination and personnel overlap are endemic; absolute pure-firewall purity is overstated.',
+        statementSource: 'Campaign public super-PAC firewall framing 2016',
+        statementUrl: 'https://www.fec.gov',
+        debunkSource: 'Multi-outlet soft-coordination reporting; FEC independent-expenditure controversies',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'john-podesta-wikileaks-only-russia-no-content-substance-absolute',
+        statement:
+          'Absolute framing that Podesta email disclosures contained nothing substantively newsworthy beyond Russian weaponization.',
+        saidAt: '2016',
+        context: 'Campaign responses to WikiLeaks Podesta email dumps.',
+        whyFalse:
+          'The dumps included newsworthy primary material (speech excerpts, internal strategy). Absolute “nothing newsworthy” framing was false to the content record even while Russian weaponization was real.',
+        correction:
+          'The emails contained newsworthy primary material; absolute nothing-to-see framing fails the content record.',
+        statementSource: 'Campaign public “nothing newsworthy” framing of Podesta emails 2016',
+        statementUrl: 'https://www.hillaryclinton.com',
+        debunkSource: 'Primary WikiLeaks Podesta email content archive; multi-outlet contemporaneous reporting',
+        debunkUrl: 'https://wikileaks.org/podesta-emails/',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'paul-manafort',
