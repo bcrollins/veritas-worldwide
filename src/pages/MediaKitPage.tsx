@@ -99,25 +99,40 @@ export default function MediaKitPage() {
       url: `${SITE_URL}/media-kit`,
       image: `${SITE_URL}/og-image.png`,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: `Media Kit | ${SITE_NAME}`,
-      url: `${SITE_URL}/media-kit`,
-      description: 'Official brand and press assets for Veritas Worldwide Press.',
-      isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
-      publisher: {
-        '@type': 'Organization',
-        name: SITE_NAME,
-        url: SITE_URL,
-        logo: {
-          '@type': 'ImageObject',
-          url: `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
-          width: 512,
-          height: 512,
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: `Media Kit | ${SITE_NAME}`,
+        url: `${SITE_URL}/media-kit`,
+        description: 'Official brand and press assets for Veritas Worldwide Press.',
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: {
+          '@type': 'NewsMediaOrganization',
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
+            width: 512,
+            height: 512,
+          },
+          contactPoint: {
+            '@type': 'ContactPoint',
+            email: 'rights@veritasworldwide.com',
+            contactType: 'media relations',
+          },
         },
       },
-    })
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DataDownload',
+        name: 'Veritas Worldwide Ultimate Brand Kit',
+        encodingFormat: 'application/zip',
+        contentUrl: `${SITE_URL}/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip`,
+        description: 'Full logo, social, press template, and design token package for Veritas Worldwide Press.',
+      },
+    ])
     let cancelled = false
     void fetch('/brand-kit/manifest.json', { cache: 'no-store' })
       .then(r => (r.ok ? r.json() : null))

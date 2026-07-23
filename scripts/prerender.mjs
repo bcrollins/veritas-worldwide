@@ -1061,7 +1061,9 @@ function renderLlmsTxt(topics) {
     '',
     '- [Home](https://veritasworldwide.com/): Publication front page.',
     '- [About](https://veritasworldwide.com/about): Publication model, evidence labels, and reader funding.',
-    '- [Media Kit](https://veritasworldwide.com/media-kit): Official logos, social banners, and brand ZIP for press.',
+    '- [Media Kit](https://veritasworldwide.com/media-kit): Official logos, social banners, evidence-tier cards, and brand ZIP for press.',
+    '- [Evidence tiers brand doc](https://veritasworldwide.com/brand-kit/07-docs/EVIDENCE-TIERS.md): Verified / Circumstantial / Disputed visual system.',
+    '- [Press contact](https://veritasworldwide.com/brand-kit/07-docs/PRESS-CONTACT.md): Rights, tips, and media kit paths.',
     '- [Security disclosure](https://veritasworldwide.com/.well-known/security.txt): RFC 9116 contact and policy for vulnerability reports.',
     '- [Accessibility](https://veritasworldwide.com/accessibility): WCAG targets, contrast, and touch-target standards.',
     '- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.',
@@ -2344,8 +2346,8 @@ const staticPages = [
     description:
       'Official logos, social banners, letterhead, and brand guidelines for Veritas Worldwide Press and The Record.',
     body: [
-      'Download the Ultimate Brand Kit ZIP, individual seal and wordmark assets, social platform banners, and press templates. Prefer vectors; do not recolor the seal outside brand tokens.',
-      'Press contact: rights@veritasworldwide.com. Interactive page and static HTML media kit both ship from the brand kit.',
+      'Download the Ultimate Brand Kit ZIP, individual seal and wordmark assets, social platform banners, evidence-tier cards, and press templates. Prefer vectors; do not recolor the seal outside brand tokens.',
+      'Press contact: rights@veritasworldwide.com. Evidence taxonomy: Verified / Circumstantial / Disputed. Interactive page and static HTML media kit both ship from the brand kit.',
     ],
     trustLinks: [
       { href: '/about', label: '→ About' },
