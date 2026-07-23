@@ -759,4 +759,9 @@ assert(stickyScrollSrc.includes('scrollY > 400'), 'membership 400px scroll gate'
 const stickyPassive = read('src/components/StickyMembershipBar.tsx')
 assert(stickyPassive.includes('passive: true') || stickyPassive.includes('passive:true'), 'membership passive scroll')
 
+
+// Sticky membership GA support attribution source
+const stickyGa = read('src/components/StickyMembershipBar.tsx')
+assert(stickyGa.includes("trackSupportClick('sticky-bar')") || stickyGa.includes('sticky-bar'), 'sticky-bar GA source')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
