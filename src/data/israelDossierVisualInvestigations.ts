@@ -2346,6 +2346,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-nahal-oz-road-visual-2023',
+    title: 'October 7 Roads Near Nahal Oz — Multi-Outlet Civilian Murder Visual Record',
+    date: 'October 7, 2023',
+    location: 'Roads near Kibbutz Nahal Oz, southern Israel',
+    summary:
+      'Multi-outlet video documents civilian vehicle attacks on roads near Nahal Oz on October 7. Distinct from the Nahal Oz kibbutz compound package by focusing on multi-source roadside packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence on Nahal Oz-area roads on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Nahal Oz-road October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-icu-blackout-visual-2023-2025',
+    title: 'Gaza ICU Blackouts and Generator Failure — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Hospitals and ICUs across Gaza',
+    summary:
+      'Multi-outlet video packages document ICU blackouts and generator failures affecting civilian patients including children. Multi-source visual floor of medical-system collapse; ethnicity is never evidence.',
+    evidence:
+      'WHO health-cluster materials, multi-outlet visual packages, and OHCHR medical-protection materials establish multi-source documentation of ICU power failure harming civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OHCHR medical-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza hospital packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet ICU blackout video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OHCHR medical-protection trail', url: 'https://www.who.int' },
+      { type: 'photo-essay', label: 'Wire photos of hospital blackout conditions', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-olive-tree-uprooting-visual-2023-2025',
+    title: 'West Bank Settler Olive Tree Uprooting — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village olive groves',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document settler uprooting of Palestinian civilian olive trees, denying multi-year crop investment including food for families with children. Multi-source visual record distinct from harvest-equipment destruction cards; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of olive-tree uprooting against civilians.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem olive-uprooting video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
