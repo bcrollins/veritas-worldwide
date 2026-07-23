@@ -696,4 +696,11 @@ assert(forumHubs.includes("to: '/israel-dossier'") || forumHubs.includes('to: "/
 const briefingHubs = read('src/pages/IsraelDossierBriefingPage.tsx')
 assert(briefingHubs.includes("to: '/profiles'") || briefingHubs.includes('to: "/profiles"'), 'Briefing Profiles recovery')
 
+
+// Content pack + researcher excludePath
+const packPage = read('src/pages/ContentPackPage.tsx')
+assert(packPage.includes('ResearchHubChips') && packPage.includes('excludePath='), 'ContentPack excludePath')
+const researcherPage = read('src/pages/ResearcherHubPage.tsx')
+assert(researcherPage.includes('ResearchHubChips') && researcherPage.includes('excludePath='), 'Researcher excludePath')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
