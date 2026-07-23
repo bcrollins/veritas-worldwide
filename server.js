@@ -1946,13 +1946,18 @@ app.get(['/ai.txt', '/.well-known/llms.txt'], (_req, res) => {
 
 // ── Sensitive operator files must never be publicly served ─────────────────
 // data/*.ndjson may contain PII (OSINT orders). Fail closed even if mis-copied into dist.
+// Do NOT block /api/* — redacted admin OSINT routes live under /api/admin/osint-orders.
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
   const pth = (req.path || '').toLowerCase()
+  if (pth.startsWith('/api/')) return next()
   if (
     pth === '/data' ||
     pth.startsWith('/data/') ||
-    pth.includes('osint-orders') ||
+    // Static/public path probes only (not API)
+    pth === '/osint-orders.ndjson' ||
+    pth.endsWith('/osint-orders.ndjson') ||
+    pth.includes('/osint-orders') ||
     /\/(?:data\/)?(?:client-errors|health-history|analytics)\.(?:json|ndjson)$/i.test(pth)
   ) {
     res.status(404)

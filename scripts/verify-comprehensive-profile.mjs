@@ -87,6 +87,8 @@ assert(server.includes('purgeExpiredOsintOrders') || server.includes('OSINT_RETE
 assert(server.includes('/api/admin/osint-orders'), 'admin OSINT orders redacted tail missing')
 assert(server.includes('redactOsintOrder'), 'OSINT order redaction helper missing')
 assert(server.includes('OSINT ops token not configured'), 'admin OSINT API must 503 without token')
+assert(server.includes("pth.startsWith('/api/')") || server.includes('startsWith("/api/")'),
+  'sensitive-path deny must skip /api/ so admin OSINT routes work')
 
 
 // Methodology completeness floor
