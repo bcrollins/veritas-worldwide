@@ -11451,6 +11451,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'menendez-not-foreign-agent-denial',
+        statement:
+          'Denied acting as an unregistered agent of a foreign government, framing the Egypt/Qatar-related charges as baseless political persecution rather than foreign-agency conduct.',
+        saidAt: '2023–2024 (indictment through trial)',
+        context:
+          'Defense messaging and public statements during federal trial on bribery and Foreign Agents Registration Act / foreign-agent counts.',
+        whyFalse:
+          'Federal jury convicted Menendez on counts including acting as an agent of Egypt (and related foreign-agency offenses) alongside bribery. DOJ SDNY sentencing (Jan 2025) records the foreign-agent conviction as part of the judgment — contradicting categorical denials of foreign-agency conduct.',
+        correction:
+          'Menendez was convicted of acting as a foreign agent as well as bribery; categorical denials of foreign-agency conduct are false relative to the jury verdict and judgment.',
+        statementSource: 'Post-indictment / trial-period public denials (multi-outlet coverage of Menendez defense statements)',
+        statementUrl: 'https://www.nytimes.com/2024/07/16/nyregion/menendez-guilty-corruption-trial.html',
+        debunkSource: 'DOJ SDNY — conviction and Jan 2025 sentencing (bribery, foreign agent, and related counts)',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/former-us-senator-robert-menendez-sentenced-11-years-prison-bribery-foreign-agent-and',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'DOJ SDNY sentencing press release', url: 'https://www.justice.gov/usao-sdny/pr/former-us-senator-robert-menendez-sentenced-11-years-prison-bribery-foreign-agent-and' },

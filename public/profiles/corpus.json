@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:44:52.333Z",
+  "generatedAt": "2026-07-23T09:47:02.429Z",
   "count": 96,
   "profiles": [
     {
@@ -2045,8 +2045,8 @@
         "Corruption Conviction",
         "FMF"
       ],
-      "integrityScore": 60,
-      "integrityFalsehoods": 2,
+      "integrityScore": 35,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     }
   ]

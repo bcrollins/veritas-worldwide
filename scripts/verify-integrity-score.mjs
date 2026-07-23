@@ -352,12 +352,13 @@ if (!(cheneyP.documentedFalsehoods || []).some((f) => f.id === 'cheney-iraq-reco
 
 // Bob Menendez multi-entry (bribery denials vs conviction)
 const menendez = scores['bob-menendez'];
-if (!menendez || menendez.n < 2) throw new Error('bob-menendez needs ≥2 verified falsehoods, got ' + (menendez?.n ?? 0));
-if (menendez.score > 65) throw new Error('bob-menendez score expected ≤65 after deep dive, got ' + menendez.score);
+if (!menendez || menendez.n < 3) throw new Error('bob-menendez needs ≥3 verified falsehoods, got ' + (menendez?.n ?? 0));
+if (menendez.score > 40) throw new Error('bob-menendez score expected ≤40 after densify, got ' + menendez.score);
 const menendezP = getProfileBySlug('bob-menendez');
 for (const id of [
   'menendez-not-accepting-bribes-denial',
   'menendez-innocent-after-conviction-2024',
+  'menendez-not-foreign-agent-denial',
 ]) {
   if (!(menendezP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('bob-menendez missing docket id: ' + id);
