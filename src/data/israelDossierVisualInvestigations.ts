@@ -3489,9 +3489,6 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsCivilians: true,
     targetsChildren: true,
   },
-
-,
-
   {
     id: 'vi-gaza-refugee-camp-strike-visual-2023-2025',
     title: 'Gaza Refugee Camp Civilian Strikes — Multi-Outlet Visual Record',
