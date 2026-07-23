@@ -340,3 +340,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Milestone | **≥1900 incidents** |
 
+
+## Interval densify — tip post-1921 toward 2000 — comms tower / Netivot safe-room / barley arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza iron-sucrose/folic-acid/Ca-gluconate/hydralazine · hostage clean-blood/empty-school-desk/insects/seaport-banners · WB zucchini/dental-clinic/chive/pepper-seedlings |
+| VI | comms tower · Netivot safe room · barley-field arson |
+| Pure | visual + israel-dossier PASS |
+

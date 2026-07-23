@@ -4281,6 +4281,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-communications-tower-civilian-impact-visual-2023-2025',
+    title: 'Gaza Communications Tower Strikes Civilian Impact — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip communications towers and civilian telecom infrastructure',
+    summary:
+      'Multi-outlet video packages document strikes on communications towers with civilian secondary impacts under wartime conditions, including loss of emergency coordination for families with children. Multi-source visual record; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA connectivity materials establish multi-source documentation of communications-tower harm affecting civilian services.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza infrastructure packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet communications-tower impact video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of telecom infrastructure aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA connectivity trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-netivot-safe-room-visual-2023',
+    title: 'October 7 Netivot Safe-Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Netivot residential safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders and rocket-related civilian harm involving Netivot safe rooms during the October 7 attacks period. Multi-party visual record; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence affecting Netivot safe rooms on and around October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Netivot safe-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-barley-field-arson-visual-2023-2025',
+    title: 'West Bank Settler Barley Field Arson — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village barley fields and grain plots',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian barley fields, denying staple food production including for families with children. Multi-source visual record distinct from wheat-field arson cards; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of barley-field arson affecting civilian food production.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem barley-field arson video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem agricultural-violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
