@@ -104,4 +104,12 @@ News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, leg
 69. OSINT success migrated to RelatedHubs + pack download retained  
 70. Bernie quarantine recovery via RelatedHubs `tone="dark"` (`bernie-related-hubs`)  
 71. RelatedHubs platform: `tone` surface | parchment | dark  
-72. Pure recovery suite **100 surface needles**  
+72. Pure recovery suite **100 surface needles**
+
+## Sprint 7b — Search/Bookmarks/Home platformization (SHIPPED)
+73. Search idle+empty → RelatedHubs `SEARCH_RECOVERY_HUBS`
+74. Bookmarks empty → RelatedHubs `BOOKMARKS_HUBS` (keep Open the Reader CTA)
+75. Home underfold RelatedHubs `home-related-hubs` exclude Record
+76. a11y floors credit RelatedHubs/ResearchHubChips/DossierHubSpokes mounts
+77. Pure recovery **101 surface needles** · RelatedHubs breadth ≥28 · pure 46 green
+
