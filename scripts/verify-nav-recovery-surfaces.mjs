@@ -2085,4 +2085,13 @@ assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'A11Y Me
 assert(surfaces.length >= 102, `PASS line surfaces final ${surfaces.length}`)
 
 
+
+// RelatedHubs interface RelatedHub export ultimate end final
+const relatedIface = read('src/components/RelatedHubs.tsx')
+assert(relatedIface.includes('export interface RelatedHub'), 'RelatedHub interface export final')
+assert(relatedIface.includes('to: string') && relatedIface.includes('label: string'), 'RelatedHub fields final')
+assert(relatedIface.includes('export default function RelatedHubs'), 'RelatedHubs default export final')
+assert(relatedIface.includes('export const PRIMARY_RELATED_HUBS'), 'PRIMARY export final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
