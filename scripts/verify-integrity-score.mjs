@@ -387,14 +387,17 @@ for (const f of (grahamP.documentedFalsehoods || []).filter((x) => x.tier === 'v
 
 // Tom Cotton integrity gate (multi-entry)
 const cotton = scores['tom-cotton'];
-if (!cotton || cotton.n < 2) throw new Error('tom-cotton needs ≥2 verified falsehoods, got ' + (cotton?.n ?? 0));
-if (cotton.score > 75) throw new Error('tom-cotton score expected ≤75, got ' + cotton.score);
+if (!cotton || cotton.n < 3) throw new Error('tom-cotton needs ≥3 verified falsehoods, got ' + (cotton?.n ?? 0));
+if (cotton.score > 50) throw new Error('tom-cotton score expected ≤50 after densify, got ' + cotton.score);
 const cottonP = getProfileBySlug('tom-cotton');
-if (!(cottonP.documentedFalsehoods || []).some((f) => f.id === 'cotton-no-way-to-screen-immigrants-covid-2021')) {
-  throw new Error('tom-cotton missing COVID screening docket id');
-}
-if (!(cottonP.documentedFalsehoods || []).some((f) => f.id === 'cotton-halted-deportations-all-criminals-2021')) {
-  throw new Error('tom-cotton missing halted deportations docket id');
+for (const id of [
+  'cotton-no-way-to-screen-immigrants-covid-2021',
+  'cotton-halted-deportations-all-criminals-2021',
+  'cotton-obama-hijacked-farm-bill-food-stamps-2014',
+]) {
+  if (!(cottonP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('tom-cotton missing docket id: ' + id);
+  }
 }
 for (const f of (cottonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('cotton dual-cite collision: ' + f.id);
@@ -402,12 +405,13 @@ for (const f of (cottonP.documentedFalsehoods || []).filter((x) => x.tier === 'v
 
 // Chuck Schumer multi-entry (Pants on Fire Tillerson + Afghanistan False)
 const schumer = scores['chuck-schumer'];
-if (!schumer || schumer.n < 2) throw new Error('chuck-schumer needs ≥2 verified falsehoods, got ' + (schumer?.n ?? 0));
-if (schumer.score > 65) throw new Error('chuck-schumer score expected ≤65 after deep dive, got ' + schumer.score);
+if (!schumer || schumer.n < 3) throw new Error('chuck-schumer needs ≥3 verified falsehoods, got ' + (schumer?.n ?? 0));
+if (schumer.score > 50) throw new Error('chuck-schumer score expected ≤50 after densify, got ' + schumer.score);
 const schumerP = getProfileBySlug('chuck-schumer');
 for (const id of [
   'schumer-tillerson-wont-divest-exxon-2017',
   'schumer-all-americans-out-afghanistan-2021',
+  'schumer-black-white-student-debt-95-percent-2021',
 ]) {
   if (!(schumerP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('chuck-schumer missing docket id: ' + id);

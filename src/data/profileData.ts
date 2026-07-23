@@ -920,6 +920,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'schumer-black-white-student-debt-95-percent-2021',
+        statement:
+          '“After 20 years, only 5% of whites have student debt, but 95% of African Americans have debt.”',
+        saidAt: 'February 4, 2021',
+        context:
+          'Press conference with Sen. Elizabeth Warren and House Democrats urging President Biden to cancel up to $50,000 in federal student debt; Schumer attributed exact figures to Warren mid-exchange.',
+        whyFalse:
+          'FactCheck.org: the Brandeis IASP “Stalling Dreams” study the senators meant to cite found 51% of white borrowers and 74% of Black borrowers still held student debt 20 years after starting college — not 5% vs 95%. The 94%/5% figures in the paper refer to median remaining balance reduction among borrowers, not the share of people still in debt. Schumer and Warren’s offices later said they intended the debt-balance framing.',
+        correction:
+          'After 20 years, about half of white borrowers and about three-quarters of Black borrowers still had student debt; the 5%/95% split was a misstatement of the Brandeis study.',
+        statementSource: 'Rev transcript — Schumer/Warren student-debt press conference, Feb. 4, 2021',
+        statementUrl:
+          'https://www.rev.com/blog/transcripts/chuck-schumer-elizabeth-warren-press-conference-transcript-plan-to-cancel-50k-in-student-loan-debt',
+        debunkSource: 'FactCheck.org — Schumer, Warren Misstate Student Loan Debt Disparity (Feb. 9, 2021); Brandeis IASP Stalling Dreams (2019)',
+        debunkUrl: 'https://www.factcheck.org/2021/02/schumer-warren-misstate-student-loan-debt-disparity/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.schumer.senate.gov' },
@@ -2913,6 +2932,25 @@ export const PROFILES: PowerProfile[] = [
         debunkUrl:
           'https://www.politifact.com/factchecks/2021/feb/26/tom-cotton/tom-cotton-falsely-claims-joe-biden-halted-deporta/',
         severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'cotton-obama-hijacked-farm-bill-food-stamps-2014',
+        statement:
+          '“When President Obama hijacked the farm bill, turned it into a food stamp bill, with billions more in spending, I voted no.”',
+        saidAt: 'September 18, 2014',
+        context:
+          'Senate campaign ad “Listened” defending Cotton’s vote against the final 2014 farm bill, filmed on his family farm with his father.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. Nutrition assistance (food stamps/SNAP) has been part of every enacted farm bill since 1973 — decades before Obama — pairing rural agriculture votes with urban nutrition votes. SNAP already dominated farm-bill spending before Obama (≈55% in 2002, ≈67% in 2008, ≈80% in 2014). Obama did not invent the linkage; House Republicans briefly tried to split farm and nutrition programs in 2013 and failed.',
+        correction:
+          'Food stamps/SNAP have been inseparable from modern farm bills since 1973; Obama did not “hijack” a pure farm bill into nutrition spending.',
+        statementSource: 'Tom Cotton campaign ad “Listened” (YouTube), Sept. 18, 2014',
+        statementUrl: 'https://www.youtube.com/watch?v=q47stRkYoO8',
+        debunkSource: 'PolitiFact — Pants on Fire (Sept. 19, 2014); CRS farm bill history; CBO SNAP/farm bill spending share',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2014/sep/19/tom-cotton/tom-cotton-incorrectly-says-obama-turned-farm-bill/',
+        severity: 'egregious',
         tier: 'verified',
       },
     ],
