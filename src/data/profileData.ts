@@ -3278,75 +3278,152 @@ export const PROFILES: PowerProfile[] = [
     party: 'D',
     state: 'IL',
     photoUrl: getProfilePhoto('barack-obama'),
-    summary: 'Former U.S. President 2009-2017. Provided record aid to Israel during presidency. Now involved in various initiatives.',
-    tags: ['Former President', 'Illinois', 'Democrat', 'Pro-Israel'],
-    career: ['44th President 2009-2017', 'U.S. Senator (D-IL) 2005-2008', 'State Senator', 'Community organizer'],
+    summary:
+      '44th U.S. President (2009–2017). Signed the 2016 $38B 10-year MOU that still floors annual FMF + missile-defense transfers to Israel — the structural enablement architecture succeeding administrations inherited. Also negotiated JCPOA (opposed by Netanyahu/AIPAC) and abstained on UNSC 2334 (settlements). Integrity docket covers dual-cited ACA "keep your plan" and steel-production falsehoods. Primary: CRS RL33222, White House archives, UN records, OpenSecrets, PolitiFact.',
+    tags: [
+      'Former President',
+      'Illinois',
+      'Democrat',
+      'Pro-Israel',
+      'MOU Architect',
+      'FMF Continuity',
+      'UNSC 2334',
+      'JCPOA',
+    ],
+    career: [
+      'Illinois State Senator; U.S. Senator (D-IL) 2005–2008',
+      '44th President of the United States (2009–2017)',
+      '2016 — Signed $38B U.S.–Israel 10-year MOU (FMF + missile defense)',
+      '2016 — U.S. abstention enabling UNSC 2334 on settlements',
+      'Obama Foundation / post-presidency public role',
+    ],
     websites: [
-      { label: 'Obama Foundation', url: 'https://www.obama.org' }
+      { label: 'Obama Foundation', url: 'https://www.obama.org' },
+      { label: 'CRS RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'UNSC 2334 (Digitallibrary)', url: 'https://digitallibrary.un.org/record/853516' },
+      { label: 'OpenSecrets — 2008 presidential', url: 'https://www.opensecrets.org/pres08' },
+      { label: 'PolitiFact — keep your plan (Lie of the Year)', url: 'https://www.politifact.com/article/2013/dec/12/lie-year-if-you-like-your-health-care-plan-keep-it/' },
+      { label: 'PolitiFact — steel production (False)', url: 'https://www.politifact.com/factchecks/2016/jul/05/barack-obama/barack-obama-wrong-about-size-us-steel-production/' },
     ],
     quotes: [
       {
         text: 'The bond between the United States and Israel is unbreakable.',
-        context: 'AIPAC conference speech',
+        context: 'AIPAC Policy Conference address framing alliance orthodoxy alongside disagreements on settlements/Iran.',
         date: '2012',
         source: 'White House Archives',
-        url: 'https://obamawhitehouse.archives.gov'
-      }
+        url: 'https://obamawhitehouse.archives.gov',
+      },
+      {
+        text: 'If you like your health care plan, you can keep it.',
+        context: 'Repeated ACA sales pitch later named PolitiFact 2013 Lie of the Year after cancellation notices.',
+        date: '2009–2013',
+        source: 'PolitiFact Lie of the Year 2013',
+        url: 'https://www.politifact.com/article/2013/dec/12/lie-year-if-you-like-your-health-care-plan-keep-it/',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel donors',
+        from: 'Pro-Israel PAC/industry + Democratic megadonor network (cycle-level OpenSecrets scale)',
         amount: 3500000,
-        year: '2008-2012',
-        source: 'OpenSecrets',
-        url: 'https://web.archive.org/web/20250919130757/https://www.opensecrets.org/PRES08/contrib.php?cid=N00009638'
-      }
+        year: '2008–2012 cycles (verify OpenSecrets windows)',
+        source: 'OpenSecrets presidential / industry aggregates',
+        url: 'https://www.opensecrets.org',
+      },
     ],
     policyActions: [
       {
-        action: 'Signed $38B 10-year military aid MOU with Israel',
-        date: '2016',
-        context: 'Largest military aid package in US history at the time',
-        source: 'State Dept',
-        url: 'https://www.state.gov'
+        action: 'Signed $38B 10-year military aid MOU with Israel ($3.3B FMF + $500M missile defense/year)',
+        date: 'September 2016',
+        context:
+          'Largest bilateral MOU to date; remains the annual FMF architecture through 2028. CRS RL33222 is the primary public-record ledger.',
+        source: 'CRS RL33222; State Department MOU announcement',
+        url: 'https://www.congress.gov/crs-product/RL33222',
       },
       {
-        action: 'Negotiated Iran nuclear deal (JCPOA)',
+        action: 'U.S. abstention enabling UNSC Resolution 2334 (settlements have no legal validity)',
+        date: 'December 23, 2016',
+        context:
+          'Rare break from automatic U.S. veto cover on settlements; resolution remains the Security Council floor on settlement illegality.',
+        source: 'UN Digitallibrary — S/RES/2334',
+        url: 'https://digitallibrary.un.org/record/853516',
+      },
+      {
+        action: 'Negotiated JCPOA (Iran nuclear deal) over Israeli government / AIPAC opposition',
         date: '2015',
-        context: 'Opposed by Israel and AIPAC',
+        context:
+          'Documents that enablement of the Israel alliance coexists with open policy conflict on Iran — not a simple proxy relationship.',
         source: 'White House Archives',
-        url: 'https://obamawhitehouse.archives.gov'
-      }
+        url: 'https://obamawhitehouse.archives.gov',
+      },
+      {
+        action: 'Continued wartime resupply / Iron Dome replenishment during Protective Edge era and Gaza operations',
+        date: '2009–2017',
+        context: 'Executive continuity of weapons pipeline under MOU and supplemental missile-defense funding.',
+        source: 'CRS RL33222; DSCA major arms sales',
+        url: 'https://www.dsca.mil/press-media/major-arms-sales',
+      },
     ],
     connections: [
       {
-        name: 'Penny Pritzker',
-        relationship: 'Major donor and Commerce Secretary',
-        evidence: 'Public appointments and fundraising records',
-        tier: 'verified'
+        name: 'Benjamin Netanyahu',
+        relationship:
+          'Counterpart PM for most of Obama term; deep aid partnership with public conflict on settlements and Iran.',
+        evidence: 'White House/State record; Netanyahu 2015 Congress speech; MOU 2016',
+        tier: 'verified',
+      },
+      {
+        name: 'Hillary Clinton',
+        relationship: 'Secretary of State (2009–2013); co-steward of early MOU-era FMF continuity.',
+        evidence: 'State Department tenure; CRS aid continuity',
+        tier: 'verified',
       },
       {
         name: 'Rahm Emanuel',
-        relationship: 'White House Chief of Staff',
-        evidence: 'Public appointment',
-        tier: 'verified'
-      }
+        relationship: 'White House Chief of Staff; long-time pro-Israel Democratic operative.',
+        evidence: 'Public appointment / congressional record',
+        tier: 'verified',
+      },
+      {
+        name: 'AIPAC',
+        relationship:
+          'Institutional pro-Israel lobby; aligned on aid floor, opposed on JCPOA; Policy Conference venue for Obama alliance speech.',
+        evidence: 'Public conference record; OpenSecrets Q05 industry',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Signed largest US-Israel military aid deal in history at $38B over 10 years',
-        source: 'State Department',
-        url: 'https://www.state.gov',
+        claim:
+          'Signed the 2016 $38B 10-year U.S.–Israel MOU — $3.3B annual FMF + $500M missile defense — still the statutory/political floor for U.S. military enablement through 2028 (CRS RL33222).',
+        source: 'CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
         tier: 'verified',
-        date: '2016'
+        date: '2016–2028',
       },
       {
-        claim: 'Allowed UN Resolution 2334 condemning Israeli settlements to pass by abstaining',
-        source: 'UN Records',
-        url: 'https://www.un.org',
+        claim:
+          'U.S. abstention allowed UNSC 2334 (Dec 2016) to pass, reaffirming that settlements have no legal validity — documented break from automatic veto cover.',
+        source: 'UN Digitallibrary S/RES/2334',
+        url: 'https://digitallibrary.un.org/record/853516',
         tier: 'verified',
-        date: '2016'
-      }
+        date: 'December 2016',
+      },
+      {
+        claim:
+          'Negotiated JCPOA despite open opposition from the Israeli government and major pro-Israel lobby organizations — dual-track record of alliance enablement + Iran diplomacy.',
+        source: 'White House Archives',
+        url: 'https://obamawhitehouse.archives.gov',
+        tier: 'verified',
+        date: '2015',
+      },
+      {
+        claim:
+          'Integrity docket: ACA "keep your plan" (PolitiFact 2013 Lie of the Year) and 2016 steel-production claim (PolitiFact False).',
+        source: 'PolitiFact dual-cite',
+        url: 'https://www.politifact.com/personalities/barack-obama/',
+        tier: 'verified',
+        date: '2013–2016',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -3365,6 +3442,23 @@ export const PROFILES: PowerProfile[] = [
         debunkSource: 'PolitiFact / HHS cancellation reporting synthesis',
         debunkUrl: 'https://www.politifact.com/article/2013/dec/12/lie-year-if-you-like-your-health-care-plan-keep-it/',
         severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'obama-steel-production-2016',
+        statement:
+          'The steel industry is producing as much steel in the United States as it ever was. It\'s just that it needs one-tenth of the workers…',
+        saidAt: 'June 29, 2016',
+        context: 'Remarks in Ottawa, Canada, on automation and manufacturing employment.',
+        whyFalse:
+          'PolitiFact rated False. U.S. raw steel production peaked decades earlier and was not "as much… as it ever was" in 2016; employment declines reflected both productivity and capacity loss, not a pure one-tenth-workers-same-output story.',
+        correction:
+          'U.S. steel output was below historical peaks; the automation-only framing overstated production continuity.',
+        statementSource: 'Obama Ottawa remarks June 29, 2016 (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/factchecks/2016/jul/05/barack-obama/barack-obama-wrong-about-size-us-steel-production/',
+        debunkSource: 'PolitiFact — False (July 5, 2016); USGS/industry production series',
+        debunkUrl: 'https://www.politifact.com/factchecks/2016/jul/05/barack-obama/barack-obama-wrong-about-size-us-steel-production/',
+        severity: 'material',
         tier: 'verified',
       },
     ],

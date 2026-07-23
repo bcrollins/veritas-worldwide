@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:11:40.184Z",
+  "generatedAt": "2026-07-23T07:15:06.113Z",
   "count": 94,
   "profiles": [
     {
@@ -599,7 +599,7 @@
       "name": "Barack Obama",
       "title": "44th U.S. President",
       "category": "politician",
-      "summary": "Former U.S. President 2009-2017. Provided record aid to Israel during presidency. Now involved in various initiatives.",
+      "summary": "44th U.S. President (2009–2017). Signed the 2016 $38B 10-year MOU that still floors annual FMF + missile-defense transfers to Israel — the structural enablement architecture succeeding administrations inherited. Also negotiated JCPOA (opposed by Netanyahu/AIPAC) and abstained on UNSC 2334 (settlements). Integrity docket covers dual-cited ACA \"keep your plan\" and steel-production falsehoods. Primary: CRS RL33222, White House archives, UN records, OpenSecrets, PolitiFact.",
       "photo": "/profiles/barack-obama.jpg",
       "url": "https://veritasworldwide.com/profile/barack-obama",
       "bioguideId": "O000167",
@@ -607,10 +607,14 @@
         "Former President",
         "Illinois",
         "Democrat",
-        "Pro-Israel"
+        "Pro-Israel",
+        "MOU Architect",
+        "FMF Continuity",
+        "UNSC 2334",
+        "JCPOA"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
