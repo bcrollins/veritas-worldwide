@@ -7218,6 +7218,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-refeeding-syndrome-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Refeeding-Syndrome Risk Pattern (2023–2025)',
+    date: '2024 – 2025 (refeeding-risk cohort)',
+    location: 'Gaza Strip clinics and nutrition stabilization points',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated refeeding-syndrome risk when severely malnourished children receive inadequate medicalized refeeding under collapsed specialized nutrition capacity — a clinical-risk pattern distinct from IPC and kwashiorkor cards.',
+    evidence:
+      'WHO nutrition-protocol materials, UNICEF stabilization notes, and multi-outlet coverage establish multi-source refeeding-risk under wartime care collapse. Exact clinical counts are incomplete; multi-source elevated refeeding-syndrome risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition protocol materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza refeeding risk coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-religious-practice-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Religious Practice Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (religious-practice-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of Jewish religious practice for Israeli civilian hostages — no prayer objects, forced violation of dietary laws, calendar disorientation — a protected-person dignity pattern distinct from religious-coercion and propaganda cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source religious-practice denial in captivity. Exact conditions vary; multi-source denial of religious practice for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-killing-civilians-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Killings of Palestinian Civilians Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (settler-killing cohort)',
+    location: 'West Bank villages, roads, and herding areas',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler killings of Palestinian civilians after October 7 — shootings and mob attacks killing men, women, and children. Pattern card for lethal settler violence distinct from price-tag property attacks and children-killed military cards.',
+    evidence:
+      'OCHA fatality databases, B\'Tselem killing case files, and multi-outlet coverage establish multi-source settler civilian killings. Exact counts evolve; multi-source wartime settler killings of civilians is the claim.',
+    sources: [
+      { label: 'OCHA protection / fatality materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem killing documentation", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler killing coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -11173,6 +11254,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['firebombing', 'settlers', 'civilians', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-refeeding-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Gaza Children Refeeding-Syndrome Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated refeeding-syndrome risk under collapsed specialized nutrition care.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-refeeding-syndrome-risk-pattern-2023-2025',
+      'gaza-children-kwashiorkor-marasmus-risk-pattern-2023-2025',
+      'gaza-child-malnutrition-pattern-2023-2025',
+    ],
+    tags: ['refeeding', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-religious-practice-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Religious Practice Pattern',
+    description: 'Multi-source documentation of denial of Jewish religious practice for civilian hostages in captivity.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-religious-practice-pattern-2023-2025',
+      'israel-hostages-religious-coercion-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'religion', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-killings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Killings of Civilians Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler killings of Palestinian civilians after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-killing-civilians-pattern-2023-2025',
+      'west-bank-settler-child-attacks-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+    ],
+    tags: ['killings', 'settlers', 'civilians', 'children', 'west-bank'],
+  },
+
+
 
 
 
