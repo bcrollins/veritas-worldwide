@@ -20,6 +20,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  itemListJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -276,6 +277,7 @@ export default function NewsPage() {
       description:
         'Daily investigative reporting on power, money, and institutions. Every claim sourced to primary documents. No anonymous sources. No spin.',
       url: `${SITE_URL}/news`,
+      imageAlt: 'Current Events — primary-source journalism, Veritas Worldwide',
     })
     setJsonLd([
       {
@@ -291,6 +293,15 @@ export default function NewsPage() {
         { name: 'The Record', url: SITE_URL },
         { name: 'News', url: `${SITE_URL}/news` },
       ]),
+      itemListJsonLd({
+        name: 'Current events desk — latest primary-source reports',
+        description: 'Investigative news articles from Veritas Worldwide, newest first.',
+        url: `${SITE_URL}/news`,
+        items: articles.slice(0, 24).map((a) => ({
+          name: a.title,
+          url: `${SITE_URL}/news/${a.slug}`,
+        })),
+      }),
     ])
     return () => {
       clearMetaTags()

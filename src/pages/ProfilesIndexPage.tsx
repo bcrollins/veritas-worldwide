@@ -10,6 +10,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  itemListJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -273,7 +274,12 @@ export default function ProfilesIndexPage(): React.ReactNode {
       description:
         'Browse comprehensive profiles of influential figures, politicians, financiers, lobbyists, intelligence actors, and other power brokers.',
       url: `${SITE_URL}/profiles`,
+      imageAlt: 'Power Profiles — sourced integrity dockets, Veritas Worldwide',
     })
+
+    const featuredProfiles = [...PROFILES]
+      .sort((a, b) => b.sourcedClaims.length - a.sourcedClaims.length)
+      .slice(0, 24)
 
     setJsonLd([
       {
@@ -289,6 +295,15 @@ export default function ProfilesIndexPage(): React.ReactNode {
         { name: 'The Record', url: SITE_URL },
         { name: 'Power Profiles', url: `${SITE_URL}/profiles` },
       ]),
+      itemListJsonLd({
+        name: 'Power Profiles — claims-dense featured set',
+        description: 'Highest-density public-record profiles for discovery and entity search.',
+        url: `${SITE_URL}/profiles`,
+        items: featuredProfiles.map((p) => ({
+          name: p.name,
+          url: `${SITE_URL}/profile/${p.id}`,
+        })),
+      }),
     ])
 
     return () => {
