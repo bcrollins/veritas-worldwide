@@ -1678,4 +1678,12 @@ assert(serverHick.includes('Primary hubs'), 'server Primary hubs end')
 assert(serverHick.includes('server-soft-404'), 'server-soft-404 end')
 
 
+
+// a11y RelatedHubs component floor min 2 ultimate
+const a11yFloorsUlt = read('scripts/verify-a11y-public-targets.mjs')
+assert(a11yFloorsUlt.includes("path: 'src/components/RelatedHubs.tsx'"), 'a11y floors RelatedHubs path')
+assert(a11yFloorsUlt.includes('countTouchTargets'), 'a11y countTouchTargets')
+assert(a11yFloorsUlt.includes('ResearchHubChips') && a11yFloorsUlt.includes('DossierHubSpokes'), 'a11y credits sibling hubs')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
