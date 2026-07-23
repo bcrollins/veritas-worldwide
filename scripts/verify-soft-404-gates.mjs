@@ -34,6 +34,9 @@ assert(isKnownTopicSlug('not-a-real-topic-xyz', root) === false, 'junk topic unk
 assert(isKnownInstituteSlug('how-to-become-a-welder', root) === true, 'institute known')
 assert(isKnownInstituteSlug('How-To-Become-A-Welder', root) === true, 'institute slug lookup is case-insensitive')
 assert(isKnownInstituteSlug('not-a-real-course-xyz', root) === false, 'junk institute unknown')
+assert(isKnownChapterSlug('') === false, 'empty chapter slug unknown')
+assert(isKnownProfileSlug('', root) === false, 'empty profile slug unknown')
+assert(isKnownChapterSlug(null) === false, 'null chapter slug unknown')
 
 if (failures.length) {
   console.error('[verify:soft-404-gates] FAIL')
