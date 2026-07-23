@@ -7056,6 +7056,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-cancer-care-interruption-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Cancer Care Interruption Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pediatric-oncology cohort)',
+    location: 'Gaza Strip hospitals and blocked medical-exit corridors',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document interruption of pediatric cancer treatment — chemotherapy stockouts, destroyed oncology units, and blocked medical exits for children needing referral care. Pattern card for pediatric oncology collapse distinct from dialysis/cancer aggregate and Rafah/Erez crossing cards.',
+    evidence:
+      'WHO cancer-care materials, UNICEF child-health notes, and multi-outlet coverage establish multi-source pediatric cancer-care interruption. Exact patient counts evolve; multi-source wartime pediatric oncology collapse is the claim.',
+    sources: [
+      { label: 'WHO cancer / health emergency materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric cancer coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-news-information-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied News & Information Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (information-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document total denial of external news and family information to Israeli civilian hostages — compounding isolation and psychological harm. Pattern card distinct from communication-blackout and forced-propaganda cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source information blackout in captivity. Exact durations vary; multi-source denied news/information for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-cemetery-desecration-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Cemetery Desecration Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (cemetery-desecration cohort)',
+    location: 'West Bank Palestinian cemeteries',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler desecration of Palestinian cemeteries after October 7 — vandalized graves and blocked burial access. Pattern card for cemetery desecration distinct from mosque vandalism and Gaza cemetery-destruction cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source cemetery desecration. Exact incident counts evolve; multi-source wartime cemetery desecration is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet cemetery desecration coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -10909,6 +10990,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['children', 'settlers', 'violence', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-cancer-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Cancer Care Interruption Pattern',
+    description: 'WHO/UNICEF multi-source documentation of interrupted pediatric cancer treatment under siege.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-cancer-care-interruption-pattern-2023-2025',
+      'gaza-dialysis-cancer-care-collapse-pattern-2023-2025',
+      'gaza-kerem-shalom-erez-crossing-access-pattern-2023-2025',
+    ],
+    tags: ['cancer', 'children', 'health', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-denied-news-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied News Pattern',
+    description: 'Multi-source documentation of total denial of external news and family information to civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-news-information-pattern-2023-2025',
+      'israel-hostages-communication-blackout-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-cemetery-desecration-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Cemetery Desecration Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler desecration of Palestinian cemeteries after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-cemetery-desecration-pattern-2023-2025',
+      'west-bank-settler-mosque-vandalism-pattern-2023-2025',
+      'gaza-cemetery-destruction-pattern-2023-2025',
+    ],
+    tags: ['cemeteries', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
