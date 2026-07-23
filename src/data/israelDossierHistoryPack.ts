@@ -3654,6 +3654,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-universities-total-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Universities Total Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (higher-ed cohort)',
+    location: 'Gaza Strip university campuses',
+    summary:
+      'UNESCO, multi-source satellite analysis, and university statements document destruction or severe damage to all of Gaza’s universities — a higher-education annihilation pattern distinct from the broader school/education-system card. Pattern card for tertiary-education destruction as a long-horizon civilian-harm outcome.',
+    evidence:
+      'UNESCO higher-ed damage materials, multi-source satellite reporting, and university public statements establish multi-source near-total university destruction. Exact building counts evolve; multi-source all-university severe damage is the claim.',
+    sources: [
+      { label: 'UNESCO education / heritage damage materials', url: 'https://www.unesco.org' },
+      { label: 'Multi-outlet Gaza university destruction coverage', url: 'https://apnews.com' },
+      { label: 'OCHA education access materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNESCO public materials', url: 'https://www.unesco.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5364,6 +5391,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['families', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-universities-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Universities Total Destruction Pattern',
+    description: 'UNESCO multi-source documentation of destruction or severe damage to all Gaza universities.',
+    source: 'UNESCO / multi-outlet / OCHA',
+    sourceUrl: 'https://www.unesco.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-universities-total-destruction-pattern-2023-2025',
+      'gaza-education-system-destroyed-2023-2025',
+      'gaza-cultural-heritage-destruction-2023-2025',
+    ],
+    tags: ['universities', 'education', 'children', 'gaza'],
+  },
+
 
 
 
