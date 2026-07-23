@@ -44,8 +44,8 @@
   },
   "summary": "Wave 3: densify 96/96 live, OSINT $499 checkoutReady, soft-404 researcher timeline fix tip b9e4f11. Pending: operator OPSEC + dual-cite homepage hygiene + pure gates + prerender utility.",
   "statusCounts": {
-    "Implemented": 94,
-    "Pending": 6
+    "Implemented": 96,
+    "Pending": 4
   },
   "items": [
     {
@@ -1377,8 +1377,9 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending",
-      "blocker": "Railway env"
+      "status": "Implemented",
+      "shippedIn": "OSINT_OPS_TOKEN set on Railway + path-deny API fix 3c1011c",
+      "note": "Token configured via railway variables; sensitive-path deny no longer blocks /api/admin/osint-orders"
     },
     {
       "rank": 71,
@@ -1910,8 +1911,9 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending",
-      "blocker": "Railway env"
+      "status": "Implemented",
+      "shippedIn": "OSINT_OPS_TOKEN set on Railway + path-deny API fix 3c1011c",
+      "note": "Token configured via railway variables; sensitive-path deny no longer blocks /api/admin/osint-orders"
     },
     {
       "rank": 99,
@@ -1953,5 +1955,5 @@
       "shippedIn": "wave3 prior ship"
     }
   ],
-  "lastShip": "2026-07-23T11:38:07.172643+00:00"
+  "lastShip": "2026-07-23T11:40:31.101783+00:00"
 }
