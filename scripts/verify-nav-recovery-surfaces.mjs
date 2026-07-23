@@ -1863,4 +1863,13 @@ assert(read('src/components/DossierHubSpokes.tsx').includes('export const DOSSIE
 assert(read('src/components/ResearchHubChips.tsx').includes('export default function ResearchHubChips'), 'RHC default export ultimate end')
 
 
+
+// bernie media kit osint end ultimate final
+assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'bernie-related-hubs ultimate final')
+assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'media-kit-primary-hubs ultimate final')
+assert(read('src/pages/ComprehensiveProfileSuccessPage.tsx').includes('osint-success-related-hubs'), 'osint-success-related-hubs ultimate final')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'home-related-hubs ultimate final')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'not-found-secondary-hubs ultimate final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
