@@ -85,5 +85,13 @@ News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, leg
 55. ResearchHubChips `excludePath` filters self-links  
 56. NotFound soft-404 reuses PRIMARY_RELATED_HUBS  
 57. Pure recovery suite 90 needles · pure 46 suites  
-58. Multi-agent densify lane unthrashed; tsc-clean import hygiene  
+58. Multi-agent densify lane unthrashed; tsc-clean import hygiene
 
+
+## Sprint 6c — Dossier family primary recovery (SHIPPED)
+59. Deep State RelatedHubs (`deep-state-related-hubs`)  
+60. Forum RelatedHubs (`forum-related-hubs`)  
+61. Briefing RelatedHubs (`briefing-related-hubs`)  
+62. Israel sticky RelatedHubs (`israel-dossier-related-hubs`)  
+63. Pure: RelatedHubs mount breadth ≥20; DOSSIER_SPOKES + ResearchHubChips path locks  
+64. Live matrix 100% green for shell + dossier family + soft-404 under densify tip  
