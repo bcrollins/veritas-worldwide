@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.5 — 2026-07-23
+## 2.9.6 — 2026-07-23
+- SOCIAL-LAUNCH checklist includes TikTok, Reddit, Reels safe-zone
+
+## 2.9.5
 - Reddit banner + Instagram Reels safe-zone template
 
 ## 2.9.4

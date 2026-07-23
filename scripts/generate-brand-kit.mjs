@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.5'
+const KIT_VERSION = '2.9.6'
 
 const C = {
   parchment: '#FAF8F5',
@@ -695,7 +695,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.5 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.6 — ${new Date().toISOString().slice(0, 10)}
+- SOCIAL-LAUNCH checklist includes TikTok, Reddit, Reels safe-zone
+
+## 2.9.5
 - Reddit banner + Instagram Reels safe-zone template
 
 ## 2.9.4
@@ -1020,6 +1023,9 @@ Brand kit v${KIT_VERSION}
 | Bluesky | social-profile-400.png | bluesky-banner |
 | Discord | app-icon | discord-invite |
 | Pinterest | social-profile | pinterest-pin |
+| TikTok | social-profile-400.png | tiktok-cover |
+| Reddit | social-profile | reddit-banner |
+| Instagram Reels | — | reels-safe-zone |
 | Substack | logo-mark-512 | newsletter-header |
 
 ## Evidence labels (product)
