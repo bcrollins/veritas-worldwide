@@ -1,5 +1,5 @@
 {
-  "version": "2.8.0",
+  "version": "2.9.0",
   "assets": [
     {
       "path": "01-logos/logo-mark.svg",
@@ -104,6 +104,22 @@
     {
       "path": "07-docs/brand-do-dont.svg",
       "alt": "Logo usage do and do not guide"
+    },
+    {
+      "path": "04-social/bluesky-banner.svg",
+      "alt": "Bluesky banner for Veritas Worldwide Press"
+    },
+    {
+      "path": "04-social/discord-invite.svg",
+      "alt": "Discord invite card for Veritas Worldwide community"
+    },
+    {
+      "path": "04-social/citation-card.svg",
+      "alt": "Citation card template for source-first social posts"
+    },
+    {
+      "path": "09-templates/correction-notice.html",
+      "alt": "Correction notice HTML template"
     }
   ]
 }

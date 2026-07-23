@@ -1,6 +1,10 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.8.0 — 2026-07-23
+## 2.9.0 — 2026-07-23
+- Bluesky banner, Discord invite card, citation card, correction notice HTML
+- Platform map expanded (Bluesky + Discord)
+
+## 2.8.0
 - Threads post card + press contact vCard/MD
 
 ## 2.7.2

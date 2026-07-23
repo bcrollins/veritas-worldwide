@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Discord invite card">
+  <rect width="1920" height="1080" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1920" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="1072" width="1920" height="8" fill="#8B1A1A"/>
+  <text x="120" y="200" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="6" fill="#B8860B">DISCORD · COMMUNITY</text>
+  <text x="120" y="360" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#FFFFFF">Veritas Worldwide</text>
+  <text x="120" y="460" font-family="Georgia, serif" font-size="36" font-style="italic" fill="rgba(255,255,255,0.7)">Source-first discussion. Evidence tiers required.</text>
+  <line x1="120" y1="520" x2="420" y2="520" stroke="#8B1A1A" stroke-width="2"/>
+  <text x="120" y="620" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.55)">#welcome · #chapter-discussion · #source-submissions · #evidence-review</text>
+  <text x="120" y="960" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+  <circle cx="1680" cy="780" r="90" fill="none" stroke="#8B1A1A" stroke-width="6"/>
+  <text x="1680" y="808" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#FFFFFF">V</text>
+</svg>

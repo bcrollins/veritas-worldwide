@@ -18,6 +18,9 @@ All paths are relative to `https://veritasworldwide.com`.
 | **X feed posts** | — | `x-post-card.svg` (1600×900) | Shareable documentary cards |
 | **Presentations** | — | `09-templates/presentation-title.svg` (1920×1080) | Deck title slide |
 | **Evidence tier cards** | — | `evidence-tier-*.svg` (1080×1080) | Product: Verified / Circumstantial / Disputed |
+| **Bluesky** | social-profile-400.png | `bluesky-banner.svg` (1500×500) | Emerging open network |
+| **Discord** | app-icon | `discord-invite.svg` (1920×1080) | Invite / server splash |
+| **Citation cards** | — | `citation-card.svg` (1080×1080) | Source-first social posts |
 | **Open Graph / default share** | — | `/og-image.png` + `/brand-kit/05-og/` | Site-wide default |
 
 ## Bios (copy/paste)

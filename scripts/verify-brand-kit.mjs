@@ -83,6 +83,10 @@ const required = [
   '07-docs/PRESS-CONTACT.md',
   '09-templates/press-contact.vcf',
   '04-social/threads-post.svg',
+  '09-templates/correction-notice.html',
+  '04-social/citation-card.svg',
+  '04-social/discord-invite.svg',
+  '04-social/bluesky-banner.svg',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256',
 ]
@@ -208,6 +212,10 @@ if (base) {
     '/brand-kit/07-docs/PRESS-CONTACT.md',
     '/brand-kit/09-templates/press-contact.vcf',
     '/brand-kit/04-social/threads-post.svg',
+    '/brand-kit/09-templates/correction-notice.html',
+    '/brand-kit/04-social/citation-card.svg',
+    '/brand-kit/04-social/discord-invite.svg',
+    '/brand-kit/04-social/bluesky-banner.svg',
     '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
     '/og-image.png',
   ]

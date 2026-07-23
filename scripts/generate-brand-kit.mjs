@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.8.0'
+const KIT_VERSION = '2.9.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -450,6 +450,9 @@ All paths are relative to \`https://veritasworldwide.com\`.
 | **X feed posts** | — | \`x-post-card.svg\` (1600×900) | Shareable documentary cards |
 | **Presentations** | — | \`09-templates/presentation-title.svg\` (1920×1080) | Deck title slide |
 | **Evidence tier cards** | — | \`evidence-tier-*.svg\` (1080×1080) | Product: Verified / Circumstantial / Disputed |
+| **Bluesky** | social-profile-400.png | \`bluesky-banner.svg\` (1500×500) | Emerging open network |
+| **Discord** | app-icon | \`discord-invite.svg\` (1920×1080) | Invite / server splash |
+| **Citation cards** | — | \`citation-card.svg\` (1080×1080) | Source-first social posts |
 | **Open Graph / default share** | — | \`/og-image.png\` + \`/brand-kit/05-og/\` | Site-wide default |
 
 ## Bios (copy/paste)
@@ -692,7 +695,11 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.8.0 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.0 — ${new Date().toISOString().slice(0, 10)}
+- Bluesky banner, Discord invite card, citation card, correction notice HTML
+- Platform map expanded (Bluesky + Discord)
+
+## 2.8.0
 - Threads post card + press contact vCard/MD
 
 ## 2.7.2
@@ -848,6 +855,96 @@ function threadsPostSvg() {
   <line x1="80" y1="580" x2="320" y2="580" stroke="${C.crimson}" stroke-width="2"/>
   <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="${C.inkMuted}">veritasworldwide.com</text>
 </svg>`
+}
+
+
+function blueskyBannerSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500" role="img" aria-label="Bluesky banner">
+  <rect width="1500" height="500" fill="${C.black}"/>
+  <rect x="0" y="0" width="1500" height="6" fill="${C.crimson}"/>
+  <rect x="0" y="494" width="1500" height="6" fill="${C.crimson}"/>
+  <circle cx="160" cy="250" r="70" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="160" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="700" fill="${C.white}">V</text>
+  <text x="280" y="220" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.white}">The Record</text>
+  <text x="280" y="280" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <text x="280" y="360" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="4" fill="${C.gold}">VERITAS WORLDWIDE PRESS · BLUESKY</text>
+</svg>`
+}
+
+function discordInviteSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Discord invite card">
+  <rect width="1920" height="1080" fill="${C.black}"/>
+  <rect x="0" y="0" width="1920" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1072" width="1920" height="8" fill="${C.crimson}"/>
+  <text x="120" y="200" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="6" fill="${C.gold}">DISCORD · COMMUNITY</text>
+  <text x="120" y="360" font-family="Georgia, serif" font-size="72" font-weight="700" fill="${C.white}">Veritas Worldwide</text>
+  <text x="120" y="460" font-family="Georgia, serif" font-size="36" font-style="italic" fill="rgba(255,255,255,0.7)">Source-first discussion. Evidence tiers required.</text>
+  <line x1="120" y1="520" x2="420" y2="520" stroke="${C.crimson}" stroke-width="2"/>
+  <text x="120" y="620" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.55)">#welcome · #chapter-discussion · #source-submissions · #evidence-review</text>
+  <text x="120" y="960" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+  <circle cx="1680" cy="780" r="90" fill="none" stroke="${C.crimson}" stroke-width="6"/>
+  <text x="1680" y="808" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" fill="${C.white}">V</text>
+</svg>`
+}
+
+function citationCardSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Citation card template">
+  <rect width="1080" height="1080" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1080" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="${C.crimson}"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="${C.crimson}">CITATION · THE RECORD</text>
+  <text x="80" y="280" font-family="Georgia, serif" font-size="36" font-weight="700" fill="${C.ink}">[Document / filing title]</text>
+  <text x="80" y="360" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" fill="${C.inkMuted}">Source: [agency / court / archive]</text>
+  <text x="80" y="420" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" fill="${C.inkMuted}">Date: [YYYY-MM-DD] · Access: [YYYY-MM-DD]</text>
+  <text x="80" y="480" font-family="JetBrains Mono, Courier New, monospace" font-size="18" fill="${C.ink}">URL / pin: [primary source or archive pin]</text>
+  <rect x="80" y="560" width="200" height="44" rx="4" fill="#166534"/>
+  <text x="180" y="590" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="${C.white}">VERIFIED</text>
+  <text x="80" y="700" font-family="Georgia, serif" font-size="22" font-style="italic" fill="${C.inkMuted}">Primary sources. Public record. Your conclusions.</text>
+  <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="${C.inkMuted}">veritasworldwide.com</text>
+</svg>`
+}
+
+function correctionNoticeHtml() {
+  return [
+    '<!DOCTYPE html>',
+    '<html lang="en">',
+    '<head>',
+    '  <meta charset="UTF-8" />',
+    '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
+    '  <title>Correction Notice — Veritas Worldwide Press</title>',
+    '  <style>',
+    '    body{margin:0;font-family:Georgia,serif;background:#FAF8F5;color:#1A1A1A;line-height:1.6}',
+    '    .wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}',
+    '    .label{font-family:Inter,Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#991B1B;font-weight:700}',
+    '    h1{font-size:1.6rem;margin:16px 0 8px}',
+    '    .meta{font-family:Inter,Helvetica,Arial,sans-serif;font-size:13px;color:#666}',
+    '    hr{border:0;border-top:1px solid #8B1A1A;margin:24px 0;opacity:.4}',
+    '    p{margin:0 0 1rem}',
+    '    .box{border-left:4px solid #991B1B;background:#FEF2F2;padding:16px 20px;margin:20px 0}',
+    '    a{color:#8B1A1A}',
+    '  </style>',
+    '</head>',
+    '<body>',
+    '  <div class="wrap">',
+    '    <p class="label">Correction</p>',
+    '    <h1>Correction — [DATE]</h1>',
+    '    <p class="meta">Veritas Worldwide Press · The Record</p>',
+    '    <hr />',
+    '    <div class="box">',
+    '      <p><strong>Earlier version:</strong> [inaccurate claim with location/URL].</p>',
+    '      <p><strong>Public record shows:</strong> [corrected fact with source].</p>',
+    '    </div>',
+    '    <p>We regret the error. Corrections are logged and the underlying source remains open for inspection.</p>',
+    '    <p><strong>Methodology:</strong> <a href="https://veritasworldwide.com/methodology">veritasworldwide.com/methodology</a></p>',
+    '    <p><strong>Contact:</strong> <a href="mailto:rights@veritasworldwide.com">rights@veritasworldwide.com</a> · Tips: <a href="mailto:tips@veritasworldwide.com">tips@veritasworldwide.com</a></p>',
+    '  </div>',
+    '</body>',
+    '</html>',
+    '',
+  ].join('\n')
 }
 
 function brandVoiceMd() {
@@ -1073,6 +1170,10 @@ function altTextManifest() {
       { path: '09-templates/presentation-title.svg', alt: 'Presentation title slide for The Record' },
       { path: '09-templates/source-stamp.svg', alt: 'Source attribution stamp' },
       { path: '07-docs/brand-do-dont.svg', alt: 'Logo usage do and do not guide' },
+      { path: '04-social/bluesky-banner.svg', alt: 'Bluesky banner for Veritas Worldwide Press' },
+      { path: '04-social/discord-invite.svg', alt: 'Discord invite card for Veritas Worldwide community' },
+      { path: '04-social/citation-card.svg', alt: 'Citation card template for source-first social posts' },
+      { path: '09-templates/correction-notice.html', alt: 'Correction notice HTML template' },
     ],
   }, null, 2)
 }
@@ -1228,6 +1329,10 @@ Editorial and licensing: rights@veritasworldwide.com
   writeFileSync(join(KIT, '07-docs', 'PRESS-CONTACT.md'), pressContactMd())
   writeFileSync(join(KIT, '09-templates', 'press-contact.vcf'), pressContactVcf())
   writeSvg('04-social/threads-post.svg', threadsPostSvg())
+  writeSvg('04-social/bluesky-banner.svg', blueskyBannerSvg())
+  writeSvg('04-social/discord-invite.svg', discordInviteSvg())
+  writeSvg('04-social/citation-card.svg', citationCardSvg())
+  writeFileSync(join(KIT, '09-templates', 'correction-notice.html'), correctionNoticeHtml())
 
   // Rasterize key assets
   const rasters = [
@@ -1273,6 +1378,9 @@ Editorial and licensing: rights@veritasworldwide.com
     ['09-templates/source-stamp.svg', '09-templates/source-stamp.png', 512],
     ['07-docs/brand-do-dont.svg', '07-docs/brand-do-dont.png', 1600],
     ['04-social/threads-post.svg', '04-social/threads-post.png', 1080],
+    ['04-social/bluesky-banner.svg', '04-social/bluesky-banner.png', 1500],
+    ['04-social/discord-invite.svg', '04-social/discord-invite.png', 1920],
+    ['04-social/citation-card.svg', '04-social/citation-card.png', 1080],
   ]
   for (const [src, dest, w] of rasters) {
     try {
@@ -1353,6 +1461,10 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Press contact (MD)', href: '/brand-kit/07-docs/PRESS-CONTACT.md' },
       { label: 'Press contact (vCard)', href: '/brand-kit/09-templates/press-contact.vcf' },
       { label: 'Threads post card', href: '/brand-kit/04-social/threads-post.svg' },
+      { label: 'Bluesky banner', href: '/brand-kit/04-social/bluesky-banner.svg' },
+      { label: 'Discord invite card', href: '/brand-kit/04-social/discord-invite.svg' },
+      { label: 'Citation card', href: '/brand-kit/04-social/citation-card.svg' },
+      { label: 'Correction notice template', href: '/brand-kit/09-templates/correction-notice.html' },
       { label: 'Changelog (MD)', href: '/brand-kit/07-docs/CHANGELOG.md' },
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },
@@ -1387,6 +1499,8 @@ Editorial and licensing: rights@veritasworldwide.com
       },
       podcast: { cover: '/brand-kit/04-social/podcast-cover.png' },
       newsletter: { header: '/brand-kit/04-social/newsletter-header.svg' },
+      bluesky: { profile: '/brand-kit/04-social/social-profile-400.png', banner: '/brand-kit/04-social/bluesky-banner.svg' },
+      discord: { invite: '/brand-kit/04-social/discord-invite.svg' },
       evidenceTiers: {
         verified: '/brand-kit/04-social/evidence-tier-verified.svg',
         circumstantial: '/brand-kit/04-social/evidence-tier-circumstantial.svg',

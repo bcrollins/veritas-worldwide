@@ -1,7 +1,7 @@
 {
-  "version": "2.8.0",
+  "version": "2.9.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T07:31:40.201Z",
+  "generatedAt": "2026-07-23T07:37:42.390Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -211,6 +211,22 @@
       "href": "/brand-kit/04-social/threads-post.svg"
     },
     {
+      "label": "Bluesky banner",
+      "href": "/brand-kit/04-social/bluesky-banner.svg"
+    },
+    {
+      "label": "Discord invite card",
+      "href": "/brand-kit/04-social/discord-invite.svg"
+    },
+    {
+      "label": "Citation card",
+      "href": "/brand-kit/04-social/citation-card.svg"
+    },
+    {
+      "label": "Correction notice template",
+      "href": "/brand-kit/09-templates/correction-notice.html"
+    },
+    {
       "label": "Changelog (MD)",
       "href": "/brand-kit/07-docs/CHANGELOG.md"
     },
@@ -266,6 +282,13 @@
     "newsletter": {
       "header": "/brand-kit/04-social/newsletter-header.svg"
     },
+    "bluesky": {
+      "profile": "/brand-kit/04-social/social-profile-400.png",
+      "banner": "/brand-kit/04-social/bluesky-banner.svg"
+    },
+    "discord": {
+      "invite": "/brand-kit/04-social/discord-invite.svg"
+    },
     "evidenceTiers": {
       "verified": "/brand-kit/04-social/evidence-tier-verified.svg",
       "circumstantial": "/brand-kit/04-social/evidence-tier-circumstantial.svg",
@@ -275,6 +298,6 @@
       "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 1691655,
-  "zipSha256": "f965fe77b3145374bf8f78f1a90e3cec55362272cd3b42b734cefcc874c72614"
+  "zipBytes": 1792161,
+  "zipSha256": "08455a561a761e30ef6348dd801744e60e40216c386a779df2ff2f24cd48a477"
 }
