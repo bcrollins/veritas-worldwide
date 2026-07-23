@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-23T07:15:06.113Z",
-  "count": 94,
+  "generatedAt": "2026-07-23T07:18:17.261Z",
+  "count": 96,
   "profiles": [
     {
       "id": "ted-cruz",
@@ -653,8 +653,8 @@
         "Pro-Israel",
         "Philanthropist"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 50,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -763,7 +763,7 @@
       "name": "Antony Blinken",
       "title": "U.S. Secretary of State (2021–2025)",
       "category": "politician",
-      "summary": "Biden-Harris Secretary of State during the post–October 7 Gaza war. Principal diplomatic steward of continuous U.S. munitions transfers and diplomatic cover for Israeli wartime operations while briefly pausing some MK-84 deliveries over civilian-casualty concerns. Structural executive enablement of the aid/munitions pipeline. Primary: State Department, CRS RL33222, contemporaneous munitions reporting.",
+      "summary": "Biden-Harris Secretary of State during the post–October 7 Gaza war. Principal diplomatic steward of continuous U.S. munitions transfers and diplomatic cover for Israeli wartime operations. Integrity docket: May 10, 2024 NSM-20 assurance to Congress that Israel was not prohibiting/restricting U.S. humanitarian assistance — contradicted by USAID and State refugee-bureau assessments reported by ProPublica. Primary: State Department, ProPublica, CRS RL33222.",
       "photo": "/profiles/antony-blinken.svg",
       "url": "https://veritasworldwide.com/profile/antony-blinken",
       "bioguideId": null,
@@ -773,11 +773,13 @@
         "Biden Administration",
         "Munitions Transfers",
         "Gaza War",
-        "FMF"
+        "FMF",
+        "NSM-20",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "ron-desantis",
@@ -1970,6 +1972,51 @@
       "integrityScore": null,
       "integrityFalsehoods": 0,
       "integrityHasDocket": false
+    },
+    {
+      "id": "ben-cardin",
+      "name": "Ben Cardin",
+      "title": "Former U.S. Senator (D-MD); former Senate Foreign Relations Committee ranking member/chair path",
+      "category": "politician",
+      "summary": "Long-serving Democratic senator from Maryland (2007–2025 House/Senate career) and senior Senate Foreign Relations Committee Democrat. Institutional bipartisan floor for Israel security assistance, anti-BDS legislation, and annual FMF continuity. Primary: Congress.gov, OpenSecrets, CRS RL33222.",
+      "photo": "/profiles/ben-cardin.svg",
+      "url": "https://veritasworldwide.com/profile/ben-cardin",
+      "bioguideId": null,
+      "tags": [
+        "Senator",
+        "Democrat",
+        "Maryland",
+        "SFRC",
+        "Pro-Israel",
+        "FMF Continuity",
+        "Anti-BDS"
+      ],
+      "integrityScore": null,
+      "integrityFalsehoods": 0,
+      "integrityHasDocket": false
+    },
+    {
+      "id": "bob-menendez",
+      "name": "Bob Menendez",
+      "title": "Former U.S. Senator (D-NJ); former Senate Foreign Relations Committee Chair",
+      "category": "politician",
+      "summary": "Former New Jersey senator and Senate Foreign Relations Committee chair. Long one of the most aggressive Democratic pro-Israel hawks on Iran sanctions, FMF continuity, and wartime packages — later convicted in federal corruption case (2024) unrelated to Israel policy itself but relevant to integrity mapping of a key enablement node. Primary: Congress.gov, DOJ, OpenSecrets, CRS RL33222.",
+      "photo": "/profiles/bob-menendez.svg",
+      "url": "https://veritasworldwide.com/profile/bob-menendez",
+      "bioguideId": null,
+      "tags": [
+        "Senator",
+        "Democrat",
+        "New Jersey",
+        "SFRC Chair",
+        "Pro-Israel",
+        "Iran Sanctions",
+        "Corruption Conviction",
+        "FMF"
+      ],
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     }
   ]
 }

@@ -193,6 +193,8 @@ const PROFILE_PHOTOS: Record<string, string> = {
   'byron-donalds': '/profiles/byron-donalds.jpg',
   'benjamin-netanyahu': '/profiles/benjamin-netanyahu.svg',
   'yoav-gallant': '/profiles/yoav-gallant.svg',
+  'ben-cardin': '/profiles/ben-cardin.svg',
+  'bob-menendez': '/profiles/bob-menendez.svg',
 }
 
 export function getProfilePhoto(profileId: string): string {
@@ -3631,6 +3633,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'egregious',
         tier: 'verified',
       },
+      {
+        id: 'bill-clinton-never-told-anyone-to-lie-1998',
+        statement:
+          'Stated under oath and in public that he never told anyone to lie and never obstructed justice regarding the Lewinsky matter.',
+        saidAt: '1998',
+        context:
+          'Grand jury testimony and public defenses during the Starr investigation and impeachment proceedings.',
+        whyFalse:
+          'The Starr Report and subsequent House impeachment articles documented a pattern of false statements under oath and efforts to influence testimony (including coaching of Betty Currie and gift concealment). Clinton was later held in civil contempt for false deposition testimony in the Jones case and settled related proceedings — contradicting absolute "never lied / never told anyone to lie" framing.',
+        correction:
+          'Clinton gave false testimony under oath about the Lewinsky relationship; obstruction-related findings underpinned impeachment articles and civil contempt.',
+        statementSource: 'Clinton public/grand-jury denials (1998)',
+        statementUrl: 'https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/whatclintonsaid.htm',
+        debunkSource: 'Starr Report / House impeachment record; civil contempt reporting',
+        debunkUrl: 'https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/contempt041399.htm',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     quotes: [
       {
@@ -4076,12 +4096,22 @@ export const PROFILES: PowerProfile[] = [
     party: 'D',
     photoUrl: getProfilePhoto('antony-blinken'),
     summary:
-      'Biden-Harris Secretary of State during the post–October 7 Gaza war. Principal diplomatic steward of continuous U.S. munitions transfers and diplomatic cover for Israeli wartime operations while briefly pausing some MK-84 deliveries over civilian-casualty concerns. Structural executive enablement of the aid/munitions pipeline. Primary: State Department, CRS RL33222, contemporaneous munitions reporting.',
-    tags: ['Secretary of State', 'Pro-Israel', 'Biden Administration', 'Munitions Transfers', 'Gaza War', 'FMF'],
+      'Biden-Harris Secretary of State during the post–October 7 Gaza war. Principal diplomatic steward of continuous U.S. munitions transfers and diplomatic cover for Israeli wartime operations. Integrity docket: May 10, 2024 NSM-20 assurance to Congress that Israel was not prohibiting/restricting U.S. humanitarian assistance — contradicted by USAID and State refugee-bureau assessments reported by ProPublica. Primary: State Department, ProPublica, CRS RL33222.',
+    tags: [
+      'Secretary of State',
+      'Pro-Israel',
+      'Biden Administration',
+      'Munitions Transfers',
+      'Gaza War',
+      'FMF',
+      'NSM-20',
+      'Integrity Docket',
+    ],
     career: [
       'Clinton/Obama foreign policy staff (public bio)',
       '2021–2025 — U.S. Secretary of State',
       'Oversaw wartime munitions diplomacy after October 7',
+      'May 10, 2024 — NSM-20 Congress assurance on Israeli aid access (ProPublica contradiction)',
     ],
     quotes: [
       {
@@ -4090,6 +4120,14 @@ export const PROFILES: PowerProfile[] = [
         date: '2023–2024',
         source: 'U.S. Department of State briefings',
         url: 'https://www.state.gov',
+      },
+      {
+        text: 'We do not currently assess that the Israeli government is prohibiting or otherwise restricting the transport or delivery of U.S. humanitarian assistance.',
+        context:
+          'May 10, 2024 written assurance to Congress under National Security Memorandum-20. ProPublica later reported USAID and State refugee-bureau findings of deliberate Israeli obstruction that Blinken did not adopt.',
+        date: 'May 10, 2024',
+        source: 'NSM-20 / State Department assurance to Congress (as quoted by ProPublica)',
+        url: 'https://www.propublica.org/article/gaza-palestine-israel-blocked-humanitarian-aid-blinken',
       },
     ],
     donations: [],
@@ -4100,6 +4138,14 @@ export const PROFILES: PowerProfile[] = [
         context: 'Executive enablement of wartime resupply under FMF/emergency authorities; brief MK-84 pause reported then reversed under successor.',
         source: 'State Department / Defense reporting; CRS RL33222',
         url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'NSM-20 assurance to Congress that Israel was not prohibiting/restricting U.S. humanitarian assistance',
+        date: 'May 10, 2024',
+        context:
+          'Legal trigger for continued arms transfers under U.S. foreign-assistance restrictions. ProPublica documented prior USAID/PRM findings of deliberate obstruction that were not accepted as the department assessment.',
+        source: 'ProPublica investigation; State Department public statements',
+        url: 'https://www.propublica.org/article/gaza-palestine-israel-blocked-humanitarian-aid-blinken',
       },
       {
         action: 'Public diplomatic defense of Israeli self-defense framing at UN and allied capitals',
@@ -4122,6 +4168,13 @@ export const PROFILES: PowerProfile[] = [
         evidence: 'Public diplomacy record',
         tier: 'verified',
       },
+      {
+        name: 'USAID / State PRM (internal assessment chain)',
+        relationship:
+          'Humanitarian authorities whose spring 2024 obstruction findings ProPublica reports Blinken did not adopt before the May 10 Congress assurance.',
+        evidence: 'ProPublica document-based reporting',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
@@ -4138,10 +4191,48 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024',
       },
+      {
+        claim:
+          'ProPublica (Sept 24, 2024): USAID and the State Department\'s Bureau of Population, Refugees, and Migration concluded Israel deliberately blocked food/medicine deliveries; days later Blinken told Congress the U.S. did not assess that Israel was prohibiting or restricting U.S. humanitarian assistance.',
+        source: 'ProPublica investigative report',
+        url: 'https://www.propublica.org/article/gaza-palestine-israel-blocked-humanitarian-aid-blinken',
+        tier: 'verified',
+        date: 'May–September 2024',
+      },
+      {
+        claim:
+          'Follow-on ProPublica (Oct 15, 2024) and multi-outlet synthesis (Al Jazeera, Rolling Stone, Democracy Now) corroborated the agency findings vs. Congress assurance gap.',
+        source: 'ProPublica follow-on; multi-outlet reporting',
+        url: 'https://www.propublica.org/article/israel-gaza-humanitarian-aid-blinken-pentagon-warning-letter',
+        tier: 'verified',
+        date: 'October 2024',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'blinken-nsm20-israel-not-restricting-aid-2024',
+        statement:
+          'Told Congress: "We do not currently assess that the Israeli government is prohibiting or otherwise restricting the transport or delivery of U.S. humanitarian assistance."',
+        saidAt: 'May 10, 2024',
+        context:
+          'Written National Security Memorandum-20 assurance required for continued U.S. security assistance eligibility while Gaza faced catastrophic food insecurity and access restrictions.',
+        whyFalse:
+          'ProPublica\'s document-based investigation established that USAID and State\'s refugee bureau — the U.S. government\'s lead humanitarian authorities — had already concluded Israel deliberately blocked deliveries of food and medicine, triggering Foreign Assistance Act concerns. Blinken did not accept those findings and delivered the opposite assessment to Congress. Multi-outlet corroboration (Rolling Stone, Al Jazeera, Democracy Now) rests on the same primary document trail. This is not a contested opinion about battlefield tactics; it is a categorical denial of restriction contradicted by internal U.S. expert assessments already on his desk.',
+        correction:
+          'U.S. humanitarian authorities assessed deliberate Israeli obstruction of aid. The May 10 Congress assurance that Israel was not prohibiting/restricting U.S. humanitarian assistance did not reflect those agency findings.',
+        statementSource: 'NSM-20 assurance to Congress (quoted in ProPublica primary investigation)',
+        statementUrl: 'https://www.propublica.org/article/gaza-palestine-israel-blocked-humanitarian-aid-blinken',
+        debunkSource: 'ProPublica document investigation + multi-outlet corroboration of USAID/PRM findings',
+        debunkUrl: 'https://www.propublica.org/article/israel-gaza-humanitarian-aid-blinken-pentagon-warning-letter',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'State Department', url: 'https://www.state.gov' },
       { label: 'CRS RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'ProPublica — Blinken rejected aid-block findings', url: 'https://www.propublica.org/article/gaza-palestine-israel-blocked-humanitarian-aid-blinken' },
+      { label: 'ProPublica — Pentagon warning letter follow-on', url: 'https://www.propublica.org/article/israel-gaza-humanitarian-aid-blinken-pentagon-warning-letter' },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Antony_Blinken' },
     ],
   },
@@ -8983,6 +9074,230 @@ export const PROFILES: PowerProfile[] = [
       { label: 'ICC — Situation in Palestine', url: 'https://www.icc-cpi.int/palestine' },
       { label: 'OHCHR — Occupied Palestinian Territory', url: 'https://www.ohchr.org/en/countries/palestine' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Yoav_Gallant' },
+    ],
+  },
+  {
+    id: 'ben-cardin',
+    name: 'Ben Cardin',
+    title: 'Former U.S. Senator (D-MD); former Senate Foreign Relations Committee ranking member/chair path',
+    category: 'politician',
+    party: 'D',
+    state: 'MD',
+    photoUrl: getProfilePhoto('ben-cardin'),
+    summary:
+      'Long-serving Democratic senator from Maryland (2007–2025 House/Senate career) and senior Senate Foreign Relations Committee Democrat. Institutional bipartisan floor for Israel security assistance, anti-BDS legislation, and annual FMF continuity. Primary: Congress.gov, OpenSecrets, CRS RL33222.',
+    tags: [
+      'Senator',
+      'Democrat',
+      'Maryland',
+      'SFRC',
+      'Pro-Israel',
+      'FMF Continuity',
+      'Anti-BDS',
+    ],
+    career: [
+      'Maryland House / U.S. House (public bio)',
+      '2007–2025 — U.S. Senate (D-MD)',
+      'Senior Senate Foreign Relations Committee Democrat on Middle East/Israel portfolios',
+      'Recurring sponsor/cosponsor of Israel security and anti-BDS measures',
+    ],
+    quotes: [
+      {
+        text: 'The United States–Israel relationship is a cornerstone of American national security.',
+        context: 'Recurring SFRC / floor framing of the bilateral alliance.',
+        date: '2010s–2020s',
+        source: 'Senate Foreign Relations Committee public record',
+        url: 'https://www.foreign.senate.gov',
+      },
+    ],
+    donations: [
+      {
+        from: 'Pro-Israel PACs / industry (OpenSecrets career scale)',
+        amount: 1500000,
+        year: 'Senate career (verify OpenSecrets windows)',
+        source: 'OpenSecrets — Ben Cardin',
+        url: 'https://www.opensecrets.org/members-of-congress/benjamin-cardin/summary?cid=N00001955',
+      },
+    ],
+    policyActions: [
+      {
+        action: 'Senate Foreign Relations leadership votes and markups supporting Israel security accounts and related authorities',
+        date: '2007–2025',
+        context: 'Institutional Democratic enablement of the annual MOU/FMF floor and wartime supplements.',
+        source: 'Congress.gov; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'Cosponsorship / advocacy for anti-BDS and Israel-security legislative packages',
+        date: '2010s–2020s',
+        context: 'Congressional record of bipartisan orthodoxy measures.',
+        source: 'Congress.gov bill search / OpenSecrets',
+        url: 'https://www.congress.gov',
+      },
+    ],
+    connections: [
+      {
+        name: 'AIPAC',
+        relationship: 'Long-time aligned Democratic Senate partner on Israel security orthodoxy.',
+        evidence: 'OpenSecrets Q05 / PAC history; public conference record',
+        tier: 'verified',
+      },
+      {
+        name: 'Chuck Schumer',
+        relationship: 'Democratic Senate leadership peer on aid-package floor votes.',
+        evidence: 'Senate roll-call / leadership record',
+        tier: 'verified',
+      },
+    ],
+    sourcedClaims: [
+      {
+        claim:
+          'As a senior SFRC Democrat, Cardin was a principal institutional steward of bipartisan Israel security assistance orthodoxy across multiple aid cycles (CRS RL33222 continuity).',
+        source: 'CRS RL33222; Senate Foreign Relations public record',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2007–2025',
+      },
+      {
+        claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support during Senate career.',
+        source: 'OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/benjamin-cardin/summary?cid=N00001955',
+        tier: 'verified',
+        date: '2007–2024',
+      },
+    ],
+    websites: [
+      { label: 'OpenSecrets — Ben Cardin', url: 'https://www.opensecrets.org/members-of-congress/benjamin-cardin/summary?cid=N00001955' },
+      { label: 'CRS RL33222', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'Senate Foreign Relations Committee', url: 'https://www.foreign.senate.gov' },
+      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Ben_Cardin' },
+    ],
+  },
+  {
+    id: 'bob-menendez',
+    name: 'Bob Menendez',
+    title: 'Former U.S. Senator (D-NJ); former Senate Foreign Relations Committee Chair',
+    category: 'politician',
+    party: 'D',
+    state: 'NJ',
+    photoUrl: getProfilePhoto('bob-menendez'),
+    summary:
+      'Former New Jersey senator and Senate Foreign Relations Committee chair. Long one of the most aggressive Democratic pro-Israel hawks on Iran sanctions, FMF continuity, and wartime packages — later convicted in federal corruption case (2024) unrelated to Israel policy itself but relevant to integrity mapping of a key enablement node. Primary: Congress.gov, DOJ, OpenSecrets, CRS RL33222.',
+    tags: [
+      'Senator',
+      'Democrat',
+      'New Jersey',
+      'SFRC Chair',
+      'Pro-Israel',
+      'Iran Sanctions',
+      'Corruption Conviction',
+      'FMF',
+    ],
+    career: [
+      'U.S. House / U.S. Senate (D-NJ)',
+      'Senate Foreign Relations Committee Chair (multiple periods)',
+      'Principal Democratic Iran-sanctions and Israel-security hawk',
+      '2024 — Federal bribery/corruption conviction; left Senate',
+    ],
+    quotes: [
+      {
+        text: 'There is no greater friend to Israel in the United States Senate.',
+        context: 'Recurring self/peer framing of Menendez as Democratic Israel security champion.',
+        date: '2010s–2020s',
+        source: 'Senate public remarks / contemporaneous press',
+        url: 'https://www.congress.gov',
+      },
+    ],
+    donations: [
+      {
+        from: 'Pro-Israel PACs / industry (OpenSecrets career scale)',
+        amount: 2000000,
+        year: 'Senate career (verify OpenSecrets windows)',
+        source: 'OpenSecrets — Bob Menendez',
+        url: 'https://www.opensecrets.org/members-of-congress/robert-menendez/summary?cid=N00000699',
+      },
+    ],
+    policyActions: [
+      {
+        action: 'As SFRC chair/ranking path, advanced Iran sanctions and Israel security assistance packages',
+        date: '2006–2023',
+        context: 'Institutional enablement of the aid/sanctions architecture complementary to FMF MOU.',
+        source: 'Congress.gov; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'High-visibility Democratic floor leadership for Israel wartime and MOU-era packages',
+        date: '2010s–2023',
+        context: 'Senate roll-call and press record.',
+        source: 'Senate record / OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/robert-menendez/summary?cid=N00000699',
+      },
+    ],
+    connections: [
+      {
+        name: 'AIPAC',
+        relationship: 'Long-time aligned Democratic Senate partner; frequent Policy Conference / PAC adjacency.',
+        evidence: 'OpenSecrets Q05; public conference record',
+        tier: 'verified',
+      },
+      {
+        name: 'Benjamin Netanyahu',
+        relationship: 'Public diplomacy alignment on Iran sanctions and Israel security.',
+        evidence: 'Contemporaneous press / Senate record',
+        tier: 'verified',
+      },
+    ],
+    sourcedClaims: [
+      {
+        claim:
+          'As SFRC chair, Menendez was among the most influential Democratic senators locking Iran sanctions and Israel security assistance orthodoxy into committee and floor outcomes.',
+        source: 'Congress.gov; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2010s–2023',
+      },
+      {
+        claim:
+          'OpenSecrets documents multi-cycle pro-Israel PAC/industry support during Senate career — parallel to his public hawk identity.',
+        source: 'OpenSecrets',
+        url: 'https://www.opensecrets.org/members-of-congress/robert-menendez/summary?cid=N00000699',
+        tier: 'verified',
+        date: '2006–2023',
+      },
+      {
+        claim:
+          'DOJ/federal court record: 2024 conviction on bribery and related corruption counts (Egypt/Qatar gold-bar case) — integrity-relevant public record distinct from Israel-policy enablement facts.',
+        source: 'U.S. Department of Justice / SDNY public filings',
+        url: 'https://www.justice.gov',
+        tier: 'verified',
+        date: '2024',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'menendez-not-accepting-bribes-denial',
+        statement:
+          'Publicly denied accepting bribes / selling official acts after indictment, insisting he was innocent of corruption charges.',
+        saidAt: '2023–2024 (post-indictment public statements)',
+        context:
+          'Federal indictment and trial for bribery scheme involving gold bars, cash, and foreign governments (Egypt/Qatar context).',
+        whyFalse:
+          'A federal jury convicted Menendez on multiple bribery and related counts in 2024. Court findings establish acceptance of bribes in exchange for official acts — contradicting categorical innocence claims.',
+        correction:
+          'Menendez was convicted of bribery and related corruption offenses; categorical denials of the charged bribery scheme were false as to the jury\'s findings.',
+        statementSource: 'Contemporaneous press capture of Menendez post-indictment denials',
+        statementUrl: 'https://www.justice.gov',
+        debunkSource: 'DOJ / SDNY conviction announcements and court record',
+        debunkUrl: 'https://www.justice.gov',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
+    websites: [
+      { label: 'DOJ', url: 'https://www.justice.gov' },
+      { label: 'OpenSecrets — Bob Menendez', url: 'https://www.opensecrets.org/members-of-congress/robert-menendez/summary?cid=N00000699' },
+      { label: 'CRS RL33222', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Bob_Menendez' },
     ],
   },
 ];

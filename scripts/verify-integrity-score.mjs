@@ -102,6 +102,8 @@ const required = [
   'benjamin-netanyahu',
   'ron-desantis',
   'nikki-haley',
+  'antony-blinken',
+  'bob-menendez',
 ];
 const scores = {};
 for (const id of required) {
@@ -242,8 +244,30 @@ for (const f of (haleyP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('haley dual-cite collision: ' + f.id);
 }
 
+// Antony Blinken NSM-20 aid-access integrity gate
+const blinken = scores['antony-blinken'];
+if (!blinken || blinken.n < 1) throw new Error('antony-blinken needs ≥1 verified falsehood, got ' + (blinken?.n ?? 0));
+if (blinken.score > 80) throw new Error('antony-blinken score expected ≤80, got ' + blinken.score);
+const blinkenP = getProfileBySlug('antony-blinken');
+if (!(blinkenP.documentedFalsehoods || []).some((f) => f.id === 'blinken-nsm20-israel-not-restricting-aid-2024')) {
+  throw new Error('antony-blinken missing NSM-20 docket id');
+}
+for (const f of (blinkenP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('blinken dual-cite collision: ' + f.id);
+}
+
+// Bill Clinton multi-entry (Lewinsky denial + obstruction/perjury framing)
+const bill = scores['bill-clinton'];
+if (!bill || bill.n < 2) throw new Error('bill-clinton needs ≥2 verified falsehoods, got ' + (bill?.n ?? 0));
+if (bill.score > 55) throw new Error('bill-clinton score expected ≤55 after deep dive, got ' + bill.score);
+
+// Barack Obama multi-entry (keep-your-plan + steel production)
+const obama = scores['barack-obama'];
+if (!obama || obama.n < 2) throw new Error('barack-obama needs ≥2 verified falsehoods, got ' + (obama?.n ?? 0));
+if (obama.score > 65) throw new Error('barack-obama score expected ≤65 after deep dive, got ' + obama.score);
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 15) throw new Error('expected ≥15 compiled dockets, got ' + docketCount);
+if (docketCount < 17) throw new Error('expected ≥17 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
