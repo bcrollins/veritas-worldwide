@@ -1058,4 +1058,10 @@ const relatedExportFinal = read('src/components/RelatedHubs.tsx')
 assert(relatedExportFinal.includes('export default function RelatedHubs'), 'RelatedHubs export default unique final')
 assert(relatedExportFinal.includes('export const PRIMARY_RELATED_HUBS') || relatedExportFinal.includes('PRIMARY_RELATED_HUBS'), 'PRIMARY export unique final')
 
+
+// DossierHubSpokes default export unique final
+const spokesExportFinal = read('src/components/DossierHubSpokes.tsx')
+assert(spokesExportFinal.includes('export default function DossierHubSpokes'), 'DossierHubSpokes export default unique final')
+assert(spokesExportFinal.includes('export const DOSSIER_SPOKES'), 'DOSSIER_SPOKES export unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
