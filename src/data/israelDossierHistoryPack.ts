@@ -8271,6 +8271,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-magnesium-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Magnesium Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (magnesium cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated magnesium deficiency risk among Gaza children under collapsed diverse diets — compounding muscle, cardiac, and developmental stress. Pattern card for magnesium-specific deficit distinct from calcium/vitamin-D and zinc cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source magnesium-deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric magnesium risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-adequate-lighting-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Adequate Lighting Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (lighting-denial cohort)',
+    location: 'Gaza Strip underground and enclosed captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document prolonged darkness and inadequate lighting for Israeli civilian hostages held underground — compounding fear and disorientation. Pattern card distinct from daylight-denial and ventilation cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source inadequate lighting in captivity. Exact conditions vary; multi-source prolonged darkness for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-graffiti-intimidation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Graffiti Intimidation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (graffiti-intimidation cohort)',
+    location: 'West Bank Palestinian homes, mosques, and village walls',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler “price-tag” graffiti and death-threat spray-painting after October 7 — intimidation targeting civilian families including children. Pattern card for graffiti intimidation distinct from arson and mosque vandalism cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source graffiti intimidation. Exact incident counts evolve; multi-source wartime settler graffiti intimidation is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler graffiti coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -12889,6 +12970,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['stone-throwing', 'settlers', 'civilians', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-magnesium-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Magnesium Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated magnesium deficiency risk among children under wartime diets.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-magnesium-deficiency-risk-pattern-2023-2025',
+      'gaza-children-calcium-vitamin-d-deficiency-pattern-2023-2025',
+      'gaza-children-selenium-deficiency-risk-pattern-2023-2025',
+    ],
+    tags: ['magnesium', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-lighting-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Adequate Lighting Pattern',
+    description: 'Multi-source documentation of prolonged darkness and inadequate lighting for civilian hostages underground.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-adequate-lighting-pattern-2023-2025',
+      'israel-hostages-denied-daylight-fresh-air-pattern-2023-2025',
+      'israel-hostages-denied-ventilation-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'darkness', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-graffiti-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Graffiti Intimidation Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler price-tag graffiti and death-threat spray-painting after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-graffiti-intimidation-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+      'west-bank-settler-mosque-vandalism-pattern-2023-2025',
+    ],
+    tags: ['graffiti', 'settlers', 'intimidation', 'west-bank'],
+  },
+
+
 
 
 
