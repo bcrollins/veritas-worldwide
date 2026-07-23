@@ -298,6 +298,7 @@ export default function MediaKitPage() {
               { label: 'Bluesky', href: '/brand-kit/04-social/bluesky-banner.svg', bg: 'bg-obsidian' },
               { label: 'Media OG', href: '/brand-kit/05-og/og-media-kit.svg', bg: 'bg-parchment' },
               { label: 'Pinterest', href: '/brand-kit/04-social/pinterest-pin.svg', bg: 'bg-obsidian' },
+              { label: 'TikTok', href: '/brand-kit/04-social/tiktok-cover.svg', bg: 'bg-obsidian' },
             ].map(a => (
               <a
                 key={a.href}
