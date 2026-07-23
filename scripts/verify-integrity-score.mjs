@@ -107,6 +107,7 @@ const required = [
   'mike-pence',
   'dick-cheney',
   'marco-rubio',
+  'mike-pompeo',
 ];
 const scores = {};
 for (const id of required) {
@@ -318,8 +319,17 @@ if (!(rubioP.documentedFalsehoods || []).some((f) => f.id === 'rubio-20-to-30-mi
   throw new Error('marco-rubio missing 20-30M immigration docket id');
 }
 
+// Mike Pompeo integrity gate
+const pompeo = scores['mike-pompeo'];
+if (!pompeo || pompeo.n < 1) throw new Error('mike-pompeo needs ≥1 verified falsehood, got ' + (pompeo?.n ?? 0));
+if (pompeo.score > 90) throw new Error('mike-pompeo score expected ≤90, got ' + pompeo.score);
+const pompeoP = getProfileBySlug('mike-pompeo');
+if (!(pompeoP.documentedFalsehoods || []).some((f) => f.id === 'pompeo-defended-every-person-yovanovitch-2020')) {
+  throw new Error('mike-pompeo missing Yovanovitch docket id');
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 20) throw new Error('expected ≥20 compiled dockets, got ' + docketCount);
+if (docketCount < 21) throw new Error('expected ≥21 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

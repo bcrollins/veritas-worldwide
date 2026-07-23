@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:26:03.812Z",
+  "generatedAt": "2026-07-23T07:28:18.649Z",
   "count": 96,
   "profiles": [
     {
@@ -760,9 +760,9 @@
         "Golan",
         "Jerusalem"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "antony-blinken",

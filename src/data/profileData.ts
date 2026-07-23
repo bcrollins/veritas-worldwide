@@ -4247,10 +4247,39 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2020',
       },
+      {
+        claim:
+          'Jan 2020 NPR: claimed he had "defended every single person on this team" including Amb. Marie Yovanovitch. PolitiFact False — no public evidence of defense; she was recalled and smeared during Ukraine pressure campaign.',
+        source: 'PolitiFact False (Jan 29, 2020)',
+        url: 'https://www.politifact.com/factchecks/2020/jan/29/mike-pompeo/no-evidence-mike-pompeos-claim-hes-defended-ambass/',
+        tier: 'verified',
+        date: '2020',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'pompeo-defended-every-person-yovanovitch-2020',
+        statement:
+          'When asked if he had defended Amb. Marie Yovanovitch: "I\'ve defended every single person on this team."',
+        saidAt: 'January 24, 2020',
+        context:
+          'NPR interview during Ukraine impeachment fallout after Yovanovitch was removed as ambassador and publicly attacked.',
+        whyFalse:
+          'PolitiFact rated False. There was no public evidence Pompeo defended Yovanovitch; the record shows she was recalled and targeted while State leadership failed to publicly back her. The categorical "every single person" claim is contradicted by the Yovanovitch episode.',
+        correction:
+          'Pompeo did not publicly defend Yovanovitch; the absolute "every single person" claim was false.',
+        statementSource: 'NPR interview Jan 24, 2020 (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/personalities/mike-pompeo/',
+        debunkSource: 'PolitiFact — False (Jan 29, 2020)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2020/jan/29/mike-pompeo/no-evidence-mike-pompeos-claim-hes-defended-ambass/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Abraham Accords (State)', url: 'https://www.state.gov/the-abraham-accords/' },
       { label: 'U.S. Embassy Jerusalem', url: 'https://il.usembassy.gov' },
+      { label: 'PolitiFact — Yovanovitch defense claim (False)', url: 'https://www.politifact.com/factchecks/2020/jan/29/mike-pompeo/no-evidence-mike-pompeos-claim-hes-defended-ambass/' },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Mike_Pompeo' },
     ],
   },
