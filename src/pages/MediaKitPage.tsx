@@ -292,6 +292,23 @@ export default function MediaKitPage() {
         </div>
       </section>
 
+      <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 border-b border-border" data-testid="media-kit-research-pack-oneliner">
+        <div className="rounded-sm border border-border bg-surface px-5 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-body text-sm text-ink-muted leading-relaxed max-w-3xl">
+            <span className="font-semibold text-ink">Machine corpora:</span>{' '}
+            Free offline research pack ZIP of public JSON corpora (profiles, ROC, Israel, taxonomy) for journalists and researchers.
+            Publisher: Veritas Worldwide only.
+          </p>
+          <a
+            href="/research-pack.zip"
+            download="veritas-research-pack.zip"
+            className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-sm border border-obsidian px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson"
+          >
+            Download pack
+          </a>
+        </div>
+      </section>
+
       <section className="mt-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-display text-2xl font-semibold text-ink">Boilerplate</h2>

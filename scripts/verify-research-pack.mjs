@@ -59,6 +59,11 @@ assert(
   home.includes('/research-pack.zip') && home.includes('home-research-pack-zip'),
   'Home Power Profiles section must surface research pack zip',
 )
+const mediaKit = read('src/pages/MediaKitPage.tsx')
+assert(
+  mediaKit.includes('/research-pack.zip') && mediaKit.includes('media-kit-research-pack-oneliner'),
+  'Media kit must surface research pack one-liner for press',
+)
 
 const llms = read('public/llms.txt')
 assert(llms.includes('research-pack'), 'llms.txt must index research pack')
