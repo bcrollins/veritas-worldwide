@@ -414,3 +414,5 @@ assert(botMeta.includes('Unknown chapter slug') || botMeta.includes('not part of
 
 assert(botMeta.includes('isKnownProfileSlug') || server.includes('isKnownProfileSlug'), 'must validate known profile slugs for soft-404')
 assert(server.includes('isKnownProfileSlug'), 'isKnownSpaRoute must gate /profile/* via isKnownProfileSlug')
+
+assert(server.includes('isKnownInstituteSlug') && botMeta.includes('isKnownInstituteSlug'), 'must soft-404 unknown institute course/guide slugs')

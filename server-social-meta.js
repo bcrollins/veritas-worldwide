@@ -139,6 +139,37 @@ export function isKnownTopicSlug(slug, rootDir) {
   return ids.has(slug)
 }
 
+let _knownInstituteSlugs = undefined
+function loadKnownInstituteSlugs(rootDir) {
+  if (_knownInstituteSlugs !== undefined) return _knownInstituteSlugs
+  const candidates = [
+    path.join(rootDir, 'src', 'data', 'instituteCatalog.ts'),
+    path.join(rootDir, 'dist', 'data', 'instituteCatalog.ts'),
+  ]
+  for (const candidate of candidates) {
+    if (!fs.existsSync(candidate)) continue
+    try {
+      const raw = fs.readFileSync(candidate, 'utf8')
+      const slugs = [...raw.matchAll(/slug:\s*'([a-z0-9-]+)'/g)].map((m) => m[1])
+      if (slugs.length) {
+        _knownInstituteSlugs = new Set(slugs)
+        return _knownInstituteSlugs
+      }
+    } catch { /* next */ }
+  }
+  _knownInstituteSlugs = null
+  return _knownInstituteSlugs
+}
+
+/** True for known /institute/courses|guides/:slug */
+export function isKnownInstituteSlug(slug, rootDir) {
+  const ids = loadKnownInstituteSlugs(rootDir)
+  if (!ids) return true
+  return ids.has(slug)
+}
+
+
+
 /**
  * Rewrite first-paint shell metas for bots.
  * Shell defaults (index.html): Primary Sources title + primary-source description.
@@ -465,6 +496,28 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
       }
     }
 
+
+
+    const instituteMatch = req.path.match(/^\/institute\/(courses|guides)\/([^/]+)$/)
+    if (instituteMatch) {
+      const slug = instituteMatch[2]
+      if (!isKnownInstituteSlug(slug, rootDir)) {
+        res.status(404)
+        res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+        let notFound = applyBotPageMeta(html, {
+          title: 'Page Not Found | Veritas Worldwide',
+          description: 'This Institute page is not part of The Record public archive.',
+          url: `${SITE_URL}/404`,
+          type: 'website',
+        })
+        notFound = notFound.replace(
+          /<meta name="robots" content="[^"]*"/,
+          '<meta name="robots" content="noindex, nofollow"',
+        )
+        return res.type('html').send(notFound)
+      }
+    }
 
     const topicMatch = req.path.match(/^\/topics\/([^/]+)$/)
     if (topicMatch) {

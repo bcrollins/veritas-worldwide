@@ -5,7 +5,7 @@ import fs from 'fs'
 import { fileURLToPath } from 'url'
 import { registerDatabaseAndAuthRoutes } from './server-auth.js'
 import { createChapterDataTools } from './server-chapter-data.js'
-import { registerBotMetaInjection, isKnownChapterSlug, isKnownProfileSlug, isKnownNewsSlug, isKnownTopicSlug } from './server-social-meta.js'
+import { registerBotMetaInjection, isKnownChapterSlug, isKnownProfileSlug, isKnownNewsSlug, isKnownTopicSlug, isKnownInstituteSlug } from './server-social-meta.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -2081,9 +2081,10 @@ function isKnownSpaRoute(pathname) {
   const topicMatch = route.match(/^\/topics\/([a-z0-9-]+)$/i)
   if (topicMatch) return isKnownTopicSlug(topicMatch[1], __dirname)
 
+  const instituteMatch = route.match(/^\/institute\/(courses|guides)\/([a-z0-9-]+)$/i)
+  if (instituteMatch) return isKnownInstituteSlug(instituteMatch[2], __dirname)
+
   const patterns = [
-    /^\/institute\/courses\/[a-z0-9-]+$/i,
-    /^\/institute\/guides\/[a-z0-9-]+$/i,
     /^\/admin(\/|$)/i,
     /^\/forum(\/|$)/i,
   ]
