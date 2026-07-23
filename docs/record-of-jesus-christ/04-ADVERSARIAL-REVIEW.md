@@ -47,3 +47,15 @@
 
 ## Interval 4 (2026-07-23)
 Wave3 claims (James, Gal 2, Masada, Bar Kokhba, prefecture, Herod death, Pauline chronology, Talmud caution, Origen/Eusebius). Bible page on 7-tier taxonomy. Cite-as, skip link, print CSS, corpus 105. Operator-blocked: admin env hash, GH org.
+
+## Intervals 9–11 (2026-07-23) — Wave 6–8 + GEO/privacy
+
+| Persona | Objection | Status |
+|---------|-----------|--------|
+| Textual critic | Missing ECM/CBGM, P66/P75, Mark ending, Comma Johanneum, Western text | Closed — wave6/7 apparatus cards |
+| Archaeologist | Need more epigraphy (Siloam, Sennacherib, Lachish) + site hygiene | Closed — wave6–8; still expandable |
+| Cosmologist | BAO / dark energy / Hubble tension under-documented | Closed — science_model hygiene retained |
+| Methodology editor | Personal GH reappeared in sameAs for “E-E-A-T” | Closed P0 — scrubbed live; verify-seo-meta forbids; verify:live-anonymity |
+| GEO/SEO | Corpus not Dataset-discoverable; bot JSON-LD lag | Closed — Dataset+HowTo client + prerender; 173 claims live |
+
+**Corpus:** 173 unique tier-labeled claims. **Anonymity:** live HTML + corpus PASS (entity sameAs only). **Residual:** operator admin hash env, org GH transfer, git history authors.
