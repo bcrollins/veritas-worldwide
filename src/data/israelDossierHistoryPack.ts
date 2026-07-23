@@ -3897,6 +3897,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-media-offices-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Media Offices & Press Infrastructure Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (media-infrastructure cohort)',
+    location: 'Gaza Strip press buildings / media towers',
+    summary:
+      'CPJ, RSF, and multi-source reporting document destruction of media offices, towers, and press facilities in Gaza — collapsing local newsgathering capacity concurrent with record journalist deaths. Pattern card for press-infrastructure destruction distinct from the journalists-killed personnel card.',
+    evidence:
+      'CPJ/RSF facility damage tallies and multi-outlet visual investigations establish multi-source media-office destruction. Exact building counts evolve; multi-source press-infrastructure collapse is the claim.',
+    sources: [
+      { label: 'Committee to Protect Journalists materials', url: 'https://cpj.org' },
+      { label: 'Reporters Without Borders materials', url: 'https://rsf.org' },
+      { label: 'Multi-outlet media building coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'CPJ public materials', url: 'https://cpj.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5760,6 +5787,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['sar', 'civil-defense', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-media-offices-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Media Offices Destruction Pattern',
+    description: 'CPJ/RSF multi-source documentation of destroyed media offices and press infrastructure concurrent with journalist deaths.',
+    source: 'CPJ / RSF / multi-outlet',
+    sourceUrl: 'https://cpj.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-media-offices-destruction-pattern-2023-2025',
+      'gaza-journalists-killed-pattern-2023-2025',
+      'gaza-telecommunications-blackouts-pattern-2023-2025',
+    ],
+    tags: ['media', 'press', 'civilians', 'gaza'],
+  },
+
 
 
 
