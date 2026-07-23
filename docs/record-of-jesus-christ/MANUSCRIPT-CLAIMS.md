@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:33:06.364Z  
+**Generated:** 2026-07-23T09:35:55.713Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 245  
-**Tier histogram:** `{"circumstantial": 13, "contested": 29, "interpretive": 21, "literary_theological": 3, "speculative": 2, "verified": 84, "well_attested": 93}`
+**Claim count:** 254  
+**Tier histogram:** `{"circumstantial": 13, "contested": 29, "interpretive": 22, "literary_theological": 3, "speculative": 2, "verified": 89, "well_attested": 96}`
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
@@ -20,6 +20,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ane-ekron-inscription` | verified | proof_grade_data | The Ekron royal dedicatory inscription names Philistine rulers and a temple of Ptgyh — primary control for Iron Age Philistine urban religion and politics. |
 | `ane-exodus-historicity` | contested | debate | The historicity and scale of an Israelite exodus from Egypt remain contested in critical scholarship. |
 | `ane-flood-literature` | well_attested | attested_report | Mesopotamian flood traditions (Atrahasis, Gilgamesh XI) are independent literary parallels to Genesis flood narrative forms. |
+| `ane-gezer-calendar` | well_attested | proof_grade_data | The Gezer calendar is an early Hebrew agricultural calendar inscription relevant to literacy and agrarian life in the southern Levant. |
 | `ane-hezekiah-bulla` | well_attested | proof_grade_data | Bullae and seals naming Hezekiah (and debated related officials) provide epigraphic controls for late-8th-century Judah’s royal administration. |
 | `ane-hezekiah-lmlk` | well_attested | attested_report | lmlk jar handles and related Judahite administrative seals concentrate in late eighth-century contexts associated with Hezekiah’s reign and Assyrian threat. |
 | `ane-inscription-map` | well_attested | attested_report | Key West Semitic and Egyptian inscriptions relevant to Israel/Judah (Merneptah, Mesha, Tel Dan, Siloam, etc.) form a geographically distributed control set across Egypt, Transjordan, and the Galilee–Golan. |
@@ -54,6 +55,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-pool-bethesda` | well_attested | attested_report | Excavations north of the Temple Mount have exposed twin pools matching John’s description of Bethesda with five porticoes (John 5) better than once assumed. |
 | `arch-quran-not-control` | interpretive | reconstruction | The Qur’an (7th c. CE) is a late secondary witness for first-century Palestinian history and is not used here as a primary control for the historical Jesus. |
 | `arch-sepphoris` | verified | proof_grade_data | Sepphoris (Zippori), ~6 km from Nazareth, was a significant urban center in Early Roman Galilee under Antipas. |
+| `arch-sepphoris-urban` | verified | proof_grade_data | Sepphoris was a major Galilean urban center near Nazareth with extensive excavation of Hellenistic–Roman layers. |
 | `arch-siloam` | verified | proof_grade_data | The Siloam Tunnel inscription (discovered 1880) describes construction of Hezekiah’s tunnel, matching 2 Kings 20:20 / 2 Chr 32:30 as royal hydraulic works. |
 | `arch-talpiot` | speculative | tradition | Talpiot “Jesus family tomb” statistical and onomastic claims are speculative and rejected by most specialists as identification of the New Testament Jesus. |
 | `arch-tiberias` | verified | proof_grade_data | Tiberias, founded by Antipas on the Sea of Galilee, is archaeologically and literarily documented as a Herodian urban center. |
@@ -63,6 +65,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-age` | well_attested | science_model | Under Planck 2018 ΛCDM parameters, the universe age is approximately 13.8 billion years. |
 | `cosmo-bao` | verified | science_model | Baryon acoustic oscillations (BAO) measured in large-scale galaxy surveys provide an independent standard-ruler constraint on the expansion history within ΛCDM. |
 | `cosmo-bbn` | well_attested | science_model | Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions. |
+| `cosmo-big-bang-nucleosynthesis-d` | verified | science_model | Primordial deuterium abundance measurements tightly constrain the baryon density in standard BBN, aligning with CMB-inferred Ω_b. |
 | `cosmo-cmb` | verified | science_model | The cosmic microwave background (CMB) is a near-isotropic blackbody at T ≈ 2.725 K, consistent with a hot early universe. |
 | `cosmo-cmb-polarization` | verified | science_model | CMB polarization (E-modes; B-mode searches) provides independent cosmological information beyond temperature anisotropies alone. |
 | `cosmo-cmb-power` | verified | science_model | The CMB angular power spectrum exhibits acoustic peaks whose positions and amplitudes constrain baryon density, dark matter density, and curvature in ΛCDM fits. |
@@ -97,6 +100,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ec-marcion` | well_attested | attested_report | Marcion of Sinope (mid-2nd century) promulgated a reduced Gospel+Paul collection, prompting proto-orthodox canon and theological responses. |
 | `ec-martyrdom-polycarp` | well_attested | attested_report | The Martyrdom of Polycarp (mid-2nd c. traditions) is an early Christian martyr narrative shaping later hagiography. |
 | `ec-melito-passover` | well_attested | attested_report | Melito of Sardis’s Peri Pascha (2nd c.) is an early Christian paschal homily with high christology and anti-Jewish rhetoric — reception history, not HJ primary data. |
+| `ec-melito-passover-pascha` | well_attested | attested_report | Melito’s Peri Pascha links Passover typology to Jesus’ passion in a high christology — second-century reception, not first-century reportage. |
 | `ec-muratorian` | well_attested | attested_report | The Muratorian Fragment is an early (often 2nd-century, date contested) Latin canon list showing a nearly formed but not identical NT collection. |
 | `ec-nicaea` | literary_theological | tradition | The Council of Nicaea (325 CE) addressed Christological doctrine (homoousios) under Constantine; it did not create the NT canon list. |
 | `ec-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek OT columns for comparative textual work — early Christian engagement with pluriform scriptural text. |
@@ -125,6 +129,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-healings-reputation` | well_attested | reconstruction | Healing activity is multiply attested as part of Jesus’ public reputation in Synoptic tradition; historians often accept a healing reputation while bracketing modern medical ontologies. |
 | `hj-herod-death` | contested | debate | The death of Herod the Great is conventionally dated to 4 BCE (with minority arguments for 1 BCE / other), anchoring the latest plausible nativity window in Matthew’s framework. |
 | `hj-james-leadership` | well_attested | attested_report | James the brother of Jesus is attested as a Jerusalem leadership figure (Paul; Acts; Josephus Ant. 20.200) until his death c. 62 CE. |
+| `hj-jerusalem-pilgrimage` | verified | proof_grade_data | Pilgrimage to Jerusalem for festivals is a well-attested Second Temple practice providing social context for Gospel Jerusalem scenes. |
 | `hj-jewishness-consensus` | well_attested | reconstruction | Mainstream historical Jesus research treats Jesus as a first-century Jew operating within Second Temple Judaism, not as a later Gentile construct. |
 | `hj-john-baptist-movement` | well_attested | attested_report | John the Baptist is multiply attested (Josephus Ant. 18; Synoptics; Johannine tradition) as an independent purification/repentance preacher executed by Herod Antipas. |
 | `hj-kingdom-proclamation` | well_attested | reconstruction | A core historical judgment across diverse scholars is that Jesus proclaimed God’s kingdom / reign as central to his public activity. |
@@ -152,6 +157,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-criteria-coherence-limits` | interpretive | reconstruction | Coherence criteria risk circularity: they test sayings against a reconstructed “core Jesus” that itself depends on prior authentications. |
 | `mod-criteria-critique` | interpretive | reconstruction | Classical criteria of authenticity (embarrassment, dissimilarity, multiple attestation) are historiographical tools with known biases; recent memory and social approaches revise their use. |
 | `mod-criteria-embarrassment` | interpretive | reconstruction | The criterion of embarrassment is a heuristic, not a proof algorithm; it can be misapplied when later communities reframe “embarrassing” material. |
+| `mod-criterion-dissimilarity-limits` | interpretive | reconstruction | Double dissimilarity (unlike Judaism and early Church) is widely criticized as historically implausible and theologically loaded. |
 | `mod-criterion-embarrassment-limits` | interpretive | reconstruction | The criterion of embarrassment is heuristic and circular if “embarrassing” is defined by later Christian theology rather than first-century Jewish context. |
 | `mod-critical-editions` | verified | proof_grade_data | NA28/UBS5 (and ongoing ECM/INTF work) are the standard working critical texts of the Greek NT for academic use. |
 | `mod-digital-dss` | verified | proof_grade_data | The Leon Levy Dead Sea Scrolls Digital Library enables open inspection of high-resolution plate images for many Qumran manuscripts. |
@@ -197,6 +203,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-tf` | contested | debate | Josephus, Antiquities 18.63–64 (Testimonium Flavianum) is widely judged partly authentic with Christian interpolations; fully authentic and fully forged positions are minorities. |
 | `nc-tf-reconstructions` | contested | debate | Major scholarly reconstructions of the Testimonium Flavianum range from a short neutral core to more expansive partial authenticity; wholesale authenticity and wholesale forgery are minority poles. |
 | `nc-thallus-phlegon` | circumstantial | attested_report | Later Christian authors cite Thallus and Phlegon regarding a darkness or eclipse around the time of the crucifixion; the original works are lost and the citations are mediated. |
+| `nc-traject-pliny-trajan` | verified | proof_grade_data | Trajan’s rescript to Pliny (Ep. 10.97) sets a legal policy: do not hunt Christians, punish only if proven and obstinate — Roman administrative evidence for early 2nd-c. policy. |
 | `nt-byzantine-priority` | contested | debate | Byzantine-priority / majority-text theories remain minority positions in mainstream critical editions, which generally prefer early diverse witnesses over later numerical majority alone. |
 | `nt-codex-alexandrinus` | verified | proof_grade_data | Codex Alexandrinus (A 02, 5th c.) is a major early nearly complete Greek Bible witness held by the British Library. |
 | `nt-comma-johanneum` | well_attested | proof_grade_data | The Comma Johanneum (1 John 5:7–8 Trinitarian expansion in some later Latin/Textus Receptus traditions) is absent from the earliest Greek manuscript tradition and is treated as secondary in modern critical editions. |
@@ -214,6 +221,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-majuscules` | verified | proof_grade_data | Fourth–fifth century majuscules (ℵ 01 Sinaiticus, A 02 Alexandrinus, B 03 Vaticanus, C 04 Ephraemi, D 05 Bezae) are foundational for the critical text. |
 | `nt-mark-ending` | verified | proof_grade_data | The longer ending of Mark (16:9–20) is absent from the earliest major witnesses (ℵ B) and is marked as secondary in NA28/UBS apparatuses. |
 | `nt-ms-count` | verified | proof_grade_data | Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions. |
+| `nt-nomina-sacra` | verified | proof_grade_data | Nomina sacra abbreviations for divine names and titles are a distinctive early Christian scribal practice visible across Greek NT manuscripts. |
 | `nt-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek columns for comparative Old Testament textual work — a landmark of ancient textual criticism. |
 | `nt-orthodox-corruption` | contested | debate | Bart Ehrman’s “orthodox corruption” thesis argues some early scribes altered texts in christologically charged passages; magnitude and intent remain debated. |
 | `nt-p45-p46-p47` | verified | proof_grade_data | Chester Beatty papyri (P45, P46, P47) are major third-century witnesses to Gospels/Acts, Paul, and Revelation respectively. |
@@ -250,6 +258,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-pompey-63` | verified | proof_grade_data | Pompey’s intervention in Judea (63 BCE) brought Hasmonean civil conflict under Roman arbitration and began lasting Roman overlordship. |
 | `st-prefecture` | verified | proof_grade_data | Roman Judea after 6 CE was administered by equestrian prefects (later procurators) based primarily at Caesarea, with troops and judicial powers including capital cases in practice. |
 | `st-roman-census-practices` | contested | debate | Roman provincial censuses and tax registrations are documented empire-wide; Luke’s census of Quirinius is a specific chronological crux relative to Herod’s death. |
+| `st-salome-alexandra` | well_attested | attested_report | Salome Alexandra’s reign (Hasmonean queen) is documented in Josephus as a period of Pharisaic influence before dynastic collapse into Roman arbitration. |
 | `st-samaria-papyri` | verified | proof_grade_data | The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria. |
 | `st-synagogue-origins` | contested | debate | The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type. |
 | `st-temple-economy` | well_attested | attested_report | The Jerusalem Temple system involved tithes, offerings, and currency exchange for worshippers — a documented economic-religious complex in Josephus and later rabbinic memory. |
