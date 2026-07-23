@@ -1554,4 +1554,19 @@ assert(a11yCredit.includes('RelatedHubs.tsx'), 'a11y floors RelatedHubs componen
 assert(a11yCredit.includes('min-h-[44px]'), 'a11y TARGET_RE 44px')
 
 
+
+// NotFound primary custom + secondary RelatedHubs reaffirm end
+const nfEnd = read('src/pages/NotFoundPage.tsx')
+assert(nfEnd.includes('not-found-hub-chips') && nfEnd.includes('not-found-secondary-hubs'), 'NotFound dual recovery rows end')
+assert(nfEnd.includes('PRIMARY_RELATED_HUBS') || nfEnd.includes('PRIMARY_HUBS'), 'NotFound PRIMARY end')
+assert(nfEnd.includes('NOT_FOUND_SECONDARY_HUBS'), 'NotFound secondary const end')
+assert(nfEnd.includes('RelatedHubs'), 'NotFound RelatedHubs end')
+assert(nfEnd.includes('noindex') || nfEnd.includes('noindex, nofollow'), 'NotFound noindex end')
+
+// Home hero CTA + underfold RelatedHubs reaffirm end
+const homeEnd = read('src/pages/HomePage.tsx')
+assert(homeEnd.includes('home-hub-cta-row') && homeEnd.includes('home-news-chip'), 'Home hero CTAs end')
+assert(homeEnd.includes('home-related-hubs') && homeEnd.includes('RelatedHubs'), 'Home underfold RelatedHubs end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
