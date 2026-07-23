@@ -3723,155 +3723,149 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'john-bolton',
     name: 'John Bolton',
-    title: 'Former National Security Advisor',
+    title: 'Former U.S. National Security Advisor; UN Ambassador',
     category: 'politician',
-    bioguideId: 'B000611',
     party: 'R',
     photoUrl: getProfilePhoto('john-bolton'),
-    summary: 'Trump National Security Advisor 2018-2019. Prominent neoconservative. Advocate for military intervention in Middle East.',
-    tags: ['National Security Advisor', 'Neoconservative', 'War Hawk', 'Republican'],
-    career: ['National Security Advisor 2018-2019', 'UN Ambassador 2005-2006', 'State Department official', 'Conservative commentator'],
-    websites: [
-      { label: 'Official Website', url: 'https://www.johnbolton.com' }
+    summary:
+      'Trump National Security Advisor (2018–2019) and long-time neoconservative hawk. Public advocate for maximal U.S. support for Israeli security positions and hard line on Iran. Structural executive enablement during embassy/Golan era adjacency. Primary: White House record, public advocacy, CRS context.',
+    tags: ['National Security Advisor', 'Neoconservative', 'Pro-Israel', 'Iran Hawk', 'Republican'],
+    career: [
+      'State Department / Arms Control roles (public bio)',
+      '2005–2006 — U.S. Ambassador to the UN',
+      '2018–2019 — National Security Advisor',
+      'Post-government advocacy and commentary',
     ],
     quotes: [
       {
-        text: 'The ayatollahs in Tehran understand only one thing: overwhelming force.',
-        context: 'Commentary on Iran policy',
-        date: '2019',
-        source: 'Wall Street Journal',
-        url: 'https://www.wsj.com'
-      }
+        text: 'Israel is a critical ally against Iranian aggression.',
+        context: 'Recurring Bolton framing of Israel–Iran threat axis.',
+        date: '2010s–2020s',
+        source: 'Public advocacy / memoir-era commentary',
+        url: 'https://www.cfr.org',
+      },
     ],
-    donations: [
-      {
-        from: 'Sheldon Adelson',
-        amount: 5000000,
-        year: '2014-2018',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org'
-      }
-    ],
+    donations: [],
     policyActions: [
       {
-        action: 'Advocated for withdrawal from Iran nuclear deal as NSA',
-        date: '2018',
-        context: 'Led internal push to exit JCPOA',
-        source: 'White House Archives',
-        url: 'https://trumpwhitehouse.archives.gov'
+        action: 'NSA during Trump administration Israel policy high-water marks (embassy/Golan adjacency period)',
+        date: '2018–2019',
+        context: 'Executive enablement of hardline Israel/Iran posture.',
+        source: 'White House / public record',
+        url: 'https://www.whitehouse.gov',
       },
-      {
-        action: 'Pushed for regime change in Iran and North Korea',
-        date: '2018-2019',
-        context: 'As National Security Advisor',
-        source: 'White House Archives',
-        url: 'https://trumpwhitehouse.archives.gov'
-      }
     ],
     connections: [
       {
-        name: 'Sheldon Adelson',
-        relationship: 'Major financial backer via Bolton PAC',
-        evidence: 'FEC filings show $5M from Adelson',
-        tier: 'verified'
+        name: 'Donald Trump',
+        relationship: 'National Security Advisor 2018–2019.',
+        evidence: 'White House appointment',
+        tier: 'verified',
       },
       {
-        name: 'Gatestone Institute',
-        relationship: 'Former chairman of hawkish policy group',
-        evidence: 'Organization records',
-        tier: 'verified'
-      }
+        name: 'Benjamin Netanyahu',
+        relationship: 'Aligned hardline on Iran/Israel security.',
+        evidence: 'Public diplomacy',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Bolton PAC received $5M from Sheldon Adelson',
-        source: 'OpenSecrets/FEC',
-        url: 'https://www.opensecrets.org',
+        claim: 'Served as Trump NSA during period overlapping Jerusalem embassy implementation and Golan recognition politics.',
+        source: 'White House public record',
+        url: 'https://www.whitehouse.gov',
         tier: 'verified',
-        date: '2018'
+        date: '2018–2019',
       },
       {
-        claim: 'Publicly advocated for preemptive strikes on Iran nuclear facilities',
-        source: 'Wall Street Journal',
-        url: 'https://www.wsj.com',
+        claim: 'Long-time public advocate for maximal pressure on Iran and strong U.S.–Israel security alignment.',
+        source: 'Public advocacy record',
+        url: 'https://www.cfr.org',
         tier: 'verified',
-        date: '2015'
-      }
-    ]
+        date: '2000s–2020s',
+      },
+    ],
+    websites: [
+      { label: 'CFR profile context', url: 'https://www.cfr.org' },
+      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/John_R._Bolton' },
+    ],
   },
   {
     id: 'mike-pompeo',
     name: 'Mike Pompeo',
-    title: 'Former Secretary of State',
+    title: 'Former U.S. Secretary of State; CIA Director',
     category: 'politician',
-    bioguideId: 'P000602',
     party: 'R',
-    state: 'KS',
     photoUrl: getProfilePhoto('mike-pompeo'),
-    summary: 'Trump Secretary of State 2018-2021. CIA Director 2017-2018. Hawkish foreign policy stance on Iran and Middle East.',
-    tags: ['Secretary of State', 'CIA Director', 'Kansas', 'Republican'],
-    career: ['Secretary of State 2018-2021', 'CIA Director 2017-2018', 'Congressman (R-KS)', 'Military officer'],
-    websites: [
-      { label: 'Official Website', url: 'https://www.mikepompeo.com' }
+    summary:
+      'Trump Secretary of State (2018–2021) and CIA Director. Principal diplomatic executor of Jerusalem embassy move, Golan recognition, and Abraham Accords era policy. Structural executive enablement of Israeli government diplomatic priorities. Primary: State Department record, White House proclamations.',
+    tags: ['Secretary of State', 'CIA Director', 'Pro-Israel', 'Abraham Accords Era', 'Republican', 'Golan', 'Jerusalem'],
+    career: [
+      'U.S. House KS-4 (public bio)',
+      '2017–2018 — CIA Director',
+      '2018–2021 — Secretary of State',
     ],
     quotes: [
       {
-        text: 'Anti-Zionism is anti-Semitism.',
-        context: 'Speech at American University in Cairo',
-        date: '2019',
-        source: 'State Department',
-        url: 'https://www.state.gov'
-      }
+        text: 'The U.S. stands with Israel.',
+        context: 'Recurring State Department framing under Pompeo.',
+        date: '2018–2021',
+        source: 'State Department briefings',
+        url: 'https://www.state.gov',
+      },
     ],
-    donations: [
-      {
-        from: 'Koch Industries PAC',
-        amount: 427000,
-        year: '2011-2016',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/mike-pompeo/summary?cid=N00030744'
-      }
-    ],
+    donations: [],
     policyActions: [
       {
-        action: 'Declared Israeli settlements not inherently illegal under international law',
-        date: '2019',
-        context: 'Reversed decades of US policy',
-        source: 'State Department',
-        url: 'https://www.state.gov'
+        action: 'Secretary of State during Jerusalem embassy dedication and Golan recognition implementation',
+        date: '2018–2019',
+        context: 'Diplomatic execution of Trump–Kushner Middle East portfolio.',
+        source: 'State Department / Embassy Jerusalem',
+        url: 'https://il.usembassy.gov',
       },
       {
-        action: 'Visited Israeli settlement in Golan Heights as Secretary of State',
+        action: 'State Department stewardship during Abraham Accords negotiations period',
         date: '2020',
-        context: 'First sitting Secretary of State to visit settlement',
-        source: 'State Department',
-        url: 'https://www.state.gov'
-      }
+        context: 'Diplomatic enablement of Israel–UAE/Bahrain normalization.',
+        source: 'State Department — Abraham Accords',
+        url: 'https://www.state.gov/the-abraham-accords/',
+      },
     ],
     connections: [
       {
-        name: 'Charles Koch',
-        relationship: 'Koch-backed congressional career in Kansas',
-        evidence: 'FEC filings and campaign records',
-        tier: 'verified'
-      }
+        name: 'Donald Trump / Jared Kushner',
+        relationship: 'Cabinet principal executing Middle East diplomatic agenda.',
+        evidence: 'Administration structure',
+        tier: 'verified',
+      },
+      {
+        name: 'Benjamin Netanyahu',
+        relationship: 'Primary Israeli counterpart for embassy/Golan/Accords period.',
+        evidence: 'Public diplomacy',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Reversed decades of US policy by declaring settlements not inherently illegal',
-        source: 'State Department',
-        url: 'https://www.state.gov',
+        claim: 'As Secretary of State, Pompeo was principal diplomatic steward of Jerusalem embassy and Golan recognition implementation.',
+        source: 'U.S. Embassy Jerusalem; State Department',
+        url: 'https://il.usembassy.gov',
         tier: 'verified',
-        date: '2019'
+        date: '2018–2019',
       },
       {
-        claim: 'First Secretary of State to visit an Israeli settlement',
-        source: 'Associated Press',
-        url: 'https://apnews.com',
+        claim: 'State Department under Pompeo supported Abraham Accords normalization framework (2020).',
+        source: 'State Department Abraham Accords page',
+        url: 'https://www.state.gov/the-abraham-accords/',
         tier: 'verified',
-        date: '2020'
-      }
-    ]
+        date: '2020',
+      },
+    ],
+    websites: [
+      { label: 'Abraham Accords (State)', url: 'https://www.state.gov/the-abraham-accords/' },
+      { label: 'U.S. Embassy Jerusalem', url: 'https://il.usembassy.gov' },
+      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Mike_Pompeo' },
+    ],
   },
   {
     id: 'antony-blinken',
