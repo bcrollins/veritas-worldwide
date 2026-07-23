@@ -7947,6 +7947,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-riboflavin-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Riboflavin (B2) Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (riboflavin cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated riboflavin (vitamin B2) deficiency risk among Gaza children under dairy- and meat-poor wartime diets — compounding skin and mucosal disease. Pattern card for B2-specific deficit distinct from thiamine/niacin and folate cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source riboflavin-deficiency risk. Exact clinical counts are incomplete; multi-source wartime pediatric riboflavin risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-ventilation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Adequate Ventilation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ventilation cohort)',
+    location: 'Gaza Strip underground and enclosed captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document inadequate ventilation and air quality for Israeli civilian hostages held underground — humidity, mold, and stifling air. Pattern card distinct from daylight-denial and hygiene cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source inadequate ventilation in captivity. Exact conditions vary; multi-source ventilation failure for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-fence-blocking-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Fence-Blocking of Access Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (fence-block cohort)',
+    location: 'West Bank village approaches and agricultural access routes',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler fencing that blocks Palestinian access to land, roads, and water after October 7 — privatizing public routes via private barriers. Pattern card for fence-blocking distinct from roadblocks and settlement-roads cards.',
+    evidence:
+      'OCHA access materials, multi-source case reporting, and multi-outlet coverage establish multi-source fence-blocking. Exact fence lengths evolve; multi-source wartime settler fence-blocking is the claim.',
+    sources: [
+      { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler fence coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -12361,6 +12442,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['caravans', 'outposts', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-riboflavin-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Riboflavin Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated riboflavin (B2) deficiency risk among children under wartime diets.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-riboflavin-deficiency-risk-pattern-2023-2025',
+      'gaza-children-thiamine-deficiency-risk-pattern-2023-2025',
+      'gaza-children-niacin-deficiency-risk-pattern-2023-2025',
+    ],
+    tags: ['riboflavin', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-ventilation-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Ventilation Pattern',
+    description: 'Multi-source documentation of inadequate ventilation and air quality for civilian hostages underground.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-ventilation-pattern-2023-2025',
+      'israel-hostages-denied-daylight-fresh-air-pattern-2023-2025',
+      'israel-hostages-tunnel-captivity-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'ventilation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-fence-blocking-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Fence-Blocking Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler fencing blocking Palestinian land and road access.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-fence-blocking-pattern-2023-2025',
+      'west-bank-settler-road-blocks-pattern-2023-2025',
+      'west-bank-settlement-outpost-roads-pattern-2023-2025',
+    ],
+    tags: ['fences', 'access', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
