@@ -2308,4 +2308,17 @@ assert(read('src/pages/TermsPage.tsx').includes("to: '/membership'") || read('sr
 assert(surfaces.length >= 102, `legal five surfaces ${surfaces.length}`)
 
 
+
+// ALL PRODUCT LIVE RelatedHubs platform pure celebration lock
+assert(surfaces.length >= 102, `all product live surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'all product live emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'all product live soft-404')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'all product live Privacy Membership')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'all product live Terms Membership')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'all product live A11Y Membership')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'all product live OSINT Dossiers')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'all product live home underfold')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'all product live search recovery')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
