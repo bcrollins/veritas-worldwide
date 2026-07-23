@@ -239,6 +239,40 @@ export default function MethodologyPage() {
                   This claim has been made by a named source, in a published report, or in sworn testimony — but has not been independently confirmed by multiple credible sources, proven in a court of law, or supported by primary documentation. It is included as part of the historical record and clearly labeled.
                 </p>
               </div>
+
+              <div className="mt-8 rounded-sm border border-border bg-surface p-5">
+                <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+                  Brand-aligned social assets
+                </p>
+                <p className="mt-2 font-body text-sm leading-relaxed text-ink-muted">
+                  Official Verified / Circumstantial / Disputed social cards use the same product colors as this page
+                  (#166534 / #92400E / #991B1B). Download vectors from the Media Kit or brand package.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <Link
+                    to="/media-kit"
+                    className="inline-flex min-h-[44px] items-center font-sans text-sm font-semibold text-crimson hover:text-crimson-dark"
+                  >
+                    Media Kit →
+                  </Link>
+                  <a
+                    href="/brand-kit/07-docs/EVIDENCE-TIERS.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[44px] items-center font-sans text-sm text-ink-muted hover:text-crimson"
+                  >
+                    EVIDENCE-TIERS.md →
+                  </a>
+                  <a
+                    href="/brand-kit/04-social/evidence-tier-verified.svg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[44px] items-center font-sans text-sm text-ink-muted hover:text-crimson"
+                  >
+                    Verified card →
+                  </a>
+                </div>
+              </div>
             </section>
 
             {/* Research Standards */}
