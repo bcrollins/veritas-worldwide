@@ -2573,6 +2573,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-reconstruction-cost-pattern-2024-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden', 'donald-trump'],
+    relatedMoneyNodeIds: ['mk84-use', 'fmf-weapons', 'oct7-emergency-arms-surge', 'us-munitions-industrial-base'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Reconstruction Cost Floor — Multi-Source Damage Tallies (2024–2025)',
+    date: '2024–2025 (damage assessment windows)',
+    location: 'Gaza Strip',
+    summary:
+      'World Bank, UN, and multi-partner rapid damage assessments document multi-decade reconstruction cost floors in the tens of billions of dollars for housing, infrastructure, and public services destroyed during the Gaza war. Pattern card for the economic civilian-harm ledger.',
+    evidence:
+      'World Bank/UN/EU joint damage and needs assessments, multi-source satellite damage analyses, and humanitarian recovery appeals establish multi-source multi-decade cost floors. Exact dollar figures evolve with assessment updates; multi-source tens-of-billions floor is the claim.',
+    sources: [
+      { label: 'World Bank damage and needs assessments', url: 'https://www.worldbank.org' },
+      { label: 'UN recovery/reconstruction materials', url: 'https://www.un.org' },
+      { label: 'Multi-outlet reconstruction cost coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'World Bank public materials', url: 'https://www.worldbank.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3631,6 +3658,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-pregnant-maternal-harm-pattern-2023-2025', 'gaza-health-system-collapse-2023-2025', 'gaza-women-killed-pattern-2023-2025'],
     tags: ['women', 'maternal', 'children', 'health', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-reconstruction-cost-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Gaza Reconstruction Cost Floor — Multi-Source Tallies',
+    description: 'World Bank/UN multi-source multi-decade reconstruction cost floor from war damage.',
+    source: 'World Bank / UN',
+    sourceUrl: 'https://www.worldbank.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-reconstruction-cost-pattern-2024-2025', 'gaza-housing-destruction-pattern-2023-2025'],
+    tags: ['reconstruction', 'economy', 'housing', 'gaza'],
   },
 
 ]

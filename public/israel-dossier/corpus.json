@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:23:42.820Z",
+  "generatedAt": "2026-07-23T08:25:14.131Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 110,
-    "timelineEvents": 98,
+    "incidents": 111,
+    "timelineEvents": 99,
     "actors": 47,
     "moneyTrailNodes": 31,
-    "historicalWarCrimesPack": 96,
+    "historicalWarCrimesPack": 97,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 50
+      "post-oct7": 51
     },
     "incidentsByTier": {
-      "verified": 108,
+      "verified": 109,
       "circumstantial": 2
     },
-    "childrenTagged": 90,
-    "civiliansTagged": 108,
+    "childrenTagged": 91,
+    "civiliansTagged": 109,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3654,6 +3654,26 @@
         "syria",
         "iran",
         "irgc"
+      ]
+    },
+    {
+      "id": "tl-gaza-reconstruction-cost-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Gaza Reconstruction Cost Floor — Multi-Source Tallies",
+      "description": "World Bank/UN multi-source multi-decade reconstruction cost floor from war damage.",
+      "source": "World Bank / UN",
+      "sourceUrl": "https://www.worldbank.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-reconstruction-cost-pattern-2024-2025",
+        "gaza-housing-destruction-pattern-2023-2025"
+      ],
+      "tags": [
+        "reconstruction",
+        "economy",
+        "housing",
+        "gaza"
       ]
     },
     {
@@ -8516,6 +8536,54 @@
           "type": "document",
           "label": "IPC public materials",
           "url": "https://www.ipcinfo.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-reconstruction-cost-pattern-2024-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden",
+        "donald-trump"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "fmf-weapons",
+        "oct7-emergency-arms-surge",
+        "us-munitions-industrial-base"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Reconstruction Cost Floor — Multi-Source Damage Tallies (2024–2025)",
+      "date": "2024–2025 (damage assessment windows)",
+      "location": "Gaza Strip",
+      "summary": "World Bank, UN, and multi-partner rapid damage assessments document multi-decade reconstruction cost floors in the tens of billions of dollars for housing, infrastructure, and public services destroyed during the Gaza war. Pattern card for the economic civilian-harm ledger.",
+      "evidence": "World Bank/UN/EU joint damage and needs assessments, multi-source satellite damage analyses, and humanitarian recovery appeals establish multi-source multi-decade cost floors. Exact dollar figures evolve with assessment updates; multi-source tens-of-billions floor is the claim.",
+      "sources": [
+        {
+          "label": "World Bank damage and needs assessments",
+          "url": "https://www.worldbank.org"
+        },
+        {
+          "label": "UN recovery/reconstruction materials",
+          "url": "https://www.un.org"
+        },
+        {
+          "label": "Multi-outlet reconstruction cost coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "World Bank public materials",
+          "url": "https://www.worldbank.org"
         }
       ],
       "tier": "verified",
