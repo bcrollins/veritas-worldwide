@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:38:50.914Z",
-  "claimCount": 263,
+  "generatedAt": "2026-07-23T09:41:16.215Z",
+  "claimCount": 272,
   "tierHistogram": {
-    "verified": 92,
-    "well_attested": 100,
+    "verified": 95,
+    "well_attested": 104,
     "contested": 29,
-    "interpretive": 23,
+    "interpretive": 25,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 14
@@ -157,6 +157,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-moabite-stone-context",
+      "claim": "The Mesha Stele (Moabite Stone) remains a primary control for Omride-period geopolitics and Yahwistic onomastics in Transjordan.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
       "id": "ane-sennacherib",
@@ -339,6 +346,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "arch-qumran-settlement",
+      "claim": "Qumran settlement archaeology provides material context for the Dead Sea Scrolls community debates (Essene and alternative models).",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
       "id": "arch-quran-not-control",
@@ -558,6 +572,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "cosmo-supernova-ia",
+      "claim": "Type Ia supernovae as standardizable candles mapped late-time acceleration and remain a core distance-ladder tool alongside BAO and CMB.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave19.ts"
+    },
+    {
       "id": "cosmo-weak-lensing",
       "claim": "Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits.",
       "tier": "verified",
@@ -640,6 +661,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ec-ignatius-letters",
+      "claim": "Ignatius of Antioch’s letters (early 2nd c., middle recension) document episcopal structure and early christological confessions en route to martyrdom.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
       "id": "ec-irenaeus",
@@ -992,6 +1020,13 @@
       "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
+      "id": "hj-prophetic-actions",
+      "claim": "Symbolic prophetic actions (e.g., Temple demonstration) are a recognized category in historical Jesus research for interpreting public deeds.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave19.ts"
+    },
+    {
       "id": "hj-q-hypothesis",
       "claim": "The Two-Source Hypothesis posits Markan priority plus a sayings source “Q” behind Matthew and Luke; Q remains a scholarly reconstruction without a surviving manuscript.",
       "tier": "contested",
@@ -1088,6 +1123,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "mod-criteria-multiple-attestation-practice",
+      "claim": "Multiple independent attestation remains a practical confidence-boosting tool when streams are truly independent (Mark, special Matthew/Luke, John, Paul, non-Christian).",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
       "id": "mod-criterion-dissimilarity-limits",
@@ -1298,6 +1340,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-lucian-alexander",
+      "claim": "Lucian’s Alexander the False Prophet satirizes cult founders and miracle claims in the second century — comparative evidence for how elites mocked religious innovators.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
       "id": "nc-lucian-peregrinus",
@@ -1608,6 +1657,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "nt-patristic-citations",
+      "claim": "Patristic citations are secondary witnesses that can preserve early readings but require careful evaluation of quoting habits and later manuscript tradition of the fathers.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave19.ts"
+    },
+    {
       "id": "nt-paul-dates",
       "claim": "Undisputed Pauline letters are typically dated c. 49–58 CE and are the earliest surviving Christian literary corpus.",
       "tier": "well_attested",
@@ -1823,6 +1879,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
+      "id": "st-roman-client-kings",
+      "claim": "Rome governed Judea via client kings (Herod, Archelaus) and later equestrian prefects — dual administrative models shape Gospel political settings.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
       "id": "st-salome-alexandra",
