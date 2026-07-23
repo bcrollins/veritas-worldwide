@@ -5908,6 +5908,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'paul-trump-ukraine-exactly-like-biden-2019',
+        statement:
+          'Trump’s phone call with the Ukrainian president “sounds exactly like what Joe Biden did.”',
+        saidAt: 'November 10, 2019',
+        context: 'NBC Meet the Press interview during the first Trump impeachment inquiry, equating the July 2019 Trump-Zelensky call to Biden’s earlier Ukraine aid conditionality over prosecutor Shokin.',
+        whyFalse:
+          'PolitiFact rated False. Biden pressed Ukraine to fire a prosecutor widely viewed as corrupt — aligned with U.S. and international policy consensus. Trump temporarily froze aid and asked Ukraine to investigate Biden, a potential 2020 rival. The actions are not equivalent.',
+        correction:
+          'Conditioning aid on anti-corruption prosecutor reform is not the same as conditioning aid on investigating a domestic political rival.',
+        statementSource: 'Sen. Rand Paul on NBC Meet the Press (Nov. 10, 2019)',
+        statementUrl: 'https://www.nbcnews.com/meet-the-press/meet-press-november-10-2019-n1079501',
+        debunkSource: 'PolitiFact — False (Nov. 11, 2019) on Trump/Biden Ukraine equivalence',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/nov/11/rand-paul/rand-paul-said-trumps-actions-related-ukraine-were/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.paul.senate.gov' },
