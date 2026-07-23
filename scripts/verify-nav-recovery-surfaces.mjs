@@ -906,4 +906,11 @@ assert(termsHubs.includes('terms-related-hubs') && termsHubs.includes('RelatedHu
 assert(privacyHubs.includes('/terms'), 'Privacy Terms cross-link unique')
 assert(termsHubs.includes('/privacy'), 'Terms Privacy cross-link unique')
 
+
+// Analytics RelatedHubs Read destination
+const analyticsHubsSrc = read('src/pages/AnalyticsPage.tsx')
+assert(analyticsHubsSrc.includes('analytics-related-hubs'), 'analytics-related-hubs testid')
+assert(analyticsHubsSrc.includes('/read'), 'Analytics Read dest unique final')
+assert(analyticsHubsSrc.includes('/search'), 'Analytics Search dest unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
