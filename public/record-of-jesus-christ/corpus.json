@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:35:55.713Z",
-  "claimCount": 254,
+  "generatedAt": "2026-07-23T09:38:50.914Z",
+  "claimCount": 263,
   "tierHistogram": {
-    "verified": 89,
-    "well_attested": 96,
+    "verified": 92,
+    "well_attested": 100,
     "contested": 29,
-    "interpretive": 22,
+    "interpretive": 23,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 13
+    "circumstantial": 14
   },
   "claims": [
     {
@@ -173,6 +173,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "ane-siloam-tunnel-engineering",
+      "claim": "Hezekiah’s tunnel engineering is archaeologically verified; the Siloam inscription describes the breakthrough meeting of two work crews.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
       "id": "ane-tel-dan",
       "claim": "The Tel Dan Stele (9th century BCE) attests the phrase “House of David” (bytdwd) outside the Bible.",
       "tier": "verified",
@@ -276,6 +283,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
+      "id": "arch-jerusalem-pilgrim-road",
+      "claim": "The Stepped Street / pilgrim road from the Pool of Siloam toward the Temple Mount is excavated and dated to the late Second Temple period.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave18.ts"
     },
     {
       "id": "arch-kursi",
@@ -472,6 +486,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "cosmo-flatness",
+      "claim": "Spatial curvature is consistent with flat geometry (Ω_k ≈ 0) within ΛCDM fits to CMB and BAO data.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave18.ts"
     },
     {
       "id": "cosmo-hubble-tension",
@@ -712,6 +733,13 @@
       "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
+      "id": "ec-shepherd-hermas-canon",
+      "claim": "The Shepherd of Hermas appears in some early canon lists and Codex Sinaiticus, illustrating fluid boundaries of authoritative Christian reading.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
       "id": "ec-update-triggers",
       "claim": "This Record’s perpetual update triggers include: new major papyri/majuscule publications, INTF Liste changes, peer-reviewed dig reports, and material consensus shifts in historical Jesus research.",
       "tier": "interpretive",
@@ -822,6 +850,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "hj-galilee-aramaic",
+      "claim": "Aramaic is widely reconstructed as a primary spoken language of Jesus and Galilean Jewish communities, with Hebrew and Greek also present.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave18.ts"
     },
     {
       "id": "hj-galilee-context",
@@ -1209,6 +1244,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "mod-third-quest-jewishness",
+      "claim": "Third Quest scholarship insists Jesus must be understood within Second Temple Judaism rather than against it — a methodological consensus across many schools.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
       "id": "mod-turin-shroud",
       "claim": "The Shroud of Turin is a medieval relic by mainstream radiocarbon dating (1988); authenticity as first-century burial cloth remains speculative/unverified for historical Jesus studies.",
       "tier": "speculative",
@@ -1228,6 +1270,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nc-epictetus-christians",
+      "claim": "Epictetus (via Arrian) may allude to Christians as fearless under threat — thin and debated philosophical notice of a social type.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave18.ts"
     },
     {
       "id": "nc-galen-christians",
@@ -1403,6 +1452,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "nt-continuous-text-vs-lectionary",
+      "claim": "Continuous-text manuscripts and lectionaries serve different liturgical and scholarly roles; critical editions weight continuous early witnesses more heavily for initial text.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave18.ts"
     },
     {
       "id": "nt-ecm-method",
@@ -1620,6 +1676,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave15.ts"
+    },
+    {
+      "id": "st-antonia-fortress",
+      "claim": "The Antonia Fortress adjacent to the Temple Mount is described by Josephus as a key Roman military foothold in Jerusalem.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave18.ts"
     },
     {
       "id": "st-coinage-revolt",
