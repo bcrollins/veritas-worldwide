@@ -376,4 +376,10 @@ const readHub = read('src/pages/ReadTheBookPage.tsx')
 assert(readHub.includes('read-toc-by-part') || readHub.includes('groupChaptersByPart'), 'Read TOC by part')
 assert(readHub.includes('Part I') || readHub.includes('Front matter') || readHub.includes('part'), 'Read part labels')
 
+
+// Media Kit keeps content pack + about recovery (mixed CTA surface)
+const mediaKit = read('src/pages/MediaKitPage.tsx')
+assert(mediaKit.includes('media-kit-related-hubs'), 'media-kit-related-hubs')
+assert(mediaKit.includes('/content-pack') || mediaKit.includes('/about'), 'Media Kit pack or about recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
