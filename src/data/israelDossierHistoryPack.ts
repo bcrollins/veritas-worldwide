@@ -3735,6 +3735,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-flour-mills-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Flour Mills & Food Production Facilities Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (mills cohort)',
+    location: 'Gaza Strip flour mills / food factories',
+    summary:
+      'WFP, multi-source satellite analysis, and field reporting document destruction or disablement of flour mills and major food-production facilities — collapsing local bread-flour supply under siege. Pattern card for industrial food-production destruction distinct from bakery retail collapse and agricultural land cards.',
+    evidence:
+      'WFP supply-chain materials, multi-source mill damage reporting, and OCHA food-security notes establish multi-source mill/facility disablement. Exact facility counts evolve; multi-source industrial food-production collapse is the claim.',
+    sources: [
+      { label: 'WFP food-security / supply materials', url: 'https://www.wfp.org' },
+      { label: 'OCHA humanitarian situation materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet flour mill damage coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WFP public updates', url: 'https://www.wfp.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5496,6 +5523,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['drones', 'iran', 'civilians', 'israel'],
   },
+
+  {
+    id: 'tl-gaza-flour-mills-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Flour Mills & Food Production Facilities Pattern',
+    description: 'WFP multi-source documentation of destroyed/disabled flour mills collapsing local bread-flour supply.',
+    source: 'WFP / OCHA / multi-outlet',
+    sourceUrl: 'https://www.wfp.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-flour-mills-destruction-pattern-2023-2025',
+      'gaza-bakeries-food-system-collapse-2023-2025',
+      'gaza-starvation-ipc-phases-2024-2025',
+    ],
+    tags: ['food', 'mills', 'children', 'civilians', 'gaza'],
+  },
+
 
 
 
