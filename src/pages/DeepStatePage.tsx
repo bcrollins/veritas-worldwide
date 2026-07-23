@@ -5,6 +5,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -579,6 +580,28 @@ export default function DeepStatePage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'The Deep State — Epstein Network', url: `${SITE_URL}/deep-state` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What is The Deep State dossier?',
+          answer:
+            'An interactive investigative surface documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism — with evidence-tier labels and first-party citations.',
+        },
+        {
+          question: 'Are claims on this page allegations or verified facts?',
+          answer:
+            'Each node and timeline entry is tier-labeled. Verified claims cite primary court or government records; circumstantial and disputed material is marked so readers can weigh strength independently.',
+        },
+        {
+          question: 'Who publishes The Deep State investigation?',
+          answer:
+            'Veritas Worldwide only. No personal author byline. Corrections: rights@veritasworldwide.com or corrections@veritasworldwide.com.',
+        },
+        {
+          question: 'How does this relate to The Record archive chapters?',
+          answer:
+            'The Deep State dossier is a specialized interactive surface. Related long-form evidence also appears in The Record chapter series (including Epstein-focused chapters) with full source lists.',
+        },
       ]),
     ])
     return () => {

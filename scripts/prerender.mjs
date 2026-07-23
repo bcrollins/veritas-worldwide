@@ -2487,6 +2487,7 @@ const staticPages = [
       'Fixed-price OSINT deliverable: identity resolution, public web and records trails, and device/account identifiers only when independently authenticated to the subject.',
       'Every report includes a methodology appendix so clients can re-verify sources. Lawful-purpose attestation required. Separate from free Power Profiles.',
     ],
+    image: `${SITE_URL}/og-comprehensive-profile.svg`,
     sourceFile: 'src/pages/ComprehensiveProfilePage.tsx',
   },
   {
@@ -3003,6 +3004,58 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/deep-state') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'The Deep State — Epstein Network', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is The Deep State dossier?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'An interactive investigative surface documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism — with evidence-tier labels and first-party citations.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Are claims on this page allegations or verified facts?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Each node and timeline entry is tier-labeled. Verified claims cite primary court or government records; circumstantial and disputed material is marked so readers can weigh strength independently.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes The Deep State investigation?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. No personal author byline. Corrections: rights@veritasworldwide.com or corrections@veritasworldwide.com.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How does this relate to The Record archive chapters?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The Deep State dossier is a specialized interactive surface. Related long-form evidence also appears in The Record chapter series (including Epstein-focused chapters) with full source lists.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {
@@ -3504,7 +3557,7 @@ for (const page of staticPages) {
     description: page.description,
     url: `${SITE_URL}${route === '/' ? '' : route}`,
     type: page.type || 'website',
-    image: DEFAULT_OG_IMAGE,
+    image: page.image || DEFAULT_OG_IMAGE,
     modifiedTime,
     robots: page.noindex
       ? 'noindex, nofollow'

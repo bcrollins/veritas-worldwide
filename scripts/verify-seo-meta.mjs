@@ -278,6 +278,17 @@ assert(
   bibleHistoryPage.includes('How does this Bible page relate to The Record of Jesus Christ?'),
   'Bible FAQ must route readers to ROC companion surface',
 )
+assert(
+  prerender.includes("route === '/deep-state'") &&
+    prerender.includes('What is The Deep State dossier?'),
+  'prerender must emit Deep State FAQPage for investigative SERP queries',
+)
+const deepStatePage = read('src/pages/DeepStatePage.tsx')
+assert(deepStatePage.includes('faqJsonLd'), 'DeepStatePage must emit FAQPage schema')
+assert(
+  deepStatePage.includes('What is The Deep State dossier?'),
+  'Deep State FAQ must define the investigation surface for SERP/PAA',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 
