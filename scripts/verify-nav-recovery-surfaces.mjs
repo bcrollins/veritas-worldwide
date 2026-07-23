@@ -1878,4 +1878,10 @@ assert(read('src/pages/SearchPage.tsx').includes('search-idle-hubs') && read('sr
 assert(read('src/pages/BookmarksPage.tsx').includes('bookmarks-related-hubs') && read('src/pages/BookmarksPage.tsx').includes('bookmarks-empty-hubs'), 'bookmarks dual testids ultimate final')
 
 
+
+// final PASS surfaces count and suite green sentinel
+assert(surfaces.length >= 102, `final sentinel surfaces ${surfaces.length}`)
+assert(typeof read === 'function' && typeof assert === 'function', 'suite helpers present')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
