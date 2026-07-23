@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:14:33.918Z",
+  "generatedAt": "2026-07-23T08:17:14.629Z",
   "count": 96,
   "profiles": [
     {
@@ -404,7 +404,7 @@
       "name": "Marco Rubio",
       "title": "U.S. Senator (R-FL); Secretary of State (2025–)",
       "category": "politician",
-      "summary": "Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025) — structural executive enablement of the U.S.–Israel security relationship. Integrity docket: PolitiFact False on 20–30M unauthorized immigrants claim. Primary: OpenSecrets, Senate/State record, CRS RL33222, PolitiFact.",
+      "summary": "Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025) — structural executive enablement of the U.S.–Israel security relationship. Integrity docket: dual-cited PolitiFact Falses — 20–30M unauthorized immigrants (Meet the Press; Pew/DHS residual estimates contradict) and “no mass-shooting guns from gun shows/internet” (CNN; Columbine gun-show and Virginia Tech online purchases contradict). Primary: OpenSecrets, Senate/State record, CRS RL33222, PolitiFact, NBC Meet the Press, CNN.",
       "photo": "/profiles/marco-rubio.jpg",
       "url": "https://veritasworldwide.com/profile/marco-rubio",
       "bioguideId": "R000595",
@@ -419,8 +419,8 @@
         "Iron Dome",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {

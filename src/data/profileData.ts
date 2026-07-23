@@ -2490,7 +2490,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'FL',
     photoUrl: getProfilePhoto('marco-rubio'),
     summary:
-      'Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025) — structural executive enablement of the U.S.–Israel security relationship. Integrity docket: PolitiFact False on 20–30M unauthorized immigrants claim. Primary: OpenSecrets, Senate/State record, CRS RL33222, PolitiFact.',
+      'Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025) — structural executive enablement of the U.S.–Israel security relationship. Integrity docket: dual-cited PolitiFact Falses — 20–30M unauthorized immigrants (Meet the Press; Pew/DHS residual estimates contradict) and “no mass-shooting guns from gun shows/internet” (CNN; Columbine gun-show and Virginia Tech online purchases contradict). Primary: OpenSecrets, Senate/State record, CRS RL33222, PolitiFact, NBC Meet the Press, CNN.',
     tags: [
       'Senator',
       'Secretary of State',
@@ -2582,15 +2582,36 @@ export const PROFILES: PowerProfile[] = [
         statement:
           'Claimed the number of people in the U.S. illegally is "upwards of 20, 25, maybe 30 million."',
         saidAt: 'May 19, 2024',
-        context: 'Interview remarks on immigration scale during 2024 political cycle.',
+        context:
+          'NBC Meet the Press with Kristen Welker, rebutting ~11M unauthorized-population framing while discussing mass-deportation plans.',
         whyFalse:
-          'PolitiFact rated the 20–30 million range False relative to the best available demographic estimates (Pew and DHS residual methods place the unauthorized population far below 20 million, typically in the low-to-mid teens of millions depending on year — not 20–30 million).',
+          'PolitiFact rated False. Authoritative residual estimates (DHS ~11M as of Jan 2022; MPI/Pew/CMS ~10.5–12.3M; even FAIR’s high-end ~16.8M) do not support 20–30 million. Border “encounters” (~9.5M under Biden) count events not net residents; millions were expelled/returned and the stock changes via deaths, departures, and status changes.',
         correction:
-          'Mainstream residual estimates of the unauthorized population do not support a 20–30 million figure; Rubio\'s range substantially exceeds established estimates.',
-        statementSource: 'Rubio May 19, 2024 interview (PolitiFact statement capture)',
-        statementUrl: 'https://www.politifact.com/personalities/marco-rubio/',
-        debunkSource: 'PolitiFact — False (June 11, 2024) with Pew/DHS estimate synthesis',
-        debunkUrl: 'https://www.politifact.com/factchecks/2024/jun/11/marco-rubio/there-arent-20-million-to-30-million-immigrants-in/',
+          'Best-available demographic residual methods place the unauthorized population well below Rubio’s 20–30 million range; encounter totals cannot be added to prior stock to invent that figure.',
+        statementSource: 'NBC Meet the Press interview (May 19, 2024) — full interview video',
+        statementUrl: 'https://www.youtube.com/watch?v=2qqu0_RBUdE',
+        debunkSource: 'PolitiFact — False (June 11, 2024); DHS/Pew/MPI residual estimates',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2024/jun/11/marco-rubio/there-arent-20-million-to-30-million-immigrants-in/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'rubio-no-mass-shooting-guns-gun-show-internet-2022',
+        statement:
+          '“There hasn’t been a single of these mass shootings that have been purchased at a gun show or on the internet.”',
+        saidAt: 'May 25, 2022',
+        context:
+          'CNN interview after Uvalde, arguing against expanding background checks to gun shows/commercial private sales as unrelated to mass shootings.',
+        whyFalse:
+          'PolitiFact rated False. Columbine (1999) firearms were acquired at a gun show via an 18-year-old intermediary; at least one Virginia Tech (2007) handgun was purchased online; other multi-homicide cases (e.g. Jody Lee Hunt) used guns obtained through unlicensed online/private sellers. Absolute “not a single” claim is false.',
+        correction:
+          'Multiple high-profile mass public shootings involved firearms obtained at gun shows or online; Rubio’s absolute denial does not match documented acquisition pathways.',
+        statementSource: 'Rubio May 25, 2022 CNN interview (PolitiFact audio/video capture)',
+        statementUrl: 'https://drive.google.com/file/d/1Vrq70eLfoYK-O0a8dTq54n3WhLCudKY_/view?usp=sharing',
+        debunkSource: 'PolitiFact — False (May 27, 2022); Denver Post/CBS Columbine; Virginian-Pilot Virginia Tech',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2022/may/27/marco-rubio/fact-checking-rubio-claim-no-guns-used-mass-shooti/',
         severity: 'material',
         tier: 'verified',
       },
@@ -2605,11 +2626,19 @@ export const PROFILES: PowerProfile[] = [
       },
       {
         claim:
-          'May 2024: claimed 20–30 million people in the U.S. illegally. PolitiFact False vs Pew/DHS residual estimates.',
-        source: 'PolitiFact False (June 11, 2024)',
+          'Integrity docket: May 2024 Meet the Press claim of 20–30M people in the U.S. illegally rated False (DHS/Pew/MPI residual estimates ~11–12M range).',
+        source: 'PolitiFact False (June 11, 2024); NBC Meet the Press',
         url: 'https://www.politifact.com/factchecks/2024/jun/11/marco-rubio/there-arent-20-million-to-30-million-immigrants-in/',
         tier: 'verified',
         date: '2024',
+      },
+      {
+        claim:
+          'Integrity docket: May 2022 CNN claim no mass-shooting guns purchased at gun shows/internet rated False (Columbine gun show; Virginia Tech online).',
+        source: 'PolitiFact False (May 27, 2022); CNN interview capture',
+        url: 'https://www.politifact.com/factchecks/2022/may/27/marco-rubio/fact-checking-rubio-claim-no-guns-used-mass-shooti/',
+        tier: 'verified',
+        date: '2022',
       },
       {
         claim: 'Elevated from Senate Israel hawk to Secretary of State — structural upgrade of enablement from vote to diplomatic authority.',
