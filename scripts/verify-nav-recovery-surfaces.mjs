@@ -2944,4 +2944,23 @@ assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'
 assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v28 Research chips focus')
 assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v28 spokes focus')
 
+
+
+// RelatedHubs platform perpetual densify lock v29
+assert(surfaces.length >= 115, `perpetual v29 surfaces ${surfaces.length}`)
+assert(read('src/components/SharePanel.tsx').includes('focus-visible:ring-2'), 'perpetual v29 share panel focus')
+assert(read('src/components/CorrectionsCTA.tsx').includes('focus-visible:ring-2'), 'perpetual v29 corrections focus')
+assert(read('src/components/NewsletterSignup.tsx').includes('focus-visible:ring-2'), 'perpetual v29 newsletter focus')
+assert(read('src/components/AuthModal.tsx').includes('focus-visible:ring-2'), 'perpetual v29 auth modal focus')
+assert(read('src/components/StickyMembershipBar.tsx').includes('focus-visible:ring-2'), 'perpetual v29 sticky membership focus')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v29 mobile tab bar')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v29 RelatedHubs focus')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v29 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v29 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v29 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v29 emphasize')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v29 methodology')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v29 cookie focus')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v29 footer focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
