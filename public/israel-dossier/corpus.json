@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:26:39.248Z",
+  "generatedAt": "2026-07-23T08:27:44.102Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 113,
     "timelineEvents": 101,
     "actors": 47,
-    "moneyTrailNodes": 31,
+    "moneyTrailNodes": 32,
     "historicalWarCrimesPack": 99,
     "legalCases": 20,
     "lobbyingRecords": 7,
@@ -33,7 +33,7 @@
     "moneyTrailByType": {
       "legislation": 9,
       "delivery": 4,
-      "weapon": 7,
+      "weapon": 8,
       "impact": 3,
       "lobby": 8
     }
@@ -655,6 +655,26 @@
         "donald-trump",
         "barack-obama",
         "antony-blinken",
+        "chuck-schumer"
+      ]
+    },
+    {
+      "id": "joint-us-israel-missile-defense-coproduction",
+      "label": "U.S.–Israel Joint Missile Defense Co-Production",
+      "amount": "multi-billion multi-year co-production (Iron Dome/David's Sling/Arrow)",
+      "type": "weapon",
+      "date": "ongoing (MOU + supplemental)",
+      "detail": "U.S. and Israeli industry co-produce interceptor systems (Iron Dome Tamir, David's Sling, Arrow) with U.S. appropriations funding Israeli industrial capacity. Distinct from pure FMF purchases of U.S. inventory — this is co-production enablement of Israel's layered air defense industrial base, documented in CRS and DSCA materials.",
+      "sourceUrl": "https://www.congress.gov/crs-product/RL33222",
+      "children": [
+        "iron-dome",
+        "iron-beam-laser-2024",
+        "annual-mou"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "barack-obama",
+        "benjamin-netanyahu",
         "chuck-schumer"
       ]
     }

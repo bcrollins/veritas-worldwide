@@ -1327,11 +1327,11 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
   {
     id: 'joint-us-israel-missile-defense-coproduction',
     label: 'U.S.–Israel Joint Missile Defense Co-Production',
-    amount: 'multi-billion multi-year co-production (Iron Dome/David's Sling/Arrow)',
+    amount: "multi-billion multi-year co-production (Iron Dome/David's Sling/Arrow)",
     type: 'weapon',
     date: 'ongoing (MOU + supplemental)',
     detail:
-      'U.S. and Israeli industry co-produce interceptor systems (Iron Dome Tamir, David's Sling, Arrow) with U.S. appropriations funding Israeli industrial capacity. Distinct from pure FMF purchases of U.S. inventory — this is co-production enablement of Israel's layered air defense industrial base, documented in CRS and DSCA materials.',
+      "U.S. and Israeli industry co-produce interceptor systems (Iron Dome Tamir, David's Sling, Arrow) with U.S. appropriations funding Israeli industrial capacity. Distinct from pure FMF purchases of U.S. inventory — this is co-production enablement of Israel's layered air defense industrial base, documented in CRS and DSCA materials.",
     sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
     children: ['iron-dome', 'iron-beam-laser-2024', 'annual-mou'],
     relatedProfileIds: ['joe-biden', 'barack-obama', 'benjamin-netanyahu', 'chuck-schumer'],
