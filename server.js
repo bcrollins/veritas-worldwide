@@ -1707,20 +1707,23 @@ function normalizePrerenderRoute(routePath) {
 }
 
 /**
- * Public content prefixes whose slugs are stored lowercase.
- * Mixed-case crawls (/Profile/Ted-Cruz) must 301 to the canonical path so SPA
- * routing and soft-404 allowlists stay lockstep with Search Central.
+ * Public content prefixes whose slugs are stored lowercase and without a
+ * trailing slash. Mixed-case crawls (/Profile/Ted-Cruz) and trailing-slash
+ * variants must 301 to the canonical path so SPA routing, soft-404 allowlists,
+ * and Search Central stay lockstep.
  */
-const CASE_CANONICAL_PATH =
+const SLUG_CONTENT_PATH =
   /^\/(chapter|profile|news|topics|institute\/(?:courses|guides))\/[A-Za-z0-9-]+\/?$/
 
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
   if (req.path.startsWith('/api/') || path.extname(req.path)) return next()
-  if (req.path === req.path.toLowerCase()) return next()
-  if (!CASE_CANONICAL_PATH.test(req.path)) return next()
+  if (!SLUG_CONTENT_PATH.test(req.path)) return next()
+  const lower = req.path.toLowerCase()
+  const withoutSlash = lower.endsWith('/') ? lower.slice(0, -1) : lower
+  if (req.path === withoutSlash) return next()
   const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
-  return res.redirect(301, `${req.path.toLowerCase()}${query}`)
+  return res.redirect(301, `${withoutSlash}${query}`)
 })
 
 /** Paths that must never be indexed even when served as prerendered static HTML. */
