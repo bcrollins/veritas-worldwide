@@ -637,14 +637,17 @@ for (const f of (timScottP.documentedFalsehoods || []).filter((x) => x.tier === 
 
 // Kevin McCarthy integrity gate
 const mccarthy = scores['kevin-mccarthy'];
-if (!mccarthy || mccarthy.n < 2) throw new Error('kevin-mccarthy needs ≥2 verified falsehoods, got ' + (mccarthy?.n ?? 0));
-if (mccarthy.score > 65) throw new Error('kevin-mccarthy score expected ≤65, got ' + mccarthy.score);
+if (!mccarthy || mccarthy.n < 3) throw new Error('kevin-mccarthy needs ≥3 verified falsehoods, got ' + (mccarthy?.n ?? 0));
+if (mccarthy.score > 40) throw new Error('kevin-mccarthy score expected ≤40 after densify, got ' + mccarthy.score);
 const mccarthyP = getProfileBySlug('kevin-mccarthy');
-if (!(mccarthyP.documentedFalsehoods || []).some((f) => f.id === 'mccarthy-jan6-telecom-federal-law-violation-2021')) {
-  throw new Error('kevin-mccarthy missing Jan. 6 telecom docket id');
-}
-if (!(mccarthyP.documentedFalsehoods || []).some((f) => f.id === 'mccarthy-nobody-questioning-election-legitimacy-2021')) {
-  throw new Error('kevin-mccarthy missing election-legitimacy Pants-on-Fire docket id');
+for (const id of [
+  'mccarthy-jan6-telecom-federal-law-violation-2021',
+  'mccarthy-nobody-questioning-election-legitimacy-2021',
+  'mccarthy-us-never-asked-land-after-wars-2023',
+]) {
+  if (!(mccarthyP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('kevin-mccarthy missing docket id: ' + id);
+  }
 }
 for (const f of (mccarthyP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('kevin-mccarthy dual-cite collision: ' + f.id);

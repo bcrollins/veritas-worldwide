@@ -7081,6 +7081,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'egregious',
         tier: 'verified',
       },
+      {
+        id: 'mccarthy-us-never-asked-land-after-wars-2023',
+        statement:
+          '“In every single war that America has fought, we have never asked for land afterwards, except for enough to bury the Americans who gave the ultimate sacrifice for that freedom we went in for.”',
+        saidAt: 'November 26, 2023',
+        context:
+          'X post as House Speaker arguing the U.S. does not take territory from wars, contrasting American war aims with historical conquerors.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. U.S. history includes major post-war land acquisitions: Mexican Cession after the Mexican–American War, Spanish–American War acquisitions (Puerto Rico, Guam, Philippines), annexations after wars with Native nations, and post–WWII Pacific island administrations. Historians told PolitiFact the absolute “never asked for land” claim is historically inaccurate across two centuries.',
+        correction:
+          'The United States has repeatedly acquired territory after wars; the claim that it never sought land except burial plots is false.',
+        statementSource: 'Speaker Kevin McCarthy X post (@SpeakerMcCarthy), Nov. 26, 2023',
+        statementUrl: 'https://twitter.com/SpeakerMcCarthy/status/1728950835084747159',
+        debunkSource: 'PolitiFact — Pants on Fire (Nov. 28, 2023); military historians (Cameron University et al.)',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2023/nov/28/kevin-mccarthy/kevin-mccarthys-pants-on-fire-claim-that-us-never/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/kevin-mccarthy/summary?cid=N00006863' },
