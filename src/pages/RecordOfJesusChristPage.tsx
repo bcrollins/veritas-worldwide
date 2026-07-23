@@ -575,9 +575,9 @@ export default function RecordOfJesusChristPage() {
             Schematic figures
           </h2>
           <p className="font-body text-sm text-ink-muted mb-5 max-w-3xl">
-            Educational schematics only — not raw instrument outputs. Each figure is labeled as interpretive aid under the cosmology / ANE claims.
+            Educational schematics only — not raw instrument outputs or critical-edition stemmata. Each figure is an interpretive aid tied to labeled claims.
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <figure className="border border-border rounded-sm overflow-hidden bg-surface">
               <img
                 src="/record-of-jesus-christ/figures/cmb-power-spectrum-schematic.svg"
@@ -602,6 +602,24 @@ export default function RecordOfJesusChristPage() {
               />
               <figcaption className="p-3 font-sans text-xs text-ink-muted">
                 ANE inscription findspots (schematic). See claim <a href="#ane-inscription-map" className="text-crimson hover:underline">ane-inscription-map</a>.
+              </figcaption>
+            </figure>
+            <figure className="border border-border rounded-sm overflow-hidden bg-surface">
+              <img
+                src="/record-of-jesus-christ/figures/nt-textual-tradition-schematic.svg"
+                alt="Schematic timeline of early New Testament papyri, majuscules, and modern critical editions"
+                className="w-full h-auto"
+                width={960}
+                height={420}
+                loading="lazy"
+              />
+              <figcaption className="p-3 font-sans text-xs text-ink-muted">
+                NT textual witnesses (schematic). See claims{' '}
+                <a href="#nt-p52" className="text-crimson hover:underline">nt-p52</a>
+                {', '}
+                <a href="#nt-ecm-method" className="text-crimson hover:underline">nt-ecm-method</a>
+                {', '}
+                <a href="#mod-na28-ubs5" className="text-crimson hover:underline">mod-na28-ubs5</a>.
               </figcaption>
             </figure>
           </div>

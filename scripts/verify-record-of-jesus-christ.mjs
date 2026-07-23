@@ -129,6 +129,11 @@ assert(corpus.meta?.publisher === 'Veritas Worldwide', 'corpus publisher must be
 assert(fs.existsSync(path.join(root, 'public/og/record-of-jesus-christ.png')), 'ROC OG PNG missing')
 assert(fs.existsSync(path.join(root, 'public/record-of-jesus-christ/figures/cmb-power-spectrum-schematic.svg')), 'CMB figure missing')
 assert(fs.existsSync(path.join(root, 'public/record-of-jesus-christ/figures/ane-inscription-sites.svg')), 'ANE map figure missing')
+assert(
+  fs.existsSync(path.join(root, 'public/record-of-jesus-christ/figures/nt-textual-tradition-schematic.svg')),
+  'NT textual tradition figure missing',
+)
+assert(page.includes('nt-textual-tradition-schematic'), 'ROC page must surface NT textual tradition figure')
 assert(fs.existsSync(path.join(root, 'public/record-of-jesus-christ/record-of-jesus-christ.pdf')), 'ROC PDF missing — run npm run generate:roc-pdf')
 assert(page.includes('Schematic figures') || page.includes('figures-heading'), 'figures section missing on page')
 assert(page.includes('/record-of-jesus-christ/record-of-jesus-christ.pdf'), 'PDF link missing on page')

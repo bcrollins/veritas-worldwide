@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Schematic New Testament textual tradition timeline</title>
+  <desc id="desc">Educational schematic of major early NT manuscript witnesses from papyri through majuscules. Not a stemma of all readings.</desc>
+  <rect width="960" height="420" fill="#0f1419"/>
+  <text x="48" y="42" fill="#e8e4dc" font-family="Georgia, serif" font-size="22" font-weight="700">NT textual witnesses (schematic)</text>
+  <text x="48" y="68" fill="#9a958c" font-family="system-ui,sans-serif" font-size="12">Educational aid — ranges are approximate paleographic/radiocarbon bands; not every MS shown.</text>
+
+  <!-- time axis -->
+  <line x1="80" y1="320" x2="900" y2="320" stroke="#5c564c" stroke-width="2"/>
+  <text x="80" y="350" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">c. 100 CE</text>
+  <text x="280" y="350" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">c. 200</text>
+  <text x="480" y="350" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">c. 350</text>
+  <text x="700" y="350" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">c. 450</text>
+  <text x="860" y="350" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">later</text>
+
+  <!-- papyri band -->
+  <rect x="120" y="120" width="220" height="56" rx="6" fill="#1a2430" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="135" y="145" fill="#e8e4dc" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Early papyri</text>
+  <text x="135" y="165" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">P52 · P46 · P66 · P75 (samples)</text>
+
+  <!-- majuscules -->
+  <rect x="380" y="150" width="260" height="56" rx="6" fill="#1a2430" stroke="#8b3a3a" stroke-width="1.5"/>
+  <text x="395" y="175" fill="#e8e4dc" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Great majuscules</text>
+  <text x="395" y="195" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">ℵ 01 · B 03 · A 02 · D 05 (samples)</text>
+
+  <!-- critical editions -->
+  <rect x="680" y="180" width="200" height="56" rx="6" fill="#1a2430" stroke="#3d7a5a" stroke-width="1.5"/>
+  <text x="695" y="205" fill="#e8e4dc" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Critical editions</text>
+  <text x="695" y="225" fill="#9a958c" font-family="system-ui,sans-serif" font-size="11">NA28 · UBS5 · ECM/CBGM</text>
+
+  <!-- arrows -->
+  <path d="M340 148 L375 170" stroke="#5c564c" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M640 178 L675 200" stroke="#5c564c" stroke-width="1.5" fill="none"/>
+
+  <text x="48" y="395" fill="#6b6560" font-family="system-ui,sans-serif" font-size="11">Veritas Worldwide — schematic only. Does not assert a single “original MS” discovery path.</text>
+</svg>
