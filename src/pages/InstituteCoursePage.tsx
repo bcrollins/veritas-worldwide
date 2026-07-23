@@ -7,7 +7,16 @@ import {
 } from '../data/instituteCatalog'
 import { ISRAEL_DOSSIER_COURSE_PATH } from '../data/israelDossierCanon'
 import InstituteSignupPanel from '../components/institute/InstituteSignupPanel'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  faqJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 
 export default function InstituteCoursePage() {
   const { slug } = useParams<{ slug: string }>()
@@ -20,10 +29,12 @@ export default function InstituteCoursePage() {
   useEffect(() => {
     if (!topic || !course) return
 
+    const courseUrl = `${SITE_URL}/institute/courses/${topic.slug}`
     setMetaTags({
       title: `${topic.courseTitle} | Veritas Institute | ${SITE_NAME}`,
       description: course.llmSummary,
-      url: `${SITE_URL}/institute/courses/${topic.slug}`,
+      url: courseUrl,
+      imageAlt: `${topic.courseTitle} — Veritas Institute course outline`,
     })
     setJsonLd([
       {
@@ -43,7 +54,7 @@ export default function InstituteCoursePage() {
         teaches: topic.outcome,
         isAccessibleForFree: true,
         about: [topic.skill, topic.trackMeta.label],
-        url: `${SITE_URL}/institute/courses/${topic.slug}`,
+        url: courseUrl,
       },
       {
         '@context': 'https://schema.org',
@@ -55,27 +66,17 @@ export default function InstituteCoursePage() {
           description: module.summary,
         })),
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
-          { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SITE_URL}/institute` },
-          { '@type': 'ListItem', position: 3, name: topic.courseTitle, item: `${SITE_URL}/institute/courses/${topic.slug}` },
-        ],
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: course.faq.map((faq) => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer,
-          },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Veritas Institute', url: `${SITE_URL}/institute` },
+        { name: topic.courseTitle, url: courseUrl },
+      ]),
+      faqJsonLd(
+        course.faq.map((faq) => ({
+          question: faq.question,
+          answer: faq.answer,
         })),
-      },
+      ),
     ])
 
     return () => {

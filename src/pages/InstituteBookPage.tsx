@@ -12,7 +12,15 @@ import {
   institutePracticalTopics,
 } from '../data/instituteCatalog'
 import { trackDownload } from '../lib/ga4'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 
 const practicalTracks = getInstitutePracticalTrackCounts()
 const fieldManualCategories = Array.from(new Set(instituteFieldManualEntries.map((entry) => entry.category)))
@@ -25,6 +33,7 @@ export default function InstituteBookPage() {
       description:
         'The Veritas Institute Field Manual combines urgent household and roadside answers with source-backed trade, repair, preparedness, food, and healthcare-support course paths.',
       url: `${SITE_URL}/institute/book`,
+      imageAlt: 'Veritas Institute Field Manual — print-ready emergency and trade guide',
     })
     setJsonLd([
       {
@@ -37,12 +46,14 @@ export default function InstituteBookPage() {
         author: {
           '@type': 'Organization',
           name: SITE_NAME,
+          url: SITE_URL,
         },
         publisher: {
           '@type': 'Organization',
           name: SITE_NAME,
           url: SITE_URL,
         },
+        isAccessibleForFree: true,
         encoding: {
           '@type': 'MediaObject',
           contentUrl: `${SITE_URL}/veritas-institute-field-manual.pdf`,
@@ -60,6 +71,11 @@ export default function InstituteBookPage() {
           url: `${SITE_URL}/institute/book#track-${track.id}`,
         })),
       },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Veritas Institute', url: `${SITE_URL}/institute` },
+        { name: 'Field Manual', url: `${SITE_URL}/institute/book` },
+      ]),
     ])
 
     return () => {
