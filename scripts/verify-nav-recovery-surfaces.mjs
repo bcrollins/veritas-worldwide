@@ -2186,4 +2186,12 @@ assert(relatedTouchUlt.includes('chipBase') || relatedTouchUlt.includes('inline-
 assert(relatedTouchUlt.includes('emphasizeChip') || relatedTouchUlt.includes('bg-crimson'), 'emphasizeChip touch ultimate')
 
 
+
+// live platform emphasize soft-404 dual mount pure lock
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'live soft-404 primary testid')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'live soft-404 secondary testid')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'live emphasizeTo platform')
+assert(read('src/components/RelatedHubs.tsx').includes('bg-crimson'), 'live emphasize crimson')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
