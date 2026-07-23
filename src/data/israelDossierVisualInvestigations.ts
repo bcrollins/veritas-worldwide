@@ -2990,6 +2990,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-aid-distribution-shooting-visual-2024-2025',
+    title: 'Gaza Aid-Distribution Shootings — Multi-Outlet Visual Record',
+    date: '2024–2025',
+    location: 'Gaza Strip aid distribution points and convoy routes',
+    summary:
+      'Multi-outlet video packages document civilian casualties at aid distribution sites under wartime conditions, including children. Distinct from aid-truck-looting visual cards by focusing on multi-source distribution-site shooting packages; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA humanitarian access materials establish multi-source documentation of civilian harm at aid distribution points.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza aid packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet aid-distribution incident video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of aid distribution aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OHCHR/OCHA access trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-nativ-haasara-road-visual-2023',
+    title: 'October 7 Nativ HaAsara Access-Road Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Access roads and perimeter of Nativ HaAsara',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders on Nativ HaAsara access roads during the October 7 attacks. Distinct from prior Netiv Haasara interior visual cards by focusing on road-approach packages; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian targeting on access roads.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Nativ HaAsara road October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-school-arson-visual-2023-2025',
+    title: 'West Bank Settler School Arson — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village schools and classrooms',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler arson attacks on Palestinian civilian schools, denying education including for children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA education-access materials, and multi-outlet reporting establish multi-source documentation of school arson affecting civilian education.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem school-arson video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem education-violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA education-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

@@ -221,3 +221,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier + research-pack PASS |
 | Multi-agent | densify-only; force-add past assume-unchanged |
 
+
+## Interval densify — tip **1641+** / withVideo **134+** / VI densify
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza King-LT/EtCO2/HME/vent-filter · hostage broken-glass/bike-rides/strobing-lights/TV-tickers · WB date-poles/computer-lab-equip/almond-poles/pomegranate-poles |
+| VI | aid-distribution shootings · Nativ HaAsara road · school arson |
+| Pure | visual + israel-dossier + research-pack PASS |
+
