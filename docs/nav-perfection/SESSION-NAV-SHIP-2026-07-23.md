@@ -215,3 +215,9 @@ Verified production bundles (CORE + 13 page needles) repeatedly green while dens
 - Bookmarks empty → RelatedHubs BOOKMARKS_HUBS
 - a11y floors credit RelatedHubs mounts
 - Pure recovery 100 needles · RelatedHubs breadth ≥28
+
+
+## Soft-404 secondary platformization
+- `not-found-secondary-hubs` via RelatedHubs
+- Pure recovery **102 surface needles**
+- Live CORE+soft-404 green under densify tip
