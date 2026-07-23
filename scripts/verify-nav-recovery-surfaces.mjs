@@ -67,6 +67,7 @@ const surfaces = [
   ['src/components/StickyMembershipBar.tsx', 'animate-slide-up'],
   ['src/components/StickyMembershipBar.tsx', 'no-print'],
   ['src/components/StickyMembershipBar.tsx', 'min-w-[44px]'],
+  ['src/components/StickyMembershipBar.tsx', 'bg-obsidian'],
   ['src/components/StickyMembershipBar.tsx', 'veritas_cookie_consent'],
 ]
 
