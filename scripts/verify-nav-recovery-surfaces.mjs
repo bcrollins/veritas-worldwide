@@ -2859,4 +2859,22 @@ assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-c
 assert(read('server.js').includes('server-soft-404'), 'perpetual v24 server soft-404')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v24 emphasize')
 
+
+
+// RelatedHubs platform perpetual densify lock v25
+assert(surfaces.length >= 115, `perpetual v25 surfaces ${surfaces.length}`)
+assert(read('src/components/StickyMembershipBar.tsx').includes('focus-visible:ring-2'), 'perpetual v25 sticky membership focus')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v25 footer focus')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v25 mobile tab bar')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v25 RelatedHubs focus')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v25 cookie focus')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v25 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v25 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v25 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v25 emphasize')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v25 methodology')
+assert(read('src/pages/SourcesPage.tsx').includes('sources-related-hubs'), 'perpetual v25 sources')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v25 Research chips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v25 spokes focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
