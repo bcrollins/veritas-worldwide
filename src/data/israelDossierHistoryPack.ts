@@ -2195,6 +2195,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 200 },
   },
 
+  {
+    id: 'west-bank-mass-arrests-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Mass Arrests & Administrative Detention Surge (2023–2025)',
+    date: 'October 2023 – 2025 (detention surge window)',
+    location: 'West Bank / Israeli detention facilities',
+    summary:
+      'Multi-source B\'Tselem, Addameer, and UN reporting document a sharp post–October 7 surge in West Bank arrests and administrative detention without charge or trial, including children. Pattern card for the detention-surge floor concurrent with Gaza operations.',
+    evidence:
+      'Israeli Prison Service and multi-source NGO detainee counts, UN reporting on administrative detention, and multi-outlet coverage establish elevated detention numbers. Exact counts fluctuate; the multi-source surge is the claim.',
+    sources: [
+      { label: "B'Tselem detention statistics", url: 'https://www.btselem.org' },
+      { label: 'UN materials on detention / OPT', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet West Bank arrest coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: "B'Tselem public materials", url: 'https://www.btselem.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -3084,6 +3112,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-aid-workers-killed-pattern-2023-2025', 'wck-drone-strikes-2024', 'rafah-paramedic-convoy-2025', 'unrwa-staff-deaths'],
     tags: ['aid-workers', 'civilians', 'gaza', 'humanitarian'],
+  },
+
+  {
+    id: 'tl-west-bank-arrests-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Mass Arrests — Detention Surge',
+    description: 'Sharp post–Oct 7 surge in arrests and administrative detention; multi-source NGO/UN tallies.',
+    source: "B'Tselem / OHCHR",
+    sourceUrl: 'https://www.btselem.org',
+    tier: 'verified',
+    relatedIncidentIds: ['west-bank-mass-arrests-2023-2025'],
+    tags: ['detention', 'west-bank', 'civilians', 'children'],
   },
 
 ]

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:08:35.475Z",
+  "generatedAt": "2026-07-23T08:09:20.827Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 96,
-    "timelineEvents": 84,
+    "incidents": 97,
+    "timelineEvents": 85,
     "actors": 47,
     "moneyTrailNodes": 30,
-    "historicalWarCrimesPack": 82,
+    "historicalWarCrimesPack": 83,
     "legalCases": 19,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 36
+      "post-oct7": 37
     },
     "incidentsByTier": {
-      "verified": 94,
+      "verified": 95,
       "circumstantial": 2
     },
-    "childrenTagged": 79,
-    "civiliansTagged": 94,
+    "childrenTagged": 80,
+    "civiliansTagged": 95,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3311,6 +3311,25 @@
         "children",
         "hostages",
         "terrorism"
+      ]
+    },
+    {
+      "id": "tl-west-bank-arrests-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Mass Arrests — Detention Surge",
+      "description": "Sharp post–Oct 7 surge in arrests and administrative detention; multi-source NGO/UN tallies.",
+      "source": "B'Tselem / OHCHR",
+      "sourceUrl": "https://www.btselem.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-mass-arrests-2023-2025"
+      ],
+      "tags": [
+        "detention",
+        "west-bank",
+        "civilians",
+        "children"
       ]
     },
     {
@@ -6682,6 +6701,49 @@
       "tier": "verified",
       "casualties": {
         "killed": 200
+      }
+    },
+    {
+      "id": "west-bank-mass-arrests-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Mass Arrests & Administrative Detention Surge (2023–2025)",
+      "date": "October 2023 – 2025 (detention surge window)",
+      "location": "West Bank / Israeli detention facilities",
+      "summary": "Multi-source B'Tselem, Addameer, and UN reporting document a sharp post–October 7 surge in West Bank arrests and administrative detention without charge or trial, including children. Pattern card for the detention-surge floor concurrent with Gaza operations.",
+      "evidence": "Israeli Prison Service and multi-source NGO detainee counts, UN reporting on administrative detention, and multi-outlet coverage establish elevated detention numbers. Exact counts fluctuate; the multi-source surge is the claim.",
+      "sources": [
+        {
+          "label": "B'Tselem detention statistics",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "UN materials on detention / OPT",
+          "url": "https://www.ohchr.org/en/countries/palestine"
+        },
+        {
+          "label": "Multi-outlet West Bank arrest coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "B'Tselem public materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
       }
     },
     {
