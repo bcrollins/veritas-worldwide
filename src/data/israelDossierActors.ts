@@ -1028,6 +1028,52 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     tier: 'verified',
   },
 
+  {
+    profileId: 'ben-cardin',
+    name: 'Ben Cardin',
+    role: 'Former U.S. Senator (D-MD); senior SFRC Democrat',
+    category: 'us-congress',
+    enablementSummary:
+      'Institutional Democratic floor for multi-cycle FMF/MOU continuity and anti-BDS orthodoxy via Senate Foreign Relations leadership path. OpenSecrets multi-cycle pro-Israel PAC adjacency.',
+    relatedTimelineYears: ['2007', '2016', '2021', '2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['annual-mou', 'hr815', 'pro-israel-lobby-2024', 'aipac-pac-hard-money-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Ben Cardin',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/benjamin-cardin/summary?cid=N00001955',
+      },
+      {
+        label: 'CRS RL33222 — U.S. Aid to Israel',
+        sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+      },
+    ],
+    tier: 'verified',
+  },
+
+  {
+    profileId: 'bob-menendez',
+    name: 'Bob Menendez',
+    role: 'Former U.S. Senator (D-NJ); former SFRC Chair',
+    category: 'us-congress',
+    enablementSummary:
+      'Former SFRC chair and among the most aggressive Democratic Israel/Iran-sanctions hawks of the MOU era — multi-cycle FMF orthodoxy plus OpenSecrets pro-Israel PAC adjacency. Later federal corruption conviction is integrity-relevant public record.',
+    relatedTimelineYears: ['2006', '2015', '2018', '2021', '2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['annual-mou', 'hr815', 'pro-israel-lobby-2024', 'fmf-weapons', 'aipac-pac-hard-money-2024'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Bob Menendez',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/robert-menendez/summary?cid=N00000699',
+      },
+      {
+        label: 'DOJ public record (corruption conviction)',
+        sourceUrl: 'https://www.justice.gov',
+      },
+    ],
+    tier: 'verified',
+  },
+
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
