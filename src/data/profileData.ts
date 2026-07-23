@@ -735,6 +735,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'egregious',
         tier: 'verified',
       },
+      {
+        id: 'kushner-stockpile-not-for-states-2020',
+        statement:
+          'Said the Strategic National Stockpile “is supposed to be our stockpile. It’s not supposed to be state stockpiles that they then use.”',
+        saidAt: 'April 2, 2020',
+        context:
+          'White House coronavirus briefing defending federal allocation of PPE and medical supplies during the first COVID wave.',
+        whyFalse:
+          'PolitiFact and contemporaneous HHS documentation: the Strategic National Stockpile exists precisely to supplement state and local supplies during public-health emergencies. Framing it as “not supposed to be” for states misstates the stockpile’s statutory/program purpose and the administration’s own prior guidance that it backfills state gaps.',
+        correction:
+          'The SNS is designed to supplement state and local stockpiles in emergencies — not to exclude states from using federal reserves.',
+        statementSource: 'White House coronavirus briefing, Apr 2, 2020 (Kushner remarks; multi-outlet capture)',
+        statementUrl: 'https://www.youtube.com/watch?v=vQbT_o1-RsA',
+        debunkSource: 'PolitiFact — Fact-checking Jared Kushner’s comments on the national stockpile (Apr 3, 2020); HHS SNS program description',
+        debunkUrl: 'https://www.politifact.com/article/2020/apr/03/fact-checking-jared-kushners-comments-national-sto/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'State Department — Abraham Accords', url: 'https://www.state.gov/the-abraham-accords/' },
@@ -1696,6 +1714,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'egregious',
         tier: 'verified',
       },
+      {
+        id: 'maxwell-never-participated-trafficking-scheme',
+        statement:
+          'Maintained she never participated in a scheme to recruit, groom, or traffic minors for Jeffrey Epstein — framing herself as uninvolved in any sexual-abuse conspiracy.',
+        saidAt: '2020–2021 (pretrial and trial defense posture)',
+        context:
+          'United States v. Ghislaine Maxwell (S.D.N.Y.) — not-guilty pleas and defense case denying a trafficking role.',
+        whyFalse:
+          'A federal jury convicted Maxwell on multiple counts including sex trafficking of a minor and conspiracy to entice minors to travel to engage in illegal sex acts. The verdict rejects the “never participated” denial as a matter of criminal adjudication beyond a reasonable doubt.',
+        correction:
+          'Maxwell was convicted of sex trafficking a minor and related conspiracy offenses and sentenced to 20 years in federal prison.',
+        statementSource: 'SDNY indictment / not-guilty plea reporting (defense posture)',
+        statementUrl: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-charged-connection-jeffrey-epstein',
+        debunkSource: 'DOJ — Maxwell found guilty on counts tied to sex trafficking of minors',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-found-guilty-six-counts-connection-sex-trafficking-minors-jeffrey',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     born: '1961',
     education: 'Oxford University',
@@ -1759,6 +1795,24 @@ export const PROFILES: PowerProfile[] = [
         statementSource: 'Florida plea / sex-offender registration record (reported)',
         statementUrl: 'https://www.justice.gov/usao-sdny/press-release/file/1180481/download',
         debunkSource: 'DOJ SDNY 2019 indictment press materials + Florida plea record',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'epstein-2008-plea-closed-federal-jeopardy',
+        statement:
+          'Public positioning after the 2008 Florida non-prosecution agreement treated the federal sex-crime exposure as closed — that the state plea and NPA ended the matter and he was free of further federal trafficking jeopardy.',
+        saidAt: '2008–2019',
+        context:
+          'Post-plea public posture and defense framing while living as a registered sex offender under the Florida deal’s federal non-prosecution umbrella later attacked under the Crime Victims’ Rights Act.',
+        whyFalse:
+          'In July 2019 the U.S. Attorney’s Office for the Southern District of New York indicted Epstein for a multi-year sex-trafficking conspiracy involving minors — charging a scheme that federal prosecutors said continued the pattern of abuse. The NPA did not erase the factual criminal conduct or immunize him from later federal charges in another district; the “matter closed” public framing was false to the 2019 federal charging document.',
+        correction:
+          'Federal prosecutors charged Epstein in 2019 with sex trafficking of minors and conspiracy; the 2008 Florida NPA did not leave a clean public-record bill of health.',
+        statementSource: 'Post-2008 public/plea-resolution positioning (reported; Florida NPA context)',
+        statementUrl: 'https://www.justice.gov/criminal-vns/case/united-states-v-jeffrey-epstein',
+        debunkSource: 'DOJ SDNY July 2019 indictment press release — multi-year sex-trafficking scheme',
         debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
         severity: 'egregious',
         tier: 'verified',
@@ -4729,6 +4783,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'pence-china-travel-ban-all-travel-2020',
+        statement:
+          'Claimed the Trump administration “suspended all travel from China” as the pandemic response — implying a complete cutoff of arrivals from China.',
+        saidAt: '2020 (VP debate and campaign remarks)',
+        context:
+          '2020 campaign / VP debate defense of early Trump China travel restrictions.',
+        whyFalse:
+          'BBC and multi-outlet fact-checks: the China travel restriction had large exemptions (U.S. citizens, permanent residents, and others). Thousands continued to arrive from China after the “ban.” Absolute “all travel” framing was false.',
+        correction:
+          'The China restriction was not a total ban; exempt categories continued to travel to the U.S. after the order.',
+        statementSource: 'VP debate / campaign remarks (BBC debate fact-check capture)',
+        statementUrl: 'https://www.bbc.com/news/election-us-2020-54434575',
+        debunkSource: 'FactCheck.org — Trump’s Partial China Travel Ban (Apr 2020); DHS/CBP arrival data synthesis',
+        debunkUrl: 'https://www.factcheck.org/2020/04/trumps-partial-china-travel-ban/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
   },
   {
@@ -4844,6 +4916,24 @@ export const PROFILES: PowerProfile[] = [
         statementUrl: 'https://www.factcheck.org/2005/09/anti-war-ad-says-bush-cheney-rumsfeld/',
         debunkSource: 'Iraq Survey Group / Duelfer Report findings; Senate Intelligence Committee reviews',
         debunkUrl: 'https://www.intelligence.senate.gov',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'cheney-iraq-al-qaeda-link-certainty-2003',
+        statement:
+          'Asserted with high certainty that Iraq had a working relationship with al-Qaeda / that the 9/11 threat picture included Iraqi collaboration — beyond what the intelligence consensus supported.',
+        saidAt: '2002–2003',
+        context:
+          'Public remarks selling the Iraq war case, including claims of Iraq–al-Qaeda operational linkage.',
+        whyFalse:
+          'The 9/11 Commission Report and subsequent Senate Intelligence Committee reviews found no collaborative operational relationship between Iraq and al-Qaeda of the sort Cheney’s certainty implied. The “Prague meeting” and related claims did not hold up. Absolute operational-link certainty overstated the intelligence record.',
+        correction:
+          'No established collaborative operational relationship between Saddam’s Iraq and al-Qaeda; the certainty framing was false to the later official reviews.',
+        statementSource: 'Cheney public remarks 2002–2003 on Iraq–al-Qaeda (White House archive)',
+        statementUrl: 'https://georgewbush-whitehouse.archives.gov/news/releases/2002/08/20020826.html',
+        debunkSource: '9/11 Commission Report; Senate Intelligence Committee WMD/Iraq reviews',
+        debunkUrl: 'https://www.9-11commission.gov/report/911Report.pdf',
         severity: 'egregious',
         tier: 'verified',
       },
@@ -5299,6 +5389,24 @@ export const PROFILES: PowerProfile[] = [
         statementSource: 'NSM-20 assurance to Congress (quoted in ProPublica primary investigation)',
         statementUrl: 'https://www.propublica.org/article/gaza-palestine-israel-blocked-humanitarian-aid-blinken',
         debunkSource: 'ProPublica document investigation + multi-outlet corroboration of USAID/PRM findings',
+        debunkUrl: 'https://www.propublica.org/article/israel-gaza-humanitarian-aid-blinken-pentagon-warning-letter',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'blinken-ihl-compliance-certification-nsm20-2024',
+        statement:
+          'As part of the May 2024 NSM-20 package, certified that Israel was using U.S.-provided defense articles consistent with international humanitarian law — a compliance finding required to keep major arms transfers flowing during the Gaza war.',
+        saidAt: 'May 10, 2024',
+        context:
+          'National Security Memorandum-20 report to Congress accompanying continued U.S. security assistance while civilian casualties and aid-access crises in Gaza were escalating.',
+        whyFalse:
+          'ProPublica’s document trail and multi-outlet corroboration show U.S. humanitarian and legal experts were already documenting systematic aid obstruction and raising Foreign Assistance Act / IHL compliance concerns. Certifying clean IHL compliance while lead U.S. humanitarian authorities assessed deliberate obstruction of food and medicine is a material misrepresentation of the compliance picture available to the Secretary.',
+        correction:
+          'Internal U.S. humanitarian assessments of deliberate Israeli aid obstruction were incompatible with a clean “consistent with IHL” certification narrative to Congress in May 2024.',
+        statementSource: 'NSM-20 report / May 10, 2024 congressional assurance package (quoted in ProPublica)',
+        statementUrl: 'https://www.propublica.org/article/gaza-palestine-israel-blocked-humanitarian-aid-blinken',
+        debunkSource: 'ProPublica Oct 2024 Pentagon/State warning-letter follow-on; USAID/PRM obstruction findings',
         debunkUrl: 'https://www.propublica.org/article/israel-gaza-humanitarian-aid-blinken-pentagon-warning-letter',
         severity: 'egregious',
         tier: 'verified',

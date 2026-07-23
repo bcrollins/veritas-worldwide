@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:56:23.361Z",
+  "generatedAt": "2026-07-23T10:02:54.299Z",
   "count": 96,
   "profiles": [
     {
@@ -103,8 +103,8 @@
         "Pro-Israel",
         "Integrity Docket"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -242,8 +242,8 @@
         "Imprisoned",
         "Network"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 50,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -262,8 +262,8 @@
         "Deceased",
         "Convicted"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 50,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -687,8 +687,8 @@
         "CUFI",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -710,8 +710,8 @@
         "Halliburton",
         "Integrity Docket"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 50,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -795,8 +795,8 @@
         "NSM-20",
         "Integrity Docket"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 50,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
