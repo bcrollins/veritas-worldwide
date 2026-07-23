@@ -2061,4 +2061,16 @@ assert(relatedEmphType.includes('PRIMARY_RELATED_HUBS'), 'PRIMARY still default 
 assert((relatedEmphType.match(/to:/g) || []).length >= 5, 'PRIMARY destinations with emphasize platform')
 
 
+
+// PRIVACY_HUBS TERMS_HUBS count 5 ultimate
+const privacyHubsU = read('src/pages/PrivacyPage.tsx')
+const privacyB = privacyHubsU.match(/const PRIVACY_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(privacyB && (privacyB[1].match(/to:/g) || []).length === 5, 'PRIVACY_HUBS count 5')
+assert(privacyB[1].includes('/membership'), 'PRIVACY Membership')
+const termsHubsU = read('src/pages/TermsPage.tsx')
+const termsB = termsHubsU.match(/const TERMS_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(termsB && (termsB[1].match(/to:/g) || []).length === 5, 'TERMS_HUBS count 5')
+assert(termsB[1].includes('/membership'), 'TERMS Membership')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
