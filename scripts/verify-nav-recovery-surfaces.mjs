@@ -777,4 +777,10 @@ assert(stickyExcl.includes("'/membership'") || stickyExcl.includes('"/membership
 assert(stickyExcl.includes('/admin'), 'exclude /admin')
 assert(stickyExcl.includes('/thank-you') || stickyExcl.includes('thank-you'), 'exclude thank-you')
 
+
+// Sticky membership fund-the-investigation copy
+const stickyCopy = read('src/components/StickyMembershipBar.tsx')
+assert(stickyCopy.includes('Fund the investigation'), 'Fund the investigation copy lock')
+assert(stickyCopy.includes('Memberships start at') || stickyCopy.includes('Support independent'), 'membership value prop copy')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
