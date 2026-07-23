@@ -1066,7 +1066,9 @@ function renderLlmsTxt(topics) {
     '- [About](https://veritasworldwide.com/about): Publication model, evidence labels, and reader funding.',
     '- [Media Kit](https://veritasworldwide.com/media-kit): Official logos, social banners, evidence-tier cards, and brand ZIP for press.',
     '- [Evidence tiers brand doc](https://veritasworldwide.com/brand-kit/07-docs/EVIDENCE-TIERS.md): Verified / Circumstantial / Disputed visual system.',
-    '- [Press contact](https://veritasworldwide.com/brand-kit/07-docs/PRESS-CONTACT.md): Rights, tips, and media kit paths.',
+    '- [Press contact](https://veritasworldwide.com/brand-kit/07-docs/PRESS-CONTACT.md): Rights, tips, and media kit paths.
+    - [Brand bios JSON](https://veritasworldwide.com/brand-kit/07-docs/bios.json): Handles, bios, hashtags for official accounts.
+    - [Social launch checklist](https://veritasworldwide.com/brand-kit/07-docs/SOCIAL-LAUNCH.md): Per-platform setup paths.',
     '- [Security disclosure](https://veritasworldwide.com/.well-known/security.txt): RFC 9116 contact and policy for vulnerability reports.',
     '- [Accessibility](https://veritasworldwide.com/accessibility): WCAG targets, contrast, and touch-target standards.',
     '- [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.',
