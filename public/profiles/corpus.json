@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:21:44.582Z",
+  "generatedAt": "2026-07-23T10:23:49.471Z",
   "count": 96,
   "profiles": [
     {
@@ -1891,9 +1891,9 @@
         "Spotify",
         "Influence"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "ben-shapiro",

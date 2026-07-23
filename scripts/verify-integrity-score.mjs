@@ -137,6 +137,7 @@ const required = [
   'john-brennan',
   'roger-stone',
   'paul-manafort',
+  'joe-rogan',
 ];
 const scores = {};
 for (const id of required) {
@@ -1017,8 +1018,21 @@ for (const f of (manafortP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('manafort dual-cite collision: ' + f.id);
 }
 
+
+// Joe Rogan densify gate (n≥3)
+const rogan = scores['joe-rogan'];
+if (!rogan || rogan.n < 3) throw new Error('joe-rogan needs ≥3 verified falsehoods, got ' + (rogan?.n ?? 0));
+if (rogan.score > 60) throw new Error('joe-rogan score expected ≤60 after densify, got ' + rogan.score);
+const roganP = getProfileBySlug('joe-rogan');
+for (const id of ['rogan-mrna-vaccines-gene-therapy-2021','rogan-healthy-people-dont-need-vaccine-framing-2021','rogan-ivermectin-horse-paste-minimization-context-2021']) {
+  if (!(roganP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('joe-rogan missing docket id: ' + id);
+}
+for (const f of (roganP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('rogan dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 50) throw new Error('expected ≥50 compiled dockets, got ' + docketCount);
+if (docketCount < 51) throw new Error('expected ≥51 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

@@ -11069,7 +11069,52 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'rogan-mrna-vaccines-gene-therapy-2021',
+        statement: 'Claimed mRNA COVID vaccines are “gene therapy.”',
+        saidAt: 'August 2021',
+        context: 'Podcast commentary on COVID vaccination.',
+        whyFalse: 'PolitiFact rated False. mRNA vaccines do not alter DNA or constitute gene therapy as defined by FDA/scientific consensus; they instruct temporary protein production and are cleared.',
+        correction: 'mRNA COVID vaccines are not gene therapy; they do not integrate into or permanently alter the human genome.',
+        statementSource: 'Joe Rogan Experience remarks Aug 2021 (PolitiFact capture)',
+        statementUrl: 'https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk',
+        debunkSource: 'PolitiFact — Joe Rogan falsely says mRNA vaccines are gene therapy (Aug 31, 2021)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2021/aug/31/joe-rogan/joe-rogan-falsely-says-mrna-vaccines-are-gene-ther/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'rogan-healthy-people-dont-need-vaccine-framing-2021',
+        statement: 'Amplified claims that healthy young people do not meaningfully benefit from COVID vaccination in absolute terms that overstated risk/benefit certainty against public-health data at the time.',
+        saidAt: '2021',
+        context: 'Podcast commentary discouraging vaccination for healthy cohorts.',
+        whyFalse: 'CDC and contemporaneous clinical data showed vaccination reduced hospitalization and death risk across adult age bands including healthy adults; absolute “no need” framing was false to the hospitalization/mortality evidence then available.',
+        correction: 'Healthy adults still had measurable severe-outcome risk reduction from COVID vaccination per contemporaneous CDC data.',
+        statementSource: 'Joe Rogan Experience vaccine commentary 2021 (multi-outlet capture)',
+        statementUrl: 'https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk',
+        debunkSource: 'CDC COVID vaccine effectiveness summaries; FactCheck/PolitiFact synthesis of healthy-adult risk',
+        debunkUrl: 'https://www.factcheck.org/2021/09/scicheck-covid-19-vaccines-reduce-risk-of-severe-disease/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'rogan-ivermectin-horse-paste-minimization-context-2021',
+        statement: 'Downplayed risks of using veterinary ivermectin formulations / amplified ivermectin-as-COVID-treatment certainty beyond clinical evidence.',
+        saidAt: '2021',
+        context: 'Podcast discussion of ivermectin for COVID outside approved indications.',
+        whyFalse: 'FDA and major clinical reviews found insufficient evidence for ivermectin as COVID treatment; promoting veterinary formulations or off-label certainty was false to the clinical evidence base and FDA warnings.',
+        correction: 'Ivermectin is not an evidence-based COVID treatment per FDA/major trial reviews; veterinary formulations are not for human COVID use.',
+        statementSource: 'Joe Rogan Experience ivermectin commentary 2021 (multi-outlet capture)',
+        statementUrl: 'https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk',
+        debunkSource: 'FDA ivermectin COVID consumer update; clinical evidence reviews',
+        debunkUrl: 'https://www.fda.gov/consumers/consumer-updates/why-you-should-not-use-ivermectin-treat-or-prevent-covid-19',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'ben-shapiro',
