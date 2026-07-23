@@ -11173,7 +11173,7 @@ export const PROFILES: PowerProfile[] = [
         correction:
           'Independent humanitarian systems (WHO, IPC, OCHA-linked reporting) documented widespread starvation risk and malnutrition deaths in Gaza. Absolute denial was false.',
         statementSource: 'Netanyahu July 27, 2025 remarks (as quoted by PolitiFact from primary event coverage)',
-        statementUrl: 'https://www.politifact.com/factchecks/2025/jul/29/benjamin-netanyahu/benjamin-netanyahus-pants-on-fire-statement-that-t/',
+        statementUrl: 'https://www.timesofisrael.com/liveblog_entry/netanyahu-tells-evangelicals-there-is-no-starvation-in-gaza/',
         debunkSource: 'PolitiFact Pants on Fire; WHO / IPC humanitarian data synthesis',
         debunkUrl: 'https://www.politifact.com/article/2025/dec/15/lie-year-vote-reader-choice-results/',
         severity: 'egregious',
@@ -11193,6 +11193,24 @@ export const PROFILES: PowerProfile[] = [
         statementSource: 'Netanyahu July 24, 2024 U.S. Congress address (PolitiFact speech package)',
         statementUrl: 'https://www.politifact.com/article/2024/jul/25/israeli-prime-minister-benjamin-netanyahu-addresse/',
         debunkSource: 'OHCHR UN experts famine statement; IPC Gaza food-insecurity briefs (via PolitiFact sources)',
+        debunkUrl: 'https://www.ohchr.org/en/press-releases/2024/07/un-experts-declare-famine-has-spread-throughout-gaza-strip',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'netanyahu-enough-aid-entering-gaza-2024',
+        statement:
+          'Claimed Israel was allowing sufficient humanitarian aid into Gaza and that shortages were solely Hamas diversion — framing the hunger crisis as fabricated or entirely self-inflicted by Hamas logistics.',
+        saidAt: '2024 (wartime public remarks including Congress period)',
+        context:
+          'Wartime defense of Israel’s aid-access policy while UN/IPC systems warned of catastrophic food insecurity and famine risk.',
+        whyFalse:
+          'UN OCHA, IPC, and OHCHR-linked reporting documented severe access restrictions, corridor delays, and famine-level food insecurity in parts of Gaza — not a record consistent with “enough aid is entering.” Diversion claims, even where partially true, do not make absolute sufficiency framing accurate to the humanitarian data.',
+        correction:
+          'Independent humanitarian systems documented catastrophic food insecurity under restricted access; absolute sufficiency claims were not supported by the public aid-access record.',
+        statementSource: 'Netanyahu wartime public remarks / U.S. Congress address framing (2024)',
+        statementUrl: 'https://www.politifact.com/article/2024/jul/25/israeli-prime-minister-benjamin-netanyahu-addresse/',
+        debunkSource: 'OHCHR / UN experts famine statements; IPC Gaza food-insecurity assessments',
         debunkUrl: 'https://www.ohchr.org/en/press-releases/2024/07/un-experts-declare-famine-has-spread-throughout-gaza-strip',
         severity: 'egregious',
         tier: 'verified',

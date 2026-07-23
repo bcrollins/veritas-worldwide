@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:52:15.741Z",
+  "generatedAt": "2026-07-23T09:53:10.136Z",
   "count": 96,
   "profiles": [
     {
@@ -1980,8 +1980,8 @@
         "U.S. Aid Recipient Leadership",
         "ICJ"
       ],
-      "integrityScore": 50,
-      "integrityFalsehoods": 2,
+      "integrityScore": 25,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

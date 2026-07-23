@@ -177,15 +177,16 @@ for (const f of (kamalaP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('kamala dual-cite collision: ' + f.id);
 }
 
-// Benjamin Netanyahu dual-cited integrity deep-dive (egregious wartime falsehoods)
+// Benjamin Netanyahu dual-cited integrity densify (egregious wartime falsehoods)
 const bibi = scores['benjamin-netanyahu'];
-if (!bibi || bibi.n < 2) throw new Error('benjamin-netanyahu needs ≥2 verified falsehoods, got ' + (bibi?.n ?? 0));
-if (bibi.score > 55) throw new Error('benjamin-netanyahu score expected ≤55 after deep dive, got ' + bibi.score);
+if (!bibi || bibi.n < 3) throw new Error('benjamin-netanyahu needs ≥3 verified falsehoods, got ' + (bibi?.n ?? 0));
+if (bibi.score > 30) throw new Error('benjamin-netanyahu score expected ≤30 after densify, got ' + bibi.score);
 const bibiP = getProfileBySlug('benjamin-netanyahu');
 const bibiIds = new Set((bibiP.documentedFalsehoods || []).map((f) => f.id));
 for (const id of [
   'netanyahu-no-starvation-gaza-2025',
   'netanyahu-icc-starvation-nonsense-congress-2024',
+  'netanyahu-enough-aid-entering-gaza-2024',
 ]) {
   if (!bibiIds.has(id)) throw new Error('benjamin-netanyahu missing docket id: ' + id);
 }
