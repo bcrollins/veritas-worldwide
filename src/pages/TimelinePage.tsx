@@ -2,10 +2,11 @@ import { useMemo, useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
-const TIMELINE_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
-
 import { chapterMeta } from '../data/chapterMeta'
 import {
+
+const TIMELINE_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
+
   setMetaTags,
   clearMetaTags,
   setJsonLd,

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
+import {
+
 const MEMBERSHIP_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
 
-import {
   setMetaTags,
   clearMetaTags,
   setJsonLd,
@@ -629,7 +630,6 @@ export default function MembershipPage() {
     </div>
   )
 }
-
 
 /* ─── FAQ Accordion Item ─── */
 function StudentAccessSection() {

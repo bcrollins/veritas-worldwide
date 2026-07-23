@@ -2,14 +2,6 @@ import { type ReactNode, useCallback, useEffect, useMemo, useState, useRef } fro
 import { useParams, Link, useSearchParams } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
-const CHAPTER_HUBS: readonly RelatedHub[] = [
-  { to: '/read', label: 'Read' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/profiles', label: 'Profiles' },
-  { to: '/sources', label: 'Sources' },
-  { to: '/search', label: 'Search' },
-]
-
 import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
 import type { ContentBlock, Chapter, ImageData, LoadedChapter } from '../data/chapterTypes'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
@@ -27,6 +19,15 @@ import { useReadingHistory } from '../hooks/useReadingHistory'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import {
+
+const CHAPTER_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/sources', label: 'Sources' },
+  { to: '/search', label: 'Search' },
+]
+
   trackShare,
   trackDownload,
   trackReadingMilestone,

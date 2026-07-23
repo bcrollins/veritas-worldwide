@@ -2,12 +2,13 @@ import { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
-const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
-
 import NewsletterSignup from '../components/NewsletterSignup'
 import { topicHubs, getTopicArticles, getTopicChapters } from '../data/topicHubs'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import {
+
+const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
+
   clearMetaTags,
   removeJsonLd,
   setJsonLd,

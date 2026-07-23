@@ -2,6 +2,10 @@ import { useEffect, useMemo } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
+import { clearMetaTags, removeJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import { useAuth } from '../lib/AuthContext'
+import {
+
 const SUPPORT_SUCCESS_HUBS: readonly RelatedHub[] = [
   { to: '/read', label: 'Read' },
   { to: '/israel-dossier', label: 'Dossiers' },
@@ -9,9 +13,6 @@ const SUPPORT_SUCCESS_HUBS: readonly RelatedHub[] = [
   { to: '/search', label: 'Search' },
 ]
 
-import { clearMetaTags, removeJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
-import { useAuth } from '../lib/AuthContext'
-import {
   detectStripeReturn,
   getMarketingAttribution,
   handleStripeReturn,

@@ -2,9 +2,10 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
+import {
+
 const TERMS_HUBS: readonly RelatedHub[] = [{ to: '/privacy', label: 'Privacy' }, { to: '/about', label: 'About' }, { to: '/read', label: 'Read' }, { to: '/search', label: 'Search' }]
 
-import {
   setMetaTags,
   clearMetaTags,
   setJsonLd,

@@ -2,19 +2,19 @@ import { useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
-const SUBSCRIBE_SUCCESS_HUBS: readonly RelatedHub[] = [
-  { to: '/read', label: 'Read' },
-  { to: '/news', label: 'News' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/search', label: 'Search' },
-]
-
 import { getArticleBySlug } from '../data/articles'
 import { chapterMeta } from '../data/chapterMeta'
 import { getInstituteTopicBySlug } from '../data/instituteCatalog'
 import { getTopicArticles, getTopicChapters, getTopicHubByKeyword, getTopicHubBySlug } from '../data/topicHubs'
 import { useAuth } from '../lib/AuthContext'
 import { clearMetaTags, removeJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+
+const SUBSCRIBE_SUCCESS_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/news', label: 'News' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/search', label: 'Search' },
+]
 
 function ChapterCard({ chapterId }: { chapterId: string }) {
   const chapter = chapterMeta.find((entry) => entry.id === chapterId)

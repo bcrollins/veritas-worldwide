@@ -2,9 +2,10 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
+import {
+
 const A11Y_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/about', label: 'About' }, { to: '/search', label: 'Search' }]
 
-import {
   setMetaTags,
   clearMetaTags,
   SITE_URL,

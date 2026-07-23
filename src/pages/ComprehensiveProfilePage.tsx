@@ -2,9 +2,10 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
+import {
+
 const OSINT_HUBS: readonly RelatedHub[] = [{ to: '/profiles', label: 'Profiles' }, { to: '/methodology', label: 'Methodology' }, { to: '/search', label: 'Search' }, { to: '/read', label: 'Read' }]
 
-import {
   setMetaTags,
   clearMetaTags,
   setJsonLd,

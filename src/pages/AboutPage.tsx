@@ -2,10 +2,11 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
-const ABOUT_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/methodology', label: 'Methodology' }, { to: '/sources', label: 'Sources' }, { to: '/search', label: 'Search' }]
-
 import { TAGLINE } from '../lib/constants'
 import {
+
+const ABOUT_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/methodology', label: 'Methodology' }, { to: '/sources', label: 'Sources' }, { to: '/search', label: 'Search' }]
+
   clearMetaTags,
   removeJsonLd,
   setJsonLd,

@@ -2,6 +2,11 @@ import { useEffect, useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
+import NewsletterSignup from '../components/NewsletterSignup'
+import { getTopicArticles, getTopicChapters, getTopicHubBySlug } from '../data/topicHubs'
+import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
+import {
+
 const TOPIC_HUBS: readonly RelatedHub[] = [
   { to: '/read', label: 'Read' },
   { to: '/israel-dossier', label: 'Dossiers' },
@@ -10,10 +15,6 @@ const TOPIC_HUBS: readonly RelatedHub[] = [
   { to: '/search', label: 'Search' },
 ]
 
-import NewsletterSignup from '../components/NewsletterSignup'
-import { getTopicArticles, getTopicChapters, getTopicHubBySlug } from '../data/topicHubs'
-import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
-import {
   clearMetaTags,
   removeJsonLd,
   setJsonLd,

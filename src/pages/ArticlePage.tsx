@@ -2,14 +2,6 @@ import { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
-const ARTICLE_HUBS: readonly RelatedHub[] = [
-  { to: '/news', label: 'News' },
-  { to: '/read', label: 'Read' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/profiles', label: 'Profiles' },
-  { to: '/search', label: 'Search' },
-]
-
 import { getArticleBySlug, CATEGORY_META, type ArticleBlock, type ArticleSource } from '../data/articles'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { chapterMeta } from '../data/chapterMeta'
@@ -18,6 +10,15 @@ import SharePanel from '../components/SharePanel'
 import { getPreferredImageSrc } from '../lib/imageSources'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import {
+
+const ARTICLE_HUBS: readonly RelatedHub[] = [
+  { to: '/news', label: 'News' },
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
+
   setMetaTags,
   clearMetaTags,
   setJsonLd,
