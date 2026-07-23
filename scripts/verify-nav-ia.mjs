@@ -752,6 +752,28 @@ assert(fs.readFileSync(path.join(root, 'src/pages/SourcesPage.tsx'), 'utf8').inc
 assert(fs.readFileSync(path.join(root, 'scripts/verify-related-hubs-coverage.mjs'), 'utf8').includes('related-hubs-coverage'), 'perpetual v18 IA coverage')
 assert(fs.readFileSync(path.join(root, 'scripts/verify-pure.mjs'), 'utf8').includes('verify-related-hubs-coverage.mjs'), 'perpetual v18 IA pure wire')
 
+
+
+// RelatedHubs perpetual densify lock v19 IA
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('mobile-tab-bar'), 'perpetual v19 IA mobile tab bar')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('primaryLinks'), 'perpetual v19 IA primaryLinks')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('focus-visible:ring-offset-obsidian'), 'perpetual v19 IA footer focus')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('desktopPrimaryLinkClass'), 'perpetual v19 IA desktop primary')
+assert(fs.readFileSync(path.join(root, 'server.js'), 'utf8').includes('server-soft-404'), 'perpetual v19 IA server soft-404')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v19 IA emphasize')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v19 IA RelatedHubs focus')
+assert(fs.readFileSync(path.join(root, 'src/components/ResearchHubChips.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v19 IA Research chips focus')
+assert(fs.readFileSync(path.join(root, 'src/components/DossierHubSpokes.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v19 IA spokes focus')
+assert(fs.readFileSync(path.join(root, 'src/components/CookieConsent.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v19 IA cookie focus')
+assert(fs.readFileSync(path.join(root, 'src/components/StickyMembershipBar.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v19 IA sticky membership')
+assert(fs.readFileSync(path.join(root, 'src/components/ExitIntentCapture.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v19 IA exit intent')
+assert(fs.readFileSync(path.join(root, 'src/components/AuthModal.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v19 IA auth modal')
+assert(fs.readFileSync(path.join(root, 'src/pages/InstitutePage.tsx'), 'utf8').includes('institute-related-hubs'), 'perpetual v19 IA institute')
+assert(fs.readFileSync(path.join(root, 'src/pages/MethodologyPage.tsx'), 'utf8').includes('methodology-related-hubs'), 'perpetual v19 IA methodology')
+assert(fs.readFileSync(path.join(root, 'src/pages/SourcesPage.tsx'), 'utf8').includes('sources-related-hubs'), 'perpetual v19 IA sources')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-related-hubs-coverage.mjs'), 'utf8').includes('related-hubs-coverage'), 'perpetual v19 IA coverage')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-pure.mjs'), 'utf8').includes('verify-related-hubs-coverage.mjs'), 'perpetual v19 IA pure wire')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
