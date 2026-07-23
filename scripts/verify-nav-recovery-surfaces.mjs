@@ -57,6 +57,19 @@ const surfaces = [
   ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
   ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
   ['src/pages/ChapterPage.tsx', 'chapter-related-hubs'],
+  ['src/pages/InstitutePage.tsx', 'institute-related-hubs'],
+  ['src/pages/MethodologyPage.tsx', 'methodology-related-hubs'],
+  ['src/pages/SourcesPage.tsx', 'sources-related-hubs'],
+  ['src/pages/VolumeIIHubPage.tsx', 'volume-ii-related-hubs'],
+  ['src/pages/ResearcherHubPage.tsx', 'researcher-related-hubs'],
+  ['src/pages/ContentPackPage.tsx', 'content-pack-related-hubs'],
+  ['src/pages/BibleHistoryPage.tsx', 'bible-history-related-hubs'],
+  ['src/pages/PersonalTimelinePage.tsx', 'personal-timeline-related-hubs'],
+  ['src/pages/InstituteBookPage.tsx', 'institute-book-related-hubs'],
+  ['src/pages/InstituteMethodologyPage.tsx', 'institute-methodology-related-hubs'],
+  ['src/pages/InstituteCoursePage.tsx', 'institute-course-related-hubs'],
+  ['src/pages/InstituteGuidePage.tsx', 'institute-guide-related-hubs'],
+  ['src/pages/RecordOfJesusChristPage.tsx', 'roc-related-hubs'],
   ['src/pages/InstituteCoursePage.tsx', 'institute-course-research-chips'],
   ['src/pages/InstituteGuidePage.tsx', 'institute-guide-research-chips'],
   ['src/pages/SupportSuccessPage.tsx', 'support-success-related-hubs'],
@@ -996,7 +1009,7 @@ assert(israelSticky.includes('israel-dossier-related-hubs'), 'Israel RelatedHubs
 
 
 // Recovery suite surface needle floor
-assert(surfaces.length >= 102, `surfaces length floor 90 (got ${surfaces.length})`)
+assert(surfaces.length >= 115, `surfaces length floor 90 (got ${surfaces.length})`)
 
 
 // Cookie z-100 above tab z-50 unique final
@@ -1028,7 +1041,7 @@ assert(relatedAriaFinal.includes('Related hubs'), 'RelatedHubs aria Related hubs
 
 // Recovery suite reports needle count in PASS line format
 // (surfaces array is the authoritative floor via length assert above)
-assert(typeof surfaces.length === 'number' && surfaces.length >= 102, 'surfaces array healthy')
+assert(typeof surfaces.length === 'number' && surfaces.length >= 115, 'surfaces array healthy')
 
 
 // DOSSIER_SPOKES count reaffirm unique final
@@ -1384,7 +1397,7 @@ assert(osintFinal.includes('RelatedHubs'), 'osint RelatedHubs final')
 
 
 // surfaces length floor 102 reaffirm
-assert(surfaces.length >= 102, `surfaces length floor 102 reaffirm (got ${surfaces.length})`)
+assert(surfaces.length >= 115, `surfaces length floor 102 reaffirm (got ${surfaces.length})`)
 
 // RelatedHubs mount breadth reaffirm final (public pages list)
 const relatedBreadthPages = [
@@ -1542,7 +1555,7 @@ for (const dest of ['/', '/read', '/israel-dossier', '/profiles', '/search']) {
 
 
 // surfaces length and pure green reaffirm end
-assert(Array.isArray(surfaces) && surfaces.length >= 102, `surfaces array end floor ${surfaces.length}`)
+assert(Array.isArray(surfaces) && surfaces.length >= 115, `surfaces array end floor ${surfaces.length}`)
 assert(surfaces.every((row) => Array.isArray(row) && row.length === 2 && typeof row[0] === 'string' && typeof row[1] === 'string'), 'surfaces pairs well-formed end')
 
 // Hick primary hub budget ≤5 reaffirm end
@@ -1629,7 +1642,7 @@ for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/sea
 
 
 // surfaces.length end floor 102 ultimate final
-assert(surfaces.length >= 102, `surfaces end ultimate ${surfaces.length}`)
+assert(surfaces.length >= 115, `surfaces end ultimate ${surfaces.length}`)
 
 // RelatedHubs dark + parchment + surface tones ultimate
 const tonesUlt = read('src/components/RelatedHubs.tsx')
@@ -1716,7 +1729,7 @@ for (const id of ['israel', 'briefing', 'deep-state', 'forum', 'profiles']) {
 
 
 // surfaces 102 pair shape ultimate final end
-assert(surfaces.length >= 102, `surfaces final end ${surfaces.length}`)
+assert(surfaces.length >= 115, `surfaces final end ${surfaces.length}`)
 assert(surfaces.every((r) => Array.isArray(r) && r.length === 2), 'surfaces pairs final end')
 // unique testids among surface needles where second column looks like testid
 const ids = surfaces.map((r) => r[1])
@@ -1750,7 +1763,7 @@ assert(homeUltEnd.includes('home-news-chip'), 'home-news-chip end')
 
 
 // pass line format surfaces count ultimate end
-assert(typeof surfaces.length === 'number' && surfaces.length >= 102, 'surfaces healthy ultimate end')
+assert(typeof surfaces.length === 'number' && surfaces.length >= 115, 'surfaces healthy ultimate end')
 assert(surfaces.length === surfaces.filter(Boolean).length, 'surfaces no holes ultimate end')
 
 
@@ -1847,7 +1860,7 @@ assert(read('src/pages/HomePage.tsx').includes('excludeTo="/"') || read('src/pag
 
 
 // surfaces length 102 PASS line coherence ultimate
-assert(surfaces.length >= 102, `PASS coherence surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `PASS coherence surfaces ${surfaces.length}`)
 // every surface file exists
 for (const [rel] of surfaces) {
   assert(typeof rel === 'string' && rel.startsWith('src/'), `surface path ${rel}`)
@@ -1886,7 +1899,7 @@ assert(read('src/pages/BookmarksPage.tsx').includes('bookmarks-related-hubs') &&
 
 
 // final PASS surfaces count and suite green sentinel
-assert(surfaces.length >= 102, `final sentinel surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `final sentinel surfaces ${surfaces.length}`)
 assert(typeof read === 'function' && typeof assert === 'function', 'suite helpers present')
 
 
@@ -1900,7 +1913,7 @@ assert(a11yUlt.includes('ResearchHubChips') && a11yUlt.includes('DossierHubSpoke
 
 
 // suite length self-report ultimate
-assert(surfaces.length >= 102 && surfaces.length < 500, `suite length sane ${surfaces.length}`)
+assert(surfaces.length >= 115 && surfaces.length < 500, `suite length sane ${surfaces.length}`)
 
 
 
@@ -2036,7 +2049,7 @@ for (const [name, constName] of [
 
 
 // surfaces 102 and emphasize coexistence ultimate
-assert(surfaces.length >= 102, `surfaces emphasize coexistence ${surfaces.length}`)
+assert(surfaces.length >= 115, `surfaces emphasize coexistence ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'emphasizeTo coexistence')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'soft-404 primary coexistence')
 
@@ -2082,7 +2095,7 @@ assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'A11Y Me
 
 
 // surfaces length 102 PASS line final ultimate end
-assert(surfaces.length >= 102, `PASS line surfaces final ${surfaces.length}`)
+assert(surfaces.length >= 115, `PASS line surfaces final ${surfaces.length}`)
 
 
 
@@ -2121,7 +2134,7 @@ assert(relatedModes.includes("'surface'") || relatedModes.includes('"surface"') 
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'platform PRIMARY complete')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'platform emphasize complete')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'platform soft-404 complete')
-assert(surfaces.length >= 102, `platform surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `platform surfaces ${surfaces.length}`)
 
 
 
@@ -2158,14 +2171,14 @@ assert(platFinal.includes('excludeTo'), 'exclude checkpoint')
 assert(platFinal.includes('min-h-[44px]'), 'touch checkpoint')
 assert(platFinal.includes('no-print'), 'no-print checkpoint')
 assert(platFinal.includes('Related hubs'), 'aria checkpoint')
-assert(surfaces.length >= 102, `surfaces checkpoint ${surfaces.length}`)
+assert(surfaces.length >= 115, `surfaces checkpoint ${surfaces.length}`)
 
 
 
 // recovery suite self-health assert helpers final
 assert(typeof assert === 'function', 'assert helper final')
 assert(typeof read === 'function', 'read helper final')
-assert(Array.isArray(surfaces) && surfaces.length >= 102, `surfaces self-health ${surfaces.length}`)
+assert(Array.isArray(surfaces) && surfaces.length >= 115, `surfaces self-health ${surfaces.length}`)
 
 
 
@@ -2204,7 +2217,7 @@ assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'Terms Membershi
 
 
 // surfaces 102 platform integrity with Account five ultimate end
-assert(surfaces.length >= 102, `surfaces account five end ${surfaces.length}`)
+assert(surfaces.length >= 115, `surfaces account five end ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'emphasize still present end')
 assert(read('src/pages/AccessibilityPage.tsx').includes('A11Y_HUBS'), 'A11Y_HUBS still present end')
 assert(read('src/pages/PrivacyPage.tsx').includes('PRIVACY_HUBS'), 'PRIVACY_HUBS still present end')
@@ -2212,7 +2225,7 @@ assert(read('src/pages/PrivacyPage.tsx').includes('PRIVACY_HUBS'), 'PRIVACY_HUBS
 
 
 // recovery suite PASS surfaces count report final ultimate
-assert(Number.isFinite(surfaces.length) && surfaces.length >= 102, `PASS report surfaces ${surfaces.length}`)
+assert(Number.isFinite(surfaces.length) && surfaces.length >= 115, `PASS report surfaces ${surfaces.length}`)
 
 
 
@@ -2235,19 +2248,19 @@ assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'final Privacy
 assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'final Terms Membership')
 assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'final A11Y Membership')
 assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'final OSINT Dossiers')
-assert(surfaces.length >= 102, `final surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `final surfaces ${surfaces.length}`)
 
 
 
 // surfaces length and platform complete mutual end
-assert(surfaces.length >= 102, `mutual end surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `mutual end surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('export default function RelatedHubs'), 'RelatedHubs export mutual end')
 assert(read('src/pages/NotFoundPage.tsx').includes('RelatedHubs'), 'NotFound RelatedHubs mutual end')
 
 
 
 // end of densify session RelatedHubs platform green
-assert(surfaces.length >= 102, `session green surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `session green surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'session PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'session emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'session secondary')
@@ -2263,7 +2276,7 @@ assert(relatedHover.includes('text-white'), 'emphasize contrast final end')
 
 
 // suite densify complete RelatedHubs platform final green
-assert(surfaces.length >= 102, `densify complete surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `densify complete surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'densify complete PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'densify complete emphasize')
 assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'densify complete Privacy Membership')
@@ -2272,7 +2285,7 @@ assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'densify complet
 
 
 // RelatedHubs platform boil complete pure green final
-assert(surfaces.length >= 102, `boil complete surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `boil complete surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'boil PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'boil emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'boil soft-404')
@@ -2284,7 +2297,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform green under densify lag pure lock
-assert(surfaces.length >= 102, `densify lag surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `densify lag surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'densify lag emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('emphasizeTo="/"') || read('src/pages/NotFoundPage.tsx').includes("emphasizeTo='/'"), 'densify lag soft-404 emphasize')
 assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'densify lag Privacy Membership')
@@ -2305,12 +2318,12 @@ assert(termsAwait && (termsAwait[1].match(/to:/g) || []).length === 5, 'await le
 // legal five hub Membership recovery pure green final lock
 assert(read('src/pages/PrivacyPage.tsx').includes("to: '/membership'") || read('src/pages/PrivacyPage.tsx').includes('/membership'), 'Privacy Membership final lock')
 assert(read('src/pages/TermsPage.tsx').includes("to: '/membership'") || read('src/pages/TermsPage.tsx').includes('/membership'), 'Terms Membership final lock')
-assert(surfaces.length >= 102, `legal five surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `legal five surfaces ${surfaces.length}`)
 
 
 
 // ALL PRODUCT LIVE RelatedHubs platform pure celebration lock
-assert(surfaces.length >= 102, `all product live surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `all product live surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'all product live emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'all product live soft-404')
 assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'all product live Privacy Membership')
@@ -2323,7 +2336,7 @@ assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'all p
 
 
 // all product live pure celebration dual lock
-assert(surfaces.length >= 102, `celebration dual surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `celebration dual surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'celebration emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'celebration soft-404')
 assert(read('src/pages/SearchPage.tsx').includes('search-idle-hubs'), 'celebration search idle')
@@ -2333,7 +2346,7 @@ assert(read('src/pages/BookmarksPage.tsx').includes('bookmarks-related-hubs'), '
 
 
 // all product live pure suite green final ultimate end
-assert(surfaces.length >= 102, `final ultimate surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `final ultimate surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'final ultimate PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'final ultimate emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'final ultimate soft-404')
@@ -2345,7 +2358,7 @@ assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'final ultimate 
 
 
 // RelatedHubs platform live green perpetual densify lock
-assert(surfaces.length >= 102, `perpetual surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual soft-404')
@@ -2359,7 +2372,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform perpetual densify lock v2
-assert(surfaces.length >= 102, `perpetual v2 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v2 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v2 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v2 emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'perpetual v2 secondary')
@@ -2370,7 +2383,7 @@ assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'p
 
 
 // RelatedHubs platform perpetual densify lock v3
-assert(surfaces.length >= 102, `perpetual v3 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v3 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v3 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v3 emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v3 soft-404 primary')
@@ -2388,7 +2401,7 @@ assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'p
 
 
 // RelatedHubs platform perpetual densify lock v4
-assert(surfaces.length >= 102, `perpetual v4 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v4 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v4 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v4 emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v4 soft-404')
@@ -2407,7 +2420,7 @@ assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'per
 
 
 // RelatedHubs platform perpetual densify lock v5
-assert(surfaces.length >= 102, `perpetual v5 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v5 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v5 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v5 emphasize')
 assert(read('src/components/RelatedHubs.tsx').includes('excludeTo'), 'perpetual v5 exclude')
@@ -2430,7 +2443,7 @@ assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'per
 
 
 // RelatedHubs platform perpetual densify lock v6
-assert(surfaces.length >= 102, `perpetual v6 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v6 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v6 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v6 emphasize')
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v6 soft-404')
@@ -2451,7 +2464,7 @@ assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'per
 
 
 // RelatedHubs platform perpetual densify lock v7
-assert(surfaces.length >= 102, `perpetual v7 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v7 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v7 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v7 emphasize')
 assert(read('src/components/RelatedHubs.tsx').includes('excludeTo'), 'perpetual v7 exclude')
@@ -2478,7 +2491,7 @@ assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v7 mobile tab 
 
 
 // RelatedHubs platform perpetual densify lock v8
-assert(surfaces.length >= 102, `perpetual v8 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v8 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v8 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v8 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v8 mobile tab bar')
@@ -2495,7 +2508,7 @@ assert(read('server.js').includes('server-soft-404'), 'perpetual v8 server soft-
 
 
 // RelatedHubs platform perpetual densify lock v9
-assert(surfaces.length >= 102, `perpetual v9 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v9 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v9 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v9 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v9 mobile tab bar')
@@ -2517,7 +2530,7 @@ assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'perpetua
 
 
 // RelatedHubs platform perpetual densify lock v10
-assert(surfaces.length >= 102, `perpetual v10 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v10 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v10 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v10 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v10 mobile tab bar')
@@ -2541,7 +2554,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform perpetual densify lock v11
-assert(surfaces.length >= 102, `perpetual v11 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v11 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v11 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v11 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v11 mobile tab bar')
@@ -2564,7 +2577,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform perpetual densify lock v12
-assert(surfaces.length >= 102, `perpetual v12 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v12 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v12 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v12 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v12 mobile tab bar')
@@ -2587,7 +2600,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform perpetual densify lock v13
-assert(surfaces.length >= 102, `perpetual v13 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v13 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v13 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v13 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v13 mobile tab bar')
@@ -2610,7 +2623,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform perpetual densify lock v14
-assert(surfaces.length >= 102, `perpetual v14 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v14 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v14 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v14 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v14 mobile tab bar')
@@ -2633,7 +2646,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform perpetual densify lock v15
-assert(surfaces.length >= 102, `perpetual v15 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v15 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v15 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v15 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v15 mobile tab bar')
@@ -2657,7 +2670,7 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 
 
 // RelatedHubs platform perpetual densify lock v16
-assert(surfaces.length >= 102, `perpetual v16 surfaces ${surfaces.length}`)
+assert(surfaces.length >= 115, `perpetual v16 surfaces ${surfaces.length}`)
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v16 PRIMARY')
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v16 emphasize')
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v16 mobile tab bar')
