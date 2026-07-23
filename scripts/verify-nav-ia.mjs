@@ -122,6 +122,10 @@ const contentPack = fs.readFileSync(path.join(root, 'src/pages/ContentPackPage.t
 assert(researcher.includes('ResearchHubChips'), 'Researcher hub mounts research chips')
 assert(contentPack.includes('ResearchHubChips'), 'Content pack mounts research chips')
 assert(app.includes("title: 'Israel · Deep State · Forum'") || app.includes('Israel · Deep State · Forum'), 'Dossiers tooltip scent')
+assert(app.includes('Home · The Record archive') || app.includes("title: 'Home"), 'Record hub tooltip')
+assert(app.includes('Power Profiles · integrity dockets') || app.includes('integrity dockets'), 'Profiles hub tooltip')
+assert(app.includes('Search chapters, profiles, sources, dossiers') || app.includes('Search chapters'), 'Search hub tooltip')
+
 // Footer browseLinks: Record before Read before Dossiers before Profiles before Search
 const footerBlock = app.match(/const browseLinks: ShellLink\[\] = \[([\s\S]*?)\]/)
 assert(footerBlock, 'footer browseLinks required')
