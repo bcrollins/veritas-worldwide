@@ -48,6 +48,10 @@ for (const [rel, needle] of surfaces) {
   assert(read(rel).includes(needle), `${rel} must include ${needle}`)
 }
 
+// ResearchHubChips component export present
+assert(read('src/components/ResearchHubChips.tsx').includes('export default function ResearchHubChips'), 'ResearchHubChips export')
+assert(read('src/components/DossierHubSpokes.tsx').includes('export default function DossierHubSpokes'), 'DossierHubSpokes export')
+
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')
 assert(notFoundSrc.includes('noindex'), 'NotFoundPage must stay noindex')
@@ -68,6 +72,7 @@ for (const rel of [
   'src/pages/InstituteBookPage.tsx',
 ]) {
   assert(read(rel).includes('ResearchHubChips'), `${rel} mounts ResearchHubChips`)
+
 }
 
 // Forum mounts both inline breadcrumb and also-in chip row
