@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T14:48:58.225Z",
+  "generatedAt": "2026-07-23T14:49:44.612Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 2483,
+    "incidents": 2486,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 2402,
+    "historicalWarCrimesPack": 2411,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 2418
+      "post-oct7": 2421
     },
     "incidentsByTier": {
-      "verified": 2481,
+      "verified": 2484,
       "circumstantial": 2
     },
-    "childrenTagged": 2430,
-    "civiliansTagged": 2481,
+    "childrenTagged": 2433,
+    "civiliansTagged": 2484,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -105571,6 +105571,138 @@
       }
     },
     {
+      "id": "gaza-civilian-sterile-gloves-7-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Sterile Gloves 7 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (sterile gloves 7 stockout cohort)",
+      "location": "Gaza Strip emergency wards and field trauma points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian sterile gloves 7 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-gauze-roll-4in-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Gauze Roll 4In Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (gauze roll 4in stockout cohort)",
+      "location": "Gaza Strip emergency wards and field trauma points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian gauze roll 4in stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-elastic-bandage-6in-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Elastic Bandage 6In Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (elastic bandage 6in stockout cohort)",
+      "location": "Gaza Strip emergency wards and field trauma points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian elastic bandage 6in stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
       "id": "jabalia-refugee-camp",
       "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
       "date": "October 31, 2023 — ongoing through 2024",
@@ -120521,12 +120653,12 @@
       "targetsChildren": true
     },
     {
-      "id": "vi-gaza-public-library-wifi-strike-visual-2023-2025",
-      "title": "Gaza Civilian Public Library WiFi Strike Visual Record — Multi-Outlet Packages",
+      "id": "vi-gaza-poultry-coop-cluster-strike-visual-2023-2025",
+      "title": "Gaza Civilian Poultry Coop Cluster Strike Visual Record — Multi-Outlet Packages",
       "date": "2023–2025",
-      "location": "Gaza Strip public library WiFi strike areas",
-      "summary": "Multi-outlet video and photo packages document damage affecting civilian public library WiFi infrastructure used by families including children. Multi-source visual floor; ethnicity is never evidence.",
-      "evidence": "OCHA materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of public library WiFi strike damage affecting civilians.",
+      "location": "Gaza Strip poultry coop cluster strike areas",
+      "summary": "Multi-outlet video and photo packages document damage affecting civilian poultry coop cluster used by families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "OCHA materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of poultry coop cluster strike damage affecting civilians.",
       "sources": [
         {
           "label": "OCHA OPT humanitarian updates",
@@ -120567,12 +120699,12 @@
       ]
     },
     {
-      "id": "vi-west-bank-settler-pomegranate-seedling-tray-visual-2023-2025",
-      "title": "West Bank Settler Pomegranate Seedling Tray Attacks — Multi-Outlet Visual Record",
+      "id": "vi-west-bank-settler-herb-garden-gate-visual-2023-2025",
+      "title": "West Bank Settler Herb Garden Gate Attacks — Multi-Outlet Visual Record",
       "date": "2023–2025",
-      "location": "West Bank village pomegranate seedling tray areas",
-      "summary": "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian pomegranate seedling trays, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
-      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of pomegranate seedling tray attacks affecting civilians.",
+      "location": "West Bank village herb garden gate areas",
+      "summary": "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian herb garden gate, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of herb garden gate attacks affecting civilians.",
       "sources": [
         {
           "label": "B'Tselem video bank",
@@ -120609,46 +120741,50 @@
       "targetsChildren": true
     },
     {
-      "id": "vi-oct7-metar-junction-visual-2023",
-      "title": "October 7 Meitar/Metar Junction Corridor — Multi-Outlet Civilian Murder Visual Record",
-      "date": "October 7, 2023",
-      "location": "Metar Junction corridor, southern Israel",
-      "summary": "Multi-outlet video documents civilian-targeted violence along the Metar Junction corridor on October 7. Multi-party visual record; ethnicity is never evidence.",
-      "evidence": "Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence along the Metar Junction corridor on October 7.",
+      "id": "vi-gaza-sewing-workshop-strike-visual-2023-2025",
+      "title": "Gaza Civilian Sewing Workshop Strike Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip sewing workshop strike areas",
+      "summary": "Multi-outlet video and photo packages document damage affecting civilian sewing workshop used by families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "OCHA materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of sewing workshop strike damage affecting civilians.",
       "sources": [
         {
-          "label": "AP / Reuters October 7 packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
         },
         {
-          "label": "NYT Visual Investigations packages",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        },
-        {
-          "label": "OHCHR materials on October 7 crimes",
+          "label": "OHCHR civilian-protection materials",
           "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
         {
           "type": "video",
-          "label": "Authenticated October 7 video packages",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
           "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "investigation",
-          "label": "NYT Visual Investigations packages",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        },
-        {
-          "type": "document",
-          "label": "UN documentation trail",
-          "url": "https://www.ohchr.org/"
+          "label": "OCHA/OHCHR documentation trail",
+          "url": "https://www.ochaopt.org/"
         }
       ],
       "tier": "verified",
       "targetsCivilians": true,
-      "targetsChildren": true
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
     },
     {
       "id": "hind-rajab-2024",

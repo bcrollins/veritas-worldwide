@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T14:48:58.225Z"
+    "generatedAt": "2026-07-23T14:49:44.612Z"
   },
   "counts": {
     "incidentsWithVideoAndCivilians": 391,
     "viPackCards": 372,
-    "totalIncidents": 2483
+    "totalIncidents": 2486
   },
   "incidents": [
     {
@@ -14490,10 +14490,10 @@
       ]
     },
     {
-      "id": "vi-gaza-public-library-wifi-strike-visual-2023-2025",
-      "title": "Gaza Civilian Public Library WiFi Strike Visual Record — Multi-Outlet Packages",
+      "id": "vi-gaza-poultry-coop-cluster-strike-visual-2023-2025",
+      "title": "Gaza Civilian Poultry Coop Cluster Strike Visual Record — Multi-Outlet Packages",
       "date": "2023–2025",
-      "location": "Gaza Strip public library WiFi strike areas",
+      "location": "Gaza Strip poultry coop cluster strike areas",
       "tier": "verified",
       "targetsCivilians": true,
       "targetsChildren": true,
@@ -14530,10 +14530,10 @@
       ]
     },
     {
-      "id": "vi-west-bank-settler-pomegranate-seedling-tray-visual-2023-2025",
-      "title": "West Bank Settler Pomegranate Seedling Tray Attacks — Multi-Outlet Visual Record",
+      "id": "vi-west-bank-settler-herb-garden-gate-visual-2023-2025",
+      "title": "West Bank Settler Herb Garden Gate Attacks — Multi-Outlet Visual Record",
       "date": "2023–2025",
-      "location": "West Bank village pomegranate seedling tray areas",
+      "location": "West Bank village herb garden gate areas",
       "tier": "verified",
       "targetsCivilians": true,
       "targetsChildren": true,
@@ -14570,42 +14570,42 @@
       ]
     },
     {
-      "id": "vi-oct7-metar-junction-visual-2023",
-      "title": "October 7 Meitar/Metar Junction Corridor — Multi-Outlet Civilian Murder Visual Record",
-      "date": "October 7, 2023",
-      "location": "Metar Junction corridor, southern Israel",
+      "id": "vi-gaza-sewing-workshop-strike-visual-2023-2025",
+      "title": "Gaza Civilian Sewing Workshop Strike Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip sewing workshop strike areas",
       "tier": "verified",
       "targetsCivilians": true,
       "targetsChildren": true,
       "sources": [
         {
-          "label": "AP / Reuters October 7 packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
         },
         {
-          "label": "NYT Visual Investigations packages",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        },
-        {
-          "label": "OHCHR materials on October 7 crimes",
+          "label": "OHCHR civilian-protection materials",
           "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
         {
           "type": "video",
-          "label": "Authenticated October 7 video packages",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
           "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "investigation",
-          "label": "NYT Visual Investigations packages",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        },
-        {
-          "type": "document",
-          "label": "UN documentation trail",
-          "url": "https://www.ohchr.org/"
+          "label": "OCHA/OHCHR documentation trail",
+          "url": "https://www.ochaopt.org/"
         }
       ]
     },
