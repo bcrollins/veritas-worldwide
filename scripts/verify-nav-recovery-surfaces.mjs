@@ -3088,4 +3088,25 @@ assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-
 assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v34 footer focus')
 assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v34 cookie focus')
 
+
+
+// RelatedHubs platform perpetual densify lock v35
+assert(surfaces.length >= 115, `perpetual v35 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('activeChip'), 'perpetual v35 activeChip')
+assert(read('src/components/RelatedHubs.tsx').includes('darkActiveChip'), 'perpetual v35 darkActiveChip')
+assert(read('src/components/RelatedHubs.tsx').includes('aria-current'), 'perpetual v35 aria-current')
+assert(read('src/components/RelatedHubs.tsx').includes('useLocation'), 'perpetual v35 useLocation')
+assert(read('src/components/RelatedHubs.tsx').includes('tone === \'parchment\'') || read('src/components/RelatedHubs.tsx').includes("tone === 'parchment'"), 'perpetual v35 parchment tone')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v35 RelatedHubs focus')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v35 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v35 PRIMARY')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v35 mobile tab bar')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v35 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v35 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v35 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v35 soft-404')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v35 methodology')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v35 Research chips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v35 spokes focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
