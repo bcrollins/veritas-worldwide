@@ -40,3 +40,14 @@
 | #23 | ChapterPage PrimarySourceLink + trackSourceClick | N/A researcher utility |
 | #66 | pure: no fetch/XHR/beacon on PersonalTimelinePage | Hardens local-only researcher surface |
 
+
+## Interval 3 — admin deep noindex + soft-404 empty slug + Dataset HTTPS
+
+| Item | Ship proof | Anonymity audit |
+|------|------------|-----------------|
+| #8 | live-bot 12 surfaces incl. /admin/* deep | Hardens |
+| #10 | soft-404 empty/null/whitespace pure | Holds crawl integrity |
+| #32 | roc Dataset absolute HTTPS pure | N/A |
+
+Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surfaces.
+

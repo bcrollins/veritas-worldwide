@@ -41,6 +41,16 @@ assert(isKnownChapterSlug(null) === false, 'null chapter slug unknown')
 assert(isKnownNewsSlug('', root) === false, 'empty news slug unknown')
 assert(isKnownTopicSlug('', root) === false, 'empty topic slug unknown')
 assert(isKnownInstituteSlug('', root) === false, 'empty institute slug unknown')
+// #10 — empty/whitespace/undefined slug matrix holds under densify
+assert(isKnownChapterSlug('   ') === false, 'whitespace chapter slug unknown')
+assert(isKnownChapterSlug(undefined) === false, 'undefined chapter slug unknown')
+assert(isKnownProfileSlug('   ', root) === false, 'whitespace profile slug unknown')
+assert(isKnownProfileSlug(undefined, root) === false, 'undefined profile slug unknown')
+assert(isKnownNewsSlug(null, root) === false, 'null news slug unknown')
+assert(isKnownTopicSlug(null, root) === false, 'null topic slug unknown')
+assert(isKnownInstituteSlug(null, root) === false, 'null institute slug unknown')
+assert(isKnownChapterSlug('/') === false, 'slash-only chapter slug unknown')
+assert(isKnownProfileSlug('.', root) === false, 'dot profile slug unknown')
 
 // SPA soft-404 allowlist must include researcher hub (not only /researcher/timeline).
 {

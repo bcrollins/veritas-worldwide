@@ -58,6 +58,15 @@ assert(rocPage.includes('faqJsonLd'), 'ROC page must emit FAQPage schema')
 assert(rocPage.includes('breadcrumbJsonLd'), 'ROC page must emit BreadcrumbList schema')
 assert(rocPage.includes("'@type': 'Dataset'") || rocPage.includes('"@type": "Dataset"'), 'ROC page must emit Dataset schema for corpus GEO')
 assert(rocPage.includes('DataDownload'), 'ROC Dataset must list DataDownload distributions')
+
+// #32 — ROC Dataset DataDownload URLs must be absolute HTTPS
+assert(
+  rocPage.includes("contentUrl: \`${SITE_URL}/record-of-jesus-christ/corpus.json\`") ||
+    /contentUrl:\s*`\$\{SITE_URL\}\/record-of-jesus-christ\//.test(rocPage),
+  'ROC Dataset DataDownload contentUrl must be absolute SITE_URL HTTPS paths',
+)
+assert(!/contentUrl:\s*['"]\/record-of-jesus-christ\//.test(rocPage), 'ROC Dataset must not use root-relative contentUrl')
+
 const biblePage = read('src/pages/BibleHistoryPage.tsx')
 assert(biblePage.includes('faqJsonLd'), 'Bible history page must emit FAQPage schema')
 assert(biblePage.includes('breadcrumbJsonLd'), 'Bible history page must emit breadcrumbs')

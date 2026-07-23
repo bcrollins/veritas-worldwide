@@ -67,7 +67,7 @@ WHAT TO IMPLEMENT: Live-bot + pure for `/comprehensive-profile/success` noindex.
 
 ## #8 — Admin deep routes X-Robots + noindex shell
 Area: Crawl/OPSEC · Anchor: OPSEC · Score: 8.8→9.6 · PRIORITY: 9 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Expand live matrix for `/admin/*` paths. Status: **Implemented** (2026-07-23) — SPA catch-all injects X-Robots-Tag + robots meta noindex for /admin and /admin/* all UAs.
+WHAT TO IMPLEMENT: Expand live matrix for `/admin/*` paths. Status: **Implemented** (2026-07-23) — live-bot matrix includes /admin, /admin/login, /admin/analytics, /admin/osint; injectNoindexShell + X-Robots.
 
 ## #9 — Researcher personal timeline never in sitemap
 Area: Crawl · Anchor: OPSEC · Score: 8.5→9.5 · PRIORITY: 9 · Launch-critical: yes  
@@ -75,7 +75,7 @@ WHAT TO IMPLEMENT: Assert prerender/sitemap exclude `/researcher/*`. Status: **I
 
 ## #10 — Soft-404 empty/null slug pure floors hold under densify
 Area: Crawl · Anchor: Google SC · Score: 9.2→9.7 · PRIORITY: 8.5 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Keep soft-404 gates; expand empty slug matrix. Status: **Pending**
+WHAT TO IMPLEMENT: Keep soft-404 gates; expand empty slug matrix. Status: **Implemented** (2026-07-23) — soft-404 empty/null/undefined/whitespace slug matrix expanded; pure PASS.
 
 ## #11 — PATH_ALIASES freeze complete key set
 Area: Crawl · Anchor: Google SC · Score: 9.0→9.6 · PRIORITY: 8 · Launch-critical: no  
@@ -163,7 +163,7 @@ Status: **Implemented** (2026-07-23) — generate-roc-pdf PASS 660 claims matche
 
 ## #32 — ROC Dataset schema distribution URLs absolute HTTPS
 Area: Schema · Anchor: Google · Score: 8.8→9.5 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — pure assert ROC Dataset DataDownload absolute SITE_URL HTTPS.
 
 ## #33 — Multi-volume nav: Volume I vs ROC clear IA
 Area: IA · Anchor: NYT · Score: 7.5→9.2 · PRIORITY: 8.5 · Launch-critical: yes  
