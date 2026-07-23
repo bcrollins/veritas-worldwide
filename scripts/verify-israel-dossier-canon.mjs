@@ -406,6 +406,7 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   assert(page.includes('web.archive.org/web/*'), 'VI media missing Wayback archive pins')
   assert(fs.existsSync(path.join(root, 'public/israel-dossier/visual-investigations.json')), 'missing visual-investigations.json export')
   assert(page.includes('visual-investigations.json'), 'page missing VI JSON download')
+  assert(page.includes('vi-quick-chips') || page.includes('Video + civilians'), 'page missing quick media filter chips')
 }
 
 if (errors.length) {

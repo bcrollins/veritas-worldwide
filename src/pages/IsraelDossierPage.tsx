@@ -2126,6 +2126,38 @@ export default function IsraelDossierPage() {
             <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
               Showing {filteredIncidents.length} of {allIncidents.length}. Historical pack (1948→) is merged with post-Oct-7 investigations. Every entry has checkable sources; this is not an exhaustive global ledger.
             </p>
+            <div className="flex flex-wrap gap-2" data-testid="vi-quick-chips" role="group" aria-label="Quick evidence media filters">
+              {(
+                [
+                  { media: 'video' as const, focus: 'civilians' as const, label: 'Video + civilians' },
+                  { media: 'investigation' as const, focus: 'civilians' as const, label: 'Forensic + civilians' },
+                  { media: 'all' as const, focus: 'children' as const, label: 'Children tagged' },
+                  { media: 'all' as const, focus: 'all' as const, label: 'Clear filters' },
+                ] as const
+              ).map((chip) => (
+                <button
+                  key={chip.label}
+                  type="button"
+                  onClick={() => {
+                    setIncidentMedia(chip.media)
+                    setIncidentFocus(chip.focus)
+                    if (chip.media === 'video' || chip.focus === 'civilians') setIncidentSort('newest')
+                    syncShareParams({
+                      media: chip.media,
+                      focus: chip.focus,
+                      sort: chip.media === 'video' ? 'newest' : undefined,
+                    })
+                  }}
+                  className={`inline-flex min-h-[44px] items-center rounded-full border px-3 font-sans text-[0.6rem] font-bold uppercase tracking-wider transition-colors ${
+                    incidentMedia === chip.media && incidentFocus === chip.focus
+                      ? 'border-crimson bg-crimson/10 text-crimson'
+                      : 'border-border bg-parchment text-ink-muted hover:border-crimson/40 hover:text-crimson'
+                  }`}
+                >
+                  {chip.label}
+                </button>
+              ))}
+            </div>
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
