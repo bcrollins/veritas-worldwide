@@ -6489,6 +6489,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-skin-fungal-infections-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Skin Fungal Infections Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (fungal-skin cohort)',
+    location: 'Gaza Strip overcrowded shelters and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document surges in fungal and parasitic skin infections among displaced civilians including children under collapsed WASH and overcrowding — a pediatric skin-disease pattern distinct from scabies and infectious-disease aggregate cards.',
+    evidence:
+      'WHO health-cluster materials, UNICEF WASH notes, and multi-outlet coverage establish multi-source fungal skin-infection surges. Exact case counts evolve; multi-source wartime fungal skin-disease surge is the claim.',
+    sources: [
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza skin infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-daylight-fresh-air-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Daylight & Fresh Air Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (daylight-denial cohort)',
+    location: 'Gaza Strip underground and enclosed captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document prolonged denial of daylight and fresh air for Israeli civilian hostages held underground — a protected-person treatment pattern with documented physical and psychological effects, distinct from tunnel-captivity and solitary cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source daylight/fresh-air denial in captivity. Exact durations vary by case; multi-source prolonged daylight denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-livestock-theft-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Livestock Theft Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (livestock-theft cohort)',
+    location: 'West Bank herding communities and grazing lands',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler theft and killing of Palestinian livestock after October 7 — destroying herding livelihoods for civilian families including children. Pattern card for livestock theft distinct from herding dispossession and agricultural-takeover cards.',
+    evidence:
+      'OCHA settler-violence databases, B\'Tselem herding case files, and multi-outlet coverage establish multi-source livestock theft surge. Exact animal counts evolve; multi-source wartime livestock theft is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet livestock theft coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -9985,6 +10066,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['arson', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-fungal-skin-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Skin Fungal Infections Pattern',
+    description: 'WHO/UNICEF multi-source documentation of fungal and parasitic skin-infection surges in overcrowded shelters.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-skin-fungal-infections-pattern-2023-2025',
+      'gaza-scabies-skin-disease-pattern-2023-2025',
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+    ],
+    tags: ['fungal', 'skin', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-daylight-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Daylight Pattern',
+    description: 'Multi-source documentation of prolonged daylight and fresh-air denial for civilian hostages underground.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-daylight-fresh-air-pattern-2023-2025',
+      'israel-hostages-tunnel-captivity-pattern-2023-2025',
+      'israel-hostages-solitary-confinement-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-livestock-theft-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Livestock Theft Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler livestock theft after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-livestock-theft-pattern-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'west-bank-settler-agricultural-takeover-pattern-2023-2025',
+    ],
+    tags: ['livestock', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
