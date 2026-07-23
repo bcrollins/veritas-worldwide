@@ -134,6 +134,7 @@ const required = [
   'rashida-tlaib',
   'tucker-carlson',
   'james-comey',
+  'john-brennan',
 ];
 const scores = {};
 for (const id of required) {
@@ -970,8 +971,27 @@ for (const f of (comeyP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('comey dual-cite collision: ' + f.id);
 }
 
+
+// John Brennan densify gate (n≥3)
+const brennan = scores['john-brennan'];
+if (!brennan || brennan.n < 3) throw new Error('john-brennan needs ≥3 verified falsehoods, got ' + (brennan?.n ?? 0));
+if (brennan.score > 60) throw new Error('john-brennan score expected ≤60 after densify, got ' + brennan.score);
+const brennanP = getProfileBySlug('john-brennan');
+for (const id of [
+  'brennan-trump-campaign-not-spied-on-2018',
+  'brennan-russian-bounties-high-confidence-framing-2020',
+  'brennan-hacking-allegation-cohen-computer-2018',
+]) {
+  if (!(brennanP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('john-brennan missing docket id: ' + id);
+  }
+}
+for (const f of (brennanP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('brennan dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 47) throw new Error('expected ≥47 compiled dockets, got ' + docketCount);
+if (docketCount < 48) throw new Error('expected ≥48 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

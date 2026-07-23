@@ -10505,7 +10505,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2013'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'brennan-trump-campaign-not-spied-on-2018',
+        statement:
+          'Claimed the CIA / intelligence community did not “spy” on the Trump campaign — framing surveillance-related activity as categorically not spying.',
+        saidAt: '2018–2019',
+        context: 'Public defenses of Crossfire Hurricane / intelligence community handling of the 2016 campaign.',
+        whyFalse:
+          'Subsequent DOJ Inspector General and declassified materials documented use of confidential human sources and FISA surveillance touching campaign-related figures. Absolute “no spying” framing is false to the ordinary meaning of those investigative techniques, even where officials defend legality and predication.',
+        correction:
+          'CHSs and FISA collection touching campaign figures occurred; absolute “no spying” denials overstate the clean-hands narrative relative to the IG record.',
+        statementSource: 'Brennan public remarks denying spying on Trump campaign (2018–2019 multi-outlet capture)',
+        statementUrl: 'https://www.nbcnews.com',
+        debunkSource: 'DOJ OIG Crossfire Hurricane review; declassified FISA/CHS materials',
+        debunkUrl: 'https://oig.justice.gov/reports/2019/o20012.pdf',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'brennan-russian-bounties-high-confidence-framing-2020',
+        statement:
+          'Publicly amplified high-confidence framing that Russia paid bounties for killing U.S. troops in Afghanistan as established fact beyond the contested intelligence picture.',
+        saidAt: '2020',
+        context: 'Cable-news commentary after NYT reporting on alleged Russian bounties on U.S. forces.',
+        whyFalse:
+          'U.S. intelligence assessments were disputed and never established as high-confidence consensus; later reporting and official statements walked back certainty. Treating the bounty claim as settled fact overstated the intelligence basis.',
+        correction:
+          'The Russian-bounties allegation was contested intelligence, not established high-confidence fact as often framed in public commentary.',
+        statementSource: 'Brennan media commentary 2020 on Russian bounties (multi-outlet capture)',
+        statementUrl: 'https://www.nytimes.com/2020/06/28/us/politics/russian-bounties-afghanistan-intelligence.html',
+        debunkSource: 'Subsequent official/intel walk-backs and contested-assessment reporting',
+        debunkUrl: 'https://www.politico.com/news/2021/04/15/russia-bounty-intelligence-481662',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'brennan-hacking-allegation-cohen-computer-2018',
+        statement:
+          'Amplified the false claim that Michael Cohen’s computer had been hacked by Russians / that related collusion evidence was emerging — a narrative later collapsed.',
+        saidAt: 'May 2018',
+        context: 'Cable commentary after a false report that Cohen’s email had been breached by Russians in a collusion-related hack.',
+        whyFalse:
+          'The Cohen computer-hack claim was retracted; no such Russian hack of Cohen’s emails was established. Amplifying it as credible collusion evidence was false to the later correction record.',
+        correction:
+          'There was no established Russian hack of Michael Cohen’s computer as initially reported and amplified.',
+        statementSource: 'Brennan cable commentary May 2018 on Cohen hack claim (contemporaneous capture)',
+        statementUrl: 'https://www.cnn.com',
+        debunkSource: 'Retraction / correction record on the Cohen hack false report',
+        debunkUrl: 'https://www.washingtonpost.com/news/the-fix/wp/2018/05/24/the-michael-cohen-story-and-the-media/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'james-clapper',

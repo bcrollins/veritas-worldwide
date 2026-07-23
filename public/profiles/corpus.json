@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:17:23.447Z",
+  "generatedAt": "2026-07-23T10:18:32.221Z",
   "count": 96,
   "profiles": [
     {
@@ -1772,9 +1772,9 @@
         "Torture",
         "Intelligence"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "james-clapper",
