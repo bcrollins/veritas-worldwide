@@ -5823,8 +5823,16 @@ export const PROFILES: PowerProfile[] = [
     state: 'FL',
     photoUrl: getProfilePhoto('matt-gaetz'),
     summary:
-      'Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Primary: OpenSecrets, House record.',
-    tags: ['Former Representative', 'Freedom Caucus', 'Pro-Israel', 'Florida', 'Republican', 'Trump Ally'],
+      'Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact False on “1 of 5” federal murder charges being illegal aliens (cherry-picked USSC year). Primary: OpenSecrets, House record, PolitiFact, USSC.',
+    tags: [
+      'Former Representative',
+      'Freedom Caucus',
+      'Pro-Israel',
+      'Florida',
+      'Republican',
+      'Trump Ally',
+      'Integrity Docket',
+    ],
     career: [
       'Florida House (public bio)',
       '2017–2024 — U.S. House FL-1',
@@ -5893,9 +5901,42 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2017–2024',
       },
+      {
+        claim:
+          'Integrity docket: Feb 2019 claim 1 of 5 federal murder charges are illegal aliens rated False (outdated 2016 USSC sentencing snapshot; multi-year average far lower).',
+        source: 'PolitiFact False; U.S. Sentencing Commission Table 9',
+        url: 'https://www.politifact.com/factchecks/2019/feb/19/matt-gaetz/gaetz-misrepresents-federal-data-murder-immigrants/',
+        tier: 'verified',
+        date: '2019',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'gaetz-one-in-five-federal-murder-illegal-aliens-2019',
+        statement:
+          '“One out of every 5 people that the federal government charges with murder is an illegal alien.”',
+        saidAt: 'February 7, 2019',
+        context: 'CNN interview with Chris Cuomo defending border-wall talking points in a gun-violence discussion.',
+        whyFalse:
+          'PolitiFact rated False. Gaetz’s office pointed to a single-year U.S. Sentencing Commission snapshot (FY2016 ~17.9% of federal murder sentences were “illegal aliens”) — not multi-year charges data, and not a stable “1 of 5” trend. Adjacent years were much lower (~5–7%); multi-year average ~8%. Most murders are state cases, not federal.',
+        correction:
+          'Federal murder sentencing data do not support a durable claim that one in five people charged with murder federally are unauthorized immigrants; 2016 was an outlier year and “charges” ≠ “sentences.”',
+        statementSource: 'CNN Cuomo interview with Matt Gaetz, Feb 7, 2019',
+        statementUrl:
+          'https://www.cnn.com/videos/politics/2019/02/08/matt-gaetz-cuomo-spar-border-wall-guns-bts-cuomo-vpx.cnn',
+        debunkSource: 'PolitiFact — False (Feb 19, 2019); U.S. Sentencing Commission citizenship tables',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/feb/19/matt-gaetz/gaetz-misrepresents-federal-data-murder-immigrants/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/matt-gaetz/summary?cid=N00039794' },
+      {
+        label: 'PolitiFact — 1-in-5 murder (False)',
+        url: 'https://www.politifact.com/factchecks/2019/feb/19/matt-gaetz/gaetz-misrepresents-federal-data-murder-immigrants/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Matt_Gaetz' },
     ],
   },
@@ -5996,7 +6037,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'NY',
     photoUrl: getProfilePhoto('elise-stefanik'),
     summary:
-      'House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Primary sources: OpenSecrets, House leadership record, committee hearings.',
+      'House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Integrity docket: dual-cited PolitiFact False that H.R. 1 would prevent removal of ineligible voters. Primary sources: OpenSecrets, House leadership record, committee hearings, PolitiFact.',
     tags: [
       'House GOP Conference Chair',
       'Pro-Israel',
@@ -6006,6 +6047,7 @@ export const PROFILES: PowerProfile[] = [
       'Republican',
       'Campus Antisemitism Hearings',
       'Iron Dome',
+      'Integrity Docket',
     ],
     career: [
       'George W. Bush White House staff (public bio)',
@@ -6101,12 +6143,43 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: 'April 2024',
       },
+      {
+        claim:
+          'Integrity docket: March 2021 claim H.R. 1 would “prevent removal of ineligible voters from registration rolls” rated False (bill sets evidence standards; does not ban list maintenance).',
+        source: 'PolitiFact False; H.R. 1 text',
+        url: 'https://www.politifact.com/factchecks/2021/mar/04/elise-stefanik/gop-lawmaker-misleads-about-hr-1-and-removal-ineli/',
+        tier: 'verified',
+        date: '2021',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'stefanik-hr1-prevent-removal-ineligible-voters-2021',
+        statement: 'H.R. 1 would “prevent removal of ineligible voters from registration rolls.”',
+        saidAt: 'March 3, 2021',
+        context: 'X post attacking the For the People Act (H.R. 1) during House passage.',
+        whyFalse:
+          'PolitiFact rated False. No section of H.R. 1 bans election officials from removing ineligible registrants. Provisions require objective evidence and notice for removals and bar corrupt interference with registration — list maintenance remains lawful. Election-law experts across the spectrum said the bill does not prevent removal of ineligible voters per se.',
+        correction:
+          'H.R. 1 regulates how removals occur (evidence/notice); it does not prohibit removing dead, moved, or otherwise ineligible voters from the rolls.',
+        statementSource: 'Rep. Elise Stefanik X post, March 3, 2021',
+        statementUrl: 'https://twitter.com/RepStefanik/status/1367115585528745986',
+        debunkSource: 'PolitiFact — False (March 4, 2021); H.R. 1 text + election-law expert synthesis',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/mar/04/elise-stefanik/gop-lawmaker-misleads-about-hr-1-and-removal-ineli/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://stefanik.house.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/elise-stefanik/summary?cid=N00035523' },
       { label: 'House GOP Conference', url: 'https://www.gop.gov' },
       { label: 'Education & Workforce Committee', url: 'https://edworkforce.house.gov' },
+      {
+        label: 'PolitiFact — H.R. 1 voter rolls (False)',
+        url: 'https://www.politifact.com/factchecks/2021/mar/04/elise-stefanik/gop-lawmaker-misleads-about-hr-1-and-removal-ineli/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Elise_Stefanik' },
     ],
   },
@@ -6369,8 +6442,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'SC',
     photoUrl: getProfilePhoto('tim-scott'),
     summary:
-      'South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, Senate roll calls, CRS RL33222 context.',
-    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'South Carolina', 'Republican', 'Iron Dome', 'FMF'],
+      'South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that “Secret Service remains unpaid” during 2026 DHS funding lapse (OBBBA reallocation paid salaries). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.',
+    tags: [
+      'Senator',
+      'Pro-Israel',
+      'AIPAC',
+      'South Carolina',
+      'Republican',
+      'Iron Dome',
+      'FMF',
+      'Integrity Docket',
+    ],
     career: [
       'Insurance business / Charleston County Council / SC House (public bio)',
       '2010 — U.S. House SC-1',
@@ -6447,11 +6529,42 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: April 2026 claim “Secret Service remains unpaid” during DHS funding lapse rated False (administration reallocated OBBBA funds to pay DHS salaries including USSS).',
+        source: 'PolitiFact False; CRS Secret Service funding fact sheet; Trump EO April 3, 2026',
+        url: 'https://www.politifact.com/factchecks/2026/apr/29/tim-scott/secret-service-assassination-shutdown-paychecks/',
+        tier: 'verified',
+        date: '2026',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'scott-secret-service-remains-unpaid-2026',
+        statement: '“Secret Service remains unpaid” during the partial government shutdown.',
+        saidAt: 'April 26, 2026',
+        context: 'X post after White House Correspondents’ Association dinner security incident during DHS funding lapse.',
+        whyFalse:
+          'PolitiFact rated False. Although DHS appropriations had lapsed, the Trump administration reallocated funds under the One Big Beautiful Bill Act (via executive action) to pay DHS employee salaries — including Secret Service. CRS confirmed those funds were being used for all DHS salaries until exhausted or FY2026 appropriations enacted.',
+        correction:
+          'Secret Service personnel were receiving paychecks via OBBBA reallocation during the 2026 DHS funding standoff; absolute “remains unpaid” was false.',
+        statementSource: 'Sen. Tim Scott X post (@votetimscott), April 26, 2026',
+        statementUrl: 'https://x.com/votetimscott/status/2048400904919933054',
+        debunkSource: 'PolitiFact — False (April 29, 2026); CRS funding fact sheet + White House EO',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2026/apr/29/tim-scott/secret-service-assassination-shutdown-paychecks/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.scott.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/tim-scott/summary?cid=N00031782' },
       { label: 'Congress.gov member', url: 'https://www.congress.gov/member/tim-scott/S001184' },
+      {
+        label: 'PolitiFact — Secret Service unpaid (False)',
+        url: 'https://www.politifact.com/factchecks/2026/apr/29/tim-scott/secret-service-assassination-shutdown-paychecks/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Tim_Scott' },
     ],
   },

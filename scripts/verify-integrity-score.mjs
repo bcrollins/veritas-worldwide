@@ -119,6 +119,11 @@ const required = [
   'elizabeth-warren',
   'jared-kushner',
   'rand-paul',
+  'ilhan-omar',
+  'aoc',
+  'matt-gaetz',
+  'elise-stefanik',
+  'tim-scott',
 ];
 const scores = {};
 for (const id of required) {
@@ -486,8 +491,73 @@ for (const f of (randPaulP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('rand-paul dual-cite collision: ' + f.id);
 }
 
+// Ilhan Omar integrity gate
+const omar = scores['ilhan-omar'];
+if (!omar || omar.n < 1) throw new Error('ilhan-omar needs ≥1 verified falsehood, got ' + (omar?.n ?? 0));
+if (omar.score > 90) throw new Error('ilhan-omar score expected ≤90, got ' + omar.score);
+const omarP = getProfileBySlug('ilhan-omar');
+if (!(omarP.documentedFalsehoods || []).some((f) => f.id === 'omar-cair-founded-after-911-2019')) {
+  throw new Error('ilhan-omar missing CAIR founding docket id');
+}
+for (const f of (omarP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('omar dual-cite collision: ' + f.id);
+}
+
+// AOC multi-entry integrity deep-dive
+const aoc = scores['aoc'];
+if (!aoc || aoc.n < 2) throw new Error('aoc needs ≥2 verified falsehoods, got ' + (aoc?.n ?? 0));
+if (aoc.score > 75) throw new Error('aoc score expected ≤75 after deep dive, got ' + aoc.score);
+const aocP = getProfileBySlug('aoc');
+for (const id of [
+  'aoc-pentagon-21t-accounting-m4a-2018',
+  'aoc-represents-more-than-manchin-2021',
+]) {
+  if (!(aocP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('aoc missing docket id: ' + id);
+  }
+}
+for (const f of (aocP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('aoc dual-cite collision: ' + f.id);
+}
+
+// Matt Gaetz integrity gate
+const gaetz = scores['matt-gaetz'];
+if (!gaetz || gaetz.n < 1) throw new Error('matt-gaetz needs ≥1 verified falsehood, got ' + (gaetz?.n ?? 0));
+if (gaetz.score > 90) throw new Error('matt-gaetz score expected ≤90, got ' + gaetz.score);
+const gaetzP = getProfileBySlug('matt-gaetz');
+if (!(gaetzP.documentedFalsehoods || []).some((f) => f.id === 'gaetz-one-in-five-federal-murder-illegal-aliens-2019')) {
+  throw new Error('matt-gaetz missing 1-in-5 murder docket id');
+}
+for (const f of (gaetzP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('gaetz dual-cite collision: ' + f.id);
+}
+
+// Elise Stefanik integrity gate
+const stefanik = scores['elise-stefanik'];
+if (!stefanik || stefanik.n < 1) throw new Error('elise-stefanik needs ≥1 verified falsehood, got ' + (stefanik?.n ?? 0));
+if (stefanik.score > 90) throw new Error('elise-stefanik score expected ≤90, got ' + stefanik.score);
+const stefanikP = getProfileBySlug('elise-stefanik');
+if (!(stefanikP.documentedFalsehoods || []).some((f) => f.id === 'stefanik-hr1-prevent-removal-ineligible-voters-2021')) {
+  throw new Error('elise-stefanik missing H.R. 1 voter-roll docket id');
+}
+for (const f of (stefanikP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('stefanik dual-cite collision: ' + f.id);
+}
+
+// Tim Scott integrity gate
+const timScott = scores['tim-scott'];
+if (!timScott || timScott.n < 1) throw new Error('tim-scott needs ≥1 verified falsehood, got ' + (timScott?.n ?? 0));
+if (timScott.score > 90) throw new Error('tim-scott score expected ≤90, got ' + timScott.score);
+const timScottP = getProfileBySlug('tim-scott');
+if (!(timScottP.documentedFalsehoods || []).some((f) => f.id === 'scott-secret-service-remains-unpaid-2026')) {
+  throw new Error('tim-scott missing Secret Service unpaid docket id');
+}
+for (const f of (timScottP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('tim-scott dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 32) throw new Error('expected ≥32 compiled dockets, got ' + docketCount);
+if (docketCount < 37) throw new Error('expected ≥37 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

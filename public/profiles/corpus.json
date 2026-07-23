@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:52:28.176Z",
+  "generatedAt": "2026-07-23T07:54:11.794Z",
   "count": 96,
   "profiles": [
     {
@@ -980,7 +980,7 @@
       "name": "Matt Gaetz",
       "title": "Former U.S. Representative (R-FL)",
       "category": "politician",
-      "summary": "Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Primary: OpenSecrets, House record.",
+      "summary": "Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact False on “1 of 5” federal murder charges being illegal aliens (cherry-picked USSC year). Primary: OpenSecrets, House record, PolitiFact, USSC.",
       "photo": "/profiles/matt-gaetz.jpg",
       "url": "https://veritasworldwide.com/profile/matt-gaetz",
       "bioguideId": "G000578",
@@ -990,11 +990,12 @@
         "Pro-Israel",
         "Florida",
         "Republican",
-        "Trump Ally"
+        "Trump Ally",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "jim-jordan",
@@ -1023,7 +1024,7 @@
       "name": "Elise Stefanik",
       "title": "U.S. Representative (R-NY-21); House Republican Conference Chair",
       "category": "politician",
-      "summary": "House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Primary sources: OpenSecrets, House leadership record, committee hearings.",
+      "summary": "House Republican Conference Chair and NY-21 representative. High-visibility Trump ally and leading congressional voice on campus antisemitism oversight after October 7. Documented pro-Israel PAC recipient (OpenSecrets). Consistent yes votes on FMF, Iron Dome, and wartime Israel supplementals. Integrity docket: dual-cited PolitiFact False that H.R. 1 would prevent removal of ineligible voters. Primary sources: OpenSecrets, House leadership record, committee hearings, PolitiFact.",
       "photo": "/profiles/elise-stefanik.jpg",
       "url": "https://veritasworldwide.com/profile/elise-stefanik",
       "bioguideId": "S001196",
@@ -1035,11 +1036,12 @@
         "New York",
         "Republican",
         "Campus Antisemitism Hearings",
-        "Iron Dome"
+        "Iron Dome",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "dianne-feinstein",
@@ -1109,7 +1111,7 @@
       "name": "Tim Scott",
       "title": "U.S. Senator (R-SC)",
       "category": "politician",
-      "summary": "South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, Senate roll calls, CRS RL33222 context.",
+      "summary": "South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that “Secret Service remains unpaid” during 2026 DHS funding lapse (OBBBA reallocation paid salaries). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.",
       "photo": "/profiles/tim-scott.jpg",
       "url": "https://veritasworldwide.com/profile/tim-scott",
       "bioguideId": "S001184",
@@ -1120,11 +1122,12 @@
         "South Carolina",
         "Republican",
         "Iron Dome",
-        "FMF"
+        "FMF",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "john-fetterman",
