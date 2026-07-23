@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:14:00.015Z",
+  "generatedAt": "2026-07-23T09:14:21.530Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 149,
-    "timelineEvents": 137,
+    "incidents": 150,
+    "timelineEvents": 138,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 135,
+    "historicalWarCrimesPack": 136,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 89
+      "post-oct7": 90
     },
     "incidentsByTier": {
-      "verified": 147,
+      "verified": 148,
       "circumstantial": 2
     },
-    "childrenTagged": 125,
-    "civiliansTagged": 147,
+    "childrenTagged": 126,
+    "civiliansTagged": 148,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3517,6 +3517,27 @@
       ],
       "tags": [
         "education",
+        "children",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-family-annihilation-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Entire-Family Killed Pattern",
+      "description": "OCHA/Airwars multi-source documentation of incidents killing entire extended families including multiple children.",
+      "source": "OCHA / Airwars / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-family-annihilation-pattern-2023-2025",
+        "gaza-children-killed-pattern-2023-2025",
+        "gaza-housing-destruction-pattern-2023-2025"
+      ],
+      "tags": [
+        "families",
         "children",
         "civilians",
         "gaza"
@@ -9955,6 +9976,50 @@
           "type": "document",
           "label": "WHO public updates",
           "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-family-annihilation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Entire-Family Killed Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (family-annihilation cohort)",
+      "location": "Gaza Strip residential sites",
+      "summary": "OCHA, Airwars, and multi-source reporting document large numbers of incidents in which entire extended families — including multiple children — were killed in single residential strikes. Pattern card for family-scale civilian annihilation distinct from aggregate children-killed and housing-destruction cards.",
+      "evidence": "OCHA family-killed tallies, multi-source name-list investigations, and Airwars/multi-outlet strike analyses establish multi-source entire-family death incidents. Exact family counts evolve; multi-source repeated family-scale annihilation is the claim.",
+      "sources": [
+        {
+          "label": "OCHA civilian casualty materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Airwars / multi-source strike investigations",
+          "url": "https://airwars.org"
+        },
+        {
+          "label": "Multi-outlet family-killed coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Multi-outlet family strike coverage",
+          "url": "https://apnews.com"
         }
       ],
       "tier": "verified",
