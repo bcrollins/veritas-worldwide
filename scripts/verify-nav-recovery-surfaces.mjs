@@ -1848,4 +1848,12 @@ for (const [rel] of surfaces) {
 }
 
 
+
+// RelatedHubs default export and PRIMARY export ultimate end
+const relatedExpEnd = read('src/components/RelatedHubs.tsx')
+assert(relatedExpEnd.includes('export default function RelatedHubs'), 'RelatedHubs default export ultimate end')
+assert(relatedExpEnd.includes('export const PRIMARY_RELATED_HUBS'), 'PRIMARY export ultimate end')
+assert(relatedExpEnd.includes('export interface RelatedHub'), 'RelatedHub interface ultimate end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
