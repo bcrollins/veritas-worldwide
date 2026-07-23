@@ -801,4 +801,9 @@ const stickyDesk = read('src/components/StickyMembershipBar.tsx')
 assert(stickyDesk.includes('md:bottom-0'), 'md:bottom-0 desktop membership')
 assert(stickyDesk.includes('3.75rem'), 'mobile offset above tab 3.75rem')
 
+
+// ResearchHubChips marks active chip with aria-current
+const rhcAria = read('src/components/ResearchHubChips.tsx')
+assert(rhcAria.includes('aria-current'), 'ResearchHubChips aria-current')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
