@@ -2076,7 +2076,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'CA',
     photoUrl: getProfilePhoto('adam-schiff'),
     summary:
-      'California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Integrity docket: dual-cited PolitiFact False on claim committee had “not spoken directly with the whistleblower.” Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, NYT.',
+      'California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Integrity docket: dual-cited PolitiFact False on whistleblower contact and FactCheck.org False on Secret Service “renting Donald Trump golf carts” ($150k went to third-party vendors). Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, FactCheck.org, CNN, NYT.',
     tags: [
       'Senator',
       'Pro-Israel',
@@ -2157,6 +2157,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2019',
       },
+      {
+        claim:
+          'Integrity docket: May 2018 CNN claim Secret Service spent $150k+ “renting Donald Trump golf carts” rated False by FactCheck.org (contracts went to third-party vendors, not Trump Organization).',
+        source: 'FactCheck.org False; CNN New Day transcript; USA Today / FPDS contracts',
+        url: 'https://www.factcheck.org/2018/05/schiff-shanks-trump-golf-cart-story/',
+        tier: 'verified',
+        date: '2018',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -2176,6 +2184,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'schiff-secret-service-trump-golf-carts-2018',
+        statement:
+          '“The federal government has spent over $150,000, just the Secret Service alone, for the privilege of renting Donald Trump golf carts to protect Donald Trump on his rounds.”',
+        saidAt: 'May 15, 2018',
+        context:
+          'CNN New Day interview criticizing Trump Organization self-dealing; Schiff’s office later said it misread a USA Today story on Secret Service golf-cart contracts.',
+        whyFalse:
+          'FactCheck.org rated False. Federal Procurement Data System contracts for the cited golf-cart rentals went to third-party companies (Golf Car & Utility Vehicle Distributors; Associates Golf Car Service), not Trump Organization entities. American Bridge research underlying USA Today did not claim Trump companies received the money; Schiff’s office admitted the misread.',
+        correction:
+          'Secret Service golf-cart rental contracts for Trump protection went to independent vendors, not “Donald Trump golf carts” / Trump Organization rentals as Schiff claimed.',
+        statementSource: 'CNN New Day transcript, May 15, 2018',
+        statementUrl: 'http://transcripts.cnn.com/TRANSCRIPTS/1805/15/nday.05.html',
+        debunkSource: 'FactCheck.org — False (May 17, 2018); FPDS contract research; Schiff office admission',
+        debunkUrl: 'https://www.factcheck.org/2018/05/schiff-shanks-trump-golf-cart-story/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.schiff.senate.gov' },
@@ -2183,6 +2209,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — whistleblower contact (False)',
         url: 'https://www.politifact.com/factchecks/2019/oct/04/adam-schiff/adam-schiffs-false-claim-we-have-not-spoken-direct/',
+      },
+      {
+        label: 'FactCheck.org — Trump golf carts (False)',
+        url: 'https://www.factcheck.org/2018/05/schiff-shanks-trump-golf-cart-story/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Adam_Schiff' },
     ],

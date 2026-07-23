@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:21:56.542Z",
+  "generatedAt": "2026-07-23T08:23:02.499Z",
   "count": 96,
   "profiles": [
     {
@@ -336,7 +336,7 @@
       "name": "Adam Schiff",
       "title": "U.S. Senator (D-CA); former House Intelligence Chair",
       "category": "politician",
-      "summary": "California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Integrity docket: dual-cited PolitiFact False on claim committee had “not spoken directly with the whistleblower.” Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, NYT.",
+      "summary": "California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Integrity docket: dual-cited PolitiFact False on whistleblower contact and FactCheck.org False on Secret Service “renting Donald Trump golf carts” ($150k went to third-party vendors). Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, FactCheck.org, CNN, NYT.",
       "photo": "/profiles/adam-schiff.jpg",
       "url": "https://veritasworldwide.com/profile/adam-schiff",
       "bioguideId": "S001150",
@@ -350,8 +350,8 @@
         "Iron Dome",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
