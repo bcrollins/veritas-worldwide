@@ -193,3 +193,9 @@ Observed green on production bundles (misses=0):
 - Server soft-404: server-soft-404 + Primary hubs + 5 hrefs
 - Health: all checks true · failed=[]
 - pure: 46 suites · recovery 95 surface needles
+
+## Recovery suite 95 needles continuous pure densification
+Post-platformization pure-only intervals lock chrome contracts (membership, cookie,
+safe-area, aria-current, GA, dismiss, copy, Join CTA), destination sets (Home/Search/
+NotFound/detail/dossier family/AIPAC), and package entrypoints. Live matrix repeatedly
+verified **misses=0** with soft-404 5 hubs and health all-true under densify tip advance.
