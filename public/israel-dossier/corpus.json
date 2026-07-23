@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:25:54.991Z",
+  "generatedAt": "2026-07-23T09:26:19.034Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 173,
-    "timelineEvents": 161,
+    "incidents": 174,
+    "timelineEvents": 162,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 159,
+    "historicalWarCrimesPack": 160,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 113
+      "post-oct7": 114
     },
     "incidentsByTier": {
-      "verified": 171,
+      "verified": 172,
       "circumstantial": 2
     },
-    "childrenTagged": 146,
-    "civiliansTagged": 171,
+    "childrenTagged": 147,
+    "civiliansTagged": 172,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4529,6 +4529,27 @@
         "civilians",
         "children",
         "israel"
+      ]
+    },
+    {
+      "id": "tl-iron-dome-intercepts-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Missile Defense Intercepts Pattern",
+      "description": "Multi-source documentation of continuous Iron Dome and related intercepts protecting Israeli civilian areas after October 7.",
+      "source": "Israeli government / multi-outlet / CRS",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-missile-defense-intercepts-civilian-protection-pattern-2023-2025",
+        "gaza-rockets-israeli-civilian-harm-pattern-2023-2025",
+        "hezbollah-rockets-northern-israel-pattern-2023-2025"
+      ],
+      "tags": [
+        "missile-defense",
+        "civilians",
+        "israel",
+        "iron-dome"
       ]
     },
     {
@@ -11515,6 +11536,51 @@
           "type": "document",
           "label": "UNICEF public WASH updates",
           "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-missile-defense-intercepts-civilian-protection-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "iron-dome",
+        "joint-us-israel-missile-defense-coproduction"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Missile Defense Intercepts — Civilian Protection Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (intercept cohort)",
+      "location": "Israeli airspace / population centers under rocket fire",
+      "summary": "Israeli government, multi-source press, and defense reporting document continuous Iron Dome and related intercepts of rockets and drones aimed at Israeli civilian areas after October 7 — a civilian-protection capability pattern that coexists with civilian harm from rockets that penetrate. Pattern card for defensive intercept operations as part of the wartime civilian-risk environment, dual-sourced and non-slogan.",
+      "evidence": "Israeli government public intercept tallies and multi-outlet coverage of Iron Dome operations establish multi-source sustained intercept campaigns. Exact intercept ratios evolve; multi-source continuous defensive intercept activity is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government public defense materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet Iron Dome intercept coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "CRS RL33222 missile-defense context",
+          "url": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
         }
       ],
       "tier": "verified",

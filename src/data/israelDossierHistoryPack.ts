@@ -4275,6 +4275,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-missile-defense-intercepts-civilian-protection-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['iron-dome', 'joint-us-israel-missile-defense-coproduction'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Missile Defense Intercepts — Civilian Protection Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (intercept cohort)',
+    location: 'Israeli airspace / population centers under rocket fire',
+    summary:
+      'Israeli government, multi-source press, and defense reporting document continuous Iron Dome and related intercepts of rockets and drones aimed at Israeli civilian areas after October 7 — a civilian-protection capability pattern that coexists with civilian harm from rockets that penetrate. Pattern card for defensive intercept operations as part of the wartime civilian-risk environment, dual-sourced and non-slogan.',
+    evidence:
+      'Israeli government public intercept tallies and multi-outlet coverage of Iron Dome operations establish multi-source sustained intercept campaigns. Exact intercept ratios evolve; multi-source continuous defensive intercept activity is the claim.',
+    sources: [
+      { label: 'Israeli government public defense materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Iron Dome intercept coverage', url: 'https://apnews.com' },
+      { label: 'CRS RL33222 missile-defense context', url: 'https://www.congress.gov/crs-product/RL33222' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6376,6 +6403,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['water', 'wells', 'children', 'disease', 'gaza'],
   },
+
+  {
+    id: 'tl-iron-dome-intercepts-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Missile Defense Intercepts Pattern',
+    description: 'Multi-source documentation of continuous Iron Dome and related intercepts protecting Israeli civilian areas after October 7.',
+    source: 'Israeli government / multi-outlet / CRS',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-missile-defense-intercepts-civilian-protection-pattern-2023-2025',
+      'gaza-rockets-israeli-civilian-harm-pattern-2023-2025',
+      'hezbollah-rockets-northern-israel-pattern-2023-2025',
+    ],
+    tags: ['missile-defense', 'civilians', 'israel', 'iron-dome'],
+  },
+
 
 
 
