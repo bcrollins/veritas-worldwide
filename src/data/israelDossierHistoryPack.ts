@@ -3816,6 +3816,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'oct7-hostages-medical-neglect-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Hostages Denied Adequate Medical Care Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage medical cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Israeli government hostage disclosures, released-hostage testimony multi-source, and ICRC access-dispute reporting document denial or severe limitation of medical care for civilian hostages held in Gaza — including elderly and chronically ill captives. Pattern card for medical neglect of hostages as a continuous civilian-targeting crime, distinct from hostages-held and deaths-in-captivity cards.',
+    evidence:
+      'Released-hostage multi-source testimony, Israeli government medical disclosures, and ICRC public access statements establish multi-source medical care deficits for captives. Exact clinical case counts evolve; multi-source inadequate medical care in captivity is the claim.',
+    sources: [
+      { label: 'ICRC statements on hostages/detainees', url: 'https://www.icrc.org' },
+      { label: 'Israeli government hostage public record', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage medical testimony coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'ICRC public statements', url: 'https://www.icrc.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5628,6 +5655,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['vaccines', 'children', 'health', 'gaza'],
   },
+
+  {
+    id: 'tl-hostages-medical-neglect-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Hostages Denied Adequate Medical Care Pattern',
+    description: 'Multi-source documentation of inadequate medical care for civilian hostages held in Gaza.',
+    source: 'ICRC / Israeli government / multi-outlet',
+    sourceUrl: 'https://www.icrc.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+      'oct7-hostages-killed-captivity-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medical', 'civilians', 'children', 'terrorism'],
+  },
+
 
 
 
