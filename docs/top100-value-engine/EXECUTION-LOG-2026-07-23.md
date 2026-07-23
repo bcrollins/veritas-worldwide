@@ -201,3 +201,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier + research-pack PASS |
 | Multi-agent | densify-only |
 
+
+## Interval densify — tip **1580** / withVideo **122** / VI **110+**
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza stylet/BVM-seal/PEEP/Yankauer · hostage thank-water/silent-marches/yellow-balloons/wet-concrete · WB grape-buckets/science-fair-boards/picking-combs/honey-jar-lids |
+| VI | ambulance access denied · Mefalsim Oct7 · electricity cuts |
+| Pure | visual + israel-dossier + research-pack PASS |
+| Multi-agent | densify-only |
+
