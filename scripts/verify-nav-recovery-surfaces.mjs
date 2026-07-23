@@ -1915,4 +1915,17 @@ assert(!suiteIsoEnd.includes(densifySrcNeedleEnd), 'no densify sources ultimate 
 assert(suiteIsoEnd.includes('RelatedHubs') && suiteIsoEnd.includes('surfaces'), 'suite owns recovery ultimate end')
 
 
+
+// import thrash blank-line hygiene (RelatedHubs wave pages)
+const thrashPages = [
+  'AboutPage','MembershipPage','PrivacyPage','TermsPage','AccessibilityPage',
+  'TimelinePage','TopicsIndexPage','TopicPage','ArticlePage','ChapterPage',
+  'ComprehensiveProfilePage','SupportSuccessPage',
+]
+for (const name of thrashPages) {
+  const src = read(`src/pages/${name}.tsx`)
+  assert(!/import\s*\{\s*\n\s*\n/.test(src), `${name} import block thrash blank-line`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
