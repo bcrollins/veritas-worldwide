@@ -396,6 +396,15 @@ const nfEmphIa = fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 
 assert((nfEmphIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'NotFound dual RelatedHubs IA')
 assert(nfEmphIa.includes('emphasizeTo="/"') || nfEmphIa.includes("emphasizeTo='/'"), 'NotFound emphasize Record IA')
 
+
+// A11Y_HUBS five destinations IA
+const a11yIa = fs.readFileSync(path.join(root, 'src/pages/AccessibilityPage.tsx'), 'utf8')
+const a11yB = a11yIa.match(/const A11Y_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(a11yB && (a11yB[1].match(/to:/g) || []).length === 5, 'A11Y_HUBS count 5 IA')
+const osintIa = fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePage.tsx'), 'utf8')
+const osintB = osintIa.match(/const OSINT_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(osintB && (osintB[1].match(/to:/g) || []).length === 5, 'OSINT_HUBS count 5 IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
