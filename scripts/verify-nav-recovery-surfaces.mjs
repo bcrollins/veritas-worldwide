@@ -1483,4 +1483,17 @@ for (const [rel, id] of [
 }
 
 
+
+// RelatedHubs component file contracts reaffirm ultimate
+const relatedUltimate = read('src/components/RelatedHubs.tsx')
+assert(relatedUltimate.includes('export default function RelatedHubs'), 'RelatedHubs export ultimate')
+assert(relatedUltimate.includes('export const PRIMARY_RELATED_HUBS'), 'PRIMARY export ultimate')
+assert(relatedUltimate.includes('min-h-[44px]'), 'RelatedHubs 44px ultimate')
+assert(relatedUltimate.includes('no-print'), 'RelatedHubs no-print ultimate')
+assert(relatedUltimate.includes('Related hubs'), 'RelatedHubs aria ultimate')
+assert(relatedUltimate.includes("'dark'") || relatedUltimate.includes('"dark"'), 'RelatedHubs dark ultimate')
+assert(relatedUltimate.includes('excludeTo'), 'RelatedHubs excludeTo ultimate')
+assert((relatedUltimate.match(/to:/g) || []).length >= 5, 'PRIMARY destinations ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
