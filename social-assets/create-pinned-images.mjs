@@ -51,7 +51,7 @@ s1.addText("veritasworldwide.com", { x:2.5,y:8.5,w:5,h:0.7,fontSize:16,color:WHI
 // Bottom accent bar
 s1.addShape(pin1.ShapeType.rect, { x:0,y:9.92,w:10,h:0.08,fill:{color:CRIMSON} });
 
-await pin1.writeFile({ fileName: "/Users/brandonrollins/Documents/GitHub/veritas-worldwide/social-assets/pinned-1-the-record.pptx" });
+await pin1.writeFile({ fileName: "social-assets/pinned-1-the-record.pptx" });
 console.log("✅ Pin 1: The Record (Brand Hero)");
 
 // ═══════════════════════════════════════════════════════════
@@ -103,7 +103,7 @@ s2.addShape(pin2.ShapeType.rect, { x:2.5,y:8.6,w:5,h:0.7,fill:{color:CRIMSON},re
 s2.addText("READ THE FULL DOSSIER", { x:2.5,y:8.6,w:5,h:0.7,fontSize:15,color:WHITE,fontFace:"Arial",bold:true,align:"center",valign:"middle" });
 s2.addShape(pin2.ShapeType.rect, { x:0,y:9.92,w:10,h:0.08,fill:{color:CRIMSON} });
 
-await pin2.writeFile({ fileName: "/Users/brandonrollins/Documents/GitHub/veritas-worldwide/social-assets/pinned-2-israel-dossier.pptx" });
+await pin2.writeFile({ fileName: "social-assets/pinned-2-israel-dossier.pptx" });
 console.log("✅ Pin 2: Israel Dossier Feature");
 
 // ═══════════════════════════════════════════════════════════
@@ -136,7 +136,7 @@ s3.addShape(pin3.ShapeType.rect, { x:2.5,y:8.6,w:5,h:0.7,fill:{color:CRIMSON},re
 s3.addText("veritasworldwide.com", { x:2.5,y:8.6,w:5,h:0.7,fontSize:16,color:WHITE,fontFace:"Arial",bold:true,align:"center",valign:"middle" });
 s3.addShape(pin3.ShapeType.rect, { x:0,y:9.92,w:10,h:0.08,fill:{color:CRIMSON} });
 
-await pin3.writeFile({ fileName: "/Users/brandonrollins/Documents/GitHub/veritas-worldwide/social-assets/pinned-3-share-the-truth.pptx" });
+await pin3.writeFile({ fileName: "social-assets/pinned-3-share-the-truth.pptx" });
 console.log("✅ Pin 3: Share The Truth CTA");
 
 console.log("\n🎉 All 3 pinned profile images generated!");

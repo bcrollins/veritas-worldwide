@@ -77,6 +77,8 @@ const AdminSocialHub = lazy(() => import('./pages/admin/AdminSocialHub'))
 const AdminDisputes = lazy(() => import('./pages/admin/AdminDisputes'))
 const AdminBrandKit = lazy(() => import('./pages/admin/AdminBrandKit'))
 const MediaKitPage = lazy(() => import('./pages/MediaKitPage'))
+const ComprehensiveProfilePage = lazy(() => import('./pages/ComprehensiveProfilePage'))
+const ComprehensiveProfileSuccessPage = lazy(() => import('./pages/ComprehensiveProfileSuccessPage'))
 
 type ShellLink = {
   to: string
@@ -643,6 +645,7 @@ function Footer() {
     { to: '/bookmarks', label: t('nav.bookmarks') },
     { to: '/analytics', label: t('nav.analytics') },
     { to: '/about', label: t('nav.about') },
+    { to: '/comprehensive-profile', label: 'Online Profile ($499)' },
     { to: '/media-kit', label: 'Media Kit' },
     { to: '/accessibility', label: t('nav.accessibility') },
     { to: '/privacy', label: t('nav.privacy') },
@@ -853,6 +856,8 @@ export default function App() {
                 <Route path="/israel-dossier" element={<IsraelDossierPage />} />
                 <Route path="/israel-dossier/briefing" element={<IsraelDossierBriefingPage />} />
                 <Route path="/membership" element={<MembershipPage />} />
+                <Route path="/comprehensive-profile" element={<ComprehensiveProfilePage />} />
+                <Route path="/comprehensive-profile/success" element={<ComprehensiveProfileSuccessPage />} />
                 <Route path="/deep-state" element={<DeepStatePage />} />
                 <Route path="/read" element={<ReadTheBookPage />} />
                 <Route path="/news" element={<NewsPage />} />

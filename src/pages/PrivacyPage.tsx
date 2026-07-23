@@ -78,7 +78,7 @@ export default function PrivacyPage() {
             <section id="collection" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Information We Collect</h2>
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
-                <p>We collect information you provide directly when you create an account, subscribe, or contact us. This includes your email address, name, and payment information (processed securely via Stripe).</p>
+                <p>We collect information you provide directly when you create an account, subscribe, or contact us. If you commission a Comprehensive Online Profile, we also collect the subject identifiers and purpose details you submit for research fulfillment. This includes your email address, name, and payment information (processed securely via Stripe).</p>
                 <p>We automatically collect certain technical data when you visit our site, including IP address, browser type, device information, pages viewed, and referring URL. This data is collected through Google Analytics 4 and our server logs.</p>
                 <p>If you use our current beta discussion tools, comments may be stored only in your browser on this device. We will update this policy before any shared forum system begins collecting centrally hosted discussion content or broader community profile data.</p>
               </div>
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
                 <p>We integrate with the following third-party services, each governed by their own privacy policies:</p>
                 <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li><strong className="text-ink">Stripe</strong> — Payment processing for subscriptions</li>
+                  <li><strong className="text-ink">Stripe</strong> — Payment processing for subscriptions and the optional Comprehensive Online Profile service</li>
                   <li><strong className="text-ink">Google Analytics 4</strong> — Site usage analytics</li>
                   <li><strong className="text-ink">HubSpot</strong> — CRM and email communications</li>
                   <li><strong className="text-ink">Railway</strong> — Application hosting</li>

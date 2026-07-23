@@ -155,6 +155,10 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         title: 'Membership | Veritas Worldwide',
         desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.',
       },
+      '/comprehensive-profile': {
+        title: 'Comprehensive Online Profile ($499) | Veritas Worldwide',
+        desc: 'Commission a $499 authenticated OSINT profile: every verified public trail on a subject, device/account links only when proven, full methodology appendix.',
+      },
       '/deep-state': {
         title: 'The Deep State — The Epstein Network | Veritas Worldwide',
         desc: 'Interactive Epstein network dossier: court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',

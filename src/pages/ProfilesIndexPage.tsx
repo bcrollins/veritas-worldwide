@@ -334,6 +334,19 @@ export default function ProfilesIndexPage(): React.ReactNode {
           <h1 className="font-display text-4xl md:text-5xl font-bold text-ink leading-tight max-w-4xl">
             The people layer behind the record.
           </h1>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="border border-border bg-surface p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-crimson">Private research</p>
+            <p className="font-body text-sm text-ink-muted mt-1">Need a deeper, authenticated dossier on any person? Commission a Comprehensive Online Profile for $499.</p>
+          </div>
+          <Link to="/comprehensive-profile" className="inline-flex min-h-[44px] items-center justify-center px-5 bg-obsidian text-white font-sans text-xs font-semibold tracking-wide uppercase hover:bg-crimson whitespace-nowrap">
+            Online Profile — $499
+          </Link>
+        </div>
+      </div>
+
           <p className="font-body text-lg text-ink-muted leading-relaxed max-w-3xl mt-5">
             Veritas profiles are built to show who sits inside each corridor of power, what is documented
             about them, and where the evidence trail is strongest. This is the quickest way to move from a

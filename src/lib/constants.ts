@@ -8,6 +8,48 @@ export const DONATE_URL = 'https://buy.stripe.com/eVqeVd0mTbaE3FDaCrasg0d'
 /** Site tagline — displayed in header */
 export const TAGLINE = 'No party. No agenda. Just the record.'
 
+/**
+ * Comprehensive Online Profile — fixed-price OSINT deliverable.
+ * Primary checkout: server creates a Stripe Checkout Session ($499) when
+ * STRIPE_SECRET_KEY is configured. Optional static Payment Link override:
+ * VITE_COMPREHENSIVE_PROFILE_CHECKOUT_URL or COMPREHENSIVE_PROFILE_CHECKOUT_URL.
+ */
+export const COMPREHENSIVE_PROFILE = {
+  name: 'Comprehensive Online Profile',
+  slug: 'comprehensive-profile',
+  priceUsd: 499,
+  currency: 'USD',
+  deliveryBusinessDays: '5–10',
+  contactEmail: 'rights@veritasworldwide.com',
+  /** Optional static Payment Link; prefer dynamic /api/services/comprehensive-profile/checkout */
+  /** Optional static Payment Link; prefer dynamic server checkout */
+  checkoutUrl: '',
+  tagline: 'Every public, device-verified trail — one authenticated report.',
+  scope: [
+    'Identity resolution across public name, alias, and entity variants',
+    'Open-web, social, professional, and news presence mapping',
+    'Court, corporate, property, and regulatory public-record trails (jurisdiction-dependent)',
+    'Device/account linkage only when independently verifiable and lawfully obtainable',
+    'Source-backed dossier with evidence tiers and methodology appendix',
+    'Authenticated deliverable: sources, capture dates, and verification notes',
+  ],
+  exclusions: [
+    'No illegal hacking, credential theft, or private-system intrusion',
+    'No confidential medical, sealed, or illegally obtained records',
+    'No stalking facilitation — lawful purpose attestation required',
+    'No guarantee that every rumor is true; only authenticated public trails',
+  ],
+  methodology: [
+    'Intake: identify the subject with enough disambiguators to avoid misattribution',
+    'Scope lock: confirm lawful purpose and report boundaries in writing',
+    'Collection: public web, official records, archived captures, and corroborating primary sources',
+    'Authentication: each finding requires a durable source URL or document handle plus capture metadata',
+    'Device/account claims: included only when the link is verified to the subject (not inferred alone)',
+    'Synthesis: structured report with evidence tiers (Verified / Corroborated / Unconfirmed)',
+    'Delivery: encrypted handoff + methodology appendix for independent review',
+  ],
+} as const
+
 /** Membership tier payment links */
 export const MEMBERSHIP = {
   correspondent: {

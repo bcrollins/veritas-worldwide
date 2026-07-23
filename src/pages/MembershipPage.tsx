@@ -339,6 +339,25 @@ export default function MembershipPage() {
         <p className="font-sans text-[0.6rem] text-ink-faint text-center mt-5 tracking-wide">
           Secure Stripe checkout · Cancel anytime · Core archive remains free
         </p>
+        <div className="mt-12 max-w-3xl mx-auto border border-border bg-surface p-6 md:p-8 text-center">
+          <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-crimson mb-2">
+            Research service
+          </p>
+          <h2 className="font-display text-2xl font-bold text-ink mb-2">
+            Need a private, authenticated profile on any person?
+          </h2>
+          <p className="font-body text-sm text-ink-muted leading-relaxed mb-5">
+            Commission a Comprehensive Online Profile for $499 — expert OSINT investigators gather every
+            verified public trail, including device and account identifiers only when authenticated to the
+            subject, with full methodology.
+          </p>
+          <Link
+            to="/comprehensive-profile"
+            className="inline-flex min-h-[44px] items-center px-6 bg-obsidian text-white font-sans text-xs font-semibold tracking-wide uppercase hover:bg-crimson transition-colors"
+          >
+            Comprehensive Online Profile — $499
+          </Link>
+        </div>
         <p className="font-sans text-[0.55rem] text-ink-faint text-center mt-2 tracking-wide max-w-xl mx-auto leading-relaxed">
           After payment, return to{' '}
           <Link to="/membership/success" className="text-crimson hover:underline">

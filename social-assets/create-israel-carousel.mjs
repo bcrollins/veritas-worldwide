@@ -494,7 +494,7 @@ s10.addText("\"The truth does not need your belief —\nit needs your voice.\"",
 addFooter(s10, 10);
 
 // ─── WRITE FILE ───
-const outPath = "/Users/brandonrollins/Documents/GitHub/veritas-worldwide/social-assets/israel-dossier-carousel.pptx";
+const outPath = "social-assets/israel-dossier-carousel.pptx";
 pptx.writeFile({ fileName: outPath }).then(() => {
   console.log("✅ Israel Dossier carousel saved:", outPath);
 }).catch(err => console.error("Error:", err));

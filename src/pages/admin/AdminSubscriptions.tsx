@@ -20,6 +20,12 @@ function getStripeLinkReference(url: string) {
 
 const STRIPE_PRODUCTS = [
   {
+    id: 'comprehensive-profile',
+    name: 'Comprehensive Online Profile',
+    price: '$499 one-time',
+    href: '/comprehensive-profile',
+  },
+  {
     id: getStripeLinkReference(MEMBERSHIP.correspondent.monthlyUrl),
     name: MEMBERSHIP.correspondent.name,
     price: `$${MEMBERSHIP.correspondent.monthlyPrice}/mo · $${MEMBERSHIP.correspondent.annualPrice}/yr`,

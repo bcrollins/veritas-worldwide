@@ -169,6 +169,7 @@ const STATIC_ANALYTICS_TITLES = {
   '/methodology': `Methodology & Evidence Standards | The Record — ${ANALYTICS_SITE_NAME}`,
   '/sources': `Sources & Bibliography | The Record — ${ANALYTICS_SITE_NAME}`,
   '/membership': `Membership | ${ANALYTICS_SITE_NAME}`,
+  '/comprehensive-profile': `Comprehensive Online Profile ($499) | ${ANALYTICS_SITE_NAME}`,
   '/analytics': `Reader Analytics | The Record — ${ANALYTICS_SITE_NAME}`,
   '/read': `Read The Record | ${ANALYTICS_SITE_NAME}`,
   '/news': `Current Events — Primary Source Journalism | ${ANALYTICS_SITE_NAME}`,
@@ -927,6 +928,8 @@ const ANALYTICS_EVENTS = new Set([
   'checkout_started',
   'donation_started',
   'payment_completed',
+  'service_checkout_started',
+  'service_order_recorded',
 ])
 
 function getSignupEventCount(eventCounts) {
@@ -1801,6 +1804,164 @@ app.use((req, res, next) => {
   return res.send('Not found')
 })
 
+
+// ─── Comprehensive Online Profile ($499) ─────────────────────────────────────
+// Intake + Stripe Checkout Session (or static Payment Link fallback).
+// Orders stored under data/osint-orders.ndjson (operator pickup). Entity-only.
+
+const OSINT_ORDERS_PATH = path.join(__dirname, 'data', 'osint-orders.ndjson')
+const OSINT_PRICE_CENTS = 49900
+const OSINT_PRODUCT_NAME = 'Comprehensive Online Profile'
+
+function ensureOsintOrdersFile() {
+  const dir = path.dirname(OSINT_ORDERS_PATH)
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+  if (!fs.existsSync(OSINT_ORDERS_PATH)) fs.writeFileSync(OSINT_ORDERS_PATH, '', 'utf8')
+}
+
+function appendOsintOrder(record) {
+  ensureOsintOrdersFile()
+  fs.appendFileSync(OSINT_ORDERS_PATH, `${JSON.stringify(record)}\n`, 'utf8')
+}
+
+function sanitizeOsintString(value, max = 2000) {
+  if (typeof value !== 'string') return ''
+  return value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '').trim().slice(0, max)
+}
+
+function isValidEmailLoose(email) {
+  return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254
+}
+
+async function createStripeCheckoutSessionForOsint({ orderId, email, successUrl, cancelUrl }) {
+  const key = process.env.STRIPE_SECRET_KEY
+  if (!key) return null
+
+  const body = new URLSearchParams()
+  body.set('mode', 'payment')
+  body.set('success_url', successUrl)
+  body.set('cancel_url', cancelUrl)
+  body.set('client_reference_id', orderId.slice(0, 200))
+  body.set('customer_email', email)
+  body.set('metadata[order_id]', orderId)
+  body.set('metadata[service]', 'comprehensive_profile')
+  body.set('line_items[0][quantity]', '1')
+  body.set('line_items[0][price_data][currency]', 'usd')
+  body.set('line_items[0][price_data][unit_amount]', String(OSINT_PRICE_CENTS))
+  body.set('line_items[0][price_data][product_data][name]', OSINT_PRODUCT_NAME)
+  body.set(
+    'line_items[0][price_data][product_data][description]',
+    'Authenticated open-source comprehensive online profile with methodology appendix'
+  )
+
+  const res = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${key}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body,
+  })
+
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) {
+    console.warn('[osint] Stripe checkout session failed', res.status, data?.error?.message || data)
+    return null
+  }
+  return typeof data.url === 'string' ? data.url : null
+}
+
+app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '48kb' }), async (req, res) => {
+  try {
+    const body = req.body || {}
+    const clientEmail = sanitizeOsintString(body.clientEmail, 254).toLowerCase()
+    const clientName = sanitizeOsintString(body.clientName, 200)
+    const subjectFullName = sanitizeOsintString(body.subjectFullName, 300)
+
+    if (!isValidEmailLoose(clientEmail) || !clientName || subjectFullName.length < 2) {
+      return res.status(400).json({ error: 'Client name, valid email, and subject full name are required.' })
+    }
+    if (!body.attestLawful || !body.attestNoHarassment || !body.attestAdult) {
+      return res.status(400).json({ error: 'All legal attestations are required.' })
+    }
+
+    const orderId = `osint_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`
+    const record = {
+      orderId,
+      createdAt: new Date().toISOString(),
+      status: 'checkout_pending',
+      priceUsd: 499,
+      clientName,
+      clientEmail,
+      subjectFullName,
+      subjectAliases: sanitizeOsintString(body.subjectAliases, 500),
+      subjectLocation: sanitizeOsintString(body.subjectLocation, 300),
+      subjectDobOrAge: sanitizeOsintString(body.subjectDobOrAge, 80),
+      subjectIdentifiers: sanitizeOsintString(body.subjectIdentifiers, 2000),
+      lawfulPurpose: sanitizeOsintString(body.lawfulPurpose, 80),
+      purposeDetail: sanitizeOsintString(body.purposeDetail, 2000),
+      knownLinks: sanitizeOsintString(body.knownLinks, 4000),
+      notes: sanitizeOsintString(body.notes, 4000),
+      attestLawful: true,
+      attestNoHarassment: true,
+      attestAdult: true,
+      ip: typeof req.ip === 'string' ? req.ip.slice(0, 64) : '',
+      userAgent: sanitizeOsintString(req.get('user-agent') || '', 400),
+    }
+
+    appendOsintOrder(record)
+
+    const site = process.env.PUBLIC_SITE_URL || 'https://veritasworldwide.com'
+    const successUrl = `${site}/comprehensive-profile/success?order=${encodeURIComponent(orderId)}`
+    const cancelUrl = `${site}/comprehensive-profile?canceled=1`
+
+    let checkoutUrl = await createStripeCheckoutSessionForOsint({
+      orderId,
+      email: clientEmail,
+      successUrl,
+      cancelUrl,
+    })
+
+    if (!checkoutUrl) {
+      checkoutUrl =
+        process.env.COMPREHENSIVE_PROFILE_CHECKOUT_URL ||
+        process.env.VITE_COMPREHENSIVE_PROFILE_CHECKOUT_URL ||
+        ''
+    }
+
+    if (!checkoutUrl) {
+      // Lead captured; operator completes payment offline. Do not 500 — product surface stays usable.
+      return res.status(202).json({
+        orderId,
+        message:
+          'Order intake recorded. Secure checkout is not configured on this deployment; Veritas will email a payment link within one business day.',
+      })
+    }
+
+    res.setHeader('Cache-Control', 'no-store')
+    return res.json({ orderId, checkoutUrl })
+  } catch (err) {
+    console.error('[osint] checkout error', err?.message || err)
+    return res.status(500).json({ error: 'Unable to start checkout. Please try again or email rights@veritasworldwide.com.' })
+  }
+})
+
+app.get('/api/services/comprehensive-profile/health', (_req, res) => {
+  const stripeConfigured = Boolean(process.env.STRIPE_SECRET_KEY)
+  const linkConfigured = Boolean(
+    process.env.COMPREHENSIVE_PROFILE_CHECKOUT_URL || process.env.VITE_COMPREHENSIVE_PROFILE_CHECKOUT_URL
+  )
+  res.setHeader('Cache-Control', 'no-store')
+  res.json({
+    service: 'comprehensive_profile',
+    priceUsd: 499,
+    checkoutReady: stripeConfigured || linkConfigured,
+    stripeConfigured,
+    linkConfigured,
+  })
+})
+
+
 app.use('/api', (req, res) => {
   res.status(404).json({ error: 'API route not found' })
 })
@@ -1833,6 +1994,8 @@ function isKnownSpaRoute(pathname) {
     '/bernie',
     '/bible',
     '/record-of-jesus-christ',
+    '/comprehensive-profile',
+    '/comprehensive-profile/success',
     '/forum',
     '/institute',
     '/institute/book',
