@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:11:53.286Z",
+  "generatedAt": "2026-07-23T10:13:41.443Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 315,
-    "timelineEvents": 303,
+    "incidents": 318,
+    "timelineEvents": 306,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 301,
+    "historicalWarCrimesPack": 304,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 255
+      "post-oct7": 258
     },
     "incidentsByTier": {
-      "verified": 313,
+      "verified": 316,
       "circumstantial": 2
     },
-    "childrenTagged": 283,
-    "civiliansTagged": 313,
+    "childrenTagged": 286,
+    "civiliansTagged": 316,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3904,6 +3904,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-vitamin-k-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Vitamin-K Deficiency Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated vitamin-K deficiency risk for newborns and children.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-vitamin-k-deficiency-risk-pattern-2023-2025",
+        "gaza-maternity-wards-collapse-pattern-2023-2025",
+        "gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025"
+      ],
+      "tags": [
+        "vitamin-k",
+        "children",
+        "neonatal",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-zinc-vita-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -6056,6 +6077,28 @@
       ]
     },
     {
+      "id": "tl-hostages-photo-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Family Photographs Pattern",
+      "description": "Multi-source documentation of confiscation of personal photographs for civilian hostages.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-family-photographs-pattern-2023-2025",
+        "israel-hostages-denied-news-information-pattern-2023-2025",
+        "oct7-hostages-held-pattern"
+      ],
+      "tags": [
+        "hostages",
+        "isolation",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-hygiene-items-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7534,6 +7577,27 @@
         "homes",
         "civilians",
         "children",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-imitation-checkpoints-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Imitation Checkpoints Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler-run imitation checkpoints after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-checkpoint-imitation-pattern-2023-2025",
+        "west-bank-checkpoint-movement-restriction-pattern-2023-2025",
+        "west-bank-settler-road-blocks-pattern-2023-2025"
+      ],
+      "tags": [
+        "checkpoints",
+        "settlers",
+        "access",
         "west-bank"
       ]
     },
@@ -20388,6 +20452,134 @@
         },
         {
           "label": "Multi-outlet settler drone coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-vitamin-k-deficiency-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Vitamin-K Deficiency Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (vitamin-K cohort)",
+      "location": "Gaza Strip clinics, maternity wards, and displacement sites",
+      "summary": "WHO, UNICEF, and multi-source health reporting document elevated vitamin-K deficiency risk for newborns and children under collapsed maternity/neonatal prophylaxis and green-vegetable shortages — a bleeding-risk pattern distinct from other micronutrient cards.",
+      "evidence": "WHO neonatal/nutrition materials, UNICEF child-health notes, and multi-outlet coverage establish multi-source vitamin-K risk elevation. Exact clinical counts are incomplete; multi-source wartime pediatric vitamin-K risk is the claim.",
+      "sources": [
+        {
+          "label": "WHO neonatal / nutrition materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza neonatal nutrition coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-family-photographs-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Family Photographs Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (photo-denial cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document confiscation of personal photographs and denial of family images for Israeli civilian hostages — a psychological-control pattern distinct from information-denial and communication-blackout cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source personal-photo confiscation. Exact practices vary; multi-source family-photograph denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-checkpoint-imitation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Imitation Checkpoints Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (imitation-checkpoint cohort)",
+      "location": "West Bank village roads and agricultural approaches",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler-run imitation checkpoints after October 7 — armed civilians stopping Palestinian cars without legal authority. Pattern card for imitation checkpoints distinct from military checkpoints and roadblocks cards.",
+      "evidence": "OCHA access materials, multi-source case reporting, and multi-outlet coverage establish multi-source settler imitation checkpoints. Exact incident counts evolve; multi-source wartime settler imitation checkpoints is the claim.",
+      "sources": [
+        {
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem freedom of movement materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet settler checkpoint coverage",
           "url": "https://apnews.com"
         }
       ],
