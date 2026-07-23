@@ -3870,6 +3870,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-search-rescue-equipment-destroyed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Search-and-Rescue Equipment Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (SAR equipment cohort)',
+    location: 'Gaza Strip Civil Defense facilities / rubble sites',
+    summary:
+      'Gaza Civil Defense, OCHA, and multi-source reporting document destruction of fire trucks, excavators, and search-and-rescue gear needed to free civilians from rubble — a capability-collapse pattern amplifying civilian deaths under rubble. Pattern card distinct from civil-defense personnel killed card.',
+    evidence:
+      'Civil Defense equipment loss statements, multi-source visual reporting, and OCHA protection notes establish multi-source SAR equipment destruction. Exact vehicle counts evolve; multi-source SAR capability collapse is the claim.',
+    sources: [
+      { label: 'OCHA protection / humanitarian materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Civil Defense equipment coverage', url: 'https://apnews.com' },
+      { label: 'OHCHR public materials', url: 'https://www.ohchr.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5716,6 +5743,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['waste', 'disease', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-sar-equipment-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Search-and-Rescue Equipment Destruction Pattern',
+    description: 'Multi-source documentation of destroyed fire trucks, excavators, and SAR gear needed to free civilians from rubble.',
+    source: 'OCHA / multi-outlet / OHCHR',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-search-rescue-equipment-destroyed-pattern-2023-2025',
+      'gaza-civil-defense-killed-pattern-2023-2025',
+      'gaza-rubble-uxo-waste-pattern-2023-2025',
+    ],
+    tags: ['sar', 'civil-defense', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
