@@ -790,4 +790,9 @@ assert(stickyJoin.includes('Join'), 'Join CTA label present')
 assert(stickyJoin.includes('uppercase') || stickyJoin.includes('tracking-'), 'Join CTA tracking/uppercase chrome')
 assert(stickyJoin.includes('bg-crimson'), 'Join CTA bg-crimson')
 
+
+// Sticky membership entrance animation
+const stickyAnim = read('src/components/StickyMembershipBar.tsx')
+assert(stickyAnim.includes('animate-slide-up'), 'animate-slide-up entrance lock')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
