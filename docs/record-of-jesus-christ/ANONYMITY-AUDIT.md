@@ -25,7 +25,7 @@ Sophisticated OSINT on public Veritas surfaces finds **zero recoverable path** t
 | GitHub remote org/user namespace | Hosting under a personal GH account remains an infrastructure OPSEC concern | Transfer repo to org-only identity; scrub git author history offline |
 | Git commit author emails in history | Pre-2026-07-23 commits may still use personal author identity in history | Future commits: local `user.name=Veritas Worldwide` / `user.email=rights@veritasworldwide.com`. Offline `git filter-repo` for full history rewrite is a deliberate OPSEC project |
 | WHOIS / Railway billing KYC | Outside this codebase | Confirm privacy registration + entity billing |
-| Bernie Show page family branding | Product surface with shared surname | Policy decision: retain as named public figure page vs isolate |
+| Bernie Show page family branding | Product surface with shared surname | **Mitigated 2026-07-23:** server X-Robots-Tag + robots.txt Disallow + bot-meta/client noindex so crawlers cannot index the page; residual surname still in HTML body for intentional product branding |
 | Password previously committed in git history | Rotate admin password; set `VITE_ADMIN_PASSWORD_HASH` | Required before relying on client admin |
 | Ops/outreach docs with personal byline | Scrubbed 2026-07-23: entity-only in SEO ops scorecard + outreach templates; pure floors forbid personal byline | Keep entity-only; future commits use Veritas Worldwide git author |
 
