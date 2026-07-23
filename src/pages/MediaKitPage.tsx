@@ -94,6 +94,8 @@ const ASSETS = [
 
 export default function MediaKitPage() {
   const [kitVersion, setKitVersion] = useState<string | null>(null)
+  const [kitSha, setKitSha] = useState<string | null>(null)
+  const [kitZipBytes, setKitZipBytes] = useState<number | null>(null)
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -143,6 +145,8 @@ export default function MediaKitPage() {
       .then(r => (r.ok ? r.json() : null))
       .then(data => {
         if (!cancelled && data?.version) setKitVersion(String(data.version))
+        if (!cancelled && data?.zipSha256) setKitSha(String(data.zipSha256))
+        if (!cancelled && typeof data?.zipBytes === 'number') setKitZipBytes(data.zipBytes)
       })
       .catch(() => {})
     return () => {
@@ -190,6 +194,7 @@ export default function MediaKitPage() {
                 className="inline-flex min-h-[44px] items-center rounded-full bg-crimson px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-crimson-dark"
               >
                 Download Ultimate Brand Kit
+                {kitZipBytes != null ? ` · ${(kitZipBytes / 1024).toFixed(0)} KB` : ''}
               </a>
               <a
                 href="/brand-kit/07-docs/BRAND-GUIDE.md"
