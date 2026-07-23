@@ -113,3 +113,9 @@ News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, leg
 76. a11y floors credit RelatedHubs/ResearchHubChips/DossierHubSpokes mounts
 77. Pure recovery **101 surface needles** · RelatedHubs breadth ≥28 · pure 46 green
 
+## Sprint 7d — Home underfold + soft-404 secondary (SHIPPED)
+78. Home underfold RelatedHubs `home-related-hubs` exclude Record  
+79. Soft-404 secondary RelatedHubs `not-found-secondary-hubs`  
+80. Pure recovery **102 surface needles** · RelatedHubs breadth ≥30  
+81. Live CORE + soft-404 100% green under densify tip ≥2600  
+
