@@ -913,4 +913,10 @@ assert(analyticsHubsSrc.includes('analytics-related-hubs'), 'analytics-related-h
 assert(analyticsHubsSrc.includes('/read'), 'Analytics Read dest unique final')
 assert(analyticsHubsSrc.includes('/search'), 'Analytics Search dest unique final')
 
+
+// Accessibility RelatedHubs About destination
+const a11yHubsSrc = read('src/pages/AccessibilityPage.tsx')
+assert(a11yHubsSrc.includes('accessibility-related-hubs'), 'accessibility-related-hubs testid')
+assert(a11yHubsSrc.includes('/about') || a11yHubsSrc.includes('/read'), 'A11y About dest unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
