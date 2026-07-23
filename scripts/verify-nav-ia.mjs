@@ -250,6 +250,11 @@ assert(tabBarBody.includes("to: '/'") || tabBarBody.includes('to: "/"') || tabBa
 const tabTos = (tabBarBody.match(/to:\s*['"][^'"]+['"]/g) || [])
 assert(tabTos.length >= 5, `MobileTabBar destinations ${tabTos.length} < 5`)
 
+
+// Account drawer retains Membership + legal without expanding primary hubs
+assert(app.includes('/membership'), 'shell retains Membership')
+assert(app.includes('/privacy') && app.includes('/terms'), 'shell retains Privacy+Terms')
+assert(app.includes('/about'), 'shell retains About')
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
