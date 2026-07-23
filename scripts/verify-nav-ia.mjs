@@ -259,6 +259,10 @@ assert(app.includes('/about'), 'shell retains About')
 // Research drawer retains methodology/sources/pack without primary expansion
 assert(app.includes('/methodology') && app.includes('/sources'), 'shell retains Methodology+Sources')
 assert(app.includes('/content-pack') || app.includes('/researcher'), 'shell retains pack or researcher')
+
+// Browse drawer re-homes News + Forum (no More junk)
+assert(app.includes('/news') && app.includes('/forum'), 'Browse drawer News+Forum')
+assert(!/label:\s*['"]More['"]/.test(app), 'No More junk drawer label')
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
