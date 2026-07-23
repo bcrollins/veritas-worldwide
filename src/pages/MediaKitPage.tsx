@@ -57,6 +57,7 @@ const ASSETS = [
       { href: '/brand-kit/04-social/discord-invite.svg', label: 'Discord invite' },
       { href: '/brand-kit/04-social/citation-card.svg', label: 'Citation card' },
       { href: '/brand-kit/04-social/pinterest-pin.svg', label: 'Pinterest pin' },
+      { href: '/brand-kit/04-social/tiktok-cover.svg', label: 'TikTok cover' },
       { href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md', label: 'Asset matrix' },
       { href: '/brand-kit/07-docs/SOCIAL-LAUNCH.md', label: 'Launch checklist' },
     ],

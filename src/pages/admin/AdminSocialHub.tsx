@@ -62,6 +62,7 @@ const BRAND_ASSETS = {
   discordInvite: '/brand-kit/04-social/discord-invite.svg',
   citationCard: '/brand-kit/04-social/citation-card.svg',
   pinterestPin: '/brand-kit/04-social/pinterest-pin.svg',
+  tiktokCover: '/brand-kit/04-social/tiktok-cover.svg',
   correctionNotice: '/brand-kit/09-templates/correction-notice.html',
   pressContact: '/brand-kit/07-docs/PRESS-CONTACT.md',
   pressVcard: '/brand-kit/09-templates/press-contact.vcf',
@@ -127,6 +128,7 @@ const PLATFORM_SETUP: Record<string, string[]> = {
   'TikTok': [
     'Create account · handle @veritasworldwidepress',
     `Upload profile: ${BRAND_ASSETS.profile}`,
+    `Cover / series art 1080×1920: ${BRAND_ASSETS.tiktokCover}`,
     'Set bio (short) + link',
     'Post 3+ intro videos',
   ],

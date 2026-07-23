@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.3'
+const KIT_VERSION = '2.9.4'
 
 const C = {
   parchment: '#FAF8F5',
@@ -443,7 +443,7 @@ All paths are relative to \`https://veritasworldwide.com\`.
 | **LinkedIn Company** | \`/brand-kit/01-logos/logo-mark-512.png\` | \`/brand-kit/04-social/social-banner-linkedin.svg\` (1584×396) | Company: Veritas Worldwide Press |
 | **Facebook Page** | profile PNG | \`social-banner-facebook.svg\` (820×312) | News/Media category |
 | **YouTube** | app-icon / social-profile | \`social-banner-youtube.svg\` (2560×1440) | @VeritasWorldwide |
-| **TikTok** | social-profile-400.png | N/A | @veritasworldwidepress |
+| **TikTok** | social-profile-400.png | \`tiktok-cover.svg\` (1080×1920) | @veritasworldwidepress |
 | **Pinterest** | social-profile | \`pinterest-pin.svg\` (1000×1500) | veritasworldwide |
 | **Substack / Newsletter** | logo-mark-512 | \`newsletter-header.svg\` (1200×400) | Weekly dispatch header |
 | **Podcast (Apple/Spotify)** | \`podcast-cover.svg\` / \`.png\` (1400×1400) | — | The Record cover art |
@@ -695,7 +695,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.3 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.4 — ${new Date().toISOString().slice(0, 10)}
+- TikTok vertical cover template (1080×1920)
+
+## 2.9.3
 - Static media-kit.html links evidence tiers, Pinterest, social launch checklist
 
 ## 2.9.2
@@ -1025,6 +1028,25 @@ Always use **Verified / Circumstantial / Disputed** — see \`07-docs/EVIDENCE-T
 - vCard: 09-templates/press-contact.vcf
 - Corrections: 09-templates/correction-notice.html
 `
+}
+
+
+function tiktokCoverSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="TikTok cover template">
+  <rect width="1080" height="1920" fill="${C.black}"/>
+  <rect x="0" y="0" width="1080" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1912" width="1080" height="8" fill="${C.crimson}"/>
+  <text x="80" y="200" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6" fill="${C.gold}">TIKTOK · VERITAS WORLDWIDE</text>
+  <text x="80" y="720" font-family="Georgia, serif" font-size="64" font-weight="700" fill="${C.white}">Document the</text>
+  <text x="80" y="810" font-family="Georgia, serif" font-size="64" font-weight="700" fill="${C.white}">power structure.</text>
+  <text x="80" y="940" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record.</text>
+  <text x="80" y="1000" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.7)">Your conclusions.</text>
+  <line x1="80" y1="1100" x2="320" y2="1100" stroke="${C.crimson}" stroke-width="2"/>
+  <circle cx="900" cy="1600" r="80" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="900" y="1628" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="700" fill="${C.white}">V</text>
+  <text x="80" y="1760" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+</svg>`
 }
 
 function brandVoiceMd() {
@@ -1414,6 +1436,7 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('04-social/discord-invite.svg', discordInviteSvg())
   writeSvg('04-social/citation-card.svg', citationCardSvg())
   writeSvg('04-social/pinterest-pin.svg', pinterestPinSvg())
+  writeSvg('04-social/tiktok-cover.svg', tiktokCoverSvg())
   writeFileSync(join(KIT, '07-docs', 'SOCIAL-LAUNCH.md'), socialLaunchMd())
   writeFileSync(join(KIT, '09-templates', 'correction-notice.html'), correctionNoticeHtml())
 
@@ -1466,6 +1489,7 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/discord-invite.svg', '04-social/discord-invite.png', 1920],
     ['04-social/citation-card.svg', '04-social/citation-card.png', 1080],
     ['04-social/pinterest-pin.svg', '04-social/pinterest-pin.png', 1000],
+    ['04-social/tiktok-cover.svg', '04-social/tiktok-cover.png', 1080],
   ]
   const criticalPng = new Set([
     '01-logos/logo-mark-512.png',
@@ -1602,6 +1626,7 @@ Editorial and licensing: rights@veritasworldwide.com
       bluesky: { profile: '/brand-kit/04-social/social-profile-400.png', banner: '/brand-kit/04-social/bluesky-banner.svg' },
       discord: { invite: '/brand-kit/04-social/discord-invite.svg' },
       pinterest: { pin: '/brand-kit/04-social/pinterest-pin.svg' },
+      tiktok: { cover: '/brand-kit/04-social/tiktok-cover.svg', profile: '/brand-kit/04-social/social-profile-400.png' },
       evidenceTiers: {
         verified: '/brand-kit/04-social/evidence-tier-verified.svg',
         circumstantial: '/brand-kit/04-social/evidence-tier-circumstantial.svg',

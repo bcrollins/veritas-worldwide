@@ -11,7 +11,7 @@ All paths are relative to `https://veritasworldwide.com`.
 | **LinkedIn Company** | `/brand-kit/01-logos/logo-mark-512.png` | `/brand-kit/04-social/social-banner-linkedin.svg` (1584×396) | Company: Veritas Worldwide Press |
 | **Facebook Page** | profile PNG | `social-banner-facebook.svg` (820×312) | News/Media category |
 | **YouTube** | app-icon / social-profile | `social-banner-youtube.svg` (2560×1440) | @VeritasWorldwide |
-| **TikTok** | social-profile-400.png | N/A | @veritasworldwidepress |
+| **TikTok** | social-profile-400.png | `tiktok-cover.svg` (1080×1920) | @veritasworldwidepress |
 | **Pinterest** | social-profile | `pinterest-pin.svg` (1000×1500) | veritasworldwide |
 | **Substack / Newsletter** | logo-mark-512 | `newsletter-header.svg` (1200×400) | Weekly dispatch header |
 | **Podcast (Apple/Spotify)** | `podcast-cover.svg` / `.png` (1400×1400) | — | The Record cover art |

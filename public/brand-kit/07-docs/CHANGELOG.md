@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.3 — 2026-07-23
+## 2.9.4 — 2026-07-23
+- TikTok vertical cover template (1080×1920)
+
+## 2.9.3
 - Static media-kit.html links evidence tiers, Pinterest, social launch checklist
 
 ## 2.9.2

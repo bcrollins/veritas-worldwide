@@ -37,6 +37,7 @@ const required = [
   '05-og/og-media-kit.png',
   '07-docs/SOCIAL-LAUNCH.md',
   '04-social/pinterest-pin.svg',
+  '04-social/tiktok-cover.svg',
   '05-og/og-media-kit.svg',
   '06-tokens/tokens.json',
   '07-docs/BRAND-GUIDE.md',
@@ -225,6 +226,7 @@ if (base) {
     '/brand-kit/05-og/og-media-kit.png',
     '/brand-kit/07-docs/SOCIAL-LAUNCH.md',
     '/brand-kit/04-social/pinterest-pin.svg',
+    '/brand-kit/04-social/tiktok-cover.svg',
   ]
   async function headOk(url) {
     try {
