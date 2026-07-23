@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.7.1 — 2026-07-23
+## 2.7.2 — 2026-07-23
+- tokens.json includes evidence color map (verified / circumstantial / disputed)
+
+## 2.7.1
 - Match evidence-tier card colors to product CSS tokens (#166534 / #92400E / #991B1B)
 - Publish evidence tier CSS variables on tokens.css
 

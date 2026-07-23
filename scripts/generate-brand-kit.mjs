@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.7.1'
+const KIT_VERSION = '2.7.2'
 
 const C = {
   parchment: '#FAF8F5',
@@ -260,6 +260,11 @@ function tokensJson() {
         gold: C.gold,
         surface: '#242424',
         border: '#333333',
+      },
+      evidence: {
+        verified: '#166534',
+        circumstantial: '#92400E',
+        disputed: '#991B1B',
       },
     },
     typography: {
@@ -687,7 +692,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.7.1 — ${new Date().toISOString().slice(0, 10)}
+## 2.7.2 — ${new Date().toISOString().slice(0, 10)}
+- tokens.json includes evidence color map (verified / circumstantial / disputed)
+
+## 2.7.1
 - Match evidence-tier card colors to product CSS tokens (#166534 / #92400E / #991B1B)
 - Publish evidence tier CSS variables on tokens.css
 
