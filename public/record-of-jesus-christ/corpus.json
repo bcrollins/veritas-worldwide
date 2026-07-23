@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:54:18.892Z",
-  "claimCount": 318,
+  "generatedAt": "2026-07-23T09:57:07.159Z",
+  "claimCount": 327,
   "tierHistogram": {
-    "well_attested": 122,
-    "verified": 113,
-    "contested": 32,
-    "interpretive": 31,
+    "well_attested": 124,
+    "verified": 117,
+    "contested": 33,
+    "interpretive": 32,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 15
+    "circumstantial": 16
   },
   "claims": [
     {
@@ -180,6 +180,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "ane-merneptah-israel",
+      "claim": "The Merneptah Stele (c. 1208 BCE) contains the earliest widely accepted extra-biblical mention of “Israel” as a people in Canaan.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
       "id": "ane-mesha",
       "claim": "The Mesha Stele (c. 840 BCE) names Omri of Israel, Yahweh, and Moabite campaigns paralleling 2 Kings 3.",
       "tier": "verified",
@@ -339,6 +346,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-jerusalem-burn-layer-70",
+      "claim": "Burn layers and collapse debris in Second Temple Jerusalem strata align with the 70 CE destruction horizon across multiple excavation areas.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
       "id": "arch-jerusalem-destruction-layers",
@@ -614,6 +628,13 @@
       "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
+      "id": "cosmo-lambda-equation",
+      "claim": "Dark energy is commonly parameterized with equation-of-state w ≈ −1 (cosmological constant-like); deviations are constrained but not fully excluded by current surveys.",
+      "tier": "contested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
       "id": "cosmo-matter-energy",
       "claim": "Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe.",
       "tier": "well_attested",
@@ -787,6 +808,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ec-ignatius-eucharist",
+      "claim": "Ignatius emphasizes eucharistic unity and episcopal authority in letters en route to Rome — early 2nd-c. church order evidence.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
       "id": "ec-ignatius-letters",
@@ -1167,6 +1195,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "hj-multiple-attestation-crucifixion",
+      "claim": "Jesus’ crucifixion is multiply attested in Christian sources and referenced by Tacitus, forming a high-confidence historical core event.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
       "id": "hj-parables",
       "claim": "Parables form a characteristic teaching form in the Synoptic tradition and are widely treated as a historically distinctive feature of Jesus’ public speech.",
       "tier": "well_attested",
@@ -1284,6 +1319,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave13.ts"
+    },
+    {
+      "id": "mod-corpus-not-creed",
+      "claim": "This Record is an evidentiary index, not a confession of faith; tier labels and proofVsConcept flags are designed to block creed-as-history conflation.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
       "id": "mod-criteria-coherence-limits",
@@ -1601,6 +1643,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "nc-mara-serapion-limits",
+      "claim": "Mara bar Serapion’s “wise king” remains an uncertain possible allusion; chronological and referent ambiguity prevent strong HJ use.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
       "id": "nc-marcus-aurelius-christians",
       "claim": "Marcus Aurelius (Meditations) and second-century elite literature occasionally notice Christians as a social type; such notices are thin and polemical.",
       "tier": "circumstantial",
@@ -1767,6 +1816,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
+      "id": "nt-ecm-catholic-epistles",
+      "claim": "The ECM of the Catholic Epistles pioneered CBGM application at scale and revised selected NA readings based on coherence analysis.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
       "id": "nt-ecm-method",
@@ -2103,6 +2159,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
+      "id": "st-high-priest-politics",
+      "claim": "High-priestly appointment and deposition under Herodian and Roman authorities show the Temple leadership’s political entanglement with imperial power.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
       "id": "st-isaiah-stability",

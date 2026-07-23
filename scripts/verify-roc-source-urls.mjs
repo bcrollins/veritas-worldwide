@@ -32,6 +32,7 @@ const files = [
   'src/data/recordOfJesusChristWave22.ts',
   'src/data/recordOfJesusChristWave23.ts',
   'src/data/recordOfJesusChristWave24.ts',
+  'src/data/recordOfJesusChristWave25.ts',
 ]
 
 const urlRe = /url:\s*'(https?:\/\/[^']+)'/g
