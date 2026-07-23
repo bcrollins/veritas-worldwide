@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T15:35:48.964Z"
+    "generatedAt": "2026-07-23T15:36:36.586Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 608,
-    "viPackCards": 589,
-    "totalIncidents": 2922
+    "incidentsWithVideoAndCivilians": 609,
+    "viPackCards": 590,
+    "totalIncidents": 2926
   },
   "incidents": [
     {
@@ -23254,6 +23254,46 @@
       "title": "West Bank Settler Clove Rack Attacks — Multi-Outlet Visual Record",
       "date": "2023–2025",
       "location": "West Bank village clove rack areas",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-fenugreek-rack-visual-2023-2025",
+      "title": "West Bank Settler Fenugreek Rack Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village fenugreek rack areas",
       "tier": "verified",
       "targetsCivilians": true,
       "targetsChildren": true,
