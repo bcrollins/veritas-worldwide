@@ -651,6 +651,15 @@ assert(
     server.includes("'/contact'"),
   'server must 301 content-pack/share/brand-kit/home/packs/donate/support/contact aliases',
 )
+
+// PATH_ALIASES complete key freeze (crawl alias surface).
+assert(
+  server.includes("['/content-packs', '/content-pack']") ||
+    (server.includes("'/content-packs'") && server.includes("'/share'") && server.includes("'/brand-kit'") &&
+      server.includes("'/home'") && server.includes("'/index'") && server.includes("'/packs'") &&
+      server.includes("'/donate'") && server.includes("'/support'") && server.includes("'/contact'")),
+  'PATH_ALIASES complete key freeze: content-packs/share/brand-kit/home/index/packs/donate/support/contact',
+)
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
 assert(
