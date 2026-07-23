@@ -1896,7 +1896,26 @@ app.get(['/rss.xml', '/rss'], (_req, res) => {
   return res.redirect(301, '/feed.xml')
 })
 
+// ── Sensitive operator files must never be publicly served ─────────────────
+// data/*.ndjson may contain PII (OSINT orders). Fail closed even if mis-copied into dist.
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next()
+  const pth = (req.path || '').toLowerCase()
+  if (
+    pth === '/data' ||
+    pth.startsWith('/data/') ||
+    pth.includes('osint-orders') ||
+    /\/(?:data\/)?(?:client-errors|health-history|analytics)\.(?:json|ndjson)$/i.test(pth)
+  ) {
+    res.status(404)
+    res.type('text/plain')
+    return res.send('Not found')
+  }
+  return next()
+})
+
 // Static files with aggressive caching for hashed assets.
+
 // redirect:false — do not auto-append "/" for directory paths like /brand-kit
 // (asset tree). Directory trailing-slash redirects race SPA/alias routing and
 // can create soft loops for crawlers when a public folder shares a route name.

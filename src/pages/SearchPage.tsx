@@ -344,8 +344,49 @@ export default function SearchPage() {
     ]
   }, [normalizedCrossSurfaceQuery])
 
+  const osintServiceResults = useMemo(() => {
+    if (!normalizedCrossSurfaceQuery) return []
+    const terms = [
+      'comprehensive online profile',
+      'comprehensive profile',
+      'osint',
+      'private profile',
+      'private report',
+      'dossier service',
+      'background check',
+      'authenticated profile',
+      'research service',
+      '499',
+      '$499',
+      'commission a profile',
+      'device fingerprint',
+      'open source intelligence',
+    ]
+    const hits = terms.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
+    if (!hits) return []
+    return [
+      {
+        id: 'osint-comprehensive-profile',
+        eyebrow: 'Research service',
+        title: 'Comprehensive Online Profile ($499)',
+        description:
+          'Fixed-price authenticated OSINT dossier with methodology appendix. Device and account links only when verified. Lawful-purpose intake required.',
+        href: '/comprehensive-profile',
+      },
+      {
+        id: 'osint-profiles-public',
+        eyebrow: 'Free archive',
+        title: 'Power Profiles (public)',
+        description:
+          'Free public integrity dockets and influence maps — not a private investigation. Sort by integrity score on the profiles index.',
+        href: '/profiles?sort=integrity-asc',
+      },
+    ]
+  }, [normalizedCrossSurfaceQuery])
+
   useEffect(() => {
     const scopeDescription = searchScope === 'full'
+
       ? 'full chapter text, keywords, and source libraries'
       : 'chapter titles, keywords, and source references'
 
@@ -588,12 +629,38 @@ export default function SearchPage() {
                   </p>
                 </div>
 
-                {matchingTopics.length === 0 && matchingProfiles.length === 0 && matchingArticles.length === 0 && matchingDossierSurfaces.length === 0 ? (
+                {matchingTopics.length === 0 && matchingProfiles.length === 0 && matchingArticles.length === 0 && matchingDossierSurfaces.length === 0 && osintServiceResults.length === 0 ? (
                   <p className="mt-5 font-body text-sm leading-relaxed text-ink-muted">
-                    No additional topic, profile, dossier, or newsroom matches surfaced for this query yet.
+                    No additional topic, profile, dossier, research-service, or newsroom matches surfaced for this query yet.
                   </p>
                 ) : (
                   <div className="mt-6 grid gap-4 xl:grid-cols-3">
+                    {osintServiceResults.length > 0 && (
+                      <div className="rounded-2xl border border-obsidian/20 bg-obsidian/[0.03] p-4 xl:col-span-3" data-testid="search-osint-service">
+                        <p className="font-sans text-[0.58rem] font-bold tracking-[0.16em] uppercase text-crimson">
+                          Research service
+                        </p>
+                        <div className="mt-4 grid gap-3 md:grid-cols-2">
+                          {osintServiceResults.map((surface) => (
+                            <Link
+                              key={surface.id}
+                              to={surface.href}
+                              className="block rounded-xl border border-border bg-parchment px-4 py-3 transition-colors hover:border-crimson"
+                            >
+                              <p className="font-sans text-[0.55rem] font-bold tracking-[0.14em] uppercase text-crimson">
+                                {surface.eyebrow}
+                              </p>
+                              <p className="mt-2 font-display text-lg font-bold text-ink">
+                                <HighlightText text={surface.title} query={debouncedQuery} />
+                              </p>
+                              <p className="mt-1 line-clamp-3 font-body text-sm leading-relaxed text-ink-muted">
+                                {surface.description}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                     {matchingDossierSurfaces.length > 0 && (
                       <div className="rounded-2xl border border-crimson/25 bg-crimson/5 p-4 xl:col-span-3">
                         <p className="font-sans text-[0.58rem] font-bold tracking-[0.16em] uppercase text-crimson">

@@ -73,6 +73,14 @@ assert(liveAnon.includes('/comprehensive-profile'), 'live-anonymity must probe O
 
 assert(server.includes("service_order_recorded"), 'server must allow service_order_recorded analytics')
 assert(server.includes('serviceOrders') || server.includes('service_order_recorded'), 'funnel serviceOrders wiring missing')
+assert(
+  server.includes('osint-orders') && server.includes("res.status(404)"),
+  'server must hard-deny public osint-orders / data paths',
+)
+assert(page.includes('osint-form-error'), 'form error id for aria-describedby missing')
+assert(page.includes('aria-describedby'), 'form aria-describedby missing')
+assert(page.includes('osint-mobile-sticky-checkout') || page.includes('sticky'), 'mobile/desktop sticky checkout missing')
+assert(page.includes('min-h-[44px]'), '44px touch targets expected on OSINT form')
 
 // Methodology completeness floor
 const methodologyHits = (constants.match(/methodology/gi) || []).length

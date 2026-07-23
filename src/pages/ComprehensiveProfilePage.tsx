@@ -346,7 +346,13 @@ export default function ComprehensiveProfilePage() {
               </p>
             </div>
 
-            <form onSubmit={onSubmit} className="px-6 py-6 space-y-4" noValidate aria-describedby={error ? 'osint-form-error' : undefined}>
+            <form
+              id="osint-intake-form"
+              onSubmit={onSubmit}
+              className="px-6 py-6 space-y-4"
+              noValidate
+              aria-describedby={error ? 'osint-form-error' : undefined}
+            >
               <fieldset className="space-y-3">
                 <legend className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-1">
                   Client
@@ -534,7 +540,7 @@ export default function ComprehensiveProfilePage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface py-16 px-4">
+      <section className="border-t border-border bg-surface py-16 px-4 pb-28 lg:pb-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display text-2xl font-bold text-ink mb-8 text-center">FAQ</h2>
           <div className="space-y-4">
@@ -549,6 +555,32 @@ export default function ComprehensiveProfilePage() {
           </div>
         </div>
       </section>
+
+      {/* Mobile sticky checkout summary — desktop already uses sticky form card */}
+      <div
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-parchment/95 backdrop-blur-sm lg:hidden"
+        data-testid="osint-mobile-sticky-checkout"
+        role="region"
+        aria-label="Checkout summary"
+      >
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3">
+          <div className="min-w-0">
+            <p className="font-sans text-[0.55rem] font-bold uppercase tracking-[0.14em] text-crimson">
+              Comprehensive Online Profile
+            </p>
+            <p className="font-display text-xl font-bold text-ink">
+              {priceLabel}
+              <span className="ml-2 font-sans text-xs font-normal text-ink-muted">USD · one-time</span>
+            </p>
+          </div>
+          <a
+            href="#osint-intake-form"
+            className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-sm bg-obsidian px-4 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-white hover:bg-crimson"
+          >
+            {submitting ? 'Working…' : 'Start intake'}
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 58,
-    "Pending": 42
+    "Implemented": 62,
+    "Pending": 38
   },
   "items": [
     {
@@ -894,7 +894,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "hardens",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-ux-security-2026-07-23"
     },
     {
       "rank": 47,
@@ -950,7 +951,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Implemented"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-ux-security-2026-07-23"
     },
     {
       "rank": 50,
@@ -968,7 +970,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-ux-security-2026-07-23"
     },
     {
       "rank": 51,
@@ -986,7 +989,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-ux-security-2026-07-23"
     },
     {
       "rank": 52,
@@ -1135,7 +1139,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-ux-security-2026-07-23"
     },
     {
       "rank": 60,
