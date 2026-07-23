@@ -6,45 +6,21 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const dataDir = path.join(root, 'src/data')
+// Permanent: auto-discover base + extras + all waveN files (no more missed waves on ship).
+const waveFiles = fs
+  .readdirSync(dataDir)
+  .filter((n) => /^recordOfJesusChristWave\d+\.ts$/.test(n))
+  .sort((a, b) => {
+    const na = Number(a.match(/Wave(\d+)/)?.[1] || 0)
+    const nb = Number(b.match(/Wave(\d+)/)?.[1] || 0)
+    return na - nb
+  })
+  .map((n) => path.join(dataDir, n))
 const files = [
-  path.join(root, 'src/data/recordOfJesusChrist.ts'),
-  path.join(root, 'src/data/recordOfJesusChristExtras.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave3.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave4.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave5.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave6.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave7.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave8.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave9.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave10.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave11.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave12.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave13.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave14.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave15.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave16.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave17.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave18.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave19.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave20.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave21.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave22.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave23.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave24.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave25.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave26.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave27.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave28.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave29.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave30.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave31.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave32.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave33.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave34.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave35.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave36.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave37.ts'),
-  path.join(root, 'src/data/recordOfJesusChristWave38.ts'),
+  path.join(dataDir, 'recordOfJesusChrist.ts'),
+  path.join(dataDir, 'recordOfJesusChristExtras.ts'),
+  ...waveFiles,
 ]
 
 const CLAIM_ID = /id:\s*'((?:cosmo|ane|st|hj|nt|nc|arch|ec|mod)-[^']+)'/g

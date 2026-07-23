@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:29:30.005Z",
-  "claimCount": 444,
+  "generatedAt": "2026-07-23T10:31:33.610Z",
+  "claimCount": 453,
   "tierHistogram": {
-    "well_attested": 178,
-    "verified": 156,
-    "contested": 39,
-    "interpretive": 45,
+    "well_attested": 181,
+    "verified": 158,
+    "contested": 42,
+    "interpretive": 46,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 21
@@ -80,6 +80,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
+      "id": "ane-bulla-baruch",
+      "claim": "Clay bullae naming “Berekyahu son of Neriyahu the scribe” (Baruch) are widely discussed as epigraphic controls for late-monarchic Judahite administration and the Jeremiah tradition’s scribal milieu.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave39.ts"
     },
     {
       "id": "ane-cos-corpus",
@@ -451,6 +458,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave12.ts"
+    },
+    {
+      "id": "arch-gamla-synagogue-finds",
+      "claim": "Gamla’s late Second Temple synagogue and associated finds (including a possible base for Torah reading) provide material evidence of communal Jewish assembly architecture before 70 CE.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave39.ts"
     },
     {
       "id": "arch-herodium",
@@ -850,6 +864,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave29.ts"
+    },
+    {
+      "id": "cosmo-isw-integrated-sachs",
+      "claim": "The late-time Integrated Sachs–Wolfe (ISW) effect predicts CMB temperature correlations with large-scale structure as dark energy begins to dominate — a cross-check of ΛCDM expansion history.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave39.ts"
     },
     {
       "id": "cosmo-jwst-high-z-galaxies",
@@ -1256,6 +1277,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
+      "id": "ec-protevangelium-james",
+      "claim": "The Protevangelium of James (mid-2nd c. or later) is an infancy gospel expanding Mary and nativity traditions — popular reception literature, not a first-generation historical source.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave39.ts"
     },
     {
       "id": "ec-quadratus",
@@ -1685,6 +1713,13 @@
       "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
+      "id": "hj-q-source-hypothesis",
+      "claim": "The Q source hypothesis posits a lost sayings collection behind Matthew and Luke’s double tradition; it remains the majority Two-Source explanation but is contested by Farrer and other models.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave39.ts"
+    },
+    {
       "id": "hj-quirinius",
       "claim": "Luke’s census notice linking Jesus’ birth to a registration under Quirinius (6 CE) is a classic chronological problem relative to a Herodian birth before 4 BCE.",
       "tier": "contested",
@@ -2063,6 +2098,13 @@
       "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
+      "id": "mod-sanders-practice-belief",
+      "claim": "E.P. Sanders’s Judaism: Practice and Belief and Jesus and Judaism reoriented HJ research around covenantal nomism and Jesus within Judaism — foundational Third Quest framing still widely engaged.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave39.ts"
+    },
+    {
       "id": "mod-social-memory",
       "claim": "Social memory approaches treat Gospel traditions as communal remembering under social constraints rather than pure invention or pure stenography.",
       "tier": "interpretive",
@@ -2159,6 +2201,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
+      "id": "nc-julian-against-galileans",
+      "claim": "Emperor Julian’s Against the Galileans (4th c., fragmentary via Cyril of Alexandria) is a late imperial philosophical polemic against Christianity — reception history, not first-century biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave39.ts"
     },
     {
       "id": "nc-justus-tiberias-lost",
@@ -2518,6 +2567,13 @@
       "file": "src/data/recordOfJesusChristWave13.ts"
     },
     {
+      "id": "nt-farrer-hypothesis",
+      "claim": "The Farrer hypothesis (Mark → Matthew → Luke without Q) is the leading alternative to the Two-Source Theory for Synoptic literary relationships.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave39.ts"
+    },
+    {
       "id": "nt-gospel-dates",
       "claim": "Critical consensus commonly dates Mark c. 65–75 CE, Matthew and Luke c. 80–90 CE, John c. 90–100 CE — with debate bands around each.",
       "tier": "contested",
@@ -2796,6 +2852,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave36.ts"
+    },
+    {
+      "id": "st-1qs-penal-code",
+      "claim": "The Community Rule (1QS) includes a detailed penal code for community offenses — primary evidence of disciplined sectarian governance at Qumran-related groups.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave39.ts"
     },
     {
       "id": "st-4qinstruction",
