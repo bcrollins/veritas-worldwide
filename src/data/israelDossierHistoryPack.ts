@@ -5436,6 +5436,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'west-bank-price-tag-violence-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Price-Tag Settler Violence Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (price-tag cohort)',
+    location: 'West Bank Palestinian villages and olive groves',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated “price-tag” and settler-vigilante attacks after October 7 — arson, property destruction, and intimidation against Palestinian civilians including children — a ideological-violence pattern distinct from aggregate settler-violence and olive-harvest cards.',
+    evidence:
+      'OCHA settler-violence databases, B\'Tselem case files, and multi-outlet price-tag coverage establish multi-source elevated ideological settler attacks. Exact incident counts evolve; multi-source wartime price-tag surge is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet price-tag attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-generator-fuel-hospital-rationing-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Hospital Generator Fuel Rationing Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (generator-fuel cohort)',
+    location: 'Gaza Strip hospital generator rooms and ICU wards',
+    summary:
+      'WHO, MSF, and multi-source reporting document hospital generator fuel rationing under siege conditions — forcing ICUs, incubators, and oxygen plants offline on timed schedules that kill or endanger patients including neonates. Pattern card for generator-fuel rationing distinct from fuel-depots destruction and medical-oxygen collapse cards.',
+    evidence:
+      'WHO hospital situation reports, MSF facility statements, and multi-outlet generator-fuel coverage establish multi-source hospital fuel rationing. Exact outage hours evolve; multi-source wartime hospital generator rationing is the claim.',
+    sources: [
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'MSF hospital statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet hospital generator fuel coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-psychological-trauma-returnees-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Released Hostages Psychological Trauma Pattern (2023–2025)',
+    date: 'November 2023 – 2025 (returnee-trauma cohort)',
+    location: 'Israel rehabilitation centers / returned-hostage households',
+    summary:
+      'Israeli health authorities, multi-source clinical reporting, and press document severe psychological trauma among released hostages including children — PTSD, refeeding complications, and long-term mental-health needs after captivity. Pattern card for returnee trauma distinct from hostages-held and medical-neglect cards.',
+    evidence:
+      'Israeli government health/rehab materials, multi-source clinical and family reporting, and multi-outlet coverage establish multi-source severe trauma among returnees. Exact clinical counts evolve; multi-source released-hostage trauma burden is the claim.',
+    sources: [
+      { label: 'Israeli government health / rehab materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage trauma coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet clinical reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8269,6 +8350,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['economy', 'evacuation', 'civilians', 'israel'],
   },
+
+  {
+    id: 'tl-wb-price-tag-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Price-Tag Settler Violence Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated price-tag settler attacks after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-price-tag-violence-pattern-2023-2025',
+      'settler-violence-pattern-2021-2023',
+      'west-bank-olive-harvest-violence-pattern-2023-2025',
+    ],
+    tags: ['price-tag', 'settlers', 'civilians', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-generator-fuel-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Hospital Generator Fuel Rationing Pattern',
+    description: 'WHO/MSF multi-source documentation of hospital generator fuel rationing endangering ICU and neonatal care.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-generator-fuel-hospital-rationing-pattern-2023-2025',
+      'gaza-medical-oxygen-gas-collapse-pattern-2023-2025',
+      'gaza-fuel-electricity-siege-pattern-2023-2025',
+    ],
+    tags: ['fuel', 'hospitals', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-returnee-trauma-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Released Hostages Psychological Trauma Pattern',
+    description: 'Multi-source documentation of severe psychological trauma among released Israeli hostages including children.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-psychological-trauma-returnees-pattern-2023-2025',
+      'israel-hostages-release-deal-waves-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'trauma', 'civilians', 'children', 'israel'],
+  },
+
+
 
 
 
