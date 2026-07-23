@@ -25,4 +25,5 @@ Path to 10.0: GH org transfer, git history scrub, Stripe portal entity branding;
 - Sprint 9b–9c: focus-visible keyboard platform — shell (desktop/mobile/drawer/footer/cookie) + RelatedHubs/ResearchHubChips/DossierHubSpokes
 - Pure: 47 suites (verify-nav-ia + verify-nav-recovery 115 needles + verify-related-hubs-coverage); densify locks v24/v18 IA
 - Soft-404 live green (server-soft-404 + 5 hubs); product lag expected under multi-agent densify tip flood
+- Sprint 9f–9g: complete min-h-[44px] component focus-visible coverage (37+ files); pure densify locks through v33 / IA v20
 - Peer densify unthrashed
