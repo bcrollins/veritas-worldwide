@@ -117,6 +117,12 @@ assert(!/label:\s*['"]Misc['"]/.test(appShell), 'Banned Misc junk drawer')
 
 // Capability preservation routes reachable in shell
 const app = read('src/App.tsx')
+// Hick's Law: primaryLinks exactly 5
+const primaryBlock = app.match(/const primaryLinks: ShellLink\[\] = \[([\s\S]*?)\]\n\n  const trustLinks/)
+assert(primaryBlock, 'primaryLinks block')
+const primaryCount = (primaryBlock[1].match(/to:\s*['"]/g) || []).length
+assert(primaryCount === 5, `primaryLinks count ${primaryCount} !== 5`)
+
 for (const route of [
   '/researcher',
   '/volume-ii',
