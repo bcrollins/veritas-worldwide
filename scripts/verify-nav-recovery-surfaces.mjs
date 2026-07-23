@@ -568,4 +568,11 @@ assert(topicsIdx.includes('topics-related-hubs') && topicsIdx.includes('RelatedH
 assert(timeline.includes('/read') || timeline.includes("to: '/read'"), 'Timeline Read recovery')
 assert(topicsIdx.includes('/profiles') || topicsIdx.includes("to: '/profiles'"), 'Topics Profiles recovery')
 
+
+// OSINT product page recovery destinations
+const osint = read('src/pages/ComprehensiveProfilePage.tsx')
+assert(osint.includes('osint-related-hubs') && osint.includes('RelatedHubs'), 'OSINT RelatedHubs')
+assert(osint.includes('/profiles') || osint.includes("to: '/profiles'"), 'OSINT Profiles recovery')
+assert(osint.includes('/methodology') || osint.includes("to: '/methodology'"), 'OSINT Methodology recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
