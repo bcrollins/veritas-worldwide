@@ -475,6 +475,15 @@ assert(fs.readFileSync(path.join(root, 'src/pages/BernieShowPage.tsx'), 'utf8').
 assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').includes('media-kit-primary-hubs'), 'perpetual v2 IA media-kit')
 assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v2 IA emphasize')
 
+
+// RelatedHubs perpetual densify lock v3 IA
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'perpetual v3 IA soft-404 primary')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-secondary-hubs'), 'perpetual v3 IA soft-404 secondary')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'perpetual v3 IA home')
+assert(fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v3 IA search')
+assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'perpetual v3 IA Privacy Membership')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v3 IA emphasize')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
