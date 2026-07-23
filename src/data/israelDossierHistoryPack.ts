@@ -4248,6 +4248,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-water-wells-aquifers-contamination-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Water Wells & Aquifer Contamination Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (groundwater cohort)',
+    location: 'Gaza Strip wells / coastal aquifer',
+    summary:
+      'UNICEF, UNEP, and multi-source WASH reporting document damaged wells, seawater intrusion risk, and contaminated groundwater under bombardment and sewage failure — collapsing safe drinking-water sources for civilians including children. Pattern card for groundwater/well collapse distinct from desalination plant and sewage-flooding cards.',
+    evidence:
+      'UNICEF/UNEP WASH and environmental materials and multi-source well-damage reporting establish multi-source groundwater contamination risk. Exact well counts evolve; multi-source safe-well capacity collapse is the claim.',
+    sources: [
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'UNEP environmental assessments', url: 'https://www.unep.org' },
+      { label: 'OCHA water-access materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public WASH updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6332,6 +6359,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['schools', 'shelters', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-wells-aquifer-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Water Wells & Aquifer Contamination Pattern',
+    description: 'UNICEF/UNEP multi-source documentation of damaged wells and contaminated groundwater under wartime WASH collapse.',
+    source: 'UNICEF / UNEP / OCHA',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-water-wells-aquifers-contamination-pattern-2023-2025',
+      'gaza-water-sanitation-collapse-2023-2025',
+      'gaza-desalination-water-infrastructure-pattern-2023-2025',
+    ],
+    tags: ['water', 'wells', 'children', 'disease', 'gaza'],
+  },
+
 
 
 
