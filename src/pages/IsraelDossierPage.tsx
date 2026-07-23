@@ -268,6 +268,16 @@ function IncidentCard({
                   {incident.casualties.killed} killed{incident.casualties.injured ? ` · ${incident.casualties.injured} injured` : ''}
                 </span>
               )}
+              {incident.multimedia.some((m) => m.type === 'video') && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-crimson/15 text-crimson border border-crimson/30">
+                  Video evidence
+                </span>
+              )}
+              {incident.multimedia.some((m) => m.type === 'investigation') && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-surface border border-border text-ink-muted">
+                  Forensic / investigation
+                </span>
+              )}
             </div>
             <h3 className="font-display text-xl font-bold text-ink leading-snug">{incident.title}</h3>
             <p className="font-sans text-xs text-ink-faint mt-1">{incident.date} — {incident.location}</p>
@@ -277,7 +287,20 @@ function IncidentCard({
 
         {/* Preview when collapsed */}
         {!expanded && (
-          <p className="font-body text-sm text-ink-muted leading-relaxed mt-3 line-clamp-2">{incident.summary}</p>
+          <>
+            <p className="font-body text-sm text-ink-muted leading-relaxed mt-3 line-clamp-2">{incident.summary}</p>
+            {incident.multimedia.find((m) => m.type === 'video') && (
+              <a
+                href={incident.multimedia.find((m) => m.type === 'video')!.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="mt-3 inline-flex min-h-[44px] items-center gap-1.5 rounded-sm border border-crimson px-3 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-crimson hover:bg-crimson/5 transition-colors"
+              >
+                Open primary video ↗
+              </a>
+            )}
+          </>
         )}
       </div>
 
