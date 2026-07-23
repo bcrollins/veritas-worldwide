@@ -1905,4 +1905,14 @@ assert(darkUlt.includes("tone === 'dark'") || darkUlt.includes('tone === "dark"'
 assert(darkUlt.includes("tone === 'parchment'") || darkUlt.includes('tone === "parchment"'), 'parchment branch ultimate')
 
 
+
+// MULTI-AGENT densify isolation ultimate end final
+const suiteIso = read('scripts/verify-nav-recovery-surfaces.mjs')
+const densifyReadNeedle = ['read(', "'", 'public/', 'israel-dossier'].join('')
+assert(!suiteIso.includes(densifyReadNeedle), 'no densify corpus reads ultimate end')
+const densifySrcNeedle = ['src/', 'data/', 'israelDossier'].join('')
+assert(!suiteIso.includes(densifySrcNeedle), 'no densify sources ultimate end')
+assert(suiteIso.includes('RelatedHubs') && suiteIso.includes('surfaces'), 'suite owns recovery ultimate end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
