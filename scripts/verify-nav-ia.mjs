@@ -460,6 +460,14 @@ assert(fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8').inclu
 assert(fs.readFileSync(path.join(root, 'src/pages/AccessibilityPage.tsx'), 'utf8').includes('/membership'), 'boil IA A11Y Membership')
 assert(fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePage.tsx'), 'utf8').includes('/israel-dossier'), 'boil IA OSINT Dossiers')
 
+
+// all product live IA celebration lock
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'live IA emphasize')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'live IA soft-404')
+assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'live IA Privacy Membership')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'live IA home')
+assert(fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8').includes('SEARCH_RECOVERY_HUBS'), 'live IA search')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
