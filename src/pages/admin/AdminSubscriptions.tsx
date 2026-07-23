@@ -86,7 +86,11 @@ export default function AdminSubscriptions() {
     <div className="space-y-6">
       <div>
         <h1 className="font-serif text-xl font-bold text-white">Subscriptions</h1>
-        <p className="font-sans text-xs text-white/30 mt-1">Manage membership tiers and subscriber data</p>
+        <p className="font-sans text-xs text-white/30 mt-1">Manage membership tiers, Stripe products, and OSINT order ops notes</p>
+        <p className="font-sans text-[10px] text-white/25 mt-2 max-w-2xl leading-relaxed">
+          Comprehensive Online Profile ($499) intakes land in server file <code className="text-white/40">data/osint-orders.ndjson</code> (PII — operator host only).
+          Health counter: <code className="text-white/40">GET /api/services/comprehensive-profile/health</code> exposes intake count without subjects.
+        </p>
       </div>
 
       {/* Stripe Products */}

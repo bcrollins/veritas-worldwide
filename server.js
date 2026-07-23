@@ -1988,6 +1988,15 @@ app.get('/api/services/comprehensive-profile/health', (_req, res) => {
   const linkConfigured = Boolean(
     process.env.COMPREHENSIVE_PROFILE_CHECKOUT_URL || process.env.VITE_COMPREHENSIVE_PROFILE_CHECKOUT_URL
   )
+  let orderIntakeCount = 0
+  try {
+    if (fs.existsSync(OSINT_ORDERS_PATH)) {
+      const raw = fs.readFileSync(OSINT_ORDERS_PATH, 'utf8')
+      orderIntakeCount = raw.split('\n').filter((line) => line.trim().length > 0).length
+    }
+  } catch {
+    orderIntakeCount = 0
+  }
   res.setHeader('Cache-Control', 'no-store')
   res.json({
     service: 'comprehensive_profile',
@@ -1995,6 +2004,8 @@ app.get('/api/services/comprehensive-profile/health', (_req, res) => {
     checkoutReady: stripeConfigured || linkConfigured,
     stripeConfigured,
     linkConfigured,
+    orderIntakeCount,
+    rateLimitPerMinute: 8,
   })
 })
 

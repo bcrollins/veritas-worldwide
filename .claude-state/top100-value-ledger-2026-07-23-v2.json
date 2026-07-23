@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 24,
-    "Pending": 76
+    "Implemented": 32,
+    "Pending": 68
   },
   "items": [
     {
@@ -482,7 +482,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 25,
@@ -536,7 +536,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 28,
@@ -590,7 +590,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 31,
@@ -644,7 +644,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 34,
@@ -825,7 +825,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 44,
@@ -861,7 +861,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 46,
@@ -1167,7 +1167,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 63,
@@ -1383,7 +1383,7 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 75,
@@ -1854,7 +1854,7 @@
       "status": "Pending"
     }
   ],
-  "updatedAt": "2026-07-23T09:21:33Z",
+  "updatedAt": "2026-07-23T09:27:52.233721+00:00",
   "executionLog": [
     {
       "ts": "2026-07-23T09:21:33Z",
