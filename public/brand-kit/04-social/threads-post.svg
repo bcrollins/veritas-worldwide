@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Threads post card">
+  <rect width="1080" height="1080" fill="#FAF8F5"/>
+  <rect x="0" y="0" width="1080" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="#8B1A1A"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="#8B1A1A">THREADS · VERITAS WORLDWIDE</text>
+  <text x="80" y="360" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#1A1A1A">Read the document.</text>
+  <text x="80" y="430" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#1A1A1A">Then draw conclusions.</text>
+  <text x="80" y="520" font-family="Georgia, serif" font-size="26" font-style="italic" fill="#666666">Primary sources. Public record. Your conclusions.</text>
+  <line x1="80" y1="580" x2="320" y2="580" stroke="#8B1A1A" stroke-width="2"/>
+  <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="#666666">veritasworldwide.com</text>
+</svg>

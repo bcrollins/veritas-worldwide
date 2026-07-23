@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.7.2 — 2026-07-23
+## 2.8.0 — 2026-07-23
+- Threads post card + press contact vCard/MD
+
+## 2.7.2
 - tokens.json includes evidence color map (verified / circumstantial / disputed)
 
 ## 2.7.1

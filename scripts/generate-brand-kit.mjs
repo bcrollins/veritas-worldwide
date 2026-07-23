@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.7.2'
+const KIT_VERSION = '2.8.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -692,7 +692,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.7.2 — ${new Date().toISOString().slice(0, 10)}
+## 2.8.0 — ${new Date().toISOString().slice(0, 10)}
+- Threads post card + press contact vCard/MD
+
+## 2.7.2
 - tokens.json includes evidence color map (verified / circumstantial / disputed)
 
 ## 2.7.1
@@ -795,6 +798,56 @@ These match on-site UI tokens in \`src/styles/index.css\`.
 
 Brand kit v\${KIT_VERSION}
 `
+}
+
+
+function pressContactVcf() {
+  return [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'FN:Veritas Worldwide Press — Rights & Media',
+    'ORG:Veritas Worldwide Press',
+    'EMAIL;TYPE=INTERNET,WORK:rights@veritasworldwide.com',
+    'URL:https://veritasworldwide.com/media-kit',
+    'NOTE:Primary sources. Public record. Your conclusions. Media kit + brand ZIP at /media-kit.',
+    'END:VCARD',
+    '',
+  ].join('\n')
+}
+
+function pressContactMd() {
+  return `# Press Contact — Veritas Worldwide Press
+
+**Media & rights:** rights@veritasworldwide.com  
+**Tips & corrections:** tips@veritasworldwide.com  
+**Site:** https://veritasworldwide.com  
+**Media kit:** https://veritasworldwide.com/media-kit  
+**Brand ZIP:** https://veritasworldwide.com/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip  
+**vCard:** /brand-kit/09-templates/press-contact.vcf
+
+## Boilerplate
+Veritas Worldwide is an independent investigative publisher. Our flagship work, The Record, is a multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier labeling. Primary sources. Public record. Your conclusions.
+
+## Evidence tiers (product)
+Verified · Circumstantial · Disputed — see \`07-docs/EVIDENCE-TIERS.md\`.
+
+Brand kit v${KIT_VERSION}
+`
+}
+
+function threadsPostSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Threads post card">
+  <rect width="1080" height="1080" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1080" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="${C.crimson}"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="${C.crimson}">THREADS · VERITAS WORLDWIDE</text>
+  <text x="80" y="360" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.ink}">Read the document.</text>
+  <text x="80" y="430" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.ink}">Then draw conclusions.</text>
+  <text x="80" y="520" font-family="Georgia, serif" font-size="26" font-style="italic" fill="${C.inkMuted}">Primary sources. Public record. Your conclusions.</text>
+  <line x1="80" y1="580" x2="320" y2="580" stroke="${C.crimson}" stroke-width="2"/>
+  <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="${C.inkMuted}">veritasworldwide.com</text>
+</svg>`
 }
 
 function brandVoiceMd() {
@@ -1172,6 +1225,9 @@ Editorial and licensing: rights@veritasworldwide.com
   writeFileSync(join(KIT, '07-docs', 'BRAND-VOICE.md'), brandVoiceMd())
   writeFileSync(join(KIT, '07-docs', 'EVIDENCE-TIERS.md'), evidenceTiersMd())
   writeFileSync(join(KIT, '07-docs', 'CHANGELOG.md'), changelogMd())
+  writeFileSync(join(KIT, '07-docs', 'PRESS-CONTACT.md'), pressContactMd())
+  writeFileSync(join(KIT, '09-templates', 'press-contact.vcf'), pressContactVcf())
+  writeSvg('04-social/threads-post.svg', threadsPostSvg())
 
   // Rasterize key assets
   const rasters = [
@@ -1216,6 +1272,7 @@ Editorial and licensing: rights@veritasworldwide.com
     ['09-templates/presentation-title.svg', '09-templates/presentation-title.png', 1920],
     ['09-templates/source-stamp.svg', '09-templates/source-stamp.png', 512],
     ['07-docs/brand-do-dont.svg', '07-docs/brand-do-dont.png', 1600],
+    ['04-social/threads-post.svg', '04-social/threads-post.png', 1080],
   ]
   for (const [src, dest, w] of rasters) {
     try {
@@ -1293,6 +1350,9 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Brand guide (MD)', href: '/brand-kit/07-docs/BRAND-GUIDE.md' },
       { label: 'Brand voice (MD)', href: '/brand-kit/07-docs/BRAND-VOICE.md' },
       { label: 'Evidence tiers (MD)', href: '/brand-kit/07-docs/EVIDENCE-TIERS.md' },
+      { label: 'Press contact (MD)', href: '/brand-kit/07-docs/PRESS-CONTACT.md' },
+      { label: 'Press contact (vCard)', href: '/brand-kit/09-templates/press-contact.vcf' },
+      { label: 'Threads post card', href: '/brand-kit/04-social/threads-post.svg' },
       { label: 'Changelog (MD)', href: '/brand-kit/07-docs/CHANGELOG.md' },
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },
