@@ -1,6 +1,13 @@
 
 ## Recently Closed (2026-07-23 — product QA / evidence / OSINT funnel wave)
 
+## Recently Closed (2026-07-23 — offline research pack)
+
+- **Offline research pack ZIP is live.**
+  Impact: Researchers download one ZIP of public machine corpora (profiles, ROC, Israel, taxonomy) instead of hunting individual JSON URLs.
+  Resolution: `scripts/generate-research-pack.mjs` dual-writes `public/` + `dist/`, rate-limited download, Sources/Methodology/Researcher hub + llms.txt discovery, pure + live verify gates.
+
+
 - **Chapter evidence-tier filter chips** on Volume I reader (`chapter-evidence-tier-filters`).
 - **Sources CSV export** with `chapter_evidence_tiers` column + active filters.
 - **Analytics `serviceOrders` funnel** + server `service_order_recorded` on OSINT intake.
