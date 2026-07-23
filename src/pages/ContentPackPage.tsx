@@ -414,6 +414,47 @@ export default function ContentPackPage() {
             </a>
           </div>
         </div>
+        <div className="mt-6 rounded-sm border border-border bg-surface p-5">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-sans text-xs font-semibold text-ink">Evidence tier social cards</p>
+              <p className="mt-1 font-body text-sm text-ink-muted">
+                Product taxonomy (Verified / Circumstantial / Disputed) — match The Record labels on social.
+              </p>
+            </div>
+            <a
+              href="/brand-kit/07-docs/EVIDENCE-TIERS.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-semibold text-crimson hover:underline"
+            >
+              Taxonomy doc →
+            </a>
+          </div>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              { label: 'Verified', href: '/brand-kit/04-social/evidence-tier-verified.svg', hex: '#166534' },
+              { label: 'Circumstantial', href: '/brand-kit/04-social/evidence-tier-circumstantial.svg', hex: '#92400E' },
+              { label: 'Disputed', href: '/brand-kit/04-social/evidence-tier-disputed.svg', hex: '#991B1B' },
+            ].map(card => (
+              <a
+                key={card.href}
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group overflow-hidden rounded-sm border border-border hover:border-crimson/40"
+              >
+                <div className="flex h-28 items-center justify-center bg-obsidian p-3">
+                  <img src={card.href} alt={`${card.label} evidence tier card`} className="max-h-full max-w-full object-contain" loading="lazy" />
+                </div>
+                <div className="flex items-center justify-between gap-2 px-3 py-2">
+                  <span className="font-sans text-xs font-semibold text-ink group-hover:text-crimson">{card.label}</span>
+                  <span className="font-mono text-[0.55rem] text-ink-faint" style={{ color: card.hex }}>{card.hex}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Download All CTA */}
