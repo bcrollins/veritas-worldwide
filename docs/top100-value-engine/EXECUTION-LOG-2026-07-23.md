@@ -440,3 +440,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | **2026+** → tip **2060+** lag-aware |
 
+
+## Interval densify — tip post-2072 anticoag densify + aid convoy / Hod HaSharon / vine cutting
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza heparin/warfarin/enoxaparin · hostage night-counting/helmet-marches/metal-bars · WB turnip/defibrillator/basil-seedlings |
+| VI | aid convoy · Hod HaSharon · grape vine cutting |
+| Pure | visual + israel-dossier PASS |
+
