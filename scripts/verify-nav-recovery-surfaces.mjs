@@ -79,5 +79,11 @@ assert(server.includes('data-testid="server-soft-404"'), 'server soft-404 testid
 assert(server.includes('href="/israel-dossier"'), 'server soft-404 dossiers')
 assert(server.includes('href="/profiles"'), 'server soft-404 profiles')
 assert(server.includes('class="primary"'), 'server soft-404 primary Record')
+const nfHtml = server.match(/function buildNotFoundHtml\(\) \{([\s\S]*?)\n\}/)
+assert(nfHtml, 'buildNotFoundHtml body')
+const hrefs = [...nfHtml[1].matchAll(/href="(\/[^"]*)"/g)].map((x) => x[1])
+const required = ['/', '/read', '/israel-dossier', '/profiles', '/search']
+for (const h of required) assert(hrefs.includes(h), `server soft-404 missing ${h}`)
+assert(hrefs.length === 5, `server soft-404 hub count ${hrefs.length} !== 5`)
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
