@@ -436,4 +436,12 @@ assert(supOk.includes('/israel-dossier') && supOk.includes('/profiles'), 'Suppor
 const appLandmarks = read('src/App.tsx')
 assert(appLandmarks.includes('Skip to') && appLandmarks.includes('main-content'), 'Skip link targets main-content')
 assert(appLandmarks.includes('site-header') && appLandmarks.includes('site-footer'), 'header+footer landmarks')
+
+// Cookie consent stacks above mobile tab bar
+const cookie = read('src/components/CookieConsent.tsx')
+const appZ = read('src/App.tsx')
+assert(cookie.includes('z-[100]'), 'cookie z-100')
+assert(appZ.includes('MobileTabBar') && appZ.includes('z-50'), 'tab bar z-50')
+assert(read('src/components/StickyMembershipBar.tsx').includes('z-40'), 'membership z-40')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
