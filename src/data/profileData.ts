@@ -4185,9 +4185,9 @@ export const PROFILES: PowerProfile[] = [
           'After ACA market rules took effect, insurers cancelled large numbers of existing individual plans that did not meet new minimum standards. HHS and contemporaneous reporting documented millions of cancellation notices — contradicting the categorical keep-your-plan promise.',
         correction:
           'Many Americans could not keep non-compliant plans; the promise was false as a universal guarantee.',
-        statementSource: 'PolitiFact Lie of the Year 2013 compilation',
-        statementUrl: 'https://www.politifact.com/article/2013/dec/12/lie-year-if-you-like-your-health-care-plan-keep-it/',
-        debunkSource: 'PolitiFact / HHS cancellation reporting synthesis',
+        statementSource: 'Obama administration health-care messaging (White House archives)',
+        statementUrl: 'https://obamawhitehouse.archives.gov/healthreform',
+        debunkSource: 'PolitiFact — Lie of the Year 2013: If you like your health care plan, you can keep it',
         debunkUrl: 'https://www.politifact.com/article/2013/dec/12/lie-year-if-you-like-your-health-care-plan-keep-it/',
         severity: 'egregious',
         tier: 'verified',
@@ -4202,11 +4202,29 @@ export const PROFILES: PowerProfile[] = [
           'PolitiFact rated False. U.S. raw steel production peaked decades earlier and was not "as much… as it ever was" in 2016; employment declines reflected both productivity and capacity loss, not a pure one-tenth-workers-same-output story.',
         correction:
           'U.S. steel output was below historical peaks; the automation-only framing overstated production continuity.',
-        statementSource: 'Obama Ottawa remarks June 29, 2016 (PolitiFact statement capture)',
-        statementUrl: 'https://www.politifact.com/factchecks/2016/jul/05/barack-obama/barack-obama-wrong-about-size-us-steel-production/',
+        statementSource: 'Obama remarks in Ottawa, June 29, 2016 (White House archive)',
+        statementUrl: 'https://obamawhitehouse.archives.gov/the-press-office/2016/06/29/remarks-president-obama-and-prime-minister-trudeau-canada-joint-press',
         debunkSource: 'PolitiFact — False (July 5, 2016); USGS/industry production series',
         debunkUrl: 'https://www.politifact.com/factchecks/2016/jul/05/barack-obama/barack-obama-wrong-about-size-us-steel-production/',
         severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'obama-keep-plan-caveat-rewrite-2013',
+        statement:
+          'Claimed that what he had always said was “you can keep [your plan] if it hasn’t changed since the law passed” — rewriting the unconditional keep-your-plan promise after cancellation notices hit.',
+        saidAt: 'November 4, 2013',
+        context:
+          'Organizing for Action speech during the ACA cancellation-notice political crisis; attempt to retrofit a grandfathering caveat onto years of categorical campaign/presidential pledges.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. Review of at least 37 instances of the keep-your-plan pledge by Obama or top officials found no instance offering the post-passage “if it hasn’t changed” caveat; seven instances came after HHS grandfathering rules made the impact clear. The rewrite of his own record was false.',
+        correction:
+          'The original promise was categorical; the 2013 “we always said it only applies if unchanged” framing rewrote the public record and was false.',
+        statementSource: 'Obama Organizing for Action remarks, Nov. 4, 2013 (RealClearPolitics video capture)',
+        statementUrl: 'https://www.realclearpolitics.com/video/2013/11/04/obama_what_we_said_was_you_can_keep_it_if_it_hasnt_changed_since_the_law_passed.html',
+        debunkSource: 'PolitiFact — Pants on Fire (Nov. 6, 2013) on the keep-your-plan caveat rewrite',
+        debunkUrl: 'https://www.politifact.com/factchecks/2013/nov/06/barack-obama/barack-obama-says-what-hed-said-was-you-could-keep/',
+        severity: 'egregious',
         tier: 'verified',
       },
     ],
@@ -6594,7 +6612,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'OH',
     photoUrl: getProfilePhoto('jim-jordan'),
     summary:
-      'Ohio Republican, Freedom Caucus founder, House Judiciary Chair. Consistent pro-Israel security voter and high-visibility Trump ally. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited FactCheck.org falsehoods — “they changed the form” whistleblower first-hand rule (Sept. 2019) and “record inflation” under Democrats in two years (Jan. 2023 Speakership nominating speech). Primary: OpenSecrets, House record, CRS RL33222, FactCheck.org.',
+      'Ohio Republican, Freedom Caucus founder, House Judiciary Chair. Consistent pro-Israel security voter and high-visibility Trump ally. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket (n≥3, dual-cited): “they changed the form” whistleblower first-hand rule (Sept. 2019 FactCheck); “record inflation” under Democrats in two years (Jan. 2023 Speakership, FactCheck); Ukrainians “never promised” a Burisma investigation while aid was paused (Dec. 2019 Judiciary, FactCheck + July 25 call memo). Primary: OpenSecrets, House record, CRS RL33222, FactCheck.org.',
     tags: [
       'Representative',
       'Freedom Caucus',
@@ -6727,6 +6745,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'jordan-ukrainians-never-promised-investigation-2019',
+        statement:
+          '“The Ukrainians never started, never promised to start and never announced an investigation in the time that the aid was paused. Never once.”',
+        saidAt: 'December 4, 2019',
+        context:
+          'House Judiciary Committee public hearing on articles of impeachment; GOP talking point that Ukraine received a call, a meeting, and security aid without promising the investigations Trump sought.',
+        whyFalse:
+          'FactCheck.org: Jordan is wrong that Ukrainians “never promised to start” an investigation. In the July 25, 2019 call memo Zelensky told Trump the next prosecutor general “will look into the situation, specifically to the company that you mentioned” (Burisma). That promise was secured before the call (Sondland–Volker–Taylor messages) and is on the White House memorandum of the conversation — not “never once.”',
+        correction:
+          'Zelensky promised on the July 25 call that his new prosecutor general would examine Burisma; the absolute “never promised” claim is false.',
+        statementSource: 'House Judiciary Committee hearing, Dec. 4, 2019 (Jordan remarks; FactCheck.org capture)',
+        statementUrl: 'https://www.youtube.com/watch?v=7HvswsAcZvc',
+        debunkSource:
+          'FactCheck.org — Republicans Cherry-Pick Facts on Impeachment (Dec. 5, 2019); White House July 25 call memo',
+        debunkUrl: 'https://www.factcheck.org/2019/12/republicans-cherry-pick-facts-on-impeachment/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://jordan.house.gov' },
@@ -6739,6 +6776,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'FactCheck.org — Speakership inflation claim',
         url: 'https://www.factcheck.org/2023/01/factchecking-the-house-speaker-election/',
+      },
+      {
+        label: 'FactCheck.org — Ukraine “never promised” claim',
+        url: 'https://www.factcheck.org/2019/12/republicans-cherry-pick-facts-on-impeachment/',
       },
     ],
   },

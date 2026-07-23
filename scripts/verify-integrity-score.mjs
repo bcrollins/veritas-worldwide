@@ -242,28 +242,33 @@ for (const f of (cruzP.documentedFalsehoods || []).filter((x) => x.tier === 'ver
   if (f.statementUrl === f.debunkUrl) throw new Error('ted-cruz dual-cite collision: ' + f.id);
 }
 
-// Mitch McConnell multi-entry expansion
+// Mitch McConnell multi-entry expansion (n≥3 densify)
 const mcconnell = scores['mitch-mcconnell'];
-if (!mcconnell || mcconnell.n < 2) throw new Error('mitch-mcconnell needs ≥2 verified falsehoods, got ' + (mcconnell?.n ?? 0));
-if (mcconnell.score > 75) throw new Error('mitch-mcconnell score expected ≤75 after deep dive, got ' + mcconnell.score);
+if (!mcconnell || mcconnell.n < 3) throw new Error('mitch-mcconnell needs ≥3 verified falsehoods, got ' + (mcconnell?.n ?? 0));
+if (mcconnell.score > 60) throw new Error('mitch-mcconnell score expected ≤60 after densify, got ' + mcconnell.score);
 const mcconnellP = getProfileBySlug('mitch-mcconnell');
 for (const id of [
   'mcconnell-garland-election-year-scotus-2016',
   'mcconnell-freedom-to-vote-sprawling-takeover-2022',
+  'mcconnell-obama-nominees-faster-than-bush-2013',
 ]) {
   if (!(mcconnellP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('mitch-mcconnell missing docket id: ' + id);
   }
 }
+for (const f of (mcconnellP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('mitch-mcconnell dual-cite collision: ' + f.id);
+}
 
-// Nikki Haley dual-cited integrity deep-dive
+// Nikki Haley dual-cited integrity deep-dive (n≥3 densify)
 const haley = scores['nikki-haley'];
-if (!haley || haley.n < 2) throw new Error('nikki-haley needs ≥2 verified falsehoods, got ' + (haley?.n ?? 0));
-if (haley.score > 75) throw new Error('nikki-haley score expected ≤75 after deep dive, got ' + haley.score);
+if (!haley || haley.n < 3) throw new Error('nikki-haley needs ≥3 verified falsehoods, got ' + (haley?.n ?? 0));
+if (haley.score > 60) throw new Error('nikki-haley score expected ≤60 after densify, got ' + haley.score);
 const haleyP = getProfileBySlug('nikki-haley');
 for (const id of [
   'haley-texas-secession-right-2024',
   'haley-biden-harris-massive-tax-hikes-working-families-2020',
+  'haley-july4-cookout-67pct-inflation-2022',
 ]) {
   if (!(haleyP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('nikki-haley missing docket id: ' + id);
@@ -290,10 +295,23 @@ const bill = scores['bill-clinton'];
 if (!bill || bill.n < 2) throw new Error('bill-clinton needs ≥2 verified falsehoods, got ' + (bill?.n ?? 0));
 if (bill.score > 55) throw new Error('bill-clinton score expected ≤55 after deep dive, got ' + bill.score);
 
-// Barack Obama multi-entry (keep-your-plan + steel production)
+// Barack Obama multi-entry densify (keep-your-plan + steel + caveat rewrite)
 const obama = scores['barack-obama'];
-if (!obama || obama.n < 2) throw new Error('barack-obama needs ≥2 verified falsehoods, got ' + (obama?.n ?? 0));
-if (obama.score > 65) throw new Error('barack-obama score expected ≤65 after deep dive, got ' + obama.score);
+if (!obama || obama.n < 3) throw new Error('barack-obama needs ≥3 verified falsehoods, got ' + (obama?.n ?? 0));
+if (obama.score > 40) throw new Error('barack-obama score expected ≤40 after densify, got ' + obama.score);
+const obamaP = getProfileBySlug('barack-obama');
+for (const id of [
+  'obama-keep-your-plan-2013',
+  'obama-steel-production-2016',
+  'obama-keep-plan-caveat-rewrite-2013',
+]) {
+  if (!(obamaP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('barack-obama missing docket id: ' + id);
+  }
+}
+for (const f of (obamaP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('barack-obama dual-cite collision: ' + f.id);
+}
 
 // Mike Pence dual-cited integrity gate
 const pence = scores['mike-pence'];
@@ -368,14 +386,15 @@ for (const f of (pompeoP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('mike-pompeo dual-cite collision: ' + f.id);
 }
 
-// Lindsey Graham multi-entry integrity deep-dive
+// Lindsey Graham multi-entry integrity deep-dive (n≥3 densify)
 const graham = scores['lindsey-graham'];
-if (!graham || graham.n < 2) throw new Error('lindsey-graham needs ≥2 verified falsehoods, got ' + (graham?.n ?? 0));
-if (graham.score > 75) throw new Error('lindsey-graham score expected ≤75 after deep dive, got ' + graham.score);
+if (!graham || graham.n < 3) throw new Error('lindsey-graham needs ≥3 verified falsehoods, got ' + (graham?.n ?? 0));
+if (graham.score > 60) throw new Error('lindsey-graham score expected ≤60 after densify, got ' + graham.score);
 const grahamP = getProfileBySlug('lindsey-graham');
 for (const id of [
   'graham-bbb-3-trillion-deficit-2021',
   'graham-impeachment-due-process-2019',
+  'graham-student-loan-surcharge-healthcare-2010',
 ]) {
   if (!(grahamP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('lindsey-graham missing docket id: ' + id);
@@ -472,16 +491,19 @@ for (const f of (pelosiP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('nancy-pelosi dual-cite collision: ' + f.id);
 }
 
-// Bernie Sanders integrity gate
+// Bernie Sanders integrity gate (n≥3 densify)
 const sanders = scores['bernie-sanders'];
-if (!sanders || sanders.n < 2) throw new Error('bernie-sanders needs ≥2 verified falsehoods, got ' + (sanders?.n ?? 0));
-if (sanders.score > 75) throw new Error('bernie-sanders score expected ≤75, got ' + sanders.score);
+if (!sanders || sanders.n < 3) throw new Error('bernie-sanders needs ≥3 verified falsehoods, got ' + (sanders?.n ?? 0));
+if (sanders.score > 60) throw new Error('bernie-sanders score expected ≤60 after densify, got ' + sanders.score);
 const sandersP = getProfileBySlug('bernie-sanders');
-if (!(sandersP.documentedFalsehoods || []).some((f) => f.id === 'sanders-twice-health-spending-any-country-2015')) {
-  throw new Error('bernie-sanders missing health-spending docket id');
-}
-if (!(sandersP.documentedFalsehoods || []).some((f) => f.id === 'sanders-40-percent-guns-no-background-checks-2018')) {
-  throw new Error('bernie-sanders missing 40% guns background-check docket id');
+for (const id of [
+  'sanders-twice-health-spending-any-country-2015',
+  'sanders-40-percent-guns-no-background-checks-2018',
+  'sanders-only-primary-candidate-voted-against-all-trump-defense-budgets-2019',
+]) {
+  if (!(sandersP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('bernie-sanders missing docket id: ' + id);
+  }
 }
 for (const f of (sandersP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('bernie-sanders dual-cite collision: ' + f.id);
@@ -532,37 +554,40 @@ for (const f of (kushnerP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('kushner dual-cite collision: ' + f.id);
 }
 
-// Rand Paul integrity gate
+// Rand Paul integrity gate (n≥3 densify)
 const randPaul = scores['rand-paul'];
-if (!randPaul || randPaul.n < 2) throw new Error('rand-paul needs ≥2 verified falsehoods, got ' + (randPaul?.n ?? 0));
-if (randPaul.score > 75) throw new Error('rand-paul score expected ≤75, got ' + randPaul.score);
+if (!randPaul || randPaul.n < 3) throw new Error('rand-paul needs ≥3 verified falsehoods, got ' + (randPaul?.n ?? 0));
+if (randPaul.score > 60) throw new Error('rand-paul score expected ≤60 after densify, got ' + randPaul.score);
 const randPaulP = getProfileBySlug('rand-paul');
-if (!(randPaulP.documentedFalsehoods || []).some((f) => f.id === 'paul-no-omicron-hospitalizations-2022')) {
-  throw new Error('rand-paul missing omicron hospitalizations docket id');
-}
-if (!(randPaulP.documentedFalsehoods || []).some((f) => f.id === 'paul-70pct-foreign-aid-stolen-2017')) {
-  throw new Error('rand-paul missing 70% foreign-aid docket id');
+for (const id of [
+  'paul-no-omicron-hospitalizations-2022',
+  'paul-70pct-foreign-aid-stolen-2017',
+  'paul-trump-ukraine-exactly-like-biden-2019',
+]) {
+  if (!(randPaulP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('rand-paul missing docket id: ' + id);
+  }
 }
 for (const f of (randPaulP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('rand-paul dual-cite collision: ' + f.id);
 }
 
-// Ilhan Omar integrity gate
+// Ilhan Omar integrity gate (n≥3 densify)
 const omar = scores['ilhan-omar'];
-if (!omar || omar.n < 2) throw new Error('ilhan-omar needs ≥2 verified falsehoods, got ' + (omar?.n ?? 0));
-if (omar.score > 75) throw new Error('ilhan-omar score expected ≤75, got ' + omar.score);
+if (!omar || omar.n < 3) throw new Error('ilhan-omar needs ≥3 verified falsehoods, got ' + (omar?.n ?? 0));
+if (omar.score > 60) throw new Error('ilhan-omar score expected ≤60 after densify, got ' + omar.score);
 const omarP = getProfileBySlug('ilhan-omar');
-if (!(omarP.documentedFalsehoods || []).some((f) => f.id === 'omar-cair-founded-after-911-2019')) {
-  throw new Error('ilhan-omar missing CAIR founding docket id');
-}
-if (!(omarP.documentedFalsehoods || []).some((f) => f.id === 'omar-57-cents-defense-budget-2019')) {
-  throw new Error('ilhan-omar missing 57% defense docket id');
+for (const id of [
+  'omar-cair-founded-after-911-2019',
+  'omar-57-cents-defense-budget-2019',
+  'omar-500-gun-deaths-per-day-2019',
+]) {
+  if (!(omarP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('ilhan-omar missing docket id: ' + id);
+  }
 }
 for (const f of (omarP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('ilhan-omar dual-cite collision: ' + f.id);
-}
-for (const f of (omarP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
-  if (f.statementUrl === f.debunkUrl) throw new Error('omar dual-cite collision: ' + f.id);
 }
 
 // AOC multi-entry integrity deep-dive
@@ -673,16 +698,19 @@ for (const f of (mikeJohnsonP.documentedFalsehoods || []).filter((x) => x.tier =
   if (f.statementUrl === f.debunkUrl) throw new Error('mike-johnson dual-cite collision: ' + f.id);
 }
 
-// Jim Jordan integrity gate (multi-entry)
+// Jim Jordan integrity gate (n≥3 densify)
 const jordan = scores['jim-jordan'];
-if (!jordan || jordan.n < 2) throw new Error('jim-jordan needs ≥2 verified falsehoods, got ' + (jordan?.n ?? 0));
-if (jordan.score > 75) throw new Error('jim-jordan score expected ≤75, got ' + jordan.score);
+if (!jordan || jordan.n < 3) throw new Error('jim-jordan needs ≥3 verified falsehoods, got ' + (jordan?.n ?? 0));
+if (jordan.score > 60) throw new Error('jim-jordan score expected ≤60 after densify, got ' + jordan.score);
 const jordanP = getProfileBySlug('jim-jordan');
-if (!(jordanP.documentedFalsehoods || []).some((f) => f.id === 'jordan-whistleblower-form-changed-firsthand-2019')) {
-  throw new Error('jim-jordan missing whistleblower form docket id');
-}
-if (!(jordanP.documentedFalsehoods || []).some((f) => f.id === 'jordan-record-inflation-two-years-2023')) {
-  throw new Error('jim-jordan missing record inflation docket id');
+for (const id of [
+  'jordan-whistleblower-form-changed-firsthand-2019',
+  'jordan-record-inflation-two-years-2023',
+  'jordan-ukrainians-never-promised-investigation-2019',
+]) {
+  if (!(jordanP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('jim-jordan missing docket id: ' + id);
+  }
 }
 for (const f of (jordanP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('jim-jordan dual-cite collision: ' + f.id);
