@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T10:00:04.624Z  
+**Generated:** 2026-07-23T10:03:39.420Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 336  
-**Tier histogram:** `{"circumstantial": 16, "contested": 34, "interpretive": 33, "literary_theological": 3, "speculative": 2, "verified": 120, "well_attested": 128}`
+**Claim count:** 345  
+**Tier histogram:** `{"circumstantial": 16, "contested": 34, "interpretive": 34, "literary_theological": 3, "speculative": 2, "verified": 124, "well_attested": 132}`
 
 Entity-only attribution. Live on veritasworldwide.com.
 
@@ -37,6 +37,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ane-mesha` | verified | proof_grade_data | The Mesha Stele (c. 840 BCE) names Omri of Israel, Yahweh, and Moabite campaigns paralleling 2 Kings 3. |
 | `ane-moabite-stone-context` | verified | proof_grade_data | The Mesha Stele (Moabite Stone) remains a primary control for Omride-period geopolitics and Yahwistic onomastics in Transjordan. |
 | `ane-sennacherib` | verified | proof_grade_data | Sennacherib’s annals (Taylor Prism / related prisms) describe the 701 BCE campaign against Judah and Hezekiah’s tribute without claiming Jerusalem’s capture. |
+| `ane-sennacherib-prism-tribute` | verified | proof_grade_data | Sennacherib prisms claim Hezekiah was shut up “like a bird in a cage” and paid tribute — Assyrian framing of 701 BCE without claiming Jerusalem’s capture. |
 | `ane-siloam-inscription` | verified | proof_grade_data | The Siloam Tunnel inscription (Jerusalem) is a primary Hebrew epigraphic witness associated with Hezekiah’s water system construction narrative. |
 | `ane-siloam-tunnel-engineering` | verified | proof_grade_data | Hezekiah’s tunnel engineering is archaeologically verified; the Siloam inscription describes the breakthrough meeting of two work crews. |
 | `ane-tel-dan` | verified | proof_grade_data | The Tel Dan Stele (9th century BCE) attests the phrase “House of David” (bytdwd) outside the Bible. |
@@ -48,6 +49,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `arch-caesarea-maritima` | verified | proof_grade_data | Caesarea Maritima — Herodian harbor city and later Roman provincial capital — is extensively excavated and contextualizes prefectural administration relevant to Pilate traditions. |
 | `arch-caesarea-philippi` | verified | proof_grade_data | Paneas / Caesarea Philippi (Banias) is archaeologically documented as a Herodian/Philip city at the Jordan headwaters with a Paneion cult site. |
 | `arch-capernaum` | well_attested | attested_report | Capernaum (Kefar Nahum) was a fishing village on the Sea of Galilee with Early Roman occupation; a later synagogue stands over earlier remains. |
+| `arch-capernaum-synagogue-strata` | well_attested | debate | Capernaum’s white limestone synagogue is later (Byzantine); basalt foundations and village remains inform earlier occupation debates under the later building. |
 | `arch-dead-sea-scroll-caves` | verified | proof_grade_data | The Qumran cave finds (1947–) remain the primary archaeological recovery context for the Dead Sea Scrolls corpus. |
 | `arch-destruction-70` | verified | proof_grade_data | The Roman destruction of Jerusalem and the Temple in 70 CE is multiply attested (Josephus; archaeological burn/destruction layers; Roman triumph iconography such as the Arch of Titus spoils relief). |
 | `arch-galilee-boat` | verified | proof_grade_data | The “Jesus Boat” (first-century Galilee boat, discovered 1986) illustrates fishing technology on the lake in the Early Roman period. |
@@ -109,6 +111,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `cosmo-recombination` | verified | science_model | CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM). |
 | `cosmo-reionization` | well_attested | science_model | CMB optical depth and high-z galaxy surveys constrain the epoch of reionization when the first stars ionized the intergalactic medium. |
 | `cosmo-sound-horizon` | verified | science_model | The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements. |
+| `cosmo-spectral-index` | verified | science_model | The scalar spectral index n_s ≈ 0.96 from CMB data is slightly red-tilted, consistent with many slow-roll inflation models. |
 | `cosmo-structure-formation` | verified | science_model | Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO. |
 | `cosmo-supernova-ia` | verified | science_model | Type Ia supernovae as standardizable candles mapped late-time acceleration and remain a core distance-ladder tool alongside BAO and CMB. |
 | `cosmo-weak-lensing` | verified | science_model | Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits. |
@@ -131,6 +134,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ec-irenaeus` | verified | proof_grade_data | Irenaeus (c. 180 CE) argues for a fourfold Gospel (Matthew, Mark, Luke, John) against alternative gospel usages. |
 | `ec-justin-apology` | well_attested | attested_report | Justin Martyr’s First Apology (mid-2nd c.) describes Christian worship, “memoirs of the apostles,” and defends Christians before a Roman audience. |
 | `ec-justin-dialogue` | well_attested | attested_report | Justin Martyr’s Dialogue with Trypho engages Jewish-Christian scriptural argument in the mid-2nd century. |
+| `ec-justin-memoirs` | well_attested | attested_report | Justin Martyr refers to “memoirs of the apostles” read in worship — mid-2nd-c. evidence for Gospel-like texts in liturgical use. |
 | `ec-marcion` | well_attested | attested_report | Marcion of Sinope (mid-2nd century) promulgated a reduced Gospel+Paul collection, prompting proto-orthodox canon and theological responses. |
 | `ec-martyrdom-polycarp` | well_attested | attested_report | The Martyrdom of Polycarp (mid-2nd c. traditions) is an early Christian martyr narrative shaping later hagiography. |
 | `ec-melito-passover` | well_attested | attested_report | Melito of Sardis’s Peri Pascha (2nd c.) is an early Christian paschal homily with high christology and anti-Jewish rhetoric — reception history, not HJ primary data. |
@@ -177,6 +181,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `hj-kingdom-of-god-core` | well_attested | reconstruction | The kingdom of God / reign of God is multiply attested as central to Jesus’ public proclamation across Synoptic streams. |
 | `hj-kingdom-proclamation` | well_attested | reconstruction | A core historical judgment across diverse scholars is that Jesus proclaimed God’s kingdom / reign as central to his public activity. |
 | `hj-language` | contested | debate | Jesus likely spoke Aramaic as a primary vernacular; Greek exposure in Galilee is plausible; Hebrew literacy/use is debated for the population stratum. |
+| `hj-last-supper-tradition` | well_attested | reconstruction | A final meal tradition with bread/cup words is multiply attested (Paul 1 Cor 11; Synoptics) as early Christian memory of Jesus’ last night. |
 | `hj-literacy` | well_attested | attested_report | Literacy rates in Early Roman Judea/Galilee were limited relative to modern norms; most people encountered texts orally and through specialists. |
 | `hj-magi-star` | literary_theological | tradition | Magi and star narratives in Matthew 2 are literary-theological traditions; astronomical “explanations” are speculative correlations, not historical proof. |
 | `hj-meal-practice` | well_attested | reconstruction | Shared meals / table fellowship appear as a distinctive social practice in Synoptic traditions and are widely treated as historically characteristic of Jesus’ movement. |
@@ -224,6 +229,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `mod-no-neutral-jesus` | interpretive | reconstruction | There is no value-free historical Jesus reconstruction: every reconstruction reflects criteria choices, source theories, and contextual models that must be stated. |
 | `mod-open-access-trend` | well_attested | attested_report | Open digital libraries (INTF NT.VMR, IAA DSS, British Library codices) have lowered barriers to primary manuscript inspection since the 2010s. |
 | `mod-open-data-ethics` | interpretive | attested_report | Modern digital manuscript projects raise access, conservation, provenance, and citation-ethics issues distinct from the content of any single reading. |
+| `mod-open-questions-remain` | interpretive | reconstruction | Even after hundreds of tier-labeled claims, open questions remain: exact chronology of many events, reconstruction of Q (if any), and the limits of criteria-based authenticity. |
 | `mod-population-genetics` | well_attested | science_model | Population genetics of the Levant documents deep regional continuity with admixture layers; it does not identify individuals named in ancient texts. |
 | `mod-print-gutenberg` | verified | proof_grade_data | Print culture from Gutenberg onward multiplied biblical text access and stabilized vernacular canons — a reception-historical fact separate from first-century origins. |
 | `mod-proof-vs-belief` | interpretive | reconstruction | This corpus’s proofVsConcept field exists to prevent readers from equating historical attestation, scientific models, tradition, and theological belief. |
@@ -254,6 +260,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nc-pliny` | verified | proof_grade_data | Pliny the Younger, Epistles 10.96–97, describes early second-century Christian worship practices in Bithynia-Pontus and imperial policy under Trajan. |
 | `nc-pliny-christ-hymns` | verified | proof_grade_data | Pliny reports Christians singing hymns to Christ “as to a god” (carmen Christo quasi deo) — early 2nd-c. evidence of cultic devotion language. |
 | `nc-pliny-christians` | verified | proof_grade_data | Pliny the Younger’s letter to Trajan (Ep. 10.96) describes early 2nd-century Bithynian Christians worshiping Christ “as a god” and legal policy toward them. |
+| `nc-pliny-legal-template` | well_attested | attested_report | Pliny’s letter became a template cited in later Roman legal memory for handling Christians as a judicial category. |
 | `nc-suetonius` | circumstantial | reconstruction | Suetonius, Claudius 25.4, refers to disturbances in Rome impulsore Chresto — often discussed as a possible garbled reference to Christ-related conflict, but identification is uncertain. |
 | `nc-suetonius-chrestus` | circumstantial | attested_report | Suetonius (Claudius 25) mentions disturbances in Rome under Claudius involving “Chrestus” — identification with Christ/Christians is possible but contested. |
 | `nc-suetonius-nero` | well_attested | attested_report | Suetonius (Nero 16) mentions punishments of Christians under Nero as adherents of a new and mischievous superstition. |
@@ -294,6 +301,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nt-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek columns for comparative Old Testament textual work — a landmark of ancient textual criticism. |
 | `nt-orthodox-corruption` | contested | debate | Bart Ehrman’s “orthodox corruption” thesis argues some early scribes altered texts in christologically charged passages; magnitude and intent remain debated. |
 | `nt-oxy-rhynchus` | verified | proof_grade_data | Oxyrhynchus papyri include important early Christian and NT fragments expanding the geographic footprint of early text transmission in Egypt. |
+| `nt-p45-cheaster` | verified | proof_grade_data | Papyrus P45 (Chester Beatty) is a major early substantial Gospels/Acts witness typically dated 3rd century. |
 | `nt-p45-p46-p47` | verified | proof_grade_data | Chester Beatty papyri (P45, P46, P47) are major third-century witnesses to Gospels/Acts, Paul, and Revelation respectively. |
 | `nt-p46-paul` | verified | proof_grade_data | Papyrus P46 is among the earliest substantial collections of Pauline letters (typically dated late 2nd / early 3rd century CE). |
 | `nt-p52` | well_attested | attested_report | Papyrus P52 (Rylands Greek P 457) is among the earliest surviving NT fragments (John 18), paleographically dated roughly to the second century CE. |
@@ -341,6 +349,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `st-sadducees-josephus` | well_attested | attested_report | Josephus’s descriptions of Sadducees emphasize aristocratic temple-associated elites denying fate and (per him) resurrection — tendentious but indispensable. |
 | `st-salome-alexandra` | well_attested | attested_report | Salome Alexandra’s reign (Hasmonean queen) is documented in Josephus as a period of Pharisaic influence before dynastic collapse into Roman arbitration. |
 | `st-samaria-papyri` | verified | proof_grade_data | The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria. |
+| `st-synagogue-inscriptions` | verified | proof_grade_data | Dedicatory inscriptions (e.g., Theodotos inscription) document pre-70 synagogue buildings used for reading Torah and hospitality. |
 | `st-synagogue-origins` | contested | debate | The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type. |
 | `st-temple-economy` | well_attested | attested_report | The Jerusalem Temple system involved tithes, offerings, and currency exchange for worshippers — a documented economic-religious complex in Josephus and later rabbinic memory. |
 | `st-temple-tax` | well_attested | attested_report | The half-shekel Temple tax and related fiscal practices are documented in Josephus, Matthew 17 tradition, and later rabbinic memory. |
