@@ -72,6 +72,8 @@ const deep = read('src/pages/DeepStatePage.tsx')
 assert(deep.includes('variant="also-in"') || deep.includes("variant='also-in'"), 'DeepState also-in spokes')
 const israel = read('src/pages/IsraelDossierPage.tsx')
 assert(israel.includes('variant="sticky"') || israel.includes("variant='sticky'"), 'Israel sticky DossierHubSpokes')
+const briefing = read('src/pages/IsraelDossierBriefingPage.tsx')
+assert(briefing.includes('variant="also-in"') || briefing.includes("variant='also-in'"), 'Briefing also-in spokes')
 
 // Dossier family mounts spokes
 for (const rel of [
