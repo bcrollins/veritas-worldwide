@@ -10090,7 +10090,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     legalStatus: 'multi-source-investigation',
     title: 'Israeli Hostages Denied Sleep Pattern (2023–2025)',
     date: 'October 2023 – 2025 (sleep-deprivation cohort)',
-    location: 'Gaza Strip captivity sites',
+    location: 'Gaza Strip captivity sites — sleep-deprivation subpattern',
     summary:
       'Released-hostage testimony and multi-source reporting document deliberate sleep deprivation of Israeli civilian hostages — continuous noise, restraints, and night interrogations compounding psychological torture. Pattern card distinct from beatings and solitary-confinement cards.',
     evidence:
@@ -10133,6 +10133,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 0 },
   },
+
+  {
+    id: 'gaza-children-lice-infestation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Lice Infestation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (lice-infestation cohort)',
+    location: 'Gaza Strip overcrowded tents — pediatric dermatology/hygiene collapse sites',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric lice infestations from overcrowding, water scarcity, and collapse of hygiene-supply chains — a multi-source wartime ectoparasite pattern distinct from scabies outbreak cards.',
+    evidence:
+      'WHO public-health materials, UNICEF WASH/child-health updates, and multi-outlet coverage establish multi-source pediatric lice infestation. Exact case counts evolve; multi-source wartime lice infestation among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO public-health materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza hygiene-disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-clean-clothing-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Clean Clothing Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (clean-clothing cohort)',
+    location: 'Gaza Strip captivity sites — clothing-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document prolonged denial of clean clothing and basic laundry for Israeli civilian hostages — compounding infection and humiliation. Pattern card distinct from hygiene-sanitation and menstrual-product cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source clean-clothing denial. Exact cases vary; multi-source denial of clean clothing for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-stoning-vehicles-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Stoning of Vehicles Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (vehicle-stoning cohort)',
+    location: 'West Bank inter-village roads and Route 60 approaches',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler stoning of Palestinian civilian vehicles after October 7 — injuring passengers including children. Pattern card distinct from vehicle arson and checkpoint assaults.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source vehicle stoning. Exact injury counts evolve; multi-source wartime settler stoning of civilian vehicles is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet vehicle-stoning coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-chemotherapy-interruption-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Chemotherapy Interruption Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (chemo-interruption cohort)',
+    location: 'Gaza Strip oncology referral points and destroyed cancer wards',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document interruption and collapse of pediatric chemotherapy and cancer-care pathways — children with treatable cancers left without protocols. Pattern card distinct from insulin-access and dialysis-collapse cards.',
+    evidence:
+      'WHO cancer-care emergency materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric chemotherapy interruption. Exact case counts evolve; multi-source wartime chemo interruption for Gaza children is the claim.',
+    sources: [
+      { label: 'WHO cancer-care emergency materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza cancer-care coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'oct7-vehicle-ramming-abduction-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Vehicle Ramming and Abduction Pattern (2023)',
+    date: 'October 7, 2023 (vehicle-ramming-abduction cohort)',
+    location: 'Southern Israel roads, kibbutz approaches, and Route 232 corridor',
+    summary:
+      'Israeli government materials, multi-outlet reporting, and multi-source survivor testimony document vehicle ramming, roadside ambushes, and abductions of Israeli civilians including children on October 7 — a multi-source mobility-attack pattern distinct from home burning and body desecration cards.',
+    evidence:
+      'Israeli government forensic materials, multi-outlet investigative coverage, and multi-source testimony establish multi-source vehicle ramming and abduction. Exact counts vary by source; multi-source vehicle-based civilian targeting on Oct 7 is the claim.',
+    sources: [
+      { label: 'Israeli government forensic materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Oct 7 roadside-attack coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-greenhouses-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Greenhouses Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (greenhouse-destruction cohort)',
+    location: 'West Bank agricultural greenhouse clusters and peri-village plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian greenhouses after October 7 — wrecking food production and family livelihoods including those supporting children. Pattern card distinct from olive-tree uprooting and water-tank destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source greenhouse destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian greenhouses is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet greenhouse-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-dialysis-access-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Dialysis Access Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pediatric-dialysis cohort)',
+    location: 'Gaza Strip remaining dialysis units and field referral points',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document collapse of pediatric dialysis capacity from destroyed machines, power loss, and consumable blockade — children with kidney failure facing preventable death. Pattern card distinct from crush-syndrome and insulin-access cards.',
+    evidence:
+      'WHO dialysis emergency materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric dialysis-access collapse. Exact case counts evolve; multi-source wartime pediatric dialysis collapse in Gaza is the claim.',
+    sources: [
+      { label: 'WHO dialysis emergency materials', url: 'https://www.who.int' },
+      { label: 'MSF clinical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza dialysis coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-communication-family-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Family Communication Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (family-communication-denial cohort)',
+    location: 'Gaza Strip captivity sites — family-contact denial subpattern',
+    summary:
+      'Released-hostage testimony, family accounts, and multi-source reporting document total or near-total denial of communication with families for Israeli civilian hostages over months — a multi-source isolation pattern distinct from solitary confinement and sleep-deprivation cards.',
+    evidence:
+      'Multi-source family and released-hostage testimony plus multi-outlet coverage establish multi-source family-communication denial. Exact cases vary; multi-source denial of family contact for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet hostage-family coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'hamas-rocket-israel-civilian-harm-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Hamas Rocket Civilian Harm Surge Pattern in Israel (2023–2025)',
+    date: 'October 2023 – 2025 (Hamas rocket-surge cohort)',
+    location: 'Israeli cities, towns, and kibbutzim under rocket alert sirens nationwide',
+    summary:
+      'Israeli government materials, multi-outlet reporting, and multi-source casualty documentation establish elevated Hamas rocket fire from Gaza causing civilian deaths, injuries, and mass sheltering across Israel including children — a dual-sided civilian-harm pattern distinct from Hezbollah northern rockets, Houthi Eilat, and Iran barrages.',
+    evidence:
+      'Israeli government home-front updates, multi-outlet rocket-casualty coverage, and multi-source incident reporting establish multi-source Hamas rocket civilian harm. Exact tolls evolve; multi-source wartime civilian harm in Israel from Hamas rockets is the claim.',
+    sources: [
+      { label: 'Israeli government home-front materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Hamas rocket coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 
 
@@ -15927,6 +16171,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['houthi', 'missiles', 'civilians', 'israel'],
   },
+
+  {
+    id: 'tl-gaza-child-lice-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Lice Infestation Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric lice infestation under overcrowding and WASH collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-lice-infestation-pattern-2023-2025',
+      'gaza-children-scabies-outbreak-pattern-2023-2025',
+      'gaza-children-chemotherapy-interruption-pattern-2023-2025',
+    ],
+    tags: ['lice', 'children', 'hygiene', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-clean-clothing-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Clean Clothing Pattern',
+    description: 'Multi-source documentation of prolonged denial of clean clothing for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-clean-clothing-pattern-2023-2025',
+      'israel-hostages-denied-communication-family-pattern-2023-2025',
+      'israel-hostages-denied-hygiene-sanitation-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'hygiene', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-vehicle-stoning-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Stoning of Vehicles Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler stoning of Palestinian civilian vehicles after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-stoning-vehicles-pattern-2023-2025',
+      'west-bank-settler-vehicle-arson-pattern-2023-2025',
+      'west-bank-settler-destroying-greenhouses-pattern-2023-2025',
+    ],
+    tags: ['stoning', 'vehicles', 'settlers', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-chemo-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Chemotherapy Interruption Pattern',
+    description: 'WHO/UNICEF multi-source documentation of pediatric chemotherapy interruption under siege conditions.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-chemotherapy-interruption-pattern-2023-2025',
+      'gaza-children-dialysis-access-collapse-pattern-2023-2025',
+      'gaza-children-insulin-access-collapse-pattern-2023-2025',
+    ],
+    tags: ['chemotherapy', 'children', 'cancer', 'gaza'],
+  },
+
+  {
+    id: 'tl-oct7-vehicle-ramming-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Vehicle Ramming and Abduction Pattern',
+    description: 'Multi-source documentation of vehicle ramming and abductions of Israeli civilians on October 7.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-vehicle-ramming-abduction-pattern-2023',
+      'oct7-burning-homes-pattern-2023',
+      'hamas-rocket-israel-civilian-harm-surge-pattern-2023-2025',
+    ],
+    tags: ['oct7', 'abduction', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-greenhouses-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Greenhouses Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian greenhouses after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-greenhouses-pattern-2023-2025',
+      'west-bank-settler-stoning-vehicles-pattern-2023-2025',
+      'west-bank-settler-attacking-olive-pickers-pattern-2023-2025',
+    ],
+    tags: ['greenhouses', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-dialysis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Dialysis Access Collapse Pattern',
+    description: 'WHO/MSF multi-source documentation of pediatric dialysis-access collapse under siege conditions.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-dialysis-access-collapse-pattern-2023-2025',
+      'gaza-children-chemotherapy-interruption-pattern-2023-2025',
+      'gaza-children-crush-syndrome-risk-pattern-2023-2025',
+    ],
+    tags: ['dialysis', 'children', 'kidney', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-family-communication-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Family Communication Pattern',
+    description: 'Multi-source documentation of near-total denial of family communication for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-communication-family-pattern-2023-2025',
+      'israel-hostages-denied-clean-clothing-pattern-2023-2025',
+      'israel-hostages-beatings-captivity-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-hamas-rocket-surge-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Hamas Rocket Civilian Harm Surge Pattern in Israel',
+    description: 'Multi-source documentation of elevated Hamas rocket fire causing civilian harm across Israel.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'hamas-rocket-israel-civilian-harm-surge-pattern-2023-2025',
+      'hezbollah-rocket-northern-israel-civilian-harm-pattern-2023-2025',
+      'houthi-missile-eilat-civilian-harm-pattern-2023-2025',
+    ],
+    tags: ['hamas', 'rockets', 'civilians', 'israel'],
+  },
+
 
 
 
