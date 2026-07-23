@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:38:50.914Z  
+**Generated:** 2026-07-23T09:41:16.215Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 263  
-**Tier histogram:** `{"circumstantial": 14, "contested": 29, "interpretive": 23, "literary_theological": 3, "speculative": 2, "verified": 92, "well_attested": 100}`
+**Claim count:** 272  
+**Tier histogram:** `{"circumstantial": 14, "contested": 29, "interpretive": 25, "literary_theological": 3, "speculative": 2, "verified": 95, "well_attested": 104}`
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
@@ -29,6 +29,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ane-lachish-letters` | verified | proof_grade_data | The Lachish ostraca (letters) are late-Iron-Age Hebrew administrative/military correspondence relevant to Judah’s final decades before the Babylonian destruction. |
 | `ane-merneptah` | verified | proof_grade_data | The Merneptah Stele (c. 1208 BCE) contains the earliest known extra-biblical reference to “Israel” as a people in Canaan. |
 | `ane-mesha` | verified | proof_grade_data | The Mesha Stele (c. 840 BCE) names Omri of Israel, Yahweh, and Moabite campaigns paralleling 2 Kings 3. |
+| `ane-moabite-stone-context` | verified | proof_grade_data | The Mesha Stele (Moabite Stone) remains a primary control for Omride-period geopolitics and Yahwistic onomastics in Transjordan. |
 | `ane-sennacherib` | verified | proof_grade_data | Sennacherib’s annals (Taylor Prism / related prisms) describe the 701 BCE campaign against Judah and Hezekiah’s tribute without claiming Jerusalem’s capture. |
 | `ane-siloam-inscription` | verified | proof_grade_data | The Siloam Tunnel inscription (Jerusalem) is a primary Hebrew epigraphic witness associated with Hezekiah’s water system construction narrative. |
 | `ane-siloam-tunnel-engineering` | verified | proof_grade_data | Hezekiah’s tunnel engineering is archaeologically verified; the Siloam inscription describes the breakthrough meeting of two work crews. |
@@ -55,6 +56,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-nazareth` | well_attested | attested_report | Nazareth existed as a small Jewish settlement in the Early Roman period; monumental first-century remains are limited. |
 | `arch-ossuaries-practice` | verified | proof_grade_data | Secondary burial in limestone ossuaries is archaeologically well attested in late Second Temple Jerusalem and environs (roughly late 1st c. BCE–70 CE). |
 | `arch-pool-bethesda` | well_attested | attested_report | Excavations north of the Temple Mount have exposed twin pools matching John’s description of Bethesda with five porticoes (John 5) better than once assumed. |
+| `arch-qumran-settlement` | well_attested | debate | Qumran settlement archaeology provides material context for the Dead Sea Scrolls community debates (Essene and alternative models). |
 | `arch-quran-not-control` | interpretive | reconstruction | The Qur’an (7th c. CE) is a late secondary witness for first-century Palestinian history and is not used here as a primary control for the historical Jesus. |
 | `arch-sepphoris` | verified | proof_grade_data | Sepphoris (Zippori), ~6 km from Nazareth, was a significant urban center in Early Roman Galilee under Antipas. |
 | `arch-sepphoris-urban` | verified | proof_grade_data | Sepphoris was a major Galilean urban center near Nazareth with extensive excavation of Hellenistic–Roman layers. |
@@ -86,6 +88,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-reionization` | well_attested | science_model | CMB optical depth and high-z galaxy surveys constrain the epoch of reionization when the first stars ionized the intergalactic medium. |
 | `cosmo-sound-horizon` | verified | science_model | The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements. |
 | `cosmo-structure-formation` | verified | science_model | Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO. |
+| `cosmo-supernova-ia` | verified | science_model | Type Ia supernovae as standardizable candles mapped late-time acceleration and remain a core distance-ladder tool alongside BAO and CMB. |
 | `cosmo-weak-lensing` | verified | science_model | Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits. |
 | `ec-1clement` | well_attested | attested_report | 1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative. |
 | `ec-apostolic-fathers` | verified | proof_grade_data | The Apostolic Fathers (1 Clement, Didache, Ignatius, Polycarp, etc.) provide early non-NT Christian primary sources. |
@@ -98,6 +101,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ec-gospel-harmony` | well_attested | attested_report | Tatian’s Diatessaron (late 2nd c.) harmonized the four Gospels into a single narrative widely used in Syriac Christianity — evidence of early fourfold Gospel prestige and of textual fluidity in use. |
 | `ec-gospel-thomas` | contested | debate | The Gospel of Thomas (Nag Hammadi) is a sayings gospel whose dating and dependence on canonical Gospels are contested. |
 | `ec-ignatius` | well_attested | attested_report | Ignatius of Antioch’s letters (early 2nd c., authenticity of middle recension majority) show monepiscopacy advocacy and high Christological language in transit to martyrdom. |
+| `ec-ignatius-letters` | well_attested | attested_report | Ignatius of Antioch’s letters (early 2nd c., middle recension) document episcopal structure and early christological confessions en route to martyrdom. |
 | `ec-irenaeus` | verified | proof_grade_data | Irenaeus (c. 180 CE) argues for a fourfold Gospel (Matthew, Mark, Luke, John) against alternative gospel usages. |
 | `ec-justin-apology` | well_attested | attested_report | Justin Martyr’s First Apology (mid-2nd c.) describes Christian worship, “memoirs of the apostles,” and defends Christians before a Roman audience. |
 | `ec-marcion` | well_attested | attested_report | Marcion of Sinope (mid-2nd century) promulgated a reduced Gospel+Paul collection, prompting proto-orthodox canon and theological responses. |
@@ -148,6 +152,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-peter-rome` | circumstantial | reconstruction | Peter’s presence and martyrdom in Rome are early traditions (1 Clement; later Acts of Peter) with varying historical confidence; New Testament itself does not narrate a Roman martyrdom. |
 | `hj-pilate-stone` | verified | proof_grade_data | The Pilate Stone (Caesarea Maritima, 1961) independently attests Pontius Pilate as prefect of Judea. |
 | `hj-prayer-abba` | contested | debate | The address “Abba” in Mark 14:36 and Pauline usage (Rom 8:15; Gal 4:6) is often cited in debates about Jesus’ prayer language; over-claims about uniqueness are contested. |
+| `hj-prophetic-actions` | interpretive | reconstruction | Symbolic prophetic actions (e.g., Temple demonstration) are a recognized category in historical Jesus research for interpreting public deeds. |
 | `hj-q-hypothesis` | contested | reconstruction | The Two-Source Hypothesis posits Markan priority plus a sayings source “Q” behind Matthew and Luke; Q remains a scholarly reconstruction without a surviving manuscript. |
 | `hj-quirinius` | contested | debate | Luke’s census notice linking Jesus’ birth to a registration under Quirinius (6 CE) is a classic chronological problem relative to a Herodian birth before 4 BCE. |
 | `hj-resurrection-hist` | literary_theological | tradition | Claims of bodily resurrection are theological assertions; historians can document early belief and proclamation, not laboratory verification of the event. |
@@ -162,6 +167,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-criteria-coherence-limits` | interpretive | reconstruction | Coherence criteria risk circularity: they test sayings against a reconstructed “core Jesus” that itself depends on prior authentications. |
 | `mod-criteria-critique` | interpretive | reconstruction | Classical criteria of authenticity (embarrassment, dissimilarity, multiple attestation) are historiographical tools with known biases; recent memory and social approaches revise their use. |
 | `mod-criteria-embarrassment` | interpretive | reconstruction | The criterion of embarrassment is a heuristic, not a proof algorithm; it can be misapplied when later communities reframe “embarrassing” material. |
+| `mod-criteria-multiple-attestation-practice` | interpretive | reconstruction | Multiple independent attestation remains a practical confidence-boosting tool when streams are truly independent (Mark, special Matthew/Luke, John, Paul, non-Christian). |
 | `mod-criterion-dissimilarity-limits` | interpretive | reconstruction | Double dissimilarity (unlike Judaism and early Church) is widely criticized as historically implausible and theologically loaded. |
 | `mod-criterion-embarrassment-limits` | interpretive | reconstruction | The criterion of embarrassment is heuristic and circular if “embarrassing” is defined by later Christian theology rather than first-century Jewish context. |
 | `mod-critical-editions` | verified | proof_grade_data | NA28/UBS5 (and ongoing ECM/INTF work) are the standard working critical texts of the Greek NT for academic use. |
@@ -192,6 +198,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-galen-christians` | well_attested | attested_report | Galen (2nd c.) makes brief remarks on Christians as a philosophical school/sect — hostile/neutral medical-philosopher notice of a known group. |
 | `nc-james` | well_attested | attested_report | Josephus, Antiquities 20.200 refers to “the brother of Jesus who is called Christ, James” in the account of Ananus’s execution of James — generally judged authentic. |
 | `nc-lucian` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians and refers to their crucified sophist in Passing of Peregrinus — evidence of known Christian devotion, not independent biography. |
+| `nc-lucian-alexander` | well_attested | attested_report | Lucian’s Alexander the False Prophet satirizes cult founders and miracle claims in the second century — comparative evidence for how elites mocked religious innovators. |
 | `nc-lucian-peregrinus` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians in The Passing of Peregrinus, treating Christ as a crucified “sophist” founder of a cult. |
 | `nc-mara` | circumstantial | reconstruction | The Syriac letter of Mara bar Serapion mentions a “wise king” executed by the Jews; identification with Jesus is possible but not certain. |
 | `nc-mara-bar-serapion` | circumstantial | attested_report | The Mara bar Serapion letter (Syriac; date debated, often 1st–3rd c.) may allude to a “wise king” of the Jews executed by his people — identification with Jesus is uncertain. |
@@ -236,6 +243,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-p46-paul` | verified | proof_grade_data | Papyrus P46 is among the earliest substantial collections of Pauline letters (typically dated late 2nd / early 3rd century CE). |
 | `nt-p52` | well_attested | attested_report | Papyrus P52 (Rylands Greek P 457) is among the earliest surviving NT fragments (John 18), paleographically dated roughly to the second century CE. |
 | `nt-p66-p75` | verified | proof_grade_data | Bodmer papyri P66 (John) and P75 (Luke/John) are major early substantial witnesses typically dated to the late 2nd / early 3rd century and foundational for early Alexandrian text studies. |
+| `nt-patristic-citations` | well_attested | proof_grade_data | Patristic citations are secondary witnesses that can preserve early readings but require careful evaluation of quoting habits and later manuscript tradition of the fathers. |
 | `nt-paul-dates` | well_attested | reconstruction | Undisputed Pauline letters are typically dated c. 49–58 CE and are the earliest surviving Christian literary corpus. |
 | `nt-pericope-adulterae` | well_attested | proof_grade_data | The pericope adulterae (John 7:53–8:11) is widely judged a later insertion on strong external manuscript grounds, though the story circulated early in the Latin and some Greek traditions. |
 | `nt-scribal-habits` | verified | proof_grade_data | Codicology and singular-reading studies document mechanical scribal habits (leaps, dittography, harmonization) that explain many variants without theological motive. |
@@ -267,6 +275,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-pompey-63` | verified | proof_grade_data | Pompey’s intervention in Judea (63 BCE) brought Hasmonean civil conflict under Roman arbitration and began lasting Roman overlordship. |
 | `st-prefecture` | verified | proof_grade_data | Roman Judea after 6 CE was administered by equestrian prefects (later procurators) based primarily at Caesarea, with troops and judicial powers including capital cases in practice. |
 | `st-roman-census-practices` | contested | debate | Roman provincial censuses and tax registrations are documented empire-wide; Luke’s census of Quirinius is a specific chronological crux relative to Herod’s death. |
+| `st-roman-client-kings` | verified | proof_grade_data | Rome governed Judea via client kings (Herod, Archelaus) and later equestrian prefects — dual administrative models shape Gospel political settings. |
 | `st-salome-alexandra` | well_attested | attested_report | Salome Alexandra’s reign (Hasmonean queen) is documented in Josephus as a period of Pharisaic influence before dynastic collapse into Roman arbitration. |
 | `st-samaria-papyri` | verified | proof_grade_data | The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria. |
 | `st-synagogue-origins` | contested | debate | The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type. |
