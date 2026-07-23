@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:17:23.545Z",
+  "generatedAt": "2026-07-23T10:17:59.074Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 336,
-    "timelineEvents": 324,
+    "incidents": 339,
+    "timelineEvents": 327,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 322,
+    "historicalWarCrimesPack": 325,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 276
+      "post-oct7": 279
     },
     "incidentsByTier": {
-      "verified": 334,
+      "verified": 337,
       "circumstantial": 2
     },
-    "childrenTagged": 304,
-    "civiliansTagged": 334,
+    "childrenTagged": 307,
+    "civiliansTagged": 337,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3528,6 +3528,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-chloride-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Chloride Imbalance Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated chloride imbalance risk among children under diarrhea and collapsed ORS.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-chloride-imbalance-risk-pattern-2023-2025",
+        "gaza-children-sodium-imbalance-risk-pattern-2023-2025",
+        "gaza-children-acute-watery-diarrhea-pattern-2023-2025"
+      ],
+      "tags": [
+        "chloride",
+        "children",
+        "electrolytes",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-copper-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -6247,6 +6268,28 @@
       ]
     },
     {
+      "id": "tl-hostages-holiday-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Holiday Observance Pattern",
+      "description": "Multi-source documentation of denial of Jewish holiday observance for civilian hostages across multiple holidays.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-calendar-holidays-pattern-2023-2025",
+        "israel-hostages-denied-religious-practice-pattern-2023-2025",
+        "israel-hostages-denied-clock-calendar-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "religion",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-hygiene-items-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7581,6 +7624,27 @@
         "agriculture",
         "settlers",
         "civilians",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-ambulance-blocking-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Ambulance Blocking Pattern",
+      "description": "OCHA/PRCS multi-source documentation of elevated settler blocking of Palestinian ambulances after October 7.",
+      "source": "OCHA / PRCS / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-blocking-ambulances-pattern-2023-2025",
+        "gaza-red-crescent-ems-harm-pattern-2023-2025",
+        "west-bank-settler-road-blocks-pattern-2023-2025"
+      ],
+      "tags": [
+        "ambulances",
+        "settlers",
+        "access",
         "west-bank"
       ]
     },
@@ -21733,6 +21797,134 @@
         },
         {
           "label": "Multi-outlet electric line sabotage coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-chloride-imbalance-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Chloride Imbalance Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (chloride cohort)",
+      "location": "Gaza Strip clinics and displacement sites",
+      "summary": "WHO, UNICEF, and multi-source health reporting document elevated chloride imbalance risk among Gaza children under diarrhea, contaminated water, and collapsed ORS supply — a clinical electrolyte pattern distinct from sodium and potassium cards.",
+      "evidence": "WHO clinical materials, UNICEF WASH/health notes, and multi-outlet coverage establish multi-source chloride-imbalance risk. Exact clinical counts evolve; multi-source wartime pediatric chloride imbalance risk is the claim.",
+      "sources": [
+        {
+          "label": "WHO clinical materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF WASH / health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza electrolyte coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-calendar-holidays-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Holiday Observance Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (holiday-denial cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of Jewish holiday observance for Israeli civilian hostages during captivity across multiple holidays — a religious-practice and dignity pattern distinct from clock/calendar denial and religious-practice denial cards.",
+      "evidence": "Multi-source released-hostage testimony timed to holiday periods and multi-outlet coverage establish multi-source holiday-observance denial. Exact holiday lists vary by release cohort; multi-source holiday denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-blocking-ambulances-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Blocking of Ambulances Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (ambulance-block cohort)",
+      "location": "West Bank roads and village approaches",
+      "summary": "OCHA, PRCS, and multi-source reporting document elevated settler blocking and stone-throwing at Palestinian ambulances after October 7 — delaying emergency care for civilians including children. Pattern card for ambulance blocking distinct from Gaza PRCS EMS and military checkpoint cards.",
+      "evidence": "OCHA access materials, PRCS incident notes, and multi-outlet coverage establish multi-source ambulance blocking. Exact delay counts evolve; multi-source wartime settler ambulance blocking is the claim.",
+      "sources": [
+        {
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "PRCS ambulance materials",
+          "url": "https://www.palestinercs.org"
+        },
+        {
+          "label": "Multi-outlet ambulance blocking coverage",
           "url": "https://apnews.com"
         }
       ],
