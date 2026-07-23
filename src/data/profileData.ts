@@ -5950,8 +5950,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'OH',
     photoUrl: getProfilePhoto('jim-jordan'),
     summary:
-      'Ohio Republican, Freedom Caucus founder, House Judiciary Chair. Consistent pro-Israel security voter and high-visibility Trump ally. Documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, House record, CRS RL33222.',
-    tags: ['Representative', 'Freedom Caucus', 'Pro-Israel', 'AIPAC', 'Ohio', 'Republican', 'Judiciary Chair'],
+      'Ohio Republican, Freedom Caucus founder, House Judiciary Chair. Consistent pro-Israel security voter and high-visibility Trump ally. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited FactCheck.org falsehoods — “they changed the form” whistleblower first-hand rule (Sept. 2019) and “record inflation” under Democrats in two years (Jan. 2023 Speakership nominating speech). Primary: OpenSecrets, House record, CRS RL33222, FactCheck.org.',
+    tags: [
+      'Representative',
+      'Freedom Caucus',
+      'Pro-Israel',
+      'AIPAC',
+      'Ohio',
+      'Republican',
+      'Judiciary Chair',
+      'Integrity Docket',
+    ],
     career: [
       'Ohio state legislature / wrestling coach (public bio)',
       '2007– — U.S. House',
@@ -6020,11 +6029,73 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2007–2024',
       },
+      {
+        claim:
+          'Integrity docket: Sept. 29, 2019 claim that IC whistleblower “form” was changed so first-hand knowledge is no longer required — and that the Ukraine whistleblower “had no firsthand knowledge” — debunked by FactCheck.org / ICIG (statute never required first-hand knowledge; complainant used old form and had direct knowledge of certain conduct).',
+        source: 'FactCheck.org; ICIG Sept. 30, 2019 statement; CNN SOTU transcript',
+        url: 'https://www.factcheck.org/2019/10/no-hearsay-rule-change-for-whistleblowers/',
+        tier: 'verified',
+        date: '2019',
+      },
+      {
+        claim:
+          'Integrity docket: Jan. 2023 Speakership nominating speech claim that Democrats in “two years’ time” produced “record inflation” — FactCheck.org: modern CPI 12-month peaks remain 1980 (14.6%), not the Biden-era 9% peak.',
+        source: 'FactCheck.org; BLS CPI; C-SPAN user clip',
+        url: 'https://www.factcheck.org/2023/01/factchecking-the-house-speaker-election/',
+        tier: 'verified',
+        date: '2023',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'jordan-whistleblower-form-changed-firsthand-2019',
+        statement:
+          'Claimed the intelligence-community whistleblower form/rules were changed so first-hand knowledge is no longer required, and that the Ukraine whistleblower “had no firsthand knowledge” / only “heard something from someone who may have heard something from someone.”',
+        saidAt: 'September 29, 2019',
+        context:
+          'CNN State of the Union interview during the first Trump impeachment inquiry over the Ukraine call, echoing concurrent Trump/GOP talking points about a “changed” hearsay rule.',
+        whyFalse:
+          'FactCheck.org and the ICIG’s Sept. 30, 2019 statement: statute has never required first-hand knowledge to file an urgent-concern complaint. Form language was clarified because it could be misread; the ICIG cannot add conditions not in law. The Ukraine complainant used the older form and the ICIG found direct knowledge of certain alleged conduct plus other supporting information — not pure unsubstantiated hearsay.',
+        correction:
+          'IC whistleblowers have never been legally required to possess only first-hand knowledge; the 2019 form edit clarified misleading language, and the Ukraine complainant had direct knowledge of certain conduct per the ICIG.',
+        statementSource: 'CNN State of the Union transcript, Sept. 29, 2019 (Jordan–Tapper exchange)',
+        statementUrl: 'http://transcripts.cnn.com/TRANSCRIPTS/1909/29/sotu.01.html',
+        debunkSource: 'FactCheck.org — No Hearsay Rule Change for Whistleblowers (Oct. 1, 2019); ICIG statement Sept. 30, 2019',
+        debunkUrl: 'https://www.factcheck.org/2019/10/no-hearsay-rule-change-for-whistleblowers/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'jordan-record-inflation-two-years-2023',
+        statement:
+          'In “two years’ time” Democrats were responsible for “record inflation” (among other outcomes).',
+        saidAt: 'January 3–4, 2023',
+        context:
+          'House floor nominating speech for Kevin McCarthy during the multi-ballot Speakership election at the start of the 118th Congress.',
+        whyFalse:
+          'FactCheck.org: inflation under Biden was the highest in decades (9% CPI peak for the 12 months ending June 2022), but it was not a modern record. BLS data show 14.6% 12-month CPI peaks in March–April 1980 — higher than any Biden-era reading. Calling the Biden spike “record inflation” is false on the historical CPI record.',
+        correction:
+          'Peak modern U.S. CPI 12-month inflation remains the 1980 peaks (~14.6%), not the Biden-era 9% peak; “record inflation” in two years under Democrats is false.',
+        statementSource: 'C-SPAN — Rep. Jordan opening-day 118th Congress nominating speech clip',
+        statementUrl: 'https://www.c-span.org/video/?c5049516/user-clip-rep-jordan-opening-day-118th-congress',
+        debunkSource: 'FactCheck.org — FactChecking the House Speaker Election (Jan. 5, 2023); BLS CPI series',
+        debunkUrl: 'https://www.factcheck.org/2023/01/factchecking-the-house-speaker-election/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://jordan.house.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/jim-jordan/summary?cid=N00027681' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Jim_Jordan' },
+      {
+        label: 'FactCheck.org — Whistleblower hearsay rule',
+        url: 'https://www.factcheck.org/2019/10/no-hearsay-rule-change-for-whistleblowers/',
+      },
+      {
+        label: 'FactCheck.org — Speakership inflation claim',
+        url: 'https://www.factcheck.org/2023/01/factchecking-the-house-speaker-election/',
+      },
     ],
   },
   {

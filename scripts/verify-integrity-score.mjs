@@ -126,6 +126,7 @@ const required = [
   'tim-scott',
   'kevin-mccarthy',
   'mike-johnson',
+  'jim-jordan',
 ];
 const scores = {};
 for (const id of required) {
@@ -582,8 +583,23 @@ for (const f of (mikeJohnsonP.documentedFalsehoods || []).filter((x) => x.tier =
   if (f.statementUrl === f.debunkUrl) throw new Error('mike-johnson dual-cite collision: ' + f.id);
 }
 
+// Jim Jordan integrity gate (multi-entry)
+const jordan = scores['jim-jordan'];
+if (!jordan || jordan.n < 2) throw new Error('jim-jordan needs ≥2 verified falsehoods, got ' + (jordan?.n ?? 0));
+if (jordan.score > 75) throw new Error('jim-jordan score expected ≤75, got ' + jordan.score);
+const jordanP = getProfileBySlug('jim-jordan');
+if (!(jordanP.documentedFalsehoods || []).some((f) => f.id === 'jordan-whistleblower-form-changed-firsthand-2019')) {
+  throw new Error('jim-jordan missing whistleblower form docket id');
+}
+if (!(jordanP.documentedFalsehoods || []).some((f) => f.id === 'jordan-record-inflation-two-years-2023')) {
+  throw new Error('jim-jordan missing record inflation docket id');
+}
+for (const f of (jordanP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('jim-jordan dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 39) throw new Error('expected ≥39 compiled dockets, got ' + docketCount);
+if (docketCount < 40) throw new Error('expected ≥40 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

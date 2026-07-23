@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:57:49.885Z",
+  "generatedAt": "2026-07-23T07:59:05.418Z",
   "count": 96,
   "profiles": [
     {
@@ -1002,7 +1002,7 @@
       "name": "Jim Jordan",
       "title": "U.S. Representative (R-OH); House Judiciary Chair",
       "category": "politician",
-      "summary": "Ohio Republican, Freedom Caucus founder, House Judiciary Chair. Consistent pro-Israel security voter and high-visibility Trump ally. Documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, House record, CRS RL33222.",
+      "summary": "Ohio Republican, Freedom Caucus founder, House Judiciary Chair. Consistent pro-Israel security voter and high-visibility Trump ally. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited FactCheck.org falsehoods — “they changed the form” whistleblower first-hand rule (Sept. 2019) and “record inflation” under Democrats in two years (Jan. 2023 Speakership nominating speech). Primary: OpenSecrets, House record, CRS RL33222, FactCheck.org.",
       "photo": "/profiles/jim-jordan.jpg",
       "url": "https://veritasworldwide.com/profile/jim-jordan",
       "bioguideId": "J000295",
@@ -1013,11 +1013,12 @@
         "AIPAC",
         "Ohio",
         "Republican",
-        "Judiciary Chair"
+        "Judiciary Chair",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "elise-stefanik",
