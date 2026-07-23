@@ -2592,6 +2592,58 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/membership') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Membership', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Does membership paywall The Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. Membership funds document acquisition, reporting, and infrastructure while the core archive stays free to read for every visitor. Accounts only affect optional reader state such as bookmarks and dark mode.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What do membership tiers fund?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Reader support funds primary-source acquisition, archive hosting, Israel Dossier maintenance, and ongoing investigations. Correspondent, Investigator, and Founding Circle tiers differ in gift recognition and support level—not in access to the public record.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do I cancel or change a membership?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Stripe manages subscriptions. Use the receipt email link or contact rights@veritasworldwide.com. Cancellation stops future billing; the archive remains open either way.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is there a free way to support Veritas Worldwide?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Read, cite, and share primary-source chapters; subscribe free via RSS; and point journalists to the methodology and Sources library. Paid membership is optional public-interest funding.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {

@@ -190,6 +190,17 @@ assert(
   prerender.includes("route === '/about'") && prerender.includes('What is Veritas Worldwide?'),
   'prerender must emit About FAQPage for bot-visible E-E-A-T / voice queries',
 )
+assert(
+  prerender.includes("route === '/membership'") &&
+    prerender.includes('Does membership paywall The Record?'),
+  'prerender must emit Membership FAQPage for bot-visible conversion queries',
+)
+const membershipPage = read('src/pages/MembershipPage.tsx')
+assert(membershipPage.includes('faqJsonLd'), 'MembershipPage must emit FAQPage schema')
+assert(
+  membershipPage.includes('Does membership paywall The Record?'),
+  'Membership FAQ must answer paywall concern for SERP/PAA',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 

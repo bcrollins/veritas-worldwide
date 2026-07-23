@@ -6,6 +6,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -133,6 +134,28 @@ export default function MembershipPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Membership', url: `${SITE_URL}/membership` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'Does membership paywall The Record?',
+          answer:
+            'No. Membership funds document acquisition, reporting, and infrastructure while the core archive stays free to read for every visitor. Accounts only affect optional reader state such as bookmarks and dark mode.',
+        },
+        {
+          question: 'What do membership tiers fund?',
+          answer:
+            'Reader support funds primary-source acquisition, archive hosting, Israel Dossier maintenance, and ongoing investigations. Correspondent, Investigator, and Founding Circle tiers differ in gift recognition and support level—not in access to the public record.',
+        },
+        {
+          question: 'How do I cancel or change a membership?',
+          answer:
+            'Stripe manages subscriptions. Use the receipt email link or contact rights@veritasworldwide.com. Cancellation stops future billing; the archive remains open either way.',
+        },
+        {
+          question: 'Is there a free way to support Veritas Worldwide?',
+          answer:
+            'Yes. Read, cite, and share primary-source chapters; subscribe free via RSS; and point journalists to the methodology and Sources library. Paid membership is optional public-interest funding.',
+        },
       ]),
     ])
     return () => {
