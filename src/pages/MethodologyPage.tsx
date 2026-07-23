@@ -44,6 +44,7 @@ export default function MethodologyPage() {
       description:
         'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
       url: `${SITE_URL}/methodology`,
+      imageAlt: 'Methodology & evidence standards — The Record, Veritas Worldwide',
     })
     setJsonLd([
       {
