@@ -537,4 +537,13 @@ assert(membership.includes('RelatedHubs'), 'Membership RelatedHubs')
 assert(membership.includes('/read') || membership.includes("to: '/read'"), 'Membership Read recovery')
 assert(membership.includes('/israel-dossier') || membership.includes("to: '/israel-dossier'"), 'Membership Dossiers recovery')
 
+
+// Privacy/Terms recovery destinations
+const privacy = read('src/pages/PrivacyPage.tsx')
+const terms = read('src/pages/TermsPage.tsx')
+assert(privacy.includes('privacy-related-hubs') && privacy.includes('RelatedHubs'), 'Privacy RelatedHubs')
+assert(terms.includes('terms-related-hubs') && terms.includes('RelatedHubs'), 'Terms RelatedHubs')
+assert(privacy.includes('/terms') || privacy.includes("to: '/terms'"), 'Privacy links Terms')
+assert(terms.includes('/privacy') || terms.includes("to: '/privacy'"), 'Terms links Privacy')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
