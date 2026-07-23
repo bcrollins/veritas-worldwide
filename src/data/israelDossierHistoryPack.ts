@@ -4113,6 +4113,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-fuel-depots-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Fuel Depots & Storage Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (fuel-storage cohort)',
+    location: 'Gaza Strip fuel depots / storage sites',
+    summary:
+      'Multi-source satellite and field reporting document destruction of fuel depots and storage infrastructure under bombardment — collapsing remaining civilian fuel stocks for hospitals, water pumps, and bakeries. Pattern card for fuel-storage infrastructure destruction distinct from the fuel/electricity siege policy card.',
+    evidence:
+      'Multi-source satellite/visual investigations and OCHA energy-access materials establish multi-source fuel-storage destruction. Exact depot counts evolve; multi-source storage-infrastructure collapse is the claim.',
+    sources: [
+      { label: 'OCHA energy / access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet fuel depot damage coverage', url: 'https://apnews.com' },
+      { label: 'World Bank energy monitoring context', url: 'https://www.worldbank.org' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Multi-outlet fuel infrastructure coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6112,6 +6139,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['roads', 'access', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-fuel-depots-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Fuel Depots & Storage Destruction Pattern',
+    description: 'Multi-source documentation of destroyed fuel depots collapsing remaining civilian fuel stocks for hospitals and water systems.',
+    source: 'OCHA / multi-outlet / World Bank context',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-fuel-depots-destruction-pattern-2023-2025',
+      'gaza-fuel-electricity-siege-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+    ],
+    tags: ['fuel', 'energy', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 

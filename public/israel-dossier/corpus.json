@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:23:02.769Z",
+  "generatedAt": "2026-07-23T09:23:21.979Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 167,
-    "timelineEvents": 155,
+    "incidents": 168,
+    "timelineEvents": 156,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 153,
+    "historicalWarCrimesPack": 154,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 107
+      "post-oct7": 108
     },
     "incidentsByTier": {
-      "verified": 165,
+      "verified": 166,
       "circumstantial": 2
     },
-    "childrenTagged": 140,
-    "civiliansTagged": 165,
+    "childrenTagged": 141,
+    "civiliansTagged": 166,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3648,6 +3648,28 @@
         "siege",
         "fuel",
         "electricity",
+        "civilians",
+        "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-fuel-depots-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Fuel Depots & Storage Destruction Pattern",
+      "description": "Multi-source documentation of destroyed fuel depots collapsing remaining civilian fuel stocks for hospitals and water systems.",
+      "source": "OCHA / multi-outlet / World Bank context",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-fuel-depots-destruction-pattern-2023-2025",
+        "gaza-fuel-electricity-siege-pattern-2023-2025",
+        "gaza-health-system-collapse-2023-2025"
+      ],
+      "tags": [
+        "fuel",
+        "energy",
         "civilians",
         "children",
         "gaza"
@@ -11122,6 +11144,50 @@
           "type": "document",
           "label": "UNOSAT public materials",
           "url": "https://unosat.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-fuel-depots-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Fuel Depots & Storage Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (fuel-storage cohort)",
+      "location": "Gaza Strip fuel depots / storage sites",
+      "summary": "Multi-source satellite and field reporting document destruction of fuel depots and storage infrastructure under bombardment — collapsing remaining civilian fuel stocks for hospitals, water pumps, and bakeries. Pattern card for fuel-storage infrastructure destruction distinct from the fuel/electricity siege policy card.",
+      "evidence": "Multi-source satellite/visual investigations and OCHA energy-access materials establish multi-source fuel-storage destruction. Exact depot counts evolve; multi-source storage-infrastructure collapse is the claim.",
+      "sources": [
+        {
+          "label": "OCHA energy / access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet fuel depot damage coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "World Bank energy monitoring context",
+          "url": "https://www.worldbank.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Multi-outlet fuel infrastructure coverage",
+          "url": "https://apnews.com"
         }
       ],
       "tier": "verified",
