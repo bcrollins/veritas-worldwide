@@ -41,6 +41,8 @@ const PREVIEW_ASSETS = [
   { label: 'Citation Card', href: '/brand-kit/04-social/citation-card.svg', bg: 'bg-parchment' },
   { label: 'Pinterest Pin', href: '/brand-kit/04-social/pinterest-pin.svg', bg: 'bg-black' },
   { label: 'TikTok Cover', href: '/brand-kit/04-social/tiktok-cover.svg', bg: 'bg-black' },
+  { label: 'Reddit Banner', href: '/brand-kit/04-social/reddit-banner.svg', bg: 'bg-black' },
+  { label: 'Reels Safe Zone', href: '/brand-kit/04-social/reels-safe-zone.svg', bg: 'bg-black' },
 ]
 
 const TOKEN_SWATCHES = [
