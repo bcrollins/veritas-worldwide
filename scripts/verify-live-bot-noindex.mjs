@@ -137,6 +137,10 @@ async function checkSoft404Junk(path) {
   if (!/noindex/i.test(html.match(/name=["']robots["'][^>]*content=["']([^"']*)/)?.[1] || '')) {
     failures.push(`${path}: meta robots not noindex on junk path`)
   }
+  // Soft-404 shells must not invent a /404 canonical (noindex only).
+  if (/rel=["']canonical["'][^>]*href=["'][^"']*\/404/i.test(html)) {
+    failures.push(`${path}: soft-404 shell invents /404 canonical (must omit canonical)`)
+  }
 }
 
 async function checkSoft404Known({ path, titleIncludes }) {
