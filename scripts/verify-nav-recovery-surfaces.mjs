@@ -2804,4 +2804,22 @@ assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perp
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v21 emphasize')
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v21 PRIMARY')
 
+
+
+// RelatedHubs platform perpetual densify lock v22
+assert(surfaces.length >= 115, `perpetual v22 surfaces ${surfaces.length}`)
+assert(read('src/App.tsx').includes('desktopPrimaryLinkClass'), 'perpetual v22 desktop primary class')
+assert(read('src/App.tsx').includes('focus-visible:ring-2'), 'perpetual v22 shell focus-visible')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v22 mobile tab bar')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v22 cookie focus')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v22 RelatedHubs focus')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v22 Research chips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v22 spokes focus')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v22 institute')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v22 methodology')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v22 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v22 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v22 soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v22 emphasize')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
