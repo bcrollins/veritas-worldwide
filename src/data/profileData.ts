@@ -5131,6 +5131,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'pompeo-covid-lab-enormous-evidence-2020',
+        statement:
+          'Claimed there was “enormous evidence” that COVID-19 originated in a Wuhan laboratory — presenting lab origin as established fact rather than an open intelligence question.',
+        saidAt: 'May 3, 2020',
+        context:
+          'ABC “This Week” interview as Secretary of State, pressing China accountability during the early pandemic.',
+        whyFalse:
+          'PolitiFact and contemporaneous reporting: U.S. intelligence assessments at the time did not establish lab origin with the certainty Pompeo implied. The IC later published divided judgments (lab vs natural) without “enormous evidence” consensus. Absolute certainty framing overstated what the public intelligence record supported in May 2020.',
+        correction:
+          'Lab-origin remains a debated hypothesis; Pompeo’s “enormous evidence” certainty was not supported by the public IC consensus at the time.',
+        statementSource: 'ABC This Week interview, May 3, 2020 (Pompeo remarks)',
+        statementUrl: 'https://abcnews.go.com/Politics/week-transcript-3-20-secretary-state-mike-pompeo/story?id=70482119',
+        debunkSource: 'PolitiFact / ODNI COVID-19 origins assessments synthesis',
+        debunkUrl: 'https://www.politifact.com/article/2020/may/05/fact-checking-mike-pompeo-coronavirus-lab-origin-c/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Abraham Accords (State)', url: 'https://www.state.gov/the-abraham-accords/' },
@@ -7239,6 +7257,24 @@ export const PROFILES: PowerProfile[] = [
         debunkSource: 'PolitiFact — False (Aug. 6, 2019); JAMA Global Mortality From Firearms 1990–2016',
         debunkUrl:
           'https://www.politifact.com/factchecks/2019/aug/06/dianne-feinstein/fact-check-are-there-more-gun-deaths-far-america-a/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'feinstein-assault-weapons-ban-stopped-mass-shootings-2019',
+        statement:
+          'Claimed the 1994 federal assault weapons ban “worked” by stopping mass shootings and that when the ban expired mass shootings returned — a simple ban-to-violence causal story.',
+        saidAt: '2019 (post-mass-shooting advocacy)',
+        context:
+          'Advocacy for renewing a federal assault weapons ban after El Paso/Dayton-era mass shootings.',
+        whyFalse:
+          'PolitiFact and academic reviews of the 1994–2004 ban find mixed, non-conclusive evidence — not a clean “ban stopped mass shootings, expiration restarted them” proof. Mass shootings occurred during the ban period; definitions and base rates make absolute causal claims overstated relative to NIJ/RAND/PolitiFact research packages.',
+        correction:
+          'Research on the 1994 ban’s effect on mass shootings is mixed and definition-sensitive; absolute claims that the ban stopped mass shootings overstate the evidence.',
+        statementSource: 'Feinstein 2019 assault-weapons ban advocacy (office statements / multi-outlet capture)',
+        statementUrl: 'https://www.feinstein.senate.gov/public/index.cfm/assault-weapons',
+        debunkSource: 'PolitiFact article synthesis on 1994 assault weapons ban and mass shootings',
+        debunkUrl: 'https://www.politifact.com/article/2019/aug/07/did-assault-weapon-ban-reduce-mass-shootings/',
         severity: 'material',
         tier: 'verified',
       },

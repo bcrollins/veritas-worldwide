@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:54:28.265Z",
+  "generatedAt": "2026-07-23T09:56:23.361Z",
   "count": 96,
   "profiles": [
     {
@@ -772,8 +772,8 @@
         "Jerusalem",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
@@ -1064,8 +1064,8 @@
         "Deceased 2023",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

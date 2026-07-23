@@ -420,14 +420,17 @@ for (const f of (rubioP.documentedFalsehoods || []).filter((x) => x.tier === 've
 
 // Mike Pompeo integrity gate (multi-entry)
 const pompeo = scores['mike-pompeo'];
-if (!pompeo || pompeo.n < 2) throw new Error('mike-pompeo needs ≥2 verified falsehoods, got ' + (pompeo?.n ?? 0));
-if (pompeo.score > 75) throw new Error('mike-pompeo score expected ≤75, got ' + pompeo.score);
+if (!pompeo || pompeo.n < 3) throw new Error('mike-pompeo needs ≥3 verified falsehoods, got ' + (pompeo?.n ?? 0));
+if (pompeo.score > 60) throw new Error('mike-pompeo score expected ≤60 after densify, got ' + pompeo.score);
 const pompeoP = getProfileBySlug('mike-pompeo');
-if (!(pompeoP.documentedFalsehoods || []).some((f) => f.id === 'pompeo-defended-every-person-yovanovitch-2020')) {
-  throw new Error('mike-pompeo missing Yovanovitch docket id');
-}
-if (!(pompeoP.documentedFalsehoods || []).some((f) => f.id === 'pompeo-trump-did-not-threaten-cultural-sites-2020')) {
-  throw new Error('mike-pompeo missing cultural sites docket id');
+for (const id of [
+  'pompeo-defended-every-person-yovanovitch-2020',
+  'pompeo-trump-did-not-threaten-cultural-sites-2020',
+  'pompeo-covid-lab-enormous-evidence-2020',
+]) {
+  if (!(pompeoP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('mike-pompeo missing docket id: ' + id);
+  }
 }
 for (const f of (pompeoP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('mike-pompeo dual-cite collision: ' + f.id);
@@ -774,14 +777,17 @@ for (const f of (jordanP.documentedFalsehoods || []).filter((x) => x.tier === 'v
 
 // Dianne Feinstein integrity gate (multi-entry)
 const feinstein = scores['dianne-feinstein'];
-if (!feinstein || feinstein.n < 2) throw new Error('dianne-feinstein needs ≥2 verified falsehoods, got ' + (feinstein?.n ?? 0));
-if (feinstein.score > 75) throw new Error('dianne-feinstein score expected ≤75, got ' + feinstein.score);
+if (!feinstein || feinstein.n < 3) throw new Error('dianne-feinstein needs ≥3 verified falsehoods, got ' + (feinstein?.n ?? 0));
+if (feinstein.score > 60) throw new Error('dianne-feinstein score expected ≤60 after densify, got ' + feinstein.score);
 const feinsteinP = getProfileBySlug('dianne-feinstein');
-if (!(feinsteinP.documentedFalsehoods || []).some((f) => f.id === 'feinstein-no-regulation-commercial-drones-2013')) {
-  throw new Error('dianne-feinstein missing commercial drones docket id');
-}
-if (!(feinsteinP.documentedFalsehoods || []).some((f) => f.id === 'feinstein-more-gun-deaths-by-far-2019')) {
-  throw new Error('dianne-feinstein missing gun-deaths docket id');
+for (const id of [
+  'feinstein-no-regulation-commercial-drones-2013',
+  'feinstein-more-gun-deaths-by-far-2019',
+  'feinstein-assault-weapons-ban-stopped-mass-shootings-2019',
+]) {
+  if (!(feinsteinP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('dianne-feinstein missing docket id: ' + id);
+  }
 }
 for (const f of (feinsteinP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('dianne-feinstein dual-cite collision: ' + f.id);
