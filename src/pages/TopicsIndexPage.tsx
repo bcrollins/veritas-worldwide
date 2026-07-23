@@ -19,7 +19,12 @@ import {
 
 import { formatCompactDollars, getTopicProfileStats } from '../lib/topicDiscovery'
 
-const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
+const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
 
 function TopicMetric({ label, value }: { label: string; value: string }) {
   return (

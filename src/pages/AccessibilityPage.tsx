@@ -13,7 +13,11 @@ import {
   faqJsonLd,
 } from '../lib/seo'
 
-const A11Y_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/about', label: 'About' }, { to: '/search', label: 'Search' }]
+const A11Y_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/about', label: 'About' },
+  { to: '/search', label: 'Search' },
+]
 
 const a11yFeatures = [
   {

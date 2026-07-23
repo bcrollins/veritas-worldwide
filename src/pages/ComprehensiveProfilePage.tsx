@@ -25,7 +25,12 @@ import { identifyContact } from '../lib/hubspot'
 import FontSizeToggle from '../components/FontSizeToggle'
 import { useI18n } from '../lib/i18n'
 
-const OSINT_HUBS: readonly RelatedHub[] = [{ to: '/profiles', label: 'Profiles' }, { to: '/methodology', label: 'Methodology' }, { to: '/search', label: 'Search' }, { to: '/read', label: 'Read' }]
+const OSINT_HUBS: readonly RelatedHub[] = [
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/methodology', label: 'Methodology' },
+  { to: '/search', label: 'Search' },
+  { to: '/read', label: 'Read' },
+]
 
 type IntakeState = {
   clientName: string

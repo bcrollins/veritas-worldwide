@@ -18,7 +18,12 @@ import { trackSupportClick } from '../lib/ga4'
 import { trackCheckoutIntent, withCheckoutAttribution } from '../lib/conversionTracking'
 import { TierIcon } from '../components/TierIcons'
 
-const MEMBERSHIP_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
+const MEMBERSHIP_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
 
 // Membership is framed as public-interest support, not scarcity-driven commerce.
 

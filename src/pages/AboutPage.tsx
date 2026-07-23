@@ -16,7 +16,12 @@ import {
 
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
-const ABOUT_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/methodology', label: 'Methodology' }, { to: '/sources', label: 'Sources' }, { to: '/search', label: 'Search' }]
+const ABOUT_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/methodology', label: 'Methodology' },
+  { to: '/sources', label: 'Sources' },
+  { to: '/search', label: 'Search' },
+]
 
 const operatingPrinciples = [
   {

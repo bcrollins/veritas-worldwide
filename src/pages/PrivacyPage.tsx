@@ -13,7 +13,12 @@ import {
   SITE_NAME,
 } from '../lib/seo'
 
-const PRIVACY_HUBS: readonly RelatedHub[] = [{ to: '/terms', label: 'Terms' }, { to: '/about', label: 'About' }, { to: '/read', label: 'Read' }, { to: '/search', label: 'Search' }]
+const PRIVACY_HUBS: readonly RelatedHub[] = [
+  { to: '/terms', label: 'Terms' },
+  { to: '/about', label: 'About' },
+  { to: '/read', label: 'Read' },
+  { to: '/search', label: 'Search' },
+]
 
 const sections = [
   { id: 'collection', title: 'Information We Collect' },
