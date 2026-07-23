@@ -229,3 +229,10 @@ Verified production bundles (CORE + 13 page needles) repeatedly green while dens
 - Product LIVE: Sprint 7 + Search platform + Home underfold + soft-404 secondary + a11y credit
 - Pure: 102 surface needles · RelatedHubs breadth ≥30 · pure 46 green
 - Peer densify unthrashed (single-file pure commits)
+
+
+## Sprint 8 — RelatedHubs emphasizeTo + soft-404 primary platformization
+- RelatedHubs `emphasizeTo` crimson CTA (Record on soft-404)
+- NotFound primary+secondary dual RelatedHubs mounts
+- Import thrash blank-line hygiene + multi-line HUBS constants
+- Pure: HUBS ≤5, emphasizeTo, dual NotFound mounts

@@ -117,5 +117,11 @@ News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, leg
 78. Home underfold RelatedHubs `home-related-hubs` exclude Record  
 79. Soft-404 secondary RelatedHubs `not-found-secondary-hubs`  
 80. Pure recovery **102 surface needles** · RelatedHubs breadth ≥30  
-81. Live CORE + soft-404 100% green under densify tip ≥2600  
+81. Live CORE + soft-404 100% green under densify tip ≥2600
+
+## Sprint 8 — RelatedHubs emphasizeTo (SHIPPED 2026-07-23)
+82. RelatedHubs `emphasizeTo` crimson solid CTA for soft-404 Record  
+83. Soft-404 primary chips platformized onto RelatedHubs  
+84. Import thrash blank-line hygiene pure floor  
+85. Multi-line HUBS constants + pure ≤5 destination floor  
 
