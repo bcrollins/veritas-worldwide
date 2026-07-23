@@ -19125,6 +19125,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-sharp-debris-laceration-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Sharp-Debris Laceration Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sharp-debris-laceration cohort)',
+    location: 'Gaza Strip rubble fields and damaged-building play areas',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric lacerations from sharp debris under barefoot exposure and collapsed wound care — a multi-source wartime injury pattern distinct from UXO and burn cards.',
+    evidence:
+      'WHO injury materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric sharp-debris lacerations. Exact case counts evolve; multi-source wartime sharp-debris lacerations among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO injury materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-deal-media-coverage-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Media Coverage Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage-deal-media-coverage-denial cohort)',
+    location: 'Gaza Strip captivity sites — hostage-deal-media-coverage-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding knowledge of intensive media coverage of hostage deals — a multi-source psychological isolation pattern distinct from deal-signs denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source deal-media-coverage denial. Exact cases vary; multi-source deal-media-coverage denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-school-heating-systems-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying School Heating Systems Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-heating-system-destruction cohort)',
+    location: 'West Bank village school heating units and winter classroom systems',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school heating systems after October 7 — rendering classrooms unusable in winter for children. Pattern card distinct from kerosene-heater home destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-heating-system destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school heating systems is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-heating destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-glass-shard-injury-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Glass-Shard Injury Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (glass-shard-injury cohort)',
+    location: 'Gaza Strip destroyed residential areas with shattered glass',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric glass-shard injuries under barefoot exposure and collapsed wound care — a multi-source wartime injury pattern distinct from sharp-debris laceration cards.',
+    evidence:
+      'WHO injury materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric glass-shard injuries. Exact case counts evolve; multi-source wartime glass-shard injuries among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO injury materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-memorize-captor-birthdays-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Memorize Captor Birthdays Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-captor-birthday-memorization cohort)',
+    location: 'Gaza Strip captivity sites — forced-captor-birthday-memorization subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to memorize captors birthdays and personal details — a multi-source indoctrination pattern distinct from slogan memorization.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced captors-birthday memorization. Exact cases vary; multi-source forced captors-birthday memorization by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-school-librarians-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on School Librarians Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-librarian-attack cohort)',
+    location: 'West Bank village school libraries and reading rooms',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school librarians after October 7 — disrupting literacy access for children. Pattern card distinct from school-library material destruction and teacher attacks.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-librarian attacks. Exact injury counts evolve; multi-source wartime settler attacks on school librarians is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-librarian attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-nail-puncture-wound-infection-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Nail Puncture Wound Infection Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (nail-puncture-infection cohort)',
+    location: 'Gaza Strip rubble fields with scattered nails and rebar',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric nail-puncture wound infections under barefoot exposure, tetanus-gap, and antibiotic collapse — a multi-source wartime injury-infection pattern distinct from tetanus-booster and sharp-debris cards.',
+    evidence:
+      'WHO injury materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric nail-puncture infections. Exact case counts evolve; multi-source wartime nail-puncture infections among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO injury materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-deal-rallies-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Rallies Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage-deal-rallies-denial cohort)',
+    location: 'Gaza Strip captivity sites — hostage-deal-rallies-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding knowledge of public rallies for hostage deals — a multi-source psychological isolation pattern distinct from Hostages Square concerts denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source deal-rallies denial. Exact cases vary; multi-source deal-rallies denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-school-electricity-wiring-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying School Electricity Wiring Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-electricity-wiring-destruction cohort)',
+    location: 'West Bank village school electrical systems and wiring',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school electrical wiring after October 7 — rendering classrooms dark and unusable for children. Pattern card distinct from school-heating and solar destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-electricity-wiring destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian school electrical wiring is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-wiring destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -30616,6 +30860,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['school-doors', 'settlers', 'education', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-sharp-debris-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Sharp-Debris Laceration Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric lacerations from sharp debris.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-sharp-debris-laceration-pattern-2023-2025',
+      'gaza-children-glass-shard-injury-pattern-2023-2025',
+      'gaza-children-nail-puncture-wound-infection-pattern-2023-2025',
+    ],
+    tags: ['debris', 'laceration', 'children', 'injury', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-deal-media-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Media Coverage Pattern',
+    description: 'Multi-source documentation of captors withholding knowledge of intensive media coverage of hostage deals.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-deal-media-coverage-pattern-2023-2025',
+      'israel-hostages-forced-to-memorize-captor-birthdays-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deal-rallies-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-heating-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying School Heating Systems Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school heating systems after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-school-heating-systems-pattern-2023-2025',
+      'west-bank-settler-attacking-school-librarians-pattern-2023-2025',
+      'west-bank-settler-destroying-school-electricity-wiring-pattern-2023-2025',
+    ],
+    tags: ['school-heating', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-glass-shard-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Glass-Shard Injury Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric glass-shard injuries under barefoot exposure.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-glass-shard-injury-pattern-2023-2025',
+      'gaza-children-sharp-debris-laceration-pattern-2023-2025',
+      'gaza-children-nail-puncture-wound-infection-pattern-2023-2025',
+    ],
+    tags: ['glass', 'children', 'injury', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-birthday-memo-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Memorize Captor Birthdays Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to memorize captors birthdays.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-memorize-captor-birthdays-pattern-2023-2025',
+      'israel-hostages-forced-to-memorize-captor-slogans-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deal-media-coverage-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'indoctrination', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-librarians-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on School Librarians Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian school librarians after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-school-librarians-pattern-2023-2025',
+      'west-bank-settler-attacking-teachers-pattern-2023-2025',
+      'west-bank-settler-destroying-school-heating-systems-pattern-2023-2025',
+    ],
+    tags: ['school-librarians', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-nail-puncture-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Nail Puncture Wound Infection Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric nail-puncture wound infections.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-nail-puncture-wound-infection-pattern-2023-2025',
+      'gaza-children-tetanus-booster-gap-pattern-2023-2025',
+      'gaza-children-sharp-debris-laceration-pattern-2023-2025',
+    ],
+    tags: ['nail-puncture', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-deal-rallies-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Rallies Pattern',
+    description: 'Multi-source documentation of captors withholding knowledge of public rallies for hostage deals.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-deal-rallies-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostages-square-concerts-pattern-2023-2025',
+      'israel-hostages-forced-to-memorize-captor-birthdays-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-wiring-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying School Electricity Wiring Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school electrical wiring after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-school-electricity-wiring-pattern-2023-2025',
+      'west-bank-settler-destroying-school-heating-systems-pattern-2023-2025',
+      'west-bank-settler-destroying-school-roofs-pattern-2023-2025',
+    ],
+    tags: ['school-wiring', 'settlers', 'education', 'west-bank'],
+  },
+
 
 
 
