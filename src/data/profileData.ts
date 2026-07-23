@@ -8566,6 +8566,14 @@ export const PROFILES: PowerProfile[] = [
       'U.S. Aid Recipient Leadership',
       'ICJ',
     ],
+    career: [
+      'IDF special forces / officer service (public bio)',
+      '1996–1999 — Prime Minister of Israel (first term)',
+      '2009–2021 — Prime Minister (consecutive terms)',
+      '2022– — Prime Minister (return); wartime PM after October 7, 2023',
+      'November 2024 — ICC arrest warrant issued (alleged war crimes / crimes against humanity)',
+      'Primary Israeli counterpart for U.S. FMF MOU and wartime munitions pipeline',
+    ],
     quotes: [
       {
         text: 'We will fight and we will win.',

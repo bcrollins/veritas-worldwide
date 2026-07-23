@@ -133,6 +133,7 @@ const NODE_COLORS = {
   weapon: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'shield' },
   delivery: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'plane' },
   impact: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'warning' },
+  lobby: { bg: 'bg-surface', border: 'border-border', color: '#1a1a1a', icon: 'users' },
 }
 
 function MoneyTrailCard({ node }: { node: DossierMoneyTrailNode }) {
