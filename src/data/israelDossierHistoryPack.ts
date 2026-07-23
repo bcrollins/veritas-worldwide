@@ -1979,6 +1979,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 10 },
   },
 
+  {
+    id: 'gaza-ground-invasion-oct-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'mk84-use', 'oct7-emergency-arms-surge', 'artillery-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Ground Invasion Opening Campaign (Oct–Nov 2023)',
+    date: 'October 27, 2023 onward',
+    location: 'Northern Gaza Strip',
+    summary:
+      'Israel launched a large-scale ground invasion of Gaza following the October 7 attacks and initial air campaign. Multi-source UN and humanitarian reporting documents mass displacement, high civilian casualties, and infrastructure destruction in the opening weeks — distinct from later southern/Rafah phases already carded.',
+    evidence:
+      'UN OCHA displacement tallies, multi-source fatality reporting, and contemporaneous press establish the invasion timeline and civilian-harm floor for the northern opening phase. Combatant/civilian ratios remain contested; multi-source civilian harm and displacement are the claim.',
+    sources: [
+      { label: 'UN OCHA Gaza updates (Oct–Nov 2023)', url: 'https://www.ochaopt.org' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet ground invasion coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 10000 },
+  },
+
+
 
 
 
@@ -2756,6 +2784,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['houthi-red-sea-campaign-2023-2025'],
     tags: ['yemen', 'red-sea', 'shipping', 'united-states'],
+  },
+
+  {
+    id: 'tl-gaza-ground-invasion-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Ground Invasion Opens — Northern Campaign',
+    description: 'Large-scale ground invasion of northern Gaza; multi-source mass displacement and civilian harm floor.',
+    source: 'OCHA / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-ground-invasion-oct-2023', 'oct7-hamas-attack-2023'],
+    tags: ['civilians', 'children', 'gaza', 'invasion'],
   },
 
 ]
