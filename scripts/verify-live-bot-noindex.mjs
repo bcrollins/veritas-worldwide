@@ -158,6 +158,30 @@ async function checkSoft404Known({ path, titleIncludes }) {
 await Promise.all(SOFT404_JUNK.map(checkSoft404Junk))
 await Promise.all(SOFT404_KNOWN.map(checkSoft404Known))
 
+
+// Canonical 301s for mixed-case / trailing-slash known content (Search Central).
+const CANONICAL_301 = [
+  { path: '/profile/Ted-Cruz', expectLocation: '/profile/ted-cruz' },
+  { path: '/profile/ted-cruz/', expectLocation: '/profile/ted-cruz' },
+  { path: '/CHAPTER/CHAPTER-1', expectLocation: '/chapter/chapter-1' },
+]
+async function check301({ path, expectLocation }) {
+  const res = await fetch(`${base}${path}`, {
+    headers: { 'user-agent': GOOGLEBOT, accept: 'text/html' },
+    redirect: 'manual',
+    signal: AbortSignal.timeout(20000),
+  })
+  if (res.status !== 301 && res.status !== 308) {
+    failures.push(`${path}: expected 301/308 canonical redirect, got ${res.status}`)
+    return
+  }
+  const loc = res.headers.get('location') || ''
+  if (!loc.includes(expectLocation)) {
+    failures.push(`${path}: location "${loc}" missing "${expectLocation}"`)
+  }
+}
+await Promise.all(CANONICAL_301.map(check301))
+
 if (failures.length) {
   console.error('[verify:live-bot-noindex] FAIL')
   for (const f of failures) console.error(' -', f)
