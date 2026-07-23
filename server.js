@@ -2568,6 +2568,7 @@ function isKnownSpaRoute(pathname) {
 }
 
 function buildNotFoundHtml() {
+  // Primary hubs mirror SPA NotFoundPage (Hick's Law ≤5) for crawler/no-JS recovery.
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2584,15 +2585,25 @@ function buildNotFoundHtml() {
     main{max-width:36rem;padding:2rem;text-align:center}
     h1{font-size:4rem;margin:0 0 .5rem;color:#8B1A1A}
     p{line-height:1.5;color:#444}
-    a{color:#8B1A1A;margin:0 .5rem}
+    .hubs{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.25rem}
+    .hubs a{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1rem;border:1px solid #d4d0c8;border-radius:999px;color:#1a1a1a;text-decoration:none;font-family:system-ui,sans-serif;font-size:.8rem;font-weight:600}
+    .hubs a.primary{background:#8B1A1A;border-color:#8B1A1A;color:#fff}
+    .hubs a:hover{border-color:#8B1A1A;color:#8B1A1A}
+    .hubs a.primary:hover{background:#6e1414;color:#fff}
   </style>
 </head>
 <body>
-  <main>
+  <main data-testid="server-soft-404">
     <p style="letter-spacing:.2em;text-transform:uppercase;font-size:.7rem;color:#8B1A1A;font-weight:700">Document Not Found</p>
     <h1>404</h1>
     <p>This page is not part of the record. It may have been moved or never published.</p>
-    <p><a href="/">The Record</a><a href="/search">Search</a><a href="/read">Browse</a></p>
+    <nav class="hubs" aria-label="Primary hubs">
+      <a class="primary" href="/">Record</a>
+      <a href="/read">Read</a>
+      <a href="/israel-dossier">Dossiers</a>
+      <a href="/profiles">Profiles</a>
+      <a href="/search">Search</a>
+    </nav>
   </main>
 </body>
 </html>`

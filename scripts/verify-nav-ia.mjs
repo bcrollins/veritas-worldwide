@@ -94,6 +94,15 @@ assert(notFound.includes('/profiles'), '404 Profiles hub')
 assert(notFound.includes('/read'), '404 Read hub')
 assert(notFound.includes("robots: 'noindex, nofollow'") || notFound.includes('noindex'), '404 must stay noindex')
 
+// Server soft-404 HTML also exposes ≤5 primary hubs (no-JS / crawler recovery)
+const server = fs.readFileSync(path.join(root, 'server.js'), 'utf8')
+assert(server.includes('function buildNotFoundHtml'), 'server soft-404 HTML builder required')
+assert(server.includes('data-testid="server-soft-404"') || server.includes('aria-label="Primary hubs"'), 'server soft-404 hub nav required')
+assert(server.includes('href="/israel-dossier"'), 'server soft-404 Dossiers hub')
+assert(server.includes('href="/profiles"'), 'server soft-404 Profiles hub')
+assert(server.includes('href="/search"'), 'server soft-404 Search hub')
+assert(server.includes('href="/read"'), 'server soft-404 Read hub')
+
 // Cookie consent z-index above tab bar
 assert(cookie.includes('z-[100]') || cookie.includes('z-\\[100\\]'), 'Cookie consent z-100 above tab bar')
 assert(cookie.includes('data-z-above-tab-bar') || cookie.includes('z-[100]'), 'Cookie/tab z-index contract')
