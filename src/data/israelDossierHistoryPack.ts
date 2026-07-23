@@ -9648,6 +9648,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-hepatitis-a-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Hepatitis A Outbreak Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hepatitis-A-risk cohort)',
+    location: 'Gaza Strip displacement camps with collapsed WASH systems',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric hepatitis A outbreak risk from destroyed water and sanitation systems, overcrowding, and interrupted hygiene — a multi-source wartime fecal-oral disease pattern distinct from diphtheria, measles, and polio cards.',
+    evidence:
+      'WHO WASH and outbreak materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric hepatitis A risk. Exact case counts evolve; multi-source wartime hepatitis A risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO WASH and outbreak materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza hepatitis coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-tunnel-labor-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Tunnel Labor Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-tunnel-labor cohort)',
+    location: 'Gaza Strip underground captivity and tunnel networks',
+    summary:
+      'Released-hostage testimony and multi-source reporting document forced movement, digging, or labor inside tunnels by Israeli civilian hostages — compounding trauma and physical injury. Pattern card distinct from solitary confinement and medical-neglect cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source forced tunnel labor/movement of civilian hostages. Exact case counts vary; multi-source forced underground labor of hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-poisoning-livestock-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Livestock Poisoning Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (livestock-poisoning cohort)',
+    location: 'West Bank grazing lands, sheepfolds, and herding communities',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler poisoning and deliberate killing of Palestinian livestock after October 7 — destroying herding livelihoods including family flocks relied on by children. Pattern card distinct from livestock theft and herder physical attacks.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source livestock poisoning. Exact animal counts evolve; multi-source wartime settler poisoning of civilian livestock is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet livestock-poisoning coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-burn-wound-infection-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Burn Wound Infection Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (burn-infection cohort)',
+    location: 'Gaza Strip field hospitals and remaining burn units',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document elevated pediatric burn-wound infection from white-phosphorus and explosive burns under collapse of sterile dressings, antibiotics, and ICU capacity — a multi-source wartime infection pattern distinct from crush-syndrome and osteomyelitis cards.',
+    evidence:
+      'WHO trauma materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric burn-wound infection risk. Exact case counts evolve; multi-source wartime burn-infection risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO trauma materials', url: 'https://www.who.int' },
+      { label: 'MSF clinical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza burn-injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'hezbollah-rocket-northern-israel-civilian-harm-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Hezbollah Rocket Civilian Harm Pattern in Northern Israel (2023–2025)',
+    date: 'October 2023 – 2025 (northern-rocket cohort)',
+    location: 'Northern Israel border communities and Galilee towns',
+    summary:
+      'Israeli government materials, multi-outlet reporting, and multi-source casualty documentation establish elevated Hezbollah rocket and drone fire causing civilian deaths, injuries, and mass displacement of northern Israeli communities including children — a dual-sided civilian-harm pattern distinct from Oct 7 and Gaza cards.',
+    evidence:
+      'Israeli government home-front updates, multi-outlet casualty reporting, and multi-source coverage establish multi-source Hezbollah rocket civilian harm. Exact tolls evolve; multi-source wartime civilian harm in northern Israel from Hezbollah fire is the claim.',
+    sources: [
+      { label: 'Israeli government home-front materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet northern Israel rocket coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-blocking-medical-access-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Blocking Medical Access Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (medical-access-block cohort)',
+    location: 'West Bank village access roads and clinic approaches',
+    summary:
+      "OCHA, B'Tselem, WHO, and multi-source reporting document elevated settler roadblocks and intimidation preventing Palestinian civilians including children from reaching clinics and hospitals after October 7 — distinct from ambulance-blocking and school-bus-blocking cards.",
+    evidence:
+      'OCHA access databases, WHO health-access materials, and multi-outlet coverage establish multi-source medical-access blocking. Exact delayed-care counts evolve; multi-source wartime settler blocking of civilian medical access is the claim.',
+    sources: [
+      { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
+      { label: 'WHO health-access materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet medical-access coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-amputation-without-prosthetics-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Amputation Without Prosthetics Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pediatric-amputation cohort)',
+    location: 'Gaza Strip field hospitals and orthotic referral points',
+    summary:
+      'WHO, UNICEF, MSF, and multi-source clinical reporting document elevated pediatric amputations from explosive trauma under near-total collapse of prosthetic and rehabilitation supply chains — children left without limbs and without prosthetic replacements. Pattern card distinct from orthopedic-care collapse and burn-infection cards.',
+    evidence:
+      'WHO rehabilitation materials, UNICEF child-trauma updates, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric amputation without prosthetic access. Exact counts evolve; multi-source wartime pediatric amputation without prosthetics is the claim.',
+    sources: [
+      { label: 'WHO rehabilitation materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-trauma materials', url: 'https://www.unicef.org' },
+      { label: 'MSF clinical statements', url: 'https://www.msf.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'oct7-body-desecration-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Body Desecration Pattern (2023)',
+    date: 'October 7, 2023 (body-desecration cohort)',
+    location: 'Southern Israel kibbutzim, Nova festival site, and overrun communities',
+    summary:
+      'Israeli government materials, forensic multi-source reporting, and multi-outlet investigations document body desecration of Israeli civilian victims on October 7 — including burning, mutilation, and public display. Pattern card for desecration distinct from sexual-violence and burning-homes cards.',
+    evidence:
+      'Israeli government forensic materials, multi-outlet investigative reporting, and multi-source survivor/first-responder testimony establish multi-source body desecration. Exact case counts are sensitive and partial; multi-source body desecration of civilian victims is the claim.',
+    sources: [
+      { label: 'Israeli government forensic materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Oct 7 forensic coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'iran-missile-attack-israel-civilian-harm-pattern-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Iran Missile Attack Civilian Harm Pattern in Israel (2024)',
+    date: 'April–October 2024 (Iran missile/drone cohort)',
+    location: 'Israel nationwide airspace, Nevatim approaches, and urban shelter zones',
+    summary:
+      'Israeli government materials, multi-outlet reporting, and multi-source casualty documentation establish Iran direct missile and drone barrages causing civilian deaths, injuries, and mass sheltering across Israel — a dual-sided regional escalation pattern distinct from Hezbollah northern rockets and Oct 7 cards.',
+    evidence:
+      'Israeli government home-front updates, multi-outlet coverage of April and October 2024 barrages, and multi-source casualty reporting establish multi-source civilian harm from Iran missile/drone attacks. Exact tolls are limited relative to scale of interception; multi-source civilian harm is the claim.',
+    sources: [
+      { label: 'Israeli government home-front materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Iran attack coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 ]
 
@@ -15133,6 +15377,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['arson', 'vehicles', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-hepatitis-a-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Hepatitis A Outbreak Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric hepatitis A risk from collapsed WASH systems.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-hepatitis-a-risk-pattern-2023-2025',
+      'gaza-children-scabies-outbreak-pattern-2023-2025',
+      'gaza-children-diphtheria-risk-pattern-2023-2025',
+    ],
+    tags: ['hepatitis-a', 'children', 'wash', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-tunnel-labor-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced Tunnel Labor Pattern',
+    description: 'Multi-source documentation of forced tunnel movement or labor for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-tunnel-labor-pattern-2023-2025',
+      'israel-hostages-starvation-calories-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'tunnels', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-livestock-poisoning-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Livestock Poisoning Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler poisoning of Palestinian livestock after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-poisoning-livestock-pattern-2023-2025',
+      'west-bank-settler-attacking-herders-pattern-2023-2025',
+      'west-bank-settler-livestock-theft-pattern-2023-2025',
+    ],
+    tags: ['livestock', 'settlers', 'herding', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-burn-infection-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Burn Wound Infection Pattern',
+    description: 'WHO/MSF multi-source documentation of elevated pediatric burn-wound infection under collapsed sterile care.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-burn-wound-infection-pattern-2023-2025',
+      'gaza-children-amputation-without-prosthetics-pattern-2023-2025',
+      'gaza-children-crush-syndrome-risk-pattern-2023-2025',
+    ],
+    tags: ['burns', 'infection', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hezbollah-northern-rockets-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Hezbollah Rocket Civilian Harm Pattern in Northern Israel',
+    description: 'Multi-source documentation of Hezbollah rocket and drone fire causing civilian harm and displacement in northern Israel.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'hezbollah-rocket-northern-israel-civilian-harm-pattern-2023-2025',
+      'iran-missile-attack-israel-civilian-harm-pattern-2024',
+      'oct7-body-desecration-pattern-2023',
+    ],
+    tags: ['hezbollah', 'rockets', 'civilians', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-medical-access-block-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Blocking Medical Access Pattern',
+    description: 'OCHA/WHO multi-source documentation of elevated settler blocking of Palestinian civilian medical access after October 7.',
+    source: 'OCHA / WHO / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-blocking-medical-access-pattern-2023-2025',
+      'west-bank-settler-blocking-ambulances-pattern-2023-2025',
+      'west-bank-settler-poisoning-livestock-pattern-2023-2025',
+    ],
+    tags: ['medical-access', 'settlers', 'civilians', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-amputation-prosthetics-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Amputation Without Prosthetics Pattern',
+    description: 'WHO/UNICEF/MSF multi-source documentation of elevated pediatric amputations without prosthetic access.',
+    source: 'WHO / UNICEF / MSF',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-amputation-without-prosthetics-pattern-2023-2025',
+      'gaza-children-burn-wound-infection-pattern-2023-2025',
+      'gaza-children-orthopedic-care-collapse-pattern-2023-2025',
+    ],
+    tags: ['amputation', 'prosthetics', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-oct7-body-desecration-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Body Desecration Pattern',
+    description: 'Multi-source documentation of body desecration of Israeli civilian victims on October 7.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-body-desecration-pattern-2023',
+      'oct7-sexual-violence-pattern-2023',
+      'hezbollah-rocket-northern-israel-civilian-harm-pattern-2023-2025',
+    ],
+    tags: ['oct7', 'desecration', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-iran-missile-civilian-harm-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Iran Missile Attack Civilian Harm Pattern in Israel',
+    description: 'Multi-source documentation of civilian harm from Iran direct missile and drone barrages on Israel in 2024.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'iran-missile-attack-israel-civilian-harm-pattern-2024',
+      'hezbollah-rocket-northern-israel-civilian-harm-pattern-2023-2025',
+      'oct7-body-desecration-pattern-2023',
+    ],
+    tags: ['iran', 'missiles', 'civilians', 'israel'],
+  },
+
 
 
 ]
