@@ -423,6 +423,19 @@ assert(relatedPlatIa.includes('PRIMARY_RELATED_HUBS') && relatedPlatIa.includes(
 assert(relatedPlatIa.includes("'dark'") || relatedPlatIa.includes('"dark"'), 'RelatedHubs dark IA complete')
 assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'soft-404 primary RelatedHubs IA complete')
 
+
+// Account recovery five matrix IA ultimate
+for (const [file, constName] of [
+  ['AccessibilityPage.tsx', 'A11Y_HUBS'],
+  ['ComprehensiveProfilePage.tsx', 'OSINT_HUBS'],
+  ['PrivacyPage.tsx', 'PRIVACY_HUBS'],
+  ['TermsPage.tsx', 'TERMS_HUBS'],
+]) {
+  const src = fs.readFileSync(path.join(root, 'src/pages', file), 'utf8')
+  const b = src.match(new RegExp(`const ${constName}[^=]*= \\[([\\s\\S]*?)\\]`))
+  assert(b && (b[1].match(/to:/g) || []).length === 5, `${constName} count 5 IA ultimate`)
+}
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
