@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:03:25.544Z",
+  "generatedAt": "2026-07-23T08:04:28.691Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 91,
-    "timelineEvents": 79,
+    "incidents": 92,
+    "timelineEvents": 80,
     "actors": 47,
     "moneyTrailNodes": 29,
-    "historicalWarCrimesPack": 77,
+    "historicalWarCrimesPack": 78,
     "legalCases": 19,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 31
+      "post-oct7": 32
     },
     "incidentsByTier": {
-      "verified": 89,
+      "verified": 90,
       "circumstantial": 2
     },
     "childrenTagged": 76,
-    "civiliansTagged": 89,
+    "civiliansTagged": 90,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3056,6 +3056,26 @@
         "children",
         "gaza",
         "invasion"
+      ]
+    },
+    {
+      "id": "tl-gaza-journalists-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Journalist Death Toll — Conflict High",
+      "description": "CPJ/RSF multi-source tracking of 100+ media workers killed in Gaza war.",
+      "source": "CPJ / RSF",
+      "sourceUrl": "https://cpj.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-journalists-killed-pattern-2023-2025",
+        "shireen-abu-akleh-2022"
+      ],
+      "tags": [
+        "journalists",
+        "civilians",
+        "gaza",
+        "press"
       ]
     },
     {
@@ -6332,6 +6352,52 @@
       "tier": "verified",
       "casualties": {
         "killed": 0
+      }
+    },
+    {
+      "id": "gaza-journalists-killed-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Journalists Killed — Highest Conflict Toll Pattern (2023–2025)",
+      "date": "October 2023 – 2025",
+      "location": "Gaza Strip",
+      "summary": "Multi-source press-freedom monitors document the highest journalist death toll of any recent conflict in Gaza, with CPJ and other monitors tracking 100+ media workers killed. Israel states many were combatants or collateral; press-freedom organizations document a pattern of high risk to clearly identified media workers. Pattern card for the journalist-killing floor across the war.",
+      "evidence": "Committee to Protect Journalists, RSF, and multi-source local media tallies establish elevated journalist fatalities. Individual cases (e.g., Shireen Abu Akleh earlier card) and wartime Gaza tallies are multi-source; combatant allegations remain contested case-by-case.",
+      "sources": [
+        {
+          "label": "Committee to Protect Journalists — Gaza",
+          "url": "https://cpj.org"
+        },
+        {
+          "label": "RSF / multi-outlet press freedom reporting",
+          "url": "https://rsf.org"
+        },
+        {
+          "label": "OHCHR media worker materials",
+          "url": "https://www.ohchr.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "CPJ public tracking",
+          "url": "https://cpj.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 100
       }
     },
     {
