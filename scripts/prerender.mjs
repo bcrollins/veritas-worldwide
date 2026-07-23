@@ -2759,6 +2759,58 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/privacy') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Does Veritas Worldwide sell reader data?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. We do not sell personal information, do not run ads against the archive, and keep analytics purpose-specific for understanding publication performance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What analytics does Veritas use?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Minimal first-party analytics and optional Google Analytics with consent controls. The Analytics page explains what is collected and why. No third-party advertising trackers.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do I need an account to read The Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. The full public archive is free without an account. Optional accounts only store local reader state such as bookmarks, dark mode, and progress.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do I contact Veritas about privacy?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Email privacy@veritasworldwide.com or rights@veritasworldwide.com. Security disclosures: /.well-known/security.txt.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {

@@ -6,6 +6,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -42,6 +43,28 @@ export default function PrivacyPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Privacy Policy', url: `${SITE_URL}/privacy` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'Does Veritas Worldwide sell reader data?',
+          answer:
+            'No. We do not sell personal information, do not run ads against the archive, and keep analytics purpose-specific for understanding publication performance.',
+        },
+        {
+          question: 'What analytics does Veritas use?',
+          answer:
+            'Minimal first-party analytics and optional Google Analytics with consent controls. The Analytics page explains what is collected and why. No third-party advertising trackers.',
+        },
+        {
+          question: 'Do I need an account to read The Record?',
+          answer:
+            'No. The full public archive is free without an account. Optional accounts only store local reader state such as bookmarks, dark mode, and progress.',
+        },
+        {
+          question: 'How do I contact Veritas about privacy?',
+          answer:
+            'Email privacy@veritasworldwide.com or rights@veritasworldwide.com. Security disclosures: /.well-known/security.txt.',
+        },
       ]),
     ])
     return () => {

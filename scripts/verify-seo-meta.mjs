@@ -223,6 +223,17 @@ assert(
   contentPackPage.includes('How do /share and /content-packs relate'),
   'Content Pack FAQ must document legacy /share and /content-packs aliases',
 )
+assert(
+  prerender.includes("route === '/privacy'") &&
+    prerender.includes('Does Veritas Worldwide sell reader data?'),
+  'prerender must emit Privacy FAQPage for trust / voice queries',
+)
+const privacyPage = read('src/pages/PrivacyPage.tsx')
+assert(privacyPage.includes('faqJsonLd'), 'PrivacyPage must emit FAQPage schema')
+assert(
+  privacyPage.includes('Does Veritas Worldwide sell reader data?'),
+  'Privacy FAQ must answer data-sale concern for E-E-A-T',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 
