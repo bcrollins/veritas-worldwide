@@ -403,7 +403,6 @@ export function organizationJsonLd(): Record<string, unknown> {
     'sameAs': [
       'https://x.com/VeritasWorldwide',
       'https://www.reddit.com/r/VeritasWorldwide',
-      'https://github.com/bcrollins/veritas-worldwide',
     ],
     'contactPoint': [
       {
@@ -550,7 +549,6 @@ export function newsMediaOrganizationJsonLd(): Record<string, unknown> {
     sameAs: [
       'https://x.com/VeritasWorldwide',
       'https://www.reddit.com/r/VeritasWorldwide',
-      'https://github.com/bcrollins/veritas-worldwide',
     ],
     ethicsPolicy: `${SITE_URL}/methodology`,
     masthead: `${SITE_URL}/about`,

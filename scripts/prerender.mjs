@@ -2528,7 +2528,6 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
         sameAs: [
           'https://x.com/VeritasWorldwide',
           'https://www.reddit.com/r/VeritasWorldwide',
-          'https://github.com/bcrollins/veritas-worldwide',
         ],
       },
       {

@@ -133,9 +133,18 @@ assert(
 assert(home.includes('websiteJsonLd'), 'Home must call websiteJsonLd()')
 assert(home.includes('organizationJsonLd'), 'Home must call organizationJsonLd()')
 assert(seo.includes('sameAs'), 'Organization helper must include sameAs')
+// P0 operator anonymity: entity-only identity. Personal GitHub namespace must never ship.
 assert(
-  seo.includes('github.com/bcrollins/veritas-worldwide'),
-  'Organization sameAs should include public GitHub for E-E-A-T',
+  !seo.includes('github.com/bcrollins') && !seo.includes('bcrollins/'),
+  'Organization sameAs must not expose personal GitHub namespace (bcrollins)',
+)
+assert(
+  !prerender.includes('github.com/bcrollins') && !prerender.includes('bcrollins/veritas'),
+  'prerender must not emit personal GitHub namespace (bcrollins)',
+)
+assert(
+  seo.includes('x.com/VeritasWorldwide') && seo.includes('reddit.com/r/VeritasWorldwide'),
+  'Organization sameAs must keep official entity social profiles for E-E-A-T',
 )
 
 const consent = read('src/components/CookieConsent.tsx')
@@ -157,6 +166,15 @@ assert(index.includes('og:locale'), 'index.html must declare og:locale')
 assert(index.includes('og:image:alt'), 'index.html must declare og:image:alt')
 // Guard against accidental JSX comments in HTML shell
 assert(!index.includes('{/*'), 'index.html must not contain JSX-style comments')
+// P0: index.html shell must not leak personal operator GitHub
+assert(
+  !index.includes('github.com/bcrollins') && !index.includes('bcrollins/'),
+  'index.html must not expose personal GitHub namespace (bcrollins)',
+)
+assert(
+  index.includes('x.com/VeritasWorldwide') && index.includes('reddit.com/r/VeritasWorldwide'),
+  'index.html sameAs must keep official entity social profiles',
+)
 
 const sw = read('public/sw.js')
 assert(sw.includes("request.mode === 'navigate'"), 'SW must special-case navigation requests')
