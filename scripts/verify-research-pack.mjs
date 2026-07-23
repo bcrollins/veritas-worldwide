@@ -109,6 +109,11 @@ assert(
   subscribeSuccess.includes('/research-pack.zip') && subscribeSuccess.includes('subscribe-success-research-pack'),
   'Subscribe success must offer free research pack card',
 )
+const profilesIndex = read('src/pages/ProfilesIndexPage.tsx')
+assert(
+  profilesIndex.includes('/research-pack.zip') && profilesIndex.includes('profiles-research-pack-banner'),
+  'Profiles index must surface free research pack banner',
+)
 const humans = read('public/humans.txt')
 assert(
   humans.includes('/research-pack.zip') && humans.includes('Corpora:'),

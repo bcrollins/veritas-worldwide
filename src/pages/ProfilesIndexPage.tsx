@@ -364,7 +364,7 @@ export default function ProfilesIndexPage(): React.ReactNode {
             The people layer behind the record.
           </h1>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 space-y-3">
         <div className="border border-border bg-surface p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-crimson">Private research</p>
@@ -373,6 +373,24 @@ export default function ProfilesIndexPage(): React.ReactNode {
           <Link to="/comprehensive-profile" className="inline-flex min-h-[44px] items-center justify-center px-5 bg-obsidian text-white font-sans text-xs font-semibold tracking-wide uppercase hover:bg-crimson whitespace-nowrap">
             Online Profile — $499
           </Link>
+        </div>
+        <div
+          className="border border-border bg-parchment/40 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+          data-testid="profiles-research-pack-banner"
+        >
+          <div>
+            <p className="font-sans text-[0.55rem] font-bold tracking-[0.2em] uppercase text-ink-faint">Free · Machine-readable</p>
+            <p className="font-body text-sm text-ink-muted mt-1">
+              Offline research pack ZIP of public corpora (profiles, ROC, Israel, taxonomy) — not a private investigation.
+            </p>
+          </div>
+          <a
+            href="/research-pack.zip"
+            download="veritas-research-pack.zip"
+            className="inline-flex min-h-[44px] items-center justify-center px-5 border border-obsidian font-sans text-xs font-semibold tracking-wide uppercase text-ink hover:border-crimson hover:text-crimson whitespace-nowrap"
+          >
+            Download pack (ZIP)
+          </a>
         </div>
       </div>
 
@@ -388,6 +406,13 @@ export default function ProfilesIndexPage(): React.ReactNode {
               download="veritas-profiles-corpus.json"
             >
               Download profiles corpus (JSON)
+            </a>
+            <a
+              href="/research-pack.zip"
+              className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson hover:text-crimson transition-colors"
+              download="veritas-research-pack.zip"
+            >
+              Full research pack (ZIP)
             </a>
             <Link
               to="/israel-dossier"
