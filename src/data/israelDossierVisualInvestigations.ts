@@ -2275,6 +2275,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-nicu-evacuation-visual-2023-2025',
+    title: 'Gaza NICU Evacuation Under Fire — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip neonatal intensive care units and transfer corridors',
+    summary:
+      'Multi-outlet video and photo packages document neonatal intensive-care evacuations under bombardment and blackout conditions, including incubators and oxygen-dependent infants. Distinct from prior ICU/NICU combined visual card by focusing on multi-source NICU-transfer packages; ethnicity is never evidence.',
+    evidence:
+      'WHO health-cluster materials, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of NICU evacuation under wartime conditions.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza medical packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet NICU evacuation video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of neonatal transfer', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OHCHR medical-protection trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-kfar-azza-road-visual-2023',
+    title: 'October 7 Kfar Aza Access-Road Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Access roads and perimeter of Kibbutz Kfar Aza',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders and burning vehicles on Kfar Aza access roads during the October 7 attacks. Distinct from prior Kfar Aza kibbutz interior visual cards by focusing on road-approach packages; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian targeting on access roads.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Kfar Aza road October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-water-pipe-cut-visual-2023-2025',
+    title: 'West Bank Settler Water-Pipe Cuts — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village agricultural water networks',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler cutting of Palestinian civilian agricultural water pipes, denying irrigation including food production for families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA water-access materials, and multi-outlet reporting establish multi-source documentation of settler water-pipe sabotage affecting civilian agriculture.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem water and land materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem water-pipe sabotage video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem water-access case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA water-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

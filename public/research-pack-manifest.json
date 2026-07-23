@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T13:17:25.499Z",
+  "generatedAt": "2026-07-23T13:22:45.605Z",
   "publisher": "Veritas Worldwide",
   "path": "/research-pack.zip",
-  "bytes": 380867,
-  "sha256": "8c61bb950d238eb08e0553c1b62c55eb90338f088f725ad3ddecd637a44fa24e",
+  "bytes": 388326,
+  "sha256": "b476f87840574ac9e43111a44c7ac0e46b5e6b53fc7bb2b489942d79d1207f92",
   "maxBytesBudget": 8388608,
   "fileCount": 11,
   "files": [
@@ -24,13 +24,13 @@
     },
     {
       "path": "israel-dossier/corpus.json",
-      "bytes": 3187780,
-      "sha256": "a7654c8c7c0ab4166096488e3bd679dd898643ae04d3ca1ed7c6932d9afa2392"
+      "bytes": 3318161,
+      "sha256": "7ed0f049e6ed24bed21ffe9982e79cdadb5e538d892af984fed875dfa15fa3cb"
     },
     {
       "path": "israel-dossier/visual-investigations.json",
-      "bytes": 132497,
-      "sha256": "63d53f851e7922a3dd77abb5a9ca9bd557739221c53d3f291a73997b7183d180"
+      "bytes": 146514,
+      "sha256": "5a4d88ae349636ddd4bdfe297e9bc2f5289656f170786dd428417a0e00ec1e97"
     },
     {
       "path": "record-of-jesus-christ/soft-floor.json",
@@ -39,8 +39,8 @@
     },
     {
       "path": "israel-dossier/soft-floor.json",
-      "bytes": 278,
-      "sha256": "9711c4022f07a6fa3d9bbac94c82292d505e0ca7016c1ec947c1ec771c394597"
+      "bytes": 279,
+      "sha256": "e34b6ba78c0cc9ce1bf89c9552fd8151b1561aa66782828689dd3bc2ea128ed0"
     },
     {
       "path": "israel-dossier/templates/manifest.json",
@@ -55,12 +55,12 @@
     {
       "path": "llms.txt",
       "bytes": 13559,
-      "sha256": "0bcf1108cf8616e5896f64cf8d606eb06ff0a79ecaa5fb7e756274a9737e5296"
+      "sha256": "be7829a4d0196eea69922da303527180aa72c80a7535ba180b777633bb6d9d68"
     },
     {
       "path": "README.md",
       "bytes": 863,
-      "sha256": "11ff31a3fd6bb1e042435c8476e648eba30976c99cf5fefc439ad7bdf2d565d6"
+      "sha256": "51dd25fbffd2a7edebeccc75005b1ce81cf5b9f58f221335a9adb10a42035b05"
     }
   ],
   "note": "Offline research pack of public machine corpora. Entity-only attribution."

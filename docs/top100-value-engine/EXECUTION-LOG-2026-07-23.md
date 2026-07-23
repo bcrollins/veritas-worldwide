@@ -168,3 +168,15 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Live | lag-aware (soft-floor WARN path); video floor often catches first |
 | Multi-agent | densify-only; peer nav/VI co-export without clobber |
 
+
+## Interval densify — tip **1512** / withVideo **108** / VI cards **98**
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza medical (needleless/vacuum-tube/LMA/spinal-needle) · hostage crawl/red-ribbon/empty-crib/deal-billboards · WB pruning-shears/super-frames/ladder-rungs/music-stands |
+| VI | NICU evacuation · Kfar Aza road Oct7 · settler water-pipe cuts |
+| Pure floors | visual-investigations-floor + israel-dossier + research-pack PASS |
+| Soft-floor | 1512 / withVideo 108 |
+| Multi-agent | densify-only; peer nav docs left unstaged |
+| Live | lag-aware soft-floor; no long Railway poll |
+
