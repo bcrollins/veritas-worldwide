@@ -770,4 +770,11 @@ const stickyDismiss = read('src/components/StickyMembershipBar.tsx')
 assert(stickyDismiss.includes('veritas_sticky_dismissed'), 'session dismiss key lock')
 assert(stickyDismiss.includes('sessionStorage'), 'sessionStorage dismiss storage')
 
+
+// Sticky membership exclusion paths
+const stickyExcl = read('src/components/StickyMembershipBar.tsx')
+assert(stickyExcl.includes("'/membership'") || stickyExcl.includes('"/membership"'), 'exclude /membership')
+assert(stickyExcl.includes('/admin'), 'exclude /admin')
+assert(stickyExcl.includes('/thank-you') || stickyExcl.includes('thank-you'), 'exclude thank-you')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
