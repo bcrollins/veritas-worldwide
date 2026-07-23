@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:58:37.164Z",
+  "generatedAt": "2026-07-23T07:59:21.448Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -9,7 +9,7 @@
     "actors": 47,
     "moneyTrailNodes": 29,
     "historicalWarCrimesPack": 75,
-    "legalCases": 18,
+    "legalCases": 19,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
@@ -7410,6 +7410,15 @@
       "significance": "Extends Genocide Convention litigation beyond Israel itself to major arms-exporting third states — structural map of third-state responsibility claims adjacent to U.S. FMF enablement questions.",
       "sourceUrl": "https://www.icj-cij.org",
       "status": "ongoing"
+    },
+    {
+      "title": "UN Security Council Resolution 2735 — Gaza Ceasefire Phases (June 2024)",
+      "court": "UN Security Council",
+      "date": "June 10, 2024",
+      "ruling": "Welcomed a ceasefire proposal encompassing three phases (temporary ceasefire and hostage/prisoner exchange; permanent cessation and reconstruction; multi-year pathway for a two-state solution) and called on all parties to implement it fully.",
+      "significance": "Records a U.S.-backed Security Council ceasefire architecture after months of veto politics — distinct from earlier 2712/2728 humanitarian-pause and Ramadan texts.",
+      "sourceUrl": "https://digitallibrary.un.org",
+      "status": "decided"
     }
   ],
   "lobbying": [

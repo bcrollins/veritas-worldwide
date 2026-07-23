@@ -1927,6 +1927,18 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     status: 'ongoing',
   },
 
+  {
+    title: 'UN Security Council Resolution 2735 — Gaza Ceasefire Phases (June 2024)',
+    court: 'UN Security Council',
+    date: 'June 10, 2024',
+    ruling:
+      'Welcomed a ceasefire proposal encompassing three phases (temporary ceasefire and hostage/prisoner exchange; permanent cessation and reconstruction; multi-year pathway for a two-state solution) and called on all parties to implement it fully.',
+    significance:
+      'Records a U.S.-backed Security Council ceasefire architecture after months of veto politics — distinct from earlier 2712/2728 humanitarian-pause and Ramadan texts.',
+    sourceUrl: 'https://digitallibrary.un.org',
+    status: 'decided',
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [
