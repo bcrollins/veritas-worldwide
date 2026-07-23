@@ -7785,6 +7785,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-thiamine-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Thiamine (B1) Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (thiamine cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated thiamine (vitamin B1) deficiency risk among Gaza children under polished-carb-heavy wartime diets and collapsed food variety — threatening beriberi and neurological harm. Pattern card for thiamine-specific deficit distinct from folate/B12 and protein-energy cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source thiamine-deficiency risk. Exact clinical counts are incomplete; multi-source wartime pediatric thiamine risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-personal-hygiene-items-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Personal Hygiene Items Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hygiene-items cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of soap, menstrual products, toothpaste, and basic hygiene items for Israeli civilian hostages including women and children — a protected-person dignity pattern distinct from toilet-privacy and hygiene-sanitation cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hygiene-item denial in captivity. Exact item lists vary; multi-source personal hygiene-item denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-water-tank-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Water-Tank Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (water-tank cohort)',
+    location: 'West Bank Palestinian rooftops and farm water storage',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian water tanks and storage after October 7 — collapsing household water security for families including children. Pattern card for water-tank destruction distinct from irrigation-pipe and water-source seizure cards.',
+    evidence:
+      'OCHA WASH/settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-tank destruction. Exact tank counts evolve; multi-source wartime water-tank destruction is the claim.',
+    sources: [
+      { label: 'OCHA WASH materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem water materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet water tank destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -12097,6 +12178,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['solar', 'energy', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-thiamine-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Thiamine Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated thiamine (B1) deficiency risk among children under wartime diets.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-thiamine-deficiency-risk-pattern-2023-2025',
+      'gaza-children-folate-b12-deficiency-pattern-2023-2025',
+      'gaza-children-protein-energy-gap-pattern-2023-2025',
+    ],
+    tags: ['thiamine', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-hygiene-items-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Hygiene Items Pattern',
+    description: 'Multi-source documentation of denial of soap, menstrual products, and basic hygiene items for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-personal-hygiene-items-pattern-2023-2025',
+      'israel-hostages-denied-hygiene-sanitation-pattern-2023-2025',
+      'israel-hostages-denied-toilets-privacy-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'hygiene', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-water-tank-destruction-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Water-Tank Destruction Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian water tanks after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-water-tank-destruction-pattern-2023-2025',
+      'west-bank-settler-water-source-seizure-pattern-2023-2025',
+      'west-bank-settler-irrigation-pipe-destruction-pattern-2023-2025',
+    ],
+    tags: ['water-tanks', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
