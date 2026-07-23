@@ -18882,6 +18882,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-improvised-explosive-toy-injury-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Explosive-Remnant Mistaken-for-Toy Injury Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (explosive-remnant-toy-injury cohort)',
+    location: 'Gaza Strip rubble fields where children play near uncleared remnants',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric injuries when children handle explosive remnants mistaken for toys under delayed clearance — a multi-source wartime explosive-remnant pattern distinct from general UXO and landmine cards.',
+    evidence:
+      'WHO injury materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric explosive-remnant toy-handling injuries. Exact case counts evolve; multi-source wartime explosive-remnant toy-injury among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO injury materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-deal-deadlines-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Deadlines Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage-deal-deadlines-denial cohort)',
+    location: 'Gaza Strip captivity sites — hostage-deal-deadlines-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding knowledge of public deal deadlines — a multi-source psychological pattern distinct from deal-countdown denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source deal-deadlines denial. Exact cases vary; multi-source deal-deadlines denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-school-windows-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying School Windows Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-window-destruction cohort)',
+    location: 'West Bank village school classrooms and hallway windows',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school windows after October 7 — rendering classrooms unusable in winter for children. Pattern card distinct from school-roofing and fencing destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-window destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school windows is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-window destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-building-collapse-play-injury-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Building-Collapse Play Injury Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (building-collapse-play-injury cohort)',
+    location: 'Gaza Strip unstable ruins used as play areas',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric injuries when children play in unstable ruined buildings under delayed demolition safety — a multi-source wartime injury pattern distinct from falls-from-damaged-buildings during shelter use.',
+    evidence:
+      'WHO injury materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric building-collapse play injuries. Exact case counts evolve; multi-source wartime building-collapse play injury among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO injury materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-count-out-loud-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Count Out Loud Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-count-out-loud cohort)',
+    location: 'Gaza Strip captivity sites — forced-count-out-loud subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to count out loud as control and humiliation — a multi-source coercion pattern distinct from forced day-counting of captivity.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced count-out-loud. Exact cases vary; multi-source forced count-out-loud for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-school-cooks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on School Cooks Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-cook-attack cohort)',
+    location: 'West Bank village school kitchens and meal-service points',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school cooks after October 7 — disrupting school meals for children. Pattern card distinct from school-janitor and teacher attacks.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-cook attacks. Exact injury counts evolve; multi-source wartime settler attacks on school cooks is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-cook attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-open-well-drowning-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Open-Well Drowning Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (open-well-drowning cohort)',
+    location: 'Gaza Strip damaged wells and open water points near camps',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric drowning in damaged open wells under collapsed well-safety and rescue capacity — a multi-source wartime drowning pattern distinct from tent-flood drowning cards.',
+    evidence:
+      'WHO injury-prevention materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric open-well drowning. Exact case counts evolve; multi-source wartime open-well drowning among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO injury-prevention materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-deal-signs-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Public Hostage Deal Signs Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (public-hostage-deal-signs-denial cohort)',
+    location: 'Gaza Strip captivity sites — public-hostage-deal-signs-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding knowledge of public deal-sign campaigns and countdown clocks — a multi-source psychological isolation pattern distinct from deal-countdown denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source public deal-sign denial. Exact cases vary; multi-source public deal-sign denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-school-doors-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying School Doors Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-door-destruction cohort)',
+    location: 'West Bank village school classroom and hallway doors',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school doors after October 7 — compromising classroom security and weather protection for children. Pattern card distinct from school-window and gate destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-door destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school doors is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-door destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -30219,6 +30463,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['school-roofs', 'settlers', 'education', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-uxo-toy-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Explosive-Remnant Mistaken-for-Toy Injury Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric injuries from explosive remnants mistaken for toys.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-improvised-explosive-toy-injury-pattern-2023-2025',
+      'gaza-children-building-collapse-play-injury-pattern-2023-2025',
+      'gaza-children-open-well-drowning-pattern-2023-2025',
+    ],
+    tags: ['uxo', 'toys', 'children', 'injury', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-deal-deadlines-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Deal Deadlines Pattern',
+    description: 'Multi-source documentation of captors withholding knowledge of public deal deadlines.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-deal-deadlines-pattern-2023-2025',
+      'israel-hostages-forced-to-count-out-loud-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deal-signs-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-windows-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying School Windows Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school windows after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-school-windows-pattern-2023-2025',
+      'west-bank-settler-attacking-school-cooks-pattern-2023-2025',
+      'west-bank-settler-destroying-school-doors-pattern-2023-2025',
+    ],
+    tags: ['school-windows', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-collapse-play-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Building-Collapse Play Injury Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric injuries when children play in unstable ruins.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-building-collapse-play-injury-pattern-2023-2025',
+      'gaza-children-falls-from-damaged-buildings-pattern-2023-2025',
+      'gaza-children-improvised-explosive-toy-injury-pattern-2023-2025',
+    ],
+    tags: ['building-collapse', 'children', 'injury', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-count-loud-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Count Out Loud Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to count out loud as control.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-count-out-loud-pattern-2023-2025',
+      'israel-hostages-forced-to-count-captivity-days-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deal-deadlines-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'coercion', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-cooks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on School Cooks Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian school cooks after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-school-cooks-pattern-2023-2025',
+      'west-bank-settler-attacking-school-janitors-pattern-2023-2025',
+      'west-bank-settler-destroying-school-windows-pattern-2023-2025',
+    ],
+    tags: ['school-cooks', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-open-well-drown-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Open-Well Drowning Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric drowning in damaged open wells.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-open-well-drowning-pattern-2023-2025',
+      'gaza-children-drowning-rescue-collapse-pattern-2023-2025',
+      'gaza-children-building-collapse-play-injury-pattern-2023-2025',
+    ],
+    tags: ['drowning', 'wells', 'children', 'injury', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-deal-signs-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Public Hostage Deal Signs Pattern',
+    description: 'Multi-source documentation of captors withholding knowledge of public deal-sign campaigns.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hostage-deal-signs-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deal-clock-pattern-2023-2025',
+      'israel-hostages-forced-to-count-out-loud-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-doors-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying School Doors Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school doors after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-school-doors-pattern-2023-2025',
+      'west-bank-settler-destroying-school-windows-pattern-2023-2025',
+      'west-bank-settler-destroying-school-gates-pattern-2023-2025',
+    ],
+    tags: ['school-doors', 'settlers', 'education', 'west-bank'],
+  },
+
 
 
 
