@@ -416,3 +416,8 @@ assert(botMeta.includes('isKnownProfileSlug') || server.includes('isKnownProfile
 assert(server.includes('isKnownProfileSlug'), 'isKnownSpaRoute must gate /profile/* via isKnownProfileSlug')
 
 assert(server.includes('isKnownInstituteSlug') && botMeta.includes('isKnownInstituteSlug'), 'must soft-404 unknown institute course/guide slugs')
+
+const forumPage = read('src/pages/ForumPage.tsx')
+assert(!forumPage.includes('Local beta forum'), 'Forum SERP copy must not advertise Local beta forum')
+assert(forumPage.includes('Community Forum |') || forumPage.includes('Community Forum ${'), 'Forum title should drop Beta for SERP cleanliness')
+assert(prerender.includes("route: '/forum'") && prerender.includes('Source-first conversation'), 'prerender /forum must match client high-intent description')

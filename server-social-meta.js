@@ -296,8 +296,8 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         desc: 'Interactive Epstein network dossier: court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',
       },
       '/forum': {
-        title: 'Community Forum Beta | Veritas Worldwide',
-        desc: 'Local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features.',
+        title: 'Community Forum | Veritas Worldwide',
+        desc: 'Discuss primary sources, evidence tiers, and archive methods with Veritas readers',
       },
       '/profiles': {
         title: 'Power Profiles | Veritas Worldwide',

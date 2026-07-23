@@ -1020,9 +1020,9 @@ export default function ForumPage() {
   // SEO — WebPage (not DiscussionForumPosting) for the shell; avoid thin UGC indexing noise
   useEffect(() => {
     setMetaTags({
-      title: `Community Forum Beta | ${SITE_NAME}`,
+      title: `Community Forum | ${SITE_NAME}`,
       description:
-        'Local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features before the live community stack ships.',
+        'Discuss primary sources, evidence tiers, and archive methods with Veritas readers. Source-first conversation for The Record and Institute materials.',
       url: `${SITE_URL}/forum`,
       // Beta UGC shell — keep crawlable for product discovery but deprioritize thin threads
       robots: 'index, follow, max-image-preview:large, max-snippet:160',
