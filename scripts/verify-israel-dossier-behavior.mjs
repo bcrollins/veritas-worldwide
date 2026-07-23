@@ -402,7 +402,7 @@ async function runInteractiveChecks(browser) {
     assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 84, 'corpus.json incidents too few')
     assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 46, 'corpus.json actors too few')
     assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 48, 'corpus.json timeline too few')
-    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 26, 'corpus.json moneyTrail too few')
+    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 27, 'corpus.json moneyTrail too few')
     assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 17, 'corpus.json legalCases too few')
     assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 3, 'corpus.json lobbying too few')
     assert(corpus?.counts?.incidentsByEra && typeof corpus.counts.incidentsByEra === 'object', 'corpus.json missing incidentsByEra breakdown')
@@ -612,6 +612,7 @@ async function runInteractiveChecks(browser) {
       'republican jewish',
       'humanitarian pier',
       'pager',
+      'qualitative military edge',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }

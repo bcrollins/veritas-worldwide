@@ -1259,6 +1259,19 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     relatedProfileIds: ['donald-trump', 'miriam-adelson', 'mike-johnson', 'ted-cruz', 'lindsey-graham'],
   },
 
+  {
+    id: 'qualitative-military-edge',
+    label: 'U.S. Qualitative Military Edge (QME) Doctrine',
+    amount: 'statutory policy commitment (multi-decade)',
+    type: 'legislation',
+    date: 'ongoing (codified practice)',
+    detail:
+      'U.S. law and executive practice commit to maintaining Israel\'s "qualitative military edge" over regional adversaries — a structural doctrine that shapes arms-transfer approvals, FMF levels, and third-country sales reviews. Distinct from a single appropriation: QME is the policy floor that makes wartime resupply and MOU architecture the default rather than exceptional.',
+    sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+    children: ['annual-mou', 'fmf-weapons', 'f35-fleet', 'hr815'],
+    relatedProfileIds: ['joe-biden', 'donald-trump', 'barack-obama', 'chuck-schumer', 'mike-johnson', 'benjamin-netanyahu'],
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
