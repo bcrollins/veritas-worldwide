@@ -783,4 +783,11 @@ const stickyCopy = read('src/components/StickyMembershipBar.tsx')
 assert(stickyCopy.includes('Fund the investigation'), 'Fund the investigation copy lock')
 assert(stickyCopy.includes('Memberships start at') || stickyCopy.includes('Support independent'), 'membership value prop copy')
 
+
+// Sticky membership Join CTA chrome
+const stickyJoin = read('src/components/StickyMembershipBar.tsx')
+assert(stickyJoin.includes('Join'), 'Join CTA label present')
+assert(stickyJoin.includes('uppercase') || stickyJoin.includes('tracking-'), 'Join CTA tracking/uppercase chrome')
+assert(stickyJoin.includes('bg-crimson'), 'Join CTA bg-crimson')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
