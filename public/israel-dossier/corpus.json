@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:15:30.321Z",
+  "generatedAt": "2026-07-23T09:15:56.382Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 152,
-    "timelineEvents": 140,
+    "incidents": 153,
+    "timelineEvents": 141,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 138,
+    "historicalWarCrimesPack": 139,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 92
+      "post-oct7": 93
     },
     "incidentsByTier": {
-      "verified": 150,
+      "verified": 151,
       "circumstantial": 2
     },
-    "childrenTagged": 128,
-    "civiliansTagged": 150,
+    "childrenTagged": 129,
+    "civiliansTagged": 151,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4114,6 +4114,27 @@
         "civilians",
         "settler-violence",
         "west-bank"
+      ]
+    },
+    {
+      "id": "tl-iran-proxy-drones-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Iranian & Proxy Drone Attacks on Israel Pattern",
+      "description": "Multi-source documentation of repeated Iranian and proxy drone attack waves into Israeli airspace after October 7.",
+      "source": "Israeli government / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "iran-proxy-drones-israel-pattern-2023-2025",
+        "iran-missile-barrage-april-2024",
+        "hezbollah-rockets-northern-israel-pattern-2023-2025"
+      ],
+      "tags": [
+        "drones",
+        "iran",
+        "civilians",
+        "israel"
       ]
     },
     {
@@ -10149,6 +10170,50 @@
           "type": "document",
           "label": "UNESCO public materials",
           "url": "https://www.unesco.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "iran-proxy-drones-israel-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "iron-dome",
+        "iron-beam-laser-2024"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Iranian & Proxy Drone Attacks on Israel Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (drone cohort)",
+      "location": "Israel (multi-front drone threat envelope)",
+      "summary": "Israeli government, multi-source press, and regional monitoring document repeated Iranian and proxy drone attacks into Israeli airspace after October 7 — including April 2024 and later waves — posing civilian risk and driving interception campaigns. Pattern card for state/proxy drone warfare against Israel concurrent with Gaza war, distinct from Hezbollah rocket and Gaza rocket cards.",
+      "evidence": "Israeli government public intercept tallies, multi-outlet coverage of drone waves, and multi-source regional reporting establish multi-source drone attack campaigns. Exact intercept ratios evolve; multi-source repeated drone attacks into Israeli airspace is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government public defense materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet Iranian/proxy drone coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "CRS / multi-source regional conflict materials",
+          "url": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
         }
       ],
       "tier": "verified",

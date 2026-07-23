@@ -3708,6 +3708,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'iran-proxy-drones-israel-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome', 'iron-beam-laser-2024'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Iranian & Proxy Drone Attacks on Israel Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (drone cohort)',
+    location: 'Israel (multi-front drone threat envelope)',
+    summary:
+      'Israeli government, multi-source press, and regional monitoring document repeated Iranian and proxy drone attacks into Israeli airspace after October 7 — including April 2024 and later waves — posing civilian risk and driving interception campaigns. Pattern card for state/proxy drone warfare against Israel concurrent with Gaza war, distinct from Hezbollah rocket and Gaza rocket cards.',
+    evidence:
+      'Israeli government public intercept tallies, multi-outlet coverage of drone waves, and multi-source regional reporting establish multi-source drone attack campaigns. Exact intercept ratios evolve; multi-source repeated drone attacks into Israeli airspace is the claim.',
+    sources: [
+      { label: 'Israeli government public defense materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Iranian/proxy drone coverage', url: 'https://apnews.com' },
+      { label: 'CRS / multi-source regional conflict materials', url: 'https://www.congress.gov/crs-product/RL33222' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5452,6 +5479,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['worship', 'heritage', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-iran-proxy-drones-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Iranian & Proxy Drone Attacks on Israel Pattern',
+    description: 'Multi-source documentation of repeated Iranian and proxy drone attack waves into Israeli airspace after October 7.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'iran-proxy-drones-israel-pattern-2023-2025',
+      'iran-missile-barrage-april-2024',
+      'hezbollah-rockets-northern-israel-pattern-2023-2025',
+    ],
+    tags: ['drones', 'iran', 'civilians', 'israel'],
+  },
+
 
 
 
