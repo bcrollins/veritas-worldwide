@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:59:09.783Z",
+  "generatedAt": "2026-07-23T08:59:39.679Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 128,
-    "timelineEvents": 116,
+    "incidents": 129,
+    "timelineEvents": 117,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 114,
+    "historicalWarCrimesPack": 115,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 68
+      "post-oct7": 69
     },
     "incidentsByTier": {
-      "verified": 126,
+      "verified": 127,
       "circumstantial": 2
     },
-    "childrenTagged": 104,
-    "civiliansTagged": 126,
+    "childrenTagged": 105,
+    "civiliansTagged": 127,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3204,6 +3204,27 @@
         "cemetery",
         "dignity",
         "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-malnutrition-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Child Acute Malnutrition Pattern",
+      "description": "UNICEF/WHO/IPC multi-source documentation of elevated acute malnutrition among Gaza children under wartime access constraints.",
+      "source": "UNICEF / WHO / IPC",
+      "sourceUrl": "https://www.unicef.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-child-malnutrition-pattern-2023-2025",
+        "gaza-starvation-ipc-phases-2024-2025",
+        "gaza-bakeries-food-system-collapse-2023-2025"
+      ],
+      "tags": [
+        "children",
+        "malnutrition",
+        "starvation",
         "gaza"
       ]
     },
@@ -8589,6 +8610,51 @@
           "type": "document",
           "label": "Israeli government public updates",
           "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-child-malnutrition-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "un-finding",
+      "title": "Gaza Child Acute Malnutrition Pattern (2023–2025)",
+      "date": "2023 – 2025 (nutrition cohort)",
+      "location": "Gaza Strip (nutrition surveillance sites / clinics)",
+      "summary": "UNICEF, WHO, and IPC multi-source nutrition surveillance document elevated rates of acute malnutrition among Gaza children under wartime food access constraints — a children-targeting civilian-harm outcome distinct from (but linked to) IPC phase and bakery/food-system cards. Pattern card for pediatric nutritional collapse.",
+      "evidence": "UNICEF/WHO nutrition cluster reports, IPC acute malnutrition analyses, and multi-source clinic screening data establish multi-source elevated child acute malnutrition. Exact prevalence rates evolve by governorate and month; multi-source wartime pediatric malnutrition surge is the claim.",
+      "sources": [
+        {
+          "label": "UNICEF Gaza nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "WHO nutrition / health emergency materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "IPC acute malnutrition analyses",
+          "url": "https://www.ipcinfo.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNICEF public nutrition updates",
+          "url": "https://www.unicef.org"
         }
       ],
       "tier": "verified",

@@ -3060,6 +3060,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-child-malnutrition-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'un-finding',
+    title: 'Gaza Child Acute Malnutrition Pattern (2023–2025)',
+    date: '2023 – 2025 (nutrition cohort)',
+    location: 'Gaza Strip (nutrition surveillance sites / clinics)',
+    summary:
+      'UNICEF, WHO, and IPC multi-source nutrition surveillance document elevated rates of acute malnutrition among Gaza children under wartime food access constraints — a children-targeting civilian-harm outcome distinct from (but linked to) IPC phase and bakery/food-system cards. Pattern card for pediatric nutritional collapse.',
+    evidence:
+      'UNICEF/WHO nutrition cluster reports, IPC acute malnutrition analyses, and multi-source clinic screening data establish multi-source elevated child acute malnutrition. Exact prevalence rates evolve by governorate and month; multi-source wartime pediatric malnutrition surge is the claim.',
+    sources: [
+      { label: 'UNICEF Gaza nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'WHO nutrition / health emergency materials', url: 'https://www.who.int' },
+      { label: 'IPC acute malnutrition analyses', url: 'https://www.ipcinfo.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public nutrition updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4396,6 +4423,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['displacement', 'civilians', 'children', 'israel', 'hezbollah'],
   },
+
+  {
+    id: 'tl-gaza-child-malnutrition-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Child Acute Malnutrition Pattern',
+    description: 'UNICEF/WHO/IPC multi-source documentation of elevated acute malnutrition among Gaza children under wartime access constraints.',
+    source: 'UNICEF / WHO / IPC',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-child-malnutrition-pattern-2023-2025',
+      'gaza-starvation-ipc-phases-2024-2025',
+      'gaza-bakeries-food-system-collapse-2023-2025',
+    ],
+    tags: ['children', 'malnutrition', 'starvation', 'gaza'],
+  },
+
 
 
 
