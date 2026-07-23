@@ -1608,4 +1608,17 @@ const bmEnd = read('src/pages/BookmarksPage.tsx')
 assert((bmEnd.match(/<RelatedHubs\b/g) || []).length >= 2, 'bookmarks dual end')
 
 
+
+// PRIMARY_RELATED lockstep primaryLinks end ultimate
+const primaryEnd = read('src/components/RelatedHubs.tsx')
+const appEndPl = read('src/App.tsx')
+const primBlock = primaryEnd.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+const linksBlock = appEndPl.match(/const primaryLinks[^=]*= \[([\s\S]*?)\]/)
+assert(primBlock && linksBlock, 'PRIMARY and primaryLinks blocks end')
+for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/search'"]) {
+  assert(primBlock[1].includes(`to: ${dest}`) || primBlock[1].includes(dest.replace(/'/g, '"')), `PRIMARY end ${dest}`)
+  assert(linksBlock[1].includes(dest) || linksBlock[1].includes(dest.replace(/'/g, '"')), `primaryLinks end ${dest}`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
