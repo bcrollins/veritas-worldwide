@@ -1281,4 +1281,17 @@ assert(darkChipFinal.includes('darkChip') || darkChipFinal.includes('border-whit
 assert(darkChipFinal.includes("tone === 'dark'") || darkChipFinal.includes('tone === "dark"'), 'dark tone branch final')
 
 
+
+// server soft-404 Primary hubs label reaffirm
+const serverSoftFinal = read('server.js')
+assert(serverSoftFinal.includes('Primary hubs') || serverSoftFinal.includes('primary hubs'), 'server Primary hubs label')
+assert(serverSoftFinal.includes('server-soft-404'), 'server-soft-404 marker')
+assert(serverSoftFinal.includes('buildNotFoundHtml'), 'buildNotFoundHtml present')
+
+// NotFound primary chips keep custom Record crimson CTA
+const nfPrimaryCustom = read('src/pages/NotFoundPage.tsx')
+assert(nfPrimaryCustom.includes('not-found-hub-chips'), 'not-found primary chips custom')
+assert(nfPrimaryCustom.includes('bg-crimson') || nfPrimaryCustom.includes('PRIMARY_HUBS'), 'NotFound Record CTA chrome')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
