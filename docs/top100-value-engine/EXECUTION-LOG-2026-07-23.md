@@ -80,3 +80,10 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 
 **Ledger:** 100/100 terminal.
 
+
+## Interval VI-wave3+ (2026-07-23)
+- LIVE 813 incidents / 43 video / 36 VI pack cards
+- visual-investigations.json live 200
+- UI: quick chips, primary video, Wayback pins, method note
+- pure: withVideo≥40 soft-floor, ≥36 VI cards dual-cite
+- anonymity PASS
