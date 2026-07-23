@@ -512,7 +512,8 @@ const pureScriptCount = (verifyPure.match(/verify-[a-z0-9-]+\.mjs/g) || []).leng
 assert(pureScriptCount >= 22, 'verify:pure must list at least 22 pure scripts')
 // Allow multi-agent growth of pure suite (comprehensive-profile etc.) without hard equality lock.
 // Multi-agent pure suite growth (OSINT privacy, search boost, identity scrub, etc.)
-assert(pureScriptCount <= 40, `verify:pure script count unexpectedly high (got ${pureScriptCount})`)
+// Ceiling raised as multi-agent pure floors grow (security.txt, israel schema, OSINT, etc.)
+assert(pureScriptCount <= 50, `verify:pure script count unexpectedly high (got ${pureScriptCount})`)
 assert(verifyPure.includes('verify-profile-images.mjs'), 'verify:pure must include profile-images')
 assert(verifyPure.includes('verify-image-sources.mjs'), 'verify:pure must include image-sources')
 assert(verifyPure.includes('verify-structured-data.mjs'), 'verify:pure must include structured-data')
