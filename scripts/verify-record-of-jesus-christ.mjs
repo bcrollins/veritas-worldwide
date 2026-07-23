@@ -212,9 +212,9 @@ assert(llms.includes('/record-of-jesus-christ'), 'llms.txt missing ROC path')
 assert(llms.includes('record-of-jesus-christ/corpus.json'), 'llms.txt missing corpus.json')
 assert(llms.includes('record-of-jesus-christ.pdf'), 'llms.txt missing ROC PDF')
 assert(llms.includes('historical-jesus-evidence'), 'llms.txt missing historical-jesus topic hub')
-// Permanent depth advertise: any 3-digit "N+" near ROC copy (survives 400→410→417 floors).
+// Permanent depth advertise: any 3-digit "N+" (e.g. 410+) — do not use \b after '+' (non-word).
 assert(
-  /\b([4-9]\d{2}|\d{3})\+\b/.test(llms) && llms.includes('record-of-jesus-christ'),
+  /(?<!\d)\d{3}\+(?!\d)/.test(llms) && llms.includes('record-of-jesus-christ'),
   'llms.txt should advertise corpus depth (e.g. 400+ / 410+ tier-labeled claims)',
 )
 const corpusPath = path.join(root, 'public/record-of-jesus-christ/corpus.json')
