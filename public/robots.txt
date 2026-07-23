@@ -36,6 +36,7 @@ Allow: /security.txt
 
 # Machine-readable discovery for AI crawlers / GEO
 Allow: /llms.txt
+Allow: /humans.txt
 Allow: /feed.xml
 Allow: /sitemap.xml
 Allow: /profiles/corpus.json

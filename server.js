@@ -1911,6 +1911,12 @@ app.get('/favicon.ico', (_req, res) => {
   return res.redirect(301, '/favicon.svg')
 })
 
+// AI crawler discovery alias — canonical policy surface is /llms.txt (llmstxt.org).
+app.get(['/ai.txt', '/.well-known/llms.txt'], (_req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=3600')
+  return res.redirect(301, '/llms.txt')
+})
+
 // ── Sensitive operator files must never be publicly served ─────────────────
 // data/*.ndjson may contain PII (OSINT orders). Fail closed even if mis-copied into dist.
 app.use((req, res, next) => {

@@ -677,6 +677,14 @@ assert(
   server.includes("'/favicon.ico'") && server.includes("'/favicon.svg'"),
   'server must 301 legacy favicon.ico probes to favicon.svg',
 )
+assert(
+  server.includes("'/ai.txt'") && server.includes("'/llms.txt'"),
+  'server must 301 /ai.txt discovery probes to /llms.txt',
+)
+const humansTxt = read('public/humans.txt')
+assert(humansTxt.includes('Veritas Worldwide'), 'humans.txt must name entity publisher only')
+assert(!/brandon|brollins|@gmail\.com/i.test(humansTxt), 'humans.txt must not leak personal identity')
+assert(robots.includes('Allow: /humans.txt'), 'robots.txt must Allow humans.txt for crawler discovery')
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
 assert(

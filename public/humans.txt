@@ -1,0 +1,14 @@
+/* TEAM */
+Publisher: Veritas Worldwide
+Contact: rights@veritasworldwide.com
+Contact: privacy@veritasworldwide.com
+Contact: corrections@veritasworldwide.com
+Site: https://veritasworldwide.com
+From: United States
+
+/* SITE */
+Standards: HTML5, CSS3, JSON-LD, Schema.org, llms.txt, RFC 9116 security.txt
+Software: React, Vite, Express, PostgreSQL
+License: CC BY-NC-SA 4.0 for The Record public archive (see /terms)
+Doctype: HTML5
+Language: English
