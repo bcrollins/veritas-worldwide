@@ -3681,6 +3681,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-mosques-churches-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Mosques & Churches Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (worship-sites cohort)',
+    location: 'Gaza Strip mosques and churches',
+    summary:
+      'UNESCO, multi-source satellite analysis, and field reporting document destruction or severe damage to large numbers of mosques and churches across Gaza — often used as civilian shelters. Pattern card for places-of-worship destruction as a civilian-harm and cultural-harm multiplier, distinct from the broader cultural-heritage card.',
+    evidence:
+      'UNESCO heritage damage tallies, multi-source satellite reporting, and multi-outlet field coverage establish multi-source worship-site destruction. Exact site counts evolve; multi-source majority mosque damage and multi-church damage is the claim.',
+    sources: [
+      { label: 'UNESCO heritage damage materials', url: 'https://www.unesco.org' },
+      { label: 'Multi-outlet mosque/church destruction coverage', url: 'https://apnews.com' },
+      { label: 'OCHA humanitarian situation materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNESCO public materials', url: 'https://www.unesco.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5408,6 +5435,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['universities', 'education', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-worship-sites-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Mosques & Churches Destruction Pattern',
+    description: 'UNESCO multi-source documentation of destruction or severe damage to mosques and churches, often used as civilian shelters.',
+    source: 'UNESCO / multi-outlet / OCHA',
+    sourceUrl: 'https://www.unesco.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-mosques-churches-destruction-pattern-2023-2025',
+      'gaza-cultural-heritage-destruction-2023-2025',
+      'gaza-education-system-destroyed-2023-2025',
+    ],
+    tags: ['worship', 'heritage', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
