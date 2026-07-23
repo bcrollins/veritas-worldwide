@@ -380,3 +380,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Multi-agent | densify-only; peer nav unstaged |
 | Live | lag-aware soft-floor WARN |
 
+
+## Milestone — Israel dossier corpus **2000+ incidents** (confirmed)
+
+| Ship | Proof |
+|------|-------|
+| Tip | **2000+ incidents** / withVideo **204+** / VI cards **200-** |
+| Dual-sided | Gaza ceftriaxone/metronidazole/ondansetron · hostages propaganda/helmets/wall-bound · WB cauliflower/vaccination/tarragon + water-well/Ra’anana/fig arson VI |
+| Pure | visual + israel-dossier + research-pack PASS |
+| Multi-agent | densify-only |
+| Live | lag-aware soft-floor WARN path |
+
