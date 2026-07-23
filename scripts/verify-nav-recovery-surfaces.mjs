@@ -662,4 +662,12 @@ for (const dest of ['/israel-dossier', '/israel-dossier/briefing', '/deep-state'
   assert(dossierSpokes.includes(dest), `DOSSIER_SPOKES dest ${dest}`)
 }
 
+
+// Cookie ↔ membership same-tab event contract
+const cookie = read('src/components/CookieConsent.tsx')
+const sticky = read('src/components/StickyMembershipBar.tsx')
+assert(cookie.includes('veritas-cookie-consent') || cookie.includes('veritas_cookie_consent'), 'cookie consent key/event')
+assert(sticky.includes('veritas-cookie-consent') && sticky.includes('veritas_cookie_consent'), 'membership listens consent event+storage')
+assert(sticky.includes('cookiePending'), 'membership cookiePending gate')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
