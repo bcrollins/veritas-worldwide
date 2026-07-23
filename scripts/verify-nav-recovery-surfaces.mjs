@@ -501,4 +501,11 @@ for (const rel of [
 }
 assert(relatedMounts >= 17, `RelatedHubs mounts ${relatedMounts} < 17`)
 
+
+// Touch target floor on recovery components
+assert(read('src/components/RelatedHubs.tsx').includes('min-h-[44px]'), 'RelatedHubs 44px')
+assert(read('src/components/ResearchHubChips.tsx').includes('min-h-[44px]'), 'ResearchHubChips 44px')
+assert(read('src/components/DossierHubSpokes.tsx').includes('min-h-[44px]'), 'DossierHubSpokes 44px')
+assert(read('src/components/StickyMembershipBar.tsx').includes('min-h-[44px]'), 'StickyMembership 44px')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
