@@ -140,6 +140,7 @@ const required = [
   'joe-rogan',
   'ben-shapiro',
   'sam-bankman-fried',
+  'david-petraeus',
 ];
 const scores = {};
 for (const id of required) {
@@ -1059,8 +1060,21 @@ for (const f of (sbfP.documentedFalsehoods || []).filter((x) => x.tier === 'veri
   if (f.statementUrl === f.debunkUrl) throw new Error('sbf dual-cite collision: ' + f.id);
 }
 
+
+// David Petraeus densify gate (n≥3)
+const petraeus = scores['david-petraeus'];
+if (!petraeus || petraeus.n < 3) throw new Error('david-petraeus needs ≥3 verified falsehoods, got ' + (petraeus?.n ?? 0));
+if (petraeus.score > 40) throw new Error('david-petraeus score expected ≤40 after densify, got ' + petraeus.score);
+const petraeusP = getProfileBySlug('david-petraeus');
+for (const id of ['petraeus-affair-denial-initial-2012','petraeus-no-classified-to-broadwell-framing','petraeus-fbi-interview-incomplete-truth-2012']) {
+  if (!(petraeusP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('david-petraeus missing docket id: ' + id);
+}
+for (const f of (petraeusP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('petraeus dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 53) throw new Error('expected ≥53 compiled dockets, got ' + docketCount);
+if (docketCount < 54) throw new Error('expected ≥54 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

@@ -10888,7 +10888,52 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2007'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'petraeus-affair-denial-initial-2012',
+        statement: 'Initially denied / failed to disclose the extramarital affair and related mishandling of classified information when first confronted in the public scandal cycle.',
+        saidAt: '2012',
+        context: 'Resignation as CIA Director after FBI investigation of biographer Paula Broadwell and classified materials.',
+        whyFalse: 'Petraeus later pleaded guilty to a misdemeanor charge of unauthorized removal and retention of classified material. Initial public minimization was false to the plea admissions and investigation record.',
+        correction: 'Petraeus admitted mishandling classified information in a guilty plea related to materials shared in the Broadwell affair context.',
+        statementSource: 'Public statements around 2012 resignation (multi-outlet capture)',
+        statementUrl: 'https://www.justice.gov/opa/pr/statement-attorney-general-eric-holder-guilty-plea-general-david-h-petraeus',
+        debunkSource: 'DOJ — Petraeus guilty plea on classified materials',
+        debunkUrl: 'https://www.justice.gov/opa/pr/retired-gen-david-h-petraeus-sentenced',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'petraeus-no-classified-to-broadwell-framing',
+        statement: 'Framed materials provided to his biographer as not including classified information in ways contradicted by the later plea.',
+        saidAt: '2012–2015',
+        context: 'Public and legal posture regarding notebooks and information shared with Broadwell.',
+        whyFalse: 'The plea agreement established unauthorized removal and retention of classified material. Framing that no classified material was involved was false to the plea.',
+        correction: 'Classified material was removed and retained without authorization per the plea agreement.',
+        statementSource: 'Public/legal framing 2012–2015 (multi-outlet capture)',
+        statementUrl: 'https://www.justice.gov/opa/pr/statement-attorney-general-eric-holder-guilty-plea-general-david-h-petraeus',
+        debunkSource: 'DOJ plea and sentencing record',
+        debunkUrl: 'https://www.justice.gov/opa/pr/retired-gen-david-h-petraeus-sentenced',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'petraeus-fbi-interview-incomplete-truth-2012',
+        statement: 'Provided incomplete or misleading answers to the FBI regarding the affair and document handling during the investigation.',
+        saidAt: '2012',
+        context: 'FBI investigation leading to CIA resignation and later plea.',
+        whyFalse: 'Investigative reporting and the subsequent guilty plea established that Petraeus’s early investigative posture was incomplete relative to the classified-materials facts later admitted.',
+        correction: 'The investigation and plea established mishandling of classified materials beyond early incomplete accounts.',
+        statementSource: 'FBI investigation context 2012 (reported)',
+        statementUrl: 'https://www.fbi.gov',
+        debunkSource: 'DOJ Petraeus plea announcement',
+        debunkUrl: 'https://www.justice.gov/opa/pr/statement-attorney-general-eric-holder-guilty-plea-general-david-h-petraeus',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'robert-mueller',
