@@ -2331,4 +2331,16 @@ assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'celebratio
 assert(read('src/pages/BookmarksPage.tsx').includes('bookmarks-related-hubs'), 'celebration bookmarks')
 
 
+
+// all product live pure suite green final ultimate end
+assert(surfaces.length >= 102, `final ultimate surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'final ultimate PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'final ultimate emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'final ultimate soft-404')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'final ultimate search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'final ultimate home')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'final ultimate Privacy Membership')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'final ultimate Terms Membership')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
