@@ -101,4 +101,9 @@ const required = ['/', '/read', '/israel-dossier', '/profiles', '/search']
 for (const h of required) assert(hrefs.includes(h), `server soft-404 missing ${h}`)
 assert(hrefs.length === 5, `server soft-404 hub count ${hrefs.length} !== 5`)
 
+// Ban junk-drawer labels in shell
+const appShell = read('src/App.tsx')
+assert(!/label:\s*['"]More['"]/.test(appShell), 'Banned More junk drawer')
+assert(!/label:\s*['"]Misc['"]/.test(appShell), 'Banned Misc junk drawer')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
