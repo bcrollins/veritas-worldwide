@@ -79,6 +79,11 @@ assert(
   membership.includes('/research-pack.zip') && membership.includes('offline research pack'),
   'Membership FAQ must mention free offline research pack',
 )
+const appShell = read('src/App.tsx')
+assert(
+  appShell.includes("/researcher") && appShell.includes('Researcher tools'),
+  'Footer research column must link Researcher tools hub',
+)
 const platformHealth = read('scripts/verify-platform-health.mjs')
 assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),

@@ -635,6 +635,7 @@ function Footer() {
   const researchLinks: ShellLink[] = [
     { to: '/methodology', label: t('nav.methodology') },
     { to: '/sources', label: t('nav.sources') },
+    { to: '/researcher', label: 'Researcher tools' },
     { to: '/institute', label: 'Institute' },
     { to: '/topics', label: 'Topics' },
     { to: '/timeline', label: t('nav.timeline') },
