@@ -321,3 +321,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | market strikes · Ofakim safe room · vineyard arson |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip toward 1900 — port aid / Sderot safe-room / olive-grove arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza misoprostol/partograph/fetal-doppler/ergometrine · hostage dig-trenches/tree-ribbons/sewage-drip/campus-rallies · WB pepper-mulch/clinic-records/coriander/tomato-seedlings |
+| VI | port aid · Sderot safe room · olive-grove arson |
+| Pure | visual + israel-dossier PASS |
+
