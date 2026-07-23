@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:36:15.142Z",
+  "generatedAt": "2026-07-23T10:37:29.577Z",
   "count": 96,
   "profiles": [
     {
@@ -307,9 +307,9 @@
         "Financial Backer",
         "Controversy"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "prince-andrew",
@@ -1194,9 +1194,9 @@
         "Media Founder",
         "Philanthropist"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "jeff-bezos",
@@ -1293,9 +1293,9 @@
         "Corporate Governance",
         "Financial Power"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "jamie-dimon",

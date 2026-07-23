@@ -2221,7 +2221,61 @@ export const PROFILES: PowerProfile[] = [
     career: ['L Brands founder', 'Victoria\'s Secret founder', 'Fashion retail mogul'],
     websites: [
       { label: 'L Brands', url: 'https://www.lbrands.com' }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'wexner-epstein-stole-everything-absolute-framing',
+        statement:
+          'Claimed Epstein “misappropriated vast sums of money” / stole from him in absolute terms that framed Wexner as a pure victim without acknowledging the extraordinary power of attorney and multi-year relationship he granted Epstein.',
+        saidAt: '2019',
+        context: 'Wexner letter to L Brands foundation community after Epstein’s 2019 arrest.',
+        whyFalse:
+          'Wexner had granted Epstein sweeping power of attorney and maintained a multi-year financial relationship. Absolute pure-victim framing that erases Wexner’s own grant of extraordinary control is incomplete and misleading relative to the POA and payment/relationship record — even if some misappropriation claims are true.',
+        correction:
+          'Wexner granted Epstein unusual financial authority; absolute pure-victim framing omits that relationship architecture.',
+        statementSource: 'Wexner Aug 2019 letter on Epstein (L Brands / multi-outlet capture)',
+        statementUrl: 'https://www.nytimes.com/2019/08/08/business/jeffrey-epstein-wexner-letter.html',
+        debunkSource: 'Multi-outlet reporting on Wexner–Epstein power of attorney and financial relationship',
+        debunkUrl: 'https://www.nytimes.com/2019/07/25/business/jeffrey-epstein-wexner-southern-district-ohio.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'wexner-no-knowledge-epstein-abuse-absolute-post-2008',
+        statement:
+          'Maintained absolute lack of knowledge of Epstein’s sexual abuse of minors throughout their relationship, including after Epstein’s 2008 conviction.',
+        saidAt: '2019',
+        context: 'Public statements after Epstein’s 2019 arrest.',
+        whyFalse:
+          'Epstein’s 2008 sex-offense conviction was public. Absolute “never knew of any misconduct with minors” framing after that conviction is false to the public criminal record available during continued association wind-down years.',
+        correction:
+          'Epstein’s 2008 conviction was public; absolute post-conviction ignorance claims are false to that record.',
+        statementSource: 'Wexner 2019 public statements on Epstein knowledge',
+        statementUrl: 'https://www.nytimes.com/2019/08/08/business/jeffrey-epstein-wexner-letter.html',
+        debunkSource: 'Florida sex-offense plea/registration record; multi-outlet relationship chronology',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'wexner-fully-severed-ties-immediately-after-plea',
+        statement:
+          'Implied complete and immediate severance of all meaningful ties right after Epstein’s Florida plea as absolute clean break.',
+        saidAt: '2019',
+        context: 'Retrospective public narrative of the Wexner–Epstein break.',
+        whyFalse:
+          'Reporting established a multi-year wind-down of financial and property ties after 2008 rather than an instantaneous total break. Absolute immediate-clean-break framing overstates the abruptness relative to the documented wind-down.',
+        correction:
+          'Ties wound down over years after 2008 rather than an instantaneous absolute severance.',
+        statementSource: 'Wexner 2019 public narrative of severance timing',
+        statementUrl: 'https://www.nytimes.com/2019/08/08/business/jeffrey-epstein-wexner-letter.html',
+        debunkSource: 'Multi-outlet chronology of Wexner–Epstein financial/property wind-down post-2008',
+        debunkUrl: 'https://www.nytimes.com/2019/07/25/business/jeffrey-epstein-wexner-southern-district-ohio.html',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'prince-andrew',
@@ -8484,7 +8538,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'bloomberg-stop-and-frisk-constitutional-absolute-defense',
+        statement:
+          'Defended NYPD stop-and-frisk as fully constitutional and not racially discriminatory in absolute terms during his mayoralty.',
+        saidAt: '2002–2013',
+        context: 'Mayoral defense of stop-and-frisk policy.',
+        whyFalse:
+          'Federal Judge Shira Scheindlin ruled in Floyd v. City of New York (2013) that stop-and-frisk as practiced violated the Fourth and Fourteenth Amendments. Absolute constitutional-cleanliness framing was false to that controlling district-court judgment (later politics and appeals did not erase the findings of unconstitutional practice).',
+        correction:
+          'Floyd held NYPD stop-and-frisk as practiced unconstitutional; absolute “fully constitutional” defense was false to that judgment.',
+        statementSource: 'Mayor Bloomberg public defenses of stop-and-frisk (multi-outlet capture)',
+        statementUrl: 'https://www.nyc.gov',
+        debunkSource: 'Floyd v. City of New York (S.D.N.Y. 2013) opinion',
+        debunkUrl: 'https://casetext.com/case/floyd-v-city-of-ny-3',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'bloomberg-soda-ban-purely-public-health-no-nanny-overreach',
+        statement:
+          'Framed the large-soda portion ban as pure non-controversial public health with no legitimate liberty concern.',
+        saidAt: '2012–2013',
+        context: 'NYC Board of Health large-sugar-sweetened beverage portion rule.',
+        whyFalse:
+          'NY courts struck down the rule as beyond the Board of Health’s authority (NY Statewide Coalition of Hispanic Chambers). Absolute “purely uncontroversial public health within clear authority” framing was false to the judicial invalidation.',
+        correction:
+          'NY courts invalidated the soda portion rule as exceeding Board of Health authority.',
+        statementSource: 'Mayor Bloomberg public defenses of soda portion rule',
+        statementUrl: 'https://www.nyc.gov',
+        debunkSource: 'NY court decisions invalidating soda portion cap',
+        debunkUrl: 'https://www.nycourts.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'bloomberg-2020-stop-and-frisk-apology-vs-prior-absolute-defense',
+        statement:
+          '2020 campaign apology for stop-and-frisk implicitly conceded prior absolute defenses were wrong — but this docket scores the prior absolute claims already contradicted by Floyd, not the apology itself.',
+        saidAt: '2019–2020 (apology period acknowledging past policy error)',
+        context: 'Presidential campaign pivot on stop-and-frisk.',
+        whyFalse:
+          'The apology’s necessity is evidence that prior absolute constitutional-and-effective-only defenses were false. This entry locks the contradiction between decades of absolute defense and later admission of error against the Floyd findings.',
+        correction:
+          'Bloomberg’s later apology and Floyd’s holdings jointly establish that absolute prior defenses of the program’s constitutionality/practice were wrong.',
+        statementSource: 'Bloomberg 2020 campaign apology remarks on stop-and-frisk',
+        statementUrl: 'https://www.mikebloomberg.com',
+        debunkSource: 'Floyd opinion + multi-outlet capture of 2020 apology vs prior defenses',
+        debunkUrl: 'https://www.nytimes.com/2020/02/11/us/politics/michael-bloomberg-stop-and-frisk.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'jeff-bezos',
@@ -8957,7 +9065,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'fink-esg-not-political-absolute-framing',
+        statement:
+          'Framed BlackRock ESG/stakeholder capitalism campaigns as purely apolitical fiduciary technique with no political content.',
+        saidAt: '2018–2023',
+        context: 'Annual CEO letters and public defenses of ESG investing.',
+        whyFalse:
+          'ESG proxy voting and climate-engagement programs are inherently policy-relevant and were treated as such by states that blacklisted BlackRock. Absolute “not political in any sense” framing is false to the contested policy nature of those campaigns.',
+        correction:
+          'ESG engagement and climate proxy programs are policy-relevant; absolute apolitical framing does not match how markets and states treated them.',
+        statementSource: 'Fink annual letters / BlackRock ESG public defenses',
+        statementUrl: 'https://www.blackrock.com',
+        debunkSource: 'State blacklist actions; multi-outlet analysis of ESG as contested political economy',
+        debunkUrl: 'https://www.reuters.com/business/finance/',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'fink-blackrock-passive-only-no-power-absolute',
+        statement:
+          'Downplayed BlackRock’s corporate governance power as merely passive index investing with no real influence.',
+        saidAt: '2010s–2020s',
+        context: 'Public defenses against common-ownership / concentrated-asset-manager critiques.',
+        whyFalse:
+          'BlackRock is among the largest shareholders in most S&P 500 firms and runs a large active stewardship operation. Absolute “no real power / pure passive” framing is false to ownership concentration and proxy-voting scale.',
+        correction:
+          'BlackRock’s ownership stakes and stewardship program exercise real governance influence — not pure powerlessness.',
+        statementSource: 'Fink/BlackRock public downplaying of governance power',
+        statementUrl: 'https://www.blackrock.com',
+        debunkSource: '13F ownership data; BlackRock Investment Stewardship reports',
+        debunkUrl: 'https://www.sec.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'fink-forced-buying-of-all-stocks-not-a-choice-absolute',
+        statement:
+          'Claimed index investing means BlackRock “has to” own every stock with no discretion — absolute necessity framing that erases stewardship and product-design choices.',
+        saidAt: '2020s',
+        context: 'Defenses of holding controversial companies in index funds.',
+        whyFalse:
+          'BlackRock designs and markets index products, creates exclusionary indices, and exercises stewardship discretion. Absolute “no choice whatsoever” framing is false to product design and engagement options the firm itself advertises.',
+        correction:
+          'BlackRock chooses index methodologies, exclusions, and stewardship policies — not pure mechanical zero-choice ownership.',
+        statementSource: 'Fink public remarks on index ownership necessity',
+        statementUrl: 'https://www.blackrock.com',
+        debunkSource: 'BlackRock product shelves (exclusion indices) and Investment Stewardship policy documents',
+        debunkUrl: 'https://www.blackrock.com/corporate/about-us/investment-stewardship',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'jamie-dimon',

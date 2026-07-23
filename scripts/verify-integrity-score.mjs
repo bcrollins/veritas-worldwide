@@ -154,6 +154,9 @@ const required = [
   'charles-koch',
   'jeff-bezos',
   'alan-dershowitz',
+  'les-wexner',
+  'larry-fink',
+  'michael-bloomberg',
 ];
 const scores = {};
 for (const id of required) {
@@ -1306,8 +1309,57 @@ for (const f of (dershP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('dershowitz dual-cite collision: ' + f.id);
 }
 
+
+// Les Wexner densify gate (n≥3)
+const wexner = scores['les-wexner'];
+if (!wexner || wexner.n < 3) throw new Error('les-wexner needs ≥3 verified falsehoods, got ' + (wexner?.n ?? 0));
+if (wexner.score > 70) throw new Error('les-wexner score expected ≤70 after densify, got ' + wexner.score);
+const wexnerP = getProfileBySlug('les-wexner');
+for (const id of [
+  'wexner-epstein-stole-everything-absolute-framing',
+  'wexner-no-knowledge-epstein-abuse-absolute-post-2008',
+  'wexner-fully-severed-ties-immediately-after-plea',
+]) {
+  if (!(wexnerP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('les-wexner missing docket id: ' + id);
+}
+for (const f of (wexnerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('wexner dual-cite collision: ' + f.id);
+}
+
+// Larry Fink densify gate (n≥3)
+const fink = scores['larry-fink'];
+if (!fink || fink.n < 3) throw new Error('larry-fink needs ≥3 verified falsehoods, got ' + (fink?.n ?? 0));
+if (fink.score > 80) throw new Error('larry-fink score expected ≤80 after densify, got ' + fink.score);
+const finkP = getProfileBySlug('larry-fink');
+for (const id of [
+  'fink-esg-not-political-absolute-framing',
+  'fink-blackrock-passive-only-no-power-absolute',
+  'fink-forced-buying-of-all-stocks-not-a-choice-absolute',
+]) {
+  if (!(finkP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('larry-fink missing docket id: ' + id);
+}
+for (const f of (finkP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('fink dual-cite collision: ' + f.id);
+}
+
+// Michael Bloomberg densify gate (n≥3)
+const bloomberg = scores['michael-bloomberg'];
+if (!bloomberg || bloomberg.n < 3) throw new Error('michael-bloomberg needs ≥3 verified falsehoods, got ' + (bloomberg?.n ?? 0));
+if (bloomberg.score > 50) throw new Error('michael-bloomberg score expected ≤50 after densify, got ' + bloomberg.score);
+const bloombergP = getProfileBySlug('michael-bloomberg');
+for (const id of [
+  'bloomberg-stop-and-frisk-constitutional-absolute-defense',
+  'bloomberg-soda-ban-purely-public-health-no-nanny-overreach',
+  'bloomberg-2020-stop-and-frisk-apology-vs-prior-absolute-defense',
+]) {
+  if (!(bloombergP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('michael-bloomberg missing docket id: ' + id);
+}
+for (const f of (bloombergP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('bloomberg dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 67) throw new Error('expected ≥67 compiled dockets, got ' + docketCount);
+if (docketCount < 70) throw new Error('expected ≥70 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
