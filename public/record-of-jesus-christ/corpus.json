@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:46:01.023Z",
-  "claimCount": 290,
+  "generatedAt": "2026-07-23T09:48:52.299Z",
+  "claimCount": 300,
   "tierHistogram": {
-    "well_attested": 112,
-    "verified": 100,
+    "well_attested": 116,
+    "verified": 105,
     "contested": 30,
-    "interpretive": 28,
+    "interpretive": 29,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 15
@@ -59,6 +59,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ane-black-obelisk-jehu",
+      "claim": "The Black Obelisk of Shalmaneser III depicts Jehu (or envoy) of Israel paying tribute — a primary visual control for 9th-century Israelite kingship.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave22.ts"
     },
     {
       "id": "ane-cos-corpus",
@@ -248,6 +255,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-dead-sea-scroll-caves",
+      "claim": "The Qumran cave finds (1947–) remain the primary archaeological recovery context for the Dead Sea Scrolls corpus.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave22.ts"
     },
     {
       "id": "arch-destruction-70",
@@ -467,6 +481,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "cosmo-baryon-acoustic-fixed",
+      "claim": "The comoving sound horizon r_d is a calibrated standard ruler from early-universe physics used by BAO surveys to map H(z) and D_A(z).",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
       "id": "cosmo-bbn",
       "claim": "Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions.",
       "tier": "well_attested",
@@ -586,6 +607,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "cosmo-omega-matter",
+      "claim": "Large-scale structure and CMB fits constrain the total matter density parameter Ω_m near ~0.3 in flat ΛCDM baselines.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
       "id": "cosmo-recombination",
       "claim": "CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM).",
       "tier": "verified",
@@ -668,6 +696,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ec-didache-eucharist",
+      "claim": "The Didache preserves early Christian baptismal and eucharistic instructions distinct from later standardized liturgies.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave22.ts"
     },
     {
       "id": "ec-diognetus",
@@ -1013,6 +1048,13 @@
       "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
+      "id": "hj-kingdom-of-god-core",
+      "claim": "The kingdom of God / reign of God is multiply attested as central to Jesus’ public proclamation across Synoptic streams.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
       "id": "hj-kingdom-proclamation",
       "claim": "A core historical judgment across diverse scholars is that Jesus proclaimed God’s kingdom / reign as central to his public activity.",
       "tier": "well_attested",
@@ -1251,6 +1293,13 @@
       "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
+      "id": "mod-historical-jesus-minimal-facts",
+      "claim": "“Minimal facts” apologetic packages select a short list of widely accepted historical data points; academic HJ work often uses broader and more contested data sets with explicit uncertainty.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
       "id": "mod-historical-jesus-quests",
       "claim": "“Quests” for the historical Jesus are historiographical programs with shifting criteria; no single reconstruction commands universal assent.",
       "tier": "interpretive",
@@ -1480,6 +1529,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-pliny-christ-hymns",
+      "claim": "Pliny reports Christians singing hymns to Christ “as to a god” (carmen Christo quasi deo) — early 2nd-c. evidence of cultic devotion language.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave22.ts"
     },
     {
       "id": "nc-pliny-christians",
@@ -1818,6 +1874,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nt-ubs-rating-letters",
+      "claim": "UBS editions assign letter ratings (A–D) to selected variants expressing editorial confidence — a pedagogical signal, not a probability in the Bayesian sense.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
       "id": "nt-variants",
       "claim": "Hundreds of thousands of variant readings exist across the tradition; the vast majority are orthographic or trivial, while a minority affect meaning.",
       "tier": "verified",
@@ -2005,6 +2068,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave19.ts"
+    },
+    {
+      "id": "st-sadducees-josephus",
+      "claim": "Josephus’s descriptions of Sadducees emphasize aristocratic temple-associated elites denying fate and (per him) resurrection — tendentious but indispensable.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave22.ts"
     },
     {
       "id": "st-salome-alexandra",
