@@ -70,7 +70,7 @@ export default function MethodologyPage() {
         {
           question: 'Where is The Record of Jesus Christ methodology applied?',
           answer:
-            'At /record-of-jesus-christ — 470+ claims with proofVsConcept hygiene, primary/peer sources, JSON/CSV/PDF export, and entity-only attribution (Veritas Worldwide).',
+            'At /record-of-jesus-christ — 480+ claims with proofVsConcept hygiene, primary/peer sources, JSON/CSV/PDF export, and entity-only attribution (Veritas Worldwide).',
         },
         {
           question: 'How does the five-tier source hierarchy work?',

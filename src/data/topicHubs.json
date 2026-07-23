@@ -398,8 +398,8 @@
     "name": "Historical Jesus & Biblical Evidence",
     "eyebrow": "Evidence & Text",
     "headline": "Manuscripts, archaeology, and non-Christian sources for Jesus of Nazareth\u2014tier-labeled, not advocacy.",
-    "description": "This hub connects The Record of Jesus Christ pure-evidence compilation (470+ tier-labeled claims, including ECM/CBGM apparatus, BAO cosmology as science, and Celsus) with biblical history surfaces, methodology standards, and research export tools. Every claim is evidence-tiered; theological conclusions are not presented as laboratory fact.",
-    "metaDescription": "Historical Jesus evidence from Veritas Worldwide: 470+ tier-labeled claims, NT manuscripts, Dead Sea Scrolls, archaeology, Josephus and Tacitus\u2014primary sources, free public access.",
+    "description": "This hub connects The Record of Jesus Christ pure-evidence compilation (480+ tier-labeled claims, including ECM/CBGM apparatus, BAO cosmology as science, and Celsus) with biblical history surfaces, methodology standards, and research export tools. Every claim is evidence-tiered; theological conclusions are not presented as laboratory fact.",
+    "metaDescription": "Historical Jesus evidence from Veritas Worldwide: 480+ tier-labeled claims, NT manuscripts, Dead Sea Scrolls, archaeology, Josephus and Tacitus\u2014primary sources, free public access.",
     "aliases": [
       "Jesus",
       "historical Jesus",
@@ -434,7 +434,7 @@
       },
       {
         "question": "Can researchers export the claim data?",
-        "answer": "Yes. Use on-page JSON/CSV export, the machine corpus at /record-of-jesus-christ/corpus.json, or the portable PDF claim index (470+ claims)."
+        "answer": "Yes. Use on-page JSON/CSV export, the machine corpus at /record-of-jesus-christ/corpus.json, or the portable PDF claim index (480+ claims)."
       },
       {
         "question": "Who is the author of The Record of Jesus Christ?",

@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:34:03.667Z",
-  "claimCount": 471,
+  "generatedAt": "2026-07-23T10:36:49.859Z",
+  "claimCount": 480,
   "tierHistogram": {
-    "well_attested": 187,
-    "verified": 165,
+    "well_attested": 191,
+    "verified": 169,
     "contested": 43,
-    "interpretive": 49,
+    "interpretive": 50,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 22
@@ -318,6 +318,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "ane-silwan-necropolis",
+      "claim": "The Silwan (Siloam) necropolis rock-cut tombs in Jerusalem are primary Iron Age elite burial architecture often discussed in relation to Judahite capital society.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave42.ts"
     },
     {
       "id": "ane-tel-dan",
@@ -642,6 +649,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "arch-qumran-caves-map",
+      "claim": "Eleven primary Qumran caves (1Q–11Q) and related Judean Desert findspots form a mapped manuscript deposition landscape, not a single library room find.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave42.ts"
+    },
+    {
       "id": "arch-qumran-settlement",
       "claim": "Qumran settlement archaeology provides material context for the Dead Sea Scrolls community debates (Essene and alternative models).",
       "tier": "well_attested",
@@ -878,6 +892,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "cosmo-helium-mass-fraction",
+      "claim": "Big Bang nucleosynthesis predicts a primordial helium-4 mass fraction Y_p ≈ 0.25, confirmed by astrophysical helium abundance measurements within uncertainties.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave42.ts"
     },
     {
       "id": "cosmo-hubble-tension",
@@ -1300,6 +1321,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "ec-origen-contra-celsum-structure",
+      "claim": "Origen’s Contra Celsum systematically quotes and rebuts Celsus’s True Doctrine, thereby preserving large portions of a major 2nd-century pagan critique of Christianity.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave42.ts"
+    },
+    {
       "id": "ec-origen-hexapla",
       "claim": "Origen’s Hexapla (3rd c.) arranged Hebrew and Greek OT columns for comparative textual work — early Christian engagement with pluriform scriptural text.",
       "tier": "well_attested",
@@ -1522,6 +1550,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave13.ts"
+    },
+    {
+      "id": "hj-exorcism-social-context",
+      "claim": "Exorcism and spirit-affliction language sits within wider Mediterranean and Jewish healing cultures; Jesus’ reputation as exorcist is multiply attested while ontological spirit claims remain outside proof-grade science.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave42.ts"
     },
     {
       "id": "hj-family-rejection",
@@ -2203,6 +2238,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "mod-theissen-covenant-plausibility",
+      "claim": "Gerd Theissen’s “plausibility criterion” (historical continuity with Judaism + contextual plausibility + later church effects) was proposed as a constructive alternative to classical authenticity criteria.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave42.ts"
+    },
+    {
       "id": "mod-third-quest",
       "claim": "The “Third Quest” emphasizes Jesus’ Jewish context (Sanders, Vermes, Meier, Wright, Crossan, et al.) against earlier de-Judaizing portraits.",
       "tier": "interpretive",
@@ -2434,6 +2476,13 @@
       "file": "src/data/recordOfJesusChristWave38.ts"
     },
     {
+      "id": "nc-porphyry-fragments-method",
+      "claim": "Porphyry’s Against the Christians survives mainly in hostile Christian quotations; reconstruction requires source-critical caution about selection and paraphrase bias.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave42.ts"
+    },
+    {
       "id": "nc-slavonic-josephus",
       "claim": "The Slavonic version of Josephus’s Jewish War contains expansions (including Jesus-related passages) widely judged to be later Christian interpolations, not first-century Josephan text.",
       "tier": "well_attested",
@@ -2642,6 +2691,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
+      "id": "nt-ecm-mark-status",
+      "claim": "The Editio Critica Maior for Mark (and related CBGM publications) provides the current fullest apparatus and genealogical analysis for reconstructing Mark’s initial text.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave42.ts"
     },
     {
       "id": "nt-ecm-method",
@@ -3314,6 +3370,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
+      "id": "st-yahad-messianic-rule",
+      "claim": "The Rule of the Congregation (1QSa) and related yahad texts describe messianic banquet and leadership structures — evidence of dual-messiah / messianic expectation diversity at Qumran.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave42.ts"
     }
   ]
 }
