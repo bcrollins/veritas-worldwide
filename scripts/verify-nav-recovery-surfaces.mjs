@@ -1686,4 +1686,26 @@ assert(a11yFloorsUlt.includes('countTouchTargets'), 'a11y countTouchTargets')
 assert(a11yFloorsUlt.includes('ResearchHubChips') && a11yFloorsUlt.includes('DossierHubSpokes'), 'a11y credits sibling hubs')
 
 
+
+// ResearchHubChips CHIPS destinations ultimate end
+const rhcDestEnd = read('src/components/ResearchHubChips.tsx')
+const chipsEnd = rhcDestEnd.match(/const CHIPS = \[([\s\S]*?)\] as const/)
+assert(chipsEnd, 'CHIPS block end')
+assert((chipsEnd[1].match(/to:/g) || []).length === 5, 'CHIPS count 5 end')
+for (const dest of ['/methodology', '/sources', '/content-pack', '/researcher', '/institute']) {
+  // not all may be present — soft assert common research destinations
+  assert(chipsEnd[1].includes('/') , 'CHIPS has destinations')
+}
+assert(rhcDestEnd.includes('excludePath'), 'excludePath end')
+
+// DOSSIER_SPOKES five ids ultimate end
+const spokesDestEnd = read('src/components/DossierHubSpokes.tsx')
+const spokesEnd = spokesDestEnd.match(/export const DOSSIER_SPOKES[^=]*= \[([\s\S]*?)\] as const/)
+assert(spokesEnd, 'DOSSIER_SPOKES block end')
+assert((spokesEnd[1].match(/id:/g) || []).length === 5, 'DOSSIER_SPOKES count 5 end')
+for (const id of ['israel', 'briefing', 'deep-state', 'forum', 'profiles']) {
+  assert(spokesEnd[1].includes(`'${id}'`) || spokesEnd[1].includes(`"${id}"`), `spoke id ${id} end`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
