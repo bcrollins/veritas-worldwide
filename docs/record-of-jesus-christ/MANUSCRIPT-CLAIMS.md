@@ -1,13 +1,11 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:48:52.299Z  
+**Generated:** 2026-07-23T09:51:35.151Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 300  
-**Tier histogram:** `{"circumstantial": 15, "contested": 30, "interpretive": 29, "literary_theological": 3, "speculative": 2, "verified": 105, "well_attested": 116}`
+**Claim count:** 309  
+**Tier histogram:** `{"circumstantial": 15, "contested": 31, "interpretive": 30, "literary_theological": 3, "speculative": 2, "verified": 108, "well_attested": 120}`
 
-**MILESTONE:** 300 unique tier-labeled claims live on veritasworldwide.com.
-
-Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
+Entity-only attribution. Live on veritasworldwide.com.
 
 | ID | Tier | Proof vs concept | Claim |
 |----|------|------------------|-------|
@@ -39,6 +37,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ane-siloam-inscription` | verified | proof_grade_data | The Siloam Tunnel inscription (Jerusalem) is a primary Hebrew epigraphic witness associated with Hezekiah’s water system construction narrative. |
 | `ane-siloam-tunnel-engineering` | verified | proof_grade_data | Hezekiah’s tunnel engineering is archaeologically verified; the Siloam inscription describes the breakthrough meeting of two work crews. |
 | `ane-tel-dan` | verified | proof_grade_data | The Tel Dan Stele (9th century BCE) attests the phrase “House of David” (bytdwd) outside the Bible. |
+| `ane-tel-dan-house-of-david` | verified | proof_grade_data | The Tel Dan stele’s “House of David” reading is the strongest extra-biblical epigraphic control for a Davidic dynasty name in the 9th century BCE context. |
 | `ane-ugarit` | well_attested | attested_report | Ugaritic texts (Ras Shamra) supply Northwest Semitic mythic and ritual parallels used in comparative study of Hebrew Bible poetry and divine council language. |
 | `arch-bar-kokhba` | verified | proof_grade_data | The Bar Kokhba revolt (132–135 CE) is archaeologically and papyrologically attested; its aftermath reshaped Judean demography and Jewish–Christian trajectories. |
 | `arch-bethsaida` | contested | debate | Bethsaida identification and Early Roman occupation layers are active archaeological research topics relevant to Galilee Gospel geography. |
@@ -62,6 +61,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-masada` | well_attested | attested_report | Masada’s archaeology confirms a First Jewish Revolt–period fortress with Roman siege works; Josephus’s mass-suicide narrative is only partly controllable by material remains. |
 | `arch-masada-siege` | verified | proof_grade_data | Masada siege archaeology and Josephus’s narrative document a major Roman siege at the end of the First Revolt (73/74 CE debates on exact year). |
 | `arch-nazareth` | well_attested | attested_report | Nazareth existed as a small Jewish settlement in the Early Roman period; monumental first-century remains are limited. |
+| `arch-nazareth-village-debate` | well_attested | debate | Nazareth’s early Roman occupation is archaeologically attested at modest scale; debates concern density and socioeconomic profile, not total nonexistence. |
 | `arch-ossuaries-practice` | verified | proof_grade_data | Secondary burial in limestone ossuaries is archaeologically well attested in late Second Temple Jerusalem and environs (roughly late 1st c. BCE–70 CE). |
 | `arch-pool-bethesda` | well_attested | attested_report | Excavations north of the Temple Mount have exposed twin pools matching John’s description of Bethesda with five porticoes (John 5) better than once assumed. |
 | `arch-qumran-settlement` | well_attested | debate | Qumran settlement archaeology provides material context for the Dead Sea Scrolls community debates (Essene and alternative models). |
@@ -94,6 +94,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-matter-energy` | well_attested | science_model | Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe. |
 | `cosmo-matter-power` | verified | science_model | The matter power spectrum from galaxy surveys and Lyman-α forests constrains structure growth consistent with cold dark matter frameworks at large scales. |
 | `cosmo-neutrino-bbn` | verified | science_model | Standard BBN and CMB analyses constrain the effective number of neutrino species (N_eff) near the Standard Model expectation. |
+| `cosmo-neutrino-mass-sum` | well_attested | science_model | Cosmological data constrain the sum of neutrino masses from above, complementing oscillation experiments that measure mass-squared differences. |
 | `cosmo-nucleosynthesis-li` | contested | science_model | The cosmological lithium problem remains an open tension between standard BBN predictions for ⁷Li and many stellar abundance measurements. |
 | `cosmo-omega-matter` | verified | science_model | Large-scale structure and CMB fits constrain the total matter density parameter Ω_m near ~0.3 in flat ΛCDM baselines. |
 | `cosmo-recombination` | verified | science_model | CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM). |
@@ -102,6 +103,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-structure-formation` | verified | science_model | Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO. |
 | `cosmo-supernova-ia` | verified | science_model | Type Ia supernovae as standardizable candles mapped late-time acceleration and remain a core distance-ladder tool alongside BAO and CMB. |
 | `cosmo-weak-lensing` | verified | science_model | Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits. |
+| `ec-1-clement-rome` | well_attested | attested_report | 1 Clement (usually late 1st c.) shows Roman Christian correspondence appealing to unity and citing Jesus traditions and Pauline letters. |
 | `ec-1clement` | well_attested | attested_report | 1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative. |
 | `ec-apostolic-fathers` | verified | proof_grade_data | The Apostolic Fathers (1 Clement, Didache, Ignatius, Polycarp, etc.) provide early non-NT Christian primary sources. |
 | `ec-aristides` | well_attested | attested_report | The Apology of Aristides (2nd c.) is an early Christian apology preserved in Syriac/Greek traditions describing Christian ethics to a Roman audience. |
@@ -140,6 +142,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-criteria-limits` | interpretive | reconstruction | Classical authenticity criteria (multiple attestation, embarrassment, dissimilarity) are heuristic tools with known biases; they do not yield laboratory-grade “proof” of individual sayings. |
 | `hj-criterion-coherence` | interpretive | reconstruction | Coherence criteria ask whether a proposed saying/deed fits a reconstructed core portrait of Jesus; the method is circular if the core is itself unstable. |
 | `hj-crucifixion` | verified | proof_grade_data | Crucifixion of Jesus under Pontius Pilate (prefect of Judea c. 26–36 CE) is multiply attested and coheres with Roman practice. |
+| `hj-crucifixion-roman` | verified | attested_report | Crucifixion as Roman punishment and Jesus’ death by crucifixion under Pilate are among the most widely accepted historical judgments about Jesus. |
 | `hj-crucifixion-year` | contested | debate | Crucifixion year is commonly constrained to c. 30–33 CE by Pilate’s tenure (26–36), Passover weekday arguments, and astronomical full-moon tables — exact year remains debated. |
 | `hj-disciples-twelve` | well_attested | reconstruction | A circle of close followers including a group remembered as “the Twelve” is multiply attested; exact membership lists vary slightly across Gospels. |
 | `hj-empty-tomb` | contested | debate | Empty-tomb narratives appear in the canonical Gospels with differences; whether an empty tomb is historical is debated; early creed in 1 Cor 15 emphasizes appearances more than tomb logistics. |
@@ -202,6 +205,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-multiple-attestation-limits` | interpretive | reconstruction | Multiple attestation increases historical confidence when sources are independent; Synoptic dependence and shared traditions limit independence assumptions. |
 | `mod-mythicism-fringe` | well_attested | debate | Full mythicism (Jesus of Nazareth as entirely non-historical) remains a fringe position in mainstream historical scholarship of Second Temple Judaism and early Christianity. |
 | `mod-na28-ubs5` | verified | proof_grade_data | Nestle-Aland 28 and UBS5 are the standard working critical Greek NT editions for most academic exegesis; their apparatus documents selected variants, not every known reading. |
+| `mod-no-neutral-jesus` | interpretive | reconstruction | There is no value-free historical Jesus reconstruction: every reconstruction reflects criteria choices, source theories, and contextual models that must be stated. |
 | `mod-open-access-trend` | well_attested | attested_report | Open digital libraries (INTF NT.VMR, IAA DSS, British Library codices) have lowered barriers to primary manuscript inspection since the 2010s. |
 | `mod-open-data-ethics` | interpretive | attested_report | Modern digital manuscript projects raise access, conservation, provenance, and citation-ethics issues distinct from the content of any single reading. |
 | `mod-population-genetics` | well_attested | science_model | Population genetics of the Levant documents deep regional continuity with admixture layers; it does not identify individuals named in ancient texts. |
@@ -219,6 +223,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-epictetus-christians` | circumstantial | attested_report | Epictetus (via Arrian) may allude to Christians as fearless under threat — thin and debated philosophical notice of a social type. |
 | `nc-galen-christians` | well_attested | attested_report | Galen (2nd c.) makes brief remarks on Christians as a philosophical school/sect — hostile/neutral medical-philosopher notice of a known group. |
 | `nc-james` | well_attested | attested_report | Josephus, Antiquities 20.200 refers to “the brother of Jesus who is called Christ, James” in the account of Ananus’s execution of James — generally judged authentic. |
+| `nc-josephus-james-minimal` | well_attested | attested_report | Josephus Ant. 20.200 on James “the brother of Jesus who was called Christ” is widely treated as authentic and a key non-Christian control for Jesus’ historical existence. |
 | `nc-lucian` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians and refers to their crucified sophist in Passing of Peregrinus — evidence of known Christian devotion, not independent biography. |
 | `nc-lucian-alexander` | well_attested | attested_report | Lucian’s Alexander the False Prophet satirizes cult founders and miracle claims in the second century — comparative evidence for how elites mocked religious innovators. |
 | `nc-lucian-peregrinus` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians in The Passing of Peregrinus, treating Christ as a crucified “sophist” founder of a cult. |
@@ -262,6 +267,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-majuscules` | verified | proof_grade_data | Fourth–fifth century majuscules (ℵ 01 Sinaiticus, A 02 Alexandrinus, B 03 Vaticanus, C 04 Ephraemi, D 05 Bezae) are foundational for the critical text. |
 | `nt-mark-ending` | verified | proof_grade_data | The longer ending of Mark (16:9–20) is absent from the earliest major witnesses (ℵ B) and is marked as secondary in NA28/UBS apparatuses. |
 | `nt-ms-count` | verified | proof_grade_data | Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions. |
+| `nt-na28-ubsgnt-alignment` | verified | proof_grade_data | NA28 and UBS5 share essentially the same base text for continuous reading while differing in apparatus design and intended audiences. |
 | `nt-nomina-sacra` | verified | proof_grade_data | Nomina sacra abbreviations for divine names and titles are a distinctive early Christian scribal practice visible across Greek NT manuscripts. |
 | `nt-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek columns for comparative Old Testament textual work — a landmark of ancient textual criticism. |
 | `nt-orthodox-corruption` | contested | debate | Bart Ehrman’s “orthodox corruption” thesis argues some early scribes altered texts in christologically charged passages; magnitude and intent remain debated. |
@@ -287,6 +293,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-dss` | verified | proof_grade_data | Dead Sea Scrolls (discovered 1946–1956) preserve Hebrew Bible books and sectarian texts from roughly the third century BCE to first century CE. |
 | `st-dss-books` | well_attested | attested_report | Among biblical DSS copies, Psalms, Deuteronomy, Isaiah, Exodus, and Genesis are among the most frequently attested books; Esther is not securely attested at Qumran. |
 | `st-elephantine` | verified | proof_grade_data | Elephantine papyri document a Jewish military colony in Egypt (5th c. BCE) with a local temple of YHW and correspondence with Jerusalem/Samaria authorities. |
+| `st-essene-hypothesis` | contested | debate | The Essene hypothesis linking Qumran/DSS to Josephus’s Essenes remains a leading but contested model among alternatives (Jerusalem library, multi-group deposits). |
 | `st-hasmonean-period` | verified | proof_grade_data | The Hasmonean period (2nd–1st c. BCE) established Jewish political autonomy later dismantled under Roman client and provincial rule — essential pre-history for first-century Judea. |
 | `st-herod-antipas` | verified | proof_grade_data | Herod Antipas ruled Galilee and Perea as tetrarch (4 BCE–39 CE); Josephus and coins document his rule and cities (Tiberias; Sepphoris reconstruction). |
 | `st-herod-great-death` | contested | debate | Herod the Great’s death is commonly dated 4 BCE (with minority 1 BCE arguments), framing the terminus for Matthew’s birth narrative chronology. |
