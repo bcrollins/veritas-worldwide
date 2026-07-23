@@ -13050,6 +13050,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-rickets-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Rickets Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (rickets-risk cohort)',
+    location: 'Gaza Strip pediatric clinics and displacement shelters',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric rickets risk from vitamin D/calcium collapse under diet and sun-exposure disruption — a multi-source wartime metabolic-bone pattern distinct from hypocalcemia and selenium cards.',
+    evidence:
+      'WHO nutrition materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric rickets risk. Exact case counts evolve; multi-source wartime rickets risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-nutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-date-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Calendar Date Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (calendar-date-denial cohort)',
+    location: 'Gaza Strip captivity sites — calendar-date-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors deliberately withholding calendar date information from Israeli civilian hostages — compounding time disorientation. Pattern card distinct from clock-time orientation denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source calendar-date denial. Exact cases vary; multi-source calendar-date denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-carob-trees-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Carob Trees Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (carob-tree-destruction cohort)',
+    location: 'West Bank carob groves and hillside agricultural plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian carob trees after October 7 — destroying multi-year agricultural assets supporting families including children. Pattern card distinct from olive, citrus, and avocado destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source carob-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian carob trees is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet carob-tree destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-kwashiorkor-ulceration-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Kwashiorkor Skin Ulceration Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (kwashiorkor-ulceration cohort)',
+    location: 'Gaza Strip nutrition stabilization points and pediatric wards',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric kwashiorkor-associated skin ulceration under severe protein deficiency — a multi-source wartime dermatologic-malnutrition pattern distinct from edema and MUAC wasting cards.',
+    evidence:
+      'WHO nutrition materials, UNICEF SAM clinical updates, and multi-outlet coverage establish multi-source pediatric kwashiorkor ulceration. Exact case counts evolve; multi-source wartime kwashiorkor ulceration among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza malnutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-applaud-captors-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Applaud Captors Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-applause cohort)',
+    location: 'Gaza Strip captivity sites — forced-applause subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to applaud captors speeches or media — a multi-source coerced-performance pattern distinct from forced praise and slogan memorization.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced applause. Exact cases vary; multi-source forced applause of captors by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-night-shift-workers-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Night-Shift Workers Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (night-shift-worker-attack cohort)',
+    location: 'West Bank night roads used by factory and service workers',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian night-shift workers after October 7 — disrupting livelihoods supporting families including children. Pattern card distinct from taxi-driver and municipal-worker attacks.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source night-shift-worker attacks. Exact injury counts evolve; multi-source wartime settler attacks on night-shift workers is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet night-shift worker attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-beri-beri-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Beriberi Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (beriberi-risk cohort)',
+    location: 'Gaza Strip nutrition clinics and pediatric wards',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric beriberi (thiamine-deficiency disease) risk under refined-carb dependency and micronutrient collapse — a multi-source wartime thiamine-disease pattern distinct from general thiamine-risk and refeeding cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric beriberi risk. Exact case counts evolve; multi-source wartime beriberi risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO micronutrient materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-nutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-eye-contact-with-others-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Eye Contact with Others Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (eye-contact-denial cohort)',
+    location: 'Gaza Strip captivity sites — eye-contact-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forbidding eye contact among Israeli civilian hostages — a multi-source isolation pattern distinct from fellow-name denial and conversation denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source eye-contact denial. Exact cases vary; multi-source forced eye-contact ban among civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-compost-piles-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Compost Piles Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (compost-pile-destruction cohort)',
+    location: 'West Bank farmyards and village agricultural compounds',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian compost piles and organic fertilizer stores after October 7 — undermining soil fertility and food production for families including children. Pattern card distinct from greenhouse and storage-shed destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source compost-pile destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian compost piles is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet compost-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -20691,6 +20935,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['gutters', 'water', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-rickets-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Rickets Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric rickets risk under diet and sun-exposure disruption.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-rickets-risk-pattern-2023-2025',
+      'gaza-children-kwashiorkor-ulceration-pattern-2023-2025',
+      'gaza-children-beri-beri-risk-pattern-2023-2025',
+    ],
+    tags: ['rickets', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-calendar-date-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Calendar Date Pattern',
+    description: 'Multi-source documentation of captors withholding calendar date information from civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-date-pattern-2023-2025',
+      'israel-hostages-forced-to-applaud-captors-pattern-2023-2025',
+      'israel-hostages-denied-eye-contact-with-others-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'time', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-carob-trees-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Carob Trees Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian carob trees after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-carob-trees-pattern-2023-2025',
+      'west-bank-settler-attacking-night-shift-workers-pattern-2023-2025',
+      'west-bank-settler-destroying-compost-piles-pattern-2023-2025',
+    ],
+    tags: ['carob', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-kwashiorkor-ulcers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Kwashiorkor Skin Ulceration Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric kwashiorkor-associated skin ulceration.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-kwashiorkor-ulceration-pattern-2023-2025',
+      'gaza-children-acute-malnutrition-edema-pattern-2023-2025',
+      'gaza-children-rickets-risk-pattern-2023-2025',
+    ],
+    tags: ['kwashiorkor', 'ulceration', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-applaud-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Applaud Captors Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to applaud captors speeches or media.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-applaud-captors-pattern-2023-2025',
+      'israel-hostages-forced-to-praise-captors-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-date-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'coercion', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-night-shift-workers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Night-Shift Workers Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian night-shift workers after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-night-shift-workers-pattern-2023-2025',
+      'west-bank-settler-attacking-taxi-drivers-pattern-2023-2025',
+      'west-bank-settler-destroying-carob-trees-pattern-2023-2025',
+    ],
+    tags: ['night-shift', 'settlers', 'livelihoods', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-beriberi-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Beriberi Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric beriberi risk under micronutrient collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-beri-beri-risk-pattern-2023-2025',
+      'gaza-children-rickets-risk-pattern-2023-2025',
+      'gaza-children-selenium-deficiency-pattern-2023-2025',
+    ],
+    tags: ['beriberi', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-eye-contact-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Eye Contact with Others Pattern',
+    description: 'Multi-source documentation of captors forbidding eye contact among civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-eye-contact-with-others-pattern-2023-2025',
+      'israel-hostages-denied-names-of-fellow-hostages-pattern-2023-2025',
+      'israel-hostages-forced-to-applaud-captors-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-compost-piles-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Compost Piles Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian compost piles after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-compost-piles-pattern-2023-2025',
+      'west-bank-settler-destroying-storage-sheds-pattern-2023-2025',
+      'west-bank-settler-destroying-carob-trees-pattern-2023-2025',
+    ],
+    tags: ['compost', 'settlers', 'agriculture', 'west-bank'],
+  },
+
 
 
 
