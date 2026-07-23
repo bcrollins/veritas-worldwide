@@ -20,6 +20,7 @@ import NewsletterSignup from '../components/NewsletterSignup'
 import ReadingProgress from '../components/ReadingProgress'
 import LicenseCard from '../components/LicenseCard'
 import CorrectionsCTA from '../components/CorrectionsCTA'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 import { addPersonalTimelineEvent } from '../lib/personalTimelineStorage'
 import {
@@ -679,8 +680,14 @@ export default function RecordOfJesusChristPage() {
       </div>
 
       <div id="roc-main" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16" tabIndex={-1}>
-        <div className="mb-6">
+        <div className="mb-6 space-y-3">
           <ResearchHubChips excludePath="/record-of-jesus-christ" />
+          <RelatedHubs
+            testId="roc-related-hubs"
+            className="mt-1"
+            tone="parchment"
+            ariaLabel="Primary hubs from Record of Jesus Christ"
+          />
         </div>
         <header className="max-w-3xl mb-12 border-b border-border pb-10">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-4">

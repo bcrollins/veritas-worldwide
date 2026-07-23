@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 
 const tools = [
@@ -190,8 +191,14 @@ export default function ResearcherHubPage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
-      <div className="mb-5">
+      <div className="mb-5 space-y-3">
         <ResearchHubChips excludePath="/researcher" />
+        <RelatedHubs
+          testId="researcher-related-hubs"
+          className="mt-1"
+          tone="parchment"
+          ariaLabel="Primary hubs from Researcher hub"
+        />
       </div>
       <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-crimson">
         Veritas Worldwide · researcher tools

@@ -11,6 +11,7 @@ import {
   breadcrumbJsonLd,
   faqJsonLd,
 } from '../lib/seo'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 
 interface ShareCard {
@@ -379,6 +380,12 @@ export default function ContentPackPage() {
           </p>
           <div className="mt-5">
             <ResearchHubChips excludePath="/content-pack" />
+            <RelatedHubs
+              testId="content-pack-related-hubs"
+              className="mt-3"
+              tone="parchment"
+              ariaLabel="Primary hubs from Content Pack"
+            />
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import {
   type InstituteTrackId,
 } from '../data/instituteCatalog'
 import InstituteCollectionSignupPanel from '../components/institute/InstituteCollectionSignupPanel'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 import { trackDownload } from '../lib/ga4'
 import {
@@ -155,8 +156,14 @@ export default function InstitutePage() {
                 See the sourcing method
               </Link>
             </div>
-            <div className="mt-6">
+            <div className="mt-6 space-y-3">
               <ResearchHubChips excludePath="/institute" />
+              <RelatedHubs
+                testId="institute-related-hubs"
+                className="mt-1"
+                tone="parchment"
+                ariaLabel="Primary hubs from Institute"
+              />
             </div>
           </div>
 

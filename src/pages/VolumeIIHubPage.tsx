@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 
 /**
@@ -22,8 +23,14 @@ export default function VolumeIIHubPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:py-16">
-      <div className="mb-6">
+      <div className="mb-6 space-y-3">
         <ResearchHubChips excludePath="/volume-ii" />
+        <RelatedHubs
+          testId="volume-ii-related-hubs"
+          className="mt-1"
+          tone="parchment"
+          ariaLabel="Primary hubs from Volume II"
+        />
       </div>
       <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.14em] text-crimson mb-3">
         Multi-volume scaffold · noindex

@@ -21,6 +21,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from '../lib/seo'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 
 const practicalTracks = getInstitutePracticalTrackCounts()
@@ -89,6 +90,12 @@ export default function InstituteBookPage() {
     <div className="space-y-8">
       <div className="px-1">
         <ResearchHubChips excludePath="/institute" />
+        <RelatedHubs
+          testId="institute-book-related-hubs"
+          className="mt-3"
+          tone="parchment"
+          ariaLabel="Primary hubs from Institute Field Manual"
+        />
       </div>
       <section className="institute-panel-strong px-6 py-8 sm:px-8 lg:px-10">
         <p className="institute-eyebrow">Field Manual</p>

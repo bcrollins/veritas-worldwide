@@ -7,6 +7,7 @@ import {
 } from '../data/instituteCatalog'
 import { ISRAEL_DOSSIER_COURSE_PATH } from '../data/israelDossierCanon'
 import InstituteSignupPanel from '../components/institute/InstituteSignupPanel'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 import {
   clearMetaTags,
@@ -118,6 +119,12 @@ export default function InstituteGuidePage() {
 
         <div className="mt-4" data-testid="institute-guide-research-chips">
           <ResearchHubChips excludePath="/institute" />
+          <RelatedHubs
+            testId="institute-guide-related-hubs"
+            className="mt-3"
+            tone="parchment"
+            ariaLabel="Primary hubs from Institute guide"
+          />
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2">

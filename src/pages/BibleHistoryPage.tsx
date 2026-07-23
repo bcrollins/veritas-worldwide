@@ -13,6 +13,7 @@ import {
 import SharePanel from '../components/SharePanel'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ReadingProgress from '../components/ReadingProgress'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 import {
   SCHOLARLY_TIERS,
@@ -451,6 +452,12 @@ export default function BibleHistoryPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <div className="mb-6">
           <ResearchHubChips excludePath="/bible" />
+          <RelatedHubs
+            testId="bible-history-related-hubs"
+            className="mt-3"
+            tone="parchment"
+            ariaLabel="Primary hubs from Bible History"
+          />
         </div>
         <header className="max-w-3xl mb-14 border-b border-border pb-10">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-4">

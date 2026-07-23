@@ -13,6 +13,7 @@ import {
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 import CorrectionsCTA from '../components/CorrectionsCTA'
 import EvidenceTierLegend from '../components/EvidenceTierLegend'
+import RelatedHubs from '../components/RelatedHubs'
 import ResearchHubChips from '../components/ResearchHubChips'
 
 const methodologySections = [
@@ -123,6 +124,12 @@ export default function MethodologyPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="mb-6">
           <ResearchHubChips excludePath="/methodology" />
+          <RelatedHubs
+            testId="methodology-related-hubs"
+            className="mt-3"
+            tone="parchment"
+            ariaLabel="Primary hubs from Methodology"
+          />
         </div>
         {/* Two-Column Grid */}
         <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12">
