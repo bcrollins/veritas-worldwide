@@ -3141,6 +3141,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'west-bank-children-killed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Children Killed Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (West Bank children cohort)',
+    location: 'West Bank / East Jerusalem',
+    summary:
+      'OCHA, UNICEF, and multi-source reporting document elevated killings of Palestinian children in the West Bank after October 7 — including live-fire incidents during raids, settler violence contexts, and protest settings. Pattern card for children-targeting civilian harm outside Gaza, distinct from settlement-violence and detention-surge cards.',
+    evidence:
+      'OCHA Protection of Civilians child fatality tallies, UNICEF statements, and multi-outlet incident reporting establish multi-source elevated child deaths. Exact annual totals evolve; multi-source wartime West Bank child fatality surge is the claim.',
+    sources: [
+      { label: 'OCHA Protection of Civilians dashboards', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF West Bank / OPT child protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet West Bank child fatality coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4528,6 +4555,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['hostages', 'civilians', 'children', 'terrorism'],
   },
+
+  {
+    id: 'tl-wb-children-killed-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Children Killed Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated Palestinian child fatalities in the West Bank after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-children-killed-pattern-2023-2025',
+      'west-bank-mass-arrests-2023-2025',
+      'west-bank-settlement-surge-2023-2025',
+    ],
+    tags: ['children', 'west-bank', 'civilians'],
+  },
+
 
 
 
