@@ -45,6 +45,12 @@ const TOKEN_SWATCHES = [
   { name: 'Obsidian', hex: '#0A0A0A', text: 'text-white' },
 ] as const
 
+const EVIDENCE_SWATCHES = [
+  { name: 'Verified', hex: '#166534', text: 'text-white' },
+  { name: 'Circumstantial', hex: '#92400E', text: 'text-white' },
+  { name: 'Disputed', hex: '#991B1B', text: 'text-white' },
+] as const
+
 export default function AdminBrandKit() {
   const [manifest, setManifest] = useState<BrandManifest | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -273,6 +279,27 @@ export default function AdminBrandKit() {
               title={`Copy ${c.hex}`}
             >
               <div className={`flex h-16 items-end p-2 ${c.text}`} style={{ backgroundColor: c.hex }}>
+                <span className="font-mono text-[10px] opacity-90">{c.hex}</span>
+              </div>
+              <p className="bg-black/40 px-2 py-1.5 font-sans text-[10px] text-white/60">
+                {c.name} · tap to copy
+              </p>
+            </button>
+          ))}
+        </div>
+        <p className="mb-2 mt-5 font-sans text-[10px] uppercase tracking-widest text-white/30">
+          Evidence tiers (product)
+        </p>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          {EVIDENCE_SWATCHES.map(c => (
+            <button
+              key={c.hex}
+              type="button"
+              onClick={() => copyText(c.hex, c.name)}
+              className="overflow-hidden rounded-md border border-white/10 text-left transition-colors hover:border-crimson/50"
+              title={`Copy ${c.hex}`}
+            >
+              <div className={`flex h-14 items-end p-2 ${c.text}`} style={{ backgroundColor: c.hex }}>
                 <span className="font-mono text-[10px] opacity-90">{c.hex}</span>
               </div>
               <p className="bg-black/40 px-2 py-1.5 font-sans text-[10px] text-white/60">

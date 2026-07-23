@@ -154,6 +154,21 @@ const zipSize = statSync(zip).size
 if (zipSize < 100_000) bad(`ZIP too small: ${zipSize}`)
 else ok(`ZIP ${(zipSize / 1024).toFixed(1)} KB`)
 
+// Product evidence-tier colors must match src/styles/index.css
+const evidenceColorChecks = [
+  ['04-social/evidence-tier-verified.svg', '#166534'],
+  ['04-social/evidence-tier-circumstantial.svg', '#92400E'],
+  ['04-social/evidence-tier-disputed.svg', '#991B1B'],
+]
+for (const [rel, hex] of evidenceColorChecks) {
+  const raw = readFileSync(join(KIT, rel), 'utf8')
+  if (!raw.includes(hex)) bad(`${rel} missing product color ${hex}`)
+  else ok(`${rel} uses ${hex}`)
+}
+const tokensJson = JSON.parse(readFileSync(join(KIT, '06-tokens', 'tokens.json'), 'utf8'))
+if (tokensJson?.colors?.evidence?.verified !== '#166534') bad('tokens.json evidence.verified wrong')
+else ok('tokens.json evidence colors present')
+
 // Optional live checks
 if (base) {
   console.log(`\nLive checks against ${base}`)
