@@ -1763,6 +1763,10 @@ const PATH_ALIASES = new Map([
   ['/home', '/'],
   ['/index', '/'],
   ['/packs', '/content-pack'],
+  // Support paths historically labeled /donate in bot-meta and outbound links.
+  ['/donate', '/membership'],
+  ['/support', '/membership'],
+  ['/contact', '/about'],
 ])
 
 app.use((req, res, next) => {
