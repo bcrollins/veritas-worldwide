@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:03:34.995Z",
-  "claimCount": 579,
+  "generatedAt": "2026-07-23T11:05:53.848Z",
+  "claimCount": 588,
   "tierHistogram": {
-    "well_attested": 233,
-    "verified": 208,
+    "well_attested": 238,
+    "verified": 211,
     "contested": 47,
-    "interpretive": 61,
+    "interpretive": 62,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -376,6 +376,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "ane-siloam-pool-context",
+      "claim": "The Pool of Siloam area in Jerusalem is archaeologically associated with water systems fed by Hezekiah’s tunnel — primary urban-hydraulic context for Iron Age and later city life.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave54.ts"
+    },
+    {
       "id": "ane-siloam-tunnel-engineering",
       "claim": "Hezekiah’s tunnel engineering is archaeologically verified; the Siloam inscription describes the breakthrough meeting of two work crews.",
       "tier": "verified",
@@ -640,6 +647,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave48.ts"
+    },
+    {
+      "id": "arch-jerusalem-cardo",
+      "claim": "The Cardo Maximus and related Roman street systems in Jerusalem document post-70 / Aelia Capitolina urban reorganization visible in excavation and Madaba map tradition.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave54.ts"
     },
     {
       "id": "arch-jerusalem-city-of-david",
@@ -1090,6 +1104,13 @@
       "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
+      "id": "cosmo-growth-rate-fs8",
+      "claim": "Redshift-space distortion and weak-lensing analyses constrain the structure growth rate combination fσ8, testing general-relativistic growth in ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave54.ts"
+    },
+    {
       "id": "cosmo-helium-mass-fraction",
       "claim": "Big Bang nucleosynthesis predicts a primordial helium-4 mass fraction Y_p ≈ 0.25, confirmed by astrophysical helium abundance measurements within uncertainties.",
       "tier": "verified",
@@ -1382,6 +1403,13 @@
       "tier": "well_attested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave51.ts"
+    },
+    {
+      "id": "ec-clement-corinthians-order",
+      "claim": "1 Clement addresses Corinthian church disorder by appealing to apostolic succession ideals and OT examples — early Roman Christian intervention in another city’s church life.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave54.ts"
     },
     {
       "id": "ec-didache",
@@ -2154,6 +2182,13 @@
       "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
+      "id": "hj-prayer-abba-limits",
+      "claim": "While Abba/Father address is early and distinctive in Jesus tradition, claims that Abba was unique, infantile, or unprecedented in Judaism are overstated relative to broader evidence.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave54.ts"
+    },
+    {
       "id": "hj-prophetic-actions",
       "claim": "Symbolic prophetic actions (e.g., Temple demonstration) are a recognized category in historical Jesus research for interpreting public deeds.",
       "tier": "interpretive",
@@ -2306,6 +2341,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave48.ts"
+    },
+    {
+      "id": "mod-allison-constructing-jesus",
+      "claim": "Dale C. Allison Jr.’s Constructing Jesus argues for remembering patterns and extended discourses rather than only isolated authentic atoms — a major alternative to strict criteria method.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave54.ts"
     },
     {
       "id": "mod-amy-jill-levine-jewish-jesus",
@@ -3043,6 +3085,13 @@
       "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
+      "id": "nc-suetonius-nero-christians",
+      "claim": "Suetonius mentions punishments of Christians under Nero in a list of Nero’s acts — brief Roman elite notice of Christian presence in Rome, not a Jesus biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave54.ts"
+    },
+    {
       "id": "nc-tacitus",
       "claim": "Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea.",
       "tier": "well_attested",
@@ -3314,6 +3363,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-gothic-version",
+      "claim": "The Gothic version (Wulfila tradition) is an early Germanic translation of the NT preserving valuable versional evidence, especially where Greek witnesses diverge.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave54.ts"
     },
     {
       "id": "nt-harmonie-readings",
@@ -3762,6 +3818,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
+      "id": "st-herod-josephus-portrait",
+      "claim": "Josephus’s portrait of Herod the Great mixes administrative achievement with tyranny narratives shaped by sources and Flavian context — primary but tendentious.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave54.ts"
     },
     {
       "id": "st-herod-temple",
