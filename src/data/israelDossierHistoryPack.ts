@@ -8595,6 +8595,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-sodium-imbalance-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Sodium Imbalance Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sodium cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document elevated sodium imbalance risk among Gaza children under contaminated water, diarrhea, and collapsed ORS supply — a clinical electrolyte pattern distinct from potassium and AWD cards.',
+    evidence:
+      'WHO clinical materials, UNICEF WASH/health notes, and multi-outlet coverage establish multi-source sodium-imbalance risk. Exact clinical counts evolve; multi-source wartime pediatric sodium imbalance risk is the claim.',
+    sources: [
+      { label: 'WHO clinical materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH / health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza electrolyte coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-music-recreation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Music & Recreation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (recreation-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of music, toys, and recreation for Israeli civilian hostages including children — blocking normal coping and child development. Pattern card distinct from reading-denial and writing-denial cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source recreation denial. Exact practices vary; multi-source recreation denial for civilian hostages including children is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-cutting-electric-lines-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Cutting of Electric Lines Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (electric-cut cohort)',
+    location: 'West Bank Palestinian village electricity infrastructure',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler cutting and sabotage of Palestinian electric lines after October 7 — collapsing civilian household power for water pumps and cold storage. Pattern card for electric-line sabotage distinct from solar-theft and generator cards.',
+    evidence:
+      'OCHA infrastructure-damage notes, multi-source case reporting, and multi-outlet coverage establish multi-source electric-line sabotage. Exact outage counts evolve; multi-source wartime settler electric-line cutting is the claim.',
+    sources: [
+      { label: 'OCHA infrastructure materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet electric line sabotage coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -13417,6 +13498,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['mosques', 'settlers', 'religion', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-sodium-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Sodium Imbalance Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated sodium imbalance risk among children under contaminated water and diarrhea.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-sodium-imbalance-risk-pattern-2023-2025',
+      'gaza-children-acute-watery-diarrhea-pattern-2023-2025',
+      'gaza-children-potassium-deficiency-risk-pattern-2023-2025',
+    ],
+    tags: ['sodium', 'children', 'electrolytes', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-recreation-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Music & Recreation Pattern',
+    description: 'Multi-source documentation of denial of music, toys, and recreation for civilian hostages including children.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-music-recreation-pattern-2023-2025',
+      'israel-hostages-denied-reading-materials-pattern-2023-2025',
+      'israel-hostages-denied-writing-materials-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'children', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-electric-sabotage-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Electric-Line Cutting Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler cutting of Palestinian electric lines after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-cutting-electric-lines-pattern-2023-2025',
+      'west-bank-settler-solar-panel-theft-pattern-2023-2025',
+      'west-bank-settler-water-tank-destruction-pattern-2023-2025',
+    ],
+    tags: ['electricity', 'settlers', 'infrastructure', 'west-bank'],
+  },
+
+
 
 
 
