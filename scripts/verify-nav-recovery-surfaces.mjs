@@ -50,6 +50,10 @@ for (const [rel, needle] of surfaces) {
 
 // ResearchHubChips component export present
 assert(read('src/components/ResearchHubChips.tsx').includes('export default function ResearchHubChips'), 'ResearchHubChips export')
+const chipsBody = read('src/components/ResearchHubChips.tsx').match(/const CHIPS = \[([\s\S]*?)\] as const/)
+assert(chipsBody, 'ResearchHubChips CHIPS')
+const chipCount = (chipsBody[1].match(/to:/g) || []).length
+assert(chipCount === 5, `ResearchHubChips count ${chipCount} !== 5`)
 assert(read('src/components/DossierHubSpokes.tsx').includes('export default function DossierHubSpokes'), 'DossierHubSpokes export')
 assert(read('src/components/DossierHubSpokes.tsx').includes('z-30') || read('src/components/DossierHubSpokes.tsx').includes('z-40'), 'DossierHubSpokes sticky z-order')
 const spokesBody = read('src/components/DossierHubSpokes.tsx').match(/export const DOSSIER_SPOKES[^=]*= \[([\s\S]*?)\] as const/)
