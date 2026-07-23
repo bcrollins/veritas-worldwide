@@ -34,20 +34,20 @@ const urls = (vi.match(/url: 'https?:\/\//g) || []).length
 assert(urls >= cards * 2, `VI dual-cite floor: cards=${cards} urls=${urls}`)
 
 const n = (corpus.incidents || []).length
-assert(n >= 855, `corpus incidents ${n} < 840`)
+assert(n >= 855, `corpus incidents ${n} < 855`)
 const withVideo = (corpus.incidents || []).filter((i) =>
   (i.multimedia || []).some((m) => m.type === 'video'),
 ).length
-assert(withVideo >= 45, `corpus video-linked incidents ${withVideo} < 45`)
-assert(soft.incidentCount >= 855, `soft-floor ${soft.incidentCount} < 840`)
+assert(withVideo >= 50, `corpus video-linked incidents ${withVideo} < 50`)
+assert(soft.incidentCount >= 855, `soft-floor ${soft.incidentCount} < 855`)
 assert(
-  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 45,
-  `soft-floor withVideo ${soft.visualInvestigations?.withVideo} < 45`,
+  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 50,
+  `soft-floor withVideo ${soft.visualInvestigations?.withVideo} < 50`,
 )
 assert(viIndex.meta?.publisher === 'Veritas Worldwide', 'VI index publisher must be entity-only')
 assert(
-  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 45,
-  `VI index video+civilian ${viIndex.counts?.incidentsWithVideoAndCivilians} < 45`,
+  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 50,
+  `VI index video+civilian ${viIndex.counts?.incidentsWithVideoAndCivilians} < 50`,
 )
 
 assert(page.includes('visual-investigations'), 'dossier page missing VI section')

@@ -419,7 +419,7 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   const sf = JSON.parse(fs.readFileSync(sfPath, 'utf8'))
   assert(typeof sf.incidentCount === 'number' && sf.incidentCount >= 800, `soft-floor incidentCount too low: ${sf.incidentCount}`)
   assert(sf.visualInvestigations && typeof sf.visualInvestigations.withVideo === 'number', 'soft-floor missing visualInvestigations.withVideo')
-  assert(sf.visualInvestigations.withVideo >= 45, `soft-floor withVideo floor ≥40, got ${sf.visualInvestigations.withVideo}`)
+  assert(sf.visualInvestigations.withVideo >= 50, `soft-floor withVideo floor ≥50, got ${sf.visualInvestigations.withVideo}`)
 }
 
 if (errors.length) {
