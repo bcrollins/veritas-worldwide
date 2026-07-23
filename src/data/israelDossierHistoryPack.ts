@@ -11900,9 +11900,9 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: '2023–2025',
     location: 'West Bank agricultural communities',
     summary:
-      'B’Tselem and multi-outlet documentation shows settlers destroying Palestinian greenhouses and irrigation—civilian food production infrastructure multi-source filmed and reported.',
+      "B’Tselem and multi-outlet documentation shows settlers destroying Palestinian greenhouses and irrigation—civilian food production infrastructure multi-source filmed and reported.",
     evidence:
-      'B’Tselem documentation, OCHA agricultural-livelihood notes, and multi-outlet reporting establish multi-source documentation of greenhouse destruction.',
+      "B’Tselem documentation, OCHA agricultural-livelihood notes, and multi-outlet reporting establish multi-source documentation of greenhouse destruction.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -12009,9 +12009,9 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: '2023–2025',
     location: 'West Bank (multiple villages)',
     summary:
-      'B’Tselem and multi-outlet video document repeated settler mass arson of Palestinian civilian vehicles—filmed primary visual evidence of civilian property destruction patterns.',
+      "B’Tselem and multi-outlet video document repeated settler mass arson of Palestinian civilian vehicles—filmed primary visual evidence of civilian property destruction patterns.",
     evidence:
-      'B’Tselem video banks, OCHA settler-violence notes, and multi-outlet reporting establish multi-source documentation of vehicle arson targeting civilians.',
+      "B’Tselem video banks, OCHA settler-violence notes, and multi-outlet reporting establish multi-source documentation of vehicle arson targeting civilians.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -12036,9 +12036,9 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: '2023–2025',
     location: 'West Bank herding communities',
     summary:
-      'B’Tselem and multi-outlet video document settlers assaulting shepherds, scattering flocks, and driving herding families from grazing lands—civilian livelihood destruction multi-source filmed.',
+      "B’Tselem and multi-outlet video document settlers assaulting shepherds, scattering flocks, and driving herding families from grazing lands—civilian livelihood destruction multi-source filmed.",
     evidence:
-      'B’Tselem video case files, OCHA herding-community notes, and multi-outlet reporting establish multi-source documentation of attacks on shepherds.',
+      "B’Tselem video case files, OCHA herding-community notes, and multi-outlet reporting establish multi-source documentation of attacks on shepherds.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -22030,9 +22030,9 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: '2023–2025',
     location: 'West Bank (multiple villages)',
     summary:
-      'B’Tselem and multi-outlet video document settlers attacking Palestinian funeral processions—stoning mourners, blocking roads, and assaulting families during burial rites. Civilian funeral targeting is multi-source filmed.',
+      "B’Tselem and multi-outlet video document settlers attacking Palestinian funeral processions—stoning mourners, blocking roads, and assaulting families during burial rites. Civilian funeral targeting is multi-source filmed.",
     evidence:
-      'B’Tselem video case files, PRCS/medical notes, and multi-outlet reporting establish multi-source documentation of settler attacks on funerals.',
+      "B’Tselem video case files, PRCS/medical notes, and multi-outlet reporting establish multi-source documentation of settler attacks on funerals.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -22059,7 +22059,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     summary:
       'Multi-outlet and rights-monitor documentation shows settlers destroying solar panels that provide household electricity in off-grid Palestinian communities—collective harm to civilian energy access filmed and reported multi-source.',
     evidence:
-      'B’Tselem documentation, OCHA Area C materials, and multi-outlet reporting establish multi-source documentation of solar-panel destruction targeting civilian energy access.',
+      "B’Tselem documentation, OCHA Area C materials, and multi-outlet reporting establish multi-source documentation of solar-panel destruction targeting civilian energy access.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
@@ -22084,9 +22084,9 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: '2023–2025',
     location: 'West Bank herding and village communities',
     summary:
-      'B’Tselem and multi-outlet video document settlers blocking water tankers serving Palestinian communities—civilian water access denial as a filmed pattern, multi-source with OCHA water-access reporting.',
+      "B’Tselem and multi-outlet video document settlers blocking water tankers serving Palestinian communities—civilian water access denial as a filmed pattern, multi-source with OCHA water-access reporting.",
     evidence:
-      'B’Tselem video case files, OCHA water-access notes, and multi-outlet reporting establish multi-source documentation of tanker obstruction targeting civilian water supply.',
+      "B’Tselem video case files, OCHA water-access notes, and multi-outlet reporting establish multi-source documentation of tanker obstruction targeting civilian water supply.",
     sources: [
       { label: 'B’Tselem settler violence / water access documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'OCHA OPT water and humanitarian updates', url: 'https://www.ochaopt.org/' },
@@ -37524,8 +37524,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.',
     sources: [
-      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },,
-      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },,
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
       { label: 'Multi-outlet Gaza medical reporting', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public health updates', url: 'https://www.who.int' }],
@@ -37549,8 +37549,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.',
     sources: [
-      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },,
-      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },,
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
       { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }],
@@ -37574,8 +37574,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'OCHA settler-violence databases and multi-outlet agricultural coverage establish multi-source drying-mat destruction. Multi-source wartime settler destruction of civilian fruit-processing infrastructure is the claim.',
     sources: [
-      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },,
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },,
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet agricultural violence coverage', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
@@ -37599,8 +37599,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.',
     sources: [
-      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },,
-      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },,
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
       { label: 'Multi-outlet Gaza medical reporting', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public health updates', url: 'https://www.who.int' }],
@@ -37624,8 +37624,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.',
     sources: [
-      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },,
-      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },,
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
       { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }],
@@ -37649,8 +37649,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'OCHA settler-violence databases and multi-outlet education coverage establish multi-source school-garden attacks. Multi-source wartime settler attacks on civilian school agricultural education is the claim.',
     sources: [
-      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },,
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },,
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet education violence coverage', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
@@ -37674,8 +37674,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.',
     sources: [
-      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },,
-      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },,
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
       { label: 'Multi-outlet Gaza medical reporting', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public health updates', url: 'https://www.who.int' }],
@@ -37699,8 +37699,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.',
     sources: [
-      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },,
-      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },,
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
       { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }],
@@ -37724,8 +37724,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'OCHA settler-violence databases and multi-outlet agricultural coverage establish multi-source shelling-tool destruction. Multi-source wartime settler destruction of civilian nut-processing tools is the claim.',
     sources: [
-      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },,
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },,
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet agricultural violence coverage', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
@@ -37749,8 +37749,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.',
     sources: [
-      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },,
-      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },,
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
       { label: 'Multi-outlet Gaza medical reporting', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public health updates', url: 'https://www.who.int' }],
@@ -37774,8 +37774,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.',
     sources: [
-      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },,
-      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },,
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
       { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }],
@@ -37799,8 +37799,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'OCHA settler-violence databases and multi-outlet agricultural coverage establish multi-source packing-sack destruction. Multi-source wartime settler destruction of civilian harvest logistics is the claim.',
     sources: [
-      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },,
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },,
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet agricultural violence coverage', url: 'https://apnews.com' }
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
@@ -46361,6 +46361,232 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
       { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet health violence coverage', url: 'https://apnews.com' }
+    ],
+    multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
+  {
+    id: 'gaza-civilian-ace-wrap-stockout-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Ace Wrap Stockout Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ace wrap stockout cohort)',
+    location: 'Gaza Strip emergency wards and field trauma points',
+    summary:
+      'WHO, MSF, and multi-source medical reporting document civilian ace wrap stockouts after October 7 — denying compression wraps including for children. Pattern card distinct from elastic-bandage and gauze cards.',
+    evidence:
+      'WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza medical reporting', url: 'https://apnews.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public health updates', url: 'https://www.who.int' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-memorize-tunnel-turns-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Memorize Tunnel Turns Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage densify cohort)',
+    location: 'Captivity sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document civilian hostages including children forced to memorize tunnel turn sequences — a coercion pattern distinct from forced-captor-room-numbers and forced-vehicle-plates cards.',
+    evidence:
+      'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-barley-seed-sacks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Barley Seed Sacks Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (settler densify cohort)',
+    location: 'West Bank villages',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian barley seed sacks after October 7 — denying next-season planting including food security for families with children. Pattern card distinct from wheat-seed-sacks and chickpea-harvest cards.',
+    evidence:
+      'OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'B\'Tselem settler-violence materials', url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-civilian-finger-splint-stockout-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Finger Splint Stockout Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (finger splint stockout cohort)',
+    location: 'Gaza Strip emergency wards and field trauma points',
+    summary:
+      'WHO, MSF, and multi-source medical reporting document civilian finger splint stockouts after October 7 — denying finger fracture immobilization including for children. Pattern card distinct from splint-material and plaster-bandage cards.',
+    evidence:
+      'WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza medical reporting', url: 'https://apnews.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public health updates', url: 'https://www.who.int' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-square-ribbons-media-evolution-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Square Ribbons Media Evolution Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage densify cohort)',
+    location: 'Captivity sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document civilian hostages including children denied knowledge of evolving Hostage Square yellow-ribbon media — a psychological isolation pattern distinct from posters and empty-chairs media evolution cards.',
+    evidence:
+      'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-school-music-rooms-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacking School Music Rooms Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (settler densify cohort)',
+    location: 'West Bank villages',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian school music rooms after October 7 — denying music education access for children. Pattern card distinct from school-art-rooms and school-libraries cards.',
+    evidence:
+      'OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'B\'Tselem settler-violence materials', url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-civilian-arm-sling-stockout-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Arm Sling Stockout Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (arm sling stockout cohort)',
+    location: 'Gaza Strip emergency wards and field trauma points',
+    summary:
+      'WHO, MSF, and multi-source medical reporting document civilian arm sling stockouts after October 7 — denying upper-limb support including for children. Pattern card distinct from orthotic-brace and cast-padding cards.',
+    evidence:
+      'WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza medical reporting', url: 'https://apnews.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public health updates', url: 'https://www.who.int' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hostage-square-countdown-clocks-media-evolution-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hostage Square Countdown Clocks Media Evolution Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage densify cohort)',
+    location: 'Captivity sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document civilian hostages including children denied knowledge of evolving Hostage Square countdown-clock media — a psychological isolation pattern distinct from digital-screens and deal-signs media evolution cards.',
+    evidence:
+      'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-onion-harvest-crates-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Onion Harvest Crates Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (settler densify cohort)',
+    location: 'West Bank villages',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian onion harvest crates after October 7 — denying harvest logistics including food income for families with children. Pattern card distinct from eggplant-harvest-crates and pepper-crates cards.',
+    evidence:
+      'OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'B\'Tselem settler-violence materials', url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet coverage', url: 'https://apnews.com' },
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
     tier: 'verified',

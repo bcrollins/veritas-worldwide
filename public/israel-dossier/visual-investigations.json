@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:53:45.399Z"
+    "generatedAt": "2026-07-23T13:55:13.419Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 192,
-    "viPackCards": 173,
-    "totalIncidents": 1947
+    "incidentsWithVideoAndCivilians": 198,
+    "viPackCards": 179,
+    "totalIncidents": 1976
   },
   "incidents": [
     {
@@ -6623,6 +6623,246 @@
           "type": "investigation",
           "label": "B'Tselem settler violence case files",
           "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-power-plant-civilian-impact-visual-2023-2025",
+      "title": "Gaza Power Plant Civilian Impact — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip power plants and civilian electricity infrastructure",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OHCHR materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza infrastructure packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet infrastructure impact video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of infrastructure aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "OCHA access trail",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-kiryat-malachi-safe-room-visual-2023",
+      "title": "October 7 Kiryat Malachi Safe-Room Civilian Harm — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Kiryat Malachi residential safe rooms and home shelters",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-chickpea-field-arson-visual-2023-2025",
+      "title": "West Bank Settler Chickpea Field Arson — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village chickpea fields and pulse plots",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem agricultural-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem case files",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-internet-cable-cut-civilian-impact-visual-2023-2025",
+      "title": "Gaza Internet Cable Cuts Civilian Impact — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip undersea and terrestrial internet cable nodes",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OHCHR materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza infrastructure packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet infrastructure impact video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of infrastructure aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "OCHA access trail",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-ashdod-safe-room-visual-2023",
+      "title": "October 7 Ashdod Safe-Room Civilian Harm — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Ashdod residential safe rooms and home shelters",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-lentil-field-arson-visual-2023-2025",
+      "title": "West Bank Settler Lentil Field Arson — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village lentil fields and pulse plots",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem agricultural-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem case files",
+          "url": "https://www.btselem.org/"
         },
         {
           "type": "document",

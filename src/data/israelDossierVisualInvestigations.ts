@@ -4479,9 +4479,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village chickpea fields and pulse plots',
     summary:
-      'B'Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian chickpea fields, denying staple food production including for families with children. Multi-source visual record; ethnicity is never evidence.',
+      "B\'Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian chickpea fields, denying staple food production including for families with children. Multi-source visual record; ethnicity is never evidence.",
     evidence:
-      'B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of chickpea-field arson affecting civilian food production.',
+      "B\'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of chickpea-field arson affecting civilian food production.",
     sources: [
       { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
       { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
@@ -4548,9 +4548,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village lentil fields and pulse plots',
     summary:
-      'B'Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian lentil fields, denying staple food production including for families with children. Multi-source visual record distinct from chickpea-field arson cards; ethnicity is never evidence.',
+      "B\'Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian lentil fields, denying staple food production including for families with children. Multi-source visual record distinct from chickpea-field arson cards; ethnicity is never evidence.",
     evidence:
-      'B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of lentil-field arson affecting civilian food production.',
+      "B\'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of lentil-field arson affecting civilian food production.",
     sources: [
       { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
       { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },

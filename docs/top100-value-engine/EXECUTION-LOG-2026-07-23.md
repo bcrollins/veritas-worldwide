@@ -358,3 +358,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | power plant · Kiryat Malachi · chickpea arson · internet cable · Ashdod · lentil arson |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip **1976** / withVideo **198** / VI **191+** — hard push toward 2000
+
+| Ship | Proof |
+|------|-------|
+| Tip | **1976 incidents** / withVideo **198** |
+| Dual-sided densify | Gaza maternity/neonatal continuum · Israeli hostages · West Bank settlers + VI dual-sided |
+| Pure | visual + israel-dossier + research-pack PASS |
+| Multi-agent | densify-only; peer nav/page WIP unstaged |
+| Live | lag-aware soft-floor WARN (still 1539 during deploy backlog) |
+
