@@ -559,3 +559,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2199+ |
 
+
+## Interval densify — tip post-2255 outbreak vaccine densify + telecom switch / Yavne / stem-cutter theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza yellow-fever/typhoid/cholera · hostage trenches-as-shields/backpack-install/legs-ceiling · WB sorrel/tongue-depressor/oregano-baskets |
+| VI | telecom switch · Yavne · grape stem-cutter theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2223+ |
+

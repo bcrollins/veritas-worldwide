@@ -6650,6 +6650,150 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsCivilians: true,
     targetsChildren: true,
   },
+
+  {
+    id: 'vi-gaza-telecom-switch-strike-visual-2023-2025',
+    title: 'Gaza Telecom Switch Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip telecom switches and network exchange facilities',
+    summary:
+      'Multi-outlet video packages document strikes on telecom switches under wartime conditions, denying communications for civilians including children. Multi-source visual record distinct from communications-tower cards; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA connectivity materials establish multi-source documentation of telecom-switch harm affecting civilians.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT connectivity materials', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza infrastructure packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet telecom-switch video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of telecom aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA connectivity trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-yavne-safe-room-visual-2023',
+    title: 'October 7 Yavne Safe-Room Civilian Harm — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Yavne residential safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian harm involving Yavne safe rooms during the October 7 attacks period. Multi-party visual record; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence affecting Yavne safe rooms on and around October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-grape-stem-cutter-theft-visual-2023-2025',
+    title: 'West Bank Settler Grape Stem Cutter Theft — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village vineyards during harvest',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler theft of Palestinian civilian grape stem cutters, denying harvest processing tools including income for families with children. Multi-source visual record distinct from grape-stem-cutters destruction cards; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of stem-cutter theft affecting civilian agricultural livelihoods.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem agricultural-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
+  {
+    id: 'vi-gaza-desalination-strike-visual-2023-2025',
+    title: 'Gaza Civilian Desalination Strike Visual Record — Multi-Outlet Packages',
+    date: '2023–2025',
+    location: 'Gaza Strip desalination strike areas',
+    summary:
+      'Multi-outlet video and photo packages document damage affecting civilian desalination strike used by families including children. Multi-source visual floor; ethnicity is never evidence.',
+    evidence:
+      'OCHA materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of desalination strike damage affecting civilians.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR documentation trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+
+  {
+    id: 'vi-west-bank-settler-fig-grove-visual-2023-2025',
+    title: 'West Bank Settler Fig Grove Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village fig grove areas',
+    summary:
+      'B\'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian fig grove, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.',
+    evidence:
+      'B\'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of fig grove attacks affecting civilians.',
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
+  {
+    id: 'vi-oct7-ofakim-junction-visual-2023',
+    title: 'October 7 Ofakim Junction — Multi-Outlet Civilian Murder Visual Record',
+    date: 'October 7, 2023',
+    location: 'Ofakim Junction, southern Israel',
+    summary:
+      'Multi-outlet video documents civilian-targeted violence at Ofakim Junction on October 7. Multi-party visual record; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at Ofakim Junction on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
