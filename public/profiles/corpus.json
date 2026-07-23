@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:38:04.972Z",
+  "generatedAt": "2026-07-23T07:40:14.388Z",
   "count": 96,
   "profiles": [
     {
@@ -867,7 +867,7 @@
       "name": "Elizabeth Warren",
       "title": "U.S. Senator (D-MA)",
       "category": "politician",
-      "summary": "Massachusetts Democrat progressive on domestic policy who has supported Israel security aid baseline while calling for greater civilian protection and limited conditionality rhetoric after October 7. Documents a middle-progressive Senate posture. Primary: OpenSecrets, Senate record, CRS RL33222.",
+      "summary": "Massachusetts Democrat progressive on domestic policy who has supported Israel security aid baseline while calling for greater civilian protection and limited conditionality rhetoric after October 7. Documents a middle-progressive Senate posture. Integrity docket: dual-cited PolitiFact Falses on “flat wages” claim (FRED real wages rising) and Klobuchar health plan “two paragraphs” attack (64 paragraphs across pages). Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact, FRED.",
       "photo": "/profiles/elizabeth-warren.jpg",
       "url": "https://veritasworldwide.com/profile/elizabeth-warren",
       "bioguideId": "W000817",
@@ -877,11 +877,12 @@
         "Massachusetts",
         "Progressive",
         "Pro-Israel Baseline",
-        "Conditionality Rhetoric"
+        "Conditionality Rhetoric",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "rand-paul",

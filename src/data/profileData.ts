@@ -5207,8 +5207,16 @@ export const PROFILES: PowerProfile[] = [
     state: 'MA',
     photoUrl: getProfilePhoto('elizabeth-warren'),
     summary:
-      'Massachusetts Democrat progressive on domestic policy who has supported Israel security aid baseline while calling for greater civilian protection and limited conditionality rhetoric after October 7. Documents a middle-progressive Senate posture. Primary: OpenSecrets, Senate record, CRS RL33222.',
-    tags: ['Senator', 'Democrat', 'Massachusetts', 'Progressive', 'Pro-Israel Baseline', 'Conditionality Rhetoric'],
+      'Massachusetts Democrat progressive on domestic policy who has supported Israel security aid baseline while calling for greater civilian protection and limited conditionality rhetoric after October 7. Documents a middle-progressive Senate posture. Integrity docket: dual-cited PolitiFact Falses on “flat wages” claim (FRED real wages rising) and Klobuchar health plan “two paragraphs” attack (64 paragraphs across pages). Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact, FRED.',
+    tags: [
+      'Senator',
+      'Democrat',
+      'Massachusetts',
+      'Progressive',
+      'Pro-Israel Baseline',
+      'Conditionality Rhetoric',
+      'Integrity Docket',
+    ],
     career: [
       'Harvard Law / CFPB architect (public bio)',
       '2013– — U.S. Senate',
@@ -5264,10 +5272,71 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: Feb 2020 claim hard-working families have “flat wages” rated False (real median wages rose ~9.7% since 2014 Q2 per FRED).',
+        source: 'PolitiFact False; FRED LES1252881600Q',
+        url: 'https://www.politifact.com/factchecks/2020/feb/06/elizabeth-warren/elizabeth-warren-wrong-wages-are-flat/',
+        tier: 'verified',
+        date: '2020',
+      },
+      {
+        claim:
+          'Integrity docket: Feb 2020 debate claim Klobuchar health plan is “two paragraphs” rated False (campaign health pages ~64 paragraphs).',
+        source: 'PolitiFact False; debate transcript',
+        url: 'https://www.politifact.com/factchecks/2020/feb/21/elizabeth-warren/elizabeth-warren-wrong-say-amy-klobuchars-health-p/',
+        tier: 'verified',
+        date: '2020',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'warren-flat-wages-2020',
+        statement: '“We have an America where … hard-working families have flat wages.”',
+        saidAt: 'February 5, 2020',
+        context: 'CNN New Hampshire town hall during 2020 Democratic presidential primary.',
+        whyFalse:
+          'PolitiFact rated False. Inflation-adjusted median weekly earnings (FRED series LES1252881600Q) had been rising since 2014 Q2 — about 9.7% real gain over ~6 years spanning Obama and Trump years — not flat, even if longer-run lower-half wage growth was slower.',
+        correction:
+          'Real median wages were not flat in the mid/late 2010s; they rose modestly above inflation for several years before the claim.',
+        statementSource: 'CNN New Hampshire town hall transcript, Feb 5, 2020',
+        statementUrl: 'http://transcripts.cnn.com/TRANSCRIPTS/2002/05/se.02.html',
+        debunkSource: 'PolitiFact — False (Feb 6, 2020); FRED real median weekly earnings',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2020/feb/06/elizabeth-warren/elizabeth-warren-wrong-wages-are-flat/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'warren-klobuchar-health-plan-two-paragraphs-2020',
+        statement: '“Amy, I looked online at your (health care) plan. It’s two paragraphs.”',
+        saidAt: 'February 19, 2020',
+        context: 'Las Vegas Democratic presidential debate attack on Amy Klobuchar’s health-care specificity.',
+        whyFalse:
+          'PolitiFact rated False. Warren’s campaign later narrowed the claim to universal-care paragraphs, but Klobuchar’s health policy web presence spanned multiple pages (~64 paragraphs total) covering ACA protections, maternal care, mental health, prescription drugs, and a public option — not a two-paragraph plan.',
+        correction:
+          'Klobuchar’s posted health-care policy materials were multi-page and far longer than two paragraphs; Warren’s absolute framing was false.',
+        statementSource: 'Las Vegas Democratic debate transcript (NBC), Feb 19, 2020',
+        statementUrl:
+          'https://www.nbcnews.com/politics/2020-election/full-transcript-ninth-democratic-debate-las-vegas-n1139546',
+        debunkSource: 'PolitiFact — False (Feb 21, 2020); Klobuchar campaign health-policy pages count',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2020/feb/21/elizabeth-warren/elizabeth-warren-wrong-say-amy-klobuchars-health-p/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.warren.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/elizabeth-warren/summary?cid=N00033492' },
+      {
+        label: 'PolitiFact — flat wages (False)',
+        url: 'https://www.politifact.com/factchecks/2020/feb/06/elizabeth-warren/elizabeth-warren-wrong-wages-are-flat/',
+      },
+      {
+        label: 'PolitiFact — Klobuchar plan (False)',
+        url: 'https://www.politifact.com/factchecks/2020/feb/21/elizabeth-warren/elizabeth-warren-wrong-say-amy-klobuchars-health-p/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Elizabeth_Warren' },
     ],
   },

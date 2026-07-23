@@ -116,6 +116,7 @@ const required = [
   'nancy-pelosi',
   'bernie-sanders',
   'hakeem-jeffries',
+  'elizabeth-warren',
 ];
 const scores = {};
 for (const id of required) {
@@ -442,8 +443,25 @@ for (const f of (jeffriesP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('jeffries dual-cite collision: ' + f.id);
 }
 
+// Elizabeth Warren multi-entry integrity deep-dive
+const warren = scores['elizabeth-warren'];
+if (!warren || warren.n < 2) throw new Error('elizabeth-warren needs ≥2 verified falsehoods, got ' + (warren?.n ?? 0));
+if (warren.score > 75) throw new Error('elizabeth-warren score expected ≤75 after deep dive, got ' + warren.score);
+const warrenP = getProfileBySlug('elizabeth-warren');
+for (const id of [
+  'warren-flat-wages-2020',
+  'warren-klobuchar-health-plan-two-paragraphs-2020',
+]) {
+  if (!(warrenP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('elizabeth-warren missing docket id: ' + id);
+  }
+}
+for (const f of (warrenP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('warren dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 29) throw new Error('expected ≥29 compiled dockets, got ' + docketCount);
+if (docketCount < 30) throw new Error('expected ≥30 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
