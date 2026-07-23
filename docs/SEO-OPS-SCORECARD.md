@@ -138,5 +138,6 @@ Prefer citations to **pinned primary sources** and methodology, not homepage alo
 ## Live verification log (agent)
 
 | When (UTC) | Tip commit | Result |
+| 2026-07-23 ~09:52 | soft-404 matrix | junk chapter/profile/news/topic/institute → 404; known paths 200; admin+subscribe noindex; live-bot-noindex 9/9 |
 | --- | --- | --- |
 | 2026-07-23 ~09:41 | `78b8656` | Unknown chapter soft-404 LIVE; admin noindex; bot-noindex 9/9 |
