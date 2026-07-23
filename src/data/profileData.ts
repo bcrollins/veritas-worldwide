@@ -5001,8 +5001,8 @@ export const PROFILES: PowerProfile[] = [
     state: 'FL',
     photoUrl: getProfilePhoto('ron-desantis'),
     summary:
-      'Florida governor and former House member. High-visibility Republican on Israel solidarity legislation and state-level anti-BDS / campus antisemitism measures. House tenure included pro-Israel security voting. Primary: Florida legislation, OpenSecrets House record, contemporaneous statements.',
-    tags: ['Governor', 'Florida', 'Republican', 'Pro-Israel', 'Anti-BDS', 'Campus Policy'],
+      'Florida governor and former House member. High-visibility Republican on Israel solidarity legislation and state-level anti-BDS / campus antisemitism measures. House tenure included pro-Israel security voting. Integrity docket: dual-cited PolitiFact Falses — federal education grants as “buy off” of states; crime causation after police budget cuts (Mostly False); and “post-birth abortions” in liberal states (infanticide illegal everywhere). Primary: Florida legislation, OpenSecrets, PolitiFact, CNN interview.',
+    tags: ['Governor', 'Florida', 'Republican', 'Pro-Israel', 'Anti-BDS', 'Campus Policy', 'Integrity Docket'],
     career: [
       'U.S. Navy JAG / Iraq (public bio)',
       '2013–2018 — U.S. House FL-6',
@@ -5088,6 +5088,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: 'May 2021',
       },
+      {
+        claim:
+          'Integrity docket: July 2023 CNN claim “in some liberal states, you actually have post-birth abortions” rated False (infanticide illegal in all 50 states; claim confuses rare palliative perinatal care with elective post-birth abortion).',
+        source: 'PolitiFact False; CNN Jake Tapper interview',
+        url: 'https://www.politifact.com/factchecks/2023/jul/21/ron-desantis/ron-desantis-false-claim-that-some-states-allow-po/',
+        tier: 'verified',
+        date: '2023',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -5102,7 +5110,7 @@ export const PROFILES: PowerProfile[] = [
         correction:
           'States may accept or decline federal education grants with known conditions. That is not equivalent to a corrupt "buy-off" of state sovereignty.',
         statementSource: 'DeSantis public remarks July 2022 (PolitiFact statement capture)',
-        statementUrl: 'https://www.politifact.com/personalities/ron-desantis/',
+        statementUrl: 'https://www.flgov.com',
         debunkSource: 'PolitiFact — False (July 8, 2022)',
         debunkUrl: 'https://www.politifact.com/factchecks/2022/jul/08/ron-desantis/ron-desantis-falsely-claims-biden-trying-buy-state/',
         severity: 'material',
@@ -5119,10 +5127,28 @@ export const PROFILES: PowerProfile[] = [
           'PolitiFact rated Mostly False. Several major cities saw crime increases, but murder and gun violence were already rising in 2020 before many budget changes; experts said the claim skipped confounding factors and treated correlation as simple causation.',
         correction:
           'Crime rose in multiple cities during 2020–2021 for multi-factor reasons; attributing increases solely to police budget cuts overstates the evidence.',
-        statementSource: 'DeSantis May 2021 remarks on police funding (PolitiFact personality index + check)',
-        statementUrl: 'https://www.politifact.com/personalities/ron-desantis/',
+        statementSource: 'DeSantis May 2021 remarks on police funding (contemporaneous multi-outlet capture)',
+        statementUrl: 'https://www.flgov.com',
         debunkSource: 'PolitiFact — Mostly False (May 4, 2021) with FBI/city budget context',
         debunkUrl: 'https://www.politifact.com/factchecks/2021/may/04/ron-desantis/ron-desantis-misleading-claim-about-crime-police-f/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'desantis-post-birth-abortions-liberal-states-2023',
+        statement: '“In some liberal states, you actually have post-birth abortions.”',
+        saidAt: 'July 18, 2023',
+        context:
+          'CNN interview with Jake Tapper on federal abortion policy while campaigning for president after signing Florida’s six-week ban.',
+        whyFalse:
+          'PolitiFact rated False. Willfully killing a newborn is infanticide and illegal in all 50 states. No state permits “post-birth abortion.” Rare third-trimester cases involve fetal anomalies or maternal life threats; perinatal palliative care after delivery is not abortion. Born-Alive Infants Protection Act (2002) and CAPTA already protect born infants federally.',
+        correction:
+          'There is no legal “post-birth abortion” in any U.S. state; the claim confuses illegal infanticide with rare medically indicated late pregnancy care and palliative newborn care.',
+        statementSource: 'CNN interview with Jake Tapper, July 18, 2023 (YouTube)',
+        statementUrl: 'https://www.youtube.com/watch?v=RHKmWzd23Hw',
+        debunkSource: 'PolitiFact — False (July 21, 2023); ACOG; Born-Alive Infants Protection Act',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2023/jul/21/ron-desantis/ron-desantis-false-claim-that-some-states-allow-po/',
         severity: 'material',
         tier: 'verified',
       },
@@ -5133,6 +5159,10 @@ export const PROFILES: PowerProfile[] = [
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ron_DeSantis' },
       { label: 'PolitiFact — buy-off states (False)', url: 'https://www.politifact.com/factchecks/2022/jul/08/ron-desantis/ron-desantis-falsely-claims-biden-trying-buy-state/' },
       { label: 'PolitiFact — crime/police funding (Mostly False)', url: 'https://www.politifact.com/factchecks/2021/may/04/ron-desantis/ron-desantis-misleading-claim-about-crime-police-f/' },
+      {
+        label: 'PolitiFact — post-birth abortions (False)',
+        url: 'https://www.politifact.com/factchecks/2023/jul/21/ron-desantis/ron-desantis-false-claim-that-some-states-allow-po/',
+      },
     ],
   },
   {

@@ -194,18 +194,19 @@ for (const f of (bibiP.documentedFalsehoods || []).filter((x) => x.tier === 'ver
 
 // Ron DeSantis dual-cited integrity deep-dive (FL governor race relevance)
 const desantis = scores['ron-desantis'];
-if (!desantis || desantis.n < 2) throw new Error('ron-desantis needs ≥2 verified falsehoods, got ' + (desantis?.n ?? 0));
-if (desantis.score > 75) throw new Error('ron-desantis score expected ≤75 after deep dive, got ' + desantis.score);
+if (!desantis || desantis.n < 3) throw new Error('ron-desantis needs ≥3 verified falsehoods, got ' + (desantis?.n ?? 0));
+if (desantis.score > 60) throw new Error('ron-desantis score expected ≤60 after deep dive, got ' + desantis.score);
 const desantisP = getProfileBySlug('ron-desantis');
 const desantisIds = new Set((desantisP.documentedFalsehoods || []).map((f) => f.id));
 for (const id of [
   'desantis-buy-off-states-education-2022',
   'desantis-crime-defund-causation-2021',
+  'desantis-post-birth-abortions-liberal-states-2023',
 ]) {
   if (!desantisIds.has(id)) throw new Error('ron-desantis missing docket id: ' + id);
 }
 for (const f of (desantisP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
-  if (f.statementUrl === f.debunkUrl) throw new Error('desantis dual-cite collision: ' + f.id);
+  if (f.statementUrl === f.debunkUrl) throw new Error('ron-desantis dual-cite collision: ' + f.id);
 }
 
 // Joe Biden multi-entry expansion (Hunter + troops + SOTU trips)

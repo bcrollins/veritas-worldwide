@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:28:18.226Z",
+  "generatedAt": "2026-07-23T08:31:14.984Z",
   "count": 96,
   "profiles": [
     {
@@ -803,7 +803,7 @@
       "name": "Ron DeSantis",
       "title": "Governor of Florida (R); former U.S. Representative",
       "category": "politician",
-      "summary": "Florida governor and former House member. High-visibility Republican on Israel solidarity legislation and state-level anti-BDS / campus antisemitism measures. House tenure included pro-Israel security voting. Primary: Florida legislation, OpenSecrets House record, contemporaneous statements.",
+      "summary": "Florida governor and former House member. High-visibility Republican on Israel solidarity legislation and state-level anti-BDS / campus antisemitism measures. House tenure included pro-Israel security voting. Integrity docket: dual-cited PolitiFact Falses — federal education grants as “buy off” of states; crime causation after police budget cuts (Mostly False); and “post-birth abortions” in liberal states (infanticide illegal everywhere). Primary: Florida legislation, OpenSecrets, PolitiFact, CNN interview.",
       "photo": "/profiles/ron-desantis.jpg",
       "url": "https://veritasworldwide.com/profile/ron-desantis",
       "bioguideId": null,
@@ -813,10 +813,11 @@
         "Republican",
         "Pro-Israel",
         "Anti-BDS",
-        "Campus Policy"
+        "Campus Policy",
+        "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
