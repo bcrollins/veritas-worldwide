@@ -42,9 +42,23 @@ if (/gtag\?\.\([^)]*email/i.test(ga4) && !/hash|redact/i.test(ga4)) {
   if (/email:\s*[^,\n]+@/.test(ga4)) failures.push('ga4.ts appears to hardcode an email into events')
 }
 
+// Runtime PII strip must exist on first-party event recorder
+const analytics = fs.readFileSync(path.join(root, 'src/lib/analytics.ts'), 'utf8')
+if (!analytics.includes('sanitizeAnalyticsProperties')) {
+  failures.push('analytics.ts missing sanitizeAnalyticsProperties export')
+}
+if (!analytics.includes('FORBIDDEN_ANALYTICS_PROP_KEYS')) {
+  failures.push('analytics.ts missing FORBIDDEN_ANALYTICS_PROP_KEYS denylist')
+}
+if (!/sanitizeAnalyticsProperties\(properties\)/.test(analytics)) {
+  failures.push('recordAnalyticsEvent must call sanitizeAnalyticsProperties(properties)')
+}
+
 if (failures.length) {
   console.error('[verify:analytics-privacy] FAIL')
   for (const f of failures) console.error(' -', f)
   process.exit(1)
 }
-console.log('[verify:analytics-privacy] PASS — no operator identity strings in analytics/admin client modules')
+console.log(
+  '[verify:analytics-privacy] PASS — no operator identity strings; PII property strip present on recordAnalyticsEvent',
+)

@@ -2423,28 +2423,40 @@ function buildNotFoundHtml() {
 // Bot meta runs before SPA shell, but defers unknown paths so soft-404 still wins for crawlers.
 registerBotMetaInjection({ app, rootDir: __dirname, isKnownRoute: isKnownSpaRoute })
 
+function injectNoindexShell(html) {
+  // Force noindex in first-paint HTML for all UAs (not only bot-meta).
+  // Prevents index,follow default in dist/index.html from being the last crawler signal
+  // for scrapers that skip JS or ignore X-Robots-Tag alone.
+  let out = html
+  if (/name=["']robots["']/i.test(out)) {
+    out = out.replace(
+      /<meta\s+name=["']robots["']\s+content=["'][^"']*["']\s*\/?>/i,
+      '<meta name="robots" content="noindex, nofollow" />',
+    )
+  } else {
+    out = out.replace('</head>', '    <meta name="robots" content="noindex, nofollow" />\n  </head>')
+  }
+  return out
+}
+
 app.use((req, res) => {
   // SPA shell must never be immutably cached (deploy-safe HTML).
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
   // Defense-in-depth for the operator console: robots.txt Disallow + header.
   // Covers crawlers that ignore robots.txt or fetch deep admin client routes.
-  if (req.path === '/admin' || req.path.startsWith('/admin/')) {
-    res.setHeader('X-Robots-Tag', 'noindex, nofollow')
-  }
-  // Family-brand podcast landing is a product surface with residual surname OPSEC risk.
-  // Client also sets noindex; crawlers that skip JS must still receive noindex.
-  if (req.path === '/bernie' || req.path.startsWith('/bernie/')) {
-    res.setHeader('X-Robots-Tag', 'noindex, nofollow')
-  }
-  // Transactional post-checkout landings — never index (client + robots.txt also noindex).
-  if (
+  const forceNoindexHtml =
+    req.path === '/admin' ||
+    req.path.startsWith('/admin/') ||
+    req.path === '/bernie' ||
+    req.path.startsWith('/bernie/') ||
     req.path === '/comprehensive-profile/success' ||
     req.path.startsWith('/comprehensive-profile/success/') ||
     req.path === '/subscribe/success' ||
     req.path === '/membership/success' ||
     req.path === '/donation/success' ||
     req.path === '/thank-you'
-  ) {
+
+  if (forceNoindexHtml) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')
   }
 
@@ -2454,6 +2466,17 @@ app.use((req, res) => {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')
     res.type('html')
     return res.send(buildNotFoundHtml())
+  }
+
+  // OPSEC: /bernie + admin + transactional shells must ship noindex meta in raw HTML for all UAs.
+  if (forceNoindexHtml && (req.method === 'GET' || req.method === 'HEAD')) {
+    try {
+      const html = fs.readFileSync(DIST_INDEX_HTML_PATH, 'utf8')
+      res.type('html')
+      return res.send(injectNoindexShell(html))
+    } catch {
+      // Fall through to sendFile if dist missing (dev)
+    }
   }
 
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))

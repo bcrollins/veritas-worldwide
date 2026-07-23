@@ -44,8 +44,8 @@
   },
   "summary": "Wave 3: densify 96/96 live, OSINT $499 checkoutReady, soft-404 researcher timeline fix tip b9e4f11. Pending: operator OPSEC + dual-cite homepage hygiene + pure gates + prerender utility.",
   "statusCounts": {
-    "Implemented": 90,
-    "Pending": 10
+    "Implemented": 91,
+    "Pending": 9
   },
   "items": [
     {
@@ -1412,7 +1412,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "prerender already uses profile.photo for og:image"
     },
     {
       "rank": 73,
@@ -1946,5 +1947,5 @@
       "shippedIn": "wave3 prior ship"
     }
   ],
-  "lastShip": "2026-07-23T11:33:32.371240+00:00"
+  "lastShip": "2026-07-23T11:34:01.658666+00:00"
 }

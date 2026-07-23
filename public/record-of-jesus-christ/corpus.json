@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:24:16.472Z",
-  "claimCount": 642,
+  "generatedAt": "2026-07-23T11:31:24.492Z",
+  "claimCount": 651,
   "tierHistogram": {
-    "well_attested": 264,
-    "verified": 229,
+    "well_attested": 267,
+    "verified": 232,
     "contested": 50,
-    "interpretive": 69,
+    "interpretive": 71,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 25
+    "circumstantial": 26
   },
   "claims": [
     {
@@ -290,6 +290,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
+      "id": "ane-lachish-reliefs-siege",
+      "claim": "Assyrian palace reliefs of Sennacherib’s siege of Lachish (British Museum) are primary visual evidence of Neo-Assyrian military practice complementary to the prism annals and Level III destruction archaeology at Tel Lachish.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave61.ts"
     },
     {
       "id": "ane-lmlk-iconography",
@@ -570,6 +577,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-capernaum-synagogue-phases",
+      "claim": "Capernaum’s white limestone synagogue is generally dated to the Byzantine period (4th–5th c. CE) overlying earlier basalt structures; first-century synagogue identification depends on those earlier phases, not the standing limestone edifice alone.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave61.ts"
     },
     {
       "id": "arch-capernaum-synagogue-strata",
@@ -1172,6 +1186,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
+      "id": "cosmo-desi-bao-rd",
+      "claim": "DESI Year-1 BAO measurements of the dilaton scale r_d and distance ratios test ΛCDM expansion history independently of CMB-calibrated early-universe priors when analyzed with flexible late-time models.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave61.ts"
     },
     {
       "id": "cosmo-deuterium-abundance",
@@ -1818,6 +1839,13 @@
       "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
+      "id": "ec-papias-five-expositions",
+      "claim": "Papias of Hierapolis (early 2nd c.) composed five books of Expositions of the Sayings of the Lord, now lost except for fragments preserved chiefly in Eusebius — including notes on Mark and Matthew traditions.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave61.ts"
+    },
+    {
       "id": "ec-papias-mark-matthew",
       "claim": "Papias traditions (via Eusebius) claim Mark recorded Peter’s preaching and Matthew compiled logia in Hebrew/Aramaic — early but second-hand Gospel origin traditions.",
       "tier": "circumstantial",
@@ -2047,6 +2075,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "hj-embarrassment-method-limits",
+      "claim": "The criterion of embarrassment (material unlikely invented because it was awkward for early Christians) is heuristic, not a proof rule; later communities could reframe awkward tradition for new purposes.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave61.ts"
     },
     {
       "id": "hj-empty-tomb",
@@ -2805,6 +2840,13 @@
       "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
+      "id": "mod-meier-marginal-jew-method",
+      "claim": "John P. Meier’s A Marginal Jew multi-volume project models exhaustive criterion-based HJ reconstruction with explicit tiers of judgment — a modern scholarly baseline even where individual conclusions remain contested.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave61.ts"
+    },
+    {
       "id": "mod-meier-marginal-method",
       "claim": "John P. Meier’s multi-volume A Marginal Jew models exhaustive criteria-based historical Jesus research with explicit uncertainty ratings — a methodological benchmark for the Third Quest.",
       "tier": "interpretive",
@@ -3176,6 +3218,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "nc-mara-bar-serapion-letter",
+      "claim": "The Syriac letter of Mara bar Serapion mentions a “wise king” executed by the Jews whose laws lived on; identification with Jesus is possible but not secure, and the letter’s date is debated (late first–third century).",
+      "tier": "circumstantial",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave61.ts"
+    },
+    {
       "id": "nc-mara-serapion-genre",
       "claim": "The Mara bar Serapion letter is a Syriac consolatory/philosophical letter whose “wise king” line is genre-constrained and chronologically uncertain — weak HJ control at best.",
       "tier": "circumstantial",
@@ -3538,6 +3587,13 @@
       "tier": "well_attested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave43.ts"
+    },
+    {
+      "id": "nt-byzantine-text-majority",
+      "claim": "The Byzantine (majority) textform dominates medieval Greek continuous-text manuscripts and often differs from the earliest Alexandrian witnesses at variation units used in modern critical editions.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave61.ts"
     },
     {
       "id": "nt-codex-alexandrinus",
@@ -4245,6 +4301,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave49.ts"
+    },
+    {
+      "id": "st-josephus-war-composition",
+      "claim": "Josephus’s Jewish War was composed in Rome after 70 CE under Flavian patronage; its chronology and casualty figures require critical filtering even where topographical detail is strong.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave61.ts"
     },
     {
       "id": "st-josephus-war-preface",

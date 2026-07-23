@@ -83,10 +83,21 @@ const outDir = path.join(root, 'public', 'record-of-jesus-christ')
 fs.mkdirSync(outDir, { recursive: true })
 fs.writeFileSync(path.join(outDir, 'corpus.json'), json)
 
+// Soft floor for live-anonymity: auto-tracks export claimCount (no hand-edit per wave).
+const softFloor = {
+  claimCount: claims.length,
+  generatedAt: payload.generatedAt,
+  source: 'export-roc-corpus.mjs',
+  note: 'Default LIVE_ANONYMITY_SOFT_CLAIM_FLOOR when env unset; WARN-only on deploy lag',
+}
+const softFloorJson = JSON.stringify(softFloor, null, 2)
+fs.writeFileSync(path.join(outDir, 'soft-floor.json'), softFloorJson)
+
 if (fs.existsSync(path.join(root, 'dist'))) {
   const distDir = path.join(root, 'dist', 'record-of-jesus-christ')
   fs.mkdirSync(distDir, { recursive: true })
   fs.writeFileSync(path.join(distDir, 'corpus.json'), json)
+  fs.writeFileSync(path.join(distDir, 'soft-floor.json'), softFloorJson)
 }
 
 if (claims.length < 50) {
@@ -95,4 +106,5 @@ if (claims.length < 50) {
 }
 
 console.log(`[export-roc-corpus] ${claims.length} claims → public/record-of-jesus-christ/corpus.json`)
+console.log(`[export-roc-corpus] soft-floor ${claims.length} → public/record-of-jesus-christ/soft-floor.json`)
 console.log('[export-roc-corpus] tiers', JSON.stringify(hist))

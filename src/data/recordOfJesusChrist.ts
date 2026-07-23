@@ -13,64 +13,7 @@
 
 import type { ScholarlyEvidenceTier } from './evidenceTiers'
 import { ROC_EXTRA_CLAIMS, ROC_TIMELINE } from './recordOfJesusChristExtras'
-import { ROC_WAVE3_CLAIMS } from './recordOfJesusChristWave3'
-import { ROC_WAVE4_CLAIMS } from './recordOfJesusChristWave4'
-import { ROC_WAVE5_CLAIMS } from './recordOfJesusChristWave5'
-import { ROC_WAVE6_CLAIMS } from './recordOfJesusChristWave6'
-import { ROC_WAVE7_CLAIMS } from './recordOfJesusChristWave7'
-import { ROC_WAVE8_CLAIMS } from './recordOfJesusChristWave8'
-import { ROC_WAVE9_CLAIMS } from './recordOfJesusChristWave9'
-import { ROC_WAVE10_CLAIMS } from './recordOfJesusChristWave10'
-import { ROC_WAVE11_CLAIMS } from './recordOfJesusChristWave11'
-import { ROC_WAVE12_CLAIMS } from './recordOfJesusChristWave12'
-import { ROC_WAVE13_CLAIMS } from './recordOfJesusChristWave13'
-import { ROC_WAVE14_CLAIMS } from './recordOfJesusChristWave14'
-import { ROC_WAVE15_CLAIMS } from './recordOfJesusChristWave15'
-import { ROC_WAVE16_CLAIMS } from './recordOfJesusChristWave16'
-import { ROC_WAVE17_CLAIMS } from './recordOfJesusChristWave17'
-import { ROC_WAVE18_CLAIMS } from './recordOfJesusChristWave18'
-import { ROC_WAVE19_CLAIMS } from './recordOfJesusChristWave19'
-import { ROC_WAVE20_CLAIMS } from './recordOfJesusChristWave20'
-import { ROC_WAVE21_CLAIMS } from './recordOfJesusChristWave21'
-import { ROC_WAVE22_CLAIMS } from './recordOfJesusChristWave22'
-import { ROC_WAVE23_CLAIMS } from './recordOfJesusChristWave23'
-import { ROC_WAVE24_CLAIMS } from './recordOfJesusChristWave24'
-import { ROC_WAVE25_CLAIMS } from './recordOfJesusChristWave25'
-import { ROC_WAVE26_CLAIMS } from './recordOfJesusChristWave26'
-import { ROC_WAVE27_CLAIMS } from './recordOfJesusChristWave27'
-import { ROC_WAVE28_CLAIMS } from './recordOfJesusChristWave28'
-import { ROC_WAVE29_CLAIMS } from './recordOfJesusChristWave29'
-import { ROC_WAVE30_CLAIMS } from './recordOfJesusChristWave30'
-import { ROC_WAVE31_CLAIMS } from './recordOfJesusChristWave31'
-import { ROC_WAVE32_CLAIMS } from './recordOfJesusChristWave32'
-import { ROC_WAVE33_CLAIMS } from './recordOfJesusChristWave33'
-import { ROC_WAVE34_CLAIMS } from './recordOfJesusChristWave34'
-import { ROC_WAVE35_CLAIMS } from './recordOfJesusChristWave35'
-import { ROC_WAVE36_CLAIMS } from './recordOfJesusChristWave36'
-import { ROC_WAVE37_CLAIMS } from './recordOfJesusChristWave37'
-import { ROC_WAVE38_CLAIMS } from './recordOfJesusChristWave38'
-import { ROC_WAVE39_CLAIMS } from './recordOfJesusChristWave39'
-import { ROC_WAVE40_CLAIMS } from './recordOfJesusChristWave40'
-import { ROC_WAVE41_CLAIMS } from './recordOfJesusChristWave41'
-import { ROC_WAVE42_CLAIMS } from './recordOfJesusChristWave42'
-import { ROC_WAVE43_CLAIMS } from './recordOfJesusChristWave43'
-import { ROC_WAVE44_CLAIMS } from './recordOfJesusChristWave44'
-import { ROC_WAVE45_CLAIMS } from './recordOfJesusChristWave45'
-import { ROC_WAVE46_CLAIMS } from './recordOfJesusChristWave46'
-import { ROC_WAVE47_CLAIMS } from './recordOfJesusChristWave47'
-import { ROC_WAVE48_CLAIMS } from './recordOfJesusChristWave48'
-import { ROC_WAVE49_CLAIMS } from './recordOfJesusChristWave49'
-import { ROC_WAVE50_CLAIMS } from './recordOfJesusChristWave50'
-import { ROC_WAVE51_CLAIMS } from './recordOfJesusChristWave51'
-import { ROC_WAVE52_CLAIMS } from './recordOfJesusChristWave52'
-import { ROC_WAVE53_CLAIMS } from './recordOfJesusChristWave53'
-import { ROC_WAVE54_CLAIMS } from './recordOfJesusChristWave54'
-import { ROC_WAVE55_CLAIMS } from './recordOfJesusChristWave55'
-import { ROC_WAVE56_CLAIMS } from './recordOfJesusChristWave56'
-import { ROC_WAVE57_CLAIMS } from './recordOfJesusChristWave57'
-import { ROC_WAVE58_CLAIMS } from './recordOfJesusChristWave58'
-import { ROC_WAVE59_CLAIMS } from './recordOfJesusChristWave59'
-import { ROC_WAVE60_CLAIMS } from './recordOfJesusChristWave60'
+import { ROC_WAVE_CLAIM_MAPS } from './recordOfJesusChristWaves.generated'
 
 export { ROC_TIMELINE } from './recordOfJesusChristExtras'
 
@@ -722,64 +665,7 @@ const S09_MODERN: RocSection = {
 function withExtras(section: RocSection): RocSection {
   const extra = [
     ...(ROC_EXTRA_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE3_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE4_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE5_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE6_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE7_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE8_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE9_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE10_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE11_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE12_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE13_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE14_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE15_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE16_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE17_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE18_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE19_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE20_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE21_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE22_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE23_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE24_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE25_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE26_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE27_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE28_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE29_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE30_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE31_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE32_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE33_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE34_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE35_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE36_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE37_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE38_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE39_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE40_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE41_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE42_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE43_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE44_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE45_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE46_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE47_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE48_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE49_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE50_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE51_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE52_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE53_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE54_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE55_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE56_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE57_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE58_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE59_CLAIMS[section.id] ?? []),
-    ...(ROC_WAVE60_CLAIMS[section.id] ?? []),
+    ...ROC_WAVE_CLAIM_MAPS.flatMap((m) => m[section.id] ?? []),
   ]
   if (extra.length === 0) return section
   return { ...section, claims: [...section.claims, ...extra] }

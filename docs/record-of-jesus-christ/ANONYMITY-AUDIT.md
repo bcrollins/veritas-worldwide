@@ -57,3 +57,16 @@ Sophisticated OSINT on public Veritas surfaces finds **zero recoverable path** t
 - Commits authored as `Veritas Worldwide <rights@veritasworldwide.com>`.
 - Residual operator infra (org GH transfer, admin password hash, full history rewrite) remains operator-owned.
 
+## Top-100 Value Engine interval (2026-07-23) — soft floor + /bernie noindex assert
+
+| Check | Result |
+|--------|--------|
+| Soft floor | `public/record-of-jesus-christ/soft-floor.json` auto-written by export; verify reads it (no hand-edit per wave) |
+| `/bernie` X-Robots-Tag | LIVE `noindex, nofollow` + HTML meta noindex; verify-live-anonymity asserts both |
+| Personal FB on /bernie | FORBIDDEN patterns; scrubbed prior interval |
+| Residual surname in /bernie body | **Intentional product branding only** — not operator bio; quarantine via noindex + robots Disallow |
+| Wave auto-wire | `recordOfJesusChristWaves.generated.ts` — no manual merge list for WaveN |
+| Entity attribution | All ROC waves + corpus meta = Veritas Worldwide only |
+
+**Verdict:** Public package PASS. Residual: GH namespace, git history rewrite, WHOIS/KYC (operator-owned).
+

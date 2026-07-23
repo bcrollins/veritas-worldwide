@@ -3,7 +3,7 @@
  * Attribution: Veritas Worldwide only.
  */
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import {
   setMetaTags,
   clearMetaTags,
@@ -38,6 +38,8 @@ import {
 } from '../data/recordOfJesusChrist'
 
 const TIER_PREF_KEY = 'veritas_roc_active_tiers'
+const DOMAIN_PREF_KEY = 'veritas_roc_domain_filter'
+const QUERY_PREF_KEY = 'veritas_roc_claim_query'
 
 const PROOF_LABELS: Record<RocClaim['proofVsConcept'], string> = {
   proof_grade_data: 'Proof-grade data',
@@ -68,34 +70,56 @@ function TierBadge({ tier }: { tier: ScholarlyEvidenceTier }) {
 function TierFilter({
   active,
   onToggle,
+  onSelectAll,
+  onClearToVerified,
 }: {
   active: Set<ScholarlyEvidenceTier>
   onToggle: (t: ScholarlyEvidenceTier) => void
+  onSelectAll: () => void
+  onClearToVerified: () => void
 }) {
   return (
-    <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by evidence tier">
-      {SCHOLARLY_TIER_ORDER.map(tier => {
-        const cfg = SCHOLARLY_TIERS[tier]
-        const isActive = active.has(tier)
-        return (
-          <button
-            key={tier}
-            type="button"
-            onClick={() => onToggle(tier)}
-            className="inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 rounded-sm text-xs font-sans font-medium transition-all border"
-            style={{
-              backgroundColor: isActive ? cfg.bgVar : 'transparent',
-              color: isActive ? cfg.colorVar : 'var(--color-ink-muted)',
-              borderColor: isActive ? cfg.colorVar : 'var(--color-border)',
-              opacity: isActive ? 1 : 0.55,
-            }}
-            aria-pressed={isActive}
-          >
-            <span aria-hidden="true">{cfg.icon}</span>
-            {cfg.shortLabel}
-          </button>
-        )
-      })}
+    <div className="space-y-2">
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by evidence tier">
+        {SCHOLARLY_TIER_ORDER.map(tier => {
+          const cfg = SCHOLARLY_TIERS[tier]
+          const isActive = active.has(tier)
+          return (
+            <button
+              key={tier}
+              type="button"
+              onClick={() => onToggle(tier)}
+              className="inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 rounded-sm text-xs font-sans font-medium transition-all border"
+              style={{
+                backgroundColor: isActive ? cfg.bgVar : 'transparent',
+                color: isActive ? cfg.colorVar : 'var(--color-ink-muted)',
+                borderColor: isActive ? cfg.colorVar : 'var(--color-border)',
+                opacity: isActive ? 1 : 0.55,
+              }}
+              aria-pressed={isActive}
+            >
+              <span aria-hidden="true">{cfg.icon}</span>
+              {cfg.shortLabel}
+            </button>
+          )
+        })}
+      </div>
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Tier filter bulk actions">
+        <button
+          type="button"
+          onClick={onSelectAll}
+          className="inline-flex min-h-[44px] items-center px-3 rounded-sm border border-border font-sans text-[0.65rem] font-semibold tracking-[0.06em] uppercase text-ink-muted hover:text-ink hover:border-crimson transition-colors"
+        >
+          Select all tiers
+        </button>
+        <button
+          type="button"
+          onClick={onClearToVerified}
+          className="inline-flex min-h-[44px] items-center px-3 rounded-sm border border-border font-sans text-[0.65rem] font-semibold tracking-[0.06em] uppercase text-ink-muted hover:text-ink hover:border-crimson transition-colors"
+        >
+          Clear → verified only
+        </button>
+      </div>
     </div>
   )
 }
@@ -104,10 +128,12 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
   const [open, setOpen] = useState(false)
   const [copied, setCopied] = useState(false)
   const cfg = SCHOLARLY_TIERS[claim.tier]
+  const primaryWithUrl = claim.sources.find(s => Boolean(s.url))
 
   const copyCitation = async () => {
     const url = `${SITE_URL}${ROC_META.path}#${claim.id}`
-    const text = `Veritas Worldwide. “${claim.claim}” [${SCHOLARLY_TIERS[claim.tier].label}; ${PROOF_LABELS[claim.proofVsConcept]}]. In ${ROC_META.title}. ${ROC_META.publishDate}. ${url}`
+    // AP-style hygiene: publisher, claim, tier, proofVsConcept, work title, date, stable URL
+    const text = `Veritas Worldwide. “${claim.claim}” [tier: ${SCHOLARLY_TIERS[claim.tier].label}; proofVsConcept: ${claim.proofVsConcept} (${PROOF_LABELS[claim.proofVsConcept]})]. In ${ROC_META.title}. ${ROC_META.publishDate}. ${url}`
     try {
       await navigator.clipboard.writeText(text)
       setCopied(true)
@@ -143,6 +169,23 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
           </p>
         )}
         <div className="mt-4 flex flex-wrap gap-2">
+          {primaryWithUrl ? (
+            <a
+              href={primaryWithUrl.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center gap-1.5 px-3 rounded-sm border font-sans text-[0.7rem] font-semibold tracking-[0.05em] uppercase transition-colors"
+              style={{ color: cfg.colorVar, borderColor: cfg.colorVar }}
+              aria-label={`Open primary source for claim ${claim.id}`}
+            >
+              Open primary source
+              <span aria-hidden="true">↗</span>
+            </a>
+          ) : (
+            <span className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] tracking-[0.04em] uppercase text-ink-faint px-1">
+              Cite only · no public URL
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setOpen(v => !v)}
@@ -241,7 +284,18 @@ function downloadText(filename: string, content: string, mime: string) {
 }
 
 export default function RecordOfJesusChristPage() {
+  const [searchParams, setSearchParams] = useSearchParams()
+
   const [activeTiers, setActiveTiers] = useState<Set<ScholarlyEvidenceTier>>(() => {
+    // URL ?tier=verified,well_attested wins over localStorage (shareable researcher deep-link)
+    const urlTier = searchParams.get('tier')
+    if (urlTier) {
+      const parts = urlTier.split(',').map(s => s.trim()).filter(Boolean)
+      const valid = parts.filter((t): t is ScholarlyEvidenceTier =>
+        (SCHOLARLY_TIER_ORDER as readonly string[]).includes(t),
+      )
+      if (valid.length) return new Set(valid)
+    }
     try {
       const raw = localStorage.getItem(TIER_PREF_KEY)
       if (raw) {
@@ -252,8 +306,44 @@ export default function RecordOfJesusChristPage() {
     } catch { /* ignore */ }
     return new Set(SCHOLARLY_TIER_ORDER)
   })
-  const [claimQuery, setClaimQuery] = useState('')
-  const [domainFilter, setDomainFilter] = useState<'all' | 'archaeology' | 'textual'>('all')
+  const [claimQuery, setClaimQuery] = useState(() => {
+    const urlQ = searchParams.get('q')
+    if (urlQ != null) return urlQ
+    try {
+      return localStorage.getItem(QUERY_PREF_KEY) || ''
+    } catch {
+      return ''
+    }
+  })
+  const [domainFilter, setDomainFilter] = useState<'all' | 'archaeology' | 'textual'>(() => {
+    const urlD = searchParams.get('domain')
+    if (urlD === 'all' || urlD === 'archaeology' || urlD === 'textual') return urlD
+    try {
+      const raw = localStorage.getItem(DOMAIN_PREF_KEY)
+      if (raw === 'all' || raw === 'archaeology' || raw === 'textual') return raw
+    } catch { /* ignore */ }
+    return 'all'
+  })
+
+  // Keep shareable deep-links in sync with researcher controls
+  useEffect(() => {
+    const next = new URLSearchParams()
+    if (claimQuery.trim()) next.set('q', claimQuery.trim())
+    if (activeTiers.size > 0 && activeTiers.size < SCHOLARLY_TIER_ORDER.length) {
+      next.set('tier', [...activeTiers].join(','))
+    }
+    if (domainFilter !== 'all') next.set('domain', domainFilter)
+    const cur = searchParams.toString()
+    const ns = next.toString()
+    if (cur !== ns) setSearchParams(next, { replace: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: sync URL from filter state only
+  }, [claimQuery, activeTiers, domainFilter])
+
+  const persistTiers = (next: Set<ScholarlyEvidenceTier>) => {
+    try {
+      localStorage.setItem(TIER_PREF_KEY, JSON.stringify([...next]))
+    } catch { /* ignore */ }
+  }
 
   const toggleTier = (tier: ScholarlyEvidenceTier) => {
     setActiveTiers(prev => {
@@ -261,11 +351,35 @@ export default function RecordOfJesusChristPage() {
       if (next.has(tier)) next.delete(tier)
       else next.add(tier)
       if (next.size === 0) next.add(tier)
-      try {
-        localStorage.setItem(TIER_PREF_KEY, JSON.stringify([...next]))
-      } catch { /* ignore */ }
+      persistTiers(next)
       return next
     })
+  }
+
+  const selectAllTiers = () => {
+    const next = new Set(SCHOLARLY_TIER_ORDER)
+    persistTiers(next)
+    setActiveTiers(next)
+  }
+
+  const clearToVerified = () => {
+    const next = new Set<ScholarlyEvidenceTier>(['verified'])
+    persistTiers(next)
+    setActiveTiers(next)
+  }
+
+  const setDomain = (d: 'all' | 'archaeology' | 'textual') => {
+    setDomainFilter(d)
+    try {
+      localStorage.setItem(DOMAIN_PREF_KEY, d)
+    } catch { /* ignore */ }
+  }
+
+  const setQuery = (q: string) => {
+    setClaimQuery(q)
+    try {
+      localStorage.setItem(QUERY_PREF_KEY, q)
+    } catch { /* ignore */ }
   }
 
   const hist = useMemo(() => rocTierHistogram(), [])
@@ -514,14 +628,71 @@ export default function RecordOfJesusChristPage() {
               onClick={() => downloadText('record-of-jesus-christ-claims.json', rocExportJson(), 'application/json')}
               className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-border font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink hover:border-crimson hover:text-crimson transition-colors"
             >
-              Export JSON
+              Export full JSON
             </button>
             <button
               type="button"
               onClick={() => downloadText('record-of-jesus-christ-claims.csv', rocExportCsv(), 'text/csv')}
               className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-border font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink hover:border-crimson hover:text-crimson transition-colors"
             >
-              Export CSV
+              Export full CSV
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const claims = filteredSections.flatMap(s =>
+                  s.claims.map(c => ({
+                    section_id: s.id,
+                    section_title: s.title,
+                    id: c.id,
+                    tier: c.tier,
+                    proofVsConcept: c.proofVsConcept,
+                    claim: c.claim,
+                    detail: c.detail,
+                    sources: c.sources,
+                  })),
+                )
+                downloadText(
+                  'record-of-jesus-christ-filtered.json',
+                  JSON.stringify(
+                    {
+                      meta: {
+                        publisher: 'Veritas Worldwide',
+                        path: ROC_META.path,
+                        filter: { tiers: [...activeTiers], domain: domainFilter, query: claimQuery },
+                        claimCount: claims.length,
+                      },
+                      claims,
+                    },
+                    null,
+                    2,
+                  ),
+                  'application/json',
+                )
+              }}
+              className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-crimson/40 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-crimson hover:bg-crimson/5 transition-colors"
+            >
+              Export filtered JSON
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const esc = (v: string) => `"${v.replace(/"/g, '""').replace(/\n/g, ' ')}"`
+                const rows = [
+                  ['section_id', 'section_title', 'claim_id', 'tier', 'proof_vs_concept', 'claim', 'source_count'].join(','),
+                ]
+                for (const s of filteredSections) {
+                  for (const c of s.claims) {
+                    rows.push(
+                      [esc(s.id), esc(s.title), esc(c.id), esc(c.tier), esc(c.proofVsConcept), esc(c.claim), String(c.sources.length)].join(','),
+                    )
+                  }
+                }
+                downloadText('record-of-jesus-christ-filtered.csv', rows.join('\n'), 'text/csv')
+              }}
+              className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-crimson/40 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-crimson hover:bg-crimson/5 transition-colors"
+            >
+              Export filtered CSV
             </button>
             <Link
               to="/methodology"
@@ -558,7 +729,12 @@ export default function RecordOfJesusChristPage() {
               )
             })}
           </div>
-          <TierFilter active={activeTiers} onToggle={toggleTier} />
+          <TierFilter
+            active={activeTiers}
+            onToggle={toggleTier}
+            onSelectAll={selectAllTiers}
+            onClearToVerified={clearToVerified}
+          />
           <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter by archaeology vs textual domains" data-testid="roc-domain-filter">
             {([
               { id: 'all' as const, label: 'All domains' },
@@ -568,7 +744,7 @@ export default function RecordOfJesusChristPage() {
               <button
                 key={opt.id}
                 type="button"
-                onClick={() => setDomainFilter(opt.id)}
+                onClick={() => setDomain(opt.id)}
                 aria-pressed={domainFilter === opt.id}
                 className={`inline-flex min-h-[44px] items-center rounded-sm border px-3 py-1.5 font-sans text-xs font-semibold transition-colors ${
                   domainFilter === opt.id
@@ -588,15 +764,18 @@ export default function RecordOfJesusChristPage() {
               id="roc-claim-search"
               type="search"
               value={claimQuery}
-              onChange={e => setClaimQuery(e.target.value)}
+              onChange={e => setQuery(e.target.value)}
               placeholder="e.g. Was Jesus crucified under Pilate? Dead Sea Scrolls? Josephus?"
               className="w-full min-h-[44px] px-4 py-2 rounded-sm border border-border bg-parchment font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-crimson/40"
               autoComplete="off"
               data-testid="roc-claim-search"
             />
-            {q && (
+            {(q || domainFilter !== 'all' || activeTiers.size < SCHOLARLY_TIER_ORDER.length) && (
               <p className="mt-2 font-sans text-xs text-ink-muted" role="status">
-                Showing {filteredSections.reduce((n, s) => n + s.claims.length, 0)} claims matching “{claimQuery.trim()}”
+                Showing {filteredSections.reduce((n, s) => n + s.claims.length, 0)} claims
+                {q ? ` matching “${claimQuery.trim()}”` : ''}
+                {domainFilter !== 'all' ? ` · domain ${domainFilter}` : ''}
+                {activeTiers.size < SCHOLARLY_TIER_ORDER.length ? ` · ${activeTiers.size} tiers` : ''}
               </p>
             )}
           </div>
@@ -787,9 +966,36 @@ export default function RecordOfJesusChristPage() {
           <SectionBlock key={section.id} section={section} />
         ))}
         {filteredSections.length === 0 && (
-          <p className="font-body text-sm text-ink-muted mb-16" role="status">
-            No claims match the active tier filters and search query. Clear search or re-enable tiers.
-          </p>
+          <div
+            className="mb-16 rounded-sm border border-border bg-surface p-6 max-w-xl"
+            role="status"
+            data-testid="roc-empty-filter-state"
+          >
+            <p className="font-display text-lg font-bold text-ink mb-2">No claims match the active filters</p>
+            <p className="font-body text-sm text-ink-muted mb-4">
+              Adjust search, domain, or evidence tiers to restore results. Full corpus remains available via export.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setQuery('')
+                  setDomain('all')
+                  selectAllTiers()
+                }}
+                className="inline-flex min-h-[44px] items-center px-4 rounded-sm bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase hover:bg-crimson/90 transition-colors"
+              >
+                Reset all filters
+              </button>
+              <button
+                type="button"
+                onClick={selectAllTiers}
+                className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-border font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink hover:border-crimson transition-colors"
+              >
+                Select all tiers
+              </button>
+            </div>
+          </div>
         )}
 
         {/* Anonymity / attribution footer */}
