@@ -2249,20 +2249,59 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-health-system-collapse-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Health System Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (health-system cohort)',
+    location: 'Gaza Strip hospitals and clinics',
+    summary:
+      'WHO, Ministry of Health, and multi-source reporting document systematic degradation of Gaza\'s hospital network — bed capacity loss, fuel/medicine shortages, and attacks on medical facilities (including Al-Shifa card). Pattern card for health-system collapse as a civilian-harm multiplier.',
+    evidence:
+      'WHO emergency health updates, multi-source hospital functionality tallies, and OHCHR medical-facility incident reporting establish widespread loss of functional hospitals. Exact functional-hospital counts evolve; the multi-source collapse pattern is the claim.',
+    sources: [
+      { label: 'WHO emergency health updates — OPT', url: 'https://www.who.int' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet hospital collapse coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public materials', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  {
+    id: 'gaza-education-system-destroyed-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['mk84-use', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Education System Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (education cohort)',
+    location: 'Gaza Strip schools and universities',
+    summary:
+      'UNESCO, UNICEF, and multi-source reporting document destruction or severe damage to the large majority of Gaza schools and all universities (universities card exists). Pattern card for education-system destruction as a children-targeting structural outcome of the war.',
+    evidence:
+      'UNESCO/UNICEF school damage tallies, multi-source satellite and field reporting, and Ministry of Education statements establish mass school destruction. Exact percentages evolve; multi-source near-total university destruction and majority school damage is the claim.',
+    sources: [
+      { label: 'UNESCO education damage materials', url: 'https://www.unesco.org' },
+      { label: 'UNICEF OPT education statements', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNESCO public materials', url: 'https://www.unesco.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
 ]
 
@@ -3166,6 +3205,32 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['hostage-prisoner-exchange-nov-2023', 'oct7-hostages-held-pattern'],
     tags: ['hostages', 'prisoners', 'ceasefire'],
+  },
+
+  {
+    id: 'tl-gaza-health-collapse-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Health System Collapse Pattern',
+    description: 'WHO/multi-source documentation of hospital network degradation and medical-facility attacks.',
+    source: 'WHO / OHCHR',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-health-system-collapse-2023-2025', 'al-shifa-hospital'],
+    tags: ['health', 'hospitals', 'civilians', 'children'],
+  },
+
+  {
+    id: 'tl-gaza-education-destroyed-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Education System Destruction Pattern',
+    description: 'UNESCO/UNICEF multi-source school and university destruction across Gaza war.',
+    source: 'UNESCO / UNICEF',
+    sourceUrl: 'https://www.unesco.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-education-system-destroyed-2023-2025', 'gaza-universities-destroyed'],
+    tags: ['education', 'children', 'civilians', 'gaza'],
   },
 
 ]
