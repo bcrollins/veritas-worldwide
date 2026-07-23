@@ -133,3 +133,10 @@ Prefer citations to **pinned primary sources** and methodology, not homepage alo
 - [ ] Audit doc / this scorecard updated if priorities shifted  
 - [ ] No soft-404 regression  
 - [ ] No accidental indexation of transactional URLs  
+
+
+## Live verification log (agent)
+
+| When (UTC) | Tip commit | Result |
+| --- | --- | --- |
+| 2026-07-23 ~09:41 | `78b8656` | Unknown chapter soft-404 LIVE; admin noindex; bot-noindex 9/9 |
