@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:24:43.121Z",
+  "generatedAt": "2026-07-23T07:25:10.933Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -9,7 +9,7 @@
     "actors": 47,
     "moneyTrailNodes": 23,
     "historicalWarCrimesPack": 65,
-    "legalCases": 14,
+    "legalCases": 16,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
@@ -6619,6 +6619,24 @@
       "date": "May 24, 2024",
       "ruling": "In the ongoing Genocide Convention case, the Court ordered Israel to immediately halt its military offensive, and any other action in the Rafah Governorate, which may inflict on the Palestinian group in Gaza conditions of life that could bring about its physical destruction in whole or in part; reaffirmed prior provisional measures and aid access obligations.",
       "significance": "Tightens ICJ provisional architecture around the Rafah offensive specifically — separate from the January/March 2024 orders. Implementation and interpretation remain contested; the order itself is the primary record.",
+      "sourceUrl": "https://www.icj-cij.org/case/192",
+      "status": "ongoing"
+    },
+    {
+      "title": "UN General Assembly ES-10/23 — Admission of Palestine (May 2024)",
+      "court": "UN General Assembly (Emergency Special Session)",
+      "date": "May 10, 2024",
+      "ruling": "Determined that the State of Palestine is qualified for membership in the United Nations and recommended that the Security Council reconsider the matter favorably; upgraded Palestine's rights and privileges as an observer State pending full membership.",
+      "significance": "Documents the GA majority posture on Palestinian statehood after a U.S. Security Council veto blocked full membership — structural diplomatic map of GA vs. UNSC veto politics parallel to ceasefire votes.",
+      "sourceUrl": "https://digitallibrary.un.org/record/4046608",
+      "status": "decided"
+    },
+    {
+      "title": "ICJ Order — South Africa v. Israel Provisional Measures (Jan 26, 2024 Detailed Floor)",
+      "court": "International Court of Justice (ICJ)",
+      "date": "January 26, 2024",
+      "ruling": "Found it plausible that rights under the Genocide Convention are at risk; ordered Israel to take all measures within its power to prevent genocidal acts, prevent and punish incitement, ensure humanitarian assistance, and preserve evidence. Distinct depth entry for the January floor order (complementing the ongoing case card and later Rafah order).",
+      "significance": "First ICJ provisional-measures order against Israel under the Genocide Convention — foundational legal posture for all subsequent orders in Case 192.",
       "sourceUrl": "https://www.icj-cij.org/case/192",
       "status": "ongoing"
     }

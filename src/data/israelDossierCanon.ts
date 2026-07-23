@@ -1805,6 +1805,28 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     sourceUrl: 'https://www.icj-cij.org/case/192',
     status: 'ongoing',
   },
+  {
+    title: 'UN General Assembly ES-10/23 — Admission of Palestine (May 2024)',
+    court: 'UN General Assembly (Emergency Special Session)',
+    date: 'May 10, 2024',
+    ruling:
+      'Determined that the State of Palestine is qualified for membership in the United Nations and recommended that the Security Council reconsider the matter favorably; upgraded Palestine\'s rights and privileges as an observer State pending full membership.',
+    significance:
+      'Documents the GA majority posture on Palestinian statehood after a U.S. Security Council veto blocked full membership — structural diplomatic map of GA vs. UNSC veto politics parallel to ceasefire votes.',
+    sourceUrl: 'https://digitallibrary.un.org/record/4046608',
+    status: 'decided',
+  },
+  {
+    title: 'ICJ Order — South Africa v. Israel Provisional Measures (Jan 26, 2024 Detailed Floor)',
+    court: 'International Court of Justice (ICJ)',
+    date: 'January 26, 2024',
+    ruling:
+      'Found it plausible that rights under the Genocide Convention are at risk; ordered Israel to take all measures within its power to prevent genocidal acts, prevent and punish incitement, ensure humanitarian assistance, and preserve evidence. Distinct depth entry for the January floor order (complementing the ongoing case card and later Rafah order).',
+    significance:
+      'First ICJ provisional-measures order against Israel under the Genocide Convention — foundational legal posture for all subsequent orders in Case 192.',
+    sourceUrl: 'https://www.icj-cij.org/case/192',
+    status: 'ongoing',
+  },
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [
