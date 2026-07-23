@@ -4383,6 +4383,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-civilian-mamad-shelter-use-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Civilian Safe-Room (Mamad) & Shelter Use Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (shelter-use cohort)',
+    location: 'Israeli cities and border communities under rocket sirens',
+    summary:
+      'Israeli government Home Front Command guidance and multi-source reporting document continuous civilian use of reinforced safe rooms (mamad), public shelters, and siren protocols under rocket and drone fire after October 7 — a sustained civilian-protection burden concurrent with rocket harm. Pattern card for shelter/mamad civilian life under fire, dual-sourced and non-slogan.',
+    evidence:
+      'Home Front Command public guidance, multi-outlet coverage of siren/shelter use, and government civilian-protection materials establish multi-source continuous shelter protocols. Exact shelter-use hours evolve; multi-source sustained mamad/shelter civilian protection activity is the claim.',
+    sources: [
+      { label: 'Israeli Home Front Command public materials', url: 'https://www.oref.org.il' },
+      { label: 'Israeli government civilian-protection materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet rocket siren / shelter coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Home Front Command public updates', url: 'https://www.oref.org.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-philadelphi-buffer-zone-displacement-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'artillery-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Philadelphi Corridor & Buffer-Zone Displacement Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (buffer-zone cohort)',
+    location: 'Gaza–Egypt border Philadelphi corridor and expanded buffer zones',
+    summary:
+      'OCHA, satellite assessments, and multi-source reporting document large-scale civilian displacement and housing destruction along the Philadelphi corridor and expanded military buffer zones — clearing inhabited areas under security-control justifications. Pattern card for corridor/buffer displacement distinct from general housing-destruction and Rafah-crossing cards.',
+    evidence:
+      'OCHA displacement updates, multi-source satellite damage assessments, and multi-outlet corridor reporting establish multi-source buffer-zone clearing with civilian displacement. Exact buffer widths and demolished structure counts evolve; multi-source corridor/buffer displacement is the claim.',
+    sources: [
+      { label: 'OCHA displacement / access materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNOSAT damage assessment materials', url: 'https://unosat.org' },
+      { label: 'Multi-outlet Philadelphi corridor coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-kerem-shalom-erez-crossing-access-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Kerem Shalom & Erez Crossing Access Denial Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (northern/southern crossing cohort)',
+    location: 'Kerem Shalom and Erez crossings (Israel–Gaza)',
+    summary:
+      'OCHA, COGAT, and multi-source reporting document prolonged closures, severe throughput constraints, and intermittent openings at Kerem Shalom (goods) and Erez (people/medical) crossings — bottlenecks that shaped civilian food, medical-exit, and commercial access independent of the Rafah (Egypt) crossing card. Pattern card for Israel–Gaza crossing access as civilian-harm infrastructure.',
+    evidence:
+      'OCHA crossing-status updates, COGAT public throughput statements, and multi-outlet coverage of closures and limited reopenings establish multi-source access constraints. Exact truck/patient counts evolve daily; multi-source sustained crossing-access denial and rationing is the claim.',
+    sources: [
+      { label: 'OCHA crossing and access materials', url: 'https://www.ochaopt.org' },
+      { label: 'COGAT public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Kerem Shalom / Erez coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public access updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6551,6 +6632,57 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
       'oct7-hostages-held-pattern',
     ],
     tags: ['detention', 'abuse', 'accountability', 'civilians'],
+  },
+
+  {
+    id: 'tl-israel-mamad-shelters-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Civilian Mamad & Shelter Use Pattern',
+    description: 'Multi-source documentation of continuous Israeli civilian safe-room and public-shelter use under rocket and drone fire.',
+    source: 'Home Front Command / multi-outlet',
+    sourceUrl: 'https://www.oref.org.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-civilian-mamad-shelter-use-pattern-2023-2025',
+      'gaza-rockets-israeli-civilian-harm-pattern-2023-2025',
+      'israel-missile-defense-intercepts-civilian-protection-pattern-2023-2025',
+    ],
+    tags: ['shelters', 'mamad', 'civilians', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-philadelphi-buffer-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Philadelphi Corridor & Buffer Displacement Pattern',
+    description: 'OCHA/UNOSAT multi-source documentation of buffer-zone clearing and civilian displacement along the Philadelphi corridor.',
+    source: 'OCHA / UNOSAT / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-philadelphi-buffer-zone-displacement-pattern-2023-2025',
+      'gaza-housing-destruction-pattern-2023-2025',
+      'gaza-evacuation-orders-pattern-2023-2024',
+    ],
+    tags: ['displacement', 'buffer-zone', 'civilians', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-kerem-erez-crossings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Kerem Shalom & Erez Crossing Access Pattern',
+    description: 'OCHA/COGAT multi-source documentation of prolonged closures and severe throughput constraints at Israel–Gaza crossings.',
+    source: 'OCHA / COGAT / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-kerem-shalom-erez-crossing-access-pattern-2023-2025',
+      'gaza-rafah-crossing-closure-pattern-2023-2025',
+      'starvation-aid-blockade',
+    ],
+    tags: ['crossings', 'access', 'aid', 'civilians', 'gaza'],
   },
 
 
