@@ -4950,6 +4950,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-port-fishery-blockade-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Port Access & Fishery Total Blockade Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (port/fishery cohort)',
+    location: 'Gaza fishing port / Mediterranean fishing zone',
+    summary:
+      'OCHA, FAO, and multi-source reporting document total or near-total closure of Gaza port fishing access after October 7 — collapsing a primary protein and livelihood source for civilians including children, distinct from the fishing-fleet destruction card that tracks boat/gear losses.',
+    evidence:
+      'OCHA maritime-access updates, FAO food-security notes, and multi-outlet fishery-closure coverage establish multi-source port/fishery access denial. Exact sea-day counts evolve; multi-source wartime fishery access collapse is the claim.',
+    sources: [
+      { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
+      { label: 'FAO food-security materials', url: 'https://www.fao.org' },
+      { label: 'Multi-outlet Gaza fishery blockade coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'oct7-dual-national-civilians-killed-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Dual-National Civilians Killed Pattern (2023)',
+    date: 'October 7, 2023 (dual-national cohort)',
+    location: 'Israeli kibbutzim, towns, and Nova festival sites',
+    summary:
+      'Israeli government fatality lists and multi-source reporting document dual-national civilians (U.S., French, Thai, and other nationals) killed during the October 7 multi-site assault — expanding the civilian-harm record beyond Israeli citizens alone for non-selective documentation.',
+    evidence:
+      'Israeli government named fatality lists, multi-source foreign-ministry statements, and multi-outlet dual-national death coverage establish multi-source international civilian deaths on October 7. Exact nationality tallies refine over time; multi-source dual-national civilian deaths is the claim.',
+    sources: [
+      { label: 'Israeli government fatality public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet dual-national October 7 coverage', url: 'https://apnews.com' },
+      { label: 'U.S. State Department consular materials', url: 'https://www.state.gov' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-journalists-family-members-killed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Journalists\' Family Members Killed Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (journalist-family cohort)',
+    location: 'Gaza Strip journalist family residences',
+    summary:
+      'CPJ, UNESCO, and multi-source reporting document repeated killings of journalists\' family members — including children — in residential strikes, a protected-person adjacent harm pattern distinct from the aggregate journalists-killed card that tracks media workers themselves.',
+    evidence:
+      'CPJ family-member tallies, multi-source journalist-family case reporting, and multi-outlet coverage establish multi-source killings of journalists\' relatives. Exact counts evolve; multi-source recurrent journalist-family civilian deaths is the claim.',
+    sources: [
+      { label: 'CPJ journalist casualty materials', url: 'https://cpj.org' },
+      { label: 'UNESCO press-freedom materials', url: 'https://www.unesco.org' },
+      { label: 'Multi-outlet journalist family death coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'CPJ public updates', url: 'https://cpj.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -7477,6 +7558,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['rockets', 'northern-israel', 'civilians', 'children', 'israel'],
   },
+
+  {
+    id: 'tl-gaza-port-fishery-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Port & Fishery Blockade Pattern',
+    description: 'OCHA/FAO multi-source documentation of total or near-total closure of Gaza fishing access after October 7.',
+    source: 'OCHA / FAO / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-port-fishery-blockade-pattern-2023-2025',
+      'gaza-fishing-fleet-destruction-pattern-2023-2025',
+      'gaza-starvation-ipc-phases-2024-2025',
+    ],
+    tags: ['fishery', 'port', 'food', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-oct7-dual-nationals-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Dual-National Civilians Killed Pattern',
+    description: 'Multi-source documentation of dual-national civilians killed during the October 7 multi-site assault.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-dual-national-civilians-killed-pattern-2023',
+      'oct7-hamas-attack-2023',
+      'october-7-nova-festival-2023',
+    ],
+    tags: ['dual-nationals', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-journalist-families-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: "Gaza Journalists' Family Members Killed Pattern",
+    description: 'CPJ multi-source documentation of repeated killings of journalists\' family members including children.',
+    source: 'CPJ / UNESCO / multi-outlet',
+    sourceUrl: 'https://cpj.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-journalists-family-members-killed-pattern-2023-2025',
+      'gaza-journalists-killed-pattern-2023-2025',
+      'gaza-children-killed-pattern-2023-2025',
+    ],
+    tags: ['journalists', 'families', 'children', 'civilians', 'gaza'],
+  },
+
+
 
 
 
