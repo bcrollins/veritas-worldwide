@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:51:24.016Z",
-  "claimCount": 543,
+  "generatedAt": "2026-07-23T10:53:56.215Z",
+  "claimCount": 552,
   "tierHistogram": {
-    "well_attested": 215,
-    "verified": 195,
+    "well_attested": 219,
+    "verified": 199,
     "contested": 47,
-    "interpretive": 57,
+    "interpretive": 58,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 24
@@ -383,6 +383,13 @@
       "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
+      "id": "ane-tel-dan-bytdwd-reading",
+      "claim": "The Tel Dan stele’s bytdwd reading is widely accepted as “House of David,” though minority alternative readings exist and must be labeled as such.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave50.ts"
+    },
+    {
       "id": "ane-tel-dan-house-of-david",
       "claim": "The Tel Dan stele’s “House of David” reading is the strongest extra-biblical epigraphic control for a Davidic dynasty name in the 9th century BCE context.",
       "tier": "verified",
@@ -563,6 +570,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
+      "id": "arch-herodium-upper-palace",
+      "claim": "Herodium’s upper palace-fortress cylinder and associated structures document elite Herodian military-residential architecture overlooking the Judean desert edge.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave50.ts"
     },
     {
       "id": "arch-hippos-sussita",
@@ -1125,6 +1139,13 @@
       "file": "src/data/recordOfJesusChristWave46.ts"
     },
     {
+      "id": "cosmo-omega-lambda",
+      "claim": "Late-time acceleration measurements and CMB fits constrain a dominant dark-energy density parameter Ω_Λ ≈ 0.7 in flat ΛCDM baselines.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave50.ts"
+    },
+    {
       "id": "cosmo-omega-matter",
       "claim": "Large-scale structure and CMB fits constrain the total matter density parameter Ω_m near ~0.3 in flat ΛCDM baselines.",
       "tier": "verified",
@@ -1550,6 +1571,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
+      "id": "ec-polycarp-philippians-reception",
+      "claim": "Polycarp’s Philippians shows early reception of Paul and other NT writings as authoritative for church order and ethics in the early 2nd century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave50.ts"
     },
     {
       "id": "ec-protevangelium-james",
@@ -2126,6 +2154,13 @@
       "file": "src/data/recordOfJesusChristWave15.ts"
     },
     {
+      "id": "hj-tax-collectors-core",
+      "claim": "Jesus’ association with tax collectors is multiply attested in Synoptic tradition and is widely treated as historically distinctive given the profession’s social stigma.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave50.ts"
+    },
+    {
       "id": "hj-temple-action",
       "claim": "An action by Jesus in the Temple (disruption of commerce / symbolic demonstration) is multiply attested; interpretation ranges from prophetic sign to failed revolt cue.",
       "tier": "well_attested",
@@ -2313,6 +2348,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
+      "id": "mod-fredriksen-from-jesus-to-christ",
+      "claim": "Paula Fredriksen’s From Jesus to Christ maps trajectories from the historical Jesus to early christological development within Jewish and Roman contexts.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave50.ts"
     },
     {
       "id": "mod-fredriksen-when-christians",
@@ -2663,6 +2705,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave19.ts"
+    },
+    {
+      "id": "nc-lucian-christians-frame",
+      "claim": "Lucian’s satirical frame treats Christians as gullible followers of a crucified sophist — elite mockery evidence for known Christian devotion in the 2nd century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave50.ts"
     },
     {
       "id": "nc-lucian-peregrinus",
@@ -3393,6 +3442,13 @@
       "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
+      "id": "nt-vulgate-jerome",
+      "claim": "Jerome’s Vulgate became the dominant Latin Bible of the medieval West; critical editions distinguish Vulgate text forms from earlier Vetus Latina strata.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave50.ts"
+    },
+    {
       "id": "nt-western-non-interpolations",
       "claim": "Westcott-Hort’s “Western non-interpolations” hypothesis treated certain shorter Western readings (esp. in Luke 24) as original against longer Alexandrian forms; modern editors largely reverse or qualify that preference.",
       "tier": "well_attested",
@@ -3713,6 +3769,13 @@
       "tier": "well_attested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave36.ts"
+    },
+    {
+      "id": "st-qumran-pesharim",
+      "claim": "Qumran pesharim (continuous commentaries) interpret prophetic books as fulfilled in the community’s history — primary evidence of Second Temple exegetical method.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave50.ts"
     },
     {
       "id": "st-roman-census-practices",
