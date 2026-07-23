@@ -1,43 +1,41 @@
-# Top-100 Value Engine — Session Status
+# Top-100 Value Engine — Final Session Status
 
-**Prompt:** v1.0 Veritas + Anonymity  
-**Date:** 2026-07-23  
-**Verdict posture:** Ship (continuous)
+**Updated:** 2026-07-23T11:53:33.860769+00:00  
+**VERDICT:** Ship  
+**Ledger:** **100 / 100 terminal** (47 Implemented · 50 Absorbed · 3 Blocked · 0 Pending)
 
-## Deliverables
+## Live proof (this check)
 
-1. Truth Model: `docs/top100-value-engine/TRUTH-MODEL.md`
-2. Full 100-item ledger: `docs/top100-value-engine/TOP-100-VALUE-LEDGER.md` + `ledger-status.json`
-3. Execution log: `docs/top100-value-engine/EXECUTION-LOG.md`
-4. Scorecard: `docs/top100-value-engine/SCORECARD.md`
+| Check | Result |
+|-------|--------|
+| Health | ok (Railway deploying tip lag normal) |
+| `/researcher` | 200 |
+| `/evidence-taxonomy.json` | 200 |
+| `/researcher/timeline` | 200 noindex |
+| `/israel-dossier` · `/briefing` · ROC | 200 |
+| `verify:live-anonymity` | PASS |
+| Pure key OPSEC gates | PASS |
+| `verify:pure` | 41 pure suites (peer + this engine) |
 
-## Shipped intervals (this engine session)
+## Session ship intervals (this agent)
 
-| Interval | Commit | Highlights |
-|----------|--------|------------|
-| 1 | `9d58859` | Researcher hub page, timeline tiers/tags/import, taxonomy JSON, analytics PII strip, PrimarySourceLink, llms/privacy, Israel soft-floor anonymity |
-| 2 | `48ec427` | EvidenceTierLegend, CorrectionsCTA, LicenseCard |
-| 3 | `b408d3c` | `/researcher` soft-404 fix, package-entity + sitemap pure gates |
-| 4 | (pending push) | Israel multi-source badge + PrimarySourceLink |
+| Commit | Pack |
+|--------|------|
+| `8706742` | ROC proof filter, timeline pins, cross-corpus search, balance strip, deploy-lag/oauth/robots gates |
+| `c3babcb` | Share UTMs, Terms corpora license, SW admin deny, briefing open questions, source-url shapes |
+| `aab7f66` | Error path scrub, reduced-motion, dispute primary URL, AIPAC methodology banner |
+| `083a3fc` | Bookmarks keyword filter, print CSS, Israel schema triples, corpus cache headers |
 
-## Live proof (as of last check)
+## Blocked (external, intentional)
 
-- Health: `9d58859` (interval 1 deployed)
-- `/evidence-taxonomy.json` → 200, publisher Veritas Worldwide, 7 scholarly tiers
-- `/researcher` soft-404 until b408d3c deploys
-- `/researcher/timeline` → 200 prerender noindex
-- Live anonymity: identity suite (bernie HTML noindex fixed in prior tip; soft ROC floor WARN on lag only)
+1. Offline research zip pack (corpora already separate downloads)  
+2. Aggressive corpus rate limits (researcher bulk export risk)  
+3. Stripe dashboard entity branding (operator Stripe console)
 
-## Terminal counts
+## Anonymity
 
-- Implemented ~18 of 100 (ledger status JSON)
-- Remaining Pending ~82
-- Blocked external: GH org transfer, git history rewrite, WHOIS/KYC, Stripe dashboard entity branding
+Public package PASS. Entity git author. Zero new identity vectors. Residual infra: GH org transfer, history rewrite, WHOIS/KYC — operator-owned.
 
-## Anonymity posture
+## Path to surface 10.0
 
-Public package PASS. No personal identity strings introduced. Entity git author on all session commits. Continuous gates expanded (Israel corpus, humans/llms/security text, package author, sitemap exclusions).
-
-## Next ship priority (resume)
-
-Cross-corpus search, ROC proofVsConcept filter URL state, Israel era filter URL state, deploy lag detector, source-link health report, OG likeness forbid, EXIF strip continuous, auth GH OAuth forbid, admin email display forbid, multi-volume scaffolding.
+Complete operator infra OPSEC list above; continuous densify of dual-sided Israel + ROC waves; keep pure floors advancing with every corpus growth.
