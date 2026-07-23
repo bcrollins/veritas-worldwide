@@ -529,3 +529,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2146+ |
 
+
+## Interval densify — tip post-2211 childhood vaccine densify + water treatment / Lod / packing-box theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza polio/BCG/DTaP · hostage positions-under-bombardment/scooter-install/gag-blindfold · WB arugula/ophthalmoscope/fennel-seedlings |
+| VI | water treatment · Lod · grape packing-box theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2157+ |
+
