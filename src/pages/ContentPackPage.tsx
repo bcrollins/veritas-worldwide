@@ -467,6 +467,8 @@ export default function ContentPackPage() {
             <a href="/brand-kit/04-social/whatsapp-cover.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">WhatsApp →</a>
             <a href="/brand-kit/04-social/video-end-card.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Video end →</a>
             <a href="/brand-kit/07-docs/bios.json" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Bios JSON →</a>
+            <a href="/brand-kit/04-social/linkedin-post.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">LinkedIn post →</a>
+            <a href="/brand-kit/04-social/facebook-post.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Facebook post →</a>
           </div>
         </div>
       </section>
