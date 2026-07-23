@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T23:33:55.024Z",
+  "generatedAt": "2026-07-23T07:02:03.360Z",
   "count": 94,
   "profiles": [
     {
@@ -396,17 +396,21 @@
     {
       "id": "marco-rubio",
       "name": "Marco Rubio",
-      "title": "U.S. Senator (R-FL)",
+      "title": "U.S. Senator (R-FL); Secretary of State (2025–)",
       "category": "politician",
-      "summary": "Senator from Florida. Secretary of State under Trump. Hawkish positions on foreign policy and Middle East.",
+      "summary": "Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025). Structural executive enablement of U.S.–Israel security relationship. Primary: OpenSecrets, Senate/State record, CRS RL33222.",
       "photo": "/profiles/marco-rubio.jpg",
       "url": "https://veritasworldwide.com/profile/marco-rubio",
       "bioguideId": "R000595",
       "tags": [
         "Senator",
         "Secretary of State",
+        "Pro-Israel",
+        "AIPAC",
         "Florida",
-        "Republican"
+        "Republican",
+        "Iran Sanctions",
+        "Iron Dome"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -569,21 +573,26 @@
     {
       "id": "kamala-harris",
       "name": "Kamala Harris",
-      "title": "49th Vice President",
+      "title": "49th U.S. Vice President (2021–2025); 2024 Democratic presidential nominee",
       "category": "politician",
-      "summary": "Vice President under Biden. Former California Attorney General. Pro-Israel voting record.",
+      "summary": "49th Vice President (2021–2025) under Joe Biden and 2024 Democratic presidential nominee. Former U.S. Senator (D-CA), California Attorney General, and San Francisco District Attorney. Executive-chain enablement for continuous U.S. security assistance to Israel during the post–October 7 Gaza war (MOU-baseline FMF + wartime packages; CRS RL33222). Documented pro-Israel PAC support on OpenSecrets Senate cycles. Integrity Score docket: dual-cited campaign falsehoods on Project 2025 pregnancy monitoring (PolitiFact False) and combat-zone troop presence (PolitiFact Mostly False).",
       "photo": "/profiles/kamala-harris.jpg",
       "url": "https://veritasworldwide.com/profile/kamala-harris",
       "bioguideId": "H001075",
       "tags": [
         "Vice President",
-        "California",
+        "Presidential Nominee 2024",
+        "Pro-Israel",
         "Democrat",
-        "Pro-Israel"
+        "California",
+        "FMF",
+        "Gaza War",
+        "AIPAC",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "barack-obama",
@@ -705,16 +714,17 @@
     {
       "id": "john-bolton",
       "name": "John Bolton",
-      "title": "Former National Security Advisor",
+      "title": "Former U.S. National Security Advisor; UN Ambassador",
       "category": "politician",
-      "summary": "Trump National Security Advisor 2018-2019. Prominent neoconservative. Advocate for military intervention in Middle East.",
+      "summary": "Trump National Security Advisor (2018–2019) and long-time neoconservative hawk. Public advocate for maximal U.S. support for Israeli security positions and hard line on Iran. Structural executive enablement during embassy/Golan era adjacency. Primary: White House record, public advocacy, CRS context.",
       "photo": "/profiles/john-bolton.jpg",
       "url": "https://veritasworldwide.com/profile/john-bolton",
-      "bioguideId": "B000611",
+      "bioguideId": null,
       "tags": [
         "National Security Advisor",
         "Neoconservative",
-        "War Hawk",
+        "Pro-Israel",
+        "Iran Hawk",
         "Republican"
       ],
       "integrityScore": null,
@@ -724,17 +734,20 @@
     {
       "id": "mike-pompeo",
       "name": "Mike Pompeo",
-      "title": "Former Secretary of State",
+      "title": "Former U.S. Secretary of State; CIA Director",
       "category": "politician",
-      "summary": "Trump Secretary of State 2018-2021. CIA Director 2017-2018. Hawkish foreign policy stance on Iran and Middle East.",
+      "summary": "Trump Secretary of State (2018–2021) and CIA Director. Principal diplomatic executor of Jerusalem embassy move, Golan recognition, and Abraham Accords era policy. Structural executive enablement of Israeli government diplomatic priorities. Primary: State Department record, White House proclamations.",
       "photo": "/profiles/mike-pompeo.jpg",
       "url": "https://veritasworldwide.com/profile/mike-pompeo",
-      "bioguideId": "P000602",
+      "bioguideId": null,
       "tags": [
         "Secretary of State",
         "CIA Director",
-        "Kansas",
-        "Republican"
+        "Pro-Israel",
+        "Abraham Accords Era",
+        "Republican",
+        "Golan",
+        "Jerusalem"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -743,17 +756,19 @@
     {
       "id": "antony-blinken",
       "name": "Antony Blinken",
-      "title": "Secretary of State",
+      "title": "U.S. Secretary of State (2021–2025)",
       "category": "politician",
-      "summary": "Biden Secretary of State. Career foreign service officer. Strong pro-Israel positions.",
+      "summary": "Biden-Harris Secretary of State during the post–October 7 Gaza war. Principal diplomatic steward of continuous U.S. munitions transfers and diplomatic cover for Israeli wartime operations while briefly pausing some MK-84 deliveries over civilian-casualty concerns. Structural executive enablement of the aid/munitions pipeline. Primary: State Department, CRS RL33222, contemporaneous munitions reporting.",
       "photo": "/profiles/antony-blinken.svg",
       "url": "https://veritasworldwide.com/profile/antony-blinken",
       "bioguideId": null,
       "tags": [
         "Secretary of State",
-        "Democrat",
-        "Foreign Service",
-        "Pro-Israel"
+        "Pro-Israel",
+        "Biden Administration",
+        "Munitions Transfers",
+        "Gaza War",
+        "FMF"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -762,22 +777,23 @@
     {
       "id": "ron-desantis",
       "name": "Ron DeSantis",
-      "title": "Governor of Florida",
+      "title": "Governor of Florida (R); former U.S. Representative",
       "category": "politician",
-      "summary": "Governor of Florida. 2024 presidential candidate. Strong pro-Israel and religious right alignment.",
+      "summary": "Florida governor and former House member. High-visibility Republican on Israel solidarity legislation and state-level anti-BDS / campus antisemitism measures. House tenure included pro-Israel security voting. Primary: Florida legislation, OpenSecrets House record, contemporaneous statements.",
       "photo": "/profiles/ron-desantis.jpg",
       "url": "https://veritasworldwide.com/profile/ron-desantis",
-      "bioguideId": "D000621",
+      "bioguideId": null,
       "tags": [
         "Governor",
-        "Presidential Candidate",
         "Florida",
         "Republican",
-        "Pro-Israel"
+        "Pro-Israel",
+        "Anti-BDS",
+        "Campus Policy"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "nikki-haley",
@@ -824,16 +840,17 @@
       "name": "Elizabeth Warren",
       "title": "U.S. Senator (D-MA)",
       "category": "politician",
-      "summary": "Senator from Massachusetts. Consumer protection advocate. Progressive positions on various issues.",
+      "summary": "Massachusetts Democrat progressive on domestic policy who has supported Israel security aid baseline while calling for greater civilian protection and limited conditionality rhetoric after October 7. Documents a middle-progressive Senate posture. Primary: OpenSecrets, Senate record, CRS RL33222.",
       "photo": "/profiles/elizabeth-warren.jpg",
       "url": "https://veritasworldwide.com/profile/elizabeth-warren",
       "bioguideId": "W000817",
       "tags": [
         "Senator",
-        "Massachusetts",
         "Democrat",
+        "Massachusetts",
         "Progressive",
-        "Consumer Protection"
+        "Pro-Israel Baseline",
+        "Conditionality Rhetoric"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -844,16 +861,17 @@
       "name": "Rand Paul",
       "title": "U.S. Senator (R-KY)",
       "category": "politician",
-      "summary": "Libertarian-leaning Senator from Kentucky. Skeptical of foreign interventionism. Son of Ron Paul.",
+      "summary": "Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Primary: Senate roll calls, OpenSecrets, official statements. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).",
       "photo": "/profiles/rand-paul.jpg",
       "url": "https://veritasworldwide.com/profile/rand-paul",
       "bioguideId": "P000603",
       "tags": [
         "Senator",
-        "Libertarian",
+        "Non-Interventionist",
         "Kentucky",
         "Republican",
-        "Non-interventionist"
+        "Aid Conditionality",
+        "Foreign Aid Skeptic"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -864,16 +882,18 @@
       "name": "Ilhan Omar",
       "title": "U.S. Representative (D-MN)",
       "category": "politician",
-      "summary": "Representative from Minnesota. Progressive voice. Critical of Israeli occupation and US foreign policy.",
+      "summary": "Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Primary: OpenSecrets, House record, FEC IE context.",
       "photo": "/profiles/ilhan-omar.jpg",
       "url": "https://veritasworldwide.com/profile/ilhan-omar",
       "bioguideId": "O000173",
       "tags": [
         "Representative",
+        "Squad",
         "Minnesota",
         "Democrat",
-        "Progressive",
-        "Palestinian Rights Advocate"
+        "Aid Conditionality",
+        "UDP Target",
+        "Ceasefire Advocate"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -884,16 +904,18 @@
       "name": "Rashida Tlaib",
       "title": "U.S. Representative (D-MI)",
       "category": "politician",
-      "summary": "Representative from Michigan. First Palestinian-American in Congress. Strong advocate for Palestinian rights.",
+      "summary": "Michigan Democrat and Squad member; leading House progressive for Gaza ceasefire and Israel-aid conditionality. Frequently targeted by AIPAC/UDP-aligned independent expenditures. Documents the progressive opposition pole to bipartisan unconditional-aid orthodoxy. Primary: OpenSecrets, House record, FEC IE context.",
       "photo": "/profiles/rashida-tlaib.jpg",
       "url": "https://veritasworldwide.com/profile/rashida-tlaib",
       "bioguideId": "T000481",
       "tags": [
         "Representative",
+        "Squad",
         "Michigan",
         "Democrat",
-        "Palestinian-American",
-        "Palestinian Rights"
+        "Aid Conditionality",
+        "Ceasefire Advocate",
+        "UDP Target"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -904,16 +926,18 @@
       "name": "Alexandria Ocasio-Cortez",
       "title": "U.S. Representative (D-NY)",
       "category": "politician",
-      "summary": "Progressive Representative from New York. Vocal critic of Israeli occupation. Member of Squad.",
+      "summary": "New York Democrat and Squad standard-bearer. High-visibility progressive for Gaza ceasefire and Israel-aid conditionality; frequent target of pro-Israel Super PAC politics. Maps the progressive opposition pole to bipartisan unconditional-aid orthodoxy. Primary: OpenSecrets, House record.",
       "photo": "/profiles/aoc.jpg",
       "url": "https://veritasworldwide.com/profile/aoc",
       "bioguideId": "O000172",
       "tags": [
         "Representative",
+        "Squad",
         "New York",
         "Democrat",
-        "Progressive",
-        "Palestinian Rights"
+        "Aid Conditionality",
+        "Ceasefire Advocate",
+        "UDP Target"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -922,17 +946,18 @@
     {
       "id": "matt-gaetz",
       "name": "Matt Gaetz",
-      "title": "U.S. Representative (R-FL)",
+      "title": "Former U.S. Representative (R-FL)",
       "category": "politician",
-      "summary": "Representative from Florida. Conservative firebrand. Controversial figure.",
+      "summary": "Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Primary: OpenSecrets, House record.",
       "photo": "/profiles/matt-gaetz.jpg",
       "url": "https://veritasworldwide.com/profile/matt-gaetz",
       "bioguideId": "G000578",
       "tags": [
-        "Representative",
+        "Former Representative",
+        "Freedom Caucus",
+        "Pro-Israel",
         "Florida",
         "Republican",
-        "Conservative",
         "Trump Ally"
       ],
       "integrityScore": null,
@@ -942,18 +967,20 @@
     {
       "id": "jim-jordan",
       "name": "Jim Jordan",
-      "title": "U.S. Representative (R-OH)",
+      "title": "U.S. Representative (R-OH); House Judiciary Chair",
       "category": "politician",
-      "summary": "Representative from Ohio. House Judiciary Chairman. Trump ally and election denier.",
+      "summary": "Ohio Republican, Freedom Caucus founder, House Judiciary Chair. Consistent pro-Israel security voter and high-visibility Trump ally. Documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, House record, CRS RL33222.",
       "photo": "/profiles/jim-jordan.jpg",
       "url": "https://veritasworldwide.com/profile/jim-jordan",
-      "bioguideId": "J000289",
+      "bioguideId": "J000295",
       "tags": [
         "Representative",
+        "Freedom Caucus",
+        "Pro-Israel",
+        "AIPAC",
         "Ohio",
         "Republican",
-        "Trump Ally",
-        "Conservative"
+        "Judiciary Chair"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -1005,17 +1032,19 @@
     {
       "id": "kevin-mccarthy",
       "name": "Kevin McCarthy",
-      "title": "Former House Speaker",
+      "title": "Former Speaker of the House (R-CA)",
       "category": "politician",
-      "summary": "Former House Speaker and Representative from California. Ousted in 2023. Trump ally.",
+      "summary": "House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, Speakership record, CRS RL33222.",
       "photo": "/profiles/kevin-mccarthy.jpg",
       "url": "https://veritasworldwide.com/profile/kevin-mccarthy",
       "bioguideId": "M001165",
       "tags": [
         "Former Speaker",
+        "Pro-Israel",
+        "AIPAC",
         "California",
         "Republican",
-        "Trump Ally"
+        "Institutional Enablement"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -1070,15 +1099,18 @@
       "name": "John Fetterman",
       "title": "U.S. Senator (D-PA)",
       "category": "politician",
-      "summary": "Senator from Pennsylvania elected 2022. Former Mayor of Braddock. Progressive voice.",
+      "summary": "Pennsylvania Democrat and high-visibility wartime advocate for continued Israel military aid against progressive conditionality. Documented pro-Israel PAC support (OpenSecrets). Maps the bipartisan Senate floor for supplemental packages after October 7. Primary: OpenSecrets, Senate record, contemporaneous statements.",
       "photo": "/profiles/john-fetterman.jpg",
       "url": "https://veritasworldwide.com/profile/john-fetterman",
       "bioguideId": "F000479",
       "tags": [
         "Senator",
+        "Pro-Israel",
+        "AIPAC",
         "Pennsylvania",
         "Democrat",
-        "Progressive"
+        "Iron Dome",
+        "FMF"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
@@ -1891,9 +1923,9 @@
     {
       "id": "benjamin-netanyahu",
       "name": "Benjamin Netanyahu",
-      "title": "Prime Minister of Israel",
+      "title": "Prime Minister of Israel (multiple terms; wartime PM post–Oct 7)",
       "category": "foreign-agent",
-      "summary": "Longest-serving Israeli prime minister and wartime head of government after October 7, 2023. Subject of an ICC arrest warrant (November 2024) for alleged war crimes and crimes against humanity, including starvation as a method of warfare. Ultimate political authority over IDF operations and aid-access policy during the Gaza war. Primary Israeli counterpart for U.S. military-aid and weapons transfers.",
+      "summary": "Longest-serving Israeli prime minister and wartime head of government after October 7, 2023. Subject of an ICC arrest warrant (November 2024) for alleged war crimes and crimes against humanity, including starvation as a method of warfare. Ultimate political authority over IDF operations and COGAT aid-access policy during the Gaza war. Primary Israeli counterpart for U.S. military-aid and weapons transfers under the MOU and wartime supplementals. Primary: ICC filings, ICJ orders, Israeli government record, CRS RL33222.",
       "photo": "/profiles/benjamin-netanyahu.svg",
       "url": "https://veritasworldwide.com/profile/benjamin-netanyahu",
       "bioguideId": null,
@@ -1903,11 +1935,12 @@
         "ICC Warrant",
         "Gaza War",
         "Likud",
-        "U.S. Aid Recipient Leadership"
+        "U.S. Aid Recipient Leadership",
+        "ICJ"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 50,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "yoav-gallant",
