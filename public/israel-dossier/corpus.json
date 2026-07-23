@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:02:51.810Z",
+  "generatedAt": "2026-07-23T08:03:25.544Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 90,
-    "timelineEvents": 78,
+    "incidents": 91,
+    "timelineEvents": 79,
     "actors": 47,
     "moneyTrailNodes": 29,
-    "historicalWarCrimesPack": 76,
+    "historicalWarCrimesPack": 77,
     "legalCases": 19,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 30
+      "post-oct7": 31
     },
     "incidentsByTier": {
-      "verified": 88,
+      "verified": 89,
       "circumstantial": 2
     },
-    "childrenTagged": 75,
-    "civiliansTagged": 88,
+    "childrenTagged": 76,
+    "civiliansTagged": 89,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3163,6 +3163,27 @@
       ]
     },
     {
+      "id": "tl-gaza-evacuation-orders-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Mass Evacuation Orders — Gaza Displacement Pattern",
+      "description": "Repeated IDF evacuation orders drive multi-source displacement of >1M into shrinking zones.",
+      "source": "OCHA / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-evacuation-orders-pattern-2023-2024",
+        "al-mawasi-safe-zone",
+        "rafah-tent-camp-2024"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "displacement",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-nova-festival-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -6265,6 +6286,52 @@
       "tier": "verified",
       "casualties": {
         "killed": 10000
+      }
+    },
+    {
+      "id": "gaza-evacuation-orders-pattern-2023-2024",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Mass Evacuation Orders Pattern (2023–2024)",
+      "date": "October 2023 – 2024",
+      "location": "Gaza Strip (north-to-south displacement corridor)",
+      "summary": "Israeli military issued repeated mass evacuation orders covering large portions of Gaza's population, producing multi-source documented displacement of over a million people into shrinking 'safe' zones that were subsequently struck (including al-Mawasi and Rafah cards). This pattern card isolates the displacement architecture as a continuous enablement of civilian-harm outcomes.",
+      "evidence": "IDF evacuation maps/leaflets, UN OCHA displacement tallies exceeding 1.5M, and multi-source reporting that designated safe corridors and zones experienced lethal strikes. The claim is the multi-source mass-displacement pattern, not any single order.",
+      "sources": [
+        {
+          "label": "UN OCHA displacement reporting",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "OHCHR OPT materials",
+          "url": "https://www.ohchr.org/en/countries/palestine"
+        },
+        {
+          "label": "Multi-outlet evacuation-order coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
       }
     },
     {

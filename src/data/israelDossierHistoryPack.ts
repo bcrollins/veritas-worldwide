@@ -2033,6 +2033,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1000 },
   },
 
+  {
+    id: 'gaza-evacuation-orders-pattern-2023-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Mass Evacuation Orders Pattern (2023–2024)',
+    date: 'October 2023 – 2024',
+    location: 'Gaza Strip (north-to-south displacement corridor)',
+    summary:
+      'Israeli military issued repeated mass evacuation orders covering large portions of Gaza\'s population, producing multi-source documented displacement of over a million people into shrinking \'safe\' zones that were subsequently struck (including al-Mawasi and Rafah cards). This pattern card isolates the displacement architecture as a continuous enablement of civilian-harm outcomes.',
+    evidence:
+      'IDF evacuation maps/leaflets, UN OCHA displacement tallies exceeding 1.5M, and multi-source reporting that designated safe corridors and zones experienced lethal strikes. The claim is the multi-source mass-displacement pattern, not any single order.',
+    sources: [
+      { label: 'UN OCHA displacement reporting', url: 'https://www.ochaopt.org' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet evacuation-order coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -2838,6 +2866,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['israel-lebanon-ground-offensive-2024', 'nasrallah-beirut-strike-2024', 'lebanon-pager-explosions-2024'],
     tags: ['civilians', 'children', 'lebanon', 'hezbollah'],
+  },
+
+  {
+    id: 'tl-gaza-evacuation-orders-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Mass Evacuation Orders — Gaza Displacement Pattern',
+    description: 'Repeated IDF evacuation orders drive multi-source displacement of >1M into shrinking zones.',
+    source: 'OCHA / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-evacuation-orders-pattern-2023-2024', 'al-mawasi-safe-zone', 'rafah-tent-camp-2024'],
+    tags: ['civilians', 'children', 'displacement', 'gaza'],
   },
 
 ]
