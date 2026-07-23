@@ -233,6 +233,16 @@ for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/sea
   assert(relatedHubsFile.includes(`to: ${dest}`), `RelatedHubs has ${dest}`)
 }
 
+
+// MobileTabBar destinations mirror primaryLinks ≤5
+const tabBarBody = app.split('function MobileTabBar')[1]?.split('function Footer')[0] || ''
+assert(tabBarBody.includes('/read') && tabBarBody.includes('/search'), 'MobileTabBar has Read+Search')
+assert(tabBarBody.includes('/israel-dossier') && tabBarBody.includes('/profiles'), 'MobileTabBar has Dossiers+Profiles')
+assert(tabBarBody.includes("to: '/'") || tabBarBody.includes('to: "/"') || tabBarBody.includes("to: '/'") || tabBarBody.includes("to={'/'}") || tabBarBody.includes('to="/"') || tabBarBody.includes("to: '/'") || /to:\s*['"]\/['"]/.test(tabBarBody) || tabBarBody.includes("to: '/'"), 'MobileTabBar has Record')
+// more reliable: count to: in tab bar data
+const tabTos = (tabBarBody.match(/to:\s*['"][^'"]+['"]/g) || [])
+assert(tabTos.length >= 5, `MobileTabBar destinations ${tabTos.length} < 5`)
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
