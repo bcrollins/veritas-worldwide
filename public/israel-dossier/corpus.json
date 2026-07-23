@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:04:16.607Z",
+  "generatedAt": "2026-07-23T09:05:10.653Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 135,
-    "timelineEvents": 123,
+    "incidents": 136,
+    "timelineEvents": 124,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 121,
+    "historicalWarCrimesPack": 122,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 75
+      "post-oct7": 76
     },
     "incidentsByTier": {
-      "verified": 133,
+      "verified": 134,
       "circumstantial": 2
     },
-    "childrenTagged": 111,
-    "civiliansTagged": 133,
+    "childrenTagged": 112,
+    "civiliansTagged": 134,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3620,6 +3620,27 @@
       "tags": [
         "women",
         "maternal",
+        "children",
+        "health",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-mhpss-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza MHPSS System Collapse Pattern",
+      "description": "WHO/UNICEF multi-source documentation of specialized mental-health and psychosocial support capacity collapse under wartime conditions.",
+      "source": "WHO / UNICEF / OCHA",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-mhpss-system-collapse-pattern-2023-2025",
+        "gaza-mental-health-trauma-children-pattern-2023-2025",
+        "gaza-health-system-collapse-2023-2025"
+      ],
+      "tags": [
+        "mental-health",
         "children",
         "health",
         "gaza"
@@ -9043,6 +9064,49 @@
           "type": "photo-essay",
           "label": "Multi-outlet tent camp coverage",
           "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-mhpss-system-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Mental Health & Psychosocial Support System Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (MHPSS cohort)",
+      "location": "Gaza Strip (clinics / shelters / community MHPSS sites)",
+      "summary": "WHO, UNICEF, and multi-source psychosocial reporting document collapse of specialized mental-health and psychosocial support capacity amid mass trauma, staff death/displacement, and facility destruction — a system-level card distinct from the children trauma symptom card. Pattern card for MHPSS infrastructure collapse as a civilian-harm multiplier.",
+      "evidence": "WHO mental-health situation materials, multi-source clinician/NGO reporting, and UNICEF child protection notes establish multi-source MHPSS system collapse. Exact workforce and bed counts evolve; multi-source near-total specialized capacity collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO mental health / emergency materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child protection / MHPSS materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "OCHA humanitarian situation materials",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public mental-health materials",
+          "url": "https://www.who.int"
         }
       ],
       "tier": "verified",

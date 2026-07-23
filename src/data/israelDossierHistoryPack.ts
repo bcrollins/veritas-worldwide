@@ -3249,6 +3249,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-mhpss-system-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Mental Health & Psychosocial Support System Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (MHPSS cohort)',
+    location: 'Gaza Strip (clinics / shelters / community MHPSS sites)',
+    summary:
+      'WHO, UNICEF, and multi-source psychosocial reporting document collapse of specialized mental-health and psychosocial support capacity amid mass trauma, staff death/displacement, and facility destruction — a system-level card distinct from the children trauma symptom card. Pattern card for MHPSS infrastructure collapse as a civilian-harm multiplier.',
+    evidence:
+      'WHO mental-health situation materials, multi-source clinician/NGO reporting, and UNICEF child protection notes establish multi-source MHPSS system collapse. Exact workforce and bed counts evolve; multi-source near-total specialized capacity collapse is the claim.',
+    sources: [
+      { label: 'WHO mental health / emergency materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child protection / MHPSS materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA humanitarian situation materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public mental-health materials', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4704,6 +4731,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['displacement', 'shelter', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-mhpss-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza MHPSS System Collapse Pattern',
+    description: 'WHO/UNICEF multi-source documentation of specialized mental-health and psychosocial support capacity collapse under wartime conditions.',
+    source: 'WHO / UNICEF / OCHA',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-mhpss-system-collapse-pattern-2023-2025',
+      'gaza-mental-health-trauma-children-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+    ],
+    tags: ['mental-health', 'children', 'health', 'gaza'],
+  },
+
 
 
 
