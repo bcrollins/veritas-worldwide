@@ -67,6 +67,8 @@ const floors = [
   { path: 'src/components/DossierHubSpokes.tsx', min: 4, label: 'dossier hub spoke chips' },
   { path: 'src/components/ResearchHubChips.tsx', min: 1, label: 'research hub chips' },
   { path: 'src/pages/NotFoundPage.tsx', min: 2, label: 'soft-404 primary hub chips' },
+  { path: 'src/pages/PersonalTimelinePage.tsx', min: 13, label: 'personal timeline researcher tool' },
+  { path: 'src/pages/VolumeIIHubPage.tsx', min: 5, label: 'volume II scaffold' },
   { path: 'src/components/institute/InstituteLayout.tsx', min: 11, label: 'institute footer nav' },
   { path: 'src/pages/SubscribeSuccessPage.tsx', min: 3, label: 'subscribe success CTAs' },
   { path: 'src/pages/SupportSuccessPage.tsx', min: 4, label: 'membership/donation success CTAs' },
@@ -184,6 +186,8 @@ for (const rel of sub44Files) {
 // Skip-to-content must exist on public, institute, and admin shells with 44px focus targets.
 const skipShells = [
   { path: 'src/App.tsx', target: '#main-content', label: 'public shell' },
+  { path: 'src/pages/PersonalTimelinePage.tsx', min: 13, label: 'personal timeline researcher tool' },
+  { path: 'src/pages/VolumeIIHubPage.tsx', min: 5, label: 'volume II scaffold' },
   { path: 'src/components/institute/InstituteLayout.tsx', target: '#institute-main', label: 'institute shell' },
   { path: 'src/pages/admin/AdminLayout.tsx', target: '#admin-main', label: 'admin shell' },
 ]
