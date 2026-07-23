@@ -164,6 +164,13 @@ assert(idxRecord >= 0 && idxRead > idxRecord, 'footer: Record then Read')
 assert(idxDossiers > idxRead, 'footer: Dossiers after Read (hub order)')
 assert(idxProfiles > idxDossiers, 'footer: Profiles after Dossiers')
 assert(idxSearch > idxProfiles, 'footer: Search after Profiles')
+
+// footer browseLinks destinations include primary hubs
+assert(fb.includes("to: '/'") || fb.includes('to: "/"'), 'footer Record')
+assert(fb.includes("to: '/read'") || fb.includes('to: "/read"'), 'footer Read')
+assert(fb.includes('/israel-dossier'), 'footer Dossiers')
+assert(fb.includes('/profiles'), 'footer Profiles')
+assert(fb.includes('/search'), 'footer Search')
 assert(bookmarks.includes('to="/news"') || bookmarks.includes("to: '/news'"), 'Bookmarks empty includes News')
 assert(search.includes('chapters, profiles, sources, dossiers') || search.includes('placeholder='), 'Search placeholder improved')
 
