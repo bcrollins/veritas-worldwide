@@ -22,7 +22,11 @@ const META_DESCRIPTION_MAX = 160
 interface SEOConfig {
   title: string
   description: string
-  url: string
+  /**
+   * Page URL for og:url + canonical. Optional only for noindex soft-404 / utility
+   * shells that must not invent a self-referential indexable URL.
+   */
+  url?: string
   type?: 'website' | 'article'
   image?: string
   /** Accessible description of the OG/Twitter image (Search Central image SEO). */
@@ -101,10 +105,13 @@ export function setMetaTags(config: SEOConfig): void {
     config.imageAlt?.replace(/\s+/g, ' ').trim() ||
     `${ogTitle} — ${SITE_NAME}`
 
-  // Absolute HTTPS self-referential canonical only (Search Central: consolidate duplicates).
-  const absoluteUrl = url.startsWith('http')
-    ? url
-    : `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`
+  // Absolute HTTPS self-referential canonical only when url provided
+  // (Search Central: consolidate duplicates). Soft-404 / noindex shells may omit url.
+  const absoluteUrl = url
+    ? url.startsWith('http')
+      ? url
+      : `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`
+    : undefined
 
   document.title = title
 
@@ -114,7 +121,6 @@ export function setMetaTags(config: SEOConfig): void {
     'robots': robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     'og:title': ogTitle,
     'og:description': description,
-    'og:url': absoluteUrl,
     'og:type': type,
     'og:site_name': SITE_NAME,
     'og:locale': 'en_US',
@@ -129,6 +135,7 @@ export function setMetaTags(config: SEOConfig): void {
     'twitter:image': ogImage,
     'twitter:image:alt': ogImageAlt,
   }
+  if (absoluteUrl) metas['og:url'] = absoluteUrl
 
   if (type === 'article') {
     if (publishedTime) metas['article:published_time'] = normalizePublicationDate(publishedTime)
@@ -144,14 +151,19 @@ export function setMetaTags(config: SEOConfig): void {
     }
   }
 
-  // Set canonical link
+  // Set or clear canonical link
   let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
-  if (!canonical) {
-    canonical = document.createElement('link')
-    canonical.setAttribute('rel', 'canonical')
-    document.head.appendChild(canonical)
+  if (absoluteUrl) {
+    if (!canonical) {
+      canonical = document.createElement('link')
+      canonical.setAttribute('rel', 'canonical')
+      document.head.appendChild(canonical)
+    }
+    canonical.setAttribute('href', absoluteUrl)
+  } else if (canonical) {
+    // Soft-404 / noindex: do not leave a stale canonical pointing at a real page.
+    canonical.remove()
   }
-  canonical.setAttribute('href', absoluteUrl)
 
   for (const [key, value] of Object.entries(metas)) {
     // article:tag:N → use property, skip numeric suffix for actual attribute
