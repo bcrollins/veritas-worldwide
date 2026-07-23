@@ -1764,6 +1764,58 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 100 },
   },
+  {
+    id: 'kfar-aza-october-7-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Kfar Aza Massacre (October 7, 2023)',
+    date: 'October 7, 2023',
+    location: 'Kfar Aza, southern Israel',
+    summary:
+      'Militants overran Kibbutz Kfar Aza on October 7, killing dozens of civilians and taking hostages. Multi-source reporting documented bodies in homes and streets; depth entry isolates Kfar Aza from the multi-site October 7 card for community-level civilian-harm documentation.',
+    evidence:
+      'Israeli government community casualty lists, forensic reporting, and international press establish Kfar Aza as a primary civilian massacre site. Multi-source community death floor is typically reported in the 50–70 range.',
+    sources: [
+      { label: 'Israeli government October 7 public record', url: 'https://www.gov.il' },
+      { label: 'Britannica — October 7 attacks', url: 'https://www.britannica.com/event/October-7-attacks' },
+      { label: 'UN / multi-source October 7 documentation', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica October 7 attacks', url: 'https://www.britannica.com/event/October-7-attacks' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 62 },
+  },
+  {
+    id: 'taba-hilton-bombing-2004',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Taba Hilton Bombing (2004)',
+    date: 'October 7, 2004',
+    location: 'Taba, Egypt (Sinai / Israel border tourism zone)',
+    summary:
+      'Suicide car bomb at the Taba Hilton killed dozens of mostly Israeli tourists and wounded more. Included for regional terrorism chronology balance alongside occupation-era military-operation entries of the same decade.',
+    evidence:
+      'Egyptian investigations, multi-source press, and Israeli casualty reporting establish the attack and death toll. Perpetrator attribution involves Sinai-based jihadist networks in multi-source accounts.',
+    sources: [
+      { label: 'Britannica / contemporaneous multi-source press index', url: 'https://www.britannica.com' },
+      { label: 'UNISPAL period materials', url: 'https://www.un.org/unispal/' },
+      { label: 'Israeli MFA historical materials', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNISPAL period index', url: 'https://www.un.org/unispal/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 34 },
+  },
 
 ]
 
@@ -2435,6 +2487,30 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['kibbutz-beeri-october-7-2023', 'oct7-hamas-attack-2023', 'october-7-nova-festival-2023'],
     tags: ['civilians', 'children', 'terrorism', 'october-7'],
+  },
+  {
+    id: 'tl-kfar-aza-october-7-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Kfar Aza Massacre — October 7',
+    description: 'Dozens of civilians killed as militants overran the kibbutz; multi-source community death floor.',
+    source: 'Israeli gov / Britannica',
+    sourceUrl: 'https://www.britannica.com/event/October-7-attacks',
+    tier: 'verified',
+    relatedIncidentIds: ['kfar-aza-october-7-2023', 'kibbutz-beeri-october-7-2023', 'oct7-hamas-attack-2023'],
+    tags: ['civilians', 'children', 'terrorism', 'october-7'],
+  },
+  {
+    id: 'tl-taba-hilton-2004',
+    year: '2004',
+    era: 'occupation-1967-2005',
+    title: 'Taba Hilton Bombing — Israeli Tourists Killed',
+    description: 'Suicide car bomb at Taba Hilton kills dozens of mostly Israeli tourists; multi-source death toll.',
+    source: 'Multi-source press / MFA',
+    sourceUrl: 'https://www.un.org/unispal/',
+    tier: 'verified',
+    relatedIncidentIds: ['taba-hilton-bombing-2004'],
+    tags: ['civilians', 'terrorism'],
   },
 
 ]
