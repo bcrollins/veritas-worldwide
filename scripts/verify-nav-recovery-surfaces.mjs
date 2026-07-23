@@ -357,4 +357,10 @@ const nf = read('src/pages/NotFoundPage.tsx')
 assert(nf.includes('/news') && nf.includes('/methodology') && nf.includes('/content-pack'), 'NotFound secondary News/Methodology/Pack')
 assert(nf.includes('PRIMARY_RELATED_HUBS') || nf.includes('PRIMARY_HUBS'), 'NotFound primary hubs source')
 
+
+// Bookmarks empty hubs include Reader + Search recovery
+const bookmarks = read('src/pages/BookmarksPage.tsx')
+assert(bookmarks.includes('bookmarks-empty-hubs'), 'bookmarks-empty-hubs')
+assert(bookmarks.includes('/read') && bookmarks.includes('/search'), 'Bookmarks empty Read+Search')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
