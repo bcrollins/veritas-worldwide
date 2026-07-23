@@ -8,6 +8,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
 } from '../lib/seo'
 
 const a11yFeatures = [
@@ -49,6 +50,28 @@ export default function AccessibilityPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Accessibility', url: `${SITE_URL}/accessibility` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What accessibility standard does Veritas target?',
+          answer:
+            'Veritas Worldwide targets WCAG 2.1 AA for public archive surfaces: contrast, keyboard access, focus visibility, semantic structure, and non-color-only evidence tiers.',
+        },
+        {
+          question: 'Are evidence tiers colorblind-safe?',
+          answer:
+            'Yes. Verified, Circumstantial, and Disputed tiers use color, text labels, and icons together—never color alone—so classifications remain distinguishable for colorblind readers.',
+        },
+        {
+          question: 'Does the site support reduced motion and dark mode?',
+          answer:
+            'Yes. Animations respect prefers-reduced-motion, and dark mode recalculates contrast for evidence tiers, tables, and body text. Font-size controls are available on chapter reading surfaces.',
+        },
+        {
+          question: 'How do I report an accessibility barrier?',
+          answer:
+            'Email rights@veritasworldwide.com or privacy@veritasworldwide.com with the page URL and description of the barrier. We treat accessibility issues as product defects, not edge cases.',
+        },
       ]),
     ])
     return () => {

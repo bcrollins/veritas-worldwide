@@ -2863,6 +2863,58 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/accessibility') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Accessibility', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What accessibility standard does Veritas target?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide targets WCAG 2.1 AA for public archive surfaces: contrast, keyboard access, focus visibility, semantic structure, and non-color-only evidence tiers.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Are evidence tiers colorblind-safe?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Verified, Circumstantial, and Disputed tiers use color, text labels, and icons together—never color alone—so classifications remain distinguishable for colorblind readers.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Does the site support reduced motion and dark mode?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Animations respect prefers-reduced-motion, and dark mode recalculates contrast for evidence tiers, tables, and body text. Font-size controls are available on chapter reading surfaces.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do I report an accessibility barrier?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Email rights@veritasworldwide.com or privacy@veritasworldwide.com with the page URL and description of the barrier. We treat accessibility issues as product defects, not edge cases.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {
