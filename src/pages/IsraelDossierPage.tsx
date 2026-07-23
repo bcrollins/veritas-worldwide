@@ -1143,9 +1143,9 @@ export default function IsraelDossierPage() {
     const m = searchParams.get('media')
     return m === 'video' || m === 'investigation' || m === 'document' || m === 'photo-essay' ? m : 'all'
   })
-  const [incidentSort, setIncidentSort] = useState<'oldest' | 'newest' | 'deaths'>(() => {
+  const [incidentSort, setIncidentSort] = useState<'oldest' | 'newest' | 'deaths' | 'video'>(() => {
     const s = searchParams.get('sort')
-    return s === 'newest' || s === 'deaths' || s === 'oldest' ? s : 'oldest'
+    return s === 'newest' || s === 'deaths' || s === 'oldest' || s === 'video' ? s : 'oldest'
   })
   const [incidentEra, setIncidentEra] = useState<'all' | DossierEra>(() => {
     const e = searchParams.get('era')
@@ -1172,6 +1172,17 @@ export default function IsraelDossierPage() {
   const [deepIncidentId, setDeepIncidentId] = useState<string | null>(() => searchParams.get('incident'))
   const [copyStatus, setCopyStatus] = useState('')
   const deepLinkHandled = useRef(false)
+
+  // Deep-link: #visual-investigations scrolls to VI gallery (shareable researcher entry)
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (window.location.hash === '#visual-investigations') {
+      requestAnimationFrame(() => {
+        document.getElementById('visual-investigations')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+  }, [])
+
   const sourceIndex = useMemo(() => buildSourceIndex(), [])
   const allIncidents = useMemo(
     () => dedupeIncidents([...ISRAEL_DOSSIER_CORE_INCIDENTS, ...EXPANDED_INCIDENTS]),
@@ -1197,6 +1208,12 @@ export default function IsraelDossierPage() {
     })
     return filtered.sort((a, b) => {
       if (incidentSort === 'deaths') {
+        return (b.casualties?.killed ?? 0) - (a.casualties?.killed ?? 0)
+      }
+      if (incidentSort === 'video') {
+        const av = a.multimedia.some((m) => m.type === 'video') ? 1 : 0
+        const bv = b.multimedia.some((m) => m.type === 'video') ? 1 : 0
+        if (bv !== av) return bv - av
         return (b.casualties?.killed ?? 0) - (a.casualties?.killed ?? 0)
       }
       const ya = yearOf(a)
@@ -2170,6 +2187,7 @@ export default function IsraelDossierPage() {
               <option value="oldest">Sort: oldest first (1948→)</option>
               <option value="newest">Sort: newest first</option>
               <option value="deaths">Sort: highest death toll</option>
+              <option value="video">Sort: video evidence first</option>
             </select>
           </label>
           <div className="md:col-span-2 xl:col-span-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
