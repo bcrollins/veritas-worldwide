@@ -274,3 +274,15 @@ Dual recovery: existing `ResearchHubChips` (research drawer family) + `RelatedHu
 ### Multi-agent
 Peer Israel densify (`public/israel-dossier/*`, history pack, VI) never staged. Entity author only. Ship intervals: product → pure → densify locks.
 
+
+## Sprint 9b — keyboard focus + coverage pure (continuation)
+
+| Commit | Unit |
+|--------|------|
+| `426da3c5` | pure: related-hubs-coverage (43 public pages) |
+| `ba087ca3` | pure suite wire → 47 suites |
+| `ffb75216` | RelatedHubs focus-visible rings |
+| `beb562f1` | ResearchHubChips focus-visible |
+| `7e55368e` | DossierHubSpokes focus-visible (all variants) |
+| `de8c944d` / `72fef924` | pure densify locks v18–v19 |
+
