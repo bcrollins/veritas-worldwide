@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import {
   clearMetaTags,
   removeJsonLd,
@@ -11,6 +12,15 @@ import {
   SITE_NAME,
   SITE_URL,
 } from '../lib/seo'
+
+/** Primary + press recovery (≤5) — brand CTAs stay in media-kit-related-hubs row. */
+const MEDIA_KIT_PRIMARY_HUBS: readonly RelatedHub[] = [
+  { to: '/', label: 'Record' },
+  { to: '/read', label: 'Read' },
+  { to: '/about', label: 'About' },
+  { to: '/content-pack', label: 'Content Pack' },
+  { to: '/search', label: 'Search' },
+]
 
 const SHORT_BIO = 'Primary Sources. Public Record. Your Conclusions.'
 
@@ -264,6 +274,12 @@ export default function MediaKitPage() {
                 Usage &amp; legal
               </a>
             </div>
+            <RelatedHubs
+              testId="media-kit-primary-hubs"
+              hubs={MEDIA_KIT_PRIMARY_HUBS}
+              className="mt-4"
+              ariaLabel="Primary archive hubs"
+            />
             {kitSha && (
               <p className="mt-3 break-all font-mono text-[0.65rem] text-ink-muted/70">
                 sha256:{kitSha.slice(0, 24)}…{' '}

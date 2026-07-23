@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs from '../components/RelatedHubs'
 import { chapterMeta } from '../data/chapterMeta'
 import type { LoadedChapter } from '../data/chapterTypes'
 import { CATEGORY_META, type Article } from '../data/articles'
@@ -456,6 +457,13 @@ export default function ReadTheBookPage() {
                       Source Library
                     </Link>
                   </div>
+                  <RelatedHubs
+                    testId="read-related-hubs"
+                    excludeTo="/read"
+                    className="mt-5"
+                    tone="parchment"
+                    ariaLabel="Primary hubs from Read"
+                  />
                 </div>
                 <div className="grid gap-4 border-b border-border px-6 py-6 md:grid-cols-2 md:px-8 xl:grid-cols-4">
                   <ReaderStatCard

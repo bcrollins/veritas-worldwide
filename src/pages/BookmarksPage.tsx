@@ -1,11 +1,21 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import { useAuth } from '../lib/AuthContext'
 import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import { getScopedReadingHistory, type ReadingHistoryRecord } from '../lib/readerState'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+
+/** Recovery when bookmarks gate/queue needs an archive escape hatch (≤5). */
+const BOOKMARKS_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/search', label: 'Search' },
+  { to: '/news', label: 'News' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/content-pack', label: 'Content Pack' },
+]
 
 interface BookmarkCardModel {
   chapter: ChapterMetadata
@@ -203,6 +213,12 @@ export default function BookmarksPage() {
             <p className="mt-4 max-w-3xl font-body text-lg leading-relaxed text-ink-muted">
               Save chapters, track active investigations, and return to the archive without hunting through the table of contents again.
             </p>
+            <RelatedHubs
+              testId="bookmarks-related-hubs"
+              hubs={BOOKMARKS_HUBS}
+              className="mt-5 mb-2"
+              ariaLabel="Archive recovery hubs"
+            />
             {bookmarkCards.length > 0 && (
               <div className="mt-4 mb-8 flex flex-wrap gap-2 border-b border-border pb-8">
                 <label className="inline-flex min-h-[44px] items-center gap-2 font-sans text-[0.65rem] uppercase tracking-wider text-ink-muted">

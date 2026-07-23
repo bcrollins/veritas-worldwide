@@ -146,6 +146,12 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `6e7c8d8` | shrink-0 CTA cluster |
 | recovery | **64 surface needles** |
 
+## Sprint 7 — Remaining surface recovery (SHIPPED)
+- Media Kit / Bookmarks / Profiles / Read / OSINT success / Bernie → RelatedHubs
+- RelatedHubs `tone="dark"` for quarantine show pages
+- Pure recovery **100 surface needles**
+- Peer densify lane unthrashed
+
 ## Pure floor densification wave (post RelatedHubs)
 Locked after platformization so multi-agent densify cannot drift IA:
 - PRIMARY hub labels + exact 5 primaryLinks

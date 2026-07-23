@@ -95,3 +95,13 @@ News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, leg
 62. Israel sticky RelatedHubs (`israel-dossier-related-hubs`)  
 63. Pure: RelatedHubs mount breadth ≥20; DOSSIER_SPOKES + ResearchHubChips path locks  
 64. Live matrix 100% green for shell + dossier family + soft-404 under densify tip  
+
+## Sprint 7 — Remaining surface recovery (SHIPPED 2026-07-23)
+65. Media Kit primary RelatedHubs (`media-kit-primary-hubs`) beside brand CTAs  
+66. Bookmarks RelatedHubs on all auth states (`bookmarks-related-hubs`)  
+67. Profiles hub RelatedHubs exclude self (`profiles-related-hubs`)  
+68. Read hub RelatedHubs exclude self (`read-related-hubs`)  
+69. OSINT success migrated to RelatedHubs + pack download retained  
+70. Bernie quarantine recovery via RelatedHubs `tone="dark"` (`bernie-related-hubs`)  
+71. RelatedHubs platform: `tone` surface | parchment | dark  
+72. Pure recovery suite **100 surface needles**  

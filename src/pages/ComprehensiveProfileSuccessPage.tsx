@@ -1,9 +1,19 @@
 import { useEffect, useMemo } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import { clearMetaTags, removeJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 import { COMPREHENSIVE_PROFILE } from '../lib/constants'
 import { detectStripeReturn, handleStripeReturn, getMarketingAttribution } from '../lib/conversionTracking'
 import { recordAnalyticsEvent } from '../lib/analytics'
+
+/** Post-checkout recovery (≤5) — free archive scent after OSINT order. */
+const OSINT_SUCCESS_HUBS: readonly RelatedHub[] = [
+  { to: '/comprehensive-profile', label: 'Service details' },
+  { to: '/methodology', label: 'Methodology' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+  { to: '/read', label: 'Read' },
+]
 
 /**
  * Post-checkout landing for Comprehensive Online Profile ($499).
@@ -85,34 +95,13 @@ export default function ComprehensiveProfileSuccessPage() {
             Attribution retained for internal analytics only.
           </p>
         )}
-        <div
-          className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center"
-          data-testid="osint-success-related-hubs"
-        >
-          <Link
-            to="/comprehensive-profile"
-            className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold uppercase tracking-wide text-ink hover:border-ink"
-          >
-            Service details
-          </Link>
-          <Link
-            to="/methodology"
-            className="inline-flex min-h-[44px] items-center justify-center px-5 bg-obsidian text-white font-sans text-xs font-semibold uppercase tracking-wide hover:bg-crimson"
-          >
-            Editorial methodology
-          </Link>
-          <Link
-            to="/profiles"
-            className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold uppercase tracking-wide text-ink hover:border-ink"
-          >
-            Free Power Profiles
-          </Link>
-          <Link
-            to="/search"
-            className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold uppercase tracking-wide text-ink hover:border-ink"
-          >
-            Search
-          </Link>
+        <RelatedHubs
+          testId="osint-success-related-hubs"
+          hubs={OSINT_SUCCESS_HUBS}
+          className="justify-center"
+          ariaLabel="Continue after order"
+        />
+        <div className="mt-4 flex justify-center">
           <a
             href="/research-pack.zip"
             download="veritas-research-pack.zip"

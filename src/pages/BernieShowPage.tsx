@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import RelatedHubs from '../components/RelatedHubs'
 import { setMetaTags, clearMetaTags } from '../lib/seo'
 
 /* ─────────────────────────────────────────────
@@ -749,6 +750,21 @@ export default function BernieShowPage() {
               Browse All Episodes
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════ ARCHIVE RECOVERY ═══════════ */}
+      <section className="py-10 px-4 border-t border-neutral-800/50" aria-label="Veritas archive recovery">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-neutral-500 text-xs uppercase tracking-[0.16em] font-semibold mb-4">
+            Continue in the Veritas archive
+          </p>
+          <RelatedHubs
+            testId="bernie-related-hubs"
+            tone="dark"
+            className="justify-center"
+            ariaLabel="Veritas primary hubs"
+          />
         </div>
       </section>
 

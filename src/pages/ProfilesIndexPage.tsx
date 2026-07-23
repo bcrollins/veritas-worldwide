@@ -2,6 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
+import RelatedHubs from '../components/RelatedHubs'
 import { PowerProfile, PROFILES, searchProfiles, getProfilePhoto } from '../data/profileData'
 import { computeIntegrityScore } from '../lib/integrityScore'
 import {
@@ -435,6 +436,14 @@ export default function ProfilesIndexPage(): React.ReactNode {
               Open Israel Dossier
             </Link>
           </div>
+
+          <RelatedHubs
+            testId="profiles-related-hubs"
+            excludeTo="/profiles"
+            className="mt-6"
+            tone="parchment"
+            ariaLabel="Primary hubs from Profiles"
+          />
 
           <div className="grid gap-4 mt-10 sm:grid-cols-2 xl:grid-cols-4">
             <div className="rounded-2xl border border-border bg-surface p-5">

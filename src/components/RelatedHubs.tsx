@@ -32,10 +32,13 @@ interface RelatedHubsProps {
   /** Paths to omit (e.g. hide News when already on News) */
   excludeTo?: string | string[]
   className?: string
-  /** Surface token for parchment vs surface backgrounds */
-  tone?: 'surface' | 'parchment'
+  /** Surface token for parchment / surface / dark (quarantine show pages) */
+  tone?: 'surface' | 'parchment' | 'dark'
   ariaLabel?: string
 }
+
+const darkChip =
+  'inline-flex min-h-[44px] items-center rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/80 transition-colors hover:border-amber-400/60 hover:text-amber-300'
 
 export default function RelatedHubs({
   testId,
@@ -49,7 +52,11 @@ export default function RelatedHubs({
     Array.isArray(excludeTo) ? excludeTo : excludeTo ? [excludeTo] : [],
   )
   const list = hubs.filter((h) => !excluded.has(h.to))
-  const toneClass = `${chipBase} ${tone === 'parchment' ? 'bg-parchment' : 'bg-surface'}`
+  // surface | parchment archive tones; dark for quarantine show surfaces (e.g. /bernie)
+  const toneClass =
+    tone === 'dark'
+      ? darkChip
+      : `${chipBase} ${tone === 'parchment' ? 'bg-parchment' : 'bg-surface'}`
 
   return (
     <nav
