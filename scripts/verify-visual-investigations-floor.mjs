@@ -30,17 +30,17 @@ assert(vi.includes('vi-oct7-dashboard-camera-civilian-murders-visual-2023'), 'vi
 assert(!/brollins|brandoncrollins|aerolink/i.test(vi), 'VI pack identity leak')
 
 const cards = (vi.match(/id: 'vi-/g) || []).length
-assert(cards >= 71, `VI pack should have ≥68 cards, got ${cards}`)
+assert(cards >= 71, `VI pack should have ≥71 cards, got ${cards}`)
 const urls = (vi.match(/url: 'https?:\/\//g) || []).length
 assert(urls >= cards * 2, `VI dual-cite floor: cards=${cards} urls=${urls}`)
 
 const n = (corpus.incidents || []).length
-assert(n >= 1201, `corpus incidents \${n} < 1141`)
+assert(n >= 1210, `corpus incidents \${n} < 1141`)
 const withVideo = (corpus.incidents || []).filter((i) =>
   (i.multimedia || []).some((m) => m.type === 'video'),
 ).length
 assert(withVideo >= 82, `corpus video-linked incidents \${withVideo} < 76`)
-assert(soft.incidentCount >= 1201, `soft-floor \${soft.incidentCount} < 1141`)
+assert(soft.incidentCount >= 1210, `soft-floor \${soft.incidentCount} < 1141`)
 assert(
   soft.visualInvestigations && soft.visualInvestigations.withVideo >= 82,
   `soft-floor withVideo \${soft.visualInvestigations?.withVideo} < 76`,
