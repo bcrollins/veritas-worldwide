@@ -247,6 +247,14 @@ assert(
   'machine corpora paths must share corpusRateLimit middleware (incl. visual-investigations)',
 )
 assert(
+  server.includes("visual-investigations.json") &&
+    server.includes('max-age=300, must-revalidate') &&
+    /visual-investigations\.json[\s\S]{0,200}max-age=300|soft-floor\.json[\s\S]{0,120}visual-investigations/.test(
+      server,
+    ),
+  'visual-investigations.json must use short public cache (max-age=300), not immutable year',
+)
+assert(
   server.includes("name: 'corpus-json', windowMs: 60_000, max: 40") ||
     server.includes('name: "corpus-json", windowMs: 60_000, max: 40'),
   'corpus-json rateLimit must be 40/min (scrape ceiling, research headroom)',

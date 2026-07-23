@@ -2020,7 +2020,8 @@ app.use(express.static(path.join(__dirname, 'dist'), {
     if (
       filePath.endsWith(`${path.sep}corpus.json`) ||
       filePath.endsWith(`${path.sep}evidence-taxonomy.json`) ||
-      filePath.endsWith(`${path.sep}soft-floor.json`)
+      filePath.endsWith(`${path.sep}soft-floor.json`) ||
+      filePath.endsWith(`${path.sep}visual-investigations.json`)
     ) {
       res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate')
     }
