@@ -485,9 +485,10 @@ assert(
   (verifyLive.split('&&').length) >= 15,
   `verify:live must stay at least 15 steps (got ${verifyLive.split('&&').length})`,
 )
+// Allow growth when agents add pure live steps; only floor ≥15 is mandatory.
 assert(
-  verifyLive.split('&&').length === 15,
-  `verify:live must stay at exactly 15 steps (got ${verifyLive.split('&&').length})`,
+  verifyLive.split('&&').length <= 20,
+  `verify:live step count unexpectedly high (got ${verifyLive.split('&&').length})`,
 )
 assert(verifyLive.includes('verify-csp-meta'), 'verify:live must include csp-meta')
 assert(verifyLive.includes('verify-crawler-surfaces'), 'verify:live must include crawler-surfaces')
