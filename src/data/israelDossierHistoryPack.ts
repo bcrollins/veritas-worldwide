@@ -3573,6 +3573,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-civilian-injured-rockets-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Civilian Injuries from Rocket Fire Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (injury cohort)',
+    location: 'Israeli communities under rocket fire (south and north fronts)',
+    summary:
+      'Israeli government injury tallies and multi-source medical reporting document thousands of Israeli civilian injuries from rocket, mortar, and drone fire after October 7 — including trauma, blast, and psychological casualties requiring hospital care. Pattern card for Israeli civilian injury floor concurrent with Gaza and northern fronts — required for non-selective documentation.',
+    evidence:
+      'Israeli government public injury/hospital tallies and multi-outlet medical coverage establish multi-source civilian injury burden. Exact cumulative counts evolve; multi-source wartime civilian injury scale is the claim.',
+    sources: [
+      { label: 'Israeli government public casualty materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Israeli civilian injury coverage', url: 'https://apnews.com' },
+      { label: 'Home Front / multi-source rocket intercept context', url: 'https://www.gov.il' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5232,6 +5259,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['blood', 'trauma', 'health', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-israel-civilian-injuries-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Civilian Injuries from Rocket Fire Pattern',
+    description: 'Multi-source documentation of Israeli civilian injuries from rocket/drone fire after October 7 across southern and northern fronts.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-civilian-injured-rockets-pattern-2023-2025',
+      'gaza-rockets-israeli-civilian-harm-pattern-2023-2025',
+      'hezbollah-rockets-northern-israel-pattern-2023-2025',
+    ],
+    tags: ['injuries', 'rockets', 'civilians', 'children', 'israel'],
+  },
+
 
 
 
