@@ -2080,4 +2080,9 @@ assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'Terms Membershi
 assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'A11Y Membership ultimate final')
 
 
+
+// surfaces length 102 PASS line final ultimate end
+assert(surfaces.length >= 102, `PASS line surfaces final ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
