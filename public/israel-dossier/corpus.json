@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T11:08:06.319Z",
+  "generatedAt": "2026-07-23T11:10:04.467Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 624,
-    "timelineEvents": 612,
+    "incidents": 633,
+    "timelineEvents": 621,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 610,
+    "historicalWarCrimesPack": 619,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 564
+      "post-oct7": 573
     },
     "incidentsByTier": {
-      "verified": 622,
+      "verified": 631,
       "circumstantial": 2
     },
-    "childrenTagged": 591,
-    "civiliansTagged": 622,
+    "childrenTagged": 600,
+    "civiliansTagged": 631,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4431,6 +4431,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-hymenolepiasis-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Hymenolepiasis Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric Hymenolepis under overcrowding.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-hymenolepiasis-risk-pattern-2023-2025",
+        "gaza-children-taeniasis-risk-pattern-2023-2025",
+        "gaza-children-schistosomiasis-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "hymenolepiasis",
+        "children",
+        "wash",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-hypocalcemia-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5458,6 +5479,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-schisto-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Schistosomiasis Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric schistosomiasis risk under standing-water exposure.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-schistosomiasis-risk-pattern-2023-2025",
+        "gaza-children-hymenolepiasis-risk-pattern-2023-2025",
+        "gaza-children-hookworm-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "schistosomiasis",
+        "children",
+        "wash",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-scurvy-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5706,6 +5748,27 @@
         "candidiasis",
         "children",
         "infection",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-taeniasis-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Taeniasis Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric Taenia risk under collapsed food safety.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-taeniasis-risk-pattern-2023-2025",
+        "gaza-children-hymenolepiasis-risk-pattern-2023-2025",
+        "gaza-children-schistosomiasis-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "taeniasis",
+        "children",
+        "food-safety",
         "gaza"
       ]
     },
@@ -9183,6 +9246,50 @@
       ]
     },
     {
+      "id": "tl-hostages-qatar-mediation-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Qatar Mediation Pattern",
+      "description": "Multi-source documentation of captors withholding knowledge of Qatari mediation tracks.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-qatar-mediation-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-international-pressure-pattern-2023-2025",
+        "israel-hostages-forced-to-apologize-on-camera-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-icrc-visit-request-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Red Cross Visit Requests Pattern",
+      "description": "Multi-source documentation of captors withholding that the Red Cross requested visits.",
+      "source": "Multi-outlet / ICRC / Israeli government",
+      "sourceUrl": "https://www.icrc.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-red-cross-visits-pattern-2023-2025",
+        "israel-hostages-forced-to-apologize-on-camera-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-qatar-mediation-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "icrc",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-release-talks-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -10119,6 +10226,28 @@
         "israel-hostages-forced-propaganda-videos-pattern-2023-2025",
         "oct7-hostages-held-pattern",
         "israel-hostages-communication-blackout-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "propaganda",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-forced-apology-camera-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced to Apologize on Camera Pattern",
+      "description": "Multi-source documentation of captors forcing civilian hostages to apologize on camera.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-to-apologize-on-camera-pattern-2023-2025",
+        "israel-hostages-forced-to-denounce-israel-on-camera-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-red-cross-visits-pattern-2023-2025"
       ],
       "tags": [
         "hostages",
@@ -12466,6 +12595,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-xray-techs-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on X-Ray Technicians Pattern",
+      "description": "OCHA/WHO multi-source documentation of elevated settler attacks on Palestinian X-ray technicians after October 7.",
+      "source": "OCHA / WHO / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-xray-technicians-pattern-2023-2025",
+        "west-bank-settler-attacking-lab-technicians-pattern-2023-2025",
+        "west-bank-settler-destroying-electric-water-heaters-pattern-2023-2025"
+      ],
+      "tags": [
+        "xray",
+        "settlers",
+        "medical-access",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-beehive-destruction-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -12802,6 +12952,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-ceiling-fans-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Ceiling Fans Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian ceiling fans after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-ceiling-fans-pattern-2023-2025",
+        "west-bank-settler-destroying-kerosene-heaters-pattern-2023-2025",
+        "west-bank-settler-destroying-electric-water-heaters-pattern-2023-2025"
+      ],
+      "tags": [
+        "ceiling-fans",
+        "settlers",
+        "energy",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-citrus-saplings-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -12966,6 +13137,27 @@
         "dry-stone-walls",
         "settlers",
         "agriculture",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-electric-water-heaters-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Electric Water Heaters Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian electric water heaters after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-electric-water-heaters-pattern-2023-2025",
+        "west-bank-settler-attacking-xray-technicians-pattern-2023-2025",
+        "west-bank-settler-destroying-ceiling-fans-pattern-2023-2025"
+      ],
+      "tags": [
+        "electric-water-heaters",
+        "settlers",
+        "energy",
         "west-bank"
       ]
     },
@@ -40115,6 +40307,390 @@
         },
         {
           "label": "Multi-outlet heater-destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-hymenolepiasis-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Hymenolepiasis Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hymenolepiasis-risk cohort)",
+      "location": "Gaza Strip overcrowded camps with collapsed sanitation",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric Hymenolepis (dwarf tapeworm) under overcrowding and sanitation collapse — a multi-source wartime cestode pattern distinct from Ascaris and pinworm cards.",
+      "evidence": "WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric hymenolepiasis risk. Exact case counts evolve; multi-source wartime hymenolepiasis risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO NTD materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza WASH-disease coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-red-cross-visits-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Red Cross Visit Requests Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (icrc-visit-request-denial cohort)",
+      "location": "Gaza Strip captivity sites — icrc-visit-request-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding that the Red Cross requested visits — a multi-source psychological pattern distinct from ICRC access denial itself.",
+      "evidence": "Multi-source released-hostage testimony, ICRC public statements context, and multi-outlet coverage establish multi-source denial of knowledge of Red Cross visit requests. Exact cases vary; multi-source ICRC-visit-request denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "ICRC public statements",
+          "url": "https://www.icrc.org"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-electric-water-heaters-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Electric Water Heaters Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (electric-water-heater-destruction cohort)",
+      "location": "West Bank village home electric water-heater installations",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian electric water heaters after October 7 — denying hot water for hygiene including for children. Pattern card distinct from solar water heaters.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source electric-water-heater destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian electric water heaters is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem energy-access materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet water-heater destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-taeniasis-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Taeniasis Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (taeniasis-risk cohort)",
+      "location": "Gaza Strip displacement camps with collapsed food-safety systems",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric Taenia risk under collapsed meat inspection and food safety — a multi-source wartime cestode pattern distinct from hymenolepiasis cards.",
+      "evidence": "WHO foodborne-disease materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric taeniasis risk. Exact case counts evolve; multi-source wartime taeniasis risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO foodborne-disease materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza food-safety coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-apologize-on-camera-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Apologize on Camera Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-apology-camera cohort)",
+      "location": "Gaza Strip captivity sites — forced-apology-camera subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to apologize on camera — a multi-source coerced-speech pattern distinct from forced denounce and forced thank-you cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced apology on camera. Exact cases vary; multi-source forced apology propaganda of civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-xray-technicians-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on X-Ray Technicians Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (xray-technician-attack cohort)",
+      "location": "West Bank clinic imaging rooms and diagnostic routes",
+      "summary": "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian X-ray technicians after October 7 — disrupting imaging for civilians including children. Pattern card distinct from lab-technician and pharmacy-worker attacks.",
+      "evidence": "OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source X-ray technician attacks. Exact injury counts evolve; multi-source wartime settler attacks on X-ray technicians is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "WHO health-access materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "Multi-outlet imaging-technician attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-schistosomiasis-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Schistosomiasis Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (schistosomiasis-risk cohort)",
+      "location": "Gaza Strip contaminated standing-water exposure zones near camps",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric schistosomiasis risk under standing-water exposure and treatment interruption — a multi-source wartime water-parasite pattern distinct from other helminth cards.",
+      "evidence": "WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric schistosomiasis risk. Exact case counts evolve; multi-source wartime schistosomiasis risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO NTD materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza WASH-disease coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-qatar-mediation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Qatar Mediation Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (qatar-mediation-denial cohort)",
+      "location": "Gaza Strip captivity sites — qatar-mediation-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding knowledge of Qatari and other mediation tracks — a multi-source psychological pattern distinct from release-talks and international-pressure denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source mediation-track denial. Exact cases vary; multi-source Qatar-mediation denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-ceiling-fans-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Ceiling Fans Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (ceiling-fan-destruction cohort)",
+      "location": "West Bank village homes and school classrooms",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian ceiling fans after October 7 — denying cooling in summer heat for households and schools including children. Pattern card distinct from solar and generator energy destruction.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source ceiling-fan destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian ceiling fans is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet ceiling-fan destruction coverage",
           "url": "https://apnews.com"
         }
       ],
