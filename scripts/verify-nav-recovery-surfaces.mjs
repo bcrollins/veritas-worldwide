@@ -351,4 +351,10 @@ assert(home.includes('to="/read"') || home.includes("to: '/read'"), 'Home CTA Re
 assert(home.includes('/israel-dossier'), 'Home CTA Dossiers')
 assert(home.includes('/search'), 'Home CTA Search')
 
+
+// NotFound secondary recovery destinations
+const nf = read('src/pages/NotFoundPage.tsx')
+assert(nf.includes('/news') && nf.includes('/methodology') && nf.includes('/content-pack'), 'NotFound secondary News/Methodology/Pack')
+assert(nf.includes('PRIMARY_RELATED_HUBS') || nf.includes('PRIMARY_HUBS'), 'NotFound primary hubs source')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
