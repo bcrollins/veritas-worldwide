@@ -1832,4 +1832,11 @@ assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'BOOKMARK
 assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'SEARCH_RECOVERY_HUBS end final')
 
 
+
+// profiles read home excludeTo ultimate end final
+assert(read('src/pages/ProfilesIndexPage.tsx').includes('excludeTo="/profiles"') || read('src/pages/ProfilesIndexPage.tsx').includes("excludeTo='/profiles'"), 'profiles exclude end final')
+assert(read('src/pages/ReadTheBookPage.tsx').includes('excludeTo="/read"') || read('src/pages/ReadTheBookPage.tsx').includes("excludeTo='/read'"), 'read exclude end final')
+assert(read('src/pages/HomePage.tsx').includes('excludeTo="/"') || read('src/pages/HomePage.tsx').includes("excludeTo='/'"), 'home exclude end final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
