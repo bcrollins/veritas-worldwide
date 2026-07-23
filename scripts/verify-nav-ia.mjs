@@ -125,6 +125,8 @@ assert(app.includes("title: 'Israel · Deep State · Forum'") || app.includes('I
 assert(app.includes('Home · The Record archive') || app.includes("title: 'Home"), 'Record hub tooltip')
 assert(app.includes('Power Profiles · integrity dockets') || app.includes('integrity dockets'), 'Profiles hub tooltip')
 assert(app.includes('Search chapters, profiles, sources, dossiers') || app.includes('Search chapters'), 'Search hub tooltip')
+assert(app.includes('title={link.title}') || app.includes('title={tab.title}'), 'ShellLink title prop must pass to Link')
+assert(app.includes('title={tab.title}'), 'MobileTabBar must pass tab.title')
 
 // Footer browseLinks: Record before Read before Dossiers before Profiles before Search
 const footerBlock = app.match(/const browseLinks: ShellLink\[\] = \[([\s\S]*?)\]/)
