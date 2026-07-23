@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:28:18.649Z",
+  "generatedAt": "2026-07-23T07:31:00.505Z",
   "count": 96,
   "profiles": [
     {
@@ -422,7 +422,7 @@
       "name": "Tom Cotton",
       "title": "U.S. Senator (R-AR)",
       "category": "politician",
-      "summary": "Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Primary: OpenSecrets, Congress.gov, CRS RL33222.",
+      "summary": "Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Integrity docket: dual-cited PolitiFact False on COVID-era immigrant screening impossibility claim. Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact.",
       "photo": "/profiles/tom-cotton.jpg",
       "url": "https://veritasworldwide.com/profile/tom-cotton",
       "bioguideId": "C001095",
@@ -433,11 +433,12 @@
         "Arkansas",
         "Republican",
         "Iran Sanctions",
-        "Iron Dome"
+        "Iron Dome",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "cory-booker",

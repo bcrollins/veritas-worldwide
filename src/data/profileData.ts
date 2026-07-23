@@ -2318,8 +2318,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'AR',
     photoUrl: getProfilePhoto('tom-cotton'),
     summary:
-      'Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Primary: OpenSecrets, Congress.gov, CRS RL33222.',
-    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'Arkansas', 'Republican', 'Iran Sanctions', 'Iron Dome'],
+      'Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Integrity docket: dual-cited PolitiFact False on COVID-era immigrant screening impossibility claim. Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact.',
+    tags: [
+      'Senator',
+      'Pro-Israel',
+      'AIPAC',
+      'Arkansas',
+      'Republican',
+      'Iran Sanctions',
+      'Iron Dome',
+      'Integrity Docket',
+    ],
     career: [
       'U.S. Army combat veteran (public bio)',
       '2013–2015 — U.S. House',
@@ -2352,6 +2361,13 @@ export const PROFILES: PowerProfile[] = [
         source: 'Congress.gov; CRS RL33222',
         url: 'https://www.congress.gov/member/tom-cotton/C001095',
       },
+      {
+        action: 'High-visibility cosponsor of Iran sanctions and anti-JCPOA vehicles complementary to Israel security orthodoxy',
+        date: '2015–2024',
+        context: 'Senate foreign-policy hawk package with Cotton–Cruz axis.',
+        source: 'Congress.gov cosponsorships',
+        url: 'https://www.congress.gov/member/tom-cotton/C001095',
+      },
     ],
     connections: [
       {
@@ -2382,10 +2398,38 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2015–2024',
       },
+      {
+        claim:
+          'Integrity docket: Feb 2021 claim there is "no way" to screen immigrants for COVID rated False by PolitiFact (CBP conducts health inspections).',
+        source: 'PolitiFact False',
+        url: 'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/',
+        tier: 'verified',
+        date: '2021',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'cotton-no-way-to-screen-immigrants-covid-2021',
+        statement:
+          'Claimed there is "no way" to screen immigrants for COVID-19 at the border.',
+        saidAt: 'February 2021',
+        context: 'Public remarks opposing Biden-era border/immigration policy during COVID.',
+        whyFalse:
+          'PolitiFact rated False. CBP told PolitiFact it conducts initial inspections for symptoms and risk factors associated with COVID; absolute "no way to screen" language was inaccurate.',
+        correction:
+          'Border officials perform health-related screening steps; screening is not impossible even if imperfect.',
+        statementSource: 'Cotton Feb 2021 remarks (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/',
+        debunkSource: 'PolitiFact — False (Feb 3, 2021) with CBP screening confirmation',
+        debunkUrl: 'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.cotton.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/tom-cotton/summary?cid=N00033363' },
+      { label: 'PolitiFact — COVID screening (False)', url: 'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Tom_Cotton' },
     ],
   },
