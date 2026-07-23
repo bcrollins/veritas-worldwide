@@ -12,6 +12,7 @@ Disallow: /subscribe/success
 Disallow: /membership/success
 Disallow: /donation/success
 Disallow: /thank-you
+Disallow: /comprehensive-profile/success
 # Client-only reader state (auth-gated; low SEO value).
 Disallow: /bookmarks
 # Family-brand podcast landing (product surface; residual OPSEC — keep out of index).

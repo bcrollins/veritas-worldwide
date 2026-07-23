@@ -254,6 +254,10 @@ assert(berne.includes("robots: 'noindex, nofollow'"), 'BernieShowPage must set r
 const robotsTxt = read('public/robots.txt')
 assert(robotsTxt.includes('Disallow: /bernie'), 'robots.txt must Disallow /bernie')
 assert(botMeta.includes('/bernie'), 'bot meta must noindex /bernie for JS-skipping crawlers')
+assert(
+  robotsTxt.includes('Disallow: /comprehensive-profile/success'),
+  'robots.txt must Disallow transactional comprehensive-profile success',
+)
 
 assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta helper for shell rewrite')
 assert(
