@@ -5,8 +5,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import { TAGLINE } from '../lib/constants'
 import {
 
-const ABOUT_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/methodology', label: 'Methodology' }, { to: '/sources', label: 'Sources' }, { to: '/search', label: 'Search' }]
-
   clearMetaTags,
   removeJsonLd,
   setJsonLd,
@@ -16,7 +14,10 @@ const ABOUT_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to:
   SITE_NAME,
   SITE_URL,
 } from '../lib/seo'
+
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+
+const ABOUT_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/methodology', label: 'Methodology' }, { to: '/sources', label: 'Sources' }, { to: '/search', label: 'Search' }]
 
 const operatingPrinciples = [
   {

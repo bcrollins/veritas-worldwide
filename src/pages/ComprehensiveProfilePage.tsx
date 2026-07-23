@@ -4,8 +4,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
 import {
 
-const OSINT_HUBS: readonly RelatedHub[] = [{ to: '/profiles', label: 'Profiles' }, { to: '/methodology', label: 'Methodology' }, { to: '/search', label: 'Search' }, { to: '/read', label: 'Read' }]
-
   setMetaTags,
   clearMetaTags,
   setJsonLd,
@@ -14,6 +12,7 @@ const OSINT_HUBS: readonly RelatedHub[] = [{ to: '/profiles', label: 'Profiles' 
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
+
 import { COMPREHENSIVE_PROFILE, TAGLINE } from '../lib/constants'
 import {
   PROFILE_FAQS,
@@ -26,6 +25,8 @@ import { recordAnalyticsEvent } from '../lib/analytics'
 import { identifyContact } from '../lib/hubspot'
 import FontSizeToggle from '../components/FontSizeToggle'
 import { useI18n } from '../lib/i18n'
+
+const OSINT_HUBS: readonly RelatedHub[] = [{ to: '/profiles', label: 'Profiles' }, { to: '/methodology', label: 'Methodology' }, { to: '/search', label: 'Search' }, { to: '/read', label: 'Read' }]
 
 type IntakeState = {
   clientName: string

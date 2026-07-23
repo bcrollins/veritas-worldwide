@@ -7,14 +7,6 @@ import { getTopicArticles, getTopicChapters, getTopicHubBySlug } from '../data/t
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import {
 
-const TOPIC_HUBS: readonly RelatedHub[] = [
-  { to: '/read', label: 'Read' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/profiles', label: 'Profiles' },
-  { to: '/news', label: 'News' },
-  { to: '/search', label: 'Search' },
-]
-
   clearMetaTags,
   removeJsonLd,
   setJsonLd,
@@ -23,8 +15,17 @@ const TOPIC_HUBS: readonly RelatedHub[] = [
   SITE_NAME,
   SITE_URL,
 } from '../lib/seo'
+
 import { formatCompactDollars, getTopicProfileMatches, getTopicProfileStats } from '../lib/topicDiscovery'
 import { getProfilePhoto } from '../data/profileData'
+
+const TOPIC_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/news', label: 'News' },
+  { to: '/search', label: 'Search' },
+]
 
 function TopicStatCard({ label, value }: { label: string; value: string }) {
   return (

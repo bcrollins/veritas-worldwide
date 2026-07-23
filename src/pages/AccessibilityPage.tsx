@@ -4,8 +4,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
 import {
 
-const A11Y_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/about', label: 'About' }, { to: '/search', label: 'Search' }]
-
   setMetaTags,
   clearMetaTags,
   SITE_URL,
@@ -15,6 +13,8 @@ const A11Y_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: 
   breadcrumbJsonLd,
   faqJsonLd,
 } from '../lib/seo'
+
+const A11Y_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/about', label: 'About' }, { to: '/search', label: 'Search' }]
 
 const a11yFeatures = [
   {

@@ -11,14 +11,6 @@ import { getPreferredImageSrc } from '../lib/imageSources'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import {
 
-const ARTICLE_HUBS: readonly RelatedHub[] = [
-  { to: '/news', label: 'News' },
-  { to: '/read', label: 'Read' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/profiles', label: 'Profiles' },
-  { to: '/search', label: 'Search' },
-]
-
   setMetaTags,
   clearMetaTags,
   setJsonLd,
@@ -27,9 +19,18 @@ const ARTICLE_HUBS: readonly RelatedHub[] = [
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
+
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import { PROFILES } from '../data/profileData'
 import { computeIntegrityScore } from '../lib/integrityScore'
+
+const ARTICLE_HUBS: readonly RelatedHub[] = [
+  { to: '/news', label: 'News' },
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
 
 function getArticleImageSrc(src?: string) {
   return getPreferredImageSrc(src) || src

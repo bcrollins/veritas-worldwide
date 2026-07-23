@@ -4,9 +4,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
 import { fetchAnalytics } from '../lib/analytics'
 import type {
-
-const ANALYTICS_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
-
   AnalyticsEventSummary,
   AnalyticsSnapshot,
   CountryViews,
@@ -26,6 +23,13 @@ import {
   faqJsonLd,
 } from '../lib/seo'
 import { formatSignupSourceLabel } from '../lib/signupAttribution'
+
+const ANALYTICS_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
 
 // ── Country flag emoji from ISO code ───────────────────────────────
 function flagEmoji(code: string): string {

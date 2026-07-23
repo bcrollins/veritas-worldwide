@@ -20,20 +20,13 @@ import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import {
 
-const CHAPTER_HUBS: readonly RelatedHub[] = [
-  { to: '/read', label: 'Read' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/profiles', label: 'Profiles' },
-  { to: '/sources', label: 'Sources' },
-  { to: '/search', label: 'Search' },
-]
-
   trackShare,
   trackDownload,
   trackReadingMilestone,
   trackChapterComplete,
   trackSourceClick,
 } from '../lib/ga4'
+
 import PrimarySourceLink from '../components/PrimarySourceLink'
 import { scoreChapterViewed, scorePdfDownloaded } from '../lib/leadScoring'
 import ChapterPDF from '../components/ChapterPDF'
@@ -62,6 +55,14 @@ import {
   getSourceHierarchyLabel,
 } from '../data/sourceHierarchy'
 import LicenseCard from '../components/LicenseCard'
+
+const CHAPTER_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/sources', label: 'Sources' },
+  { to: '/search', label: 'Search' },
+]
 
 const diagramComponents: Record<string, React.ComponentType> = {
   'media-ownership': MediaOwnershipDiagram,

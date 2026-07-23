@@ -6,17 +6,17 @@ import { clearMetaTags, removeJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '.
 import { useAuth } from '../lib/AuthContext'
 import {
 
+  detectStripeReturn,
+  getMarketingAttribution,
+  handleStripeReturn,
+} from '../lib/conversionTracking'
+
 const SUPPORT_SUCCESS_HUBS: readonly RelatedHub[] = [
   { to: '/read', label: 'Read' },
   { to: '/israel-dossier', label: 'Dossiers' },
   { to: '/profiles', label: 'Profiles' },
   { to: '/search', label: 'Search' },
 ]
-
-  detectStripeReturn,
-  getMarketingAttribution,
-  handleStripeReturn,
-} from '../lib/conversionTracking'
 
 type SupportKind = 'membership' | 'donation'
 

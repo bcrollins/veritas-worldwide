@@ -7,8 +7,6 @@ import { topicHubs, getTopicArticles, getTopicChapters } from '../data/topicHubs
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import {
 
-const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
-
   clearMetaTags,
   removeJsonLd,
   setJsonLd,
@@ -19,7 +17,10 @@ const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }
   SITE_NAME,
   SITE_URL,
 } from '../lib/seo'
+
 import { formatCompactDollars, getTopicProfileStats } from '../lib/topicDiscovery'
+
+const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
 
 function TopicMetric({ label, value }: { label: string; value: string }) {
   return (

@@ -4,8 +4,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
 import {
 
-const MEMBERSHIP_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
-
   setMetaTags,
   clearMetaTags,
   setJsonLd,
@@ -15,10 +13,13 @@ const MEMBERSHIP_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, 
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
+
 import { MEMBERSHIP, TAGLINE } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
 import { trackCheckoutIntent, withCheckoutAttribution } from '../lib/conversionTracking'
 import { TierIcon } from '../components/TierIcons'
+
+const MEMBERSHIP_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
 
 // Membership is framed as public-interest support, not scarcity-driven commerce.
 

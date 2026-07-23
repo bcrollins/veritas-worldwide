@@ -5,8 +5,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import { chapterMeta } from '../data/chapterMeta'
 import {
 
-const TIMELINE_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
-
   setMetaTags,
   clearMetaTags,
   setJsonLd,
@@ -17,7 +15,10 @@ const TIMELINE_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { 
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
+
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+
+const TIMELINE_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
 
 interface TimelineEntry {
   chapterId: string

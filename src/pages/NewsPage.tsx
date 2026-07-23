@@ -2,12 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
-const NEWS_HUBS: readonly RelatedHub[] = [
-  { to: '/read', label: 'Read' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/search', label: 'Search' },
-  { to: '/forum', label: 'Forum' },
-]
 import { allArticles as articles, CATEGORY_META, type Article, type ArticleCategory } from '../data/articles'
 import SharePanel from '../components/SharePanel'
 import { getPreferredImageSrc } from '../lib/imageSources'
@@ -34,6 +28,13 @@ import {
   SITE_NAME,
 } from '../lib/seo'
 import { ImageWithFallback } from '../components/ImageWithFallback'
+
+const NEWS_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/search', label: 'Search' },
+  { to: '/forum', label: 'Forum' },
+]
 
 function getArticleImageSrc(src: string) {
   return getPreferredImageSrc(src) || src
