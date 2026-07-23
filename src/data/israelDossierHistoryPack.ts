@@ -2330,6 +2330,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-amputations-children-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'artillery-use', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Child Amputations — Multi-Source Medical Floor (2023–2025)',
+    date: 'October 2023 – 2025 (amputation cohort)',
+    location: 'Gaza Strip hospitals',
+    summary:
+      'UNICEF, WHO, and multi-source medical reporting document large numbers of children undergoing amputations in Gaza due to blast injuries and lack of reconstructive capacity under health-system collapse. Pattern card for the child-amputation medical floor of the war.',
+    evidence:
+      'UNICEF/WHO statements, multi-source field medical reporting, and hospital case series establish elevated pediatric amputations. Exact counts are incomplete under collapsed reporting systems; multi-source magnitude is the claim.',
+    sources: [
+      { label: 'UNICEF OPT medical statements', url: 'https://www.unicef.org' },
+      { label: 'WHO emergency health updates', url: 'https://www.who.int' },
+      { label: 'Multi-outlet pediatric injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public materials', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0, injured: 1000 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3271,6 +3298,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-cultural-heritage-destruction-2023-2025'],
     tags: ['heritage', 'culture', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-child-amputations-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Child Amputations — Medical Floor',
+    description: 'UNICEF/WHO multi-source documentation of elevated pediatric amputations under health-system collapse.',
+    source: 'UNICEF / WHO',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-amputations-children-pattern-2023-2025', 'gaza-health-system-collapse-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
+    tags: ['children', 'health', 'civilians', 'gaza'],
   },
 
 ]
