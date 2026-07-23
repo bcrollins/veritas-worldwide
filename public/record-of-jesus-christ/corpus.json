@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:28:18.298Z",
-  "claimCount": 435,
+  "generatedAt": "2026-07-23T10:29:30.005Z",
+  "claimCount": 444,
   "tierHistogram": {
-    "well_attested": 175,
-    "verified": 152,
-    "contested": 38,
-    "interpretive": 44,
+    "well_attested": 178,
+    "verified": 156,
+    "contested": 39,
+    "interpretive": 45,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 21
@@ -115,6 +115,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave15.ts"
+    },
+    {
+      "id": "ane-elephantine-passover-papyrus",
+      "claim": "Elephantine papyri include correspondence about observing Passover/Unleavened Bread under Persian administration — primary evidence for diaspora Jewish festival practice in the 5th century BCE.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave38.ts"
     },
     {
       "id": "ane-exodus-historicity",
@@ -367,6 +374,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
+      "id": "arch-caesarea-pilate-praetorium",
+      "claim": "Caesarea Maritima’s Roman administrative complex (including praetorium contexts) frames where prefects like Pilate were based — coastal capital archaeology for Judean governance.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave38.ts"
     },
     {
       "id": "arch-caiaphas-ossuary",
@@ -957,6 +971,13 @@
       "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
+      "id": "cosmo-sz-sunyaev-zeldovich",
+      "claim": "The Sunyaev–Zel’dovich effect measures CMB spectral distortion from hot cluster gas and is used as a cluster-finding and cosmology probe complementary to X-ray and optical surveys.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave38.ts"
+    },
+    {
       "id": "cosmo-tensor-to-scalar",
       "claim": "The tensor-to-scalar ratio r is constrained from above by CMB B-mode searches; a detection would strongly support high-scale inflation.",
       "tier": "well_attested",
@@ -1270,6 +1291,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave37.ts"
+    },
+    {
+      "id": "ec-tertullian-apology",
+      "claim": "Tertullian’s Apologeticum (c. 197 CE) defends Christians before Roman authorities on legal and philosophical grounds — Latin North African apologetic reception.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave38.ts"
     },
     {
       "id": "ec-theophilus-autolycus",
@@ -1601,6 +1629,13 @@
       "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
+      "id": "hj-passion-predictions",
+      "claim": "Synoptic passion predictions (Jesus foretelling death/resurrection) are multiply present in the Gospels; historians disagree whether they are authentic forecasts, post-event vaticinia ex eventu, or mixed.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave38.ts"
+    },
+    {
       "id": "hj-passion-week-outline",
       "claim": "A final Jerusalem visit ending in arrest and crucifixion under Pilate is a standard historical outline shared across diverse HJ reconstructions.",
       "tier": "well_attested",
@@ -1858,6 +1893,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
+      "id": "mod-fredriksen-when-christians",
+      "claim": "Paula Fredriksen’s work reconstructs how Jesus-followers became “Christians” within Jewish and Roman contexts, stressing apocalyptic hope and later identity separation trajectories.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave38.ts"
     },
     {
       "id": "mod-genetics-limits",
@@ -2245,6 +2287,13 @@
       "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
+      "id": "nc-porphyry-against-christians",
+      "claim": "Porphyry’s Against the Christians (late 3rd c., fragments via Christian rebuttals) was a major philosophical critique of Christian scripture and claims — hostile reception, not first-century reportage.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave38.ts"
+    },
+    {
       "id": "nc-slavonic-josephus",
       "claim": "The Slavonic version of Josephus’s Jewish War contains expansions (including Jesus-related passages) widely judged to be later Christian interpolations, not first-century Josephan text.",
       "tier": "well_attested",
@@ -2551,6 +2600,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-na28-ubs5-status",
+      "claim": "Nestle-Aland 28th edition and UBS5 remain the standard working critical texts for most academic NT work, while ECM volumes progressively refine the initial text for specific books.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave38.ts"
     },
     {
       "id": "nt-na28-ubsgnt-alignment",
@@ -3055,6 +3111,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave35.ts"
+    },
+    {
+      "id": "st-tyrian-shekel-temple-tax",
+      "claim": "Tyrian silver shekels were widely used for the Jerusalem Temple tax in the late Second Temple period because of consistent silver purity — a numismatic-fiscal context for money-changer scenes.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave38.ts"
     },
     {
       "id": "st-war-scroll",

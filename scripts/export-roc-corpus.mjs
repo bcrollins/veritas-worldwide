@@ -44,6 +44,7 @@ const files = [
   path.join(root, 'src/data/recordOfJesusChristWave35.ts'),
   path.join(root, 'src/data/recordOfJesusChristWave36.ts'),
   path.join(root, 'src/data/recordOfJesusChristWave37.ts'),
+  path.join(root, 'src/data/recordOfJesusChristWave38.ts'),
 ]
 
 const CLAIM_ID = /id:\s*'((?:cosmo|ane|st|hj|nt|nc|arch|ec|mod)-[^']+)'/g
