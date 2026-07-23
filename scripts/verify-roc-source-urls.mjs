@@ -16,6 +16,7 @@ const files = [
   'src/data/recordOfJesusChristWave6.ts',
   'src/data/recordOfJesusChristWave7.ts',
   'src/data/recordOfJesusChristWave8.ts',
+  'src/data/recordOfJesusChristWave9.ts',
 ]
 
 const urlRe = /url:\s*'(https?:\/\/[^']+)'/g

@@ -1019,7 +1019,7 @@ function renderLlmsTxt(topics) {
     '',
     '- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.',
     '- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.',
-    '- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (170+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.',
+    '- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (180+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.',
     '- [Record of Jesus Christ corpus (JSON)](https://veritasworldwide.com/record-of-jesus-christ/corpus.json): Machine-readable claim index with seven evidence tiers for retrieval systems.',
     '- [Record of Jesus Christ claim index (PDF)](https://veritasworldwide.com/record-of-jesus-christ/record-of-jesus-christ.pdf): Portable tier-labeled claim list for offline research.',
     '- [The Bible: History & Factual Record](https://veritasworldwide.com/bible): Companion manuscript and archaeology evidence surface.',
@@ -2735,7 +2735,7 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
             name: 'How many claims are in the corpus and where can researchers export them?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'The live index contains 170+ tier-labeled claims. Export JSON/CSV on the page, fetch the machine corpus at /record-of-jesus-christ/corpus.json, or download the portable PDF claim index at /record-of-jesus-christ/record-of-jesus-christ.pdf.',
+              text: 'The live index contains 180+ tier-labeled claims. Export JSON/CSV on the page, fetch the machine corpus at /record-of-jesus-christ/corpus.json, or download the portable PDF claim index at /record-of-jesus-christ/record-of-jesus-christ.pdf.',
             },
           },
           {
@@ -2770,7 +2770,7 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
         '@type': 'Dataset',
         name: 'Record of Jesus Christ — claim corpus',
         description:
-          'Machine-readable index of 170+ tier-labeled evidentiary claims on historical Jesus, biblical manuscripts, Levantine archaeology, and related scientific context. Publisher: Veritas Worldwide only.',
+          'Machine-readable index of 180+ tier-labeled evidentiary claims on historical Jesus, biblical manuscripts, Levantine archaeology, and related scientific context. Publisher: Veritas Worldwide only.',
         url,
         identifier: `${SITE_URL}/record-of-jesus-christ/corpus.json`,
         keywords: [

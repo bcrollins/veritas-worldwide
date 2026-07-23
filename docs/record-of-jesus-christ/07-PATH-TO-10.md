@@ -1,14 +1,14 @@
 # Path to 10.0 — Record of Jesus Christ Surface
 
-**Current verified baseline (2026-07-23 Interval 11 / Wave 8):** ~9.3 / 10 for core evidentiary surface.
+**Current verified baseline (2026-07-23 Interval 12 / Wave 9):** ~9.35 / 10 for core evidentiary surface.
 
 | Dimension | Score | Notes |
 |-----------|------:|-------|
 | Evidence rigor / tiers | 9.4 | Seven-tier + proofVsConcept on every claim |
-| Citation integrity | 9.0 | Primary/peer/critical-edition paths; ECM/CBGM + Comma + Byzantine-priority debate |
-| Completeness of corpus | 9.0 | 173 claims waves 3–8 (DESI BAO, Siloam, Herodium, Jesus Seminar, meals) |
+| Citation integrity | 9.0 | Primary/peer/critical-edition paths; ECM/CBGM + Comma + Byzantine-priority + orthodox-corruption debate |
+| Completeness of corpus | 9.1 | 182 claims waves 3–9 (Elephantine, Kuntillet, Magdala synagogue, structure formation) |
 | Researcher tools | 9.1 | JSON/CSV export, cite-as, PDF, corpus.json, Dataset schema, HowTo |
-| Discoverability | 9.0 | Home card, llms, sitemap, OG, FAQ/Book/HowTo/Dataset + NT figure |
+| Discoverability | 9.05 | Home card 170+, llms 180+, sitemap, OG, FAQ/Book/HowTo/Dataset + NT figure |
 | A11y / print | 8.5 | Skip link, 44px targets, print CSS |
 | Anonymity | 9.5 public / 7.0 infra | Personal GH scrubbed from sameAs (live); operator env + org GH residual |
 | Device matrix proof | 7.5 | Code a11y present; visual matrix not fully automated |

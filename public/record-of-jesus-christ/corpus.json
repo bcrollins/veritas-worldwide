@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T08:59:55.271Z",
-  "claimCount": 173,
+  "generatedAt": "2026-07-23T09:06:05.575Z",
+  "claimCount": 182,
   "tierHistogram": {
-    "verified": 58,
-    "well_attested": 66,
-    "contested": 25,
-    "interpretive": 12,
+    "verified": 61,
+    "well_attested": 69,
+    "contested": 26,
+    "interpretive": 13,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 7
+    "circumstantial": 8
   },
   "claims": [
     {
@@ -73,6 +73,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "ane-kuntillet-ajrud",
+      "claim": "Inscriptions from Kuntillet ‘Ajrud include blessing formulae pairing Yahweh with other divine names — key data for Israelite religion debates.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
       "id": "ane-lachish-letters",
@@ -192,6 +199,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "arch-magdala-synagogue",
+      "claim": "A first-century synagogue at Magdala (Migdal) on the Sea of Galilee is excavated and published, expanding evidence for Galilean synagogue architecture.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
       "id": "arch-masada",
@@ -355,6 +369,13 @@
       "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
+      "id": "cosmo-structure-formation",
+      "claim": "Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
       "id": "ec-1clement",
       "claim": "1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative.",
       "tier": "well_attested",
@@ -430,6 +451,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-melito-passover",
+      "claim": "Melito of Sardis’s Peri Pascha (2nd c.) is an early Christian paschal homily with high christology and anti-Jewish rhetoric — reception history, not HJ primary data.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
       "id": "ec-muratorian",
@@ -563,6 +591,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-galilee-economy",
+      "claim": "Galilee under Antipas was an agrarian and fishing economy with urbanization at Sepphoris and Tiberias; Jesus traditions sit in that social landscape.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
       "id": "hj-herod-death",
@@ -831,6 +866,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "mod-third-quest",
+      "claim": "The “Third Quest” emphasizes Jesus’ Jewish context (Sanders, Vermes, Meier, Wright, Crossan, et al.) against earlier de-Judaizing portraits.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
       "id": "mod-turin-shroud",
       "claim": "The Shroud of Turin is a medieval relic by mainstream radiocarbon dating (1988); authenticity as first-century burial cloth remains speculative/unverified for historical Jesus studies.",
       "tier": "speculative",
@@ -871,6 +913,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-mara-bar-serapion",
+      "claim": "The Mara bar Serapion letter (Syriac; date debated, often 1st–3rd c.) may allude to a “wise king” of the Jews executed by his people — identification with Jesus is uncertain.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
       "id": "nc-martial-juvenes",
@@ -1041,6 +1090,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "nt-orthodox-corruption",
+      "claim": "Bart Ehrman’s “orthodox corruption” thesis argues some early scribes altered texts in christologically charged passages; magnitude and intent remain debated.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
       "id": "nt-p45-p46-p47",
       "claim": "Chester Beatty papyri (P45, P46, P47) are major third-century witnesses to Gospels/Acts, Paul, and Revelation respectively.",
       "tier": "verified",
@@ -1137,6 +1193,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-elephantine",
+      "claim": "Elephantine papyri document a Jewish military colony in Egypt (5th c. BCE) with a local temple of YHW and correspondence with Jerusalem/Samaria authorities.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
       "id": "st-herod-temple",
