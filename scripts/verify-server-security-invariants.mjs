@@ -231,6 +231,7 @@ for (const scope of [
   'analytics-pageview',
   'corpus-json',
   'osint-checkout',
+  'research-pack',
 ]) {
   assert(
     server.includes(`name: '${scope}'`) || server.includes(`name: "${scope}"`),
