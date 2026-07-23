@@ -1728,4 +1728,18 @@ for (const label of ['Record', 'Read', 'Dossiers', 'Profiles', 'Search']) {
 assert((plb[1].match(/to:/g) || []).length === 5, 'PRIMARY to count 5 end')
 
 
+
+// NotFound noindex + dual recovery ultimate end
+const nfUltEnd = read('src/pages/NotFoundPage.tsx')
+assert(nfUltEnd.includes('not-found-page') && nfUltEnd.includes('not-found-hub-chips'), 'NotFound primary chrome end')
+assert(nfUltEnd.includes('not-found-secondary-hubs'), 'NotFound secondary end')
+assert(nfUltEnd.includes('robots') || nfUltEnd.includes('noindex'), 'NotFound noindex end')
+assert(nfUltEnd.includes('PRIMARY_RELATED_HUBS') || nfUltEnd.includes('PRIMARY_HUBS'), 'NotFound PRIMARY end')
+
+// Home dual recovery ultimate end
+const homeUltEnd = read('src/pages/HomePage.tsx')
+assert(homeUltEnd.includes('home-hub-cta-row') && homeUltEnd.includes('home-related-hubs'), 'Home dual end')
+assert(homeUltEnd.includes('home-news-chip'), 'home-news-chip end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
