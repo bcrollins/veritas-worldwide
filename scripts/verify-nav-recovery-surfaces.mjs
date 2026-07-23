@@ -79,6 +79,7 @@ for (const rel of [
 // Forum mounts both inline breadcrumb and also-in chip row
 const forum = read('src/pages/ForumPage.tsx')
 assert(forum.includes('variant="inline"') && forum.includes('variant="also-in"'), 'Forum dual DossierHubSpokes variants')
+assert(forum.includes('exclude="forum"') || forum.includes("exclude='forum'"), 'Forum also-in excludes self')
 const deep = read('src/pages/DeepStatePage.tsx')
 assert(deep.includes('variant="also-in"') || deep.includes("variant='also-in'"), 'DeepState also-in spokes')
 assert(deep.includes('exclude="deep-state"') || deep.includes("exclude='deep-state'"), 'DeepState excludes self from also-in')
