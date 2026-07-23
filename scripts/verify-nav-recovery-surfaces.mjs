@@ -1594,4 +1594,18 @@ const mediaEnd = read('src/pages/MediaKitPage.tsx')
 assert(mediaEnd.includes('media-kit-related-hubs') && mediaEnd.includes('media-kit-primary-hubs'), 'media kit dual end')
 
 
+
+// OSINT success RelatedHubs + pack end
+const osintEnd = read('src/pages/ComprehensiveProfileSuccessPage.tsx')
+assert(osintEnd.includes('osint-success-related-hubs'), 'osint success hubs end')
+assert(osintEnd.includes('osint-success-research-pack'), 'osint pack end')
+assert(osintEnd.includes('RelatedHubs') && osintEnd.includes('OSINT_SUCCESS_HUBS'), 'osint platform end')
+
+// Search dual + Bookmarks dual end
+const searchEnd = read('src/pages/SearchPage.tsx')
+assert((searchEnd.match(/<RelatedHubs\b/g) || []).length >= 2, 'search dual end')
+const bmEnd = read('src/pages/BookmarksPage.tsx')
+assert((bmEnd.match(/<RelatedHubs\b/g) || []).length >= 2, 'bookmarks dual end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
