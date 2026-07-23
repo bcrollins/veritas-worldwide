@@ -43,6 +43,12 @@ assert(
 const hub = read('src/pages/ResearcherHubPage.tsx')
 assert(hub.includes('/research-pack.zip') || hub.includes('research-pack'), 'researcher hub must link pack')
 
+const sources = read('src/pages/SourcesPage.tsx')
+assert(
+  sources.includes('/research-pack.zip') && sources.includes('sources-research-pack-zip'),
+  'Sources machine-readable panel must link research pack zip',
+)
+
 const llms = read('public/llms.txt')
 assert(llms.includes('research-pack'), 'llms.txt must index research pack')
 

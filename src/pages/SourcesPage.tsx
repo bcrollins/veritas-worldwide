@@ -759,6 +759,21 @@ export default function SourcesPage() {
                 </h3>
                 <div className="space-y-2">
                   <a
+                    href="/research-pack.zip"
+                    className="flex min-h-[44px] items-center font-sans text-xs font-semibold text-crimson hover:underline transition-colors"
+                    download="veritas-research-pack.zip"
+                    data-testid="sources-research-pack-zip"
+                  >
+                    Offline research pack (ZIP)
+                  </a>
+                  <a
+                    href="/research-pack-manifest.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download
+                  >
+                    Research pack manifest (SHA-256)
+                  </a>
+                  <a
                     href="/israel-dossier/workbooks/briefing-source-archive-manifest.json"
                     className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
                     download
@@ -778,6 +793,20 @@ export default function SourcesPage() {
                     download
                   >
                     Israel dossier corpus (JSON)
+                  </a>
+                  <a
+                    href="/record-of-jesus-christ/corpus.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download
+                  >
+                    Record of Jesus Christ corpus (JSON)
+                  </a>
+                  <a
+                    href="/evidence-taxonomy.json"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    download
+                  >
+                    Evidence taxonomy (JSON)
                   </a>
                   <a
                     href="/feed.xml"
