@@ -255,6 +255,10 @@ assert(tabTos.length >= 5, `MobileTabBar destinations ${tabTos.length} < 5`)
 assert(app.includes('/membership'), 'shell retains Membership')
 assert(app.includes('/privacy') && app.includes('/terms'), 'shell retains Privacy+Terms')
 assert(app.includes('/about'), 'shell retains About')
+
+// Research drawer retains methodology/sources/pack without primary expansion
+assert(app.includes('/methodology') && app.includes('/sources'), 'shell retains Methodology+Sources')
+assert(app.includes('/content-pack') || app.includes('/researcher'), 'shell retains pack or researcher')
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
