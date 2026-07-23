@@ -404,3 +404,9 @@ Status: {'Implemented': 22, 'Pending': 78}
 ### #100 — Continuous researcher customizability polish #100
 - Area: Researcher · Status: **Pending** · Anonymity: neutral
 - WHAT: Continuous researcher customizability polish #100
+
+## 2026-07-23 integrity densify
+
+- **96/96** power profiles dual-cited n≥3 live
+- Shareable integrity presets + one-tap primary sources + single-source reject gate
+- Home OSINT CTA + robots Allow /comprehensive-profile

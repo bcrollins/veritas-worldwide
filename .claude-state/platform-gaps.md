@@ -300,3 +300,7 @@
   Impact: Bearer tokens reject alg=none and algorithm-confusion vectors; sessions continue to rotate with unique jti.
   Resolution: server-auth mintAccessToken + authenticateToken options; pure suite locks both. Tip `ed0b9b9` auth smoke 15-step green.
 
+
+## Closed 2026-07-23
+- Integrity densify floor: all 96 profiles n≥3 dual-cite (live)
+- OSINT product CTA surfaces: home + profiles index
