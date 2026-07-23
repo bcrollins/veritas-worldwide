@@ -242,3 +242,13 @@ Verified live Googlebot matrix on tip lineage including `f92ff79` + SEO ships th
 - Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` **PASS** (incl. no `/404` canonical on junk)
 - Railway unblock: `SEOConfig.url` optional for noindex soft-404 shells
 - PATH_ALIASES freeze: content-packs, share, brand-kit, home, index, packs, donate, support, contact
+
+### wave58–59 crawl + secondary FAQ expansion (2026-07-23)
+
+- Feed discovery: `/feed`, `/atom`, `/atom.xml`, `/feeds`, `/rss` → **301** `/feed.xml`
+- Blog guess: `/blog` → **301** `/news`
+- Favicon: `/favicon.ico` → **301** `/favicon.svg`
+- Secondary hub FAQPage (client + prerender): Timeline, Analytics, Forum
+- FAQ floor: **19+ public hubs** with bot-visible FAQPage + BreadcrumbList
+- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex`
+

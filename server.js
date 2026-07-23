@@ -1905,6 +1905,12 @@ app.get(['/rss.xml', '/rss', '/atom.xml', '/feed.xml/'], (_req, res) => {
   return res.redirect(301, '/feed.xml')
 })
 
+// Legacy favicon.ico probes — first-party SVG is the shipped mark (dist/favicon.svg).
+app.get('/favicon.ico', (_req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=86400')
+  return res.redirect(301, '/favicon.svg')
+})
+
 // ── Sensitive operator files must never be publicly served ─────────────────
 // data/*.ndjson may contain PII (OSINT orders). Fail closed even if mis-copied into dist.
 app.use((req, res, next) => {

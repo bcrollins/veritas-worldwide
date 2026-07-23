@@ -673,6 +673,10 @@ assert(
   server.includes("'/atom.xml'") || server.includes("'/rss.xml'"),
   'server must 301 Atom/RSS .xml discovery paths to /feed.xml',
 )
+assert(
+  server.includes("'/favicon.ico'") && server.includes("'/favicon.svg'"),
+  'server must 301 legacy favicon.ico probes to favicon.svg',
+)
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
 assert(
