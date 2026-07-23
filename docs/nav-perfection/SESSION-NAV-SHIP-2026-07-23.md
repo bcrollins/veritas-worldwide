@@ -28,6 +28,14 @@
 - `npm run verify:nav-ia` — expanded pure suite
 - `npm run verify:pure` — 45 suites green at ship time
 
+| `d5f6966` | OSINT free-archive related hubs |
+
+| `7b73545` | Analytics related hubs |
+
+| `c92ab29` | Volume II ResearchHubChips |
+
+| `97ced10` | Bible + ROC ResearchHubChips |
+
 ## Live proof (observed 2026-07-23)
 - Soft-404 HTML: `server-soft-404` + hubs Record/Read/Dossiers/Profiles/Search (**eadf78b+ live**)
 - SPA shell: `mobile-tab-bar` + Dossiers tooltip “Israel · Deep State · Forum”
