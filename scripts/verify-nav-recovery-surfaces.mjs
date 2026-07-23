@@ -849,4 +849,11 @@ const articleHubsSrc = read('src/pages/ArticlePage.tsx')
 assert(articleHubsSrc.includes('article-related-hubs'), 'article-related-hubs testid')
 assert(articleHubsSrc.includes("to: '/news'") || articleHubsSrc.includes('to: "/news"') || articleHubsSrc.includes('/news'), 'Article News dest unique')
 
+
+// Topic RelatedHubs News destination
+const topicHubsSrc = read('src/pages/TopicPage.tsx')
+assert(topicHubsSrc.includes('topic-related-hubs'), 'topic-related-hubs testid')
+assert(topicHubsSrc.includes("to: '/news'") || topicHubsSrc.includes('to: "/news"') || topicHubsSrc.includes('/news'), 'Topic News dest unique')
+assert(topicHubsSrc.includes('/israel-dossier'), 'Topic Dossiers dest unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
