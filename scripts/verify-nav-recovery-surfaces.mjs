@@ -883,4 +883,11 @@ assert(osintOkHubs.includes('osint-success-related-hubs'), 'osint-success-relate
 assert(osintOkHubs.includes('/search'), 'OSINT success Search dest')
 assert(osintOkHubs.includes('/profiles'), 'OSINT success Profiles dest')
 
+
+// Membership RelatedHubs Read destination
+const membershipHubsSrc = read('src/pages/MembershipPage.tsx')
+assert(membershipHubsSrc.includes('membership-related-hubs'), 'membership-related-hubs testid')
+assert(membershipHubsSrc.includes('/read'), 'Membership Read dest unique final')
+assert(membershipHubsSrc.includes('/israel-dossier'), 'Membership Dossiers dest unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
