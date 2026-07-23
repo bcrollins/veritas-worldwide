@@ -825,9 +825,9 @@
       "id": "T100-069",
       "title": "Rate limit public corpus endpoints against scrape abuse",
       "priority": 62,
-      "status": "Blocked",
-      "shippedAt": "2026-07-23T11:52:59.583174+00:00",
-      "note": "Blocked \u2014 rate limit needs careful researcher bulk-export policy"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "note": "corpus-json rate limit 40/min/IP on corpora + taxonomy + soft-floor (commit 4c7e58d)"
     },
     {
       "display_rank": 95,
