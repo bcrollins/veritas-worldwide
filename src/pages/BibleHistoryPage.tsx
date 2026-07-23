@@ -400,7 +400,7 @@ export default function BibleHistoryPage() {
         {
           question: 'How does this Bible page relate to The Record of Jesus Christ?',
           answer:
-            'This is the companion evidence surface for biblical manuscript and archaeological claims. The deeper chronological compilation with 420+ tier-labeled claims lives at /record-of-jesus-christ.',
+            'This is the companion evidence surface for biblical manuscript and archaeological claims. The deeper chronological compilation with 430+ tier-labeled claims lives at /record-of-jesus-christ.',
         },
         {
           question: 'What evidence tiers are used?',
