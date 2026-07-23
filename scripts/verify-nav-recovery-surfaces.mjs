@@ -51,6 +51,7 @@ for (const [rel, needle] of surfaces) {
 // ResearchHubChips component export present
 assert(read('src/components/ResearchHubChips.tsx').includes('export default function ResearchHubChips'), 'ResearchHubChips export')
 assert(read('src/components/DossierHubSpokes.tsx').includes('export default function DossierHubSpokes'), 'DossierHubSpokes export')
+assert(read('src/components/DossierHubSpokes.tsx').includes('z-30') || read('src/components/DossierHubSpokes.tsx').includes('z-40'), 'DossierHubSpokes sticky z-order')
 
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')
