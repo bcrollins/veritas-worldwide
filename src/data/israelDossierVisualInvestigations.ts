@@ -1341,6 +1341,76 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsCivilians: true,
     targetsChildren: true,
   },
+  {
+    id: 'vi-oct7-roadside-civilian-vehicle-ambushes-visual-2023',
+    title: 'October 7 Roadside Civilian Vehicle Ambushes — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Roads around Gaza envelope communities (southern Israel)',
+    summary:
+      'Multi-outlet video and authenticated phone footage document militant ambushes of civilian vehicles on roads near Gaza envelope communities on October 7, including families fleeing festival and kibbutz sites. Multi-party visual record of civilian mass murder distinct from Nova festival and kibbutz-Be’eri packages.',
+    evidence:
+      'Authenticated dashcam/phone video, multi-outlet October 7 investigations, and official compilations establish multi-source documentation of civilian-vehicle ambushes. Ethnicity is never evidence; the claim is multi-source civilian-targeted violence.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated roadside ambush video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-night-tent-camp-strikes-visual-2024-2025',
+    title: 'Gaza Night Tent-Camp Strikes — Multi-Outlet Thermal & Phone Visual Record',
+    date: '2024–2025',
+    location: 'Displacement tent camps across southern and central Gaza',
+    summary:
+      'Multi-outlet phone video, satellite/thermal packages, and OHCHR materials document night strikes on densely packed civilian tent camps after forced displacement. Distinct from Rafah tent-fire and Khan Younis camp visual cards; multi-source civilian-harm floor without single-camera overclaim.',
+    evidence:
+      'OCHA displacement tallies, multi-outlet visual packages of post-strike tent fields, and OHCHR civilian-protection materials establish multi-source documentation of civilian harm in tent encampments.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza camp packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet night camp strike video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of tent-camp aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR displacement and civilian-harm trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-livestreamed-settler-assaults-visual-2023-2025',
+    title: 'West Bank Livestreamed Settler Assaults — Phone & Bodycam Visual Record',
+    date: '2023–2025',
+    location: 'West Bank villages and agricultural access roads',
+    summary:
+      'B’Tselem video banks and multi-outlet packages include phone and bodycam footage of settler assaults on Palestinian civilians, including children, often livestreamed or filmed contemporaneously. Multi-source visual record of civilian-targeted settler violence distinct from Huwara corridor and olive-harvest cards.',
+    evidence:
+      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of filmed settler assaults on civilians.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem settler-assault video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
 
 ]
 
