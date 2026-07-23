@@ -427,6 +427,11 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         title: 'Search | Veritas Worldwide',
         description: 'Archive search utility. Results pages are not indexed.',
       },
+      '/researcher/timeline': {
+        title: 'Personal Timeline Builder | Veritas Worldwide',
+        description:
+          'Local-only researcher chronology tool. Events stay in the browser and are not part of the public archive index.',
+      },
     }
     const noindexKey = Object.keys(noindexBotPages).find(
       (p) => req.path === p || req.path.startsWith(`${p}/`),

@@ -685,6 +685,11 @@ const humansTxt = read('public/humans.txt')
 assert(humansTxt.includes('Veritas Worldwide'), 'humans.txt must name entity publisher only')
 assert(!/brandon|brollins|@gmail\.com/i.test(humansTxt), 'humans.txt must not leak personal identity')
 assert(robots.includes('Allow: /humans.txt'), 'robots.txt must Allow humans.txt for crawler discovery')
+assert(
+  robots.includes('Disallow: /researcher/') || robots.includes('Disallow: /researcher/timeline'),
+  'robots.txt must Disallow researcher utility surfaces',
+)
+
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
 assert(
@@ -695,6 +700,22 @@ assert(
 )
 assert(knownExactBlock.includes("'/content-pack'"), 'isKnownSpaRoute knownExact must list canonical /content-pack')
 assert(knownExactBlock.includes("'/media-kit'"), 'isKnownSpaRoute knownExact must list canonical /media-kit')
+
+assert(
+  knownExactBlock.includes("'/researcher/timeline'"),
+  'isKnownSpaRoute knownExact must list /researcher/timeline (local researcher tool; no soft-404)',
+)
+assert(
+  server.includes("'/researcher/timeline'") &&
+    (server.includes('STATIC_CANONICAL_PATHS') || server.includes('knownExact')),
+  'server must register /researcher/timeline in SPA allowlists',
+)
+const appTsx = read('src/App.tsx')
+assert(appTsx.includes('PersonalTimelinePage') && appTsx.includes('/researcher/timeline'), 'App route for personal timeline missing')
+const timelinePage = read('src/pages/PersonalTimelinePage.tsx')
+assert(timelinePage.includes('noindex'), 'personal timeline must be noindex')
+assert(timelinePage.includes('localStorage') || timelinePage.includes('local only'), 'personal timeline must stay local-only')
+
 assert(!prerender.includes("route: '/share'"), 'prerender must not emit duplicate /share content-pack page')
 assert(prerender.includes("route: '/content-pack'"), 'prerender must emit canonical /content-pack')
 // Soft-404 shells: no invented /404 canonical (noindex only).
@@ -731,8 +752,8 @@ assert(
     prerender.includes('What is the Veritas Community Forum?'),
   'prerender must emit Forum FAQPage',
 )
-const timelinePage = read('src/pages/TimelinePage.tsx')
-assert(timelinePage.includes('faqJsonLd'), 'TimelinePage must emit FAQPage schema')
+const archiveTimelinePage = read('src/pages/TimelinePage.tsx')
+assert(archiveTimelinePage.includes('faqJsonLd'), 'TimelinePage must emit FAQPage schema')
 const analyticsPage = read('src/pages/AnalyticsPage.tsx')
 assert(analyticsPage.includes('faqJsonLd'), 'AnalyticsPage must emit FAQPage schema')
 const forumPageSeo = read('src/pages/ForumPage.tsx')

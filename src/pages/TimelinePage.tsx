@@ -238,8 +238,15 @@ export default function TimelinePage() {
               >
                 Export CSV ({filteredEntries.length})
               </button>
+              <Link
+                to="/researcher/timeline"
+                className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                data-testid="timeline-personal-builder-link"
+              >
+                Personal timeline (local)
+              </Link>
               <p className="font-sans text-[0.6rem] text-ink-faint">
-                Exports the current era filter with chapter URLs for offline use.
+                Export the public archive eras, or build a private chronology that never leaves this browser.
               </p>
             </div>
 

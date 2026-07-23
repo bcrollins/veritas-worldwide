@@ -698,6 +698,9 @@ export default function SourcesPage() {
                   Related Pages
                 </h3>
                 <div className="space-y-2">
+                  <Link to="/researcher/timeline" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
+                    Personal timeline builder →
+                  </Link>
                   <Link to="/methodology" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Methodology &amp; Standards
                   </Link>

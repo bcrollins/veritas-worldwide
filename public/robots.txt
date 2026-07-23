@@ -18,6 +18,8 @@ Allow: /comprehensive-profile
 Allow: /comprehensive-profile/
 # Client-only reader state (auth-gated; low SEO value).
 Disallow: /bookmarks
+Disallow: /researcher/
+Disallow: /researcher/timeline
 # Family-brand podcast landing (product surface; residual OPSEC — keep out of index).
 Disallow: /bernie
 Disallow: /bernie/
