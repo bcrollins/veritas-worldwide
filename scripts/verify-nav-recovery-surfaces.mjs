@@ -1241,4 +1241,16 @@ assert(rhDefault.includes('hubs = PRIMARY_RELATED_HUBS'), 'RelatedHubs default P
 assert(rhDefault.includes("tone = 'surface'") || rhDefault.includes('tone = "surface"'), 'RelatedHubs default surface tone')
 
 
+
+// ResearchHubChips excludePath filter reaffirm final
+const rhcExcludeFinal = read('src/components/ResearchHubChips.tsx')
+assert(rhcExcludeFinal.includes('excludePath'), 'ResearchHubChips excludePath prop')
+assert(rhcExcludeFinal.includes('filter') || rhcExcludeFinal.includes('!== excludePath') || rhcExcludeFinal.includes('excludePath'), 'ResearchHubChips filters self')
+
+// DossierHubSpokes exclude filter reaffirm final
+const spokesExcludeFinal = read('src/components/DossierHubSpokes.tsx')
+assert(spokesExcludeFinal.includes('exclude'), 'DossierHubSpokes exclude prop')
+assert(spokesExcludeFinal.includes('s.id !== exclude') || spokesExcludeFinal.includes('filter'), 'DossierHubSpokes filters exclude')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
