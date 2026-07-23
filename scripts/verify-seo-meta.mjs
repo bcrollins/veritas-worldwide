@@ -286,6 +286,15 @@ assert(
   'prerender must emit bot-visible FAQ for /institute/methodology',
 )
 
+const llms = read('public/llms.txt')
+assert(llms.includes('veritasworldwide.com/privacy'), 'llms.txt must link Privacy for GEO trust discovery')
+assert(llms.includes('veritasworldwide.com/terms'), 'llms.txt must link Terms for GEO trust discovery')
+assert(llms.includes('veritasworldwide.com/membership'), 'llms.txt must link Membership for GEO discovery')
+assert(
+  prerender.includes('veritasworldwide.com/privacy') && prerender.includes('## Trust layers'),
+  'prerender llms generator must emit Privacy in Trust layers',
+)
+
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, image sitemap floors green',
 )
