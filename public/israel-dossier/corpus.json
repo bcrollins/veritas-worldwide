@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:06:37.358Z",
+  "generatedAt": "2026-07-23T10:07:35.060Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 294,
-    "timelineEvents": 282,
+    "incidents": 297,
+    "timelineEvents": 285,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 280,
+    "historicalWarCrimesPack": 283,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 234
+      "post-oct7": 237
     },
     "incidentsByTier": {
-      "verified": 292,
+      "verified": 295,
       "circumstantial": 2
     },
-    "childrenTagged": 262,
-    "civiliansTagged": 292,
+    "childrenTagged": 265,
+    "civiliansTagged": 295,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3652,6 +3652,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-protein-gap-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Protein-Energy Gap Pattern",
+      "description": "WFP/UNICEF multi-source documentation of collapsed protein-rich foods for children under siege.",
+      "source": "WFP / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.wfp.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-protein-energy-gap-pattern-2023-2025",
+        "gaza-children-kwashiorkor-marasmus-risk-pattern-2023-2025",
+        "gaza-market-price-inflation-pattern-2023-2025"
+      ],
+      "tags": [
+        "protein",
+        "children",
+        "food",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-respiratory-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5733,6 +5754,28 @@
       ]
     },
     {
+      "id": "tl-hostages-clean-water-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Clean Water Pattern",
+      "description": "Multi-source documentation of denial of adequate clean drinking water for civilian hostages.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-clean-water-captivity-pattern-2023-2025",
+        "israel-hostages-denied-hygiene-sanitation-pattern-2023-2025",
+        "israel-hostages-starvation-captivity-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "water",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-time-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7105,6 +7148,27 @@
       "tags": [
         "grazing",
         "outposts",
+        "settlers",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-greenhouse-destruction-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Greenhouse Destruction Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian greenhouses after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-greenhouse-destruction-pattern-2023-2025",
+        "gaza-greenhouses-irrigation-destruction-pattern-2023-2025",
+        "west-bank-settler-farm-equipment-destruction-pattern-2023-2025"
+      ],
+      "tags": [
+        "greenhouses",
+        "agriculture",
         "settlers",
         "west-bank"
       ]
@@ -19044,6 +19108,134 @@
         },
         {
           "label": "Multi-outlet irrigation destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-protein-energy-gap-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Protein-Energy Gap Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (protein-energy cohort)",
+      "location": "Gaza Strip displacement sites and markets",
+      "summary": "WFP, UNICEF, and multi-source food-security reporting document collapse of protein-rich foods (meat, dairy, legumes) for Gaza children under siege prices and supply failure — a dietary-gap pattern distinct from IPC phases and micronutrient cards.",
+      "evidence": "WFP market analyses, UNICEF nutrition notes, and multi-outlet coverage establish multi-source protein-energy dietary gap for children. Exact kcal/protein figures evolve; multi-source wartime pediatric protein-energy gap is the claim.",
+      "sources": [
+        {
+          "label": "WFP food security materials",
+          "url": "https://www.wfp.org"
+        },
+        {
+          "label": "UNICEF nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza food gap coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WFP public updates",
+          "url": "https://www.wfp.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-clean-water-captivity-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Clean Water Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (water-denial cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of adequate clean drinking water for Israeli civilian hostages — forced dirty water and rationing causing illness. Pattern card distinct from hygiene-denial and starvation cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source clean-water denial in captivity. Exact rationing varies; multi-source clean-water denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-greenhouse-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Greenhouse Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (greenhouse-destruction cohort)",
+      "location": "West Bank Palestinian greenhouses and nurseries",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian greenhouses after October 7 — collapsing high-value civilian agriculture. Pattern card for greenhouse destruction distinct from Gaza greenhouse card and farm-equipment cards.",
+      "evidence": "OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source greenhouse destruction. Exact structure counts evolve; multi-source wartime greenhouse destruction is the claim.",
+      "sources": [
+        {
+          "label": "OCHA agricultural damage materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem field materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet greenhouse destruction coverage",
           "url": "https://apnews.com"
         }
       ],
