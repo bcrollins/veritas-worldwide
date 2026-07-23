@@ -18,6 +18,7 @@ type CorpusHit = {
 export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: string }) {
   const [open, setOpen] = useState(Boolean(seedQuery.trim()))
   const [q, setQ] = useState(seedQuery)
+  const [kindFilter, setKindFilter] = useState<'all' | 'roc' | 'israel'>('all')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [rocClaims, setRocClaims] = useState<
@@ -70,7 +71,7 @@ export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: stri
     const needle = q.trim().toLowerCase()
     if (needle.length < 2) return [] as CorpusHit[]
     const out: CorpusHit[] = []
-    for (const c of rocClaims) {
+    if (kindFilter !== 'israel') for (const c of rocClaims) {
       const blob = `${c.id} ${c.claim} ${c.tier}`.toLowerCase()
       if (!blob.includes(needle)) continue
       out.push({
@@ -83,7 +84,7 @@ export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: stri
       })
       if (out.length >= 40) break
     }
-    if (out.length < 40) {
+    if (kindFilter !== 'roc' && out.length < 40) {
       for (const inc of israelIncidents) {
         const blob = `${inc.id} ${inc.title} ${inc.summary || ''} ${inc.tier || ''}`.toLowerCase()
         if (!blob.includes(needle)) continue
@@ -99,7 +100,7 @@ export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: stri
       }
     }
     return out.slice(0, 40)
-  }, [q, rocClaims, israelIncidents])
+  }, [q, kindFilter, rocClaims, israelIncidents])
 
   return (
     <section
@@ -144,6 +145,27 @@ export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: stri
               autoComplete="off"
               data-testid="corpus-search-input"
             />
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter corpus type">
+            {([
+              { id: 'all' as const, label: 'All corpora' },
+              { id: 'roc' as const, label: 'ROC only' },
+              { id: 'israel' as const, label: 'Israel only' },
+            ]).map((opt) => (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => setKindFilter(opt.id)}
+                aria-pressed={kindFilter === opt.id}
+                className={`inline-flex min-h-[44px] items-center rounded-sm border px-3 font-sans text-xs font-semibold ${
+                  kindFilter === opt.id
+                    ? 'border-crimson bg-crimson/5 text-crimson'
+                    : 'border-border text-ink-muted hover:border-crimson'
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
           </label>
           {loading && <p className="font-body text-sm text-ink-muted">Loading corpora…</p>}
           {error && (
