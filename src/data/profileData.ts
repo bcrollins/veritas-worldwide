@@ -6718,7 +6718,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'CA',
     photoUrl: getProfilePhoto('kevin-mccarthy'),
     summary:
-      'House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that telecoms complying with Jan. 6 committee records requests would violate federal law and lose ability to operate (Aug. 2021). Primary: OpenSecrets, Speakership record, CRS RL33222, PolitiFact.',
+      'House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False (telecoms/Jan. 6 records) and Pants on Fire claim nobody is questioning 2020 election legitimacy (May 2021; contradicted by McCarthy’s own Electoral College objections and party leadership fight). Primary: OpenSecrets, Speakership record, CRS RL33222, PolitiFact, Rev transcript.',
     tags: [
       'Former Speaker',
       'Pro-Israel',
@@ -6798,6 +6798,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2021',
       },
+      {
+        claim:
+          'Integrity docket: May 12, 2021 claim “I don’t think anybody is questioning the legitimacy of the presidential election” rated Pants on Fire (McCarthy and 100+ House Republicans objected to certification; Trump and members continued challenges).',
+        source: 'PolitiFact Pants on Fire; Rev White House stakeout transcript',
+        url: 'https://www.politifact.com/factchecks/2021/may/14/kevin-mccarthy/ignoring-claims-his-own-party-kevin-mccarthy-says-/',
+        tier: 'verified',
+        date: '2021',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -6819,6 +6827,26 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'mccarthy-nobody-questioning-election-legitimacy-2021',
+        statement:
+          '“I don’t think anybody is questioning the legitimacy of the presidential election. I think that is all over with.”',
+        saidAt: 'May 12, 2021',
+        context:
+          'White House stakeout after infrastructure meeting with President Biden, when asked whether elevating Elise Stefanik (who questioned 2020 processes) over Liz Cheney would complicate working with Biden.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. The same day House Republicans ousted Cheney for rejecting Trump’s stolen-election claims. McCarthy himself and 100+ House Republicans objected to certifying Arizona and Pennsylvania electors in January 2021; Trump continued to claim the election was stolen; multiple members still raised “irregularities” when asked if Biden was legitimately elected. Absolute “nobody is questioning” is false on its face against his own party’s contemporaneous conduct — including his own.',
+        correction:
+          'Numerous Republican leaders and members — including McCarthy’s Jan. 6 certification objections and the Cheney/Stefanik leadership fight — continued to question or undermine acceptance of the 2020 election’s legitimacy in May 2021.',
+        statementSource: 'Rev.com transcript — McCarthy/McConnell stakeout after Biden meeting, May 12, 2021',
+        statementUrl:
+          'https://www.rev.com/blog/transcripts/mitch-mcconnell-kevin-mccarthy-speech-after-meeting-with-biden-transcript',
+        debunkSource: 'PolitiFact — Pants on Fire (May 14, 2021); NYT objectors list; Cheney ouster record',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/may/14/kevin-mccarthy/ignoring-claims-his-own-party-kevin-mccarthy-says-/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/kevin-mccarthy/summary?cid=N00006863' },
@@ -6826,6 +6854,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — Jan. 6 telecom law claim (False)',
         url: 'https://www.politifact.com/factchecks/2021/sep/02/kevin-mccarthy/house-gop-leader-kevin-mccarthy-wrong-telecom-law/',
+      },
+      {
+        label: 'PolitiFact — nobody questioning election (Pants on Fire)',
+        url: 'https://www.politifact.com/factchecks/2021/may/14/kevin-mccarthy/ignoring-claims-his-own-party-kevin-mccarthy-says-/',
       },
     ],
   },

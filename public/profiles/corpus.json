@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:20:48.333Z",
+  "generatedAt": "2026-07-23T08:21:56.542Z",
   "count": 96,
   "profiles": [
     {
@@ -1071,7 +1071,7 @@
       "name": "Kevin McCarthy",
       "title": "Former Speaker of the House (R-CA)",
       "category": "politician",
-      "summary": "House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that telecoms complying with Jan. 6 committee records requests would violate federal law and lose ability to operate (Aug. 2021). Primary: OpenSecrets, Speakership record, CRS RL33222, PolitiFact.",
+      "summary": "House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False (telecoms/Jan. 6 records) and Pants on Fire claim nobody is questioning 2020 election legitimacy (May 2021; contradicted by McCarthy’s own Electoral College objections and party leadership fight). Primary: OpenSecrets, Speakership record, CRS RL33222, PolitiFact, Rev transcript.",
       "photo": "/profiles/kevin-mccarthy.jpg",
       "url": "https://veritasworldwide.com/profile/kevin-mccarthy",
       "bioguideId": "M001165",
@@ -1084,8 +1084,8 @@
         "Institutional Enablement",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
