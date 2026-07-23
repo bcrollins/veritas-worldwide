@@ -546,4 +546,11 @@ assert(terms.includes('terms-related-hubs') && terms.includes('RelatedHubs'), 'T
 assert(privacy.includes('/terms') || privacy.includes("to: '/terms'"), 'Privacy links Terms')
 assert(terms.includes('/privacy') || terms.includes("to: '/privacy'"), 'Terms links Privacy')
 
+
+// About recovery destinations
+const about = read('src/pages/AboutPage.tsx')
+assert(about.includes('about-related-hubs') && about.includes('RelatedHubs'), 'About RelatedHubs')
+assert(about.includes('/methodology') || about.includes("to: '/methodology'"), 'About Methodology recovery')
+assert(about.includes('/read') || about.includes("to: '/read'"), 'About Read recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
