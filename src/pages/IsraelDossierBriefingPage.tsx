@@ -17,6 +17,14 @@ import {
   type DossierSourceCategory,
 } from '../data/israelDossierCanon'
 import DossierHubSpokes from '../components/DossierHubSpokes'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
+
+const BRIEFING_HUBS: readonly RelatedHub[] = [
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/read', label: 'Read' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
 
 const SOURCE_CLASS_LABELS: Record<DossierSourceCategory, string> = {
   'public-record': 'Public record',
@@ -402,8 +410,9 @@ export default function IsraelDossierBriefingPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-5 pt-6 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl space-y-3 px-5 pt-6 sm:px-8 lg:px-10">
         <DossierHubSpokes variant="also-in" exclude="briefing" />
+        <RelatedHubs testId="briefing-related-hubs" hubs={BRIEFING_HUBS} />
       </div>
 
       <section className="mx-auto max-w-7xl px-5 pt-8 sm:px-8 lg:px-10" aria-label="Open questions and confidence limits">

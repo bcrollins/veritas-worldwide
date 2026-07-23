@@ -16,6 +16,7 @@ import {
   SITE_NAME,
 } from '../lib/seo'
 import DossierHubSpokes from '../components/DossierHubSpokes'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import {
   type ForumPost, type ForumComment, type Community, type SortMode, type TopTimeframe,
   type PostType, type PostFlair, type ReportReason, type VoteDirection,
@@ -26,6 +27,13 @@ import {
   getCommunity, getPostsForCommunity, getAllPosts, searchPosts, searchCommunities,
   submitReport, generateId,
 } from '../data/forumData'
+
+const FORUM_HUBS: readonly RelatedHub[] = [
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/read', label: 'Read' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
 
 /* ── SVG Icons ────────────────────────────────────────────────── */
 function UpArrow({ active }: { active?: boolean }) {
@@ -1189,8 +1197,9 @@ export default function ForumPage() {
 
       <ForumTruthNotice />
 
-      <div className="mb-4">
+      <div className="mb-4 space-y-3">
         <DossierHubSpokes variant="also-in" exclude="forum" />
+        <RelatedHubs testId="forum-related-hubs" hubs={FORUM_HUBS} />
       </div>
 
       {/* ── Three-column Layout ──────────────────────────────────── */}

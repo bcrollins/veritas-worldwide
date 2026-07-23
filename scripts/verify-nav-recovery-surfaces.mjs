@@ -41,6 +41,9 @@ const surfaces = [
   ['src/components/RelatedHubs.tsx', 'no-print'],
   ['src/components/ResearchHubChips.tsx', 'excludePath'],
   ['src/pages/AipacPage.tsx', 'aipac-related-hubs'],
+  ['src/pages/DeepStatePage.tsx', 'deep-state-related-hubs'],
+  ['src/pages/ForumPage.tsx', 'forum-related-hubs'],
+  ['src/pages/IsraelDossierBriefingPage.tsx', 'briefing-related-hubs'],
   ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
   ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
   ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
@@ -138,6 +141,9 @@ for (const rel of [
 }
 for (const [rel, testid] of [
   ['src/pages/AipacPage.tsx', 'aipac-related-hubs'],
+  ['src/pages/DeepStatePage.tsx', 'deep-state-related-hubs'],
+  ['src/pages/ForumPage.tsx', 'forum-related-hubs'],
+  ['src/pages/IsraelDossierBriefingPage.tsx', 'briefing-related-hubs'],
   ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
   ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
   ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
@@ -592,6 +598,18 @@ for (const rel of [
   'src/pages/NewsPage.tsx',
 ]) {
   assert(read(rel).includes('RelatedHubs'), `${rel} mounts RelatedHubs component`)
+}
+
+
+// Dossier family primary recovery (RelatedHubs alongside spokes)
+for (const [rel, tid] of [
+  ['src/pages/DeepStatePage.tsx', 'deep-state-related-hubs'],
+  ['src/pages/ForumPage.tsx', 'forum-related-hubs'],
+  ['src/pages/IsraelDossierBriefingPage.tsx', 'briefing-related-hubs'],
+]) {
+  assert(read(rel).includes(tid), `${rel} ${tid}`)
+  assert(read(rel).includes('RelatedHubs'), `${rel} mounts RelatedHubs`)
+  assert(read(rel).includes('DossierHubSpokes'), `${rel} keeps DossierHubSpokes`)
 }
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)

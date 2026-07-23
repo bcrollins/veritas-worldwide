@@ -12,6 +12,7 @@ import {
 } from '../lib/seo'
 import CommunityForum from '../components/CommunityForum'
 import DossierHubSpokes from '../components/DossierHubSpokes'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
@@ -19,6 +20,13 @@ import ReadingProgress from '../components/ReadingProgress'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ContentGate from '../components/ContentGate'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
+
+const DEEP_STATE_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
 
 /* ── Evidence Tier System ─────────────────────────────────────── */
 type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
@@ -670,9 +678,14 @@ export default function DeepStatePage() {
         </div>
       </section>
 
-      {/* Hub-and-spoke: Also in Dossiers (Sprint 2) */}
-      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-5 border-b border-border bg-parchment">
+      {/* Hub-and-spoke: Also in Dossiers (Sprint 2) + primary recovery */}
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-5 border-b border-border bg-parchment space-y-3">
         <DossierHubSpokes variant="also-in" exclude="deep-state" />
+        <RelatedHubs
+          testId="deep-state-related-hubs"
+          hubs={DEEP_STATE_HUBS}
+          tone="parchment"
+        />
       </div>
 
       {/* ── Key Numbers Bar ───────────────────────────────────── */}
