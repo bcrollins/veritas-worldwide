@@ -553,4 +553,10 @@ assert(about.includes('about-related-hubs') && about.includes('RelatedHubs'), 'A
 assert(about.includes('/methodology') || about.includes("to: '/methodology'"), 'About Methodology recovery')
 assert(about.includes('/read') || about.includes("to: '/read'"), 'About Read recovery')
 
+
+// Accessibility recovery destinations
+const a11y = read('src/pages/AccessibilityPage.tsx')
+assert(a11y.includes('accessibility-related-hubs') && a11y.includes('RelatedHubs'), 'A11y RelatedHubs')
+assert(a11y.includes('/about') || a11y.includes("to: '/about'") || a11y.includes('/read'), 'A11y About/Read recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
