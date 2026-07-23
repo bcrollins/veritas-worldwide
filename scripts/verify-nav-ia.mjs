@@ -286,6 +286,12 @@ assert(fs.readFileSync(path.join(root, 'src/pages/ForumPage.tsx'), 'utf8').inclu
 // RelatedHubs component is first-class recovery primitive
 assert(fs.existsSync(path.join(root, 'src/components/RelatedHubs.tsx')), 'RelatedHubs component file')
 assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('PRIMARY_RELATED_HUBS'), 'PRIMARY_RELATED_HUBS export')
+
+// RelatedHubs PRIMARY destinations match primaryLinks destinations
+const relatedPrimary = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/search'"]) {
+  assert(relatedPrimary.includes(`to: ${dest}`) && block.includes(`to: ${dest}`), `RelatedHubs+primaryLinks share ${dest}`)
+}
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
