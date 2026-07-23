@@ -2107,4 +2107,13 @@ assert(nfAriaUlt.includes('emphasizeTo="/"') || nfAriaUlt.includes("emphasizeTo=
 assert(surfaces.every(([rel, needle]) => typeof rel === 'string' && rel.startsWith('src/') && typeof needle === 'string' && needle.length > 0), 'surfaces well-formed ultimate final end')
 
 
+
+// RelatedHubs emphasize + dark + parchment three-mode ultimate
+const relatedModes = read('src/components/RelatedHubs.tsx')
+assert(relatedModes.includes('emphasizeTo'), 'emphasize mode')
+assert(relatedModes.includes("'dark'") || relatedModes.includes('"dark"'), 'dark mode')
+assert(relatedModes.includes("'parchment'") || relatedModes.includes('"parchment"'), 'parchment mode')
+assert(relatedModes.includes("'surface'") || relatedModes.includes('"surface"') || relatedModes.includes("tone = 'surface'"), 'surface mode')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
