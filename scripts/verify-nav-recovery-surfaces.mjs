@@ -128,6 +128,8 @@ assert(primaryBlock[1].includes('/profiles'), 'Profiles is primary hub')
 assert(primaryBlock[1].includes('/read'), 'Read is primary hub')
 assert(app.includes('Account & Trust') || app.includes('Account'), 'Account drawer section present')
 assert(app.includes('Hubs') || app.includes('drawerBrowseLinks'), 'Hubs or Browse drawer structure present')
+assert(app.includes("/news") || app.includes('/news'), 'News reachable in shell')
+assert(app.includes("/forum") || app.includes('/forum'), 'Forum reachable in shell')
 
 for (const route of [
   '/researcher',
