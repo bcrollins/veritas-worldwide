@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T12:29:10.558Z"
+    "generatedAt": "2026-07-23T12:31:09.211Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 61,
-    "viPackCards": 45,
-    "totalIncidents": 882
+    "incidentsWithVideoAndCivilians": 63,
+    "viPackCards": 44,
+    "totalIncidents": 892
   },
   "incidents": [
     {
@@ -283,6 +283,246 @@
       ]
     },
     {
+      "id": "gaza-civilian-oxygen-plant-strike-pattern-2023-2025",
+      "title": "Medical Oxygen and Gas Supply Disruptions (Pattern)",
+      "date": "2023–2025",
+      "location": "Gaza Strip hospitals",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "casualties": {
+        "killed": 0
+      },
+      "sources": [
+        {
+          "label": "WHO OPT emergency health",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "label": "MSF Palestine updates",
+          "url": "https://www.msf.org/palestine"
+        },
+        {
+          "label": "AP / Reuters hospital packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire/NGO hospital oxygen crisis packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "WHO emergency health updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        }
+      ]
+    },
+    {
+      "id": "israel-hostages-starvation-in-captivity-pattern-2023-2025",
+      "title": "Hostage Starvation and Severe Food Denial (Pattern)",
+      "date": "2023–2025",
+      "location": "Gaza Strip captivity sites",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "casualties": {
+        "killed": 0
+      },
+      "sources": [
+        {
+          "label": "AP / Reuters released-hostage packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT / multi-outlet hostage investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on captive treatment",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "Israeli multi-outlet medical follow-ups (via wires)",
+          "url": "https://www.reuters.com/world/middle-east/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Multi-outlet hostage condition packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "video",
+          "label": "Authenticated release appearance packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Multi-outlet hostage investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation on captive treatment",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "west-bank-settler-burning-vehicles-mass-pattern-2023-2025",
+      "title": "Mass Settler Vehicle Arson (Pattern)",
+      "date": "2023–2025",
+      "location": "West Bank (multiple villages)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "casualties": {
+        "killed": 0
+      },
+      "sources": [
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Haaretz settler violence packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "PRCS West Bank incident updates",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "label": "Haaretz / AP packages on settler violence",
+          "url": "https://www.haaretz.com/israel-news/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem vehicle-arson video packages",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "video",
+          "label": "Press-captured settler assault packages",
+          "url": "https://www.haaretz.com/israel-news/"
+        },
+        {
+          "type": "document",
+          "label": "PRCS incident logs",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Press stills of arson and assault aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ]
+    },
+    {
+      "id": "west-bank-settler-attacking-shepherds-pattern-2023-2025",
+      "title": "Settler Attacks on Shepherds and Herding Families (Pattern)",
+      "date": "2023–2025",
+      "location": "West Bank herding communities",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "casualties": {
+        "killed": 0
+      },
+      "sources": [
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem shepherd-attack video packages",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "document",
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "israel-hostages-sexual-violence-forensic-packages-2023-2024",
+      "title": "October 7 Sexual Violence — Multi-Outlet Forensic Packages",
+      "date": "October 7, 2023",
+      "location": "Southern Israel (multiple sites)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "casualties": {
+        "killed": 0
+      },
+      "sources": [
+        {
+          "label": "OHCHR / UN materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters multi-outlet investigations",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Multi-outlet forensic investigation packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "type": "video",
+          "label": "Authenticated bodycam packages cited by major outlets",
+          "url": "https://www.reuters.com/world/middle-east/"
+        }
+      ]
+    },
+    {
       "id": "israel-hostages-forced-to-record-coerced-statements-pattern-2023-2025",
       "title": "Israeli Hostages Forced to Record Coerced Video Statements Pattern (2023–2025)",
       "date": "October 2023 – 2025 (hostage coerced-statement cohort)",
@@ -430,53 +670,6 @@
       ]
     },
     {
-      "id": "israel-hostages-forced-to-record-propaganda-videos-pattern-2023-2025",
-      "title": "Hostages Forced to Record Propaganda Videos (Pattern)",
-      "date": "2023–2025",
-      "location": "Gaza Strip captivity sites",
-      "tier": "verified",
-      "targetsCivilians": true,
-      "targetsChildren": true,
-      "casualties": {
-        "killed": 0
-      },
-      "sources": [
-        {
-          "label": "AP / Reuters hostage video packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "label": "NYT / multi-outlet hostage investigations",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        },
-        {
-          "label": "OHCHR materials on October 7 crimes",
-          "url": "https://www.ohchr.org/"
-        },
-        {
-          "label": "Israeli multi-outlet medical follow-ups (via wires)",
-          "url": "https://www.reuters.com/world/middle-east/"
-        }
-      ],
-      "multimedia": [
-        {
-          "type": "video",
-          "label": "Authenticated coerced hostage video packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "type": "investigation",
-          "label": "Multi-outlet hostage investigation packages",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        },
-        {
-          "type": "document",
-          "label": "UN documentation on captive treatment",
-          "url": "https://www.ohchr.org/"
-        }
-      ]
-    },
-    {
       "id": "israel-hostages-children-separated-from-parents-pattern-2023-2025",
       "title": "Child Hostages Separated from Parents (Pattern)",
       "date": "2023–2025",
@@ -511,67 +704,6 @@
           "type": "investigation",
           "label": "Multi-outlet hostage investigation packages",
           "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        }
-      ]
-    },
-    {
-      "id": "west-bank-settler-attacking-funeral-processions-pattern-2023-2025",
-      "title": "Settler Attacks on Funeral Processions (Pattern)",
-      "date": "2023–2025",
-      "location": "West Bank (multiple villages)",
-      "tier": "verified",
-      "targetsCivilians": true,
-      "targetsChildren": true,
-      "casualties": {
-        "killed": 0
-      },
-      "sources": [
-        {
-          "label": "B’Tselem settler violence documentation",
-          "url": "https://www.btselem.org/settler_violence"
-        },
-        {
-          "label": "B’Tselem video bank",
-          "url": "https://www.btselem.org/video"
-        },
-        {
-          "label": "AP / Haaretz settler violence packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "label": "PRCS West Bank incident updates",
-          "url": "https://www.palestinercs.org/"
-        },
-        {
-          "label": "Haaretz / AP packages on settler violence",
-          "url": "https://www.haaretz.com/israel-news/"
-        }
-      ],
-      "multimedia": [
-        {
-          "type": "video",
-          "label": "B’Tselem funeral-attack video packages",
-          "url": "https://www.btselem.org/video"
-        },
-        {
-          "type": "investigation",
-          "label": "B’Tselem settler violence case files",
-          "url": "https://www.btselem.org/settler_violence"
-        },
-        {
-          "type": "video",
-          "label": "Press-captured settler assault packages",
-          "url": "https://www.haaretz.com/israel-news/"
-        },
-        {
-          "type": "document",
-          "label": "PRCS incident logs",
-          "url": "https://www.palestinercs.org/"
-        },
-        {
-          "type": "photo-essay",
-          "label": "Press stills of arson and assault aftermath",
-          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ]
     },
@@ -1261,46 +1393,6 @@
           "type": "document",
           "label": "OCHA demolition statistics",
           "url": "https://www.ochaopt.org/"
-        }
-      ]
-    },
-    {
-      "id": "vi-oct7-bodycam-sexual-violence-investigations-2023-2024",
-      "title": "October 7 — Bodycam & Forensic Packages on Sexual Violence Against Civilians",
-      "date": "October 7, 2023",
-      "location": "Southern Israel (multiple sites)",
-      "tier": "verified",
-      "targetsCivilians": true,
-      "targetsChildren": true,
-      "sources": [
-        {
-          "label": "UN human rights materials — October 7 crimes",
-          "url": "https://www.ohchr.org/"
-        },
-        {
-          "label": "AP / Reuters multi-outlet investigations",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "label": "NYT investigation packages on October 7 sexual violence",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
-        }
-      ],
-      "multimedia": [
-        {
-          "type": "investigation",
-          "label": "Multi-outlet forensic investigation packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "type": "document",
-          "label": "UN documentation trail",
-          "url": "https://www.ohchr.org/"
-        },
-        {
-          "type": "video",
-          "label": "Authenticated bodycam packages cited by major outlets",
-          "url": "https://www.reuters.com/world/middle-east/"
         }
       ]
     },
