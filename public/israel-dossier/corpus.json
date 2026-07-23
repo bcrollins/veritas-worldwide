@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:47:30.990Z",
+  "generatedAt": "2026-07-23T07:48:54.129Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 84,
-    "timelineEvents": 72,
+    "incidents": 85,
+    "timelineEvents": 73,
     "actors": 47,
     "moneyTrailNodes": 27,
-    "historicalWarCrimesPack": 70,
+    "historicalWarCrimesPack": 71,
     "legalCases": 17,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 24
+      "post-oct7": 25
     },
     "incidentsByTier": {
-      "verified": 82,
+      "verified": 83,
       "circumstantial": 2
     },
-    "childrenTagged": 72,
-    "civiliansTagged": 82,
+    "childrenTagged": 73,
+    "civiliansTagged": 83,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3107,6 +3107,27 @@
       "source": "Israeli Ministry of Foreign Affairs / Gaza MoH / Lancet",
       "sourceUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
       "tier": "verified"
+    },
+    {
+      "id": "tl-nasrallah-beirut-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Beirut Dahieh Strike — Nasrallah Killed",
+      "description": "Israeli strikes kill Hezbollah leader; multi-source civilian harm in dense southern suburbs.",
+      "source": "Multi-outlet / gov statements",
+      "sourceUrl": "https://apnews.com",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "nasrallah-beirut-strike-2024",
+        "lebanon-pager-explosions-2024",
+        "dahiya-doctrine-2006"
+      ],
+      "tags": [
+        "civilians",
+        "lebanon",
+        "hezbollah",
+        "leadership"
+      ]
     },
     {
       "id": "tl-icc-warrants-2024",
@@ -6725,6 +6746,51 @@
       "casualties": {
         "killed": 37,
         "injured": 3000
+      }
+    },
+    {
+      "id": "nasrallah-beirut-strike-2024",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "f35-fleet"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Beirut Dahieh Strike Killing Hassan Nasrallah (Sept 2024)",
+      "date": "September 27, 2024",
+      "location": "Dahieh / southern Beirut suburbs, Lebanon",
+      "summary": "Israeli airstrikes on Hezbollah headquarters infrastructure in Beirut's southern suburbs killed Hezbollah leader Hassan Nasrallah and others; multi-source reporting also documents substantial civilian casualties and building collapses in dense urban Dahieh. Depth entry for the leadership strike + civilian-harm floor in a designated urban district.",
+      "evidence": "Israeli government confirmation of the Nasrallah strike, multi-source Lebanese casualty reporting, and international press establish both the leadership target and civilian harm in the surrounding urban fabric. Exact civilian counts remain multi-source and contested at the margins.",
+      "sources": [
+        {
+          "label": "Multi-outlet Beirut strike reporting",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UNISPAL / OHCHR Lebanon materials",
+          "url": "https://www.ohchr.org"
+        },
+        {
+          "label": "Israeli government public statements (target claim)",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "photo-essay",
+          "label": "Multi-outlet Dahieh aftermath coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 100
       }
     },
     {

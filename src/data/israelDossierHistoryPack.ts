@@ -1871,6 +1871,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 37, injured: 3000 },
   },
 
+  {
+    id: 'nasrallah-beirut-strike-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'f35-fleet'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Beirut Dahieh Strike Killing Hassan Nasrallah (Sept 2024)',
+    date: 'September 27, 2024',
+    location: 'Dahieh / southern Beirut suburbs, Lebanon',
+    summary:
+      'Israeli airstrikes on Hezbollah headquarters infrastructure in Beirut\'s southern suburbs killed Hezbollah leader Hassan Nasrallah and others; multi-source reporting also documents substantial civilian casualties and building collapses in dense urban Dahieh. Depth entry for the leadership strike + civilian-harm floor in a designated urban district.',
+    evidence:
+      'Israeli government confirmation of the Nasrallah strike, multi-source Lebanese casualty reporting, and international press establish both the leadership target and civilian harm in the surrounding urban fabric. Exact civilian counts remain multi-source and contested at the margins.',
+    sources: [
+      { label: 'Multi-outlet Beirut strike reporting', url: 'https://apnews.com' },
+      { label: 'UNISPAL / OHCHR Lebanon materials', url: 'https://www.ohchr.org' },
+      { label: 'Israeli government public statements (target claim)', url: 'https://www.gov.il' },
+    ],
+    multimedia: [
+      { type: 'photo-essay', label: 'Multi-outlet Dahieh aftermath coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 100 },
+  },
+
+
 
 ]
 
@@ -2592,6 +2620,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['lebanon-pager-explosions-2024'],
     tags: ['civilians', 'children', 'lebanon', 'hezbollah'],
+  },
+
+  {
+    id: 'tl-nasrallah-beirut-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Beirut Dahieh Strike — Nasrallah Killed',
+    description: 'Israeli strikes kill Hezbollah leader; multi-source civilian harm in dense southern suburbs.',
+    source: 'Multi-outlet / gov statements',
+    sourceUrl: 'https://apnews.com',
+    tier: 'verified',
+    relatedIncidentIds: ['nasrallah-beirut-strike-2024', 'lebanon-pager-explosions-2024', 'dahiya-doctrine-2006'],
+    tags: ['civilians', 'lebanon', 'hezbollah', 'leadership'],
   },
 
 ]
