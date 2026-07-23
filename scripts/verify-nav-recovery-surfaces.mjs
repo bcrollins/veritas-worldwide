@@ -1338,4 +1338,12 @@ assert(accountFinal.includes('/accessibility') || accountFinal.includes('Accessi
 assert(accountFinal.includes('/deep-state') && accountFinal.includes('/forum'), 'dossier family routes final')
 
 
+
+// MediaKit dual recovery testids reaffirm
+const mediaDualFinal = read('src/pages/MediaKitPage.tsx')
+assert(mediaDualFinal.includes('media-kit-related-hubs'), 'media-kit brand CTAs row')
+assert(mediaDualFinal.includes('media-kit-primary-hubs'), 'media-kit primary RelatedHubs')
+assert(mediaDualFinal.includes('RelatedHubs'), 'MediaKit RelatedHubs mount')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
