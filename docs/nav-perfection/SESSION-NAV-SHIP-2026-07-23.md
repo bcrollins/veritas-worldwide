@@ -61,3 +61,8 @@
 
 ## Coordinate
 Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav intervals only.
+
+
+## Pure suite
+- `verify:pure` **46** suites including `verify-nav-recovery-surfaces`
+- Live proof matrix 100% green for shell/home/search/soft-404/spokes
