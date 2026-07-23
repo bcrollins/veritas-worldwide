@@ -42,6 +42,7 @@ const surfaces = [
   ['src/App.tsx', 'drawerResearchLinks'],
   ['src/components/StickyMembershipBar.tsx', 'sticky-membership-bar'],
   ['src/components/StickyMembershipBar.tsx', '3.75rem'],
+  ['src/components/StickyMembershipBar.tsx', 'env(safe-area-inset-bottom)'],
 ]
 
 for (const [rel, needle] of surfaces) {
