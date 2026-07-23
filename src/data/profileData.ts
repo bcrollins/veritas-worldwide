@@ -4144,75 +4144,158 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'nikki-haley',
     name: 'Nikki Haley',
-    title: 'Former UN Ambassador, South Carolina Governor',
+    title: 'Former U.S. Ambassador to the UN; former South Carolina Governor; 2024 presidential candidate',
     category: 'politician',
     party: 'R',
     state: 'SC',
     photoUrl: getProfilePhoto('nikki-haley'),
-    summary: 'Trump UN Ambassador 2017-2018. Former South Carolina Governor. 2024 presidential candidate. Pro-Israel positions.',
-    tags: ['UN Ambassador', 'Governor', 'Republican', 'South Carolina', 'Pro-Israel'],
-    career: ['UN Ambassador 2017-2018', 'Governor of South Carolina 2011-2017', 'State legislator'],
-    websites: [
-      { label: 'Official Website', url: 'https://www.nikki.org' }
+    summary:
+      'Trump-era U.S. Ambassador to the United Nations (2017–2018), former South Carolina governor, and 2024 Republican presidential candidate. High-visibility pro-Israel diplomat who vetoed multiple Security Council measures critical of Israel and led U.S. withdrawal from the UN Human Rights Council citing anti-Israel bias. Integrity docket covers dual-cited falsehoods (Texas secession claim; 2020 RNC tax-hike claim).',
+    tags: ['UN Ambassador', 'Governor', 'Republican', 'South Carolina', 'Pro-Israel', 'AIPAC', '2024 Primary'],
+    career: [
+      'South Carolina House / state legislator (public bio)',
+      '2011–2017 — Governor of South Carolina',
+      '2017–2018 — U.S. Ambassador to the United Nations',
+      'Vetoed multiple UNSC resolutions critical of Israel; led UNHRC exit',
+      '2024 Republican presidential candidate',
     ],
     quotes: [
       {
         text: 'I wear my pro-Israel badge with pride.',
-        context: 'AIPAC Policy Conference',
+        context: 'AIPAC Policy Conference address as UN Ambassador.',
         date: '2018',
         source: 'AIPAC',
-        url: 'https://www.aipac.org'
-      }
+        url: 'https://www.aipac.org',
+      },
+      {
+        text: 'Joe Biden and Kamala Harris want massive tax hikes on working families.',
+        context: '2020 Republican National Convention speech — PolitiFact rated False.',
+        date: 'August 24, 2020',
+        source: 'RNC speech / PolitiFact',
+        url: 'https://www.politifact.com/factchecks/2020/aug/25/nikki-haley/do-joe-biden-and-kamala-harris-want-massive-tax-hi/',
+      },
     ],
     donations: [
       {
-        from: 'Pro-Israel donors',
+        from: 'Pro-Israel donors / industry (2024 presidential cycle scale)',
         amount: 2300000,
         year: '2024',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/2024-presidential-race'
-      }
+        source: 'OpenSecrets 2024 presidential race',
+        url: 'https://www.opensecrets.org/2024-presidential-race',
+      },
+      {
+        from: 'Republican National Committee / party apparatus (campaign scale)',
+        amount: 500000,
+        year: '2023–2024',
+        source: 'FEC / OpenSecrets presidential finance overview',
+        url: 'https://www.fec.gov',
+      },
     ],
     policyActions: [
       {
-        action: 'Vetoed multiple UN resolutions critical of Israel as UN Ambassador',
-        date: '2017-2018',
-        context: 'Used US veto power at Security Council',
-        source: 'UN Records',
-        url: 'https://www.un.org'
+        action: 'Vetoed multiple UN Security Council resolutions critical of Israel as U.S. Ambassador',
+        date: '2017–2018',
+        context: 'Used U.S. veto power at Security Council to block measures targeting Israel.',
+        source: 'UN Security Council public record',
+        url: 'https://www.un.org',
       },
       {
-        action: 'Led US withdrawal from UN Human Rights Council',
+        action: 'Led U.S. withdrawal from UN Human Rights Council citing anti-Israel bias',
         date: '2018',
-        context: 'Cited anti-Israel bias',
+        context: 'State Department announcement under Haley UN tenure.',
         source: 'State Department',
-        url: 'https://www.state.gov'
-      }
+        url: 'https://www.state.gov',
+      },
     ],
     connections: [
       {
         name: 'AIPAC',
-        relationship: 'Major PAC beneficiary and speaker',
+        relationship: 'Major PAC/donor ecosystem beneficiary and Policy Conference speaker.',
         evidence: 'Public appearances and FEC filings',
-        tier: 'verified'
-      }
+        tier: 'verified',
+      },
+      {
+        name: 'Donald Trump',
+        relationship: 'Appointed UN Ambassador; later 2024 primary rival.',
+        evidence: 'Administration appointment; campaign record',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Vetoed 8 UN Security Council resolutions critical of Israel as Ambassador',
-        source: 'UN Records',
+        claim: 'As UN Ambassador, vetoed multiple Security Council resolutions critical of Israel (public UN record).',
+        source: 'UN Security Council',
         url: 'https://www.un.org',
         tier: 'verified',
-        date: '2018'
+        date: '2017–2018',
       },
       {
-        claim: 'Led US exit from UNHRC citing chronic anti-Israel bias',
+        claim: 'Led U.S. exit from UNHRC citing chronic anti-Israel bias.',
         source: 'State Department',
         url: 'https://www.state.gov',
         tier: 'verified',
-        date: '2018'
-      }
-    ]
+        date: '2018',
+      },
+      {
+        claim:
+          'February 2024: claimed states such as Texas could secede. PolitiFact rated False — the Civil War and subsequent constitutional settlement foreclosed unilateral secession.',
+        source: 'PolitiFact False (Feb 5, 2024)',
+        url: 'https://www.politifact.com/factchecks/2024/feb/05/nikki-haley/nikki-haley-said-texas-could-secede-from-the-us-he/',
+        tier: 'verified',
+        date: 'February 2024',
+      },
+      {
+        claim:
+          'August 2020 RNC: claimed Biden/Harris wanted "massive tax hikes on working families." PolitiFact rated False relative to campaign tax plans\' incidence on middle-income households.',
+        source: 'PolitiFact False (Aug 25, 2020)',
+        url: 'https://www.politifact.com/factchecks/2020/aug/25/nikki-haley/do-joe-biden-and-kamala-harris-want-massive-tax-hi/',
+        tier: 'verified',
+        date: 'August 2020',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'haley-texas-secession-right-2024',
+        statement:
+          'Claimed states (including Texas) have a right to secede from the United States.',
+        saidAt: 'February 2024',
+        context: '2024 Republican presidential primary campaign remarks on state power.',
+        whyFalse:
+          'PolitiFact rated False. The Civil War, the Supreme Court\'s Texas v. White line, and the settled constitutional order reject unilateral secession as a legal right of states.',
+        correction:
+          'States cannot unilaterally secede under U.S. constitutional law; that question was settled in the 19th century.',
+        statementSource: 'Haley campaign remarks (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/personalities/nikki-haley/',
+        debunkSource: 'PolitiFact — False (February 5, 2024)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2024/feb/05/nikki-haley/nikki-haley-said-texas-could-secede-from-the-us-he/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'haley-biden-harris-massive-tax-hikes-working-families-2020',
+        statement:
+          'Claimed Joe Biden and Kamala Harris “want massive tax hikes on working families.”',
+        saidAt: 'August 24, 2020',
+        context: 'Republican National Convention speech attacking the Democratic ticket.',
+        whyFalse:
+          'PolitiFact rated False. Biden-Harris 2020 tax proposals focused increases on high earners and corporations; independent analyses did not support a characterization of "massive" hikes on typical working families as the plan\'s core incidence.',
+        correction:
+          'The 2020 Democratic ticket\'s published tax agenda targeted upper-income and corporate taxes, not a blanket massive hike on working families.',
+        statementSource: 'RNC 2020 speech (PolitiFact quotation)',
+        statementUrl: 'https://www.politifact.com/personalities/nikki-haley/',
+        debunkSource: 'PolitiFact — False (August 25, 2020)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2020/aug/25/nikki-haley/do-joe-biden-and-kamala-harris-want-massive-tax-hi/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
+    websites: [
+      { label: 'Campaign / public site', url: 'https://www.nikki.org' },
+      { label: 'OpenSecrets 2024 presidential race', url: 'https://www.opensecrets.org/2024-presidential-race' },
+      { label: 'PolitiFact — Texas secession (False)', url: 'https://www.politifact.com/factchecks/2024/feb/05/nikki-haley/nikki-haley-said-texas-could-secede-from-the-us-he/' },
+      { label: 'PolitiFact — tax hikes claim (False)', url: 'https://www.politifact.com/factchecks/2020/aug/25/nikki-haley/do-joe-biden-and-kamala-harris-want-massive-tax-hi/' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Nikki_Haley' },
+    ],
   },
   {
     id: 'bernie-sanders',

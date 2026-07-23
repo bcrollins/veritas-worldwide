@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:03:57.917Z",
+  "generatedAt": "2026-07-23T07:05:03.665Z",
   "count": 94,
   "profiles": [
     {
@@ -798,9 +798,9 @@
     {
       "id": "nikki-haley",
       "name": "Nikki Haley",
-      "title": "Former UN Ambassador, South Carolina Governor",
+      "title": "Former U.S. Ambassador to the UN; former South Carolina Governor; 2024 presidential candidate",
       "category": "politician",
-      "summary": "Trump UN Ambassador 2017-2018. Former South Carolina Governor. 2024 presidential candidate. Pro-Israel positions.",
+      "summary": "Trump-era U.S. Ambassador to the United Nations (2017–2018), former South Carolina governor, and 2024 Republican presidential candidate. High-visibility pro-Israel diplomat who vetoed multiple Security Council measures critical of Israel and led U.S. withdrawal from the UN Human Rights Council citing anti-Israel bias. Integrity docket covers dual-cited falsehoods (Texas secession claim; 2020 RNC tax-hike claim).",
       "photo": "/profiles/nikki-haley.svg",
       "url": "https://veritasworldwide.com/profile/nikki-haley",
       "bioguideId": null,
@@ -809,11 +809,13 @@
         "Governor",
         "Republican",
         "South Carolina",
-        "Pro-Israel"
+        "Pro-Israel",
+        "AIPAC",
+        "2024 Primary"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "bernie-sanders",

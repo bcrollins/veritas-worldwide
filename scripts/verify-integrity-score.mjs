@@ -101,6 +101,7 @@ const required = [
   'kamala-harris',
   'benjamin-netanyahu',
   'ron-desantis',
+  'nikki-haley',
 ];
 const scores = {};
 for (const id of required) {
@@ -210,8 +211,25 @@ for (const id of [
   }
 }
 
+// Nikki Haley dual-cited integrity deep-dive
+const haley = scores['nikki-haley'];
+if (!haley || haley.n < 2) throw new Error('nikki-haley needs ≥2 verified falsehoods, got ' + (haley?.n ?? 0));
+if (haley.score > 75) throw new Error('nikki-haley score expected ≤75 after deep dive, got ' + haley.score);
+const haleyP = getProfileBySlug('nikki-haley');
+for (const id of [
+  'haley-texas-secession-right-2024',
+  'haley-biden-harris-massive-tax-hikes-working-families-2020',
+]) {
+  if (!(haleyP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('nikki-haley missing docket id: ' + id);
+  }
+}
+for (const f of (haleyP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('haley dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 14) throw new Error('expected ≥14 compiled dockets, got ' + docketCount);
+if (docketCount < 15) throw new Error('expected ≥15 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
