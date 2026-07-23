@@ -49,3 +49,11 @@ Sophisticated OSINT on public Veritas surfaces finds **zero recoverable path** t
 | Comprehensive profile success | noindex client + robots Disallow + prerender noindex |
 
 **Verdict this interval:** Public package **PASS**. Infrastructure residual risks (GH namespace, git history rewrite, WHOIS/KYC) remain documented.
+
+## Interval 49 / Wave 46 anonymity checkpoint (2026-07-23)
+
+- Live HTML multi-path scan: no `bcrollins`, no personal GH `sameAs` (entity-only X + Reddit).
+- `verify-live-anonymity` PASS on identity suite (soft claim-floor WARN during Railway lag only).
+- Commits authored as `Veritas Worldwide <rights@veritasworldwide.com>`.
+- Residual operator infra (org GH transfer, admin password hash, full history rewrite) remains operator-owned.
+
