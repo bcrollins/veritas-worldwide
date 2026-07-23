@@ -36,6 +36,7 @@ const surfaces = [
   ['src/App.tsx', 'mobile-tab-bar'],
   ['src/App.tsx', 'primaryLinks'],
   ['src/components/StickyMembershipBar.tsx', 'sticky-membership-bar'],
+  ['src/components/StickyMembershipBar.tsx', '3.75rem'],
 ]
 
 for (const [rel, needle] of surfaces) {
