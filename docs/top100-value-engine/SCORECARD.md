@@ -17,3 +17,9 @@
 | Pure OPSEC gates | 9.4 | 10.0 | 44 pure suites |
 
 Path to 10.0: GH org transfer, git history scrub, Stripe portal entity branding; optional Sentry if paging required; keep densify dual-sided without thrash.
+
+
+## Nav Perfection (2026-07-23)
+- ≤5 hubs + mobile tab bar + recovery web across Browse/Research/Account
+- Live markers green; pure 46 suites with verify-nav-ia + verify-nav-recovery-surfaces
+- Peer densify unthrashed
