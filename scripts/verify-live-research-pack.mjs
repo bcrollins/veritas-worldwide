@@ -34,6 +34,17 @@ async function main() {
   assert(zipRes.ok, `zip HTTP ${zipRes.status}`)
   const rateLimit = zipRes.headers.get('ratelimit-limit') || zipRes.headers.get('x-ratelimit-limit')
   assert(rateLimit, 'zip response missing RateLimit-Limit (research-pack scope)')
+  const cache = (zipRes.headers.get('cache-control') || '').toLowerCase()
+  assert(
+    cache.includes('must-revalidate') || cache.includes('max-age=3600'),
+    `zip must not use immutable year cache (got "${cache || 'none'}")`,
+  )
+  assert(!cache.includes('immutable'), `zip Cache-Control must not be immutable (got "${cache}")`)
+  const disposition = (zipRes.headers.get('content-disposition') || '').toLowerCase()
+  assert(
+    disposition.includes('attachment') && disposition.includes('research-pack'),
+    `zip Content-Disposition should be attachment research-pack (got "${disposition || 'none'}")`,
+  )
   const buf = Buffer.from(await zipRes.arrayBuffer())
   assert(buf.length > 50_000, `zip too small (${buf.length})`)
   assert(buf.length <= 8 * 1024 * 1024, `zip exceeds 8MiB (${buf.length})`)
