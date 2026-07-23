@@ -2418,6 +2418,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-dialysis-collapse-visual-2023-2025',
+    title: 'Gaza Dialysis Collapse — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip dialysis centers and hospital renal units',
+    summary:
+      'Multi-outlet video and photo packages document dialysis patients missing life-sustaining sessions under bombardment, fuel shortages, and clinic destruction. Distinct from prior hospital-evacuation visual cards by focusing on multi-source renal-care collapse packages; ethnicity is never evidence.',
+    evidence:
+      'WHO health-cluster materials, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of dialysis care collapse for civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza medical packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet dialysis-collapse video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of renal care under siege', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OHCHR medical-protection trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: false,
+  },
+  {
+    id: 'vi-oct7-nahal-oz-perimeter-road-visual-2023',
+    title: 'October 7 Nahal Oz Perimeter-Road Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Perimeter access roads of Kibbutz Nahal Oz',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders and vehicle attacks on Nahal Oz access roads during the October 7 attacks. Distinct from prior Nahal Oz interior visual cards by focusing on road-approach packages; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian targeting on access roads.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Nahal Oz road October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-sheep-theft-visual-2023-2025',
+    title: 'West Bank Settler Sheep and Flock Theft — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village pastures and herding routes',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler theft of Palestinian civilian sheep and flocks, denying livelihood including food income for families with children. Multi-source visual record distinct from livestock-theft prior card by focusing on sheep-flock packages; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of flock theft affecting civilian pastoral livelihoods.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem flock-theft video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem pastoral-violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
