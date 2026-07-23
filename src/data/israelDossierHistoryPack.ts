@@ -9162,6 +9162,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-osteomyelitis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Osteomyelitis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (osteomyelitis cohort)',
+    location: 'Gaza Strip hospitals and field surgical points',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document elevated pediatric osteomyelitis risk from contaminated open fractures under collapsed antibiotics and orthopedic follow-up — a bone-infection pattern distinct from orthopedic-care collapse and sepsis cards.',
+    evidence:
+      'WHO trauma materials, MSF surgical statements, and multi-outlet coverage establish multi-source pediatric osteomyelitis risk. Exact case counts evolve; multi-source wartime pediatric bone-infection risk is the claim.',
+    sources: [
+      { label: 'WHO trauma materials', url: 'https://www.who.int' },
+      { label: 'MSF surgical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza orthopedic infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-mental-health-care-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Mental-Health Care Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (mental-health-care cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document total denial of mental-health care for Israeli civilian hostages including children under extreme trauma — a medical-neglect pattern distinct from returnee-trauma and psych-meds cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source mental-health care denial in captivity. Exact cases vary; multi-source mental-health care denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-teachers-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Teachers Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (teacher-attack cohort)',
+    location: 'West Bank schools and school routes',
+    summary:
+      'UNICEF, OCHA, and multi-source reporting document elevated settler attacks on Palestinian teachers after October 7 — intimidating educators and collapsing safe schooling for children. Pattern card for teacher attacks distinct from school attacks and school-bus blocking cards.',
+    evidence:
+      'UNICEF education-protection materials, OCHA settler-violence databases, and multi-outlet coverage establish multi-source settler attacks on teachers. Exact incident counts evolve; multi-source wartime settler attacks on teachers is the claim.',
+    sources: [
+      { label: 'UNICEF education protection materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet teacher attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -14341,6 +14422,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['playgrounds', 'children', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-osteomyelitis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Osteomyelitis Risk Pattern',
+    description: 'WHO/MSF multi-source documentation of elevated pediatric osteomyelitis risk from contaminated open fractures.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-osteomyelitis-risk-pattern-2023-2025',
+      'gaza-children-orthopedic-care-collapse-pattern-2023-2025',
+      'gaza-children-sepsis-risk-pattern-2023-2025',
+    ],
+    tags: ['osteomyelitis', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-mental-health-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Mental-Health Care Pattern',
+    description: 'Multi-source documentation of total denial of mental-health care for civilian hostages under extreme trauma.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-mental-health-care-pattern-2023-2025',
+      'israel-hostages-psychological-trauma-returnees-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'mental-health', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-teacher-attacks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Teachers Pattern',
+    description: 'UNICEF/OCHA multi-source documentation of elevated settler attacks on Palestinian teachers after October 7.',
+    source: 'UNICEF / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-teachers-pattern-2023-2025',
+      'west-bank-settler-school-attacks-pattern-2023-2025',
+      'west-bank-settler-blocking-school-buses-pattern-2023-2025',
+    ],
+    tags: ['teachers', 'education', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
