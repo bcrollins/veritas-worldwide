@@ -359,6 +359,12 @@ for (const label of ['Record', 'Read', 'Dossiers', 'Profiles', 'Search']) {
 }
 assert((plIa[1].match(/to:/g) || []).length === 5, 'PRIMARY IA count 5')
 
+
+// RelatedHubs tones surface parchment dark IA
+const relatedTonesIa = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+assert(relatedTonesIa.includes('surface') && relatedTonesIa.includes('parchment') && (relatedTonesIa.includes("'dark'") || relatedTonesIa.includes('"dark"')), 'RelatedHubs three tones IA')
+assert(relatedTonesIa.includes('min-h-[44px]') && relatedTonesIa.includes('no-print'), 'RelatedHubs a11y chrome IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
