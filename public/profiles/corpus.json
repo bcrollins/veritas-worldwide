@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:46:11.492Z",
+  "generatedAt": "2026-07-23T10:50:09.174Z",
   "count": 96,
   "profiles": [
     {
@@ -488,9 +488,9 @@
         "Iron Dome",
         "Antisemitism Legislation"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "josh-gottheimer",
@@ -535,9 +535,9 @@
         "Financial Services",
         "Iron Dome"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "ritchie-torres",
@@ -557,9 +557,9 @@
         "Bronx",
         "Progressive Domestic / Pro-Israel Foreign"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "joe-biden",
@@ -951,8 +951,8 @@
         "Ceasefire Advocate",
         "UDP Target"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
@@ -1851,9 +1851,9 @@
         "Russia",
         "Mueller Report"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "tucker-carlson",
@@ -1930,9 +1930,9 @@
         "Political Commentary",
         "Trump Investigation"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "byron-donalds",
@@ -2022,9 +2022,9 @@
         "FMF Continuity",
         "Anti-BDS"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "bob-menendez",

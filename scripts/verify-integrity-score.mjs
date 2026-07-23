@@ -177,6 +177,12 @@ const required = [
   'miriam-adelson',
   'john-fetterman',
   'josh-gottheimer',
+  'jacky-rosen',
+  'brad-sherman',
+  'ritchie-torres',
+  'ben-cardin',
+  'rachel-maddow',
+  'robert-mueller',
 ];
 const scores = {};
 for (const id of required) {
@@ -965,8 +971,8 @@ for (const f of (bannonP.documentedFalsehoods || []).filter((x) => x.tier === 'v
 
 // Rashida Tlaib integrity gate (n≥1 seed)
 const tlaib = scores['rashida-tlaib'];
-if (!tlaib || tlaib.n < 1) throw new Error('rashida-tlaib needs ≥1 verified falsehood, got ' + (tlaib?.n ?? 0));
-if (tlaib.score > 90) throw new Error('rashida-tlaib score expected ≤90, got ' + tlaib.score);
+if (!tlaib || tlaib.n < 3) throw new Error('rashida-tlaib needs ≥1 verified falsehood, got ' + (tlaib?.n ?? 0));
+if (tlaib.score > 60) throw new Error('rashida-tlaib score expected ≤60 after densify, got ' + tlaib.score);
 const tlaibP = getProfileBySlug('rashida-tlaib');
 if (!(tlaibP.documentedFalsehoods || []).some((f) => f.id === 'tlaib-detroit-police-health-spending-2020')) {
   throw new Error('rashida-tlaib missing Detroit budget docket id');
@@ -1704,8 +1710,89 @@ for (const f of (gottheimerP.documentedFalsehoods || []).filter((x) => x.tier ==
   if (f.statementUrl === f.debunkUrl) throw new Error('gottheimer dual-cite collision: ' + f.id);
 }
 
+
+// Jacky Rosen densify gate (n≥3)
+const rosen = scores['jacky-rosen'];
+if (!rosen || rosen.n < 3) throw new Error('jacky-rosen needs ≥3 verified falsehoods, got ' + (rosen?.n ?? 0));
+if (rosen.score > 60) throw new Error('jacky-rosen score expected ≤60 after densify, got ' + rosen.score);
+const rosenP = getProfileBySlug('jacky-rosen');
+for (const id of ['jacky-rosen-not-an-aipac-democrat-absolute','jacky-rosen-unconditional-israel-aid-no-leverage-absolute','jacky-rosen-critics-of-israel-policy-antisemitic-absolute']) {
+  if (!(rosenP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('jacky-rosen missing: ' + id);
+}
+for (const f of (rosenP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('rosen dual-cite collision: ' + f.id);
+}
+
+// Brad Sherman densify gate (n≥3)
+const sherman = scores['brad-sherman'];
+if (!sherman || sherman.n < 3) throw new Error('brad-sherman needs ≥3 verified falsehoods, got ' + (sherman?.n ?? 0));
+if (sherman.score > 60) throw new Error('brad-sherman score expected ≤60 after densify, got ' + sherman.score);
+const shermanP = getProfileBySlug('brad-sherman');
+for (const id of ['brad-sherman-not-an-aipac-democrat-absolute','brad-sherman-unconditional-israel-aid-no-leverage-absolute','brad-sherman-critics-of-israel-policy-antisemitic-absolute']) {
+  if (!(shermanP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('brad-sherman missing: ' + id);
+}
+for (const f of (shermanP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('sherman dual-cite collision: ' + f.id);
+}
+
+// Ritchie Torres densify gate (n≥3)
+const torres = scores['ritchie-torres'];
+if (!torres || torres.n < 3) throw new Error('ritchie-torres needs ≥3 verified falsehoods, got ' + (torres?.n ?? 0));
+if (torres.score > 60) throw new Error('ritchie-torres score expected ≤60 after densify, got ' + torres.score);
+const torresP = getProfileBySlug('ritchie-torres');
+for (const id of ['ritchie-torres-not-an-aipac-democrat-absolute','ritchie-torres-unconditional-israel-aid-no-leverage-absolute','ritchie-torres-critics-of-israel-policy-antisemitic-absolute']) {
+  if (!(torresP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('ritchie-torres missing: ' + id);
+}
+for (const f of (torresP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('torres dual-cite collision: ' + f.id);
+}
+
+// Ben Cardin densify gate (n≥3)
+const cardin = scores['ben-cardin'];
+if (!cardin || cardin.n < 3) throw new Error('ben-cardin needs ≥3 verified falsehoods, got ' + (cardin?.n ?? 0));
+if (cardin.score > 60) throw new Error('ben-cardin score expected ≤60 after densify, got ' + cardin.score);
+const cardinP = getProfileBySlug('ben-cardin');
+for (const id of ['ben-cardin-not-an-aipac-democrat-absolute','ben-cardin-unconditional-israel-aid-no-leverage-absolute','ben-cardin-critics-of-israel-policy-antisemitic-absolute']) {
+  if (!(cardinP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('ben-cardin missing: ' + id);
+}
+for (const f of (cardinP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('cardin dual-cite collision: ' + f.id);
+}
+
+// Rachel Maddow densify gate (n≥3)
+const maddow = scores['rachel-maddow'];
+if (!maddow || maddow.n < 3) throw new Error('rachel-maddow needs ≥3 verified falsehoods, got ' + (maddow?.n ?? 0));
+if (maddow.score > 50) throw new Error('rachel-maddow score expected ≤50 after densify, got ' + maddow.score);
+const maddowP = getProfileBySlug('rachel-maddow');
+for (const id of [
+  'maddow-russiagate-absolute-certainty-beyond-mueller-conspiracy',
+  'maddow-trump-russian-asset-absolute-certainty',
+  'maddow-overreached-russia-adjacent-story-arcs-absolute',
+]) {
+  if (!(maddowP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('rachel-maddow missing: ' + id);
+}
+for (const f of (maddowP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('maddow dual-cite collision: ' + f.id);
+}
+
+// Robert Mueller densify gate (n≥3)
+const mueller = scores['robert-mueller'];
+if (!mueller || mueller.n < 3) throw new Error('robert-mueller needs ≥3 verified falsehoods, got ' + (mueller?.n ?? 0));
+if (mueller.score > 60) throw new Error('robert-mueller score expected ≤60 after densify, got ' + mueller.score);
+const muellerP = getProfileBySlug('robert-mueller');
+for (const id of [
+  'mueller-fbi-anthrax-investigation-absolute-certainty-errors',
+  'mueller-wmd-iraq-fbi-support-certainty-framing',
+  'mueller-special-counsel-will-not-be-silent-then-silent-strategy',
+]) {
+  if (!(muellerP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('robert-mueller missing: ' + id);
+}
+for (const f of (muellerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('mueller dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 90) throw new Error('expected ≥90 compiled dockets, got ' + docketCount);
+if (docketCount < 96) throw new Error('expected ≥96 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
