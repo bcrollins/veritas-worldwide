@@ -2085,8 +2085,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'SC',
     photoUrl: getProfilePhoto('lindsey-graham'),
     summary:
-      'South Carolina Republican senator and high-visibility foreign-policy hawk. Frequent Israel trips and floor advocacy for maximal military support; documented pro-Israel PAC recipient (OpenSecrets). Leading voice for unconditional wartime aid after October 7. Primary: OpenSecrets, Senate record, CRS RL33222.',
-    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'South Carolina', 'Republican', 'Foreign Policy Hawk', 'Iron Dome'],
+      'South Carolina Republican senator and high-visibility foreign-policy hawk. Frequent Israel trips and floor advocacy for maximal military support; documented pro-Israel PAC recipient (OpenSecrets). Leading voice for unconditional wartime aid after October 7. Integrity docket: dual-cited PolitiFact Falses on Build Back Better $3T deficit claim (vs CBO score of the actual bill) and House impeachment “due process” denial claim. Primary: OpenSecrets, Senate record, CRS RL33222, CBO, PolitiFact.',
+    tags: [
+      'Senator',
+      'Pro-Israel',
+      'AIPAC',
+      'South Carolina',
+      'Republican',
+      'Foreign Policy Hawk',
+      'Iron Dome',
+      'Integrity Docket',
+    ],
     career: [
       'U.S. Air Force JAG (public bio)',
       '1995–2003 — U.S. House',
@@ -2141,6 +2150,44 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
       },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'graham-bbb-3-trillion-deficit-2021',
+        statement:
+          '“The CBO says (the Build Back Better Act) is $3 trillion of deficit spending.”',
+        saidAt: 'December 12, 2021',
+        context: 'Fox News Sunday interview characterizing the Build Back Better Act then before the Senate.',
+        whyFalse:
+          'PolitiFact rated False. CBO’s score of the actual bill (as written, with temporary provisions) was roughly $158 billion in net deficit impact over 10 years after IRS enforcement offsets — not $3 trillion. The $3 trillion figure came from a separate CBO letter scoring a modified hypothetical that permanently extended temporary programs Graham and House Budget ranking members asked CBO to model — not the bill on the floor.',
+        correction:
+          'CBO’s scorekeeping estimate of the Build Back Better Act as written was far below $3 trillion; the $3 trillion figure described a modified permanent-extension scenario, not the Act’s official cost.',
+        statementSource: 'Fox News Sunday transcript (Dec 12, 2021) — Graham interview',
+        statementUrl: 'https://www.foxnews.com/transcript/fox-news-sunday-on-december-12-2021',
+        debunkSource: 'PolitiFact — False (Dec 14, 2021); CBO Fall 2021 reconciliation score of H.R. 5376',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/dec/14/lindsey-graham/sen-grahams-false-claim-about-build-back-better-ad/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'graham-impeachment-due-process-2019',
+        statement:
+          'House Democrats leading the impeachment inquiry are “denying President Trump basic fairness and due process accorded every American.”',
+        saidAt: 'October 24, 2019',
+        context: 'Senate Resolution 378 condemning the House impeachment inquiry; repeated in press conference and social posts.',
+        whyFalse:
+          'PolitiFact rated False. Constitutional scholars explained that House impeachment is an accusatory/investigative stage analogous to a grand-jury process — the accused is not entitled to full criminal trial due-process rights (confront accusers, call witnesses, challenge evidence) at that stage; those rights, if applicable, attach at Senate trial. The Constitution gives the House sole power of impeachment and latitude to set its own investigative process.',
+        correction:
+          'Impeachment inquiry procedure is not criminal due process; the House investigates and charges, and the Senate tries. Scholars and contemporaneous court treatment did not support Graham’s absolute due-process-denial framing.',
+        statementSource: 'S.Res. 378 text / Judiciary Committee resolution PDF (Oct 24, 2019)',
+        statementUrl: 'https://www.congress.gov/bill/116th-congress/senate-resolution/378',
+        debunkSource: 'PolitiFact — False (Oct 28, 2019) with constitutional-scholar synthesis',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/oct/28/lindsey-graham/graham-wrong-house-impeachment-inquiry-denies-trum/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
     sourcedClaims: [
       {
         claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Graham.',
@@ -2156,10 +2203,34 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: Dec 2021 claim CBO said Build Back Better is $3T deficit spending rated False (actual CBO score of bill ~$158B net; $3T was permanent-extension hypothetical).',
+        source: 'PolitiFact False; CBO publication 57676',
+        url: 'https://www.politifact.com/factchecks/2021/dec/14/lindsey-graham/sen-grahams-false-claim-about-build-back-better-ad/',
+        tier: 'verified',
+        date: '2021',
+      },
+      {
+        claim:
+          'Integrity docket: Oct 2019 claim House impeachment inquiry denied Trump “due process accorded every American” rated False by PolitiFact (House accusatory stage ≠ criminal trial rights).',
+        source: 'PolitiFact False; S.Res. 378',
+        url: 'https://www.politifact.com/factchecks/2019/oct/28/lindsey-graham/graham-wrong-house-impeachment-inquiry-denies-trum/',
+        tier: 'verified',
+        date: '2019',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.lgraham.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/lindsey-graham/summary?cid=N00009975' },
+      {
+        label: 'PolitiFact — BBB $3T deficit (False)',
+        url: 'https://www.politifact.com/factchecks/2021/dec/14/lindsey-graham/sen-grahams-false-claim-about-build-back-better-ad/',
+      },
+      {
+        label: 'PolitiFact — impeachment due process (False)',
+        url: 'https://www.politifact.com/factchecks/2019/oct/28/lindsey-graham/graham-wrong-house-impeachment-inquiry-denies-trum/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Lindsey_Graham' },
     ],
   },
@@ -2411,17 +2482,18 @@ export const PROFILES: PowerProfile[] = [
       {
         id: 'cotton-no-way-to-screen-immigrants-covid-2021',
         statement:
-          'Claimed there is "no way" to screen immigrants for COVID-19 at the border.',
-        saidAt: 'February 2021',
-        context: 'Public remarks opposing Biden-era border/immigration policy during COVID.',
+          '“A lot of these migrants that are coming, we have no way to screen their backgrounds for either health or for security.”',
+        saidAt: 'February 1, 2021',
+        context: 'Fox & Friends interview opposing Biden-era border/immigration policy during COVID; amplified on Cotton’s Senate X account.',
         whyFalse:
-          'PolitiFact rated False. CBP told PolitiFact it conducts initial inspections for symptoms and risk factors associated with COVID; absolute "no way to screen" language was inaccurate.',
+          'PolitiFact rated False. CBP confirmed initial COVID symptom/risk inspections and longstanding infectious-disease referral protocols; CBP TECS and related systems support security/criminal-history screening of border encounters. Absolute “no way to screen” language was inaccurate even if protocols’ sufficiency is debatable.',
         correction:
-          'Border officials perform health-related screening steps; screening is not impossible even if imperfect.',
-        statementSource: 'Cotton Feb 2021 remarks (PolitiFact statement capture)',
-        statementUrl: 'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/',
-        debunkSource: 'PolitiFact — False (Feb 3, 2021) with CBP screening confirmation',
-        debunkUrl: 'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/',
+          'Border officials have health and security screening tools and processes; screening is not impossible even if imperfect or incomplete.',
+        statementSource: 'Sen. Tom Cotton X post amplifying Feb 1, 2021 Fox & Friends remarks',
+        statementUrl: 'https://twitter.com/SenTomCotton/status/1356219737060110339',
+        debunkSource: 'PolitiFact — False (Feb 3, 2021) with CBP spokesperson + DHS OIG COVID custody screening report',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/',
         severity: 'material',
         tier: 'verified',
       },

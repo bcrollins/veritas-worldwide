@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:31:00.505Z",
+  "generatedAt": "2026-07-23T07:32:54.931Z",
   "count": 96,
   "profiles": [
     {
@@ -376,7 +376,7 @@
       "name": "Lindsey Graham",
       "title": "U.S. Senator (R-SC)",
       "category": "politician",
-      "summary": "South Carolina Republican senator and high-visibility foreign-policy hawk. Frequent Israel trips and floor advocacy for maximal military support; documented pro-Israel PAC recipient (OpenSecrets). Leading voice for unconditional wartime aid after October 7. Primary: OpenSecrets, Senate record, CRS RL33222.",
+      "summary": "South Carolina Republican senator and high-visibility foreign-policy hawk. Frequent Israel trips and floor advocacy for maximal military support; documented pro-Israel PAC recipient (OpenSecrets). Leading voice for unconditional wartime aid after October 7. Integrity docket: dual-cited PolitiFact Falses on Build Back Better $3T deficit claim (vs CBO score of the actual bill) and House impeachment “due process” denial claim. Primary: OpenSecrets, Senate record, CRS RL33222, CBO, PolitiFact.",
       "photo": "/profiles/lindsey-graham.jpg",
       "url": "https://veritasworldwide.com/profile/lindsey-graham",
       "bioguideId": "G000359",
@@ -387,11 +387,12 @@
         "South Carolina",
         "Republican",
         "Foreign Policy Hawk",
-        "Iron Dome"
+        "Iron Dome",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "marco-rubio",

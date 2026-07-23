@@ -108,6 +108,8 @@ const required = [
   'dick-cheney',
   'marco-rubio',
   'mike-pompeo',
+  'lindsey-graham',
+  'tom-cotton',
 ];
 const scores = {};
 for (const id of required) {
@@ -328,8 +330,37 @@ if (!(pompeoP.documentedFalsehoods || []).some((f) => f.id === 'pompeo-defended-
   throw new Error('mike-pompeo missing Yovanovitch docket id');
 }
 
+// Lindsey Graham multi-entry integrity deep-dive
+const graham = scores['lindsey-graham'];
+if (!graham || graham.n < 2) throw new Error('lindsey-graham needs ≥2 verified falsehoods, got ' + (graham?.n ?? 0));
+if (graham.score > 75) throw new Error('lindsey-graham score expected ≤75 after deep dive, got ' + graham.score);
+const grahamP = getProfileBySlug('lindsey-graham');
+for (const id of [
+  'graham-bbb-3-trillion-deficit-2021',
+  'graham-impeachment-due-process-2019',
+]) {
+  if (!(grahamP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('lindsey-graham missing docket id: ' + id);
+  }
+}
+for (const f of (grahamP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('graham dual-cite collision: ' + f.id);
+}
+
+// Tom Cotton integrity gate
+const cotton = scores['tom-cotton'];
+if (!cotton || cotton.n < 1) throw new Error('tom-cotton needs ≥1 verified falsehood, got ' + (cotton?.n ?? 0));
+if (cotton.score > 90) throw new Error('tom-cotton score expected ≤90, got ' + cotton.score);
+const cottonP = getProfileBySlug('tom-cotton');
+if (!(cottonP.documentedFalsehoods || []).some((f) => f.id === 'cotton-no-way-to-screen-immigrants-covid-2021')) {
+  throw new Error('tom-cotton missing COVID screening docket id');
+}
+for (const f of (cottonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('cotton dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 21) throw new Error('expected ≥21 compiled dockets, got ' + docketCount);
+if (docketCount < 23) throw new Error('expected ≥23 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
