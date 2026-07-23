@@ -9,6 +9,7 @@ import {
   setJsonLd,
   setMetaTags,
   breadcrumbJsonLd,
+  faqJsonLd,
   itemListJsonLd,
   SITE_NAME,
   SITE_URL,
@@ -96,6 +97,28 @@ export default function TopicsIndexPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Research Topics', url: `${SITE_URL}/topics` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What are Veritas research topic hubs?',
+          answer:
+            'Curated hubs connecting The Record chapters, current reporting, Power Profiles, and related primary-source trails by subject — Federal Reserve, AIPAC, surveillance, JFK, Epstein network, Israel policy, and more.',
+        },
+        {
+          question: 'How do topic hubs differ from individual chapters?',
+          answer:
+            'Chapters are long-form archive units. Topic hubs are discovery surfaces that route readers to the best chapters, news, and profiles for a research question without replacing the underlying sourced documents.',
+        },
+        {
+          question: 'Are topic hubs free to use?',
+          answer:
+            'Yes. Topic hubs and the linked archive paths are free to read. Membership is optional public-interest funding.',
+        },
+        {
+          question: 'Who publishes the topic hubs?',
+          answer:
+            'Veritas Worldwide only. Entity attribution — no personal byline. Methodology explains evidence tiers used across hubs.',
+        },
       ]),
       itemListJsonLd({
         name: 'Veritas research topic hubs',
