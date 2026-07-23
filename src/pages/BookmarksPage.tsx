@@ -321,31 +321,19 @@ export default function BookmarksPage() {
                     <p className="mx-auto mt-4 max-w-2xl font-body text-base leading-relaxed text-ink-muted">
                       Start saving chapters from the archive, then use this page as your reading queue, progress view, and next-step dashboard.
                     </p>
-                    <div className="mt-6 flex flex-wrap justify-center gap-3" data-testid="bookmarks-empty-hubs">
+                    <div className="mt-6 flex flex-col items-center gap-3">
                       <Link
                         to="/read"
                         className="inline-flex min-h-[44px] items-center rounded-full bg-crimson px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-crimson-dark"
                       >
                         Open the Reader
                       </Link>
-                      <Link
-                        to="/search"
-                        className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
-                      >
-                        Search the Archive
-                      </Link>
-                      <Link
-                        to="/news"
-                        className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
-                      >
-                        News desk
-                      </Link>
-                      <Link
-                        to="/content-pack"
-                        className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
-                      >
-                        Research Pack
-                      </Link>
+                      <RelatedHubs
+                        testId="bookmarks-empty-hubs"
+                        hubs={BOOKMARKS_HUBS}
+                        className="justify-center"
+                        ariaLabel="Empty bookmarks destinations"
+                      />
                     </div>
                   </section>
                 ) : (
