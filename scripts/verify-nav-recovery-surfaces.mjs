@@ -631,4 +631,11 @@ assert(israelPage.includes('israel-dossier-related-hubs'), 'israel-dossier-relat
 assert(israelPage.includes('RelatedHubs') && israelPage.includes('variant="sticky"'), 'Israel sticky spokes + RelatedHubs')
 assert(israelPage.includes('/methodology') || israelPage.includes("to: '/methodology'"), 'Israel Methodology recovery')
 
+
+// DossierHubSpokes variants encode sticky/inline/also-in contracts
+const spokesComp = read('src/components/DossierHubSpokes.tsx')
+assert(spokesComp.includes("'sticky'") || spokesComp.includes('"sticky"'), 'sticky variant')
+assert(spokesComp.includes('also-in') && spokesComp.includes('inline'), 'also-in + inline variants')
+assert(spokesComp.includes('dossier-hub-spokes'), 'dossier-hub-spokes testid')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
