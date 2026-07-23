@@ -349,6 +349,16 @@ assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').in
 assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'Home underfold IA')
 assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-hub-cta-row'), 'Home hero CTA IA')
 
+
+// RelatedHubs PRIMARY five labels IA end
+const relatedIaEnd = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+const plIa = relatedIaEnd.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+assert(plIa, 'PRIMARY IA end')
+for (const label of ['Record', 'Read', 'Dossiers', 'Profiles', 'Search']) {
+  assert(plIa[1].includes(label), `PRIMARY IA label ${label}`)
+}
+assert((plIa[1].match(/to:/g) || []).length === 5, 'PRIMARY IA count 5')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
