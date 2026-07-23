@@ -395,7 +395,7 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   assert(vi.includes("type: 'video'"), 'VI pack must include video multimedia')
   assert(!/brollins|brandoncrollins|aerolink/i.test(vi), 'VI pack identity leak')
   const cards = (vi.match(/id: 'vi-/g) || []).length
-  assert(cards >= 1205, `VI pack should have ≥50 visual cards, got ${cards}`)
+  assert(cards >= 1208, `VI pack should have ≥50 visual cards, got ${cards}`)
   const sourceUrls = (vi.match(/url: 'https?:\/\//g) || []).length
   assert(sourceUrls >= cards * 2, `VI dual-cite floor: need ≥2 URLs/card avg, cards=${cards} urls=${sourceUrls}`)
   const expanded = read(files.expanded)
@@ -419,7 +419,7 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   const sf = JSON.parse(fs.readFileSync(sfPath, 'utf8'))
   assert(typeof sf.incidentCount === 'number' && sf.incidentCount >= 5232, `soft-floor incidentCount too low: ${sf.incidentCount}`)
   assert(sf.visualInvestigations && typeof sf.visualInvestigations.withVideo === 'number', 'soft-floor missing visualInvestigations.withVideo')
-  assert(sf.visualInvestigations.withVideo >= 1199, `soft-floor withVideo floor ≥54, got ${sf.visualInvestigations.withVideo}`)
+  assert(sf.visualInvestigations.withVideo >= 1202, `soft-floor withVideo floor ≥54, got ${sf.visualInvestigations.withVideo}`)
 }
 
 if (errors.length) {
