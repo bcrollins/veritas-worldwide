@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:57:07.159Z  
+**Generated:** 2026-07-23T10:00:04.624Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 327  
-**Tier histogram:** `{"circumstantial": 16, "contested": 33, "interpretive": 32, "literary_theological": 3, "speculative": 2, "verified": 117, "well_attested": 124}`
+**Claim count:** 336  
+**Tier histogram:** `{"circumstantial": 16, "contested": 34, "interpretive": 33, "literary_theological": 3, "speculative": 2, "verified": 120, "well_attested": 128}`
 
 Entity-only attribution. Live on veritasworldwide.com.
 
@@ -26,6 +26,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ane-gezer-calendar` | well_attested | proof_grade_data | The Gezer calendar is an early Hebrew agricultural calendar inscription relevant to literacy and agrarian life in the southern Levant. |
 | `ane-hezekiah-bulla` | well_attested | proof_grade_data | Bullae and seals naming Hezekiah (and debated related officials) provide epigraphic controls for late-8th-century Judah’s royal administration. |
 | `ane-hezekiah-lmlk` | well_attested | attested_report | lmlk jar handles and related Judahite administrative seals concentrate in late eighth-century contexts associated with Hezekiah’s reign and Assyrian threat. |
+| `ane-hezekiah-tunnel-water` | verified | proof_grade_data | Hezekiah’s tunnel redirected Gihon spring water to the Siloam Pool — verified hydraulic engineering of late-8th-century Jerusalem. |
 | `ane-inscription-map` | well_attested | attested_report | Key West Semitic and Egyptian inscriptions relevant to Israel/Judah (Merneptah, Mesha, Tel Dan, Siloam, etc.) form a geographically distributed control set across Egypt, Transjordan, and the Galilee–Golan. |
 | `ane-ketef-hinnom` | verified | proof_grade_data | Ketef Hinnom silver scrolls contain early Hebrew priestly blessing text (Numbers 6) — among the oldest biblical text witnesses in metal. |
 | `ane-kuntillet-ajrud` | well_attested | proof_grade_data | Inscriptions from Kuntillet ‘Ajrud include blessing formulae pairing Yahweh with other divine names — key data for Israelite religion debates. |
@@ -43,6 +44,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ane-ugarit` | well_attested | attested_report | Ugaritic texts (Ras Shamra) supply Northwest Semitic mythic and ritual parallels used in comparative study of Hebrew Bible poetry and divine council language. |
 | `arch-bar-kokhba` | verified | proof_grade_data | The Bar Kokhba revolt (132–135 CE) is archaeologically and papyrologically attested; its aftermath reshaped Judean demography and Jewish–Christian trajectories. |
 | `arch-bethsaida` | contested | debate | Bethsaida identification and Early Roman occupation layers are active archaeological research topics relevant to Galilee Gospel geography. |
+| `arch-bethsaida-debate` | contested | debate | Bethsaida identification (et-Tell vs el-Araj) remains an active archaeological debate relevant to Gospel geography. |
 | `arch-caesarea-maritima` | verified | proof_grade_data | Caesarea Maritima — Herodian harbor city and later Roman provincial capital — is extensively excavated and contextualizes prefectural administration relevant to Pilate traditions. |
 | `arch-caesarea-philippi` | verified | proof_grade_data | Paneas / Caesarea Philippi (Banias) is archaeologically documented as a Herodian/Philip city at the Jordan headwaters with a Paneion cult site. |
 | `arch-capernaum` | well_attested | attested_report | Capernaum (Kefar Nahum) was a fishing village on the Sea of Galilee with Early Roman occupation; a later synagogue stands over earlier remains. |
@@ -86,6 +88,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `cosmo-bbn` | well_attested | science_model | Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions. |
 | `cosmo-big-bang-nucleosynthesis-d` | verified | science_model | Primordial deuterium abundance measurements tightly constrain the baryon density in standard BBN, aligning with CMB-inferred Ω_b. |
 | `cosmo-cmb` | verified | science_model | The cosmic microwave background (CMB) is a near-isotropic blackbody at T ≈ 2.725 K, consistent with a hot early universe. |
+| `cosmo-cmb-lensing` | verified | science_model | CMB lensing measures the deflection of CMB photons by large-scale structure, providing an independent growth probe within ΛCDM. |
 | `cosmo-cmb-polarization` | verified | science_model | CMB polarization (E-modes; B-mode searches) provides independent cosmological information beyond temperature anisotropies alone. |
 | `cosmo-cmb-power` | verified | science_model | The CMB angular power spectrum exhibits acoustic peaks whose positions and amplitudes constrain baryon density, dark matter density, and curvature in ΛCDM fits. |
 | `cosmo-dark-energy` | verified | science_model | Type Ia supernova surveys (1990s–present) established late-time accelerated expansion, modeled in ΛCDM as a cosmological-constant / dark-energy component. |
@@ -115,6 +118,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ec-aristides` | well_attested | attested_report | The Apology of Aristides (2nd c.) is an early Christian apology preserved in Syriac/Greek traditions describing Christian ethics to a Roman audience. |
 | `ec-athanasius` | verified | proof_grade_data | Athanasius, 39th Festal Letter (367 CE), lists the exact 27-book New Testament canon later ratified in the West. |
 | `ec-barnabas` | well_attested | attested_report | The Epistle of Barnabas (late 1st / early 2nd c.) allegorizes Hebrew Bible law and shows early Christian supersessionist interpretation. |
+| `ec-barnabas-allegory` | well_attested | attested_report | The Epistle of Barnabas allegorizes Torah commandments as spiritual types — early Christian supersessionist hermeneutic evidence. |
 | `ec-didache` | well_attested | attested_report | The Didache preserves an early Christian “two ways” ethic, baptismal and eucharistic instructions, and itinerant ministry rules — dating commonly late 1st / early 2nd c. |
 | `ec-didache-eucharist` | well_attested | attested_report | The Didache preserves early Christian baptismal and eucharistic instructions distinct from later standardized liturgies. |
 | `ec-diognetus` | well_attested | attested_report | The Epistle to Diognetus (2nd/3rd c.?) is an early Christian apology describing Christian life as a civic “soul of the world.” |
@@ -179,6 +183,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `hj-miracles-method` | interpretive | reconstruction | Miracle narratives are not historically “verified” under naturalistic historical method; historians can study reports, meanings, and social effects of wonder-traditions. |
 | `hj-multiple-attestation-crucifixion` | verified | attested_report | Jesus’ crucifixion is multiply attested in Christian sources and referenced by Tacitus, forming a high-confidence historical core event. |
 | `hj-parables` | well_attested | reconstruction | Parables form a characteristic teaching form in the Synoptic tradition and are widely treated as a historically distinctive feature of Jesus’ public speech. |
+| `hj-passion-week-outline` | well_attested | reconstruction | A final Jerusalem visit ending in arrest and crucifixion under Pilate is a standard historical outline shared across diverse HJ reconstructions. |
 | `hj-pauline-chronology` | contested | debate | Pauline absolute chronology is reconstructed from Acts, the letters, and external anchors (Gallio inscription at Delphi); competing schemes (Ramsay, Knox, Hyldahl, et al.) differ by several years. |
 | `hj-peter-rome` | circumstantial | reconstruction | Peter’s presence and martyrdom in Rome are early traditions (1 Clement; later Acts of Peter) with varying historical confidence; New Testament itself does not narrate a Roman martyrdom. |
 | `hj-pilate-stone` | verified | proof_grade_data | The Pilate Stone (Caesarea Maritima, 1961) independently attests Pontius Pilate as prefect of Judea. |
@@ -224,6 +229,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `mod-proof-vs-belief` | interpretive | reconstruction | This corpus’s proofVsConcept field exists to prevent readers from equating historical attestation, scientific models, tradition, and theological belief. |
 | `mod-quest-historiography` | interpretive | reconstruction | Historiography of the “quests” for the historical Jesus is itself a modern scholarly narrative with periodization that can oversimplify continuous research traditions. |
 | `mod-radiocarbon-dss` | well_attested | science_model | Radiocarbon dating of selected Dead Sea Scrolls supports late Second Temple copy ranges broadly consistent with paleography. |
+| `mod-reader-hygiene-checklist` | interpretive | reconstruction | Readers should check for each claim: tier label, proofVsConcept, source kind, and whether a statement is model/reconstruction/tradition before treating it as laboratory fact. |
 | `mod-social-memory` | interpretive | reconstruction | Social memory approaches treat Gospel traditions as communal remembering under social constraints rather than pure invention or pure stenography. |
 | `mod-textus-receptus` | verified | proof_grade_data | The Textus Receptus tradition (Erasmus onward) underlies early modern vernacular Bibles but is not the base text of modern critical editions (NA/UBS). |
 | `mod-third-quest` | interpretive | reconstruction | The “Third Quest” emphasizes Jesus’ Jewish context (Sanders, Vermes, Meier, Wright, Crossan, et al.) against earlier de-Judaizing portraits. |
@@ -239,6 +245,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nc-lucian` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians and refers to their crucified sophist in Passing of Peregrinus — evidence of known Christian devotion, not independent biography. |
 | `nc-lucian-alexander` | well_attested | attested_report | Lucian’s Alexander the False Prophet satirizes cult founders and miracle claims in the second century — comparative evidence for how elites mocked religious innovators. |
 | `nc-lucian-peregrinus` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians in The Passing of Peregrinus, treating Christ as a crucified “sophist” founder of a cult. |
+| `nc-lucian-peregrinus-christ` | well_attested | attested_report | Lucian’s Peregrinus describes Christians venerating a crucified sophist in Palestine — hostile 2nd-c. literary notice of founder memory. |
 | `nc-mara` | circumstantial | reconstruction | The Syriac letter of Mara bar Serapion mentions a “wise king” executed by the Jews; identification with Jesus is possible but not certain. |
 | `nc-mara-bar-serapion` | circumstantial | attested_report | The Mara bar Serapion letter (Syriac; date debated, often 1st–3rd c.) may allude to a “wise king” of the Jews executed by his people — identification with Jesus is uncertain. |
 | `nc-mara-serapion-limits` | circumstantial | attested_report | Mara bar Serapion’s “wise king” remains an uncertain possible allusion; chronological and referent ambiguity prevent strong HJ use. |
@@ -286,6 +293,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nt-nomina-sacra` | verified | proof_grade_data | Nomina sacra abbreviations for divine names and titles are a distinctive early Christian scribal practice visible across Greek NT manuscripts. |
 | `nt-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek columns for comparative Old Testament textual work — a landmark of ancient textual criticism. |
 | `nt-orthodox-corruption` | contested | debate | Bart Ehrman’s “orthodox corruption” thesis argues some early scribes altered texts in christologically charged passages; magnitude and intent remain debated. |
+| `nt-oxy-rhynchus` | verified | proof_grade_data | Oxyrhynchus papyri include important early Christian and NT fragments expanding the geographic footprint of early text transmission in Egypt. |
 | `nt-p45-p46-p47` | verified | proof_grade_data | Chester Beatty papyri (P45, P46, P47) are major third-century witnesses to Gospels/Acts, Paul, and Revelation respectively. |
 | `nt-p46-paul` | verified | proof_grade_data | Papyrus P46 is among the earliest substantial collections of Pauline letters (typically dated late 2nd / early 3rd century CE). |
 | `nt-p52` | well_attested | attested_report | Papyrus P52 (Rylands Greek P 457) is among the earliest surviving NT fragments (John 18), paleographically dated roughly to the second century CE. |
@@ -327,6 +335,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `st-philo` | verified | proof_grade_data | Philo of Alexandria provides contemporary diaspora Jewish philosophical and exegetical context for the early first century CE. |
 | `st-pompey-63` | verified | proof_grade_data | Pompey’s intervention in Judea (63 BCE) brought Hasmonean civil conflict under Roman arbitration and began lasting Roman overlordship. |
 | `st-prefecture` | verified | proof_grade_data | Roman Judea after 6 CE was administered by equestrian prefects (later procurators) based primarily at Caesarea, with troops and judicial powers including capital cases in practice. |
+| `st-qumran-calendar` | well_attested | attested_report | Some DSS calendrical texts promote a 364-day solar calendar differing from later rabbinic lunar-solar practice — evidence of calendar diversity. |
 | `st-roman-census-practices` | contested | debate | Roman provincial censuses and tax registrations are documented empire-wide; Luke’s census of Quirinius is a specific chronological crux relative to Herod’s death. |
 | `st-roman-client-kings` | verified | proof_grade_data | Rome governed Judea via client kings (Herod, Archelaus) and later equestrian prefects — dual administrative models shape Gospel political settings. |
 | `st-sadducees-josephus` | well_attested | attested_report | Josephus’s descriptions of Sadducees emphasize aristocratic temple-associated elites denying fate and (per him) resurrection — tendentious but indispensable. |
