@@ -79,7 +79,7 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 
 
 ## Recovery suite scale
-- `verify-nav-recovery-surfaces`: **57 surface needles** + family mounts + Hick/soft-404 exactness
+- `verify-nav-recovery-surfaces`: **58 surface needles** + family mounts + Hick/soft-404 exactness
 - Live continuously green under densify tip ≥1500 incidents
 
 | `75ff335` | recovery suite 40 needles (not-found-page) |
@@ -98,12 +98,12 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `4de6574` | sticky dismiss key |
 
 | `b7a2376` | trackSupportClick on membership bar |
-| recovery | **57 surface needles** milestone |
+| recovery | **58 surface needles** milestone |
 
 | `7567a6b` | Join CTA label |
 
 | `3e75719` | Dismiss aria-label |
-| recovery | **57 surface needles** |
+| recovery | **58 surface needles** |
 
 | `7600a35` | mobile support copy |
 
@@ -112,6 +112,8 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `7a549c3` | no-print membership bar |
 
 | `5f3024f` | min-w-[44px] touch targets |
-| recovery | **57 surface needles** |
+| recovery | **58 surface needles** |
 
 | `a49e4c9` | bg-obsidian membership chrome |
+
+| `ecb883f` | backdrop-blur membership chrome |
