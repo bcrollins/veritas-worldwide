@@ -95,9 +95,19 @@ export default function TermsPage() {
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-ink mb-3">
               Terms of Use
             </h1>
-            <p className="text-sm text-ink-muted mb-10 border-b border-border pb-6">
+            <p className="text-sm text-ink-muted mb-6">
               Last updated: March 2026. By accessing Veritas Worldwide, you agree to these terms.
             </p>
+            <nav
+              className="mb-10 flex flex-wrap gap-2 border-b border-border pb-6"
+              aria-label="Related trust surfaces"
+              data-testid="terms-related-hubs"
+            >
+              <Link to="/privacy" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Privacy</Link>
+              <Link to="/accessibility" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Accessibility</Link>
+              <Link to="/about" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">About</Link>
+              <Link to="/content-pack" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Research Pack</Link>
+            </nav>
 
             <section id="license" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Content License</h2>

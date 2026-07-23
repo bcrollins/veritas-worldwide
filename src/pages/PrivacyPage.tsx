@@ -95,9 +95,19 @@ export default function PrivacyPage() {
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-ink mb-3">
               Privacy Policy
             </h1>
-            <p className="text-sm text-ink-muted mb-10 border-b border-border pb-6">
+            <p className="text-sm text-ink-muted mb-6">
               Last updated: March 2026. This policy explains how Veritas Worldwide collects, uses, and protects your information.
             </p>
+            <nav
+              className="mb-10 flex flex-wrap gap-2 border-b border-border pb-6"
+              aria-label="Related trust surfaces"
+              data-testid="privacy-related-hubs"
+            >
+              <Link to="/terms" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Terms</Link>
+              <Link to="/accessibility" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Accessibility</Link>
+              <Link to="/about" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">About</Link>
+              <Link to="/membership" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Membership</Link>
+            </nav>
 
             <section id="collection" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Information We Collect</h2>

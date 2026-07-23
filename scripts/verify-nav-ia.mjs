@@ -175,7 +175,11 @@ const a11yPage = fs.readFileSync(path.join(root, 'src/pages/AccessibilityPage.ts
 const membershipPage = fs.readFileSync(path.join(root, 'src/pages/MembershipPage.tsx'), 'utf8')
 assert(a11yPage.includes('data-testid="accessibility-related-hubs"'), 'Accessibility related hubs')
 assert(membershipPage.includes('data-testid="membership-related-hubs"'), 'Membership related hubs')
+const privacy = fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8')
+const terms = fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8')
+assert(privacy.includes('data-testid="privacy-related-hubs"'), 'Privacy related hubs')
+assert(terms.includes('data-testid="terms-related-hubs"'), 'Terms related hubs')
 
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account, soft-404, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
