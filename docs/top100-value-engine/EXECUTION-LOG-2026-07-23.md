@@ -191,3 +191,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Multi-agent | densify-only; peer nav docs unstaged |
 | Live | lag-aware (1509/105 → catching tip) |
 
+
+## Interval densify — tip **1554** / withVideo **117** / VI **107**
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza epidural/central-venous/bone-marrow/IO-drill · hostage captor-names/piano-vigils/darkness-eating/family-press · WB date-mats/garden-plots/almond-shelling/pomegranate-sacks |
+| VI | maternity ward · Sa’ad Oct7 · solar-panel destruction |
+| Pure | visual + israel-dossier + research-pack PASS |
+| Multi-agent | densify-only |
+
