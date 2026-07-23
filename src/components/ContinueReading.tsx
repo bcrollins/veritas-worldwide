@@ -40,7 +40,7 @@ export default function ContinueReading() {
             <Link
               key={record.chapterId}
               to={`/chapter/${record.chapterId}`}
-              className="group flex min-h-[44px] items-center gap-4 p-4 border border-border rounded-sm hover:border-crimson transition-colors card-lift"
+              className="group flex min-h-[44px] items-center gap-4 p-4 border border-border rounded-sm hover:border-crimson transition-colors card-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
             >
               {ch.heroImage && (
                 <div className="hidden sm:block shrink-0 w-16 h-16 overflow-hidden rounded-sm bg-parchment-dark">

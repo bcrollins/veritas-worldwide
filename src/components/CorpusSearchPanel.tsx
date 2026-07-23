@@ -123,7 +123,7 @@ export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: stri
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-4 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson hover:text-crimson"
+          className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-4 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson hover:text-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           aria-expanded={open}
         >
           {open ? 'Hide' : 'Open corpora search'}
@@ -140,7 +140,7 @@ export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: stri
               type="search"
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm"
+              className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
               placeholder="e.g. Pilate, hostages, Dead Sea Scrolls, white phosphorus"
               autoComplete="off"
               data-testid="corpus-search-input"
@@ -160,7 +160,7 @@ export default function CorpusSearchPanel({ seedQuery = '' }: { seedQuery?: stri
                   kindFilter === opt.id
                     ? 'border-crimson bg-crimson/5 text-crimson'
                     : 'border-border text-ink-muted hover:border-crimson'
-                }`}
+                } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
               >
                 {opt.label}
               </button>

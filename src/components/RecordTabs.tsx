@@ -67,7 +67,7 @@ export default function RecordTabs({ activeTab, onTabChange }: Props) {
         {/* Collapse toggle */}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="flex min-h-[44px] items-center justify-center w-full py-2 mb-1 text-ink-faint hover:text-ink transition-colors"
+          className="flex min-h-[44px] items-center justify-center w-full py-2 mb-1 text-ink-faint hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           title={collapsed ? 'Expand' : 'Collapse'}
         >
@@ -88,7 +88,7 @@ export default function RecordTabs({ activeTab, onTabChange }: Props) {
                   isActive
                     ? 'bg-crimson/8 text-crimson font-semibold border-l-2 border-crimson'
                     : 'text-ink-muted hover:text-ink hover:bg-parchment-dark/50 border-l-2 border-transparent'
-                }`}
+                } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
                 aria-current={isActive ? 'true' : undefined}
                 title={tab.label}
               >
@@ -131,7 +131,7 @@ export default function RecordTabs({ activeTab, onTabChange }: Props) {
                   isActive
                     ? 'text-crimson bg-crimson/5 border-t-2 border-crimson'
                     : 'text-ink-faint hover:text-ink border-t-2 border-transparent'
-                }`}
+                } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
                 aria-current={isActive ? 'true' : undefined}
               >
                 <span className="shrink-0">{tab.icon}</span>

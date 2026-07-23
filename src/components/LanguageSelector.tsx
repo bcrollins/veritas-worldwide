@@ -144,7 +144,7 @@ export default function LanguageSelector() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 p-2 min-w-[44px] min-h-[44px] text-ink-muted hover:text-ink transition-colors"
+        className="flex items-center gap-1.5 p-2 min-w-[44px] min-h-[44px] text-ink-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         aria-label={t('lang.select')}
         aria-expanded={open}
         title={activeGTLang ? `${activeGTLang.native} (Google Translate)` : `${current.native} (${current.name})`}
@@ -171,7 +171,7 @@ export default function LanguageSelector() {
                 tab === 'manual'
                   ? 'text-crimson border-b-2 border-crimson'
                   : 'text-ink-faint hover:text-ink-muted'
-              }`}
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
             >
               {t('lang.select')} (34)
             </button>
@@ -181,7 +181,7 @@ export default function LanguageSelector() {
                 tab === 'translate'
                   ? 'text-crimson border-b-2 border-crimson'
                   : 'text-ink-faint hover:text-ink-muted'
-              }`}
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
             >
               Translate (130+)
             </button>
@@ -198,7 +198,7 @@ export default function LanguageSelector() {
               </div>
               <button
                 onClick={handleResetGT}
-                className="inline-flex min-h-[44px] items-center font-sans text-[0.55rem] font-bold tracking-wider uppercase text-ink-faint hover:text-crimson transition-colors"
+                className="inline-flex min-h-[44px] items-center font-sans text-[0.55rem] font-bold tracking-wider uppercase text-ink-faint hover:text-crimson transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
               >
                 Reset
               </button>
@@ -214,7 +214,7 @@ export default function LanguageSelector() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search languages..."
-                className="w-full min-h-[44px] px-2.5 py-1.5 font-sans text-xs bg-parchment-dark dark:bg-ink-dark border border-border rounded-sm focus:outline-none focus:border-crimson/40 placeholder:text-ink-faint"
+                className="w-full min-h-[44px] px-2.5 py-1.5 font-sans text-xs bg-parchment-dark dark:bg-ink-dark border border-border rounded-sm focus:outline-none focus:border-crimson/40 placeholder:text-ink-faint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
               />
             </div>
           )}
@@ -232,7 +232,7 @@ export default function LanguageSelector() {
                       onClick={() => handleManualLang(code)}
                       className={`w-full min-h-[44px] flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
                         isActive ? 'bg-crimson/5 text-crimson' : 'text-ink dark:text-parchment'
-                      }`}
+                      } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
                     >
                       <div className="flex items-center gap-2">
                         <span className="font-sans text-xs font-semibold uppercase w-5">{code}</span>
@@ -257,7 +257,7 @@ export default function LanguageSelector() {
                   onClick={handleResetGT}
                   className={`w-full min-h-[44px] flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
                     !gtLang ? 'bg-crimson/5 text-crimson' : 'text-ink dark:text-parchment'
-                  }`}
+                  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
                 >
                   <div className="flex items-center gap-2">
                     <span className="font-sans text-xs font-semibold uppercase w-8">EN</span>
@@ -274,7 +274,7 @@ export default function LanguageSelector() {
                       onClick={() => handleGTLang(gl)}
                       className={`w-full min-h-[44px] flex items-center justify-between px-3 py-2 text-left hover:bg-parchment-dark dark:hover:bg-ink-dark transition-colors ${
                         isActive ? 'bg-crimson/5 text-crimson' : 'text-ink dark:text-parchment'
-                      }`}
+                      } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
                     >
                       <div className="flex items-center gap-2 min-w-0">
                         <span className="font-sans text-xs font-semibold uppercase w-8 shrink-0">{gl.code}</span>

@@ -45,7 +45,7 @@ export default function TextSelectionShare() {
           await navigator.clipboard.writeText(`"${text}"`)
           setShow(false)
         }}
-        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-2 text-xs font-sans hover:text-crimson-light transition-colors"
+        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-2 text-xs font-sans hover:text-crimson-light transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         title="Copy quote"
         aria-label="Copy quote"
       >
@@ -56,7 +56,7 @@ export default function TextSelectionShare() {
         href={`https://x.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-2 text-xs font-sans hover:text-crimson-light transition-colors"
+        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-2 text-xs font-sans hover:text-crimson-light transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         onClick={() => setShow(false)}
         title="Share on X"
         aria-label="Share quote on X"

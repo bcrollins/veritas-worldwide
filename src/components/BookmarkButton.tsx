@@ -17,7 +17,7 @@ export default function BookmarkButton({ chapterId }: { chapterId: string }) {
   return (
     <button
       onClick={handleClick}
-      className="inline-flex min-h-[44px] items-center gap-1.5 px-1 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors"
+      className="inline-flex min-h-[44px] items-center gap-1.5 px-1 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
       title={isLoggedIn ? (saved ? 'Remove bookmark' : 'Save article') : 'Sign in to save'}
       aria-label={isLoggedIn ? (saved ? 'Remove bookmark' : 'Save article') : 'Sign in to save'}
       aria-pressed={saved}

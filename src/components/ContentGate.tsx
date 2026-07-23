@@ -85,7 +85,7 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
           {/* Close */}
           <button
             onClick={handleDismiss}
-            className="absolute top-1 right-1 z-10 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors"
+            className="absolute top-1 right-1 z-10 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
             aria-label="Dismiss"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,12 +126,12 @@ export default function ContentGate({ triggerDepth = 40, contentInterest }: Prop
                     }}
                     placeholder="your@email.com"
                     required
-                    className="flex-1 min-h-[44px] min-w-0 px-2.5 py-1.5 font-sans text-xs border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40"
+                    className="flex-1 min-h-[44px] min-w-0 px-2.5 py-1.5 font-sans text-xs border border-border rounded-sm focus:outline-none focus:ring-1 focus:ring-crimson/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
                   />
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="inline-flex min-h-[44px] items-center px-4 py-1.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap"
+                    className="inline-flex min-h-[44px] items-center px-4 py-1.5 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
                   >
                     {status === 'submitting' ? '...' : 'Subscribe'}
                   </button>

@@ -60,7 +60,7 @@ export default function PrimarySourceLink({
           href={secondary}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] uppercase tracking-wider text-ink-muted hover:text-crimson"
+          className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] uppercase tracking-wider text-ink-muted hover:text-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           aria-label={`${label} (live host)`}
         >
           live →

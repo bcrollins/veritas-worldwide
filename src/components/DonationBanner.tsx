@@ -63,7 +63,7 @@ export default function DonationBanner() {
                 selected === tier.amount
                   ? 'bg-crimson text-white'
                   : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
-              }`}
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
             >
               {tier.label}
             </button>
@@ -74,7 +74,7 @@ export default function DonationBanner() {
               selected === 'custom'
                 ? 'bg-crimson text-white'
                 : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
-            }`}
+            } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
           >
             Custom
           </button>
@@ -100,7 +100,7 @@ export default function DonationBanner() {
               value={customAmount}
               onChange={e => handleCustomInput(e.target.value)}
               placeholder="Enter amount"
-              className="w-36 min-h-[44px] px-4 py-2.5 bg-white/10 border border-white/20 rounded-sm font-sans text-sm text-white placeholder-white/40 focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson text-center"
+              className="w-36 min-h-[44px] px-4 py-2.5 bg-white/10 border border-white/20 rounded-sm font-sans text-sm text-white placeholder-white/40 focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
               autoFocus
             />
           </div>
@@ -125,7 +125,7 @@ export default function DonationBanner() {
               trackDonationIntent(amt)
               scoreDonationClicked(String(amt))
             }}
-            className="inline-flex min-h-[44px] items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+            className="inline-flex min-h-[44px] items-center gap-2 px-8 py-3 bg-crimson text-white font-sans text-sm font-semibold tracking-[0.05em] uppercase rounded-sm hover:bg-crimson-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
             data-testid="donate-button"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

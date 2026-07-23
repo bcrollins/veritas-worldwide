@@ -33,7 +33,7 @@ export default function FontSizeToggle() {
             active === s.key
               ? 'bg-crimson text-white'
               : 'text-ink-muted hover:text-ink hover:bg-parchment-dark'
-          } ${i > 0 ? 'border-l border-border' : ''}`}
+          } ${i > 0 ? 'border-l border-border' : ''} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
           style={{ fontSize: i === 0 ? '0.7rem' : i === 1 ? '0.85rem' : '1rem' }}
           title={`${s.key.charAt(0).toUpperCase() + s.key.slice(1)} text`}
           aria-label={`${s.key.charAt(0).toUpperCase() + s.key.slice(1)} text size`}
