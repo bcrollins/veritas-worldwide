@@ -77,6 +77,7 @@ const AdminSocialHub = lazy(() => import('./pages/admin/AdminSocialHub'))
 const AdminDisputes = lazy(() => import('./pages/admin/AdminDisputes'))
 const AdminBrandKit = lazy(() => import('./pages/admin/AdminBrandKit'))
 const MediaKitPage = lazy(() => import('./pages/MediaKitPage'))
+const PersonalTimelinePage = lazy(() => import('./pages/PersonalTimelinePage'))
 const ComprehensiveProfilePage = lazy(() => import('./pages/ComprehensiveProfilePage'))
 const ComprehensiveProfileSuccessPage = lazy(() => import('./pages/ComprehensiveProfileSuccessPage'))
 
@@ -847,6 +848,7 @@ export default function App() {
                 <Route path="/sources" element={<SourcesPage />} />
                 <Route path="/bookmarks" element={<BookmarksPage />} />
                 <Route path="/timeline" element={<TimelinePage />} />
+                <Route path="/researcher/timeline" element={<PersonalTimelinePage />} />
                 <Route path="/analytics" element={<AnalyticsPage />} />
                 <Route path="/accessibility" element={<AccessibilityPage />} />
                 <Route path="/about" element={<AboutPage />} />

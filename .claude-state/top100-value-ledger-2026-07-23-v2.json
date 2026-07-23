@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 88,
-    "Pending": 12
+    "Implemented": 93,
+    "Pending": 7
   },
   "items": [
     {
@@ -770,7 +770,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-researcher-i18n-2026-07-23"
     },
     {
       "rank": 40,
@@ -1071,7 +1072,9 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-researcher-i18n-2026-07-23",
+      "note": "ROC page links Volume I methodology"
     },
     {
       "rank": 56,
@@ -1089,7 +1092,9 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-researcher-i18n-2026-07-23",
+      "note": "downloadMoneyTrailCsv already on IsraelDossierPage"
     },
     {
       "rank": 57,
@@ -1443,7 +1448,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-researcher-i18n-2026-07-23"
     },
     {
       "rank": 76,
@@ -1913,7 +1919,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-researcher-i18n-2026-07-23"
     }
   ],
   "updatedAt": "2026-07-23T10:57:11.924766+00:00",

@@ -1749,6 +1749,7 @@ const STATIC_CANONICAL_PATHS = new Set([
   '/sources',
   '/terms',
   '/timeline',
+    '/researcher/timeline',
   '/topics',
 ])
 

@@ -263,8 +263,10 @@ export default function ComprehensiveProfilePage() {
             Research service · Fixed price
           </p>
           <h1 className="font-display text-3xl md:text-5xl font-bold leading-tight mb-6">
-            Comprehensive Online Profile
-            <span className="block text-crimson-light mt-2">{priceLabel} — authenticated public record</span>
+            {t('osint.hero.title')}
+            <span className="block text-crimson-light mt-2">
+              {priceLabel} — {t('osint.hero.lead')}
+            </span>
           </h1>
           <p className="font-body text-lg md:text-xl text-white/65 leading-relaxed max-w-3xl mb-6">
             {COMPREHENSIVE_PROFILE.tagline} Our research team gathers what is lawfully public and
