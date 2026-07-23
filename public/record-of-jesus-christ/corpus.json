@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:00:10.963Z",
-  "claimCount": 570,
+  "generatedAt": "2026-07-23T11:03:34.995Z",
+  "claimCount": 579,
   "tierHistogram": {
-    "well_attested": 229,
-    "verified": 204,
+    "well_attested": 233,
+    "verified": 208,
     "contested": 47,
-    "interpretive": 60,
+    "interpretive": 61,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -297,6 +297,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
+      "id": "ane-merneptah-people-not-city",
+      "claim": "On the Merneptah Stele, “Israel” is marked with the determinative for a people/group rather than a city-state — a primary Egyptian classification detail in the earliest extra-biblical Israel reference.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave53.ts"
     },
     {
       "id": "ane-mesha",
@@ -817,6 +824,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "arch-sepphoris-roman-phases",
+      "claim": "Sepphoris excavations document multi-phase Hellenistic–Roman–Byzantine urban development near Nazareth, framing debates about Galilee’s urban–village spectrum.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave53.ts"
+    },
+    {
       "id": "arch-sepphoris-urban",
       "claim": "Sepphoris was a major Galilean urban center near Nazareth with extensive excavation of Hellenistic–Roman layers.",
       "tier": "verified",
@@ -1146,6 +1160,13 @@
       "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
+      "id": "cosmo-matter-power-spectrum",
+      "claim": "Galaxy surveys and weak lensing measure the matter power spectrum P(k), testing ΛCDM structure growth across scales.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave53.ts"
+    },
+    {
       "id": "cosmo-neutrino-bbn",
       "claim": "Standard BBN and CMB analyses constrain the effective number of neutrino species (N_eff) near the Standard Model expectation.",
       "tier": "verified",
@@ -1445,6 +1466,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ec-ignatius-ephesians",
+      "claim": "Ignatius’s Letter to the Ephesians emphasizes unity under the bishop and eucharistic unity — early 2nd-c. evidence of monepiscopal ideals in Asia Minor.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave53.ts"
     },
     {
       "id": "ec-ignatius-eucharist",
@@ -1858,6 +1886,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "hj-galilean-crowds",
+      "claim": "Synoptic traditions depict large crowds following Jesus in Galilee; historians treat popular following as plausible while numbers and miracle-crowd linkages remain reconstructed.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave53.ts"
     },
     {
       "id": "hj-galilee-aramaic",
@@ -2630,6 +2665,13 @@
       "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
+      "id": "mod-sanders-jesus-and-judaism-book",
+      "claim": "E.P. Sanders’s Jesus and Judaism (1985) re-centered Jesus within covenantal Judaism and challenged anti-Jewish caricatures in earlier scholarship — a foundational Third Quest landmark.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave53.ts"
+    },
+    {
       "id": "mod-sanders-practice-belief",
       "claim": "E.P. Sanders’s Judaism: Practice and Belief and Jesus and Judaism reoriented HJ research around covenantal nomism and Jesus within Judaism — foundational Third Quest framing still widely engaged.",
       "tier": "interpretive",
@@ -2936,6 +2978,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave27.ts"
+    },
+    {
+      "id": "nc-pliny-trajan-reply",
+      "claim": "Trajan’s reply to Pliny (Ep. 10.97) instructs not to seek Christians out but to punish the obstinate if properly accused — primary imperial policy evidence for early 2nd-c. Christian legal status.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave53.ts"
     },
     {
       "id": "nc-porphyry-against-christians",
@@ -3491,6 +3540,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "nt-sahidic-coptic",
+      "claim": "The Sahidic Coptic version is among the earliest substantial Egyptian translations of the NT and a key versional witness in the critical apparatus.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave53.ts"
+    },
+    {
       "id": "nt-scribal-habits",
       "claim": "Codicology and singular-reading studies document mechanical scribal habits (leaps, dittography, harmonization) that explain many variants without theological motive.",
       "tier": "verified",
@@ -3762,6 +3818,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-jewish-war-structure",
+      "claim": "Josephus’s Jewish War is structured as a Flavian-era history of the revolt with preface, campaign narrative, and temple destruction climax — genre and patronage shape its presentation.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave53.ts"
     },
     {
       "id": "st-josephus-life-autobiography",
