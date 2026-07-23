@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:35:55.408Z",
+  "generatedAt": "2026-07-23T07:38:04.972Z",
   "count": 96,
   "profiles": [
     {
@@ -135,7 +135,7 @@
       "name": "Nancy Pelosi",
       "title": "Former Speaker of the House (D-CA); House Speaker Emerita",
       "category": "politician",
-      "summary": "Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Primary: OpenSecrets, House leadership history, CRS RL33222.",
+      "summary": "Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Integrity docket: dual-cited PolitiFact False on claim she was not told enhanced interrogation methods were used (CIA briefing timeline). Primary: OpenSecrets, House leadership history, CRS RL33222, PolitiFact, CIA records.",
       "photo": "/profiles/nancy-pelosi.jpg",
       "url": "https://veritasworldwide.com/profile/nancy-pelosi",
       "bioguideId": "P000197",
@@ -146,11 +146,12 @@
         "California",
         "Democrat",
         "Institutional Enablement",
-        "Iron Dome"
+        "Iron Dome",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "mitch-mcconnell",
@@ -357,7 +358,7 @@
       "name": "Hakeem Jeffries",
       "title": "U.S. Representative (D-NY); House Democratic Leader",
       "category": "politician",
-      "summary": "House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Primary: OpenSecrets, House leadership record, CRS RL33222.",
+      "summary": "House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on $2T Trump budget cut to Social Security/Medicare/Medicaid claim. Primary: OpenSecrets, House leadership record, CRS RL33222, PolitiFact.",
       "photo": "/profiles/hakeem-jeffries.jpg",
       "url": "https://veritasworldwide.com/profile/hakeem-jeffries",
       "bioguideId": "J000294",
@@ -367,11 +368,12 @@
         "AIPAC",
         "New York",
         "Democrat",
-        "Institutional Enablement"
+        "Institutional Enablement",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "lindsey-graham",
@@ -842,7 +844,7 @@
       "name": "Bernie Sanders",
       "title": "U.S. Senator (I-VT)",
       "category": "politician",
-      "summary": "Vermont independent and progressive leader who has long supported Israel's existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Primary: Senate record, OpenSecrets, official statements.",
+      "summary": "Vermont independent and progressive leader who has long supported Israel's existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Integrity docket: dual-cited PolitiFact False on claim U.S. spends almost twice per capita on health care as any other country (OECD). Primary: Senate record, OpenSecrets, OECD, PolitiFact.",
       "photo": "/profiles/bernie-sanders.jpg",
       "url": "https://veritasworldwide.com/profile/bernie-sanders",
       "bioguideId": "S000033",
@@ -853,11 +855,12 @@
         "Vermont",
         "Aid Conditionality",
         "Gaza",
-        "Iron Dome History"
+        "Iron Dome History",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "elizabeth-warren",

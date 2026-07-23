@@ -20,6 +20,7 @@ const DEFAULT_ACCOUNTS: SocialAccount[] = [
   { platform: 'Pinterest', handle: 'veritasworldwide', url: 'https://pinterest.com/veritasworldwide', status: 'not_created', followers: 0, notes: '' },
   { platform: 'Reddit', handle: 'r/VeritasWorldwide', url: 'https://reddit.com/r/VeritasWorldwide', status: 'not_created', followers: 0, notes: 'Subreddit' },
   { platform: 'Discord', handle: 'Veritas Worldwide', url: '', status: 'not_created', followers: 0, notes: 'Community Server' },
+  { platform: 'Bluesky', handle: '@veritasworldwide.bsky.social', url: 'https://bsky.app', status: 'not_created', followers: 0, notes: 'Open network; set handle on create' },
   { platform: 'Substack', handle: 'veritasworldwide', url: 'https://veritasworldwide.substack.com', status: 'not_created', followers: 0, notes: 'Newsletter mirror' },
 ]
 
@@ -57,6 +58,10 @@ const BRAND_ASSETS = {
   evidenceDisputed: '/brand-kit/04-social/evidence-tier-disputed.svg',
   quoteCard: '/brand-kit/04-social/quote-card.svg',
   threadsPost: '/brand-kit/04-social/threads-post.svg',
+  blueskyBanner: '/brand-kit/04-social/bluesky-banner.svg',
+  discordInvite: '/brand-kit/04-social/discord-invite.svg',
+  citationCard: '/brand-kit/04-social/citation-card.svg',
+  correctionNotice: '/brand-kit/09-templates/correction-notice.html',
   pressContact: '/brand-kit/07-docs/PRESS-CONTACT.md',
   pressVcard: '/brand-kit/09-templates/press-contact.vcf',
   og: '/og-image.png',
@@ -141,8 +146,16 @@ const PLATFORM_SETUP: Record<string, string[]> = {
     'Create server: Veritas Worldwide',
     'Channels: #welcome, #general, #chapter-discussion, #source-submissions, #evidence-review',
     'Roles: Reader, Contributor, Moderator',
+    `Invite splash: ${BRAND_ASSETS.discordInvite}`,
     'Welcome message + rules',
     'Create invite link',
+  ],
+  'Bluesky': [
+    'Create account at bsky.app',
+    `Upload profile: ${BRAND_ASSETS.profile}`,
+    `Upload banner 1500×500: ${BRAND_ASSETS.blueskyBanner}`,
+    'Set bio (medium) + website https://veritasworldwide.com',
+    `Post citation cards: ${BRAND_ASSETS.citationCard}`,
   ],
   'Substack': [
     'Create publication · subdomain veritasworldwide',
@@ -244,6 +257,9 @@ export default function AdminSocialHub() {
           { label: 'Podcast', href: BRAND_ASSETS.podcastCover },
           { label: 'Newsletter', href: BRAND_ASSETS.newsletterHeader },
           { label: 'Threads', href: BRAND_ASSETS.threadsPost },
+          { label: 'Bluesky', href: BRAND_ASSETS.blueskyBanner },
+          { label: 'Discord', href: BRAND_ASSETS.discordInvite },
+          { label: 'Citation', href: BRAND_ASSETS.citationCard },
           { label: 'OG Card', href: BRAND_ASSETS.og },
         ].map(a => (
           <a

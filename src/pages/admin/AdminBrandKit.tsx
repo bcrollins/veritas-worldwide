@@ -35,6 +35,10 @@ const PREVIEW_ASSETS = [
   { label: 'Deck Title', href: '/brand-kit/09-templates/presentation-title.svg', bg: 'bg-black' },
   { label: 'Source Stamp', href: '/brand-kit/09-templates/source-stamp.svg', bg: 'bg-parchment' },
   { label: 'Do / Don\'t', href: '/brand-kit/07-docs/brand-do-dont.svg', bg: 'bg-parchment' },
+  { label: 'Threads Post', href: '/brand-kit/04-social/threads-post.svg', bg: 'bg-parchment' },
+  { label: 'Bluesky Banner', href: '/brand-kit/04-social/bluesky-banner.svg', bg: 'bg-black' },
+  { label: 'Discord Invite', href: '/brand-kit/04-social/discord-invite.svg', bg: 'bg-black' },
+  { label: 'Citation Card', href: '/brand-kit/04-social/citation-card.svg', bg: 'bg-parchment' },
 ]
 
 const TOKEN_SWATCHES = [
@@ -442,6 +446,9 @@ export default function AdminBrandKit() {
                 ['YouTube', '/brand-kit/02-icons/app-icon-512.png', '/brand-kit/04-social/social-banner-youtube.svg'],
                 ['Podcast', '/brand-kit/04-social/podcast-cover.png', '/brand-kit/04-social/podcast-cover.svg'],
                 ['Newsletter', '/brand-kit/01-logos/logo-mark-512.png', '/brand-kit/04-social/newsletter-header.svg'],
+                ['Bluesky', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/bluesky-banner.svg'],
+                ['Discord', '/brand-kit/02-icons/app-icon-512.png', '/brand-kit/04-social/discord-invite.svg'],
+                ['Threads', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/threads-post.svg'],
               ].map(row => (
                 <tr key={row[0]} className="border-b border-white/5">
                   <td className="px-2 py-2 font-semibold text-white/90">{row[0]}</td>

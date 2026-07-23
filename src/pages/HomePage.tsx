@@ -69,7 +69,12 @@ export default function HomePage() {
         'name': SITE_NAME,
         'alternateName': 'The Record',
         'url': SITE_URL,
-        'logo': `${SITE_URL}/og-image.png`,
+        'logo': {
+          '@type': 'ImageObject',
+          'url': `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
+          'width': 512,
+          'height': 512,
+        },
         'description': 'Independent investigative journalism built on primary sources. 32 archive parts documenting 240+ years of institutional power.',
         'foundingDate': '2025',
         'sameAs': [

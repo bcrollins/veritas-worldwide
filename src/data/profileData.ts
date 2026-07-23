@@ -893,8 +893,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'CA',
     photoUrl: getProfilePhoto('nancy-pelosi'),
     summary:
-      'Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Primary: OpenSecrets, House leadership history, CRS RL33222.',
-    tags: ['Former Speaker', 'Pro-Israel', 'AIPAC', 'California', 'Democrat', 'Institutional Enablement', 'Iron Dome'],
+      'Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Integrity docket: dual-cited PolitiFact False on claim she was not told enhanced interrogation methods were used (CIA briefing timeline). Primary: OpenSecrets, House leadership history, CRS RL33222, PolitiFact, CIA records.',
+    tags: [
+      'Former Speaker',
+      'Pro-Israel',
+      'AIPAC',
+      'California',
+      'Democrat',
+      'Institutional Enablement',
+      'Iron Dome',
+      'Integrity Docket',
+    ],
     career: [
       '1987– — U.S. House (CA)',
       '2003–2011, 2019–2023 — House Democratic Leader / Speaker cycles',
@@ -963,10 +972,42 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2007–2023',
       },
+      {
+        claim:
+          'Integrity docket: April 2009 claim she was not told waterboarding/EITs were used rated False against CIA briefing timeline (Sept 4, 2002 Pelosi/Goss EIT briefing).',
+        source: 'PolitiFact False; CIA EIT member-briefings timeline',
+        url: 'https://www.politifact.com/factchecks/2009/may/12/nancy-pelosi/cia-documents-claim-speaker-pelosi-was-told-about-/',
+        tier: 'verified',
+        date: '2009',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'pelosi-not-told-waterboarding-eits-2009',
+        statement:
+          '“We were not, I repeat, were not told that waterboarding or any of these other enhanced interrogation methods were used.”',
+        saidAt: 'April 23, 2009',
+        context: 'News conference responding to questions about 2002 House Intelligence Committee CIA briefings on interrogation techniques.',
+        whyFalse:
+          'PolitiFact rated False. A CIA timeline of congressional briefings (compiled under the Obama administration) states that on Sept. 4, 2002, Pelosi and then-Chair Porter Goss received a briefing on enhanced interrogation techniques including use of EITs on Abu Zubaydah and a description of particular EITs employed. Goss publicly corroborated that Gang of Four members were briefed that techniques were being used.',
+        correction:
+          'CIA contemporaneous briefing records indicate Pelosi was briefed that EITs had been employed; her absolute denial that members were told techniques were used does not match the agency timeline.',
+        statementSource: 'Pelosi April 23, 2009 news conference (Washington Post / multi-outlet contemporaneous quotes)',
+        statementUrl: 'https://voices.washingtonpost.com/capitol-briefing/2009/04/pelosi_denies_knowing_interrog.html',
+        debunkSource: 'PolitiFact — False (May 12, 2009); CIA member-briefings EIT timeline + Panetta letter',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2009/may/12/nancy-pelosi/cia-documents-claim-speaker-pelosi-was-told-about-/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://pelosi.house.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/nancy-pelosi/summary?cid=N00007360' },
+      {
+        label: 'PolitiFact — EIT briefing denial (False)',
+        url: 'https://www.politifact.com/factchecks/2009/may/12/nancy-pelosi/cia-documents-claim-speaker-pelosi-was-told-about-/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Nancy_Pelosi' },
     ],
   },
@@ -2093,8 +2134,16 @@ export const PROFILES: PowerProfile[] = [
     state: 'NY',
     photoUrl: getProfilePhoto('hakeem-jeffries'),
     summary:
-      'House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Primary: OpenSecrets, House leadership record, CRS RL33222.',
-    tags: ['House Democratic Leader', 'Pro-Israel', 'AIPAC', 'New York', 'Democrat', 'Institutional Enablement'],
+      'House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on $2T Trump budget cut to Social Security/Medicare/Medicaid claim. Primary: OpenSecrets, House leadership record, CRS RL33222, PolitiFact.',
+    tags: [
+      'House Democratic Leader',
+      'Pro-Israel',
+      'AIPAC',
+      'New York',
+      'Democrat',
+      'Institutional Enablement',
+      'Integrity Docket',
+    ],
     career: [
       'NY State Assembly (public bio)',
       '2013 — U.S. House',
@@ -2170,10 +2219,42 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: April 2018 claim Trump budget threatened $2T cuts to Social Security/Medicare/Medicaid rated False (gross vs net framing; experts ~$1T net).',
+        source: 'PolitiFact False',
+        url: 'https://www.politifact.com/factchecks/2018/may/04/hakeem-jeffries/did-trumps-budget-include-2-trillion-cut-medicare/',
+        tier: 'verified',
+        date: '2018',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'jeffries-trump-budget-2-trillion-entitlements-2018',
+        statement:
+          'Trump’s budget “threatened to cut $2 trillion from Social Security, Medicare and Medicaid.”',
+        saidAt: 'April 29, 2018',
+        context: 'CNN State of the Union interview attacking President Trump’s FY2019 budget proposal.',
+        whyFalse:
+          'PolitiFact rated False. A $2 trillion figure only works by counting gross “takes” without offsetting redirects (e.g. Medicaid block grants / reallocation). Budget experts said net reductions across the three programs were closer to ~$1 trillion (or lower excluding ACA-related pieces), not a clean $2 trillion cut.',
+        correction:
+          'Trump’s budget proposed large entitlement-related savings, but the $2 trillion Social Security + Medicare + Medicaid cut figure overstates net reductions by ignoring offsets and reallocation.',
+        statementSource: 'CNN State of the Union transcript, April 29, 2018',
+        statementUrl: 'http://transcripts.cnn.com/TRANSCRIPTS/1804/29/sotu.01.html',
+        debunkSource: 'PolitiFact — False (May 4, 2018); CRFB / CBPP expert synthesis of FY2019 budget',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2018/may/04/hakeem-jeffries/did-trumps-budget-include-2-trillion-cut-medicare/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://jeffries.house.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/hakeem-jeffries/summary?cid=N00033640' },
+      {
+        label: 'PolitiFact — $2T entitlement cuts (False)',
+        url: 'https://www.politifact.com/factchecks/2018/may/04/hakeem-jeffries/did-trumps-budget-include-2-trillion-cut-medicare/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Hakeem_Jeffries' },
     ],
   },
@@ -4997,8 +5078,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'VT',
     photoUrl: getProfilePhoto('bernie-sanders'),
     summary:
-      'Vermont independent and progressive leader who has long supported Israel\'s existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Primary: Senate record, OpenSecrets, official statements.',
-    tags: ['Senator', 'Independent', 'Progressive', 'Vermont', 'Aid Conditionality', 'Gaza', 'Iron Dome History'],
+      'Vermont independent and progressive leader who has long supported Israel\'s existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Integrity docket: dual-cited PolitiFact False on claim U.S. spends almost twice per capita on health care as any other country (OECD). Primary: Senate record, OpenSecrets, OECD, PolitiFact.',
+    tags: [
+      'Senator',
+      'Independent',
+      'Progressive',
+      'Vermont',
+      'Aid Conditionality',
+      'Gaza',
+      'Iron Dome History',
+      'Integrity Docket',
+    ],
     career: [
       'Mayor of Burlington / U.S. House (public bio)',
       '2007– — U.S. Senate',
@@ -5068,10 +5158,42 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: Aug 2015 claim U.S. spends almost twice per capita on health care as any other country rated False vs OECD peer data (Switzerland/Norway far closer than 2×).',
+        source: 'PolitiFact False; OECD health spending',
+        url: 'https://www.politifact.com/factchecks/2015/aug/16/bernie-sanders/bernie-sanders-repeats-flawed-claim-about-us-healt/',
+        tier: 'verified',
+        date: '2015',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'sanders-twice-health-spending-any-country-2015',
+        statement:
+          '“We spend almost twice as much per capita on health care as do the people of any other country.”',
+        saidAt: 'August 16, 2015',
+        context: 'Meet the Press interview advocating Medicare-for-all / single-payer framing during 2016 campaign.',
+        whyFalse:
+          'PolitiFact rated False (also False in a 2009 prior check of the same talking point). OECD data show the U.S. leads per-capita health spending, but peer high-spenders (e.g. Switzerland, Norway) are not near half the U.S. level — “almost twice … any other country” overstates the gap.',
+        correction:
+          'The U.S. spends more per capita than peers, but not almost twice as much as every other country; “twice the OECD average” would be closer to accurate.',
+        statementSource: 'NBC Meet the Press interview with Bernie Sanders, Aug 16, 2015',
+        statementUrl: 'https://www.nbcnews.com/meet-the-press',
+        debunkSource: 'PolitiFact — False (Aug 16, 2015); OECD health spending indicator',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2015/aug/16/bernie-sanders/bernie-sanders-repeats-flawed-claim-about-us-healt/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.sanders.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/bernie-sanders/summary?cid=N00000528' },
+      {
+        label: 'PolitiFact — health spending 2× (False)',
+        url: 'https://www.politifact.com/factchecks/2015/aug/16/bernie-sanders/bernie-sanders-repeats-flawed-claim-about-us-healt/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Bernie_Sanders' },
     ],
   },

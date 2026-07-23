@@ -113,6 +113,9 @@ const required = [
   'chuck-schumer',
   'adam-schiff',
   'cory-booker',
+  'nancy-pelosi',
+  'bernie-sanders',
+  'hakeem-jeffries',
 ];
 const scores = {};
 for (const id of required) {
@@ -403,8 +406,44 @@ for (const f of (bookerP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('booker dual-cite collision: ' + f.id);
 }
 
+// Nancy Pelosi integrity gate
+const pelosi = scores['nancy-pelosi'];
+if (!pelosi || pelosi.n < 1) throw new Error('nancy-pelosi needs ≥1 verified falsehood, got ' + (pelosi?.n ?? 0));
+if (pelosi.score > 90) throw new Error('nancy-pelosi score expected ≤90, got ' + pelosi.score);
+const pelosiP = getProfileBySlug('nancy-pelosi');
+if (!(pelosiP.documentedFalsehoods || []).some((f) => f.id === 'pelosi-not-told-waterboarding-eits-2009')) {
+  throw new Error('nancy-pelosi missing EIT briefing docket id');
+}
+for (const f of (pelosiP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('pelosi dual-cite collision: ' + f.id);
+}
+
+// Bernie Sanders integrity gate
+const sanders = scores['bernie-sanders'];
+if (!sanders || sanders.n < 1) throw new Error('bernie-sanders needs ≥1 verified falsehood, got ' + (sanders?.n ?? 0));
+if (sanders.score > 90) throw new Error('bernie-sanders score expected ≤90, got ' + sanders.score);
+const sandersP = getProfileBySlug('bernie-sanders');
+if (!(sandersP.documentedFalsehoods || []).some((f) => f.id === 'sanders-twice-health-spending-any-country-2015')) {
+  throw new Error('bernie-sanders missing health-spending docket id');
+}
+for (const f of (sandersP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('sanders dual-cite collision: ' + f.id);
+}
+
+// Hakeem Jeffries integrity gate
+const jeffries = scores['hakeem-jeffries'];
+if (!jeffries || jeffries.n < 1) throw new Error('hakeem-jeffries needs ≥1 verified falsehood, got ' + (jeffries?.n ?? 0));
+if (jeffries.score > 90) throw new Error('hakeem-jeffries score expected ≤90, got ' + jeffries.score);
+const jeffriesP = getProfileBySlug('hakeem-jeffries');
+if (!(jeffriesP.documentedFalsehoods || []).some((f) => f.id === 'jeffries-trump-budget-2-trillion-entitlements-2018')) {
+  throw new Error('hakeem-jeffries missing $2T budget docket id');
+}
+for (const f of (jeffriesP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('jeffries dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 26) throw new Error('expected ≥26 compiled dockets, got ' + docketCount);
+if (docketCount < 29) throw new Error('expected ≥29 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
