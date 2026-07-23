@@ -2999,4 +2999,25 @@ assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perp
 assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v30 home')
 assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v30 search')
 
+
+
+// RelatedHubs platform perpetual densify lock v31
+assert(surfaces.length >= 115, `perpetual v31 surfaces ${surfaces.length}`)
+assert(read('src/components/BookmarkButton.tsx').includes('focus-visible:ring-2'), 'perpetual v31 bookmark focus')
+assert(read('src/components/BackToTop.tsx').includes('focus-visible:ring-2'), 'perpetual v31 back-to-top focus')
+assert(read('src/components/Breadcrumb.tsx').includes('focus-visible:ring-2'), 'perpetual v31 breadcrumb focus')
+assert(read('src/components/FontSizeToggle.tsx').includes('focus-visible:ring-2'), 'perpetual v31 font size focus')
+assert(read('src/components/PrimarySourceLink.tsx').includes('focus-visible:ring-2'), 'perpetual v31 primary source focus')
+assert(read('src/components/DonationBanner.tsx').includes('focus-visible:ring-2'), 'perpetual v31 donation banner focus')
+assert(read('src/components/SharePanel.tsx').includes('focus-visible:ring-2'), 'perpetual v31 share panel focus')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v31 RelatedHubs focus')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v31 mobile tab bar')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v31 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v31 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v31 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v31 emphasize')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v31 methodology')
+assert(read('src/components/NewsletterSignup.tsx').includes('focus-visible:ring-2'), 'perpetual v31 newsletter focus')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v31 cookie focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
