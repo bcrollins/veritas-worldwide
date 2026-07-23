@@ -35,6 +35,11 @@ const toCount = (block.match(/to:\s*['"]/g) || []).length
 assert(toCount <= 5, `primaryLinks must be ≤5 hubs (Hick's Law); got ${toCount}`)
 assert(toCount >= 4, `primaryLinks unexpectedly sparse (${toCount})`)
 assert(toCount === 5, `primaryLinks must be exactly 5 hubs; got ${toCount}`)
+
+// primaryLinks destinations exact set
+for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/search'"]) {
+  assert(block.includes(`to: ${dest}`), `primaryLinks has ${dest}`)
+}
 // primaryLinks short labels for Hick scent + mobile tab parity
 assert(block.includes('Record') || block.includes('The Record'), 'primary label Record')
 assert(block.includes('Read'), 'primary label Read')
