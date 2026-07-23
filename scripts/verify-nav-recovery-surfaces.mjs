@@ -1824,4 +1824,12 @@ for (const dest of ['/read', '/israel-dossier', '/profiles', '/search']) {
 assert(tabFiveEnd.includes('safe-area-inset-bottom') || tabFiveEnd.includes('env(safe-area-inset-bottom)'), 'tab safe-area end final')
 
 
+
+// BOOKMARKS dual + SEARCH dual ultimate end final
+assert((read('src/pages/BookmarksPage.tsx').match(/<RelatedHubs\b/g) || []).length >= 2, 'Bookmarks dual RelatedHubs end final')
+assert((read('src/pages/SearchPage.tsx').match(/<RelatedHubs\b/g) || []).length >= 2, 'Search dual RelatedHubs end final')
+assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'BOOKMARKS_HUBS end final')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'SEARCH_RECOVERY_HUBS end final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
