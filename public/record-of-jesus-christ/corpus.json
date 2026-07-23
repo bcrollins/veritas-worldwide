@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:31:33.610Z",
-  "claimCount": 453,
+  "generatedAt": "2026-07-23T10:33:00.247Z",
+  "claimCount": 462,
   "tierHistogram": {
-    "well_attested": 181,
-    "verified": 158,
+    "well_attested": 184,
+    "verified": 162,
     "contested": 42,
-    "interpretive": 46,
+    "interpretive": 48,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 21
@@ -334,6 +334,13 @@
       "file": "src/data/recordOfJesusChristWave23.ts"
     },
     {
+      "id": "ane-tel-miqne-ekron-inscription",
+      "claim": "The Ekron royal dedicatory inscription (Tel Miqne) names Philistine rulers and a temple dedication — primary Iron Age Philistine epigraphy for coastal plain politics and religion.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
       "id": "ane-ugarit",
       "claim": "Ugaritic texts (Ras Shamra) supply Northwest Semitic mythic and ritual parallels used in comparative study of Hebrew Bible poetry and divine council language.",
       "tier": "well_attested",
@@ -558,6 +565,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "arch-magdala-miqvaot",
+      "claim": "Magdala excavations include miqva’ot and industrial installations alongside the synagogue complex — material purity and economic infrastructure on the Galilee shore.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
       "id": "arch-magdala-stone",
       "claim": "The Magdala stone (synagogue furniture with Temple imagery) is a major late Second Temple Jewish artifactual find from a Galilean synagogue context.",
       "tier": "verified",
@@ -724,6 +738,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "cosmo-bao-standard-ruler",
+      "claim": "Baryon acoustic oscillations provide a standard-ruler distance measure from the sound horizon scale imprinted in the galaxy distribution — a cornerstone of late-universe expansion constraints.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave40.ts"
     },
     {
       "id": "cosmo-baryon-acoustic-fixed",
@@ -1167,6 +1188,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "ec-irenaeus-apostolic-preaching",
+      "claim": "Irenaeus’s Demonstration of the Apostolic Preaching (Epideixis) presents a rule-of-faith summary of Christian proclamation for a late-2nd-century audience.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
       "id": "ec-irenaeus-fourfold",
       "claim": "Irenaeus (late 2nd c.) argues for a fourfold Gospel canon as a theological-natural schema — evidence of four-Gospel prestige by his time.",
       "tier": "well_attested",
@@ -1382,6 +1410,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-criteria-embarrassment",
+      "claim": "The criterion of embarrassment (traditions unlikely to be invented because they create difficulty for the early church) is a classic HJ tool now widely qualified or rejected as a standalone proof engine.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave40.ts"
     },
     {
       "id": "hj-criteria-limits",
@@ -2014,6 +2049,13 @@
       "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
+      "id": "mod-multiple-attestation-method",
+      "claim": "Multiple independent attestation remains a widely taught HJ criterion: traditions appearing in independent sources gain historical weight — while independence judgments themselves are often contested.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
       "id": "mod-mythicism-fringe",
       "claim": "Full mythicism (Jesus of Nazareth as entirely non-historical) remains a fringe position in mainstream historical scholarship of Second Temple Judaism and early Christianity.",
       "tier": "well_attested",
@@ -2294,6 +2336,13 @@
       "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
+      "id": "nc-no-pilate-report-survives",
+      "claim": "No authentic “Acts of Pilate” or official prefectural report on Jesus is known from the first century; later Acts of Pilate / Gospel of Nicodemus texts are Christian apocrypha.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
       "id": "nc-no-roman-trial-minutes",
       "claim": "No authentic Roman judicial minutes of Jesus’ trial before Pilate are known; Gospel passion trial scenes are literary-theological narratives constrained by Roman provincial practice models.",
       "tier": "well_attested",
@@ -2474,6 +2523,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave37.ts"
+    },
+    {
+      "id": "nt-acts-western-expansions",
+      "claim": "Codex Bezae and allied “Western” witnesses often present a longer, paraphrastic Acts text; modern editors generally prefer the Alexandrian shorter form as closer to the initial text for most units.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave40.ts"
     },
     {
       "id": "nt-byzantine-priority",
@@ -3069,6 +3125,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
+      "id": "st-philo-embassy-gaius",
+      "claim": "Philo’s Embassy to Gaius narrates the Alexandrian Jewish crisis and the Caligula Temple statue threat from a contemporary diaspora Jewish perspective.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave40.ts"
     },
     {
       "id": "st-pompey-63",
