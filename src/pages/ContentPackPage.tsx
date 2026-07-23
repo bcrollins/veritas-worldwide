@@ -9,6 +9,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
 } from '../lib/seo'
 
 interface ShareCard {
@@ -251,6 +252,28 @@ export default function ContentPackPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Content Packs', url: `${SITE_URL}/content-pack` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What is in a Veritas content pack?',
+          answer:
+            'Shareable social graphics, pre-written posts, article cards, and brand assets designed to preserve source integrity when readers share The Record. Free for press, social media, and advocacy with attribution.',
+        },
+        {
+          question: 'Can I use Veritas content packs commercially?',
+          answer:
+            'Non-commercial press, advocacy, and social sharing with attribution is free. Commercial reuse requires written permission from rights@veritasworldwide.com (see Terms of Use).',
+        },
+        {
+          question: 'How do /share and /content-packs relate to /content-pack?',
+          answer:
+            'They are legacy aliases. Crawlers and bookmarks for /share or /content-packs permanently redirect to the canonical /content-pack surface.',
+        },
+        {
+          question: 'Where are full logos and brand guidelines?',
+          answer:
+            'The Media Kit at /media-kit hosts the Ultimate Brand Kit ZIP, seals, wordmarks, and evidence-tier cards. Content packs focus on ready-to-share social and article graphics.',
+        },
       ]),
     ])
     return () => {

@@ -2704,6 +2704,61 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/content-pack') {
+    return [
+      {
+        ...basePage,
+        '@type': 'CollectionPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Content Packs', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is in a Veritas content pack?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Shareable social graphics, pre-written posts, article cards, and brand assets designed to preserve source integrity when readers share The Record. Free for press, social media, and advocacy with attribution.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can I use Veritas content packs commercially?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Non-commercial press, advocacy, and social sharing with attribution is free. Commercial reuse requires written permission from rights@veritasworldwide.com (see Terms of Use).',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do /share and /content-packs relate to /content-pack?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'They are legacy aliases. Crawlers and bookmarks for /share or /content-packs permanently redirect to the canonical /content-pack surface.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where are full logos and brand guidelines?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The Media Kit at /media-kit hosts the Ultimate Brand Kit ZIP, seals, wordmarks, and evidence-tier cards. Content packs focus on ready-to-share social and article graphics.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {

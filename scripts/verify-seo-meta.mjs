@@ -212,6 +212,17 @@ assert(
   mediaKitPage.includes('Is /brand-kit a public page?'),
   'Media Kit FAQ must clarify /brand-kit alias vs /media-kit',
 )
+assert(
+  prerender.includes("route === '/content-pack'") &&
+    prerender.includes('What is in a Veritas content pack?'),
+  'prerender must emit Content Pack FAQPage for share/alias discoverability',
+)
+const contentPackPage = read('src/pages/ContentPackPage.tsx')
+assert(contentPackPage.includes('faqJsonLd'), 'ContentPackPage must emit FAQPage schema')
+assert(
+  contentPackPage.includes('How do /share and /content-packs relate'),
+  'Content Pack FAQ must document legacy /share and /content-packs aliases',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 
