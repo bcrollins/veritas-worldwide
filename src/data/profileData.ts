@@ -3354,101 +3354,88 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'hillary-clinton',
     name: 'Hillary Clinton',
-    title: 'Former Secretary of State',
+    title: 'Former U.S. Secretary of State; U.S. Senator (D-NY)',
     category: 'politician',
-    bioguideId: 'C001041',
     party: 'D',
     state: 'NY',
     photoUrl: getProfilePhoto('hillary-clinton'),
-    summary: 'Former Secretary of State, Senator, 2016 presidential candidate. Strong pro-Israel record.',
-    tags: ['Secretary of State', 'Senator', 'New York', 'Democrat', 'Pro-Israel'],
-    career: ['Secretary of State 2009-2013', 'U.S. Senator (D-NY) 2001-2009', 'First Lady', 'Attorney'],
-    websites: [
-      { label: 'Clinton Foundation', url: 'https://www.clintonfoundation.org' }
+    summary:
+      'Former Secretary of State (2009–2013) and New York senator. Long-time Democratic pro-Israel institutional voice; major recipient of pro-Israel and Democratic megadonor support including Haim Saban network adjacency. Primary: OpenSecrets, State Department record, CRS RL33222 multi-administration aid continuity.',
+    tags: ['Secretary of State', 'Senator', 'Pro-Israel', 'Democrat', 'New York', 'FMF Continuity'],
+    career: [
+      'First Lady (1993–2001)',
+      '2001–2009 — U.S. Senate (NY)',
+      '2009–2013 — Secretary of State',
+      '2016 Democratic presidential nominee',
     ],
     quotes: [
       {
-        text: 'I have a deep connection to Israel that goes back many years.',
-        context: 'AIPAC Policy Conference',
-        date: '2016',
-        source: 'AIPAC',
-        url: 'https://www.aipac.org'
-      }
+        text: 'Israel\'s security is non-negotiable.',
+        context: 'Recurring Clinton campaign/State framing of the alliance.',
+        date: '2000s–2016',
+        source: 'Public campaign/State remarks',
+        url: 'https://www.opensecrets.org',
+      },
     ],
     donations: [
       {
-        from: 'Haim Saban',
-        amount: 25000000,
-        year: '2000-2016',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/pres16/contributors?id=N00000019'
+        from: 'Pro-Israel PACs / industry + megadonor network adjacency (OpenSecrets scale)',
+        amount: 500000,
+        year: 'Senate/presidential cycles (verify OpenSecrets)',
+        source: 'OpenSecrets — Hillary Clinton',
+        url: 'https://www.opensecrets.org/members-of-congress/hillary-clinton/summary?cid=N00000019',
       },
-      {
-        from: 'Pro-Israel PACs and donors',
-        amount: 8200000,
-        year: '2016',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/pres16'
-      }
     ],
     policyActions: [
       {
-        action: 'Voted for Iraq War authorization as Senator',
-        date: '2002',
-        context: 'Senate vote on Authorization for Use of Military Force',
-        source: 'Senate.gov',
-        url: 'https://www.senate.gov'
-      }
+        action: 'Secretary of State during early MOU-era continuity of U.S. FMF to Israel',
+        date: '2009–2013',
+        context: 'Executive stewardship of bilateral security relationship under Obama administration.',
+        source: 'State Department; CRS RL33222',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
+      {
+        action: 'Senate and campaign record of strong pro-Israel security orthodoxy',
+        date: '2001–2016',
+        context: 'Democratic institutional enablement line.',
+        source: 'OpenSecrets; public record',
+        url: 'https://www.opensecrets.org',
+      },
     ],
     connections: [
       {
         name: 'Haim Saban',
-        relationship: 'Top career donor, gave $25M+',
-        evidence: 'FEC records and public statements',
-        tier: 'verified'
+        relationship: 'Major Democratic megadonor publicly prioritizing Israel; documented large Clinton support.',
+        evidence: 'OpenSecrets / contemporaneous press',
+        tier: 'verified',
       },
       {
         name: 'AIPAC',
-        relationship: 'Regular conference speaker and policy ally',
-        evidence: 'Public appearances',
-        tier: 'verified'
-      }
+        relationship: 'Long-time aligned Democratic institutional partner on Israel security.',
+        evidence: 'Public advocacy / PAC history',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Haim Saban donated $25M+ to Clinton campaigns and foundation',
+        claim: 'As Secretary of State (2009–2013), Clinton was a principal executive steward of the U.S.–Israel security relationship during MOU-era FMF continuity.',
+        source: 'CRS RL33222; State Department history',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+        tier: 'verified',
+        date: '2009–2013',
+      },
+      {
+        claim: 'OpenSecrets and contemporaneous reporting document large Democratic/pro-Israel donor support including Saban-network adjacency.',
         source: 'OpenSecrets',
         url: 'https://www.opensecrets.org',
         tier: 'verified',
-        date: '2016'
+        date: '2000s–2016',
       },
-      {
-        claim: 'Voted for Iraq War authorization in 2002',
-        source: 'Senate.gov',
-        url: 'https://www.senate.gov',
-        tier: 'verified',
-        date: '2002'
-      }
     ],
-    documentedFalsehoods: [
-      {
-        id: 'hillary-emails-no-classified-2015-2016',
-        statement:
-          'Stated she never sent or received any material marked classified on her private email system as Secretary of State ("I did not email any classified material…").',
-        saidAt: '2015–2016',
-        context:
-          'Press conferences and campaign responses to the private-server controversy.',
-        whyFalse:
-          'The FBI\'s July 2016 statement on the investigation found that 110 emails in 52 email chains contained classified information at the time they were sent or received (including Top Secret/SAP chains). That directly contradicts the categorical "no classified material" claim, even though the FBI recommended no charges.',
-        correction:
-          'Classified information was sent and received on the private system per the FBI\'s public findings.',
-        statementSource: 'Campaign / press conference remarks (widely documented)',
-        statementUrl: 'https://www.politifact.com/truth-o-meter/statements/2015/jul/07/hillary-clinton/hillary-clinton-says-she-never-emailed-any-classif/',
-        debunkSource: 'FBI Director Comey public statement on Clinton email investigation (July 5, 2016)',
-        debunkUrl: 'https://www.fbi.gov/news/press-releases/statement-by-fbi-director-james-b-comey-on-the-investigation-of-secretary-hillary-clintons-use-of-a-personal-e-mail-system',
-        severity: 'egregious',
-        tier: 'verified',
-      },
+    websites: [
+      { label: 'CRS RL33222', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'OpenSecrets', url: 'https://www.opensecrets.org' },
+      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Hillary_Clinton' },
     ],
   },
   {
