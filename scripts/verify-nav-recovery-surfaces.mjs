@@ -3214,4 +3214,26 @@ assert(read('src/components/BookmarkButton.tsx').includes('focus-visible:ring-2'
 assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v38 RelatedHubs focus')
 assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v38 footer')
 
+
+
+// RelatedHubs platform perpetual densify lock v39
+assert(surfaces.length >= 115, `perpetual v39 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('activeChip'), 'perpetual v39 activeChip')
+assert(read('src/components/RelatedHubs.tsx').includes('darkActiveChip'), 'perpetual v39 darkActiveChip')
+assert(read('src/components/RelatedHubs.tsx').includes('aria-current'), 'perpetual v39 aria-current')
+assert(read('src/components/RelatedHubs.tsx').includes("tone === 'parchment'"), 'perpetual v39 parchment')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v39 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v39 PRIMARY')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v39 mobile tab bar')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v39 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v39 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v39 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v39 soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v39 focus')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v39 Research chips')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v39 footer')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v39 methodology')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v39 home')
+assert(read('scripts/verify-pure.mjs').includes('verify-related-hubs-coverage.mjs'), 'perpetual v39 pure wire')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
