@@ -27,6 +27,7 @@ Sophisticated OSINT on public Veritas surfaces finds **zero recoverable path** t
 | WHOIS / Railway billing KYC | Outside this codebase | Confirm privacy registration + entity billing |
 | Bernie Show page family branding | Product surface with shared surname | Policy decision: retain as named public figure page vs isolate |
 | Password previously committed in git history | Rotate admin password; set `VITE_ADMIN_PASSWORD_HASH` | Required before relying on client admin |
+| Ops/outreach docs with personal byline | Scrubbed 2026-07-23: entity-only in SEO ops scorecard + outreach templates; pure floors forbid personal byline | Keep entity-only; future commits use Veritas Worldwide git author |
 
 ## ROC-specific audit
 

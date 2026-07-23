@@ -240,6 +240,10 @@ assert(
 )
 assert(server.includes('isKnownRoute: isKnownSpaRoute'), 'server must pass isKnownSpaRoute into bot meta')
 assert(server.includes('buildNotFoundHtml'), 'server must soft-404 with dedicated HTML')
+assert(
+  server.includes("'/institute/methodology'") && server.includes("'/content-pack'"),
+  'soft-404 allowlist must include institute methodology + content-pack exact routes',
+)
 
 assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta helper for shell rewrite')
 assert(
