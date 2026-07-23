@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:43:00.489Z",
+  "generatedAt": "2026-07-23T08:48:03.159Z",
   "count": 96,
   "profiles": [
     {
@@ -20,8 +20,8 @@
         "Iran Sanctions",
         "Iron Dome"
       ],
-      "integrityScore": 60,
-      "integrityFalsehoods": 2,
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
@@ -419,8 +419,8 @@
         "Iron Dome",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

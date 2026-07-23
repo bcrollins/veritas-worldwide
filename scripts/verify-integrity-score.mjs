@@ -224,18 +224,22 @@ for (const id of [
   }
 }
 
-// Ted Cruz multi-entry expansion
+// Ted Cruz multi-entry expansion (n≥3 densify)
 const cruz = scores['ted-cruz'];
-if (!cruz || cruz.n < 2) throw new Error('ted-cruz needs ≥2 verified falsehoods, got ' + (cruz?.n ?? 0));
-if (cruz.score > 65) throw new Error('ted-cruz score expected ≤65 after deep dive, got ' + cruz.score);
+if (!cruz || cruz.n < 3) throw new Error('ted-cruz needs ≥3 verified falsehoods, got ' + (cruz?.n ?? 0));
+if (cruz.score > 50) throw new Error('ted-cruz score expected ≤50 after densify, got ' + cruz.score);
 const cruzP = getProfileBySlug('ted-cruz');
 for (const id of [
   'cruz-zuckerberg-hearings-libel-context-not-used',
   'cruz-voting-bill-register-illegal-immigrants-2021',
+  'cruz-green-new-deal-electricity-costs-texas-2022',
 ]) {
   if (!(cruzP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('ted-cruz missing docket id: ' + id);
   }
+}
+for (const f of (cruzP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('ted-cruz dual-cite collision: ' + f.id);
 }
 
 // Mitch McConnell multi-entry expansion
@@ -331,16 +335,19 @@ const andrew = scores['prince-andrew'];
 if (!andrew || andrew.n < 2) throw new Error('prince-andrew needs ≥2 verified falsehoods, got ' + (andrew?.n ?? 0));
 if (andrew.score > 65) throw new Error('prince-andrew score expected ≤65 after deep dive, got ' + andrew.score);
 
-// Marco Rubio multi-entry integrity gate
+// Marco Rubio multi-entry integrity gate (n≥3 densify)
 const rubio = scores['marco-rubio'];
-if (!rubio || rubio.n < 2) throw new Error('marco-rubio needs ≥2 verified falsehoods, got ' + (rubio?.n ?? 0));
-if (rubio.score > 75) throw new Error('marco-rubio score expected ≤75, got ' + rubio.score);
+if (!rubio || rubio.n < 3) throw new Error('marco-rubio needs ≥3 verified falsehoods, got ' + (rubio?.n ?? 0));
+if (rubio.score > 60) throw new Error('marco-rubio score expected ≤60 after densify, got ' + rubio.score);
 const rubioP = getProfileBySlug('marco-rubio');
-if (!(rubioP.documentedFalsehoods || []).some((f) => f.id === 'rubio-20-to-30-million-illegal-immigrants-2024')) {
-  throw new Error('marco-rubio missing 20-30M immigration docket id');
-}
-if (!(rubioP.documentedFalsehoods || []).some((f) => f.id === 'rubio-no-mass-shooting-guns-gun-show-internet-2022')) {
-  throw new Error('marco-rubio missing gun-show/internet mass-shooting docket id');
+for (const id of [
+  'rubio-20-to-30-million-illegal-immigrants-2024',
+  'rubio-no-mass-shooting-guns-gun-show-internet-2022',
+  'rubio-demings-abolish-police-thoughtful-2022',
+]) {
+  if (!(rubioP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('marco-rubio missing docket id: ' + id);
+  }
 }
 for (const f of (rubioP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('marco-rubio dual-cite collision: ' + f.id);

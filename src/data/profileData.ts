@@ -348,6 +348,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'cruz-green-new-deal-electricity-costs-texas-2022',
+        statement:
+          '“The impact of President Biden being beholden to the Green New Deal radicals in his party has electricity costs through the roof in Texas.”',
+        saidAt: 'June 4, 2022',
+        context:
+          'Sen. Ted Cruz tweet blaming Green New Deal–aligned Biden policy for surging Texas electricity rates during a summer heatwave, linking a Dallas Morning News piece on retail rates.',
+        whyFalse:
+          'PolitiFact rated False. Green New Deal resolutions had not passed and could not set Texas electricity prices. Experts and the article Cruz linked attribute 2022 rate spikes primarily to natural-gas commodity prices after Europe diverted from Russian supply — Texas is the top U.S. natural-gas consumer for power generation, so Henry Hub/LNG export pricing transmits into ERCOT retail rates.',
+        correction:
+          'Texas electricity cost spikes in mid-2022 tracked natural-gas prices and global LNG demand after Russia’s invasion of Ukraine, not an unenacted Green New Deal.',
+        statementSource: 'Sen. Ted Cruz X post (@SenTedCruz), June 4, 2022',
+        statementUrl: 'https://twitter.com/SenTedCruz/status/1533169375561363459',
+        debunkSource: 'PolitiFact — False (June 21, 2022); EIA LNG/natural-gas pricing context; UT Energy Institute experts',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2022/jun/21/ted-cruz/green-new-deal-not-blame-high-electricity-costs/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.cruz.senate.gov' },
@@ -355,6 +374,7 @@ export const PROFILES: PowerProfile[] = [
       { label: 'Congress.gov member', url: 'https://www.congress.gov/member/ted-cruz/C001098' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ted_Cruz' },
       { label: 'PolitiFact — voting bill non-citizen claim (False)', url: 'https://www.politifact.com/factchecks/2021/may/14/ted-cruz/ted-cruz-repeats-false-claim-voting-bill-would-reg/' },
+      { label: 'PolitiFact — Green New Deal electricity claim (False)', url: 'https://www.politifact.com/factchecks/2022/jun/21/ted-cruz/green-new-deal-not-blame-high-electricity-costs/' },
       { label: 'CISA 2020 election security statement', url: 'https://www.cisa.gov/news-events/news/joint-statement-elections-infrastructure-government-coordinating-council-election' },
     ],
   },
@@ -2673,6 +2693,24 @@ export const PROFILES: PowerProfile[] = [
         debunkSource: 'PolitiFact — False (May 27, 2022); Denver Post/CBS Columbine; Virginian-Pilot Virginia Tech',
         debunkUrl:
           'https://www.politifact.com/factchecks/2022/may/27/marco-rubio/fact-checking-rubio-claim-no-guns-used-mass-shooti/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'rubio-demings-abolish-police-thoughtful-2022',
+        statement: 'Val Demings "called abolishing the police \'thoughtful.\'"',
+        saidAt: 'July 19, 2022',
+        context:
+          'Marco Rubio Senate re-election campaign ad ("Maybe") and related June 28 tweet attacking Democratic challenger Rep. Val Demings’ policing record after George Floyd-era reform debates.',
+        whyFalse:
+          'PolitiFact rated False. The ad misrepresented a June 8, 2020 CBS This Morning exchange in which Demings was asked about a Minneapolis proposal to dismantle/rebuild the police department. She said the city council was “being very thoughtful in terms of looking at all of the services that police provide” and did not endorse abolishing the police; she repeatedly opposed defunding police on the campaign trail.',
+        correction:
+          'Demings described city leaders as thoughtful about reviewing police services — not abolition — and publicly rejected defunding police; Rubio’s absolute “called abolishing the police thoughtful” framing is false.',
+        statementSource: 'Marco Rubio campaign ad “Maybe” on YouTube (July 19, 2022); related Rubio tweet June 28, 2022',
+        statementUrl: 'https://www.youtube.com/watch?v=ogsjFkubvb4',
+        debunkSource: 'PolitiFact — False (July 26, 2022); CBS This Morning Demings interview (June 8, 2020)',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2022/jul/26/marco-rubio/marco-rubios-ad-twists-val-demings-words-police-re/',
         severity: 'material',
         tier: 'verified',
       },
