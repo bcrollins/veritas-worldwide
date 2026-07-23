@@ -180,6 +180,8 @@ const privacy = fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'u
 const terms = fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8')
 assert(privacy.includes('data-testid="privacy-related-hubs"'), 'Privacy related hubs')
 assert(terms.includes('data-testid="terms-related-hubs"'), 'Terms related hubs')
+const analytics = fs.readFileSync(path.join(root, 'src/pages/AnalyticsPage.tsx'), 'utf8')
+assert(analytics.includes('data-testid="analytics-related-hubs"'), 'Analytics related hubs')
 
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,

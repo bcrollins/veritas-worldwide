@@ -1087,6 +1087,36 @@ export default function AnalyticsPage() {
         <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight mb-4">
           Reader Analytics
         </h1>
+        <nav
+          className="mt-4 mb-2 flex flex-wrap gap-2"
+          aria-label="Related hubs"
+          data-testid="analytics-related-hubs"
+        >
+          <Link
+            to="/about"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            About
+          </Link>
+          <Link
+            to="/methodology"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Methodology
+          </Link>
+          <Link
+            to="/privacy"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Privacy
+          </Link>
+          <Link
+            to="/membership"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Membership
+          </Link>
+        </nav>
         <p className="font-body text-lg italic text-ink-muted leading-relaxed">
           Real-time readership data. We believe in transparency — these numbers are public.
         </p>
