@@ -56,6 +56,7 @@ const surfaces = [
   ['src/components/StickyMembershipBar.tsx', 'md:bottom-0'],
   ['src/components/StickyMembershipBar.tsx', 'veritas-cookie-consent'],
   ['src/components/StickyMembershipBar.tsx', 'cookiePending'],
+  ['src/components/StickyMembershipBar.tsx', 'z-40'],
   ['src/components/StickyMembershipBar.tsx', 'veritas_cookie_consent'],
 ]
 
