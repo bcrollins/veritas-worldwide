@@ -35,12 +35,12 @@ const urls = (vi.match(/url: 'https?:\/\//g) || []).length
 assert(urls >= cards * 2, `VI dual-cite floor: cards=${cards} urls=${urls}`)
 
 const n = (corpus.incidents || []).length
-assert(n >= 901, `corpus incidents ${n} < 870`)
+assert(n >= 908, `corpus incidents ${n} < 870`)
 const withVideo = (corpus.incidents || []).filter((i) =>
   (i.multimedia || []).some((m) => m.type === 'video'),
 ).length
 assert(withVideo >= 63, `corpus video-linked incidents ${withVideo} < 54`)
-assert(soft.incidentCount >= 901, `soft-floor ${soft.incidentCount} < 870`)
+assert(soft.incidentCount >= 908, `soft-floor ${soft.incidentCount} < 870`)
 assert(
   soft.visualInvestigations && soft.visualInvestigations.withVideo >= 63,
   `soft-floor withVideo ${soft.visualInvestigations?.withVideo} < 54`,
