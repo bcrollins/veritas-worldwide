@@ -277,6 +277,14 @@ export default function AdminSocialHub() {
           >
             Launch checklist →
           </a>
+          <a
+            href={BRAND_ASSETS.biosJson}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center rounded border border-white/10 px-4 py-2 font-sans text-xs text-white/70 hover:border-crimson/40 hover:text-white"
+          >
+            Bios JSON →
+          </a>
         </div>
       </div>
 
