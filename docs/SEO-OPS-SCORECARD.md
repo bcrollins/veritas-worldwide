@@ -227,12 +227,15 @@ Verified live Googlebot matrix on tip lineage including `f92ff79` + SEO ships th
 | `/About`, `/Read`, `/methodology/` | **301** → lowercase slashless hub |
 | `/content-packs`, `/share`, `/packs` | **301** → `/content-pack` |
 | `/brand-kit`, `/Brand-Kit` | **301** → `/media-kit` |
-| `/home` | **301** → `/` |
+| `/home`, `/index` | **301** → `/` |
+| `/donate`, `/support` | **301** → `/membership` |
+| `/contact` | **301** → `/about` |
 | Junk paths | **404 + noindex** (no invented `/404` canonical) |
 | admin / success / search / bookmarks / bernie | **200 + noindex** |
 | Known content | **200 + index,follow** |
 
-- Soft floor tracks latest ROC wave (**525** for wave47); GEO public floors **500+**
+- Soft floor tracks latest ROC wave (**534** for wave48); GEO public floors **500+**
 - `express.static` **redirect:false** (asset dirs like `dist/brand-kit` no longer 301-loop)
+- Prerender default static hubs emit **BreadcrumbList** (membership, content-pack, media-kit, privacy, terms, …)
 - Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` **PASS**
 - Railway unblock: `SEOConfig.url` optional for noindex soft-404 shells
