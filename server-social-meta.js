@@ -432,6 +432,11 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         description:
           'Local-only researcher chronology tool. Events stay in the browser and are not part of the public archive index.',
       },
+      '/researcher': {
+        title: 'Researcher Tools | Veritas Worldwide',
+        description:
+          'Index of public corpora, methodology, and local-only timeline tools. Utility surface — not part of the public archive index.',
+      },
       // Multi-volume scaffold — client noindex + SPA injectNoindexShell; bots must match first-paint.
       '/volume-ii': {
         title: 'Volume II Track | Veritas Worldwide',

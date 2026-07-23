@@ -642,6 +642,19 @@ assert(
 assert(read('src/pages/TermsPage.tsx').includes('faqJsonLd'), 'TermsPage must emit FAQPage')
 assert(read('src/pages/PrivacyPage.tsx').includes('faqJsonLd'), 'PrivacyPage must emit FAQPage')
 
+
+// Wave2 — researcher tools must be in NOINDEX_EXACT + forceNoindexHtml (X-Robots all UAs)
+assert(
+  /NOINDEX_EXACT_PATHS = new Set\([\s\S]*?'\/researcher\/timeline'/.test(server),
+  'NOINDEX_EXACT_PATHS must list /researcher/timeline',
+)
+assert(
+  server.includes("req.path === '/researcher'") || server.includes("req.path.startsWith('/researcher/')"),
+  'SPA forceNoindexHtml must cover /researcher/*',
+)
+assert(botMeta.includes('/researcher/timeline'), 'bot-meta must noindex /researcher/timeline')
+assert(botMeta.includes("'/researcher'") || botMeta.includes('/researcher'), 'bot-meta must noindex /researcher hub')
+
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, anonymity floors green',
 )

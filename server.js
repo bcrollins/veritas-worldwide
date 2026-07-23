@@ -1853,6 +1853,9 @@ const NOINDEX_EXACT_PATHS = new Set([
   '/search',
   // Multi-volume scaffold hub — noindex until full catalog ships
   '/volume-ii',
+  // Local-only researcher tools — never index first-paint HTML
+  '/researcher',
+  '/researcher/timeline',
 ])
 
 function isNoindexPublicPath(pathname) {
@@ -1861,6 +1864,7 @@ function isNoindexPublicPath(pathname) {
   if (route.startsWith('/admin')) return true
   if (route.startsWith('/bernie/')) return true
   if (route.startsWith('/comprehensive-profile/success')) return true
+  if (route.startsWith('/researcher')) return true
   return false
 }
 
@@ -2594,7 +2598,9 @@ app.use((req, res) => {
     req.path === '/membership/success' ||
     req.path === '/donation/success' ||
     req.path === '/thank-you' ||
-    req.path === '/volume-ii'
+    req.path === '/volume-ii' ||
+    req.path === '/researcher' ||
+    req.path.startsWith('/researcher/')
 
   if (forceNoindexHtml) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')

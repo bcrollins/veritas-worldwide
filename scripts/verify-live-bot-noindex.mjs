@@ -34,6 +34,8 @@ const SURFACES = [
   { path: '/admin/osint', titleIncludes: 'Admin' },
   // Multi-volume scaffold — bot middleware must noindex (not SPA injectNoindex only).
   { path: '/volume-ii', titleIncludes: 'Volume II' },
+  { path: '/researcher/timeline', titleIncludes: 'Timeline' },
+  { path: '/researcher', titleIncludes: 'Researcher' },
 ]
 
 const failures = []
