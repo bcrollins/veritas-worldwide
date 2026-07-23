@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:24:53.700Z",
+  "generatedAt": "2026-07-23T10:25:36.064Z",
   "count": 96,
   "profiles": [
     {
@@ -1372,9 +1372,9 @@
         "Democratic Donor",
         "Prison"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 25,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "haim-saban",

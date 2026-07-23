@@ -8930,7 +8930,52 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'sbf-ftx-customer-funds-safe-denial-2022',
+        statement: 'Publicly assured customers and investors that FTX was fine / that customer funds were safe while the exchange was already misusing customer deposits.',
+        saidAt: '2022 (pre-collapse public statements)',
+        context: 'FTX public communications and interviews before the November 2022 collapse.',
+        whyFalse: 'Federal prosecutors charged SBF with fraud for misappropriating customer funds; he was convicted on multiple fraud counts. Assurances that customer funds were safe were false to the trial record.',
+        correction: 'Customer funds were not safe; SBF was convicted of fraud related to misappropriation of FTX customer deposits.',
+        statementSource: 'SBF/FTX public safety assurances 2022 (multi-outlet capture)',
+        statementUrl: 'https://www.justice.gov/usao-sdny/pr/united-states-attorney-announces-charges-against-ftx-founder-samuel-bankman-fried',
+        debunkSource: 'DOJ — SBF convicted on all counts of fraud and conspiracy',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/samuel-bankman-fried-convicted-multiple-counts-fraud-and-conspiracy',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'sbf-alameda-arm-length-independence-false',
+        statement: 'Portrayed Alameda Research as an independent trading firm at arm’s length from FTX customer assets.',
+        saidAt: '2021–2022',
+        context: 'Public and investor-facing descriptions of FTX/Alameda relationship.',
+        whyFalse: 'Trial evidence and conviction established that Alameda received and used FTX customer funds improperly; the arm’s-length independence framing was false.',
+        correction: 'Alameda was not operating as a clean arm’s-length firm relative to FTX customer deposits as publicly portrayed.',
+        statementSource: 'SBF/FTX public descriptions of Alameda relationship',
+        statementUrl: 'https://www.justice.gov/usao-sdny/pr/united-states-attorney-announces-charges-against-ftx-founder-samuel-bankman-fried',
+        debunkSource: 'DOJ SBF conviction announcement; trial evidence summaries',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/samuel-bankman-fried-convicted-multiple-counts-fraud-and-conspiracy',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'sbf-not-guilty-fraud-trial-posture-2023',
+        statement: 'Pleaded not guilty and maintained innocence of fraud charges at trial.',
+        saidAt: '2022–2023',
+        context: 'SDNY criminal case United States v. Samuel Bankman-Fried.',
+        whyFalse: 'A federal jury convicted SBF on all seven counts including wire fraud and conspiracy. The not-guilty denials were false as a matter of criminal adjudication.',
+        correction: 'SBF was convicted of multiple fraud and conspiracy counts and sentenced to 25 years.',
+        statementSource: 'SBF not-guilty plea / trial defense posture',
+        statementUrl: 'https://www.justice.gov/usao-sdny/pr/united-states-attorney-announces-charges-against-ftx-founder-samuel-bankman-fried',
+        debunkSource: 'DOJ conviction announcement',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/samuel-bankman-fried-convicted-multiple-counts-fraud-and-conspiracy',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'haim-saban',

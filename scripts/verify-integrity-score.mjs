@@ -139,6 +139,7 @@ const required = [
   'paul-manafort',
   'joe-rogan',
   'ben-shapiro',
+  'sam-bankman-fried',
 ];
 const scores = {};
 for (const id of required) {
@@ -1045,8 +1046,21 @@ for (const f of (shapiroP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('shapiro dual-cite collision: ' + f.id);
 }
 
+
+// Sam Bankman-Fried densify gate (n≥3)
+const sbf = scores['sam-bankman-fried'];
+if (!sbf || sbf.n < 3) throw new Error('sam-bankman-fried needs ≥3 verified falsehoods, got ' + (sbf?.n ?? 0));
+if (sbf.score > 30) throw new Error('sam-bankman-fried score expected ≤30 after densify, got ' + sbf.score);
+const sbfP = getProfileBySlug('sam-bankman-fried');
+for (const id of ['sbf-ftx-customer-funds-safe-denial-2022','sbf-alameda-arm-length-independence-false','sbf-not-guilty-fraud-trial-posture-2023']) {
+  if (!(sbfP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('sam-bankman-fried missing docket id: ' + id);
+}
+for (const f of (sbfP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('sbf dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 52) throw new Error('expected ≥52 compiled dockets, got ' + docketCount);
+if (docketCount < 53) throw new Error('expected ≥53 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
