@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:14:21.530Z",
+  "generatedAt": "2026-07-23T09:14:50.103Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 150,
-    "timelineEvents": 138,
+    "incidents": 151,
+    "timelineEvents": 139,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 136,
+    "historicalWarCrimesPack": 137,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 90
+      "post-oct7": 91
     },
     "incidentsByTier": {
-      "verified": 148,
+      "verified": 149,
       "circumstantial": 2
     },
-    "childrenTagged": 126,
-    "civiliansTagged": 148,
+    "childrenTagged": 127,
+    "civiliansTagged": 149,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3946,6 +3946,27 @@
         "communications",
         "blackout",
         "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-universities-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Universities Total Destruction Pattern",
+      "description": "UNESCO multi-source documentation of destruction or severe damage to all Gaza universities.",
+      "source": "UNESCO / multi-outlet / OCHA",
+      "sourceUrl": "https://www.unesco.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-universities-total-destruction-pattern-2023-2025",
+        "gaza-education-system-destroyed-2023-2025",
+        "gaza-cultural-heritage-destruction-2023-2025"
+      ],
+      "tags": [
+        "universities",
+        "education",
+        "children",
         "gaza"
       ]
     },
@@ -10020,6 +10041,49 @@
           "type": "investigation",
           "label": "Multi-outlet family strike coverage",
           "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-universities-total-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Universities Total Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (higher-ed cohort)",
+      "location": "Gaza Strip university campuses",
+      "summary": "UNESCO, multi-source satellite analysis, and university statements document destruction or severe damage to all of Gaza’s universities — a higher-education annihilation pattern distinct from the broader school/education-system card. Pattern card for tertiary-education destruction as a long-horizon civilian-harm outcome.",
+      "evidence": "UNESCO higher-ed damage materials, multi-source satellite reporting, and university public statements establish multi-source near-total university destruction. Exact building counts evolve; multi-source all-university severe damage is the claim.",
+      "sources": [
+        {
+          "label": "UNESCO education / heritage damage materials",
+          "url": "https://www.unesco.org"
+        },
+        {
+          "label": "Multi-outlet Gaza university destruction coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "OCHA education access materials",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNESCO public materials",
+          "url": "https://www.unesco.org"
         }
       ],
       "tier": "verified",
