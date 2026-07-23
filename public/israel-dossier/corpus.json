@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:53:46.654Z",
+  "generatedAt": "2026-07-23T09:54:34.591Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 240,
-    "timelineEvents": 228,
+    "incidents": 243,
+    "timelineEvents": 231,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 226,
+    "historicalWarCrimesPack": 229,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 180
+      "post-oct7": 183
     },
     "incidentsByTier": {
-      "verified": 238,
+      "verified": 241,
       "circumstantial": 2
     },
-    "childrenTagged": 208,
-    "civiliansTagged": 238,
+    "childrenTagged": 211,
+    "civiliansTagged": 241,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3423,6 +3423,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-awd-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Acute Watery Diarrhea Surge Pattern",
+      "description": "UNICEF/WHO multi-source documentation of massive pediatric AWD surges under contaminated water and sewage failure.",
+      "source": "UNICEF / WHO / multi-outlet",
+      "sourceUrl": "https://www.unicef.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-acute-watery-diarrhea-pattern-2023-2025",
+        "gaza-infectious-disease-surge-pattern-2023-2025",
+        "gaza-sewage-flooding-disease-pattern-2023-2025"
+      ],
+      "tags": [
+        "diarrhea",
+        "children",
+        "disease",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-anemia-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5395,6 +5416,28 @@
       ]
     },
     {
+      "id": "tl-hostages-solitary-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Solitary Isolation Pattern",
+      "description": "Multi-source documentation of prolonged solitary confinement of Israeli civilian hostages including children.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-solitary-confinement-pattern-2023-2025",
+        "israel-hostages-tunnel-captivity-pattern-2023-2025",
+        "israel-hostages-communication-blackout-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "solitary",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-starvation-captivity-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -6243,6 +6286,27 @@
       "tags": [
         "roadblocks",
         "settlers",
+        "civilians",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-worker-mobility-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Worker Mobility Shutdown Pattern",
+      "description": "OCHA/ILO multi-source documentation of collapsed work-permit access into Israel after October 7.",
+      "source": "OCHA / ILO / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-palestinian-citizen-israel-mobility-pattern-2023-2025",
+        "west-bank-checkpoint-movement-restriction-pattern-2023-2025",
+        "gaza-cash-crisis-aid-worker-payments-pattern-2023-2025"
+      ],
+      "tags": [
+        "labor",
+        "permits",
         "civilians",
         "west-bank"
       ]
@@ -15634,6 +15698,134 @@
           "type": "document",
           "label": "Peace Now public materials",
           "url": "https://peacenow.org.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-acute-watery-diarrhea-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Acute Watery Diarrhea Surge Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (AWD cohort)",
+      "location": "Gaza Strip clinics and displacement sites",
+      "summary": "UNICEF, WHO, and multi-source WASH/health reporting document massive surges in acute watery diarrhea among Gaza children under contaminated water and sewage failure — a pediatric disease-harm pattern distinct from aggregate infectious-disease and sewage-flooding cards.",
+      "evidence": "UNICEF WASH/health materials, WHO disease surveillance notes, and multi-outlet coverage establish multi-source AWD surges among children. Exact case counts evolve; multi-source wartime pediatric AWD surge is the claim.",
+      "sources": [
+        {
+          "label": "UNICEF WASH / health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "WHO disease surveillance materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "Multi-outlet Gaza child diarrhea coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNICEF public updates",
+          "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-solitary-confinement-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Solitary & Isolation Captivity Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (solitary cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document prolonged solitary confinement and extreme isolation of Israeli civilian hostages including children — a protected-person treatment pattern distinct from tunnel-captivity and communication-blackout cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source solitary/isolation captivity conditions. Exact duration per case varies; multi-source prolonged isolation of civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-palestinian-citizen-israel-mobility-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank–Israel Mobility Restriction for Workers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (worker-mobility cohort)",
+      "location": "West Bank–Israel checkpoints and work permit corridors",
+      "summary": "OCHA, ILO, and multi-source reporting document post–October 7 collapse of West Bank Palestinian work-permit access into Israel — wiping out a primary livelihood source for tens of thousands of civilian households including children dependents. Pattern card for labor-mobility shutdown distinct from checkpoint and cash-crisis cards.",
+      "evidence": "OCHA access notes, multi-source labor-market reporting, and multi-outlet coverage establish multi-source work-permit and mobility collapse. Exact permit counts evolve; multi-source wartime labor-access shutdown is the claim.",
+      "sources": [
+        {
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "ILO labor materials",
+          "url": "https://www.ilo.org"
+        },
+        {
+          "label": "Multi-outlet West Bank worker permit coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",
