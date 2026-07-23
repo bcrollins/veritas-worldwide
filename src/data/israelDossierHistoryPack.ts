@@ -4167,6 +4167,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-aid-convoy-looting-chaos-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Aid Convoy Looting & Crowd-Crush Chaos Pattern (2023–2025)',
+    date: '2023 – 2025 (convoy-chaos cohort)',
+    location: 'Gaza Strip aid corridors / distribution points',
+    summary:
+      'OCHA, WFP, and multi-source reporting document repeated episodes of aid-convoy looting, crowd crushes, and lethal chaos at distribution points under extreme scarcity — killing and injuring civilians including children. Pattern card for distribution-system failure as a civilian-harm multiplier distinct from aid-worker killings and starvation IPC cards.',
+    evidence:
+      'OCHA/WFP distribution-incident reporting and multi-outlet coverage of crush/looting events establish multi-source distribution chaos. Exact casualty counts per episode evolve; multi-source recurrent deadly distribution chaos is the claim.',
+    sources: [
+      { label: 'OCHA humanitarian access materials', url: 'https://www.ochaopt.org' },
+      { label: 'WFP distribution / access materials', url: 'https://www.wfp.org' },
+      { label: 'Multi-outlet aid distribution chaos coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6200,6 +6227,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['food', 'storage', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-aid-chaos-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Aid Convoy Looting & Crowd-Crush Chaos Pattern',
+    description: 'OCHA/WFP multi-source documentation of recurrent deadly looting and crush events at aid distribution points under scarcity.',
+    source: 'OCHA / WFP / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-aid-convoy-looting-chaos-pattern-2023-2025',
+      'gaza-starvation-ipc-phases-2024-2025',
+      'gaza-aid-workers-killed-pattern-2023-2025',
+    ],
+    tags: ['aid', 'distribution', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 

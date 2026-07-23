@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:23:41.080Z",
+  "generatedAt": "2026-07-23T09:24:03.872Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 169,
-    "timelineEvents": 157,
+    "incidents": 170,
+    "timelineEvents": 158,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 155,
+    "historicalWarCrimesPack": 156,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 109
+      "post-oct7": 110
     },
     "incidentsByTier": {
-      "verified": 167,
+      "verified": 168,
       "circumstantial": 2
     },
-    "childrenTagged": 142,
-    "civiliansTagged": 167,
+    "childrenTagged": 143,
+    "civiliansTagged": 168,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3117,6 +3117,28 @@
       "tags": [
         "agriculture",
         "food",
+        "civilians",
+        "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-aid-chaos-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Aid Convoy Looting & Crowd-Crush Chaos Pattern",
+      "description": "OCHA/WFP multi-source documentation of recurrent deadly looting and crush events at aid distribution points under scarcity.",
+      "source": "OCHA / WFP / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-aid-convoy-looting-chaos-pattern-2023-2025",
+        "gaza-starvation-ipc-phases-2024-2025",
+        "gaza-aid-workers-killed-pattern-2023-2025"
+      ],
+      "tags": [
+        "aid",
+        "distribution",
         "civilians",
         "children",
         "gaza"
@@ -11254,6 +11276,50 @@
           "type": "document",
           "label": "WFP public updates",
           "url": "https://www.wfp.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-aid-convoy-looting-chaos-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Aid Convoy Looting & Crowd-Crush Chaos Pattern (2023–2025)",
+      "date": "2023 – 2025 (convoy-chaos cohort)",
+      "location": "Gaza Strip aid corridors / distribution points",
+      "summary": "OCHA, WFP, and multi-source reporting document repeated episodes of aid-convoy looting, crowd crushes, and lethal chaos at distribution points under extreme scarcity — killing and injuring civilians including children. Pattern card for distribution-system failure as a civilian-harm multiplier distinct from aid-worker killings and starvation IPC cards.",
+      "evidence": "OCHA/WFP distribution-incident reporting and multi-outlet coverage of crush/looting events establish multi-source distribution chaos. Exact casualty counts per episode evolve; multi-source recurrent deadly distribution chaos is the claim.",
+      "sources": [
+        {
+          "label": "OCHA humanitarian access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "WFP distribution / access materials",
+          "url": "https://www.wfp.org"
+        },
+        {
+          "label": "Multi-outlet aid distribution chaos coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",
