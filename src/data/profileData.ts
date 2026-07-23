@@ -3720,26 +3720,43 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'mike-pence',
     name: 'Mike Pence',
-    title: '48th Vice President',
+    title: '48th U.S. Vice President (2017–2021); former Indiana Governor',
     category: 'politician',
     bioguideId: 'P000587',
     party: 'R',
     state: 'IN',
     photoUrl: getProfilePhoto('mike-pence'),
-    summary: 'Former Vice President under Trump. Christian Zionist. Evangelical Christian with strong pro-Israel positions.',
-    tags: ['Vice President', 'Christian Zionist', 'Indiana', 'Republican', 'Evangelical'],
-    career: ['Vice President 2017-2021', 'Governor of Indiana', 'U.S. Representative (R-IN)', 'Talk radio host'],
+    summary:
+      'Vice President under Donald Trump (2017–2021); former Indiana governor and U.S. representative. Christian Zionist who addressed the Israeli Knesset and publicly affirmed the Jerusalem embassy move. Integrity docket covers dual-cited falsehoods including the 90% illegal-immigration reduction claim. Primary: White House archives, PolitiFact, CBP data via fact-checks.',
+    tags: ['Vice President', 'Christian Zionist', 'Indiana', 'Republican', 'Evangelical', 'CUFI', 'Integrity Docket'],
+    career: [
+      'Talk radio host; U.S. Representative (R-IN)',
+      'Governor of Indiana',
+      '2017–2021 — 48th Vice President of the United States',
+      '2018 — Addressed Israeli Knesset; affirmed Jerusalem embassy',
+      '2024 Republican presidential candidate (withdrew)',
+    ],
     websites: [
-      { label: 'Official Website', url: 'https://www.mikepence.com' }
+      { label: 'Public site', url: 'https://www.mikepence.com' },
+      { label: 'PolitiFact — 90% immigration drop (False)', url: 'https://www.politifact.com/factchecks/2022/dec/06/mike-pence/pences-claim-about-a-90-drop-in-illegal-immigratio/' },
+      { label: 'Trump White House archives', url: 'https://trumpwhitehouse.archives.gov' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Mike_Pence' },
     ],
     quotes: [
       {
         text: 'The United States of America stands with Israel, now and always.',
-        context: 'Address to Israeli Knesset',
+        context: 'Address to Israeli Knesset as sitting Vice President.',
         date: '2018',
         source: 'White House Archives',
-        url: 'https://trumpwhitehouse.archives.gov'
-      }
+        url: 'https://trumpwhitehouse.archives.gov',
+      },
+      {
+        text: 'The border wall and the Remain in Mexico policy reduced illegal immigration by 90%.',
+        context: 'November 18, 2022 speech. PolitiFact rated False.',
+        date: 'November 18, 2022',
+        source: 'Pence speech / PolitiFact',
+        url: 'https://www.politifact.com/factchecks/2022/dec/06/mike-pence/pences-claim-about-a-90-drop-in-illegal-immigratio/',
+      },
     ],
     donations: [
       {
@@ -3747,42 +3764,82 @@ export const PROFILES: PowerProfile[] = [
         amount: 850000,
         year: '2001-2024',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org'
-      }
+        url: 'https://www.opensecrets.org',
+      },
     ],
     policyActions: [
       {
         action: 'Addressed Israeli Knesset as Vice President',
         date: '2018',
-        context: 'Affirmed Jerusalem embassy move',
+        context: 'Affirmed Jerusalem embassy move and alliance orthodoxy.',
         source: 'White House Archives',
-        url: 'https://trumpwhitehouse.archives.gov'
-      }
+        url: 'https://trumpwhitehouse.archives.gov',
+      },
+      {
+        action: 'Cast Senate-tiebreaking votes as VP for Trump legislative agenda including tax reform',
+        date: '2017–2021',
+        context: 'Constitutional VP role; public roll-call record.',
+        source: 'Senate roll calls',
+        url: 'https://www.senate.gov',
+      },
     ],
     connections: [
       {
         name: 'Christians United for Israel (CUFI)',
         relationship: 'Key evangelical-Israel alliance figure',
         evidence: 'Conference appearances and policy alignment',
-        tier: 'verified'
-      }
+        tier: 'verified',
+      },
+      {
+        name: 'Donald Trump',
+        relationship: 'Vice President 2017–2021; later primary rival after Jan. 6 divergence',
+        evidence: 'Administration record',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'First sitting US VP to address Israeli Knesset',
-        source: 'Knesset records',
+        claim: 'First sitting U.S. VP to address Israeli Knesset (public diplomatic record).',
+        source: 'Knesset / White House archives',
         url: 'https://www.knesset.gov.il',
         tier: 'verified',
-        date: '2018'
+        date: '2018',
+      },
+      {
+        claim:
+          'November 2022: claimed border wall and Remain in Mexico reduced illegal immigration by 90%. PolitiFact False — CBP encounter data does not support a sustained 90% reduction attributable solely to those policies.',
+        source: 'PolitiFact False (Dec 6, 2022); CBP nationwide encounters',
+        url: 'https://www.politifact.com/factchecks/2022/dec/06/mike-pence/pences-claim-about-a-90-drop-in-illegal-immigratio/',
+        tier: 'verified',
+        date: '2022',
       },
       {
         claim: 'Christian Zionist ideology shaped Middle East policy positions',
         source: 'Associated Press',
         url: 'https://apnews.com',
         tier: 'circumstantial',
-        date: '2018'
-      }
-    ]
+        date: '2018',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'pence-border-wall-remain-mexico-90-percent-2022',
+        statement:
+          'Claimed the border wall and Remain in Mexico policy “reduced illegal immigration by 90%.”',
+        saidAt: 'November 18, 2022',
+        context: 'Post-VP campaign speech defending Trump-era border policies.',
+        whyFalse:
+          'PolitiFact rated False. CBP nationwide encounter and southwest border data do not show a sustained 90% reduction in illegal immigration attributable to wall construction and MPP alone. Title 42 expulsions and pandemic effects heavily distorted 2020–2021 comparison windows; Pence\'s figure overstates the empirical record.',
+        correction:
+          'No authoritative CBP series supports a clean 90% drop in illegal immigration from wall + MPP alone.',
+        statementSource: 'Pence Nov 18, 2022 speech (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/personalities/mike-pence/',
+        debunkSource: 'PolitiFact — False (Dec 6, 2022) with CBP encounter data',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/dec/06/mike-pence/pences-claim-about-a-90-drop-in-illegal-immigratio/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'dick-cheney',

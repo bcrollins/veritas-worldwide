@@ -104,6 +104,7 @@ const required = [
   'nikki-haley',
   'antony-blinken',
   'bob-menendez',
+  'mike-pence',
 ];
 const scores = {};
 for (const id of required) {
@@ -266,8 +267,17 @@ const obama = scores['barack-obama'];
 if (!obama || obama.n < 2) throw new Error('barack-obama needs ≥2 verified falsehoods, got ' + (obama?.n ?? 0));
 if (obama.score > 65) throw new Error('barack-obama score expected ≤65 after deep dive, got ' + obama.score);
 
+// Mike Pence dual-cited integrity gate
+const pence = scores['mike-pence'];
+if (!pence || pence.n < 1) throw new Error('mike-pence needs ≥1 verified falsehood, got ' + (pence?.n ?? 0));
+if (pence.score > 90) throw new Error('mike-pence score expected ≤90, got ' + pence.score);
+const penceP = getProfileBySlug('mike-pence');
+if (!(penceP.documentedFalsehoods || []).some((f) => f.id === 'pence-border-wall-remain-mexico-90-percent-2022')) {
+  throw new Error('mike-pence missing 90% immigration docket id');
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 17) throw new Error('expected ≥17 compiled dockets, got ' + docketCount);
+if (docketCount < 18) throw new Error('expected ≥18 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

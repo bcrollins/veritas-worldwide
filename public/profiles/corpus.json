@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:18:54.360Z",
+  "generatedAt": "2026-07-23T07:20:50.332Z",
   "count": 96,
   "profiles": [
     {
@@ -660,9 +660,9 @@
     {
       "id": "mike-pence",
       "name": "Mike Pence",
-      "title": "48th Vice President",
+      "title": "48th U.S. Vice President (2017–2021); former Indiana Governor",
       "category": "politician",
-      "summary": "Former Vice President under Trump. Christian Zionist. Evangelical Christian with strong pro-Israel positions.",
+      "summary": "Vice President under Donald Trump (2017–2021); former Indiana governor and U.S. representative. Christian Zionist who addressed the Israeli Knesset and publicly affirmed the Jerusalem embassy move. Integrity docket covers dual-cited falsehoods including the 90% illegal-immigration reduction claim. Primary: White House archives, PolitiFact, CBP data via fact-checks.",
       "photo": "/profiles/mike-pence.jpg",
       "url": "https://veritasworldwide.com/profile/mike-pence",
       "bioguideId": "P000587",
@@ -671,11 +671,13 @@
         "Christian Zionist",
         "Indiana",
         "Republican",
-        "Evangelical"
+        "Evangelical",
+        "CUFI",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "dick-cheney",
