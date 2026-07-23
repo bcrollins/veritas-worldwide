@@ -1534,4 +1534,16 @@ for (const dest of ['/', '/read', '/israel-dossier', '/profiles', '/search']) {
 }
 
 
+
+// surfaces length and pure green reaffirm end
+assert(Array.isArray(surfaces) && surfaces.length >= 102, `surfaces array end floor ${surfaces.length}`)
+assert(surfaces.every((row) => Array.isArray(row) && row.length === 2 && typeof row[0] === 'string' && typeof row[1] === 'string'), 'surfaces pairs well-formed end')
+
+// Hick primary hub budget ≤5 reaffirm end
+const appEnd = read('src/App.tsx')
+const plEnd = appEnd.match(/const primaryLinks[^=]*= \[([\s\S]*?)\]/)
+assert(plEnd, 'primaryLinks block end')
+assert((plEnd[1].match(/to:\s*['"]/g) || []).length === 5, 'primaryLinks count 5 end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
