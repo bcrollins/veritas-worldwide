@@ -1158,4 +1158,21 @@ assert(bookmarksEmptyS7c.includes('BOOKMARKS_HUBS'), 'BOOKMARKS_HUBS shared empt
 assert(bookmarksEmptyS7c.includes('testId="bookmarks-empty-hubs"'), 'bookmarks empty uses RelatedHubs testId')
 
 
+
+// BOOKMARKS_HUBS destination lock (header + empty share)
+const bookmarksHubsLock = read('src/pages/BookmarksPage.tsx')
+const bmBlock = bookmarksHubsLock.match(/const BOOKMARKS_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(bmBlock, 'BOOKMARKS_HUBS block')
+assert((bmBlock[1].match(/to:/g) || []).length === 5, 'BOOKMARKS_HUBS count 5')
+for (const dest of ['/read', '/search', '/news', '/israel-dossier', '/content-pack']) {
+  assert(bmBlock[1].includes(dest), `BOOKMARKS_HUBS has ${dest}`)
+}
+
+// SEARCH_RECOVERY_HUBS count lock
+const searchHubsLock = read('src/pages/SearchPage.tsx')
+const shBlock = searchHubsLock.match(/const SEARCH_RECOVERY_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(shBlock, 'SEARCH_RECOVERY_HUBS block')
+assert((shBlock[1].match(/to:/g) || []).length === 5, 'SEARCH_RECOVERY_HUBS count 5')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
