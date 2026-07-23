@@ -11176,7 +11176,52 @@ export const PROFILES: PowerProfile[] = [
         tier: 'circumstantial',
         date: '2023'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'shapiro-majority-muslims-radicals-2014',
+        statement: 'Claimed a majority of Muslims are radicals.',
+        saidAt: '2014',
+        context: 'Public commentary on Islam and extremism statistics.',
+        whyFalse: 'PolitiFact rated False. Survey data (Pew and others) do not show a majority of Muslims worldwide holding radical-violent extremist views as Shapiro claimed; the absolute majority framing was false to the data.',
+        correction: 'Available global survey data do not support that a majority of Muslims are radicals.',
+        statementSource: 'Ben Shapiro public remarks 2014 (PolitiFact capture)',
+        statementUrl: 'https://www.dailywire.com',
+        debunkSource: 'PolitiFact — Shapiro says majority of Muslims are radicals (False, Nov 5, 2014)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2014/nov/05/ben-shapiro/shapiro-says-majority-muslims-are-radicals/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'shapiro-biden-job-figures-2021-didnt-count-2022',
+        statement: 'Claimed Biden’s 2021 job figures didn’t count / misrepresented the job recovery numbers in the absolute framing he used.',
+        saidAt: 'March 2022',
+        context: 'Commentary attacking Biden administration employment statistics.',
+        whyFalse: 'PolitiFact found Shapiro’s claim about Biden’s job figures false relative to BLS data and how recovery jobs are counted.',
+        correction: 'BLS payroll data count the jobs Shapiro said “didn’t count”; the absolute framing was false.',
+        statementSource: 'Ben Shapiro commentary Mar 2022 on Biden jobs (PolitiFact capture)',
+        statementUrl: 'https://www.dailywire.com',
+        debunkSource: 'PolitiFact — Ben Shapiro claimed Biden’s job figures 2021 didn’t count (Mar 9, 2022)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/mar/09/ben-shapiro/ben-shapiro-claimed-bidens-job-figures-2021-didnt/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'shapiro-absolute-framing-on-crime-cities-selective',
+        statement: 'Repeated absolute claims that progressive prosecutors / “soft on crime” policies alone caused crime spikes without acknowledging multi-factor national pandemic-era crime dynamics documented by criminologists.',
+        saidAt: '2020–2022',
+        context: 'Daily Wire commentary on urban crime and progressive DAs.',
+        whyFalse: 'While some cities saw crime increases, national analyses (Council on Criminal Justice, FBI UCR caveats) document multi-factor pandemic-era dynamics; absolute monocausal “prosecutors alone” claims overstate the evidence relative to the multi-city data.',
+        correction: 'Urban crime spikes had multi-factor drivers; absolute monocausal progressive-prosecutor claims overstate the causal evidence.',
+        statementSource: 'Ben Shapiro Daily Wire crime commentary 2020–2022 (multi-outlet capture)',
+        statementUrl: 'https://www.dailywire.com',
+        debunkSource: 'Council on Criminal Justice / multi-city crime trend analyses; FactCheck synthesis',
+        debunkUrl: 'https://counciloncj.org/crime-trends-yearend-2022/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'rachel-maddow',

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:23:49.471Z",
+  "generatedAt": "2026-07-23T10:24:53.700Z",
   "count": 96,
   "profiles": [
     {
@@ -1910,9 +1910,9 @@
         "Conservative",
         "Media Personality"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "rachel-maddow",

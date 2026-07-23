@@ -138,6 +138,7 @@ const required = [
   'roger-stone',
   'paul-manafort',
   'joe-rogan',
+  'ben-shapiro',
 ];
 const scores = {};
 for (const id of required) {
@@ -1031,8 +1032,21 @@ for (const f of (roganP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('rogan dual-cite collision: ' + f.id);
 }
 
+
+// Ben Shapiro densify gate (n≥3)
+const shapiro = scores['ben-shapiro'];
+if (!shapiro || shapiro.n < 3) throw new Error('ben-shapiro needs ≥3 verified falsehoods, got ' + (shapiro?.n ?? 0));
+if (shapiro.score > 50) throw new Error('ben-shapiro score expected ≤50 after densify, got ' + shapiro.score);
+const shapiroP = getProfileBySlug('ben-shapiro');
+for (const id of ['shapiro-majority-muslims-radicals-2014','shapiro-biden-job-figures-2021-didnt-count-2022','shapiro-absolute-framing-on-crime-cities-selective']) {
+  if (!(shapiroP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('ben-shapiro missing docket id: ' + id);
+}
+for (const f of (shapiroP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('shapiro dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 51) throw new Error('expected ≥51 compiled dockets, got ' + docketCount);
+if (docketCount < 52) throw new Error('expected ≥52 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
