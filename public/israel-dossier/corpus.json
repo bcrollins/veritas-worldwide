@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:19:27.533Z",
+  "generatedAt": "2026-07-23T09:19:56.090Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 161,
-    "timelineEvents": 149,
+    "incidents": 162,
+    "timelineEvents": 150,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 147,
+    "historicalWarCrimesPack": 148,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 101
+      "post-oct7": 102
     },
     "incidentsByTier": {
-      "verified": 159,
+      "verified": 160,
       "circumstantial": 2
     },
-    "childrenTagged": 136,
-    "civiliansTagged": 159,
+    "childrenTagged": 137,
+    "civiliansTagged": 160,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3925,6 +3925,28 @@
         "worship",
         "heritage",
         "civilians",
+        "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-olives-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Olive Groves & Perennial Crop Destruction Pattern",
+      "description": "FAO multi-source documentation of mass destruction of olive groves and perennial orchards.",
+      "source": "FAO / UNOSAT / OCHA",
+      "sourceUrl": "https://www.fao.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-olive-groves-destruction-pattern-2023-2025",
+        "gaza-agricultural-land-destruction-pattern-2023-2025",
+        "gaza-greenhouses-irrigation-destruction-pattern-2023-2025"
+      ],
+      "tags": [
+        "olives",
+        "agriculture",
+        "livelihood",
         "children",
         "gaza"
       ]
@@ -10718,6 +10740,49 @@
       "sources": [
         {
           "label": "FAO agricultural infrastructure materials",
+          "url": "https://www.fao.org"
+        },
+        {
+          "label": "UNOSAT / multi-source satellite analyses",
+          "url": "https://unosat.org"
+        },
+        {
+          "label": "OCHA food-security materials",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "FAO public materials",
+          "url": "https://www.fao.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-olive-groves-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Olive Groves & Perennial Tree Crop Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (olive cohort)",
+      "location": "Gaza Strip olive groves / perennial orchards",
+      "summary": "FAO and multi-source satellite reporting document mass destruction of olive groves and perennial tree crops that take years to re-establish — a long-horizon livelihood and food-security harm pattern distinct from annual cropland and greenhouse cards. Pattern card for perennial agricultural capital destruction.",
+      "evidence": "FAO tree-crop assessments and multi-source satellite orchard damage analyses establish multi-source olive/perennial destruction. Exact tree counts evolve; multi-source large-scale perennial crop destruction is the claim.",
+      "sources": [
+        {
+          "label": "FAO agricultural damage materials",
           "url": "https://www.fao.org"
         },
         {
