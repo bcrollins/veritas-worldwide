@@ -294,3 +294,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Milestone | past **1800 incidents** / video **160+** |
 
+
+## Interval densify — tip post-1804 bakery / Kfar Aza dining / solar-battery theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza O2-blender/preterm-formula/IV-board/cord-blood-bag · hostage ammo-boxes/family-portraits/hoods/overpass-banners · WB potato/band-instruments/radish/basil |
+| VI | bakery strikes · Kfar Aza dining · solar-battery theft |
+| Pure | visual + israel-dossier PASS |
+
