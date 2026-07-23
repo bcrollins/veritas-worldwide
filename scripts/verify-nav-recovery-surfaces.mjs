@@ -1884,4 +1884,12 @@ assert(surfaces.length >= 102, `final sentinel surfaces ${surfaces.length}`)
 assert(typeof read === 'function' && typeof assert === 'function', 'suite helpers present')
 
 
+
+// countTouchTargets credits RelatedHubs ultimate
+const a11yUlt = read('scripts/verify-a11y-public-targets.mjs')
+assert(a11yUlt.includes('countTouchTargets'), 'countTouchTargets ultimate')
+assert(a11yUlt.includes('<RelatedHubs') || a11yUlt.includes('RelatedHubs'), 'a11y RelatedHubs credit ultimate')
+assert(a11yUlt.includes('ResearchHubChips') && a11yUlt.includes('DossierHubSpokes'), 'a11y sibling credit ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
