@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:13:13.884Z",
+  "generatedAt": "2026-07-23T12:14:03.243Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 822,
+    "incidents": 824,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
@@ -15,15 +15,15 @@
       "mandate-1948": 3,
       "1948-1967": 6,
       "occupation-1967-2005": 26,
-      "blockade-2007-2023": 28,
+      "blockade-2007-2023": 30,
       "post-oct7": 759
     },
     "incidentsByTier": {
-      "verified": 820,
+      "verified": 822,
       "circumstantial": 2
     },
-    "childrenTagged": 776,
-    "civiliansTagged": 820,
+    "childrenTagged": 777,
+    "civiliansTagged": 822,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -19152,6 +19152,51 @@
       }
     },
     {
+      "id": "vi-gaza-flotilla-mavi-marmara-visual-legacy-2010",
+      "title": "Mavi Marmara Flotilla Raid (2010) — Video Legacy of Deadly Boarding",
+      "date": "May 31, 2010",
+      "location": "International waters / Gaza flotilla",
+      "summary": "Israeli commandos boarded the Mavi Marmara; nine activists were killed (a tenth later). Extensive ship video and multi-outlet investigations document the deadly raid. UN and national inquiries produced contested legal characterizations; civilian activist deaths are multi-source verified.",
+      "evidence": "Shipboard video, UN inquiry materials, and multi-outlet investigations establish multi-source documentation of deaths during the boarding. Self-defense claims remain contested in open literature.",
+      "sources": [
+        {
+          "label": "UN materials on flotilla raid (historical)",
+          "url": "https://www.un.org/"
+        },
+        {
+          "label": "HRW / multi-outlet flotilla investigations",
+          "url": "https://www.hrw.org/"
+        },
+        {
+          "label": "AP / Reuters historical flotilla packages",
+          "url": "https://apnews.com/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Shipboard / press video packages of boarding",
+          "url": "https://www.aljazeera.com/tag/gaza/"
+        },
+        {
+          "type": "investigation",
+          "label": "Multi-outlet flotilla investigation packages",
+          "url": "https://www.hrw.org/"
+        },
+        {
+          "type": "document",
+          "label": "UN inquiry trail materials",
+          "url": "https://www.un.org/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 10
+      },
+      "targetsCivilians": true,
+      "targetsChildren": false
+    },
+    {
       "id": "pillar-of-defense-2012",
       "era": "blockade-2007-2023",
       "targetsCivilians": true,
@@ -19730,6 +19775,48 @@
           "type": "investigation",
           "label": "+972 / rights-monitor case compilations",
           "url": "https://www.972mag.com/"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Press stills of weekly protests",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-israeli-police-west-bank-live-fire-protests-visual-2021-2025",
+      "title": "West Bank Protest Live Fire — Multi-Year Video Bank of Civilian Casualties",
+      "date": "2021–2025",
+      "location": "West Bank protest sites (Beita, Kafr Qaddum, and others)",
+      "summary": "Multi-year B’Tselem and press video banks document live fire wounding and killing Palestinian civilians—including medics and bystanders—during weekly protests against settlement expansion and land seizure.",
+      "evidence": "B’Tselem video case files, medical records cited by rights monitors, and multi-outlet reporting establish multi-source live-fire civilian harm. Rules-of-engagement defenses do not erase the footage record.",
+      "sources": [
+        {
+          "label": "B’Tselem video / firearms documentation",
+          "url": "https://www.btselem.org/firearms"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "HRW Israel/Palestine use-of-force materials",
+          "url": "https://www.hrw.org/middle-east/n-africa/israel/palestine"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem protest live-fire video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem firearms policy documentation",
+          "url": "https://www.btselem.org/firearms"
         },
         {
           "type": "photo-essay",
@@ -49530,6 +49617,14 @@
         {
           "label": "Human Rights Watch — Hospital investigation",
           "url": "https://www.hrw.org/news/2023/11/26/gaza-findings-october-17-al-ahli-hospital-explosion"
+        },
+        {
+          "label": "NYT Visual Investigations — hospital blast packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "AP / Reuters multi-outlet hospital blast reporting",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -49537,6 +49632,21 @@
           "type": "investigation",
           "label": "Forensic Architecture — Blast sequence analysis",
           "url": "https://www.forensicarchitecture.org/investigation/israeli-disinformation-al-ahli-hospital"
+        },
+        {
+          "type": "investigation",
+          "label": "HRW forensic analysis of Al-Ahli explosion",
+          "url": "https://www.hrw.org/news/2023/11/26/gaza-findings-october-17-al-ahli-hospital-explosion"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations blast packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "video",
+          "label": "Multi-outlet scene video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "tier": "circumstantial",
