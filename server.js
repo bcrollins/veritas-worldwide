@@ -1769,6 +1769,8 @@ const PATH_ALIASES = new Map([
   ['/donate', '/membership'],
   ['/support', '/membership'],
   ['/contact', '/about'],
+  // Sitemap bare path (robots.txt advertises /sitemap.xml).
+  ['/sitemap', '/sitemap.xml'],
 ])
 
 app.use((req, res, next) => {
