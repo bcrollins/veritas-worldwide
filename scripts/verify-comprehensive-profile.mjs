@@ -43,6 +43,7 @@ assert(success.includes('noindex'), 'success page must be noindex')
 assert(app.includes('ComprehensiveProfilePage'), 'App route lazy import missing')
 assert(app.includes('/comprehensive-profile'), 'App path missing')
 assert(server.includes('/api/services/comprehensive-profile/checkout'), 'server checkout route missing')
+assert(server.includes('osint-checkout') || server.includes("name: 'osint-checkout'"), 'OSINT rate limit missing')
 assert(server.includes('createStripeCheckoutSessionForOsint') || server.includes('OSINT_PRICE_CENTS'), 'stripe session helper missing')
 assert(server.includes("'/comprehensive-profile'"), 'known SPA route missing')
 assert(social.includes('/comprehensive-profile'), 'bot social meta missing')
@@ -74,6 +75,9 @@ assert(faqCount >= 6, `expected ≥6 FAQs, got ${faqCount}`)
 const sectionCount = (product.match(/id: '/g) || []).length
 assert(sectionCount >= 8, `expected ≥8 report sections, got ${sectionCount}`)
 
+const privacy = read('src/pages/PrivacyPage.tsx')
+assert(/Comprehensive Online Profile/i.test(privacy), 'privacy must mention Comprehensive Online Profile')
+assert(/Stripe/i.test(privacy), 'privacy must mention Stripe')
 console.log('[verify:comprehensive-profile] PASS')
 console.log(
   JSON.stringify(

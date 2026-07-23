@@ -5624,6 +5624,26 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'sanders-only-primary-candidate-voted-against-all-trump-defense-budgets-2019',
+        statement:
+          '“I am very proud that I am the only candidate in the Democratic primary to have voted against all of Trump’s defense budgets.”',
+        saidAt: 'December 17, 2019',
+        context:
+          'Campaign social video after Senate passage of FY2020 NDAA, claiming exclusive anti-Trump defense-budget voting record among 2020 Democratic primary candidates.',
+        whyFalse:
+          'PolitiFact rated False on two counts. (1) Sanders missed the FY2020 NDAA vote he publicly opposed, so he had not voted against every Trump-era defense authorization. (2) He was not the only Democratic primary candidate with a clean no record — Rep. Tulsi Gabbard voted against all three Trump NDAAs. FY2017 NDAA was signed by Obama, not Trump.',
+        correction:
+          'Sanders did not cast no votes on every Trump defense budget and was not the only 2020 Democratic primary candidate who did so when present.',
+        statementSource: 'Bernie Sanders campaign social video (Dec. 17, 2019) — PolitiFact statement capture',
+        statementUrl: 'https://www.politifact.com/personalities/bernie-sanders/',
+        debunkSource: 'PolitiFact — False (Dec. 20, 2019); Senate roll calls FY2018–2020 NDAA; House Gabbard votes',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/dec/20/bernie-sanders/bernie-sanders-wrong-twice-claim-about-defense-bud/',
+        severity: 'material',
+        tier: 'verified',
+      },
+
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.sanders.senate.gov' },

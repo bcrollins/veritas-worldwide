@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:24:47.710Z",
+  "generatedAt": "2026-07-23T09:25:27.577Z",
   "count": 96,
   "profiles": [
     {
@@ -861,8 +861,8 @@
         "Iron Dome History",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
