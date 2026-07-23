@@ -1298,6 +1298,19 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     relatedProfileIds: ['joe-biden', 'chuck-schumer', 'mike-johnson', 'mitch-mcconnell', 'benjamin-netanyahu'],
   },
 
+  {
+    id: 'fms-cash-flow-financing',
+    label: 'FMF Cash-Flow Financing Privilege',
+    amount: 'multi-year advance contracting authority',
+    type: 'legislation',
+    date: 'ongoing (unique privilege)',
+    detail:
+      'Israel is among a small set of FMF recipients authorized to use multi-year cash-flow financing — signing contracts for U.S. weapons before annual appropriations fully arrive. This structural privilege accelerates weapons pipeline continuity beyond annual MOU cash and is documented in CRS RL33222 as a distinctive enablement feature of the U.S.–Israel aid relationship.',
+    sourceUrl: 'https://www.congress.gov/crs-product/RL33222',
+    children: ['annual-mou', 'fmf-weapons', 'f35-fleet', 'qualitative-military-edge'],
+    relatedProfileIds: ['joe-biden', 'barack-obama', 'chuck-schumer', 'benjamin-netanyahu'],
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [

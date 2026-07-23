@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:05:08.973Z",
+  "generatedAt": "2026-07-23T08:05:38.015Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 93,
     "timelineEvents": 81,
     "actors": 47,
-    "moneyTrailNodes": 29,
+    "moneyTrailNodes": 30,
     "historicalWarCrimesPack": 79,
     "legalCases": 19,
     "lobbyingRecords": 7,
@@ -31,7 +31,7 @@
       "israeli-leadership": 2
     },
     "moneyTrailByType": {
-      "legislation": 7,
+      "legislation": 8,
       "delivery": 4,
       "weapon": 7,
       "impact": 3,
@@ -613,6 +613,27 @@
         "chuck-schumer",
         "mike-johnson",
         "mitch-mcconnell",
+        "benjamin-netanyahu"
+      ]
+    },
+    {
+      "id": "fms-cash-flow-financing",
+      "label": "FMF Cash-Flow Financing Privilege",
+      "amount": "multi-year advance contracting authority",
+      "type": "legislation",
+      "date": "ongoing (unique privilege)",
+      "detail": "Israel is among a small set of FMF recipients authorized to use multi-year cash-flow financing — signing contracts for U.S. weapons before annual appropriations fully arrive. This structural privilege accelerates weapons pipeline continuity beyond annual MOU cash and is documented in CRS RL33222 as a distinctive enablement feature of the U.S.–Israel aid relationship.",
+      "sourceUrl": "https://www.congress.gov/crs-product/RL33222",
+      "children": [
+        "annual-mou",
+        "fmf-weapons",
+        "f35-fleet",
+        "qualitative-military-edge"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "barack-obama",
+        "chuck-schumer",
         "benjamin-netanyahu"
       ]
     }
