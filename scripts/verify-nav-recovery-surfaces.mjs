@@ -123,6 +123,7 @@ assert(primaryBlock, 'primaryLinks block')
 const primaryCount = (primaryBlock[1].match(/to:\s*['"]/g) || []).length
 assert(primaryCount === 5, `primaryLinks count ${primaryCount} !== 5`)
 assert(app.includes('Account & Trust') || app.includes('Account'), 'Account drawer section present')
+assert(app.includes('Hubs') || app.includes('drawerBrowseLinks'), 'Hubs or Browse drawer structure present')
 
 for (const route of [
   '/researcher',
