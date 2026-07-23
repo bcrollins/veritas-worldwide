@@ -393,4 +393,11 @@ for (const [rel, tid] of [
   assert(read(rel).includes('excludePath='), `${rel} excludePath`)
 }
 
+
+// OSINT success recovery destinations
+const osintSuccess = read('src/pages/ComprehensiveProfileSuccessPage.tsx')
+assert(osintSuccess.includes('osint-success-related-hubs'), 'osint-success-related-hubs')
+assert(osintSuccess.includes('/profiles') && osintSuccess.includes('/methodology'), 'OSINT success Profiles+Methodology')
+assert(osintSuccess.includes('/search'), 'OSINT success Search')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
