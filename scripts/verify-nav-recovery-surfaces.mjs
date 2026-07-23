@@ -1175,4 +1175,22 @@ assert(shBlock, 'SEARCH_RECOVERY_HUBS block')
 assert((shBlock[1].match(/to:/g) || []).length === 5, 'SEARCH_RECOVERY_HUBS count 5')
 
 
+
+// MEDIA_KIT_PRIMARY_HUBS + OSINT_SUCCESS_HUBS count locks
+const mediaKitHubsLock = read('src/pages/MediaKitPage.tsx')
+const mkBlock = mediaKitHubsLock.match(/const MEDIA_KIT_PRIMARY_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(mkBlock, 'MEDIA_KIT_PRIMARY_HUBS block')
+assert((mkBlock[1].match(/to:/g) || []).length === 5, 'MEDIA_KIT_PRIMARY_HUBS count 5')
+
+const osintHubsLock = read('src/pages/ComprehensiveProfileSuccessPage.tsx')
+const osBlock = osintHubsLock.match(/const OSINT_SUCCESS_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(osBlock, 'OSINT_SUCCESS_HUBS block')
+assert((osBlock[1].match(/to:/g) || []).length === 5, 'OSINT_SUCCESS_HUBS count 5')
+
+// NotFound reuses PRIMARY_RELATED_HUBS
+const notFoundPrimarySrc = read('src/pages/NotFoundPage.tsx')
+assert(notFoundPrimarySrc.includes('PRIMARY_RELATED_HUBS'), 'NotFound PRIMARY_RELATED_HUBS')
+assert(notFoundPrimarySrc.includes('not-found-hub-chips'), 'not-found-hub-chips')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
