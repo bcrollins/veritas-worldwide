@@ -969,6 +969,7 @@ function downloadIncidentsCsv(incidents: DossierDocumentedIncident[], filename: 
       'source_labels',
       'source_urls',
       'multimedia_urls',
+      'multimedia_types',
       'summary',
     ],
     incidents.map((incident) => [
@@ -986,6 +987,7 @@ function downloadIncidentsCsv(incidents: DossierDocumentedIncident[], filename: 
       incident.sources.map((s) => s.label).join(' | '),
       incident.sources.map((s) => s.url).join(' | '),
       incident.multimedia.map((m) => m.url).join(' | '),
+      incident.multimedia.map((m) => m.type).join(' | '),
       incident.summary,
     ]),
   )
