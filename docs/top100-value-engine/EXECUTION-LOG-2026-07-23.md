@@ -51,3 +51,7 @@
 
 Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surfaces.
 
+
+## Interval 4
+- wave63 +9 → 669 claims unique IDs
+- soft-floor.json 669; PDF 669; verify ROC PASS

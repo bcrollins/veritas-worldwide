@@ -10,6 +10,7 @@
 
 - **Interval 1 (2026-07-23):** #1 #2 #3 #4 #5 #6 #7 #9 #22 #88 Implemented/Absorbed. Pure 29/29 PASS. Peer ROC densify left unstaged.
 - **Interval 2 (2026-07-23):** soft-floor.json auto; wave barrel Wave3–61; wave61 → 651 claims; /bernie+/admin all-UA noindex HTML inject; ROC sticky + ?q/?tier/?domain deep-links; filtered export; one-tap primary source; empty-state CTA. Local export 651. LIVE was 642 pre-deploy.
+- **Interval 4 (2026-07-23):** wave63 → 669 LIVE ship path; soft-floor auto 669.
 - **Interval 3 (2026-07-23):** wave62 → 660; sync-roc-geo-floors (650+/660+); #16 #17 #23 Implemented; LIVE anonymity PASS at 651 then ship 660.
 
 ---

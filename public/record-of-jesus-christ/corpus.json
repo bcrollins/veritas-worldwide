@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:37:16.698Z",
-  "claimCount": 660,
+  "generatedAt": "2026-07-23T11:40:33.895Z",
+  "claimCount": 669,
   "tierHistogram": {
-    "well_attested": 270,
-    "verified": 235,
-    "contested": 50,
-    "interpretive": 73,
+    "well_attested": 273,
+    "verified": 238,
+    "contested": 51,
+    "interpretive": 75,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 27
@@ -437,6 +437,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "ane-siloam-tunnel-inscription",
+      "claim": "The Siloam Tunnel Inscription (Istanbul Archaeology Museums; cast copies elsewhere) is a primary Hebrew inscription describing the meeting of two tunnel crews — archaeological control for Jerusalem’s water system traditionally linked to Hezekiah.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave63.ts"
     },
     {
       "id": "ane-silwan-necropolis",
@@ -901,6 +908,13 @@
       "file": "src/data/recordOfJesusChristWave42.ts"
     },
     {
+      "id": "arch-qumran-occupation-strata",
+      "claim": "Qumran’s multi-phase occupation (including the main settlement associated with the scroll caves) is archaeologically documented; identifying the community as Essene vs. another group remains debated.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave63.ts"
+    },
+    {
       "id": "arch-qumran-settlement",
       "claim": "Qumran settlement archaeology provides material context for the Dead Sea Scrolls community debates (Essene and alternative models).",
       "tier": "well_attested",
@@ -1363,6 +1377,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "cosmo-nucleosynthesis-light-elements",
+      "claim": "Big Bang nucleosynthesis predicts light-element abundances (D, ⁴He, ⁷Li) fixed by the baryon-to-photon ratio; deuterium measurements remain the most robust BBN baryometer while the lithium problem is an open tension.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave63.ts"
+    },
+    {
       "id": "cosmo-omega-b-h2",
       "claim": "CMB acoustic peaks tightly constrain the physical baryon density Ω_b h², matching independent BBN deuterium constraints within uncertainties.",
       "tier": "verified",
@@ -1769,6 +1790,13 @@
       "file": "src/data/recordOfJesusChristWave20.ts"
     },
     {
+      "id": "ec-justin-first-apology",
+      "claim": "Justin Martyr’s First Apology (mid-2nd c.) addresses Roman authorities with descriptions of Christian worship, scripture reading, and defense against charges — a primary window on mid-century Christian self-presentation.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave63.ts"
+    },
+    {
       "id": "ec-justin-first-apology-eucharist",
       "claim": "Justin’s First Apology describes Sunday assembly with readings, prayer, and eucharistic thanksgiving — mid-2nd-century evidence of Christian worship structure.",
       "tier": "well_attested",
@@ -2012,6 +2040,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-aramaic-substrate-limits",
+      "claim": "Semitic/Aramaic substrata in Greek Gospel diction can indicate early tradition layers, but retroversion arguments are often underdetermined and cannot alone prove authenticity of specific sayings.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave63.ts"
     },
     {
       "id": "hj-baptism",
@@ -3113,6 +3148,13 @@
       "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
+      "id": "mod-wright-jesus-victory-god",
+      "claim": "N.T. Wright’s Jesus and the Victory of God models a “Third Quest” synthesis placing Jesus within Second Temple Jewish eschatology; its conclusions remain debated while its source engagement is widely treated as a scholarly landmark.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave63.ts"
+    },
+    {
       "id": "mod-wright-ntpg",
       "claim": "N.T. Wright’s The New Testament and the People of God sets a critical-realist worldview framework for reading early Judaism and Christianity as story-shaped communities.",
       "tier": "interpretive",
@@ -3545,6 +3587,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
+      "id": "nc-talmud-yeshu-limits",
+      "claim": "Later rabbinic passages sometimes read as allusions to Jesus (Yeshu) are chronologically late, textually complex, and cannot be treated as independent first-century biography without severe method caution.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave63.ts"
     },
     {
       "id": "nc-tf",
@@ -4002,6 +4051,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nt-p66-bodmer-john",
+      "claim": "𝔓⁶⁶ (Bodmer II) is a major early papyrus witness to John (c. 200 CE range) with extensive text and corrections — foundational for reconstructing the Fourth Gospel’s early transmission.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave63.ts"
+    },
+    {
       "id": "nt-p66-p75",
       "claim": "Bodmer papyri P66 (John) and P75 (Luke/John) are major early substantial witnesses typically dated to the late 2nd / early 3rd century and foundational for early Alexandrian text studies.",
       "tier": "verified",
@@ -4308,6 +4364,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-antiquities-composition",
+      "claim": "Josephus’s Jewish Antiquities (completed c. 93/94 CE in Rome) retells Israel’s history for a Greco-Roman audience and is a primary literary source for Second Temple institutions, with known Flavian-era rhetorical framing.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave63.ts"
     },
     {
       "id": "st-josephus-antiquities-preface",
