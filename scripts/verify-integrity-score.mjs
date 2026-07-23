@@ -211,6 +211,20 @@ for (const id of [
   }
 }
 
+// Mitch McConnell multi-entry expansion
+const mcconnell = scores['mitch-mcconnell'];
+if (!mcconnell || mcconnell.n < 2) throw new Error('mitch-mcconnell needs ≥2 verified falsehoods, got ' + (mcconnell?.n ?? 0));
+if (mcconnell.score > 75) throw new Error('mitch-mcconnell score expected ≤75 after deep dive, got ' + mcconnell.score);
+const mcconnellP = getProfileBySlug('mitch-mcconnell');
+for (const id of [
+  'mcconnell-garland-election-year-scotus-2016',
+  'mcconnell-freedom-to-vote-sprawling-takeover-2022',
+]) {
+  if (!(mcconnellP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('mitch-mcconnell missing docket id: ' + id);
+  }
+}
+
 // Nikki Haley dual-cited integrity deep-dive
 const haley = scores['nikki-haley'];
 if (!haley || haley.n < 2) throw new Error('nikki-haley needs ≥2 verified falsehoods, got ' + (haley?.n ?? 0));

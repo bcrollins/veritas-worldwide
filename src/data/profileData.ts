@@ -1006,11 +1006,29 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'mcconnell-freedom-to-vote-sprawling-takeover-2022',
+        statement:
+          'Called the Freedom to Vote Act "a sprawling takeover of our whole political system."',
+        saidAt: 'January 19, 2022',
+        context: 'Senate floor opposition to Democratic voting-rights package.',
+        whyFalse:
+          'PolitiFact rated the "takeover" framing False/misleading: the bill amended federal election administration rules within existing constitutional structures and did not abolish states or replace the "whole political system." Hyperbolic institutional-collapse language overstated the statutory scope.',
+        correction:
+          'The Freedom to Vote Act was a large federal elections bill, not a replacement of the entire U.S. political system.',
+        statementSource: 'McConnell Senate remarks (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/personalities/mitch-mcconnell/',
+        debunkSource: 'PolitiFact — False framing of voting-rights bills as federal takeover (Jan 24, 2022)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/jan/24/mitch-mcconnell/why-its-wrong-call-voting-rights-bills-federal-tak/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.mcconnell.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/mitch-mcconnell/summary?cid=N00003389' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Mitch_McConnell' },
+      { label: 'PolitiFact — voting bill "takeover" claim', url: 'https://www.politifact.com/factchecks/2022/jan/24/mitch-mcconnell/why-its-wrong-call-voting-rights-bills-federal-tak/' },
     ],
   },
   {

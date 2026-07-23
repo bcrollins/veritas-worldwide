@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:09:32.463Z",
+  "generatedAt": "2026-07-23T07:11:40.184Z",
   "count": 94,
   "profiles": [
     {
@@ -170,8 +170,8 @@
         "Iron Dome",
         "Institutional Enablement"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
