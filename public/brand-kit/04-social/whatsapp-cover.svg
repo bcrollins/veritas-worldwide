@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1128" height="628" viewBox="0 0 1128 628" role="img" aria-label="WhatsApp channel cover">
+  <rect width="1128" height="628" fill="#FAF8F5"/>
+  <rect x="0" y="0" width="1128" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="620" width="1128" height="8" fill="#8B1A1A"/>
+  <circle cx="140" cy="280" r="64" fill="none" stroke="#8B1A1A" stroke-width="5"/>
+  <text x="140" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#1A1A1A">V</text>
+  <text x="240" y="250" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#1A1A1A">Veritas Worldwide Press</text>
+  <text x="240" y="310" font-family="Georgia, serif" font-size="22" font-style="italic" fill="#666666">Documentary alerts · Primary sources</text>
+  <text x="240" y="400" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="#8B1A1A">WHATSAPP CHANNEL · veritasworldwide.com</text>
+</svg>

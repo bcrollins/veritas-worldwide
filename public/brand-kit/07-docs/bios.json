@@ -1,0 +1,32 @@
+{
+  "version": "3.0.0",
+  "brand": "Veritas Worldwide Press",
+  "product": "The Record",
+  "website": "https://veritasworldwide.com",
+  "mediaKit": "https://veritasworldwide.com/media-kit",
+  "contact": {
+    "rights": "rights@veritasworldwide.com",
+    "tips": "tips@veritasworldwide.com"
+  },
+  "bios": {
+    "short": "Primary Sources. Public Record. Your Conclusions.",
+    "medium": "A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts. 600+ primary sources. Full archive public.",
+    "long": "Veritas Worldwide publishes The Record — a multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier labeling (Verified, Circumstantial, Disputed). Full archive: veritasworldwide.com"
+  },
+  "handles": {
+    "x": "@VeritasWorldwide",
+    "instagram": "@veritasworldwidepress",
+    "threads": "@veritasworldwidepress",
+    "tiktok": "@veritasworldwidepress",
+    "youtube": "@VeritasWorldwide",
+    "reddit": "r/VeritasWorldwide",
+    "bluesky": "@veritasworldwide.bsky.social"
+  },
+  "hashtags": [
+    "#VeritasWorldwide",
+    "#TheRecord",
+    "#PrimarySources",
+    "#PublicRecord",
+    "#DocumentaryRecord"
+  ]
+}

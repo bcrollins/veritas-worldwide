@@ -40,6 +40,12 @@ const required = [
   '04-social/tiktok-cover.svg',
   '04-social/reels-safe-zone.svg',
   '04-social/reddit-banner.svg',
+  '07-docs/bios.json',
+  '04-social/video-watermark.svg',
+  '04-social/video-end-card.svg',
+  '09-templates/presentation-body.svg',
+  '04-social/whatsapp-cover.svg',
+  '04-social/mastodon-banner.svg',
   '05-og/og-media-kit.svg',
   '06-tokens/tokens.json',
   '07-docs/BRAND-GUIDE.md',
@@ -157,7 +163,7 @@ if (!manifest.zipPath?.includes('Brand-Kit.zip')) bad('manifest zipPath missing'
 else ok(`manifest v${manifest.version}`)
 if (!Array.isArray(manifest.sections) || manifest.sections.length < 8) bad('manifest sections incomplete')
 else ok(`${manifest.sections.length} sections`)
-if (!String(manifest.version || '').startsWith('2.')) bad('manifest version not 2.x')
+if (!/^([23])\./.test(String(manifest.version || ''))) bad('manifest version not 2.x/3.x')
 else ok(`version ${manifest.version}`)
 if (manifest.zipSha256 && !/^[a-f0-9]{64}$/i.test(manifest.zipSha256)) bad('zipSha256 invalid')
 else if (manifest.zipSha256) ok(`zipSha256 ${manifest.zipSha256.slice(0, 12)}…`)
@@ -232,6 +238,12 @@ async function liveChecks() {
     '/brand-kit/04-social/tiktok-cover.svg',
     '/brand-kit/04-social/reels-safe-zone.svg',
     '/brand-kit/04-social/reddit-banner.svg',
+    '/brand-kit/07-docs/bios.json',
+    '/brand-kit/04-social/video-watermark.svg',
+    '/brand-kit/04-social/video-end-card.svg',
+    '/brand-kit/09-templates/presentation-body.svg',
+    '/brand-kit/04-social/whatsapp-cover.svg',
+    '/brand-kit/04-social/mastodon-banner.svg',
   ]
   async function headOk(url) {
     try {

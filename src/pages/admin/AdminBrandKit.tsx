@@ -46,6 +46,11 @@ const PREVIEW_ASSETS = [
   { label: 'TikTok Cover', href: '/brand-kit/04-social/tiktok-cover.svg', bg: 'bg-black' },
   { label: 'Reddit Banner', href: '/brand-kit/04-social/reddit-banner.svg', bg: 'bg-black' },
   { label: 'Reels Safe Zone', href: '/brand-kit/04-social/reels-safe-zone.svg', bg: 'bg-black' },
+  { label: 'Mastodon Banner', href: '/brand-kit/04-social/mastodon-banner.svg', bg: 'bg-black' },
+  { label: 'WhatsApp Cover', href: '/brand-kit/04-social/whatsapp-cover.svg', bg: 'bg-parchment' },
+  { label: 'Video End Card', href: '/brand-kit/04-social/video-end-card.svg', bg: 'bg-black' },
+  { label: 'Video Watermark', href: '/brand-kit/04-social/video-watermark.svg', bg: 'bg-black' },
+  { label: 'Deck Body', href: '/brand-kit/09-templates/presentation-body.svg', bg: 'bg-parchment' },
 ]
 
 const TOKEN_SWATCHES = [
@@ -486,6 +491,9 @@ export default function AdminBrandKit() {
                 ['Threads', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/threads-post.svg'],
                 ['TikTok', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/tiktok-cover.svg'],
                 ['Pinterest', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/pinterest-pin.svg'],
+                ['Mastodon', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/mastodon-banner.svg'],
+                ['WhatsApp', '/brand-kit/01-logos/logo-mark-512.png', '/brand-kit/04-social/whatsapp-cover.svg'],
+                ['Video', '/brand-kit/04-social/video-watermark.svg', '/brand-kit/04-social/video-end-card.svg'],
               ].map(row => (
                 <tr key={row[0]} className="border-b border-white/5">
                   <td className="px-2 py-2 font-semibold text-white/90">{row[0]}</td>

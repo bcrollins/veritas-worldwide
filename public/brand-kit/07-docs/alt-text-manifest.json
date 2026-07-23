@@ -1,5 +1,5 @@
 {
-  "version": "2.9.8",
+  "version": "3.0.0",
   "assets": [
     {
       "path": "01-logos/logo-mark.svg",
@@ -120,6 +120,30 @@
     {
       "path": "09-templates/correction-notice.html",
       "alt": "Correction notice HTML template"
+    },
+    {
+      "path": "04-social/mastodon-banner.svg",
+      "alt": "Mastodon banner for Veritas Worldwide Press"
+    },
+    {
+      "path": "04-social/whatsapp-cover.svg",
+      "alt": "WhatsApp channel cover for Veritas Worldwide"
+    },
+    {
+      "path": "09-templates/presentation-body.svg",
+      "alt": "Presentation content slide template"
+    },
+    {
+      "path": "04-social/video-end-card.svg",
+      "alt": "Video end card directing viewers to the archive"
+    },
+    {
+      "path": "04-social/video-watermark.svg",
+      "alt": "Video watermark bug for documentary clips"
+    },
+    {
+      "path": "07-docs/bios.json",
+      "alt": "Copy-paste social bios and handles JSON"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Social Launch Checklist — Veritas Worldwide Press
 
-Brand kit v2.9.8
+Brand kit v3.0.0
 
 ## Before go-live
 1. Download Ultimate Brand Kit ZIP + verify SHA-256
@@ -21,6 +21,9 @@ Brand kit v2.9.8
 | TikTok | social-profile-400.png | tiktok-cover |
 | Reddit | social-profile | reddit-banner |
 | Instagram Reels | — | reels-safe-zone |
+| Mastodon | social-profile-400.png | mastodon-banner |
+| WhatsApp | logo-mark-512 | whatsapp-cover |
+| Video outro | — | video-end-card + watermark |
 | Substack | logo-mark-512 | newsletter-header |
 
 ## Evidence labels (product)

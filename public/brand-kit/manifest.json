@@ -1,7 +1,7 @@
 {
-  "version": "2.9.8",
+  "version": "3.0.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T08:06:56.301Z",
+  "generatedAt": "2026-07-23T08:13:22.144Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -227,6 +227,54 @@
       "href": "/brand-kit/04-social/citation-card.svg"
     },
     {
+      "label": "Pinterest pin",
+      "href": "/brand-kit/04-social/pinterest-pin.svg"
+    },
+    {
+      "label": "TikTok cover",
+      "href": "/brand-kit/04-social/tiktok-cover.svg"
+    },
+    {
+      "label": "Reddit banner",
+      "href": "/brand-kit/04-social/reddit-banner.svg"
+    },
+    {
+      "label": "Reels safe zone",
+      "href": "/brand-kit/04-social/reels-safe-zone.svg"
+    },
+    {
+      "label": "Mastodon banner",
+      "href": "/brand-kit/04-social/mastodon-banner.svg"
+    },
+    {
+      "label": "WhatsApp cover",
+      "href": "/brand-kit/04-social/whatsapp-cover.svg"
+    },
+    {
+      "label": "Presentation body slide",
+      "href": "/brand-kit/09-templates/presentation-body.svg"
+    },
+    {
+      "label": "Video end card",
+      "href": "/brand-kit/04-social/video-end-card.svg"
+    },
+    {
+      "label": "Video watermark",
+      "href": "/brand-kit/04-social/video-watermark.svg"
+    },
+    {
+      "label": "Media kit OG (PNG)",
+      "href": "/brand-kit/05-og/og-media-kit.png"
+    },
+    {
+      "label": "Social launch checklist",
+      "href": "/brand-kit/07-docs/SOCIAL-LAUNCH.md"
+    },
+    {
+      "label": "Bios JSON",
+      "href": "/brand-kit/07-docs/bios.json"
+    },
+    {
       "label": "Correction notice template",
       "href": "/brand-kit/09-templates/correction-notice.html"
     },
@@ -306,6 +354,17 @@
     "reels": {
       "safeZone": "/brand-kit/04-social/reels-safe-zone.svg"
     },
+    "mastodon": {
+      "profile": "/brand-kit/04-social/social-profile-400.png",
+      "banner": "/brand-kit/04-social/mastodon-banner.svg"
+    },
+    "whatsapp": {
+      "cover": "/brand-kit/04-social/whatsapp-cover.svg"
+    },
+    "video": {
+      "endCard": "/brand-kit/04-social/video-end-card.svg",
+      "watermark": "/brand-kit/04-social/video-watermark.svg"
+    },
     "evidenceTiers": {
       "verified": "/brand-kit/04-social/evidence-tier-verified.svg",
       "circumstantial": "/brand-kit/04-social/evidence-tier-circumstantial.svg",
@@ -315,6 +374,6 @@
       "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 1938513,
-  "zipSha256": "76ebc9cef9876decad0b30cf95f95b0e1a415b41431d828adfbb4850dbd5e66f"
+  "zipBytes": 2068347,
+  "zipSha256": "b19a87c8e1c4b6e3b9f9dd59d64aee345ef8a324af621a4e11c88931f3c382b7"
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Video end card">
+  <rect width="1920" height="1080" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1920" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="1072" width="1920" height="8" fill="#8B1A1A"/>
+  <circle cx="960" cy="360" r="100" fill="none" stroke="#8B1A1A" stroke-width="7"/>
+  <text x="960" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="88" font-weight="700" fill="#FFFFFF">V</text>
+  <text x="960" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">Read the full record</text>
+  <text x="960" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <text x="960" y="780" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="4" fill="#B8860B">veritasworldwide.com</text>
+  <text x="960" y="900" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">VERITAS WORLDWIDE PRESS</text>
+</svg>

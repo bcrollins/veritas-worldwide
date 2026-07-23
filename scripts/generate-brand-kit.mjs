@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Veritas Worldwide Brand Kit Generator v2.6
+ * Veritas Worldwide Brand Kit Generator v3.0
  * Produces production SVG/PNG brand assets + downloadable ZIP for admin.
  * Run: node scripts/generate-brand-kit.mjs
  */
@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.8'
+const KIT_VERSION = '3.0.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -455,6 +455,9 @@ All paths are relative to \`https://veritasworldwide.com\`.
 | **Reddit** | social-profile | \`reddit-banner.svg\` (1920×384) | r/VeritasWorldwide |
 | **Instagram Reels** | — | \`reels-safe-zone.svg\` (1080×1920) | Keep titles in dashed frame |
 | **Citation cards** | — | \`citation-card.svg\` (1080×1080) | Source-first social posts |
+| **Mastodon** | social-profile-400.png | \`mastodon-banner.svg\` (1500×500) | Federated / fediverse |
+| **WhatsApp Channel** | logo-mark-512 | \`whatsapp-cover.svg\` (1128×628) | Channel / community cover |
+| **Video / YouTube end** | — | \`video-end-card.svg\` + \`video-watermark.svg\` | Outro + corner bug |
 | **Open Graph / default share** | — | \`/og-image.png\` + \`/brand-kit/05-og/\` | Site-wide default |
 
 ## Bios (copy/paste)
@@ -697,7 +700,13 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.8 — ${new Date().toISOString().slice(0, 10)}
+## 3.0.0 — ${new Date().toISOString().slice(0, 10)}
+- Mastodon banner, WhatsApp cover, presentation body slide
+- Video end card + corner watermark
+- bios.json (handles, bios, hashtags, contacts)
+- Platform map: mastodon, whatsapp, video
+
+## 2.9.8
 - Brand guide regenerate + verify commands
 
 ## 2.9.7
@@ -1034,6 +1043,9 @@ Brand kit v${KIT_VERSION}
 | TikTok | social-profile-400.png | tiktok-cover |
 | Reddit | social-profile | reddit-banner |
 | Instagram Reels | — | reels-safe-zone |
+| Mastodon | social-profile-400.png | mastodon-banner |
+| WhatsApp | logo-mark-512 | whatsapp-cover |
+| Video outro | — | video-end-card + watermark |
 | Substack | logo-mark-512 | newsletter-header |
 
 ## Evidence labels (product)
@@ -1095,6 +1107,109 @@ function reelsSafeZoneSvg() {
   <text x="80" y="1020" font-family="Georgia, serif" font-size="26" font-style="italic" fill="rgba(255,255,255,0.65)">Primary sources. Public record. Your conclusions.</text>
   <text x="80" y="1760" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
 </svg>`
+}
+
+
+function mastodonBannerSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500" role="img" aria-label="Mastodon banner">
+  <rect width="1500" height="500" fill="${C.black}"/>
+  <rect x="0" y="0" width="1500" height="6" fill="${C.crimson}"/>
+  <rect x="0" y="494" width="1500" height="6" fill="${C.crimson}"/>
+  <circle cx="160" cy="250" r="70" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="160" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="700" fill="${C.white}">V</text>
+  <text x="280" y="210" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.white}">The Record</text>
+  <text x="280" y="270" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <text x="280" y="350" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="4" fill="${C.gold}">VERITAS WORLDWIDE PRESS · MASTODON</text>
+</svg>`
+}
+
+function whatsappCoverSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1128" height="628" viewBox="0 0 1128 628" role="img" aria-label="WhatsApp channel cover">
+  <rect width="1128" height="628" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1128" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="620" width="1128" height="8" fill="${C.crimson}"/>
+  <circle cx="140" cy="280" r="64" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="140" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.ink}">V</text>
+  <text x="240" y="250" font-family="Georgia, serif" font-size="42" font-weight="700" fill="${C.ink}">Veritas Worldwide Press</text>
+  <text x="240" y="310" font-family="Georgia, serif" font-size="22" font-style="italic" fill="${C.inkMuted}">Documentary alerts · Primary sources</text>
+  <text x="240" y="400" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="${C.crimson}">WHATSAPP CHANNEL · veritasworldwide.com</text>
+</svg>`
+}
+
+function presentationBodySvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Presentation content slide">
+  <rect width="1920" height="1080" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="12" height="1080" fill="${C.crimson}"/>
+  <rect x="0" y="0" width="1920" height="6" fill="${C.crimson}"/>
+  <text x="80" y="100" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="${C.crimson}">THE RECORD · EVIDENCE</text>
+  <text x="80" y="220" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.ink}">[Slide title]</text>
+  <line x1="80" y1="260" x2="360" y2="260" stroke="${C.crimson}" stroke-width="2"/>
+  <text x="80" y="360" font-family="Georgia, serif" font-size="28" fill="${C.ink}">• Claim stated with evidence tier label</text>
+  <text x="80" y="430" font-family="Georgia, serif" font-size="28" fill="${C.ink}">• Primary source cited with access date</text>
+  <text x="80" y="500" font-family="Georgia, serif" font-size="28" fill="${C.ink}">• Analysis separated from documentation</text>
+  <text x="80" y="570" font-family="Georgia, serif" font-size="28" fill="${C.ink}">• Reader invited to inspect the record</text>
+  <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="${C.inkMuted}">veritasworldwide.com · Primary sources. Public record. Your conclusions.</text>
+  <circle cx="1760" cy="900" r="56" fill="none" stroke="${C.crimson}" stroke-width="4"/>
+  <text x="1760" y="918" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.ink}">V</text>
+</svg>`
+}
+
+function videoEndCardSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Video end card">
+  <rect width="1920" height="1080" fill="${C.black}"/>
+  <rect x="0" y="0" width="1920" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1072" width="1920" height="8" fill="${C.crimson}"/>
+  <circle cx="960" cy="360" r="100" fill="none" stroke="${C.crimson}" stroke-width="7"/>
+  <text x="960" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="88" font-weight="700" fill="${C.white}">V</text>
+  <text x="960" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">Read the full record</text>
+  <text x="960" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <text x="960" y="780" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="4" fill="${C.gold}">veritasworldwide.com</text>
+  <text x="960" y="900" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">VERITAS WORLDWIDE PRESS</text>
+</svg>`
+}
+
+function videoWatermarkSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Video watermark">
+  <rect width="400" height="120" rx="8" fill="${C.black}" opacity="0.72"/>
+  <circle cx="48" cy="60" r="28" fill="none" stroke="${C.crimson}" stroke-width="3"/>
+  <text x="48" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="${C.white}">V</text>
+  <text x="96" y="52" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="${C.white}">VERITAS WORLDWIDE</text>
+  <text x="96" y="78" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.65)">veritasworldwide.com</text>
+</svg>`
+}
+
+function biosJson() {
+  return JSON.stringify({
+    version: KIT_VERSION,
+    brand: 'Veritas Worldwide Press',
+    product: 'The Record',
+    website: 'https://veritasworldwide.com',
+    mediaKit: 'https://veritasworldwide.com/media-kit',
+    contact: {
+      rights: 'rights@veritasworldwide.com',
+      tips: 'tips@veritasworldwide.com',
+    },
+    bios: {
+      short: 'Primary Sources. Public Record. Your Conclusions.',
+      medium: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts. 600+ primary sources. Full archive public.',
+      long: 'Veritas Worldwide publishes The Record — a multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier labeling (Verified, Circumstantial, Disputed). Full archive: veritasworldwide.com',
+    },
+    handles: {
+      x: '@VeritasWorldwide',
+      instagram: '@veritasworldwidepress',
+      threads: '@veritasworldwidepress',
+      tiktok: '@veritasworldwidepress',
+      youtube: '@VeritasWorldwide',
+      reddit: 'r/VeritasWorldwide',
+      bluesky: '@veritasworldwide.bsky.social',
+    },
+    hashtags: ['#VeritasWorldwide', '#TheRecord', '#PrimarySources', '#PublicRecord', '#DocumentaryRecord'],
+  }, null, 2)
 }
 
 function brandVoiceMd() {
@@ -1175,7 +1290,7 @@ function mediaKitHtml() {
     <div class="grid">
       <div class="card"><h3>Logo mark</h3><a href="/brand-kit/01-logos/logo-mark.svg">logo-mark.svg</a><br /><a href="/brand-kit/01-logos/logo-mark-512.png">logo-mark-512.png</a></div>
       <div class="card"><h3>Wordmark / lockup</h3><a href="/brand-kit/01-logos/logo-full.svg">logo-full.svg</a><br /><a href="/brand-kit/03-wordmarks/wordmark.svg">wordmark.svg</a></div>
-      <div class="card"><h3>Social / OG</h3><a href="/og-image.png">og-image.png</a><br /><a href="/brand-kit/04-social/social-banner-x.svg">X banner</a><br /><a href="/brand-kit/04-social/evidence-tier-verified.svg">Evidence tiers</a><br /><a href="/brand-kit/04-social/pinterest-pin.svg">Pinterest pin</a></div>
+      <div class="card"><h3>Social / OG</h3><a href="/og-image.png">og-image.png</a><br /><a href="/brand-kit/04-social/social-banner-x.svg">X banner</a><br /><a href="/brand-kit/04-social/evidence-tier-verified.svg">Evidence tiers</a><br /><a href="/brand-kit/04-social/mastodon-banner.svg">Mastodon</a><br /><a href="/brand-kit/04-social/video-end-card.svg">Video end card</a><br /><a href="/brand-kit/07-docs/bios.json">bios.json</a></div>
       <div class="card"><h3>Full kit</h3><a href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip">Ultimate Brand Kit (.zip)</a><br /><a href="/brand-kit/07-docs/BRAND-GUIDE.md">Brand guide</a><br /><a href="/brand-kit/07-docs/SOCIAL-LAUNCH.md">Social launch checklist</a><br /><a href="/brand-kit/07-docs/EVIDENCE-TIERS.md">Evidence tiers</a></div>
     </div>
     <h2>Press contact</h2>
@@ -1333,6 +1448,12 @@ function altTextManifest() {
       { path: '04-social/discord-invite.svg', alt: 'Discord invite card for Veritas Worldwide community' },
       { path: '04-social/citation-card.svg', alt: 'Citation card template for source-first social posts' },
       { path: '09-templates/correction-notice.html', alt: 'Correction notice HTML template' },
+      { path: '04-social/mastodon-banner.svg', alt: 'Mastodon banner for Veritas Worldwide Press' },
+      { path: '04-social/whatsapp-cover.svg', alt: 'WhatsApp channel cover for Veritas Worldwide' },
+      { path: '09-templates/presentation-body.svg', alt: 'Presentation content slide template' },
+      { path: '04-social/video-end-card.svg', alt: 'Video end card directing viewers to the archive' },
+      { path: '04-social/video-watermark.svg', alt: 'Video watermark bug for documentary clips' },
+      { path: '07-docs/bios.json', alt: 'Copy-paste social bios and handles JSON' },
     ],
   }, null, 2)
 }
@@ -1496,6 +1617,12 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('04-social/tiktok-cover.svg', tiktokCoverSvg())
   writeSvg('04-social/reddit-banner.svg', redditBannerSvg())
   writeSvg('04-social/reels-safe-zone.svg', reelsSafeZoneSvg())
+  writeSvg('04-social/mastodon-banner.svg', mastodonBannerSvg())
+  writeSvg('04-social/whatsapp-cover.svg', whatsappCoverSvg())
+  writeSvg('09-templates/presentation-body.svg', presentationBodySvg())
+  writeSvg('04-social/video-end-card.svg', videoEndCardSvg())
+  writeSvg('04-social/video-watermark.svg', videoWatermarkSvg())
+  writeFileSync(join(KIT, '07-docs', 'bios.json'), biosJson() + '\n')
   writeFileSync(join(KIT, '07-docs', 'SOCIAL-LAUNCH.md'), socialLaunchMd())
   writeFileSync(join(KIT, '09-templates', 'correction-notice.html'), correctionNoticeHtml())
 
@@ -1551,6 +1678,11 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/tiktok-cover.svg', '04-social/tiktok-cover.png', 1080],
     ['04-social/reddit-banner.svg', '04-social/reddit-banner.png', 1920],
     ['04-social/reels-safe-zone.svg', '04-social/reels-safe-zone.png', 1080],
+    ['04-social/mastodon-banner.svg', '04-social/mastodon-banner.png', 1500],
+    ['04-social/whatsapp-cover.svg', '04-social/whatsapp-cover.png', 1128],
+    ['09-templates/presentation-body.svg', '09-templates/presentation-body.png', 1920],
+    ['04-social/video-end-card.svg', '04-social/video-end-card.png', 1920],
+    ['04-social/video-watermark.svg', '04-social/video-watermark.png', 400],
   ]
   const criticalPng = new Set([
     '01-logos/logo-mark-512.png',
@@ -1649,6 +1781,18 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Bluesky banner', href: '/brand-kit/04-social/bluesky-banner.svg' },
       { label: 'Discord invite card', href: '/brand-kit/04-social/discord-invite.svg' },
       { label: 'Citation card', href: '/brand-kit/04-social/citation-card.svg' },
+      { label: 'Pinterest pin', href: '/brand-kit/04-social/pinterest-pin.svg' },
+      { label: 'TikTok cover', href: '/brand-kit/04-social/tiktok-cover.svg' },
+      { label: 'Reddit banner', href: '/brand-kit/04-social/reddit-banner.svg' },
+      { label: 'Reels safe zone', href: '/brand-kit/04-social/reels-safe-zone.svg' },
+      { label: 'Mastodon banner', href: '/brand-kit/04-social/mastodon-banner.svg' },
+      { label: 'WhatsApp cover', href: '/brand-kit/04-social/whatsapp-cover.svg' },
+      { label: 'Presentation body slide', href: '/brand-kit/09-templates/presentation-body.svg' },
+      { label: 'Video end card', href: '/brand-kit/04-social/video-end-card.svg' },
+      { label: 'Video watermark', href: '/brand-kit/04-social/video-watermark.svg' },
+      { label: 'Media kit OG (PNG)', href: '/brand-kit/05-og/og-media-kit.png' },
+      { label: 'Social launch checklist', href: '/brand-kit/07-docs/SOCIAL-LAUNCH.md' },
+      { label: 'Bios JSON', href: '/brand-kit/07-docs/bios.json' },
       { label: 'Correction notice template', href: '/brand-kit/09-templates/correction-notice.html' },
       { label: 'Changelog (MD)', href: '/brand-kit/07-docs/CHANGELOG.md' },
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
@@ -1690,6 +1834,12 @@ Editorial and licensing: rights@veritasworldwide.com
       tiktok: { cover: '/brand-kit/04-social/tiktok-cover.svg', profile: '/brand-kit/04-social/social-profile-400.png' },
       reddit: { banner: '/brand-kit/04-social/reddit-banner.svg' },
       reels: { safeZone: '/brand-kit/04-social/reels-safe-zone.svg' },
+      mastodon: { profile: '/brand-kit/04-social/social-profile-400.png', banner: '/brand-kit/04-social/mastodon-banner.svg' },
+      whatsapp: { cover: '/brand-kit/04-social/whatsapp-cover.svg' },
+      video: {
+        endCard: '/brand-kit/04-social/video-end-card.svg',
+        watermark: '/brand-kit/04-social/video-watermark.svg',
+      },
       evidenceTiers: {
         verified: '/brand-kit/04-social/evidence-tier-verified.svg',
         circumstantial: '/brand-kit/04-social/evidence-tier-circumstantial.svg',

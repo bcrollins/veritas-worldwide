@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Video watermark">
+  <rect width="400" height="120" rx="8" fill="#0A0A0A" opacity="0.72"/>
+  <circle cx="48" cy="60" r="28" fill="none" stroke="#8B1A1A" stroke-width="3"/>
+  <text x="48" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF">V</text>
+  <text x="96" y="52" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#FFFFFF">VERITAS WORLDWIDE</text>
+  <text x="96" y="78" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.65)">veritasworldwide.com</text>
+</svg>

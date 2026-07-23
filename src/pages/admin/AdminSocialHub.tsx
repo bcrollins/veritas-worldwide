@@ -21,6 +21,8 @@ const DEFAULT_ACCOUNTS: SocialAccount[] = [
   { platform: 'Reddit', handle: 'r/VeritasWorldwide', url: 'https://reddit.com/r/VeritasWorldwide', status: 'not_created', followers: 0, notes: 'Subreddit' },
   { platform: 'Discord', handle: 'Veritas Worldwide', url: '', status: 'not_created', followers: 0, notes: 'Community Server' },
   { platform: 'Bluesky', handle: '@veritasworldwide.bsky.social', url: 'https://bsky.app', status: 'not_created', followers: 0, notes: 'Open network; set handle on create' },
+  { platform: 'Mastodon', handle: '@veritasworldwide@mastodon.social', url: 'https://mastodon.social', status: 'not_created', followers: 0, notes: 'Pick instance; handle is example' },
+  { platform: 'WhatsApp Channel', handle: 'Veritas Worldwide', url: '', status: 'not_created', followers: 0, notes: 'Channel cover in brand kit' },
   { platform: 'Substack', handle: 'veritasworldwide', url: 'https://veritasworldwide.substack.com', status: 'not_created', followers: 0, notes: 'Newsletter mirror' },
 ]
 
@@ -65,6 +67,11 @@ const BRAND_ASSETS = {
   tiktokCover: '/brand-kit/04-social/tiktok-cover.svg',
   redditBanner: '/brand-kit/04-social/reddit-banner.svg',
   reelsSafeZone: '/brand-kit/04-social/reels-safe-zone.svg',
+  mastodonBanner: '/brand-kit/04-social/mastodon-banner.svg',
+  whatsappCover: '/brand-kit/04-social/whatsapp-cover.svg',
+  videoEndCard: '/brand-kit/04-social/video-end-card.svg',
+  videoWatermark: '/brand-kit/04-social/video-watermark.svg',
+  biosJson: '/brand-kit/07-docs/bios.json',
   correctionNotice: '/brand-kit/09-templates/correction-notice.html',
   pressContact: '/brand-kit/07-docs/PRESS-CONTACT.md',
   pressVcard: '/brand-kit/09-templates/press-contact.vcf',
@@ -125,6 +132,7 @@ const PLATFORM_SETUP: Record<string, string[]> = {
     'Set handle to @VeritasWorldwide',
     `Profile: ${BRAND_ASSETS.appIcon} · Banner: ${BRAND_ASSETS.bannerYouTube}`,
     `Thumbnail template: ${BRAND_ASSETS.ytThumb}`,
+    `End card: ${BRAND_ASSETS.videoEndCard} · Watermark: ${BRAND_ASSETS.videoWatermark}`,
     'Set channel description (long bio)',
     'Upload intro/trailer; playlists by topic',
   ],
@@ -158,6 +166,18 @@ const PLATFORM_SETUP: Record<string, string[]> = {
     `Invite splash: ${BRAND_ASSETS.discordInvite}`,
     'Welcome message + rules',
     'Create invite link',
+  ],
+  'Mastodon': [
+    'Create account on preferred instance',
+    `Profile: ${BRAND_ASSETS.profile}`,
+    `Banner 1500×500: ${BRAND_ASSETS.mastodonBanner}`,
+    'Set bio (medium) + website',
+    `Bios JSON: ${BRAND_ASSETS.biosJson}`,
+  ],
+  'WhatsApp Channel': [
+    'Create WhatsApp Channel for Veritas Worldwide Press',
+    `Cover: ${BRAND_ASSETS.whatsappCover}`,
+    'Link to veritasworldwide.com/media-kit',
   ],
   'Bluesky': [
     'Create account at bsky.app',
@@ -281,6 +301,10 @@ export default function AdminSocialHub() {
           { label: 'TikTok', href: BRAND_ASSETS.tiktokCover },
           { label: 'Reddit', href: BRAND_ASSETS.redditBanner },
           { label: 'Reels Zone', href: BRAND_ASSETS.reelsSafeZone },
+          { label: 'Mastodon', href: BRAND_ASSETS.mastodonBanner },
+          { label: 'WhatsApp', href: BRAND_ASSETS.whatsappCover },
+          { label: 'Video End', href: BRAND_ASSETS.videoEndCard },
+          { label: 'Watermark', href: BRAND_ASSETS.videoWatermark },
           { label: 'OG Card', href: BRAND_ASSETS.og },
         ].map(a => (
           <a

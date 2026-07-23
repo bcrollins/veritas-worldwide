@@ -23,6 +23,9 @@ All paths are relative to `https://veritasworldwide.com`.
 | **Reddit** | social-profile | `reddit-banner.svg` (1920×384) | r/VeritasWorldwide |
 | **Instagram Reels** | — | `reels-safe-zone.svg` (1080×1920) | Keep titles in dashed frame |
 | **Citation cards** | — | `citation-card.svg` (1080×1080) | Source-first social posts |
+| **Mastodon** | social-profile-400.png | `mastodon-banner.svg` (1500×500) | Federated / fediverse |
+| **WhatsApp Channel** | logo-mark-512 | `whatsapp-cover.svg` (1128×628) | Channel / community cover |
+| **Video / YouTube end** | — | `video-end-card.svg` + `video-watermark.svg` | Outro + corner bug |
 | **Open Graph / default share** | — | `/og-image.png` + `/brand-kit/05-og/` | Site-wide default |
 
 ## Bios (copy/paste)

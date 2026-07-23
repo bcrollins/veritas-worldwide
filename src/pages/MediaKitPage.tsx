@@ -60,6 +60,12 @@ const ASSETS = [
       { href: '/brand-kit/04-social/tiktok-cover.svg', label: 'TikTok cover' },
       { href: '/brand-kit/04-social/reddit-banner.svg', label: 'Reddit banner' },
       { href: '/brand-kit/04-social/reels-safe-zone.svg', label: 'Reels safe zone' },
+      { href: '/brand-kit/04-social/mastodon-banner.svg', label: 'Mastodon banner' },
+      { href: '/brand-kit/04-social/whatsapp-cover.svg', label: 'WhatsApp cover' },
+      { href: '/brand-kit/04-social/video-end-card.svg', label: 'Video end card' },
+      { href: '/brand-kit/04-social/video-watermark.svg', label: 'Video watermark' },
+      { href: '/brand-kit/09-templates/presentation-body.svg', label: 'Presentation body' },
+      { href: '/brand-kit/07-docs/bios.json', label: 'Bios JSON' },
       { href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md', label: 'Asset matrix' },
       { href: '/brand-kit/07-docs/SOCIAL-LAUNCH.md', label: 'Launch checklist' },
     ],
@@ -320,6 +326,8 @@ export default function MediaKitPage() {
               { label: 'TikTok', href: '/brand-kit/04-social/tiktok-cover.svg', bg: 'bg-obsidian' },
               { label: 'Reddit', href: '/brand-kit/04-social/reddit-banner.svg', bg: 'bg-obsidian' },
               { label: 'Reels', href: '/brand-kit/04-social/reels-safe-zone.svg', bg: 'bg-obsidian' },
+              { label: 'Mastodon', href: '/brand-kit/04-social/mastodon-banner.svg', bg: 'bg-obsidian' },
+              { label: 'Video end', href: '/brand-kit/04-social/video-end-card.svg', bg: 'bg-obsidian' },
             ].map(a => (
               <a
                 key={a.href}

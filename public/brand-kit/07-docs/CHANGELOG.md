@@ -1,6 +1,12 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.8 — 2026-07-23
+## 3.0.0 — 2026-07-23
+- Mastodon banner, WhatsApp cover, presentation body slide
+- Video end card + corner watermark
+- bios.json (handles, bios, hashtags, contacts)
+- Platform map: mastodon, whatsapp, video
+
+## 2.9.8
 - Brand guide regenerate + verify commands
 
 ## 2.9.7
