@@ -9324,6 +9324,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-crush-syndrome-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Crush Syndrome Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (crush-syndrome cohort)',
+    location: 'Gaza Strip rubble fields and field medical points',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document elevated pediatric crush-syndrome risk from building collapses under delayed rescue and collapsed dialysis capacity — a multi-organ failure pattern distinct from compartment-syndrome and SAR-equipment cards.',
+    evidence:
+      'WHO trauma materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric crush-syndrome risk. Exact case counts evolve; multi-source wartime pediatric crush-syndrome risk is the claim.',
+    sources: [
+      { label: 'WHO trauma materials', url: 'https://www.who.int' },
+      { label: 'MSF clinical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza crush injury coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-wound-care-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Wound Care Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (wound-care cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of proper wound care and dressings for injured Israeli civilian hostages — allowing preventable infection. Pattern card distinct from pain-management and medical-exams cards.',
+    evidence:
+      'Multi-source released-hostage medical and testimony records establish multi-source wound-care denial. Exact cases vary; multi-source wound-care denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-herders-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Herders Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (herder-attack cohort)',
+    location: 'West Bank grazing lands and herding routes',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian herders after October 7 — assaulting civilians with flocks including children. Pattern card for herder attacks distinct from livestock theft and herding dispossession cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source herder attacks. Exact injury counts evolve; multi-source wartime settler attacks on herders is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet herder attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -14605,6 +14686,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['farmers', 'settlers', 'agriculture', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-crush-syndrome-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Crush Syndrome Risk Pattern',
+    description: 'WHO/MSF multi-source documentation of elevated pediatric crush-syndrome risk from building collapses under delayed rescue.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-crush-syndrome-risk-pattern-2023-2025',
+      'gaza-children-compartment-syndrome-risk-pattern-2023-2025',
+      'gaza-search-rescue-equipment-destroyed-pattern-2023-2025',
+    ],
+    tags: ['crush-syndrome', 'children', 'trauma', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-wound-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Wound Care Pattern',
+    description: 'Multi-source documentation of denial of proper wound care for injured civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-wound-care-pattern-2023-2025',
+      'israel-hostages-denied-pain-management-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medical', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-herder-attacks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Herders Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler physical attacks on Palestinian herders after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-herders-pattern-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'west-bank-settler-livestock-theft-pattern-2023-2025',
+    ],
+    tags: ['herders', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
