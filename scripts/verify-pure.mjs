@@ -21,6 +21,7 @@ const pure = [
   'verify-a11y-public-targets.mjs',
   'verify-nav-ia.mjs',
   'verify-nav-recovery-surfaces.mjs',
+  'verify-related-hubs-coverage.mjs',
   'verify-server-security-invariants.mjs',
   'verify-home-toc-structure.mjs',
   'verify-csp-meta.mjs',
