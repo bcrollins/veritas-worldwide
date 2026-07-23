@@ -87,3 +87,19 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 - UI: quick chips, primary video, Wayback pins, method note
 - pure: withVideo≥40 soft-floor, ≥36 VI cards dual-cite
 - anonymity PASS
+
+## Interval densify (Grok boil) — dual-sided Israel pack + ship
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided densify 833→867 | `9244f0c` + prior `c581c61` / `708e050` — Gaza medical, Israeli hostages, West Bank settlers |
+| withVideo floors | pure ≥54 (`verify:israel-dossier` + visual floor) |
+| research-pack ZIP | regenerated with soft-floor/corpus tip |
+| Video-first sort + VI hash | peer+local: `30bb072` / option in select |
+| Live tip | soft-floor JSON 200; lag-aware WARN expected behind tip |
+| Anonymity | entity-only Veritas Worldwide; no BR identity surfaces |
+| Multi-agent | densify-only paths; no ROC/brand/profile/SEO clobber |
+
+**Local tip:** incidents=867, withVideo=54  
+**Pure:** verify:visual-investigations-floor PASS; verify:israel-dossier PASS; verify:research-pack PASS
+
