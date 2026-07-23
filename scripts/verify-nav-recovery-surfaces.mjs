@@ -2282,4 +2282,13 @@ assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'boil Terms Memb
 assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'boil OSINT Dossiers')
 
 
+
+// RelatedHubs platform green under densify lag pure lock
+assert(surfaces.length >= 102, `densify lag surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'densify lag emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('emphasizeTo="/"') || read('src/pages/NotFoundPage.tsx').includes("emphasizeTo='/'"), 'densify lag soft-404 emphasize')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'densify lag Privacy Membership')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'densify lag Terms Membership')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
