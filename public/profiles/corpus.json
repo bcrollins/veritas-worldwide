@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:47:02.429Z",
+  "generatedAt": "2026-07-23T09:48:05.558Z",
   "count": 96,
   "profiles": [
     {
@@ -327,8 +327,8 @@
         "Flight Logs",
         "Sex Abuse Allegations"
       ],
-      "integrityScore": 60,
-      "integrityFalsehoods": 2,
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

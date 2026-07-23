@@ -2131,6 +2131,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'andrew-cut-ties-epstein-2010-false',
+        statement:
+          'Claimed he cut all ties with Jeffrey Epstein in December 2010 after Epstein’s release from prison, framing the 2010 New York visit as a final goodbye with no further relationship.',
+        saidAt: 'November 16, 2019 (Newsnight) and prior palace messaging',
+        context:
+          'BBC Newsnight defense of continued association with Epstein after the 2008 conviction and 2010 release.',
+        whyFalse:
+          'Flight logs, guest records, and reporting document Andrew’s continued social and travel association with Epstein after the supposed 2010 break — including the December 2010 New York stay that Newsnight itself made central, and earlier/ongoing Maxwell-network proximity. The “clean break in December 2010” framing was used to minimize a multi-year post-conviction relationship that public records do not support as terminated then.',
+        correction:
+          'Public records show Andrew’s association with Epstein extended through and beyond the period he described as a clean break; the categorical “cut all ties in December 2010” narrative is not supported.',
+        statementSource: 'BBC Newsnight interview, Nov 16, 2019',
+        statementUrl: 'https://www.bbc.com/news/uk-50473621',
+        debunkSource: 'BBC / multi-outlet flight-log and guest-list reporting on Andrew–Epstein post-2010 contact',
+        debunkUrl: 'https://www.bbc.com/news/uk-60377038',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     born: '1960',
     career: ['British Royal', 'Armed Forces officer', 'Charity patron'],

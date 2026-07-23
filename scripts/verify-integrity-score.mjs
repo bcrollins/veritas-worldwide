@@ -368,10 +368,23 @@ for (const f of (menendezP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('menendez dual-cite collision: ' + f.id);
 }
 
-// Prince Andrew multi-entry (Pizza Express + sweat claim)
+// Prince Andrew multi-entry densify (Pizza Express + sweat + Epstein cut-ties)
 const andrew = scores['prince-andrew'];
-if (!andrew || andrew.n < 2) throw new Error('prince-andrew needs ≥2 verified falsehoods, got ' + (andrew?.n ?? 0));
-if (andrew.score > 65) throw new Error('prince-andrew score expected ≤65 after deep dive, got ' + andrew.score);
+if (!andrew || andrew.n < 3) throw new Error('prince-andrew needs ≥3 verified falsehoods, got ' + (andrew?.n ?? 0));
+if (andrew.score > 50) throw new Error('prince-andrew score expected ≤50 after densify, got ' + andrew.score);
+const andrewP = getProfileBySlug('prince-andrew');
+for (const id of [
+  'andrew-newsnight-pizza-express-2019',
+  'andrew-newsnight-cannot-sweat-2019',
+  'andrew-cut-ties-epstein-2010-false',
+]) {
+  if (!(andrewP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('prince-andrew missing docket id: ' + id);
+  }
+}
+for (const f of (andrewP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('prince-andrew dual-cite collision: ' + f.id);
+}
 
 // Marco Rubio multi-entry integrity gate (n≥3 densify)
 const rubio = scores['marco-rubio'];
