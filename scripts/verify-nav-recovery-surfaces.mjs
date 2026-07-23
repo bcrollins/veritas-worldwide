@@ -991,4 +991,11 @@ assert(israelSticky.includes('israel-dossier-related-hubs'), 'Israel RelatedHubs
 // Recovery suite surface needle floor
 assert(surfaces.length >= 90, `surfaces length floor 90 (got ${surfaces.length})`)
 
+
+// Cookie z-100 above tab z-50 unique final
+const cookieZ = read('src/components/CookieConsent.tsx')
+const appZFinal = read('src/App.tsx')
+assert(cookieZ.includes('z-[100]'), 'cookie z-100 unique final')
+assert(appZFinal.includes('z-50'), 'tab z-50 unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
