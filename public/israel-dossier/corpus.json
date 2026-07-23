@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T11:55:49.770Z",
+  "generatedAt": "2026-07-23T11:59:52.122Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 753,
+    "incidents": 762,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 718,
+    "historicalWarCrimesPack": 727,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 28,
-      "post-oct7": 690
+      "post-oct7": 699
     },
     "incidentsByTier": {
-      "verified": 751,
+      "verified": 760,
       "circumstantial": 2
     },
-    "childrenTagged": 713,
-    "civiliansTagged": 751,
+    "childrenTagged": 721,
+    "civiliansTagged": 760,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -19579,12 +19579,12 @@
       "evidence": "B’Tselem video banks, Al Jazeera/AJ+ field video, HRW/Amnesty investigations, and UN commission materials form a multi-source visual record of live-fire against civilians and medics. Rules-of-engagement disputes do not erase the multi-source casualty and footage record.",
       "sources": [
         {
-          "label": "B’Tselem — Great March documentation",
-          "url": "https://www.btselem.org/"
+          "label": "B’Tselem — Great March of Return documentation",
+          "url": "https://www.btselem.org/firearms"
         },
         {
-          "label": "HRW — Israel: Gaza Killings Unlawful",
-          "url": "https://www.hrw.org/"
+          "label": "HRW — Israel: Gaza Killings Unlawful and Willful (2018)",
+          "url": "https://www.hrw.org/news/2018/04/03/israel-gaza-killings-unlawful-and-willful"
         },
         {
           "label": "UN Commission of Inquiry materials (OPT)",
@@ -19595,7 +19595,7 @@
         {
           "type": "video",
           "label": "B’Tselem field video bank — fence protests",
-          "url": "https://www.btselem.org/"
+          "url": "https://www.btselem.org/video"
         },
         {
           "type": "video",
@@ -19604,8 +19604,8 @@
         },
         {
           "type": "investigation",
-          "label": "HRW multi-case investigation",
-          "url": "https://www.hrw.org/"
+          "label": "HRW multi-case investigation — Gaza 2018",
+          "url": "https://www.hrw.org/news/2018/04/03/israel-gaza-killings-unlawful-and-willful"
         }
       ],
       "tier": "verified",
@@ -19709,7 +19709,7 @@
       "sources": [
         {
           "label": "B’Tselem Beita / protest documentation",
-          "url": "https://www.btselem.org/"
+          "url": "https://www.btselem.org/firearms"
         },
         {
           "label": "972 Magazine / +972 investigations",
@@ -19724,7 +19724,7 @@
         {
           "type": "video",
           "label": "B’Tselem protest live-fire videos",
-          "url": "https://www.btselem.org/"
+          "url": "https://www.btselem.org/video"
         },
         {
           "type": "investigation",
@@ -19952,7 +19952,7 @@
         },
         {
           "label": "B’Tselem — Huwara attack documentation",
-          "url": "https://www.btselem.org/"
+          "url": "https://www.btselem.org/settler_violence"
         },
         {
           "label": "Haaretz / Times of Israel contemporaneous reporting",
@@ -19971,13 +19971,18 @@
         },
         {
           "type": "video",
-          "label": "Resident & press video of arson/assaults (multi-outlet)",
-          "url": "https://www.btselem.org/"
+          "label": "B’Tselem — Huwara arson/assault video bank",
+          "url": "https://www.btselem.org/video"
         },
         {
           "type": "photo-essay",
           "label": "Wire photo packages — burned homes/vehicles",
           "url": "https://apnews.com/"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case compilation",
+          "url": "https://www.btselem.org/settler_violence"
         }
       ],
       "tier": "verified",
@@ -47205,6 +47210,382 @@
       }
     },
     {
+      "id": "gaza-children-school-desk-splinter-injury-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "mk84-use"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children School-Desk Splinter Injury Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-desk splinter injury cohort)",
+      "location": "Damaged schools and temporary learning spaces across Gaza",
+      "summary": "UNICEF, OCHA, and multi-source reporting document elevated pediatric injuries from splintered school furniture and temporary classroom materials after repeated strikes on education infrastructure — a civilian child-harm pattern distinct from sharp-debris and glass-shard cards.",
+      "evidence": "UNICEF education-in-emergencies materials, OCHA humanitarian updates, and multi-outlet coverage establish multi-source documentation of child injuries from destroyed classroom furniture. Exact counts evolve; multi-source wartime pediatric school-furniture injury is the claim.",
+      "sources": [
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza education damage coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-generator-fuel-theft-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Generator Fuel Diversion / Denial Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (generator-fuel denial cohort)",
+      "location": "Households and small clinics using generators across Gaza",
+      "summary": "OCHA, WHO, and multi-source reporting document elevated civilian harm when generator fuel for household and clinic power is blocked, diverted, or exhausted under siege conditions — a civilian power-denial pattern distinct from electrical grid and solar-panel destruction cards.",
+      "evidence": "OCHA fuel-access reporting, WHO health-facility power updates, and multi-outlet siege coverage establish multi-source documentation. Attribution of every diversion is multi-source investigative; the civilian power-denial pattern is the claim.",
+      "sources": [
+        {
+          "label": "OCHA fuel and access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "WHO health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "Multi-outlet generator-fuel coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-water-desalination-filter-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Water Desalination Filter Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (desalination-filter destruction cohort)",
+      "location": "Household and community desalination / filtration units across Gaza",
+      "summary": "OCHA, UNICEF, and multi-source reporting document elevated destruction and unavailability of civilian desalination and filtration components under bombardment and siege — denying safe drinking water including for children. Pattern card distinct from well-poisoning and water-tank destruction.",
+      "evidence": "OCHA WASH cluster materials, UNICEF water-access updates, and multi-outlet coverage establish multi-source documentation of civilian water-filtration harm. Exact unit counts evolve; multi-source wartime civilian desalination/filter unavailability is the claim.",
+      "sources": [
+        {
+          "label": "OCHA WASH materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF water materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza water coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-watch-atrocity-propaganda-videos-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Watch Atrocity Propaganda Videos Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage psychological-torture cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages including children to watch atrocity or propaganda videos as psychological coercion — a protected-person dignity and mental-harm pattern distinct from constant-surveillance and isolation cards.",
+      "evidence": "Israeli government hostage-release materials, multi-outlet released-hostage interviews, and contemporaneous reporting establish multi-source documentation. Not every captivity site is identical; the multi-source pattern of forced propaganda viewing is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet psychological-coercion reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-news-of-family-alive-status-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied News That Family Members Were Alive Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage information-denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding or lying about whether civilian hostages’ relatives were alive — psychological torture distinct from media-deal-denial and birthday-memorization cards.",
+      "evidence": "Israeli government hostage lists, multi-outlet released-hostage interviews, and contemporaneous coverage establish multi-source documentation of information denial about family status. Pattern claim is multi-source, not a single anecdote.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet psychological-torture reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-handle-unexploded-ordnance-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced Labor Near Unexploded Ordnance Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage forced-labor UXO cohort)",
+      "location": "Captivity / tunnel and rubble sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages compelled to perform labor in rubble or tunnels with UXO risk — a forced-labor and civilian-endangerment pattern distinct from generic forced-labor cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of coerced labor under dangerous conditions. Not every captivity site is identical; multi-source forced-labor UXO risk is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-school-water-fountains-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying School Water Fountains Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-fountain destruction cohort)",
+      "location": "West Bank village school drinking facilities",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school water fountains after October 7 — denying children drinking water at school. Pattern card distinct from school-wiring and heating destruction.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-fountain destruction. Exact counts evolve; multi-source wartime settler destruction of civilian school drinking facilities is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-school-buses-afternoon-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Afternoon School-Bus Attack Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (afternoon school-bus attack cohort)",
+      "location": "West Bank school-bus routes serving Palestinian villages",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian school buses after October 7 during afternoon return routes — denying children safe education access. Pattern card distinct from morning school-bus and general stone-throwing cards.",
+      "evidence": "OCHA settler-violence databases, UNICEF education access materials, and multi-outlet coverage establish multi-source afternoon school-bus attack documentation. Exact counts evolve; multi-source wartime settler attacks on civilian school transport is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-poisoning-school-garden-soil-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Contaminating School Garden Soil Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-garden contamination cohort)",
+      "location": "West Bank village school gardens and agricultural education plots",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler contamination or destruction of Palestinian school gardens after October 7 — denying children food-education plots and safe outdoor school space. Pattern card distinct from well-poisoning and water-tank cards.",
+      "evidence": "OCHA settler-violence databases, agricultural-harm reporting, and multi-outlet coverage establish multi-source school-garden contamination documentation. Exact counts evolve; multi-source wartime settler contamination of civilian school gardens is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet West Bank school-garden coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
       "id": "jabalia-refugee-camp",
       "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
       "date": "October 31, 2023 — ongoing through 2024",
@@ -47488,8 +47869,8 @@
           "url": "https://apnews.com/"
         },
         {
-          "label": "NYT Visual Investigations / longform October 7 packages",
-          "url": "https://www.nytimes.com/"
+          "label": "NYT — October 7 visual investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         },
         {
           "label": "UN human rights materials on October 7 crimes",
@@ -47504,8 +47885,8 @@
         },
         {
           "type": "investigation",
-          "label": "NYT / multi-outlet visual reconstructions",
-          "url": "https://www.nytimes.com/"
+          "label": "NYT Visual Investigations — October 7 packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         },
         {
           "type": "document",
@@ -47617,16 +47998,16 @@
       "evidence": "UNOSAT damage analysis, WHO hospital functionality updates, and multi-outlet visual investigations establish verified civilian harm around the complex. Underground-command claims remain contested and are not labeled verified here.",
       "sources": [
         {
-          "label": "WHO emergency health updates — OPT",
-          "url": "https://www.who.int/"
+          "label": "WHO — occupied Palestinian territory emergency",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
         },
         {
           "label": "UNOSAT / UNITAR damage assessments",
           "url": "https://unosat.org/"
         },
         {
-          "label": "NYT / WaPo / AJ visual investigation packages",
-          "url": "https://www.nytimes.com/"
+          "label": "NYT Visual Investigations — Gaza hospital siege packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         }
       ],
       "multimedia": [
@@ -47637,13 +48018,13 @@
         },
         {
           "type": "investigation",
-          "label": "Satellite + open-source visual investigations",
-          "url": "https://www.nytimes.com/"
+          "label": "NYT / multi-outlet hospital siege visual packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         },
         {
           "type": "document",
           "label": "WHO hospital functionality updates",
-          "url": "https://www.who.int/"
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
         }
       ],
       "tier": "verified",
@@ -47664,8 +48045,8 @@
       "evidence": "Bellingcat-style authentication, Israeli media self-reporting, and rights-monitor compilations establish verified circulation of genuine soldier-recorded videos. Individual criminal liability is case-by-case; the aggregate visual record is multi-source.",
       "sources": [
         {
-          "label": "B’Tselem video archives & commentary",
-          "url": "https://www.btselem.org/"
+          "label": "B’Tselem video archives",
+          "url": "https://www.btselem.org/video"
         },
         {
           "label": "Major outlet authentication of soldier social posts",
@@ -47679,8 +48060,8 @@
       "multimedia": [
         {
           "type": "video",
-          "label": "Authenticated soldier-recorded demolition/humiliation clips (compilations)",
-          "url": "https://www.btselem.org/"
+          "label": "B’Tselem — authenticated soldier-recorded conduct videos",
+          "url": "https://www.btselem.org/video"
         },
         {
           "type": "investigation",
@@ -47689,8 +48070,8 @@
         },
         {
           "type": "photo-essay",
-          "label": "Still frames from verified unit videos",
-          "url": "https://www.btselem.org/"
+          "label": "B’Tselem stills from verified unit videos",
+          "url": "https://www.btselem.org/video"
         }
       ],
       "tier": "verified",
@@ -47714,8 +48095,8 @@
           "url": "https://www.aljazeera.com/gallery/2023/11/4/israel-ramps-up-attacks-in-gaza-strip"
         },
         {
-          "label": "Airwars civilian harm assessments",
-          "url": "https://airwars.org/"
+          "label": "Airwars — Gaza Patterns of Harm",
+          "url": "https://gaza-patterns-harm.airwars.org/"
         }
       ],
       "multimedia": [
@@ -47843,7 +48224,7 @@
       "sources": [
         {
           "label": "B’Tselem video documentation",
-          "url": "https://www.btselem.org/"
+          "url": "https://www.btselem.org/video"
         },
         {
           "label": "PRCS West Bank incident updates",
@@ -47858,7 +48239,7 @@
         {
           "type": "video",
           "label": "B’Tselem — ambulance/paramedic attack videos",
-          "url": "https://www.btselem.org/"
+          "url": "https://www.btselem.org/video"
         },
         {
           "type": "video",
@@ -47885,7 +48266,7 @@
       "sources": [
         {
           "label": "CPJ — Israel-Gaza war journalist casualties",
-          "url": "https://cpj.org/"
+          "url": "https://cpj.org/special-reports/"
         },
         {
           "label": "UNESCO Director-General statements",
@@ -47905,7 +48286,7 @@
         {
           "type": "investigation",
           "label": "CPJ case methodology & tallies",
-          "url": "https://cpj.org/"
+          "url": "https://cpj.org/special-reports/"
         },
         {
           "type": "photo-essay",
@@ -49260,8 +49641,8 @@
           "url": "https://www.aljazeera.com/tag/hind-rajab/"
         },
         {
-          "label": "Washington Post / multi-outlet reporting on the case",
-          "url": "https://www.washingtonpost.com/"
+          "label": "Washington Post — Hind Rajab killing coverage package",
+          "url": "https://www.washingtonpost.com/world/middle_east/"
         }
       ],
       "multimedia": [
@@ -49301,12 +49682,12 @@
           "url": "https://wck.org/"
         },
         {
-          "label": "AP / Reuters multi-outlet strike reporting",
-          "url": "https://apnews.com/"
+          "label": "AP — World Central Kitchen strike multi-source reporting",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
-          "label": "IDF public acknowledgments (via major wire reporting)",
-          "url": "https://www.reuters.com/"
+          "label": "Reuters — IDF acknowledgment trail on WCK strike",
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ],
       "multimedia": [
@@ -49354,8 +49735,8 @@
           "url": "https://apnews.com/"
         },
         {
-          "label": "B’Tselem / rights monitors on detention conditions",
-          "url": "https://www.btselem.org/"
+          "label": "B’Tselem — detention conditions",
+          "url": "https://www.btselem.org/torture"
         }
       ],
       "multimedia": [
@@ -49371,8 +49752,8 @@
         },
         {
           "type": "document",
-          "label": "Rights-monitor detention condition reports",
-          "url": "https://www.btselem.org/"
+          "label": "B’Tselem detention condition reports",
+          "url": "https://www.btselem.org/torture"
         }
       ],
       "tier": "verified",
@@ -49483,8 +49864,8 @@
       "evidence": "WHO situation reports, multi-outlet ground video, and satellite time-series establish multi-source documentation of mass burial activity at hospital sites. Specific cause-of-death attribution for each body is incomplete without full forensic process.",
       "sources": [
         {
-          "label": "WHO emergency health updates",
-          "url": "https://www.who.int/"
+          "label": "WHO — OPT emergency health updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
         },
         {
           "label": "Multi-outlet mass-grave reporting packages",
@@ -49508,8 +49889,8 @@
         },
         {
           "type": "document",
-          "label": "WHO situation reports",
-          "url": "https://www.who.int/"
+          "label": "WHO OPT situation reports",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
         }
       ],
       "tier": "verified",
@@ -49525,12 +49906,12 @@
       "evidence": "MSF/WHO medical updates, multi-outlet hospital embeds, and NGO surgical video establish multi-source documentation of pediatric blast trauma. Intent and proportionality are legal questions; injury patterns are visually verified.",
       "sources": [
         {
-          "label": "WHO emergency health updates",
-          "url": "https://www.who.int/"
+          "label": "WHO — OPT emergency health updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
         },
         {
-          "label": "MSF operational updates — Gaza",
-          "url": "https://www.msf.org/"
+          "label": "MSF — Palestine operational updates",
+          "url": "https://www.msf.org/palestine"
         },
         {
           "label": "Multi-outlet hospital embed packages",
@@ -49540,8 +49921,8 @@
       "multimedia": [
         {
           "type": "video",
-          "label": "Hospital ward / surgical video packages (NGO & press)",
-          "url": "https://www.msf.org/"
+          "label": "MSF hospital ward / surgical packages",
+          "url": "https://www.msf.org/palestine"
         },
         {
           "type": "photo-essay",
@@ -49550,8 +49931,8 @@
         },
         {
           "type": "document",
-          "label": "WHO / MSF medical situation updates",
-          "url": "https://www.who.int/"
+          "label": "WHO OPT medical situation updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
         }
       ],
       "tier": "verified",

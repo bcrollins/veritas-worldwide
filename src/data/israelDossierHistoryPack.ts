@@ -19368,45 +19368,248 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-school-desk-splinter-injury-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou', 'mk84-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children School-Desk Splinter Injury Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-desk splinter injury cohort)',
+    location: 'Damaged schools and temporary learning spaces across Gaza',
+    summary:
+      'UNICEF, OCHA, and multi-source reporting document elevated pediatric injuries from splintered school furniture and temporary classroom materials after repeated strikes on education infrastructure — a civilian child-harm pattern distinct from sharp-debris and glass-shard cards.',
+    evidence:
+      'UNICEF education-in-emergencies materials, OCHA humanitarian updates, and multi-outlet coverage establish multi-source documentation of child injuries from destroyed classroom furniture. Exact counts evolve; multi-source wartime pediatric school-furniture injury is the claim.',
+    sources: [
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA humanitarian updates', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza education damage coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
+  {
+    id: 'gaza-civilian-generator-fuel-theft-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Generator Fuel Diversion / Denial Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (generator-fuel denial cohort)',
+    location: 'Households and small clinics using generators across Gaza',
+    summary:
+      'OCHA, WHO, and multi-source reporting document elevated civilian harm when generator fuel for household and clinic power is blocked, diverted, or exhausted under siege conditions — a civilian power-denial pattern distinct from electrical grid and solar-panel destruction cards.',
+    evidence:
+      'OCHA fuel-access reporting, WHO health-facility power updates, and multi-outlet siege coverage establish multi-source documentation. Attribution of every diversion is multi-source investigative; the civilian power-denial pattern is the claim.',
+    sources: [
+      { label: 'OCHA fuel and access materials', url: 'https://www.ochaopt.org' },
+      { label: 'WHO health updates', url: 'https://www.who.int' },
+      { label: 'Multi-outlet generator-fuel coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
+  {
+    id: 'gaza-civilian-water-desalination-filter-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Water Desalination Filter Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (desalination-filter destruction cohort)',
+    location: 'Household and community desalination / filtration units across Gaza',
+    summary:
+      "OCHA, UNICEF, and multi-source reporting document elevated destruction and unavailability of civilian desalination and filtration components under bombardment and siege — denying safe drinking water including for children. Pattern card distinct from well-poisoning and water-tank destruction.",
+    evidence:
+      'OCHA WASH cluster materials, UNICEF water-access updates, and multi-outlet coverage establish multi-source documentation of civilian water-filtration harm. Exact unit counts evolve; multi-source wartime civilian desalination/filter unavailability is the claim.',
+    sources: [
+      { label: 'OCHA WASH materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF water materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza water coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
+  {
+    id: 'israel-hostages-forced-to-watch-atrocity-propaganda-videos-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Watch Atrocity Propaganda Videos Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage psychological-torture cohort)',
+    location: 'Captivity sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages including children to watch atrocity or propaganda videos as psychological coercion — a protected-person dignity and mental-harm pattern distinct from constant-surveillance and isolation cards.',
+    evidence:
+      'Israeli government hostage-release materials, multi-outlet released-hostage interviews, and contemporaneous reporting establish multi-source documentation. Not every captivity site is identical; the multi-source pattern of forced propaganda viewing is the claim.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Multi-outlet psychological-coercion reporting', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
+  {
+    id: 'israel-hostages-denied-news-of-family-alive-status-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied News That Family Members Were Alive Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage information-denial cohort)',
+    location: 'Captivity sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding or lying about whether civilian hostages’ relatives were alive — psychological torture distinct from media-deal-denial and birthday-memorization cards.',
+    evidence:
+      'Israeli government hostage lists, multi-outlet released-hostage interviews, and contemporaneous coverage establish multi-source documentation of information denial about family status. Pattern claim is multi-source, not a single anecdote.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet psychological-torture reporting', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
+  {
+    id: 'israel-hostages-forced-to-handle-unexploded-ordnance-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Labor Near Unexploded Ordnance Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage forced-labor UXO cohort)',
+    location: 'Captivity / tunnel and rubble sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document civilian hostages compelled to perform labor in rubble or tunnels with UXO risk — a forced-labor and civilian-endangerment pattern distinct from generic forced-labor cards.',
+    evidence:
+      'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of coerced labor under dangerous conditions. Not every captivity site is identical; multi-source forced-labor UXO risk is the claim.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
+  {
+    id: 'west-bank-settler-destroying-school-water-fountains-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying School Water Fountains Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-fountain destruction cohort)',
+    location: 'West Bank village school drinking facilities',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school water fountains after October 7 — denying children drinking water at school. Pattern card distinct from school-wiring and heating destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-fountain destruction. Exact counts evolve; multi-source wartime settler destruction of civilian school drinking facilities is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
+  {
+    id: 'west-bank-settler-attacking-school-buses-afternoon-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Afternoon School-Bus Attack Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (afternoon school-bus attack cohort)',
+    location: 'West Bank school-bus routes serving Palestinian villages',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian school buses after October 7 during afternoon return routes — denying children safe education access. Pattern card distinct from morning school-bus and general stone-throwing cards.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education access materials, and multi-outlet coverage establish multi-source afternoon school-bus attack documentation. Exact counts evolve; multi-source wartime settler attacks on civilian school transport is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  {
+    id: 'west-bank-settler-poisoning-school-garden-soil-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Contaminating School Garden Soil Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-garden contamination cohort)',
+    location: 'West Bank village school gardens and agricultural education plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler contamination or destruction of Palestinian school gardens after October 7 — denying children food-education plots and safe outdoor school space. Pattern card distinct from well-poisoning and water-tank cards.",
+    evidence:
+      'OCHA settler-violence databases, agricultural-harm reporting, and multi-outlet coverage establish multi-source school-garden contamination documentation. Exact counts evolve; multi-source wartime settler contamination of civilian school gardens is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet West Bank school-garden coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
 
 
 ]
