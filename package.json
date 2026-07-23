@@ -69,7 +69,8 @@
     "verify:integrity-score": "node scripts/verify-integrity-score.mjs",
     "verify:pure": "node scripts/verify-pure.mjs",
     "verify:brand-kit": "node scripts/verify-brand-kit.mjs",
-    "verify:record-of-jesus-christ": "node scripts/verify-record-of-jesus-christ.mjs"
+    "verify:record-of-jesus-christ": "node scripts/verify-record-of-jesus-christ.mjs",
+    "verify:roc-source-urls": "node scripts/verify-roc-source-urls.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

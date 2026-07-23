@@ -108,8 +108,12 @@ export default function HomePage() {
                           <div className="overflow-hidden mb-6">
                             <img
                               src={featured.heroImage}
-                              alt=""
+                              alt={featured.title ? `${featured.title} — chapter hero` : 'Featured chapter hero'}
                               loading="eager"
+                              fetchPriority="high"
+                              decoding="async"
+                              width={1200}
+                              height={640}
                               className="w-full h-64 md:h-80 object-cover group-hover:opacity-85 transition-opacity duration-300"
                               onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
                             />

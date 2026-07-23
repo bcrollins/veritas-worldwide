@@ -6,12 +6,12 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T08:35:43.966Z",
-  "claimCount": 124,
+  "generatedAt": "2026-07-23T08:42:46.452Z",
+  "claimCount": 132,
   "tierHistogram": {
-    "verified": 42,
-    "contested": 18,
-    "well_attested": 47,
+    "verified": 46,
+    "contested": 20,
+    "well_attested": 49,
     "speculative": 2,
     "interpretive": 7,
     "literary_theological": 3,
@@ -101,6 +101,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "arch-bethsaida",
+      "claim": "Bethsaida identification and Early Roman occupation layers are active archaeological research topics relevant to Galilee Gospel geography.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
       "id": "arch-capernaum",
@@ -243,6 +250,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "cosmo-recombination",
+      "claim": "CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM).",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
       "id": "ec-apostolic-fathers",
       "claim": "The Apostolic Fathers (1 Clement, Didache, Ignatius, Polycarp, etc.) provide early non-NT Christian primary sources.",
       "tier": "verified",
@@ -311,6 +325,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "hj-apocalyptic",
+      "claim": "Whether Jesus is best reconstructed as primarily apocalyptic prophet (Schweitzer trajectory) or sapiential/ethical teacher remains a major scholarly divide.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
       "id": "hj-appearances",
@@ -432,6 +453,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "hj-parables",
+      "claim": "Parables form a characteristic teaching form in the Synoptic tradition and are widely treated as a historically distinctive feature of Jesus’ public speech.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
       "id": "hj-pauline-chronology",
       "claim": "Pauline absolute chronology is reconstructed from Acts, the letters, and external anchors (Gallio inscription at Delphi); competing schemes (Ramsay, Knox, Hyldahl, et al.) differ by several years.",
       "tier": "contested",
@@ -542,6 +570,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "mod-open-access-trend",
+      "claim": "Open digital libraries (INTF NT.VMR, IAA DSS, British Library codices) have lowered barriers to primary manuscript inspection since the 2010s.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
       "id": "mod-population-genetics",
@@ -663,6 +698,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "nt-codex-alexandrinus",
+      "claim": "Codex Alexandrinus (A 02, 5th c.) is a major early nearly complete Greek Bible witness held by the British Library.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
       "id": "nt-comma-johanneum",
       "claim": "The Comma Johanneum (1 John 5:7–8 Trinitarian formula in some later Latin/TR traditions) lacks early Greek support and is omitted in modern critical editions.",
       "tier": "verified",
@@ -738,6 +780,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-p46-paul",
+      "claim": "Papyrus P46 is among the earliest substantial collections of Pauline letters (typically dated late 2nd / early 3rd century CE).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
       "id": "nt-p52",
@@ -843,6 +892,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "st-mikvaot",
+      "claim": "Stepped ritual baths (miqva’ot) are archaeologically widespread in late Second Temple Judea and Galilee, evidencing purity practice infrastructure.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
       "id": "st-mishnah-context",

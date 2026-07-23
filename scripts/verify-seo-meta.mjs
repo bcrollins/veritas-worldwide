@@ -111,6 +111,12 @@ assert(
   'prerender must emit FAQPage JSON-LD for /methodology (bot-visible)',
 )
 assert(
+  prerender.includes("route === '/record-of-jesus-christ'") &&
+    prerender.includes('What evidence tiers does The Record of Jesus Christ use?'),
+  'prerender must emit bot-visible FAQ for /record-of-jesus-christ',
+)
+assert(prerender.includes("'@type': 'Book'"), 'prerender ROC path should include Book schema')
+assert(
   prerender.includes('Primary Sources') && prerender.includes("route: '/'"),
   'prerender homepage title must target primary-source intent (not generic shell)',
 )

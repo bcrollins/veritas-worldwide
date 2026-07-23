@@ -15,6 +15,7 @@ import type { ScholarlyEvidenceTier } from './evidenceTiers'
 import { ROC_EXTRA_CLAIMS, ROC_TIMELINE } from './recordOfJesusChristExtras'
 import { ROC_WAVE3_CLAIMS } from './recordOfJesusChristWave3'
 import { ROC_WAVE4_CLAIMS } from './recordOfJesusChristWave4'
+import { ROC_WAVE5_CLAIMS } from './recordOfJesusChristWave5'
 
 export { ROC_TIMELINE } from './recordOfJesusChristExtras'
 
@@ -668,6 +669,7 @@ function withExtras(section: RocSection): RocSection {
     ...(ROC_EXTRA_CLAIMS[section.id] ?? []),
     ...(ROC_WAVE3_CLAIMS[section.id] ?? []),
     ...(ROC_WAVE4_CLAIMS[section.id] ?? []),
+    ...(ROC_WAVE5_CLAIMS[section.id] ?? []),
   ]
   if (extra.length === 0) return section
   return { ...section, claims: [...section.claims, ...extra] }
