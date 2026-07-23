@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:19:53.169Z",
-  "claimCount": 633,
+  "generatedAt": "2026-07-23T11:24:16.472Z",
+  "claimCount": 642,
   "tierHistogram": {
-    "well_attested": 262,
-    "verified": 226,
-    "contested": 48,
-    "interpretive": 67,
+    "well_attested": 264,
+    "verified": 229,
+    "contested": 50,
+    "interpretive": 69,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -213,6 +213,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave56.ts"
+    },
+    {
+      "id": "ane-hezekiah-tunnel-date-debate",
+      "claim": "While Hezekiah’s tunnel is archaeologically verified, absolute dating debates (radiocarbon, paleography, historical correlation) continue at the margins of a late-8th-century consensus.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave60.ts"
     },
     {
       "id": "ane-hezekiah-tunnel-inscription-language",
@@ -908,6 +915,13 @@
       "file": "src/data/recordOfJesusChristWave53.ts"
     },
     {
+      "id": "arch-sepphoris-theater-debate",
+      "claim": "The dating of Sepphoris’s theater (first-century vs later) remains debated and affects reconstructions of Jesus’ exposure to urban Greco-Roman entertainment culture.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave60.ts"
+    },
+    {
       "id": "arch-sepphoris-urban",
       "claim": "Sepphoris was a major Galilean urban center near Nazareth with extensive excavation of Hellenistic–Roman layers.",
       "tier": "verified",
@@ -1004,6 +1018,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
+      "id": "cosmo-angular-diameter-distance",
+      "claim": "Angular diameter distance D_A(z) relates observed angular size to physical scale and is constrained by BAO and CMB acoustic-scale measurements in ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave60.ts"
     },
     {
       "id": "cosmo-bao",
@@ -1503,6 +1524,13 @@
       "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
+      "id": "ec-barnabas-anti-temple",
+      "claim": "The Epistle of Barnabas develops anti-temple and supersessionist readings of Israel’s cult — early Christian reception of temple destruction theology.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave60.ts"
+    },
+    {
       "id": "ec-barnabas-epistle",
       "claim": "The Epistle of Barnabas (late 1st / early 2nd c.) offers allegorical OT interpretation and a “two ways” ethic — early Christian reception, not a first-generation Jesus source.",
       "tier": "well_attested",
@@ -1956,6 +1984,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-criteria-coherence",
+      "claim": "The criterion of coherence (material fitting a reconstructed core is more likely authentic) is circular if the core itself depends on contested criteria — a classic method hazard in HJ research.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave60.ts"
     },
     {
       "id": "hj-criteria-embarrassment",
@@ -2910,6 +2945,13 @@
       "file": "src/data/recordOfJesusChristWave53.ts"
     },
     {
+      "id": "mod-sanders-paul-palestinian-judaism",
+      "claim": "E.P. Sanders’s Paul and Palestinian Judaism reconfigured Paul studies by arguing against legalistic caricatures of Judaism — foundational for the New Perspective debates.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave60.ts"
+    },
+    {
       "id": "mod-sanders-practice-belief",
       "claim": "E.P. Sanders’s Judaism: Practice and Belief and Jesus and Judaism reoriented HJ research around covenantal nomism and Jesus within Judaism — foundational Third Quest framing still widely engaged.",
       "tier": "interpretive",
@@ -2999,6 +3041,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nc-celsus-jewish-source-claim",
+      "claim": "Origen reports Celsus citing a Jewish interlocutor’s polemic against Jesus; whether this reflects a real Jewish source or literary device remains debated.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave60.ts"
     },
     {
       "id": "nc-celsus-magic",
@@ -3568,6 +3617,13 @@
       "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
+      "id": "nt-ecm-john-status",
+      "claim": "The Editio Critica Maior for John (and related CBGM work) provides the fullest modern apparatus for the Fourth Gospel’s initial text reconstruction.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave60.ts"
+    },
+    {
       "id": "nt-ecm-mark-status",
       "claim": "The Editio Critica Maior for Mark (and related CBGM publications) provides the current fullest apparatus and genealogical analysis for reconstructing Mark’s initial text.",
       "tier": "verified",
@@ -4035,6 +4091,13 @@
       "tier": "well_attested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave33.ts"
+    },
+    {
+      "id": "st-dead-sea-scrolls-languages",
+      "claim": "Dead Sea Scrolls are predominantly Hebrew with substantial Aramaic and some Greek — primary evidence of multilingual literary culture in late Second Temple Judea.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave60.ts"
     },
     {
       "id": "st-dss",
