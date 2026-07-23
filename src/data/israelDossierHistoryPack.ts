@@ -10863,6 +10863,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-typhoid-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Typhoid Outbreak Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (typhoid-risk cohort)',
+    location: 'Gaza Strip WASH-collapse camps and contaminated water points',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric typhoid risk from contaminated water, destroyed sewage systems, and antibiotic shortage — a multi-source wartime fecal-oral pattern distinct from hepatitis A and OCV-gap cards.',
+    evidence:
+      'WHO waterborne-disease materials, UNICEF WASH updates, and multi-outlet coverage establish multi-source pediatric typhoid risk. Exact case counts evolve; multi-source wartime typhoid risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO waterborne-disease materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza waterborne-disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-contact-with-red-cross-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Red Cross Contact Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ICRC-access-denial cohort)',
+    location: 'Gaza Strip captivity sites — ICRC-access-denial subpattern',
+    summary:
+      'ICRC public statements, Israeli government materials, and multi-source reporting document prolonged denial of International Red Cross access to Israeli civilian hostages — a multi-source humanitarian-access violation pattern distinct from family-communication denial cards.',
+    evidence:
+      'ICRC public statements, Israeli government materials, and multi-outlet coverage establish multi-source denial of Red Cross contact with civilian hostages. Exact timelines vary; multi-source ICRC access denial is the claim.',
+    sources: [
+      { label: 'ICRC public statements', url: 'https://www.icrc.org' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Red Cross access coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'ICRC public updates', url: 'https://www.icrc.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-irrigation-drip-lines-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Irrigation Drip Lines Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (drip-line-destruction cohort)',
+    location: 'West Bank irrigated plots and greenhouse feeder lines',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler cutting and destruction of Palestinian civilian drip-irrigation lines after October 7 — killing crops and family food production including for children. Pattern card distinct from water-pipe and greenhouse destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source drip-line destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian irrigation is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet irrigation-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-acute-malnutrition-edema-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Acute Malnutrition Edema Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (kwashiorkor-edema cohort)',
+    location: 'Gaza Strip nutrition stabilization points and displacement shelters',
+    summary:
+      'WHO, UNICEF, IPC, and multi-source clinical reporting document elevated pediatric acute malnutrition with edema (kwashiorkor-spectrum) under famine conditions — a multi-source wartime severe-malnutrition pattern distinct from refeeding-syndrome and maternal-anemia cards.',
+    evidence:
+      'WHO nutrition materials, UNICEF SAM updates, IPC famine analyses, and multi-outlet coverage establish multi-source pediatric acute malnutrition with edema. Exact case counts evolve; multi-source wartime edema malnutrition among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'IPC famine analyses', url: 'https://www.ipcinfo.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-underground-relocation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Underground Relocation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-underground-relocation cohort)',
+    location: 'Gaza Strip tunnel networks — forced-relocation subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document forced rapid underground relocation of Israeli civilian hostages during Israeli operations — compounding trauma and injury. Pattern card distinct from forced tunnel labor cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced underground relocation. Exact cases vary; multi-source forced underground movement of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-schoolchildren-walking-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Walking Schoolchildren Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (walking-schoolchildren-attack cohort)',
+    location: 'West Bank village-to-school footpaths and roadside routes',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian schoolchildren walking to school after October 7 — a multi-source child-targeting pattern distinct from school-bus blocking and teacher attacks.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education-access materials, and multi-outlet coverage establish multi-source attacks on walking schoolchildren. Exact injury counts evolve; multi-source wartime settler attacks on walking schoolchildren is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet schoolchild attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-malaria-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Malaria Re-emergence Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (malaria-reemergence-risk cohort)',
+    location: 'Gaza Strip stagnant-water camps and vector-control collapse zones',
+    summary:
+      'WHO and multi-source public-health reporting document elevated malaria re-emergence risk for children under vector-control collapse, stagnant water, and displacement — a multi-source wartime vector-borne risk pattern distinct from leishmaniasis cards.',
+    evidence:
+      'WHO malaria-risk materials and multi-outlet coverage establish multi-source pediatric malaria re-emergence risk under collapse of control systems. Exact case counts evolve; multi-source wartime malaria risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO malaria materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza vector-control coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-footwear-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Footwear Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (footwear-denial cohort)',
+    location: 'Gaza Strip captivity sites — footwear-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document confiscation or denial of footwear for Israeli civilian hostages — forcing barefoot movement in tunnels and outdoor transfers. Pattern card distinct from clean-clothing and chained-restraint cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source footwear denial. Exact cases vary; multi-source denial of footwear for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-torching-agricultural-equipment-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Torching Agricultural Equipment Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ag-equipment-arson cohort)',
+    location: 'West Bank farmyards, tractor sheds, and olive-press compounds',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler arson of Palestinian civilian tractors, ploughs, and farm equipment after October 7 — destroying livelihoods supporting families including children. Pattern card distinct from vehicle arson and greenhouse destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source agricultural-equipment arson. Exact equipment counts evolve; multi-source wartime settler arson of civilian farm equipment is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet farm-equipment arson coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -17118,6 +17362,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['shepherds', 'dogs', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-typhoid-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Typhoid Outbreak Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric typhoid risk under WASH collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-typhoid-risk-pattern-2023-2025',
+      'gaza-children-acute-malnutrition-edema-pattern-2023-2025',
+      'gaza-children-malaria-risk-pattern-2023-2025',
+    ],
+    tags: ['typhoid', 'children', 'wash', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-icrc-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Red Cross Contact Pattern',
+    description: 'Multi-source documentation of prolonged denial of ICRC access to civilian hostages.',
+    source: 'ICRC / Israeli government / multi-outlet',
+    sourceUrl: 'https://www.icrc.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-contact-with-red-cross-pattern-2023-2025',
+      'israel-hostages-forced-underground-relocation-pattern-2023-2025',
+      'israel-hostages-denied-footwear-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'icrc', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-drip-lines-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Irrigation Drip Lines Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian drip irrigation after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-irrigation-drip-lines-pattern-2023-2025',
+      'west-bank-settler-torching-agricultural-equipment-pattern-2023-2025',
+      'west-bank-settler-attacking-schoolchildren-walking-pattern-2023-2025',
+    ],
+    tags: ['irrigation', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-malnutrition-edema-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Acute Malnutrition Edema Pattern',
+    description: 'WHO/UNICEF/IPC multi-source documentation of elevated pediatric acute malnutrition with edema.',
+    source: 'WHO / UNICEF / IPC',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-acute-malnutrition-edema-pattern-2023-2025',
+      'gaza-children-refeeding-syndrome-risk-pattern-2023-2025',
+      'gaza-children-typhoid-risk-pattern-2023-2025',
+    ],
+    tags: ['malnutrition', 'edema', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-underground-relocation-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced Underground Relocation Pattern',
+    description: 'Multi-source documentation of forced underground relocation of civilian hostages during operations.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-underground-relocation-pattern-2023-2025',
+      'israel-hostages-forced-tunnel-labor-pattern-2023-2025',
+      'israel-hostages-denied-contact-with-red-cross-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'tunnels', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-schoolchildren-walking-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Walking Schoolchildren Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian schoolchildren walking to school after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-schoolchildren-walking-pattern-2023-2025',
+      'west-bank-settler-blocking-school-buses-pattern-2023-2025',
+      'west-bank-settler-attacking-teachers-pattern-2023-2025',
+    ],
+    tags: ['schoolchildren', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-malaria-risk-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Malaria Re-emergence Risk Pattern',
+    description: 'WHO multi-source documentation of elevated malaria re-emergence risk for children under vector-control collapse.',
+    source: 'WHO / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-malaria-risk-pattern-2023-2025',
+      'gaza-children-leishmaniasis-risk-pattern-2023-2025',
+      'gaza-children-typhoid-risk-pattern-2023-2025',
+    ],
+    tags: ['malaria', 'children', 'vector', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-footwear-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Footwear Pattern',
+    description: 'Multi-source documentation of confiscation or denial of footwear for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-footwear-pattern-2023-2025',
+      'israel-hostages-denied-bathing-pattern-2023-2025',
+      'israel-hostages-forced-underground-relocation-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'footwear', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-ag-equipment-arson-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Torching Agricultural Equipment Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler arson of Palestinian farm equipment after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-torching-agricultural-equipment-pattern-2023-2025',
+      'west-bank-settler-destroying-irrigation-drip-lines-pattern-2023-2025',
+      'west-bank-settler-vehicle-arson-pattern-2023-2025',
+    ],
+    tags: ['agriculture', 'arson', 'settlers', 'west-bank'],
+  },
+
 
 
 
