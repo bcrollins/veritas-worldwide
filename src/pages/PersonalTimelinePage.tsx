@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import ResearchHubChips from '../components/ResearchHubChips'
 import {
   SCHOLARLY_TIER_ORDER,
   SCHOLARLY_TIERS,
@@ -150,6 +151,9 @@ export default function PersonalTimelinePage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
+      <div className="mb-5">
+        <ResearchHubChips />
+      </div>
       <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-crimson">
         Researcher tool · local only
       </p>
