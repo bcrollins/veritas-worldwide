@@ -344,7 +344,9 @@ export default function SearchPage() {
     setMetaTags({
       title: 'Search | The Record — Veritas Worldwide',
       description: `Search ${scopeDescription} across all ${totalChapters} chapters of The Record.`,
+      // Internal search UIs are thin/duplicate risk (Search Central: avoid indexing utility pages).
       url: `${SITE_URL}/search`,
+      robots: 'noindex, follow',
     })
     setJsonLd({
       '@context': 'https://schema.org',

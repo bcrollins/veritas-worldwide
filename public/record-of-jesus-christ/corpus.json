@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T08:26:30.948Z",
-  "claimCount": 105,
+  "generatedAt": "2026-07-23T08:35:43.966Z",
+  "claimCount": 124,
   "tierHistogram": {
-    "verified": 37,
-    "contested": 16,
-    "well_attested": 37,
+    "verified": 42,
+    "contested": 18,
+    "well_attested": 47,
     "speculative": 2,
-    "interpretive": 6,
+    "interpretive": 7,
     "literary_theological": 3,
-    "circumstantial": 4
+    "circumstantial": 5
   },
   "claims": [
     {
@@ -24,6 +24,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-black-obelisk",
+      "claim": "The Black Obelisk of Shalmaneser III depicts Jehu (or a representative) of Israel paying tribute — an extra-biblical visual control for the Omride/Jehu period.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
       "id": "ane-cyrus-cylinder",
@@ -82,6 +89,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "ane-ugarit",
+      "claim": "Ugaritic texts (Ras Shamra) supply Northwest Semitic mythic and ritual parallels used in comparative study of Hebrew Bible poetry and divine council language.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "arch-bar-kokhba",
       "claim": "The Bar Kokhba revolt (132–135 CE) is archaeologically and papyrologically attested; its aftermath reshaped Judean demography and Jewish–Christian trajectories.",
       "tier": "verified",
@@ -96,6 +110,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "arch-galilee-boat",
+      "claim": "The “Jesus Boat” (first-century Galilee boat, discovered 1986) illustrates fishing technology on the lake in the Early Roman period.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "arch-james-ossuary",
       "claim": "The so-called James ossuary inscription (“James son of Joseph brother of Jesus”) remains contested regarding authenticity of the brother phrase and provenance.",
       "tier": "contested",
@@ -108,6 +129,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-magdala",
+      "claim": "Magdala excavations reveal a first-century Galilean town with a synagogue and harbor installations, enriching the social map of Jesus’ activity zone.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
       "id": "arch-masada",
@@ -208,6 +236,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "cosmo-nucleosynthesis-li",
+      "claim": "The cosmological lithium problem remains an open tension between standard BBN predictions for ⁷Li and many stellar abundance measurements.",
+      "tier": "contested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "ec-apostolic-fathers",
       "claim": "The Apostolic Fathers (1 Clement, Didache, Ignatius, Polycarp, etc.) provide early non-NT Christian primary sources.",
       "tier": "verified",
@@ -222,11 +257,25 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "ec-didache",
+      "claim": "The Didache preserves an early Christian “two ways” ethic, baptismal and eucharistic instructions, and itinerant ministry rules — dating commonly late 1st / early 2nd c.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "ec-gospel-thomas",
       "claim": "The Gospel of Thomas (Nag Hammadi) is a sayings gospel whose dating and dependence on canonical Gospels are contested.",
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ec-ignatius",
+      "claim": "Ignatius of Antioch’s letters (early 2nd c., authenticity of middle recension majority) show monepiscopacy advocacy and high Christological language in transit to martyrdom.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
       "id": "ec-irenaeus",
@@ -348,6 +397,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "hj-kingdom-proclamation",
+      "claim": "A core historical judgment across diverse scholars is that Jesus proclaimed God’s kingdom / reign as central to his public activity.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "hj-language",
       "claim": "Jesus likely spoke Aramaic as a primary vernacular; Greek exposure in Galilee is plausible; Hebrew literacy/use is debated for the population stratum.",
       "tier": "contested",
@@ -411,6 +467,27 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "hj-table-fellowship",
+      "claim": "Traditions of Jesus’ open table fellowship with “sinners” and tax collectors are widely treated as historically plausible under embarrassment and multiple attestation.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "hj-temple-action",
+      "claim": "An action by Jesus in the Temple (disruption of commerce / symbolic demonstration) is multiply attested; interpretation ranges from prophetic sign to failed revolt cue.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "hj-titles",
+      "claim": "Titles applied to Jesus (Messiah/Christ, Son of Man, Son of God, Lord) have layered historical and literary-theological histories; none should be treated as a single unproblematic first-century label without analysis.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "hj-women-movement",
       "claim": "Early Christian sources name women as patrons, witnesses, and coworkers (e.g., Mary Magdalene traditions; Romans 16 co-workers); social roles are historically reconstructable within limits.",
       "tier": "well_attested",
@@ -425,11 +502,25 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "mod-criteria-embarrassment",
+      "claim": "The criterion of embarrassment is a heuristic, not a proof algorithm; it can be misapplied when later communities reframe “embarrassing” material.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "mod-critical-editions",
       "claim": "NA28/UBS5 (and ongoing ECM/INTF work) are the standard working critical texts of the Greek NT for academic use.",
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-digital-dss",
+      "claim": "The Leon Levy Dead Sea Scrolls Digital Library enables open inspection of high-resolution plate images for many Qumran manuscripts.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
       "id": "mod-genetics-limits",
@@ -565,11 +656,25 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nc-thallus-phlegon",
+      "claim": "Later Christian authors cite Thallus and Phlegon regarding darkness at the crucifixion; the original pagan contexts are lost and the citations are mediated.",
+      "tier": "circumstantial",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "nt-comma-johanneum",
       "claim": "The Comma Johanneum (1 John 5:7–8 Trinitarian formula in some later Latin/TR traditions) lacks early Greek support and is omitted in modern critical editions.",
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-ecm-method",
+      "claim": "The Editio Critica Maior (ECM) and CBGM (Coherence-Based Genealogical Method) represent the current large-scale critical reconstruction program for the Greek NT at INTF.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
       "id": "nt-eusebius-ch",
@@ -584,6 +689,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-homoeoteleuton",
+      "claim": "Many NT variants arise from ordinary scribal mechanics (homoeoteleuton, dittography, orthography), not theological conspiracy.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
       "id": "nt-john-historicity",
@@ -677,6 +789,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nt-western-text",
+      "claim": "The so-called Western text (e.g., Codex Bezae in Acts) exhibits expansive and paraphrastic tendencies relative to Alexandrian witnesses.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "st-community-rule",
       "claim": "Qumran sectarian texts (e.g., Community Rule 1QS, War Scroll 1QM, Pesharim) document a Jewish movement with distinctive purity, calendar, and eschatology in the late Second Temple period.",
       "tier": "verified",
@@ -719,6 +838,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "st-lxx-textual",
+      "claim": "The Septuagint often preserves readings that differ from the medieval Masoretic Text; some align with Qumran Hebrew witnesses.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
       "id": "st-mishnah-context",
       "claim": "The Mishnah (c. 200 CE redaction) and related Tannaitic literature preserve legal memory of Second Temple practice but are post-70 literary products requiring critical use for pre-70 reconstruction.",
       "tier": "well_attested",
@@ -731,6 +857,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-pharisees-josephus",
+      "claim": "Josephus’s descriptions of Pharisees, Sadducees, and Essenes are primary but tendentious; social realities were more complex than three-school schemes.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
       "id": "st-philo",

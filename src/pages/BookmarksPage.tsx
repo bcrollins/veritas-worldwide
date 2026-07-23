@@ -62,6 +62,7 @@ export default function BookmarksPage() {
       title: `Your Bookmarks | The Record — ${SITE_NAME}`,
       description: 'Saved chapters, reading activity, and your next archive routes in one place.',
       url: `${SITE_URL}/bookmarks`,
+      robots: 'noindex, nofollow',
     })
     return () => clearMetaTags()
   }, [])

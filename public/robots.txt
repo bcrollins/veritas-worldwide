@@ -14,10 +14,14 @@ Disallow: /donation/success
 Disallow: /thank-you
 # Client-only reader state (auth-gated; low SEO value).
 Disallow: /bookmarks
+# Internal search UI (also noindex in HTML) — avoid thin/duplicate result URLs.
+Disallow: /search
+Disallow: /search?
 
 # Durable public PDF downloads
 Allow: /veritas-institute-field-manual.pdf
 Allow: /the-record.pdf
+Allow: /record-of-jesus-christ/record-of-jesus-christ.pdf
 
 # Security disclosure (RFC 9116)
 Allow: /.well-known/security.txt
@@ -29,8 +33,15 @@ Allow: /feed.xml
 Allow: /sitemap.xml
 Allow: /profiles/corpus.json
 Allow: /israel-dossier/workbooks/
+Allow: /israel-dossier/corpus.json
+Allow: /record-of-jesus-christ
+Allow: /record-of-jesus-christ/
+Allow: /record-of-jesus-christ/corpus.json
 Allow: /media-kit
 Allow: /brand-kit/
+
+# Note: /search is noindex,follow in HTML (SearchPage) to avoid thin/duplicate SERP clutter
+# while preserving WebSite SearchAction sitelinks eligibility for the shell URL.
 
 Sitemap: https://veritasworldwide.com/sitemap.xml
 

@@ -245,6 +245,7 @@ export function removeJsonLd(): void {
 
 /**
  * Generates Article schema JSON-LD for a chapter.
+ * Includes speakable for voice-search / Google Assistant eligibility on headlines.
  */
 export function chapterJsonLd(chapter: {
   id: string
@@ -260,6 +261,7 @@ export function chapterJsonLd(chapter: {
   const chapterImage = chapter.image || OG_IMAGE
   const publishedDate = normalizePublicationDate(chapter.publishDate)
   const modifiedDate = normalizePublicationDate(chapter.dateModified || chapter.publishDate)
+  const pageUrl = `${SITE_URL}/chapter/${chapter.id}`
   return [
     {
       '@context': 'https://schema.org',
@@ -268,7 +270,8 @@ export function chapterJsonLd(chapter: {
       'description': chapter.subtitle,
       'author': {
         '@type': 'Organization',
-        'name': 'Veritas Worldwide',
+        'name': SITE_NAME,
+        'url': SITE_URL,
       },
       'publisher': {
         '@type': 'Organization',
@@ -286,10 +289,16 @@ export function chapterJsonLd(chapter: {
       'dateModified': modifiedDate,
       'mainEntityOfPage': {
         '@type': 'WebPage',
-        '@id': `${SITE_URL}/chapter/${chapter.id}`,
+        '@id': pageUrl,
       },
       'keywords': chapter.keywords.join(', '),
       'isAccessibleForFree': true,
+      'inLanguage': 'en-US',
+      // Voice / speakable: headline + lede (CSS selectors match ChapterPage DOM conventions)
+      'speakable': {
+        '@type': 'SpeakableSpecification',
+        'cssSelector': ['h1', '.chapter-subtitle', '[data-speakable="lede"]'],
+      },
       'isPartOf': {
         '@type': 'PublicationVolume',
         'name': 'The Record — Volume I',
@@ -313,7 +322,7 @@ export function chapterJsonLd(chapter: {
           '@type': 'ListItem',
           'position': 2,
           'name': chapter.title,
-          'item': `${SITE_URL}/chapter/${chapter.id}`,
+          'item': pageUrl,
         },
       ],
     },
@@ -433,4 +442,141 @@ export function breadcrumbJsonLd(
   }
 }
 
-export { SITE_NAME, SITE_URL, DEFAULT_DESCRIPTION, OG_IMAGE, LOGO_IMAGE, META_TITLE_MAX, META_DESCRIPTION_MAX }
+/**
+ * HowTo schema for Institute practical guides (rich-result eligible).
+ * Google Search Central: HowTo requires name, step[]; supply optional.
+ */
+export function howToJsonLd(config: {
+  name: string
+  description: string
+  url: string
+  steps: { name: string; text: string; url?: string }[]
+  supplies?: string[]
+  totalTime?: string
+  image?: string
+}): Record<string, unknown> {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: config.name,
+    description: config.description,
+    url: config.url,
+    image: config.image || OG_IMAGE,
+    step: config.steps.map((step, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: step.name,
+      text: step.text,
+      ...(step.url ? { url: step.url } : {}),
+    })),
+  }
+  if (config.supplies?.length) {
+    schema.supply = config.supplies.map((s) => ({
+      '@type': 'HowToSupply',
+      name: s,
+    }))
+  }
+  if (config.totalTime) {
+    schema.totalTime = config.totalTime
+  }
+  return schema
+}
+
+/**
+ * Person schema for power profiles (knowledge-panel adjacent entity signals).
+ */
+export function personJsonLd(config: {
+  name: string
+  description: string
+  url: string
+  image?: string
+  jobTitle?: string
+  sameAs?: string[]
+  worksFor?: string
+}): Record<string, unknown> {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: config.name,
+    description: clampMetaDescription(config.description, 300),
+    url: config.url,
+    image: config.image || OG_IMAGE,
+  }
+  if (config.jobTitle) schema.jobTitle = config.jobTitle
+  if (config.sameAs?.length) schema.sameAs = config.sameAs
+  if (config.worksFor) {
+    schema.worksFor = {
+      '@type': 'Organization',
+      name: config.worksFor,
+    }
+  }
+  return schema
+}
+
+/**
+ * NewsMediaOrganization for media kit / press surfaces (E-E-A-T publisher identity).
+ */
+export function newsMediaOrganizationJsonLd(): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'NewsMediaOrganization',
+    name: SITE_NAME,
+    alternateName: 'The Record',
+    url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: LOGO_IMAGE,
+      width: 512,
+      height: 512,
+    },
+    sameAs: [
+      'https://x.com/VeritasWorldwide',
+      'https://www.reddit.com/r/VeritasWorldwide',
+      'https://github.com/bcrollins/veritas-worldwide',
+    ],
+    ethicsPolicy: `${SITE_URL}/methodology`,
+    masthead: `${SITE_URL}/about`,
+    correctionsPolicy: `${SITE_URL}/methodology`,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'rights@veritasworldwide.com',
+      contactType: 'editorial',
+      availableLanguage: 'English',
+    },
+  }
+}
+
+/**
+ * ItemList helper for hub pages (profiles index, topics, institute tracks).
+ */
+export function itemListJsonLd(config: {
+  name: string
+  description?: string
+  url: string
+  items: { name: string; url: string }[]
+}): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: config.name,
+    description: config.description,
+    url: config.url,
+    numberOfItems: config.items.length,
+    itemListElement: config.items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  }
+}
+
+export {
+  SITE_NAME,
+  SITE_URL,
+  DEFAULT_DESCRIPTION,
+  OG_IMAGE,
+  LOGO_IMAGE,
+  META_TITLE_MAX,
+  META_DESCRIPTION_MAX,
+}

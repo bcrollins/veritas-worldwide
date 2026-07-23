@@ -70,8 +70,12 @@ const tierHits =
   (wave3.match(/tier: '/g) || []).length
 assert(tierHits >= 90, `expected ≥90 tiered claims across base+extras+wave3, got ${tierHits}`)
 assert(data.includes('ROC_WAVE3_CLAIMS'), 'wave3 merge missing')
+assert(data.includes('ROC_WAVE4_CLAIMS'), 'wave4 merge missing')
+assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave4.ts')), 'wave4 file missing')
 assert(page.includes('Copy citation'), 'per-claim cite control missing')
 assert(page.includes('Skip to evidence content'), 'skip link missing for a11y')
+assert(page.includes('faqJsonLd'), 'ROC FAQ schema missing')
+assert(page.includes('roc-claim-search') || page.includes('roc-claim-search'), 'ROC claim search missing')
 assert(bible.includes('SCHOLARLY_TIERS') || bible.includes('well_attested') || bible.includes('contested'), 'Bible page not upgraded toward 7-tier taxonomy')
 assert(!bible.includes("type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'"), 'Bible page still on legacy 3-tier type')
 

@@ -51,6 +51,16 @@ const routes = [
   { path: '/israel-dossier/briefing', text: ['briefing', 'BRIEFING'], anyText: ['source', 'Source', 'SOURCE', 'workbook', 'WORKBOOK'] },
   { path: '/bernie', text: ['The Bernie Rollins Show'] },
   {
+    path: '/record-of-jesus-christ',
+    text: ['Record of Jesus Christ', 'RECORD OF JESUS CHRIST'],
+    anyText: ['Verified', 'VERIFIED', 'Evidence', 'EVIDENCE', 'tier', 'Tier', 'TIER', 'Sources', 'SOURCES'],
+  },
+  {
+    path: '/bible',
+    text: ['Bible', 'BIBLE'],
+    anyText: ['Evidence', 'EVIDENCE', 'Verified', 'VERIFIED', 'Scroll', 'SCROLL'],
+  },
+  {
     path: '/deep-state',
     text: ['Deep State', 'DEEP STATE', 'Epstein', 'EPSTEIN'],
     anyText: ['source', 'Source', 'SOURCE', 'Verified', 'VERIFIED', 'Methodology', 'METHODOLOGY'],

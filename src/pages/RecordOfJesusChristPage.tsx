@@ -4,7 +4,16 @@
  */
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  SITE_URL,
+  SITE_NAME,
+  faqJsonLd,
+  breadcrumbJsonLd,
+} from '../lib/seo'
 import SharePanel from '../components/SharePanel'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ReadingProgress from '../components/ReadingProgress'
@@ -194,15 +203,8 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
   )
 }
 
-function SectionBlock({
-  section,
-  activeTiers,
-}: {
-  section: RocSection
-  activeTiers: Set<ScholarlyEvidenceTier>
-}) {
-  const claims = section.claims.filter(c => activeTiers.has(c.tier))
-  if (claims.length === 0) return null
+function SectionBlock({ section }: { section: RocSection }) {
+  if (section.claims.length === 0) return null
   return (
     <section id={section.id} className="scroll-mt-24 mb-16">
       <header className="mb-6 border-b border-border pb-4">
@@ -216,7 +218,7 @@ function SectionBlock({
         <p className="font-body text-sm text-ink-light leading-relaxed max-w-3xl">{section.summary}</p>
       </header>
       <div className="grid gap-4">
-        {claims.map(c => (
+        {section.claims.map(c => (
           <ClaimCard key={c.id} claim={c} />
         ))}
       </div>
@@ -249,6 +251,7 @@ export default function RecordOfJesusChristPage() {
     } catch { /* ignore */ }
     return new Set(SCHOLARLY_TIER_ORDER)
   })
+  const [claimQuery, setClaimQuery] = useState('')
 
   const toggleTier = (tier: ScholarlyEvidenceTier) => {
     setActiveTiers(prev => {
@@ -266,45 +269,107 @@ export default function RecordOfJesusChristPage() {
   const hist = useMemo(() => rocTierHistogram(), [])
   const claimCount = rocClaimCount()
   const sourceCount = rocSourceCount()
+  const q = claimQuery.trim().toLowerCase()
   const filteredTimeline = useMemo(
     () => ROC_TIMELINE.filter(t => activeTiers.has(t.tier)),
     [activeTiers],
   )
+  const filteredSections = useMemo(() => {
+    return ROC_SECTIONS.map(section => ({
+      ...section,
+      claims: section.claims.filter(c => {
+        if (!activeTiers.has(c.tier)) return false
+        if (!q) return true
+        return (
+          c.claim.toLowerCase().includes(q) ||
+          c.detail.toLowerCase().includes(q) ||
+          c.id.toLowerCase().includes(q) ||
+          c.sources.some(s => s.citation.toLowerCase().includes(q))
+        )
+      }),
+    })).filter(s => s.claims.length > 0)
+  }, [activeTiers, q])
 
   useEffect(() => {
     setMetaTags({
-      title: `${ROC_META.title} | ${SITE_NAME}`,
+      // SERP title ~58 chars
+      title: `Record of Jesus Christ Evidence | ${SITE_NAME}`,
       description:
-        'Pure evidentiary record: cosmology, Second Temple Judaism, historical Jesus, NT manuscripts, archaeology. Every claim tier-labeled. Veritas Worldwide.',
+        'Historical Jesus, NT manuscripts, Dead Sea Scrolls, and Levant archaeology—every claim seven-tier labeled with sources. Pure evidence, no advocacy.',
       url: `${SITE_URL}${ROC_META.path}`,
       type: 'article',
       section: 'The Record',
-      tags: ['Jesus of Nazareth', 'New Testament', 'textual criticism', 'archaeology', 'evidence tiers'],
+      tags: ['Jesus of Nazareth', 'New Testament', 'textual criticism', 'archaeology', 'evidence tiers', 'Dead Sea Scrolls'],
       image: `${SITE_URL}/og/record-of-jesus-christ.png`,
+      imageAlt: 'The Record of Jesus Christ — pure evidentiary compilation by Veritas Worldwide',
+      publishedTime: '2026-07-23',
+      author: SITE_NAME,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'Book',
-      name: ROC_META.title,
-      alternateName: 'Record of Jesus Christ — Evidentiary Compilation',
-      description: ROC_META.subtitle,
-      url: `${SITE_URL}${ROC_META.path}`,
-      datePublished: '2026-07-23',
-      inLanguage: 'en',
-      author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-      publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-      isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
-      about: [
-        { '@type': 'Thing', name: 'Jesus of Nazareth' },
-        { '@type': 'Thing', name: 'New Testament textual criticism' },
-        { '@type': 'Thing', name: 'Levantine archaeology' },
-      ],
-    })
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        name: ROC_META.title,
+        alternateName: 'Record of Jesus Christ — Evidentiary Compilation',
+        description: ROC_META.subtitle,
+        url: `${SITE_URL}${ROC_META.path}`,
+        datePublished: '2026-07-23',
+        inLanguage: 'en',
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
+        about: [
+          { '@type': 'Thing', name: 'Jesus of Nazareth' },
+          { '@type': 'Thing', name: 'New Testament textual criticism' },
+          { '@type': 'Thing', name: 'Levantine archaeology' },
+          { '@type': 'Thing', name: 'Dead Sea Scrolls' },
+        ],
+        numberOfPages: String(claimCount),
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Record of Jesus Christ', url: `${SITE_URL}${ROC_META.path}` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What evidence tiers does The Record of Jesus Christ use?',
+          answer:
+            'Seven scholarly tiers: Verified, Well-Attested, Circumstantial, Contested, Interpretive, Speculative, and Literary/Theological. Every claim is labeled; proof is never mixed with tradition.',
+        },
+        {
+          question: 'Does this Record conclude that Jesus is divine or that the resurrection happened?',
+          answer:
+            'No. Theological conclusions are out of scope as historical or scientific fact. Early proclamation of resurrection appearances is documented as attestation of belief; ontology is not labeled VERIFIED.',
+        },
+        {
+          question: 'Where can researchers export the claim set?',
+          answer:
+            'JSON and CSV export on the page, machine corpus at /record-of-jesus-christ/corpus.json, and a portable PDF claim index.',
+        },
+        {
+          question: 'Who publishes this Record?',
+          answer:
+            'Veritas Worldwide only. There is no personal author byline. Contact rights@veritasworldwide.com for corrections.',
+        },
+      ]),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Chronological sections — Record of Jesus Christ',
+        numberOfItems: ROC_SECTIONS.length,
+        itemListElement: ROC_SECTIONS.map((s, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: s.title,
+          url: `${SITE_URL}${ROC_META.path}#${s.id}`,
+        })),
+      },
+    ])
     return () => {
       clearMetaTags()
       removeJsonLd()
     }
-  }, [])
+  }, [claimCount])
 
   return (
     <div className="w-full max-w-[1920px] mx-auto roc-record-page">
@@ -415,6 +480,26 @@ export default function RecordOfJesusChristPage() {
             })}
           </div>
           <TierFilter active={activeTiers} onToggle={toggleTier} />
+          <div className="mt-5">
+            <label htmlFor="roc-claim-search" className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink-faint block mb-2">
+              Search claims (voice-search friendly natural language)
+            </label>
+            <input
+              id="roc-claim-search"
+              type="search"
+              value={claimQuery}
+              onChange={e => setClaimQuery(e.target.value)}
+              placeholder="e.g. Was Jesus crucified under Pilate? Dead Sea Scrolls? Josephus?"
+              className="w-full min-h-[44px] px-4 py-2 rounded-sm border border-border bg-parchment font-body text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-crimson/40"
+              autoComplete="off"
+              data-testid="roc-claim-search"
+            />
+            {q && (
+              <p className="mt-2 font-sans text-xs text-ink-muted" role="status">
+                Showing {filteredSections.reduce((n, s) => n + s.claims.length, 0)} claims matching “{claimQuery.trim()}”
+              </p>
+            )}
+          </div>
         </section>
 
         {/* Figures */}
@@ -527,7 +612,7 @@ export default function RecordOfJesusChristPage() {
             Chronological sections
           </h2>
           <ol className="grid sm:grid-cols-2 gap-2">
-            {ROC_SECTIONS.map(s => (
+            {filteredSections.map(s => (
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
@@ -536,7 +621,7 @@ export default function RecordOfJesusChristPage() {
                   <span className="font-sans text-xs text-crimson mr-2">{s.number}</span>
                   {s.title}
                   <span className="ml-2 font-sans text-[0.6rem] text-ink-faint">
-                    ({s.claims.filter(c => activeTiers.has(c.tier)).length})
+                    ({s.claims.length})
                   </span>
                 </a>
               </li>
@@ -580,9 +665,14 @@ export default function RecordOfJesusChristPage() {
         </section>
 
         {/* Sections */}
-        {ROC_SECTIONS.map(section => (
-          <SectionBlock key={section.id} section={section} activeTiers={activeTiers} />
+        {filteredSections.map(section => (
+          <SectionBlock key={section.id} section={section} />
         ))}
+        {filteredSections.length === 0 && (
+          <p className="font-body text-sm text-ink-muted mb-16" role="status">
+            No claims match the active tier filters and search query. Clear search or re-enable tiers.
+          </p>
+        )}
 
         {/* Anonymity / attribution footer */}
         <footer className="mt-8 pt-8 border-t border-border max-w-3xl">
