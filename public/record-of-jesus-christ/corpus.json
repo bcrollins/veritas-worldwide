@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:14:09.461Z",
-  "claimCount": 615,
+  "generatedAt": "2026-07-23T11:17:17.303Z",
+  "claimCount": 624,
   "tierHistogram": {
-    "well_attested": 253,
-    "verified": 219,
+    "well_attested": 257,
+    "verified": 223,
     "contested": 48,
-    "interpretive": 65,
+    "interpretive": 66,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -348,6 +348,13 @@
       "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
+      "id": "ane-omri-mesha-context",
+      "claim": "The Mesha Stele’s reference to Omri’s oppression of Moab provides an independent Moabite frame for 9th-century Israel–Moab conflict also reflected in Kings traditions.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave58.ts"
+    },
+    {
       "id": "ane-ophel-inscription-fragment",
       "claim": "Hebrew inscription fragments from the Ophel excavations (including early alphabetic pieces) contribute to debates on literacy and administration in Iron Age Jerusalem.",
       "tier": "well_attested",
@@ -605,6 +612,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave39.ts"
+    },
+    {
+      "id": "arch-gamla-walls",
+      "claim": "Gamla’s fortification walls and destruction layers from the First Revolt provide material control for Josephus’s Golan war narrative in broad outline.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave58.ts"
     },
     {
       "id": "arch-herodium",
@@ -1286,6 +1300,13 @@
       "file": "src/data/recordOfJesusChristWave22.ts"
     },
     {
+      "id": "cosmo-photon-baryon-fluid",
+      "claim": "Before recombination, photons and baryons formed a tightly coupled fluid whose acoustic oscillations imprint the CMB peak pattern and the BAO scale.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave58.ts"
+    },
+    {
       "id": "cosmo-primordial-bmodes-search",
       "claim": "Searches for primordial CMB B-mode polarization aim to constrain the inflationary tensor-to-scalar ratio r; no definitive primordial detection has been confirmed to date.",
       "tier": "well_attested",
@@ -1410,6 +1431,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "ec-2-clement-homily",
+      "claim": "2 Clement is an early Christian homily (often treated as mid-2nd-c.) urging repentance and ethical perseverance — reception of preaching form, not HJ primary data.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave58.ts"
     },
     {
       "id": "ec-apostolic-fathers",
@@ -1879,6 +1907,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-baptism-repentance-frame",
+      "claim": "Jesus’ baptism by John is widely accepted as historical; the repentance/forgiveness framing of John’s baptism is early tradition with theological development in later Christian narration.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave58.ts"
     },
     {
       "id": "hj-bethlehem",
@@ -2679,6 +2714,13 @@
       "file": "src/data/recordOfJesusChristWave31.ts"
     },
     {
+      "id": "mod-le-donne-historical-jesus",
+      "claim": "Anthony Le Donne’s work on memory and historiography argues that historical Jesus research must account for refraction through social memory rather than only atomistic authenticity criteria.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave58.ts"
+    },
+    {
       "id": "mod-living-text",
       "claim": "“Living text” models (e.g., Parker) emphasize early Christian textual fluidity and community use rather than a single frozen original always recoverable.",
       "tier": "interpretive",
@@ -3153,6 +3195,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave48.ts"
+    },
+    {
+      "id": "nc-pliny-legal-status-summary",
+      "claim": "Taken together, Pliny’s interrogation report and Trajan’s reply document an early 2nd-c. imperial approach: Christians are punishable if obstinate when accused, but not to be hunted proactively.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave58.ts"
     },
     {
       "id": "nc-pliny-legal-template",
@@ -3785,6 +3834,13 @@
       "file": "src/data/recordOfJesusChristWave16.ts"
     },
     {
+      "id": "nt-slavonic-version-limits",
+      "claim": "Slavonic biblical versions are later medieval traditions valuable for reception history; they must not be confused with the separate problem of Slavonic Josephus expansions.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave58.ts"
+    },
+    {
       "id": "nt-synoptic-problem",
       "claim": "The Synoptic Problem (literary relationship of Matthew, Mark, Luke) remains an active field; Markan priority is majority, Q hypothesis is majority but contested by Farrer and other models.",
       "tier": "contested",
@@ -4049,6 +4105,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-essene-shared-property",
+      "claim": "Josephus describes Essene common property and communal discipline — literary ethnography that must be weighed carefully against Qumran archaeology and other sources.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave58.ts"
     },
     {
       "id": "st-josephus-jewish-war-structure",
