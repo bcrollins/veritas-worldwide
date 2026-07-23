@@ -806,4 +806,9 @@ assert(stickyDesk.includes('3.75rem'), 'mobile offset above tab 3.75rem')
 const rhcAria = read('src/components/ResearchHubChips.tsx')
 assert(rhcAria.includes('aria-current'), 'ResearchHubChips aria-current')
 
+
+// DossierHubSpokes marks active spoke with aria-current when applicable
+const spokesAria = read('src/components/DossierHubSpokes.tsx')
+assert(spokesAria.includes('aria-current'), 'DossierHubSpokes aria-current')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
