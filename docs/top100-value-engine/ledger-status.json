@@ -225,7 +225,8 @@
       "id": "T100-086",
       "title": "ROC: every claim has \u22651 source or explicit note",
       "priority": 87,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:50:33.586758+00:00"
     },
     {
       "display_rank": 26,
@@ -241,7 +242,8 @@
       "id": "T100-051",
       "title": "Client error intake: scrub stack paths with home directories",
       "priority": 86,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:50:33.586881+00:00"
     },
     {
       "display_rank": 28,
@@ -327,7 +329,8 @@
       "id": "T100-033",
       "title": "Dataset schema floor sync with live claimCount",
       "priority": 82,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:50:33.586883+00:00"
     },
     {
       "display_rank": 38,
@@ -413,7 +416,8 @@
       "id": "T100-025",
       "title": "News desk: primary-source first paragraph enforcement",
       "priority": 79,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:50:33.586885+00:00"
     },
     {
       "display_rank": 48,
@@ -493,7 +497,8 @@
       "id": "T100-023",
       "title": "Integrity score transparency: public formula explainer",
       "priority": 75,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:50:33.586887+00:00"
     },
     {
       "display_rank": 58,
@@ -544,7 +549,8 @@
       "id": "T100-080",
       "title": "Dispute story component: evidence both sides pattern",
       "priority": 74,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:50:33.586889+00:00"
     },
     {
       "display_rank": 65,
@@ -565,7 +571,8 @@
       "id": "T100-079",
       "title": "Deep state / AIPAC pages: methodology banner mandatory",
       "priority": 73,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:50:33.586890+00:00"
     },
     {
       "display_rank": 68,
@@ -683,7 +690,8 @@
       "id": "T100-032",
       "title": "Reduced-motion: disable non-essential dossier animations",
       "priority": 68,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:50:33.586892+00:00"
     },
     {
       "display_rank": 84,
@@ -814,8 +822,8 @@
     }
   ],
   "lastShip": {
-    "at": "2026-07-23T11:48:36.851652+00:00",
-    "interval": 8,
-    "terminalCount": 54
+    "at": "2026-07-23T11:50:33.586901+00:00",
+    "interval": 9,
+    "terminalCount": 62
   }
 }

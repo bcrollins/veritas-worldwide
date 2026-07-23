@@ -74,7 +74,17 @@ export default function DisputeStory({ pageId, pageTitle }: DisputeStoryProps) {
               </div>
               <textarea placeholder="Which specific claim do you dispute? Quote the exact text." value={form.claim} onChange={e => setForm(f => ({ ...f, claim: e.target.value }))} rows={3} className="w-full px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none resize-none" required />
               <textarea placeholder="What is your counter-evidence? Cite specific sources." value={form.evidence} onChange={e => setForm(f => ({ ...f, evidence: e.target.value }))} rows={3} className="w-full px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none resize-none" required />
-              <input type="url" placeholder="Link to your source (optional)" value={form.sourceUrl} onChange={e => setForm(f => ({ ...f, sourceUrl: e.target.value }))} className="w-full min-h-[44px] px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none" />
+              <input
+                type="url"
+                required
+                placeholder="Primary source URL supporting your counter-claim (required)"
+                value={form.sourceUrl}
+                onChange={e => setForm(f => ({ ...f, sourceUrl: e.target.value }))}
+                className="w-full min-h-[44px] px-3 py-2 border border-border rounded-sm bg-parchment dark:bg-ink text-ink font-sans text-sm focus:border-crimson focus:outline-none"
+              />
+              <p className="font-body text-[0.65rem] text-ink-faint">
+                Disputes require a checkable primary or institutional source URL. Submissions stay on this device until an editorial API is enabled. Contact corrections@veritasworldwide.com for urgent corrections.
+              </p>
               <button type="submit" className="inline-flex min-h-[44px] items-center px-5 py-2.5 bg-crimson text-white font-sans text-xs font-semibold tracking-wide uppercase rounded-sm hover:bg-crimson-dark transition-colors">
                 Submit Dispute for Review
               </button>

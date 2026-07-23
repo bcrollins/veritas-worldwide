@@ -40,6 +40,7 @@ const pure = [
   'verify-robots-disallow.mjs',
   'verify-share-utms.mjs',
   'verify-source-url-shapes.mjs',
+  'verify-error-scrub.mjs',
   'verify-hubspot-fields.mjs',
   'verify-oauth-no-github.mjs',
   'verify-analytics-privacy.mjs',

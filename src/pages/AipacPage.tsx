@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import {
   setMetaTags,
   clearMetaTags,
@@ -47,5 +48,18 @@ export default function AipacPage() {
     }
   }, [])
 
-  return <AipacDiagram />
+  return (
+    <>
+      <div className="border-b border-border bg-surface px-4 py-3" data-testid="aipac-methodology-banner">
+        <p className="mx-auto max-w-5xl font-body text-sm text-ink-muted">
+          Influence maps are evidence surfaces: FEC filings and public lobby records only. See the{' '}
+          <Link to="/methodology" className="text-crimson hover:underline">
+            methodology page
+          </Link>{' '}
+          for source hierarchy and evidence tiers. Ethnicity or religion is never treated as evidence.
+        </p>
+      </div>
+      <AipacDiagram />
+    </>
+  )
 }

@@ -1190,9 +1190,18 @@ function cryptoRandomHex(byteLength) {
   return out
 }
 
+
+function scrubErrorText(input) {
+  return String(input || '')
+    .replace(/\/Users\/[^/:\s]+/gi, '/Users/[redacted]')
+    .replace(/\/home\/[^/:\s]+/gi, '/home/[redacted]')
+    .replace(/[A-Za-z]:\\Users\\[^\\:\s]+/gi, 'C:\\Users\\[redacted]')
+    .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[redacted-email]')
+}
+
 app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
   const body = req.body && typeof req.body === 'object' ? req.body : {}
-  const message = typeof body.message === 'string' ? body.message.slice(0, 500) : ''
+  const message = typeof body.message === 'string' ? scrubErrorText(body.message).slice(0, 500) : ''
   if (!message) {
     return res.status(400).json({ error: 'message required' })
   }
@@ -1213,8 +1222,8 @@ app.post('/api/client-error', express.json({ limit: '16kb' }), (req, res) => {
     type: 'client-error',
     message,
     name: typeof body.name === 'string' ? body.name.slice(0, 120) : 'Error',
-    stack: typeof body.stack === 'string' ? body.stack.slice(0, 4000) : '',
-    componentStack: typeof body.componentStack === 'string' ? body.componentStack.slice(0, 4000) : '',
+    stack: typeof body.stack === 'string' ? scrubErrorText(body.stack).slice(0, 4000) : '',
+    componentStack: typeof body.componentStack === 'string' ? scrubErrorText(body.componentStack).slice(0, 4000) : '',
     source,
     path: typeof body.path === 'string' ? body.path.slice(0, 240) : '',
     href: typeof body.href === 'string' ? body.href.slice(0, 500) : '',

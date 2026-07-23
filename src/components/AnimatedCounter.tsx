@@ -29,6 +29,11 @@ export default function AnimatedCounter({ end, suffix = '', duration = 1500 }: P
 
   useEffect(() => {
     if (!started) return
+    // Respect reduced-motion: show final value immediately (a11y).
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setCount(end)
+      return
+    }
     const startTime = performance.now()
     let raf: number
 

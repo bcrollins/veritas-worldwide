@@ -16,6 +16,15 @@ function fingerprint(payload: ClientErrorPayload): string {
   return `${payload.name || 'Error'}|${payload.message}|${payload.source || ''}|${payload.path || ''}`
 }
 
+/** Strip local home-directory paths and emails from stacks (operator + reader OPSEC). */
+export function scrubErrorText(input: string): string {
+  return String(input || '')
+    .replace(/\/Users\/[^/:\s]+/gi, '/Users/[redacted]')
+    .replace(/\/home\/[^/:\s]+/gi, '/home/[redacted]')
+    .replace(/[A-Za-z]:\\Users\\[^\\:\s]+/gi, 'C:\\Users\\[redacted]')
+    .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[redacted-email]')
+}
+
 export function reportClientError(payload: ClientErrorPayload): void {
   if (typeof window === 'undefined') return
 
@@ -32,10 +41,10 @@ export function reportClientError(payload: ClientErrorPayload): void {
   }
 
   const body = JSON.stringify({
-    message: String(payload.message || 'Unknown client error').slice(0, 500),
+    message: scrubErrorText(String(payload.message || 'Unknown client error')).slice(0, 500),
     name: String(payload.name || 'Error').slice(0, 120),
-    stack: String(payload.stack || '').slice(0, 4000),
-    componentStack: String(payload.componentStack || '').slice(0, 4000),
+    stack: scrubErrorText(String(payload.stack || '')).slice(0, 4000),
+    componentStack: scrubErrorText(String(payload.componentStack || '')).slice(0, 4000),
     source: String(payload.source || 'client').slice(0, 80),
     path: String(payload.path || window.location.pathname || '').slice(0, 240),
     href: String(payload.href || window.location.href || '').slice(0, 500),
