@@ -377,6 +377,13 @@ export default function BibleHistoryPage() {
             <span className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-crimson">
               The Bible
             </span>
+            <span className="text-ink-faint hidden sm:inline">·</span>
+            <Link
+              to="/record-of-jesus-christ"
+              className="hidden sm:inline-flex min-h-[44px] items-center font-sans text-[0.6rem] tracking-[0.1em] uppercase text-ink-muted hover:text-ink"
+            >
+              Record of Jesus Christ (7-tier)
+            </Link>
           </div>
         </div>
       </div>

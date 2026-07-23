@@ -17,12 +17,17 @@ import {
   ROC_META,
   ROC_METHODOLOGY_NOTES,
   ROC_SECTIONS,
+  ROC_TIMELINE,
   rocClaimCount,
+  rocExportCsv,
+  rocExportJson,
   rocSourceCount,
   rocTierHistogram,
   type RocClaim,
   type RocSection,
 } from '../data/recordOfJesusChrist'
+
+const TIER_PREF_KEY = 'veritas_roc_active_tiers'
 
 const PROOF_LABELS: Record<RocClaim['proofVsConcept'], string> = {
   proof_grade_data: 'Proof-grade data',
@@ -188,10 +193,31 @@ function SectionBlock({
   )
 }
 
+function downloadText(filename: string, content: string, mime: string) {
+  const blob = new Blob([content], { type: mime })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  a.rel = 'noopener'
+  document.body.appendChild(a)
+  a.click()
+  a.remove()
+  URL.revokeObjectURL(url)
+}
+
 export default function RecordOfJesusChristPage() {
-  const [activeTiers, setActiveTiers] = useState<Set<ScholarlyEvidenceTier>>(
-    () => new Set(SCHOLARLY_TIER_ORDER),
-  )
+  const [activeTiers, setActiveTiers] = useState<Set<ScholarlyEvidenceTier>>(() => {
+    try {
+      const raw = localStorage.getItem(TIER_PREF_KEY)
+      if (raw) {
+        const parsed = JSON.parse(raw) as ScholarlyEvidenceTier[]
+        const valid = parsed.filter((t): t is ScholarlyEvidenceTier => SCHOLARLY_TIER_ORDER.includes(t))
+        if (valid.length) return new Set(valid)
+      }
+    } catch { /* ignore */ }
+    return new Set(SCHOLARLY_TIER_ORDER)
+  })
 
   const toggleTier = (tier: ScholarlyEvidenceTier) => {
     setActiveTiers(prev => {
@@ -199,6 +225,9 @@ export default function RecordOfJesusChristPage() {
       if (next.has(tier)) next.delete(tier)
       else next.add(tier)
       if (next.size === 0) next.add(tier)
+      try {
+        localStorage.setItem(TIER_PREF_KEY, JSON.stringify([...next]))
+      } catch { /* ignore */ }
       return next
     })
   }
@@ -206,6 +235,10 @@ export default function RecordOfJesusChristPage() {
   const hist = useMemo(() => rocTierHistogram(), [])
   const claimCount = rocClaimCount()
   const sourceCount = rocSourceCount()
+  const filteredTimeline = useMemo(
+    () => ROC_TIMELINE.filter(t => activeTiers.has(t.tier)),
+    [activeTiers],
+  )
 
   useEffect(() => {
     setMetaTags({
@@ -284,14 +317,36 @@ export default function RecordOfJesusChristPage() {
             Compiled for independent verification. The historical and scientific record does not belong to any advocate or skeptic.
             It belongs to the evidence. Attribution: <strong className="font-semibold text-ink">{ROC_META.authorEntity}</strong> only.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="font-sans text-[0.65rem] tracking-[0.08em] uppercase text-ink-faint">
-              {claimCount} claims · {ROC_SECTIONS.length} sections · {sourceCount} unique sources · {ROC_META.publishDate}
+              {claimCount} claims · {ROC_SECTIONS.length} sections · {sourceCount} unique sources · {ROC_TIMELINE.length} timeline nodes · {ROC_META.publishDate}
             </span>
             <SharePanel
               url={`${SITE_URL}${ROC_META.path}`}
               title={ROC_META.title}
             />
+          </div>
+          <div className="flex flex-wrap gap-2 mt-5" role="group" aria-label="Researcher export">
+            <button
+              type="button"
+              onClick={() => downloadText('record-of-jesus-christ-claims.json', rocExportJson(), 'application/json')}
+              className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-border font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink hover:border-crimson hover:text-crimson transition-colors"
+            >
+              Export JSON
+            </button>
+            <button
+              type="button"
+              onClick={() => downloadText('record-of-jesus-christ-claims.csv', rocExportCsv(), 'text/csv')}
+              className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-border font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink hover:border-crimson hover:text-crimson transition-colors"
+            >
+              Export CSV
+            </button>
+            <Link
+              to="/methodology"
+              className="inline-flex min-h-[44px] items-center px-4 rounded-sm bg-crimson/10 font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-crimson hover:bg-crimson/20 transition-colors"
+            >
+              Volume I methodology
+            </Link>
           </div>
         </header>
 
@@ -351,7 +406,7 @@ export default function RecordOfJesusChristPage() {
         </section>
 
         {/* TOC */}
-        <nav className="mb-14 p-5 border border-border rounded-sm bg-parchment-dark/30" aria-label="Section contents">
+        <nav className="mb-10 p-5 border border-border rounded-sm bg-parchment-dark/30" aria-label="Section contents">
           <h2 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">
             Chronological sections
           </h2>
@@ -364,11 +419,49 @@ export default function RecordOfJesusChristPage() {
                 >
                   <span className="font-sans text-xs text-crimson mr-2">{s.number}</span>
                   {s.title}
+                  <span className="ml-2 font-sans text-[0.6rem] text-ink-faint">
+                    ({s.claims.filter(c => activeTiers.has(c.tier)).length})
+                  </span>
                 </a>
               </li>
             ))}
           </ol>
         </nav>
+
+        {/* Timeline */}
+        <section id="timeline" className="mb-14 scroll-mt-24" aria-labelledby="timeline-heading">
+          <h2 id="timeline-heading" className="font-display text-2xl font-bold text-ink mb-2">
+            Interactive evidence timeline
+          </h2>
+          <p className="font-body text-sm text-ink-muted mb-5 max-w-3xl">
+            Filter with the tier controls above. Each node links to its parent section. Dates are conventional scholarly ranges unless noted.
+          </p>
+          <ol className="relative border-l border-border ml-2 space-y-0">
+            {filteredTimeline.map((node, i) => {
+              const cfg = SCHOLARLY_TIERS[node.tier]
+              return (
+                <li key={`${node.date}-${i}`} className="pl-6 pb-6 relative">
+                  <span
+                    className="absolute left-0 top-1.5 -translate-x-1/2 w-2.5 h-2.5 rounded-full border-2 bg-parchment"
+                    style={{ borderColor: cfg.colorVar }}
+                    aria-hidden="true"
+                  />
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <time className="font-mono text-xs text-ink-muted">{node.date}</time>
+                    <TierBadge tier={node.tier} />
+                  </div>
+                  <a href={`#${node.sectionId}`} className="font-display text-base font-bold text-ink hover:text-crimson">
+                    {node.title}
+                  </a>
+                  <p className="font-body text-sm text-ink-light leading-relaxed mt-1">{node.detail}</p>
+                </li>
+              )
+            })}
+          </ol>
+          {filteredTimeline.length === 0 && (
+            <p className="font-body text-sm text-ink-muted">No timeline nodes match the active tier filters.</p>
+          )}
+        </section>
 
         {/* Sections */}
         {ROC_SECTIONS.map(section => (

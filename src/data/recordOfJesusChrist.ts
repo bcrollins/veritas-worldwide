@@ -12,6 +12,9 @@
  */
 
 import type { ScholarlyEvidenceTier } from './evidenceTiers'
+import { ROC_EXTRA_CLAIMS, ROC_TIMELINE } from './recordOfJesusChristExtras'
+
+export { ROC_TIMELINE } from './recordOfJesusChristExtras'
 
 export interface RocSource {
   id: string
@@ -658,6 +661,12 @@ const S09_MODERN: RocSection = {
   ],
 }
 
+function withExtras(section: RocSection): RocSection {
+  const extra = ROC_EXTRA_CLAIMS[section.id] ?? []
+  if (extra.length === 0) return section
+  return { ...section, claims: [...section.claims, ...extra] }
+}
+
 export const ROC_SECTIONS: RocSection[] = [
   S01_COSMOLOGY,
   S02_ANE,
@@ -668,7 +677,7 @@ export const ROC_SECTIONS: RocSection[] = [
   S07_ARCHAEOLOGY,
   S08_EARLY_CHRISTIANITY,
   S09_MODERN,
-]
+].map(withExtras)
 
 export function rocAllClaims(): RocClaim[] {
   return ROC_SECTIONS.flatMap(s => s.claims)
@@ -698,4 +707,56 @@ export function rocTierHistogram(): Record<ScholarlyEvidenceTier, number> {
   } satisfies Record<ScholarlyEvidenceTier, number>
   for (const c of rocAllClaims()) hist[c.tier] += 1
   return hist
+}
+
+export function rocExportJson(): string {
+  const payload = {
+    meta: ROC_META,
+    generatedAt: new Date().toISOString(),
+    claimCount: rocClaimCount(),
+    sourceCount: rocSourceCount(),
+    tierHistogram: rocTierHistogram(),
+    sections: ROC_SECTIONS.map(s => ({
+      id: s.id,
+      number: s.number,
+      title: s.title,
+      dateRange: s.dateRange,
+      claims: s.claims.map(c => ({
+        id: c.id,
+        claim: c.claim,
+        detail: c.detail,
+        tier: c.tier,
+        proofVsConcept: c.proofVsConcept,
+        confidenceNote: c.confidenceNote ?? null,
+        sources: c.sources,
+      })),
+    })),
+    timeline: ROC_TIMELINE,
+    attribution: 'Veritas Worldwide',
+  }
+  return JSON.stringify(payload, null, 2)
+}
+
+export function rocExportCsv(): string {
+  const rows: string[] = [
+    ['section_id', 'section_title', 'claim_id', 'tier', 'proof_vs_concept', 'claim', 'source_count', 'source_ids'].join(','),
+  ]
+  const esc = (v: string) => `"${v.replace(/"/g, '""').replace(/\n/g, ' ')}"`
+  for (const s of ROC_SECTIONS) {
+    for (const c of s.claims) {
+      rows.push(
+        [
+          esc(s.id),
+          esc(s.title),
+          esc(c.id),
+          esc(c.tier),
+          esc(c.proofVsConcept),
+          esc(c.claim),
+          String(c.sources.length),
+          esc(c.sources.map(x => x.id).join(';')),
+        ].join(','),
+      )
+    }
+  }
+  return rows.join('\n')
 }

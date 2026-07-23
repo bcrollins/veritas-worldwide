@@ -245,6 +245,43 @@ export default function HomePage() {
                 ))}
               </div>
 
+              {/* Record of Jesus Christ — pure evidentiary volume track */}
+              <div className="mt-8 rounded-sm border border-border bg-surface p-5 sm:p-6">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                  <div className="min-w-0">
+                    <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-crimson mb-2">
+                      Documentary record · Volume II track
+                    </p>
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-ink mb-2">
+                      The Record of Jesus Christ
+                    </h3>
+                    <p className="font-body text-sm text-ink-muted leading-relaxed max-w-3xl">
+                      Cosmology as science, Second Temple sources, historical Jesus criteria, Nestle-Aland manuscript evidence, Levantine archaeology, and non-Christian attestation — every claim seven-tier labeled. No advocacy. Entity attribution only.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 shrink-0">
+                    <Link
+                      to="/record-of-jesus-christ"
+                      className="inline-flex min-h-[44px] items-center rounded-sm bg-crimson px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-dark transition-colors"
+                    >
+                      Open the Record
+                    </Link>
+                    <Link
+                      to="/bible"
+                      className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                    >
+                      Bible history
+                    </Link>
+                    <Link
+                      to="/methodology"
+                      className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                    >
+                      Methodology
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
               {/* Live interactive dossier — not a chapter; separate evidence engine */}
               <div className="mt-8 rounded-sm border border-crimson/25 bg-crimson/5 p-5 sm:p-6">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
