@@ -44,6 +44,46 @@ function getChapterMeta(slug) {
 }
 
 /**
+ * Rewrite first-paint shell metas for bots.
+ * Shell defaults (index.html): Primary Sources title + primary-source description.
+ */
+function applyBotPageMeta(html, { title, description, url, type = 'website', image = null, imageType = null }) {
+  let out = html
+    .replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
+    // Title variants used as og/twitter content
+    .replace(/content="The Record \| Primary Sources — Veritas Worldwide"/g, `content="${title}"`)
+    .replace(/content="The Record \| Veritas Worldwide"/g, `content="${title}"`)
+    // Description variants (old + current first-paint shells)
+    .replace(
+      /content="Primary-source documentary history of power, money, and institutions\. 32 archive parts, 500\+ citations, free public access\. Verify every claim yourself\."/g,
+      `content="${description}"`,
+    )
+    .replace(
+      /content="Primary-source documentary history of power, money, and institutions\. 32 archive parts, 500\+ citations, free public access\."/g,
+      `content="${description}"`,
+    )
+    .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${description}"`)
+    .replace(
+      /content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g,
+      `content="${description}"`,
+    )
+    .replace(
+      /content="A documentary history of power, money, and the institutions that shaped the modern world\."/g,
+      `content="${description}"`,
+    )
+    .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${url}"`)
+    .replace(/content="website"/, `content="${type}"`)
+
+  if (image) {
+    out = out.replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${image}"`)
+  }
+  if (imageType) {
+    out = out.replace(/content="image\/png"/, `content="${imageType}"`)
+  }
+  return out
+}
+
+/**
  * Injects crawler-visible title/OG metas for known SPA routes.
  * Unknown paths must call next() so soft-404 (HTTP 404 + noindex) can run —
  * bots previously always received HTTP 200 homepage shells (Google soft-404 risk).
@@ -63,38 +103,114 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
     const htmlPath = path.join(rootDir, 'dist', 'index.html')
     let html = fs.readFileSync(htmlPath, 'utf-8')
 
+    // Keep bot-visible copy aligned with client setMetaTags (SERP CTR + consistency).
     const staticPages = {
-      '/methodology': { title: 'Methodology | Veritas Worldwide', desc: 'Our four-tier source hierarchy and three-tier evidence classification system explained.' },
-      '/sources': { title: 'Sources | Veritas Worldwide', desc: 'Master bibliography and source library for The Record — 500+ primary source documents.' },
-      '/search': { title: 'Search | Veritas Worldwide', desc: 'Search all 31 chapters of The Record by keyword, topic, or evidence classification.' },
-      '/timeline': { title: 'Timeline | Veritas Worldwide', desc: 'An interactive chronological timeline of events documented in The Record, from 1694 to present.' },
-      '/analytics': { title: 'Reader Analytics | Veritas Worldwide', desc: 'Public readership analytics for The Record.' },
-      '/accessibility': { title: 'Accessibility | Veritas Worldwide', desc: 'Accessibility statement and WCAG 2.1 AA compliance information for Veritas Worldwide.' },
-      '/privacy': { title: 'Privacy Policy | Veritas Worldwide', desc: 'How Veritas Worldwide handles reader data, analytics, and privacy. Minimal data collection, no advertising trackers.' },
-      '/terms': { title: 'Terms of Use | Veritas Worldwide', desc: 'Terms of use for Veritas Worldwide. Free and open access under Creative Commons BY-NC-SA 4.0.' },
-      '/israel-dossier': { title: 'The Israel Dossier | Veritas Worldwide', desc: 'A sourced dossier covering U.S.-Israel policy, humanitarian impact, military spending, and the public record surrounding the conflict.', type: 'article' },
-      '/israel-dossier/briefing': { title: 'Israel Dossier Public Briefing | Veritas Worldwide', desc: 'A source-boundary briefing generated from the populated Israel dossier workbook rows, with visible confidence limits and open questions.', type: 'article' },
-      '/membership': { title: 'Membership | Veritas Worldwide', desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.' },
-      '/deep-state': { title: 'The Deep State — The Epstein Network | Veritas Worldwide', desc: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.' },
-      '/forum': { title: 'Veritas Forum | Veritas Worldwide', desc: 'Community discussion forum for truth-seekers, researchers, and investigators. Discuss The Record, share evidence, and connect with fellow citizens demanding accountability.' },
-      '/profiles': { title: 'Power Profiles | Veritas Worldwide', desc: 'Sourced profiles of 235+ politicians, billionaires, lobbyists, and power brokers. Every claim cited to FEC filings, congressional records, court documents, and verified journalism.' },
-      '/content-pack': { title: 'Content Packs & Brand Kit | Veritas Worldwide', desc: 'Official brand assets and social media content packs for Veritas Worldwide. Free for press, social media, and advocacy.' },
-      '/news': { title: 'News | Veritas Worldwide', desc: 'Source-first reporting on power, money, accountability, and the institutions shaping current events. Primary documents and public records.' },
-      '/donate': { title: 'Support Our Research | Veritas Worldwide', desc: 'Fund independent, source-verified investigative journalism. No party. No agenda. Just the record. Every contribution keeps the archive online and free.' },
-      '/read': { title: 'Read The Record | Veritas Worldwide', desc: 'Read all 31 chapters of The Record — a documentary history spanning 1694 to present. Primary sources. Public record. Your conclusions.' },
+      '/methodology': {
+        title: 'Methodology & Evidence Standards | The Record — Veritas Worldwide',
+        desc: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
+      },
+      '/sources': {
+        title: 'Sources | Veritas Worldwide',
+        desc: 'Master bibliography and source library for The Record — 500+ primary documents organized for independent verification.',
+      },
+      '/search': {
+        title: 'Search | Veritas Worldwide',
+        desc: 'Search The Record by keyword, topic, or evidence classification. Archive-wide discovery across chapters, profiles, and news.',
+      },
+      '/timeline': {
+        title: 'Interactive Timeline | Veritas Worldwide',
+        desc: 'Chronological timeline of The Record — 32 archive parts of primary-source history from 1694 to present.',
+      },
+      '/analytics': {
+        title: 'Reader Analytics | The Record — Veritas Worldwide',
+        desc: 'Public readership analytics for The Record — lifetime readers, daily traffic, and geographic distribution as a transparency surface.',
+      },
+      '/accessibility': {
+        title: 'Accessibility | Veritas Worldwide',
+        desc: 'Accessibility statement for Veritas Worldwide — WCAG 2.1 AA commitment, inclusive design, and how to report barriers.',
+      },
+      '/privacy': {
+        title: 'Privacy Policy | The Record — Veritas Worldwide',
+        desc: 'How Veritas Worldwide collects, uses, and protects your information. Minimal analytics, no ads, no data sales.',
+      },
+      '/terms': {
+        title: 'Terms of Use | The Record — Veritas Worldwide',
+        desc: 'Terms of use for Veritas Worldwide. Free open access; content licensed under Creative Commons BY-NC-SA 4.0.',
+      },
+      '/about': {
+        title: 'About | Veritas Worldwide',
+        desc: 'What Veritas Worldwide publishes, how it verifies claims, what stays public, and how reader funding supports the work.',
+      },
+      '/israel-dossier': {
+        title: 'The Israel Dossier | Veritas Worldwide',
+        desc: 'Sourced U.S.–Israel policy dossier: military spending, humanitarian impact, legal record, and actors — CRS, UN, ICJ primary trails.',
+        type: 'article',
+      },
+      '/israel-dossier/briefing': {
+        title: 'Israel Dossier Public Briefing | Veritas Worldwide',
+        desc: 'A source-boundary briefing from populated Israel dossier workbook rows, with confidence limits and open questions.',
+        type: 'article',
+      },
+      '/membership': {
+        title: 'Membership | Veritas Worldwide',
+        desc: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.',
+      },
+      '/deep-state': {
+        title: 'The Deep State — The Epstein Network | Veritas Worldwide',
+        desc: 'Interactive Epstein network dossier: court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',
+      },
+      '/forum': {
+        title: 'Community Forum Beta | Veritas Worldwide',
+        desc: 'Local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features.',
+      },
+      '/profiles': {
+        title: 'Power Profiles | Veritas Worldwide',
+        desc: 'Browse comprehensive profiles of influential figures, politicians, financiers, lobbyists, intelligence actors, and other power brokers.',
+      },
+      '/content-pack': {
+        title: 'Content Packs & Brand Kit | Veritas Worldwide',
+        desc: 'Official brand assets, shareable social graphics, pre-written posts, and article cards. Free for press and advocacy with attribution.',
+      },
+      '/media-kit': {
+        title: 'Media Kit | Veritas Worldwide',
+        desc: 'Download Veritas Worldwide Press logos, social banners, letterhead, and brand guidelines. Primary sources. Public record. Your conclusions.',
+      },
+      '/news': {
+        title: 'Current Events — Primary Source Journalism | Veritas Worldwide',
+        desc: 'Daily investigative reporting on power, money, and institutions. Every claim sourced to primary documents. No anonymous sources. No spin.',
+      },
+      '/donate': {
+        title: 'Support Our Research | Veritas Worldwide',
+        desc: 'Fund independent, source-verified investigative journalism. No party. No agenda. Just the record. Every contribution keeps the archive online and free.',
+      },
+      '/read': {
+        title: 'Read The Record | Veritas Worldwide',
+        desc: 'Read The Record online in full. Every chapter, source list, and archive path is open to every reader — free primary-source documentary history.',
+      },
+      '/topics': {
+        title: 'Research Topics | Veritas Worldwide',
+        desc: 'Explore Veritas Worldwide topic hubs covering the Federal Reserve, AIPAC, surveillance, JFK, the Epstein network, Israel policy, and more.',
+      },
+      '/institute': {
+        title: 'Veritas Institute Field Manual | Veritas Worldwide',
+        desc: 'Veritas Institute pairs a printable field manual for ordinary emergencies with source-backed trade, repair, preparedness, food, and healthcare-support courses.',
+      },
+      '/bible': {
+        title: 'The Bible: History & Factual Record | Veritas Worldwide',
+        desc: "Primary-source examination of the Bible's historical claims — archaeology, manuscripts, and scholarly consensus. Every claim labeled by evidence tier.",
+      },
     }
 
     const staticMeta = staticPages[req.path]
     if (staticMeta) {
       const staticUrl = `${SITE_URL}${req.path}`
       const staticType = staticMeta.type || 'website'
-      html = html
-        .replace(/<title>.*?<\/title>/, `<title>${staticMeta.title}</title>`)
-        .replace(/content="The Record \| Veritas Worldwide"/g, `content="${staticMeta.title}"`)
-        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${staticMeta.desc}"`)
-        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${staticMeta.desc}"`)
-        .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${staticUrl}"`)
-        .replace(/content="website"/, `content="${staticType}"`)
+      html = applyBotPageMeta(html, {
+        title: staticMeta.title,
+        description: staticMeta.desc,
+        url: staticUrl,
+        type: staticType,
+      })
     }
 
     const chapterMatch = req.path.match(/^\/chapter\/(.+)$/)
@@ -128,15 +244,14 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
               ? 'image/svg+xml'
               : 'image/png'
 
-        html = html
-          .replace(/<title>.*?<\/title>/, `<title>${meta.title} | The Record — Veritas Worldwide</title>`)
-          .replace(/content="The Record \| Veritas Worldwide"/g, `content="${meta.title} | The Record — Veritas Worldwide"`)
-          .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${meta.desc}"`)
-          .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${meta.desc}"`)
-          .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${chapterUrl}"`)
-          .replace(/content="website"/, 'content="article"')
-          .replace(/content="https:\/\/veritasworldwide\.com\/og-image\.png"/g, `content="${chapterOgImage}"`)
-          .replace(/content="image\/png"/, `content="${imgType}"`)
+        html = applyBotPageMeta(html, {
+          title: `${meta.title} | The Record — Veritas Worldwide`,
+          description: meta.desc,
+          url: chapterUrl,
+          type: 'article',
+          image: chapterOgImage,
+          imageType: imgType,
+        })
       }
     }
 
@@ -165,13 +280,16 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         }
       }
 
+      html = applyBotPageMeta(html, {
+        title: `${name} — Power Profile | Veritas Worldwide`,
+        description: profileDesc,
+        url: profileUrl,
+        type: 'profile',
+        image: profileImage,
+        imageType: profileImgType,
+      })
+      // Also set twitter:image explicitly (applyBotPageMeta covers og:image via og-image.png replace)
       html = html
-        .replace(/<title>.*?<\/title>/, `<title>${name} — Power Profile | Veritas Worldwide</title>`)
-        .replace(/content="The Record \| Veritas Worldwide"/g, `content="${name} — Power Profile | Veritas Worldwide"`)
-        .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${profileDesc}"`)
-        .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${profileDesc}"`)
-        .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${profileUrl}"`)
-        .replace(/content="website"/, 'content="profile"')
         .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${profileImage}$2`)
         .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${profileImage}$2`)
         .replace(/(<meta property="og:image:type" content=")[^"]*(")/, `$1${profileImgType}$2`)
@@ -212,11 +330,15 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
               : 'image/png'
         const safeTitle = String(newsMeta.title || slug).replace(/"/g, '&quot;')
         const safeDesc = String(newsMeta.desc || '').replace(/"/g, '&quot;')
+        html = applyBotPageMeta(html, {
+          title: safeTitle,
+          description: safeDesc,
+          url: newsUrl,
+          type: 'article',
+          image: newsImage,
+          imageType: imgType,
+        })
         html = html
-          .replace(/<title>.*?<\/title>/, `<title>${safeTitle}</title>`)
-          .replace(/content="The Record \| Veritas Worldwide"/g, `content="${safeTitle}"`)
-          .replace(/content="Primary Sources\. Public Record\. Your Conclusions\."/g, `content="${safeDesc}"`)
-          .replace(/content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World\."/g, `content="${safeDesc}"`)
           .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${newsUrl}$2`)
           .replace(/(<meta property="og:type" content=")[^"]*(")/, '$1article$2')
           .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${newsImage}$2`)

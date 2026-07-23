@@ -10,7 +10,16 @@ import {
 } from '../data/instituteCatalog'
 import InstituteCollectionSignupPanel from '../components/institute/InstituteCollectionSignupPanel'
 import { trackDownload } from '../lib/ga4'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  itemListJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 
 const filters: { id: InstituteTrackId | 'all'; label: string }[] = [
   { id: 'all', label: 'All tracks' },
@@ -34,6 +43,7 @@ export default function InstitutePage() {
       description:
         'Veritas Institute pairs a printable field manual for ordinary emergencies with source-backed trade, repair, preparedness, food, and healthcare-support courses.',
       url: `${SITE_URL}/institute`,
+      imageAlt: 'Veritas Institute Field Manual — practical skills catalog',
     })
     setJsonLd([
       {
@@ -44,17 +54,19 @@ export default function InstitutePage() {
         description:
           'A source-backed learning surface built around a practical field manual plus trade, repair, preparedness, food, and healthcare-support course paths.',
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'ItemList',
-        itemListElement: institutePracticalTopics.map((topic, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Veritas Institute', url: `${SITE_URL}/institute` },
+      ]),
+      itemListJsonLd({
+        name: 'Veritas Institute practical guides',
+        description: 'Source-backed practical skill guides across trades, repair, preparedness, food, and healthcare support.',
+        url: `${SITE_URL}/institute`,
+        items: institutePracticalTopics.map((topic) => ({
           name: topic.skill,
           url: `${SITE_URL}/institute/guides/${topic.slug}`,
-          description: topic.summary,
         })),
-      },
+      }),
     ])
 
     return () => {

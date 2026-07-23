@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 import {
   ISRAEL_DOSSIER_ASSETS,
   ISRAEL_DOSSIER_PUBLIC_BRIEFING_CHAPTER_DRAFT,
@@ -319,22 +327,33 @@ export default function IsraelDossierBriefingPage() {
       url,
       type: 'article',
       image: `${SITE_URL}${ISRAEL_DOSSIER_ASSETS.source}`,
+      imageAlt: `${briefing.title} — Israel Dossier public briefing`,
       publishedTime: briefing.lastVerified,
+      modifiedTime: briefing.lastVerified,
       section: 'Israel Dossier',
       tags: ['Israel dossier', 'public records', 'humanitarian reporting', 'legal posture'],
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: briefing.title,
-      description,
-      datePublished: briefing.lastVerified,
-      dateModified: briefing.lastVerified,
-      author: { '@type': 'Organization', name: SITE_NAME },
-      publisher: { '@type': 'Organization', name: SITE_NAME },
-      mainEntityOfPage: url,
-      isPartOf: `${SITE_URL}/israel-dossier`,
-    })
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: briefing.title,
+        description,
+        datePublished: briefing.lastVerified,
+        dateModified: briefing.lastVerified,
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+        isPartOf: { '@type': 'WebPage', '@id': `${SITE_URL}/israel-dossier`, name: 'The Israel Dossier' },
+        isAccessibleForFree: true,
+        image: `${SITE_URL}${ISRAEL_DOSSIER_ASSETS.source}`,
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Israel Dossier', url: `${SITE_URL}/israel-dossier` },
+        { name: 'Public Briefing', url },
+      ]),
+    ])
 
     return () => {
       clearMetaTags()

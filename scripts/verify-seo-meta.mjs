@@ -232,6 +232,12 @@ assert(
 assert(server.includes('isKnownRoute: isKnownSpaRoute'), 'server must pass isKnownSpaRoute into bot meta')
 assert(server.includes('buildNotFoundHtml'), 'server must soft-404 with dedicated HTML')
 
+assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta helper for shell rewrite')
+assert(
+  botMeta.includes('Primary-source documentary history') || botMeta.includes('Primary Sources'),
+  'bot meta rewrite must align with first-paint primary-source description',
+)
+
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, image sitemap floors green',
 )
