@@ -2177,4 +2177,13 @@ assert(nfImportFinal.includes('emphasizeTo="/"') || nfImportFinal.includes("emph
 assert((nfImportFinal.match(/<RelatedHubs\b/g) || []).length >= 2, 'dual RelatedHubs final')
 
 
+
+// RelatedHubs chipBase and emphasizeChip both min-h 44 ultimate
+const relatedTouchUlt = read('src/components/RelatedHubs.tsx')
+const minH = (relatedTouchUlt.match(/min-h-\[44px\]/g) || []).length
+assert(minH >= 2, `RelatedHubs min-h 44 occurrences ${minH} < 2`)
+assert(relatedTouchUlt.includes('chipBase') || relatedTouchUlt.includes('inline-flex min-h-[44px]'), 'chipBase touch ultimate')
+assert(relatedTouchUlt.includes('emphasizeChip') || relatedTouchUlt.includes('bg-crimson'), 'emphasizeChip touch ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
