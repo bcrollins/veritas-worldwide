@@ -230,3 +230,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | aid-distribution shootings · Nativ HaAsara road · school arson |
 | Pure | visual + israel-dossier + research-pack PASS |
 
+
+## Interval densify — tip post-1664 neonatal / flour-massacre / church attacks
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza phototherapy/neonatal-resus/incubator-probe/bilirubin · hostage highway-signs/art-installations/captor-rules/chained-pipe · WB zaatar-screens/sports-equip/oil-seals/grape-gloves |
+| VI | flour massacre · Be’eri dining room · church attacks |
+| Pure | visual + israel-dossier + research-pack PASS |
+

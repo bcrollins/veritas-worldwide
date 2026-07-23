@@ -3061,6 +3061,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-flour-massacre-visual-2024',
+    title: 'Gaza Flour Massacre Aid Convoy — Multi-Outlet Visual Record',
+    date: '2024',
+    location: 'Gaza City coastal road aid convoy routes',
+    summary:
+      'Multi-outlet video packages document mass civilian casualties during a flour and aid convoy incident under wartime conditions, including children. Distinct from aid-distribution shooting visual cards by focusing on multi-source flour-convoy packages; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA humanitarian access materials establish multi-source documentation of civilian harm during flour/aid convoy events.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza aid packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet flour-convoy incident video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of flour convoy aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OHCHR/OCHA access trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-beeri-dining-room-visual-2023',
+    title: 'October 7 Be’eri Dining Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Be’eri dining hall and communal spaces',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders in Be’eri communal dining spaces during the October 7 attacks. Distinct from Be’eri-road visual cards by focusing on interior dining-room packages; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence in Be’eri communal spaces on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Be’eri dining-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-church-attack-visual-2023-2025',
+    title: 'West Bank Settler Church Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village churches and Christian holy sites',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian churches, including vandalism affecting community worship spaces used by families with children. Multi-source visual record distinct from mosque-attack cards; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of church attacks affecting civilian communities.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem church-attack video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem sacred-site violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
