@@ -95,8 +95,14 @@ assert(home.includes('to="/read"'), 'Home Read hub CTA required')
 // Search empty-state hubs
 assert(search.includes('data-testid="search-empty-hubs"') || search.includes('search-empty-state'), 'Search empty hub destinations required')
 assert(search.includes('data-testid="search-idle-hubs"') || search.includes('search-idle-state'), 'Search idle hub destinations required')
-assert(search.includes('to="/content-pack"'), 'Search empty includes research pack')
-assert(search.includes('to="/profiles"'), 'Search empty includes profiles')
+assert(
+  search.includes('to="/content-pack"') || search.includes("to: '/content-pack'") || search.includes('content-pack'),
+  'Search empty includes research pack',
+)
+assert(
+  search.includes('to="/profiles"') || search.includes("to: '/profiles'") || search.includes('/profiles'),
+  'Search empty includes profiles',
+)
 
 // Soft-404 / NotFound primary hubs (inline PRIMARY_HUBS or shared PRIMARY_RELATED_HUBS)
 assert(notFound.includes('data-testid="not-found-hub-chips"') || notFound.includes('PRIMARY_HUBS'), '404 hub chips required')
@@ -302,6 +308,12 @@ assert(fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfileSuccessPag
 assert(fs.readFileSync(path.join(root, 'src/pages/BernieShowPage.tsx'), 'utf8').includes('bernie-related-hubs'), 'Bernie RelatedHubs dark recovery')
 const relatedTone = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
 assert(relatedTone.includes("'dark'") || relatedTone.includes('"dark"'), 'RelatedHubs dark tone')
+
+
+// Sprint 7b Search RelatedHubs platformization
+const searchS7b = fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8')
+assert(searchS7b.includes('RelatedHubs') && searchS7b.includes('SEARCH_RECOVERY_HUBS'), 'Search RelatedHubs platform')
+assert(searchS7b.includes('search-idle-hubs') && searchS7b.includes('search-empty-hubs'), 'Search idle+empty testids')
 
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,

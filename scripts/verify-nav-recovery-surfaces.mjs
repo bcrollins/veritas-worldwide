@@ -1121,4 +1121,17 @@ for (const id of surfacesS7) {
 }
 
 
+
+// Sprint 7b — Search idle/empty RelatedHubs platformization
+const searchS7b = read('src/pages/SearchPage.tsx')
+assert(searchS7b.includes('RelatedHubs'), 'Search mounts RelatedHubs')
+assert(searchS7b.includes('SEARCH_RECOVERY_HUBS'), 'SEARCH_RECOVERY_HUBS const')
+assert(searchS7b.includes('search-idle-hubs') && searchS7b.includes('search-empty-hubs'), 'Search idle+empty testids retained')
+assert(searchS7b.includes('Top destinations'), 'Search Top destinations aria')
+for (const dest of ['/read', '/israel-dossier', '/profiles', '/content-pack']) {
+  assert(searchS7b.includes(dest), `Search recovery hub ${dest}`)
+}
+assert(searchS7b.includes("to: '/'") || searchS7b.includes('to: "/"') || searchS7b.includes("label: 'The Record'"), 'Search recovery Record hub')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
