@@ -218,12 +218,21 @@ ROC corpus **417** claims; soft floor **417**. Pure + live gates green.
 - Live regression: `verify:live-bot-noindex` includes soft-404 matrix **and** 301 canonical checks
 
 
-### wave38–42 crawl canonicalization (2026-07-23)
+### wave38–47 crawl canonicalization LIVE (2026-07-23)
 
-- Soft floor tracks latest ROC wave; GEO public floors track wave public copy
-- **301 lock expanded:** mixed-case exact hubs (`/About` → `/about`, `/Read` → `/read`)
-- **301 lock expanded:** trailing-slash exact hubs (`/methodology/` → `/methodology`)
-- **Alias lock:** `/content-packs` + `/share` → `/content-pack`; `/brand-kit` → `/media-kit` (kills dual-index + redirect loop)
-- **404 hygiene:** soft-404 shells omit `rel=canonical` (no invented `/404` URL); noindex + X-Robots only
-- Slug-prefix 301s unchanged (profile/chapter/news/topics/institute)
-- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` (About/Read/content-packs/share/brand-kit 301s)
+Verified live Googlebot matrix on tip lineage including `f92ff79` + SEO ships through `d37b955`/`86635c6`/`91dc7d4`:
+
+| Request | Result |
+| --- | --- |
+| `/About`, `/Read`, `/methodology/` | **301** → lowercase slashless hub |
+| `/content-packs`, `/share`, `/packs` | **301** → `/content-pack` |
+| `/brand-kit`, `/Brand-Kit` | **301** → `/media-kit` |
+| `/home` | **301** → `/` |
+| Junk paths | **404 + noindex** (no invented `/404` canonical) |
+| admin / success / search / bookmarks / bernie | **200 + noindex** |
+| Known content | **200 + index,follow** |
+
+- Soft floor tracks latest ROC wave (**525** for wave47); GEO public floors **500+**
+- `express.static` **redirect:false** (asset dirs like `dist/brand-kit` no longer 301-loop)
+- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` **PASS**
+- Railway unblock: `SEOConfig.url` optional for noindex soft-404 shells

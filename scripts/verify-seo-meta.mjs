@@ -31,6 +31,8 @@ assert(seo.includes('sameAs'), 'Organization schema must include sameAs for E-E-
 assert(seo.includes('og:image:alt'), 'seo.ts must set og:image:alt for image SEO')
 assert(seo.includes('max-image-preview:large'), 'seo.ts must set Discover-friendly robots max-image-preview')
 assert(seo.includes('imageAlt'), 'SEOConfig must accept imageAlt')
+// Permanent: url must stay optional so noindex soft-404 shells (NotFoundPage) typecheck on Railway.
+assert(/url\?:\s*string/.test(seo), 'SEOConfig.url must be optional (noindex shells omit canonical)')
 assert(seo.includes('DEFAULT_TITLE'), 'seo.ts must define DEFAULT_TITLE aligned with index.html')
 assert(seo.includes('DEFAULT_ROBOTS'), 'seo.ts must reset robots to Discover-friendly defaults')
 assert(seo.includes('absoluteUrl'), 'seo.ts must normalize absolute HTTPS canonicals')
