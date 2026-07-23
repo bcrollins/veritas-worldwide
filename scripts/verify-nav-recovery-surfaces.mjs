@@ -45,6 +45,7 @@ const surfaces = [
   ['src/pages/DeepStatePage.tsx', 'deep-state-related-hubs'],
   ['src/pages/ForumPage.tsx', 'forum-related-hubs'],
   ['src/pages/IsraelDossierBriefingPage.tsx', 'briefing-related-hubs'],
+  ['src/pages/IsraelDossierPage.tsx', 'israel-dossier-related-hubs'],
   ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
   ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
   ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
@@ -145,6 +146,7 @@ for (const [rel, testid] of [
   ['src/pages/DeepStatePage.tsx', 'deep-state-related-hubs'],
   ['src/pages/ForumPage.tsx', 'forum-related-hubs'],
   ['src/pages/IsraelDossierBriefingPage.tsx', 'briefing-related-hubs'],
+  ['src/pages/IsraelDossierPage.tsx', 'israel-dossier-related-hubs'],
   ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
   ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
   ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
@@ -607,6 +609,7 @@ for (const [rel, tid] of [
   ['src/pages/DeepStatePage.tsx', 'deep-state-related-hubs'],
   ['src/pages/ForumPage.tsx', 'forum-related-hubs'],
   ['src/pages/IsraelDossierBriefingPage.tsx', 'briefing-related-hubs'],
+  ['src/pages/IsraelDossierPage.tsx', 'israel-dossier-related-hubs'],
 ]) {
   assert(read(rel).includes(tid), `${rel} ${tid}`)
   assert(read(rel).includes('RelatedHubs'), `${rel} mounts RelatedHubs`)
@@ -620,5 +623,12 @@ assert(homePack.includes('home-research-pack-zip') || homePack.includes('researc
 const appAcct = read('src/App.tsx')
 assert(appAcct.includes('LanguageSelector'), 'Account LanguageSelector')
 assert(appAcct.includes('toggleTheme') || appAcct.includes('useTheme'), 'Account theme toggle')
+
+
+// Israel dossier sticky spokes + primary RelatedHubs
+const israelPage = read('src/pages/IsraelDossierPage.tsx')
+assert(israelPage.includes('israel-dossier-related-hubs'), 'israel-dossier-related-hubs')
+assert(israelPage.includes('RelatedHubs') && israelPage.includes('variant="sticky"'), 'Israel sticky spokes + RelatedHubs')
+assert(israelPage.includes('/methodology') || israelPage.includes("to: '/methodology'"), 'Israel Methodology recovery')
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)

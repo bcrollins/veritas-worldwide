@@ -13,6 +13,7 @@ import {
 import { trackSupportClick } from '../lib/ga4'
 import CommunityForum from '../components/CommunityForum'
 import DossierHubSpokes from '../components/DossierHubSpokes'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
@@ -62,6 +63,13 @@ import {
   type DossierCourseModule,
   type DossierTimelineEvent,
 } from '../data/israelDossierCanon'
+
+const ISRAEL_PRIMARY_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+  { to: '/methodology', label: 'Methodology' },
+]
 
 /* ═══════════════════════════════════════════════════════════
    CATEGORY META
@@ -1358,6 +1366,9 @@ export default function IsraelDossierPage() {
       <ReadingProgress />
       {/* Hub-and-spoke: Briefing · Deep State · Forum · Profiles (Sprint 2 nav) */}
       <DossierHubSpokes variant="sticky" />
+      <div className="mb-4 mt-2">
+        <RelatedHubs testId="israel-dossier-related-hubs" hubs={ISRAEL_PRIMARY_HUBS} />
+      </div>
       {/* ─── MASTHEAD ─── */}
       <header id="overview" className="text-center mb-6 border-b border-border pb-10">
         <p className="chapter-label mb-4">Special Investigation</p>
