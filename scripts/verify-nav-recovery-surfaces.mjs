@@ -203,7 +203,7 @@ for (const rel of [
 ]) {
   if (read(rel).includes('excludePath=')) excludePathUses += 1
 }
-assert(excludePathUses >= 10, `ResearchHubChips excludePath uses ${excludePathUses} < 10`)
+assert(excludePathUses >= 13, `ResearchHubChips excludePath uses ${excludePathUses} < 13`)
 
 // RelatedHubs adoption wave: every migrated public recovery surface mounts it
 for (const rel of [
