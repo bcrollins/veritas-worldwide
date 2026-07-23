@@ -876,4 +876,11 @@ assert(supOkHubs.includes('support-success-related-hubs'), 'support-success-rela
 assert(supOkHubs.includes('/israel-dossier'), 'Support success Dossiers dest')
 assert(supOkHubs.includes('/profiles'), 'Support success Profiles dest')
 
+
+// OSINT success Search destination
+const osintOkHubs = read('src/pages/ComprehensiveProfileSuccessPage.tsx')
+assert(osintOkHubs.includes('osint-success-related-hubs'), 'osint-success-related-hubs testid')
+assert(osintOkHubs.includes('/search'), 'OSINT success Search dest')
+assert(osintOkHubs.includes('/profiles'), 'OSINT success Profiles dest')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
