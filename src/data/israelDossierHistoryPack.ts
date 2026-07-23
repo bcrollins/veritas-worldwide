@@ -4005,6 +4005,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'oct7-elderly-killed-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Israeli Elderly Killed Pattern',
+    date: 'October 7, 2023 (elderly cohort)',
+    location: 'Southern Israel (kibbutzim / homes / Nova area)',
+    summary:
+      'Israeli government fatality lists and multi-source reporting document large numbers of elderly Israeli civilians killed during the October 7 multi-site assault — including residents murdered in homes and safe rooms. Pattern card isolating elderly civilian fatalities within the October 7 record for non-selective documentation.',
+    evidence:
+      'Israeli government named fatality lists and multi-outlet contemporaneous reporting establish multi-source elderly civilian deaths on October 7. Exact age-band counts are refined over time; multi-source intentional targeting of civilian sites that killed elderly residents is the claim.',
+    sources: [
+      { label: 'Israeli government public fatality materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet October 7 elderly casualty coverage', url: 'https://apnews.com' },
+      { label: 'UN / multi-source October 7 civilian documentation context', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public materials', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5936,6 +5963,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['olives', 'settler-violence', 'livelihood', 'west-bank'],
   },
+
+  {
+    id: 'tl-oct7-elderly-killed-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Israeli Elderly Killed Pattern',
+    description: 'Multi-source documentation of elderly Israeli civilians killed during the October 7 multi-site assault.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-elderly-killed-pattern-2023',
+      'oct7-hamas-attack-2023',
+      'oct7-children-killed-pattern-2023',
+    ],
+    tags: ['elderly', 'civilians', 'terrorism', 'israel'],
+  },
+
 
 
 
