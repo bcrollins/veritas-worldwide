@@ -795,4 +795,10 @@ assert(stickyJoin.includes('bg-crimson'), 'Join CTA bg-crimson')
 const stickyAnim = read('src/components/StickyMembershipBar.tsx')
 assert(stickyAnim.includes('animate-slide-up'), 'animate-slide-up entrance lock')
 
+
+// Sticky membership desktop bottom-0 (no tab bar on desktop)
+const stickyDesk = read('src/components/StickyMembershipBar.tsx')
+assert(stickyDesk.includes('md:bottom-0'), 'md:bottom-0 desktop membership')
+assert(stickyDesk.includes('3.75rem'), 'mobile offset above tab 3.75rem')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
