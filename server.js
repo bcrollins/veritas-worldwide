@@ -1713,7 +1713,7 @@ function normalizePrerenderRoute(routePath) {
  * and Search Central stay lockstep.
  */
 const SLUG_CONTENT_PATH =
-  /^\/(chapter|profile|news|topics|institute\/(?:courses|guides))\/[A-Za-z0-9-]+\/?$/
+  /^\/(chapter|profile|news|topics|institute\/(?:courses|guides))\/[A-Za-z0-9-]+\/?$/i
 
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
