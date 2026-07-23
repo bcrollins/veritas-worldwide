@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { PRIMARY_RELATED_HUBS } from '../components/RelatedHubs'
+import RelatedHubs, { PRIMARY_RELATED_HUBS, type RelatedHub } from '../components/RelatedHubs'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 /**
@@ -10,11 +10,11 @@ import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_UR
  */
 const PRIMARY_HUBS = PRIMARY_RELATED_HUBS
 
-const SECONDARY = [
+const NOT_FOUND_SECONDARY_HUBS: readonly RelatedHub[] = [
   { to: '/news', label: 'News' },
   { to: '/methodology', label: 'Methodology' },
   { to: '/content-pack', label: 'Research Pack' },
-] as const
+]
 
 export default function NotFoundPage() {
   useEffect(() => {
@@ -79,17 +79,12 @@ export default function NotFoundPage() {
       <p className="mb-3 font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-ink-faint">
         Also useful
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-2">
-        {SECONDARY.map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-4 py-2 font-sans text-xs font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
+      <RelatedHubs
+        testId="not-found-secondary-hubs"
+        hubs={NOT_FOUND_SECONDARY_HUBS}
+        className="justify-center"
+        ariaLabel="Also useful destinations"
+      />
     </div>
   )
 }
