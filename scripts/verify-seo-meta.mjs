@@ -258,6 +258,10 @@ assert(
   robotsTxt.includes('Disallow: /comprehensive-profile/success'),
   'robots.txt must Disallow transactional comprehensive-profile success',
 )
+assert(
+  prerender.includes("route: '/comprehensive-profile/success'") && prerender.includes('noindex: true'),
+  'prerender must mark comprehensive-profile success noindex',
+)
 
 assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta helper for shell rewrite')
 assert(

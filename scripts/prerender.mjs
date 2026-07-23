@@ -2481,6 +2481,7 @@ const staticPages = [
     heading: 'Order received',
     description: 'Your Comprehensive Online Profile order was received.',
     body: ['Post-checkout confirmation for the $499 Comprehensive Online Profile research service.'],
+    noindex: true,
     sourceFile: 'src/pages/ComprehensiveProfileSuccessPage.tsx',
   },
   {
