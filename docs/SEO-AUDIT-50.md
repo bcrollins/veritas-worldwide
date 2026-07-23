@@ -18,6 +18,8 @@
 Implementing all 50 items is estimated to improve crawl efficiency 15–30%, reduce soft-404 / thin-index risk, lift chapter/profile rich-result eligibility, and raise organic CTR 5–12% via better titles/descriptions and FAQ rich results—on top of the already strong prerender (386 routes), HSTS, `llms.txt`, and first-party media posture.
 
 ### Shipped in this sprint (HIGH)
+
+- **2026-07-23 (continuation):** bot-meta `sendNoindexShell` for transactional success + **/admin**; prerender noindex for `/subscribe/success`, `/bookmarks`, `/search`; `applyBotPageMeta` canonical rewrite; `verify:live-bot-noindex` Googlebot smoke; soft claim floor tracks live ROC waves.
 - HTTP **404** + `X-Robots-Tag: noindex` for unknown paths (`server.js`)
 - `NotFoundPage` with noindex meta + hub recovery links
 - Subscribe success noindex

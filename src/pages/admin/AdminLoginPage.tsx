@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { adminLogin } from '../../lib/adminAuth'
+import { clearMetaTags, setMetaTags, SITE_NAME, SITE_URL } from '../../lib/seo'
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('')
@@ -8,6 +9,18 @@ export default function AdminLoginPage() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    setMetaTags({
+      title: `Admin Login | ${SITE_NAME}`,
+      description: 'Operator console login. Not part of the public archive.',
+      url: `${SITE_URL}/admin/login`,
+      robots: 'noindex, nofollow',
+    })
+    return () => {
+      clearMetaTags()
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

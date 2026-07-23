@@ -282,6 +282,10 @@ assert(
   botMeta.includes('Operator console') || botMeta.includes("path === '/admin'"),
   'bot meta must special-case admin operator console noindex shell',
 )
+const adminLayout = read('src/pages/admin/AdminLayout.tsx')
+assert(adminLayout.includes("robots: 'noindex, nofollow'"), 'AdminLayout must set client robots noindex')
+const adminLogin = read('src/pages/admin/AdminLoginPage.tsx')
+assert(adminLogin.includes("robots: 'noindex, nofollow'"), 'AdminLoginPage must set client robots noindex')
 assert(
   botMeta.includes('rel="canonical" href=') || botMeta.includes("rel=\"canonical\" href="),
   'bot meta applyBotPageMeta must rewrite link rel=canonical (not only og:url content=)',
