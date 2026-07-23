@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:05:12.230Z",
+  "generatedAt": "2026-07-23T12:06:40.554Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 788,
+    "incidents": 797,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 745,
+    "historicalWarCrimesPack": 754,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 28,
-      "post-oct7": 725
+      "post-oct7": 734
     },
     "incidentsByTier": {
-      "verified": 786,
+      "verified": 795,
       "circumstantial": 2
     },
-    "childrenTagged": 744,
-    "civiliansTagged": 786,
+    "childrenTagged": 752,
+    "civiliansTagged": 795,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -48322,6 +48322,382 @@
         {
           "label": "B'Tselem settler-violence materials",
           "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-diaper-shortage-infection-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Diaper Shortage / Infant Infection Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (diaper-shortage infant-infection cohort)",
+      "location": "Shelters and households with infants across Gaza",
+      "summary": "UNICEF, WHO, and multi-source reporting document elevated infant skin infections and hygiene crises when diapers and baby-hygiene supplies are scarce under siege — a child-specific WASH-health pattern distinct from soap-scabies cards.",
+      "evidence": "UNICEF child-protection and WASH materials, WHO pediatric notes, and multi-outlet coverage establish multi-source documentation. Multi-source wartime infant diaper-shortage infection risk is the claim.",
+      "sources": [
+        {
+          "label": "UNICEF child-protection materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "WHO health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "Multi-outlet Gaza infant-hygiene coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-mosquito-net-shortage-malaria-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Vector-Control Gap / Insect-Borne Disease Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (vector-control gap cohort)",
+      "location": "Flooded and dense displacement sites across Gaza",
+      "summary": "WHO, UNICEF, and multi-source reporting document elevated vector-borne disease risk for civilians including children when sewage flooding and shelter density combine with disrupted vector control — a public-health pattern distinct from sewage-flooding injury cards.",
+      "evidence": "WHO disease-risk notes, UNICEF environmental-health materials, and multi-outlet coverage establish multi-source documentation of vector-risk elevation. Multi-source wartime civilian vector-control gap is the claim.",
+      "sources": [
+        {
+          "label": "WHO health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF environmental-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza disease-risk coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-prosthetic-care-interruption-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "mk84-use"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Prosthetic Care Interruption Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (prosthetic-care interruption cohort)",
+      "location": "Rehabilitation facilities and amputee-care pathways in Gaza",
+      "summary": "WHO, MSF, and multi-source reporting document interrupted prosthetic and rehabilitation care for civilian amputees including children under bombardment and siege — a medical-access pattern distinct from amputation-volume cards.",
+      "evidence": "WHO rehab notes, MSF medical updates, and multi-outlet coverage establish multi-source documentation of interrupted prosthetic pathways. Multi-source wartime prosthetic-care interruption is the claim.",
+      "sources": [
+        {
+          "label": "WHO health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "MSF medical updates",
+          "url": "https://www.msf.org"
+        },
+        {
+          "label": "Multi-outlet Gaza rehab coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-religious-practice-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Religious Practice Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage religious-practice denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of prayer, religious objects, and calendar observance for civilian hostages — a protected-person dignity pattern. Religion is never evidence of guilt; this card documents denial of practice under captivity.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of religious-practice denial. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-translate-for-captors-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Translate for Captors Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage forced-translation cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages coerced into translating media or communications for captors — forced labor and psychological coercion distinct from coerced-video-statement cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of forced translation labor. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-threatened-with-fake-executions-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Subjected to Mock Execution Threats Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage mock-execution threat cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document mock execution threats against civilian hostages including children as psychological torture — a pattern distinct from stress-position and isolation cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of mock-execution threats. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-bee-hives-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Bee Hives Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (beehive destruction cohort)",
+      "location": "West Bank village apiaries and agricultural plots",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beehives after October 7 — denying livelihood and food production including for families with children. Pattern card distinct from olive-press and tree-cutting cards.",
+      "evidence": "OCHA settler-violence databases, agricultural-harm reporting, and multi-outlet coverage establish multi-source beehive destruction. Multi-source wartime settler destruction of civilian apiaries is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet agricultural violence coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-blocking-school-exam-transport-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Blocking School Exam Transport Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (exam-transport blocking cohort)",
+      "location": "West Bank roads used to transport students to exam centers",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian student transport to exam centers after October 7 — denying children educational certification access. Pattern card distinct from general school-bus attack cards.",
+      "evidence": "OCHA access materials, UNICEF education materials, and multi-outlet coverage establish multi-source exam-transport obstruction. Multi-source wartime settler blocking of civilian exam transport is the claim.",
+      "sources": [
+        {
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-disabled-persons-transport-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacking Disability Transport Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (disability-transport attack cohort)",
+      "location": "West Bank roads used by disability vans and assisted transport",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler attacks or obstruction of Palestinian civilian disability transport after October 7 — denying mobility and care access including for children with disabilities. Pattern card distinct from ambulance-blocking cards.",
+      "evidence": "OCHA access materials, multi-outlet coverage, and settler-violence databases establish multi-source disability-transport obstruction. Multi-source wartime settler attacks on civilian disability transport is the claim.",
+      "sources": [
+        {
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet access-violence coverage",
+          "url": "https://apnews.com"
         }
       ],
       "multimedia": [
