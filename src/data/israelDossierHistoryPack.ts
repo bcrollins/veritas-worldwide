@@ -3087,6 +3087,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-infectious-disease-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Infectious Disease Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (disease-surge cohort)',
+    location: 'Gaza Strip (clinic / shelter surveillance)',
+    summary:
+      'WHO, UNICEF, and multi-source clinic reporting document surges in water-borne and overcrowding-linked infectious disease — hepatitis, diarrhea, skin infections, and respiratory illness — under WASH collapse and mass displacement. Pattern card for multi-pathogen civilian disease surge distinct from the cVDPV2 polio outbreak card.',
+    evidence:
+      'WHO disease surveillance updates, multi-source clinic caseload reporting, and UNICEF WASH-linked disease materials establish multi-source infectious disease surge. Exact case counts evolve; multi-source multi-disease wartime surge is the claim.',
+    sources: [
+      { label: 'WHO Gaza health emergency / disease surveillance materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH / health materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA humanitarian situation materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public health updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4440,6 +4467,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['children', 'malnutrition', 'starvation', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-disease-surge-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Infectious Disease Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of multi-pathogen disease surges under WASH collapse and displacement.',
+    source: 'WHO / UNICEF / OCHA',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+      'gaza-water-sanitation-collapse-2023-2025',
+      'gaza-polio-outbreak-pattern-2024',
+    ],
+    tags: ['disease', 'children', 'health', 'gaza'],
+  },
+
 
 
 
