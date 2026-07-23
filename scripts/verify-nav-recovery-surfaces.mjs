@@ -163,6 +163,12 @@ assert(read('src/pages/NotFoundPage.tsx').includes('PRIMARY_RELATED_HUBS'), 'Not
 const researchChipsSrc = read('src/components/ResearchHubChips.tsx')
 assert(researchChipsSrc.includes('if (c.to === excludePath) return false'), 'ResearchHubChips excludePath filters')
 
+// ResearchHubChips labels lockstep
+const chipsSrc = read('src/components/ResearchHubChips.tsx')
+for (const label of ['Methodology', 'Sources', 'Research Pack', 'Researcher', 'Institute']) {
+  assert(chipsSrc.includes(label), `ResearchHubChips label ${label}`)
+}
+
 // Research surfaces pass excludePath so chips do not self-link
 let excludePathUses = 0
 for (const rel of [
