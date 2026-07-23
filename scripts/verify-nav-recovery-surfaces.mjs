@@ -648,4 +648,11 @@ const serverSrc = read('server.js')
 assert(serverSrc.includes('class="primary"') || serverSrc.includes("class='primary'"), 'server soft-404 primary class')
 assert(serverSrc.includes('>Record<') || serverSrc.includes('Record</a>'), 'server soft-404 Record label')
 
+
+// ResearchHubChips destination paths
+const rhc = read('src/components/ResearchHubChips.tsx')
+for (const dest of ['/methodology', '/sources', '/content-pack', '/researcher', '/institute']) {
+  assert(rhc.includes(dest), `ResearchHubChips dest ${dest}`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
