@@ -61,8 +61,8 @@ for (const script of pure) {
   const r = spawnSync(process.execPath, [join(root, 'scripts', script)], { stdio: 'inherit' })
   if (r.status !== 0) failed += 1
 }
-if (pure.length < 22) {
-  console.error(`[verify:pure] FAIL — suite list shrunk to ${pure.length}`)
+if (pure.length < 40) {
+  console.error(`[verify:pure] FAIL — suite list shrunk to ${pure.length} (floor 40)`)
   process.exit(1)
 }
 if (failed) {
