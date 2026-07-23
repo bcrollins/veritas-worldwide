@@ -234,9 +234,10 @@ Verified live Googlebot matrix on tip lineage including `f92ff79` + SEO ships th
 | admin / success / search / bookmarks / bernie | **200 + noindex** |
 | Known content | **200 + index,follow** |
 
-- Soft floor tracks latest ROC wave (**543** for wave49); GEO public floors **500+**
+- Soft floor tracks latest ROC wave (**561** for wave51); GEO public floors **500+**
 - `express.static` **redirect:false** (asset dirs like `dist/brand-kit` no longer 301-loop)
 - Prerender default static hubs emit **BreadcrumbList** (membership, content-pack, media-kit, privacy, terms, profiles, news, read, forum, deep-state, analytics, accessibility, israel-dossier, …)
-- Institute hub + Field Manual emit **BreadcrumbList**; Membership FAQPage shipping (client + prerender)
+- Institute hub + Field Manual emit **BreadcrumbList**
+- **FAQPage live:** Membership, Media Kit, Content Pack (+ About/Methodology/Sources/ROC); Privacy + Terms shipping
 - Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` **PASS** (incl. no `/404` canonical on junk)
 - Railway unblock: `SEOConfig.url` optional for noindex soft-404 shells
