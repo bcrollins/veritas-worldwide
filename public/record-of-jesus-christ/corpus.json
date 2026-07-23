@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:47:26.674Z",
-  "claimCount": 687,
+  "generatedAt": "2026-07-23T11:50:01.217Z",
+  "claimCount": 696,
   "tierHistogram": {
-    "well_attested": 279,
-    "verified": 246,
+    "well_attested": 284,
+    "verified": 249,
     "contested": 52,
-    "interpretive": 77,
+    "interpretive": 78,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 28
@@ -31,6 +31,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "ane-amarna-letters-canaan",
+      "claim": "The Amarna letters (14th c. BCE) are primary diplomatic correspondence describing Canaanite city-state politics under Egyptian hegemony — background for later Israelite settlement debates, not proof of biblical narratives.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave66.ts"
     },
     {
       "id": "ane-annals-shoshenq",
@@ -908,6 +915,13 @@
       "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
+      "id": "arch-nazareth-first-century-settlement",
+      "claim": "Excavation evidence supports a small first-century settlement at Nazareth; sensational claims that Nazareth did not exist in Jesus’ time are not the scholarly mainstream reading of the archaeology.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave66.ts"
+    },
+    {
       "id": "arch-nazareth-village-debate",
       "claim": "Nazareth’s early Roman occupation is archaeologically attested at modest scale; debates concern density and socioeconomic profile, not total nonexistence.",
       "tier": "well_attested",
@@ -1186,6 +1200,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave13.ts"
+    },
+    {
+      "id": "cosmo-cmb-polarization-e-modes",
+      "claim": "CMB E-mode polarization measurements confirm acoustic-peak physics and constrain reionization optical depth τ; they are independent of temperature maps alone in standard ΛCDM analyses.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave66.ts"
     },
     {
       "id": "cosmo-cmb-power",
@@ -1557,6 +1578,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
+      "id": "ec-1-clement-corinth",
+      "claim": "1 Clement (late first / early second century) addresses Corinthian church order and appeals to scriptural and apostolic examples — primary evidence of early Roman-Corinthian Christian networks.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave66.ts"
     },
     {
       "id": "ec-1-clement-rome",
@@ -2497,6 +2525,13 @@
       "file": "src/data/recordOfJesusChristWave62.ts"
     },
     {
+      "id": "hj-parable-form-memory",
+      "claim": "Parabolic teaching is widely judged characteristic of Jesus’ public speech on form-critical and memory grounds, while authenticity of any single parable remains unit-level debate.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave66.ts"
+    },
+    {
       "id": "hj-parables",
       "claim": "Parables form a characteristic teaching form in the Synoptic tradition and are widely treated as a historically distinctive feature of Jesus’ public speech.",
       "tier": "well_attested",
@@ -3141,6 +3176,13 @@
       "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
+      "id": "mod-sanders-historical-figure",
+      "claim": "E.P. Sanders’s Jesus and Judaism / The Historical Figure of Jesus models a covenantal-Jewish Jesus focused on kingdom and Temple conflict — foundational for Third Quest reconstructions.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave66.ts"
+    },
+    {
       "id": "mod-sanders-jesus-and-judaism-book",
       "claim": "E.P. Sanders’s Jesus and Judaism (1985) re-centered Jesus within covenantal Judaism and challenged anti-Jewish caricatures in earlier scholarship — a foundational Third Quest landmark.",
       "tier": "interpretive",
@@ -3610,6 +3652,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nc-tacitus-annals-15-44",
+      "claim": "Tacitus Annals 15.44 reports Nero’s punishment of Christians and mentions Christus executed under Pontius Pilate — a key early second-century Roman historiographic notice, not a Gospel-independent biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave66.ts"
+    },
+    {
       "id": "nc-tacitus-annals-christians-frame",
       "claim": "Tacitus frames Christians as a hated group blamed by Nero after the Rome fire — valuable for Roman elite attitude and the Christus–Pilate notice nested in Annals 15.44.",
       "tier": "well_attested",
@@ -3818,6 +3867,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave65.ts"
+    },
+    {
+      "id": "nt-codex-vaticanus-b",
+      "claim": "Codex Vaticanus (B, 4th c.) is a primary continuous-text Greek witness foundational to modern critical editions of the NT, often aligning with early papyri such as 𝔓⁷⁵ in Luke/John.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave66.ts"
     },
     {
       "id": "nt-comma-johanneum",
@@ -4567,6 +4623,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "st-mikvaot-jerusalem-density",
+      "claim": "Jerusalem’s dense stepped-pool (mikveh) installations in late Second Temple strata are archaeological evidence of purity practice intensity among some urban populations.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave66.ts"
     },
     {
       "id": "st-mikveh-galilee-density",

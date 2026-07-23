@@ -193,7 +193,7 @@ assert(
 const corpusPath = path.join(root, 'public/record-of-jesus-christ/corpus.json')
 assert(fs.existsSync(corpusPath), 'public ROC corpus.json missing — run npm run export:roc-corpus')
 const corpus = JSON.parse(fs.readFileSync(corpusPath, 'utf8'))
-assert(corpus.claimCount >= 687, `corpus claimCount should include wave65 (≥687), got ${corpus.claimCount}`)
+assert(corpus.claimCount >= 696, `corpus claimCount should include wave66 (≥696), got ${corpus.claimCount}`)
 assert(
   softFloor.claimCount === corpus.claimCount,
   `soft-floor claimCount ${softFloor.claimCount} must equal corpus ${corpus.claimCount}`,
