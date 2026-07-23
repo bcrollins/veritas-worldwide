@@ -862,6 +862,9 @@ app.use('/evidence-taxonomy.json', corpusRateLimit)
 app.use('/profiles/soft-floor.json', corpusRateLimit)
 app.use('/record-of-jesus-christ/soft-floor.json', corpusRateLimit)
 app.use('/israel-dossier/soft-floor.json', corpusRateLimit)
+// Offline research pack (zip of corpora) — bandwidth-sensitive.
+app.use('/research-pack.zip', rateLimit({ name: 'research-pack', windowMs: 60_000, max: 20 }))
+app.use('/research-pack-manifest.json', rateLimit({ name: 'research-pack', windowMs: 60_000, max: 40 }))
 
 // CORS — restrict to known origins
 const ALLOWED_ORIGINS = new Set([

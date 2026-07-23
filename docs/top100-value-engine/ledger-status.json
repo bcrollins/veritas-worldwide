@@ -598,9 +598,9 @@
       "id": "T100-022",
       "title": "Offline corpus pack download (zip of JSON)",
       "priority": 72,
-      "status": "Blocked",
-      "shippedAt": "2026-07-23T11:52:59.583161+00:00",
-      "note": "Blocked \u2014 offline zip pack deferred; corpora already separately downloadable"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T12:05:00Z",
+      "note": "public/research-pack.zip + manifest; researcher hub + llms; rate-limited; pure verify:research-pack"
     },
     {
       "display_rank": 69,
@@ -781,9 +781,9 @@
       "id": "T100-068",
       "title": "Stripe customer portal: entity branding only",
       "priority": 66,
-      "status": "Blocked",
-      "shippedAt": "2026-07-23T11:52:03.622142+00:00",
-      "note": "External Stripe dashboard branding \u2014 operator-owned"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T12:05:00Z",
+      "note": "public/research-pack.zip + manifest; researcher hub + llms; rate-limited; pure verify:research-pack"
     },
     {
       "display_rank": 90,
