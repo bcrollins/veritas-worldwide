@@ -66,6 +66,7 @@ const floors = [
   { path: 'src/pages/SearchPage.tsx', min: 18, label: 'search filters/sidebar' },
   { path: 'src/components/DossierHubSpokes.tsx', min: 4, label: 'dossier hub spoke chips' },
   { path: 'src/components/ResearchHubChips.tsx', min: 1, label: 'research hub chips' },
+  { path: 'src/components/RelatedHubs.tsx', min: 2, label: 'related hubs chip targets (surface+dark)' },
   { path: 'src/pages/NotFoundPage.tsx', min: 2, label: 'soft-404 primary hub chips' },
   { path: 'src/pages/PersonalTimelinePage.tsx', min: 13, label: 'personal timeline researcher tool' },
   { path: 'src/pages/VolumeIIHubPage.tsx', min: 5, label: 'volume II scaffold' },
@@ -99,6 +100,20 @@ const floors = [
 
 const TARGET_RE = /min-h-\[44px\]|min-h-11|min-height:\s*44px/g
 
+/**
+ * RelatedHubs / ResearchHubChips / DossierHubSpokes own min-h-[44px] in component
+ * source. When a page mounts them, credit one target per mount so platformization
+ * does not false-fail page-local floors after Links move into shared components.
+ */
+function countTouchTargets(src) {
+  let count = (src.match(TARGET_RE) || []).length
+  const relatedMounts = (src.match(/<RelatedHubs\b/g) || []).length
+  const researchMounts = (src.match(/<ResearchHubChips\b/g) || []).length
+  const spokesMounts = (src.match(/<DossierHubSpokes\b/g) || []).length
+  count += relatedMounts + researchMounts + spokesMounts
+  return count
+}
+
 let failures = 0
 const results = []
 
@@ -112,7 +127,7 @@ for (const floor of floors) {
     failures++
     continue
   }
-  const count = (src.match(TARGET_RE) || []).length
+  const count = countTouchTargets(src)
   results.push({ ...floor, count })
   if (count < floor.min) {
     console.error(
