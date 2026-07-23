@@ -23,3 +23,13 @@ Entity-only. Researcher surfaces: robots Disallow + meta noindex + X-Robots-Tag 
 |----|-------|--------|
 | W2-07 | Pure: llms GEO floor tracks corpus decade (lag <50) | Implemented |
 
+
+## Interval W2-3
+
+| ID | Title | Status |
+|----|-------|--------|
+| W2-08 | Rate-limit `/israel-dossier/visual-investigations.json` (corpus-json) | Implemented |
+| W2-09 | Research pack includes visual-investigations.json | Implemented |
+| W2-10 | `verify:live-visual-investigations` identity + soft 404 lag | Implemented |
+| W2-11 | Pure floors for VI rate-limit + pack inclusion | Implemented |
+

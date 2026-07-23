@@ -93,7 +93,8 @@
     "verify:identity-scrub": "node scripts/verify-identity-scrub.mjs",
     "sync:roc-geo-floors": "node scripts/sync-roc-geo-floors.mjs",
     "verify:top100-floors": "node scripts/verify-top100-floors.mjs",
-    "verify:live-research-pack": "node scripts/verify-live-research-pack.mjs"
+    "verify:live-research-pack": "node scripts/verify-live-research-pack.mjs",
+    "verify:live-visual-investigations": "node scripts/verify-live-visual-investigations.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

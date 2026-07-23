@@ -324,4 +324,22 @@ assert(
   '#41 dossier confidence UX surfaces present on briefing',
 )
 
+
+// Wave2 — Israel visual-investigations machine index rate-limited + packable
+const serverTxt = read('server.js')
+assert(
+  serverTxt.includes('/israel-dossier/visual-investigations.json') &&
+    serverTxt.includes('corpusRateLimit'),
+  'visual-investigations.json must use corpusRateLimit',
+)
+const genPack = read('scripts/generate-research-pack.mjs')
+assert(
+  genPack.includes('visual-investigations.json'),
+  'research pack generator must include visual-investigations.json',
+)
+assert(
+  existsSync(join(root, 'public/israel-dossier/visual-investigations.json')),
+  'public visual-investigations.json must exist',
+)
+
 console.log(`[verify:top100-floors] PASS — ${failures.length === 0 ? 'all' : ''} Top-100 remaining floors green`)
