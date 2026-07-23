@@ -451,6 +451,15 @@ assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').in
 assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'Privacy Membership final IA')
 assert(fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8').includes('/membership'), 'Terms Membership final IA')
 
+
+// RelatedHubs boil-complete IA green
+const boilIa = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+assert(boilIa.includes('PRIMARY_RELATED_HUBS') && boilIa.includes('emphasizeTo'), 'boil IA platform')
+assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'boil IA Privacy Membership')
+assert(fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8').includes('/membership'), 'boil IA Terms Membership')
+assert(fs.readFileSync(path.join(root, 'src/pages/AccessibilityPage.tsx'), 'utf8').includes('/membership'), 'boil IA A11Y Membership')
+assert(fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePage.tsx'), 'utf8').includes('/israel-dossier'), 'boil IA OSINT Dossiers')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
