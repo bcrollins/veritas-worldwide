@@ -139,7 +139,8 @@
       "id": "T100-007",
       "title": "Volume I chapter UI: scholarly tier legend + legacy map always visible",
       "priority": 89,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "b408d3c"
     },
     {
       "display_rank": 19,
@@ -160,7 +161,8 @@
       "id": "T100-020",
       "title": "Prerender soft-404 gate regression pack for researcher routes",
       "priority": 88,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "b408d3c"
     },
     {
       "display_rank": 22,
@@ -209,7 +211,8 @@
       "id": "T100-095",
       "title": "Public packages: no package.json author personal field",
       "priority": 86,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "b408d3c"
     },
     {
       "display_rank": 29,
@@ -246,7 +249,8 @@
       "id": "T100-035",
       "title": "Sitemap: ensure researcher noindex routes excluded",
       "priority": 84,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "b408d3c"
     },
     {
       "display_rank": 34,
@@ -364,7 +368,8 @@
       "id": "T100-016",
       "title": "Corrections workflow public microcopy + mailto template",
       "priority": 78,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "b408d3c"
     },
     {
       "display_rank": 50,
@@ -378,7 +383,8 @@
       "id": "T100-017",
       "title": "Rights packaging: CC BY-NC-SA summary card on download surfaces",
       "priority": 77,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "b408d3c"
     },
     {
       "display_rank": 52,
@@ -727,9 +733,9 @@
     }
   ],
   "lastShip": {
-    "at": "2026-07-23T11:36:16.465358+00:00",
-    "commit": "9d58859",
-    "interval": 1,
-    "implementedCount": 11
+    "at": "2026-07-23T11:39:23.475775+00:00",
+    "commit": "b408d3c",
+    "interval": 3,
+    "implementedCount": 17
   }
-}
+}\n

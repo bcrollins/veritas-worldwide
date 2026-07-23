@@ -55,3 +55,27 @@
 - Infra Blocked: GH org transfer, git history rewrite, WHOIS/KYC  
 
 ---
+
+
+## Interval 2 — 2026-07-23 trust chrome
+
+| ID | Title | Status | Commit |
+|----|-------|--------|--------|
+| T100-007 | Volume I scholarly tier legend | Implemented | 48ec427 |
+| T100-016 | Corrections CTA component | Implemented | 48ec427 |
+| T100-017 | License card on exports | Implemented | 48ec427 |
+
+Anonymity audit: entity-only mailto corrections@ / rights@ — PASS
+
+## Interval 3 — 2026-07-23 soft-404 / pure gates
+
+| ID | Title | Status | Commit |
+|----|-------|--------|--------|
+| T100-011 | Researcher hub live 200 (was soft-404) | Implemented | b408d3c |
+| T100-035 | Sitemap exclusion pure gate | Implemented | b408d3c |
+| T100-095 | package.json author entity gate | Implemented | b408d3c |
+| T100-020 | Soft-404 researcher allowlist regression | Implemented | b408d3c |
+
+Live proof (pre-b408 deploy): health 9d58859, evidence-taxonomy.json 200, publisher Veritas Worldwide.
+/researcher soft-404 fixed in b408d3c (pending Railway).
+

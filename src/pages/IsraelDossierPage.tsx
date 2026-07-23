@@ -26,6 +26,7 @@ import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 import LicenseCard from '../components/LicenseCard'
 import CorrectionsCTA from '../components/CorrectionsCTA'
+import PrimarySourceLink from '../components/PrimarySourceLink'
 import { getProfileBySlug, getProfilePhoto } from '../data/profileData'
 import { ISRAEL_DOSSIER_ACTORS, type DossierActorEnablement } from '../data/israelDossierActors'
 import { ISRAEL_DOSSIER_ERA_META, type DossierEra } from '../data/israelDossierHistoryPack'
@@ -233,6 +234,14 @@ function IncidentCard({
               }`}>
                 {incident.tier === 'verified' ? '✓ Verified' : '◐ Circumstantial'}
               </span>
+              {incident.sources.length >= 2 && (
+                <span
+                  className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-sans font-bold tracking-wider uppercase bg-surface border border-border text-ink-muted"
+                  title={incident.sources.map((s) => s.label).join(' · ')}
+                >
+                  {incident.sources.length} sources
+                </span>
+              )}
               {incident.targetsCivilians && (
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-sans font-bold bg-amber-100 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200">
                   Civilian targeting documented
@@ -330,18 +339,15 @@ function IncidentCard({
             <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Sources — click to verify</p>
             <div className="space-y-1.5">
               {incident.sources.map((src, j) => (
-                <a
+                <PrimarySourceLink
                   key={j}
                   href={src.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex min-h-[44px] items-start gap-2 font-sans text-xs text-crimson hover:text-crimson-dark transition-colors group"
+                  archiveHref={(src as { archiveUrl?: string }).archiveUrl}
+                  title={src.label}
+                  className="flex min-h-[44px] items-start gap-2 font-sans text-xs text-crimson hover:text-crimson-dark transition-colors group underline-offset-2 hover:underline"
                 >
-                  <svg className="w-3 h-3 mt-0.5 flex-shrink-0 opacity-50 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  <span className="underline-offset-2 group-hover:underline">{src.label}</span>
-                </a>
+                  {src.label}
+                </PrimarySourceLink>
               ))}
             </div>
           </div>
