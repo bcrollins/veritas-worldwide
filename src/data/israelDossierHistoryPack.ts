@@ -7380,6 +7380,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-iodine-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Iodine Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (iodine cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'UNICEF, WHO, and multi-source nutrition reporting document elevated iodine-deficiency risk among Gaza children under wartime salt and food-system collapse — threatening cognitive development. Pattern card for iodine-specific deficit distinct from zinc/vitamin-A and anemia cards.',
+    evidence:
+      'UNICEF micronutrient materials, WHO nutrition notes, and multi-outlet coverage establish multi-source iodine-deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric iodine-risk elevation is the claim.',
+    sources: [
+      { label: 'UNICEF micronutrient materials', url: 'https://www.unicef.org' },
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-clock-calendar-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Clock & Calendar Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (time-disorientation cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document deliberate denial of clocks, calendars, and time cues for Israeli civilian hostages — inducing temporal disorientation as psychological control. Pattern card distinct from daylight-denial and information-denial cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source time-cue denial in captivity. Exact practices vary by site; multi-source temporal disorientation of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-farm-equipment-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Farm Equipment Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (equipment-destruction cohort)',
+    location: 'West Bank Palestinian farms and agricultural stores',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian farm equipment, tractors, and irrigation gear after October 7 — collapsing civilian agricultural capacity. Pattern card for equipment destruction distinct from olive-uprooting and agricultural-takeover cards.',
+    evidence:
+      'OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source farm-equipment destruction. Exact equipment counts evolve; multi-source wartime equipment destruction is the claim.',
+    sources: [
+      { label: 'OCHA agricultural damage materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet farm equipment destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -11437,6 +11518,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['displacement', 'settlers', 'villages', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-iodine-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Iodine Deficiency Risk Pattern',
+    description: 'UNICEF/WHO multi-source documentation of elevated iodine-deficiency risk among children under wartime diet collapse.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-iodine-deficiency-risk-pattern-2023-2025',
+      'gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025',
+      'gaza-children-anemia-micronutrient-pattern-2023-2025',
+    ],
+    tags: ['iodine', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-time-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Clock & Calendar Pattern',
+    description: 'Multi-source documentation of deliberate denial of clocks and calendars inducing temporal disorientation.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-clock-calendar-pattern-2023-2025',
+      'israel-hostages-denied-daylight-fresh-air-pattern-2023-2025',
+      'israel-hostages-denied-news-information-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-farm-equipment-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Farm Equipment Destruction Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian farm equipment after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-farm-equipment-destruction-pattern-2023-2025',
+      'west-bank-settler-agricultural-takeover-pattern-2023-2025',
+      'west-bank-settler-olive-tree-uprooting-surge-pattern-2023-2025',
+    ],
+    tags: ['agriculture', 'equipment', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
