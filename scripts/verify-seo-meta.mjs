@@ -405,10 +405,10 @@ const topicHubs = read('src/data/topicHubs.json')
 assert(topicHubs.includes('historical-jesus-evidence'), 'topic hubs must include historical-jesus-evidence')
 assert(!topicHubs.includes('150+ tier-labeled'), 'historical Jesus topic must not advertise stale 150+ claim floor')
 assert(
-  topicHubs.includes('370+ tier-labeled') ||
-    topicHubs.includes('370+ tier-labeled') ||
+  topicHubs.includes('380+ tier-labeled') ||
+    topicHubs.includes('380+ tier-labeled') ||
     topicHubs.includes('300+ tier-labeled'),
-  'historical Jesus topic must advertise current 370+ claim floor',
+  'historical Jesus topic must advertise current 380+ claim floor',
 )
 
 // Soft-404: unknown /chapter/* must not soft-serve homepage shells to crawlers.
@@ -447,11 +447,24 @@ assert(
 
 const homePage = read('src/pages/HomePage.tsx')
 assert(!homePage.includes('200+ tier-labeled claims'), 'Home must not advertise stale 200+ ROC claim floor')
-assert(homePage.includes('370+ tier-labeled') || homePage.includes('370+ tier-labeled'), 'Home must advertise current ROC claim floor')
+assert(homePage.includes('380+ tier-labeled') || homePage.includes('380+ tier-labeled'), 'Home must advertise current ROC claim floor')
 const sourcesPage = read('src/pages/SourcesPage.tsx')
 assert(!sourcesPage.includes('200+ tier-labeled'), 'Sources must not advertise stale 200+ ROC claim floor')
-assert(sourcesPage.includes('370+ tier-labeled') || sourcesPage.includes('370+ tier-labeled'), 'Sources must advertise current ROC claim floor')
+assert(sourcesPage.includes('380+ tier-labeled') || sourcesPage.includes('380+ tier-labeled'), 'Sources must advertise current ROC claim floor')
 
 const methodPage = read('src/pages/MethodologyPage.tsx')
 assert(!methodPage.includes('200+ claims with proofVsConcept'), 'Methodology must not advertise stale 200+ ROC claim floor')
-assert(methodPage.includes('370+ claims') || methodPage.includes('370+ claims'), 'Methodology must advertise current ROC claim floor')
+assert(methodPage.includes('380+ claims') || methodPage.includes('380+ claims'), 'Methodology must advertise current ROC claim floor')
+
+// Unique H1 per template (Search Central / a11y).
+for (const [rel, label] of [
+  ['src/pages/HomePage.tsx', 'Home'],
+  ['src/pages/AboutPage.tsx', 'About'],
+  ['src/pages/MethodologyPage.tsx', 'Methodology'],
+  ['src/pages/SourcesPage.tsx', 'Sources'],
+  ['src/pages/NotFoundPage.tsx', 'NotFound'],
+]) {
+  const src = read(rel)
+  const h1Count = (src.match(/<h1[\s>]/g) || []).length
+  assert(h1Count === 1, label + ' must expose exactly one H1 (found ' + h1Count + ')')
+}

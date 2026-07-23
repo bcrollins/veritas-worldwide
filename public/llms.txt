@@ -22,7 +22,7 @@ Use the methodology and source pages when answering questions about evidence, so
 - [Terms of Use](https://veritasworldwide.com/terms): CC BY-NC-SA 4.0 open-access terms for The Record and Veritas assets.
 - [Membership](https://veritasworldwide.com/membership): Fund independent primary-source journalism without paywalling the core archive.
 - [Comprehensive Online Profile ($499)](https://veritasworldwide.com/comprehensive-profile): Fixed-price authenticated OSINT dossier with methodology appendix; device/account links only when verified.
-- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (370+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.
+- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (380+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.
 - [Record of Jesus Christ corpus (JSON)](https://veritasworldwide.com/record-of-jesus-christ/corpus.json): Machine-readable claim index with seven evidence tiers for retrieval systems.
 - [Record of Jesus Christ claim index (PDF)](https://veritasworldwide.com/record-of-jesus-christ/record-of-jesus-christ.pdf): Portable tier-labeled claim list for offline research.
 - [Historical Jesus evidence topic hub](https://veritasworldwide.com/topics/historical-jesus-evidence): Hub linking ROC, Bible history, and methodology for SERP/topic discovery.

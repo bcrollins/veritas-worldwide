@@ -236,7 +236,7 @@ export default function HomePage() {
                       The Record of Jesus Christ
                     </h3>
                     <p className="font-body text-sm text-ink-muted leading-relaxed max-w-3xl">
-                      370+ tier-labeled claims: cosmology as science, Second Temple sources, historical Jesus criteria, Nestle-Aland/ECM manuscript evidence, Levantine archaeology, and non-Christian attestation. JSON/CSV/PDF export. No advocacy. Entity attribution only.
+                      380+ tier-labeled claims: cosmology as science, Second Temple sources, historical Jesus criteria, Nestle-Aland/ECM manuscript evidence, Levantine archaeology, and non-Christian attestation. JSON/CSV/PDF export. No advocacy. Entity attribution only.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2 shrink-0">

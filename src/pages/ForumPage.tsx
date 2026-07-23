@@ -460,11 +460,11 @@ function PostDetail({ post, onBack, userId, actorLabel, onPostChange, onRequireA
               {post.locked && <span className="text-yellow-700 flex items-center gap-0.5 font-semibold"><LockIcon /> Locked</span>}
             </div>
 
-            {/* Title */}
-            <h1 className="font-display text-xl sm:text-2xl font-bold text-ink mb-3">
+            {/* Title — h2 so the page keeps a single document H1 (forum shell). */}
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-ink mb-3">
               {post.postFlair && <span className="inline-block px-2 py-0.5 rounded text-xs font-sans font-bold mr-2 align-middle" style={{ background: post.postFlair.bgColor, color: post.postFlair.textColor }}>{post.postFlair.text}</span>}
               {post.title}
-            </h1>
+            </h2>
 
             {/* Awards */}
             {totalAwards > 0 && (
@@ -1125,7 +1125,7 @@ export default function ForumPage() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <span className="text-xl">📰</span>
-          <h1 className="font-display text-xl font-bold text-ink">Veritas Forum Beta</h1>
+          <h1 className="font-display text-xl font-bold text-ink">Veritas Forum</h1>
         </div>
 
         {/* Search bar */}
