@@ -184,7 +184,8 @@ if (tokensJson?.colors?.evidence?.verified !== '#166534') bad('tokens.json evide
 else ok('tokens.json evidence colors present')
 
 // Optional live checks
-if (base) {
+async function liveChecks() {
+  if (!base) return
   console.log(`\nLive checks against ${base}`)
   const paths = [
     '/favicon.svg',
@@ -252,7 +253,30 @@ if (base) {
     if (!result.ok) bad(`live ${path} → ${result.error || result.status}`)
     else ok(`live ${path} → ${result.status}`)
   }
+
+  // Every platformAssets href must resolve live
+  if (manifest.platformAssets) {
+    const hrefs = new Set()
+    function walk(o) {
+      if (typeof o === 'string' && o.startsWith('/')) hrefs.add(o)
+      else if (Array.isArray(o)) o.forEach(walk)
+      else if (o && typeof o === 'object') Object.values(o).forEach(walk)
+    }
+    walk(manifest.platformAssets)
+    for (const path of [...hrefs].sort()) {
+      const url = `${base}${path}`
+      let result = await headOk(url)
+      if (!result.ok) {
+        await new Promise(r => setTimeout(r, 300))
+        result = await headOk(url)
+      }
+      if (!result.ok) bad(`platformAssets live ${path} → ${result.error || result.status}`)
+      else ok(`platformAssets live ${path} → ${result.status}`)
+    }
+  }
 }
+
+await liveChecks()
 
 console.log(failed === 0 ? '\nPASS brand kit verification' : `\nFAIL ${failed} check(s)`)
 process.exit(failed === 0 ? 0 : 1)
