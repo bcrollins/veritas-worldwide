@@ -21,11 +21,22 @@ export default function AdminDashboard() {
   const { chapters, loading } = useAllChapters()
   const [gaUrl, setGaUrl] = useState(localStorage.getItem('veritas_ga_url') || '')
   const [showGaInput, setShowGaInput] = useState(false)
+  const [brandVersion, setBrandVersion] = useState<string | null>(null)
   useEffect(() => {
     setStats(getSiteStats())
     const users = getAllUsers()
     setRecentUsers(users.slice(-5).reverse())
     setNewsletter(getNewsletterSubscribers())
+    let cancelled = false
+    void fetch('/brand-kit/manifest.json', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => {
+        if (!cancelled && data?.version) setBrandVersion(String(data.version))
+      })
+      .catch(() => {})
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   // Count media assets
@@ -169,9 +180,22 @@ export default function AdminDashboard() {
           <Link to="/admin/media" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Media Library
           </Link>
-          <Link to="/admin/brand-kit" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-crimson/10 text-crimson font-sans text-xs tracking-wide rounded hover:bg-crimson/20 transition-colors">
+          <Link to="/admin/brand-kit" className="inline-flex min-h-[44px] items-center gap-2 px-4 py-2 bg-crimson/10 text-crimson font-sans text-xs tracking-wide rounded hover:bg-crimson/20 transition-colors">
             Brand Kit Download
+            {brandVersion && (
+              <span className="rounded bg-crimson/20 px-1.5 py-0.5 font-mono text-[10px] text-crimson">
+                v{brandVersion}
+              </span>
+            )}
           </Link>
+          <a
+            href="/media-kit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors"
+          >
+            Public Media Kit ↗
+          </a>
           <Link to="/admin/social" className="inline-flex min-h-[44px] items-center px-4 py-2 bg-white/5 text-white/50 font-sans text-xs tracking-wide rounded hover:bg-white/10 transition-colors">
             Social Packs
           </Link>

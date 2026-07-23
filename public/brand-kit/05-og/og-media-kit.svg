@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Media kit Open Graph card">
+  <rect width="1200" height="630" fill="#FAF8F5"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="622" width="1200" height="8" fill="#8B1A1A"/>
+  <circle cx="140" cy="200" r="56" fill="none" stroke="#8B1A1A" stroke-width="5"/>
+  <text x="140" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#1A1A1A">V</text>
+  <text x="230" y="180" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="#8B1A1A">PRESS AND BRAND</text>
+  <text x="230" y="250" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#1A1A1A">Media Kit</text>
+  <text x="230" y="310" font-family="Georgia, serif" font-size="24" font-style="italic" fill="#666666">Logos · Social · Evidence tiers · Press templates</text>
+  <line x1="230" y1="350" x2="480" y2="350" stroke="#8B1A1A" stroke-width="2"/>
+  <text x="230" y="420" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="#666666">Ultimate Brand Kit ZIP · veritasworldwide.com/media-kit</text>
+  <text x="230" y="540" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="#B8860B">VERITAS WORLDWIDE PRESS</text>
+</svg>

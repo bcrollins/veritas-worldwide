@@ -97,7 +97,7 @@ export default function MediaKitPage() {
       description:
         'Download Veritas Worldwide Press logos, social banners, letterhead, and brand guidelines. Primary sources. Public record. Your conclusions.',
       url: `${SITE_URL}/media-kit`,
-      image: `${SITE_URL}/og-image.png`,
+      image: `${SITE_URL}/brand-kit/05-og/og-media-kit.png`,
     })
     setJsonLd([
       {

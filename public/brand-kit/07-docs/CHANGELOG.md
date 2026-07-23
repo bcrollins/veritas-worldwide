@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.0 — 2026-07-23
+## 2.9.1 — 2026-07-23
+- Dedicated Media Kit Open Graph card (05-og/og-media-kit)
+
+## 2.9.0
 - Bluesky banner, Discord invite card, citation card, correction notice HTML
 - Platform map expanded (Bluesky + Discord)
 

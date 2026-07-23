@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.0'
+const KIT_VERSION = '2.9.1'
 
 const C = {
   parchment: '#FAF8F5',
@@ -695,7 +695,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.0 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.1 — ${new Date().toISOString().slice(0, 10)}
+- Dedicated Media Kit Open Graph card (05-og/og-media-kit)
+
+## 2.9.0
 - Bluesky banner, Discord invite card, citation card, correction notice HTML
 - Platform map expanded (Bluesky + Discord)
 
@@ -945,6 +948,24 @@ function correctionNoticeHtml() {
     '</html>',
     '',
   ].join('\n')
+}
+
+
+function ogMediaKitSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Media kit Open Graph card">
+  <rect width="1200" height="630" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1200" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="622" width="1200" height="8" fill="${C.crimson}"/>
+  <circle cx="140" cy="200" r="56" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="140" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="52" font-weight="700" fill="${C.ink}">V</text>
+  <text x="230" y="180" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="${C.crimson}">PRESS AND BRAND</text>
+  <text x="230" y="250" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.ink}">Media Kit</text>
+  <text x="230" y="310" font-family="Georgia, serif" font-size="24" font-style="italic" fill="${C.inkMuted}">Logos · Social · Evidence tiers · Press templates</text>
+  <line x1="230" y1="350" x2="480" y2="350" stroke="${C.crimson}" stroke-width="2"/>
+  <text x="230" y="420" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="${C.inkMuted}">Ultimate Brand Kit ZIP · veritasworldwide.com/media-kit</text>
+  <text x="230" y="540" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+</svg>`
 }
 
 function brandVoiceMd() {
@@ -1250,6 +1271,7 @@ function main() {
   writeFileSync(join(KIT, '04-social', 'SOCIAL-ASSET-MATRIX.md'), socialAssetMatrixMd())
 
   writeSvg('05-og/og-image.svg', ogImage())
+  writeSvg('05-og/og-media-kit.svg', ogMediaKitSvg())
 
   writeFileSync(join(KIT, '06-tokens', 'tokens.json'), tokensJson() + '\n')
   writeFileSync(join(KIT, '06-tokens', 'color-palette.svg'), colorPalette() + '\n')
@@ -1347,6 +1369,7 @@ Editorial and licensing: rights@veritasworldwide.com
     ['02-icons/favicon.svg', '02-icons/favicon-16.png', 16],
     ['04-social/social-profile.svg', '04-social/social-profile-400.png', 400],
     ['05-og/og-image.svg', '05-og/og-image.png', 1200],
+    ['05-og/og-media-kit.svg', '05-og/og-media-kit.png', 1200],
     ['03-wordmarks/wordmark.svg', '03-wordmarks/wordmark.png', 720],
     ['09-templates/letterhead.svg', '09-templates/letterhead.png', 850],
     ['09-templates/press-release-header.svg', '09-templates/press-release-header.png', 1200],
@@ -1430,6 +1453,7 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Apple touch icon (PNG)', href: '/brand-kit/02-icons/apple-touch-icon.png' },
       { label: 'Wordmark (SVG)', href: '/brand-kit/03-wordmarks/wordmark.svg' },
       { label: 'OG image (PNG)', href: '/brand-kit/05-og/og-image.png' },
+      { label: 'Media kit OG (PNG)', href: '/brand-kit/05-og/og-media-kit.png' },
       { label: 'X banner (SVG)', href: '/brand-kit/04-social/social-banner-x.svg' },
       { label: 'IG story (SVG)', href: '/brand-kit/04-social/story-1080x1920.svg' },
       { label: 'Quote card (SVG)', href: '/brand-kit/04-social/quote-card.svg' },
