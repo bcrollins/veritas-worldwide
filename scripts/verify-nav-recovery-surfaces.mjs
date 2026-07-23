@@ -452,4 +452,26 @@ const sticky = read('src/components/StickyMembershipBar.tsx')
 assert(sticky.includes('3.75rem') && sticky.includes('env(safe-area-inset-bottom)'), 'membership above tab safe-area')
 assert(sticky.includes('md:bottom-0'), 'membership desktop bottom-0')
 
+
+// ResearchHubChips mount breadth across research surfaces
+let researchMounts = 0
+for (const rel of [
+  'src/pages/MethodologyPage.tsx',
+  'src/pages/SourcesPage.tsx',
+  'src/pages/ContentPackPage.tsx',
+  'src/pages/ResearcherHubPage.tsx',
+  'src/pages/InstitutePage.tsx',
+  'src/pages/BibleHistoryPage.tsx',
+  'src/pages/RecordOfJesusChristPage.tsx',
+  'src/pages/VolumeIIHubPage.tsx',
+  'src/pages/PersonalTimelinePage.tsx',
+  'src/pages/InstituteBookPage.tsx',
+  'src/pages/InstituteMethodologyPage.tsx',
+  'src/pages/InstituteCoursePage.tsx',
+  'src/pages/InstituteGuidePage.tsx',
+]) {
+  if (read(rel).includes('ResearchHubChips')) researchMounts += 1
+}
+assert(researchMounts >= 12, `ResearchHubChips mounts ${researchMounts} < 12`)
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
