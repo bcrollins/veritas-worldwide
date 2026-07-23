@@ -205,7 +205,8 @@ assert(llms.includes('record-of-jesus-christ/corpus.json'), 'llms.txt missing co
 assert(llms.includes('record-of-jesus-christ.pdf'), 'llms.txt missing ROC PDF')
 assert(llms.includes('historical-jesus-evidence'), 'llms.txt missing historical-jesus topic hub')
 assert(
-  llms.includes('320+') ||
+  llms.includes('330+') ||
+    llms.includes('320+') ||
     llms.includes('300+') ||
     llms.includes('290+') ||
     llms.includes('280+') ||
