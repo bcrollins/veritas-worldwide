@@ -2493,4 +2493,26 @@ assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'per
 assert(read('server.js').includes('server-soft-404'), 'perpetual v8 server soft-404')
 
 
+
+// RelatedHubs platform perpetual densify lock v9
+assert(surfaces.length >= 102, `perpetual v9 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v9 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v9 emphasize')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v9 mobile tab bar')
+assert(read('src/App.tsx').includes('primaryLinks'), 'perpetual v9 primaryLinks')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v9 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v9 soft-404')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v9 search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v9 home')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'perpetual v9 Privacy')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'perpetual v9 Terms')
+assert(read('src/components/DossierHubSpokes.tsx').includes('DOSSIER_SPOKES'), 'perpetual v9 spokes')
+assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'perpetual v9 research chips')
+assert(read('src/pages/ProfilesIndexPage.tsx').includes('profiles-related-hubs'), 'perpetual v9 profiles')
+assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'perpetual v9 read')
+assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'perpetual v9 bernie')
+assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'perpetual v9 media-kit')
+assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'perpetual v9 bookmarks')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
