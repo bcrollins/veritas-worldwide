@@ -13,4 +13,4 @@ Veritas Worldwide is an independent investigative publisher. Our flagship work, 
 ## Evidence tiers (product)
 Verified · Circumstantial · Disputed — see `07-docs/EVIDENCE-TIERS.md`.
 
-Brand kit v2.9.7
+Brand kit v2.9.8

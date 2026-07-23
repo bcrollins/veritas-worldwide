@@ -1,4 +1,4 @@
-# Veritas Worldwide Press — Brand Kit v2.9.7
+# Veritas Worldwide Press — Brand Kit v2.9.8
 
 **Updated:** 2026-07-23  
 **Domain:** veritasworldwide.com  
@@ -71,6 +71,15 @@ Production surfaces ship the vector SVGs above (exact text, scalable). AI raster
 ## Download
 
 Admins: **/admin/brand-kit** → Download Ultimate Brand Kit (.zip)
+
+## Regenerate
+
+Run: npm run generate:brand-kit  
+Then: npm run verify:brand-kit  
+Live: BRAND_KIT_BASE_URL=https://veritasworldwide.com npm run verify:brand-kit
+
+Generator: scripts/generate-brand-kit.mjs  
+Verifier: scripts/verify-brand-kit.mjs (also runs on postbuild)
 
 ## Legal
 

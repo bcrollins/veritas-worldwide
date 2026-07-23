@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.7 — 2026-07-23
+## 2.9.8 — 2026-07-23
+- Brand guide regenerate + verify commands
+
+## 2.9.7
 - SOCIAL-ASSET-MATRIX lists Reddit banner + Reels safe-zone
 
 ## 2.9.6

@@ -1,7 +1,7 @@
 {
-  "version": "2.9.7",
+  "version": "2.9.8",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T08:00:24.186Z",
+  "generatedAt": "2026-07-23T08:06:56.301Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -315,6 +315,6 @@
       "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 1938146,
-  "zipSha256": "d2dec0f79555835a34175269c55c5f5a2e642e7f9be7a6adf3db4644d8a2f107"
+  "zipBytes": 1938513,
+  "zipSha256": "76ebc9cef9876decad0b30cf95f95b0e1a415b41431d828adfbb4850dbd5e66f"
 }

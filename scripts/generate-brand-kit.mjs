@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.7'
+const KIT_VERSION = '2.9.8'
 
 const C = {
   parchment: '#FAF8F5',
@@ -697,7 +697,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.7 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.8 — ${new Date().toISOString().slice(0, 10)}
+- Brand guide regenerate + verify commands
+
+## 2.9.7
 - SOCIAL-ASSET-MATRIX lists Reddit banner + Reels safe-zone
 
 ## 2.9.6
@@ -1279,6 +1282,15 @@ Production surfaces ship the vector SVGs above (exact text, scalable). AI raster
 ## Download
 
 Admins: **/admin/brand-kit** → Download Ultimate Brand Kit (.zip)
+
+## Regenerate
+
+Run: npm run generate:brand-kit  
+Then: npm run verify:brand-kit  
+Live: BRAND_KIT_BASE_URL=https://veritasworldwide.com npm run verify:brand-kit
+
+Generator: scripts/generate-brand-kit.mjs  
+Verifier: scripts/verify-brand-kit.mjs (also runs on postbuild)
 
 ## Legal
 
