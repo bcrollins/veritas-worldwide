@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:08:28.006Z",
-  "claimCount": 597,
+  "generatedAt": "2026-07-23T11:11:36.771Z",
+  "claimCount": 606,
   "tierHistogram": {
-    "well_attested": 242,
-    "verified": 214,
+    "well_attested": 248,
+    "verified": 216,
     "contested": 48,
-    "interpretive": 63,
+    "interpretive": 64,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -199,6 +199,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-hezekiah-lmlk-distribution",
+      "claim": "Spatial distribution of lmlk jar handles concentrates in late-8th-century Judahite sites, supporting royal administrative networks under Assyrian pressure.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave56.ts"
     },
     {
       "id": "ane-hezekiah-tunnel-inscription-language",
@@ -887,6 +894,13 @@
       "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
+      "id": "arch-tiberias-cardo-roman",
+      "claim": "Tiberias excavations include Roman street systems and public architecture reflecting the city’s role as a lakeside urban center after Antipas’s foundation.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave56.ts"
+    },
+    {
       "id": "arch-tiberias-gate-complex",
       "claim": "Tiberias excavations document city gates, streets, and public architecture of the Antipas foundation and later Roman phases on the western Sea of Galilee shore.",
       "tier": "verified",
@@ -1060,6 +1074,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
+      "id": "cosmo-dark-energy-w0",
+      "claim": "Cosmological fits commonly parameterize dark energy’s equation of state today as w0; current data are consistent with a cosmological constant (w ≈ −1) within uncertainties, while Stage-IV surveys test deviations.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave56.ts"
     },
     {
       "id": "cosmo-dark-matter-omega-c",
@@ -1438,6 +1459,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ec-didache-baptism-rules",
+      "claim": "The Didache’s baptism instructions (running water preference, trine immersion alternatives) preserve early Christian ritual diversity before later liturgical standardization.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave56.ts"
     },
     {
       "id": "ec-didache-eucharist",
@@ -2322,6 +2350,13 @@
       "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
+      "id": "hj-table-fellowship-sinners-limits",
+      "claim": "Open table fellowship with “sinners” is widely accepted as historical practice, but reconstructing exact social boundaries and later church expansions of the motif requires caution.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave56.ts"
+    },
+    {
       "id": "hj-tax-collectors",
       "claim": "Association with tax collectors / toll collectors is multiply attested and often treated as historically characteristic of Jesus’ social practice (table fellowship theme).",
       "tier": "well_attested",
@@ -2516,6 +2551,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave32.ts"
+    },
+    {
+      "id": "mod-ehrman-did-jesus-exist",
+      "claim": "Bart Ehrman’s Did Jesus Exist? argues against mythicist denial of a historical Jesus using standard historical methods — a widely cited popular-scholarly intervention in the existence debate.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave56.ts"
     },
     {
       "id": "mod-ehrman-forged-debates",
@@ -2873,6 +2915,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-josephus-ant20-james-context",
+      "claim": "Josephus Ant. 20.200 places James’s death in a high-priestly succession conflict under Albinus — political context that frames the “brother of Jesus called Christ” notice.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave56.ts"
     },
     {
       "id": "nc-josephus-james-minimal",
@@ -3412,6 +3461,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave39.ts"
+    },
+    {
+      "id": "nt-georgian-version",
+      "claim": "The Georgian version of the NT is an early Caucasian versional tradition that contributes independent readings to the critical apparatus in selected units.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave56.ts"
     },
     {
       "id": "nt-gospel-dates",
@@ -4056,6 +4112,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave51.ts"
+    },
+    {
+      "id": "st-philo-special-laws",
+      "claim": "Philo’s Special Laws treatises expound Torah commandments for a Hellenistic Jewish audience, combining literal and allegorical exegesis.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave56.ts"
     },
     {
       "id": "st-pompey-63",

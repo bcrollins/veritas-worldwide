@@ -1,12 +1,12 @@
 # Path to 10.0 — Record of Jesus Christ Surface
 
-**Current verified baseline (2026-07-23 Interval 49 / Wave 50):** ~9.98 / 10 for core evidentiary surface.
+**Current verified baseline (2026-07-23 Interval 49 / Wave 56):** ~9.98 / 10 for core evidentiary surface.
 
 | Dimension | Score | Notes |
 |-----------|------:|-------|
 | Evidence rigor / tiers | 9.4 | Seven-tier + proofVsConcept on every claim |
 | Citation integrity | 9.0 | Primary/peer/critical-edition paths; ECM/CBGM + Comma + Byzantine-priority + orthodox-corruption debate |
-| Completeness of corpus | 9.4 | 552 claims waves 3–46 (500+ milestone; auto-discover export; dual taxonomy documented) |
+| Completeness of corpus | 9.4 | 606 claims waves 3–46 (500+ milestone; auto-discover export; dual taxonomy documented) |
 | Researcher tools | 9.1 | JSON/CSV export, cite-as, PDF, corpus.json, Dataset schema, HowTo |
 | Discoverability | 9.05 | Home card 170+, llms 180+, sitemap, OG, FAQ/Book/HowTo/Dataset + NT figure |
 | A11y / print | 8.5 | Skip link, 44px targets, print CSS |
