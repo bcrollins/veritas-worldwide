@@ -108,4 +108,18 @@ const appShell = read('src/App.tsx')
 assert(!/label:\s*['"]More['"]/.test(appShell), 'Banned More junk drawer')
 assert(!/label:\s*['"]Misc['"]/.test(appShell), 'Banned Misc junk drawer')
 
+
+// Capability preservation routes reachable in shell
+const app = read('src/App.tsx')
+for (const route of [
+  '/researcher',
+  '/volume-ii',
+  '/record-of-jesus-christ',
+  '/bible',
+  '/comprehensive-profile',
+  '/membership',
+]) {
+  assert(app.includes(route), `shell retains ${route}`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
