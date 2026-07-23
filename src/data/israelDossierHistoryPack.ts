@@ -1952,6 +1952,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 16 },
   },
 
+  {
+    id: 'houthi-red-sea-campaign-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['joe-biden', 'donald-trump', 'benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Houthi Red Sea Shipping Attacks (2023–2025)',
+    date: 'October 2023 – 2025',
+    location: 'Red Sea / Bab el-Mandeb approaches',
+    summary:
+      'Yemen\'s Houthi movement attacked commercial shipping and military vessels in the Red Sea corridor, citing solidarity with Gaza. Multi-source reporting documents vessel hits, crew casualties, trade disruption, and a U.S.-led military response (Operation Prosperity Guardian / subsequent strikes). Included for regional war chronology linked to the Gaza war.',
+    evidence:
+      'IMO/shipping industry incident tallies, multi-outlet maritime reporting, and U.S./UK military statements establish the campaign\'s scale and the coalition military response. Casualty and economic-impact figures remain multi-source.',
+    sources: [
+      { label: 'U.S. DoD / CENTCOM Red Sea statements', url: 'https://www.defense.gov' },
+      { label: 'Multi-outlet Red Sea shipping attack coverage', url: 'https://apnews.com' },
+      { label: 'UN materials on Yemen / Red Sea security', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'DoD public materials', url: 'https://www.defense.gov' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 10 },
+  },
+
+
 
 
 
@@ -2715,6 +2743,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['damascus-iranian-consulate-2024', 'iran-missile-barrage-april-2024'],
     tags: ['syria', 'iran', 'irgc'],
+  },
+
+  {
+    id: 'tl-houthi-red-sea-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Houthi Red Sea Shipping Attacks Begin',
+    description: 'Houthi attacks on Red Sea shipping linked to Gaza war; U.S.-led naval response follows.',
+    source: 'DoD / multi-outlet',
+    sourceUrl: 'https://www.defense.gov',
+    tier: 'verified',
+    relatedIncidentIds: ['houthi-red-sea-campaign-2023-2025'],
+    tags: ['yemen', 'red-sea', 'shipping', 'united-states'],
   },
 
 ]

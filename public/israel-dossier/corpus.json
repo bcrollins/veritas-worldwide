@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:55:05.817Z",
+  "generatedAt": "2026-07-23T07:56:27.988Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 87,
-    "timelineEvents": 75,
+    "incidents": 88,
+    "timelineEvents": 76,
     "actors": 47,
     "moneyTrailNodes": 28,
-    "historicalWarCrimesPack": 73,
+    "historicalWarCrimesPack": 74,
     "legalCases": 18,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 27
+      "post-oct7": 28
     },
     "incidentsByTier": {
-      "verified": 85,
+      "verified": 86,
       "circumstantial": 2
     },
     "childrenTagged": 73,
-    "civiliansTagged": 85,
+    "civiliansTagged": 86,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3014,6 +3014,25 @@
         "settler-violence",
         "west-bank",
         "pattern-record"
+      ]
+    },
+    {
+      "id": "tl-houthi-red-sea-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Houthi Red Sea Shipping Attacks Begin",
+      "description": "Houthi attacks on Red Sea shipping linked to Gaza war; U.S.-led naval response follows.",
+      "source": "DoD / multi-outlet",
+      "sourceUrl": "https://www.defense.gov",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "houthi-red-sea-campaign-2023-2025"
+      ],
+      "tags": [
+        "yemen",
+        "red-sea",
+        "shipping",
+        "united-states"
       ]
     },
     {
@@ -6089,6 +6108,52 @@
       "tier": "verified",
       "casualties": {
         "killed": 62
+      }
+    },
+    {
+      "id": "houthi-red-sea-campaign-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "joe-biden",
+        "donald-trump",
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Houthi Red Sea Shipping Attacks (2023–2025)",
+      "date": "October 2023 – 2025",
+      "location": "Red Sea / Bab el-Mandeb approaches",
+      "summary": "Yemen's Houthi movement attacked commercial shipping and military vessels in the Red Sea corridor, citing solidarity with Gaza. Multi-source reporting documents vessel hits, crew casualties, trade disruption, and a U.S.-led military response (Operation Prosperity Guardian / subsequent strikes). Included for regional war chronology linked to the Gaza war.",
+      "evidence": "IMO/shipping industry incident tallies, multi-outlet maritime reporting, and U.S./UK military statements establish the campaign's scale and the coalition military response. Casualty and economic-impact figures remain multi-source.",
+      "sources": [
+        {
+          "label": "U.S. DoD / CENTCOM Red Sea statements",
+          "url": "https://www.defense.gov"
+        },
+        {
+          "label": "Multi-outlet Red Sea shipping attack coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UN materials on Yemen / Red Sea security",
+          "url": "https://www.un.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "DoD public materials",
+          "url": "https://www.defense.gov"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 10
       }
     },
     {
