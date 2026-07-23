@@ -1747,6 +1747,33 @@ export const ISRAEL_DOSSIER_LOBBYING_DATA: DossierLobbyingRecord[] = [
     sourceUrl: 'https://www.opensecrets.org/industries/indus?ind=Q05',
     note: 'The pro-Israel lobby was the single largest source of PAC spending in the 2024 federal election cycle',
   },
+  {
+    organization: 'J Street PAC',
+    amount: '~$6.7M',
+    cycle: '2023–2024 cycle',
+    recipients: 'Predominantly Democratic candidates (progressive pro-Israel / two-state frame)',
+    source: 'OpenSecrets',
+    sourceUrl: 'https://www.opensecrets.org/orgs/j-street/summary?id=D000046951',
+    note: 'Progressive counter-pole within pro-Israel politics — conditionality-friendly relative to AIPAC UDP orthodoxy',
+  },
+  {
+    organization: 'Republican Jewish Coalition',
+    amount: '~$5.6M',
+    cycle: '2023–2024 cycle',
+    recipients: 'Predominantly Republican federal candidates',
+    source: 'OpenSecrets / FEC (chapter-14 synthesis scale)',
+    sourceUrl: 'https://www.opensecrets.org/orgs/republican-jewish-coalition/summary?id=D000000304',
+    note: 'GOP-side electoral enablement counterpart to Democratic DMFI/UDP vehicles',
+  },
+  {
+    organization: 'NORPAC',
+    amount: '~$1.7M',
+    cycle: '2023–2024 cycle',
+    recipients: 'Bipartisan federal candidates (NJ-rooted pro-Israel PAC)',
+    source: 'OpenSecrets / FEC',
+    sourceUrl: 'https://www.opensecrets.org/orgs/norpac/summary?id=D000000440',
+    note: 'Long-running bipartisan bundler/PAC layer on the full-spectrum lobby map',
+  },
 ]
 
 export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [

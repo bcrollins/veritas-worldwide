@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:00:29.817Z",
+  "generatedAt": "2026-07-23T08:02:51.810Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -10,7 +10,7 @@
     "moneyTrailNodes": 29,
     "historicalWarCrimesPack": 76,
     "legalCases": 19,
-    "lobbyingRecords": 4,
+    "lobbyingRecords": 7,
     "incidentsByEra": {
       "mandate-1948": 3,
       "1948-1967": 6,
@@ -7523,6 +7523,33 @@
       "source": "OpenSecrets aggregate analysis",
       "sourceUrl": "https://www.opensecrets.org/industries/indus?ind=Q05",
       "note": "The pro-Israel lobby was the single largest source of PAC spending in the 2024 federal election cycle"
+    },
+    {
+      "organization": "J Street PAC",
+      "amount": "~$6.7M",
+      "cycle": "2023–2024 cycle",
+      "recipients": "Predominantly Democratic candidates (progressive pro-Israel / two-state frame)",
+      "source": "OpenSecrets",
+      "sourceUrl": "https://www.opensecrets.org/orgs/j-street/summary?id=D000046951",
+      "note": "Progressive counter-pole within pro-Israel politics — conditionality-friendly relative to AIPAC UDP orthodoxy"
+    },
+    {
+      "organization": "Republican Jewish Coalition",
+      "amount": "~$5.6M",
+      "cycle": "2023–2024 cycle",
+      "recipients": "Predominantly Republican federal candidates",
+      "source": "OpenSecrets / FEC (chapter-14 synthesis scale)",
+      "sourceUrl": "https://www.opensecrets.org/orgs/republican-jewish-coalition/summary?id=D000000304",
+      "note": "GOP-side electoral enablement counterpart to Democratic DMFI/UDP vehicles"
+    },
+    {
+      "organization": "NORPAC",
+      "amount": "~$1.7M",
+      "cycle": "2023–2024 cycle",
+      "recipients": "Bipartisan federal candidates (NJ-rooted pro-Israel PAC)",
+      "source": "OpenSecrets / FEC",
+      "sourceUrl": "https://www.opensecrets.org/orgs/norpac/summary?id=D000000440",
+      "note": "Long-running bipartisan bundler/PAC layer on the full-spectrum lobby map"
     }
   ],
   "eraMeta": {

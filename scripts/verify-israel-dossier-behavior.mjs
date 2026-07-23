@@ -404,7 +404,7 @@ async function runInteractiveChecks(browser) {
     assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 48, 'corpus.json timeline too few')
     assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 29, 'corpus.json moneyTrail too few')
     assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 19, 'corpus.json legalCases too few')
-    assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 3, 'corpus.json lobbying too few')
+    assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 6, 'corpus.json lobbying too few')
     assert(corpus?.counts?.incidentsByEra && typeof corpus.counts.incidentsByEra === 'object', 'corpus.json missing incidentsByEra breakdown')
     assert(corpus?.counts?.actorsByCategory && typeof corpus.counts.actorsByCategory === 'object', 'corpus.json missing actorsByCategory breakdown')
     assert(
