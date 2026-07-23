@@ -79,6 +79,14 @@ const tools = [
     external: true,
   },
   {
+    to: '/israel-dossier/visual-investigations.json',
+    title: 'Israel visual investigations (JSON)',
+    blurb:
+      'Machine index of civilian-harm incidents with multi-source video/photo/investigation links. Dual-cite floors. Also bundled in the offline research pack.',
+    privacy: 'public · rate-limited · entity publisher',
+    external: true,
+  },
+  {
     to: '/israel-dossier/briefing',
     title: 'Israel public briefing',
     blurb: 'Source-boundary briefing with open questions, confidence limits, and archive pins.',

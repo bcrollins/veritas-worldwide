@@ -355,4 +355,12 @@ assert(
   'Israel soft-floor or corpus required',
 )
 
+
+// Wave2 — researcher hub discovers visual-investigations machine index
+const researcherHub = read('src/pages/ResearcherHubPage.tsx')
+assert(
+  researcherHub.includes('/israel-dossier/visual-investigations.json'),
+  'Researcher hub must list visual-investigations.json for GEO/researcher discovery',
+)
+
 console.log(`[verify:top100-floors] PASS — ${failures.length === 0 ? 'all' : ''} Top-100 remaining floors green`)
