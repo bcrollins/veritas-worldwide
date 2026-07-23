@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:57:35.454Z",
+  "generatedAt": "2026-07-23T08:58:20.182Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 126,
-    "timelineEvents": 114,
+    "incidents": 127,
+    "timelineEvents": 115,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 112,
+    "historicalWarCrimesPack": 113,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 66
+      "post-oct7": 67
     },
     "incidentsByTier": {
-      "verified": 124,
+      "verified": 125,
       "circumstantial": 2
     },
     "childrenTagged": 103,
-    "civiliansTagged": 124,
+    "civiliansTagged": 125,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3834,6 +3834,27 @@
       "source": "Israeli Ministry of Foreign Affairs / Gaza MoH / Lancet",
       "sourceUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
       "tier": "verified"
+    },
+    {
+      "id": "tl-oct7-sexual-violence-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "October 7 Conflict-Related Sexual Violence",
+      "description": "UN SRSG multi-source findings of sexual violence during the October 7 multi-site attacks on Israeli civilians.",
+      "source": "UN SRSG / multi-outlet / forensic materials",
+      "sourceUrl": "https://www.un.org/sexualviolenceinconflict/",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "oct7-sexual-violence-pattern-2023",
+        "oct7-hamas-attack-2023",
+        "october-7-nova-festival-2023"
+      ],
+      "tags": [
+        "sexual-violence",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
     },
     {
       "id": "tl-oct7-hostages-2023",
@@ -8463,6 +8484,47 @@
           "type": "document",
           "label": "UNIFIL public materials",
           "url": "https://unifil.unmissions.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "oct7-sexual-violence-pattern-2023",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "un-finding",
+      "title": "October 7 Conflict-Related Sexual Violence Pattern",
+      "date": "October 7, 2023 (and contemporaneous multi-site documentation window)",
+      "location": "Southern Israel attack sites (Nova festival, kibbutzim, roads)",
+      "summary": "UN Special Representative on Sexual Violence in Conflict, Israeli forensic authorities, and multi-source investigative reporting document conflict-related sexual violence during the October 7 attacks — including rape and sexualized violence against civilians. Pattern card for CRSV as a distinct civilian-targeting crime within the October 7 multi-site assault record. Inclusion is required for a non-selective war-crimes dossier.",
+      "evidence": "UN SRSG Pramila Patten mission findings, multi-source forensic and witness reporting, and contemporaneous investigative journalism establish multi-source sexual violence during the attacks. Exact case counts remain incomplete; multi-source documentation that CRSV occurred is the claim.",
+      "sources": [
+        {
+          "label": "UN SRSG on Sexual Violence in Conflict — mission findings",
+          "url": "https://www.un.org/sexualviolenceinconflict/"
+        },
+        {
+          "label": "Multi-outlet forensic / investigative coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government / forensic public materials",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UN sexual violence in conflict materials",
+          "url": "https://www.un.org/sexualviolenceinconflict/"
         }
       ],
       "tier": "verified",

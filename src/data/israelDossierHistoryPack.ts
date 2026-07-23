@@ -3006,6 +3006,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'oct7-sexual-violence-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'un-finding',
+    title: 'October 7 Conflict-Related Sexual Violence Pattern',
+    date: 'October 7, 2023 (and contemporaneous multi-site documentation window)',
+    location: 'Southern Israel attack sites (Nova festival, kibbutzim, roads)',
+    summary:
+      'UN Special Representative on Sexual Violence in Conflict, Israeli forensic authorities, and multi-source investigative reporting document conflict-related sexual violence during the October 7 attacks — including rape and sexualized violence against civilians. Pattern card for CRSV as a distinct civilian-targeting crime within the October 7 multi-site assault record. Inclusion is required for a non-selective war-crimes dossier.',
+    evidence:
+      'UN SRSG Pramila Patten mission findings, multi-source forensic and witness reporting, and contemporaneous investigative journalism establish multi-source sexual violence during the attacks. Exact case counts remain incomplete; multi-source documentation that CRSV occurred is the claim.',
+    sources: [
+      { label: 'UN SRSG on Sexual Violence in Conflict — mission findings', url: 'https://www.un.org/sexualviolenceinconflict/' },
+      { label: 'Multi-outlet forensic / investigative coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government / forensic public materials', url: 'https://www.gov.il' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UN sexual violence in conflict materials', url: 'https://www.un.org/sexualviolenceinconflict/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4309,6 +4336,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['rockets', 'hezbollah', 'civilians', 'children', 'israel'],
   },
+
+  {
+    id: 'tl-oct7-sexual-violence-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Conflict-Related Sexual Violence',
+    description: 'UN SRSG multi-source findings of sexual violence during the October 7 multi-site attacks on Israeli civilians.',
+    source: 'UN SRSG / multi-outlet / forensic materials',
+    sourceUrl: 'https://www.un.org/sexualviolenceinconflict/',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-sexual-violence-pattern-2023',
+      'oct7-hamas-attack-2023',
+      'october-7-nova-festival-2023',
+    ],
+    tags: ['sexual-violence', 'civilians', 'terrorism', 'israel'],
+  },
+
 
 
 
