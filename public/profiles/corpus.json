@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:28:14.635Z",
+  "generatedAt": "2026-07-23T10:31:28.790Z",
   "count": 96,
   "profiles": [
     {
@@ -1233,9 +1233,9 @@
         "Tech Monopoly",
         "Social Media"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "elon-musk",
@@ -1791,9 +1791,9 @@
         "Military Intelligence",
         "Trump Critic"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "erik-prince",

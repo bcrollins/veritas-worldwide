@@ -8444,7 +8444,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2020'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'zuckerberg-we-dont-sell-data-absolute-2018',
+        statement:
+          'Repeatedly claimed “we don’t sell your data” as an absolute description of Facebook’s business model during the Cambridge Analytica scandal period.',
+        saidAt: '2018 (congressional testimony and public remarks)',
+        context: 'Defense of Facebook’s ad model after Cambridge Analytica and privacy scrutiny.',
+        whyFalse:
+          'Facebook’s business is selling targeted advertising based on extensive user-data profiles and behavioral tracking. While Facebook may not “sell” raw data files as a product SKU, the absolute “we don’t sell your data” framing is misleading to how user data is monetized — a distinction FactCheck.org and multi-outlet fact-checks documented as central to the controversy.',
+        correction:
+          'Facebook monetizes user data via targeted ads; absolute “we don’t sell data” understates how data is commercially exploited.',
+        statementSource: 'Zuckerberg congressional testimony / public remarks 2018 (multi-outlet capture)',
+        statementUrl: 'https://www.congress.gov',
+        debunkSource: 'FactCheck.org / multi-outlet analysis of Facebook data monetization vs “don’t sell data” claim',
+        debunkUrl: 'https://www.factcheck.org/2018/04/facebook-data-privacy/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'zuckerberg-cambridge-analytica-not-a-data-breach-framing-2018',
+        statement:
+          'Framed Cambridge Analytica as not a “data breach” / as merely an app developer policy violation — minimizing unauthorized harvesting of tens of millions of profiles.',
+        saidAt: 'March–April 2018',
+        context: 'Public and congressional responses after Guardian/NYT Cambridge Analytica reporting.',
+        whyFalse:
+          'Cambridge Analytica obtained data on tens of millions of Facebook users without their meaningful consent via a third-party app and friends-network permissions Facebook allowed. Calling it “not a breach” in the ordinary security sense may be technically narrow, but the absolute minimization that nothing improper at scale occurred was false to the FTC settlement record and Facebook’s later admissions of platform failure.',
+        correction:
+          'Facebook later faced FTC and multi-jurisdiction consequences for platform failures enabling large-scale improper data harvesting; absolute minimization was false to that record.',
+        statementSource: 'Zuckerberg March–April 2018 public framing of Cambridge Analytica (multi-outlet capture)',
+        statementUrl: 'https://www.nytimes.com/2018/03/17/us/politics/cambridge-analytica-trump-campaign.html',
+        debunkSource: 'FTC Facebook settlement / multi-outlet Cambridge Analytica investigation record',
+        debunkUrl: 'https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'zuckerberg-russian-ads-small-and-insignificant-2017',
+        statement:
+          'Initially downplayed Russian election interference on Facebook as a small / insignificant ad spend relative to the overall election information environment.',
+        saidAt: '2016–2017',
+        context: 'Early public responses to Russian IRA activity on Facebook before full disclosures.',
+        whyFalse:
+          'Facebook later disclosed IRA activity reaching tens of millions of Americans (ads plus organic content). Initial “small and insignificant” framing understated scale relative to Facebook’s own later disclosures and the Mueller/IRA indictments.',
+        correction:
+          'Russian IRA activity on Facebook was larger than early public minimization; Facebook’s later disclosures documented tens of millions of Americans reached.',
+        statementSource: 'Zuckerberg early post-2016 public minimization of Russian Facebook activity',
+        statementUrl: 'https://www.facebook.com',
+        debunkSource: 'Facebook IRA disclosures; Mueller IRA indictment; multi-outlet synthesis',
+        debunkUrl: 'https://www.justice.gov/file/1007271/download',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'elon-musk',
@@ -10750,7 +10804,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2017'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'clapper-no-bulk-collection-senate-2013',
+        statement:
+          'When asked by Sen. Ron Wyden whether the NSA collects “any type of data at all on millions or hundreds of millions of Americans,” answered “No, sir” / “Not wittingly.”',
+        saidAt: 'March 12, 2013',
+        context: 'Open Senate Select Committee on Intelligence hearing; Wyden had provided the question in advance.',
+        whyFalse:
+          'Snowden disclosures and subsequent official acknowledgments established that the NSA was conducting bulk telephony metadata collection under Section 215. Clapper later wrote that his answer was “clearly erroneous” and described it as the “least untruthful” formulation he could offer in open session — admitting the “no” answer was not true.',
+        correction:
+          'The NSA was collecting bulk telephony metadata on Americans; the absolute “No, sir” answer was false.',
+        statementSource: 'SSCI open hearing Mar 12, 2013 (Wyden–Clapper exchange; C-SPAN/transcript)',
+        statementUrl: 'https://www.c-span.org/video/?c4458709/user-clip-sen-wyden-questions-dni-clapper',
+        debunkSource: 'Clapper June 2013 letter to SSCI acknowledging “clearly erroneous” answer; ODNI bulk-collection acknowledgments',
+        debunkUrl: 'https://www.intelligence.senate.gov/sites/default/files/documents/clapper-letter.pdf',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'clapper-least-untruthful-reframing-not-false-2013',
+        statement:
+          'Publicly reframed the Senate “No, sir” answer as merely the “least untruthful” / incomplete formulation rather than a false statement under questioning.',
+        saidAt: 'June 2013 (NBC Meet the Press and related interviews)',
+        context: 'Post-Snowden defense of his March Senate testimony.',
+        whyFalse:
+          'Calling a categorical “No” to bulk collection the “least untruthful” answer still concedes the original answer was not true. The bulk program existed; the testimony falsehood stands regardless of later spin about classification constraints.',
+        correction:
+          'A categorical denial of bulk collection was false to the program that existed; “least untruthful” does not convert a false “no” into a true answer.',
+        statementSource: 'Clapper NBC Meet the Press / multi-outlet June 2013 remarks',
+        statementUrl: 'https://www.nbcnews.com/news/world/intel-chief-clapper-apologizes-erroneous-nsa-answer-flna6c10374788',
+        debunkSource: 'Clapper SSCI letter admitting clearly erroneous answer; Section 215 bulk program record',
+        debunkUrl: 'https://www.intelligence.senate.gov/sites/default/files/documents/clapper-letter.pdf',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'clapper-not-under-oath-excuse-overstated',
+        statement:
+          'Implied the open-session answer should be judged less harshly because of classification constraints / open-session limits — minimizing the falsehood relative to the clear “No, sir” on the record.',
+        saidAt: '2013–2014',
+        context: 'Public defenses after the Wyden exchange became a national controversy.',
+        whyFalse:
+          'Wyden had given advance notice of the question precisely so Clapper could prepare a truthful open-session answer or take it offline. The categorical “No” was a choice, not an inevitable classification trap; Clapper’s own letter called it clearly erroneous.',
+        correction:
+          'Advance notice existed; the categorical denial was Clapper’s choice and was later admitted as clearly erroneous.',
+        statementSource: 'Clapper public defenses of March 2013 testimony (2013–2014 multi-outlet capture)',
+        statementUrl: 'https://www.nbcnews.com/news/world/intel-chief-clapper-apologizes-erroneous-nsa-answer-flna6c10374788',
+        debunkSource: 'Wyden advance-notice record; Clapper SSCI apology letter',
+        debunkUrl: 'https://www.wyden.senate.gov/news/press-releases/wyden-statement-on-director-clappers-response',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'erik-prince',

@@ -142,6 +142,8 @@ const required = [
   'sam-bankman-fried',
   'david-petraeus',
   'erik-prince',
+  'james-clapper',
+  'mark-zuckerberg',
 ];
 const scores = {};
 for (const id of required) {
@@ -1087,8 +1089,45 @@ for (const f of (princeP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('prince dual-cite collision: ' + f.id);
 }
 
+
+// James Clapper densify gate (n≥3)
+const clapper = scores['james-clapper'];
+if (!clapper || clapper.n < 3) throw new Error('james-clapper needs ≥3 verified falsehoods, got ' + (clapper?.n ?? 0));
+if (clapper.score > 50) throw new Error('james-clapper score expected ≤50 after densify, got ' + clapper.score);
+const clapperP = getProfileBySlug('james-clapper');
+for (const id of [
+  'clapper-no-bulk-collection-senate-2013',
+  'clapper-least-untruthful-reframing-not-false-2013',
+  'clapper-not-under-oath-excuse-overstated',
+]) {
+  if (!(clapperP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('james-clapper missing docket id: ' + id);
+  }
+}
+for (const f of (clapperP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('clapper dual-cite collision: ' + f.id);
+}
+
+// Mark Zuckerberg densify gate (n≥3)
+const zuckS = scores['mark-zuckerberg'];
+if (!zuckS || zuckS.n < 3) throw new Error('mark-zuckerberg needs ≥3 verified falsehoods, got ' + (zuckS?.n ?? 0));
+if (zuckS.score > 50) throw new Error('mark-zuckerberg score expected ≤50 after densify, got ' + zuckS.score);
+const zuckP = getProfileBySlug('mark-zuckerberg');
+for (const id of [
+  'zuckerberg-we-dont-sell-data-absolute-2018',
+  'zuckerberg-cambridge-analytica-not-a-data-breach-framing-2018',
+  'zuckerberg-russian-ads-small-and-insignificant-2017',
+]) {
+  if (!(zuckP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('mark-zuckerberg missing docket id: ' + id);
+  }
+}
+for (const f of (zuckP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('zuckerberg dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 55) throw new Error('expected ≥55 compiled dockets, got ' + docketCount);
+if (docketCount < 57) throw new Error('expected ≥57 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
