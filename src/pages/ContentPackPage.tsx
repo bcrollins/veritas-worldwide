@@ -554,6 +554,50 @@ export default function ContentPackPage() {
         </div>
       </section>
 
+      {/* Free machine corpora — offline research pack */}
+      <section
+        className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-border"
+        data-testid="content-pack-research-pack-card"
+        aria-labelledby="content-pack-research-pack-heading"
+      >
+        <div className="rounded-sm border border-border bg-surface p-5 sm:p-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div className="min-w-0">
+            <p className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-ink-faint mb-2">
+              Free · Machine-readable
+            </p>
+            <h2 id="content-pack-research-pack-heading" className="font-display text-xl sm:text-2xl font-bold text-ink mb-2">
+              Offline research pack (ZIP)
+            </h2>
+            <p className="font-body text-sm text-ink-muted leading-relaxed max-w-2xl">
+              Single download of public JSON corpora — Power Profiles, Record of Jesus Christ, Israel
+              dossier (incl. visual investigations), evidence taxonomy, and soft floors. Entity
+              publisher only; rate-limited. Not the paid OSINT service.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 shrink-0">
+            <a
+              href="/research-pack.zip"
+              download="veritas-research-pack.zip"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-obsidian px-5 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-white hover:bg-crimson"
+            >
+              Download ZIP
+            </a>
+            <a
+              href="/research-pack-manifest.json"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border bg-parchment px-5 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson"
+            >
+              SHA-256 manifest
+            </a>
+            <Link
+              to="/researcher"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border bg-parchment px-5 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson"
+            >
+              Researcher tools
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Download All CTA */}
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap items-center gap-4 border-b border-border">
         <button

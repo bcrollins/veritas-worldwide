@@ -561,6 +561,67 @@ const healthResult = await fetchJson('/api/health')
         `content-disposition=${recordPdfDisposition || 'none'}`
       )
 
+      // Offline research pack (machine corpora ZIP) — dual-write dist + short cache + rate limit
+      const researchPackResult = await fetch(getUrl('/research-pack.zip'), {
+        method: 'HEAD',
+        headers: { 'Cache-Control': 'no-cache' },
+        signal: AbortSignal.timeout(timeoutMs),
+      })
+      const researchPackCache = (researchPackResult.headers.get('cache-control') || '').toLowerCase()
+      const researchPackDisposition = (
+        researchPackResult.headers.get('content-disposition') || ''
+      ).toLowerCase()
+      const researchPackRate =
+        researchPackResult.headers.get('ratelimit-limit') ||
+        researchPackResult.headers.get('x-ratelimit-limit') ||
+        ''
+      addCheck(
+        checks,
+        failures,
+        researchPackResult.ok,
+        'Offline research pack ZIP is publicly downloadable',
+        `HEAD /research-pack.zip returned ${researchPackResult.status}`,
+      )
+      addCheck(
+        checks,
+        failures,
+        researchPackResult.ok &&
+          !researchPackCache.includes('immutable') &&
+          (researchPackCache.includes('must-revalidate') || researchPackCache.includes('max-age=3600')),
+        'Research pack ZIP is not immutably year-cached',
+        `cache-control=${researchPackCache || 'none'}`,
+      )
+      addCheck(
+        checks,
+        failures,
+        researchPackResult.ok &&
+          researchPackDisposition.includes('attachment') &&
+          researchPackDisposition.includes('research-pack'),
+        'Research pack ZIP sets Content-Disposition attachment filename',
+        `content-disposition=${researchPackDisposition || 'none'}`,
+      )
+      addCheck(
+        checks,
+        failures,
+        researchPackResult.ok && Boolean(researchPackRate),
+        'Research pack ZIP emits rate-limit headers',
+        `ratelimit-limit=${researchPackRate || 'none'}`,
+      )
+      const researchPackManifest = await fetchJson('/research-pack-manifest.json')
+      const man = researchPackManifest.data
+      addCheck(
+        checks,
+        failures,
+        researchPackManifest.response.ok &&
+          man &&
+          typeof man === 'object' &&
+          man.publisher === 'Veritas Worldwide' &&
+          typeof man.sha256 === 'string' &&
+          man.sha256.length === 64,
+        'Research pack manifest is entity-only with SHA-256',
+        `status=${researchPackManifest.response.status} publisher=${man?.publisher || 'none'}`,
+      )
+
       const sitemapResult = await fetchText('/sitemap.xml')
       const sitemapText = sitemapResult.text || ''
       addCheck(

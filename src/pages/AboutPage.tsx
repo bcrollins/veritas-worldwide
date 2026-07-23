@@ -325,6 +325,7 @@ export default function AboutPage() {
                     { to: '/media-kit', label: 'Media Kit' },
                     { to: '/methodology', label: 'Methodology' },
                     { to: '/sources', label: 'Sources' },
+                    { to: '/researcher', label: 'Researcher tools' },
                     { to: '/institute', label: 'Veritas Institute' },
                     { to: '/institute/book', label: 'Field Manual' },
                     { to: '/membership', label: 'Membership' },
@@ -338,6 +339,14 @@ export default function AboutPage() {
                       → {link.label}
                     </Link>
                   ))}
+                  <a
+                    href="/research-pack.zip"
+                    className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson"
+                    download="veritas-research-pack.zip"
+                    data-testid="about-research-pack-zip"
+                  >
+                    → Offline research pack (ZIP)
+                  </a>
                   <a
                     href="/veritas-institute-field-manual.pdf"
                     className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson"

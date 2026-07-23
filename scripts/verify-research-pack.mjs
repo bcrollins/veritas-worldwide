@@ -64,6 +64,21 @@ assert(
   mediaKit.includes('/research-pack.zip') && mediaKit.includes('media-kit-research-pack-oneliner'),
   'Media kit must surface research pack one-liner for press',
 )
+const contentPack = read('src/pages/ContentPackPage.tsx')
+assert(
+  contentPack.includes('/research-pack.zip') && contentPack.includes('content-pack-research-pack-card'),
+  'Content pack must surface free research pack card',
+)
+const about = read('src/pages/AboutPage.tsx')
+assert(
+  about.includes('/research-pack.zip') && about.includes('about-research-pack-zip'),
+  'About key routes must link research pack zip',
+)
+const platformHealth = read('scripts/verify-platform-health.mjs')
+assert(
+  platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),
+  'platform health must HEAD research-pack.zip',
+)
 
 const llms = read('public/llms.txt')
 assert(llms.includes('research-pack'), 'llms.txt must index research pack')

@@ -78,6 +78,13 @@ async function main() {
   assert(man.path === '/research-pack.zip', 'manifest path')
   assert(typeof man.sha256 === 'string' && /^[a-f0-9]{64}$/i.test(man.sha256), 'manifest sha256')
   assert(Array.isArray(man.files) && man.files.length >= 5, 'manifest files thin')
+  // Prefer VI index once deployed; soft-warn only if lagging tip
+  const paths = (man.files || []).map((f) => f.path || f.archive || '')
+  if (!paths.some((p) => String(p).includes('visual-investigations'))) {
+    console.warn(
+      '[verify:live-research-pack] WARN manifest missing visual-investigations.json (likely deploy lag)',
+    )
+  }
 
   finish()
 }
