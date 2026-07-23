@@ -433,3 +433,21 @@ Expected: Continuous improvement loop.
 - [Google — Image sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/image-sitemaps)
 - [Google — FAQ structured data](https://developers.google.com/search/docs/appearance/structured-data/faqpage)
 - [Core Web Vitals](https://web.dev/articles/vitals)
+
+
+### Soft-404 completion (2026-07-23 continuation)
+
+Dynamic prefix gates now prevent homepage/indexable shells on junk slugs:
+
+| Prefix | Gate | Source of truth |
+| --- | --- | --- |
+| `/chapter/*` | `isKnownChapterSlug` | bot-meta chapter map (+ chapter-29) |
+| `/profile/*` | `isKnownProfileSlug` | `profiles/corpus.json` |
+| `/news/*` | `isKnownNewsSlug` | `news/meta.json` |
+| `/topics/*` | `isKnownTopicSlug` | `topicHubs.json` |
+| `/institute/courses|guides/*` | `isKnownInstituteSlug` | `instituteCatalog.ts` slugs |
+| unknown paths | soft-404 SPA | `isKnownSpaRoute` + `buildNotFoundHtml` |
+
+Transactional/utility noindex (Googlebot): `/admin`, success shells, `/search`, `/bookmarks`, `/bernie`.
+
+Regression: `npm run verify:live-bot-noindex` (noindex surfaces + soft-404 matrix).
