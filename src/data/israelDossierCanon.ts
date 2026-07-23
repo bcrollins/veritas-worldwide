@@ -1285,6 +1285,19 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     relatedProfileIds: ['joe-biden', 'donald-trump', 'benjamin-netanyahu', 'antony-blinken'],
   },
 
+  {
+    id: 'israel-emergency-supplemental-14b',
+    label: 'Israel Emergency Supplemental (~\$14.3B request track)',
+    amount: '~\$14.3B (request/package track pre-consolidation)',
+    type: 'legislation',
+    date: '2023–2024',
+    detail:
+      'Post–October 7 White House/Congress emergency Israel security assistance request track (~\$14.3B scale in public reporting) that fed into the larger supplemental architecture culminating in H.R.815 and related packages. Distinct from the annual MOU baseline — wartime emergency enablement layered on top of the \$3.8B/year floor.',
+    sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
+    children: ['hr815', 'oct7-emergency-arms-surge', 'iron-dome', 'fmf-weapons'],
+    relatedProfileIds: ['joe-biden', 'chuck-schumer', 'mike-johnson', 'mitch-mcconnell', 'benjamin-netanyahu'],
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
