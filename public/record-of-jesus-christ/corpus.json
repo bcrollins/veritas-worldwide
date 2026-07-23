@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:51:35.151Z",
-  "claimCount": 309,
+  "generatedAt": "2026-07-23T09:54:18.892Z",
+  "claimCount": 318,
   "tierHistogram": {
-    "well_attested": 120,
-    "verified": 108,
-    "contested": 31,
-    "interpretive": 30,
+    "well_attested": 122,
+    "verified": 113,
+    "contested": 32,
+    "interpretive": 31,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 15
@@ -80,6 +80,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-cyrus-cylinder-policy",
+      "claim": "The Cyrus Cylinder documents Achaemenid policy language of temple restoration and population returns; it is not a verbatim Ezra decree.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave24.ts"
     },
     {
       "id": "ane-deir-alla",
@@ -285,6 +292,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "arch-galilee-boat-tech",
+      "claim": "The so-called “Jesus Boat” (1st-c. Galilee fishing vessel from the Sea of Galilee drought finds) illustrates period boat technology, not a specific Gospel craft.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
       "id": "arch-gamla",
       "claim": "Gamla (Golan) destruction in the First Jewish Revolt is archaeologically and literarily documented (Josephus), illustrating Galilee/Golan war archaeology.",
       "tier": "verified",
@@ -486,6 +500,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-age-universe",
+      "claim": "ΛCDM age of the universe is ~13.8 Gyr from CMB + BAO baselines; local distance-ladder routes can differ slightly within tension research.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave24.ts"
     },
     {
       "id": "cosmo-bao",
@@ -831,6 +852,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "ec-muratorian-fragment",
+      "claim": "The Muratorian Fragment is an early (often 2nd c., some later-date arguments) Latin canon list reflecting developing New Testament collection boundaries.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
       "id": "ec-nicaea",
       "claim": "The Council of Nicaea (325 CE) addressed Christological doctrine (homoousios) under Constantine; it did not create the NT canon list.",
       "tier": "literary_theological",
@@ -1032,6 +1060,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
+      "id": "hj-galilee-to-jerusalem",
+      "claim": "A Galilee-centered public activity culminating in a final Jerusalem journey is a common historical outline across Synoptic reconstructions.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave24.ts"
     },
     {
       "id": "hj-healings-reputation",
@@ -1426,6 +1461,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "mod-proof-vs-belief",
+      "claim": "This corpus’s proofVsConcept field exists to prevent readers from equating historical attestation, scientific models, tradition, and theological belief.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
       "id": "mod-quest-historiography",
       "claim": "Historiography of the “quests” for the historical Jesus is itself a modern scholarly narrative with periodization that can oversimplify continuous research traditions.",
       "tier": "interpretive",
@@ -1620,6 +1662,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-tacitus-christus-title",
+      "claim": "Tacitus’s use of “Christus” as a title/name and “Christians” as a group label reflects Roman awareness of the Christ-derived name by the early second century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave24.ts"
     },
     {
       "id": "nc-tacitus-context",
@@ -1881,6 +1930,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "nt-papyrus-discovery-curve",
+      "claim": "Twentieth–twenty-first century papyrus discoveries (Oxyrhynchus, etc.) continuously expand the early Greek NT evidence base catalogued by INTF.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
       "id": "nt-patristic-citations",
       "claim": "Patristic citations are secondary witnesses that can preserve early readings but require careful evaluation of quoting habits and later manuscript tradition of the fathers.",
       "tier": "well_attested",
@@ -2040,6 +2096,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "st-herod-temple-expansion",
+      "claim": "Herod’s Temple Mount expansion created a massive platform whose retaining architecture remains archaeologically visible (Western Wall, etc.).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave24.ts"
     },
     {
       "id": "st-isaiah-stability",
