@@ -10,6 +10,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   itemListJsonLd,
   SITE_URL,
   SITE_NAME,
@@ -294,6 +295,28 @@ export default function ProfilesIndexPage(): React.ReactNode {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Power Profiles', url: `${SITE_URL}/profiles` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What are Power Profiles?',
+          answer:
+            'Source-driven profiles of politicians, financiers, lobbyists, intelligence actors, and other power brokers. Claims cite public filings, congressional records, court documents, and verified journalism — not rumor.',
+        },
+        {
+          question: 'What is an integrity score?',
+          answer:
+            'Where a dual-cited public-falsehood docket exists, profiles surface an integrity score with permanent dual-cite gates. Click through to the profile for sources on each claim.',
+        },
+        {
+          question: 'Is there a machine-readable profiles corpus?',
+          answer:
+            'Yes. /profiles/corpus.json indexes all power profiles with photo paths, Bioguide IDs where available, and integrityScore when a docket is compiled.',
+        },
+        {
+          question: 'Who publishes Power Profiles?',
+          answer:
+            'Veritas Worldwide only. Entity attribution — no personal byline. Corrections: rights@veritasworldwide.com.',
+        },
       ]),
       itemListJsonLd({
         name: 'Power Profiles — claims-dense featured set',

@@ -20,6 +20,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   itemListJsonLd,
   SITE_URL,
   SITE_NAME,
@@ -294,6 +295,28 @@ export default function NewsPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'News', url: `${SITE_URL}/news` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What makes Veritas news different from wire services?',
+          answer:
+            'Every Current Events article is built from primary documents — government portals, court filings, FOMC statements, NTSB/FAA records — with explicit source links. No anonymous sources. No spin.',
+        },
+        {
+          question: 'Is the news desk paywalled?',
+          answer:
+            'No. The news index and articles are free to read. Membership funds reporting and infrastructure without locking the public archive.',
+        },
+        {
+          question: 'How often does Veritas publish new news items?',
+          answer:
+            'The desk publishes when primary-source material warrants a source-first write-up — quality over cadence. Check /news and the RSS feed for updates.',
+        },
+        {
+          question: 'Where is the machine-readable news meta?',
+          answer:
+            'Each article has bot meta and first-party heroes. The RSS feed is at /feed.xml; news meta JSON is at /news/meta.json for crawler discovery.',
+        },
       ]),
       itemListJsonLd({
         name: 'Current events desk — latest primary-source reports',

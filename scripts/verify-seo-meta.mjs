@@ -289,6 +289,25 @@ assert(
   deepStatePage.includes('What is The Deep State dossier?'),
   'Deep State FAQ must define the investigation surface for SERP/PAA',
 )
+assert(
+  prerender.includes("route === '/news'") &&
+    prerender.includes('What makes Veritas news different from wire services?'),
+  'prerender must emit News desk FAQPage for primary-source journalism queries',
+)
+assert(
+  prerender.includes("route === '/profiles'") &&
+    prerender.includes('What are Power Profiles?'),
+  'prerender must emit Power Profiles FAQPage for entity discovery queries',
+)
+const newsPage = read('src/pages/NewsPage.tsx')
+assert(newsPage.includes('faqJsonLd'), 'NewsPage must emit FAQPage schema')
+const profilesIndexPage = read('src/pages/ProfilesIndexPage.tsx')
+assert(profilesIndexPage.includes('faqJsonLd'), 'ProfilesIndexPage must emit FAQPage schema')
+assert(
+  profilesIndexPage.includes('/profiles/corpus.json') ||
+    profilesIndexPage.includes('machine-readable profiles corpus'),
+  'Profiles FAQ must surface machine-readable corpus for GEO',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 

@@ -3056,6 +3056,116 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/news') {
+    return [
+      {
+        ...basePage,
+        '@type': 'CollectionPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'News', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What makes Veritas news different from wire services?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Every Current Events article is built from primary documents — government portals, court filings, FOMC statements, NTSB/FAA records — with explicit source links. No anonymous sources. No spin.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is the news desk paywalled?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. The news index and articles are free to read. Membership funds reporting and infrastructure without locking the public archive.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How often does Veritas publish new news items?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The desk publishes when primary-source material warrants a source-first write-up — quality over cadence. Check /news and the RSS feed for updates.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where is the machine-readable news meta?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Each article has bot meta and first-party heroes. The RSS feed is at /feed.xml; news meta JSON is at /news/meta.json for crawler discovery.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
+  if (route === '/profiles') {
+    return [
+      {
+        ...basePage,
+        '@type': 'CollectionPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Power Profiles', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What are Power Profiles?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Source-driven profiles of politicians, financiers, lobbyists, intelligence actors, and other power brokers. Claims cite public filings, congressional records, court documents, and verified journalism — not rumor.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is an integrity score?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Where a dual-cited public-falsehood docket exists, profiles surface an integrity score with permanent dual-cite gates. Click through to the profile for sources on each claim.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is there a machine-readable profiles corpus?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. /profiles/corpus.json indexes all power profiles with photo paths, Bioguide IDs where available, and integrityScore when a docket is compiled.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes Power Profiles?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. Entity attribution — no personal byline. Corrections: rights@veritasworldwide.com.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {
