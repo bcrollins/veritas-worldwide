@@ -3380,4 +3380,28 @@ assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perp
 assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v45 cookie')
 assert(read('src/components/SharePanel.tsx').includes('focus-visible:ring-2'), 'perpetual v45 share')
 
+
+
+// RelatedHubs platform perpetual densify lock v46
+assert(surfaces.length >= 115, `perpetual v46 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('activeChip'), 'perpetual v46 activeChip')
+assert(read('src/components/RelatedHubs.tsx').includes('darkActiveChip'), 'perpetual v46 darkActiveChip')
+assert(read('src/components/RelatedHubs.tsx').includes('aria-current'), 'perpetual v46 aria-current')
+assert(read('src/components/RelatedHubs.tsx').includes("tone === 'parchment'"), 'perpetual v46 parchment')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v46 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v46 PRIMARY')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v46 mobile tab bar')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v46 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v46 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v46 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v46 soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v46 focus')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v46 methodology')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v46 home')
+assert(read('scripts/verify-pure.mjs').includes('verify-related-hubs-coverage.mjs'), 'perpetual v46 pure wire')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v46 Research chips')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v46 footer')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v46 cookie')
+assert(read('src/components/SharePanel.tsx').includes('focus-visible:ring-2'), 'perpetual v46 share')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
