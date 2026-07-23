@@ -90,6 +90,71 @@ async function check({ path, titleIncludes }) {
 
 await Promise.all(SURFACES.map(check))
 
+
+
+// Soft-404 matrix: junk dynamic prefixes must be HTTP 404 + noindex for Googlebot.
+const SOFT404_JUNK = [
+  '/this-is-not-a-real-veritas-path-xyz',
+  '/chapter/not-a-real-chapter-slug-xyz',
+  '/profile/definitely-not-a-real-person-xyz',
+  '/news/this-article-does-not-exist-xyz',
+  '/topics/not-a-real-topic-xyz',
+  '/institute/courses/not-a-real-course-xyz',
+  '/institute/guides/not-a-real-guide-xyz',
+]
+const SOFT404_KNOWN = [
+  { path: '/chapter/chapter-1', titleIncludes: 'Central Banking' },
+  { path: '/profile/ted-cruz', titleIncludes: 'Ted Cruz' },
+  { path: '/topics/historical-jesus-evidence', titleIncludes: 'Historical Jesus' },
+]
+
+async function checkSoft404Junk(path) {
+  const url = `${base}${path}`
+  let res
+  try {
+    res = await fetch(url, {
+      headers: { 'user-agent': GOOGLEBOT, accept: 'text/html' },
+      signal: AbortSignal.timeout(20000),
+    })
+  } catch (err) {
+    failures.push(`${path}: fetch error ${err?.message || err}`)
+    return
+  }
+  if (res.status !== 404) {
+    failures.push(`${path}: expected HTTP 404 soft-kill, got ${res.status}`)
+  }
+  const xRobots = (res.headers.get('x-robots-tag') || '').toLowerCase()
+  if (!xRobots.includes('noindex')) {
+    failures.push(`${path}: missing X-Robots-Tag noindex on junk path`)
+  }
+  const html = await res.text()
+  if (/Primary Sources/i.test(html.match(/<title>([^<]*)/)?.[1] || '')) {
+    failures.push(`${path}: homepage Primary Sources title leaked on junk path`)
+  }
+  if (!/noindex/i.test(html.match(/name=["']robots["'][^>]*content=["']([^"']*)/)?.[1] || '')) {
+    failures.push(`${path}: meta robots not noindex on junk path`)
+  }
+}
+
+async function checkSoft404Known({ path, titleIncludes }) {
+  const res = await fetch(`${base}${path}`, {
+    headers: { 'user-agent': GOOGLEBOT, accept: 'text/html' },
+    signal: AbortSignal.timeout(20000),
+  })
+  if (res.status !== 200) {
+    failures.push(`${path}: known path expected 200, got ${res.status}`)
+    return
+  }
+  const html = await res.text()
+  const title = html.match(/<title>([^<]*)/)?.[1] || ''
+  if (!title.toLowerCase().includes(titleIncludes.toLowerCase())) {
+    failures.push(`${path}: known title "${title}" missing "${titleIncludes}"`)
+  }
+}
+
+await Promise.all(SOFT404_JUNK.map(checkSoft404Junk))
+await Promise.all(SOFT404_KNOWN.map(checkSoft404Known))
+
 if (failures.length) {
   console.error('[verify:live-bot-noindex] FAIL')
   for (const f of failures) console.error(' -', f)
@@ -97,5 +162,5 @@ if (failures.length) {
 }
 
 console.log(
-  `[verify:live-bot-noindex] PASS — ${SURFACES.length} Googlebot noindex surfaces clean at ${base}`,
+  `[verify:live-bot-noindex] PASS — ${SURFACES.length} noindex surfaces + soft-404 matrix clean at ${base}`,
 )
