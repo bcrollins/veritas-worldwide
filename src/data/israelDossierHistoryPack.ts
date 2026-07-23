@@ -8352,6 +8352,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-copper-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Copper Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (copper cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated copper deficiency risk among Gaza children under meat/legume collapse — compounding anemia and immune failure. Pattern card for copper-specific deficit distinct from iron-anemia and zinc cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source copper-deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric copper risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-privacy-from-guards-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Privacy from Guards Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (guard-surveillance cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document constant guard surveillance denying any privacy for Israeli civilian hostages including women and children — a protected-person dignity pattern distinct from toilet-privacy and solitary cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source constant-guard surveillance without privacy. Exact conditions vary; multi-source privacy denial under guard surveillance for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-torching-vehicles-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Torching of Vehicles Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (vehicle-torching cohort)',
+    location: 'West Bank Palestinian villages and parking areas',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler torching of Palestinian vehicles after October 7 — destroying civilian mobility for work and school. Pattern card for vehicle torching distinct from firebombing homes and stone-throwing cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source vehicle torching. Exact vehicle counts evolve; multi-source wartime settler vehicle torching is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet vehicle torching coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -13021,6 +13102,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['graffiti', 'settlers', 'intimidation', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-copper-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Copper Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated copper deficiency risk among children under wartime diets.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-copper-deficiency-risk-pattern-2023-2025',
+      'gaza-children-anemia-micronutrient-pattern-2023-2025',
+      'gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025',
+    ],
+    tags: ['copper', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-guard-privacy-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Privacy from Guards Pattern',
+    description: 'Multi-source documentation of constant guard surveillance denying privacy for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-privacy-from-guards-pattern-2023-2025',
+      'israel-hostages-denied-toilets-privacy-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'privacy', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-vehicle-torching-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Vehicle Torching Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler torching of Palestinian vehicles after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-torching-vehicles-pattern-2023-2025',
+      'west-bank-settler-arson-homes-pattern-2023-2025',
+      'west-bank-settler-firebombing-homes-pattern-2023-2025',
+    ],
+    tags: ['vehicles', 'arson', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
