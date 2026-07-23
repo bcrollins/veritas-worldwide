@@ -436,6 +436,13 @@ for (const [file, constName] of [
   assert(b && (b[1].match(/to:/g) || []).length === 5, `${constName} count 5 IA ultimate`)
 }
 
+
+// Account five-hub live lock IA
+assert(fs.readFileSync(path.join(root, 'src/pages/AccessibilityPage.tsx'), 'utf8').includes('/membership'), 'A11Y Membership IA live lock')
+assert(fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePage.tsx'), 'utf8').includes('/israel-dossier'), 'OSINT Dossiers IA live lock')
+assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'Privacy Membership IA live lock')
+assert(fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8').includes('/membership'), 'Terms Membership IA live lock')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
