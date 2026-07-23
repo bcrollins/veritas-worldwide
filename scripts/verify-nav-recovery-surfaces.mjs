@@ -2073,4 +2073,11 @@ assert(termsB && (termsB[1].match(/to:/g) || []).length === 5, 'TERMS_HUBS count
 assert(termsB[1].includes('/membership'), 'TERMS Membership')
 
 
+
+// PRIVACY TERMS Membership destination ultimate final
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'Privacy Membership ultimate final')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'Terms Membership ultimate final')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'A11Y Membership ultimate final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
