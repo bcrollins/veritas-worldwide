@@ -333,6 +333,15 @@ const searchIa = fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'u
 assert((searchIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'Search dual RelatedHubs mounts IA')
 assert(searchIa.includes('SEARCH_RECOVERY_HUBS'), 'SEARCH_RECOVERY_HUBS IA')
 
+
+// Bernie dark RelatedHubs IA + RelatedHubs dark tone platform
+const bernieIa = fs.readFileSync(path.join(root, 'src/pages/BernieShowPage.tsx'), 'utf8')
+assert(bernieIa.includes('bernie-related-hubs') && bernieIa.includes('RelatedHubs'), 'Bernie RelatedHubs IA')
+assert(bernieIa.includes('tone="dark"') || bernieIa.includes("tone='dark'"), 'Bernie dark tone IA')
+const relatedIaTone = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+assert(relatedIaTone.includes("'dark'") || relatedIaTone.includes('"dark"'), 'RelatedHubs dark tone IA')
+assert(relatedIaTone.includes('excludeTo'), 'RelatedHubs excludeTo IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
