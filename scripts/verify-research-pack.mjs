@@ -89,6 +89,11 @@ assert(
   terms.includes('/research-pack.zip'),
   'Terms license section must reference research-pack.zip',
 )
+const privacy = read('src/pages/PrivacyPage.tsx')
+assert(
+  privacy.includes('/research-pack.zip'),
+  'Privacy researcher-tools section must reference research-pack.zip',
+)
 const platformHealth = read('scripts/verify-platform-health.mjs')
 assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),

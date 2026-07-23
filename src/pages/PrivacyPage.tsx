@@ -126,7 +126,14 @@ export default function PrivacyPage() {
                   You can export a JSON copy for offline work, import a prior export, or clear all local events from the tool itself. Clearing site data for veritasworldwide.com in your browser settings also removes local researcher state, bookmarks, and similar device-only preferences.
                 </p>
                 <p>
-                  Public machine corpora (for example Israel Dossier and Record of Jesus Christ JSON exports) are separate publication artifacts published by Veritas Worldwide; they are not tied to your personal timeline.
+                  Public machine corpora (for example Israel Dossier and Record of Jesus Christ JSON exports, and the
+                  offline research pack at{' '}
+                  <a href="/research-pack.zip" className="text-crimson hover:underline">
+                    /research-pack.zip
+                  </a>
+                  ) are separate publication artifacts published by Veritas Worldwide; they are not tied to your
+                  personal timeline and do not require an account. Downloads are rate-limited; standard server logs
+                  may record technical request metadata as described under automatic collection above.
                 </p>
               </div>
             </section>
