@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:39:51.343Z",
+  "generatedAt": "2026-07-23T10:40:55.416Z",
   "count": 96,
   "profiles": [
     {
@@ -80,9 +80,9 @@
         "Billionaire",
         "Political Influence"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "jared-kushner",
@@ -222,9 +222,9 @@
         "Jerusalem Embassy",
         "Golan Recognition"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "ghislaine-maxwell",
@@ -1533,9 +1533,9 @@
         "Tech Entrepreneur",
         "Philanthropist"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "charles-koch",

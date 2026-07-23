@@ -163,6 +163,9 @@ const required = [
   'peter-thiel',
   'ken-griffin',
   'bill-gates',
+  'george-soros',
+  'sheldon-adelson',
+  'larry-ellison',
 ];
 const scores = {};
 for (const id of required) {
@@ -1462,8 +1465,57 @@ for (const f of (gatesP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('gates dual-cite collision: ' + f.id);
 }
 
+
+// George Soros densify gate (n≥3)
+const soros = scores['george-soros'];
+if (!soros || soros.n < 3) throw new Error('george-soros needs ≥3 verified falsehoods, got ' + (soros?.n ?? 0));
+if (soros.score > 80) throw new Error('george-soros score expected ≤80 after densify, got ' + soros.score);
+const sorosP = getProfileBySlug('george-soros');
+for (const id of [
+  'soros-open-society-no-political-agenda-absolute',
+  'soros-1992-bank-of-england-pure-market-neutrality',
+  'soros-not-a-political-actor-absolute-self-framing',
+]) {
+  if (!(sorosP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('george-soros missing docket id: ' + id);
+}
+for (const f of (sorosP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('soros dual-cite collision: ' + f.id);
+}
+
+// Sheldon Adelson densify gate (n≥3)
+const adelson = scores['sheldon-adelson'];
+if (!adelson || adelson.n < 3) throw new Error('sheldon-adelson needs ≥3 verified falsehoods, got ' + (adelson?.n ?? 0));
+if (adelson.score > 50) throw new Error('sheldon-adelson score expected ≤50 after densify, got ' + adelson.score);
+const adelsonP = getProfileBySlug('sheldon-adelson');
+for (const id of [
+  'adelson-casino-only-businessman-no-political-agenda-absolute',
+  'adelson-macau-operations-purely-clean-absolute',
+  'adelson-newspaper-ownership-pure-media-not-political-weapon',
+]) {
+  if (!(adelsonP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('sheldon-adelson missing docket id: ' + id);
+}
+for (const f of (adelsonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('adelson dual-cite collision: ' + f.id);
+}
+
+// Larry Ellison densify gate (n≥3)
+const ellison = scores['larry-ellison'];
+if (!ellison || ellison.n < 3) throw new Error('larry-ellison needs ≥3 verified falsehoods, got ' + (ellison?.n ?? 0));
+if (ellison.score > 80) throw new Error('larry-ellison score expected ≤80 after densify, got ' + ellison.score);
+const ellisonP = getProfileBySlug('larry-ellison');
+for (const id of [
+  'ellison-oracle-cloud-number-one-absolute-premature',
+  'ellison-lanai-utopia-sustainable-absolute-framing',
+  'ellison-tiktok-oracle-deal-pure-security-not-business',
+]) {
+  if (!(ellisonP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('larry-ellison missing docket id: ' + id);
+}
+for (const f of (ellisonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('ellison dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 76) throw new Error('expected ≥76 compiled dockets, got ' + docketCount);
+if (docketCount < 79) throw new Error('expected ≥79 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

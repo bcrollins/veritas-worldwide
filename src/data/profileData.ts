@@ -643,7 +643,61 @@ export const PROFILES: PowerProfile[] = [
     career: ['Hedge fund manager', 'Open Society Foundations founder', 'Political donor', 'Philanthropist'],
     websites: [
       { label: 'Open Society', url: 'https://www.opensocietyfoundations.org' }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'soros-open-society-no-political-agenda-absolute',
+        statement:
+          'Framed Open Society Foundations work as pure neutral civil-society philanthropy without political agenda.',
+        saidAt: '1990s–2020s',
+        context: 'Public defenses of OSF grantmaking amid political attacks.',
+        whyFalse:
+          'OSF explicitly funds political and legal reform agendas (criminal justice, immigration, elections). Absolute “no political agenda whatsoever” framing is false to OSF’s own stated programmatic priorities — even while many attacks on Soros are antisemitic conspiracies this docket does not endorse.',
+        correction:
+          'OSF runs explicit political and legal reform programs; absolute non-political framing fails OSF’s own descriptions.',
+        statementSource: 'Soros/OSF public pure-philanthropy framing',
+        statementUrl: 'https://www.opensocietyfoundations.org',
+        debunkSource: 'OSF program descriptions and grant databases documenting policy advocacy',
+        debunkUrl: 'https://www.opensocietyfoundations.org/what-we-do',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'soros-1992-bank-of-england-pure-market-neutrality',
+        statement:
+          'Retrospectively framed the 1992 Bank of England short as pure market neutrality without political consequences worth owning.',
+        saidAt: '1990s–2000s memoirs/interviews',
+        context: 'Black Wednesday pound speculation.',
+        whyFalse:
+          'The trade contributed to UK ERM exit and major political/economic fallout. Absolute pure-neutral-no-consequence framing understates documented macroeconomic and political impact.',
+        correction:
+          'The 1992 pound trade had major UK political-economic consequences — not pure consequence-free market neutrality.',
+        statementSource: 'Soros interviews/memoirs on Black Wednesday',
+        statementUrl: 'https://www.georgesoros.com',
+        debunkSource: 'Historical record of Black Wednesday UK ERM exit and political fallout',
+        debunkUrl: 'https://www.bankofengland.co.uk',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'soros-not-a-political-actor-absolute-self-framing',
+        statement:
+          'At times framed himself as not a political actor despite massive political giving and issue advocacy.',
+        saidAt: '2000s–2020s',
+        context: 'Public self-description amid U.S. and European political spending.',
+        whyFalse:
+          'FEC and multi-outlet records show large-scale political giving and ballot-measure funding. Absolute non-political-actor self-framing is false to that spending record.',
+        correction:
+          'Soros is a major political donor and issue advocate; absolute non-political-actor framing fails the disclosure record.',
+        statementSource: 'Soros public self-framing as non-political',
+        statementUrl: 'https://www.georgesoros.com',
+        debunkSource: 'OpenSecrets / FEC political giving records',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'jared-kushner',
@@ -1737,6 +1791,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'Israel Hayom', url: 'https://www.israelhayom.com' },
       { label: 'FEC.gov', url: 'https://www.fec.gov' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Sheldon_Adelson' },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'adelson-casino-only-businessman-no-political-agenda-absolute',
+        statement:
+          'Framed multi-hundred-million political giving as pure patriotism without Israel-policy and industry-policy agenda.',
+        saidAt: '2010s',
+        context: 'Public defenses of Adelson political spending.',
+        whyFalse:
+          'Adelson was among the largest single donors in U.S. politics with explicit Israel and gaming-policy priorities. Absolute no-agenda pure-patriotism framing is false to the disclosed issue focus of his giving.',
+        correction:
+          'Adelson’s political giving had explicit policy agendas — not pure agenda-free patriotism only.',
+        statementSource: 'Adelson public pure-patriotism framing of political giving',
+        statementUrl: 'https://www.sands.com',
+        debunkSource: 'OpenSecrets Adelson giving records and multi-outlet issue-agenda reporting',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'adelson-macau-operations-purely-clean-absolute',
+        statement:
+          'Framed Las Vegas Sands Macau operations as purely clean gaming free of serious compliance controversy.',
+        saidAt: '2000s–2010s',
+        context: 'Public defenses amid FCPA and junket scrutiny.',
+        whyFalse:
+          'Las Vegas Sands paid a large FCPA-related settlement over China/Macau practices. Absolute pure-clean framing is false to that enforcement record.',
+        correction:
+          'LVS’s FCPA settlement establishes serious compliance failures — not pure clean operations.',
+        statementSource: 'Adelson/LVS public clean-operations framing',
+        statementUrl: 'https://www.sands.com',
+        debunkSource: 'DOJ/SEC FCPA settlement with Las Vegas Sands',
+        debunkUrl: 'https://www.justice.gov',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'adelson-newspaper-ownership-pure-media-not-political-weapon',
+        statement:
+          'Framed Israel Hayom and other media ownership as pure media investment without political-weapon intent.',
+        saidAt: '2010s',
+        context: 'Israel Hayom free daily and U.S. political media investments.',
+        whyFalse:
+          'Israel Hayom was widely documented as a Netanyahu-aligned political project. Absolute pure-media-only framing is false to that political mission record.',
+        correction:
+          'Israel Hayom operated as a documented political media project, not pure neutral media only.',
+        statementSource: 'Adelson public pure-media framing of Israel Hayom',
+        statementUrl: 'https://www.israelhayom.com',
+        debunkSource: 'Multi-outlet analysis of Israel Hayom as Netanyahu-aligned political project',
+        debunkUrl: 'https://www.haaretz.com',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
   },
   {
@@ -10357,7 +10464,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'circumstantial',
         date: '2023'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'ellison-oracle-cloud-number-one-absolute-premature',
+        statement:
+          'Repeatedly claimed Oracle Cloud was #1 or would imminently dominate in absolute terms before market-share data supported it.',
+        saidAt: '2010s–2020s',
+        context: 'Oracle earnings calls and public cloud marketing.',
+        whyFalse:
+          'AWS/Azure long led cloud IaaS market share per Gartner/Synergy data. Absolute #1 claims were false to contemporaneous market-share measurements during many claim periods.',
+        correction:
+          'AWS and Azure led cloud market share during periods Oracle claimed #1 dominance.',
+        statementSource: 'Ellison Oracle earnings/public cloud claims (multi-outlet capture)',
+        statementUrl: 'https://www.oracle.com',
+        debunkSource: 'Gartner/Synergy cloud market-share reports; multi-outlet fact-checks of Oracle cloud claims',
+        debunkUrl: 'https://www.gartner.com',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'ellison-lanai-utopia-sustainable-absolute-framing',
+        statement:
+          'Framed Lanai ownership as delivering an imminent sustainable utopia for residents without major tradeoffs.',
+        saidAt: '2012–2020s',
+        context: 'Purchase of ~98% of Lanai and public sustainability vision.',
+        whyFalse:
+          'Resident and multi-outlet reporting documented housing, labor, and development tensions. Absolute frictionless-utopia framing overstated delivery relative to the lived-island record.',
+        correction:
+          'Lanai development under Ellison involved documented resident tensions — not frictionless utopia only.',
+        statementSource: 'Ellison public Lanai utopia/sustainability framing',
+        statementUrl: 'https://www.pulamalani.com',
+        debunkSource: 'Multi-outlet Lanai resident/development tension reporting',
+        debunkUrl: 'https://www.nytimes.com/2014/10/26/business/oracle-chiefs-lanai-dreams.html',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'ellison-tiktok-oracle-deal-pure-security-not-business',
+        statement:
+          'Framed Oracle’s TikTok/cloud role as pure national-security service without business upside framing conflicts.',
+        saidAt: '2020',
+        context: 'Proposed TikTok U.S. operations/cloud arrangements.',
+        whyFalse:
+          'Oracle stood to gain major cloud business. Absolute pure-security-no-business-interest framing is false to the commercial cloud upside.',
+        correction:
+          'Oracle’s TikTok cloud role carried major commercial upside — not pure security volunteerism only.',
+        statementSource: 'Ellison/Oracle public pure-security framing of TikTok deal role 2020',
+        statementUrl: 'https://www.oracle.com',
+        debunkSource: 'Multi-outlet analysis of Oracle commercial upside in TikTok cloud proposals',
+        debunkUrl: 'https://www.reuters.com/article/us-tiktok-security-oracle-idUSKBN26807Y',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'charles-koch',
