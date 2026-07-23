@@ -2449,4 +2449,31 @@ assert(read('src/components/DossierHubSpokes.tsx').includes('DOSSIER_SPOKES'), '
 assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'perpetual v6 research chips')
 
 
+
+// RelatedHubs platform perpetual densify lock v7
+assert(surfaces.length >= 102, `perpetual v7 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v7 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v7 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('excludeTo'), 'perpetual v7 exclude')
+assert(read('src/components/RelatedHubs.tsx').includes('min-h-[44px]'), 'perpetual v7 touch')
+assert(read('src/components/RelatedHubs.tsx').includes('no-print'), 'perpetual v7 no-print')
+assert(read('src/components/RelatedHubs.tsx').includes('Related hubs'), 'perpetual v7 aria')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v7 soft-404 primary')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'perpetual v7 soft-404 secondary')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v7 search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v7 home')
+assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'perpetual v7 bookmarks')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'perpetual v7 Privacy')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'perpetual v7 Terms')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'perpetual v7 A11Y')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'perpetual v7 OSINT')
+assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'perpetual v7 bernie')
+assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'perpetual v7 media-kit')
+assert(read('src/pages/ProfilesIndexPage.tsx').includes('profiles-related-hubs'), 'perpetual v7 profiles')
+assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'perpetual v7 read')
+assert(read('src/components/DossierHubSpokes.tsx').includes('DOSSIER_SPOKES'), 'perpetual v7 spokes')
+assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'perpetual v7 research chips')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v7 mobile tab bar')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
