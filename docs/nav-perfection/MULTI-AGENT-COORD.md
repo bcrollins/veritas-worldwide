@@ -13,7 +13,9 @@
 **Live proof:** shell + home + search + soft-404 markers must stay green after densify ships (nav is orthogonal to corpus size).
 
 ## RelatedHubs platform (nav-owned)
-- `src/components/RelatedHubs.tsx` + pure floors under `scripts/verify-nav-*.mjs`
+- `src/components/RelatedHubs.tsx` + pure floors under `scripts/verify-nav-*.mjs` + `scripts/verify-related-hubs-coverage.mjs`
+- Every public page under `src/pages/` (admin exempt) mounts RelatedHubs with `testId`
+- Sprint 9: research/institute dual recovery (ResearchHubChips + RelatedHubs PRIMARY ≤5)
 - Never stage densify corpus. Single-file pure commits when densify tip is hot.
-- Live matrix: CORE shell markers + server soft-404 five hubs.
+- Live matrix: CORE shell markers + server soft-404 five hubs + Sprint 9 testIds after deploy lag clears
 
