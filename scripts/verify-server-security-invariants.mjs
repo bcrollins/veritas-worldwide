@@ -242,8 +242,9 @@ assert(
   server.includes('/profiles/corpus.json') &&
     server.includes('/record-of-jesus-christ/corpus.json') &&
     server.includes('/israel-dossier/corpus.json') &&
+    server.includes('/israel-dossier/visual-investigations.json') &&
     server.includes('corpusRateLimit'),
-  'machine corpora paths must share corpusRateLimit middleware',
+  'machine corpora paths must share corpusRateLimit middleware (incl. visual-investigations)',
 )
 assert(
   server.includes("name: 'corpus-json', windowMs: 60_000, max: 40") ||

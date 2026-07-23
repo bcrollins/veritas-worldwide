@@ -24,6 +24,7 @@ function read(rel) {
 const gen = read('scripts/generate-research-pack.mjs')
 assert(gen.includes('research-pack.zip'), 'generator must write research-pack.zip')
 assert(gen.includes('MAX_ZIP_BYTES'), 'size budget required')
+assert(gen.includes('visual-investigations.json'), 'research pack must include Israel visual-investigations index')
 // Must dual-write public + dist so Railway express.static(dist) serves the pack after postbuild.
 assert(
   gen.includes("path.join(root, 'dist')") || gen.includes('distDir') || gen.includes("writePair(distDir)"),
