@@ -2116,4 +2116,12 @@ assert(relatedModes.includes("'parchment'") || relatedModes.includes('"parchment
 assert(relatedModes.includes("'surface'") || relatedModes.includes('"surface"') || relatedModes.includes("tone = 'surface'"), 'surface mode')
 
 
+
+// suite green sentinel RelatedHubs platform complete
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'platform PRIMARY complete')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'platform emphasize complete')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'platform soft-404 complete')
+assert(surfaces.length >= 102, `platform surfaces ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
