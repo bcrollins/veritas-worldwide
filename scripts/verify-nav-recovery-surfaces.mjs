@@ -1326,4 +1326,16 @@ assert(!/label:\s*['"]More['"]/.test(browseFinal), 'No More junk label final')
 assert(browseFinal.includes('/methodology') && browseFinal.includes('/sources'), 'Research meth+sources final')
 
 
+
+// Account drawer membership legal reaffirm final
+const accountFinal = read('src/App.tsx')
+assert(accountFinal.includes('/membership'), 'Account membership final')
+assert(accountFinal.includes('/privacy') && accountFinal.includes('/terms'), 'Account privacy+terms final')
+assert(accountFinal.includes('/about'), 'Account about final')
+assert(accountFinal.includes('/accessibility') || accountFinal.includes('Accessibility'), 'Account a11y or label final')
+
+// Dossiers active for forum+deep-state reaffirm final
+assert(accountFinal.includes('/deep-state') && accountFinal.includes('/forum'), 'dossier family routes final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
