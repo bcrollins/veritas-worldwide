@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:11:36.771Z",
-  "claimCount": 606,
+  "generatedAt": "2026-07-23T11:14:09.461Z",
+  "claimCount": 615,
   "tierHistogram": {
-    "well_attested": 248,
-    "verified": 216,
+    "well_attested": 253,
+    "verified": 219,
     "contested": 48,
-    "interpretive": 64,
+    "interpretive": 65,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -59,6 +59,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave13.ts"
+    },
+    {
+      "id": "ane-babylonian-chronicle-method",
+      "claim": "Babylonian Chronicles are annalistic royal records requiring critical reading of selection, year formulas, and political framing when used as controls for biblical chronology.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave57.ts"
     },
     {
       "id": "ane-babylonian-chronicles",
@@ -612,6 +619,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave44.ts"
+    },
+    {
+      "id": "arch-herodium-pool-complex",
+      "claim": "Herodium’s large pool complex and associated lower-palace gardens document Herodian luxury landscaping and water engineering at monumental scale.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave57.ts"
     },
     {
       "id": "arch-herodium-tomb-debate",
@@ -1286,6 +1300,13 @@
       "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
+      "id": "cosmo-recombination-epoch",
+      "claim": "CMB photons last-scatter at recombination (z ≈ 1090), when the universe cooled enough for neutral hydrogen to form — the surface of last scattering underlying the acoustic peak pattern.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave57.ts"
+    },
+    {
       "id": "cosmo-reionization",
       "claim": "CMB optical depth and high-z galaxy surveys constrain the epoch of reionization when the first stars ionized the intergalactic medium.",
       "tier": "well_attested",
@@ -1564,6 +1585,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave19.ts"
+    },
+    {
+      "id": "ec-ignatius-magnesians",
+      "claim": "Ignatius’s Letter to the Magnesians opposes “Judaizing” practices and urges unity under bishop, presbyters, and deacons — early 2nd-c. evidence of identity boundary rhetoric.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave57.ts"
     },
     {
       "id": "ec-ignatius-recensions-method",
@@ -2056,6 +2084,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "hj-jerusalem-final-visit",
+      "claim": "A final Jerusalem visit culminating in arrest and crucifixion is a near-universal element of historical Jesus outlines across competing schools.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave57.ts"
+    },
+    {
       "id": "hj-jerusalem-pilgrimage",
       "claim": "Pilgrimage to Jerusalem for festivals is a well-attested Second Temple practice providing social context for Gospel Jerusalem scenes.",
       "tier": "verified",
@@ -2530,6 +2565,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave52.ts"
+    },
+    {
+      "id": "mod-crossan-inventory-method",
+      "claim": "Crossan’s inventory method ranked Gospel and extracanonical units by attestation strata — an influential Jesus Seminar–era procedure widely critiqued for circularity and source assumptions.",
+      "tier": "interpretive",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave57.ts"
     },
     {
       "id": "mod-crossan-open-commensality",
@@ -3085,6 +3127,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nc-pliny-carmen-limits",
+      "claim": "Pliny’s report of Christians singing a carmen to Christ “as to a god” is early 2nd-c. devotion language; it does not by itself prove first-century christology details or HJ biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave57.ts"
+    },
+    {
       "id": "nc-pliny-christ-hymns",
       "claim": "Pliny reports Christians singing hymns to Christ “as to a god” (carmen Christo quasi deo) — early 2nd-c. evidence of cultic devotion language.",
       "tier": "verified",
@@ -3440,6 +3489,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nt-ethiopic-version",
+      "claim": "The Ethiopic (Geʿez) version of the NT is a major African versional tradition with complex Greek/Syriac relationships and later revision history.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave57.ts"
     },
     {
       "id": "nt-eusebius-ch",
@@ -4252,6 +4308,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
+      "id": "st-war-scroll-detail",
+      "claim": "The War Scroll (1QM) details eschatological battle organization, purity rules, and dualistic warfare ideology within a Qumran-related literary milieu.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave57.ts"
     },
     {
       "id": "st-yahad-messianic-rule",
