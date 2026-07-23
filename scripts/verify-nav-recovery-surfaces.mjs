@@ -2405,4 +2405,27 @@ assert(read('src/pages/ProfilesIndexPage.tsx').includes('profiles-related-hubs')
 assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'perpetual v4 read')
 
 
+
+// RelatedHubs platform perpetual densify lock v5
+assert(surfaces.length >= 102, `perpetual v5 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v5 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v5 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('excludeTo'), 'perpetual v5 exclude')
+assert(read('src/components/RelatedHubs.tsx').includes('min-h-[44px]'), 'perpetual v5 touch')
+assert(read('src/components/RelatedHubs.tsx').includes('no-print'), 'perpetual v5 no-print')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v5 soft-404 primary')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'perpetual v5 soft-404 secondary')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v5 search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v5 home')
+assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'perpetual v5 bookmarks')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'perpetual v5 Privacy')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'perpetual v5 Terms')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'perpetual v5 A11Y')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'perpetual v5 OSINT')
+assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'perpetual v5 bernie')
+assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'perpetual v5 media-kit')
+assert(read('src/pages/ProfilesIndexPage.tsx').includes('profiles-related-hubs'), 'perpetual v5 profiles')
+assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'perpetual v5 read')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
