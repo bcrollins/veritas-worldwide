@@ -6,11 +6,11 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:11:57.606Z",
-  "claimCount": 372,
+  "generatedAt": "2026-07-23T10:17:06.350Z",
+  "claimCount": 381,
   "tierHistogram": {
-    "well_attested": 142,
-    "verified": 133,
+    "well_attested": 148,
+    "verified": 136,
     "contested": 36,
     "interpretive": 38,
     "speculative": 2,
@@ -38,6 +38,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
+      "id": "ane-arad-ostraca",
+      "claim": "The Arad ostraca (Iron Age Judah) are primary Hebrew administrative/military correspondence documenting fort supply, names, and YHWH-related greetings in a border fortress context.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave31.ts"
     },
     {
       "id": "ane-babylonian-chronicle-jerusalem",
@@ -432,6 +439,13 @@
       "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
+      "id": "arch-khirbet-qana",
+      "claim": "Khirbet Qana (and competing sites) are archaeological candidates for New Testament Cana of Galilee; excavation documents multi-period settlement including Roman-era occupation.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave31.ts"
+    },
+    {
       "id": "arch-kursi",
       "claim": "Kursi (traditional Gergesa/Gadara region) has a Byzantine monastery commemorating the swine miracle tradition — reception archaeology, not first-century proof of the miracle.",
       "tier": "interpretive",
@@ -726,6 +740,13 @@
       "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
+      "id": "cosmo-ligo-gravitational-waves",
+      "claim": "LIGO/Virgo/KAGRA detections of gravitational waves from compact binary mergers confirm strong-field general-relativistic predictions and open multi-messenger astronomy (e.g., GW170817).",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave31.ts"
+    },
+    {
       "id": "cosmo-matter-energy",
       "claim": "Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe.",
       "tier": "well_attested",
@@ -857,6 +878,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ec-athenagoras-plea",
+      "claim": "Athenagoras’s Plea for the Christians (late 2nd c.) is an early apologetic addressing Roman rulers on Christian monotheism, ethics, and charges of atheism/immorality.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave31.ts"
     },
     {
       "id": "ec-barnabas",
@@ -1335,6 +1363,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "hj-lords-prayer-core",
+      "claim": "The Lord’s Prayer (Matt 6 / Luke 11) is widely treated as preserving early Aramaic-flavored prayer tradition of the Jesus movement (including “Abba”/Father address patterns), though exact wording and Sitz im Leben remain reconstructed.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave31.ts"
+    },
+    {
       "id": "hj-magi-star",
       "claim": "Magi and star narratives in Matthew 2 are literary-theological traditions; astronomical “explanations” are speculative correlations, not historical proof.",
       "tier": "literary_theological",
@@ -1620,6 +1655,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
+      "id": "mod-jewishness-of-jesus-consensus",
+      "claim": "A broad post-Holocaust / Third Quest consensus situates Jesus firmly within first-century Judaism; reconstructions differ on how he related to Torah, purity, and eschatology inside that world.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave31.ts"
     },
     {
       "id": "mod-living-text",
@@ -2021,6 +2063,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "nc-toledot-yeshu",
+      "claim": "Toledot Yeshu traditions are late medieval (and earlier oral-literary) Jewish counter-narratives about Jesus; they are reception/polemic history, not independent first-century biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave31.ts"
+    },
+    {
       "id": "nc-traject-pliny-trajan",
       "claim": "Trajan’s rescript to Pliny (Ep. 10.97) sets a legal policy: do not hunt Christians, punish only if proven and obstinate — Roman administrative evidence for early 2nd-c. policy.",
       "tier": "verified",
@@ -2152,6 +2201,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-lectio-difficilior",
+      "claim": "The canons lectio difficilior potior and lectio brevior potior are traditional internal criteria in NT textual criticism; modern editors apply them with corpus-aware caution because scribes both simplify and expand.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave31.ts"
     },
     {
       "id": "nt-lectionaries",
@@ -2362,6 +2418,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "st-caligula-statue-crisis",
+      "claim": "The Caligula (Gaius) statue crisis (c. 39–41 CE) — the planned installation of the emperor’s image in the Jerusalem Temple — is documented by Philo and Josephus as a near-catastrophe for Judean–Roman relations.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave31.ts"
     },
     {
       "id": "st-coinage-revolt",
