@@ -1026,13 +1026,13 @@ export default function ForumPage() {
       url: `${SITE_URL}/forum`,
       // Beta UGC shell — keep crawlable for product discovery but deprioritize thin threads
       robots: 'index, follow, max-image-preview:large, max-snippet:160',
-      imageAlt: 'Community Forum Beta — Veritas Worldwide',
+      imageAlt: 'Community Forum — Veritas Worldwide',
     })
     setJsonLd([
       {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        name: `Community Forum Beta — ${SITE_NAME}`,
+        name: `Community Forum — ${SITE_NAME}`,
         url: `${SITE_URL}/forum`,
         description:
           'Beta community discussion surface for Veritas Worldwide archive readers.',

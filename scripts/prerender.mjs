@@ -2466,10 +2466,10 @@ const staticPages = [
   },
   {
     route: '/forum',
-    title: 'Community Forum Beta | Veritas Worldwide',
-    heading: 'Veritas Forum',
+    title: 'Community Forum | Veritas Worldwide',
+    heading: 'Community Forum',
     description:
-      'Local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features.',
+      'Discuss primary sources, evidence tiers, and archive methods with Veritas readers. Source-first conversation for The Record and Institute materials.',
     body: [
       'The forum is built for accountable discussion around sourced material, not algorithmic outrage or engagement bait.',
     ],
