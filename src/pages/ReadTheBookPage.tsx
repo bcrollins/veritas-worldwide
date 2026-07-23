@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom'
 import { chapterMeta } from '../data/chapterMeta'
 import type { LoadedChapter } from '../data/chapterTypes'
 import { CATEGORY_META, type Article } from '../data/articles'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import DownloadModal from '../components/DownloadModal'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 import DropCapParagraph from '../components/DropCapParagraph'
@@ -177,22 +185,35 @@ export default function ReadTheBookPage() {
   useEffect(() => {
     setMetaTags({
       title: `Read The Record | ${SITE_NAME}`,
-      description: 'Read The Record online in full. Every chapter, source list, and archive path is open to every reader.',
+      description:
+        'Read The Record online in full. Every chapter, source list, and archive path is open to every reader — free, public, primary-source documentary history.',
       url: `${SITE_URL}/read`,
+      imageAlt: 'Read The Record online — Veritas Worldwide',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'Book',
-      'name': 'The Record — Volume I',
-      'author': { '@type': 'Organization', 'name': SITE_NAME },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
-      'url': `${SITE_URL}/read`,
-      'numberOfPages': 32,
-      'bookFormat': 'https://schema.org/EBook',
-      'isAccessibleForFree': true,
-      'inLanguage': 'en',
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        name: 'The Record — Volume I',
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        url: `${SITE_URL}/read`,
+        numberOfPages: 32,
+        bookFormat: 'https://schema.org/EBook',
+        isAccessibleForFree: true,
+        inLanguage: 'en',
+        description:
+          'A documentary history of power, money, and institutions built on primary sources.',
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Read', url: `${SITE_URL}/read` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   // Stop TTS when changing chapters

@@ -3,7 +3,16 @@ import { Link } from 'react-router-dom'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { topicHubs, getTopicArticles, getTopicChapters } from '../data/topicHubs'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  itemListJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 import { formatCompactDollars, getTopicProfileStats } from '../lib/topicDiscovery'
 
 function TopicMetric({ label, value }: { label: string; value: string }) {
@@ -73,6 +82,7 @@ export default function TopicsIndexPage() {
       description:
         'Explore Veritas Worldwide topic hubs covering the Federal Reserve, AIPAC, surveillance, JFK, the Epstein network, Israel policy, and more.',
       url: `${SITE_URL}/topics`,
+      imageAlt: 'Research Topics — Veritas Worldwide topic hubs',
     })
     setJsonLd([
       {
@@ -83,16 +93,19 @@ export default function TopicsIndexPage() {
         description:
           'Curated research hubs connecting Veritas chapters, current reporting, profiles, and newsletter entry paths by topic.',
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'ItemList',
-        itemListElement: topicHubs.map((topic, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Research Topics', url: `${SITE_URL}/topics` },
+      ]),
+      itemListJsonLd({
+        name: 'Veritas research topic hubs',
+        description: 'High-intent topic hubs for primary-source investigative reporting.',
+        url: `${SITE_URL}/topics`,
+        items: topicHubs.map((topic) => ({
           name: topic.name,
           url: `${SITE_URL}/topics/${topic.slug}`,
         })),
-      },
+      }),
     ])
     return () => {
       clearMetaTags()

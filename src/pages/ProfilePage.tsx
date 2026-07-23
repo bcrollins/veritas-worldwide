@@ -785,6 +785,7 @@ export default function ProfilePage(): React.ReactNode {
       ),
       url: profileUrl,
       image: absolutePhoto,
+      imageAlt: `${foundProfile.name} — Power Profile portrait, Veritas Worldwide`,
     });
 
     setJsonLd([
@@ -800,6 +801,7 @@ export default function ProfilePage(): React.ReactNode {
         ...(foundProfile.education && { alumniOf: foundProfile.education }),
         image: absolutePhoto,
         sameAs: foundProfile.websites?.map(w => w.url) || [],
+        mainEntityOfPage: { '@type': 'WebPage', '@id': profileUrl },
       },
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },

@@ -7,7 +7,17 @@ import {
 } from '../data/instituteCatalog'
 import { ISRAEL_DOSSIER_COURSE_PATH } from '../data/israelDossierCanon'
 import InstituteSignupPanel from '../components/institute/InstituteSignupPanel'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  howToJsonLd,
+  faqJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 
 export default function InstituteGuidePage() {
   const { slug } = useParams<{ slug: string }>()
@@ -20,11 +30,13 @@ export default function InstituteGuidePage() {
   useEffect(() => {
     if (!topic || !guide) return
 
+    const guideUrl = `${SITE_URL}/institute/guides/${topic.slug}`
     setMetaTags({
       title: `${guide.title} | Veritas Institute | ${SITE_NAME}`,
       description: guide.llmSummary,
-      url: `${SITE_URL}/institute/guides/${topic.slug}`,
+      url: guideUrl,
       type: 'article',
+      imageAlt: `${guide.title} — Veritas Institute practical guide`,
     })
     setJsonLd([
       {
@@ -32,7 +44,7 @@ export default function InstituteGuidePage() {
         '@type': 'Article',
         headline: guide.title,
         description: guide.llmSummary,
-        url: `${SITE_URL}/institute/guides/${topic.slug}`,
+        url: guideUrl,
         about: [topic.skill, topic.trackMeta.label],
         keywords: topic.keywords.join(', '),
         isAccessibleForFree: true,
@@ -46,44 +58,27 @@ export default function InstituteGuidePage() {
           url: SITE_URL,
         },
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'HowTo',
+      howToJsonLd({
         name: guide.title,
         description: guide.quickAnswer,
-        url: `${SITE_URL}/institute/guides/${topic.slug}`,
-        step: guide.steps.map((step, index) => ({
-          '@type': 'HowToStep',
-          position: index + 1,
+        url: guideUrl,
+        steps: guide.steps.map((step) => ({
           name: step.title,
           text: step.detail,
         })),
-        supply: topic.tools.map((tool) => ({
-          '@type': 'HowToSupply',
-          name: tool,
+        supplies: topic.tools,
+      }),
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Veritas Institute', url: `${SITE_URL}/institute` },
+        { name: guide.title, url: guideUrl },
+      ]),
+      faqJsonLd(
+        guide.faq.map((faq) => ({
+          question: faq.question,
+          answer: faq.answer,
         })),
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
-          { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/institute` },
-          { '@type': 'ListItem', position: 3, name: guide.title, item: `${SITE_URL}/institute/guides/${topic.slug}` },
-        ],
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: guide.faq.map((faq) => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer,
-          },
-        })),
-      },
+      ),
     ])
 
     return () => {

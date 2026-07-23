@@ -2341,9 +2341,11 @@ const staticPages = [
     route: '/about',
     title: 'About | Veritas Worldwide',
     heading: 'About Veritas Worldwide',
-    description: 'How Veritas Worldwide publishes, verifies claims, and keeps its trust layer public.',
+    description:
+      'What Veritas Worldwide publishes, how it verifies claims, what stays public, and how reader funding supports the work.',
     body: [
       'The about page explains the publication model directly: what The Record is, how evidence labels work, and how reader funding supports the archive without turning the methodology into a black box.',
+      'Veritas starts with public records, filings, transcripts, and archival reporting. Evidence is labeled Verified, Circumstantial, or Disputed so readers never have to guess how strong the support is.',
     ],
     trustLinks: [
       { href: '/methodology', label: '→ Methodology' },
@@ -2708,6 +2710,54 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
           { '@type': 'ListItem', position: 7, name: 'Levantine Archaeology', url: `${url}#levantine-archaeology` },
           { '@type': 'ListItem', position: 8, name: 'Early Christian Literature', url: `${url}#early-christian-literature` },
           { '@type': 'ListItem', position: 9, name: 'Modern Scholarship to 2026', url: `${url}#modern-scholarship` },
+        ],
+      },
+    ]
+  }
+
+  // About — FAQ + breadcrumbs for E-E-A-T / voice (matches AboutPage client schema).
+  if (route === '/about') {
+    return [
+      {
+        ...basePage,
+        '@type': 'AboutPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'About', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is Veritas Worldwide?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide publishes The Record — a primary-source documentary history of power, money, and institutions. Every major claim is tied to public records, filings, transcripts, or multi-outlet reporting that readers can inspect.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How does Veritas verify claims?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Evidence is labeled Verified, Circumstantial, or Disputed. Priority goes to government records, court filings, congressional documents, and archival sources. See the Methodology page for the full evidence taxonomy.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is The Record free to read?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Archive parts, sources, methodology, and power profiles remain publicly readable. Membership and donations fund the work without changing sourcing rules or paywalling the trust layer.',
+            },
+          },
         ],
       },
     ]

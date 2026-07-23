@@ -3,7 +3,15 @@ import { Link, useParams } from 'react-router-dom'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { getTopicArticles, getTopicChapters, getTopicHubBySlug } from '../data/topicHubs'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 import { formatCompactDollars, getTopicProfileMatches, getTopicProfileStats } from '../lib/topicDiscovery'
 import { getProfilePhoto } from '../data/profileData'
 
@@ -43,6 +51,7 @@ export default function TopicPage() {
       title: `${topic.name} | ${SITE_NAME}`,
       description: topic.metaDescription,
       url: `${SITE_URL}/topics/${topic.slug}`,
+      imageAlt: `${topic.name} research hub — Veritas Worldwide`,
     })
     setJsonLd([
       {
@@ -52,15 +61,11 @@ export default function TopicPage() {
         url: `${SITE_URL}/topics/${topic.slug}`,
         description: topic.metaDescription,
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Research Topics', item: `${SITE_URL}/topics` },
-          { '@type': 'ListItem', position: 3, name: topic.name, item: `${SITE_URL}/topics/${topic.slug}` },
-        ],
-      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Research Topics', url: `${SITE_URL}/topics` },
+        { name: topic.name, url: `${SITE_URL}/topics/${topic.slug}` },
+      ]),
       {
         '@context': 'https://schema.org',
         '@type': 'ItemList',

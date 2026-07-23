@@ -1,7 +1,16 @@
 import { useMemo, useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { chapterMeta } from '../data/chapterMeta'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  itemListJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 interface TimelineEntry {
@@ -50,19 +59,44 @@ export default function TimelinePage() {
   useEffect(() => {
     setMetaTags({
       title: `Interactive Timeline | ${SITE_NAME}`,
-      description: 'An interactive chronological timeline of events documented in The Record, spanning from 1694 to present. Explore 31 chapters of primary source history.',
+      description:
+        'Chronological timeline of The Record — 32 archive parts of primary-source history from 1694 to present. Explore power, money, and institutions by era.',
       url: `${SITE_URL}/timeline`,
+      imageAlt: 'Interactive Timeline — The Record, Veritas Worldwide',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      'name': `Interactive Timeline | ${SITE_NAME}`,
-      'description': 'A chronological timeline of 31 chapters spanning 330+ years of documented history from primary sources.',
-      'url': `${SITE_URL}/timeline`,
-      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    const timelineItems = chapterMeta
+      .filter((ch) => ch.id !== 'front-matter')
+      .slice(0, 32)
+      .map((ch) => ({
+        name: ch.title,
+        url: `${SITE_URL}/chapter/${ch.id}`,
+      }))
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: `Interactive Timeline | ${SITE_NAME}`,
+        description:
+          'A chronological timeline of archive parts spanning 330+ years of documented history from primary sources.',
+        url: `${SITE_URL}/timeline`,
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Timeline', url: `${SITE_URL}/timeline` },
+      ]),
+      itemListJsonLd({
+        name: 'The Record — chronological archive parts',
+        description: 'Primary-source documentary chapters ordered by historical era.',
+        url: `${SITE_URL}/timeline`,
+        items: timelineItems,
+      }),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   const entries = useMemo(() => {

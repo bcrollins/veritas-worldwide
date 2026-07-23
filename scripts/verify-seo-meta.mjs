@@ -102,6 +102,30 @@ assert(
 const profile = read('src/pages/ProfilePage.tsx')
 assert(profile.includes('breadcrumbJsonLd'), 'Profiles must use breadcrumbJsonLd helper')
 assert(profile.includes('clampMetaDescription'), 'Profile meta descriptions must be clamped')
+assert(profile.includes('imageAlt'), 'Profile OG image must declare imageAlt')
+
+const about = read('src/pages/AboutPage.tsx')
+assert(about.includes('faqJsonLd'), 'About must emit FAQPage for E-E-A-T / voice')
+assert(about.includes('breadcrumbJsonLd'), 'About must emit breadcrumbs')
+
+const timeline = read('src/pages/TimelinePage.tsx')
+assert(timeline.includes('breadcrumbJsonLd'), 'Timeline must emit breadcrumbs')
+assert(timeline.includes('itemListJsonLd'), 'Timeline must emit ItemList of chapters')
+
+const readBook = read('src/pages/ReadTheBookPage.tsx')
+assert(readBook.includes('breadcrumbJsonLd'), 'Read page must emit breadcrumbs')
+assert(readBook.includes("'@type': 'Book'") || readBook.includes('"@type": "Book"') || readBook.includes("@type': 'Book'"), 'Read page must emit Book schema')
+
+const topicsIndex = read('src/pages/TopicsIndexPage.tsx')
+assert(topicsIndex.includes('breadcrumbJsonLd'), 'Topics index must emit breadcrumbs')
+assert(topicsIndex.includes('itemListJsonLd'), 'Topics index must use itemListJsonLd helper')
+
+const chapterPage = read('src/pages/ChapterPage.tsx')
+assert(chapterPage.includes('imageAlt'), 'Chapter pages must set imageAlt for OG/image SEO')
+
+const guide = read('src/pages/InstituteGuidePage.tsx')
+assert(guide.includes('howToJsonLd'), 'Institute guides must use howToJsonLd helper')
+assert(guide.includes('faqJsonLd'), 'Institute guides must use faqJsonLd helper')
 
 const prerender = read('scripts/prerender.mjs')
 assert(prerender.includes('xmlns:image='), 'sitemap must declare image namespace')
@@ -128,6 +152,12 @@ assert(
   prerender.includes("route === '/sources'") && prerender.includes('How do I verify a claim in The Record?'),
   'prerender must emit Sources FAQPage for bot-visible voice/PAA queries',
 )
+assert(
+  prerender.includes("route === '/about'") && prerender.includes('What is Veritas Worldwide?'),
+  'prerender must emit About FAQPage for bot-visible E-E-A-T / voice queries',
+)
+assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
+assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 
 // Home uses shared schema helpers (identity lives in seo.ts organizationJsonLd)
 assert(home.includes('websiteJsonLd'), 'Home must call websiteJsonLd()')

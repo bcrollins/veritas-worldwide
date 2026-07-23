@@ -1,7 +1,16 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { TAGLINE } from '../lib/constants'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  faqJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 const operatingPrinciples = [
@@ -45,25 +54,49 @@ export default function AboutPage() {
       description:
         'What Veritas Worldwide publishes, how it verifies claims, what stays public, and how reader funding supports the work.',
       url: `${SITE_URL}/about`,
+      imageAlt: 'About Veritas Worldwide — The Record publication model',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'AboutPage',
-      name: `About ${SITE_NAME}`,
-      url: `${SITE_URL}/about`,
-      description:
-        'An overview of the Veritas Worldwide publication model, evidence standards, reader access model, and contact channels.',
-      isPartOf: {
-        '@type': 'WebSite',
-        name: SITE_NAME,
-        url: SITE_URL,
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: `About ${SITE_NAME}`,
+        url: `${SITE_URL}/about`,
+        description:
+          'An overview of the Veritas Worldwide publication model, evidence standards, reader access model, and contact channels.',
+        isPartOf: {
+          '@type': 'WebSite',
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
       },
-      publisher: {
-        '@type': 'Organization',
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
-    })
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'About', url: `${SITE_URL}/about` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What is Veritas Worldwide?',
+          answer:
+            'Veritas Worldwide publishes The Record — a primary-source documentary history of power, money, and institutions. Every major claim is tied to public records, filings, transcripts, or multi-outlet reporting that readers can inspect.',
+        },
+        {
+          question: 'How does Veritas verify claims?',
+          answer:
+            'Evidence is labeled Verified, Circumstantial, or Disputed. Priority goes to government records, court filings, congressional documents, and archival sources. See the Methodology page for the full evidence taxonomy.',
+        },
+        {
+          question: 'Is The Record free to read?',
+          answer:
+            'Yes. Archive parts, sources, methodology, and power profiles remain publicly readable. Membership and donations fund the work without changing sourcing rules or paywalling the trust layer.',
+        },
+      ]),
+    ])
 
     return () => {
       clearMetaTags()
