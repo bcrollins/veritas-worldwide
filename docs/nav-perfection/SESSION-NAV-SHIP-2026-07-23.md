@@ -236,3 +236,10 @@ Verified production bundles (CORE + 13 page needles) repeatedly green while dens
 - NotFound primary+secondary dual RelatedHubs mounts
 - Import thrash blank-line hygiene + multi-line HUBS constants
 - Pure: HUBS ≤5, emphasizeTo, dual NotFound mounts
+
+
+## Sprint 8b — Account hub densify + legal five
+- Accessibility/OSINT/Privacy/Terms recovery hubs at 5 destinations
+- RelatedHubs emphasizeTo pure floors densified
+- Import thrash hygiene + multi-line HUBS
+- pure 46 green · recovery 102 needles
