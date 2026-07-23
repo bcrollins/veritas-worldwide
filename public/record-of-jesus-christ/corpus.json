@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:17:06.350Z",
-  "claimCount": 381,
+  "generatedAt": "2026-07-23T10:19:16.116Z",
+  "claimCount": 390,
   "tierHistogram": {
-    "well_attested": 148,
-    "verified": 136,
+    "well_attested": 154,
+    "verified": 138,
     "contested": 36,
-    "interpretive": 38,
+    "interpretive": 39,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 18
@@ -229,6 +229,13 @@
       "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
+      "id": "ane-samaria-ostraca",
+      "claim": "The Samaria ostraca (Iron Age Israel) are primary Hebrew administrative dockets recording wine/oil deliveries and personal names in the Northern Kingdom capital region.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave32.ts"
+    },
+    {
       "id": "ane-sennacherib",
       "claim": "Sennacherib’s annals (Taylor Prism / related prisms) describe the 701 BCE campaign against Judah and Hezekiah’s tribute without claiming Jerusalem’s capture.",
       "tier": "verified",
@@ -318,6 +325,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
+      "id": "arch-caiaphas-ossuary",
+      "claim": "An ornate ossuary inscribed “Joseph son of Caiaphas” (and related finds) is widely associated with the high-priestly family of Caiaphas known from Josephus and the Gospels.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave32.ts"
     },
     {
       "id": "arch-capernaum",
@@ -733,6 +747,13 @@
       "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
+      "id": "cosmo-jwst-high-z-galaxies",
+      "claim": "James Webb Space Telescope observations of unexpectedly luminous high-redshift galaxies have prompted active model revisions for early structure formation and star-formation efficiency.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave32.ts"
+    },
+    {
       "id": "cosmo-lambda-equation",
       "claim": "Dark energy is commonly parameterized with equation-of-state w ≈ −1 (cosmological constant-like); deviations are constrained but not fully excluded by current surveys.",
       "tier": "contested",
@@ -1111,6 +1132,13 @@
       "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
+      "id": "ec-theophilus-autolycus",
+      "claim": "Theophilus of Antioch’s Ad Autolycum (late 2nd c.) is an early Greek apology defending Christian monotheism and scriptural chronology to a pagan interlocutor.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave32.ts"
+    },
+    {
       "id": "ec-update-triggers",
       "claim": "This Record’s perpetual update triggers include: new major papyri/majuscule publications, INTF Liste changes, peer-reviewed dig reports, and material consensus shifts in historical Jesus research.",
       "tier": "interpretive",
@@ -1326,6 +1354,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
+      "id": "hj-joseph-arimathea-burial",
+      "claim": "The tradition that Joseph of Arimathea buried Jesus is multiply attested in the Gospels and is often judged to have an early historical core, though details and motive reconstructions vary.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave32.ts"
     },
     {
       "id": "hj-kingdom-of-god-core",
@@ -1606,6 +1641,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "mod-ehrman-apocalyptic-jesus",
+      "claim": "Bart Ehrman’s reconstruction places Jesus as an apocalyptic Jewish prophet announcing imminent kingdom judgment — a mainstream Third Quest option over cynic-sage models.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave32.ts"
     },
     {
       "id": "mod-entity-only-attribution",
@@ -1958,6 +2000,13 @@
       "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
+      "id": "nc-slavonic-josephus",
+      "claim": "The Slavonic version of Josephus’s Jewish War contains expansions (including Jesus-related passages) widely judged to be later Christian interpolations, not first-century Josephan text.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave32.ts"
+    },
+    {
       "id": "nc-suetonius",
       "claim": "Suetonius, Claudius 25.4, refers to disturbances in Rome impulsore Chresto — often discussed as a possible garbled reference to Christ-related conflict, but identification is uncertain.",
       "tier": "circumstantial",
@@ -2103,6 +2152,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "nt-conjectural-emendation",
+      "claim": "Conjectural emendation (proposing a reading with no extant manuscript support) is rare in modern NT editions compared with classical philology; editors prefer documented variants in the apparatus.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave32.ts"
     },
     {
       "id": "nt-continuous-text-vs-lectionary",
@@ -2670,6 +2726,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-temple-scroll",
+      "claim": "The Temple Scroll (11QTa) from Qumran presents an idealized Temple plan and purity legislation distinct from the later Mishnah — evidence of alternative legal imaginations in Second Temple Judaism.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave32.ts"
     },
     {
       "id": "st-temple-tax",
