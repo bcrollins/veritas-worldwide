@@ -19,3 +19,10 @@
 - Never stage densify corpus. Single-file pure commits when densify tip is hot.
 - Live matrix: CORE shell markers + server soft-404 five hubs + Sprint 9 testIds after deploy lag clears
 
+## Keyboard focus platform (nav-owned a11y)
+- Shell: desktop primary/utility/drawer, mobile tab bar, footer, cookie, skip-link
+- Chips: RelatedHubs, ResearchHubChips, DossierHubSpokes (all variants)
+- Engagement: StickyMembershipBar, ExitIntent, AuthModal, NewsletterSignup, SharePanel, CorrectionsCTA
+- Pure: perpetual densify locks on verify-nav-recovery / verify-nav-ia + verify-related-hubs-coverage
+- Never stage densify corpus when shipping focus/a11y intervals
+
