@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:33:00.247Z",
-  "claimCount": 462,
+  "generatedAt": "2026-07-23T10:34:03.667Z",
+  "claimCount": 471,
   "tierHistogram": {
-    "well_attested": 184,
-    "verified": 162,
-    "contested": 42,
-    "interpretive": 48,
+    "well_attested": 187,
+    "verified": 165,
+    "contested": 43,
+    "interpretive": 49,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 21
+    "circumstantial": 22
   },
   "claims": [
     {
@@ -157,6 +157,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave12.ts"
+    },
+    {
+      "id": "ane-hezekiah-bulla-provenanced",
+      "claim": "A provenanced bulla reading “Belonging to Hezekiah [son of] Ahaz king of Judah” from controlled Ophel excavations is a primary royal seal impression of late-8th-century Judah.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave41.ts"
     },
     {
       "id": "ane-hezekiah-lmlk",
@@ -684,6 +691,13 @@
       "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
+      "id": "arch-tiberias-gate-complex",
+      "claim": "Tiberias excavations document city gates, streets, and public architecture of the Antipas foundation and later Roman phases on the western Sea of Galilee shore.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave41.ts"
+    },
+    {
       "id": "arch-titus",
       "claim": "1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative.",
       "tier": "well_attested",
@@ -992,6 +1006,13 @@
       "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
+      "id": "cosmo-sound-horizon-scale",
+      "claim": "The sound horizon at recombination is a precisely measured scale from CMB acoustics that anchors BAO standard-ruler cosmology and absolute distance calibration in ΛCDM analyses.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave41.ts"
+    },
+    {
       "id": "cosmo-spectral-index",
       "claim": "The scalar spectral index n_s ≈ 0.96 from CMB data is slightly red-tilted, consistent with many slow-roll inflation models.",
       "tier": "verified",
@@ -1130,6 +1151,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave35.ts"
+    },
+    {
+      "id": "ec-eusebius-chronicon",
+      "claim": "Eusebius’s Chronicon (Chronicle) synchronizes biblical, Near Eastern, and Greco-Roman timelines — foundational for later Christian world chronology and for preserving fragments of lost authors.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave41.ts"
     },
     {
       "id": "ec-eusebius-he",
@@ -1531,6 +1559,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "hj-galilee-jewish-context-core",
+      "claim": "Jesus’ public activity is overwhelmingly set in Jewish Galilee under Antipas, with pilgrimage and conflict episodes in Jerusalem — a geographical core shared across critical reconstructions.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave41.ts"
+    },
+    {
       "id": "hj-galilee-jewishness",
       "claim": "Archaeology and literary sources support a predominantly Jewish Galilee in the early first century with hellenizing urban pockets (Sepphoris, Tiberias).",
       "tier": "well_attested",
@@ -1893,6 +1928,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "mod-criteria-dissimilarity-limits",
+      "claim": "The double dissimilarity criterion (authentic if unlike Judaism and early church) is now widely criticized for producing a de-Judaized Jesus and is largely retired as a primary authenticity engine.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave41.ts"
     },
     {
       "id": "mod-criteria-embarrassment",
@@ -2497,6 +2539,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nc-thallus-original-lost",
+      "claim": "Thallus’s histories survive only in later Christian citations (e.g., Julius Africanus via Syncellus); no independent first-century Thallus manuscript exists to verify crucifixion-darkness claims.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave41.ts"
+    },
+    {
       "id": "nc-thallus-phlegon",
       "claim": "Later Christian authors cite Thallus and Phlegon regarding a darkness or eclipse around the time of the crucifixion; the original works are lost and the citations are mediated.",
       "tier": "circumstantial",
@@ -2691,6 +2740,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
+      "id": "nt-majority-text-debate",
+      "claim": "Majority Text / Byzantine-priority theories argue the numerically dominant medieval form best represents the initial text; most critical editors instead prefer earlier diverse witnesses weighted by genealogy and internal evidence.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave41.ts"
     },
     {
       "id": "nt-majuscules",
@@ -3062,6 +3118,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-war-preface",
+      "claim": "Josephus’s preface to the Jewish War frames his work as a corrective to other accounts and as written for both Roman and Jewish audiences under Flavian patronage.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave41.ts"
     },
     {
       "id": "st-lxx-textual",
