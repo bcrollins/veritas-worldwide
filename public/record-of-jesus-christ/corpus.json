@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:03:39.420Z",
-  "claimCount": 345,
+  "generatedAt": "2026-07-23T10:06:11.328Z",
+  "claimCount": 354,
   "tierHistogram": {
-    "well_attested": 132,
-    "verified": 124,
+    "well_attested": 136,
+    "verified": 128,
     "contested": 34,
-    "interpretive": 34,
+    "interpretive": 35,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 16
@@ -199,6 +199,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-mesha-yhwh",
+      "claim": "The Mesha Stele mentions YHWH in a Moabite royal context — primary evidence for the divine name outside the Hebrew Bible.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
       "id": "ane-moabite-stone-context",
@@ -409,6 +416,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "arch-magdala-stone",
+      "claim": "The Magdala stone (synagogue furniture with Temple imagery) is a major late Second Temple Jewish artifactual find from a Galilean synagogue context.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
       "id": "arch-magdala-synagogue",
@@ -754,6 +768,13 @@
       "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
+      "id": "cosmo-tensor-to-scalar",
+      "claim": "The tensor-to-scalar ratio r is constrained from above by CMB B-mode searches; a detection would strongly support high-scale inflation.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave28.ts"
+    },
+    {
       "id": "cosmo-weak-lensing",
       "claim": "Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits.",
       "tier": "verified",
@@ -878,6 +899,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-irenaeus-fourfold",
+      "claim": "Irenaeus (late 2nd c.) argues for a fourfold Gospel canon as a theological-natural schema — evidence of four-Gospel prestige by his time.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
       "id": "ec-justin-apology",
@@ -1356,6 +1384,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "hj-table-fellowship-core",
+      "claim": "Open table fellowship with “sinners”/tax collectors is multiply attested and widely treated as a historically distinctive social practice of Jesus’ movement.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave28.ts"
+    },
+    {
       "id": "hj-tax-collectors",
       "claim": "Association with tax collectors / toll collectors is multiply attested and often treated as historically characteristic of Jesus’ social practice (table fellowship theme).",
       "tier": "well_attested",
@@ -1389,6 +1424,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave13.ts"
+    },
+    {
+      "id": "mod-continuous-update-duty",
+      "claim": "A living evidentiary corpus must update when new editions, inscriptions, or scientific results appear — stasis is a method failure.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
       "id": "mod-corpus-not-creed",
@@ -1832,6 +1874,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nc-tacitus-pilate-title",
+      "claim": "Tacitus’s “procurator” title for Pilate is a known anachronism relative to the epigraphic “prefect” title — a classic example of Roman literary imprecision that does not overturn the core notice.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave28.ts"
+    },
+    {
       "id": "nc-talmud",
       "claim": "Certain Babylonian Talmud passages are sometimes read as hostile allusions to Jesus; dating, redaction, and identification are highly contested and often late.",
       "tier": "circumstantial",
@@ -1893,6 +1942,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "nt-codex-sinaiticus",
+      "claim": "Codex Sinaiticus (ℵ 01, 4th c.) is a foundational nearly complete Greek Bible majuscule for NT textual criticism and early Christian book history.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
       "id": "nt-comma-johanneum",
@@ -2306,6 +2362,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "st-mikveh-purity",
+      "claim": "Widespread miqva’ot in late Second Temple Judea/Galilee evidence purity practice infrastructure relevant to baptism and purity language in early sources.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
       "id": "st-mishnah-context",

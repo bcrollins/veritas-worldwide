@@ -405,10 +405,10 @@ const topicHubs = read('src/data/topicHubs.json')
 assert(topicHubs.includes('historical-jesus-evidence'), 'topic hubs must include historical-jesus-evidence')
 assert(!topicHubs.includes('150+ tier-labeled'), 'historical Jesus topic must not advertise stale 150+ claim floor')
 assert(
-  topicHubs.includes('340+ tier-labeled') ||
-    topicHubs.includes('340+ tier-labeled') ||
+  topicHubs.includes('350+ tier-labeled') ||
+    topicHubs.includes('350+ tier-labeled') ||
     topicHubs.includes('300+ tier-labeled'),
-  'historical Jesus topic must advertise current 340+ claim floor',
+  'historical Jesus topic must advertise current 350+ claim floor',
 )
 
 // Soft-404: unknown /chapter/* must not soft-serve homepage shells to crawlers.
@@ -439,10 +439,10 @@ assert(
 
 const homePage = read('src/pages/HomePage.tsx')
 assert(!homePage.includes('200+ tier-labeled claims'), 'Home must not advertise stale 200+ ROC claim floor')
-assert(homePage.includes('340+ tier-labeled') || homePage.includes('330+ tier-labeled'), 'Home must advertise current ROC claim floor')
+assert(homePage.includes('350+ tier-labeled') || homePage.includes('330+ tier-labeled'), 'Home must advertise current ROC claim floor')
 const sourcesPage = read('src/pages/SourcesPage.tsx')
 assert(!sourcesPage.includes('200+ tier-labeled'), 'Sources must not advertise stale 200+ ROC claim floor')
-assert(sourcesPage.includes('340+ tier-labeled') || sourcesPage.includes('330+ tier-labeled'), 'Sources must advertise current ROC claim floor')
+assert(sourcesPage.includes('350+ tier-labeled') || sourcesPage.includes('330+ tier-labeled'), 'Sources must advertise current ROC claim floor')
 
 const methodPage = read('src/pages/MethodologyPage.tsx')
 assert(!methodPage.includes('200+ claims with proofVsConcept'), 'Methodology must not advertise stale 200+ ROC claim floor')
