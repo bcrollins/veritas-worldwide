@@ -17,6 +17,7 @@
     "verify:sitemap-exclusions": "node scripts/verify-sitemap-exclusions.mjs",
     "verify:deploy-lag": "node scripts/verify-deploy-lag.mjs",
     "verify:robots-disallow": "node scripts/verify-robots-disallow.mjs",
+    "verify:security-txt": "node scripts/verify-security-txt.mjs",
     "verify:error-scrub": "node scripts/verify-error-scrub.mjs",
     "verify:share-utms": "node scripts/verify-share-utms.mjs",
     "verify:hubspot-fields": "node scripts/verify-hubspot-fields.mjs",
