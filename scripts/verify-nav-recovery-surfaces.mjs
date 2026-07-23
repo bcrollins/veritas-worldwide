@@ -2124,4 +2124,13 @@ assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'plat
 assert(surfaces.length >= 102, `platform surfaces ${surfaces.length}`)
 
 
+
+// Hick PRIMARY exactly 5 with emphasize platform ultimate end
+const primaryHickEnd = read('src/components/RelatedHubs.tsx')
+const pHick = primaryHickEnd.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+assert(pHick, 'PRIMARY block hick end')
+assert((pHick[1].match(/to:/g) || []).length === 5, 'PRIMARY exactly 5 with emphasize platform')
+assert(primaryHickEnd.includes('emphasizeTo'), 'emphasize coexists with Hick 5')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
