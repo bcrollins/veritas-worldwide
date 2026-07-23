@@ -349,6 +349,8 @@ export default function MediaKitPage() {
               { label: 'Reels', href: '/brand-kit/04-social/reels-safe-zone.svg', bg: 'bg-obsidian' },
               { label: 'Mastodon', href: '/brand-kit/04-social/mastodon-banner.svg', bg: 'bg-obsidian' },
               { label: 'Video end', href: '/brand-kit/04-social/video-end-card.svg', bg: 'bg-obsidian' },
+              { label: 'LinkedIn', href: '/brand-kit/04-social/linkedin-post.svg', bg: 'bg-obsidian' },
+              { label: 'Facebook', href: '/brand-kit/04-social/facebook-post.svg', bg: 'bg-parchment' },
             ].map(a => (
               <a
                 key={a.href}
