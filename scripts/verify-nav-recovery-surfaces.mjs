@@ -150,6 +150,14 @@ const relatedPrimaryCount = (relatedPrimaryBlock[1].match(/to:/g) || []).length
 assert(relatedPrimaryCount === 5, `PRIMARY_RELATED_HUBS count ${relatedPrimaryCount} !== 5`)
 assert(relatedHubsSrc.includes("to: '/'") || relatedHubsSrc.includes('to: "/"'), 'PRIMARY includes Record /')
 assert(relatedHubsSrc.includes('/read') && relatedHubsSrc.includes('/search'), 'PRIMARY includes Read+Search')
+
+// PRIMARY labels match shell short names
+for (const label of ['Record', 'Read', 'Dossiers', 'Profiles', 'Search']) {
+  assert(relatedPrimaryBlock[1].includes(label), `PRIMARY label ${label}`)
+}
+// RelatedHubs component is a first-class export surface (lazy chunk on live)
+assert(relatedHubsSrc.includes('tone === \'parchment\'') || relatedHubsSrc.includes("tone === 'parchment'"), 'RelatedHubs parchment tone')
+assert(relatedHubsSrc.includes('excludeTo'), 'RelatedHubs excludeTo prop')
 assert(read('src/pages/NotFoundPage.tsx').includes('PRIMARY_RELATED_HUBS'), 'NotFound reuses PRIMARY_RELATED_HUBS')
 // ResearchHubChips excludePath actually filters (not dead-true)
 const researchChipsSrc = read('src/components/ResearchHubChips.tsx')
