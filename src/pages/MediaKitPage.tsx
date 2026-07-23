@@ -13,6 +13,12 @@ const TOKEN_SWATCHES = [
   { name: 'Obsidian', hex: '#0A0A0A', on: 'text-white' },
 ] as const
 
+const EVIDENCE_SWATCHES = [
+  { name: 'Verified', hex: '#166534', on: 'text-white' },
+  { name: 'Circumstantial', hex: '#92400E', on: 'text-white' },
+  { name: 'Disputed', hex: '#991B1B', on: 'text-white' },
+] as const
+
 const ASSETS = [
   {
     title: 'Logo mark',
@@ -231,6 +237,20 @@ export default function MediaKitPage() {
                 className="overflow-hidden rounded-xl border border-border"
               >
                 <div className={`flex h-20 items-end p-3 ${swatch.on}`} style={{ backgroundColor: swatch.hex }}>
+                  <span className="font-mono text-xs opacity-90">{swatch.hex}</span>
+                </div>
+                <p className="bg-surface px-3 py-2 font-sans text-xs font-medium text-ink">{swatch.name}</p>
+              </div>
+            ))}
+          </div>
+          <h3 className="mt-8 font-display text-lg font-semibold text-ink">Evidence tier colors</h3>
+          <p className="mt-1 max-w-2xl font-body text-sm text-ink-muted">
+            Same tokens as The Record UI (`src/styles/index.css`). Used on evidence-tier social cards.
+          </p>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {EVIDENCE_SWATCHES.map(swatch => (
+              <div key={swatch.hex} className="overflow-hidden rounded-xl border border-border">
+                <div className={`flex h-16 items-end p-3 ${swatch.on}`} style={{ backgroundColor: swatch.hex }}>
                   <span className="font-mono text-xs opacity-90">{swatch.hex}</span>
                 </div>
                 <p className="bg-surface px-3 py-2 font-sans text-xs font-medium text-ink">{swatch.name}</p>
