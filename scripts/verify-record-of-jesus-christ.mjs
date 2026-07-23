@@ -94,6 +94,9 @@ const wave12forCount = fs.existsSync(path.join(root, 'src/data/recordOfJesusChri
 const wave13forCount = fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave13.ts'))
   ? fs.readFileSync(path.join(root, 'src/data/recordOfJesusChristWave13.ts'), 'utf8')
   : ''
+const wave14forCount = fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave14.ts'))
+  ? fs.readFileSync(path.join(root, 'src/data/recordOfJesusChristWave14.ts'), 'utf8')
+  : ''
 const tierHits =
   (data.match(/tier: '/g) || []).length +
   (extras.match(/tier: '/g) || []).length +
@@ -107,7 +110,8 @@ const tierHits =
   (wave10forCount.match(/tier: '/g) || []).length +
   (wave11forCount.match(/tier: '/g) || []).length +
   (wave12forCount.match(/tier: '/g) || []).length +
-  (wave13forCount.match(/tier: '/g) || []).length
+  (wave13forCount.match(/tier: '/g) || []).length +
+  (wave14forCount.match(/tier: '/g) || []).length
 assert(tierHits >= 190, `expected ≥190 tiered claims across base+waves, got ${tierHits}`)
 assert(data.includes('ROC_WAVE3_CLAIMS'), 'wave3 merge missing')
 assert(data.includes('ROC_WAVE4_CLAIMS'), 'wave4 merge missing')
@@ -120,6 +124,7 @@ assert(data.includes('ROC_WAVE10_CLAIMS'), 'wave10 merge missing')
 assert(data.includes('ROC_WAVE11_CLAIMS'), 'wave11 merge missing')
 assert(data.includes('ROC_WAVE12_CLAIMS'), 'wave12 merge missing')
 assert(data.includes('ROC_WAVE13_CLAIMS'), 'wave13 merge missing')
+assert(data.includes('ROC_WAVE14_CLAIMS'), 'wave14 merge missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave4.ts')), 'wave4 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave5.ts')), 'wave5 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave6.ts')), 'wave6 file missing')
@@ -130,6 +135,7 @@ assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave10.ts')), 
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave11.ts')), 'wave11 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave12.ts')), 'wave12 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave13.ts')), 'wave13 file missing')
+assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave14.ts')), 'wave14 file missing')
 assert(!/brollins|bcrollins|brandoncrollins/i.test(wave6src), 'wave6 must not contain operator identity')
 assert((wave6src.match(/tier: '/g) || []).length >= 18, 'wave6 should add a substantial claim batch')
 const wave7src = fs.readFileSync(path.join(root, 'src/data/recordOfJesusChristWave7.ts'), 'utf8')
@@ -186,7 +192,7 @@ assert(
 const corpusPath = path.join(root, 'public/record-of-jesus-christ/corpus.json')
 assert(fs.existsSync(corpusPath), 'public ROC corpus.json missing — run npm run export:roc-corpus')
 const corpus = JSON.parse(fs.readFileSync(corpusPath, 'utf8'))
-assert(corpus.claimCount >= 216, `corpus claimCount should include wave13 (≥216), got ${corpus.claimCount}`)
+assert(corpus.claimCount >= 225, `corpus claimCount should include wave13 (≥216), got ${corpus.claimCount}`)
 assert(corpus.meta?.publisher === 'Veritas Worldwide', 'corpus publisher must be entity-only')
 assert(fs.existsSync(path.join(root, 'public/og/record-of-jesus-christ.png')), 'ROC OG PNG missing')
 assert(fs.existsSync(path.join(root, 'public/record-of-jesus-christ/figures/cmb-power-spectrum-schematic.svg')), 'CMB figure missing')

@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:24:18.109Z",
-  "claimCount": 218,
+  "generatedAt": "2026-07-23T09:28:08.075Z",
+  "claimCount": 227,
   "tierHistogram": {
-    "verified": 76,
-    "well_attested": 82,
-    "contested": 27,
-    "interpretive": 17,
+    "verified": 78,
+    "well_attested": 86,
+    "contested": 28,
+    "interpretive": 18,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 11
+    "circumstantial": 12
   },
   "claims": [
     {
@@ -24,6 +24,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "ane-annals-shoshenq",
+      "claim": "Shoshenq I (biblical Shishak) campaign reliefs at Karnak list Levantine toponyms relevant to 10th-century BCE geopolitics debates.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
       "id": "ane-babylonian-chronicle-jerusalem",
@@ -213,6 +220,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
+      "id": "arch-hippos-sussita",
+      "claim": "Hippos-Sussita (Decapolis) excavations illuminate Greco-Roman urbanism east of the Sea of Galilee relevant to Gospel geographic horizons.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
       "id": "arch-james-ossuary",
@@ -453,6 +467,13 @@
       "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
+      "id": "cosmo-sound-horizon",
+      "claim": "The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
       "id": "cosmo-structure-formation",
       "claim": "Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO.",
       "tier": "verified",
@@ -472,6 +493,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ec-aristides",
+      "claim": "The Apology of Aristides (2nd c.) is an early Christian apology preserved in Syriac/Greek traditions describing Christian ethics to a Roman audience.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
       "id": "ec-athanasius",
@@ -859,6 +887,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "hj-sabbath-conflicts",
+      "claim": "Sabbath controversy traditions are multiply attested in Synoptics and are widely treated as historically characteristic conflict settings for Jesus’ public activity.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
       "id": "hj-table-fellowship",
       "claim": "Traditions of Jesus’ open table fellowship with “sinners” and tax collectors are widely treated as historically plausible under embarrassment and multiple attestation.",
       "tier": "well_attested",
@@ -927,6 +962,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "mod-form-criticism-limits",
+      "claim": "Form criticism classifies Gospel units by genre and Sitz im Leben; its older assumption of pure oral isolation before writing is now heavily qualified.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
       "id": "mod-genetics-limits",
@@ -1160,6 +1202,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "nc-talmud-baraita-caution",
+      "claim": "Isolated Talmudic baraitot sometimes linked to Jesus are late, polemical, and methodologically unsafe as first-century biography without extreme caution.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave14.ts"
+    },
+    {
       "id": "nc-talmud-dating",
       "claim": "Rabbinic passages sometimes linked to Jesus (e.g., b. Sanhedrin traditions) are late, layered, and methodologically hazardous as first-century biography.",
       "tier": "circumstantial",
@@ -1270,6 +1319,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
+      "id": "nt-lectionary-evidence",
+      "claim": "Lectionary manuscripts preserve liturgical text forms that can retain early readings in some units while generally reflecting later Byzantine dominance.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
       "id": "nt-majuscules",
@@ -1438,6 +1494,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "st-herod-great-death",
+      "claim": "Herod the Great’s death is commonly dated 4 BCE (with minority 1 BCE arguments), framing the terminus for Matthew’s birth narrative chronology.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
       "id": "st-herod-temple",
