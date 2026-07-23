@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:02:03.360Z",
+  "generatedAt": "2026-07-23T07:03:57.917Z",
   "count": 94,
   "profiles": [
     {
@@ -20,8 +20,8 @@
         "Iran Sanctions",
         "Iron Dome"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -566,8 +566,8 @@
         "Delaware",
         "Long Career"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
@@ -820,16 +820,18 @@
       "name": "Bernie Sanders",
       "title": "U.S. Senator (I-VT)",
       "category": "politician",
-      "summary": "Independent Senator from Vermont. Prominent progressive voice. Critical of Israeli occupation policies.",
+      "summary": "Vermont independent and progressive leader who has long supported Israel's existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Primary: Senate record, OpenSecrets, official statements.",
       "photo": "/profiles/bernie-sanders.jpg",
       "url": "https://veritasworldwide.com/profile/bernie-sanders",
       "bioguideId": "S000033",
       "tags": [
         "Senator",
         "Independent",
-        "Vermont",
         "Progressive",
-        "Palestinian Rights"
+        "Vermont",
+        "Aid Conditionality",
+        "Gaza",
+        "Iron Dome History"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,

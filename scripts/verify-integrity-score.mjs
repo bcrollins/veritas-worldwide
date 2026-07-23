@@ -181,6 +181,35 @@ for (const f of (desantisP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('desantis dual-cite collision: ' + f.id);
 }
 
+// Joe Biden multi-entry expansion (Hunter + troops + SOTU trips)
+const biden = scores['joe-biden'];
+if (!biden || biden.n < 3) throw new Error('joe-biden needs ≥3 verified falsehoods, got ' + (biden?.n ?? 0));
+if (biden.score > 50) throw new Error('joe-biden score expected ≤50 after deep dive, got ' + biden.score);
+const bidenP = getProfileBySlug('joe-biden');
+for (const id of [
+  'biden-keep-your-doctor-aca-echo-vs-son-business',
+  'biden-no-troops-dying-abroad-debate-2024',
+  'biden-iraq-afghanistan-trips-sotu-2022',
+]) {
+  if (!(bidenP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('joe-biden missing docket id: ' + id);
+  }
+}
+
+// Ted Cruz multi-entry expansion
+const cruz = scores['ted-cruz'];
+if (!cruz || cruz.n < 2) throw new Error('ted-cruz needs ≥2 verified falsehoods, got ' + (cruz?.n ?? 0));
+if (cruz.score > 65) throw new Error('ted-cruz score expected ≤65 after deep dive, got ' + cruz.score);
+const cruzP = getProfileBySlug('ted-cruz');
+for (const id of [
+  'cruz-zuckerberg-hearings-libel-context-not-used',
+  'cruz-voting-bill-register-illegal-immigrants-2021',
+]) {
+  if (!(cruzP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('ted-cruz missing docket id: ' + id);
+  }
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
 if (docketCount < 14) throw new Error('expected ≥14 compiled dockets, got ' + docketCount);
 

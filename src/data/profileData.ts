@@ -328,12 +328,32 @@ export const PROFILES: PowerProfile[] = [
         severity: 'egregious',
         tier: 'verified',
       },
+      {
+        id: 'cruz-voting-bill-register-illegal-immigrants-2021',
+        statement:
+          'Claimed a Democratic voting bill "would register illegal immigrants to vote" (automatic registration of non-citizens).',
+        saidAt: 'May 2021',
+        context:
+          'Senate floor and media attacks on For the People / related Democratic voting legislation during 2021 voting-rights fights.',
+        whyFalse:
+          'PolitiFact rated the claim False. The bills required states to use available government lists for automatic voter registration of eligible citizens and did not create a pathway for non-citizens to register; federal law already prohibits non-citizen voting in federal elections, and the legislation did not repeal that ban.',
+        correction:
+          'The voting bills targeted automatic registration of eligible citizens using government databases; they did not register non-citizens to vote.',
+        statementSource: 'Cruz public statements / PolitiFact statement capture',
+        statementUrl: 'https://www.politifact.com/personalities/ted-cruz/',
+        debunkSource: 'PolitiFact — False (May 14, 2021)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2021/may/14/ted-cruz/ted-cruz-repeats-false-claim-voting-bill-would-reg/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.cruz.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085' },
       { label: 'Congress.gov member', url: 'https://www.congress.gov/member/ted-cruz/C001098' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ted_Cruz' },
+      { label: 'PolitiFact — voting bill non-citizen claim (False)', url: 'https://www.politifact.com/factchecks/2021/may/14/ted-cruz/ted-cruz-repeats-false-claim-voting-bill-would-reg/' },
+      { label: 'CISA 2020 election security statement', url: 'https://www.cisa.gov/news-events/news/joint-statement-elections-infrastructure-government-coordinating-council-election' },
     ],
   },
   {
@@ -2940,6 +2960,40 @@ export const PROFILES: PowerProfile[] = [
         statementUrl: 'https://www.politifact.com/article/2020/oct/24/fact-checking-bidens-claim-he-never-talked-his-son/',
         debunkSource: 'House Oversight / Ways & Means document releases and major press synthesis',
         debunkUrl: 'https://www.nytimes.com/2023/06/05/us/politics/hunter-biden-house-republicans.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'biden-no-troops-dying-abroad-debate-2024',
+        statement:
+          'Claimed he was "the only president this century… that doesn\'t have any troops dying anywhere in the world" (debate framing of zero U.S. troop deaths abroad under his presidency).',
+        saidAt: 'June 27, 2024',
+        context:
+          'CNN presidential debate against Donald Trump; foreign-policy exchange on wars and U.S. force posture.',
+        whyFalse:
+          'PolitiFact rated False. Thirteen U.S. service members were killed in the August 26, 2021 Abbey Gate attack during the Afghanistan withdrawal under Biden. Additional U.S. service members were killed abroad later (e.g., three soldiers in a January 2024 drone strike in Jordan). Absolute "no troops dying" framing is contradicted by DoD casualty records and contemporaneous AP/BBC reporting.',
+        correction:
+          'U.S. service members died in combat and hostile actions abroad during the Biden presidency, including the Kabul airport attack and later incidents. The absolute claim was false.',
+        statementSource: 'CNN presidential debate transcript / PolitiFact debate package',
+        statementUrl: 'https://www.politifact.com/article/2024/jun/28/2024-presidential-debate-fact-check-biden-trump/',
+        debunkSource: 'AP reporting on Abbey Gate deaths; DoD casualty data synthesis in PolitiFact',
+        debunkUrl: 'https://apnews.com/article/europe-france-evacuations-kabul-9e457201e5bbe75a4eb1901fedeee7a1',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'biden-iraq-afghanistan-trips-sotu-2022',
+        statement: 'Claimed he had visited Iraq and Afghanistan "over 40 times."',
+        saidAt: 'March 1, 2022',
+        context: '2022 State of the Union address, military/burn-pits passage.',
+        whyFalse:
+          'PolitiFact rated False. Public travel records and contemporaneous reporting show Biden visited Iraq/Afghanistan far fewer times than 40; PolitiFact found the claim off by roughly half relative to documented trips.',
+        correction:
+          'Documented Biden travel to Iraq and Afghanistan is substantially below "over 40 times."',
+        statementSource: 'White House State of the Union 2022 transcript',
+        statementUrl: 'https://www.whitehouse.gov/state-of-the-union-2022/',
+        debunkSource: 'PolitiFact — False (March 3, 2022) travel-record analysis',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/mar/03/joe-biden/biden-exaggerates-trips-iraq-afghanistan-state-uni/',
         severity: 'material',
         tier: 'verified',
       },
