@@ -193,3 +193,19 @@ Live tip lineage verified with:
 - **301 live:** `/profile/ted-cruz/` → `/profile/ted-cruz`
 - Soft anonymity floor tracks wave33 (399); GEO public copy 400+
 - Pure + live: `verify:seo-meta`, `verify:soft-404-gates`, `verify:live-bot-noindex`
+
+
+### wave35 production SEO lock (2026-07-23)
+
+Verified live Googlebot matrix:
+
+| Request | Result |
+| --- | --- |
+| Junk dynamic prefixes | **404 + noindex** |
+| `/profile/Ted-Cruz` | **301** → `/profile/ted-cruz` |
+| `/profile/ted-cruz/` | **301** → `/profile/ted-cruz` |
+| `/CHAPTER/CHAPTER-1` | **301** → `/chapter/chapter-1` |
+| Known content | **200 + index,follow** |
+| admin / success / search / bookmarks / bernie | **200 + noindex** |
+
+ROC corpus **417** claims; soft floor **417**. Pure + live gates green.
