@@ -172,6 +172,11 @@ const required = [
   'paul-singer',
   'bernard-marcus',
   'haim-saban',
+  'warren-buffett',
+  'howard-kohr',
+  'miriam-adelson',
+  'john-fetterman',
+  'josh-gottheimer',
 ];
 const scores = {};
 for (const id of required) {
@@ -1618,8 +1623,89 @@ for (const f of (sabanP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('saban dual-cite collision: ' + f.id);
 }
 
+
+// Warren Buffett densify gate (n≥3)
+const buffett = scores['warren-buffett'];
+if (!buffett || buffett.n < 3) throw new Error('warren-buffett needs ≥3 verified falsehoods, got ' + (buffett?.n ?? 0));
+if (buffett.score > 80) throw new Error('warren-buffett score expected ≤80 after densify, got ' + buffett.score);
+const buffettP = getProfileBySlug('warren-buffett');
+for (const id of [
+  'buffett-never-used-derivatives-absolute-vs-practice',
+  'buffett-tax-code-secretary-story-personal-absolute-generalization',
+  'buffett-rating-agencies-not-to-blame-absolute-pre-crisis-framing',
+]) {
+  if (!(buffettP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('warren-buffett missing docket id: ' + id);
+}
+for (const f of (buffettP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('buffett dual-cite collision: ' + f.id);
+}
+
+// Howard Kohr densify gate (n≥3)
+const kohr = scores['howard-kohr'];
+if (!kohr || kohr.n < 3) throw new Error('howard-kohr needs ≥3 verified falsehoods, got ' + (kohr?.n ?? 0));
+if (kohr.score > 80) throw new Error('howard-kohr score expected ≤80 after densify, got ' + kohr.score);
+const kohrP = getProfileBySlug('howard-kohr');
+for (const id of [
+  'kohr-aipac-not-a-lobby-for-foreign-government-absolute',
+  'kohr-aipac-bipartisan-only-no-partisan-capture-absolute',
+  'kohr-aipac-pac-independent-no-coordination-absolute',
+]) {
+  if (!(kohrP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('howard-kohr missing docket id: ' + id);
+}
+for (const f of (kohrP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('kohr dual-cite collision: ' + f.id);
+}
+
+// Miriam Adelson densify gate (n≥3)
+const miriam = scores['miriam-adelson'];
+if (!miriam || miriam.n < 3) throw new Error('miriam-adelson needs ≥3 verified falsehoods, got ' + (miriam?.n ?? 0));
+if (miriam.score > 70) throw new Error('miriam-adelson score expected ≤70 after densify, got ' + miriam.score);
+const miriamP = getProfileBySlug('miriam-adelson');
+for (const id of [
+  'miriam-adelson-giving-pure-philanthropy-no-political-agenda',
+  'miriam-adelson-israel-hayom-pure-media-not-political',
+  'miriam-adelson-presidential-medal-merit-only-no-donor-politics',
+]) {
+  if (!(miriamP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('miriam-adelson missing docket id: ' + id);
+}
+for (const f of (miriamP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('miriam dual-cite collision: ' + f.id);
+}
+
+// John Fetterman densify gate (n≥3)
+const fetterman = scores['john-fetterman'];
+if (!fetterman || fetterman.n < 3) throw new Error('john-fetterman needs ≥3 verified falsehoods, got ' + (fetterman?.n ?? 0));
+if (fetterman.score > 70) throw new Error('john-fetterman score expected ≤70 after densify, got ' + fetterman.score);
+const fettermanP = getProfileBySlug('john-fetterman');
+for (const id of [
+  'fetterman-only-senate-candidate-backing-15-absolute-2016',
+  'fetterman-progressive-brand-absolute-vs-later-israel-unconditional-aid',
+  'fetterman-stroke-recovery-no-work-impact-absolute-campaign',
+]) {
+  if (!(fettermanP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('john-fetterman missing docket id: ' + id);
+}
+for (const f of (fettermanP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('fetterman dual-cite collision: ' + f.id);
+}
+
+// Josh Gottheimer densify gate (n≥3)
+const gottheimer = scores['josh-gottheimer'];
+if (!gottheimer || gottheimer.n < 3) throw new Error('josh-gottheimer needs ≥3 verified falsehoods, got ' + (gottheimer?.n ?? 0));
+if (gottheimer.score > 70) throw new Error('josh-gottheimer score expected ≤70 after densify, got ' + gottheimer.score);
+const gottheimerP = getProfileBySlug('josh-gottheimer');
+for (const id of [
+  'gottheimer-problem-solvers-pure-bipartisan-not-donor-driven',
+  'gottheimer-not-an-aipac-democrat-absolute',
+  'gottheimer-progressive-challengers-antisemitic-absolute-framing',
+]) {
+  if (!(gottheimerP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('josh-gottheimer missing docket id: ' + id);
+}
+for (const f of (gottheimerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('gottheimer dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 85) throw new Error('expected ≥85 compiled dockets, got ' + docketCount);
+if (docketCount < 90) throw new Error('expected ≥90 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

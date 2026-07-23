@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:43:12.006Z",
+  "generatedAt": "2026-07-23T10:46:11.492Z",
   "count": 96,
   "profiles": [
     {
@@ -199,9 +199,9 @@
         "West Bank Annexation Advocacy",
         "Dual U.S.–Israel Citizen"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "sheldon-adelson",
@@ -512,9 +512,9 @@
         "Iron Dome",
         "FMF"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "brad-sherman",
@@ -1154,9 +1154,9 @@
         "Iron Dome",
         "FMF"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "rupert-murdoch",
@@ -1333,9 +1333,9 @@
         "Philanthropist",
         "Warren Buffett"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "ken-griffin",
@@ -1576,9 +1576,9 @@
         "OpenSecrets",
         "Foreign Policy Lobby"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 76,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "tony-podesta",

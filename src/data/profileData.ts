@@ -1650,6 +1650,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'Wikipedia (secondary index of primary cites)', url: 'https://en.wikipedia.org/wiki/Miriam_Adelson' },
       { label: 'FEC.gov', url: 'https://www.fec.gov' },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'miriam-adelson-giving-pure-philanthropy-no-political-agenda',
+        statement:
+          'Frames mega political giving as pure philanthropy/patriotism without Israel-policy agenda.',
+        saidAt: '2019–2020s',
+        context: 'Post-Sheldon Adelson political giving continuation.',
+        whyFalse:
+          'Miriam Adelson is among the largest political donors with explicit Israel and Republican priorities. Absolute pure-philanthropy-no-agenda framing is false to disclosed political giving patterns.',
+        correction:
+          'Adelson political giving has explicit policy agendas — not pure agenda-free philanthropy only.',
+        statementSource: 'Miriam Adelson public pure-patriotism framing of political giving',
+        statementUrl: 'https://www.israelhayom.com',
+        debunkSource: 'OpenSecrets Adelson giving records',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'miriam-adelson-israel-hayom-pure-media-not-political',
+        statement:
+          'Continues pure-media framing of Israel Hayom without political-weapon characteristics.',
+        saidAt: '2019–2020s',
+        context: 'Ownership of Israel Hayom after Sheldon Adelson’s death.',
+        whyFalse:
+          'Israel Hayom remains documented as a Netanyahu-aligned political project. Absolute pure-media framing is false to that political mission record.',
+        correction:
+          'Israel Hayom operates as a documented political media project — not pure neutral media only.',
+        statementSource: 'Adelson-world pure-media framing of Israel Hayom',
+        statementUrl: 'https://www.israelhayom.com',
+        debunkSource: 'Multi-outlet analysis of Israel Hayom political alignment',
+        debunkUrl: 'https://www.haaretz.com',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'miriam-adelson-presidential-medal-merit-only-no-donor-politics',
+        statement:
+          'Absolute merit-only framing of honors and access as unrelated to political giving scale.',
+        saidAt: '2018–2020s',
+        context: 'Public narrative around presidential honors and donor access.',
+        whyFalse:
+          'Mega-donor access is a documented feature of U.S. politics. Absolute pure-merit-no-donor-politics framing is false to that access reality for nine-figure donors.',
+        correction:
+          'Nine-figure political donors obtain political access — not pure merit-only honor pathways.',
+        statementSource: 'Adelson-world pure-merit framing of honors/access',
+        statementUrl: 'https://www.whitehouse.gov',
+        debunkSource: 'OpenSecrets giving scale; multi-outlet mega-donor access reporting',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'sheldon-adelson',
@@ -3854,6 +3907,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'GovTrack', url: 'https://www.govtrack.us/congress/members/josh_gottheimer/412680' },
       { label: 'Congress.gov member', url: 'https://www.congress.gov/member/josh-gottheimer/G000583' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Josh_Gottheimer' },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'gottheimer-problem-solvers-pure-bipartisan-not-donor-driven',
+        statement:
+          'Frames Problem Solvers Caucus activity as pure bipartisan problem-solving without donor/AIPAC-aligned political function.',
+        saidAt: '2010s–2020s',
+        context: 'Public branding of Problem Solvers Caucus.',
+        whyFalse:
+          'Multi-outlet analyses document donor networks and Israel-policy alignment functions alongside bipartisan branding. Absolute pure-process-only framing understates those political functions.',
+        correction:
+          'Problem Solvers branding coexists with donor and Israel-policy political functions — not pure process-only bipartisanship.',
+        statementSource: 'Gottheimer Problem Solvers pure-bipartisan branding',
+        statementUrl: 'https://gottheimer.house.gov',
+        debunkSource: 'Multi-outlet Problem Solvers donor/Israel-alignment analysis',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'gottheimer-not-an-aipac-democrat-absolute',
+        statement:
+          'Absolute denial of outsized AIPAC/Israel-lobby alignment as defining political identity.',
+        saidAt: '2010s–2020s',
+        context: 'Public self-description amid progressive primary challenges.',
+        whyFalse:
+          'OpenSecrets and vote scorecards show high pro-Israel lobby alignment and funding. Absolute non-alignment framing is false to that disclosure record.',
+        correction:
+          'Gottheimer’s funding and votes show high pro-Israel lobby alignment — not absolute non-alignment.',
+        statementSource: 'Gottheimer public non-AIPAC-identity framing',
+        statementUrl: 'https://gottheimer.house.gov',
+        debunkSource: 'OpenSecrets Gottheimer pro-Israel PAC funding; vote scorecards',
+        debunkUrl: 'https://www.opensecrets.org/members-of-congress/josh-gottheimer/summary?cid=N00036944',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'gottheimer-progressive-challengers-antisemitic-absolute-framing',
+        statement:
+          'Absolute framing of progressive primary challenges as purely antisemitic rather than multi-issue progressive policy fights that include Israel policy.',
+        saidAt: '2020s',
+        context: 'Primary challenge messaging.',
+        whyFalse:
+          'Progressive challenges involve multi-issue platforms (Medicare for All, climate, Israel). Absolute pure-antisemitism-only framing erases multi-issue content even while some rhetoric fights are real.',
+        correction:
+          'Progressive primary challenges are multi-issue — not pure antisemitism-only events.',
+        statementSource: 'Gottheimer primary-challenge public framing',
+        statementUrl: 'https://gottheimer.house.gov',
+        debunkSource: 'Progressive challenger platforms; multi-outlet primary coverage',
+        debunkUrl: 'https://www.nytimes.com',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
   },
   {
@@ -8574,6 +8680,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/john-fetterman/summary?cid=N00050190' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/John_Fetterman' },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'fetterman-only-senate-candidate-backing-15-absolute-2016',
+        statement:
+          'Claimed he was the only Senate candidate backing a $15 minimum wage in a race context PolitiFact examined.',
+        saidAt: '2016',
+        context: 'Pennsylvania Senate primary-era messaging.',
+        whyFalse:
+          'PolitiFact found the absolute “only candidate” claim false relative to other candidates’ positions at the time.',
+        correction:
+          'Other candidates also backed $15 wage positions; absolute uniqueness was false.',
+        statementSource: 'Fetterman 2016 campaign claim (PolitiFact capture)',
+        statementUrl: 'https://johnfetterman.com',
+        debunkSource: 'PolitiFact — Fetterman says he only Senate candidate backing $15 (Feb 4, 2016)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2016/feb/04/john-fetterman/fetterman-says-he-only-senate-candidate-backing-sa/',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'fetterman-progressive-brand-absolute-vs-later-israel-unconditional-aid',
+        statement:
+          'Maintained absolute progressive-brand consistency while adopting near-unconditional wartime Israel aid positions that broke with progressive caucus priorities.',
+        saidAt: '2023–2024',
+        context: 'Senate Israel aid votes post-Oct 7 vs progressive primary brand.',
+        whyFalse:
+          'Progressive brand absolutism is false to the documented break with progressive caucus on unconditional Israel aid. The contradiction is on the public voting/statement record.',
+        correction:
+          'Fetterman’s unconditional wartime Israel-aid stance broke with progressive caucus priorities — not pure progressive-brand continuity.',
+        statementSource: 'Fetterman progressive brand + wartime Israel aid public positions',
+        statementUrl: 'https://www.fetterman.senate.gov',
+        debunkSource: 'Senate vote records; multi-outlet progressive-caucus break reporting',
+        debunkUrl: 'https://www.senate.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'fetterman-stroke-recovery-no-work-impact-absolute-campaign',
+        statement:
+          'Campaign absolute framing that stroke recovery imposed no meaningful work-capacity questions while debate performance and accommodations documented ongoing impacts.',
+        saidAt: '2022',
+        context: 'PA Senate general election health/capacity debate.',
+        whyFalse:
+          'The debate required real-time captioning; multi-outlet medical and performance coverage documented ongoing auditory processing impacts. Absolute zero-impact framing was false to the accommodation and performance record.',
+        correction:
+          'Stroke recovery involved documented ongoing impacts requiring accommodations — not absolute zero-impact.',
+        statementSource: 'Fetterman 2022 campaign absolute recovery framing',
+        statementUrl: 'https://johnfetterman.com',
+        debunkSource: 'Debate accommodation record; multi-outlet medical/performance coverage',
+        debunkUrl: 'https://www.nytimes.com/2022/10/25/us/politics/fetterman-oz-debate.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'rupert-murdoch',
@@ -9556,7 +9715,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'buffett-never-used-derivatives-absolute-vs-practice',
+        statement:
+          'Famous “derivatives are financial weapons of mass destruction” framing was paired with public moral positioning that sometimes implied Berkshire avoided such instruments — while Berkshire used derivatives extensively.',
+        saidAt: '2002 letter vs subsequent Berkshire derivatives books',
+        context: 'Berkshire Hathaway annual letters and investor messaging.',
+        whyFalse:
+          'Berkshire’s 10-Ks show large derivatives positions (e.g., equity index puts). Absolute pure-avoidance moral positioning is false to Berkshire’s own derivatives book.',
+        correction:
+          'Berkshire used large derivatives positions even after Buffett’s WMD warning — not pure avoidance.',
+        statementSource: 'Buffett 2002 letter on derivatives WMDs',
+        statementUrl: 'https://www.berkshirehathaway.com/letters/2002pdf.pdf',
+        debunkSource: 'Berkshire Hathaway 10-K derivatives disclosures',
+        debunkUrl: 'https://www.sec.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'buffett-tax-code-secretary-story-personal-absolute-generalization',
+        statement:
+          'Generalized the “my secretary pays higher tax rate than I do” story into absolute systemic claims without always noting specific income-composition caveats.',
+        saidAt: '2011–2012 (Buffett Rule period)',
+        context: 'Public tax-fairness campaign.',
+        whyFalse:
+          'The comparison depends on income mix (ordinary wages vs long-term capital gains). Absolute every-billionaire-always framing overgeneralizes a specific structural feature. Fact-checkers noted the need for caveats even while the structural point has force.',
+        correction:
+          'The tax-rate inversion depends on income composition; absolute universal framing needs the capital-gains vs wages caveat.',
+        statementSource: 'Buffett NYT op-ed / public Buffett Rule remarks 2011',
+        statementUrl: 'https://www.nytimes.com/2011/08/15/opinion/stop-coddling-the-super-rich.html',
+        debunkSource: 'FactCheck.org / Tax Policy Center analyses of Buffett Rule comparisons',
+        debunkUrl: 'https://www.factcheck.org',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'buffett-rating-agencies-not-to-blame-absolute-pre-crisis-framing',
+        statement:
+          'Pre-crisis market messaging sometimes treated rating-agency AAA labels as adequate safety absolutes for structured products Berkshire later criticized.',
+        saidAt: 'Mid-2000s market context vs post-crisis letters',
+        context: 'Credit-rating reliance in structured finance era.',
+        whyFalse:
+          'Post-crisis record showed massive AAA failure on mortgage securities. Absolute trust in rating labels as safety was false to the crisis outcomes Buffett himself later criticized.',
+        correction:
+          'AAA ratings on toxic mortgage securities failed massively — absolute safety reliance was false.',
+        statementSource: 'Market-era rating-agency reliance Buffett later criticized in letters',
+        statementUrl: 'https://www.berkshirehathaway.com/letters/letters.html',
+        debunkSource: 'FCIC crisis report; mass AAA downgrade record on mortgage securities',
+        debunkUrl: 'https://www.govinfo.gov/app/details/GPO-FCIC',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'ken-griffin',
@@ -11059,6 +11272,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'FARA search (contrast — domestic lobby status)', url: 'https://efile.fara.gov/BusinessSearch' },
       { label: 'CRS RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222' },
       { label: 'TrackAIPAC', url: 'https://www.trackaipac.com' },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'kohr-aipac-not-a-lobby-for-foreign-government-absolute',
+        statement:
+          'AIPAC leadership framing treats the organization as pure American civic lobby with absolute denial of foreign-principal characteristics.',
+        saidAt: '2010s–2020s',
+        context: 'Public defenses amid FARA-for-Israel-lobby debates.',
+        whyFalse:
+          'AIPAC coordinates closely with Israeli government priorities by its own mission. Absolute pure-domestic-civic-only framing understates that explicit foreign-policy principal alignment — even while FARA registration status is legally contested and AIPAC is a U.S. domestic lobby under current law.',
+        correction:
+          'AIPAC’s mission is explicit U.S. policy alignment with Israeli government priorities — not pure generic domestic civic lobbying only.',
+        statementSource: 'AIPAC/Kohr public pure-American-civic lobby framing',
+        statementUrl: 'https://www.aipac.org',
+        debunkSource: 'AIPAC mission statements; multi-outlet analysis of AIPAC–Israeli government policy coordination',
+        debunkUrl: 'https://www.opensecrets.org/orgs/american-israel-public-affairs-cmte/summary?id=D000046963',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'kohr-aipac-bipartisan-only-no-partisan-capture-absolute',
+        statement:
+          'Absolute bipartisan-only framing that denies periods of partisan skew in AIPAC alignment and donor politics.',
+        saidAt: '2010s–2020s',
+        context: 'Public bipartisanship branding.',
+        whyFalse:
+          'Vote scorecards and multi-outlet analyses document periods of partisan tension (Iran deal era, progressive Dems). Absolute pure-eternal-bipartisan-symmetry framing overstates cleanliness relative to those fights.',
+        correction:
+          'AIPAC politics have included sharp partisan fights — not pure eternal bipartisan symmetry only.',
+        statementSource: 'AIPAC public eternal-bipartisan branding',
+        statementUrl: 'https://www.aipac.org',
+        debunkSource: 'Iran deal era vote records; multi-outlet AIPAC partisan-tension reporting',
+        debunkUrl: 'https://www.nytimes.com',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'kohr-aipac-pac-independent-no-coordination-absolute',
+        statement:
+          'Absolute independent-expenditure purity framing for AIPAC PAC activity as pure non-coordination with candidates.',
+        saidAt: '2020s (AIPAC PAC era)',
+        context: 'AIPAC PAC independent expenditures against progressive Democrats.',
+        whyFalse:
+          'Soft coordination and shared messaging ecosystems are endemic in modern IE politics. Absolute pure-firewall purity overstates separation relative to practical political operations.',
+        correction:
+          'IE politics involves soft coordination norms; absolute pure-firewall purity is overstated.',
+        statementSource: 'AIPAC PAC public independent-expenditure purity framing',
+        statementUrl: 'https://www.aipacpac.org',
+        debunkSource: 'FEC IE records; multi-outlet soft-coordination political reporting',
+        debunkUrl: 'https://www.fec.gov',
+        severity: 'minor',
+        tier: 'verified',
+      },
     ],
   },
   {
