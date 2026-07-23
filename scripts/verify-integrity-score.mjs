@@ -98,6 +98,7 @@ const required = [
   'ted-cruz',
   'mitch-mcconnell',
   'ghislaine-maxwell',
+  'kamala-harris',
 ];
 const scores = {};
 for (const id of required) {
@@ -130,8 +131,24 @@ for (const f of (byronP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('byron dual-cite collision: ' + f.id);
 }
 
+// Kamala Harris dual-cited integrity deep-dive
+const kamala = scores['kamala-harris'];
+if (!kamala || kamala.n < 2) throw new Error('kamala-harris needs ≥2 verified falsehoods, got ' + (kamala?.n ?? 0));
+if (kamala.score > 75) throw new Error('kamala-harris score expected ≤75 after deep dive, got ' + kamala.score);
+const kamalaP = getProfileBySlug('kamala-harris');
+const kamalaIds = new Set((kamalaP.documentedFalsehoods || []).map((f) => f.id));
+for (const id of [
+  'harris-pregnancy-monitoring-project-2025-2024',
+  'harris-no-troops-combat-zone-debate-2024',
+]) {
+  if (!kamalaIds.has(id)) throw new Error('kamala-harris missing docket id: ' + id);
+}
+for (const f of (kamalaP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('kamala dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 11) throw new Error('expected ≥11 compiled dockets, got ' + docketCount);
+if (docketCount < 12) throw new Error('expected ≥12 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
