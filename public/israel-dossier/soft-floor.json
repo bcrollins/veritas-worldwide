@@ -1,10 +1,10 @@
 {
-  "incidentCount": 1895,
-  "updatedAt": "2026-07-23T13:50:20.789Z",
+  "incidentCount": 1921,
+  "updatedAt": "2026-07-23T13:51:20.685Z",
   "source": "export-israel-dossier-corpus.mjs",
   "note": "Soft floor for verify:live-anonymity; WARN on Railway lag only.",
   "visualInvestigations": {
-    "withVideo": 180,
-    "civiliansTagged": 1893
+    "withVideo": 186,
+    "civiliansTagged": 1919
   }
 }

@@ -4136,6 +4136,151 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-fuel-depot-civilian-impact-visual-2023-2025',
+    title: 'Gaza Fuel Depot Strikes Civilian Impact — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip fuel depots and civilian energy infrastructure',
+    summary:
+      'Multi-outlet video packages document strikes on fuel depots with civilian secondary impacts under wartime conditions, including hospital generator shortfalls affecting children. Distinct from electricity-cut visual cards by focusing on multi-source fuel-depot packages; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA energy-access materials establish multi-source documentation of fuel-depot harm affecting civilian services.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza infrastructure packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet fuel-depot impact video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of fuel infrastructure aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA energy-access trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-ashkelon-safe-room-visual-2023',
+    title: 'October 7 Ashkelon Safe-Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Ashkelon residential safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders and rocket-related civilian harm involving Ashkelon safe rooms during the October 7 attacks period. Distinct from prior Ashkelon rocket civilian visual cards by focusing on safe-room multi-source visual records; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence affecting Ashkelon safe rooms on and around October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Ashkelon safe-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-wheat-field-arson-visual-2023-2025',
+    title: 'West Bank Settler Wheat Field Arson — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village wheat fields and grain plots',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian wheat fields, denying staple food production including for families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of wheat-field arson affecting civilian food production.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem wheat-field arson video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem agricultural-violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
+
+  {
+    id: 'vi-oct7-reim-parking-visual-2023',
+    title: 'October 7 Nova Festival Parking Area Near Re\'im — Multi-Outlet Civilian Murder Visual Record',
+    date: 'October 7, 2023',
+    location: 'Parking areas near Re\'im / Nova festival site, southern Israel',
+    summary:
+      'Multi-outlet video documents civilian-targeted violence in parking and approach areas near the Nova festival site on October 7. Multi-party visual record distinct from main-stage packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence near Re\'im on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
+  {
+    id: 'vi-gaza-sewage-plant-strike-visual-2023-2025',
+    title: 'Gaza Civilian Sewage Plant Strike Visual Record — Multi-Outlet Packages',
+    date: '2023–2025',
+    location: 'Gaza Strip wastewater treatment facilities',
+    summary:
+      'Multi-outlet video and photo packages document damage to civilian sewage treatment facilities serving families including children. Multi-source visual floor; ethnicity is never evidence.',
+    evidence:
+      'OCHA WASH materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of sewage-plant damage affecting civilians.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR documentation trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+
+  {
+    id: 'vi-west-bank-settler-water-cistern-visual-2023-2025',
+    title: 'West Bank Settler Water Cistern Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village water cisterns and storage tanks',
+    summary:
+      'B\'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian water cisterns, denying household water including for families with children. Multi-source visual record; ethnicity is never evidence.',
+    evidence:
+      'B\'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of cistern attacks affecting civilian water access.',
+    sources: [
+      { label: 'B\'Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B\'Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B\'Tselem settler-violence video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B\'Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

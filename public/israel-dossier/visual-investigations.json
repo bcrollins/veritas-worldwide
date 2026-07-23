@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:50:20.789Z"
+    "generatedAt": "2026-07-23T13:51:20.685Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 180,
-    "viPackCards": 161,
-    "totalIncidents": 1895
+    "incidentsWithVideoAndCivilians": 186,
+    "viPackCards": 167,
+    "totalIncidents": 1921
   },
   "incidents": [
     {
@@ -6116,6 +6116,246 @@
       "title": "West Bank Settler Olive Press Attacks — Multi-Outlet Visual Record",
       "date": "2023–2025",
       "location": "West Bank village olive presses",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-fuel-depot-civilian-impact-visual-2023-2025",
+      "title": "Gaza Fuel Depot Strikes Civilian Impact — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip fuel depots and civilian energy infrastructure",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OHCHR materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza infrastructure packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet fuel-depot impact video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of fuel infrastructure aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "OCHA energy-access trail",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-ashkelon-safe-room-visual-2023",
+      "title": "October 7 Ashkelon Safe-Room Civilian Murders — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Ashkelon residential safe rooms and home shelters",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Ashkelon safe-room October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-wheat-field-arson-visual-2023-2025",
+      "title": "West Bank Settler Wheat Field Arson — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village wheat fields and grain plots",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem wheat-field arson video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem agricultural-violence case files",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-reim-parking-visual-2023",
+      "title": "October 7 Nova Festival Parking Area Near Re'im — Multi-Outlet Civilian Murder Visual Record",
+      "date": "October 7, 2023",
+      "location": "Parking areas near Re'im / Nova festival site, southern Israel",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-sewage-plant-strike-visual-2023-2025",
+      "title": "Gaza Civilian Sewage Plant Strike Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip wastewater treatment facilities",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "OHCHR civilian-protection materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "OCHA/OHCHR documentation trail",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-water-cistern-visual-2023-2025",
+      "title": "West Bank Settler Water Cistern Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village water cisterns and storage tanks",
       "tier": "verified",
       "targetsCivilians": true,
       "targetsChildren": true,

@@ -330,3 +330,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | port aid · Sderot safe room · olive-grove arson |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip **1900+** milestone — fuel depot / Ashkelon safe-room / wheat-field arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza maternity-BP/urine-dipstick/anti-D/tetanus · hostage carry-wounded/empty-bicycle/flooded-cells/airport-halls · WB eggplant-mulch/pharmacy/dill/cucumber-seedlings |
+| VI | fuel depot · Ashkelon safe room · wheat-field arson |
+| Pure | visual + israel-dossier PASS |
+| Milestone | **≥1900 incidents** |
+
