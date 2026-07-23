@@ -286,3 +286,16 @@ Peer Israel densify (`public/israel-dossier/*`, history pack, VI) never staged. 
 | `7e55368e` | DossierHubSpokes focus-visible (all variants) |
 | `de8c944d` / `72fef924` | pure densify locks v18–v19 |
 
+
+## Sprint 9c — full shell keyboard focus platform
+
+| Commit | Unit |
+|--------|------|
+| `d0a81d2b` | mobile tab bar focus-visible |
+| `c77d60da` | cookie consent focus-visible |
+| `e82e17df` | desktop primary/utility/drawer focus-visible |
+| `40d13fa3` | footer columns + membership/support CTAs focus-visible |
+| `b496822c`–`5aef6d70` | pure densify locks v21–v23 |
+
+Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, drawer, footer, cookie banner, RelatedHubs, ResearchHubChips, DossierHubSpokes.
+
