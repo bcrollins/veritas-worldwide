@@ -7,6 +7,9 @@ type BrandManifest = {
   zipPath: string
   sections: { id: string; title: string; description: string }[]
   downloads: { label: string; href: string; adminOnly?: boolean }[]
+  platformAssets?: Record<string, unknown>
+  zipBytes?: number
+  zipSha256?: string
 }
 
 const PREVIEW_ASSETS = [
