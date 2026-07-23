@@ -2492,6 +2492,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-orphan-crisis-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'artillery-use', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Orphan Crisis Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (orphanhood cohort)',
+    location: 'Gaza Strip',
+    summary:
+      'UNICEF and multi-source humanitarian reporting document a large population of children orphaned or separated from caregivers during the Gaza war — a structural civilian-harm outcome of mass adult fatalities and displacement. Pattern card for the orphanhood floor.',
+    evidence:
+      'UNICEF statements on unaccompanied and orphaned children, multi-source field NGO reporting, and Ministry of Social Development tallies establish elevated orphanhood. Exact counts are incomplete; multi-source magnitude is the claim.',
+    sources: [
+      { label: 'UNICEF OPT child protection materials', url: 'https://www.unicef.org' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet orphan crisis coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public materials', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3511,6 +3538,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-housing-destruction-pattern-2023-2025', 'gaza-evacuation-orders-pattern-2023-2024'],
     tags: ['housing', 'displacement', 'civilians', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-orphans-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Orphan Crisis Pattern',
+    description: 'UNICEF/multi-source documentation of large numbers of orphaned and unaccompanied children.',
+    source: 'UNICEF / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-orphan-crisis-pattern-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
+    tags: ['children', 'orphans', 'civilians', 'gaza'],
   },
 
 ]
