@@ -458,6 +458,8 @@ export default function ContentPackPage() {
             <a href="/brand-kit/04-social/citation-card.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-semibold text-crimson hover:underline">Citation card →</a>
             <a href="/brand-kit/09-templates/correction-notice.html" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Correction template →</a>
             <a href="/brand-kit/04-social/bluesky-banner.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Bluesky banner →</a>
+            <a href="/brand-kit/04-social/pinterest-pin.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Pinterest pin →</a>
+            <a href="/brand-kit/07-docs/SOCIAL-LAUNCH.md" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Social launch →</a>
           </div>
         </div>
       </section>
