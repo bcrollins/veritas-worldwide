@@ -117,7 +117,7 @@ export default function SourcesPage() {
         {
           question: 'Where is the machine-readable Record of Jesus Christ claim corpus?',
           answer:
-            'At /record-of-jesus-christ/corpus.json (350+ claims), with on-page JSON/CSV export and a portable PDF index. Publisher: Veritas Worldwide only.',
+            'At /record-of-jesus-christ/corpus.json (360+ claims), with on-page JSON/CSV export and a portable PDF index. Publisher: Veritas Worldwide only.',
         },
       ]),
     ])
@@ -224,7 +224,7 @@ export default function SourcesPage() {
               </p>
               <div className="mt-6 rounded-sm border border-border bg-surface p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <p className="font-body text-sm text-ink-muted max-w-2xl">
-                  Looking for the historical Jesus / manuscript claim corpus? Open the 350+ tier-labeled Record of Jesus Christ with JSON, CSV, and PDF export.
+                  Looking for the historical Jesus / manuscript claim corpus? Open the 360+ tier-labeled Record of Jesus Christ with JSON, CSV, and PDF export.
                 </p>
                 <div className="flex flex-wrap gap-2 shrink-0">
                   <Link

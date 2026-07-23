@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:06:11.328Z",
-  "claimCount": 354,
+  "generatedAt": "2026-07-23T10:08:45.927Z",
+  "claimCount": 363,
   "tierHistogram": {
-    "well_attested": 136,
-    "verified": 128,
-    "contested": 34,
-    "interpretive": 35,
+    "well_attested": 138,
+    "verified": 131,
+    "contested": 35,
+    "interpretive": 36,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 16
+    "circumstantial": 18
   },
   "claims": [
     {
@@ -250,6 +250,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "ane-tel-dan-aramaic",
+      "claim": "The Tel Dan stele is Aramaic royal victory propaganda, not an Israelite court text — genre matters for historical use.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave29.ts"
+    },
+    {
       "id": "ane-tel-dan-house-of-david",
       "claim": "The Tel Dan stele’s “House of David” reading is the strongest extra-biblical epigraphic control for a Davidic dynasty name in the 9th century BCE context.",
       "tier": "verified",
@@ -402,6 +409,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "arch-jerusalem-western-wall",
+      "claim": "The Western Wall is a visible Herodian retaining wall of the Temple Mount platform — primary material remnant of Second Temple monumental architecture.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
       "id": "arch-kursi",
@@ -675,6 +689,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "cosmo-isocurvature-limits",
+      "claim": "CMB data tightly limit isocurvature modes relative to adiabatic initial conditions in standard inflationary scenarios.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
       "id": "cosmo-lambda-equation",
@@ -992,6 +1013,13 @@
       "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
+      "id": "ec-papias-mark-matthew",
+      "claim": "Papias traditions (via Eusebius) claim Mark recorded Peter’s preaching and Matthew compiled logia in Hebrew/Aramaic — early but second-hand Gospel origin traditions.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave29.ts"
+    },
+    {
       "id": "ec-polycarp",
       "claim": "Polycarp’s Letter to the Philippians (mid-2nd c.) cites or alludes to multiple NT writings and shows early reception of Pauline and Gospel traditions.",
       "tier": "well_attested",
@@ -1116,6 +1144,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-empty-tomb-debate",
+      "claim": "The empty tomb tradition is early and multiply developed in Gospels; historians disagree whether it is historical fact, legendary development, or both layered.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
       "id": "hj-existence",
@@ -1496,6 +1531,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "mod-entity-only-attribution",
+      "claim": "This compilation is published under Veritas Worldwide entity attribution only; personal operator identity is excluded from public scholarly surfaces by design.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave29.ts"
+    },
+    {
       "id": "mod-form-criticism-limits",
       "claim": "Form criticism classifies Gospel units by genre and Sitz im Leben; its older assumption of pure oral isolation before writing is now heavily qualified.",
       "tier": "interpretive",
@@ -1837,6 +1879,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "nc-suetonius-chrestus-limits",
+      "claim": "Suetonius’s Chrestus notice remains ambiguous; it cannot carry the weight of a secure independent Jesus biography.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
       "id": "nc-suetonius-nero",
@@ -2210,6 +2259,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nt-textus-receptus-history",
+      "claim": "The Textus Receptus is a printed early modern Greek text tradition, not identical to the earliest recoverable initial text.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave29.ts"
+    },
+    {
       "id": "nt-ubs-rating-letters",
       "claim": "UBS editions assign letter ratings (A–D) to selected variants expressing editorial confidence — a pedagogical signal, not a probability in the Bayesian sense.",
       "tier": "well_attested",
@@ -2341,6 +2397,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-biases",
+      "claim": "Josephus writes as a Flavian client and aristocratic Judean survivor; his portraits of groups and events require bias-aware reading.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
       "id": "st-josephus-corpus",
