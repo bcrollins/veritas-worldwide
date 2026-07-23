@@ -2924,4 +2924,24 @@ assert(read('server.js').includes('server-soft-404'), 'perpetual v27 server soft
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v27 emphasize')
 assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v27 PRIMARY')
 
+
+
+// RelatedHubs platform perpetual densify lock v28
+assert(surfaces.length >= 115, `perpetual v28 surfaces ${surfaces.length}`)
+assert(read('src/components/NewsletterSignup.tsx').includes('focus-visible:ring-2'), 'perpetual v28 newsletter focus')
+assert(read('src/components/ExitIntentCapture.tsx').includes('focus-visible:ring-2'), 'perpetual v28 exit intent focus')
+assert(read('src/components/AuthModal.tsx').includes('focus-visible:ring-2'), 'perpetual v28 auth modal focus')
+assert(read('src/components/StickyMembershipBar.tsx').includes('focus-visible:ring-2'), 'perpetual v28 sticky membership focus')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v28 footer focus')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v28 mobile tab bar')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v28 RelatedHubs focus')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v28 cookie focus')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v28 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v28 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v28 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v28 emphasize')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v28 methodology')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v28 Research chips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v28 spokes focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
