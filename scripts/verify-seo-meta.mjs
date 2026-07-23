@@ -400,11 +400,16 @@ console.log(
 const homeLcp = read('src/pages/HomePage.tsx')
 assert(homeLcp.includes('fetchPriority') || homeLcp.includes('fetchpriority'), 'HomePage featured hero must set fetchPriority high for LCP')
 
-// Topic hub GEO copy must track ROC claim growth (never advertise stale 330+ floors).
+// Topic hub GEO copy must track ROC claim growth (never advertise stale 150+ floors).
 const topicHubs = read('src/data/topicHubs.json')
 assert(topicHubs.includes('historical-jesus-evidence'), 'topic hubs must include historical-jesus-evidence')
-assert(!topicHubs.includes('330+ tier-labeled'), 'historical Jesus topic must not advertise stale sub-250 claim floor')
-assert(topicHubs.includes('330+ tier-labeled') || topicHubs.includes('300+ tier-labeled'), 'historical Jesus topic must advertise current 330+ claim floor')
+assert(!topicHubs.includes('150+ tier-labeled'), 'historical Jesus topic must not advertise stale 150+ claim floor')
+assert(
+  topicHubs.includes('330+ tier-labeled') ||
+    topicHubs.includes('320+ tier-labeled') ||
+    topicHubs.includes('300+ tier-labeled'),
+  'historical Jesus topic must advertise current 330+ claim floor',
+)
 
 // Soft-404: unknown /chapter/* must not soft-serve homepage shells to crawlers.
 assert(botMeta.includes('isKnownChapterSlug') || server.includes('isKnownChapterSlug'), 'server must validate known chapter slugs for soft-404')
