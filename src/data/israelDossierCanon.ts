@@ -81,7 +81,7 @@ export interface DossierMoneyTrailNode {
   id: string
   label: string
   amount: string
-  type: 'legislation' | 'weapon' | 'delivery' | 'impact'
+  type: 'legislation' | 'weapon' | 'delivery' | 'impact' | 'lobby'
   date: string
   detail: string
   sourceUrl: string
@@ -1138,6 +1138,43 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['munitions', 'artillery-use', 'mk84-use', 'hellfire-missiles'],
     relatedProfileIds: ['joe-biden', 'chuck-schumer', 'mitch-mcconnell', 'mike-johnson'],
   },
+  {
+    id: 'udp-superpac-2024',
+    label: 'United Democracy Project (AIPAC Super PAC) — 2024 Cycle',
+    amount: '~$37.9M IEs / ~$87M raised',
+    type: 'lobby',
+    date: '2023–2024',
+    detail:
+      'AIPAC-affiliated Super PAC independent expenditures targeting federal races based on Israel-policy positions. OpenSecrets documents ~$37.9M in IEs and ~$87M raised in the 2023–2024 cycle — electoral enablement parallel to FMF appropriations.',
+    sourceUrl: 'https://www.opensecrets.org/political-action-committees-pacs/united-democracy-project/C00799031/summary/2024',
+    children: ['pro-israel-lobby-2024'],
+    relatedProfileIds: ['howard-kohr', 'chuck-schumer', 'hakeem-jeffries', 'josh-gottheimer'],
+  },
+  {
+    id: 'preserve-america-adelson-2024',
+    label: 'Preserve America PAC (Miriam Adelson) — Trump 2024',
+    amount: '~$100M+',
+    type: 'lobby',
+    date: '2024',
+    detail:
+      'Miriam Adelson Super PAC transfers (~$100M FEC-window reporting) supporting Donald Trump — largest single-node Republican pro-Israel megadonor pipeline of the cycle, parallel to formal AIPAC PAC hard money.',
+    sourceUrl: 'https://www.timesofisrael.com/miriam-adelson-gives-100-million-to-trump-campaign-making-good-on-reported-pledge/',
+    children: ['pro-israel-lobby-2024'],
+    relatedProfileIds: ['miriam-adelson', 'donald-trump', 'sheldon-adelson'],
+  },
+  {
+    id: 'iron-beam-laser-2024',
+    label: 'Iron Beam High-Energy Laser — Supplemental Line',
+    amount: '~$1.2B (H.R.815 context)',
+    type: 'weapon',
+    date: '2024',
+    detail:
+      'H.R.815 supplemental architecture included funding context for Iron Beam directed-energy interceptors — next-generation layer of Israeli missile defense supported by U.S. appropriations, distinct from Iron Dome Tamir interceptors.',
+    sourceUrl: 'https://www.congress.gov/bill/118th-congress/house-bill/815',
+    children: ['iron-dome'],
+    relatedProfileIds: ['joe-biden', 'benjamin-netanyahu', 'chuck-schumer', 'mike-johnson'],
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
