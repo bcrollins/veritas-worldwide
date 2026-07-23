@@ -6570,6 +6570,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-ear-infections-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Ear Infection & Hearing Harm Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ear-infection cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'UNICEF, WHO, and multi-source health reporting document surges in pediatric ear infections and untreated hearing complications under collapsed primary care and antibiotic shortages — a child-specific harm pattern distinct from respiratory and pharmacy-shortage cards.',
+    evidence:
+      'UNICEF child-health materials, WHO primary-care notes, and multi-outlet coverage establish multi-source pediatric ear-infection surges. Exact case counts evolve; multi-source wartime pediatric ear-infection surge is the claim.',
+    sources: [
+      { label: 'UNICEF child health materials', url: 'https://www.unicef.org' },
+      { label: 'WHO primary care materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza child ear infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-mock-executions-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Mock Executions Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (mock-execution cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document mock executions and death threats against Israeli civilian hostages including children — a psychological-torture pattern distinct from physical-abuse and forced-witnessing cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source mock-execution practices. Exact case counts remain incomplete; multi-source mock executions of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-water-source-seizure-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Water-Source Seizure Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (water-seizure cohort)',
+    location: 'West Bank springs, cisterns, and herding water points',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler seizure and contamination of Palestinian water sources after October 7 — springs, cisterns, and watering points critical for civilian and herding survival including children. Pattern card for water-source seizure distinct from herding dispossession and agricultural-takeover cards.',
+    evidence:
+      'OCHA WASH/protection materials, B\'Tselem water-access case files, and multi-outlet coverage establish multi-source water-source seizure. Exact spring counts evolve; multi-source wartime water-point seizure is the claim.',
+    sources: [
+      { label: 'OCHA WASH / protection materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem water access materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet water source seizure coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -10117,6 +10198,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['livestock', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-ear-infections-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Ear Infection Pattern',
+    description: 'UNICEF/WHO multi-source documentation of pediatric ear-infection surges under collapsed primary care.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-ear-infections-pattern-2023-2025',
+      'gaza-pharmacy-medicine-shortage-pattern-2023-2025',
+      'gaza-children-respiratory-infections-pattern-2023-2025',
+    ],
+    tags: ['ear', 'children', 'health', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-mock-executions-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Mock Executions Pattern',
+    description: 'Multi-source documentation of mock executions and death threats against civilian hostages including children.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-mock-executions-pattern-2023-2025',
+      'israel-hostages-physical-abuse-captivity-pattern-2023-2025',
+      'israel-hostages-witnessing-killings-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-water-seizure-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Water-Source Seizure Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler seizure of springs and cisterns after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-water-source-seizure-pattern-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'west-bank-settler-livestock-theft-pattern-2023-2025',
+    ],
+    tags: ['water', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
