@@ -105,26 +105,39 @@ assert(
   prerender.includes("route === '/methodology'") && prerender.includes("'@type': 'FAQPage'"),
   'prerender must emit FAQPage JSON-LD for /methodology (bot-visible)',
 )
-
-// Home Organization sameAs still present
-assert(home.includes('sameAs'), 'Home Organization JSON-LD must include sameAs')
-assert(home.includes('WebSite'), 'Home must emit WebSite schema')
 assert(
-  home.includes('github.com/bcrollins/veritas-worldwide'),
-  'Home sameAs should include public GitHub for E-E-A-T',
+  prerender.includes("route === '/sources'") && prerender.includes('How do I verify a claim in The Record?'),
+  'prerender must emit Sources FAQPage for bot-visible voice/PAA queries',
+)
+
+// Home uses shared schema helpers (identity lives in seo.ts organizationJsonLd)
+assert(home.includes('websiteJsonLd'), 'Home must call websiteJsonLd()')
+assert(home.includes('organizationJsonLd'), 'Home must call organizationJsonLd()')
+assert(seo.includes('sameAs'), 'Organization helper must include sameAs')
+assert(
+  seo.includes('github.com/bcrollins/veritas-worldwide'),
+  'Organization sameAs should include public GitHub for E-E-A-T',
 )
 
 const consent = read('src/components/CookieConsent.tsx')
 assert(consent.includes("gtag('consent', 'update'"), 'CookieConsent must update gtag consent')
 assert(consent.includes('analytics_storage'), 'CookieConsent must set analytics_storage')
 
-// index.html baseline
+// index.html first-paint SEO (bot-visible without JS)
 const index = read('index.html')
 assert(index.includes('rel="canonical"'), 'index.html canonical present')
 assert(index.includes('og:image'), 'index.html og:image present')
 assert(index.includes('application/rss+xml'), 'index.html RSS alternate present')
 assert(index.includes('lang="en"'), 'html lang=en for international SEO baseline')
 assert(index.includes('media="print"'), 'fonts should load non-blocking via media=print swap')
+assert(index.includes('max-image-preview:large'), 'index.html robots must allow large image previews')
+assert(index.includes('Primary Sources'), 'index.html title/desc must target primary-source intent')
+assert(index.includes('application/ld+json'), 'index.html must ship static WebSite/Organization JSON-LD')
+assert(index.includes('SearchAction'), 'index.html static WebSite must include SearchAction')
+assert(index.includes('og:locale'), 'index.html must declare og:locale')
+assert(index.includes('og:image:alt'), 'index.html must declare og:image:alt')
+// Guard against accidental JSX comments in HTML shell
+assert(!index.includes('{/*'), 'index.html must not contain JSX-style comments')
 
 const sw = read('public/sw.js')
 assert(sw.includes("request.mode === 'navigate'"), 'SW must special-case navigation requests')

@@ -2621,6 +2621,52 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  // Sources library — FAQ + breadcrumbs for bot-visible rich results / voice search
+  // (client SourcesPage also sets these on hydrate; prerender must match for Googlebot).
+  if (route === '/sources') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Sources', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How do I verify a claim in The Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Open the chapter that cites the claim, then use the Sources library to jump to the primary document, archive pin, or institutional URL. Every substantive claim is tier-labeled so you can weigh verified, circumstantial, and disputed evidence independently.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Are The Record’s sources free to inspect?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. The master bibliography and direct links are open to every reader. Accounts are optional and only affect saved reader state, not access to source verification.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What evidence tiers does Veritas use?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Claims are classified as verified (primary-document backed), circumstantial (indirect but documented), or disputed (contested in the record). The methodology page explains the full taxonomy.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   return [basePage]
 }
 
