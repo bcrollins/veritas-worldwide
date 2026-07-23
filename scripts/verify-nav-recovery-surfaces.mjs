@@ -2291,4 +2291,14 @@ assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'densify lag P
 assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'densify lag Terms Membership')
 
 
+
+// await legal5 live RelatedHubs platform pure lock
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'await legal5 Privacy')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'await legal5 Terms')
+const privacyAwait = read('src/pages/PrivacyPage.tsx').match(/const PRIVACY_HUBS[^=]*= \[([\s\S]*?)\]/)
+const termsAwait = read('src/pages/TermsPage.tsx').match(/const TERMS_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(privacyAwait && (privacyAwait[1].match(/to:/g) || []).length === 5, 'await legal5 PRIVACY count')
+assert(termsAwait && (termsAwait[1].match(/to:/g) || []).length === 5, 'await legal5 TERMS count')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
