@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import type { ChapterType, EvidenceTier } from '../data/chapterTypes'
 import { chapterMeta } from '../data/chapterMeta'
 import { allArticles as articles, CATEGORY_META } from '../data/articles'
@@ -18,6 +19,15 @@ import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
 import { getScopedReadingHistory } from '../lib/readerState'
 import CorpusSearchPanel from '../components/CorpusSearchPanel'
+
+/** Search recovery destinations (≤5) — idle + empty states share one hub set. */
+const SEARCH_RECOVERY_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/content-pack', label: 'Research Pack' },
+  { to: '/', label: 'The Record' },
+]
 
 type SearchMatchedField = 'title' | 'subtitle' | 'keywords' | 'content' | 'sources'
 type SearchMatchFilter = 'all' | 'sources'
@@ -929,16 +939,12 @@ export default function SearchPage() {
             {debouncedQuery.trim() === '' ? (
               <div className="text-center py-16" data-testid="search-idle-state">
                 <p className="font-body text-lg text-ink-muted mb-3">Enter a search term to explore.</p>
-                <div
-                  className="mx-auto mb-6 flex max-w-xl flex-wrap items-center justify-center gap-2"
-                  data-testid="search-idle-hubs"
-                  aria-label="Top destinations"
-                >
-                  <Link to="/read" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Read</Link>
-                  <Link to="/israel-dossier" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Dossiers</Link>
-                  <Link to="/profiles" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Profiles</Link>
-                  <Link to="/content-pack" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Research Pack</Link>
-                </div>
+                <RelatedHubs
+                  testId="search-idle-hubs"
+                  hubs={SEARCH_RECOVERY_HUBS}
+                  className="mx-auto mb-6 max-w-xl justify-center"
+                  ariaLabel="Top destinations"
+                />
                 <div className="flex flex-wrap justify-center gap-2 mt-2">
                   {['Federal Reserve', 'Rothschild', 'BlackRock', 'CIA', 'Eisenhower', 'AIPAC', 'Central Banking', 'Andrew Jackson'].map(term => (
                     <button
@@ -975,42 +981,12 @@ export default function SearchPage() {
                 <p className="font-sans text-sm text-ink-faint mb-6">
                   Try different keywords, or jump to a hub destination below.
                 </p>
-                <div
-                  className="mx-auto mb-6 flex max-w-xl flex-wrap items-center justify-center gap-2"
-                  data-testid="search-empty-hubs"
-                  aria-label="Top destinations"
-                >
-                  <Link
-                    to="/read"
-                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
-                  >
-                    Read
-                  </Link>
-                  <Link
-                    to="/israel-dossier"
-                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
-                  >
-                    Dossiers
-                  </Link>
-                  <Link
-                    to="/profiles"
-                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
-                  >
-                    Profiles
-                  </Link>
-                  <Link
-                    to="/content-pack"
-                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
-                  >
-                    Research Pack
-                  </Link>
-                  <Link
-                    to="/"
-                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
-                  >
-                    The Record
-                  </Link>
-                </div>
+                <RelatedHubs
+                  testId="search-empty-hubs"
+                  hubs={SEARCH_RECOVERY_HUBS}
+                  className="mx-auto mb-6 max-w-xl justify-center"
+                  ariaLabel="Top destinations"
+                />
                 {hasActiveFilters && (
                   <button
                     type="button"
