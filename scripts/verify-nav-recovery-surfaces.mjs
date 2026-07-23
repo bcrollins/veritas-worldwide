@@ -919,4 +919,10 @@ const a11yHubsSrc = read('src/pages/AccessibilityPage.tsx')
 assert(a11yHubsSrc.includes('accessibility-related-hubs'), 'accessibility-related-hubs testid')
 assert(a11yHubsSrc.includes('/about') || a11yHubsSrc.includes('/read'), 'A11y About dest unique final')
 
+
+// Timeline RelatedHubs Read destination
+const timelineHubsSrc = read('src/pages/TimelinePage.tsx')
+assert(timelineHubsSrc.includes('timeline-related-hubs'), 'timeline-related-hubs testid')
+assert(timelineHubsSrc.includes('/read'), 'Timeline Read dest unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
