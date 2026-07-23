@@ -10,7 +10,15 @@ import type {
   SignupAttributionEntry,
   SignupAttributionSnapshot,
 } from '../lib/analytics'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  SITE_URL,
+  SITE_NAME,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+} from '../lib/seo'
 import { formatSignupSourceLabel } from '../lib/signupAttribution'
 
 // ── Country flag emoji from ISO code ───────────────────────────────
@@ -944,18 +952,30 @@ export default function AnalyticsPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Reader Analytics | The Record — Veritas Worldwide',
-      description: 'Public readership analytics for The Record. View lifetime readers, daily traffic, and geographic distribution.',
+      description:
+        'Public readership analytics for The Record — lifetime readers, daily traffic, and geographic distribution as a transparency surface.',
       url: `${SITE_URL}/analytics`,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      'name': 'Reader Analytics',
-      'url': `${SITE_URL}/analytics`,
-      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Reader Analytics',
+        url: `${SITE_URL}/analytics`,
+        description:
+          'Public readership analytics for The Record. Lifetime readers, daily traffic, and geographic distribution.',
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Reader Analytics', url: `${SITE_URL}/analytics` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   async function loadData() {

@@ -1,7 +1,15 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { allArticles as articles } from '../data/articles'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  SITE_URL,
+  SITE_NAME,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+} from '../lib/seo'
 
 interface ShareCard {
   id: string
@@ -224,18 +232,31 @@ export default function ContentPackPage() {
   useEffect(() => {
     setMetaTags({
       title: `Content Packs & Brand Kit | ${SITE_NAME}`,
-      description: 'Official brand assets, shareable social graphics, pre-written posts, and article cards. Free for press, social media, and advocacy with attribution.',
+      description:
+        'Official brand assets, shareable social graphics, pre-written posts, and article cards. Free for press, social media, and advocacy with attribution.',
       url: `${SITE_URL}/content-pack`,
+      imageAlt: 'Veritas Worldwide content packs and brand kit',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      'name': 'Content Packs | Veritas Worldwide',
-      'url': `${SITE_URL}/content-pack`,
-      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Content Packs | Veritas Worldwide',
+        url: `${SITE_URL}/content-pack`,
+        description:
+          'Official brand assets and shareable social graphics for Veritas Worldwide Press.',
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Content Packs', url: `${SITE_URL}/content-pack` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   const handleDownloadCard = useCallback((card: ShareCard) => {

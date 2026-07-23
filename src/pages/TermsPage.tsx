@@ -1,6 +1,14 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 
 const sections = [
   { id: 'license', title: 'Content License' },
@@ -15,10 +23,31 @@ export default function TermsPage() {
   useEffect(() => {
     setMetaTags({
       title: `Terms of Use | The Record — ${SITE_NAME}`,
-      description: 'Terms of use for Veritas Worldwide. Content licensed under CC BY-NC-SA 4.0.',
+      description:
+        'Terms of use for Veritas Worldwide. Free open access; content licensed under Creative Commons BY-NC-SA 4.0.',
       url: `${SITE_URL}/terms`,
     })
-    return () => clearMetaTags()
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Terms of Use',
+        url: `${SITE_URL}/terms`,
+        description:
+          'Terms of use for Veritas Worldwide. Free open access; content licensed under Creative Commons BY-NC-SA 4.0.',
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Terms of Use', url: `${SITE_URL}/terms` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   return (

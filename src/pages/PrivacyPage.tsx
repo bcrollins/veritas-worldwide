@@ -1,6 +1,14 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 
 const sections = [
   { id: 'collection', title: 'Information We Collect' },
@@ -15,10 +23,30 @@ export default function PrivacyPage() {
   useEffect(() => {
     setMetaTags({
       title: `Privacy Policy | The Record — ${SITE_NAME}`,
-      description: 'How Veritas Worldwide collects, uses, and protects your information. No ads, no data sales.',
+      description:
+        'How Veritas Worldwide collects, uses, and protects your information. Minimal analytics, no ads, no data sales.',
       url: `${SITE_URL}/privacy`,
     })
-    return () => clearMetaTags()
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Privacy Policy',
+        url: `${SITE_URL}/privacy`,
+        description:
+          'How Veritas Worldwide collects, uses, and protects reader information. Minimal analytics, no ads, no data sales.',
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Privacy Policy', url: `${SITE_URL}/privacy` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   return (

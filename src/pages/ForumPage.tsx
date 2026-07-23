@@ -5,7 +5,15 @@
  */
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { useAuth } from '../lib/AuthContext'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import {
   type ForumPost, type ForumComment, type Community, type SortMode, type TopTimeframe,
   type PostType, type PostFlair, type ReportReason, type VoteDirection,
@@ -1009,18 +1017,36 @@ export default function ForumPage() {
   const [showMobileSidebar, setShowMobileSidebar] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
-  // SEO
+  // SEO — WebPage (not DiscussionForumPosting) for the shell; avoid thin UGC indexing noise
   useEffect(() => {
     setMetaTags({
       title: `Community Forum Beta | ${SITE_NAME}`,
-      description: 'A local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features before the live community stack ships.',
+      description:
+        'Local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features before the live community stack ships.',
       url: `${SITE_URL}/forum`,
+      // Beta UGC shell — keep crawlable for product discovery but deprioritize thin threads
+      robots: 'index, follow, max-image-preview:large, max-snippet:160',
     })
-    setJsonLd({
-      '@context': 'https://schema.org', '@type': 'DiscussionForumPosting',
-      'name': `Community Forum Beta — ${SITE_NAME}`, 'url': `${SITE_URL}/forum`,
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: `Community Forum Beta — ${SITE_NAME}`,
+        url: `${SITE_URL}/forum`,
+        description:
+          'Beta community discussion surface for Veritas Worldwide archive readers.',
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Forum', url: `${SITE_URL}/forum` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   // Refresh posts
