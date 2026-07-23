@@ -157,6 +157,11 @@ const news = fs.readFileSync(path.join(root, 'src/pages/NewsPage.tsx'), 'utf8')
 assert(news.includes('data-testid="news-related-hubs"'), 'News related hubs required')
 assert(news.includes('to="/forum"'), 'News links Forum')
 
+// Topics related hubs
+const topics = fs.readFileSync(path.join(root, 'src/pages/TopicsIndexPage.tsx'), 'utf8')
+assert(topics.includes('data-testid="topics-related-hubs"'), 'Topics related hubs required')
+assert(topics.includes('to="/profiles"'), 'Topics links Profiles')
+
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline/news hubs, home/search/404 recovery, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline/news/topics hubs, home/search/404 recovery, cookie z-order`,
 )
