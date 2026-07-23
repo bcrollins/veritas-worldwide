@@ -6732,6 +6732,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-burns-care-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Burns Care Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (burns-care cohort)',
+    location: 'Gaza Strip hospitals and field burn units',
+    summary:
+      'WHO, MSF, and multi-source health reporting document collapse of specialized burn care for children under wartime trauma load — inadequate dressings, infection risk, and no reconstructive pathway. Pattern card for pediatric burns-care failure distinct from white-phosphorus and health-system collapse cards.',
+    evidence:
+      'WHO trauma materials, MSF facility statements, and multi-outlet coverage establish multi-source pediatric burns-care collapse. Exact burn-case counts evolve; multi-source wartime specialized burns-care failure for children is the claim.',
+    sources: [
+      { label: 'WHO trauma care materials', url: 'https://www.who.int' },
+      { label: 'MSF facility statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza child burns coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-family-separation-captivity-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Family Separation in Captivity Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (family-separation cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document forced separation of Israeli family units in captivity — parents from children, spouses split across sites — a protected-person psychological-harm pattern distinct from hostages-children-elderly and solitary cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source family separation in captivity. Exact separation durations vary; multi-source forced family separation of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-vehicle-ramming-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Vehicle Attacks on Civilians Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (vehicle-attack cohort)',
+    location: 'West Bank roads and village approaches',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler vehicle ramming and road assaults against Palestinian civilians after October 7 — a kinetic-violence pattern distinct from price-tag arson and home-invasion cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source vehicle-attack incidents. Exact counts evolve; multi-source wartime settler vehicle attacks on civilians is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler vehicle attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -10381,6 +10462,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['schools', 'settlers', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-burns-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Burns Care Collapse Pattern',
+    description: 'WHO/MSF multi-source documentation of specialized pediatric burns-care collapse under wartime trauma load.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-burns-care-collapse-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+      'white-phosphorus-2023',
+    ],
+    tags: ['burns', 'children', 'health', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-family-separation-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Family Separation Pattern',
+    description: 'Multi-source documentation of forced separation of Israeli family units in captivity including parents from children.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-family-separation-captivity-pattern-2023-2025',
+      'oct7-hostages-children-elderly-pattern-2023-2025',
+      'israel-hostages-solitary-confinement-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'families', 'children', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-vehicle-attacks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Vehicle Attacks Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler vehicle ramming and road assaults after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-vehicle-ramming-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+      'west-bank-settler-home-invasions-pattern-2023-2025',
+    ],
+    tags: ['vehicles', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
