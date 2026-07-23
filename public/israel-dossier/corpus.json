@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:54:21.500Z",
+  "generatedAt": "2026-07-23T08:56:17.215Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 124,
-    "timelineEvents": 112,
+    "incidents": 125,
+    "timelineEvents": 113,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 110,
+    "historicalWarCrimesPack": 111,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 64
+      "post-oct7": 65
     },
     "incidentsByTier": {
-      "verified": 122,
+      "verified": 123,
       "circumstantial": 2
     },
-    "childrenTagged": 101,
-    "civiliansTagged": 122,
+    "childrenTagged": 102,
+    "civiliansTagged": 123,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3285,6 +3285,28 @@
         "civil-defense",
         "rescue",
         "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-civil-registry-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Civil Registry & Public Records Destruction Pattern",
+      "description": "Multi-source documentation of destroyed municipal/civil-registry infrastructure blocking identity and property documentation for displaced civilians.",
+      "source": "OCHA / multi-outlet / UNESCO context",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-civil-registry-records-destruction-pattern-2023-2025",
+        "gaza-housing-destruction-pattern-2023-2025",
+        "gaza-cultural-heritage-destruction-2023-2025"
+      ],
+      "tags": [
+        "records",
+        "displacement",
+        "civilians",
+        "children",
         "gaza"
       ]
     },
@@ -8333,6 +8355,49 @@
           "type": "investigation",
           "label": "Multi-outlet visual coverage",
           "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civil-registry-records-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civil Registry & Public Records Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (records cohort)",
+      "location": "Gaza Strip municipal / civil-registry facilities",
+      "summary": "Multi-source reporting documents destruction of municipal buildings, civil-registry offices, and public archives holding identity, property, and vital records — a civilian-harm multiplier that blocks family reunification, inheritance, and humanitarian eligibility after displacement. Pattern card for administrative-record destruction distinct from cultural-heritage and housing cards.",
+      "evidence": "Multi-outlet municipal damage reporting, Palestinian Authority/Gaza municipal statements, and OCHA access materials establish multi-source destruction of civil administrative infrastructure. Exact archive loss inventories evolve; multi-source loss of civil-registry capacity is the claim.",
+      "sources": [
+        {
+          "label": "OCHA humanitarian situation materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza municipal / registry damage coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UN cultural/administrative heritage context materials",
+          "url": "https://www.unesco.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",

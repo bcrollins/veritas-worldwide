@@ -2951,6 +2951,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+
+  {
+    id: 'gaza-civil-registry-records-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civil Registry & Public Records Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (records cohort)',
+    location: 'Gaza Strip municipal / civil-registry facilities',
+    summary:
+      'Multi-source reporting documents destruction of municipal buildings, civil-registry offices, and public archives holding identity, property, and vital records — a civilian-harm multiplier that blocks family reunification, inheritance, and humanitarian eligibility after displacement. Pattern card for administrative-record destruction distinct from cultural-heritage and housing cards.',
+    evidence:
+      'Multi-outlet municipal damage reporting, Palestinian Authority/Gaza municipal statements, and OCHA access materials establish multi-source destruction of civil administrative infrastructure. Exact archive loss inventories evolve; multi-source loss of civil-registry capacity is the claim.',
+    sources: [
+      { label: 'OCHA humanitarian situation materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza municipal / registry damage coverage', url: 'https://apnews.com' },
+      { label: 'UN cultural/administrative heritage context materials', url: 'https://www.unesco.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4220,6 +4248,26 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['cemetery', 'dignity', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-civil-registry-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Civil Registry & Public Records Destruction Pattern',
+    description: 'Multi-source documentation of destroyed municipal/civil-registry infrastructure blocking identity and property documentation for displaced civilians.',
+    source: 'OCHA / multi-outlet / UNESCO context',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-civil-registry-records-destruction-pattern-2023-2025',
+      'gaza-housing-destruction-pattern-2023-2025',
+      'gaza-cultural-heritage-destruction-2023-2025',
+    ],
+    tags: ['records', 'displacement', 'civilians', 'children', 'gaza'],
+  },
+
+
+
 
 
 
