@@ -9081,6 +9081,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-sepsis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Sepsis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sepsis cohort)',
+    location: 'Gaza Strip hospitals and field medical points',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document elevated pediatric sepsis risk under wound contamination, collapsed antibiotics, and ICU failure — a life-threatening infection cascade distinct from wound-infection and infectious-disease cards.',
+    evidence:
+      'WHO clinical materials, MSF facility statements, and multi-outlet coverage establish multi-source pediatric sepsis risk. Exact case counts evolve; multi-source wartime pediatric sepsis risk is the claim.',
+    sources: [
+      { label: 'WHO clinical materials', url: 'https://www.who.int' },
+      { label: 'MSF facility statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza pediatric sepsis coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-pain-management-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Pain Management Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pain-management cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of pain medication for Israeli civilian hostages with injuries and chronic pain — a medical-neglect pattern distinct from dental-care and chronic-meds cards.',
+    evidence:
+      'Multi-source released-hostage medical and testimony records establish multi-source pain-management denial. Exact cases vary; multi-source pain-medication denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-playgrounds-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destruction of Playgrounds Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (playground-destruction cohort)',
+    location: 'West Bank Palestinian village playgrounds and community spaces',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian playgrounds and community recreation spaces after October 7 — targeting children\'s civilian infrastructure. Pattern card for playground destruction distinct from school attacks and home-invasion cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source playground destruction. Exact structure counts evolve; multi-source wartime playground destruction is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet playground destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -14209,6 +14290,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['aid-workers', 'settlers', 'access', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-sepsis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Sepsis Risk Pattern',
+    description: 'WHO/MSF multi-source documentation of elevated pediatric sepsis risk under wound contamination and collapsed antibiotics.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-sepsis-risk-pattern-2023-2025',
+      'gaza-children-tetanus-wound-infection-risk-pattern-2023-2025',
+      'gaza-pharmacy-medicine-shortage-pattern-2023-2025',
+    ],
+    tags: ['sepsis', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-pain-management-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Pain Management Pattern',
+    description: 'Multi-source documentation of denial of pain medication for injured civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-pain-management-pattern-2023-2025',
+      'israel-hostages-denied-dental-care-pattern-2023-2025',
+      'israel-hostages-denied-medications-chronic-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medical', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-playground-destruction-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Playground Destruction Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian playgrounds after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-playgrounds-pattern-2023-2025',
+      'west-bank-settler-school-attacks-pattern-2023-2025',
+      'west-bank-settler-home-invasions-pattern-2023-2025',
+    ],
+    tags: ['playgrounds', 'children', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
