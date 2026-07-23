@@ -60,14 +60,17 @@ export default function CookieConsent() {
   return (
     <div
       /*
-       * Mobile: dock under the site header (top) so first-screen hero CTAs
-       * and bottom sticky membership are not buried. Desktop: classic bottom bar.
+       * Mobile: dock under the site header (top) so first-screen hero CTAs,
+       * bottom tab bar (z-50), and sticky membership are not buried.
+       * Desktop: classic bottom bar. z-[100] always above MobileTabBar (z-50)
+       * and StickyMembershipBar (z-40) when any surface stacks.
        */
       className="fixed top-14 left-0 right-0 z-[100] sm:top-auto sm:bottom-0 bg-obsidian/95 backdrop-blur-md text-white px-3 py-2 sm:px-6 sm:py-4 no-print sm:safe-area-pb border-b border-white/10 sm:border-b-0 sm:border-t sm:border-white/10 shadow-lg sm:shadow-none"
       role="dialog"
       aria-label="Cookie consent"
       data-testid="cookie-consent-banner"
       data-placement="mobile-top-desktop-bottom"
+      data-z-above-tab-bar="true"
     >
       <div className="max-w-5xl mx-auto flex flex-row items-center gap-2 sm:gap-4">
         <p className="font-sans text-[11px] sm:text-sm text-white/80 leading-snug sm:leading-relaxed flex-1 min-w-0">

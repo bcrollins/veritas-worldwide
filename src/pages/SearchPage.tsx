@@ -957,13 +957,49 @@ export default function SearchPage() {
                 <p className="font-body text-lg text-ink-muted">Searching the record…</p>
               </div>
             ) : results.length === 0 ? (
-              <div className="text-center py-16">
+              <div className="text-center py-16" data-testid="search-empty-state">
                 <p className="font-body text-lg text-ink-muted mb-2">
                   No results found for &ldquo;{debouncedQuery}&rdquo;
                 </p>
-                <p className="font-sans text-sm text-ink-faint mb-4">
-                  Try different keywords or browse the <Link to="/" className="inline-flex min-h-[44px] items-center text-crimson hover:underline">table of contents</Link>.
+                <p className="font-sans text-sm text-ink-faint mb-6">
+                  Try different keywords, or jump to a hub destination below.
                 </p>
+                <div
+                  className="mx-auto mb-6 flex max-w-xl flex-wrap items-center justify-center gap-2"
+                  data-testid="search-empty-hubs"
+                  aria-label="Top destinations"
+                >
+                  <Link
+                    to="/read"
+                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
+                  >
+                    Read
+                  </Link>
+                  <Link
+                    to="/israel-dossier"
+                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
+                  >
+                    Dossiers
+                  </Link>
+                  <Link
+                    to="/profiles"
+                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
+                  >
+                    Profiles
+                  </Link>
+                  <Link
+                    to="/content-pack"
+                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
+                  >
+                    Research Pack
+                  </Link>
+                  <Link
+                    to="/"
+                    className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors"
+                  >
+                    The Record
+                  </Link>
+                </div>
                 {hasActiveFilters && (
                   <button
                     type="button"

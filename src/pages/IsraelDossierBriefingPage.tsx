@@ -16,6 +16,7 @@ import {
   type DossierBriefingSection,
   type DossierSourceCategory,
 } from '../data/israelDossierCanon'
+import DossierHubSpokes from '../components/DossierHubSpokes'
 
 const SOURCE_CLASS_LABELS: Record<DossierSourceCategory, string> = {
   'public-record': 'Public record',
@@ -400,6 +401,10 @@ export default function IsraelDossierBriefingPage() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-7xl px-5 pt-6 sm:px-8 lg:px-10">
+        <DossierHubSpokes variant="also-in" exclude="briefing" />
+      </div>
 
       <section className="mx-auto max-w-7xl px-5 pt-8 sm:px-8 lg:px-10" aria-label="Open questions and confidence limits">
         <div className="rounded-sm border border-crimson/30 bg-crimson/5 p-5 sm:p-6" data-testid="briefing-open-questions">

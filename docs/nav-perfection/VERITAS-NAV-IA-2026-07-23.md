@@ -67,9 +67,16 @@ Aviation IA laws are adapted to an evidence-publisher reader, not pilot tools.
 ## File-by-file
 - `src/App.tsx` — primaryLinks ≤5, drawer Browse, MobileTabBar, main safe-area pad  
 - `src/components/StickyMembershipBar.tsx` — sits above mobile tab bar  
+- `src/components/DossierHubSpokes.tsx` — hub-and-spoke (sticky / also-in / inline)  
+- `src/pages/IsraelDossierPage.tsx` + Briefing + DeepState + Forum — spokes mounted  
+- `src/pages/HomePage.tsx` — Read · Dossiers · Search + News chip  
+- `src/pages/SearchPage.tsx` — empty-state hub destinations  
+- `src/pages/NotFoundPage.tsx` — primary hub chips (noindex)  
+- `src/components/CookieConsent.tsx` — z-[100] above tab bar  
 - `scripts/verify-nav-ia.mjs` + pure suite wire  
 
 ## Banned patterns avoided
 - No More/Misc/… junk drawer  
 - No capability removed  
 - No hamburger as sole primary nav (drawer is secondary library; hubs live in tab bar)
+- No thrash of peer Israel densify corpus WIP

@@ -15,6 +15,7 @@ import {
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
+import DossierHubSpokes from '../components/DossierHubSpokes'
 import {
   type ForumPost, type ForumComment, type Community, type SortMode, type TopTimeframe,
   type PostType, type PostFlair, type ReportReason, type VoteDirection,
@@ -1141,6 +1142,11 @@ export default function ForumPage() {
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb: Dossiers hub → Forum (Sprint 2 hub-and-spoke) */}
+      <div className="pt-3 pb-1">
+        <DossierHubSpokes variant="inline" />
+      </div>
+
       {/* ── Top Bar ─────────────────────────────────────────────── */}
       <div className="flex items-center gap-4 py-4 border-b border-border mb-4 flex-wrap">
         {/* Mobile sidebar toggle */}

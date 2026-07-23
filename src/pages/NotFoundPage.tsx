@@ -5,7 +5,22 @@ import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_UR
 /**
  * Soft-404 UI for client-side unknown routes.
  * Server also returns HTTP 404 + X-Robots-Tag for unknown URLs (see server.js).
+ * Hub chips mirror the ≤5 primary IA so recovery never dumps readers into a dead end.
  */
+const PRIMARY_HUBS = [
+  { to: '/', label: 'Record' },
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+] as const
+
+const SECONDARY = [
+  { to: '/news', label: 'News' },
+  { to: '/methodology', label: 'Methodology' },
+  { to: '/content-pack', label: 'Research Pack' },
+] as const
+
 export default function NotFoundPage() {
   useEffect(() => {
     // No canonical on 404 — noindex alone; do not invent a /404 URL for crawlers.
@@ -29,7 +44,7 @@ export default function NotFoundPage() {
   }, [])
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20 text-center">
+    <div className="mx-auto max-w-3xl px-6 py-20 text-center" data-testid="not-found-page">
       <p className="mb-6 font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson">
         Document Not Found
       </p>
@@ -42,49 +57,43 @@ export default function NotFoundPage() {
       <p className="mx-auto mb-10 max-w-md font-body text-sm text-ink-faint">
         The page you requested does not exist, may have been moved, or is not yet published.
       </p>
-      <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-        <Link
-          to="/"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-crimson px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-crimson-dark"
-        >
-          Return to The Record
-        </Link>
-        <Link
-          to="/search"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
-        >
-          Search All Chapters
-        </Link>
-        <Link
-          to="/read"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
-        >
-          Browse The Record
-        </Link>
-        <Link
-          to="/profiles"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
-        >
-          Power Profiles
-        </Link>
-        <Link
-          to="/israel-dossier"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
-        >
-          Israel Dossier
-        </Link>
-        <Link
-          to="/methodology"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
-        >
-          Methodology
-        </Link>
-        <Link
-          to="/news"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
-        >
-          Current Events
-        </Link>
+
+      <p className="mb-3 font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-ink-faint">
+        Primary hubs
+      </p>
+      <div
+        className="mb-8 flex flex-wrap items-center justify-center gap-2"
+        data-testid="not-found-hub-chips"
+        aria-label="Primary hubs"
+      >
+        {PRIMARY_HUBS.map((hub) => (
+          <Link
+            key={hub.to}
+            to={hub.to}
+            className={`inline-flex min-h-[44px] items-center justify-center rounded-full px-5 py-2.5 font-sans text-sm font-semibold transition-colors ${
+              hub.to === '/'
+                ? 'bg-crimson text-white hover:bg-crimson-dark'
+                : 'border border-border text-ink hover:border-crimson hover:text-crimson'
+            }`}
+          >
+            {hub.label}
+          </Link>
+        ))}
+      </div>
+
+      <p className="mb-3 font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-ink-faint">
+        Also useful
+      </p>
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        {SECONDARY.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-4 py-2 font-sans text-xs font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
     </div>
   )

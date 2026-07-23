@@ -16,22 +16,26 @@ Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are ba
 11. Desktop utility = News · Institute · Topics — secondary strip  
 12. Sticky membership bar offset mobile — no double-stack  
 
-## Sprint 2 — Dossier hub spokes (next)
-13. Sticky subnav on /israel-dossier: Briefing · Deep State · Forum · Profiles  
-14. Deep-state page “Also in Dossiers” back-link  
-15. Forum page breadcrumb to Dossiers hub  
-16. Home hero single primary CTA row (Read · Dossiers · Search)  
-17. Home News chip in 1-tap from Record hub  
+## Sprint 2 — Dossier hub spokes (SHIPPED)
+13. Sticky subnav on /israel-dossier: Briefing · Deep State · Forum · Profiles — `DossierHubSpokes`  
+14. Deep-state page “Also in Dossiers” back-link — also-in variant  
+15. Forum page breadcrumb to Dossiers hub — inline variant  
+16. Home hero primary CTA row (Read · Dossiers · Search) — `home-hub-cta-row`  
+17. Home News chip in 1-tap from Record hub — `home-news-chip`  
 18. Profiles hub strip: integrity sort + pack + OSINT (already partially)  
-19. Read hub chapter list density (grouping by part)  
-20. Timeline under Browse + Read “Related”  
+19. Read hub chapter list density (grouping by part) — backlog  
+20. Timeline under Browse + Read “Related” — backlog  
++ Briefing page also-in spokes  
++ Search empty-state hubs (`search-empty-hubs`)  
++ Soft-404 primary hub chips (`not-found-hub-chips`)  
++ Cookie z-[100] above tab bar (z-50) / membership (z-40) documented  
 
-## Sprint 3 — Research hub
+## Sprint 3 — Research hub (next)
 21. /researcher as Learn hub landing polish (section cards only)  
 22. Methodology ↔ Sources bidirectional hub chips  
 23. Institute entry from Research drawer only (already)  
 24. Content pack in Research (already)  
-25. Search empty-state: top destinations (Read, Dossiers, Profiles, Pack)  
+25. Search empty-state: top destinations — **SHIPPED in Sprint 2**  
 26. Command-palette style? No new feature — improve Search placeholder labels  
 27. Bookmarks quick routes already pack — add News  
 28. Analytics under Account (already)  
@@ -57,9 +61,9 @@ Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are ba
 44. Forum mobile action bar  
 45. Membership pricing above fold  
 46. Empty bookmarks already guided  
-47. Soft-404 CTAs to 5 hubs  
-48. 404 page hub chips  
-49. Cookie consent above tab bar z-index check  
-50. Pure floor expand: primaryLinks count + drawerBrowse presence  
+47. Soft-404 CTAs to 5 hubs — **SHIPPED Sprint 2**  
+48. 404 page hub chips — **SHIPPED Sprint 2**  
+49. Cookie consent above tab bar z-index check — **SHIPPED Sprint 2**  
+50. Pure floor expand: primaryLinks + spokes + empty/404 — **SHIPPED Sprint 2**  
 
 **Capability check:** News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, legal — all reachable ≤3 taps. Zero removals.

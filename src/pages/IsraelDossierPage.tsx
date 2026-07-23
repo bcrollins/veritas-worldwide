@@ -12,6 +12,7 @@ import {
 } from '../lib/seo'
 import { trackSupportClick } from '../lib/ga4'
 import CommunityForum from '../components/CommunityForum'
+import DossierHubSpokes from '../components/DossierHubSpokes'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
@@ -1355,6 +1356,8 @@ export default function IsraelDossierPage() {
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <ReadingProgress />
+      {/* Hub-and-spoke: Briefing · Deep State · Forum · Profiles (Sprint 2 nav) */}
+      <DossierHubSpokes variant="sticky" />
       {/* ─── MASTHEAD ─── */}
       <header id="overview" className="text-center mb-6 border-b border-border pb-10">
         <p className="chapter-label mb-4">Special Investigation</p>

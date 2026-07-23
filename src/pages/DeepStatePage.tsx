@@ -11,6 +11,7 @@ import {
   SITE_NAME,
 } from '../lib/seo'
 import CommunityForum from '../components/CommunityForum'
+import DossierHubSpokes from '../components/DossierHubSpokes'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
@@ -668,6 +669,11 @@ export default function DeepStatePage() {
           </div>
         </div>
       </section>
+
+      {/* Hub-and-spoke: Also in Dossiers (Sprint 2) */}
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-5 border-b border-border bg-parchment">
+        <DossierHubSpokes variant="also-in" exclude="deep-state" />
+      </div>
 
       {/* ── Key Numbers Bar ───────────────────────────────────── */}
       <section className="bg-parchment-dark border-y border-border">

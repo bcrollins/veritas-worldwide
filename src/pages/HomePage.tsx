@@ -135,32 +135,48 @@ export default function HomePage() {
                         </div>
                       </Link>
 
-                      {/* Mobile: primary CTA + compact text links so first-screen density stays readable */}
-                      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                      {/* Primary hub CTA row: Read · Dossiers · Search (+ News 1-tap from Record) */}
+                      <div
+                        className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+                        data-testid="home-hub-cta-row"
+                      >
                         <Link
                           to="/read"
                           className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-sm bg-crimson px-6 py-3 text-white font-sans text-sm font-semibold hover:bg-crimson-dark transition-colors"
                         >
                           Read The Record
                         </Link>
-                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 sm:contents">
-                          <Link
-                            to="/israel-dossier"
-                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm sm:border sm:border-crimson/40 sm:bg-crimson/5 sm:px-6 sm:py-3 text-crimson font-sans text-sm font-semibold hover:text-crimson-dark sm:hover:bg-crimson/10 transition-colors"
-                          >
-                            Israel Dossier
-                          </Link>
+                        <Link
+                          to="/israel-dossier"
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-crimson/40 bg-crimson/5 px-6 py-3 text-crimson font-sans text-sm font-semibold hover:bg-crimson/10 transition-colors"
+                        >
+                          Dossiers
+                        </Link>
+                        <Link
+                          to="/search"
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm border border-border px-6 py-3 text-ink font-sans text-sm font-semibold hover:border-crimson hover:text-crimson transition-colors"
+                        >
+                          Search
+                        </Link>
+                        <Link
+                          to="/news"
+                          data-testid="home-news-chip"
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-ink-muted font-sans text-xs font-semibold uppercase tracking-[0.1em] hover:border-crimson hover:text-crimson transition-colors"
+                        >
+                          News
+                        </Link>
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 w-full sm:w-auto sm:ml-1">
                           <Link
                             to="/comprehensive-profile"
-                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm sm:border sm:border-obsidian/30 sm:bg-obsidian/5 sm:px-6 sm:py-3 text-ink font-sans text-sm font-semibold hover:text-crimson sm:hover:border-crimson transition-colors"
+                            className="inline-flex min-h-[44px] items-center justify-center gap-2 text-ink-muted font-sans text-sm font-semibold hover:text-crimson transition-colors"
                           >
                             Private OSINT — $499
                           </Link>
                           <Link
                             to="/institute"
-                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm sm:border sm:border-border sm:px-6 sm:py-3 text-ink-muted sm:text-ink font-sans text-sm font-semibold hover:text-crimson sm:hover:border-crimson transition-colors"
+                            className="inline-flex min-h-[44px] items-center justify-center gap-2 text-ink-muted font-sans text-sm font-semibold hover:text-crimson transition-colors"
                           >
-                            Veritas Institute
+                            Institute
                           </Link>
                         </div>
                       </div>
