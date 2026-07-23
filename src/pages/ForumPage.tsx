@@ -137,13 +137,13 @@ function getCommunityActivity(activityMap: Map<string, CommunityActivity>, commu
 }
 
 function getCommunitySidebarLabel(activity: CommunityActivity) {
-  if (activity.postCount === 0) return 'Local beta'
+  if (activity.postCount === 0) return 'Beta'
   if (activity.commentCount === 0) return pluralize(activity.postCount, 'local post')
   return `${pluralize(activity.postCount, 'post')} · ${pluralize(activity.commentCount, 'comment')}`
 }
 
 function getCommunityHeaderLabel(activity: CommunityActivity) {
-  if (activity.postCount === 0) return 'Local beta · no posts yet'
+  if (activity.postCount === 0) return 'Beta · no posts yet'
   return `${pluralize(activity.postCount, 'local post')} · ${pluralize(activity.commentCount, 'comment')}`
 }
 
@@ -612,7 +612,7 @@ function CommunityCard({ community, activity }: { community: Community; activity
         </div>
         <p className="font-body text-xs text-ink-muted leading-relaxed mb-3">{community.longDescription}</p>
         <div className="flex flex-wrap gap-2 mb-3">
-          <span className="inline-flex items-center rounded-full border border-crimson/20 bg-crimson/5 px-2 py-0.5 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-crimson">Local beta</span>
+          <span className="inline-flex items-center rounded-full border border-crimson/20 bg-crimson/5 px-2 py-0.5 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-crimson">Beta</span>
           <span className="inline-flex items-center rounded-full border border-border bg-white px-2 py-0.5 font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-ink-muted">
             {community.restricted ? 'Read-only in beta' : 'Open posting'}
           </span>

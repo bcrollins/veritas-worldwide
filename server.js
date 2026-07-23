@@ -1706,6 +1706,23 @@ function normalizePrerenderRoute(routePath) {
   return routePath.endsWith('/') ? routePath.slice(0, -1) : routePath
 }
 
+/**
+ * Public content prefixes whose slugs are stored lowercase.
+ * Mixed-case crawls (/Profile/Ted-Cruz) must 301 to the canonical path so SPA
+ * routing and soft-404 allowlists stay lockstep with Search Central.
+ */
+const CASE_CANONICAL_PATH =
+  /^\/(chapter|profile|news|topics|institute\/(?:courses|guides))\/[A-Za-z0-9-]+\/?$/
+
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next()
+  if (req.path.startsWith('/api/') || path.extname(req.path)) return next()
+  if (req.path === req.path.toLowerCase()) return next()
+  if (!CASE_CANONICAL_PATH.test(req.path)) return next()
+  const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
+  return res.redirect(301, `${req.path.toLowerCase()}${query}`)
+})
+
 /** Paths that must never be indexed even when served as prerendered static HTML. */
 const NOINDEX_EXACT_PATHS = new Set([
   '/bernie',

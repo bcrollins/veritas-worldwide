@@ -49,7 +49,9 @@ function getChapterMeta(slug) {
 
 /** Known archive chapter slugs — soft-404 allowlist must reject unknown /chapter/* paths. */
 export function isKnownChapterSlug(slug) {
-  return Boolean(getChapterMeta(slug))
+  if (!slug || typeof slug !== 'string') return false
+  // Canonical public slugs are lowercase; tolerate mixed-case crawl requests.
+  return Boolean(getChapterMeta(slug.toLowerCase()))
 }
 
 /** Load power-profile ids from export corpus (dist preferred, public fallback). */
@@ -78,7 +80,8 @@ function loadKnownProfileIds(rootDir) {
 export function isKnownProfileSlug(slug, rootDir) {
   const ids = loadKnownProfileIds(rootDir)
   if (!ids) return true // fail-open if corpus not built yet
-  return ids.has(slug)
+  if (!slug || typeof slug !== 'string') return false
+  return ids.has(slug.toLowerCase())
 }
 
 let _knownNewsSlugs = undefined
@@ -108,7 +111,8 @@ function loadKnownNewsSlugs(rootDir) {
 export function isKnownNewsSlug(slug, rootDir) {
   const ids = loadKnownNewsSlugs(rootDir)
   if (!ids) return true
-  return ids.has(slug)
+  if (!slug || typeof slug !== 'string') return false
+  return ids.has(slug.toLowerCase())
 }
 
 let _knownTopicSlugs = undefined
@@ -136,7 +140,8 @@ function loadKnownTopicSlugs(rootDir) {
 export function isKnownTopicSlug(slug, rootDir) {
   const ids = loadKnownTopicSlugs(rootDir)
   if (!ids) return true
-  return ids.has(slug)
+  if (!slug || typeof slug !== 'string') return false
+  return ids.has(slug.toLowerCase())
 }
 
 let _knownInstituteSlugs = undefined
@@ -165,7 +170,8 @@ function loadKnownInstituteSlugs(rootDir) {
 export function isKnownInstituteSlug(slug, rootDir) {
   const ids = loadKnownInstituteSlugs(rootDir)
   if (!ids) return true
-  return ids.has(slug)
+  if (!slug || typeof slug !== 'string') return false
+  return ids.has(slug.toLowerCase())
 }
 
 
@@ -439,7 +445,8 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
 
     const chapterMatch = req.path.match(/^\/chapter\/(.+)$/)
     if (chapterMatch) {
-      const meta = getChapterMeta(chapterMatch[1])
+      const chapterSlug = String(chapterMatch[1] || '').toLowerCase()
+      const meta = getChapterMeta(chapterSlug)
       if (!meta) {
         // Unknown chapter slug — never soft-serve homepage index,follow (Google soft-404).
         res.status(404)
@@ -458,8 +465,7 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         return res.type('html').send(notFound)
       }
       if (meta) {
-        const chapterUrl = `${SITE_URL}/chapter/${chapterMatch[1]}`
-        const chapterSlug = chapterMatch[1]
+        const chapterUrl = `${SITE_URL}/chapter/${chapterSlug}`
         const pngPath = path.join(rootDir, 'dist', 'og', `${chapterSlug}.png`)
         const svgPath = path.join(rootDir, 'dist', 'og', `${chapterSlug}.svg`)
         const localHeroCandidates = [
@@ -500,7 +506,7 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
 
     const instituteMatch = req.path.match(/^\/institute\/(courses|guides)\/([^/]+)$/)
     if (instituteMatch) {
-      const slug = instituteMatch[2]
+      const slug = String(instituteMatch[2] || '').toLowerCase()
       if (!isKnownInstituteSlug(slug, rootDir)) {
         res.status(404)
         res.setHeader('X-Robots-Tag', 'noindex, nofollow')
@@ -521,7 +527,7 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
 
     const topicMatch = req.path.match(/^\/topics\/([^/]+)$/)
     if (topicMatch) {
-      const slug = topicMatch[1]
+      const slug = String(topicMatch[1] || '').toLowerCase()
       if (!isKnownTopicSlug(slug, rootDir)) {
         res.status(404)
         res.setHeader('X-Robots-Tag', 'noindex, nofollow')
@@ -542,7 +548,7 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
 
     const profileMatch = req.path.match(/^\/profile\/(.+)$/)
     if (profileMatch) {
-      const slug = profileMatch[1]
+      const slug = String(profileMatch[1] || '').toLowerCase()
       if (!isKnownProfileSlug(slug, rootDir)) {
         // Unknown profile — never invent indexable Power Profile shells for junk slugs.
         res.status(404)
@@ -600,7 +606,7 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
     // Current-events articles — title/description/hero from exported meta.json
     const newsMatch = req.path.match(/^\/news\/([^/]+)$/)
     if (newsMatch) {
-      const slug = newsMatch[1]
+      const slug = String(newsMatch[1] || '').toLowerCase()
       if (!isKnownNewsSlug(slug, rootDir)) {
         res.status(404)
         res.setHeader('X-Robots-Tag', 'noindex, nofollow')

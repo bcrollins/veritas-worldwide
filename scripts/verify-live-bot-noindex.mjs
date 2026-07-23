@@ -101,6 +101,9 @@ const SOFT404_JUNK = [
   '/topics/not-a-real-topic-xyz',
   '/institute/courses/not-a-real-course-xyz',
   '/institute/guides/not-a-real-guide-xyz',
+  // Trailing-slash variants must also soft-404 (not indexable shells).
+  '/chapter/not-a-real-chapter-slug-xyz/',
+  '/profile/definitely-not-a-real-person-xyz/',
 ]
 const SOFT404_KNOWN = [
   { path: '/chapter/chapter-1', titleIncludes: 'Central Banking' },

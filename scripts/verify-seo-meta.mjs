@@ -436,6 +436,14 @@ assert(
     server.includes('isKnownInstituteSlug'),
   'server.js isKnownSpaRoute must import all soft-404 gates',
 )
+assert(
+  server.includes('CASE_CANONICAL_PATH') || server.includes('toLowerCase()'),
+  'server must 301 mixed-case public content paths to lowercase canonical URLs',
+)
+assert(
+  botMeta.includes('.toLowerCase()') && server.includes('CASE_CANONICAL_PATH'),
+  'bot meta + server must case-normalize public content slugs for crawl consistency',
+)
 
 const homePage = read('src/pages/HomePage.tsx')
 assert(!homePage.includes('200+ tier-labeled claims'), 'Home must not advertise stale 200+ ROC claim floor')
