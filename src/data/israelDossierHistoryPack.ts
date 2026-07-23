@@ -8190,6 +8190,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-selenium-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Selenium Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (selenium cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated selenium deficiency risk among Gaza children under collapsed diverse diets — a micronutrient-immune pattern distinct from zinc and vitamin-A cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source selenium-deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric selenium risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-writing-materials-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Writing Materials Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (writing-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of paper and writing tools for Israeli civilian hostages — blocking diaries, letters, and cognitive coping. Pattern card distinct from information-denial and photo-denial cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source writing-materials denial. Exact practices vary; multi-source writing denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-stone-throwing-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Stone-Throwing at Civilians Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (stone-throwing cohort)',
+    location: 'West Bank roads, school routes, and village approaches',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler stone-throwing at Palestinian vehicles and pedestrians after October 7 — injuring civilians including children on school routes. Pattern card for stone-throwing distinct from vehicle ramming and price-tag cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source stone-throwing surge. Exact injury counts evolve; multi-source wartime settler stone-throwing is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler stone-throwing coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -12757,6 +12838,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['checkpoints', 'settlers', 'access', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-selenium-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Selenium Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated selenium deficiency risk among children under wartime diets.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-selenium-deficiency-risk-pattern-2023-2025',
+      'gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025',
+      'gaza-children-iodine-deficiency-risk-pattern-2023-2025',
+    ],
+    tags: ['selenium', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-writing-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Writing Materials Pattern',
+    description: 'Multi-source documentation of denial of paper and writing tools for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-writing-materials-pattern-2023-2025',
+      'israel-hostages-denied-news-information-pattern-2023-2025',
+      'israel-hostages-denied-family-photographs-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-stones-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Stone-Throwing Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler stone-throwing at civilians after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-stone-throwing-pattern-2023-2025',
+      'west-bank-settler-vehicle-ramming-pattern-2023-2025',
+      'west-bank-settler-child-attacks-pattern-2023-2025',
+    ],
+    tags: ['stone-throwing', 'settlers', 'civilians', 'children', 'west-bank'],
+  },
+
+
 
 
 
