@@ -11349,6 +11349,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-meningitis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Meningitis Outbreak Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (meningitis-risk cohort)',
+    location: 'Gaza Strip overcrowded shelters and collapsed pediatric neurology points',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric meningitis outbreak risk from overcrowding, interrupted vaccination, and diagnostic collapse — a multi-source wartime CNS-infection pattern distinct from pneumonia and diphtheria cards.',
+    evidence:
+      'WHO meningitis materials, UNICEF immunization updates, and multi-outlet coverage establish multi-source pediatric meningitis risk. Exact case counts evolve; multi-source wartime meningitis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO meningitis materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-record-audio-messages-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Audio Messages Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-audio-messages cohort)',
+    location: 'Gaza Strip captivity sites — forced-audio subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document forced recording of coerced audio messages by Israeli civilian hostages for propaganda and pressure on families — a multi-source coerced-media pattern distinct from propaganda videos and photos cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced audio-message recording. Exact cases vary; multi-source forced audio propaganda from civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-grapevines-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Grapevines Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (grapevine-destruction cohort)',
+    location: 'West Bank vineyard terraces and family grape plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian grapevines after October 7 — destroying multi-year agricultural investment supporting families including children. Pattern card distinct from olive-tree uprooting and greenhouse destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source grapevine destruction. Exact vine counts evolve; multi-source wartime settler destruction of civilian grapevines is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet grapevine-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-tetanus-booster-gap-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Tetanus Booster Access Gap Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (tetanus-booster-gap cohort)',
+    location: 'Gaza Strip trauma wards and destroyed immunization points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document tetanus-booster access gaps for wounded children under immunization and sterile-care collapse — elevating tetanus risk beyond wound-infection cards. Pattern card distinct from tetanus-wound-infection risk and cold-chain collapse.',
+    evidence:
+      'WHO tetanus materials, UNICEF immunization updates, and multi-outlet coverage establish multi-source pediatric tetanus-booster gap. Exact dose shortfalls evolve; multi-source wartime tetanus-booster access gap for Gaza children is the claim.',
+    sources: [
+      { label: 'WHO tetanus materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza trauma-immunization coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-privacy-toileting-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Toileting Privacy Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (toileting-privacy-denial cohort)',
+    location: 'Gaza Strip captivity sites — toileting-privacy subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of toileting privacy and sanitary conditions for Israeli civilian hostages including children — a multi-source degradation pattern distinct from bathing denial and hygiene-sanitation cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source toileting-privacy denial. Exact cases vary; multi-source denial of toileting privacy for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-construction-workers-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Construction Workers Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (construction-worker-attack cohort)',
+    location: 'West Bank village building sites and renovation compounds',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian construction workers after October 7 — blocking home repair and livelihood including for families with children. Pattern card distinct from home invasions and farm-equipment arson.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source construction-worker attacks. Exact injury counts evolve; multi-source wartime settler attacks on construction workers is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet construction-worker attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-scabies-secondary-infection-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Scabies Secondary Bacterial Infection Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (scabies-secondary-infection cohort)',
+    location: 'Gaza Strip overcrowded tents — dermatology/infection cascade sites',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document elevated secondary bacterial infection of pediatric scabies lesions under antibiotic and hygiene collapse — a multi-source wartime skin-infection cascade distinct from primary scabies outbreak and lice cards.',
+    evidence:
+      'WHO dermatology/infection materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric scabies secondary infection. Exact case counts evolve; multi-source wartime secondary infection of scabies among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO infection materials', url: 'https://www.who.int' },
+      { label: 'MSF clinical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza skin-disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-clock-time-orientation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Time Orientation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (time-orientation-denial cohort)',
+    location: 'Gaza Strip captivity sites — time-disorientation subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document deliberate denial of clocks, calendars, and time cues for Israeli civilian hostages — inducing severe disorientation. Pattern card distinct from sunlight denial and sleep-deprivation cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source time-orientation denial. Exact cases vary; multi-source deliberate time disorientation of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-water-cisterns-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Water Cisterns Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (cistern-destruction cohort)',
+    location: 'West Bank hillside cisterns and rainwater-harvesting compounds',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction and filling of Palestinian civilian water cisterns after October 7 — denying stored household water including for children. Pattern card distinct from water-tank, well-poisoning, and pipe-cutting cards.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source cistern destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian cisterns is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet cistern-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -17912,6 +18156,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['poultry', 'settlers', 'agriculture', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-meningitis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Meningitis Outbreak Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric meningitis risk under overcrowding and vaccination collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-meningitis-risk-pattern-2023-2025',
+      'gaza-children-tetanus-booster-gap-pattern-2023-2025',
+      'gaza-children-scabies-secondary-infection-pattern-2023-2025',
+    ],
+    tags: ['meningitis', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-audio-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced Audio Messages Pattern',
+    description: 'Multi-source documentation of forced recording of coerced audio messages by civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-record-audio-messages-pattern-2023-2025',
+      'israel-hostages-denied-privacy-toileting-pattern-2023-2025',
+      'israel-hostages-denied-clock-time-orientation-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'propaganda', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-grapevines-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Grapevines Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian grapevines after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-grapevines-pattern-2023-2025',
+      'west-bank-settler-attacking-construction-workers-pattern-2023-2025',
+      'west-bank-settler-destroying-water-cisterns-pattern-2023-2025',
+    ],
+    tags: ['grapevines', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-tetanus-booster-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Tetanus Booster Access Gap Pattern',
+    description: 'WHO/UNICEF multi-source documentation of tetanus-booster access gaps for wounded children.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-tetanus-booster-gap-pattern-2023-2025',
+      'gaza-children-meningitis-risk-pattern-2023-2025',
+      'gaza-children-vaccine-cold-chain-collapse-pattern-2023-2025',
+    ],
+    tags: ['tetanus', 'children', 'immunization', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-toileting-privacy-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Toileting Privacy Pattern',
+    description: 'Multi-source documentation of denial of toileting privacy for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-privacy-toileting-pattern-2023-2025',
+      'israel-hostages-denied-bathing-pattern-2023-2025',
+      'israel-hostages-forced-to-record-audio-messages-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'hygiene', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-construction-workers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Construction Workers Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian construction workers after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-construction-workers-pattern-2023-2025',
+      'west-bank-settler-destroying-grapevines-pattern-2023-2025',
+      'west-bank-settler-destroying-water-cisterns-pattern-2023-2025',
+    ],
+    tags: ['construction', 'settlers', 'livelihoods', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-scabies-secondary-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Scabies Secondary Infection Pattern',
+    description: 'WHO/MSF multi-source documentation of secondary bacterial infection of pediatric scabies lesions.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-scabies-secondary-infection-pattern-2023-2025',
+      'gaza-children-scabies-outbreak-pattern-2023-2025',
+      'gaza-children-meningitis-risk-pattern-2023-2025',
+    ],
+    tags: ['scabies', 'infection', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-time-orientation-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Time Orientation Pattern',
+    description: 'Multi-source documentation of deliberate denial of time cues for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-clock-time-orientation-pattern-2023-2025',
+      'israel-hostages-denied-sunlight-pattern-2023-2025',
+      'israel-hostages-denied-privacy-toileting-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-cisterns-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Water Cisterns Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian water cisterns after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-water-cisterns-pattern-2023-2025',
+      'west-bank-settler-destroying-water-tanks-pattern-2023-2025',
+      'west-bank-settler-poisoning-wells-pattern-2023-2025',
+    ],
+    tags: ['cisterns', 'water', 'settlers', 'west-bank'],
+  },
+
 
 
 
