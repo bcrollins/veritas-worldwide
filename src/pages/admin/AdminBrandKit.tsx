@@ -453,6 +453,14 @@ export default function AdminBrandKit() {
             Social launch checklist →
           </a>
           <a
+            href="/brand-kit/07-docs/bios.json"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            bios.json →
+          </a>
+          <a
             href="/brand-kit/07-docs/brand-do-dont.svg"
             target="_blank"
             rel="noopener noreferrer"
