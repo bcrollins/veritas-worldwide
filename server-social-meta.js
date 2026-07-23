@@ -81,7 +81,63 @@ export function isKnownProfileSlug(slug, rootDir) {
   return ids.has(slug)
 }
 
+let _knownNewsSlugs = undefined
+function loadKnownNewsSlugs(rootDir) {
+  if (_knownNewsSlugs !== undefined) return _knownNewsSlugs
+  const candidates = [
+    path.join(rootDir, 'dist', 'news', 'meta.json'),
+    path.join(rootDir, 'public', 'news', 'meta.json'),
+  ]
+  for (const candidate of candidates) {
+    if (!fs.existsSync(candidate)) continue
+    try {
+      const data = JSON.parse(fs.readFileSync(candidate, 'utf8'))
+      const keys = Array.isArray(data)
+        ? data.map((x) => x.slug).filter(Boolean)
+        : Object.keys(data || {})
+      _knownNewsSlugs = new Set(keys)
+      return _knownNewsSlugs
+    } catch {
+      /* try next */
+    }
+  }
+  _knownNewsSlugs = null
+  return _knownNewsSlugs
+}
 
+export function isKnownNewsSlug(slug, rootDir) {
+  const ids = loadKnownNewsSlugs(rootDir)
+  if (!ids) return true
+  return ids.has(slug)
+}
+
+let _knownTopicSlugs = undefined
+function loadKnownTopicSlugs(rootDir) {
+  if (_knownTopicSlugs !== undefined) return _knownTopicSlugs
+  const candidates = [
+    path.join(rootDir, 'src', 'data', 'topicHubs.json'),
+    path.join(rootDir, 'dist', 'data', 'topicHubs.json'),
+  ]
+  for (const candidate of candidates) {
+    if (!fs.existsSync(candidate)) continue
+    try {
+      const data = JSON.parse(fs.readFileSync(candidate, 'utf8'))
+      const list = Array.isArray(data) ? data : data.topics || []
+      _knownTopicSlugs = new Set(list.map((t) => t.slug).filter(Boolean))
+      return _knownTopicSlugs
+    } catch {
+      /* try next */
+    }
+  }
+  _knownTopicSlugs = null
+  return _knownTopicSlugs
+}
+
+export function isKnownTopicSlug(slug, rootDir) {
+  const ids = loadKnownTopicSlugs(rootDir)
+  if (!ids) return true
+  return ids.has(slug)
+}
 
 /**
  * Rewrite first-paint shell metas for bots.
