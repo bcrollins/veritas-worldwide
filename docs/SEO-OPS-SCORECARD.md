@@ -184,3 +184,12 @@ Live tip lineage verified with:
 - Trailing-slash public content paths → **301** slashless (`/profile/ted-cruz/` → `/profile/ted-cruz`)
 - Soft-404 allowlist lookups are case-insensitive (`isKnown*Slug`)
 - Pure: `verify:soft-404-gates` case suite; live: `verify:live-bot-noindex` trailing-slash junk
+
+
+### wave33 soft-404 + slug 301 production lock (2026-07-23)
+
+- Soft-404 matrix still green for junk dynamic prefixes
+- **301 live:** `/profile/Ted-Cruz` → `/profile/ted-cruz`
+- **301 live:** `/profile/ted-cruz/` → `/profile/ted-cruz`
+- Soft anonymity floor tracks wave33 (399); GEO public copy 400+
+- Pure + live: `verify:seo-meta`, `verify:soft-404-gates`, `verify:live-bot-noindex`
