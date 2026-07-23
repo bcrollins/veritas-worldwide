@@ -87,6 +87,7 @@ const israel = read('src/pages/IsraelDossierPage.tsx')
 assert(israel.includes('variant="sticky"') || israel.includes("variant='sticky'"), 'Israel sticky DossierHubSpokes')
 const briefing = read('src/pages/IsraelDossierBriefingPage.tsx')
 assert(briefing.includes('variant="also-in"') || briefing.includes("variant='also-in'"), 'Briefing also-in spokes')
+assert(briefing.includes('exclude="briefing"') || briefing.includes("exclude='briefing'"), 'Briefing also-in excludes self')
 
 // Dossier family mounts spokes
 for (const rel of [
