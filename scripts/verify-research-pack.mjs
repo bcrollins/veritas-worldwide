@@ -111,6 +111,16 @@ assert(
   successPage.includes('/research-pack.zip') && successPage.includes('osint-success-research-pack'),
   'OSINT success page must offer free research pack download',
 )
+const analytics = read('src/pages/AnalyticsPage.tsx')
+assert(
+  analytics.includes('health-research-pack-check') && analytics.includes('researchPackZip'),
+  'Analytics Release Health must surface research pack check',
+)
+const crawler = read('scripts/verify-crawler-surfaces.mjs')
+assert(
+  crawler.includes('research-pack.zip'),
+  'crawler-surfaces llms floors must require research-pack.zip',
+)
 
 const llms = read('public/llms.txt')
 assert(llms.includes('research-pack'), 'llms.txt must index research pack')

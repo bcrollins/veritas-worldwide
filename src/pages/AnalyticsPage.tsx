@@ -781,6 +781,29 @@ function ReleaseHealthPanel({
         </p>
       )}
 
+      {Object.prototype.hasOwnProperty.call(health.checks || {}, 'researchPackZip') && (
+        <p className="font-sans text-[10px] text-ink-muted mb-3" data-testid="health-research-pack-check">
+          Offline research pack check:{' '}
+          <span
+            className={
+              health.checks?.researchPackZip && health.checks?.researchPackManifest
+                ? 'text-verified font-semibold'
+                : 'text-disputed font-semibold'
+            }
+          >
+            {health.checks?.researchPackZip && health.checks?.researchPackManifest ? 'present' : 'missing'}
+          </span>
+          {' · '}
+          <a href="/research-pack.zip" className="text-crimson underline hover:text-crimson-dark">
+            /research-pack.zip
+          </a>
+          {' · '}
+          <a href="/research-pack-manifest.json" className="text-crimson underline hover:text-crimson-dark">
+            manifest
+          </a>
+        </p>
+      )}
+
       <div className="flex flex-wrap gap-2">
         {checkEntries.map(([key, ok]) => (
           <span
