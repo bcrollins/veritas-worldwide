@@ -1872,4 +1872,10 @@ assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'home-relat
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'not-found-secondary-hubs ultimate final')
 
 
+
+// Search Bookmarks dual testids ultimate final
+assert(read('src/pages/SearchPage.tsx').includes('search-idle-hubs') && read('src/pages/SearchPage.tsx').includes('search-empty-hubs'), 'search dual testids ultimate final')
+assert(read('src/pages/BookmarksPage.tsx').includes('bookmarks-related-hubs') && read('src/pages/BookmarksPage.tsx').includes('bookmarks-empty-hubs'), 'bookmarks dual testids ultimate final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
