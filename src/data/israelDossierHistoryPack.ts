@@ -2600,6 +2600,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-unrwa-ban-pattern-2024-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden', 'donald-trump'],
+    relatedMoneyNodeIds: ['annual-mou', 'pro-israel-lobby-2024'],
+    legalStatus: 'multi-source-investigation',
+    title: 'UNRWA Ban & Funding Suspension Pattern (2024–2025)',
+    date: 'January 2024 – 2025',
+    location: 'Gaza / West Bank / donor capitals',
+    summary:
+      'Following Israeli allegations against a subset of UNRWA staff, multiple donor governments suspended funding and Israel advanced legislation/policy restricting UNRWA operations. Multi-source UN and humanitarian reporting documents the aid-capacity impact on a population dependent on UNRWA services. Pattern card for the UNRWA political-financial crisis concurrent with wartime aid needs.',
+    evidence:
+      'UNRWA Commissioner-General statements, multi-source donor suspension announcements, Knesset legislative tracking, and OCHA aid-capacity reporting establish multi-source operational impact. Staff allegation investigations are multi-source and ongoing; the claim is the multi-source aid-capacity disruption pattern.',
+    sources: [
+      { label: 'UNRWA public statements', url: 'https://www.unrwa.org' },
+      { label: 'UN OCHA aid capacity materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet UNRWA funding coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNRWA public materials', url: 'https://www.unrwa.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3671,6 +3698,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-reconstruction-cost-pattern-2024-2025', 'gaza-housing-destruction-pattern-2023-2025'],
     tags: ['reconstruction', 'economy', 'housing', 'gaza'],
+  },
+
+  {
+    id: 'tl-unrwa-ban-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'UNRWA Funding Suspension & Ban Pattern',
+    description: 'Multi-source donor suspensions and Israeli restrictions on UNRWA operations amid wartime aid need.',
+    source: 'UNRWA / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unrwa.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-unrwa-ban-pattern-2024-2025', 'unrwa-staff-deaths', 'gaza-aid-workers-killed-pattern-2023-2025'],
+    tags: ['unrwa', 'aid', 'humanitarian', 'gaza'],
   },
 
 ]
