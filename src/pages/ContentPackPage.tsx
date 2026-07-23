@@ -454,6 +454,11 @@ export default function ContentPackPage() {
               </a>
             ))}
           </div>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a href="/brand-kit/04-social/citation-card.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-semibold text-crimson hover:underline">Citation card →</a>
+            <a href="/brand-kit/09-templates/correction-notice.html" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Correction template →</a>
+            <a href="/brand-kit/04-social/bluesky-banner.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Bluesky banner →</a>
+          </div>
         </div>
       </section>
 

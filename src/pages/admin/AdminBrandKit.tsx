@@ -413,6 +413,22 @@ export default function AdminBrandKit() {
             Evidence tiers →
           </a>
           <a
+            href="/brand-kit/07-docs/PRESS-CONTACT.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Press contact →
+          </a>
+          <a
+            href="/brand-kit/09-templates/correction-notice.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Correction template →
+          </a>
+          <a
             href="/brand-kit/07-docs/brand-do-dont.svg"
             target="_blank"
             rel="noopener noreferrer"
