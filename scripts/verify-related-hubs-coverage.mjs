@@ -68,6 +68,8 @@ assert(rh.includes('emphasizeTo'), 'emphasizeTo prop')
 assert(rh.includes('min-h-[44px]'), '44px touch targets')
 assert(rh.includes('no-print'), 'no-print class')
 assert(rh.includes('focus-visible:ring-2'), 'focus-visible ring on chips')
+assert(rh.includes('aria-current'), 'aria-current active hub')
+assert(rh.includes('useLocation'), 'useLocation for active hub')
 assert((rh.match(/PRIMARY_RELATED_HUBS[\s\S]*?\] as const/) || [''])[0].split('{ to:').length - 1 <= 5, 'PRIMARY ≤5 hubs')
 
 console.log(

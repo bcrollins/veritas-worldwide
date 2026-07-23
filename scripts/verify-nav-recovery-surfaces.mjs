@@ -3068,4 +3068,24 @@ assert(read('src/components/AuthModal.tsx').includes('focus-visible:ring-2'), 'p
 assert(read('src/components/NewsletterSignup.tsx').includes('focus-visible:ring-2'), 'perpetual v33 newsletter focus')
 assert(read('src/components/PrimarySourceLink.tsx').includes('focus-visible:ring-2'), 'perpetual v33 primary source focus')
 
+
+
+// RelatedHubs platform perpetual densify lock v34
+assert(surfaces.length >= 115, `perpetual v34 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('aria-current'), 'perpetual v34 RelatedHubs aria-current')
+assert(read('src/components/RelatedHubs.tsx').includes('useLocation'), 'perpetual v34 RelatedHubs useLocation')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v34 RelatedHubs focus')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v34 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v34 PRIMARY')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v34 mobile tab bar')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v34 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v34 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v34 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v34 soft-404')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v34 methodology')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v34 Research chips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v34 spokes focus')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v34 footer focus')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v34 cookie focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
