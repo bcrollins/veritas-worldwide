@@ -622,6 +622,21 @@ const healthResult = await fetchJson('/api/health')
         `status=${researchPackManifest.response.status} publisher=${man?.publisher || 'none'}`,
       )
 
+      addCheck(
+        checks,
+        failures,
+        health.checks?.researchPackZip === true || researchPackResult.ok,
+        'Health probe reports research pack ZIP (or asset responds)',
+        `checks.researchPackZip=${health.checks?.researchPackZip}`,
+      )
+      addCheck(
+        checks,
+        failures,
+        health.checks?.researchPackManifest === true || researchPackManifest.response.ok,
+        'Health probe reports research pack manifest (or asset responds)',
+        `checks.researchPackManifest=${health.checks?.researchPackManifest}`,
+      )
+
       const sitemapResult = await fetchText('/sitemap.xml')
       const sitemapText = sitemapResult.text || ''
       addCheck(
