@@ -749,4 +749,9 @@ const pureRunner = read('scripts/verify-pure.mjs')
 assert(pureRunner.includes('nav-ia') || pureRunner.includes('verify-nav-ia'), 'verify-pure includes nav-ia')
 assert(pureRunner.includes('nav-recovery') || pureRunner.includes('verify-nav-recovery'), 'verify-pure includes nav-recovery')
 
+
+// Sticky membership scroll gate (unique assert name)
+const stickyScrollSrc = read('src/components/StickyMembershipBar.tsx')
+assert(stickyScrollSrc.includes('scrollY > 400'), 'membership 400px scroll gate')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
