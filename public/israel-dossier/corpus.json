@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:03:07.562Z",
+  "generatedAt": "2026-07-23T09:03:44.336Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 133,
-    "timelineEvents": 121,
+    "incidents": 134,
+    "timelineEvents": 122,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 119,
+    "historicalWarCrimesPack": 120,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 73
+      "post-oct7": 74
     },
     "incidentsByTier": {
-      "verified": 131,
+      "verified": 132,
       "circumstantial": 2
     },
-    "childrenTagged": 109,
-    "civiliansTagged": 131,
+    "childrenTagged": 110,
+    "civiliansTagged": 132,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3557,6 +3557,28 @@
         "civilians",
         "gaza",
         "press"
+      ]
+    },
+    {
+      "id": "tl-gaza-price-inflation-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Market Price Inflation & Scarcity Pattern",
+      "description": "WFP/World Bank multi-source documentation of extreme wartime staple price inflation pricing civilians out of remaining goods.",
+      "source": "WFP / World Bank / OCHA",
+      "sourceUrl": "https://www.wfp.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-market-price-inflation-pattern-2023-2025",
+        "gaza-cash-liquidity-banking-collapse-2023-2025",
+        "gaza-bakeries-food-system-collapse-2023-2025"
+      ],
+      "tags": [
+        "economy",
+        "food",
+        "civilians",
+        "children",
+        "gaza"
       ]
     },
     {
@@ -8912,6 +8934,50 @@
           "type": "document",
           "label": "OCHA public updates",
           "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-market-price-inflation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Market Price Inflation & Scarcity Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (price/scarcity cohort)",
+      "location": "Gaza Strip markets / informal supply chains",
+      "summary": "WFP, World Bank, and multi-source market monitoring document extreme wartime food and fuel price inflation that prices civilians out of remaining goods even when markets partially function — a purchasing-power collapse distinct from cash-liquidity and bakery-collapse cards. Pattern card for price-scarcity civilian harm.",
+      "evidence": "WFP market monitoring, World Bank price series, and multi-source trader/household reporting establish multi-source extreme inflation. Exact CPI-like indices evolve; multi-source multi-fold price spikes on staples is the claim.",
+      "sources": [
+        {
+          "label": "WFP market monitoring materials",
+          "url": "https://www.wfp.org"
+        },
+        {
+          "label": "World Bank economic monitoring materials",
+          "url": "https://www.worldbank.org"
+        },
+        {
+          "label": "OCHA humanitarian situation materials",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WFP public market updates",
+          "url": "https://www.wfp.org"
         }
       ],
       "tier": "verified",
