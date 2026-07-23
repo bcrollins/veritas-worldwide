@@ -334,4 +334,12 @@ for (const route of [
   assert(app.includes(route), `shell retains ${route}`)
 }
 
+
+// Search recovery hubs include primary destinations
+const searchPage = read('src/pages/SearchPage.tsx')
+assert(searchPage.includes('search-idle-hubs') && searchPage.includes('search-empty-hubs'), 'Search idle+empty hubs')
+for (const dest of ['/read', '/israel-dossier', '/profiles', '/content-pack']) {
+  assert(searchPage.includes(dest), `Search recovery includes ${dest}`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
