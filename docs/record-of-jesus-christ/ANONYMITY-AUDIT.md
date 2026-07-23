@@ -37,4 +37,15 @@ Sophisticated OSINT on public Veritas surfaces finds **zero recoverable path** t
 - [x] Contact = rights@veritasworldwide.com  
 - [x] JSON-LD author = Organization  
 
-**Verdict this interval:** Public ROC package **PASS**. Infrastructure residual risks documented for continued hardening.
+## Interval re-audit (2026-07-23 Perfection Engine)
+
+| Check | Result |
+|--------|--------|
+| Live HTML identity patterns (10 paths) | PASS |
+| `/bernie` Googlebot noindex | LIVE (`x-robots-tag` + meta + robots Disallow) |
+| Ops/outreach personal byline | SCRUBBED |
+| Entity git author (future commits) | Veritas Worldwide / rights@ |
+| Live-anonymity hard claim floor | 160 (catastrophe); soft 198 WARN on deploy lag |
+| Comprehensive profile success | noindex client + robots Disallow + prerender noindex |
+
+**Verdict this interval:** Public package **PASS**. Infrastructure residual risks (GH namespace, git history rewrite, WHOIS/KYC) remain documented.
