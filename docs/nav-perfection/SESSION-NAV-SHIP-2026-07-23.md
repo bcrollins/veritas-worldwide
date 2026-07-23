@@ -66,3 +66,7 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 ## Pure suite
 - `verify:pure` **46** suites including `verify-nav-recovery-surfaces`
 - Live proof matrix 100% green for shell/home/search/soft-404/spokes
+
+| `bda6919` | pure: server soft-404 exactly 5 hub hrefs |
+| `0c05345` | pure: NotFound noindex |
+| live | tip carries shell+home+search+soft-404 100% green |
