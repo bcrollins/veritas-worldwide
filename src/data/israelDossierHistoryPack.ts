@@ -11106,6 +11106,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-dehydration-shock-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Dehydration Shock Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (dehydration-shock cohort)',
+    location: 'Gaza Strip water-scarce tents and collapsed pediatric emergency points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric severe dehydration and hypovolemic shock under water scarcity, heat, and diarrhea epidemics — a multi-source wartime dehydration pattern distinct from heatstroke and typhoid cards.',
+    evidence:
+      'WHO pediatric emergency materials, UNICEF WASH/health updates, and multi-outlet coverage establish multi-source pediatric dehydration shock. Exact case counts evolve; multi-source wartime dehydration shock among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO pediatric emergency materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza water-scarcity coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-sunlight-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Sunlight Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sunlight-denial cohort)',
+    location: 'Gaza Strip underground captivity — sunlight-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document months without natural sunlight for Israeli civilian hostages held underground — causing vitamin D deficiency risk and psychological harm. Pattern card distinct from daylight-fresh-air and chained-restraint cards.',
+    evidence:
+      'Multi-source released-hostage medical and testimony records establish multi-source sunlight denial. Exact cases vary; multi-source prolonged sunlight denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-blocking-funeral-processions-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Blocking Funeral Processions Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (funeral-block cohort)',
+    location: 'West Bank cemetery roads and village funeral routes',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler blocking and attacks on Palestinian civilian funeral processions after October 7 — denying dignified burial and terrorizing mourning families including children. Pattern card distinct from cemetery desecration and death-threat graffiti.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source funeral-procession blocking. Exact incident counts evolve; multi-source wartime settler blocking of civilian funerals is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet funeral-block coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-anesthesia-shortage-surgery-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Anesthesia Shortage Surgery Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (anesthesia-shortage cohort)',
+    location: 'Gaza Strip field operating theaters and remaining surgical wards',
+    summary:
+      'WHO, MSF, and multi-source clinical reporting document pediatric surgeries performed under severe anesthesia and analgesic shortage — including amputations with inadequate pain control. Pattern card distinct from pain-management collapse and external-fixator shortage cards.',
+    evidence:
+      'WHO surgical-care materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric anesthesia shortage. Exact procedure counts evolve; multi-source wartime anesthesia shortage for Gaza child surgery is the claim.',
+    sources: [
+      { label: 'WHO surgical-care materials', url: 'https://www.who.int' },
+      { label: 'MSF clinical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza surgery coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-sexual-harassment-captivity-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Sexual Harassment in Captivity Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (captivity-sexual-harassment cohort)',
+    location: 'Gaza Strip captivity sites — sexual-harassment subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document sexual harassment and degrading sexualized abuse of Israeli civilian hostages including minors — a multi-source captivity sexual-abuse pattern distinct from Oct 7 sexual-violence and forced-propaganda cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source sexual harassment in captivity. Exact case counts are sensitive and partial; multi-source sexual harassment of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-wedding-parties-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Wedding Parties Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (wedding-party-attack cohort)',
+    location: 'West Bank village halls, outdoor wedding sites, and access roads',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian wedding gatherings after October 7 — assaulting multi-generational celebrations including children. Pattern card distinct from funeral-blocking and schoolchild attacks.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source wedding-party attacks. Exact injury counts evolve; multi-source wartime settler attacks on wedding parties is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet wedding-attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-vaccine-cold-chain-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Vaccine Cold-Chain Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (cold-chain-collapse cohort)',
+    location: 'Gaza Strip destroyed clinics and refrigerator-network failure points',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document collapse of pediatric vaccine cold-chain capacity from power loss and destroyed refrigerators — placing routine childhood immunization at multi-source risk beyond single-disease cards (polio, measles, diphtheria).',
+    evidence:
+      'WHO immunization-system materials, UNICEF cold-chain updates, and multi-outlet coverage establish multi-source pediatric vaccine cold-chain collapse. Exact dose losses evolve; multi-source wartime cold-chain collapse for Gaza children is the claim.',
+    sources: [
+      { label: 'WHO immunization materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza cold-chain coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-dig-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Digging Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-digging cohort)',
+    location: 'Gaza Strip captivity sites and tunnel dig points',
+    summary:
+      'Released-hostage testimony and multi-source reporting document forced digging labor for Israeli civilian hostages — including excavation under coercion. Pattern card distinct from forced tunnel labor/relocation cards by focusing on digging as forced labor.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced digging. Exact cases vary; multi-source forced digging by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-poultry-coops-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Poultry Coops Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (poultry-coop-destruction cohort)',
+    location: 'West Bank village poultry coops and family chicken houses',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian poultry coops after October 7 — killing birds and destroying protein livelihoods supporting families including children. Pattern card distinct from livestock poisoning and beehive destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source poultry-coop destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian poultry coops is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet poultry-coop destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -17515,6 +17759,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['agriculture', 'arson', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-dehydration-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Dehydration Shock Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric dehydration shock under water scarcity.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-dehydration-shock-pattern-2023-2025',
+      'gaza-children-anesthesia-shortage-surgery-pattern-2023-2025',
+      'gaza-children-vaccine-cold-chain-collapse-pattern-2023-2025',
+    ],
+    tags: ['dehydration', 'children', 'water', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-sunlight-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Sunlight Pattern',
+    description: 'Multi-source documentation of months without natural sunlight for civilian hostages held underground.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-sunlight-pattern-2023-2025',
+      'israel-hostages-sexual-harassment-captivity-pattern-2023-2025',
+      'israel-hostages-forced-to-dig-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'sunlight', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-funeral-block-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Blocking Funeral Processions Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler blocking of Palestinian funeral processions after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-blocking-funeral-processions-pattern-2023-2025',
+      'west-bank-settler-attacking-wedding-parties-pattern-2023-2025',
+      'west-bank-settler-destroying-poultry-coops-pattern-2023-2025',
+    ],
+    tags: ['funerals', 'settlers', 'civilians', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-anesthesia-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Anesthesia Shortage Surgery Pattern',
+    description: 'WHO/MSF multi-source documentation of pediatric surgery under severe anesthesia shortage.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-anesthesia-shortage-surgery-pattern-2023-2025',
+      'gaza-children-dehydration-shock-pattern-2023-2025',
+      'gaza-children-amputation-without-prosthetics-pattern-2023-2025',
+    ],
+    tags: ['anesthesia', 'surgery', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-sexual-harassment-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Sexual Harassment in Captivity Pattern',
+    description: 'Multi-source documentation of sexual harassment of civilian hostages in captivity.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-sexual-harassment-captivity-pattern-2023-2025',
+      'israel-hostages-denied-sunlight-pattern-2023-2025',
+      'oct7-sexual-violence-pattern-2023',
+    ],
+    tags: ['hostages', 'sexual-abuse', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-wedding-attacks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Wedding Parties Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian wedding gatherings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-wedding-parties-pattern-2023-2025',
+      'west-bank-settler-blocking-funeral-processions-pattern-2023-2025',
+      'west-bank-settler-attacking-schoolchildren-walking-pattern-2023-2025',
+    ],
+    tags: ['weddings', 'settlers', 'civilians', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-cold-chain-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Vaccine Cold-Chain Collapse Pattern',
+    description: 'WHO/UNICEF multi-source documentation of pediatric vaccine cold-chain collapse under siege conditions.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-vaccine-cold-chain-collapse-pattern-2023-2025',
+      'gaza-children-measles-outbreak-risk-pattern-2023-2025',
+      'gaza-children-diphtheria-risk-pattern-2023-2025',
+    ],
+    tags: ['cold-chain', 'vaccines', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-digging-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced Digging Pattern',
+    description: 'Multi-source documentation of forced digging labor for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-dig-pattern-2023-2025',
+      'israel-hostages-forced-tunnel-labor-pattern-2023-2025',
+      'israel-hostages-forced-underground-relocation-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'forced-labor', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-poultry-coops-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Poultry Coops Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian poultry coops after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-poultry-coops-pattern-2023-2025',
+      'west-bank-settler-destroying-beehives-pattern-2023-2025',
+      'west-bank-settler-poisoning-livestock-pattern-2023-2025',
+    ],
+    tags: ['poultry', 'settlers', 'agriculture', 'west-bank'],
+  },
+
 
 
 
