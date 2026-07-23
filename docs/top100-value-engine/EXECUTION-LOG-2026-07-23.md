@@ -479,3 +479,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2100 |
 
+
+## Interval densify — tip post-2129 blood products densify + blood bank / Bnei Brak / olive-sack theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza TXA-emergency/PRBC/FFP · hostage human-shields/wheelchair-install/overnight-stress · WB beetroot/pulse-ox/dill-seedlings |
+| VI | blood bank · Bnei Brak · olive-harvest sacks theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2100 |
+
