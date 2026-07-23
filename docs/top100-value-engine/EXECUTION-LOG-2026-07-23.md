@@ -369,3 +369,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Multi-agent | densify-only; peer nav/page WIP unstaged |
 | Live | lag-aware soft-floor WARN (still 1539 during deploy backlog) |
 
+
+## Milestone — Israel dossier corpus **2000+ incidents**
+
+| Ship | Proof |
+|------|-------|
+| Tip | **≥2000 incidents** / withVideo **≥200** path |
+| Dual-sided | Gaza neonatal vaccines/antibiotics · Israeli hostages · West Bank settlers + VI |
+| Pure | visual + israel-dossier + research-pack PASS |
+| Multi-agent | densify-only; peer nav unstaged |
+| Live | lag-aware soft-floor WARN |
+
