@@ -160,6 +160,9 @@ const required = [
   'henry-kissinger',
   'robert-mercer',
   'tony-podesta',
+  'peter-thiel',
+  'ken-griffin',
+  'bill-gates',
 ];
 const scores = {};
 for (const id of required) {
@@ -1410,8 +1413,57 @@ for (const f of (tonyProf.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('tony-podesta dual-cite collision: ' + f.id);
 }
 
+
+// Peter Thiel densify gate (n≥3)
+const thiel = scores['peter-thiel'];
+if (!thiel || thiel.n < 3) throw new Error('peter-thiel needs ≥3 verified falsehoods, got ' + (thiel?.n ?? 0));
+if (thiel.score > 70) throw new Error('peter-thiel score expected ≤70 after densify, got ' + thiel.score);
+const thielP = getProfileBySlug('peter-thiel');
+for (const id of [
+  'thiel-gawker-lawsuit-purely-privacy-not-destruction',
+  'thiel-palantir-civil-liberties-absolute-clean-framing',
+  'thiel-democracy-and-freedom-compatible-absolute-framing',
+]) {
+  if (!(thielP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('peter-thiel missing docket id: ' + id);
+}
+for (const f of (thielP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('thiel dual-cite collision: ' + f.id);
+}
+
+// Ken Griffin densify gate (n≥3)
+const griffin = scores['ken-griffin'];
+if (!griffin || griffin.n < 3) throw new Error('ken-griffin needs ≥3 verified falsehoods, got ' + (griffin?.n ?? 0));
+if (griffin.score > 70) throw new Error('ken-griffin score expected ≤70 after densify, got ' + griffin.score);
+const griffinP = getProfileBySlug('ken-griffin');
+for (const id of [
+  'griffin-payment-for-order-flow-no-conflict-absolute',
+  'griffin-citadel-not-a-hedge-fund-market-maker-only-absolute',
+  'griffin-robinhood-decision-independent-of-citadel-absolute',
+]) {
+  if (!(griffinP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('ken-griffin missing docket id: ' + id);
+}
+for (const f of (griffinP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('griffin dual-cite collision: ' + f.id);
+}
+
+// Bill Gates densify gate (n≥3)
+const gatesS = scores['bill-gates'];
+if (!gatesS || gatesS.n < 3) throw new Error('bill-gates needs ≥3 verified falsehoods, got ' + (gatesS?.n ?? 0));
+if (gatesS.score > 80) throw new Error('bill-gates score expected ≤80 after densify, got ' + gatesS.score);
+const gatesP = getProfileBySlug('bill-gates');
+for (const id of [
+  'gates-malaria-eradication-timeline-absolute-optimism',
+  'gates-foundation-only-philanthropy-no-policy-power-absolute',
+  'gates-covid-vaccine-ip-waiver-opposition-purely-production-capacity',
+]) {
+  if (!(gatesP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('bill-gates missing docket id: ' + id);
+}
+for (const f of (gatesP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('gates dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 73) throw new Error('expected ≥73 compiled dockets, got ' + docketCount);
+if (docketCount < 76) throw new Error('expected ≥76 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

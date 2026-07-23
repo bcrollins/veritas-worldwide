@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:38:39.108Z",
+  "generatedAt": "2026-07-23T10:39:51.343Z",
   "count": 96,
   "profiles": [
     {
@@ -60,9 +60,9 @@
         "Global Health",
         "Philanthropy"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "george-soros",
@@ -1273,9 +1273,9 @@
         "Political Influencer",
         "Palantir"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "larry-fink",
@@ -1352,9 +1352,9 @@
         "Republican Donor",
         "Political Influence"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "sam-bankman-fried",

@@ -544,7 +544,61 @@ export const PROFILES: PowerProfile[] = [
     websites: [
       { label: 'Gates Foundation', url: 'https://www.gatesfoundation.org' },
       { label: 'Official Website', url: 'https://www.billgates.com' }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'gates-malaria-eradication-timeline-absolute-optimism',
+        statement:
+          'Publicly advanced near-term absolute timelines for malaria eradication that outran the epidemiological and funding reality later acknowledged.',
+        saidAt: '2000s–2010s',
+        context: 'Gates Foundation malaria-eradication campaign messaging.',
+        whyFalse:
+          'Malaria remains endemic with hundreds of thousands of deaths annually. Absolute near-term eradication certainty messaging was false to the stubborn epidemiological record, even while progress occurred.',
+        correction:
+          'Malaria was not eradicated on the near-term absolute timelines sometimes messaged; it remains a major global killer.',
+        statementSource: 'Gates Foundation public malaria-eradication messaging (multi-outlet capture)',
+        statementUrl: 'https://www.gatesfoundation.org',
+        debunkSource: 'WHO World Malaria Reports documenting continued endemic burden',
+        debunkUrl: 'https://www.who.int/teams/global-malaria-programme/reports',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'gates-foundation-only-philanthropy-no-policy-power-absolute',
+        statement:
+          'Framed Gates Foundation global health work as pure philanthropy without political power implications for national health systems.',
+        saidAt: '2010s–2020s',
+        context: 'Public defenses of foundation influence on WHO and national programs.',
+        whyFalse:
+          'The foundation is among the largest funders of WHO and national programs, shaping agendas. Absolute “no power / pure charity only” framing is false to that documented financing leverage.',
+        correction:
+          'Gates Foundation financing confers substantial agenda-setting power in global health — not pure powerless charity.',
+        statementSource: 'Gates public pure-philanthropy framing of foundation power',
+        statementUrl: 'https://www.gatesfoundation.org',
+        debunkSource: 'WHO funding reports; multi-outlet analysis of foundation agenda power',
+        debunkUrl: 'https://www.who.int',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'gates-covid-vaccine-ip-waiver-opposition-purely-production-capacity',
+        statement:
+          'Opposed COVID vaccine IP waivers as purely about production-capacity realities with no equity tradeoff worth acknowledging.',
+        saidAt: '2021',
+        context: 'Public comments on TRIPS waiver debates.',
+        whyFalse:
+          'Multiple governments, WHO, and access campaigns documented IP as one bottleneck among several. Absolute “IP is irrelevant / only capacity matters” framing overstated a monocausal production story relative to the multi-factor access record.',
+        correction:
+          'IP was one contested bottleneck among several; absolute irrelevance framing oversimplified the access fight.',
+        statementSource: 'Gates 2021 public remarks opposing IP waivers (multi-outlet capture)',
+        statementUrl: 'https://www.gatesfoundation.org',
+        debunkSource: 'WHO/WTO TRIPS waiver debate record; multi-outlet access-to-medicines reporting',
+        debunkUrl: 'https://www.who.int',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'george-soros',
@@ -9056,7 +9110,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2022'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'thiel-gawker-lawsuit-purely-privacy-not-destruction',
+        statement:
+          'Publicly framed bankrolling Hulk Hogan’s Gawker suit as pure privacy-principle litigation without destruction intent.',
+        saidAt: '2016–2018',
+        context: 'After outing himself as funder of Hogan v. Gawker.',
+        whyFalse:
+          'Thiel told multiple outlets he had decided to “destroy” Gawker after being outed as gay. Absolute pure-principle-only framing is false to his own stated destruction motive.',
+        correction:
+          'Thiel acknowledged a long-running project to destroy Gawker — not pure disinterested privacy litigation only.',
+        statementSource: 'Thiel NYT/public interviews on funding Hogan v. Gawker (2016)',
+        statementUrl: 'https://www.nytimes.com/2016/05/26/business/dealbook/peter-thiel-tech-billionaire-reveals-secret-war-with-gawker.html',
+        debunkSource: 'Same multi-outlet interviews documenting destruction motive alongside privacy claims',
+        debunkUrl: 'https://www.forbes.com/sites/mattdrange/2016/05/25/peter-thiels-war-on-gawker-a-timeline/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'thiel-palantir-civil-liberties-absolute-clean-framing',
+        statement:
+          'Framed Palantir’s government surveillance work as purely civil-liberties-compatible with no serious rights tradeoffs.',
+        saidAt: '2010s–2020s',
+        context: 'Public defenses of Palantir ICE/DoD contracts.',
+        whyFalse:
+          'ICE deportation-tooling contracts and multi-outlet investigations document rights-tradeoff controversies. Absolute no-tradeoff civil-liberties-clean framing is false to that contested operational record.',
+        correction:
+          'Palantir’s ICE and similar contracts are documented rights-tradeoff flashpoints — not pure civil-liberties-clean work only.',
+        statementSource: 'Thiel/Palantir public civil-liberties branding',
+        statementUrl: 'https://www.palantir.com',
+        debunkSource: 'Multi-outlet ICE–Palantir contract investigations; civil-society documentation',
+        debunkUrl: 'https://www.theguardian.com/us-news/2019/may/02/palantir-immigration-ice-raids',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'thiel-democracy-and-freedom-compatible-absolute-framing',
+        statement:
+          'Wrote that he no longer believes freedom and democracy are compatible — then later soft-pedaled that as mere provocation without standing by the absolute claim when politically inconvenient.',
+        saidAt: '2009 (Cato Unbound essay) vs later political soft-pedals',
+        context: '“The Education of a Libertarian” essay vs subsequent public political positioning.',
+        whyFalse:
+          'The written absolute claim stands on the public record. Later soft-pedals that it was “just a thought experiment” do not erase the published absolute incompatibility claim.',
+        correction:
+          'Thiel published an absolute freedom-vs-democracy incompatibility claim; later soft-pedals do not unwrite it.',
+        statementSource: 'Thiel Cato Unbound 2009 essay',
+        statementUrl: 'https://www.cato-unbound.org/2009/04/13/peter-thiel/education-libertarian/',
+        debunkSource: 'Primary essay text vs later multi-outlet soft-pedal interviews',
+        debunkUrl: 'https://www.nytimes.com/2016/05/26/business/dealbook/peter-thiel-tech-billionaire-reveals-secret-war-with-gawker.html',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'larry-fink',
@@ -9398,7 +9506,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'circumstantial',
         date: '2021'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'griffin-payment-for-order-flow-no-conflict-absolute',
+        statement:
+          'Defended payment for order flow as pure customer benefit with no meaningful conflict between Citadel Securities and retail brokers.',
+        saidAt: '2021 (GameStop hearings period)',
+        context: 'Congressional hearings on GameStop / Robinhood / Citadel relationship.',
+        whyFalse:
+          'SEC and multi-outlet analyses document structural conflicts in PFOF markets even when legal. Absolute “no conflict whatsoever” framing is false to the recognized principal-agent tension in the market structure.',
+        correction:
+          'PFOF embeds structural conflicts between execution quality and wholesale purchaser incentives — not zero conflict.',
+        statementSource: 'Griffin congressional testimony / public PFOF defenses 2021',
+        statementUrl: 'https://www.congress.gov',
+        debunkSource: 'SEC market-structure analysis of PFOF conflicts; multi-outlet GameStop hearing record',
+        debunkUrl: 'https://www.sec.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'griffin-citadel-not-a-hedge-fund-market-maker-only-absolute',
+        statement:
+          'Publicly insisted on bright-line absolute separation framing between Citadel hedge fund and Citadel Securities market-making as eliminating information conflict risk.',
+        saidAt: '2021',
+        context: 'GameStop hearing defenses of Citadel structure.',
+        whyFalse:
+          'Even with legal information barriers, common ownership and brand create contested conflict optics and regulatory scrutiny. Absolute “zero possible conflict by structure” framing overstates the clean separation relative to the multi-business Citadel empire.',
+        correction:
+          'Common ownership of hedge fund and market-making arms creates contested conflict risks despite formal barriers.',
+        statementSource: 'Griffin public Citadel structure defenses 2021',
+        statementUrl: 'https://www.citadel.com',
+        debunkSource: 'Congressional hearing record; multi-outlet analysis of Citadel multi-business conflicts',
+        debunkUrl: 'https://www.reuters.com/article/us-retail-trading-citadel-idUSKBN2A22MH',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'griffin-robinhood-decision-independent-of-citadel-absolute',
+        statement:
+          'Claimed Robinhood’s GameStop trading halt decisions were completely independent of Citadel with absolute certainty.',
+        saidAt: '2021',
+        context: 'GameStop trading-restriction controversy.',
+        whyFalse:
+          'While Robinhood cited clearinghouse collateral needs, the PFOF economic relationship with Citadel Securities was material context. Absolute “zero relationship relevance” framing overstated independence relative to the documented economic link — even if no smoking-gun order to halt was proven.',
+        correction:
+          'Citadel Securities was Robinhood’s major PFOF counterparty; absolute zero-relevance independence framing omits that material economic link.',
+        statementSource: 'Griffin public remarks on Robinhood halt independence 2021',
+        statementUrl: 'https://www.citadel.com',
+        debunkSource: 'Robinhood SEC filings on PFOF counterparties; multi-outlet GameStop market-structure reporting',
+        debunkUrl: 'https://www.sec.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'sam-bankman-fried',
