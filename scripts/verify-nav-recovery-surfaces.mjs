@@ -2585,4 +2585,27 @@ assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'perpetu
 assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'perpetual v12 OSINT')
 
 
+
+// RelatedHubs platform perpetual densify lock v13
+assert(surfaces.length >= 102, `perpetual v13 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v13 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v13 emphasize')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v13 mobile tab bar')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v13 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v13 soft-404')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v13 search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v13 home')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'perpetual v13 Privacy')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'perpetual v13 Terms')
+assert(read('src/components/DossierHubSpokes.tsx').includes('DOSSIER_SPOKES'), 'perpetual v13 spokes')
+assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'perpetual v13 research chips')
+assert(read('src/pages/ProfilesIndexPage.tsx').includes('profiles-related-hubs'), 'perpetual v13 profiles')
+assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'perpetual v13 read')
+assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'perpetual v13 bernie')
+assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'perpetual v13 media-kit')
+assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'perpetual v13 bookmarks')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'perpetual v13 A11Y')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'perpetual v13 OSINT')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
