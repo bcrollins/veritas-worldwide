@@ -1030,4 +1030,11 @@ const spokesBlockFinal = spokesFinal.match(/export const DOSSIER_SPOKES[^=]*= \[
 assert(spokesBlockFinal, 'DOSSIER_SPOKES block final')
 assert((spokesBlockFinal[1].match(/id:/g) || []).length === 5, 'DOSSIER_SPOKES count 5 unique final')
 
+
+// ResearchHubChips CHIPS count reaffirm unique final
+const rhcFinal = read('src/components/ResearchHubChips.tsx')
+const chipsFinal = rhcFinal.match(/const CHIPS = \[([\s\S]*?)\] as const/)
+assert(chipsFinal, 'ResearchHubChips CHIPS block final')
+assert((chipsFinal[1].match(/to:/g) || []).length === 5, 'ResearchHubChips count 5 unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
