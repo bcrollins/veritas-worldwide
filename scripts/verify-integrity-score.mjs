@@ -567,12 +567,13 @@ for (const f of (omarP.documentedFalsehoods || []).filter((x) => x.tier === 'ver
 
 // AOC multi-entry integrity deep-dive
 const aoc = scores['aoc'];
-if (!aoc || aoc.n < 2) throw new Error('aoc needs ≥2 verified falsehoods, got ' + (aoc?.n ?? 0));
-if (aoc.score > 75) throw new Error('aoc score expected ≤75 after deep dive, got ' + aoc.score);
+if (!aoc || aoc.n < 3) throw new Error('aoc needs ≥3 verified falsehoods, got ' + (aoc?.n ?? 0));
+if (aoc.score > 50) throw new Error('aoc score expected ≤50 after densify, got ' + aoc.score);
 const aocP = getProfileBySlug('aoc');
 for (const id of [
   'aoc-pentagon-21t-accounting-m4a-2018',
   'aoc-represents-more-than-manchin-2021',
+  'aoc-unemployment-low-everyone-two-jobs-2018',
 ]) {
   if (!(aocP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('aoc missing docket id: ' + id);

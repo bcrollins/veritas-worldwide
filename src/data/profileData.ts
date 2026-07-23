@@ -6246,6 +6246,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'aoc-unemployment-low-everyone-two-jobs-2018',
+        statement:
+          '“Unemployment is low because everyone has two jobs. Unemployment is low because people are working 60, 70, 80 hours a week and can barely feed their family.”',
+        saidAt: 'July 13, 2018',
+        context:
+          'PBS Firing Line with Margaret Hoover interview during the NY-14 primary aftermath, explaining why official unemployment figures understate economic hardship.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. BLS data show the vast majority of employed people hold one job; multiple-jobholders are a small minority (~5%). Average weekly hours for all private employees were around the mid-30s, not 60–80. Low unemployment is driven primarily by more people employed at typical hours, not “everyone” working two jobs or extreme overtime.',
+        correction:
+          'Most workers hold one job and average far fewer than 60 hours; “everyone has two jobs / works 60–80 hours” is false.',
+        statementSource: 'PBS Firing Line with Margaret Hoover — AOC interview, July 13, 2018',
+        statementUrl: 'https://www.pbs.org/wgbh/firingline/episode/alexandria-ocasio-cortez/',
+        debunkSource: 'PolitiFact — Pants on Fire (July 18, 2018); BLS multiple jobholders / average weekly hours',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2018/jul/18/alexandria-ocasio-cortez/alexandria-ocasio-cortez-wrong-several-counts-abou/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://ocasio-cortez.house.gov' },
