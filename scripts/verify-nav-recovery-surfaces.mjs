@@ -987,4 +987,8 @@ const israelSticky = read('src/pages/IsraelDossierPage.tsx')
 assert(israelSticky.includes('variant="sticky"') || israelSticky.includes("variant='sticky'"), 'Israel sticky variant unique')
 assert(israelSticky.includes('israel-dossier-related-hubs'), 'Israel RelatedHubs under sticky unique')
 
+
+// Recovery suite surface needle floor
+assert(surfaces.length >= 90, `surfaces length floor 90 (got ${surfaces.length})`)
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
