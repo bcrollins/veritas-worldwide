@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:42:06.227Z",
-  "claimCount": 516,
+  "generatedAt": "2026-07-23T10:43:28.557Z",
+  "claimCount": 525,
   "tierHistogram": {
-    "well_attested": 207,
-    "verified": 182,
-    "contested": 45,
-    "interpretive": 54,
+    "well_attested": 211,
+    "verified": 185,
+    "contested": 46,
+    "interpretive": 55,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 23
@@ -185,6 +185,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-hezekiah-tunnel-inscription-language",
+      "claim": "The Siloam Tunnel inscription’s Hebrew narrative describes the breakthrough meeting of two work crews — primary linguistic evidence for late-8th-century Judahite Hebrew in a royal engineering context.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave47.ts"
     },
     {
       "id": "ane-hezekiah-tunnel-water",
@@ -726,6 +733,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "arch-sea-galilee-boat-context",
+      "claim": "The first-century “Galilee Boat” (Ginosar) provides rare preserved wood hull evidence for lake fishing craft in the Jesus-era economic landscape.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave47.ts"
+    },
+    {
       "id": "arch-sepphoris",
       "claim": "Sepphoris (Zippori), ~6 km from Nazareth, was a significant urban center in Early Roman Galilee under Antipas.",
       "tier": "verified",
@@ -1104,6 +1118,13 @@
       "file": "src/data/recordOfJesusChristWave37.ts"
     },
     {
+      "id": "cosmo-scalar-spectral-tilt",
+      "claim": "A red-tilted scalar spectral index (n_s < 1) from CMB data is a key empirical success for slow-roll inflation model classes, though many specific models remain viable.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave47.ts"
+    },
+    {
       "id": "cosmo-sound-horizon",
       "claim": "The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements.",
       "tier": "verified",
@@ -1242,6 +1263,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
+      "id": "ec-didache-two-ways",
+      "claim": "The Didache opens with a “Two Ways” ethical treatise (way of life / way of death) paralleling Jewish dual-path instruction traditions.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave47.ts"
     },
     {
       "id": "ec-diognetus",
@@ -1550,6 +1578,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "hj-apocalyptic-prophet-core",
+      "claim": "A broad stream of critical scholarship reconstructs Jesus as an apocalyptic Jewish prophet announcing God’s imminent kingdom — a mainstream option over purely sapiential or cynic models.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave47.ts"
     },
     {
       "id": "hj-appearances",
@@ -2182,6 +2217,13 @@
       "file": "src/data/recordOfJesusChristWave32.ts"
     },
     {
+      "id": "mod-ehrman-forged-debates",
+      "claim": "Bart Ehrman’s Forged / Forgery and Counterforgery arguments about pseudepigraphy in early Christian literature are widely discussed and contested regarding scope, intent categories, and ancient authorial norms.",
+      "tier": "interpretive",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave47.ts"
+    },
+    {
       "id": "mod-entity-only-attribution",
       "claim": "This compilation is published under Veritas Worldwide entity attribution only; personal operator identity is excluded from public scholarly surfaces by design.",
       "tier": "interpretive",
@@ -2502,6 +2544,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
+      "id": "nc-josephus-tf-partial-authenticity",
+      "claim": "The majority critical position on the Testimonium Flavianum holds that Josephus wrote a shorter notice later expanded by Christian scribes; total authenticity and total forgery are minority positions.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave47.ts"
     },
     {
       "id": "nc-julian-against-galileans",
@@ -3190,6 +3239,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nt-syriac-peshitta-witness",
+      "claim": "The Syriac Peshitta is a major early version of the NT with complex textual relationships to Greek traditions; it is essential for versional evidence and Eastern reception history.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave47.ts"
+    },
+    {
       "id": "nt-textual-criticism",
       "claim": "Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions.",
       "tier": "verified",
@@ -3335,6 +3391,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
+      "id": "st-essene-josephus-limits",
+      "claim": "Josephus’s Essene descriptions are literary ethnography with idealizing features; equating every detail with Qumran archaeology is methodologically unsafe.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave47.ts"
     },
     {
       "id": "st-hasmonean-period",
