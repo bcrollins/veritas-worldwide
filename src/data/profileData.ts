@@ -5211,7 +5211,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '1973'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'kissinger-cambodia-bombing-secrecy-necessity-absolute',
+        statement:
+          'Defended secret Cambodia bombing as a narrow necessity fully consistent with public statements that the U.S. was not expanding the war into Cambodia.',
+        saidAt: '1969–1970s (and later defenses)',
+        context: 'Nixon-Kissinger MENU bombing of Cambodia kept from the public and Congress initially.',
+        whyFalse:
+          'Declassified records show extensive secret bombing campaigns in Cambodia while public messaging denied or minimized expansion. Absolute consistency between public non-expansion claims and secret operations is false to the declassified record.',
+        correction:
+          'Secret Cambodia bombing was extensive and contradicted public non-expansion messaging.',
+        statementSource: 'Nixon-Kissinger public Indochina messaging vs later defenses of MENU',
+        statementUrl: 'https://www.nixonlibrary.gov',
+        debunkSource: 'Declassified MENU bombing records; multi-outlet historical synthesis',
+        debunkUrl: 'https://nsarchive.gwu.edu',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'kissinger-peace-is-at-hand-1972-absolute',
+        statement:
+          'Declared “peace is at hand” in October 1972 implying an imminent durable Vietnam settlement before the election.',
+        saidAt: 'October 26, 1972',
+        context: 'Paris peace talks public statement before the 1972 U.S. presidential election.',
+        whyFalse:
+          'The war continued; the Christmas Bombing followed; a settlement was not “at hand” in the ordinary meaning of imminent durable peace. The absolute imminence framing was false to the subsequent military and diplomatic timeline.',
+        correction:
+          'Peace was not imminently at hand in Oct 1972; major fighting and bombing continued afterward.',
+        statementSource: 'Kissinger Oct 26, 1972 “peace is at hand” press conference',
+        statementUrl: 'https://www.nixonlibrary.gov',
+        debunkSource: 'Subsequent Paris talks collapse, Linebacker II bombing, and delayed January 1973 accords timeline',
+        debunkUrl: 'https://history.state.gov/milestones/1969-1976/paris-peace-accords',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'kissinger-chile-no-us-role-absolute-framing',
+        statement:
+          'Publicly minimized U.S. role in destabilizing Allende’s Chile as non-involvement / pure non-intervention.',
+        saidAt: '1970s–2000s defenses',
+        context: 'Post-coup defenses of U.S. Chile policy 1970–1973.',
+        whyFalse:
+          'Declassified CIA/Church Committee materials document Track I/II covert action and economic pressure against Allende. Absolute non-involvement framing is false to the declassified covert-action record.',
+        correction:
+          'The U.S. ran covert operations and economic pressure campaigns against Allende’s government; absolute non-involvement is false.',
+        statementSource: 'Kissinger public Chile non-involvement framing (multi-outlet historical capture)',
+        statementUrl: 'https://www.cia.gov',
+        debunkSource: 'Church Committee / declassified Chile covert-action records (NSArchive)',
+        debunkUrl: 'https://nsarchive.gwu.edu/briefing-book/chile/2017-09-11/chile-declassification-project',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'john-bolton',
@@ -9789,7 +9843,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2017'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'mercer-cambridge-analytica-no-meaningful-role-absolute',
+        statement:
+          'Mercer-world public messaging minimized Cambridge Analytica as a peripheral investment without meaningful 2016 influence.',
+        saidAt: '2017–2018',
+        context: 'Post-election scrutiny of CA and Mercer funding.',
+        whyFalse:
+          'Mercer was a major CA funder/backer; CA worked on the Trump campaign’s digital effort. Absolute “no meaningful role” framing is false to the investment and campaign-contract record.',
+        correction:
+          'Mercer funding and CA’s campaign work are documented; absolute non-role framing fails.',
+        statementSource: 'Mercer-associated public minimizations of CA role (multi-outlet capture)',
+        statementUrl: 'https://www.reuters.com',
+        debunkSource: 'UK/US investigative record on Mercer–CA–Trump digital relationship',
+        debunkUrl: 'https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'mercer-breitbart-not-a-political-weapon-absolute',
+        statement:
+          'Framed Breitbart funding as pure media investment without political-weapon intent or effect.',
+        saidAt: '2010s',
+        context: 'Mercer financing of Breitbart under Bannon.',
+        whyFalse:
+          'Bannon described Breitbart as a platform for the Trump movement; Mercer funding scaled that project. Absolute non-political pure-media framing is false to the stated political mission and electoral role.',
+        correction:
+          'Breitbart under Mercer/Bannon operated as an explicit political-media project, not pure neutral media only.',
+        statementSource: 'Mercer-world public framing of Breitbart investment',
+        statementUrl: 'https://www.breitbart.com',
+        debunkSource: 'Bannon/Breitbart mission statements; multi-outlet Mercer funding reporting',
+        debunkUrl: 'https://www.nytimes.com/2017/01/11/us/politics/robert-mercer-breitbart.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'mercer-no-coordination-with-trump-campaign-absolute',
+        statement:
+          'Absolute non-coordination framing between Mercer political spending infrastructure and Trump 2016 operations.',
+        saidAt: '2016–2017',
+        context: 'Post-election scrutiny of Mercer/Rebekah Mercer/Bannon/CA triangle.',
+        whyFalse:
+          'Rebekah Mercer and Bannon held formal campaign roles; CA contracted with the campaign. Absolute firewall non-coordination framing is false to those formal ties.',
+        correction:
+          'Mercer-world figures held formal campaign positions and vendor relationships — not a pure firewall.',
+        statementSource: 'Mercer-associated non-coordination public framing',
+        statementUrl: 'https://www.reuters.com',
+        debunkSource: 'FEC/campaign records; multi-outlet Mercer–Bannon–CA–Trump reporting',
+        debunkUrl: 'https://www.nytimes.com/2017/01/11/us/politics/robert-mercer-breitbart.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'leon-black',
@@ -10414,7 +10522,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2017'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'tony-podesta-unregistered-foreign-agent-denial-framing',
+        statement:
+          'Publicly framed Podesta Group foreign work as fully compliant lobbying without FARA exposure until the Mueller-era scrutiny.',
+        saidAt: '2010s',
+        context: 'Podesta Group representation of foreign interests including Manafort-linked Ukraine work.',
+        whyFalse:
+          'The Podesta Group shut down amid FARA scrutiny related to Ukraine work tied to Manafort’s disclosures. Absolute clean-compliance framing was false to the FARA exposure that ended the firm.',
+        correction:
+          'FARA scrutiny of Ukraine-related work contributed to the Podesta Group’s collapse — not a pure clean-compliance story.',
+        statementSource: 'Podesta Group public compliance framing (pre-shutdown)',
+        statementUrl: 'https://www.justice.gov/nsd/fara',
+        debunkSource: 'Multi-outlet reporting on Podesta Group shutdown amid FARA/Ukraine scrutiny',
+        debunkUrl: 'https://www.nytimes.com/2017/11/10/us/politics/podesta-group-shuts-down.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'tony-podesta-no-manafortr-ukraine-problem-absolute',
+        statement:
+          'Minimized the legal risk of Ukraine-related lobbying work connected to Manafort’s network as routine.',
+        saidAt: '2012–2017',
+        context: 'European Centre for a Modern Ukraine related lobbying.',
+        whyFalse:
+          'Manafort’s FARA guilty plea and related disclosures established serious registration failures in the same influence ecosystem. Absolute “routine no-problem” framing was false to that legal outcome environment.',
+        correction:
+          'Ukraine influence work in the Manafort ecosystem produced FARA criminal exposure — not routine risk-free lobbying only.',
+        statementSource: 'Podesta Group public minimization of Ukraine-work risk',
+        statementUrl: 'https://www.reuters.com',
+        debunkSource: 'Manafort FARA plea; multi-outlet Podesta Group–Ukraine reporting',
+        debunkUrl: 'https://www.justice.gov/opa/pr/manafort-pleads-guilty-and-cooperates-with-mueller-probe',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'tony-podesta-firm-closure-voluntary-rebrand-only',
+        statement:
+          'Implied firm closure was a voluntary business rebrand rather than a collapse under investigation pressure.',
+        saidAt: 'November 2017',
+        context: 'Announcement of Podesta Group shutdown.',
+        whyFalse:
+          'Contemporaneous reporting established FARA/Mueller-related pressure as the driver. Absolute voluntary-rebrand-only framing was false to the investigation-driven collapse narrative supported by multi-outlet primary reporting.',
+        correction:
+          'The firm closed under FARA/Mueller-era pressure, not a pure voluntary rebrand.',
+        statementSource: 'Podesta Group closure public statements Nov 2017',
+        statementUrl: 'https://www.nytimes.com/2017/11/10/us/politics/podesta-group-shuts-down.html',
+        debunkSource: 'Multi-outlet investigation-driven closure reporting',
+        debunkUrl: 'https://www.washingtonpost.com/politics/podesta-group-to-shut-down-after-helping-manaforts-ukraine-lobbying/2017/11/10/',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'john-podesta',

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:37:29.577Z",
+  "generatedAt": "2026-07-23T10:38:39.108Z",
   "count": 96,
   "profiles": [
     {
@@ -729,9 +729,9 @@
         "Foreign Policy",
         "Neoconservative"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 35,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "john-bolton",
@@ -1455,9 +1455,9 @@
         "Data Mining",
         "Political Operative"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "leon-black",
@@ -1594,9 +1594,9 @@
         "Democratic Operative",
         "Washington Power Broker"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "john-podesta",
