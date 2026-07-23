@@ -2438,6 +2438,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0, injured: 0 },
   },
 
+  {
+    id: 'gaza-water-sanitation-collapse-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Water & Sanitation Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (WASH cohort)',
+    location: 'Gaza Strip',
+    summary:
+      'UNICEF, WHO, and multi-source WASH reporting document collapse of clean water access, sewage treatment, and desalination capacity under bombardment, fuel cuts, and siege conditions — a civilian-harm multiplier driving disease risk especially for children. Pattern card for water/sanitation system destruction.',
+    evidence:
+      'UNICEF/WHO WASH updates, multi-source desalination/plant damage reporting, and OCHA humanitarian snapshots establish multi-source collapse of water and sanitation services. Exact liters-per-capita figures evolve; multi-source system collapse is the claim.',
+    sources: [
+      { label: 'UNICEF WASH materials — Gaza', url: 'https://www.unicef.org' },
+      { label: 'WHO emergency health / WASH updates', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public materials', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3431,6 +3458,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-mental-health-trauma-children-pattern-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
     tags: ['children', 'mental-health', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-wash-collapse-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Water & Sanitation Collapse Pattern',
+    description: 'UNICEF/WHO multi-source documentation of WASH system collapse under siege and bombardment.',
+    source: 'UNICEF / WHO / OCHA',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-water-sanitation-collapse-2023-2025', 'gaza-health-system-collapse-2023-2025'],
+    tags: ['water', 'sanitation', 'children', 'civilians', 'gaza'],
   },
 
 ]

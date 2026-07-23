@@ -280,6 +280,7 @@ export default function RecordOfJesusChristPage() {
       type: 'article',
       section: 'The Record',
       tags: ['Jesus of Nazareth', 'New Testament', 'textual criticism', 'archaeology', 'evidence tiers'],
+      image: `${SITE_URL}/og/record-of-jesus-christ.svg`,
     })
     setJsonLd({
       '@context': 'https://schema.org',
