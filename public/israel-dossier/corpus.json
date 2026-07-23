@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:19:56.090Z",
+  "generatedAt": "2026-07-23T09:20:44.629Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 162,
-    "timelineEvents": 150,
+    "incidents": 163,
+    "timelineEvents": 151,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 148,
+    "historicalWarCrimesPack": 149,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 102
+      "post-oct7": 103
     },
     "incidentsByTier": {
-      "verified": 160,
+      "verified": 161,
       "circumstantial": 2
     },
     "childrenTagged": 137,
-    "civiliansTagged": 160,
+    "civiliansTagged": 161,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4650,6 +4650,27 @@
         "west-bank",
         "civilians",
         "children"
+      ]
+    },
+    {
+      "id": "tl-wb-olive-harvest-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Olive Harvest Violence & Access Denial Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated harvest-season violence and access denials after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-olive-harvest-violence-pattern-2023-2025",
+        "settler-violence-pattern-2021-2023",
+        "west-bank-settlement-surge-2023-2025"
+      ],
+      "tags": [
+        "olives",
+        "settler-violence",
+        "livelihood",
+        "west-bank"
       ]
     },
     {
@@ -10799,6 +10820,49 @@
           "type": "document",
           "label": "FAO public materials",
           "url": "https://www.fao.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-olive-harvest-violence-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Olive Harvest Violence & Access Denial Pattern (2023–2025)",
+      "date": "2023 – 2025 harvest seasons (access-denial cohort)",
+      "location": "West Bank olive-growing communities",
+      "summary": "OCHA, B'Tselem, and multi-source harvest-season reporting document elevated settler attacks and access denials during olive harvest after October 7 — destroying a primary livelihood and cultural practice for Palestinian civilians. Pattern card for seasonal livelihood violence distinct from open cropland and settlement-surge cards.",
+      "evidence": "OCHA seasonal protection reports, B'Tselem harvest documentation, and multi-outlet coverage establish multi-source harvest-season violence and access denial. Exact incident counts evolve by season; multi-source elevated harvest interference is the claim.",
+      "sources": [
+        {
+          "label": "OCHA Protection of Civilians materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem olive harvest materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet West Bank harvest coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",
