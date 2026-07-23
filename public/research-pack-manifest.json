@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T12:10:56.200Z",
+  "generatedAt": "2026-07-23T12:11:17.930Z",
   "publisher": "Veritas Worldwide",
   "path": "/research-pack.zip",
   "bytes": 317095,
-  "sha256": "44a5e6791b8a398c92e910b01f1405311a433324933d539c5e3cbd5df7121e76",
+  "sha256": "d4b79aa204eef0653e9cc5ce87b04c860edb2a36429db4818ee8ddfdf29ee970",
   "maxBytesBudget": 8388608,
   "fileCount": 11,
   "files": [
@@ -60,7 +60,7 @@
     {
       "path": "README.md",
       "bytes": 863,
-      "sha256": "def681d54b46a130e98c5502dad9f63227d2841e71e9a8d8860c181160c36f1e"
+      "sha256": "3fe1039374c5a3a4305682939946cec100a73d52ed62e02bbed8a37afdb5b918"
     }
   ],
   "note": "Offline research pack of public machine corpora. Entity-only attribution."

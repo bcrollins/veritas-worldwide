@@ -531,6 +531,10 @@ export default function MembershipPage() {
               a: 'No. Founding Circle and other memberships fund the free public archive and editorial work. The Comprehensive Online Profile is a separate fixed-price private OSINT research service for clients who need an authenticated dossier on a specific subject. It does not unlock paywalled chapters, and membership does not include free private reports. See /comprehensive-profile.',
             },
             {
+              q: 'Is there a free offline download of the research corpora?',
+              a: 'Yes. Anyone can download the public offline research pack ZIP of machine-readable corpora (Power Profiles, Record of Jesus Christ, Israel dossier including visual investigations, evidence taxonomy) from /research-pack.zip — free, entity-attributed, rate-limited. Membership is optional funding, not a paywall for those files.',
+            },
+            {
               q: 'Can I gift a membership?',
               a: 'Not yet, but it\'s coming. Email rights@veritasworldwide.com and we\'ll set it up manually in the meantime.',
             },

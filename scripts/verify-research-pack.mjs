@@ -74,6 +74,11 @@ assert(
   about.includes('/research-pack.zip') && about.includes('about-research-pack-zip'),
   'About key routes must link research pack zip',
 )
+const membership = read('src/pages/MembershipPage.tsx')
+assert(
+  membership.includes('/research-pack.zip') && membership.includes('offline research pack'),
+  'Membership FAQ must mention free offline research pack',
+)
 const platformHealth = read('scripts/verify-platform-health.mjs')
 assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),
