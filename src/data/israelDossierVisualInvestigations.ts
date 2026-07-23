@@ -1555,6 +1555,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-nahal-oz-visual-2023',
+    title: 'October 7 Kibbutz Nahal Oz — Multi-Outlet Civilian Murder & Capture Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Nahal Oz, southern Israel',
+    summary:
+      'Multi-outlet video and authenticated phone footage document the October 7 assault on Kibbutz Nahal Oz, including civilian murders and hostage-taking. Multi-party visual record distinct from Be’eri, Nir Oz, and Kfar Aza packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at Nahal Oz on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Nahal Oz October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-flour-queue-shootings-visual-2024-2025',
+    title: 'Gaza Flour-Queue and Aid-Line Shootings — Multi-Outlet Visual Record',
+    date: '2024–2025',
+    location: 'Aid distribution corridors and flour-queue sites in Gaza',
+    summary:
+      'Multi-outlet phone video and OHCHR materials document shootings and mass casualties among civilians waiting in aid and flour queues. Distinct from prior aid-seeker and flour-massacre visual cards by focusing on multi-source queue-line packages; ethnicity is never evidence.',
+    evidence:
+      'OCHA aid-access tallies, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of civilian harm at aid queues.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza aid packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet flour-queue and aid-line video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR aid-access trail', url: 'https://www.ochaopt.org/' },
+      { type: 'photo-essay', label: 'Wire photos of aid-queue aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-arson-night-visual-2023-2025',
+    title: 'West Bank Night Settler Arson Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank villages under night settler attacks',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document night arson attacks on Palestinian civilian homes and property, including families with children. Multi-source visual record distinct from Huwara corridor and livestreamed assault cards; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of night arson against civilians.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem night arson video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'photo-essay', label: 'Wire photos of arson aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
