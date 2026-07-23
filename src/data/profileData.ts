@@ -4024,11 +4024,67 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'July 2022: claimed Biden was trying to "buy off" states / school systems via federal education funding conditioned on what DeSantis called student indoctrination. PolitiFact rated False on the "buy off" framing of lawful federal grant conditions.',
+        source: 'PolitiFact False (July 8, 2022)',
+        url: 'https://www.politifact.com/factchecks/2022/jul/08/ron-desantis/ron-desantis-falsely-claims-biden-trying-buy-state/',
+        tier: 'verified',
+        date: 'July 2022',
+      },
+      {
+        claim:
+          'May 2021: claimed cities that cut police funding "already seen crime go up" as a causal result of those cuts. PolitiFact Mostly False — crime rose in several cities but murder/gun violence trends predated budget changes.',
+        source: 'PolitiFact Mostly False (May 4, 2021)',
+        url: 'https://www.politifact.com/factchecks/2021/may/04/ron-desantis/ron-desantis-misleading-claim-about-crime-police-f/',
+        tier: 'verified',
+        date: 'May 2021',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'desantis-buy-off-states-education-2022',
+        statement:
+          'Claimed the Biden administration was trying to "buy off" states (via education funding) to force student "indoctrination."',
+        saidAt: 'July 2022',
+        context:
+          'Public criticism of federal K-12 grant conditions and DEI-related education guidance during culture-war fights over schools.',
+        whyFalse:
+          'PolitiFact rated False. Federal education grants routinely include statutory conditions; describing ordinary conditional funding as "buying off" states misstates how Title I / ESSER-style programs work and overstates coercion relative to voluntary grant acceptance.',
+        correction:
+          'States may accept or decline federal education grants with known conditions. That is not equivalent to a corrupt "buy-off" of state sovereignty.',
+        statementSource: 'DeSantis public remarks July 2022 (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/personalities/ron-desantis/',
+        debunkSource: 'PolitiFact — False (July 8, 2022)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/jul/08/ron-desantis/ron-desantis-falsely-claims-biden-trying-buy-state/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'desantis-crime-defund-causation-2021',
+        statement:
+          'Claimed places that cut police funding had "already seen crime go up" as a consequence of those cuts.',
+        saidAt: 'May 2021',
+        context:
+          'Promoting Florida anti-riot / pro-law-enforcement legislation and contrasting with progressive city budget fights after 2020.',
+        whyFalse:
+          'PolitiFact rated Mostly False. Several major cities saw crime increases, but murder and gun violence were already rising in 2020 before many budget changes; experts said the claim skipped confounding factors and treated correlation as simple causation.',
+        correction:
+          'Crime rose in multiple cities during 2020–2021 for multi-factor reasons; attributing increases solely to police budget cuts overstates the evidence.',
+        statementSource: 'DeSantis May 2021 remarks on police funding (PolitiFact personality index + check)',
+        statementUrl: 'https://www.politifact.com/personalities/ron-desantis/',
+        debunkSource: 'PolitiFact — Mostly False (May 4, 2021) with FBI/city budget context',
+        debunkUrl: 'https://www.politifact.com/factchecks/2021/may/04/ron-desantis/ron-desantis-misleading-claim-about-crime-police-f/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Florida Governor', url: 'https://www.flgov.com' },
       { label: 'OpenSecrets (House)', url: 'https://www.opensecrets.org/members-of-congress/ron-desantis/summary?cid=N00034746' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ron_DeSantis' },
+      { label: 'PolitiFact — buy-off states (False)', url: 'https://www.politifact.com/factchecks/2022/jul/08/ron-desantis/ron-desantis-falsely-claims-biden-trying-buy-state/' },
+      { label: 'PolitiFact — crime/police funding (Mostly False)', url: 'https://www.politifact.com/factchecks/2021/may/04/ron-desantis/ron-desantis-misleading-claim-about-crime-police-f/' },
     ],
   },
   {

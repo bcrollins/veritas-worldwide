@@ -100,6 +100,7 @@ const required = [
   'ghislaine-maxwell',
   'kamala-harris',
   'benjamin-netanyahu',
+  'ron-desantis',
 ];
 const scores = {};
 for (const id of required) {
@@ -164,8 +165,24 @@ for (const f of (bibiP.documentedFalsehoods || []).filter((x) => x.tier === 'ver
   if (f.statementUrl === f.debunkUrl) throw new Error('netanyahu dual-cite collision: ' + f.id);
 }
 
+// Ron DeSantis dual-cited integrity deep-dive (FL governor race relevance)
+const desantis = scores['ron-desantis'];
+if (!desantis || desantis.n < 2) throw new Error('ron-desantis needs ≥2 verified falsehoods, got ' + (desantis?.n ?? 0));
+if (desantis.score > 75) throw new Error('ron-desantis score expected ≤75 after deep dive, got ' + desantis.score);
+const desantisP = getProfileBySlug('ron-desantis');
+const desantisIds = new Set((desantisP.documentedFalsehoods || []).map((f) => f.id));
+for (const id of [
+  'desantis-buy-off-states-education-2022',
+  'desantis-crime-defund-causation-2021',
+]) {
+  if (!desantisIds.has(id)) throw new Error('ron-desantis missing docket id: ' + id);
+}
+for (const f of (desantisP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('desantis dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 13) throw new Error('expected ≥13 compiled dockets, got ' + docketCount);
+if (docketCount < 14) throw new Error('expected ≥14 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
