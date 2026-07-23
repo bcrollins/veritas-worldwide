@@ -342,4 +342,13 @@ for (const dest of ['/read', '/israel-dossier', '/profiles', '/content-pack']) {
   assert(searchPage.includes(dest), `Search recovery includes ${dest}`)
 }
 
+
+// Home hub CTA row includes Read + Dossiers + Search
+const home = read('src/pages/HomePage.tsx')
+assert(home.includes('home-hub-cta-row'), 'home-hub-cta-row')
+assert(home.includes('home-news-chip'), 'home-news-chip')
+assert(home.includes('to="/read"') || home.includes("to: '/read'"), 'Home CTA Read')
+assert(home.includes('/israel-dossier'), 'Home CTA Dossiers')
+assert(home.includes('/search'), 'Home CTA Search')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
