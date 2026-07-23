@@ -2843,6 +2843,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-freedom-flotilla-intercept-pattern-2024-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Aid Flotilla Interceptions Pattern (2024–2025)',
+    date: '2024–2025 (flotilla cohort)',
+    location: 'Eastern Mediterranean / approaches to Gaza waters',
+    summary:
+      'Multi-source reporting documents repeated Israeli naval interceptions of civilian activist/aid flotilla vessels attempting to reach Gaza with symbolic and material cargo during the war — including high-profile seizures and towing to Israeli ports. Pattern card for maritime blockade enforcement against civilian vessels, distinct from the 2010 Mavi Marmara card.',
+    evidence:
+      'Multi-outlet contemporaneous coverage, vessel operator statements, and Israeli government public statements establish multi-source interceptions of flotilla vessels. Legal characterizations of high-seas interdiction remain contested; multi-source repeated interceptions of civilian flotillas is the claim.',
+    sources: [
+      { label: 'Multi-outlet Freedom Flotilla / aid vessel interception coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government public statements on naval interdiction', url: 'https://www.gov.il' },
+      { label: 'UN / humanitarian access materials on maritime blockade context', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA humanitarian access context', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4044,6 +4071,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['hospitals', 'mass-graves', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-flotilla-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Gaza Aid Flotilla Interceptions Pattern',
+    description: 'Multi-source documentation of repeated Israeli naval interceptions of civilian activist/aid flotilla vessels during the war.',
+    source: 'Multi-outlet / Israeli government / OCHA context',
+    sourceUrl: 'https://apnews.com',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-freedom-flotilla-intercept-pattern-2024-2025',
+      'mavi-marmara-2010',
+      'gaza-blockade-2007',
+    ],
+    tags: ['blockade', 'flotilla', 'civilians', 'gaza'],
+  },
+
 
 ]
 
