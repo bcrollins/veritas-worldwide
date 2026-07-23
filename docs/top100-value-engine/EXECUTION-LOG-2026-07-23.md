@@ -146,3 +146,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Anonymity | entity-only Veritas Worldwide; densify surfaces CLEAN |
 | Multi-agent | densify-only paths; peer nav/App WIP unstaged |
 
+## Interval densify post-1000 — tip **1069** / video **73**
+
+| Ship series | Tip |
+|-------------|-----|
+| `055fdb5`/`9fad72d` | **1000** milestone |
+| `3a8dc1b`→`0fa6a39`→`3b2c540`→`c46cb9c`→`6848faf`→`1c8cba5` | 1009→…→1060 |
+| This | **1069** / withVideo ≥73 |
+| Pure | visual floor + israel-dossier + research-pack PASS each interval |
+| Live | lag-aware soft-floor WARN; HTTP 200 corpus/VI/pack |
+| Multi-agent | densify-only; peer nav/App unstaged |
+
