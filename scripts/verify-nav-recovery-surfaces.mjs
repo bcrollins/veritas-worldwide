@@ -2034,4 +2034,11 @@ for (const [name, constName] of [
 }
 
 
+
+// surfaces 102 and emphasize coexistence ultimate
+assert(surfaces.length >= 102, `surfaces emphasize coexistence ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'emphasizeTo coexistence')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'soft-404 primary coexistence')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
