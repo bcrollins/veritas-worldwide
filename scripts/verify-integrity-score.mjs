@@ -558,16 +558,19 @@ for (const f of (sandersP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('bernie-sanders dual-cite collision: ' + f.id);
 }
 
-// Hakeem Jeffries integrity gate
+// Hakeem Jeffries integrity gate (n≥3 densify)
 const jeffries = scores['hakeem-jeffries'];
-if (!jeffries || jeffries.n < 2) throw new Error('hakeem-jeffries needs ≥2 verified falsehoods, got ' + (jeffries?.n ?? 0));
-if (jeffries.score > 75) throw new Error('hakeem-jeffries score expected ≤75, got ' + jeffries.score);
+if (!jeffries || jeffries.n < 3) throw new Error('hakeem-jeffries needs ≥3 verified falsehoods, got ' + (jeffries?.n ?? 0));
+if (jeffries.score > 60) throw new Error('hakeem-jeffries score expected ≤60 after densify, got ' + jeffries.score);
 const jeffriesP = getProfileBySlug('hakeem-jeffries');
-if (!(jeffriesP.documentedFalsehoods || []).some((f) => f.id === 'jeffries-trump-budget-2-trillion-entitlements-2018')) {
-  throw new Error('hakeem-jeffries missing $2T budget docket id');
-}
-if (!(jeffriesP.documentedFalsehoods || []).some((f) => f.id === 'jeffries-ballroom-presidents-main-priority-2025')) {
-  throw new Error('hakeem-jeffries missing ballroom main-priority docket id');
+for (const id of [
+  'jeffries-trump-budget-2-trillion-entitlements-2018',
+  'jeffries-ballroom-presidents-main-priority-2025',
+  'jeffries-trump-more-debt-any-president-2023',
+]) {
+  if (!(jeffriesP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('hakeem-jeffries missing docket id: ' + id);
+  }
 }
 for (const f of (jeffriesP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('hakeem-jeffries dual-cite collision: ' + f.id);

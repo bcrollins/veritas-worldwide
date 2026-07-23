@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:49:17.607Z",
+  "generatedAt": "2026-07-23T09:50:24.211Z",
   "count": 96,
   "profiles": [
     {
@@ -372,8 +372,8 @@
         "Institutional Enablement",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

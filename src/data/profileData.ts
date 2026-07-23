@@ -2478,6 +2478,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'jeffries-trump-more-debt-any-president-2023',
+        statement:
+          '“(Donald) Trump ran up more debt than any other president in American history.”',
+        saidAt: 'May 12, 2023',
+        context:
+          'X/Twitter post during debt-limit negotiations blaming Republicans for forcing a dangerous default.',
+        whyFalse:
+          'PolitiFact rated Mostly False. Treasury gross federal debt rose ~$7.8T under Trump — less than the ~$9.5T rise under Obama. Per-year, Trump’s rate was higher, but the absolute claim “more debt than any other president” is false on raw dollars. Assigning debt also overstates presidential agency given mandatory programs and bipartisan COVID relief.',
+        correction:
+          'Obama oversaw a larger absolute debt increase than Trump; the absolute “more than any other president” claim is false, though Trump’s annualized debt accumulation was high.',
+        statementSource: 'Hakeem Jeffries tweet, May 12, 2023',
+        statementUrl: 'https://twitter.com/RepJeffries/status/1657000193626177537',
+        debunkSource: 'PolitiFact — Mostly False (May 22, 2023); Treasury Debt to the Penny / OMB historical debt tables',
+        debunkUrl: 'https://www.politifact.com/factchecks/2023/may/22/hakeem-jeffries/did-donald-trump-rack-up-more-debt-than-any-other/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://jeffries.house.gov' },
