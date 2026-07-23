@@ -5271,7 +5271,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'VT',
     photoUrl: getProfilePhoto('bernie-sanders'),
     summary:
-      'Vermont independent and progressive leader who has long supported Israel\'s existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Integrity docket: dual-cited PolitiFact False on claim U.S. spends almost twice per capita on health care as any other country (OECD). Primary: Senate record, OpenSecrets, OECD, PolitiFact.',
+      'Vermont independent and progressive leader who has long supported Israel\'s existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Integrity docket: dual-cited PolitiFact Falses — U.S. spends almost twice per capita on health care as any other country (OECD peers closer) and “40% of guns sold without background checks” (outdated NIJ zombie stat; 2017 Annals ~22%). Primary: Senate record, OpenSecrets, OECD, PolitiFact, Meet the Press.',
     tags: [
       'Senator',
       'Independent',
@@ -5359,6 +5359,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2015',
       },
+      {
+        claim:
+          'Integrity docket: Feb 2018 Meet the Press claim “40% of guns sold without background checks” rated False (outdated 1990s NIJ zombie stat; 2017 Annals of Internal Medicine ~22%).',
+        source: 'PolitiFact False; NBC Meet the Press; Annals 2017',
+        url: 'https://www.politifact.com/factchecks/2018/feb/20/bernie-sanders/bernie-sanders-repeats-false-claim-about-backgroun/',
+        tier: 'verified',
+        date: '2018',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -5379,6 +5387,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'sanders-40-percent-guns-no-background-checks-2018',
+        statement: '“Forty percent of the guns in this country are sold without any background checks.”',
+        saidAt: 'February 18, 2018',
+        context:
+          'NBC Meet the Press after Parkland, arguing to end the “gun show loophole” with the long-cited 40% figure.',
+        whyFalse:
+          'PolitiFact rated False. The 40% figure traces to a 1990s National Institute of Justice survey (small sample; included gifts/inheritances). When limited to sales, original authors estimated ~14–22%. A 2017 Annals of Internal Medicine national survey found ~22% of recent acquisitions without a background check — about half of Sanders’ claim. His office later acknowledged the figure may be outdated.',
+        correction:
+          'Best available evidence puts private/no-check acquisitions well below 40% of sales; the widely repeated 40% figure is a zombie statistic from outdated survey data.',
+        statementSource: 'NBC Meet the Press interview, Feb. 18, 2018 (as captured contemporaneously)',
+        statementUrl:
+          'https://www.washingtonpost.com/news/fact-checker/wp/2018/02/20/bernie-sanders-resurrects-a-zombie-claim-on-gun-sales-without-background-checks/',
+        debunkSource: 'PolitiFact — False (Feb. 20, 2018); Annals of Internal Medicine 2017; NIJ 1997',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2018/feb/20/bernie-sanders/bernie-sanders-repeats-false-claim-about-backgroun/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.sanders.senate.gov' },
@@ -5386,6 +5413,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — health spending 2× (False)',
         url: 'https://www.politifact.com/factchecks/2015/aug/16/bernie-sanders/bernie-sanders-repeats-flawed-claim-about-us-healt/',
+      },
+      {
+        label: 'PolitiFact — 40% guns no background checks (False)',
+        url: 'https://www.politifact.com/factchecks/2018/feb/20/bernie-sanders/bernie-sanders-repeats-false-claim-about-backgroun/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Bernie_Sanders' },
     ],
@@ -6808,7 +6839,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'LA',
     photoUrl: getProfilePhoto('mike-johnson'),
     summary:
-      'House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact False that paroled immigrants can “simply go to welfare/DMV and register to vote” (May 2024 SAFE Act presser). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact.',
+      'House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — paroled immigrants can “simply” register to vote at welfare/DMV (May 2024) and “we are not cutting SNAP” under the 2025 reconciliation bill (CBO/Urban/CBPP show millions lose benefits). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact, CBS Face the Nation.',
     tags: [
       'Speaker of the House',
       'Pro-Israel',
@@ -6909,6 +6940,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024',
       },
+      {
+        claim:
+          'Integrity docket: May 25, 2025 Face the Nation claim “We are not cutting SNAP” rated False (CBO ~$286B SNAP reduction; millions lose benefits under work requirements/state cost-share).',
+        source: 'PolitiFact False; CBS Face the Nation transcript; CBO SNAP letter',
+        url: 'https://www.politifact.com/factchecks/2025/may/29/mike-johnson/SNAP-reconciliation-bill-tax-cuts-food/',
+        tier: 'verified',
+        date: '2025',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -6931,6 +6970,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'johnson-not-cutting-snap-2025',
+        statement: '“We are not cutting SNAP.”',
+        saidAt: 'May 25, 2025',
+        context:
+          'CBS Face the Nation defending the House-passed “One Big Beautiful Bill” / reconciliation package against charges of food-assistance cuts; framed changes as fraud/waste enforcement.',
+        whyFalse:
+          'PolitiFact rated False. Independent analyses of H.R. 1 found large SNAP reductions: CBO estimated ~$286B less SNAP spending over nine years and ~3.2M fewer monthly beneficiaries from expanded work requirements alone (plus ~1.3M from state cost-share responses); Urban Institute ~5.4M people losing some/all benefits; CBPP called it the largest food-assistance cut in history. Freezing the Thrifty Food Plan and restricting eligibility further reduce benefits.',
+        correction:
+          'The reconciliation bill’s SNAP provisions cut federal food assistance spending and would remove or reduce benefits for millions — not a pure anti-fraud tweak with no cuts.',
+        statementSource: 'CBS Face the Nation transcript — House Speaker Mike Johnson, May 25, 2025',
+        statementUrl:
+          'https://www.cbsnews.com/news/mike-johnson-house-speaker-face-the-nation-transcript-05-25-2025/',
+        debunkSource: 'PolitiFact — False (May 29, 2025); CBO SNAP letter; Urban Institute; CBPP',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2025/may/29/mike-johnson/SNAP-reconciliation-bill-tax-cuts-food/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Speaker.gov', url: 'https://www.speaker.gov' },
@@ -6940,6 +6998,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — Parolee DMV voter registration (False)',
         url: 'https://www.politifact.com/factchecks/2024/may/20/mike-johnson/mike-johnsons-false-claim-that-immigrants-paroled/',
+      },
+      {
+        label: 'PolitiFact — not cutting SNAP (False)',
+        url: 'https://www.politifact.com/factchecks/2025/may/29/mike-johnson/SNAP-reconciliation-bill-tax-cuts-food/',
       },
       {
         label: 'C-SPAN — May 8, 2024 SAFE Act presser',

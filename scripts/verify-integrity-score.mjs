@@ -453,14 +453,17 @@ for (const f of (pelosiP.documentedFalsehoods || []).filter((x) => x.tier === 'v
 
 // Bernie Sanders integrity gate
 const sanders = scores['bernie-sanders'];
-if (!sanders || sanders.n < 1) throw new Error('bernie-sanders needs ≥1 verified falsehood, got ' + (sanders?.n ?? 0));
-if (sanders.score > 90) throw new Error('bernie-sanders score expected ≤90, got ' + sanders.score);
+if (!sanders || sanders.n < 2) throw new Error('bernie-sanders needs ≥2 verified falsehoods, got ' + (sanders?.n ?? 0));
+if (sanders.score > 75) throw new Error('bernie-sanders score expected ≤75, got ' + sanders.score);
 const sandersP = getProfileBySlug('bernie-sanders');
 if (!(sandersP.documentedFalsehoods || []).some((f) => f.id === 'sanders-twice-health-spending-any-country-2015')) {
   throw new Error('bernie-sanders missing health-spending docket id');
 }
+if (!(sandersP.documentedFalsehoods || []).some((f) => f.id === 'sanders-40-percent-guns-no-background-checks-2018')) {
+  throw new Error('bernie-sanders missing 40% guns background-check docket id');
+}
 for (const f of (sandersP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
-  if (f.statementUrl === f.debunkUrl) throw new Error('sanders dual-cite collision: ' + f.id);
+  if (f.statementUrl === f.debunkUrl) throw new Error('bernie-sanders dual-cite collision: ' + f.id);
 }
 
 // Hakeem Jeffries integrity gate
@@ -619,11 +622,14 @@ for (const f of (mccarthyP.documentedFalsehoods || []).filter((x) => x.tier === 
 
 // Mike Johnson integrity gate
 const mikeJohnson = scores['mike-johnson'];
-if (!mikeJohnson || mikeJohnson.n < 1) throw new Error('mike-johnson needs ≥1 verified falsehood, got ' + (mikeJohnson?.n ?? 0));
-if (mikeJohnson.score > 90) throw new Error('mike-johnson score expected ≤90, got ' + mikeJohnson.score);
+if (!mikeJohnson || mikeJohnson.n < 2) throw new Error('mike-johnson needs ≥2 verified falsehoods, got ' + (mikeJohnson?.n ?? 0));
+if (mikeJohnson.score > 75) throw new Error('mike-johnson score expected ≤75, got ' + mikeJohnson.score);
 const mikeJohnsonP = getProfileBySlug('mike-johnson');
 if (!(mikeJohnsonP.documentedFalsehoods || []).some((f) => f.id === 'johnson-parolees-simply-register-to-vote-dmv-2024')) {
   throw new Error('mike-johnson missing parolee DMV voter-registration docket id');
+}
+if (!(mikeJohnsonP.documentedFalsehoods || []).some((f) => f.id === 'johnson-not-cutting-snap-2025')) {
+  throw new Error('mike-johnson missing not-cutting-SNAP docket id');
 }
 for (const f of (mikeJohnsonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('mike-johnson dual-cite collision: ' + f.id);

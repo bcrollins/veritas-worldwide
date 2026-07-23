@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:19:04.230Z",
+  "generatedAt": "2026-07-23T08:20:48.333Z",
   "count": 96,
   "profiles": [
     {
@@ -846,7 +846,7 @@
       "name": "Bernie Sanders",
       "title": "U.S. Senator (I-VT)",
       "category": "politician",
-      "summary": "Vermont independent and progressive leader who has long supported Israel's existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Integrity docket: dual-cited PolitiFact False on claim U.S. spends almost twice per capita on health care as any other country (OECD). Primary: Senate record, OpenSecrets, OECD, PolitiFact.",
+      "summary": "Vermont independent and progressive leader who has long supported Israel's existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Integrity docket: dual-cited PolitiFact Falses — U.S. spends almost twice per capita on health care as any other country (OECD peers closer) and “40% of guns sold without background checks” (outdated NIJ zombie stat; 2017 Annals ~22%). Primary: Senate record, OpenSecrets, OECD, PolitiFact, Meet the Press.",
       "photo": "/profiles/bernie-sanders.jpg",
       "url": "https://veritasworldwide.com/profile/bernie-sanders",
       "bioguideId": "S000033",
@@ -860,8 +860,8 @@
         "Iron Dome History",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -1093,7 +1093,7 @@
       "name": "Mike Johnson",
       "title": "Speaker of the House (R-LA)",
       "category": "politician",
-      "summary": "House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact False that paroled immigrants can “simply go to welfare/DMV and register to vote” (May 2024 SAFE Act presser). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact.",
+      "summary": "House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — paroled immigrants can “simply” register to vote at welfare/DMV (May 2024) and “we are not cutting SNAP” under the 2025 reconciliation bill (CBO/Urban/CBPP show millions lose benefits). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact, CBS Face the Nation.",
       "photo": "/profiles/mike-johnson.jpg",
       "url": "https://veritasworldwide.com/profile/mike-johnson",
       "bioguideId": "J000299",
@@ -1107,8 +1107,8 @@
         "Institutional Enablement",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
