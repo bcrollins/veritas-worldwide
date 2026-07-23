@@ -74,7 +74,10 @@ export default function StickyMembershipBar() {
   if (!show || isExcluded || dismissed || cookiePending) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 no-print animate-slide-up">
+    <div
+      className="fixed bottom-[calc(3.75rem+env(safe-area-inset-bottom))] left-0 right-0 z-40 no-print animate-slide-up md:bottom-0"
+      data-testid="sticky-membership-bar"
+    >
       <div className="bg-obsidian/95 backdrop-blur-md border-t border-white/10">
         <div className="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
           <p className="font-body text-xs text-white/70 hidden sm:block">

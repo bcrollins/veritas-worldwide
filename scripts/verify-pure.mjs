@@ -19,6 +19,7 @@ const pure = [
   'verify-structured-data.mjs',
   'verify-archive-manifest.mjs',
   'verify-a11y-public-targets.mjs',
+  'verify-nav-ia.mjs',
   'verify-server-security-invariants.mjs',
   'verify-home-toc-structure.mjs',
   'verify-csp-meta.mjs',

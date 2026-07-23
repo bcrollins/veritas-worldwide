@@ -183,13 +183,20 @@ function Header() {
     }
   }, [menuOpen])
 
+  // Hick's Law: ≤5 primary hubs. Search is first-class. News/Forum preserved in Browse + footer.
   const primaryLinks: ShellLink[] = [
     { to: '/', label: 'The Record' },
     { to: '/read', label: 'Read', match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter') },
-    { to: '/news', label: 'News', match: pathname => matchesPrefix(pathname, '/news') },
-    { to: '/israel-dossier', label: 'Dossiers', match: pathname => matchesPrefix(pathname, '/israel-dossier') || normalizePath(pathname) === '/deep-state' },
+    {
+      to: '/israel-dossier',
+      label: 'Dossiers',
+      match: pathname =>
+        matchesPrefix(pathname, '/israel-dossier') ||
+        normalizePath(pathname) === '/deep-state' ||
+        matchesPrefix(pathname, '/forum'),
+    },
     { to: '/profiles', label: 'Profiles', match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile') },
-    { to: '/forum', label: 'Forum', match: pathname => matchesPrefix(pathname, '/forum') },
+    { to: '/search', label: t('nav.search'), match: pathname => normalizePath(pathname) === '/search' },
   ]
 
   const trustLinks: ShellLink[] = [
@@ -198,26 +205,40 @@ function Header() {
   ]
 
   const utilityLinks: ShellLink[] = [
+    { to: '/news', label: 'News', match: pathname => matchesPrefix(pathname, '/news') },
     { to: '/institute', label: 'Institute', match: pathname => matchesPrefix(pathname, '/institute') },
     { to: '/topics', label: 'Topics', match: pathname => matchesPrefix(pathname, '/topics') },
-    { to: '/search', label: t('nav.search') },
+  ]
+
+  const drawerBrowseLinks: ShellLink[] = [
+    { to: '/news', label: 'News', match: pathname => matchesPrefix(pathname, '/news') },
+    { to: '/forum', label: 'Forum', match: pathname => matchesPrefix(pathname, '/forum') },
+    { to: '/timeline', label: t('nav.timeline') },
+    { to: '/deep-state', label: 'Deep State' },
   ]
 
   const drawerResearchLinks: ShellLink[] = [
     { to: '/methodology', label: t('nav.methodology') },
     { to: '/sources', label: t('nav.sources') },
+    { to: '/researcher', label: 'Researcher tools' },
     { to: '/institute', label: 'Institute', match: pathname => matchesPrefix(pathname, '/institute') },
     { to: '/topics', label: 'Topics', match: pathname => matchesPrefix(pathname, '/topics') },
-    { to: '/timeline', label: t('nav.timeline') },
     { to: '/content-pack', label: 'Content Packs', match: pathname => normalizePath(pathname) === '/content-pack' || normalizePath(pathname) === '/share' },
-    { to: '/deep-state', label: 'Deep State' },
     { to: '/bible', label: 'The Bible' },
     { to: '/record-of-jesus-christ', label: 'Record of Jesus Christ' },
+    { to: '/volume-ii', label: 'Volume II track' },
   ]
 
   const accountLinks: ShellLink[] = [
     { to: '/bookmarks', label: t('nav.bookmarks') },
     { to: '/analytics', label: t('nav.analytics') },
+    { to: '/membership', label: t('nav.membership') },
+    { to: '/about', label: t('nav.about') },
+    { to: '/media-kit', label: 'Media Kit' },
+    { to: '/comprehensive-profile', label: 'Online Profile ($499)' },
+    { to: '/accessibility', label: t('nav.accessibility') },
+    { to: '/privacy', label: t('nav.privacy') },
+    { to: '/terms', label: t('nav.terms') },
   ]
 
   const todayDate = new Date().toLocaleDateString('en-US', {
@@ -431,25 +452,7 @@ function Header() {
             </div>
           </nav>
 
-          <nav className="flex items-center gap-2 overflow-x-auto py-2 md:hidden" aria-label="Primary navigation">
-            {primaryLinks.map(link => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={mobilePillClass(link)}
-                {...(isLinkActive(location.pathname, link) ? { 'aria-current': 'page' as const } : {})}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              to="/search"
-              className={mobilePillClass({ to: '/search', label: t('nav.search') })}
-              {...(normalizePath(location.pathname) === '/search' ? { 'aria-current': 'page' as const } : {})}
-            >
-              {t('nav.search')}
-            </Link>
-          </nav>
+          {/* Mobile primary: bottom tab bar (MobileTabBar) — thumb zone, ≤5 hubs */}
         </div>
       </div>
 
@@ -486,10 +489,10 @@ function Header() {
           </button>
         </div>
 
-        <div className="flex h-[calc(100vh-4rem)] flex-col overflow-y-auto px-6 py-6">
+        <div className="flex h-[calc(100vh-4rem)] flex-col overflow-y-auto px-6 py-6 pb-[calc(5.5rem+env(safe-area-inset-bottom))]">
           <section>
             <p className="mb-3 font-sans text-[0.62rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
-              Primary
+              Hubs
             </p>
             <div className="flex flex-col gap-2">
               {primaryLinks.map(link => (
@@ -504,15 +507,26 @@ function Header() {
                   <span aria-hidden="true">›</span>
                 </Link>
               ))}
-              <Link
-                to="/search"
-                className={drawerLinkClass({ to: '/search', label: t('nav.search') })}
-                onClick={() => setMenuOpen(false)}
-                {...(normalizePath(location.pathname) === '/search' ? { 'aria-current': 'page' as const } : {})}
-              >
-                <span>{t('nav.search')}</span>
-                <span aria-hidden="true">›</span>
-              </Link>
+            </div>
+          </section>
+
+          <section className="mt-7">
+            <p className="mb-3 font-sans text-[0.62rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
+              Browse
+            </p>
+            <div className="flex flex-col gap-2">
+              {drawerBrowseLinks.map(link => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={drawerLinkClass(link)}
+                  onClick={() => setMenuOpen(false)}
+                  {...(isLinkActive(location.pathname, link) ? { 'aria-current': 'page' as const } : {})}
+                >
+                  <span>{link.label}</span>
+                  <span aria-hidden="true">›</span>
+                </Link>
+              ))}
             </div>
           </section>
 
@@ -538,7 +552,7 @@ function Header() {
 
           <section className="mt-7">
             <p className="mb-3 font-sans text-[0.62rem] font-bold tracking-[0.12em] uppercase text-ink-faint">
-              Account
+              Account & Trust
             </p>
             <div className="flex flex-col gap-2">
               {accountLinks.map(link => (
@@ -617,6 +631,66 @@ function Header() {
         </div>
       </nav>
     </header>
+  )
+}
+
+
+/** Mobile bottom tab bar — ≤5 hubs in the thumb zone (Hick's Law + 2-tap rule). */
+function MobileTabBar() {
+  const location = useLocation()
+  const { t } = useI18n()
+
+  const tabs: ShellLink[] = [
+    { to: '/', label: 'Record' },
+    {
+      to: '/read',
+      label: 'Read',
+      match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter'),
+    },
+    {
+      to: '/israel-dossier',
+      label: 'Dossiers',
+      match: pathname =>
+        matchesPrefix(pathname, '/israel-dossier') ||
+        normalizePath(pathname) === '/deep-state' ||
+        matchesPrefix(pathname, '/forum'),
+    },
+    {
+      to: '/profiles',
+      label: 'Profiles',
+      match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile'),
+    },
+    { to: '/search', label: t('nav.search'), match: pathname => normalizePath(pathname) === '/search' },
+  ]
+
+  return (
+    <nav
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-parchment/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)] md:hidden no-print"
+      aria-label="Primary hubs"
+      data-testid="mobile-tab-bar"
+    >
+      <div className="mx-auto flex max-w-[1920px] items-stretch justify-between gap-0.5 px-1 pt-1">
+        {tabs.map(tab => {
+          const active = isLinkActive(location.pathname, tab)
+          return (
+            <Link
+              key={tab.to}
+              to={tab.to}
+              className={`flex min-h-[52px] min-w-[44px] flex-1 flex-col items-center justify-center gap-0.5 rounded-lg px-1 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.06em] transition-colors ${
+                active ? 'text-crimson' : 'text-ink-muted hover:text-ink'
+              }`}
+              {...(active ? { 'aria-current': 'page' as const } : {})}
+            >
+              <span
+                className={`h-1 w-5 rounded-full ${active ? 'bg-crimson' : 'bg-transparent'}`}
+                aria-hidden="true"
+              />
+              <span className="max-w-full truncate text-center leading-tight">{tab.label}</span>
+            </Link>
+          )
+        })}
+      </div>
+    </nav>
   )
 }
 
@@ -823,7 +897,10 @@ export default function App() {
             <p className="font-serif text-[0.6rem] italic text-gray-500">The Documentary Record · veritasworldwide.com</p>
           </div>
         )}
-        <main id="main-content">
+        <main
+          id="main-content"
+          className={!isAdmin && !isInstitute ? 'pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0' : undefined}
+        >
           <ErrorBoundary>
             <Suspense
               fallback={
@@ -903,6 +980,7 @@ export default function App() {
           </ErrorBoundary>
         </main>
         {!isAdmin && !isInstitute && <Footer />}
+        {!isAdmin && !isInstitute && <MobileTabBar />}
         <Suspense fallback={null}>
           <AuthModal />
         </Suspense>
