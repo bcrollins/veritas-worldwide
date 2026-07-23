@@ -1,4 +1,4 @@
-# Veritas Worldwide Press — Brand Kit v2.9.6
+# Veritas Worldwide Press — Brand Kit v2.9.7
 
 **Updated:** 2026-07-23  
 **Domain:** veritasworldwide.com  

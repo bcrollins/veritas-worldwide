@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.6'
+const KIT_VERSION = '2.9.7'
 
 const C = {
   parchment: '#FAF8F5',
@@ -452,6 +452,8 @@ All paths are relative to \`https://veritasworldwide.com\`.
 | **Evidence tier cards** | — | \`evidence-tier-*.svg\` (1080×1080) | Product: Verified / Circumstantial / Disputed |
 | **Bluesky** | social-profile-400.png | \`bluesky-banner.svg\` (1500×500) | Emerging open network |
 | **Discord** | app-icon | \`discord-invite.svg\` (1920×1080) | Invite / server splash |
+| **Reddit** | social-profile | \`reddit-banner.svg\` (1920×384) | r/VeritasWorldwide |
+| **Instagram Reels** | — | \`reels-safe-zone.svg\` (1080×1920) | Keep titles in dashed frame |
 | **Citation cards** | — | \`citation-card.svg\` (1080×1080) | Source-first social posts |
 | **Open Graph / default share** | — | \`/og-image.png\` + \`/brand-kit/05-og/\` | Site-wide default |
 
@@ -695,7 +697,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.6 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.7 — ${new Date().toISOString().slice(0, 10)}
+- SOCIAL-ASSET-MATRIX lists Reddit banner + Reels safe-zone
+
+## 2.9.6
 - SOCIAL-LAUNCH checklist includes TikTok, Reddit, Reels safe-zone
 
 ## 2.9.5

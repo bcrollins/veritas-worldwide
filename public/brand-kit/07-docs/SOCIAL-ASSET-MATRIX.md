@@ -20,6 +20,8 @@ All paths are relative to `https://veritasworldwide.com`.
 | **Evidence tier cards** | — | `evidence-tier-*.svg` (1080×1080) | Product: Verified / Circumstantial / Disputed |
 | **Bluesky** | social-profile-400.png | `bluesky-banner.svg` (1500×500) | Emerging open network |
 | **Discord** | app-icon | `discord-invite.svg` (1920×1080) | Invite / server splash |
+| **Reddit** | social-profile | `reddit-banner.svg` (1920×384) | r/VeritasWorldwide |
+| **Instagram Reels** | — | `reels-safe-zone.svg` (1080×1920) | Keep titles in dashed frame |
 | **Citation cards** | — | `citation-card.svg` (1080×1080) | Source-first social posts |
 | **Open Graph / default share** | — | `/og-image.png` + `/brand-kit/05-og/` | Site-wide default |
 
