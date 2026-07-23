@@ -36,6 +36,19 @@
 
 | `97ced10` | Bible + ROC ResearchHubChips |
 
+
+| `622f69d` | Institute methodology + field manual chips |
+| `9937d0d` | Personal Timeline ResearchHubChips |
+| `6de51a4` / `16526df` | a11y floors + skip-shell fix |
+
+## Live proof matrix (observed green)
+- main: mobile-tab-bar, DossierHubSpokes, ResearchHubChips, Israel · Deep State
+- soft-404: server-soft-404, Primary hubs, /read /israel-dossier /profiles /search
+- home chunk: home-hub-cta-row, home-news-chip
+- search chunk: search-empty-hubs, search-idle-hubs
+- spokes chunk: dossier-hub-spokes, Also in Dossiers
+- health: researchPackZip + researchPackManifest true
+
 ## Live proof (observed 2026-07-23)
 - Soft-404 HTML: `server-soft-404` + hubs Record/Read/Dossiers/Profiles/Search (**eadf78b+ live**)
 - SPA shell: `mobile-tab-bar` + Dossiers tooltip “Israel · Deep State · Forum”
