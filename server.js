@@ -2072,6 +2072,10 @@ function isKnownSpaRoute(pathname) {
   const chapterMatch = route.match(/^\/chapter\/([a-z0-9-]+)$/i)
   if (chapterMatch) return isKnownChapterSlug(chapterMatch[1])
 
+  // Profiles: corpus ids only (covers prerender lag for newly densified profiles).
+  const profileMatch = route.match(/^\/profile\/([a-z0-9-]+)$/i)
+  if (profileMatch) return isKnownProfileSlug(profileMatch[1], __dirname)
+
   const patterns = [
     /^\/news\/[a-z0-9-]+$/i,
     /^\/topics\/[a-z0-9-]+$/i,
