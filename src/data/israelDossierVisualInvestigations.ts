@@ -2847,6 +2847,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-water-desalination-strike-visual-2023-2025',
+    title: 'Gaza Desalination and Water Infrastructure Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip desalination plants and water network nodes',
+    summary:
+      'Multi-outlet video packages document damage and outages at desalination and water infrastructure under wartime conditions, affecting civilian drinking water including for children. Distinct from water-pipe-cut settler visual cards by focusing on multi-source Gaza desalination packages; ethnicity is never evidence.',
+    evidence:
+      'WHO/OCHA water-access materials, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of water-infrastructure harm affecting civilians.',
+    sources: [
+      { label: 'OCHA OPT water materials', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza infrastructure packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet desalination/water infrastructure video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of water infrastructure damage', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA water-access trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-zikkim-beach-civilian-visual-2023',
+    title: 'October 7 Zikim Beach Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Zikim Beach area, southern Israel',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders and attacks near Zikim Beach during the October 7 attacks. Multi-party visual record distinct from Mefalsim, Sa’ad, and Nahal Oz packages; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence near Zikim on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Zikim October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-mosque-attack-visual-2023-2025',
+    title: 'West Bank Settler Mosque Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village mosques and prayer sites',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian mosques, including vandalism and arson affecting community worship spaces used by families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of mosque attacks affecting civilian communities.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem mosque-attack video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem sacred-site violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

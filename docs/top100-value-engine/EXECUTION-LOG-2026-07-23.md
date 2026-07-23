@@ -211,3 +211,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier + research-pack PASS |
 | Multi-agent | densify-only |
 
+
+## Interval densify — tip **1627** / withVideo **131** / VI **119+**
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza laryngoscope-handle/CO2/i-gel/Combitube · hostage applaud-food/candle-vigils/cross-legged/radio-broadcasts · WB fig-nets/library-carts/stem-cutters/oil-funnels |
+| VI | desalination strikes · Zikim Beach Oct7 · mosque attacks |
+| Pure | visual + israel-dossier + research-pack PASS |
+| Multi-agent | densify-only; force-add past assume-unchanged |
+
