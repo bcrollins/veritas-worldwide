@@ -78,7 +78,7 @@ export default function CookieConsent() {
             Analytics only. No ads sold.{' '}
             <a
               href="/privacy"
-              className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline transition-colors"
+              className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
             >
               Privacy
             </a>
@@ -88,7 +88,7 @@ export default function CookieConsent() {
             No advertising trackers. No data sold.{' '}
             <a
               href="/privacy"
-              className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline transition-colors"
+              className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
             >
               Privacy Policy
             </a>
@@ -98,14 +98,14 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={handleDecline}
-            className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-2.5 py-2 sm:px-4 sm:py-2.5 min-h-[44px] border border-white/20 text-white/70 rounded-sm hover:border-white/40 hover:text-white transition-colors"
+            className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-2.5 py-2 sm:px-4 sm:py-2.5 min-h-[44px] border border-white/20 text-white/70 rounded-sm hover:border-white/40 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
           >
             Decline
           </button>
           <button
             type="button"
             onClick={handleAccept}
-            className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-3 py-2 sm:px-5 sm:py-2.5 min-h-[44px] bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors"
+            className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-3 py-2 sm:px-5 sm:py-2.5 min-h-[44px] bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-crimson"
           >
             Accept
           </button>
