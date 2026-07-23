@@ -1839,6 +1839,9 @@ const OSINT_ORDERS_PATH = path.join(__dirname, 'data', 'osint-orders.ndjson')
 const OSINT_PRICE_CENTS = 49900
 const OSINT_PRODUCT_NAME = 'Comprehensive Online Profile'
 
+const OSINT_REFUSE_RE = /\b(stalk|stalking|doxx?|swat|kidnap|assassinate|murder|hack\s*into|break\s*into\s*(her|his|their)\s*(phone|email)|revenge\s*porn|blackmail)\b/i
+
+
 function ensureOsintOrdersFile() {
   const dir = path.dirname(OSINT_ORDERS_PATH)
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
@@ -1909,6 +1912,14 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
     }
     if (!body.attestLawful || !body.attestNoHarassment || !body.attestAdult) {
       return res.status(400).json({ error: 'All legal attestations are required.' })
+    }
+
+    const purposeBlob = [body.purposeDetail, body.notes, body.lawfulPurpose, body.subjectIdentifiers].map(String).join(' ')
+    if (OSINT_REFUSE_RE.test(purposeBlob)) {
+      return res.status(400).json({
+        error:
+          'This intake appears inconsistent with lawful-purpose requirements. Contact rights@veritasworldwide.com if you believe this is an error.',
+      })
     }
 
     const orderId = `osint_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`

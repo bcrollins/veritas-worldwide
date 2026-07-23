@@ -2569,6 +2569,26 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'graham-student-loan-surcharge-healthcare-2010',
+        statement:
+          '“The average student will be spending $1,700 to $1,800 more during the life of their loan because of this surcharge” from health-care / student-loan reforms.',
+        saidAt: 'March 24, 2010',
+        context:
+          'Fox News On the Record interview attacking the student-loan direct-lending reform packaged with ACA reconciliation fixes.',
+        whyFalse:
+          'PolitiFact rated False. The reform eliminated FFEL private-lender subsidies and expanded Direct Loans; it did not raise the statutory 6.8% unsubsidized Stafford interest rate or impose a new student “surcharge.” The $1,700–$1,800 figure came from an unrelated Lamar Alexander amendment about hypothetical rate cuts for Tennessee borrowers, not a fee created by the bill.',
+        correction:
+          'Interest rates on federal student loans stayed the same under the 2010 reform; there was no new $1,700–$1,800 student surcharge.',
+        statementSource: 'Sen. Lindsey Graham on Fox News On the Record (March 24, 2010) — PolitiFact capture',
+        statementUrl: 'https://www.politifact.com/personalities/lindsey-graham/',
+        debunkSource: 'PolitiFact — False (March 30, 2010); New America / education-policy expert interviews',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2010/mar/30/lindsey-graham/new-bill-doesnt-alter-interest-rate/',
+        severity: 'material',
+        tier: 'verified',
+      },
+
     ],
     sourcedClaims: [
       {
