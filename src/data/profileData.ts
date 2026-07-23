@@ -4366,8 +4366,8 @@ export const PROFILES: PowerProfile[] = [
           'PolitiFact rated Pants on Fire. Contemporary video and reporting show a calm tarmac arrival with a greeting ceremony (including a child presenting a poem), not a run under sniper fire. Clinton later called the account a mistake.',
         correction:
           'The 1996 Tuzla landing included a greeting ceremony without documented sniper fire on the tarmac; the "heads down under sniper fire" narrative was false.',
-        statementSource: 'Clinton 2008 campaign remarks (PolitiFact statement capture)',
-        statementUrl: 'https://www.politifact.com/truth-o-meter/statements/2008/mar/25/hillary-clinton/video-shows-tarmac-welcome-no-snipers/',
+        statementSource: 'Clinton 2008 campaign remarks on 1996 Tuzla landing (widely archived; CBS/AP contemporaneous coverage)',
+        statementUrl: 'https://www.cbsnews.com/news/cbs-news-video-contradicts-clintons-story/',
         debunkSource: 'PolitiFact — Pants on Fire (March 25, 2008); CBS/AP video of arrival',
         debunkUrl: 'https://www.politifact.com/truth-o-meter/statements/2008/mar/25/hillary-clinton/video-shows-tarmac-welcome-no-snipers/',
         severity: 'material',
@@ -4384,8 +4384,8 @@ export const PROFILES: PowerProfile[] = [
           'PolitiFact rated False after the FBI completed its review: of emails examined, 113 contained classified information at the time they were sent or received (including Top Secret compartments in some cases), contradicting the absolute "no classified material" claim. Later "marked classified" reframes were a narrower, different claim.',
         correction:
           'FBI review found classified information in dozens of Clinton-server emails. Absolute statements that no classified material was emailed were false.',
-        statementSource: 'Clinton March 10, 2015 UN press conference (PolitiFact / contemporaneous transcript)',
-        statementUrl: 'https://www.politifact.com/truth-o-meter/statements/2016/jul/06/hillary-clinton/fbi-findings-tear-holes-hillary-clintons-email-def/',
+        statementSource: 'Clinton March 10, 2015 United Nations press conference (C-SPAN / contemporaneous transcript)',
+        statementUrl: 'https://www.c-span.org/video/?324668-1/hillary-clinton-news-conference',
         debunkSource: 'PolitiFact — False (July 6, 2016); FBI Director Comey July 5, 2016 statement',
         debunkUrl: 'https://www.politifact.com/truth-o-meter/statements/2016/jul/06/hillary-clinton/fbi-findings-tear-holes-hillary-clintons-email-def/',
         severity: 'egregious',
