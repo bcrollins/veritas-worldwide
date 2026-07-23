@@ -2227,4 +2227,15 @@ assert(termsLiveB && (termsLiveB[1].match(/to:/g) || []).length === 5, 'TERMS li
 assert(termsLiveB[1].includes('/membership'), 'TERMS Membership live')
 
 
+
+// RelatedHubs platform complete with Account five final sentinel
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'final emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'final soft-404 primary')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'final Privacy Membership')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'final Terms Membership')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'final A11Y Membership')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'final OSINT Dossiers')
+assert(surfaces.length >= 102, `final surfaces ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
