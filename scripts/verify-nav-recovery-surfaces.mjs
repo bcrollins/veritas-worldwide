@@ -897,4 +897,13 @@ assert(aboutHubsSrc.includes('about-related-hubs'), 'about-related-hubs testid')
 assert(aboutHubsSrc.includes('/methodology'), 'About Methodology dest unique final')
 assert(aboutHubsSrc.includes('/read'), 'About Read dest unique final')
 
+
+// Privacy/Terms bidirectional RelatedHubs
+const privacyHubs = read('src/pages/PrivacyPage.tsx')
+const termsHubs = read('src/pages/TermsPage.tsx')
+assert(privacyHubs.includes('privacy-related-hubs') && privacyHubs.includes('RelatedHubs'), 'Privacy RelatedHubs mount')
+assert(termsHubs.includes('terms-related-hubs') && termsHubs.includes('RelatedHubs'), 'Terms RelatedHubs mount')
+assert(privacyHubs.includes('/terms'), 'Privacy Terms cross-link unique')
+assert(termsHubs.includes('/privacy'), 'Terms Privacy cross-link unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
