@@ -1,7 +1,7 @@
 {
-  "version": "2.4.0",
+  "version": "2.5.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-22T23:34:01.005Z",
+  "generatedAt": "2026-07-23T07:00:14.664Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -99,6 +99,18 @@
       "href": "/brand-kit/04-social/quote-card.svg"
     },
     {
+      "label": "YouTube thumbnail (SVG)",
+      "href": "/brand-kit/04-social/youtube-thumbnail.svg"
+    },
+    {
+      "label": "LinkedIn article header",
+      "href": "/brand-kit/04-social/linkedin-article-header.svg"
+    },
+    {
+      "label": "IG carousel 1–3",
+      "href": "/brand-kit/04-social/ig-carousel-1.svg"
+    },
+    {
       "label": "Social asset matrix",
       "href": "/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md"
     },
@@ -113,6 +125,10 @@
     {
       "label": "Business card (SVG)",
       "href": "/brand-kit/09-templates/business-card.svg"
+    },
+    {
+      "label": "Press release template",
+      "href": "/brand-kit/09-templates/press-release-body.html"
     },
     {
       "label": "Media kit (HTML)",
@@ -141,6 +157,10 @@
     {
       "label": "Tokens (CSS)",
       "href": "/brand-kit/06-tokens/tokens.css"
+    },
+    {
+      "label": "ZIP SHA-256",
+      "href": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256"
     }
   ],
   "platformAssets": {
@@ -150,11 +170,17 @@
     },
     "instagram": {
       "profile": "/brand-kit/04-social/social-profile-400.png",
-      "story": "/brand-kit/04-social/story-1080x1920.svg"
+      "story": "/brand-kit/04-social/story-1080x1920.svg",
+      "carousel": [
+        "/brand-kit/04-social/ig-carousel-1.svg",
+        "/brand-kit/04-social/ig-carousel-2.svg",
+        "/brand-kit/04-social/ig-carousel-3.svg"
+      ]
     },
     "linkedin": {
       "logo": "/brand-kit/01-logos/logo-mark-512.png",
-      "banner": "/brand-kit/04-social/social-banner-linkedin.svg"
+      "banner": "/brand-kit/04-social/social-banner-linkedin.svg",
+      "articleHeader": "/brand-kit/04-social/linkedin-article-header.svg"
     },
     "facebook": {
       "profile": "/brand-kit/04-social/social-profile-400.png",
@@ -162,9 +188,10 @@
     },
     "youtube": {
       "profile": "/brand-kit/02-icons/app-icon-512.png",
-      "banner": "/brand-kit/04-social/social-banner-youtube.svg"
+      "banner": "/brand-kit/04-social/social-banner-youtube.svg",
+      "thumbnail": "/brand-kit/04-social/youtube-thumbnail.svg"
     }
   },
-  "zipBytes": 1120743,
-  "zipSha256": "7503f4533f8934c8641ef1d59992f2857515ca8d3249ab5250f44119fed1d9f3"
+  "zipBytes": 1200485,
+  "zipSha256": "6096e48e1410304da318d3a3fc6fff39e958232c5d67147bfc62ab53c9082d09"
 }

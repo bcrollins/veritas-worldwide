@@ -1,6 +1,6 @@
-# Veritas Worldwide Press — Brand Kit v2.4.0
+# Veritas Worldwide Press — Brand Kit v2.5.0
 
-**Updated:** 2026-07-22  
+**Updated:** 2026-07-23  
 **Domain:** veritasworldwide.com  
 **Product:** The Record  
 **Publisher:** Veritas Worldwide Press

@@ -59,8 +59,14 @@ const required = [
   '09-templates/media-kit.html',
   '04-social/quote-card.svg',
   '04-social/youtube-thumbnail.svg',
+  '04-social/linkedin-article-header.svg',
+  '04-social/ig-carousel-1.svg',
+  '04-social/ig-carousel-2.svg',
+  '04-social/ig-carousel-3.svg',
+  '09-templates/press-release-body.html',
   '07-docs/BRAND-VOICE.md',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
+  'exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256',
 ]
 
 let failed = 0
@@ -159,14 +165,25 @@ if (base) {
     '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
     '/og-image.png',
   ]
-  for (const path of paths) {
+  async function headOk(url) {
     try {
-      const res = await fetch(`${base}${path}`, { method: 'HEAD' })
-      if (!res.ok) bad(`live ${path} → ${res.status}`)
-      else ok(`live ${path} → ${res.status}`)
+      const res = await fetch(url, { method: 'HEAD' })
+      if (res.ok) return { ok: true, status: res.status }
+      const get = await fetch(url, { method: 'GET' })
+      return { ok: get.ok, status: get.status }
     } catch (e) {
-      bad(`live ${path} → ${e.message}`)
+      return { ok: false, status: 0, error: e instanceof Error ? e.message : String(e) }
     }
+  }
+  for (const path of paths) {
+    const url = `${base}${path}`
+    let result = await headOk(url)
+    if (!result.ok) {
+      await new Promise(r => setTimeout(r, 400))
+      result = await headOk(url)
+    }
+    if (!result.ok) bad(`live ${path} → ${result.error || result.status}`)
+    else ok(`live ${path} → ${result.status}`)
   }
 }
 

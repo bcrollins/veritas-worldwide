@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1128" height="191" viewBox="0 0 1128 191" role="img" aria-label="LinkedIn article header">
+  <rect width="1128" height="191" fill="#FAF8F5"/>
+  <rect x="0" y="0" width="1128" height="4" fill="#8B1A1A"/>
+  <rect x="0" y="187" width="1128" height="4" fill="#8B1A1A"/>
+  <circle cx="72" cy="95" r="36" fill="none" stroke="#8B1A1A" stroke-width="3"/>
+  <text x="72" y="106" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-weight="700" fill="#1A1A1A">V</text>
+  <text x="130" y="88" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="3" fill="#1A1A1A">VERITAS WORLDWIDE PRESS</text>
+  <text x="130" y="118" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2" fill="#666666">THE DOCUMENTARY RECORD · veritasworldwide.com</text>
+</svg>

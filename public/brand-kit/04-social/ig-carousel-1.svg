@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Instagram carousel slide 1">
+  <rect width="1080" height="1080" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1080" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="#8B1A1A"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="6" fill="#B8860B">VERITAS WORLDWIDE · 1/3</text>
+  <text x="80" y="420" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">The Record</text>
+  <text x="80" y="500" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.7)">A documentary archive of power and institutions</text>
+  <line x1="80" y1="560" x2="280" y2="560" stroke="#8B1A1A" stroke-width="2"/>
+  <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+</svg>

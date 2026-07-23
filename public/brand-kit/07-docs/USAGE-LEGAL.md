@@ -1,6 +1,6 @@
 # Veritas Worldwide — Brand Usage & Legal
 
-**Version:** 2.4.0
+**Version:** 2.5.0
 **Owner:** Veritas Worldwide Press
 **Contact:** rights@veritasworldwide.com
 

@@ -24,6 +24,8 @@ const PREVIEW_ASSETS = [
   { label: 'Business Card', href: '/brand-kit/09-templates/business-card.svg', bg: 'bg-parchment' },
   { label: 'Quote Card', href: '/brand-kit/04-social/quote-card.svg', bg: 'bg-black' },
   { label: 'YouTube Thumb', href: '/brand-kit/04-social/youtube-thumbnail.svg', bg: 'bg-black' },
+  { label: 'LinkedIn Article', href: '/brand-kit/04-social/linkedin-article-header.svg', bg: 'bg-parchment' },
+  { label: 'IG Carousel 1', href: '/brand-kit/04-social/ig-carousel-1.svg', bg: 'bg-black' },
 ]
 
 const TOKEN_SWATCHES = [
@@ -96,21 +98,30 @@ export default function AdminBrandKit() {
             </p>
           )}
         </div>
-        <a
-          href={zipHref}
-          download="Veritas-Worldwide-Ultimate-Brand-Kit.zip"
-          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded bg-crimson px-5 py-2.5 font-sans text-xs font-semibold tracking-wide text-white transition-colors hover:bg-crimson-light"
-        >
-          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-            />
-          </svg>
-          {zipLabel}
-        </a>
+        <div className="flex flex-col gap-2 sm:items-end">
+          <a
+            href={zipHref}
+            download="Veritas-Worldwide-Ultimate-Brand-Kit.zip"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded bg-crimson px-5 py-2.5 font-sans text-xs font-semibold tracking-wide text-white transition-colors hover:bg-crimson-light"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+            {zipLabel}
+          </a>
+          <a
+            href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256"
+            download
+            className="inline-flex min-h-[44px] items-center font-mono text-[10px] text-white/35 hover:text-crimson"
+          >
+            Download SHA-256 checksum →
+          </a>
+        </div>
       </div>
 
       {/* Health */}

@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.4.0'
+const KIT_VERSION = '2.5.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -526,6 +526,75 @@ function youtubeThumbnailSvg() {
 </svg>`
 }
 
+function linkedInArticleHeaderSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1128" height="191" viewBox="0 0 1128 191" role="img" aria-label="LinkedIn article header">
+  <rect width="1128" height="191" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1128" height="4" fill="${C.crimson}"/>
+  <rect x="0" y="187" width="1128" height="4" fill="${C.crimson}"/>
+  <circle cx="72" cy="95" r="36" fill="none" stroke="${C.crimson}" stroke-width="3"/>
+  <text x="72" y="106" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-weight="700" fill="${C.ink}">V</text>
+  <text x="130" y="88" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="3" fill="${C.ink}">VERITAS WORLDWIDE PRESS</text>
+  <text x="130" y="118" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2" fill="${C.inkMuted}">THE DOCUMENTARY RECORD · veritasworldwide.com</text>
+</svg>`
+}
+
+function igCarouselSlideSvg(n, title, subtitle) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Instagram carousel slide ${n}">
+  <rect width="1080" height="1080" fill="${C.black}"/>
+  <rect x="0" y="0" width="1080" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="${C.crimson}"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="6" fill="${C.gold}">VERITAS WORLDWIDE · ${n}/3</text>
+  <text x="80" y="420" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">${title}</text>
+  <text x="80" y="500" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.7)">${subtitle}</text>
+  <line x1="80" y1="560" x2="280" y2="560" stroke="${C.crimson}" stroke-width="2"/>
+  <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+</svg>`
+}
+
+function pressReleaseBodyHtml() {
+  return [
+    '<!DOCTYPE html>',
+    '<html lang="en">',
+    '<head>',
+    '  <meta charset="UTF-8" />',
+    '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
+    '  <title>Press Release Template — Veritas Worldwide Press</title>',
+    '  <style>',
+    '    body{margin:0;font-family:Georgia,serif;background:#FAF8F5;color:#1A1A1A;line-height:1.6}',
+    '    .wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}',
+    '    .label{font-family:Inter,Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8B1A1A;font-weight:700}',
+    '    h1{font-size:1.75rem;margin:16px 0 8px}',
+    '    .meta{font-family:Inter,Helvetica,Arial,sans-serif;font-size:13px;color:#666}',
+    '    hr{border:0;border-top:1px solid #8B1A1A;margin:24px 0;opacity:.4}',
+    '    p{margin:0 0 1rem}',
+    '    .contact{margin-top:2rem;padding-top:1rem;border-top:1px solid #ddd;font-family:Inter,Helvetica,Arial,sans-serif;font-size:13px;color:#666}',
+    '    a{color:#8B1A1A}',
+    '  </style>',
+    '</head>',
+    '<body>',
+    '  <div class="wrap">',
+    '    <p class="label">For immediate release</p>',
+    '    <h1>[HEADLINE — DOCUMENTARY FACT, NOT HYPE]</h1>',
+    '    <p class="meta">[CITY] — [DATE] — Veritas Worldwide Press</p>',
+    '    <hr />',
+    '    <p><strong>Lead:</strong> Open with the institutional fact, document, or filing. Name the source.</p>',
+    '    <p><strong>Body:</strong> Separate verified documentation from analysis. Use evidence-tier language where claims are contested.</p>',
+    '    <p><strong>Quote (optional):</strong> Primary sources. Public record. Your conclusions.</p>',
+    '    <p><strong>Boilerplate:</strong> Veritas Worldwide is an independent investigative publisher. The Record is a multi-chapter documentary archive built on primary sources and public records. Full archive: <a href="https://veritasworldwide.com">veritasworldwide.com</a>.</p>',
+    '    <div class="contact">',
+    '      Media contact: <a href="mailto:rights@veritasworldwide.com">rights@veritasworldwide.com</a><br />',
+    '      Media kit: <a href="https://veritasworldwide.com/media-kit">veritasworldwide.com/media-kit</a><br />',
+    '      Brand ZIP: <a href="https://veritasworldwide.com/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip">Ultimate Brand Kit</a>',
+    '    </div>',
+    '  </div>',
+    '</body>',
+    '</html>',
+    '',
+  ].join('\n')
+}
+
 function brandVoiceMd() {
   return `# Brand Voice — Veritas Worldwide Press
 
@@ -863,8 +932,13 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('09-templates/business-card.svg', businessCardSvg())
   writeSvg('04-social/quote-card.svg', quoteCardSvg())
   writeSvg('04-social/youtube-thumbnail.svg', youtubeThumbnailSvg())
+  writeSvg('04-social/linkedin-article-header.svg', linkedInArticleHeaderSvg())
+  writeSvg('04-social/ig-carousel-1.svg', igCarouselSlideSvg(1, 'The Record', 'A documentary archive of power and institutions'))
+  writeSvg('04-social/ig-carousel-2.svg', igCarouselSlideSvg(2, 'Primary sources', 'Public filings, transcripts, and attributable records'))
+  writeSvg('04-social/ig-carousel-3.svg', igCarouselSlideSvg(3, 'Your conclusions', 'Methodology and sources stay open to inspect'))
   writeFileSync(join(KIT, '09-templates', 'email-signature.html'), emailSignatureHtml())
   writeFileSync(join(KIT, '09-templates', 'media-kit.html'), mediaKitHtml())
+  writeFileSync(join(KIT, '09-templates', 'press-release-body.html'), pressReleaseBodyHtml())
   writeFileSync(join(KIT, '06-tokens', 'tokens.css'), tokensCss())
   writeFileSync(join(KIT, '07-docs', 'HASHTAGS.md'), hashtagsMd())
   writeFileSync(join(KIT, '07-docs', 'WCAG-CONTRAST.md'), wcagContrastMd())
@@ -893,6 +967,10 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/highlight-record.svg', '04-social/highlight-record.png', 400],
     ['04-social/quote-card.svg', '04-social/quote-card.png', 1080],
     ['04-social/youtube-thumbnail.svg', '04-social/youtube-thumbnail.png', 1280],
+    ['04-social/linkedin-article-header.svg', '04-social/linkedin-article-header.png', 1128],
+    ['04-social/ig-carousel-1.svg', '04-social/ig-carousel-1.png', 1080],
+    ['04-social/ig-carousel-2.svg', '04-social/ig-carousel-2.png', 1080],
+    ['04-social/ig-carousel-3.svg', '04-social/ig-carousel-3.png', 1080],
   ]
   for (const [src, dest, w] of rasters) {
     try {
@@ -945,10 +1023,14 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'X banner (SVG)', href: '/brand-kit/04-social/social-banner-x.svg' },
       { label: 'IG story (SVG)', href: '/brand-kit/04-social/story-1080x1920.svg' },
       { label: 'Quote card (SVG)', href: '/brand-kit/04-social/quote-card.svg' },
+      { label: 'YouTube thumbnail (SVG)', href: '/brand-kit/04-social/youtube-thumbnail.svg' },
+      { label: 'LinkedIn article header', href: '/brand-kit/04-social/linkedin-article-header.svg' },
+      { label: 'IG carousel 1–3', href: '/brand-kit/04-social/ig-carousel-1.svg' },
       { label: 'Social asset matrix', href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md' },
       { label: 'Email signature (HTML)', href: '/brand-kit/09-templates/email-signature.html' },
       { label: 'Letterhead (SVG)', href: '/brand-kit/09-templates/letterhead.svg' },
       { label: 'Business card (SVG)', href: '/brand-kit/09-templates/business-card.svg' },
+      { label: 'Press release template', href: '/brand-kit/09-templates/press-release-body.html' },
       { label: 'Media kit (HTML)', href: '/brand-kit/09-templates/media-kit.html' },
       { label: 'Public media kit page', href: '/media-kit' },
       { label: 'Brand guide (MD)', href: '/brand-kit/07-docs/BRAND-GUIDE.md' },
@@ -956,13 +1038,30 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },
       { label: 'Tokens (CSS)', href: '/brand-kit/06-tokens/tokens.css' },
+      { label: 'ZIP SHA-256', href: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256' },
     ],
     platformAssets: {
       x: { profile: '/brand-kit/04-social/social-profile-400.png', banner: '/brand-kit/04-social/social-banner-x.svg' },
-      instagram: { profile: '/brand-kit/04-social/social-profile-400.png', story: '/brand-kit/04-social/story-1080x1920.svg' },
-      linkedin: { logo: '/brand-kit/01-logos/logo-mark-512.png', banner: '/brand-kit/04-social/social-banner-linkedin.svg' },
+      instagram: {
+        profile: '/brand-kit/04-social/social-profile-400.png',
+        story: '/brand-kit/04-social/story-1080x1920.svg',
+        carousel: [
+          '/brand-kit/04-social/ig-carousel-1.svg',
+          '/brand-kit/04-social/ig-carousel-2.svg',
+          '/brand-kit/04-social/ig-carousel-3.svg',
+        ],
+      },
+      linkedin: {
+        logo: '/brand-kit/01-logos/logo-mark-512.png',
+        banner: '/brand-kit/04-social/social-banner-linkedin.svg',
+        articleHeader: '/brand-kit/04-social/linkedin-article-header.svg',
+      },
       facebook: { profile: '/brand-kit/04-social/social-profile-400.png', cover: '/brand-kit/04-social/social-banner-facebook.svg' },
-      youtube: { profile: '/brand-kit/02-icons/app-icon-512.png', banner: '/brand-kit/04-social/social-banner-youtube.svg' },
+      youtube: {
+        profile: '/brand-kit/02-icons/app-icon-512.png',
+        banner: '/brand-kit/04-social/social-banner-youtube.svg',
+        thumbnail: '/brand-kit/04-social/youtube-thumbnail.svg',
+      },
     },
   }
   writeFileSync(join(KIT, 'manifest.json'), JSON.stringify(manifestBase, null, 2) + '\n')

@@ -1,6 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+
+const BOILERPLATE =
+  'Veritas Worldwide is an independent investigative publisher. Our flagship work, The Record, is a multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier labeling. Primary sources. Public record. Your conclusions.'
 
 const ASSETS = [
   {
@@ -21,29 +24,37 @@ const ASSETS = [
   },
   {
     title: 'Social & Open Graph',
-    description: 'Profile avatars, platform banners, story, and share card.',
+    description: 'Profile avatars, platform banners, story, carousels, and share cards.',
     links: [
       { href: '/og-image.png', label: 'OG image' },
       { href: '/brand-kit/04-social/social-banner-x.svg', label: 'X banner' },
       { href: '/brand-kit/04-social/story-1080x1920.svg', label: 'IG story' },
+      { href: '/brand-kit/04-social/ig-carousel-1.svg', label: 'IG carousel 1' },
+      { href: '/brand-kit/04-social/ig-carousel-2.svg', label: 'IG carousel 2' },
+      { href: '/brand-kit/04-social/ig-carousel-3.svg', label: 'IG carousel 3' },
       { href: '/brand-kit/04-social/quote-card.svg', label: 'Quote card' },
       { href: '/brand-kit/04-social/youtube-thumbnail.svg', label: 'YouTube thumbnail' },
+      { href: '/brand-kit/04-social/linkedin-article-header.svg', label: 'LinkedIn article header' },
       { href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md', label: 'Asset matrix' },
     ],
   },
   {
     title: 'Press templates',
-    description: 'Letterhead, email signature, business card, press header.',
+    description: 'Letterhead, email signature, business card, press release body.',
     links: [
       { href: '/brand-kit/09-templates/letterhead.svg', label: 'Letterhead' },
       { href: '/brand-kit/09-templates/email-signature.html', label: 'Email signature' },
       { href: '/brand-kit/09-templates/business-card.svg', label: 'Business card' },
+      { href: '/brand-kit/09-templates/press-release-body.html', label: 'Press release template' },
       { href: '/brand-kit/09-templates/media-kit.html', label: 'Static media kit' },
     ],
   },
 ]
 
 export default function MediaKitPage() {
+  const [kitVersion, setKitVersion] = useState<string | null>(null)
+  const [copied, setCopied] = useState(false)
+
   useEffect(() => {
     setMetaTags({
       title: `Media Kit | ${SITE_NAME}`,
@@ -71,11 +82,25 @@ export default function MediaKitPage() {
         },
       },
     })
+    let cancelled = false
+    void fetch('/brand-kit/manifest.json', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => {
+        if (!cancelled && data?.version) setKitVersion(String(data.version))
+      })
+      .catch(() => {})
     return () => {
+      cancelled = true
       clearMetaTags()
       removeJsonLd()
     }
   }, [])
+
+  const copyBoilerplate = () => {
+    void navigator.clipboard.writeText(BOILERPLATE)
+    setCopied(true)
+    window.setTimeout(() => setCopied(false), 2000)
+  }
 
   return (
     <div className="mx-auto w-full max-w-[1920px]">
@@ -95,7 +120,7 @@ export default function MediaKitPage() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-2xl">
             <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-crimson">
-              Press &amp; brand
+              Press &amp; brand{kitVersion ? ` · v${kitVersion}` : ''}
             </p>
             <h1 className="mt-3 font-display text-3xl font-bold text-ink md:text-5xl">Media Kit</h1>
             <p className="mt-4 font-body text-lg leading-relaxed text-ink-muted">
@@ -140,12 +165,17 @@ export default function MediaKitPage() {
         </div>
 
         <section className="mt-12">
-          <h2 className="font-display text-2xl font-semibold text-ink">Boilerplate</h2>
-          <p className="mt-4 max-w-3xl font-body leading-relaxed text-ink-muted">
-            Veritas Worldwide is an independent investigative publisher. Our flagship work, The Record, is a
-            multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier
-            labeling. Primary sources. Public record. Your conclusions.
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-display text-2xl font-semibold text-ink">Boilerplate</h2>
+            <button
+              type="button"
+              onClick={copyBoilerplate}
+              className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+            >
+              {copied ? 'Copied' : 'Copy boilerplate'}
+            </button>
+          </div>
+          <p className="mt-4 max-w-3xl font-body leading-relaxed text-ink-muted">{BOILERPLATE}</p>
         </section>
 
         <section className="mt-12">
