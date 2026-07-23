@@ -2126,9 +2126,10 @@ const staticPages = [
   },
   {
     route: '/institute',
-    title: 'Veritas Institute | Practical Skills Catalog, Guides, and Field Manual',
+    title: 'Veritas Institute Field Manual | Veritas Worldwide',
     heading: 'Veritas Institute',
-    description: 'A source-backed field manual and practical course catalog covering trades, repair, preparedness, food resilience, and healthcare-support work.',
+    description:
+      'Veritas Institute pairs a printable field manual for ordinary emergencies with source-backed trade, repair, preparedness, food, and healthcare-support courses.',
     body: [
       'Veritas Institute answers immediate household questions first, then routes readers into practical trade and repair course paths with the same source-first discipline as the main publication.',
     ],
@@ -2200,9 +2201,10 @@ const staticPages = [
   },
   {
     route: '/timeline',
-    title: 'Timeline | Veritas Worldwide',
+    title: 'Interactive Timeline | Veritas Worldwide',
     heading: 'Timeline',
-    description: 'A chronological index of the events, institutions, and turning points documented in The Record.',
+    description:
+      'Chronological timeline of The Record — 32 archive parts of primary-source history from 1694 to present. Explore power, money, and institutions by era.',
     body: [
       'The timeline connects publication chapters into a single navigable chronology so readers can track institutional continuity across decades and jurisdictions.',
     ],
@@ -2211,9 +2213,10 @@ const staticPages = [
   },
   {
     route: '/analytics',
-    title: 'Reader Analytics | Veritas Worldwide',
+    title: 'Reader Analytics | The Record — Veritas Worldwide',
     heading: 'Reader Analytics',
-    description: 'Public readership metrics for The Record and the broader Veritas publication footprint.',
+    description:
+      'Public readership analytics for The Record — lifetime readers, daily traffic, and geographic distribution as a transparency surface.',
     body: [
       'Reader analytics summarize how the publication is being discovered, read, and revisited without turning the editorial product into an ad-driven growth trap.',
     ],
@@ -2238,9 +2241,10 @@ const staticPages = [
   },
   {
     route: '/privacy',
-    title: 'Privacy Policy | Veritas Worldwide',
+    title: 'Privacy Policy | The Record — Veritas Worldwide',
     heading: 'Privacy Policy',
-    description: 'How reader data, analytics, support flows, and subscriptions are handled across Veritas properties.',
+    description:
+      'How Veritas Worldwide collects, uses, and protects your information. Minimal analytics, no ads, no data sales.',
     body: [
       'The publication minimizes data collection, keeps analytics purpose-specific, and avoids turning readership into an advertising product.',
     ],
@@ -2254,9 +2258,10 @@ const staticPages = [
   },
   {
     route: '/terms',
-    title: 'Terms of Use | Veritas Worldwide',
+    title: 'Terms of Use | The Record — Veritas Worldwide',
     heading: 'Terms of Use',
-    description: 'Usage terms for The Record, supporting materials, and Veritas publication assets.',
+    description:
+      'Terms of use for Veritas Worldwide. Free open access; content licensed under Creative Commons BY-NC-SA 4.0.',
     body: [
       'The publication is intended for public reading, citation, and responsible sharing. Source material remains attributable to its original creators and archives.',
     ],
@@ -2387,7 +2392,8 @@ const staticPages = [
     route: '/read',
     title: 'Read The Record | Veritas Worldwide',
     heading: 'Read The Record',
-    description: 'A chapter-by-chapter reader for Volume I of The Record.',
+    description:
+      'Read The Record online in full. Every chapter, source list, and archive path is open to every reader — free primary-source documentary history.',
     body: [
       'The reader experience is optimized for longform investigation: typography, chapter sequencing, and printability are designed for sustained documentary reading.',
     ],
@@ -2396,9 +2402,10 @@ const staticPages = [
   },
   {
     route: '/news',
-    title: 'News | Veritas Worldwide',
+    title: 'Current Events — Primary Source Journalism | Veritas Worldwide',
     heading: 'Current Events',
-    description: 'Source-first reporting on power, money, accountability, and the institutions shaping current events.',
+    description:
+      'Daily investigative reporting on power, money, and institutions. Every claim sourced to primary documents. No anonymous sources. No spin.',
     body: [
       'The news desk extends the methodology of The Record into live coverage, emphasizing primary documents, verified sourcing, and restrained editorial framing.',
     ],
@@ -2408,7 +2415,8 @@ const staticPages = [
     route: '/content-pack',
     title: 'Content Packs & Brand Kit | Veritas Worldwide',
     heading: 'Content Packs & Brand Kit',
-    description: 'Official Veritas Worldwide assets for press, advocacy, and social distribution.',
+    description:
+      'Official brand assets, shareable social graphics, pre-written posts, and article cards. Free for press, social media, and advocacy with attribution.',
     body: [
       'Content packs are designed to preserve source integrity while making sharing easier across social, newsletter, and press contexts.',
     ],
@@ -2426,9 +2434,10 @@ const staticPages = [
   },
   {
     route: '/forum',
-    title: 'Veritas Forum | Veritas Worldwide',
+    title: 'Community Forum Beta | Veritas Worldwide',
     heading: 'Veritas Forum',
-    description: 'Reader discussion around evidence, chapters, current reporting, and the documentary record.',
+    description:
+      'Local beta forum for discussing evidence, testing reader workflows, and drafting archive conversation features.',
     body: [
       'The forum is built for accountable discussion around sourced material, not algorithmic outrage or engagement bait.',
     ],
