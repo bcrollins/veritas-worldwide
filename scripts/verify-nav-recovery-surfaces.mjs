@@ -1003,4 +1003,9 @@ assert(appZFinal.includes('z-50'), 'tab z-50 unique final')
 const stickyZFinal = read('src/components/StickyMembershipBar.tsx')
 assert(stickyZFinal.includes('z-40'), 'membership z-40 unique final')
 
+
+// RelatedHubs touch target unique final
+const relatedTouch = read('src/components/RelatedHubs.tsx')
+assert(relatedTouch.includes('min-h-[44px]'), 'RelatedHubs min-h 44 unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
