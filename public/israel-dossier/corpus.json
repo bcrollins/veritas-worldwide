@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:40:28.125Z",
+  "generatedAt": "2026-07-23T07:43:33.696Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -9,7 +9,7 @@
     "actors": 47,
     "moneyTrailNodes": 26,
     "historicalWarCrimesPack": 69,
-    "legalCases": 16,
+    "legalCases": 17,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
@@ -6938,6 +6938,15 @@
       "ruling": "Found it plausible that rights under the Genocide Convention are at risk; ordered Israel to take all measures within its power to prevent genocidal acts, prevent and punish incitement, ensure humanitarian assistance, and preserve evidence. Distinct depth entry for the January floor order (complementing the ongoing case card and later Rafah order).",
       "significance": "First ICJ provisional-measures order against Israel under the Genocide Convention — foundational legal posture for all subsequent orders in Case 192.",
       "sourceUrl": "https://www.icj-cij.org/case/192",
+      "status": "ongoing"
+    },
+    {
+      "title": "UNHRC Independent International Commission of Inquiry — OPT (Ongoing)",
+      "court": "UN Human Rights Council Commission of Inquiry",
+      "date": "2021–ongoing (post–May 2021 mandate; expanded post–Oct 7)",
+      "ruling": "Standing Commission of Inquiry continues to investigate all alleged violations of international humanitarian and human rights law in the Occupied Palestinian Territory and Israel, including post–October 7 conduct by all parties. Periodic reports document patterns of civilian harm, settlement violence, and accountability gaps.",
+      "significance": "Ongoing multi-year UN investigative architecture distinct from one-off fact-finding missions (Goldstone, GMR). Provides continuous public-record reporting stream used by courts, states, and civil society.",
+      "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index",
       "status": "ongoing"
     }
   ],

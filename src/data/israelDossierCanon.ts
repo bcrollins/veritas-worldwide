@@ -1863,6 +1863,19 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     sourceUrl: 'https://www.icj-cij.org/case/192',
     status: 'ongoing',
   },
+
+  {
+    title: 'UNHRC Independent International Commission of Inquiry — OPT (Ongoing)',
+    court: 'UN Human Rights Council Commission of Inquiry',
+    date: '2021–ongoing (post–May 2021 mandate; expanded post–Oct 7)',
+    ruling:
+      'Standing Commission of Inquiry continues to investigate all alleged violations of international humanitarian and human rights law in the Occupied Palestinian Territory and Israel, including post–October 7 conduct by all parties. Periodic reports document patterns of civilian harm, settlement violence, and accountability gaps.',
+    significance:
+      'Ongoing multi-year UN investigative architecture distinct from one-off fact-finding missions (Goldstone, GMR). Provides continuous public-record reporting stream used by courts, states, and civil society.',
+    sourceUrl: 'https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index',
+    status: 'ongoing',
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [
