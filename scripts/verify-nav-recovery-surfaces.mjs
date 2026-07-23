@@ -2005,4 +2005,16 @@ assert(relatedEmphUlt.includes('no-print'), 'RelatedHubs no-print with emphasize
 assert(relatedEmphUlt.includes('min-h-[44px]'), 'emphasize inherits 44px ultimate')
 
 
+
+// NotFound no Link import after platformization
+const nfNoLink = read('src/pages/NotFoundPage.tsx')
+assert(!nfNoLink.includes("from 'react-router-dom'") && !nfNoLink.includes('from "react-router-dom"'), 'NotFound no direct react-router import')
+assert(nfNoLink.includes('RelatedHubs'), 'NotFound RelatedHubs only recovery')
+
+// emphasizeTo optional prop default undefined safe
+const relatedEmphSafe = read('src/components/RelatedHubs.tsx')
+assert(relatedEmphSafe.includes('emphasizeTo'), 'emphasizeTo present')
+assert(relatedEmphSafe.includes('hub.to === emphasizeTo'), 'emphasize path match')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
