@@ -153,6 +153,7 @@ assert(relatedHubsSrc.includes('/read') && relatedHubsSrc.includes('/search'), '
 // ResearchHubChips excludePath actually filters (not dead-true)
 const researchChipsSrc = read('src/components/ResearchHubChips.tsx')
 assert(researchChipsSrc.includes('if (c.to === excludePath) return false'), 'ResearchHubChips excludePath filters')
+assert(read('src/pages/NewsPage.tsx').includes('RelatedHubs'), 'NewsPage mounts RelatedHubs')
 
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')

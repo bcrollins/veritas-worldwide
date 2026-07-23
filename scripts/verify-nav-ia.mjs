@@ -165,8 +165,9 @@ assert(timeline.includes('to="/read"'), 'Timeline links Read hub')
 
 // News desk related hubs (Browse secondary)
 const news = fs.readFileSync(path.join(root, 'src/pages/NewsPage.tsx'), 'utf8')
-assert(news.includes('data-testid="news-related-hubs"'), 'News related hubs required')
-assert(news.includes('to="/forum"'), 'News links Forum')
+assert(news.includes('data-testid="news-related-hubs"') || news.includes('testId="news-related-hubs"'), 'News related hubs required')
+assert(news.includes('to="/forum"') || news.includes("to: '/forum'"), 'News links Forum')
+assert(news.includes('RelatedHubs'), 'News mounts RelatedHubs')
 
 // Topics related hubs
 const topics = fs.readFileSync(path.join(root, 'src/pages/TopicsIndexPage.tsx'), 'utf8')

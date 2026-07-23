@@ -88,6 +88,13 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 - Subscribe / Support / OSINT success related hubs
 - Pure floors lock all new testids; peer densify unthrashed
 
+## RelatedHubs component (Sprint 6b)
+- `src/components/RelatedHubs.tsx` — `PRIMARY_RELATED_HUBS` (≤5) shared recovery chips
+- Migrated: Aipac, Article, Chapter, Topic, Profile, Support/Subscribe success
+- `ResearchHubChips` excludePath now filters (was dead-true)
+- Pure recovery suite **90 surface needles**
+- Commits: `f04fca1` detail surfaces → `76fbd3e` membership locks → `c42331b` RelatedHubs
+
 | `75ff335` | recovery suite 40 needles (not-found-page) |
 
 | `c18116b` | membership↔cookie consent event contract |
