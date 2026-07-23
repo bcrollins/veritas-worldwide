@@ -20,6 +20,9 @@
 | `54be9f8` | Topics related hubs |
 | `a00e50f` | Institute research chips + a11y floors |
 | `cdf9182` | About + Media Kit related hubs |
+| `97f9cae` | Privacy + Terms related hubs |
+| `bb5eddd` | Accessibility + Membership related hubs |
+| `6b51bd1` | Search idle-state hub destinations |
 
 ## Floors
 - `npm run verify:nav-ia` — expanded pure suite
