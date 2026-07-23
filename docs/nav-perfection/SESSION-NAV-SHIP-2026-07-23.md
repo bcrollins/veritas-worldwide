@@ -165,3 +165,12 @@ Locked after platformization so multi-agent densify cannot drift IA:
 
 **Live matrix (observed green while densify tip advances):**  
 `mobile-tab-bar` · `RelatedHubs` · `DossierHubSpokes` · `ResearchHubChips` · `home-hub-cta-row` · `search-idle/empty` · `not-found-hub-chips` · `sticky-membership-bar` · `server-soft-404` + 5 hub hrefs · health checks all true
+
+## Pure densification continuous wave (shipped intervals)
+Incremental pure-only commits after RelatedHubs platformization — each independently reviewable:
+touch targets, no-print, aria names, mount breadth, drawer retention, soft-404 labels,
+Home/Search/NotFound/Bookmarks/Profiles/Read/MediaKit/Institute/OSINT/AIPAC/Membership/Legal/
+About/A11y/Timeline/Topics destinations, z-order stacking, safe-area chrome.
+
+**verify:pure** 46 suites green throughout. Peer densify unthrashed.
+**Live:** RelatedHubs + mobile-tab-bar + DossierHubSpokes + ResearchHubChips + soft-404 5 hubs continuously green under densify tip advance.
