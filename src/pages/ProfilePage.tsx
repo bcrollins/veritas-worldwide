@@ -24,6 +24,8 @@ import {
   clearMetaTags,
   setJsonLd,
   removeJsonLd,
+  breadcrumbJsonLd,
+  clampMetaDescription,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo';
@@ -768,11 +770,21 @@ export default function ProfilePage(): React.ReactNode {
     );
     setRelatedProfiles(related.slice(0, 6));
 
-    // SEO
+    // SEO — clamp description for SERP; absolute photo URL for Person/image discovery
+    const profileUrl = `${SITE_URL}/profile/${foundProfile.id}`
+    const photoPath = getProfilePhoto(foundProfile.id)
+    const absolutePhoto =
+      photoPath.startsWith('http')
+        ? photoPath
+        : `${SITE_URL}${photoPath.startsWith('/') ? '' : '/'}${photoPath}`
     setMetaTags({
       title: `${foundProfile.name} — Power Profile | ${SITE_NAME}`,
-      description: foundProfile.summary,
-      url: `${SITE_URL}/profile/${foundProfile.id}`,
+      description: clampMetaDescription(
+        foundProfile.summary ||
+          `${foundProfile.name}: public-record power profile with dual-cited integrity docket and source trail.`,
+      ),
+      url: profileUrl,
+      image: absolutePhoto,
     });
 
     setJsonLd([
@@ -780,24 +792,20 @@ export default function ProfilePage(): React.ReactNode {
         '@context': 'https://schema.org',
         '@type': 'Person',
         name: foundProfile.name,
-        url: `${SITE_URL}/profile/${foundProfile.id}`,
+        url: profileUrl,
         description: foundProfile.summary,
         ...(foundProfile.title && { jobTitle: foundProfile.title }),
         ...(foundProfile.category && { knowsAbout: foundProfile.category }),
         ...(foundProfile.born && { birthDate: foundProfile.born }),
         ...(foundProfile.education && { alumniOf: foundProfile.education }),
-        image: getProfilePhoto(foundProfile.id),
+        image: absolutePhoto,
         sameAs: foundProfile.websites?.map(w => w.url) || [],
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Power Profiles', item: `${SITE_URL}/profiles` },
-          { '@type': 'ListItem', position: 3, name: foundProfile.name, item: `${SITE_URL}/profile/${foundProfile.id}` },
-        ],
-      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Power Profiles', url: `${SITE_URL}/profiles` },
+        { name: foundProfile.name, url: profileUrl },
+      ]),
     ]);
 
     // Lead scoring + GA4

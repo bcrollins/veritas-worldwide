@@ -43,7 +43,7 @@ export default function NotFoundPage() {
       <p className="mx-auto mb-10 max-w-md font-body text-sm text-ink-faint">
         The page you requested does not exist, may have been moved, or is not yet published.
       </p>
-      <div className="flex flex-col justify-center gap-4 sm:flex-row">
+      <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
         <Link
           to="/"
           className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-crimson px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-crimson-dark"
@@ -61,6 +61,30 @@ export default function NotFoundPage() {
           className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
         >
           Browse The Record
+        </Link>
+        <Link
+          to="/profiles"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
+        >
+          Power Profiles
+        </Link>
+        <Link
+          to="/israel-dossier"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
+        >
+          Israel Dossier
+        </Link>
+        <Link
+          to="/methodology"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
+        >
+          Methodology
+        </Link>
+        <Link
+          to="/news"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-6 py-3 font-sans text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
+        >
+          Current Events
         </Link>
       </div>
     </div>

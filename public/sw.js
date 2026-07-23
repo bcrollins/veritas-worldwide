@@ -1,7 +1,8 @@
-// Veritas Worldwide — Service Worker v2.0
+// Veritas Worldwide — Service Worker v2.1
 // Cache-first for hashed static assets, network-first for navigation + API
-const CACHE_VERSION = 'veritas-v2'
-const STATIC_CACHE = 'veritas-static-v2'
+// Bump CACHE_VERSION on HTML/meta SEO deploys so stale shells do not stick.
+const CACHE_VERSION = 'veritas-v2.1-seo'
+const STATIC_CACHE = 'veritas-static-v2.1'
 const OFFLINE_URL = '/'
 
 // Pre-cache these on install

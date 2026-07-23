@@ -28,6 +28,9 @@ assert(seo.includes('faqJsonLd'), 'seo.ts must export FAQPage helper')
 assert(seo.includes('breadcrumbJsonLd'), 'seo.ts must export BreadcrumbList helper')
 assert(seo.includes('organizationJsonLd'), 'seo.ts must export Organization helper')
 assert(seo.includes('sameAs'), 'Organization schema must include sameAs for E-E-A-T')
+assert(seo.includes('og:image:alt'), 'seo.ts must set og:image:alt for image SEO')
+assert(seo.includes('max-image-preview:large'), 'seo.ts must set Discover-friendly robots max-image-preview')
+assert(seo.includes('imageAlt'), 'SEOConfig must accept imageAlt')
 
 const robots = read('public/robots.txt')
 assert(robots.includes('Sitemap: https://veritasworldwide.com/sitemap.xml'), 'robots must declare sitemap')
@@ -35,6 +38,22 @@ assert(robots.includes('Disallow: /admin'), 'robots must disallow admin')
 assert(robots.includes('Disallow: /subscribe/success'), 'robots must disallow transactional success')
 assert(robots.includes('Allow: /llms.txt'), 'robots must allow llms.txt for GEO/AI crawlers')
 assert(robots.includes('GPTBot') || robots.includes('ClaudeBot'), 'robots should address AI crawlers')
+assert(robots.includes('record-of-jesus-christ/corpus.json'), 'robots must allow ROC machine corpus')
+assert(robots.includes('record-of-jesus-christ.pdf'), 'robots must allow ROC PDF')
+
+const searchPage = read('src/pages/SearchPage.tsx')
+assert(searchPage.includes("robots: 'noindex, follow'"), 'Search page must be noindex to avoid thin SERP clutter')
+
+const bookmarks = read('src/pages/BookmarksPage.tsx')
+assert(bookmarks.includes('noindex'), 'Bookmarks must be noindex')
+
+const home = read('src/pages/HomePage.tsx')
+assert(home.includes('Primary Sources') || home.includes('primary sources'), 'Home title/description should target high-intent primary-source queries')
+
+const roc = read('src/pages/RecordOfJesusChristPage.tsx')
+assert(roc.includes('faqJsonLd'), 'ROC must emit FAQPage schema for rich results / voice')
+assert(roc.includes('breadcrumbJsonLd'), 'ROC must emit BreadcrumbList')
+assert(roc.includes('roc-claim-search') || roc.includes('roc-claim-search'), 'ROC must offer on-page claim search')
 
 const subscribe = read('src/pages/SubscribeSuccessPage.tsx')
 assert(subscribe.includes("robots: 'noindex, nofollow'"), 'subscribe success must be noindex')
@@ -45,6 +64,9 @@ assert(support.includes("robots: 'noindex, nofollow'"), 'support success must be
 const notFound = read('src/pages/NotFoundPage.tsx')
 assert(notFound.includes("robots: 'noindex, nofollow'"), 'NotFoundPage must be noindex')
 assert(notFound.includes('404'), 'NotFoundPage must surface 404')
+assert(notFound.includes('/profiles'), 'NotFoundPage must hub-link Power Profiles for recovery')
+assert(notFound.includes('/israel-dossier'), 'NotFoundPage must hub-link Israel Dossier')
+assert(notFound.includes('/methodology'), 'NotFoundPage must hub-link Methodology')
 
 const app = read('src/App.tsx')
 assert(app.includes('NotFoundPage'), 'App catch-all must use NotFoundPage')
@@ -58,6 +80,24 @@ const methodology = read('src/pages/MethodologyPage.tsx')
 assert(methodology.includes('faqJsonLd'), 'Methodology must emit FAQPage schema')
 assert(methodology.includes('breadcrumbJsonLd'), 'Methodology must emit breadcrumbs')
 
+const article = read('src/pages/ArticlePage.tsx')
+assert(article.includes('breadcrumbJsonLd'), 'News articles must emit BreadcrumbList')
+assert(article.includes('isAccessibleForFree'), 'NewsArticle schema should mark free access')
+
+const sources = read('src/pages/SourcesPage.tsx')
+assert(sources.includes('faqJsonLd'), 'Sources must emit FAQPage for voice/PAA queries')
+assert(sources.includes('How do I verify a claim'), 'Sources must use natural-language H2 for voice search')
+
+const institute = read('src/pages/InstitutePage.tsx')
+assert(
+  institute.includes('Veritas Institute Field Manual'),
+  'Institute title should stay SERP-compact',
+)
+
+const profile = read('src/pages/ProfilePage.tsx')
+assert(profile.includes('breadcrumbJsonLd'), 'Profiles must use breadcrumbJsonLd helper')
+assert(profile.includes('clampMetaDescription'), 'Profile meta descriptions must be clamped')
+
 const prerender = read('scripts/prerender.mjs')
 assert(prerender.includes('xmlns:image='), 'sitemap must declare image namespace')
 assert(prerender.includes('image:image'), 'sitemap entries must support image:image')
@@ -67,9 +107,16 @@ assert(
 )
 
 // Home Organization sameAs still present
-const home = read('src/pages/HomePage.tsx')
 assert(home.includes('sameAs'), 'Home Organization JSON-LD must include sameAs')
 assert(home.includes('WebSite'), 'Home must emit WebSite schema')
+assert(
+  home.includes('github.com/bcrollins/veritas-worldwide'),
+  'Home sameAs should include public GitHub for E-E-A-T',
+)
+
+const consent = read('src/components/CookieConsent.tsx')
+assert(consent.includes("gtag('consent', 'update'"), 'CookieConsent must update gtag consent')
+assert(consent.includes('analytics_storage'), 'CookieConsent must set analytics_storage')
 
 // index.html baseline
 const index = read('index.html')
@@ -77,5 +124,12 @@ assert(index.includes('rel="canonical"'), 'index.html canonical present')
 assert(index.includes('og:image'), 'index.html og:image present')
 assert(index.includes('application/rss+xml'), 'index.html RSS alternate present')
 assert(index.includes('lang="en"'), 'html lang=en for international SEO baseline')
+assert(index.includes('media="print"'), 'fonts should load non-blocking via media=print swap')
 
-console.log('[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, image sitemap floors green')
+const sw = read('public/sw.js')
+assert(sw.includes("request.mode === 'navigate'"), 'SW must special-case navigation requests')
+assert(sw.includes('fetch(request)'), 'SW navigation must be network-first')
+
+console.log(
+  '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, image sitemap floors green',
+)

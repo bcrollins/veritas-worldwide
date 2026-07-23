@@ -21,7 +21,11 @@ interface SEOConfig {
   url: string
   type?: 'website' | 'article'
   image?: string
+  /** Accessible description of the OG/Twitter image (Search Central image SEO). */
+  imageAlt?: string
   publishedTime?: string
+  /** ISO-ish date for article:modified_time (freshness signal for news/docs). */
+  modifiedTime?: string
   author?: string
   section?: string
   tags?: string[]
@@ -82,39 +86,51 @@ function normalizePublicationDate(value: string): string {
  * Creates tags if they don't exist, updates them if they do.
  */
 export function setMetaTags(config: SEOConfig): void {
-  const { url, type = 'website', image, publishedTime, author, section, tags, robots } = config
+  const { url, type = 'website', image, publishedTime, modifiedTime, author, section, tags, robots } = config
   // Keep document.title full for browser tabs; clamp only SERP/social fields.
   const title = config.title.replace(/\s+/g, ' ').trim()
   const description = clampMetaDescription(config.description)
   const ogTitle = clampMetaTitle(title, 70) // OG allows slightly longer than SERP title
   const ogImage = image || OG_IMAGE
+  // Accessible alt for social previews (Search Central: describe the image).
+  const ogImageAlt =
+    config.imageAlt?.replace(/\s+/g, ' ').trim() ||
+    `${ogTitle} — ${SITE_NAME}`
+
+  // Absolute HTTPS self-referential canonical only (Search Central: consolidate duplicates).
+  const absoluteUrl = url.startsWith('http')
+    ? url
+    : `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`
 
   document.title = title
 
   const metas: Record<string, string> = {
     'description': description,
+    // Google Discover / rich results: allow large previews unless page opts out via robots.
+    'robots': robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     'og:title': ogTitle,
     'og:description': description,
-    'og:url': url,
+    'og:url': absoluteUrl,
     'og:type': type,
     'og:site_name': SITE_NAME,
     'og:locale': 'en_US',
     'og:image': ogImage,
     'og:image:width': '1200',
     'og:image:height': '630',
+    'og:image:alt': ogImageAlt,
     'twitter:card': 'summary_large_image',
     'twitter:site': TWITTER_HANDLE,
     'twitter:title': ogTitle,
     'twitter:description': description,
     'twitter:image': ogImage,
-  }
-
-  if (robots) {
-    metas.robots = robots
+    'twitter:image:alt': ogImageAlt,
   }
 
   if (type === 'article') {
     if (publishedTime) metas['article:published_time'] = normalizePublicationDate(publishedTime)
+    if (modifiedTime || publishedTime) {
+      metas['article:modified_time'] = normalizePublicationDate(modifiedTime || publishedTime || '')
+    }
     if (author) metas['article:author'] = author
     if (section) metas['article:section'] = section
     if (tags) {
@@ -131,7 +147,7 @@ export function setMetaTags(config: SEOConfig): void {
     canonical.setAttribute('rel', 'canonical')
     document.head.appendChild(canonical)
   }
-  canonical.setAttribute('href', url)
+  canonical.setAttribute('href', absoluteUrl)
 
   for (const [key, value] of Object.entries(metas)) {
     // article:tag:N → use property, skip numeric suffix for actual attribute
@@ -339,7 +355,8 @@ export function websiteJsonLd(): Record<string, unknown> {
 export function organizationJsonLd(): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    // NewsMediaOrganization strengthens journalism E-E-A-T for YMYL-adjacent political coverage.
+    '@type': ['Organization', 'NewsMediaOrganization'],
     'name': SITE_NAME,
     'alternateName': 'The Record',
     'url': SITE_URL,
@@ -353,9 +370,13 @@ export function organizationJsonLd(): Record<string, unknown> {
     'description':
       'Independent investigative journalism built on primary sources. The Record documents 240+ years of institutional power with public archives.',
     'foundingDate': '2025',
+    'publishingPrinciples': `${SITE_URL}/methodology`,
+    'correctionsPolicy': `${SITE_URL}/methodology`,
+    'ethicsPolicy': `${SITE_URL}/methodology`,
     'sameAs': [
       'https://x.com/VeritasWorldwide',
       'https://www.reddit.com/r/VeritasWorldwide',
+      'https://github.com/bcrollins/veritas-worldwide',
     ],
     'contactPoint': [
       {

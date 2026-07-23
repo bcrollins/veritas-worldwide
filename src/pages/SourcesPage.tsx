@@ -10,7 +10,16 @@ import {
 } from '../data/sourceHierarchy'
 import { useAllChapters } from '../hooks/useAllChapters'
 import { useAuth } from '../lib/AuthContext'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  faqJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
 type SourceHierarchyFilter = SourceHierarchy | 'all'
@@ -69,20 +78,47 @@ export default function SourcesPage() {
 
   useEffect(() => {
     setMetaTags({
-      title: 'Sources & Bibliography | The Record — Veritas Worldwide',
-      description: 'Master bibliography and verification library for The Record. Every chapter source and direct link is open to every reader.',
+      title: `Sources & Bibliography | ${SITE_NAME}`,
+      description:
+        'Master bibliography and verification library for The Record. Every chapter source and direct link is open to every reader.',
       url: `${SITE_URL}/sources`,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Sources & Bibliography',
-      description: 'Master bibliography and verification library for The Record.',
-      url: `${SITE_URL}/sources`,
-      isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
-      publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Sources & Bibliography',
+        description: 'Master bibliography and verification library for The Record.',
+        url: `${SITE_URL}/sources`,
+        isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Sources', url: `${SITE_URL}/sources` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'How do I verify a claim in The Record?',
+          answer:
+            'Open the chapter that cites the claim, then use this Sources library to jump to the primary document, archive pin, or institutional URL. Every substantive claim is tier-labeled so you can weigh verified, circumstantial, and disputed evidence independently.',
+        },
+        {
+          question: 'Are The Record’s sources free to inspect?',
+          answer:
+            'Yes. The master bibliography and direct links are open to every reader. Accounts are optional and only affect saved reader state, not access to source verification.',
+        },
+        {
+          question: 'What evidence tiers does Veritas use?',
+          answer:
+            'Claims are classified as verified (primary-document backed), circumstantial (indirect but documented), or disputed (contested in the record). The methodology page explains the full taxonomy.',
+        },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   const allSources = chapters.flatMap(chapter =>
@@ -180,6 +216,16 @@ export default function SourcesPage() {
                   ? 'Every source cited in this publication is organized here for direct verification. The reader is encouraged to inspect the record independently.'
                   : 'Every source cited in this publication is organized here for direct verification. Accounts are optional for saved reader state.'}
               </p>
+              {/* Voice-search / People Also Ask phrasing (Search Central natural-language queries) */}
+              <div className="mt-8 space-y-3 text-left max-w-2xl">
+                <h2 className="font-display text-xl font-bold text-ink">
+                  How do I verify a claim in The Record?
+                </h2>
+                <p className="font-body text-sm text-ink-muted leading-relaxed">
+                  Open the citing chapter, then use this library to reach the primary document or archive pin. Filter by
+                  hierarchy and evidence tier to focus on verified public-record sources first.
+                </p>
+              </div>
               <div className="grid grid-cols-3 gap-4 mt-6">
                 <div className="text-center">
                   <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{totalSources}</p>
@@ -199,6 +245,24 @@ export default function SourcesPage() {
                 </div>
               </div>
             </header>
+
+            {/* Voice-search / PAA-oriented FAQ (mirrored in FAQPage JSON-LD) */}
+            <section className="mb-12 border border-border bg-surface-raised p-5 sm:p-6" aria-labelledby="sources-verify-heading">
+              <h2 id="sources-verify-heading" className="font-display text-xl sm:text-2xl font-bold text-ink mb-4">
+                How do I verify a claim in The Record?
+              </h2>
+              <p className="font-body text-sm sm:text-base text-ink-muted leading-relaxed mb-4">
+                Use this bibliography or each chapter&apos;s source list. Follow the linked primary documents — statutes, CRS reports, court filings, UN releases — and prefer primary hierarchy over secondary summaries when both exist.
+              </p>
+              <h3 className="font-display text-lg font-bold text-ink mb-2">
+                What do evidence tiers mean?
+              </h3>
+              <p className="font-body text-sm sm:text-base text-ink-muted leading-relaxed">
+                <strong className="text-ink">Verified</strong> = multi-source or primary documentation.
+                {' '}<strong className="text-ink">Circumstantial</strong> = serious documentation with material dispute or incomplete attribution.
+                {' '}<strong className="text-ink">Disputed</strong> = contested claims retained for transparency, not endorsement.
+              </p>
+            </section>
 
             {chaptersLoading ? (
               <div className="py-16 text-center">

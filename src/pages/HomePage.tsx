@@ -45,9 +45,13 @@ export default function HomePage() {
 
   useEffect(() => {
     setMetaTags({
-      title: `The Record | ${SITE_NAME}`,
-      description: 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. 32 archive parts, 500+ primary sources, and public full-archive access.',
+      // ~52 chars — within Google ~50–60 SERP title guidance
+      title: `The Record | Primary Sources — ${SITE_NAME}`,
+      // ~155 chars after clamp — high-intent documentary archive pitch
+      description:
+        'Primary-source documentary history of power, money, and institutions. 32 archive parts, 500+ citations, free public access. Verify every claim yourself.',
       url: SITE_URL,
+      imageAlt: 'The Record — Veritas Worldwide documentary archive',
     })
     setJsonLd([
       {
@@ -80,6 +84,7 @@ export default function HomePage() {
         'sameAs': [
           'https://x.com/VeritasWorldwide',
           'https://www.reddit.com/r/VeritasWorldwide',
+          'https://github.com/bcrollins/veritas-worldwide',
         ],
         'contactPoint': {
           '@type': 'ContactPoint',

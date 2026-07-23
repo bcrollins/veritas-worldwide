@@ -7,7 +7,15 @@ import { getTopicHrefForTerm, getTopicHubByKeyword } from '../data/topicHubs'
 import SharePanel from '../components/SharePanel'
 import { getPreferredImageSrc } from '../lib/imageSources'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 
 function getArticleImageSrc(src?: string) {
@@ -128,25 +136,43 @@ export default function ArticlePage() {
       type: 'article',
       author: article.author,
       image: absoluteHero,
+      imageAlt: article.heroImage?.alt || article.title,
+      publishedTime: article.publishDate,
+      modifiedTime: article.updatedDate || article.publishDate,
+      section: article.category,
+      tags: article.seo.keywords,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
-      'headline': article.title,
-      'description': article.seo.metaDescription,
-      'image': absoluteHero,
-      'datePublished': article.publishDate,
-      'dateModified': article.updatedDate || article.publishDate,
-      'author': { '@type': 'Organization', 'name': article.author },
-      'publisher': {
-        '@type': 'Organization',
-        'name': SITE_NAME,
-        'url': SITE_URL,
-        'logo': { '@type': 'ImageObject', 'url': `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`, width: 512, height: 512 },
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: article.title,
+        description: article.seo.metaDescription,
+        image: absoluteHero,
+        datePublished: article.publishDate,
+        dateModified: article.updatedDate || article.publishDate,
+        author: { '@type': 'Organization', name: article.author, url: SITE_URL },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
+            width: 512,
+            height: 512,
+          },
+        },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/news/${article.slug}` },
+        keywords: article.seo.keywords.join(', '),
+        isAccessibleForFree: true,
       },
-      'mainEntityOfPage': { '@type': 'WebPage', '@id': `${SITE_URL}/news/${article.slug}` },
-      'keywords': article.seo.keywords.join(', '),
-    })
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'News', url: `${SITE_URL}/news` },
+        { name: article.title, url: `${SITE_URL}/news/${article.slug}` },
+      ]),
+    ])
     return () => { clearMetaTags(); removeJsonLd() }
   }, [article, heroImageSrc])
 

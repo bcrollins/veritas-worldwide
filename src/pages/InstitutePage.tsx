@@ -29,7 +29,8 @@ export default function InstitutePage() {
 
   useEffect(() => {
     setMetaTags({
-      title: `Veritas Institute | Field Manual and Practical Trade Courses | ${SITE_NAME}`,
+      // SERP ~50–60 chars; full context in description (Search Central title guidance)
+      title: `Veritas Institute Field Manual | ${SITE_NAME}`,
       description:
         'Veritas Institute pairs a printable field manual for ordinary emergencies with source-backed trade, repair, preparedness, food, and healthcare-support courses.',
       url: `${SITE_URL}/institute`,
