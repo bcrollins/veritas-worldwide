@@ -52,6 +52,10 @@ for (const [rel, needle] of surfaces) {
 assert(read('src/components/ResearchHubChips.tsx').includes('export default function ResearchHubChips'), 'ResearchHubChips export')
 assert(read('src/components/DossierHubSpokes.tsx').includes('export default function DossierHubSpokes'), 'DossierHubSpokes export')
 assert(read('src/components/DossierHubSpokes.tsx').includes('z-30') || read('src/components/DossierHubSpokes.tsx').includes('z-40'), 'DossierHubSpokes sticky z-order')
+const spokesBody = read('src/components/DossierHubSpokes.tsx').match(/export const DOSSIER_SPOKES[^=]*= \[([\s\S]*?)\] as const/)
+assert(spokesBody, 'DOSSIER_SPOKES export')
+const spokeCount = (spokesBody[1].match(/id:/g) || []).length
+assert(spokeCount === 5, `DOSSIER_SPOKES count ${spokeCount} !== 5`)
 
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')
