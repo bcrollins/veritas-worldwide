@@ -431,4 +431,10 @@ const supOk = read('src/pages/SupportSuccessPage.tsx')
 assert(supOk.includes('support-success-related-hubs'), 'support-success-related-hubs')
 assert(supOk.includes('/israel-dossier') && supOk.includes('/profiles'), 'Support success Dossiers+Profiles')
 
+
+// Skip link + landmarks for recovery accessibility
+const appShell = read('src/App.tsx')
+assert(appShell.includes('Skip to') && appShell.includes('main-content'), 'Skip link targets main-content')
+assert(appShell.includes('site-header') && appShell.includes('site-footer'), 'header+footer landmarks')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
