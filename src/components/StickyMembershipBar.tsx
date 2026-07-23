@@ -90,7 +90,7 @@ export default function StickyMembershipBar() {
           <div className="flex items-center gap-2 shrink-0">
             <Link
               to="/membership"
-              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-4 py-2 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center px-4 py-2 bg-crimson text-white font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian"
               onClick={() => trackSupportClick('sticky-bar')}
             >
               Join
@@ -101,7 +101,7 @@ export default function StickyMembershipBar() {
                 setDismissed(true)
                 sessionStorage.setItem('veritas_sticky_dismissed', '1')
               }}
-              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm text-white/40 hover:text-white/80 transition-colors"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm text-white/40 hover:text-white/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian"
               aria-label="Dismiss membership bar"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
