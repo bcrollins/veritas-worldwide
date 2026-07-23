@@ -8379,6 +8379,22 @@ export const PROFILES: PowerProfile[] = [
         source: 'Israeli Prime Minister public addresses',
         url: 'https://www.gov.il/en/departments/prime_ministers_office',
       },
+      {
+        text: 'There is no starvation in Gaza.',
+        context:
+          'July 27, 2025 remarks to an evangelical Christian audience while global reporting showed acute hunger. PolitiFact rated Pants on Fire; readers later chose it as 2025 Lie of the Year.',
+        date: 'July 27, 2025',
+        source: 'PolitiFact quotation of Netanyahu remarks',
+        url: 'https://www.politifact.com/factchecks/2025/jul/29/benjamin-netanyahu/benjamin-netanyahus-pants-on-fire-statement-that-t/',
+      },
+      {
+        text: 'The International Criminal Court prosecutor has shamefully accused Israel of deliberately starving the people of Gaza. This is utter complete nonsense.',
+        context:
+          'July 24, 2024 address to a joint session of the U.S. Congress. PolitiFact noted the claim contradicted contemporaneous UN expert and IPC hunger assessments.',
+        date: 'July 24, 2024',
+        source: 'PolitiFact Congress speech fact-check package',
+        url: 'https://www.politifact.com/article/2024/jul/25/israeli-prime-minister-benjamin-netanyahu-addresse/',
+      },
     ],
     donations: [],
     policyActions: [
@@ -8461,6 +8477,59 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'July 27, 2025: stated “There is no starvation in Gaza.” PolitiFact rated Pants on Fire citing WHO malnutrition deaths, IPC famine analysis, and humanitarian reporting; readers later selected it as 2025 Lie of the Year.',
+        source: 'PolitiFact Pants on Fire + Lie of the Year package',
+        url: 'https://www.politifact.com/factchecks/2025/jul/29/benjamin-netanyahu/benjamin-netanyahus-pants-on-fire-statement-that-t/',
+        tier: 'verified',
+        date: 'July 2025',
+      },
+      {
+        claim:
+          'July 24, 2024 U.S. Congress speech dismissed ICC starvation allegations as “utter complete nonsense” while UN experts and IPC assessments documented extreme food insecurity and famine risk under restricted access.',
+        source: 'PolitiFact Congress speech fact package; OHCHR / IPC',
+        url: 'https://www.politifact.com/article/2024/jul/25/israeli-prime-minister-benjamin-netanyahu-addresse/',
+        tier: 'verified',
+        date: 'July 2024',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'netanyahu-no-starvation-gaza-2025',
+        statement: 'There is no starvation in Gaza.',
+        saidAt: 'July 27, 2025',
+        context:
+          'Remarks to an evangelical Christian audience while images and field reports of acute hunger dominated global coverage. Later selected by PolitiFact readers as 2025 Lie of the Year.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. WHO reported dozens of malnutrition deaths in 2025 (concentrated in July); IPC and UN-backed assessments documented catastrophic food insecurity and later confirmed famine conditions in parts of Gaza. The categorical denial contradicted extensive humanitarian data, not a disputed definitional nuance.',
+        correction:
+          'Independent humanitarian systems (WHO, IPC, OCHA-linked reporting) documented widespread starvation risk and malnutrition deaths in Gaza. Absolute denial was false.',
+        statementSource: 'Netanyahu July 27, 2025 remarks (as quoted by PolitiFact from primary event coverage)',
+        statementUrl: 'https://www.politifact.com/factchecks/2025/jul/29/benjamin-netanyahu/benjamin-netanyahus-pants-on-fire-statement-that-t/',
+        debunkSource: 'PolitiFact Pants on Fire; WHO / IPC humanitarian data synthesis',
+        debunkUrl: 'https://www.politifact.com/article/2025/dec/15/lie-year-vote-reader-choice-results/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'netanyahu-icc-starvation-nonsense-congress-2024',
+        statement:
+          'Claimed the ICC prosecutor\'s accusation that Israel deliberately starved Gazans was "utter complete nonsense."',
+        saidAt: 'July 24, 2024',
+        context:
+          'Joint-session address to the U.S. Congress defending Israel\'s wartime conduct and rejecting ICC framing.',
+        whyFalse:
+          'PolitiFact\'s contemporaneous Congress fact package documented that UN independent experts and IPC-linked assessments described intentional starvation risk and extreme food insecurity under restricted access — contradicting the absolute "nonsense" dismissal. The ICC warrant process (later formalized) treats starvation as a prosecutable mode of warfare; categorical denial of the factual hunger record is not supported by the public humanitarian evidence base.',
+        correction:
+          'Whether or not a court ultimately convicts, the underlying hunger crisis and access restrictions were extensively documented by UN/IPC systems; absolute dismissal as nonsense was not accurate to the public record.',
+        statementSource: 'Netanyahu July 24, 2024 U.S. Congress address (PolitiFact speech package)',
+        statementUrl: 'https://www.politifact.com/article/2024/jul/25/israeli-prime-minister-benjamin-netanyahu-addresse/',
+        debunkSource: 'OHCHR UN experts famine statement; IPC Gaza food-insecurity briefs (via PolitiFact sources)',
+        debunkUrl: 'https://www.ohchr.org/en/press-releases/2024/07/un-experts-declare-famine-has-spread-throughout-gaza-strip',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Israeli PMO', url: 'https://www.gov.il/en/departments/prime_ministers_office' },
@@ -8468,6 +8537,9 @@ export const PROFILES: PowerProfile[] = [
       { label: 'ICJ', url: 'https://www.icj-cij.org/' },
       { label: 'CRS RL33222', url: 'https://www.congress.gov/crs-product/RL33222' },
       { label: 'OCHA oPt', url: 'https://www.ochaopt.org/' },
+      { label: 'PolitiFact — no starvation (Pants on Fire)', url: 'https://www.politifact.com/factchecks/2025/jul/29/benjamin-netanyahu/benjamin-netanyahus-pants-on-fire-statement-that-t/' },
+      { label: 'PolitiFact — Congress speech package', url: 'https://www.politifact.com/article/2024/jul/25/israeli-prime-minister-benjamin-netanyahu-addresse/' },
+      { label: 'OHCHR — UN experts famine statement', url: 'https://www.ohchr.org/en/press-releases/2024/07/un-experts-declare-famine-has-spread-throughout-gaza-strip' },
     ],
   },
   {

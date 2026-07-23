@@ -99,6 +99,7 @@ const required = [
   'mitch-mcconnell',
   'ghislaine-maxwell',
   'kamala-harris',
+  'benjamin-netanyahu',
 ];
 const scores = {};
 for (const id of required) {
@@ -147,8 +148,24 @@ for (const f of (kamalaP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('kamala dual-cite collision: ' + f.id);
 }
 
+// Benjamin Netanyahu dual-cited integrity deep-dive (egregious wartime falsehoods)
+const bibi = scores['benjamin-netanyahu'];
+if (!bibi || bibi.n < 2) throw new Error('benjamin-netanyahu needs ≥2 verified falsehoods, got ' + (bibi?.n ?? 0));
+if (bibi.score > 55) throw new Error('benjamin-netanyahu score expected ≤55 after deep dive, got ' + bibi.score);
+const bibiP = getProfileBySlug('benjamin-netanyahu');
+const bibiIds = new Set((bibiP.documentedFalsehoods || []).map((f) => f.id));
+for (const id of [
+  'netanyahu-no-starvation-gaza-2025',
+  'netanyahu-icc-starvation-nonsense-congress-2024',
+]) {
+  if (!bibiIds.has(id)) throw new Error('benjamin-netanyahu missing docket id: ' + id);
+}
+for (const f of (bibiP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('netanyahu dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 12) throw new Error('expected ≥12 compiled dockets, got ' + docketCount);
+if (docketCount < 13) throw new Error('expected ≥13 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
