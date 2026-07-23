@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:32:59.000Z",
+  "generatedAt": "2026-07-23T10:33:56.112Z",
   "count": 96,
   "profiles": [
     {
@@ -749,9 +749,9 @@
         "Iran Hawk",
         "Republican"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "mike-pompeo",
@@ -1475,9 +1475,9 @@
         "Epstein Connection",
         "Financier"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "reid-hoffman",

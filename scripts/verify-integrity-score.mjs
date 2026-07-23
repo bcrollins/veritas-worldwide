@@ -147,6 +147,8 @@ const required = [
   'karl-rove',
   'rahm-emanuel',
   'yoav-gallant',
+  'john-bolton',
+  'leon-black',
 ];
 const scores = {};
 for (const id of required) {
@@ -1184,8 +1186,41 @@ for (const f of (gallantP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('gallant dual-cite collision: ' + f.id);
 }
 
+
+// John Bolton densify gate (n≥3)
+const bolton = scores['john-bolton'];
+if (!bolton || bolton.n < 3) throw new Error('john-bolton needs ≥3 verified falsehoods, got ' + (bolton?.n ?? 0));
+if (bolton.score > 50) throw new Error('john-bolton score expected ≤50 after densify, got ' + bolton.score);
+const boltonP = getProfileBySlug('john-bolton');
+for (const id of [
+  'bolton-iraq-wmd-certainty-prewar-framing',
+  'bolton-libya-model-for-north-korea-absolute-success',
+  'bolton-jcpoa-sunset-absolute-iran-nuclear-breakout-framing',
+]) {
+  if (!(boltonP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('john-bolton missing docket id: ' + id);
+}
+for (const f of (boltonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('bolton dual-cite collision: ' + f.id);
+}
+
+// Leon Black densify gate (n≥3)
+const leon = scores['leon-black'];
+if (!leon || leon.n < 3) throw new Error('leon-black needs ≥3 verified falsehoods, got ' + (leon?.n ?? 0));
+if (leon.score > 50) throw new Error('leon-black score expected ≤50 after densify, got ' + leon.score);
+const leonP = getProfileBySlug('leon-black');
+for (const id of [
+  'black-epstein-fees-ordinary-tax-advice-only',
+  'black-no-knowledge-epstein-crimes-absolute',
+  'black-apollo-investors-fully-informed-epstein-fees',
+]) {
+  if (!(leonP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('leon-black missing docket id: ' + id);
+}
+for (const f of (leonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('leon dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 60) throw new Error('expected ≥60 compiled dockets, got ' + docketCount);
+if (docketCount < 62) throw new Error('expected ≥62 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

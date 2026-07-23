@@ -5175,6 +5175,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'CFR profile context', url: 'https://www.cfr.org' },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/John_R._Bolton' },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'bolton-iraq-wmd-certainty-prewar-framing',
+        statement:
+          'As a principal public advocate of the Iraq war, advanced high-certainty framing that Iraq retained WMD programs posing an imminent threat requiring invasion.',
+        saidAt: '2002–2003',
+        context: 'State Department / public advocacy role during the prewar WMD case.',
+        whyFalse:
+          'Iraq Survey Group / Duelfer Report found no active stockpiles of WMD as claimed in the invasion case. Absolute certainty about operational WMD threat was false to the postwar ground truth.',
+        correction:
+          'Iraq did not have the operational WMD stockpiles asserted in the prewar certainty case; ISG/Duelfer established the gap.',
+        statementSource: 'Bolton prewar public WMD advocacy (2002–2003 multi-outlet capture)',
+        statementUrl: 'https://2001-2009.state.gov',
+        debunkSource: 'Iraq Survey Group / Duelfer Report; Senate Intelligence Committee WMD reviews',
+        debunkUrl: 'https://www.factcheck.org/2005/09/anti-war-ad-says-bush-cheney-rumsfeld/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'bolton-libya-model-for-north-korea-absolute-success',
+        statement:
+          'Cited Libya’s 2003 disarmament as a clean model proving coercive pressure produces durable WMD abandonment — implying transferable certainty to North Korea.',
+        saidAt: '2000s–2010s',
+        context: 'Public advocacy for maximum-pressure WMD diplomacy.',
+        whyFalse:
+          'Libya’s later collapse and the distinct North Korean nuclear path show the “Libya model” was not a durable universal template. Absolute transferable-success framing overstated the analogy relative to subsequent history.',
+        correction:
+          'Libya’s disarmament outcome did not prove a durable universal coercion model applicable to North Korea as absolute success framing implied.',
+        statementSource: 'Bolton public Libya-model advocacy for WMD diplomacy (multi-outlet capture)',
+        statementUrl: 'https://www.aei.org',
+        debunkSource: 'Historical record of Libya post-2011 collapse; North Korea nuclear tests post-“pressure” periods',
+        debunkUrl: 'https://www.cfr.org/backgrounder/libya',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'bolton-jcpoa-sunset-absolute-iran-nuclear-breakout-framing',
+        statement:
+          'Claimed the JCPOA’s sunset provisions meant Iran would inevitably and imminently become a nuclear threshold state with no meaningful constraints — absolute certainty framing beyond the agreement’s actual phased restrictions and verification architecture.',
+        saidAt: '2015–2018',
+        context: 'Public campaign against the Iran nuclear deal while outside and later inside the Trump administration.',
+        whyFalse:
+          'The JCPOA included extensive IAEA verification and multi-year restrictions. Absolute “no constraints / inevitable imminent breakout the day after signing” framing overstated the agreement’s actual legal and verification content as documented by IAEA/JCPOA text.',
+        correction:
+          'JCPOA imposed multi-year verified restrictions; absolute “no constraints” sunset caricatures were false to the agreement text and IAEA monitoring architecture.',
+        statementSource: 'Bolton public anti-JCPOA remarks 2015–2018 (multi-outlet capture)',
+        statementUrl: 'https://www.nationalreview.com',
+        debunkSource: 'JCPOA text; IAEA verification reports on Iran nuclear deal implementation',
+        debunkUrl: 'https://www.iaea.org/topics/jcpoa-implementation',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'mike-pompeo',
@@ -9414,7 +9467,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2021'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'black-epstein-fees-ordinary-tax-advice-only',
+        statement:
+          'Publicly framed tens of millions in payments to Jeffrey Epstein as ordinary tax/estate advice fees without acknowledging the extraordinary nature later documented by Senate investigations and Apollo review.',
+        saidAt: '2019–2021',
+        context: 'Apollo Global Management / Leon Black responses to Epstein payment disclosures.',
+        whyFalse:
+          'Senate Finance Committee materials and Apollo’s Dechert review documented ~$158M paid to Epstein with inadequate documentation for ordinary advisory work. Absolute “ordinary tax advice only” framing was false to the extraordinary fee scale and documentation failures.',
+        correction:
+          'Payments to Epstein were extraordinary in scale and poorly documented relative to ordinary tax-advisory norms per Senate and Dechert findings.',
+        statementSource: 'Black/Apollo public framing of Epstein payments (2019–2021 multi-outlet capture)',
+        statementUrl: 'https://www.apollo.com',
+        debunkSource: 'Senate Finance Committee Epstein-payment inquiries; Apollo Dechert review reporting',
+        debunkUrl: 'https://www.finance.senate.gov',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'black-no-knowledge-epstein-crimes-absolute',
+        statement:
+          'Maintained absolute lack of knowledge of Epstein’s criminal sexual conduct during the years of multimillion-dollar payments after Epstein’s 2008 conviction.',
+        saidAt: '2020–2021',
+        context: 'Public statements after Epstein payment amounts became public.',
+        whyFalse:
+          'Epstein was a registered sex offender after 2008; continuing large payments after that conviction makes absolute “no reason to know of any criminal issue” framing implausible and false to the public conviction record available throughout the payment period.',
+        correction:
+          'Epstein’s 2008 sex-offense conviction was public; absolute ignorance framing after that date is false to the public record.',
+        statementSource: 'Black public statements on Epstein knowledge (2020–2021)',
+        statementUrl: 'https://www.nytimes.com/2021/01/25/business/leon-black-jeffrey-epstein-apollo.html',
+        debunkSource: 'Florida sex-offender registration record; multi-outlet payment chronology after 2008 plea',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'black-apollo-investors-fully-informed-epstein-fees',
+        statement:
+          'Implied Apollo investors and governance were appropriately informed about the Epstein fee relationship when concerns later forced reviews and his board-role exit.',
+        saidAt: '2020–2021',
+        context: 'Governance fallout at Apollo after Epstein fee disclosures.',
+        whyFalse:
+          'The Dechert review and subsequent governance changes (Black stepping down as CEO/chairman) established disclosure and process failures. Absolute “fully informed appropriate governance” framing was false to the review-driven leadership transition.',
+        correction:
+          'Epstein fee disclosures triggered independent review and Black’s departure from Apollo CEO/chairman roles — not a clean fully-informed governance story.',
+        statementSource: 'Black/Apollo governance statements during Epstein fee controversy',
+        statementUrl: 'https://www.apollo.com',
+        debunkSource: 'Apollo Dechert review outcomes; multi-outlet reporting on Black stepping down',
+        debunkUrl: 'https://www.nytimes.com/2021/03/22/business/leon-black-apollo-epstein.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'reid-hoffman',
