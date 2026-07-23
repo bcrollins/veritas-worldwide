@@ -67,7 +67,7 @@ export default function MethodologyPage() {
         {
           question: 'What evidence tiers does The Record use?',
           answer:
-            'Volume I archive chapters use Verified, Circumstantial, and Disputed. The Record of Jesus Christ and Bible history surfaces use a seven-tier scholarly scale (Verified through Literary/Theological) mapped to the Volume I system for cross-reading.',
+            'Volume I archive chapters use Verified, Circumstantial, and Disputed. The Record of Jesus Christ and Bible history surfaces use a seven-tier scholarly scale (Verified through Literary/Theological) mapped to the Volume I system for cross-reading. Machine-readable definitions: https://veritasworldwide.com/evidence-taxonomy.json.',
         },
         {
           question: 'Where is The Record of Jesus Christ methodology applied?',
