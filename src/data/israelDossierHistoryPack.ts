@@ -3762,6 +3762,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-livestock-poultry-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Livestock & Poultry Herd Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (livestock cohort)',
+    location: 'Gaza Strip farms / coops / herding areas',
+    summary:
+      'FAO and multi-source agricultural reporting document mass death and destruction of livestock and poultry herds under bombardment, feed shortages, and displacement — collapsing animal-protein production for civilians. Pattern card for livestock system collapse distinct from cropland and fisheries cards.',
+    evidence:
+      'FAO livestock assessments and multi-source farm reporting establish multi-source herd collapse. Exact head counts evolve; multi-source near-total poultry/livestock production failure is the claim.',
+    sources: [
+      { label: 'FAO livestock / agricultural materials', url: 'https://www.fao.org' },
+      { label: 'OCHA food-security materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza livestock coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'FAO public materials', url: 'https://www.fao.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5540,6 +5567,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['food', 'mills', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-livestock-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Livestock & Poultry Herd Collapse Pattern',
+    description: 'FAO multi-source documentation of mass livestock/poultry loss collapsing animal-protein production.',
+    source: 'FAO / OCHA / multi-outlet',
+    sourceUrl: 'https://www.fao.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-livestock-poultry-destruction-pattern-2023-2025',
+      'gaza-agricultural-land-destruction-pattern-2023-2025',
+      'gaza-fishing-fleet-destruction-pattern-2023-2025',
+    ],
+    tags: ['livestock', 'food', 'children', 'civilians', 'gaza'],
+  },
+
 
 
 
