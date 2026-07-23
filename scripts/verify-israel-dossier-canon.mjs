@@ -407,6 +407,8 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   assert(fs.existsSync(path.join(root, 'public/israel-dossier/visual-investigations.json')), 'missing visual-investigations.json export')
   assert(page.includes('visual-investigations.json'), 'page missing VI JSON download')
   assert(page.includes('vi-quick-chips') || page.includes('Video + civilians'), 'page missing quick media filter chips')
+  assert(page.includes('Dataset') || page.includes('visual-investigations.json'), 'page should expose VI dataset distribution')
+  assert(page.includes('Is the dossier one-sided') || page.includes('video and visual investigations'), 'FAQ should cover multi-party + VI')
 }
 
 
