@@ -1,5 +1,6 @@
 import { useEffect, useState, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs from '../components/RelatedHubs'
 import DownloadModal from '../components/DownloadModal'
 import { chapterMeta } from '../data/chapterMeta'
 import DonationBanner from '../components/DonationBanner'
@@ -678,6 +679,12 @@ export default function HomePage() {
                     → Read the Foreword
                   </Link>
                 </div>
+                <RelatedHubs
+                  testId="home-related-hubs"
+                  excludeTo="/"
+                  className="mt-5"
+                  ariaLabel="Primary hubs from Record home"
+                />
               </div>
             </div>
           </section>
