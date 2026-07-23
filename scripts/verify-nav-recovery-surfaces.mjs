@@ -37,6 +37,7 @@ const surfaces = [
   ['src/components/CookieConsent.tsx', 'z-[100]'],
   ['src/App.tsx', 'mobile-tab-bar'],
   ['src/App.tsx', 'primaryLinks'],
+  ['src/App.tsx', 'safe-area-inset-bottom'],
   ['src/components/StickyMembershipBar.tsx', 'sticky-membership-bar'],
   ['src/components/StickyMembershipBar.tsx', '3.75rem'],
 ]
