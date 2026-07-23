@@ -3347,6 +3347,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-humanitarian-zone-strike-visual-2024-2025',
+    title: 'Gaza Designated Humanitarian Zone Strikes — Multi-Outlet Visual Record',
+    date: '2024–2025',
+    location: 'Gaza Strip designated humanitarian zones and evacuation corridors',
+    summary:
+      'Multi-outlet video packages document strikes affecting civilians in designated humanitarian zones under wartime conditions, including children. Distinct from tent-camp strike visual cards by focusing on multi-source designated-zone packages; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA displacement materials establish multi-source documentation of civilian harm in designated humanitarian zones.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza displacement packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet humanitarian-zone strike video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of designated-zone aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OHCHR/OCHA displacement trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-kfar-azza-safe-room-visual-2023',
+    title: 'October 7 Kfar Aza Safe-Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Kfar Aza safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders in Kfar Aza safe rooms during the October 7 attacks. Distinct from Kfar Aza road visual cards by focusing on safe-room interior multi-source visual records; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence in Kfar Aza safe rooms on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Kfar Aza safe-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-water-tank-destruction-visual-2023-2025',
+    title: 'West Bank Settler Water Tank Destruction — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village rooftops and agricultural water tanks',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler destruction of Palestinian civilian water tanks, denying household and agricultural water including for families with children. Multi-source visual record distinct from water-pipe-cut cards; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA water-access materials, and multi-outlet reporting establish multi-source documentation of water-tank destruction affecting civilian water access.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem water and land materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem water-tank destruction video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem water-access case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA water-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

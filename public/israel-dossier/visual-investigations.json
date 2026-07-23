@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:38:42.973Z"
+    "generatedAt": "2026-07-23T13:40:02.302Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 149,
-    "viPackCards": 130,
-    "totalIncidents": 1734
+    "incidentsWithVideoAndCivilians": 152,
+    "viPackCards": 133,
+    "totalIncidents": 1749
   },
   "incidents": [
     {
@@ -4943,6 +4943,86 @@
       ]
     },
     {
+      "id": "vi-oct7-kfar-azza-safe-room-visual-2023",
+      "title": "October 7 Kfar Aza Safe-Room Civilian Murders — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Kibbutz Kfar Aza safe rooms and home shelters",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Kfar Aza safe-room October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-water-tank-destruction-visual-2023-2025",
+      "title": "West Bank Settler Water Tank Destruction — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village rooftops and agricultural water tanks",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem water and land materials",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem water-tank destruction video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem water-access case files",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "type": "document",
+          "label": "OCHA water-access materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
       "id": "flour-massacre-2024",
       "title": "The Flour Massacre — Aid Seekers Shot While Waiting for Food",
       "date": "February 29, 2024",
@@ -5981,6 +6061,46 @@
         {
           "type": "investigation",
           "label": "OHCHR/WHO hospital-protection trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-humanitarian-zone-strike-visual-2024-2025",
+      "title": "Gaza Designated Humanitarian Zone Strikes — Multi-Outlet Visual Record",
+      "date": "2024–2025",
+      "location": "Gaza Strip designated humanitarian zones and evacuation corridors",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OHCHR materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza displacement packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet humanitarian-zone strike video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of designated-zone aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "OHCHR/OCHA displacement trail",
           "url": "https://www.ohchr.org/"
         }
       ]

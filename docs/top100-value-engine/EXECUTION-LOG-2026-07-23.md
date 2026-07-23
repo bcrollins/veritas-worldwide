@@ -257,3 +257,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | tent-camp strikes · Nir Oz safe room · olive-press arson |
 | Pure | visual + israel-dossier + research-pack PASS |
 
+
+## Interval densify — tip post-1734 TcB/humanitarian-zone/Kfar Aza safe-room
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza TcB/eye-shield/kangaroo-wrap/neonatal-BP · hostage water-jugs/school-assemblies/ankles-chained/train-station-signs · WB okra/science-glassware/squash/mint |
+| VI | humanitarian-zone strikes · Kfar Aza safe room · water-tank destruction |
+| Pure | visual + israel-dossier + research-pack PASS |
+
