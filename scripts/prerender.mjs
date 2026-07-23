@@ -4246,8 +4246,11 @@ sitemapEntries.set(
 )
 sitemapEntries.set(
   '/israel-dossier/corpus.json',
-  '/israel-dossier/visual-investigations.json',
   renderUrlEntry(`${SITE_URL}/israel-dossier/corpus.json`, today, 'weekly', '0.7')
+)
+sitemapEntries.set(
+  '/israel-dossier/visual-investigations.json',
+  renderUrlEntry(`${SITE_URL}/israel-dossier/visual-investigations.json`, today, 'weekly', '0.7')
 )
 sitemapEntries.set(
   '/record-of-jesus-christ/corpus.json',
