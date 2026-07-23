@@ -433,8 +433,7 @@ assert(supOk.includes('/israel-dossier') && supOk.includes('/profiles'), 'Suppor
 
 
 // Skip link + landmarks for recovery accessibility
-const appShell = read('src/App.tsx')
-assert(appShell.includes('Skip to') && appShell.includes('main-content'), 'Skip link targets main-content')
-assert(appShell.includes('site-header') && appShell.includes('site-footer'), 'header+footer landmarks')
-
+const appLandmarks = read('src/App.tsx')
+assert(appLandmarks.includes('Skip to') && appLandmarks.includes('main-content'), 'Skip link targets main-content')
+assert(appLandmarks.includes('site-header') && appLandmarks.includes('site-footer'), 'header+footer landmarks')
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
