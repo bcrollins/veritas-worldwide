@@ -449,3 +449,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | aid convoy · Hod HaSharon · grape vine cutting |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip post-2089 diabetes densify + hospital generator / Ramat Gan / grape drying-house
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza insulin/glucagon/D50 · hostage rock-hauling/picture-frame-marches/heavy-weights · WB parsnip/nebulizer/thyme-seedlings |
+| VI | hospital generator · Ramat Gan · grape drying-house arson |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip |
+
