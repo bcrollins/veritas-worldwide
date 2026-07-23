@@ -674,4 +674,10 @@ assert(stickySrc.includes('cookiePending'), 'membership cookiePending gate')
 // Profiles integrity/OSINT scent (profilesIdx declared above)
 assert(profilesIdx.includes('/comprehensive-profile') || profilesIdx.includes('OSINT') || profilesIdx.includes('Integrity'), 'Profiles integrity/OSINT scent')
 
+
+// package.json exposes nav pure scripts
+const pkgJson = read('package.json')
+assert(pkgJson.includes('verify:nav-ia') && pkgJson.includes('verify:nav-recovery'), 'package.json nav pure scripts')
+assert(pkgJson.includes('verify:pure'), 'package.json verify:pure')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
