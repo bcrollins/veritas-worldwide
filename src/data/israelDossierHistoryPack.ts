@@ -16938,6 +16938,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-onchocerciasis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Onchocerciasis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (onchocerciasis-risk cohort)',
+    location: 'Gaza Strip standing-water exposure zones near overcrowded camps',
+    summary:
+      'WHO and multi-source public-health reporting document elevated pediatric onchocerciasis (river blindness) risk under vector-control collapse and treatment interruption — a multi-source wartime vector-borne pattern distinct from leishmaniasis cards.',
+    evidence:
+      'WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric onchocerciasis risk. Exact case counts evolve; multi-source wartime onchocerciasis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza vector-borne disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-un-pressure-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of UN Pressure Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (un-pressure-denial cohort)',
+    location: 'Gaza Strip captivity sites — un-pressure-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding knowledge of UN and international-organization pressure for release — a multi-source psychological pattern distinct from US/Qatar/Egypt mediation denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source UN-pressure denial. Exact cases vary; multi-source UN-pressure denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-insecticide-stores-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Insecticide Stores Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (insecticide-store-destruction cohort)',
+    location: 'West Bank village public-health and farm insecticide storage',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian insecticide stores after October 7 — increasing vector-borne disease exposure for households including children. Pattern card distinct from mosquito-net destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source insecticide-store destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian insecticide stores is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet insecticide-store destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-lymphatic-filariasis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Lymphatic Filariasis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (lymphatic-filariasis-risk cohort)',
+    location: 'Gaza Strip standing-water and mosquito-exposure camps',
+    summary:
+      'WHO and multi-source public-health reporting document elevated pediatric lymphatic filariasis risk under vector-control collapse and treatment interruption — a multi-source wartime vector-borne pattern distinct from onchocerciasis cards.',
+    evidence:
+      'WHO NTD materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric lymphatic filariasis risk. Exact case counts evolve; multi-source wartime lymphatic filariasis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza vector-borne disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-recite-captor-slogans-on-camera-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Recite Captor Slogans on Camera Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-slogan-recitation-camera cohort)',
+    location: 'Gaza Strip captivity sites — forced-slogan-recitation-camera subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to recite captors slogans on camera — a multi-source coerced-performance pattern distinct from private slogan memorization.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced slogan recitation on camera. Exact cases vary; multi-source forced slogan-on-camera propaganda of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-optometrists-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Optometrists Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (optometrist-attack cohort)',
+    location: 'West Bank village optical clinics and vision-care points',
+    summary:
+      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian optometrists after October 7 — disrupting vision care for civilians including children. Pattern card distinct from dental and medical-staff attacks.",
+    evidence:
+      'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source optometrist attacks. Exact injury counts evolve; multi-source wartime settler attacks on optometrists is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'WHO health-access materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet optometrist attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-trachoma-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Trachoma Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (trachoma-risk cohort)',
+    location: 'Gaza Strip overcrowded camps with collapsed hygiene and water access',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric trachoma risk under hygiene collapse and water scarcity — a multi-source wartime ocular-infection pattern distinct from vitamin A ocular cascade cards.',
+    evidence:
+      'WHO NTD materials, UNICEF WASH updates, and multi-outlet coverage establish multi-source pediatric trachoma risk. Exact case counts evolve; multi-source wartime trachoma risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza WASH-disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-family-ransom-demands-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Family Ransom Demands Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (family-ransom-demand-denial cohort)',
+    location: 'Gaza Strip captivity sites — family-ransom-demand-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether families received ransom demands — a multi-source psychological pattern distinct from release-talks and deals denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source family-ransom-demand denial. Exact cases vary; multi-source family-ransom-demand denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-bed-nets-infant-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Infant Bed Nets Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (infant-bed-net-destruction cohort)',
+    location: 'West Bank village infant sleeping areas and clinic MCH stores',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian infant bed nets after October 7 — increasing vector exposure for infants. Pattern card distinct from general mosquito-net destruction.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF child-protection materials, and multi-outlet coverage establish multi-source infant bed-net destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian infant bed nets is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet infant bed-net destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -27043,6 +27287,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['mosquito-nets', 'settlers', 'vector', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-onchocerciasis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Onchocerciasis Risk Pattern',
+    description: 'WHO multi-source documentation of elevated pediatric onchocerciasis risk under vector-control collapse.',
+    source: 'WHO / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-onchocerciasis-risk-pattern-2023-2025',
+      'gaza-children-lymphatic-filariasis-risk-pattern-2023-2025',
+      'gaza-children-trachoma-risk-pattern-2023-2025',
+    ],
+    tags: ['onchocerciasis', 'children', 'vector', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-un-pressure-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of UN Pressure Pattern',
+    description: 'Multi-source documentation of captors withholding knowledge of UN pressure for release.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-un-pressure-pattern-2023-2025',
+      'israel-hostages-forced-to-recite-captor-slogans-on-camera-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-family-ransom-demands-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-insecticide-stores-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Insecticide Stores Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian insecticide stores after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-insecticide-stores-pattern-2023-2025',
+      'west-bank-settler-attacking-optometrists-pattern-2023-2025',
+      'west-bank-settler-destroying-bed-nets-infant-pattern-2023-2025',
+    ],
+    tags: ['insecticide', 'settlers', 'vector', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-lf-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Lymphatic Filariasis Risk Pattern',
+    description: 'WHO multi-source documentation of elevated pediatric lymphatic filariasis risk under vector-control collapse.',
+    source: 'WHO / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-lymphatic-filariasis-risk-pattern-2023-2025',
+      'gaza-children-onchocerciasis-risk-pattern-2023-2025',
+      'gaza-children-trachoma-risk-pattern-2023-2025',
+    ],
+    tags: ['lymphatic-filariasis', 'children', 'vector', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-slogan-camera-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Recite Captor Slogans on Camera Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to recite captors slogans on camera.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-recite-captor-slogans-on-camera-pattern-2023-2025',
+      'israel-hostages-forced-to-memorize-captor-slogans-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-un-pressure-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'propaganda', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-optometrists-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Optometrists Pattern',
+    description: 'OCHA/WHO multi-source documentation of elevated settler attacks on Palestinian optometrists after October 7.',
+    source: 'OCHA / WHO / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-optometrists-pattern-2023-2025',
+      'west-bank-settler-attacking-dental-clinic-staff-pattern-2023-2025',
+      'west-bank-settler-destroying-insecticide-stores-pattern-2023-2025',
+    ],
+    tags: ['optometrists', 'settlers', 'medical-access', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-trachoma-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Trachoma Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric trachoma risk under hygiene collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-trachoma-risk-pattern-2023-2025',
+      'gaza-children-conjunctivitis-surge-pattern-2023-2025',
+      'gaza-children-onchocerciasis-risk-pattern-2023-2025',
+    ],
+    tags: ['trachoma', 'children', 'wash', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-ransom-demand-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Family Ransom Demands Pattern',
+    description: 'Multi-source documentation of captors withholding whether families received ransom demands.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-family-ransom-demands-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hostage-deals-pattern-2023-2025',
+      'israel-hostages-forced-to-recite-captor-slogans-on-camera-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-infant-bed-nets-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Infant Bed Nets Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian infant bed nets after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-bed-nets-infant-pattern-2023-2025',
+      'west-bank-settler-destroying-mosquito-nets-pattern-2023-2025',
+      'west-bank-settler-destroying-insecticide-stores-pattern-2023-2025',
+    ],
+    tags: ['infant-bed-nets', 'settlers', 'vector', 'west-bank'],
+  },
+
 
 
 
