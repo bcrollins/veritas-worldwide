@@ -815,7 +815,9 @@ assert(
 const humansTxt = read('public/humans.txt')
 assert(humansTxt.includes('Veritas Worldwide'), 'humans.txt must name entity publisher only')
 assert(!/brandon|brollins|@gmail\.com/i.test(humansTxt), 'humans.txt must not leak personal identity')
+assert(humansTxt.includes('/research-pack.zip'), 'humans.txt must list offline research-pack.zip')
 assert(robots.includes('Allow: /humans.txt'), 'robots.txt must Allow humans.txt for crawler discovery')
+assert(robots.includes('Allow: /research-pack.zip'), 'robots.txt must Allow research-pack.zip')
 assert(
   robots.includes('Disallow: /researcher/') || robots.includes('Disallow: /researcher/timeline'),
   'robots.txt must Disallow researcher utility surfaces',
