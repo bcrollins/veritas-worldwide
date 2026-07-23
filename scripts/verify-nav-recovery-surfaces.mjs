@@ -1717,4 +1717,15 @@ const ids = surfaces.map((r) => r[1])
 assert(ids.includes('Related hubs') || ids.includes('PRIMARY_RELATED_HUBS') || ids.includes('mobile-tab-bar'), 'core needles present end')
 
 
+
+// RelatedHubs PRIMARY five labels ultimate end final
+const primaryLabelsEnd = read('src/components/RelatedHubs.tsx')
+const plb = primaryLabelsEnd.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+assert(plb, 'PRIMARY block labels end')
+for (const label of ['Record', 'Read', 'Dossiers', 'Profiles', 'Search']) {
+  assert(plb[1].includes(`label: '${label}'`) || plb[1].includes(`label: "${label}"`), `PRIMARY label ${label} end`)
+}
+assert((plb[1].match(/to:/g) || []).length === 5, 'PRIMARY to count 5 end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
