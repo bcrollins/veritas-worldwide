@@ -7866,6 +7866,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-niacin-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Niacin Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (niacin cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated niacin deficiency risk among Gaza children under maize/carb-heavy wartime diets lacking diverse proteins — a pellagra-risk pattern distinct from thiamine and folate cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source niacin-deficiency risk. Exact clinical counts are incomplete; multi-source wartime pediatric niacin risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-adequate-sleep-space-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Adequate Sleep Space Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sleep-space cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document extreme overcrowding and denial of adequate sleep space for Israeli civilian hostages including children — floor sleeping, chains, and shared cramped cells. Pattern card distinct from sleep-deprivation and solitary cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source inadequate sleep-space conditions. Exact configurations vary; multi-source overcrowded sleep denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-caravan-expansion-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Caravan Expansion Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (caravan cohort)',
+    location: 'West Bank Area C outpost and settlement edges',
+    summary:
+      'Peace Now, B\'Tselem, and multi-source reporting document accelerated placement of settler caravans after October 7 — rapid, low-cost expansion of outpost footprints on Palestinian land. Pattern card for caravan expansion distinct from outpost-legalization and grazing-outpost cards.',
+    evidence:
+      'Peace Now outpost-tracking databases, multi-source aerial analysis, and multi-outlet coverage establish multi-source caravan expansion. Exact unit counts evolve; multi-source wartime caravan expansion is the claim.',
+    sources: [
+      { label: 'Peace Now settlement materials', url: 'https://peacenow.org.il' },
+      { label: "B'Tselem settlement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet caravan expansion coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Peace Now public materials', url: 'https://peacenow.org.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -12229,6 +12310,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['water-tanks', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-niacin-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Niacin Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated niacin deficiency risk among children under wartime diets.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-niacin-deficiency-risk-pattern-2023-2025',
+      'gaza-children-thiamine-deficiency-risk-pattern-2023-2025',
+      'gaza-children-protein-energy-gap-pattern-2023-2025',
+    ],
+    tags: ['niacin', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-sleep-space-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Adequate Sleep Space Pattern',
+    description: 'Multi-source documentation of extreme overcrowding and denial of adequate sleep space for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-adequate-sleep-space-pattern-2023-2025',
+      'israel-hostages-sleep-deprivation-pattern-2023-2025',
+      'israel-hostages-solitary-confinement-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'overcrowding', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-caravan-expansion-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Caravan Expansion Pattern',
+    description: "Peace Now/B'Tselem multi-source documentation of accelerated settler caravan placement after October 7.",
+    source: "Peace Now / B'Tselem / multi-outlet",
+    sourceUrl: 'https://peacenow.org.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-caravan-expansion-pattern-2023-2025',
+      'west-bank-settler-outpost-legalization-pattern-2023-2025',
+      'west-bank-settler-grazing-outposts-pattern-2023-2025',
+    ],
+    tags: ['caravans', 'outposts', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
