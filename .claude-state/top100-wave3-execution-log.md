@@ -34,3 +34,8 @@
 - Sentry optional DSN docs
 - ROC soft-floor files from peers absorbed as Implemented ranks 53/74
 
+
+## Interval dual-cite deep paths
+- weakHomepage 164→96 (below WARN 120)
+- debunk homepage 46→0 batch; statement homepage partial
+- integrity pure PASS densify floor intact
