@@ -79,10 +79,12 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 
 
 ## Recovery suite scale
-- `verify-nav-recovery-surfaces`: **43 surface needles** + family mounts + Hick/soft-404 exactness
+- `verify-nav-recovery-surfaces`: **45 surface needles** + family mounts + Hick/soft-404 exactness
 - Live continuously green under densify tip ≥1500 incidents
 
 | `75ff335` | recovery suite 40 needles (not-found-page) |
 
 | `c18116b` | membership↔cookie consent event contract |
 | `12536b3` | cookie same-tab event |
+
+| `fa72029` | cookiePending hide-while-banner-pending |
