@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:44:03.947Z",
-  "claimCount": 678,
+  "generatedAt": "2026-07-23T11:47:26.674Z",
+  "claimCount": 687,
   "tierHistogram": {
-    "well_attested": 276,
-    "verified": 242,
-    "contested": 51,
-    "interpretive": 76,
+    "well_attested": 279,
+    "verified": 246,
+    "contested": 52,
+    "interpretive": 77,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 28
@@ -150,6 +150,13 @@
       "tier": "well_attested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave51.ts"
+    },
+    {
+      "id": "ane-cyrus-cylinder-policy-w65",
+      "claim": "The Cyrus Cylinder (British Museum) records Achaemenid royal ideology of restoration of cults after Babylon’s fall — often compared with biblical return traditions without equating the cylinder to Ezra–Nehemiah narrative detail.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave65.ts"
     },
     {
       "id": "ane-deir-alla",
@@ -542,6 +549,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "arch-bethsaida-et-tell-debate",
+      "claim": "Identification of New Testament Bethsaida with et-Tell (and competing sites) remains archaeologically debated; the debate itself is data about how Gospel geography is tested against excavation.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave65.ts"
     },
     {
       "id": "arch-caesarea-aqueduct",
@@ -1300,6 +1314,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "cosmo-inflation-horizon-problem",
+      "claim": "Cosmic inflation is a science_model framework that can solve the horizon and flatness problems by a period of accelerated early expansion; it is constrained by CMB observables (n_s, r upper limits) rather than proven as unique history.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave65.ts"
+    },
+    {
       "id": "cosmo-inflation-status",
       "claim": "Cosmic inflation is the leading early-universe paradigm for flatness and horizon problems; direct detection of primordial B-mode polarization remains an active observational goal.",
       "tier": "well_attested",
@@ -1767,6 +1788,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave46.ts"
+    },
+    {
+      "id": "ec-ignatius-romans-martyrdom",
+      "claim": "Ignatius of Antioch’s Letter to the Romans expresses eagerness for martyrdom and is a primary early second-century window on episcopal self-understanding and Roman Christian networks.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave65.ts"
     },
     {
       "id": "ec-ignatius-rome-letter",
@@ -2364,6 +2392,13 @@
       "file": "src/data/recordOfJesusChristWave32.ts"
     },
     {
+      "id": "hj-kingdom-language-range",
+      "claim": "“Kingdom of God/Heaven” language is multiply attested across Gospel streams and is widely treated as characteristic of Jesus’ proclamation, while the precise eschatological meaning (present/future/both) remains debated.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave65.ts"
+    },
+    {
       "id": "hj-kingdom-of-god-core",
       "claim": "The kingdom of God / reign of God is multiply attested as central to Jesus’ public proclamation across Synoptic streams.",
       "tier": "well_attested",
@@ -2887,6 +2922,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave50.ts"
+    },
+    {
+      "id": "mod-fredriksen-jesus-jerusalem",
+      "claim": "Paula Fredriksen’s work (e.g., Jesus of Nazareth, King of the Jews) models a historically Jewish Jesus within pilgrimage and purity frameworks while treating Gospel Passion politics with critical care.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave65.ts"
     },
     {
       "id": "mod-fredriksen-when-christians",
@@ -3484,6 +3526,13 @@
       "file": "src/data/recordOfJesusChristWave27.ts"
     },
     {
+      "id": "nc-pliny-trajan-correspondence",
+      "claim": "Pliny the Younger’s letter to Trajan (Ep. 10.96–97) describes early second-century Christian practice and Roman judicial handling in Bithynia-Pontus — primary non-Christian administrative evidence of the movement’s spread.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave65.ts"
+    },
+    {
       "id": "nc-pliny-trajan-reply",
       "claim": "Trajan’s reply to Pliny (Ep. 10.97) instructs not to seek Christians out but to punish the obstinate if properly accused — primary imperial policy evidence for early 2nd-c. Christian legal status.",
       "tier": "verified",
@@ -3762,6 +3811,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave28.ts"
+    },
+    {
+      "id": "nt-codex-sinaiticus-scope",
+      "claim": "Codex Sinaiticus (ℵ, 4th c.) is among the earliest nearly complete Christian Bibles in Greek and a primary continuous-text witness across OT (LXX) and NT for modern critical editions.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave65.ts"
     },
     {
       "id": "nt-comma-johanneum",
@@ -4406,6 +4462,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
+      "id": "st-herod-temple-expansion-w65",
+      "claim": "Herod’s expansion of the Temple Mount platform is archaeologically and literarily well-documented; the scale of the project shapes reconstructions of pilgrimage economy and Jesus’ Temple scenes as urban stage.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave65.ts"
     },
     {
       "id": "st-high-priest-politics",

@@ -1,6 +1,6 @@
 {
-  "claimCount": 678,
-  "generatedAt": "2026-07-23T11:44:03.947Z",
+  "claimCount": 687,
+  "generatedAt": "2026-07-23T11:47:26.674Z",
   "source": "export-roc-corpus.mjs",
   "note": "Default LIVE_ANONYMITY_SOFT_CLAIM_FLOOR when env unset; WARN-only on deploy lag"
 }
