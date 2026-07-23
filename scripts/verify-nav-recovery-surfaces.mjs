@@ -1928,4 +1928,23 @@ for (const name of thrashPages) {
 }
 
 
+
+// RelatedHub page HUBS ≤5 count floor
+const hubConstPages = [
+  'AboutPage','MembershipPage','PrivacyPage','TermsPage','AccessibilityPage',
+  'TimelinePage','TopicsIndexPage','ComprehensiveProfilePage','NewsPage','ArticlePage',
+  'ChapterPage','TopicPage','ProfilePage','AipacPage','DeepStatePage','ForumPage',
+  'IsraelDossierPage','IsraelDossierBriefingPage','SupportSuccessPage','SubscribeSuccessPage',
+  'AnalyticsPage','BookmarksPage','SearchPage','MediaKitPage','ComprehensiveProfileSuccessPage',
+]
+for (const name of hubConstPages) {
+  const src = read(`src/pages/${name}.tsx`)
+  const blocks = [...src.matchAll(/const \w+_HUBS[^=]*= \[([\s\S]*?)\]/g)]
+  for (const b of blocks) {
+    const n = (b[1].match(/to:/g) || []).length
+    assert(n >= 1 && n <= 5, `${name} hub const count ${n} not in 1..5`)
+  }
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
