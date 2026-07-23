@@ -37,6 +37,7 @@ const pure = [
   'verify-brand-kit.mjs',
   'verify-integrity-score.mjs',
   'verify-identity-scrub.mjs',
+  'verify-visual-investigations-floor.mjs',
   'verify-robots-disallow.mjs',
   'verify-share-utms.mjs',
   'verify-source-url-shapes.mjs',
@@ -49,6 +50,7 @@ const pure = [
   'verify-package-entity.mjs',
   'verify-sitemap-exclusions.mjs',
   'verify-top100-floors.mjs',
+  'verify-git-author-forward.mjs',
 ]
 
 let failed = 0

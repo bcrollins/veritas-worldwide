@@ -172,10 +172,12 @@ function normalizeHumanDate(value) {
 }
 
 function getGitModified(filePath) {
-  const fallbackModified = () => new Date(fs.statSync(filePath).mtimeMs).toISOString()
+  // Prefer the later of git committer date and filesystem mtime so lastmod
+  // never lags a densify edit that has not been committed yet (or git is slow).
+  const mtimeIso = new Date(fs.statSync(filePath).mtimeMs).toISOString()
 
   if (gitModifiedUnavailable) {
-    return fallbackModified()
+    return mtimeIso
   }
 
   const relativePath = path.relative(repoRoot, filePath)
@@ -187,11 +189,16 @@ function getGitModified(filePath) {
   })
 
   if (result.status === 0 && result.stdout.trim()) {
-    return result.stdout.trim()
+    const gitIso = result.stdout.trim()
+    try {
+      return new Date(gitIso) >= new Date(mtimeIso) ? gitIso : mtimeIso
+    } catch {
+      return mtimeIso
+    }
   }
 
   gitModifiedUnavailable = true
-  return fallbackModified()
+  return mtimeIso
 }
 
 function normalizeRoute(route) {
@@ -2498,6 +2505,19 @@ const staticPages = [
     body: ['Post-checkout confirmation for the $499 Comprehensive Online Profile research service.'],
     noindex: true,
     sourceFile: 'src/pages/ComprehensiveProfileSuccessPage.tsx',
+  },
+  {
+    route: '/researcher',
+    title: 'Researcher Tools | Veritas Worldwide',
+    heading: 'Researcher hub',
+    description:
+      'Local and public research tools for The Record: personal timeline, sources, methodology, and machine corpora. Entity attribution only.',
+    body: [
+      'Evidence integrity tools for independent verification. Personal builders stay on this device.',
+      'Public corpora (ROC + Israel Dossier) are published by Veritas Worldwide only — no personal author byline.',
+      'Includes evidence taxonomy JSON, methodology, and dual-sided multi-source dossier tools.',
+    ],
+    sourceFile: 'src/pages/ResearcherHubPage.tsx',
   },
   {
     route: '/researcher/timeline',

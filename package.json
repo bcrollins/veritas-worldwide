@@ -79,6 +79,7 @@
     "verify:trust-corpora-links": "node scripts/verify-trust-corpora-links.mjs",
     "verify:profile-counters": "node scripts/verify-profile-counters.mjs",
     "verify:seo-meta": "node scripts/verify-seo-meta.mjs",
+    "verify:visual-investigations-floor": "node scripts/verify-visual-investigations-floor.mjs",
     "verify:pure": "node scripts/verify-pure.mjs",
     "verify:brand-kit": "node scripts/verify-brand-kit.mjs",
     "verify:record-of-jesus-christ": "node scripts/verify-record-of-jesus-christ.mjs",

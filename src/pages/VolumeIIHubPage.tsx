@@ -66,6 +66,14 @@ export default function VolumeIIHubPage() {
             Methodology →
           </Link>
         </li>
+        <li>
+          <Link
+            to="/researcher"
+            className="inline-flex min-h-[44px] items-center font-sans text-sm font-semibold text-ink-muted hover:text-crimson hover:underline"
+          >
+            Researcher tools hub →
+          </Link>
+        </li>
       </ul>
       <p className="font-sans text-xs text-ink-faint">
         Publisher: {SITE_NAME} only. No personal operator byline.
