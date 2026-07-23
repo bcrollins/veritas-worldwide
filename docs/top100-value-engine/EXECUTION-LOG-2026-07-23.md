@@ -180,3 +180,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Multi-agent | densify-only; peer nav docs left unstaged |
 | Live | lag-aware soft-floor; no long Railway poll |
 
+
+## Interval densify — tip **1539** / withVideo **114** / VI cards **101+**
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza arterial-line/volumetric/macrobore/heparin-flush · hostage face-wall/standing-sleep/deal-stickers/empty-classroom · WB honey-extractors/trellis-wires/chess-tables/olive-netting |
+| VI | dialysis collapse · Nahal Oz perimeter road · settler sheep-flock theft |
+| Pure floors | visual + israel-dossier + research-pack PASS |
+| Multi-agent | densify-only; peer nav docs unstaged |
+| Live | lag-aware (1509/105 → catching tip) |
+
