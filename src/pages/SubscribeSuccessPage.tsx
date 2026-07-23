@@ -362,6 +362,35 @@ export default function SubscribeSuccessPage() {
             </ul>
           </div>
 
+          <div
+            className="border border-border bg-surface p-5"
+            data-testid="subscribe-success-research-pack"
+          >
+            <p className="font-sans text-[0.55rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
+              Free · Machine-readable
+            </p>
+            <h2 className="font-display text-lg font-bold text-ink mb-2">Offline research pack</h2>
+            <p className="font-body text-sm text-ink-muted leading-relaxed mb-4">
+              Download public JSON corpora (profiles, ROC, Israel dossier, taxonomy) as one ZIP. Not a paid
+              private dossier. Rate-limited. Entity publisher only.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <a
+                href="/research-pack.zip"
+                download="veritas-research-pack.zip"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-obsidian px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-white hover:bg-crimson"
+              >
+                Download ZIP
+              </a>
+              <Link
+                to="/researcher"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson"
+              >
+                Researcher tools
+              </Link>
+            </div>
+          </div>
+
           {!isInstituteSource && featuredArticles.length > 0 && (
             <div>
               <div className="flex items-center gap-4 mb-4">

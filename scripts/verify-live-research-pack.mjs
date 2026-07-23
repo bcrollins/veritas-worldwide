@@ -86,6 +86,28 @@ async function main() {
     )
   }
 
+  // Health probe (when dual-write tip is live)
+  try {
+    const healthRes = await fetch(`${base}/api/health`, {
+      headers: { accept: 'application/json', 'Cache-Control': 'no-cache' },
+      signal: AbortSignal.timeout(15000),
+    })
+    if (healthRes.ok) {
+      const health = await healthRes.json()
+      if (health?.checks && typeof health.checks === 'object') {
+        if (Object.prototype.hasOwnProperty.call(health.checks, 'researchPackZip')) {
+          assert(health.checks.researchPackZip === true, 'health.checks.researchPackZip must be true')
+          assert(
+            health.checks.researchPackManifest === true,
+            'health.checks.researchPackManifest must be true',
+          )
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('[verify:live-research-pack] WARN health probe skipped:', err?.message || err)
+  }
+
   finish()
 }
 

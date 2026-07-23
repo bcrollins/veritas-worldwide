@@ -12,3 +12,5 @@ Software: React, Vite, Express, PostgreSQL
 License: CC BY-NC-SA 4.0 for The Record public archive (see /terms)
 Doctype: HTML5
 Language: English
+Corpora: /research-pack.zip (offline machine-readable pack) · /profiles/corpus.json · /israel-dossier/corpus.json · /record-of-jesus-christ/corpus.json · /evidence-taxonomy.json
+Research: /researcher · /methodology · /sources

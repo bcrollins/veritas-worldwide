@@ -104,6 +104,16 @@ assert(
   supportSuccess.includes('/research-pack.zip') && supportSuccess.includes('support-success-research-pack'),
   'Support success must offer free research pack card',
 )
+const subscribeSuccess = read('src/pages/SubscribeSuccessPage.tsx')
+assert(
+  subscribeSuccess.includes('/research-pack.zip') && subscribeSuccess.includes('subscribe-success-research-pack'),
+  'Subscribe success must offer free research pack card',
+)
+const humans = read('public/humans.txt')
+assert(
+  humans.includes('/research-pack.zip') && humans.includes('Corpora:'),
+  'humans.txt must document research-pack corpora path',
+)
 const platformHealth = read('scripts/verify-platform-health.mjs')
 assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),
