@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:16:28.833Z",
+  "generatedAt": "2026-07-23T10:17:23.447Z",
   "count": 96,
   "profiles": [
     {
@@ -1752,9 +1752,9 @@
         "Election Interference",
         "Law Enforcement"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "john-brennan",

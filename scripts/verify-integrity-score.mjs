@@ -133,6 +133,7 @@ const required = [
   'steve-bannon',
   'rashida-tlaib',
   'tucker-carlson',
+  'james-comey',
 ];
 const scores = {};
 for (const id of required) {
@@ -950,8 +951,27 @@ for (const f of (tuckerP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('tucker dual-cite collision: ' + f.id);
 }
 
+
+// James Comey densify gate (n≥3)
+const comey = scores['james-comey'];
+if (!comey || comey.n < 3) throw new Error('james-comey needs ≥3 verified falsehoods, got ' + (comey?.n ?? 0));
+if (comey.score > 50) throw new Error('james-comey score expected ≤50 after densify, got ' + comey.score);
+const comeyP = getProfileBySlug('james-comey');
+for (const id of [
+  'comey-not-a-leaker-memo-2017',
+  'comey-clinton-email-exoneration-certainty-2016',
+  'comey-weiner-laptop-october-surprise-process-2016',
+]) {
+  if (!(comeyP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('james-comey missing docket id: ' + id);
+  }
+}
+for (const f of (comeyP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('comey dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 46) throw new Error('expected ≥46 compiled dockets, got ' + docketCount);
+if (docketCount < 47) throw new Error('expected ≥47 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

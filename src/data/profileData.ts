@@ -10388,7 +10388,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2017'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'comey-not-a-leaker-memo-2017',
+        statement:
+          'Publicly framed himself as not a “leaker” after orchestrating disclosure of his Trump-meeting memos through a friend to the press.',
+        saidAt: '2017–2018',
+        context: 'Post-firing testimony and public statements about sharing Trump-meeting memos with Columbia professor Daniel Richman for media dissemination.',
+        whyFalse:
+          'DOJ Inspector General and Comey’s own testimony establish he gave memos containing unclassified but sensitive presidential-meeting content to a friend to share with the New York Times — an unauthorized disclosure of government information. Calling that not “leaking” is false to the ordinary meaning and IG findings of improper disclosure.',
+        correction:
+          'Comey intentionally used a cutout to get his memos into the press — conduct the IG found improper, even if he disputes the “leaker” label.',
+        statementSource: 'Comey Senate testimony / public remarks on memo disclosure (2017–2018)',
+        statementUrl: 'https://www.intelligence.senate.gov/hearings/open-hearing-former-fbi-director-james-comey',
+        debunkSource: 'DOJ OIG report on Comey memos; contemporaneous NYT publication of memo contents',
+        debunkUrl: 'https://oig.justice.gov/reports/2019/o1902.pdf',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'comey-clinton-email-exoneration-certainty-2016',
+        statement:
+          'July 2016 statement that “no reasonable prosecutor” would bring a case against Hillary Clinton for the private-email server — framed as a near-certainty of no prosecutable intent.',
+        saidAt: 'July 5, 2016',
+        context: 'FBI Director public statement announcing the Clinton email investigation recommendation.',
+        whyFalse:
+          'DOJ/FBI norms reserve charging decisions for prosecutors; Comey’s public “no reasonable prosecutor” framing went beyond announcing an investigative finding and was later criticized by DOJ OIG as a usurpation of the Justice Department’s role. The absolute public certainty presentation was improper relative to DOJ process standards documented by the OIG.',
+        correction:
+          'Charging decisions rest with DOJ prosecutors; the Director’s public “no reasonable prosecutor” certainty statement violated norms the OIG later documented.',
+        statementSource: 'FBI Director Comey July 5, 2016 public statement on Clinton email investigation',
+        statementUrl: 'https://www.fbi.gov/news/press-releases/statement-by-fbi-director-james-b-comey-on-the-investigation-of-secretary-hillary-clinton2019s-use-of-a-personal-e-mail-system',
+        debunkSource: 'DOJ OIG review of Comey’s public statements and midyear investigation handling',
+        debunkUrl: 'https://oig.justice.gov/reports/2018/o1804.pdf',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'comey-weiner-laptop-october-surprise-process-2016',
+        statement:
+          'Public letter to Congress reopening the Clinton email matter days before the 2016 election was framed as required candor — while internal process options for quieter handling existed and OIG later found the public disclosure highly irregular.',
+        saidAt: 'October 28, 2016',
+        context: 'Comey letter to Congress announcing the Weiner-laptop related review of Clinton emails shortly before Election Day.',
+        whyFalse:
+          'DOJ OIG concluded Comey’s decision to send the October 28 letter was a serious error in judgment that departed from longstanding DOJ/FBI norms against public investigative steps near elections. Framing it as the only responsible path overstated necessity relative to the OIG’s findings.',
+        correction:
+          'OIG found the October letter a serious error that broke DOJ norms against election-proximate public investigative disclosures.',
+        statementSource: 'Comey Oct 28, 2016 letter to Congress (public record)',
+        statementUrl: 'https://www.justice.gov',
+        debunkSource: 'DOJ OIG Midyear Examined report on Comey’s October letter',
+        debunkUrl: 'https://oig.justice.gov/reports/2018/o1804.pdf',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'john-brennan',
