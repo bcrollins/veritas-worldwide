@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:57:07.159Z",
-  "claimCount": 327,
+  "generatedAt": "2026-07-23T10:00:04.624Z",
+  "claimCount": 336,
   "tierHistogram": {
-    "well_attested": 124,
-    "verified": 117,
-    "contested": 33,
-    "interpretive": 32,
+    "well_attested": 128,
+    "verified": 120,
+    "contested": 34,
+    "interpretive": 33,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 16
@@ -138,6 +138,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "ane-hezekiah-tunnel-water",
+      "claim": "Hezekiah’s tunnel redirected Gihon spring water to the Siloam Pool — verified hydraulic engineering of late-8th-century Jerusalem.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
       "id": "ane-inscription-map",
       "claim": "Key West Semitic and Egyptian inscriptions relevant to Israel/Judah (Merneptah, Mesha, Tel Dan, Siloam, etc.) form a geographically distributed control set across Egypt, Transjordan, and the Galilee–Golan.",
       "tier": "well_attested",
@@ -255,6 +262,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "arch-bethsaida-debate",
+      "claim": "Bethsaida identification (et-Tell vs el-Araj) remains an active archaeological debate relevant to Gospel geography.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
       "id": "arch-caesarea-maritima",
@@ -558,6 +572,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "cosmo-cmb-lensing",
+      "claim": "CMB lensing measures the deflection of CMB photons by large-scale structure, providing an independent growth probe within ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
       "id": "cosmo-cmb-polarization",
       "claim": "CMB polarization (E-modes; B-mode searches) provides independent cosmological information beyond temperature anisotropies alone.",
       "tier": "verified",
@@ -759,6 +780,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave11.ts"
+    },
+    {
+      "id": "ec-barnabas-allegory",
+      "claim": "The Epistle of Barnabas allegorizes Torah commandments as spiritual types — early Christian supersessionist hermeneutic evidence.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
       "id": "ec-didache",
@@ -1209,6 +1237,13 @@
       "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
+      "id": "hj-passion-week-outline",
+      "claim": "A final Jerusalem visit ending in arrest and crucifixion under Pilate is a standard historical outline shared across diverse HJ reconstructions.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
       "id": "hj-pauline-chronology",
       "claim": "Pauline absolute chronology is reconstructed from Acts, the letters, and external anchors (Gallio inscription at Delphi); competing schemes (Ramsay, Knox, Hyldahl, et al.) differ by several years.",
       "tier": "contested",
@@ -1524,6 +1559,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "mod-reader-hygiene-checklist",
+      "claim": "Readers should check for each claim: tier label, proofVsConcept, source kind, and whether a statement is model/reconstruction/tradition before treating it as laboratory fact.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
       "id": "mod-social-memory",
       "claim": "Social memory approaches treat Gospel traditions as communal remembering under social constraints rather than pure invention or pure stenography.",
       "tier": "interpretive",
@@ -1627,6 +1669,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave12.ts"
+    },
+    {
+      "id": "nc-lucian-peregrinus-christ",
+      "claim": "Lucian’s Peregrinus describes Christians venerating a crucified sophist in Palestine — hostile 2nd-c. literary notice of founder memory.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
       "id": "nc-mara",
@@ -1958,6 +2007,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "nt-oxy-rhynchus",
+      "claim": "Oxyrhynchus papyri include important early Christian and NT fragments expanding the geographic footprint of early text transmission in Egypt.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
       "id": "nt-p45-p46-p47",
       "claim": "Chester Beatty papyri (P45, P46, P47) are major third-century witnesses to Gospels/Acts, Paul, and Revelation respectively.",
       "tier": "verified",
@@ -2243,6 +2299,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-qumran-calendar",
+      "claim": "Some DSS calendrical texts promote a 364-day solar calendar differing from later rabbinic lunar-solar practice — evidence of calendar diversity.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
       "id": "st-roman-census-practices",
