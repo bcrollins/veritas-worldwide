@@ -532,6 +532,66 @@ export default function ProfilesIndexPage(): React.ReactNode {
           </select>
         </div>
 
+        <div className="flex flex-wrap gap-2 mb-4" data-integrity-presets="true">
+          <span className="inline-flex min-h-[44px] items-center font-sans text-[0.58rem] font-bold uppercase tracking-[0.12em] text-ink-faint">
+            Integrity presets
+          </span>
+          <button
+            type="button"
+            onClick={() => {
+              setSortBy('integrity-asc')
+              setActiveCategory('all')
+              setSearchQuery('')
+            }}
+            className={`inline-flex min-h-[44px] items-center rounded-full border px-3 py-1.5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.08em] transition-colors ${
+              sortBy === 'integrity-asc' && activeCategory === 'all' && !searchQuery
+                ? 'border-crimson bg-crimson/10 text-crimson'
+                : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+            }`}
+            title="Shareable: /profiles?sort=integrity-asc"
+          >
+            Lowest integrity first
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setSortBy('integrity-asc')
+              setActiveCategory('politician')
+              setSearchQuery('')
+            }}
+            className={`inline-flex min-h-[44px] items-center rounded-full border px-3 py-1.5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.08em] transition-colors ${
+              sortBy === 'integrity-asc' && activeCategory === 'politician' && !searchQuery
+                ? 'border-crimson bg-crimson/10 text-crimson'
+                : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+            }`}
+            title="Shareable: /profiles?sort=integrity-asc&category=politician"
+          >
+            Politicians · integrity
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setSortBy('integrity-asc')
+              setActiveCategory('media')
+              setSearchQuery('')
+            }}
+            className={`inline-flex min-h-[44px] items-center rounded-full border px-3 py-1.5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.08em] transition-colors ${
+              sortBy === 'integrity-asc' && activeCategory === 'media' && !searchQuery
+                ? 'border-crimson bg-crimson/10 text-crimson'
+                : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+            }`}
+            title="Shareable: /profiles?sort=integrity-asc&category=media"
+          >
+            Media · integrity
+          </button>
+          <a
+            href="/profiles?sort=integrity-asc"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3 py-1.5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-ink-faint hover:border-crimson hover:text-crimson transition-colors"
+          >
+            Shareable URL ↗
+          </a>
+        </div>
+
         <div className="flex flex-wrap gap-2 mb-8">
           {QUERY_SUGGESTIONS.map((suggestion) => (
             <button

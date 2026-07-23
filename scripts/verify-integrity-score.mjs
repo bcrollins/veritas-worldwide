@@ -28,6 +28,30 @@ if (!page.includes('IntegrityDocketModal') && !page.includes('integrityOpen')) {
 const index = fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.tsx'), 'utf8')
 if (!index.includes('computeIntegrityScore')) fail('ProfilesIndex must surface integrity')
 if (!index.includes('integrity-asc')) fail('ProfilesIndex must sort by integrity')
+if (!index.includes('Integrity presets') || !index.includes('Lowest integrity first')) {
+  fail('ProfilesIndex must expose shareable integrity filter presets')
+}
+if (!index.includes('/comprehensive-profile')) {
+  fail('ProfilesIndex must CTA to Comprehensive Online Profile product')
+}
+
+const pageSrc = fs.readFileSync(path.join(root, 'src/pages/ProfilePage.tsx'), 'utf8')
+if (!pageSrc.includes('One-tap primary sources')) {
+  fail('ProfilePage docket must expose one-tap primary source open')
+}
+if (!pageSrc.includes("params.get('docket')") || !pageSrc.includes('#integrity')) {
+  fail('ProfilePage must deep-link open integrity docket via ?docket=1 or #integrity')
+}
+
+const home = fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8')
+if (!home.includes('/comprehensive-profile')) {
+  fail('HomePage must secondary-CTA to OSINT / comprehensive-profile product')
+}
+
+const robotsTxt = fs.readFileSync(path.join(root, 'public/robots.txt'), 'utf8')
+if (!robotsTxt.includes('Allow: /comprehensive-profile')) {
+  fail('robots.txt must explicitly Allow /comprehensive-profile product path')
+}
 
 const r = spawnSync(
   process.execPath,
@@ -1794,7 +1818,28 @@ for (const f of (muellerP.documentedFalsehoods || []).filter((x) => x.tier === '
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
 if (docketCount < 96) throw new Error('expected ≥96 compiled dockets, got ' + docketCount);
 
-console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
+// Permanent global dual-cite hygiene: reject single-source dockets corpus-wide
+let dualCiteRows = 0;
+const isHttpUrl = (u) => typeof u === 'string' && (u.startsWith('http://') || u.startsWith('https://'));
+for (const p of PROFILES) {
+  for (const f of (p.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+    dualCiteRows++;
+    if (!f.statementUrl || !f.debunkUrl) {
+      throw new Error(p.id + ' verified falsehood missing dual-cite URL: ' + f.id);
+    }
+    if (f.statementUrl === f.debunkUrl) {
+      throw new Error(p.id + ' single-source docket rejected (statementUrl === debunkUrl): ' + f.id);
+    }
+    if (!isHttpUrl(f.statementUrl) || !isHttpUrl(f.debunkUrl)) {
+      throw new Error(p.id + ' dual-cite must be absolute http URL: ' + f.id);
+    }
+  }
+}
+if (dualCiteRows < 288) {
+  throw new Error('expected >=288 verified dual-cite rows corpus-wide, got ' + dualCiteRows);
+}
+
+console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, dualCiteRows, scores }, null, 2));
 `,
   ],
   { cwd: root, encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 },

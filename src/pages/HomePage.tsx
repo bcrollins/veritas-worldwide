@@ -151,6 +151,12 @@ export default function HomePage() {
                             Israel Dossier
                           </Link>
                           <Link
+                            to="/comprehensive-profile"
+                            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm sm:border sm:border-obsidian/30 sm:bg-obsidian/5 sm:px-6 sm:py-3 text-ink font-sans text-sm font-semibold hover:text-crimson sm:hover:border-crimson transition-colors"
+                          >
+                            Private OSINT — $499
+                          </Link>
+                          <Link
                             to="/institute"
                             className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-sm sm:border sm:border-border sm:px-6 sm:py-3 text-ink-muted sm:text-ink font-sans text-sm font-semibold hover:text-crimson sm:hover:border-crimson transition-colors"
                           >

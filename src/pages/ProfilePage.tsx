@@ -349,23 +349,38 @@ function IntegrityDocketModal({
                 </p>
                 <p className="font-body text-sm text-ink leading-relaxed">{f.correction}</p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-2 pt-1">
-                <a
-                  href={f.statementUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-3 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson"
-                >
-                  Statement source → {f.statementSource}
-                </a>
-                <a
-                  href={f.debunkUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border px-3 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson"
-                >
-                  Debunk / primary record → {f.debunkSource}
-                </a>
+              <div className="flex flex-col gap-2 pt-1">
+                <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.12em] text-ink-faint">
+                  One-tap primary sources
+                </p>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <a
+                    href={f.statementUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-sm border border-border bg-parchment px-3 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson"
+                    title={f.statementUrl}
+                  >
+                    <span aria-hidden="true">↗</span>
+                    <span className="text-left">
+                      <span className="block text-[0.55rem] uppercase tracking-wider text-ink-faint">Open statement</span>
+                      <span className="line-clamp-2">{f.statementSource}</span>
+                    </span>
+                  </a>
+                  <a
+                    href={f.debunkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-sm border border-crimson/40 bg-crimson/5 px-3 font-sans text-xs font-semibold text-crimson hover:bg-crimson/10"
+                    title={f.debunkUrl}
+                  >
+                    <span aria-hidden="true">↗</span>
+                    <span className="text-left">
+                      <span className="block text-[0.55rem] uppercase tracking-wider text-crimson/80">Open debunk / record</span>
+                      <span className="line-clamp-2">{f.debunkSource}</span>
+                    </span>
+                  </a>
+                </div>
               </div>
             </article>
           ))}
@@ -757,6 +772,18 @@ export default function ProfilePage(): React.ReactNode {
   const [activeSection, setActiveSection] = useState<SectionId>('overview');
   const [tierFilter, setTierFilter] = useState<EvidenceTier | 'all'>('all');
   const [integrityOpen, setIntegrityOpen] = useState(false);
+
+  // Deep-link: ?docket=1 or #integrity opens the integrity docket modal
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const open =
+      params.get('docket') === '1' ||
+      params.get('integrity') === '1' ||
+      window.location.hash === '#integrity' ||
+      window.location.hash === '#docket'
+    if (open) setIntegrityOpen(true)
+  }, [slug])
 
   // ── Data Loading ─────────────────────────────────────────────
   useEffect(() => {
