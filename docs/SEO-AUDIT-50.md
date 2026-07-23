@@ -380,7 +380,8 @@ Expected: Continuous improvement loop.
 |--------|--------|-------------|
 | **1 (shipped)** | Soft-404, noindex, robots, FAQ, image sitemap, meta clamps, pure lock | #1–10, #30, #32, #41 |
 | **2 (shipped 2026-07-23)** | First-paint shell metas + static JSON-LD, fonts/CWV, breadcrumbs, Sources/Dossier FAQ, Discover robots, consent wire | #11–21, #22–24, #26, #35, #45–48 |
-| **3 (partial 2026-07-23)** | About/Timeline/Read/Topics breadcrumbs+FAQ, chapter/profile imageAlt, guide howTo helpers, SEO ops scorecard + GSC runbook | #16–19, #27, #40, #44, #50 |
+| **3a (shipped 2026-07-23)** | About/Timeline/Read/Topics breadcrumbs+FAQ, chapter/profile imageAlt, guide howTo helpers, SEO ops scorecard + GSC runbook | #16–19, #27, #40, #44, #50 |
+| **3b (shipped 2026-07-23)** | Legal/trust breadcrumbs (privacy/terms/analytics/forum/packs), Institute hub/course/book crumbs, AIPAC topic canonical, bot-meta `applyBotPageMeta` + expanded static surfaces, Googlebot soft-404 | #1, #20–22, #26, #41 |
 | **3 remaining content** | Profile densify wave, news cadence (content volume), archive pin floors | #36–39 |
 
 ### 3.2 File-by-file (Sprint 1 + 2 ship)
