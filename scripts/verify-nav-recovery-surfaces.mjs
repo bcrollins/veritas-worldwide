@@ -26,6 +26,7 @@ const surfaces = [
   ['src/pages/SearchPage.tsx', 'search-idle-hubs'],
   ['src/pages/SearchPage.tsx', 'search-empty-hubs'],
   ['src/pages/NotFoundPage.tsx', 'not-found-hub-chips'],
+  ['src/pages/NotFoundPage.tsx', 'not-found-secondary-hubs'],
   ['src/pages/NotFoundPage.tsx', 'not-found-page'],
   ['src/pages/TimelinePage.tsx', 'timeline-related-hubs'],
   ['src/pages/NewsPage.tsx', 'news-related-hubs'],
@@ -995,7 +996,7 @@ assert(israelSticky.includes('israel-dossier-related-hubs'), 'Israel RelatedHubs
 
 
 // Recovery suite surface needle floor
-assert(surfaces.length >= 101, `surfaces length floor 90 (got ${surfaces.length})`)
+assert(surfaces.length >= 102, `surfaces length floor 90 (got ${surfaces.length})`)
 
 
 // Cookie z-100 above tab z-50 unique final
@@ -1027,7 +1028,7 @@ assert(relatedAriaFinal.includes('Related hubs'), 'RelatedHubs aria Related hubs
 
 // Recovery suite reports needle count in PASS line format
 // (surfaces array is the authoritative floor via length assert above)
-assert(typeof surfaces.length === 'number' && surfaces.length >= 101, 'surfaces array healthy')
+assert(typeof surfaces.length === 'number' && surfaces.length >= 102, 'surfaces array healthy')
 
 
 // DOSSIER_SPOKES count reaffirm unique final
@@ -1216,6 +1217,15 @@ assert(bmRelatedMounts >= 2, `Bookmarks RelatedHubs mounts ${bmRelatedMounts} < 
 // Home related hubs coexists with home-hub-cta-row
 const homeDual = read('src/pages/HomePage.tsx')
 assert(homeDual.includes('home-hub-cta-row') && homeDual.includes('home-related-hubs'), 'Home CTA row + RelatedHubs')
+
+
+
+// NotFound secondary RelatedHubs platform
+const notFoundSec = read('src/pages/NotFoundPage.tsx')
+assert(notFoundSec.includes('not-found-secondary-hubs'), 'not-found-secondary-hubs')
+assert(notFoundSec.includes('NOT_FOUND_SECONDARY_HUBS'), 'NOT_FOUND_SECONDARY_HUBS const')
+assert(notFoundSec.includes('RelatedHubs'), 'NotFound mounts RelatedHubs secondary')
+assert(notFoundSec.includes('/news') && notFoundSec.includes('/methodology') && notFoundSec.includes('/content-pack'), 'NotFound secondary destinations')
 
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
