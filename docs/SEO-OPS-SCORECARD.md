@@ -176,3 +176,11 @@ Live tip lineage verified with:
 - Googlebot soft-404 matrix still **100% green** (all junk dynamic prefixes → 404+noindex)
 - Known content 200+index; admin/success/search/bookmarks/bernie noindex
 - Pure + live: `verify:seo-meta`, `verify:soft-404-gates`, `verify:live-bot-noindex`, `verify:live-anonymity`
+
+
+### Slug canonical redirects (2026-07-23)
+
+- Mixed-case public content paths → **301** lowercase (`/Profile/Ted-Cruz` → `/profile/ted-cruz`)
+- Trailing-slash public content paths → **301** slashless (`/profile/ted-cruz/` → `/profile/ted-cruz`)
+- Soft-404 allowlist lookups are case-insensitive (`isKnown*Slug`)
+- Pure: `verify:soft-404-gates` case suite; live: `verify:live-bot-noindex` trailing-slash junk
