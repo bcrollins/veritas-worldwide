@@ -35,6 +35,7 @@ const surfaces = [
   ['src/components/CookieConsent.tsx', 'data-z-above-tab-bar'],
   ['src/App.tsx', 'mobile-tab-bar'],
   ['src/App.tsx', 'primaryLinks'],
+  ['src/components/StickyMembershipBar.tsx', 'sticky-membership-bar'],
 ]
 
 for (const [rel, needle] of surfaces) {
