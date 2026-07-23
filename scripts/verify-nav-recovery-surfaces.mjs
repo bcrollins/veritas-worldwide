@@ -15,6 +15,7 @@ const surfaces = [
   ['src/components/DossierHubSpokes.tsx', 'dossier-hub-spokes'],
   ['src/components/ResearchHubChips.tsx', 'research-hub-chips'],
   ['src/pages/HomePage.tsx', 'home-hub-cta-row'],
+  ['src/pages/HomePage.tsx', 'home-news-chip'],
   ['src/pages/SearchPage.tsx', 'search-idle-hubs'],
   ['src/pages/SearchPage.tsx', 'search-empty-hubs'],
   ['src/pages/NotFoundPage.tsx', 'not-found-hub-chips'],
