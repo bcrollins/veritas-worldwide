@@ -2560,6 +2560,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-ein-hashlosha-visual-2023',
+    title: 'October 7 Kibbutz Ein HaShlosha — Multi-Outlet Civilian Murder Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Ein HaShlosha, southern Israel',
+    summary:
+      'Multi-outlet video and authenticated phone footage document the October 7 assault on Kibbutz Ein HaShlosha, including civilian murders. Multi-party visual record distinct from Be’eri, Kissufim, and Holit packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at Ein HaShlosha on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Ein HaShlosha October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-maternity-ward-blackout-visual-2023-2025',
+    title: 'Gaza Maternity Ward Blackouts — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Maternity wards and neonatal units across Gaza',
+    summary:
+      'Multi-outlet video packages document maternity-ward blackouts and neonatal care under generator failure affecting civilian mothers and newborns. Multi-source visual floor; ethnicity is never evidence.',
+    evidence:
+      'WHO health-cluster materials, multi-outlet visual packages, and OHCHR medical-protection materials establish multi-source documentation of maternity-care collapse under wartime conditions.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OHCHR medical-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza hospital packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet maternity blackout video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OHCHR medical-protection trail', url: 'https://www.who.int' },
+      { type: 'photo-essay', label: 'Wire photos of neonatal care under blackout', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-home-arson-day-visual-2023-2025',
+    title: 'West Bank Daytime Settler Home Arson — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village homes',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document daytime settler arson attacks on Palestinian civilian homes, including families with children. Distinct from night-arson visual card by focusing on multi-source daytime packages; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of daytime home arson against civilians.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem daytime home-arson video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
