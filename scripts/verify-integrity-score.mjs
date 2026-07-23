@@ -169,6 +169,9 @@ const required = [
   'marc-andreessen',
   'reid-hoffman',
   'john-podesta',
+  'paul-singer',
+  'bernard-marcus',
+  'haim-saban',
 ];
 const scores = {};
 for (const id of required) {
@@ -1566,8 +1569,57 @@ for (const f of (johnPodestaP.documentedFalsehoods || []).filter((x) => x.tier =
   if (f.statementUrl === f.debunkUrl) throw new Error('john-podesta dual-cite collision: ' + f.id);
 }
 
+
+// Paul Singer densify gate (n≥3)
+const singer = scores['paul-singer'];
+if (!singer || singer.n < 3) throw new Error('paul-singer needs ≥3 verified falsehoods, got ' + (singer?.n ?? 0));
+if (singer.score > 70) throw new Error('paul-singer score expected ≤70 after densify, got ' + singer.score);
+const singerP = getProfileBySlug('paul-singer');
+for (const id of [
+  'singer-elliott-not-a-vulture-absolute-framing',
+  'singer-pure-rule-of-law-no-political-agenda-argentina',
+  'singer-no-systemic-harm-from-holdout-strategy-absolute',
+]) {
+  if (!(singerP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('paul-singer missing docket id: ' + id);
+}
+for (const f of (singerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('singer dual-cite collision: ' + f.id);
+}
+
+// Bernard Marcus densify gate (n≥3)
+const marcus = scores['bernard-marcus'];
+if (!marcus || marcus.n < 3) throw new Error('bernard-marcus needs ≥3 verified falsehoods, got ' + (marcus?.n ?? 0));
+if (marcus.score > 80) throw new Error('bernard-marcus score expected ≤80 after densify, got ' + marcus.score);
+const marcusP = getProfileBySlug('bernard-marcus');
+for (const id of [
+  'marcus-home-depot-politics-pure-job-creator-no-agenda',
+  'marcus-minimum-wage-kills-all-jobs-absolute',
+  'marcus-retail-labor-no-exploitation-absolute',
+]) {
+  if (!(marcusP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('bernard-marcus missing docket id: ' + id);
+}
+for (const f of (marcusP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('marcus dual-cite collision: ' + f.id);
+}
+
+// Haim Saban densify gate (n≥3)
+const saban = scores['haim-saban'];
+if (!saban || saban.n < 3) throw new Error('haim-saban needs ≥3 verified falsehoods, got ' + (saban?.n ?? 0));
+if (saban.score > 80) throw new Error('haim-saban score expected ≤80 after densify, got ' + saban.score);
+const sabanP = getProfileBySlug('haim-saban');
+for (const id of [
+  'saban-one-issue-only-israel-absolute-self-framing',
+  'saban-democratic-party-influence-pure-grassroots-absolute',
+  'saban-media-ownership-pure-business-not-political-weapon',
+]) {
+  if (!(sabanP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('haim-saban missing docket id: ' + id);
+}
+for (const f of (sabanP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('saban dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 82) throw new Error('expected ≥82 compiled dockets, got ' + docketCount);
+if (docketCount < 85) throw new Error('expected ≥85 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

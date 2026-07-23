@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:42:05.278Z",
+  "generatedAt": "2026-07-23T10:43:12.006Z",
   "count": 96,
   "profiles": [
     {
@@ -1394,9 +1394,9 @@
         "AIPAC Orbit",
         "Dual U.S.–Israel Citizen"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "paul-singer",
@@ -1415,9 +1415,9 @@
         "Hedge Fund",
         "Foreign Policy Hawk"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "bernard-marcus",
@@ -1435,9 +1435,9 @@
         "Pro-Israel",
         "Conservative Philanthropist"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 69,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "robert-mercer",

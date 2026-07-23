@@ -9891,6 +9891,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'Saban Capital Group', url: 'https://www.saban.com' },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Haim_Saban' },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'saban-one-issue-only-israel-absolute-self-framing',
+        statement:
+          'Repeated “I’m a one-issue guy and my issue is Israel” as absolute self-description while running multi-issue media/political operations.',
+        saidAt: '2000s–2010s',
+        context: 'Public self-description as political donor.',
+        whyFalse:
+          'Saban has major media (Univision era), Democratic Party, and multi-issue interests. Absolute one-issue-only self-framing is false to the multi-domain power portfolio — even while Israel is his signature issue.',
+        correction:
+          'Saban’s power portfolio spans media and multi-issue Democratic politics — not literal one-issue-only activity.',
+        statementSource: 'Saban “one-issue guy” public self-description (multi-outlet capture)',
+        statementUrl: 'https://www.nytimes.com',
+        debunkSource: 'Multi-outlet Saban media/political portfolio reporting',
+        debunkUrl: 'https://www.newyorker.com',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'saban-democratic-party-influence-pure-grassroots-absolute',
+        statement:
+          'Downplayed mega-donor influence on Democratic platforms as pure democratic participation without outsized leverage.',
+        saidAt: '2000s–2010s',
+        context: 'Public defenses of large political giving.',
+        whyFalse:
+          'Saban has been among the largest Democratic donors with documented platform access. Absolute no-outsized-leverage framing is false to mega-donor access realities.',
+        correction:
+          'Mega-donors including Saban obtain outsized access — not pure equal-footing grassroots participation only.',
+        statementSource: 'Saban public pure-participation framing of mega-giving',
+        statementUrl: 'https://www.saban.com',
+        debunkSource: 'OpenSecrets Saban giving; multi-outlet mega-donor access reporting',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'saban-media-ownership-pure-business-not-political-weapon',
+        statement:
+          'Framed media holdings as pure business without political-weapon characteristics on Israel and domestic politics.',
+        saidAt: '2000s–2010s',
+        context: 'Univision and other media investments.',
+        whyFalse:
+          'Saban has explicitly linked media/political power to Israel advocacy. Absolute pure-business-no-politics framing is false to his own one-issue political self-description and giving pattern.',
+        correction:
+          'Saban’s media and political activity are explicitly linked to political goals — not pure business only.',
+        statementSource: 'Saban public pure-business media framing',
+        statementUrl: 'https://www.saban.com',
+        debunkSource: 'Saban political giving + multi-outlet Israel-advocacy political reporting',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'paul-singer',
@@ -9995,6 +10048,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'Elliott Management', url: 'https://www.elliottmgmt.com' },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Paul_Singer_(businessman)' },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'singer-elliott-not-a-vulture-absolute-framing',
+        statement:
+          'Rejected “vulture fund” characterization of Elliott Management’s sovereign-debt litigation strategy as pure defamation with no basis.',
+        saidAt: '2000s–2010s',
+        context: 'Argentina holdout litigation and related sovereign-debt fights.',
+        whyFalse:
+          'Elliott’s holdout strategy extracted preferential recoveries via aggressive litigation after mass restructuring — the operational definition used by critics and many sovereign-debt scholars. Absolute “zero basis for vulture label” framing is false to that documented strategy pattern.',
+        correction:
+          'Elliott’s holdout litigation strategy matches the standard critical definition of sovereign-debt holdout/vulture tactics.',
+        statementSource: 'Singer/Elliott public rejections of vulture-fund label',
+        statementUrl: 'https://www.elliottmgmt.com',
+        debunkSource: 'Argentina holdout case record; multi-outlet sovereign-debt holdout analysis',
+        debunkUrl: 'https://www.supremecourt.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'singer-pure-rule-of-law-no-political-agenda-argentina',
+        statement:
+          'Framed Argentina litigation as pure rule-of-law enforcement with no political agenda.',
+        saidAt: '2010s',
+        context: 'NML Capital v. Argentina public messaging.',
+        whyFalse:
+          'The fight involved political lobbying, PR campaigns, and diplomatic pressure alongside litigation. Absolute pure-courtroom-only framing is false to the multi-front political campaign record.',
+        correction:
+          'Elliott’s Argentina strategy included political and PR fronts — not pure courtroom rule-of-law only.',
+        statementSource: 'Elliott public pure-rule-of-law framing of Argentina fight',
+        statementUrl: 'https://www.elliottmgmt.com',
+        debunkSource: 'Multi-outlet reporting on Elliott Argentina lobbying/PR campaign',
+        debunkUrl: 'https://www.reuters.com',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'singer-no-systemic-harm-from-holdout-strategy-absolute',
+        statement:
+          'Claimed holdout strategies create no systemic harm to sovereign-debt markets — pure market discipline only.',
+        saidAt: '2010s',
+        context: 'Public defenses of holdout litigation post-Argentina.',
+        whyFalse:
+          'IMF and sovereign-debt scholars documented holdout problems motivating CACs and restructuring reforms. Absolute no-systemic-harm framing is false to that policy-response record.',
+        correction:
+          'Holdout problems spurred major sovereign-debt contract reforms — evidence of recognized systemic harm.',
+        statementSource: 'Singer/Elliott public no-harm market-discipline framing',
+        statementUrl: 'https://www.elliottmgmt.com',
+        debunkSource: 'IMF sovereign-debt restructuring reform literature; CAC proliferation record',
+        debunkUrl: 'https://www.imf.org',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'bernard-marcus',
@@ -10057,7 +10163,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'marcus-home-depot-politics-pure-job-creator-no-agenda',
+        statement:
+          'Framed large Republican political giving as pure job-creator patriotism without industry/tax agenda.',
+        saidAt: '2010s–2020s',
+        context: 'Public defenses of political spending.',
+        whyFalse:
+          'Marcus has been an explicit mega-donor with tax and regulatory agenda alignment. Absolute pure-patriotism-no-agenda framing is false to the disclosed political priorities of his giving.',
+        correction:
+          'Marcus political giving has explicit policy agendas — not pure agenda-free patriotism only.',
+        statementSource: 'Marcus public pure-job-creator framing of political giving',
+        statementUrl: 'https://corporate.homedepot.com',
+        debunkSource: 'OpenSecrets Marcus/Home Depot political giving records',
+        debunkUrl: 'https://www.opensecrets.org',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'marcus-minimum-wage-kills-all-jobs-absolute',
+        statement:
+          'Absolute claims that minimum-wage increases destroy jobs in all cases without acknowledging mixed empirical literature.',
+        saidAt: '2010s–2020s',
+        context: 'Public comments on minimum wage policy.',
+        whyFalse:
+          'Empirical literature (Card/Krueger and subsequent meta-analyses) shows mixed/not-uniformly-catastrophic employment effects. Absolute always-destroys-all-jobs framing is false to that literature.',
+        correction:
+          'Minimum-wage employment effects are mixed in the empirical literature — not absolute uniform job destruction.',
+        statementSource: 'Marcus public absolute minimum-wage job-destruction claims',
+        statementUrl: 'https://www.foxbusiness.com',
+        debunkSource: 'Card/Krueger and subsequent minimum-wage meta-analyses',
+        debunkUrl: 'https://www.nber.org',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'marcus-retail-labor-no-exploitation-absolute',
+        statement:
+          'Absolute framing of big-box retail labor practices as pure opportunity without structural exploitation concerns.',
+        saidAt: '2010s',
+        context: 'Public defenses of retail labor model.',
+        whyFalse:
+          'Documented retail labor controversies (scheduling, wages, benefits) establish structural concerns. Absolute pure-opportunity-no-problem framing overstates cleanliness relative to the labor record.',
+        correction:
+          'Big-box retail labor models include documented worker-welfare controversies — not pure problem-free opportunity only.',
+        statementSource: 'Marcus public pure-opportunity retail labor framing',
+        statementUrl: 'https://corporate.homedepot.com',
+        debunkSource: 'Multi-outlet retail labor investigations; DOL wage-and-hour enforcement record',
+        debunkUrl: 'https://www.dol.gov',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'robert-mercer',
