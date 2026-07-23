@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:09:20.827Z",
+  "generatedAt": "2026-07-23T08:10:37.081Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 97,
-    "timelineEvents": 85,
+    "incidents": 98,
+    "timelineEvents": 86,
     "actors": 47,
     "moneyTrailNodes": 30,
-    "historicalWarCrimesPack": 83,
+    "historicalWarCrimesPack": 84,
     "legalCases": 19,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 37
+      "post-oct7": 38
     },
     "incidentsByTier": {
-      "verified": 95,
+      "verified": 96,
       "circumstantial": 2
     },
-    "childrenTagged": 80,
-    "civiliansTagged": 95,
+    "childrenTagged": 81,
+    "civiliansTagged": 96,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3282,6 +3282,25 @@
         "civilians",
         "terrorism",
         "october-7"
+      ]
+    },
+    {
+      "id": "tl-hostage-exchange-nov-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "November 2023 Hostage–Prisoner Exchange Pause",
+      "description": "Multi-source exchange of hostages for Palestinian prisoners during temporary humanitarian pause.",
+      "source": "Israeli gov / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "hostage-prisoner-exchange-nov-2023",
+        "oct7-hostages-held-pattern"
+      ],
+      "tags": [
+        "hostages",
+        "prisoners",
+        "ceasefire"
       ]
     },
     {
@@ -6739,6 +6758,48 @@
           "type": "document",
           "label": "B'Tselem public materials",
           "url": "https://www.btselem.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "hostage-prisoner-exchange-nov-2023",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Hostage–Prisoner Exchange Pause (November 2023)",
+      "date": "November 24–30, 2023",
+      "location": "Gaza / Israel / Egypt mediation corridor",
+      "summary": "A temporary humanitarian pause enabled multi-source documented exchanges of Israeli hostages for Palestinian prisoners, with hundreds released on both sides. Pattern/event card for the first major exchange architecture, distinct from the ongoing hostages-held pattern card.",
+      "evidence": "Israeli government and Palestinian Authority release lists, multi-outlet reporting, and mediation public statements establish the scale of the November 2023 exchange and pause. Subsequent deals are separate events.",
+      "sources": [
+        {
+          "label": "Israeli government hostage release public record",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet November 2023 ceasefire/exchange coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UN humanitarian pause materials",
+          "url": "https://www.un.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Multi-outlet exchange coverage",
+          "url": "https://apnews.com"
         }
       ],
       "tier": "verified",

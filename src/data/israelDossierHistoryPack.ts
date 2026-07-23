@@ -2222,6 +2222,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'hostage-prisoner-exchange-nov-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Hostage–Prisoner Exchange Pause (November 2023)',
+    date: 'November 24–30, 2023',
+    location: 'Gaza / Israel / Egypt mediation corridor',
+    summary:
+      'A temporary humanitarian pause enabled multi-source documented exchanges of Israeli hostages for Palestinian prisoners, with hundreds released on both sides. Pattern/event card for the first major exchange architecture, distinct from the ongoing hostages-held pattern card.',
+    evidence:
+      'Israeli government and Palestinian Authority release lists, multi-outlet reporting, and mediation public statements establish the scale of the November 2023 exchange and pause. Subsequent deals are separate events.',
+    sources: [
+      { label: 'Israeli government hostage release public record', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet November 2023 ceasefire/exchange coverage', url: 'https://apnews.com' },
+      { label: 'UN humanitarian pause materials', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Multi-outlet exchange coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -3125,6 +3153,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['west-bank-mass-arrests-2023-2025'],
     tags: ['detention', 'west-bank', 'civilians', 'children'],
+  },
+
+  {
+    id: 'tl-hostage-exchange-nov-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'November 2023 Hostage–Prisoner Exchange Pause',
+    description: 'Multi-source exchange of hostages for Palestinian prisoners during temporary humanitarian pause.',
+    source: 'Israeli gov / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: ['hostage-prisoner-exchange-nov-2023', 'oct7-hostages-held-pattern'],
+    tags: ['hostages', 'prisoners', 'ceasefire'],
   },
 
 ]
