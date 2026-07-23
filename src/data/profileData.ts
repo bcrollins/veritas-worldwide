@@ -4487,6 +4487,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'egregious',
         tier: 'verified',
       },
+      {
+        id: 'bill-clinton-never-alone-lewinsky-1998',
+        statement:
+          'In the January 17, 1998 Paula Jones deposition, denied being alone with Monica Lewinsky in the Oval Office and related spaces (categorical denials of private encounters).',
+        saidAt: 'January 17, 1998',
+        context:
+          'Paula Jones civil deposition — under oath — before the Lewinsky scandal fully broke into public view.',
+        whyFalse:
+          'Clinton later admitted under oath (grand jury) and in the August 17 address that he had private encounters with Lewinsky in the Oval Office complex. The Starr Report details multiple occasions when they were alone — contradicting the Jones deposition denials.',
+        correction:
+          'Clinton was alone with Lewinsky on multiple occasions; deposition denials of being alone with her were false.',
+        statementSource: 'Paula Jones deposition excerpts (public record / Starr Report appendix)',
+        statementUrl: 'https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/clintondep031398.htm',
+        debunkSource: 'Starr Report / Clinton August 17, 1998 admission of inappropriate relationship',
+        debunkUrl: 'https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/whatclintonsaid.htm',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     quotes: [
       {

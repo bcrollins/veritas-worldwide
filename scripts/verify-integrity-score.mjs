@@ -291,10 +291,23 @@ for (const f of (blinkenP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('blinken dual-cite collision: ' + f.id);
 }
 
-// Bill Clinton multi-entry (Lewinsky denial + obstruction/perjury framing)
+// Bill Clinton multi-entry densify (Lewinsky denial + obstruction + alone-with denials)
 const bill = scores['bill-clinton'];
-if (!bill || bill.n < 2) throw new Error('bill-clinton needs ≥2 verified falsehoods, got ' + (bill?.n ?? 0));
-if (bill.score > 55) throw new Error('bill-clinton score expected ≤55 after deep dive, got ' + bill.score);
+if (!bill || bill.n < 3) throw new Error('bill-clinton needs ≥3 verified falsehoods, got ' + (bill?.n ?? 0));
+if (bill.score > 30) throw new Error('bill-clinton score expected ≤30 after densify, got ' + bill.score);
+const billP = getProfileBySlug('bill-clinton');
+for (const id of [
+  'bill-clinton-lewinsky-denial-1998',
+  'bill-clinton-never-told-anyone-to-lie-1998',
+  'bill-clinton-never-alone-lewinsky-1998',
+]) {
+  if (!(billP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('bill-clinton missing docket id: ' + id);
+  }
+}
+for (const f of (billP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('bill-clinton dual-cite collision: ' + f.id);
+}
 
 // Hillary Clinton multi-entry densify (Bosnia + email + subpoena)
 const hillary = scores['hillary-clinton'];
