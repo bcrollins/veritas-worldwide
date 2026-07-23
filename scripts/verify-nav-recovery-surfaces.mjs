@@ -508,7 +508,7 @@ for (const rel of [
 ]) {
   if (read(rel).includes('RelatedHubs') || read(rel).includes('PRIMARY_RELATED_HUBS')) relatedMounts += 1
 }
-assert(relatedMounts >= 17, `RelatedHubs mounts ${relatedMounts} < 17`)
+assert(relatedMounts >= 20, `RelatedHubs mounts ${relatedMounts} < 20`)
 
 
 // Touch target floor on recovery components
