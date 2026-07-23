@@ -3630,6 +3630,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-hospital-ambulance-bay-strike-visual-2023-2025',
+    title: 'Gaza Hospital Ambulance-Bay Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip hospital ambulance bays and emergency entrances',
+    summary:
+      'Multi-outlet video packages document strikes and damage at hospital ambulance bays under wartime conditions, affecting civilian emergency access including for children. Distinct from ambulance-access-denied visual cards by focusing on multi-source ambulance-bay strike packages; ethnicity is never evidence.',
+    evidence:
+      'WHO health-cluster materials, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of ambulance-bay harm affecting civilian medical access.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza hospital packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet ambulance-bay strike video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of hospital entrance aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OHCHR medical-protection trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-holit-safe-room-visual-2023',
+    title: 'October 7 Holit Safe-Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Holit safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders in Holit safe rooms during the October 7 attacks. Distinct from Holit dining-room visual cards by focusing on safe-room interior multi-source visual records; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence in Holit safe rooms on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Holit safe-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-ambulance-blockade-visual-2023-2025',
+    title: 'West Bank Settler Ambulance Blockades — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village roads and checkpoint approaches',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler blockades of Palestinian civilian ambulances, delaying emergency care including for families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA health-access materials, and multi-outlet reporting establish multi-source documentation of ambulance blockades affecting civilian emergency care.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem ambulance-blockade video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem health-access case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA health-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

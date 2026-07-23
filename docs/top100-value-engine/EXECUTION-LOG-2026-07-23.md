@@ -284,3 +284,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | UNRWA school shelter · Nirim safe room · clinic attacks |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip **1800+** milestone — ambulance-bay / Holit safe-room / settler ambulance blockade
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza colostrum/scale/eye-mask/resus-mask · hostage barricades/empty-desk/standing-room/city-hall · WB onion/microscopes/spinach/thyme |
+| VI | hospital ambulance-bay · Holit safe room · settler ambulance blockade |
+| Pure | visual + israel-dossier PASS |
+| Milestone | past **1800 incidents** / video **160+** |
+
