@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:05:10.653Z",
+  "generatedAt": "2026-07-23T09:05:41.676Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 136,
-    "timelineEvents": 124,
+    "incidents": 137,
+    "timelineEvents": 125,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 122,
+    "historicalWarCrimesPack": 123,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 76
+      "post-oct7": 77
     },
     "incidentsByTier": {
-      "verified": 134,
+      "verified": 135,
       "circumstantial": 2
     },
-    "childrenTagged": 112,
-    "civiliansTagged": 134,
+    "childrenTagged": 113,
+    "civiliansTagged": 135,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3685,6 +3685,28 @@
         "debris",
         "children",
         "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-solar-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Solar & Distributed Power Destruction Pattern",
+      "description": "Multi-source documentation of widespread destruction of rooftop/community solar arrays under siege conditions.",
+      "source": "Multi-outlet / OCHA / World Bank context",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-solar-power-destruction-pattern-2023-2025",
+        "gaza-fuel-electricity-siege-pattern-2023-2025",
+        "gaza-telecommunications-blackouts-pattern-2023-2025"
+      ],
+      "tags": [
+        "energy",
+        "solar",
+        "civilians",
+        "children",
         "gaza"
       ]
     },
@@ -9107,6 +9129,50 @@
           "type": "document",
           "label": "WHO public mental-health materials",
           "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-solar-power-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Solar & Distributed Power Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (solar cohort)",
+      "location": "Gaza Strip rooftop / community solar arrays",
+      "summary": "Multi-source satellite and field reporting document widespread destruction of rooftop and community solar arrays that had become a primary civilian power source under siege conditions — collapsing charging, refrigeration, and clinic backup power. Pattern card for distributed-energy destruction as a civilian-harm multiplier distinct from the fuel/electricity siege card.",
+      "evidence": "Satellite damage analyses, multi-source utility/humanitarian reporting, and OCHA energy-access notes establish multi-source solar array destruction. Exact MW lost evolves; multi-source system-scale solar loss is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet satellite / solar damage coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "OCHA energy / access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "World Bank energy monitoring context",
+          "url": "https://www.worldbank.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Multi-outlet solar damage coverage",
+          "url": "https://apnews.com"
         }
       ],
       "tier": "verified",

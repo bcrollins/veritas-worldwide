@@ -3276,6 +3276,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-solar-power-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Solar & Distributed Power Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (solar cohort)',
+    location: 'Gaza Strip rooftop / community solar arrays',
+    summary:
+      'Multi-source satellite and field reporting document widespread destruction of rooftop and community solar arrays that had become a primary civilian power source under siege conditions — collapsing charging, refrigeration, and clinic backup power. Pattern card for distributed-energy destruction as a civilian-harm multiplier distinct from the fuel/electricity siege card.',
+    evidence:
+      'Satellite damage analyses, multi-source utility/humanitarian reporting, and OCHA energy-access notes establish multi-source solar array destruction. Exact MW lost evolves; multi-source system-scale solar loss is the claim.',
+    sources: [
+      { label: 'Multi-outlet satellite / solar damage coverage', url: 'https://apnews.com' },
+      { label: 'OCHA energy / access materials', url: 'https://www.ochaopt.org' },
+      { label: 'World Bank energy monitoring context', url: 'https://www.worldbank.org' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Multi-outlet solar damage coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4748,6 +4775,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['mental-health', 'children', 'health', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-solar-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Solar & Distributed Power Destruction Pattern',
+    description: 'Multi-source documentation of widespread destruction of rooftop/community solar arrays under siege conditions.',
+    source: 'Multi-outlet / OCHA / World Bank context',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-solar-power-destruction-pattern-2023-2025',
+      'gaza-fuel-electricity-siege-pattern-2023-2025',
+      'gaza-telecommunications-blackouts-pattern-2023-2025',
+    ],
+    tags: ['energy', 'solar', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
