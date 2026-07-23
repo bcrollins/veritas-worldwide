@@ -12,7 +12,7 @@ const hub = readFileSync(join(root, 'src/pages/ResearcherHubPage.tsx'), 'utf8')
 const prerender = readFileSync(join(root, 'scripts/prerender.mjs'), 'utf8')
 assert(expanded.includes('ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS'), 'visual pack not wired into EXPANDED_INCIDENTS')
 assert(vi.includes('vi-hind-rajab-2024'), 'visual pack missing seed row')
-assert((corpus.incidents || []).length >= 797, `corpus incidents ${corpus.incidents?.length} < 753`)
+assert((corpus.incidents || []).length >= 806, `corpus incidents ${corpus.incidents?.length} < 753`)
 assert(hub.includes('researcher-live-corpus-counts'), 'researcher hub missing live counts')
 assert(prerender.includes("route: '/researcher'"), 'prerender missing /researcher hub')
 if (failures.length) {

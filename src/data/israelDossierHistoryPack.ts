@@ -2211,12 +2211,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'Israeli Prison Service and multi-source NGO detainee counts, UN reporting on administrative detention, and multi-outlet coverage establish elevated detention numbers. Exact counts fluctuate; the multi-source surge is the claim.',
     sources: [
-      { label: "B'Tselem detention statistics", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem detention statistics", url: 'https://www.btselem.org' },
       { label: 'UN materials on detention / OPT', url: 'https://www.ohchr.org/en/countries/palestine' },
       { label: 'Multi-outlet West Bank arrest coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
-      { type: 'document', label: "B'Tselem public materials", url: 'https://www.btselem.org' },
+      { type: 'document', label: "B\'Tselem public materials", url: 'https://www.btselem.org' },
     ],
     tier: 'verified',
     casualties: { killed: 0 },
@@ -3423,12 +3423,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (demolitions cohort)',
     location: 'West Bank / East Jerusalem',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated home demolitions and displacement of Palestinian families in the West Bank after October 7 — including punitive and administrative demolitions affecting children. Pattern card for shelter destruction outside Gaza, distinct from settlement-expansion and settler-violence cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated home demolitions and displacement of Palestinian families in the West Bank after October 7 — including punitive and administrative demolitions affecting children. Pattern card for shelter destruction outside Gaza, distinct from settlement-expansion and settler-violence cards.",
     evidence:
-      "OCHA demolition databases, B'Tselem field documentation, and multi-outlet coverage establish multi-source elevated demolitions. Exact structure counts evolve; multi-source wartime demolition surge is the claim.",
+      "OCHA demolition databases, B\'Tselem field documentation, and multi-outlet coverage establish multi-source elevated demolitions. Exact structure counts evolve; multi-source wartime demolition surge is the claim.",
     sources: [
       { label: 'OCHA demolition / displacement materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem home demolitions materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem home demolitions materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet West Bank demolition coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -3990,12 +3990,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: '2023 – 2025 harvest seasons (access-denial cohort)',
     location: 'West Bank olive-growing communities',
     summary:
-      "OCHA, B'Tselem, and multi-source harvest-season reporting document elevated settler attacks and access denials during olive harvest after October 7 — destroying a primary livelihood and cultural practice for Palestinian civilians. Pattern card for seasonal livelihood violence distinct from open cropland and settlement-surge cards.",
+      "OCHA, B\'Tselem, and multi-source harvest-season reporting document elevated settler attacks and access denials during olive harvest after October 7 — destroying a primary livelihood and cultural practice for Palestinian civilians. Pattern card for seasonal livelihood violence distinct from open cropland and settlement-surge cards.",
     evidence:
-      "OCHA seasonal protection reports, B'Tselem harvest documentation, and multi-outlet coverage establish multi-source harvest-season violence and access denial. Exact incident counts evolve by season; multi-source elevated harvest interference is the claim.",
+      "OCHA seasonal protection reports, B\'Tselem harvest documentation, and multi-outlet coverage establish multi-source harvest-season violence and access denial. Exact incident counts evolve by season; multi-source elevated harvest interference is the claim.",
     sources: [
       { label: 'OCHA Protection of Civilians materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem olive harvest materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem olive harvest materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet West Bank harvest coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -4561,12 +4561,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     evidence:
       'B\'Tselem and Addameer detention tallies, multi-source IPS/military-order reporting, and multi-outlet coverage establish multi-source administrative-detention surge. Exact concurrent detainee counts evolve; multi-source elevated renewable detention-without-trial is the claim.',
     sources: [
-      { label: "B'Tselem administrative detention materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem administrative detention materials", url: 'https://www.btselem.org' },
       { label: 'Addameer detention statistics', url: 'https://www.addameer.org' },
       { label: 'Multi-outlet West Bank detention coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
-      { type: 'document', label: "B'Tselem public materials", url: 'https://www.btselem.org' },
+      { type: 'document', label: "B\'Tselem public materials", url: 'https://www.btselem.org' },
     ],
     tier: 'verified',
     casualties: { killed: 0 },
@@ -4616,7 +4616,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence and displacement tallies, B\'Tselem community case files, and multi-outlet herding/Bedouin coverage establish multi-source pastoralist dispossession. Exact community counts evolve; multi-source elevated herding-community displacement is the claim.',
     sources: [
       { label: 'OCHA West Bank protection materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem community displacement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem community displacement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet herding / Bedouin displacement coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -4859,7 +4859,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA access-and-movement databases, B\'Tselem checkpoint documentation, and multi-outlet coverage establish multi-source elevated movement restriction. Exact barrier counts evolve; multi-source wartime checkpoint surge is the claim.',
     sources: [
       { label: 'OCHA access and movement materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet West Bank checkpoint coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -5102,7 +5102,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'Peace Now outpost-tracking databases, multi-source government legalization decisions, and multi-outlet coverage establish multi-source outpost legalization surge. Exact outpost counts evolve; multi-source wartime outpost formalization is the claim.',
     sources: [
       { label: 'Peace Now settlement / outpost materials', url: 'https://peacenow.org.il' },
-      { label: "B'Tselem settlement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settlement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet outpost legalization coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -5265,7 +5265,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     sources: [
       { label: 'OCHA West Bank protection materials', url: 'https://www.ochaopt.org' },
       { label: 'Multi-outlet Jenin / Tulkarm raid coverage', url: 'https://apnews.com' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [
       { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
@@ -5453,7 +5453,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, B\'Tselem case files, and multi-outlet price-tag coverage establish multi-source elevated ideological settler attacks. Exact incident counts evolve; multi-source wartime price-tag surge is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet price-tag attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -5993,7 +5993,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA access databases, B\'Tselem field files, and multi-outlet coverage establish multi-source settler roadblock surge. Exact barrier counts evolve; multi-source wartime settler route denial is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler roadblock coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6074,7 +6074,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'Peace Now settlement-tracking databases, multi-source aerial/satellite analysis, and multi-outlet coverage establish multi-source access-road expansion. Exact kilometer counts evolve; multi-source wartime settlement-road construction is the claim.',
     sources: [
       { label: 'Peace Now settlement materials', url: 'https://peacenow.org.il' },
-      { label: "B'Tselem settlement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settlement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settlement road coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6236,7 +6236,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA protection databases, multi-source land-tracking analysis, and multi-outlet coverage establish multi-source agricultural land takeover. Exact dunam counts evolve; multi-source wartime ag-land seizure is the claim.',
     sources: [
       { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem land materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem land materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler land takeover coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6398,7 +6398,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, B\'Tselem case files, and multi-outlet coverage establish multi-source home-invasion surge. Exact incident counts evolve; multi-source wartime settler home invasions is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler home invasion coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6479,7 +6479,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, B\'Tselem arson case files, and multi-outlet coverage establish multi-source arson surge. Exact structure counts evolve; multi-source wartime settler arson is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler arson coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6560,7 +6560,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, B\'Tselem herding case files, and multi-outlet coverage establish multi-source livestock theft surge. Exact animal counts evolve; multi-source wartime livestock theft is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem herding materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet livestock theft coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6641,7 +6641,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA WASH/protection materials, B\'Tselem water-access case files, and multi-outlet coverage establish multi-source water-source seizure. Exact spring counts evolve; multi-source wartime water-point seizure is the claim.',
     sources: [
       { label: 'OCHA WASH / protection materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet water source seizure coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6803,7 +6803,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source vehicle-attack incidents. Exact counts evolve; multi-source wartime settler vehicle attacks on civilians is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler vehicle attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6884,7 +6884,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source sacred-site vandalism. Exact incident counts evolve; multi-source wartime settler sacred-site vandalism is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet mosque vandalism coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -6965,7 +6965,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA agricultural-damage tallies, B\'Tselem field files, and multi-outlet coverage establish multi-source olive-tree destruction surge. Exact tree counts evolve; multi-source wartime olive-tree uprooting is the claim.',
     sources: [
       { label: 'OCHA agricultural damage materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem olive materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem olive materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet olive tree uprooting coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7127,7 +7127,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source cemetery desecration. Exact incident counts evolve; multi-source wartime cemetery desecration is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet cemetery desecration coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7208,7 +7208,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source fatality/injury reporting, and multi-outlet coverage establish multi-source firebombing incidents. Exact counts evolve; multi-source wartime settler firebombing of homes is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet firebombing coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7289,7 +7289,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA fatality databases, B\'Tselem killing case files, and multi-outlet coverage establish multi-source settler civilian killings. Exact counts evolve; multi-source wartime settler killings of civilians is the claim.',
     sources: [
       { label: 'OCHA protection / fatality materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem killing documentation", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem killing documentation", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler killing coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7370,7 +7370,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA displacement tallies, B\'Tselem community case files, and multi-outlet coverage establish multi-source community flight under settler pressure. Exact community counts evolve; multi-source wartime settler-forced village displacement is the claim.',
     sources: [
       { label: 'OCHA displacement materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem community displacement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem community displacement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet village displacement coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7451,7 +7451,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source farm-equipment destruction. Exact equipment counts evolve; multi-source wartime equipment destruction is the claim.',
     sources: [
       { label: 'OCHA agricultural damage materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet farm equipment destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7532,7 +7532,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source irrigation-system destruction. Exact pipe lengths evolve; multi-source wartime irrigation destruction is the claim.',
     sources: [
       { label: 'OCHA agricultural damage materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet irrigation destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7613,7 +7613,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source greenhouse destruction. Exact structure counts evolve; multi-source wartime greenhouse destruction is the claim.',
     sources: [
       { label: 'OCHA agricultural damage materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet greenhouse destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7694,7 +7694,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source beehive destruction. Exact hive counts evolve; multi-source wartime apiary destruction is the claim.',
     sources: [
       { label: 'OCHA agricultural damage materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet beehive destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7775,7 +7775,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source solar/generator theft. Exact asset counts evolve; multi-source wartime energy-asset theft is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet solar panel theft coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7856,7 +7856,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA WASH/settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-tank destruction. Exact tank counts evolve; multi-source wartime water-tank destruction is the claim.',
     sources: [
       { label: 'OCHA WASH materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet water tank destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -7937,7 +7937,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'Peace Now outpost-tracking databases, multi-source aerial analysis, and multi-outlet coverage establish multi-source caravan expansion. Exact unit counts evolve; multi-source wartime caravan expansion is the claim.',
     sources: [
       { label: 'Peace Now settlement materials', url: 'https://peacenow.org.il' },
-      { label: "B'Tselem settlement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settlement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet caravan expansion coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8018,7 +8018,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA access materials, multi-source case reporting, and multi-outlet coverage establish multi-source fence-blocking. Exact fence lengths evolve; multi-source wartime settler fence-blocking is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler fence coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8099,7 +8099,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence notes, multi-source case reporting, and multi-outlet coverage establish multi-source civilian-drone harassment. Exact incident counts evolve; multi-source wartime settler drone harassment is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler drone coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8180,7 +8180,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA access materials, multi-source case reporting, and multi-outlet coverage establish multi-source settler imitation checkpoints. Exact incident counts evolve; multi-source wartime settler imitation checkpoints is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler checkpoint coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8261,7 +8261,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source stone-throwing surge. Exact injury counts evolve; multi-source wartime settler stone-throwing is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler stone-throwing coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8342,7 +8342,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source graffiti intimidation. Exact incident counts evolve; multi-source wartime settler graffiti intimidation is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler graffiti coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8423,7 +8423,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source vehicle torching. Exact vehicle counts evolve; multi-source wartime settler vehicle torching is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet vehicle torching coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8504,7 +8504,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source dog-attack incidents. Exact injury counts evolve; multi-source wartime settler dog attacks on civilians is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet settler dog attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8585,7 +8585,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source mosque-call disruption. Exact incident counts evolve; multi-source wartime prayer-call disruption is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet mosque disruption coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -8666,7 +8666,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA infrastructure-damage notes, multi-source case reporting, and multi-outlet coverage establish multi-source electric-line sabotage. Exact outage counts evolve; multi-source wartime settler electric-line cutting is the claim.',
     sources: [
       { label: 'OCHA infrastructure materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet electric line sabotage coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9071,7 +9071,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA access materials, multi-source NGO incident reports, and multi-outlet coverage establish multi-source settler attacks on aid workers. Exact incident counts evolve; multi-source wartime settler attacks on aid workers is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet aid worker attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9152,7 +9152,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source playground destruction. Exact structure counts evolve; multi-source wartime playground destruction is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet playground destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9314,7 +9314,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source farmer attacks. Exact injury counts evolve; multi-source wartime settler attacks on farmers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem field materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet farmer attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9395,7 +9395,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source herder attacks. Exact injury counts evolve; multi-source wartime settler attacks on herders is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem herding materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet herder attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9471,12 +9471,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (water-pipe cohort)',
     location: 'West Bank agricultural communities and village water networks',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction and cutting of Palestinian civilian water pipes after October 7 — denying irrigation and household water including to children. Pattern card distinct from well sealing and cistern attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction and cutting of Palestinian civilian water pipes after October 7 — denying irrigation and household water including to children. Pattern card distinct from well sealing and cistern attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-pipe destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian water infrastructure is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet water-pipe destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9552,12 +9552,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (solar-panel cohort)',
     location: 'West Bank off-grid villages and herding communities',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar panels after October 7 — cutting power for water pumps, refrigerators, and lighting including for children. Pattern card distinct from generator seizure and grid-connection denial.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar panels after October 7 — cutting power for water pumps, refrigerators, and lighting including for children. Pattern card distinct from generator seizure and grid-connection denial.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source solar-panel destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian solar infrastructure is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem energy-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem energy-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet solar-panel destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9633,12 +9633,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (vehicle-arson cohort)',
     location: 'West Bank villages, olive-grove access roads, and residential compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler arson of Palestinian civilian vehicles after October 7 — destroying family cars, farm trucks, and school transport. Pattern card distinct from home arson and livestock theft.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler arson of Palestinian civilian vehicles after October 7 — destroying family cars, farm trucks, and school transport. Pattern card distinct from home arson and livestock theft.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source vehicle arson. Exact incident counts evolve; multi-source wartime settler arson of civilian vehicles is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet vehicle-arson coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9714,12 +9714,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (livestock-poisoning cohort)',
     location: 'West Bank grazing lands, sheepfolds, and herding communities',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler poisoning and deliberate killing of Palestinian livestock after October 7 — destroying herding livelihoods including family flocks relied on by children. Pattern card distinct from livestock theft and herder physical attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler poisoning and deliberate killing of Palestinian livestock after October 7 — destroying herding livelihoods including family flocks relied on by children. Pattern card distinct from livestock theft and herder physical attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source livestock poisoning. Exact animal counts evolve; multi-source wartime settler poisoning of civilian livestock is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem herding materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet livestock-poisoning coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -9795,7 +9795,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (medical-access-block cohort)',
     location: 'West Bank village access roads and clinic approaches',
     summary:
-      "OCHA, B'Tselem, WHO, and multi-source reporting document elevated settler roadblocks and intimidation preventing Palestinian civilians including children from reaching clinics and hospitals after October 7 — distinct from ambulance-blocking and school-bus-blocking cards.",
+      "OCHA, B\'Tselem, WHO, and multi-source reporting document elevated settler roadblocks and intimidation preventing Palestinian civilians including children from reaching clinics and hospitals after October 7 — distinct from ambulance-blocking and school-bus-blocking cards.",
     evidence:
       'OCHA access databases, WHO health-access materials, and multi-outlet coverage establish multi-source medical-access blocking. Exact delayed-care counts evolve; multi-source wartime settler blocking of civilian medical access is the claim.',
     sources: [
@@ -9957,12 +9957,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (water-tank cohort)',
     location: 'West Bank village rooftops, cistern compounds, and herding camps',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian water tanks and rooftop cisterns after October 7 — denying household water including for children. Pattern card distinct from water-pipe cutting and well sealing.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian water tanks and rooftop cisterns after October 7 — denying household water including for children. Pattern card distinct from water-pipe cutting and well sealing.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-tank destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian water storage is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet water-tank destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10038,12 +10038,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (olive-picker-attack cohort)',
     location: 'West Bank olive groves during harvest seasons',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian olive pickers after October 7 — assaulting multi-generational harvest parties including children. Pattern card distinct from olive-tree uprooting and farmer attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian olive pickers after October 7 — assaulting multi-generational harvest parties including children. Pattern card distinct from olive-tree uprooting and farmer attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source harvest-season reporting, and multi-outlet coverage establish multi-source olive-picker attacks. Exact injury counts evolve; multi-source wartime settler attacks on olive pickers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem harvest materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem harvest materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet olive-picker attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10200,12 +10200,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (vehicle-stoning cohort)',
     location: 'West Bank inter-village roads and Route 60 approaches',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler stoning of Palestinian civilian vehicles after October 7 — injuring passengers including children. Pattern card distinct from vehicle arson and checkpoint assaults.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler stoning of Palestinian civilian vehicles after October 7 — injuring passengers including children. Pattern card distinct from vehicle arson and checkpoint assaults.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source vehicle stoning. Exact injury counts evolve; multi-source wartime settler stoning of civilian vehicles is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet vehicle-stoning coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10281,12 +10281,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (greenhouse-destruction cohort)',
     location: 'West Bank agricultural greenhouse clusters and peri-village plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian greenhouses after October 7 — wrecking food production and family livelihoods including those supporting children. Pattern card distinct from olive-tree uprooting and water-tank destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian greenhouses after October 7 — wrecking food production and family livelihoods including those supporting children. Pattern card distinct from olive-tree uprooting and water-tank destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source greenhouse destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian greenhouses is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet greenhouse-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10443,12 +10443,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (well-poisoning cohort)',
     location: 'West Bank village wells, springs, and shared water points',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler contamination and poisoning of Palestinian civilian wells and springs after October 7 — denying safe drinking water including for children. Pattern card distinct from water-tank destruction and pipe cutting.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler contamination and poisoning of Palestinian civilian wells and springs after October 7 — denying safe drinking water including for children. Pattern card distinct from water-tank destruction and pipe cutting.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source well contamination/poisoning. Exact incident counts evolve; multi-source wartime settler contamination of civilian water sources is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet well-contamination coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10524,7 +10524,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (medical-staff-attack cohort)',
     location: 'West Bank clinic approaches, ambulance rendezvous points, and field-aid stations',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian medical staff and volunteer responders after October 7 — delaying care for civilians including children. Pattern card distinct from ambulance-blocking and medical-access-blocking cards.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian medical staff and volunteer responders after October 7 — delaying care for civilians including children. Pattern card distinct from ambulance-blocking and medical-access-blocking cards.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source medical-staff attacks. Exact injury counts evolve; multi-source wartime settler attacks on medical staff is the claim.',
     sources: [
@@ -10605,12 +10605,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (solar-water-heater cohort)',
     location: 'West Bank residential rooftops and village housing compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar water heaters after October 7 — denying hot water for hygiene including for children. Pattern card distinct from solar-panel electricity destruction and water-tank cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar water heaters after October 7 — denying hot water for hygiene including for children. Pattern card distinct from solar-panel electricity destruction and water-tank cards.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source solar-water-heater destruction. Exact device counts evolve; multi-source wartime settler destruction of civilian solar water heaters is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem energy-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem energy-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet solar-heater destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10686,12 +10686,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (beehive-destruction cohort)',
     location: 'West Bank apiaries, hillside hives, and farm compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beehives after October 7 — wrecking honey livelihoods including family enterprises supporting children. Pattern card distinct from greenhouse destruction and livestock poisoning.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beehives after October 7 — wrecking honey livelihoods including family enterprises supporting children. Pattern card distinct from greenhouse destruction and livestock poisoning.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source beehive destruction. Exact hive counts evolve; multi-source wartime settler destruction of civilian beehives is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet beehive-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10767,12 +10767,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (death-threat-graffiti cohort)',
     location: 'West Bank village homes, mosques, and school walls',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler death-threat graffiti on Palestinian civilian homes, schools, and places of worship after October 7 — terrorizing families including children. Pattern card distinct from mosque vandalism and cemetery desecration.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler death-threat graffiti on Palestinian civilian homes, schools, and places of worship after October 7 — terrorizing families including children. Pattern card distinct from mosque vandalism and cemetery desecration.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source death-threat graffiti. Exact incident counts evolve; multi-source wartime settler death-threat graffiti is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet price-tag graffiti coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10848,12 +10848,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (shepherd-dog-attack cohort)',
     location: 'West Bank grazing hills and shepherd routes',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler use of attack dogs against Palestinian shepherds and herding families after October 7 — injuring civilians including children. Pattern card distinct from herder physical attacks and livestock poisoning.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler use of attack dogs against Palestinian shepherds and herding families after October 7 — injuring civilians including children. Pattern card distinct from herder physical attacks and livestock poisoning.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source dog attacks on shepherds. Exact injury counts evolve; multi-source wartime settler dog attacks on shepherds is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem herding materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet shepherd dog-attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -10929,12 +10929,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (drip-line-destruction cohort)',
     location: 'West Bank irrigated plots and greenhouse feeder lines',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler cutting and destruction of Palestinian civilian drip-irrigation lines after October 7 — killing crops and family food production including for children. Pattern card distinct from water-pipe and greenhouse destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler cutting and destruction of Palestinian civilian drip-irrigation lines after October 7 — killing crops and family food production including for children. Pattern card distinct from water-pipe and greenhouse destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source drip-line destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian irrigation is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet irrigation-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11010,7 +11010,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (walking-schoolchildren-attack cohort)',
     location: 'West Bank village-to-school footpaths and roadside routes',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian schoolchildren walking to school after October 7 — a multi-source child-targeting pattern distinct from school-bus blocking and teacher attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian schoolchildren walking to school after October 7 — a multi-source child-targeting pattern distinct from school-bus blocking and teacher attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education-access materials, and multi-outlet coverage establish multi-source attacks on walking schoolchildren. Exact injury counts evolve; multi-source wartime settler attacks on walking schoolchildren is the claim.',
     sources: [
@@ -11091,12 +11091,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (ag-equipment-arson cohort)',
     location: 'West Bank farmyards, tractor sheds, and olive-press compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler arson of Palestinian civilian tractors, ploughs, and farm equipment after October 7 — destroying livelihoods supporting families including children. Pattern card distinct from vehicle arson and greenhouse destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler arson of Palestinian civilian tractors, ploughs, and farm equipment after October 7 — destroying livelihoods supporting families including children. Pattern card distinct from vehicle arson and greenhouse destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source agricultural-equipment arson. Exact equipment counts evolve; multi-source wartime settler arson of civilian farm equipment is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet farm-equipment arson coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11172,12 +11172,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (funeral-block cohort)',
     location: 'West Bank cemetery roads and village funeral routes',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler blocking and attacks on Palestinian civilian funeral processions after October 7 — denying dignified burial and terrorizing mourning families including children. Pattern card distinct from cemetery desecration and death-threat graffiti.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler blocking and attacks on Palestinian civilian funeral processions after October 7 — denying dignified burial and terrorizing mourning families including children. Pattern card distinct from cemetery desecration and death-threat graffiti.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source funeral-procession blocking. Exact incident counts evolve; multi-source wartime settler blocking of civilian funerals is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet funeral-block coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11253,12 +11253,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (wedding-party-attack cohort)',
     location: 'West Bank village halls, outdoor wedding sites, and access roads',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian wedding gatherings after October 7 — assaulting multi-generational celebrations including children. Pattern card distinct from funeral-blocking and schoolchild attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian wedding gatherings after October 7 — assaulting multi-generational celebrations including children. Pattern card distinct from funeral-blocking and schoolchild attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source wedding-party attacks. Exact injury counts evolve; multi-source wartime settler attacks on wedding parties is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet wedding-attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11334,12 +11334,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (poultry-coop-destruction cohort)',
     location: 'West Bank village poultry coops and family chicken houses',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian poultry coops after October 7 — killing birds and destroying protein livelihoods supporting families including children. Pattern card distinct from livestock poisoning and beehive destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian poultry coops after October 7 — killing birds and destroying protein livelihoods supporting families including children. Pattern card distinct from livestock poisoning and beehive destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source poultry-coop destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian poultry coops is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet poultry-coop destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11415,12 +11415,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (grapevine-destruction cohort)',
     location: 'West Bank vineyard terraces and family grape plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian grapevines after October 7 — destroying multi-year agricultural investment supporting families including children. Pattern card distinct from olive-tree uprooting and greenhouse destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian grapevines after October 7 — destroying multi-year agricultural investment supporting families including children. Pattern card distinct from olive-tree uprooting and greenhouse destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source grapevine destruction. Exact vine counts evolve; multi-source wartime settler destruction of civilian grapevines is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet grapevine-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11496,12 +11496,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (construction-worker-attack cohort)',
     location: 'West Bank village building sites and renovation compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian construction workers after October 7 — blocking home repair and livelihood including for families with children. Pattern card distinct from home invasions and farm-equipment arson.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian construction workers after October 7 — blocking home repair and livelihood including for families with children. Pattern card distinct from home invasions and farm-equipment arson.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source construction-worker attacks. Exact injury counts evolve; multi-source wartime settler attacks on construction workers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet construction-worker attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11577,12 +11577,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (cistern-destruction cohort)',
     location: 'West Bank hillside cisterns and rainwater-harvesting compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction and filling of Palestinian civilian water cisterns after October 7 — denying stored household water including for children. Pattern card distinct from water-tank, well-poisoning, and pipe-cutting cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction and filling of Palestinian civilian water cisterns after October 7 — denying stored household water including for children. Pattern card distinct from water-tank, well-poisoning, and pipe-cutting cards.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source cistern destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian cisterns is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet cistern-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11658,12 +11658,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (fig-tree-destruction cohort)',
     location: 'West Bank fig orchards and family fruit plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian fig trees after October 7 — destroying multi-year fruit livelihoods supporting families including children. Pattern card distinct from olive-tree and grapevine destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian fig trees after October 7 — destroying multi-year fruit livelihoods supporting families including children. Pattern card distinct from olive-tree and grapevine destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source fig-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian fig trees is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet fig-tree destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11739,12 +11739,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (taxi-driver-attack cohort)',
     location: 'West Bank inter-village roads and taxi stands',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian taxi drivers after October 7 — disrupting civilian mobility including school and medical transport for children. Pattern card distinct from vehicle stoning and vehicle arson.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian taxi drivers after October 7 — disrupting civilian mobility including school and medical transport for children. Pattern card distinct from vehicle stoning and vehicle arson.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source taxi-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on taxi drivers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet taxi-driver attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11820,12 +11820,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (water-tanker-block cohort)',
     location: 'West Bank village access roads used by water tankers',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian water tankers after October 7 — denying delivered household water including for children. Pattern card distinct from cistern destruction, water-tank destruction, and pipe cutting.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian water tankers after October 7 — denying delivered household water including for children. Pattern card distinct from cistern destruction, water-tank destruction, and pipe cutting.",
     evidence:
       'OCHA settler-violence and access databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-tanker blocking. Exact incident counts evolve; multi-source wartime settler blocking of civilian water tankers is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet water-tanker block coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11901,12 +11901,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (almond-tree-destruction cohort)',
     location: 'West Bank almond orchards and hillside groves',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian almond trees after October 7 — destroying multi-year agricultural livelihoods supporting families including children. Pattern card distinct from olive, fig, and grapevine destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian almond trees after October 7 — destroying multi-year agricultural livelihoods supporting families including children. Pattern card distinct from olive, fig, and grapevine destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source almond-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian almond trees is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet almond-tree destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -11982,12 +11982,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (bus-passenger-attack cohort)',
     location: 'West Bank bus stops and inter-city bus routes',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian bus passengers after October 7 — including children commuting for school and work. Pattern card distinct from taxi-driver attacks and school-bus blocking.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian bus passengers after October 7 — including children commuting for school and work. Pattern card distinct from taxi-driver attacks and school-bus blocking.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source bus-passenger attacks. Exact injury counts evolve; multi-source wartime settler attacks on bus passengers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet bus-passenger attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12063,12 +12063,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (storage-shed-destruction cohort)',
     location: 'West Bank farmyards and village storage compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian storage sheds after October 7 — destroying tools, feed, and family supplies including for households with children. Pattern card distinct from greenhouse and poultry-coop destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian storage sheds after October 7 — destroying tools, feed, and family supplies including for households with children. Pattern card distinct from greenhouse and poultry-coop destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source storage-shed destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian storage sheds is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet storage-shed destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12144,12 +12144,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (date-palm-destruction cohort)',
     location: 'West Bank date palm plots and Jordan Valley agricultural belts',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian date palms after October 7 — destroying high-value multi-year crops supporting families including children. Pattern card distinct from olive, fig, almond, and grapevine destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian date palms after October 7 — destroying high-value multi-year crops supporting families including children. Pattern card distinct from olive, fig, almond, and grapevine destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source date-palm destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian date palms is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet date-palm destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12225,12 +12225,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (shopkeeper-attack cohort)',
     location: 'West Bank village commercial streets and market shops',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian shopkeepers after October 7 — destroying livelihoods supporting families including children. Pattern card distinct from vehicle arson and construction-worker attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian shopkeepers after October 7 — destroying livelihoods supporting families including children. Pattern card distinct from vehicle arson and construction-worker attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source shopkeeper attacks. Exact injury counts evolve; multi-source wartime settler attacks on shopkeepers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet shopkeeper attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12306,7 +12306,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (ambulance-junction-block cohort)',
     location: 'West Bank road junctions used by emergency ambulances',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler blocking of ambulance routes at junctions after October 7 — delaying emergency care for civilians including children. Pattern card distinct from ambulance blocking and medical-access blocking at clinic approaches.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler blocking of ambulance routes at junctions after October 7 — delaying emergency care for civilians including children. Pattern card distinct from ambulance blocking and medical-access blocking at clinic approaches.",
     evidence:
       'OCHA access databases, WHO health-access materials, and multi-outlet coverage establish multi-source ambulance-junction blocking. Exact delayed-care counts evolve; multi-source wartime settler blocking of ambulance junctions is the claim.',
     sources: [
@@ -12387,12 +12387,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (citrus-tree-destruction cohort)',
     location: 'West Bank citrus groves and irrigated orchard plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian citrus trees after October 7 — destroying multi-year orchard investment supporting families including children. Pattern card distinct from olive, fig, almond, grapevine, and date-palm destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian citrus trees after October 7 — destroying multi-year orchard investment supporting families including children. Pattern card distinct from olive, fig, almond, grapevine, and date-palm destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source citrus-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian citrus trees is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet citrus-tree destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12468,12 +12468,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (municipal-worker-attack cohort)',
     location: 'West Bank village municipal compounds and public-works sites',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian municipal workers after October 7 — disrupting water, waste, and public services for families including children. Pattern card distinct from construction-worker and shopkeeper attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian municipal workers after October 7 — disrupting water, waste, and public services for families including children. Pattern card distinct from construction-worker and shopkeeper attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source municipal-worker attacks. Exact injury counts evolve; multi-source wartime settler attacks on municipal workers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet municipal-worker attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12549,12 +12549,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (irrigation-pump-destruction cohort)',
     location: 'West Bank farm pumps and agricultural water-lift points',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian irrigation pumps after October 7 — killing crop irrigation capacity for families including children. Pattern card distinct from drip-line cutting and water-pipe destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian irrigation pumps after October 7 — killing crop irrigation capacity for families including children. Pattern card distinct from drip-line cutting and water-pipe destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source irrigation-pump destruction. Exact equipment counts evolve; multi-source wartime settler destruction of civilian irrigation pumps is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet irrigation-pump destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12630,12 +12630,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (pomegranate-tree-destruction cohort)',
     location: 'West Bank pomegranate orchards and family fruit plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian pomegranate trees after October 7 — destroying multi-year fruit livelihoods supporting families including children. Pattern card distinct from citrus, fig, almond, and olive destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian pomegranate trees after October 7 — destroying multi-year fruit livelihoods supporting families including children. Pattern card distinct from citrus, fig, almond, and olive destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source pomegranate-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian pomegranate trees is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet pomegranate-tree destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12711,12 +12711,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (street-vendor-attack cohort)',
     location: 'West Bank market streets and roadside vending points',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian street vendors after October 7 — destroying informal livelihoods supporting families including children. Pattern card distinct from shopkeeper attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian street vendors after October 7 — destroying informal livelihoods supporting families including children. Pattern card distinct from shopkeeper attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source street-vendor attacks. Exact injury counts evolve; multi-source wartime settler attacks on street vendors is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet street-vendor attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12792,12 +12792,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (home-fencing-destruction cohort)',
     location: 'West Bank village home compounds and perimeter fences',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian home fencing after October 7 — removing basic privacy and livestock protection for families including children. Pattern card distinct from home invasions and storage-shed destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian home fencing after October 7 — removing basic privacy and livestock protection for families including children. Pattern card distinct from home invasions and storage-shed destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source home-fencing destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian home fencing is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet fencing-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12873,12 +12873,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (avocado-tree-destruction cohort)',
     location: 'West Bank avocado orchards and irrigated hillside plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian avocado trees after October 7 — destroying high-value multi-year crops supporting families including children. Pattern card distinct from citrus, pomegranate, and date-palm destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian avocado trees after October 7 — destroying high-value multi-year crops supporting families including children. Pattern card distinct from citrus, pomegranate, and date-palm destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source avocado-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian avocado trees is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet avocado-tree destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -12954,7 +12954,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (shepherd-children-attack cohort)',
     location: 'West Bank grazing hills used by herding families with children',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks specifically targeting Palestinian shepherd children after October 7 — a multi-source child-targeting pattern distinct from general herder attacks and dog attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks specifically targeting Palestinian shepherd children after October 7 — a multi-source child-targeting pattern distinct from general herder attacks and dog attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF child-protection materials, and multi-outlet coverage establish multi-source attacks on shepherd children. Exact injury counts evolve; multi-source wartime settler attacks on shepherd children is the claim.',
     sources: [
@@ -13035,12 +13035,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (rainwater-gutter-destruction cohort)',
     location: 'West Bank village rooftops and cistern-fed gutter systems',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian rainwater gutters after October 7 — denying rain capture into cisterns for households including children. Pattern card distinct from cistern destruction and water-tank destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian rainwater gutters after October 7 — denying rain capture into cisterns for households including children. Pattern card distinct from cistern destruction and water-tank destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source rainwater-gutter destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian rainwater gutters is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet gutter-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13116,12 +13116,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (carob-tree-destruction cohort)',
     location: 'West Bank carob groves and hillside agricultural plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian carob trees after October 7 — destroying multi-year agricultural assets supporting families including children. Pattern card distinct from olive, citrus, and avocado destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian carob trees after October 7 — destroying multi-year agricultural assets supporting families including children. Pattern card distinct from olive, citrus, and avocado destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source carob-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian carob trees is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet carob-tree destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13197,12 +13197,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (night-shift-worker-attack cohort)',
     location: 'West Bank night roads used by factory and service workers',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian night-shift workers after October 7 — disrupting livelihoods supporting families including children. Pattern card distinct from taxi-driver and municipal-worker attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian night-shift workers after October 7 — disrupting livelihoods supporting families including children. Pattern card distinct from taxi-driver and municipal-worker attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source night-shift-worker attacks. Exact injury counts evolve; multi-source wartime settler attacks on night-shift workers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet night-shift worker attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13278,12 +13278,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (compost-pile-destruction cohort)',
     location: 'West Bank farmyards and village agricultural compounds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian compost piles and organic fertilizer stores after October 7 — undermining soil fertility and food production for families including children. Pattern card distinct from greenhouse and storage-shed destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian compost piles and organic fertilizer stores after October 7 — undermining soil fertility and food production for families including children. Pattern card distinct from greenhouse and storage-shed destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source compost-pile destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian compost piles is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet compost-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13359,12 +13359,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (walnut-tree-destruction cohort)',
     location: 'West Bank walnut groves and hillside orchards',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian walnut trees after October 7 — destroying multi-year assets supporting families including children. Pattern card distinct from olive, carob, and almond destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian walnut trees after October 7 — destroying multi-year assets supporting families including children. Pattern card distinct from olive, carob, and almond destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source walnut-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian walnut trees is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet walnut-tree destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13440,12 +13440,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (delivery-driver-attack cohort)',
     location: 'West Bank delivery routes and village commercial approaches',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian delivery drivers after October 7 — disrupting food and goods access for families including children. Pattern card distinct from taxi-driver and night-shift attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian delivery drivers after October 7 — disrupting food and goods access for families including children. Pattern card distinct from taxi-driver and night-shift attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source delivery-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on delivery drivers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet delivery-driver attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13521,12 +13521,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (stone-terrace-destruction cohort)',
     location: 'West Bank hillside agricultural stone terraces',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian stone agricultural terraces after October 7 — destroying multi-generation land infrastructure supporting families including children. Pattern card distinct from tree destruction and compost destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian stone agricultural terraces after October 7 — destroying multi-generation land infrastructure supporting families including children. Pattern card distinct from tree destruction and compost destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source stone-terrace destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian stone terraces is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet terrace-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13602,12 +13602,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (almond-sapling-destruction cohort)',
     location: 'West Bank newly planted almond orchards and nursery plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian almond saplings after October 7 — destroying re-planting investments supporting families including children. Pattern card distinct from mature almond-tree destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian almond saplings after October 7 — destroying re-planting investments supporting families including children. Pattern card distinct from mature almond-tree destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source almond-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian almond saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet sapling-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13683,12 +13683,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (funeral-mourner-attack cohort)',
     location: 'West Bank cemeteries and funeral gathering sites',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian funeral mourners after October 7 — terrorizing bereaved families including children. Pattern card distinct from funeral-procession blocking and cemetery desecration.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian funeral mourners after October 7 — terrorizing bereaved families including children. Pattern card distinct from funeral-procession blocking and cemetery desecration.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source funeral-mourner attacks. Exact injury counts evolve; multi-source wartime settler attacks on funeral mourners is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet funeral-mourner attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13764,12 +13764,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (dry-stone-wall-destruction cohort)',
     location: 'West Bank agricultural dry-stone field walls and plot boundaries',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian dry-stone walls after October 7 — erasing land boundaries and agricultural infrastructure for families including children. Pattern card distinct from stone terraces and home fencing.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian dry-stone walls after October 7 — erasing land boundaries and agricultural infrastructure for families including children. Pattern card distinct from stone terraces and home fencing.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source dry-stone-wall destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian dry-stone walls is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet wall-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13845,12 +13845,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (grape-sapling-destruction cohort)',
     location: 'West Bank newly planted vineyard plots and nursery rows',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian grape saplings after October 7 — destroying re-planting investment supporting families including children. Pattern card distinct from mature grapevine destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian grape saplings after October 7 — destroying re-planting investment supporting families including children. Pattern card distinct from mature grapevine destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source grape-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian grape saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet grape-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -13926,12 +13926,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (water-tanker-driver-attack cohort)',
     location: 'West Bank water-tanker routes and village fill points',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian water-tanker drivers after October 7 — compounding water access denial for families including children. Pattern card distinct from water-tanker blocking.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian water-tanker drivers after October 7 — compounding water access denial for families including children. Pattern card distinct from water-tanker blocking.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-tanker-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on water-tanker drivers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet tanker-driver attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14007,12 +14007,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (olive-sapling-destruction cohort)',
     location: 'West Bank newly planted olive nurseries and re-planting plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature olive-tree uprooting.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature olive-tree uprooting.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source olive-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian olive saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet olive-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14088,12 +14088,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (fig-sapling-destruction cohort)',
     location: 'West Bank newly planted fig plots and nursery rows',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian fig saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature fig-tree destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian fig saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature fig-tree destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source fig-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian fig saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet fig-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14169,7 +14169,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-crossing-guard-attack cohort)',
     location: 'West Bank school-route crossings and village pedestrian points',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian school crossing guards after October 7 — endangering children walking to school. Pattern card distinct from schoolchild and teacher attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian school crossing guards after October 7 — endangering children walking to school. Pattern card distinct from schoolchild and teacher attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-crossing-guard attacks. Exact injury counts evolve; multi-source wartime settler attacks on school crossing guards is the claim.',
     sources: [
@@ -14250,12 +14250,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (citrus-sapling-destruction cohort)',
     location: 'West Bank newly planted citrus nurseries and re-planting plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian citrus saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature citrus-tree destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian citrus saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature citrus-tree destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source citrus-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian citrus saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet citrus-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14331,12 +14331,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (pomegranate-sapling-destruction cohort)',
     location: 'West Bank newly planted pomegranate plots and nursery rows',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian pomegranate saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature pomegranate-tree destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian pomegranate saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature pomegranate-tree destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source pomegranate-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian pomegranate saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet pomegranate-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14412,7 +14412,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (ambulance-paramedic-attack cohort)',
     location: 'West Bank emergency response scenes and ambulance rendezvous points',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian ambulance paramedics after October 7 — delaying emergency care for civilians including children. Pattern card distinct from medical-staff attacks and ambulance-junction blocking.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian ambulance paramedics after October 7 — delaying emergency care for civilians including children. Pattern card distinct from medical-staff attacks and ambulance-junction blocking.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source paramedic attacks. Exact injury counts evolve; multi-source wartime settler attacks on ambulance paramedics is the claim.',
     sources: [
@@ -14493,12 +14493,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (date-palm-sapling-destruction cohort)',
     location: 'West Bank newly planted date palm plots and nursery rows',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian date palm saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature date-palm destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian date palm saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature date-palm destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source date-palm-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian date palm saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet date-palm-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14574,12 +14574,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (avocado-sapling-destruction cohort)',
     location: 'West Bank newly planted avocado plots and nursery rows',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian avocado saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature avocado-tree destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian avocado saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature avocado-tree destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source avocado-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian avocado saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet avocado-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14655,7 +14655,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (clinic-nurse-attack cohort)',
     location: 'West Bank village clinics and primary-care nursing stations',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian clinic nurses after October 7 — disrupting primary care for civilians including children. Pattern card distinct from medical-staff and paramedic attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian clinic nurses after October 7 — disrupting primary care for civilians including children. Pattern card distinct from medical-staff and paramedic attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source clinic-nurse attacks. Exact injury counts evolve; multi-source wartime settler attacks on clinic nurses is the claim.',
     sources: [
@@ -14736,12 +14736,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (walnut-sapling-destruction cohort)',
     location: 'West Bank newly planted walnut plots and nursery rows',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian walnut saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature walnut-tree destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian walnut saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature walnut-tree destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source walnut-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian walnut saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet walnut-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14817,12 +14817,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (carob-sapling-destruction cohort)',
     location: 'West Bank newly planted carob plots and nursery rows',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian carob saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature carob-tree destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian carob saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature carob-tree destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source carob-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian carob saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet carob-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -14898,7 +14898,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (midwife-attack cohort)',
     location: 'West Bank village maternity routes and home-birth support points',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian midwives after October 7 — endangering maternal-newborn care for civilians. Pattern card distinct from clinic-nurse and medical-staff attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian midwives after October 7 — endangering maternal-newborn care for civilians. Pattern card distinct from clinic-nurse and medical-staff attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source midwife attacks. Exact injury counts evolve; multi-source wartime settler attacks on midwives is the claim.',
     sources: [
@@ -14979,12 +14979,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (terrace-sapling-destruction cohort)',
     location: 'West Bank stone-terrace re-planting plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian saplings planted on agricultural terraces after October 7 — compounding terrace destruction with re-planting denial for families including children. Pattern card distinct from stone-terrace structure destruction and crop-specific sapling cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian saplings planted on agricultural terraces after October 7 — compounding terrace destruction with re-planting denial for families including children. Pattern card distinct from stone-terrace structure destruction and crop-specific sapling cards.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source terrace-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of terrace-planted saplings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet terrace-sapling destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15060,12 +15060,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (olive-nursery-stock-destruction cohort)',
     location: 'West Bank agricultural nurseries holding olive stock',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive nursery stock after October 7 — destroying future planting capacity for families including children. Pattern card distinct from olive-sapling field destruction and mature-tree uprooting.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive nursery stock after October 7 — destroying future planting capacity for families including children. Pattern card distinct from olive-sapling field destruction and mature-tree uprooting.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source olive-nursery stock destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian olive nursery stock is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet nursery-stock destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15141,7 +15141,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (vaccination-team-attack cohort)',
     location: 'West Bank village vaccination outreach points and mobile clinic routes',
     summary:
-      "OCHA, WHO, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks and intimidation of Palestinian vaccination teams after October 7 — blocking childhood immunization access. Pattern card distinct from medical-staff and clinic-nurse attacks.",
+      "OCHA, WHO, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks and intimidation of Palestinian vaccination teams after October 7 — blocking childhood immunization access. Pattern card distinct from medical-staff and clinic-nurse attacks.",
     evidence:
       'OCHA settler-violence databases, WHO/UNICEF health-access materials, and multi-outlet coverage establish multi-source vaccination-team attacks. Exact incident counts evolve; multi-source wartime settler attacks on vaccination teams is the claim.',
     sources: [
@@ -15222,12 +15222,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (greenhouse-seedling-destruction cohort)',
     location: 'West Bank greenhouse seedling trays and nursery benches',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian greenhouse seedlings after October 7 — destroying next-season food production for families including children. Pattern card distinct from greenhouse structure destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian greenhouse seedlings after October 7 — destroying next-season food production for families including children. Pattern card distinct from greenhouse structure destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source greenhouse-seedling destruction. Exact tray counts evolve; multi-source wartime settler destruction of civilian greenhouse seedlings is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet seedling-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15303,12 +15303,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (drip-tape-stock-destruction cohort)',
     location: 'West Bank farm storage of irrigation drip-tape rolls',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian irrigation drip-tape stock after October 7 — preventing re-installation after pipe/line cutting for families including children. Pattern card distinct from installed drip-line destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian irrigation drip-tape stock after October 7 — preventing re-installation after pipe/line cutting for families including children. Pattern card distinct from installed drip-line destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source drip-tape stock destruction. Exact roll counts evolve; multi-source wartime settler destruction of civilian drip-tape stock is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet drip-tape destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15384,7 +15384,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-principal-attack cohort)',
     location: 'West Bank school compounds and principal residences',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks and intimidation of Palestinian school principals after October 7 — disrupting education leadership for children. Pattern card distinct from teacher attacks and school-route attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks and intimidation of Palestinian school principals after October 7 — disrupting education leadership for children. Pattern card distinct from teacher attacks and school-route attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-principal attacks. Exact injury counts evolve; multi-source wartime settler attacks on school principals is the claim.',
     sources: [
@@ -15465,12 +15465,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (beekeeping-equipment-destruction cohort)',
     location: 'West Bank apiary storage and hive-equipment sheds',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beekeeping equipment after October 7 — compounding beehive destruction with tool loss for families including children. Pattern card distinct from beehive destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beekeeping equipment after October 7 — compounding beehive destruction with tool loss for families including children. Pattern card distinct from beehive destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source beekeeping-equipment destruction. Exact equipment counts evolve; multi-source wartime settler destruction of civilian beekeeping equipment is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem agriculture materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet beekeeping-equipment destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15546,12 +15546,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (solar-battery-bank-destruction cohort)',
     location: 'West Bank off-grid solar storage installations',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar battery banks after October 7 — eliminating stored power for water pumps and lighting including for children. Pattern card distinct from solar-panel destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar battery banks after October 7 — eliminating stored power for water pumps and lighting including for children. Pattern card distinct from solar-panel destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source solar-battery-bank destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian solar batteries is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem energy-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem energy-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet solar-battery destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15627,12 +15627,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (bus-driver-attack cohort)',
     location: 'West Bank bus routes and terminal approaches',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian bus drivers after October 7 — disrupting public transport for civilians including children. Pattern card distinct from bus-passenger and taxi-driver attacks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian bus drivers after October 7 — disrupting public transport for civilians including children. Pattern card distinct from bus-passenger and taxi-driver attacks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source bus-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on bus drivers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet bus-driver attack coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15708,12 +15708,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (rainwater-barrel-destruction cohort)',
     location: 'West Bank village rooftops and courtyard rain-collection barrels',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian rainwater collection barrels after October 7 — denying stored water for households including children. Pattern card distinct from cistern, gutter, and water-tank destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian rainwater collection barrels after October 7 — denying stored water for households including children. Pattern card distinct from cistern, gutter, and water-tank destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source rainwater-barrel destruction. Exact barrel counts evolve; multi-source wartime settler destruction of civilian rainwater barrels is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet rainwater-barrel destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15789,12 +15789,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (water-filtration-unit-destruction cohort)',
     location: 'West Bank village household and communal filtration installations',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian water filtration units after October 7 — denying safe drinking water for households including children. Pattern card distinct from well, pipe, tank, and barrel destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian water filtration units after October 7 — denying safe drinking water for households including children. Pattern card distinct from well, pipe, tank, and barrel destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-filtration-unit destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian water filtration is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet filtration-unit destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -15870,7 +15870,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (kindergarten-teacher-attack cohort)',
     location: 'West Bank kindergarten compounds and preschool routes',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian kindergarten teachers after October 7 — endangering early-childhood education. Pattern card distinct from school-teacher and principal attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian kindergarten teachers after October 7 — endangering early-childhood education. Pattern card distinct from school-teacher and principal attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source kindergarten-teacher attacks. Exact injury counts evolve; multi-source wartime settler attacks on kindergarten teachers is the claim.',
     sources: [
@@ -15951,12 +15951,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (small-wind-turbine-destruction cohort)',
     location: 'West Bank off-grid herding communities with small wind turbines',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian small wind turbines after October 7 — cutting off-grid power for water and lighting including for children. Pattern card distinct from solar-panel and solar-battery destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian small wind turbines after October 7 — cutting off-grid power for water and lighting including for children. Pattern card distinct from solar-panel and solar-battery destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source small-wind-turbine destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian small wind turbines is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem energy-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem energy-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet wind-turbine destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16032,12 +16032,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (diesel-generator-destruction cohort)',
     location: 'West Bank village generator sheds and farm power points',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian diesel generators after October 7 — cutting backup power for water and refrigeration including for children. Pattern card distinct from solar and wind energy destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian diesel generators after October 7 — cutting backup power for water and refrigeration including for children. Pattern card distinct from solar and wind energy destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source diesel-generator destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian diesel generators is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem energy-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem energy-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet generator-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16113,7 +16113,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (pharmacy-worker-attack cohort)',
     location: 'West Bank village pharmacies and medicine-dispensing points',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian pharmacy workers after October 7 — disrupting medicine access for civilians including children. Pattern card distinct from medical-staff and clinic-nurse attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian pharmacy workers after October 7 — disrupting medicine access for civilians including children. Pattern card distinct from medical-staff and clinic-nurse attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source pharmacy-worker attacks. Exact injury counts evolve; multi-source wartime settler attacks on pharmacy workers is the claim.',
     sources: [
@@ -16194,12 +16194,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (propane-tank-destruction cohort)',
     location: 'West Bank village home and farm propane storage points',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian propane tanks after October 7 — denying cooking and heating fuel for households including children. Pattern card distinct from generator and solar energy destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian propane tanks after October 7 — denying cooking and heating fuel for households including children. Pattern card distinct from generator and solar energy destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source propane-tank destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian propane tanks is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet propane-tank destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16275,12 +16275,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (cooking-gas-cylinder-destruction cohort)',
     location: 'West Bank village home cooking-gas storage points',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian cooking-gas cylinders after October 7 — denying household cooking fuel for families including children. Pattern card distinct from propane-tank farm storage destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian cooking-gas cylinders after October 7 — denying household cooking fuel for families including children. Pattern card distinct from propane-tank farm storage destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source cooking-gas cylinder destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian cooking-gas cylinders is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet gas-cylinder destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16356,7 +16356,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (lab-technician-attack cohort)',
     location: 'West Bank clinic laboratories and diagnostic sample routes',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian lab technicians after October 7 — disrupting diagnostics for civilians including children. Pattern card distinct from pharmacy-worker and medical-staff attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian lab technicians after October 7 — disrupting diagnostics for civilians including children. Pattern card distinct from pharmacy-worker and medical-staff attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source lab-technician attacks. Exact injury counts evolve; multi-source wartime settler attacks on lab technicians is the claim.',
     sources: [
@@ -16437,12 +16437,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (kerosene-heater-destruction cohort)',
     location: 'West Bank village homes and winter heating stores',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian kerosene heaters after October 7 — denying winter heat for households including children. Pattern card distinct from propane and generator destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian kerosene heaters after October 7 — denying winter heat for households including children. Pattern card distinct from propane and generator destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source kerosene-heater destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian kerosene heaters is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet heater-destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16518,12 +16518,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (electric-water-heater-destruction cohort)',
     location: 'West Bank village home electric water-heater installations',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian electric water heaters after October 7 — denying hot water for hygiene including for children. Pattern card distinct from solar water heaters.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian electric water heaters after October 7 — denying hot water for hygiene including for children. Pattern card distinct from solar water heaters.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source electric-water-heater destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian electric water heaters is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem energy-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem energy-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet water-heater destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16599,7 +16599,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (xray-technician-attack cohort)',
     location: 'West Bank clinic imaging rooms and diagnostic routes',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian X-ray technicians after October 7 — disrupting imaging for civilians including children. Pattern card distinct from lab-technician and pharmacy-worker attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian X-ray technicians after October 7 — disrupting imaging for civilians including children. Pattern card distinct from lab-technician and pharmacy-worker attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source X-ray technician attacks. Exact injury counts evolve; multi-source wartime settler attacks on X-ray technicians is the claim.',
     sources: [
@@ -16680,12 +16680,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (ceiling-fan-destruction cohort)',
     location: 'West Bank village homes and school classrooms',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian ceiling fans after October 7 — denying cooling in summer heat for households and schools including children. Pattern card distinct from solar and generator energy destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian ceiling fans after October 7 — denying cooling in summer heat for households and schools including children. Pattern card distinct from solar and generator energy destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source ceiling-fan destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian ceiling fans is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet ceiling-fan destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16761,12 +16761,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (window-screen-destruction cohort)',
     location: 'West Bank village homes and school classrooms',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian window screens after October 7 — increasing insect-borne disease exposure for households including children. Pattern card distinct from home invasions and ceiling-fan destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian window screens after October 7 — increasing insect-borne disease exposure for households including children. Pattern card distinct from home invasions and ceiling-fan destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source window-screen destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian window screens is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet window-screen destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -16842,7 +16842,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (dental-clinic-staff-attack cohort)',
     location: 'West Bank village dental clinics and oral-care points',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian dental clinic staff after October 7 — disrupting oral care for civilians including children. Pattern card distinct from pharmacy and medical-staff attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian dental clinic staff after October 7 — disrupting oral care for civilians including children. Pattern card distinct from pharmacy and medical-staff attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source dental-clinic-staff attacks. Exact injury counts evolve; multi-source wartime settler attacks on dental clinic staff is the claim.',
     sources: [
@@ -16923,12 +16923,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (mosquito-net-destruction cohort)',
     location: 'West Bank village homes and infant sleeping areas',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian mosquito nets after October 7 — increasing vector-borne disease exposure for households including infants. Pattern card distinct from window-screen destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian mosquito nets after October 7 — increasing vector-borne disease exposure for households including infants. Pattern card distinct from window-screen destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source mosquito-net destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian mosquito nets is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet mosquito-net destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -17004,12 +17004,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (insecticide-store-destruction cohort)',
     location: 'West Bank village public-health and farm insecticide storage',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian insecticide stores after October 7 — increasing vector-borne disease exposure for households including children. Pattern card distinct from mosquito-net destruction.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian insecticide stores after October 7 — increasing vector-borne disease exposure for households including children. Pattern card distinct from mosquito-net destruction.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source insecticide-store destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian insecticide stores is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet insecticide-store destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -17085,7 +17085,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (optometrist-attack cohort)',
     location: 'West Bank village optical clinics and vision-care points',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian optometrists after October 7 — disrupting vision care for civilians including children. Pattern card distinct from dental and medical-staff attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian optometrists after October 7 — disrupting vision care for civilians including children. Pattern card distinct from dental and medical-staff attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source optometrist attacks. Exact injury counts evolve; multi-source wartime settler attacks on optometrists is the claim.',
     sources: [
@@ -17166,7 +17166,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (infant-bed-net-destruction cohort)',
     location: 'West Bank village infant sleeping areas and clinic MCH stores',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian infant bed nets after October 7 — increasing vector exposure for infants. Pattern card distinct from general mosquito-net destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian infant bed nets after October 7 — increasing vector exposure for infants. Pattern card distinct from general mosquito-net destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF child-protection materials, and multi-outlet coverage establish multi-source infant bed-net destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian infant bed nets is the claim.',
     sources: [
@@ -17247,12 +17247,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (water-cooler-destruction cohort)',
     location: 'West Bank village schools, clinics, and home water coolers',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian water coolers after October 7 — denying cool drinking water for households and schools including children. Pattern card distinct from filtration units and water tanks.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian water coolers after October 7 — denying cool drinking water for households and schools including children. Pattern card distinct from filtration units and water tanks.",
     evidence:
       'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-cooler destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian water coolers is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem water-access materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem water-access materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet water-cooler destruction coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -17328,7 +17328,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (physiotherapist-attack cohort)',
     location: 'West Bank clinic physiotherapy rooms and rehab outreach points',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian physiotherapists after October 7 — disrupting rehab for civilians including children. Pattern card distinct from medical-staff and dental-clinic attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian physiotherapists after October 7 — disrupting rehab for civilians including children. Pattern card distinct from medical-staff and dental-clinic attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source physiotherapist attacks. Exact injury counts evolve; multi-source wartime settler attacks on physiotherapists is the claim.',
     sources: [
@@ -17409,7 +17409,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-desk-destruction cohort)',
     location: 'West Bank village school classrooms',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school desks after October 7 — disrupting education for children. Pattern card distinct from school attacks and playground destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school desks after October 7 — disrupting education for children. Pattern card distinct from school attacks and playground destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-desk destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school desks is the claim.',
     sources: [
@@ -17490,7 +17490,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-blackboard-destruction cohort)',
     location: 'West Bank village school classrooms',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school blackboards after October 7 — disrupting education for children. Pattern card distinct from school-desk destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school blackboards after October 7 — disrupting education for children. Pattern card distinct from school-desk destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-blackboard destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school blackboards is the claim.',
     sources: [
@@ -17571,7 +17571,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (speech-therapist-attack cohort)',
     location: 'West Bank clinic speech-therapy rooms and school outreach points',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian speech therapists after October 7 — disrupting care for children with communication disabilities. Pattern card distinct from physiotherapist and medical-staff attacks.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian speech therapists after October 7 — disrupting care for children with communication disabilities. Pattern card distinct from physiotherapist and medical-staff attacks.",
     evidence:
       'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source speech-therapist attacks. Exact injury counts evolve; multi-source wartime settler attacks on speech therapists is the claim.',
     sources: [
@@ -17652,7 +17652,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-library-destruction cohort)',
     location: 'West Bank village school libraries and reading corners',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school library materials after October 7 — disrupting education for children. Pattern card distinct from school-desk and blackboard destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school library materials after October 7 — disrupting education for children. Pattern card distinct from school-desk and blackboard destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-library destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian school libraries is the claim.',
     sources: [
@@ -17733,7 +17733,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-computer-destruction cohort)',
     location: 'West Bank village school computer labs',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school computers after October 7 — disrupting digital education for children. Pattern card distinct from school-library and desk destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school computers after October 7 — disrupting digital education for children. Pattern card distinct from school-library and desk destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-computer destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school computers is the claim.',
     sources: [
@@ -17814,7 +17814,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-counselor-attack cohort)',
     location: 'West Bank school counseling offices and student-support points',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school counselors after October 7 — disrupting mental-health support for children. Pattern card distinct from teacher and principal attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school counselors after October 7 — disrupting mental-health support for children. Pattern card distinct from teacher and principal attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-counselor attacks. Exact injury counts evolve; multi-source wartime settler attacks on school counselors is the claim.',
     sources: [
@@ -17895,7 +17895,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-science-lab-destruction cohort)',
     location: 'West Bank village school science laboratories',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school science labs after October 7 — disrupting STEM education for children. Pattern card distinct from computer-lab and library destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school science labs after October 7 — disrupting STEM education for children. Pattern card distinct from computer-lab and library destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-science-lab destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian school science labs is the claim.',
     sources: [
@@ -17976,7 +17976,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-sports-equipment-destruction cohort)',
     location: 'West Bank village school playgrounds and sports stores',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school sports equipment after October 7 — disrupting physical education for children. Pattern card distinct from playground destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school sports equipment after October 7 — disrupting physical education for children. Pattern card distinct from playground destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-sports-equipment destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school sports equipment is the claim.',
     sources: [
@@ -18057,7 +18057,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-bus-driver-attack cohort)',
     location: 'West Bank school-bus routes and village pickup points',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school-bus drivers after October 7 — endangering children in transit. Pattern card distinct from school-bus blocking and bus-driver attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school-bus drivers after October 7 — endangering children in transit. Pattern card distinct from school-bus blocking and bus-driver attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-bus-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on school-bus drivers is the claim.',
     sources: [
@@ -18138,7 +18138,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (kindergarten-toy-destruction cohort)',
     location: 'West Bank village kindergartens and preschool rooms',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian kindergarten toys after October 7 — disrupting early-childhood development spaces. Pattern card distinct from playground destruction and kindergarten-teacher attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian kindergarten toys after October 7 — disrupting early-childhood development spaces. Pattern card distinct from playground destruction and kindergarten-teacher attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source kindergarten-toy destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian kindergarten toys is the claim.',
     sources: [
@@ -18219,7 +18219,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-art-supplies-destruction cohort)',
     location: 'West Bank village school art rooms and supply closets',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school art supplies after October 7 — disrupting creative education for children. Pattern card distinct from school-desk and library destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school art supplies after October 7 — disrupting creative education for children. Pattern card distinct from school-desk and library destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-art-supplies destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school art supplies is the claim.',
     sources: [
@@ -18300,7 +18300,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-janitor-attack cohort)',
     location: 'West Bank village school compounds and maintenance routes',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school janitors after October 7 — disrupting safe school environments for children. Pattern card distinct from teacher and principal attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school janitors after October 7 — disrupting safe school environments for children. Pattern card distinct from teacher and principal attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-janitor attacks. Exact injury counts evolve; multi-source wartime settler attacks on school janitors is the claim.',
     sources: [
@@ -18381,7 +18381,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-water-fountain-destruction cohort)',
     location: 'West Bank village school courtyards and hallway fountains',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school water fountains after October 7 — denying drinking water for schoolchildren. Pattern card distinct from water coolers and filtration units.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school water fountains after October 7 — denying drinking water for schoolchildren. Pattern card distinct from water coolers and filtration units.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-water-fountain destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school water fountains is the claim.',
     sources: [
@@ -18462,7 +18462,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-toilet-destruction cohort)',
     location: 'West Bank village school sanitation blocks',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school toilets after October 7 — denying sanitation for schoolchildren. Pattern card distinct from water-fountain destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school toilets after October 7 — denying sanitation for schoolchildren. Pattern card distinct from water-fountain destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-toilet destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian school toilets is the claim.',
     sources: [
@@ -18543,7 +18543,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-nurse-attack cohort)',
     location: 'West Bank village school clinics and nurse stations',
     summary:
-      "OCHA, UNICEF, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school nurses after October 7 — disrupting school health for children. Pattern card distinct from clinic-nurse and teacher attacks.",
+      "OCHA, UNICEF, WHO, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school nurses after October 7 — disrupting school health for children. Pattern card distinct from clinic-nurse and teacher attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-nurse attacks. Exact injury counts evolve; multi-source wartime settler attacks on school nurses is the claim.',
     sources: [
@@ -18624,7 +18624,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-gate-destruction cohort)',
     location: 'West Bank village school entrance gates and perimeter fencing',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school gates after October 7 — compromising school security for children. Pattern card distinct from home fencing and dry-stone wall destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school gates after October 7 — compromising school security for children. Pattern card distinct from home fencing and dry-stone wall destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-gate destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian school gates is the claim.',
     sources: [
@@ -18705,7 +18705,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-perimeter-fencing-destruction cohort)',
     location: 'West Bank village school perimeter fences',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school perimeter fencing after October 7 — compromising school security for children. Pattern card distinct from school-gate destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school perimeter fencing after October 7 — compromising school security for children. Pattern card distinct from school-gate destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-perimeter-fencing destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian school perimeter fencing is the claim.',
     sources: [
@@ -18786,7 +18786,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-security-guard-attack cohort)',
     location: 'West Bank village school entrances and guard posts',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school security guards after October 7 — endangering school safety for children. Pattern card distinct from school-janitor and crossing-guard attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school security guards after October 7 — endangering school safety for children. Pattern card distinct from school-janitor and crossing-guard attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-security-guard attacks. Exact injury counts evolve; multi-source wartime settler attacks on school security guards is the claim.',
     sources: [
@@ -18867,7 +18867,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-roofing-destruction cohort)',
     location: 'West Bank village school roofs and temporary classroom coverings',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school roofing after October 7 — rendering classrooms unusable for children. Pattern card distinct from school-gate and fencing destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school roofing after October 7 — rendering classrooms unusable for children. Pattern card distinct from school-gate and fencing destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-roofing destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian school roofing is the claim.',
     sources: [
@@ -18948,7 +18948,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-window-destruction cohort)',
     location: 'West Bank village school classrooms and hallway windows',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school windows after October 7 — rendering classrooms unusable in winter for children. Pattern card distinct from school-roofing and fencing destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school windows after October 7 — rendering classrooms unusable in winter for children. Pattern card distinct from school-roofing and fencing destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-window destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school windows is the claim.',
     sources: [
@@ -19029,7 +19029,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-cook-attack cohort)',
     location: 'West Bank village school kitchens and meal-service points',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school cooks after October 7 — disrupting school meals for children. Pattern card distinct from school-janitor and teacher attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school cooks after October 7 — disrupting school meals for children. Pattern card distinct from school-janitor and teacher attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-cook attacks. Exact injury counts evolve; multi-source wartime settler attacks on school cooks is the claim.',
     sources: [
@@ -19110,7 +19110,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-door-destruction cohort)',
     location: 'West Bank village school classroom and hallway doors',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school doors after October 7 — compromising classroom security and weather protection for children. Pattern card distinct from school-window and gate destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school doors after October 7 — compromising classroom security and weather protection for children. Pattern card distinct from school-window and gate destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-door destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school doors is the claim.',
     sources: [
@@ -19191,7 +19191,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-heating-system-destruction cohort)',
     location: 'West Bank village school heating units and winter classroom systems',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school heating systems after October 7 — rendering classrooms unusable in winter for children. Pattern card distinct from kerosene-heater home destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school heating systems after October 7 — rendering classrooms unusable in winter for children. Pattern card distinct from kerosene-heater home destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-heating-system destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school heating systems is the claim.',
     sources: [
@@ -19272,7 +19272,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-librarian-attack cohort)',
     location: 'West Bank village school libraries and reading rooms',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school librarians after October 7 — disrupting literacy access for children. Pattern card distinct from school-library material destruction and teacher attacks.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school librarians after October 7 — disrupting literacy access for children. Pattern card distinct from school-library material destruction and teacher attacks.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-librarian attacks. Exact injury counts evolve; multi-source wartime settler attacks on school librarians is the claim.',
     sources: [
@@ -19353,7 +19353,7 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-electricity-wiring-destruction cohort)',
     location: 'West Bank village school electrical systems and wiring',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school electrical wiring after October 7 — rendering classrooms dark and unusable for children. Pattern card distinct from school-heating and solar destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school electrical wiring after October 7 — rendering classrooms dark and unusable for children. Pattern card distinct from school-heating and solar destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-electricity-wiring destruction. Exact incident counts evolve; multi-source wartime settler destruction of civilian school electrical wiring is the claim.',
     sources: [
@@ -19542,13 +19542,13 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-fountain destruction cohort)',
     location: 'West Bank village school drinking facilities',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school water fountains after October 7 — denying children drinking water at school. Pattern card distinct from school-wiring and heating destruction.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school water fountains after October 7 — denying children drinking water at school. Pattern card distinct from school-wiring and heating destruction.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-fountain destruction. Exact counts evolve; multi-source wartime settler destruction of civilian school drinking facilities is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
       { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [
       { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
@@ -19569,13 +19569,13 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (afternoon school-bus attack cohort)',
     location: 'West Bank school-bus routes serving Palestinian villages',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian school buses after October 7 during afternoon return routes — denying children safe education access. Pattern card distinct from morning school-bus and general stone-throwing cards.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler attacks on Palestinian school buses after October 7 during afternoon return routes — denying children safe education access. Pattern card distinct from morning school-bus and general stone-throwing cards.",
     evidence:
       'OCHA settler-violence databases, UNICEF education access materials, and multi-outlet coverage establish multi-source afternoon school-bus attack documentation. Exact counts evolve; multi-source wartime settler attacks on civilian school transport is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
       { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [
       { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
@@ -19596,12 +19596,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (school-garden contamination cohort)',
     location: 'West Bank village school gardens and agricultural education plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler contamination or destruction of Palestinian school gardens after October 7 — denying children food-education plots and safe outdoor school space. Pattern card distinct from well-poisoning and water-tank cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler contamination or destruction of Palestinian school gardens after October 7 — denying children food-education plots and safe outdoor school space. Pattern card distinct from well-poisoning and water-tank cards.",
     evidence:
       'OCHA settler-violence databases, agricultural-harm reporting, and multi-outlet coverage establish multi-source school-garden contamination documentation. Exact counts evolve; multi-source wartime settler contamination of civilian school gardens is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet West Bank school-garden coverage', url: 'https://apnews.com' },
     ],
     multimedia: [
@@ -19787,13 +19787,13 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (ambulance-to-clinic blocking cohort)',
     location: 'West Bank village access roads to clinics and hospitals',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian ambulances en route to clinics after October 7 — denying emergency care including for children. Pattern card distinct from general checkpoint delay and road-block cards.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian ambulances en route to clinics after October 7 — denying emergency care including for children. Pattern card distinct from general checkpoint delay and road-block cards.",
     evidence:
       'OCHA access-constraint materials, WHO health-access updates, and multi-outlet coverage establish multi-source ambulance-blocking documentation. Exact counts evolve; multi-source wartime settler ambulance obstruction is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
       { label: 'WHO health-access materials', url: 'https://www.who.int' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [
       { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
@@ -19814,13 +19814,13 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (clinic medical-cabinet destruction cohort)',
     location: 'West Bank village clinics and primary-care rooms',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian clinic medicine cabinets and supplies after October 7 — denying routine and emergency care including for children. Pattern card distinct from ambulance-blocking and school-infrastructure cards.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian clinic medicine cabinets and supplies after October 7 — denying routine and emergency care including for children. Pattern card distinct from ambulance-blocking and school-infrastructure cards.",
     evidence:
       'OCHA settler-violence databases, WHO health-facility damage notes, and multi-outlet coverage establish multi-source clinic-cabinet destruction. Exact counts evolve; multi-source wartime settler destruction of civilian clinic supplies is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
       { label: 'WHO health materials', url: 'https://www.who.int' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [
       { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
@@ -19841,13 +19841,13 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (teacher-commute attack cohort)',
     location: 'West Bank roads used by Palestinian teachers commuting to village schools',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian teachers commuting to schools after October 7 — denying children teachers and safe education. Pattern card distinct from school-bus and school-building destruction cards.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian teachers commuting to schools after October 7 — denying children teachers and safe education. Pattern card distinct from school-bus and school-building destruction cards.",
     evidence:
       'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source teacher-commute attack documentation. Exact counts evolve; multi-source wartime settler attacks on civilian educators is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
       { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [
       { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
@@ -20014,12 +20014,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (olive-press destruction cohort)',
     location: 'West Bank village olive presses and harvest facilities',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive oil presses after October 7 — denying livelihood and food processing including for families with children. Pattern card distinct from tree-cutting and harvest-theft cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive oil presses after October 7 — denying livelihood and food processing including for families with children. Pattern card distinct from tree-cutting and harvest-theft cards.",
     evidence:
       'OCHA settler-violence databases, agricultural-harm reporting, and multi-outlet coverage establish multi-source olive-press destruction. Multi-source wartime settler destruction of civilian olive presses is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet olive-harvest violence coverage', url: 'https://apnews.com' },
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
@@ -20038,12 +20038,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (livestock-trough contamination cohort)',
     location: 'West Bank pastoral water troughs serving Palestinian herding families',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler contamination of Palestinian livestock water troughs after October 7 — denying pastoral livelihoods and food security including for children. Pattern card distinct from well-poisoning and water-tank cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler contamination of Palestinian livestock water troughs after October 7 — denying pastoral livelihoods and food security including for children. Pattern card distinct from well-poisoning and water-tank cards.",
     evidence:
       'OCHA settler-violence databases, pastoral-harm reporting, and multi-outlet coverage establish multi-source trough contamination. Multi-source wartime settler contamination of civilian livestock water is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet pastoral violence coverage', url: 'https://apnews.com' },
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
@@ -20062,13 +20062,13 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (midwife house-call attack cohort)',
     location: 'West Bank village roads used by midwives and maternal-care workers',
     summary:
-      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler attacks or obstruction of Palestinian civilian midwives and maternal-care workers after October 7 — denying safe birth care and endangering mothers and newborns. Pattern card distinct from ambulance-blocking and clinic-cabinet cards.",
+      "OCHA, WHO, B\'Tselem, and multi-source reporting document elevated settler attacks or obstruction of Palestinian civilian midwives and maternal-care workers after October 7 — denying safe birth care and endangering mothers and newborns. Pattern card distinct from ambulance-blocking and clinic-cabinet cards.",
     evidence:
       'OCHA access materials, WHO maternal-health notes, and multi-outlet coverage establish multi-source midwife-obstruction documentation. Multi-source wartime settler obstruction of civilian maternal care is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
       { label: 'WHO health materials', url: 'https://www.who.int' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
     tier: 'verified',
@@ -20232,12 +20232,12 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (beehive destruction cohort)',
     location: 'West Bank village apiaries and agricultural plots',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beehives after October 7 — denying livelihood and food production including for families with children. Pattern card distinct from olive-press and tree-cutting cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beehives after October 7 — denying livelihood and food production including for families with children. Pattern card distinct from olive-press and tree-cutting cards.",
     evidence:
       'OCHA settler-violence databases, agricultural-harm reporting, and multi-outlet coverage establish multi-source beehive destruction. Multi-source wartime settler destruction of civilian apiaries is the claim.',
     sources: [
       { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet agricultural violence coverage', url: 'https://apnews.com' },
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
@@ -20256,13 +20256,13 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (exam-transport blocking cohort)',
     location: 'West Bank roads used to transport students to exam centers',
     summary:
-      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian student transport to exam centers after October 7 — denying children educational certification access. Pattern card distinct from general school-bus attack cards.",
+      "OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian student transport to exam centers after October 7 — denying children educational certification access. Pattern card distinct from general school-bus attack cards.",
     evidence:
       'OCHA access materials, UNICEF education materials, and multi-outlet coverage establish multi-source exam-transport obstruction. Multi-source wartime settler blocking of civilian exam transport is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
       { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
     tier: 'verified',
@@ -20280,15 +20280,259 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (disability-transport attack cohort)',
     location: 'West Bank roads used by disability vans and assisted transport',
     summary:
-      "OCHA, B'Tselem, and multi-source reporting document elevated settler attacks or obstruction of Palestinian civilian disability transport after October 7 — denying mobility and care access including for children with disabilities. Pattern card distinct from ambulance-blocking cards.",
+      "OCHA, B\'Tselem, and multi-source reporting document elevated settler attacks or obstruction of Palestinian civilian disability transport after October 7 — denying mobility and care access including for children with disabilities. Pattern card distinct from ambulance-blocking cards.",
     evidence:
       'OCHA access materials, multi-outlet coverage, and settler-violence databases establish multi-source disability-transport obstruction. Multi-source wartime settler attacks on civilian disability transport is the claim.',
     sources: [
       { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
-      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: "B\'Tselem settler-violence materials", url: 'https://www.btselem.org' },
       { label: 'Multi-outlet access-violence coverage', url: 'https://apnews.com' },
     ],
     multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
+  {
+    id: 'gaza-civilian-wheelchair-access-denial-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Wheelchair / Mobility-Aid Access Denial Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (mobility-aid access denial cohort)',
+    location: 'Damaged streets, shelters, and clinics across Gaza',
+    summary:
+      'WHO, OCHA, and multi-source reporting document elevated denial of mobility for civilians including children with disabilities when wheelchairs and ramps are destroyed or unavailable under bombardment and siege — a disability-access pattern distinct from prosthetic-care interruption cards.',
+    evidence:
+      'WHO disability-health notes, OCHA access materials, and multi-outlet coverage establish multi-source documentation of mobility-aid unavailability. Multi-source wartime civilian wheelchair-access denial is the claim.',
+    sources: [
+      { label: 'WHO health updates', url: 'https://www.who.int' },
+      { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza disability-access coverage', url: 'https://apnews.com' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-civilian-oxygen-concentrator-power-failure-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Oxygen Concentrator Power-Failure Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (oxygen-concentrator power-failure cohort)',
+    location: 'Homes and clinics hosting oxygen-dependent civilians across Gaza',
+    summary:
+      'WHO, OCHA, and multi-source reporting document elevated risk to oxygen-dependent civilians including children when concentrators fail under blackouts and fuel shortages — a medical-power pattern distinct from generator-fuel and insulin cold-chain cards.',
+    evidence:
+      'WHO health-facility power updates, OCHA medical-access materials, and multi-outlet coverage establish multi-source documentation of oxygen-equipment power failure risk. Multi-source wartime oxygen-concentrator power-failure civilian harm is the claim.',
+    sources: [
+      { label: 'WHO health updates', url: 'https://www.who.int' },
+      { label: 'OCHA medical-access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza medical-power coverage', url: 'https://apnews.com' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-civilian-cemetery-access-denial-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civilian Cemetery Access Denial / Burial Disruption Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (cemetery-access denial cohort)',
+    location: 'Cemeteries and burial routes across Gaza',
+    summary:
+      'OCHA, OHCHR, and multi-source reporting document elevated disruption of civilian burial access under bombardment and access constraints — a dignity-of-the-dead pattern distinct from mass-graves and funeral-procession attack cards.',
+    evidence:
+      'OCHA humanitarian updates, OHCHR civilian-protection materials, and multi-outlet coverage establish multi-source documentation of burial-access disruption. Multi-source wartime civilian cemetery-access denial is the claim.',
+    sources: [
+      { label: 'OCHA humanitarian updates', url: 'https://www.ochaopt.org' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org' },
+      { label: 'Multi-outlet Gaza burial coverage', url: 'https://apnews.com' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-menstrual-hygiene-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Menstrual Hygiene Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage menstrual-hygiene denial cohort)',
+    location: 'Captivity sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of menstrual products and hygiene for female civilian hostages including teens — a protected-person dignity pattern distinct from general hygiene-denial cards. Sex is a victim characteristic, not evidence of guilt.',
+    evidence:
+      'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of menstrual-hygiene denial. Pattern claim is multi-source.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-dig-tunnels-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Tunnel-Digging Labor Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage tunnel forced-labor cohort)',
+    location: 'Captivity / tunnel sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document civilian hostages coerced into digging or moving earth in tunnels — forced labor endangering civilians distinct from UXO-labor and generic forced-labor cards.',
+    evidence:
+      'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of coerced tunnel labor. Pattern claim is multi-source.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-photos-of-family-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Family Photographs Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hostage family-photo denial cohort)',
+    location: 'Captivity sites in Gaza (per released-hostage testimony)',
+    summary:
+      'Released-hostage testimony and multi-source reporting document confiscation or denial of family photographs as psychological coercion — a dignity pattern distinct from family-status-denial and peer-isolation cards.',
+    evidence:
+      'Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of family-photo denial. Pattern claim is multi-source.',
+    sources: [
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage interviews', url: 'https://apnews.com' },
+      { label: 'Multi-outlet captivity conditions reporting', url: 'https://www.reuters.com' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public testimony packages', url: 'https://www.gov.il' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-solar-streetlights-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Village Solar Streetlights Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (solar-streetlight destruction cohort)',
+    location: 'West Bank village public lighting and solar street poles',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar streetlights after October 7 — denying night safety including for children. Pattern card distinct from household solar-panel destruction cards.',
+    evidence:
+      'OCHA settler-violence databases and multi-outlet coverage establish multi-source solar-streetlight destruction. Multi-source wartime settler destruction of civilian public solar lighting is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'B\'Tselem settler-violence materials', url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet West Bank lighting-attack coverage', url: 'https://apnews.com' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-graduation-ceremonies-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacking School Graduation Ceremonies Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (graduation-ceremony attack cohort)',
+    location: 'West Bank village schools and public ceremony spaces',
+    summary:
+      'OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler disruption or attack of Palestinian civilian school graduations after October 7 — terrorizing students and families. Pattern card distinct from school-bus and teacher-commute cards.',
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source ceremony-attack documentation. Multi-source wartime settler attacks on civilian school ceremonies is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'B\'Tselem settler-violence materials', url: 'https://www.btselem.org' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-playground-equipment-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Playground Equipment Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (playground-equipment destruction cohort)',
+    location: 'West Bank village playgrounds and school yards',
+    summary:
+      'OCHA, UNICEF, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian playground equipment after October 7 — denying children safe play space. Pattern card distinct from school-building and garden-contamination cards.',
+    evidence:
+      'OCHA settler-violence databases, UNICEF child-protection materials, and multi-outlet coverage establish multi-source playground destruction. Multi-source wartime settler destruction of civilian playgrounds is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'B\'Tselem settler-violence materials', url: 'https://www.btselem.org' }
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }
+    ],
     tier: 'verified',
     casualties: { killed: 0 },
   },
@@ -21177,7 +21421,7 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     era: 'post-oct7',
     title: 'West Bank Mass Arrests — Detention Surge',
     description: 'Sharp post–Oct 7 surge in arrests and administrative detention; multi-source NGO/UN tallies.',
-    source: "B'Tselem / OHCHR",
+    source: "B\'Tselem / OHCHR",
     sourceUrl: 'https://www.btselem.org',
     tier: 'verified',
     relatedIncidentIds: ['west-bank-mass-arrests-2023-2025'],
@@ -21856,8 +22100,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Home Demolitions & Displacement Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated home demolitions and family displacement after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated home demolitions and family displacement after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -22213,8 +22457,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Olive Harvest Violence & Access Denial Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated harvest-season violence and access denials after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated harvest-season violence and access denials after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -22570,8 +22814,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Administrative Detention Surge Pattern',
-    description: "B'Tselem/Addameer multi-source documentation of elevated renewable detention without charge or trial after October 7.",
-    source: "B'Tselem / Addameer / multi-outlet",
+    description: "B\'Tselem/Addameer multi-source documentation of elevated renewable detention without charge or trial after October 7.",
+    source: "B\'Tselem / Addameer / multi-outlet",
     sourceUrl: 'https://www.btselem.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -22604,8 +22848,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Herding & Bedouin Dispossession Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of accelerated herding and Bedouin community displacement after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of accelerated herding and Bedouin community displacement after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -22757,8 +23001,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Checkpoint Movement Restriction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated checkpoints and civilian movement delays after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated checkpoints and civilian movement delays after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -22910,8 +23154,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Outpost Legalization Pattern',
-    description: "Peace Now/B'Tselem multi-source documentation of accelerated outpost legalization after October 7.",
-    source: "Peace Now / B'Tselem / multi-outlet",
+    description: "Peace Now/B\'Tselem multi-source documentation of accelerated outpost legalization after October 7.",
+    source: "Peace Now / B\'Tselem / multi-outlet",
     sourceUrl: 'https://peacenow.org.il',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23131,8 +23375,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Price-Tag Settler Violence Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated price-tag settler attacks after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated price-tag settler attacks after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23471,8 +23715,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Roadblocks Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler roadblocks denying civilian route access.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler roadblocks denying civilian route access.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23522,8 +23766,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settlement Access Roads Expansion Pattern',
-    description: "Peace Now/B'Tselem multi-source documentation of accelerated settlement access-road construction after October 7.",
-    source: "Peace Now / B'Tselem / multi-outlet",
+    description: "Peace Now/B\'Tselem multi-source documentation of accelerated settlement access-road construction after October 7.",
+    source: "Peace Now / B\'Tselem / multi-outlet",
     sourceUrl: 'https://peacenow.org.il',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23726,8 +23970,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Home Invasions Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler home invasions after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler home invasions after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23777,8 +24021,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Arson Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler arson of homes and vehicles after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler arson of homes and vehicles after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23828,8 +24072,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Livestock Theft Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler livestock theft after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler livestock theft after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23879,8 +24123,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Water-Source Seizure Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler seizure of springs and cisterns after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler seizure of springs and cisterns after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -23981,8 +24225,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Vehicle Attacks Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler vehicle ramming and road assaults after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler vehicle ramming and road assaults after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24032,8 +24276,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Mosque Vandalism Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler vandalism of mosques and cemeteries after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler vandalism of mosques and cemeteries after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24083,8 +24327,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Olive-Tree Uprooting Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated olive-tree uprooting and burning after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated olive-tree uprooting and burning after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24185,8 +24429,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Cemetery Desecration Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler desecration of Palestinian cemeteries after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler desecration of Palestinian cemeteries after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24236,8 +24480,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Firebombing Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler firebombing of Palestinian homes after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler firebombing of Palestinian homes after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24287,8 +24531,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Killings of Civilians Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler killings of Palestinian civilians after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler killings of Palestinian civilians after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24338,8 +24582,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler-Forced Village Displacement Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of entire communities forced to flee under settler violence after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of entire communities forced to flee under settler violence after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24389,8 +24633,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Farm Equipment Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian farm equipment after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated destruction of Palestinian farm equipment after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24440,8 +24684,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Irrigation Pipe Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian irrigation systems after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated destruction of Palestinian irrigation systems after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24491,8 +24735,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Greenhouse Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian greenhouses after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated destruction of Palestinian greenhouses after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24542,8 +24786,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Beehive Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian beehives after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated destruction of Palestinian beehives after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24593,8 +24837,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Solar-Panel Theft Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated theft of Palestinian solar panels and generators after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated theft of Palestinian solar panels and generators after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24644,8 +24888,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Water-Tank Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian water tanks after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated destruction of Palestinian water tanks after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24695,8 +24939,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Caravan Expansion Pattern',
-    description: "Peace Now/B'Tselem multi-source documentation of accelerated settler caravan placement after October 7.",
-    source: "Peace Now / B'Tselem / multi-outlet",
+    description: "Peace Now/B\'Tselem multi-source documentation of accelerated settler caravan placement after October 7.",
+    source: "Peace Now / B\'Tselem / multi-outlet",
     sourceUrl: 'https://peacenow.org.il',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24746,8 +24990,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Fence-Blocking Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler fencing blocking Palestinian land and road access.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler fencing blocking Palestinian land and road access.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24797,8 +25041,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Drone Harassment Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated civilian-drone harassment by settlers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated civilian-drone harassment by settlers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24848,8 +25092,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Imitation Checkpoints Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler-run imitation checkpoints after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler-run imitation checkpoints after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24899,8 +25143,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Stone-Throwing Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler stone-throwing at civilians after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler stone-throwing at civilians after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -24950,8 +25194,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Graffiti Intimidation Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler price-tag graffiti and death-threat spray-painting after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler price-tag graffiti and death-threat spray-painting after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25001,8 +25245,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Vehicle Torching Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler torching of Palestinian vehicles after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler torching of Palestinian vehicles after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25052,8 +25296,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Dog Attacks Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler dog attacks on Palestinian civilians after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler dog attacks on Palestinian civilians after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25103,8 +25347,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Mosque Call Disruption Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated disruption of mosque loudspeakers and prayer calls after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated disruption of mosque loudspeakers and prayer calls after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25154,8 +25398,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Electric-Line Cutting Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler cutting of Palestinian electric lines after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler cutting of Palestinian electric lines after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25460,8 +25704,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Playground Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian playgrounds after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian playgrounds after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25562,8 +25806,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Farmers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler physical attacks on Palestinian farmers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler physical attacks on Palestinian farmers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25613,8 +25857,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Herders Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler physical attacks on Palestinian herders after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler physical attacks on Palestinian herders after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25664,8 +25908,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Water-Pipe Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian civilian water pipes after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian civilian water pipes after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25715,8 +25959,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Solar-Panel Destruction Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian civilian solar panels after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian civilian solar panels after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25766,8 +26010,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Vehicle Arson Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler arson of Palestinian civilian vehicles after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler arson of Palestinian civilian vehicles after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25817,8 +26061,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Livestock Poisoning Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler poisoning of Palestinian livestock after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler poisoning of Palestinian livestock after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -25970,8 +26214,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Water Tanks Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian water tanks after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian water tanks after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26021,8 +26265,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Olive Pickers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian olive pickers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian olive pickers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26123,8 +26367,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Stoning of Vehicles Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler stoning of Palestinian civilian vehicles after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler stoning of Palestinian civilian vehicles after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26174,8 +26418,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Greenhouses Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian greenhouses after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian greenhouses after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26276,8 +26520,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Well Poisoning Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler contamination of Palestinian wells after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler contamination of Palestinian wells after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26378,8 +26622,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Solar Water Heaters Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian solar water heaters after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian solar water heaters after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26429,8 +26673,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Beehives Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian beehives after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian beehives after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26480,8 +26724,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Death-Threat Graffiti Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler death-threat graffiti after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler death-threat graffiti after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26531,8 +26775,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Dog Attacks on Shepherds Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler dog attacks on Palestinian shepherds after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler dog attacks on Palestinian shepherds after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26582,8 +26826,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Irrigation Drip Lines Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian drip irrigation after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian drip irrigation after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26684,8 +26928,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Torching Agricultural Equipment Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler arson of Palestinian farm equipment after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler arson of Palestinian farm equipment after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26735,8 +26979,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Blocking Funeral Processions Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler blocking of Palestinian funeral processions after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler blocking of Palestinian funeral processions after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26786,8 +27030,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Wedding Parties Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian wedding gatherings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian wedding gatherings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26837,8 +27081,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Poultry Coops Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian poultry coops after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian poultry coops after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26888,8 +27132,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Grapevines Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian grapevines after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian grapevines after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26939,8 +27183,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Construction Workers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian construction workers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian construction workers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -26990,8 +27234,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Water Cisterns Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian water cisterns after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian water cisterns after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27041,8 +27285,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Fig Trees Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian fig trees after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian fig trees after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27092,8 +27336,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Taxi Drivers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian taxi drivers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian taxi drivers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27143,8 +27387,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Blocking Water Tankers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler blocking of Palestinian water tankers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler blocking of Palestinian water tankers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27194,8 +27438,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Almond Trees Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian almond trees after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian almond trees after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27245,8 +27489,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Bus Passengers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian bus passengers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian bus passengers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27296,8 +27540,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Storage Sheds Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian storage sheds after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian storage sheds after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27347,8 +27591,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Date Palms Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian date palms after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian date palms after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27398,8 +27642,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Shopkeepers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian shopkeepers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian shopkeepers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27500,8 +27744,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Citrus Trees Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian citrus trees after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian citrus trees after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27551,8 +27795,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Municipal Workers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian municipal workers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian municipal workers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27602,8 +27846,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Irrigation Pumps Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian irrigation pumps after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian irrigation pumps after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27653,8 +27897,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Pomegranate Trees Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian pomegranate trees after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian pomegranate trees after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27704,8 +27948,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Street Vendors Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian street vendors after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian street vendors after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27755,8 +27999,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Home Fencing Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian home fencing after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian home fencing after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27806,8 +28050,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Avocado Trees Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian avocado trees after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian avocado trees after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27908,8 +28152,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Rainwater Gutters Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian rainwater gutters after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian rainwater gutters after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -27959,8 +28203,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Carob Trees Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian carob trees after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian carob trees after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28010,8 +28254,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Night-Shift Workers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian night-shift workers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian night-shift workers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28061,8 +28305,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Compost Piles Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian compost piles after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian compost piles after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28112,8 +28356,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Walnut Trees Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian walnut trees after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian walnut trees after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28163,8 +28407,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Delivery Drivers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian delivery drivers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian delivery drivers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28214,8 +28458,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Stone Terraces Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian stone agricultural terraces after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian stone agricultural terraces after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28265,8 +28509,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Almond Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian almond saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian almond saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28316,8 +28560,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Funeral Mourners Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian funeral mourners after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian funeral mourners after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28367,8 +28611,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Dry-Stone Walls Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian dry-stone walls after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian dry-stone walls after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28418,8 +28662,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Grape Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian grape saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian grape saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28469,8 +28713,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Water-Tanker Drivers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian water-tanker drivers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian water-tanker drivers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28520,8 +28764,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Olive Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian olive saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian olive saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28571,8 +28815,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Fig Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian fig saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian fig saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28673,8 +28917,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Citrus Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian citrus saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian citrus saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28724,8 +28968,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Pomegranate Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian pomegranate saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian pomegranate saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28826,8 +29070,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Date Palm Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian date palm saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian date palm saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28877,8 +29121,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Avocado Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian avocado saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian avocado saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -28979,8 +29223,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Walnut Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian walnut saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian walnut saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29030,8 +29274,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Carob Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian carob saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian carob saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29132,8 +29376,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Terrace-Planted Saplings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian terrace-planted saplings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian terrace-planted saplings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29183,8 +29427,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Olive Nursery Stock Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian olive nursery stock after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian olive nursery stock after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29285,8 +29529,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Greenhouse Seedlings Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian greenhouse seedlings after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian greenhouse seedlings after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29336,8 +29580,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Irrigation Drip-Tape Stock Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian drip-tape stock after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian drip-tape stock after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29438,8 +29682,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Beekeeping Equipment Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian beekeeping equipment after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian beekeeping equipment after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29489,8 +29733,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Solar Battery Banks Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian solar battery banks after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian solar battery banks after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29540,8 +29784,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Attacks on Bus Drivers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian bus drivers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler attacks on Palestinian bus drivers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29591,8 +29835,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Rainwater Collection Barrels Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian rainwater barrels after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian rainwater barrels after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29642,8 +29886,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Water Filtration Units Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian water filtration units after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian water filtration units after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29744,8 +29988,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Small Wind Turbines Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian small wind turbines after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian small wind turbines after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29795,8 +30039,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Diesel Generators Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian diesel generators after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian diesel generators after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29897,8 +30141,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Propane Tanks Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian propane tanks after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian propane tanks after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -29948,8 +30192,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Cooking Gas Cylinders Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian cooking-gas cylinders after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian cooking-gas cylinders after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -30050,8 +30294,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Kerosene Heaters Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian kerosene heaters after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian kerosene heaters after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -30101,8 +30345,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Electric Water Heaters Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian electric water heaters after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian electric water heaters after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -30203,8 +30447,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Ceiling Fans Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian ceiling fans after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian ceiling fans after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -30254,8 +30498,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Window Screens Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian window screens after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian window screens after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -30356,8 +30600,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Mosquito Nets Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian mosquito nets after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian mosquito nets after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -30407,8 +30651,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Insecticide Stores Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian insecticide stores after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian insecticide stores after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [
@@ -30560,8 +30804,8 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     year: '2023',
     era: 'post-oct7',
     title: 'West Bank Settler Destroying Water Coolers Pattern',
-    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian water coolers after October 7.",
-    source: "OCHA / B'Tselem / multi-outlet",
+    description: "OCHA/B\'Tselem multi-source documentation of elevated settler destruction of Palestinian water coolers after October 7.",
+    source: "OCHA / B\'Tselem / multi-outlet",
     sourceUrl: 'https://www.ochaopt.org',
     tier: 'verified',
     relatedIncidentIds: [

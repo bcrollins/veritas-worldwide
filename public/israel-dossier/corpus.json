@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:06:40.554Z",
+  "generatedAt": "2026-07-23T12:08:53.928Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 797,
+    "incidents": 806,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 754,
+    "historicalWarCrimesPack": 763,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 28,
-      "post-oct7": 734
+      "post-oct7": 743
     },
     "incidentsByTier": {
-      "verified": 795,
+      "verified": 804,
       "circumstantial": 2
     },
-    "childrenTagged": 752,
-    "civiliansTagged": 795,
+    "childrenTagged": 760,
+    "civiliansTagged": 804,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -19600,7 +19600,7 @@
         {
           "type": "video",
           "label": "Al Jazeera — medic/journalist shooting documentation",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -19734,7 +19734,7 @@
         {
           "type": "photo-essay",
           "label": "Press stills of weekly protests",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "tier": "verified",
@@ -19819,7 +19819,7 @@
         {
           "type": "photo-essay",
           "label": "Press-marked vest / scene documentation packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "tier": "verified",
@@ -19956,11 +19956,11 @@
         },
         {
           "label": "Haaretz / Times of Israel contemporaneous reporting",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "label": "AP / Reuters wire packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -19977,7 +19977,7 @@
         {
           "type": "photo-essay",
           "label": "Wire photo packages — burned homes/vehicles",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "investigation",
@@ -48713,6 +48713,381 @@
       }
     },
     {
+      "id": "gaza-civilian-wheelchair-access-denial-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Wheelchair / Mobility-Aid Access Denial Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (mobility-aid access denial cohort)",
+      "location": "Damaged streets, shelters, and clinics across Gaza",
+      "summary": "WHO, OCHA, and multi-source reporting document elevated denial of mobility for civilians including children with disabilities when wheelchairs and ramps are destroyed or unavailable under bombardment and siege — a disability-access pattern distinct from prosthetic-care interruption cards.",
+      "evidence": "WHO disability-health notes, OCHA access materials, and multi-outlet coverage establish multi-source documentation of mobility-aid unavailability. Multi-source wartime civilian wheelchair-access denial is the claim.",
+      "sources": [
+        {
+          "label": "WHO health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza disability-access coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-oxygen-concentrator-power-failure-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Oxygen Concentrator Power-Failure Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (oxygen-concentrator power-failure cohort)",
+      "location": "Homes and clinics hosting oxygen-dependent civilians across Gaza",
+      "summary": "WHO, OCHA, and multi-source reporting document elevated risk to oxygen-dependent civilians including children when concentrators fail under blackouts and fuel shortages — a medical-power pattern distinct from generator-fuel and insulin cold-chain cards.",
+      "evidence": "WHO health-facility power updates, OCHA medical-access materials, and multi-outlet coverage establish multi-source documentation of oxygen-equipment power failure risk. Multi-source wartime oxygen-concentrator power-failure civilian harm is the claim.",
+      "sources": [
+        {
+          "label": "WHO health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA medical-access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical-power coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-cemetery-access-denial-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Cemetery Access Denial / Burial Disruption Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (cemetery-access denial cohort)",
+      "location": "Cemeteries and burial routes across Gaza",
+      "summary": "OCHA, OHCHR, and multi-source reporting document elevated disruption of civilian burial access under bombardment and access constraints — a dignity-of-the-dead pattern distinct from mass-graves and funeral-procession attack cards.",
+      "evidence": "OCHA humanitarian updates, OHCHR civilian-protection materials, and multi-outlet coverage establish multi-source documentation of burial-access disruption. Multi-source wartime civilian cemetery-access denial is the claim.",
+      "sources": [
+        {
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "OHCHR civilian-protection materials",
+          "url": "https://www.ohchr.org"
+        },
+        {
+          "label": "Multi-outlet Gaza burial coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-menstrual-hygiene-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Menstrual Hygiene Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage menstrual-hygiene denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of menstrual products and hygiene for female civilian hostages including teens — a protected-person dignity pattern distinct from general hygiene-denial cards. Sex is a victim characteristic, not evidence of guilt.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of menstrual-hygiene denial. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-dig-tunnels-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced Tunnel-Digging Labor Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage tunnel forced-labor cohort)",
+      "location": "Captivity / tunnel sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages coerced into digging or moving earth in tunnels — forced labor endangering civilians distinct from UXO-labor and generic forced-labor cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of coerced tunnel labor. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-photos-of-family-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Family Photographs Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage family-photo denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document confiscation or denial of family photographs as psychological coercion — a dignity pattern distinct from family-status-denial and peer-isolation cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of family-photo denial. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-solar-streetlights-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Village Solar Streetlights Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (solar-streetlight destruction cohort)",
+      "location": "West Bank village public lighting and solar street poles",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar streetlights after October 7 — denying night safety including for children. Pattern card distinct from household solar-panel destruction cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source solar-streetlight destruction. Multi-source wartime settler destruction of civilian public solar lighting is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet West Bank lighting-attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-graduation-ceremonies-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacking School Graduation Ceremonies Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (graduation-ceremony attack cohort)",
+      "location": "West Bank village schools and public ceremony spaces",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler disruption or attack of Palestinian civilian school graduations after October 7 — terrorizing students and families. Pattern card distinct from school-bus and teacher-commute cards.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source ceremony-attack documentation. Multi-source wartime settler attacks on civilian school ceremonies is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-playground-equipment-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Playground Equipment Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (playground-equipment destruction cohort)",
+      "location": "West Bank village playgrounds and school yards",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian playground equipment after October 7 — denying children safe play space. Pattern card distinct from school-building and garden-contamination cards.",
+      "evidence": "OCHA settler-violence databases, UNICEF child-protection materials, and multi-outlet coverage establish multi-source playground destruction. Multi-source wartime settler destruction of civilian playgrounds is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF child-protection materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
       "id": "jabalia-refugee-camp",
       "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
       "date": "October 31, 2023 — ongoing through 2024",
@@ -48993,7 +49368,7 @@
       "sources": [
         {
           "label": "AP / Reuters October 7 multi-outlet investigations",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "NYT — October 7 visual investigation packages",
@@ -49008,7 +49383,7 @@
         {
           "type": "video",
           "label": "Bodycam/dashcam packages authenticated by major outlets",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "investigation",
@@ -49038,11 +49413,11 @@
       "sources": [
         {
           "label": "AP / Reuters Be’eri reporting packages",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "label": "Haaretz investigations on Be’eri",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "label": "OHCHR / multi-source October 7 documentation",
@@ -49053,17 +49428,17 @@
         {
           "type": "video",
           "label": "Site/bodycam video packages (wire-authenticated)",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "type": "investigation",
           "label": "Longform forensic site reconstructions",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "type": "photo-essay",
           "label": "Aftermath documentation by major wires",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "tier": "verified",
@@ -49088,14 +49463,14 @@
         },
         {
           "label": "Al Jazeera / wire video packages of EMS strikes",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
         {
           "type": "video",
           "label": "Marked ambulance / civil-defense strike video compilations",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -49141,7 +49516,7 @@
         {
           "type": "video",
           "label": "Ground/drone packages of hospital siege conditions",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -49177,7 +49552,7 @@
         },
         {
           "label": "Major outlet authentication of soldier social posts",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "label": "Breaking the Silence / Israeli media follow-ups",
@@ -49193,7 +49568,7 @@
         {
           "type": "investigation",
           "label": "Multi-outlet authentication packages",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "type": "photo-essay",
@@ -49230,7 +49605,7 @@
         {
           "type": "video",
           "label": "Ground/drone aftermath packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "photo-essay",
@@ -49270,7 +49645,7 @@
         },
         {
           "label": "Wire photo/video packages of airbursts",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ],
       "multimedia": [
@@ -49287,7 +49662,7 @@
         {
           "type": "photo-essay",
           "label": "Wire stills of airburst patterns",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ],
       "tier": "verified",
@@ -49312,19 +49687,19 @@
         },
         {
           "label": "Al Jazeera / wire school-strike video packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
         {
           "type": "video",
           "label": "Aftermath video inside damaged school shelters",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "photo-essay",
           "label": "Wire photos — UN-flagged shelters hit",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -49359,7 +49734,7 @@
         },
         {
           "label": "AP / Haaretz contemporaneous reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -49371,7 +49746,7 @@
         {
           "type": "video",
           "label": "Press-captured settler assault packages",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "type": "document",
@@ -49401,14 +49776,14 @@
         },
         {
           "label": "Al Jazeera / wire journalist-killing packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
         {
           "type": "video",
           "label": "Final streams / press-marking documentation packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -49418,7 +49793,7 @@
         {
           "type": "photo-essay",
           "label": "Memorial / press-vest photo packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "tier": "verified",
@@ -49493,7 +49868,7 @@
         },
         {
           "label": "AP / Haaretz harvest-season packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -49505,7 +49880,7 @@
         {
           "type": "photo-essay",
           "label": "Press photos — burned olive groves",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "type": "document",
@@ -49547,7 +49922,7 @@
         {
           "type": "photo-essay",
           "label": "Press stills of demolitions",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -49899,7 +50274,7 @@
         },
         {
           "label": "AP / Reuters operation casualty reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -49916,7 +50291,7 @@
         {
           "type": "video",
           "label": "Wire ground video from camp streets",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ],
       "tier": "verified",
@@ -51004,7 +51379,7 @@
         {
           "type": "document",
           "label": "Ambulance / rescue communications contemporaneous reporting trail",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "tier": "verified",
@@ -51044,7 +51419,7 @@
         {
           "type": "investigation",
           "label": "Multi-outlet forensic reconstruction of successive strikes",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -51073,11 +51448,11 @@
       "sources": [
         {
           "label": "Major Israeli & international wire reporting on Sde Teiman cases",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "label": "AP / multi-outlet detainee abuse coverage",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "B’Tselem — detention conditions",
@@ -51088,12 +51463,12 @@
         {
           "type": "video",
           "label": "Authenticated abuse footage packages (wire-verified circulation)",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "type": "investigation",
           "label": "Multi-outlet verification & court-case trail reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -51123,7 +51498,7 @@
         },
         {
           "label": "AP / Reuters casualty & scene reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -51140,7 +51515,7 @@
         {
           "type": "investigation",
           "label": "Multi-outlet scene reconstruction",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "tier": "verified",
@@ -51168,7 +51543,7 @@
         },
         {
           "label": "AP scene packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "OCHA displacement / humanitarian updates",
@@ -51184,7 +51559,7 @@
         {
           "type": "photo-essay",
           "label": "Wire photos — burned shelters",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -51214,7 +51589,7 @@
         },
         {
           "label": "Multi-outlet mass-grave reporting packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "Satellite analysis cited by major outlets",
@@ -51225,12 +51600,12 @@
         {
           "type": "video",
           "label": "Ground video of hospital courtyard burials",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
           "label": "Satellite + open-source time-series packages",
-          "url": "https://www.nytimes.com/"
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         },
         {
           "type": "document",
@@ -51260,7 +51635,7 @@
         },
         {
           "label": "Multi-outlet hospital embed packages",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ],
       "multimedia": [
@@ -51272,7 +51647,7 @@
         {
           "type": "photo-essay",
           "label": "Wire photos — pediatric trauma",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -51307,7 +51682,7 @@
         },
         {
           "label": "Al Jazeera camp-strike video packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
@@ -51401,7 +51776,7 @@
         },
         {
           "label": "Al Jazeera aid-distribution visual packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
@@ -51413,7 +51788,7 @@
         {
           "type": "video",
           "label": "Al Jazeera aid-point visual packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "document",

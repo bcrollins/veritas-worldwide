@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T12:04:26.778Z"
+    "generatedAt": "2026-07-23T12:08:53.928Z"
   },
   "counts": {
     "incidentsWithVideoAndCivilians": 37,
     "viPackCards": 29,
-    "totalIncidents": 779
+    "totalIncidents": 806
   },
   "incidents": [
     {
@@ -43,7 +43,7 @@
         {
           "type": "video",
           "label": "Al Jazeera — medic/journalist shooting documentation",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -88,7 +88,7 @@
         {
           "type": "photo-essay",
           "label": "Press stills of weekly protests",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ]
     },
@@ -135,7 +135,7 @@
         {
           "type": "photo-essay",
           "label": "Press-marked vest / scene documentation packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ]
     },
@@ -169,11 +169,11 @@
         },
         {
           "label": "Haaretz / Times of Israel contemporaneous reporting",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "label": "AP / Reuters wire packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -190,7 +190,7 @@
         {
           "type": "photo-essay",
           "label": "Wire photo packages — burned homes/vehicles",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "investigation",
@@ -302,7 +302,7 @@
       "sources": [
         {
           "label": "AP / Reuters October 7 multi-outlet investigations",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "NYT — October 7 visual investigation packages",
@@ -317,7 +317,7 @@
         {
           "type": "video",
           "label": "Bodycam/dashcam packages authenticated by major outlets",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "investigation",
@@ -342,11 +342,11 @@
       "sources": [
         {
           "label": "AP / Reuters Be’eri reporting packages",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "label": "Haaretz investigations on Be’eri",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "label": "OHCHR / multi-source October 7 documentation",
@@ -357,17 +357,17 @@
         {
           "type": "video",
           "label": "Site/bodycam video packages (wire-authenticated)",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "type": "investigation",
           "label": "Longform forensic site reconstructions",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "type": "photo-essay",
           "label": "Aftermath documentation by major wires",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ]
     },
@@ -390,14 +390,14 @@
         },
         {
           "label": "Al Jazeera / wire video packages of EMS strikes",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
         {
           "type": "video",
           "label": "Marked ambulance / civil-defense strike video compilations",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -437,7 +437,7 @@
         {
           "type": "video",
           "label": "Ground/drone packages of hospital siege conditions",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -466,7 +466,7 @@
         },
         {
           "label": "Major outlet authentication of soldier social posts",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "label": "Breaking the Silence / Israeli media follow-ups",
@@ -482,7 +482,7 @@
         {
           "type": "investigation",
           "label": "Multi-outlet authentication packages",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "type": "photo-essay",
@@ -517,7 +517,7 @@
         {
           "type": "video",
           "label": "Ground/drone aftermath packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "photo-essay",
@@ -550,7 +550,7 @@
         },
         {
           "label": "Wire photo/video packages of airbursts",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ],
       "multimedia": [
@@ -567,7 +567,7 @@
         {
           "type": "photo-essay",
           "label": "Wire stills of airburst patterns",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ]
     },
@@ -590,19 +590,19 @@
         },
         {
           "label": "Al Jazeera / wire school-strike video packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
         {
           "type": "video",
           "label": "Aftermath video inside damaged school shelters",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "photo-essay",
           "label": "Wire photos — UN-flagged shelters hit",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -630,7 +630,7 @@
         },
         {
           "label": "AP / Haaretz contemporaneous reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -642,7 +642,7 @@
         {
           "type": "video",
           "label": "Press-captured settler assault packages",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "type": "document",
@@ -670,14 +670,14 @@
         },
         {
           "label": "Al Jazeera / wire journalist-killing packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
         {
           "type": "video",
           "label": "Final streams / press-marking documentation packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
@@ -687,7 +687,7 @@
         {
           "type": "photo-essay",
           "label": "Memorial / press-vest photo packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ]
     },
@@ -750,7 +750,7 @@
         },
         {
           "label": "AP / Haaretz harvest-season packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -762,7 +762,7 @@
         {
           "type": "photo-essay",
           "label": "Press photos — burned olive groves",
-          "url": "https://www.haaretz.com/"
+          "url": "https://www.haaretz.com/israel-news/"
         },
         {
           "type": "document",
@@ -802,7 +802,7 @@
         {
           "type": "photo-essay",
           "label": "Press stills of demolitions",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -990,7 +990,7 @@
         },
         {
           "label": "AP / Reuters operation casualty reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -1007,7 +1007,7 @@
         {
           "type": "video",
           "label": "Wire ground video from camp streets",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ]
     },
@@ -1084,7 +1084,7 @@
         {
           "type": "document",
           "label": "Ambulance / rescue communications contemporaneous reporting trail",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ]
     },
@@ -1122,7 +1122,7 @@
         {
           "type": "investigation",
           "label": "Multi-outlet forensic reconstruction of successive strikes",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -1142,11 +1142,11 @@
       "sources": [
         {
           "label": "Major Israeli & international wire reporting on Sde Teiman cases",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "label": "AP / multi-outlet detainee abuse coverage",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "B’Tselem — detention conditions",
@@ -1157,12 +1157,12 @@
         {
           "type": "video",
           "label": "Authenticated abuse footage packages (wire-verified circulation)",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         },
         {
           "type": "investigation",
           "label": "Multi-outlet verification & court-case trail reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -1193,7 +1193,7 @@
         },
         {
           "label": "AP / Reuters casualty & scene reporting",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -1210,7 +1210,7 @@
         {
           "type": "investigation",
           "label": "Multi-outlet scene reconstruction",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ]
     },
@@ -1229,7 +1229,7 @@
         },
         {
           "label": "AP scene packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "OCHA displacement / humanitarian updates",
@@ -1245,7 +1245,7 @@
         {
           "type": "photo-essay",
           "label": "Wire photos — burned shelters",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -1269,7 +1269,7 @@
         },
         {
           "label": "Multi-outlet mass-grave reporting packages",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "label": "Satellite analysis cited by major outlets",
@@ -1280,12 +1280,12 @@
         {
           "type": "video",
           "label": "Ground video of hospital courtyard burials",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "investigation",
           "label": "Satellite + open-source time-series packages",
-          "url": "https://www.nytimes.com/"
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         },
         {
           "type": "document",
@@ -1313,7 +1313,7 @@
         },
         {
           "label": "Multi-outlet hospital embed packages",
-          "url": "https://www.reuters.com/"
+          "url": "https://www.reuters.com/world/middle-east/"
         }
       ],
       "multimedia": [
@@ -1325,7 +1325,7 @@
         {
           "type": "photo-essay",
           "label": "Wire photos — pediatric trauma",
-          "url": "https://apnews.com/"
+          "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
           "type": "document",
@@ -1353,7 +1353,7 @@
         },
         {
           "label": "Al Jazeera camp-strike video packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
@@ -1433,7 +1433,7 @@
         },
         {
           "label": "Al Jazeera aid-distribution visual packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         }
       ],
       "multimedia": [
@@ -1445,7 +1445,7 @@
         {
           "type": "video",
           "label": "Al Jazeera aid-point visual packages",
-          "url": "https://www.aljazeera.com/"
+          "url": "https://www.aljazeera.com/tag/gaza/"
         },
         {
           "type": "document",
