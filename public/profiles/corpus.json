@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:34:47.430Z",
+  "generatedAt": "2026-07-23T07:35:44.394Z",
   "count": 96,
   "profiles": [
     {
@@ -111,7 +111,7 @@
       "name": "Chuck Schumer",
       "title": "U.S. Senator (D-NY); Senate Majority/Minority Leader",
       "category": "politician",
-      "summary": "Longest-serving Senate Democratic leader from New York and one of Congress's most powerful pro-Israel institutional voices. Controls Senate floor schedule for FMF, Iron Dome, and wartime Israel security packages. Documented multi-decade pro-Israel PAC recipient (OpenSecrets). Publicly broke with Netanyahu on judicial overhaul/Gaza wartime conduct in 2024 while remaining a structural enabler of the aid pipeline. Primary: OpenSecrets, Senate leadership record, CRS RL33222.",
+      "summary": "Longest-serving Senate Democratic leader from New York and one of Congress's most powerful pro-Israel institutional voices. Controls Senate floor schedule for FMF, Iron Dome, and wartime Israel security packages. Documented multi-decade pro-Israel PAC recipient (OpenSecrets). Publicly broke with Netanyahu on judicial overhaul/Gaza wartime conduct in 2024 while remaining a structural enabler of the aid pipeline. Integrity docket: dual-cited PolitiFact Pants on Fire on Tillerson Exxon divestment tweet + False on “all” Americans evacuated from Afghanistan. Primary: OpenSecrets, Senate leadership record, CRS RL33222, PolitiFact, OGE.",
       "photo": "/profiles/chuck-schumer.jpg",
       "url": "https://veritasworldwide.com/profile/chuck-schumer",
       "bioguideId": "S000148",
@@ -123,11 +123,12 @@
         "Democrat",
         "FMF",
         "Iron Dome",
-        "Institutional Enablement"
+        "Institutional Enablement",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "nancy-pelosi",
@@ -333,7 +334,7 @@
       "name": "Adam Schiff",
       "title": "U.S. Senator (D-CA); former House Intelligence Chair",
       "category": "politician",
-      "summary": "California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Primary: OpenSecrets, Congress.gov, CRS RL33222.",
+      "summary": "California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Integrity docket: dual-cited PolitiFact False on claim committee had “not spoken directly with the whistleblower.” Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, NYT.",
       "photo": "/profiles/adam-schiff.jpg",
       "url": "https://veritasworldwide.com/profile/adam-schiff",
       "bioguideId": "S001150",
@@ -344,11 +345,12 @@
         "California",
         "Democrat",
         "Intelligence",
-        "Iron Dome"
+        "Iron Dome",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "hakeem-jeffries",
@@ -446,7 +448,7 @@
       "name": "Cory Booker",
       "title": "U.S. Senator (D-NJ)",
       "category": "politician",
-      "summary": "New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Primary: OpenSecrets, Senate record, CRS RL33222.",
+      "summary": "New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Integrity docket: dual-cited PolitiFact False for citing a nonexistent CBO study on Medicare-at-50 savings. Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact.",
       "photo": "/profiles/cory-booker.jpg",
       "url": "https://veritasworldwide.com/profile/cory-booker",
       "bioguideId": "B001288",
@@ -458,11 +460,12 @@
         "New Jersey",
         "Democrat",
         "2020 Presidential Candidate",
-        "FMF Continuity"
+        "FMF Continuity",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "jacky-rosen",

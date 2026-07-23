@@ -110,6 +110,9 @@ const required = [
   'mike-pompeo',
   'lindsey-graham',
   'tom-cotton',
+  'chuck-schumer',
+  'adam-schiff',
+  'cory-booker',
 ];
 const scores = {};
 for (const id of required) {
@@ -359,8 +362,49 @@ for (const f of (cottonP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('cotton dual-cite collision: ' + f.id);
 }
 
+// Chuck Schumer multi-entry (Pants on Fire Tillerson + Afghanistan False)
+const schumer = scores['chuck-schumer'];
+if (!schumer || schumer.n < 2) throw new Error('chuck-schumer needs ≥2 verified falsehoods, got ' + (schumer?.n ?? 0));
+if (schumer.score > 65) throw new Error('chuck-schumer score expected ≤65 after deep dive, got ' + schumer.score);
+const schumerP = getProfileBySlug('chuck-schumer');
+for (const id of [
+  'schumer-tillerson-wont-divest-exxon-2017',
+  'schumer-all-americans-out-afghanistan-2021',
+]) {
+  if (!(schumerP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('chuck-schumer missing docket id: ' + id);
+  }
+}
+for (const f of (schumerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('schumer dual-cite collision: ' + f.id);
+}
+
+// Adam Schiff integrity gate
+const schiff = scores['adam-schiff'];
+if (!schiff || schiff.n < 1) throw new Error('adam-schiff needs ≥1 verified falsehood, got ' + (schiff?.n ?? 0));
+if (schiff.score > 90) throw new Error('adam-schiff score expected ≤90, got ' + schiff.score);
+const schiffP = getProfileBySlug('adam-schiff');
+if (!(schiffP.documentedFalsehoods || []).some((f) => f.id === 'schiff-not-spoken-whistleblower-2019')) {
+  throw new Error('adam-schiff missing whistleblower docket id');
+}
+for (const f of (schiffP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('schiff dual-cite collision: ' + f.id);
+}
+
+// Cory Booker integrity gate
+const booker = scores['cory-booker'];
+if (!booker || booker.n < 1) throw new Error('cory-booker needs ≥1 verified falsehood, got ' + (booker?.n ?? 0));
+if (booker.score > 90) throw new Error('cory-booker score expected ≤90, got ' + booker.score);
+const bookerP = getProfileBySlug('cory-booker');
+if (!(bookerP.documentedFalsehoods || []).some((f) => f.id === 'booker-nonexistent-cbo-medicare-50-2019')) {
+  throw new Error('cory-booker missing CBO Medicare docket id');
+}
+for (const f of (bookerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('booker dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 23) throw new Error('expected ≥23 compiled dockets, got ' + docketCount);
+if (docketCount < 26) throw new Error('expected ≥26 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

@@ -703,7 +703,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'NY',
     photoUrl: getProfilePhoto('chuck-schumer'),
     summary:
-      'Longest-serving Senate Democratic leader from New York and one of Congress\'s most powerful pro-Israel institutional voices. Controls Senate floor schedule for FMF, Iron Dome, and wartime Israel security packages. Documented multi-decade pro-Israel PAC recipient (OpenSecrets). Publicly broke with Netanyahu on judicial overhaul/Gaza wartime conduct in 2024 while remaining a structural enabler of the aid pipeline. Primary: OpenSecrets, Senate leadership record, CRS RL33222.',
+      'Longest-serving Senate Democratic leader from New York and one of Congress\'s most powerful pro-Israel institutional voices. Controls Senate floor schedule for FMF, Iron Dome, and wartime Israel security packages. Documented multi-decade pro-Israel PAC recipient (OpenSecrets). Publicly broke with Netanyahu on judicial overhaul/Gaza wartime conduct in 2024 while remaining a structural enabler of the aid pipeline. Integrity docket: dual-cited PolitiFact Pants on Fire on Tillerson Exxon divestment tweet + False on “all” Americans evacuated from Afghanistan. Primary: OpenSecrets, Senate leadership record, CRS RL33222, PolitiFact, OGE.',
     tags: [
       'Senate Leader',
       'Pro-Israel',
@@ -713,6 +713,7 @@ export const PROFILES: PowerProfile[] = [
       'FMF',
       'Iron Dome',
       'Institutional Enablement',
+      'Integrity Docket',
     ],
     career: [
       'NY State Assembly / Senate (public bio)',
@@ -813,11 +814,72 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: 'March 2024',
       },
+      {
+        claim:
+          'Integrity docket: Jan 2017 tweet “Tillerson won’t divest from Exxon” rated Pants on Fire (Tillerson had already reached a clean-break ethics divestment agreement).',
+        source: 'PolitiFact Pants on Fire; ExxonMobil/OGE ethics agreement',
+        url: 'https://www.politifact.com/factchecks/2017/jan/27/charles-schumer/chuck-schumer-wrongly-tweets-tillerson-wont-divest/',
+        tier: 'verified',
+        date: '2017',
+      },
+      {
+        claim:
+          'Integrity docket: Sept 2021 claim that all Americans who wanted to leave Afghanistan had already left rated False (State ~100 U.S. citizens still seeking exit).',
+        source: 'PolitiFact False; Blinken Doha remarks',
+        url: 'https://www.politifact.com/factchecks/2021/sep/07/charles-schumer/chuck-schumers-incorrect-statement-about-americans/',
+        tier: 'verified',
+        date: '2021',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'schumer-tillerson-wont-divest-exxon-2017',
+        statement: '“Tillerson won’t divest from #Exxon… — I’m voting no.”',
+        saidAt: 'January 27, 2017',
+        context: 'Senate Minority Leader tweet opposing Rex Tillerson’s nomination as Secretary of State.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. Tillerson had already retired from Exxon and reached a conflict-of-interest agreement converting equity into a cash trust barred from Exxon investment; OGE Director Walter Shaub called it a “clean break from Exxon.” Schumer’s office later acknowledged the tweet was wrong.',
+        correction:
+          'Tillerson did divest under a formal OGE/Exxon ethics agreement; the absolute “won’t divest” claim was false on the day it was tweeted.',
+        statementSource: 'Sen. Chuck Schumer X post (@SenSchumer), Jan 27, 2017',
+        statementUrl: 'https://twitter.com/SenSchumer/status/825038600723128320',
+        debunkSource: 'PolitiFact — Pants on Fire (Jan 27, 2017); ExxonMobil ethics agreement + OGE Shaub remarks',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2017/jan/27/charles-schumer/chuck-schumer-wrongly-tweets-tillerson-wont-divest/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'schumer-all-americans-out-afghanistan-2021',
+        statement:
+          '“The Americans — all of whom have wanted to come out have come out, praise God.”',
+        saidAt: 'September 3, 2021',
+        context: 'WSYR-TV interview during Afghanistan evacuation aftermath after Kabul fell to the Taliban.',
+        whyFalse:
+          'PolitiFact rated False. Days later Secretary of State Blinken said roughly 100 American citizens still wanted to leave Afghanistan; Schumer’s office said he misspoke.',
+        correction:
+          'Not all Americans who wanted to leave had been evacuated; State Department and contemporaneous reporting confirmed remaining U.S. citizens seeking exit.',
+        statementSource: 'WSYR-TV / State Fair hosts Senator Chuck Schumer (YouTube), Sept 3, 2021',
+        statementUrl: 'https://www.youtube.com/watch?v=v6Z7J2EZMao',
+        debunkSource: 'PolitiFact — False (Sept 7, 2021); Blinken Doha remarks via Military.com',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/sep/07/charles-schumer/chuck-schumers-incorrect-statement-about-americans/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.schumer.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/chuck-schumer/summary?cid=N00001093' },
       { label: 'Congress.gov member', url: 'https://www.congress.gov/member/charles-schumer/S000148' },
+      {
+        label: 'PolitiFact — Tillerson divest (Pants on Fire)',
+        url: 'https://www.politifact.com/factchecks/2017/jan/27/charles-schumer/chuck-schumer-wrongly-tweets-tillerson-wont-divest/',
+      },
+      {
+        label: 'PolitiFact — Afghanistan Americans (False)',
+        url: 'https://www.politifact.com/factchecks/2021/sep/07/charles-schumer/chuck-schumers-incorrect-statement-about-americans/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Chuck_Schumer' },
     ],
   },
@@ -1910,8 +1972,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'CA',
     photoUrl: getProfilePhoto('adam-schiff'),
     summary:
-      'California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Primary: OpenSecrets, Congress.gov, CRS RL33222.',
-    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'California', 'Democrat', 'Intelligence', 'Iron Dome'],
+      'California Democrat; former House Intelligence Committee chair; elected U.S. Senate 2024. Documented pro-Israel PAC recipient (OpenSecrets). Consistent votes for FMF, Iron Dome, and wartime packages while progressive-branded on domestic oversight. Integrity docket: dual-cited PolitiFact False on claim committee had “not spoken directly with the whistleblower.” Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, NYT.',
+    tags: [
+      'Senator',
+      'Pro-Israel',
+      'AIPAC',
+      'California',
+      'Democrat',
+      'Intelligence',
+      'Iron Dome',
+      'Integrity Docket',
+    ],
     career: [
       'Federal prosecutor (public bio)',
       '2001–2025 — U.S. House CA',
@@ -1974,10 +2045,41 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2001–2024',
       },
+      {
+        claim:
+          'Integrity docket: Sept 2019 MSNBC claim “We have not spoken directly with the whistleblower” rated False after NYT/Post reporting of pre-complaint staff contact.',
+        source: 'PolitiFact False; NYT Oct 2, 2019',
+        url: 'https://www.politifact.com/factchecks/2019/oct/04/adam-schiff/adam-schiffs-false-claim-we-have-not-spoken-direct/',
+        tier: 'verified',
+        date: '2019',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'schiff-not-spoken-whistleblower-2019',
+        statement: '“We have not spoken directly with the whistleblower.”',
+        saidAt: 'September 17, 2019',
+        context: 'MSNBC Morning Joe interview during early Ukraine impeachment inquiry as House Intelligence Chair.',
+        whyFalse:
+          'PolitiFact rated False. The New York Times and Washington Post reported the whistleblower sought informal guidance from a House Intelligence Committee aide before filing; the aide shared outlines with Schiff. Schiff later said he regretted the phrasing; a committee spokesperson said he meant no formal testimony, but the absolute public denial was inaccurate.',
+        correction:
+          'Committee staff had been contacted by the whistleblower for guidance before the complaint became public; Schiff’s flat denial of contact was false.',
+        statementSource: 'MSNBC Morning Joe interview (YouTube), Sept 17, 2019',
+        statementUrl: 'https://www.youtube.com/watch?v=-_QTxCTI-w0',
+        debunkSource: 'PolitiFact — False (Oct 4, 2019); NYT whistleblower outreach reporting',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/oct/04/adam-schiff/adam-schiffs-false-claim-we-have-not-spoken-direct/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.schiff.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/adam-schiff/summary?cid=N00009585' },
+      {
+        label: 'PolitiFact — whistleblower contact (False)',
+        url: 'https://www.politifact.com/factchecks/2019/oct/04/adam-schiff/adam-schiffs-false-claim-we-have-not-spoken-direct/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Adam_Schiff' },
     ],
   },
@@ -2515,8 +2617,18 @@ export const PROFILES: PowerProfile[] = [
     state: 'NJ',
     photoUrl: getProfilePhoto('cory-booker'),
     summary:
-      'New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Primary: OpenSecrets, Senate record, CRS RL33222.',
-    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'NORPAC', 'New Jersey', 'Democrat', '2020 Presidential Candidate', 'FMF Continuity'],
+      'New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Integrity docket: dual-cited PolitiFact False for citing a nonexistent CBO study on Medicare-at-50 savings. Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact.',
+    tags: [
+      'Senator',
+      'Pro-Israel',
+      'AIPAC',
+      'NORPAC',
+      'New Jersey',
+      'Democrat',
+      '2020 Presidential Candidate',
+      'FMF Continuity',
+      'Integrity Docket',
+    ],
     career: [
       'Rhodes Scholar / Yale Law (public bio)',
       'Newark City Council / Mayor of Newark',
@@ -2593,6 +2705,35 @@ export const PROFILES: PowerProfile[] = [
         url: 'https://www.booker.senate.gov',
         tier: 'verified',
         date: '2023–2024',
+      },
+      {
+        claim:
+          'Integrity docket: Feb 2019 claim CBO said Medicare-at-50 saves government money and lowers premiums rated False — no such CBO report exists.',
+        source: 'PolitiFact False',
+        url: 'https://www.politifact.com/factchecks/2019/feb/08/cory-booker/medicare-booker-cites-non-existent-cbo-study/',
+        tier: 'verified',
+        date: '2019',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'booker-nonexistent-cbo-medicare-50-2019',
+        statement:
+          '“Even the (Congressional Budget Office) says if you lower Medicare to allow 50 year olds to get into it, you can not only save the government money, but you can lower premiums for all Americans.”',
+        saidAt: 'February 4, 2019',
+        context: 'CBS This Morning interview while campaigning toward 2020 Democratic presidential primary on Medicare expansion.',
+        whyFalse:
+          'PolitiFact rated False. Booker’s office could not identify a CBO report matching the claim; staff pointed to a Health Affairs blog on mandatory Medicare-at-55 that did not conclude net government savings or lower premiums for all Americans as stated.',
+        correction:
+          'There is no CBO study concluding that optional Medicare-at-50 both saves the government money and lowers premiums for all Americans; Booker cited a nonexistent CBO finding.',
+        statementSource: 'CBS This Morning / CBS News coverage of Booker interview, Feb 4, 2019',
+        statementUrl:
+          'https://www.cbsnews.com/news/cory-booker-says-nation-needs-revival-of-civic-grace-ahead-of-2020-race/',
+        debunkSource: 'PolitiFact — False (Feb 8, 2019); Booker office acknowledgment of no matching CBO report',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/feb/08/cory-booker/medicare-booker-cites-non-existent-cbo-study/',
+        severity: 'material',
+        tier: 'verified',
       },
     ],
     websites: [
