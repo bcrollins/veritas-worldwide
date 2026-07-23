@@ -2303,6 +2303,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-cultural-heritage-destruction-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['mk84-use', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Cultural Heritage Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (heritage cohort)',
+    location: 'Gaza Strip (mosques, churches, museums, historic sites)',
+    summary:
+      'UNESCO and multi-source cultural-heritage monitors document destruction or severe damage to mosques, churches, museums, and historic sites across Gaza. Pattern card for cultural-heritage loss concurrent with the war, complementary to education and health system collapse cards.',
+    evidence:
+      'UNESCO preliminary damage assessments, multi-source satellite and field reporting, and religious-authority tallies establish widespread heritage loss. Exact site counts evolve; multi-source mass destruction is the claim.',
+    sources: [
+      { label: 'UNESCO cultural heritage materials — Gaza', url: 'https://www.unesco.org' },
+      { label: 'Multi-outlet heritage destruction coverage', url: 'https://apnews.com' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNESCO public materials', url: 'https://www.unesco.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3231,6 +3258,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-education-system-destroyed-2023-2025', 'gaza-universities-destroyed'],
     tags: ['education', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-heritage-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Cultural Heritage Destruction Pattern',
+    description: 'UNESCO/multi-source documentation of mosque, church, museum, and historic site destruction.',
+    source: 'UNESCO / multi-outlet',
+    sourceUrl: 'https://www.unesco.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-cultural-heritage-destruction-2023-2025'],
+    tags: ['heritage', 'culture', 'civilians', 'gaza'],
   },
 
 ]

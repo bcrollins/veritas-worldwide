@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:11:39.407Z",
+  "generatedAt": "2026-07-23T08:12:34.265Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 100,
-    "timelineEvents": 88,
+    "incidents": 101,
+    "timelineEvents": 89,
     "actors": 47,
     "moneyTrailNodes": 30,
-    "historicalWarCrimesPack": 86,
+    "historicalWarCrimesPack": 87,
     "legalCases": 19,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 40
+      "post-oct7": 41
     },
     "incidentsByTier": {
-      "verified": 98,
+      "verified": 99,
       "circumstantial": 2
     },
     "childrenTagged": 83,
-    "civiliansTagged": 98,
+    "civiliansTagged": 99,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3098,6 +3098,25 @@
         "civilians",
         "gaza",
         "casualties"
+      ]
+    },
+    {
+      "id": "tl-gaza-heritage-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Cultural Heritage Destruction Pattern",
+      "description": "UNESCO/multi-source documentation of mosque, church, museum, and historic site destruction.",
+      "source": "UNESCO / multi-outlet",
+      "sourceUrl": "https://www.unesco.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-cultural-heritage-destruction-2023-2025"
+      ],
+      "tags": [
+        "heritage",
+        "culture",
+        "civilians",
+        "gaza"
       ]
     },
     {
@@ -6924,6 +6943,50 @@
         {
           "label": "Multi-outlet school destruction coverage",
           "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNESCO public materials",
+          "url": "https://www.unesco.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-cultural-heritage-destruction-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Cultural Heritage Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (heritage cohort)",
+      "location": "Gaza Strip (mosques, churches, museums, historic sites)",
+      "summary": "UNESCO and multi-source cultural-heritage monitors document destruction or severe damage to mosques, churches, museums, and historic sites across Gaza. Pattern card for cultural-heritage loss concurrent with the war, complementary to education and health system collapse cards.",
+      "evidence": "UNESCO preliminary damage assessments, multi-source satellite and field reporting, and religious-authority tallies establish widespread heritage loss. Exact site counts evolve; multi-source mass destruction is the claim.",
+      "sources": [
+        {
+          "label": "UNESCO cultural heritage materials — Gaza",
+          "url": "https://www.unesco.org"
+        },
+        {
+          "label": "Multi-outlet heritage destruction coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "OHCHR OPT materials",
+          "url": "https://www.ohchr.org/en/countries/palestine"
         }
       ],
       "multimedia": [
