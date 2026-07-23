@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T10:03:39.420Z  
+**Generated:** 2026-07-23T10:06:11.328Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 345  
-**Tier histogram:** `{"circumstantial": 16, "contested": 34, "interpretive": 34, "literary_theological": 3, "speculative": 2, "verified": 124, "well_attested": 132}`
+**Claim count:** 354  
+**Tier histogram:** `{"circumstantial": 16, "contested": 34, "interpretive": 35, "literary_theological": 3, "speculative": 2, "verified": 128, "well_attested": 136}`
 
 Entity-only attribution. Live on veritasworldwide.com.
 
@@ -35,6 +35,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ane-merneptah` | verified | proof_grade_data | The Merneptah Stele (c. 1208 BCE) contains the earliest known extra-biblical reference to “Israel” as a people in Canaan. |
 | `ane-merneptah-israel` | verified | proof_grade_data | The Merneptah Stele (c. 1208 BCE) contains the earliest widely accepted extra-biblical mention of “Israel” as a people in Canaan. |
 | `ane-mesha` | verified | proof_grade_data | The Mesha Stele (c. 840 BCE) names Omri of Israel, Yahweh, and Moabite campaigns paralleling 2 Kings 3. |
+| `ane-mesha-yhwh` | verified | proof_grade_data | The Mesha Stele mentions YHWH in a Moabite royal context — primary evidence for the divine name outside the Hebrew Bible. |
 | `ane-moabite-stone-context` | verified | proof_grade_data | The Mesha Stele (Moabite Stone) remains a primary control for Omride-period geopolitics and Yahwistic onomastics in Transjordan. |
 | `ane-sennacherib` | verified | proof_grade_data | Sennacherib’s annals (Taylor Prism / related prisms) describe the 701 BCE campaign against Judah and Hezekiah’s tribute without claiming Jerusalem’s capture. |
 | `ane-sennacherib-prism-tribute` | verified | proof_grade_data | Sennacherib prisms claim Hezekiah was shut up “like a bird in a cage” and paid tribute — Assyrian framing of 701 BCE without claiming Jerusalem’s capture. |
@@ -65,6 +66,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `arch-jerusalem-pilgrim-road` | verified | proof_grade_data | The Stepped Street / pilgrim road from the Pool of Siloam toward the Temple Mount is excavated and dated to the late Second Temple period. |
 | `arch-kursi` | interpretive | tradition | Kursi (traditional Gergesa/Gadara region) has a Byzantine monastery commemorating the swine miracle tradition — reception archaeology, not first-century proof of the miracle. |
 | `arch-magdala` | well_attested | attested_report | Magdala excavations reveal a first-century Galilean town with a synagogue and harbor installations, enriching the social map of Jesus’ activity zone. |
+| `arch-magdala-stone` | verified | proof_grade_data | The Magdala stone (synagogue furniture with Temple imagery) is a major late Second Temple Jewish artifactual find from a Galilean synagogue context. |
 | `arch-magdala-synagogue` | verified | proof_grade_data | A first-century synagogue at Magdala (Migdal) on the Sea of Galilee is excavated and published, expanding evidence for Galilean synagogue architecture. |
 | `arch-masada` | well_attested | attested_report | Masada’s archaeology confirms a First Jewish Revolt–period fortress with Roman siege works; Josephus’s mass-suicide narrative is only partly controllable by material remains. |
 | `arch-masada-siege` | verified | proof_grade_data | Masada siege archaeology and Josephus’s narrative document a major Roman siege at the end of the First Revolt (73/74 CE debates on exact year). |
@@ -114,6 +116,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `cosmo-spectral-index` | verified | science_model | The scalar spectral index n_s ≈ 0.96 from CMB data is slightly red-tilted, consistent with many slow-roll inflation models. |
 | `cosmo-structure-formation` | verified | science_model | Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO. |
 | `cosmo-supernova-ia` | verified | science_model | Type Ia supernovae as standardizable candles mapped late-time acceleration and remain a core distance-ladder tool alongside BAO and CMB. |
+| `cosmo-tensor-to-scalar` | well_attested | science_model | The tensor-to-scalar ratio r is constrained from above by CMB B-mode searches; a detection would strongly support high-scale inflation. |
 | `cosmo-weak-lensing` | verified | science_model | Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits. |
 | `ec-1-clement-rome` | well_attested | attested_report | 1 Clement (usually late 1st c.) shows Roman Christian correspondence appealing to unity and citing Jesus traditions and Pauline letters. |
 | `ec-1clement` | well_attested | attested_report | 1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative. |
@@ -132,6 +135,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ec-ignatius-eucharist` | well_attested | attested_report | Ignatius emphasizes eucharistic unity and episcopal authority in letters en route to Rome — early 2nd-c. church order evidence. |
 | `ec-ignatius-letters` | well_attested | attested_report | Ignatius of Antioch’s letters (early 2nd c., middle recension) document episcopal structure and early christological confessions en route to martyrdom. |
 | `ec-irenaeus` | verified | proof_grade_data | Irenaeus (c. 180 CE) argues for a fourfold Gospel (Matthew, Mark, Luke, John) against alternative gospel usages. |
+| `ec-irenaeus-fourfold` | well_attested | attested_report | Irenaeus (late 2nd c.) argues for a fourfold Gospel canon as a theological-natural schema — evidence of four-Gospel prestige by his time. |
 | `ec-justin-apology` | well_attested | attested_report | Justin Martyr’s First Apology (mid-2nd c.) describes Christian worship, “memoirs of the apostles,” and defends Christians before a Roman audience. |
 | `ec-justin-dialogue` | well_attested | attested_report | Justin Martyr’s Dialogue with Trypho engages Jewish-Christian scriptural argument in the mid-2nd century. |
 | `ec-justin-memoirs` | well_attested | attested_report | Justin Martyr refers to “memoirs of the apostles” read in worship — mid-2nd-c. evidence for Gospel-like texts in liturgical use. |
@@ -200,11 +204,13 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `hj-romans-execution` | verified | proof_grade_data | Crucifixion was a Roman capital punishment method used in Judea; archaeological and literary controls exist independent of the Gospels (e.g., Yehohanan heel bone; Josephus). |
 | `hj-sabbath-conflicts` | well_attested | reconstruction | Sabbath controversy traditions are multiply attested in Synoptics and are widely treated as historically characteristic conflict settings for Jesus’ public activity. |
 | `hj-table-fellowship` | well_attested | reconstruction | Traditions of Jesus’ open table fellowship with “sinners” and tax collectors are widely treated as historically plausible under embarrassment and multiple attestation. |
+| `hj-table-fellowship-core` | well_attested | reconstruction | Open table fellowship with “sinners”/tax collectors is multiply attested and widely treated as a historically distinctive social practice of Jesus’ movement. |
 | `hj-tax-collectors` | well_attested | reconstruction | Association with tax collectors / toll collectors is multiply attested and often treated as historically characteristic of Jesus’ social practice (table fellowship theme). |
 | `hj-temple-action` | well_attested | reconstruction | An action by Jesus in the Temple (disruption of commerce / symbolic demonstration) is multiply attested; interpretation ranges from prophetic sign to failed revolt cue. |
 | `hj-titles` | contested | debate | Titles applied to Jesus (Messiah/Christ, Son of Man, Son of God, Lord) have layered historical and literary-theological histories; none should be treated as a single unproblematic first-century label without analysis. |
 | `hj-women-movement` | well_attested | attested_report | Early Christian sources name women as patrons, witnesses, and coworkers (e.g., Mary Magdalene traditions; Romans 16 co-workers); social roles are historically reconstructable within limits. |
 | `mod-contextual-credibility` | interpretive | reconstruction | Contextual credibility / historical plausibility criteria ask whether a tradition fits first-century Jewish Palestine — necessary but not sufficient for authenticity. |
+| `mod-continuous-update-duty` | interpretive | reconstruction | A living evidentiary corpus must update when new editions, inscriptions, or scientific results appear — stasis is a method failure. |
 | `mod-corpus-not-creed` | interpretive | reconstruction | This Record is an evidentiary index, not a confession of faith; tier labels and proofVsConcept flags are designed to block creed-as-history conflation. |
 | `mod-criteria-coherence-limits` | interpretive | reconstruction | Coherence criteria risk circularity: they test sayings against a reconstructed “core Jesus” that itself depends on prior authentications. |
 | `mod-criteria-critique` | interpretive | reconstruction | Classical criteria of authenticity (embarrassment, dissimilarity, multiple attestation) are historiographical tools with known biases; recent memory and social approaches revise their use. |
@@ -268,6 +274,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nc-tacitus-christus-title` | well_attested | attested_report | Tacitus’s use of “Christus” as a title/name and “Christians” as a group label reflects Roman awareness of the Christ-derived name by the early second century. |
 | `nc-tacitus-context` | well_attested | attested_report | Tacitus Annals 15.44 places Christus’s execution under Tiberius by procurator Pontius Pilate within a Nero-era persecution narrative. |
 | `nc-tacitus-latin` | well_attested | attested_report | Tacitus Annals 15.44 (Latin) states that Christus suffered the extreme penalty under Tiberius by sentence of procurator Pontius Pilate, and that the superstitio arose in Judea. |
+| `nc-tacitus-pilate-title` | well_attested | attested_report | Tacitus’s “procurator” title for Pilate is a known anachronism relative to the epigraphic “prefect” title — a classic example of Roman literary imprecision that does not overturn the core notice. |
 | `nc-talmud` | circumstantial | reconstruction | Certain Babylonian Talmud passages are sometimes read as hostile allusions to Jesus; dating, redaction, and identification are highly contested and often late. |
 | `nc-talmud-baraita-caution` | circumstantial | attested_report | Isolated Talmudic baraitot sometimes linked to Jesus are late, polemical, and methodologically unsafe as first-century biography without extreme caution. |
 | `nc-talmud-dating` | circumstantial | attested_report | Rabbinic passages sometimes linked to Jesus (e.g., b. Sanhedrin traditions) are late, layered, and methodologically hazardous as first-century biography. |
@@ -277,6 +284,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nc-traject-pliny-trajan` | verified | proof_grade_data | Trajan’s rescript to Pliny (Ep. 10.97) sets a legal policy: do not hunt Christians, punish only if proven and obstinate — Roman administrative evidence for early 2nd-c. policy. |
 | `nt-byzantine-priority` | contested | debate | Byzantine-priority / majority-text theories remain minority positions in mainstream critical editions, which generally prefer early diverse witnesses over later numerical majority alone. |
 | `nt-codex-alexandrinus` | verified | proof_grade_data | Codex Alexandrinus (A 02, 5th c.) is a major early nearly complete Greek Bible witness held by the British Library. |
+| `nt-codex-sinaiticus` | verified | proof_grade_data | Codex Sinaiticus (ℵ 01, 4th c.) is a foundational nearly complete Greek Bible majuscule for NT textual criticism and early Christian book history. |
 | `nt-comma-johanneum` | well_attested | proof_grade_data | The Comma Johanneum (1 John 5:7–8 Trinitarian expansion in some later Latin/Textus Receptus traditions) is absent from the earliest Greek manuscript tradition and is treated as secondary in modern critical editions. |
 | `nt-continuous-text-vs-lectionary` | well_attested | proof_grade_data | Continuous-text manuscripts and lectionaries serve different liturgical and scholarly roles; critical editions weight continuous early witnesses more heavily for initial text. |
 | `nt-correctors-hands` | verified | proof_grade_data | Corrector hands in major codices (ℵ B A) document layered revision of manuscripts over time, crucial for stemmatic and CBGM analyses. |
@@ -336,6 +344,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `st-josephus-corpus` | verified | proof_grade_data | Flavius Josephus (late first century CE) is a principal non-Christian Jewish historian for Herodian and early Roman Judea. |
 | `st-lxx-textual` | verified | proof_grade_data | The Septuagint often preserves readings that differ from the medieval Masoretic Text; some align with Qumran Hebrew witnesses. |
 | `st-mikvaot` | verified | proof_grade_data | Stepped ritual baths (miqva’ot) are archaeologically widespread in late Second Temple Judea and Galilee, evidencing purity practice infrastructure. |
+| `st-mikveh-purity` | verified | proof_grade_data | Widespread miqva’ot in late Second Temple Judea/Galilee evidence purity practice infrastructure relevant to baptism and purity language in early sources. |
 | `st-mishnah-context` | well_attested | attested_report | The Mishnah (c. 200 CE redaction) and related Tannaitic literature preserve legal memory of Second Temple practice but are post-70 literary products requiring critical use for pre-70 reconstruction. |
 | `st-parties` | well_attested | attested_report | Josephus and later rabbinic memory describe Pharisees, Sadducees, and Essenes as major Jewish schools; exact social demographics remain reconstructed. |
 | `st-pharisee-popularity` | well_attested | attested_report | Josephus claims Pharisees had popular influence; critical historians treat this as tendentious but still evidence of a major school’s social role. |
