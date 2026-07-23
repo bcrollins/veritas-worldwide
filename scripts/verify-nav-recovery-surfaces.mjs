@@ -2194,4 +2194,12 @@ assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'live emp
 assert(read('src/components/RelatedHubs.tsx').includes('bg-crimson'), 'live emphasize crimson')
 
 
+
+// Account five-hub expansion live lock pure
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'A11Y Membership live lock')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'OSINT Dossiers live lock')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'Privacy Membership live lock')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'Terms Membership live lock')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
