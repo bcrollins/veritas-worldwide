@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:05:41.676Z",
+  "generatedAt": "2026-07-23T09:06:06.417Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 137,
-    "timelineEvents": 125,
+    "incidents": 138,
+    "timelineEvents": 126,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 123,
+    "historicalWarCrimesPack": 124,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 77
+      "post-oct7": 78
     },
     "incidentsByTier": {
-      "verified": 135,
+      "verified": 136,
       "circumstantial": 2
     },
-    "childrenTagged": 113,
-    "civiliansTagged": 135,
+    "childrenTagged": 114,
+    "civiliansTagged": 136,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3663,6 +3663,28 @@
         "children",
         "orphans",
         "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-rockets-israel-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Rocket Fire — Israeli Civilian Harm Pattern",
+      "description": "Multi-source documentation of continued rocket/mortar fire from Gaza into Israeli civilian areas after October 7.",
+      "source": "Israeli government / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-rockets-israeli-civilian-harm-pattern-2023-2025",
+        "oct7-hamas-attack-2023",
+        "hezbollah-rockets-northern-israel-pattern-2023-2025"
+      ],
+      "tags": [
+        "rockets",
+        "civilians",
+        "children",
+        "israel",
         "gaza"
       ]
     },
@@ -9173,6 +9195,49 @@
           "type": "investigation",
           "label": "Multi-outlet solar damage coverage",
           "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-rockets-israeli-civilian-harm-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "iron-dome"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Rocket Fire Israeli Civilian Harm Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (rocket-fire cohort)",
+      "location": "Israeli communities within rocket range of Gaza",
+      "summary": "Israeli government casualty tallies, multi-source press, and Iron Dome intercept reporting document continued rocket and mortar fire from Gaza into Israeli civilian areas after October 7 — killing and wounding civilians and forcing repeated shelter use. Pattern card for non-state rocket fire against Israeli civilians concurrent with the Gaza war — required for non-selective civilian-harm documentation, distinct from the October 7 multi-site assault card.",
+      "evidence": "Israeli Home Front Command/government public tallies, multi-outlet contemporaneous coverage, and interceptor/debris reporting establish multi-source rocket fire into civilian areas. Exact fatality counts evolve; multi-source sustained rocket fire toward Israeli civilians is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government / Home Front public materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet rocket fire coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "CRS / multi-source Iron Dome context materials",
+          "url": "https://www.congress.gov/crs-product/RL33222"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
         }
       ],
       "tier": "verified",

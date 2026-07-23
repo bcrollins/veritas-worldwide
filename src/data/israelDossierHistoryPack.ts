@@ -3303,6 +3303,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-rockets-israeli-civilian-harm-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Rocket Fire Israeli Civilian Harm Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (rocket-fire cohort)',
+    location: 'Israeli communities within rocket range of Gaza',
+    summary:
+      'Israeli government casualty tallies, multi-source press, and Iron Dome intercept reporting document continued rocket and mortar fire from Gaza into Israeli civilian areas after October 7 — killing and wounding civilians and forcing repeated shelter use. Pattern card for non-state rocket fire against Israeli civilians concurrent with the Gaza war — required for non-selective civilian-harm documentation, distinct from the October 7 multi-site assault card.',
+    evidence:
+      'Israeli Home Front Command/government public tallies, multi-outlet contemporaneous coverage, and interceptor/debris reporting establish multi-source rocket fire into civilian areas. Exact fatality counts evolve; multi-source sustained rocket fire toward Israeli civilians is the claim.',
+    sources: [
+      { label: 'Israeli government / Home Front public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet rocket fire coverage', url: 'https://apnews.com' },
+      { label: 'CRS / multi-source Iron Dome context materials', url: 'https://www.congress.gov/crs-product/RL33222' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4792,6 +4819,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['energy', 'solar', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-rockets-israel-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Rocket Fire — Israeli Civilian Harm Pattern',
+    description: 'Multi-source documentation of continued rocket/mortar fire from Gaza into Israeli civilian areas after October 7.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-rockets-israeli-civilian-harm-pattern-2023-2025',
+      'oct7-hamas-attack-2023',
+      'hezbollah-rockets-northern-israel-pattern-2023-2025',
+    ],
+    tags: ['rockets', 'civilians', 'children', 'israel', 'gaza'],
+  },
+
 
 
 
