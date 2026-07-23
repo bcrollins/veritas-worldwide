@@ -474,4 +474,31 @@ for (const rel of [
 }
 assert(researchMounts >= 12, `ResearchHubChips mounts ${researchMounts} < 12`)
 
+
+// RelatedHubs mount breadth across recovery surfaces
+let relatedMounts = 0
+for (const rel of [
+  'src/pages/NewsPage.tsx',
+  'src/pages/TimelinePage.tsx',
+  'src/pages/TopicsIndexPage.tsx',
+  'src/pages/AboutPage.tsx',
+  'src/pages/MembershipPage.tsx',
+  'src/pages/PrivacyPage.tsx',
+  'src/pages/TermsPage.tsx',
+  'src/pages/AccessibilityPage.tsx',
+  'src/pages/AnalyticsPage.tsx',
+  'src/pages/ComprehensiveProfilePage.tsx',
+  'src/pages/AipacPage.tsx',
+  'src/pages/ArticlePage.tsx',
+  'src/pages/ChapterPage.tsx',
+  'src/pages/TopicPage.tsx',
+  'src/pages/ProfilePage.tsx',
+  'src/pages/SupportSuccessPage.tsx',
+  'src/pages/SubscribeSuccessPage.tsx',
+  'src/pages/NotFoundPage.tsx',
+]) {
+  if (read(rel).includes('RelatedHubs') || read(rel).includes('PRIMARY_RELATED_HUBS')) relatedMounts += 1
+}
+assert(relatedMounts >= 17, `RelatedHubs mounts ${relatedMounts} < 17`)
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
