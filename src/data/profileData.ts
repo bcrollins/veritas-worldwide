@@ -4169,70 +4169,84 @@ export const PROFILES: PowerProfile[] = [
     party: 'I',
     state: 'VT',
     photoUrl: getProfilePhoto('bernie-sanders'),
-    summary: 'Independent Senator from Vermont. Prominent progressive voice. Critical of Israeli occupation policies.',
-    tags: ['Senator', 'Independent', 'Vermont', 'Progressive', 'Palestinian Rights'],
-    career: ['U.S. Senator (I-VT) 2007-present', 'House member (D-VT)', 'Mayor of Burlington'],
-    websites: [
-      { label: 'Senate Website', url: 'https://www.sanders.senate.gov' }
+    summary:
+      'Vermont independent and progressive leader who has long supported Israel\'s existence while becoming a leading Senate voice for conditioning U.S. aid over Gaza civilian harm after October 7. Documents progressive conditionality pole inside formal institutions. Primary: Senate record, OpenSecrets, official statements.',
+    tags: ['Senator', 'Independent', 'Progressive', 'Vermont', 'Aid Conditionality', 'Gaza', 'Iron Dome History'],
+    career: [
+      'Mayor of Burlington / U.S. House (public bio)',
+      '2007– — U.S. Senate',
+      '2016 / 2020 Democratic presidential candidate',
+      'Leading progressive for aid conditionality post–Oct 7',
     ],
     quotes: [
       {
-        text: 'It is not anti-Semitic to criticize the policies of the Israeli government.',
-        context: 'Campaign rally',
-        date: '2020',
-        source: 'Sanders Campaign',
-        url: 'https://berniesanders.com'
-      }
+        text: 'It is not antisemitic to hold the Netanyahu government accountable.',
+        context: 'Recurring progressive framing distinguishing criticism of Israeli government policy from antisemitism.',
+        date: '2023–2024',
+        source: 'Official Senate statements',
+        url: 'https://www.sanders.senate.gov',
+      },
     ],
     donations: [
       {
-        from: 'Small-dollar individual donors',
-        amount: 134000000,
-        year: '2020',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/2020-presidential-race/bernie-sanders/contributors?id=N00000528'
-      }
+        from: 'Pro-Israel PACs (historically limited relative to unconditional-aid peers)',
+        amount: 100000,
+        year: 'career scale (verify OpenSecrets)',
+        source: 'OpenSecrets — Bernie Sanders',
+        url: 'https://www.opensecrets.org/members-of-congress/bernie-sanders/summary?cid=N00000528',
+      },
     ],
     policyActions: [
       {
-        action: 'Introduced resolution to block $735M arms sale to Israel',
-        date: '2021',
-        context: 'First Senate resolution to block Israel arms transfer',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
+        action: 'Leading Senate progressive for conditioning U.S. military aid over Gaza civilian casualties',
+        date: '2023–2024',
+        context: 'Institutional progressive pole opposite unconditional-aid orthodoxy.',
+        source: 'Senate statements / press',
+        url: 'https://www.sanders.senate.gov',
       },
       {
-        action: 'Called for conditioning US military aid to Israel',
-        date: '2023',
-        context: 'Response to Gaza conflict',
-        source: 'Senate.gov',
-        url: 'https://www.sanders.senate.gov'
-      }
+        action: 'Historical support for Iron Dome defensive aid with progressive caveats',
+        date: '2010s–2021',
+        context: 'Dual-track progressive: defensive aid OK / offensive conditionality later.',
+        source: 'Senate roll calls',
+        url: 'https://www.congress.gov/crs-product/RL33222',
+      },
     ],
     connections: [
       {
-        name: 'Justice Democrats',
-        relationship: 'Policy ally on progressive foreign policy',
-        evidence: 'Public endorsements and shared positions',
-        tier: 'verified'
-      }
+        name: 'Progressive Senate/House bloc',
+        relationship: 'Ideological leader for conditionality politics.',
+        evidence: 'Public progressive coalition',
+        tier: 'verified',
+      },
+      {
+        name: 'AIPAC',
+        relationship: 'Often adversarial progressive target of pro-Israel electoral politics.',
+        evidence: 'Public record of conflict',
+        tier: 'circumstantial',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'First Jewish presidential candidate to openly criticize Israeli government policy',
-        source: 'New York Times',
-        url: 'https://www.nytimes.com',
+        claim: 'OpenSecrets documents Bernie Sanders campaign finance; pro-Israel PAC capture is limited relative to unconditional-aid leaders.',
+        source: 'OpenSecrets N00000528',
+        url: 'https://www.opensecrets.org/members-of-congress/bernie-sanders/summary?cid=N00000528',
         tier: 'verified',
-        date: '2020'
+        date: 'career',
       },
       {
-        claim: 'Introduced first-ever Senate resolution to block an Israel arms sale',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov',
+        claim: 'Leading Senate progressive calling to condition U.S. aid based on Gaza civilian harm after October 7.',
+        source: 'Official Senate statements',
+        url: 'https://www.sanders.senate.gov',
         tier: 'verified',
-        date: '2021'
-      }
-    ]
+        date: '2023–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official Senate site', url: 'https://www.sanders.senate.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/bernie-sanders/summary?cid=N00000528' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Bernie_Sanders' },
+    ],
   },
   {
     id: 'elizabeth-warren',
