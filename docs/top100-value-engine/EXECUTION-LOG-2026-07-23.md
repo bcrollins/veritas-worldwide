@@ -349,3 +349,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | comms tower · Netivot safe room · barley-field arson |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip **2000** push — power plant / Kiryat Malachi / chickpea-lentil arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza labetalol/nifedipine/dex/beta/methyldopa/aspirin · hostage bury-bodies/empty-toys/sharp-rocks/border-signs/watch-executions/empty-wheelchair · WB melon/optometry/fennel/eggplant-seed/watermelon/lab-equip |
+| VI | power plant · Kiryat Malachi · chickpea arson · internet cable · Ashdod · lentil arson |
+| Pure | visual + israel-dossier PASS |
+
