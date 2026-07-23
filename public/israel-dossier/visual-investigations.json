@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:08:28.349Z"
+    "generatedAt": "2026-07-23T13:09:21.310Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 85,
-    "viPackCards": 66,
-    "totalIncidents": 1291
+    "incidentsWithVideoAndCivilians": 88,
+    "viPackCards": 69,
+    "totalIncidents": 1312
   },
   "incidents": [
     {
@@ -2648,6 +2648,126 @@
         {
           "type": "video",
           "label": "B’Tselem livestock-attack video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-ofakim-civilian-visual-2023",
+      "title": "October 7 Ofakim Civilian Attacks — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Ofakim, southern Israel",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Ofakim October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-hospital-evacuation-visual-2023-2025",
+      "title": "Gaza Hospital Evacuations Under Fire — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Hospitals and medical complexes across Gaza",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OHCHR medical-protection materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza hospital packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet hospital evacuation video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "WHO/OHCHR medical-protection trail",
+          "url": "https://www.who.int"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of hospital evacuation aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-stone-throwing-vehicles-visual-2023-2025",
+      "title": "West Bank Settler Stone-Throwing at Civilian Vehicles — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank roads used by Palestinian civilian traffic",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem stone-throwing video bank",
           "url": "https://www.btselem.org/video"
         },
         {
