@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:11:35.009Z",
+  "generatedAt": "2026-07-23T09:12:08.988Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 143,
-    "timelineEvents": 131,
+    "incidents": 144,
+    "timelineEvents": 132,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 129,
+    "historicalWarCrimesPack": 130,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 83
+      "post-oct7": 84
     },
     "incidentsByTier": {
-      "verified": 141,
+      "verified": 142,
       "circumstantial": 2
     },
-    "childrenTagged": 119,
-    "civiliansTagged": 141,
+    "childrenTagged": 120,
+    "civiliansTagged": 142,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3580,6 +3580,28 @@
         "displacement",
         "civilians",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-icu-nicu-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza ICU & Neonatal Capacity Collapse Pattern",
+      "description": "WHO multi-source documentation of near-total ICU/NICU capacity collapse under bombardment and fuel/power cuts.",
+      "source": "WHO / OCHA / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-icu-neonatal-capacity-collapse-pattern-2023-2025",
+        "gaza-health-system-collapse-2023-2025",
+        "gaza-pregnant-maternal-harm-pattern-2023-2025"
+      ],
+      "tags": [
+        "icu",
+        "neonatal",
+        "children",
+        "health",
         "gaza"
       ]
     },
@@ -9559,6 +9581,50 @@
           "type": "document",
           "label": "Israeli government public materials",
           "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-icu-neonatal-capacity-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza ICU & Neonatal Capacity Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (critical-care cohort)",
+      "location": "Gaza Strip hospitals (ICU / NICU wards)",
+      "summary": "WHO and multi-source hospital reporting document near-total collapse of intensive-care and neonatal intensive-care capacity under bombardment, evacuation orders, and fuel/power cuts — a children and critically-ill civilian harm multiplier distinct from the broader health-system collapse and maternal-harm cards.",
+      "evidence": "WHO hospital functionality tallies, multi-source clinician reporting, and OCHA health access notes establish multi-source ICU/NICU capacity collapse. Exact bed counts evolve; multi-source near-total specialized critical-care loss is the claim.",
+      "sources": [
+        {
+          "label": "WHO attacks on health care / hospital functionality materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA health access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza ICU/NICU coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public health updates",
+          "url": "https://www.who.int"
         }
       ],
       "tier": "verified",
