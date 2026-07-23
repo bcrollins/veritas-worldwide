@@ -363,4 +363,11 @@ const bookmarks = read('src/pages/BookmarksPage.tsx')
 assert(bookmarks.includes('bookmarks-empty-hubs'), 'bookmarks-empty-hubs')
 assert(bookmarks.includes('/read') && bookmarks.includes('/search'), 'Bookmarks empty Read+Search')
 
+
+// Profiles hub strip recovery destinations
+const profilesIdx = read('src/pages/ProfilesIndexPage.tsx')
+assert(profilesIdx.includes('profiles-research-pack-banner') || profilesIdx.includes('/content-pack') || profilesIdx.includes('research-pack'), 'Profiles research pack scent')
+assert(profilesIdx.includes('/search') || profilesIdx.includes("to: '/search'"), 'Profiles strip Search')
+assert(profilesIdx.includes('/israel-dossier'), 'Profiles strip Dossiers')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
