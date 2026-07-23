@@ -2357,4 +2357,15 @@ assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'perpetu
 assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'perpetual OSINT Dossiers')
 
 
+
+// RelatedHubs platform perpetual densify lock v2
+assert(surfaces.length >= 102, `perpetual v2 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v2 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v2 emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'perpetual v2 secondary')
+assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'perpetual v2 bookmarks')
+assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'perpetual v2 bernie')
+assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'perpetual v2 media-kit')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
