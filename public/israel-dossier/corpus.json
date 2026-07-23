@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:29:22.012Z",
+  "generatedAt": "2026-07-23T08:30:48.062Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 115,
-    "timelineEvents": 103,
+    "incidents": 116,
+    "timelineEvents": 104,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 101,
+    "historicalWarCrimesPack": 102,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 55
+      "post-oct7": 56
     },
     "incidentsByTier": {
-      "verified": 113,
+      "verified": 114,
       "circumstantial": 2
     },
-    "childrenTagged": 95,
-    "civiliansTagged": 113,
+    "childrenTagged": 96,
+    "civiliansTagged": 114,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3141,6 +3141,26 @@
         "starvation",
         "civilians",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-cash-liquidity-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Cash Liquidity & Banking Collapse Pattern",
+      "description": "World Bank/OCHA multi-source documentation of cash shortages and banking paralysis.",
+      "source": "World Bank / OCHA",
+      "sourceUrl": "https://www.worldbank.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-cash-liquidity-banking-collapse-2023-2025",
+        "gaza-bakeries-food-system-collapse-2023-2025"
+      ],
+      "tags": [
+        "economy",
+        "cash",
+        "civilians",
         "gaza"
       ]
     },
@@ -7825,6 +7845,50 @@
         },
         {
           "label": "Multi-outlet Gaza blackout coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-cash-liquidity-banking-collapse-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Cash Liquidity & Banking Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (liquidity cohort)",
+      "location": "Gaza Strip",
+      "summary": "World Bank, OCHA, and multi-source economic reporting document severe cash shortages, banking system paralysis, and informal-market premiums that block civilian purchase of food and medicine even when goods are present. Pattern card for financial-system collapse as a civilian-harm multiplier.",
+      "evidence": "World Bank economic monitoring, multi-source banking/ATM outage reporting, and humanitarian cash-assistance constraints establish multi-source liquidity collapse. Exact shekel availability figures evolve; multi-source system collapse is the claim.",
+      "sources": [
+        {
+          "label": "World Bank economic monitoring materials",
+          "url": "https://www.worldbank.org"
+        },
+        {
+          "label": "OCHA humanitarian cash/access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza cash crisis coverage",
           "url": "https://apnews.com"
         }
       ],
