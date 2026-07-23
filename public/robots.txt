@@ -20,6 +20,8 @@ Allow: /comprehensive-profile/
 Disallow: /bookmarks
 Disallow: /researcher/
 Disallow: /researcher/timeline
+# Multi-volume scaffold hub (noindex until full catalog ships)
+Disallow: /volume-ii
 # Family-brand podcast landing (product surface; residual OPSEC — keep out of index).
 Disallow: /bernie
 Disallow: /bernie/

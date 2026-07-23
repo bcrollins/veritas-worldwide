@@ -16,6 +16,7 @@ const required = [
   'Disallow: /membership/success',
   'Disallow: /donation/success',
   'Disallow: /comprehensive-profile/success',
+  'Disallow: /volume-ii',
 ]
 const failures = []
 for (const line of required) {

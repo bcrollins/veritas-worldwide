@@ -625,6 +625,19 @@ assert(
   server.includes("'/volume-ii'") && server.includes('NOINDEX_EXACT_PATHS'),
   'server NOINDEX paths must include volume-ii scaffold',
 )
+// Bots short-circuit via registerBotMetaInjection before SPA injectNoindexShell —
+// volume-ii MUST be in noindexBotPages or Googlebot first-paint stays index,follow.
+const botMetaVolume = read('server-social-meta.js')
+assert(
+  botMetaVolume.includes("'/volume-ii'") &&
+    (botMetaVolume.includes('noindexBotPages') || botMetaVolume.includes('sendNoindexShell')),
+  'bot social meta must noindex /volume-ii (bots never hit SPA injectNoindexShell)',
+)
+const robotsTxtVolume = read('public/robots.txt')
+assert(
+  robotsTxtVolume.includes('Disallow: /volume-ii'),
+  'robots.txt must Disallow /volume-ii scaffold',
+)
 
 assert(read('src/pages/TermsPage.tsx').includes('faqJsonLd'), 'TermsPage must emit FAQPage')
 assert(read('src/pages/PrivacyPage.tsx').includes('faqJsonLd'), 'PrivacyPage must emit FAQPage')

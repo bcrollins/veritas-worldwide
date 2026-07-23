@@ -432,6 +432,12 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         description:
           'Local-only researcher chronology tool. Events stay in the browser and are not part of the public archive index.',
       },
+      // Multi-volume scaffold — client noindex + SPA injectNoindexShell; bots must match first-paint.
+      '/volume-ii': {
+        title: 'Volume II Track | Veritas Worldwide',
+        description:
+          'Scaffold hub for The Record Volume II track. Temporary surface until a full multi-volume catalog ships — not part of the public archive index.',
+      },
     }
     const noindexKey = Object.keys(noindexBotPages).find(
       (p) => req.path === p || req.path.startsWith(`${p}/`),
