@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:01:17.057Z",
+  "generatedAt": "2026-07-23T09:02:07.424Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 132,
-    "timelineEvents": 120,
+    "incidents": 133,
+    "timelineEvents": 121,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 118,
+    "historicalWarCrimesPack": 119,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 72
+      "post-oct7": 73
     },
     "incidentsByTier": {
-      "verified": 130,
+      "verified": 131,
       "circumstantial": 2
     },
-    "childrenTagged": 108,
-    "civiliansTagged": 130,
+    "childrenTagged": 109,
+    "civiliansTagged": 131,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3962,6 +3962,28 @@
       ]
     },
     {
+      "id": "tl-rafah-crossing-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Rafah Crossing Closure & Restricted Exit Pattern",
+      "description": "OCHA/UNRWA multi-source documentation of prolonged Rafah crossing closures trapping civilians and limiting aid entry.",
+      "source": "OCHA / UNRWA / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-rafah-crossing-closure-pattern-2023-2025",
+        "gaza-unrwa-ban-pattern-2024-2025",
+        "rafah-tent-camp-2024"
+      ],
+      "tags": [
+        "siege",
+        "crossing",
+        "civilians",
+        "children",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-wb-children-killed-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -3973,7 +3995,7 @@
       "relatedIncidentIds": [
         "west-bank-children-killed-pattern-2023-2025",
         "west-bank-mass-arrests-2023-2025",
-        "settler-violence-pattern-2021-2023"
+        "west-bank-settlement-surge-2023-2025"
       ],
       "tags": [
         "children",
@@ -8838,6 +8860,50 @@
         },
         {
           "label": "Multi-outlet West Bank child fatality coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-rafah-crossing-closure-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Rafah Crossing Closure & Restricted Exit Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (crossing cohort)",
+      "location": "Rafah Crossing (Gaza–Egypt) / Gaza exit corridors",
+      "summary": "OCHA, UNRWA, and multi-source reporting document prolonged closures and severe restrictions on the Rafah crossing — Gaza’s primary civilian exit and aid entry point with Egypt — trapping civilians including medical evacuees and dual nationals. Pattern card for crossing access denial as a civilian-harm multiplier distinct from general siege/aid-blockade cards.",
+      "evidence": "OCHA access dashboards, multi-source Egyptian/Israeli/UN statements, and multi-outlet coverage of closed or highly restricted crossing days establish multi-source access denial. Exact open-day tallies evolve; multi-source prolonged severe restriction is the claim.",
+      "sources": [
+        {
+          "label": "OCHA humanitarian access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNRWA access / operational updates",
+          "url": "https://www.unrwa.org"
+        },
+        {
+          "label": "Multi-outlet Rafah crossing coverage",
           "url": "https://apnews.com"
         }
       ],

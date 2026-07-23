@@ -33,7 +33,14 @@ assert(seo.includes('max-image-preview:large'), 'seo.ts must set Discover-friend
 assert(seo.includes('imageAlt'), 'SEOConfig must accept imageAlt')
 assert(seo.includes('DEFAULT_TITLE'), 'seo.ts must define DEFAULT_TITLE aligned with index.html')
 assert(seo.includes('DEFAULT_ROBOTS'), 'seo.ts must reset robots to Discover-friendly defaults')
+assert(seo.includes('absoluteUrl'), 'seo.ts must normalize absolute HTTPS canonicals')
+assert(seo.includes('article:modified_time'), 'seo.ts must set article:modified_time')
+assert(seo.includes('NewsMediaOrganization'), 'Organization must dual-type NewsMediaOrganization')
 assert(seo.includes('howToJsonLd'), 'seo.ts must export HowTo helper')
+assert(seo.includes('personJsonLd'), 'seo.ts must export Person helper')
+assert(seo.includes('itemListJsonLd'), 'seo.ts must export ItemList helper')
+assert(seo.includes('websiteJsonLd'), 'seo.ts must export WebSite helper')
+assert(seo.includes('speakable'), 'chapter NewsArticle must include speakable for voice SEO')
 const rocPage = read('src/pages/RecordOfJesusChristPage.tsx')
 assert(rocPage.includes('howToJsonLd'), 'ROC page must emit HowTo schema for export/researcher path')
 assert(rocPage.includes('faqJsonLd'), 'ROC page must emit FAQPage schema')
@@ -44,8 +51,6 @@ const biblePage = read('src/pages/BibleHistoryPage.tsx')
 assert(biblePage.includes('faqJsonLd'), 'Bible history page must emit FAQPage schema')
 assert(biblePage.includes('breadcrumbJsonLd'), 'Bible history page must emit breadcrumbs')
 assert(biblePage.includes('/record-of-jesus-christ'), 'Bible page must cross-link ROC surface')
-assert(seo.includes('personJsonLd'), 'seo.ts must export Person helper')
-assert(seo.includes('speakable'), 'chapter NewsArticle must include speakable for voice SEO')
 
 const robots = read('public/robots.txt')
 assert(robots.includes('Sitemap: https://veritasworldwide.com/sitemap.xml'), 'robots must declare sitemap')
@@ -240,6 +245,20 @@ assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta
 assert(
   botMeta.includes('Primary-source documentary history') || botMeta.includes('Primary Sources'),
   'bot meta rewrite must align with first-paint primary-source description',
+)
+
+// Prerender HTML is what Googlebot often sees for known SPA routes — keep SERP copy in lockstep.
+assert(
+  prerender.includes('Minimal analytics, no ads, no data sales'),
+  'prerender /privacy description must match client high-intent privacy copy',
+)
+assert(
+  prerender.includes('Veritas Institute Field Manual | Veritas Worldwide'),
+  'prerender /institute title must stay SERP-compact',
+)
+assert(
+  prerender.includes('Current Events — Primary Source Journalism'),
+  'prerender /news title must target primary-source journalism intent',
 )
 
 console.log(

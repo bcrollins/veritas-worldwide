@@ -3168,6 +3168,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-rafah-crossing-closure-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Rafah Crossing Closure & Restricted Exit Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (crossing cohort)',
+    location: 'Rafah Crossing (Gaza–Egypt) / Gaza exit corridors',
+    summary:
+      'OCHA, UNRWA, and multi-source reporting document prolonged closures and severe restrictions on the Rafah crossing — Gaza’s primary civilian exit and aid entry point with Egypt — trapping civilians including medical evacuees and dual nationals. Pattern card for crossing access denial as a civilian-harm multiplier distinct from general siege/aid-blockade cards.',
+    evidence:
+      'OCHA access dashboards, multi-source Egyptian/Israeli/UN statements, and multi-outlet coverage of closed or highly restricted crossing days establish multi-source access denial. Exact open-day tallies evolve; multi-source prolonged severe restriction is the claim.',
+    sources: [
+      { label: 'OCHA humanitarian access materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNRWA access / operational updates', url: 'https://www.unrwa.org' },
+      { label: 'Multi-outlet Rafah crossing coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4572,6 +4599,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['children', 'west-bank', 'civilians'],
   },
+
+  {
+    id: 'tl-rafah-crossing-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Rafah Crossing Closure & Restricted Exit Pattern',
+    description: 'OCHA/UNRWA multi-source documentation of prolonged Rafah crossing closures trapping civilians and limiting aid entry.',
+    source: 'OCHA / UNRWA / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-rafah-crossing-closure-pattern-2023-2025',
+      'gaza-unrwa-ban-pattern-2024-2025',
+      'rafah-tent-camp-2024',
+    ],
+    tags: ['siege', 'crossing', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
