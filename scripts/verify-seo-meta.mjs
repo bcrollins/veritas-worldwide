@@ -439,11 +439,11 @@ assert(
 
 const homePage = read('src/pages/HomePage.tsx')
 assert(!homePage.includes('200+ tier-labeled claims'), 'Home must not advertise stale 200+ ROC claim floor')
-assert(homePage.includes('360+ tier-labeled') || homePage.includes('330+ tier-labeled'), 'Home must advertise current ROC claim floor')
+assert(homePage.includes('360+ tier-labeled') || homePage.includes('350+ tier-labeled'), 'Home must advertise current ROC claim floor')
 const sourcesPage = read('src/pages/SourcesPage.tsx')
 assert(!sourcesPage.includes('200+ tier-labeled'), 'Sources must not advertise stale 200+ ROC claim floor')
-assert(sourcesPage.includes('360+ tier-labeled') || sourcesPage.includes('330+ tier-labeled'), 'Sources must advertise current ROC claim floor')
+assert(sourcesPage.includes('360+ tier-labeled') || sourcesPage.includes('350+ tier-labeled'), 'Sources must advertise current ROC claim floor')
 
 const methodPage = read('src/pages/MethodologyPage.tsx')
 assert(!methodPage.includes('200+ claims with proofVsConcept'), 'Methodology must not advertise stale 200+ ROC claim floor')
-assert(methodPage.includes('350+ claims') || methodPage.includes('340+ claims'), 'Methodology must advertise current ROC claim floor')
+assert(methodPage.includes('360+ claims') || methodPage.includes('350+ claims'), 'Methodology must advertise current ROC claim floor')
