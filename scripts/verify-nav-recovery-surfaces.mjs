@@ -504,6 +504,10 @@ for (const rel of [
   'src/pages/ProfilePage.tsx',
   'src/pages/SupportSuccessPage.tsx',
   'src/pages/SubscribeSuccessPage.tsx',
+  'src/pages/DeepStatePage.tsx',
+  'src/pages/ForumPage.tsx',
+  'src/pages/IsraelDossierBriefingPage.tsx',
+  'src/pages/IsraelDossierPage.tsx',
   'src/pages/NotFoundPage.tsx',
 ]) {
   if (read(rel).includes('RelatedHubs') || read(rel).includes('PRIMARY_RELATED_HUBS')) relatedMounts += 1
