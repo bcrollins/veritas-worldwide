@@ -127,6 +127,7 @@ const required = [
   'kevin-mccarthy',
   'mike-johnson',
   'jim-jordan',
+  'dianne-feinstein',
 ];
 const scores = {};
 for (const id of required) {
@@ -598,8 +599,23 @@ for (const f of (jordanP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('jim-jordan dual-cite collision: ' + f.id);
 }
 
+// Dianne Feinstein integrity gate (multi-entry)
+const feinstein = scores['dianne-feinstein'];
+if (!feinstein || feinstein.n < 2) throw new Error('dianne-feinstein needs ≥2 verified falsehoods, got ' + (feinstein?.n ?? 0));
+if (feinstein.score > 75) throw new Error('dianne-feinstein score expected ≤75, got ' + feinstein.score);
+const feinsteinP = getProfileBySlug('dianne-feinstein');
+if (!(feinsteinP.documentedFalsehoods || []).some((f) => f.id === 'feinstein-no-regulation-commercial-drones-2013')) {
+  throw new Error('dianne-feinstein missing commercial drones docket id');
+}
+if (!(feinsteinP.documentedFalsehoods || []).some((f) => f.id === 'feinstein-more-gun-deaths-by-far-2019')) {
+  throw new Error('dianne-feinstein missing gun-deaths docket id');
+}
+for (const f of (feinsteinP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('dianne-feinstein dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 40) throw new Error('expected ≥40 compiled dockets, got ' + docketCount);
+if (docketCount < 41) throw new Error('expected ≥41 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:59:05.418Z",
+  "generatedAt": "2026-07-23T08:01:12.336Z",
   "count": 96,
   "profiles": [
     {
@@ -1049,7 +1049,7 @@
       "name": "Dianne Feinstein",
       "title": "Former U.S. Senator (D-CA)",
       "category": "politician",
-      "summary": "Deceased former Senator from California. Served 1992-2023. Controversial intelligence committee tenure.",
+      "summary": "Deceased former U.S. Senator from California (1992–2023); longtime Intelligence Committee chair and assault-weapons ban author. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False claims — “no regulation” of commercial drones (2013) and U.S. has “more gun deaths by far” than any other country (2019). Primary: Senate record, OpenSecrets, PolitiFact.",
       "photo": "/profiles/dianne-feinstein.jpg",
       "url": "https://veritasworldwide.com/profile/dianne-feinstein",
       "bioguideId": "F000062",
@@ -1058,11 +1058,12 @@
         "California",
         "Democrat",
         "Intelligence Committee",
-        "Deceased 2023"
+        "Deceased 2023",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "kevin-mccarthy",

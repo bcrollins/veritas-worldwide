@@ -6263,20 +6263,25 @@ export const PROFILES: PowerProfile[] = [
     party: 'D',
     state: 'CA',
     photoUrl: getProfilePhoto('dianne-feinstein'),
-    summary: 'Deceased former Senator from California. Served 1992-2023. Controversial intelligence committee tenure.',
-    tags: ['Senator', 'California', 'Democrat', 'Intelligence Committee', 'Deceased 2023'],
-    career: ['U.S. Senator (D-CA) 1992-2023', 'Mayor of San Francisco', 'State legislator'],
-    websites: [
-      { label: 'Senate Website', url: 'https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/' }
+    summary:
+      'Deceased former U.S. Senator from California (1992–2023); longtime Intelligence Committee chair and assault-weapons ban author. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False claims — “no regulation” of commercial drones (2013) and U.S. has “more gun deaths by far” than any other country (2019). Primary: Senate record, OpenSecrets, PolitiFact.',
+    tags: [
+      'Senator',
+      'California',
+      'Democrat',
+      'Intelligence Committee',
+      'Deceased 2023',
+      'Integrity Docket',
     ],
+    career: ['U.S. Senator (D-CA) 1992-2023', 'Mayor of San Francisco', 'State legislator'],
     quotes: [
       {
         text: 'The United States has a deep moral obligation to support and defend Israel.',
         context: 'Senate floor speech',
         date: '2018',
         source: 'Senate.gov',
-        url: 'https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/'
-      }
+        url: 'https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/',
+      },
     ],
     donations: [
       {
@@ -6284,8 +6289,8 @@ export const PROFILES: PowerProfile[] = [
         amount: 1340000,
         year: '1992-2023',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/dianne-feinstein/summary?cid=N00007364'
-      }
+        url: 'https://www.opensecrets.org/members-of-congress/dianne-feinstein/summary?cid=N00007364',
+      },
     ],
     policyActions: [
       {
@@ -6293,16 +6298,16 @@ export const PROFILES: PowerProfile[] = [
         date: '2014',
         context: 'Declassified report on enhanced interrogation techniques',
         source: 'Senate Intelligence Committee',
-        url: 'https://www.intelligence.senate.gov'
-      }
+        url: 'https://www.intelligence.senate.gov',
+      },
     ],
     connections: [
       {
         name: 'Richard Blum',
         relationship: 'Husband with extensive China business ties (deceased)',
         evidence: 'Public financial disclosures',
-        tier: 'verified'
-      }
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
@@ -6310,16 +6315,87 @@ export const PROFILES: PowerProfile[] = [
         source: 'San Francisco Chronicle',
         url: 'https://www.sfchronicle.com',
         tier: 'verified',
-        date: '2018'
+        date: '2018',
       },
       {
         claim: 'Led release of CIA torture report over fierce intelligence community opposition',
         source: 'Senate Intelligence Committee',
         url: 'https://www.intelligence.senate.gov',
         tier: 'verified',
-        date: '2014'
-      }
-    ]
+        date: '2014',
+      },
+      {
+        claim:
+          'Integrity docket: March 2013 claim of “no regulation” of commercial drones in the U.S. rated False (FAA rules then banned commercial UAS without special certificates).',
+        source: 'PolitiFact False; FAA UAS fact sheets',
+        url: 'https://www.politifact.com/factchecks/2013/mar/11/dianne-feinstein/regulation-commercial-drones/',
+        tier: 'verified',
+        date: '2013',
+      },
+      {
+        claim:
+          'Integrity docket: Aug. 2019 claim the U.S. has “more gun deaths by far” than any other country rated False (IHME/JAMA: Brazil led absolute firearm deaths 2015–2017).',
+        source: 'PolitiFact False; JAMA Global Mortality From Firearms',
+        url: 'https://www.politifact.com/factchecks/2019/aug/06/dianne-feinstein/fact-check-are-there-more-gun-deaths-far-america-a/',
+        tier: 'verified',
+        date: '2019',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'feinstein-no-regulation-commercial-drones-2013',
+        statement: '“We have no regulation of drones in the United States in their commercial use.”',
+        saidAt: 'March 7, 2013',
+        context:
+          'MSNBC Hardball interview after Sen. Rand Paul’s filibuster on drone policy; Feinstein raised privacy concerns about commercial drones over homes.',
+        whyFalse:
+          'PolitiFact rated False. FAA rules already governed unmanned aircraft systems: commercial operators needed experimental airworthiness certificates, and the FAA did not issue those certificates for ordinary commercial use — amounting to a ban, not a regulatory vacuum. Industry groups and FAA materials confirmed commercial-use regulation existed.',
+        correction:
+          'As of 2013 the FAA regulated commercial drones and effectively banned ordinary commercial UAS operations without special experimental certificates.',
+        statementSource: 'MSNBC Hardball / CQ Newsmaker transcript, March 7, 2013',
+        statementUrl: 'http://www.nbcnews.com/id/3036697/',
+        debunkSource: 'PolitiFact — False (March 11, 2013); FAA UAS fact sheets',
+        debunkUrl: 'https://www.politifact.com/factchecks/2013/mar/11/dianne-feinstein/regulation-commercial-drones/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'feinstein-more-gun-deaths-by-far-2019',
+        statement: 'There are “more gun deaths by far” in the United States than any other country in the world.',
+        saidAt: 'August 3, 2019',
+        context:
+          'X/Twitter post after mass shootings in Gilroy and El Paso (hours before Dayton), advocating “commonsense gun reform.”',
+        whyFalse:
+          'PolitiFact rated False. University of Washington IHME global firearm mortality data (JAMA 2018) showed Brazil had the most overall gun deaths (homicides + suicides + unintentional) in 2015–2017 — e.g. ~48,493 in 2017 vs ~40,229 in the U.S. The U.S. led firearm suicides but not absolute total gun deaths worldwide.',
+        correction:
+          'Brazil, not the United States, led the world in absolute firearm deaths in the mid-2010s IHME series; “more gun deaths by far” than any other country is false.',
+        statementSource: 'Sen. Dianne Feinstein (@SenFeinstein) tweet, Aug. 3, 2019',
+        statementUrl: 'https://twitter.com/SenFeinstein/status/1157777450706886656',
+        debunkSource: 'PolitiFact — False (Aug. 6, 2019); JAMA Global Mortality From Firearms 1990–2016',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/aug/06/dianne-feinstein/fact-check-are-there-more-gun-deaths-far-america-a/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
+    websites: [
+      {
+        label: 'Senate Website (archive)',
+        url: 'https://web.archive.org/web/20240227114148/https://www.feinstein.senate.gov/',
+      },
+      {
+        label: 'OpenSecrets Profile',
+        url: 'https://www.opensecrets.org/members-of-congress/dianne-feinstein/summary?cid=N00007364',
+      },
+      {
+        label: 'PolitiFact — Commercial drones (False)',
+        url: 'https://www.politifact.com/factchecks/2013/mar/11/dianne-feinstein/regulation-commercial-drones/',
+      },
+      {
+        label: 'PolitiFact — Gun deaths by far (False)',
+        url: 'https://www.politifact.com/factchecks/2019/aug/06/dianne-feinstein/fact-check-are-there-more-gun-deaths-far-america-a/',
+      },
+    ],
   },
   {
     id: 'kevin-mccarthy',
