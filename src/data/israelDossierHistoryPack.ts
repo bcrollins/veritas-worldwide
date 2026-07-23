@@ -1844,6 +1844,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'lebanon-pager-explosions-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Lebanon Pager/Walkie-Talkie Explosions (Sept 2024)',
+    date: 'September 17–18, 2024',
+    location: 'Lebanon (multiple sites)',
+    summary:
+      'Coordinated explosions of pagers and walkie-talkies used by Hezbollah networks killed dozens and wounded thousands across Lebanon, including civilians and children per multi-source hospital reporting. Widely attributed to Israeli intelligence operations; Israel did not formally claim responsibility in the immediate public record.',
+    evidence:
+      'Multi-source Lebanese health ministry casualty figures, international press field reporting, and subsequent investigative accounts establish mass simultaneous device detonations and mixed combatant/civilian harm. Attribution is multi-source intelligence consensus; formal claim remains limited in open official statements.',
+    sources: [
+      { label: 'Multi-outlet field reporting (AP/Reuters/BBC index)', url: 'https://apnews.com' },
+      { label: 'OHCHR / UN Lebanon materials', url: 'https://www.ohchr.org' },
+      { label: 'UNISPAL Lebanon period index', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Multi-outlet pager attack coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 37, injured: 3000 },
+  },
+
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -2551,6 +2579,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-us-aid-pier-2024', 'starvation-aid-blockade'],
     tags: ['aid', 'humanitarian', 'united-states'],
+  },
+
+  {
+    id: 'tl-lebanon-pager-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Lebanon Pager Explosions — Mass Device Detonations',
+    description: 'Coordinated pager/walkie explosions kill dozens, wound thousands; multi-source civilian harm floor.',
+    source: 'Multi-outlet / OHCHR',
+    sourceUrl: 'https://apnews.com',
+    tier: 'verified',
+    relatedIncidentIds: ['lebanon-pager-explosions-2024'],
+    tags: ['civilians', 'children', 'lebanon', 'hezbollah'],
   },
 
 ]

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:43:33.696Z",
+  "generatedAt": "2026-07-23T07:46:04.175Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 83,
-    "timelineEvents": 71,
+    "incidents": 84,
+    "timelineEvents": 72,
     "actors": 47,
     "moneyTrailNodes": 26,
-    "historicalWarCrimesPack": 69,
+    "historicalWarCrimesPack": 70,
     "legalCases": 17,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 23
+      "post-oct7": 24
     },
     "incidentsByTier": {
-      "verified": 81,
+      "verified": 82,
       "circumstantial": 2
     },
-    "childrenTagged": 71,
-    "civiliansTagged": 81,
+    "childrenTagged": 72,
+    "civiliansTagged": 82,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3153,6 +3153,25 @@
         "children",
         "starvation",
         "un-finding"
+      ]
+    },
+    {
+      "id": "tl-lebanon-pager-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Lebanon Pager Explosions — Mass Device Detonations",
+      "description": "Coordinated pager/walkie explosions kill dozens, wound thousands; multi-source civilian harm floor.",
+      "source": "Multi-outlet / OHCHR",
+      "sourceUrl": "https://apnews.com",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "lebanon-pager-explosions-2024"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "lebanon",
+        "hezbollah"
       ]
     },
     {
@@ -6640,6 +6659,49 @@
       "tier": "verified",
       "casualties": {
         "killed": 0
+      }
+    },
+    {
+      "id": "lebanon-pager-explosions-2024",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Lebanon Pager/Walkie-Talkie Explosions (Sept 2024)",
+      "date": "September 17–18, 2024",
+      "location": "Lebanon (multiple sites)",
+      "summary": "Coordinated explosions of pagers and walkie-talkies used by Hezbollah networks killed dozens and wounded thousands across Lebanon, including civilians and children per multi-source hospital reporting. Widely attributed to Israeli intelligence operations; Israel did not formally claim responsibility in the immediate public record.",
+      "evidence": "Multi-source Lebanese health ministry casualty figures, international press field reporting, and subsequent investigative accounts establish mass simultaneous device detonations and mixed combatant/civilian harm. Attribution is multi-source intelligence consensus; formal claim remains limited in open official statements.",
+      "sources": [
+        {
+          "label": "Multi-outlet field reporting (AP/Reuters/BBC index)",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "OHCHR / UN Lebanon materials",
+          "url": "https://www.ohchr.org"
+        },
+        {
+          "label": "UNISPAL Lebanon period index",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Multi-outlet pager attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 37,
+        "injured": 3000
       }
     },
     {
