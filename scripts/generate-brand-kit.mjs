@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.6.0'
+const KIT_VERSION = '2.7.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -441,7 +441,7 @@ All paths are relative to \`https://veritasworldwide.com\`.
 | **Podcast (Apple/Spotify)** | \`podcast-cover.svg\` / \`.png\` (1400×1400) | — | The Record cover art |
 | **X feed posts** | — | \`x-post-card.svg\` (1600×900) | Shareable documentary cards |
 | **Presentations** | — | \`09-templates/presentation-title.svg\` (1920×1080) | Deck title slide |
-| **Evidence tier cards** | — | \`evidence-tier-*.svg\` (1080×1080) | Verified / Documented / Contested / Unverified |
+| **Evidence tier cards** | — | \`evidence-tier-*.svg\` (1080×1080) | Product: Verified / Circumstantial / Disputed |
 | **Open Graph / default share** | — | \`/og-image.png\` + \`/brand-kit/05-og/\` | Site-wide default |
 
 ## Bios (copy/paste)
@@ -684,7 +684,11 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.6.0 — ${new Date().toISOString().slice(0, 10)}
+## 2.7.0 — ${new Date().toISOString().slice(0, 10)}
+- Align evidence-tier cards with product taxonomy: Verified, Circumstantial, Disputed
+- Keep legacy Documented / Contested / Unverified assets for deep-link stability
+
+## 2.6.0
 - Evidence-tier social cards (Verified, Documented, Contested, Unverified)
 - Presentation title slide (1920×1080) + podcast cover (1400×1400)
 - X post card (1600×900), newsletter/Substack header, source attribution stamp
@@ -1101,6 +1105,9 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('04-social/ig-carousel-2.svg', igCarouselSlideSvg(2, 'Primary sources', 'Public filings, transcripts, and attributable records'))
   writeSvg('04-social/ig-carousel-3.svg', igCarouselSlideSvg(3, 'Your conclusions', 'Methodology and sources stay open to inspect'))
   writeSvg('04-social/evidence-tier-verified.svg', evidenceTierCardSvg('Verified', '#1B7A3D', 'Confirmed in primary sources'))
+  writeSvg('04-social/evidence-tier-circumstantial.svg', evidenceTierCardSvg('Circumstantial', '#2B6CB0', 'Strong inference, open gaps'))
+  writeSvg('04-social/evidence-tier-disputed.svg', evidenceTierCardSvg('Disputed', '#B8860B', 'Competing accounts remain'))
+  // Legacy aliases (pre-product taxonomy) — keep for old deep links
   writeSvg('04-social/evidence-tier-documented.svg', evidenceTierCardSvg('Documented', '#2B6CB0', 'On the public record'))
   writeSvg('04-social/evidence-tier-contested.svg', evidenceTierCardSvg('Contested', '#B8860B', 'Competing accounts remain'))
   writeSvg('04-social/evidence-tier-unverified.svg', evidenceTierCardSvg('Unverified', '#8B1A1A', 'Not yet confirmed'))
@@ -1147,6 +1154,8 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/ig-carousel-2.svg', '04-social/ig-carousel-2.png', 1080],
     ['04-social/ig-carousel-3.svg', '04-social/ig-carousel-3.png', 1080],
     ['04-social/evidence-tier-verified.svg', '04-social/evidence-tier-verified.png', 1080],
+    ['04-social/evidence-tier-circumstantial.svg', '04-social/evidence-tier-circumstantial.png', 1080],
+    ['04-social/evidence-tier-disputed.svg', '04-social/evidence-tier-disputed.png', 1080],
     ['04-social/evidence-tier-documented.svg', '04-social/evidence-tier-documented.png', 1080],
     ['04-social/evidence-tier-contested.svg', '04-social/evidence-tier-contested.png', 1080],
     ['04-social/evidence-tier-unverified.svg', '04-social/evidence-tier-unverified.png', 1080],
@@ -1218,9 +1227,11 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'IG carousel 1–3', href: '/brand-kit/04-social/ig-carousel-1.svg' },
       { label: 'X post card (SVG)', href: '/brand-kit/04-social/x-post-card.svg' },
       { label: 'Evidence tier: Verified', href: '/brand-kit/04-social/evidence-tier-verified.svg' },
-      { label: 'Evidence tier: Documented', href: '/brand-kit/04-social/evidence-tier-documented.svg' },
-      { label: 'Evidence tier: Contested', href: '/brand-kit/04-social/evidence-tier-contested.svg' },
-      { label: 'Evidence tier: Unverified', href: '/brand-kit/04-social/evidence-tier-unverified.svg' },
+      { label: 'Evidence tier: Circumstantial', href: '/brand-kit/04-social/evidence-tier-circumstantial.svg' },
+      { label: 'Evidence tier: Disputed', href: '/brand-kit/04-social/evidence-tier-disputed.svg' },
+      { label: 'Evidence tier: Documented (legacy)', href: '/brand-kit/04-social/evidence-tier-documented.svg' },
+      { label: 'Evidence tier: Contested (legacy)', href: '/brand-kit/04-social/evidence-tier-contested.svg' },
+      { label: 'Evidence tier: Unverified (legacy)', href: '/brand-kit/04-social/evidence-tier-unverified.svg' },
       { label: 'Podcast cover (PNG)', href: '/brand-kit/04-social/podcast-cover.png' },
       { label: 'Newsletter header', href: '/brand-kit/04-social/newsletter-header.svg' },
       { label: 'Presentation title slide', href: '/brand-kit/09-templates/presentation-title.svg' },
@@ -1271,6 +1282,8 @@ Editorial and licensing: rights@veritasworldwide.com
       newsletter: { header: '/brand-kit/04-social/newsletter-header.svg' },
       evidenceTiers: {
         verified: '/brand-kit/04-social/evidence-tier-verified.svg',
+        circumstantial: '/brand-kit/04-social/evidence-tier-circumstantial.svg',
+        disputed: '/brand-kit/04-social/evidence-tier-disputed.svg',
         documented: '/brand-kit/04-social/evidence-tier-documented.svg',
         contested: '/brand-kit/04-social/evidence-tier-contested.svg',
         unverified: '/brand-kit/04-social/evidence-tier-unverified.svg',

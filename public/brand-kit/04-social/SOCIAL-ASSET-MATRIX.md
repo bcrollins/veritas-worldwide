@@ -17,7 +17,7 @@ All paths are relative to `https://veritasworldwide.com`.
 | **Podcast (Apple/Spotify)** | `podcast-cover.svg` / `.png` (1400×1400) | — | The Record cover art |
 | **X feed posts** | — | `x-post-card.svg` (1600×900) | Shareable documentary cards |
 | **Presentations** | — | `09-templates/presentation-title.svg` (1920×1080) | Deck title slide |
-| **Evidence tier cards** | — | `evidence-tier-*.svg` (1080×1080) | Verified / Documented / Contested / Unverified |
+| **Evidence tier cards** | — | `evidence-tier-*.svg` (1080×1080) | Product: Verified / Circumstantial / Disputed |
 | **Open Graph / default share** | — | `/og-image.png` + `/brand-kit/05-og/` | Site-wide default |
 
 ## Bios (copy/paste)

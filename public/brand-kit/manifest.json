@@ -1,7 +1,7 @@
 {
-  "version": "2.6.0",
+  "version": "2.7.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T07:14:20.257Z",
+  "generatedAt": "2026-07-23T07:18:23.504Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -119,15 +119,23 @@
       "href": "/brand-kit/04-social/evidence-tier-verified.svg"
     },
     {
-      "label": "Evidence tier: Documented",
+      "label": "Evidence tier: Circumstantial",
+      "href": "/brand-kit/04-social/evidence-tier-circumstantial.svg"
+    },
+    {
+      "label": "Evidence tier: Disputed",
+      "href": "/brand-kit/04-social/evidence-tier-disputed.svg"
+    },
+    {
+      "label": "Evidence tier: Documented (legacy)",
       "href": "/brand-kit/04-social/evidence-tier-documented.svg"
     },
     {
-      "label": "Evidence tier: Contested",
+      "label": "Evidence tier: Contested (legacy)",
       "href": "/brand-kit/04-social/evidence-tier-contested.svg"
     },
     {
-      "label": "Evidence tier: Unverified",
+      "label": "Evidence tier: Unverified (legacy)",
       "href": "/brand-kit/04-social/evidence-tier-unverified.svg"
     },
     {
@@ -244,11 +252,13 @@
     },
     "evidenceTiers": {
       "verified": "/brand-kit/04-social/evidence-tier-verified.svg",
+      "circumstantial": "/brand-kit/04-social/evidence-tier-circumstantial.svg",
+      "disputed": "/brand-kit/04-social/evidence-tier-disputed.svg",
       "documented": "/brand-kit/04-social/evidence-tier-documented.svg",
       "contested": "/brand-kit/04-social/evidence-tier-contested.svg",
       "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 1601108,
-  "zipSha256": "760addc9161e6a146d1c804f9b7d1599a515fbc2160601e74100ac21f4674510"
+  "zipBytes": 1661336,
+  "zipSha256": "b7a45f983f261bb3d1423a5677cf2f659cfa7dc12106d7536712347b0297e610"
 }

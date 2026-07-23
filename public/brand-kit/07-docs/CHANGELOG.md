@@ -1,6 +1,10 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.6.0 — 2026-07-23
+## 2.7.0 — 2026-07-23
+- Align evidence-tier cards with product taxonomy: Verified, Circumstantial, Disputed
+- Keep legacy Documented / Contested / Unverified assets for deep-link stability
+
+## 2.6.0
 - Evidence-tier social cards (Verified, Documented, Contested, Unverified)
 - Presentation title slide (1920×1080) + podcast cover (1400×1400)
 - X post card (1600×900), newsletter/Substack header, source attribution stamp

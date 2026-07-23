@@ -51,12 +51,11 @@ const ASSETS = [
   },
   {
     title: 'Evidence tier cards',
-    description: 'On-brand social cards for Verified, Documented, Contested, and Unverified labels.',
+    description: 'Product taxonomy cards: Verified, Circumstantial, Disputed — matching The Record labels.',
     links: [
       { href: '/brand-kit/04-social/evidence-tier-verified.svg', label: 'Verified' },
-      { href: '/brand-kit/04-social/evidence-tier-documented.svg', label: 'Documented' },
-      { href: '/brand-kit/04-social/evidence-tier-contested.svg', label: 'Contested' },
-      { href: '/brand-kit/04-social/evidence-tier-unverified.svg', label: 'Unverified' },
+      { href: '/brand-kit/04-social/evidence-tier-circumstantial.svg', label: 'Circumstantial' },
+      { href: '/brand-kit/04-social/evidence-tier-disputed.svg', label: 'Disputed' },
     ],
   },
   {
