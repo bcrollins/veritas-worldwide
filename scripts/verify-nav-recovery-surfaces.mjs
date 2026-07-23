@@ -863,4 +863,10 @@ assert(aipacHubsSrc.includes('aipac-related-hubs'), 'aipac-related-hubs testid')
 assert(aipacHubsSrc.includes('/methodology'), 'AIPAC Methodology dest unique')
 assert(aipacHubsSrc.includes('/topics'), 'AIPAC Topics dest unique')
 
+
+// Subscribe success RelatedHubs News destination
+const subOkHubs = read('src/pages/SubscribeSuccessPage.tsx')
+assert(subOkHubs.includes('subscribe-success-related-hubs'), 'subscribe-success-related-hubs testid')
+assert(subOkHubs.includes('/news'), 'Subscribe success News dest')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
