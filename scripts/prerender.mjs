@@ -2996,7 +2996,15 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
             name: 'What evidence tiers does Veritas use?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Claims are classified as verified (primary-document backed), circumstantial (indirect but documented), or disputed (contested in the record). The methodology page explains the full taxonomy.',
+              text: 'Volume I archive chapters use Verified, Circumstantial, and Disputed. The Record of Jesus Christ uses a seven-tier scholarly scale (Verified through Literary/Theological). The methodology page maps both systems.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where is the machine-readable Record of Jesus Christ claim corpus?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'At /record-of-jesus-christ/corpus.json (180+ tier-labeled claims), with on-page JSON/CSV export and a portable PDF index. Publisher: Veritas Worldwide only.',
             },
           },
         ],
