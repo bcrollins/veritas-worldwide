@@ -2897,6 +2897,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-rubble-uxo-waste-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Rubble, Debris & Unexploded Ordnance Civilian Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (debris/UXO cohort)',
+    location: 'Gaza Strip urban rubble fields',
+    summary:
+      'UNEP, UNDP, and multi-source humanitarian reporting document tens of millions of tonnes of war debris, collapsed buildings, and widespread unexploded ordnance (UXO) risk that continues to kill and maim civilians — especially children — during returns and rescue. Pattern card for post-strike environmental/UXO civilian harm distinct from housing-stock destruction tallies.',
+    evidence:
+      'UNEP debris assessments, multi-source mine-action/UXO warnings, and OCHA civilian casualty notes establish multi-source debris volume and UXO risk. Exact tonnage and UXO casualty shares evolve; multi-source system-scale debris/UXO civilian hazard is the claim.',
+    sources: [
+      { label: 'UNEP debris / environmental assessments', url: 'https://www.unep.org' },
+      { label: 'UNDP / multi-source reconstruction & debris materials', url: 'https://www.undp.org' },
+      { label: 'OCHA protection / civilian hazard updates', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNEP public materials', url: 'https://www.unep.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4132,6 +4159,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['water', 'desalination', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-rubble-uxo-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Rubble & UXO Civilian Risk Pattern',
+    description: 'UNEP/OCHA multi-source documentation of massive war debris and unexploded ordnance hazards for returning civilians and children.',
+    source: 'UNEP / UNDP / OCHA',
+    sourceUrl: 'https://www.unep.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-rubble-uxo-waste-pattern-2023-2025',
+      'gaza-housing-destruction-pattern-2023-2025',
+      'gaza-civil-defense-killed-pattern-2023-2025',
+    ],
+    tags: ['uxo', 'debris', 'children', 'civilians', 'gaza'],
+  },
+
 
 
 
