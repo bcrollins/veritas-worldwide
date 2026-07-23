@@ -6,11 +6,11 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:27:46.126Z",
-  "claimCount": 434,
+  "generatedAt": "2026-07-23T10:28:18.298Z",
+  "claimCount": 435,
   "tierHistogram": {
-    "well_attested": 173,
-    "verified": 153,
+    "well_attested": 175,
+    "verified": 152,
     "contested": 38,
     "interpretive": 44,
     "speculative": 2,
@@ -881,10 +881,10 @@
     },
     {
       "id": "cosmo-neutrino-mass-sum",
-      "claim": "Cosmology and oscillation experiments jointly constrain the sum of neutrino masses; oscillation proves non-zero mass while cosmological bounds limit the absolute scale.",
-      "tier": "verified",
+      "claim": "Cosmological data constrain the sum of neutrino masses from above, complementing oscillation experiments that measure mass-squared differences.",
+      "tier": "well_attested",
       "proofVsConcept": "science_model",
-      "file": "src/data/recordOfJesusChristWave37.ts"
+      "file": "src/data/recordOfJesusChristWave23.ts"
     },
     {
       "id": "cosmo-nucleosynthesis-li",
@@ -920,6 +920,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave15.ts"
+    },
+    {
+      "id": "cosmo-s8-structure-tension",
+      "claim": "Some weak-lensing surveys infer a lower structure-growth amplitude (S8) than primary CMB ΛCDM fits — an active “S8 tension” research topic within expansion cosmology.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave37.ts"
     },
     {
       "id": "cosmo-sound-horizon",

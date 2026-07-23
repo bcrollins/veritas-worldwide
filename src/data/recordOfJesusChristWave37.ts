@@ -7,12 +7,12 @@ interface RocSource { id: string; citation: string; url?: string; kind: 'primary
 interface RocClaim { id: string; claim: string; detail: string; tier: ScholarlyEvidenceTier; proofVsConcept: 'proof_grade_data' | 'attested_report' | 'reconstruction' | 'debate' | 'tradition' | 'science_model'; sources: RocSource[]; confidenceNote?: string }
 export const ROC_WAVE37_CLAIMS: Record<string, RocClaim[]> = {
   cosmology: [{
-    id: 'cosmo-neutrino-mass-sum',
-    claim: 'Cosmology and oscillation experiments jointly constrain the sum of neutrino masses; oscillation proves non-zero mass while cosmological bounds limit the absolute scale.',
-    detail: 'Cross-probe science_model; laboratory β-decay and cosmological upper limits are complementary.',
-    tier: 'verified',
+    id: 'cosmo-s8-structure-tension',
+    claim: 'Some weak-lensing surveys infer a lower structure-growth amplitude (S8) than primary CMB ΛCDM fits — an active “S8 tension” research topic within expansion cosmology.',
+    detail: 'Parameter-level debate; not a rejection of expansion or dark matter frameworks. Complements cosmic-shear survey cards.',
+    tier: 'well_attested',
     proofVsConcept: 'science_model',
-    sources: [{ id: 'planck-sum-mnu', citation: 'Planck Collaboration neutrino mass sum constraints; Particle Data Group oscillation reviews.', kind: 'scientific' }],
+    sources: [{ id: 's8-tension', citation: 'KiDS/DES S8 results vs Planck ΛCDM comparisons; review literature on S8 tension.', kind: 'scientific' }],
   }],
   'ancient-near-east': [{
     id: 'ane-babylonian-chronicle-597',
