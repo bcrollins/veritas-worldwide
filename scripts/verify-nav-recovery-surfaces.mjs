@@ -1202,4 +1202,20 @@ assert(homeRelatedS7d.includes('RelatedHubs'), 'Home mounts RelatedHubs')
 assert(homeRelatedS7d.includes('excludeTo="/"') || homeRelatedS7d.includes("excludeTo='/'"), 'Home excludes Record self')
 
 
+
+// Search dual RelatedHubs mounts (idle + empty)
+const searchDualMounts = read('src/pages/SearchPage.tsx')
+const searchRelatedMounts = (searchDualMounts.match(/<RelatedHubs\b/g) || []).length
+assert(searchRelatedMounts >= 2, `Search RelatedHubs mounts ${searchRelatedMounts} < 2`)
+
+// Bookmarks dual RelatedHubs mounts (header + empty)
+const bookmarksDualMounts = read('src/pages/BookmarksPage.tsx')
+const bmRelatedMounts = (bookmarksDualMounts.match(/<RelatedHubs\b/g) || []).length
+assert(bmRelatedMounts >= 2, `Bookmarks RelatedHubs mounts ${bmRelatedMounts} < 2`)
+
+// Home related hubs coexists with home-hub-cta-row
+const homeDual = read('src/pages/HomePage.tsx')
+assert(homeDual.includes('home-hub-cta-row') && homeDual.includes('home-related-hubs'), 'Home CTA row + RelatedHubs')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
