@@ -27,3 +27,9 @@ Entity-only public. package.json author Veritas Worldwide. Residual operator OPS
 
 ## Coordinate
 Do not stage peer Israel densify WIP. Ship entity-authored intervals only.
+
+## Nav Perfection (2026-07-23) — SHIPPED
+- Sprints 1–5 core + Account/Research recovery web on main
+- Live: mobile-tab-bar, DossierHubSpokes, ResearchHubChips, home-hub-cta-row, search-idle/empty hubs, server soft-404 Primary hubs
+- Pure: verify:nav-ia expanded; 45 pure suites green
+- Peer densify: unthrashed (leave unstaged WIP)
