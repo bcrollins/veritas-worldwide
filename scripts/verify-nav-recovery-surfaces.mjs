@@ -831,4 +831,10 @@ assert(homeCtaSrc.includes('to="/read"') || homeCtaSrc.includes("to: '/read'"), 
 assert(homeCtaSrc.includes('/israel-dossier'), 'home CTA Dossiers dest')
 assert(homeCtaSrc.includes('/search'), 'home CTA Search dest')
 
+
+// Chapter RelatedHubs Sources destination
+const chapterHubsSrc = read('src/pages/ChapterPage.tsx')
+assert(chapterHubsSrc.includes('chapter-related-hubs'), 'chapter-related-hubs testid')
+assert(chapterHubsSrc.includes("to: '/sources'") || chapterHubsSrc.includes('to: "/sources"') || chapterHubsSrc.includes('/sources'), 'Chapter Sources dest unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
