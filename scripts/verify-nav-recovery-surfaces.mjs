@@ -671,9 +671,7 @@ assert(stickySrc.includes('veritas-cookie-consent') && stickySrc.includes('verit
 assert(stickySrc.includes('cookiePending'), 'membership cookiePending gate')
 
 
-// Profiles research pack banner destinations
-const profilesIdx = read('src/pages/ProfilesIndexPage.tsx')
-assert(profilesIdx.includes('profiles-research-pack-banner') || profilesIdx.includes('research-pack'), 'Profiles pack banner')
+// Profiles integrity/OSINT scent (profilesIdx declared above)
 assert(profilesIdx.includes('/comprehensive-profile') || profilesIdx.includes('OSINT') || profilesIdx.includes('Integrity'), 'Profiles integrity/OSINT scent')
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
