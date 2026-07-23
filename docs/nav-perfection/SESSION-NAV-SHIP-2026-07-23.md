@@ -174,3 +174,9 @@ About/A11y/Timeline/Topics destinations, z-order stacking, safe-area chrome.
 
 **verify:pure** 46 suites green throughout. Peer densify unthrashed.
 **Live:** RelatedHubs + mobile-tab-bar + DossierHubSpokes + ResearchHubChips + soft-404 5 hubs continuously green under densify tip advance.
+
+## Dossier family primary recovery (Sprint 6c)
+- Deep State, Forum, Briefing, Israel dossier: `RelatedHubs` beside `DossierHubSpokes`
+- Live: `deep-state-related-hubs`, `forum-related-hubs`, `briefing-related-hubs` observed in production chunks
+- Pure recovery suite **95 surface needles**; RelatedHubs mount breadth ≥20
+- Forum beta remains device-local (pure-locked)
