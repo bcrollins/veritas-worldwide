@@ -2102,4 +2102,9 @@ assert(nfAriaUlt.includes('Also useful destinations') || nfAriaUlt.includes('Als
 assert(nfAriaUlt.includes('emphasizeTo="/"') || nfAriaUlt.includes("emphasizeTo='/'"), 'NotFound emphasize final')
 
 
+
+// surfaces every pair src path ultimate final end
+assert(surfaces.every(([rel, needle]) => typeof rel === 'string' && rel.startsWith('src/') && typeof needle === 'string' && needle.length > 0), 'surfaces well-formed ultimate final end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
