@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:07:45.650Z",
+  "generatedAt": "2026-07-23T10:12:29.878Z",
   "count": 96,
   "profiles": [
     {
@@ -951,9 +951,9 @@
         "Ceasefire Advocate",
         "UDP Target"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "aoc",
@@ -1253,9 +1253,9 @@
         "Twitter/X Owner",
         "Tech Entrepreneur"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "peter-thiel",
@@ -1653,9 +1653,9 @@
         "Pardoned",
         "QAnon"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 25,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "roger-stone",
@@ -1693,9 +1693,9 @@
         "Political Activist",
         "Controversial"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 25,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "karl-rove",

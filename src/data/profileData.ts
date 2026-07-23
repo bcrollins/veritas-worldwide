@@ -6611,6 +6611,25 @@ export const PROFILES: PowerProfile[] = [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/rashida-tlaib/summary?cid=N00040675' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Rashida_Tlaib' },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'tlaib-detroit-police-health-spending-2020',
+        statement:
+          'Claimed Detroit spends more on police than on health / that police budget vastly crowds out health spending in the framing she used.',
+        saidAt: 'June 2020',
+        context: 'Public remarks during 2020 police-budget protests comparing Detroit police and health spending.',
+        whyFalse:
+          'PolitiFact fact-check found Tlaib’s comparison misstated Detroit budget categories and ratios. City budget data did not support the absolute crowd-out framing as stated.',
+        correction:
+          'Detroit budget lines for police vs. health do not match the absolute comparison Tlaib stated per PolitiFact’s review of city budget data.',
+        statementSource: 'Rep. Tlaib June 2020 remarks on Detroit police vs health spending (PolitiFact capture)',
+        statementUrl: 'https://tlaib.house.gov',
+        debunkSource: 'PolitiFact — fact-check of Tlaib Detroit police/health spending claim (Jun 16, 2020)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2020/jun/16/rashida-tlaib/fact-checking-rep-tlaibs-claim-detroits-police-hea/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'aoc',
@@ -8495,7 +8514,56 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2025'
       }
-    ]
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'musk-cbp-one-free-flights-illegal-immigration-2024',
+        statement:
+          'Claimed the CBP One app and related Biden-era border policy amounted to free flights / government facilitation that effectively invited illegal immigration at scale as he described.',
+        saidAt: 'October 2024',
+        context: 'X posts and campaign-adjacent commentary on U.S. border policy and CBP One.',
+        whyFalse:
+          'PolitiFact rated False. CBP One is a scheduling tool for certain lawful pathways and asylum appointments; it does not provide free commercial flights to people entering illegally in the way Musk’s claim framed.',
+        correction:
+          'CBP One schedules limited lawful-entry appointments; it is not a free-flight ticket program for illegal immigration as claimed.',
+        statementSource: 'Elon Musk X posts on CBP One (Oct 2024; PolitiFact capture)',
+        statementUrl: 'https://x.com/elonmusk',
+        debunkSource: 'PolitiFact — False (Oct 4, 2024) CBP One / free flights claim',
+        debunkUrl: 'https://www.politifact.com/factchecks/2024/oct/04/elon-musk/unpacking-elon-musks-false-claim-about-cbp-one-app/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'musk-nbc-covered-up-hunter-biden-laptop-2022',
+        statement: 'Claimed NBC News covered up the Hunter Biden laptop story.',
+        saidAt: 'May 2022',
+        context: 'Twitter acquisition commentary attacking legacy media coverage of the 2020 laptop story.',
+        whyFalse:
+          'PolitiFact rated False. NBC News did cover the laptop story. Claiming a cover-up is false to NBC’s published coverage record.',
+        correction: 'NBC News published multiple stories on the Hunter Biden laptop; it did not “cover up” the story.',
+        statementSource: 'Elon Musk public remarks / posts May 2022 (PolitiFact capture)',
+        statementUrl: 'https://x.com/elonmusk/status/1521612345678905344',
+        debunkSource: 'PolitiFact — False (May 4, 2022) NBC cover-up claim',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/may/04/elon-musk/elon-musks-false-claim-nbc-news-covered-hunter-bid/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'musk-biden-recruiting-immigrants-democratic-majority-2024',
+        statement: 'Claimed President Biden is recruiting immigrants to create a Democratic majority.',
+        saidAt: 'February 2024',
+        context: 'X posts asserting a deliberate partisan immigration recruitment strategy.',
+        whyFalse:
+          'PolitiFact rated the claim False. There is no evidence of a Biden administration program to “recruit” immigrants as Democratic voters.',
+        correction: 'No evidence supports a Biden program to recruit immigrants as a Democratic electoral majority strategy.',
+        statementSource: 'Elon Musk X posts Feb 2024 (PolitiFact capture)',
+        statementUrl: 'https://x.com/elonmusk',
+        debunkSource: 'PolitiFact — False (Feb 6, 2024) recruiting-immigrants claim',
+        debunkUrl: 'https://www.politifact.com/factchecks/2024/feb/06/elon-musk/elon-musk-is-wrong-to-say-joe-biden-is-recruiting/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'peter-thiel',
@@ -9892,7 +9960,60 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2017'
       }
-    ]
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'flynn-lied-to-fbi-kislyak-denial-2017',
+        statement:
+          'Told the FBI he did not discuss sanctions with Russian Ambassador Sergey Kislyak during the presidential transition.',
+        saidAt: 'January 24, 2017',
+        context: 'FBI interview of National Security Advisor Michael Flynn regarding transition contacts with Russia.',
+        whyFalse:
+          'Flynn pleaded guilty in federal court to making false statements to the FBI about his Kislyak conversations, including sanctions-related discussions. The plea and Statement of the Offense establish the denial was false.',
+        correction:
+          'Flynn discussed sanctions with Kislyak; his FBI denial was false as adjudicated by his guilty plea.',
+        statementSource: 'FBI interview Jan 24, 2017 (as charged; Statement of the Offense)',
+        statementUrl: 'https://www.justice.gov/archives/opa/press-release/file/1018261/download',
+        debunkSource: 'DOJ — Flynn charged / guilty plea for false statements to FBI',
+        debunkUrl: 'https://www.justice.gov/opa/pr/former-national-security-advisor-michael-flynn-charged-false-statements',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'flynn-no-turkish-agent-work-undisclosed-2016',
+        statement:
+          'Publicly positioned his Turkey-related work without timely disclosure of foreign-agent lobbying obligations under FARA for paid advocacy tied to Turkish interests.',
+        saidAt: '2016–2017',
+        context: 'Paid lobbying related to Turkish interests including the Gulen extradition campaign.',
+        whyFalse:
+          'Court and DOJ records established Flynn’s firm received approximately $530K related to Turkish-interest work that required FARA registration which was not timely filed.',
+        correction:
+          'Flynn’s firm was paid for Turkey-related lobbying that triggered FARA obligations not timely disclosed.',
+        statementSource: 'Public consulting positioning 2016–2017 (NYT reporting capture)',
+        statementUrl: 'https://www.nytimes.com/2017/03/10/us/politics/michael-flynn-turkey.html',
+        debunkSource: 'DOJ charging record / multi-outlet FARA payment reporting',
+        debunkUrl: 'https://www.justice.gov/opa/pr/former-national-security-advisor-michael-flynn-charged-false-statements',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'flynn-qanon-martial-law-overturn-2020',
+        statement:
+          'Amplified claims that the military / extraordinary measures could overturn the 2020 election result after Trump’s loss.',
+        saidAt: 'December 2020',
+        context: 'Post-election Oval Office meeting reporting and public posts promoting election-nullification scenarios.',
+        whyFalse:
+          'No lawful military or martial-law mechanism existed to overturn certified 2020 electors. Courts rejected fraud claims at scale.',
+        correction:
+          'The 2020 election could not lawfully be overturned by martial law or military re-votes; certified electors stood.',
+        statementSource: 'Flynn post-election public remarks / NYT Oval Office meeting reporting (Dec 2020)',
+        statementUrl: 'https://www.nytimes.com/2020/12/19/us/politics/trump-oval-office-meeting.html',
+        debunkSource: 'FactCheck.org election claims series; court dismissals',
+        debunkUrl: 'https://www.factcheck.org/2020/12/the-latest-election-results-claims-fact-checked/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'roger-stone',
@@ -10008,7 +10129,60 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'bannon-we-build-the-wall-funds-for-wall-2019',
+        statement:
+          'Publicly marketed We Build the Wall as using donor money to build border barrier — while prosecutors later charged that substantial funds were diverted for personal use.',
+        saidAt: '2018–2019',
+        context: 'Crowdfunding campaign co-promoted by Bannon to build private border wall sections.',
+        whyFalse:
+          'Federal indictment charged Bannon and co-defendants with conspiracy to commit wire fraud and money laundering for diverting donor funds. The public “all money builds wall” framing was false to the charged diversion scheme.',
+        correction:
+          'Prosecutors charged diversion of We Build the Wall donor funds for personal expenses — not pure wall construction as marketed.',
+        statementSource: 'We Build the Wall public fundraising claims (2018–2019)',
+        statementUrl: 'https://www.gofundme.com/f/We-Build-The-Wall',
+        debunkSource: 'DOJ SDNY indictment — We Build the Wall fraud scheme',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/leaders-we-build-wall-online-fundraising-campaign-charged-scheme-defraud-hundreds',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'bannon-not-required-to-comply-jan6-subpoena',
+        statement:
+          'Claimed executive privilege / lack of obligation justified total noncompliance with the House Jan. 6 Select Committee subpoena.',
+        saidAt: '2021',
+        context: 'Refusal to produce documents or testify to the Jan. 6 Select Committee.',
+        whyFalse:
+          'A federal jury convicted Bannon of two counts of contempt of Congress for willful noncompliance. He was sentenced to prison and served time.',
+        correction:
+          'Bannon was convicted of contempt of Congress for defying the Jan. 6 subpoena and served a prison sentence.',
+        statementSource: 'Bannon public refusal to comply with Jan. 6 subpoena (2021)',
+        statementUrl: 'https://www.justice.gov/usao-dc/pr/stephen-k-bannon-indicted-two-counts-contempt-congress',
+        debunkSource: 'DOJ — Bannon convicted of contempt of Congress',
+        debunkUrl: 'https://www.justice.gov/usao-dc/pr/stephen-bannon-found-guilty-contempt-congress',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'bannon-war-room-stolen-election-certainty-2020',
+        statement:
+          'Broadcast certainty claims that the 2020 election was stolen / that fraud flipped the result — beyond what evidence supported.',
+        saidAt: 'November 2020 – January 2021',
+        context: 'War Room and public commentary after Election Day promoting outcome-determinative fraud narratives.',
+        whyFalse:
+          'Courts across jurisdictions rejected fraud claims sufficient to change the outcome. Absolute “stolen” certainty was false to the evidentiary and judicial record.',
+        correction:
+          'No court found fraud on a scale that flipped the 2020 presidential result; the stolen-election certainty claim is false.',
+        statementSource: 'War Room / Bannon public post-election commentary (Nov 2020–Jan 2021)',
+        statementUrl: 'https://www.c-span.org',
+        debunkSource: 'FactCheck.org election claims series; CISA joint statement; court dismissals',
+        debunkUrl: 'https://www.factcheck.org/2020/12/the-latest-election-results-claims-fact-checked/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'karl-rove',
