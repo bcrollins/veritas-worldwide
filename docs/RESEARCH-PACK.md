@@ -48,3 +48,13 @@ Runs automatically in `postbuild` after corpus exports. Writes **both** `public/
 npm run verify:research-pack          # pure
 npm run verify:live-research-pack     # live ZIP + manifest
 ```
+
+## Health probe
+
+`/api/health` reports:
+
+- `checks.researchPackZip` — `dist/research-pack.zip` present
+- `checks.researchPackManifest` — `dist/research-pack-manifest.json` present
+
+Missing pack files degrade health to 503 (publish-critical). Analytics Release Health surfaces the same checks for operators.
+
