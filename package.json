@@ -70,7 +70,8 @@
     "verify:pure": "node scripts/verify-pure.mjs",
     "verify:brand-kit": "node scripts/verify-brand-kit.mjs",
     "verify:record-of-jesus-christ": "node scripts/verify-record-of-jesus-christ.mjs",
-    "verify:roc-source-urls": "node scripts/verify-roc-source-urls.mjs"
+    "verify:roc-source-urls": "node scripts/verify-roc-source-urls.mjs",
+    "verify:live-anonymity": "node scripts/verify-live-anonymity.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
