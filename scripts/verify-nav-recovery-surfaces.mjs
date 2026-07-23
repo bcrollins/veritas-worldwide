@@ -1134,4 +1134,28 @@ for (const dest of ['/read', '/israel-dossier', '/profiles', '/content-pack']) {
 assert(searchS7b.includes("to: '/'") || searchS7b.includes('to: "/"') || searchS7b.includes("label: 'The Record'"), 'Search recovery Record hub')
 
 
+
+// RelatedHubs mount breadth floor (public pages)
+const relatedMountPages = [
+  'AboutPage','AccessibilityPage','AipacPage','AnalyticsPage','ArticlePage','BernieShowPage',
+  'BookmarksPage','ChapterPage','ComprehensiveProfilePage','ComprehensiveProfileSuccessPage',
+  'DeepStatePage','ForumPage','IsraelDossierBriefingPage','IsraelDossierPage','MediaKitPage',
+  'MembershipPage','NewsPage','PrivacyPage','ProfilePage','ProfilesIndexPage','ReadTheBookPage',
+  'SearchPage','SubscribeSuccessPage','SupportSuccessPage','TermsPage','TimelinePage','TopicPage',
+  'TopicsIndexPage',
+]
+let relatedMountCount = 0
+for (const name of relatedMountPages) {
+  const src = read(`src/pages/${name}.tsx`)
+  if (src.includes('RelatedHubs') || src.includes('PRIMARY_RELATED')) relatedMountCount++
+}
+assert(relatedMountCount >= 28, `RelatedHubs mount breadth ${relatedMountCount} < 28`)
+
+// Bookmarks empty platformized onto RelatedHubs
+const bookmarksEmptyS7c = read('src/pages/BookmarksPage.tsx')
+assert(bookmarksEmptyS7c.includes('bookmarks-empty-hubs'), 'bookmarks-empty-hubs retained')
+assert(bookmarksEmptyS7c.includes('BOOKMARKS_HUBS'), 'BOOKMARKS_HUBS shared empty+header')
+assert(bookmarksEmptyS7c.includes('testId="bookmarks-empty-hubs"'), 'bookmarks empty uses RelatedHubs testId')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
