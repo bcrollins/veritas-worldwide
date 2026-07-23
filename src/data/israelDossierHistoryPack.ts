@@ -6813,6 +6813,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-tetanus-wound-infection-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Tetanus & Wound-Infection Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (wound-infection cohort)',
+    location: 'Gaza Strip field medical points and rubble environments',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document elevated tetanus and severe wound-infection risk for injured children under collapsed vaccination, antibiotic shortages, and rubble exposure — a pediatric infection-risk pattern distinct from UXO casualties and pharmacy-shortage cards.',
+    evidence:
+      'WHO trauma/infection materials, UNICEF immunization notes, and multi-outlet coverage establish multi-source tetanus and wound-infection risk elevation. Exact case counts evolve; multi-source wartime pediatric wound-infection risk is the claim.',
+    sources: [
+      { label: 'WHO trauma infection materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza wound infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-sleep-deprivation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Sleep Deprivation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sleep-deprivation cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document systematic sleep deprivation of Israeli civilian hostages — constant noise, interruptions, and stress conditions constituting psychological ill-treatment. Pattern card distinct from solitary and mock-execution cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source sleep-deprivation conditions. Exact durations vary; multi-source sleep deprivation of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-mosque-vandalism-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Mosque & Cemetery Vandalism Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sacred-site vandalism cohort)',
+    location: 'West Bank Palestinian mosques, cemeteries, and sacred sites',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler vandalism of mosques, cemeteries, and sacred sites after October 7 — a cultural and religious dignity attack on civilian communities including children. Pattern card distinct from price-tag arson and home-invasion cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source sacred-site vandalism. Exact incident counts evolve; multi-source wartime settler sacred-site vandalism is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet mosque vandalism coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -10513,6 +10594,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['vehicles', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-tetanus-risk-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Tetanus & Wound-Infection Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated tetanus and wound-infection risk for injured children.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-tetanus-wound-infection-risk-pattern-2023-2025',
+      'gaza-uxo-child-casualties-pattern-2023-2025',
+      'gaza-pharmacy-medicine-shortage-pattern-2023-2025',
+    ],
+    tags: ['tetanus', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-sleep-deprivation-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Sleep Deprivation Pattern',
+    description: 'Multi-source documentation of systematic sleep deprivation of civilian hostages in captivity.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-sleep-deprivation-pattern-2023-2025',
+      'israel-hostages-solitary-confinement-pattern-2023-2025',
+      'israel-hostages-physical-abuse-captivity-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-mosque-vandalism-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Mosque Vandalism Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler vandalism of mosques and cemeteries after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-mosque-vandalism-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+      'gaza-mosques-churches-destruction-pattern-2023-2025',
+    ],
+    tags: ['mosques', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
