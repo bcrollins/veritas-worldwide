@@ -180,3 +180,16 @@ About/A11y/Timeline/Topics destinations, z-order stacking, safe-area chrome.
 - Live: `deep-state-related-hubs`, `forum-related-hubs`, `briefing-related-hubs` observed in production chunks
 - Pure recovery suite **95 surface needles**; RelatedHubs mount breadth ≥20
 - Forum beta remains device-local (pure-locked)
+
+## Live matrix 100% proof (session continuation)
+Observed green on production bundles (misses=0):
+- CORE: RelatedHubs · mobile-tab-bar · DossierHubSpokes · ResearchHubChips
+- Home: home-hub-cta-row · home-news-chip
+- Search: search-idle-hubs · search-empty-hubs
+- Sticky: sticky-membership-bar
+- Soft-404 SPA: not-found-hub-chips
+- Dossier family: deep-state / forum / briefing / israel-dossier related hubs
+- Detail: chapter / news / profile related hubs
+- Server soft-404: server-soft-404 + Primary hubs + 5 hrefs
+- Health: all checks true · failed=[]
+- pure: 46 suites · recovery 95 surface needles
