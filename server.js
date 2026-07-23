@@ -1717,11 +1717,14 @@ const SLUG_CONTENT_PATH =
 
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
-  if (req.path.startsWith('/api/') || path.extname(req.path)) return next()
-  if (!SLUG_CONTENT_PATH.test(req.path)) return next()
-  const lower = req.path.toLowerCase()
+  // Use raw pathname from req.url — Express may already strip trailing slash from req.path.
+  const rawPath = (req.url || req.path || '/').split('?')[0] || '/'
+  if (rawPath.startsWith('/api/') || path.extname(rawPath)) return next()
+  if (!SLUG_CONTENT_PATH.test(rawPath) && !SLUG_CONTENT_PATH.test(req.path)) return next()
+  const source = SLUG_CONTENT_PATH.test(rawPath) ? rawPath : req.path
+  const lower = source.toLowerCase()
   const withoutSlash = lower.endsWith('/') ? lower.slice(0, -1) : lower
-  if (req.path === withoutSlash) return next()
+  if (source === withoutSlash) return next()
   const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
   return res.redirect(301, `${withoutSlash}${query}`)
 })
