@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:13:27.686Z",
+  "generatedAt": "2026-07-23T08:14:33.918Z",
   "count": 96,
   "profiles": [
     {
@@ -136,7 +136,7 @@
       "name": "Nancy Pelosi",
       "title": "Former Speaker of the House (D-CA); House Speaker Emerita",
       "category": "politician",
-      "summary": "Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Integrity docket: dual-cited PolitiFact False on claim she was not told enhanced interrogation methods were used (CIA briefing timeline). Primary: OpenSecrets, House leadership history, CRS RL33222, PolitiFact, CIA records.",
+      "summary": "Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — not told EITs were used (CIA briefing timeline) and “fewer people came in under Biden than Trump” (CBP encounters contradict). Primary: OpenSecrets, House leadership history, CRS RL33222, PolitiFact, CIA records, CBP.",
       "photo": "/profiles/nancy-pelosi.jpg",
       "url": "https://veritasworldwide.com/profile/nancy-pelosi",
       "bioguideId": "P000197",
@@ -150,8 +150,8 @@
         "Iron Dome",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {

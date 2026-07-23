@@ -429,11 +429,17 @@ for (const f of (bookerP.documentedFalsehoods || []).filter((x) => x.tier === 'v
 
 // Nancy Pelosi integrity gate
 const pelosi = scores['nancy-pelosi'];
-if (!pelosi || pelosi.n < 1) throw new Error('nancy-pelosi needs ≥1 verified falsehood, got ' + (pelosi?.n ?? 0));
-if (pelosi.score > 90) throw new Error('nancy-pelosi score expected ≤90, got ' + pelosi.score);
+if (!pelosi || pelosi.n < 2) throw new Error('nancy-pelosi needs ≥2 verified falsehoods, got ' + (pelosi?.n ?? 0));
+if (pelosi.score > 75) throw new Error('nancy-pelosi score expected ≤75, got ' + pelosi.score);
 const pelosiP = getProfileBySlug('nancy-pelosi');
 if (!(pelosiP.documentedFalsehoods || []).some((f) => f.id === 'pelosi-not-told-waterboarding-eits-2009')) {
   throw new Error('nancy-pelosi missing EIT briefing docket id');
+}
+if (!(pelosiP.documentedFalsehoods || []).some((f) => f.id === 'pelosi-fewer-came-under-biden-than-trump-2024')) {
+  throw new Error('nancy-pelosi missing Biden/Trump migration docket id');
+}
+for (const f of (pelosiP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('nancy-pelosi dual-cite collision: ' + f.id);
 }
 for (const f of (pelosiP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('pelosi dual-cite collision: ' + f.id);

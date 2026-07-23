@@ -926,7 +926,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'CA',
     photoUrl: getProfilePhoto('nancy-pelosi'),
     summary:
-      'Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Integrity docket: dual-cited PolitiFact False on claim she was not told enhanced interrogation methods were used (CIA briefing timeline). Primary: OpenSecrets, House leadership history, CRS RL33222, PolitiFact, CIA records.',
+      'Longest-serving woman Speaker of the House and institutional Democratic steward of bipartisan Israel security aid. As Speaker, controlled House floor for FMF, Iron Dome, and related packages. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — not told EITs were used (CIA briefing timeline) and “fewer people came in under Biden than Trump” (CBP encounters contradict). Primary: OpenSecrets, House leadership history, CRS RL33222, PolitiFact, CIA records, CBP.',
     tags: [
       'Former Speaker',
       'Pro-Israel',
@@ -1013,6 +1013,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2009',
       },
+      {
+        claim:
+          'Integrity docket: Nov 2024 claim “fewer people came in under President Biden than came under Donald Trump” rated False (CBP encounters ~7.2M Biden vs ~1.8M Trump first term).',
+        source: 'PolitiFact False; CBP nationwide encounters; NYT Interview',
+        url: 'https://www.politifact.com/factchecks/2024/nov/15/nancy-pelosi/nancy-pelosis-wrong-comparison-about-illegal-immig/',
+        tier: 'verified',
+        date: '2024',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -1033,6 +1041,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'pelosi-fewer-came-under-biden-than-trump-2024',
+        statement: '“Fewer people came in under President Biden than came under Donald Trump.”',
+        saidAt: 'November 9, 2024',
+        context:
+          'New York Times “The Interview” discussion of 2024 election and immigration politics after Garcia-Navarro noted millions crossed under Biden.',
+        whyFalse:
+          'PolitiFact rated False. CBP Border Patrol encounters between ports of entry: ~7.2 million under Biden (Feb 2021–Sep 2024) vs ~1.8 million under Trump’s first term (Feb 2017–Jan 2021). Releases pending hearings also far higher under Biden (~3.6M vs ~313k). Deportation/repatriation totals do not prove fewer people “came in.”',
+        correction:
+          'Border encounter and release data show substantially more irregular migration events under Biden than Trump’s first term; the absolute “fewer people came in” claim is false.',
+        statementSource: 'New York Times — The Interview with Nancy Pelosi, Nov 9, 2024',
+        statementUrl: 'https://www.nytimes.com/2024/11/09/magazine/nancy-pelosi-election-interview.html',
+        debunkSource: 'PolitiFact — False (Nov 15, 2024); CBP Nationwide Encounters; OHSS enforcement stats',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2024/nov/15/nancy-pelosi/nancy-pelosis-wrong-comparison-about-illegal-immig/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://pelosi.house.gov' },
@@ -1040,6 +1066,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — EIT briefing denial (False)',
         url: 'https://www.politifact.com/factchecks/2009/may/12/nancy-pelosi/cia-documents-claim-speaker-pelosi-was-told-about-/',
+      },
+      {
+        label: 'PolitiFact — Biden vs Trump migration (False)',
+        url: 'https://www.politifact.com/factchecks/2024/nov/15/nancy-pelosi/nancy-pelosis-wrong-comparison-about-illegal-immig/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Nancy_Pelosi' },
     ],
