@@ -280,14 +280,15 @@ for (const f of (haleyP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('haley dual-cite collision: ' + f.id);
 }
 
-// Antony Blinken NSM-20 densify gate (n≥2)
+// Antony Blinken densify gate (n≥3)
 const blinken = scores['antony-blinken'];
-if (!blinken || blinken.n < 2) throw new Error('antony-blinken needs ≥2 verified falsehoods, got ' + (blinken?.n ?? 0));
-if (blinken.score > 55) throw new Error('antony-blinken score expected ≤55 after densify, got ' + blinken.score);
+if (!blinken || blinken.n < 3) throw new Error('antony-blinken needs ≥3 verified falsehoods, got ' + (blinken?.n ?? 0));
+if (blinken.score > 40) throw new Error('antony-blinken score expected ≤40 after densify, got ' + blinken.score);
 const blinkenP = getProfileBySlug('antony-blinken');
 for (const id of [
   'blinken-nsm20-israel-not-restricting-aid-2024',
   'blinken-ihl-compliance-certification-nsm20-2024',
+  'blinken-afghanistan-americans-remaining-near-100-2021',
 ]) {
   if (!(blinkenP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('antony-blinken missing docket id: ' + id);
@@ -351,14 +352,15 @@ for (const f of (obamaP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('barack-obama dual-cite collision: ' + f.id);
 }
 
-// Mike Pence dual-cited densify gate (n≥2)
+// Mike Pence dual-cited densify gate (n≥3)
 const pence = scores['mike-pence'];
-if (!pence || pence.n < 2) throw new Error('mike-pence needs ≥2 verified falsehoods, got ' + (pence?.n ?? 0));
-if (pence.score > 75) throw new Error('mike-pence score expected ≤75 after densify, got ' + pence.score);
+if (!pence || pence.n < 3) throw new Error('mike-pence needs ≥3 verified falsehoods, got ' + (pence?.n ?? 0));
+if (pence.score > 60) throw new Error('mike-pence score expected ≤60 after densify, got ' + pence.score);
 const penceP = getProfileBySlug('mike-pence');
 for (const id of [
   'pence-border-wall-remain-mexico-90-percent-2022',
   'pence-china-travel-ban-all-travel-2020',
+  'pence-testing-generating-more-cases-2020',
 ]) {
   if (!(penceP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('mike-pence missing docket id: ' + id);
@@ -368,14 +370,15 @@ for (const f of (penceP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('pence dual-cite collision: ' + f.id);
 }
 
-// Dick Cheney WMD densify gate (n≥2)
+// Dick Cheney WMD densify gate (n≥3)
 const cheney = scores['dick-cheney'];
-if (!cheney || cheney.n < 2) throw new Error('dick-cheney needs ≥2 verified falsehoods, got ' + (cheney?.n ?? 0));
-if (cheney.score > 55) throw new Error('dick-cheney score expected ≤55 after densify, got ' + cheney.score);
+if (!cheney || cheney.n < 3) throw new Error('dick-cheney needs ≥3 verified falsehoods, got ' + (cheney?.n ?? 0));
+if (cheney.score > 30) throw new Error('dick-cheney score expected ≤30 after densify, got ' + cheney.score);
 const cheneyP = getProfileBySlug('dick-cheney');
 for (const id of [
   'cheney-iraq-reconstituted-nuclear-weapons-2003',
   'cheney-iraq-al-qaeda-link-certainty-2003',
+  'cheney-iraq-mobile-bioweapons-labs-2003',
 ]) {
   if (!(cheneyP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('dick-cheney missing docket id: ' + id);
@@ -622,14 +625,15 @@ for (const f of (warrenP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('warren dual-cite collision: ' + f.id);
 }
 
-// Jared Kushner densify gate (n≥2 — Russia ads + SNS stockpile)
+// Jared Kushner densify gate (n≥3)
 const kushner = scores['jared-kushner'];
-if (!kushner || kushner.n < 2) throw new Error('jared-kushner needs ≥2 verified falsehoods, got ' + (kushner?.n ?? 0));
-if (kushner.score > 65) throw new Error('jared-kushner score expected ≤65 after densify, got ' + kushner.score);
+if (!kushner || kushner.n < 3) throw new Error('jared-kushner needs ≥3 verified falsehoods, got ' + (kushner?.n ?? 0));
+if (kushner.score > 50) throw new Error('jared-kushner score expected ≤50 after densify, got ' + kushner.score);
 const kushnerP = getProfileBySlug('jared-kushner');
 for (const id of [
   'kushner-russia-couple-facebook-ads-2019',
   'kushner-stockpile-not-for-states-2020',
+  'kushner-sf86-omitted-russian-contacts-2017',
 ]) {
   if (!(kushnerP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('jared-kushner missing docket id: ' + id);
@@ -639,14 +643,15 @@ for (const f of (kushnerP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('kushner dual-cite collision: ' + f.id);
 }
 
-// Jeffrey Epstein densify gate (n≥2)
+// Jeffrey Epstein densify gate (n≥3)
 const epstein = scores['jeffrey-epstein'];
-if (!epstein || epstein.n < 2) throw new Error('jeffrey-epstein needs ≥2 verified falsehoods, got ' + (epstein?.n ?? 0));
-if (epstein.score > 55) throw new Error('jeffrey-epstein score expected ≤55 after densify, got ' + epstein.score);
+if (!epstein || epstein.n < 3) throw new Error('jeffrey-epstein needs ≥3 verified falsehoods, got ' + (epstein?.n ?? 0));
+if (epstein.score > 30) throw new Error('jeffrey-epstein score expected ≤30 after densify, got ' + epstein.score);
 const epsteinP = getProfileBySlug('jeffrey-epstein');
 for (const id of [
   'epstein-not-a-sex-offender-post-plea',
   'epstein-2008-plea-closed-federal-jeopardy',
+  'epstein-victims-were-prostitutes-minimization',
 ]) {
   if (!(epsteinP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('jeffrey-epstein missing docket id: ' + id);
@@ -656,14 +661,15 @@ for (const f of (epsteinP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('epstein dual-cite collision: ' + f.id);
 }
 
-// Ghislaine Maxwell densify gate (n≥2)
+// Ghislaine Maxwell densify gate (n≥3)
 const maxwell = scores['ghislaine-maxwell'];
-if (!maxwell || maxwell.n < 2) throw new Error('ghislaine-maxwell needs ≥2 verified falsehoods, got ' + (maxwell?.n ?? 0));
-if (maxwell.score > 55) throw new Error('ghislaine-maxwell score expected ≤55 after densify, got ' + maxwell.score);
+if (!maxwell || maxwell.n < 3) throw new Error('ghislaine-maxwell needs ≥3 verified falsehoods, got ' + (maxwell?.n ?? 0));
+if (maxwell.score > 30) throw new Error('ghislaine-maxwell score expected ≤30 after densify, got ' + maxwell.score);
 const maxwellP = getProfileBySlug('ghislaine-maxwell');
 for (const id of [
   'maxwell-not-guilty-trafficking-2021',
   'maxwell-never-participated-trafficking-scheme',
+  'maxwell-sentencing-denial-of-responsibility-2022',
 ]) {
   if (!(maxwellP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('ghislaine-maxwell missing docket id: ' + id);

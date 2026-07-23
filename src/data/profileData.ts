@@ -753,6 +753,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'kushner-sf86-omitted-russian-contacts-2017',
+        statement:
+          'Initial security-clearance (SF-86) filings omitted foreign contacts including meetings with Russian Ambassador Sergey Kislyak and banker Sergey Gorkov — presenting an incomplete foreign-contacts record to investigators.',
+        saidAt: '2017 (initial SF-86 submissions; later amended)',
+        context:
+          'White House senior adviser security-clearance process after the 2016 campaign and transition meetings with Russian officials.',
+        whyFalse:
+          'Multi-outlet primary reporting and congressional/Mueller record: Kushner’s early SF-86 forms failed to list the Kislyak Trump Tower meeting and the Gorkov meeting, among other foreign contacts later amended. The initial complete-and-accurate contacts presentation was false relative to meetings he later acknowledged.',
+        correction:
+          'Kushner met Kislyak and Gorkov during the transition; those contacts were missing from early SF-86 filings and later had to be amended.',
+        statementSource: 'Initial SF-86 foreign-contacts section (as reported via clearance process coverage)',
+        statementUrl: 'https://www.politifact.com/article/2019/feb/26/three-questions-could-entangle-jared-kushners-secu/',
+        debunkSource: 'NYT clearance-amendment reporting; Mueller report contact chronology',
+        debunkUrl: 'https://www.nytimes.com/2017/04/06/us/politics/jared-kushner-russia.html',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'State Department — Abraham Accords', url: 'https://www.state.gov/the-abraham-accords/' },
@@ -1732,6 +1750,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'egregious',
         tier: 'verified',
       },
+      {
+        id: 'maxwell-sentencing-denial-of-responsibility-2022',
+        statement:
+          'At sentencing maintained she had not committed the crimes of conviction and declined full acceptance of responsibility for trafficking minors.',
+        saidAt: 'June 28, 2022',
+        context:
+          'SDNY sentencing hearing after jury conviction on sex-trafficking and conspiracy counts.',
+        whyFalse:
+          'The jury’s guilty verdicts and the court’s imposition of a 20-year sentence establish criminal responsibility. Continued denial of the adjudicated trafficking offenses is false to the judgment of conviction.',
+        correction:
+          'Maxwell stands convicted of sex trafficking a minor and related conspiracies; the judgment of conviction is the legal fact of responsibility.',
+        statementSource: 'SDNY sentencing hearing remarks / contemporaneous DOJ record',
+        statementUrl: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-sentenced-20-years-prison-conspiring-jeffrey-epstein-sexually-abuse',
+        debunkSource: 'DOJ judgment of conviction and 20-year sentence announcement',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-found-guilty-six-counts-connection-sex-trafficking-minors-jeffrey',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     born: '1961',
     education: 'Oxford University',
@@ -1813,6 +1849,24 @@ export const PROFILES: PowerProfile[] = [
         statementSource: 'Post-2008 public/plea-resolution positioning (reported; Florida NPA context)',
         statementUrl: 'https://www.justice.gov/criminal-vns/case/united-states-v-jeffrey-epstein',
         debunkSource: 'DOJ SDNY July 2019 indictment press release — multi-year sex-trafficking scheme',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'epstein-victims-were-prostitutes-minimization',
+        statement:
+          'Defense and public framing around the Florida case cast the victims as “prostitutes” / adult sex workers rather than minors trafficked into abuse — minimizing the underage trafficking core of the conduct.',
+        saidAt: '2007–2008 (Florida plea negotiations and public framing)',
+        context:
+          'Palm Beach investigation and federal non-prosecution negotiations; public statements and filings that downplayed victim ages and coercion.',
+        whyFalse:
+          'Florida plea records and the later SDNY indictment establish that victims included minors. Casting the scheme as adult prostitution is false to the charging facts and victim ages documented by prosecutors.',
+        correction:
+          'The criminal record centers on sexual abuse and trafficking of minors — not consensual adult prostitution.',
+        statementSource: 'Florida NPA / plea-era public and defense framing (Miami Herald investigative record)',
+        statementUrl: 'https://www.miamiherald.com/news/local/article220097825.html',
+        debunkSource: 'DOJ SDNY 2019 indictment — sex trafficking of minors',
         debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
         severity: 'egregious',
         tier: 'verified',
@@ -4801,6 +4855,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'pence-testing-generating-more-cases-2020',
+        statement:
+          'Claimed that “an increase in testing is generating an increase in cases” / that rising COVID case counts were largely an artifact of more tests rather than community spread.',
+        saidAt: 'June 2020',
+        context:
+          'White House Coronavirus Task Force briefings and interviews as U.S. cases rose after Memorial Day reopenings.',
+        whyFalse:
+          'NYT and multi-outlet fact-checks: percent-positive rates and hospitalizations also rose in multiple states — not explained by testing volume alone. Public-health metrics showed genuine community transmission increases concurrent with expanded testing.',
+        correction:
+          'Rising cases in summer 2020 reflected community spread, not merely more tests; positivity and hospital metrics rose alongside testing.',
+        statementSource: 'Pence Task Force remarks June 2020 (NYT fact-check capture)',
+        statementUrl: 'https://www.nytimes.com/2020/06/26/us/politics/coronavirus-pence-fact-check.html',
+        debunkSource: 'FactCheck.org — Trump’s Cloudy Claim on Coronavirus Testing (Jun 2020); CDC/state positivity series',
+        debunkUrl: 'https://www.factcheck.org/2020/06/trumps-cloudy-claim-on-coronavirus-testing/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
   },
   {
@@ -4934,6 +5006,24 @@ export const PROFILES: PowerProfile[] = [
         statementUrl: 'https://georgewbush-whitehouse.archives.gov/news/releases/2002/08/20020826.html',
         debunkSource: '9/11 Commission Report; Senate Intelligence Committee WMD/Iraq reviews',
         debunkUrl: 'https://www.9-11commission.gov/report/911Report.pdf',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'cheney-iraq-mobile-bioweapons-labs-2003',
+        statement:
+          'Publicly advanced high-certainty claims that Iraq possessed mobile biological weapons laboratories capable of producing banned agents — a centerpiece of the prewar WMD case.',
+        saidAt: '2002–2003',
+        context:
+          'Administration WMD briefings and public remarks championing the mobile-lab thesis later presented at the UN.',
+        whyFalse:
+          'The Iraq Survey Group and later intelligence reviews established that the mobile-lab claims rested heavily on the fabricated “Curveball” source and were not supported by physical evidence recovered in Iraq. No operational mobile bioweapons production labs of the type claimed were found.',
+        correction:
+          'Iraq did not have the operational mobile biological weapons laboratories asserted with prewar certainty; the Curveball-based case collapsed under postwar scrutiny.',
+        statementSource: 'Prewar administration mobile-lab claims (White House/State public case 2002–2003)',
+        statementUrl: 'https://georgewbush-whitehouse.archives.gov/news/releases/2003/02/20030205-1.html',
+        debunkSource: 'Iraq Survey Group / Duelfer findings; Senate Intelligence Committee Curveball reviews; FactCheck.org WMD synthesis',
+        debunkUrl: 'https://www.factcheck.org/2005/09/anti-war-ad-says-bush-cheney-rumsfeld/',
         severity: 'egregious',
         tier: 'verified',
       },
@@ -5409,6 +5499,24 @@ export const PROFILES: PowerProfile[] = [
         debunkSource: 'ProPublica Oct 2024 Pentagon/State warning-letter follow-on; USAID/PRM obstruction findings',
         debunkUrl: 'https://www.propublica.org/article/israel-gaza-humanitarian-aid-blinken-pentagon-warning-letter',
         severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'blinken-afghanistan-americans-remaining-near-100-2021',
+        statement:
+          'Said after the Kabul airlift that the number of Americans remaining in Afghanistan was “likely closer to 100.”',
+        saidAt: 'August 30, 2021',
+        context:
+          'State Department / public remarks closing the Afghanistan evacuation as the last U.S. military flights departed.',
+        whyFalse:
+          'Subsequent State Department tallies and multi-outlet reporting documented hundreds of U.S. citizens still seeking departure after Aug. 30 — well above the “closer to 100” framing. FactCheck.org and contemporaneous oversight reporting tracked the higher residual American counts against the near-100 claim.',
+        correction:
+          'Hundreds of U.S. citizens remained in Afghanistan after the airlift ended; the “closer to 100” estimate understated the residual population.',
+        statementSource: 'Blinken Aug 30, 2021 remarks on Americans remaining (FactCheck.org capture)',
+        statementUrl: 'https://www.state.gov/secretary-antony-j-blinken-on-afghanistan/',
+        debunkSource: 'FactCheck.org — residual Americans in Afghanistan after airlift (Sep 2021); State subsequent tallies',
+        debunkUrl: 'https://www.factcheck.org/2021/09/schumer-falsely-claims-all-americans-got-out-of-afghanistan/',
+        severity: 'material',
         tier: 'verified',
       },
     ],
