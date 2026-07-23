@@ -1767,4 +1767,14 @@ assert(appA11yEnd.includes('main-content') || appA11yEnd.includes('id="main'), '
 assert(appA11yEnd.includes('site-header') || appA11yEnd.includes('site-footer'), 'site shell landmarks end')
 
 
+
+// footer hub order Record Read Dossiers ultimate
+const footerHubEnd = read('src/App.tsx')
+// Footer should include primary destinations for scent
+for (const dest of ['/read', '/israel-dossier', '/profiles', '/search']) {
+  assert(footerHubEnd.includes(dest), `footer/shell has ${dest} end`)
+}
+assert(footerHubEnd.includes('site-footer') || footerHubEnd.includes('Footer'), 'footer present end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
