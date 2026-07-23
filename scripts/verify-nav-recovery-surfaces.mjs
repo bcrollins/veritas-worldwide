@@ -944,4 +944,10 @@ const mediaKitSrc = read('src/pages/MediaKitPage.tsx')
 assert(mediaKitSrc.includes('media-kit-related-hubs'), 'media-kit-related-hubs testid')
 assert(mediaKitSrc.includes('/content-pack') || mediaKitSrc.includes('/about'), 'Media kit content-pack dest unique')
 
+
+// Read hub TOC part grouping labels
+const readTocSrc = read('src/pages/ReadTheBookPage.tsx')
+assert(readTocSrc.includes('read-toc-by-part') || readTocSrc.includes('groupChaptersByPart'), 'Read TOC by part present')
+assert(readTocSrc.includes('Part') || readTocSrc.includes('part'), 'Read TOC part labels unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
