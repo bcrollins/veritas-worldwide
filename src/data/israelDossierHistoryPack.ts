@@ -6003,6 +6003,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-stunting-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Stunting & Developmental Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (stunting cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'UNICEF, WHO, and multi-source nutrition reporting document elevated risk of stunting and irreversible developmental harm among Gaza children under prolonged wartime malnutrition — a long-horizon child-harm pattern distinct from acute IPC phases and anemia/micronutrient cards.',
+    evidence:
+      'UNICEF nutrition materials, WHO child-growth notes, and multi-outlet developmental-risk coverage establish multi-source stunting risk under wartime diet collapse. Exact stunting rates evolve; multi-source elevated developmental-harm risk for children is the claim.',
+    sources: [
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'WHO child health materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza child stunting risk coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-propaganda-videos-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Propaganda Videos Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (propaganda-video cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Israeli government, multi-source media analysis, and released-hostage testimony document forced filmed statements and propaganda videos of Israeli civilian hostages including children — a protected-person humiliation and coercion pattern distinct from hostages-held and sexual-violence cards.',
+    evidence:
+      'Multi-source released videos with government authentication, multi-outlet analysis, and released-hostage testimony establish multi-source forced propaganda filming. Exact video counts evolve; multi-source forced filming of civilian hostages is the claim.',
+    sources: [
+      { label: 'Israeli government hostage public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet hostage propaganda video coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet analysis', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settlement-outpost-roads-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settlement Access Roads Expansion Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (settlement-roads cohort)',
+    location: 'West Bank Area C settlement access corridors',
+    summary:
+      'Peace Now, B\'Tselem, and multi-source reporting document accelerated settlement access-road construction and land seizure after October 7 — fragmenting Palestinian movement and enabling outpost growth. Pattern card for road-infrastructure expansion distinct from outpost-legalization and settlement-surge cards.',
+    evidence:
+      'Peace Now settlement-tracking databases, multi-source aerial/satellite analysis, and multi-outlet coverage establish multi-source access-road expansion. Exact kilometer counts evolve; multi-source wartime settlement-road construction is the claim.',
+    sources: [
+      { label: 'Peace Now settlement materials', url: 'https://peacenow.org.il' },
+      { label: "B'Tselem settlement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settlement road coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Peace Now public materials', url: 'https://peacenow.org.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -9193,6 +9274,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['roadblocks', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-stunting-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Stunting Risk Pattern',
+    description: 'UNICEF/WHO multi-source documentation of elevated stunting and developmental-harm risk under wartime malnutrition.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-stunting-risk-pattern-2023-2025',
+      'gaza-children-anemia-micronutrient-pattern-2023-2025',
+      'gaza-child-malnutrition-pattern-2023-2025',
+    ],
+    tags: ['stunting', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-propaganda-videos-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced Propaganda Videos Pattern',
+    description: 'Multi-source documentation of forced filmed statements and propaganda videos of civilian hostages including children.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-propaganda-videos-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+      'israel-hostages-communication-blackout-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'propaganda', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settlement-roads-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settlement Access Roads Expansion Pattern',
+    description: "Peace Now/B'Tselem multi-source documentation of accelerated settlement access-road construction after October 7.",
+    source: "Peace Now / B'Tselem / multi-outlet",
+    sourceUrl: 'https://peacenow.org.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settlement-outpost-roads-pattern-2023-2025',
+      'west-bank-settler-outpost-legalization-pattern-2023-2025',
+      'west-bank-settlement-surge-2023-2025',
+    ],
+    tags: ['settlements', 'roads', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
