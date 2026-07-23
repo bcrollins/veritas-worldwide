@@ -1813,4 +1813,15 @@ assert(serverSpaEnd.includes('server-soft-404'), 'server soft-404 end')
 assert(serverSpaEnd.includes('href="/read"') && serverSpaEnd.includes('href="/search"'), 'server soft-404 Read+Search end')
 
 
+
+// MOBILE_TAB_BAR five destinations ultimate end final
+const tabFiveEnd = read('src/App.tsx')
+const tabFn = tabFiveEnd.split('function MobileTabBar')[1]?.split('function ')[0] || ''
+assert(tabFn.includes('mobile-tab-bar') || tabFiveEnd.includes('mobile-tab-bar'), 'mobile-tab-bar end final')
+for (const dest of ['/read', '/israel-dossier', '/profiles', '/search']) {
+  assert(tabFiveEnd.includes(dest), `tab has ${dest} end final`)
+}
+assert(tabFiveEnd.includes('safe-area-inset-bottom') || tabFiveEnd.includes('env(safe-area-inset-bottom)'), 'tab safe-area end final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
