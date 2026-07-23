@@ -154,6 +154,17 @@ assert(
   'prerender buildStaticPageJsonLd default must include BreadcrumbList for membership/content-pack/etc',
 )
 assert(
+  /if \(route === '\/institute'\) \{[\s\S]*?name: 'Veritas Institute'[\s\S]*?'@type': 'BreadcrumbList'/.test(
+    prerender,
+  ),
+  'prerender /institute must emit BreadcrumbList',
+)
+assert(
+  prerender.includes("name: 'Field Manual'") &&
+    /if \(route === '\/institute\/book'\) \{[\s\S]*?name: 'Field Manual'[\s\S]*?item: url/.test(prerender),
+  'prerender /institute/book must emit Field Manual BreadcrumbList',
+)
+assert(
   prerender.includes("route === '/methodology'") && prerender.includes("'@type': 'FAQPage'"),
   'prerender must emit FAQPage JSON-LD for /methodology (bot-visible)',
 )

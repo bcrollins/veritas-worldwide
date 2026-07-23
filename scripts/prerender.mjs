@@ -2610,6 +2610,14 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
           description: topic.summary,
         })),
       },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Veritas Institute', item: url },
+        ],
+      },
     ]
   }
 
@@ -2661,6 +2669,15 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
           url: `${SITE_URL}/institute/book#track-${track}`,
           description: `${topics.length} practical course paths`,
         })),
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
+          { '@type': 'ListItem', position: 3, name: 'Field Manual', item: url },
+        ],
       },
     ]
   }
