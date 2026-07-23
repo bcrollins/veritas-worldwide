@@ -17,6 +17,8 @@ import {
   SITE_NAME,
 } from '../lib/seo'
 import { ImageWithFallback } from '../components/ImageWithFallback'
+import { PROFILES } from '../data/profileData'
+import { computeIntegrityScore } from '../lib/integrityScore'
 
 function getArticleImageSrc(src?: string) {
   return getPreferredImageSrc(src) || src
@@ -202,6 +204,35 @@ export default function ArticlePage() {
   const relatedChapterData = article.relatedChapters
     .map(id => chapterMeta.find(c => c.id === id))
     .filter(Boolean)
+
+  // Densify news → Power Profiles: match tags/title against profile name, tags, title
+  const haystack = [
+    article.title,
+    article.subtitle,
+    article.category,
+    ...article.tags,
+  ]
+    .join(' ')
+    .toLowerCase()
+  const relatedProfiles = PROFILES.filter((profile) => {
+    const tokens = [
+      profile.name,
+      profile.title,
+      ...(profile.tags || []),
+    ]
+      .join(' ')
+      .toLowerCase()
+    // Require a meaningful token from the profile name (≥4 chars) present in the article
+    const nameParts = profile.name
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((p) => p.length >= 4)
+    if (nameParts.some((p) => haystack.includes(p))) return true
+    return (profile.tags || []).some(
+      (tag) => tag.length >= 4 && haystack.includes(tag.toLowerCase()),
+    )
+  }).slice(0, 4)
+
   return (
     <article className="min-h-screen">
       {/* ── Section Bar ──────────────────────────────── */}
@@ -404,6 +435,43 @@ export default function ArticlePage() {
                       </Link>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Related Power Profiles */}
+              {relatedProfiles.length > 0 && (
+                <div className="border-t border-border pt-8" data-testid="article-related-profiles">
+                  <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">
+                    Related Profiles
+                  </p>
+                  <div className="space-y-3">
+                    {relatedProfiles.map((profile) => (
+                      <Link
+                        key={profile.id}
+                        to={`/profile/${profile.id}`}
+                        className="group block rounded-sm border border-border bg-parchment/40 px-3 py-2 transition-colors hover:border-crimson"
+                      >
+                        <p className="font-display text-sm font-bold text-ink leading-snug group-hover:text-crimson transition-colors">
+                          {profile.name}
+                        </p>
+                        <p className="font-sans text-[0.6rem] text-ink-faint mt-0.5 line-clamp-2">
+                          {profile.title}
+                        </p>
+                        {profile.documentedFalsehoods && profile.documentedFalsehoods.length > 0 && (
+                          <p className="mt-1 font-mono text-[0.55rem] text-ink-muted">
+                            Integrity {computeIntegrityScore(profile.documentedFalsehoods).score}
+                            {` · ${profile.documentedFalsehoods.length} docketed`}
+                          </p>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                  <Link
+                    to="/profiles?sort=integrity-asc"
+                    className="mt-3 inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-semibold text-crimson hover:underline"
+                  >
+                    Browse all profiles →
+                  </Link>
                 </div>
               )}
 

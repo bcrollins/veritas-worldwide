@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { identifyContact, isSubscribed } from '../lib/hubspot'
 import { trackNewsletterSignup } from '../lib/ga4'
 import { scoreEmailSignup } from '../lib/leadScoring'
@@ -150,6 +151,16 @@ export default function ExitIntentCapture() {
               </form>
               <p className="font-sans text-[0.5rem] text-ink-faint mt-3 text-center">
                 Free forever. Unsubscribe in one click. We never sell your data.
+              </p>
+              <p
+                className="mt-4 border-t border-border pt-3 text-center font-sans text-[0.55rem] leading-relaxed text-ink-faint"
+                data-testid="exit-intent-osint-mention"
+              >
+                Need a private authenticated dossier?{' '}
+                <Link to="/comprehensive-profile" className="text-crimson hover:underline" onClick={handleDismiss}>
+                  Comprehensive Online Profile — $499
+                </Link>
+                {' '}(separate research service, not a newsletter).
               </p>
             </>
           )}
