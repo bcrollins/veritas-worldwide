@@ -240,6 +240,24 @@ export default function MethodologyPage() {
                 </p>
               </div>
 
+              <div className="mt-10 rounded-sm border border-border bg-parchment-dark/20 p-5 sm:p-6">
+                <h3 className="font-display text-lg font-bold text-ink mb-2">
+                  Seven-tier scholarly taxonomy (Record of Jesus Christ)
+                </h3>
+                <p className="font-body text-sm text-ink-light leading-relaxed mb-4">
+                  The Volume II track uses a finer scholarly grid: Verified, Well-Attested, Circumstantial, Contested,
+                  Interpretive, Speculative, and Literary/Theological. Volume I keeps the three-tier wire format for
+                  chapter stability. Mapping: <strong className="text-ink">disputed ≈ contested</strong> (sometimes
+                  speculative or literary-theological by content); circumstantial may include interpretive analysis.
+                </p>
+                <Link
+                  to="/record-of-jesus-christ"
+                  className="inline-flex min-h-[44px] items-center font-sans text-sm font-semibold text-crimson hover:text-crimson-dark"
+                >
+                  Open The Record of Jesus Christ →
+                </Link>
+              </div>
+
               <div className="mt-8 rounded-sm border border-border bg-surface p-5">
                 <p className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-ink-faint">
                   Brand-aligned social assets

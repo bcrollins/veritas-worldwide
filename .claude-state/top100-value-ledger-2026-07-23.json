@@ -6,7 +6,7 @@
   "operatorReferenceInternal": "BR",
   "verdict": "Ship",
   "anonymityPosture": "Public ROC package clean; infra residuals open",
-  "summary": "Intervals 1\u20134: 105 claims, timeline, exports, corpus.json, Bible 7-tier, cite-as, print CSS, a11y, update triggers. Operator-blocked: admin hash, GH org.",
+  "summary": "Intervals 1\u20136: 105 claims, PDF, figures, OG PNG, Volume I map, OPSEC docs, analytics privacy verify, path-to-10. Operator-blocked: #13\u201316 only.",
   "items": [
     {
       "rank": 1,
@@ -269,7 +269,7 @@
       "score": "5\u21928",
       "priority": 74,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 28,
@@ -296,7 +296,7 @@
       "score": "4\u21928",
       "priority": 71,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 31,
@@ -305,7 +305,7 @@
       "score": "5\u21928",
       "priority": 70,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 32,
@@ -314,7 +314,7 @@
       "score": "4\u21928",
       "priority": 69,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 33,
@@ -755,7 +755,7 @@
       "score": "6\u21929",
       "priority": 20,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 82,
@@ -764,7 +764,7 @@
       "score": "5\u21929",
       "priority": 19,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 83,
@@ -773,7 +773,7 @@
       "score": "5\u21929",
       "priority": 18,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 84,
@@ -782,7 +782,7 @@
       "score": "5\u21928",
       "priority": 17,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 85,
@@ -791,7 +791,7 @@
       "score": "6\u21929",
       "priority": 16,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 86,
@@ -800,7 +800,7 @@
       "score": "3\u21929",
       "priority": 15,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 87,
@@ -809,7 +809,7 @@
       "score": "4\u21928",
       "priority": 14,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 88,
@@ -890,7 +890,7 @@
       "score": "3\u21928",
       "priority": 5,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 97,
@@ -917,7 +917,7 @@
       "score": "4\u21927",
       "priority": 2,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     },
     {
       "rank": 100,
@@ -926,7 +926,7 @@
       "score": "5\u219210",
       "priority": 1,
       "launchCritical": false,
-      "status": "Pending"
+      "status": "Implemented"
     }
   ]
 }

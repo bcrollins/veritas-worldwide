@@ -17,6 +17,31 @@ export type ScholarlyEvidenceTier =
 /** Legacy three-tier map used by Volume I chapter UI. */
 export type LegacyEvidenceTier = 'verified' | 'circumstantial' | 'disputed'
 
+/**
+ * Volume I → scholarly mapping (context-dependent for disputed).
+ * Volume I keeps the three-tier wire format for chapter data stability;
+ * display copy should prefer the scholarly labels below when educating readers.
+ */
+export const VOLUME_I_TO_SCHOLARLY: Record<
+  LegacyEvidenceTier,
+  { primary: ScholarlyEvidenceTier; alsoMayMapTo?: ScholarlyEvidenceTier[]; note: string }
+> = {
+  verified: {
+    primary: 'verified',
+    note: 'Primary-source / multi-source documentation in Volume I sense.',
+  },
+  circumstantial: {
+    primary: 'circumstantial',
+    alsoMayMapTo: ['interpretive'],
+    note: 'Documented facts with interpretive connection; may be interpretive analysis when reconstruction is primary.',
+  },
+  disputed: {
+    primary: 'contested',
+    alsoMayMapTo: ['speculative', 'literary_theological'],
+    note: 'Volume I “disputed” ≈ scholarly Contested; some rows are Speculative or Literary/Theological depending on content.',
+  },
+}
+
 export interface TierDisplay {
   id: ScholarlyEvidenceTier
   label: string

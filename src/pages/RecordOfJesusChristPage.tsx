@@ -280,7 +280,7 @@ export default function RecordOfJesusChristPage() {
       type: 'article',
       section: 'The Record',
       tags: ['Jesus of Nazareth', 'New Testament', 'textual criticism', 'archaeology', 'evidence tiers'],
-      image: `${SITE_URL}/og/record-of-jesus-christ.svg`,
+      image: `${SITE_URL}/og/record-of-jesus-christ.png`,
     })
     setJsonLd({
       '@context': 'https://schema.org',
@@ -415,6 +415,84 @@ export default function RecordOfJesusChristPage() {
             })}
           </div>
           <TierFilter active={activeTiers} onToggle={toggleTier} />
+        </section>
+
+        {/* Figures */}
+        <section className="mb-14" aria-labelledby="figures-heading">
+          <h2 id="figures-heading" className="font-display text-2xl font-bold text-ink mb-2">
+            Schematic figures
+          </h2>
+          <p className="font-body text-sm text-ink-muted mb-5 max-w-3xl">
+            Educational schematics only — not raw instrument outputs. Each figure is labeled as interpretive aid under the cosmology / ANE claims.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <figure className="border border-border rounded-sm overflow-hidden bg-surface">
+              <img
+                src="/record-of-jesus-christ/figures/cmb-power-spectrum-schematic.svg"
+                alt="Schematic CMB angular power spectrum with labeled acoustic peaks"
+                className="w-full h-auto"
+                width={960}
+                height={540}
+                loading="lazy"
+              />
+              <figcaption className="p-3 font-sans text-xs text-ink-muted">
+                CMB power spectrum (schematic). See claim <a href="#cosmo-cmb-power" className="text-crimson hover:underline">cosmo-cmb-power</a>.
+              </figcaption>
+            </figure>
+            <figure className="border border-border rounded-sm overflow-hidden bg-surface">
+              <img
+                src="/record-of-jesus-christ/figures/ane-inscription-sites.svg"
+                alt="Schematic map of Ancient Near Eastern inscription findspots including Merneptah, Tel Dan, Mesha, Siloam"
+                className="w-full h-auto"
+                width={960}
+                height={640}
+                loading="lazy"
+              />
+              <figcaption className="p-3 font-sans text-xs text-ink-muted">
+                ANE inscription findspots (schematic). See claim <a href="#ane-inscription-map" className="text-crimson hover:underline">ane-inscription-map</a>.
+              </figcaption>
+            </figure>
+          </div>
+          <p className="mt-4 font-sans text-xs text-ink-faint">
+            Portable PDF index:{' '}
+            <a href="/record-of-jesus-christ/record-of-jesus-christ.pdf" className="text-crimson hover:underline">
+              record-of-jesus-christ.pdf
+            </a>
+            {' · '}
+            Machine corpus:{' '}
+            <a href="/record-of-jesus-christ/corpus.json" className="text-crimson hover:underline">
+              corpus.json
+            </a>
+          </p>
+        </section>
+
+        {/* Related platform surfaces */}
+        <section className="mb-14 p-5 border border-border rounded-sm bg-surface" aria-labelledby="related-heading">
+          <h2 id="related-heading" className="font-display text-xl font-bold text-ink mb-3">
+            Related Veritas surfaces
+          </h2>
+          <ul className="grid sm:grid-cols-2 gap-2">
+            <li>
+              <Link to="/bible" className="inline-flex min-h-[44px] items-center font-body text-sm text-crimson hover:underline">
+                The Bible: History &amp; Factual Record
+              </Link>
+            </li>
+            <li>
+              <Link to="/methodology" className="inline-flex min-h-[44px] items-center font-body text-sm text-crimson hover:underline">
+                Publication methodology (Volume I + tier map)
+              </Link>
+            </li>
+            <li>
+              <Link to="/news" className="inline-flex min-h-[44px] items-center font-body text-sm text-crimson hover:underline">
+                Current reporting (primary-source news desk)
+              </Link>
+            </li>
+            <li>
+              <Link to="/sources" className="inline-flex min-h-[44px] items-center font-body text-sm text-crimson hover:underline">
+                Sources library
+              </Link>
+            </li>
+          </ul>
         </section>
 
         {/* Methodology */}

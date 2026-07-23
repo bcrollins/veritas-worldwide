@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Ancient Near Eastern inscription sites — schematic map</title>
+  <desc id="desc">Schematic Levant/Egypt locator for Merneptah (Egypt), Mesha (Dhiban), Tel Dan, Siloam (Jerusalem), and related findspots. Not a survey-grade GIS product. Veritas Worldwide.</desc>
+  <rect width="960" height="640" fill="#FAF8F5"/>
+  <text x="40" y="40" font-family="Georgia, serif" font-size="22" fill="#8B1A1A" font-weight="700">ANE inscription findspots (schematic)</text>
+  <text x="40" y="66" font-family="Inter, sans-serif" font-size="13" fill="#666">Independent extra-biblical controls. Geography is approximate for reader orientation only.</text>
+  <!-- simplified landmass -->
+  <path d="M200 120 L520 100 L700 180 L720 420 L560 560 L280 540 L180 360 Z" fill="#E8E4DF" stroke="#C4BDB4" stroke-width="2"/>
+  <text x="380" y="320" font-family="Inter, sans-serif" font-size="14" fill="#999" font-style="italic">Levant</text>
+  <rect x="120" y="380" width="90" height="140" fill="#E8E4DF" stroke="#C4BDB4"/>
+  <text x="135" y="460" font-family="Inter, sans-serif" font-size="13" fill="#666">Egypt</text>
+  <!-- sites -->
+  <g font-family="Inter, sans-serif" font-size="13">
+    <circle cx="160" cy="430" r="7" fill="#8B1A1A"/><text x="175" y="435" fill="#1A1A1A">Merneptah Stele (Cairo museum locus)</text>
+    <circle cx="480" cy="280" r="7" fill="#0F766E"/><text x="495" y="285" fill="#1A1A1A">Tel Dan (bytdwd)</text>
+    <circle cx="460" cy="360" r="7" fill="#0F766E"/><text x="475" y="365" fill="#1A1A1A">Jerusalem / Siloam</text>
+    <circle cx="540" cy="400" r="7" fill="#B45309"/><text x="555" y="405" fill="#1A1A1A">Dhiban — Mesha Stele</text>
+    <circle cx="420" cy="340" r="7" fill="#5B21B6"/><text x="300" y="330" fill="#1A1A1A">Coastal plain / Caesarea (Pilate Stone)</text>
+  </g>
+  <text x="40" y="610" font-family="Inter, sans-serif" font-size="11" fill="#999">Veritas Worldwide · Record of Jesus Christ · ANE section · Schematic only · See claims ane-* for citations</text>
+</svg>
