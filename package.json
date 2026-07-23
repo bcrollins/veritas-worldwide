@@ -29,6 +29,8 @@
     "export:profiles-corpus": "node scripts/export-profiles-corpus.mjs",
     "export:news-meta": "node scripts/export-news-meta.mjs",
     "export:rss-feed": "node scripts/export-rss-feed.mjs",
+    "generate:research-pack": "node scripts/generate-research-pack.mjs",
+    "verify:research-pack": "node scripts/verify-research-pack.mjs",
     "export:evidence-taxonomy": "node scripts/export-evidence-taxonomy.mjs",
     "generate:brand-kit": "node scripts/generate-brand-kit.mjs",
     "start": "node server.js",
