@@ -34,6 +34,7 @@ const surfaces = [
   ['src/pages/ReadTheBookPage.tsx', 'read-toc-by-part'],
   ['src/pages/MediaKitPage.tsx', 'media-kit-related-hubs'],
   ['src/components/CookieConsent.tsx', 'data-z-above-tab-bar'],
+  ['src/components/CookieConsent.tsx', 'z-[100]'],
   ['src/App.tsx', 'mobile-tab-bar'],
   ['src/App.tsx', 'primaryLinks'],
   ['src/components/StickyMembershipBar.tsx', 'sticky-membership-bar'],
