@@ -5598,6 +5598,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-maternity-wards-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Maternity Wards & Safe Birth Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (maternity cohort)',
+    location: 'Gaza Strip maternity wards and field delivery points',
+    summary:
+      'UNFPA, WHO, and multi-source reporting document collapse of safe maternity care — C-section without anesthesia, deliveries in tents, and elevated maternal/neonatal risk under bombardment and hospital evacuation. Pattern card for maternity-system collapse distinct from pregnant-maternal-harm and ICU/NICU capacity cards.',
+    evidence:
+      'UNFPA reproductive-health materials, WHO hospital notes, and multi-outlet maternity coverage establish multi-source safe-birth system collapse. Exact maternal mortality figures evolve; multi-source wartime maternity-care collapse is the claim.',
+    sources: [
+      { label: 'UNFPA reproductive health materials', url: 'https://www.unfpa.org' },
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza maternity coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNFPA public updates', url: 'https://www.unfpa.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-children-returned-trauma-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Child Hostages Returned Trauma Pattern (2023–2025)',
+    date: 'November 2023 – 2025 (child-returnee cohort)',
+    location: 'Israel pediatric rehab / returned-child households',
+    summary:
+      'Israeli government, multi-source clinical reporting, and press document severe developmental and psychological trauma among Israeli children released from Gaza captivity — a child-specific returnee harm pattern distinct from the aggregate returnee-trauma and hostages-children-elderly cards.',
+    evidence:
+      'Israeli government child-hostage release lists, multi-source pediatric clinical reporting, and multi-outlet coverage establish multi-source child-returnee trauma. Exact clinical counts evolve; multi-source severe trauma among returned child hostages is the claim.',
+    sources: [
+      { label: 'Israeli government hostage / health materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet child hostage returnee coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet pediatric reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-solid-waste-disease-vector-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Solid Waste Disease-Vector Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (waste-vector cohort)',
+    location: 'Gaza Strip displacement sites and urban streets',
+    summary:
+      'UNEP, UNICEF, and multi-source WASH reporting document uncollected solid waste mountains under collection-system collapse — breeding disease vectors affecting civilians including children. Pattern card for waste-as-disease-vector distinct from the aggregate solid-waste collection collapse card by focusing on epidemiological risk.',
+    evidence:
+      'UNEP environmental assessments, UNICEF WASH notes, and multi-outlet waste-pile coverage establish multi-source solid-waste disease-vector risk. Exact vector-borne case counts are incomplete; multi-source wartime waste-vector exposure is the claim.',
+    sources: [
+      { label: 'UNEP environmental materials', url: 'https://www.unep.org' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza waste disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNEP public updates', url: 'https://www.unep.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8533,6 +8614,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['schools', 'children', 'education', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-maternity-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Maternity Wards Collapse Pattern',
+    description: 'UNFPA/WHO multi-source documentation of safe maternity care collapse under bombardment and hospital evacuation.',
+    source: 'UNFPA / WHO / multi-outlet',
+    sourceUrl: 'https://www.unfpa.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-maternity-wards-collapse-pattern-2023-2025',
+      'gaza-pregnant-maternal-harm-pattern-2023-2025',
+      'gaza-icu-neonatal-capacity-collapse-pattern-2023-2025',
+    ],
+    tags: ['maternity', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-child-returnees-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Child Hostages Returned Trauma Pattern',
+    description: 'Multi-source documentation of severe trauma among Israeli children released from Gaza captivity.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-children-returned-trauma-pattern-2023-2025',
+      'israel-hostages-psychological-trauma-returnees-pattern-2023-2025',
+      'oct7-hostages-children-elderly-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'children', 'trauma', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-waste-vectors-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Solid Waste Disease-Vector Pattern',
+    description: 'UNEP/UNICEF multi-source documentation of uncollected waste breeding disease vectors under collection collapse.',
+    source: 'UNEP / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.unep.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-solid-waste-disease-vector-pattern-2023-2025',
+      'gaza-waste-collection-collapse-pattern-2023-2025',
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+    ],
+    tags: ['waste', 'disease', 'children', 'civilians', 'gaza'],
+  },
+
+
 
 
 
