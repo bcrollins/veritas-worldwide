@@ -22,12 +22,12 @@ Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are ba
 15. Forum page breadcrumb to Dossiers hub — inline variant  
 16. Home hero primary CTA row (Read · Dossiers · Search) — `home-hub-cta-row`  
 17. Home News chip in 1-tap from Record hub — `home-news-chip`  
-18. Profiles hub strip: integrity sort + pack + OSINT (already partially)  
-19. Read hub chapter list density (grouping by part) — backlog  
+18. Profiles hub strip: integrity + pack + OSINT + Search + Dossiers — **SHIPPED**  
+19. Read hub chapter list density (grouping by part) — **SHIPPED** (`read-toc-by-part`)  
 20. Timeline under Browse + Read “Related” — backlog  
 + Briefing page also-in spokes  
 + Search empty-state hubs (`search-empty-hubs`)  
-+ Soft-404 primary hub chips (`not-found-hub-chips`)  
++ Soft-404 primary hub chips (`not-found-hub-chips`) + server HTML hubs  
 + Cookie z-[100] above tab bar (z-50) / membership (z-40) documented  
 
 ## Sprint 3 — Research hub (SHIPPED)

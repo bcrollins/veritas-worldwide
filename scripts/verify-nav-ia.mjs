@@ -137,6 +137,16 @@ assert(idxSearch > idxProfiles, 'footer: Search after Profiles')
 assert(bookmarks.includes('to="/news"') || bookmarks.includes("to: '/news'"), 'Bookmarks empty includes News')
 assert(search.includes('chapters, profiles, sources, dossiers') || search.includes('placeholder='), 'Search placeholder improved')
 
+// Read hub TOC part grouping
+const readPage = fs.readFileSync(path.join(root, 'src/pages/ReadTheBookPage.tsx'), 'utf8')
+assert(readPage.includes('groupChaptersByPart') || readPage.includes('data-testid="read-toc-by-part"'), 'Read TOC grouped by part')
+assert(readPage.includes('Part I') || readPage.includes('Front matter'), 'Read TOC part labels present')
+
+// Profiles hub strip recovery
+const profiles = fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.tsx'), 'utf8')
+assert(profiles.includes('to="/search"') || profiles.includes("to: '/search'"), 'Profiles strip links Search')
+assert(profiles.includes('to="/israel-dossier"'), 'Profiles strip links Dossiers')
+
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, home/search/404 recovery, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, home/search/404 recovery, cookie z-order`,
 )

@@ -27,6 +27,35 @@ import {
 const PDF_URL = '/api/downloads/the-record.pdf'
 const BOOK_TITLE = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World'
 
+/** Group TOC entries by archive part for denser scan (Sprint 2 #19). */
+function chapterPartLabel(ch: { id: string; number: string }): string {
+  if (ch.id === 'foreword' || ch.number === 'Foreword') return 'Front matter'
+  if (ch.id === 'overview' || ch.number === 'Overview') return 'Front matter'
+  if (ch.id === 'epilogue' || /epilogue/i.test(ch.number)) return 'Close'
+  const n = Number((ch.number.match(/(\d+)/) || [])[1] || 0)
+  if (!n) return 'Archive'
+  if (n <= 10) return 'Part I · Foundations (1–10)'
+  if (n <= 20) return 'Part II · Networks (11–20)'
+  return 'Part III · Present (21+)'
+}
+
+function groupChaptersByPart<T extends { id: string; number: string }>(
+  chapters: readonly T[],
+): { label: string; items: { chapter: T; index: number }[] }[] {
+  const groups: { label: string; items: { chapter: T; index: number }[] }[] = []
+  for (let i = 0; i < chapters.length; i++) {
+    const chapter = chapters[i]
+    const label = chapterPartLabel(chapter)
+    const last = groups[groups.length - 1]
+    if (!last || last.label !== label) {
+      groups.push({ label, items: [{ chapter, index: i }] })
+    } else {
+      last.items.push({ chapter, index: i })
+    }
+  }
+  return groups
+}
+
 // Simple text-to-speech wrapper
 function useTextToSpeech() {
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null)
@@ -358,14 +387,35 @@ export default function ReadTheBookPage() {
       <div className="flex-1 flex overflow-hidden">
         {/* Sidebar TOC */}
         {showTOC && (
-          <aside className="w-72 shrink-0 border-r border-border bg-surface overflow-y-auto p-4">
+          <aside
+            className="w-72 shrink-0 border-r border-border bg-surface overflow-y-auto p-4"
+            data-testid="read-toc-by-part"
+          >
             <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-4">Table of Contents</p>
-            <div className="space-y-1">
-              {chapterMeta.map((ch, i) => (
-                <button key={ch.id} onClick={() => goTo(i)} className={`w-full min-h-[44px] text-left px-3 py-2 rounded-sm transition-colors ${i === activeChapter ? 'bg-crimson/10 text-crimson' : 'text-ink-muted hover:text-ink hover:bg-parchment-dark dark:hover:bg-white/5'}`}>
-                  <p className="font-sans text-[0.55rem] font-bold tracking-wider uppercase">{ch.number}</p>
-                  <p className="font-sans text-xs leading-snug">{ch.title}</p>
-                </button>
+            <div className="space-y-4">
+              {groupChaptersByPart(chapterMeta).map((group) => (
+                <div key={group.label}>
+                  <p className="mb-1.5 px-3 font-sans text-[0.52rem] font-bold tracking-[0.14em] uppercase text-ink-faint/90">
+                    {group.label}
+                  </p>
+                  <div className="space-y-1">
+                    {group.items.map(({ chapter: ch, index: i }) => (
+                      <button
+                        key={ch.id}
+                        type="button"
+                        onClick={() => goTo(i)}
+                        className={`w-full min-h-[44px] text-left px-3 py-2 rounded-sm transition-colors ${
+                          i === activeChapter
+                            ? 'bg-crimson/10 text-crimson'
+                            : 'text-ink-muted hover:text-ink hover:bg-parchment-dark dark:hover:bg-white/5'
+                        }`}
+                      >
+                        <p className="font-sans text-[0.55rem] font-bold tracking-wider uppercase">{ch.number}</p>
+                        <p className="font-sans text-xs leading-snug">{ch.title}</p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </aside>
