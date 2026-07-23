@@ -1742,4 +1742,10 @@ assert(homeUltEnd.includes('home-hub-cta-row') && homeUltEnd.includes('home-rela
 assert(homeUltEnd.includes('home-news-chip'), 'home-news-chip end')
 
 
+
+// pass line format surfaces count ultimate end
+assert(typeof surfaces.length === 'number' && surfaces.length >= 102, 'surfaces healthy ultimate end')
+assert(surfaces.length === surfaces.filter(Boolean).length, 'surfaces no holes ultimate end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
