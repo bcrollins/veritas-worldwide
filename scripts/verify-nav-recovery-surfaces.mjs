@@ -932,4 +932,10 @@ assert(topicsHubsSrc.includes('topics-related-hubs'), 'topics-related-hubs testi
 assert(topicsHubsSrc.includes('/profiles'), 'Topics Profiles dest unique final')
 assert(topicsHubsSrc.includes('/search'), 'Topics Search dest unique final')
 
+
+// Bookmarks empty News destination if present
+const bookmarksEmpty = read('src/pages/BookmarksPage.tsx')
+assert(bookmarksEmpty.includes('bookmarks-empty-hubs'), 'bookmarks-empty-hubs testid')
+assert(bookmarksEmpty.includes('/read') && bookmarksEmpty.includes('/search'), 'Bookmarks empty Read+Search dest')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
