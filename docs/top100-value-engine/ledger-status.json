@@ -781,9 +781,9 @@
       "id": "T100-068",
       "title": "Stripe customer portal: entity branding only",
       "priority": 66,
-      "status": "Implemented",
+      "status": "Blocked",
       "shippedAt": "2026-07-23T12:05:00Z",
-      "note": "public/research-pack.zip + manifest; researcher hub + llms; rate-limited; pure verify:research-pack"
+      "note": "Blocked \u2014 Stripe Dashboard entity branding is operator console work, not code"
     },
     {
       "display_rank": 90,
