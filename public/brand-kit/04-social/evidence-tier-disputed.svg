@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Evidence tier card: Disputed">
   <rect width="1080" height="1080" fill="#0A0A0A"/>
-  <rect x="0" y="0" width="1080" height="8" fill="#B8860B"/>
-  <rect x="0" y="1072" width="1080" height="8" fill="#B8860B"/>
+  <rect x="0" y="0" width="1080" height="8" fill="#991B1B"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="#991B1B"/>
   <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="6" fill="#B8860B">THE RECORD · EVIDENCE TIER</text>
-  <rect x="80" y="180" width="280" height="48" rx="4" fill="#B8860B"/>
+  <rect x="80" y="180" width="280" height="48" rx="4" fill="#991B1B"/>
   <text x="220" y="212" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="#FFFFFF">DISPUTED</text>
   <text x="80" y="360" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#FFFFFF">Competing accounts remain</text>
   <text x="80" y="430" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.65)">Labeled for the reader. Sources open.</text>
-  <line x1="80" y1="500" x2="320" y2="500" stroke="#B8860B" stroke-width="2"/>
+  <line x1="80" y1="500" x2="320" y2="500" stroke="#991B1B" stroke-width="2"/>
   <text x="80" y="560" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.45)">Primary sources. Public record. Your conclusions.</text>
   <circle cx="920" cy="900" r="56" fill="none" stroke="#8B1A1A" stroke-width="4"/>
   <text x="920" y="916" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#FFFFFF">V</text>

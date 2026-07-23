@@ -79,6 +79,7 @@ const required = [
   '09-templates/source-stamp.svg',
   '07-docs/brand-do-dont.svg',
   '07-docs/CHANGELOG.md',
+  '07-docs/EVIDENCE-TIERS.md',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
   'exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256',
 ]
@@ -185,6 +186,7 @@ if (base) {
     '/brand-kit/09-templates/source-stamp.svg',
     '/brand-kit/07-docs/brand-do-dont.svg',
     '/brand-kit/07-docs/CHANGELOG.md',
+    '/brand-kit/07-docs/EVIDENCE-TIERS.md',
     '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
     '/og-image.png',
   ]

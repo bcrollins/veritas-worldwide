@@ -1,6 +1,6 @@
 /**
  * Veritas Worldwide Press — design tokens (CSS custom properties)
- * Brand kit v2.7.0 · https://veritasworldwide.com/brand-kit/
+ * Brand kit v2.7.1 · https://veritasworldwide.com/brand-kit/
  */
 :root {
   --veritas-parchment: #FAF8F5;
@@ -12,6 +12,9 @@
   --veritas-gold: #B8860B;
   --veritas-obsidian: #0A0A0A;
   --veritas-white: #FFFFFF;
+  --veritas-evidence-verified: #166534;
+  --veritas-evidence-circumstantial: #92400E;
+  --veritas-evidence-disputed: #991B1B;
 
   --veritas-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --veritas-font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;

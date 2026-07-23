@@ -1,6 +1,10 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.7.0 — 2026-07-23
+## 2.7.1 — 2026-07-23
+- Match evidence-tier card colors to product CSS tokens (#166534 / #92400E / #991B1B)
+- Publish evidence tier CSS variables on tokens.css
+
+## 2.7.0
 - Align evidence-tier cards with product taxonomy: Verified, Circumstantial, Disputed
 - Keep legacy Documented / Contested / Unverified assets for deep-link stability
 

@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.7.0'
+const KIT_VERSION = '2.7.1'
 
 const C = {
   parchment: '#FAF8F5',
@@ -398,6 +398,9 @@ function tokensCss() {
   --veritas-gold: ${C.gold};
   --veritas-obsidian: ${C.black};
   --veritas-white: ${C.white};
+  --veritas-evidence-verified: #166534;
+  --veritas-evidence-circumstantial: #92400E;
+  --veritas-evidence-disputed: #991B1B;
 
   --veritas-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --veritas-font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -684,7 +687,11 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.7.0 — ${new Date().toISOString().slice(0, 10)}
+## 2.7.1 — ${new Date().toISOString().slice(0, 10)}
+- Match evidence-tier card colors to product CSS tokens (#166534 / #92400E / #991B1B)
+- Publish evidence tier CSS variables on tokens.css
+
+## 2.7.0
 - Align evidence-tier cards with product taxonomy: Verified, Circumstantial, Disputed
 - Keep legacy Documented / Contested / Unverified assets for deep-link stability
 
@@ -751,6 +758,35 @@ function pressReleaseBodyHtml() {
     '</html>',
     '',
   ].join('\n')
+}
+
+function evidenceTiersMd() {
+  return `# Evidence Tier Visual System — Veritas Worldwide Press
+
+Product taxonomy (\`src/data/chapterTypes.ts\`): **Verified** · **Circumstantial** · **Disputed**.
+
+These match on-site UI tokens in \`src/styles/index.css\`.
+
+| Tier | Hex | Card asset | Meaning |
+|------|-----|------------|---------|
+| Verified | \`#166534\` | \`04-social/evidence-tier-verified.svg\` | Confirmed in primary sources |
+| Circumstantial | \`#92400E\` | \`04-social/evidence-tier-circumstantial.svg\` | Strong inference; open gaps |
+| Disputed | \`#991B1B\` | \`04-social/evidence-tier-disputed.svg\` | Competing accounts remain |
+
+## Usage
+- Use product names on social when labeling claims from The Record.
+- Prefer vector SVGs for Stories/Reels overlays; PNG rasters for platform uploads that require bitmap.
+- Never invent a fourth reader-facing tier without updating Methodology + brand kit together.
+
+## CSS variables (tokens.css)
+\`\`\`css
+--veritas-evidence-verified: #166534;
+--veritas-evidence-circumstantial: #92400E;
+--veritas-evidence-disputed: #991B1B;
+\`\`\`
+
+Brand kit v\${KIT_VERSION}
+`
 }
 
 function brandVoiceMd() {
@@ -1104,9 +1140,10 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('04-social/ig-carousel-1.svg', igCarouselSlideSvg(1, 'The Record', 'A documentary archive of power and institutions'))
   writeSvg('04-social/ig-carousel-2.svg', igCarouselSlideSvg(2, 'Primary sources', 'Public filings, transcripts, and attributable records'))
   writeSvg('04-social/ig-carousel-3.svg', igCarouselSlideSvg(3, 'Your conclusions', 'Methodology and sources stay open to inspect'))
-  writeSvg('04-social/evidence-tier-verified.svg', evidenceTierCardSvg('Verified', '#1B7A3D', 'Confirmed in primary sources'))
-  writeSvg('04-social/evidence-tier-circumstantial.svg', evidenceTierCardSvg('Circumstantial', '#2B6CB0', 'Strong inference, open gaps'))
-  writeSvg('04-social/evidence-tier-disputed.svg', evidenceTierCardSvg('Disputed', '#B8860B', 'Competing accounts remain'))
+  // Colors match src/styles/index.css --color-verified / circumstantial / disputed
+  writeSvg('04-social/evidence-tier-verified.svg', evidenceTierCardSvg('Verified', '#166534', 'Confirmed in primary sources'))
+  writeSvg('04-social/evidence-tier-circumstantial.svg', evidenceTierCardSvg('Circumstantial', '#92400E', 'Strong inference, open gaps'))
+  writeSvg('04-social/evidence-tier-disputed.svg', evidenceTierCardSvg('Disputed', '#991B1B', 'Competing accounts remain'))
   // Legacy aliases (pre-product taxonomy) — keep for old deep links
   writeSvg('04-social/evidence-tier-documented.svg', evidenceTierCardSvg('Documented', '#2B6CB0', 'On the public record'))
   writeSvg('04-social/evidence-tier-contested.svg', evidenceTierCardSvg('Contested', '#B8860B', 'Competing accounts remain'))
@@ -1125,6 +1162,7 @@ Editorial and licensing: rights@veritasworldwide.com
   writeFileSync(join(KIT, '07-docs', 'WCAG-CONTRAST.md'), wcagContrastMd())
   writeFileSync(join(KIT, '07-docs', 'SOCIAL-ASSET-MATRIX.md'), socialAssetMatrixMd())
   writeFileSync(join(KIT, '07-docs', 'BRAND-VOICE.md'), brandVoiceMd())
+  writeFileSync(join(KIT, '07-docs', 'EVIDENCE-TIERS.md'), evidenceTiersMd())
   writeFileSync(join(KIT, '07-docs', 'CHANGELOG.md'), changelogMd())
 
   // Rasterize key assets
@@ -1246,6 +1284,7 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Public media kit page', href: '/media-kit' },
       { label: 'Brand guide (MD)', href: '/brand-kit/07-docs/BRAND-GUIDE.md' },
       { label: 'Brand voice (MD)', href: '/brand-kit/07-docs/BRAND-VOICE.md' },
+      { label: 'Evidence tiers (MD)', href: '/brand-kit/07-docs/EVIDENCE-TIERS.md' },
       { label: 'Changelog (MD)', href: '/brand-kit/07-docs/CHANGELOG.md' },
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },

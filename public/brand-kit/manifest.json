@@ -1,7 +1,7 @@
 {
-  "version": "2.7.0",
+  "version": "2.7.1",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T07:18:23.504Z",
+  "generatedAt": "2026-07-23T07:21:04.543Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -195,6 +195,10 @@
       "href": "/brand-kit/07-docs/BRAND-VOICE.md"
     },
     {
+      "label": "Evidence tiers (MD)",
+      "href": "/brand-kit/07-docs/EVIDENCE-TIERS.md"
+    },
+    {
       "label": "Changelog (MD)",
       "href": "/brand-kit/07-docs/CHANGELOG.md"
     },
@@ -259,6 +263,6 @@
       "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 1661336,
-  "zipSha256": "b7a45f983f261bb3d1423a5677cf2f659cfa7dc12106d7536712347b0297e610"
+  "zipBytes": 1661925,
+  "zipSha256": "315c9aca4dd180276c19af33d790789680589f58999803dbdb2998f83138bae7"
 }
