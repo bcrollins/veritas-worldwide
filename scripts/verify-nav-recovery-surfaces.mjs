@@ -70,6 +70,7 @@ const surfaces = [
   ['src/components/StickyMembershipBar.tsx', 'bg-obsidian'],
   ['src/components/StickyMembershipBar.tsx', 'backdrop-blur'],
   ['src/components/StickyMembershipBar.tsx', 'border-t'],
+  ['src/components/StickyMembershipBar.tsx', 'max-w-5xl'],
   ['src/components/StickyMembershipBar.tsx', 'veritas_cookie_consent'],
 ]
 
