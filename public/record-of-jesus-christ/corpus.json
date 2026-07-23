@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T08:55:45.186Z",
-  "claimCount": 162,
+  "generatedAt": "2026-07-23T08:59:55.271Z",
+  "claimCount": 173,
   "tierHistogram": {
-    "verified": 54,
-    "well_attested": 62,
-    "contested": 23,
+    "verified": 58,
+    "well_attested": 66,
+    "contested": 25,
     "interpretive": 12,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 6
+    "circumstantial": 7
   },
   "claims": [
     {
@@ -103,6 +103,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "ane-siloam-inscription",
+      "claim": "The Siloam Tunnel inscription (Jerusalem) is a primary Hebrew epigraphic witness associated with Hezekiah’s water system construction narrative.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
       "id": "ane-tel-dan",
       "claim": "The Tel Dan Stele (9th century BCE) attests the phrase “House of David” (bytdwd) outside the Bible.",
       "tier": "verified",
@@ -157,6 +164,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "arch-herodium",
+      "claim": "Herodium is a major Herodian fortress-palace complex with extensive excavation; it anchors elite architecture of late Second Temple Judea.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "arch-james-ossuary",
@@ -290,6 +304,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "cosmo-desi-bao",
+      "claim": "DESI and related Stage-IV BAO surveys are tightening late-universe expansion constraints and testing dark-energy equation-of-state models against ΛCDM.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "cosmo-expansion",
@@ -430,6 +451,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "ec-polycarp",
+      "claim": "Polycarp’s Letter to the Philippians (mid-2nd c.) cites or alludes to multiple NT writings and shows early reception of Pauline and Gospel traditions.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "ec-update-triggers",
@@ -586,6 +614,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "hj-meal-practice",
+      "claim": "Shared meals / table fellowship appear as a distinctive social practice in Synoptic traditions and are widely treated as historically characteristic of Jesus’ movement.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
       "id": "hj-miracles-method",
       "claim": "Miracle narratives are not historically “verified” under naturalistic historical method; historians can study reports, meanings, and social effects of wonder-traditions.",
       "tier": "interpretive",
@@ -640,6 +675,13 @@
       "tier": "literary_theological",
       "proofVsConcept": "tradition",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-romans-execution",
+      "claim": "Crucifixion was a Roman capital punishment method used in Judea; archaeological and literary controls exist independent of the Gospels (e.g., Yehohanan heel bone; Josephus).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "hj-table-fellowship",
@@ -710,6 +752,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-jesus-seminar",
+      "claim": "The Jesus Seminar (1980s–2000s) popularized colored-bead voting on sayings authenticity; its methods and conclusions remain highly contested in the guild.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "mod-memory-approach",
@@ -866,6 +915,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "nc-talmud-dating",
+      "claim": "Rabbinic passages sometimes linked to Jesus (e.g., b. Sanhedrin traditions) are late, layered, and methodologically hazardous as first-century biography.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
       "id": "nc-tf",
       "claim": "Josephus, Antiquities 18.63–64 (Testimonium Flavianum) is widely judged partly authentic with Christian interpolations; fully authentic and fully forged positions are minorities.",
       "tier": "contested",
@@ -885,6 +941,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nt-byzantine-priority",
+      "claim": "Byzantine-priority / majority-text theories remain minority positions in mainstream critical editions, which generally prefer early diverse witnesses over later numerical majority alone.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "nt-codex-alexandrinus",
@@ -941,6 +1004,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-lectionaries",
+      "claim": "Greek lectionary manuscripts form a large late witness class used in ECM/CBGM and traditional criticism for reception history more than for earliest text alone.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "nt-majuscules",
@@ -1137,6 +1207,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-samaria-papyri",
+      "claim": "The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
       "id": "st-synagogue-origins",
