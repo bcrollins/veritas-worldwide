@@ -1877,6 +1877,11 @@ export default function IsraelDossierPage() {
           patterns, West Bank settler violence, and October 7 civilian massacres. Every card links to checkable
           primary packages. AP-style labeling: proof is never mixed with slogans; contested intent stays contested.
         </p>
+        <p className="font-sans text-[0.65rem] text-ink-faint mb-4 max-w-3xl" data-testid="vi-method-note">
+          Method: dual-cite minimum · multi-party documentation · ethnicity never treated as evidence · Wayback pins on media URLs ·
+          machine index at <a className="text-crimson hover:underline" href="/israel-dossier/visual-investigations.json">/israel-dossier/visual-investigations.json</a>.
+          Publisher: Veritas Worldwide only.
+        </p>
         {(() => {
           const viStats = visualInvestigationStats(ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS)
           const videoIncidents = allIncidents.filter((i) => i.multimedia.some((m) => m.type === 'video'))
