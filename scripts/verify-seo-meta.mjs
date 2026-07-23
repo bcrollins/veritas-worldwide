@@ -148,6 +148,12 @@ const prerender = read('scripts/prerender.mjs')
 assert(prerender.includes('xmlns:image='), 'sitemap must declare image namespace')
 assert(prerender.includes('image:image'), 'sitemap entries must support image:image')
 assert(
+  prerender.includes('Default for remaining static hubs') &&
+    prerender.includes('name: page.heading') &&
+    /Default for remaining static hubs[\s\S]{0,500}'@type': 'BreadcrumbList'/.test(prerender),
+  'prerender buildStaticPageJsonLd default must include BreadcrumbList for membership/content-pack/etc',
+)
+assert(
   prerender.includes("route === '/methodology'") && prerender.includes("'@type': 'FAQPage'"),
   'prerender must emit FAQPage JSON-LD for /methodology (bot-visible)',
 )

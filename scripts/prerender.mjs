@@ -3047,7 +3047,20 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
-  return [basePage]
+  // Default for remaining static hubs: WebPage + BreadcrumbList so Googlebot
+  // sees the same trail structure as client hydrate (membership, content-pack,
+  // media-kit, privacy, terms, profiles, news, read, forum, etc.).
+  return [
+    basePage,
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: page.heading, item: url },
+      ],
+    },
+  ]
 }
 
 const manifest = {}
