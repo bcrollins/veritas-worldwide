@@ -687,4 +687,13 @@ assert(israelHubsSrc.includes("to: '/read'") || israelHubsSrc.includes('to: "/re
 assert(israelHubsSrc.includes("to: '/methodology'") || israelHubsSrc.includes('to: "/methodology"'), 'Israel RelatedHubs Methodology')
 assert(israelHubsSrc.includes("to: '/search'") || israelHubsSrc.includes('to: "/search"'), 'Israel RelatedHubs Search')
 
+
+// Deep State / Forum / Briefing RelatedHubs destinations
+const deepHubs = read('src/pages/DeepStatePage.tsx')
+assert(deepHubs.includes("to: '/search'") || deepHubs.includes('to: "/search"'), 'DeepState Search recovery')
+const forumHubs = read('src/pages/ForumPage.tsx')
+assert(forumHubs.includes("to: '/israel-dossier'") || forumHubs.includes('to: "/israel-dossier"'), 'Forum Dossiers recovery')
+const briefingHubs = read('src/pages/IsraelDossierBriefingPage.tsx')
+assert(briefingHubs.includes("to: '/profiles'") || briefingHubs.includes('to: "/profiles"'), 'Briefing Profiles recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
