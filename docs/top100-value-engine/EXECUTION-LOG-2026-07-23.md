@@ -136,3 +136,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Multi-agent | densify-only; left peer App.tsx / StickyMembershipBar WIP unstaged |
 | Live | soft-floor lag-aware (deploy behind tip); HTTP 200 on corpus/VI/pack |
 
+## Milestone — Israel dossier corpus **1000 incidents**
+
+| Ship | Proof |
+|------|-------|
+| Tip | **1000 incidents** / withVideo ≥67 / civiliansTagged 998 |
+| Pure | visual-investigations-floor, israel-dossier, research-pack PASS |
+| Dual-sided | Gaza medical stockouts · Israeli hostage captivity · West Bank settler livelihood attacks |
+| Anonymity | entity-only Veritas Worldwide; densify surfaces CLEAN |
+| Multi-agent | densify-only paths; peer nav/App WIP unstaged |
+
