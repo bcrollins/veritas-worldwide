@@ -981,4 +981,10 @@ const forumExcl = read('src/pages/ForumPage.tsx')
 assert(forumExcl.includes('exclude="forum"') || forumExcl.includes("exclude='forum'"), 'Forum also-in exclude unique')
 assert(forumExcl.includes('forum-related-hubs'), 'Forum RelatedHubs present with exclude')
 
+
+// Israel sticky DossierHubSpokes + RelatedHubs unique
+const israelSticky = read('src/pages/IsraelDossierPage.tsx')
+assert(israelSticky.includes('variant="sticky"') || israelSticky.includes("variant='sticky'"), 'Israel sticky variant unique')
+assert(israelSticky.includes('israel-dossier-related-hubs'), 'Israel RelatedHubs under sticky unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
