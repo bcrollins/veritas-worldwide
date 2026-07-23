@@ -33,6 +33,7 @@ Runs automatically in `postbuild` after corpus exports. Writes **both** `public/
 - Size budget: 8 MiB (pure gate fails over budget)
 - Rate limit: 20/min/IP on the ZIP, 40/min on the manifest (`research-pack` scope)
 - Cache: `max-age=3600, must-revalidate` (not immutable year)
+- `robots.txt`: explicit `Allow: /research-pack.zip` and `Allow: /research-pack-manifest.json`
 
 ## Discovery
 
