@@ -1483,6 +1483,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-kfar-aza-visual-2023',
+    title: 'October 7 Kibbutz Kfar Aza — Multi-Outlet Civilian Murder & Capture Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Kfar Aza, southern Israel',
+    summary:
+      'Multi-outlet video and authenticated phone footage document the October 7 assault on Kibbutz Kfar Aza, including civilian murders and hostage-taking. Multi-party visual record distinct from Be’eri, Nir Oz, and Nova packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at Kfar Aza on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Kfar Aza October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-double-tap-rescue-visual-2023-2025',
+    title: 'Gaza Double-Tap Strikes on Rescue Gatherings — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip strike sites where civilians and rescuers regrouped',
+    summary:
+      'Multi-outlet phone video and OHCHR materials document strike patterns in which a second munition hits after civilians and rescuers gather at an initial impact site. Distinct from prior double-tap ambulance visual card; multi-source civilian-harm floor without single-camera overclaim.',
+    evidence:
+      'Multi-outlet visual packages, OHCHR civilian-protection materials, and contemporaneous medical-service reporting establish multi-source documentation of harm to civilians and rescuers at regroup sites.',
+    sources: [
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet double-tap rescue-site video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OHCHR/OCHA civilian-harm trail', url: 'https://www.ohchr.org/' },
+      { type: 'photo-essay', label: 'Wire photos of rescue-site aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-checkpoint-ambulance-delay-visual-2023-2025',
+    title: 'West Bank Checkpoint Ambulance Delays — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank checkpoints and ambulance routes',
+    summary:
+      'PRCS, B’Tselem video banks, and multi-outlet packages document ambulance delays and denials at West Bank checkpoints affecting Palestinian civilians including children. Multi-source visual record distinct from paramedic-attack cards; ethnicity is never evidence.',
+    evidence:
+      'PRCS operational updates, B’Tselem video documentation, and multi-outlet reporting establish multi-source documentation of checkpoint delays affecting medical transport of civilians.',
+    sources: [
+      { label: 'Palestine Red Crescent updates', url: 'https://www.palestinercs.org/' },
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'OCHA OPT access updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'PRCS/B’Tselem ambulance-delay video packages', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'OCHA access and medical-protection trail', url: 'https://www.ochaopt.org/' },
+      { type: 'document', label: 'PRCS operational updates', url: 'https://www.palestinercs.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

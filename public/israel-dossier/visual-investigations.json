@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T12:56:48.601Z"
+    "generatedAt": "2026-07-23T12:57:09.167Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 73,
-    "viPackCards": 54,
-    "totalIncidents": 1138
+    "incidentsWithVideoAndCivilians": 76,
+    "viPackCards": 57,
+    "totalIncidents": 1141
   },
   "incidents": [
     {
@@ -2259,6 +2259,126 @@
           "type": "document",
           "label": "OCHA demolition materials",
           "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-kfar-aza-visual-2023",
+      "title": "October 7 Kibbutz Kfar Aza — Multi-Outlet Civilian Murder & Capture Visual Record",
+      "date": "October 7, 2023",
+      "location": "Kibbutz Kfar Aza, southern Israel",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Kfar Aza October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-double-tap-rescue-visual-2023-2025",
+      "title": "Gaza Double-Tap Strikes on Rescue Gatherings — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip strike sites where civilians and rescuers regrouped",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OHCHR civilian-protection materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet double-tap rescue-site video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "OHCHR/OCHA civilian-harm trail",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of rescue-site aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-checkpoint-ambulance-delay-visual-2023-2025",
+      "title": "West Bank Checkpoint Ambulance Delays — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank checkpoints and ambulance routes",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Palestine Red Crescent updates",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "OCHA OPT access updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "PRCS/B’Tselem ambulance-delay video packages",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "OCHA access and medical-protection trail",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "type": "document",
+          "label": "PRCS operational updates",
+          "url": "https://www.palestinercs.org/"
         }
       ]
     },
