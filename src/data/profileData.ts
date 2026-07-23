@@ -1079,6 +1079,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'pelosi-trump-morbidly-obese-2020',
+        statement: 'Says President Donald Trump is “morbidly obese.”',
+        saidAt: 'May 18–19, 2020',
+        context:
+          'CNN Anderson Cooper 360 interview criticizing Trump’s reported hydroxychloroquine use during COVID-19; Pelosi tied the drug’s risk to his “age group” and “weight group.”',
+        whyFalse:
+          'PolitiFact rated False. Using Trump’s declared height/weight, BMI is ~30.1 — Class 1 obesity under CDC categories, not severe/morbid obesity (typically BMI ≥40 or ≥35 with comorbidities in clinical usage). Even allowing for under-reported weight, he would need to be substantially heavier to meet morbid obesity thresholds.',
+        correction:
+          'Trump’s public height/weight put him in the lowest obesity class (BMI ~30), not the severe/morbid obesity range Pelosi claimed.',
+        statementSource: 'Pelosi House transcript — CNN Anderson Cooper 360 interview (May 18, 2020)',
+        statementUrl:
+          'https://pelosi.house.gov/news/press-releases/transcript-of-pelosi-interview-on-cnn-s-anderson-cooper-360-0',
+        debunkSource: 'PolitiFact — False (May 19, 2020); CDC BMI obesity class definitions',
+        debunkUrl: 'https://www.politifact.com/factchecks/2020/may/19/nancy-pelosi/no-he-not-morbidly-obese/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://pelosi.house.gov' },
