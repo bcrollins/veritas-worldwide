@@ -73,6 +73,7 @@ assert(spokeCount === 5, `DOSSIER_SPOKES count ${spokeCount} !== 5`)
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')
 assert(notFoundSrc.includes('noindex'), 'NotFoundPage must stay noindex')
+assert(notFoundSrc.includes('nofollow'), 'NotFoundPage must stay nofollow')
 assert(!/url:\s*[`'"][^`'"]*\/404/.test(notFoundSrc), 'NotFoundPage must not invent /404 url meta')
 
 // Research family mounts chips
