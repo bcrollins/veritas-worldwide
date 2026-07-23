@@ -473,6 +473,16 @@ export default function IsraelDossierBriefingPage() {
           </div>
         </div>
       </section>
+    
+      <div
+        className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-parchment/95 px-4 py-2 backdrop-blur-sm lg:hidden"
+        data-testid="briefing-confidence-sticky"
+        role="note"
+      >
+        <p className="mx-auto max-w-3xl font-sans text-[0.6rem] leading-relaxed text-ink-muted">
+          <span className="font-bold text-ink">Confidence legend:</span> High = multi-source primary; Medium = documented with limits; Low / open = contested or incomplete attribution. Full source rows above.
+        </p>
+      </div>
     </main>
   )
 }

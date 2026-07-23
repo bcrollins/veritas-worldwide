@@ -128,6 +128,14 @@ export default function MethodologyPage() {
               <h1 className="font-display text-3xl md:text-5xl font-bold text-ink leading-tight mb-4">
                 Methodology &amp; Evidence Standards
               </h1>
+      <div className="mb-8 rounded-sm border border-border bg-surface px-5 py-4" data-testid="methodology-primary-sources-guide">
+        <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-crimson">Institute skill</p>
+        <p className="mt-1 font-body text-sm text-ink-muted">
+          New to primary-source work? Read the field guide:{' '}
+          <a href="/institute/how-to-read-primary-sources.md" className="text-crimson hover:underline">How to read primary sources</a>.
+        </p>
+      </div>
+
               <p className="font-body text-lg italic text-ink-muted leading-relaxed max-w-2xl">
                 How this publication was researched, sourced, and structured — and how you should read it.
               </p>

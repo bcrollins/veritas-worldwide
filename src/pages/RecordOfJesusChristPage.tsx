@@ -253,6 +253,7 @@ export default function RecordOfJesusChristPage() {
     return new Set(SCHOLARLY_TIER_ORDER)
   })
   const [claimQuery, setClaimQuery] = useState('')
+  const [domainFilter, setDomainFilter] = useState<'all' | 'archaeology' | 'textual'>('all')
 
   const toggleTier = (tier: ScholarlyEvidenceTier) => {
     setActiveTiers(prev => {
@@ -275,11 +276,22 @@ export default function RecordOfJesusChristPage() {
     () => ROC_TIMELINE.filter(t => activeTiers.has(t.tier)),
     [activeTiers],
   )
+  const claimMatchesDomain = (claimId: string) => {
+    if (domainFilter === 'all') return true
+    const prefix = (claimId || '').split('-')[0]
+    const archaeology = new Set(['arch', 'ane', 'cosmo', 'st'])
+    const textual = new Set(['nt', 'hj', 'mod', 'nc', 'ec'])
+    if (domainFilter === 'archaeology') return archaeology.has(prefix)
+    if (domainFilter === 'textual') return textual.has(prefix)
+    return true
+  }
+
   const filteredSections = useMemo(() => {
     return ROC_SECTIONS.map(section => ({
       ...section,
       claims: section.claims.filter(c => {
         if (!activeTiers.has(c.tier)) return false
+        if (!claimMatchesDomain(c.id)) return false
         if (!q) return true
         return (
           c.claim.toLowerCase().includes(q) ||
@@ -289,7 +301,7 @@ export default function RecordOfJesusChristPage() {
         )
       }),
     })).filter(s => s.claims.length > 0)
-  }, [activeTiers, q])
+  }, [activeTiers, q, domainFilter])
 
   useEffect(() => {
     setMetaTags({
@@ -547,6 +559,27 @@ export default function RecordOfJesusChristPage() {
             })}
           </div>
           <TierFilter active={activeTiers} onToggle={toggleTier} />
+          <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter by archaeology vs textual domains" data-testid="roc-domain-filter">
+            {([
+              { id: 'all' as const, label: 'All domains' },
+              { id: 'archaeology' as const, label: 'Archaeology / ANE / cosmos' },
+              { id: 'textual' as const, label: 'Textual / historical Jesus' },
+            ] as const).map((opt) => (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => setDomainFilter(opt.id)}
+                aria-pressed={domainFilter === opt.id}
+                className={`inline-flex min-h-[44px] items-center rounded-sm border px-3 py-1.5 font-sans text-xs font-semibold transition-colors ${
+                  domainFilter === opt.id
+                    ? 'border-crimson bg-crimson/5 text-crimson'
+                    : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
           <div className="mt-5">
             <label htmlFor="roc-claim-search" className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink-faint block mb-2">
               Search claims (voice-search friendly natural language)

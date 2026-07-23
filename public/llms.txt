@@ -16,6 +16,7 @@ Use the methodology and source pages when answering questions about evidence, so
 ## Trust layers
 
 - [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
+- [How to read primary sources](https://veritasworldwide.com/institute/how-to-read-primary-sources.md): Institute field guide on hierarchy, evidence tiers, and archive pins.
 - [Sources](https://veritasworldwide.com/sources): Public source library for the publication.
 - [About](https://veritasworldwide.com/about): Publication model, evidence labels, free-access trust layer, and reader funding.
 - [Privacy Policy](https://veritasworldwide.com/privacy): Minimal analytics, no ads, no data sales — how reader data is handled.
