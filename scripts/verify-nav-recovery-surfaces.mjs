@@ -1897,4 +1897,12 @@ assert(a11yUlt.includes('ResearchHubChips') && a11yUlt.includes('DossierHubSpoke
 assert(surfaces.length >= 102 && surfaces.length < 500, `suite length sane ${surfaces.length}`)
 
 
+
+// RelatedHubs tone darkChip border-white ultimate
+const darkUlt = read('src/components/RelatedHubs.tsx')
+assert(darkUlt.includes('border-white/20') || darkUlt.includes('bg-white/5'), 'darkChip styles ultimate')
+assert(darkUlt.includes("tone === 'dark'") || darkUlt.includes('tone === "dark"'), 'dark branch ultimate')
+assert(darkUlt.includes("tone === 'parchment'") || darkUlt.includes('tone === "parchment"'), 'parchment branch ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
