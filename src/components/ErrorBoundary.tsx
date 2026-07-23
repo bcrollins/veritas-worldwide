@@ -38,7 +38,7 @@ export default class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="max-w-3xl mx-auto px-6 py-20 text-center">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-6">
-            Something Went Wrong
+            Veritas Worldwide
           </p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-ink mb-4">
             Unexpected Error
@@ -46,7 +46,7 @@ export default class ErrorBoundary extends Component<Props, State> {
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-[1px] w-12 bg-crimson" />
             <p className="font-body text-lg italic text-ink-muted">
-              We encountered an issue loading this page.
+              This archive page failed to load. The issue is technical — not a change to the public record.
             </p>
             <div className="h-[1px] w-12 bg-crimson" />
           </div>

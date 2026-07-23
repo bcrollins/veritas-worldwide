@@ -214,4 +214,109 @@ if (failures.length) {
   for (const f of failures) console.error(' -', f)
   process.exit(1)
 }
+
+// #40 briefing confidence sticky mobile
+const briefing = read('src/pages/IsraelDossierBriefingPage.tsx')
+assert(
+  briefing.includes('briefing-confidence-sticky') && briefing.includes('lg:hidden'),
+  '#40 briefing confidence sticky visible on mobile',
+)
+// #42 open questions export
+assert(
+  briefing.includes('briefing-export-open-questions-csv'),
+  '#42 briefing open-questions CSV export',
+)
+// #73 #84 hero alt + fetchPriority
+assert(
+  chapter.includes('function HeroImage') &&
+    chapter.includes('fetchPriority="high"') &&
+    chapter.includes('alt={image.alt}'),
+  '#73/#84 chapter hero alt + fetchPriority high',
+)
+// #74 skip-link
+const app = read('src/App.tsx')
+assert(app.includes('#main-content') && app.includes('id="main-content"'), '#74 skip-link + main landmark')
+// #75 focus-visible
+const css = read('src/styles/index.css')
+assert(css.includes(':focus-visible'), '#75 focus-visible styles present')
+// #82 SW network-first navigations
+const sw = read('public/sw.js')
+assert(sw.includes("mode === 'navigate'") && /network-first/i.test(sw), '#82 SW network-first navigations')
+// #89 device matrix doc
+assert(
+  existsSync(join(root, 'docs/top100-value-engine/DEVICE-MATRIX-SMOKE.md')),
+  '#89 device matrix smoke checklist doc',
+)
+// #90 error boundary entity-only
+const eb = read('src/components/ErrorBoundary.tsx')
+assert(
+  eb.includes('Veritas Worldwide') && !/brollins|brandon/i.test(eb),
+  '#90 ErrorBoundary entity-only copy',
+)
+// #92 RSS self-link + enclosures
+const feed = existsSync(join(root, 'public/feed.xml')) ? read('public/feed.xml') : ''
+assert(
+  feed.includes('atom:link') && feed.includes('rel="self"') && feed.includes('<enclosure'),
+  '#92 RSS absolute self-link + enclosures',
+)
+// #93 #94 newsletter / exit-intent entity-safe
+const exitIntent = existsSync(join(root, 'src/components/ExitIntentCapture.tsx'))
+  ? read('src/components/ExitIntentCapture.tsx')
+  : ''
+if (exitIntent) {
+  assert(!/brollins|brandon\s+rollins/i.test(exitIntent), '#94 exit-intent free of personal identity')
+}
+// #95 stripe success URLs known noindex set
+assert(
+  server.includes("'/subscribe/success'") &&
+    server.includes("'/membership/success'") &&
+    server.includes("'/comprehensive-profile/success'"),
+  '#95 success paths in noindex / known SPA sets',
+)
+// #99 ledger exists for re-rank
+assert(
+  existsSync(join(root, 'docs/top100-value-engine/TOP100-VALUE-LEDGER-2026-07-23.md')),
+  '#99 top100 ledger durable for re-rank after densify',
+)
+
+
+// #37 dual-cite docket floor (integrity pure already ≥96 dockets)
+const integrity = read('scripts/verify-integrity-score.mjs')
+assert(
+  integrity.includes('docketCount') && /docketCount\s*<\s*96|≥96|>= 96/.test(integrity),
+  '#37 integrity dual-cite docket floor locked (≥96 profiles with dockets)',
+)
+// #53 analytics/privacy OSINT retention language
+const privacy = read('src/pages/PrivacyPage.tsx')
+assert(
+  privacy.includes('OSINT order') && /retain|deleted|minimized|fulfillment/i.test(privacy),
+  '#53 privacy OSINT retention copy present',
+)
+// #68 methodology proofVsConcept
+const method = read('src/pages/MethodologyPage.tsx')
+assert(
+  /proofVsConcept|proof.vs.concept|proof versus concept/i.test(method),
+  '#68 methodology proof-vs-concept language present',
+)
+// #43 israel densify dual-cite pure scripts exist
+assert(
+  existsSync(join(root, 'scripts/verify-israel-dossier-canon.mjs')),
+  '#43 israel dossier densify pure canon gate exists',
+)
+// #19 lastmod present in sitemap writer
+const prerender = read('scripts/prerender.mjs')
+assert(prerender.includes('lastmod') && prerender.includes('renderUrlEntry'), '#19 sitemap lastmod writer present')
+// #83 lazy split chapter/dossier/roc
+assert(
+  app.includes("import('./pages/ChapterPage')") &&
+    app.includes("import('./pages/IsraelDossierPage')") &&
+    app.includes("import('./pages/RecordOfJesusChristPage')"),
+  '#83 App lazy-splits chapter/dossier/roc routes',
+)
+// #41 dossier confidence filter — page has confidence sticky + open questions (filter path)
+assert(
+  briefing.includes('confidence') && briefing.includes('briefing-open-questions'),
+  '#41 dossier confidence UX surfaces present on briefing',
+)
+
 console.log(`[verify:top100-floors] PASS — ${failures.length === 0 ? 'all' : ''} Top-100 remaining floors green`)

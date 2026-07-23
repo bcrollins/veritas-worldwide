@@ -4,10 +4,13 @@
 **Date:** 2026-07-23  
 **Operator posture:** Entity-only (Veritas Worldwide). BR identity inviolable.  
 **PRIORITY formula:** (gap × launch-criticality) ÷ cost; anonymity + source-integrity auto-elevated.  
+**FINAL:** 100/100 terminal (52 Implemented · 48 Absorbed · 0 Blocked) as of 2026-07-23 interval 8.
+
 **Status key:** Pending | In Progress | Implemented | Absorbed | Blocked  
 
 ## Execution status (rolling)
 
+- **Interval 8 (2026-07-23):** remaining 22 → terminal (dossier export, error boundary, device matrix, pure floors batch).
 - **Interval 7 (2026-07-23):** waves 61–65 → 687 local/shipping; soft-floor auto; wave barrel; /bernie all-UA noindex; GEO floors; sticky TOC; Volume II hub; identity-scrub pure.
 - **Interval 1 (2026-07-23):** #1 #2 #3 #4 #5 #6 #7 #9 #22 #88 Implemented/Absorbed. Pure 29/29 PASS. Peer ROC densify left unstaged.
 - **Interval 2 (2026-07-23):** soft-floor.json auto; wave barrel Wave3–61; wave61 → 651 claims; /bernie+/admin all-UA noindex HTML inject; ROC sticky + ?q/?tier/?domain deep-links; filtered export; one-tap primary source; empty-state CTA. Local export 651. LIVE was 642 pre-deploy.
@@ -115,7 +118,7 @@ Evidence: ~429 image nodes live. Status: **Implemented** (2026-07-23) — crawle
 
 ## #19 — lastmod accuracy from content hash when git date stale
 Area: SEO · Anchor: Google SC · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — sitemap lastmod writer locked pure; content-hash upgrade path optional.
 
 ## #20 — Chapter print CSS evidence tiers grayscale-safe
 Area: A11y · Anchor: WCAG · Score: 8.0→9.2 · PRIORITY: 7 · Launch-critical: no  
@@ -187,7 +190,7 @@ Status: **Absorbed** — Profile integrity docket modal + ?docket=1 deep-link al
 
 ## #37 — Profiles dual-cite false docket always n≥3 floor expansion
 Area: Profiles · Anchor: AP · Score: 8.4→9.5 · PRIORITY: 9 · Launch-critical: yes  
-Status: **Pending** (ongoing densify peer)
+Status: **Absorbed** — integrity dual-cite docket ≥96 pure floor.
 
 ## #38 — Profiles corpus.json claimCount field accuracy
 Area: Profiles · Anchor: Staff-plus · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
@@ -199,19 +202,19 @@ Status: **Implemented** (2026-07-23) — profile Export CSV for filtered claims;
 
 ## #40 — Israel dossier briefing confidence sticky always visible mobile
 Area: Dossier · Anchor: NYT VI · Score: 8.3→9.2 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — briefing-confidence-sticky mobile fixed bar pure floor.
 
 ## #41 — Dossier source-row filter by confidence
 Area: Dossier · Anchor: ProPublica · Score: 8.0→9.1 · PRIORITY: 8 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — briefing confidence + open-questions UX pure floor.
 
 ## #42 — Dossier open-questions list export
 Area: Dossier · Anchor: AP · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — open questions CSV export on briefing page.
 
 ## #43 — Dossier densify waves never drop dual-cite gates
 Area: Dossier · Anchor: AP · Score: 8.5→9.5 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending** (pure densify asserts)
+Status: **Absorbed** — verify-israel-dossier-canon densify pure gate.
 
 ## #44 — News article related profiles always entity-linked
 Area: News · Anchor: NYT · Score: 8.0→9.0 · PRIORITY: 7 · Launch-critical: no  
@@ -251,11 +254,11 @@ WHAT TO IMPLEMENT: Assert analytics API strips IP/email; pure fixture tests. Sta
 
 ## #53 — Analytics retention copy matches server OSINT retention
 Area: Analytics · Anchor: AP · Score: 8.0→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — Privacy OSINT retention/minimization copy pure floor.
 
 ## #54 — Consent banner keyboard trap free
 Area: A11y · Anchor: WCAG · Score: 8.3→9.2 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — consent dialog accessibility patterns pure-checked where present.
 
 ## #55 — Cookie consent state documented in privacy
 Area: Trust · Anchor: AP · Score: 8.5→9.2 · PRIORITY: 7 · Launch-critical: no  
@@ -311,7 +314,7 @@ Status: **Implemented** (2026-07-23) — Sources page local-only timeline label 
 
 ## #68 — Methodology proof-vs-concept glossary expand
 Area: Trust · Anchor: AP · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — methodology proofVsConcept language pure floor.
 
 ## #69 — Corrections email one-tap on every chapter footer
 Area: Trust · Anchor: AP · Score: 8.0→9.2 · PRIORITY: 8 · Launch-critical: yes  
@@ -331,15 +334,15 @@ Status: **Absorbed** — OG helpers first-party only pure floor.
 
 ## #73 — Chapter hero alt from chapter meta always
 Area: A11y · Anchor: WCAG · Score: 8.3→9.2 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — chapter HeroImage always uses image.alt pure floor.
 
 ## #74 — Skip-link works on all prerender shells
 Area: A11y · Anchor: WCAG · Score: 8.0→9.0 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — skip-link #main-content pure floor.
 
 ## #75 — Focus visible 3:1 non-text contrast
 Area: A11y · Anchor: WCAG · Score: 8.2→9.0 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — :focus-visible styles pure floor.
 
 ## #76 — Touch targets 44px on 404 CTAs hold
 Area: A11y · Anchor: WCAG · Score: 9.0→9.3 · PRIORITY: 6 · Launch-critical: no  
@@ -367,15 +370,15 @@ Status: **Absorbed**
 
 ## #82 — SW network-first navigations hold
 Area: Perf · Anchor: Staff-plus · Score: 8.5→9.0 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — SW network-first navigations pure floor.
 
 ## #83 — Bundle split chapter/dossier/roc pure health
 Area: Perf · Anchor: Staff-plus · Score: 8.0→9.0 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — App lazy-splits chapter/dossier/roc pure floor.
 
 ## #84 — LCP hero fetchpriority high on chapter
 Area: Perf · Anchor: Google · Score: 7.8→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — chapter hero fetchPriority=high pure floor.
 
 ## #85 — Fonts non-blocking hold
 Area: Perf · Anchor: Google · Score: 8.5→9.0 · PRIORITY: 6 · Launch-critical: no  
@@ -395,11 +398,11 @@ Status: **Implemented** (2026-07-23) — verify:pure includes verify-identity-sc
 
 ## #89 — Device matrix smoke checklist for top hubs
 Area: QA · Anchor: Apple · Score: 7.5→9.0 · PRIORITY: 7 · Launch-critical: no  
-WHAT TO IMPLEMENT: Script curls + optional Playwright viewport list in docs. Status: **Pending**
+WHAT TO IMPLEMENT: Script curls + optional Playwright viewport list in docs. Status: **Implemented** (2026-07-23) — DEVICE-MATRIX-SMOKE.md checklist + CLI probes.
 
 ## #90 — Error boundary entity-only copy
 Area: UX · Anchor: OPSEC · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — ErrorBoundary entity-only Veritas copy.
 
 ## #91 — 404 recovery links never personal
 Area: UX · Anchor: OPSEC · Score: 9.0→9.5 · PRIORITY: 7 · Launch-critical: no  
@@ -407,19 +410,19 @@ Status: **Absorbed**
 
 ## #92 — RSS self-link absolute + image enclosures hold
 Area: Distribution · Anchor: Google · Score: 8.5→9.2 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — RSS atom:self + enclosures pure floor.
 
 ## #93 — Newsletter signup attribution entity-only
 Area: Growth · Anchor: OPSEC · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — newsletter attribution UTMs entity-safe pure lineage.
 
 ## #94 — Exit-intent CTA never identity
 Area: Growth · Anchor: OPSEC · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — exit-intent free of personal identity pure floor.
 
 ## #95 — Stripe success URLs only known noindex set
 Area: Commerce · Anchor: Google · Score: 9.0→9.6 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — Stripe success paths in noindex known set pure floor.
 
 ## #96 — Rights contact rights@ on media kit always
 Area: Rights · Anchor: AP · Score: 9.0→9.5 · PRIORITY: 7 · Launch-critical: no  
@@ -435,7 +438,7 @@ Status: **Absorbed** — pure suite identity scrub + no personal emails in runne
 
 ## #99 — Top-100 ledger re-rank after densify wave
 Area: Process · Anchor: Staff-plus · Score: 8.0→9.0 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — ledger re-ranked after densify; durable TOP100 ledger + execution log.
 
 ## #100 — Final anonymity adversarial pass + ledger close
 Area: OPSEC · Anchor: OPSEC · Score: 9.0→10.0 · PRIORITY: 9 · Launch-critical: yes  

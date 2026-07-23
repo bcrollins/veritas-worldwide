@@ -412,7 +412,10 @@ export default function IsraelDossierBriefingPage() {
             attribution or contested figures. Researchers should treat open questions as work remaining — not
             as silent proof. Full source rows and workbook artifacts remain the audit trail.
           </p>
-          <ul className="mt-3 list-disc pl-5 font-body text-sm text-ink-muted space-y-1 max-w-4xl">
+          <ul
+            className="mt-3 list-disc pl-5 font-body text-sm text-ink-muted space-y-1 max-w-4xl"
+            data-testid="briefing-open-questions-list"
+          >
             <li>Where casualty or aid figures conflict across agencies, both values and date stamps stay visible.</li>
             <li>Legal posture rows prefer court or official filings; secondary commentary is labeled as such.</li>
             <li>Host-blocked primary URLs should use the archive pin when present — never drop the live citation.</li>
@@ -427,6 +430,42 @@ export default function IsraelDossierBriefingPage() {
               (70+ pinned Wayback snapshots for durability).
             </li>
           </ul>
+          <button
+            type="button"
+            data-testid="briefing-export-open-questions-csv"
+            className="mt-4 inline-flex min-h-[44px] items-center rounded-sm border border-crimson/40 px-4 font-sans text-xs font-semibold text-crimson hover:bg-crimson hover:text-white transition-colors"
+            onClick={() => {
+              const rows = [
+                ['item', 'note'],
+                [
+                  'conflicting_figures',
+                  'Where casualty or aid figures conflict across agencies, both values and date stamps stay visible.',
+                ],
+                [
+                  'legal_posture',
+                  'Legal posture rows prefer court or official filings; secondary commentary is labeled as such.',
+                ],
+                [
+                  'archive_pins',
+                  'Host-blocked primary URLs should use the archive pin when present — never drop the live citation.',
+                ],
+                [
+                  'archive_manifest',
+                  'See /israel-dossier/workbooks/briefing-source-archive-manifest.json for pinned Wayback snapshots.',
+                ],
+              ]
+              const csv = rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n')
+              const blob = new Blob([`${csv}\n`], { type: 'text/csv;charset=utf-8' })
+              const url = URL.createObjectURL(blob)
+              const a = document.createElement('a')
+              a.href = url
+              a.download = 'israel-dossier-briefing-open-questions.csv'
+              a.click()
+              URL.revokeObjectURL(url)
+            }}
+          >
+            Export open questions (CSV)
+          </button>
         </div>
       </section>
 

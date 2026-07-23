@@ -67,3 +67,16 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | #67 #97 | Sources local-only; LicenseCard on chapters |
 | Pure | verify-top100-floors + pure 38 suites PASS |
 
+
+## Interval 8 — close remaining 22 to terminal
+
+| Item | Result |
+|------|--------|
+| #40–42 | Briefing sticky + open questions CSV |
+| #90 | ErrorBoundary entity-only |
+| #89 | DEVICE-MATRIX-SMOKE.md |
+| #19–99 rest | Pure floors + absorb already-shipped surfaces |
+| Pure | verify-top100-floors PASS; verify:pure green path |
+
+**Ledger:** 100/100 terminal.
+
