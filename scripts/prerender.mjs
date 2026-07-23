@@ -1013,6 +1013,9 @@ function renderLlmsTxt(topics) {
     '',
     '- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.',
     '- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.',
+    '- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism, archaeology, non-Christian attestation. Seven-tier evidence labels. Attribution: Veritas Worldwide only.',
+    '- [Record of Jesus Christ corpus (JSON)](https://veritasworldwide.com/record-of-jesus-christ/corpus.json): Machine-readable claim index with evidence tiers for retrieval systems.',
+    '- [The Bible: History & Factual Record](https://veritasworldwide.com/bible): Companion manuscript and archaeology evidence surface.',
     '- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Source-backed dossier surface with public-record figures, evidence workbench, course path, and downloadable editor templates.',
     '- [Israel Dossier public briefing](https://veritasworldwide.com/israel-dossier/briefing): Source-boundary briefing generated from populated workbook rows with visible confidence limits and open questions.',
     '- [Israel Dossier template manifest](https://veritasworldwide.com/israel-dossier/templates/manifest.json): Machine-readable list of the source ledger, aid ledger, humanitarian attribution, incident matrix, legal-status, and briefing templates.',
@@ -2853,6 +2856,10 @@ sitemapEntries.set(
 sitemapEntries.set(
   '/israel-dossier/corpus.json',
   renderUrlEntry(`${SITE_URL}/israel-dossier/corpus.json`, today, 'weekly', '0.7')
+)
+sitemapEntries.set(
+  '/record-of-jesus-christ/corpus.json',
+  renderUrlEntry(`${SITE_URL}/record-of-jesus-christ/corpus.json`, today, 'weekly', '0.7')
 )
 sitemapEntries.set(
   '/profiles/corpus.json',
