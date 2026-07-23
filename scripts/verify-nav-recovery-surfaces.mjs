@@ -1346,4 +1346,19 @@ assert(mediaDualFinal.includes('media-kit-primary-hubs'), 'media-kit primary Rel
 assert(mediaDualFinal.includes('RelatedHubs'), 'MediaKit RelatedHubs mount')
 
 
+
+// Profiles Read excludeTo reaffirm final
+const profilesExFinal = read('src/pages/ProfilesIndexPage.tsx')
+assert(profilesExFinal.includes('profiles-related-hubs'), 'profiles-related-hubs final')
+assert(profilesExFinal.includes('excludeTo="/profiles"') || profilesExFinal.includes("excludeTo='/profiles'"), 'profiles exclude final')
+
+const readExFinal = read('src/pages/ReadTheBookPage.tsx')
+assert(readExFinal.includes('read-related-hubs'), 'read-related-hubs final')
+assert(readExFinal.includes('excludeTo="/read"') || readExFinal.includes("excludeTo='/read'"), 'read exclude final')
+
+const homeExFinal = read('src/pages/HomePage.tsx')
+assert(homeExFinal.includes('home-related-hubs'), 'home-related-hubs final')
+assert(homeExFinal.includes('excludeTo="/"') || homeExFinal.includes("excludeTo='/'"), 'home exclude final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
