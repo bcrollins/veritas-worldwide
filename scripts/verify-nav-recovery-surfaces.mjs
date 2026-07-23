@@ -1294,4 +1294,25 @@ assert(nfPrimaryCustom.includes('not-found-hub-chips'), 'not-found primary chips
 assert(nfPrimaryCustom.includes('bg-crimson') || nfPrimaryCustom.includes('PRIMARY_HUBS'), 'NotFound Record CTA chrome')
 
 
+
+// footer primary hub order reaffirm final (shell)
+const footerFinal = read('src/App.tsx')
+assert(footerFinal.includes('site-footer') || footerFinal.includes('function Footer'), 'footer present final')
+// PRIMARY order Record → Read → Dossiers → Profiles → Search appears in shell primaryLinks
+const primaryLinksFinal = footerFinal.match(/const primaryLinks[^=]*= \[([\s\S]*?)\]/)
+if (primaryLinksFinal) {
+  const body = primaryLinksFinal[1]
+  const order = ['/', '/read', '/israel-dossier', '/profiles', '/search']
+  let last = -1
+  for (const dest of order) {
+    const idx = body.indexOf(`'${dest}'`)
+    const idx2 = body.indexOf(`"${dest}"`)
+    const i = idx >= 0 ? idx : idx2
+    assert(i >= 0, `primaryLinks has ${dest}`)
+    assert(i > last, `primaryLinks order ${dest}`)
+    last = i
+  }
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
