@@ -347,7 +347,7 @@ export default function SearchPage() {
 
   const osintServiceResults = useMemo(() => {
     if (!normalizedCrossSurfaceQuery) return []
-    const terms = [
+    const paidTerms = [
       'comprehensive online profile',
       'comprehensive profile',
       'osint',
@@ -363,26 +363,53 @@ export default function SearchPage() {
       'device fingerprint',
       'open source intelligence',
     ]
-    const hits = terms.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
-    if (!hits) return []
-    return [
-      {
+    const freePackTerms = [
+      'research pack',
+      'offline pack',
+      'corpus zip',
+      'corpora zip',
+      'machine readable',
+      'machine-readable',
+      'download corpus',
+      'json corpus',
+      'research pack.zip',
+      'research-pack',
+      'offline research',
+      'download zip',
+    ]
+    const paidHits = paidTerms.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
+    const freeHits = freePackTerms.some((term) => includesSearchQuery([term], normalizedCrossSurfaceQuery))
+    if (!paidHits && !freeHits) return []
+    const results = []
+    if (paidHits) {
+      results.push({
         id: 'osint-comprehensive-profile',
         eyebrow: 'Research service',
         title: 'Comprehensive Online Profile ($499)',
         description:
           'Fixed-price authenticated OSINT dossier with methodology appendix. Device and account links only when verified. Lawful-purpose intake required.',
         href: '/comprehensive-profile',
-      },
-      {
+      })
+      results.push({
         id: 'osint-profiles-public',
         eyebrow: 'Free archive',
         title: 'Power Profiles (public)',
         description:
           'Free public integrity dockets and influence maps — not a private investigation. Sort by integrity score on the profiles index.',
         href: '/profiles?sort=integrity-asc',
-      },
-    ]
+      })
+    }
+    if (freeHits || paidHits) {
+      results.push({
+        id: 'research-pack-zip',
+        eyebrow: 'Free · Machine-readable',
+        title: 'Offline research pack (ZIP)',
+        description:
+          'Free download of public JSON corpora (profiles, ROC, Israel dossier, taxonomy). Not a private investigation. Rate-limited. Entity publisher only.',
+        href: '/research-pack.zip',
+      })
+    }
+    return results
   }, [normalizedCrossSurfaceQuery])
 
   useEffect(() => {
