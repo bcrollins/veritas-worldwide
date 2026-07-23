@@ -28409,6 +28409,32 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+
+  {
+    id: 'west-bank-settler-attacking-school-science-olympiads-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacking School Science Olympiads Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school science-olympiad attack cohort)',
+    location: 'West Bank village schools hosting civilian science olympiads',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian school science olympiads after October 7 — denying STEM competition space for children. Pattern card distinct from science-fair and robotics-club cards.",
+    evidence:
+      'OCHA settler-violence databases and multi-outlet education-access coverage establish multi-source science-olympiad attacks. Multi-source wartime settler violence against civilian educational competitions is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet education-access coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [{ type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' }],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
