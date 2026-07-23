@@ -1409,4 +1409,18 @@ const bmHubsUses = (bmShareFinal.match(/hubs=\{BOOKMARKS_HUBS\}/g) || []).length
 assert(bmHubsUses >= 2, `Bookmarks BOOKMARKS_HUBS uses ${bmHubsUses} < 2`)
 
 
+
+// dossier family RelatedHubs testids reaffirm final
+for (const [rel, id] of [
+  ['src/pages/DeepStatePage.tsx', 'deep-state-related-hubs'],
+  ['src/pages/ForumPage.tsx', 'forum-related-hubs'],
+  ['src/pages/IsraelDossierBriefingPage.tsx', 'briefing-related-hubs'],
+  ['src/pages/IsraelDossierPage.tsx', 'israel-dossier-related-hubs'],
+]) {
+  assert(read(rel).includes(id), `${id} final`)
+  assert(read(rel).includes('RelatedHubs'), `${rel} RelatedHubs final`)
+  assert(read(rel).includes('DossierHubSpokes'), `${rel} spokes final`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
