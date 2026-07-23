@@ -890,4 +890,11 @@ assert(membershipHubsSrc.includes('membership-related-hubs'), 'membership-relate
 assert(membershipHubsSrc.includes('/read'), 'Membership Read dest unique final')
 assert(membershipHubsSrc.includes('/israel-dossier'), 'Membership Dossiers dest unique final')
 
+
+// About RelatedHubs Methodology destination
+const aboutHubsSrc = read('src/pages/AboutPage.tsx')
+assert(aboutHubsSrc.includes('about-related-hubs'), 'about-related-hubs testid')
+assert(aboutHubsSrc.includes('/methodology'), 'About Methodology dest unique final')
+assert(aboutHubsSrc.includes('/read'), 'About Read dest unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
