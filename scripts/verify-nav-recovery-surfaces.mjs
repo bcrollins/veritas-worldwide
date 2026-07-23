@@ -925,4 +925,11 @@ const timelineHubsSrc = read('src/pages/TimelinePage.tsx')
 assert(timelineHubsSrc.includes('timeline-related-hubs'), 'timeline-related-hubs testid')
 assert(timelineHubsSrc.includes('/read'), 'Timeline Read dest unique final')
 
+
+// Topics index RelatedHubs Profiles destination
+const topicsHubsSrc = read('src/pages/TopicsIndexPage.tsx')
+assert(topicsHubsSrc.includes('topics-related-hubs'), 'topics-related-hubs testid')
+assert(topicsHubsSrc.includes('/profiles'), 'Topics Profiles dest unique final')
+assert(topicsHubsSrc.includes('/search'), 'Topics Search dest unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
