@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:47:55.557Z",
-  "claimCount": 534,
+  "generatedAt": "2026-07-23T10:51:24.016Z",
+  "claimCount": 543,
   "tierHistogram": {
-    "well_attested": 213,
-    "verified": 190,
+    "well_attested": 215,
+    "verified": 195,
     "contested": 47,
-    "interpretive": 56,
+    "interpretive": 57,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 23
+    "circumstantial": 24
   },
   "claims": [
     {
@@ -290,6 +290,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-mesha-line-by-line",
+      "claim": "The Mesha Stele’s narrative lines describe Moabite revolt against Israel and cultic acts including reference to vessels of YHWH — primary Moabite royal propaganda requiring line-level critical reading.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
       "id": "ane-mesha-yhwh",
@@ -691,6 +698,13 @@
       "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
+      "id": "arch-masada-siege-ramp",
+      "claim": "The Roman siege ramp and camps at Masada are archaeologically documented landscape features matching Josephus’s account of the 73/74 CE siege in broad outline.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave49.ts"
+    },
+    {
       "id": "arch-nazareth",
       "claim": "Nazareth existed as a small Jewish settlement in the Early Roman period; monumental first-century remains are limited.",
       "tier": "well_attested",
@@ -948,6 +962,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
+      "id": "cosmo-dark-matter-omega-c",
+      "claim": "CMB and large-scale structure fits constrain the cold dark matter density parameter Ω_c h² as a major component of the cosmic energy budget in standard ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
       "id": "cosmo-dark-matter-status",
@@ -1375,6 +1396,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave46.ts"
+    },
+    {
+      "id": "ec-ignatius-rome-letter",
+      "claim": "Ignatius’s Letter to the Romans urgently seeks martyrdom and asks Roman Christians not to intervene — a primary early 2nd-c. window on episcopal self-understanding and martyr ideal.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
       "id": "ec-irenaeus",
@@ -1830,6 +1858,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
+      "id": "hj-john-baptist-execution",
+      "claim": "John the Baptist’s execution by Herod Antipas is independently attested by Josephus (Ant. 18) and the Gospels, with differing motive emphases — a high-confidence historical event framing Jesus’ early context.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
       "id": "hj-john-baptist-movement",
@@ -2532,6 +2567,13 @@
       "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
+      "id": "mod-wright-jesus-victory",
+      "claim": "N.T. Wright’s Jesus and the Victory of God reconstructs Jesus as enacting Israel’s return-from-exile story within a critical-realist method — a major Third Quest synthesis still widely engaged and contested.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave49.ts"
+    },
+    {
       "id": "nc-celsus",
       "claim": "Celsus (2nd c.), preserved mainly via Origen’s Contra Celsum, is an early pagan critic who treats Jesus as a historical magician/charlatan figure rather than a mythic non-entity.",
       "tier": "well_attested",
@@ -2882,6 +2924,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nc-thallus-mediated-only",
+      "claim": "All surviving Thallus references to a darkness around the crucifixion period are mediated through later Christian citation chains; no independent Thallus manuscript survives.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave49.ts"
+    },
+    {
       "id": "nc-thallus-original-lost",
       "claim": "Thallus’s histories survive only in later Christian citations (e.g., Julius Africanus via Syncellus); no independent first-century Thallus manuscript exists to verify crucifixion-darkness claims.",
       "tier": "circumstantial",
@@ -3090,6 +3139,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-latin-vetus-latina",
+      "claim": "The Old Latin (Vetus Latina) tradition preserves pre-Vulgate Latin translations of the NT that sometimes retain ancient readings independent of later Vulgate standardization.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
       "id": "nt-lectio-difficilior",
@@ -3531,6 +3587,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-life-autobiography",
+      "claim": "Josephus’s Life (Vita) is an autobiographical defense of his conduct in the Galilee war, written against Justus of Tiberias and other critics.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
       "id": "st-josephus-war-preface",
