@@ -187,8 +187,13 @@ function Header() {
 
   // Hick's Law: ≤5 primary hubs. Search is first-class. News/Forum preserved in Browse + footer.
   const primaryLinks: ShellLink[] = [
-    { to: '/', label: 'The Record' },
-    { to: '/read', label: 'Read', match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter') },
+    { to: '/', label: 'The Record', title: 'Home · The Record archive' },
+    {
+      to: '/read',
+      label: 'Read',
+      title: 'Read Volume I chapter by chapter',
+      match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter'),
+    },
     {
       to: '/israel-dossier',
       label: 'Dossiers',
@@ -198,8 +203,18 @@ function Header() {
         normalizePath(pathname) === '/deep-state' ||
         matchesPrefix(pathname, '/forum'),
     },
-    { to: '/profiles', label: 'Profiles', match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile') },
-    { to: '/search', label: t('nav.search'), match: pathname => normalizePath(pathname) === '/search' },
+    {
+      to: '/profiles',
+      label: 'Profiles',
+      title: 'Power Profiles · integrity dockets',
+      match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile'),
+    },
+    {
+      to: '/search',
+      label: t('nav.search'),
+      title: 'Search chapters, profiles, sources, dossiers',
+      match: pathname => normalizePath(pathname) === '/search',
+    },
   ]
 
   const trustLinks: ShellLink[] = [
@@ -646,10 +661,11 @@ function MobileTabBar() {
   const { t } = useI18n()
 
   const tabs: ShellLink[] = [
-    { to: '/', label: 'Record' },
+    { to: '/', label: 'Record', title: 'Home · The Record archive' },
     {
       to: '/read',
       label: 'Read',
+      title: 'Read Volume I chapter by chapter',
       match: pathname => normalizePath(pathname) === '/read' || matchesPrefix(pathname, '/chapter'),
     },
     {
@@ -664,9 +680,15 @@ function MobileTabBar() {
     {
       to: '/profiles',
       label: 'Profiles',
+      title: 'Power Profiles · integrity dockets',
       match: pathname => matchesPrefix(pathname, '/profiles') || matchesPrefix(pathname, '/profile'),
     },
-    { to: '/search', label: t('nav.search'), match: pathname => normalizePath(pathname) === '/search' },
+    {
+      to: '/search',
+      label: t('nav.search'),
+      title: 'Search chapters, profiles, sources, dossiers',
+      match: pathname => normalizePath(pathname) === '/search',
+    },
   ]
 
   return (
