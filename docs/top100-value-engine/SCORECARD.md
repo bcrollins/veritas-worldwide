@@ -21,5 +21,8 @@ Path to 10.0: GH org transfer, git history scrub, Stripe portal entity branding;
 
 ## Nav Perfection (2026-07-23)
 - ≤5 hubs + mobile tab bar + recovery web across Browse/Research/Account
-- Live markers green; pure 46 suites with verify-nav-ia + verify-nav-recovery-surfaces
+- Sprint 9: RelatedHubs on all 43 public pages (research/institute dual recovery); pure coverage suite
+- Sprint 9b–9c: focus-visible keyboard platform — shell (desktop/mobile/drawer/footer/cookie) + RelatedHubs/ResearchHubChips/DossierHubSpokes
+- Pure: 47 suites (verify-nav-ia + verify-nav-recovery 115 needles + verify-related-hubs-coverage); densify locks v24/v18 IA
+- Soft-404 live green (server-soft-404 + 5 hubs); product lag expected under multi-agent densify tip flood
 - Peer densify unthrashed
