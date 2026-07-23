@@ -1069,7 +1069,7 @@ function renderLlmsTxt(topics) {
     '',
     '- [The Deep State — Epstein Network](https://veritasworldwide.com/deep-state): Court-sourced dossier surface with primary-document CTAs and evidence tiers.',
     '- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Public-record figures, evidence workbench, course path, and archive-pinned briefing sources.',
-    '- [Community forum](https://veritasworldwide.com/forum): Beta discussion for sourced material (local until shared stack ships).',
+    '- [Community forum](https://veritasworldwide.com/forum): Source-first discussion of evidence, archive methods, and The Record materials.',
     '',
     '## Optional',
     '',
