@@ -8028,6 +8028,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-vitamin-c-scurvy-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Vitamin-C Scurvy Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (vitamin-C cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated vitamin-C deficiency and scurvy risk among Gaza children under fruit/vegetable collapse — a clinical micronutrient emergency pattern distinct from other B-vitamin and zinc cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source vitamin-C deficiency risk. Exact clinical counts are incomplete; multi-source wartime pediatric scurvy risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-medical-examinations-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Medical Examinations Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (exam-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony, ICRC access statements, and multi-source reporting document denial of independent medical examinations for Israeli civilian hostages — a protected-person medical-rights pattern distinct from chronic-meds denial and ICRC-access cards.',
+    evidence:
+      'ICRC access statements, multi-source released-hostage testimony, and multi-outlet coverage establish multi-source medical-exam denial. Exact visit gaps evolve; multi-source denied independent medical exams for civilian hostages is the claim.',
+    sources: [
+      { label: 'ICRC access statements', url: 'https://www.icrc.org' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet hostage medical access coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'ICRC public updates', url: 'https://www.icrc.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-drone-harassment-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Drone Harassment Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (drone-harassment cohort)',
+    location: 'West Bank Palestinian villages and grazing lands',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated civilian-drone harassment by settlers after October 7 — buzzing homes, flocks, and school routes to intimidate Palestinian families including children. Pattern card for drone harassment distinct from vehicle attacks and price-tag cards.',
+    evidence:
+      'OCHA settler-violence notes, multi-source case reporting, and multi-outlet coverage establish multi-source civilian-drone harassment. Exact incident counts evolve; multi-source wartime settler drone harassment is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler drone coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -12493,6 +12574,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['fences', 'access', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-vitamin-c-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Vitamin-C Scurvy Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated vitamin-C deficiency and scurvy risk among children.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-vitamin-c-scurvy-risk-pattern-2023-2025',
+      'gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025',
+      'gaza-children-protein-energy-gap-pattern-2023-2025',
+    ],
+    tags: ['vitamin-c', 'scurvy', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-medical-exams-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Medical Examinations Pattern',
+    description: 'ICRC multi-source documentation of denied independent medical examinations for civilian hostages.',
+    source: 'ICRC / multi-outlet / Israeli government',
+    sourceUrl: 'https://www.icrc.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-medical-examinations-pattern-2023-2025',
+      'gaza-icrc-access-denial-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medical', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-drones-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Drone Harassment Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated civilian-drone harassment by settlers after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-drone-harassment-pattern-2023-2025',
+      'west-bank-settler-vehicle-ramming-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+    ],
+    tags: ['drones', 'settlers', 'harassment', 'west-bank'],
+  },
+
+
 
 
 
