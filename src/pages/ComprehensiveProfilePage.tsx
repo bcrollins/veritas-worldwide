@@ -20,6 +20,7 @@ import { trackSupportClick } from '../lib/ga4'
 import { recordAnalyticsEvent } from '../lib/analytics'
 import { identifyContact } from '../lib/hubspot'
 import FontSizeToggle from '../components/FontSizeToggle'
+import { useI18n } from '../lib/i18n'
 
 type IntakeState = {
   clientName: string
@@ -56,6 +57,7 @@ const INITIAL: IntakeState = {
 }
 
 export default function ComprehensiveProfilePage() {
+  const { t } = useI18n()
   const [form, setForm] = useState<IntakeState>(INITIAL)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)

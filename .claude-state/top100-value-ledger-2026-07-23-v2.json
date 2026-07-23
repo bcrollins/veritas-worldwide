@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 93,
-    "Pending": 7
+    "Implemented": 96,
+    "Pending": 4
   },
   "items": [
     {
@@ -1676,7 +1676,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-final-guides-filters-2026-07-23"
     },
     {
       "rank": 88,
@@ -1883,7 +1884,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-final-guides-filters-2026-07-23"
     },
     {
       "rank": 99,
@@ -1901,7 +1903,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-final-guides-filters-2026-07-23"
     },
     {
       "rank": 100,
