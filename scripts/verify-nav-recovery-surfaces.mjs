@@ -1361,4 +1361,19 @@ assert(homeExFinal.includes('home-related-hubs'), 'home-related-hubs final')
 assert(homeExFinal.includes('excludeTo="/"') || homeExFinal.includes("excludeTo='/'"), 'home exclude final')
 
 
+
+// Bernie dark recovery reaffirm final
+const bernieFinal = read('src/pages/BernieShowPage.tsx')
+assert(bernieFinal.includes('bernie-related-hubs'), 'bernie-related-hubs final')
+assert(bernieFinal.includes('RelatedHubs'), 'Bernie RelatedHubs final')
+assert(bernieFinal.includes('tone="dark"') || bernieFinal.includes("tone='dark'"), 'Bernie dark tone final')
+assert(bernieFinal.includes('Continue in the Veritas archive') || bernieFinal.includes('Veritas archive'), 'Bernie archive recovery copy')
+
+// OSINT success pack + RelatedHubs reaffirm final
+const osintFinal = read('src/pages/ComprehensiveProfileSuccessPage.tsx')
+assert(osintFinal.includes('osint-success-related-hubs'), 'osint success hubs final')
+assert(osintFinal.includes('osint-success-research-pack'), 'osint pack final')
+assert(osintFinal.includes('RelatedHubs'), 'osint RelatedHubs final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
