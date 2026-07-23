@@ -4,7 +4,15 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { PowerProfile, PROFILES, searchProfiles, getProfilePhoto } from '../data/profileData'
 import { computeIntegrityScore } from '../lib/integrityScore'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { formatCompactDollars, getTopicProfileStats } from '../lib/topicDiscovery'
 import { topicHubs } from '../data/topicHubs'
 
@@ -277,14 +285,10 @@ export default function ProfilesIndexPage(): React.ReactNode {
         numberOfItems: PROFILES.length,
         isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Power Profiles', item: `${SITE_URL}/profiles` },
-        ],
-      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Power Profiles', url: `${SITE_URL}/profiles` },
+      ]),
     ])
 
     return () => {

@@ -14,7 +14,15 @@ import {
   type NewsChapterCorridor,
   type NewsSourceBreakdown,
 } from '../lib/newsDiscovery'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { ImageWithFallback } from '../components/ImageWithFallback'
 
 function getArticleImageSrc(src: string) {
@@ -269,14 +277,21 @@ export default function NewsPage() {
         'Daily investigative reporting on power, money, and institutions. Every claim sourced to primary documents. No anonymous sources. No spin.',
       url: `${SITE_URL}/news`,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: `Current Events — ${SITE_NAME}`,
-      url: `${SITE_URL}/news`,
-      description: 'Daily investigative reporting sourced exclusively to primary documents.',
-      publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-    })
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: `Current Events — ${SITE_NAME}`,
+        url: `${SITE_URL}/news`,
+        description: 'Daily investigative reporting sourced exclusively to primary documents.',
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'News', url: `${SITE_URL}/news` },
+      ]),
+    ])
     return () => {
       clearMetaTags()
       removeJsonLd()
