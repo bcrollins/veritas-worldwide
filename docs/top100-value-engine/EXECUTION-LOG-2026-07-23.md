@@ -248,3 +248,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | Al-Shifa mass grave · Holit dining · cemetery desecration |
 | Pure | visual + israel-dossier + research-pack PASS |
 
+
+## Interval densify — tip post-1700 tent-camp / Nir Oz safe-room / olive-press arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza apnea-leads/neonatal-pulse-ox/feeding-tube/heel-lancet · hostage wash-floors/marathon/drip-water/airport-banners · WB pepper-crates/art-easels/eggplant-poles/herb-racks |
+| VI | tent-camp strikes · Nir Oz safe room · olive-press arson |
+| Pure | visual + israel-dossier + research-pack PASS |
+
