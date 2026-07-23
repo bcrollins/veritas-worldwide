@@ -2133,4 +2133,20 @@ assert((pHick[1].match(/to:/g) || []).length === 5, 'PRIMARY exactly 5 with emph
 assert(primaryHickEnd.includes('emphasizeTo'), 'emphasize coexists with Hick 5')
 
 
+
+// Account recovery hubs five destinations matrix ultimate
+for (const [name, constName, extra] of [
+  ['AccessibilityPage', 'A11Y_HUBS', '/membership'],
+  ['ComprehensiveProfilePage', 'OSINT_HUBS', '/israel-dossier'],
+  ['PrivacyPage', 'PRIVACY_HUBS', '/membership'],
+  ['TermsPage', 'TERMS_HUBS', '/membership'],
+]) {
+  const src = read(`src/pages/${name}.tsx`)
+  const b = src.match(new RegExp(`const ${constName}[^=]*= \\[([\\s\\S]*?)\\]`))
+  assert(b, `${constName} block matrix`)
+  assert((b[1].match(/to:/g) || []).length === 5, `${constName} count 5 matrix`)
+  assert(b[1].includes(extra), `${constName} has ${extra}`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
