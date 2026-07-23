@@ -2515,8 +2515,8 @@ export const PROFILES: PowerProfile[] = [
     state: 'NJ',
     photoUrl: getProfilePhoto('cory-booker'),
     summary:
-      'New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7. Primary: OpenSecrets, Senate record.',
-    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'New Jersey', 'Democrat', '2020 Presidential Candidate'],
+      'New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Primary: OpenSecrets, Senate record, CRS RL33222.',
+    tags: ['Senator', 'Pro-Israel', 'AIPAC', 'NORPAC', 'New Jersey', 'Democrat', '2020 Presidential Candidate', 'FMF Continuity'],
     career: [
       'Rhodes Scholar / Yale Law (public bio)',
       'Newark City Council / Mayor of Newark',

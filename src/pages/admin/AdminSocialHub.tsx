@@ -56,6 +56,9 @@ const BRAND_ASSETS = {
   evidenceCircumstantial: '/brand-kit/04-social/evidence-tier-circumstantial.svg',
   evidenceDisputed: '/brand-kit/04-social/evidence-tier-disputed.svg',
   quoteCard: '/brand-kit/04-social/quote-card.svg',
+  threadsPost: '/brand-kit/04-social/threads-post.svg',
+  pressContact: '/brand-kit/07-docs/PRESS-CONTACT.md',
+  pressVcard: '/brand-kit/09-templates/press-contact.vcf',
   og: '/og-image.png',
   zip: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
   matrix: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md',
@@ -88,6 +91,7 @@ const PLATFORM_SETUP: Record<string, string[]> = {
   'Threads': [
     'Download Threads app · login with Instagram',
     'Set bio (short)',
+    `Threads post card: ${BRAND_ASSETS.threadsPost}`,
     `Share quote + evidence cards: ${BRAND_ASSETS.quoteCard}`,
     'Post 5+ introduction threads',
   ],
@@ -239,6 +243,7 @@ export default function AdminSocialHub() {
           { label: 'Evidence ✓', href: BRAND_ASSETS.evidenceVerified },
           { label: 'Podcast', href: BRAND_ASSETS.podcastCover },
           { label: 'Newsletter', href: BRAND_ASSETS.newsletterHeader },
+          { label: 'Threads', href: BRAND_ASSETS.threadsPost },
           { label: 'OG Card', href: BRAND_ASSETS.og },
         ].map(a => (
           <a

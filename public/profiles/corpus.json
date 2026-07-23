@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:32:54.931Z",
+  "generatedAt": "2026-07-23T07:34:47.430Z",
   "count": 96,
   "profiles": [
     {
@@ -446,7 +446,7 @@
       "name": "Cory Booker",
       "title": "U.S. Senator (D-NJ)",
       "category": "politician",
-      "summary": "New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7. Primary: OpenSecrets, Senate record.",
+      "summary": "New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Primary: OpenSecrets, Senate record, CRS RL33222.",
       "photo": "/profiles/cory-booker.jpg",
       "url": "https://veritasworldwide.com/profile/cory-booker",
       "bioguideId": "B001288",
@@ -454,9 +454,11 @@
         "Senator",
         "Pro-Israel",
         "AIPAC",
+        "NORPAC",
         "New Jersey",
         "Democrat",
-        "2020 Presidential Candidate"
+        "2020 Presidential Candidate",
+        "FMF Continuity"
       ],
       "integrityScore": null,
       "integrityFalsehoods": 0,
