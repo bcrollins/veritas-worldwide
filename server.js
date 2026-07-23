@@ -1890,10 +1890,14 @@ app.get(['/rss.xml', '/rss'], (_req, res) => {
   return res.redirect(301, '/feed.xml')
 })
 
-// Static files with aggressive caching for hashed assets
+// Static files with aggressive caching for hashed assets.
+// redirect:false — do not auto-append "/" for directory paths like /brand-kit
+// (asset tree). Directory trailing-slash redirects race SPA/alias routing and
+// can create soft loops for crawlers when a public folder shares a route name.
 app.use(express.static(path.join(__dirname, 'dist'), {
   maxAge: '1y',
   immutable: true,
+  redirect: false,
   setHeaders(res, filePath) {
     // HTML should never be cached (SPA shell)
     if (filePath.endsWith('.html')) {

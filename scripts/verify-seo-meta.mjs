@@ -486,6 +486,10 @@ assert(server.includes('rawPath') || server.includes("split('?')[0]"), 'slug can
 // Exact hub case + content-packs alias — never soft-404 /About or serve homepage on /content-packs.
 assert(server.includes('STATIC_CANONICAL_PATHS'), 'server must 301 mixed-case exact hubs (/About → /about)')
 assert(
+  /express\.static\([\s\S]{0,200}redirect:\s*false/.test(server),
+  'express.static must set redirect:false so asset dirs (e.g. /brand-kit) do not 301-loop',
+)
+assert(
   server.includes('PATH_ALIASES') &&
     server.includes("'/content-packs'") &&
     server.includes("'/share'") &&
