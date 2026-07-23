@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:23:21.979Z",
+  "generatedAt": "2026-07-23T09:23:41.080Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 168,
-    "timelineEvents": 156,
+    "incidents": 169,
+    "timelineEvents": 157,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 154,
+    "historicalWarCrimesPack": 155,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 108
+      "post-oct7": 109
     },
     "incidentsByTier": {
-      "verified": 166,
+      "verified": 167,
       "circumstantial": 2
     },
-    "childrenTagged": 141,
-    "civiliansTagged": 166,
+    "childrenTagged": 142,
+    "civiliansTagged": 167,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4270,6 +4270,28 @@
       "tags": [
         "water",
         "sanitation",
+        "children",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-wheat-silos-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Wheat Silos & Grain Storage Destruction Pattern",
+      "description": "WFP multi-source documentation of destroyed wheat silos and grain warehouses collapsing strategic food stocks.",
+      "source": "WFP / OCHA / multi-outlet",
+      "sourceUrl": "https://www.wfp.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-wheat-silos-storage-destruction-pattern-2023-2025",
+        "gaza-flour-mills-destruction-pattern-2023-2025",
+        "gaza-starvation-ipc-phases-2024-2025"
+      ],
+      "tags": [
+        "food",
+        "storage",
         "children",
         "civilians",
         "gaza"
@@ -11188,6 +11210,50 @@
           "type": "investigation",
           "label": "Multi-outlet fuel infrastructure coverage",
           "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-wheat-silos-storage-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Wheat Silos & Grain Storage Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (grain-storage cohort)",
+      "location": "Gaza Strip silos / grain warehouses",
+      "summary": "WFP, multi-source satellite analysis, and field reporting document destruction of wheat silos and grain warehouses — collapsing strategic food stocks under siege. Pattern card for grain-storage destruction distinct from flour mills and market-price cards.",
+      "evidence": "WFP storage/supply materials and multi-source visual investigations establish multi-source silo/warehouse destruction. Exact tonnage lost evolves; multi-source strategic grain-storage collapse is the claim.",
+      "sources": [
+        {
+          "label": "WFP food-security / storage materials",
+          "url": "https://www.wfp.org"
+        },
+        {
+          "label": "OCHA food-security materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet grain storage damage coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WFP public updates",
+          "url": "https://www.wfp.org"
         }
       ],
       "tier": "verified",
