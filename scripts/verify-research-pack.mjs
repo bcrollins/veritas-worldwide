@@ -94,6 +94,11 @@ assert(
   privacy.includes('/research-pack.zip'),
   'Privacy researcher-tools section must reference research-pack.zip',
 )
+const bookmarks = read('src/pages/BookmarksPage.tsx')
+assert(
+  bookmarks.includes('/research-pack.zip') && bookmarks.includes('bookmarks-research-pack-zip'),
+  'Bookmarks quick routes must link research pack zip',
+)
 const platformHealth = read('scripts/verify-platform-health.mjs')
 assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),

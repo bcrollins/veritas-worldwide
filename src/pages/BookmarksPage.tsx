@@ -552,6 +552,17 @@ export default function BookmarksPage() {
                   <Link to="/sources" className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson">
                     → Sources
                   </Link>
+                  <Link to="/researcher" className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson">
+                    → Researcher tools
+                  </Link>
+                  <a
+                    href="/research-pack.zip"
+                    download="veritas-research-pack.zip"
+                    className="flex min-h-[44px] items-center text-sm text-ink-muted transition-colors hover:text-crimson"
+                    data-testid="bookmarks-research-pack-zip"
+                  >
+                    → Offline research pack (ZIP)
+                  </a>
                 </nav>
               </div>
 
