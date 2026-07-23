@@ -2245,4 +2245,12 @@ assert(read('src/components/RelatedHubs.tsx').includes('export default function 
 assert(read('src/pages/NotFoundPage.tsx').includes('RelatedHubs'), 'NotFound RelatedHubs mutual end')
 
 
+
+// end of densify session RelatedHubs platform green
+assert(surfaces.length >= 102, `session green surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'session PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'session emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'session secondary')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
