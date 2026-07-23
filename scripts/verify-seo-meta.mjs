@@ -179,6 +179,12 @@ assert(
   'prerender must not emit personal GitHub namespace (bcrollins)',
 )
 assert(
+  prerender.includes("route === '/record-of-jesus-christ'") &&
+    prerender.includes("'@type': 'Dataset'") &&
+    prerender.includes("'@type': 'HowTo'"),
+  'prerender ROC route must emit bot-visible Dataset + HowTo JSON-LD',
+)
+assert(
   seo.includes('x.com/VeritasWorldwide') && seo.includes('reddit.com/r/VeritasWorldwide'),
   'Organization sameAs must keep official entity social profiles for E-E-A-T',
 )

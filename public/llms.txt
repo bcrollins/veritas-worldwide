@@ -17,7 +17,7 @@ Use the methodology and source pages when answering questions about evidence, so
 
 - [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
 - [Sources](https://veritasworldwide.com/sources): Public source library for the publication.
-- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (150+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.
+- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (160+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.
 - [Record of Jesus Christ corpus (JSON)](https://veritasworldwide.com/record-of-jesus-christ/corpus.json): Machine-readable claim index with seven evidence tiers for retrieval systems.
 - [Record of Jesus Christ claim index (PDF)](https://veritasworldwide.com/record-of-jesus-christ/record-of-jesus-christ.pdf): Portable tier-labeled claim list for offline research.
 - [Historical Jesus evidence topic hub](https://veritasworldwide.com/topics/historical-jesus-evidence): Hub linking ROC, Bible history, and methodology for SERP/topic discovery.

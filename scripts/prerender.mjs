@@ -1019,7 +1019,7 @@ function renderLlmsTxt(topics) {
     '',
     '- [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.',
     '- [Sources](https://veritasworldwide.com/sources): Public source library for the publication.',
-    '- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (150+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.',
+    '- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (160+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.',
     '- [Record of Jesus Christ corpus (JSON)](https://veritasworldwide.com/record-of-jesus-christ/corpus.json): Machine-readable claim index with seven evidence tiers for retrieval systems.',
     '- [Record of Jesus Christ claim index (PDF)](https://veritasworldwide.com/record-of-jesus-christ/record-of-jesus-christ.pdf): Portable tier-labeled claim list for offline research.',
     '- [The Bible: History & Factual Record](https://veritasworldwide.com/bible): Companion manuscript and archaeology evidence surface.',
@@ -2621,7 +2621,7 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
-  // Record of Jesus Christ — Book + FAQ + Breadcrumb + ItemList for bot-visible rich results
+  // Record of Jesus Christ — Book + FAQ + Breadcrumb + ItemList + Dataset + HowTo for bot-visible rich results
   // (client RecordOfJesusChristPage sets these on hydrate; prerender must match for Googlebot).
   if (route === '/record-of-jesus-christ') {
     return [
@@ -2679,10 +2679,10 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
           },
           {
             '@type': 'Question',
-            name: 'Where can researchers export the claim set?',
+            name: 'How many claims are in the corpus and where can researchers export them?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'JSON and CSV export on the page, machine corpus at /record-of-jesus-christ/corpus.json, and a portable PDF claim index at /record-of-jesus-christ/record-of-jesus-christ.pdf.',
+              text: 'The live index contains 160+ tier-labeled claims. Export JSON/CSV on the page, fetch the machine corpus at /record-of-jesus-christ/corpus.json, or download the portable PDF claim index at /record-of-jesus-christ/record-of-jesus-christ.pdf.',
             },
           },
           {
@@ -2710,6 +2710,82 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
           { '@type': 'ListItem', position: 7, name: 'Levantine Archaeology', url: `${url}#levantine-archaeology` },
           { '@type': 'ListItem', position: 8, name: 'Early Christian Literature', url: `${url}#early-christian-literature` },
           { '@type': 'ListItem', position: 9, name: 'Modern Scholarship to 2026', url: `${url}#modern-scholarship` },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: 'Record of Jesus Christ — claim corpus',
+        description:
+          'Machine-readable index of 160+ tier-labeled evidentiary claims on historical Jesus, biblical manuscripts, Levantine archaeology, and related scientific context. Publisher: Veritas Worldwide only.',
+        url,
+        identifier: `${SITE_URL}/record-of-jesus-christ/corpus.json`,
+        keywords: [
+          'historical Jesus',
+          'New Testament textual criticism',
+          'Dead Sea Scrolls',
+          'Levantine archaeology',
+          'evidence tiers',
+        ],
+        license: `${SITE_URL}/methodology`,
+        isAccessibleForFree: true,
+        creator: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        distribution: [
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/json',
+            contentUrl: `${SITE_URL}/record-of-jesus-christ/corpus.json`,
+          },
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/pdf',
+            contentUrl: `${SITE_URL}/record-of-jesus-christ/record-of-jesus-christ.pdf`,
+          },
+        ],
+        variableMeasured: 'Scholarly evidence tier (verified through literary_theological)',
+        measurementTechnique:
+          'Historical-critical method; Nestle-Aland/ECM textual standards; archaeological and scientific literature',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to use The Record of Jesus Christ evidence corpus',
+        description:
+          'Export and cite tier-labeled historical Jesus, manuscript, and archaeology claims from Veritas Worldwide without conflating proof and tradition.',
+        url,
+        totalTime: 'PT10M',
+        step: [
+          {
+            '@type': 'HowToStep',
+            position: 1,
+            name: 'Open the evidence surface',
+            text: 'Go to /record-of-jesus-christ and scan the nine chronological sections from cosmology (as science) through modern scholarship.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 2,
+            name: 'Filter by evidence tier or search claims',
+            text: 'Toggle the seven scholarly tiers and use claim search for manuscripts, archaeology sites, or non-Christian sources.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 3,
+            name: 'Read the tier label and sources',
+            text: 'Every claim shows proofVsConcept hygiene plus primary or peer citations.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 4,
+            name: 'Export for research databases',
+            text: 'Download JSON or CSV on-page, or fetch corpus.json / the PDF claim index for offline work.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 5,
+            name: 'Cite Veritas Worldwide only',
+            text: 'Attribute the compilation to Veritas Worldwide. Contact rights@veritasworldwide.com for corrections.',
+          },
         ],
       },
     ]
