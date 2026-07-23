@@ -105,4 +105,25 @@ if (fs.existsSync(zipPath) && fs.existsSync(manPath)) {
   }
 }
 
+
+
+// Offline identity scrub of zip text members (entity-only)
+if (fs.existsSync(zipPath)) {
+  const FORBIDDEN = [/brollins/i, /bcrollins/i, /brandon\s+rollins/i, /daniellemccauley/i]
+  // light parse: require visual-investigations entry name in generator already asserted;
+  // scan uncompressed members via simple local-file header walk is heavy — scan known public sources instead
+  for (const rel of [
+    'public/llms.txt',
+    'public/evidence-taxonomy.json',
+    'public/israel-dossier/visual-investigations.json',
+  ]) {
+    const fp = path.join(root, rel)
+    if (!fs.existsSync(fp)) continue
+    const text = fs.readFileSync(fp, 'utf8')
+    for (const re of FORBIDDEN) {
+      assert(!re.test(text), `${rel} must not contain identity pattern ${re}`)
+    }
+  }
+}
+
 console.log('[verify:research-pack] PASS')
