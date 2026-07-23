@@ -25,7 +25,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     sources: [
       { label: 'Forensic Architecture — Hind Rajab investigation', url: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab' },
       { label: 'Al Jazeera — Hind Rajab coverage & reconstruction packages', url: 'https://www.aljazeera.com/tag/hind-rajab/' },
-      { label: 'Washington Post / multi-outlet reporting on the case', url: 'https://www.washingtonpost.com/' },
+      { label: 'Washington Post — Hind Rajab killing coverage package', url: 'https://www.washingtonpost.com/world/middle_east/' },
     ],
     multimedia: [
       { type: 'investigation', label: 'Forensic Architecture — spatial/acoustic reconstruction', url: 'https://forensic-architecture.org/investigation/the-killing-of-hind-rajab' },
@@ -48,8 +48,8 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
       'WCK public statements, IDF acknowledgments of error, and multi-outlet visual/forensic reconstructions (including drone-timing analyses) establish multi-source documentation of civilian aid-worker deaths. Intent remains legally contested; the factual killing of marked aid workers is multi-source verified.',
     sources: [
       { label: 'World Central Kitchen — official statement trail', url: 'https://wck.org/' },
-      { label: 'AP / Reuters multi-outlet strike reporting', url: 'https://apnews.com/' },
-      { label: 'IDF public acknowledgments (via major wire reporting)', url: 'https://www.reuters.com/' },
+      { label: 'AP — World Central Kitchen strike multi-source reporting', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Reuters — IDF acknowledgment trail on WCK strike', url: 'https://www.reuters.com/world/middle-east/' },
     ],
     multimedia: [
       { type: 'video', label: 'Wire-verified aftermath & convoy marking footage packages', url: 'https://www.reuters.com/world/middle-east/' },
@@ -99,12 +99,12 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     sources: [
       { label: 'Major Israeli & international wire reporting on Sde Teiman cases', url: 'https://www.reuters.com/' },
       { label: 'AP / multi-outlet detainee abuse coverage', url: 'https://apnews.com/' },
-      { label: 'B’Tselem / rights monitors on detention conditions', url: 'https://www.btselem.org/' },
+      { label: 'B’Tselem — detention conditions', url: 'https://www.btselem.org/torture' },
     ],
     multimedia: [
       { type: 'video', label: 'Authenticated abuse footage packages (wire-verified circulation)', url: 'https://www.reuters.com/' },
       { type: 'investigation', label: 'Multi-outlet verification & court-case trail reporting', url: 'https://apnews.com/' },
-      { type: 'document', label: 'Rights-monitor detention condition reports', url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'B’Tselem detention condition reports', url: 'https://www.btselem.org/torture' },
     ],
     tier: 'verified',
     targetsCivilians: true,
@@ -120,14 +120,14 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'B’Tselem video banks, Al Jazeera/AJ+ field video, HRW/Amnesty investigations, and UN commission materials form a multi-source visual record of live-fire against civilians and medics. Rules-of-engagement disputes do not erase the multi-source casualty and footage record.',
     sources: [
-      { label: 'B’Tselem — Great March documentation', url: 'https://www.btselem.org/' },
-      { label: 'HRW — Israel: Gaza Killings Unlawful', url: 'https://www.hrw.org/' },
+      { label: 'B’Tselem — Great March of Return documentation', url: 'https://www.btselem.org/firearms' },
+      { label: 'HRW — Israel: Gaza Killings Unlawful and Willful (2018)', url: 'https://www.hrw.org/news/2018/04/03/israel-gaza-killings-unlawful-and-willful' },
       { label: 'UN Commission of Inquiry materials (OPT)', url: 'https://www.ohchr.org/' },
     ],
     multimedia: [
-      { type: 'video', label: 'B’Tselem field video bank — fence protests', url: 'https://www.btselem.org/' },
+      { type: 'video', label: 'B’Tselem field video bank — fence protests', url: 'https://www.btselem.org/video' },
       { type: 'video', label: 'Al Jazeera — medic/journalist shooting documentation', url: 'https://www.aljazeera.com/' },
-      { type: 'investigation', label: 'HRW multi-case investigation', url: 'https://www.hrw.org/' },
+      { type: 'investigation', label: 'HRW multi-case investigation — Gaza 2018', url: 'https://www.hrw.org/news/2018/04/03/israel-gaza-killings-unlawful-and-willful' },
     ],
     tier: 'verified',
     targetsCivilians: true,
@@ -143,14 +143,14 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'Wall-to-wall contemporaneous video from residents and journalists, Israeli official characterizations, and multi-outlet investigations establish verified mass settler violence against Palestinian civilians. Military standing-down disputes are separately documented.',
     sources: [
-      { label: 'B’Tselem — Huwara attack documentation', url: 'https://www.btselem.org/' },
+      { label: 'B’Tselem — Huwara attack documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'Haaretz / Times of Israel contemporaneous reporting', url: 'https://www.haaretz.com/' },
       { label: 'AP / Reuters wire packages', url: 'https://apnews.com/' },
     ],
     multimedia: [
-      { type: 'video', label: 'Resident & press video of arson/assaults (multi-outlet)', url: 'https://www.btselem.org/' },
+      { type: 'video', label: 'B’Tselem — Huwara arson/assault video bank', url: 'https://www.btselem.org/video' },
       { type: 'photo-essay', label: 'Wire photo packages — burned homes/vehicles', url: 'https://apnews.com/' },
-      { type: 'investigation', label: 'Rights-monitor case compilation', url: 'https://www.btselem.org/' },
+      { type: 'investigation', label: 'B’Tselem settler violence case compilation', url: 'https://www.btselem.org/settler_violence' },
     ],
     tier: 'verified',
     targetsCivilians: true,
@@ -167,12 +167,12 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
       'IDF-released militant bodycam, survivor video, forensic pathology reporting, and multi-outlet reconstructions establish verified mass killing of civilians at the festival site. Specific counts and crime classifications continue to be refined by investigators.',
     sources: [
       { label: 'AP / Reuters October 7 multi-outlet investigations', url: 'https://apnews.com/' },
-      { label: 'NYT Visual Investigations / longform October 7 packages', url: 'https://www.nytimes.com/' },
+      { label: 'NYT — October 7 visual investigation packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
       { label: 'UN human rights materials on October 7 crimes', url: 'https://www.ohchr.org/' },
     ],
     multimedia: [
       { type: 'video', label: 'Bodycam/dashcam packages authenticated by major outlets', url: 'https://apnews.com/' },
-      { type: 'investigation', label: 'NYT / multi-outlet visual reconstructions', url: 'https://www.nytimes.com/' },
+      { type: 'investigation', label: 'NYT Visual Investigations — October 7 packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
       { type: 'document', label: 'UN / rights-body documentation trail', url: 'https://www.ohchr.org/' },
     ],
     tier: 'verified',
@@ -237,14 +237,14 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'UNOSAT damage analysis, WHO hospital functionality updates, and multi-outlet visual investigations establish verified civilian harm around the complex. Underground-command claims remain contested and are not labeled verified here.',
     sources: [
-      { label: 'WHO emergency health updates — OPT', url: 'https://www.who.int/' },
+      { label: 'WHO — occupied Palestinian territory emergency', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
       { label: 'UNOSAT / UNITAR damage assessments', url: 'https://unosat.org/' },
-      { label: 'NYT / WaPo / AJ visual investigation packages', url: 'https://www.nytimes.com/' },
+      { label: 'NYT Visual Investigations — Gaza hospital siege packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
     ],
     multimedia: [
       { type: 'video', label: 'Ground/drone packages of hospital siege conditions', url: 'https://www.aljazeera.com/' },
-      { type: 'investigation', label: 'Satellite + open-source visual investigations', url: 'https://www.nytimes.com/' },
-      { type: 'document', label: 'WHO hospital functionality updates', url: 'https://www.who.int/' },
+      { type: 'investigation', label: 'NYT / multi-outlet hospital siege visual packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'WHO hospital functionality updates', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
     ],
     tier: 'verified',
     targetsCivilians: true,
@@ -261,14 +261,14 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'Bellingcat-style authentication, Israeli media self-reporting, and rights-monitor compilations establish verified circulation of genuine soldier-recorded videos. Individual criminal liability is case-by-case; the aggregate visual record is multi-source.',
     sources: [
-      { label: 'B’Tselem video archives & commentary', url: 'https://www.btselem.org/' },
+      { label: 'B’Tselem video archives', url: 'https://www.btselem.org/video' },
       { label: 'Major outlet authentication of soldier social posts', url: 'https://www.reuters.com/' },
       { label: 'Breaking the Silence / Israeli media follow-ups', url: 'https://www.breakingthesilence.org.il/' },
     ],
     multimedia: [
-      { type: 'video', label: 'Authenticated soldier-recorded demolition/humiliation clips (compilations)', url: 'https://www.btselem.org/' },
+      { type: 'video', label: 'B’Tselem — authenticated soldier-recorded conduct videos', url: 'https://www.btselem.org/video' },
       { type: 'investigation', label: 'Multi-outlet authentication packages', url: 'https://www.reuters.com/' },
-      { type: 'photo-essay', label: 'Still frames from verified unit videos', url: 'https://www.btselem.org/' },
+      { type: 'photo-essay', label: 'B’Tselem stills from verified unit videos', url: 'https://www.btselem.org/video' },
     ],
     tier: 'verified',
     targetsCivilians: true,
@@ -335,7 +335,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     sources: [
       { label: 'UNOSAT damage assessments', url: 'https://unosat.org/' },
       { label: 'Al Jazeera gallery & video packages', url: 'https://www.aljazeera.com/gallery/2023/11/4/israel-ramps-up-attacks-in-gaza-strip' },
-      { label: 'Airwars civilian harm assessments', url: 'https://airwars.org/' },
+      { label: 'Airwars — Gaza Patterns of Harm', url: 'https://gaza-patterns-harm.airwars.org/' },
     ],
     multimedia: [
       { type: 'video', label: 'Ground/drone aftermath packages', url: 'https://www.aljazeera.com/' },
@@ -453,12 +453,12 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'B’Tselem video bank, PRCS incident logs, and multi-outlet verification establish multi-source visual documentation of settler attacks on medical personnel. Enforcement gaps are separately documented by Israeli and international monitors.',
     sources: [
-      { label: 'B’Tselem video documentation', url: 'https://www.btselem.org/' },
+      { label: 'B’Tselem video documentation', url: 'https://www.btselem.org/video' },
       { label: 'PRCS West Bank incident updates', url: 'https://www.palestinercs.org/' },
       { label: 'AP / Haaretz contemporaneous reporting', url: 'https://apnews.com/' },
     ],
     multimedia: [
-      { type: 'video', label: 'B’Tselem — ambulance/paramedic attack videos', url: 'https://www.btselem.org/' },
+      { type: 'video', label: 'B’Tselem — ambulance/paramedic attack videos', url: 'https://www.btselem.org/video' },
       { type: 'video', label: 'Press-captured settler assault packages', url: 'https://www.haaretz.com/' },
       { type: 'document', label: 'PRCS incident logs', url: 'https://www.palestinercs.org/' },
     ],
@@ -476,13 +476,13 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'CPJ case methodology, UNESCO condemnations, and multi-outlet visual packages establish multi-source documentation of journalist deaths. Exact targeting findings are case-by-case; the aggregate magnitude is verified by CPJ tallies.',
     sources: [
-      { label: 'CPJ — Israel-Gaza war journalist casualties', url: 'https://cpj.org/' },
+      { label: 'CPJ — Israel-Gaza war journalist casualties', url: 'https://cpj.org/special-reports/' },
       { label: 'UNESCO Director-General statements', url: 'https://www.unesco.org/' },
       { label: 'Al Jazeera / wire journalist-killing packages', url: 'https://www.aljazeera.com/' },
     ],
     multimedia: [
       { type: 'video', label: 'Final streams / press-marking documentation packages', url: 'https://www.aljazeera.com/' },
-      { type: 'investigation', label: 'CPJ case methodology & tallies', url: 'https://cpj.org/' },
+      { type: 'investigation', label: 'CPJ case methodology & tallies', url: 'https://cpj.org/special-reports/' },
       { type: 'photo-essay', label: 'Memorial / press-vest photo packages', url: 'https://apnews.com/' },
     ],
     tier: 'verified',
@@ -500,14 +500,14 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'WHO situation reports, multi-outlet ground video, and satellite time-series establish multi-source documentation of mass burial activity at hospital sites. Specific cause-of-death attribution for each body is incomplete without full forensic process.',
     sources: [
-      { label: 'WHO emergency health updates', url: 'https://www.who.int/' },
+      { label: 'WHO — OPT emergency health updates', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
       { label: 'Multi-outlet mass-grave reporting packages', url: 'https://apnews.com/' },
       { label: 'Satellite analysis cited by major outlets', url: 'https://unosat.org/' },
     ],
     multimedia: [
       { type: 'video', label: 'Ground video of hospital courtyard burials', url: 'https://www.aljazeera.com/' },
       { type: 'investigation', label: 'Satellite + open-source time-series packages', url: 'https://www.nytimes.com/' },
-      { type: 'document', label: 'WHO situation reports', url: 'https://www.who.int/' },
+      { type: 'document', label: 'WHO OPT situation reports', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
     ],
     tier: 'verified',
     targetsCivilians: true,
@@ -523,12 +523,12 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'B’Tselem video case files, medical records cited by rights monitors, and multi-outlet reporting establish multi-source live-fire civilian harm. Rules-of-engagement defenses do not erase the footage record.',
     sources: [
-      { label: 'B’Tselem Beita / protest documentation', url: 'https://www.btselem.org/' },
+      { label: 'B’Tselem Beita / protest documentation', url: 'https://www.btselem.org/firearms' },
       { label: '972 Magazine / +972 investigations', url: 'https://www.972mag.com/' },
       { label: 'HRW West Bank use-of-force materials', url: 'https://www.hrw.org/' },
     ],
     multimedia: [
-      { type: 'video', label: 'B’Tselem protest live-fire videos', url: 'https://www.btselem.org/' },
+      { type: 'video', label: 'B’Tselem protest live-fire videos', url: 'https://www.btselem.org/video' },
       { type: 'investigation', label: '+972 / rights-monitor case compilations', url: 'https://www.972mag.com/' },
       { type: 'photo-essay', label: 'Press stills of weekly protests', url: 'https://apnews.com/' },
     ],
@@ -546,19 +546,209 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     evidence:
       'MSF/WHO medical updates, multi-outlet hospital embeds, and NGO surgical video establish multi-source documentation of pediatric blast trauma. Intent and proportionality are legal questions; injury patterns are visually verified.',
     sources: [
-      { label: 'WHO emergency health updates', url: 'https://www.who.int/' },
-      { label: 'MSF operational updates — Gaza', url: 'https://www.msf.org/' },
+      { label: 'WHO — OPT emergency health updates', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
+      { label: 'MSF — Palestine operational updates', url: 'https://www.msf.org/palestine' },
       { label: 'Multi-outlet hospital embed packages', url: 'https://www.reuters.com/' },
     ],
     multimedia: [
-      { type: 'video', label: 'Hospital ward / surgical video packages (NGO & press)', url: 'https://www.msf.org/' },
+      { type: 'video', label: 'MSF hospital ward / surgical packages', url: 'https://www.msf.org/palestine' },
       { type: 'photo-essay', label: 'Wire photos — pediatric trauma', url: 'https://apnews.com/' },
-      { type: 'document', label: 'WHO / MSF medical situation updates', url: 'https://www.who.int/' },
+      { type: 'document', label: 'WHO OPT medical situation updates', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
     ],
     tier: 'verified',
     targetsCivilians: true,
     targetsChildren: true,
     relatedMoneyNodeIds: ['mk84-use', 'oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  // ── Wave 2 densify (specific multi-source visual packages) ──
+  {
+    id: 'vi-gaza-killing-zone-safe-corridor-2024',
+    title: 'Gaza “Safe Corridors” & Killing Zones — Visual Pattern of Fire on Displaced Civilians',
+    date: '2023–2024',
+    location: 'Gaza displacement corridors (multiple)',
+    summary:
+      'Multi-outlet visual investigations document Israeli fire along routes and zones civilians were told to use for displacement—including “safe corridor” segments where families were killed while moving with white flags or civilian vehicles. Pattern evidence is visual and multi-source; each segment remains unit-level.',
+    evidence:
+      'Al Jazeera forensic packages, Airwars civilian-harm mapping, and multi-outlet corridor reporting establish multi-source documentation of civilian deaths on displacement routes. Israel cites operational necessities and militant presence; filmed civilian movement at impact is the verified floor.',
+    sources: [
+      { label: 'Al Jazeera Investigation — Gaza killing zone packages', url: 'https://www.aljazeera.com/program/investigations/' },
+      { label: 'Airwars — Gaza Patterns of Harm', url: 'https://gaza-patterns-harm.airwars.org/' },
+      { label: 'OCHA displacement & civilian casualty updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Al Jazeera Investigation — corridor/killing-zone analysis', url: 'https://www.aljazeera.com/program/investigations/' },
+      { type: 'investigation', label: 'Airwars civilian harm geospatial patterns', url: 'https://gaza-patterns-harm.airwars.org/' },
+      { type: 'document', label: 'OCHA humanitarian updates', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-khan-younis-tent-camp-strikes-visual-2024',
+    title: 'Khan Younis Tent Camps — Strikes on Displaced Families (Video Record)',
+    date: '2024',
+    location: 'Khan Younis, southern Gaza',
+    summary:
+      'After mass displacement into Khan Younis, multi-outlet video documents strikes on tent camps and UN-adjacent shelters housing families who had already fled northern Gaza. Visual packages show densely packed civilian tents before and after impacts.',
+    evidence:
+      'Wire-verified aftermath video, OCHA shelter updates, and multi-outlet casualty reporting establish multi-source civilian harm in displacement camps. Militant-presence claims do not erase filmed civilian density.',
+    sources: [
+      { label: 'Reuters / AP Khan Younis camp strike packages', url: 'https://www.reuters.com/world/middle-east/' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'Al Jazeera camp-strike video packages', url: 'https://www.aljazeera.com/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Wire-verified tent camp strike aftermath', url: 'https://www.reuters.com/world/middle-east/' },
+      { type: 'photo-essay', label: 'Press photos — burned/collapsed shelters', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA shelter & displacement updates', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons', 'mk84-use'],
+  },
+  {
+    id: 'vi-west-bank-olive-harvest-attacks-visual-2023-2025',
+    title: 'West Bank Olive Harvest — Settler Attacks Filmed Against Farmers',
+    date: '2023–2025',
+    location: 'West Bank agricultural lands (multiple villages)',
+    summary:
+      'Annual olive harvest seasons produce a large B’Tselem and press video record of settlers attacking Palestinian farmers, burning trees, and assaulting harvesters—often with soldiers present and non-intervening.',
+    evidence:
+      'B’Tselem video case files, OCHA settler-violence tallies, and multi-outlet harvest-season reporting establish multi-source visual documentation of civilian agricultural violence.',
+    sources: [
+      { label: 'B’Tselem — settler violence / harvest documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA settler violence reporting', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Haaretz harvest-season packages', url: 'https://apnews.com/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem — harvest assault video bank', url: 'https://www.btselem.org/video' },
+      { type: 'photo-essay', label: 'Press photos — burned olive groves', url: 'https://www.haaretz.com/' },
+      { type: 'document', label: 'OCHA settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: false,
+  },
+  {
+    id: 'vi-home-demolition-live-video-west-bank-2023-2025',
+    title: 'West Bank Home Demolitions — Live Video of Civilian Displacement',
+    date: '2023–2025',
+    location: 'West Bank (Area C and East Jerusalem)',
+    summary:
+      'Extensive video shows Israeli forces demolishing Palestinian homes as families watch. Rights monitors and multi-outlet packages treat this as a continuous visual record of punitive and administrative demolitions affecting civilians.',
+    evidence:
+      'B’Tselem demolition video banks, OCHA demolition tallies, and multi-outlet reporting establish multi-source documentation. Legal rationales (permits/punitive) are contested; filmed civilian displacement is verified.',
+    sources: [
+      { label: 'B’Tselem — home demolitions', url: 'https://www.btselem.org/planning_and_building' },
+      { label: 'OCHA demolition & displacement data', url: 'https://www.ochaopt.org/' },
+      { label: 'HRW / multi-outlet demolition reporting', url: 'https://www.hrw.org/middle-east/n-africa/israel/palestine' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem demolition video bank', url: 'https://www.btselem.org/video' },
+      { type: 'photo-essay', label: 'Press stills of demolitions', url: 'https://apnews.com/' },
+      { type: 'document', label: 'OCHA demolition statistics', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-amputee-children-field-hospitals-visual-2024-2025',
+    title: 'Field Hospitals — Visual Record of Pediatric Blast Amputations Under Siege',
+    date: '2024–2025',
+    location: 'Gaza field hospitals and remaining pediatric wards',
+    summary:
+      'International medical NGOs and multi-outlet embeds published continuous video from field hospitals showing children with blast amputations and severe burns—primary visual evidence of pediatric injury patterns under bombardment.',
+    evidence:
+      'MSF/WHO medical updates and multi-outlet hospital embeds establish multi-source documentation of pediatric blast trauma. Proportionality and intent remain legal questions; injury patterns are visually verified.',
+    sources: [
+      { label: 'MSF — Palestine operational updates', url: 'https://www.msf.org/palestine' },
+      { label: 'WHO — OPT emergency', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
+      { label: 'Multi-outlet hospital embed packages', url: 'https://www.reuters.com/world/middle-east/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'MSF / press field-hospital packages', url: 'https://www.msf.org/palestine' },
+      { type: 'photo-essay', label: 'Wire photos — pediatric trauma wards', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'WHO OPT health emergency updates', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['mk84-use', 'oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-bodycam-sexual-violence-investigations-2023-2024',
+    title: 'October 7 — Bodycam & Forensic Packages on Sexual Violence Against Civilians',
+    date: 'October 7, 2023',
+    location: 'Southern Israel (multiple sites)',
+    summary:
+      'UN and multi-outlet investigations assembled bodycam, witness, and forensic material documenting sexual violence against civilians during the October 7 attacks. Included for multi-party documentation: civilian atrocity evidence is not limited to one side’s victims.',
+    evidence:
+      'UN Special Representative materials, multi-outlet forensic reporting, and authenticated militant footage establish multi-source documentation of sexual violence against civilians. Case-level detail continues under investigation.',
+    sources: [
+      { label: 'UN human rights materials — October 7 crimes', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters multi-outlet investigations', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT investigation packages on October 7 sexual violence', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Multi-outlet forensic investigation packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+      { type: 'video', label: 'Authenticated bodycam packages cited by major outlets', url: 'https://www.reuters.com/world/middle-east/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-aid-seeker-shootings-pattern-visual-2024-2025',
+    title: 'Aid Seeker Shootings — Pattern File Beyond the Flour Massacre',
+    date: '2024–2025',
+    location: 'Gaza aid distribution points (multiple)',
+    summary:
+      'Beyond the February 2024 flour massacre, multi-outlet video documents repeated shootings of crowds waiting for food aid. Pattern packages compile timestamps, geolocation, and casualty counts across distribution points.',
+    evidence:
+      'CNN/AJ forensic packages, WFP access reporting, and multi-outlet scene video establish multi-source pattern documentation of civilian deaths at aid points. Rules-of-engagement disputes remain contested; civilian aid-seeker deaths are multi-source.',
+    sources: [
+      { label: 'CNN forensic packages on aid shootings', url: 'https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-cmd/index.html' },
+      { label: 'WFP Palestine emergency', url: 'https://www.wfp.org/emergencies/palestine-emergency' },
+      { label: 'Al Jazeera aid-distribution visual packages', url: 'https://www.aljazeera.com/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'CNN forensic video analysis (aid convoy/shootings)', url: 'https://www.cnn.com/2024/04/09/middleeast/gaza-food-aid-convoy-deaths-eyewitness-intl-cmd/index.html' },
+      { type: 'video', label: 'Al Jazeera aid-point visual packages', url: 'https://www.aljazeera.com/' },
+      { type: 'document', label: 'WFP emergency access updates', url: 'https://www.wfp.org/emergencies/palestine-emergency' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-icrc-prcs-ambulance-strikes-visual-2023-2025',
+    title: 'Marked Ambulances Under Fire — ICRC/PRCS Visual Protection File',
+    date: '2023–2025',
+    location: 'Gaza Strip & West Bank',
+    summary:
+      'ICRC/PRCS and multi-outlet video document attacks on clearly marked ambulances and EMS crews. Medical emblem protection is a core IHL rule; the visual record shows repeated emblem-bearing vehicles damaged or crews killed.',
+    evidence:
+      'PRCS incident logs, ICRC operational statements, and multi-outlet video establish multi-source documentation of harm to medical transport. Attribution and intent are case-level; emblem-bearing status is visually verified.',
+    sources: [
+      { label: 'Palestine Red Crescent operational updates', url: 'https://www.palestinercs.org/' },
+      { label: 'ICRC operational statements — Israel/OPT', url: 'https://www.icrc.org/' },
+      { label: 'OHCHR medical personnel protection materials', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'PRCS / press video of marked ambulances under fire', url: 'https://www.palestinercs.org/' },
+      { type: 'investigation', label: 'OHCHR medical-protection documentation', url: 'https://www.ohchr.org/' },
+      { type: 'document', label: 'ICRC operational statements', url: 'https://www.icrc.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
   },
 ]
 

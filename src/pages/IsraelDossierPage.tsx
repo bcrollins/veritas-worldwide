@@ -2102,6 +2102,35 @@ export default function IsraelDossierPage() {
               </button>
               <button
                 type="button"
+                onClick={() => {
+                  const videoOnly = allIncidents.filter(
+                    (i) => i.targetsCivilians && i.multimedia.some((m) => m.type === 'video'),
+                  )
+                  downloadIncidentsCsv(
+                    videoOnly,
+                    `veritas-israel-dossier-video-civilian-harm-${new Date().toISOString().slice(0, 10)}.csv`,
+                  )
+                }}
+                className="inline-flex min-h-[44px] items-center rounded-sm border border-crimson/40 bg-crimson/5 px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-crimson hover:bg-crimson/10 transition-colors"
+                data-testid="export-video-civilian-csv"
+              >
+                Export video + civilians CSV
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  downloadIncidentsCsv(
+                    ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS,
+                    `veritas-israel-dossier-visual-investigations-${new Date().toISOString().slice(0, 10)}.csv`,
+                  )
+                }
+                className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-parchment px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-ink hover:border-crimson/40 hover:text-crimson transition-colors"
+                data-testid="export-vi-pack-csv"
+              >
+                Export VI pack CSV
+              </button>
+              <button
+                type="button"
                 onClick={copyShareUrl}
                 className="inline-flex min-h-[44px] items-center rounded-sm border border-crimson/30 bg-crimson/5 px-3 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-crimson hover:bg-crimson/10 transition-colors"
               >

@@ -386,6 +386,24 @@ assert(profiles.includes("id: 'yoav-gallant'"), 'profileData missing Gallant pro
 assert(canon.includes("id: 'crs-lifetime-aid'"), 'money trail missing CRS lifetime aid node')
 assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wiring')
 
+// Visual Investigations densify (NYT VI / AP method floors)
+{
+  const viPath = path.join(root, 'src/data/israelDossierVisualInvestigations.ts')
+  assert(fs.existsSync(viPath), 'visual investigations pack missing')
+  const vi = fs.readFileSync(viPath, 'utf8')
+  assert(vi.includes('ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS'), 'VI export const missing')
+  assert(vi.includes("type: 'video'"), 'VI pack must include video multimedia')
+  assert(!/brollins|brandoncrollins|aerolink/i.test(vi), 'VI pack identity leak')
+  const cards = (vi.match(/id: 'vi-/g) || []).length
+  assert(cards >= 28, `VI pack should have ≥28 visual cards, got ${cards}`)
+  const sourceUrls = (vi.match(/url: 'https?:\/\//g) || []).length
+  assert(sourceUrls >= cards * 2, `VI dual-cite floor: need ≥2 URLs/card avg, cards=${cards} urls=${sourceUrls}`)
+  const expanded = read(files.expanded)
+  assert(expanded.includes('ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS'), 'expanded must merge VI pack')
+  assert(page.includes('visual-investigations'), 'dossier page missing Visual Investigations section')
+  assert(page.includes('export-video-civilian-csv') || page.includes('Export video + civilians CSV'), 'dossier missing video+civilian CSV export')
+}
+
 if (errors.length) {
   console.error('[verify:israel-dossier] FAIL')
   for (const error of errors) console.error(`- ${error}`)
