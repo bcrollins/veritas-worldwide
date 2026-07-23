@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:54:11.794Z",
+  "generatedAt": "2026-07-23T07:57:49.885Z",
   "count": 96,
   "profiles": [
     {
@@ -1068,7 +1068,7 @@
       "name": "Kevin McCarthy",
       "title": "Former Speaker of the House (R-CA)",
       "category": "politician",
-      "summary": "House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, Speakership record, CRS RL33222.",
+      "summary": "House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that telecoms complying with Jan. 6 committee records requests would violate federal law and lose ability to operate (Aug. 2021). Primary: OpenSecrets, Speakership record, CRS RL33222, PolitiFact.",
       "photo": "/profiles/kevin-mccarthy.jpg",
       "url": "https://veritasworldwide.com/profile/kevin-mccarthy",
       "bioguideId": "M001165",
@@ -1078,18 +1078,19 @@
         "AIPAC",
         "California",
         "Republican",
-        "Institutional Enablement"
+        "Institutional Enablement",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "mike-johnson",
       "name": "Mike Johnson",
       "title": "Speaker of the House (R-LA)",
       "category": "politician",
-      "summary": "House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034 context.",
+      "summary": "House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact False that paroled immigrants can “simply go to welfare/DMV and register to vote” (May 2024 SAFE Act presser). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact.",
       "photo": "/profiles/mike-johnson.jpg",
       "url": "https://veritasworldwide.com/profile/mike-johnson",
       "bioguideId": "J000299",
@@ -1100,11 +1101,12 @@
         "Louisiana",
         "Republican",
         "H.R. 815",
-        "Institutional Enablement"
+        "Institutional Enablement",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "tim-scott",

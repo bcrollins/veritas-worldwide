@@ -6260,8 +6260,16 @@ export const PROFILES: PowerProfile[] = [
     state: 'CA',
     photoUrl: getProfilePhoto('kevin-mccarthy'),
     summary:
-      'House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Primary: OpenSecrets, Speakership record, CRS RL33222.',
-    tags: ['Former Speaker', 'Pro-Israel', 'AIPAC', 'California', 'Republican', 'Institutional Enablement'],
+      'House Speaker (Jan–Oct 2023) during early Gaza-war aid debates and long-time Republican Conference leader. Structural floor-scheduling power for Israel security packages; documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that telecoms complying with Jan. 6 committee records requests would violate federal law and lose ability to operate (Aug. 2021). Primary: OpenSecrets, Speakership record, CRS RL33222, PolitiFact.',
+    tags: [
+      'Former Speaker',
+      'Pro-Israel',
+      'AIPAC',
+      'California',
+      'Republican',
+      'Institutional Enablement',
+      'Integrity Docket',
+    ],
     career: [
       'California State Assembly (public bio)',
       '2007–2023 — U.S. House',
@@ -6324,10 +6332,43 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023',
       },
+      {
+        claim:
+          'Integrity docket: Aug. 2021 claim that telecom/internet companies complying with Jan. 6 committee records requests would violate federal law and risk losing ability to operate in the U.S. rated False (no such statute; 18 U.S.C. § 2703 protects compliance with lawful process).',
+        source: 'PolitiFact False; @GOPLeader tweet Aug. 31, 2021; 18 U.S.C. § 2703',
+        url: 'https://www.politifact.com/factchecks/2021/sep/02/kevin-mccarthy/house-gop-leader-kevin-mccarthy-wrong-telecom-law/',
+        tier: 'verified',
+        date: '2021',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'mccarthy-jan6-telecom-federal-law-violation-2021',
+        statement:
+          '“If these (telecom and internet) companies comply with the Democrat order to turn over private information, they are in violation of federal law and subject to losing their ability to operate in the United States.”',
+        saidAt: 'August 31, 2021',
+        context:
+          'X/Twitter warning after the House select committee investigating the Jan. 6 Capitol attack asked 30+ telecom and internet companies to retain records relevant to the investigation — a precursor step toward possible subpoenas.',
+        whyFalse:
+          'PolitiFact rated False. McCarthy’s office never named the statute. Telecom and privacy lawyers (including practitioners under 18 U.S.C. § 2703) told PolitiFact no federal law bars companies from complying with a proper congressional subpoena or warrant, and federal law expressly protects providers for complying with compulsory process. Companies can challenge process in court; they do not forfeit their license to operate by lawful compliance.',
+        correction:
+          'No federal statute strips telecom/internet companies of their ability to operate for complying with a Jan. 6 committee records subpoena; 18 U.S.C. § 2703 protects compliance with lawful process.',
+        statementSource: 'House Minority Leader Kevin McCarthy (@GOPLeader) tweet, Aug. 31, 2021',
+        statementUrl: 'https://twitter.com/GOPLeader/status/1432820807684739073',
+        debunkSource: 'PolitiFact — False (Sept. 2, 2021); 18 U.S.C. § 2703',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/sep/02/kevin-mccarthy/house-gop-leader-kevin-mccarthy-wrong-telecom-law/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/kevin-mccarthy/summary?cid=N00006863' },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Kevin_McCarthy' },
+      {
+        label: 'PolitiFact — Jan. 6 telecom law claim (False)',
+        url: 'https://www.politifact.com/factchecks/2021/sep/02/kevin-mccarthy/house-gop-leader-kevin-mccarthy-wrong-telecom-law/',
+      },
     ],
   },
   {
@@ -6340,8 +6381,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'LA',
     photoUrl: getProfilePhoto('mike-johnson'),
     summary:
-      'House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034 context.',
-    tags: ['Speaker of the House', 'Pro-Israel', 'AIPAC', 'Louisiana', 'Republican', 'H.R. 815', 'Institutional Enablement'],
+      'House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact False that paroled immigrants can “simply go to welfare/DMV and register to vote” (May 2024 SAFE Act presser). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact.',
+    tags: [
+      'Speaker of the House',
+      'Pro-Israel',
+      'AIPAC',
+      'Louisiana',
+      'Republican',
+      'H.R. 815',
+      'Institutional Enablement',
+      'Integrity Docket',
+    ],
     career: [
       'Constitutional attorney (public bio)',
       '2017 — U.S. House LA-4',
@@ -6424,12 +6474,50 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: May 8, 2024 claim that “the millions (of immigrants) that have been paroled can simply go to their local welfare office or the DMV and register to vote” rated False (noncitizens cannot lawfully register; forms are vetted; federal ban since 1996).',
+        source: 'PolitiFact False; C-SPAN May 8, 2024 presser; NVRA / 18 U.S.C. § 1015',
+        url: 'https://www.politifact.com/factchecks/2024/may/20/mike-johnson/mike-johnsons-false-claim-that-immigrants-paroled/',
+        tier: 'verified',
+        date: '2024',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'johnson-parolees-simply-register-to-vote-dmv-2024',
+        statement:
+          '“The millions (of immigrants) that have been paroled can simply go to their local welfare office or the DMV and register to vote.”',
+        saidAt: 'May 8, 2024',
+        context:
+          'Speaker press conference advocating the Safeguard American Voter Eligibility (SAFE) Act / H.R. 8281 proof-of-citizenship registration bill; claimed noncitizen voting poses a “clear and present danger” to election integrity.',
+        whyFalse:
+          'PolitiFact rated False. Humanitarian parolees are not U.S. citizens. Federal law has banned noncitizen voting in federal elections since 1996. NVRA offices must offer registration forms, but applicants must attest citizenship under penalty of perjury and election officials vet applications — submitting a form does not “simply” register a noncitizen. Johnson provided no data showing widespread noncitizen registration or voting.',
+        correction:
+          'Parolees cannot lawfully register or vote in federal elections; DMV/welfare offices may distribute forms, but citizenship attestation + election-office vetting prevent automatic noncitizen registration.',
+        statementSource: 'C-SPAN — Speaker Johnson News Conference on Voter Eligibility Legislation, May 8, 2024',
+        statementUrl:
+          'https://www.c-span.org/video/?535480-1/speaker-johnson-news-conference-voter-eligibility-legislation',
+        debunkSource: 'PolitiFact — False (May 20, 2024); NVRA / DOJ; 18 U.S.C. § 1015',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2024/may/20/mike-johnson/mike-johnsons-false-claim-that-immigrants-paroled/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Speaker.gov', url: 'https://www.speaker.gov' },
       { label: 'Official House site', url: 'https://mikejohnson.house.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/mike-johnson/summary?cid=N00039106' },
       { label: 'H.R. 815', url: 'https://www.congress.gov/bill/118th-congress/house-bill/815' },
+      {
+        label: 'PolitiFact — Parolee DMV voter registration (False)',
+        url: 'https://www.politifact.com/factchecks/2024/may/20/mike-johnson/mike-johnsons-false-claim-that-immigrants-paroled/',
+      },
+      {
+        label: 'C-SPAN — May 8, 2024 SAFE Act presser',
+        url: 'https://www.c-span.org/video/?535480-1/speaker-johnson-news-conference-voter-eligibility-legislation',
+      },
     ],
   },
   {

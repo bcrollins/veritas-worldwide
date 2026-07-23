@@ -124,6 +124,8 @@ const required = [
   'matt-gaetz',
   'elise-stefanik',
   'tim-scott',
+  'kevin-mccarthy',
+  'mike-johnson',
 ];
 const scores = {};
 for (const id of required) {
@@ -556,8 +558,32 @@ for (const f of (timScottP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('tim-scott dual-cite collision: ' + f.id);
 }
 
+// Kevin McCarthy integrity gate
+const mccarthy = scores['kevin-mccarthy'];
+if (!mccarthy || mccarthy.n < 1) throw new Error('kevin-mccarthy needs ≥1 verified falsehood, got ' + (mccarthy?.n ?? 0));
+if (mccarthy.score > 90) throw new Error('kevin-mccarthy score expected ≤90, got ' + mccarthy.score);
+const mccarthyP = getProfileBySlug('kevin-mccarthy');
+if (!(mccarthyP.documentedFalsehoods || []).some((f) => f.id === 'mccarthy-jan6-telecom-federal-law-violation-2021')) {
+  throw new Error('kevin-mccarthy missing Jan. 6 telecom docket id');
+}
+for (const f of (mccarthyP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('kevin-mccarthy dual-cite collision: ' + f.id);
+}
+
+// Mike Johnson integrity gate
+const mikeJohnson = scores['mike-johnson'];
+if (!mikeJohnson || mikeJohnson.n < 1) throw new Error('mike-johnson needs ≥1 verified falsehood, got ' + (mikeJohnson?.n ?? 0));
+if (mikeJohnson.score > 90) throw new Error('mike-johnson score expected ≤90, got ' + mikeJohnson.score);
+const mikeJohnsonP = getProfileBySlug('mike-johnson');
+if (!(mikeJohnsonP.documentedFalsehoods || []).some((f) => f.id === 'johnson-parolees-simply-register-to-vote-dmv-2024')) {
+  throw new Error('mike-johnson missing parolee DMV voter-registration docket id');
+}
+for (const f of (mikeJohnsonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('mike-johnson dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 37) throw new Error('expected ≥37 compiled dockets, got ' + docketCount);
+if (docketCount < 39) throw new Error('expected ≥39 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
