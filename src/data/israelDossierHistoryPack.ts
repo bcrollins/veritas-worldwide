@@ -5760,6 +5760,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-anemia-micronutrient-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Anemia & Micronutrient Deficiency Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (anemia cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'UNICEF, WHO, and multi-source nutrition reporting document elevated anemia and micronutrient deficiencies among Gaza children under wartime diet collapse — a chronic nutritional harm pattern distinct from acute malnutrition/IPC and pharmacy-medicine shortage cards.',
+    evidence:
+      'UNICEF nutrition surveys, WHO health-cluster notes, and multi-outlet coverage establish multi-source childhood anemia/micronutrient failure. Exact prevalence rates evolve; multi-source wartime child micronutrient collapse is the claim.',
+    sources: [
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza child anemia coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-oct7-first-responders-killed-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Israeli First Responders Killed Pattern (2023)',
+    date: 'October 7, 2023 (first-responder cohort)',
+    location: 'Israeli border communities and festival sites',
+    summary:
+      'Israeli government and multi-source reporting document large numbers of Israeli police, Magen David Adom medics, firefighters, and volunteer first responders killed while responding to the October 7 multi-site assault — a civilian-protection workforce harm pattern required for non-selective documentation.',
+    evidence:
+      'Israeli government fatality lists by role, multi-source MDA/police public statements, and multi-outlet coverage establish multi-source first-responder deaths on October 7. Exact role tallies refine over time; multi-source large-scale first-responder civilian deaths is the claim.',
+    sources: [
+      { label: 'Israeli government fatality public materials', url: 'https://www.gov.il' },
+      { label: 'Magen David Adom public materials', url: 'https://www.mdais.org' },
+      { label: 'Multi-outlet October 7 first-responder coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-blood-transfusion-collapse-deep-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Surgical Blood & Transfusion Capacity Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (transfusion cohort)',
+    location: 'Gaza Strip hospital blood banks and operating theaters',
+    summary:
+      'WHO, PRCS, and multi-source reporting document collapse of blood banking and transfusion capacity for trauma surgery — forcing surgeries without adequate blood products under siege. Pattern card for surgical transfusion failure distinct from the aggregate blood-bank collapse card by focusing on operative care.',
+    evidence:
+      'WHO trauma-care materials, PRCS blood-service statements, and multi-outlet coverage establish multi-source transfusion capacity collapse. Exact unit shortages evolve; multi-source wartime surgical blood failure is the claim.',
+    sources: [
+      { label: 'WHO trauma care materials', url: 'https://www.who.int' },
+      { label: 'PRCS blood / EMS materials', url: 'https://www.palestinercs.org' },
+      { label: 'Multi-outlet Gaza blood shortage coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8797,6 +8878,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['raids', 'children', 'night', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-anemia-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Anemia & Micronutrient Pattern',
+    description: 'UNICEF/WHO multi-source documentation of elevated childhood anemia and micronutrient deficiency under wartime diet collapse.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-anemia-micronutrient-pattern-2023-2025',
+      'gaza-child-malnutrition-pattern-2023-2025',
+      'gaza-starvation-ipc-phases-2024-2025',
+    ],
+    tags: ['anemia', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-oct7-first-responders-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Israeli First Responders Killed Pattern',
+    description: 'Multi-source documentation of police, MDA medics, and firefighters killed responding to the October 7 assault.',
+    source: 'Israeli government / MDA / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-oct7-first-responders-killed-pattern-2023',
+      'oct7-hamas-attack-2023',
+      'gaza-civil-defense-killed-pattern-2023-2025',
+    ],
+    tags: ['first-responders', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-surgical-blood-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Surgical Blood Transfusion Collapse Pattern',
+    description: 'WHO/PRCS multi-source documentation of blood banking and transfusion capacity collapse for trauma surgery.',
+    source: 'WHO / PRCS / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-blood-transfusion-collapse-deep-pattern-2023-2025',
+      'gaza-blood-bank-collapse-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+    ],
+    tags: ['blood', 'surgery', 'civilians', 'children', 'gaza'],
+  },
+
+
 
 
 
