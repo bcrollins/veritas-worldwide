@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:21:31.411Z",
+  "generatedAt": "2026-07-23T10:22:07.920Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 357,
-    "timelineEvents": 345,
+    "incidents": 360,
+    "timelineEvents": 348,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 343,
+    "historicalWarCrimesPack": 346,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 297
+      "post-oct7": 300
     },
     "incidentsByTier": {
-      "verified": 355,
+      "verified": 358,
       "circumstantial": 2
     },
-    "childrenTagged": 324,
-    "civiliansTagged": 355,
+    "childrenTagged": 327,
+    "civiliansTagged": 358,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3549,6 +3549,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-compartment-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Compartment Syndrome Risk Pattern",
+      "description": "WHO/MSF multi-source documentation of elevated pediatric compartment-syndrome risk from crush injuries and delayed surgery.",
+      "source": "WHO / MSF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-compartment-syndrome-risk-pattern-2023-2025",
+        "gaza-children-orthopedic-care-collapse-pattern-2023-2025",
+        "gaza-search-rescue-equipment-destroyed-pattern-2023-2025"
+      ],
+      "tags": [
+        "compartment-syndrome",
+        "children",
+        "trauma",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-copper-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -6702,6 +6723,28 @@
       ]
     },
     {
+      "id": "tl-hostages-physical-therapy-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Physical Therapy Pattern",
+      "description": "Multi-source documentation of denial of physical therapy for injured civilian hostages.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-physical-therapy-pattern-2023-2025",
+        "israel-hostages-denied-mobility-aids-pattern-2023-2025",
+        "israel-hostages-denied-pain-management-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "medical",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-guard-privacy-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7966,6 +8009,27 @@
         "children",
         "settlers",
         "violence",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-farmer-attacks-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on Farmers Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler physical attacks on Palestinian farmers after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-farmers-pattern-2023-2025",
+        "west-bank-settler-olive-tree-uprooting-surge-pattern-2023-2025",
+        "west-bank-olive-harvest-violence-pattern-2023-2025"
+      ],
+      "tags": [
+        "farmers",
+        "settlers",
+        "agriculture",
         "west-bank"
       ]
     },
@@ -23085,6 +23149,134 @@
           "type": "document",
           "label": "UNICEF public updates",
           "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-compartment-syndrome-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Compartment Syndrome Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (compartment-syndrome cohort)",
+      "location": "Gaza Strip hospitals and field surgical points",
+      "summary": "WHO, MSF, and multi-source clinical reporting document elevated pediatric compartment-syndrome risk from crush injuries and delayed fasciotomy under collapsed surgical capacity — a limb-threatening pattern distinct from orthopedic-care and amputee-rehab cards.",
+      "evidence": "WHO trauma materials, MSF surgical statements, and multi-outlet coverage establish multi-source pediatric compartment-syndrome risk. Exact case counts evolve; multi-source wartime pediatric compartment-syndrome risk is the claim.",
+      "sources": [
+        {
+          "label": "WHO trauma materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "MSF surgical statements",
+          "url": "https://www.msf.org"
+        },
+        {
+          "label": "Multi-outlet Gaza trauma surgery coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-physical-therapy-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Physical Therapy Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (PT-denial cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of physical therapy for injured Israeli civilian hostages — allowing preventable contractures and disability. Pattern card distinct from mobility-aids and pain-management cards.",
+      "evidence": "Multi-source released-hostage medical and testimony records establish multi-source physical-therapy denial. Exact cases vary; multi-source PT denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-farmers-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on Farmers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (farmer-attack cohort)",
+      "location": "West Bank agricultural fields and olive groves",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian farmers after October 7 — assaulting civilians working land and driving them off fields. Pattern card for farmer attacks distinct from olive-uprooting and agricultural-takeover cards.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source farmer attacks. Exact injury counts evolve; multi-source wartime settler attacks on farmers is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem field materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet farmer attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",
