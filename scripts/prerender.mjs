@@ -3166,6 +3166,75 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/read') {
+    return [
+      {
+        ...basePage,
+        '@type': 'WebPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        name: 'The Record — Volume I',
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        url,
+        numberOfPages: 32,
+        bookFormat: 'https://schema.org/EBook',
+        isAccessibleForFree: true,
+        inLanguage: 'en',
+        description:
+          'A documentary history of power, money, and institutions built on primary sources.',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Read', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Is The Record free to read online?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Every published chapter, source list, and archive path is open without a paywall. Membership funds the work; it does not lock the text.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How many chapters are in Volume I?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Volume I contains 32 public archive parts covering power, money, and institutions from primary sources. Browse chapter by chapter on /read or from the home table of contents.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can I download a PDF of The Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. A durable PDF of The Record is available at /the-record.pdf. Chapter pages also support print-optimized layouts.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes The Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. Entity attribution — no personal byline. Methodology and Sources pages explain evidence standards.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {

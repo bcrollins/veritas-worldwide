@@ -308,6 +308,17 @@ assert(
     profilesIndexPage.includes('machine-readable profiles corpus'),
   'Profiles FAQ must surface machine-readable corpus for GEO',
 )
+assert(
+  prerender.includes("route === '/read'") &&
+    prerender.includes('Is The Record free to read online?'),
+  'prerender must emit Read FAQPage for free-access discovery queries',
+)
+const readPage = read('src/pages/ReadTheBookPage.tsx')
+assert(readPage.includes('faqJsonLd'), 'ReadTheBookPage must emit FAQPage schema')
+assert(
+  readPage.includes('Is The Record free to read online?'),
+  'Read FAQ must answer free-access question for SERP/PAA',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 

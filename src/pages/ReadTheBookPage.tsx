@@ -9,6 +9,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -208,6 +209,28 @@ export default function ReadTheBookPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Read', url: `${SITE_URL}/read` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'Is The Record free to read online?',
+          answer:
+            'Yes. Every published chapter, source list, and archive path is open without a paywall. Membership funds the work; it does not lock the text.',
+        },
+        {
+          question: 'How many chapters are in Volume I?',
+          answer:
+            'Volume I contains 32 public archive parts covering power, money, and institutions from primary sources. Browse chapter by chapter on /read or from the home table of contents.',
+        },
+        {
+          question: 'Can I download a PDF of The Record?',
+          answer:
+            'Yes. A durable PDF of The Record is available at /the-record.pdf. Chapter pages also support print-optimized layouts.',
+        },
+        {
+          question: 'Who publishes The Record?',
+          answer:
+            'Veritas Worldwide only. Entity attribution — no personal byline. Methodology and Sources pages explain evidence standards.',
+        },
       ]),
     ])
     return () => {
