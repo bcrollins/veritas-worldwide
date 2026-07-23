@@ -571,6 +571,48 @@ for (const rel of opsDocs) {
   )
 }
 
+
+// #20 — print CSS grayscale-safe evidence tiers
+const indexCss = read('src/styles/index.css')
+assert(
+  indexCss.includes('@media print') &&
+    indexCss.includes('Evidence tiers — distinguishable in grayscale') &&
+    indexCss.includes('border-left-style: dashed') &&
+    indexCss.includes('border-left-style: dotted'),
+  'print CSS must differentiate evidence tiers without relying on color alone',
+)
+// #27 — reduced-motion evidence transitions
+assert(
+  indexCss.includes('prefers-reduced-motion') ||
+    read('src/pages/AccessibilityPage.tsx').includes('prefers-reduced-motion'),
+  'reduced-motion must be respected for evidence UX',
+)
+// #33 — multi-volume IA: Volume I + Record of Jesus Christ labeled
+const homePageVol = read('src/pages/HomePage.tsx')
+assert(homePageVol.includes('Volume I'), 'Home must label Volume I')
+assert(
+  homePageVol.includes('Record of Jesus Christ') || homePageVol.includes('record-of-jesus-christ'),
+  'Home must surface Record of Jesus Christ volume track',
+)
+const appNav = read('src/App.tsx')
+assert(
+  appNav.includes("label: 'Record of Jesus Christ'") || appNav.includes('Record of Jesus Christ'),
+  'Nav must include Record of Jesus Christ',
+)
+// #48 — media kit SHA256 surface
+const mediaKit = read('src/pages/MediaKitPage.tsx')
+assert(
+  mediaKit.includes('sha256') || mediaKit.includes('SHA'),
+  'MediaKitPage must display ZIP SHA256',
+)
+assert(
+  existsSync(join(root, 'public/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256')),
+  'brand kit SHA256 file must ship in public exports',
+)
+// #50 — Terms/Privacy FAQ bot parity
+assert(read('src/pages/TermsPage.tsx').includes('faqJsonLd'), 'TermsPage must emit FAQPage')
+assert(read('src/pages/PrivacyPage.tsx').includes('faqJsonLd'), 'PrivacyPage must emit FAQPage')
+
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, anonymity floors green',
 )

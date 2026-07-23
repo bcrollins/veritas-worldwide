@@ -10,6 +10,7 @@
 
 - **Interval 1 (2026-07-23):** #1 #2 #3 #4 #5 #6 #7 #9 #22 #88 Implemented/Absorbed. Pure 29/29 PASS. Peer ROC densify left unstaged.
 - **Interval 2 (2026-07-23):** soft-floor.json auto; wave barrel Wave3–61; wave61 → 651 claims; /bernie+/admin all-UA noindex HTML inject; ROC sticky + ?q/?tier/?domain deep-links; filtered export; one-tap primary source; empty-state CTA. Local export 651. LIVE was 642 pre-deploy.
+- **Interval 5 (2026-07-23):** #20 print grayscale, #27 reduced-motion, #33 multi-volume IA, #48 media SHA, #50 Terms/Privacy FAQ.
 - **Interval 4 (2026-07-23):** wave63 → 669 LIVE ship path; soft-floor auto 669.
 - **Interval 3 (2026-07-23):** wave62 → 660; sync-roc-geo-floors (650+/660+); #16 #17 #23 Implemented; LIVE anonymity PASS at 651 then ship 660.
 
@@ -116,7 +117,7 @@ Status: **Pending**
 
 ## #20 — Chapter print CSS evidence tiers grayscale-safe
 Area: A11y · Anchor: WCAG · Score: 8.0→9.2 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — print CSS grayscale evidence borders (solid/dashed/dotted); pure floor.
 
 ## #21 — Chapter TTS skip non-evidence chrome
 Area: Reader · Anchor: Apple · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
@@ -144,7 +145,7 @@ Status: **Pending**
 
 ## #27 — Chapter reduced-motion evidence transitions
 Area: A11y · Anchor: WCAG · Score: 8.2→9.0 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — prefers-reduced-motion in CSS + Accessibility FAQ; pure floor.
 
 ## #28 — ROC claim search deep-link (?q=)
 Area: ROC · Anchor: ProPublica · Score: 8.5→9.4 · PRIORITY: 8.5 · Launch-critical: yes  
@@ -168,7 +169,7 @@ Status: **Implemented** (2026-07-23) — pure assert ROC Dataset DataDownload ab
 
 ## #33 — Multi-volume nav: Volume I vs ROC clear IA
 Area: IA · Anchor: NYT · Score: 7.5→9.2 · PRIORITY: 8.5 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Home + nav labels “Volume I” / “Record of Jesus Christ” without theology as fact. Status: **Pending**
+WHAT TO IMPLEMENT: Home + nav labels “Volume I” / “Record of Jesus Christ” without theology as fact. Status: **Implemented** (2026-07-23) — Home Volume I + ROC track + nav label; pure floor.
 
 ## #34 — Scaffold Volume II placeholder hub (noindex until content)
 Area: Scaffold · Anchor: Staff-plus · Score: 6.5→8.5 · PRIORITY: 7 · Launch-critical: no  
@@ -228,7 +229,7 @@ Status: **Pending**
 
 ## #48 — Media kit ZIP SHA256 displayed + pure floor
 Area: Rights · Anchor: AP · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — MediaKit SHA256 display + public .sha256 export; pure floor.
 
 ## #49 — Content-pack share cards alt text completeness
 Area: A11y · Anchor: WCAG · Score: 8.0→9.0 · PRIORITY: 6 · Launch-critical: no  
@@ -236,7 +237,7 @@ Status: **Pending**
 
 ## #50 — Terms/Privacy FAQ bot parity hold
 Area: Trust · Anchor: AP · Score: 9.0→9.5 · PRIORITY: 7 · Launch-critical: no  
-Status: **Absorbed**
+Status: **Absorbed** — Terms/Privacy faqJsonLd already live; pure floor locked.
 
 ## #51 — Membership FAQ paywall clarity hold
 Area: Conversion · Anchor: NYT · Score: 9.0→9.5 · PRIORITY: 7 · Launch-critical: no  
