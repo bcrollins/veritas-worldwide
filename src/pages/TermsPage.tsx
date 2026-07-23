@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
 import {
-
   setMetaTags,
   clearMetaTags,
   setJsonLd,

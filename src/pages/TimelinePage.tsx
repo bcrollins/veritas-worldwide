@@ -4,7 +4,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
 import { chapterMeta } from '../data/chapterMeta'
 import {
-
   setMetaTags,
   clearMetaTags,
   setJsonLd,

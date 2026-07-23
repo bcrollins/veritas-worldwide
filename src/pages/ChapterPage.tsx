@@ -19,7 +19,6 @@ import { useReadingHistory } from '../hooks/useReadingHistory'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
 import {
-
   trackShare,
   trackDownload,
   trackReadingMilestone,

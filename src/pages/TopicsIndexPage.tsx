@@ -6,7 +6,6 @@ import NewsletterSignup from '../components/NewsletterSignup'
 import { topicHubs, getTopicArticles, getTopicChapters } from '../data/topicHubs'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import {
-
   clearMetaTags,
   removeJsonLd,
   setJsonLd,

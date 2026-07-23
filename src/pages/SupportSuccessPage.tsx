@@ -5,7 +5,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 import { clearMetaTags, removeJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 import { useAuth } from '../lib/AuthContext'
 import {
-
   detectStripeReturn,
   getMarketingAttribution,
   handleStripeReturn,

@@ -10,7 +10,6 @@ import SharePanel from '../components/SharePanel'
 import { getPreferredImageSrc } from '../lib/imageSources'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import {
-
   setMetaTags,
   clearMetaTags,
   setJsonLd,

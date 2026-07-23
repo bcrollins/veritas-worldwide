@@ -4,7 +4,6 @@ import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
 
 import { TAGLINE } from '../lib/constants'
 import {
-
   clearMetaTags,
   removeJsonLd,
   setJsonLd,
