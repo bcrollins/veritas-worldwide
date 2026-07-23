@@ -1,15 +1,16 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:24:18.109Z  
+**Generated:** 2026-07-23T09:28:08.075Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 218  
-**Tier histogram:** `{"circumstantial": 11, "contested": 27, "interpretive": 17, "literary_theological": 3, "speculative": 2, "verified": 76, "well_attested": 82}`
+**Claim count:** 227  
+**Tier histogram:** `{"circumstantial": 12, "contested": 28, "interpretive": 18, "literary_theological": 3, "speculative": 2, "verified": 78, "well_attested": 86}`
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
 | ID | Tier | Proof vs concept | Claim |
 |----|------|------------------|-------|
 | `ane-amarna-letters` | verified | proof_grade_data | The Amarna letters (14th c. BCE) document Late Bronze Canaanite-Egyptian diplomacy and conflict language used in comparative ANE historical method. |
+| `ane-annals-shoshenq` | well_attested | proof_grade_data | Shoshenq I (biblical Shishak) campaign reliefs at Karnak list Levantine toponyms relevant to 10th-century BCE geopolitics debates. |
 | `ane-babylonian-chronicle-jerusalem` | verified | proof_grade_data | Babylonian Chronicle entries record Nebuchadnezzar’s campaigns against Judah, including the 597 BCE deportation horizon. |
 | `ane-babylonian-chronicles` | verified | proof_grade_data | Babylonian Chronicles document Nebuchadnezzar’s campaigns against Jerusalem, providing independent chronological control for the late Iron Age Judah narrative. |
 | `ane-black-obelisk` | verified | proof_grade_data | The Black Obelisk of Shalmaneser III depicts Jehu (or a representative) of Israel paying tribute — an extra-biblical visual control for the Omride/Jehu period. |
@@ -37,6 +38,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-galilee-boat` | verified | proof_grade_data | The “Jesus Boat” (first-century Galilee boat, discovered 1986) illustrates fishing technology on the lake in the Early Roman period. |
 | `arch-gamla` | verified | proof_grade_data | Gamla (Golan) destruction in the First Jewish Revolt is archaeologically and literarily documented (Josephus), illustrating Galilee/Golan war archaeology. |
 | `arch-herodium` | verified | proof_grade_data | Herodium is a major Herodian fortress-palace complex with extensive excavation; it anchors elite architecture of late Second Temple Judea. |
+| `arch-hippos-sussita` | verified | proof_grade_data | Hippos-Sussita (Decapolis) excavations illuminate Greco-Roman urbanism east of the Sea of Galilee relevant to Gospel geographic horizons. |
 | `arch-james-ossuary` | contested | debate | The so-called James ossuary inscription (“James son of Joseph brother of Jesus”) remains contested regarding authenticity of the brother phrase and provenance. |
 | `arch-jericho` | contested | debate | Jericho’s Late Bronze destruction layers and relation to a conquest narrative remain a classic contested case in biblical archaeology. |
 | `arch-jerusalem-destruction-layers` | verified | proof_grade_data | Destruction layers and burn evidence in Jerusalem’s Upper City and related loci align with the 70 CE Roman destruction horizon. |
@@ -71,9 +73,11 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-neutrino-bbn` | verified | science_model | Standard BBN and CMB analyses constrain the effective number of neutrino species (N_eff) near the Standard Model expectation. |
 | `cosmo-nucleosynthesis-li` | contested | science_model | The cosmological lithium problem remains an open tension between standard BBN predictions for ⁷Li and many stellar abundance measurements. |
 | `cosmo-recombination` | verified | science_model | CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM). |
+| `cosmo-sound-horizon` | verified | science_model | The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements. |
 | `cosmo-structure-formation` | verified | science_model | Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO. |
 | `ec-1clement` | well_attested | attested_report | 1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative. |
 | `ec-apostolic-fathers` | verified | proof_grade_data | The Apostolic Fathers (1 Clement, Didache, Ignatius, Polycarp, etc.) provide early non-NT Christian primary sources. |
+| `ec-aristides` | well_attested | attested_report | The Apology of Aristides (2nd c.) is an early Christian apology preserved in Syriac/Greek traditions describing Christian ethics to a Roman audience. |
 | `ec-athanasius` | verified | proof_grade_data | Athanasius, 39th Festal Letter (367 CE), lists the exact 27-book New Testament canon later ratified in the West. |
 | `ec-barnabas` | well_attested | attested_report | The Epistle of Barnabas (late 1st / early 2nd c.) allegorizes Hebrew Bible law and shows early Christian supersessionist interpretation. |
 | `ec-didache` | well_attested | attested_report | The Didache preserves an early Christian “two ways” ethic, baptismal and eucharistic instructions, and itinerant ministry rules — dating commonly late 1st / early 2nd c. |
@@ -129,6 +133,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-quirinius` | contested | debate | Luke’s census notice linking Jesus’ birth to a registration under Quirinius (6 CE) is a classic chronological problem relative to a Herodian birth before 4 BCE. |
 | `hj-resurrection-hist` | literary_theological | tradition | Claims of bodily resurrection are theological assertions; historians can document early belief and proclamation, not laboratory verification of the event. |
 | `hj-romans-execution` | verified | proof_grade_data | Crucifixion was a Roman capital punishment method used in Judea; archaeological and literary controls exist independent of the Gospels (e.g., Yehohanan heel bone; Josephus). |
+| `hj-sabbath-conflicts` | well_attested | reconstruction | Sabbath controversy traditions are multiply attested in Synoptics and are widely treated as historically characteristic conflict settings for Jesus’ public activity. |
 | `hj-table-fellowship` | well_attested | reconstruction | Traditions of Jesus’ open table fellowship with “sinners” and tax collectors are widely treated as historically plausible under embarrassment and multiple attestation. |
 | `hj-temple-action` | well_attested | reconstruction | An action by Jesus in the Temple (disruption of commerce / symbolic demonstration) is multiply attested; interpretation ranges from prophetic sign to failed revolt cue. |
 | `hj-titles` | contested | debate | Titles applied to Jesus (Messiah/Christ, Son of Man, Son of God, Lord) have layered historical and literary-theological histories; none should be treated as a single unproblematic first-century label without analysis. |
@@ -139,6 +144,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-criterion-embarrassment-limits` | interpretive | reconstruction | The criterion of embarrassment is heuristic and circular if “embarrassing” is defined by later Christian theology rather than first-century Jewish context. |
 | `mod-critical-editions` | verified | proof_grade_data | NA28/UBS5 (and ongoing ECM/INTF work) are the standard working critical texts of the Greek NT for academic use. |
 | `mod-digital-dss` | verified | proof_grade_data | The Leon Levy Dead Sea Scrolls Digital Library enables open inspection of high-resolution plate images for many Qumran manuscripts. |
+| `mod-form-criticism-limits` | interpretive | reconstruction | Form criticism classifies Gospel units by genre and Sitz im Leben; its older assumption of pure oral isolation before writing is now heavily qualified. |
 | `mod-genetics-limits` | well_attested | science_model | Ancient DNA of the Southern Levant informs regional demographic history; it cannot identify named New Testament individuals or prove specific genealogies in the Gospels. |
 | `mod-historical-jesus-quests` | interpretive | reconstruction | “Quests” for the historical Jesus are historiographical programs with shifting criteria; no single reconstruction commands universal assent. |
 | `mod-jesus-seminar` | contested | debate | The Jesus Seminar (1980s–2000s) popularized colored-bead voting on sayings authenticity; its methods and conclusions remain highly contested in the guild. |
@@ -172,6 +178,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-tacitus-context` | well_attested | attested_report | Tacitus Annals 15.44 places Christus’s execution under Tiberius by procurator Pontius Pilate within a Nero-era persecution narrative. |
 | `nc-tacitus-latin` | well_attested | attested_report | Tacitus Annals 15.44 (Latin) states that Christus suffered the extreme penalty under Tiberius by sentence of procurator Pontius Pilate, and that the superstitio arose in Judea. |
 | `nc-talmud` | circumstantial | reconstruction | Certain Babylonian Talmud passages are sometimes read as hostile allusions to Jesus; dating, redaction, and identification are highly contested and often late. |
+| `nc-talmud-baraita-caution` | circumstantial | attested_report | Isolated Talmudic baraitot sometimes linked to Jesus are late, polemical, and methodologically unsafe as first-century biography without extreme caution. |
 | `nc-talmud-dating` | circumstantial | attested_report | Rabbinic passages sometimes linked to Jesus (e.g., b. Sanhedrin traditions) are late, layered, and methodologically hazardous as first-century biography. |
 | `nc-tf` | contested | debate | Josephus, Antiquities 18.63–64 (Testimonium Flavianum) is widely judged partly authentic with Christian interpolations; fully authentic and fully forged positions are minorities. |
 | `nc-tf-reconstructions` | contested | debate | Major scholarly reconstructions of the Testimonium Flavianum range from a short neutral core to more expansive partial authenticity; wholesale authenticity and wholesale forgery are minority poles. |
@@ -188,6 +195,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-homoeoteleuton` | verified | proof_grade_data | Many NT variants arise from ordinary scribal mechanics (homoeoteleuton, dittography, orthography), not theological conspiracy. |
 | `nt-john-historicity` | contested | debate | John’s Gospel is generally dated later than the Synoptics; its independent historical value for Jesus research is debated (high Christology vs. early tradition cores). |
 | `nt-lectionaries` | well_attested | proof_grade_data | Greek lectionary manuscripts form a large late witness class used in ECM/CBGM and traditional criticism for reception history more than for earliest text alone. |
+| `nt-lectionary-evidence` | well_attested | proof_grade_data | Lectionary manuscripts preserve liturgical text forms that can retain early readings in some units while generally reflecting later Byzantine dominance. |
 | `nt-majuscules` | verified | proof_grade_data | Fourth–fifth century majuscules (ℵ 01 Sinaiticus, A 02 Alexandrinus, B 03 Vaticanus, C 04 Ephraemi, D 05 Bezae) are foundational for the critical text. |
 | `nt-mark-ending` | verified | proof_grade_data | The longer ending of Mark (16:9–20) is absent from the earliest major witnesses (ℵ B) and is marked as secondary in NA28/UBS apparatuses. |
 | `nt-ms-count` | verified | proof_grade_data | Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions. |
@@ -212,6 +220,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-elephantine` | verified | proof_grade_data | Elephantine papyri document a Jewish military colony in Egypt (5th c. BCE) with a local temple of YHW and correspondence with Jerusalem/Samaria authorities. |
 | `st-hasmonean-period` | verified | proof_grade_data | The Hasmonean period (2nd–1st c. BCE) established Jewish political autonomy later dismantled under Roman client and provincial rule — essential pre-history for first-century Judea. |
 | `st-herod-antipas` | verified | proof_grade_data | Herod Antipas ruled Galilee and Perea as tetrarch (4 BCE–39 CE); Josephus and coins document his rule and cities (Tiberias; Sepphoris reconstruction). |
+| `st-herod-great-death` | contested | debate | Herod the Great’s death is commonly dated 4 BCE (with minority 1 BCE arguments), framing the terminus for Matthew’s birth narrative chronology. |
 | `st-herod-temple` | verified | proof_grade_data | Herod’s expansion of the Jerusalem Temple Mount is archaeologically and literarily documented (Josephus; Western Wall / Temple Mount retaining architecture). |
 | `st-isaiah-stability` | well_attested | attested_report | Comparison of 1QIsaᵃ (c. 2nd–1st century BCE) with the medieval Masoretic Text shows high overall agreement with mostly orthographic and minor variants. |
 | `st-josephus-corpus` | verified | proof_grade_data | Flavius Josephus (late first century CE) is a principal non-Christian Jewish historian for Herodian and early Roman Judea. |
