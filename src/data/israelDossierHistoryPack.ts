@@ -6408,6 +6408,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-meningitis-risk-overcrowding-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Meningitis & Meningococcal Risk Overcrowding Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (meningitis-risk cohort)',
+    location: 'Gaza Strip overcrowded shelters and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document elevated meningococcal and meningitis risk under extreme overcrowding and collapsed vaccination/cold-chain capacity — a pediatric disease-risk pattern distinct from polio, hepatitis, and AWD cards.',
+    evidence:
+      'WHO disease-risk materials, UNICEF immunization notes, and multi-outlet coverage establish multi-source meningitis-risk elevation under wartime overcrowding. Exact case counts evolve; multi-source elevated meningitis risk is the claim.',
+    sources: [
+      { label: 'WHO disease risk materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza disease risk coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-hygiene-sanitation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Hygiene & Sanitation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hygiene-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of basic hygiene and sanitation for Israeli civilian hostages — no toilets, no washing, infestation conditions — a protected-person treatment pattern distinct from medical-neglect and starvation cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hygiene/sanitation denial in captivity. Exact conditions vary by site; multi-source hygiene denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-arson-homes-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Arson of Homes & Vehicles Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (arson cohort)',
+    location: 'West Bank Palestinian villages',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler arson of Palestinian homes, vehicles, and agricultural structures after October 7 — a civilian property-destruction pattern with displacement effects on families including children, distinct from price-tag aggregate and home-invasion cards.',
+    evidence:
+      'OCHA settler-violence databases, B\'Tselem arson case files, and multi-outlet coverage establish multi-source arson surge. Exact structure counts evolve; multi-source wartime settler arson is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler arson coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -9853,6 +9934,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['settlers', 'homes', 'civilians', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-meningitis-risk-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Meningitis Risk Overcrowding Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated meningitis risk under extreme overcrowding and collapsed cold chain.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-meningitis-risk-overcrowding-pattern-2023-2025',
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+      'gaza-cold-chain-vaccine-collapse-pattern-2023-2025',
+    ],
+    tags: ['meningitis', 'disease', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-hygiene-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Hygiene Pattern',
+    description: 'Multi-source documentation of denial of basic hygiene and sanitation for civilian hostages in captivity.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-hygiene-sanitation-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+      'israel-hostages-solitary-confinement-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'hygiene', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-arson-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Arson Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler arson of homes and vehicles after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-arson-homes-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+      'west-bank-settler-home-invasions-pattern-2023-2025',
+    ],
+    tags: ['arson', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
