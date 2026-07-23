@@ -1,0 +1,13 @@
+# Multi-agent coordination — Nav vs Israel densify
+
+**Nav agents:** Own shell, recovery hubs, ResearchHubChips, DossierHubSpokes, pure floors under `scripts/verify-nav-*.mjs`. Never stage:
+
+- `public/israel-dossier/*`
+- `src/data/israelDossier*.ts` densify sources
+- peer soft-floor / VI re-exports
+
+**Densify agents:** Own Israel corpus dual-sided densify + VI floors. Leave `src/App.tsx`, `src/components/DossierHubSpokes.tsx`, `src/components/ResearchHubChips.tsx` alone unless resolving a true conflict.
+
+**Ship rhythm:** finish chunk → pure green → entity commit → push → next. Rebase/retry without force when races happen.
+
+**Live proof:** shell + home + search + soft-404 markers must stay green after densify ships (nav is orthogonal to corpus size).
