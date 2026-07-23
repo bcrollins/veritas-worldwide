@@ -11,3 +11,9 @@
 **Ship rhythm:** finish chunk → pure green → entity commit → push → next. Rebase/retry without force when races happen.
 
 **Live proof:** shell + home + search + soft-404 markers must stay green after densify ships (nav is orthogonal to corpus size).
+
+## RelatedHubs platform (nav-owned)
+- `src/components/RelatedHubs.tsx` + pure floors under `scripts/verify-nav-*.mjs`
+- Never stage densify corpus. Single-file pure commits when densify tip is hot.
+- Live matrix: CORE shell markers + server soft-404 five hubs.
+
