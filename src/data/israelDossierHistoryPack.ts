@@ -2870,6 +2870,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-desalination-water-infrastructure-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Desalination & Water Infrastructure Damage Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (water-infrastructure cohort)',
+    location: 'Gaza Strip desalination / water-treatment facilities',
+    summary:
+      'UNICEF, WHO, and multi-source WASH reporting document damage, fuel starvation, and operational collapse of desalination plants and water-treatment facilities essential for civilian drinking water — distinct from the broader WASH collapse card by isolating production infrastructure. Pattern card for water-production infrastructure destruction as a children-targeting civilian-harm multiplier.',
+    evidence:
+      'UNICEF/WHO WASH situation reports, multi-source utility operator statements, and OCHA materials establish multi-source desalination and treatment capacity collapse. Exact plant-by-plant status evolves; multi-source system-scale water production infrastructure failure is the claim.',
+    sources: [
+      { label: 'UNICEF Gaza WASH situation materials', url: 'https://www.unicef.org' },
+      { label: 'WHO health / WASH updates', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian access / WASH materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public WASH updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4088,6 +4115,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['blockade', 'flotilla', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-desalination-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Desalination & Water Infrastructure Pattern',
+    description: 'UNICEF/WHO multi-source documentation of desalination and water-treatment capacity collapse under bombardment and fuel siege.',
+    source: 'UNICEF / WHO / OCHA',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-desalination-water-infrastructure-pattern-2023-2025',
+      'gaza-water-sanitation-collapse-2023-2025',
+      'gaza-fuel-electricity-siege-pattern-2023-2025',
+    ],
+    tags: ['water', 'desalination', 'children', 'civilians', 'gaza'],
+  },
+
 
 
 ]
