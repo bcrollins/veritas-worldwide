@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:12:30.198Z",
+  "generatedAt": "2026-07-23T09:12:54.142Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 145,
-    "timelineEvents": 133,
+    "incidents": 146,
+    "timelineEvents": 134,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 131,
+    "historicalWarCrimesPack": 132,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 85
+      "post-oct7": 86
     },
     "incidentsByTier": {
-      "verified": 143,
+      "verified": 144,
       "circumstantial": 2
     },
-    "childrenTagged": 121,
-    "civiliansTagged": 143,
+    "childrenTagged": 122,
+    "civiliansTagged": 144,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3750,6 +3750,28 @@
       "tags": [
         "children",
         "orphans",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-medicines-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Pharmacy & Essential Medicine Shortage Pattern",
+      "description": "WHO multi-source documentation of essential-medicine stockouts under siege and bombardment.",
+      "source": "WHO / OCHA / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-pharmacy-medicine-shortage-pattern-2023-2025",
+        "gaza-health-system-collapse-2023-2025",
+        "gaza-dialysis-cancer-care-collapse-pattern-2023-2025"
+      ],
+      "tags": [
+        "medicines",
+        "health",
+        "children",
         "civilians",
         "gaza"
       ]
@@ -9684,6 +9706,50 @@
         },
         {
           "label": "Multi-outlet Gaza dialysis/cancer coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-pharmacy-medicine-shortage-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Pharmacy & Essential Medicine Shortage Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (medicines cohort)",
+      "location": "Gaza Strip pharmacies / hospital pharmacies",
+      "summary": "WHO, MoH multi-source, and humanitarian reporting document severe shortages of essential medicines, insulin, antibiotics, and anesthesia supplies under siege and bombardment — a civilian and child harm multiplier distinct from ICU and dialysis specialty-care cards. Pattern card for pharmacy-level essential medicine collapse.",
+      "evidence": "WHO essential-medicine stockout materials, multi-source pharmacist/clinician reporting, and OCHA health notes establish multi-source medicine shortages. Exact SKU stockout rates evolve; multi-source essential-medicine scarcity is the claim.",
+      "sources": [
+        {
+          "label": "WHO essential medicines / emergency health materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA health access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medicine shortage coverage",
           "url": "https://apnews.com"
         }
       ],

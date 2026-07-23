@@ -3519,6 +3519,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-pharmacy-medicine-shortage-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Pharmacy & Essential Medicine Shortage Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (medicines cohort)',
+    location: 'Gaza Strip pharmacies / hospital pharmacies',
+    summary:
+      'WHO, MoH multi-source, and humanitarian reporting document severe shortages of essential medicines, insulin, antibiotics, and anesthesia supplies under siege and bombardment — a civilian and child harm multiplier distinct from ICU and dialysis specialty-care cards. Pattern card for pharmacy-level essential medicine collapse.',
+    evidence:
+      'WHO essential-medicine stockout materials, multi-source pharmacist/clinician reporting, and OCHA health notes establish multi-source medicine shortages. Exact SKU stockout rates evolve; multi-source essential-medicine scarcity is the claim.',
+    sources: [
+      { label: 'WHO essential medicines / emergency health materials', url: 'https://www.who.int' },
+      { label: 'OCHA health access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza medicine shortage coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5144,6 +5171,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['dialysis', 'cancer', 'health', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-medicines-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Pharmacy & Essential Medicine Shortage Pattern',
+    description: 'WHO multi-source documentation of essential-medicine stockouts under siege and bombardment.',
+    source: 'WHO / OCHA / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-pharmacy-medicine-shortage-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+      'gaza-dialysis-cancer-care-collapse-pattern-2023-2025',
+    ],
+    tags: ['medicines', 'health', 'children', 'civilians', 'gaza'],
+  },
+
 
 
 
