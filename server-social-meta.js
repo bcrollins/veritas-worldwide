@@ -72,6 +72,11 @@ function applyBotPageMeta(html, { title, description, url, type = 'website', ima
       `content="${description}"`,
     )
     .replace(/content="https:\/\/veritasworldwide\.com"/g, `content="${url}"`)
+    // Canonical is href=, not content= — without this, noindex shells keep homepage canonical.
+    .replace(
+      /<link rel="canonical" href="https:\/\/veritasworldwide\.com\/?"\s*\/?>/,
+      `<link rel="canonical" href="${url}" />`,
+    )
     .replace(/content="website"/, `content="${type}"`)
 
   if (image) {

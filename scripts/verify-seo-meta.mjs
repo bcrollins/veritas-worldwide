@@ -275,6 +275,34 @@ assert(
   'bot meta must centralize noindex shell delivery for transactional paths',
 )
 assert(
+  botMeta.includes('rel="canonical" href=') || botMeta.includes("rel=\"canonical\" href="),
+  'bot meta applyBotPageMeta must rewrite link rel=canonical (not only og:url content=)',
+)
+assert(
+  prerender.includes("route: '/subscribe/success'") &&
+    prerender.includes("route: '/bookmarks'") &&
+    prerender.includes("route: '/search'"),
+  'prerender must include subscribe/success, bookmarks, and search shells',
+)
+// Defense-in-depth: utility + transactional routes are noindex in prerender so
+// static HTML never ships index,follow even if bot-meta is bypassed by middleware order.
+assert(
+  /route: '\/subscribe\/success'[\s\S]*?noindex:\s*true/.test(prerender) ||
+    (prerender.includes("route: '/subscribe/success'") &&
+      prerender.split("route: '/subscribe/success'")[1]?.includes('noindex: true')),
+  'prerender /subscribe/success must be noindex',
+)
+assert(
+  prerender.includes("route: '/bookmarks'") &&
+    prerender.split("route: '/bookmarks'")[1]?.slice(0, 600).includes('noindex: true'),
+  'prerender /bookmarks must be noindex',
+)
+assert(
+  prerender.includes("route: '/search'") &&
+    prerender.split("route: '/search'")[1]?.slice(0, 800).includes('noindex: true'),
+  'prerender /search must be noindex (robots Disallow utility; no indexable thin SERP)',
+)
+assert(
   server.includes('comprehensive-profile/success') && server.includes("X-Robots-Tag"),
   'server must be able to emit X-Robots-Tag for transactional success paths',
 )

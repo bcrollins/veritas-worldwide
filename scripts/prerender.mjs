@@ -2202,7 +2202,31 @@ const staticPages = [
       'Search is built for readers who need to move from a name, institution, or event directly into the available chapter material and citations.',
     ],
     featuredChapterIds: ['overview', 'chapter-14', 'chapter-28'],
+    // Utility surface — robots.txt Disallow + client noindex; keep prerender lockstep for bots.
+    noindex: true,
     sourceFile: 'src/pages/SearchPage.tsx',
+  },
+  {
+    route: '/bookmarks',
+    title: 'Bookmarks | Veritas Worldwide',
+    heading: 'Your bookmarks',
+    description: 'Private reader bookmarks. Not part of the public archive index.',
+    body: [
+      'Bookmarks are a private reading aid stored in the browser. They are not a public index surface.',
+    ],
+    noindex: true,
+    sourceFile: 'src/pages/BookmarksPage.tsx',
+  },
+  {
+    route: '/subscribe/success',
+    title: 'Subscription Confirmed | Veritas Worldwide',
+    heading: 'Subscription confirmed',
+    description: 'Thank you for subscribing. This confirmation page is not part of the public archive.',
+    body: [
+      'Your subscription preference was recorded. The public archive remains open without a paywall.',
+    ],
+    noindex: true,
+    sourceFile: 'src/pages/SubscribeSuccessPage.tsx',
   },
   {
     route: '/timeline',

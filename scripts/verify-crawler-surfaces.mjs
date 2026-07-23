@@ -34,7 +34,7 @@ const REQUIRED_SITEMAP_PATHS = [
   '/analytics',
   '/institute',
   '/institute/book',
-  '/search',
+  // /search is noindex + robots Disallow — must not be a sitemap floor requirement
   '/deep-state',
   '/forum',
   '/israel-dossier',
