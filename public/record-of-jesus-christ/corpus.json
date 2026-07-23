@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:23:05.076Z",
-  "claimCount": 408,
+  "generatedAt": "2026-07-23T10:24:10.614Z",
+  "claimCount": 417,
   "tierHistogram": {
-    "well_attested": 163,
-    "verified": 144,
+    "well_attested": 167,
+    "verified": 147,
     "contested": 36,
-    "interpretive": 41,
+    "interpretive": 42,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 19
+    "circumstantial": 20
   },
   "claims": [
     {
@@ -248,6 +248,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave32.ts"
+    },
+    {
+      "id": "ane-sargon-samaria-fall",
+      "claim": "Assyrian royal inscriptions (Sargon II and related annals) claim the conquest of Samaria and deportations in the late 8th century BCE — primary imperial controls for the fall of the Northern Kingdom.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave35.ts"
     },
     {
       "id": "ane-sennacherib",
@@ -521,6 +528,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "arch-masada-scrolls",
+      "claim": "Manuscript fragments recovered at Masada (including biblical and sectarian-related texts) provide archaeological context for Jewish literary culture through the First Revolt terminus.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave35.ts"
     },
     {
       "id": "arch-masada-siege",
@@ -852,6 +866,13 @@
       "file": "src/data/recordOfJesusChristWave22.ts"
     },
     {
+      "id": "cosmo-primordial-bmodes-search",
+      "claim": "Searches for primordial CMB B-mode polarization aim to constrain the inflationary tensor-to-scalar ratio r; no definitive primordial detection has been confirmed to date.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave35.ts"
+    },
+    {
       "id": "cosmo-recombination",
       "claim": "CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM).",
       "tier": "verified",
@@ -990,6 +1011,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
+      "id": "ec-diognetus-epistle",
+      "claim": "The Epistle to Diognetus is an early Christian apology describing Christians as a distinct “third race” in the world — reception of identity rhetoric, not HJ primary data.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave35.ts"
     },
     {
       "id": "ec-eusebius-he",
@@ -1440,6 +1468,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "hj-last-supper-historicity",
+      "claim": "That Jesus shared a final meal with disciples before arrest is widely accepted as historical; whether it was a Passover seder, the exact words of institution, and eucharistic theology are reconstructed and contested.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave35.ts"
+    },
+    {
       "id": "hj-last-supper-tradition",
       "claim": "A final meal tradition with bread/cup words is multiply attested (Paul 1 Cor 11; Synoptics) as early Christian memory of Jesus’ last night.",
       "tier": "well_attested",
@@ -1634,6 +1669,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
+      "id": "mod-amy-jill-levine-jewish-jesus",
+      "claim": "Amy-Jill Levine’s scholarship emphasizes reading Jesus within Judaism against Christian stereotype and anachronism — a major contribution to Jewish–Christian historical Jesus dialogue.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave35.ts"
     },
     {
       "id": "mod-contextual-credibility",
@@ -2070,6 +2112,13 @@
       "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
+      "id": "nc-philo-silence-on-jesus",
+      "claim": "Philo of Alexandria (d. c. 50 CE), a prolific Jewish writer overlapping Jesus’ lifetime regionally in the empire, never mentions Jesus — a silence that is expected given Philo’s Egyptian diaspora focus and genre, not a decisive non-existence proof.",
+      "tier": "circumstantial",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave35.ts"
+    },
+    {
       "id": "nc-pliny",
       "claim": "Pliny the Younger, Epistles 10.96–97, describes early second-century Christian worship practices in Bithynia-Pontus and imperial policy under Trajan.",
       "tier": "verified",
@@ -2432,6 +2481,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "nt-oxyrhynchus-sayings",
+      "claim": "Oxyrhynchus papyri include early Christian texts and sayings collections (e.g., P.Oxy. fragments related to Gospel of Thomas and unknown gospels) documenting Egyptian textual diversity.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave35.ts"
     },
     {
       "id": "nt-p-egerton",
@@ -2866,6 +2922,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
+      "id": "st-therapeutae-philo",
+      "claim": "Philo’s De Vita Contemplativa describes the Therapeutae, a contemplative Jewish community in Egypt with communal study and allegorical exegesis — evidence of diaspora Jewish diversity.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave35.ts"
     },
     {
       "id": "st-war-scroll",
