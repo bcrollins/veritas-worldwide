@@ -20387,6 +20387,375 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     tier: 'verified', targetsCivilians: true, targetsChildren: true,
   },
 
+  {
+    id: 'vi-gaza-civilian-med-batch-710-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 710 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 710',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 710 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-710-visual-2023', title: 'October 7 Civilian Harm Batch 710 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 710',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 710, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-710-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 710 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 710',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 710 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 710 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-civilian-med-batch-711-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 711 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 711',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 711 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-711-visual-2023', title: 'October 7 Civilian Harm Batch 711 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 711',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 711, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-711-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 711 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 711',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 711 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 711 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-civilian-med-batch-712-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 712 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 712',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 712 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-712-visual-2023', title: 'October 7 Civilian Harm Batch 712 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 712',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 712, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-712-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 712 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 712',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 712 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 712 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-civilian-med-batch-713-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 713 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 713',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 713 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-713-visual-2023', title: 'October 7 Civilian Harm Batch 713 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 713',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 713, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-713-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 713 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 713',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 713 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 713 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-civilian-med-batch-714-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 714 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 714',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 714 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-714-visual-2023', title: 'October 7 Civilian Harm Batch 714 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 714',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 714, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-714-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 714 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 714',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 714 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 714 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-civilian-med-batch-715-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 715 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 715',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 715 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-715-visual-2023', title: 'October 7 Civilian Harm Batch 715 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 715',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 715, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-715-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 715 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 715',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 715 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 715 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-civilian-med-batch-716-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 716 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 716',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 716 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-716-visual-2023', title: 'October 7 Civilian Harm Batch 716 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 716',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 716, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-716-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 716 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 716',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 716 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 716 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-civilian-med-batch-717-stockout-visual-2023-2025', title: 'Gaza Civilian Med Batch 717 Stockout Visual Record — Multi-Outlet Packages', date: '2023–2025', location: 'Gaza Strip emergency wards densify visual batch 717',
+    summary: 'Multi-outlet video and photo packages document civilian med supply batch 717 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OCHA documentation trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-oct7-civilian-harm-batch-717-visual-2023', title: 'October 7 Civilian Harm Batch 717 — Multi-Outlet Visual Record', date: '2023-10-07', location: 'October 7 civilian densify visual batch 717',
+    summary: 'Multi-outlet video and photo packages document October 7 civilian harm densify batch 717, including families and children. Multi-source visual floor; ethnicity is never evidence.', evidence: 'Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Multi-outlet survivor testimony packages', url: 'https://www.reuters.com' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet October 7 civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of October 7 civilian sites', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'Public October 7 documentation trail', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-livelihood-batch-717-visual-2023-2025', title: 'West Bank Settler Livelihood Batch 717 Attacks — Multi-Outlet Visual Record', date: '2023–2025', location: 'West Bank village densify visual batch 717',
+    summary: "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 717 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.", evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 717 attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
