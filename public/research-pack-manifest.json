@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T15:44:04.516Z",
+  "generatedAt": "2026-07-23T15:45:27.707Z",
   "publisher": "Veritas Worldwide",
   "path": "/research-pack.zip",
-  "bytes": 511275,
-  "sha256": "1b188f5cbf69f08448d90b09a9db36b525c6f49caa90d1800dc24384a5bd8644",
+  "bytes": 515448,
+  "sha256": "0faa3120df4d726e1f02289586690542e827b56529b6435709cbfe95dd634f95",
   "maxBytesBudget": 8388608,
   "fileCount": 11,
   "files": [
@@ -24,13 +24,13 @@
     },
     {
       "path": "israel-dossier/corpus.json",
-      "bytes": 6164804,
-      "sha256": "4929930527c832c05908150d3e0ba53123449f3d3b40fd4b4b3115beac33bcc3"
+      "bytes": 6334170,
+      "sha256": "b78d0c09d66bb5457d18f81dba8b48d37892b53ac17a569299e0e27f46c5c01c"
     },
     {
       "path": "israel-dossier/visual-investigations.json",
-      "bytes": 852726,
-      "sha256": "ede55a33fe23dad89044525c7b2eedea37009862a2bbed7537841963bf6b1a85"
+      "bytes": 887275,
+      "sha256": "c75c22d521cd799f3bcc13e43af6b0db4a80161b9de11470df2a8784e7f85940"
     },
     {
       "path": "record-of-jesus-christ/soft-floor.json",
@@ -40,7 +40,7 @@
     {
       "path": "israel-dossier/soft-floor.json",
       "bytes": 279,
-      "sha256": "8215919b772cd20996bb8e2b99f38e2a91e30eab0021a6956846d908d54d45b8"
+      "sha256": "370d39a2dcb8a8d834390455b43ade986ba75d0d1eb8d8de86ac020183d35286"
     },
     {
       "path": "israel-dossier/templates/manifest.json",
@@ -60,7 +60,7 @@
     {
       "path": "README.md",
       "bytes": 863,
-      "sha256": "ab14c5e6aa4854bebb01c741cd04d4a62dd3b1ad6272a31303acac150b2997ea"
+      "sha256": "ff1a62a1d799ffef36f0c3b9c17e3483899ae640f036ff570aeb15a87e4ce528"
     }
   ],
   "note": "Offline research pack of public machine corpora. Entity-only attribution."
