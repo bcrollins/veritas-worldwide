@@ -2141,6 +2141,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-killed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden', 'donald-trump'],
+    relatedMoneyNodeIds: ['mk84-use', 'fmf-weapons', 'oct7-emergency-arms-surge', 'artillery-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Killed — Multi-Source Wartime Floor (2023–2025)',
+    date: 'October 2023 – 2025',
+    location: 'Gaza Strip',
+    summary:
+      'Gaza Health Ministry and multi-source UN-referenced tallies document children as a large share of Palestinian fatalities in the Gaza war — tens of thousands of child deaths in the multi-source public-record floor used across humanitarian reporting. Pattern card for the children-killed wartime floor, distinct from individual incident cards.',
+    evidence:
+      'Gaza Health Ministry age-disaggregated fatality series, UNICEF/UN statements, and multi-source humanitarian reporting establish elevated child fatalities. Exact totals evolve; the multi-source floor of tens of thousands of children killed is the claim. Combatant-age disputes do not erase the child-fatality magnitude documented across independent monitors.',
+    sources: [
+      { label: 'UNICEF / UN child protection statements', url: 'https://www.unicef.org' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet child casualty reporting', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public materials', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 15000 },
+  },
+
+
 
 
 
@@ -3002,6 +3030,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['west-bank-settlement-surge-2023-2025', 'settlement-enterprise-pattern', 'settler-violence-pattern-2021-2023'],
     tags: ['settlements', 'west-bank', 'civilians'],
+  },
+
+  {
+    id: 'tl-gaza-children-killed-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Killed — Multi-Source Wartime Floor',
+    description: 'Tens of thousands of child fatalities in multi-source UN/humanitarian tallies across the Gaza war.',
+    source: 'UNICEF / OHCHR / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-children-killed-pattern-2023-2025'],
+    tags: ['children', 'civilians', 'gaza', 'casualties'],
   },
 
 ]
