@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:12:08.988Z",
+  "generatedAt": "2026-07-23T09:12:30.198Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 144,
-    "timelineEvents": 132,
+    "incidents": 145,
+    "timelineEvents": 133,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 130,
+    "historicalWarCrimesPack": 131,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 84
+      "post-oct7": 85
     },
     "incidentsByTier": {
-      "verified": 142,
+      "verified": 143,
       "circumstantial": 2
     },
-    "childrenTagged": 120,
-    "civiliansTagged": 142,
+    "childrenTagged": 121,
+    "civiliansTagged": 143,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3390,6 +3390,29 @@
         "desalination",
         "children",
         "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-dialysis-cancer-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Dialysis & Cancer Care Collapse Pattern",
+      "description": "WHO multi-source documentation of collapsed dialysis and oncology pathways under wartime facility and supply constraints.",
+      "source": "WHO / OCHA / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-dialysis-cancer-care-collapse-pattern-2023-2025",
+        "gaza-health-system-collapse-2023-2025",
+        "gaza-icu-neonatal-capacity-collapse-pattern-2023-2025"
+      ],
+      "tags": [
+        "dialysis",
+        "cancer",
+        "health",
+        "civilians",
+        "children",
         "gaza"
       ]
     },
@@ -9624,6 +9647,50 @@
         {
           "type": "document",
           "label": "WHO public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-dialysis-cancer-care-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Dialysis & Cancer Care Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (chronic-care cohort)",
+      "location": "Gaza Strip oncology / dialysis centers",
+      "summary": "WHO and multi-source clinical reporting document collapse of dialysis sessions and cancer treatment pathways under facility destruction, evacuation, and fuel/medicine shortages — a chronic-care civilian harm pattern distinct from ICU/NICU and maternal cards. Pattern card for specialized chronic-care system failure.",
+      "evidence": "WHO specialty-care updates, multi-source patient/clinician reporting, and OCHA health access materials establish multi-source dialysis and oncology capacity collapse. Exact patient counts evolve; multi-source specialized chronic-care stoppage is the claim.",
+      "sources": [
+        {
+          "label": "WHO specialty care / emergency health materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA health access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza dialysis/cancer coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
           "url": "https://www.who.int"
         }
       ],

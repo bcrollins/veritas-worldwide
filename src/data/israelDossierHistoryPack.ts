@@ -3492,6 +3492,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-dialysis-cancer-care-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Dialysis & Cancer Care Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (chronic-care cohort)',
+    location: 'Gaza Strip oncology / dialysis centers',
+    summary:
+      'WHO and multi-source clinical reporting document collapse of dialysis sessions and cancer treatment pathways under facility destruction, evacuation, and fuel/medicine shortages — a chronic-care civilian harm pattern distinct from ICU/NICU and maternal cards. Pattern card for specialized chronic-care system failure.',
+    evidence:
+      'WHO specialty-care updates, multi-source patient/clinician reporting, and OCHA health access materials establish multi-source dialysis and oncology capacity collapse. Exact patient counts evolve; multi-source specialized chronic-care stoppage is the claim.',
+    sources: [
+      { label: 'WHO specialty care / emergency health materials', url: 'https://www.who.int' },
+      { label: 'OCHA health access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza dialysis/cancer coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5100,6 +5127,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['icu', 'neonatal', 'children', 'health', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-dialysis-cancer-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Dialysis & Cancer Care Collapse Pattern',
+    description: 'WHO multi-source documentation of collapsed dialysis and oncology pathways under wartime facility and supply constraints.',
+    source: 'WHO / OCHA / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-dialysis-cancer-care-collapse-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+      'gaza-icu-neonatal-capacity-collapse-pattern-2023-2025',
+    ],
+    tags: ['dialysis', 'cancer', 'health', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
