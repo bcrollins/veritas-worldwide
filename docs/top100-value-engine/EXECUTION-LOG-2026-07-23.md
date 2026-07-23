@@ -157,3 +157,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Live | lag-aware soft-floor WARN; HTTP 200 corpus/VI/pack |
 | Multi-agent | densify-only; peer nav/App unstaged |
 
+## Interval densify — tip **1210** / withVideo **82** / VI cards **71**
+
+| Milestone | Tip |
+|-----------|-----|
+| 1000 | dual-sided densify milestone |
+| 1104–1189 | airway/trach + hostage isolation + WB agri densify series |
+| **1210** | soft-floor + research-pack + pure floors locked |
+| Pure | visual-investigations-floor, israel-dossier, research-pack PASS |
+| Live | lag-aware (soft-floor WARN path); video floor often catches first |
+| Multi-agent | densify-only; peer nav/VI co-export without clobber |
+
