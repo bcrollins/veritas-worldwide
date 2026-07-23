@@ -489,3 +489,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2100 |
 
+
+## Interval densify — tip post-2140 blood products densify + pharmacy warehouse / Holon / olive-combs theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza platelets/cryo/albumin · hostage defensive-trenches/stroller-install/chained-standing · WB swiss-chard/glucometer/chive-seedlings |
+| VI | pharmacy warehouse · Holon · olive-combs theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2100 |
+
