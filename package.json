@@ -96,7 +96,8 @@
     "verify:live-research-pack": "node scripts/verify-live-research-pack.mjs",
     "verify:live-visual-investigations": "node scripts/verify-live-visual-investigations.mjs",
     "verify:nav-ia": "node scripts/verify-nav-ia.mjs",
-    "verify:nav-recovery": "node scripts/verify-nav-recovery-surfaces.mjs"
+    "verify:nav-recovery": "node scripts/verify-nav-recovery-surfaces.mjs",
+    "verify:related-hubs-coverage": "node scripts/verify-related-hubs-coverage.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

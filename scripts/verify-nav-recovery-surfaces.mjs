@@ -2721,4 +2721,25 @@ assert(read('src/pages/ContentPackPage.tsx').includes('content-pack-related-hubs
 assert(read('src/pages/BibleHistoryPage.tsx').includes('bible-history-related-hubs'), 'perpetual v17 bible')
 assert(read('src/pages/RecordOfJesusChristPage.tsx').includes('roc-related-hubs'), 'perpetual v17 roc')
 
+
+
+// RelatedHubs platform perpetual densify lock v18
+assert(surfaces.length >= 115, `perpetual v18 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v18 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v18 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v18 focus-visible')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v18 mobile tab bar')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v18 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v18 soft-404')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v18 institute')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v18 methodology')
+assert(read('src/pages/SourcesPage.tsx').includes('sources-related-hubs'), 'perpetual v18 sources')
+assert(read('src/pages/ResearcherHubPage.tsx').includes('researcher-related-hubs'), 'perpetual v18 researcher')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v18 coverage suite')
+assert(read('scripts/verify-pure.mjs').includes('verify-related-hubs-coverage.mjs'), 'perpetual v18 pure wire')
+assert(read('src/pages/RecordOfJesusChristPage.tsx').includes('roc-related-hubs'), 'perpetual v18 roc')
+assert(read('src/pages/BibleHistoryPage.tsx').includes('bible-history-related-hubs'), 'perpetual v18 bible')
+assert(read('src/pages/VolumeIIHubPage.tsx').includes('volume-ii-related-hubs'), 'perpetual v18 volume-ii')
+assert(read('src/pages/ContentPackPage.tsx').includes('content-pack-related-hubs'), 'perpetual v18 content-pack')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
