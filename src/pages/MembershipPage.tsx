@@ -527,6 +527,10 @@ export default function MembershipPage() {
               a: 'Our top tier for readers who want a deeper hand in the publication. Founding members can vote on investigation priorities, send editorial feedback, and keep their founding rate for as long as they remain active.',
             },
             {
+              q: 'Is the Comprehensive Online Profile ($499) part of membership?',
+              a: 'No. Founding Circle and other memberships fund the free public archive and editorial work. The Comprehensive Online Profile is a separate fixed-price private OSINT research service for clients who need an authenticated dossier on a specific subject. It does not unlock paywalled chapters, and membership does not include free private reports. See /comprehensive-profile.',
+            },
+            {
               q: 'Can I gift a membership?',
               a: 'Not yet, but it\'s coming. Email rights@veritasworldwide.com and we\'ll set it up manually in the meantime.',
             },

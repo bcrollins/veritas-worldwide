@@ -18,6 +18,7 @@ import {
 import { trackCheckoutIntent, withCheckoutAttribution } from '../lib/conversionTracking'
 import { trackSupportClick } from '../lib/ga4'
 import { recordAnalyticsEvent } from '../lib/analytics'
+import FontSizeToggle from '../components/FontSizeToggle'
 
 type IntakeState = {
   clientName: string
@@ -236,6 +237,9 @@ export default function ComprehensiveProfilePage() {
             </Link>
             <span className="text-ink-muted/50">›</span>
             <span className="text-ink font-medium">Comprehensive Online Profile</span>
+            <span className="ml-auto">
+              <FontSizeToggle />
+            </span>
           </div>
         </div>
       </div>

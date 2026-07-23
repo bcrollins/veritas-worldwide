@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 62,
-    "Pending": 38
+    "Implemented": 70,
+    "Pending": 30
   },
   "items": [
     {
@@ -1102,7 +1102,7 @@
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
       "status": "Implemented",
-      "shippedIn": "integrity densify + product UX 2026-07-23"
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 58,
@@ -1176,7 +1176,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 62,
@@ -1285,7 +1286,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "hardens",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 68,
@@ -1303,7 +1305,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 69,
@@ -1593,7 +1596,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 85,
@@ -1611,7 +1615,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 86,
@@ -1683,7 +1688,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 90,
@@ -1737,7 +1743,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 93,
@@ -1755,7 +1762,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-reader-ops-export-2026-07-23"
     },
     {
       "rank": 94,

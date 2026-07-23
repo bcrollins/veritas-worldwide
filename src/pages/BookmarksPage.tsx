@@ -136,6 +136,40 @@ export default function BookmarksPage() {
       .slice(0, 3)
   })()
 
+  const exportBookmarksJson = () => {
+    const payload = {
+      exportedAt: new Date().toISOString(),
+      publisher: 'Veritas Worldwide',
+      source: `${SITE_URL}/bookmarks`,
+      count: bookmarkCards.length,
+      bookmarks: bookmarkCards.map((card) => ({
+        chapterId: card.chapter.id,
+        chapterNumber: card.chapter.number,
+        title: card.chapter.title,
+        subtitle: card.chapter.subtitle,
+        url: `${SITE_URL}/chapter/${card.chapter.id}`,
+        keywords: card.chapter.keywords || [],
+        progressPercent: card.progressPercent,
+        completed: card.completed,
+        lastActivityTimestamp: card.lastActivityTimestamp || null,
+        // Public archive source surface for offline verification
+        sourcesUrl: `${SITE_URL}/sources`,
+      })),
+    }
+    const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], {
+      type: 'application/json;charset=utf-8',
+    })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'veritas-bookmarks.json'
+    a.rel = 'noopener'
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    URL.revokeObjectURL(url)
+  }
+
   return (
     <div className="mx-auto w-full max-w-[1920px]">
       <div className="border-b border-border bg-surface">
@@ -157,9 +191,24 @@ export default function BookmarksPage() {
             <h1 className="mt-3 font-display text-3xl font-bold text-ink md:text-5xl">
               Your Bookmarks
             </h1>
-            <p className="mt-4 max-w-3xl border-b border-border pb-8 font-body text-lg leading-relaxed text-ink-muted">
+            <p className="mt-4 max-w-3xl font-body text-lg leading-relaxed text-ink-muted">
               Save chapters, track active investigations, and return to the archive without hunting through the table of contents again.
             </p>
+            {bookmarkCards.length > 0 && (
+              <div className="mt-4 mb-8 flex flex-wrap gap-2 border-b border-border pb-8">
+                <button
+                  type="button"
+                  onClick={exportBookmarksJson}
+                  data-testid="bookmarks-export-json"
+                  className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                >
+                  Export JSON ({bookmarkCards.length})
+                </button>
+                <p className="self-center font-sans text-[0.6rem] text-ink-faint">
+                  Includes chapter URLs and sources library link for offline verification.
+                </p>
+              </div>
+            )}
 
             {!user ? (
               <section className="mt-10 rounded-[28px] border border-border bg-surface p-6 md:p-8">

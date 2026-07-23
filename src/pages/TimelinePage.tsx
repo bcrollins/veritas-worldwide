@@ -137,6 +137,44 @@ export default function TimelinePage() {
   const minYear = useMemo(() => Math.min(...entries.map(e => e.startYear)), [entries])
   const maxYear = 2026
 
+  const exportTimelineCsv = () => {
+    const header = ['chapter_id', 'chapter_number', 'title', 'subtitle', 'date_range', 'start_year', 'end_year', 'era', 'url']
+    const lines = [header.join(',')]
+    const esc = (v: string | number) => {
+      const s = String(v ?? '')
+      if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`
+      return s
+    }
+    for (const e of filteredEntries) {
+      const era = getEra(e.startYear).name
+      lines.push(
+        [
+          esc(e.chapterId),
+          esc(e.chapterNumber),
+          esc(e.title),
+          esc(e.subtitle),
+          esc(e.dateRange),
+          esc(e.startYear),
+          esc(e.endYear),
+          esc(era),
+          esc(`${SITE_URL}/chapter/${e.chapterId}`),
+        ].join(','),
+      )
+    }
+    const blob = new Blob([`${lines.join('\n')}\n`], { type: 'text/csv;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = filterEra
+      ? `veritas-timeline-${filterEra.toLowerCase().replace(/\s+/g, '-')}.csv`
+      : 'veritas-timeline.csv'
+    a.rel = 'noopener'
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    URL.revokeObjectURL(url)
+  }
+
   useEffect(() => {
     if (filterEra && timelineRef.current) {
       timelineRef.current.scrollTo({ top: 0, behavior: 'smooth' })
@@ -164,10 +202,23 @@ export default function TimelinePage() {
             <h1 className="font-display text-3xl md:text-4xl font-bold text-ink mb-3">
               The Timeline
             </h1>
-            <p className="font-serif text-lg text-ink-muted leading-relaxed mb-8 border-b border-border pb-8">
+            <p className="font-serif text-lg text-ink-muted leading-relaxed mb-4">
               A chronological map of the events, institutions, and turning points documented across
               all {entries.length} chapters of The Record — spanning {minYear} to the present day.
             </p>
+            <div className="mb-8 flex flex-wrap items-center gap-3 border-b border-border pb-8">
+              <button
+                type="button"
+                onClick={exportTimelineCsv}
+                data-testid="timeline-export-csv"
+                className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Export CSV ({filteredEntries.length})
+              </button>
+              <p className="font-sans text-[0.6rem] text-ink-faint">
+                Exports the current era filter with chapter URLs for offline use.
+              </p>
+            </div>
 
             {/* Era Filters */}
             <div className="flex flex-wrap gap-2 mb-10">

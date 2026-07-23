@@ -30,6 +30,7 @@ const pure = [
   'verify-seo-meta.mjs',
   'verify-soft-404-gates.mjs',
   'verify-comprehensive-profile.mjs',
+  'verify-docs-anonymity.mjs',
   'verify-brand-kit.mjs',
   'verify-integrity-score.mjs',
 ]

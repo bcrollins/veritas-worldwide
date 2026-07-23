@@ -274,7 +274,23 @@ export default function MediaKitPage() {
           </div>
         </div>
 
-        <section className="mt-12">
+        <section className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 border-b border-border" data-testid="media-kit-osint-oneliner">
+        <div className="rounded-sm border border-border bg-surface px-5 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-body text-sm text-ink-muted leading-relaxed max-w-3xl">
+            <span className="font-semibold text-ink">Research service:</span>{' '}
+            Veritas also offers a fixed-price Comprehensive Online Profile ($499) — authenticated OSINT with methodology appendix.
+            Not part of free press assets.
+          </p>
+          <Link
+            to="/comprehensive-profile"
+            className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-sm bg-obsidian px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-white hover:bg-crimson"
+          >
+            View service
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-display text-2xl font-semibold text-ink">Boilerplate</h2>
             <div className="flex flex-wrap gap-2">
