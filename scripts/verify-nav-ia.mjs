@@ -321,6 +321,18 @@ assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includ
 assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-secondary-hubs'), 'NotFound secondary RelatedHubs')
 assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('NOT_FOUND_SECONDARY_HUBS'), 'NOT_FOUND_SECONDARY_HUBS')
 
+
+// Bookmarks empty RelatedHubs platform + dual mounts
+const bookmarksIa = fs.readFileSync(path.join(root, 'src/pages/BookmarksPage.tsx'), 'utf8')
+assert(bookmarksIa.includes('bookmarks-related-hubs') && bookmarksIa.includes('bookmarks-empty-hubs'), 'Bookmarks header+empty hubs')
+assert(bookmarksIa.includes('BOOKMARKS_HUBS') && bookmarksIa.includes('RelatedHubs'), 'Bookmarks RelatedHubs platform')
+assert((bookmarksIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'Bookmarks dual RelatedHubs mounts')
+
+// Search dual RelatedHubs IA
+const searchIa = fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8')
+assert((searchIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'Search dual RelatedHubs mounts IA')
+assert(searchIa.includes('SEARCH_RECOVERY_HUBS'), 'SEARCH_RECOVERY_HUBS IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
