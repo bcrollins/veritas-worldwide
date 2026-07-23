@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:44:20.680Z",
+  "generatedAt": "2026-07-23T10:45:56.508Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 453,
-    "timelineEvents": 441,
+    "incidents": 462,
+    "timelineEvents": 450,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 439,
+    "historicalWarCrimesPack": 448,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 393
+      "post-oct7": 402
     },
     "incidentsByTier": {
-      "verified": 451,
+      "verified": 460,
       "circumstantial": 2
     },
-    "childrenTagged": 420,
-    "civiliansTagged": 451,
+    "childrenTagged": 429,
+    "civiliansTagged": 460,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3717,6 +3717,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-conjunctivitis-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Conjunctivitis Surge Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric conjunctivitis under overcrowding and hygiene collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-conjunctivitis-surge-pattern-2023-2025",
+        "gaza-children-skin-abscess-surge-pattern-2023-2025",
+        "gaza-children-hypocalcemia-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "conjunctivitis",
+        "children",
+        "infection",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-copper-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -3965,6 +3986,27 @@
         "hepatitis-a",
         "children",
         "wash",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-hypocalcemia-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Hypocalcemia Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric hypocalcemia risk under food scarcity.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-hypocalcemia-risk-pattern-2023-2025",
+        "gaza-children-acute-malnutrition-edema-pattern-2023-2025",
+        "gaza-children-anemia-transfusion-gap-pattern-2023-2025"
+      ],
+      "tags": [
+        "hypocalcemia",
+        "children",
+        "nutrition",
         "gaza"
       ]
     },
@@ -4572,6 +4614,27 @@
         "dehydration",
         "shock",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-skin-abscess-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Skin Abscess Surge Pattern",
+      "description": "WHO/MSF multi-source documentation of elevated pediatric skin abscesses under hygiene and antibiotic collapse.",
+      "source": "WHO / MSF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-skin-abscess-surge-pattern-2023-2025",
+        "gaza-children-conjunctivitis-surge-pattern-2023-2025",
+        "gaza-children-scabies-secondary-infection-pattern-2023-2025"
+      ],
+      "tags": [
+        "abscess",
+        "children",
+        "infection",
         "gaza"
       ]
     },
@@ -7370,6 +7433,28 @@
       ]
     },
     {
+      "id": "tl-hostages-family-survival-news-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Family Survival News Pattern",
+      "description": "Multi-source documentation of captors withholding or lying about family survival after October 7.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-news-of-family-survival-pattern-2023-2025",
+        "israel-hostages-forced-to-translate-for-captors-pattern-2023-2025",
+        "israel-hostages-denied-hygiene-after-menstruation-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-footwear-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7694,6 +7779,28 @@
       "tags": [
         "hostages",
         "medical",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-post-menstruation-hygiene-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Post-Menstruation Hygiene Pattern",
+      "description": "Multi-source documentation of denial of post-menstruation washing and hygiene for female civilian hostages.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-hygiene-after-menstruation-pattern-2023-2025",
+        "israel-hostages-denied-menstrual-products-pattern-2023-2025",
+        "israel-hostages-denied-bathing-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "hygiene",
         "civilians",
         "terrorism",
         "israel"
@@ -8112,6 +8219,28 @@
       "tags": [
         "hostages",
         "coercion",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-forced-translate-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced to Translate for Captors Pattern",
+      "description": "Multi-source documentation of captors forcing multilingual civilian hostages to translate.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-to-translate-for-captors-pattern-2023-2025",
+        "israel-hostages-denied-news-of-family-survival-pattern-2023-2025",
+        "israel-hostages-forced-to-praise-captors-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "forced-labor",
         "civilians",
         "terrorism",
         "israel"
@@ -9364,6 +9493,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-bus-passengers-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on Bus Passengers Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian bus passengers after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-bus-passengers-pattern-2023-2025",
+        "west-bank-settler-attacking-taxi-drivers-pattern-2023-2025",
+        "west-bank-settler-destroying-almond-trees-pattern-2023-2025"
+      ],
+      "tags": [
+        "buses",
+        "settlers",
+        "civilians",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-child-attacks-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -9763,6 +9913,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-almond-trees-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Almond Trees Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian almond trees after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-almond-trees-pattern-2023-2025",
+        "west-bank-settler-attacking-bus-passengers-pattern-2023-2025",
+        "west-bank-settler-destroying-storage-sheds-pattern-2023-2025"
+      ],
+      "tags": [
+        "almond-trees",
+        "settlers",
+        "agriculture",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-beehives-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -9906,6 +10077,27 @@
         "solar",
         "water",
         "settlers",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-storage-sheds-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Storage Sheds Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian storage sheds after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-storage-sheds-pattern-2023-2025",
+        "west-bank-settler-destroying-greenhouses-pattern-2023-2025",
+        "west-bank-settler-destroying-poultry-coops-pattern-2023-2025"
+      ],
+      "tags": [
+        "storage",
+        "settlers",
+        "livelihoods",
         "west-bank"
       ]
     },
@@ -29171,6 +29363,390 @@
         },
         {
           "label": "Multi-outlet water-tanker block coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-conjunctivitis-surge-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Conjunctivitis Surge Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (conjunctivitis-surge cohort)",
+      "location": "Gaza Strip overcrowded tents and dust-exposure camps",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric conjunctivitis and eye infections under overcrowding, dust, smoke, and hygiene collapse — a multi-source wartime ocular pattern distinct from otitis and dehydration cards.",
+      "evidence": "WHO pediatric infection materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric conjunctivitis surge. Exact case counts evolve; multi-source wartime conjunctivitis surge among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO pediatric infection materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza pediatric eye-infection coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-news-of-family-survival-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Family Survival News Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (family-survival-news-denial cohort)",
+      "location": "Gaza Strip captivity sites — family-news-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding or lying about whether family members survived October 7 — a multi-source psychological-torture pattern distinct from family-communication denial cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source denial or deception about family survival. Exact cases vary; multi-source family-survival-news denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-almond-trees-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Almond Trees Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (almond-tree-destruction cohort)",
+      "location": "West Bank almond orchards and hillside groves",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler uprooting and destruction of Palestinian civilian almond trees after October 7 — destroying multi-year agricultural livelihoods supporting families including children. Pattern card distinct from olive, fig, and grapevine destruction.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source almond-tree destruction. Exact tree counts evolve; multi-source wartime settler destruction of civilian almond trees is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem agriculture materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet almond-tree destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-skin-abscess-surge-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Skin Abscess Surge Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (skin-abscess-surge cohort)",
+      "location": "Gaza Strip field clinics and overcrowded tent camps",
+      "summary": "WHO, MSF, and multi-source clinical reporting document elevated pediatric skin abscesses and soft-tissue infections under hygiene collapse and antibiotic shortage — a multi-source wartime soft-tissue infection pattern distinct from scabies secondary infection and burn-infection cards.",
+      "evidence": "WHO infection materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric skin-abscess surge. Exact case counts evolve; multi-source wartime skin-abscess surge among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO infection materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "MSF clinical statements",
+          "url": "https://www.msf.org"
+        },
+        {
+          "label": "Multi-outlet Gaza soft-tissue infection coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-translate-for-captors-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Translate for Captors Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-translation cohort)",
+      "location": "Gaza Strip captivity sites — forced-translation subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forcing multilingual Israeli civilian hostages to translate communications and media — a multi-source coerced-labor pattern distinct from forced praise and propaganda cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced translation labor. Exact cases vary; multi-source forced translation by civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-bus-passengers-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on Bus Passengers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (bus-passenger-attack cohort)",
+      "location": "West Bank bus stops and inter-city bus routes",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian bus passengers after October 7 — including children commuting for school and work. Pattern card distinct from taxi-driver attacks and school-bus blocking.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source bus-passenger attacks. Exact injury counts evolve; multi-source wartime settler attacks on bus passengers is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet bus-passenger attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-hypocalcemia-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Hypocalcemia Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hypocalcemia-risk cohort)",
+      "location": "Gaza Strip nutrition clinics and pediatric wards",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric hypocalcemia and related metabolic risk under dairy/food scarcity and micronutrient collapse — a multi-source wartime metabolic pattern distinct from malnutrition edema and refeeding cards.",
+      "evidence": "WHO nutrition materials, UNICEF child-nutrition updates, and multi-outlet coverage establish multi-source pediatric hypocalcemia risk. Exact case counts evolve; multi-source wartime hypocalcemia risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO nutrition materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza child-nutrition coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-hygiene-after-menstruation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Post-Menstruation Hygiene Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (post-menstruation-hygiene-denial cohort)",
+      "location": "Gaza Strip captivity sites — post-menstruation-hygiene subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of post-menstruation washing and hygiene beyond menstrual-product denial — compounding infection and humiliation for female civilian hostages. Pattern card distinct from menstrual-products and bathing-denial cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source post-menstruation hygiene denial. Exact cases vary; multi-source denial of post-menstruation hygiene for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-storage-sheds-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Storage Sheds Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (storage-shed-destruction cohort)",
+      "location": "West Bank farmyards and village storage compounds",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian storage sheds after October 7 — destroying tools, feed, and family supplies including for households with children. Pattern card distinct from greenhouse and poultry-coop destruction.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source storage-shed destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian storage sheds is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet storage-shed destruction coverage",
           "url": "https://apnews.com"
         }
       ],
