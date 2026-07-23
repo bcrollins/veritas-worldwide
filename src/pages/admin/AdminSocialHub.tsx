@@ -277,6 +277,10 @@ export default function AdminSocialHub() {
           { label: 'Bluesky', href: BRAND_ASSETS.blueskyBanner },
           { label: 'Discord', href: BRAND_ASSETS.discordInvite },
           { label: 'Citation', href: BRAND_ASSETS.citationCard },
+          { label: 'Pinterest', href: BRAND_ASSETS.pinterestPin },
+          { label: 'TikTok', href: BRAND_ASSETS.tiktokCover },
+          { label: 'Reddit', href: BRAND_ASSETS.redditBanner },
+          { label: 'Reels Zone', href: BRAND_ASSETS.reelsSafeZone },
           { label: 'OG Card', href: BRAND_ASSETS.og },
         ].map(a => (
           <a
