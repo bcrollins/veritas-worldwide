@@ -16,3 +16,10 @@
 ## Anonymity
 
 Entity-only. Researcher surfaces: robots Disallow + meta noindex + X-Robots-Tag + bot-meta shell.
+
+## Interval W2-2
+
+| ID | Title | Status |
+|----|-------|--------|
+| W2-07 | Pure: llms GEO floor tracks corpus decade (lag <50) | Implemented |
+

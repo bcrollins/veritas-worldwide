@@ -655,6 +655,22 @@ assert(
 assert(botMeta.includes('/researcher/timeline'), 'bot-meta must noindex /researcher/timeline')
 assert(botMeta.includes("'/researcher'") || botMeta.includes('/researcher'), 'bot-meta must noindex /researcher hub')
 
+
+// Wave2 — GEO advertise floor must track corpus decade (never > claimCount; never stale by 50+)
+{
+  const corpusPath = join(root, 'public/record-of-jesus-christ/corpus.json')
+  if (existsSync(corpusPath)) {
+    const corpus = JSON.parse(read('public/record-of-jesus-christ/corpus.json'))
+    const n = Number(corpus.claimCount) || 0
+    const m = llms.match(/(?<!\d)(\d{3})\+\s*tier-labeled/)
+    const adv = m ? Number(m[1]) : 0
+    assert(n > 0, 'ROC corpus claimCount must be positive')
+    assert(adv > 0, 'llms.txt must advertise N+ tier-labeled claims')
+    assert(adv <= n, `llms GEO floor ${adv}+ cannot exceed claimCount ${n}`)
+    assert(n - adv < 50, `llms GEO floor ${adv}+ lags claimCount ${n} by ≥50 — run sync-roc-geo-floors`)
+  }
+}
+
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, anonymity floors green',
 )
