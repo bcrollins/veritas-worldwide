@@ -17,6 +17,7 @@ import {
 import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
 import { getScopedReadingHistory } from '../lib/readerState'
+import CorpusSearchPanel from '../components/CorpusSearchPanel'
 
 type SearchMatchedField = 'title' | 'subtitle' | 'keywords' | 'content' | 'sources'
 type SearchMatchFilter = 'all' | 'sources'
@@ -1137,6 +1138,9 @@ export default function SearchPage() {
               </div>
             </div>
           </aside>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+          <CorpusSearchPanel seedQuery={debouncedQuery || query} />
         </div>
       </div>
     </div>

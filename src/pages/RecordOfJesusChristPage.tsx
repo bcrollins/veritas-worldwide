@@ -20,6 +20,7 @@ import NewsletterSignup from '../components/NewsletterSignup'
 import ReadingProgress from '../components/ReadingProgress'
 import LicenseCard from '../components/LicenseCard'
 import CorrectionsCTA from '../components/CorrectionsCTA'
+import { addPersonalTimelineEvent } from '../lib/personalTimelineStorage'
 import {
   SCHOLARLY_TIERS,
   SCHOLARLY_TIER_ORDER,
@@ -151,8 +152,6 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
 
   const addToTimeline = () => {
     try {
-      // Dynamic import avoided — static for tree-shaking simplicity
-      const { addPersonalTimelineEvent } = require('../lib/personalTimelineStorage') as typeof import('../lib/personalTimelineStorage')
       addPersonalTimelineEvent({
         date: new Date().toISOString().slice(0, 10),
         title: claim.claim.slice(0, 200),
@@ -232,6 +231,14 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
             aria-label={`Copy citation for claim ${claim.id}`}
           >
             {copied ? 'Copied' : 'Copy citation'}
+          </button>
+          <button
+            type="button"
+            onClick={addToTimeline}
+            className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.7rem] font-semibold tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors px-1"
+            aria-label={`Add claim ${claim.id} to personal timeline (local only)`}
+          >
+            {pinned ? 'Added to my timeline' : 'Add to my timeline'}
           </button>
         </div>
         {open && (
@@ -350,6 +357,27 @@ export default function RecordOfJesusChristPage() {
     } catch { /* ignore */ }
     return 'all'
   })
+  const [activeProofs, setActiveProofs] = useState<Set<RocClaim['proofVsConcept']>>(() => {
+    const urlP = searchParams.get('proof')
+    if (urlP) {
+      const parts = urlP.split(',').map(s => s.trim()).filter(Boolean)
+      const valid = parts.filter((x): x is RocClaim['proofVsConcept'] =>
+        (PROOF_ORDER as readonly string[]).includes(x),
+      )
+      if (valid.length) return new Set(valid)
+    }
+    try {
+      const raw = localStorage.getItem(PROOF_PREF_KEY)
+      if (raw) {
+        const parsed = JSON.parse(raw) as string[]
+        const valid = parsed.filter((x): x is RocClaim['proofVsConcept'] =>
+          (PROOF_ORDER as readonly string[]).includes(x),
+        )
+        if (valid.length) return new Set(valid)
+      }
+    } catch { /* ignore */ }
+    return new Set(PROOF_ORDER)
+  })
 
   // Keep shareable deep-links in sync with researcher controls
   useEffect(() => {
@@ -359,11 +387,14 @@ export default function RecordOfJesusChristPage() {
       next.set('tier', [...activeTiers].join(','))
     }
     if (domainFilter !== 'all') next.set('domain', domainFilter)
+    if (activeProofs.size > 0 && activeProofs.size < PROOF_ORDER.length) {
+      next.set('proof', [...activeProofs].join(','))
+    }
     const cur = searchParams.toString()
     const ns = next.toString()
     if (cur !== ns) setSearchParams(next, { replace: true })
     // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: sync URL from filter state only
-  }, [claimQuery, activeTiers, domainFilter])
+  }, [claimQuery, activeTiers, domainFilter, activeProofs])
 
   const persistTiers = (next: Set<ScholarlyEvidenceTier>) => {
     try {
@@ -401,6 +432,27 @@ export default function RecordOfJesusChristPage() {
     } catch { /* ignore */ }
   }
 
+  const toggleProof = (p: RocClaim['proofVsConcept']) => {
+    setActiveProofs(prev => {
+      const next = new Set(prev)
+      if (next.has(p)) next.delete(p)
+      else next.add(p)
+      if (next.size === 0) next.add(p)
+      try {
+        localStorage.setItem(PROOF_PREF_KEY, JSON.stringify([...next]))
+      } catch { /* ignore */ }
+      return next
+    })
+  }
+
+  const selectAllProofs = () => {
+    const next = new Set(PROOF_ORDER)
+    try {
+      localStorage.setItem(PROOF_PREF_KEY, JSON.stringify([...next]))
+    } catch { /* ignore */ }
+    setActiveProofs(next)
+  }
+
   const setQuery = (q: string) => {
     setClaimQuery(q)
     try {
@@ -431,6 +483,7 @@ export default function RecordOfJesusChristPage() {
       ...section,
       claims: section.claims.filter(c => {
         if (!activeTiers.has(c.tier)) return false
+        if (!activeProofs.has(c.proofVsConcept)) return false
         if (!claimMatchesDomain(c.id)) return false
         if (!q) return true
         return (
@@ -441,7 +494,7 @@ export default function RecordOfJesusChristPage() {
         )
       }),
     })).filter(s => s.claims.length > 0)
-  }, [activeTiers, q, domainFilter])
+  }, [activeTiers, activeProofs, q, domainFilter])
 
   useEffect(() => {
     setMetaTags({
@@ -783,6 +836,34 @@ export default function RecordOfJesusChristPage() {
               </button>
             ))}
           </div>
+
+          <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter by proof vs concept" data-testid="roc-proof-filter">
+            {PROOF_ORDER.map((p) => {
+              const isActive = activeProofs.has(p)
+              return (
+                <button
+                  key={p}
+                  type="button"
+                  onClick={() => toggleProof(p)}
+                  aria-pressed={isActive}
+                  className={`inline-flex min-h-[44px] items-center rounded-sm border px-3 py-1.5 font-sans text-xs font-semibold transition-colors ${
+                    isActive
+                      ? 'border-crimson bg-crimson/5 text-crimson'
+                      : 'border-border text-ink-muted hover:border-crimson hover:text-crimson opacity-60'
+                  }`}
+                >
+                  {PROOF_LABELS[p]}
+                </button>
+              )
+            })}
+            <button
+              type="button"
+              onClick={selectAllProofs}
+              className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-3 py-1.5 font-sans text-[0.65rem] font-semibold uppercase tracking-wider text-ink-muted hover:text-ink"
+            >
+              All proof types
+            </button>
+          </div>
           <div className="mt-5">
             <label htmlFor="roc-claim-search" className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink-faint block mb-2">
               Search claims (voice-search friendly natural language)
@@ -797,12 +878,12 @@ export default function RecordOfJesusChristPage() {
               autoComplete="off"
               data-testid="roc-claim-search"
             />
-            {(q || domainFilter !== 'all' || activeTiers.size < SCHOLARLY_TIER_ORDER.length) && (
+            {(q || domainFilter !== 'all' || activeTiers.size < SCHOLARLY_TIER_ORDER.length || activeProofs.size < PROOF_ORDER.length) && (
               <p className="mt-2 font-sans text-xs text-ink-muted" role="status">
                 Showing {filteredSections.reduce((n, s) => n + s.claims.length, 0)} claims
                 {q ? ` matching “${claimQuery.trim()}”` : ''}
                 {domainFilter !== 'all' ? ` · domain ${domainFilter}` : ''}
-                {activeTiers.size < SCHOLARLY_TIER_ORDER.length ? ` · ${activeTiers.size} tiers` : ''}
+                {activeTiers.size < SCHOLARLY_TIER_ORDER.length ? ` · ${activeTiers.size} tiers` : ''}{activeProofs.size < PROOF_ORDER.length ? ` · ${activeProofs.size} proof types` : ''}
               </p>
             )}
           </div>

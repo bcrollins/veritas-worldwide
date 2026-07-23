@@ -6,81 +6,22 @@ import {
   SCHOLARLY_TIERS,
   type ScholarlyEvidenceTier,
 } from '../data/evidenceTiers'
+import {
+  PERSONAL_TIMELINE_SCHEMA_VERSION as SCHEMA_VERSION,
+  loadPersonalTimelineEvents,
+  savePersonalTimelineEvents,
+  buildPersonalTimelineExport,
+  parsePersonalTimelineImport,
+} from '../lib/personalTimelineStorage'
 
-type CorpusRef = {
-  kind: 'roc' | 'israel' | 'chapter' | 'other'
-  id: string
-}
-
-type TimelineEvent = {
-  id: string
-  date: string
-  title: string
-  notes: string
-  sourceUrl: string
-  createdAt: string
-  /** Scholarly evidence tier label for the researcher's own assessment (optional). */
-  evidenceTier?: ScholarlyEvidenceTier | ''
-  /** Free-form researcher tags (local only). */
-  tags?: string[]
-  /** Optional pin into a public Veritas corpus row. */
-  corpusRef?: CorpusRef | null
-}
-
-const STORAGE_KEY = 'veritas_personal_timeline_v1'
-const SCHEMA_VERSION = 2
-
-function normalizeEvent(raw: unknown): TimelineEvent | null {
-  if (!raw || typeof raw !== 'object') return null
-  const e = raw as Partial<TimelineEvent>
-  if (typeof e.id !== 'string' || typeof e.title !== 'string') return null
-  const tags = Array.isArray(e.tags)
-    ? e.tags.filter((t): t is string => typeof t === 'string' && t.trim().length > 0).map((t) => t.trim())
-    : []
-  let corpusRef: CorpusRef | null = null
-  if (e.corpusRef && typeof e.corpusRef === 'object') {
-    const kind = (e.corpusRef as CorpusRef).kind
-    const id = (e.corpusRef as CorpusRef).id
-    if (
-      (kind === 'roc' || kind === 'israel' || kind === 'chapter' || kind === 'other') &&
-      typeof id === 'string' &&
-      id.trim()
-    ) {
-      corpusRef = { kind, id: id.trim() }
-    }
-  }
-  const tier =
-    typeof e.evidenceTier === 'string' &&
-    (SCHOLARLY_TIER_ORDER as string[]).includes(e.evidenceTier)
-      ? (e.evidenceTier as ScholarlyEvidenceTier)
-      : ''
-  return {
-    id: e.id,
-    date: typeof e.date === 'string' ? e.date : new Date().toISOString().slice(0, 10),
-    title: e.title,
-    notes: typeof e.notes === 'string' ? e.notes : '',
-    sourceUrl: typeof e.sourceUrl === 'string' ? e.sourceUrl : '',
-    createdAt: typeof e.createdAt === 'string' ? e.createdAt : new Date().toISOString(),
-    evidenceTier: tier,
-    tags,
-    corpusRef,
-  }
-}
+type TimelineEvent = import('../lib/personalTimelineStorage').PersonalTimelineEvent
 
 function loadEvents(): TimelineEvent[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY)
-    if (!raw) return []
-    const parsed = JSON.parse(raw)
-    const list = Array.isArray(parsed) ? parsed : Array.isArray(parsed?.events) ? parsed.events : []
-    return list.map(normalizeEvent).filter(Boolean) as TimelineEvent[]
-  } catch {
-    return []
-  }
+  return loadPersonalTimelineEvents()
 }
 
 function saveEvents(events: TimelineEvent[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(events))
+  savePersonalTimelineEvents(events)
 }
 
 function parseTags(input: string): string[] {
@@ -169,14 +110,7 @@ export default function PersonalTimelinePage() {
   }
 
   const onExport = () => {
-    const payload = {
-      schemaVersion: SCHEMA_VERSION,
-      exportedAt: new Date().toISOString(),
-      publisherNote: 'Local researcher export. Not a Veritas server dataset. Attribution for public corpora: Veritas Worldwide.',
-      events: sorted.length === events.length ? sorted : [...events].sort(
-        (a, b) => String(a.date).localeCompare(String(b.date)) || a.title.localeCompare(b.title),
-      ),
-    }
+    const payload = buildPersonalTimelineExport(events)
     const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], {
       type: 'application/json',
     })
@@ -195,24 +129,15 @@ export default function PersonalTimelinePage() {
     try {
       const text = await file.text()
       const parsed = JSON.parse(text)
-      const list = Array.isArray(parsed) ? parsed : Array.isArray(parsed?.events) ? parsed.events : null
-      if (!list) {
-        setImportError('JSON must be an array of events or { events: [] }.')
-        return
-      }
-      const incoming = list.map(normalizeEvent).filter(Boolean) as TimelineEvent[]
-      if (!incoming.length) {
-        setImportError('No valid events found in file.')
-        return
-      }
+      const incoming = parsePersonalTimelineImport(parsed)
       const byId = new Map<string, TimelineEvent>()
       for (const ev of events) byId.set(ev.id, ev)
       for (const ev of incoming) byId.set(ev.id, ev)
       const merged = [...byId.values()]
       setEvents(merged)
       saveEvents(merged)
-    } catch {
-      setImportError('Could not parse JSON file.')
+    } catch (err) {
+      setImportError(err instanceof Error ? err.message : 'Could not parse JSON file.')
     } finally {
       if (fileRef.current) fileRef.current.value = ''
     }

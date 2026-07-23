@@ -37,6 +37,8 @@ const pure = [
   'verify-brand-kit.mjs',
   'verify-integrity-score.mjs',
   'verify-identity-scrub.mjs',
+  'verify-robots-disallow.mjs',
+  'verify-oauth-no-github.mjs',
   'verify-analytics-privacy.mjs',
   'verify-package-entity.mjs',
   'verify-sitemap-exclusions.mjs',

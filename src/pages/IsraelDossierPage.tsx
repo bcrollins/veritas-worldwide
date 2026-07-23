@@ -27,6 +27,7 @@ import { getAttributedDonateUrl } from '../lib/conversionTracking'
 import LicenseCard from '../components/LicenseCard'
 import CorrectionsCTA from '../components/CorrectionsCTA'
 import PrimarySourceLink from '../components/PrimarySourceLink'
+import { addPersonalTimelineEvent } from '../lib/personalTimelineStorage'
 import { getProfileBySlug, getProfilePhoto } from '../data/profileData'
 import { ISRAEL_DOSSIER_ACTORS, type DossierActorEnablement } from '../data/israelDossierActors'
 import { ISRAEL_DOSSIER_ERA_META, type DossierEra } from '../data/israelDossierHistoryPack'
@@ -336,7 +337,39 @@ function IncidentCard({
 
           {/* Sources */}
           <div>
-            <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-2">Sources — click to verify</p>
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <p className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted">Sources — click to verify</p>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  try {
+                    const primary = incident.sources.find((s) => s.url)
+                    addPersonalTimelineEvent({
+                      date: (incident.date || '').slice(0, 10) || new Date().toISOString().slice(0, 10),
+                      title: incident.title,
+                      notes: (incident.summary || '').slice(0, 500),
+                      sourceUrl: primary?.url || `${window.location.origin}/israel-dossier?incident=${encodeURIComponent(String(incident.id || ''))}`,
+                      evidenceTier: incident.tier === 'verified' ? 'verified' : 'circumstantial',
+                      tags: [
+                        'israel-dossier',
+                        incident.targetsCivilians ? 'civilians' : '',
+                        incident.targetsChildren ? 'children' : '',
+                      ].filter(Boolean),
+                      corpusRef: { kind: 'israel', id: String(incident.id || incident.title) },
+                    })
+                    // lightweight feedback
+                    const el = e.currentTarget
+                    const prev = el.textContent
+                    el.textContent = 'Added locally'
+                    setTimeout(() => { el.textContent = prev }, 2000)
+                  } catch { /* ignore */ }
+                }}
+                className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-bold uppercase tracking-wider text-crimson hover:underline"
+              >
+                Add to my timeline
+              </button>
+            </div>
             <div className="space-y-1.5">
               {incident.sources.map((src, j) => (
                 <PrimarySourceLink
@@ -2014,6 +2047,35 @@ export default function IsraelDossierPage() {
               <span className="font-sans text-xs text-ink group-hover:text-crimson transition-colors leading-snug">{doc.label}</span>
             </a>
           ))}
+        </div>
+      </section>
+
+
+      {/* Dual-sided multi-source balance strip — counts ≠ moral weight */}
+      <section className="mb-10 rounded-sm border border-border bg-surface p-5" aria-label="Dual-sided source balance">
+        <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-crimson mb-2">
+          Dual-sided multi-source balance
+        </p>
+        <p className="font-body text-xs text-ink-muted mb-4 max-w-3xl leading-relaxed">
+          Pattern-family counts for researcher orientation. Counts are not moral weight and do not imply equivalence of scale or legal conclusion. Ethnicity or religion is never treated as evidence.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="rounded-sm border border-border bg-parchment/40 p-3">
+            <p className="font-mono text-2xl font-bold text-ink">{allIncidents.length}</p>
+            <p className="font-sans text-[0.65rem] uppercase tracking-wider text-ink-faint">Incidents total</p>
+          </div>
+          <div className="rounded-sm border border-border bg-parchment/40 p-3">
+            <p className="font-mono text-2xl font-bold text-ink">{civilianIncidentCount}</p>
+            <p className="font-sans text-[0.65rem] uppercase tracking-wider text-ink-faint">Civilian-tagged</p>
+          </div>
+          <div className="rounded-sm border border-border bg-parchment/40 p-3">
+            <p className="font-mono text-2xl font-bold text-ink">{childrenIncidentCount}</p>
+            <p className="font-sans text-[0.65rem] uppercase tracking-wider text-ink-faint">Children-tagged</p>
+          </div>
+          <div className="rounded-sm border border-border bg-parchment/40 p-3">
+            <p className="font-mono text-2xl font-bold text-ink">{verifiedIncidentCount}</p>
+            <p className="font-sans text-[0.65rem] uppercase tracking-wider text-ink-faint">Verified tier</p>
+          </div>
         </div>
       </section>
 
