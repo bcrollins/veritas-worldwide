@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:27:04.551Z",
+  "generatedAt": "2026-07-23T10:28:14.635Z",
   "count": 96,
   "profiles": [
     {
@@ -1811,9 +1811,9 @@
         "Trump Advisor",
         "Controversial"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "david-petraeus",

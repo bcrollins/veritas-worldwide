@@ -10825,7 +10825,52 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2017'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'prince-blackwater-nisour-innocent-framing',
+        statement: 'Publicly framed Blackwater contractors’ Nisour Square conduct as justified self-defense / denied wrongful killings in absolute terms contradicted by later convictions.',
+        saidAt: '2007–2014',
+        context: 'Public defense of Blackwater after the 2007 Nisour Square shooting in Baghdad.',
+        whyFalse: 'Federal juries later convicted multiple Blackwater contractors of manslaughter and related charges for the Nisour Square killings (later pardoned by Trump). Absolute innocence/self-defense framing was false to the jury verdicts.',
+        correction: 'Blackwater contractors were convicted in federal court for manslaughter and related offenses stemming from Nisour Square.',
+        statementSource: 'Prince/Blackwater public defenses after Nisour Square (2007– multi-outlet capture)',
+        statementUrl: 'https://www.nytimes.com/2007/09/18/world/middleeast/18blackwater.html',
+        debunkSource: 'DOJ — former Blackwater contractors found guilty (Nisour Square)',
+        debunkUrl: 'https://www.justice.gov/opa/pr/former-blackwater-contractors-found-guilty-charges-stemming-2007-shooting-baghdad',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'prince-no-weapons-trafficking-denial-record',
+        statement: 'Denied illegal weapons practices / trafficking allegations around Blackwater logistics in public defenses.',
+        saidAt: '2000s–2010s',
+        context: 'Congressional and public scrutiny of Blackwater arms and contracting practices.',
+        whyFalse: 'Blackwater and related entities faced multiple legal actions and settlements over weapons and contracting violations; absolute clean-hands denials overstated the compliance record.',
+        correction: 'Blackwater/related entities faced documented legal consequences for weapons and contracting violations beyond pure self-defense framing.',
+        statementSource: 'Prince public statements on Blackwater compliance (multi-outlet capture)',
+        statementUrl: 'https://www.justice.gov',
+        debunkSource: 'DOJ/court record on Blackwater-related weapons and contracting cases',
+        debunkUrl: 'https://www.justice.gov/opa/pr/former-blackwater-contractors-found-guilty-charges-stemming-2007-shooting-baghdad',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'prince-seymour-hersh-yemen-denial-framing-2019',
+        statement: 'Denied aspects of reported UAE/Yemen mercenary recruitment role when confronted with investigative reporting.',
+        saidAt: '2019–2020',
+        context: 'Investigative reports on Prince-linked recruitment of mercenaries for UAE operations in Yemen.',
+        whyFalse: 'Multiple investigative outlets documented Prince-linked recruitment networks for UAE Yemen operations; absolute denials conflicted with the multi-source investigative record.',
+        correction: 'Investigative reporting established Prince-linked mercenary recruitment activity for UAE Yemen operations beyond absolute public denials.',
+        statementSource: 'Prince public denials of Yemen mercenary role (2019–2020)',
+        statementUrl: 'https://www.nytimes.com/2018/05/15/world/middleeast/erik-prince-mercenaries-yemen-uae.html',
+        debunkSource: 'NYT/multi-outlet investigative record on Prince-linked UAE Yemen recruitment',
+        debunkUrl: 'https://www.theintercept.com/2019/10/24/erik-prince-uae-yemen/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'david-petraeus',

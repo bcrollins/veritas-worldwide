@@ -141,6 +141,7 @@ const required = [
   'ben-shapiro',
   'sam-bankman-fried',
   'david-petraeus',
+  'erik-prince',
 ];
 const scores = {};
 for (const id of required) {
@@ -1073,8 +1074,21 @@ for (const f of (petraeusP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('petraeus dual-cite collision: ' + f.id);
 }
 
+
+// Erik Prince densify gate (n≥3)
+const prince = scores['erik-prince'];
+if (!prince || prince.n < 3) throw new Error('erik-prince needs ≥3 verified falsehoods, got ' + (prince?.n ?? 0));
+if (prince.score > 50) throw new Error('erik-prince score expected ≤50 after densify, got ' + prince.score);
+const princeP = getProfileBySlug('erik-prince');
+for (const id of ['prince-blackwater-nisour-innocent-framing','prince-no-weapons-trafficking-denial-record','prince-seymour-hersh-yemen-denial-framing-2019']) {
+  if (!(princeP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('erik-prince missing docket id: ' + id);
+}
+for (const f of (princeP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('prince dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 54) throw new Error('expected ≥54 compiled dockets, got ' + docketCount);
+if (docketCount < 55) throw new Error('expected ≥55 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
