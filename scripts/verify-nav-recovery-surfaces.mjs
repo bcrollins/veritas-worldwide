@@ -65,6 +65,10 @@ for (const rel of [
   assert(read(rel).includes('ResearchHubChips'), `${rel} mounts ResearchHubChips`)
 }
 
+// Forum mounts both inline breadcrumb and also-in chip row
+const forum = read('src/pages/ForumPage.tsx')
+assert(forum.includes('variant="inline"') && forum.includes('variant="also-in"'), 'Forum dual DossierHubSpokes variants')
+
 // Dossier family mounts spokes
 for (const rel of [
   'src/pages/IsraelDossierPage.tsx',
