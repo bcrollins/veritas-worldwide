@@ -2150,8 +2150,8 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     relatedMoneyNodeIds: ['mk84-use', 'fmf-weapons', 'oct7-emergency-arms-surge', 'artillery-use'],
     legalStatus: 'multi-source-investigation',
     title: 'Gaza Children Killed — Multi-Source Wartime Floor (2023–2025)',
-    date: 'October 2023 – 2025',
-    location: 'Gaza Strip',
+    date: 'October 2023 – December 2025 (age-disaggregated wartime floor)',
+    location: 'Gaza Strip (children cohort)',
     summary:
       'Gaza Health Ministry and multi-source UN-referenced tallies document children as a large share of Palestinian fatalities in the Gaza war — tens of thousands of child deaths in the multi-source public-record floor used across humanitarian reporting. Pattern card for the children-killed wartime floor, distinct from individual incident cards.',
     evidence:
