@@ -522,4 +522,11 @@ assert(read('src/components/ResearchHubChips.tsx').includes('Research hub'), 'Re
 assert(read('src/components/DossierHubSpokes.tsx').includes('Also in Dossiers') || read('src/components/DossierHubSpokes.tsx').includes('Dossier hub'), 'DossierHubSpokes aria')
 assert(read('src/components/StickyMembershipBar.tsx').includes('Dismiss membership bar'), 'membership dismiss aria')
 
+
+// Analytics related hub destinations
+const analytics = read('src/pages/AnalyticsPage.tsx')
+assert(analytics.includes('analytics-related-hubs'), 'analytics-related-hubs')
+assert(analytics.includes('RelatedHubs'), 'Analytics RelatedHubs')
+assert(analytics.includes('/read') || analytics.includes("to: '/read'"), 'Analytics Read recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
