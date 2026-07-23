@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:55:46.641Z",
+  "generatedAt": "2026-07-23T10:56:42.858Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 525,
-    "timelineEvents": 513,
+    "incidents": 534,
+    "timelineEvents": 522,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 511,
+    "historicalWarCrimesPack": 520,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 465
+      "post-oct7": 474
     },
     "incidentsByTier": {
-      "verified": 523,
+      "verified": 532,
       "circumstantial": 2
     },
-    "childrenTagged": 492,
-    "civiliansTagged": 523,
+    "childrenTagged": 501,
+    "civiliansTagged": 532,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3591,6 +3591,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-bitot-spots-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Bitot Spots Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric Bitot spots risk under vitamin A collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-bitot-spots-risk-pattern-2023-2025",
+        "gaza-children-xerophthalmia-risk-pattern-2023-2025",
+        "gaza-children-night-blindness-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "bitot-spots",
+        "children",
+        "nutrition",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-blood-bank-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -3795,6 +3816,27 @@
       ],
       "tags": [
         "copper",
+        "children",
+        "nutrition",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-corneal-xerosis-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Corneal Xerosis Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric corneal xerosis risk under extreme vitamin A deficiency.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-corneal-xerosis-risk-pattern-2023-2025",
+        "gaza-children-xerophthalmia-risk-pattern-2023-2025",
+        "gaza-children-bitot-spots-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "corneal-xerosis",
         "children",
         "nutrition",
         "gaza"
@@ -5307,6 +5349,27 @@
         "vitamin-k",
         "children",
         "neonatal",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-xerophthalmia-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Xerophthalmia Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric xerophthalmia risk under vitamin A collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-xerophthalmia-risk-pattern-2023-2025",
+        "gaza-children-bitot-spots-risk-pattern-2023-2025",
+        "gaza-children-corneal-xerosis-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "xerophthalmia",
+        "children",
+        "nutrition",
         "gaza"
       ]
     },
@@ -8138,6 +8201,28 @@
       ]
     },
     {
+      "id": "tl-hostages-location-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Location Pattern",
+      "description": "Multi-source documentation of captors denying hostages knowledge of their geographic location.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-location-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-date-pattern-2023-2025",
+        "israel-hostages-forced-to-kneel-for-long-periods-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "disorientation",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-war-duration-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -8622,6 +8707,28 @@
       ]
     },
     {
+      "id": "tl-hostages-window-access-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Standing Near Windows Pattern",
+      "description": "Multi-source documentation of captors forbidding hostages from standing near windows.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-standing-near-windows-pattern-2023-2025",
+        "israel-hostages-forced-to-kneel-for-long-periods-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-location-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "control",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-sunlight-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -9012,6 +9119,28 @@
       "tags": [
         "hostages",
         "forced-labor",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-forced-kneeling-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced to Kneel for Long Periods Pattern",
+      "description": "Multi-source documentation of captors forcing civilian hostages into prolonged kneeling.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-to-kneel-for-long-periods-pattern-2023-2025",
+        "israel-hostages-denied-sitting-for-long-periods-pattern-2023-2025",
+        "israel-hostages-denied-standing-near-windows-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "immobility",
         "civilians",
         "terrorism",
         "israel"
@@ -10795,6 +10924,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-tanker-drivers-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on Water-Tanker Drivers Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian water-tanker drivers after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-water-tanker-drivers-pattern-2023-2025",
+        "west-bank-settler-blocking-water-tankers-pattern-2023-2025",
+        "west-bank-settler-destroying-grape-saplings-pattern-2023-2025"
+      ],
+      "tags": [
+        "water-tanker-drivers",
+        "settlers",
+        "access",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-wedding-attacks-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -11194,6 +11344,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-grape-saplings-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Grape Saplings Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian grape saplings after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-grape-saplings-pattern-2023-2025",
+        "west-bank-settler-attacking-water-tanker-drivers-pattern-2023-2025",
+        "west-bank-settler-destroying-olive-saplings-pattern-2023-2025"
+      ],
+      "tags": [
+        "grape-saplings",
+        "settlers",
+        "agriculture",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-grapevines-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -11293,6 +11464,27 @@
       ],
       "tags": [
         "irrigation-pumps",
+        "settlers",
+        "agriculture",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-olive-saplings-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Olive Saplings Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian olive saplings after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-olive-saplings-pattern-2023-2025",
+        "west-bank-settler-olive-tree-uprooting-surge-pattern-2023-2025",
+        "west-bank-settler-destroying-grape-saplings-pattern-2023-2025"
+      ],
+      "tags": [
+        "olive-saplings",
         "settlers",
         "agriculture",
         "west-bank"
@@ -33779,6 +33971,390 @@
         },
         {
           "label": "Multi-outlet wall-destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-xerophthalmia-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Xerophthalmia Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (xerophthalmia-risk cohort)",
+      "location": "Gaza Strip pediatric clinics and nutrition points",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric xerophthalmia risk under severe vitamin A deficiency — a multi-source wartime ocular-malnutrition pattern distinct from night-blindness and conjunctivitis cards.",
+      "evidence": "WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric xerophthalmia risk. Exact case counts evolve; multi-source wartime xerophthalmia risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO micronutrient materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza child-nutrition coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-standing-near-windows-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Standing Near Windows Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (window-access-denial cohort)",
+      "location": "Gaza Strip above-ground captivity sites — window-access-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forbidding Israeli civilian hostages from standing near windows or natural light sources — a multi-source control pattern distinct from sunlight denial and forced darkness.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source window-access denial. Exact cases vary; multi-source window-access denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-grape-saplings-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Grape Saplings Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (grape-sapling-destruction cohort)",
+      "location": "West Bank newly planted vineyard plots and nursery rows",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian grape saplings after October 7 — destroying re-planting investment supporting families including children. Pattern card distinct from mature grapevine destruction.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source grape-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian grape saplings is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem agriculture materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet grape-sapling destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-bitot-spots-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Bitot Spots Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (bitot-spots-risk cohort)",
+      "location": "Gaza Strip pediatric eye clinics and nutrition points",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric Bitot spots risk under vitamin A collapse — a multi-source wartime ocular-clinical sign pattern distinct from xerophthalmia and night-blindness cards.",
+      "evidence": "WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric Bitot spots risk. Exact case counts evolve; multi-source wartime Bitot spots risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO micronutrient materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza child-nutrition coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-kneel-for-long-periods-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Kneel for Long Periods Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-prolonged-kneeling cohort)",
+      "location": "Gaza Strip captivity sites — forced-kneeling subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages into prolonged kneeling positions — causing pain and injury. Pattern card distinct from forced immobility and standing-stretching denial.",
+      "evidence": "Multi-source released-hostage medical and testimony records establish multi-source forced prolonged kneeling. Exact cases vary; multi-source forced prolonged kneeling of civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-water-tanker-drivers-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on Water-Tanker Drivers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (water-tanker-driver-attack cohort)",
+      "location": "West Bank water-tanker routes and village fill points",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian water-tanker drivers after October 7 — compounding water access denial for families including children. Pattern card distinct from water-tanker blocking.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-tanker-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on water-tanker drivers is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem water-access materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet tanker-driver attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-corneal-xerosis-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Corneal Xerosis Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (corneal-xerosis-risk cohort)",
+      "location": "Gaza Strip pediatric eye clinics and emergency nutrition points",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric corneal xerosis risk under extreme vitamin A deficiency — a multi-source wartime sight-threatening pattern distinct from Bitot spots and xerophthalmia cards.",
+      "evidence": "WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric corneal xerosis risk. Exact case counts evolve; multi-source wartime corneal xerosis risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO micronutrient materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza child-nutrition coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-location-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Location Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (location-knowledge-denial cohort)",
+      "location": "Gaza Strip captivity sites — location-knowledge-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors deliberately denying Israeli civilian hostages knowledge of their geographic location — a multi-source disorientation pattern distinct from calendar-date and time-orientation denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source location-knowledge denial. Exact cases vary; multi-source location-knowledge denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-olive-saplings-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Olive Saplings Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (olive-sapling-destruction cohort)",
+      "location": "West Bank newly planted olive nurseries and re-planting plots",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive saplings after October 7 — destroying re-planting after mature-tree loss for families including children. Pattern card distinct from mature olive-tree uprooting.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source olive-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian olive saplings is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem agriculture materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet olive-sapling destruction coverage",
           "url": "https://apnews.com"
         }
       ],
