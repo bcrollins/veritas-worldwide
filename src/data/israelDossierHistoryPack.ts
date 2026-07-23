@@ -4302,6 +4302,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-hospital-forced-evacuations-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Hospital Forced Evacuations Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hospital-evacuation cohort)',
+    location: 'Gaza Strip hospitals (north → south displacement axis)',
+    summary:
+      'WHO, MSF, and multi-source reporting document repeated forced evacuations of functioning hospitals under military operations and siege conditions — displacing patients including neonates, ICU cases, and maternity wards mid-treatment. Pattern card for hospital-evacuation civilian harm distinct from health-system collapse and ICU/NICU capacity cards.',
+    evidence:
+      'WHO hospital-attack and evacuation situation reports, MSF facility statements, and multi-outlet contemporaneous coverage establish multi-source forced hospital evacuations. Exact patient counts per facility evolve; multi-source repeated hospital-evacuation events is the claim.',
+    sources: [
+      { label: 'WHO Gaza health emergency materials', url: 'https://www.who.int' },
+      { label: 'MSF facility / evacuation statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet hospital evacuation coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public health emergency updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-medical-oxygen-gas-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Medical Oxygen & Medical Gas Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (oxygen/gas cohort)',
+    location: 'Gaza Strip hospitals and field medical points',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document recurrent medical-oxygen and medical-gas shortages — including generator-dependent oxygen plants offline under fuel siege — causing preventable deaths among neonates, surgical patients, and respiratory cases. Pattern card for medical-oxygen collapse distinct from fuel/electricity and ICU capacity cards.',
+    evidence:
+      'WHO/UNICEF health-cluster materials and multi-outlet hospital oxygen-shortage reporting establish multi-source medical-gas failure under wartime conditions. Exact death attribution per shortage episode is incomplete; multi-source sustained oxygen/gas capacity collapse is the claim.',
+    sources: [
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'UNICEF health / neonatal materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet medical oxygen shortage coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'sde-teiman-detainee-abuse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Sde Teiman & Wartime Detention Abuse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (detention-abuse cohort)',
+    location: 'Sde Teiman and related Israeli wartime detention facilities',
+    summary:
+      'Israeli media investigations, IDF/military-advocate public proceedings, UN human-rights offices, and multi-source NGO reporting document serious detainee abuse — including deaths in custody and criminal cases against guards — at Sde Teiman and related wartime facilities holding Palestinians seized after October 7. Pattern card for detention-abuse accountability required for non-selective civilian-harm documentation.',
+    evidence:
+      'Israeli multi-outlet investigative reporting, public military court/MAC proceedings, and UN/NGO detention statements establish multi-source abuse and death-in-custody allegations with partial official acknowledgment via prosecutions. Exact case counts evolve; multi-source serious abuse pattern at wartime detention sites is the claim.',
+    sources: [
+      { label: 'Israeli multi-outlet investigative detention coverage', url: 'https://www.haaretz.com' },
+      { label: 'OHCHR detention / treatment materials', url: 'https://www.ohchr.org' },
+      { label: 'Multi-outlet Sde Teiman proceedings coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OHCHR public materials', url: 'https://www.ohchr.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6419,6 +6500,57 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
       'hezbollah-rockets-northern-israel-pattern-2023-2025',
     ],
     tags: ['missile-defense', 'civilians', 'israel', 'iron-dome'],
+  },
+
+  {
+    id: 'tl-gaza-hospital-evacuations-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Hospital Forced Evacuations Pattern',
+    description: 'WHO/MSF multi-source documentation of repeated forced evacuations of functioning hospitals under siege and military operations.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-hospital-forced-evacuations-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+      'gaza-icu-neonatal-capacity-collapse-pattern-2023-2025',
+    ],
+    tags: ['hospitals', 'evacuation', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-medical-oxygen-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Medical Oxygen & Gas Collapse Pattern',
+    description: 'WHO/UNICEF multi-source documentation of medical-oxygen and medical-gas shortages collapsing critical care capacity.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-medical-oxygen-gas-collapse-pattern-2023-2025',
+      'gaza-fuel-electricity-siege-pattern-2023-2025',
+      'gaza-icu-neonatal-capacity-collapse-pattern-2023-2025',
+    ],
+    tags: ['oxygen', 'health', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-sde-teiman-detention-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Sde Teiman Wartime Detention Abuse Pattern',
+    description: 'Multi-source documentation of serious detainee abuse and deaths in custody at Sde Teiman and related wartime detention facilities.',
+    source: 'Israeli multi-outlet / OHCHR / multi-outlet',
+    sourceUrl: 'https://www.ohchr.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'sde-teiman-detainee-abuse-pattern-2023-2025',
+      'west-bank-mass-arrests-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['detention', 'abuse', 'accountability', 'civilians'],
   },
 
 
