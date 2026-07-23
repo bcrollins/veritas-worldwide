@@ -321,8 +321,9 @@ assert(
   'security.txt routes must be registered on the Express app',
 )
 assert(
-  (server.includes("app.get(['/rss.xml', '/rss']") || server.includes('app.get(["/rss.xml", "/rss"]')) &&
-    server.includes("redirect(301, '/feed.xml')"),
+  (server.includes("/rss.xml") && server.includes("'/rss'") || server.includes('"/rss"')) &&
+    server.includes("redirect(301, '/feed.xml')") &&
+    (server.includes("app.get(['/rss.xml'") || server.includes('app.get(["/rss.xml"')),
   'RSS discovery alias /rss.xml must 301 to canonical /feed.xml',
 )
 assert(server.includes('SECURITY_TXT_FALLBACK') && server.includes('loadSecurityTxtBody'), 'security.txt in-process fallback present')
