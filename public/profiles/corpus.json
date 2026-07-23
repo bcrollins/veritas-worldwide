@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:23:02.499Z",
+  "generatedAt": "2026-07-23T08:26:03.164Z",
   "count": 96,
   "profiles": [
     {
@@ -1093,7 +1093,7 @@
       "name": "Mike Johnson",
       "title": "Speaker of the House (R-LA)",
       "category": "politician",
-      "summary": "House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — paroled immigrants can “simply” register to vote at welfare/DMV (May 2024) and “we are not cutting SNAP” under the 2025 reconciliation bill (CBO/Urban/CBPP show millions lose benefits). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact, CBS Face the Nation.",
+      "summary": "House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — paroled immigrants can “simply” register to vote at welfare/DMV; “we are not cutting SNAP” (CBO/Urban/CBPP); and Pants on Fire claim ~1% of federal employees work in-office (OPM/OMB contradict). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact, CBS Face the Nation, C-SPAN/YouTube.",
       "photo": "/profiles/mike-johnson.jpg",
       "url": "https://veritasworldwide.com/profile/mike-johnson",
       "bioguideId": "J000299",
@@ -1107,8 +1107,8 @@
         "Institutional Enablement",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

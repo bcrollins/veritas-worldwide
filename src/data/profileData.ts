@@ -6901,7 +6901,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'LA',
     photoUrl: getProfilePhoto('mike-johnson'),
     summary:
-      'House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — paroled immigrants can “simply” register to vote at welfare/DMV (May 2024) and “we are not cutting SNAP” under the 2025 reconciliation bill (CBO/Urban/CBPP show millions lose benefits). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact, CBS Face the Nation.',
+      'House Speaker (since Oct 2023) and Louisiana Republican. Controls House floor schedule for wartime Israel security packages including the 2024 supplemental architecture. Documented pro-Israel PAC recipient (OpenSecrets). Structural enablement role as Speaker exceeds backbench voting. Integrity docket: dual-cited PolitiFact Falses — paroled immigrants can “simply” register to vote at welfare/DMV; “we are not cutting SNAP” (CBO/Urban/CBPP); and Pants on Fire claim ~1% of federal employees work in-office (OPM/OMB contradict). Primary: OpenSecrets, House Speakership record, H.R. 815 / H.R. 8034, PolitiFact, CBS Face the Nation, C-SPAN/YouTube.',
     tags: [
       'Speaker of the House',
       'Pro-Israel',
@@ -7010,6 +7010,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2025',
       },
+      {
+        claim:
+          'Integrity docket: Dec 2024 claim ~1% of federal employees “actually working in the office” rated Pants on Fire (non-scientific survey; OPM ~32% never remote; OMB half ineligible for telework).',
+        source: 'PolitiFact Pants on Fire; YouTube stakeout; OPM FEVS; OMB telework report',
+        url: 'https://www.politifact.com/factchecks/2024/dec/11/mike-johnson/mike-johnsons-pants-on-fire-claim-that-1-of-federa/',
+        tier: 'verified',
+        date: '2024',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -7051,6 +7059,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'johnson-1-percent-federal-employees-in-office-2024',
+        statement:
+          'About 1% of federal employees are “actually working in the office” (if security personnel are excluded).',
+        saidAt: 'December 5, 2024',
+        context:
+          'Remarks to reporters after Sen. Joni Ernst’s telework report and DOGE/return-to-office politics; claimed a “little survey” showed ~1% in-office excluding security.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. The 1% figure does not appear in Ernst’s report; it tracks Elon Musk’s amplification of a non-scientific Federal News Network opt-in survey that the outlet said should not be used to characterize all federal employees. OPM’s 2023 FEVS found ~32% never work remotely and ~14% full-time remote; OMB found ~half of federal jobs are telework-ineligible and telework-eligible staff spend ~60% of hours on-site.',
+        correction:
+          'Federal workforce surveys show far higher in-office presence than 1%; half of jobs cannot telework, and among eligible staff most days are on-site.',
+        statementSource: 'Speaker Johnson remarks to reporters (YouTube capture), Dec. 5, 2024',
+        statementUrl: 'https://www.youtube.com/watch?v=f3Akiyr3VAM',
+        debunkSource: 'PolitiFact — Pants on Fire (Dec. 11, 2024); OPM FEVS 2023; OMB telework report',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2024/dec/11/mike-johnson/mike-johnsons-pants-on-fire-claim-that-1-of-federa/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Speaker.gov', url: 'https://www.speaker.gov' },
@@ -7064,6 +7091,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — not cutting SNAP (False)',
         url: 'https://www.politifact.com/factchecks/2025/may/29/mike-johnson/SNAP-reconciliation-bill-tax-cuts-food/',
+      },
+      {
+        label: 'PolitiFact — 1% federal employees in office (Pants on Fire)',
+        url: 'https://www.politifact.com/factchecks/2024/dec/11/mike-johnson/mike-johnsons-pants-on-fire-claim-that-1-of-federa/',
       },
       {
         label: 'C-SPAN — May 8, 2024 SAFE Act presser',

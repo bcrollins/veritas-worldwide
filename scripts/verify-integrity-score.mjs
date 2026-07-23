@@ -631,14 +631,17 @@ for (const f of (mccarthyP.documentedFalsehoods || []).filter((x) => x.tier === 
 
 // Mike Johnson integrity gate
 const mikeJohnson = scores['mike-johnson'];
-if (!mikeJohnson || mikeJohnson.n < 2) throw new Error('mike-johnson needs ≥2 verified falsehoods, got ' + (mikeJohnson?.n ?? 0));
-if (mikeJohnson.score > 75) throw new Error('mike-johnson score expected ≤75, got ' + mikeJohnson.score);
+if (!mikeJohnson || mikeJohnson.n < 3) throw new Error('mike-johnson needs ≥3 verified falsehoods, got ' + (mikeJohnson?.n ?? 0));
+if (mikeJohnson.score > 50) throw new Error('mike-johnson score expected ≤50, got ' + mikeJohnson.score);
 const mikeJohnsonP = getProfileBySlug('mike-johnson');
 if (!(mikeJohnsonP.documentedFalsehoods || []).some((f) => f.id === 'johnson-parolees-simply-register-to-vote-dmv-2024')) {
   throw new Error('mike-johnson missing parolee DMV voter-registration docket id');
 }
 if (!(mikeJohnsonP.documentedFalsehoods || []).some((f) => f.id === 'johnson-not-cutting-snap-2025')) {
   throw new Error('mike-johnson missing not-cutting-SNAP docket id');
+}
+if (!(mikeJohnsonP.documentedFalsehoods || []).some((f) => f.id === 'johnson-1-percent-federal-employees-in-office-2024')) {
+  throw new Error('mike-johnson missing 1% federal-employees-in-office docket id');
 }
 for (const f of (mikeJohnsonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('mike-johnson dual-cite collision: ' + f.id);
