@@ -418,6 +418,10 @@ export default function ComprehensiveProfilePage() {
             <Link to="/profiles" className="text-crimson hover:underline">
               /profiles
             </Link>
+            . Offline machine corpora (not a private dossier) download as a ZIP at{' '}
+            <a href="/research-pack.zip" className="text-crimson hover:underline" download="veritas-research-pack.zip">
+              /research-pack.zip
+            </a>
             . Editorial methodology for The Record is at{' '}
             <Link to="/methodology" className="text-crimson hover:underline">
               /methodology

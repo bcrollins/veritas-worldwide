@@ -69,6 +69,10 @@ assert(fs.existsSync(ogAsset), 'public/og-comprehensive-profile.svg missing')
 const contentPack = read('src/pages/ContentPackPage.tsx')
 assert(contentPack.includes('/comprehensive-profile'), 'content pack must link OSINT service')
 assert(contentPack.includes('content-pack-osint-card') || contentPack.includes('Comprehensive Online Profile'), 'content pack OSINT card missing')
+assert(
+  page.includes('/research-pack.zip'),
+  'OSINT product page must distinguish free offline research pack from paid dossier',
+)
 
 const liveAnon = read('scripts/verify-live-anonymity.mjs')
 assert(liveAnon.includes('/comprehensive-profile'), 'live-anonymity must probe OSINT HTML')
