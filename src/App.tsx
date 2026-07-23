@@ -705,7 +705,7 @@ function MobileTabBar() {
               key={tab.to}
               to={tab.to}
               title={tab.title}
-              className={`flex min-h-[52px] min-w-[44px] flex-1 flex-col items-center justify-center gap-0.5 rounded-lg px-1 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.06em] transition-colors ${
+              className={`flex min-h-[52px] min-w-[44px] flex-1 flex-col items-center justify-center gap-0.5 rounded-lg px-1 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.06em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 focus-visible:ring-offset-parchment ${
                 active ? 'text-crimson' : 'text-ink-muted hover:text-ink'
               }`}
               {...(active ? { 'aria-current': 'page' as const } : {})}
