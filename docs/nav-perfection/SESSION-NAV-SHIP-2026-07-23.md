@@ -76,3 +76,8 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 - 30+ surface needles + family mounts + Hick/server soft-404 exact hubs
 - Latest: `f21bf93` ResearchHubChips=5, `e204b92` DOSSIER_SPOKES=5
 - Live matrix continuously green under densify tip advances
+
+
+## Recovery suite scale
+- `verify-nav-recovery-surfaces`: **39 surface needles** + family mounts + Hick/soft-404 exactness
+- Live continuously green under densify tip ≥1500 incidents
