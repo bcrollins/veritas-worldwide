@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:05:03.665Z",
+  "generatedAt": "2026-07-23T07:09:32.463Z",
   "count": 94,
   "profiles": [
     {
@@ -616,21 +616,22 @@
     {
       "id": "hillary-clinton",
       "name": "Hillary Clinton",
-      "title": "Former Secretary of State",
+      "title": "Former U.S. Secretary of State; U.S. Senator (D-NY)",
       "category": "politician",
-      "summary": "Former Secretary of State, Senator, 2016 presidential candidate. Strong pro-Israel record.",
+      "summary": "Former Secretary of State (2009–2013) and New York senator. Long-time Democratic pro-Israel institutional voice; major recipient of pro-Israel and Democratic megadonor support including Haim Saban network adjacency. Primary: OpenSecrets, State Department record, CRS RL33222 multi-administration aid continuity.",
       "photo": "/profiles/hillary-clinton.jpg",
       "url": "https://veritasworldwide.com/profile/hillary-clinton",
-      "bioguideId": "C001041",
+      "bioguideId": null,
       "tags": [
         "Secretary of State",
         "Senator",
-        "New York",
+        "Pro-Israel",
         "Democrat",
-        "Pro-Israel"
+        "New York",
+        "FMF Continuity"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {

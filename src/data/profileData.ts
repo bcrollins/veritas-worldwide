@@ -3431,10 +3431,58 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2000s–2016',
       },
+      {
+        claim:
+          'Integrity docket: Bosnia "sniper fire" landing claim contradicted by video (PolitiFact Pants on Fire); email "no classified" defense contradicted by FBI review of 113 classified-bearing emails (PolitiFact False).',
+        source: 'PolitiFact dual-cite dockets',
+        url: 'https://www.politifact.com/personalities/hillary-clinton/',
+        tier: 'verified',
+        date: '2008–2016',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'hillary-clinton-bosnia-sniper-fire-2008',
+        statement:
+          'I remember landing under sniper fire. There was supposed to be some kind of a greeting ceremony at the airport, but instead we just ran with our heads down to get into the vehicles to get to our base.',
+        saidAt: 'March 17, 2008 (and prior retellings)',
+        context:
+          '2008 Democratic primary foreign-policy remarks describing a 1996 First Lady landing at Tuzla, Bosnia.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. Contemporary video and reporting show a calm tarmac arrival with a greeting ceremony (including a child presenting a poem), not a run under sniper fire. Clinton later called the account a mistake.',
+        correction:
+          'The 1996 Tuzla landing included a greeting ceremony without documented sniper fire on the tarmac; the "heads down under sniper fire" narrative was false.',
+        statementSource: 'Clinton 2008 campaign remarks (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/truth-o-meter/statements/2008/mar/25/hillary-clinton/video-shows-tarmac-welcome-no-snipers/',
+        debunkSource: 'PolitiFact — Pants on Fire (March 25, 2008); CBS/AP video of arrival',
+        debunkUrl: 'https://www.politifact.com/truth-o-meter/statements/2008/mar/25/hillary-clinton/video-shows-tarmac-welcome-no-snipers/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'hillary-clinton-email-no-classified-2015-2016',
+        statement:
+          'I did not email any classified material to anyone on my email. There is no classified material.',
+        saidAt: 'March 10, 2015 (and subsequent restatements through 2016)',
+        context:
+          'Press conference and campaign defense of exclusive use of a private email server as Secretary of State.',
+        whyFalse:
+          'PolitiFact rated False after the FBI completed its review: of emails examined, 113 contained classified information at the time they were sent or received (including Top Secret compartments in some cases), contradicting the absolute "no classified material" claim. Later "marked classified" reframes were a narrower, different claim.',
+        correction:
+          'FBI review found classified information in dozens of Clinton-server emails. Absolute statements that no classified material was emailed were false.',
+        statementSource: 'Clinton March 10, 2015 UN press conference (PolitiFact / contemporaneous transcript)',
+        statementUrl: 'https://www.politifact.com/truth-o-meter/statements/2016/jul/06/hillary-clinton/fbi-findings-tear-holes-hillary-clintons-email-def/',
+        debunkSource: 'PolitiFact — False (July 6, 2016); FBI Director Comey July 5, 2016 statement',
+        debunkUrl: 'https://www.politifact.com/truth-o-meter/statements/2016/jul/06/hillary-clinton/fbi-findings-tear-holes-hillary-clintons-email-def/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'CRS RL33222', url: 'https://www.congress.gov/crs-product/RL33222' },
       { label: 'OpenSecrets', url: 'https://www.opensecrets.org' },
+      { label: 'PolitiFact — Bosnia sniper fire (Pants on Fire)', url: 'https://www.politifact.com/truth-o-meter/statements/2008/mar/25/hillary-clinton/video-shows-tarmac-welcome-no-snipers/' },
+      { label: 'PolitiFact — email classified (False)', url: 'https://www.politifact.com/truth-o-meter/statements/2016/jul/06/hillary-clinton/fbi-findings-tear-holes-hillary-clintons-email-def/' },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Hillary_Clinton' },
     ],
   },
