@@ -1037,4 +1037,11 @@ const chipsFinal = rhcFinal.match(/const CHIPS = \[([\s\S]*?)\] as const/)
 assert(chipsFinal, 'ResearchHubChips CHIPS block final')
 assert((chipsFinal[1].match(/to:/g) || []).length === 5, 'ResearchHubChips count 5 unique final')
 
+
+// PRIMARY_RELATED_HUBS count reaffirm unique final
+const primaryFinal = read('src/components/RelatedHubs.tsx')
+const primaryBlockFinal = primaryFinal.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+assert(primaryBlockFinal, 'PRIMARY_RELATED_HUBS block final')
+assert((primaryBlockFinal[1].match(/to:/g) || []).length === 5, 'PRIMARY_RELATED count 5 unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
