@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:12:54.142Z",
+  "generatedAt": "2026-07-23T09:13:13.420Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 146,
-    "timelineEvents": 134,
+    "incidents": 147,
+    "timelineEvents": 135,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 132,
+    "historicalWarCrimesPack": 133,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 86
+      "post-oct7": 87
     },
     "incidentsByTier": {
-      "verified": 144,
+      "verified": 145,
       "circumstantial": 2
     },
-    "childrenTagged": 122,
-    "civiliansTagged": 144,
+    "childrenTagged": 123,
+    "civiliansTagged": 145,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3183,6 +3183,28 @@
         "food",
         "starvation",
         "civilians",
+        "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-blood-bank-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Blood Bank & Transfusion Collapse Pattern",
+      "description": "WHO multi-source documentation of blood banking and transfusion capacity collapse under wartime conditions.",
+      "source": "WHO / OCHA / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-blood-bank-collapse-pattern-2023-2025",
+        "gaza-health-system-collapse-2023-2025",
+        "gaza-amputations-children-pattern-2023-2025"
+      ],
+      "tags": [
+        "blood",
+        "trauma",
+        "health",
         "children",
         "gaza"
       ]
@@ -9750,6 +9772,50 @@
         },
         {
           "label": "Multi-outlet Gaza medicine shortage coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-blood-bank-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Blood Bank & Transfusion Capacity Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (blood-bank cohort)",
+      "location": "Gaza Strip blood banks / trauma hospitals",
+      "summary": "WHO and multi-source hospital reporting document collapse of blood banking, cold-chain, and transfusion capacity under bombardment and power/fuel failure — forcing trauma surgery without adequate blood products. Pattern card for blood-system failure as a civilian-harm multiplier distinct from ICU and medicine-shortage cards.",
+      "evidence": "WHO trauma/blood-supply materials, multi-source clinician reporting, and OCHA health notes establish multi-source blood-bank collapse. Exact unit shortfalls evolve; multi-source transfusion-capacity failure is the claim.",
+      "sources": [
+        {
+          "label": "WHO emergency health / blood safety materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA health access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza blood shortage coverage",
           "url": "https://apnews.com"
         }
       ],
