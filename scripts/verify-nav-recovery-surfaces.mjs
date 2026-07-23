@@ -638,4 +638,10 @@ assert(spokesComp.includes("'sticky'") || spokesComp.includes('"sticky"'), 'stic
 assert(spokesComp.includes('also-in') && spokesComp.includes('inline'), 'also-in + inline variants')
 assert(spokesComp.includes('dossier-hub-spokes'), 'dossier-hub-spokes testid')
 
+
+// Server soft-404 primary CTA class for Record hub
+const serverSrc = read('server.js')
+assert(serverSrc.includes('class="primary"') || serverSrc.includes("class='primary'"), 'server soft-404 primary class')
+assert(serverSrc.includes('>Record<') || serverSrc.includes('Record</a>'), 'server soft-404 Record label')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
