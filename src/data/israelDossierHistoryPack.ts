@@ -1738,6 +1738,32 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 360 },
   },
+  {
+    id: 'kibbutz-beeri-october-7-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Kibbutz Be\'eri Massacre (October 7, 2023)',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Be\'eri, southern Israel',
+    summary:
+      'Militants overran Kibbutz Be\'eri on October 7, killing more than 100 residents and taking hostages in one of the deadliest single-community massacres of the attack. Depth entry isolates Be\'eri from the multi-site October 7 card for civilian-harm documentation and chronology balance.',
+    evidence:
+      'Israeli government community casualty lists, multi-source forensic and survivor reporting, and international press establish Be\'eri as a primary civilian massacre site. Exact community totals vary slightly by source; multi-source floor exceeds 100 killed.',
+    sources: [
+      { label: 'Israeli government October 7 public record', url: 'https://www.gov.il' },
+      { label: 'Britannica — October 7 attacks', url: 'https://www.britannica.com/event/October-7-attacks' },
+      { label: 'UN / multi-source October 7 documentation', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica October 7 attacks', url: 'https://www.britannica.com/event/October-7-attacks' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 100 },
+  },
 
 ]
 
@@ -2397,6 +2423,18 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['october-7-nova-festival-2023', 'oct7-hamas-attack-2023'],
     tags: ['civilians', 'terrorism', 'october-7'],
+  },
+  {
+    id: 'tl-beeri-october-7-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Kibbutz Be\'eri Massacre — October 7',
+    description: 'More than 100 residents killed as militants overran the kibbutz; multi-source community death floor.',
+    source: 'Israeli gov / Britannica',
+    sourceUrl: 'https://www.britannica.com/event/October-7-attacks',
+    tier: 'verified',
+    relatedIncidentIds: ['kibbutz-beeri-october-7-2023', 'oct7-hamas-attack-2023', 'october-7-nova-festival-2023'],
+    tags: ['civilians', 'children', 'terrorism', 'october-7'],
   },
 
 ]

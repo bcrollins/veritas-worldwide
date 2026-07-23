@@ -1222,6 +1222,18 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['pro-israel-lobby-2024', 'annual-mou', 'hr815'],
     relatedProfileIds: ['mike-pence', 'mike-johnson', 'ted-cruz', 'lindsey-graham', 'donald-trump'],
   },
+  {
+    id: 'jstreet-pac-2024',
+    label: 'J Street PAC — Progressive Pro-Israel (2024 Cycle)',
+    amount: '~$6.7M contributions (OpenSecrets / FEC 2023–24 window)',
+    type: 'lobby',
+    date: '2023–2024 cycle',
+    detail:
+      'J Street is the leading progressive pro-Israel PAC/advocacy network: supports a two-state framework and conditionality debates while remaining within pro-Israel security assistance politics. OpenSecrets/FEC cycle data place multi-million contributions predominantly to Democrats — the progressive counter-pole to AIPAC UDP/DMFI orthodoxy, essential for a full-spectrum enablement map (not all pro-Israel money is unconditional).',
+    sourceUrl: 'https://www.opensecrets.org/orgs/j-street/summary?id=D000046951',
+    children: ['pro-israel-lobby-2024'],
+    relatedProfileIds: ['bernie-sanders', 'elizabeth-warren', 'chuck-schumer', 'hakeem-jeffries'],
+  },
 
 ]
 

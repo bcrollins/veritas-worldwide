@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:25:10.933Z",
+  "generatedAt": "2026-07-23T07:29:03.004Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 79,
-    "timelineEvents": 67,
+    "incidents": 80,
+    "timelineEvents": 68,
     "actors": 47,
-    "moneyTrailNodes": 23,
-    "historicalWarCrimesPack": 65,
+    "moneyTrailNodes": 24,
+    "historicalWarCrimesPack": 66,
     "legalCases": 16,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 25,
       "blockade-2007-2023": 25,
-      "post-oct7": 20
+      "post-oct7": 21
     },
     "incidentsByTier": {
-      "verified": 77,
+      "verified": 78,
       "circumstantial": 2
     },
-    "childrenTagged": 67,
-    "civiliansTagged": 77,
+    "childrenTagged": 68,
+    "civiliansTagged": 78,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -35,7 +35,7 @@
       "delivery": 3,
       "weapon": 7,
       "impact": 3,
-      "lobby": 5
+      "lobby": 6
     }
   },
   "publicRecords": [
@@ -492,6 +492,24 @@
         "ted-cruz",
         "lindsey-graham",
         "donald-trump"
+      ]
+    },
+    {
+      "id": "jstreet-pac-2024",
+      "label": "J Street PAC — Progressive Pro-Israel (2024 Cycle)",
+      "amount": "~$6.7M contributions (OpenSecrets / FEC 2023–24 window)",
+      "type": "lobby",
+      "date": "2023–2024 cycle",
+      "detail": "J Street is the leading progressive pro-Israel PAC/advocacy network: supports a two-state framework and conditionality debates while remaining within pro-Israel security assistance politics. OpenSecrets/FEC cycle data place multi-million contributions predominantly to Democrats — the progressive counter-pole to AIPAC UDP/DMFI orthodoxy, essential for a full-spectrum enablement map (not all pro-Israel money is unconditional).",
+      "sourceUrl": "https://www.opensecrets.org/orgs/j-street/summary?id=D000046951",
+      "children": [
+        "pro-israel-lobby-2024"
+      ],
+      "relatedProfileIds": [
+        "bernie-sanders",
+        "elizabeth-warren",
+        "chuck-schumer",
+        "hakeem-jeffries"
       ]
     }
   ],
@@ -2940,6 +2958,27 @@
         "civilians",
         "west-bank",
         "us-aid"
+      ]
+    },
+    {
+      "id": "tl-beeri-october-7-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Kibbutz Be'eri Massacre — October 7",
+      "description": "More than 100 residents killed as militants overran the kibbutz; multi-source community death floor.",
+      "source": "Israeli gov / Britannica",
+      "sourceUrl": "https://www.britannica.com/event/October-7-attacks",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "kibbutz-beeri-october-7-2023",
+        "oct7-hamas-attack-2023",
+        "october-7-nova-festival-2023"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "terrorism",
+        "october-7"
       ]
     },
     {
@@ -5713,6 +5752,47 @@
       "tier": "verified",
       "casualties": {
         "killed": 360
+      }
+    },
+    {
+      "id": "kibbutz-beeri-october-7-2023",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Kibbutz Be'eri Massacre (October 7, 2023)",
+      "date": "October 7, 2023",
+      "location": "Kibbutz Be'eri, southern Israel",
+      "summary": "Militants overran Kibbutz Be'eri on October 7, killing more than 100 residents and taking hostages in one of the deadliest single-community massacres of the attack. Depth entry isolates Be'eri from the multi-site October 7 card for civilian-harm documentation and chronology balance.",
+      "evidence": "Israeli government community casualty lists, multi-source forensic and survivor reporting, and international press establish Be'eri as a primary civilian massacre site. Exact community totals vary slightly by source; multi-source floor exceeds 100 killed.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 public record",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Britannica — October 7 attacks",
+          "url": "https://www.britannica.com/event/October-7-attacks"
+        },
+        {
+          "label": "UN / multi-source October 7 documentation",
+          "url": "https://www.un.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Britannica October 7 attacks",
+          "url": "https://www.britannica.com/event/October-7-attacks"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 100
       }
     },
     {
